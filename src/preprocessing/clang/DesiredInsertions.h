@@ -195,6 +195,7 @@ class AliasesPassedToCallSite {
         int nparams() { return alias_nos.size(); }
         size_t alias_no_for(int arg) { return alias_nos[arg]; }
         size_t get_return_alias() { return return_alias; }
+        std::vector<size_t> get_param_aliases() { return alias_nos; }
 
         bool operator < (const AliasesPassedToCallSite& other) const {
             if (line == other.line) {

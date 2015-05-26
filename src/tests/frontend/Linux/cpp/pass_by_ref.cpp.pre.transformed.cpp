@@ -37,19 +37,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -85,7 +84,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2279,7 +2278,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
 # 9 "/home/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
      ;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
-     call_lbl_1: (____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(5510091067034723743UL)); (foo)(&b); }) ) : (({ calling_npm("foo", 0UL, ____alias_loc_id_0, 1, 5510091067034723743UL); (*____chimes_extern_func_foo)(&b); })));
+     call_lbl_1: (____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(5510091067034723743UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })));
 # 11 "/home/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
      call_lbl_2: checkpoint_transformed(2, 0);
 # 12 "/home/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
@@ -2291,7 +2290,7 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
 # 9 "/home/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
      ;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
-     call_lbl_1: (____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 1, 0UL, ____alias_loc_id_0, 1, (size_t)(5510091067034723743UL)); (foo)(&b); }) ) : (({ calling_npm("foo", 0UL, ____alias_loc_id_0, 1, 5510091067034723743UL); (*____chimes_extern_func_foo)(&b); })));
+     call_lbl_1: (____chimes_does_checkpoint_foo_npm ? ( ({ calling((void*)foo, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(5510091067034723743UL)); (foo)(&b); }) ) : (({ calling_npm("foo", ____alias_loc_id_0); (*____chimes_extern_func_foo)(&b); })));
 # 11 "/home/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
      call_lbl_2: checkpoint_transformed(2, 0);
 # 12 "/home/jmg3/num-debug/src/examples/cpp/pass_by_ref.cpp"
@@ -2308,13 +2307,14 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(5510091067034723739UL, 1, 1, 1, 1, 0, 1, 1, 0,
+    init_module(5510091067034723739UL, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0,
                            &____alias_loc_id_0, (unsigned)3, (unsigned)1, (5510091067034723739UL + 1UL), (5510091067034723739UL + 2UL), (5510091067034723739UL + 3UL), "foo", (unsigned)1, (5510091067034723739UL + 4UL),
                                "foo", (void **)&(____chimes_extern_func_foo),
                            "foo", &(____chimes_does_checkpoint_foo_npm),
                              (5510091067034723739UL + 3UL), (5510091067034723739UL + 16UL),
                              "main", 2, "foo", "checkpoint",
-                        "main|b|0", 1, "main");
+                        "main|b|0", 1, "main",
+        "foo", 0UL, (int)1, 5510091067034723743UL);
     register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }

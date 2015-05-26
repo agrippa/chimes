@@ -78,19 +78,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -126,7 +125,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2020,9 +2019,9 @@ void timestampBarrier_resumable(const char* msg)
 {const int ____chimes_did_disable3 = new_stack((void *)(&timestampBarrier), "timestampBarrier", &____must_manage_timestampBarrier, 1, 0, (size_t)(2776516408427544865UL)) ; time_t t;
  if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 53 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
-   ({ calling_npm("barrierParallel", 0UL, 0, 0); barrierParallel_npm(); });
+   ({ calling_npm("barrierParallel", 0); barrierParallel_npm(); });
 # 54 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
-   if (!({ calling_npm("printRank", 0UL, 0, 0); printRank_npm(); })) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_1, ____chimes_did_disable3); return;; };
+   if (!({ calling_npm("printRank", 0); printRank_npm(); })) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_1, ____chimes_did_disable3); return;; };
 # 56 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
       t = (time(__null)) ;
 # 57 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
@@ -2260,9 +2259,9 @@ void timestampBarrier_quick(const char* msg)
 {const int ____chimes_did_disable3 = new_stack((void *)(&timestampBarrier), "timestampBarrier", &____must_manage_timestampBarrier, 1, 0, (size_t)(2776516408427544865UL)) ; time_t t;
  if (____must_checkpoint_timestampBarrier_t_0) { register_stack_vars(1, "timestampBarrier|t|0", &____must_checkpoint_timestampBarrier_t_0, "i64", (void *)(&t), (size_t)8, 0, 0, 0); } ; ;
 # 53 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
-   ({ calling_npm("barrierParallel", 0UL, 0, 0); barrierParallel_npm(); });
+   ({ calling_npm("barrierParallel", 0); barrierParallel_npm(); });
 # 54 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
-   if (!({ calling_npm("printRank", 0UL, 0, 0); printRank_npm(); })) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_1, ____chimes_did_disable3); return;; };
+   if (!({ calling_npm("printRank", 0); printRank_npm(); })) {rm_stack(false, 0UL, "timestampBarrier", &____must_manage_timestampBarrier, ____alias_loc_id_1, ____chimes_did_disable3); return;; };
 # 56 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
       t = (time(__null)) ;
 # 57 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.c"
@@ -2621,7 +2620,7 @@ int builtWithMpi_npm(void)
 
 
 static int module_init() {
-    init_module(2776516408427544823UL, 20, 16, 1, 11, 16, 0, 16, 1,
+    init_module(2776516408427544823UL, 20, 16, 1, 11, 16, 0, 16, 2, 0, 1,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (2776516408427544823UL + 5UL),
                            &____alias_loc_id_1, (unsigned)5, (unsigned)0, (2776516408427544823UL + 15UL), (2776516408427544823UL + 16UL), (2776516408427544823UL + 17UL), (2776516408427544823UL + 29UL), (2776516408427544823UL + 374UL),
                            &____alias_loc_id_2, (unsigned)2, (unsigned)0, (2776516408427544823UL + 51UL), (2776516408427544823UL + 52UL),
@@ -2702,7 +2701,9 @@ static int module_init() {
                              "getNRanks", 0,
                              "barrierParallel", 0,
                              "sendReceiveParallel", 0,
-                        "timestampBarrier|t|0", 1, "timestampBarrier");
+                        "timestampBarrier|t|0", 1, "timestampBarrier",
+        "barrierParallel", 0UL, (int)0,
+        "printRank", 0UL, (int)0);
     register_global_var("global|nRanks", "i32", (void *)(&nRanks), 4.0, 0, 0, 0);
     register_global_var("global|myRank", "i32", (void *)(&myRank), 4.0, 0, 0, 0);
     register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));

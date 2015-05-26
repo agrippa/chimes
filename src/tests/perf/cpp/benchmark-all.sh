@@ -42,5 +42,8 @@ echo
 echo New results:
 cat collected.log
 echo
-echo Old results:
+echo Old full results:
+cat collected.log.full
+echo
+echo Old dummy results:
 cat collected.log.control

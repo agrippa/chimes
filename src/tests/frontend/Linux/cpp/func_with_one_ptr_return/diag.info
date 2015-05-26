@@ -19,7 +19,7 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 4 7 len=23 haha_this_sux_part_deux_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 4 189  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 9 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 25 ({ calling_npm("haha_this_sux_part_deux", 11113077287596837036UL, 0, 0); haha_this_sux_part_deux_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 25 ({ calling_npm("haha_this_sux_part_deux", 0); haha_this_sux_part_deux_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 49 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 29 
@@ -30,7 +30,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_ret
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 4 7 len=23 haha_this_sux_part_deux_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 4 189  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 9 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 25 ({ calling_npm("haha_this_sux_part_deux", 11113077287596837036UL, 0, 0); haha_this_sux_part_deux_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 25 ({ calling_npm("haha_this_sux_part_deux", 0); haha_this_sux_part_deux_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 10 49 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/func_with_one_ptr_return.cpp 11 29 

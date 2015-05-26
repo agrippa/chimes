@@ -1,49 +1,49 @@
 memset impl_getName 293 3 0 1 0 0
-sprintf impl_paramsToStr 300 10 0 50 1827
-sprintf impl_paramsToStr 301 0 0 50 1828
-printf impl_helpMessage 371 5 0 1829
+sprintf impl_paramsToStr 300 10 0 50 1831
+sprintf impl_paramsToStr 301 0 0 50 1832
+printf impl_helpMessage 371 5 0 1833
 exit impl_abort 384 3 0 0
-printf ss_error 432 3 0 1830 0 111
+printf ss_error 432 3 0 1834 0 111
 exit ss_error 433 3 0 0
-printf ss_init 440 19 0 1832 0 203 0
+printf ss_init 440 19 0 1836 0 203 0
 malloc ss_init 446 26 134 0
-printf ss_init 454 5 0 1833 0 0
-ss_error ss_init 456 5 0 1834
-printf ss_init 459 19 0 1828 0 134
+printf ss_init 454 5 0 1837 0 0
+ss_error ss_init 456 5 0 1838
+printf ss_init 459 19 0 1832 0 134
 ss_mkEmpty ss_init 473 3 0 203
-ss_error ss_push 479 32 0 1836
-rng_showstate ss_push 481 53 232 288 1815
-printf ss_push 481 95 0 1837 0 0 232 0
+ss_error ss_push 479 32 0 1840
+rng_showstate ss_push 481 53 232 288 1819
+printf ss_push 481 95 0 1841 0 0 232 0
 memcpy ss_push 484 3 0 249 288 0
-ss_error ss_top 494 28 0 1838
-rng_showstate ss_top 497 53 350 338 1815
-printf ss_top 497 95 0 1839 0 0 350 0 0
-ss_error ss_pop 507 28 0 1838
-rng_showstate ss_pop 511 53 407 395 1815
-printf ss_pop 511 95 0 1839 0 0 407 0 0
-ss_error ss_topPosn 520 28 0 1842
-ss_error ss_release 533 107 0 1837
-ss_error ss_steal 567 34 0 1844
-ss_error ss_steal 570 36 0 1845
-printf ss_steal 574 20 0 1838 0 0
-printf ss_steal 584 20 0 1838 0 0
-ss_error ss_steal 591 55 0 1848
-printf ss_steal 610 20 0 1838 0 0
+ss_error ss_top 494 28 0 1842
+rng_showstate ss_top 497 53 350 338 1819
+printf ss_top 497 95 0 1843 0 0 350 0 0
+ss_error ss_pop 507 28 0 1842
+rng_showstate ss_pop 511 53 407 395 1819
+printf ss_pop 511 95 0 1843 0 0 407 0 0
+ss_error ss_topPosn 520 28 0 1846
+ss_error ss_release 533 107 0 1841
+ss_error ss_steal 567 34 0 1848
+ss_error ss_steal 570 36 0 1849
+printf ss_steal 574 20 0 1842 0 0
+printf ss_steal 584 20 0 1842 0 0
+ss_error ss_steal 591 55 0 1852
+printf ss_steal 610 20 0 1842 0 0
 memcpy ss_steal 621 5 0 716 742 0
-rng_showstate ss_steal 629 43 724 716 1815
-printf ss_steal 629 85 0 1850 0 0 0 724 0 0 0 742
-printf ss_steal 646 7 0 1851 0 0 0 0 0 0
+rng_showstate ss_steal 629 43 724 716 1819
+printf ss_steal 629 85 0 1854 0 0 0 724 0 0 0 742
+printf ss_steal 646 7 0 1855 0 0 0 0 0 0
 uts_wctime ss_initState 674 17 0
-printf ss_initState 680 19 0 1852 0 0 0
-ss_error ss_setState 687 33 0 1853
+printf ss_initState 680 19 0 1856 0 0 0
+ss_error ss_setState 687 33 0 1857
 uts_wctime ss_setState 691 10 0
-printf ss_setState 715 19 0 1854 0 0 0 0
+printf ss_setState 715 19 0 1858 0 0 0 0
 uts_initRoot initRootNode 912 3 0 964 0
 uts_numChildren genChildren 959 17 0 1081
 uts_childType genChildren 960 15 0 1081
 ss_topPosn genChildren 965 36 0 1083
-rng_showstate genChildren 965 86 1014 1081 1815
-printf genChildren 965 133 0 1855 0 0 1014 0 0
+rng_showstate genChildren 965 86 1014 1081 1819
+printf genChildren 965 133 0 1859 0 0 1014 0 0
 rng_spawn genChildren 986 9 0 1081 1082 0
 ss_push genChildren 988 7 0 1083 1082
 releaseNodes genChildren 989 7 0 1083
@@ -53,56 +53,56 @@ ss_release releaseNodes 1101 7 0 1122 0
 ss_setState releaseNodes 1104 9 0 1122 0
 cbarrier_cancel releaseNodes 1105 9 0
 ss_setState releaseNodes 1114 7 0 1122 0
-printf cb_init 1008 19 0 1838 0 1127
-printf cbarrier_wait 1044 20 0 1858 0 0 0
-printf cbarrier_wait 1059 20 0 1859 0 0 0 0
-printf cbarrier_wait 1075 20 0 1858 0 0 0
+printf cb_init 1008 19 0 1842 0 1127
+printf cbarrier_wait 1044 20 0 1862 0 0 0
+printf cbarrier_wait 1059 20 0 1863 0 0 0 0
+printf cbarrier_wait 1075 20 0 1862 0 0 0
 initNode parTreeSearch 1131 3 0 1249
-ss_localDepth parTreeSearch 1136 22 0 1347
-ss_setState parTreeSearch 1140 7 0 1347 0
-ss_top parTreeSearch 1143 16 1282 1347
-genChildren parTreeSearch 1146 2 0 1282 1249 1347
-ss_pop parTreeSearch 1155 9 0 1347
-releaseNodes parTreeSearch 1160 7 0 1347
-ss_localDepth parTreeSearch 1161 20 0 1347
-checkpoint parTreeSearch 1164 7 0
-ss_acquire parTreeSearch 1172 9 0 1347 0
-ss_setState parTreeSearch 1181 7 0 1347 0
-findwork parTreeSearch 1182 18 0 0
-ss_steal parTreeSearch 1185 14 0 1347 0 0
-findwork parTreeSearch 1186 30 0 0
-ss_setState parTreeSearch 1198 5 0 1347 0
-cbarrier_wait parTreeSearch 1199 12 0
-printf showStats 1270 5 0 1861
-uts_showStats showStats 1273 3 0 0 0 0 0 0 0
-printf showStats 1277 7 0 1863 0 0 0
-printf showStats 1279 7 0 1864 0
-printf showStats 1282 5 0 1838 0
-printf showStats 1283 5 0 1866 0 0 0
-printf showStats 1285 5 0 1833 0 0
-printf showStats 1292 7 0 1868 0
-printf showStats 1293 7 0 1869 0
-printf showStats 1294 7 0 1869 0
-printf showStats 1295 7 0 1869 0
-printf showStats 1296 7 0 1869 0
-printf showStats 1297 7 0 1869 0
-printf showStats 1298 7 0 1869 0
-printf showStats 1299 7 0 1834 0 0
-printf showStats 1301 7 0 1834 0 0
-printf showStats 1303 7 0 1834 0 0
-printf showStats 1305 7 0 1834 0 0
-printf showStats 1307 7 0 1832 0 0 0
-printf showStats 1310 7 0 1880
-uts_parseParams main 1370 3 0 0 1806
-cb_init main 1378 3 0
-uts_printParams main 1388 7 0
-malloc main 1411 37 1158 0
-ss_init main 1413 5 0 1158 0
-initRootNode main 1418 7 0 1758 0
-ss_push main 1419 7 0 1158 1758
-ss_initState main 1427 5 0 1158
-uts_wctime main 1428 10 0
-parTreeSearch main 1429 5 0 1158
+ss_localDepth parTreeSearch 1136 22 0 1351
+ss_setState parTreeSearch 1140 7 0 1351 0
+ss_top parTreeSearch 1143 16 1282 1351
+genChildren parTreeSearch 1146 2 0 1282 1249 1351
+ss_pop parTreeSearch 1155 9 0 1351
+releaseNodes parTreeSearch 1160 7 0 1351
+ss_localDepth parTreeSearch 1161 20 0 1351
+checkpoint parTreeSearch 1165 11 0
+ss_acquire parTreeSearch 1174 9 0 1351 0
+ss_setState parTreeSearch 1183 7 0 1351 0
+findwork parTreeSearch 1184 18 0 0
+ss_steal parTreeSearch 1187 14 0 1351 0 0
+findwork parTreeSearch 1188 30 0 0
+ss_setState parTreeSearch 1200 5 0 1351 0
+cbarrier_wait parTreeSearch 1201 12 0
+printf showStats 1272 5 0 1865
+uts_showStats showStats 1275 3 0 0 0 0 0 0 0
+printf showStats 1279 7 0 1867 0 0 0
+printf showStats 1281 7 0 1868 0
+printf showStats 1284 5 0 1842 0
+printf showStats 1285 5 0 1870 0 0 0
+printf showStats 1287 5 0 1837 0 0
+printf showStats 1294 7 0 1872 0
+printf showStats 1295 7 0 1873 0
+printf showStats 1296 7 0 1873 0
+printf showStats 1297 7 0 1873 0
+printf showStats 1298 7 0 1873 0
+printf showStats 1299 7 0 1873 0
+printf showStats 1300 7 0 1873 0
+printf showStats 1301 7 0 1838 0 0
+printf showStats 1303 7 0 1838 0 0
+printf showStats 1305 7 0 1838 0 0
+printf showStats 1307 7 0 1838 0 0
+printf showStats 1309 7 0 1836 0 0 0
+printf showStats 1312 7 0 1884
+uts_parseParams main 1372 3 0 0 1810
+cb_init main 1380 3 0
+uts_printParams main 1390 7 0
+malloc main 1413 37 1158 0
+ss_init main 1415 5 0 1158 0
+initRootNode main 1420 7 0 1762 0
+ss_push main 1421 7 0 1158 1762
+ss_initState main 1429 5 0 1158
 uts_wctime main 1430 10 0
-showStats main 1443 7 0 0
-printf main 1448 3 0 1882
+parTreeSearch main 1431 5 0 1158
+uts_wctime main 1432 10 0
+showStats main 1445 7 0 0
+printf main 1450 3 0 1886

@@ -202,9 +202,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 75 19
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 82 8 len=19 get_sphere_intersec_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 83 370  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 101 8 len=18 get_cos_angle_v1v2_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 22 ({ calling_npm("modv", 0UL, 0, 3, 0UL, 0UL, 0UL); modv_npm(v1x, v1y, v1z); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 22 ({ calling_npm("modv", 0); modv_npm(v1x, v1y, v1z); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 40 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 22 ({ calling_npm("modv", 0UL, 0, 3, 0UL, 0UL, 0UL); modv_npm(v2x, v2y, v2z); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 22 ({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 40 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 102 264  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 108 6 len=5 usage_quick
@@ -212,40 +212,40 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 108 1
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 114 6 len=19 parse_three_doubles_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 114 351  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 128 6 len=12 parse_config_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 156 17 ({ calling_npm("parse_three_doubles", 0UL, 0, 4, 14467987423866750207UL, 14467987423866750184UL, 14467987423866750184UL, 14467987423866750184UL); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 156 17 ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 156 79 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 159 17 ({ calling_npm("parse_three_doubles", 0UL, 0, 4, 14467987423866750207UL, 14467987423866750184UL, 14467987423866750184UL, 14467987423866750184UL); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 159 17 ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 159 76 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 162 17 ({ calling_npm("parse_three_doubles", 0UL, 0, 4, 14467987423866750207UL, 14467987423866750184UL, 14467987423866750184UL, 14467987423866750184UL); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 162 17 ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 162 76 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 165 17 ({ calling_npm("parse_three_doubles", 0UL, 0, 4, 14467987423866750207UL, 14467987423866750184UL, 14467987423866750184UL, 14467987423866750184UL); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 165 17 ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 165 76 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 192 17 ({ calling_npm("init", 0UL, 0, 8, 14467987423866750538UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 192 17 ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 195 65 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 204 13 ({ calling_npm("usage", 0UL, 0, 1, 14467987423866750245UL); usage_npm(argv); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 204 13 ({ calling_npm("usage", 0); usage_npm(argv); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 204 23 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 128 263  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 209 5 len=4 main_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 216 14 ;  { call_lbl_6:  bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 219 47 if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; }
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 282 7  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  reenable_current_thread(____chimes_disable0);  } 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 211 5 ({ calling_npm("parse_config", 0UL, 0, 3, 0UL, 14467987423866750727UL, 14467987423866750256UL); parse_config_npm(argc, argv, &conf); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 211 5 ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 211 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 220 26 ({ calling_npm("get_coord", 0UL, 0, 5, 0UL, 0UL, 0UL, 0UL, 0UL); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 220 26 ({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 220 75 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 221 26 ({ calling_npm("get_coord", 0UL, 0, 5, 0UL, 0UL, 0UL, 0UL, 0UL); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 221 26 ({ calling_npm("get_coord", 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 221 75 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 227 34 ({ calling_npm("modv", 0UL, 0, 3, 0UL, 0UL, 0UL); modv_npm(vx, vy, vz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 227 34 ({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 227 49 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 236 34 ({ calling_npm("get_sphere_intersec", 0UL, 0, 10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 236 34 ({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 236 135 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 251 38 ({ calling_npm("get_sphere_intersec", 0UL, 0, 10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 251 38 ({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 251 192 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 258 42 ({ calling_npm("get_sphere_intersec", 0UL, 0, 10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 258 42 ({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 258 180 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 268 34 ({ calling_npm("get_cos_angle_v1v2", 0UL, 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 268 34 ({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 268 141 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 285 11 ({ calling_npm("move", 0UL, 0, 4, 14467987423866750538UL, 0UL, 0UL, 0UL); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 285 11 ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 285 62 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 289 22 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 289 33 
@@ -342,9 +342,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 75 19
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 82 8 len=19 get_sphere_intersec_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 83 370  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 101 8 len=18 get_cos_angle_v1v2_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 22 ({ calling_npm("modv", 0UL, 0, 3, 0UL, 0UL, 0UL); modv_npm(v1x, v1y, v1z); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 22 ({ calling_npm("modv", 0); modv_npm(v1x, v1y, v1z); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 103 40 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 22 ({ calling_npm("modv", 0UL, 0, 3, 0UL, 0UL, 0UL); modv_npm(v2x, v2y, v2z); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 22 ({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 104 40 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 102 264  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 108 6 len=5 usage_resumable
@@ -352,40 +352,40 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 108 1
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 114 6 len=19 parse_three_doubles_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 114 351  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 128 6 len=12 parse_config_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 156 17 ({ calling_npm("parse_three_doubles", 0UL, 0, 4, 14467987423866750207UL, 14467987423866750184UL, 14467987423866750184UL, 14467987423866750184UL); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 156 17 ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 156 79 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 159 17 ({ calling_npm("parse_three_doubles", 0UL, 0, 4, 14467987423866750207UL, 14467987423866750184UL, 14467987423866750184UL, 14467987423866750184UL); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 159 17 ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 159 76 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 162 17 ({ calling_npm("parse_three_doubles", 0UL, 0, 4, 14467987423866750207UL, 14467987423866750184UL, 14467987423866750184UL, 14467987423866750184UL); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 162 17 ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 162 76 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 165 17 ({ calling_npm("parse_three_doubles", 0UL, 0, 4, 14467987423866750207UL, 14467987423866750184UL, 14467987423866750184UL, 14467987423866750184UL); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 165 17 ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 165 76 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 192 17 ({ calling_npm("init", 0UL, 0, 8, 14467987423866750538UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 192 17 ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 195 65 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 204 13 ({ calling_npm("usage", 0UL, 0, 1, 14467987423866750245UL); usage_npm(argv); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 204 13 ({ calling_npm("usage", 0); usage_npm(argv); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 204 23 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 128 263  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 209 5 len=4 main_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 216 14 ;  { call_lbl_6:  bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 219 47 if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; }
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 282 7  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  reenable_current_thread(____chimes_disable0);  } 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 211 5 ({ calling_npm("parse_config", 0UL, 0, 3, 0UL, 14467987423866750727UL, 14467987423866750256UL); parse_config_npm(argc, argv, &conf); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 211 5 ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 211 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 220 26 ({ calling_npm("get_coord", 0UL, 0, 5, 0UL, 0UL, 0UL, 0UL, 0UL); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 220 26 ({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 220 75 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 221 26 ({ calling_npm("get_coord", 0UL, 0, 5, 0UL, 0UL, 0UL, 0UL, 0UL); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 221 26 ({ calling_npm("get_coord", 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 221 75 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 227 34 ({ calling_npm("modv", 0UL, 0, 3, 0UL, 0UL, 0UL); modv_npm(vx, vy, vz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 227 34 ({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 227 49 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 236 34 ({ calling_npm("get_sphere_intersec", 0UL, 0, 10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 236 34 ({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 236 135 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 251 38 ({ calling_npm("get_sphere_intersec", 0UL, 0, 10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 251 38 ({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 251 192 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 258 42 ({ calling_npm("get_sphere_intersec", 0UL, 0, 10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 258 42 ({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 258 180 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 268 34 ({ calling_npm("get_cos_angle_v1v2", 0UL, 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 268 34 ({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 268 141 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 285 11 ({ calling_npm("move", 0UL, 0, 4, 14467987423866750538UL, 0UL, 0UL, 0UL); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 285 11 ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 285 62 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 289 22 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/ray_tracer.c 289 33 

@@ -28,30 +28,30 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ra
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 9  jj = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 28 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 21 8 len=6 gasdev_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 26 16 ({ calling_npm("lcg61", 0UL, 0, 1, 13245176871248214027UL); lcg61_npm(seed); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 26 16 ({ calling_npm("lcg61", 0); lcg61_npm(seed); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 26 26 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 27 16 ({ calling_npm("lcg61", 0UL, 0, 1, 13245176871248214027UL); lcg61_npm(seed); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 27 16 ({ calling_npm("lcg61", 0); lcg61_npm(seed); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 27 26 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 22 140  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 41 8 len=5 lcg61_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 42 137  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 65 10 len=6 mkSeed_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 57 ({ calling_npm("lcg61", 0UL, 0, 1, 13245176871248214090UL); lcg61_npm(&iSeed); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 57 ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 69 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 19 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 66 136  ; uint64_t iSeed;
  if (____must_checkpoint_mkSeed_iSeed_0) { register_stack_vars(1, "mkSeed|iSeed|0", &____must_checkpoint_mkSeed_iSeed_0, "i64", (void *)(&iSeed), (size_t)8, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 21 8 len=6 gasdev_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 26 16 ({ calling_npm("lcg61", 0UL, 0, 1, 13245176871248214027UL); lcg61_npm(seed); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 26 16 ({ calling_npm("lcg61", 0); lcg61_npm(seed); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 26 26 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 27 16 ({ calling_npm("lcg61", 0UL, 0, 1, 13245176871248214027UL); lcg61_npm(seed); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 27 16 ({ calling_npm("lcg61", 0); lcg61_npm(seed); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 27 26 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 22 140  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 41 8 len=5 lcg61_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 42 137  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 65 10 len=6 mkSeed_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 57 ({ calling_npm("lcg61", 0UL, 0, 1, 13245176871248214090UL); lcg61_npm(&iSeed); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 57 ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 71 69 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c 70 19 

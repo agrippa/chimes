@@ -1161,7 +1161,9 @@ void parTreeSearch(StealStack *ss) {
       localDepth = ss_localDepth(ss);
 
 #ifdef __CHIMES_SUPPORT
-      checkpoint();
+      if (localDepth > 120) {
+          checkpoint();
+      }
 #endif
     }
 

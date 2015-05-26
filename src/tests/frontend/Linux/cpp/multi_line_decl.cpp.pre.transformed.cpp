@@ -38,19 +38,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -86,7 +85,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1479,7 +1478,7 @@ int a;
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
 # 15 "/home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 16 "/home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return ({ calling_npm("foo", 0UL, 0, 2, 0UL, 0UL); foo_npm(ptr[0], a); });
+    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return ({ calling_npm("foo", 0); foo_npm(ptr[0], a); });
 # 17 "/home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 }
 int foo_quick(int a, int b) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ;
@@ -1504,7 +1503,7 @@ int a;
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
 # 15 "/home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 # 16 "/home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return ({ calling_npm("foo", 0UL, 0, 2, 0UL, 0UL); foo_npm(ptr[0], a); });
+    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return ({ calling_npm("foo", 0); foo_npm(ptr[0], a); });
 # 17 "/home/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp"
 }
 
@@ -1523,7 +1522,7 @@ int foo_npm(int a, int b) {
 
 
 static int module_init() {
-    init_module(15843130262758070555UL, 2, 2, 0, 2, 1, 0, 1, 0,
+    init_module(15843130262758070555UL, 2, 2, 0, 2, 1, 0, 1, 1, 0, 0,
                            &____alias_loc_id_0, (unsigned)6, (unsigned)0, (15843130262758070555UL + 15UL), (15843130262758070555UL + 16UL), (15843130262758070555UL + 17UL), (15843130262758070555UL + 18UL), (15843130262758070555UL + 19UL), (15843130262758070555UL + 28UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (15843130262758070555UL + 1UL), (15843130262758070555UL + 2UL),
                             "foo", (void *)(&foo_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 0,
@@ -1531,7 +1530,8 @@ static int module_init() {
                              (15843130262758070555UL + 19UL), (15843130262758070555UL + 28UL),
                              (15843130262758070555UL + 17UL), (15843130262758070555UL + 42UL),
                              "main", 2, "checkpoint", "foo",
-                             "foo", 0);
+                             "foo", 0,
+        "foo", 0UL, (int)2, 0UL, 0UL);
     register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }

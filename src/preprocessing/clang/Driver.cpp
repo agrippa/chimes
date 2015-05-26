@@ -89,6 +89,9 @@ static llvm::cl::opt<std::string> list_of_externs_file("g",
 static llvm::cl::opt<std::string> function_pointers_loaded_file("j",
         llvm::cl::desc("Function pointers loaded file"),
         llvm::cl::value_desc("function_pointers_loaded_file"));
+static llvm::cl::opt<std::string> merge_file("u",
+        llvm::cl::desc("Merge file"),
+        llvm::cl::value_desc("merge_file"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -104,6 +107,26 @@ std::set<std::string> npm_functions;
 std::map<std::string, ExternalNPMCall> external_calls;
 std::set<std::string> definitions_in_main_file;
 std::set<std::string> function_pointers_loaded;
+std::string merge_filename;
+std::vector<Merge> static_merges;
+std::vector<Merge> dynamic_merges;
+
+static void writeMerges(std::vector<Merge> *l, std::string suffix) {
+    std::ofstream out(merge_filename + suffix);
+    for (std::vector<Merge>::iterator i = l->begin(), e = l->end();
+            i != e; i++) {
+        Merge merge = *i;
+        std::vector<size_t> param_aliases = merge.get_parent_param_aliases();
+        out << merge.get_callee_name() << " " <<
+            merge.get_parent_return_alias();
+        for (std::vector<size_t>::iterator ii = param_aliases.begin(),
+                ee = param_aliases.end(); ii != ee; ii++) {
+            out << " " << *ii;
+        }
+        out << "\n";
+    }
+    out.close();
+}
 
 static std::vector<std::string> created_vars;
 static std::string current_output_file;
@@ -478,6 +501,9 @@ int main(int argc, const char **argv) {
   check_opt(loc_file, "Alias locs dump file");
   check_opt(list_of_externs_file, "List of externs file");
   check_opt(function_pointers_loaded_file, "Function pointers loaded file");
+  check_opt(merge_file, "Merge file");
+
+  merge_filename = std::string(merge_file.c_str());
 
   ignorable = new std::set<std::string>();
   char *chimes_home = getenv("CHIMES_HOME");
@@ -680,6 +706,9 @@ int main(int argc, const char **argv) {
       function_pointers_out << *i << "\n";
   }
   function_pointers_out.close();
+
+  writeMerges(&static_merges, ".static");
+  writeMerges(&dynamic_merges, ".dynamic");
 
   delete insertions;
 

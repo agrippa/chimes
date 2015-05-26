@@ -30,6 +30,9 @@ extern std::map<std::string, std::set<string>> func_to_alias_locs;
 extern std::set<std::string> npm_functions;
 extern std::map<std::string, ExternalNPMCall> external_calls;
 extern std::set<string> definitions_in_main_file;
+extern std::string merge_filename;
+extern std::vector<Merge> static_merges;
+extern std::vector<Merge> dynamic_merges;
 
 extern std::string constructMangledName(std::string varname);
 
@@ -829,7 +832,7 @@ std::string CallingAndOMPPass::generateFunctionPointerCall(const CallExpr *call,
 
     ss << "((" << fptr_type << ")(translate_fptr((void *)" <<
         stmtToString(call->getCallee()) << ", " << lbl.get_lbl() << ", " <<
-        callsite.get_return_alias() << "UL, " << loc_arg << ", " <<
+        loc_arg << ", " << callsite.get_return_alias() << "UL, " <<
         callsite.nparams();
 
     for (int i = 0; i < callsite.nparams(); i++) {
@@ -853,13 +856,16 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
     std::stringstream ss;
     std::string loc_arg = get_loc_arg(call);
 
-    ss << "({ calling_npm(\"" << loc.get_funcname() << "\", " <<
-        callsite.get_return_alias() << "UL, " << loc_arg << ", " <<
-        callsite.nparams();
-    for (int i = 0; i < callsite.nparams(); i++) {
-        ss << ", " << callsite.alias_no_for(i) << "UL";
-    }
-    ss << "); ";
+    ss << "({ calling_npm(\"" << loc.get_funcname() << "\", " << loc_arg <<
+        "); ";
+
+    // ss << "({ calling_npm(\"" << loc.get_funcname() << "\", " <<
+    //     callsite.get_return_alias() << "UL, " << loc_arg << ", " <<
+    //     callsite.nparams();
+    // for (int i = 0; i < callsite.nparams(); i++) {
+    //     ss << ", " << callsite.alias_no_for(i) << "UL";
+    // }
+    // ss << "); ";
 
     if (use_function_pointer) {
         ss << "(*" << get_external_func_name(loc.get_funcname()) << ")(";
@@ -920,16 +926,31 @@ std::string CallingAndOMPPass::generateNormalCall(const CallExpr *call,
 
     std::string loc_arg = get_loc_arg(call);
 
-    ss << " calling((void*)" <<
-        func_symbol << ", " << lbl.get_lbl() << ", " <<
-        callsite.get_return_alias() << "UL, " << loc_arg <<
-        ", " << callsite.nparams();
+    ss << " calling((void*)" << func_symbol << ", " << lbl.get_lbl() << ", " <<
+        loc_arg << ", " << callsite.get_return_alias() << "UL, " <<
+        callsite.nparams();
     for (unsigned a = 0; a < callsite.nparams(); a++) {
         ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
     }
     ss << "); ";
 
     return (" ({ " + ss.str() + replace_func_call.str() + "; }) ");
+}
+
+void CallingAndOMPPass::addDynamicMerge(AliasesPassedToCallSite callsite,
+        std::string callee_name) {
+    if (!gen_quick) {
+        dynamic_merges.push_back(Merge(callee_name,
+                    callsite.get_return_alias(), callsite.get_param_aliases()));
+    }
+}
+
+void CallingAndOMPPass::addStaticMerge(AliasesPassedToCallSite callsite,
+        std::string callee_name) {
+    if (!gen_quick) {
+        static_merges.push_back(Merge(callee_name,
+                    callsite.get_return_alias(), callsite.get_param_aliases()));
+    }
 }
 
 void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
@@ -1169,14 +1190,40 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                         loc.get_funcname());
                 bool calls_unknown = insertions->calls_unknown_functions(
                         loc.get_funcname());
+                /*
+                 * This block handles functions that are within this compilation
+                 * unit and have been converted to NPM mode. This is the
+                 * simplest case, and allows us to simply emit a direct call to
+                 * that function.
+                 */
                 if (is_converted_to_npm && no_checkpoint) {
                     std::string npm_call = generateNPMCall(loc, callsite, call,
                             false);
                     ReplaceText(clang::SourceRange(call->getLocStart(),
                                 call->getLocEnd()), npm_call);
+
+                    addStaticMerge(callsite, loc.get_funcname());
+
                     continue;
                 }
 
+                /*
+                 * This block handles function calls which we may be able to run
+                 * in NPM mode, but we're not sure (generally because one of the
+                 * nested callees is defined externally). This either generates
+                 * a direct call to the NPM version of the immediate child (if
+                 * it is in the same compilation unit) or a call to a function
+                 * pointer which will be populated with the NPM version from
+                 * another compilation unit if it is possible to make this call.
+                 * In either case, this call is conditional on a boolean set at
+                 * runtime which indicates if this call can ever create a
+                 * checkpoint. If false, we do the NPM version.
+                 *
+                 * If this function is defined in the same compilation unit we
+                 * can do the merge statically. If it is defined externally, we
+                 * conditionally do the merge at runtime if we find a definition
+                 * for it.
+                 */
                 if (call->getDirectCallee() && !always_checkpoints &&
                         !calls_unknown &&
                         insertions->have_main_in_call_tree() &&
@@ -1197,9 +1244,22 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     ReplaceText(clang::SourceRange(call->getLocStart(),
                                 call->getLocEnd()), cond_call);
                     ompTree->add_function_call(call, lbl.get_lbl());
+
+                    if (is_converted_to_npm) {
+                        // Local, static
+                        addStaticMerge(callsite, loc.get_funcname());
+                    } else {
+                        // External, dynamic
+                        addDynamicMerge(callsite, loc.get_funcname());
+                    }
+
                     continue;
                 }
 
+                /*
+                 * This block handles translating function pointers at runtime
+                 * dynamically to their NPM equivalent.
+                 */
                 if (!call->getDirectCallee()) {
                     std::string ptr_call = generateFunctionPointerCall(call,
                             loc, callsite, lbl);

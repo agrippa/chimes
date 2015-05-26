@@ -38,19 +38,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -86,7 +85,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1502,7 +1501,7 @@ int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3143038279463763211UL)) ; void *tmp;
  register_stack_vars(1, "main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 15 "/home/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
-       tmp = (({ calling_npm("haha_this_sux_part_trois", 3143038279463763202UL, 0, 0); haha_this_sux_part_trois_npm(); })) ;
+       tmp = (({ calling_npm("haha_this_sux_part_trois", 0); haha_this_sux_part_trois_npm(); })) ;
 # 16 "/home/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
 # 17 "/home/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
@@ -1530,7 +1529,7 @@ void *haha_this_sux_part_trois() { return (____chimes_replaying ? haha_this_sux_
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(3143038279463763211UL)) ; void *tmp;
  register_stack_vars(1, "main|tmp|0", (int *)0x0, "i8*", (void *)(&tmp), (size_t)8, 1, 0, 0); ; ;
 # 15 "/home/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
-       tmp = (({ calling_npm("haha_this_sux_part_trois", 3143038279463763202UL, 0, 0); haha_this_sux_part_trois_npm(); })) ;
+       tmp = (({ calling_npm("haha_this_sux_part_trois", 0); haha_this_sux_part_trois_npm(); })) ;
 # 16 "/home/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
 # 17 "/home/jmg3/num-debug/src/examples/cpp/func_with_two_ptr_returns.cpp"
@@ -1563,7 +1562,7 @@ void *haha_this_sux_part_trois_npm() {
 
 
 static int module_init() {
-    init_module(3143038279463763169UL, 4, 2, 0, 2, 1, 0, 1, 0,
+    init_module(3143038279463763169UL, 4, 2, 0, 2, 1, 0, 1, 1, 0, 0,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)0, (3143038279463763169UL + 23UL), (3143038279463763169UL + 24UL), (3143038279463763169UL + 25UL), (3143038279463763169UL + 26UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (3143038279463763169UL + 1UL), (3143038279463763169UL + 2UL),
                             "haha_this_sux_part_trois", (void *)(&haha_this_sux_part_trois_npm), (void *)__null, 0, 0, (3143038279463763169UL + 43UL), 1, "malloc", 1, 0UL, (3143038279463763169UL + 43UL),
@@ -1573,7 +1572,8 @@ static int module_init() {
                              (3143038279463763169UL + 26UL), (3143038279463763169UL + 33UL),
                              (3143038279463763169UL + 2UL), (3143038279463763169UL + 43UL),
                              "main", 2, "haha_this_sux_part_trois", "checkpoint",
-                             "haha_this_sux_part_trois", 0);
+                             "haha_this_sux_part_trois", 0,
+        "haha_this_sux_part_trois", 3143038279463763202UL, (int)0);
     register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }

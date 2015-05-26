@@ -38,19 +38,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -86,7 +85,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1514,7 +1513,7 @@ int *A;
        B = ((int *)malloc_wrapper(sizeof(int) * 10, 638021315089237314UL, 0, 0)) ;
 # 20 "/home/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 21 "/home/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-    ({ calling_npm("bar", 0UL, 0, 2, 638021315089237294UL, 638021315089237314UL); bar_npm(A, B); });
+    ({ calling_npm("bar", 0); bar_npm(A, B); });
 # 22 "/home/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
      call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
 # 23 "/home/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
@@ -1557,7 +1556,7 @@ int *A;
        B = ((int *)malloc_wrapper(sizeof(int) * 10, 638021315089237314UL, 0, 0)) ;
 # 20 "/home/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
 # 21 "/home/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
-    ({ calling_npm("bar", 0UL, 0, 2, 638021315089237294UL, 638021315089237314UL); bar_npm(A, B); });
+    ({ calling_npm("bar", 0); bar_npm(A, B); });
 # 22 "/home/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
      call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
 # 23 "/home/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp"
@@ -1599,7 +1598,7 @@ void bar_npm(int *A, int *B) {
 
 
 static int module_init() {
-    init_module(638021315089237258UL, 5, 2, 0, 2, 1, 0, 1, 0,
+    init_module(638021315089237258UL, 5, 2, 0, 2, 1, 0, 1, 1, 0, 0,
                            &____alias_loc_id_0, (unsigned)5, (unsigned)1, (638021315089237258UL + 25UL), (638021315089237258UL + 26UL), (638021315089237258UL + 27UL), (638021315089237258UL + 28UL), (638021315089237258UL + 29UL), "bar", (unsigned)2, (638021315089237258UL + 36UL), (638021315089237258UL + 56UL),
                            &____alias_loc_id_1, (unsigned)4, (unsigned)0, (638021315089237258UL + 1UL), (638021315089237258UL + 2UL), (638021315089237258UL + 21UL), (638021315089237258UL + 22UL),
                             "bar", (void *)(&bar_npm), (void *)__null, 0, 2, (638021315089237258UL + 21UL), (638021315089237258UL + 22UL), 0UL, 0,
@@ -1610,7 +1609,8 @@ static int module_init() {
                              (638021315089237258UL + 28UL), (638021315089237258UL + 36UL),
                              (638021315089237258UL + 29UL), (638021315089237258UL + 56UL),
                              "main", 2, "bar", "checkpoint",
-                             "bar", 0);
+                             "bar", 0,
+        "bar", 0UL, (int)2, 638021315089237294UL, 638021315089237314UL);
     register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }

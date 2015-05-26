@@ -71,19 +71,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -119,7 +118,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2923,11 +2922,11 @@ void rng_init_resumable(RNG_state *newstate, int seed)
   gen.state[19] = 0xFF & (seed >> 0);
 # 61 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 62 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207045UL); sha1_begin_npm(&ctx); });
+  ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 63 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207046UL, 0UL, 1633707214412207045UL); sha1_hash_npm(gen.state, 20, &ctx); });
+  ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
 # 64 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207105UL, 1633707214412207045UL); sha1_end_npm(newstate, &ctx); });
+  ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 65 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0); }
 # 66 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2954,13 +2953,13 @@ struct sha1_ctx_s ctx;
  bytes[3] = 0xFF & spawnnumber;
 # 76 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 77 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207480UL); sha1_begin_npm(&ctx); });
+ ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 78 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207521UL, 0UL, 1633707214412207480UL); sha1_hash_npm(mystate, 20, &ctx); });
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
 # 79 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207481UL, 0UL, 1633707214412207480UL); sha1_hash_npm(bytes, 4, &ctx); });
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
 # 80 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207522UL, 1633707214412207480UL); sha1_end_npm(newstate, &ctx); });
+ ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 81 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1); }
 # 82 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2996,11 +2995,11 @@ int rng_nextrand_resumable(RNG_state *mystate){const int ____chimes_did_disable3
  uint32 b; ;
 # 98 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 99 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207564UL); sha1_begin_npm(&ctx); });
+ ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 100 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207608UL, 0UL, 1633707214412207564UL); sha1_hash_npm(mystate, 20, &ctx); });
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
 # 101 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207608UL, 1633707214412207564UL); sha1_end_npm(mystate, &ctx); });
+ ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
 # 102 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
 # 103 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -3172,7 +3171,7 @@ void sha1_hash_resumable(const unsigned char data[], unsigned long len, sha1_ctx
 # 276 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
         { int _i; _i = ((64 >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
 # 277 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-        ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207287UL); sha1_compile_npm(ctx); });
+        ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
 # 278 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     }
 # 279 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -3207,7 +3206,7 @@ void sha1_end_resumable(unsigned char hval[], sha1_ctx ctx[1])
 # 301 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 302 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 303 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-    if (i > 64 - 9) {{ if (i < 60) ctx->wbuf[15] = 0; ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207476UL); sha1_compile_npm(ctx); }); i = 0; }; } else {i = (i >> 2) + 1; } ;
+    if (i > 64 - 9) {{ if (i < 60) ctx->wbuf[15] = 0; ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); }); i = 0; }; } else {i = (i >> 2) + 1; } ;
 # 311 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 312 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     while(i < 14)
@@ -3223,7 +3222,7 @@ void sha1_end_resumable(unsigned char hval[], sha1_ctx ctx[1])
 # 320 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[15] = ctx->count[0] << 3;
 # 321 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-    ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207476UL); sha1_compile_npm(ctx); });
+    ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
 # 322 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 323 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 324 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -3241,7 +3240,7 @@ void sha1_resumable(unsigned char hval[], const unsigned char data[], unsigned l
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; ;
 # 331 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 332 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-    ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412211970UL); sha1_begin_npm(cx); }); ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412211989UL, 0UL, 1633707214412211970UL); sha1_hash_npm(data, len, cx); }); ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412211988UL, 1633707214412211970UL); sha1_end_npm(hval, cx); });
+    ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
 # 333 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10); }
 void rng_init_quick(RNG_state *newstate, int seed)
@@ -3267,11 +3266,11 @@ void rng_init_quick(RNG_state *newstate, int seed)
   gen.state[19] = 0xFF & (seed >> 0);
 # 61 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 62 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207045UL); sha1_begin_npm(&ctx); });
+  ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 63 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207046UL, 0UL, 1633707214412207045UL); sha1_hash_npm(gen.state, 20, &ctx); });
+  ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
 # 64 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-  ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207105UL, 1633707214412207045UL); sha1_end_npm(newstate, &ctx); });
+  ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 65 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0); }
 
@@ -3297,13 +3296,13 @@ struct sha1_ctx_s ctx;
  bytes[3] = 0xFF & spawnnumber;
 # 76 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 77 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207480UL); sha1_begin_npm(&ctx); });
+ ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 78 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207521UL, 0UL, 1633707214412207480UL); sha1_hash_npm(mystate, 20, &ctx); });
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
 # 79 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207481UL, 0UL, 1633707214412207480UL); sha1_hash_npm(bytes, 4, &ctx); });
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
 # 80 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207522UL, 1633707214412207480UL); sha1_end_npm(newstate, &ctx); });
+ ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 81 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1); }
 
@@ -3337,11 +3336,11 @@ int rng_nextrand_quick(RNG_state *mystate){const int ____chimes_did_disable3 = n
  uint32 b; ;
 # 98 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 99 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207564UL); sha1_begin_npm(&ctx); });
+ ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
 # 100 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207608UL, 0UL, 1633707214412207564UL); sha1_hash_npm(mystate, 20, &ctx); });
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
 # 101 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207608UL, 1633707214412207564UL); sha1_end_npm(mystate, &ctx); });
+ ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
 # 102 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
 # 103 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -3507,7 +3506,7 @@ void sha1_hash_quick(const unsigned char data[], unsigned long len, sha1_ctx ctx
 # 276 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
         { int _i; _i = ((64 >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
 # 277 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-        ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207287UL); sha1_compile_npm(ctx); });
+        ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
 # 278 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     }
 # 279 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -3541,7 +3540,7 @@ void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1])
 # 301 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 302 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 303 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-    if (i > 64 - 9) {{ if (i < 60) ctx->wbuf[15] = 0; ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207476UL); sha1_compile_npm(ctx); }); i = 0; }; } else {i = (i >> 2) + 1; } ;
+    if (i > 64 - 9) {{ if (i < 60) ctx->wbuf[15] = 0; ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); }); i = 0; }; } else {i = (i >> 2) + 1; } ;
 # 311 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 312 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     while(i < 14)
@@ -3557,7 +3556,7 @@ void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1])
 # 320 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->wbuf[15] = ctx->count[0] << 3;
 # 321 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-    ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207476UL); sha1_compile_npm(ctx); });
+    ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
 # 322 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 323 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 324 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -3574,7 +3573,7 @@ void sha1_quick(unsigned char hval[], const unsigned char data[], unsigned long 
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } ; ; ;
 # 331 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 332 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-    ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412211970UL); sha1_begin_npm(cx); }); ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412211989UL, 0UL, 1633707214412211970UL); sha1_hash_npm(data, len, cx); }); ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412211988UL, 1633707214412211970UL); sha1_end_npm(hval, cx); });
+    ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
 # 333 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10); }
 
@@ -3900,7 +3899,7 @@ void sha1_npm(unsigned char hval[], const unsigned char data[], unsigned long le
 
 
 static int module_init() {
-    init_module(1633707214412207042UL, 18, 11, 4, 11, 11, 0, 11, 2,
+    init_module(1633707214412207042UL, 18, 11, 4, 11, 11, 0, 11, 16, 0, 2,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)3, (1633707214412207042UL + 1UL), (1633707214412207042UL + 2UL), (1633707214412207042UL + 4UL), (1633707214412207042UL + 5UL), "sha1_end", (unsigned)2, (1633707214412207042UL + 3UL), (1633707214412207042UL + 63UL), "sha1_begin", (unsigned)1, (1633707214412207042UL + 3UL), "sha1_hash", (unsigned)2, (1633707214412207042UL + 3UL), (1633707214412207042UL + 4UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (1633707214412207042UL + 67UL), (1633707214412207042UL + 99UL),
                            &____alias_loc_id_2, (unsigned)8, (unsigned)1, (1633707214412207042UL + 100UL), (1633707214412207042UL + 101UL), (1633707214412207042UL + 102UL), (1633707214412207042UL + 103UL), (1633707214412207042UL + 104UL), (1633707214412207042UL + 105UL), (1633707214412207042UL + 106UL), (1633707214412207042UL + 245UL), "sha1_compile", (unsigned)1, (1633707214412207042UL + 245UL),
@@ -3968,7 +3967,23 @@ static int module_init() {
                         "rng_init|ctx|0", 1, "rng_init",
                         "rng_spawn|ctx|0", 1, "rng_spawn",
                         "rng_nextrand|ctx|0", 1, "rng_nextrand",
-                        "sha1|cx|0", 1, "sha1");
+                        "sha1|cx|0", 1, "sha1",
+        "sha1_begin", 0UL, (int)1, 1633707214412207045UL,
+        "sha1_hash", 0UL, (int)3, 1633707214412207046UL, 0UL, 1633707214412207045UL,
+        "sha1_end", 0UL, (int)2, 1633707214412207105UL, 1633707214412207045UL,
+        "sha1_begin", 0UL, (int)1, 1633707214412207480UL,
+        "sha1_hash", 0UL, (int)3, 1633707214412207521UL, 0UL, 1633707214412207480UL,
+        "sha1_hash", 0UL, (int)3, 1633707214412207481UL, 0UL, 1633707214412207480UL,
+        "sha1_end", 0UL, (int)2, 1633707214412207522UL, 1633707214412207480UL,
+        "sha1_begin", 0UL, (int)1, 1633707214412207564UL,
+        "sha1_hash", 0UL, (int)3, 1633707214412207608UL, 0UL, 1633707214412207564UL,
+        "sha1_end", 0UL, (int)2, 1633707214412207608UL, 1633707214412207564UL,
+        "sha1_compile", 0UL, (int)1, 1633707214412207287UL,
+        "sha1_compile", 0UL, (int)1, 1633707214412207476UL,
+        "sha1_compile", 0UL, (int)1, 1633707214412207476UL,
+        "sha1_begin", 0UL, (int)1, 1633707214412211970UL,
+        "sha1_hash", 0UL, (int)3, 1633707214412211989UL, 0UL, 1633707214412211970UL,
+        "sha1_end", 0UL, (int)2, 1633707214412211988UL, 1633707214412211970UL);
     register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }

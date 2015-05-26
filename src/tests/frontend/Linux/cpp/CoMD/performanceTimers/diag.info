@@ -143,29 +143,29 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 303 4  call_lbl_7: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 306 39  call_lbl_8: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 92 6 len=12 profileStart_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 94 30 ({ calling_npm("getTime", 0UL, 0, 0); getTime_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 94 30 ({ calling_npm("getTime", 0); getTime_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 94 38 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 93 139  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 97 6 len=11 profileStop_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 100 31 ({ calling_npm("getTime", 0UL, 0, 0); getTime_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 100 31 ({ calling_npm("getTime", 0); getTime_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 100 39 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 98 136  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 108 8 len=14 getElapsedTime_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 110 29 ({ calling_npm("getTick", 0UL, 0, 0); getTick_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 110 29 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 110 37 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 109 145  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 120 6 len=23 printPerformanceResults_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 123 17  ({  calling((void*)timerStats, 1, 0UL, ____alias_loc_id_0, 0); (timerStats)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 123 17  ({  calling((void*)timerStats, 1, ____alias_loc_id_0, 0UL, 0); (timerStats)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 123 28 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 125 22  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 125 22  ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 125 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 129 27 ({ calling_npm("getTick", 0UL, 0, 0); getTick_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 129 27 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 129 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 132 76  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 132 76  ({  calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 132 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 147 76  ({  calling((void*)getNRanks, 9, 0UL, 0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 147 76  ({  calling((void*)getNRanks, 9, 0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 147 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 160 121  ({  calling((void*)getNRanks, 15, 0UL, 0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 160 121  ({  calling((void*)getNRanks, 15, 0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 160 131 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 129 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 129 16 
@@ -190,13 +190,13 @@ double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0 || ____must_checkpoint_printPerformanceResults_totalTime_0 || ____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0 || ____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(5, "printPerformanceResults|____chimes_unroll_var_1|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0, "i32", (void *)(&____chimes_unroll_var_1), (size_t)4, 0, 0, 0, "printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0, "printPerformanceResults|____chimes_unroll_var_0|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 180 6 len=27 printPerformanceResultsYaml_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 64  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 64  ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 74 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 185 27 ({ calling_npm("getTick", 0UL, 0, 0); getTick_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 185 27 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 185 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 76  ({  calling((void*)getNRanks, 5, 0UL, 0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 76  ({  calling((void*)getNRanks, 5, 0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 191 76  ({  calling((void*)getMyRank, 8, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 191 76  ({  calling((void*)getMyRank, 8, 0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 191 86 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 185 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 185 16 
@@ -216,19 +216,19 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performa
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 257 15 len=7 getTick_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 258 109  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 264 6 len=10 timerStats_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 271 17  ({  calling((void*)addDoubleParallel, 1, 0UL, ____alias_loc_id_4, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 271 17  ({  calling((void*)addDoubleParallel, 1, ____alias_loc_id_4, 0UL, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 271 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 273 160  ({  calling((void*)getNRanks, 3, 0UL, 0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 273 160  ({  calling((void*)getNRanks, 3, 0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 273 170 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 282 45  ({  calling((void*)getMyRank, 4, 0UL, ____alias_loc_id_6, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 282 45  ({  calling((void*)getMyRank, 4, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 282 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 284 17  ({  calling((void*)minRankDoubleParallel, 5, 0UL, ____alias_loc_id_7, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 284 17  ({  calling((void*)minRankDoubleParallel, 5, ____alias_loc_id_7, 0UL, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 284 83 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 290 17  ({  calling((void*)maxRankDoubleParallel, 6, 0UL, ____alias_loc_id_8, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 290 17  ({  calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_8, 0UL, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 290 83 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 303 17  ({  calling((void*)addDoubleParallel, 7, 0UL, ____alias_loc_id_9, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 303 17  ({  calling((void*)addDoubleParallel, 7, ____alias_loc_id_9, 0UL, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 303 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 306 79  ({  calling((void*)getNRanks, 8, 0UL, 0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 306 79  ({  calling((void*)getNRanks, 8, 0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 306 89 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 266 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 266 22 
@@ -268,29 +268,29 @@ double recvBuf[11];
 double sendBuf[11];
  if (____must_checkpoint_timerStats_____chimes_unroll_var_4_0 || ____must_checkpoint_timerStats_temp_0 || ____must_checkpoint_timerStats_reduceSendBuf_0 || ____must_checkpoint_timerStats_sendBuf_0) { register_stack_vars(4, "timerStats|____chimes_unroll_var_4|0", &____must_checkpoint_timerStats_____chimes_unroll_var_4_0, "i32", (void *)(&____chimes_unroll_var_4), (size_t)4, 0, 0, 0, "timerStats|temp|0", &____must_checkpoint_timerStats_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0, "timerStats|reduceSendBuf|0", &____must_checkpoint_timerStats_reduceSendBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0, "timerStats|sendBuf|0", &____must_checkpoint_timerStats_sendBuf_0, "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 92 6 len=12 profileStart_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 94 30 ({ calling_npm("getTime", 0UL, 0, 0); getTime_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 94 30 ({ calling_npm("getTime", 0); getTime_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 94 38 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 93 139  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 97 6 len=11 profileStop_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 100 31 ({ calling_npm("getTime", 0UL, 0, 0); getTime_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 100 31 ({ calling_npm("getTime", 0); getTime_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 100 39 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 98 136  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 108 8 len=14 getElapsedTime_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 110 29 ({ calling_npm("getTick", 0UL, 0, 0); getTick_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 110 29 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 110 37 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 109 145  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 120 6 len=23 printPerformanceResults_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 123 17  ({  calling((void*)timerStats, 1, 0UL, ____alias_loc_id_0, 0); (timerStats)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 123 17  ({  calling((void*)timerStats, 1, ____alias_loc_id_0, 0UL, 0); (timerStats)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 123 28 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 125 22  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 125 22  ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 125 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 129 27 ({ calling_npm("getTick", 0UL, 0, 0); getTick_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 129 27 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 129 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 132 76  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 132 76  ({  calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 132 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 147 76  ({  calling((void*)getNRanks, 9, 0UL, 0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 147 76  ({  calling((void*)getNRanks, 9, 0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 147 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 160 121  ({  calling((void*)getNRanks, 15, 0UL, 0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 160 121  ({  calling((void*)getNRanks, 15, 0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 160 131 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 129 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 129 16 
@@ -315,13 +315,13 @@ double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0 || ____must_checkpoint_printPerformanceResults_totalTime_0 || ____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0 || ____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(5, "printPerformanceResults|____chimes_unroll_var_1|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0, "i32", (void *)(&____chimes_unroll_var_1), (size_t)4, 0, 0, 0, "printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0, "printPerformanceResults|____chimes_unroll_var_0|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) { goto lbl_0; }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 180 6 len=27 printPerformanceResultsYaml_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 64  ({  calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 64  ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 74 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 185 27 ({ calling_npm("getTick", 0UL, 0, 0); getTick_npm(); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 185 27 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 185 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 76  ({  calling((void*)getNRanks, 5, 0UL, 0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 76  ({  calling((void*)getNRanks, 5, 0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 191 76  ({  calling((void*)getMyRank, 8, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 191 76  ({  calling((void*)getMyRank, 8, 0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 191 86 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 185 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 185 16 
@@ -341,19 +341,19 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performa
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 257 15 len=7 getTick_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 258 109  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 264 6 len=10 timerStats_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 271 17  ({  calling((void*)addDoubleParallel, 1, 0UL, ____alias_loc_id_4, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 271 17  ({  calling((void*)addDoubleParallel, 1, ____alias_loc_id_4, 0UL, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 271 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 273 160  ({  calling((void*)getNRanks, 3, 0UL, 0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 273 160  ({  calling((void*)getNRanks, 3, 0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 273 170 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 282 45  ({  calling((void*)getMyRank, 4, 0UL, ____alias_loc_id_6, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 282 45  ({  calling((void*)getMyRank, 4, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 282 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 284 17  ({  calling((void*)minRankDoubleParallel, 5, 0UL, ____alias_loc_id_7, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 284 17  ({  calling((void*)minRankDoubleParallel, 5, ____alias_loc_id_7, 0UL, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 284 83 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 290 17  ({  calling((void*)maxRankDoubleParallel, 6, 0UL, ____alias_loc_id_8, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 290 17  ({  calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_8, 0UL, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 290 83 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 303 17  ({  calling((void*)addDoubleParallel, 7, 0UL, ____alias_loc_id_9, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 303 17  ({  calling((void*)addDoubleParallel, 7, ____alias_loc_id_9, 0UL, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 303 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 306 79  ({  calling((void*)getNRanks, 8, 0UL, 0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 306 79  ({  calling((void*)getNRanks, 8, 0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 306 89 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 266 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 266 22 

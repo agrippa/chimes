@@ -121,15 +121,13 @@ void init_chimes() {
     }
 }
 
-
-void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...) {
+void calling_npm(const char *name, unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling_npm, 1);
 #endif
 }
 
-void calling(void *func_ptr, int lbl, size_t set_return_alias, unsigned loc_id,
+void calling(void *func_ptr, int lbl, unsigned loc_id, size_t set_return_alias,
         unsigned naliases, ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling, 1);
@@ -155,8 +153,8 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
     return 1;
 }
 
-void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...) {
+void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
+        int n_params, ...) {
     map<void *, void *>::iterator exists = original_function_to_npm.find(fptr);
     if (exists != original_function_to_npm.end()) {
         return exists->second;
@@ -165,10 +163,10 @@ void *translate_fptr(void *fptr, int lbl, size_t return_alias,
     }
 }
 
-void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...) {
+void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...) {
     va_list vl;
     va_start(vl, nstructs);
 

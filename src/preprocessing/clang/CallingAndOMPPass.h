@@ -10,6 +10,28 @@
 
 #include "ParentTransform.h"
 
+class Merge {
+    public:
+        Merge(std::string set_callee_name,
+                size_t set_parent_return_alias,
+                std::vector<size_t> set_parent_param_aliases) :
+            callee_name(set_callee_name),
+            parent_return_alias(set_parent_return_alias),
+            parent_param_aliases(set_parent_param_aliases) { }
+
+        std::string get_callee_name() { return callee_name; }
+        size_t get_parent_return_alias() { return parent_return_alias; }
+        int n_param_aliases() { return parent_param_aliases.size(); }
+        std::vector<size_t> get_parent_param_aliases() {
+            return parent_param_aliases;
+        }
+
+    private:
+        std::string callee_name;
+        size_t parent_return_alias;
+        std::vector<size_t> parent_param_aliases;
+};
+
 class DeclarationInfo {
     public:
         DeclarationInfo(const clang::DeclStmt *set_decl,
@@ -166,6 +188,11 @@ private:
     int arg_counter = 0;
 
     bool gen_quick;
+
+    void addStaticMerge(AliasesPassedToCallSite callsite,
+            std::string callee_name);
+    void addDynamicMerge(AliasesPassedToCallSite callsite,
+            std::string callee_name);
 };
 
 #endif

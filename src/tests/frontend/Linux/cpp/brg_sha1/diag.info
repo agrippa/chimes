@@ -90,24 +90,24 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 183
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 186  sha1_ctx cx[1]; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 200 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 49 6 len=8 rng_init_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 62 3 ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207045UL); sha1_begin_npm(&ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 62 3 ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 62 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 63 3 ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207046UL, 0UL, 1633707214412207045UL); sha1_hash_npm(gen.state, 20, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 63 3 ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 63 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 64 3 ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207105UL, 1633707214412207045UL); sha1_end_npm(newstate, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 64 3 ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 64 26 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 51 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 51 25 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 50 160  ; struct sha1_ctx_s ctx;
  if (____must_checkpoint_rng_init_ctx_0) { register_stack_vars(1, "rng_init|ctx|0", &____must_checkpoint_rng_init_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 67 6 len=9 rng_spawn_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 77 2 ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207480UL); sha1_begin_npm(&ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 77 2 ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 77 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 78 2 ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207521UL, 0UL, 1633707214412207480UL); sha1_hash_npm(mystate, 20, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 78 2 ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 78 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 79 2 ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207481UL, 0UL, 1633707214412207480UL); sha1_hash_npm(bytes, 4, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 79 2 ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 79 26 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 80 2 ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207522UL, 1633707214412207480UL); sha1_end_npm(newstate, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 80 2 ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 80 25 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 69 3 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 69 24 
@@ -119,11 +119,11 @@ struct sha1_ctx_s ctx;
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 83 5 len=8 rng_rand_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 83 177  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 94 5 len=12 rng_nextrand_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 99 2 ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207564UL); sha1_begin_npm(&ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 99 2 ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 99 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 100 2 ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207608UL, 0UL, 1633707214412207564UL); sha1_hash_npm(mystate, 20, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 100 2 ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 100 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 101 2 ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207608UL, 1633707214412207564UL); sha1_end_npm(mystate, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 101 2 ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 101 24 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 95 3 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 95 24 
@@ -138,45 +138,45 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 19
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 251 6 len=10 sha1_begin_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 252 151  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 264 6 len=9 sha1_hash_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 277 9 ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207287UL); sha1_compile_npm(ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 277 9 ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 277 25 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 265 196  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 285 6 len=8 sha1_end_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 303 71 ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207476UL); sha1_compile_npm(ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 303 71 ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 303 87 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 321 5 ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207476UL); sha1_compile_npm(ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 321 5 ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 321 21 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 286 178  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 329 6 len=4 sha1_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 5 ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412211970UL); sha1_begin_npm(cx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 5 ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 21 ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412211989UL, 0UL, 1633707214412211970UL); sha1_hash_npm(data, len, cx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 21 ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 47 ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412211988UL, 1633707214412211970UL); sha1_end_npm(hval, cx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 47 ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 64 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 189 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 203 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 182  ; sha1_ctx cx[1];
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 49 6 len=8 rng_init_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 62 3 ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207045UL); sha1_begin_npm(&ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 62 3 ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 62 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 63 3 ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207046UL, 0UL, 1633707214412207045UL); sha1_hash_npm(gen.state, 20, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 63 3 ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 63 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 64 3 ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207105UL, 1633707214412207045UL); sha1_end_npm(newstate, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 64 3 ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 64 26 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 51 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 51 25 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 50 160  ; struct sha1_ctx_s ctx;
  if (____must_checkpoint_rng_init_ctx_0) { register_stack_vars(1, "rng_init|ctx|0", &____must_checkpoint_rng_init_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 67 6 len=9 rng_spawn_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 77 2 ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207480UL); sha1_begin_npm(&ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 77 2 ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 77 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 78 2 ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207521UL, 0UL, 1633707214412207480UL); sha1_hash_npm(mystate, 20, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 78 2 ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 78 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 79 2 ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207481UL, 0UL, 1633707214412207480UL); sha1_hash_npm(bytes, 4, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 79 2 ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 79 26 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 80 2 ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207522UL, 1633707214412207480UL); sha1_end_npm(newstate, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 80 2 ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 80 25 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 69 3 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 69 24 
@@ -188,11 +188,11 @@ struct sha1_ctx_s ctx;
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 83 5 len=8 rng_rand_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 83 177  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 94 5 len=12 rng_nextrand_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 99 2 ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412207564UL); sha1_begin_npm(&ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 99 2 ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 99 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 100 2 ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412207608UL, 0UL, 1633707214412207564UL); sha1_hash_npm(mystate, 20, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 100 2 ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 100 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 101 2 ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412207608UL, 1633707214412207564UL); sha1_end_npm(mystate, &ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 101 2 ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 101 24 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 95 3 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 95 24 
@@ -207,21 +207,21 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 19
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 251 6 len=10 sha1_begin_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 252 151  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 264 6 len=9 sha1_hash_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 277 9 ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207287UL); sha1_compile_npm(ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 277 9 ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 277 25 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 265 196  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 285 6 len=8 sha1_end_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 303 71 ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207476UL); sha1_compile_npm(ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 303 71 ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 303 87 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 321 5 ({ calling_npm("sha1_compile", 0UL, 0, 1, 1633707214412207476UL); sha1_compile_npm(ctx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 321 5 ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 321 21 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 286 178  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 329 6 len=4 sha1_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 5 ({ calling_npm("sha1_begin", 0UL, 0, 1, 1633707214412211970UL); sha1_begin_npm(cx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 5 ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 18 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 21 ({ calling_npm("sha1_hash", 0UL, 0, 3, 1633707214412211989UL, 0UL, 1633707214412211970UL); sha1_hash_npm(data, len, cx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 21 ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 47 ({ calling_npm("sha1_end", 0UL, 0, 2, 1633707214412211988UL, 1633707214412211970UL); sha1_end_npm(hval, cx); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 47 ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 332 64 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 189 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 203 

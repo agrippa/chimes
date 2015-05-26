@@ -242,6 +242,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -e ${INFO_FILE_PREFIX}.locs \
             -g ${INFO_FILE_PREFIX}.list_of_externs \
             -j ${INFO_FILE_PREFIX}.fptrs \
+            -u ${INFO_FILE_PREFIX}.merge \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -290,7 +291,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -x ${INFO_FILE_PREFIX}.exit.info -f ${INFO_FILE_PREFIX}.func.info \
         -e ${INFO_FILE_PREFIX}.list_of_externs -n ${INFO_FILE_PREFIX}.npm.decls \
         -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs \
-        -j ${INFO_FILE_PREFIX}.fptrs
+        -j ${INFO_FILE_PREFIX}.fptrs -ms ${INFO_FILE_PREFIX}.merge.static \
+        -md ${INFO_FILE_PREFIX}.merge.dynamic
 
     echo Postprocessing ${FINAL_FILE}
     cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \

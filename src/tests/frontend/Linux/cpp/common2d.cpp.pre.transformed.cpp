@@ -57,19 +57,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -105,7 +104,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4298,7 +4297,7 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
     opterr = 0;
 # 74 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 75 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-    ({ calling_npm("default_config", 0UL, 0, 1, 14525082970080978713UL); default_config_npm(conf); });
+    ({ calling_npm("default_config", 0); default_config_npm(conf); });
 # 76 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 77 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
     while ((c = getopt(argc, argv, "x:y:z:i:svr:tp:g:w:d")) != -1) {
@@ -4341,7 +4340,7 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 96 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
                         (conf->nsrcs + 1), 14525082970080978643UL, 0, 1, (int)sizeof(struct _source), 0);
 # 97 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-                 call_lbl_6: ({ source * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 6, 0UL, ____alias_loc_id_0, 2, (size_t)(14525082970080978615UL), (size_t)(14525082970080978643UL)); (parse_source)(optarg, ____chimes_arg1); }) ;
+                 call_lbl_6: ({ source * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs); } calling((void*)parse_source, 6, ____alias_loc_id_0, 0UL, 2, (size_t)(14525082970080978615UL), (size_t)(14525082970080978643UL)); (parse_source)(optarg, ____chimes_arg1); }) ;
 # 98 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
                 conf->nsrcs++;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -4377,7 +4376,7 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 114 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
             default:
 # 115 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-                ({ calling_npm("usage", 0UL, 0, 1, 14525082970080978715UL); usage_npm(argv); });
+                ({ calling_npm("usage", 0); usage_npm(argv); });
 # 116 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
         }
 # 117 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -4386,7 +4385,7 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 119 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
     if (conf->ngpus == -1) {
 # 120 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-         call_lbl_11: conf->ngpus = ({ calling((void*)getNumCUDADevices, 11, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) ;
+         call_lbl_11: conf->ngpus = ({ calling((void*)getNumCUDADevices, 11, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
     }
 # 122 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -4525,7 +4524,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
     opterr = 0;
 # 74 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 75 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-    ({ calling_npm("default_config", 0UL, 0, 1, 14525082970080978713UL); default_config_npm(conf); });
+    ({ calling_npm("default_config", 0); default_config_npm(conf); });
 # 76 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
 # 77 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
     while ((c = getopt(argc, argv, "x:y:z:i:svr:tp:g:w:d")) != -1) {
@@ -4568,7 +4567,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 96 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
                         (conf->nsrcs + 1), 14525082970080978643UL, 0, 1, (int)sizeof(struct _source), 0);
 # 97 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-                 call_lbl_6: ({ calling((void*)parse_source, 6, 0UL, ____alias_loc_id_0, 2, (size_t)(14525082970080978615UL), (size_t)(14525082970080978643UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) ;
+                 call_lbl_6: ({ calling((void*)parse_source, 6, ____alias_loc_id_0, 0UL, 2, (size_t)(14525082970080978615UL), (size_t)(14525082970080978643UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) ;
 # 98 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
                 conf->nsrcs++;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -4604,7 +4603,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 114 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
             default:
 # 115 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-                ({ calling_npm("usage", 0UL, 0, 1, 14525082970080978715UL); usage_npm(argv); });
+                ({ calling_npm("usage", 0); usage_npm(argv); });
 # 116 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
         }
 # 117 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -4613,7 +4612,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 119 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
     if (conf->ngpus == -1) {
 # 120 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
-         call_lbl_11: conf->ngpus = ({ calling((void*)getNumCUDADevices, 11, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) ;
+         call_lbl_11: conf->ngpus = ({ calling((void*)getNumCUDADevices, 11, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) ;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
     }
 # 122 "/home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp"
@@ -4841,7 +4840,7 @@ void setup_config_npm(config *conf, int argc, char **argv) {
 
 
 static int module_init() {
-    init_module(14525082970080978307UL, 16, 5, 4, 7, 5, 2, 7, 4,
+    init_module(14525082970080978307UL, 16, 5, 4, 7, 5, 2, 7, 2, 0, 4,
                            &____alias_loc_id_0, (unsigned)6, (unsigned)3, (14525082970080978307UL + 285UL), (14525082970080978307UL + 286UL), (14525082970080978307UL + 287UL), (14525082970080978307UL + 288UL), (14525082970080978307UL + 406UL), (14525082970080978307UL + 423UL), "usage", (unsigned)1, (14525082970080978307UL + 408UL), "parse_source", (unsigned)2, (14525082970080978307UL + 308UL), (14525082970080978307UL + 336UL), "default_config", (unsigned)1, (14525082970080978307UL + 406UL),
                            &____alias_loc_id_1, (unsigned)6, (unsigned)3, (14525082970080978307UL + 285UL), (14525082970080978307UL + 286UL), (14525082970080978307UL + 287UL), (14525082970080978307UL + 288UL), (14525082970080978307UL + 406UL), (14525082970080978307UL + 423UL), "usage", (unsigned)1, (14525082970080978307UL + 408UL), "parse_source", (unsigned)2, (14525082970080978307UL + 308UL), (14525082970080978307UL + 336UL), "default_config", (unsigned)1, (14525082970080978307UL + 406UL),
                            &____alias_loc_id_2, (unsigned)10, (unsigned)0, (14525082970080978307UL + 1UL), (14525082970080978307UL + 2UL), (14525082970080978307UL + 3UL), (14525082970080978307UL + 4UL), (14525082970080978307UL + 5UL), (14525082970080978307UL + 6UL), (14525082970080978307UL + 7UL), (14525082970080978307UL + 8UL), (14525082970080978307UL + 9UL), (14525082970080978307UL + 10UL),
@@ -4891,7 +4890,9 @@ static int module_init() {
                         "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices",
                         "setup_config|argc|0", 2, "parse_source", "getNumCUDADevices",
                         "setup_config|argv|0", 2, "parse_source", "getNumCUDADevices",
-                        "setup_config|c|0", 2, "parse_source", "getNumCUDADevices");
+                        "setup_config|c|0", 2, "parse_source", "getNumCUDADevices",
+        "default_config", 0UL, (int)1, 14525082970080978713UL,
+        "usage", 0UL, (int)1, 14525082970080978715UL);
     register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }

@@ -189,19 +189,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -237,7 +236,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4809,22 +4808,22 @@ void CalcElemNodeNormals_resumable(Real_t pfx[8],
    } }
 # 674 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 675 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[1], &pfy[1], &pfz[1], &pfx[2], &pfy[2], &pfz[2], &pfx[3], &pfy[3], &pfz[3], x[0], y[0], z[0], x[1], y[1], z[1], x[2], y[2], z[2], x[3], y[3], z[3]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[1], &pfy[1], &pfz[1], &pfx[2], &pfy[2], &pfz[2], &pfx[3], &pfy[3], &pfz[3], x[0], y[0], z[0], x[1], y[1], z[1], x[2], y[2], z[2], x[3], y[3], z[3]); });
 # 681 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 682 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[4], &pfy[4], &pfz[4], &pfx[5], &pfy[5], &pfz[5], &pfx[1], &pfy[1], &pfz[1], x[0], y[0], z[0], x[4], y[4], z[4], x[5], y[5], z[5], x[1], y[1], z[1]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[4], &pfy[4], &pfz[4], &pfx[5], &pfy[5], &pfz[5], &pfx[1], &pfy[1], &pfz[1], x[0], y[0], z[0], x[4], y[4], z[4], x[5], y[5], z[5], x[1], y[1], z[1]); });
 # 688 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 689 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[1], &pfy[1], &pfz[1], &pfx[5], &pfy[5], &pfz[5], &pfx[6], &pfy[6], &pfz[6], &pfx[2], &pfy[2], &pfz[2], x[1], y[1], z[1], x[5], y[5], z[5], x[6], y[6], z[6], x[2], y[2], z[2]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[1], &pfy[1], &pfz[1], &pfx[5], &pfy[5], &pfz[5], &pfx[6], &pfy[6], &pfz[6], &pfx[2], &pfy[2], &pfz[2], x[1], y[1], z[1], x[5], y[5], z[5], x[6], y[6], z[6], x[2], y[2], z[2]); });
 # 695 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 696 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[2], &pfy[2], &pfz[2], &pfx[6], &pfy[6], &pfz[6], &pfx[7], &pfy[7], &pfz[7], &pfx[3], &pfy[3], &pfz[3], x[2], y[2], z[2], x[6], y[6], z[6], x[7], y[7], z[7], x[3], y[3], z[3]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[2], &pfy[2], &pfz[2], &pfx[6], &pfy[6], &pfz[6], &pfx[7], &pfy[7], &pfz[7], &pfx[3], &pfy[3], &pfz[3], x[2], y[2], z[2], x[6], y[6], z[6], x[7], y[7], z[7], x[3], y[3], z[3]); });
 # 702 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 703 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[3], &pfy[3], &pfz[3], &pfx[7], &pfy[7], &pfz[7], &pfx[4], &pfy[4], &pfz[4], &pfx[0], &pfy[0], &pfz[0], x[3], y[3], z[3], x[7], y[7], z[7], x[4], y[4], z[4], x[0], y[0], z[0]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[3], &pfy[3], &pfz[3], &pfx[7], &pfy[7], &pfz[7], &pfx[4], &pfy[4], &pfz[4], &pfx[0], &pfy[0], &pfz[0], x[3], y[3], z[3], x[7], y[7], z[7], x[4], y[4], z[4], x[0], y[0], z[0]); });
 # 709 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 710 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[4], &pfy[4], &pfz[4], &pfx[7], &pfy[7], &pfz[7], &pfx[6], &pfy[6], &pfz[6], &pfx[5], &pfy[5], &pfz[5], x[4], y[4], z[4], x[7], y[7], z[7], x[6], y[6], z[6], x[5], y[5], z[5]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[4], &pfy[4], &pfz[4], &pfx[7], &pfy[7], &pfz[7], &pfx[6], &pfy[6], &pfz[6], &pfx[5], &pfy[5], &pfz[5], x[4], y[4], z[4], x[7], y[7], z[7], x[6], y[6], z[6], x[5], y[5], z[5]); });
 # 716 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 rm_stack(false, 0UL, "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, ____alias_loc_id_45, ____chimes_did_disable11); }
 # 717 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -4988,13 +4987,13 @@ Real_t B[3][8];
 # 796 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 797 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 798 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("CalcElemShapeFunctionDerivatives", 0UL, 0, 5, 4706087171927570104UL, 4706087171927570105UL, 4706087171927570106UL, 4706087171927570103UL, 4706087171927570292UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &determ[k]); });
+    ({ calling_npm("CalcElemShapeFunctionDerivatives", 0); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &determ[k]); });
 # 800 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 801 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("CalcElemNodeNormals", 0UL, 0, 6, 4706087171927570103UL, 4706087171927570103UL, 4706087171927570103UL, 4706087171927570104UL, 4706087171927570105UL, 4706087171927570106UL); CalcElemNodeNormals_npm(B[0], B[1], B[2], x_local, y_local, z_local); });
+    ({ calling_npm("CalcElemNodeNormals", 0); CalcElemNodeNormals_npm(B[0], B[1], B[2], x_local, y_local, z_local); });
 # 803 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 804 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("SumElemStressesToNodeForces", 0UL, 0, 7, 4706087171927570103UL, 0UL, 0UL, 0UL, 4706087171927570107UL, 4706087171927570108UL, 4706087171927570109UL); SumElemStressesToNodeForces_npm(B, sigxx[k], sigyy[k], sigzz[k], fx_local, fy_local, fz_local); }) ;
+    ({ calling_npm("SumElemStressesToNodeForces", 0); SumElemStressesToNodeForces_npm(B, sigxx[k], sigyy[k], sigzz[k], fx_local, fy_local, fz_local); }) ;
 # 806 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 807 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 808 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -5178,21 +5177,21 @@ void CalcElemVolumeDerivative_resumable(Real_t dvdx[8],
 # 899 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {const int ____chimes_did_disable16 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(4706087171927571297UL), (size_t)(4706087171927571298UL), (size_t)(4706087171927571299UL), (size_t)(4706087171927571300UL), (size_t)(4706087171927571301UL), (size_t)(4706087171927571302UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 900 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[1], x[2], x[3], x[4], x[5], x[7], y[1], y[2], y[3], y[4], y[5], y[7], z[1], z[2], z[3], z[4], z[5], z[7], &dvdx[0], &dvdy[0], &dvdz[0]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[1], x[2], x[3], x[4], x[5], x[7], y[1], y[2], y[3], y[4], y[5], y[7], z[1], z[2], z[3], z[4], z[5], z[7], &dvdx[0], &dvdy[0], &dvdz[0]); });
 # 904 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[0], x[1], x[2], x[7], x[4], x[6], y[0], y[1], y[2], y[7], y[4], y[6], z[0], z[1], z[2], z[7], z[4], z[6], &dvdx[3], &dvdy[3], &dvdz[3]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[0], x[1], x[2], x[7], x[4], x[6], y[0], y[1], y[2], y[7], y[4], y[6], z[0], z[1], z[2], z[7], z[4], z[6], &dvdx[3], &dvdy[3], &dvdz[3]); });
 # 908 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[3], x[0], x[1], x[6], x[7], x[5], y[3], y[0], y[1], y[6], y[7], y[5], z[3], z[0], z[1], z[6], z[7], z[5], &dvdx[2], &dvdy[2], &dvdz[2]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[3], x[0], x[1], x[6], x[7], x[5], y[3], y[0], y[1], y[6], y[7], y[5], z[3], z[0], z[1], z[6], z[7], z[5], &dvdx[2], &dvdy[2], &dvdz[2]); });
 # 912 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[2], x[3], x[0], x[5], x[6], x[4], y[2], y[3], y[0], y[5], y[6], y[4], z[2], z[3], z[0], z[5], z[6], z[4], &dvdx[1], &dvdy[1], &dvdz[1]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[2], x[3], x[0], x[5], x[6], x[4], y[2], y[3], y[0], y[5], y[6], y[4], z[2], z[3], z[0], z[5], z[6], z[4], &dvdx[1], &dvdy[1], &dvdz[1]); });
 # 916 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[7], x[6], x[5], x[0], x[3], x[1], y[7], y[6], y[5], y[0], y[3], y[1], z[7], z[6], z[5], z[0], z[3], z[1], &dvdx[4], &dvdy[4], &dvdz[4]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[7], x[6], x[5], x[0], x[3], x[1], y[7], y[6], y[5], y[0], y[3], y[1], z[7], z[6], z[5], z[0], z[3], z[1], &dvdx[4], &dvdy[4], &dvdz[4]); });
 # 920 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[4], x[7], x[6], x[1], x[0], x[2], y[4], y[7], y[6], y[1], y[0], y[2], z[4], z[7], z[6], z[1], z[0], z[2], &dvdx[5], &dvdy[5], &dvdz[5]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[4], x[7], x[6], x[1], x[0], x[2], y[4], y[7], y[6], y[1], y[0], y[2], z[4], z[7], z[6], z[1], z[0], z[2], &dvdx[5], &dvdy[5], &dvdz[5]); });
 # 924 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[5], x[4], x[7], x[2], x[1], x[3], y[5], y[4], y[7], y[2], y[1], y[3], z[5], z[4], z[7], z[2], z[1], z[3], &dvdx[6], &dvdy[6], &dvdz[6]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[5], x[4], x[7], x[2], x[1], x[3], y[5], y[4], y[7], y[2], y[1], y[3], z[5], z[4], z[7], z[2], z[1], z[3], &dvdx[6], &dvdy[6], &dvdz[6]); });
 # 928 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[6], x[5], x[4], x[3], x[2], x[0], y[6], y[5], y[4], y[3], y[2], y[0], z[6], z[5], z[4], z[3], z[2], z[0], &dvdx[7], &dvdy[7], &dvdz[7]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[6], x[5], x[4], x[3], x[2], x[0], y[6], y[5], y[4], y[3], y[2], y[0], z[6], z[5], z[4], z[3], z[2], z[0], &dvdx[7], &dvdy[7], &dvdz[7]); });
 # 932 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 rm_stack(false, 0UL, "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, ____alias_loc_id_40, ____chimes_did_disable16); }
 # 933 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -5705,7 +5704,7 @@ Real_t hgfx[8];
 # 1241 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       mass1=mesh.elemMass[i2];
 # 1242 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      volume13=({ calling_npm("CBRT", 0UL, 0, 1, 0UL); CBRT_npm(determ[i2]); });
+      volume13=({ calling_npm("CBRT", 0); CBRT_npm(determ[i2]); });
 # 1243 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1244 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
        Index_t n0si2; n0si2 = (elemToNode[0]) ;
@@ -5779,7 +5778,7 @@ Real_t hgfx[8];
       coefficient = - hourg * Real_t(0.01) * ss1 * mass1 / volume13;
 # 1281 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1282 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcElemFBHourglassForce", 0UL, 0, 15, 4706087171927571325UL, 4706087171927571326UL, 4706087171927571327UL, 4706087171927571317UL, 4706087171927571318UL, 4706087171927571319UL, 4706087171927571320UL, 4706087171927571321UL, 4706087171927571322UL, 4706087171927571323UL, 4706087171927571324UL, 0UL, 4706087171927571312UL, 4706087171927571313UL, 4706087171927571314UL); CalcElemFBHourglassForce_npm(xd1, yd1, zd1, hourgam0, hourgam1, hourgam2, hourgam3, hourgam4, hourgam5, hourgam6, hourgam7, coefficient, hgfx, hgfy, hgfz); });
+      ({ calling_npm("CalcElemFBHourglassForce", 0); CalcElemFBHourglassForce_npm(xd1, yd1, zd1, hourgam0, hourgam1, hourgam2, hourgam3, hourgam4, hourgam5, hourgam6, hourgam7, coefficient, hgfx, hgfy, hgfz); });
 # 1286 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1287 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       mesh.fx[n0si2] += hgfx[0];
@@ -5885,10 +5884,10 @@ Real_t x1[8];
 # 1339 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
        Index_t *elemToNode; elemToNode = (&mesh.nodelist[8 * i]) ;
 # 1340 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CollectDomainNodesToElemNodes", 0UL, 0, 4, 4706087171927564237UL, 4706087171927570298UL, 4706087171927570299UL, 4706087171927570300UL); CollectDomainNodesToElemNodes_npm(elemToNode, x1, y1, z1); });
+      ({ calling_npm("CollectDomainNodesToElemNodes", 0); CollectDomainNodesToElemNodes_npm(elemToNode, x1, y1, z1); });
 # 1341 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1342 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcElemVolumeDerivative", 0UL, 0, 6, 4706087171927570301UL, 4706087171927570302UL, 4706087171927570303UL, 4706087171927570298UL, 4706087171927570299UL, 4706087171927570300UL); CalcElemVolumeDerivative_npm(pfx, pfy, pfz, x1, y1, z1); });
+      ({ calling_npm("CalcElemVolumeDerivative", 0); CalcElemVolumeDerivative_npm(pfx, pfy, pfz, x1, y1, z1); });
 # 1343 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1344 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1345 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -5927,7 +5926,7 @@ Real_t x1[8];
 # 1364 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    if ( hgcoef > Real_t(0.) ) {
 # 1365 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcFBHourglassForceForElems", 0UL, 0, 8, 4706087171927570531UL, 4706087171927570358UL, 4706087171927570365UL, 4706087171927570372UL, 4706087171927570337UL, 4706087171927570344UL, 4706087171927570351UL, 0UL); CalcFBHourglassForceForElems_npm(determ, x8n, y8n, z8n, dvdx, dvdy, dvdz, hgcoef); }) ;
+      ({ calling_npm("CalcFBHourglassForceForElems", 0); CalcFBHourglassForceForElems_npm(determ, x8n, y8n, z8n, dvdx, dvdy, dvdz, hgcoef); }) ;
 # 1366 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    }
 # 1367 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -5974,12 +5973,12 @@ void CalcVolumeForceForElems_resumable()
 # 1388 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1389 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1390 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("InitStressTermsForElems", 0UL, 0, 4, 0UL, 4706087171927570036UL, 4706087171927570033UL, 4706087171927570030UL); InitStressTermsForElems_npm(numElem, sigxx, sigyy, sigzz); });
+      ({ calling_npm("InitStressTermsForElems", 0); InitStressTermsForElems_npm(numElem, sigxx, sigyy, sigzz); });
 # 1391 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1392 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1393 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1394 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("IntegrateStressForElems", 0UL, 0, 5, 0UL, 4706087171927570036UL, 4706087171927570033UL, 4706087171927570030UL, 4706087171927570012UL); IntegrateStressForElems_npm(numElem, sigxx, sigyy, sigzz, determ); }) ;
+      ({ calling_npm("IntegrateStressForElems", 0); IntegrateStressForElems_npm(numElem, sigxx, sigyy, sigzz, determ); }) ;
 # 1395 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1396 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1397 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -5994,7 +5993,7 @@ void CalcVolumeForceForElems_resumable()
       } }
 # 1402 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1403 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcHourglassControlForElems", 0UL, 0, 2, 4706087171927570012UL, 0UL); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
+      ({ calling_npm("CalcHourglassControlForElems", 0); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
 # 1404 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1405 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       free_wrapper(determ, 4706087171927570012UL) ;
@@ -6030,7 +6029,7 @@ static inline void CalcForceForNodes_resumable()
 # 1420 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1421 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1422 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcVolumeForceForElems", 0UL, 0, 0); CalcVolumeForceForElems_npm(); }) ;
+  ({ calling_npm("CalcVolumeForceForElems", 0); CalcVolumeForceForElems_npm(); }) ;
 # 1423 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1424 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1425 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6103,21 +6102,21 @@ void CalcVelocityForNodes_resumable(const Real_t dt, const Real_t u_cut)
 # 1463 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      xdtmp = mesh.xd[i] + mesh.xdd[i] * dt ;
 # 1464 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-     if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(xdtmp); }) < u_cut) {xdtmp = Real_t(0.); };
+     if (({ calling_npm("FABS", 0); FABS_npm(xdtmp); }) < u_cut) {xdtmp = Real_t(0.); };
 # 1465 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      mesh.xd[i] = xdtmp ;
 # 1466 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1467 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      ydtmp = mesh.yd[i] + mesh.ydd[i] * dt ;
 # 1468 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-     if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(ydtmp); }) < u_cut) {ydtmp = Real_t(0.); };
+     if (({ calling_npm("FABS", 0); FABS_npm(ydtmp); }) < u_cut) {ydtmp = Real_t(0.); };
 # 1469 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      mesh.yd[i] = ydtmp ;
 # 1470 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1471 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      zdtmp = mesh.zd[i] + mesh.zdd[i] * dt ;
 # 1472 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-     if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(zdtmp); }) < u_cut) {zdtmp = Real_t(0.); };
+     if (({ calling_npm("FABS", 0); FABS_npm(zdtmp); }) < u_cut) {zdtmp = Real_t(0.); };
 # 1473 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      mesh.zd[i] = zdtmp ;
 # 1474 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6167,19 +6166,19 @@ void LagrangeNodal_resumable()
 # 1496 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1497 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1498 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcForceForNodes", 0UL, 0, 0); CalcForceForNodes_npm(); });
+  ({ calling_npm("CalcForceForNodes", 0); CalcForceForNodes_npm(); });
 # 1499 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1500 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcAccelerationForNodes", 0UL, 0, 0); CalcAccelerationForNodes_npm(); });
+  ({ calling_npm("CalcAccelerationForNodes", 0); CalcAccelerationForNodes_npm(); });
 # 1501 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1502 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("ApplyAccelerationBoundaryConditionsForNodes", 0UL, 0, 0); ApplyAccelerationBoundaryConditionsForNodes_npm(); });
+  ({ calling_npm("ApplyAccelerationBoundaryConditionsForNodes", 0); ApplyAccelerationBoundaryConditionsForNodes_npm(); });
 # 1503 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1504 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcVelocityForNodes", 0UL, 0, 2, 0UL, 0UL); CalcVelocityForNodes_npm(delt, u_cut); }) ;
+  ({ calling_npm("CalcVelocityForNodes", 0); CalcVelocityForNodes_npm(delt, u_cut); }) ;
 # 1505 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1506 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcPositionForNodes", 0UL, 0, 1, 0UL); CalcPositionForNodes_npm(delt); });
+  ({ calling_npm("CalcPositionForNodes", 0); CalcPositionForNodes_npm(delt); });
 # 1507 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1508 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
   rm_stack(false, 0UL, "LagrangeNodal", &____must_manage_LagrangeNodal, ____alias_loc_id_9, ____chimes_did_disable26); return;
@@ -6328,7 +6327,7 @@ Real_t CalcElemVolumeWrapper_resumable( const Real_t x[8], const Real_t y[8], co
 # 1598 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeWrapper), "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, 3, 0, (size_t)(4706087171927563761UL), (size_t)(4706087171927563762UL), (size_t)(4706087171927563763UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1599 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); return ({ calling_npm("CalcElemVolume", 0UL, 0, 24, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); });
+rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); return ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); });
 # 1602 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 }
 # 1603 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6387,37 +6386,37 @@ Real_t CalcElemCharacteristicLength_resumable( const Real_t x[8],
    Real_t a; Real_t charLength; charLength = (0.) ;
 # 1633 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1634 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[0], x[1], x[2], x[3], y[0], y[1], y[2], y[3], z[0], z[1], z[2], z[3]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[0], x[1], x[2], x[3], y[0], y[1], y[2], y[3], z[0], z[1], z[2], z[3]); }) ;
 # 1637 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1638 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1639 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[4], x[5], x[6], x[7], y[4], y[5], y[6], y[7], z[4], z[5], z[6], z[7]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[4], x[5], x[6], x[7], y[4], y[5], y[6], y[7], z[4], z[5], z[6], z[7]); }) ;
 # 1642 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1643 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1644 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[0], x[1], x[5], x[4], y[0], y[1], y[5], y[4], z[0], z[1], z[5], z[4]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[0], x[1], x[5], x[4], y[0], y[1], y[5], y[4], z[0], z[1], z[5], z[4]); }) ;
 # 1647 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1648 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1649 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[1], x[2], x[6], x[5], y[1], y[2], y[6], y[5], z[1], z[2], z[6], z[5]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[1], x[2], x[6], x[5], y[1], y[2], y[6], y[5], z[1], z[2], z[6], z[5]); }) ;
 # 1652 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1653 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1654 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[2], x[3], x[7], x[6], y[2], y[3], y[7], y[6], z[2], z[3], z[7], z[6]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[2], x[3], x[7], x[6], y[2], y[3], y[7], y[6], z[2], z[3], z[7], z[6]); }) ;
 # 1657 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1658 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1659 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[3], x[0], x[4], x[7], y[3], y[0], y[4], y[7], z[3], z[0], z[4], z[7]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[3], x[0], x[4], x[7], y[3], y[0], y[4], y[7], z[3], z[0], z[4], z[7]); }) ;
 # 1662 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1663 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1664 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   charLength = 4.0 * volume / ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(charLength); });
+   charLength = 4.0 * volume / ({ calling_npm("SQRT", 0); SQRT_npm(charLength); });
 # 1665 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1666 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); return charLength;
@@ -6607,7 +6606,7 @@ Real_t B[3][8];
 # 1760 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1761 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1762 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    volume = ({ calling_npm("CalcElemVolumeWrapper", 0UL, 0, 3, 4706087171927567646UL, 4706087171927567647UL, 4706087171927567648UL); CalcElemVolumeWrapper_npm(x_local, y_local, z_local); });
+    volume = ({ calling_npm("CalcElemVolumeWrapper", 0); CalcElemVolumeWrapper_npm(x_local, y_local, z_local); });
 # 1763 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
     relativeVolume = volume / mesh.volo[k];
 # 1764 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6617,7 +6616,7 @@ Real_t B[3][8];
 # 1766 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1767 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1768 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    mesh.arealg[k] = ({ calling_npm("CalcElemCharacteristicLength", 0UL, 0, 4, 4706087171927567646UL, 4706087171927567647UL, 4706087171927567648UL, 0UL); CalcElemCharacteristicLength_npm(x_local, y_local, z_local, volume); });
+    mesh.arealg[k] = ({ calling_npm("CalcElemCharacteristicLength", 0); CalcElemCharacteristicLength_npm(x_local, y_local, z_local, volume); });
 # 1772 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1773 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1774 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6651,10 +6650,10 @@ Real_t B[3][8];
     } }
 # 1789 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1790 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("CalcElemShapeFunctionDerivatives", 0UL, 0, 5, 4706087171927567646UL, 4706087171927567647UL, 4706087171927567648UL, 4706087171927567644UL, 4706087171927567652UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &detJ); });
+    ({ calling_npm("CalcElemShapeFunctionDerivatives", 0); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &detJ); });
 # 1794 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1795 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("CalcElemVelocityGrandient", 0UL, 0, 6, 4706087171927567649UL, 4706087171927567650UL, 4706087171927567651UL, 4706087171927567644UL, 0UL, 4706087171927567645UL); CalcElemVelocityGrandient_npm(xd_local, yd_local, zd_local, B, detJ, D); });
+    ({ calling_npm("CalcElemVelocityGrandient", 0); CalcElemVelocityGrandient_npm(xd_local, yd_local, zd_local, B, detJ, D); });
 # 1799 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1800 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1801 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6684,7 +6683,7 @@ void CalcLagrangeElements_resumable(Real_t deltatime)
 # 1813 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1814 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1815 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcKinematicsForElems", 0UL, 0, 2, 0UL, 0UL); CalcKinematicsForElems_npm(numElem, deltatime); }) ;
+      ({ calling_npm("CalcKinematicsForElems", 0); CalcKinematicsForElems_npm(numElem, deltatime); }) ;
 # 1816 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1817 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1818 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -6901,7 +6900,7 @@ void CalcMonotonicQGradientsForElems_resumable()
       az = dxi*dyj - dyi*dxj ;
 # 1934 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1935 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      mesh.delx_zeta[i] = vol / ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+      mesh.delx_zeta[i] = vol / ({ calling_npm("SQRT", 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 1936 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1937 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       ax *= norm ;
@@ -6930,7 +6929,7 @@ void CalcMonotonicQGradientsForElems_resumable()
       az = dxj*dyk - dyj*dxk ;
 # 1952 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1953 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      mesh.delx_xi[i] = vol / ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+      mesh.delx_xi[i] = vol / ({ calling_npm("SQRT", 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 1954 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1955 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       ax *= norm ;
@@ -6959,7 +6958,7 @@ void CalcMonotonicQGradientsForElems_resumable()
       az = dxk*dyi - dyk*dxi ;
 # 1970 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1971 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      mesh.delx_eta[i] = vol / ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+      mesh.delx_eta[i] = vol / ({ calling_npm("SQRT", 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 1972 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1973 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       ax *= norm ;
@@ -7260,7 +7259,7 @@ void CalcMonotonicQForElems_resumable()
 # 2141 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
        Real_t qqc_monoq; qqc_monoq = (mesh.qqc_monoq) ;
 # 2142 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcMonotonicQRegionForElems", 0UL, 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); CalcMonotonicQRegionForElems_npm(qlc_monoq, qqc_monoq, monoq_limiter_mult, monoq_max_slope, ptiny, elength); });
+      ({ calling_npm("CalcMonotonicQRegionForElems", 0); CalcMonotonicQRegionForElems_npm(qlc_monoq, qqc_monoq, monoq_limiter_mult, monoq_max_slope, ptiny, elength); });
 # 2151 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    }
 # 2152 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7285,12 +7284,12 @@ void CalcQForElems_resumable()
 # 2163 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2164 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2165 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcMonotonicQGradientsForElems", 0UL, 0, 0); CalcMonotonicQGradientsForElems_npm(); }) ;
+   ({ calling_npm("CalcMonotonicQGradientsForElems", 0); CalcMonotonicQGradientsForElems_npm(); }) ;
 # 2166 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2167 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2168 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2169 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcMonotonicQForElems", 0UL, 0, 0); CalcMonotonicQForElems_npm(); }) ;
+   ({ calling_npm("CalcMonotonicQForElems", 0); CalcMonotonicQForElems_npm(); }) ;
 # 2170 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2171 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2172 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7356,7 +7355,7 @@ void CalcPressureForElems_resumable(Real_t* p_new, Real_t* bvc,
       p_new[i] = bvc[i] * e_old[i] ;
 # 2203 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2204 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(p_new[i]); }) < p_cut) {p_new[i] = Real_t(0.); } ;
+      if (({ calling_npm("FABS", 0); FABS_npm(p_new[i]); }) < p_cut) {p_new[i] = Real_t(0.); } ;
 # 2206 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2207 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       if (vnewc[i] >= eosvmax) {p_new[i] = Real_t(0.); } ;
@@ -7416,7 +7415,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    } }
 # 2238 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2239 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcPressureForElems", 0UL, 0, 10, 4706087171927565197UL, 4706087171927565762UL, 4706087171927565763UL, 4706087171927565760UL, 4706087171927565768UL, 4706087171927565769UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(pHalfStep, bvc, pbvc, e_new, compHalfStep, vnewc, pmin, p_cut, eosvmax, length); });
+   ({ calling_npm("CalcPressureForElems", 0); CalcPressureForElems_npm(pHalfStep, bvc, pbvc, e_new, compHalfStep, vnewc, pmin, p_cut, eosvmax, length); });
 # 2241 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2242 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < length ; ++i) {
@@ -7441,7 +7440,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2254 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          } else {
 # 2255 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-            ssc = ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ssc); }) ;
+            ssc = ({ calling_npm("SQRT", 0); SQRT_npm(ssc); }) ;
 # 2256 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          }
 # 2257 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7465,7 +7464,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
       e_new[i] += Real_t(0.5) * work[i];
 # 2268 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2269 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(e_new[i]); }) < e_cut) {
+      if (({ calling_npm("FABS", 0); FABS_npm(e_new[i]); }) < e_cut) {
 # 2270 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          e_new[i] = Real_t(0.) ;
 # 2271 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7480,7 +7479,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    } }
 # 2276 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2277 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcPressureForElems", 0UL, 0, 10, 4706087171927565759UL, 4706087171927565762UL, 4706087171927565763UL, 4706087171927565760UL, 4706087171927565767UL, 4706087171927565769UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); });
+   ({ calling_npm("CalcPressureForElems", 0); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); });
 # 2279 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2280 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < length ; ++i){
@@ -7505,7 +7504,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2292 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          } else {
 # 2293 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-            ssc = ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ssc); }) ;
+            ssc = ({ calling_npm("SQRT", 0); SQRT_npm(ssc); }) ;
 # 2294 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          }
 # 2295 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7522,7 +7521,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
                                + (p_new[i] + q_tilde)) * delvc[i]*sixth ;
 # 2302 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2303 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(e_new[i]); }) < e_cut) {
+      if (({ calling_npm("FABS", 0); FABS_npm(e_new[i]); }) < e_cut) {
 # 2304 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          e_new[i] = Real_t(0.) ;
 # 2305 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7537,7 +7536,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    } }
 # 2310 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2311 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcPressureForElems", 0UL, 0, 10, 4706087171927565759UL, 4706087171927565762UL, 4706087171927565763UL, 4706087171927565760UL, 4706087171927565767UL, 4706087171927565769UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); });
+   ({ calling_npm("CalcPressureForElems", 0); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); });
 # 2313 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2314 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < length ; ++i){
@@ -7554,7 +7553,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2322 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          } else {
 # 2323 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-            ssc = ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ssc); }) ;
+            ssc = ({ calling_npm("SQRT", 0); SQRT_npm(ssc); }) ;
 # 2324 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          }
 # 2325 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7562,7 +7561,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
          q_new[i] = (ssc*ql[i] + qq[i]) ;
 # 2327 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2328 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-         if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(q_new[i]); }) < q_cut) {q_new[i] = Real_t(0.); } ;
+         if (({ calling_npm("FABS", 0); FABS_npm(q_new[i]); }) < q_cut) {q_new[i] = Real_t(0.); } ;
 # 2329 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       }
 # 2330 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7601,7 +7600,7 @@ void CalcSoundSpeedForElems_resumable(Real_t *vnewc, Real_t rho0, Real_t *enewc,
 # 2348 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       }
 # 2349 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      mesh.ss[iz] = ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ssTmp); });
+      mesh.ss[iz] = ({ calling_npm("SQRT", 0); SQRT_npm(ssTmp); });
 # 2350 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    } }
 # 2351 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7762,7 +7761,7 @@ void EvalEOSForElems_resumable(Real_t *vnewc, Index_t length)
    } }
 # 2434 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2435 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcEnergyForElems", 0UL, 0, 23, 4706087171927564632UL, 4706087171927564639UL, 4706087171927564646UL, 4706087171927564653UL, 4706087171927564660UL, 4706087171927564583UL, 4706087171927564569UL, 4706087171927564590UL, 4706087171927564597UL, 4706087171927564604UL, 4706087171927565107UL, 4706087171927564625UL, 4706087171927564576UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927564611UL, 4706087171927564618UL, 0UL, 0UL, 0UL); CalcEnergyForElems_npm(p_new, e_new, q_new, bvc, pbvc, p_old, e_old, q_old, compression, compHalfStep, vnewc, work, delvc, pmin, p_cut, e_cut, q_cut, emin, qq, ql, rho0, eosvmax, length); });
+   ({ calling_npm("CalcEnergyForElems", 0); CalcEnergyForElems_npm(p_new, e_new, q_new, bvc, pbvc, p_old, e_old, q_old, compression, compHalfStep, vnewc, work, delvc, pmin, p_cut, e_cut, q_cut, emin, qq, ql, rho0, eosvmax, length); });
 # 2440 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2441 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2442 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7793,7 +7792,7 @@ void EvalEOSForElems_resumable(Real_t *vnewc, Index_t length)
    } }
 # 2456 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2457 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcSoundSpeedForElems", 0UL, 0, 8, 4706087171927565107UL, 0UL, 4706087171927564639UL, 4706087171927564632UL, 4706087171927564660UL, 4706087171927564653UL, 0UL, 0UL); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
+   ({ calling_npm("CalcSoundSpeedForElems", 0); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
 # 2459 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2460 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    free_wrapper(pbvc, 4706087171927564660UL) ;
@@ -7906,7 +7905,7 @@ void ApplyMaterialPropertiesForElems_resumable()
     } }
 # 2521 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2522 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("EvalEOSForElems", 0UL, 0, 2, 4706087171927564309UL, 0UL); EvalEOSForElems_npm(vnewc, length); });
+    ({ calling_npm("EvalEOSForElems", 0); EvalEOSForElems_npm(vnewc, length); });
 # 2523 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2524 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
     free_wrapper(vnewc, 4706087171927564309UL) ;
@@ -7939,7 +7938,7 @@ void UpdateVolumesForElems_resumable()
          tmpV = mesh.vnew[i] ;
 # 2539 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2540 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-         if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(tmpV - Real_t(1.)); }) < v_cut) {tmpV = Real_t(1.); } ;
+         if (({ calling_npm("FABS", 0); FABS_npm(tmpV - Real_t(1.)); }) < v_cut) {tmpV = Real_t(1.); } ;
 # 2542 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          mesh.v[i] = tmpV ;
 # 2543 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -7964,17 +7963,17 @@ void LagrangeElements_resumable()
    Real_t deltatime; deltatime = (mesh.deltatime) ;
 # 2553 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2554 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcLagrangeElements", 0UL, 0, 1, 0UL); CalcLagrangeElements_npm(deltatime); }) ;
+  ({ calling_npm("CalcLagrangeElements", 0); CalcLagrangeElements_npm(deltatime); }) ;
 # 2555 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2556 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2557 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcQForElems", 0UL, 0, 0); CalcQForElems_npm(); }) ;
+  ({ calling_npm("CalcQForElems", 0); CalcQForElems_npm(); }) ;
 # 2558 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2559 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("ApplyMaterialPropertiesForElems", 0UL, 0, 0); ApplyMaterialPropertiesForElems_npm(); }) ;
+  ({ calling_npm("ApplyMaterialPropertiesForElems", 0); ApplyMaterialPropertiesForElems_npm(); }) ;
 # 2560 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2561 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("UpdateVolumesForElems", 0UL, 0, 0); UpdateVolumesForElems_npm(); }) ;
+  ({ calling_npm("UpdateVolumesForElems", 0); UpdateVolumesForElems_npm(); }) ;
 # 2562 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 rm_stack(false, 0UL, "LagrangeElements", &____must_manage_LagrangeElements, ____alias_loc_id_10, ____chimes_did_disable44); }
 # 2563 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -8019,7 +8018,7 @@ void CalcCourantConstraintForElems_resumable()
       }
 # 2585 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2586 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      dtf = ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(dtf); }) ;
+      dtf = ({ calling_npm("SQRT", 0); SQRT_npm(dtf); }) ;
 # 2587 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2588 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       dtf = mesh.arealg[indx] / dtf ;
@@ -8079,7 +8078,7 @@ void CalcHydroConstraintForElems_resumable()
 # 2619 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       if (mesh.vdov[indx] != Real_t(0.)) {
 # 2620 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-          Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(mesh.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
+          Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm("FABS", 0); FABS_npm(mesh.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
 # 2621 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          if ( dthydro > dtdvov ) {
 # 2622 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -8113,11 +8112,11 @@ static inline
 void CalcTimeConstraintsForElems_resumable() {const int ____chimes_did_disable47 = new_stack((void *)(&CalcTimeConstraintsForElems), "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 2637 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2638 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcCourantConstraintForElems", 0UL, 0, 0); CalcCourantConstraintForElems_npm(); }) ;
+   ({ calling_npm("CalcCourantConstraintForElems", 0); CalcCourantConstraintForElems_npm(); }) ;
 # 2639 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2640 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2641 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcHydroConstraintForElems", 0UL, 0, 0); CalcHydroConstraintForElems_npm(); }) ;
+   ({ calling_npm("CalcHydroConstraintForElems", 0); CalcHydroConstraintForElems_npm(); }) ;
 # 2642 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 rm_stack(false, 0UL, "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, ____chimes_did_disable47); }
 # 2643 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -8132,15 +8131,15 @@ void LagrangeLeapFrog_resumable()
 # 2647 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2648 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2649 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("LagrangeNodal", 0UL, 0, 0); LagrangeNodal_npm(); });
+   ({ calling_npm("LagrangeNodal", 0); LagrangeNodal_npm(); });
 # 2650 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2651 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2652 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2653 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("LagrangeElements", 0UL, 0, 0); LagrangeElements_npm(); });
+   ({ calling_npm("LagrangeElements", 0); LagrangeElements_npm(); });
 # 2654 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2655 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcTimeConstraintsForElems", 0UL, 0, 0); CalcTimeConstraintsForElems_npm(); });
+   ({ calling_npm("CalcTimeConstraintsForElems", 0); CalcTimeConstraintsForElems_npm(); });
 # 2656 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2657 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2658 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -8187,14 +8186,14 @@ Index_t edgeElems;
 # 2688 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2689 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2690 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("AllocateElemPersistent", 0UL, 0, 2, 4706087171927576249UL, 0UL); AllocateElemPersistent_npm(&mesh, mesh.numElem); }) ;
+   ({ calling_npm("AllocateElemPersistent", 0); AllocateElemPersistent_npm(&mesh, mesh.numElem); }) ;
 # 2691 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("AllocateElemTemporary", 0UL, 0, 2, 4706087171927576249UL, 0UL); AllocateElemTemporary_npm(&mesh, mesh.numElem); }) ;
+   ({ calling_npm("AllocateElemTemporary", 0); AllocateElemTemporary_npm(&mesh, mesh.numElem); }) ;
 # 2692 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2693 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("AllocateNodalPersistent", 0UL, 0, 2, 4706087171927576249UL, 0UL); AllocateNodalPersistent_npm(&mesh, mesh.numNode); }) ;
+   ({ calling_npm("AllocateNodalPersistent", 0); AllocateNodalPersistent_npm(&mesh, mesh.numNode); }) ;
 # 2694 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("AllocateNodesets", 0UL, 0, 2, 4706087171927576249UL, 0UL); AllocateNodesets_npm(&mesh, edgeNodes*edgeNodes); }) ;
+   ({ calling_npm("AllocateNodesets", 0); AllocateNodesets_npm(&mesh, edgeNodes*edgeNodes); }) ;
 # 2695 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2696 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2697 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -8382,7 +8381,7 @@ Index_t edgeElems;
 # 2799 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2800 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2801 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-       Real_t volume; volume = (({ calling_npm("CalcElemVolumeWrapper", 0UL, 0, 3, 4706087171927562721UL, 4706087171927562722UL, 4706087171927562723UL); CalcElemVolumeWrapper_npm(x_local, y_local, z_local); })) ;
+       Real_t volume; volume = (({ calling_npm("CalcElemVolumeWrapper", 0); CalcElemVolumeWrapper_npm(x_local, y_local, z_local); })) ;
 # 2802 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       mesh.volo[i] = volume ;
 # 2803 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -8519,9 +8518,9 @@ Index_t edgeElems;
 # 2877 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    while(mesh.time < mesh.stoptime ) {
 # 2878 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("TimeIncrement", 0UL, 0, 0); TimeIncrement_npm(); }) ;
+      ({ calling_npm("TimeIncrement", 0); TimeIncrement_npm(); }) ;
 # 2879 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("LagrangeLeapFrog", 0UL, 0, 0); LagrangeLeapFrog_npm(); }) ;
+      ({ calling_npm("LagrangeLeapFrog", 0); LagrangeLeapFrog_npm(); }) ;
 # 2880 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2881 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2882 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -8567,7 +8566,7 @@ Index_t edgeElems;
 # 2908 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
                 { Index_t k; for ( k = (j + 1) ; k<edgeElems; ++k) {
 # 2909 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-                         Real_t AbsDiff; AbsDiff = (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(mesh.e[j * edgeElems + k] - mesh.e[k * edgeElems + j]); })) ;
+                         Real_t AbsDiff; AbsDiff = (({ calling_npm("FABS", 0); FABS_npm(mesh.e[j * edgeElems + k] - mesh.e[k * edgeElems + j]); })) ;
 # 2910 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
                         TotalAbsDiff += AbsDiff;
 # 2911 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -9163,22 +9162,22 @@ void CalcElemNodeNormals_quick(Real_t pfx[8],
    } }
 # 674 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 675 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[1], &pfy[1], &pfz[1], &pfx[2], &pfy[2], &pfz[2], &pfx[3], &pfy[3], &pfz[3], x[0], y[0], z[0], x[1], y[1], z[1], x[2], y[2], z[2], x[3], y[3], z[3]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[1], &pfy[1], &pfz[1], &pfx[2], &pfy[2], &pfz[2], &pfx[3], &pfy[3], &pfz[3], x[0], y[0], z[0], x[1], y[1], z[1], x[2], y[2], z[2], x[3], y[3], z[3]); });
 # 681 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 682 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[4], &pfy[4], &pfz[4], &pfx[5], &pfy[5], &pfz[5], &pfx[1], &pfy[1], &pfz[1], x[0], y[0], z[0], x[4], y[4], z[4], x[5], y[5], z[5], x[1], y[1], z[1]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[0], &pfy[0], &pfz[0], &pfx[4], &pfy[4], &pfz[4], &pfx[5], &pfy[5], &pfz[5], &pfx[1], &pfy[1], &pfz[1], x[0], y[0], z[0], x[4], y[4], z[4], x[5], y[5], z[5], x[1], y[1], z[1]); });
 # 688 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 689 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[1], &pfy[1], &pfz[1], &pfx[5], &pfy[5], &pfz[5], &pfx[6], &pfy[6], &pfz[6], &pfx[2], &pfy[2], &pfz[2], x[1], y[1], z[1], x[5], y[5], z[5], x[6], y[6], z[6], x[2], y[2], z[2]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[1], &pfy[1], &pfz[1], &pfx[5], &pfy[5], &pfz[5], &pfx[6], &pfy[6], &pfz[6], &pfx[2], &pfy[2], &pfz[2], x[1], y[1], z[1], x[5], y[5], z[5], x[6], y[6], z[6], x[2], y[2], z[2]); });
 # 695 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 696 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[2], &pfy[2], &pfz[2], &pfx[6], &pfy[6], &pfz[6], &pfx[7], &pfy[7], &pfz[7], &pfx[3], &pfy[3], &pfz[3], x[2], y[2], z[2], x[6], y[6], z[6], x[7], y[7], z[7], x[3], y[3], z[3]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[2], &pfy[2], &pfz[2], &pfx[6], &pfy[6], &pfz[6], &pfx[7], &pfy[7], &pfz[7], &pfx[3], &pfy[3], &pfz[3], x[2], y[2], z[2], x[6], y[6], z[6], x[7], y[7], z[7], x[3], y[3], z[3]); });
 # 702 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 703 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[3], &pfy[3], &pfz[3], &pfx[7], &pfy[7], &pfz[7], &pfx[4], &pfy[4], &pfz[4], &pfx[0], &pfy[0], &pfz[0], x[3], y[3], z[3], x[7], y[7], z[7], x[4], y[4], z[4], x[0], y[0], z[0]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[3], &pfy[3], &pfz[3], &pfx[7], &pfy[7], &pfz[7], &pfx[4], &pfy[4], &pfz[4], &pfx[0], &pfy[0], &pfz[0], x[3], y[3], z[3], x[7], y[7], z[7], x[4], y[4], z[4], x[0], y[0], z[0]); });
 # 709 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 710 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("SumElemFaceNormal", 0UL, 0, 24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); SumElemFaceNormal_npm(&pfx[4], &pfy[4], &pfz[4], &pfx[7], &pfy[7], &pfz[7], &pfx[6], &pfy[6], &pfz[6], &pfx[5], &pfy[5], &pfz[5], x[4], y[4], z[4], x[7], y[7], z[7], x[6], y[6], z[6], x[5], y[5], z[5]); });
+   ({ calling_npm("SumElemFaceNormal", 0); SumElemFaceNormal_npm(&pfx[4], &pfy[4], &pfz[4], &pfx[7], &pfy[7], &pfz[7], &pfx[6], &pfy[6], &pfz[6], &pfx[5], &pfy[5], &pfz[5], x[4], y[4], z[4], x[7], y[7], z[7], x[6], y[6], z[6], x[5], y[5], z[5]); });
 # 716 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 rm_stack(false, 0UL, "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, ____alias_loc_id_45, ____chimes_did_disable11); }
 
@@ -9366,13 +9365,13 @@ Real_t B[3][8];
 # 796 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 797 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 798 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("CalcElemShapeFunctionDerivatives", 0UL, 0, 5, 4706087171927570104UL, 4706087171927570105UL, 4706087171927570106UL, 4706087171927570103UL, 4706087171927570292UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &determ[k]); });
+    ({ calling_npm("CalcElemShapeFunctionDerivatives", 0); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &determ[k]); });
 # 800 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 801 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("CalcElemNodeNormals", 0UL, 0, 6, 4706087171927570103UL, 4706087171927570103UL, 4706087171927570103UL, 4706087171927570104UL, 4706087171927570105UL, 4706087171927570106UL); CalcElemNodeNormals_npm(B[0], B[1], B[2], x_local, y_local, z_local); });
+    ({ calling_npm("CalcElemNodeNormals", 0); CalcElemNodeNormals_npm(B[0], B[1], B[2], x_local, y_local, z_local); });
 # 803 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 804 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("SumElemStressesToNodeForces", 0UL, 0, 7, 4706087171927570103UL, 0UL, 0UL, 0UL, 4706087171927570107UL, 4706087171927570108UL, 4706087171927570109UL); SumElemStressesToNodeForces_npm(B, sigxx[k], sigyy[k], sigzz[k], fx_local, fy_local, fz_local); }) ;
+    ({ calling_npm("SumElemStressesToNodeForces", 0); SumElemStressesToNodeForces_npm(B, sigxx[k], sigyy[k], sigzz[k], fx_local, fy_local, fz_local); }) ;
 # 806 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 807 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 808 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -9581,21 +9580,21 @@ void CalcElemVolumeDerivative_quick(Real_t dvdx[8],
 # 899 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {const int ____chimes_did_disable16 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(4706087171927571297UL), (size_t)(4706087171927571298UL), (size_t)(4706087171927571299UL), (size_t)(4706087171927571300UL), (size_t)(4706087171927571301UL), (size_t)(4706087171927571302UL)) ; ; ;
 # 900 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[1], x[2], x[3], x[4], x[5], x[7], y[1], y[2], y[3], y[4], y[5], y[7], z[1], z[2], z[3], z[4], z[5], z[7], &dvdx[0], &dvdy[0], &dvdz[0]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[1], x[2], x[3], x[4], x[5], x[7], y[1], y[2], y[3], y[4], y[5], y[7], z[1], z[2], z[3], z[4], z[5], z[7], &dvdx[0], &dvdy[0], &dvdz[0]); });
 # 904 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[0], x[1], x[2], x[7], x[4], x[6], y[0], y[1], y[2], y[7], y[4], y[6], z[0], z[1], z[2], z[7], z[4], z[6], &dvdx[3], &dvdy[3], &dvdz[3]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[0], x[1], x[2], x[7], x[4], x[6], y[0], y[1], y[2], y[7], y[4], y[6], z[0], z[1], z[2], z[7], z[4], z[6], &dvdx[3], &dvdy[3], &dvdz[3]); });
 # 908 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[3], x[0], x[1], x[6], x[7], x[5], y[3], y[0], y[1], y[6], y[7], y[5], z[3], z[0], z[1], z[6], z[7], z[5], &dvdx[2], &dvdy[2], &dvdz[2]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[3], x[0], x[1], x[6], x[7], x[5], y[3], y[0], y[1], y[6], y[7], y[5], z[3], z[0], z[1], z[6], z[7], z[5], &dvdx[2], &dvdy[2], &dvdz[2]); });
 # 912 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[2], x[3], x[0], x[5], x[6], x[4], y[2], y[3], y[0], y[5], y[6], y[4], z[2], z[3], z[0], z[5], z[6], z[4], &dvdx[1], &dvdy[1], &dvdz[1]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[2], x[3], x[0], x[5], x[6], x[4], y[2], y[3], y[0], y[5], y[6], y[4], z[2], z[3], z[0], z[5], z[6], z[4], &dvdx[1], &dvdy[1], &dvdz[1]); });
 # 916 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[7], x[6], x[5], x[0], x[3], x[1], y[7], y[6], y[5], y[0], y[3], y[1], z[7], z[6], z[5], z[0], z[3], z[1], &dvdx[4], &dvdy[4], &dvdz[4]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[7], x[6], x[5], x[0], x[3], x[1], y[7], y[6], y[5], y[0], y[3], y[1], z[7], z[6], z[5], z[0], z[3], z[1], &dvdx[4], &dvdy[4], &dvdz[4]); });
 # 920 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[4], x[7], x[6], x[1], x[0], x[2], y[4], y[7], y[6], y[1], y[0], y[2], z[4], z[7], z[6], z[1], z[0], z[2], &dvdx[5], &dvdy[5], &dvdz[5]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[4], x[7], x[6], x[1], x[0], x[2], y[4], y[7], y[6], y[1], y[0], y[2], z[4], z[7], z[6], z[1], z[0], z[2], &dvdx[5], &dvdy[5], &dvdz[5]); });
 # 924 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[5], x[4], x[7], x[2], x[1], x[3], y[5], y[4], y[7], y[2], y[1], y[3], z[5], z[4], z[7], z[2], z[1], z[3], &dvdx[6], &dvdy[6], &dvdz[6]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[5], x[4], x[7], x[2], x[1], x[3], y[5], y[4], y[7], y[2], y[1], y[3], z[5], z[4], z[7], z[2], z[1], z[3], &dvdx[6], &dvdy[6], &dvdz[6]); });
 # 928 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("VoluDer", 0UL, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL); VoluDer_npm(x[6], x[5], x[4], x[3], x[2], x[0], y[6], y[5], y[4], y[3], y[2], y[0], z[6], z[5], z[4], z[3], z[2], z[0], &dvdx[7], &dvdy[7], &dvdz[7]); });
+   ({ calling_npm("VoluDer", 0); VoluDer_npm(x[6], x[5], x[4], x[3], x[2], x[0], y[6], y[5], y[4], y[3], y[2], y[0], z[6], z[5], z[4], z[3], z[2], z[0], &dvdx[7], &dvdy[7], &dvdz[7]); });
 # 932 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 rm_stack(false, 0UL, "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, ____alias_loc_id_40, ____chimes_did_disable16); }
 
@@ -10128,7 +10127,7 @@ Real_t hgfx[8];
 # 1241 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       mass1=mesh.elemMass[i2];
 # 1242 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      volume13=({ calling_npm("CBRT", 0UL, 0, 1, 0UL); CBRT_npm(determ[i2]); });
+      volume13=({ calling_npm("CBRT", 0); CBRT_npm(determ[i2]); });
 # 1243 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1244 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
        Index_t n0si2; n0si2 = (elemToNode[0]) ;
@@ -10202,7 +10201,7 @@ Real_t hgfx[8];
       coefficient = - hourg * Real_t(0.01) * ss1 * mass1 / volume13;
 # 1281 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1282 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcElemFBHourglassForce", 0UL, 0, 15, 4706087171927571325UL, 4706087171927571326UL, 4706087171927571327UL, 4706087171927571317UL, 4706087171927571318UL, 4706087171927571319UL, 4706087171927571320UL, 4706087171927571321UL, 4706087171927571322UL, 4706087171927571323UL, 4706087171927571324UL, 0UL, 4706087171927571312UL, 4706087171927571313UL, 4706087171927571314UL); CalcElemFBHourglassForce_npm(xd1, yd1, zd1, hourgam0, hourgam1, hourgam2, hourgam3, hourgam4, hourgam5, hourgam6, hourgam7, coefficient, hgfx, hgfy, hgfz); });
+      ({ calling_npm("CalcElemFBHourglassForce", 0); CalcElemFBHourglassForce_npm(xd1, yd1, zd1, hourgam0, hourgam1, hourgam2, hourgam3, hourgam4, hourgam5, hourgam6, hourgam7, coefficient, hgfx, hgfy, hgfz); });
 # 1286 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1287 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       mesh.fx[n0si2] += hgfx[0];
@@ -10315,10 +10314,10 @@ Real_t x1[8];
 # 1339 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
        Index_t *elemToNode; elemToNode = (&mesh.nodelist[8 * i]) ;
 # 1340 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CollectDomainNodesToElemNodes", 0UL, 0, 4, 4706087171927564237UL, 4706087171927570298UL, 4706087171927570299UL, 4706087171927570300UL); CollectDomainNodesToElemNodes_npm(elemToNode, x1, y1, z1); });
+      ({ calling_npm("CollectDomainNodesToElemNodes", 0); CollectDomainNodesToElemNodes_npm(elemToNode, x1, y1, z1); });
 # 1341 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1342 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcElemVolumeDerivative", 0UL, 0, 6, 4706087171927570301UL, 4706087171927570302UL, 4706087171927570303UL, 4706087171927570298UL, 4706087171927570299UL, 4706087171927570300UL); CalcElemVolumeDerivative_npm(pfx, pfy, pfz, x1, y1, z1); });
+      ({ calling_npm("CalcElemVolumeDerivative", 0); CalcElemVolumeDerivative_npm(pfx, pfy, pfz, x1, y1, z1); });
 # 1343 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1344 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1345 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -10357,7 +10356,7 @@ Real_t x1[8];
 # 1364 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    if ( hgcoef > Real_t(0.) ) {
 # 1365 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcFBHourglassForceForElems", 0UL, 0, 8, 4706087171927570531UL, 4706087171927570358UL, 4706087171927570365UL, 4706087171927570372UL, 4706087171927570337UL, 4706087171927570344UL, 4706087171927570351UL, 0UL); CalcFBHourglassForceForElems_npm(determ, x8n, y8n, z8n, dvdx, dvdy, dvdz, hgcoef); }) ;
+      ({ calling_npm("CalcFBHourglassForceForElems", 0); CalcFBHourglassForceForElems_npm(determ, x8n, y8n, z8n, dvdx, dvdy, dvdz, hgcoef); }) ;
 # 1366 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    }
 # 1367 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -10405,12 +10404,12 @@ void CalcVolumeForceForElems_quick()
 # 1388 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1389 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1390 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("InitStressTermsForElems", 0UL, 0, 4, 0UL, 4706087171927570036UL, 4706087171927570033UL, 4706087171927570030UL); InitStressTermsForElems_npm(numElem, sigxx, sigyy, sigzz); });
+      ({ calling_npm("InitStressTermsForElems", 0); InitStressTermsForElems_npm(numElem, sigxx, sigyy, sigzz); });
 # 1391 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1392 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1393 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1394 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("IntegrateStressForElems", 0UL, 0, 5, 0UL, 4706087171927570036UL, 4706087171927570033UL, 4706087171927570030UL, 4706087171927570012UL); IntegrateStressForElems_npm(numElem, sigxx, sigyy, sigzz, determ); }) ;
+      ({ calling_npm("IntegrateStressForElems", 0); IntegrateStressForElems_npm(numElem, sigxx, sigyy, sigzz, determ); }) ;
 # 1395 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1396 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1397 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -10425,7 +10424,7 @@ void CalcVolumeForceForElems_quick()
       } }
 # 1402 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1403 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcHourglassControlForElems", 0UL, 0, 2, 4706087171927570012UL, 0UL); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
+      ({ calling_npm("CalcHourglassControlForElems", 0); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
 # 1404 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1405 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       free_wrapper(determ, 4706087171927570012UL) ;
@@ -10462,7 +10461,7 @@ static inline void CalcForceForNodes_quick()
 # 1420 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1421 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1422 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcVolumeForceForElems", 0UL, 0, 0); CalcVolumeForceForElems_npm(); }) ;
+  ({ calling_npm("CalcVolumeForceForElems", 0); CalcVolumeForceForElems_npm(); }) ;
 # 1423 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1424 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1425 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -10536,21 +10535,21 @@ void CalcVelocityForNodes_quick(const Real_t dt, const Real_t u_cut)
 # 1463 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      xdtmp = mesh.xd[i] + mesh.xdd[i] * dt ;
 # 1464 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-     if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(xdtmp); }) < u_cut) {xdtmp = Real_t(0.); };
+     if (({ calling_npm("FABS", 0); FABS_npm(xdtmp); }) < u_cut) {xdtmp = Real_t(0.); };
 # 1465 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      mesh.xd[i] = xdtmp ;
 # 1466 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1467 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      ydtmp = mesh.yd[i] + mesh.ydd[i] * dt ;
 # 1468 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-     if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(ydtmp); }) < u_cut) {ydtmp = Real_t(0.); };
+     if (({ calling_npm("FABS", 0); FABS_npm(ydtmp); }) < u_cut) {ydtmp = Real_t(0.); };
 # 1469 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      mesh.yd[i] = ydtmp ;
 # 1470 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1471 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      zdtmp = mesh.zd[i] + mesh.zdd[i] * dt ;
 # 1472 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-     if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(zdtmp); }) < u_cut) {zdtmp = Real_t(0.); };
+     if (({ calling_npm("FABS", 0); FABS_npm(zdtmp); }) < u_cut) {zdtmp = Real_t(0.); };
 # 1473 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
      mesh.zd[i] = zdtmp ;
 # 1474 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -10602,19 +10601,19 @@ void LagrangeNodal_quick()
 # 1496 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1497 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1498 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcForceForNodes", 0UL, 0, 0); CalcForceForNodes_npm(); });
+  ({ calling_npm("CalcForceForNodes", 0); CalcForceForNodes_npm(); });
 # 1499 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1500 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcAccelerationForNodes", 0UL, 0, 0); CalcAccelerationForNodes_npm(); });
+  ({ calling_npm("CalcAccelerationForNodes", 0); CalcAccelerationForNodes_npm(); });
 # 1501 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1502 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("ApplyAccelerationBoundaryConditionsForNodes", 0UL, 0, 0); ApplyAccelerationBoundaryConditionsForNodes_npm(); });
+  ({ calling_npm("ApplyAccelerationBoundaryConditionsForNodes", 0); ApplyAccelerationBoundaryConditionsForNodes_npm(); });
 # 1503 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1504 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcVelocityForNodes", 0UL, 0, 2, 0UL, 0UL); CalcVelocityForNodes_npm(delt, u_cut); }) ;
+  ({ calling_npm("CalcVelocityForNodes", 0); CalcVelocityForNodes_npm(delt, u_cut); }) ;
 # 1505 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1506 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcPositionForNodes", 0UL, 0, 1, 0UL); CalcPositionForNodes_npm(delt); });
+  ({ calling_npm("CalcPositionForNodes", 0); CalcPositionForNodes_npm(delt); });
 # 1507 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1508 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
   rm_stack(false, 0UL, "LagrangeNodal", &____must_manage_LagrangeNodal, ____alias_loc_id_9, ____chimes_did_disable26); return;
@@ -10787,7 +10786,7 @@ Real_t CalcElemVolumeWrapper_quick( const Real_t x[8], const Real_t y[8], const 
 # 1598 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 {const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeWrapper), "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, 3, 0, (size_t)(4706087171927563761UL), (size_t)(4706087171927563762UL), (size_t)(4706087171927563763UL)) ; ; ;
 # 1599 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); return ({ calling_npm("CalcElemVolume", 0UL, 0, 24, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); });
+rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); return ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); });
 # 1602 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 }
 
@@ -10858,37 +10857,37 @@ Real_t CalcElemCharacteristicLength_quick( const Real_t x[8],
    Real_t a; Real_t charLength; charLength = (0.) ;
 # 1633 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1634 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[0], x[1], x[2], x[3], y[0], y[1], y[2], y[3], z[0], z[1], z[2], z[3]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[0], x[1], x[2], x[3], y[0], y[1], y[2], y[3], z[0], z[1], z[2], z[3]); }) ;
 # 1637 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1638 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1639 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[4], x[5], x[6], x[7], y[4], y[5], y[6], y[7], z[4], z[5], z[6], z[7]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[4], x[5], x[6], x[7], y[4], y[5], y[6], y[7], z[4], z[5], z[6], z[7]); }) ;
 # 1642 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1643 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1644 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[0], x[1], x[5], x[4], y[0], y[1], y[5], y[4], z[0], z[1], z[5], z[4]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[0], x[1], x[5], x[4], y[0], y[1], y[5], y[4], z[0], z[1], z[5], z[4]); }) ;
 # 1647 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1648 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1649 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[1], x[2], x[6], x[5], y[1], y[2], y[6], y[5], z[1], z[2], z[6], z[5]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[1], x[2], x[6], x[5], y[1], y[2], y[6], y[5], z[1], z[2], z[6], z[5]); }) ;
 # 1652 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1653 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1654 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[2], x[3], x[7], x[6], y[2], y[3], y[7], y[6], z[2], z[3], z[7], z[6]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[2], x[3], x[7], x[6], y[2], y[3], y[7], y[6], z[2], z[3], z[7], z[6]); }) ;
 # 1657 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1658 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1659 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   a = ({ calling_npm("AreaFace", 0UL, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); AreaFace_npm(x[3], x[0], x[4], x[7], y[3], y[0], y[4], y[7], z[3], z[0], z[4], z[7]); }) ;
+   a = ({ calling_npm("AreaFace", 0); AreaFace_npm(x[3], x[0], x[4], x[7], y[3], y[0], y[4], y[7], z[3], z[0], z[4], z[7]); }) ;
 # 1662 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    charLength = (a > charLength ? a : charLength);
 # 1663 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1664 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   charLength = 4.0 * volume / ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(charLength); });
+   charLength = 4.0 * volume / ({ calling_npm("SQRT", 0); SQRT_npm(charLength); });
 # 1665 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1666 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); return charLength;
@@ -11096,7 +11095,7 @@ Real_t B[3][8];
 # 1760 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1761 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1762 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    volume = ({ calling_npm("CalcElemVolumeWrapper", 0UL, 0, 3, 4706087171927567646UL, 4706087171927567647UL, 4706087171927567648UL); CalcElemVolumeWrapper_npm(x_local, y_local, z_local); });
+    volume = ({ calling_npm("CalcElemVolumeWrapper", 0); CalcElemVolumeWrapper_npm(x_local, y_local, z_local); });
 # 1763 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
     relativeVolume = volume / mesh.volo[k];
 # 1764 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -11106,7 +11105,7 @@ Real_t B[3][8];
 # 1766 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1767 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1768 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    mesh.arealg[k] = ({ calling_npm("CalcElemCharacteristicLength", 0UL, 0, 4, 4706087171927567646UL, 4706087171927567647UL, 4706087171927567648UL, 0UL); CalcElemCharacteristicLength_npm(x_local, y_local, z_local, volume); });
+    mesh.arealg[k] = ({ calling_npm("CalcElemCharacteristicLength", 0); CalcElemCharacteristicLength_npm(x_local, y_local, z_local, volume); });
 # 1772 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1773 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1774 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -11140,10 +11139,10 @@ Real_t B[3][8];
     } }
 # 1789 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1790 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("CalcElemShapeFunctionDerivatives", 0UL, 0, 5, 4706087171927567646UL, 4706087171927567647UL, 4706087171927567648UL, 4706087171927567644UL, 4706087171927567652UL); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &detJ); });
+    ({ calling_npm("CalcElemShapeFunctionDerivatives", 0); CalcElemShapeFunctionDerivatives_npm(x_local, y_local, z_local, B, &detJ); });
 # 1794 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1795 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("CalcElemVelocityGrandient", 0UL, 0, 6, 4706087171927567649UL, 4706087171927567650UL, 4706087171927567651UL, 4706087171927567644UL, 0UL, 4706087171927567645UL); CalcElemVelocityGrandient_npm(xd_local, yd_local, zd_local, B, detJ, D); });
+    ({ calling_npm("CalcElemVelocityGrandient", 0); CalcElemVelocityGrandient_npm(xd_local, yd_local, zd_local, B, detJ, D); });
 # 1799 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1800 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1801 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -11174,7 +11173,7 @@ void CalcLagrangeElements_quick(Real_t deltatime)
 # 1813 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1814 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1815 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcKinematicsForElems", 0UL, 0, 2, 0UL, 0UL); CalcKinematicsForElems_npm(numElem, deltatime); }) ;
+      ({ calling_npm("CalcKinematicsForElems", 0); CalcKinematicsForElems_npm(numElem, deltatime); }) ;
 # 1816 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1817 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1818 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -11392,7 +11391,7 @@ void CalcMonotonicQGradientsForElems_quick()
       az = dxi*dyj - dyi*dxj ;
 # 1934 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1935 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      mesh.delx_zeta[i] = vol / ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+      mesh.delx_zeta[i] = vol / ({ calling_npm("SQRT", 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 1936 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1937 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       ax *= norm ;
@@ -11421,7 +11420,7 @@ void CalcMonotonicQGradientsForElems_quick()
       az = dxj*dyk - dyj*dxk ;
 # 1952 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1953 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      mesh.delx_xi[i] = vol / ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+      mesh.delx_xi[i] = vol / ({ calling_npm("SQRT", 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 1954 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1955 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       ax *= norm ;
@@ -11450,7 +11449,7 @@ void CalcMonotonicQGradientsForElems_quick()
       az = dxk*dyi - dyk*dxi ;
 # 1970 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1971 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      mesh.delx_eta[i] = vol / ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
+      mesh.delx_eta[i] = vol / ({ calling_npm("SQRT", 0); SQRT_npm(ax*ax + ay*ay + az*az + ptiny); }) ;
 # 1972 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 1973 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       ax *= norm ;
@@ -11767,7 +11766,7 @@ void CalcMonotonicQForElems_quick()
 # 2141 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
        Real_t qqc_monoq; qqc_monoq = (mesh.qqc_monoq) ;
 # 2142 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("CalcMonotonicQRegionForElems", 0UL, 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL); CalcMonotonicQRegionForElems_npm(qlc_monoq, qqc_monoq, monoq_limiter_mult, monoq_max_slope, ptiny, elength); });
+      ({ calling_npm("CalcMonotonicQRegionForElems", 0); CalcMonotonicQRegionForElems_npm(qlc_monoq, qqc_monoq, monoq_limiter_mult, monoq_max_slope, ptiny, elength); });
 # 2151 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    }
 # 2152 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -11793,12 +11792,12 @@ void CalcQForElems_quick()
 # 2163 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2164 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2165 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcMonotonicQGradientsForElems", 0UL, 0, 0); CalcMonotonicQGradientsForElems_npm(); }) ;
+   ({ calling_npm("CalcMonotonicQGradientsForElems", 0); CalcMonotonicQGradientsForElems_npm(); }) ;
 # 2166 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2167 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2168 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2169 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcMonotonicQForElems", 0UL, 0, 0); CalcMonotonicQForElems_npm(); }) ;
+   ({ calling_npm("CalcMonotonicQForElems", 0); CalcMonotonicQForElems_npm(); }) ;
 # 2170 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2171 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2172 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -11865,7 +11864,7 @@ void CalcPressureForElems_quick(Real_t* p_new, Real_t* bvc,
       p_new[i] = bvc[i] * e_old[i] ;
 # 2203 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2204 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(p_new[i]); }) < p_cut) {p_new[i] = Real_t(0.); } ;
+      if (({ calling_npm("FABS", 0); FABS_npm(p_new[i]); }) < p_cut) {p_new[i] = Real_t(0.); } ;
 # 2206 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2207 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       if (vnewc[i] >= eosvmax) {p_new[i] = Real_t(0.); } ;
@@ -11936,7 +11935,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    } }
 # 2238 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2239 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcPressureForElems", 0UL, 0, 10, 4706087171927565197UL, 4706087171927565762UL, 4706087171927565763UL, 4706087171927565760UL, 4706087171927565768UL, 4706087171927565769UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(pHalfStep, bvc, pbvc, e_new, compHalfStep, vnewc, pmin, p_cut, eosvmax, length); });
+   ({ calling_npm("CalcPressureForElems", 0); CalcPressureForElems_npm(pHalfStep, bvc, pbvc, e_new, compHalfStep, vnewc, pmin, p_cut, eosvmax, length); });
 # 2241 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2242 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < length ; ++i) {
@@ -11961,7 +11960,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2254 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          } else {
 # 2255 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-            ssc = ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ssc); }) ;
+            ssc = ({ calling_npm("SQRT", 0); SQRT_npm(ssc); }) ;
 # 2256 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          }
 # 2257 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -11985,7 +11984,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
       e_new[i] += Real_t(0.5) * work[i];
 # 2268 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2269 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(e_new[i]); }) < e_cut) {
+      if (({ calling_npm("FABS", 0); FABS_npm(e_new[i]); }) < e_cut) {
 # 2270 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          e_new[i] = Real_t(0.) ;
 # 2271 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12000,7 +11999,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    } }
 # 2276 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2277 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcPressureForElems", 0UL, 0, 10, 4706087171927565759UL, 4706087171927565762UL, 4706087171927565763UL, 4706087171927565760UL, 4706087171927565767UL, 4706087171927565769UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); });
+   ({ calling_npm("CalcPressureForElems", 0); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); });
 # 2279 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2280 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < length ; ++i){
@@ -12025,7 +12024,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2292 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          } else {
 # 2293 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-            ssc = ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ssc); }) ;
+            ssc = ({ calling_npm("SQRT", 0); SQRT_npm(ssc); }) ;
 # 2294 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          }
 # 2295 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12042,7 +12041,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
                                + (p_new[i] + q_tilde)) * delvc[i]*sixth ;
 # 2302 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2303 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(e_new[i]); }) < e_cut) {
+      if (({ calling_npm("FABS", 0); FABS_npm(e_new[i]); }) < e_cut) {
 # 2304 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          e_new[i] = Real_t(0.) ;
 # 2305 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12057,7 +12056,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    } }
 # 2310 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2311 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcPressureForElems", 0UL, 0, 10, 4706087171927565759UL, 4706087171927565762UL, 4706087171927565763UL, 4706087171927565760UL, 4706087171927565767UL, 4706087171927565769UL, 0UL, 0UL, 0UL, 0UL); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); });
+   ({ calling_npm("CalcPressureForElems", 0); CalcPressureForElems_npm(p_new, bvc, pbvc, e_new, compression, vnewc, pmin, p_cut, eosvmax, length); });
 # 2313 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2314 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < length ; ++i){
@@ -12074,7 +12073,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2322 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          } else {
 # 2323 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-            ssc = ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ssc); }) ;
+            ssc = ({ calling_npm("SQRT", 0); SQRT_npm(ssc); }) ;
 # 2324 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          }
 # 2325 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12082,7 +12081,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
          q_new[i] = (ssc*ql[i] + qq[i]) ;
 # 2327 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2328 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-         if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(q_new[i]); }) < q_cut) {q_new[i] = Real_t(0.); } ;
+         if (({ calling_npm("FABS", 0); FABS_npm(q_new[i]); }) < q_cut) {q_new[i] = Real_t(0.); } ;
 # 2329 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       }
 # 2330 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12140,7 +12139,7 @@ void CalcSoundSpeedForElems_quick(Real_t *vnewc, Real_t rho0, Real_t *enewc,
 # 2348 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       }
 # 2349 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      mesh.ss[iz] = ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(ssTmp); });
+      mesh.ss[iz] = ({ calling_npm("SQRT", 0); SQRT_npm(ssTmp); });
 # 2350 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    } }
 # 2351 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12306,7 +12305,7 @@ void EvalEOSForElems_quick(Real_t *vnewc, Index_t length)
    } }
 # 2434 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2435 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcEnergyForElems", 0UL, 0, 23, 4706087171927564632UL, 4706087171927564639UL, 4706087171927564646UL, 4706087171927564653UL, 4706087171927564660UL, 4706087171927564583UL, 4706087171927564569UL, 4706087171927564590UL, 4706087171927564597UL, 4706087171927564604UL, 4706087171927565107UL, 4706087171927564625UL, 4706087171927564576UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927564611UL, 4706087171927564618UL, 0UL, 0UL, 0UL); CalcEnergyForElems_npm(p_new, e_new, q_new, bvc, pbvc, p_old, e_old, q_old, compression, compHalfStep, vnewc, work, delvc, pmin, p_cut, e_cut, q_cut, emin, qq, ql, rho0, eosvmax, length); });
+   ({ calling_npm("CalcEnergyForElems", 0); CalcEnergyForElems_npm(p_new, e_new, q_new, bvc, pbvc, p_old, e_old, q_old, compression, compHalfStep, vnewc, work, delvc, pmin, p_cut, e_cut, q_cut, emin, qq, ql, rho0, eosvmax, length); });
 # 2440 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2441 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2442 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12337,7 +12336,7 @@ void EvalEOSForElems_quick(Real_t *vnewc, Index_t length)
    } }
 # 2456 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2457 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcSoundSpeedForElems", 0UL, 0, 8, 4706087171927565107UL, 0UL, 4706087171927564639UL, 4706087171927564632UL, 4706087171927564660UL, 4706087171927564653UL, 0UL, 0UL); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
+   ({ calling_npm("CalcSoundSpeedForElems", 0); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
 # 2459 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2460 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    free_wrapper(pbvc, 4706087171927564660UL) ;
@@ -12451,7 +12450,7 @@ void ApplyMaterialPropertiesForElems_quick()
     } }
 # 2521 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2522 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-    ({ calling_npm("EvalEOSForElems", 0UL, 0, 2, 4706087171927564309UL, 0UL); EvalEOSForElems_npm(vnewc, length); });
+    ({ calling_npm("EvalEOSForElems", 0); EvalEOSForElems_npm(vnewc, length); });
 # 2523 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2524 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
     free_wrapper(vnewc, 4706087171927564309UL) ;
@@ -12485,7 +12484,7 @@ void UpdateVolumesForElems_quick()
          tmpV = mesh.vnew[i] ;
 # 2539 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2540 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-         if (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(tmpV - Real_t(1.)); }) < v_cut) {tmpV = Real_t(1.); } ;
+         if (({ calling_npm("FABS", 0); FABS_npm(tmpV - Real_t(1.)); }) < v_cut) {tmpV = Real_t(1.); } ;
 # 2542 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          mesh.v[i] = tmpV ;
 # 2543 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12511,17 +12510,17 @@ void LagrangeElements_quick()
    Real_t deltatime; deltatime = (mesh.deltatime) ;
 # 2553 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2554 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcLagrangeElements", 0UL, 0, 1, 0UL); CalcLagrangeElements_npm(deltatime); }) ;
+  ({ calling_npm("CalcLagrangeElements", 0); CalcLagrangeElements_npm(deltatime); }) ;
 # 2555 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2556 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2557 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("CalcQForElems", 0UL, 0, 0); CalcQForElems_npm(); }) ;
+  ({ calling_npm("CalcQForElems", 0); CalcQForElems_npm(); }) ;
 # 2558 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2559 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("ApplyMaterialPropertiesForElems", 0UL, 0, 0); ApplyMaterialPropertiesForElems_npm(); }) ;
+  ({ calling_npm("ApplyMaterialPropertiesForElems", 0); ApplyMaterialPropertiesForElems_npm(); }) ;
 # 2560 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2561 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-  ({ calling_npm("UpdateVolumesForElems", 0UL, 0, 0); UpdateVolumesForElems_npm(); }) ;
+  ({ calling_npm("UpdateVolumesForElems", 0); UpdateVolumesForElems_npm(); }) ;
 # 2562 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 rm_stack(false, 0UL, "LagrangeElements", &____must_manage_LagrangeElements, ____alias_loc_id_10, ____chimes_did_disable44); }
 
@@ -12567,7 +12566,7 @@ void CalcCourantConstraintForElems_quick()
       }
 # 2585 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2586 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      dtf = ({ calling_npm("SQRT", 0UL, 0, 1, 0UL); SQRT_npm(dtf); }) ;
+      dtf = ({ calling_npm("SQRT", 0); SQRT_npm(dtf); }) ;
 # 2587 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2588 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       dtf = mesh.arealg[indx] / dtf ;
@@ -12628,7 +12627,7 @@ void CalcHydroConstraintForElems_quick()
 # 2619 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       if (mesh.vdov[indx] != Real_t(0.)) {
 # 2620 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-          Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(mesh.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
+          Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm("FABS", 0); FABS_npm(mesh.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
 # 2621 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
          if ( dthydro > dtdvov ) {
 # 2622 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12663,11 +12662,11 @@ static inline
 void CalcTimeConstraintsForElems_quick() {const int ____chimes_did_disable47 = new_stack((void *)(&CalcTimeConstraintsForElems), "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, 0) ; ; ;
 # 2637 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2638 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcCourantConstraintForElems", 0UL, 0, 0); CalcCourantConstraintForElems_npm(); }) ;
+   ({ calling_npm("CalcCourantConstraintForElems", 0); CalcCourantConstraintForElems_npm(); }) ;
 # 2639 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2640 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2641 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcHydroConstraintForElems", 0UL, 0, 0); CalcHydroConstraintForElems_npm(); }) ;
+   ({ calling_npm("CalcHydroConstraintForElems", 0); CalcHydroConstraintForElems_npm(); }) ;
 # 2642 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 rm_stack(false, 0UL, "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, ____chimes_did_disable47); }
 
@@ -12683,15 +12682,15 @@ void LagrangeLeapFrog_quick()
 # 2647 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2648 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2649 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("LagrangeNodal", 0UL, 0, 0); LagrangeNodal_npm(); });
+   ({ calling_npm("LagrangeNodal", 0); LagrangeNodal_npm(); });
 # 2650 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2651 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2652 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2653 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("LagrangeElements", 0UL, 0, 0); LagrangeElements_npm(); });
+   ({ calling_npm("LagrangeElements", 0); LagrangeElements_npm(); });
 # 2654 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2655 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("CalcTimeConstraintsForElems", 0UL, 0, 0); CalcTimeConstraintsForElems_npm(); });
+   ({ calling_npm("CalcTimeConstraintsForElems", 0); CalcTimeConstraintsForElems_npm(); });
 # 2656 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2657 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2658 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12740,14 +12739,14 @@ Index_t edgeElems;
 # 2688 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2689 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2690 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("AllocateElemPersistent", 0UL, 0, 2, 4706087171927576249UL, 0UL); AllocateElemPersistent_npm(&mesh, mesh.numElem); }) ;
+   ({ calling_npm("AllocateElemPersistent", 0); AllocateElemPersistent_npm(&mesh, mesh.numElem); }) ;
 # 2691 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("AllocateElemTemporary", 0UL, 0, 2, 4706087171927576249UL, 0UL); AllocateElemTemporary_npm(&mesh, mesh.numElem); }) ;
+   ({ calling_npm("AllocateElemTemporary", 0); AllocateElemTemporary_npm(&mesh, mesh.numElem); }) ;
 # 2692 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2693 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("AllocateNodalPersistent", 0UL, 0, 2, 4706087171927576249UL, 0UL); AllocateNodalPersistent_npm(&mesh, mesh.numNode); }) ;
+   ({ calling_npm("AllocateNodalPersistent", 0); AllocateNodalPersistent_npm(&mesh, mesh.numNode); }) ;
 # 2694 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-   ({ calling_npm("AllocateNodesets", 0UL, 0, 2, 4706087171927576249UL, 0UL); AllocateNodesets_npm(&mesh, edgeNodes*edgeNodes); }) ;
+   ({ calling_npm("AllocateNodesets", 0); AllocateNodesets_npm(&mesh, edgeNodes*edgeNodes); }) ;
 # 2695 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2696 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2697 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -12935,7 +12934,7 @@ Index_t edgeElems;
 # 2799 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2800 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2801 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-       Real_t volume; volume = (({ calling_npm("CalcElemVolumeWrapper", 0UL, 0, 3, 4706087171927562721UL, 4706087171927562722UL, 4706087171927562723UL); CalcElemVolumeWrapper_npm(x_local, y_local, z_local); })) ;
+       Real_t volume; volume = (({ calling_npm("CalcElemVolumeWrapper", 0); CalcElemVolumeWrapper_npm(x_local, y_local, z_local); })) ;
 # 2802 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
       mesh.volo[i] = volume ;
 # 2803 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -13072,9 +13071,9 @@ Index_t edgeElems;
 # 2877 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
    while(mesh.time < mesh.stoptime ) {
 # 2878 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("TimeIncrement", 0UL, 0, 0); TimeIncrement_npm(); }) ;
+      ({ calling_npm("TimeIncrement", 0); TimeIncrement_npm(); }) ;
 # 2879 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-      ({ calling_npm("LagrangeLeapFrog", 0UL, 0, 0); LagrangeLeapFrog_npm(); }) ;
+      ({ calling_npm("LagrangeLeapFrog", 0); LagrangeLeapFrog_npm(); }) ;
 # 2880 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2881 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
 # 2882 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -13120,7 +13119,7 @@ Index_t edgeElems;
 # 2908 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
                 { Index_t k; for ( k = (j + 1) ; k<edgeElems; ++k) {
 # 2909 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
-                         Real_t AbsDiff; AbsDiff = (({ calling_npm("FABS", 0UL, 0, 1, 0UL); FABS_npm(mesh.e[j * edgeElems + k] - mesh.e[k * edgeElems + j]); })) ;
+                         Real_t AbsDiff; AbsDiff = (({ calling_npm("FABS", 0); FABS_npm(mesh.e[j * edgeElems + k] - mesh.e[k * edgeElems + j]); })) ;
 # 2910 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
                         TotalAbsDiff += AbsDiff;
 # 2911 "/home/jmg3/num-debug/src/examples/cpp/lulesh/LULESH.cc"
@@ -16949,7 +16948,7 @@ void LagrangeLeapFrog_npm()
 
 
 static int module_init() {
-    init_module(4706087171927562242UL, 154, 50, 8, 49, 49, 0, 49, 2,
+    init_module(4706087171927562242UL, 154, 50, 8, 49, 49, 0, 49, 87, 0, 2,
                            &____alias_loc_id_0, (unsigned)47, (unsigned)5, (4706087171927562242UL + 459UL), (4706087171927562242UL + 460UL), (4706087171927562242UL + 461UL), (4706087171927562242UL + 462UL), (4706087171927562242UL + 463UL), (4706087171927562242UL + 464UL), (4706087171927562242UL + 465UL), (4706087171927562242UL + 466UL), (4706087171927562242UL + 467UL), (4706087171927562242UL + 468UL), (4706087171927562242UL + 469UL), (4706087171927562242UL + 470UL), (4706087171927562242UL + 471UL), (4706087171927562242UL + 472UL), (4706087171927562242UL + 473UL), (4706087171927562242UL + 474UL), (4706087171927562242UL + 475UL), (4706087171927562242UL + 476UL), (4706087171927562242UL + 477UL), (4706087171927562242UL + 478UL), (4706087171927562242UL + 479UL), (4706087171927562242UL + 480UL), (4706087171927562242UL + 481UL), (4706087171927562242UL + 482UL), (4706087171927562242UL + 483UL), (4706087171927562242UL + 484UL), (4706087171927562242UL + 485UL), (4706087171927562242UL + 486UL), (4706087171927562242UL + 487UL), (4706087171927562242UL + 488UL), (4706087171927562242UL + 489UL), (4706087171927562242UL + 490UL), (4706087171927562242UL + 491UL), (4706087171927562242UL + 492UL), (4706087171927562242UL + 493UL), (4706087171927562242UL + 494UL), (4706087171927562242UL + 495UL), (4706087171927562242UL + 496UL), (4706087171927562242UL + 497UL), (4706087171927562242UL + 498UL), (4706087171927562242UL + 499UL), (4706087171927562242UL + 500UL), (4706087171927562242UL + 501UL), (4706087171927562242UL + 502UL), (4706087171927562242UL + 503UL), (4706087171927562242UL + 1995UL), (4706087171927562242UL + 14007UL), "CalcElemVolumeWrapper", (unsigned)3, (4706087171927562242UL + 479UL), (4706087171927562242UL + 480UL), (4706087171927562242UL + 481UL), "AllocateElemTemporary", (unsigned)1, (4706087171927562242UL + 14007UL), "AllocateElemPersistent", (unsigned)1, (4706087171927562242UL + 14007UL), "AllocateNodesets", (unsigned)1, (4706087171927562242UL + 14007UL), "AllocateNodalPersistent", (unsigned)1, (4706087171927562242UL + 14007UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (4706087171927562242UL + 1UL), (4706087171927562242UL + 2UL), (4706087171927562242UL + 148UL),
                            &____alias_loc_id_2, (unsigned)5, (unsigned)0, (4706087171927562242UL + 158UL), (4706087171927562242UL + 159UL), (4706087171927562242UL + 160UL), (4706087171927562242UL + 167UL), (4706087171927562242UL + 348UL),
@@ -17310,7 +17309,94 @@ static int module_init() {
                         "CalcKinematicsForElems|x_local|0", 1, "CalcKinematicsForElems",
                         "IntegrateStressForElems|B|0", 1, "IntegrateStressForElems",
                         "CalcHourglassControlForElems|x1|0", 1, "CalcHourglassControlForElems",
-                        "CalcFBHourglassForceForElems|hgfx|0", 1, "CalcFBHourglassForceForElems");
+                        "CalcFBHourglassForceForElems|hgfx|0", 1, "CalcFBHourglassForceForElems",
+        "SumElemFaceNormal", 0UL, (int)24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SumElemFaceNormal", 0UL, (int)24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SumElemFaceNormal", 0UL, (int)24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SumElemFaceNormal", 0UL, (int)24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SumElemFaceNormal", 0UL, (int)24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SumElemFaceNormal", 0UL, (int)24, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 4706087171927575191UL, 4706087171927575192UL, 4706087171927575193UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "CalcElemShapeFunctionDerivatives", 0UL, (int)5, 4706087171927570104UL, 4706087171927570105UL, 4706087171927570106UL, 4706087171927570103UL, 4706087171927570292UL,
+        "CalcElemNodeNormals", 0UL, (int)6, 4706087171927570103UL, 4706087171927570103UL, 4706087171927570103UL, 4706087171927570104UL, 4706087171927570105UL, 4706087171927570106UL,
+        "SumElemStressesToNodeForces", 0UL, (int)7, 4706087171927570103UL, 0UL, 0UL, 0UL, 4706087171927570107UL, 4706087171927570108UL, 4706087171927570109UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927571297UL, 4706087171927571298UL, 4706087171927571299UL,
+        "CBRT", 0UL, (int)1, 0UL,
+        "CalcElemFBHourglassForce", 0UL, (int)15, 4706087171927571325UL, 4706087171927571326UL, 4706087171927571327UL, 4706087171927571317UL, 4706087171927571318UL, 4706087171927571319UL, 4706087171927571320UL, 4706087171927571321UL, 4706087171927571322UL, 4706087171927571323UL, 4706087171927571324UL, 0UL, 4706087171927571312UL, 4706087171927571313UL, 4706087171927571314UL,
+        "CollectDomainNodesToElemNodes", 0UL, (int)4, 4706087171927564237UL, 4706087171927570298UL, 4706087171927570299UL, 4706087171927570300UL,
+        "CalcElemVolumeDerivative", 0UL, (int)6, 4706087171927570301UL, 4706087171927570302UL, 4706087171927570303UL, 4706087171927570298UL, 4706087171927570299UL, 4706087171927570300UL,
+        "CalcFBHourglassForceForElems", 0UL, (int)8, 4706087171927570531UL, 4706087171927570358UL, 4706087171927570365UL, 4706087171927570372UL, 4706087171927570337UL, 4706087171927570344UL, 4706087171927570351UL, 0UL,
+        "InitStressTermsForElems", 0UL, (int)4, 0UL, 4706087171927570036UL, 4706087171927570033UL, 4706087171927570030UL,
+        "IntegrateStressForElems", 0UL, (int)5, 0UL, 4706087171927570036UL, 4706087171927570033UL, 4706087171927570030UL, 4706087171927570012UL,
+        "CalcHourglassControlForElems", 0UL, (int)2, 4706087171927570012UL, 0UL,
+        "CalcVolumeForceForElems", 0UL, (int)0,
+        "FABS", 0UL, (int)1, 0UL,
+        "FABS", 0UL, (int)1, 0UL,
+        "FABS", 0UL, (int)1, 0UL,
+        "CalcForceForNodes", 0UL, (int)0,
+        "CalcAccelerationForNodes", 0UL, (int)0,
+        "ApplyAccelerationBoundaryConditionsForNodes", 0UL, (int)0,
+        "CalcVelocityForNodes", 0UL, (int)2, 0UL, 0UL,
+        "CalcPositionForNodes", 0UL, (int)1, 0UL,
+        "CalcElemVolume", 0UL, (int)24, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "AreaFace", 0UL, (int)12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "AreaFace", 0UL, (int)12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "AreaFace", 0UL, (int)12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "AreaFace", 0UL, (int)12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "AreaFace", 0UL, (int)12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "AreaFace", 0UL, (int)12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SQRT", 0UL, (int)1, 0UL,
+        "CalcElemVolumeWrapper", 0UL, (int)3, 4706087171927567646UL, 4706087171927567647UL, 4706087171927567648UL,
+        "CalcElemCharacteristicLength", 0UL, (int)4, 4706087171927567646UL, 4706087171927567647UL, 4706087171927567648UL, 0UL,
+        "CalcElemShapeFunctionDerivatives", 0UL, (int)5, 4706087171927567646UL, 4706087171927567647UL, 4706087171927567648UL, 4706087171927567644UL, 4706087171927567652UL,
+        "CalcElemVelocityGrandient", 0UL, (int)6, 4706087171927567649UL, 4706087171927567650UL, 4706087171927567651UL, 4706087171927567644UL, 0UL, 4706087171927567645UL,
+        "CalcKinematicsForElems", 0UL, (int)2, 0UL, 0UL,
+        "SQRT", 0UL, (int)1, 0UL,
+        "SQRT", 0UL, (int)1, 0UL,
+        "SQRT", 0UL, (int)1, 0UL,
+        "CalcMonotonicQRegionForElems", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "CalcMonotonicQGradientsForElems", 0UL, (int)0,
+        "CalcMonotonicQForElems", 0UL, (int)0,
+        "FABS", 0UL, (int)1, 0UL,
+        "CalcPressureForElems", 0UL, (int)10, 4706087171927565197UL, 4706087171927565762UL, 4706087171927565763UL, 4706087171927565760UL, 4706087171927565768UL, 4706087171927565769UL, 0UL, 0UL, 0UL, 0UL,
+        "SQRT", 0UL, (int)1, 0UL,
+        "FABS", 0UL, (int)1, 0UL,
+        "CalcPressureForElems", 0UL, (int)10, 4706087171927565759UL, 4706087171927565762UL, 4706087171927565763UL, 4706087171927565760UL, 4706087171927565767UL, 4706087171927565769UL, 0UL, 0UL, 0UL, 0UL,
+        "SQRT", 0UL, (int)1, 0UL,
+        "FABS", 0UL, (int)1, 0UL,
+        "CalcPressureForElems", 0UL, (int)10, 4706087171927565759UL, 4706087171927565762UL, 4706087171927565763UL, 4706087171927565760UL, 4706087171927565767UL, 4706087171927565769UL, 0UL, 0UL, 0UL, 0UL,
+        "SQRT", 0UL, (int)1, 0UL,
+        "FABS", 0UL, (int)1, 0UL,
+        "SQRT", 0UL, (int)1, 0UL,
+        "CalcEnergyForElems", 0UL, (int)23, 4706087171927564632UL, 4706087171927564639UL, 4706087171927564646UL, 4706087171927564653UL, 4706087171927564660UL, 4706087171927564583UL, 4706087171927564569UL, 4706087171927564590UL, 4706087171927564597UL, 4706087171927564604UL, 4706087171927565107UL, 4706087171927564625UL, 4706087171927564576UL, 0UL, 0UL, 0UL, 0UL, 0UL, 4706087171927564611UL, 4706087171927564618UL, 0UL, 0UL, 0UL,
+        "CalcSoundSpeedForElems", 0UL, (int)8, 4706087171927565107UL, 0UL, 4706087171927564639UL, 4706087171927564632UL, 4706087171927564660UL, 4706087171927564653UL, 0UL, 0UL,
+        "EvalEOSForElems", 0UL, (int)2, 4706087171927564309UL, 0UL,
+        "FABS", 0UL, (int)1, 0UL,
+        "CalcLagrangeElements", 0UL, (int)1, 0UL,
+        "CalcQForElems", 0UL, (int)0,
+        "ApplyMaterialPropertiesForElems", 0UL, (int)0,
+        "UpdateVolumesForElems", 0UL, (int)0,
+        "SQRT", 0UL, (int)1, 0UL,
+        "FABS", 0UL, (int)1, 0UL,
+        "CalcCourantConstraintForElems", 0UL, (int)0,
+        "CalcHydroConstraintForElems", 0UL, (int)0,
+        "LagrangeNodal", 0UL, (int)0,
+        "LagrangeElements", 0UL, (int)0,
+        "CalcTimeConstraintsForElems", 0UL, (int)0,
+        "AllocateElemPersistent", 0UL, (int)2, 4706087171927576249UL, 0UL,
+        "AllocateElemTemporary", 0UL, (int)2, 4706087171927576249UL, 0UL,
+        "AllocateNodalPersistent", 0UL, (int)2, 4706087171927576249UL, 0UL,
+        "AllocateNodesets", 0UL, (int)2, 4706087171927576249UL, 0UL,
+        "CalcElemVolumeWrapper", 0UL, (int)3, 4706087171927562721UL, 4706087171927562722UL, 4706087171927562723UL,
+        "TimeIncrement", 0UL, (int)0,
+        "LagrangeLeapFrog", 0UL, (int)0,
+        "FABS", 0UL, (int)1, 0UL);
     register_global_var("global|mesh", "%struct.Mesh = type { double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, i32*, i32*, i32*, i32*, i32*, i32*, i32*, i32*, i32*, i32*, i32*, i32*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, i32, i32, i32, i32 }", (void *)(&mesh), 624.0, 0, 1, 47, (int)__builtin_offsetof (struct Mesh, x), (int)__builtin_offsetof (struct Mesh, y), (int)__builtin_offsetof (struct Mesh, z), (int)__builtin_offsetof (struct Mesh, xd), (int)__builtin_offsetof (struct Mesh, yd), (int)__builtin_offsetof (struct Mesh, zd), (int)__builtin_offsetof (struct Mesh, xdd), (int)__builtin_offsetof (struct Mesh, ydd), (int)__builtin_offsetof (struct Mesh, zdd), (int)__builtin_offsetof (struct Mesh, fx), (int)__builtin_offsetof (struct Mesh, fy), (int)__builtin_offsetof (struct Mesh, fz), (int)__builtin_offsetof (struct Mesh, nodalMass), (int)__builtin_offsetof (struct Mesh, symmX), (int)__builtin_offsetof (struct Mesh, symmY), (int)__builtin_offsetof (struct Mesh, symmZ), (int)__builtin_offsetof (struct Mesh, matElemlist), (int)__builtin_offsetof (struct Mesh, nodelist), (int)__builtin_offsetof (struct Mesh, lxim), (int)__builtin_offsetof (struct Mesh, lxip), (int)__builtin_offsetof (struct Mesh, letam), (int)__builtin_offsetof (struct Mesh, letap), (int)__builtin_offsetof (struct Mesh, lzetam), (int)__builtin_offsetof (struct Mesh, lzetap), (int)__builtin_offsetof (struct Mesh, elemBC), (int)__builtin_offsetof (struct Mesh, dxx), (int)__builtin_offsetof (struct Mesh, dyy), (int)__builtin_offsetof (struct Mesh, dzz), (int)__builtin_offsetof (struct Mesh, delv_xi), (int)__builtin_offsetof (struct Mesh, delv_eta), (int)__builtin_offsetof (struct Mesh, delv_zeta), (int)__builtin_offsetof (struct Mesh, delx_xi), (int)__builtin_offsetof (struct Mesh, delx_eta), (int)__builtin_offsetof (struct Mesh, delx_zeta), (int)__builtin_offsetof (struct Mesh, e), (int)__builtin_offsetof (struct Mesh, p), (int)__builtin_offsetof (struct Mesh, q), (int)__builtin_offsetof (struct Mesh, ql), (int)__builtin_offsetof (struct Mesh, qq), (int)__builtin_offsetof (struct Mesh, v), (int)__builtin_offsetof (struct Mesh, volo), (int)__builtin_offsetof (struct Mesh, vnew), (int)__builtin_offsetof (struct Mesh, delv), (int)__builtin_offsetof (struct Mesh, vdov), (int)__builtin_offsetof (struct Mesh, arealg), (int)__builtin_offsetof (struct Mesh, ss), (int)__builtin_offsetof (struct Mesh, elemMass));
     register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;

@@ -1,20 +1,20 @@
-omp_global_lock_alloc 0 MAY omp_init_lock 58 3
+omp_global_lock_alloc 0 DOES_NOT
 impl_getName 0 DOES_NOT
 impl_paramsToStr 0 DOES_NOT
 impl_parseParam 0 DOES_NOT
 impl_helpMessage 0 DOES_NOT
 impl_abort 0 DOES_NOT
-ss_mkEmpty 0 MAY omp_set_lock 422 3 omp_unset_lock 427 3
+ss_mkEmpty 0 DOES_NOT
 ss_error 0 DOES_NOT
-ss_init 0 MAY ss_error 456 5 omp_global_lock_alloc 458 16 ss_mkEmpty 473 3
+ss_init 0 DOES_NOT ss_error 456 5 omp_global_lock_alloc 458 16 ss_mkEmpty 473 3
 ss_push 0 MAY ss_error 479 32 rng_showstate 481 53
 ss_top 0 MAY ss_error 494 28 rng_showstate 497 53
 ss_pop 0 MAY ss_error 507 28 rng_showstate 511 53
 ss_topPosn 0 DOES_NOT ss_error 520 28
 ss_localDepth 0 DOES_NOT
-ss_release 0 MAY omp_set_lock 532 3 ss_error 533 107 omp_unset_lock 540 3
-ss_acquire 0 MAY omp_set_lock 548 3 omp_unset_lock 555 3
-ss_steal 0 MAY ss_error 567 34 ss_error 570 36 omp_set_lock 577 3 ss_error 591 55 omp_unset_lock 608 3 rng_showstate 629 43
+ss_release 0 DOES_NOT ss_error 533 107
+ss_acquire 0 DOES_NOT
+ss_steal 0 MAY ss_error 567 34 ss_error 570 36 ss_error 591 55 rng_showstate 629 43
 findwork 0 DOES_NOT
 ss_initState 0 MAY uts_wctime 674 17
 ss_setState 0 MAY ss_error 687 33 uts_wctime 691 10
@@ -22,8 +22,8 @@ initNode 0 DOES_NOT
 initRootNode 0 MAY uts_initRoot 912 3
 genChildren 0 MAY uts_numChildren 959 17 uts_childType 960 15 ss_topPosn 965 36 rng_showstate 965 86 rng_spawn 986 9 ss_push 988 7 releaseNodes 989 7
 releaseNodes 0 MAY ss_localDepth 1098 9 ss_setState 1100 7 ss_release 1101 7 ss_setState 1104 9 cbarrier_cancel 1105 9 ss_setState 1114 7
-cb_init 0 MAY omp_global_lock_alloc 1007 11 omp_set_lock 1012 3 omp_unset_lock 1016 3
-cbarrier_wait 0 MAY omp_set_lock 1025 3 omp_unset_lock 1042 3 omp_set_lock 1064 3 omp_unset_lock 1073 3
+cb_init 0 DOES_NOT omp_global_lock_alloc 1007 11
+cbarrier_wait 0 DOES_NOT
 cbarrier_cancel 0 DOES_NOT
 parTreeSearch 0 DOES initNode 1131 3 ss_localDepth 1136 22 ss_setState 1141 7 ss_top 1144 16 genChildren 1147 2 ss_pop 1156 9 releaseNodes 1161 7 ss_localDepth 1162 20 ss_acquire 1168 9 ss_setState 1177 7 findwork 1178 18 ss_steal 1181 14 findwork 1182 30 ss_setState 1194 5 cbarrier_wait 1195 12 checkpoint 1199 5
 showStats 0 MAY uts_showStats 1274 3

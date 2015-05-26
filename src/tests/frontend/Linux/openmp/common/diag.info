@@ -125,7 +125,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 62 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 95 6 len=14 config_sources_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 95 314  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 127 9 len=14 sample_sources_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 140 9 ({ calling_npm("ricker_wavelet", 0UL, 0, 4, 833742015386977089UL, 0UL, 0UL, 0UL); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 140 9 ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 140 64 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 127 277  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 145 6 len=13 init_progress_quick
@@ -133,7 +133,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 145
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 178 6 len=15 update_progress_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 178 183  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 217 6 len=15 finish_progress_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 222 5 ({ calling_npm("update_progress", 0UL, 0, 1, 0UL); update_progress_npm(progress_goal); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 222 5 ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 222 34 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 217 156  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 44 8 len=7 seconds_resumable
@@ -148,7 +148,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 62 
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 95 6 len=14 config_sources_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 95 314  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 127 9 len=14 sample_sources_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 140 9 ({ calling_npm("ricker_wavelet", 0UL, 0, 4, 833742015386977089UL, 0UL, 0UL, 0UL); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 140 9 ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 140 64 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 127 277  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 145 6 len=13 init_progress_resumable
@@ -156,6 +156,6 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 145
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 178 6 len=15 update_progress_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 178 183  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 217 6 len=15 finish_progress_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 222 5 ({ calling_npm("update_progress", 0UL, 0, 1, 0UL); update_progress_npm(progress_goal); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 222 5 ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 222 34 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/lib/common.cpp 217 156  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

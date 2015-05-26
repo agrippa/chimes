@@ -48,19 +48,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -96,7 +95,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 66 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2904,42 +2903,42 @@ Command parseCommandLine_resumable(int argc, char** argv)
       help = (0) ;
 # 211 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 212 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_7: ({ char ____chimes_arg1; char ____chimes_arg3; void * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg1 = ('h'); ____chimes_arg3 = ('i'); ____chimes_arg4 = (&(help)); } calling((void*)addArg, 7, 0UL, ____alias_loc_id_0, 7, (size_t)(13866544097710735975UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735743UL), (size_t)(0UL), (size_t)(13866544097710735979UL)); (addArg)("help", ____chimes_arg1, 0, ____chimes_arg3, ____chimes_arg4, 0, "print this message"); }) ;
+    call_lbl_7: ({ char ____chimes_arg1; char ____chimes_arg3; void * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg1 = ('h'); ____chimes_arg3 = ('i'); ____chimes_arg4 = (&(help)); } calling((void*)addArg, 7, ____alias_loc_id_0, 0UL, 7, (size_t)(13866544097710735975UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735743UL), (size_t)(0UL), (size_t)(13866544097710735979UL)); (addArg)("help", ____chimes_arg1, 0, ____chimes_arg3, ____chimes_arg4, 0, "print this message"); }) ;
 # 213 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_8: ({ char ____chimes_arg8; char ____chimes_arg10; void * ____chimes_arg11; int ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg8 = ('d'); ____chimes_arg10 = ('s'); ____chimes_arg11 = (cmd.potDir); ____chimes_arg12 = (sizeof (cmd.potDir)); } calling((void*)addArg, 8, 0UL, 0, 7, (size_t)(13866544097710735977UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735981UL)); (addArg)("potDir", ____chimes_arg8, 1, ____chimes_arg10, ____chimes_arg11, ____chimes_arg12, "potential directory"); }) ;
+    call_lbl_8: ({ char ____chimes_arg8; char ____chimes_arg10; void * ____chimes_arg11; int ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg8 = ('d'); ____chimes_arg10 = ('s'); ____chimes_arg11 = (cmd.potDir); ____chimes_arg12 = (sizeof (cmd.potDir)); } calling((void*)addArg, 8, 0, 0UL, 7, (size_t)(13866544097710735977UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735981UL)); (addArg)("potDir", ____chimes_arg8, 1, ____chimes_arg10, ____chimes_arg11, ____chimes_arg12, "potential directory"); }) ;
 # 214 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_9: ({ char ____chimes_arg15; char ____chimes_arg17; void * ____chimes_arg18; int ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg15 = ('p'); ____chimes_arg17 = ('s'); ____chimes_arg18 = (cmd.potName); ____chimes_arg19 = (sizeof (cmd.potName)); } calling((void*)addArg, 9, 0UL, 0, 7, (size_t)(13866544097710735982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735983UL)); (addArg)("potName", ____chimes_arg15, 1, ____chimes_arg17, ____chimes_arg18, ____chimes_arg19, "potential name"); }) ;
+    call_lbl_9: ({ char ____chimes_arg15; char ____chimes_arg17; void * ____chimes_arg18; int ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg15 = ('p'); ____chimes_arg17 = ('s'); ____chimes_arg18 = (cmd.potName); ____chimes_arg19 = (sizeof (cmd.potName)); } calling((void*)addArg, 9, 0, 0UL, 7, (size_t)(13866544097710735982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735983UL)); (addArg)("potName", ____chimes_arg15, 1, ____chimes_arg17, ____chimes_arg18, ____chimes_arg19, "potential name"); }) ;
 # 215 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_10: ({ char ____chimes_arg22; char ____chimes_arg24; void * ____chimes_arg25; int ____chimes_arg26; if (!____chimes_replaying) { ____chimes_arg22 = ('t'); ____chimes_arg24 = ('s'); ____chimes_arg25 = (cmd.potType); ____chimes_arg26 = (sizeof (cmd.potType)); } calling((void*)addArg, 10, 0UL, 0, 7, (size_t)(13866544097710735982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735985UL)); (addArg)("potType", ____chimes_arg22, 1, ____chimes_arg24, ____chimes_arg25, ____chimes_arg26, "potential type (funcfl or setfl)"); }) ;
+    call_lbl_10: ({ char ____chimes_arg22; char ____chimes_arg24; void * ____chimes_arg25; int ____chimes_arg26; if (!____chimes_replaying) { ____chimes_arg22 = ('t'); ____chimes_arg24 = ('s'); ____chimes_arg25 = (cmd.potType); ____chimes_arg26 = (sizeof (cmd.potType)); } calling((void*)addArg, 10, 0, 0UL, 7, (size_t)(13866544097710735982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735985UL)); (addArg)("potType", ____chimes_arg22, 1, ____chimes_arg24, ____chimes_arg25, ____chimes_arg26, "potential type (funcfl or setfl)"); }) ;
 # 216 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_11: ({ char ____chimes_arg29; char ____chimes_arg31; void * ____chimes_arg32; if (!____chimes_replaying) { ____chimes_arg29 = ('e'); ____chimes_arg31 = ('i'); ____chimes_arg32 = (&(cmd.doeam)); } calling((void*)addArg, 11, 0UL, 0, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735987UL)); (addArg)("doeam", ____chimes_arg29, 0, ____chimes_arg31, ____chimes_arg32, 0, "compute eam potentials"); }) ;
+    call_lbl_11: ({ char ____chimes_arg29; char ____chimes_arg31; void * ____chimes_arg32; if (!____chimes_replaying) { ____chimes_arg29 = ('e'); ____chimes_arg31 = ('i'); ____chimes_arg32 = (&(cmd.doeam)); } calling((void*)addArg, 11, 0, 0UL, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735987UL)); (addArg)("doeam", ____chimes_arg29, 0, ____chimes_arg31, ____chimes_arg32, 0, "compute eam potentials"); }) ;
 # 217 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_12: ({ char ____chimes_arg36; char ____chimes_arg38; void * ____chimes_arg39; if (!____chimes_replaying) { ____chimes_arg36 = ('x'); ____chimes_arg38 = ('i'); ____chimes_arg39 = (&(cmd.nx)); } calling((void*)addArg, 12, 0UL, 0, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("nx", ____chimes_arg36, 1, ____chimes_arg38, ____chimes_arg39, 0, "number of unit cells in x"); }) ;
+    call_lbl_12: ({ char ____chimes_arg36; char ____chimes_arg38; void * ____chimes_arg39; if (!____chimes_replaying) { ____chimes_arg36 = ('x'); ____chimes_arg38 = ('i'); ____chimes_arg39 = (&(cmd.nx)); } calling((void*)addArg, 12, 0, 0UL, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("nx", ____chimes_arg36, 1, ____chimes_arg38, ____chimes_arg39, 0, "number of unit cells in x"); }) ;
 # 218 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_13: ({ char ____chimes_arg43; char ____chimes_arg45; void * ____chimes_arg46; if (!____chimes_replaying) { ____chimes_arg43 = ('y'); ____chimes_arg45 = ('i'); ____chimes_arg46 = (&(cmd.ny)); } calling((void*)addArg, 13, 0UL, 0, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("ny", ____chimes_arg43, 1, ____chimes_arg45, ____chimes_arg46, 0, "number of unit cells in y"); }) ;
+    call_lbl_13: ({ char ____chimes_arg43; char ____chimes_arg45; void * ____chimes_arg46; if (!____chimes_replaying) { ____chimes_arg43 = ('y'); ____chimes_arg45 = ('i'); ____chimes_arg46 = (&(cmd.ny)); } calling((void*)addArg, 13, 0, 0UL, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("ny", ____chimes_arg43, 1, ____chimes_arg45, ____chimes_arg46, 0, "number of unit cells in y"); }) ;
 # 219 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_14: ({ char ____chimes_arg50; char ____chimes_arg52; void * ____chimes_arg53; if (!____chimes_replaying) { ____chimes_arg50 = ('z'); ____chimes_arg52 = ('i'); ____chimes_arg53 = (&(cmd.nz)); } calling((void*)addArg, 14, 0UL, 0, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("nz", ____chimes_arg50, 1, ____chimes_arg52, ____chimes_arg53, 0, "number of unit cells in z"); }) ;
+    call_lbl_14: ({ char ____chimes_arg50; char ____chimes_arg52; void * ____chimes_arg53; if (!____chimes_replaying) { ____chimes_arg50 = ('z'); ____chimes_arg52 = ('i'); ____chimes_arg53 = (&(cmd.nz)); } calling((void*)addArg, 14, 0, 0UL, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("nz", ____chimes_arg50, 1, ____chimes_arg52, ____chimes_arg53, 0, "number of unit cells in z"); }) ;
 # 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_15: ({ char ____chimes_arg57; char ____chimes_arg59; void * ____chimes_arg60; if (!____chimes_replaying) { ____chimes_arg57 = ('i'); ____chimes_arg59 = ('i'); ____chimes_arg60 = (&(cmd.xproc)); } calling((void*)addArg, 15, 0UL, 0, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("xproc", ____chimes_arg57, 1, ____chimes_arg59, ____chimes_arg60, 0, "processors in x direction"); }) ;
+    call_lbl_15: ({ char ____chimes_arg57; char ____chimes_arg59; void * ____chimes_arg60; if (!____chimes_replaying) { ____chimes_arg57 = ('i'); ____chimes_arg59 = ('i'); ____chimes_arg60 = (&(cmd.xproc)); } calling((void*)addArg, 15, 0, 0UL, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("xproc", ____chimes_arg57, 1, ____chimes_arg59, ____chimes_arg60, 0, "processors in x direction"); }) ;
 # 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_16: ({ char ____chimes_arg64; char ____chimes_arg66; void * ____chimes_arg67; if (!____chimes_replaying) { ____chimes_arg64 = ('j'); ____chimes_arg66 = ('i'); ____chimes_arg67 = (&(cmd.yproc)); } calling((void*)addArg, 16, 0UL, 0, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("yproc", ____chimes_arg64, 1, ____chimes_arg66, ____chimes_arg67, 0, "processors in y direction"); }) ;
+    call_lbl_16: ({ char ____chimes_arg64; char ____chimes_arg66; void * ____chimes_arg67; if (!____chimes_replaying) { ____chimes_arg64 = ('j'); ____chimes_arg66 = ('i'); ____chimes_arg67 = (&(cmd.yproc)); } calling((void*)addArg, 16, 0, 0UL, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("yproc", ____chimes_arg64, 1, ____chimes_arg66, ____chimes_arg67, 0, "processors in y direction"); }) ;
 # 222 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_17: ({ char ____chimes_arg71; char ____chimes_arg73; void * ____chimes_arg74; if (!____chimes_replaying) { ____chimes_arg71 = ('k'); ____chimes_arg73 = ('i'); ____chimes_arg74 = (&(cmd.zproc)); } calling((void*)addArg, 17, 0UL, 0, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("zproc", ____chimes_arg71, 1, ____chimes_arg73, ____chimes_arg74, 0, "processors in z direction"); }) ;
+    call_lbl_17: ({ char ____chimes_arg71; char ____chimes_arg73; void * ____chimes_arg74; if (!____chimes_replaying) { ____chimes_arg71 = ('k'); ____chimes_arg73 = ('i'); ____chimes_arg74 = (&(cmd.zproc)); } calling((void*)addArg, 17, 0, 0UL, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("zproc", ____chimes_arg71, 1, ____chimes_arg73, ____chimes_arg74, 0, "processors in z direction"); }) ;
 # 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_18: ({ char ____chimes_arg78; char ____chimes_arg80; void * ____chimes_arg81; if (!____chimes_replaying) { ____chimes_arg78 = ('N'); ____chimes_arg80 = ('i'); ____chimes_arg81 = (&(cmd.nSteps)); } calling((void*)addArg, 18, 0UL, 0, 7, (size_t)(13866544097710735977UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736001UL)); (addArg)("nSteps", ____chimes_arg78, 1, ____chimes_arg80, ____chimes_arg81, 0, "number of time steps"); }) ;
+    call_lbl_18: ({ char ____chimes_arg78; char ____chimes_arg80; void * ____chimes_arg81; if (!____chimes_replaying) { ____chimes_arg78 = ('N'); ____chimes_arg80 = ('i'); ____chimes_arg81 = (&(cmd.nSteps)); } calling((void*)addArg, 18, 0, 0UL, 7, (size_t)(13866544097710735977UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736001UL)); (addArg)("nSteps", ____chimes_arg78, 1, ____chimes_arg80, ____chimes_arg81, 0, "number of time steps"); }) ;
 # 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_19: ({ char ____chimes_arg85; char ____chimes_arg87; void * ____chimes_arg88; if (!____chimes_replaying) { ____chimes_arg85 = ('n'); ____chimes_arg87 = ('i'); ____chimes_arg88 = (&(cmd.printRate)); } calling((void*)addArg, 19, 0UL, 0, 7, (size_t)(13866544097710736002UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736003UL)); (addArg)("printRate", ____chimes_arg85, 1, ____chimes_arg87, ____chimes_arg88, 0, "number of steps between output"); }) ;
+    call_lbl_19: ({ char ____chimes_arg85; char ____chimes_arg87; void * ____chimes_arg88; if (!____chimes_replaying) { ____chimes_arg85 = ('n'); ____chimes_arg87 = ('i'); ____chimes_arg88 = (&(cmd.printRate)); } calling((void*)addArg, 19, 0, 0UL, 7, (size_t)(13866544097710736002UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736003UL)); (addArg)("printRate", ____chimes_arg85, 1, ____chimes_arg87, ____chimes_arg88, 0, "number of steps between output"); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_20: ({ char ____chimes_arg92; char ____chimes_arg94; void * ____chimes_arg95; if (!____chimes_replaying) { ____chimes_arg92 = ('D'); ____chimes_arg94 = ('d'); ____chimes_arg95 = (&(cmd.dt)); } calling((void*)addArg, 20, 0UL, 0, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736005UL)); (addArg)("dt", ____chimes_arg92, 1, ____chimes_arg94, ____chimes_arg95, 0, "time step (in fs)"); }) ;
+    call_lbl_20: ({ char ____chimes_arg92; char ____chimes_arg94; void * ____chimes_arg95; if (!____chimes_replaying) { ____chimes_arg92 = ('D'); ____chimes_arg94 = ('d'); ____chimes_arg95 = (&(cmd.dt)); } calling((void*)addArg, 20, 0, 0UL, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736005UL)); (addArg)("dt", ____chimes_arg92, 1, ____chimes_arg94, ____chimes_arg95, 0, "time step (in fs)"); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_21: ({ char ____chimes_arg99; char ____chimes_arg101; void * ____chimes_arg102; if (!____chimes_replaying) { ____chimes_arg99 = ('l'); ____chimes_arg101 = ('d'); ____chimes_arg102 = (&(cmd.lat)); } calling((void*)addArg, 21, 0UL, 0, 7, (size_t)(13866544097710736006UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736007UL)); (addArg)("lat", ____chimes_arg99, 1, ____chimes_arg101, ____chimes_arg102, 0, "lattice parameter (Angstroms)"); }) ;
+    call_lbl_21: ({ char ____chimes_arg99; char ____chimes_arg101; void * ____chimes_arg102; if (!____chimes_replaying) { ____chimes_arg99 = ('l'); ____chimes_arg101 = ('d'); ____chimes_arg102 = (&(cmd.lat)); } calling((void*)addArg, 21, 0, 0UL, 7, (size_t)(13866544097710736006UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736007UL)); (addArg)("lat", ____chimes_arg99, 1, ____chimes_arg101, ____chimes_arg102, 0, "lattice parameter (Angstroms)"); }) ;
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_22: ({ char ____chimes_arg106; char ____chimes_arg108; void * ____chimes_arg109; if (!____chimes_replaying) { ____chimes_arg106 = ('T'); ____chimes_arg108 = ('d'); ____chimes_arg109 = (&(cmd.temperature)); } calling((void*)addArg, 22, 0UL, 0, 7, (size_t)(13866544097710735975UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736009UL)); (addArg)("temp", ____chimes_arg106, 1, ____chimes_arg108, ____chimes_arg109, 0, "initial temperature (K)"); }) ;
+    call_lbl_22: ({ char ____chimes_arg106; char ____chimes_arg108; void * ____chimes_arg109; if (!____chimes_replaying) { ____chimes_arg106 = ('T'); ____chimes_arg108 = ('d'); ____chimes_arg109 = (&(cmd.temperature)); } calling((void*)addArg, 22, 0, 0UL, 7, (size_t)(13866544097710735975UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736009UL)); (addArg)("temp", ____chimes_arg106, 1, ____chimes_arg108, ____chimes_arg109, 0, "initial temperature (K)"); }) ;
 # 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_23: ({ char ____chimes_arg113; char ____chimes_arg115; void * ____chimes_arg116; if (!____chimes_replaying) { ____chimes_arg113 = ('r'); ____chimes_arg115 = ('d'); ____chimes_arg116 = (&(cmd.initialDelta)); } calling((void*)addArg, 23, 0UL, 0, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("delta", ____chimes_arg113, 1, ____chimes_arg115, ____chimes_arg116, 0, "initial delta (Angstroms)"); }) ;
+    call_lbl_23: ({ char ____chimes_arg113; char ____chimes_arg115; void * ____chimes_arg116; if (!____chimes_replaying) { ____chimes_arg113 = ('r'); ____chimes_arg115 = ('d'); ____chimes_arg116 = (&(cmd.initialDelta)); } calling((void*)addArg, 23, 0, 0UL, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("delta", ____chimes_arg113, 1, ____chimes_arg115, ____chimes_arg116, 0, "initial delta (Angstroms)"); }) ;
 # 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_24: ({ calling((void*)processArgs, 24, 0UL, 0, 2, (size_t)(0UL), (size_t)(13866544097710735883UL)); (processArgs)(argc, argv); }) ;
+    call_lbl_24: ({ calling((void*)processArgs, 24, 0, 0UL, 2, (size_t)(0UL), (size_t)(13866544097710735883UL)); (processArgs)(argc, argv); }) ;
 # 231 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -2958,15 +2957,15 @@ Command parseCommandLine_resumable(int argc, char** argv)
 # 242 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    {
 # 243 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-       call_lbl_30: ({ calling((void*)printArgs, 30, 0UL, ____alias_loc_id_1, 0); (printArgs)(); }) ;
+       call_lbl_30: ({ calling((void*)printArgs, 30, ____alias_loc_id_1, 0UL, 0); (printArgs)(); }) ;
 # 244 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-       call_lbl_31: ({ calling((void*)freeArgs, 31, 0UL, 0, 0); (freeArgs)(); }) ;
+       call_lbl_31: ({ calling((void*)freeArgs, 31, 0, 0UL, 0); (freeArgs)(); }) ;
 # 245 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
       exit(2);
 # 246 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    }
 # 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_33: ({ calling((void*)freeArgs, 33, 0UL, ____alias_loc_id_2, 0); (freeArgs)(); }) ;
+    call_lbl_33: ({ calling((void*)freeArgs, 33, ____alias_loc_id_2, 0UL, 0); (freeArgs)(); }) ;
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0); return cmd;
@@ -2980,7 +2979,7 @@ void printCmdYaml_resumable(FILE* file, Command* cmd)
 # 253 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(13866544097710735970UL), (size_t)(13866544097710735971UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 254 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   alias_group_changed(____alias_loc_id_3); call_lbl_2: if (! ({ calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return;; };
+   alias_group_changed(____alias_loc_id_3); call_lbl_2: if (! ({ calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return;; };
 # 256 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    fprintf(file,
 # 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -3099,42 +3098,42 @@ Command parseCommandLine_quick(int argc, char** argv)
       help = (0) ;
 # 211 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 212 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_7: ({ calling((void*)addArg, 7, 0UL, ____alias_loc_id_0, 7, (size_t)(13866544097710735975UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735743UL), (size_t)(0UL), (size_t)(13866544097710735979UL)); (addArg)("help", 'h', 0, 'i', &(help), 0, "print this message"); }) ;
+    call_lbl_7: ({ calling((void*)addArg, 7, ____alias_loc_id_0, 0UL, 7, (size_t)(13866544097710735975UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735743UL), (size_t)(0UL), (size_t)(13866544097710735979UL)); (addArg)("help", 'h', 0, 'i', &(help), 0, "print this message"); }) ;
 # 213 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_8: ({ calling((void*)addArg, 8, 0UL, 0, 7, (size_t)(13866544097710735977UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735981UL)); (addArg)("potDir", 'd', 1, 's', cmd.potDir, sizeof (cmd.potDir), "potential directory"); }) ;
+    call_lbl_8: ({ calling((void*)addArg, 8, 0, 0UL, 7, (size_t)(13866544097710735977UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735981UL)); (addArg)("potDir", 'd', 1, 's', cmd.potDir, sizeof (cmd.potDir), "potential directory"); }) ;
 # 214 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_9: ({ calling((void*)addArg, 9, 0UL, 0, 7, (size_t)(13866544097710735982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735983UL)); (addArg)("potName", 'p', 1, 's', cmd.potName, sizeof (cmd.potName), "potential name"); }) ;
+    call_lbl_9: ({ calling((void*)addArg, 9, 0, 0UL, 7, (size_t)(13866544097710735982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735983UL)); (addArg)("potName", 'p', 1, 's', cmd.potName, sizeof (cmd.potName), "potential name"); }) ;
 # 215 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_10: ({ calling((void*)addArg, 10, 0UL, 0, 7, (size_t)(13866544097710735982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735985UL)); (addArg)("potType", 't', 1, 's', cmd.potType, sizeof (cmd.potType), "potential type (funcfl or setfl)"); }) ;
+    call_lbl_10: ({ calling((void*)addArg, 10, 0, 0UL, 7, (size_t)(13866544097710735982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735985UL)); (addArg)("potType", 't', 1, 's', cmd.potType, sizeof (cmd.potType), "potential type (funcfl or setfl)"); }) ;
 # 216 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_11: ({ calling((void*)addArg, 11, 0UL, 0, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735987UL)); (addArg)("doeam", 'e', 0, 'i', &(cmd.doeam), 0, "compute eam potentials"); }) ;
+    call_lbl_11: ({ calling((void*)addArg, 11, 0, 0UL, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735987UL)); (addArg)("doeam", 'e', 0, 'i', &(cmd.doeam), 0, "compute eam potentials"); }) ;
 # 217 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_12: ({ calling((void*)addArg, 12, 0UL, 0, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("nx", 'x', 1, 'i', &(cmd.nx), 0, "number of unit cells in x"); }) ;
+    call_lbl_12: ({ calling((void*)addArg, 12, 0, 0UL, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("nx", 'x', 1, 'i', &(cmd.nx), 0, "number of unit cells in x"); }) ;
 # 218 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_13: ({ calling((void*)addArg, 13, 0UL, 0, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("ny", 'y', 1, 'i', &(cmd.ny), 0, "number of unit cells in y"); }) ;
+    call_lbl_13: ({ calling((void*)addArg, 13, 0, 0UL, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("ny", 'y', 1, 'i', &(cmd.ny), 0, "number of unit cells in y"); }) ;
 # 219 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_14: ({ calling((void*)addArg, 14, 0UL, 0, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("nz", 'z', 1, 'i', &(cmd.nz), 0, "number of unit cells in z"); }) ;
+    call_lbl_14: ({ calling((void*)addArg, 14, 0, 0UL, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("nz", 'z', 1, 'i', &(cmd.nz), 0, "number of unit cells in z"); }) ;
 # 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_15: ({ calling((void*)addArg, 15, 0UL, 0, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("xproc", 'i', 1, 'i', &(cmd.xproc), 0, "processors in x direction"); }) ;
+    call_lbl_15: ({ calling((void*)addArg, 15, 0, 0UL, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("xproc", 'i', 1, 'i', &(cmd.xproc), 0, "processors in x direction"); }) ;
 # 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_16: ({ calling((void*)addArg, 16, 0UL, 0, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("yproc", 'j', 1, 'i', &(cmd.yproc), 0, "processors in y direction"); }) ;
+    call_lbl_16: ({ calling((void*)addArg, 16, 0, 0UL, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("yproc", 'j', 1, 'i', &(cmd.yproc), 0, "processors in y direction"); }) ;
 # 222 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_17: ({ calling((void*)addArg, 17, 0UL, 0, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("zproc", 'k', 1, 'i', &(cmd.zproc), 0, "processors in z direction"); }) ;
+    call_lbl_17: ({ calling((void*)addArg, 17, 0, 0UL, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("zproc", 'k', 1, 'i', &(cmd.zproc), 0, "processors in z direction"); }) ;
 # 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_18: ({ calling((void*)addArg, 18, 0UL, 0, 7, (size_t)(13866544097710735977UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736001UL)); (addArg)("nSteps", 'N', 1, 'i', &(cmd.nSteps), 0, "number of time steps"); }) ;
+    call_lbl_18: ({ calling((void*)addArg, 18, 0, 0UL, 7, (size_t)(13866544097710735977UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736001UL)); (addArg)("nSteps", 'N', 1, 'i', &(cmd.nSteps), 0, "number of time steps"); }) ;
 # 224 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_19: ({ calling((void*)addArg, 19, 0UL, 0, 7, (size_t)(13866544097710736002UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736003UL)); (addArg)("printRate", 'n', 1, 'i', &(cmd.printRate), 0, "number of steps between output"); }) ;
+    call_lbl_19: ({ calling((void*)addArg, 19, 0, 0UL, 7, (size_t)(13866544097710736002UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736003UL)); (addArg)("printRate", 'n', 1, 'i', &(cmd.printRate), 0, "number of steps between output"); }) ;
 # 225 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_20: ({ calling((void*)addArg, 20, 0UL, 0, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736005UL)); (addArg)("dt", 'D', 1, 'd', &(cmd.dt), 0, "time step (in fs)"); }) ;
+    call_lbl_20: ({ calling((void*)addArg, 20, 0, 0UL, 7, (size_t)(13866544097710735988UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736005UL)); (addArg)("dt", 'D', 1, 'd', &(cmd.dt), 0, "time step (in fs)"); }) ;
 # 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_21: ({ calling((void*)addArg, 21, 0UL, 0, 7, (size_t)(13866544097710736006UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736007UL)); (addArg)("lat", 'l', 1, 'd', &(cmd.lat), 0, "lattice parameter (Angstroms)"); }) ;
+    call_lbl_21: ({ calling((void*)addArg, 21, 0, 0UL, 7, (size_t)(13866544097710736006UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736007UL)); (addArg)("lat", 'l', 1, 'd', &(cmd.lat), 0, "lattice parameter (Angstroms)"); }) ;
 # 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_22: ({ calling((void*)addArg, 22, 0UL, 0, 7, (size_t)(13866544097710735975UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736009UL)); (addArg)("temp", 'T', 1, 'd', &(cmd.temperature), 0, "initial temperature (K)"); }) ;
+    call_lbl_22: ({ calling((void*)addArg, 22, 0, 0UL, 7, (size_t)(13866544097710735975UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710736009UL)); (addArg)("temp", 'T', 1, 'd', &(cmd.temperature), 0, "initial temperature (K)"); }) ;
 # 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_23: ({ calling((void*)addArg, 23, 0UL, 0, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("delta", 'r', 1, 'd', &(cmd.initialDelta), 0, "initial delta (Angstroms)"); }) ;
+    call_lbl_23: ({ calling((void*)addArg, 23, 0, 0UL, 7, (size_t)(13866544097710735986UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(13866544097710735881UL), (size_t)(0UL), (size_t)(13866544097710735989UL)); (addArg)("delta", 'r', 1, 'd', &(cmd.initialDelta), 0, "initial delta (Angstroms)"); }) ;
 # 229 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 230 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_24: ({ calling((void*)processArgs, 24, 0UL, 0, 2, (size_t)(0UL), (size_t)(13866544097710735883UL)); (processArgs)(argc, argv); }) ;
+    call_lbl_24: ({ calling((void*)processArgs, 24, 0, 0UL, 2, (size_t)(0UL), (size_t)(13866544097710735883UL)); (processArgs)(argc, argv); }) ;
 # 231 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -3153,15 +3152,15 @@ Command parseCommandLine_quick(int argc, char** argv)
 # 242 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    {
 # 243 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-       call_lbl_30: ({ calling((void*)printArgs, 30, 0UL, ____alias_loc_id_1, 0); (printArgs)(); }) ;
+       call_lbl_30: ({ calling((void*)printArgs, 30, ____alias_loc_id_1, 0UL, 0); (printArgs)(); }) ;
 # 244 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-       call_lbl_31: ({ calling((void*)freeArgs, 31, 0UL, 0, 0); (freeArgs)(); }) ;
+       call_lbl_31: ({ calling((void*)freeArgs, 31, 0, 0UL, 0); (freeArgs)(); }) ;
 # 245 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
       exit(2);
 # 246 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    }
 # 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-    call_lbl_33: ({ calling((void*)freeArgs, 33, 0UL, ____alias_loc_id_2, 0); (freeArgs)(); }) ;
+    call_lbl_33: ({ calling((void*)freeArgs, 33, ____alias_loc_id_2, 0UL, 0); (freeArgs)(); }) ;
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0); return cmd;
@@ -3174,7 +3173,7 @@ void printCmdYaml_quick(FILE* file, Command* cmd)
 # 253 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(13866544097710735970UL), (size_t)(13866544097710735971UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; ; ;
 # 254 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   alias_group_changed(____alias_loc_id_3); call_lbl_2: if (! ({ calling((void*)printRank, 2, 0UL, 0, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return;; };
+   alias_group_changed(____alias_loc_id_3); call_lbl_2: if (! ({ calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return;; };
 # 256 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    fprintf(file,
 # 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -3445,7 +3444,7 @@ void printCmdYaml_npm(FILE* file, Command* cmd)
 
 
 static int module_init() {
-    init_module(13866544097710735740UL, 3, 2, 5, 4, 2, 5, 7, 3,
+    init_module(13866544097710735740UL, 3, 2, 5, 4, 2, 5, 7, 0, 0, 3,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)1, (13866544097710735740UL + 1UL), (13866544097710735740UL + 2UL), (13866544097710735740UL + 3UL), (13866544097710735740UL + 141UL), "addArg", (unsigned)3, (13866544097710735740UL + 3UL), (13866544097710735740UL + 235UL), (13866544097710735740UL + 239UL),
                            &____alias_loc_id_1, (unsigned)1, (unsigned)2, (13866544097710735740UL + 141UL), "addArg", (unsigned)18, (13866544097710735740UL + 141UL), (13866544097710735740UL + 235UL), (13866544097710735740UL + 237UL), (13866544097710735740UL + 241UL), (13866544097710735740UL + 242UL), (13866544097710735740UL + 243UL), (13866544097710735740UL + 245UL), (13866544097710735740UL + 246UL), (13866544097710735740UL + 247UL), (13866544097710735740UL + 248UL), (13866544097710735740UL + 249UL), (13866544097710735740UL + 261UL), (13866544097710735740UL + 262UL), (13866544097710735740UL + 263UL), (13866544097710735740UL + 265UL), (13866544097710735740UL + 266UL), (13866544097710735740UL + 267UL), (13866544097710735740UL + 269UL), "processArgs", (unsigned)1, (13866544097710735740UL + 143UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)2, (13866544097710735740UL + 141UL), "addArg", (unsigned)18, (13866544097710735740UL + 141UL), (13866544097710735740UL + 235UL), (13866544097710735740UL + 237UL), (13866544097710735740UL + 241UL), (13866544097710735740UL + 242UL), (13866544097710735740UL + 243UL), (13866544097710735740UL + 245UL), (13866544097710735740UL + 246UL), (13866544097710735740UL + 247UL), (13866544097710735740UL + 248UL), (13866544097710735740UL + 249UL), (13866544097710735740UL + 261UL), (13866544097710735740UL + 262UL), (13866544097710735740UL + 263UL), (13866544097710735740UL + 265UL), (13866544097710735740UL + 266UL), (13866544097710735740UL + 267UL), (13866544097710735740UL + 269UL), "processArgs", (unsigned)1, (13866544097710735740UL + 143UL),

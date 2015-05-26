@@ -58,19 +58,18 @@ typedef long unsigned int size_t;
 extern void init_chimes();
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
-extern void *translate_fptr(void *fptr, int lbl, size_t return_alias,
-        unsigned loc_id, int n_params, ...);
-extern void calling_npm(const char *name, size_t return_alias, unsigned loc_id,
-        int n_params, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
 extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id, int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
@@ -106,7 +105,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 73 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4170,7 +4169,7 @@ float **sample_sources_resumable(source *srcs, int nsrcs, int nsteps, float dt) 
 # 139 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
         }
 # 140 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-        ({ calling_npm("ricker_wavelet", 0UL, 0, 4, 1080995127431880269UL, 0UL, 0UL, 0UL); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
+        ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
 # 141 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
     } }
 # 142 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -4321,7 +4320,7 @@ void finish_progress_resumable() {const int ____chimes_did_disable7 = new_stack(
     }
 # 221 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 222 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-    ({ calling_npm("update_progress", 0UL, 0, 1, 0UL); update_progress_npm(progress_goal); });
+    ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); });
 # 223 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
     fprintf(stderr, "\n");
 # 224 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -4517,7 +4516,7 @@ float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt) {con
 # 139 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
         }
 # 140 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-        ({ calling_npm("ricker_wavelet", 0UL, 0, 4, 1080995127431880269UL, 0UL, 0UL, 0UL); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
+        ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
 # 141 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
     } }
 # 142 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -4665,7 +4664,7 @@ void finish_progress_quick() {const int ____chimes_did_disable7 = new_stack((voi
     }
 # 221 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
 # 222 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
-    ({ calling_npm("update_progress", 0UL, 0, 1, 0UL); update_progress_npm(progress_goal); });
+    ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); });
 # 223 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
     fprintf(stderr, "\n");
 # 224 "/home/jmg3/num-debug/src/examples/cpp/lib/common.cpp"
@@ -5013,7 +5012,7 @@ void finish_progress_npm() {
 
 
 static int module_init() {
-    init_module(1080995127431879909UL, 19, 8, 1, 7, 8, 0, 8, 3,
+    init_module(1080995127431879909UL, 19, 8, 1, 7, 8, 0, 8, 2, 0, 3,
                            &____alias_loc_id_0, (unsigned)2, (unsigned)0, (1080995127431879909UL + 1UL), (1080995127431879909UL + 3UL),
                            &____alias_loc_id_1, (unsigned)10, (unsigned)0, (1080995127431879909UL + 22UL), (1080995127431879909UL + 23UL), (1080995127431879909UL + 24UL), (1080995127431879909UL + 25UL), (1080995127431879909UL + 26UL), (1080995127431879909UL + 27UL), (1080995127431879909UL + 28UL), (1080995127431879909UL + 29UL), (1080995127431879909UL + 30UL), (1080995127431879909UL + 91UL),
                            &____alias_loc_id_2, (unsigned)13, (unsigned)0, (1080995127431879909UL + 96UL), (1080995127431879909UL + 97UL), (1080995127431879909UL + 98UL), (1080995127431879909UL + 99UL), (1080995127431879909UL + 100UL), (1080995127431879909UL + 101UL), (1080995127431879909UL + 102UL), (1080995127431879909UL + 103UL), (1080995127431879909UL + 104UL), (1080995127431879909UL + 114UL), (1080995127431879909UL + 154UL), (1080995127431879909UL + 173UL), (1080995127431879909UL + 186UL),
@@ -5067,7 +5066,9 @@ static int module_init() {
                              "ricker_wavelet", 0,
                              "parse_source", 0,
                              "sample_sources", 1, "ricker_wavelet",
-                        "seconds|tp|0", 1, "seconds");
+                        "seconds|tp|0", 1, "seconds",
+        "ricker_wavelet", 0UL, (int)4, 1080995127431880269UL, 0UL, 0UL, 0UL,
+        "update_progress", 0UL, (int)1, 0UL);
     register_global_var("global|progress_buffer", "i8*", (void *)(&progress_buffer), 8.0, 1, 0, 0);
     register_global_var("global|progress_disabled", "i32", (void *)(&progress_disabled), 4.0, 0, 0, 0);
     register_global_var("global|progress_length", "i32", (void *)(&progress_length), 4.0, 0, 0, 0);

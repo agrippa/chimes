@@ -37,9 +37,9 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 4  call_lbl_1: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 18  call_lbl_4: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 18 9 len=17 initDecomposition_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 44  ({  calling((void*)getNRanks, 1, 0UL, ____alias_loc_id_0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 44  ({  calling((void*)getNRanks, 1, ____alias_loc_id_0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 41  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 41  ({  calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 51 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 15 
@@ -48,9 +48,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decompos
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 57 5 len=12 processorNum_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 58 202  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 18 9 len=17 initDecomposition_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 44  ({  calling((void*)getNRanks, 1, 0UL, ____alias_loc_id_0, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 44  ({  calling((void*)getNRanks, 1, ____alias_loc_id_0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 54 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 41  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 41  ({  calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 51 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 15 

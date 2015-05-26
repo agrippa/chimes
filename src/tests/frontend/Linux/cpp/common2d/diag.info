@@ -60,13 +60,13 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 48 1
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 55 6 len=14 default_config_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 55 198  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 71 6 len=12 setup_config_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 75 5 ({ calling_npm("default_config", 0UL, 0, 1, 14525082970080978713UL); default_config_npm(conf); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 75 5 ({ calling_npm("default_config", 0); default_config_npm(conf); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 75 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 30  ({  calling((void*)parse_source, 6, 0UL, ____alias_loc_id_0, 2, (size_t)(14525082970080978615UL), (size_t)(14525082970080978643UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 30  ({  calling((void*)parse_source, 6, ____alias_loc_id_0, 0UL, 2, (size_t)(14525082970080978615UL), (size_t)(14525082970080978643UL)); (parse_source)(optarg, conf->srcs + conf->nsrcs); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 75 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 115 17 ({ calling_npm("usage", 0UL, 0, 1, 14525082970080978715UL); usage_npm(argv); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 115 17 ({ calling_npm("usage", 0); usage_npm(argv); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 115 27 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 37  ({  calling((void*)getNumCUDADevices, 11, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 37  ({  calling((void*)getNumCUDADevices, 11, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 55 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 10 
@@ -81,13 +81,13 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 48 1
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 55 6 len=14 default_config_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 55 198  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 71 6 len=12 setup_config_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 75 5 ({ calling_npm("default_config", 0UL, 0, 1, 14525082970080978713UL); default_config_npm(conf); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 75 5 ({ calling_npm("default_config", 0); default_config_npm(conf); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 75 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 30  ({  source * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 6, 0UL, ____alias_loc_id_0, 2, (size_t)(14525082970080978615UL), (size_t)(14525082970080978643UL)); (parse_source)(optarg, ____chimes_arg1); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 30  ({  source * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (conf->srcs + conf->nsrcs);  }  calling((void*)parse_source, 6, ____alias_loc_id_0, 0UL, 2, (size_t)(14525082970080978615UL), (size_t)(14525082970080978643UL)); (parse_source)(optarg, ____chimes_arg1); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 97 75 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 115 17 ({ calling_npm("usage", 0UL, 0, 1, 14525082970080978715UL); usage_npm(argv); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 115 17 ({ calling_npm("usage", 0); usage_npm(argv); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 115 27 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 37  ({  calling((void*)getNumCUDADevices, 11, 0UL, ____alias_loc_id_1, 0); (getNumCUDADevices)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 37  ({  calling((void*)getNumCUDADevices, 11, ____alias_loc_id_1, 0UL, 0); (getNumCUDADevices)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 120 55 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/lib/common2d.cpp 72 10 
