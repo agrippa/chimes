@@ -204,6 +204,7 @@ stack_var *deserialize_var(unsigned char **ptr_to_iter) {
     unsigned char *tmp_buffer_ptr = (unsigned char *)(ptr_offsets +
             ptr_offsets_len);
     void *tmp_buffer = malloc(size);
+    assert(tmp_buffer);
     memcpy(tmp_buffer, tmp_buffer_ptr, size);
     var->set_tmp_buffer(tmp_buffer);
 

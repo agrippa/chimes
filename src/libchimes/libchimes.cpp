@@ -36,7 +36,6 @@
 #include "thread_serialization.h"
 #include "global_serialization.h"
 #include "constant_serialization.h"
-#include "function_serialization.h"
 #include "trace_serialization.h"
 #include "container_serialization.h"
 #include "alias_groups_serialization.h"
@@ -1159,7 +1158,6 @@ void init_chimes() {
                 checkpoint_file);
         traces = deserialize_traces(serialized_traces, serialized_traces_len,
                 &trace_indices);
-        free(serialized_traces);
 
         // read in stack state
         uint64_t stack_serialized_len;
@@ -3370,6 +3368,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
             checkpoint_thread_ctx *checkpoint_ctx = (checkpoint_thread_ctx *)malloc(
                     sizeof(checkpoint_thread_ctx));
+            assert(checkpoint_ctx);
             checkpoint_ctx->stacks_serialized = serialize_program_stacks(&thread_ctxs,
                     &checkpoint_ctx->stacks_serialized_len);
             checkpoint_ctx->globals_serialized = serialize_globals(&global_vars,
@@ -3606,6 +3605,7 @@ static aiocb *prep_async_safe_write(int fd, void *ptr, size_t size,
 
     for (size_t i = 0; i < nchunks; i++) {
         cb = (aiocb*)malloc(sizeof(aiocb));
+        assert(cb);
         memset(cb, 0x00, sizeof(aiocb));
 
         size_t base = i * chunk_size;
@@ -3793,7 +3793,6 @@ void *checkpoint_func(void *data) {
      */
 
     // Total number of async writes issued below
-    struct aiocb * aio_list[(16 + (2 * to_checkpoint->size()) + 4)];
     int n_writes_running = 0;
 
     // Find a unique file for this checkpoint
@@ -3830,6 +3829,8 @@ void *checkpoint_func(void *data) {
                 &count_bytes, "n_checkpoint_times", &async_tokens);
     serialized_checkpoint_time *serialized_times = (serialized_checkpoint_time *)malloc(
             n_checkpoint_times * sizeof(serialized_checkpoint_time));
+    assert(serialized_times);
+
     int index = 0;
     clock_t baseline;
     for (vector<pair<unsigned, clock_t> >::iterator i =
@@ -3935,6 +3936,7 @@ void *checkpoint_func(void *data) {
      *
      * Iterate in reverse so we wait for the last ones first.
      */
+    struct aiocb * aio_list[async_tokens.size()];
     while (!async_tokens.empty()) {
         aiocb *torun = async_tokens.front();
         async_tokens.erase(async_tokens.begin());

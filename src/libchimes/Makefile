@@ -7,8 +7,7 @@ SRC=libchimes.cpp stack_frame.cpp stack_serialization.cpp \
 	type_info.cpp serialization_common.cpp perf_profile.cpp \
 	thread_serialization.cpp constant_serialization.cpp hash_chunker.cpp \
 	trace_serialization.cpp alias_groups_serialization.cpp \
-	checkpointable_heap_serialization.cpp container_serialization.cpp \
-	function_serialization.cpp
+	checkpointable_heap_serialization.cpp container_serialization.cpp
 OBJ=$(patsubst %.cpp,%.o,$(SRC)) 
 
 OMP_LIB=-lgomp

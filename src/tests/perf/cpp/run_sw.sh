@@ -1,4 +1,4 @@
 #!/bin/bash
 
-time ./sw_chimes 6875 1760000
-time ./sw_normal 6875 1760000
+time ./sw_chimes 7000 1204000
+time ./sw_normal 7000 1204000

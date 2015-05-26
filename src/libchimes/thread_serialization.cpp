@@ -13,6 +13,7 @@ unsigned char *serialize_thread_hierarchy(
     unsigned int nthreads = thread_ctxs->size();
     uint64_t len = nthreads * 3 * sizeof(unsigned);
     unsigned char *serialized = (unsigned char *)malloc(len);
+    assert(serialized);
 
     unsigned char *iter = serialized;
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs->begin(),
@@ -46,6 +47,7 @@ unsigned char *serialize_thread_hierarchy(
     len = nthreads * 3 * sizeof(unsigned);
     assert(iter == serialized + len);
     serialized = (unsigned char *)realloc(serialized, len);
+    assert(serialized || len == 0);
 
     *out_len = len;
     return serialized;

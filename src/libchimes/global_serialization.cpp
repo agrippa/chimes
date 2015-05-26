@@ -13,6 +13,7 @@ unsigned char *serialize_globals(map<string, stack_var *> *globals,
         uint64_t *out_len) {
     unsigned char *serialization =
         (unsigned char *)malloc(initial_serialization_size);
+    assert(serialization);
     register uint64_t serialization_capacity = initial_serialization_size;
     register uint64_t serialization_used = 0;
 
@@ -25,6 +26,7 @@ unsigned char *serialize_globals(map<string, stack_var *> *globals,
     }
 
     serialization = (unsigned char *)realloc(serialization, serialization_used);
+    assert(serialization);
     *out_len = serialization_used;
 
     return serialization;
