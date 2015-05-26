@@ -154,6 +154,10 @@ def find_file(name, path):
     return None
 
 
+def is_python_3():
+    return (sys.version_info >= (3, 0))
+
+
 def clean_and_create_folder(folder):
     """
     The end result of this function is an empty directory. This function will
@@ -444,7 +448,10 @@ def query_user(msg):
     do_update = False
 
     while not valid_input:
-        selection = raw_input(msg + ' [y/n]: ')
+        if is_python_3():
+            selection = input(msg + ' [y/n]: ')
+        else:
+            selection = raw_input(msg + ' [y/n]: ')
 
         if selection == 'y':
             do_update = True
@@ -559,6 +566,8 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
                 sys.stderr.write('FATAL: Missing file ' + correct + '\n')
                 if config.force_update or (config.update_tests and \
                         query_user('Copy file from test output?')):
+                    if not os.path.isdir(os.path.dirname(correct)):
+                        os.makedirs(os.path.dirname(correct))
                     shutil.copyfile(generated, correct)
                 else:
                     sys.exit(1)
