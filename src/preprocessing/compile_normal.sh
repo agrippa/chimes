@@ -6,6 +6,7 @@ script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info"
+ENABLE_OMP=1
 KEEP=0
 PROFILE=0
 COMPILE=0
@@ -19,7 +20,7 @@ VERBOSE=0
 GXX_FLAGS="-g -O2"
 DEFINES=
 
-while getopts ":kci:I:L:l:o:w:vpy:D:" opt; do
+while getopts ":kci:I:L:l:o:w:vpy:D:s" opt; do
     case $opt in 
         i)
             INPUTS+=($(get_absolute_path ${OPTARG}))
@@ -57,6 +58,9 @@ while getopts ":kci:I:L:l:o:w:vpy:D:" opt; do
         D)
             DEFINES="$DEFINES -D${OPTARG}"
             ;;
+        s)
+            ENABLE_OMP=0
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -71,6 +75,10 @@ done
 if [[ "${#INPUTS[@]}" -eq "0" ]]; then
     echo usage: compile_normal.sh [-c] [-k] [-v] [-p] [-I include-path] [-l libname] [-L lib-path] -i input.cpp
     exit 1
+fi
+
+if [[ $ENABLE_OMP == 1 ]]; then
+    GXX_FLAGS="${GXX_FLAGS} -fopenmp"
 fi
 
 echo ${INPUTS[@]}

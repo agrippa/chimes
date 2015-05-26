@@ -23,7 +23,7 @@ GXX=/opt/apps/gcc/4.8.2/bin/g++ \
 
 # GXX=/usr/local/bin/g++ \
 GXX=/opt/apps/gcc/4.8.2/bin/g++ \
-    ${CHIMES_HOME}/src/preprocessing/compile_normal.sh \
+    ${CHIMES_HOME}/src/preprocessing/compile_normal.sh -s \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/CoMD.c \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/decomposition.c \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/haloExchange.c \

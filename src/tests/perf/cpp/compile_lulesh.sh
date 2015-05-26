@@ -10,7 +10,7 @@ GXX=/opt/apps/gcc/4.8.2/bin/g++ \
 
 # GXX=/usr/local/bin/g++ \
 GXX=/opt/apps/gcc/4.8.2/bin/g++ \
-    ${CHIMES_HOME}/src/preprocessing/compile_normal.sh \
+    ${CHIMES_HOME}/src/preprocessing/compile_normal.sh -s \
     -i ${CHIMES_HOME}/src/examples/cpp/lulesh/LULESH.cc \
     -o lulesh_normal
 
