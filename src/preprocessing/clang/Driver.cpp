@@ -86,6 +86,9 @@ static llvm::cl::opt<std::string> loc_file("e",
 static llvm::cl::opt<std::string> list_of_externs_file("g",
         llvm::cl::desc("List of externs file"),
         llvm::cl::value_desc("list_of_externs_file"));
+static llvm::cl::opt<std::string> function_pointers_loaded_file("j",
+        llvm::cl::desc("Function pointers loaded file"),
+        llvm::cl::value_desc("function_pointers_loaded_file"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -100,6 +103,7 @@ std::map<std::string, std::set<std::string>> func_to_alias_locs;
 std::set<std::string> npm_functions;
 std::map<std::string, ExternalNPMCall> external_calls;
 std::set<std::string> definitions_in_main_file;
+std::set<std::string> function_pointers_loaded;
 
 static std::vector<std::string> created_vars;
 static std::string current_output_file;
@@ -473,6 +477,7 @@ int main(int argc, const char **argv) {
   check_opt(npm_dump_file, "NPM Dump file");
   check_opt(loc_file, "Alias locs dump file");
   check_opt(list_of_externs_file, "List of externs file");
+  check_opt(function_pointers_loaded_file, "Function pointers loaded file");
 
   ignorable = new std::set<std::string>();
   char *chimes_home = getenv("CHIMES_HOME");
@@ -663,6 +668,18 @@ int main(int argc, const char **argv) {
           call.get_var_decl() << " = " << call.get_function_name() << ";\n";
   }
   extern_out.close();
+
+  /*
+   * Dump a list of functions which are referenced in the r-value of an
+   * assignment, and hence may be later used as a function pointer (which could
+   * be translated to its NPM version using translate_fptr).
+   */
+  std::ofstream function_pointers_out(std::string(function_pointers_loaded_file.c_str()));
+  for (std::set<std::string>::iterator i = function_pointers_loaded.begin(),
+          e = function_pointers_loaded.end(); i != e; i++) {
+      function_pointers_out << *i << "\n";
+  }
+  function_pointers_out.close();
 
   delete insertions;
 

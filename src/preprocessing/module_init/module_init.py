@@ -24,6 +24,7 @@ class ModuleInitConfig(object):
         self.npm_filename = None
         self.calls_filename = None
         self.locs_filename = None
+        self.fptrs_loaded_filename = None
 
     def check(self):
         if self.input_filename is None:
@@ -73,6 +74,9 @@ class ModuleInitConfig(object):
             usage()
         if self.locs_filename is None:
             print('Missing locs filename')
+            usage()
+        if self.fptrs_loaded_filename is None:
+            print('Missing fptrs loaded filename')
             usage()
 
 
@@ -159,6 +163,15 @@ def parse_64bit_int(s):
         # 2.x separates int and long, so we need to explicitly ask for long
         i = long(s)
     return i
+
+
+def get_fptrs_loaded(filename):
+    functions = []
+    fp = open(filename, 'r')
+    for line in fp:
+        functions.append(line.strip())
+    fp.close()
+    return functions
 
 
 def get_change_locs(locs_filename):
@@ -385,7 +398,8 @@ def usage():
           '-e externs-file ' +
           '-n npm-file ' +
           '-d calls-filename ' + 
-          '-h locs-filename ')
+          '-h locs-filename ' +
+          '-j fptrs-loaded-filename')
     sys.exit(1)
 
 
@@ -425,6 +439,8 @@ def configure(cfg, argv):
             cfg.calls_filename = argv[index + 1]
         elif t == '-h':
             cfg.locs_filename = argv[index + 1]
+        elif t == '-j':
+            cfg.fptrs_loaded_filename = argv[index + 1]
         else:
             print('Unrecognized command line argument "' + t + '"')
             sys.exit(1)
@@ -451,6 +467,7 @@ if __name__ == '__main__':
     defined_npms = get_npms(cfg.npm_filename)
     callsites = get_callsites(cfg.calls_filename)
     change_loc_vars = get_change_locs(cfg.locs_filename)
+    fptrs_loaded = get_fptrs_loaded(cfg.fptrs_loaded_filename)
 
     n_change_locs = len(changed)
     for e in exits:
@@ -524,9 +541,13 @@ if __name__ == '__main__':
         func_info = functions[fname]
         func_exit_info = find_in_exits(fname, exits)
 
+        if fname in fptrs_loaded:
+            normal_fptr = '(void *)(' + fname + ')'
+        else:
+            normal_fptr = '(void *)NULL'
+
         output_file.write(',\n         /* provided NPM */ "' + fname +
-                          '", (void *)(&' + fname + '_npm), (void *)(&' +
-                          fname + ')')
+                          '", (void *)(&' + fname + '_npm), ' + normal_fptr)
 
         # If no assignments are made in a function (e.g. if it's simply a return
         # statement) it may not have any change locations.
@@ -608,14 +629,6 @@ if __name__ == '__main__':
 
     output_file.write('    register_text((void *)&__executable_start, ' +
                       '(size_t)((&__etext) - (&__executable_start)));\n')
-    # for f in functions.keys():
-    #     output_file.write('    const void *' + f + '_ptr = (const void *)(' + f + ');\n')
-
-    # output_file.write('    register_functions(' + str(len(functions)) + ', "' +
-    #                   cfg.input_filename + '"')
-    # for f in functions.keys():
-    #     output_file.write(', "' + f + '", ' + f + '_ptr')
-    # output_file.write(');\n')
 
     output_file.write('    return 0;\n')
     output_file.write('}\n')

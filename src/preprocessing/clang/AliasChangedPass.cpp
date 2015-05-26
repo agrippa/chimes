@@ -11,6 +11,7 @@
 extern DesiredInsertions *insertions;
 extern std::set<std::string> *ignorable;
 extern std::map<std::string, std::set<std::string>> func_to_alias_locs;
+extern std::set<std::string> function_pointers_loaded;
 
 static std::vector<MatchedLocation *> already_matched;
 
@@ -28,6 +29,32 @@ static bool matched(int line, int col, const char *filename) {
         }
     }
     return false;
+}
+
+bool AliasChangedPass::isRValueOfAssignment(const clang::Stmt *curr,
+        const clang::Stmt *prev) {
+    switch (curr->getStmtClass()) {
+        case (clang::Stmt::ImplicitCastExprClass):
+            return isRValueOfAssignment(getParent(curr), curr);
+        case (clang::Stmt::CallExprClass):
+            return false;
+        case (clang::Stmt::BinaryOperatorClass): {
+            const clang::BinaryOperator *binop =
+                clang::dyn_cast<clang::BinaryOperator>(curr);
+            assert(binop);
+            if (binop->getOpcode() == BO_Assign && binop->getRHS() == prev) {
+                return true;
+            } else {
+                llvm::errs() << "Unhandled class " <<
+                    std::string(curr->getStmtClassName()) << "\n";
+                assert(false);
+            }
+        }
+        default:
+            llvm::errs() << "Unhandled class " <<
+                std::string(curr->getStmtClassName()) << "\n";
+            assert(false);
+    }
 }
 
 /*
@@ -127,6 +154,18 @@ void AliasChangedPass::VisitStmt(const clang::Stmt *s) {
                         ninserted = ss.str().length();
                         break;
                     }
+                }
+            }
+        }
+
+        if (const clang::DeclRefExpr *declref =
+                clang::dyn_cast<clang::DeclRefExpr>(s)) {
+            if (clang::isa<FunctionDecl>(declref->getDecl())) {
+                if (isRValueOfAssignment(getParent(declref), declref)) {
+                    const clang::FunctionDecl *fdecl =
+                        clang::dyn_cast<clang::FunctionDecl>(declref->getDecl());
+                    assert(fdecl);
+                    function_pointers_loaded.insert(fdecl->getNameAsString());
                 }
             }
         }

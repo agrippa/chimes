@@ -4,7 +4,7 @@ set -e
 
 # GXX=/usr/local/bin/g++ \
 GXX=/opt/apps/gcc/4.8.2/bin/g++ \
-    ${CHIMES_HOME}/src/preprocessing/compile_cpp.sh -s -k -d \
+    ${CHIMES_HOME}/src/preprocessing/compile_cpp.sh -s -k -d -v \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/CoMD.c \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/decomposition.c \
     -i ${CHIMES_HOME}/src/examples/cpp/CoMD/src-mpi/haloExchange.c \
