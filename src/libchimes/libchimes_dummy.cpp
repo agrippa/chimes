@@ -381,9 +381,9 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
     return 0;
 }
 
-void register_thread_local_stack_vars(unsigned thread,
-        unsigned parent, unsigned threads_in_region, bool spawns_threads,
-        bool is_parallel_for, bool is_critical, unsigned parent_stack_depth,
+void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, unsigned threads_in_region,
+        unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_register_thread_local_stack_vars, 1);
