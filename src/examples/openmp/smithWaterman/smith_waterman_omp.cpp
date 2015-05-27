@@ -279,21 +279,9 @@ static char alignment_score_matrix[5][5] =
 
 static void random_init(signed char *s, unsigned long long len) {
     for (unsigned long long i = 0; i < len; i++) {
-        int r = rand() % 4;
-        switch (r) {
-            case (0):
-                s[i] = 'A';
-                break;
-            case (1):
-                s[i] = 'C';
-                break;
-            case (2):
-                s[i] = 'G';
-                break;
-            case (3):
-                s[i] = 'T';
-                break;
-        }
+        int r = rand() % 5;
+        assert(r >= 0 && r < 5);
+        s[i] = r;
     }
 }
 
@@ -430,7 +418,7 @@ int main ( int argc, char* argv[] ) {
 		nthreads = omp_get_num_threads();
 	}
 
-    if ( argc < 5 ) {
+    if ( argc != 5 ) {
         fprintf(stderr, "Usage: %s length1 length2 tileWidth tileHeight\n", argv[0]);
         exit(1);
     }
