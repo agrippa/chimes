@@ -1134,7 +1134,6 @@ void parTreeSearch(StealStack *ss) {
   while (done == 0) {
   
     int localDepth = ss_localDepth(ss);
-    fprintf(stderr, "Thread %d localDepth %d\n", omp_get_thread_num(), localDepth);
     /* local work */
     while (localDepth > 0) {
 
