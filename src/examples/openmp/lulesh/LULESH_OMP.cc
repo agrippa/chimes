@@ -81,7 +81,7 @@
 #include "checkpoint.h"
 #endif
 
-#define LULESH_SHOW_PROGRESS 0
+#define LULESH_SHOW_PROGRESS 1
 
 enum { VolumeError = -1, QStopError = -2 } ;
 
@@ -3194,8 +3194,9 @@ int main(int argc, char *argv[])
 		LagrangeLeapFrog() ;
 		/* problem->commNodes->Transfer(CommNodes::syncposvel) ; */
 #if LULESH_SHOW_PROGRESS
-		printf("time = %e, dt=%e\n",
-			   double(domain.time), double(domain.deltatime) ) ;
+		printf("time = %e, dt=%e, stop=%e\n",
+			   double(domain.time), double(domain.deltatime),
+               double(domain.stoptime) ) ;
 #endif
 
 #ifdef __CHIMES_SUPPORT
