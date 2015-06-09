@@ -81,7 +81,7 @@
 #include "checkpoint.h"
 #endif
 
-#define LULESH_SHOW_PROGRESS 1
+// #define LULESH_SHOW_PROGRESS 1
 
 enum { VolumeError = -1, QStopError = -2 } ;
 
@@ -587,7 +587,7 @@ void TimeIncrement()
 		(targetdt < (Real_t(4.0) * domain.deltatime / Real_t(3.0))) ) {
 		targetdt = Real_t(2.0) * domain.deltatime / Real_t(3.0) ;
 	}
-	
+
 	if (targetdt < domain.deltatime) {
 		domain.deltatime = targetdt ;
 	}
@@ -2818,7 +2818,12 @@ void CalcCourantConstraintForElems()
 	
 	Real_t  qqc2 = Real_t(64.0) * qqc * qqc ;
 
+#ifdef _OPENMP
         Index_t threads = omp_get_num_threads();
+#else
+        Index_t threads = 1;
+#endif
+
 
         //  For sequential run (non OpenMP, replace line above with next line.  
         //Index_t threads = Index_t (1);
@@ -2852,7 +2857,11 @@ void CalcCourantConstraintForElems()
 		/* determine minimum timestep with its corresponding elem */
 		if (domain.vdov[indx] != Real_t(0.)) {
 			{
+#ifdef _OPENMP
 				Index_t thread_num = omp_get_thread_num();
+#else
+				Index_t thread_num = 0;
+#endif
 
 				 //  For sequential run (non OpenMP, replace line above with next line.  
 	                        //Index_t thread_num = Index_t [0];
@@ -2893,7 +2902,11 @@ void CalcHydroConstraintForElems()
 	Real_t dvovmax = domain.dvovmax ;
 	Index_t length = domain.numElem ;
 
+#ifdef _OPENMP
 	Index_t threads = omp_get_num_threads();
+#else
+	Index_t threads = 1;
+#endif
 
         //  For sequential run (non OpenMP, replace line above with next line.  
         //Index_t threads = Index_t (1);
@@ -2907,14 +2920,17 @@ void CalcHydroConstraintForElems()
         }
 
 
-#pragma omp parallel for firstprivate(length), shared(dthydro,hydro_elem)
         for (Index_t i = 0 ; i < length ; ++i) {
                 Index_t indx = domain.matElemlist[i] ;
 
                 if (domain.vdov[indx] != Real_t(0.)) {
                         Real_t dtdvov = dvovmax / (FABS(domain.vdov[indx])+Real_t(1.e-20)) ;
 
+#ifdef _OPENMP
                         Index_t thread_num = omp_get_thread_num();
+#else
+                        Index_t thread_num = 0;
+#endif
 
                         //  For sequential run (non OpenMP, replace line above with next line.  
                         //  Index_t thread_num = Index_t [0];
@@ -2934,8 +2950,6 @@ void CalcHydroConstraintForElems()
                         hydro_elem =  hydro_elem_per_thread[i];
                 }
         }
-
-	
 	
 	if (hydro_elem != -1) {
 		domain.dthydro = dthydro ;
