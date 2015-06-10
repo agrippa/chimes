@@ -1,4 +1,4 @@
 #!/bin/bash
 
-time ./lulesh_chimes 380
-time ./lulesh_normal 380
+time ./lulesh_chimes_omp 50
+time ./lulesh_normal_omp 50
