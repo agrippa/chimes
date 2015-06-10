@@ -3223,7 +3223,7 @@ int main(int argc, char *argv[])
 	double elapsed_time = double(end.tv_sec - start.tv_sec) + double(end.tv_usec - start.tv_usec) *1e-6;
 	
 	
-	printf("\n\nElapsed time = %12.6e\n\n", elapsed_time);
+	printf("\n\nElapsed time = %.10f\n\n", elapsed_time);
     
 	Index_t ElemId = 0;
 	printf("Run completed:  \n");

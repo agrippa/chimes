@@ -36,9 +36,7 @@ rm -f $CHIMES_CHECKPOINT_DIR/*
 ./run_uts_omp.sh &> uts.log
 echo Produced $(ls -l $CHIMES_CHECKPOINT_DIR/chimes.* | wc -l) checkpoint files
 
-./get-metrics.sh comd.log iso3d.log lulesh.log sw.log uts.log > collected.log
-
-exit 2
+../cpp/get-metrics.sh comd.log iso3d.log lulesh.log sw.log uts.log > collected.log
 
 echo
 echo New results:
@@ -46,6 +44,6 @@ cat collected.log
 echo
 echo Old full results:
 cat collected.omp.log.full
-echo
-echo Old dummy results:
-cat collected.omp.log.control
+# echo
+# echo Old dummy results:
+# cat collected.omp.log.control
