@@ -323,7 +323,14 @@ static unsigned count_threads = 1;
 
 /*
  * Count the number of total threads to ensure that checkpoints are created by
- * all threads at once.
+ * all threads at once. thread_count is incremented once per parallel region by the
+ * first thread to register its local stack vars and then decremented after all
+ * threads have left the parallel region from the associated
+ * leaving_omp_parallel. This may lead to a period of inconsistency between
+ * thread_count's value and the actual number of running threads during the time
+ * when 1) the leading threads begin to exit the parallel region but not all
+ * have completed yet, and 2) a parallel region is being created but the new
+ * threads haven't been registered yet.
  */
 static unsigned thread_count = 1; // start with one thread
 static unsigned regions_initializing = 0;
@@ -3065,6 +3072,7 @@ static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
     curr_ckpt = (curr_ckpt ? curr_ckpt :
             checkpoint_info.at(checkpoint_initializing));
 
+    // Returns the number of threads so far, including this one.
     const unsigned checkpoint_thread_count = curr_ckpt->incr_threads_in_checkpoint();
 
     if (entry_ptr) {
@@ -3073,7 +3081,17 @@ static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
     }
 
     bool checkpointing_thread = false;
+    /*
+     * If either the number of threads that have entered this checkpoint does
+     * not equal the total number of running threads, or a new parallel region
+     * is in-progress (and therefore we can't have an accurate count for the
+     * total number of threads), spin.
+     */
     if (checkpoint_thread_count != thread_count || regions_initializing) {
+        /*
+         * While the checkpointing thread has not completed creating this
+         * checkpoint and we haven't received all threads here yet.
+         */
         while (curr_ckpt->is_checkpoint_in_progress() &&
                 (curr_ckpt->get_threads_in_checkpoint() !=
                     curr_ckpt->get_thread_count() ||
