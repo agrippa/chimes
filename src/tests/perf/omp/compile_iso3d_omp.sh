@@ -4,7 +4,7 @@ set -e
 
 # GXX=/usr/local/bin/g++ \
 GXX=/opt/apps/gcc/4.8.2/bin/g++ \
-    ${CHIMES_HOME}/src/preprocessing/compile_cpp.sh -k -d \
+    ${CHIMES_HOME}/src/preprocessing/compile_cpp.sh -k \
     -i ${CHIMES_HOME}/src/examples/openmp/iso3d.cpp \
     -i ${CHIMES_HOME}/src/examples/openmp/lib/common.cpp \
     -i ${CHIMES_HOME}/src/examples/openmp/lib/common3d.cpp \
