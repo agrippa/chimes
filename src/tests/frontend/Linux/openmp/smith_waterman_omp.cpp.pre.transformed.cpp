@@ -2947,275 +2947,251 @@ static char alignment_score_matrix[5][5] =
 # 280 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 static void random_init_npm(signed char *s, unsigned long long len);
 static void random_init_quick(signed char *s, unsigned long long len); static void random_init(signed char *s, unsigned long long len);
-static void random_init_resumable(signed char *s, unsigned long long len) {const int ____chimes_did_disable12 = new_stack((void *)(&random_init), "random_init", &____must_manage_random_init, 2, 0, (size_t)(2727067958040904170UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+static void random_init_resumable(signed char *s, unsigned long long len) {const int ____chimes_did_disable12 = new_stack((void *)(&random_init), "random_init", &____must_manage_random_init, 2, 0, (size_t)(2727067958040904155UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 281 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     { unsigned long long i; for ( i = (0) ; i < len; i++) {
 # 282 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-         int r; r = (rand() % 4) ;
+         int r; r = (rand() % 5) ;
 # 283 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        switch (r) {
+        ((r >= 0 && r < 5) ? static_cast<void> (0) : __assert_fail ("r >= 0 && r < 5", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 283, __PRETTY_FUNCTION__));
 # 284 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (0):
+        s[i] = r;
 # 285 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'A';
-# 286 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 287 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (1):
-# 288 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'C';
-# 289 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 290 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (2):
-# 291 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'G';
-# 292 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 293 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (3):
-# 294 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'T';
-# 295 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 296 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        }
-# 297 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     } }
-# 298 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 286 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 rm_stack(false, 0UL, "random_init", &____must_manage_random_init, ____alias_loc_id_19, ____chimes_did_disable12); }
-# 299 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 300 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 287 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 288 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 size_t clear_whitespaces_do_mapping_npm ( signed char* buffer, long size );
 size_t clear_whitespaces_do_mapping_quick ( signed char* buffer, long size ); size_t clear_whitespaces_do_mapping ( signed char* buffer, long size );
 size_t clear_whitespaces_do_mapping_resumable ( signed char* buffer, long size ) {const int ____chimes_did_disable13 = new_stack((void *)(&clear_whitespaces_do_mapping), "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, 2, 0, (size_t)(2727067958040902829UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 301 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 289 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
      size_t non_ws_index; size_t traverse_index; non_ws_index = (0) ; traverse_index = (0) ;
-# 302 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 303 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 290 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 291 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     while ( traverse_index < size ) {
-# 304 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 292 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
          char curr_char; curr_char = (buffer[traverse_index]) ;
-# 305 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 293 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         switch ( curr_char ) {
-# 306 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 294 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             case 'A': case 'C': case 'G': case 'T':
-# 307 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 308 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 295 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 296 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 buffer[non_ws_index++] = ({ calling_npm("char_mapping", 0); char_mapping_npm(curr_char); });
-# 309 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 297 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 break;
-# 310 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 298 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         }
-# 311 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 299 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         ++traverse_index;
-# 312 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 300 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     }
-# 313 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 301 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     rm_stack(false, 0UL, "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, ____alias_loc_id_13, ____chimes_did_disable13); return non_ws_index;
-# 314 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 302 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
-# 315 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 316 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 303 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 304 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 signed char* read_file_npm( FILE* file, size_t* n_chars );
 signed char* read_file_quick( FILE* file, size_t* n_chars ); signed char* read_file( FILE* file, size_t* n_chars );
 signed char* read_file_resumable( FILE* file, size_t* n_chars ) {const int ____chimes_did_disable14 = new_stack((void *)(&read_file), "read_file", &____must_manage_read_file, 2, 0, (size_t)(2727067958040902871UL), (size_t)(2727067958040902872UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 317 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 305 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     fseek (file, 0L, 2);
-# 318 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 306 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
      long file_size; file_size = (ftell(file)) ;
-# 319 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 307 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     fseek (file, 0L, 0);
-# 320 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 321 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 308 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 309 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
      signed char *file_buffer; file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 2727067958040902852UL, 0, 0)) ;
-# 322 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 323 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 310 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 311 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
      size_t n_read_from_file; n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
-# 324 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 312 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     file_buffer[file_size] = '\n';
-# 325 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 326 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 327 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 313 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 314 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 315 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     *n_chars = ({ calling_npm("clear_whitespaces_do_mapping", 0); clear_whitespaces_do_mapping_npm(file_buffer, file_size); });
-# 328 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 316 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     rm_stack(true, 2727067958040902852UL, "read_file", &____must_manage_read_file, ____alias_loc_id_14, ____chimes_did_disable14); return file_buffer;
-# 329 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 317 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
-# 330 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 331 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 318 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 319 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 void add_tile_to_run_npm(int row, int col, tiles_to_run *q);
 void add_tile_to_run_quick(int row, int col, tiles_to_run *q); void add_tile_to_run(int row, int col, tiles_to_run *q);
 void add_tile_to_run_resumable(int row, int col, tiles_to_run *q) {const int ____chimes_did_disable15 = new_stack((void *)(&add_tile_to_run), "add_tile_to_run", &____must_manage_add_tile_to_run, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(2727067958040902904UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 332 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ((q->length < q->capacity) ? static_cast<void> (0) : __assert_fail ("q->length < q->capacity", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 332, __PRETTY_FUNCTION__));
-# 333 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 320 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    ((q->length < q->capacity) ? static_cast<void> (0) : __assert_fail ("q->length < q->capacity", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 320, __PRETTY_FUNCTION__));
+# 321 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     q->base[q->length].row = row;
-# 334 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 322 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     q->base[q->length].col = col;
-# 335 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 323 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     q->length = q->length + 1;
-# 336 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 324 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 rm_stack(false, 0UL, "add_tile_to_run", &____must_manage_add_tile_to_run, ____alias_loc_id_15, ____chimes_did_disable15); }
-# 337 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 338 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 325 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 326 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 tile* pop_next_tile_npm(tiles_to_run *q);
 tile* pop_next_tile_quick(tiles_to_run *q); tile* pop_next_tile(tiles_to_run *q);
 tile* pop_next_tile_resumable(tiles_to_run *q) {const int ____chimes_did_disable16 = new_stack((void *)(&pop_next_tile), "pop_next_tile", &____must_manage_pop_next_tile, 1, 0, (size_t)(2727067958040902950UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 339 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ((q->length >= 0) ? static_cast<void> (0) : __assert_fail ("q->length >= 0", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 339, __PRETTY_FUNCTION__));
-# 340 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 327 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    ((q->length >= 0) ? static_cast<void> (0) : __assert_fail ("q->length >= 0", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 327, __PRETTY_FUNCTION__));
+# 328 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     if (q->length == 0) {
-# 341 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 329 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         rm_stack(true, 2727067958040903965UL, "pop_next_tile", &____must_manage_pop_next_tile, ____alias_loc_id_16, ____chimes_did_disable16); return __null;
-# 342 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 330 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     } else {
-# 343 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 331 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
          tile *next; next = (q->q) ;
-# 344 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 332 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         q->q = q->q + 1;
-# 345 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 333 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         q->length = q->length - 1;
-# 346 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 334 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         rm_stack(true, 2727067958040903965UL, "pop_next_tile", &____must_manage_pop_next_tile, ____alias_loc_id_16, ____chimes_did_disable16); return next;
-# 347 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 335 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     }
-# 348 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 336 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 rm_stack(true, 2727067958040903965UL, "pop_next_tile", &____must_manage_pop_next_tile, ____alias_loc_id_16, ____chimes_did_disable16); }
-# 349 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 350 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 337 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 338 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 void task_func_npm(int i, int j, tiles_to_run *next);
 void task_func_quick(int i, int j, tiles_to_run *next); void task_func(int i, int j, tiles_to_run *next);
 void task_func_resumable(int i, int j, tiles_to_run *next) {const int ____chimes_did_disable17 = new_stack((void *)(&task_func), "task_func", &____must_manage_task_func, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(2727067958040903412UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 351 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 339 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  int ii; int jj; ;
-# 352 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 340 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int threadId; threadId = (omp_get_thread_num()) ;
-# 353 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 341 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int **local_matrix; local_matrix = (worker_tiles[threadId]) ;
-# 354 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 355 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 342 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 343 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int diag_index; diag_index = (((n_tiles_y - 1) + (j - i))) ;
-# 356 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 344 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int *diag; diag = (&tile_diag[diag_index]) ;
-# 357 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 345 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int *tile_edge_y; tile_edge_y = (tile_edges_y[i]) ;
-# 358 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 346 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int *tile_edge_x; tile_edge_x = (tile_edges_x[j]) ;
-# 359 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 360 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 347 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 348 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  local_matrix[0][0] = *diag;
-# 361 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 362 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 349 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 350 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (ii = 1; ii < tile_width + 1; ++ii) { local_matrix[0][ii] = tile_edge_x[ii - 1]; };
+# 352 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 353 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ for (ii = 1; ii < tile_height + 1; ++ii) { local_matrix[ii][0] = tile_edge_y[ii - 1]; };
+# 355 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 356 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ for ( ii = 1; ii < tile_height+1; ++ii ) {
+# 357 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  for ( jj = 1; jj < tile_width+1; ++jj ) {
+# 358 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    signed char char_from_1; char_from_1 = (string_1[(j - 1) * tile_width + jj - 1]) ;
+# 359 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    signed char char_from_2; char_from_2 = (string_2[(i - 1) * tile_height + ii - 1]) ;
+# 360 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 361 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    int diag_score; diag_score = (local_matrix[ii - 1][jj - 1] + alignment_score_matrix[char_from_2][char_from_1]) ;
+# 362 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    int left_score; left_score = (local_matrix[ii][jj - 1] + alignment_score_matrix[char_from_1][GAP]) ;
+# 363 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    int top_score; top_score = (local_matrix[ii - 1][jj] + alignment_score_matrix[GAP][char_from_2]) ;
 # 364 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 365 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (ii = 1; ii < tile_height + 1; ++ii) { local_matrix[ii][0] = tile_edge_y[ii - 1]; };
-# 367 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 368 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for ( ii = 1; ii < tile_height+1; ++ii ) {
-# 369 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  for ( jj = 1; jj < tile_width+1; ++jj ) {
-# 370 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    signed char char_from_1; char_from_1 = (string_1[(j - 1) * tile_width + jj - 1]) ;
-# 371 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    signed char char_from_2; char_from_2 = (string_2[(i - 1) * tile_height + ii - 1]) ;
-# 372 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 373 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    int diag_score; diag_score = (local_matrix[ii - 1][jj - 1] + alignment_score_matrix[char_from_2][char_from_1]) ;
-# 374 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    int left_score; left_score = (local_matrix[ii][jj - 1] + alignment_score_matrix[char_from_1][GAP]) ;
-# 375 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    int top_score; top_score = (local_matrix[ii - 1][jj] + alignment_score_matrix[GAP][char_from_2]) ;
-# 376 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     int bigger_of_left_top; bigger_of_left_top = ((left_score > top_score) ? left_score : top_score) ;
-# 378 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 366 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
    local_matrix[ii][jj] = (bigger_of_left_top > diag_score) ? bigger_of_left_top : diag_score;
-# 379 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 367 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   }
-# 380 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 368 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
-# 381 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 382 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 369 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 370 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  *diag = local_matrix[tile_height][tile_width];
-# 383 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 371 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (ii = 1; ii < tile_height + 1; ++ii) { tile_edge_y[ii - 1] = local_matrix[ii][tile_width]; };
-# 385 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 373 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (ii = 1; ii < tile_width + 1; ++ii) { tile_edge_x[ii - 1] = local_matrix[tile_height][ii]; };
+# 375 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 376 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ if (i != (n_tiles_y - 1) || j != (n_tiles_x - 1)) {; bool ____chimes_disable0; ____chimes_disable0 = disable_current_thread();
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+#pragma omp critical
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 378 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        {
+# 379 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            if (((i+1) < n_tiles_y) && ((j+1) < n_tiles_x)) {
+# 380 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                 int success; success = (({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(i, j); })) ;
+# 381 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                if (success) {
+# 382 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                     int row; row = (i + 1) ;
+# 383 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                     int col; col = (j + 1) ;
+# 384 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
+# 385 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                }
+# 386 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            }
 # 387 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 388 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- if (i != (n_tiles_y - 1) || j != (n_tiles_x - 1)) {; bool ____chimes_disable0; ____chimes_disable0 = disable_current_thread();
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-#pragma omp critical
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 390 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        {
-# 391 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            if (((i+1) < n_tiles_y) && ((j+1) < n_tiles_x)) {
-# 392 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                 int success; success = (({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(i, j); })) ;
-# 393 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                if (success) {
-# 394 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                     int row; row = (i + 1) ;
-# 395 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                     int col; col = (j + 1) ;
-# 396 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
-# 397 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                }
-# 398 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            }
-# 399 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 400 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             if ((j+1) < n_tiles_x) {
-# 401 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                  int success; success = (({ calling_npm("PUT_RCOL", 0); PUT_RCOL_npm(i, j); })) ;
-# 402 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 390 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (success) {
-# 403 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 391 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                      int row; row = (i) ;
-# 404 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 392 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                      int col; col = (j + 1) ;
-# 405 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 393 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                     ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
-# 406 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 394 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
-# 407 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 395 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             }
+# 396 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 397 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            if ((i+1) < n_tiles_y) {
+# 398 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                 int success; success = (({ calling_npm("PUT_BROW", 0); PUT_BROW_npm(i, j); })) ;
+# 399 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                if (success) {
+# 400 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                     int row; row = (i + 1) ;
+# 401 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                     int col; col = (j) ;
+# 402 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
+# 403 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                }
+# 404 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            }
+# 405 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        } reenable_current_thread(____chimes_disable0);
+# 406 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ }
+# 407 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 408 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 409 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            if ((i+1) < n_tiles_y) {
 # 410 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                 int success; success = (({ calling_npm("PUT_BROW", 0); PUT_BROW_npm(i, j); })) ;
 # 411 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                if (success) {
-# 412 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                     int row; row = (i + 1) ;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                     int col; col = (j) ;
-# 414 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
-# 415 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                }
-# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            }
-# 417 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        } reenable_current_thread(____chimes_disable0);
-# 418 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- }
-# 419 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 420 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 421 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 422 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 423 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 rm_stack(false, 0UL, "task_func", &____must_manage_task_func, ____alias_loc_id_17, ____chimes_did_disable17); }
-# 424 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 425 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 412 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 413 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 int main_quick ( int argc, char* argv[] ); int main ( int argc, char* argv[] );
 int main_resumable ( int argc, char* argv[] ) {const int ____chimes_did_disable18 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(2727067958040904117UL)) ; tiles_to_run *tmp;
 bool done;
@@ -3227,325 +3203,325 @@ int result_row;
 int j;
 int i;
  register_stack_vars(9, "main|tmp|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|done|0", (int *)0x0, "i8", (void *)(&done), (size_t)1, 0, 0, 0, "main|mine|0", (int *)0x0, "%struct._tile*", (void *)(&mine), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|result_col|0", (int *)0x0, "i32", (void *)(&result_col), (size_t)4, 0, 0, 0, "main|result_row|0", (int *)0x0, "i32", (void *)(&result_row), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(49): { goto call_lbl_49; } case(50): { goto call_lbl_50; } case(34): { goto call_lbl_34; } default: { chimes_error(); } } } ; ;
-# 426 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 414 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
       int level; ;; { call_lbl_49: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(49, &____chimes_region_id0, 1, &done);
+# 415 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+#pragma omp parallel
+# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 417 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &done); ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+# 418 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  nthreads = omp_get_num_threads();
+# 419 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
+# 420 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 421 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    if ( argc != 5 ) {
+# 422 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        fprintf(stderr, "Usage: %s length1 length2 tileWidth tileHeight\n", argv[0]);
+# 423 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        exit(1);
+# 424 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    }
+# 425 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 426 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    fprintf(stdout, "Running SmithWaterman (OpenMP) with %d threads\n", nthreads);
 # 427 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 428 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 428 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 428 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-#pragma omp parallel
-# 428 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 428 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+     unsigned long long length1; length1 = (strtoull(argv[1], __null, 10)) ;
 # 429 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &done); ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+     unsigned long long length2; length2 = (strtoull(argv[2], __null, 10)) ;
 # 430 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  nthreads = omp_get_num_threads();
 # 431 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
+    tile_width = (int) atoi (argv[3]);
 # 432 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    tile_height = (int) atoi (argv[4]);
 # 433 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    if ( argc < 5 ) {
 # 434 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        fprintf(stderr, "Usage: %s length1 length2 tileWidth tileHeight\n", argv[0]);
+     unsigned long long n_char_in_file_1; n_char_in_file_1 = (length1) ;
 # 435 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        exit(1);
+     unsigned long long n_char_in_file_2; n_char_in_file_2 = (length2) ;
 # 436 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    }
 # 437 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    string_1 = (signed char *)malloc_wrapper(n_char_in_file_1, 2727067958040903134UL, 0, 0);
 # 438 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "Running SmithWaterman (OpenMP) with %d threads\n", nthreads);
+    string_2 = (signed char *)malloc_wrapper(n_char_in_file_2, 2727067958040903134UL, 0, 0);
 # 439 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 440 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-     unsigned long long length1; length1 = (strtoull(argv[1], __null, 10)) ;
+    ({ calling_npm("random_init", 0); random_init_npm(string_1, n_char_in_file_1); });
 # 441 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-     unsigned long long length2; length2 = (strtoull(argv[2], __null, 10)) ;
+    ({ calling_npm("random_init", 0); random_init_npm(string_2, n_char_in_file_2); });
 # 442 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 443 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    tile_width = (int) atoi (argv[3]);
+    fprintf(stdout, "Tile width  %d\n", tile_width);
 # 444 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    tile_height = (int) atoi (argv[4]);
+    fprintf(stdout, "Tile height %d\n", tile_height);
 # 445 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 446 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-     unsigned long long n_char_in_file_1; n_char_in_file_1 = (length1) ;
+    if (n_char_in_file_1 % tile_width) { fprintf(stderr, "String1 length should be multiple of tile width\n"); exit(1); }
 # 447 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-     unsigned long long n_char_in_file_2; n_char_in_file_2 = (length2) ;
+    if (n_char_in_file_2 % tile_height) { fprintf(stderr, "String2 length should be multiple of tile height\n"); exit(1); }
 # 448 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 449 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    string_1 = (signed char *)malloc_wrapper(n_char_in_file_1, 2727067958040903134UL, 0, 0);
+    n_tiles_x = n_char_in_file_1/tile_width;
 # 450 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    string_2 = (signed char *)malloc_wrapper(n_char_in_file_2, 2727067958040903134UL, 0, 0);
+    n_tiles_y = n_char_in_file_2/tile_height;
 # 451 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 452 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ({ calling_npm("random_init", 0); random_init_npm(string_1, n_char_in_file_1); });
+    fprintf(stdout, "Computing %d x %d intra-node tiles\n", n_tiles_x, n_tiles_y);
 # 453 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ({ calling_npm("random_init", 0); random_init_npm(string_2, n_char_in_file_2); });
 # 454 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    strlen_1 = n_char_in_file_1;
 # 455 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "Tile width  %d\n", tile_width);
+    strlen_2 = n_char_in_file_2;
 # 456 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "Tile height %d\n", tile_height);
 # 457 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 458 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    if (n_char_in_file_1 % tile_width) { fprintf(stderr, "String1 length should be multiple of tile width\n"); exit(1); }
 # 459 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    if (n_char_in_file_2 % tile_height) { fprintf(stderr, "String2 length should be multiple of tile height\n"); exit(1); }
 # 460 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ n_tiles_x++;
 # 461 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    n_tiles_x = n_char_in_file_1/tile_width;
+ n_tiles_y++;
 # 462 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    n_tiles_y = n_char_in_file_2/tile_height;
 # 463 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  int num_tiles; num_tiles = (n_tiles_x * n_tiles_y) ;
 # 464 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "Computing %d x %d intra-node tiles\n", n_tiles_x, n_tiles_y);
+ put_counts = (int*)malloc_wrapper(sizeof(int)*num_tiles, 2727067958040902644UL, 0, 0);
 # 465 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ for (i=0; i<num_tiles; i++) {
 # 466 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    strlen_1 = n_char_in_file_1;
+  put_counts[i] = 0;
 # 467 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    strlen_2 = n_char_in_file_2;
+ }
 # 468 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 469 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 470 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  int num_diags; num_diags = (n_tiles_x + n_tiles_y - 1) ;
 # 471 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ tile_diag = (int*)malloc_wrapper(sizeof(int)*num_diags, 2727067958040902644UL, 0, 0);
 # 472 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- n_tiles_x++;
+ tile_diag[((n_tiles_y - 1) + (0 - 0))] = 0;
 # 473 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- n_tiles_y++;
+ ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(0, 0); });
 # 474 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 475 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  int num_tiles; num_tiles = (n_tiles_x * n_tiles_y) ;
+ for (i = 1; i < n_tiles_x; i++) {
 # 476 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- put_counts = (int*)malloc_wrapper(sizeof(int)*num_tiles, 2727067958040902644UL, 0, 0);
-# 477 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (i=0; i<num_tiles; i++) {
-# 478 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  put_counts[i] = 0;
-# 479 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- }
-# 480 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 481 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 482 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  int num_diags; num_diags = (n_tiles_x + n_tiles_y - 1) ;
-# 483 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- tile_diag = (int*)malloc_wrapper(sizeof(int)*num_diags, 2727067958040902644UL, 0, 0);
-# 484 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- tile_diag[((n_tiles_y - 1) + (0 - 0))] = 0;
-# 485 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(0, 0); });
-# 486 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 487 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (i = 1; i < n_tiles_x; i++) {
-# 488 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_diag[((n_tiles_y - 1) + (i - 0))] = -1*(i*tile_width);
-# 489 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 477 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(0, i); });
-# 490 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 478 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
-# 491 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 479 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_y; i++) {
-# 492 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 480 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_diag[((n_tiles_y - 1) + (0 - i))] = -1*(i*tile_height);
-# 493 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 481 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(i, 0); });
-# 494 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 482 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
-# 495 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 496 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 497 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 483 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 484 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 485 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  tile_edges_y = (int**)malloc_wrapper(sizeof(int*)*n_tiles_y, 2727067958040903043UL, 1, 0);
-# 498 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 486 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_y; i++) {
-# 499 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 487 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_edges_y[i] = (int*)malloc_wrapper(sizeof(int)*(tile_height), 2727067958040903045UL, 0, 0);
-# 500 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 488 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   for (j = 0; j < tile_height; j++) { tile_edges_y[i][j] = -1 * ((i - 1) * tile_height + j); };
-# 502 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 490 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   ({ calling_npm("PUT_RCOL", 0); PUT_RCOL_npm(i, 0); });
-# 503 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 491 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
-# 504 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 505 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 506 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 492 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 493 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 494 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  tile_edges_x = (int**)malloc_wrapper(sizeof(int*)*n_tiles_x, 2727067958040903043UL, 1, 0);
-# 507 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 495 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_x; i++) {
-# 508 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 496 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_edges_x[i] = (int*)malloc_wrapper(sizeof(int)*(tile_width), 2727067958040903045UL, 0, 0);
-# 509 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 497 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   for (j = 0; j < tile_width; j++) { tile_edges_x[i][j] = -1 * ((i - 1) * tile_width + j); };
-# 511 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 499 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   ({ calling_npm("PUT_BROW", 0); PUT_BROW_npm(0, i); });
-# 512 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 500 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
+# 501 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 502 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 503 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ worker_tiles = (int***)malloc_wrapper(sizeof(int**)*nthreads, 2727067958040903022UL, 1, 0);
+# 504 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ for (i = 0; i < nthreads; i++) {
+# 505 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  worker_tiles[i] = (int**)malloc_wrapper(sizeof(int*)*(tile_height+1), 2727067958040903234UL, 1, 0);
+# 506 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  for (j = 0; j < tile_height + 1; j++) { worker_tiles[i][j] = (int *)malloc_wrapper(sizeof(int) * (tile_width + 1), 2727067958040903236UL, 0, 0); };
+# 508 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ }
+# 509 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 510 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 511 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ dsizes[DIAG_KIND] = 1;
+# 512 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ dsizes[RCOL_KIND] = tile_height;
 # 513 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ dsizes[BROW_KIND] = tile_width;
 # 514 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 515 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- worker_tiles = (int***)malloc_wrapper(sizeof(int**)*nthreads, 2727067958040903022UL, 1, 0);
-# 516 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (i = 0; i < nthreads; i++) {
-# 517 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  worker_tiles[i] = (int**)malloc_wrapper(sizeof(int*)*(tile_height+1), 2727067958040903234UL, 1, 0);
-# 518 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  for (j = 0; j < tile_height + 1; j++) { worker_tiles[i][j] = (int *)malloc_wrapper(sizeof(int) * (tile_width + 1), 2727067958040903236UL, 0, 0); };
-# 520 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- }
-# 521 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 522 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 523 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- dsizes[DIAG_KIND] = 1;
-# 524 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- dsizes[RCOL_KIND] = tile_height;
-# 525 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- dsizes[BROW_KIND] = tile_width;
-# 526 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 527 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  max_size = dsizes[0];
-# 528 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 516 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < NUM_DEPS; i++) { if (max_size < dsizes[i]) max_size = dsizes[i];; };
-# 530 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 518 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  max_buffer = (int*)malloc_wrapper(sizeof(int)*max_size, 2727067958040902644UL, 0, 0);
-# 531 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 519 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  temp_buffer = (int*)malloc_wrapper(sizeof(int)*max_size, 2727067958040902644UL, 0, 0);
-# 561 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 561 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 549 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 549 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     result_row = (n_tiles_y - 1) ;
-# 562 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 550 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     result_col = (n_tiles_x - 1) ;
-# 563 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 551 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  done = 0;
-# 564 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 565 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 552 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 553 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     gettimeofday(&begin,0);
-# 566 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 567 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 554 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 555 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
        curr = ((tiles_to_run *)malloc_wrapper(sizeof(tiles_to_run), 2727067958040903869UL, 0, 1, (int)sizeof(struct _tiles_to_run), 2, (int)__builtin_offsetof(struct _tiles_to_run, q), (int)__builtin_offsetof(struct _tiles_to_run, base))) ;
-# 568 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 556 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     curr->base = (tile *)malloc_wrapper(sizeof(tile) * n_tiles_y * n_tiles_x, 2727067958040903878UL, 0, 1, (int)sizeof(struct _tile), 0);
-# 569 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 557 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     curr->q = curr->base;
-# 570 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 558 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     curr->capacity = n_tiles_y * n_tiles_x;
-# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 559 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     curr->length = 1;
-# 572 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 560 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     (curr->base)[0].row = 1;
-# 573 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 561 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     (curr->base)[0].col = 1;
+# 562 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 563 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+       next = ((tiles_to_run *)malloc_wrapper(sizeof(tiles_to_run), 2727067958040903869UL, 0, 1, (int)sizeof(struct _tiles_to_run), 2, (int)__builtin_offsetof(struct _tiles_to_run, q), (int)__builtin_offsetof(struct _tiles_to_run, base))) ;
+# 564 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    next->base = (tile *)malloc_wrapper(sizeof(tile) * n_tiles_y * n_tiles_x, 2727067958040903878UL, 0, 1, (int)sizeof(struct _tile), 0);
+# 565 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    next->q = next->base;
+# 566 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    next->capacity = n_tiles_y * n_tiles_x;
+# 567 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    next->length = 0;
+# 568 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 569 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    while (curr->length > 0) {
+# 570 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+           mine = (__null); { call_lbl_50: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(50, &____chimes_region_id1, 2, &done, &mine); ;
+# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+#pragma omp parallel firstprivate(mine) firstprivate(done)
+# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 572 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &done, &mine); ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
+# 573 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+               done = (false) ;
 # 574 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 575 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-       next = ((tiles_to_run *)malloc_wrapper(sizeof(tiles_to_run), 2727067958040903869UL, 0, 1, (int)sizeof(struct _tiles_to_run), 2, (int)__builtin_offsetof(struct _tiles_to_run, q), (int)__builtin_offsetof(struct _tiles_to_run, base))) ;
-# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    next->base = (tile *)malloc_wrapper(sizeof(tile) * n_tiles_y * n_tiles_x, 2727067958040903878UL, 0, 1, (int)sizeof(struct _tile), 0);
-# 577 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    next->q = next->base;
-# 578 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    next->capacity = n_tiles_y * n_tiles_x;
-# 579 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    next->length = 0;
-# 580 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 581 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    while (curr->length > 0) {
-# 582 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-           mine = (__null); { call_lbl_50: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(50, &____chimes_region_id1, 2, &done, &mine); ;
-# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-#pragma omp parallel firstprivate(mine) firstprivate(done)
-# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 584 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &done, &mine); ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
-# 585 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-               done = (false) ;
-# 586 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 587 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             while (!done) {; bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
-# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 #pragma omp critical
-# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 589 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 577 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 {
-# 590 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 578 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                     mine = ({ calling_npm("pop_next_tile", 0); pop_next_tile_npm(curr); });
-# 591 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 579 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 } reenable_current_thread(____chimes_disable3);
-# 592 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 580 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 done = (mine == __null);
+# 581 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 582 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                if (!done) {
+# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    ({ calling_npm("task_func", 0); task_func_npm(mine->row, mine->col, next); });
+# 584 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                }
+# 585 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            }
+# 586 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); }
+# 587 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+           tmp = (curr) ;
+# 589 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        curr = next;
+# 590 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        next = tmp;
+# 591 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 592 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        curr->q = curr->base;
 # 593 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 594 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                if (!done) {
+        next->length = 0;
 # 595 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("task_func", 0); task_func_npm(mine->row, mine->col, next); });
 # 596 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                }
 # 597 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            }
+         call_lbl_34: checkpoint_transformed(34, ____alias_loc_id_0);
 # 598 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); }
 # 599 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    }
 # 600 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-           tmp = (curr) ;
 # 601 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        curr = next;
+    gettimeofday(&end,0);
 # 602 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        next = tmp;
+     int score; score = (tile_diag[((n_tiles_y - 1) + (result_col - result_row))]) ;
 # 603 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    fprintf(stdout, "score: %d\n", score);
 # 604 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        curr->q = curr->base;
+    fprintf(stdout, "The computation took %f seconds\n",((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
 # 605 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 606 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        next->length = 0;
+ for (i = 0; i < nthreads; i++) {
 # 607 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 608 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  for (j = 0; j < tile_height + 1; j++) { free_wrapper(worker_tiles[i][j], 2727067958040903236UL); };
 # 609 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-         call_lbl_34: checkpoint_transformed(34, ____alias_loc_id_0);
+  free_wrapper(worker_tiles[i], 2727067958040903234UL);
 # 610 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ }
 # 611 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    }
+ free_wrapper(worker_tiles, 2727067958040903022UL);
 # 612 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 613 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    gettimeofday(&end,0);
-# 614 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-     int score; score = (tile_diag[((n_tiles_y - 1) + (result_col - result_row))]) ;
-# 615 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "score: %d\n", score);
-# 616 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "The computation took %f seconds\n",((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
-# 617 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 618 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (i = 0; i < nthreads; i++) {
-# 619 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  for (j = 0; j < tile_height + 1; j++) { free_wrapper(worker_tiles[i][j], 2727067958040903236UL); };
-# 621 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  free_wrapper(worker_tiles[i], 2727067958040903234UL);
-# 622 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- }
-# 623 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- free_wrapper(worker_tiles, 2727067958040903022UL);
-# 624 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 625 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_y; i++) { free_wrapper(tile_edges_y[i], 2727067958040903045UL); };
-# 627 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 615 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  free_wrapper(tile_edges_y, 2727067958040903043UL);
-# 628 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 629 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 616 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 617 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_x; i++) { free_wrapper(tile_edges_x[i], 2727067958040903045UL); };
-# 631 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 619 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  free_wrapper(tile_edges_x, 2727067958040903043UL);
-# 632 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 633 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 620 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 621 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  free_wrapper(tile_diag, 2727067958040902644UL);
-# 634 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 635 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 622 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 623 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  free_wrapper(string_1, 2727067958040903134UL);
-# 636 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 624 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  free_wrapper(string_2, 2727067958040903134UL);
-# 637 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 638 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 625 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 626 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_18, ____chimes_did_disable18); return 0;
-# 639 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 627 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
 int GUID_DIAG_quick(int r, int c) {const int ____chimes_did_disable0 = new_stack((void *)(&GUID_DIAG), "GUID_DIAG", &____must_manage_GUID_DIAG, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "GUID_DIAG", &____must_manage_GUID_DIAG, ____alias_loc_id_1, ____chimes_did_disable0); return (0*(n_tiles_x * n_tiles_y) + (r * n_tiles_x + c)); }
 
@@ -3661,267 +3637,243 @@ rm_stack(false, 0UL, "print_matrix", &____must_manage_print_matrix, ____alias_lo
 
 void print_matrix ( int** matrix, int n_rows, int n_columns ) { (____chimes_replaying ? print_matrix_resumable(matrix, n_rows, n_columns) : print_matrix_quick(matrix, n_rows, n_columns)); }
 
-static void random_init_quick(signed char *s, unsigned long long len) {const int ____chimes_did_disable12 = new_stack((void *)(&random_init), "random_init", &____must_manage_random_init, 2, 0, (size_t)(2727067958040904170UL), (size_t)(0UL)) ; ; ;
+static void random_init_quick(signed char *s, unsigned long long len) {const int ____chimes_did_disable12 = new_stack((void *)(&random_init), "random_init", &____must_manage_random_init, 2, 0, (size_t)(2727067958040904155UL), (size_t)(0UL)) ; ; ;
 # 281 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     { unsigned long long i; for ( i = (0) ; i < len; i++) {
 # 282 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-         int r; r = (rand() % 4) ;
+         int r; r = (rand() % 5) ;
 # 283 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        switch (r) {
+        ((r >= 0 && r < 5) ? static_cast<void> (0) : __assert_fail ("r >= 0 && r < 5", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 283, __PRETTY_FUNCTION__));
 # 284 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (0):
+        s[i] = r;
 # 285 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'A';
-# 286 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 287 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (1):
-# 288 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'C';
-# 289 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 290 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (2):
-# 291 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'G';
-# 292 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 293 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (3):
-# 294 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'T';
-# 295 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 296 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        }
-# 297 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     } }
-# 298 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 286 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 rm_stack(false, 0UL, "random_init", &____must_manage_random_init, ____alias_loc_id_19, ____chimes_did_disable12); }
 
 static void random_init(signed char *s, unsigned long long len) { (____chimes_replaying ? random_init_resumable(s, len) : random_init_quick(s, len)); }
 
 size_t clear_whitespaces_do_mapping_quick ( signed char* buffer, long size ) {const int ____chimes_did_disable13 = new_stack((void *)(&clear_whitespaces_do_mapping), "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, 2, 0, (size_t)(2727067958040902829UL), (size_t)(0UL)) ; ; ;
-# 301 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 289 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
      size_t non_ws_index; size_t traverse_index; non_ws_index = (0) ; traverse_index = (0) ;
-# 302 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 303 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 290 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 291 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     while ( traverse_index < size ) {
-# 304 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 292 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
          char curr_char; curr_char = (buffer[traverse_index]) ;
-# 305 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 293 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         switch ( curr_char ) {
-# 306 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 294 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             case 'A': case 'C': case 'G': case 'T':
-# 307 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 308 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 295 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 296 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 buffer[non_ws_index++] = ({ calling_npm("char_mapping", 0); char_mapping_npm(curr_char); });
-# 309 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 297 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 break;
-# 310 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 298 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         }
-# 311 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 299 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         ++traverse_index;
-# 312 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 300 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     }
-# 313 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 301 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     rm_stack(false, 0UL, "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, ____alias_loc_id_13, ____chimes_did_disable13); return non_ws_index;
-# 314 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 302 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
 
 size_t clear_whitespaces_do_mapping ( signed char* buffer, long size ) { return (____chimes_replaying ? clear_whitespaces_do_mapping_resumable(buffer, size) : clear_whitespaces_do_mapping_quick(buffer, size)); }
 
 signed char* read_file_quick( FILE* file, size_t* n_chars ) {const int ____chimes_did_disable14 = new_stack((void *)(&read_file), "read_file", &____must_manage_read_file, 2, 0, (size_t)(2727067958040902871UL), (size_t)(2727067958040902872UL)) ; ; ;
-# 317 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 305 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     fseek (file, 0L, 2);
-# 318 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 306 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
      long file_size; file_size = (ftell(file)) ;
-# 319 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 307 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     fseek (file, 0L, 0);
-# 320 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 321 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 308 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 309 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
      signed char *file_buffer; file_buffer = ((signed char *)malloc_wrapper((1 + file_size) * sizeof(signed char), 2727067958040902852UL, 0, 0)) ;
-# 322 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 323 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 310 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 311 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
      size_t n_read_from_file; n_read_from_file = (fread(file_buffer, sizeof(signed char), file_size, file)) ;
-# 324 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 312 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     file_buffer[file_size] = '\n';
-# 325 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 326 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 327 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 313 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 314 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 315 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     *n_chars = ({ calling_npm("clear_whitespaces_do_mapping", 0); clear_whitespaces_do_mapping_npm(file_buffer, file_size); });
-# 328 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 316 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     rm_stack(true, 2727067958040902852UL, "read_file", &____must_manage_read_file, ____alias_loc_id_14, ____chimes_did_disable14); return file_buffer;
-# 329 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 317 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
 
 signed char* read_file( FILE* file, size_t* n_chars ) { return (____chimes_replaying ? read_file_resumable(file, n_chars) : read_file_quick(file, n_chars)); }
 
 void add_tile_to_run_quick(int row, int col, tiles_to_run *q) {const int ____chimes_did_disable15 = new_stack((void *)(&add_tile_to_run), "add_tile_to_run", &____must_manage_add_tile_to_run, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(2727067958040902904UL)) ; ; ;
-# 332 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ((q->length < q->capacity) ? static_cast<void> (0) : __assert_fail ("q->length < q->capacity", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 332, __PRETTY_FUNCTION__));
-# 333 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 320 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    ((q->length < q->capacity) ? static_cast<void> (0) : __assert_fail ("q->length < q->capacity", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 320, __PRETTY_FUNCTION__));
+# 321 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     q->base[q->length].row = row;
-# 334 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 322 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     q->base[q->length].col = col;
-# 335 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 323 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     q->length = q->length + 1;
-# 336 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 324 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 rm_stack(false, 0UL, "add_tile_to_run", &____must_manage_add_tile_to_run, ____alias_loc_id_15, ____chimes_did_disable15); }
 
 void add_tile_to_run(int row, int col, tiles_to_run *q) { (____chimes_replaying ? add_tile_to_run_resumable(row, col, q) : add_tile_to_run_quick(row, col, q)); }
 
 tile* pop_next_tile_quick(tiles_to_run *q) {const int ____chimes_did_disable16 = new_stack((void *)(&pop_next_tile), "pop_next_tile", &____must_manage_pop_next_tile, 1, 0, (size_t)(2727067958040902950UL)) ; ; ;
-# 339 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ((q->length >= 0) ? static_cast<void> (0) : __assert_fail ("q->length >= 0", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 339, __PRETTY_FUNCTION__));
-# 340 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 327 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    ((q->length >= 0) ? static_cast<void> (0) : __assert_fail ("q->length >= 0", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 327, __PRETTY_FUNCTION__));
+# 328 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     if (q->length == 0) {
-# 341 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 329 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         rm_stack(true, 2727067958040903965UL, "pop_next_tile", &____must_manage_pop_next_tile, ____alias_loc_id_16, ____chimes_did_disable16); return __null;
-# 342 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 330 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     } else {
-# 343 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 331 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
          tile *next; next = (q->q) ;
-# 344 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 332 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         q->q = q->q + 1;
-# 345 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 333 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         q->length = q->length - 1;
-# 346 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 334 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         rm_stack(true, 2727067958040903965UL, "pop_next_tile", &____must_manage_pop_next_tile, ____alias_loc_id_16, ____chimes_did_disable16); return next;
-# 347 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 335 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     }
-# 348 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 336 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 rm_stack(true, 2727067958040903965UL, "pop_next_tile", &____must_manage_pop_next_tile, ____alias_loc_id_16, ____chimes_did_disable16); }
 
 tile* pop_next_tile(tiles_to_run *q) { return (____chimes_replaying ? pop_next_tile_resumable(q) : pop_next_tile_quick(q)); }
 
 void task_func_quick(int i, int j, tiles_to_run *next) {const int ____chimes_did_disable17 = new_stack((void *)(&task_func), "task_func", &____must_manage_task_func, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(2727067958040903412UL)) ; ; ;
-# 351 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 339 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  int ii; int jj; ;
-# 352 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 340 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int threadId; threadId = (omp_get_thread_num()) ;
-# 353 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 341 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int **local_matrix; local_matrix = (worker_tiles[threadId]) ;
-# 354 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 355 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 342 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 343 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int diag_index; diag_index = (((n_tiles_y - 1) + (j - i))) ;
-# 356 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 344 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int *diag; diag = (&tile_diag[diag_index]) ;
-# 357 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 345 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int *tile_edge_y; tile_edge_y = (tile_edges_y[i]) ;
-# 358 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 346 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   int *tile_edge_x; tile_edge_x = (tile_edges_x[j]) ;
-# 359 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 360 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 347 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 348 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  local_matrix[0][0] = *diag;
-# 361 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 362 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 349 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 350 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (ii = 1; ii < tile_width + 1; ++ii) { local_matrix[0][ii] = tile_edge_x[ii - 1]; };
+# 352 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 353 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ for (ii = 1; ii < tile_height + 1; ++ii) { local_matrix[ii][0] = tile_edge_y[ii - 1]; };
+# 355 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 356 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ for ( ii = 1; ii < tile_height+1; ++ii ) {
+# 357 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  for ( jj = 1; jj < tile_width+1; ++jj ) {
+# 358 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    signed char char_from_1; char_from_1 = (string_1[(j - 1) * tile_width + jj - 1]) ;
+# 359 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    signed char char_from_2; char_from_2 = (string_2[(i - 1) * tile_height + ii - 1]) ;
+# 360 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 361 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    int diag_score; diag_score = (local_matrix[ii - 1][jj - 1] + alignment_score_matrix[char_from_2][char_from_1]) ;
+# 362 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    int left_score; left_score = (local_matrix[ii][jj - 1] + alignment_score_matrix[char_from_1][GAP]) ;
+# 363 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    int top_score; top_score = (local_matrix[ii - 1][jj] + alignment_score_matrix[GAP][char_from_2]) ;
 # 364 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 365 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (ii = 1; ii < tile_height + 1; ++ii) { local_matrix[ii][0] = tile_edge_y[ii - 1]; };
-# 367 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 368 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for ( ii = 1; ii < tile_height+1; ++ii ) {
-# 369 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  for ( jj = 1; jj < tile_width+1; ++jj ) {
-# 370 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    signed char char_from_1; char_from_1 = (string_1[(j - 1) * tile_width + jj - 1]) ;
-# 371 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    signed char char_from_2; char_from_2 = (string_2[(i - 1) * tile_height + ii - 1]) ;
-# 372 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 373 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    int diag_score; diag_score = (local_matrix[ii - 1][jj - 1] + alignment_score_matrix[char_from_2][char_from_1]) ;
-# 374 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    int left_score; left_score = (local_matrix[ii][jj - 1] + alignment_score_matrix[char_from_1][GAP]) ;
-# 375 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    int top_score; top_score = (local_matrix[ii - 1][jj] + alignment_score_matrix[GAP][char_from_2]) ;
-# 376 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     int bigger_of_left_top; bigger_of_left_top = ((left_score > top_score) ? left_score : top_score) ;
-# 378 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 366 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
    local_matrix[ii][jj] = (bigger_of_left_top > diag_score) ? bigger_of_left_top : diag_score;
-# 379 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 367 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   }
-# 380 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 368 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
-# 381 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 382 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 369 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 370 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  *diag = local_matrix[tile_height][tile_width];
-# 383 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 371 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (ii = 1; ii < tile_height + 1; ++ii) { tile_edge_y[ii - 1] = local_matrix[ii][tile_width]; };
-# 385 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 373 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (ii = 1; ii < tile_width + 1; ++ii) { tile_edge_x[ii - 1] = local_matrix[tile_height][ii]; };
+# 375 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 376 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ if (i != (n_tiles_y - 1) || j != (n_tiles_x - 1)) {; bool ____chimes_disable0; ____chimes_disable0 = disable_current_thread();
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+#pragma omp critical
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 378 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        {
+# 379 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            if (((i+1) < n_tiles_y) && ((j+1) < n_tiles_x)) {
+# 380 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                 int success; success = (({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(i, j); })) ;
+# 381 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                if (success) {
+# 382 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                     int row; row = (i + 1) ;
+# 383 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                     int col; col = (j + 1) ;
+# 384 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
+# 385 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                }
+# 386 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            }
 # 387 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 388 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- if (i != (n_tiles_y - 1) || j != (n_tiles_x - 1)) {; bool ____chimes_disable0; ____chimes_disable0 = disable_current_thread();
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-#pragma omp critical
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 390 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        {
-# 391 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            if (((i+1) < n_tiles_y) && ((j+1) < n_tiles_x)) {
-# 392 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                 int success; success = (({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(i, j); })) ;
-# 393 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                if (success) {
-# 394 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                     int row; row = (i + 1) ;
-# 395 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                     int col; col = (j + 1) ;
-# 396 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
-# 397 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                }
-# 398 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            }
-# 399 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 400 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             if ((j+1) < n_tiles_x) {
-# 401 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                  int success; success = (({ calling_npm("PUT_RCOL", 0); PUT_RCOL_npm(i, j); })) ;
-# 402 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 390 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (success) {
-# 403 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 391 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                      int row; row = (i) ;
-# 404 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 392 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                      int col; col = (j + 1) ;
-# 405 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 393 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                     ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
-# 406 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 394 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
-# 407 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 395 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             }
+# 396 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 397 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            if ((i+1) < n_tiles_y) {
+# 398 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                 int success; success = (({ calling_npm("PUT_BROW", 0); PUT_BROW_npm(i, j); })) ;
+# 399 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                if (success) {
+# 400 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                     int row; row = (i + 1) ;
+# 401 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                     int col; col = (j) ;
+# 402 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
+# 403 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                }
+# 404 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            }
+# 405 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        } reenable_current_thread(____chimes_disable0);
+# 406 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ }
+# 407 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 408 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 409 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            if ((i+1) < n_tiles_y) {
 # 410 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                 int success; success = (({ calling_npm("PUT_BROW", 0); PUT_BROW_npm(i, j); })) ;
 # 411 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                if (success) {
-# 412 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                     int row; row = (i + 1) ;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                     int col; col = (j) ;
-# 414 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("add_tile_to_run", 0); add_tile_to_run_npm(row, col, next); });
-# 415 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                }
-# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            }
-# 417 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        } reenable_current_thread(____chimes_disable0);
-# 418 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- }
-# 419 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 420 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 421 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 422 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 423 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 rm_stack(false, 0UL, "task_func", &____must_manage_task_func, ____alias_loc_id_17, ____chimes_did_disable17); }
 
 void task_func(int i, int j, tiles_to_run *next) { (____chimes_replaying ? task_func_resumable(i, j, next) : task_func_quick(i, j, next)); }
@@ -3936,325 +3888,325 @@ int result_row;
 int j;
 int i;
  register_stack_vars(9, "main|tmp|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|done|0", (int *)0x0, "i8", (void *)(&done), (size_t)1, 0, 0, 0, "main|mine|0", (int *)0x0, "%struct._tile*", (void *)(&mine), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "%struct._tiles_to_run*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|result_col|0", (int *)0x0, "i32", (void *)(&result_col), (size_t)4, 0, 0, 0, "main|result_row|0", (int *)0x0, "i32", (void *)(&result_row), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
-# 426 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 414 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
       int level; ;; { call_lbl_49: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(49, &____chimes_region_id0, 1, &done);
+# 415 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+#pragma omp parallel
+# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 417 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &done); ;
+# 418 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  nthreads = omp_get_num_threads();
+# 419 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
+# 420 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 421 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    if ( argc != 5 ) {
+# 422 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        fprintf(stderr, "Usage: %s length1 length2 tileWidth tileHeight\n", argv[0]);
+# 423 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        exit(1);
+# 424 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    }
+# 425 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 426 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    fprintf(stdout, "Running SmithWaterman (OpenMP) with %d threads\n", nthreads);
 # 427 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 428 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 428 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 428 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-#pragma omp parallel
-# 428 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 428 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+     unsigned long long length1; length1 = (strtoull(argv[1], __null, 10)) ;
 # 429 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &done); ;
+     unsigned long long length2; length2 = (strtoull(argv[2], __null, 10)) ;
 # 430 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  nthreads = omp_get_num_threads();
 # 431 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
+    tile_width = (int) atoi (argv[3]);
 # 432 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    tile_height = (int) atoi (argv[4]);
 # 433 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    if ( argc < 5 ) {
 # 434 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        fprintf(stderr, "Usage: %s length1 length2 tileWidth tileHeight\n", argv[0]);
+     unsigned long long n_char_in_file_1; n_char_in_file_1 = (length1) ;
 # 435 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        exit(1);
+     unsigned long long n_char_in_file_2; n_char_in_file_2 = (length2) ;
 # 436 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    }
 # 437 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    string_1 = (signed char *)malloc_wrapper(n_char_in_file_1, 2727067958040903134UL, 0, 0);
 # 438 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "Running SmithWaterman (OpenMP) with %d threads\n", nthreads);
+    string_2 = (signed char *)malloc_wrapper(n_char_in_file_2, 2727067958040903134UL, 0, 0);
 # 439 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 440 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-     unsigned long long length1; length1 = (strtoull(argv[1], __null, 10)) ;
+    ({ calling_npm("random_init", 0); random_init_npm(string_1, n_char_in_file_1); });
 # 441 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-     unsigned long long length2; length2 = (strtoull(argv[2], __null, 10)) ;
+    ({ calling_npm("random_init", 0); random_init_npm(string_2, n_char_in_file_2); });
 # 442 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 443 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    tile_width = (int) atoi (argv[3]);
+    fprintf(stdout, "Tile width  %d\n", tile_width);
 # 444 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    tile_height = (int) atoi (argv[4]);
+    fprintf(stdout, "Tile height %d\n", tile_height);
 # 445 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 446 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-     unsigned long long n_char_in_file_1; n_char_in_file_1 = (length1) ;
+    if (n_char_in_file_1 % tile_width) { fprintf(stderr, "String1 length should be multiple of tile width\n"); exit(1); }
 # 447 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-     unsigned long long n_char_in_file_2; n_char_in_file_2 = (length2) ;
+    if (n_char_in_file_2 % tile_height) { fprintf(stderr, "String2 length should be multiple of tile height\n"); exit(1); }
 # 448 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 449 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    string_1 = (signed char *)malloc_wrapper(n_char_in_file_1, 2727067958040903134UL, 0, 0);
+    n_tiles_x = n_char_in_file_1/tile_width;
 # 450 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    string_2 = (signed char *)malloc_wrapper(n_char_in_file_2, 2727067958040903134UL, 0, 0);
+    n_tiles_y = n_char_in_file_2/tile_height;
 # 451 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 452 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ({ calling_npm("random_init", 0); random_init_npm(string_1, n_char_in_file_1); });
+    fprintf(stdout, "Computing %d x %d intra-node tiles\n", n_tiles_x, n_tiles_y);
 # 453 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ({ calling_npm("random_init", 0); random_init_npm(string_2, n_char_in_file_2); });
 # 454 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    strlen_1 = n_char_in_file_1;
 # 455 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "Tile width  %d\n", tile_width);
+    strlen_2 = n_char_in_file_2;
 # 456 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "Tile height %d\n", tile_height);
 # 457 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 458 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    if (n_char_in_file_1 % tile_width) { fprintf(stderr, "String1 length should be multiple of tile width\n"); exit(1); }
 # 459 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    if (n_char_in_file_2 % tile_height) { fprintf(stderr, "String2 length should be multiple of tile height\n"); exit(1); }
 # 460 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ n_tiles_x++;
 # 461 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    n_tiles_x = n_char_in_file_1/tile_width;
+ n_tiles_y++;
 # 462 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    n_tiles_y = n_char_in_file_2/tile_height;
 # 463 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  int num_tiles; num_tiles = (n_tiles_x * n_tiles_y) ;
 # 464 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "Computing %d x %d intra-node tiles\n", n_tiles_x, n_tiles_y);
+ put_counts = (int*)malloc_wrapper(sizeof(int)*num_tiles, 2727067958040902644UL, 0, 0);
 # 465 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ for (i=0; i<num_tiles; i++) {
 # 466 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    strlen_1 = n_char_in_file_1;
+  put_counts[i] = 0;
 # 467 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    strlen_2 = n_char_in_file_2;
+ }
 # 468 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 469 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 470 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  int num_diags; num_diags = (n_tiles_x + n_tiles_y - 1) ;
 # 471 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ tile_diag = (int*)malloc_wrapper(sizeof(int)*num_diags, 2727067958040902644UL, 0, 0);
 # 472 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- n_tiles_x++;
+ tile_diag[((n_tiles_y - 1) + (0 - 0))] = 0;
 # 473 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- n_tiles_y++;
+ ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(0, 0); });
 # 474 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 475 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  int num_tiles; num_tiles = (n_tiles_x * n_tiles_y) ;
+ for (i = 1; i < n_tiles_x; i++) {
 # 476 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- put_counts = (int*)malloc_wrapper(sizeof(int)*num_tiles, 2727067958040902644UL, 0, 0);
-# 477 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (i=0; i<num_tiles; i++) {
-# 478 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  put_counts[i] = 0;
-# 479 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- }
-# 480 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 481 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 482 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  int num_diags; num_diags = (n_tiles_x + n_tiles_y - 1) ;
-# 483 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- tile_diag = (int*)malloc_wrapper(sizeof(int)*num_diags, 2727067958040902644UL, 0, 0);
-# 484 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- tile_diag[((n_tiles_y - 1) + (0 - 0))] = 0;
-# 485 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(0, 0); });
-# 486 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 487 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (i = 1; i < n_tiles_x; i++) {
-# 488 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_diag[((n_tiles_y - 1) + (i - 0))] = -1*(i*tile_width);
-# 489 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 477 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(0, i); });
-# 490 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 478 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
-# 491 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 479 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_y; i++) {
-# 492 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 480 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_diag[((n_tiles_y - 1) + (0 - i))] = -1*(i*tile_height);
-# 493 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 481 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   ({ calling_npm("PUT_DIAG", 0); PUT_DIAG_npm(i, 0); });
-# 494 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 482 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
-# 495 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 496 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 497 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 483 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 484 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 485 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  tile_edges_y = (int**)malloc_wrapper(sizeof(int*)*n_tiles_y, 2727067958040903043UL, 1, 0);
-# 498 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 486 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_y; i++) {
-# 499 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 487 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_edges_y[i] = (int*)malloc_wrapper(sizeof(int)*(tile_height), 2727067958040903045UL, 0, 0);
-# 500 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 488 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   for (j = 0; j < tile_height; j++) { tile_edges_y[i][j] = -1 * ((i - 1) * tile_height + j); };
-# 502 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 490 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   ({ calling_npm("PUT_RCOL", 0); PUT_RCOL_npm(i, 0); });
-# 503 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 491 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
-# 504 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 505 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 506 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 492 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 493 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 494 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  tile_edges_x = (int**)malloc_wrapper(sizeof(int*)*n_tiles_x, 2727067958040903043UL, 1, 0);
-# 507 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 495 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_x; i++) {
-# 508 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 496 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   tile_edges_x[i] = (int*)malloc_wrapper(sizeof(int)*(tile_width), 2727067958040903045UL, 0, 0);
-# 509 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 497 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   for (j = 0; j < tile_width; j++) { tile_edges_x[i][j] = -1 * ((i - 1) * tile_width + j); };
-# 511 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 499 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   ({ calling_npm("PUT_BROW", 0); PUT_BROW_npm(0, i); });
-# 512 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 500 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
+# 501 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 502 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 503 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ worker_tiles = (int***)malloc_wrapper(sizeof(int**)*nthreads, 2727067958040903022UL, 1, 0);
+# 504 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ for (i = 0; i < nthreads; i++) {
+# 505 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  worker_tiles[i] = (int**)malloc_wrapper(sizeof(int*)*(tile_height+1), 2727067958040903234UL, 1, 0);
+# 506 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  for (j = 0; j < tile_height + 1; j++) { worker_tiles[i][j] = (int *)malloc_wrapper(sizeof(int) * (tile_width + 1), 2727067958040903236UL, 0, 0); };
+# 508 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ }
+# 509 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 510 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 511 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ dsizes[DIAG_KIND] = 1;
+# 512 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ dsizes[RCOL_KIND] = tile_height;
 # 513 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ dsizes[BROW_KIND] = tile_width;
 # 514 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 515 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- worker_tiles = (int***)malloc_wrapper(sizeof(int**)*nthreads, 2727067958040903022UL, 1, 0);
-# 516 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (i = 0; i < nthreads; i++) {
-# 517 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  worker_tiles[i] = (int**)malloc_wrapper(sizeof(int*)*(tile_height+1), 2727067958040903234UL, 1, 0);
-# 518 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  for (j = 0; j < tile_height + 1; j++) { worker_tiles[i][j] = (int *)malloc_wrapper(sizeof(int) * (tile_width + 1), 2727067958040903236UL, 0, 0); };
-# 520 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- }
-# 521 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 522 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 523 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- dsizes[DIAG_KIND] = 1;
-# 524 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- dsizes[RCOL_KIND] = tile_height;
-# 525 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- dsizes[BROW_KIND] = tile_width;
-# 526 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 527 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  max_size = dsizes[0];
-# 528 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 516 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < NUM_DEPS; i++) { if (max_size < dsizes[i]) max_size = dsizes[i];; };
-# 530 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 518 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  max_buffer = (int*)malloc_wrapper(sizeof(int)*max_size, 2727067958040902644UL, 0, 0);
-# 531 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 519 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  temp_buffer = (int*)malloc_wrapper(sizeof(int)*max_size, 2727067958040902644UL, 0, 0);
-# 561 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 561 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 549 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 549 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     result_row = (n_tiles_y - 1) ;
-# 562 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 550 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     result_col = (n_tiles_x - 1) ;
-# 563 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 551 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  done = 0;
-# 564 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 565 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 552 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 553 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     gettimeofday(&begin,0);
-# 566 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 567 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 554 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 555 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
        curr = ((tiles_to_run *)malloc_wrapper(sizeof(tiles_to_run), 2727067958040903869UL, 0, 1, (int)sizeof(struct _tiles_to_run), 2, (int)__builtin_offsetof(struct _tiles_to_run, q), (int)__builtin_offsetof(struct _tiles_to_run, base))) ;
-# 568 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 556 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     curr->base = (tile *)malloc_wrapper(sizeof(tile) * n_tiles_y * n_tiles_x, 2727067958040903878UL, 0, 1, (int)sizeof(struct _tile), 0);
-# 569 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 557 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     curr->q = curr->base;
-# 570 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 558 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     curr->capacity = n_tiles_y * n_tiles_x;
-# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 559 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     curr->length = 1;
-# 572 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 560 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     (curr->base)[0].row = 1;
-# 573 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 561 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     (curr->base)[0].col = 1;
+# 562 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 563 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+       next = ((tiles_to_run *)malloc_wrapper(sizeof(tiles_to_run), 2727067958040903869UL, 0, 1, (int)sizeof(struct _tiles_to_run), 2, (int)__builtin_offsetof(struct _tiles_to_run, q), (int)__builtin_offsetof(struct _tiles_to_run, base))) ;
+# 564 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    next->base = (tile *)malloc_wrapper(sizeof(tile) * n_tiles_y * n_tiles_x, 2727067958040903878UL, 0, 1, (int)sizeof(struct _tile), 0);
+# 565 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    next->q = next->base;
+# 566 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    next->capacity = n_tiles_y * n_tiles_x;
+# 567 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    next->length = 0;
+# 568 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 569 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    while (curr->length > 0) {
+# 570 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+           mine = (__null); { call_lbl_50: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(50, &____chimes_region_id1, 2, &done, &mine); ;
+# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+#pragma omp parallel firstprivate(mine) firstprivate(done)
+# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 571 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 572 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &done, &mine); ;
+# 573 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+               done = (false) ;
 # 574 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 575 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-       next = ((tiles_to_run *)malloc_wrapper(sizeof(tiles_to_run), 2727067958040903869UL, 0, 1, (int)sizeof(struct _tiles_to_run), 2, (int)__builtin_offsetof(struct _tiles_to_run, q), (int)__builtin_offsetof(struct _tiles_to_run, base))) ;
-# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    next->base = (tile *)malloc_wrapper(sizeof(tile) * n_tiles_y * n_tiles_x, 2727067958040903878UL, 0, 1, (int)sizeof(struct _tile), 0);
-# 577 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    next->q = next->base;
-# 578 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    next->capacity = n_tiles_y * n_tiles_x;
-# 579 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    next->length = 0;
-# 580 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 581 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    while (curr->length > 0) {
-# 582 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-           mine = (__null); { call_lbl_50: unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(50, &____chimes_region_id1, 2, &done, &mine); ;
-# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-#pragma omp parallel firstprivate(mine) firstprivate(done)
-# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 584 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &done, &mine); ;
-# 585 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-               done = (false) ;
-# 586 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 587 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             while (!done) {; bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
-# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 #pragma omp critical
-# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 589 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 576 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 577 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 {
-# 590 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 578 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                     mine = ({ calling_npm("pop_next_tile", 0); pop_next_tile_npm(curr); });
-# 591 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 579 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 } reenable_current_thread(____chimes_disable3);
-# 592 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 580 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 done = (mine == __null);
+# 581 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 582 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                if (!done) {
+# 583 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    ({ calling_npm("task_func", 0); task_func_npm(mine->row, mine->col, next); });
+# 584 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                }
+# 585 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            }
+# 586 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); }
+# 587 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+           tmp = (curr) ;
+# 589 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        curr = next;
+# 590 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        next = tmp;
+# 591 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 592 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        curr->q = curr->base;
 # 593 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 594 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                if (!done) {
+        next->length = 0;
 # 595 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    ({ calling_npm("task_func", 0); task_func_npm(mine->row, mine->col, next); });
 # 596 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                }
 # 597 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            }
+         call_lbl_34: checkpoint_transformed(34, ____alias_loc_id_0);
 # 598 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); }
 # 599 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    }
 # 600 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-           tmp = (curr) ;
 # 601 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        curr = next;
+    gettimeofday(&end,0);
 # 602 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        next = tmp;
+     int score; score = (tile_diag[((n_tiles_y - 1) + (result_col - result_row))]) ;
 # 603 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    fprintf(stdout, "score: %d\n", score);
 # 604 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        curr->q = curr->base;
+    fprintf(stdout, "The computation took %f seconds\n",((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
 # 605 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 606 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        next->length = 0;
+ for (i = 0; i < nthreads; i++) {
 # 607 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 608 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  for (j = 0; j < tile_height + 1; j++) { free_wrapper(worker_tiles[i][j], 2727067958040903236UL); };
 # 609 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-         call_lbl_34: checkpoint_transformed(34, ____alias_loc_id_0);
+  free_wrapper(worker_tiles[i], 2727067958040903234UL);
 # 610 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ }
 # 611 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    }
+ free_wrapper(worker_tiles, 2727067958040903022UL);
 # 612 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 613 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    gettimeofday(&end,0);
-# 614 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-     int score; score = (tile_diag[((n_tiles_y - 1) + (result_col - result_row))]) ;
-# 615 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "score: %d\n", score);
-# 616 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    fprintf(stdout, "The computation took %f seconds\n",((end.tv_sec - begin.tv_sec)*1000000+(end.tv_usec - begin.tv_usec))*1.0/1000000);
-# 617 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 618 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (i = 0; i < nthreads; i++) {
-# 619 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  for (j = 0; j < tile_height + 1; j++) { free_wrapper(worker_tiles[i][j], 2727067958040903236UL); };
-# 621 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  free_wrapper(worker_tiles[i], 2727067958040903234UL);
-# 622 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- }
-# 623 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- free_wrapper(worker_tiles, 2727067958040903022UL);
-# 624 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 625 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_y; i++) { free_wrapper(tile_edges_y[i], 2727067958040903045UL); };
-# 627 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 615 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  free_wrapper(tile_edges_y, 2727067958040903043UL);
-# 628 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 629 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 616 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 617 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (i = 1; i < n_tiles_x; i++) { free_wrapper(tile_edges_x[i], 2727067958040903045UL); };
-# 631 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 619 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  free_wrapper(tile_edges_x, 2727067958040903043UL);
-# 632 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 633 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 620 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 621 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  free_wrapper(tile_diag, 2727067958040902644UL);
-# 634 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 635 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 622 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 623 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  free_wrapper(string_1, 2727067958040903134UL);
-# 636 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 624 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  free_wrapper(string_2, 2727067958040903134UL);
-# 637 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 638 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 625 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 626 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_18, ____chimes_did_disable18); return 0;
-# 639 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 627 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
 
 int main ( int argc, char* argv[] ) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -4355,253 +4307,229 @@ static void random_init_npm(signed char *s, unsigned long long len) {
 # 281 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     for (unsigned long long i = 0; i < len; i++) {
 # 282 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        int r = rand() % 4;
+        int r = rand() % 5;
 # 283 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        switch (r) {
+        ((r >= 0 && r < 5) ? static_cast<void> (0) : __assert_fail ("r >= 0 && r < 5", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 283, __PRETTY_FUNCTION__));
 # 284 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (0):
+        s[i] = r;
 # 285 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'A';
-# 286 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 287 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (1):
-# 288 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'C';
-# 289 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 290 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (2):
-# 291 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'G';
-# 292 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 293 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            case (3):
-# 294 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                s[i] = 'T';
-# 295 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                break;
-# 296 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        }
-# 297 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     }
-# 298 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 286 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
 
 size_t clear_whitespaces_do_mapping_npm ( signed char* buffer, long size ) {
-# 301 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 289 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     size_t non_ws_index = 0, traverse_index = 0;
-# 302 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 303 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 290 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 291 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     while ( traverse_index < size ) {
-# 304 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 292 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         char curr_char = buffer[traverse_index];
-# 305 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 293 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         switch ( curr_char ) {
-# 306 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 294 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             case 'A': case 'C': case 'G': case 'T':
-# 307 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 308 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 295 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 296 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 buffer[non_ws_index++] = char_mapping_npm(curr_char);
-# 309 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 297 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 break;
-# 310 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 298 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         }
-# 311 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 299 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         ++traverse_index;
-# 312 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 300 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     }
-# 313 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 301 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     return non_ws_index;
-# 314 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 302 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
 
 signed char* read_file_npm( FILE* file, size_t* n_chars ) {
-# 317 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 305 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     fseek (file, 0L, 2);
-# 318 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 306 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     long file_size = ftell (file);
-# 319 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 307 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     fseek (file, 0L, 0);
-# 320 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 321 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 308 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 309 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     signed char *file_buffer = (signed char *)malloc_wrapper((1+file_size)*sizeof(signed char), 2727067958040902852UL, 0, 0);
-# 322 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 323 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 310 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 311 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     size_t n_read_from_file = fread(file_buffer, sizeof(signed char), file_size, file);
-# 324 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 312 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     file_buffer[file_size] = '\n';
-# 325 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 326 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 327 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 313 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 314 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 315 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     *n_chars = clear_whitespaces_do_mapping_npm(file_buffer, file_size);
-# 328 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 316 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     return file_buffer;
-# 329 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 317 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
 
 void add_tile_to_run_npm(int row, int col, tiles_to_run *q) {
-# 332 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ((q->length < q->capacity) ? static_cast<void> (0) : __assert_fail ("q->length < q->capacity", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 332, __PRETTY_FUNCTION__));
-# 333 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 320 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    ((q->length < q->capacity) ? static_cast<void> (0) : __assert_fail ("q->length < q->capacity", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 320, __PRETTY_FUNCTION__));
+# 321 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     q->base[q->length].row = row;
-# 334 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 322 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     q->base[q->length].col = col;
-# 335 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 323 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     q->length = q->length + 1;
-# 336 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 324 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
 
 tile* pop_next_tile_npm(tiles_to_run *q) {
-# 339 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-    ((q->length >= 0) ? static_cast<void> (0) : __assert_fail ("q->length >= 0", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 339, __PRETTY_FUNCTION__));
-# 340 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 327 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+    ((q->length >= 0) ? static_cast<void> (0) : __assert_fail ("q->length >= 0", "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp", 327, __PRETTY_FUNCTION__));
+# 328 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     if (q->length == 0) {
-# 341 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 329 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         return __null;
-# 342 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 330 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     } else {
-# 343 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 331 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         tile *next = q->q;
-# 344 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 332 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         q->q = q->q + 1;
-# 345 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 333 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         q->length = q->length - 1;
-# 346 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 334 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
         return next;
-# 347 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 335 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     }
-# 348 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 336 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
 
 void task_func_npm(int i, int j, tiles_to_run *next) {
-# 351 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 339 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  int ii, jj;
-# 352 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 340 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  int threadId = omp_get_thread_num();
-# 353 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 341 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  int ** local_matrix = worker_tiles[threadId];
-# 354 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 355 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 342 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 343 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  int diag_index = ((n_tiles_y - 1) + (j - i));
-# 356 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 344 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  int * diag = &tile_diag[diag_index];
-# 357 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 345 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  int * tile_edge_y = tile_edges_y[i];
-# 358 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 346 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  int * tile_edge_x = tile_edges_x[j];
-# 359 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 360 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 347 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 348 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  local_matrix[0][0] = *diag;
-# 361 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 362 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 349 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 350 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (ii = 1; ii < tile_width + 1; ++ii) { local_matrix[0][ii] = tile_edge_x[ii - 1]; };
+# 352 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 353 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ for (ii = 1; ii < tile_height + 1; ++ii) { local_matrix[ii][0] = tile_edge_y[ii - 1]; };
+# 355 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 356 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ for ( ii = 1; ii < tile_height+1; ++ii ) {
+# 357 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+  for ( jj = 1; jj < tile_width+1; ++jj ) {
+# 358 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+   signed char char_from_1 = string_1[(j-1)*tile_width+jj-1];
+# 359 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+   signed char char_from_2 = string_2[(i-1)*tile_height+ii-1];
+# 360 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 361 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+   int diag_score = local_matrix[ii-1][jj-1] + alignment_score_matrix[char_from_2][char_from_1];
+# 362 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+   int left_score = local_matrix[ii ][jj-1] + alignment_score_matrix[char_from_1][GAP];
+# 363 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+   int top_score = local_matrix[ii-1][jj ] + alignment_score_matrix[GAP][char_from_2];
 # 364 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 365 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for (ii = 1; ii < tile_height + 1; ++ii) { local_matrix[ii][0] = tile_edge_y[ii - 1]; };
-# 367 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 368 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- for ( ii = 1; ii < tile_height+1; ++ii ) {
-# 369 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-  for ( jj = 1; jj < tile_width+1; ++jj ) {
-# 370 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-   signed char char_from_1 = string_1[(j-1)*tile_width+jj-1];
-# 371 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-   signed char char_from_2 = string_2[(i-1)*tile_height+ii-1];
-# 372 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 373 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-   int diag_score = local_matrix[ii-1][jj-1] + alignment_score_matrix[char_from_2][char_from_1];
-# 374 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-   int left_score = local_matrix[ii ][jj-1] + alignment_score_matrix[char_from_1][GAP];
-# 375 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-   int top_score = local_matrix[ii-1][jj ] + alignment_score_matrix[GAP][char_from_2];
-# 376 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
    int bigger_of_left_top = (left_score > top_score) ? left_score : top_score;
-# 378 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 366 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
    local_matrix[ii][jj] = (bigger_of_left_top > diag_score) ? bigger_of_left_top : diag_score;
-# 379 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 367 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   }
-# 380 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 368 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  }
-# 381 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 382 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 369 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 370 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  *diag = local_matrix[tile_height][tile_width];
-# 383 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 371 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (ii = 1; ii < tile_height + 1; ++ii) { tile_edge_y[ii - 1] = local_matrix[ii][tile_width]; };
-# 385 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 373 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
  for (ii = 1; ii < tile_width + 1; ++ii) { tile_edge_x[ii - 1] = local_matrix[tile_height][ii]; };
+# 375 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 376 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ if (i != (n_tiles_y - 1) || j != (n_tiles_x - 1)) {
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+#pragma omp critical
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 377 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 378 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        {
+# 379 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            if (((i+1) < n_tiles_y) && ((j+1) < n_tiles_x)) {
+# 380 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                int success = PUT_DIAG_npm(i, j);
+# 381 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                if (success) {
+# 382 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    int row = i + 1;
+# 383 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    int col = j + 1;
+# 384 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    add_tile_to_run_npm(row, col, next);
+# 385 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                }
+# 386 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            }
 # 387 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 388 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- if (i != (n_tiles_y - 1) || j != (n_tiles_x - 1)) {
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-#pragma omp critical
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 390 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        {
-# 391 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            if (((i+1) < n_tiles_y) && ((j+1) < n_tiles_x)) {
-# 392 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                int success = PUT_DIAG_npm(i, j);
-# 393 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                if (success) {
-# 394 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    int row = i + 1;
-# 395 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    int col = j + 1;
-# 396 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    add_tile_to_run_npm(row, col, next);
-# 397 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                }
-# 398 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            }
-# 399 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 400 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             if ((j+1) < n_tiles_x) {
-# 401 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 389 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 int success = PUT_RCOL_npm(i, j);
-# 402 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 390 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 if (success) {
-# 403 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 391 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                     int row = i;
-# 404 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 392 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                     int col = j + 1;
-# 405 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 393 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                     add_tile_to_run_npm(row, col, next);
-# 406 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 394 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
                 }
-# 407 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 395 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             }
+# 396 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+# 397 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            if ((i+1) < n_tiles_y) {
+# 398 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                int success = PUT_BROW_npm(i, j);
+# 399 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                if (success) {
+# 400 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    int row = i + 1;
+# 401 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    int col = j;
+# 402 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                    add_tile_to_run_npm(row, col, next);
+# 403 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+                }
+# 404 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+            }
+# 405 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+        }
+# 406 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
+ }
+# 407 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 408 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 409 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            if ((i+1) < n_tiles_y) {
 # 410 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                int success = PUT_BROW_npm(i, j);
 # 411 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                if (success) {
-# 412 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    int row = i + 1;
-# 413 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    int col = j;
-# 414 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                    add_tile_to_run_npm(row, col, next);
-# 415 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-                }
-# 416 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-            }
-# 417 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        }
-# 418 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- }
-# 419 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 420 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 421 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 422 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-# 423 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 }
 
 
@@ -4610,7 +4538,7 @@ void task_func_npm(int i, int j, tiles_to_run *next) {
 
 static int module_init() {
     init_module(2727067958040902507UL, 33, 19, 0, 20, 18, 0, 18, 21, 0, 7,
-                           &____alias_loc_id_0, (unsigned)32, (unsigned)3, (2727067958040902507UL + 137UL), (2727067958040902507UL + 515UL), (2727067958040902507UL + 536UL), (2727067958040902507UL + 538UL), (2727067958040902507UL + 727UL), (2727067958040902507UL + 906UL), (2727067958040902507UL + 907UL), (2727067958040902507UL + 908UL), (2727067958040902507UL + 909UL), (2727067958040902507UL + 910UL), (2727067958040902507UL + 912UL), (2727067958040902507UL + 913UL), (2727067958040902507UL + 914UL), (2727067958040902507UL + 915UL), (2727067958040902507UL + 916UL), (2727067958040902507UL + 917UL), (2727067958040902507UL + 918UL), (2727067958040902507UL + 919UL), (2727067958040902507UL + 920UL), (2727067958040902507UL + 921UL), (2727067958040902507UL + 922UL), (2727067958040902507UL + 923UL), (2727067958040902507UL + 924UL), (2727067958040902507UL + 1362UL), (2727067958040902507UL + 1371UL), (2727067958040902507UL + 1668UL), (2727067958040902507UL + 1670UL), (2727067958040902507UL + 1676UL), (2727067958040902507UL + 1678UL), (2727067958040902507UL + 1680UL), (2727067958040902507UL + 1686UL), (2727067958040902507UL + 1688UL), "task_func", (unsigned)1, (2727067958040902507UL + 1362UL), "random_init", (unsigned)1, (2727067958040902507UL + 627UL), "pop_next_tile", (unsigned)1, (2727067958040902507UL + 1362UL),
+                           &____alias_loc_id_0, (unsigned)32, (unsigned)3, (2727067958040902507UL + 137UL), (2727067958040902507UL + 515UL), (2727067958040902507UL + 536UL), (2727067958040902507UL + 538UL), (2727067958040902507UL + 727UL), (2727067958040902507UL + 906UL), (2727067958040902507UL + 907UL), (2727067958040902507UL + 908UL), (2727067958040902507UL + 909UL), (2727067958040902507UL + 910UL), (2727067958040902507UL + 912UL), (2727067958040902507UL + 913UL), (2727067958040902507UL + 914UL), (2727067958040902507UL + 915UL), (2727067958040902507UL + 916UL), (2727067958040902507UL + 917UL), (2727067958040902507UL + 918UL), (2727067958040902507UL + 919UL), (2727067958040902507UL + 920UL), (2727067958040902507UL + 921UL), (2727067958040902507UL + 922UL), (2727067958040902507UL + 923UL), (2727067958040902507UL + 924UL), (2727067958040902507UL + 1362UL), (2727067958040902507UL + 1371UL), (2727067958040902507UL + 1662UL), (2727067958040902507UL + 1664UL), (2727067958040902507UL + 1670UL), (2727067958040902507UL + 1672UL), (2727067958040902507UL + 1674UL), (2727067958040902507UL + 1680UL), (2727067958040902507UL + 1682UL), "task_func", (unsigned)1, (2727067958040902507UL + 1362UL), "random_init", (unsigned)1, (2727067958040902507UL + 627UL), "pop_next_tile", (unsigned)1, (2727067958040902507UL + 1362UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (2727067958040902507UL + 1UL), (2727067958040902507UL + 2UL),
                            &____alias_loc_id_2, (unsigned)2, (unsigned)0, (2727067958040902507UL + 22UL), (2727067958040902507UL + 23UL),
                            &____alias_loc_id_3, (unsigned)2, (unsigned)0, (2727067958040902507UL + 41UL), (2727067958040902507UL + 42UL),
@@ -4628,25 +4556,25 @@ static int module_init() {
                             &____alias_loc_id_15, (unsigned)5, (unsigned)0, (2727067958040902507UL + 375UL), (2727067958040902507UL + 376UL), (2727067958040902507UL + 377UL), (2727067958040902507UL + 397UL), (2727067958040902507UL + 403UL),
                             &____alias_loc_id_16, (unsigned)4, (unsigned)0, (2727067958040902507UL + 429UL), (2727067958040902507UL + 430UL), (2727067958040902507UL + 431UL), (2727067958040902507UL + 443UL),
                             &____alias_loc_id_17, (unsigned)29, (unsigned)1, (2727067958040902507UL + 137UL), (2727067958040902507UL + 475UL), (2727067958040902507UL + 476UL), (2727067958040902507UL + 477UL), (2727067958040902507UL + 478UL), (2727067958040902507UL + 479UL), (2727067958040902507UL + 480UL), (2727067958040902507UL + 481UL), (2727067958040902507UL + 482UL), (2727067958040902507UL + 483UL), (2727067958040902507UL + 484UL), (2727067958040902507UL + 485UL), (2727067958040902507UL + 486UL), (2727067958040902507UL + 487UL), (2727067958040902507UL + 488UL), (2727067958040902507UL + 489UL), (2727067958040902507UL + 490UL), (2727067958040902507UL + 491UL), (2727067958040902507UL + 492UL), (2727067958040902507UL + 493UL), (2727067958040902507UL + 494UL), (2727067958040902507UL + 495UL), (2727067958040902507UL + 496UL), (2727067958040902507UL + 497UL), (2727067958040902507UL + 498UL), (2727067958040902507UL + 499UL), (2727067958040902507UL + 500UL), (2727067958040902507UL + 538UL), (2727067958040902507UL + 729UL), "add_tile_to_run", (unsigned)1, (2727067958040902507UL + 905UL),
-                            &____alias_loc_id_18, (unsigned)30, (unsigned)3, (2727067958040902507UL + 137UL), (2727067958040902507UL + 515UL), (2727067958040902507UL + 536UL), (2727067958040902507UL + 538UL), (2727067958040902507UL + 727UL), (2727067958040902507UL + 906UL), (2727067958040902507UL + 907UL), (2727067958040902507UL + 908UL), (2727067958040902507UL + 909UL), (2727067958040902507UL + 910UL), (2727067958040902507UL + 912UL), (2727067958040902507UL + 913UL), (2727067958040902507UL + 914UL), (2727067958040902507UL + 915UL), (2727067958040902507UL + 916UL), (2727067958040902507UL + 917UL), (2727067958040902507UL + 918UL), (2727067958040902507UL + 919UL), (2727067958040902507UL + 920UL), (2727067958040902507UL + 921UL), (2727067958040902507UL + 925UL), (2727067958040902507UL + 1362UL), (2727067958040902507UL + 1371UL), (2727067958040902507UL + 1668UL), (2727067958040902507UL + 1670UL), (2727067958040902507UL + 1676UL), (2727067958040902507UL + 1678UL), (2727067958040902507UL + 1680UL), (2727067958040902507UL + 1686UL), (2727067958040902507UL + 1688UL), "task_func", (unsigned)1, (2727067958040902507UL + 1362UL), "random_init", (unsigned)1, (2727067958040902507UL + 627UL), "pop_next_tile", (unsigned)1, (2727067958040902507UL + 1362UL),
-                            &____alias_loc_id_19, (unsigned)5, (unsigned)0, (2727067958040902507UL + 1616UL), (2727067958040902507UL + 1617UL), (2727067958040902507UL + 1618UL), (2727067958040902507UL + 1619UL), (2727067958040902507UL + 1663UL),
+                            &____alias_loc_id_18, (unsigned)30, (unsigned)3, (2727067958040902507UL + 137UL), (2727067958040902507UL + 515UL), (2727067958040902507UL + 536UL), (2727067958040902507UL + 538UL), (2727067958040902507UL + 727UL), (2727067958040902507UL + 906UL), (2727067958040902507UL + 907UL), (2727067958040902507UL + 908UL), (2727067958040902507UL + 909UL), (2727067958040902507UL + 910UL), (2727067958040902507UL + 912UL), (2727067958040902507UL + 913UL), (2727067958040902507UL + 914UL), (2727067958040902507UL + 915UL), (2727067958040902507UL + 916UL), (2727067958040902507UL + 917UL), (2727067958040902507UL + 918UL), (2727067958040902507UL + 919UL), (2727067958040902507UL + 920UL), (2727067958040902507UL + 921UL), (2727067958040902507UL + 925UL), (2727067958040902507UL + 1362UL), (2727067958040902507UL + 1371UL), (2727067958040902507UL + 1662UL), (2727067958040902507UL + 1664UL), (2727067958040902507UL + 1670UL), (2727067958040902507UL + 1672UL), (2727067958040902507UL + 1674UL), (2727067958040902507UL + 1680UL), (2727067958040902507UL + 1682UL), "task_func", (unsigned)1, (2727067958040902507UL + 1362UL), "random_init", (unsigned)1, (2727067958040902507UL + 627UL), "pop_next_tile", (unsigned)1, (2727067958040902507UL + 1362UL),
+                            &____alias_loc_id_19, (unsigned)5, (unsigned)0, (2727067958040902507UL + 1616UL), (2727067958040902507UL + 1617UL), (2727067958040902507UL + 1618UL), (2727067958040902507UL + 1619UL), (2727067958040902507UL + 1648UL),
                             "GUID_DIAG", (void *)(&GUID_DIAG_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 0,
                             "GUID_RCOL", (void *)(&GUID_RCOL_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 0,
                             "GUID_BROW", (void *)(&GUID_BROW_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 0,
                             "TILE_ROW", (void *)(&TILE_ROW_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
                             "TILE_COL", (void *)(&TILE_COL_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
                             "GUID_KIND", (void *)(&GUID_KIND_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
-                            "PUT", (void *)(&PUT_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 2, "GUID_DIAG", 2, 0UL, 0UL, 0UL, "__assert_fail", 4, (2727067958040902507UL + 1689UL), (2727067958040902507UL + 1690UL), 0UL, (2727067958040902507UL + 1691UL), 0UL,
+                            "PUT", (void *)(&PUT_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 2, "GUID_DIAG", 2, 0UL, 0UL, 0UL, "__assert_fail", 4, (2727067958040902507UL + 1683UL), (2727067958040902507UL + 1684UL), 0UL, (2727067958040902507UL + 1685UL), 0UL,
                             "PUT_DIAG", (void *)(&PUT_DIAG_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 1, "PUT", 2, 0UL, 0UL, 0UL,
                             "PUT_RCOL", (void *)(&PUT_RCOL_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 1, "PUT", 2, 0UL, 0UL, 0UL,
                             "PUT_BROW", (void *)(&PUT_BROW_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 1, "PUT", 2, 0UL, 0UL, 0UL,
                             "char_mapping", (void *)(&char_mapping_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
-                            "print_matrix", (void *)(&print_matrix_npm), (void *)__null, 0, 3, (2727067958040902507UL + 275UL), 0UL, 0UL, 0UL, 3, "fprintf", 3, (2727067958040902507UL + 249UL), (2727067958040902507UL + 1693UL), 0UL, 0UL, "fprintf", 2, (2727067958040902507UL + 249UL), (2727067958040902507UL + 1694UL), 0UL, "fprintf", 2, (2727067958040902507UL + 249UL), (2727067958040902507UL + 1689UL), 0UL,
-                            "random_init", (void *)(&random_init_npm), (void *)__null, 0, 2, (2727067958040902507UL + 1663UL), 0UL, 0UL, 1, "rand", 0, 0UL,
+                            "print_matrix", (void *)(&print_matrix_npm), (void *)__null, 0, 3, (2727067958040902507UL + 275UL), 0UL, 0UL, 0UL, 3, "fprintf", 3, (2727067958040902507UL + 249UL), (2727067958040902507UL + 1687UL), 0UL, 0UL, "fprintf", 2, (2727067958040902507UL + 249UL), (2727067958040902507UL + 1688UL), 0UL, "fprintf", 2, (2727067958040902507UL + 249UL), (2727067958040902507UL + 1683UL), 0UL,
+                            "random_init", (void *)(&random_init_npm), (void *)__null, 0, 2, (2727067958040902507UL + 1648UL), 0UL, 0UL, 2, "rand", 0, 0UL, "__assert_fail", 4, (2727067958040902507UL + 1698UL), (2727067958040902507UL + 1684UL), 0UL, (2727067958040902507UL + 1706UL), 0UL,
                             "clear_whitespaces_do_mapping", (void *)(&clear_whitespaces_do_mapping_npm), (void *)__null, 0, 2, (2727067958040902507UL + 322UL), 0UL, 0UL, 1, "char_mapping", 1, 0UL, 0UL,
                             "read_file", (void *)(&read_file_npm), (void *)__null, 0, 2, (2727067958040902507UL + 364UL), (2727067958040902507UL + 365UL), (2727067958040902507UL + 345UL), 6, "fseek", 3, (2727067958040902507UL + 364UL), 0UL, 0UL, 0UL, "ftell", 1, (2727067958040902507UL + 364UL), 0UL, "fseek", 3, (2727067958040902507UL + 364UL), 0UL, 0UL, 0UL, "malloc", 1, 0UL, (2727067958040902507UL + 345UL), "fread", 4, (2727067958040902507UL + 345UL), 0UL, 0UL, (2727067958040902507UL + 364UL), 0UL, "clear_whitespaces_do_mapping", 2, (2727067958040902507UL + 345UL), 0UL, 0UL,
-                            "add_tile_to_run", (void *)(&add_tile_to_run_npm), (void *)__null, 0, 3, 0UL, 0UL, (2727067958040902507UL + 397UL), 0UL, 1, "__assert_fail", 4, (2727067958040902507UL + 1696UL), (2727067958040902507UL + 1690UL), 0UL, (2727067958040902507UL + 1697UL), 0UL,
-                            "pop_next_tile", (void *)(&pop_next_tile_npm), (void *)__null, 0, 1, (2727067958040902507UL + 443UL), (2727067958040902507UL + 1458UL), 1, "__assert_fail", 4, (2727067958040902507UL + 1698UL), (2727067958040902507UL + 1690UL), 0UL, (2727067958040902507UL + 1699UL), 0UL,
+                            "add_tile_to_run", (void *)(&add_tile_to_run_npm), (void *)__null, 0, 3, 0UL, 0UL, (2727067958040902507UL + 397UL), 0UL, 1, "__assert_fail", 4, (2727067958040902507UL + 1690UL), (2727067958040902507UL + 1684UL), 0UL, (2727067958040902507UL + 1691UL), 0UL,
+                            "pop_next_tile", (void *)(&pop_next_tile_npm), (void *)__null, 0, 1, (2727067958040902507UL + 443UL), (2727067958040902507UL + 1458UL), 1, "__assert_fail", 4, (2727067958040902507UL + 1692UL), (2727067958040902507UL + 1684UL), 0UL, (2727067958040902507UL + 1693UL), 0UL,
                             "task_func", (void *)(&task_func_npm), (void *)__null, 0, 3, 0UL, 0UL, (2727067958040902507UL + 905UL), 0UL, 7, "omp_get_thread_num", 0, 0UL, "PUT_DIAG", 2, 0UL, 0UL, 0UL, "add_tile_to_run", 3, 0UL, 0UL, (2727067958040902507UL + 905UL), 0UL, "PUT_RCOL", 2, 0UL, 0UL, 0UL, "add_tile_to_run", 3, 0UL, 0UL, (2727067958040902507UL + 905UL), 0UL, "PUT_BROW", 2, 0UL, 0UL, 0UL, "add_tile_to_run", 3, 0UL, 0UL, (2727067958040902507UL + 905UL), 0UL,
                            "GUID_DIAG", &(____chimes_does_checkpoint_GUID_DIAG_npm),
                            "GUID_RCOL", &(____chimes_does_checkpoint_GUID_RCOL_npm),
@@ -4670,33 +4598,33 @@ static int module_init() {
                              (2727067958040902507UL + 275UL), (2727067958040902507UL + 256UL),
                              (2727067958040902507UL + 224UL), (2727067958040902507UL + 275UL),
                              (2727067958040902507UL + 727UL), (2727067958040902507UL + 729UL),
-                             (2727067958040902507UL + 1616UL), (2727067958040902507UL + 1663UL),
-                             (2727067958040902507UL + 1692UL), (2727067958040902507UL + 249UL),
+                             (2727067958040902507UL + 1616UL), (2727067958040902507UL + 1648UL),
                              (2727067958040902507UL + 1610UL), (2727067958040902507UL + 952UL),
                              (2727067958040902507UL + 429UL), (2727067958040902507UL + 1458UL),
-                             (2727067958040902507UL + 1678UL), (2727067958040902507UL + 137UL),
                              (2727067958040902507UL + 327UL), (2727067958040902507UL + 345UL),
                              (2727067958040902507UL + 324UL), (2727067958040902507UL + 364UL),
                              (2727067958040902507UL + 325UL), (2727067958040902507UL + 365UL),
+                             (2727067958040902507UL + 1674UL), (2727067958040902507UL + 515UL),
                              (2727067958040902507UL + 280UL), (2727067958040902507UL + 322UL),
-                             (2727067958040902507UL + 1676UL), (2727067958040902507UL + 536UL),
+                             (2727067958040902507UL + 1670UL), (2727067958040902507UL + 536UL),
+                             (2727067958040902507UL + 1672UL), (2727067958040902507UL + 137UL),
                              (2727067958040902507UL + 443UL), (2727067958040902507UL + 1458UL),
                              (2727067958040902507UL + 485UL), (2727067958040902507UL + 538UL),
                              (2727067958040902507UL + 484UL), (2727067958040902507UL + 538UL),
                              (2727067958040902507UL + 483UL), (2727067958040902507UL + 137UL),
                              (2727067958040902507UL + 377UL), (2727067958040902507UL + 397UL),
                              (2727067958040902507UL + 481UL), (2727067958040902507UL + 727UL),
-                             (2727067958040902507UL + 1680UL), (2727067958040902507UL + 515UL),
                              (2727067958040902507UL + 924UL), (2727067958040902507UL + 1362UL),
                              (2727067958040902507UL + 908UL), (2727067958040902507UL + 1610UL),
                              (2727067958040902507UL + 536UL), (2727067958040902507UL + 538UL),
                              (2727067958040902507UL + 1362UL), (2727067958040902507UL + 1371UL),
                              (2727067958040902507UL + 477UL), (2727067958040902507UL + 905UL),
-                             (2727067958040902507UL + 1668UL), (2727067958040902507UL + 627UL),
+                             (2727067958040902507UL + 1686UL), (2727067958040902507UL + 249UL),
                              (2727067958040902507UL + 920UL), (2727067958040902507UL + 1362UL),
                              (2727067958040902507UL + 921UL), (2727067958040902507UL + 1362UL),
                              (2727067958040902507UL + 922UL), (2727067958040902507UL + 1458UL),
                              (2727067958040902507UL + 515UL), (2727067958040902507UL + 727UL),
+                             (2727067958040902507UL + 1662UL), (2727067958040902507UL + 627UL),
                              (2727067958040902507UL + 430UL), (2727067958040902507UL + 443UL),
                              (2727067958040902507UL + 431UL), (2727067958040902507UL + 1458UL),
                      "Nucleotide", 0,

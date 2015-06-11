@@ -3,7 +3,6 @@
 
 int foo(int a) {
     checkpoint();
-    wait_for_checkpoint();
     assert(a == 10);
     return a + 5;
 }
@@ -11,7 +10,6 @@ int foo(int a) {
 int bar(int *a) {
     *a = *a + 5;
     checkpoint();
-    wait_for_checkpoint();
     assert(*a == 10);
     return *a;
 }

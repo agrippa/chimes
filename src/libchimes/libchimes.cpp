@@ -2943,8 +2943,8 @@ void free_wrapper(void *ptr, size_t group) {
 
 void wait_for_checkpoint() {
     VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-    if (checkpoint_thread_running == 1) {
-        pthread_join(checkpoint_thread, NULL);
+    while (checkpoint_thread_running == 1) {
+        VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
     }
     VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 }
@@ -3565,6 +3565,19 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
             VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
             VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+
+            if (disable_throttling) {
+                /*
+                 * If we're running in a test that has decided to disable
+                 * throttling to ensure that useful checkpoints get created that
+                 * we can test, block on checkpoint creation.
+                 */
+                VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
+                while (checkpoint_thread_running == 1) {
+                    VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
+                }
+                VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+            }
         }
     }
 
@@ -4177,6 +4190,13 @@ void *checkpoint_func(void *data) {
         if (checkpoint_thread_running == -1) break;
 
         checkpoint_thread_running = 0;
+        /*
+         * This signal isn't necessary for correctness, it is simply used to
+         * signal wait_for_checkpoint during tests. It's okay to signal here in
+         * normal execution because the checkpoint thread is the only thing that
+         * waits on checkpoint_cond, and it can't signal itself.
+         */
+        VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
         VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
 #ifdef __CHIMES_PROFILE

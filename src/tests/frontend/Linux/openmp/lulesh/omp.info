@@ -44,5 +44,4 @@
 2742 2742 #pragma omp for firstprivate(length,eosvmax)
 2750 2750 #pragma omp for firstprivate(length,eosvmin,eosvmax)
 2782 2782 #pragma omp parallel for firstprivate(numElem,v_cut)
-2835 2835 #pragma omp parallel for firstprivate(length,qqc2), shared(dtcourant,courant_elem)
-2910 2910 #pragma omp parallel for firstprivate(length), shared(dthydro,hydro_elem)
+2840 2840 #pragma omp parallel for firstprivate(length,qqc2), shared(dtcourant,courant_elem)

@@ -65,44 +65,44 @@ genChildren parTreeSearch 1146 2 0 1282 1249 1351
 ss_pop parTreeSearch 1155 9 0 1351
 releaseNodes parTreeSearch 1160 7 0 1351
 ss_localDepth parTreeSearch 1161 20 0 1351
-checkpoint parTreeSearch 1165 11 0
-ss_acquire parTreeSearch 1174 9 0 1351 0
-ss_setState parTreeSearch 1183 7 0 1351 0
-findwork parTreeSearch 1184 18 0 0
-ss_steal parTreeSearch 1187 14 0 1351 0 0
-findwork parTreeSearch 1188 30 0 0
-ss_setState parTreeSearch 1200 5 0 1351 0
-cbarrier_wait parTreeSearch 1201 12 0
-printf showStats 1272 5 0 1865
-uts_showStats showStats 1275 3 0 0 0 0 0 0 0
-printf showStats 1279 7 0 1867 0 0 0
-printf showStats 1281 7 0 1868 0
-printf showStats 1284 5 0 1842 0
-printf showStats 1285 5 0 1870 0 0 0
-printf showStats 1287 5 0 1837 0 0
-printf showStats 1294 7 0 1872 0
-printf showStats 1295 7 0 1873 0
-printf showStats 1296 7 0 1873 0
-printf showStats 1297 7 0 1873 0
-printf showStats 1298 7 0 1873 0
-printf showStats 1299 7 0 1873 0
-printf showStats 1300 7 0 1873 0
-printf showStats 1301 7 0 1838 0 0
-printf showStats 1303 7 0 1838 0 0
-printf showStats 1305 7 0 1838 0 0
+checkpoint parTreeSearch 1168 11 0
+ss_acquire parTreeSearch 1180 9 0 1351 0
+ss_setState parTreeSearch 1189 7 0 1351 0
+findwork parTreeSearch 1190 18 0 0
+ss_steal parTreeSearch 1193 14 0 1351 0 0
+findwork parTreeSearch 1194 30 0 0
+ss_setState parTreeSearch 1206 5 0 1351 0
+cbarrier_wait parTreeSearch 1207 12 0
+printf showStats 1278 5 0 1865
+uts_showStats showStats 1281 3 0 0 0 0 0 0 0
+printf showStats 1285 7 0 1867 0 0 0
+printf showStats 1287 7 0 1868 0
+printf showStats 1290 5 0 1842 0
+printf showStats 1291 5 0 1870 0 0 0
+printf showStats 1293 5 0 1837 0 0
+printf showStats 1300 7 0 1872 0
+printf showStats 1301 7 0 1873 0
+printf showStats 1302 7 0 1873 0
+printf showStats 1303 7 0 1873 0
+printf showStats 1304 7 0 1873 0
+printf showStats 1305 7 0 1873 0
+printf showStats 1306 7 0 1873 0
 printf showStats 1307 7 0 1838 0 0
-printf showStats 1309 7 0 1836 0 0 0
-printf showStats 1312 7 0 1884
-uts_parseParams main 1372 3 0 0 1810
-cb_init main 1380 3 0
-uts_printParams main 1390 7 0
-malloc main 1413 37 1158 0
-ss_init main 1415 5 0 1158 0
-initRootNode main 1420 7 0 1762 0
-ss_push main 1421 7 0 1158 1762
-ss_initState main 1429 5 0 1158
-uts_wctime main 1430 10 0
-parTreeSearch main 1431 5 0 1158
-uts_wctime main 1432 10 0
-showStats main 1445 7 0 0
-printf main 1450 3 0 1886
+printf showStats 1309 7 0 1838 0 0
+printf showStats 1311 7 0 1838 0 0
+printf showStats 1313 7 0 1838 0 0
+printf showStats 1315 7 0 1836 0 0 0
+printf showStats 1318 7 0 1884
+uts_parseParams main 1378 3 0 0 1810
+cb_init main 1386 3 0
+uts_printParams main 1396 7 0
+malloc main 1419 37 1158 0
+ss_init main 1421 5 0 1158 0
+initRootNode main 1426 7 0 1762 0
+ss_push main 1427 7 0 1158 1762
+ss_initState main 1435 5 0 1158
+uts_wctime main 1436 10 0
+parTreeSearch main 1437 5 0 1158
+uts_wctime main 1438 10 0
+showStats main 1451 7 0 0
+printf main 1456 3 0 1886

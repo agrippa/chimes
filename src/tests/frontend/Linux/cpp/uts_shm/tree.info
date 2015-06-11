@@ -24,6 +24,6 @@ releaseNodes 0 MAY ss_localDepth 1098 9 ss_setState 1100 7 ss_release 1101 7 ss_
 cb_init 0 DOES_NOT
 cbarrier_wait 0 DOES_NOT
 cbarrier_cancel 0 DOES_NOT
-parTreeSearch 0 DOES initNode 1131 3 ss_localDepth 1136 22 ss_setState 1140 7 ss_top 1143 16 genChildren 1146 2 ss_pop 1155 9 releaseNodes 1160 7 ss_localDepth 1161 20 checkpoint 1165 11 ss_acquire 1174 9 ss_setState 1183 7 findwork 1184 18 ss_steal 1187 14 findwork 1188 30 ss_setState 1200 5 cbarrier_wait 1201 12
-showStats 0 MAY uts_showStats 1275 3
-main 0 DOES uts_parseParams 1372 3 cb_init 1380 3 uts_printParams 1390 7 ss_init 1415 5 initRootNode 1420 7 ss_push 1421 7 ss_initState 1429 5 uts_wctime 1430 10 parTreeSearch 1431 5 uts_wctime 1432 10 showStats 1445 7
+parTreeSearch 0 DOES initNode 1131 3 ss_localDepth 1136 22 ss_setState 1140 7 ss_top 1143 16 genChildren 1146 2 ss_pop 1155 9 releaseNodes 1160 7 ss_localDepth 1161 20 checkpoint 1168 11 ss_acquire 1180 9 ss_setState 1189 7 findwork 1190 18 ss_steal 1193 14 findwork 1194 30 ss_setState 1206 5 cbarrier_wait 1207 12
+showStats 0 MAY uts_showStats 1281 3
+main 0 DOES uts_parseParams 1378 3 cb_init 1386 3 uts_printParams 1396 7 ss_init 1421 5 initRootNode 1426 7 ss_push 1427 7 ss_initState 1435 5 uts_wctime 1436 10 parTreeSearch 1437 5 uts_wctime 1438 10 showStats 1451 7

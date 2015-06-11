@@ -59,32 +59,32 @@ malloc AllocateNodeElemIndexes 483 37 541 0
 malloc AllocateNodeElemIndexes 493 42 541 0
 fprintf AllocateNodeElemIndexes 515 13 0 768 14644
 exit AllocateNodeElemIndexes 517 13 0 0
-atoi main 2974 23 0 844
-AllocateElemPersistent main 3002 2 0 14642 0
-AllocateElemTemporary main 3003 2 0 14642 0
-AllocateNodalPersistent main 3005 2 0 14642 0
-AllocateNodesets main 3006 2 0 14642 0
-AllocateNodeElemIndexes main 3056 2 0 14642
-CalcElemVolume main 3114 19 0 802 803 804
-gettimeofday main 3188 2 0 825 14654
-TimeIncrement main 3193 3 0
-LagrangeLeapFrog main 3194 3 0
-checkpoint main 3202 9 0
-gettimeofday main 3207 2 0 826 14654
-printf main 3211 2 0 14645 0
-printf main 3214 2 0 14646
-printf main 3215 2 0 14647 0
-printf main 3216 2 0 14647 0
-printf main 3217 2 0 14649 0
-FABS main 3225 21 0 0
-printf main 3236 2 0 14650
-printf main 3237 2 0 14647 0
-printf main 3238 2 0 14647 0
-printf main 3239 2 0 14653 0
+atoi main 2988 23 0 844
+AllocateElemPersistent main 3016 2 0 14642 0
+AllocateElemTemporary main 3017 2 0 14642 0
+AllocateNodalPersistent main 3019 2 0 14642 0
+AllocateNodesets main 3020 2 0 14642 0
+AllocateNodeElemIndexes main 3070 2 0 14642
+CalcElemVolume main 3128 19 0 802 803 804
+gettimeofday main 3202 2 0 825 14654
+TimeIncrement main 3207 3 0
+LagrangeLeapFrog main 3208 3 0
+checkpoint main 3217 9 0
+gettimeofday main 3222 2 0 826 14654
+printf main 3226 2 0 14645 0
+printf main 3229 2 0 14646
+printf main 3230 2 0 14647 0
+printf main 3231 2 0 14647 0
+printf main 3232 2 0 14649 0
+FABS main 3240 21 0 0
+printf main 3251 2 0 14650
+printf main 3252 2 0 14647 0
+printf main 3253 2 0 14647 0
+printf main 3254 2 0 14653 0
 CalcElemVolumeScalar CalcElemVolume 1791 9 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-LagrangeNodal LagrangeLeapFrog 2961 2 0
-LagrangeElements LagrangeLeapFrog 2965 2 0
-CalcTimeConstraintsForElems LagrangeLeapFrog 2967 2 0
+LagrangeNodal LagrangeLeapFrog 2975 2 0
+LagrangeElements LagrangeLeapFrog 2979 2 0
+CalcTimeConstraintsForElems LagrangeLeapFrog 2981 2 0
 fabs FABS 106 39 0 0
 CalcForceForNodes LagrangeNodal 1690 2 0
 CalcAccelerationForNodes LagrangeNodal 1692 2 0
@@ -95,14 +95,14 @@ CalcLagrangeElements LagrangeElements 2801 2 0 0
 CalcQForElems LagrangeElements 2804 2 0
 ApplyMaterialPropertiesForElems LagrangeElements 2806 2 0
 UpdateVolumesForElems LagrangeElements 2808 2 0
-CalcCourantConstraintForElems CalcTimeConstraintsForElems 2950 2 0
-CalcHydroConstraintForElems CalcTimeConstraintsForElems 2953 2 0
-omp_get_num_threads CalcCourantConstraintForElems 2821 27 0
-SQRT CalcCourantConstraintForElems 2848 9 0 0
-omp_get_thread_num CalcCourantConstraintForElems 2855 26 0
-omp_get_num_threads CalcHydroConstraintForElems 2896 20 0
-FABS CalcHydroConstraintForElems 2915 52 0 0
-omp_get_thread_num CalcHydroConstraintForElems 2917 46 0
+CalcCourantConstraintForElems CalcTimeConstraintsForElems 2964 2 0
+CalcHydroConstraintForElems CalcTimeConstraintsForElems 2967 2 0
+omp_get_num_threads CalcCourantConstraintForElems 2822 27 0
+SQRT CalcCourantConstraintForElems 2853 9 0 0
+omp_get_thread_num CalcCourantConstraintForElems 2861 26 0
+omp_get_num_threads CalcHydroConstraintForElems 2906 20 0
+FABS CalcHydroConstraintForElems 2927 52 0 0
+omp_get_thread_num CalcHydroConstraintForElems 2930 46 0
 sqrt SQRT 102 39 0 0
 CalcKinematicsForElems CalcLagrangeElements 2005 3 0 0 0
 exit CalcLagrangeElements 2025 5 0 0

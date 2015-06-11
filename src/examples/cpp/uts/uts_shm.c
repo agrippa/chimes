@@ -1161,9 +1161,15 @@ void parTreeSearch(StealStack *ss) {
       localDepth = ss_localDepth(ss);
 
 #ifdef __CHIMES_SUPPORT
+      // disable conditional checkpoints on test runs
+#ifndef __CHIMES_TESTING
       if (localDepth > 120) {
+#endif
           checkpoint();
+#ifndef __CHIMES_TESTING
       }
+#endif
+
 #endif
     }
 

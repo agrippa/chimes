@@ -22,7 +22,6 @@ int main(int argc, char **argv) {
     }
 
     checkpoint();
-    wait_for_checkpoint();
 
     assert(first->id == 0);
     assert(second->id == 1);

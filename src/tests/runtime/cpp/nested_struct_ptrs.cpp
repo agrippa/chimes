@@ -27,7 +27,6 @@ int main(int argc, char **arg) {
     b->arr = (int *)malloc(10 * sizeof(int));
 
     checkpoint();
-    wait_for_checkpoint();
 
     b->st = allocate(20);
 
@@ -36,7 +35,6 @@ int main(int argc, char **arg) {
     }
 
     checkpoint();
-    wait_for_checkpoint();
 
     assert(b->st);
     assert(b->st->arr);
@@ -55,7 +53,6 @@ int main(int argc, char **arg) {
     }
 
     checkpoint();
-    wait_for_checkpoint();
 
     for (int i = 0; i < 20; i++) {
         assert((b->st->arr)[i] == (2 * i));

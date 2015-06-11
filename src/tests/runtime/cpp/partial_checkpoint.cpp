@@ -10,7 +10,6 @@ int main(int argc, char **argv) {
     b[2] = 55;
 
     checkpoint();
-    wait_for_checkpoint();
 
     a[0] = 1;
     a[1] = 2;

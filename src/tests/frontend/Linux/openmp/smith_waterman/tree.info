@@ -10,10 +10,10 @@ PUT_RCOL 0 DOES_NOT PUT 243 41
 PUT_BROW 0 DOES_NOT PUT 244 41
 char_mapping 0 DOES_NOT
 print_matrix 0 DOES_NOT
-clear_whitespaces_do_mapping 0 DOES_NOT char_mapping 308 42
-read_file 0 DOES_NOT clear_whitespaces_do_mapping 327 16
+clear_whitespaces_do_mapping 0 DOES_NOT char_mapping 296 42
+read_file 0 DOES_NOT clear_whitespaces_do_mapping 315 16
 add_tile_to_run 0 DOES_NOT
 pop_next_tile 0 DOES_NOT
-task_func 0 DOES_NOT PUT_DIAG 392 31 add_tile_to_run 396 21 PUT_RCOL 401 31 add_tile_to_run 405 21 PUT_BROW 410 31 add_tile_to_run 414 21
-main 0 DOES random_init 452 5 random_init 453 5 PUT_DIAG 485 2 PUT_DIAG 489 3 PUT_DIAG 493 3 PUT_RCOL 502 3 PUT_BROW 511 3 pop_next_tile 590 28 task_func 595 21 checkpoint 609 9
+task_func 0 DOES_NOT PUT_DIAG 380 31 add_tile_to_run 384 21 PUT_RCOL 389 31 add_tile_to_run 393 21 PUT_BROW 398 31 add_tile_to_run 402 21
+main 0 DOES random_init 440 5 random_init 441 5 PUT_DIAG 473 2 PUT_DIAG 477 3 PUT_DIAG 481 3 PUT_RCOL 490 3 PUT_BROW 499 3 pop_next_tile 578 28 task_func 583 21 checkpoint 597 9
 random_init 0 DOES_NOT

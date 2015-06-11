@@ -1,81 +1,82 @@
 GUID_DIAG PUT 230 19 0 0 0
-__assert_fail PUT 233 66 0 1689 1690 0 1691
+__assert_fail PUT 233 66 0 1683 1684 0 1685
 PUT PUT_DIAG 242 41 0 0 0
 PUT PUT_RCOL 243 41 0 0 0
 PUT PUT_BROW 244 41 0 0 0
-fprintf print_matrix 264 13 0 249 1693 0
-fprintf print_matrix 266 9 0 249 1694
-fprintf print_matrix 268 5 0 249 1689
-char_mapping clear_whitespaces_do_mapping 308 42 0 0
-fseek read_file 317 5 0 364 0 0
-ftell read_file 318 22 0 364
-fseek read_file 319 5 0 364 0 0
-malloc read_file 321 47 345 0
-fread read_file 323 31 0 345 0 0 364
-clear_whitespaces_do_mapping read_file 327 16 0 345 0
-__assert_fail add_tile_to_run 332 58 0 1696 1690 0 1697
-__assert_fail pop_next_tile 339 49 0 1698 1690 0 1699
-omp_get_thread_num task_func 352 17 0
-PUT_DIAG task_func 392 31 0 0 0
-add_tile_to_run task_func 396 21 0 0 0 905
-PUT_RCOL task_func 401 31 0 0 0
-add_tile_to_run task_func 405 21 0 0 0 905
-PUT_BROW task_func 410 31 0 0 0
-add_tile_to_run task_func 414 21 0 0 0 905
-omp_get_num_threads main 430 14 0
-fprintf main 434 9 0 249 1702 952
-exit main 435 9 0 0
-fprintf main 438 5 0 249 1702 0
-strtoull main 440 34 0 952 1713 0
-strtoull main 441 34 0 952 1713 0
-atoi main 443 24 0 952
-atoi main 444 25 0 952
-malloc main 449 31 627 0
-malloc main 450 31 627 0
-random_init main 452 5 0 627 0
-random_init main 453 5 0 627 0
-fprintf main 455 5 0 249 1704 0
-fprintf main 456 5 0 249 1704 0
-fprintf main 458 42 0 249 1706
-exit main 458 112 0 0
-fprintf main 459 43 0 249 1707
-exit main 459 114 0 0
-fprintf main 464 5 0 249 1699 0 0
-malloc main 476 21 137 0
-malloc main 483 20 137 0
-PUT_DIAG main 485 2 0 0 0
-PUT_DIAG main 489 3 0 0 0
-PUT_DIAG main 493 3 0 0 0
-malloc main 497 24 536 0
-malloc main 499 27 538 0
-PUT_RCOL main 502 3 0 0 0
-malloc main 506 24 536 0
-malloc main 508 27 538 0
-PUT_BROW main 511 3 0 0 0
-malloc main 515 25 515 0
-malloc main 517 28 727 0
-malloc main 518 71 729 0
-malloc main 530 21 137 0
-malloc main 531 22 137 0
-gettimeofday main 565 5 0 1686 1712
-malloc main 567 41 1362 0
-malloc main 568 26 1371 0
-malloc main 575 41 1362 0
-malloc main 576 26 1371 0
-pop_next_tile main 590 28 1458 1362
-task_func main 595 21 0 0 0 1362
-checkpoint main 609 9 0
-gettimeofday main 613 5 0 1686 1712
-fprintf main 615 5 0 249 1709 0
-fprintf main 616 5 0 249 1710 0
-free main 619 43 0 729
-free main 621 3 0 727
-free main 623 2 0 515
-free main 625 36 0 538
-free main 627 2 0 536
-free main 629 36 0 538
-free main 631 2 0 536
-free main 633 2 0 137
-free main 635 2 0 627
-free main 636 2 0 627
+fprintf print_matrix 264 13 0 249 1687 0
+fprintf print_matrix 266 9 0 249 1688
+fprintf print_matrix 268 5 0 249 1683
+char_mapping clear_whitespaces_do_mapping 296 42 0 0
+fseek read_file 305 5 0 364 0 0
+ftell read_file 306 22 0 364
+fseek read_file 307 5 0 364 0 0
+malloc read_file 309 47 345 0
+fread read_file 311 31 0 345 0 0 364
+clear_whitespaces_do_mapping read_file 315 16 0 345 0
+__assert_fail add_tile_to_run 320 58 0 1690 1684 0 1691
+__assert_fail pop_next_tile 327 49 0 1692 1684 0 1693
+omp_get_thread_num task_func 340 17 0
+PUT_DIAG task_func 380 31 0 0 0
+add_tile_to_run task_func 384 21 0 0 0 905
+PUT_RCOL task_func 389 31 0 0 0
+add_tile_to_run task_func 393 21 0 0 0 905
+PUT_BROW task_func 398 31 0 0 0
+add_tile_to_run task_func 402 21 0 0 0 905
+omp_get_num_threads main 418 14 0
+fprintf main 422 9 0 249 1696 952
+exit main 423 9 0 0
+fprintf main 426 5 0 249 1696 0
+strtoull main 428 34 0 952 1709 0
+strtoull main 429 34 0 952 1709 0
+atoi main 431 24 0 952
+atoi main 432 25 0 952
+malloc main 437 31 627 0
+malloc main 438 31 627 0
+random_init main 440 5 0 627 0
+random_init main 441 5 0 627 0
+fprintf main 443 5 0 249 1698 0
+fprintf main 444 5 0 249 1698 0
+fprintf main 446 42 0 249 1700
+exit main 446 112 0 0
+fprintf main 447 43 0 249 1701
+exit main 447 114 0 0
+fprintf main 452 5 0 249 1693 0 0
+malloc main 464 21 137 0
+malloc main 471 20 137 0
+PUT_DIAG main 473 2 0 0 0
+PUT_DIAG main 477 3 0 0 0
+PUT_DIAG main 481 3 0 0 0
+malloc main 485 24 536 0
+malloc main 487 27 538 0
+PUT_RCOL main 490 3 0 0 0
+malloc main 494 24 536 0
+malloc main 496 27 538 0
+PUT_BROW main 499 3 0 0 0
+malloc main 503 25 515 0
+malloc main 505 28 727 0
+malloc main 506 71 729 0
+malloc main 518 21 137 0
+malloc main 519 22 137 0
+gettimeofday main 553 5 0 1680 1708
+malloc main 555 41 1362 0
+malloc main 556 26 1371 0
+malloc main 563 41 1362 0
+malloc main 564 26 1371 0
+pop_next_tile main 578 28 1458 1362
+task_func main 583 21 0 0 0 1362
+checkpoint main 597 9 0
+gettimeofday main 601 5 0 1680 1708
+fprintf main 603 5 0 249 1703 0
+fprintf main 604 5 0 249 1704 0
+free main 607 43 0 729
+free main 609 3 0 727
+free main 611 2 0 515
+free main 613 36 0 538
+free main 615 2 0 536
+free main 617 36 0 538
+free main 619 2 0 536
+free main 621 2 0 137
+free main 623 2 0 627
+free main 624 2 0 627
 rand random_init 282 17 0
+__assert_fail random_init 283 54 0 1698 1684 0 1706

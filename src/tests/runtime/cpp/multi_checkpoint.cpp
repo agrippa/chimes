@@ -9,7 +9,6 @@ int main(int argc, char **argv) {
     for (i = 0; i < 100; i++) {
         a = i;
         checkpoint();
-        wait_for_checkpoint();
 
         assert(a == i);
     }
