@@ -44,6 +44,6 @@ cat collected.log
 echo
 echo Old full results:
 cat collected.omp.log.full
-# echo
-# echo Old dummy results:
-# cat collected.omp.log.control
+echo
+echo Old dummy results:
+cat collected.omp.log.control
