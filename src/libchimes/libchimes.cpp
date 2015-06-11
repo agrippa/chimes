@@ -3124,6 +3124,11 @@ static bool should_hash(size_t alloc_len, size_t desired_checkpoint_size,
     return (alloc_len > (remaining / 2));
 }
 
+/*
+ * We only want to checkpoint when the program is currently within the bounded
+ * overhead. This function checks that this is true, and also that we haven't
+ * reached beyond the maximum inter-checkpoint latency.
+ */
 bool within_overhead_bounds() {
     if (disable_throttling) {
         return true;
@@ -3204,7 +3209,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
     const bool was_a_replay = ____chimes_replaying;
     checkpoint_ctx *curr_ckpt;
 
-    bool checkpointing_thread = wait_for_all_threads(&enter_time, &curr_ckpt);
+    const bool checkpointing_thread = wait_for_all_threads(&enter_time, &curr_ckpt);
 
     /*
      * On replay, the last thread to hit the checkpoint will skip the wait loop
@@ -3495,7 +3500,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 #endif
 
 #ifdef __CHIMES_PROFILE
-    pp.add_time(HASHING, __hashing_start);
+            pp.add_time(HASHING, __hashing_start);
 #endif
 
             delete all_changed;
@@ -4593,6 +4598,10 @@ void onexit() {
     fprintf(stderr, "Joining\n");
 #endif
     pthread_join(checkpoint_thread, NULL);
+
+#ifdef __CHIMES_PROFILE
+    fprintf(stderr, "%s\n", pp.tostr().c_str());
+#endif
 
 #ifdef VERBOSE
     fprintf(stderr, "Done\n");
