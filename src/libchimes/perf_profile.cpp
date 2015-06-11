@@ -16,7 +16,7 @@
 #include <mach/mach.h>
 #endif
 
-unsigned long long perf_profile::current_time_ms() {
+unsigned long long perf_profile::current_time_ns() {
 #ifdef __MACH__
     struct timeval t;
     VERIFY(gettimeofday(&t, NULL) == 0); 
@@ -58,7 +58,7 @@ perf_profile::~perf_profile() {
 }
 
 void perf_profile::add_time(int label_id, const unsigned long long start_time) {
-    const unsigned long long end_time = current_time_ms();
+    const unsigned long long end_time = current_time_ns();
     __sync_fetch_and_add(elapsed + label_id, end_time - start_time);
     __sync_fetch_and_add(count + label_id, 1);
 }

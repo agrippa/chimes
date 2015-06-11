@@ -485,11 +485,13 @@ static double target_checkpoint_size_perc = 0.2;
 // The target amount of overhead to add to the host program.
 static bool disable_throttling = false;
 static double target_time_overhead = 0.05;
+static unsigned long long max_checkpoint_latency_ns = 60000000ULL;
+static unsigned long long last_checkpoint = 0;
 static unsigned long long chimes_overhead = 0;
 static unsigned long long dead_thread_time = 0;
 
 #define ADD_TO_OVERHEAD __sync_fetch_and_add(&chimes_overhead, \
-        perf_profile::current_time_ms() - __chimes_overhead_start_time);
+        perf_profile::current_time_ns() - __chimes_overhead_start_time);
 
 #define MAX_CHECKPOINT_FILENAME_LEN 256
 static char previous_checkpoint_filename[MAX_CHECKPOINT_FILENAME_LEN] =
@@ -866,10 +868,10 @@ static void constructNPMContext(npm_context *ctx, string current_function,
 
 void init_chimes() {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
     atexit(onexit);
 
     register_custom_init_handler("omp_lock_t", init_omp_lock);
@@ -1670,7 +1672,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     VERIFY(pthread_mutex_lock(&module_mutex) == 0);
 
@@ -2006,10 +2008,10 @@ enum DISABLED_THREAD { DISABLED, NOT_DISABLED, ALREADY_DISABLED };
 int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
 
     thread_ctx *ctx = get_my_context_may_fail();
     /*
@@ -2177,6 +2179,9 @@ static void merge_npm_aliases(string fname, size_t return_alias,
 
 static void calling_npm_helper(const char *name, unsigned loc_id,
         bool has_alias_info, size_t return_alias, int n_params, va_list vl) {
+    const unsigned long long __chimes_overhead_start_time =
+        perf_profile::current_time_ns();
+
     thread_ctx *ctx = get_my_context();
     std::string fname(name);
     npm_context *npm_ctx = fname_to_npm_info.at(fname);
@@ -2200,6 +2205,7 @@ static void calling_npm_helper(const char *name, unsigned loc_id,
         }
         merge_npm_aliases(fname, return_alias, param_aliases);
     }
+    ADD_TO_OVERHEAD
 }
 
 void calling_npm(const char *name, unsigned loc_id) {
@@ -2209,10 +2215,10 @@ void calling_npm(const char *name, unsigned loc_id) {
 static void calling_helper(void *func_ptr, int lbl, unsigned loc_id,
         size_t set_return_alias, unsigned naliases, va_list vl) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
     thread_ctx *ctx = get_my_context();
 
     /* Function pointer is only necessary if calling a function outside of our
@@ -2303,10 +2309,10 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id,
         int did_disable) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
 
     thread_ctx *ctx = get_my_context_may_fail();
     if (!ctx) {
@@ -2505,10 +2511,10 @@ inline void register_stack_var_helper(std::string mangled_name_str,
 
 void register_stack_vars(int nvars, ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
 
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *program_stack = ctx->get_stack();
@@ -2563,10 +2569,10 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
 
     const string mangled_name_str(mangled_name);
 #ifdef VERBOSE
@@ -2594,7 +2600,7 @@ void register_global_var(const char *mangled_name, const char *full_type,
         void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
         ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     va_list vl;
     va_start(vl, n_ptr_fields);
@@ -2617,7 +2623,7 @@ void register_global_var(const char *mangled_name, const char *full_type,
 //TODO does not support nested pointer types
 void register_constant(size_t const_id, void *address, size_t length) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
 
     constant_var *var = new constant_var(const_id, address, length);
@@ -2644,10 +2650,10 @@ void register_text(void *start, size_t len) {
 
 int alias_group_changed(unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
 #ifdef VERBOSE
     fprintf(stderr, "alias_group_changed: location=%u\n", loc_id);
     fprintf(stderr, "  maps to alias groups: ");
@@ -2715,10 +2721,10 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
 void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
     assert(valid_group(group));
 
 #ifdef VERBOSE
@@ -2754,10 +2760,10 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
 void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
         int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
     assert(valid_group(group));
 
     void *ptr = calloc(num, size);
@@ -2789,10 +2795,10 @@ void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
 void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
     assert(valid_group(group));
 
     void *new_ptr = realloc(ptr, nbytes);
@@ -2909,10 +2915,10 @@ map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
 
 void free_wrapper(void *ptr, size_t group) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
     map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
     size_t original_group = in_heap->second->get_alias_group();
 
@@ -3041,7 +3047,7 @@ static void restore_program_stack(vector<stack_frame *> *unpacked,
 
 static bool wait_for_all_threads(clock_t *entry_ptr, checkpoint_ctx **out) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
 
     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
@@ -3130,7 +3136,9 @@ bool within_overhead_bounds() {
     }
     double curr_percent_overhead = (double)chimes_overhead /
         (double)running_time;
-    return (curr_percent_overhead < target_time_overhead);
+    return (curr_percent_overhead < target_time_overhead ||
+            perf_profile::current_time_ns() - last_checkpoint >
+                max_checkpoint_latency_ns);
 }
 
 static void collect_all_aliases(size_t group, set<size_t> *all_changed) {
@@ -3175,10 +3183,10 @@ void checkpoint() {
 
 void checkpoint_transformed(int lbl, unsigned loc_id) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
 
     clock_t enter_time = clock();
 
@@ -3385,7 +3393,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                 new vector<checkpointable_heap_allocation>();
 
 #ifdef __CHIMES_PROFILE
-            const unsigned long long __hashing_start = perf_profile::current_time_ms();
+            const unsigned long long __hashing_start = perf_profile::current_time_ns();
 #endif
             const size_t desired_checkpoint_size =
                 (size_t)(target_checkpoint_size_perc *
@@ -3529,6 +3537,8 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                     &aliased_groups,
                     &(running_checkpoint_ctx.serialized_alias_groups_len));
             VERIFY(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+
+            last_checkpoint = perf_profile::current_time_ns();
 
             VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
             VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
@@ -3902,7 +3912,7 @@ void *checkpoint_func(void *data) {
         if (checkpoint_thread_running == -1) break;
 
 #ifdef __CHIMES_PROFILE
-        const unsigned long long __start_time = perf_profile::current_time_ms();
+        const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
         unsigned char *stacks_serialized = ctx->stacks_serialized;
         uint64_t stacks_serialized_len = ctx->stacks_serialized_len;
@@ -4187,10 +4197,10 @@ static stack_var *find_var(void *addr,
 unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
         unsigned nlocals, ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
     thread_ctx *ctx = get_my_context();
 
     ctx->get_stack_tracker().push(lbl);
@@ -4241,10 +4251,10 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
         unsigned threads_in_region, unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
     unsigned global_tid;
     pthread_t self = pthread_self();
 
@@ -4398,10 +4408,10 @@ unsigned get_thread_stack_depth() {
 void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         size_t region_id) {
 #ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ms();
+    const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ms();
+        perf_profile::current_time_ns();
     unsigned parent = get_my_tid();
     thread_ctx *my_ctx = get_my_context();
     /*
