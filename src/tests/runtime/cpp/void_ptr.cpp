@@ -19,12 +19,10 @@ int main(int argc, char **argv) {
     }
 
     checkpoint();
-    wait_for_checkpoint();
 
     f->ptr = b;
 
     checkpoint();
-    wait_for_checkpoint();
 
     for (int i = 0; i < 10; i++) {
         assert((((bar *)(f->ptr))->arr)[i] == i);

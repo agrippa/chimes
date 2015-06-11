@@ -8,7 +8,6 @@ int main(int argc, char **argv) {
     arr[len - 1] = 43;
 
     checkpoint();
-    wait_for_checkpoint();
 
     assert(arr[0] == 42);
     assert(arr[len - 1] == 43);
@@ -16,7 +15,6 @@ int main(int argc, char **argv) {
     arr[len - 1] = 44;
 
     checkpoint();
-    wait_for_checkpoint();
 
     assert(arr[0] == 42);
     assert(arr[len - 1] == 44);
@@ -24,7 +22,6 @@ int main(int argc, char **argv) {
     arr[0] = 45;
 
     checkpoint();
-    wait_for_checkpoint();
 
     assert(arr[0] == 45);
     assert(arr[len - 1] == 44);

@@ -14,7 +14,6 @@ int main(int argc, char **argv) {
     b[2] = 55;
 
     checkpoint();
-    wait_for_checkpoint();
 
     assert(a[0] == 1);
     assert(a[1] == 2);

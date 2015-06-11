@@ -667,6 +667,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
     for d in test.defines:
         compile_cmd += ' -D ' + d
+    compile_cmd += ' -D __CHIMES_TESTING'
 
     for input_file in test.input_files:
         compile_cmd += ' -i ' + os.path.join(inputs_dir, input_file)

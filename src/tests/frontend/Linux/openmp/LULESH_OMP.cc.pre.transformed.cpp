@@ -8554,266 +8554,261 @@ void CalcCourantConstraintForElems_resumable()
   Real_t qqc2; qqc2 = (Real_t(64.) * qqc * qqc) ;
 # 2820 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2821 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         Index_t threads; threads = (omp_get_num_threads()) ;
 # 2822 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2823 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2824 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2825 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2826 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         lbl_0: Index_t courant_elem_per_thread[threads]; if (____chimes_replaying) { goto lbl_1; } ;
-# 2827 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         lbl_1: Real_t dtcourant_per_thread[threads]; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
-# 2828 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2829 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        { Index_t i; for ( i = (0) ; i < threads; i++) {
-# 2830 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                courant_elem_per_thread[i] = -1;
+         Index_t threads; threads = (omp_get_num_threads()) ;
 # 2831 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                dtcourant_per_thread[i] = Real_t(1.0e+20);
+# 2831 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+         lbl_0: Index_t courant_elem_per_thread[threads]; if (____chimes_replaying) { goto lbl_1; } ;
 # 2832 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        } }; { call_lbl_4: bool ____chimes_disable46 = disable_current_thread(); unsigned ____chimes_parent_stack_depth28 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth28 = get_thread_stack_depth(); size_t ____chimes_region_id28; unsigned ____chimes_parent_thread28 = entering_omp_parallel(4, &____chimes_region_id28, 2, &length, &qqc2); int ____chimes_first_iter28 = 1;
+         lbl_1: Real_t dtcourant_per_thread[threads]; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
 # 2833 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2834 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        { Index_t i; for ( i = (0) ; i < threads; i++) {
 # 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-#pragma omp parallel for firstprivate(length,qqc2), shared(dtcourant,courant_elem) firstprivate(____chimes_first_iter28)
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                courant_elem_per_thread[i] = -1;
 # 2836 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter28) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread28, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth28, ____chimes_region_id28, 2, &length, &qqc2); ____chimes_first_iter28 = 0; }
+                dtcourant_per_thread[i] = Real_t(1.0e+20);
 # 2837 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t indx; indx = (domain.matElemlist[i]) ;
+        } }; { call_lbl_4: bool ____chimes_disable46 = disable_current_thread(); unsigned ____chimes_parent_stack_depth28 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth28 = get_thread_stack_depth(); size_t ____chimes_region_id28; unsigned ____chimes_parent_thread28 = entering_omp_parallel(4, &____chimes_region_id28, 2, &length, &qqc2); int ____chimes_first_iter28 = 1;
 # 2838 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2839 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Real_t dtf; dtf = (domain.ss[indx] * domain.ss[indx]) ;
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+#pragma omp parallel for firstprivate(length,qqc2), shared(dtcourant,courant_elem) firstprivate(____chimes_first_iter28)
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2841 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if ( domain.vdov[indx] < Real_t(0.) ) {
+ for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter28) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread28, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth28, ____chimes_region_id28, 2, &length, &qqc2); ____chimes_first_iter28 = 0; }
 # 2842 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   Index_t indx; indx = (domain.matElemlist[i]) ;
 # 2843 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   dtf = dtf
 # 2844 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-            + qqc2 * domain.arealg[indx] * domain.arealg[indx]
+   Real_t dtf; dtf = (domain.ss[indx] * domain.ss[indx]) ;
 # 2845 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-            * domain.vdov[indx] * domain.vdov[indx] ;
 # 2846 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  }
+  if ( domain.vdov[indx] < Real_t(0.) ) {
 # 2847 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2848 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  dtf = ({ calling_npm("SQRT", 0); SQRT_npm(dtf); }) ;
+   dtf = dtf
 # 2849 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+            + qqc2 * domain.arealg[indx] * domain.arealg[indx]
 # 2850 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  dtf = domain.arealg[indx] / dtf ;
+            * domain.vdov[indx] * domain.vdov[indx] ;
 # 2851 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  }
 # 2852 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2853 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (domain.vdov[indx] != Real_t(0.)) {
+  dtf = ({ calling_npm("SQRT", 0); SQRT_npm(dtf); }) ;
 # 2854 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   {
 # 2855 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     Index_t thread_num; thread_num = (omp_get_thread_num()) ;
+  dtf = domain.arealg[indx] / dtf ;
 # 2856 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2857 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2858 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  if (domain.vdov[indx] != Real_t(0.)) {
 # 2859 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   {
 # 2860 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2861 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         if ( dtf < dtcourant_per_thread[thread_num] ) {
-# 2862 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         {
-# 2863 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                 dtcourant_per_thread[thread_num] = dtf ;
-# 2864 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                        courant_elem_per_thread[thread_num] = indx ;
-# 2865 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                }
-# 2866 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        }
-# 2867 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2868 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   }
-# 2869 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  }
+     Index_t thread_num; thread_num = (omp_get_thread_num()) ;
 # 2870 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } leaving_omp_parallel(____chimes_call_stack_depth28, ____chimes_region_id28); reenable_current_thread(____chimes_disable46); }
+# 2870 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                         if ( dtf < dtcourant_per_thread[thread_num] ) {
 # 2871 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i < threads; i++) {
+                         {
 # 2872 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                if(dtcourant_per_thread[i] < dtcourant) {
+                                 dtcourant_per_thread[thread_num] = dtf ;
 # 2873 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        dtcourant = dtcourant_per_thread[i];
+                                        courant_elem_per_thread[thread_num] = indx ;
 # 2874 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        courant_elem = courant_elem_per_thread[i];
+                                }
 # 2875 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                }
+                        }
 # 2876 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        } }
 # 2877 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   }
 # 2878 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  }
 # 2879 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } leaving_omp_parallel(____chimes_call_stack_depth28, ____chimes_region_id28); reenable_current_thread(____chimes_disable46); }
 # 2880 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (0) ; i < threads; i++) {
 # 2881 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- if (courant_elem != -1) {
+                if(dtcourant_per_thread[i] < dtcourant) {
 # 2882 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.dtcourant = dtcourant ;
+                        dtcourant = dtcourant_per_thread[i];
 # 2883 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- }
+                        courant_elem = courant_elem_per_thread[i];
 # 2884 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                }
 # 2885 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, ____alias_loc_id_12, ____chimes_did_disable46); return ;
+        } }
 # 2886 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-}
 # 2887 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2888 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2889 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2890 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ if (courant_elem != -1) {
+# 2891 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.dtcourant = dtcourant ;
+# 2892 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ }
+# 2893 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2894 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ rm_stack(false, 0UL, "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, ____alias_loc_id_12, ____chimes_did_disable46); return ;
+# 2895 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+}
+# 2896 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2897 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcHydroConstraintForElems_npm();
 static inline void CalcHydroConstraintForElems_quick(); static inline void CalcHydroConstraintForElems();
 static inline
-# 2889 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-void CalcHydroConstraintForElems_resumable()
-# 2890 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable47 = new_stack((void *)(&CalcHydroConstraintForElems), "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, 0, 0) ; if (____chimes_replaying) { goto lbl_0; } ; ;
-# 2891 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t dthydro; dthydro = (Real_t(1.0E+20)) ;
-# 2892 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t hydro_elem; hydro_elem = (-1) ;
-# 2893 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t dvovmax; dvovmax = (domain.dvovmax) ;
-# 2894 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t length; length = (domain.numElem) ;
-# 2895 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2896 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t threads; threads = (omp_get_num_threads()) ;
-# 2897 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2898 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+void CalcHydroConstraintForElems_resumable()
 # 2899 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+{const int ____chimes_did_disable47 = new_stack((void *)(&CalcHydroConstraintForElems), "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, 0, 0) ; if (____chimes_replaying) { goto lbl_0; } ; ;
 # 2900 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  Real_t dthydro; dthydro = (Real_t(1.0E+20)) ;
 # 2901 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         lbl_0: Real_t dthydro_per_thread[threads]; if (____chimes_replaying) { goto lbl_1; } ;
+  Index_t hydro_elem; hydro_elem = (-1) ;
 # 2902 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         lbl_1: Index_t hydro_elem_per_thread[threads]; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
+  Real_t dvovmax; dvovmax = (domain.dvovmax) ;
 # 2903 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  Index_t length; length = (domain.numElem) ;
 # 2904 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        { Index_t i; for ( i = (0) ; i < threads; i++) {
 # 2905 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                hydro_elem_per_thread[i] = -1;
 # 2906 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                dthydro_per_thread[i] = Real_t(1.0e+20);
+  Index_t threads; threads = (omp_get_num_threads()) ;
 # 2907 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        } }; { call_lbl_4: bool ____chimes_disable47 = disable_current_thread(); unsigned ____chimes_parent_stack_depth29 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth29 = get_thread_stack_depth(); size_t ____chimes_region_id29; unsigned ____chimes_parent_thread29 = entering_omp_parallel(4, &____chimes_region_id29, 1, &length); int ____chimes_first_iter29 = 1;
 # 2908 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2909 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-#pragma omp parallel for firstprivate(length), shared(dthydro,hydro_elem) firstprivate(____chimes_first_iter29)
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2911 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter29) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread29, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth29, ____chimes_region_id29, 1, &length); ____chimes_first_iter29 = 0; }
 # 2912 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                 Index_t indx; indx = (domain.matElemlist[i]) ;
 # 2913 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2914 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                if (domain.vdov[indx] != Real_t(0.)) {
+         lbl_0: Real_t dthydro_per_thread[threads]; if (____chimes_replaying) { goto lbl_1; } ;
 # 2915 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm("FABS", 0); FABS_npm(domain.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
+         lbl_1: Index_t hydro_elem_per_thread[threads]; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ;
 # 2916 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2917 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         Index_t thread_num; thread_num = (omp_get_thread_num()) ;
+        { Index_t i; for ( i = (0) ; i < threads; i++) {
 # 2918 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                hydro_elem_per_thread[i] = -1;
 # 2919 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                dthydro_per_thread[i] = Real_t(1.0e+20);
 # 2920 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        } }
 # 2921 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2922 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        if ( dthydro_per_thread[thread_num] > dtdvov ) {
 # 2923 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                {
+        { Index_t i; for ( i = (0) ; i < length ; ++i) {
 # 2924 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                        dthydro_per_thread[thread_num] = dtdvov ;
+                 Index_t indx; indx = (domain.matElemlist[i]) ;
 # 2925 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                        hydro_elem_per_thread[thread_num] = indx ;
 # 2926 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                }
+                if (domain.vdov[indx] != Real_t(0.)) {
 # 2927 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        }
+                         Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm("FABS", 0); FABS_npm(domain.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
 # 2928 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                }
 # 2929 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        } leaving_omp_parallel(____chimes_call_stack_depth29, ____chimes_region_id29); reenable_current_thread(____chimes_disable47); }
 # 2930 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                         Index_t thread_num; thread_num = (omp_get_thread_num()) ;
 # 2931 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        { Index_t i; for ( i = (0) ; i < threads; i++) {
 # 2932 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                if(dthydro_per_thread[i] < dthydro) {
 # 2933 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        dthydro = dthydro_per_thread[i];
 # 2934 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        hydro_elem = hydro_elem_per_thread[i];
 # 2935 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                }
 # 2936 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        } }
 # 2937 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2938 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        if ( dthydro_per_thread[thread_num] > dtdvov ) {
 # 2939 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                                {
 # 2940 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- if (hydro_elem != -1) {
+                                        dthydro_per_thread[thread_num] = dtdvov ;
 # 2941 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.dthydro = dthydro ;
+                                        hydro_elem_per_thread[thread_num] = indx ;
 # 2942 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- }
+                                }
 # 2943 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        }
 # 2944 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, ____alias_loc_id_13, ____chimes_did_disable47); return ;
+                }
 # 2945 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-}
+        } }
 # 2946 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2947 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        { Index_t i; for ( i = (0) ; i < threads; i++) {
+# 2948 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                if(dthydro_per_thread[i] < dthydro) {
+# 2949 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        dthydro = dthydro_per_thread[i];
+# 2950 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        hydro_elem = hydro_elem_per_thread[i];
+# 2951 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                }
+# 2952 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        } }
+# 2953 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2954 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ if (hydro_elem != -1) {
+# 2955 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.dthydro = dthydro ;
+# 2956 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ }
+# 2957 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2958 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ rm_stack(false, 0UL, "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, ____alias_loc_id_13, ____chimes_did_disable47); return ;
+# 2959 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+}
+# 2960 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2961 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void CalcTimeConstraintsForElems_npm();
 static inline void CalcTimeConstraintsForElems_quick(); static inline void CalcTimeConstraintsForElems();
 static inline
-# 2948 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2962 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcTimeConstraintsForElems_resumable() {const int ____chimes_did_disable48 = new_stack((void *)(&CalcTimeConstraintsForElems), "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 2949 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2950 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2963 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2964 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  ({ calling_npm("CalcCourantConstraintForElems", 0); CalcCourantConstraintForElems_npm(); }) ;
-# 2951 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2952 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2953 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2965 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2966 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2967 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  ({ calling_npm("CalcHydroConstraintForElems", 0); CalcHydroConstraintForElems_npm(); }) ;
-# 2954 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2968 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, ____chimes_did_disable48); }
-# 2955 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2956 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2969 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2970 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 static inline void LagrangeLeapFrog_npm();
 static inline void LagrangeLeapFrog_quick(); static inline void LagrangeLeapFrog();
 static inline
-# 2957 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-void LagrangeLeapFrog_resumable()
-# 2958 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable49 = new_stack((void *)(&LagrangeLeapFrog), "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 2959 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2960 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2961 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("LagrangeNodal", 0); LagrangeNodal_npm(); });
-# 2962 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2963 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2964 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2965 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("LagrangeElements", 0); LagrangeElements_npm(); });
-# 2966 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2967 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("CalcTimeConstraintsForElems", 0); CalcTimeConstraintsForElems_npm(); });
-# 2968 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2969 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2970 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-rm_stack(false, 0UL, "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, ____chimes_did_disable49); }
 # 2971 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+void LagrangeLeapFrog_resumable()
 # 2972 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+{const int ____chimes_did_disable49 = new_stack((void *)(&LagrangeLeapFrog), "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 2973 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2974 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2975 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ ({ calling_npm("LagrangeNodal", 0); LagrangeNodal_npm(); });
+# 2976 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2977 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2978 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2979 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ ({ calling_npm("LagrangeElements", 0); LagrangeElements_npm(); });
+# 2980 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2981 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ ({ calling_npm("CalcTimeConstraintsForElems", 0); CalcTimeConstraintsForElems_npm(); });
+# 2982 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2983 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2984 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+rm_stack(false, 0UL, "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, ____chimes_did_disable49); }
+# 2985 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2986 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 int main_quick(int argc, char *argv[]); int main(int argc, char *argv[]);
 int main_resumable(int argc, char *argv[])
-# 2973 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2987 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 {const int ____chimes_did_disable50 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11486493675241828211UL)) ; timeval end;
 timeval start;
 Real_t z_local[8];
@@ -8821,450 +8816,444 @@ Real_t y_local[8];
 Real_t x_local[8];
 Index_t edgeElems;
  register_stack_vars(4, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|start|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&start), (size_t)16, 0, 1, 0, "main|x_local|0", (int *)0x0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "main|edgeElems|0", (int *)0x0, "i32", (void *)(&edgeElems), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
-# 2974 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2988 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
      edgeElems = (atoi(argv[1])) ;
-# 2975 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2989 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Index_t edgeNodes; edgeNodes = (edgeElems + 1) ;
-# 2976 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2977 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2990 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2991 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  Real_t tx; Real_t ty; Real_t tz; ;
-# 2978 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- Index_t nidx; Index_t zidx; ;
-# 2979 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- Index_t domElems; ;
-# 2991 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2991 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.sizeX = edgeElems ;
 # 2992 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.sizeY = edgeElems ;
+ Index_t nidx; Index_t zidx; ;
 # 2993 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.sizeZ = edgeElems ;
-# 2994 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.numElem = edgeElems*edgeElems*edgeElems ;
-# 2995 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.numNode = edgeNodes*edgeNodes*edgeNodes ;
-# 2996 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2997 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domElems = domain.numElem ;
-# 2998 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2999 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3000 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3001 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3002 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("AllocateElemPersistent", 0); AllocateElemPersistent_npm(&domain, domain.numElem); }) ;
-# 3003 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("AllocateElemTemporary", 0); AllocateElemTemporary_npm(&domain, domain.numElem); }) ;
-# 3004 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ Index_t domElems; ;
 # 3005 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("AllocateNodalPersistent", 0); AllocateNodalPersistent_npm(&domain, domain.numNode); }) ;
+# 3005 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.sizeX = edgeElems ;
 # 3006 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("AllocateNodesets", 0); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); }) ;
+ domain.sizeY = edgeElems ;
 # 3007 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.sizeZ = edgeElems ;
 # 3008 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.numElem = edgeElems*edgeElems*edgeElems ;
 # 3009 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.numNode = edgeNodes*edgeNodes*edgeNodes ;
 # 3010 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- nidx = 0 ;
 # 3011 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- tz = Real_t(0.) ;
+ domElems = domain.numElem ;
 # 3012 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t plane; for ( plane = (0) ; plane<edgeNodes; ++plane) {
 # 3013 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ty = Real_t(0.) ;
 # 3014 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t row; for ( row = (0) ; row<edgeNodes; ++row) {
 # 3015 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   tx = Real_t(0.) ;
 # 3016 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   { Index_t col; for ( col = (0) ; col<edgeNodes; ++col) {
+ ({ calling_npm("AllocateElemPersistent", 0); AllocateElemPersistent_npm(&domain, domain.numElem); }) ;
 # 3017 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    domain.x[nidx] = tx ;
+ ({ calling_npm("AllocateElemTemporary", 0); AllocateElemTemporary_npm(&domain, domain.numElem); }) ;
 # 3018 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    domain.y[nidx] = ty ;
 # 3019 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    domain.z[nidx] = tz ;
+ ({ calling_npm("AllocateNodalPersistent", 0); AllocateNodalPersistent_npm(&domain, domain.numNode); }) ;
 # 3020 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    ++nidx ;
+ ({ calling_npm("AllocateNodesets", 0); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); }) ;
 # 3021 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3022 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    tx = Real_t(1.125)*Real_t(col+1)/Real_t(edgeElems) ;
 # 3023 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   } }
 # 3024 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3025 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ty = Real_t(1.125)*Real_t(row+1)/Real_t(edgeElems) ;
-# 3026 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  } }
-# 3027 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3028 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  tz = Real_t(1.125)*Real_t(plane+1)/Real_t(edgeElems) ;
-# 3029 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
-# 3030 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3031 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3032 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3033 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3034 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  nidx = 0 ;
-# 3035 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- zidx = 0 ;
-# 3036 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t plane; for ( plane = (0) ; plane<edgeElems; ++plane) {
-# 3037 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t row; for ( row = (0) ; row<edgeElems; ++row) {
-# 3038 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   { Index_t col; for ( col = (0) ; col<edgeElems; ++col) {
-# 3039 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     Index_t *localNode; localNode = (domain.nodelist + (8 * zidx)) ;
-# 3040 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[0] = nidx ;
-# 3041 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[1] = nidx + 1 ;
-# 3042 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[2] = nidx + edgeNodes + 1 ;
-# 3043 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[3] = nidx + edgeNodes ;
-# 3044 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[4] = nidx + edgeNodes*edgeNodes ;
-# 3045 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[5] = nidx + edgeNodes*edgeNodes + 1 ;
-# 3046 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[6] = nidx + edgeNodes*edgeNodes + edgeNodes + 1 ;
-# 3047 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[7] = nidx + edgeNodes*edgeNodes + edgeNodes ;
-# 3048 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    ++zidx ;
-# 3049 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3025 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ tz = Real_t(0.) ;
+# 3026 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t plane; for ( plane = (0) ; plane<edgeNodes; ++plane) {
+# 3027 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  ty = Real_t(0.) ;
+# 3028 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  { Index_t row; for ( row = (0) ; row<edgeNodes; ++row) {
+# 3029 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   tx = Real_t(0.) ;
+# 3030 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   { Index_t col; for ( col = (0) ; col<edgeNodes; ++col) {
+# 3031 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    domain.x[nidx] = tx ;
+# 3032 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    domain.y[nidx] = ty ;
+# 3033 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    domain.z[nidx] = tz ;
+# 3034 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     ++nidx ;
-# 3050 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3035 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3036 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    tx = Real_t(1.125)*Real_t(col+1)/Real_t(edgeElems) ;
+# 3037 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    } }
+# 3038 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3039 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   ty = Real_t(1.125)*Real_t(row+1)/Real_t(edgeElems) ;
+# 3040 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  } }
+# 3041 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3042 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  tz = Real_t(1.125)*Real_t(plane+1)/Real_t(edgeElems) ;
+# 3043 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3044 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3045 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3046 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3047 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3048 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ nidx = 0 ;
+# 3049 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ zidx = 0 ;
+# 3050 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t plane; for ( plane = (0) ; plane<edgeElems; ++plane) {
 # 3051 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ++nidx ;
+  { Index_t row; for ( row = (0) ; row<edgeElems; ++row) {
 # 3052 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  } }
+   { Index_t col; for ( col = (0) ; col<edgeElems; ++col) {
 # 3053 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  nidx += edgeNodes ;
+     Index_t *localNode; localNode = (domain.nodelist + (8 * zidx)) ;
 # 3054 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+    localNode[0] = nidx ;
 # 3055 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    localNode[1] = nidx + 1 ;
 # 3056 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("AllocateNodeElemIndexes", 0); AllocateNodeElemIndexes_npm(&domain); });
+    localNode[2] = nidx + edgeNodes + 1 ;
 # 3057 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    localNode[3] = nidx + edgeNodes ;
 # 3058 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    localNode[4] = nidx + edgeNodes*edgeNodes ;
 # 3059 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<domElems; ++i) {
+    localNode[5] = nidx + edgeNodes*edgeNodes + 1 ;
 # 3060 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.matElemlist[i] = i ;
+    localNode[6] = nidx + edgeNodes*edgeNodes + edgeNodes + 1 ;
 # 3061 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+    localNode[7] = nidx + edgeNodes*edgeNodes + edgeNodes ;
 # 3062 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    ++zidx ;
 # 3063 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    ++nidx ;
 # 3064 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.dtfixed = Real_t(-1.0e-7) ;
+   } }
 # 3065 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.deltatime = Real_t(1.0e-7) ;
+   ++nidx ;
 # 3066 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.deltatimemultlb = Real_t(1.1) ;
-# 3067 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.deltatimemultub = Real_t(1.2) ;
-# 3068 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.stoptime = Real_t(1.0e-2) ;
-# 3069 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.dtcourant = Real_t(1.0e+20) ;
-# 3070 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.dthydro = Real_t(1.0e+20) ;
-# 3071 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.dtmax = Real_t(1.0e-2) ;
-# 3072 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.time = Real_t(0.) ;
-# 3073 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.cycle = 0 ;
-# 3074 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3075 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.e_cut = Real_t(1.0e-7) ;
-# 3076 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.p_cut = Real_t(1.0e-7) ;
-# 3077 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.q_cut = Real_t(1.0e-7) ;
-# 3078 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.u_cut = Real_t(1.0e-7) ;
-# 3079 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.v_cut = Real_t(1.0e-10) ;
-# 3080 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3081 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.hgcoef = Real_t(3.0) ;
-# 3082 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.ss4o3 = Real_t(4.0)/Real_t(3.0) ;
-# 3083 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3084 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.qstop = Real_t(1.0e+12) ;
-# 3085 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.monoq_max_slope = Real_t(1.0) ;
-# 3086 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.monoq_limiter_mult = Real_t(2.0) ;
-# 3087 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.qlc_monoq = Real_t(0.5) ;
-# 3088 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.qqc_monoq = Real_t(2.0)/Real_t(3.0) ;
-# 3089 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.qqc = Real_t(2.0) ;
-# 3090 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3091 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.pmin = Real_t(0.) ;
-# 3092 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.emin = Real_t(-1.0e+15) ;
-# 3093 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3094 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.dvovmax = Real_t(0.1) ;
-# 3095 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3096 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.eosvmax = Real_t(1.0e+9) ;
-# 3097 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.eosvmin = Real_t(1.0e-9) ;
-# 3098 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3099 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.refdens = Real_t(1.0) ;
-# 3100 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3101 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3102 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<domElems; ++i) {
-# 3103 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     ;
-# 3104 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t *elemToNode; elemToNode = (domain.nodelist + (8 * i)) ;
-# 3105 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t lnode; for( lnode = (0) ; lnode<8 ; ++lnode )
-# 3106 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  {
-# 3107 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Index_t gnode; gnode = (elemToNode[lnode]) ;
-# 3108 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   x_local[lnode] = domain.x[gnode];
-# 3109 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   y_local[lnode] = domain.y[gnode];
-# 3110 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   z_local[lnode] = domain.z[gnode];
-# 3111 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   } }
+# 3067 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  nidx += edgeNodes ;
+# 3068 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3069 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3070 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ ({ calling_npm("AllocateNodeElemIndexes", 0); AllocateNodeElemIndexes_npm(&domain); });
+# 3071 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3072 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3073 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (0) ; i<domElems; ++i) {
+# 3074 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.matElemlist[i] = i ;
+# 3075 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3076 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3077 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3078 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.dtfixed = Real_t(-1.0e-7) ;
+# 3079 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.deltatime = Real_t(1.0e-7) ;
+# 3080 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.deltatimemultlb = Real_t(1.1) ;
+# 3081 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.deltatimemultub = Real_t(1.2) ;
+# 3082 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.stoptime = Real_t(1.0e-2) ;
+# 3083 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.dtcourant = Real_t(1.0e+20) ;
+# 3084 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.dthydro = Real_t(1.0e+20) ;
+# 3085 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.dtmax = Real_t(1.0e-2) ;
+# 3086 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.time = Real_t(0.) ;
+# 3087 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.cycle = 0 ;
+# 3088 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3089 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.e_cut = Real_t(1.0e-7) ;
+# 3090 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.p_cut = Real_t(1.0e-7) ;
+# 3091 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.q_cut = Real_t(1.0e-7) ;
+# 3092 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.u_cut = Real_t(1.0e-7) ;
+# 3093 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.v_cut = Real_t(1.0e-10) ;
+# 3094 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3095 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.hgcoef = Real_t(3.0) ;
+# 3096 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.ss4o3 = Real_t(4.0)/Real_t(3.0) ;
+# 3097 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3098 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.qstop = Real_t(1.0e+12) ;
+# 3099 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.monoq_max_slope = Real_t(1.0) ;
+# 3100 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.monoq_limiter_mult = Real_t(2.0) ;
+# 3101 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.qlc_monoq = Real_t(0.5) ;
+# 3102 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.qqc_monoq = Real_t(2.0)/Real_t(3.0) ;
+# 3103 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.qqc = Real_t(2.0) ;
+# 3104 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3105 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.pmin = Real_t(0.) ;
+# 3106 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.emin = Real_t(-1.0e+15) ;
+# 3107 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3108 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.dvovmax = Real_t(0.1) ;
+# 3109 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3110 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.eosvmax = Real_t(1.0e+9) ;
+# 3111 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.eosvmin = Real_t(1.0e-9) ;
 # 3112 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3113 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.refdens = Real_t(1.0) ;
 # 3114 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Real_t volume; volume = (({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x_local, y_local, z_local); })) ;
 # 3115 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.volo[i] = volume ;
 # 3116 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.elemMass[i] = volume ;
+ { Index_t i; for ( i = (0) ; i<domElems; ++i) {
 # 3117 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t j; for ( j = (0) ; j<8; ++j) {
+     ;
 # 3118 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Index_t idx; idx = (elemToNode[j]) ;
+   Index_t *elemToNode; elemToNode = (domain.nodelist + (8 * i)) ;
 # 3119 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.nodalMass[idx] += volume / Real_t(8.0) ;
+  { Index_t lnode; for( lnode = (0) ; lnode<8 ; ++lnode )
 # 3120 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  } }
+  {
 # 3121 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+    Index_t gnode; gnode = (elemToNode[lnode]) ;
 # 3122 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   x_local[lnode] = domain.x[gnode];
 # 3123 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   y_local[lnode] = domain.y[gnode];
 # 3124 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.e[0] = Real_t(3.948746e+7) ;
+   z_local[lnode] = domain.z[gnode];
 # 3125 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  } }
 # 3126 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3127 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- nidx = 0 ;
 # 3128 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<edgeNodes; ++i) {
+   Real_t volume; volume = (({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x_local, y_local, z_local); })) ;
 # 3129 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t planeInc; planeInc = (i * edgeNodes * edgeNodes) ;
+  domain.volo[i] = volume ;
 # 3130 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t rowInc; rowInc = (i * edgeNodes) ;
+  domain.elemMass[i] = volume ;
 # 3131 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t j; for ( j = (0) ; j<edgeNodes; ++j) {
+  { Index_t j; for ( j = (0) ; j<8; ++j) {
 # 3132 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.symmX[nidx] = planeInc + j*edgeNodes ;
+    Index_t idx; idx = (elemToNode[j]) ;
 # 3133 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.symmY[nidx] = planeInc + j ;
+   domain.nodalMass[idx] += volume / Real_t(8.0) ;
 # 3134 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.symmZ[nidx] = rowInc + j ;
-# 3135 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ++nidx ;
-# 3136 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   } }
-# 3137 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3135 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } }
+# 3136 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3137 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3138 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.e[0] = Real_t(3.948746e+7) ;
 # 3139 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3140 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.lxim[0] = 0 ;
 # 3141 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (1) ; i<domElems; ++i) {
+ nidx = 0 ;
 # 3142 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lxim[i] = i-1 ;
+ { Index_t i; for ( i = (0) ; i<edgeNodes; ++i) {
 # 3143 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lxip[i-1] = i ;
+   Index_t planeInc; planeInc = (i * edgeNodes * edgeNodes) ;
 # 3144 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+   Index_t rowInc; rowInc = (i * edgeNodes) ;
 # 3145 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.lxip[domElems-1] = domElems-1 ;
+  { Index_t j; for ( j = (0) ; j<edgeNodes; ++j) {
 # 3146 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   domain.symmX[nidx] = planeInc + j*edgeNodes ;
 # 3147 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<edgeElems; ++i) {
+   domain.symmY[nidx] = planeInc + j ;
 # 3148 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.letam[i] = i ;
+   domain.symmZ[nidx] = rowInc + j ;
 # 3149 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.letap[domElems-edgeElems+i] = domElems-edgeElems+i ;
+   ++nidx ;
 # 3150 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+  } }
 # 3151 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (edgeElems) ; i<domElems; ++i) {
+ } }
 # 3152 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.letam[i] = i-edgeElems ;
 # 3153 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.letap[i-edgeElems] = i ;
 # 3154 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+ domain.lxim[0] = 0 ;
 # 3155 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (1) ; i<domElems; ++i) {
 # 3156 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<edgeElems*edgeElems; ++i) {
+  domain.lxim[i] = i-1 ;
 # 3157 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lzetam[i] = i ;
+  domain.lxip[i-1] = i ;
 # 3158 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lzetap[domElems-edgeElems*edgeElems+i] = domElems-edgeElems*edgeElems+i ;
+ } }
 # 3159 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+ domain.lxip[domElems-1] = domElems-1 ;
 # 3160 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (edgeElems * edgeElems) ; i<domElems; ++i) {
 # 3161 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lzetam[i] = i - edgeElems*edgeElems ;
+ { Index_t i; for ( i = (0) ; i<edgeElems; ++i) {
 # 3162 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lzetap[i-edgeElems*edgeElems] = i ;
+  domain.letam[i] = i ;
 # 3163 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+  domain.letap[domElems-edgeElems+i] = domElems-edgeElems+i ;
 # 3164 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
 # 3165 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (edgeElems) ; i<domElems; ++i) {
 # 3166 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<domElems; ++i) {
+  domain.letam[i] = i-edgeElems ;
 # 3167 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.elemBC[i] = 0 ;
+  domain.letap[i-edgeElems] = i ;
 # 3168 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } }
 # 3169 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3170 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (0) ; i<edgeElems*edgeElems; ++i) {
 # 3171 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.lzetam[i] = i ;
 # 3172 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<edgeElems; ++i) {
+  domain.lzetap[domElems-edgeElems*edgeElems+i] = domElems-edgeElems*edgeElems+i ;
 # 3173 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t planeInc; planeInc = (i * edgeElems * edgeElems) ;
-# 3174 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t rowInc; rowInc = (i * edgeElems) ;
-# 3175 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t j; for ( j = (0) ; j<edgeElems; ++j) {
-# 3176 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[planeInc+j*edgeElems] |= 0x001 ;
-# 3177 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[planeInc+j*edgeElems+edgeElems-1] |= 0x008 ;
-# 3178 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[planeInc+j] |= 0x010 ;
-# 3179 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[planeInc+j+edgeElems*edgeElems-edgeElems] |= 0x080 ;
-# 3180 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[rowInc+j] |= 0x100 ;
-# 3181 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[rowInc+j+domElems-edgeElems*edgeElems] |= 0x800 ;
-# 3182 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  } }
-# 3183 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } }
+# 3174 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (edgeElems * edgeElems) ; i<domElems; ++i) {
+# 3175 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.lzetam[i] = i - edgeElems*edgeElems ;
+# 3176 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.lzetap[i-edgeElems*edgeElems] = i ;
+# 3177 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3178 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3179 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3180 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (0) ; i<domElems; ++i) {
+# 3181 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.elemBC[i] = 0 ;
+# 3182 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3183 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3184 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3185 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3186 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (0) ; i<edgeElems; ++i) {
 # 3187 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     ;
+   Index_t planeInc; planeInc = (i * edgeElems * edgeElems) ;
 # 3188 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- gettimeofday(&start, __null);
+   Index_t rowInc; rowInc = (i * edgeElems) ;
 # 3189 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  { Index_t j; for ( j = (0) ; j<edgeElems; ++j) {
 # 3190 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   domain.elemBC[planeInc+j*edgeElems] |= 0x001 ;
 # 3191 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- while(domain.time < domain.stoptime ) {
+   domain.elemBC[planeInc+j*edgeElems+edgeElems-1] |= 0x008 ;
 # 3192 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   domain.elemBC[planeInc+j] |= 0x010 ;
 # 3193 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm("TimeIncrement", 0); TimeIncrement_npm(); }) ;
+   domain.elemBC[planeInc+j+edgeElems*edgeElems-edgeElems] |= 0x080 ;
 # 3194 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm("LagrangeLeapFrog", 0); LagrangeLeapFrog_npm(); }) ;
+   domain.elemBC[rowInc+j] |= 0x100 ;
 # 3195 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   domain.elemBC[rowInc+j+domElems-edgeElems*edgeElems] |= 0x800 ;
 # 3196 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  } }
 # 3197 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
 # 3198 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3199 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3200 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3201 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+     ;
 # 3202 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
+ gettimeofday(&start, __null);
 # 3203 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3204 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- }
 # 3205 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ while(domain.time < domain.stoptime ) {
 # 3206 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3207 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- gettimeofday(&end, __null);
+  ({ calling_npm("TimeIncrement", 0); TimeIncrement_npm(); }) ;
 # 3208 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  double elapsed_time; elapsed_time = (double(end.tv_sec - start.tv_sec) + double(end.tv_usec - start.tv_usec) * 9.9999999999999995E-7) ;
-# 3209 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3210 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3211 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("\n\nElapsed time = %12.6e\n\n", elapsed_time);
-# 3212 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3213 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t ElemId; ElemId = (0) ;
-# 3214 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("Run completed:  \n");
-# 3215 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("   Problem size        =  %i \n", edgeElems);
-# 3216 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("   Iteration count     =  %i \n", domain.cycle);
+  ({ calling_npm("LagrangeLeapFrog", 0); LagrangeLeapFrog_npm(); }) ;
 # 3217 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("   Final Origin Energy = %12.6e \n", domain.e[ElemId]);
+# 3217 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+         call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
 # 3218 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3219 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t MaxAbsDiff; MaxAbsDiff = (Real_t(0.)) ;
+ }
 # 3220 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t TotalAbsDiff; TotalAbsDiff = (Real_t(0.)) ;
 # 3221 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t MaxRelDiff; MaxRelDiff = (Real_t(0.)) ;
 # 3222 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ gettimeofday(&end, __null);
 # 3223 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t j; for ( j = (0) ; j<edgeElems; ++j) {
+  double elapsed_time; elapsed_time = (double(end.tv_sec - start.tv_sec) + double(end.tv_usec - start.tv_usec) * 9.9999999999999995E-7) ;
 # 3224 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t k; for ( k = (j + 1) ; k<edgeElems; ++k) {
 # 3225 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Real_t AbsDiff; AbsDiff = (({ calling_npm("FABS", 0); FABS_npm(domain.e[j * edgeElems + k] - domain.e[k * edgeElems + j]); })) ;
 # 3226 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   TotalAbsDiff += AbsDiff;
+ printf("\n\nElapsed time = %.10f\n\n", elapsed_time);
 # 3227 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3228 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   if (MaxAbsDiff < AbsDiff) {MaxAbsDiff = AbsDiff; };
+  Index_t ElemId; ElemId = (0) ;
 # 3229 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("Run completed:  \n");
 # 3230 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Real_t RelDiff; RelDiff = (AbsDiff / domain.e[k * edgeElems + j]) ;
+ printf("   Problem size        =  %i \n", edgeElems);
 # 3231 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("   Iteration count     =  %i \n", domain.cycle);
 # 3232 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   if (MaxRelDiff < RelDiff) {MaxRelDiff = RelDiff; };
+ printf("   Final Origin Energy = %12.6e \n", domain.e[ElemId]);
 # 3233 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  } }
 # 3234 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+  Real_t MaxAbsDiff; MaxAbsDiff = (Real_t(0.)) ;
 # 3235 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  Real_t TotalAbsDiff; TotalAbsDiff = (Real_t(0.)) ;
 # 3236 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("   Testing Plane 0 of Energy Array:\n");
+  Real_t MaxRelDiff; MaxRelDiff = (Real_t(0.)) ;
 # 3237 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("        MaxAbsDiff   = %12.6e\n", MaxAbsDiff );
 # 3238 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("        TotalAbsDiff = %12.6e\n", TotalAbsDiff );
+ { Index_t j; for ( j = (0) ; j<edgeElems; ++j) {
 # 3239 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("        MaxRelDiff   = %12.6e\n\n", MaxRelDiff );
+  { Index_t k; for ( k = (j + 1) ; k<edgeElems; ++k) {
 # 3240 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    Real_t AbsDiff; AbsDiff = (({ calling_npm("FABS", 0); FABS_npm(domain.e[j * edgeElems + k] - domain.e[k * edgeElems + j]); })) ;
 # 3241 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable50); return 0 ;
+   TotalAbsDiff += AbsDiff;
 # 3242 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3243 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   if (MaxAbsDiff < AbsDiff) {MaxAbsDiff = AbsDiff; };
+# 3244 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3245 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    Real_t RelDiff; RelDiff = (AbsDiff / domain.e[k * edgeElems + j]) ;
+# 3246 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3247 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   if (MaxRelDiff < RelDiff) {MaxRelDiff = RelDiff; };
+# 3248 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  } }
+# 3249 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3250 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3251 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("   Testing Plane 0 of Energy Array:\n");
+# 3252 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("        MaxAbsDiff   = %12.6e\n", MaxAbsDiff );
+# 3253 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("        TotalAbsDiff = %12.6e\n", TotalAbsDiff );
+# 3254 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("        MaxRelDiff   = %12.6e\n\n", MaxRelDiff );
+# 3255 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3256 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable50); return 0 ;
+# 3257 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 inline real8 SQRT_quick(real8 arg) {const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_14, ____chimes_did_disable0); return sqrt(arg) ; }
 
@@ -13744,115 +13733,110 @@ void CalcCourantConstraintForElems_quick()
   Real_t qqc2; qqc2 = (Real_t(64.) * qqc * qqc) ;
 # 2820 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2821 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         Index_t threads; threads = (omp_get_num_threads()) ;
 # 2822 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2823 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2824 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2825 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2826 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         lbl_0: Index_t courant_elem_per_thread[threads]; ;
-# 2827 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         lbl_1: Real_t dtcourant_per_thread[threads]; ;
-# 2828 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2829 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        { Index_t i; for ( i = (0) ; i < threads; i++) {
-# 2830 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                courant_elem_per_thread[i] = -1;
+         Index_t threads; threads = (omp_get_num_threads()) ;
 # 2831 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                dtcourant_per_thread[i] = Real_t(1.0e+20);
+# 2831 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+         lbl_0: Index_t courant_elem_per_thread[threads]; ;
 # 2832 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        } }; { call_lbl_4: bool ____chimes_disable46 = disable_current_thread(); unsigned ____chimes_parent_stack_depth28 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth28 = get_thread_stack_depth(); size_t ____chimes_region_id28; unsigned ____chimes_parent_thread28 = entering_omp_parallel(4, &____chimes_region_id28, 2, &length, &qqc2); int ____chimes_first_iter28 = 1;
+         lbl_1: Real_t dtcourant_per_thread[threads]; ;
 # 2833 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2834 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        { Index_t i; for ( i = (0) ; i < threads; i++) {
 # 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-#pragma omp parallel for firstprivate(length,qqc2), shared(dtcourant,courant_elem) firstprivate(____chimes_first_iter28)
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                courant_elem_per_thread[i] = -1;
 # 2836 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter28) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread28, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth28, ____chimes_region_id28, 2, &length, &qqc2); ____chimes_first_iter28 = 0; }
+                dtcourant_per_thread[i] = Real_t(1.0e+20);
 # 2837 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t indx; indx = (domain.matElemlist[i]) ;
+        } }; { call_lbl_4: bool ____chimes_disable46 = disable_current_thread(); unsigned ____chimes_parent_stack_depth28 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth28 = get_thread_stack_depth(); size_t ____chimes_region_id28; unsigned ____chimes_parent_thread28 = entering_omp_parallel(4, &____chimes_region_id28, 2, &length, &qqc2); int ____chimes_first_iter28 = 1;
 # 2838 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2839 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Real_t dtf; dtf = (domain.ss[indx] * domain.ss[indx]) ;
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+#pragma omp parallel for firstprivate(length,qqc2), shared(dtcourant,courant_elem) firstprivate(____chimes_first_iter28)
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2841 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if ( domain.vdov[indx] < Real_t(0.) ) {
+ for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter28) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread28, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth28, ____chimes_region_id28, 2, &length, &qqc2); ____chimes_first_iter28 = 0; }
 # 2842 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   Index_t indx; indx = (domain.matElemlist[i]) ;
 # 2843 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   dtf = dtf
 # 2844 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-            + qqc2 * domain.arealg[indx] * domain.arealg[indx]
+   Real_t dtf; dtf = (domain.ss[indx] * domain.ss[indx]) ;
 # 2845 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-            * domain.vdov[indx] * domain.vdov[indx] ;
 # 2846 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  }
+  if ( domain.vdov[indx] < Real_t(0.) ) {
 # 2847 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2848 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  dtf = ({ calling_npm("SQRT", 0); SQRT_npm(dtf); }) ;
+   dtf = dtf
 # 2849 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+            + qqc2 * domain.arealg[indx] * domain.arealg[indx]
 # 2850 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  dtf = domain.arealg[indx] / dtf ;
+            * domain.vdov[indx] * domain.vdov[indx] ;
 # 2851 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  }
 # 2852 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2853 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (domain.vdov[indx] != Real_t(0.)) {
+  dtf = ({ calling_npm("SQRT", 0); SQRT_npm(dtf); }) ;
 # 2854 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   {
 # 2855 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     Index_t thread_num; thread_num = (omp_get_thread_num()) ;
+  dtf = domain.arealg[indx] / dtf ;
 # 2856 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2857 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2858 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  if (domain.vdov[indx] != Real_t(0.)) {
 # 2859 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   {
 # 2860 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2861 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         if ( dtf < dtcourant_per_thread[thread_num] ) {
-# 2862 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         {
-# 2863 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                 dtcourant_per_thread[thread_num] = dtf ;
-# 2864 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                        courant_elem_per_thread[thread_num] = indx ;
-# 2865 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                }
-# 2866 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        }
-# 2867 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2868 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   }
-# 2869 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  }
+     Index_t thread_num; thread_num = (omp_get_thread_num()) ;
 # 2870 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } leaving_omp_parallel(____chimes_call_stack_depth28, ____chimes_region_id28); reenable_current_thread(____chimes_disable46); }
+# 2870 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                         if ( dtf < dtcourant_per_thread[thread_num] ) {
 # 2871 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i < threads; i++) {
+                         {
 # 2872 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                if(dtcourant_per_thread[i] < dtcourant) {
+                                 dtcourant_per_thread[thread_num] = dtf ;
 # 2873 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        dtcourant = dtcourant_per_thread[i];
+                                        courant_elem_per_thread[thread_num] = indx ;
 # 2874 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        courant_elem = courant_elem_per_thread[i];
+                                }
 # 2875 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                }
+                        }
 # 2876 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        } }
 # 2877 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   }
 # 2878 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  }
 # 2879 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } leaving_omp_parallel(____chimes_call_stack_depth28, ____chimes_region_id28); reenable_current_thread(____chimes_disable46); }
 # 2880 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (0) ; i < threads; i++) {
 # 2881 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- if (courant_elem != -1) {
+                if(dtcourant_per_thread[i] < dtcourant) {
 # 2882 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.dtcourant = dtcourant ;
+                        dtcourant = dtcourant_per_thread[i];
 # 2883 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- }
+                        courant_elem = courant_elem_per_thread[i];
 # 2884 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                }
 # 2885 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, ____alias_loc_id_12, ____chimes_did_disable46); return ;
+        } }
 # 2886 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2887 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2888 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2889 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2890 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ if (courant_elem != -1) {
+# 2891 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.dtcourant = dtcourant ;
+# 2892 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ }
+# 2893 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2894 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ rm_stack(false, 0UL, "CalcCourantConstraintForElems", &____must_manage_CalcCourantConstraintForElems, ____alias_loc_id_12, ____chimes_did_disable46); return ;
+# 2895 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
 static inline
@@ -13860,155 +13844,155 @@ static inline
 void CalcCourantConstraintForElems() { (____chimes_replaying ? CalcCourantConstraintForElems_resumable() : CalcCourantConstraintForElems_quick()); }
 
 static inline
-# 2889 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-void CalcHydroConstraintForElems_quick()
-# 2890 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{const int ____chimes_did_disable47 = new_stack((void *)(&CalcHydroConstraintForElems), "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, 0, 0) ; ; ;
-# 2891 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t dthydro; dthydro = (Real_t(1.0E+20)) ;
-# 2892 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t hydro_elem; hydro_elem = (-1) ;
-# 2893 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t dvovmax; dvovmax = (domain.dvovmax) ;
-# 2894 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t length; length = (domain.numElem) ;
-# 2895 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2896 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t threads; threads = (omp_get_num_threads()) ;
-# 2897 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2898 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+void CalcHydroConstraintForElems_quick()
 # 2899 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+{const int ____chimes_did_disable47 = new_stack((void *)(&CalcHydroConstraintForElems), "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, 0, 0) ; ; ;
 # 2900 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  Real_t dthydro; dthydro = (Real_t(1.0E+20)) ;
 # 2901 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         lbl_0: Real_t dthydro_per_thread[threads]; ;
+  Index_t hydro_elem; hydro_elem = (-1) ;
 # 2902 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         lbl_1: Index_t hydro_elem_per_thread[threads]; ;
+  Real_t dvovmax; dvovmax = (domain.dvovmax) ;
 # 2903 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  Index_t length; length = (domain.numElem) ;
 # 2904 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        { Index_t i; for ( i = (0) ; i < threads; i++) {
 # 2905 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                hydro_elem_per_thread[i] = -1;
 # 2906 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                dthydro_per_thread[i] = Real_t(1.0e+20);
+  Index_t threads; threads = (omp_get_num_threads()) ;
 # 2907 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        } }; { call_lbl_4: bool ____chimes_disable47 = disable_current_thread(); unsigned ____chimes_parent_stack_depth29 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth29 = get_thread_stack_depth(); size_t ____chimes_region_id29; unsigned ____chimes_parent_thread29 = entering_omp_parallel(4, &____chimes_region_id29, 1, &length); int ____chimes_first_iter29 = 1;
 # 2908 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2909 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-#pragma omp parallel for firstprivate(length), shared(dthydro,hydro_elem) firstprivate(____chimes_first_iter29)
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2911 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        for (Index_t i = 0 ; i < length ; ++i) {if (____chimes_first_iter29) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread29, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth29, ____chimes_region_id29, 1, &length); ____chimes_first_iter29 = 0; }
 # 2912 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                 Index_t indx; indx = (domain.matElemlist[i]) ;
 # 2913 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2914 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                if (domain.vdov[indx] != Real_t(0.)) {
+         lbl_0: Real_t dthydro_per_thread[threads]; ;
 # 2915 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm("FABS", 0); FABS_npm(domain.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
+         lbl_1: Index_t hydro_elem_per_thread[threads]; ;
 # 2916 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2917 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         Index_t thread_num; thread_num = (omp_get_thread_num()) ;
+        { Index_t i; for ( i = (0) ; i < threads; i++) {
 # 2918 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                hydro_elem_per_thread[i] = -1;
 # 2919 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                dthydro_per_thread[i] = Real_t(1.0e+20);
 # 2920 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        } }
 # 2921 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2922 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        if ( dthydro_per_thread[thread_num] > dtdvov ) {
 # 2923 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                {
+        { Index_t i; for ( i = (0) ; i < length ; ++i) {
 # 2924 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                        dthydro_per_thread[thread_num] = dtdvov ;
+                 Index_t indx; indx = (domain.matElemlist[i]) ;
 # 2925 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                        hydro_elem_per_thread[thread_num] = indx ;
 # 2926 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                }
+                if (domain.vdov[indx] != Real_t(0.)) {
 # 2927 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        }
+                         Real_t dtdvov; dtdvov = (dvovmax / (({ calling_npm("FABS", 0); FABS_npm(domain.vdov[indx]); }) + Real_t(9.9999999999999995E-21))) ;
 # 2928 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                }
 # 2929 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        } leaving_omp_parallel(____chimes_call_stack_depth29, ____chimes_region_id29); reenable_current_thread(____chimes_disable47); }
 # 2930 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                         Index_t thread_num; thread_num = (omp_get_thread_num()) ;
 # 2931 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        { Index_t i; for ( i = (0) ; i < threads; i++) {
 # 2932 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                if(dthydro_per_thread[i] < dthydro) {
 # 2933 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        dthydro = dthydro_per_thread[i];
 # 2934 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        hydro_elem = hydro_elem_per_thread[i];
 # 2935 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                }
 # 2936 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        } }
 # 2937 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2938 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        if ( dthydro_per_thread[thread_num] > dtdvov ) {
 # 2939 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                                {
 # 2940 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- if (hydro_elem != -1) {
+                                        dthydro_per_thread[thread_num] = dtdvov ;
 # 2941 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.dthydro = dthydro ;
+                                        hydro_elem_per_thread[thread_num] = indx ;
 # 2942 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- }
+                                }
 # 2943 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        }
 # 2944 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, ____alias_loc_id_13, ____chimes_did_disable47); return ;
+                }
 # 2945 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        } }
+# 2946 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2947 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        { Index_t i; for ( i = (0) ; i < threads; i++) {
+# 2948 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                if(dthydro_per_thread[i] < dthydro) {
+# 2949 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        dthydro = dthydro_per_thread[i];
+# 2950 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        hydro_elem = hydro_elem_per_thread[i];
+# 2951 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                }
+# 2952 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        } }
+# 2953 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2954 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ if (hydro_elem != -1) {
+# 2955 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.dthydro = dthydro ;
+# 2956 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ }
+# 2957 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2958 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ rm_stack(false, 0UL, "CalcHydroConstraintForElems", &____must_manage_CalcHydroConstraintForElems, ____alias_loc_id_13, ____chimes_did_disable47); return ;
+# 2959 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
 static inline
-# 2889 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2898 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcHydroConstraintForElems() { (____chimes_replaying ? CalcHydroConstraintForElems_resumable() : CalcHydroConstraintForElems_quick()); }
 
 static inline
-# 2948 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2962 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcTimeConstraintsForElems_quick() {const int ____chimes_did_disable48 = new_stack((void *)(&CalcTimeConstraintsForElems), "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, 0) ; ; ;
-# 2949 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2950 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2963 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2964 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  ({ calling_npm("CalcCourantConstraintForElems", 0); CalcCourantConstraintForElems_npm(); }) ;
-# 2951 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2952 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2953 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2965 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2966 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2967 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  ({ calling_npm("CalcHydroConstraintForElems", 0); CalcHydroConstraintForElems_npm(); }) ;
-# 2954 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2968 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, ____chimes_did_disable48); }
 
 static inline
-# 2948 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2962 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void CalcTimeConstraintsForElems() { (____chimes_replaying ? CalcTimeConstraintsForElems_resumable() : CalcTimeConstraintsForElems_quick()); }
 
 static inline
-# 2957 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2971 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void LagrangeLeapFrog_quick()
-# 2958 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2972 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 {const int ____chimes_did_disable49 = new_stack((void *)(&LagrangeLeapFrog), "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, 0) ; ; ;
-# 2959 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2960 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2961 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2973 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2974 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2975 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  ({ calling_npm("LagrangeNodal", 0); LagrangeNodal_npm(); });
-# 2962 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2963 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2964 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2965 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2976 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2977 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2978 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2979 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  ({ calling_npm("LagrangeElements", 0); LagrangeElements_npm(); });
-# 2966 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2967 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2980 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2981 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  ({ calling_npm("CalcTimeConstraintsForElems", 0); CalcTimeConstraintsForElems_npm(); });
-# 2968 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2969 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2970 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2982 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2983 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2984 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 rm_stack(false, 0UL, "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, ____chimes_did_disable49); }
 
 static inline
-# 2957 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2971 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 void LagrangeLeapFrog() { (____chimes_replaying ? LagrangeLeapFrog_resumable() : LagrangeLeapFrog_quick()); }
 
 int main_quick(int argc, char *argv[])
-# 2973 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2987 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 {const int ____chimes_did_disable50 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11486493675241828211UL)) ; timeval end;
 timeval start;
 Real_t z_local[8];
@@ -14016,450 +14000,444 @@ Real_t y_local[8];
 Real_t x_local[8];
 Index_t edgeElems;
  register_stack_vars(4, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|start|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&start), (size_t)16, 0, 1, 0, "main|x_local|0", (int *)0x0, "[8 x double]", (void *)(x_local), (size_t)64, 0, 0, 0, "main|edgeElems|0", (int *)0x0, "i32", (void *)(&edgeElems), (size_t)4, 0, 0, 0); ; ;
-# 2974 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2988 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
      edgeElems = (atoi(argv[1])) ;
-# 2975 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2989 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   Index_t edgeNodes; edgeNodes = (edgeElems + 1) ;
-# 2976 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2977 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2990 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2991 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  Real_t tx; Real_t ty; Real_t tz; ;
-# 2978 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- Index_t nidx; Index_t zidx; ;
-# 2979 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- Index_t domElems; ;
-# 2991 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2991 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.sizeX = edgeElems ;
 # 2992 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.sizeY = edgeElems ;
+ Index_t nidx; Index_t zidx; ;
 # 2993 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.sizeZ = edgeElems ;
-# 2994 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.numElem = edgeElems*edgeElems*edgeElems ;
-# 2995 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.numNode = edgeNodes*edgeNodes*edgeNodes ;
-# 2996 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2997 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domElems = domain.numElem ;
-# 2998 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2999 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3000 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3001 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3002 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("AllocateElemPersistent", 0); AllocateElemPersistent_npm(&domain, domain.numElem); }) ;
-# 3003 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("AllocateElemTemporary", 0); AllocateElemTemporary_npm(&domain, domain.numElem); }) ;
-# 3004 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ Index_t domElems; ;
 # 3005 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("AllocateNodalPersistent", 0); AllocateNodalPersistent_npm(&domain, domain.numNode); }) ;
+# 3005 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.sizeX = edgeElems ;
 # 3006 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("AllocateNodesets", 0); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); }) ;
+ domain.sizeY = edgeElems ;
 # 3007 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.sizeZ = edgeElems ;
 # 3008 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.numElem = edgeElems*edgeElems*edgeElems ;
 # 3009 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.numNode = edgeNodes*edgeNodes*edgeNodes ;
 # 3010 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- nidx = 0 ;
 # 3011 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- tz = Real_t(0.) ;
+ domElems = domain.numElem ;
 # 3012 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t plane; for ( plane = (0) ; plane<edgeNodes; ++plane) {
 # 3013 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ty = Real_t(0.) ;
 # 3014 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t row; for ( row = (0) ; row<edgeNodes; ++row) {
 # 3015 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   tx = Real_t(0.) ;
 # 3016 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   { Index_t col; for ( col = (0) ; col<edgeNodes; ++col) {
+ ({ calling_npm("AllocateElemPersistent", 0); AllocateElemPersistent_npm(&domain, domain.numElem); }) ;
 # 3017 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    domain.x[nidx] = tx ;
+ ({ calling_npm("AllocateElemTemporary", 0); AllocateElemTemporary_npm(&domain, domain.numElem); }) ;
 # 3018 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    domain.y[nidx] = ty ;
 # 3019 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    domain.z[nidx] = tz ;
+ ({ calling_npm("AllocateNodalPersistent", 0); AllocateNodalPersistent_npm(&domain, domain.numNode); }) ;
 # 3020 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    ++nidx ;
+ ({ calling_npm("AllocateNodesets", 0); AllocateNodesets_npm(&domain, edgeNodes*edgeNodes); }) ;
 # 3021 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3022 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    tx = Real_t(1.125)*Real_t(col+1)/Real_t(edgeElems) ;
 # 3023 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   } }
 # 3024 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3025 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ty = Real_t(1.125)*Real_t(row+1)/Real_t(edgeElems) ;
-# 3026 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  } }
-# 3027 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3028 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  tz = Real_t(1.125)*Real_t(plane+1)/Real_t(edgeElems) ;
-# 3029 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
-# 3030 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3031 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3032 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3033 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3034 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  nidx = 0 ;
-# 3035 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- zidx = 0 ;
-# 3036 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t plane; for ( plane = (0) ; plane<edgeElems; ++plane) {
-# 3037 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t row; for ( row = (0) ; row<edgeElems; ++row) {
-# 3038 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   { Index_t col; for ( col = (0) ; col<edgeElems; ++col) {
-# 3039 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     Index_t *localNode; localNode = (domain.nodelist + (8 * zidx)) ;
-# 3040 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[0] = nidx ;
-# 3041 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[1] = nidx + 1 ;
-# 3042 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[2] = nidx + edgeNodes + 1 ;
-# 3043 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[3] = nidx + edgeNodes ;
-# 3044 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[4] = nidx + edgeNodes*edgeNodes ;
-# 3045 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[5] = nidx + edgeNodes*edgeNodes + 1 ;
-# 3046 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[6] = nidx + edgeNodes*edgeNodes + edgeNodes + 1 ;
-# 3047 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    localNode[7] = nidx + edgeNodes*edgeNodes + edgeNodes ;
-# 3048 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    ++zidx ;
-# 3049 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3025 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ tz = Real_t(0.) ;
+# 3026 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t plane; for ( plane = (0) ; plane<edgeNodes; ++plane) {
+# 3027 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  ty = Real_t(0.) ;
+# 3028 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  { Index_t row; for ( row = (0) ; row<edgeNodes; ++row) {
+# 3029 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   tx = Real_t(0.) ;
+# 3030 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   { Index_t col; for ( col = (0) ; col<edgeNodes; ++col) {
+# 3031 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    domain.x[nidx] = tx ;
+# 3032 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    domain.y[nidx] = ty ;
+# 3033 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    domain.z[nidx] = tz ;
+# 3034 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
     ++nidx ;
-# 3050 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3035 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3036 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    tx = Real_t(1.125)*Real_t(col+1)/Real_t(edgeElems) ;
+# 3037 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
    } }
+# 3038 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3039 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   ty = Real_t(1.125)*Real_t(row+1)/Real_t(edgeElems) ;
+# 3040 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  } }
+# 3041 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3042 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  tz = Real_t(1.125)*Real_t(plane+1)/Real_t(edgeElems) ;
+# 3043 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3044 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3045 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3046 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3047 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3048 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ nidx = 0 ;
+# 3049 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ zidx = 0 ;
+# 3050 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t plane; for ( plane = (0) ; plane<edgeElems; ++plane) {
 # 3051 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ++nidx ;
+  { Index_t row; for ( row = (0) ; row<edgeElems; ++row) {
 # 3052 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  } }
+   { Index_t col; for ( col = (0) ; col<edgeElems; ++col) {
 # 3053 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  nidx += edgeNodes ;
+     Index_t *localNode; localNode = (domain.nodelist + (8 * zidx)) ;
 # 3054 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+    localNode[0] = nidx ;
 # 3055 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    localNode[1] = nidx + 1 ;
 # 3056 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- ({ calling_npm("AllocateNodeElemIndexes", 0); AllocateNodeElemIndexes_npm(&domain); });
+    localNode[2] = nidx + edgeNodes + 1 ;
 # 3057 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    localNode[3] = nidx + edgeNodes ;
 # 3058 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    localNode[4] = nidx + edgeNodes*edgeNodes ;
 # 3059 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<domElems; ++i) {
+    localNode[5] = nidx + edgeNodes*edgeNodes + 1 ;
 # 3060 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.matElemlist[i] = i ;
+    localNode[6] = nidx + edgeNodes*edgeNodes + edgeNodes + 1 ;
 # 3061 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+    localNode[7] = nidx + edgeNodes*edgeNodes + edgeNodes ;
 # 3062 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    ++zidx ;
 # 3063 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    ++nidx ;
 # 3064 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.dtfixed = Real_t(-1.0e-7) ;
+   } }
 # 3065 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.deltatime = Real_t(1.0e-7) ;
+   ++nidx ;
 # 3066 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.deltatimemultlb = Real_t(1.1) ;
-# 3067 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.deltatimemultub = Real_t(1.2) ;
-# 3068 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.stoptime = Real_t(1.0e-2) ;
-# 3069 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.dtcourant = Real_t(1.0e+20) ;
-# 3070 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.dthydro = Real_t(1.0e+20) ;
-# 3071 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.dtmax = Real_t(1.0e-2) ;
-# 3072 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.time = Real_t(0.) ;
-# 3073 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.cycle = 0 ;
-# 3074 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3075 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.e_cut = Real_t(1.0e-7) ;
-# 3076 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.p_cut = Real_t(1.0e-7) ;
-# 3077 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.q_cut = Real_t(1.0e-7) ;
-# 3078 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.u_cut = Real_t(1.0e-7) ;
-# 3079 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.v_cut = Real_t(1.0e-10) ;
-# 3080 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3081 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.hgcoef = Real_t(3.0) ;
-# 3082 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.ss4o3 = Real_t(4.0)/Real_t(3.0) ;
-# 3083 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3084 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.qstop = Real_t(1.0e+12) ;
-# 3085 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.monoq_max_slope = Real_t(1.0) ;
-# 3086 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.monoq_limiter_mult = Real_t(2.0) ;
-# 3087 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.qlc_monoq = Real_t(0.5) ;
-# 3088 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.qqc_monoq = Real_t(2.0)/Real_t(3.0) ;
-# 3089 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.qqc = Real_t(2.0) ;
-# 3090 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3091 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.pmin = Real_t(0.) ;
-# 3092 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.emin = Real_t(-1.0e+15) ;
-# 3093 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3094 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.dvovmax = Real_t(0.1) ;
-# 3095 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3096 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.eosvmax = Real_t(1.0e+9) ;
-# 3097 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.eosvmin = Real_t(1.0e-9) ;
-# 3098 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3099 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.refdens = Real_t(1.0) ;
-# 3100 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3101 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3102 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<domElems; ++i) {
-# 3103 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     ;
-# 3104 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t *elemToNode; elemToNode = (domain.nodelist + (8 * i)) ;
-# 3105 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t lnode; for( lnode = (0) ; lnode<8 ; ++lnode )
-# 3106 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  {
-# 3107 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Index_t gnode; gnode = (elemToNode[lnode]) ;
-# 3108 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   x_local[lnode] = domain.x[gnode];
-# 3109 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   y_local[lnode] = domain.y[gnode];
-# 3110 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   z_local[lnode] = domain.z[gnode];
-# 3111 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   } }
+# 3067 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  nidx += edgeNodes ;
+# 3068 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3069 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3070 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ ({ calling_npm("AllocateNodeElemIndexes", 0); AllocateNodeElemIndexes_npm(&domain); });
+# 3071 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3072 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3073 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (0) ; i<domElems; ++i) {
+# 3074 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.matElemlist[i] = i ;
+# 3075 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3076 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3077 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3078 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.dtfixed = Real_t(-1.0e-7) ;
+# 3079 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.deltatime = Real_t(1.0e-7) ;
+# 3080 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.deltatimemultlb = Real_t(1.1) ;
+# 3081 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.deltatimemultub = Real_t(1.2) ;
+# 3082 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.stoptime = Real_t(1.0e-2) ;
+# 3083 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.dtcourant = Real_t(1.0e+20) ;
+# 3084 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.dthydro = Real_t(1.0e+20) ;
+# 3085 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.dtmax = Real_t(1.0e-2) ;
+# 3086 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.time = Real_t(0.) ;
+# 3087 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.cycle = 0 ;
+# 3088 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3089 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.e_cut = Real_t(1.0e-7) ;
+# 3090 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.p_cut = Real_t(1.0e-7) ;
+# 3091 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.q_cut = Real_t(1.0e-7) ;
+# 3092 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.u_cut = Real_t(1.0e-7) ;
+# 3093 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.v_cut = Real_t(1.0e-10) ;
+# 3094 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3095 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.hgcoef = Real_t(3.0) ;
+# 3096 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.ss4o3 = Real_t(4.0)/Real_t(3.0) ;
+# 3097 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3098 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.qstop = Real_t(1.0e+12) ;
+# 3099 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.monoq_max_slope = Real_t(1.0) ;
+# 3100 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.monoq_limiter_mult = Real_t(2.0) ;
+# 3101 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.qlc_monoq = Real_t(0.5) ;
+# 3102 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.qqc_monoq = Real_t(2.0)/Real_t(3.0) ;
+# 3103 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.qqc = Real_t(2.0) ;
+# 3104 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3105 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.pmin = Real_t(0.) ;
+# 3106 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.emin = Real_t(-1.0e+15) ;
+# 3107 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3108 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.dvovmax = Real_t(0.1) ;
+# 3109 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3110 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.eosvmax = Real_t(1.0e+9) ;
+# 3111 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.eosvmin = Real_t(1.0e-9) ;
 # 3112 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3113 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.refdens = Real_t(1.0) ;
 # 3114 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Real_t volume; volume = (({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x_local, y_local, z_local); })) ;
 # 3115 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.volo[i] = volume ;
 # 3116 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.elemMass[i] = volume ;
+ { Index_t i; for ( i = (0) ; i<domElems; ++i) {
 # 3117 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t j; for ( j = (0) ; j<8; ++j) {
+     ;
 # 3118 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Index_t idx; idx = (elemToNode[j]) ;
+   Index_t *elemToNode; elemToNode = (domain.nodelist + (8 * i)) ;
 # 3119 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.nodalMass[idx] += volume / Real_t(8.0) ;
+  { Index_t lnode; for( lnode = (0) ; lnode<8 ; ++lnode )
 # 3120 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  } }
+  {
 # 3121 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+    Index_t gnode; gnode = (elemToNode[lnode]) ;
 # 3122 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   x_local[lnode] = domain.x[gnode];
 # 3123 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   y_local[lnode] = domain.y[gnode];
 # 3124 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.e[0] = Real_t(3.948746e+7) ;
+   z_local[lnode] = domain.z[gnode];
 # 3125 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  } }
 # 3126 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3127 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- nidx = 0 ;
 # 3128 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<edgeNodes; ++i) {
+   Real_t volume; volume = (({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x_local, y_local, z_local); })) ;
 # 3129 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t planeInc; planeInc = (i * edgeNodes * edgeNodes) ;
+  domain.volo[i] = volume ;
 # 3130 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t rowInc; rowInc = (i * edgeNodes) ;
+  domain.elemMass[i] = volume ;
 # 3131 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t j; for ( j = (0) ; j<edgeNodes; ++j) {
+  { Index_t j; for ( j = (0) ; j<8; ++j) {
 # 3132 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.symmX[nidx] = planeInc + j*edgeNodes ;
+    Index_t idx; idx = (elemToNode[j]) ;
 # 3133 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.symmY[nidx] = planeInc + j ;
+   domain.nodalMass[idx] += volume / Real_t(8.0) ;
 # 3134 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.symmZ[nidx] = rowInc + j ;
-# 3135 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   ++nidx ;
-# 3136 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
   } }
-# 3137 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3135 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } }
+# 3136 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3137 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3138 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ domain.e[0] = Real_t(3.948746e+7) ;
 # 3139 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3140 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.lxim[0] = 0 ;
 # 3141 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (1) ; i<domElems; ++i) {
+ nidx = 0 ;
 # 3142 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lxim[i] = i-1 ;
+ { Index_t i; for ( i = (0) ; i<edgeNodes; ++i) {
 # 3143 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lxip[i-1] = i ;
+   Index_t planeInc; planeInc = (i * edgeNodes * edgeNodes) ;
 # 3144 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+   Index_t rowInc; rowInc = (i * edgeNodes) ;
 # 3145 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- domain.lxip[domElems-1] = domElems-1 ;
+  { Index_t j; for ( j = (0) ; j<edgeNodes; ++j) {
 # 3146 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   domain.symmX[nidx] = planeInc + j*edgeNodes ;
 # 3147 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<edgeElems; ++i) {
+   domain.symmY[nidx] = planeInc + j ;
 # 3148 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.letam[i] = i ;
+   domain.symmZ[nidx] = rowInc + j ;
 # 3149 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.letap[domElems-edgeElems+i] = domElems-edgeElems+i ;
+   ++nidx ;
 # 3150 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+  } }
 # 3151 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (edgeElems) ; i<domElems; ++i) {
+ } }
 # 3152 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.letam[i] = i-edgeElems ;
 # 3153 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.letap[i-edgeElems] = i ;
 # 3154 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+ domain.lxim[0] = 0 ;
 # 3155 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (1) ; i<domElems; ++i) {
 # 3156 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<edgeElems*edgeElems; ++i) {
+  domain.lxim[i] = i-1 ;
 # 3157 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lzetam[i] = i ;
+  domain.lxip[i-1] = i ;
 # 3158 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lzetap[domElems-edgeElems*edgeElems+i] = domElems-edgeElems*edgeElems+i ;
+ } }
 # 3159 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+ domain.lxip[domElems-1] = domElems-1 ;
 # 3160 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (edgeElems * edgeElems) ; i<domElems; ++i) {
 # 3161 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lzetam[i] = i - edgeElems*edgeElems ;
+ { Index_t i; for ( i = (0) ; i<edgeElems; ++i) {
 # 3162 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.lzetap[i-edgeElems*edgeElems] = i ;
+  domain.letam[i] = i ;
 # 3163 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+  domain.letap[domElems-edgeElems+i] = domElems-edgeElems+i ;
 # 3164 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
 # 3165 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (edgeElems) ; i<domElems; ++i) {
 # 3166 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<domElems; ++i) {
+  domain.letam[i] = i-edgeElems ;
 # 3167 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.elemBC[i] = 0 ;
+  domain.letap[i-edgeElems] = i ;
 # 3168 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } }
 # 3169 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3170 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (0) ; i<edgeElems*edgeElems; ++i) {
 # 3171 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.lzetam[i] = i ;
 # 3172 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t i; for ( i = (0) ; i<edgeElems; ++i) {
+  domain.lzetap[domElems-edgeElems*edgeElems+i] = domElems-edgeElems*edgeElems+i ;
 # 3173 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t planeInc; planeInc = (i * edgeElems * edgeElems) ;
-# 3174 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   Index_t rowInc; rowInc = (i * edgeElems) ;
-# 3175 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t j; for ( j = (0) ; j<edgeElems; ++j) {
-# 3176 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[planeInc+j*edgeElems] |= 0x001 ;
-# 3177 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[planeInc+j*edgeElems+edgeElems-1] |= 0x008 ;
-# 3178 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[planeInc+j] |= 0x010 ;
-# 3179 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[planeInc+j+edgeElems*edgeElems-edgeElems] |= 0x080 ;
-# 3180 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[rowInc+j] |= 0x100 ;
-# 3181 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   domain.elemBC[rowInc+j+domElems-edgeElems*edgeElems] |= 0x800 ;
-# 3182 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  } }
-# 3183 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  } }
+# 3174 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (edgeElems * edgeElems) ; i<domElems; ++i) {
+# 3175 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.lzetam[i] = i - edgeElems*edgeElems ;
+# 3176 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.lzetap[i-edgeElems*edgeElems] = i ;
+# 3177 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3178 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3179 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3180 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (0) ; i<domElems; ++i) {
+# 3181 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.elemBC[i] = 0 ;
+# 3182 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3183 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3184 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3185 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3186 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ { Index_t i; for ( i = (0) ; i<edgeElems; ++i) {
 # 3187 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-     ;
+   Index_t planeInc; planeInc = (i * edgeElems * edgeElems) ;
 # 3188 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- gettimeofday(&start, __null);
+   Index_t rowInc; rowInc = (i * edgeElems) ;
 # 3189 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  { Index_t j; for ( j = (0) ; j<edgeElems; ++j) {
 # 3190 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   domain.elemBC[planeInc+j*edgeElems] |= 0x001 ;
 # 3191 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- while(domain.time < domain.stoptime ) {
+   domain.elemBC[planeInc+j*edgeElems+edgeElems-1] |= 0x008 ;
 # 3192 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   domain.elemBC[planeInc+j] |= 0x010 ;
 # 3193 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm("TimeIncrement", 0); TimeIncrement_npm(); }) ;
+   domain.elemBC[planeInc+j+edgeElems*edgeElems-edgeElems] |= 0x080 ;
 # 3194 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  ({ calling_npm("LagrangeLeapFrog", 0); LagrangeLeapFrog_npm(); }) ;
+   domain.elemBC[rowInc+j] |= 0x100 ;
 # 3195 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   domain.elemBC[rowInc+j+domElems-edgeElems*edgeElems] |= 0x800 ;
 # 3196 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  } }
 # 3197 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
 # 3198 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3199 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3200 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3201 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+     ;
 # 3202 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-         call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
+ gettimeofday(&start, __null);
 # 3203 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3204 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- }
 # 3205 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ while(domain.time < domain.stoptime ) {
 # 3206 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3207 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- gettimeofday(&end, __null);
+  ({ calling_npm("TimeIncrement", 0); TimeIncrement_npm(); }) ;
 # 3208 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  double elapsed_time; elapsed_time = (double(end.tv_sec - start.tv_sec) + double(end.tv_usec - start.tv_usec) * 9.9999999999999995E-7) ;
-# 3209 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3210 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3211 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("\n\nElapsed time = %12.6e\n\n", elapsed_time);
-# 3212 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 3213 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t ElemId; ElemId = (0) ;
-# 3214 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("Run completed:  \n");
-# 3215 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("   Problem size        =  %i \n", edgeElems);
-# 3216 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("   Iteration count     =  %i \n", domain.cycle);
+  ({ calling_npm("LagrangeLeapFrog", 0); LagrangeLeapFrog_npm(); }) ;
 # 3217 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("   Final Origin Energy = %12.6e \n", domain.e[ElemId]);
+# 3217 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+         call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
 # 3218 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3219 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t MaxAbsDiff; MaxAbsDiff = (Real_t(0.)) ;
+ }
 # 3220 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t TotalAbsDiff; TotalAbsDiff = (Real_t(0.)) ;
 # 3221 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t MaxRelDiff; MaxRelDiff = (Real_t(0.)) ;
 # 3222 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ gettimeofday(&end, __null);
 # 3223 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- { Index_t j; for ( j = (0) ; j<edgeElems; ++j) {
+  double elapsed_time; elapsed_time = (double(end.tv_sec - start.tv_sec) + double(end.tv_usec - start.tv_usec) * 9.9999999999999995E-7) ;
 # 3224 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  { Index_t k; for ( k = (j + 1) ; k<edgeElems; ++k) {
 # 3225 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Real_t AbsDiff; AbsDiff = (({ calling_npm("FABS", 0); FABS_npm(domain.e[j * edgeElems + k] - domain.e[k * edgeElems + j]); })) ;
 # 3226 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   TotalAbsDiff += AbsDiff;
+ printf("\n\nElapsed time = %.10f\n\n", elapsed_time);
 # 3227 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 3228 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   if (MaxAbsDiff < AbsDiff) {MaxAbsDiff = AbsDiff; };
+  Index_t ElemId; ElemId = (0) ;
 # 3229 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("Run completed:  \n");
 # 3230 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Real_t RelDiff; RelDiff = (AbsDiff / domain.e[k * edgeElems + j]) ;
+ printf("   Problem size        =  %i \n", edgeElems);
 # 3231 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("   Iteration count     =  %i \n", domain.cycle);
 # 3232 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   if (MaxRelDiff < RelDiff) {MaxRelDiff = RelDiff; };
+ printf("   Final Origin Energy = %12.6e \n", domain.e[ElemId]);
 # 3233 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  } }
 # 3234 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- } }
+  Real_t MaxAbsDiff; MaxAbsDiff = (Real_t(0.)) ;
 # 3235 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  Real_t TotalAbsDiff; TotalAbsDiff = (Real_t(0.)) ;
 # 3236 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("   Testing Plane 0 of Energy Array:\n");
+  Real_t MaxRelDiff; MaxRelDiff = (Real_t(0.)) ;
 # 3237 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("        MaxAbsDiff   = %12.6e\n", MaxAbsDiff );
 # 3238 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("        TotalAbsDiff = %12.6e\n", TotalAbsDiff );
+ { Index_t j; for ( j = (0) ; j<edgeElems; ++j) {
 # 3239 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- printf("        MaxRelDiff   = %12.6e\n\n", MaxRelDiff );
+  { Index_t k; for ( k = (j + 1) ; k<edgeElems; ++k) {
 # 3240 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    Real_t AbsDiff; AbsDiff = (({ calling_npm("FABS", 0); FABS_npm(domain.e[j * edgeElems + k] - domain.e[k * edgeElems + j]); })) ;
 # 3241 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable50); return 0 ;
+   TotalAbsDiff += AbsDiff;
 # 3242 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3243 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   if (MaxAbsDiff < AbsDiff) {MaxAbsDiff = AbsDiff; };
+# 3244 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3245 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+    Real_t RelDiff; RelDiff = (AbsDiff / domain.e[k * edgeElems + j]) ;
+# 3246 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3247 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   if (MaxRelDiff < RelDiff) {MaxRelDiff = RelDiff; };
+# 3248 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  } }
+# 3249 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ } }
+# 3250 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3251 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("   Testing Plane 0 of Energy Array:\n");
+# 3252 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("        MaxAbsDiff   = %12.6e\n", MaxAbsDiff );
+# 3253 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("        TotalAbsDiff = %12.6e\n", TotalAbsDiff );
+# 3254 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ printf("        MaxRelDiff   = %12.6e\n\n", MaxRelDiff );
+# 3255 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 3256 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable50); return 0 ;
+# 3257 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
 int main(int argc, char *argv[]) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
@@ -18646,251 +18624,246 @@ void CalcCourantConstraintForElems_npm()
  Real_t qqc2 = Real_t(64.0) * qqc * qqc ;
 # 2820 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2821 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        Index_t threads = omp_get_num_threads();
 # 2822 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2823 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2824 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2825 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2826 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        Index_t courant_elem_per_thread[threads];
-# 2827 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        Real_t dtcourant_per_thread[threads];
-# 2828 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2829 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        for (Index_t i = 0; i < threads; i++) {
-# 2830 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                courant_elem_per_thread[i] = -1;
+        Index_t threads = omp_get_num_threads();
 # 2831 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                dtcourant_per_thread[i] = Real_t(1.0e+20);
+# 2831 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        Index_t courant_elem_per_thread[threads];
 # 2832 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        }
+        Real_t dtcourant_per_thread[threads];
 # 2833 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2834 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        for (Index_t i = 0; i < threads; i++) {
 # 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-#pragma omp parallel for firstprivate(length,qqc2), shared(dtcourant,courant_elem)
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2835 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                courant_elem_per_thread[i] = -1;
 # 2836 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0 ; i < length ; ++i) {
+                dtcourant_per_thread[i] = Real_t(1.0e+20);
 # 2837 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Index_t indx = domain.matElemlist[i] ;
+        }
 # 2838 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2839 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  Real_t dtf = domain.ss[indx] * domain.ss[indx] ;
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+#pragma omp parallel for firstprivate(length,qqc2), shared(dtcourant,courant_elem)
+# 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2840 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2841 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if ( domain.vdov[indx] < Real_t(0.) ) {
+ for (Index_t i = 0 ; i < length ; ++i) {
 # 2842 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  Index_t indx = domain.matElemlist[i] ;
 # 2843 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   dtf = dtf
 # 2844 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-            + qqc2 * domain.arealg[indx] * domain.arealg[indx]
+  Real_t dtf = domain.ss[indx] * domain.ss[indx] ;
 # 2845 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-            * domain.vdov[indx] * domain.vdov[indx] ;
 # 2846 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  }
+  if ( domain.vdov[indx] < Real_t(0.) ) {
 # 2847 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2848 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  dtf = SQRT_npm(dtf) ;
+   dtf = dtf
 # 2849 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+            + qqc2 * domain.arealg[indx] * domain.arealg[indx]
 # 2850 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  dtf = domain.arealg[indx] / dtf ;
+            * domain.vdov[indx] * domain.vdov[indx] ;
 # 2851 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  }
 # 2852 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2853 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  if (domain.vdov[indx] != Real_t(0.)) {
+  dtf = SQRT_npm(dtf) ;
 # 2854 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   {
 # 2855 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-    Index_t thread_num = omp_get_thread_num();
+  dtf = domain.arealg[indx] / dtf ;
 # 2856 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2857 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2858 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  if (domain.vdov[indx] != Real_t(0.)) {
 # 2859 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   {
 # 2860 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2861 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         if ( dtf < dtcourant_per_thread[thread_num] ) {
-# 2862 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                         {
-# 2863 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                 dtcourant_per_thread[thread_num] = dtf ;
-# 2864 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                        courant_elem_per_thread[thread_num] = indx ;
-# 2865 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                }
-# 2866 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        }
-# 2867 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2868 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-   }
-# 2869 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  }
+    Index_t thread_num = omp_get_thread_num();
 # 2870 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- }
+# 2870 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                         if ( dtf < dtcourant_per_thread[thread_num] ) {
 # 2871 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- for (Index_t i = 0; i < threads; i++) {
+                         {
 # 2872 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                if(dtcourant_per_thread[i] < dtcourant) {
+                                 dtcourant_per_thread[thread_num] = dtf ;
 # 2873 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        dtcourant = dtcourant_per_thread[i];
+                                        courant_elem_per_thread[thread_num] = indx ;
 # 2874 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        courant_elem = courant_elem_per_thread[i];
+                                }
 # 2875 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                }
+                        }
 # 2876 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        }
 # 2877 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+   }
 # 2878 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  }
 # 2879 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2880 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2881 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- if (courant_elem != -1) {
-# 2882 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.dtcourant = dtcourant ;
-# 2883 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
  }
+# 2880 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ for (Index_t i = 0; i < threads; i++) {
+# 2881 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                if(dtcourant_per_thread[i] < dtcourant) {
+# 2882 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        dtcourant = dtcourant_per_thread[i];
+# 2883 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        courant_elem = courant_elem_per_thread[i];
 # 2884 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                }
 # 2885 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- return ;
+        }
 # 2886 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2887 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2888 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2889 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2890 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ if (courant_elem != -1) {
+# 2891 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.dtcourant = dtcourant ;
+# 2892 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ }
+# 2893 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2894 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ return ;
+# 2895 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
 static inline
-# 2889 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-void CalcHydroConstraintForElems_npm()
-# 2890 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{
-# 2891 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- Real_t dthydro = Real_t(1.0e+20) ;
-# 2892 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- Index_t hydro_elem = -1 ;
-# 2893 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- Real_t dvovmax = domain.dvovmax ;
-# 2894 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- Index_t length = domain.numElem ;
-# 2895 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2896 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- Index_t threads = omp_get_num_threads();
-# 2897 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2898 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+void CalcHydroConstraintForElems_npm()
 # 2899 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+{
 # 2900 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ Real_t dthydro = Real_t(1.0e+20) ;
 # 2901 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        Real_t dthydro_per_thread[threads];
+ Index_t hydro_elem = -1 ;
 # 2902 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        Index_t hydro_elem_per_thread[threads];
+ Real_t dvovmax = domain.dvovmax ;
 # 2903 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ Index_t length = domain.numElem ;
 # 2904 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        for (Index_t i = 0; i < threads; i++) {
 # 2905 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                hydro_elem_per_thread[i] = -1;
 # 2906 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                dthydro_per_thread[i] = Real_t(1.0e+20);
+ Index_t threads = omp_get_num_threads();
 # 2907 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        }
 # 2908 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2909 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-#pragma omp parallel for firstprivate(length), shared(dthydro,hydro_elem)
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2910 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2911 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        for (Index_t i = 0 ; i < length ; ++i) {
 # 2912 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                Index_t indx = domain.matElemlist[i] ;
 # 2913 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2914 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                if (domain.vdov[indx] != Real_t(0.)) {
+        Real_t dthydro_per_thread[threads];
 # 2915 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        Real_t dtdvov = dvovmax / (FABS_npm(domain.vdov[indx])+Real_t(1.e-20)) ;
+        Index_t hydro_elem_per_thread[threads];
 # 2916 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2917 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        Index_t thread_num = omp_get_thread_num();
+        for (Index_t i = 0; i < threads; i++) {
 # 2918 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                hydro_elem_per_thread[i] = -1;
 # 2919 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                dthydro_per_thread[i] = Real_t(1.0e+20);
 # 2920 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        }
 # 2921 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2922 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        if ( dthydro_per_thread[thread_num] > dtdvov ) {
 # 2923 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                {
+        for (Index_t i = 0 ; i < length ; ++i) {
 # 2924 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                        dthydro_per_thread[thread_num] = dtdvov ;
+                Index_t indx = domain.matElemlist[i] ;
 # 2925 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                        hydro_elem_per_thread[thread_num] = indx ;
 # 2926 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                                }
+                if (domain.vdov[indx] != Real_t(0.)) {
 # 2927 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        }
+                        Real_t dtdvov = dvovmax / (FABS_npm(domain.vdov[indx])+Real_t(1.e-20)) ;
 # 2928 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                }
 # 2929 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        }
 # 2930 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        Index_t thread_num = omp_get_thread_num();
 # 2931 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        for (Index_t i = 0; i < threads; i++) {
 # 2932 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                if(dthydro_per_thread[i] < dthydro) {
 # 2933 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        dthydro = dthydro_per_thread[i];
 # 2934 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                        hydro_elem = hydro_elem_per_thread[i];
 # 2935 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-                }
 # 2936 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-        }
 # 2937 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2938 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        if ( dthydro_per_thread[thread_num] > dtdvov ) {
 # 2939 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                                {
 # 2940 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- if (hydro_elem != -1) {
+                                        dthydro_per_thread[thread_num] = dtdvov ;
 # 2941 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-  domain.dthydro = dthydro ;
+                                        hydro_elem_per_thread[thread_num] = indx ;
 # 2942 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- }
+                                }
 # 2943 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        }
 # 2944 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- return ;
+                }
 # 2945 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-}
-
-static inline
+        }
+# 2946 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2947 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        for (Index_t i = 0; i < threads; i++) {
 # 2948 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-void CalcTimeConstraintsForElems_npm() {
+                if(dthydro_per_thread[i] < dthydro) {
 # 2949 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                        dthydro = dthydro_per_thread[i];
 # 2950 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- CalcCourantConstraintForElems_npm() ;
+                        hydro_elem = hydro_elem_per_thread[i];
 # 2951 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+                }
 # 2952 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+        }
 # 2953 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- CalcHydroConstraintForElems_npm() ;
 # 2954 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ if (hydro_elem != -1) {
+# 2955 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+  domain.dthydro = dthydro ;
+# 2956 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ }
+# 2957 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2958 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ return ;
+# 2959 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
 static inline
-# 2957 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-void LagrangeLeapFrog_npm()
-# 2958 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-{
-# 2959 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2960 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2961 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- LagrangeNodal_npm();
 # 2962 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+void CalcTimeConstraintsForElems_npm() {
 # 2963 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2964 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ CalcCourantConstraintForElems_npm() ;
 # 2965 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- LagrangeElements_npm();
 # 2966 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 # 2967 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
- CalcTimeConstraintsForElems_npm();
+ CalcHydroConstraintForElems_npm() ;
 # 2968 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2969 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
-# 2970 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+}
+
+static inline
+# 2971 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+void LagrangeLeapFrog_npm()
+# 2972 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+{
+# 2973 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2974 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2975 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ LagrangeNodal_npm();
+# 2976 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2977 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2978 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2979 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ LagrangeElements_npm();
+# 2980 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2981 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+ CalcTimeConstraintsForElems_npm();
+# 2982 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2983 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
+# 2984 "/home/jmg3/num-debug/src/examples/openmp/lulesh/LULESH_OMP.cc"
 }
 
 
