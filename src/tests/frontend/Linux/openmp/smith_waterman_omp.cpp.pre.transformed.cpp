@@ -120,6 +120,7 @@ extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
 extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
@@ -128,12 +129,12 @@ extern void register_thread_local_stack_vars(unsigned relation,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
+        size_t region_id, int is_parallel_for);
 extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 66 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3217,7 +3218,7 @@ int i;
 # 418 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   nthreads = omp_get_num_threads();
 # 419 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
+  thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
 # 420 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 421 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     if ( argc != 5 ) {
@@ -3459,7 +3460,7 @@ int i;
 # 585 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             }
 # 586 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); }
+         thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 0); }
 # 587 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
            tmp = (curr) ;
@@ -3902,7 +3903,7 @@ int i;
 # 418 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
   nthreads = omp_get_num_threads();
 # 419 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
- } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); }
+  thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
 # 420 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 421 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
     if ( argc != 5 ) {
@@ -4144,7 +4145,7 @@ int i;
 # 585 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
             }
 # 586 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
-        } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); }
+         thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 0); }
 # 587 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
 # 588 "/home/jmg3/num-debug/src/examples/openmp/smithWaterman/smith_waterman_omp.cpp"
            tmp = (curr) ;

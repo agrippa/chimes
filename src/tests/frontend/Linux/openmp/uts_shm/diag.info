@@ -542,7 +542,8 @@ int i;
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1362 5 len=4 main_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1378 11 ;  { call_lbl_19: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(19, &____chimes_region_id0, 4, &et, &ss, &t1, &t2); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1382 3  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 4, &et, &ss, &t1, &t2); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1452 3  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  } 
+InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1452 3  thread_leaving(); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1452 3  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0);  } 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1370 16 (____chimes_does_checkpoint_uts_parseParams_npm ? ( ({  calling((void*)uts_parseParams, 1, ____alias_loc_id_21, 0UL, 2, (size_t)(0UL), (size_t)(12146000192742679286UL)); (uts_parseParams)(argc, argv); }) ) : (({ calling_npm("uts_parseParams", ____alias_loc_id_21); (*____chimes_extern_func_uts_parseParams)(argc, argv); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1370 42 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1378 3 ({ calling_npm("cb_init", 0); cb_init_npm(); })
@@ -849,7 +850,8 @@ int i;
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1362 5 len=4 main_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1378 11 ;  { call_lbl_19: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(19, &____chimes_region_id0, 4, &et, &ss, &t1, &t2); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1382 3  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 4, &et, &ss, &t1, &t2); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1452 3  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  } 
+InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1452 3  thread_leaving(); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1452 3  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0);  } 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1370 16 (____chimes_does_checkpoint_uts_parseParams_npm ? ( ({  calling((void*)uts_parseParams, 1, ____alias_loc_id_21, 0UL, 2, (size_t)(0UL), (size_t)(12146000192742679286UL)); (uts_parseParams)(argc, argv); }) ) : (({ calling_npm("uts_parseParams", ____alias_loc_id_21); (*____chimes_extern_func_uts_parseParams)(argc, argv); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1370 42 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1378 3 ({ calling_npm("cb_init", 0); cb_init_npm(); })

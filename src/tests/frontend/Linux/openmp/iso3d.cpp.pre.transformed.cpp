@@ -87,6 +87,7 @@ extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
 extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
@@ -95,12 +96,12 @@ extern void register_thread_local_stack_vars(unsigned relation,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
+        size_t region_id, int is_parallel_for);
 extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 66 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5303,7 +5304,7 @@ static void fwd_resumable(float *next, float *curr, float *vsq,
 # 85 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
         next[this_offset] = temp + div * vsq[this_offset];
 # 86 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
-    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
+    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 87 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_did_disable0); }
 # 88 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
@@ -5520,7 +5521,7 @@ static void fwd_quick(float *next, float *curr, float *vsq,
 # 85 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
         next[this_offset] = temp + div * vsq[this_offset];
 # 86 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
-    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
+    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 87 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_did_disable0); }
 
