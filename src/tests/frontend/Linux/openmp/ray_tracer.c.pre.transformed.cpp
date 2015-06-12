@@ -103,6 +103,7 @@ extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
 extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
@@ -111,12 +112,12 @@ extern void register_thread_local_stack_vars(unsigned relation,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
+        size_t region_id, int is_parallel_for);
 extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 66 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5632,7 +5633,7 @@ config conf;
 # 281 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         screen[i].b = color.b;
 # 282 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-      } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
+      } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 283 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 284 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       { lbl_2: int i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } for ( i = (0) ; i < conf.nspheres; i++) {
@@ -6140,7 +6141,7 @@ config conf;
 # 281 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         screen[i].b = color.b;
 # 282 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-      } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
+      } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 283 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 284 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       { lbl_2: int i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); for ( i = (0) ; i < conf.nspheres; i++) {

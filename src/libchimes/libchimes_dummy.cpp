@@ -29,6 +29,7 @@ static unsigned long long count_reenable_current_thread = 0;
 static unsigned long long count_entering_omp_parallel = 0;
 static unsigned long long count_register_thread_local_stack_vars = 0;
 static unsigned long long count_leaving_omp_parallel = 0;
+static unsigned long long count_thread_leaving = 0;
 static unsigned long long count_get_parent_vars_stack_depth = 0;
 static unsigned long long count_get_thread_stack_depth = 0;
 static unsigned long long count_checkpoint = 0;
@@ -67,6 +68,7 @@ void onexit() {
     fprintf(stderr, "entering_omp_parallel %llu\n", count_entering_omp_parallel);
     fprintf(stderr, "register_thread_local_stack_vars %llu\n", count_register_thread_local_stack_vars);
     fprintf(stderr, "leaving_omp_parallel %llu\n", count_leaving_omp_parallel);
+    fprintf(stderr, "count_thread_leaving %llu\n", count_thread_leaving);
     fprintf(stderr, "get_parent_vars_stack_depth %llu\n", count_get_parent_vars_stack_depth);
     fprintf(stderr, "get_thread_stack_depth %llu\n", count_get_thread_stack_depth);
     fprintf(stderr, "checkpoint %llu\n", count_checkpoint);
@@ -390,8 +392,14 @@ void register_thread_local_stack_vars(unsigned relation,
 #endif
 }
 
+void thread_leaving() {
+#ifdef __CHIMES_PROFILE
+    __sync_fetch_and_add(&count_thread_leaving, 1);
+#endif
+}
+
 void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id) {
+        size_t region_id, int is_parallel_for) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_leaving_omp_parallel, 1);
 #endif

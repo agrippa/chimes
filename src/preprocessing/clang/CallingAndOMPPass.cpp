@@ -668,7 +668,7 @@ std::string CallingAndOMPPass::get_region_cleanup_code(bool is_parallel_for,
         std::string region_id_varname) {
     std::stringstream leaving_stream;
     leaving_stream << " leaving_omp_parallel(" << call_depth_varname <<
-        ", " << region_id_varname << "); ";
+        ", " << region_id_varname << ", " << is_parallel_for << "); ";
     if (is_parallel_for) {
         leaving_stream << " reenable_current_thread(" << disable_varname <<
                 "); ";
@@ -1121,6 +1121,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     stack_depth_varname, region_id_varname, private_vars);
             InsertTextAfterToken(inner_loc, interior);
 
+            if (!is_parallel_for) {
+                InsertTextBefore(post_loc, " thread_leaving(); ");
+            }
             std::string leaving = get_region_cleanup_code(is_parallel_for,
                     disable_varname, call_depth_varname, region_id_varname);
             InsertTextAfterToken(post_loc, leaving);

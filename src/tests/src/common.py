@@ -741,6 +741,9 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
     while len(chimes_files) > 0 and (time.time() - start_time) < MAX_TEST_TIME:
         checkpoint = random.choice(chimes_files)
+        if config.verbose:
+            sys.stderr.write('Testing checkpoint file ' + checkpoint)
+
         chimes_files.remove(checkpoint)
         env['CHIMES_CHECKPOINT_FILE'] = checkpoint
         env['CHIMES_DISABLE_THROTTLING'] = 'TRUE'
