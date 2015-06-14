@@ -84,11 +84,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -97,7 +98,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1623,7 +1624,7 @@ Domain* initDecomposition_resumable(int xproc, int yproc, int zproc, real3 globa
    dd->procGrid[2] = zproc;
 # 26 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 27 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-    int myRank; call_lbl_4: myRank = ( ({ calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) ) ;
+    int myRank; call_lbl_4: myRank = ( ({ calling((void*)getMyRank, 4, ____alias_loc_id_1, 0UL, 0); (getMyRank)(); }) ) ;
 # 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
 # 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
@@ -1709,7 +1710,7 @@ Domain* initDecomposition_quick(int xproc, int yproc, int zproc, real3 globalExt
    dd->procGrid[2] = zproc;
 # 26 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
 # 27 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
-    int myRank; call_lbl_4: myRank = ( ({ calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) ) ;
+    int myRank; call_lbl_4: myRank = ( ({ calling((void*)getMyRank, 4, ____alias_loc_id_1, 0UL, 0); (getMyRank)(); }) ) ;
 # 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"
    dd->procCoord[0] = myRank % dd->procGrid[0];
 # 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c"

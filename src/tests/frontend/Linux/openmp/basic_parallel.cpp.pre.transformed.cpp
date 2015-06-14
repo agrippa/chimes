@@ -66,11 +66,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -79,7 +80,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2313,7 +2314,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = n
 # 11 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
      int b; b = (4) ;
 # 12 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-     int c; c = (5); { call_lbl_4: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); ;
+     int c; c = (5); { call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); ;
 # 13 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
@@ -2321,7 +2322,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = n
 # 13 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 14 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
+    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 15 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
          int inside; inside = (6) ;
 # 16 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
@@ -2349,7 +2350,7 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_s
 # 11 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
      int b; b = (4) ;
 # 12 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-     int c; c = (5); { call_lbl_4: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); ;
+     int c; c = (5); { call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); ;
 # 13 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
@@ -2357,7 +2358,7 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_s
 # 13 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
 # 14 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
-    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ;
+    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ;
 # 15 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"
          int inside; inside = (6) ;
 # 16 "/home/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp"

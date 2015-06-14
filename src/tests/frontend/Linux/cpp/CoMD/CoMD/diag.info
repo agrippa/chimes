@@ -301,7 +301,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 118 2
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 118 53 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 83 (____chimes_does_checkpoint_getElapsedTime_npm ? ( ({  calling((void*)getElapsedTime, 17, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 111 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 130 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 18, 0, 0UL, 3, (size_t)(9903828072463843323UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", 0); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 130 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 18, ____alias_loc_id_4, 0UL, 3, (size_t)(9903828072463843323UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", ____alias_loc_id_4); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 177 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 122 26 (____chimes_does_checkpoint_profileStart_npm ? ( ({  calling((void*)profileStart, 19, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(timestepTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 122 52 
@@ -315,7 +315,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 130 1
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 130 30 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 80 (____chimes_does_checkpoint_getElapsedTime_npm ? ( ({  calling((void*)getElapsedTime, 24, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 108 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 127 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 25, 0, 0UL, 3, (size_t)(9903828072463843323UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", 0); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 127 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 25, ____alias_loc_id_7, 0UL, 3, (size_t)(9903828072463843323UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", ____alias_loc_id_7); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 174 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 132 18 (____chimes_does_checkpoint_timestampBarrier_npm ? ( ({  calling((void*)timestampBarrier, 26, 0, 0UL, 1, (size_t)(9903828072463844603UL)); (timestampBarrier)("Ending simulation\n"); }) ) : (({ calling_npm("timestampBarrier", 0); (*____chimes_extern_func_timestampBarrier)("Ending simulation\n"); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 132 56 
@@ -436,7 +436,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 2
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 280 11 len=12 initValidate_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 282 17 (____chimes_does_checkpoint_sumAtoms_npm ? ( ({  calling((void*)sumAtoms, 1, ____alias_loc_id_19, 0UL, 1, (size_t)(9903828072463843990UL)); (sumAtoms)(sim); }) ) : (({ calling_npm("sumAtoms", ____alias_loc_id_19); sumAtoms_npm(sim); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 282 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 4, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 4, ____alias_loc_id_20, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_20); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 75 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 290 20 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 6, 0, 0UL, 1, (size_t)(9903828072463844161UL)); (printSeparator)(stdout); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(stdout); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 290 41 
@@ -445,7 +445,7 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 283 18
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 281 278  ; Validate *val;
  if (____must_checkpoint_initValidate_val_0) { register_stack_vars(1, "initValidate|val|0", &____must_checkpoint_initValidate_val_0, "%struct.ValidateSt*", (void *)(&val), (size_t)8, 1, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 298 6 len=14 validateResult_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, ____alias_loc_id_23, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_23); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 75 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 299 447  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 327 6 len=8 sumAtoms_quick
@@ -457,22 +457,22 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 338 2
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 338 49 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 328 252  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 345 6 len=11 printThings_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, ____alias_loc_id_22, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_22); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 74 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 349 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 349 14 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 346 539  ; int nEval;
  if (____must_checkpoint_printThings_nEval_0) { register_stack_vars(1, "printThings|nEval|0", &____must_checkpoint_printThings_nEval_0, "i32", (void *)(&nEval), (size_t)4, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 378 6 len=23 printSimulationDataYaml_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 41 (____chimes_does_checkpoint_maxOccupancy_npm ? ( ({  calling((void*)maxOccupancy, 1, 0, 0UL, 1, (size_t)(9903828072463843614UL)); (maxOccupancy)(s->boxes); }) ) : (({ calling_npm("maxOccupancy", 0); (*____chimes_extern_func_maxOccupancy)(s->boxes); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 41 (____chimes_does_checkpoint_maxOccupancy_npm ? ( ({  calling((void*)maxOccupancy, 1, ____alias_loc_id_15, 0UL, 1, (size_t)(9903828072463843614UL)); (maxOccupancy)(s->boxes); }) ) : (({ calling_npm("maxOccupancy", ____alias_loc_id_15); (*____chimes_extern_func_maxOccupancy)(s->boxes); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 62 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 3, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 3, ____alias_loc_id_16, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_16); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 74 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 394 17 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 9, 0, 0UL, 1, (size_t)(9903828072463843933UL)); (printSeparator)(file); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(file); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 394 36 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 409 18 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 16, 0, 0UL, 1, (size_t)(9903828072463843933UL)); (printSeparator)(file); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(file); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 409 37 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 18 ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, 18, ____alias_loc_id_17, 0UL, 2, 9903828072463843933UL, 9903828072463843614UL)))(file, s->pot)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 18 ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, 18, 0, 0UL, 2, 9903828072463843933UL, 9903828072463843614UL)))(file, s->pot)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 44 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 18 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 19, ____alias_loc_id_18, 0UL, 1, (size_t)(9903828072463843933UL)); (printSeparator)(file); }) ) : (({ calling_npm("printSeparator", ____alias_loc_id_18); (*____chimes_extern_func_printSeparator)(file); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 37 
@@ -504,11 +504,11 @@ int maxOcc;
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 435 6 len=12 sanityChecks_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 441 31  ({  calling((void*)getNRanks, 1, ____alias_loc_id_27, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 441 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 68  ({  calling((void*)printRank, 3, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 68  ({  calling((void*)printRank, 3, ____alias_loc_id_28, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 78 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 68  ({  calling((void*)printRank, 6, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 68  ({  calling((void*)printRank, 6, ____alias_loc_id_29, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 78 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 69  ({  calling((void*)printRank, 10, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 69  ({  calling((void*)printRank, 10, ____alias_loc_id_30, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 79 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 18  ({  calling((void*)bcastParallel, 12, ____alias_loc_id_31, 0UL, 3, (size_t)(9903828072463844390UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&checkCode, sizeof(int), 0); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 58 
@@ -570,7 +570,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 118 2
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 118 53 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 83 (____chimes_does_checkpoint_getElapsedTime_npm ? ( ({  calling((void*)getElapsedTime, 17, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 111 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 130 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 18, 0, 0UL, 3, (size_t)(9903828072463843323UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", 0); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 130 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 18, ____alias_loc_id_4, 0UL, 3, (size_t)(9903828072463843323UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", ____alias_loc_id_4); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 177 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 122 26 (____chimes_does_checkpoint_profileStart_npm ? ( ({  calling((void*)profileStart, 19, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(timestepTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 122 52 
@@ -584,7 +584,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 130 1
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 130 30 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 80 (____chimes_does_checkpoint_getElapsedTime_npm ? ( ({  calling((void*)getElapsedTime, 24, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 108 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 127 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 25, 0, 0UL, 3, (size_t)(9903828072463843323UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", 0); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 127 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 25, ____alias_loc_id_7, 0UL, 3, (size_t)(9903828072463843323UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", ____alias_loc_id_7); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 174 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 132 18 (____chimes_does_checkpoint_timestampBarrier_npm ? ( ({  calling((void*)timestampBarrier, 26, 0, 0UL, 1, (size_t)(9903828072463844603UL)); (timestampBarrier)("Ending simulation\n"); }) ) : (({ calling_npm("timestampBarrier", 0); (*____chimes_extern_func_timestampBarrier)("Ending simulation\n"); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 132 56 
@@ -705,7 +705,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 2
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 280 11 len=12 initValidate_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 282 17 (____chimes_does_checkpoint_sumAtoms_npm ? ( ({  calling((void*)sumAtoms, 1, ____alias_loc_id_19, 0UL, 1, (size_t)(9903828072463843990UL)); (sumAtoms)(sim); }) ) : (({ calling_npm("sumAtoms", ____alias_loc_id_19); sumAtoms_npm(sim); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 282 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 4, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 4, ____alias_loc_id_20, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_20); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 75 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 290 20 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 6, 0, 0UL, 1, (size_t)(9903828072463844161UL)); (printSeparator)(stdout); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(stdout); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 290 41 
@@ -714,7 +714,7 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 283 18
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 281 278  ; Validate *val;
  if (____must_checkpoint_initValidate_val_0) { register_stack_vars(1, "initValidate|val|0", &____must_checkpoint_initValidate_val_0, "%struct.ValidateSt*", (void *)(&val), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 298 6 len=14 validateResult_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, ____alias_loc_id_23, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_23); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 75 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 299 447  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 327 6 len=8 sumAtoms_resumable
@@ -726,22 +726,22 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 338 2
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 338 49 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 328 252  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 345 6 len=11 printThings_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, ____alias_loc_id_22, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_22); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 74 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 349 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 349 14 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 346 539  ; int nEval;
  if (____must_checkpoint_printThings_nEval_0) { register_stack_vars(1, "printThings|nEval|0", &____must_checkpoint_printThings_nEval_0, "i32", (void *)(&nEval), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 378 6 len=23 printSimulationDataYaml_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 41 (____chimes_does_checkpoint_maxOccupancy_npm ? ( ({  LinkCell * ____chimes_arg86;  if (!____chimes_replaying) { ____chimes_arg86 = (s->boxes);  }  calling((void*)maxOccupancy, 1, 0, 0UL, 1, (size_t)(9903828072463843614UL)); (maxOccupancy)(____chimes_arg86); }) ) : (({ calling_npm("maxOccupancy", 0); (*____chimes_extern_func_maxOccupancy)(s->boxes); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 41 (____chimes_does_checkpoint_maxOccupancy_npm ? ( ({  LinkCell * ____chimes_arg86;  if (!____chimes_replaying) { ____chimes_arg86 = (s->boxes);  }  calling((void*)maxOccupancy, 1, ____alias_loc_id_15, 0UL, 1, (size_t)(9903828072463843614UL)); (maxOccupancy)(____chimes_arg86); }) ) : (({ calling_npm("maxOccupancy", ____alias_loc_id_15); (*____chimes_extern_func_maxOccupancy)(s->boxes); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 62 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 3, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 3, ____alias_loc_id_16, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_16); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 74 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 394 17 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 9, 0, 0UL, 1, (size_t)(9903828072463843933UL)); (printSeparator)(file); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(file); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 394 36 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 409 18 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 16, 0, 0UL, 1, (size_t)(9903828072463843933UL)); (printSeparator)(file); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(file); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 409 37 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 18 ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, 18, ____alias_loc_id_17, 0UL, 2, 9903828072463843933UL, 9903828072463843614UL)))(file, s->pot)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 18 ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, 18, 0, 0UL, 2, 9903828072463843933UL, 9903828072463843614UL)))(file, s->pot)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 44 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 18 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 19, ____alias_loc_id_18, 0UL, 1, (size_t)(9903828072463843933UL)); (printSeparator)(file); }) ) : (({ calling_npm("printSeparator", ____alias_loc_id_18); (*____chimes_extern_func_printSeparator)(file); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 37 
@@ -773,11 +773,11 @@ int maxOcc;
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 435 6 len=12 sanityChecks_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 441 31  ({  calling((void*)getNRanks, 1, ____alias_loc_id_27, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 441 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 68  ({  calling((void*)printRank, 3, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 68  ({  calling((void*)printRank, 3, ____alias_loc_id_28, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 78 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 68  ({  calling((void*)printRank, 6, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 68  ({  calling((void*)printRank, 6, ____alias_loc_id_29, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 78 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 69  ({  calling((void*)printRank, 10, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 69  ({  calling((void*)printRank, 10, ____alias_loc_id_30, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 79 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 18  ({  void * ____chimes_arg90;  int ____chimes_arg91;  if (!____chimes_replaying) { ____chimes_arg90 = (&checkCode); ____chimes_arg91 = (sizeof(int));  }  calling((void*)bcastParallel, 12, ____alias_loc_id_31, 0UL, 3, (size_t)(9903828072463844390UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg90, ____chimes_arg91, 0); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 58 

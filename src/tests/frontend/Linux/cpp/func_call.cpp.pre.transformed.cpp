@@ -75,11 +75,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -88,7 +89,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1520,7 +1521,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = n
 # 20 "/home/jmg3/num-debug/src/examples/cpp/func_call.cpp"
      int a; a = (3) ;
 # 21 "/home/jmg3/num-debug/src/examples/cpp/func_call.cpp"
-     int b; call_lbl_1: b = ( ({ calling((void*)foo, 1, 0, 0UL, 1, (size_t)(0UL)); (foo)(a); }) ) ;
+     int b; call_lbl_1: b = ( ({ calling((void*)foo, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (foo)(a); }) ) ;
 # 22 "/home/jmg3/num-debug/src/examples/cpp/func_call.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2); return ({ calling_npm("bar", 0); bar_npm(b); });
 # 23 "/home/jmg3/num-debug/src/examples/cpp/func_call.cpp"
@@ -1561,7 +1562,7 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_s
 # 20 "/home/jmg3/num-debug/src/examples/cpp/func_call.cpp"
      int a; a = (3) ;
 # 21 "/home/jmg3/num-debug/src/examples/cpp/func_call.cpp"
-     int b; call_lbl_1: b = ( ({ calling((void*)foo, 1, 0, 0UL, 1, (size_t)(0UL)); foo_quick(a); }) ) ;
+     int b; call_lbl_1: b = ( ({ calling((void*)foo, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); foo_quick(a); }) ) ;
 # 22 "/home/jmg3/num-debug/src/examples/cpp/func_call.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2); return ({ calling_npm("bar", 0); bar_npm(b); });
 # 23 "/home/jmg3/num-debug/src/examples/cpp/func_call.cpp"

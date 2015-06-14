@@ -284,7 +284,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 120 53 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 83 (____chimes_does_checkpoint_getElapsedTime_npm ? ( ({  calling((void*)getElapsedTime, 17, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 111 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 130 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 18, 0, 0UL, 3, (size_t)(9674039231704591448UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", 0); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 130 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 18, ____alias_loc_id_4, 0UL, 3, (size_t)(9674039231704591448UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", ____alias_loc_id_4); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 177 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 124 26 (____chimes_does_checkpoint_profileStart_npm ? ( ({  calling((void*)profileStart, 19, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(timestepTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 124 52 
@@ -298,7 +298,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 132 30 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 80 (____chimes_does_checkpoint_getElapsedTime_npm ? ( ({  calling((void*)getElapsedTime, 24, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 108 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 127 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 25, 0, 0UL, 3, (size_t)(9674039231704591448UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", 0); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 127 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 25, ____alias_loc_id_7, 0UL, 3, (size_t)(9674039231704591448UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", ____alias_loc_id_7); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 174 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 134 18 (____chimes_does_checkpoint_timestampBarrier_npm ? ( ({  calling((void*)timestampBarrier, 26, 0, 0UL, 1, (size_t)(9674039231704592600UL)); (timestampBarrier)("Ending simulation\n"); }) ) : (({ calling_npm("timestampBarrier", 0); (*____chimes_extern_func_timestampBarrier)("Ending simulation\n"); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 134 56 
@@ -419,7 +419,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/Co
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 282 11 len=12 initValidate_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 284 17 (____chimes_does_checkpoint_sumAtoms_npm ? ( ({  calling((void*)sumAtoms, 1, ____alias_loc_id_18, 0UL, 1, (size_t)(9674039231704591987UL)); (sumAtoms)(sim); }) ) : (({ calling_npm("sumAtoms", ____alias_loc_id_18); sumAtoms_npm(sim); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 284 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 289 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 4, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 289 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 4, ____alias_loc_id_19, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_19); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 289 75 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 292 20 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 6, 0, 0UL, 1, (size_t)(9674039231704592158UL)); (printSeparator)(stdout); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(stdout); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 292 41 
@@ -428,7 +428,7 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 28
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 283 278  ; Validate *val;
  if (____must_checkpoint_initValidate_val_0) { register_stack_vars(1, "initValidate|val|0", &____must_checkpoint_initValidate_val_0, "%struct.ValidateSt*", (void *)(&val), (size_t)8, 1, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 300 6 len=14 validateResult_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 302 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 302 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, ____alias_loc_id_22, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_22); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 302 75 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 301 447  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 329 6 len=8 sumAtoms_quick
@@ -440,22 +440,22 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 340 49 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 330 252  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 347 6 len=11 printThings_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 354 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 354 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, ____alias_loc_id_21, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_21); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 354 74 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 351 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 351 14 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 348 539  ; int nEval;
  if (____must_checkpoint_printThings_nEval_0) { register_stack_vars(1, "printThings|nEval|0", &____must_checkpoint_printThings_nEval_0, "i32", (void *)(&nEval), (size_t)4, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 380 6 len=23 printSimulationDataYaml_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 41 (____chimes_does_checkpoint_maxOccupancy_npm ? ( ({  calling((void*)maxOccupancy, 1, 0, 0UL, 1, (size_t)(9674039231704591731UL)); (maxOccupancy)(s->boxes); }) ) : (({ calling_npm("maxOccupancy", 0); (*____chimes_extern_func_maxOccupancy)(s->boxes); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 41 (____chimes_does_checkpoint_maxOccupancy_npm ? ( ({  calling((void*)maxOccupancy, 1, ____alias_loc_id_15, 0UL, 1, (size_t)(9674039231704591731UL)); (maxOccupancy)(s->boxes); }) ) : (({ calling_npm("maxOccupancy", ____alias_loc_id_15); (*____chimes_extern_func_maxOccupancy)(s->boxes); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 62 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 386 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 3, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 386 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 3, ____alias_loc_id_16, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_16); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 386 74 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 396 17 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 9, 0, 0UL, 1, (size_t)(9674039231704591930UL)); (printSeparator)(file); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(file); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 396 36 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 411 18 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 16, 0, 0UL, 1, (size_t)(9674039231704591930UL)); (printSeparator)(file); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(file); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 411 37 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 413 18 ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, 18, ____alias_loc_id_17, 0UL, 2, 9674039231704591930UL, 9674039231704591731UL)))(file, s->pot)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 413 18 ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, 18, 0, 0UL, 2, 9674039231704591930UL, 9674039231704591731UL)))(file, s->pot)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 413 44 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 15 
@@ -464,11 +464,11 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/Co
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 419 6 len=12 sanityChecks_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 425 31  ({  calling((void*)getNRanks, 1, ____alias_loc_id_26, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 425 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 428 68  ({  calling((void*)printRank, 3, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 428 68  ({  calling((void*)printRank, 3, ____alias_loc_id_27, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 428 78 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 444 68  ({  calling((void*)printRank, 6, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 444 68  ({  calling((void*)printRank, 6, ____alias_loc_id_28, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 444 78 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 455 69  ({  calling((void*)printRank, 10, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 455 69  ({  calling((void*)printRank, 10, ____alias_loc_id_29, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 455 79 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 461 18  ({  calling((void*)bcastParallel, 12, ____alias_loc_id_30, 0UL, 3, (size_t)(9674039231704592387UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&checkCode, sizeof(int), 0); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 461 58 
@@ -530,7 +530,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 120 53 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 83 (____chimes_does_checkpoint_getElapsedTime_npm ? ( ({  calling((void*)getElapsedTime, 17, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 111 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 130 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 18, 0, 0UL, 3, (size_t)(9674039231704591448UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", 0); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 130 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 18, ____alias_loc_id_4, 0UL, 3, (size_t)(9674039231704591448UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_0); }) ) : (({ calling_npm("printThings", ____alias_loc_id_4); printThings_npm(sim, iStep, ____chimes_unroll_var_0); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 122 177 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 124 26 (____chimes_does_checkpoint_profileStart_npm ? ( ({  calling((void*)profileStart, 19, 0, 0UL, 1, (size_t)(0UL)); (profileStart)(timestepTimer); }) ) : (({ calling_npm("profileStart", 0); (*____chimes_extern_func_profileStart)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 124 52 
@@ -544,7 +544,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 132 30 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 80 (____chimes_does_checkpoint_getElapsedTime_npm ? ( ({  calling((void*)getElapsedTime, 24, 0, 0UL, 1, (size_t)(0UL)); (getElapsedTime)(timestepTimer); }) ) : (({ calling_npm("getElapsedTime", 0); (*____chimes_extern_func_getElapsedTime)(timestepTimer); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 108 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 127 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 25, 0, 0UL, 3, (size_t)(9674039231704591448UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", 0); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 127 (____chimes_does_checkpoint_printThings_npm ? ( ({  calling((void*)printThings, 25, ____alias_loc_id_7, 0UL, 3, (size_t)(9674039231704591448UL), (size_t)(0UL), (size_t)(0UL)); (printThings)(sim, iStep, ____chimes_unroll_var_1); }) ) : (({ calling_npm("printThings", ____alias_loc_id_7); printThings_npm(sim, iStep, ____chimes_unroll_var_1); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 133 174 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 134 18 (____chimes_does_checkpoint_timestampBarrier_npm ? ( ({  calling((void*)timestampBarrier, 26, 0, 0UL, 1, (size_t)(9674039231704592600UL)); (timestampBarrier)("Ending simulation\n"); }) ) : (({ calling_npm("timestampBarrier", 0); (*____chimes_extern_func_timestampBarrier)("Ending simulation\n"); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 134 56 
@@ -665,7 +665,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/Co
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 282 11 len=12 initValidate_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 284 17 (____chimes_does_checkpoint_sumAtoms_npm ? ( ({  calling((void*)sumAtoms, 1, ____alias_loc_id_18, 0UL, 1, (size_t)(9674039231704591987UL)); (sumAtoms)(sim); }) ) : (({ calling_npm("sumAtoms", ____alias_loc_id_18); sumAtoms_npm(sim); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 284 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 289 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 4, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 289 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 4, ____alias_loc_id_19, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_19); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 289 75 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 292 20 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 6, 0, 0UL, 1, (size_t)(9674039231704592158UL)); (printSeparator)(stdout); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(stdout); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 292 41 
@@ -674,7 +674,7 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 28
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 283 278  ; Validate *val;
  if (____must_checkpoint_initValidate_val_0) { register_stack_vars(1, "initValidate|val|0", &____must_checkpoint_initValidate_val_0, "%struct.ValidateSt*", (void *)(&val), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 300 6 len=14 validateResult_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 302 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 302 65 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, ____alias_loc_id_22, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_22); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 302 75 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 301 447  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 329 6 len=8 sumAtoms_resumable
@@ -686,22 +686,22 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 340 49 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 330 252  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 347 6 len=11 printThings_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 354 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 354 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 2, ____alias_loc_id_21, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_21); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 354 74 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 351 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 351 14 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 348 539  ; int nEval;
  if (____must_checkpoint_printThings_nEval_0) { register_stack_vars(1, "printThings|nEval|0", &____must_checkpoint_printThings_nEval_0, "i32", (void *)(&nEval), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 380 6 len=23 printSimulationDataYaml_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 41 (____chimes_does_checkpoint_maxOccupancy_npm ? ( ({  LinkCell * ____chimes_arg86;  if (!____chimes_replaying) { ____chimes_arg86 = (s->boxes);  }  calling((void*)maxOccupancy, 1, 0, 0UL, 1, (size_t)(9674039231704591731UL)); (maxOccupancy)(____chimes_arg86); }) ) : (({ calling_npm("maxOccupancy", 0); (*____chimes_extern_func_maxOccupancy)(s->boxes); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 41 (____chimes_does_checkpoint_maxOccupancy_npm ? ( ({  LinkCell * ____chimes_arg86;  if (!____chimes_replaying) { ____chimes_arg86 = (s->boxes);  }  calling((void*)maxOccupancy, 1, ____alias_loc_id_15, 0UL, 1, (size_t)(9674039231704591731UL)); (maxOccupancy)(____chimes_arg86); }) ) : (({ calling_npm("maxOccupancy", ____alias_loc_id_15); (*____chimes_extern_func_maxOccupancy)(s->boxes); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 62 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 386 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 3, 0, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", 0); (*____chimes_extern_func_printRank)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 386 64 (____chimes_does_checkpoint_printRank_npm ? ( ({  calling((void*)printRank, 3, ____alias_loc_id_16, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_16); (*____chimes_extern_func_printRank)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 386 74 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 396 17 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 9, 0, 0UL, 1, (size_t)(9674039231704591930UL)); (printSeparator)(file); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(file); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 396 36 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 411 18 (____chimes_does_checkpoint_printSeparator_npm ? ( ({  calling((void*)printSeparator, 16, 0, 0UL, 1, (size_t)(9674039231704591930UL)); (printSeparator)(file); }) ) : (({ calling_npm("printSeparator", 0); (*____chimes_extern_func_printSeparator)(file); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 411 37 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 413 18 ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, 18, ____alias_loc_id_17, 0UL, 2, 9674039231704591930UL, 9674039231704591731UL)))(file, s->pot)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 413 18 ((void (*)(FILE *, struct BasePotentialSt *))(translate_fptr((void *)s->pot->print, 18, 0, 0UL, 2, 9674039231704591930UL, 9674039231704591731UL)))(file, s->pot)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 413 44 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 15 
@@ -710,11 +710,11 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/Co
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 419 6 len=12 sanityChecks_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 425 31  ({  calling((void*)getNRanks, 1, ____alias_loc_id_26, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 425 41 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 428 68  ({  calling((void*)printRank, 3, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 428 68  ({  calling((void*)printRank, 3, ____alias_loc_id_27, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 428 78 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 444 68  ({  calling((void*)printRank, 6, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 444 68  ({  calling((void*)printRank, 6, ____alias_loc_id_28, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 444 78 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 455 69  ({  calling((void*)printRank, 10, 0, 0UL, 0); (printRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 455 69  ({  calling((void*)printRank, 10, ____alias_loc_id_29, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 455 79 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 461 18  ({  void * ____chimes_arg89;  int ____chimes_arg90;  if (!____chimes_replaying) { ____chimes_arg89 = (&checkCode); ____chimes_arg90 = (sizeof(int));  }  calling((void*)bcastParallel, 12, ____alias_loc_id_30, 0UL, 3, (size_t)(9674039231704592387UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg89, ____chimes_arg90, 0); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 461 58 

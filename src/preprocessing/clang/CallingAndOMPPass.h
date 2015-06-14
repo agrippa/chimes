@@ -113,6 +113,7 @@ private:
     std::string insert_at_front;
 
     std::string get_chimes_parent_thread_varname();
+    std::string get_chimes_parent_ctx_varname();
     bool is_inside_if_cond(const clang::Stmt *stmt);
     bool is_inside_while_cond(const clang::Stmt *stmt);
     std::string get_unique_blocker_varname();
@@ -154,12 +155,12 @@ private:
             std::vector<std::string> > *clauses);
     std::string get_region_setup_code(std::set<std::string> private_vars,
             bool is_parallel_for, std::string disable_varname,
-            std::string blocker_varname, std::string parent_thread_varname,
+            std::string blocker_varname, std::string parent_thread_varname, std::string parent_ctx_varname,
             std::string stack_depth_varname, std::string region_id_varname,
             std::string call_depth_varname, OMPRegion *region,
             OpenMPPragma pragma);
     std::string get_region_interior_code(bool is_parallel_for,
-            std::string blocker_varname, std::string parent_thread_varname,
+            std::string blocker_varname, std::string parent_thread_varname, std::string parent_ctx_varname,
             std::string stack_depth_varname, std::string region_id_varname,
             std::set<std::string> private_vars);
     std::string get_region_cleanup_code(bool is_parallel_for,
@@ -181,6 +182,7 @@ private:
     std::map<std::string, std::set<std::string> > supported_omp_clauses;
     std::set<std::string> supported_omp_pragmas;
     int chimes_parent_thread_counter = 0;
+    int chimes_parent_ctx_counter = 0;
     int blocker_varname_counter = 0;
     int parent_stack_depth_varname_counter = 0;
     int call_stack_depth_varname_counter = 0;

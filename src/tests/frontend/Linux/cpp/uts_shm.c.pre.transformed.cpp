@@ -230,11 +230,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -243,7 +244,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4452,7 +4453,7 @@ void ss_push_resumable(StealStack *s, Node *c) {const int ____chimes_did_disable
 # 479 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   if (s->top >= s->stackSize) {({ calling_npm("ss_error", 0); ss_error_npm("ss_push: overflow"); }); };
 # 481 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_rng_showstate_npm ? ( ({ uint8 * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (c->state.state); } calling((void*)rng_showstate, 1, 0, 8860909695567162404UL, 2, (size_t)(8860909695567162460UL), (size_t)(8860909695567163991UL)); (rng_showstate)(____chimes_arg0, debug_str); }) ) : (({ calling_npm("rng_showstate", 0); (*____chimes_extern_func_rng_showstate)(c->state.state, debug_str); })))) ; printf("ss_push: Thread %d, posn %d: node %s [%d]\n", 0, s->top, ____chimes_unroll_var_0, c->height); };
+  if (debug & 1) { char *____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_rng_showstate_npm ? ( ({ uint8 * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (c->state.state); } calling((void*)rng_showstate, 1, ____alias_loc_id_0, 8860909695567162404UL, 2, (size_t)(8860909695567162460UL), (size_t)(8860909695567163991UL)); (rng_showstate)(____chimes_arg0, debug_str); }) ) : (({ calling_npm("rng_showstate", ____alias_loc_id_0); (*____chimes_extern_func_rng_showstate)(c->state.state, debug_str); })))) ; printf("ss_push: Thread %d, posn %d: node %s [%d]\n", 0, s->top, ____chimes_unroll_var_0, c->height); };
 # 484 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   memcpy(&(s->stack[s->top]), c, sizeof(Node));
 # 485 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -4479,7 +4480,7 @@ Node * ss_top_resumable(StealStack *s) {const int ____chimes_did_disable9 = new_
 # 496 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   r = &(s->stack[(s->top) - 1]);
 # 497 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_1; call_lbl_1: ____chimes_unroll_var_1 = ( ({ uint8 * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (r->state.state); } calling((void*)rng_showstate, 1, 0, 8860909695567162522UL, 2, (size_t)(8860909695567162510UL), (size_t)(8860909695567163991UL)); (rng_showstate)(____chimes_arg2, debug_str); }) ) ; printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top - 1, ____chimes_unroll_var_1, r->height, r->numChildren); };
+  if (debug & 1) { char *____chimes_unroll_var_1; call_lbl_1: ____chimes_unroll_var_1 = ( ({ uint8 * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (r->state.state); } calling((void*)rng_showstate, 1, ____alias_loc_id_1, 8860909695567162522UL, 2, (size_t)(8860909695567162510UL), (size_t)(8860909695567163991UL)); (rng_showstate)(____chimes_arg2, debug_str); }) ) ; printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top - 1, ____chimes_unroll_var_1, r->height, r->numChildren); };
 # 501 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   rm_stack(true, 8860909695567162510UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_33, ____chimes_did_disable9); return r;
 # 502 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -4500,7 +4501,7 @@ void ss_pop_resumable(StealStack *s) {const int ____chimes_did_disable10 = new_s
 # 510 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   r = &(s->stack[s->top]);
 # 511 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_2; call_lbl_1: ____chimes_unroll_var_2 = ( ({ uint8 * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (r->state.state); } calling((void*)rng_showstate, 1, 0, 8860909695567162579UL, 2, (size_t)(8860909695567162567UL), (size_t)(8860909695567163991UL)); (rng_showstate)(____chimes_arg4, debug_str); }) ) ; printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top, ____chimes_unroll_var_2, r->height, r->numChildren); };
+  if (debug & 1) { char *____chimes_unroll_var_2; call_lbl_1: ____chimes_unroll_var_2 = ( ({ uint8 * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (r->state.state); } calling((void*)rng_showstate, 1, ____alias_loc_id_2, 8860909695567162579UL, 2, (size_t)(8860909695567162567UL), (size_t)(8860909695567163991UL)); (rng_showstate)(____chimes_arg4, debug_str); }) ) ; printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top, ____chimes_unroll_var_2, r->height, r->numChildren); };
 # 515 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_pop", &____must_manage_ss_pop, ____alias_loc_id_34, ____chimes_did_disable10); }
 # 516 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -4666,7 +4667,7 @@ int victimShared;
 # 628 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
            r = (&(s->stack[s->top + i])) ;
 # 629 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-             call_lbl_5: ____chimes_unroll_var_3 = ( ({ uint8 * ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = (r->state.state); } calling((void*)rng_showstate, 5, 0, 8860909695567162896UL, 2, (size_t)(8860909695567162888UL), (size_t)(8860909695567163991UL)); (rng_showstate)(____chimes_arg6, debug_str); }) ) ; printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
+             call_lbl_5: ____chimes_unroll_var_3 = ( ({ uint8 * ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = (r->state.state); } calling((void*)rng_showstate, 5, ____alias_loc_id_3, 8860909695567162896UL, 2, (size_t)(8860909695567162888UL), (size_t)(8860909695567163991UL)); (rng_showstate)(____chimes_arg6, debug_str); }) ) ; printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
 # 630 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
                0, s->top + i, s->nSteal,
 # 631 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -4852,7 +4853,7 @@ int parentHeight;
 # 964 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   if (debug & 2) {
 # 965 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-        ____chimes_unroll_var_4 = (({ calling_npm("ss_topPosn", 0); ss_topPosn_npm(ss); })) ; call_lbl_3: ____chimes_unroll_var_5 = ( ({ uint8 * ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = (parent->state.state); } calling((void*)rng_showstate, 3, 0, 8860909695567163186UL, 2, (size_t)(8860909695567163253UL), (size_t)(8860909695567163991UL)); (rng_showstate)(____chimes_arg12, debug_str); }) ) ; printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
+        ____chimes_unroll_var_4 = (({ calling_npm("ss_topPosn", 0); ss_topPosn_npm(ss); })) ; call_lbl_3: ____chimes_unroll_var_5 = ( ({ uint8 * ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = (parent->state.state); } calling((void*)rng_showstate, 3, ____alias_loc_id_9, 8860909695567163186UL, 2, (size_t)(8860909695567163253UL), (size_t)(8860909695567163991UL)); (rng_showstate)(____chimes_arg12, debug_str); }) ) ; printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
 # 966 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
            0, ____chimes_unroll_var_4,
 # 967 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -5642,7 +5643,7 @@ void ss_push_quick(StealStack *s, Node *c) {const int ____chimes_did_disable8 = 
 # 479 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   if (s->top >= s->stackSize) {({ calling_npm("ss_error", 0); ss_error_npm("ss_push: overflow"); }); };
 # 481 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_rng_showstate_npm ? ( ({ calling((void*)rng_showstate, 1, 0, 8860909695567162404UL, 2, (size_t)(8860909695567162460UL), (size_t)(8860909695567163991UL)); (rng_showstate)(c->state.state, debug_str); }) ) : (({ calling_npm("rng_showstate", 0); (*____chimes_extern_func_rng_showstate)(c->state.state, debug_str); })))) ; printf("ss_push: Thread %d, posn %d: node %s [%d]\n", 0, s->top, ____chimes_unroll_var_0, c->height); };
+  if (debug & 1) { char *____chimes_unroll_var_0; call_lbl_1: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_rng_showstate_npm ? ( ({ calling((void*)rng_showstate, 1, ____alias_loc_id_0, 8860909695567162404UL, 2, (size_t)(8860909695567162460UL), (size_t)(8860909695567163991UL)); (rng_showstate)(c->state.state, debug_str); }) ) : (({ calling_npm("rng_showstate", ____alias_loc_id_0); (*____chimes_extern_func_rng_showstate)(c->state.state, debug_str); })))) ; printf("ss_push: Thread %d, posn %d: node %s [%d]\n", 0, s->top, ____chimes_unroll_var_0, c->height); };
 # 484 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   memcpy(&(s->stack[s->top]), c, sizeof(Node));
 # 485 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -5667,7 +5668,7 @@ Node * ss_top_quick(StealStack *s) {const int ____chimes_did_disable9 = new_stac
 # 496 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   r = &(s->stack[(s->top) - 1]);
 # 497 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_1; call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)rng_showstate, 1, 0, 8860909695567162522UL, 2, (size_t)(8860909695567162510UL), (size_t)(8860909695567163991UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top - 1, ____chimes_unroll_var_1, r->height, r->numChildren); };
+  if (debug & 1) { char *____chimes_unroll_var_1; call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)rng_showstate, 1, ____alias_loc_id_1, 8860909695567162522UL, 2, (size_t)(8860909695567162510UL), (size_t)(8860909695567163991UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_top: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top - 1, ____chimes_unroll_var_1, r->height, r->numChildren); };
 # 501 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   rm_stack(true, 8860909695567162510UL, "ss_top", &____must_manage_ss_top, ____alias_loc_id_33, ____chimes_did_disable9); return r;
 # 502 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -5686,7 +5687,7 @@ void ss_pop_quick(StealStack *s) {const int ____chimes_did_disable10 = new_stack
 # 510 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   r = &(s->stack[s->top]);
 # 511 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-  if (debug & 1) { char *____chimes_unroll_var_2; call_lbl_1: ____chimes_unroll_var_2 = ( ({ calling((void*)rng_showstate, 1, 0, 8860909695567162579UL, 2, (size_t)(8860909695567162567UL), (size_t)(8860909695567163991UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top, ____chimes_unroll_var_2, r->height, r->numChildren); };
+  if (debug & 1) { char *____chimes_unroll_var_2; call_lbl_1: ____chimes_unroll_var_2 = ( ({ calling((void*)rng_showstate, 1, ____alias_loc_id_2, 8860909695567162579UL, 2, (size_t)(8860909695567162567UL), (size_t)(8860909695567163991UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_pop: Thread %d, posn %d: node %s [%d] nchild = %d\n", 0, s->top, ____chimes_unroll_var_2, r->height, r->numChildren); };
 # 515 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
 rm_stack(false, 0UL, "ss_pop", &____must_manage_ss_pop, ____alias_loc_id_34, ____chimes_did_disable10); }
 
@@ -5837,7 +5838,7 @@ int victimShared;
 # 628 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
            r = (&(s->stack[s->top + i])) ;
 # 629 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-             call_lbl_5: ____chimes_unroll_var_3 = ( ({ calling((void*)rng_showstate, 5, 0, 8860909695567162896UL, 2, (size_t)(8860909695567162888UL), (size_t)(8860909695567163991UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
+             call_lbl_5: ____chimes_unroll_var_3 = ( ({ calling((void*)rng_showstate, 5, ____alias_loc_id_3, 8860909695567162896UL, 2, (size_t)(8860909695567162888UL), (size_t)(8860909695567163991UL)); (rng_showstate)(r->state.state, debug_str); }) ) ; printf("ss_steal:  Thread %2d posn %d (steal #%d) receives %s [%d] from thread %d posn %d (%p)\n",
 # 630 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
                0, s->top + i, s->nSteal,
 # 631 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
@@ -5999,7 +6000,7 @@ int parentHeight;
 # 964 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
   if (debug & 2) {
 # 965 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
-        ____chimes_unroll_var_4 = (({ calling_npm("ss_topPosn", 0); ss_topPosn_npm(ss); })) ; call_lbl_3: ____chimes_unroll_var_5 = ( ({ calling((void*)rng_showstate, 3, 0, 8860909695567163186UL, 2, (size_t)(8860909695567163253UL), (size_t)(8860909695567163991UL)); (rng_showstate)(parent->state.state, debug_str); }) ) ; printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
+        ____chimes_unroll_var_4 = (({ calling_npm("ss_topPosn", 0); ss_topPosn_npm(ss); })) ; call_lbl_3: ____chimes_unroll_var_5 = ( ({ calling((void*)rng_showstate, 3, ____alias_loc_id_9, 8860909695567163186UL, 2, (size_t)(8860909695567163253UL), (size_t)(8860909695567163991UL)); (rng_showstate)(parent->state.state, debug_str); }) ) ; printf("Gen:  Thread %d, posn %2d: node %s [%d] has %2d children\n",
 # 966 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"
            0, ____chimes_unroll_var_4,
 # 967 "/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c"

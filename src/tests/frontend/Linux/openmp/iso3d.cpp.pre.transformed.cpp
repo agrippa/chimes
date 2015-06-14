@@ -88,11 +88,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -101,7 +102,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5254,7 +5255,7 @@ static void fwd_resumable(float *next, float *curr, float *vsq,
         int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(15454548431914371574UL), (size_t)(15454548431914371575UL), (size_t)(15454548431914371576UL), (size_t)(15454548431914371577UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 55 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 56 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
-     size_t total_iters; total_iters = (nz * ny * nx); { call_lbl_2: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
+     size_t total_iters; total_iters = (nz * ny * nx); { call_lbl_2: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
 # 57 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
@@ -5263,7 +5264,7 @@ static void fwd_resumable(float *next, float *curr, float *vsq,
 # 58 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 59 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
-    for (size_t i = 0; i < total_iters; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
+    for (size_t i = 0; i < total_iters; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
 # 60 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
          int z; z = ((i / (ny * nx))) ;
 # 61 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
@@ -5424,7 +5425,7 @@ config conf;
 # 144 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
     } }
 # 145 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
-    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); }))) - start) ;
+    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, ____alias_loc_id_4, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", ____alias_loc_id_4); (*____chimes_extern_func_seconds)(); }))) - start) ;
 # 146 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 147 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
      call_lbl_20: (____chimes_does_checkpoint_finish_progress_npm ? ( ({ calling((void*)finish_progress, 20, ____alias_loc_id_5, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_5); (*____chimes_extern_func_finish_progress)(); })));
@@ -5471,7 +5472,7 @@ static void fwd_quick(float *next, float *curr, float *vsq,
         int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(15454548431914371574UL), (size_t)(15454548431914371575UL), (size_t)(15454548431914371576UL), (size_t)(15454548431914371577UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 55 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 56 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
-     size_t total_iters; total_iters = (nz * ny * nx); { call_lbl_2: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
+     size_t total_iters; total_iters = (nz * ny * nx); { call_lbl_2: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
 # 57 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
@@ -5480,7 +5481,7 @@ static void fwd_quick(float *next, float *curr, float *vsq,
 # 58 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 59 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
-    for (size_t i = 0; i < total_iters; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
+    for (size_t i = 0; i < total_iters; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
 # 60 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
          int z; z = ((i / (ny * nx))) ;
 # 61 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
@@ -5644,7 +5645,7 @@ config conf;
 # 144 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
     } }
 # 145 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
-    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); }))) - start) ;
+    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, ____alias_loc_id_4, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", ____alias_loc_id_4); (*____chimes_extern_func_seconds)(); }))) - start) ;
 # 146 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
 # 147 "/home/jmg3/num-debug/src/examples/openmp/iso3d.cpp"
      call_lbl_20: (____chimes_does_checkpoint_finish_progress_npm ? ( ({ calling((void*)finish_progress, 20, ____alias_loc_id_5, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_5); (*____chimes_extern_func_finish_progress)(); })));
