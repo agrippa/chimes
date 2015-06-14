@@ -1,2 +1,1 @@
-/home/jmg3/num-debug/src/examples/cpp/nocheckpoint_attr.cpp 13 13 : { 1, 2, 3, 4, 5, 46, 55 } direct:call:foo { foo { 46 } }
-/home/jmg3/num-debug/src/examples/cpp/nocheckpoint_attr.cpp 18 5 : { 6, 46, 55 } direct:call:checkpoint {  }
+/home/jmg3/num-debug/src/examples/cpp/nocheckpoint_attr.cpp 18 5 : { 1, 2, 3, 4, 5, 6, 46, 55 } direct:call:checkpoint { foo { 46 } }

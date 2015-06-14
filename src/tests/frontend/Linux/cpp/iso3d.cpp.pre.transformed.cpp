@@ -92,11 +92,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -105,7 +106,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -5490,7 +5491,7 @@ config conf;
 # 141 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
     } }
 # 142 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); }))) - start) ;
+    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, ____alias_loc_id_4, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", ____alias_loc_id_4); (*____chimes_extern_func_seconds)(); }))) - start) ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 144 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
      call_lbl_20: (____chimes_does_checkpoint_finish_progress_npm ? ( ({ calling((void*)finish_progress, 20, ____alias_loc_id_5, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_5); (*____chimes_extern_func_finish_progress)(); })));
@@ -5702,7 +5703,7 @@ config conf;
 # 141 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
     } }
 # 142 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
-    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); }))) - start) ;
+    alias_group_changed(____alias_loc_id_4); call_lbl_19: elapsed_s = ((____chimes_does_checkpoint_seconds_npm ? ( ({ calling((void*)seconds, 19, ____alias_loc_id_4, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", ____alias_loc_id_4); (*____chimes_extern_func_seconds)(); }))) - start) ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
 # 144 "/home/jmg3/num-debug/src/examples/cpp/iso3d.cpp"
      call_lbl_20: (____chimes_does_checkpoint_finish_progress_npm ? ( ({ calling((void*)finish_progress, 20, ____alias_loc_id_5, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_5); (*____chimes_extern_func_finish_progress)(); })));

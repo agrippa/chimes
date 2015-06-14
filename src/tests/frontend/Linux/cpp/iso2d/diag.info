@@ -151,7 +151,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 124 23 checkpoi
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 124 34 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 127 23 (____chimes_does_checkpoint_update_progress_npm ? ( ({  calling((void*)update_progress, 17, 0, 0UL, 1, (size_t)(0UL)); (update_progress)(step + 1); }) ) : (({ calling_npm("update_progress", 0); (*____chimes_extern_func_update_progress)(step + 1); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 127 47 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 93 (____chimes_does_checkpoint_seconds_npm ? ( ({  calling((void*)seconds, 19, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 93 (____chimes_does_checkpoint_seconds_npm ? ( ({  calling((void*)seconds, 19, ____alias_loc_id_4, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", ____alias_loc_id_4); (*____chimes_extern_func_seconds)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 101 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 131 19 (____chimes_does_checkpoint_finish_progress_npm ? ( ({  calling((void*)finish_progress, 20, ____alias_loc_id_5, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_5); (*____chimes_extern_func_finish_progress)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 131 35 
@@ -233,7 +233,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 124 23 checkpoi
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 124 34 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 127 23 (____chimes_does_checkpoint_update_progress_npm ? ( ({  int ____chimes_arg23;  if (!____chimes_replaying) { ____chimes_arg23 = (step + 1);  }  calling((void*)update_progress, 17, 0, 0UL, 1, (size_t)(0UL)); (update_progress)(____chimes_arg23); }) ) : (({ calling_npm("update_progress", 0); (*____chimes_extern_func_update_progress)(step + 1); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 127 47 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 93 (____chimes_does_checkpoint_seconds_npm ? ( ({  calling((void*)seconds, 19, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 93 (____chimes_does_checkpoint_seconds_npm ? ( ({  calling((void*)seconds, 19, ____alias_loc_id_4, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", ____alias_loc_id_4); (*____chimes_extern_func_seconds)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 129 101 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 131 19 (____chimes_does_checkpoint_finish_progress_npm ? ( ({  calling((void*)finish_progress, 20, ____alias_loc_id_5, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_5); (*____chimes_extern_func_finish_progress)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/iso2d.cpp 131 35 

@@ -165,11 +165,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -178,7 +179,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4006,7 +4007,7 @@ const real_t *localMin;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    px=py=pz=0.0;
 # 100 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   { for ( ix = (begin[0]) ;ix < end[0]; ++ix) { { { { for ( iy = (begin[1]) ; iy < end[1]; ++iy) for ( iz = (begin[2]) ; iz < end[2]; ++iz) for ( ib = (0) ; ib < nb; ++ib) { rx = ((ix + basis[ib][0]) * lat) ; ry = ((iy + basis[ib][1]) * lat) ; rz = ((iz + basis[ib][2]) * lat) ; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ; call_lbl_3: ({ LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); } calling((void*)putAtomInBox, 3, 0, 0UL, 10, (size_t)(930458318103041550UL), (size_t)(930458318103041550UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, id, 0, rx, ry, rz, px, py, pz); }) ; } } } }; } }
+   { for ( ix = (begin[0]) ;ix < end[0]; ++ix) { { { { for ( iy = (begin[1]) ; iy < end[1]; ++iy) for ( iz = (begin[2]) ; iz < end[2]; ++iz) for ( ib = (0) ; ib < nb; ++ib) { rx = ((ix + basis[ib][0]) * lat) ; ry = ((iy + basis[ib][1]) * lat) ; rz = ((iz + basis[ib][2]) * lat) ; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ; call_lbl_3: ({ LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); } calling((void*)putAtomInBox, 3, ____alias_loc_id_0, 0UL, 10, (size_t)(930458318103041550UL), (size_t)(930458318103041550UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, id, 0, rx, ry, rz, px, py, pz); }) ; } } } }; } }
 # 114 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 115 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 116 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4100,7 +4101,7 @@ int iType;
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
             sigma = (sqrt(kB_eV * temperature / mass)) ;
 # 169 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-             call_lbl_2: seed = ( ({ uint32_t ____chimes_arg20; uint32_t ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg20 = (s->atoms->gid[iOff]); ____chimes_arg21 = (123); } calling((void*)mkSeed, 2, 0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (mkSeed)(____chimes_arg20, ____chimes_arg21); }) ) ;
+             call_lbl_2: seed = ( ({ uint32_t ____chimes_arg20; uint32_t ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg20 = (s->atoms->gid[iOff]); ____chimes_arg21 = (123); } calling((void*)mkSeed, 2, ____alias_loc_id_4, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (mkSeed)(____chimes_arg20, ____chimes_arg21); }) ) ;
 # 170 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
           call_lbl_3: s->atoms->p[iOff][0] = mass * sigma * ({ calling((void*)gasdev, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(930458318103041939UL)); (gasdev)(&seed); }) ;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4174,7 +4175,7 @@ int iBox;
 # 206 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
       {
 # 207 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-             call_lbl_1: seed = ( ({ uint32_t ____chimes_arg29; uint32_t ____chimes_arg30; if (!____chimes_replaying) { ____chimes_arg29 = (s->atoms->gid[iOff]); ____chimes_arg30 = (457); } calling((void*)mkSeed, 1, 0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (mkSeed)(____chimes_arg29, ____chimes_arg30); }) ) ;
+             call_lbl_1: seed = ( ({ uint32_t ____chimes_arg29; uint32_t ____chimes_arg30; if (!____chimes_replaying) { ____chimes_arg29 = (s->atoms->gid[iOff]); ____chimes_arg30 = (457); } calling((void*)mkSeed, 1, ____alias_loc_id_10, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (mkSeed)(____chimes_arg29, ____chimes_arg30); }) ) ;
 # 208 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
           call_lbl_2: s->atoms->r[iOff][0] += (2.0* ({ calling((void*)lcg61, 2, ____alias_loc_id_11, 0UL, 1, (size_t)(930458318103042226UL)); (lcg61)(&seed); }) -1.0) * delta;
 # 209 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4387,7 +4388,7 @@ const real_t *localMin;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
    px=py=pz=0.0;
 # 100 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-   { for ( ix = (begin[0]) ;ix < end[0]; ++ix) { { { { for ( iy = (begin[1]) ; iy < end[1]; ++iy) for ( iz = (begin[2]) ; iz < end[2]; ++iz) for ( ib = (0) ; ib < nb; ++ib) { rx = ((ix + basis[ib][0]) * lat) ; ry = ((iy + basis[ib][1]) * lat) ; rz = ((iz + basis[ib][2]) * lat) ; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ; call_lbl_3: ({ calling((void*)putAtomInBox, 3, 0, 0UL, 10, (size_t)(930458318103041550UL), (size_t)(930458318103041550UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }) ; } } } }; } }
+   { for ( ix = (begin[0]) ;ix < end[0]; ++ix) { { { { for ( iy = (begin[1]) ; iy < end[1]; ++iy) for ( iz = (begin[2]) ; iz < end[2]; ++iz) for ( ib = (0) ; ib < nb; ++ib) { rx = ((ix + basis[ib][0]) * lat) ; ry = ((iy + basis[ib][1]) * lat) ; rz = ((iz + basis[ib][2]) * lat) ; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ; call_lbl_3: ({ calling((void*)putAtomInBox, 3, ____alias_loc_id_0, 0UL, 10, (size_t)(930458318103041550UL), (size_t)(930458318103041550UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }) ; } } } }; } }
 # 114 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 115 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
 # 116 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4477,7 +4478,7 @@ int iType;
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
             sigma = (sqrt(kB_eV * temperature / mass)) ;
 # 169 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-             call_lbl_2: seed = ( ({ calling((void*)mkSeed, 2, 0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (mkSeed)(s->atoms->gid[iOff], 123); }) ) ;
+             call_lbl_2: seed = ( ({ calling((void*)mkSeed, 2, ____alias_loc_id_4, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (mkSeed)(s->atoms->gid[iOff], 123); }) ) ;
 # 170 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
           call_lbl_3: s->atoms->p[iOff][0] = mass * sigma * ({ calling((void*)gasdev, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(930458318103041939UL)); (gasdev)(&seed); }) ;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
@@ -4546,7 +4547,7 @@ int iBox;
 # 206 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
       {
 # 207 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
-             call_lbl_1: seed = ( ({ calling((void*)mkSeed, 1, 0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (mkSeed)(s->atoms->gid[iOff], 457); }) ) ;
+             call_lbl_1: seed = ( ({ calling((void*)mkSeed, 1, ____alias_loc_id_10, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (mkSeed)(s->atoms->gid[iOff], 457); }) ) ;
 # 208 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"
           call_lbl_2: s->atoms->r[iOff][0] += (2.0* ({ calling((void*)lcg61, 2, ____alias_loc_id_11, 0UL, 1, (size_t)(930458318103042226UL)); (lcg61)(&seed); }) -1.0) * delta;
 # 209 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c"

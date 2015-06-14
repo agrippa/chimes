@@ -10,7 +10,17 @@ using namespace std;
 unsigned char *serialize_thread_hierarchy(
         map<unsigned, thread_ctx *> *thread_ctxs,
         uint64_t *out_len) {
-    unsigned int nthreads = thread_ctxs->size();
+    /*
+     * See comment at top of serialize_program_stacks in stack_serialization.cpp.
+     */
+    unsigned nthreads = 0;
+    for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs->begin(),
+            e = thread_ctxs->end(); i != e; i++) {
+        if (i->second->get_stack()->size() > 0) {
+            nthreads++;
+        }
+    }
+
     uint64_t len = nthreads * 3 * sizeof(unsigned);
     unsigned char *serialized = (unsigned char *)malloc(len);
     assert(serialized);
@@ -20,11 +30,14 @@ unsigned char *serialize_thread_hierarchy(
             e = thread_ctxs->end(); i != e; i++) {
         unsigned thread = i->first;
         thread_ctx *ctx = i->second;
+
+        if (ctx->get_stack()->size() == 0) continue;
+
         if (!ctx->has_parent()) {
             /*
              * The main thread may not have a parent if this is a
              * single-threaded program (or if we are not checkpointing inside a
-             * parallel region. However, it may have a parent because pthreads
+             * parallel region). However, it may have a parent because pthreads
              * are re-used by OMP for nested parallel regions.
              */
             assert(thread == 0);

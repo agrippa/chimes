@@ -236,14 +236,12 @@ static inline void alias_group_changed_helper(unsigned loc_id,
 static void merge_npm_aliases(string fname, size_t return_alias,
         vector<size_t> param_aliases);
 static void *checkpoint_func(void *data);
+static void destroy_thread_ctx(void *thread_ctx_ptr);
 
 static std::vector<stack_frame *> *get_my_stack();
-static std::vector<stack_frame *> *get_stack_for(unsigned self_id);
 static unsigned get_my_tid();
-static int get_my_tid_may_fail();
 static thread_ctx *get_my_context();
 static thread_ctx *get_my_context_may_fail();
-static thread_ctx *get_context_for(unsigned tid);
 static bool wait_for_all_threads(clock_t *entry_time, checkpoint_ctx **out,
         bool *should_abort);
 
@@ -263,6 +261,7 @@ static map<unsigned, unsigned> trace_indices;
  * every thread's state.
  */
 pthread_key_t thread_ctx_key;
+pthread_key_t tid_key;
 
 /*
  * Globally shared heap representation used by all threads.
@@ -892,6 +891,16 @@ static void constructNPMContext(npm_context *ctx, string current_function,
     }
 }
 
+static void set_my_tid(int tid) {
+    int *my_tid_ptr = (int *)malloc(sizeof(int));
+    *my_tid_ptr = tid;
+    assert(pthread_setspecific(tid_key, my_tid_ptr) == 0);
+}
+
+static void set_my_thread_ctx(thread_ctx *ctx) {
+    assert(pthread_setspecific(thread_ctx_key, ctx) == 0);
+}
+
 void init_chimes() {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
@@ -902,13 +911,17 @@ void init_chimes() {
 
     register_custom_init_handler("omp_lock_t", init_omp_lock);
 
+    assert(pthread_key_create(&thread_ctx_key, destroy_thread_ctx) == 0);
+    assert(pthread_key_create(&tid_key, free) == 0);
+
     pthread_create(&checkpoint_thread, NULL, checkpoint_func,
             &running_checkpoint_ctx);
 
     pthread_t self = pthread_self();
     assert(pthread_to_id.size() == 0);
-    pthread_to_id[self] = 0;
-    thread_ctxs[0] = new thread_ctx(self, count_change_locations);
+    pthread_to_id[self] = 0; set_my_tid(0);
+    thread_ctx *ctx = new thread_ctx(self, count_change_locations);
+    thread_ctxs[0] = ctx; set_my_thread_ctx(ctx);
 
     char *chimes_disable_throttling = getenv("CHIMES_DISABLE_THROTTLING");
     if (chimes_disable_throttling && strlen(chimes_disable_throttling) > 0) {
@@ -3181,10 +3194,13 @@ bool within_overhead_bounds() {
     }
 
     unsigned long long running_time = dead_thread_time;
+    VERIFY(pthread_rwlock_rdlock(&thread_ctxs_lock) == 0);
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
             e = thread_ctxs.end(); i != e; i++) {
         running_time += i->second->elapsed_time();
     }
+    VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
+
     double curr_percent_overhead = (double)chimes_overhead /
         (double)running_time;
     return (curr_percent_overhead < target_time_overhead ||
@@ -4364,7 +4380,7 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
     return my_tid;
 }
 
-void register_thread_local_stack_vars(unsigned relation, unsigned parent,
+void register_thread_local_stack_vars(unsigned relation, unsigned parent, void *parent_ctx_ptr,
         unsigned threads_in_region, unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...) {
 #ifdef __CHIMES_PROFILE
@@ -4437,13 +4453,16 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
         VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
         if (pthread_to_id.find(self) == pthread_to_id.end()) {
             VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
-            thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid,
-                        new thread_ctx(self, count_change_locations)));
+            thread_ctx *new_ctx = new thread_ctx(self, count_change_locations);
+            thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid, new_ctx));
+            set_my_thread_ctx(new_ctx);
             VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 
-            pthread_to_id[self] = global_tid;
+            pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
+            set_my_tid(global_tid);
         } else {
-            assert(global_tid == pthread_to_id[self]);
+            assert(global_tid == pthread_to_id.at(self));
+            assert(global_tid == get_my_tid());
         }
         VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
     } else {
@@ -4457,14 +4476,17 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
 
             // Then create a thread ctx for it
             VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
-            thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid,
-                        new thread_ctx(self, count_change_locations)));
+            thread_ctx *new_ctx = new thread_ctx(self, count_change_locations);
+            thread_ctxs.insert(pair<unsigned, thread_ctx *>(global_tid, new_ctx));
+            set_my_thread_ctx(new_ctx);
             VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 
             // Store the mapping from pthread_t to self
             pthread_to_id.insert(pair<pthread_t, unsigned>(self, global_tid));
+            set_my_tid(global_tid);
         } else {
             global_tid = pthread_to_id.at(self);
+            assert(global_tid == get_my_tid());
         }
         VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
     }
@@ -4475,7 +4497,7 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
     stack->push_back(new stack_frame());
     ctx->increment_stack_nesting();
 
-    thread_ctx *parent_ctx = get_context_for(parent);
+    thread_ctx *parent_ctx = (thread_ctx *)parent_ctx_ptr;
     if (parent_ctx->get_disabled_nesting() != 0 && parent_ctx != ctx) {
         ctx->set_disabled_nesting(1);
     }
@@ -4516,6 +4538,10 @@ void register_thread_local_stack_vars(unsigned relation, unsigned parent,
 #endif
 }
 
+void *get_thread_ctx() {
+    return (void *)get_my_context();
+}
+
 unsigned get_parent_vars_stack_depth() {
     return get_my_context()->parent_vars_depth();
 }
@@ -4535,6 +4561,33 @@ void thread_leaving() {
 #ifdef __CHIMES_PROFILE
     pp.add_time(THREAD_LEAVING, __start_time);
 #endif
+}
+
+static void destroy_thread_ctx(void *thread_ctx_ptr) {
+    thread_ctx *ctx = (thread_ctx *)thread_ctx_ptr;
+    assert(ctx->get_stack()->size() == 0);
+
+    VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
+    map<pthread_t, unsigned>::iterator found = pthread_to_id.find(
+            ctx->get_pthread());
+    assert(found != pthread_to_id.end());
+    pthread_to_id.erase(found);
+    VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
+
+    __sync_fetch_and_add(&dead_thread_time, ctx->elapsed_time());
+
+    VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+    bool erased = false;
+    for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
+            e = thread_ctxs.end(); i != e; i++) {
+        if (i->second == ctx) {
+            erased = true;
+            thread_ctxs.erase(i);
+            break;
+        }
+    }
+    assert(erased);
+    VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
 }
 
 void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -4567,11 +4620,9 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
     my_ctx->get_stack_tracker().pop();
     my_ctx->pop_parent_vars_entry();
 
-    vector<map<unsigned, thread_ctx *>::iterator> to_erase;
+    // vector<map<unsigned, thread_ctx *>::iterator> to_erase;
 
     VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
-
-    int nthreads_joined = 0;
 
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
             e = thread_ctxs.end(); i != e; i++) {
@@ -4591,18 +4642,10 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
             }
 
             if (program_stack->size() == 0) {
-                // Erase this thread
-                VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
-                map<pthread_t, unsigned>::iterator found = pthread_to_id.find(
-                        ctx->get_pthread());
-                assert(found != pthread_to_id.end());
-                pthread_to_id.erase(found);
-                VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
-
-                __sync_fetch_and_add(&dead_thread_time, ctx->elapsed_time());
-
-                to_erase.push_back(i);
-                nthreads_joined++;
+                /*
+                 * Erase this thread, do nothing now because this is handled by
+                 * destroy_thread_ctx.
+                 */
             } else {
                 if (program_stack->size() < ctx->get_disabled_nesting()) {
                     ctx->set_disabled_nesting(0);
@@ -4611,11 +4654,11 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         }
     }
 
-    for (vector<map<unsigned, thread_ctx *>::iterator>::iterator i =
-            to_erase.begin(), e = to_erase.end(); i != e; i++) {
-        map<unsigned, thread_ctx *>::iterator curr = *i;
-        thread_ctxs.erase(curr);
-    }
+    // for (vector<map<unsigned, thread_ctx *>::iterator>::iterator i =
+    //         to_erase.begin(), e = to_erase.end(); i != e; i++) {
+    //     map<unsigned, thread_ctx *>::iterator curr = *i;
+    //     thread_ctxs.erase(curr);
+    // }
 
     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
     
@@ -4658,57 +4701,24 @@ void chimes_error() {
     exit(42);
 }
 
-static int get_my_tid_may_fail() {
-    pthread_t self = pthread_self();
-
-    VERIFY(pthread_rwlock_rdlock(&pthread_to_id_lock) == 0);
-    map<pthread_t, unsigned>::iterator found = pthread_to_id.find(self);
-    int self_id;
-    if (found == pthread_to_id.end()) {
-        self_id = -1;
-    } else {
-        self_id = found->second;
-    }
-    VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
-
-    return self_id;
-}
-
 static unsigned get_my_tid() {
-    pthread_t self = pthread_self();
-
-    VERIFY(pthread_rwlock_rdlock(&pthread_to_id_lock) == 0);
-    assert(pthread_to_id.find(self) != pthread_to_id.end());
-    unsigned self_id = pthread_to_id[self];
-    VERIFY(pthread_rwlock_unlock(&pthread_to_id_lock) == 0);
-
-    return self_id;
-}
-
-static thread_ctx *get_context_for(unsigned tid) {
-    VERIFY(pthread_rwlock_rdlock(&thread_ctxs_lock) == 0);
-    thread_ctx *result = thread_ctxs.at(tid);
-    VERIFY(pthread_rwlock_unlock(&thread_ctxs_lock) == 0);
-
-    return result;
+    int *tid_ptr = (int *)pthread_getspecific(tid_key);
+    assert(tid_ptr);
+    return *tid_ptr;
 }
 
 static thread_ctx *get_my_context_may_fail() {
-    int tid = get_my_tid_may_fail();
-    if (tid < 0) return NULL;
-    else return get_context_for(tid);
+    return (thread_ctx *)pthread_getspecific(thread_ctx_key);
 }
 
 static thread_ctx *get_my_context() {
-    return get_context_for(get_my_tid());
-}
-
-static std::vector<stack_frame *> *get_stack_for(unsigned tid) {
-    return get_context_for(tid)->get_stack();
+    thread_ctx *ctx = (thread_ctx *)pthread_getspecific(thread_ctx_key);
+    assert(ctx);
+    return ctx;
 }
 
 static std::vector<stack_frame *> *get_my_stack() {
-    return get_stack_for(get_my_tid());
+    return get_my_context()->get_stack();
 }
 
 void onexit() {

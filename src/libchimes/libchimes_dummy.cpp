@@ -390,7 +390,7 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
 }
 
 void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...) {
 #ifdef __CHIMES_PROFILE
@@ -445,3 +445,5 @@ void checkpoint() {
 }
 
 void wait_for_checkpoint() { }
+
+void *get_thread_ctx() { return NULL; }

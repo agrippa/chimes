@@ -169,11 +169,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -182,7 +183,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4404,7 +4405,7 @@ BasePotential* initEamPot_resumable(const char* dir, const char* file, const cha
    pot->forceExchange = __null;
 # 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_4: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_4: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 4, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) == 0)
 # 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4466,7 +4467,7 @@ EamPotential *pot;
 # 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 236 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      fsize = (s->boxes->nTotalBoxes * 64); { call_lbl_12: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(12, &____chimes_region_id0, 2, &fEmbed, &phiTmp); int ____chimes_first_iter0 = 1; ;
+      fsize = (s->boxes->nTotalBoxes * 64); { call_lbl_12: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(12, &____chimes_region_id0, 2, &fEmbed, &phiTmp); int ____chimes_first_iter0 = 1; ;
 # 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4476,7 +4477,7 @@ EamPotential *pot;
 # 238 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int ii=0; ii<fsize; ii++)
 # 239 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 2, &fEmbed, &phiTmp); ____chimes_first_iter0 = 0; }
+   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 2, &fEmbed, &phiTmp); ____chimes_first_iter0 = 0; }
 # 240 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       zeroReal3(s->atoms->f[ii]);
 # 241 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4489,7 +4490,7 @@ EamPotential *pot;
    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 245 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 246 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      nNbrBoxes = (27); { call_lbl_13: bool ____chimes_disable1 = disable_current_thread(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(13, &____chimes_region_id1, 2, &fEmbed, &phiTmp); int ____chimes_first_iter1 = 1; ;
+      nNbrBoxes = (27); { call_lbl_13: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(13, &____chimes_region_id1, 2, &fEmbed, &phiTmp); int ____chimes_first_iter1 = 1; ;
 # 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4500,7 +4501,7 @@ EamPotential *pot;
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &fEmbed, &phiTmp); ____chimes_first_iter1 = 0; }
+   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &fEmbed, &phiTmp); ____chimes_first_iter1 = 0; }
 # 251 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 252 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4583,7 +4584,7 @@ EamPotential *pot;
 # 298 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 299 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); } ; { call_lbl_14: bool ____chimes_disable2 = disable_current_thread(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(14, &____chimes_region_id2, 2, &fEmbed, &phiTmp); int ____chimes_first_iter2 = 1;
+   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); } ; { call_lbl_14: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(14, &____chimes_region_id2, 2, &fEmbed, &phiTmp); int ____chimes_first_iter2 = 1;
 # 300 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 301 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 302 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4596,7 +4597,7 @@ EamPotential *pot;
 # 304 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 305 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 2, &fEmbed, &phiTmp); ____chimes_first_iter2 = 0; }
+   {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 2, &fEmbed, &phiTmp); ____chimes_first_iter2 = 0; }
 # 306 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 307 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4626,7 +4627,7 @@ EamPotential *pot;
 # 321 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     call_lbl_8: ({ HaloExchange * ____chimes_arg4; void * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg4 = (pot->forceExchange); ____chimes_arg5 = (pot->forceExchangeData); } calling((void*)haloExchange, 8, 0, 0UL, 2, (size_t)(5757654513590297813UL), (size_t)(5757654513590297813UL)); (haloExchange)(____chimes_arg4, ____chimes_arg5); }) ;
 # 322 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   do { call_lbl_9: ({ calling((void*)profileStop, 9, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) ; } while(0); { call_lbl_15: bool ____chimes_disable3 = disable_current_thread(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(15, &____chimes_region_id3, 2, &fEmbed, &phiTmp); int ____chimes_first_iter3 = 1; ;
+   do { call_lbl_9: ({ calling((void*)profileStop, 9, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) ; } while(0); { call_lbl_15: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(15, &____chimes_region_id3, 2, &fEmbed, &phiTmp); int ____chimes_first_iter3 = 1; ;
 # 323 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 324 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 325 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4639,7 +4640,7 @@ EamPotential *pot;
 # 327 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 328 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 2, &fEmbed, &phiTmp); ____chimes_first_iter3 = 0; }
+   {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 2, &fEmbed, &phiTmp); ____chimes_first_iter3 = 0; }
 # 329 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 330 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4805,7 +4806,7 @@ void eamBcastPotential_resumable(EamPotential* pot)
      ;
 # 417 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 418 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_3: if (alias_group_changed(____alias_loc_id_4) || ({ calling((void*)getMyRank, 3, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_3: if (alias_group_changed(____alias_loc_id_4) || ({ calling((void*)getMyRank, 3, ____alias_loc_id_4, 0UL, 0); (getMyRank)(); }) == 0)
 # 419 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 420 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4974,7 +4975,7 @@ buf_2_t buf;
     ;
 # 552 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 553 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_2: if (alias_group_changed(____alias_loc_id_7) || ({ calling((void*)getMyRank, 2, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_2: if (alias_group_changed(____alias_loc_id_7) || ({ calling((void*)getMyRank, 2, ____alias_loc_id_7, 0UL, 0); (getMyRank)(); }) == 0)
 # 554 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 555 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5343,7 +5344,7 @@ BasePotential* initEamPot_quick(const char* dir, const char* file, const char* t
    pot->forceExchange = __null;
 # 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_4: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_4: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 4, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) == 0)
 # 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5404,7 +5405,7 @@ EamPotential *pot;
 # 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 236 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      fsize = (s->boxes->nTotalBoxes * 64); { call_lbl_12: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(12, &____chimes_region_id0, 2, &fEmbed, &phiTmp); int ____chimes_first_iter0 = 1; ;
+      fsize = (s->boxes->nTotalBoxes * 64); { call_lbl_12: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(12, &____chimes_region_id0, 2, &fEmbed, &phiTmp); int ____chimes_first_iter0 = 1; ;
 # 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5414,7 +5415,7 @@ EamPotential *pot;
 # 238 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int ii=0; ii<fsize; ii++)
 # 239 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 2, &fEmbed, &phiTmp); ____chimes_first_iter0 = 0; }
+   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 2, &fEmbed, &phiTmp); ____chimes_first_iter0 = 0; }
 # 240 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       zeroReal3(s->atoms->f[ii]);
 # 241 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5427,7 +5428,7 @@ EamPotential *pot;
    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 245 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 246 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      nNbrBoxes = (27); { call_lbl_13: bool ____chimes_disable1 = disable_current_thread(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(13, &____chimes_region_id1, 2, &fEmbed, &phiTmp); int ____chimes_first_iter1 = 1; ;
+      nNbrBoxes = (27); { call_lbl_13: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(13, &____chimes_region_id1, 2, &fEmbed, &phiTmp); int ____chimes_first_iter1 = 1; ;
 # 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5438,7 +5439,7 @@ EamPotential *pot;
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &fEmbed, &phiTmp); ____chimes_first_iter1 = 0; }
+   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &fEmbed, &phiTmp); ____chimes_first_iter1 = 0; }
 # 251 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 252 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5521,7 +5522,7 @@ EamPotential *pot;
 # 298 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 299 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); } ; { call_lbl_14: bool ____chimes_disable2 = disable_current_thread(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(14, &____chimes_region_id2, 2, &fEmbed, &phiTmp); int ____chimes_first_iter2 = 1;
+   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); } ; { call_lbl_14: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(14, &____chimes_region_id2, 2, &fEmbed, &phiTmp); int ____chimes_first_iter2 = 1;
 # 300 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 301 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 302 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5534,7 +5535,7 @@ EamPotential *pot;
 # 304 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 305 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 2, &fEmbed, &phiTmp); ____chimes_first_iter2 = 0; }
+   {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 2, &fEmbed, &phiTmp); ____chimes_first_iter2 = 0; }
 # 306 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 307 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5564,7 +5565,7 @@ EamPotential *pot;
 # 321 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     call_lbl_8: ({ calling((void*)haloExchange, 8, 0, 0UL, 2, (size_t)(5757654513590297813UL), (size_t)(5757654513590297813UL)); (haloExchange)(pot->forceExchange, pot->forceExchangeData); }) ;
 # 322 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   do { call_lbl_9: ({ calling((void*)profileStop, 9, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) ; } while(0); { call_lbl_15: bool ____chimes_disable3 = disable_current_thread(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(15, &____chimes_region_id3, 2, &fEmbed, &phiTmp); int ____chimes_first_iter3 = 1; ;
+   do { call_lbl_9: ({ calling((void*)profileStop, 9, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) ; } while(0); { call_lbl_15: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(15, &____chimes_region_id3, 2, &fEmbed, &phiTmp); int ____chimes_first_iter3 = 1; ;
 # 323 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 324 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 325 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5577,7 +5578,7 @@ EamPotential *pot;
 # 327 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 328 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 2, &fEmbed, &phiTmp); ____chimes_first_iter3 = 0; }
+   {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 2, &fEmbed, &phiTmp); ____chimes_first_iter3 = 0; }
 # 329 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 330 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5724,7 +5725,7 @@ void eamBcastPotential_quick(EamPotential* pot)
      ;
 # 417 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 418 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_3: if (alias_group_changed(____alias_loc_id_4) || ({ calling((void*)getMyRank, 3, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_3: if (alias_group_changed(____alias_loc_id_4) || ({ calling((void*)getMyRank, 3, ____alias_loc_id_4, 0UL, 0); (getMyRank)(); }) == 0)
 # 419 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 420 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5888,7 +5889,7 @@ buf_2_t buf;
     ;
 # 552 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 553 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_2: if (alias_group_changed(____alias_loc_id_7) || ({ calling((void*)getMyRank, 2, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_2: if (alias_group_changed(____alias_loc_id_7) || ({ calling((void*)getMyRank, 2, ____alias_loc_id_7, 0UL, 0); (getMyRank)(); }) == 0)
 # 554 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 555 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"

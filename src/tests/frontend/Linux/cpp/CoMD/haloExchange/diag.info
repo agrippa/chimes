@@ -475,9 +475,9 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 433
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 491 13  call_lbl_3: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 543 13  call_lbl_3: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 151 15 len=20 initAtomHaloExchange_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 43  ({  calling((void*)initHaloExchange, 1, 0, 5897154831253369357UL, 1, (size_t)(5897154831253369612UL)); (initHaloExchange)(domain); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 43  ({  calling((void*)initHaloExchange, 1, ____alias_loc_id_0, 5897154831253369357UL, 1, (size_t)(5897154831253369612UL)); (initHaloExchange)(domain); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 66 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 82  ({  calling((void*)mkAtomCellList, 3, 0, 5897154831253369459UL, 3, (size_t)(5897154831253369373UL), (size_t)(0UL), (size_t)(0UL)); (mkAtomCellList)(boxes, ii, parms->nCells[ii]); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 82  ({  calling((void*)mkAtomCellList, 3, ____alias_loc_id_1, 5897154831253369459UL, 3, (size_t)(5897154831253369373UL), (size_t)(0UL), (size_t)(0UL)); (mkAtomCellList)(boxes, ii, parms->nCells[ii]); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 125 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 21 
@@ -502,7 +502,7 @@ int size0;
 HaloExchange *hh;
  if (____must_checkpoint_initAtomHaloExchange_parms_0 || ____must_checkpoint_initAtomHaloExchange_maxSize_0 || ____must_checkpoint_initAtomHaloExchange_size2_0 || ____must_checkpoint_initAtomHaloExchange_size1_0 || ____must_checkpoint_initAtomHaloExchange_size0_0 || ____must_checkpoint_initAtomHaloExchange_hh_0) { register_stack_vars(6, "initAtomHaloExchange|parms|0", &____must_checkpoint_initAtomHaloExchange_parms_0, "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0, "initAtomHaloExchange|maxSize|0", &____must_checkpoint_initAtomHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size2|0", &____must_checkpoint_initAtomHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size1|0", &____must_checkpoint_initAtomHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size0|0", &____must_checkpoint_initAtomHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0, "initAtomHaloExchange|hh|0", &____must_checkpoint_initAtomHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 212 15 len=21 initForceHaloExchange_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 43  ({  calling((void*)initHaloExchange, 1, 0, 5897154831253370399UL, 1, (size_t)(5897154831253370520UL)); (initHaloExchange)(domain); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 43  ({  calling((void*)initHaloExchange, 1, ____alias_loc_id_10, 5897154831253370399UL, 1, (size_t)(5897154831253370520UL)); (initHaloExchange)(domain); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 66 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 238 43  ({  calling((void*)mkForceSendCellList, 3, ____alias_loc_id_11, 5897154831253370486UL, 3, (size_t)(5897154831253370406UL), (size_t)(0UL), (size_t)(0UL)); (mkForceSendCellList)(boxes, ii, parms->nCells[ii]); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 238 91 
@@ -533,7 +533,7 @@ HaloExchange *hh;
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 246 6 len=19 destroyHaloExchange_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 247 178  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 253 6 len=12 haloExchange_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 72  ({  calling((void*)exchangeData, 1, 0, 0UL, 3, (size_t)(5897154831253371252UL), (size_t)(5897154831253371253UL), (size_t)(0UL)); (exchangeData)(haloExchangeData, data, iAxis); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 72  ({  calling((void*)exchangeData, 1, ____alias_loc_id_15, 0UL, 3, (size_t)(5897154831253371252UL), (size_t)(5897154831253371253UL), (size_t)(0UL)); (exchangeData)(haloExchangeData, data, iAxis); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 114 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 7 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 16 
@@ -569,9 +569,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 304 119 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 305 23  ({  calling((void*)profileStop, 10, ____alias_loc_id_20, 0UL, 1, (size_t)(0UL)); (profileStop)(commHaloTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 305 48 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 307 18 ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 11, ____alias_loc_id_21, 0UL, 5, 5897154831253371381UL, 5897154831253371385UL, 0UL, 0UL, 5897154831253371369UL)))(haloExchange->parms, data, faceM, nRecvM, recvBufM)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 307 18 ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 11, 0, 0UL, 5, 5897154831253371381UL, 5897154831253371385UL, 0UL, 0UL, 5897154831253371369UL)))(haloExchange->parms, data, faceM, nRecvM, recvBufM)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 307 95 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 308 18 ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 12, ____alias_loc_id_22, 0UL, 5, 5897154831253371381UL, 5897154831253371385UL, 0UL, 0UL, 5897154831253371359UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 308 18 ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 12, 0, 0UL, 5, 5897154831253371381UL, 5897154831253371385UL, 0UL, 0UL, 5897154831253371359UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 308 95 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 286 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 286 14 
@@ -773,9 +773,9 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExch
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 667 5 len=13 sortAtomsById_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 668 194  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 151 15 len=20 initAtomHaloExchange_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 43  ({  calling((void*)initHaloExchange, 1, 0, 5897154831253369357UL, 1, (size_t)(5897154831253369612UL)); (initHaloExchange)(domain); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 43  ({  calling((void*)initHaloExchange, 1, ____alias_loc_id_0, 5897154831253369357UL, 1, (size_t)(5897154831253369612UL)); (initHaloExchange)(domain); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 66 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 82  ({  int ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg3 = (parms->nCells[ii]);  }  calling((void*)mkAtomCellList, 3, 0, 5897154831253369459UL, 3, (size_t)(5897154831253369373UL), (size_t)(0UL), (size_t)(0UL)); (mkAtomCellList)(boxes, ii, ____chimes_arg3); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 82  ({  int ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg3 = (parms->nCells[ii]);  }  calling((void*)mkAtomCellList, 3, ____alias_loc_id_1, 5897154831253369459UL, 3, (size_t)(5897154831253369373UL), (size_t)(0UL), (size_t)(0UL)); (mkAtomCellList)(boxes, ii, ____chimes_arg3); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 125 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 21 
@@ -800,7 +800,7 @@ int size0;
 HaloExchange *hh;
  if (____must_checkpoint_initAtomHaloExchange_parms_0 || ____must_checkpoint_initAtomHaloExchange_maxSize_0 || ____must_checkpoint_initAtomHaloExchange_size2_0 || ____must_checkpoint_initAtomHaloExchange_size1_0 || ____must_checkpoint_initAtomHaloExchange_size0_0 || ____must_checkpoint_initAtomHaloExchange_hh_0) { register_stack_vars(6, "initAtomHaloExchange|parms|0", &____must_checkpoint_initAtomHaloExchange_parms_0, "%struct.AtomExchangeParmsSt*", (void *)(&parms), (size_t)8, 1, 0, 0, "initAtomHaloExchange|maxSize|0", &____must_checkpoint_initAtomHaloExchange_maxSize_0, "i32", (void *)(&maxSize), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size2|0", &____must_checkpoint_initAtomHaloExchange_size2_0, "i32", (void *)(&size2), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size1|0", &____must_checkpoint_initAtomHaloExchange_size1_0, "i32", (void *)(&size1), (size_t)4, 0, 0, 0, "initAtomHaloExchange|size0|0", &____must_checkpoint_initAtomHaloExchange_size0_0, "i32", (void *)(&size0), (size_t)4, 0, 0, 0, "initAtomHaloExchange|hh|0", &____must_checkpoint_initAtomHaloExchange_hh_0, "%struct.HaloExchangeSt*", (void *)(&hh), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) { goto lbl_0; }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 212 15 len=21 initForceHaloExchange_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 43  ({  calling((void*)initHaloExchange, 1, 0, 5897154831253370399UL, 1, (size_t)(5897154831253370520UL)); (initHaloExchange)(domain); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 43  ({  calling((void*)initHaloExchange, 1, ____alias_loc_id_10, 5897154831253370399UL, 1, (size_t)(5897154831253370520UL)); (initHaloExchange)(domain); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 66 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 238 43  ({  int ____chimes_arg7;  if (!____chimes_replaying) { ____chimes_arg7 = (parms->nCells[ii]);  }  calling((void*)mkForceSendCellList, 3, ____alias_loc_id_11, 5897154831253370486UL, 3, (size_t)(5897154831253370406UL), (size_t)(0UL), (size_t)(0UL)); (mkForceSendCellList)(boxes, ii, ____chimes_arg7); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 238 91 
@@ -831,7 +831,7 @@ HaloExchange *hh;
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 246 6 len=19 destroyHaloExchange_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 247 178  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 253 6 len=12 haloExchange_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 72  ({  calling((void*)exchangeData, 1, 0, 0UL, 3, (size_t)(5897154831253371252UL), (size_t)(5897154831253371253UL), (size_t)(0UL)); (exchangeData)(haloExchangeData, data, iAxis); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 72  ({  calling((void*)exchangeData, 1, ____alias_loc_id_15, 0UL, 3, (size_t)(5897154831253371252UL), (size_t)(5897154831253371253UL), (size_t)(0UL)); (exchangeData)(haloExchangeData, data, iAxis); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 114 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 7 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 16 
@@ -867,9 +867,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 304 119 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 305 23  ({  calling((void*)profileStop, 10, ____alias_loc_id_20, 0UL, 1, (size_t)(0UL)); (profileStop)(commHaloTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 305 48 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 307 18 ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 11, ____alias_loc_id_21, 0UL, 5, 5897154831253371381UL, 5897154831253371385UL, 0UL, 0UL, 5897154831253371369UL)))(haloExchange->parms, data, faceM, nRecvM, recvBufM)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 307 18 ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 11, 0, 0UL, 5, 5897154831253371381UL, 5897154831253371385UL, 0UL, 0UL, 5897154831253371369UL)))(haloExchange->parms, data, faceM, nRecvM, recvBufM)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 307 95 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 308 18 ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 12, ____alias_loc_id_22, 0UL, 5, 5897154831253371381UL, 5897154831253371385UL, 0UL, 0UL, 5897154831253371359UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 308 18 ((void (*)(void *, void *, int, int, char *))(translate_fptr((void *)haloExchange->unloadBuffer, 12, 0, 0UL, 5, 5897154831253371381UL, 5897154831253371385UL, 0UL, 0UL, 5897154831253371359UL)))(haloExchange->parms, data, faceP, nRecvP, recvBufP)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 308 95 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 286 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 286 14 

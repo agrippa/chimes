@@ -63,7 +63,20 @@ unsigned char *serialize_program_stack(vector<stack_frame *> *program_stack,
 unsigned char *serialize_program_stacks(
         map<unsigned, thread_ctx *> *thread_ctxs,
         uint64_t *out_len) {
-    unsigned nthreads = thread_ctxs->size();
+
+    /*
+     * A thread_ctx may have an empty stack if the creation of a checkpoint
+     * races with the destroy_thread_ctx constructor following a parallel
+     * region. Here we just ignore any empty thread stacks because we know those
+     * threads must have died, and therefore cannot be part of the resume.
+     */
+    unsigned nthreads = 0;
+    for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs->begin(),
+            e = thread_ctxs->end(); i != e; i++) {
+        if (i->second->get_stack()->size() > 0) {
+            nthreads++;
+        }
+    }
     unsigned char *serialized = (unsigned char *)malloc(sizeof(nthreads));
     assert(serialized);
     uint64_t total_len = sizeof(nthreads);
@@ -74,6 +87,8 @@ unsigned char *serialize_program_stacks(
         unsigned thread_id = i->first;
         thread_ctx *ctx = i->second;
         vector<stack_frame *> *stack = ctx->get_stack();
+
+        if (stack->size() == 0) continue;
 
         uint64_t stack_serialized_len;
         unsigned char *stack_serialized = serialize_program_stack(stack,

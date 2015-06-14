@@ -190,11 +190,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -203,7 +204,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4418,7 +4419,7 @@ BasePotential* initEamPot_resumable(const char* dir, const char* file, const cha
    pot->forceExchange = __null;
 # 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 189 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    call_lbl_4: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_4: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 4, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) == 0)
 # 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    {
 # 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -4497,7 +4498,7 @@ EamPotential *pot;
 # 244 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
         lbl_1: int nIBox; if (____must_checkpoint_eamForce_nIBox_0 != 0) { register_stack_var("eamForce|nIBox|0", &____must_checkpoint_eamForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } nIBox = (s->boxes->nAtoms[iBox]) ;
 # 245 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-        lbl_2: int nNbrBoxes; if (____must_checkpoint_eamForce_nNbrBoxes_0 != 0) { register_stack_var("eamForce|nNbrBoxes|0", &____must_checkpoint_eamForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_3; } call_lbl_10: nNbrBoxes = ( ({ LinkCell * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); } calling((void*)getNeighborBoxes, 10, 0, 0UL, 3, (size_t)(17996878689622962765UL), (size_t)(0UL), (size_t)(17996878689622962704UL)); (getNeighborBoxes)(____chimes_arg3, iBox, nbrBoxes); }) ) ;
+        lbl_2: int nNbrBoxes; if (____must_checkpoint_eamForce_nNbrBoxes_0 != 0) { register_stack_var("eamForce|nNbrBoxes|0", &____must_checkpoint_eamForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_3; } call_lbl_10: nNbrBoxes = ( ({ LinkCell * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); } calling((void*)getNeighborBoxes, 10, ____alias_loc_id_2, 0UL, 3, (size_t)(17996878689622962765UL), (size_t)(0UL), (size_t)(17996878689622962704UL)); (getNeighborBoxes)(____chimes_arg3, iBox, nbrBoxes); }) ) ;
 # 246 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       { lbl_3: int jTmp; if (____must_checkpoint_eamForce_jTmp_0 != 0) { register_stack_var("eamForce|jTmp|0", &____must_checkpoint_eamForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_4; } for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
@@ -4635,7 +4636,7 @@ EamPotential *pot;
 # 329 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
         lbl_21: int nIBox; if (____must_checkpoint_eamForce_nIBox_2 != 0) { register_stack_var("eamForce|nIBox|2", &____must_checkpoint_eamForce_nIBox_2, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_22; } nIBox = (s->boxes->nAtoms[iBox]) ;
 # 330 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-        lbl_22: int nNbrBoxes; if (____must_checkpoint_eamForce_nNbrBoxes_1 != 0) { register_stack_var("eamForce|nNbrBoxes|1", &____must_checkpoint_eamForce_nNbrBoxes_1, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_23; } call_lbl_15: nNbrBoxes = ( ({ LinkCell * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = (s->boxes); } calling((void*)getNeighborBoxes, 15, 0, 0UL, 3, (size_t)(17996878689622962765UL), (size_t)(0UL), (size_t)(17996878689622962704UL)); (getNeighborBoxes)(____chimes_arg10, iBox, nbrBoxes); }) ) ;
+        lbl_22: int nNbrBoxes; if (____must_checkpoint_eamForce_nNbrBoxes_1 != 0) { register_stack_var("eamForce|nNbrBoxes|1", &____must_checkpoint_eamForce_nNbrBoxes_1, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_23; } call_lbl_15: nNbrBoxes = ( ({ LinkCell * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = (s->boxes); } calling((void*)getNeighborBoxes, 15, ____alias_loc_id_4, 0UL, 3, (size_t)(17996878689622962765UL), (size_t)(0UL), (size_t)(17996878689622962704UL)); (getNeighborBoxes)(____chimes_arg10, iBox, nbrBoxes); }) ) ;
 # 331 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 332 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       { lbl_23: int jTmp; if (____must_checkpoint_eamForce_jTmp_1 != 0) { register_stack_var("eamForce|jTmp|1", &____must_checkpoint_eamForce_jTmp_1, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_24; } for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
@@ -4799,7 +4800,7 @@ void eamBcastPotential_resumable(EamPotential* pot)
      ;
 # 417 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 418 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    call_lbl_3: if (alias_group_changed(____alias_loc_id_6) || ({ calling((void*)getMyRank, 3, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_3: if (alias_group_changed(____alias_loc_id_6) || ({ calling((void*)getMyRank, 3, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) == 0)
 # 419 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    {
 # 420 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -4968,7 +4969,7 @@ buf_2_t buf;
     ;
 # 552 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 553 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    call_lbl_2: if (alias_group_changed(____alias_loc_id_9) || ({ calling((void*)getMyRank, 2, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_2: if (alias_group_changed(____alias_loc_id_9) || ({ calling((void*)getMyRank, 2, ____alias_loc_id_9, 0UL, 0); (getMyRank)(); }) == 0)
 # 554 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    {
 # 555 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5337,7 +5338,7 @@ BasePotential* initEamPot_quick(const char* dir, const char* file, const char* t
    pot->forceExchange = __null;
 # 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 189 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    call_lbl_4: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_4: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 4, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) == 0)
 # 190 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    {
 # 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5415,7 +5416,7 @@ EamPotential *pot;
 # 244 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
         lbl_1: int nIBox; if (____must_checkpoint_eamForce_nIBox_0 != 0) { register_stack_var("eamForce|nIBox|0", &____must_checkpoint_eamForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } nIBox = (s->boxes->nAtoms[iBox]) ;
 # 245 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-        lbl_2: int nNbrBoxes; if (____must_checkpoint_eamForce_nNbrBoxes_0 != 0) { register_stack_var("eamForce|nNbrBoxes|0", &____must_checkpoint_eamForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } call_lbl_10: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 10, 0, 0UL, 3, (size_t)(17996878689622962765UL), (size_t)(0UL), (size_t)(17996878689622962704UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
+        lbl_2: int nNbrBoxes; if (____must_checkpoint_eamForce_nNbrBoxes_0 != 0) { register_stack_var("eamForce|nNbrBoxes|0", &____must_checkpoint_eamForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } call_lbl_10: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 10, ____alias_loc_id_2, 0UL, 3, (size_t)(17996878689622962765UL), (size_t)(0UL), (size_t)(17996878689622962704UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
 # 246 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       { lbl_3: int jTmp; if (____must_checkpoint_eamForce_jTmp_0 != 0) { register_stack_var("eamForce|jTmp|0", &____must_checkpoint_eamForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
@@ -5553,7 +5554,7 @@ EamPotential *pot;
 # 329 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
         lbl_21: int nIBox; if (____must_checkpoint_eamForce_nIBox_2 != 0) { register_stack_var("eamForce|nIBox|2", &____must_checkpoint_eamForce_nIBox_2, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0); } nIBox = (s->boxes->nAtoms[iBox]) ;
 # 330 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-        lbl_22: int nNbrBoxes; if (____must_checkpoint_eamForce_nNbrBoxes_1 != 0) { register_stack_var("eamForce|nNbrBoxes|1", &____must_checkpoint_eamForce_nNbrBoxes_1, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } call_lbl_15: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 15, 0, 0UL, 3, (size_t)(17996878689622962765UL), (size_t)(0UL), (size_t)(17996878689622962704UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
+        lbl_22: int nNbrBoxes; if (____must_checkpoint_eamForce_nNbrBoxes_1 != 0) { register_stack_var("eamForce|nNbrBoxes|1", &____must_checkpoint_eamForce_nNbrBoxes_1, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0); } call_lbl_15: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 15, ____alias_loc_id_4, 0UL, 3, (size_t)(17996878689622962765UL), (size_t)(0UL), (size_t)(17996878689622962704UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
 # 331 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 332 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
       { lbl_23: int jTmp; if (____must_checkpoint_eamForce_jTmp_1 != 0) { register_stack_var("eamForce|jTmp|1", &____must_checkpoint_eamForce_jTmp_1, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0); } for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
@@ -5698,7 +5699,7 @@ void eamBcastPotential_quick(EamPotential* pot)
      ;
 # 417 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 418 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    call_lbl_3: if (alias_group_changed(____alias_loc_id_6) || ({ calling((void*)getMyRank, 3, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_3: if (alias_group_changed(____alias_loc_id_6) || ({ calling((void*)getMyRank, 3, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) == 0)
 # 419 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    {
 # 420 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
@@ -5862,7 +5863,7 @@ buf_2_t buf;
     ;
 # 552 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 553 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-    call_lbl_2: if (alias_group_changed(____alias_loc_id_9) || ({ calling((void*)getMyRank, 2, 0, 0UL, 0); (getMyRank)(); }) == 0)
+    call_lbl_2: if (alias_group_changed(____alias_loc_id_9) || ({ calling((void*)getMyRank, 2, ____alias_loc_id_9, 0UL, 0); (getMyRank)(); }) == 0)
 # 554 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
    {
 # 555 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"

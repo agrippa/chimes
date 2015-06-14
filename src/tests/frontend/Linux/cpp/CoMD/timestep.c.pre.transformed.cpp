@@ -98,11 +98,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -111,7 +112,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2732,7 +2733,7 @@ void computeForce_resumable(SimFlat* s)
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0, 1, 0, (size_t)(7237354288423011698UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_1: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, ____alias_loc_id_4, 0UL, 1, 7237354288423011698UL)))(s);
+    call_lbl_1: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, 0, 0UL, 1, 7237354288423011698UL)))(s);
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1); }
 # 89 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
@@ -2862,7 +2863,7 @@ void redistributeAtoms_resumable(SimFlat* sim)
    do { call_lbl_4: ({ calling((void*)profileStop, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
 # 167 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   { for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ Atoms * ____chimes_arg24; LinkCell * ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg24 = (sim->atoms); ____chimes_arg25 = (sim->boxes); } calling((void*)sortAtomsInCell, 5, 0, 0UL, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(____chimes_arg24, ____chimes_arg25, ii); }) ; } };
+   { for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ Atoms * ____chimes_arg24; LinkCell * ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg24 = (sim->atoms); ____chimes_arg25 = (sim->boxes); } calling((void*)sortAtomsInCell, 5, ____alias_loc_id_3, 0UL, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(____chimes_arg24, ____chimes_arg25, ii); }) ; } };
 # 170 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_9, ____chimes_did_disable5); }
 double timestep_quick(SimFlat* s, int nSteps, real_t dt)
@@ -2949,7 +2950,7 @@ void computeForce_quick(SimFlat* s)
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0, 1, 0, (size_t)(7237354288423011698UL)) ; ; ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-    call_lbl_1: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, ____alias_loc_id_4, 0UL, 1, 7237354288423011698UL)))(s);
+    call_lbl_1: ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, 0, 0UL, 1, 7237354288423011698UL)))(s);
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1); }
 
@@ -3078,7 +3079,7 @@ void redistributeAtoms_quick(SimFlat* sim)
    do { call_lbl_4: ({ calling((void*)profileStop, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) ; } while(0);
 # 167 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 # 168 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
-   { for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ calling((void*)sortAtomsInCell, 5, 0, 0UL, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(sim->atoms, sim->boxes, ii); }) ; } };
+   { for ( ii = (0) ;ii < sim->boxes->nTotalBoxes; ++ii) { call_lbl_5: ({ calling((void*)sortAtomsInCell, 5, ____alias_loc_id_3, 0UL, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(sim->atoms, sim->boxes, ii); }) ; } };
 # 170 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c"
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_9, ____chimes_did_disable5); }
 

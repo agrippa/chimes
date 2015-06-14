@@ -104,11 +104,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -117,7 +118,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5520,7 +5521,7 @@ config conf;
 # 215 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( t = (0) ; t < conf.nt; t++) {
 # 216 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;; { call_lbl_6: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
+       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;; { call_lbl_6: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
 # 217 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -5529,7 +5530,7 @@ config conf;
 # 218 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 219 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-      for (i = 0; i < conf.nx * conf.ny; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; }
+      for (i = 0; i < conf.nx * conf.ny; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; }
 # 220 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
            x = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
 # 221 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -6028,7 +6029,7 @@ config conf;
 # 215 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); for ( t = (0) ; t < conf.nt; t++) {
 # 216 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ;; { call_lbl_6: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
+       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ;; { call_lbl_6: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
 # 217 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -6037,7 +6038,7 @@ config conf;
 # 218 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 219 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-      for (i = 0; i < conf.nx * conf.ny; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; }
+      for (i = 0; i < conf.nx * conf.ny; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; }
 # 220 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
            x = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
 # 221 "/home/jmg3/num-debug/src/examples/openmp/ray_tracer.c"

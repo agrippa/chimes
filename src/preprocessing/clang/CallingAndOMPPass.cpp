@@ -103,6 +103,13 @@ std::string CallingAndOMPPass::get_chimes_parent_thread_varname() {
     return ss.str();
 }
 
+std::string CallingAndOMPPass::get_chimes_parent_ctx_varname() {
+    std::stringstream ss;
+    ss << "____chimes_parent_ctx" << chimes_parent_thread_counter;
+    chimes_parent_ctx_counter++;
+    return ss.str();
+}
+
 std::string CallingAndOMPPass::get_unique_region_varname() {
     std::stringstream ss;
     ss << "____chimes_region_id" << region_varname_counter;
@@ -598,7 +605,7 @@ std::set<std::string> CallingAndOMPPass::get_private_vars(map<string,
 std::string CallingAndOMPPass::get_region_setup_code(
         std::set<std::string> private_vars, bool is_parallel_for,
         std::string disable_varname, std::string blocker_varname,
-        std::string parent_thread_varname, std::string stack_depth_varname,
+        std::string parent_thread_varname, std::string parent_ctx_varname, std::string stack_depth_varname,
         std::string region_id_varname, std::string call_depth_varname,
         OMPRegion *region, OpenMPPragma pragma) {
     /*
@@ -612,6 +619,7 @@ std::string CallingAndOMPPass::get_region_setup_code(
         entering_ss << " bool " + disable_varname +
             " = disable_current_thread(); ";
     }
+    entering_ss << "void *" << parent_ctx_varname << " = get_thread_ctx(); ";
     entering_ss << "unsigned " << stack_depth_varname <<
         " = get_parent_vars_stack_depth(); ";
     entering_ss << "unsigned " << call_depth_varname <<
@@ -639,7 +647,7 @@ std::string CallingAndOMPPass::get_region_setup_code(
 }
 
 std::string CallingAndOMPPass::get_region_interior_code(bool is_parallel_for,
-        std::string blocker_varname, std::string parent_thread_varname,
+        std::string blocker_varname, std::string parent_thread_varname, std::string parent_ctx_varname,
         std::string stack_depth_varname, std::string region_id_varname,
         std::set<std::string> private_vars) {
     std::stringstream register_ss;
@@ -648,7 +656,7 @@ std::string CallingAndOMPPass::get_region_interior_code(bool is_parallel_for,
     }
     register_ss << " " <<
         "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
-        parent_thread_varname << ", " << "LIBCHIMES_NUM_THREADS(), " <<
+        parent_thread_varname << ", " << parent_ctx_varname << ", LIBCHIMES_NUM_THREADS(), " <<
         stack_depth_varname << ", " << region_id_varname << ", " <<
         private_vars.size();
     for (std::set<std::string>::iterator varsi = private_vars.begin(),
@@ -1106,6 +1114,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             std::string disable_varname = get_unique_disable_varname();
             string blocker_varname = get_unique_blocker_varname();
             string parent_thread_varname = get_chimes_parent_thread_varname();
+            string parent_ctx_varname = get_chimes_parent_ctx_varname();
             string stack_depth_varname =
                 get_unique_parent_stack_depth_varname();
             string region_id_varname = get_unique_region_varname();
@@ -1115,7 +1124,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
             std::string region_entry_code = get_region_setup_code(private_vars,
                     is_parallel_for, disable_varname, blocker_varname,
-                    parent_thread_varname, stack_depth_varname,
+                    parent_thread_varname, parent_ctx_varname, stack_depth_varname,
                     region_id_varname, call_depth_varname, region, pragma);
 
             assert(new_stack_calls.find(curr_func_decl) !=
@@ -1127,7 +1136,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             }
 
             std::string interior = get_region_interior_code(is_parallel_for,
-                    blocker_varname, parent_thread_varname,
+                    blocker_varname, parent_thread_varname, parent_ctx_varname,
                     stack_depth_varname, region_id_varname, private_vars);
             InsertTextAfterToken(inner_loc, interior);
 

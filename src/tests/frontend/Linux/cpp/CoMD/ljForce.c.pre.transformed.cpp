@@ -112,11 +112,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -125,7 +126,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3338,7 +3339,7 @@ real_t epsilon;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       if (nIBox == 0) {continue;; };
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-          call_lbl_1: nNbrBoxes = ( ({ LinkCell * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes); } calling((void*)getNeighborBoxes, 1, 0, 0UL, 3, (size_t)(15692222973149251133UL), (size_t)(0UL), (size_t)(15692222973149250952UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) ) ;
+          call_lbl_1: nNbrBoxes = ( ({ LinkCell * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes); } calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15692222973149251133UL), (size_t)(0UL), (size_t)(15692222973149250952UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) ) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 174 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       { for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)
@@ -3601,7 +3602,7 @@ real_t epsilon;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       if (nIBox == 0) {continue;; };
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-          call_lbl_1: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 1, 0, 0UL, 3, (size_t)(15692222973149251133UL), (size_t)(0UL), (size_t)(15692222973149250952UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
+          call_lbl_1: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15692222973149251133UL), (size_t)(0UL), (size_t)(15692222973149250952UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 174 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       { for ( jTmp = (0) ; jTmp<nNbrBoxes; jTmp++)

@@ -146,11 +146,12 @@ extern void free_wrapper(void *ptr, size_t group);
 extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
+extern void *get_thread_ctx();
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);
 extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
         unsigned parent_stack_depth,
         size_t region_id, unsigned nlocals, ...);
 extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -159,7 +160,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4186,7 +4187,7 @@ int uts_numChildren_bin_quick(Node * parent); int uts_numChildren_bin(Node * par
 int uts_numChildren_bin_resumable(Node * parent) {const int ____chimes_did_disable4 = new_stack((void *)(&uts_numChildren_bin), "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, 1, 0, (size_t)(15584602656006456080UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 162 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-   int v; call_lbl_1: v = ( ({ uint8 * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (parent->state.state); } calling((void*)rng_rand, 1, 0, 0UL, 1, (size_t)(15584602656006456080UL)); (rng_rand)(____chimes_arg3); }) ) ;
+   int v; call_lbl_1: v = ( ({ uint8 * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (parent->state.state); } calling((void*)rng_rand, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(15584602656006456080UL)); (rng_rand)(____chimes_arg3); }) ) ;
 # 164 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
    double d; d = (({ calling_npm("rng_toProb", 0); rng_toProb_npm(v); })) ;
 # 165 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4320,7 +4321,7 @@ int uts_numChildren_resumable(Node *parent) {const int ____chimes_did_disable6 =
 # 246 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
      call_lbl_6: default:
 # 247 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       ({ char * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = ("parTreeSearch(): Unknown tree type"); } calling((void*)uts_error, 6, 0, 0UL, 1, (size_t)(15584602656006456889UL)); (uts_error)(____chimes_arg9); }) ;
+       ({ char * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = ("parTreeSearch(): Unknown tree type"); } calling((void*)uts_error, 6, ____alias_loc_id_4, 0UL, 1, (size_t)(15584602656006456889UL)); (uts_error)(____chimes_arg9); }) ;
 # 248 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   }
 # 249 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4384,7 +4385,7 @@ int uts_childType_resumable(Node *parent) {const int ____chimes_did_disable7 = n
 # 283 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
      call_lbl_5: default:
 # 284 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       ({ char * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = ("uts_get_childtype(): Unknown tree type"); } calling((void*)uts_error, 5, 0, 0UL, 1, (size_t)(15584602656006456892UL)); (uts_error)(____chimes_arg10); }) ;
+       ({ char * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = ("uts_get_childtype(): Unknown tree type"); } calling((void*)uts_error, 5, ____alias_loc_id_9, 0UL, 1, (size_t)(15584602656006456892UL)); (uts_error)(____chimes_arg10); }) ;
 # 285 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return -1;
 # 286 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4404,7 +4405,7 @@ char *____chimes_unroll_var_0;
  if (____must_checkpoint_uts_paramsToStr_es_0 || ____must_checkpoint_uts_paramsToStr_m_0 || ____must_checkpoint_uts_paramsToStr_q_0 || ____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0) { register_stack_vars(4, "uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0, "uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0, "uts_paramsToStr|____chimes_unroll_var_0|0", &____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } ; ;
 # 292 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 293 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, 0, 15584602656006456321UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
+       call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_10, 15584602656006456321UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
 # 294 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 295 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 296 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4507,7 +4508,7 @@ int i;
 # 353 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 354 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 355 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_16); call_lbl_5: if (! ({ char * ____chimes_arg18; char * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (argv[i]); ____chimes_arg19 = (argv[i + 1]); } calling((void*)impl_parseParam, 5, 0, 0UL, 2, (size_t)(15584602656006456737UL), (size_t)(15584602656006456737UL)); (impl_parseParam)(____chimes_arg18, ____chimes_arg19); }) ) {
+    alias_group_changed(____alias_loc_id_16); call_lbl_5: if (! ({ char * ____chimes_arg18; char * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (argv[i]); ____chimes_arg19 = (argv[i + 1]); } calling((void*)impl_parseParam, 5, ____alias_loc_id_16, 0UL, 2, (size_t)(15584602656006456737UL), (size_t)(15584602656006456737UL)); (impl_parseParam)(____chimes_arg18, ____chimes_arg19); }) ) {
 # 356 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       i += 2;
 # 357 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4731,7 +4732,7 @@ void uts_initRoot(Node * root, int type) { (____chimes_replaying ? uts_initRoot_
 int uts_numChildren_bin_quick(Node * parent) {const int ____chimes_did_disable4 = new_stack((void *)(&uts_numChildren_bin), "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, 1, 0, (size_t)(15584602656006456080UL)) ; ; ;
 # 162 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-   int v; call_lbl_1: v = ( ({ calling((void*)rng_rand, 1, 0, 0UL, 1, (size_t)(15584602656006456080UL)); (rng_rand)(parent->state.state); }) ) ;
+   int v; call_lbl_1: v = ( ({ calling((void*)rng_rand, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(15584602656006456080UL)); (rng_rand)(parent->state.state); }) ) ;
 # 164 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
    double d; d = (({ calling_npm("rng_toProb", 0); rng_toProb_npm(v); })) ;
 # 165 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4861,7 +4862,7 @@ int uts_numChildren_quick(Node *parent) {const int ____chimes_did_disable6 = new
 # 246 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
      call_lbl_6: default:
 # 247 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       ({ calling((void*)uts_error, 6, 0, 0UL, 1, (size_t)(15584602656006456889UL)); uts_error_quick("parTreeSearch(): Unknown tree type"); }) ;
+       ({ calling((void*)uts_error, 6, ____alias_loc_id_4, 0UL, 1, (size_t)(15584602656006456889UL)); uts_error_quick("parTreeSearch(): Unknown tree type"); }) ;
 # 248 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
   }
 # 249 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4923,7 +4924,7 @@ int uts_childType_quick(Node *parent) {const int ____chimes_did_disable7 = new_s
 # 283 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
      call_lbl_5: default:
 # 284 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       ({ calling((void*)uts_error, 5, 0, 0UL, 1, (size_t)(15584602656006456892UL)); uts_error_quick("uts_get_childtype(): Unknown tree type"); }) ;
+       ({ calling((void*)uts_error, 5, ____alias_loc_id_9, 0UL, 1, (size_t)(15584602656006456892UL)); uts_error_quick("uts_get_childtype(): Unknown tree type"); }) ;
 # 285 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return -1;
 # 286 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -4940,7 +4941,7 @@ char *____chimes_unroll_var_0;
  if (____must_checkpoint_uts_paramsToStr_es_0 || ____must_checkpoint_uts_paramsToStr_m_0 || ____must_checkpoint_uts_paramsToStr_q_0 || ____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0) { register_stack_vars(4, "uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0, "uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0, "uts_paramsToStr|____chimes_unroll_var_0|0", &____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } ; ;
 # 292 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 293 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-       call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, 0, 15584602656006456321UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
+       call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_10, 15584602656006456321UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
 # 294 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 295 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 296 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
@@ -5040,7 +5041,7 @@ int i;
 # 353 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 354 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
 # 355 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_16); call_lbl_5: if (! ({ calling((void*)impl_parseParam, 5, 0, 0UL, 2, (size_t)(15584602656006456737UL), (size_t)(15584602656006456737UL)); (impl_parseParam)(argv[i], argv[i + 1]); }) ) {
+    alias_group_changed(____alias_loc_id_16); call_lbl_5: if (! ({ calling((void*)impl_parseParam, 5, ____alias_loc_id_16, 0UL, 2, (size_t)(15584602656006456737UL), (size_t)(15584602656006456737UL)); (impl_parseParam)(argv[i], argv[i + 1]); }) ) {
 # 356 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
       i += 2;
 # 357 "/home/jmg3/num-debug/src/examples/openmp/uts/uts.c"
