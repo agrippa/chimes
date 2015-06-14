@@ -14,6 +14,8 @@
 
 #include "FunctionUnroll.h"
 
+extern std::set<std::string> functions_with_nocheckpoint_attr;
+
 void FunctionUnroll::visitChildren(const clang::Stmt *s) {
     for (clang::Stmt::const_child_iterator i = s->child_begin(),
             e = s->child_end(); i != e; i++) {
@@ -128,6 +130,17 @@ void FunctionUnroll::VisitStmt(const clang::Stmt *s) {
     if (const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s)) {
         std::string prefix = convert(call);
         InsertAtFront(call, prefix);
+
+        const clang::FunctionDecl *callee = call->getDirectCallee();
+        if (callee && callee->hasAttrs()) {
+            for (clang::AttrVec::const_iterator i = callee->getAttrs().begin(),
+                    e = callee->getAttrs().end(); i != e; i++) {
+                clang::NoCheckpointAttr *a = clang::dyn_cast<clang::NoCheckpointAttr>(*i);
+                if (a) {
+                    functions_with_nocheckpoint_attr.insert(callee->getNameAsString());
+                }
+            }
+        }
     } else {
         visitChildren(s);
     }

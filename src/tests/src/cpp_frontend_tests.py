@@ -16,6 +16,9 @@ CPP_TEST_DIR = CHIMES_HOME + '/src/tests/frontend/' + \
 PASS_BY_REF = FrontendTest('PassByRef', ['pass_by_ref.cpp'],
                            ['pass_by_ref.cpp.pre.transformed.cpp'], ['pass_by_ref'],
                            True)
+NOCHECKPOINT_ATTR = FrontendTest('NoCheckpointAttr', ['nocheckpoint_attr.cpp'],
+                                 ['nocheckpoint_attr.cpp.pre.transformed.cpp'],
+                                 ['nocheckpoint_attr'], True)
 SIMPLE_TESTS = ['func_ptr.cpp',
                 'npm.cpp',
                 'nested_call.cpp',
@@ -105,7 +108,7 @@ RAY_TRACER = FrontendTest('RayTracer', ['ray_tracer.c'],
                           ['ray_tracer.c.pre.transformed.cpp'], ['ray_tracer'],
                           False, extra_cli_args='-s')
 
-TESTS = [PASS_BY_REF]
+TESTS = [PASS_BY_REF, NOCHECKPOINT_ATTR]
 for simple in SIMPLE_TESTS:
     TESTS.append(construct_simple_frontend_test(simple))
 TESTS.append(ISO2D)

@@ -9,6 +9,7 @@
 #include "clang/Tooling/Tooling.h"
 #include "clang/Rewrite/Core/Rewriter.h"
 #include "llvm/Support/raw_ostream.h"
+#include "clang/AST/AttrIterator.h"
 
 #include "CallTranslator.h"
 

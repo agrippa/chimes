@@ -33,8 +33,10 @@ static unsigned long long count_thread_leaving = 0;
 static unsigned long long count_get_parent_vars_stack_depth = 0;
 static unsigned long long count_get_thread_stack_depth = 0;
 static unsigned long long count_checkpoint = 0;
+#ifdef __CHIMES_DETAIL_PROFILE
 static map<int, size_t> calling_lbls;
 static pthread_mutex_t count_mutex = PTHREAD_MUTEX_INITIALIZER;
+#endif
 #endif
 
 /*
@@ -73,11 +75,13 @@ void onexit() {
     fprintf(stderr, "get_thread_stack_depth %llu\n", count_get_thread_stack_depth);
     fprintf(stderr, "checkpoint %llu\n", count_checkpoint);
     fprintf(stderr, "\n");
+#ifdef __CHIMES_DETAIL_PROFILE
     fprintf(stderr, "Calling stats:\n");
     for (map<int, size_t>::iterator i = calling_lbls.begin(),
             e = calling_lbls.end(); i != e; i++) {
         fprintf(stderr, "  lbl %d - %lu\n", i->first, i->second);
     }
+#endif
 }
 #endif
 
@@ -134,6 +138,7 @@ void calling(void *func_ptr, int lbl, unsigned loc_id, size_t set_return_alias,
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling, 1);
 
+#ifdef __CHIMES_DETAIL_PROFILE
     assert(pthread_mutex_lock(&count_mutex) == 0);
     map<int, size_t>::iterator found = calling_lbls.find(lbl);
     if (found == calling_lbls.end()) {
@@ -142,6 +147,7 @@ void calling(void *func_ptr, int lbl, unsigned loc_id, size_t set_return_alias,
         found->second = found->second + 1;
     }
     assert(pthread_mutex_unlock(&count_mutex) == 0);
+#endif
 #endif
 }
 

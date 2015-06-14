@@ -812,15 +812,34 @@ static std::string get_external_func_name(std::string fname) {
     return ("____chimes_extern_func_" + fname);
 }
 
-std::string CallingAndOMPPass::get_loc_arg(const CallExpr *call) {
+std::string CallingAndOMPPass::get_loc_arg(const CallExpr *call,
+        std::string func_name) {
     clang::PresumedLoc call_start_loc = SM->getPresumedLoc(
             call->getLocStart());
-    StateChangeInsertion *state = insertions->get_matching(
-            call_start_loc.getLine(),
-            call_start_loc.getColumn(),
-            call_start_loc.getFilename());
-    return (state == NULL ? "0" :
-            insertions->get_alias_loc_var(state->get_id()));
+    llvm::errs() << "Looking for match to " << call_start_loc.getFilename() << ":" << call_start_loc.getLine() << ":" << call_start_loc.getColumn() << "\n";
+    if (change_loc_iters.find(func_name) == change_loc_iters.end()) {
+        change_loc_iters.insert(pair<string, map<int, vector<StateChangeInsertion *>::iterator> >(func_name, map<int, vector<StateChangeInsertion *>::iterator>()));
+    }
+    if (change_loc_iters.at(func_name).find(call_start_loc.getLine()) == change_loc_iters.at(func_name).end()) {
+        change_loc_iters.at(func_name).insert(pair<int, std::vector<StateChangeInsertion *>::iterator>(call_start_loc.getLine(), insertions->getStateChangesBegin()));
+    }
+
+    std::map<int, std::vector<StateChangeInsertion *>::iterator>::iterator found = change_loc_iters.at(func_name).find(call_start_loc.getLine());
+    assert(found != change_loc_iters.at(func_name).end());
+
+    vector<StateChangeInsertion *>::iterator match = insertions->get_matching_after(call_start_loc.getLine(), call_start_loc.getFilename(), func_name, found->second);
+    found->second = match;
+    if (match == insertions->getStateChangesEnd()) {
+        return "0";
+    } else {
+        return insertions->get_alias_loc_var((*match)->get_id());
+    }
+    // StateChangeInsertion *state = insertions->get_matching(
+    //         call_start_loc.getLine(),
+    //         call_start_loc.getColumn(),
+    //         call_start_loc.getFilename());
+    // return (state == NULL ? "0" :
+    //         insertions->get_alias_loc_var(state->get_id()));
 }
 
 std::string CallingAndOMPPass::generateFunctionPointerCall(const CallExpr *call,
@@ -828,7 +847,7 @@ std::string CallingAndOMPPass::generateFunctionPointerCall(const CallExpr *call,
     std::stringstream ss;
     std::string fptr_type = call->getCallee()->getType().getAsString();
 
-    std::string loc_arg = get_loc_arg(call);
+    std::string loc_arg = get_loc_arg(call, loc.get_funcname());
 
     ss << "((" << fptr_type << ")(translate_fptr((void *)" <<
         stmtToString(call->getCallee()) << ", " << lbl.get_lbl() << ", " <<
@@ -854,18 +873,10 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
         AliasesPassedToCallSite callsite, const CallExpr *call,
         bool use_function_pointer) {
     std::stringstream ss;
-    std::string loc_arg = get_loc_arg(call);
+    std::string loc_arg = get_loc_arg(call, loc.get_funcname());
 
     ss << "({ calling_npm(\"" << loc.get_funcname() << "\", " << loc_arg <<
         "); ";
-
-    // ss << "({ calling_npm(\"" << loc.get_funcname() << "\", " <<
-    //     callsite.get_return_alias() << "UL, " << loc_arg << ", " <<
-    //     callsite.nparams();
-    // for (int i = 0; i < callsite.nparams(); i++) {
-    //     ss << ", " << callsite.alias_no_for(i) << "UL";
-    // }
-    // ss << "); ";
 
     if (use_function_pointer) {
         ss << "(*" << get_external_func_name(loc.get_funcname()) << ")(";
@@ -924,7 +935,7 @@ std::string CallingAndOMPPass::generateNormalCall(const CallExpr *call,
     }
     replace_func_call << ")";
 
-    std::string loc_arg = get_loc_arg(call);
+    std::string loc_arg = get_loc_arg(call, loc.get_funcname());
 
     ss << " calling((void*)" << func_symbol << ", " << lbl.get_lbl() << ", " <<
         loc_arg << ", " << callsite.get_return_alias() << "UL, " <<
@@ -1277,7 +1288,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     if (loc.get_funcname() == "checkpoint") {
                         std::stringstream ss;
                         ss << "checkpoint_transformed(" << lbl.get_lbl() <<
-                            ", " << get_loc_arg(call) << ")";
+                            ", " << get_loc_arg(call, loc.get_funcname()) << ")";
                         new_call = ss.str();
                     } else {
                         new_call = generateNormalCall(call, loc, lbl, callsite);
@@ -1357,6 +1368,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
     calls_found.clear();
     vars_to_classify.clear();
     calls_to_register_callbacks.clear();
+    change_loc_iters.clear();
 }
 
 void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {

@@ -497,6 +497,15 @@ public:
         return ss.str();
     }
 
+    bool operator < (const StateChangeInsertion& other) const {
+        assert(filename == other.filename);
+        if (line_no == other.line_no) {
+            return col < other.col;
+        } else {
+            return line_no < other.line_no;
+        }
+    }
+
 private:
     unsigned id;
     std::string filename;
@@ -560,7 +569,12 @@ public:
 
     void update_alias_change_locations(int line, int col,
             const char *filename, int delta);
+    std::vector<StateChangeInsertion *>::iterator getStateChangesBegin();
+    std::vector<StateChangeInsertion *>::iterator getStateChangesEnd();
     StateChangeInsertion *get_matching(int line, int col, const char *filename);
+    std::vector<StateChangeInsertion *>::iterator get_matching_after(
+            int line, const char *filename, std::string func_name,
+            std::vector<StateChangeInsertion *>::iterator start);
     std::vector<StructFields *> *get_struct_fields() { return struct_fields; }
     StructFields *get_struct_fields_for(std::string name);
     std::vector<ReachableInfo> *get_reachable() { return reachable; }

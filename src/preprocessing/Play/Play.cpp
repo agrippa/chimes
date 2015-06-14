@@ -161,10 +161,13 @@ namespace {
 
     private:
         void initKnownFunctions();
+        void initMarkedFunctions();
         bool isKnownFunction(Function *F);
+        bool isMarkedWithNoCheckpoint(Function *F);
         CALLS_CHECKPOINT knownFunctionCreatesCheckpoint(Function *F);
         std::map<std::string, CALLS_CHECKPOINT> doesFunctionCreateCheckpoint;
         std::map<std::string, std::vector<unsigned> > functionChanges;
+        std::set<std::string> functionsMarkedWithNoCheckpoint;
 
         void printFunctions(Module &M);
         void printValuesAndAliasGroups(
@@ -1481,9 +1484,35 @@ void Play::initKnownFunctions() {
     fclose(fp);
 }
 
+void Play::initMarkedFunctions() {
+    char *nocheckpoint_file = getenv("NOCHECKPOINT_FILE");
+    assert(nocheckpoint_file);
+
+    ssize_t nchars;
+    char *line = NULL; size_t line_length = 0;
+    FILE *fp = fopen(nocheckpoint_file, "r");
+    while ((nchars = getline(&line, &line_length, fp)) != (ssize_t)-1) {
+        while (nchars > 0 && line[nchars - 1] == '\n') {
+            line[nchars - 1] = '\0';
+            nchars--;
+        }
+
+        std::string s(line);
+        functionsMarkedWithNoCheckpoint.insert(s);
+    }
+    fclose(fp);
+}
+
 bool Play::isKnownFunction(Function *F) {
     return (F != NULL && doesFunctionCreateCheckpoint.find(F->getName().str()) !=
         doesFunctionCreateCheckpoint.end());
+}
+
+bool Play::isMarkedWithNoCheckpoint(Function *F) {
+    if (F == NULL) return false;
+    std::string fname = demangledFunctionName(F->getName().str());
+    return (functionsMarkedWithNoCheckpoint.find(fname) !=
+            functionsMarkedWithNoCheckpoint.end());
 }
 
 CALLS_CHECKPOINT Play::knownFunctionCreatesCheckpoint(Function *F) {
@@ -1503,6 +1532,8 @@ CALLS_CHECKPOINT Play::mayCreateCheckpointHelper(Function *F,
 
     if (isCheckpoint(F)) {
         result = DOES;
+    } else if (isMarkedWithNoCheckpoint(F)) {
+        result = DOES_NOT;
     } else if (isKnownFunction(F)) {
         result = knownFunctionCreatesCheckpoint(F);
     } else if (F->empty()) {
@@ -2891,6 +2922,12 @@ bool Play::runOnModule(Module &M) {
     Hasher *hashes = calculate_hashes(M);
 
     initKnownFunctions();
+    /*
+     * From the function unroll pass, read in a list of functions for the
+     * current application that have been marked as not creating checkpoints by
+     * the programmer.
+     */
+    initMarkedFunctions();
 
     /*
      * This first section of code groups values into alias sets, finds all alias
