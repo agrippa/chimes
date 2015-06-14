@@ -22,8 +22,11 @@ using namespace clang::tooling;
 static llvm::cl::OptionCategory ToolingSampleCategory("chimes options");
 static llvm::cl::opt<std::string> output_file("o",
         llvm::cl::desc("Output file"), llvm::cl::value_desc("output_file"));
+static llvm::cl::opt<std::string> attr_file("a",
+        llvm::cl::desc("Attribute file"), llvm::cl::value_desc("attr_file"));
 
 static FunctionUnroll *transform = NULL;
+std::set<std::string> functions_with_nocheckpoint_attr;
 
 class TransformASTConsumer : public ASTConsumer {
 public:
@@ -97,6 +100,7 @@ int main(int argc, const char **argv) {
   CommonOptionsParser op(argc, argv, ToolingSampleCategory);
 
   check_opt(output_file, "output_file");
+  check_opt(attr_file, "attr_file");
 
   assert(op.getSourcePathList().size() == 1);
   std::string just_filename = op.getSourcePathList()[0].substr(
@@ -111,6 +115,15 @@ int main(int argc, const char **argv) {
   ClangTool *Tool = new ClangTool(op.getCompilations(), op.getSourcePathList());
   int err = Tool->run(factory);
   if (err) return err;
+
+  std::ofstream attr_out(std::string(attr_file.c_str()));
+  for (std::set<std::string>::iterator i =
+          functions_with_nocheckpoint_attr.begin(), e =
+          functions_with_nocheckpoint_attr.end(); i != e; i++) {
+      std::string fname = *i;
+      attr_out << fname << "\n";
+  }
+  attr_out.close();
 
   return 0;
 }

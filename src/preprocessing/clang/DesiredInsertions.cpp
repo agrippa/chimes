@@ -856,6 +856,8 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
         count_locs++;
     }
 
+    std::sort(result->begin(), result->end());
+
     fp.close();
     return result;
 }
@@ -888,6 +890,33 @@ void DesiredInsertions::update_alias_change_locations(int line, int col,
     }
 }
 
+std::vector<StateChangeInsertion *>::iterator DesiredInsertions::getStateChangesBegin() {
+    return state_change_insertions->begin();
+}
+
+std::vector<StateChangeInsertion *>::iterator DesiredInsertions::getStateChangesEnd() {
+    return state_change_insertions->end();
+}
+
+std::vector<StateChangeInsertion *>::iterator DesiredInsertions::get_matching_after(
+        int line, const char *filename, std::string func_name,
+        std::vector<StateChangeInsertion *>::iterator start) {
+    std::string filename_str(filename);
+
+    std::vector<StateChangeInsertion *>::iterator curr = start;
+    while (curr != state_change_insertions->end()) {
+        StateChangeInsertion *change = *curr;
+        if (change->is_call() && change->get_reason() == func_name &&
+                change->get_line() == line &&
+                change->get_filename() == filename_str) {
+            return curr;
+        }
+        curr++;
+    }
+
+    return getStateChangesEnd();
+}
+
 StateChangeInsertion *DesiredInsertions::get_matching(int line, int col,
         const char *filename) {
     std::string filename_str(filename);
@@ -903,21 +932,6 @@ StateChangeInsertion *DesiredInsertions::get_matching(int line, int col,
     return (NULL);
 }
 
-// std::vector<size_t> *DesiredInsertions::get_groups(int line, int col,
-//         const char *filename) {
-//     std::string filename_str(filename);
-//     for (std::vector<StateChangeInsertion *>::iterator i =
-//             state_change_insertions->begin(), e =
-//             state_change_insertions->end(); i != e; i++) {
-//         StateChangeInsertion *insert = *i;
-//         if (insert->get_line() == line && insert->get_col() == col &&
-//                 insert->get_filename() == filename_str) {
-//             return insert->get_groups();
-//         }
-//     }
-//     assert(false);
-// }
-
 StackAlloc *DesiredInsertions::findStackAlloc(std::string mangled_name) {
     std::map<std::string, StackAlloc *>::iterator iter =
         stack_allocs->find(mangled_name);
@@ -925,7 +939,6 @@ StackAlloc *DesiredInsertions::findStackAlloc(std::string mangled_name) {
 
     return iter->second;
 }
-
 
 void DesiredInsertions::resetHeapAllocIters() {
     heap_alloc_iters.clear();
@@ -1055,19 +1068,6 @@ std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::findFirstMatch
         if (curr.get_line() == line && curr.get_funcname() == callee_name) {
             break;
         }
-
-        // if (curr.get_line() == line &&
-        //         curr.get_funcname().find(callee_name) != std::string::npos) {
-        //     /*
-        //      * TODO This is super ugly. The callee_name passed here is the
-        //      * name as it appears in the source code. The function name
-        //      * stored in curr is a mangled name (some C++ mangling
-        //      * convention? not sure). Here, we just wait for the first match
-        //      * where the user-visible name is a substring of the mangled
-        //      * name.
-        //      */
-        //     break;
-        // }
         i++;
     }
 

@@ -494,7 +494,8 @@ static unsigned long long total_allocations = 0;
 static hash_chunker *hash_chunker = new fixed_chunk_size_chunker(
         16 * 1024UL * 1024UL);
 // Just dump things smaller than this, don't waste time hashing.
-static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
+// static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
+static const size_t DONT_HASH_SIZE = 16 * 1024UL * 1024UL;
 // The target size of a checkpoint, as a percentage of total heap bytes.
 static double target_checkpoint_size_perc = 0.2;
 
@@ -521,7 +522,8 @@ enum PROFILE_LABEL_ID { NEW_STACK = 0, RM_STACK, REGISTER_STACK_VAR, CALLING,
     LEAVING_OMP_PARALLEL, REGISTER_THREAD_LOCAL_STACK_VARS,
     ENTERING_OMP_PARALLEL, CHECKPOINT_THREAD, CHECKPOINT, INIT_CHIMES,
     WAIT_FOR_ALL_THREADS, HASHING, REGISTER_STACK_VARS, REGISTER_TEXT,
-    THREAD_LEAVING, N_LABELS };
+    THREAD_LEAVING, CHECKPOINT_PREP, ONEXIT, CALLING_NPM, TRANSLATE_FPTR,
+    N_LABELS };
 static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
     "register_stack_var", "calling", "init_module", "register_global_var",
     "alias_group_changed", "malloc_wrapper", "realloc_wrapper",
@@ -529,7 +531,8 @@ static const char *PROFILE_LABELS[] = { "new_stack", "rm_stack",
     "leaving_omp_parallel", "register_thread_local_stack_vars",
     "entering_omp_parallel", "checkpoint_thread", "checkpoint", "init_chimes",
     "wait_for_all_threads", "hashing", "register_stack_vars",
-    "register_text", "thread_leaving" };
+    "register_text", "thread_leaving", "checkpoint_prep", "onexit",
+    "calling_npm", "translate_fptr" };
 
 perf_profile pp(PROFILE_LABELS, N_LABELS);
 #endif
@@ -2238,7 +2241,13 @@ static void calling_npm_helper(const char *name, unsigned loc_id,
 }
 
 void calling_npm(const char *name, unsigned loc_id) {
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
     calling_npm_helper(name, loc_id, false, 0, 0, 0x0);
+#ifdef __CHIMES_PROFILE
+    pp.add_time(CALLING_NPM, __start_time);
+#endif
 }
 
 static void calling_helper(void *func_ptr, int lbl, unsigned loc_id,
@@ -2287,6 +2296,10 @@ static void calling_helper(void *func_ptr, int lbl, unsigned loc_id,
 
 void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
         int n_params, ...) {
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
+
     map<void *, pair<void *, string> >::iterator exists =
         original_function_to_npm.find(fptr);
     void *result;
@@ -2301,6 +2314,9 @@ void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
         result = fptr;
     }
     va_end(vl);
+#ifdef __CHIMES_PROFILE
+    pp.add_time(TRANSLATE_FPTR, __start_time);
+#endif
     return (result);
 }
 
@@ -3232,6 +3248,9 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
     const bool was_a_replay = ____chimes_replaying;
     checkpoint_ctx *curr_ckpt;
     bool checkpointing_thread;
+#ifdef __CHIMES_PROFILE
+    unsigned long long __prep_start_time = 0ULL;
+#endif
 
     /*
      * On replay, the last thread to hit the checkpoint will skip the wait loop
@@ -3369,6 +3388,9 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
             if (checkpoint_thread_running == 1) {
                 VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
             } else {
+#ifdef __CHIMES_PROFILE
+                __prep_start_time = perf_profile::current_time_ns();
+#endif
                 checkpoint_thread_running = 1;
 
                 /*
@@ -3476,7 +3498,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                     } else {
                         if (curr->hashes_invalid()) {
 #ifdef HASHING_DIAGNOSTICS
-                            fprintf(stderr, "  not hashing allocation due to invalid hashes, size=%lu "
+                            fprintf(stderr, "  hashing allocation due to invalid hashes, size=%lu "
                                     "copied_so_far=%lu desired=%lu\n", curr->get_size(),
                                     copied_so_far, desired_checkpoint_size);
 #endif
@@ -3626,6 +3648,11 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
         if (was_a_replay) {
             curr_ckpt->set_exit_time();
         }
+#ifdef __CHIMES_PROFILE
+        if (__prep_start_time > 0) {
+            pp.add_time(CHECKPOINT_PREP, __prep_start_time);
+        }
+#endif
         VERIFY(pthread_cond_broadcast(&thread_count_cond) == 0);
     }
     clock_t exit_time;
@@ -4491,10 +4518,16 @@ unsigned get_thread_stack_depth() {
 }
 
 void thread_leaving() {
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
     VERIFY(pthread_mutex_lock(&thread_count_mutex) == 0);
     active_thread_count -= 1;
     VERIFY(pthread_cond_broadcast(&thread_count_cond) == 0);
     VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
+#ifdef __CHIMES_PROFILE
+    pp.add_time(THREAD_LEAVING, __start_time);
+#endif
 }
 
 void leaving_omp_parallel(unsigned expected_parent_stack_depth,
@@ -4691,7 +4724,14 @@ void onexit() {
 #ifdef VERBOSE
     fprintf(stderr, "Joining\n");
 #endif
+
+#ifdef __CHIMES_PROFILE
+    const unsigned long long __start_time = perf_profile::current_time_ns();
+#endif
     pthread_join(checkpoint_thread, NULL);
+#ifdef __CHIMES_PROFILE
+    pp.add_time(ONEXIT, __start_time);
+#endif
 
 #ifdef __CHIMES_PROFILE
     fprintf(stderr, "%s\n", pp.tostr().c_str());

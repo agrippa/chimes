@@ -121,7 +121,7 @@ private:
     std::string get_unique_region_varname();
     std::string get_unique_argument_varname();
     std::string get_unique_disable_varname();
-    std::string get_loc_arg(const CallExpr *call);
+    std::string get_loc_arg(const CallExpr *call, std::string func_name);
 
     /*
      * Map from line containing a OMP pragma to its immediate predessor. It is
@@ -177,6 +177,7 @@ private:
             std::set<std::string> *changed_alias_locs,
             std::set<std::string> *visited);
 
+    std::map<std::string, std::map<int, std::vector<StateChangeInsertion *>::iterator> > change_loc_iters;
     std::map<std::string, std::set<std::string> > supported_omp_clauses;
     std::set<std::string> supported_omp_pragmas;
     int chimes_parent_thread_counter = 0;

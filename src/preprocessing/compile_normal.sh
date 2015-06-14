@@ -17,7 +17,7 @@ LIBS=
 OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
-GXX_FLAGS="-g -O2"
+GXX_FLAGS="-O3"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpy:D:s" opt; do

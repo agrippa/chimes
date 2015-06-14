@@ -19,7 +19,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-g -O3"
+GXX_FLAGS="-O3"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
@@ -186,7 +186,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
 
     echo Unrolling functions in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${FUNCTION_UNROLL} -o ${PREPROCESS_FILE}.unroll \
-        ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
+        -a ${PREPROCESS_FILE}.attrs ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
         -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
     cp ${PREPROCESS_FILE}.unroll ${PREPROCESS_FILE}
 
@@ -198,7 +198,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     echo $OPT -basicaa -load $LLVM_LIB -play < \
            ${BITCODE_FILE}
     echo Analyzing ${BITCODE_FILE} and dumping info to ${WORK_DIR}
-    cd ${WORK_DIR} && $OPT -basicaa -load $LLVM_LIB -play < \
+    cd ${WORK_DIR} && NOCHECKPOINT_FILE=${PREPROCESS_FILE}.attrs $OPT -basicaa -load $LLVM_LIB -play < \
            ${BITCODE_FILE} &>${ANALYSIS_LOG_FILE} > $TMP_OBJ_FILE
     rm ${TMP_OBJ_FILE}
 
@@ -210,7 +210,6 @@ for INPUT in ${ABS_INPUTS[@]}; do
             exit 1
         fi
         mv ${WORK_DIR}/${info_file} ${INFO_FILE_PREFIX}.${info_file}
-
     done
 
     echo Setting up stack variable conditionals for ${PREPROCESS_FILE}
