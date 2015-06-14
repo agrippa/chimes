@@ -1193,10 +1193,6 @@ void parTreeSearch(StealStack *ss) {
     ss_setState(ss, SS_IDLE);
     done = cbarrier_wait();
   }
-
-#ifdef __CHIMES_SUPPORT
-    checkpoint();
-#endif
   
   /* tree search complete ! */
 }

@@ -816,7 +816,6 @@ std::string CallingAndOMPPass::get_loc_arg(const CallExpr *call,
         std::string func_name) {
     clang::PresumedLoc call_start_loc = SM->getPresumedLoc(
             call->getLocStart());
-    llvm::errs() << "Looking for match to " << call_start_loc.getFilename() << ":" << call_start_loc.getLine() << ":" << call_start_loc.getColumn() << "\n";
     if (change_loc_iters.find(func_name) == change_loc_iters.end()) {
         change_loc_iters.insert(pair<string, map<int, vector<StateChangeInsertion *>::iterator> >(func_name, map<int, vector<StateChangeInsertion *>::iterator>()));
     }
