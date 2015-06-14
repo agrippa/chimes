@@ -258,6 +258,13 @@ static map<unsigned, vector<int> > *traces;
 static map<unsigned, unsigned> trace_indices;
 
 /*
+ * Variables used to maintain a per-thread thread_ctx that can be accessed
+ * efficiently. The shared map is only used for when a checkpoint needs to store
+ * every thread's state.
+ */
+pthread_key_t thread_ctx_key;
+
+/*
  * Globally shared heap representation used by all threads.
  */
 static map<void *, heap_allocation *> heap;
@@ -494,8 +501,8 @@ static unsigned long long total_allocations = 0;
 static hash_chunker *hash_chunker = new fixed_chunk_size_chunker(
         16 * 1024UL * 1024UL);
 // Just dump things smaller than this, don't waste time hashing.
-// static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
-static const size_t DONT_HASH_SIZE = 16 * 1024UL * 1024UL;
+static const size_t DONT_HASH_SIZE = 1024UL * 1024UL;
+// static const size_t DONT_HASH_SIZE = 16 * 1024UL * 1024UL;
 // The target size of a checkpoint, as a percentage of total heap bytes.
 static double target_checkpoint_size_perc = 0.2;
 
