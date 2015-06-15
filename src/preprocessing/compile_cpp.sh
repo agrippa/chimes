@@ -124,6 +124,7 @@ BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
 FUNCTION_UNROLL=${CHIMES_HOME}/src/preprocessing/function_unroll/function_unroll
 CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
+SCOP_FINDER=${CHIMES_HOME}/src/preprocessing/scop/find_scop.py
 REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 ADD_QUICK_VERSIONS=${CHIMES_HOME}/src/preprocessing/module_init/add_quick_versions.py
@@ -165,6 +166,9 @@ for INPUT in ${ABS_INPUTS[@]}; do
     else
         touch ${INFO_FILE_PREFIX}.omp.info
     fi
+
+    cd ${WORK_DIR} && python ${SCOP_FINDER} ${INPUT} \
+        ${INFO_FILE_PREFIX}.scop.info ${INFO_FILE_PREFIX}.scop.body
 
     echo Preprocessing ${INPUT} into ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${GXX} -I${CUDA_HOME}/include \
