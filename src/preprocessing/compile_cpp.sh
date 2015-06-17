@@ -5,7 +5,7 @@ set -e
 script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
 
-INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info constants.info tree.info"
+INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info constants.info tree.info accessed.info"
 ENABLE_OMP=1
 KEEP=0
 PROFILE=0
@@ -125,6 +125,7 @@ FUNCTION_UNROLL=${CHIMES_HOME}/src/preprocessing/function_unroll/function_unroll
 CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 SCOP_FINDER=${CHIMES_HOME}/src/preprocessing/scop/find_scop.py
+SCOP_INSERT=${CHIMES_HOME}/src/preprocessing/scop/insert_scop_conditional.py
 REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 ADD_QUICK_VERSIONS=${CHIMES_HOME}/src/preprocessing/module_init/add_quick_versions.py
@@ -155,6 +156,7 @@ fi
 for INPUT in ${ABS_INPUTS[@]}; do
     INFO_FILE_PREFIX=${WORK_DIR}/$(basename ${INPUT})
     PREPROCESS_FILE=${WORK_DIR}/$(basename ${INPUT}).pre.cpp
+    ANY_ALIASED_FILE=${WORK_DIR}/$(basename ${INPUT}).any.cpp
     PREPROCESSED_WITH_CONDS_FILE=${WORK_DIR}/$(basename ${INPUT}).pre.conds.cpp
     BITCODE_FILE=${WORK_DIR}/$(basename ${INPUT}).bc
     TMP_OBJ_FILE=${WORK_DIR}/$(basename ${INPUT}).o
@@ -167,8 +169,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         touch ${INFO_FILE_PREFIX}.omp.info
     fi
 
-    cd ${WORK_DIR} && python ${SCOP_FINDER} ${INPUT} \
-        ${INFO_FILE_PREFIX}.scop.info ${INFO_FILE_PREFIX}.scop.body
+    cd ${WORK_DIR} && python ${SCOP_FINDER} ${INPUT} ${INFO_FILE_PREFIX}.scop.info
 
     echo Preprocessing ${INPUT} into ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${GXX} -I${CUDA_HOME}/include \
@@ -188,19 +189,17 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
     cp ${PREPROCESS_FILE}.braces ${PREPROCESS_FILE}
 
-    echo Unrolling functions in ${PREPROCESS_FILE}
-    cd ${WORK_DIR} && ${FUNCTION_UNROLL} -o ${PREPROCESS_FILE}.unroll \
-        -a ${PREPROCESS_FILE}.attrs ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-        -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
-    cp ${PREPROCESS_FILE}.unroll ${PREPROCESS_FILE}
+#     echo Unrolling functions in ${PREPROCESS_FILE}
+#     cd ${WORK_DIR} && ${FUNCTION_UNROLL} -o ${PREPROCESS_FILE}.unroll \
+#         -a ${PREPROCESS_FILE}.attrs ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
+#         -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
+#     cp ${PREPROCESS_FILE}.unroll ${PREPROCESS_FILE}
 
     echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
     cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
            -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -S -emit-llvm \
            ${PREPROCESS_FILE} -o ${BITCODE_FILE} -g ${CHIMES_DEF} ${DEFINES}
 
-    echo $OPT -basicaa -load $LLVM_LIB -play < \
-           ${BITCODE_FILE}
     echo Analyzing ${BITCODE_FILE} and dumping info to ${WORK_DIR}
     cd ${WORK_DIR} && NOCHECKPOINT_FILE=${PREPROCESS_FILE}.attrs $OPT -basicaa -load $LLVM_LIB -play < \
            ${BITCODE_FILE} &>${ANALYSIS_LOG_FILE} > $TMP_OBJ_FILE
@@ -216,12 +215,12 @@ for INPUT in ${ABS_INPUTS[@]}; do
         mv ${WORK_DIR}/${info_file} ${INFO_FILE_PREFIX}.${info_file}
     done
 
-    echo Setting up stack variable conditionals for ${PREPROCESS_FILE}
-    cd ${WORK_DIR} && python ${REGISTER_STACK_VAR_COND} ${PREPROCESS_FILE} \
-        ${PREPROCESSED_WITH_CONDS_FILE} ${INFO_FILE_PREFIX}.stack.info \
-        ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
-        ${INFO_FILE_PREFIX}.exit.info
-    mv ${PREPROCESSED_WITH_CONDS_FILE} ${PREPROCESS_FILE}
+#    echo Setting up stack variable conditionals for ${PREPROCESS_FILE}
+#    cd ${WORK_DIR} && python ${REGISTER_STACK_VAR_COND} ${PREPROCESS_FILE} \
+#        ${PREPROCESSED_WITH_CONDS_FILE} ${INFO_FILE_PREFIX}.stack.info \
+#        ${INFO_FILE_PREFIX}.tree.info ${INFO_FILE_PREFIX}.lines.info \
+#        ${INFO_FILE_PREFIX}.exit.info
+#    mv ${PREPROCESSED_WITH_CONDS_FILE} ${PREPROCESS_FILE}
 
     ${TRANSFORM} \
             -l ${INFO_FILE_PREFIX}.lines.info \
@@ -246,6 +245,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -g ${INFO_FILE_PREFIX}.list_of_externs \
             -j ${INFO_FILE_PREFIX}.fptrs \
             -u ${INFO_FILE_PREFIX}.merge \
+            -y ${INFO_FILE_PREFIX}.scop.info \
+            -z ${INFO_FILE_PREFIX}.accessed.info \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -259,52 +260,55 @@ for INPUT in ${ABS_INPUTS[@]}; do
     HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
     NPM_CONDS_FILE=${NAME}.npm_conds.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
+    SCOP_FILE=${NAME}.scop.${EXT}
 
-    echo Adding quick function declarations and bodies to $TRANSFORMED_FILE
-    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${TRANSFORMED_FILE} ${INCLUDE_QUICK_FILE} \
-        -b ${INFO_FILE_PREFIX}.quick.bodies -d ${INFO_FILE_PREFIX}.quick.decls
+#     echo Adding quick function declarations and bodies to $TRANSFORMED_FILE
+#     cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${TRANSFORMED_FILE} ${INCLUDE_QUICK_FILE} \
+#         -b ${INFO_FILE_PREFIX}.quick.bodies -d ${INFO_FILE_PREFIX}.quick.decls
 
-    echo Adding firstprivate clauses to parallel for loops in ${INCLUDE_QUICK_FILE}
-    cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${INCLUDE_QUICK_FILE} \
-        ${INFO_FILE_PREFIX}.firstprivate.info > ${FIRSTPRIVATE_FILE}
+#     echo Adding firstprivate clauses to parallel for loops in ${INCLUDE_QUICK_FILE}
+#     cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${INCLUDE_QUICK_FILE} \
+#         ${INFO_FILE_PREFIX}.firstprivate.info > ${FIRSTPRIVATE_FILE}
 
-    echo Adding NPM function declarations, bodies, and pointers to ${FIRSTPRIVATE_FILE}
-    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${FIRSTPRIVATE_FILE} ${NPM_FILE} \
-        -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls \
-        -e ${INFO_FILE_PREFIX}.list_of_externs 
+#     echo Adding NPM function declarations, bodies, and pointers to ${INCLUDE_QUICK_FILE}
+#     cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${INCLUDE_QUICK_FILE} ${NPM_FILE} \
+#         -b ${INFO_FILE_PREFIX}.npm.bodies -d ${INFO_FILE_PREFIX}.npm.decls \
+#         -e ${INFO_FILE_PREFIX}.list_of_externs 
 
-    echo Adding NPM conditionals to ${NPM_FILE}
-    cd ${WORK_DIR} && python ${ADD_NPM_CONDS} ${NPM_FILE} \
-        ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls \
-        ${INFO_FILE_PREFIX}.list_of_externs
+#     echo Adding NPM conditionals to ${NPM_FILE}
+#     cd ${WORK_DIR} && python ${ADD_NPM_CONDS} ${NPM_FILE} \
+#         ${NPM_CONDS_FILE} ${INFO_FILE_PREFIX}.npm.decls \
+#         ${INFO_FILE_PREFIX}.list_of_externs
 
-    echo Hardcoding quick/resumable/npm calls when possible in ${NPM_CONDS_FILE}
-    cd ${WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
-        -q ${INFO_FILE_PREFIX}.quick.decls -n ${INFO_FILE_PREFIX}.npm.decls \
-        -e ${INFO_FILE_PREFIX}.externs ${NPM_CONDS_FILE} -- \
-        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
-        ${CHIMES_DEF} ${DEFINES}
+#     echo Hardcoding quick/resumable/npm calls when possible in ${NPM_CONDS_FILE}
+#     cd ${WORK_DIR} && ${CALL_TRANSLATE} -o ${HARDCODED_CALLS_FILE} \
+#         -q ${INFO_FILE_PREFIX}.quick.decls -n ${INFO_FILE_PREFIX}.npm.decls \
+#         -e ${INFO_FILE_PREFIX}.externs ${NPM_CONDS_FILE} -- \
+#         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+#         ${CHIMES_DEF} ${DEFINES}
 
-    echo Setting up module initialization for ${HARDCODED_CALLS_FILE}
-    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${HARDCODED_CALLS_FILE} -o ${FINAL_FILE} \
+    echo Setting up module initialization for ${TRANSFORMED_FILE}
+    cd ${WORK_DIR} && python ${MODULE_INIT} -i ${TRANSFORMED_FILE} -o ${FINAL_FILE} \
         -m ${INFO_FILE_PREFIX}.module.info -r ${INFO_FILE_PREFIX}.reachable.info \
         -g ${INFO_FILE_PREFIX}.globals.info -s ${INFO_FILE_PREFIX}.struct.info \
         -c ${INFO_FILE_PREFIX}.constants.info -v ${INFO_FILE_PREFIX}.stack.info \
-        -t ${INFO_FILE_PREFIX}.tree.info -l ${INFO_FILE_PREFIX}.lines.info \
-        -x ${INFO_FILE_PREFIX}.exit.info -f ${INFO_FILE_PREFIX}.func.info \
-        -e ${INFO_FILE_PREFIX}.list_of_externs -n ${INFO_FILE_PREFIX}.npm.decls \
+        -t ${INFO_FILE_PREFIX}.tree.info \
+        -f ${INFO_FILE_PREFIX}.func.info \
         -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs \
         -j ${INFO_FILE_PREFIX}.fptrs -ms ${INFO_FILE_PREFIX}.merge.static \
         -md ${INFO_FILE_PREFIX}.merge.dynamic
 
-    echo Postprocessing ${FINAL_FILE}
-    cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \
-        -o ${FINAL_FILE}.post
-    mv ${WORK_DIR}/${FINAL_FILE}.post ${WORK_DIR}/${FINAL_FILE}
+    cd ${WORK_DIR} && python ${SCOP_INSERT} ${FINAL_FILE} \
+        ${INFO_FILE_PREFIX}.accessed.info ${INFO_FILE_PREFIX}.scop.info ${SCOP_FILE}
 
-    FINAL_FILE=${WORK_DIR}/${FINAL_FILE}
+    echo Postprocessing ${SCOP_FILE}
+    cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${SCOP_FILE} ${CHIMES_DEF} ${DEFINES} \
+        -o ${SCOP_FILE}.post
+    mv ${WORK_DIR}/${SCOP_FILE}.post ${WORK_DIR}/${SCOP_FILE}
 
-    LAST_FILES+=($FINAL_FILE)
+    SCOP_FILE=${WORK_DIR}/${SCOP_FILE}
+
+    LAST_FILES+=($SCOP_FILE)
 done
 
 for f in ${LAST_FILES[@]}; do

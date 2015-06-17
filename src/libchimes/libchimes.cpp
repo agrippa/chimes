@@ -192,10 +192,10 @@ class checkpoint_ctx {
 };
 
 // functions defined in this file
-int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned n_args, ...);
+int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
+        unsigned n_local_arg_aliases, /* unsigned n_args, */ ...);
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id);
+        const char *funcname, /* int *conditional, unsigned loc_id */int did_disable);
 void register_stack_var(const char *mangled_name, int *cond_registration,
         unsigned thread, const char *full_type, void *ptr, size_t size,
         int is_ptr, int is_struct, int n_ptr_fields, ...);
@@ -590,6 +590,30 @@ static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
         }
     }
     return result;
+}
+
+bool any_aliased(int ngroups, ...) {
+    size_t groups[ngroups];
+
+    va_list vl;
+    va_start(vl, ngroups);
+    for (int i = 0; i < ngroups; i++) {
+        groups[i] = va_arg(vl, size_t);
+    }
+    va_end(vl);
+
+    bool alias_exists = false;
+    VERIFY(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
+    for (int i = 0; i < ngroups; i++) {
+        for (int j = i + 1; j < ngroups; j++) {
+            if (groups[i] != groups[j] && aliased(groups[i], groups[j], false)) {
+                alias_exists = true;
+                break;
+            }
+        }
+    }
+    VERIFY(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+    return alias_exists;
 }
 
 static void read_heap_from_file(int fd, char *checkpoint_file,
@@ -1720,8 +1744,8 @@ static void parse_merges(int n_merges, va_list vl,
 }
 
 void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
-        int nvars, int n_change_locs, int n_provided_npm_functions,
-        int n_external_npm_functions, int n_npm_conditionals,
+        int nvars, /* int n_change_locs, */ /* int n_provided_npm_functions, */
+        /* int n_external_npm_functions, int n_npm_conditionals, */
         int n_static_merges, int n_dynamic_merges, int nstructs, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
@@ -1738,140 +1762,141 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
     initialized_modules.insert(module_id);
 
     // Generate unique IDs for each change location
-    for (int i = 0; i < n_change_locs; i++) {
-        // Unique ID for this location
-        unsigned this_loc_id = count_change_locations++;
+    // for (int i = 0; i < n_change_locs; i++) {
+    //     // Unique ID for this location
+    //     unsigned this_loc_id = count_change_locations++;
 
-        /*
-         * Location in the host application to store the integer ID of this
-         * location.
-         */
-        unsigned *change_loc_id_ptr = va_arg(vl, unsigned *);
-        // Number of aliases that have definitely changed at this location
-        const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
-        /*
-         * Number of aliases which may have to be marked changed at this
-         * location. These are groups that are passed to externally defined
-         * functions. If we do not get that function registered at runtime, we
-         * have to conservatively assume these groups have changed.
-         */
-        const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
+    //     /*
+    //      * Location in the host application to store the integer ID of this
+    //      * location.
+    //      */
+    //     unsigned *change_loc_id_ptr = va_arg(vl, unsigned *);
+    //     // Number of aliases that have definitely changed at this location
+    //     const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
+    //     /*
+    //      * Number of aliases which may have to be marked changed at this
+    //      * location. These are groups that are passed to externally defined
+    //      * functions. If we do not get that function registered at runtime, we
+    //      * have to conservatively assume these groups have changed.
+    //      */
+    //     const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
 
 #ifdef VERBOSE
-        fprintf(stderr, "Change location %u has %u aliases, %u more possible "
-                "aliases\n", this_loc_id, n_aliases_at_loc,
-                n_possible_aliases_at_loc);
+    //     fprintf(stderr, "Change location %u has %u aliases, %u more possible "
+    //             "aliases\n", this_loc_id, n_aliases_at_loc,
+    //             n_possible_aliases_at_loc);
 #endif
 
-        // Read definite changes
-        set<size_t> aliases_changed;
-        for (unsigned j = 0; j < n_aliases_at_loc; j++) {
-            size_t alias = va_arg(vl, size_t);
-            aliases_changed.insert(alias);
-        }
-        change_loc_id_to_aliases.insert(pair<unsigned, set<size_t> >(
-                    this_loc_id, aliases_changed));
+    //     // Read definite changes
+    //     set<size_t> aliases_changed;
+    //     for (unsigned j = 0; j < n_aliases_at_loc; j++) {
+    //         size_t alias = va_arg(vl, size_t);
+    //         aliases_changed.insert(alias);
+    //     }
+    //     change_loc_id_to_aliases.insert(pair<unsigned, set<size_t> >(
+    //                 this_loc_id, aliases_changed));
 
-        /*
-         * Read a mapping from externally defined function name to the aliases
-         * it is passed which it may (or may not) change.
-         */
-        map<string, set<size_t> > possible_aliases;
-        for (unsigned j = 0; j < n_possible_aliases_at_loc; j++) {
-            std::string funcname(va_arg(vl, const char *));
-            unsigned naliases = va_arg(vl, unsigned);
+    //     /*
+    //      * Read a mapping from externally defined function name to the aliases
+    //      * it is passed which it may (or may not) change.
+    //      */
+    //     map<string, set<size_t> > possible_aliases;
+    //     for (unsigned j = 0; j < n_possible_aliases_at_loc; j++) {
+    //         std::string funcname(va_arg(vl, const char *));
+    //         unsigned naliases = va_arg(vl, unsigned);
 
-            assert(possible_aliases.find(funcname) == possible_aliases.end());
-            possible_aliases.insert(pair<string, set<size_t> >(funcname,
-                        set<size_t>()));
+    //         assert(possible_aliases.find(funcname) == possible_aliases.end());
+    //         possible_aliases.insert(pair<string, set<size_t> >(funcname,
+    //                     set<size_t>()));
 
-            for (unsigned k = 0; k < naliases; k++) {
-                size_t alias = va_arg(vl, size_t);
-                possible_aliases.at(funcname).insert(alias);
-            }
-        }
+    //         for (unsigned k = 0; k < naliases; k++) {
+    //             size_t alias = va_arg(vl, size_t);
+    //             possible_aliases.at(funcname).insert(alias);
+    //         }
+    //     }
 
-        possible_alias_changes.insert(
-                pair<unsigned, map<string, set<size_t> > >(this_loc_id,
-                    possible_aliases));
+    //     possible_alias_changes.insert(
+    //             pair<unsigned, map<string, set<size_t> > >(this_loc_id,
+    //                 possible_aliases));
 
-        *change_loc_id_ptr = this_loc_id;
-    }
+    //     *change_loc_id_ptr = this_loc_id;
+    // }
 
     // Iterate over the NPM functions defined inside this compilation unit.
-    for (int i = 0; i < n_provided_npm_functions; i++) {
-        std::string fname(va_arg(vl, char *));
-        void *fptr = va_arg(vl, void *);
-        void *original_fptr = va_arg(vl, void *);
+    // for (int i = 0; i < n_provided_npm_functions; i++) {
+    //     std::string fname(va_arg(vl, char *));
+    //     void *fptr = va_arg(vl, void *);
+    //     void *original_fptr = va_arg(vl, void *);
 
-        /*
-         * original_fptr will be NULL for any functions whose addresses are not
-         * taken within the same compilation unit. This serves as an
-         * optimization to help the compiler with inter-procedural analysis --
-         * code runs much more slowly when you load the function address for
-         * every function in a compilation unit, forcing the compiler to make
-         * more conservative decisions.
-         */
-        if (original_fptr) {
-            assert(fname_to_original_function.find(fname) ==
-                    fname_to_original_function.end());
-            fname_to_original_function[fname] = original_fptr;
-        }
+    //     /*
+    //      * original_fptr will be NULL for any functions whose addresses are not
+    //      * taken within the same compilation unit. This serves as an
+    //      * optimization to help the compiler with inter-procedural analysis --
+    //      * code runs much more slowly when you load the function address for
+    //      * every function in a compilation unit, forcing the compiler to make
+    //      * more conservative decisions.
+    //      */
+    //     if (original_fptr) {
+    //         assert(fname_to_original_function.find(fname) ==
+    //                 fname_to_original_function.end());
+    //         fname_to_original_function[fname] = original_fptr;
+    //     }
 
-        // Alias locations that are stored in this function
-        const int n_alias_locs = va_arg(vl, int);
-        set<unsigned> alias_locs;
-        for (int j = 0; j < n_alias_locs; j++) {
-            unsigned *loc_id_ptr = va_arg(vl, unsigned *);
-            alias_locs.insert(*loc_id_ptr);
-        }
+    //     // Alias locations that are stored in this function
+    //     const int n_alias_locs = va_arg(vl, int);
+    //     set<unsigned> alias_locs;
+    //     for (int j = 0; j < n_alias_locs; j++) {
+    //         unsigned *loc_id_ptr = va_arg(vl, unsigned *);
+    //         alias_locs.insert(*loc_id_ptr);
+    //     }
 
-        /*
-         * The aliases that this function assigns to its input parameters and
-         * its returned value.
-         */
-        vector<size_t> param_aliases;
-        size_t return_alias;
-        const int n_param_aliases = va_arg(vl, int);
-        for (int j = 0; j < n_param_aliases; j++) {
-            param_aliases.push_back(va_arg(vl, size_t));
-        }
-        return_alias = va_arg(vl, size_t);
-        function_io_aliases outer_aliases(param_aliases, return_alias);
+    //     /*
+    //      * The aliases that this function assigns to its input parameters and
+    //      * its returned value.
+    //      */
+    //     vector<size_t> param_aliases;
+    //     size_t return_alias;
+    //     const int n_param_aliases = va_arg(vl, int);
+    //     for (int j = 0; j < n_param_aliases; j++) {
+    //         param_aliases.push_back(va_arg(vl, size_t));
+    //     }
+    //     return_alias = va_arg(vl, size_t);
+    //     function_io_aliases outer_aliases(param_aliases, return_alias);
 
-        /*
-         * The set of calls made from the current function, including the name
-         * of the function called, the number of arguments passed, the aliases
-         * assigned to each of those arguments, and the return alias assigned to
-         * any value that is returned.
-         */
-        const int n_calls_made = va_arg(vl, int);
-        vector<call_aliases> calls;
-        for (int j = 0; j < n_calls_made; j++) {
-            vector<size_t> arg_aliases;
-            size_t return_alias;
+    //     /*
+    //      * The set of calls made from the current function, including the name
+    //      * of the function called, the number of arguments passed, the aliases
+    //      * assigned to each of those arguments, and the return alias assigned to
+    //      * any value that is returned.
+    //      */
+    //     const int n_calls_made = va_arg(vl, int);
+    //     vector<call_aliases> calls;
+    //     for (int j = 0; j < n_calls_made; j++) {
+    //         vector<size_t> arg_aliases;
+    //         size_t return_alias;
 
-            string callee_name(va_arg(vl, const char *));
-            const int n_args = va_arg(vl, int);
-            for (int k = 0; k < n_args; k++) {
-                arg_aliases.push_back(va_arg(vl, size_t));
-            }
-            return_alias = va_arg(vl, size_t);
-            calls.push_back(call_aliases(callee_name, arg_aliases,
-                        return_alias));
-        }
+    //         string callee_name(va_arg(vl, const char *));
+    //         const int n_args = va_arg(vl, int);
+    //         for (int k = 0; k < n_args; k++) {
+    //             arg_aliases.push_back(va_arg(vl, size_t));
+    //         }
+    //         return_alias = va_arg(vl, size_t);
+    //         calls.push_back(call_aliases(callee_name, arg_aliases,
+    //                     return_alias));
+    //     }
 
-        VERIFY(provided_npm_functions.insert(pair<string, void *>(fname,
-                        fptr)).second);
-        VERIFY(fname_to_alias_locs.insert(pair<string, set<unsigned> >(fname,
-                        alias_locs)).second);
-        VERIFY(fname_to_outer_aliases.insert(pair<string, function_io_aliases>(
-                        fname, outer_aliases)).second);
-        VERIFY(fname_to_calls_made.insert(pair<string, vector<call_aliases> >(
-                        fname, calls)).second);
-    }
+    //     VERIFY(provided_npm_functions.insert(pair<string, void *>(fname,
+    //                     fptr)).second);
+    //     VERIFY(fname_to_alias_locs.insert(pair<string, set<unsigned> >(fname,
+    //                     alias_locs)).second);
+    //     VERIFY(fname_to_outer_aliases.insert(pair<string, function_io_aliases>(
+    //                     fname, outer_aliases)).second);
+    //     VERIFY(fname_to_calls_made.insert(pair<string, vector<call_aliases> >(
+    //                     fname, calls)).second);
+    // }
 
     // Iterate over the NPM functions that this compilation unit depends on
+    /* 
     for (int i = 0; i < n_external_npm_functions; i++) {
         std::string npm_fname(va_arg(vl, const char *));
         void **fptr = va_arg(vl, void **);
@@ -1884,22 +1909,23 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
         requested_npm_functions.at(npm_fname).push_back(fptr);
     }
+    */
 
     /*
      * Get the addresses of the global variables which prevent conditional NPM
      * execution.
      */
-    for (int i = 0; i < n_npm_conditionals; i++) {
-        std::string func_name(va_arg(vl, const char *));
-        int *conditional = va_arg(vl, int *);
+    // for (int i = 0; i < n_npm_conditionals; i++) {
+    //     std::string func_name(va_arg(vl, const char *));
+    //     int *conditional = va_arg(vl, int *);
 
-        if (npm_conditional_pointers.find(func_name) ==
-                npm_conditional_pointers.end()) {
-            VERIFY(npm_conditional_pointers.insert(pair<string, vector<int *> >(
-                            func_name, vector<int *>())).second);
-        }
-        npm_conditional_pointers.at(func_name).push_back(conditional);
-    }
+    //     if (npm_conditional_pointers.find(func_name) ==
+    //             npm_conditional_pointers.end()) {
+    //         VERIFY(npm_conditional_pointers.insert(pair<string, vector<int *> >(
+    //                         func_name, vector<int *>())).second);
+    //     }
+    //     npm_conditional_pointers.at(func_name).push_back(conditional);
+    // }
 
     // Read an initial parent-child relationship of alias groups
     for (int i = 0; i < n_contains_mappings; i++) {
@@ -2057,8 +2083,8 @@ static void add_argument_aliases(unsigned n_local_arg_aliases, thread_ctx *ctx,
 
 enum DISABLED_THREAD { DISABLED, NOT_DISABLED, ALREADY_DISABLED };
 
-int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
+int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
+        unsigned int n_local_arg_aliases, /* unsigned int nargs, */ ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -2099,6 +2125,7 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
         }
     }
 
+    /*
     if (!need_to_manage_stack(conditional, std::string(funcname)) ||
             ctx->is_disabled()) {
 #ifdef VERBOSE
@@ -2115,6 +2142,7 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
 
         return NOT_DISABLED;
     }
+    */
 
 #ifdef VERBOSE
     fprintf(stderr, "Entering %s, need to manage stack\n", funcname);
@@ -2137,7 +2165,7 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
      * are really supported at the moment, so for now we assert they are equal.
      */
     va_list vl;
-    va_start(vl, nargs);
+    va_start(vl, n_local_arg_aliases);
 
     if (program_stack->size() != 1 &&
             n_local_arg_aliases != ctx->get_n_parent_aliases()) {
@@ -2157,6 +2185,7 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
 
     ctx->push_return_alias();
 
+    /*
     for (unsigned i = 0; i < nargs; i++) {
         const char *mangled_name = va_arg(vl, const char *);
         int *cond_registration = va_arg(vl, int *);
@@ -2174,6 +2203,7 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
                     program_stack);
         }
     }
+    */
 
     va_end(vl);
 
@@ -2229,7 +2259,7 @@ static void merge_npm_aliases(string fname, size_t return_alias,
     }
 }
 
-static void calling_npm_helper(const char *name, unsigned loc_id,
+static void calling_npm_helper(const char *name, /* unsigned loc_id, */
         bool has_alias_info, size_t return_alias, int n_params, va_list vl) {
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ns();
@@ -2238,16 +2268,16 @@ static void calling_npm_helper(const char *name, unsigned loc_id,
     std::string fname(name);
     npm_context *npm_ctx = fname_to_npm_info.at(fname);
 
-    if (loc_id > 0) {
-        alias_group_changed_helper(loc_id, ctx);
-    }
+    // if (loc_id > 0) {
+    //     alias_group_changed_helper(loc_id, ctx);
+    // }
 
-    for (set<unsigned>::iterator i = npm_ctx->get_alias_locs()->begin(),
-            e = npm_ctx->get_alias_locs()->end(); i != e; i++) {
-        unsigned loc_id = *i;
-        assert(loc_id > 0);
-        alias_group_changed_helper(loc_id, ctx);
-    }
+    // for (set<unsigned>::iterator i = npm_ctx->get_alias_locs()->begin(),
+    //         e = npm_ctx->get_alias_locs()->end(); i != e; i++) {
+    //     unsigned loc_id = *i;
+    //     assert(loc_id > 0);
+    //     alias_group_changed_helper(loc_id, ctx);
+    // }
 
     if (has_alias_info) {
         vector<size_t> param_aliases;
@@ -2260,17 +2290,17 @@ static void calling_npm_helper(const char *name, unsigned loc_id,
     ADD_TO_OVERHEAD
 }
 
-void calling_npm(const char *name, unsigned loc_id) {
+void calling_npm(const char *name /* , unsigned loc_id */ ) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
-    calling_npm_helper(name, loc_id, false, 0, 0, 0x0);
+    calling_npm_helper(name, /* loc_id, */ false, 0, 0, 0x0);
 #ifdef __CHIMES_PROFILE
     pp.add_time(CALLING_NPM, __start_time);
 #endif
 }
 
-static void calling_helper(void *func_ptr, int lbl, unsigned loc_id,
+static void calling_helper(void *func_ptr, int lbl, /* unsigned loc_id, */
         size_t set_return_alias, unsigned naliases, va_list vl) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
@@ -2297,9 +2327,9 @@ static void calling_helper(void *func_ptr, int lbl, unsigned loc_id,
      * only necessary if the call being made is unknown and we cannot hoist the
      * alias group changes out of it as well.
      */
-    if (loc_id > 0) {
-        alias_group_changed_helper(loc_id, ctx);
-    }
+    // if (loc_id > 0) {
+    //     alias_group_changed_helper(loc_id, ctx);
+    // }
 
     /*
      * the below mappings should be possible at compile time
@@ -2314,7 +2344,7 @@ static void calling_helper(void *func_ptr, int lbl, unsigned loc_id,
 #endif
 }
 
-void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
+void *translate_fptr(void *fptr, int lbl, /* unsigned loc_id, */ size_t return_alias,
         int n_params, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
@@ -2326,11 +2356,11 @@ void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
     va_list vl;
     va_start(vl, n_params);
     if (exists != original_function_to_npm.end()) {
-        calling_npm_helper(exists->second.second.c_str(), loc_id, true,
+        calling_npm_helper(exists->second.second.c_str(), /* loc_id, */ true,
                 return_alias, n_params, vl);
         result = exists->second.first;
     } else {
-        calling_helper(fptr, lbl, loc_id, return_alias, n_params, vl);
+        calling_helper(fptr, lbl, /* loc_id, */ return_alias, n_params, vl);
         result = fptr;
     }
     va_end(vl);
@@ -2340,11 +2370,11 @@ void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
     return (result);
 }
 
-void calling(void *func_ptr, int lbl, unsigned loc_id, size_t return_alias,
+void calling(void *func_ptr, int lbl, /* unsigned loc_id, */ size_t return_alias,
         unsigned naliases, ...) {
     va_list vl;
     va_start(vl, naliases);
-    calling_helper(func_ptr, lbl, loc_id, return_alias, naliases, vl);
+    calling_helper(func_ptr, lbl, /* loc_id, */ return_alias, naliases, vl);
     va_end(vl);
 }
 
@@ -2371,7 +2401,7 @@ static inline void alias_group_changed_helper(unsigned loc_id,
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id,
+        const char *funcname, /* int *conditional, unsigned loc_id, */
         int did_disable) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
@@ -2384,6 +2414,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
         return;
     }
 
+    /*
     if (!need_to_manage_stack(conditional, std::string(funcname)) ||
             ctx->is_disabled()) {
 #ifdef VERBOSE
@@ -2400,6 +2431,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
 
         return;
     }
+    */
 
 #ifdef VERBOSE
     fprintf(stderr, "Leaving %s, need to manage stack\n", funcname);
@@ -2415,9 +2447,11 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
     ctx->get_stack_tracker().pop();
     ctx->decrement_stack_nesting();
 
+    /*
     if (loc_id > 0) {
         alias_group_changed_helper(loc_id, ctx);
     }
+    */
 
     if (____chimes_rerunning && ctx->get_stack_nesting() < 0) {
 #ifdef VERBOSE
@@ -3267,7 +3301,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
         alias_group_changed_helper(loc_id, ctx);
     }
 
-    new_stack((void *)checkpoint_transformed, "checkpoint", NULL, 0, 0);
+    new_stack((void *)checkpoint_transformed, "checkpoint", /* NULL, */ 0 /* , 0 */ );
     const bool was_a_replay = ____chimes_replaying;
     checkpoint_ctx *curr_ckpt;
     bool checkpointing_thread;
@@ -3399,7 +3433,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
             VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
-            rm_stack(false, 0, "checkpoint", NULL, 0, 0);
+            rm_stack(false, 0, "checkpoint", /* NULL, 0, */ 0);
             ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
             pp.add_time(CHECKPOINT, __start_time);
@@ -3658,7 +3692,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
             }
         }
     } else {
-        rm_stack(false, 0, "checkpoint", NULL, 0, 0);
+        rm_stack(false, 0, "checkpoint", /* NULL, 0, */ 0);
         ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
         pp.add_time(CHECKPOINT, __start_time);
@@ -3696,7 +3730,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
         while (clock() - exit_time < my_delta) ;
     }
 
-    rm_stack(false, 0, "checkpoint", NULL, 0, 0);
+    rm_stack(false, 0, "checkpoint", /* NULL, 0,*/ 0);
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CHECKPOINT, __start_time);

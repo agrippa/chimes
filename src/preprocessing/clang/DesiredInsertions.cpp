@@ -39,6 +39,95 @@ size_t DesiredInsertions::unique_alias(size_t alias) {
     else return module_id + alias;
 }
 
+std::map<std::string, AccessedAliases> *DesiredInsertions::parseAccessed() {
+    std::map<std::string, AccessedAliases> *result =
+        new std::map<std::string, AccessedAliases>();
+
+    std::ifstream fp;
+    fp.open(access_file, std::ios::in);
+    std::string line;
+
+    while (getline(fp, line)) {
+        // filename line_no group1 group2 ...
+        size_t end = line.find(' ');
+        std::string filename = line.substr(0, end);
+        line = line.substr(end + 1);
+
+        if (result->find(filename) == result->end()) {
+            result->insert(std::pair<std::string, AccessedAliases>(filename,
+                        AccessedAliases(filename)));
+        }
+
+        end = line.find(' ');
+        unsigned line_no = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
+        while (end != std::string::npos) {
+            std::string group_str = line.substr(0, end);
+            size_t group = unique_alias(strtoul(group_str.c_str(), NULL, 10));
+            result->at(filename).add_access(line_no, group);
+            line = line.substr(end + 1);
+            end = line.find(' ');
+        }
+        size_t group = unique_alias(strtoul(line.c_str(), NULL, 10));
+        result->at(filename).add_access(line_no, group);
+    }
+
+    fp.close();
+
+    return result;
+}
+
+std::vector<Scop> *DesiredInsertions::parseScops() {
+    std::vector<Scop> *result = new std::vector<Scop>();
+
+    std::ifstream fp;
+    fp.open(scop_file, std::ios::in);
+    std::string line;
+
+    std::string last_filename = "";
+    int last_line_no = -1;
+
+    while (getline(fp, line)) {
+        // filename line_no start|end
+        size_t end = line.find(' ');
+        std::string filename = line.substr(0, end);
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
+        unsigned line_no = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+        
+        if (line == "start") {
+            assert(last_filename.size() == 0);
+            assert(last_line_no == -1);
+
+            last_filename = filename;
+            last_line_no = line_no;
+        } else if (line == "end") {
+            assert(last_filename.size() != 0);
+            assert(last_filename == filename);
+            assert(last_line_no > 0);
+            assert(line_no > last_line_no);
+
+            result->push_back(Scop(filename, last_line_no, line_no));
+
+            last_filename = "";
+            last_line_no = -1;
+        } else {
+            llvm::errs() << "\"" << line << "\"\n";
+            assert(false);
+        }
+    }
+    fp.close();
+
+    assert(last_filename.size() == 0);
+    assert(last_line_no == -1);
+
+    return result;
+}
+
 std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
     std::vector<OpenMPPragma> *pragmas = new std::vector<OpenMPPragma>();
 
@@ -1413,4 +1502,33 @@ std::string DesiredInsertions::get_alias_loc_var(unsigned id) {
     std::stringstream ss;
     ss << "____alias_loc_id_" << id;
     return ss.str();
+}
+
+Scop DesiredInsertions::findScop(std::string filename, int line) {
+    for (std::vector<Scop>::iterator i = scops->begin(), e = scops->end();
+            i != e; i++) {
+        Scop s = *i;
+        llvm::errs() << s.get_enclosing_file() << " " << s.get_start_pragma_line() << " " << filename << " " << line << "\n";
+        if (s.get_enclosing_file() == filename && s.get_start_pragma_line() == line) {
+            return s;
+        }
+    }
+    assert(false);
+}
+
+std::set<size_t> *DesiredInsertions::getAllAccesses(Scop scop) {
+    std::set<size_t> *result = new std::set<size_t>();
+    AccessedAliases accesses = accessed->at(scop.get_enclosing_file());
+    for (std::map<int, std::set<size_t> >::iterator i = accesses.begin(),
+            e = accesses.end(); i != e; i++) {
+        int line_no = i->first;
+        if (line_no > scop.get_start_pragma_line() &&
+                line_no < scop.get_end_pragma_line()) {
+            for (std::set<size_t>::iterator ii = i->second.begin(),
+                    ee = i->second.end(); ii != ee; ii++) {
+                result->insert(*ii);
+            }
+        }
+    }
+    return result;
 }

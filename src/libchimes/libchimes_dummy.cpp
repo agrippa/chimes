@@ -127,13 +127,13 @@ void init_chimes() {
     }
 }
 
-void calling_npm(const char *name, unsigned loc_id) {
+void calling_npm(const char *name /* , unsigned loc_id */ ) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling_npm, 1);
 #endif
 }
 
-void calling(void *func_ptr, int lbl, unsigned loc_id, size_t set_return_alias,
+void calling(void *func_ptr, int lbl, /* unsigned loc_id, */ size_t set_return_alias,
         unsigned naliases, ...) {
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_calling, 1);
@@ -152,9 +152,9 @@ void calling(void *func_ptr, int lbl, unsigned loc_id, size_t set_return_alias,
 }
 
 int get_next_call() { return (0); }
-int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...) {
-    if (conditional) { *conditional = 0; }
+int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
+        unsigned n_local_arg_aliases, /* unsigned nargs, */ ...) {
+    // if (conditional) { *conditional = 0; }
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_new_stack, 1);
 #endif
@@ -172,84 +172,85 @@ void *translate_fptr(void *fptr, int lbl, unsigned loc_id, size_t return_alias,
 }
 
 void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
-        int nvars, int n_change_locs, int n_provided_npm_functions,
-        int n_external_npm_functions, int n_npm_conditionals,
+        int nvars, /* int n_change_locs, */ /* int n_provided_npm_functions, */
+        /* int n_external_npm_functions, int n_npm_conditionals, */
         int n_static_merges, int n_dynamic_merges, int nstructs, ...) {
     va_list vl;
     va_start(vl, nstructs);
 
     // Generate unique IDs for each change location
-    for (int i = 0; i < n_change_locs; i++) {
+    // for (int i = 0; i < n_change_locs; i++) {
 
-        va_arg(vl, unsigned *);
-        const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
-        const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
+    //     va_arg(vl, unsigned *);
+    //     const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
+    //     const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
 
-        for (unsigned j = 0; j < n_aliases_at_loc; j++) {
-            va_arg(vl, size_t);
-        }
+    //     for (unsigned j = 0; j < n_aliases_at_loc; j++) {
+    //         va_arg(vl, size_t);
+    //     }
 
-        for (unsigned j = 0; j < n_possible_aliases_at_loc; j++) {
-            va_arg(vl, const char *);
-            unsigned naliases = va_arg(vl, unsigned);
-            for (unsigned k = 0; k < naliases; k++) {
-                va_arg(vl, size_t);
-            }
-        }
-    }
+    //     for (unsigned j = 0; j < n_possible_aliases_at_loc; j++) {
+    //         va_arg(vl, const char *);
+    //         unsigned naliases = va_arg(vl, unsigned);
+    //         for (unsigned k = 0; k < naliases; k++) {
+    //             va_arg(vl, size_t);
+    //         }
+    //     }
+    // }
 
     // Iterate over the NPM functions defined inside this compilation unit.
-    for (int i = 0; i < n_provided_npm_functions; i++) {
-        std::string fname(va_arg(vl, char *));
-        void *fptr = va_arg(vl, void *);
-        void *original_fptr = va_arg(vl, void *);
+    // for (int i = 0; i < n_provided_npm_functions; i++) {
+    //     std::string fname(va_arg(vl, char *));
+    //     void *fptr = va_arg(vl, void *);
+    //     void *original_fptr = va_arg(vl, void *);
 
-        if (original_fptr) {
-            assert(original_function_to_npm.find(original_fptr) ==
-                    original_function_to_npm.end());
-            original_function_to_npm[original_fptr] = fptr;
-        }
+    //     if (original_fptr) {
+    //         assert(original_function_to_npm.find(original_fptr) ==
+    //                 original_function_to_npm.end());
+    //         original_function_to_npm[original_fptr] = fptr;
+    //     }
 
 #ifdef VERBOSE
-        fprintf(stderr, "%s provided\n", fname.c_str());
+    //     fprintf(stderr, "%s provided\n", fname.c_str());
 #endif
-        VERIFY(provided_npm_functions.insert(pair<string, void *>(fname,
-                        fptr)).second);
+    //     VERIFY(provided_npm_functions.insert(pair<string, void *>(fname,
+    //                     fptr)).second);
 
-        // Alias locations that are stored in this function
-        const int n_alias_locs = va_arg(vl, int);
-        for (int j = 0; j < n_alias_locs; j++) {
-            va_arg(vl, unsigned *);
-        }
+    //     // Alias locations that are stored in this function
+    //     const int n_alias_locs = va_arg(vl, int);
+    //     for (int j = 0; j < n_alias_locs; j++) {
+    //         va_arg(vl, unsigned *);
+    //     }
 
-        /*
-         * The aliases that this function assigns to its input parameters and
-         * its returned value.
-         */
-        const int n_param_aliases = va_arg(vl, int);
-        for (int j = 0; j < n_param_aliases; j++) {
-            va_arg(vl, size_t);
-        }
-        va_arg(vl, size_t);
+    //     /*
+    //      * The aliases that this function assigns to its input parameters and
+    //      * its returned value.
+    //      */
+    //     const int n_param_aliases = va_arg(vl, int);
+    //     for (int j = 0; j < n_param_aliases; j++) {
+    //         va_arg(vl, size_t);
+    //     }
+    //     va_arg(vl, size_t);
 
-        /*
-         * The set of calls made from the current function, including the name
-         * of the function called, the number of arguments passed, the aliases
-         * assigned to each of those arguments, and the return alias assigned to
-         * any value that is returned.
-         */
-        const int n_calls_made = va_arg(vl, int);
-        for (int j = 0; j < n_calls_made; j++) {
-            va_arg(vl, const char *);
-            const int n_args = va_arg(vl, int);
-            for (int k = 0; k < n_args; k++) {
-                va_arg(vl, size_t);
-            }
-            va_arg(vl, size_t);
-        }
-    }
+    //     /*
+    //      * The set of calls made from the current function, including the name
+    //      * of the function called, the number of arguments passed, the aliases
+    //      * assigned to each of those arguments, and the return alias assigned to
+    //      * any value that is returned.
+    //      */
+    //     const int n_calls_made = va_arg(vl, int);
+    //     for (int j = 0; j < n_calls_made; j++) {
+    //         va_arg(vl, const char *);
+    //         const int n_args = va_arg(vl, int);
+    //         for (int k = 0; k < n_args; k++) {
+    //             va_arg(vl, size_t);
+    //         }
+    //         va_arg(vl, size_t);
+    //     }
+    // }
 
     // Iterate over the NPM functions that this compilation unit depends on
+    /* 
     for (int i = 0; i < n_external_npm_functions; i++) {
         std::string npm_fname(va_arg(vl, const char *));
         void **fptr = va_arg(vl, void **);
@@ -262,24 +263,25 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
         requested_npm_functions.at(npm_fname).push_back(fptr);
     }
+    */
 
     /*
      * Get the addresses of the global variables which prevent conditional NPM
      * execution.
      */
-    for (int i = 0; i < n_npm_conditionals; i++) {
-        std::string func_name(va_arg(vl, const char *));
-        int *conditional = va_arg(vl, int *);
+    // for (int i = 0; i < n_npm_conditionals; i++) {
+    //     std::string func_name(va_arg(vl, const char *));
+    //     int *conditional = va_arg(vl, int *);
 
-        all_npm_conditionals.insert(conditional);
-    }
+    //     all_npm_conditionals.insert(conditional);
+    // }
 
     va_end(vl);
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled) {
-    if (conditional) { *conditional = 0; }
+        const char *funcname, /* int *conditional, unsigned loc_id, */ int disabled) {
+    // if (conditional) { *conditional = 0; }
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_rm_stack, 1);
 #endif

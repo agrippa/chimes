@@ -61,6 +61,27 @@ namespace {
             std::map<std::string, std::set<size_t> > *possibly_changed_at_termination;
     };
 
+    class AccessesPerLine {
+        public:
+            AccessesPerLine(std::string set_filename) :
+                filename(set_filename) { }
+
+            std::string get_filename() { return filename; }
+            std::map<int, std::set<size_t> >::iterator begin() { return accessed.begin(); }
+            std::map<int, std::set<size_t> >::iterator end() { return accessed.end(); }
+            void add_access(int line_no, size_t group) {
+                if (accessed.find(line_no) == accessed.end()) {
+                    accessed.insert(std::pair<int, std::set<size_t> >(line_no,
+                                std::set<size_t>()));
+                }
+                accessed.at(line_no).insert(group);
+            }
+
+        private:
+            std::string filename;
+            std::map<int, std::set<size_t> > accessed;
+    };
+
     typedef struct _StackAllocInfo {
         std::string *varname;
         int type_size_in_bits;
@@ -196,6 +217,16 @@ namespace {
                 bool isindirect, std::map<Value *, size_t> value_to_alias_group,
                 std::string filename, Module &M);
         void dumpLineToGroupsMappingTo(const char *filename);
+
+
+        void collectLineToAccessedGroupsInFunction(BasicBlock *curr,
+                std::set<BasicBlock *> *visited, std::string filename,
+                std::map<Value *, size_t> value_to_alias_group, Module &M,
+                AccessesPerLine *accesses);
+        std::map<std::string, AccessesPerLine *> *collectLineToAccessedGroups(
+                Module &M, std::map<Value *, size_t> value_to_alias_group);
+        void dumpLineToAccessedGroupsMapping(const char *filename,
+                std::map<std::string, AccessesPerLine *> *accesses);
 
         std::map<Value *, std::string> *mapValuesToOriginalVarName(Function *F);
         void findStackAllocations(Module &M, const char *output_file,
@@ -1381,6 +1412,88 @@ std::map<Function *, TermInfo> *Play::collectLineToGroupsMapping(
     return result;
 }
 
+void Play::collectLineToAccessedGroupsInFunction(BasicBlock *curr,
+        std::set<BasicBlock *> *visited, std::string filename,
+        std::map<Value *, size_t> value_to_alias_group, Module &M,
+        AccessesPerLine *accesses) {
+    assert(curr != NULL);
+    if (visited->find(curr) != visited->end()) return;
+    visited->insert(curr);
+
+    // Collect all pointers loaded from and stored to
+    for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
+            inst_iter != inst_end; inst_iter++) {
+        Instruction *curr_inst = inst_iter;
+        int line_no = curr_inst->getDebugLoc().getLine();
+        if (StoreInst *store = dyn_cast<StoreInst>(curr_inst)) {
+            // Mark the destination alias group as modified
+            size_t group = value_to_alias_group.at(store->getPointerOperand());
+            accesses->add_access(line_no, group);
+        } else if (LoadInst *load = dyn_cast<LoadInst>(curr_inst)) {
+            size_t group = value_to_alias_group.at(load->getPointerOperand());
+            accesses->add_access(line_no, group);
+        }
+    }
+
+    TerminatorInst *term = curr->getTerminator();
+    for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
+        BasicBlock *child = term->getSuccessor(i);
+        collectLineToAccessedGroupsInFunction(child, visited, filename,
+                value_to_alias_group, M, accesses);
+    }
+}
+
+std::map<std::string, AccessesPerLine *> *Play::collectLineToAccessedGroups(
+        Module &M, std::map<Value *, size_t> value_to_alias_group) {
+    std::map<std::string, AccessesPerLine *> *result =
+        new std::map<std::string, AccessesPerLine *>();
+
+   for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        std::set<BasicBlock *> visited;
+
+        // A function may have no basic blocks if it is defined externally
+        if (F->getBasicBlockList().size() > 0) {
+            BasicBlock& entry = F->getEntryBlock();
+
+            if (basicBlockIsValid(&entry)) {
+                std::string filename = findFilenameContainingBB(entry, M);
+
+                if (result->find(filename) == result->end()) {
+                    result->insert(std::pair<std::string, AccessesPerLine *>(
+                                filename, new AccessesPerLine((filename))));
+                }
+                collectLineToAccessedGroupsInFunction(&entry, &visited,
+                        filename, value_to_alias_group, M, result->at(filename));
+            }
+        }
+   }
+
+   return result;
+}
+
+void Play::dumpLineToAccessedGroupsMapping(const char *filename,
+        std::map<std::string, AccessesPerLine *> *accesses) {
+    FILE *fp = fopen(filename, "w");
+
+    for (std::map<std::string, AccessesPerLine *>::iterator i = accesses->begin(),
+            e = accesses->end(); i != e; i++) {
+        for (std::map<int, std::set<size_t> >::iterator ii = i->second->begin(),
+                ee = i->second->end(); ii != ee; ii++) {
+            fprintf(fp, "%s %d", i->first.c_str(), ii->first);
+            for (std::set<size_t>::iterator group_iter = ii->second.begin(),
+                    group_end = ii->second.end(); group_iter != group_end;
+                    group_iter++) {
+                fprintf(fp, " %lu", *group_iter);
+            }
+            fprintf(fp, "\n");
+        }
+    }
+
+    fclose(fp);
+}
+
 void Play::dumpLineToGroupsMappingTo(const char *filename) {
     FILE *fp = fopen(filename, "w");
 
@@ -1491,16 +1604,18 @@ void Play::initMarkedFunctions() {
     ssize_t nchars;
     char *line = NULL; size_t line_length = 0;
     FILE *fp = fopen(nocheckpoint_file, "r");
-    while ((nchars = getline(&line, &line_length, fp)) != (ssize_t)-1) {
-        while (nchars > 0 && line[nchars - 1] == '\n') {
-            line[nchars - 1] = '\0';
-            nchars--;
-        }
+    if (fp) {
+        while ((nchars = getline(&line, &line_length, fp)) != (ssize_t)-1) {
+            while (nchars > 0 && line[nchars - 1] == '\n') {
+                line[nchars - 1] = '\0';
+                nchars--;
+            }
 
-        std::string s(line);
-        functionsMarkedWithNoCheckpoint.insert(s);
+            std::string s(line);
+            functionsMarkedWithNoCheckpoint.insert(s);
+        }
+        fclose(fp);
     }
-    fclose(fp);
 }
 
 bool Play::isKnownFunction(Function *F) {
@@ -2944,6 +3059,10 @@ bool Play::runOnModule(Module &M) {
 
     std::map<Function *, TermInfo> *func_to_groups_changed =
         collectLineToGroupsMapping(M, reachable.get_value_to_alias_group());
+
+    std::map<std::string, AccessesPerLine *> *accesses =
+        collectLineToAccessedGroups(M, reachable.get_value_to_alias_group());
+    dumpLineToAccessedGroupsMapping("accessed.info", accesses);
 
     dumpLineToGroupsMappingTo("lines.info");
 

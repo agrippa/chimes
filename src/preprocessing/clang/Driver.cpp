@@ -21,6 +21,7 @@
 #include "MallocPass.h"
 #include "AliasChangedPass.h"
 #include "DesiredInsertions.h"
+#include "AnyAliasesPass.h"
 
 using namespace clang;
 using namespace clang::driver;
@@ -92,6 +93,12 @@ static llvm::cl::opt<std::string> function_pointers_loaded_file("j",
 static llvm::cl::opt<std::string> merge_file("u",
         llvm::cl::desc("Merge file"),
         llvm::cl::value_desc("merge_file"));
+static llvm::cl::opt<std::string> scop_file("y",
+        llvm::cl::desc("Scop file"),
+        llvm::cl::value_desc("merge_file"));
+static llvm::cl::opt<std::string> access_file("z",
+        llvm::cl::desc("Access file"),
+        llvm::cl::value_desc("access_file"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -502,6 +509,8 @@ int main(int argc, const char **argv) {
   check_opt(list_of_externs_file, "List of externs file");
   check_opt(function_pointers_loaded_file, "Function pointers loaded file");
   check_opt(merge_file, "Merge file");
+  check_opt(scop_file, "Scop file");
+  check_opt(access_file, "Access file");
 
   merge_filename = std::string(merge_file.c_str());
 
@@ -542,7 +551,8 @@ int main(int argc, const char **argv) {
               original_file.c_str(), diag_file.c_str(),
               working_directory.c_str(), func_file.c_str(), call_file.c_str(),
               exit_file.c_str(), reachable_file.c_str(), omp_file.c_str(),
-              firstprivate_file.c_str(), call_tree_file.c_str());
+              firstprivate_file.c_str(), call_tree_file.c_str(),
+              scop_file.c_str(), access_file.c_str());
 
   // Dump module ID
   std::ofstream module_id_stream;
@@ -553,34 +563,12 @@ int main(int argc, const char **argv) {
 
   std::stringstream ss;
 
-  /*
-   * This pass can get messed up if the starting columns of basic blocks are
-   * shifted. This must be run before any passes that might insert things at the
-   * start of lines (e.g. labels). This is the only pass that uses the actual
-   * column number.
-   *
-   * This pass also gets messed up if the input filename isn't the original
-   * file.
-   */
-  passes.push_back(new Pass(new MallocPass(true), ".garbage",
-              npm_dump_file.c_str(), "_npm"));
-  passes.push_back(new Pass(new AliasChangedPass(), ".alias", "", ""));
-  passes.push_back(new Pass(new MallocPass(false), ".malloc", "", ""));
+  // passes.push_back(new Pass(new AnyAliasesPass(), ".aliased", "", ""));
   passes.push_back(new Pass(new StartExitPass(), ".start", "", ""));
-  passes.push_back(new Pass(new SplitInitsPass(), ".split", "", ""));
-
-  /*
-   * It is required that CallingAndOMPPass run after SplitInitsPass in case a
-   * variable is initialized with a function call, which would cause problems
-   * with inserting jumps to that call.
-   *
-   * CallingAndOMPPass also messes with line numbers more than any other pass.
-   * As a result, it would be preferred that it be kept as the last pass in
-   * general.
-   */
   passes.push_back(new Pass(new CallLabelInsertPass(), ".lbl", "", ""));
-  passes.push_back(new Pass(new CallingAndOMPPass(true), ".garbage",
-              quick_version_file.c_str(), "_quick"));
+
+  // passes.push_back(new Pass(new CallingAndOMPPass(true), ".garbage",
+  //             quick_version_file.c_str(), "_quick"));
   passes.push_back(new Pass(new CallingAndOMPPass(false), ".register", "", ""));
 
   std::unique_ptr<FrontendActionFactory> factory_ptr = newFrontendActionFactory<
@@ -662,38 +650,38 @@ int main(int argc, const char **argv) {
   /*
    * Dump a list of functions called from NPM functions.
    */
-  std::ofstream extern_out(std::string(list_of_externs_file.c_str()));
-  for (std::map<std::string, ExternalNPMCall>::iterator i =
-          external_calls.begin(), e = external_calls.end(); i != e; i++) {
-      std::string original_name = i->first;
-      ExternalNPMCall call = i->second;
+  // std::ofstream extern_out(std::string(list_of_externs_file.c_str()));
+  // for (std::map<std::string, ExternalNPMCall>::iterator i =
+  //         external_calls.begin(), e = external_calls.end(); i != e; i++) {
+  //     std::string original_name = i->first;
+  //     ExternalNPMCall call = i->second;
 
-      int line_no = call.get_first_line_referenced();
-      int containing_decl_line = -1;
-      for (std::map<std::string, int>::iterator i =
-              function_starting_lines.begin(), e =
-              function_starting_lines.end(); i != e; i++) {
-          int start_line = i->second;
-          if (start_line < line_no && (containing_decl_line == -1 ||
-                      start_line > containing_decl_line)) {
-              containing_decl_line = start_line;
-          }
-      }
-      assert(containing_decl_line != -1);
+  //     int line_no = call.get_first_line_referenced();
+  //     int containing_decl_line = -1;
+  //     for (std::map<std::string, int>::iterator i =
+  //             function_starting_lines.begin(), e =
+  //             function_starting_lines.end(); i != e; i++) {
+  //         int start_line = i->second;
+  //         if (start_line < line_no && (containing_decl_line == -1 ||
+  //                     start_line > containing_decl_line)) {
+  //             containing_decl_line = start_line;
+  //         }
+  //     }
+  //     assert(containing_decl_line != -1);
 
-      /*
-       * NPM function pointers are initialized to the default implementation for
-       * cases where an externally defined function which we know won't
-       * checkpoint (e.g. an inline function in a header file) is used. The
-       * calling function will still execute in NPM mode because we can assert
-       * it does not create a checkpoint, but this pointer will never be updated
-       * with an NPM version of this function because it does not exist.
-       */
-      extern_out << call.get_function_name() << " " << call.get_var() << " " <<
-          containing_decl_line << " " << call.get_filename() << " " <<
-          call.get_var_decl() << " = " << call.get_function_name() << ";\n";
-  }
-  extern_out.close();
+  //     /*
+  //      * NPM function pointers are initialized to the default implementation for
+  //      * cases where an externally defined function which we know won't
+  //      * checkpoint (e.g. an inline function in a header file) is used. The
+  //      * calling function will still execute in NPM mode because we can assert
+  //      * it does not create a checkpoint, but this pointer will never be updated
+  //      * with an NPM version of this function because it does not exist.
+  //      */
+  //     extern_out << call.get_function_name() << " " << call.get_var() << " " <<
+  //         containing_decl_line << " " << call.get_filename() << " " <<
+  //         call.get_var_decl() << " = " << call.get_function_name() << ";\n";
+  // }
+  // extern_out.close();
 
   /*
    * Dump a list of functions which are referenced in the r-value of an

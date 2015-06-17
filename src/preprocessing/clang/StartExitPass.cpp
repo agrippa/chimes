@@ -88,18 +88,18 @@ void StartExitPass::VisitTopLevel(clang::FunctionDecl *func) {
                     }
                 }
             }
-            std::string cond_varname = get_cond_management_varname(
-                    curr_func);
-            std::string address_of_cond_varname;
-            if (conditional_management) {
-                address_of_cond_varname = ("&" + cond_varname);
-            } else {
-                address_of_cond_varname = "(int *)0x0";
-            }
+            // std::string cond_varname = get_cond_management_varname(
+            //         curr_func);
+            // std::string address_of_cond_varname;
+            // if (conditional_management) {
+            //     address_of_cond_varname = ("&" + cond_varname);
+            // } else {
+            //     address_of_cond_varname = "(int *)0x0";
+            // }
             ss << "const int " << *current_disable_varname << " = new_stack((void *)(&" <<
                 curr_func << "), \"" << curr_func << "\", " <<
-                address_of_cond_varname << ", " <<
-                funcAliases->nargs() << ", " << nCheckpointedArgs;
+                /* address_of_cond_varname << ", " << */
+                funcAliases->nargs() /* << ", " << nCheckpointedArgs */ ;
             for (unsigned i = 0; i < funcAliases->nargs(); i++) {
                 ss << ", (size_t)(" << funcAliases->alias_no_for(i) << "UL)";
             }
@@ -107,6 +107,7 @@ void StartExitPass::VisitTopLevel(clang::FunctionDecl *func) {
             /*
              * Insert stack registrations for parameters to functions.
              */
+            /*
             if (insert_at_front != NULL) {
                 for (std::vector<StackAlloc *>::iterator i =
                         insert_at_front->begin(), e = insert_at_front->end();
@@ -120,6 +121,7 @@ void StartExitPass::VisitTopLevel(clang::FunctionDecl *func) {
                 }
                 insert_at_front = NULL;
             }
+            */
 
             ss << "); ";
         }
@@ -176,21 +178,21 @@ std::string StartExitPass::constructFunctionEndingStmts(bool inserting_rm,
     std::stringstream ss;
 
     if (inserting_rm) {
-        std::string cond_varname = get_cond_management_varname(curr_func);
-        std::string address_of_cond_varname;
-        if (conditional_management) {
-            address_of_cond_varname = ("&" + cond_varname);
-        } else {
-            address_of_cond_varname = "(int *)0x0";
-        }
+        // std::string cond_varname = get_cond_management_varname(curr_func);
+        // std::string address_of_cond_varname;
+        // if (conditional_management) {
+        //     address_of_cond_varname = ("&" + cond_varname);
+        // } else {
+        //     address_of_cond_varname = "(int *)0x0";
+        // }
         if (info->get_return_alias() == 0) {
             ss << "rm_stack(false, 0UL, \"" << curr_func << "\", " <<
-                address_of_cond_varname << ", " << loc_id << ", " <<
+                /* address_of_cond_varname << ", " << loc_id << ", " << */
                 *current_disable_varname << "); ";
         } else {
             ss << "rm_stack(true, " << info->get_return_alias() << "UL, \"" <<
-                curr_func << "\", " << address_of_cond_varname << ", " <<
-                loc_id << ", " << *current_disable_varname << "); ";
+                curr_func << "\", " << /* address_of_cond_varname << ", " <<
+                loc_id << ", " << */ *current_disable_varname << "); ";
         }
     } else {
         if (groups_changed.size() > 0) {

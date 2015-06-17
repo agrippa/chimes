@@ -9,18 +9,18 @@ extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
         size_t return_alias, int n_params, ...);
-extern void calling_npm(const char *name, unsigned loc_id);
-extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+extern void calling_npm(const char *name /* , unsigned loc_id */);
+extern void calling(void *func_ptr, int lbl, /* unsigned loc_id, */
         size_t set_return_alias, unsigned naliases, ...);
 extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern int new_stack(void *func_ptr, const char *funcname, /* int *conditional, */
+        unsigned n_local_arg_aliases, /* unsigned nargs, */ ...);
 extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
-        int nvars, int n_change_locs, int n_provided_npm_functions,
-        int n_external_npm_functions, int n_npm_conditionals,
+        int nvars, /* int n_change_locs, */ /* int n_provided_npm_functions, */
+        /* int n_external_npm_functions, int n_npm_conditionals, */
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, /* int *conditional, unsigned loc_id, */ int disabled);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -43,6 +43,7 @@ extern bool disable_current_thread();
 extern void reenable_current_thread(bool was_disabled);
 extern void thread_leaving();
 extern void *get_thread_ctx();
+extern bool any_aliased(int ngroups, ...);
 
 extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
         unsigned nlocals, ...);

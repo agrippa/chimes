@@ -44,6 +44,38 @@ class ExternalNPMCall {
         int first_line_referenced;
 };
 
+class Scop {
+    public:
+        Scop(std::string set_enclosing_file, int set_start, int set_end) :
+            enclosing_file(set_enclosing_file), start_pragma_line(set_start),
+            end_pragma_line(set_end) { }
+        std::string get_enclosing_file() { return enclosing_file; }
+        int get_start_pragma_line() { return start_pragma_line; }
+        int get_end_pragma_line() { return end_pragma_line; }
+    private:
+        std::string enclosing_file;
+        int start_pragma_line, end_pragma_line;
+};
+
+class AccessedAliases {
+    public:
+        AccessedAliases(std::string set_filename) : filename(set_filename) { }
+        void add_access(int line, size_t group) {
+            if (accessed.find(line) == accessed.end()) {
+                accessed.insert(std::pair<int, std::set<size_t> >(line,
+                            std::set<size_t>()));
+            }
+            accessed.at(line).insert(group);
+        }
+
+        std::map<int, std::set<size_t> >::iterator begin() { return accessed.begin(); }
+        std::map<int, std::set<size_t> >::iterator end() { return accessed.end(); }
+
+    private:
+        std::string filename;
+        std::map<int, std::set<size_t> > accessed;
+};
+
 class OpenMPPragma {
     public:
         OpenMPPragma(int set_line, int set_last_line,
@@ -531,7 +563,8 @@ public:
             const char *func_filename, const char *call_filename,
             const char *exit_filename, const char *reachable_filename,
             const char *omp_filename, const char *firstprivate_filename,
-            const char *call_tree_filename) :
+            const char *call_tree_filename, const char *scop_filename,
+            const char *access_filename) :
             lines_info_file(lines_info_filename),
             struct_info_file(struct_info_filename),
             stack_allocs_file(stack_allocs_filename),
@@ -540,7 +573,8 @@ public:
             func_file(func_filename), call_file(call_filename),
             exit_file(exit_filename), reachable_file(reachable_filename),
             omp_file(omp_filename), firstprivate_file(firstprivate_filename),
-            call_tree_file(call_tree_filename),
+            call_tree_file(call_tree_filename), scop_file(scop_filename),
+            access_file(access_filename),
             state_change_insertions(NULL), func_exits(NULL) {
         module_id = hash(module_name);
         // parseStateChangeInsertions must be called before parseFunctionExits
@@ -554,6 +588,8 @@ public:
         reachable = parseReachable();
         omp_pragmas = parseOMPPragmas();
         call_tree = parseCallTree();
+        scops = parseScops();
+        accessed = parseAccessed();
 
         diagnostics.open(diagnostic_file);
         firstprivate.open(firstprivate_file);
@@ -642,11 +678,14 @@ public:
 
     void resetHeapAllocIters();
 
+    Scop findScop(std::string filename, int line);
+    std::set<size_t> *getAllAccesses(Scop scop);
+
 private:
         std::string lines_info_file, struct_info_file,
             stack_allocs_file, heap_file, original_file, diagnostic_file,
             working_dir, func_file, call_file, exit_file, reachable_file,
-            omp_file, firstprivate_file, call_tree_file;
+            omp_file, firstprivate_file, call_tree_file, scop_file, access_file;
         std::ofstream diagnostics;
         std::ofstream firstprivate;
 
@@ -663,6 +702,8 @@ private:
         std::vector<ReachableInfo> *reachable;
         std::vector<OpenMPPragma> *omp_pragmas;
         std::map<std::string, FunctionCallees *> *call_tree;
+        std::vector<Scop> *scops;
+        std::map<std::string, AccessedAliases> *accessed;
 
         std::vector<StateChangeInsertion *> *parseStateChangeInsertions();
         std::vector<StructFields *> *parseStructs();
@@ -674,6 +715,8 @@ private:
         std::vector<ReachableInfo> *parseReachable();
         std::vector<OpenMPPragma> *parseOMPPragmas();
         std::map<std::string, FunctionCallees *> *parseCallTree();
+        std::vector<Scop> *parseScops();
+        std::map<std::string, AccessedAliases> *parseAccessed();
 
         size_t module_id;
 

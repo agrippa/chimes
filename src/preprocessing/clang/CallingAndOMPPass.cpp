@@ -348,6 +348,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
     std::vector<ContainedFunctionCall> *calls = ompTree->get_contained_calls(
             region);
 
+    /*
     std::stringstream ss;
     ss << " switch(get_next_call()) { ";
     for (std::vector<OMPRegion *>::iterator i = children.begin(),
@@ -368,6 +369,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
     }
     ss << "default: { chimes_error(); } } ";
     std::string transition_str = ss.str();
+    */
 
     /*
      * We only get new_stack calls for the NULL entry region of each function.
@@ -403,6 +405,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         std::string first_label;
         std::string entry_str;
 
+        /*
         bool first_is_hoisted = (*vars)[0].is_hoisted();
 
         unsigned n_hoisted = 0;
@@ -477,7 +480,9 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
                 InsertTextAfterToken(toInsertAt, " ; " + entry_ss.str());
             }
         }
+        */
     } else {
+        /*
         std::stringstream entry_ss;
         if (!gen_quick) {
             entry_ss << " if (____chimes_replaying) { " << transition_str <<
@@ -489,6 +494,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         } else {
             InsertTextAfterToken(toInsertAt, "; " + entry_ss.str());
         }
+        */
     }
 
     for (std::vector<OMPRegion *>::iterator i = children.begin(),
@@ -882,8 +888,8 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
     std::stringstream ss;
     std::string loc_arg = get_loc_arg(call, loc.get_funcname());
 
-    ss << "({ calling_npm(\"" << loc.get_funcname() << "\", " << loc_arg <<
-        "); ";
+    ss << "({ calling_npm(\"" << loc.get_funcname() << "\"" /* << ", " << loc_arg <<
+        "); " */ ;
 
     if (use_function_pointer) {
         ss << "(*" << get_external_func_name(loc.get_funcname()) << ")(";
@@ -945,7 +951,7 @@ std::string CallingAndOMPPass::generateNormalCall(const CallExpr *call,
     std::string loc_arg = get_loc_arg(call, loc.get_funcname());
 
     ss << " calling((void*)" << func_symbol << ", " << lbl.get_lbl() << ", " <<
-        loc_arg << ", " << callsite.get_return_alias() << "UL, " <<
+        /* loc_arg << ", " << */ callsite.get_return_alias() << "UL, " <<
         callsite.nparams();
     for (unsigned a = 0; a < callsite.nparams(); a++) {
         ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
@@ -989,15 +995,15 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         return;
     }
 
-    clang::SourceLocation name_start = toplevel->getNameInfo().getLoc();
-    int current_name_len = toplevel->getNameInfo().getAsString().size();
-    if (gen_quick) {
-        ReplaceText(name_start, current_name_len,
-                toplevel->getNameInfo().getAsString() + "_quick");
-    } else {
-        ReplaceText(name_start, current_name_len,
-                toplevel->getNameInfo().getAsString() + "_resumable");
-    }
+    // clang::SourceLocation name_start = toplevel->getNameInfo().getLoc();
+    // int current_name_len = toplevel->getNameInfo().getAsString().size();
+    // if (gen_quick) {
+    //     ReplaceText(name_start, current_name_len,
+    //             toplevel->getNameInfo().getAsString() + "_quick");
+    // } else {
+    //     ReplaceText(name_start, current_name_len,
+    //             toplevel->getNameInfo().getAsString() + "_resumable");
+    // }
 
     std::vector<OpenMPPragma> *omp_pragmas = insertions->get_omp_pragmas_for(
             curr_func_decl, *SM);
@@ -1218,6 +1224,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                  * simplest case, and allows us to simply emit a direct call to
                  * that function.
                  */
+                /*
                 if (is_converted_to_npm && no_checkpoint) {
                     std::string npm_call = generateNPMCall(loc, callsite, call,
                             false);
@@ -1228,6 +1235,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
                     continue;
                 }
+                */
 
                 /*
                  * This block handles function calls which we may be able to run
@@ -1246,42 +1254,43 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                  * conditionally do the merge at runtime if we find a definition
                  * for it.
                  */
-                if (call->getDirectCallee() && !always_checkpoints &&
-                        !calls_unknown &&
-                        insertions->have_main_in_call_tree() &&
-                        insertions->get_distance_from_main(curr_func) < 2 &&
-                        loc.get_funcname() != "checkpoint") {
-                    /*
-                     * Use a function pointer if this is an externally
-                     * defined function
-                     */
-                    std::string npm_call = generateNPMCall(loc, callsite, call,
-                            npm_functions.find(loc.get_funcname()) ==
-                                npm_functions.end());
-                    std::string regular_call = generateNormalCall(call, loc,
-                            lbl, callsite);
-                    std::string cond_call = "(____chimes_does_checkpoint_" +
-                        loc.get_funcname() + "_npm ? (" + regular_call +
-                        ") : (" + npm_call + "))";
-                    ReplaceText(clang::SourceRange(call->getLocStart(),
-                                call->getLocEnd()), cond_call);
-                    ompTree->add_function_call(call, lbl.get_lbl());
+                // if (call->getDirectCallee() && !always_checkpoints &&
+                //         !calls_unknown &&
+                //         insertions->have_main_in_call_tree() &&
+                //         insertions->get_distance_from_main(curr_func) < 2 &&
+                //         loc.get_funcname() != "checkpoint") {
+                //     /*
+                //      * Use a function pointer if this is an externally
+                //      * defined function
+                //      */
+                //     std::string npm_call = generateNPMCall(loc, callsite, call,
+                //             npm_functions.find(loc.get_funcname()) ==
+                //                 npm_functions.end());
+                //     std::string regular_call = generateNormalCall(call, loc,
+                //             lbl, callsite);
+                //     std::string cond_call = "(____chimes_does_checkpoint_" +
+                //         loc.get_funcname() + "_npm ? (" + regular_call +
+                //         ") : (" + npm_call + "))";
+                //     ReplaceText(clang::SourceRange(call->getLocStart(),
+                //                 call->getLocEnd()), cond_call);
+                //     ompTree->add_function_call(call, lbl.get_lbl());
 
-                    if (is_converted_to_npm) {
-                        // Local, static
-                        addStaticMerge(callsite, loc.get_funcname());
-                    } else {
-                        // External, dynamic
-                        addDynamicMerge(callsite, loc.get_funcname());
-                    }
+                //     if (is_converted_to_npm) {
+                //         // Local, static
+                //         addStaticMerge(callsite, loc.get_funcname());
+                //     } else {
+                //         // External, dynamic
+                //         addDynamicMerge(callsite, loc.get_funcname());
+                //     }
 
-                    continue;
-                }
+                //     continue;
+                // }
 
                 /*
                  * This block handles translating function pointers at runtime
                  * dynamically to their NPM equivalent.
                  */
+                /*
                 if (!call->getDirectCallee()) {
                     std::string ptr_call = generateFunctionPointerCall(call,
                             loc, callsite, lbl);
@@ -1290,6 +1299,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     ompTree->add_function_call(call, lbl.get_lbl());
                     continue;
                 }
+                */
 
                 if (ompTree->add_function_call(call, lbl.get_lbl())) {
                     std::string new_call;
@@ -1323,36 +1333,36 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         OMPRegion *true_region =
             ompTree->find_containing_region(curr.get_decl());
 
-        bool hoistable = is_hoistable(curr.get_decl(), curr.get_allocs());
+        // bool hoistable = is_hoistable(curr.get_decl(), curr.get_allocs());
         OMPRegion *region;
-        if (hoistable) {
-            region = NULL;
-            curr.hoist(stmtToString(curr.get_decl()));
-            RemoveText(clang::SourceRange(curr.get_decl()->getLocStart(),
-                        curr.get_decl()->getLocEnd()));
-            if (!gen_quick && true_region) {
-                for (std::map<clang::VarDecl *, StackAlloc *>::iterator ii =
-                        allocs.begin(), ee = allocs.end(); ii != ee; ii++) {
-                    std::string varname =
-                        ii->second->get_varname_from_mangled_name();
-                    insertions->AppendFirstPrivate(true_region->get_line(),
-                            true_region->get_last_line(), varname);
-                }
-            }
-        } else {
+        // if (hoistable) {
+        //     region = NULL;
+        //     curr.hoist(stmtToString(curr.get_decl()));
+        //     RemoveText(clang::SourceRange(curr.get_decl()->getLocStart(),
+        //                 curr.get_decl()->getLocEnd()));
+        //     if (!gen_quick && true_region) {
+        //         for (std::map<clang::VarDecl *, StackAlloc *>::iterator ii =
+        //                 allocs.begin(), ee = allocs.end(); ii != ee; ii++) {
+        //             std::string varname =
+        //                 ii->second->get_varname_from_mangled_name();
+        //             insertions->AppendFirstPrivate(true_region->get_line(),
+        //                     true_region->get_last_line(), varname);
+        //         }
+        //     }
+        // } else {
             region = ompTree->find_containing_region(curr.get_decl());
-        }
+        // }
         if (vars_in_regions.find(region) == vars_in_regions.end()) {
             vars_in_regions[region] =
                 new std::vector<DeclarationInfo>();
         }
 
         std::vector<DeclarationInfo> *vars = vars_in_regions[region];
-        if (hoistable) {
-            vars->insert(vars->begin(), curr);
-        } else {
+        // if (hoistable) {
+        //     vars->insert(vars->begin(), curr);
+        // } else {
             vars->push_back(curr);
-        }
+        // }
     }
 
     for (std::vector<const CallExpr *>::iterator i =

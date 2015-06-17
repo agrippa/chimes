@@ -61,12 +61,13 @@ void CallLabelInsertPass::VisitStmt(const clang::Stmt *s) {
                 }
 
                 if (call_lbls.find(line_no) == call_lbls.end()) {
-                    call_lbls[line_no] =
-                        std::vector<CallLabel>();
+                    call_lbls.insert(std::pair<int, std::vector<CallLabel> >(
+                                line_no, std::vector<CallLabel>()));
                 }
                 call_lbls.at(line_no).push_back(CallLabel(presumed.getColumn(),
                             lbl));
 
+                /*
                 if (lbl >= 0 && ignorable->find(callee_name) == ignorable->end()) {
                     std::stringstream lbl_ss;
                     lbl_ss << " call_lbl_" << lbl << ": ";
@@ -75,6 +76,7 @@ void CallLabelInsertPass::VisitStmt(const clang::Stmt *s) {
                             presumed.getLine(), presumed.getColumn(),
                             presumed.getFilename(), lbl_ss.str().size());
                 }
+                */
             }
 
         }

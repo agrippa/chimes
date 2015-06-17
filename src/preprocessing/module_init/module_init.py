@@ -17,11 +17,11 @@ class ModuleInitConfig(object):
         self.constants_filename = None
         self.stack_var_filename = None
         self.call_tree_filename = None
-        self.lines_filename = None
-        self.exits_filename = None
+        # self.lines_filename = None
+        # self.exits_filename = None
         self.func_filename = None
-        self.externs_filename = None
-        self.npm_filename = None
+        # self.externs_filename = None
+        # self.npm_filename = None
         self.calls_filename = None
         self.locs_filename = None
         self.fptrs_loaded_filename = None
@@ -56,21 +56,21 @@ class ModuleInitConfig(object):
         if self.call_tree_filename is None:
             print('Missing call tree filename')
             usage()
-        if self.lines_filename is None:
-            print('Missing lines filename')
-            usage()
-        if self.exits_filename is None:
-            print('Missing exits filename')
-            usage()
+        # if self.lines_filename is None:
+        #     print('Missing lines filename')
+        #     usage()
+        # if self.exits_filename is None:
+        #     print('Missing exits filename')
+        #     usage()
         if self.func_filename is None:
             print('Missing function filename')
             usage()
-        if self.externs_filename is None:
-            print('Missing externs filename')
-            usage()
-        if self.npm_filename is None:
-            print('Missing NPM filename')
-            usage()
+        # if self.externs_filename is None:
+        #     print('Missing externs filename')
+        #     usage()
+        # if self.npm_filename is None:
+        #     print('Missing NPM filename')
+        #     usage()
         if self.calls_filename is None:
             print('Missing calls filename')
             usage()
@@ -432,8 +432,8 @@ def usage():
           '-l lines-file ' +
           '-x exits-file ' +
           '-f func-file ' +
-          '-e externs-file ' +
-          '-n npm-file ' +
+          # '-e externs-file ' +
+          # '-n npm-file ' +
           '-d calls-filename ' + 
           '-h locs-filename ' +
           '-j fptrs-loaded-filename ' +
@@ -464,16 +464,16 @@ def configure(cfg, argv):
             cfg.stack_var_filename = argv[index + 1]
         elif t == '-t':
             cfg.call_tree_filename = argv[index + 1]
-        elif t == '-l':
-            cfg.lines_filename = argv[index + 1]
-        elif t == '-x':
-            cfg.exits_filename = argv[index + 1]
+        # elif t == '-l':
+        #     cfg.lines_filename = argv[index + 1]
+        # elif t == '-x':
+        #     cfg.exits_filename = argv[index + 1]
         elif t == '-f':
             cfg.func_filename = argv[index + 1]
-        elif t == '-e':
-            cfg.externs_filename = argv[index + 1]
-        elif t == '-n':
-            cfg.npm_filename = argv[index + 1]
+        # elif t == '-e':
+        #     cfg.externs_filename = argv[index + 1]
+        # elif t == '-n':
+        #     cfg.npm_filename = argv[index + 1]
         elif t == '-d':
             cfg.calls_filename = argv[index + 1]
         elif t == '-h':
@@ -503,27 +503,27 @@ if __name__ == '__main__':
     structs = get_structs(cfg.structs_filename)
     stack_vars = get_stack_vars(cfg.stack_var_filename)
     call_tree = get_call_tree(cfg.call_tree_filename)
-    changed = get_aliases_changed(cfg.lines_filename)
-    exits = get_exit_info(cfg.exits_filename)
+    # changed = get_aliases_changed(cfg.lines_filename)
+    # exits = get_exit_info(cfg.exits_filename)
     functions = get_functions(cfg.func_filename)
-    externs = get_externs(cfg.externs_filename)
-    defined_npms = get_npms(cfg.npm_filename)
+    # externs = get_externs(cfg.externs_filename)
+    # defined_npms = get_npms(cfg.npm_filename)
     callsites = get_callsites(cfg.calls_filename)
     change_loc_vars = get_change_locs(cfg.locs_filename)
     fptrs_loaded = get_fptrs_loaded(cfg.fptrs_loaded_filename)
     static_merges = get_merges(cfg.static_merge_filename)
     dynamic_merges = get_merges(cfg.dynamic_merge_filename)
 
-    n_change_locs = len(changed)
-    for e in exits:
-        if len(e.groups_changed) > 0 or len(e.possible_groups_changed) > 0:
-            n_change_locs += 1
+    # n_change_locs = len(changed)
+    # for e in exits:
+    #     if len(e.groups_changed) > 0 or len(e.possible_groups_changed) > 0:
+    #         n_change_locs += 1
 
     input_file = open(cfg.input_filename, 'r')
     output_file = open(cfg.output_filename, 'w')
 
-    output_file.write('extern char __executable_start;\n')
-    output_file.write('extern char __etext;\n')
+    # output_file.write('extern char __executable_start;\n')
+    # output_file.write('extern char __etext;\n')
 
     transfer(input_file, output_file)
 
@@ -545,101 +545,98 @@ if __name__ == '__main__':
                       str(len(reachable)) + ', ' +
                       str(len(call_tree)) + ', ' +
                       str(count_conditionally_checkpointable_vars) + ', ' +
-                      str(n_change_locs) + ', ' +
-                      str(len(defined_npms)) + ', ' +
-                      str(len(externs)) + ', ' +
-                      str(len(defined_npms) + len(externs)) + ', ' +
+                      # str(len(externs)) + ', ' +
                       str(len(static_merges)) + ', ' +
                       str(len(dynamic_merges)) + ', ' +
                       str(len(structs)))
 
     # We must traverse changed before exits to ensure consistency in the
     # location IDs generated here with the ones generated by the clang pass.
-    count = 0
-    for change_set in changed:
-        output_file.write(',\n         /* alias loc ' + str(count) + ' */ &' + get_alias_loc_var(count) +
-                          ', (unsigned)' +
-                          str(len(change_set.aliases_changed)) +
-                          ', (unsigned)' +
-                          str(len(change_set.possible_aliases_changed)))
-        for alias in change_set.aliases_changed:
-            output_file.write(', ' + get_alias_str(module_id_str, alias))
+    # count = 0
+    # for change_set in changed:
+    #     output_file.write(',\n         /* alias loc ' + str(count) + ' */ &' + get_alias_loc_var(count) +
+    #                       ', (unsigned)' +
+    #                       str(len(change_set.aliases_changed)) +
+    #                       ', (unsigned)' +
+    #                       str(len(change_set.possible_aliases_changed)))
+    #     for alias in change_set.aliases_changed:
+    #         output_file.write(', ' + get_alias_str(module_id_str, alias))
 
-        write_possible_changes(output_file, change_set.possible_aliases_changed,
-                               module_id_str)
-        count += 1
+    #     write_possible_changes(output_file, change_set.possible_aliases_changed,
+    #                            module_id_str)
+    #     count += 1
 
-    for ex in exits:
-        if len(ex.groups_changed) > 0 or len(ex.possible_groups_changed) > 0:
-            output_file.write(',\n         /* alias loc ' + str(count) +
-                              ' */ &' + get_alias_loc_var(count) +
-                              ', (unsigned)' + str(len(ex.groups_changed)) +
-                              ', (unsigned)' +
-                              str(len(ex.possible_groups_changed)))
-            for alias in ex.groups_changed:
-                output_file.write(', ' + get_alias_str(module_id_str, alias))
-            write_possible_changes(output_file, ex.possible_groups_changed,
-                                   module_id_str)
-            count += 1
+    # for ex in exits:
+    #     if len(ex.groups_changed) > 0 or len(ex.possible_groups_changed) > 0:
+    #         output_file.write(',\n         /* alias loc ' + str(count) +
+    #                           ' */ &' + get_alias_loc_var(count) +
+    #                           ', (unsigned)' + str(len(ex.groups_changed)) +
+    #                           ', (unsigned)' +
+    #                           str(len(ex.possible_groups_changed)))
+    #         for alias in ex.groups_changed:
+    #             output_file.write(', ' + get_alias_str(module_id_str, alias))
+    #         write_possible_changes(output_file, ex.possible_groups_changed,
+    #                                module_id_str)
+    #         count += 1
 
-    for fname in defined_npms:
+    # for fname in defined_npms:
 
-        assert fname in functions, fname
-        func_info = functions[fname]
-        func_exit_info = find_in_exits(fname, exits)
+    #     assert fname in functions, fname
+    #     func_info = functions[fname]
+    #     func_exit_info = find_in_exits(fname, exits)
 
-        if fname in fptrs_loaded:
-            normal_fptr = '(void *)(' + fname + ')'
-        else:
-            normal_fptr = '(void *)NULL'
+    #     if fname in fptrs_loaded:
+    #         normal_fptr = '(void *)(' + fname + ')'
+    #     else:
+    #         normal_fptr = '(void *)NULL'
 
-        output_file.write(',\n         /* provided NPM */ "' + fname +
-                          '", (void *)(&' + fname + '_npm), ' + normal_fptr)
+    #     output_file.write(',\n         /* provided NPM */ "' + fname +
+    #                       '", (void *)(&' + fname + '_npm), ' + normal_fptr)
 
-        # If no assignments are made in a function (e.g. if it's simply a return
-        # statement) it may not have any change locations.
-        if fname not in change_loc_vars:
-            output_file.write(', 0')
-        else:
-            locs = change_loc_vars[fname]
-            output_file.write(', ' + str(locs.size()))
-            for var in locs.varnames:
-                output_file.write(', &' + var)
+    #     # If no assignments are made in a function (e.g. if it's simply a return
+    #     # statement) it may not have any change locations.
+    #     if fname not in change_loc_vars:
+    #         output_file.write(', 0')
+    #     else:
+    #         locs = change_loc_vars[fname]
+    #         output_file.write(', ' + str(locs.size()))
+    #         for var in locs.varnames:
+    #             output_file.write(', &' + var)
 
-        output_file.write(', ' + str(len(func_info.arg_aliases_str)))
-        for alias in func_info.arg_aliases_str:
-            output_file.write(', ' + get_alias_str(module_id_str, alias))
-        output_file.write(', ' + get_alias_str(module_id_str,
-                                               func_exit_info.return_alias))
+    #     output_file.write(', ' + str(len(func_info.arg_aliases_str)))
+    #     for alias in func_info.arg_aliases_str:
+    #         output_file.write(', ' + get_alias_str(module_id_str, alias))
+    #     output_file.write(', ' + get_alias_str(module_id_str,
+    #                                            func_exit_info.return_alias))
 
-        # If there is no entry in callsites for fname, it is because fname calls
-        # no functions.
-        if fname not in callsites:
-            output_file.write(', 0')
-        else:
-            calls = callsites[fname]
-            output_file.write(', ' + str(len(calls)))
-            for c in calls:
-                output_file.write(', "' + c.callee_name + '", ' +
-                                  str(len(c.param_aliases_str)))
-                for arg_alias in c.param_aliases_str:
-                    output_file.write(', ' + get_alias_str(module_id_str,
-                                                           arg_alias))
-                output_file.write(', ' + get_alias_str(module_id_str,
-                                                       c.parent_return_alias_str))
+    #     # If there is no entry in callsites for fname, it is because fname calls
+    #     # no functions.
+    #     if fname not in callsites:
+    #         output_file.write(', 0')
+    #     else:
+    #         calls = callsites[fname]
+    #         output_file.write(', ' + str(len(calls)))
+    #         for c in calls:
+    #             output_file.write(', "' + c.callee_name + '", ' +
+    #                               str(len(c.param_aliases_str)))
+    #             for arg_alias in c.param_aliases_str:
+    #                 output_file.write(', ' + get_alias_str(module_id_str,
+    #                                                        arg_alias))
+    #             output_file.write(', ' + get_alias_str(module_id_str,
+    #                                                    c.parent_return_alias_str))
 
 
-    for ex in externs:
-        output_file.write(',\n        /* external NPM dep */ "' +
-                          ex.original_fname + '", (void **)&(' + ex.varname +
-                          ')')
+    # for ex in externs:
+    #     output_file.write(',\n        /* external NPM dep */ "' +
+    #                       ex.original_fname + '", (void **)&(' + ex.varname +
+    #                       ')')
 
-    for npm in defined_npms:
-        output_file.write(',\n        /* NPM cond var */ "' + npm + '", &(____chimes_does_checkpoint_' +
-                          npm + '_npm)')
-    for ex in externs:
-        output_file.write(',\n        /* NPM cond var */ "' + ex.original_fname + '", &(____chimes_does_checkpoint_' +
-                          ex.original_fname + '_npm)')
+    # for npm in defined_npms:
+    #     output_file.write(',\n        /* NPM cond var */ "' + npm + '", &(____chimes_does_checkpoint_' +
+    #                       npm + '_npm)')
+    # for ex in externs:
+    #     output_file.write(',\n        /* NPM cond var */ "' + ex.original_fname + '", &(____chimes_does_checkpoint_' +
+    #                       ex.original_fname + '_npm)')
         
 
     for k in reachable.keys():
@@ -677,8 +674,8 @@ if __name__ == '__main__':
     for c in constants:
         write_constant(c, module_id_str)
 
-    output_file.write('    register_text((void *)&__executable_start, ' +
-                      '(size_t)((&__etext) - (&__executable_start)));\n')
+    # output_file.write('    register_text((void *)&__executable_start, ' +
+    #                   '(size_t)((&__etext) - (&__executable_start)));\n')
 
     output_file.write('    return 0;\n')
     output_file.write('}\n')

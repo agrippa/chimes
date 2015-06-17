@@ -31,7 +31,8 @@ endif
 
 OBJS=Driver.o DesiredInsertions.o \
      StartExitPass.o ParentTransform.o AliasChangedPass.o MallocPass.o \
-     SplitInitsPass.o CallingAndOMPPass.o OMPTree.o CollapsedLines.o CallLabelInsertPass.o
+     SplitInitsPass.o CallingAndOMPPass.o OMPTree.o CollapsedLines.o \
+	 CallLabelInsertPass.o AnyAliasesPass.o
 
 ${EXE}: ${OBJS}
 	${GXX} ${GXX_FLAGS} ${INCLUDES} ${OBJS} -o ${EXE} ${LIBS}
