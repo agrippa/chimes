@@ -19,7 +19,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-O3"
+GXX_FLAGS="-O0 -g"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
@@ -123,6 +123,7 @@ TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
 FUNCTION_UNROLL=${CHIMES_HOME}/src/preprocessing/function_unroll/function_unroll
 CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
+FIND_ALLOCATORS=${CHIMES_HOME}/src/preprocessing/find_allocators/find_allocators
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 SCOP_FINDER=${CHIMES_HOME}/src/preprocessing/scop/find_scop.py
 SCOP_INSERT=${CHIMES_HOME}/src/preprocessing/scop/insert_scop_conditional.py
@@ -178,6 +179,12 @@ for INPUT in ${ABS_INPUTS[@]}; do
            -include${CHIMES_HOME}/src/libchimes/libchimes.h \
            ${CHIMES_DEF} ${DEFINES}
 
+    echo Searching for allocators in ${PREPROCESS_FILE}
+    cd ${WORK_DIR} && ${FIND_ALLOCATORS} -o ${PREPROCESS_FILE}.garbage \
+        -a ${INFO_FILE_PREFIX}.allocators.info ${PREPROCESS_FILE} -- \
+        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES}
+
     echo Inserting line pragmas in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && cat ${PREPROCESS_FILE} | python ${INSERT_LINES} ${INPUT} > \
            ${PREPROCESS_FILE}.lines
@@ -189,11 +196,11 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
     cp ${PREPROCESS_FILE}.braces ${PREPROCESS_FILE}
 
-#     echo Unrolling functions in ${PREPROCESS_FILE}
-#     cd ${WORK_DIR} && ${FUNCTION_UNROLL} -o ${PREPROCESS_FILE}.unroll \
-#         -a ${PREPROCESS_FILE}.attrs ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-#         -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
-#     cp ${PREPROCESS_FILE}.unroll ${PREPROCESS_FILE}
+    echo Unrolling functions in ${PREPROCESS_FILE}
+    cd ${WORK_DIR} && ${FUNCTION_UNROLL} -o ${PREPROCESS_FILE}.unroll \
+        -a ${PREPROCESS_FILE}.attrs ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
+        -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
+    cp ${PREPROCESS_FILE}.unroll ${PREPROCESS_FILE}
 
     echo Generating bitcode for ${PREPROCESS_FILE} into ${BITCODE_FILE}
     cd ${WORK_DIR} && $CLANG -I${CUDA_HOME}/include \
@@ -245,8 +252,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -g ${INFO_FILE_PREFIX}.list_of_externs \
             -j ${INFO_FILE_PREFIX}.fptrs \
             -u ${INFO_FILE_PREFIX}.merge \
-            -y ${INFO_FILE_PREFIX}.scop.info \
-            -z ${INFO_FILE_PREFIX}.accessed.info \
+            -y ${INFO_FILE_PREFIX}.allocators.info \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
 
@@ -299,7 +305,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -md ${INFO_FILE_PREFIX}.merge.dynamic
 
     cd ${WORK_DIR} && python ${SCOP_INSERT} ${FINAL_FILE} \
-        ${INFO_FILE_PREFIX}.accessed.info ${INFO_FILE_PREFIX}.scop.info ${SCOP_FILE}
+        ${INFO_FILE_PREFIX}.accessed.info ${INFO_FILE_PREFIX}.scop.info \
+        ${INFO_FILE_PREFIX}.module.info ${SCOP_FILE}
 
     echo Postprocessing ${SCOP_FILE}
     cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${SCOP_FILE} ${CHIMES_DEF} ${DEFINES} \

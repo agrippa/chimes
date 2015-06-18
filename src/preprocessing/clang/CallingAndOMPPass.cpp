@@ -950,8 +950,15 @@ std::string CallingAndOMPPass::generateNormalCall(const CallExpr *call,
 
     std::string loc_arg = get_loc_arg(call, loc.get_funcname());
 
+    /*
+     * If the function being called is an allocator, we don't want its return
+     * alias to be aliased with every variable its result is assigned to (we
+     * know that each return value is a distinct allocation). Provide a dummy
+     * 0ULL return alias for the calling function.
+     */
+    size_t return_alias = (insertions->isAllocator(loc.get_funcname()) ? 0 : callsite.get_return_alias());
     ss << " calling((void*)" << func_symbol << ", " << lbl.get_lbl() << ", " <<
-        /* loc_arg << ", " << */ callsite.get_return_alias() << "UL, " <<
+        /* loc_arg << ", " << */ return_alias << "UL, " <<
         callsite.nparams();
     for (unsigned a = 0; a < callsite.nparams(); a++) {
         ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";

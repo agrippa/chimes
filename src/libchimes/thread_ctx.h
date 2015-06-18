@@ -85,6 +85,9 @@ class thread_ctx {
 
             for (unsigned i = 0; i < naliases; i++) {
                 parent_aliases[i] = va_arg(vl, size_t);
+#ifdef VERBOSE
+                fprintf(stderr, "  Parent alias %d is %llu\n", i, parent_aliases[i]);
+#endif
             }
             parent_aliases_length = naliases;
         }

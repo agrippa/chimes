@@ -280,7 +280,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 }
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, /* int *conditional, unsigned loc_id, */ int disabled) {
+        const char *funcname, /* int *conditional, unsigned loc_id, */ int disabled, bool is_allocator) {
     // if (conditional) { *conditional = 0; }
 #ifdef __CHIMES_PROFILE
     __sync_fetch_and_add(&count_rm_stack, 1);

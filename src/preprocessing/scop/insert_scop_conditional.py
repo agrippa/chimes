@@ -114,15 +114,24 @@ def parseLineControl(tokens):
         return (int(tokens[1]), tokens[2])
 
 
+def parseModuleId(filename):
+    fp = open(filename, 'r')
+    module_id = fp.read().strip()
+    fp.close()
+    return module_id
+
+
 if __name__ == '__main__':
-    if len(sys.argv) != 5:
-        print('usage: find_scop.py input-file accessed-file scop-file output-file')
+    if len(sys.argv) != 6:
+        print('usage: find_scop.py input-file accessed-file scop-file ' +
+              'module-file output-file')
         sys.exit(1)
 
     input_fp = open(sys.argv[1], 'r')
-    transformed = open(sys.argv[4], 'w')
     accesses = parseAccesses(sys.argv[2])
     scops = parseScops(sys.argv[3])
+    module_id = parseModuleId(sys.argv[4])
+    transformed = open(sys.argv[5], 'w')
 
     currentFile = None
     currentLineNo = None
@@ -152,7 +161,7 @@ if __name__ == '__main__':
 
                 transformed.write('if (!any_aliased(' + str(len(accesses)))
                 for a in accesses:
-                    transformed.write(', ' + a)
+                    transformed.write(', ' + module_id + 'ULL + ' + a + 'ULL')
                 transformed.write(')) {\n')
                 transformed.write(line)
 

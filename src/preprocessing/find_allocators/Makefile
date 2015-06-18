@@ -6,7 +6,7 @@
 #
 
 GXX?=/usr/bin/g++
-EXE=transform
+EXE=find_allocators
 
 LLVM_CONFIG=$(shell find ${LLVM_INSTALL}/**/bin -name llvm-config)
 GXX_FLAGS=-O0 -g `${LLVM_CONFIG} --cxxflags`
@@ -29,10 +29,7 @@ LIBS=-Wl,--start-group -lclangAST -lclangAnalysis -lclangBasic -lclangDriver -lc
 	 -lclangTooling -Wl,--end-group `${LLVM_CONFIG} --ldflags --libs --system-libs`
 endif
 
-OBJS=Driver.o DesiredInsertions.o \
-     StartExitPass.o ParentTransform.o AliasChangedPass.o MallocPass.o \
-     SplitInitsPass.o CallingAndOMPPass.o OMPTree.o CollapsedLines.o \
-	 CallLabelInsertPass.o
+OBJS=Driver.o FindAllocators.o
 
 ${EXE}: ${OBJS}
 	${GXX} ${GXX_FLAGS} ${INCLUDES} ${OBJS} -o ${EXE} ${LIBS}

@@ -29,3 +29,59 @@ environment variables. For example, on my Mac:
 
 CC=/usr/local/bin/gcc CXX=/usr/local/bin/g++ CPP=/usr/local/bin/cpp \
     ../llvm-src/configure --enable-optimized=no --enable-profiling=yes
+
+
+Adding New Attributes to clang:
+=============================
+
+There have been several times I've wanted to add a new attribute to clang. The
+process is straightforward, but unfortunately requires a modification to a
+codebase that is not versioned with the rest of the CHIMES code (the clang
+repo). Therefore, I include a step-by-step guide to reproduce my changes in your
+own clang installation. This information is based on:
+
+http://clang.llvm.org/docs/InternalsManual.html#include-clang-basic-attr-td
+
+1. Add a definition of the attribute in clang/include/clang/Basic/Attr.td. I've
+   added the following attributes:
+
+def NoCheckpoint : InheritableAttr {
+  let Spellings = [GCC<"nocheckpoint">, Declspec<"nocheckpoint">];
+  let Documentation = [Undocumented];
+}
+
+def Allocator : InheritableAttr {
+  let Spellings = [GCC<"allocator">, Declspec<"allocator">];
+  let Documentation = [Undocumented];
+}
+
+2. Add boiler plate to clang/lib/Sema/SemaDeclAttr.cpp for actually handling
+   that attribute. The attributes I've added generally just serve as markers for
+   me to fetch in my own clang plugins so I don't want to modify the behavior of
+   clang. I just use handleSimpleAttribute in the massive attribute switch
+   statement in ProcessDeclAttribute:
+
+  case AttributeList::AT_NoCheckpoint:
+    handleSimpleAttribute<NoCheckpointAttr>(S, D, Attr);
+    break;
+  case AttributeList::AT_Allocator:
+    handleSimpleAttribute<AllocatorAttr>(S, D, Attr);
+    break;
+
+3. That's all of the changes to the core of clang, but I generally also need to
+   check if these attributes are applied to an element from a clang tool. As far
+   as I can tell, getting attribute information is not possible from LLVM. From
+   a clang tool, you can do something like the following:
+
+        clang::CallExpr *call = ...;
+        const clang::FunctionDecl *callee = call->getDirectCallee();
+        if (callee && callee->hasAttrs()) {
+            for (clang::AttrVec::const_iterator i = callee->getAttrs().begin(),
+                    e = callee->getAttrs().end(); i != e; i++) {
+                clang::NoCheckpointAttr *a = clang::dyn_cast<clang::NoCheckpointAttr>(*i);
+                if (a) {
+                    // This function declaration has the nocheckpoint attribute
+                    ...
+                }
+            }
+        }
