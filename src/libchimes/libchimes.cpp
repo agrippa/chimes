@@ -4622,7 +4622,7 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
 
     // vector<map<unsigned, thread_ctx *>::iterator> to_erase;
 
-    VERIFY(pthread_rwlock_wrlock(&thread_ctxs_lock) == 0);
+    VERIFY(pthread_rwlock_rdlock(&thread_ctxs_lock) == 0);
 
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
             e = thread_ctxs.end(); i != e; i++) {
