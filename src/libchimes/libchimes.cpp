@@ -235,7 +235,7 @@ static inline void alias_group_changed_helper(unsigned loc_id,
         thread_ctx *ctx);
 static void merge_npm_aliases(string fname, size_t return_alias,
         vector<size_t> param_aliases);
-static void *checkpoint_func(void *data);
+// static void *checkpoint_func(void *data);
 static void destroy_thread_ctx(void *thread_ctx_ptr);
 
 static std::vector<stack_frame *> *get_my_stack();
@@ -557,11 +557,11 @@ static std::map<void *, ptr_and_size *> *old_to_new;
 
 static std::map<std::string, std::vector<struct_field> *> structs;
 
-static pthread_t checkpoint_thread;
-static checkpoint_thread_ctx running_checkpoint_ctx;
-static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
-static pthread_cond_t checkpoint_cond = PTHREAD_COND_INITIALIZER;
-static volatile int checkpoint_thread_running = 0;
+// static pthread_t checkpoint_thread;
+// static checkpoint_thread_ctx running_checkpoint_ctx;
+// static pthread_mutex_t checkpoint_mutex = PTHREAD_MUTEX_INITIALIZER;
+// static pthread_cond_t checkpoint_cond = PTHREAD_COND_INITIALIZER;
+// static volatile int checkpoint_thread_running = 0;
 
 int ____chimes_replaying = 0;
 int ____chimes_rerunning = 0;
@@ -974,8 +974,8 @@ void init_chimes() {
     VERIFY(pthread_key_create(&thread_ctx_key, destroy_thread_ctx) == 0);
     VERIFY(pthread_key_create(&tid_key, free) == 0);
 
-    pthread_create(&checkpoint_thread, NULL, checkpoint_func,
-            &running_checkpoint_ctx);
+    // pthread_create(&checkpoint_thread, NULL, checkpoint_func,
+    //         &running_checkpoint_ctx);
 
     pthread_t self = pthread_self();
     assert(pthread_to_id.size() == 0);
@@ -3104,13 +3104,13 @@ void free_wrapper(void *ptr, size_t group) {
 #endif
 }
 
-void wait_for_checkpoint() {
-    VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-    while (checkpoint_thread_running == 1) {
-        VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
-    }
-    VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-}
+// void wait_for_checkpoint() {
+//     VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
+//     while (checkpoint_thread_running == 1) {
+//         VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
+//     }
+//     VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+// }
 
 static void update_live_var(string name, stack_var *dead, stack_var *live) {
 #ifdef VERBOSE
@@ -3349,464 +3349,464 @@ void reenable_current_thread(bool was_disabled) {
 }
 
 // The code transformer should replace any calls to checkpoint
-void checkpoint() {
-    assert(false);
-}
+// void checkpoint() {
+//     assert(false);
+// }
 
-void checkpoint_transformed(int lbl, unsigned loc_id) {
-#ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
-#endif
-    const unsigned long long __chimes_overhead_start_time =
-        perf_profile::current_time_ns();
-
-    clock_t enter_time = clock();
-
-    thread_ctx *ctx = get_my_context();
-    VERIFY(!ctx->is_disabled());
-    ctx->set_calling_label(lbl);
-    ctx->set_func_ptr((void *)checkpoint_transformed);
-    ctx->set_return_alias(0UL);
-    ctx->clear_parent_aliases();
-    if (loc_id > 0) {
-        alias_group_changed_helper(loc_id, ctx);
-    }
-
-    new_stack((void *)checkpoint_transformed, "checkpoint", /* NULL, */ 0 /* , 0 */ );
-    const bool was_a_replay = ____chimes_replaying;
-    checkpoint_ctx *curr_ckpt;
-    bool checkpointing_thread;
-#ifdef __CHIMES_PROFILE
-    unsigned long long __prep_start_time = 0ULL;
-#endif
-
-    /*
-     * On replay, the last thread to hit the checkpoint will skip the wait loop
-     * above, enter this region, perform all the restores, and then set
-     * ____chimes_replaying to zero so that no other thread enters here.
-     *
-     * Otherwise, the last thread will launch the checkpointing logic and all
-     * other threads will be prevented from entering there.
-     */
-    if (____chimes_replaying) {
-
-        bool should_abort;
-        checkpointing_thread = wait_for_all_threads(&enter_time,
-                &curr_ckpt, &should_abort);
-        assert(!should_abort);
-
-        if (checkpointing_thread) {
-            // Assert same number of threads
-            assert(unpacked_program_stacks->size() == thread_ctxs.size());
-            assert(unpacked_global_vars->size() == global_vars.size());
-
-            /*
-             * restore non-pointers in the stack to have the correct values by
-             * transferring from the deserialized objects into the newly registered
-             * addresses
-             */
-            for (map<unsigned, vector<stack_frame *> *>::iterator stacks_iter =
-                    unpacked_program_stacks->begin(), stacks_end =
-                    unpacked_program_stacks->end(); stacks_iter != stacks_end;
-                    stacks_iter++) {
-                unsigned tid = stacks_iter->first;
-
-                vector<stack_frame *> *unpacked = unpacked_program_stacks->at(tid);
-                vector<stack_frame *> *real = thread_ctxs.at(tid)->get_stack();
-
-#ifdef VERBOSE
-                fprintf(stderr, "Restoring program stack for thread %u. Unpacked "
-                        "program stack has %lu frames, live program stack has %lu "
-                        "frames.\n", tid, unpacked->size(), real->size());
-#endif
-
-                restore_program_stack(unpacked, real);
-            }
-
-            /*
-             * Verify all of the globals that we unpacked are also in the live
-             * running program, then update them.
-             */
-            for (map<string, stack_var *>::iterator i =
-                    unpacked_global_vars->begin(), e = unpacked_global_vars->end();
-                    i != e; i++) {
-                assert(global_vars.find(i->first) != global_vars.end());
-
-                string name = i->first;
-                stack_var *dead = i->second;
-                stack_frame::iterator found = global_vars.find(name);
-                stack_var *live = found->second;
-
-                update_live_var(name, dead, live);
-
-                assert(dead->get_size() == live->get_size());
-            }
-
-            /*
-             * find pointers in the stack and restore them to point to the correct
-             * object. at the same time, use these pointers as indicators of places
-             * in the heap where other references need updating by following
-             * pointers.
-             *
-             * Use updated to track which local variables we've already updated and
-             * skip them.
-             */
-            set<void *> updated;
-            // For each stack frame
-            for (map<unsigned, thread_ctx *>::iterator stacks_iter =
-                    thread_ctxs.begin(), stacks_end = thread_ctxs.end();
-                    stacks_iter != stacks_end; stacks_iter++) {
-                thread_ctx *ctx = stacks_iter->second;
-                vector<stack_frame *> *stack = ctx->get_stack();
-
-                for (vector<stack_frame *>::iterator frame_iter =
-                        stack->begin(), frame_end = stack->end();
-                        frame_iter != frame_end; frame_iter++) {
-                    stack_frame *frame = *frame_iter;
-                    // For each stack variable in the current frame
-                    for (stack_frame::iterator var_iter = frame->begin(),
-                            var_end = frame->end(); var_iter != var_end;
-                            var_iter++) {
-                        stack_var *var = var_iter->second;
-#ifdef VERBOSE
-                        fprintf(stderr, "Fixing stack variable %s of type %s\n",
-                                var->get_name().c_str(), var->get_type().c_str());
-#endif
-                        fix_stack_or_global_pointer(var->get_address(),
-                                var->get_type(), 0);
-                    }
-                }
-            }
-
-            for (map<string, stack_var *>::iterator globals_iter =
-                    global_vars.begin(), globals_end = global_vars.end();
-                    globals_iter != globals_end; globals_iter++) {
-                stack_var *var = globals_iter->second;
-                fix_stack_or_global_pointer(var->get_address(), var->get_type(), 0);
-            }
-
-            delete already_translated;
-
-            ____chimes_replaying = 0;
-            ____chimes_rerunning = 1;
-            for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
-                    e = thread_ctxs.end(); i != e; i++) {
-                thread_ctx *ctx = i->second;
-                ctx->set_stack_nesting(1);
-            }
-        }
-    } else if (checkpoint_initializing || within_overhead_bounds()) {
-
-        bool should_abort;
-        checkpointing_thread = wait_for_all_threads(&enter_time,
-                &curr_ckpt, &should_abort);
-        if (should_abort) {
-
-            VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
-
-            rm_stack(false, 0, "checkpoint", /* NULL, 0, */ 0, false);
-            ADD_TO_OVERHEAD
-#ifdef __CHIMES_PROFILE
-            pp.add_time(CHECKPOINT, __start_time);
-#endif
-            return;
-        } else if (checkpointing_thread && checkpoint_thread_running == 0) {
-            VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-
-            if (checkpoint_thread_running == 1) {
-                VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-            } else {
-#ifdef __CHIMES_PROFILE
-                __prep_start_time = perf_profile::current_time_ns();
-#endif
-                checkpoint_thread_running = 1;
-
-                /*
-                 * At this stage we assume we only have a single stack to checkpoint
-                 * and it belongs to the calling thread, so those addresses will
-                 * remain valid for checkpointing as long as we're still here.
-                 * Therefore, we must checkpoint stack variables from here before
-                 * returning.
-                 */
-
-                set<size_t> *all_changed = new set<size_t>();
-                for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
-                        e = thread_ctxs.end(); i != e; i++) {
-                    thread_ctx *ctx = i->second;
-                    set_of_aliases *changed = ctx->get_changed_groups();
-
-                    for (unsigned loc = 0; loc < changed->capacity; loc++) {
-                        if ((changed->set)[loc]) {
-                            for (set<size_t>::iterator iter =
-                                    change_loc_id_to_aliases.at(loc).begin(), end =
-                                    change_loc_id_to_aliases.at(loc).end();
-                                    iter != end; iter++) {
-                                size_t group = *iter;
-                                collect_all_aliases(group, all_changed);
-                            }
-                        }
-                    }
-
-                    for (set<size_t>::iterator iter =
-                            changed->explicit_aliases.begin(), end =
-                            changed->explicit_aliases.end(); iter != end; iter++) {
-                        size_t group = *iter;
-                        collect_all_aliases(group, all_changed);
-                    }
-                    ctx->clear_changed_groups();
-                }
-#ifdef VERBOSE
-                fprintf(stderr, "checkpointing the following alias groups:\n");
-                for (set<size_t>::iterator changed_iter = all_changed->begin(),
-                        changed_end = all_changed->end();
-                        changed_iter != changed_end; changed_iter++) {
-                    size_t alias = *changed_iter;
-                    fprintf(stderr, "    %lu\n", alias);
-                }
-#endif
-
-                vector<pair<size_t, heap_allocation *> > heap_to_checkpoint_sorted;
-                heap_to_checkpoint_sorted.reserve(heap.size());
-                for (map<void *, heap_allocation *>::iterator heap_iter =
-                        heap.begin(), heap_end = heap.end(); heap_iter != heap_end;
-                        heap_iter++) {
-                    heap_allocation *curr = heap_iter->second;
-                    /*
-                     * At the moment, we don't calculate alias groups for CUDA
-                     * allocations because they are never dereferenced from the
-                     * host. In future TODO work, we could track which allocations
-                     * are passed to kernels and use that as a way to reduce the
-                     * number of CUDA allocations that need to be checkpointed.
-                     */
-                    if (all_changed->find(curr->get_alias_group()) !=
-                            all_changed->end() || curr->get_is_cuda_alloc()) {
-#ifdef VERBOSE
-                        fprintf(stderr, "  because of group %lu we checkpoint heap "
-                                "allocation %p, size=%lu\n",
-                                curr->get_alias_group(), curr->get_address(),
-                                curr->get_size());
-#endif
-                        heap_to_checkpoint_sorted.push_back(
-                                pair<size_t, heap_allocation *>(curr->get_size(),
-                                    curr));
-                    }
-                }
-
-                std::sort(heap_to_checkpoint_sorted.begin(),
-                        heap_to_checkpoint_sorted.end(), compare_heap_allocations);
-                vector<checkpointable_heap_allocation> *to_checkpoint =
-                    new vector<checkpointable_heap_allocation>();
-
-#ifdef __CHIMES_PROFILE
-                const unsigned long long __hashing_start = perf_profile::current_time_ns();
-#endif
-                const size_t desired_checkpoint_size =
-                    (size_t)(target_checkpoint_size_perc *
-                            (double)total_allocations);
-                size_t copied_so_far = 0;
-#ifdef HASHING_DIAGNOSTICS
-                fprintf(stderr, "Hashing diagnostics for checkpoint:\n");
-#endif
-                for (vector<pair<size_t, heap_allocation *> >::iterator i =
-                        heap_to_checkpoint_sorted.begin(),
-                        e = heap_to_checkpoint_sorted.end(); i != e; i++) {
-                    heap_allocation *curr = i->second;
-                    if (!should_hash(curr->get_size(), desired_checkpoint_size,
-                                copied_so_far)) {
-#ifdef HASHING_DIAGNOSTICS
-                        fprintf(stderr, "  not hashing allocation, size=%lu "
-                                "invalid hashes=%d copied_so_far=%lu desired=%lu\n",
-                                curr->get_size(), curr->hashes_invalid(),
-                                copied_so_far, desired_checkpoint_size);
-#endif
-                        to_checkpoint->push_back(checkpointable_heap_allocation(
-                                    curr));
-                        curr->invalidate_hashes();
-                        copied_so_far += curr->get_size();
-                    } else {
-                        if (curr->hashes_invalid()) {
-#ifdef HASHING_DIAGNOSTICS
-                            fprintf(stderr, "  hashing allocation due to invalid hashes, size=%lu "
-                                    "copied_so_far=%lu desired=%lu\n", curr->get_size(),
-                                    copied_so_far, desired_checkpoint_size);
-#endif
-
-                            curr->update_hashes();
-                            to_checkpoint->push_back(checkpointable_heap_allocation(
-                                        curr));
-                            curr->mark_hashes_valid();
-                            copied_so_far += curr->get_size();
-                        } else {
-                            size_t n_bytes_changed = 0;
-                            vector<pair<size_t, size_t> > ranges;
-                            for (unsigned chunk = 0; chunk < curr->get_n_hash_chunks(); chunk++) {
-                                unsigned long long curr_hash = curr->get_hash(chunk);
-                                unsigned long long new_hash =
-                                    curr->calculate_hash(chunk);
-                                if (curr_hash != new_hash) {
-                                    const size_t chunk_start =
-                                        curr->get_hash_chunk_start(chunk);
-                                    const size_t chunk_end =
-                                        curr->get_hash_chunk_end(chunk);
-                                    const size_t chunk_size =
-                                        chunk_end - chunk_start;
-                                    if (ranges.size() == 0) {
-                                        ranges.push_back(pair<size_t, size_t>(
-                                                    chunk_start, chunk_end));
-                                    } else {
-                                        if (ranges.back().second == chunk_start) {
-                                            ranges.back().second = chunk_end;
-                                        } else {
-                                            ranges.push_back(pair<size_t, size_t>(
-                                                        chunk_start, chunk_end));
-                                        }
-                                    }
-                                    n_bytes_changed += chunk_size;
-                                    curr->update_hash(chunk, new_hash);
-                                }
-                            }
-#ifdef HASHING_DIAGNOSTICS
-                            fprintf(stderr, "  hashing reduced allocation size "
-                                    "from %lu to %lu, copied_so_far=%lu "
-                                    "desired=%lu\n", curr->get_size(),
-                                    n_bytes_changed, copied_so_far,
-                                    desired_checkpoint_size);
-#endif
-                            size_t packed_so_far = 0;
-                            unsigned char *source = (unsigned char *)curr->get_address();
-                            unsigned char *buffer = (unsigned char *)malloc(n_bytes_changed);
-                            for (vector<pair<size_t, size_t> >::iterator i =
-                                    ranges.begin(), e = ranges.end(); i != e; i++) {
-                                if (curr->get_is_cuda_alloc()) {
-                                    CHECK(cudaMemcpy(buffer + packed_so_far,
-                                                source + i->first,
-                                                i->second - i->first,
-                                                cudaMemcpyDeviceToHost));
-                                } else {
-                                    memcpy(buffer + packed_so_far,
-                                            source + i->first,
-                                            i->second - i->first); 
-                                }
-                            }
-                            to_checkpoint->push_back(checkpointable_heap_allocation(
-                                        curr, buffer, &ranges));
-                            curr->mark_hashes_valid();
-                            copied_so_far += n_bytes_changed;
-                        }
-                    }
-                }
-#ifdef HASHING_DIAGNOSTICS
-                fprintf(stderr, "    Hashed checkpoint size = %lu\n", copied_so_far);
-#endif
-
-#ifdef __CHIMES_PROFILE
-                pp.add_time(HASHING, __hashing_start);
-#endif
-
-                delete all_changed;
-
-                running_checkpoint_ctx.stacks_serialized = serialize_program_stacks(&thread_ctxs,
-                        &running_checkpoint_ctx.stacks_serialized_len);
-                running_checkpoint_ctx.globals_serialized = serialize_globals(&global_vars,
-                        &running_checkpoint_ctx.globals_serialized_len);
-                running_checkpoint_ctx.constants_serialized = serialize_constants(&constants,
-                        &running_checkpoint_ctx.constants_serialized_len);
-                running_checkpoint_ctx.thread_hierarchy_serialized = serialize_thread_hierarchy(
-                        &thread_ctxs,
-                        &running_checkpoint_ctx.thread_hierarchy_serialized_len);
-                running_checkpoint_ctx.heap_to_checkpoint = to_checkpoint;
-
-                running_checkpoint_ctx.checkpoint_entry_times =
-                    new std::vector<std::pair<unsigned, clock_t> >(
-                            curr_ckpt->get_checkpoint_entry_times());
-                std::sort(running_checkpoint_ctx.checkpoint_entry_times->begin(),
-                        running_checkpoint_ctx.checkpoint_entry_times->end(),
-                        compare_entry_times);
-
-                running_checkpoint_ctx.stack_trackers = new map<unsigned, vector<int> *>();
-                for (map<unsigned, thread_ctx *>::iterator ti = thread_ctxs.begin(),
-                        te = thread_ctxs.end(); ti != te; ti++) {
-                    unsigned thread = ti->first;
-                    thread_ctx *info = ti->second;
-                    (*running_checkpoint_ctx.stack_trackers)[thread] = new vector<int>();
-                    info->get_stack_tracker().copy(running_checkpoint_ctx.stack_trackers->at(thread));
-                }
-
-                VERIFY(pthread_rwlock_rdlock(&contains_lock) == 0);
-                running_checkpoint_ctx.contains_serialized = serialize_containers(
-                        &contains, &(running_checkpoint_ctx.contains_serialized_len));
-                VERIFY(pthread_rwlock_unlock(&contains_lock) == 0);
-
-                VERIFY(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
-                running_checkpoint_ctx.serialized_alias_groups = serialize_alias_groups(
-                        &aliased_groups,
-                        &(running_checkpoint_ctx.serialized_alias_groups_len));
-                VERIFY(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
-
-                last_checkpoint = perf_profile::current_time_ns();
-
-                VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
-                VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-
-                if (disable_throttling) {
-                    /*
-                     * If we're running in a test that has decided to disable
-                     * throttling to ensure that useful checkpoints get created that
-                     * we can test, block on checkpoint creation.
-                     */
-                    VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-                    while (checkpoint_thread_running == 1) {
-                        VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
-                    }
-                    VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-                }
-            }
-        }
-    } else {
-        rm_stack(false, 0, "checkpoint", /* NULL, 0, */ 0, false);
-        ADD_TO_OVERHEAD
-#ifdef __CHIMES_PROFILE
-        pp.add_time(CHECKPOINT, __start_time);
-#endif
-        return;
-    }
-
-    if (checkpointing_thread) {
-        curr_ckpt->set_checkpoint_in_progress(false);
-        if (was_a_replay) {
-            curr_ckpt->set_exit_time();
-        }
-#ifdef __CHIMES_PROFILE
-        if (__prep_start_time > 0) {
-            pp.add_time(CHECKPOINT_PREP, __prep_start_time);
-        }
-#endif
-        VERIFY(pthread_cond_broadcast(&thread_count_cond) == 0);
-    }
-    clock_t exit_time;
-    if (was_a_replay) {
-        exit_time = curr_ckpt->get_exit_time();
-        unsigned nthreads_left = curr_ckpt->decr_threads_in_checkpoint();
-        if (nthreads_left == 0) {
-            // Free checkpoint metadata and remove from checkpoint_info
-            VERIFY(checkpoint_info.erase(curr_ckpt->get_id()) == 1);
-            delete curr_ckpt;
-        }
-    }
-
-    VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
-
-    if (was_a_replay) {
-        clock_t my_delta = checkpoint_entry_deltas->at(get_my_tid());
-        while (clock() - exit_time < my_delta) ;
-    }
-
-    rm_stack(false, 0, "checkpoint", /* NULL, 0,*/ 0, false);
-    ADD_TO_OVERHEAD
-#ifdef __CHIMES_PROFILE
-    pp.add_time(CHECKPOINT, __start_time);
-#endif
-}
+// void checkpoint_transformed(int lbl, unsigned loc_id) {
+// #ifdef __CHIMES_PROFILE
+//     const unsigned long long __start_time = perf_profile::current_time_ns();
+// #endif
+//     const unsigned long long __chimes_overhead_start_time =
+//         perf_profile::current_time_ns();
+// 
+//     clock_t enter_time = clock();
+// 
+//     thread_ctx *ctx = get_my_context();
+//     VERIFY(!ctx->is_disabled());
+//     ctx->set_calling_label(lbl);
+//     ctx->set_func_ptr((void *)checkpoint_transformed);
+//     ctx->set_return_alias(0UL);
+//     ctx->clear_parent_aliases();
+//     if (loc_id > 0) {
+//         alias_group_changed_helper(loc_id, ctx);
+//     }
+// 
+//     new_stack((void *)checkpoint_transformed, "checkpoint", /* NULL, */ 0 /* , 0 */ );
+//     const bool was_a_replay = ____chimes_replaying;
+//     checkpoint_ctx *curr_ckpt;
+//     bool checkpointing_thread;
+// #ifdef __CHIMES_PROFILE
+//     unsigned long long __prep_start_time = 0ULL;
+// #endif
+// 
+//     /*
+//      * On replay, the last thread to hit the checkpoint will skip the wait loop
+//      * above, enter this region, perform all the restores, and then set
+//      * ____chimes_replaying to zero so that no other thread enters here.
+//      *
+//      * Otherwise, the last thread will launch the checkpointing logic and all
+//      * other threads will be prevented from entering there.
+//      */
+//     if (____chimes_replaying) {
+// 
+//         bool should_abort;
+//         checkpointing_thread = wait_for_all_threads(&enter_time,
+//                 &curr_ckpt, &should_abort);
+//         assert(!should_abort);
+// 
+//         if (checkpointing_thread) {
+//             // Assert same number of threads
+//             assert(unpacked_program_stacks->size() == thread_ctxs.size());
+//             assert(unpacked_global_vars->size() == global_vars.size());
+// 
+//             /*
+//              * restore non-pointers in the stack to have the correct values by
+//              * transferring from the deserialized objects into the newly registered
+//              * addresses
+//              */
+//             for (map<unsigned, vector<stack_frame *> *>::iterator stacks_iter =
+//                     unpacked_program_stacks->begin(), stacks_end =
+//                     unpacked_program_stacks->end(); stacks_iter != stacks_end;
+//                     stacks_iter++) {
+//                 unsigned tid = stacks_iter->first;
+// 
+//                 vector<stack_frame *> *unpacked = unpacked_program_stacks->at(tid);
+//                 vector<stack_frame *> *real = thread_ctxs.at(tid)->get_stack();
+// 
+// #ifdef VERBOSE
+//                 fprintf(stderr, "Restoring program stack for thread %u. Unpacked "
+//                         "program stack has %lu frames, live program stack has %lu "
+//                         "frames.\n", tid, unpacked->size(), real->size());
+// #endif
+// 
+//                 restore_program_stack(unpacked, real);
+//             }
+// 
+//             /*
+//              * Verify all of the globals that we unpacked are also in the live
+//              * running program, then update them.
+//              */
+//             for (map<string, stack_var *>::iterator i =
+//                     unpacked_global_vars->begin(), e = unpacked_global_vars->end();
+//                     i != e; i++) {
+//                 assert(global_vars.find(i->first) != global_vars.end());
+// 
+//                 string name = i->first;
+//                 stack_var *dead = i->second;
+//                 stack_frame::iterator found = global_vars.find(name);
+//                 stack_var *live = found->second;
+// 
+//                 update_live_var(name, dead, live);
+// 
+//                 assert(dead->get_size() == live->get_size());
+//             }
+// 
+//             /*
+//              * find pointers in the stack and restore them to point to the correct
+//              * object. at the same time, use these pointers as indicators of places
+//              * in the heap where other references need updating by following
+//              * pointers.
+//              *
+//              * Use updated to track which local variables we've already updated and
+//              * skip them.
+//              */
+//             set<void *> updated;
+//             // For each stack frame
+//             for (map<unsigned, thread_ctx *>::iterator stacks_iter =
+//                     thread_ctxs.begin(), stacks_end = thread_ctxs.end();
+//                     stacks_iter != stacks_end; stacks_iter++) {
+//                 thread_ctx *ctx = stacks_iter->second;
+//                 vector<stack_frame *> *stack = ctx->get_stack();
+// 
+//                 for (vector<stack_frame *>::iterator frame_iter =
+//                         stack->begin(), frame_end = stack->end();
+//                         frame_iter != frame_end; frame_iter++) {
+//                     stack_frame *frame = *frame_iter;
+//                     // For each stack variable in the current frame
+//                     for (stack_frame::iterator var_iter = frame->begin(),
+//                             var_end = frame->end(); var_iter != var_end;
+//                             var_iter++) {
+//                         stack_var *var = var_iter->second;
+// #ifdef VERBOSE
+//                         fprintf(stderr, "Fixing stack variable %s of type %s\n",
+//                                 var->get_name().c_str(), var->get_type().c_str());
+// #endif
+//                         fix_stack_or_global_pointer(var->get_address(),
+//                                 var->get_type(), 0);
+//                     }
+//                 }
+//             }
+// 
+//             for (map<string, stack_var *>::iterator globals_iter =
+//                     global_vars.begin(), globals_end = global_vars.end();
+//                     globals_iter != globals_end; globals_iter++) {
+//                 stack_var *var = globals_iter->second;
+//                 fix_stack_or_global_pointer(var->get_address(), var->get_type(), 0);
+//             }
+// 
+//             delete already_translated;
+// 
+//             ____chimes_replaying = 0;
+//             ____chimes_rerunning = 1;
+//             for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
+//                     e = thread_ctxs.end(); i != e; i++) {
+//                 thread_ctx *ctx = i->second;
+//                 ctx->set_stack_nesting(1);
+//             }
+//         }
+//     } else if (checkpoint_initializing || within_overhead_bounds()) {
+// 
+//         bool should_abort;
+//         checkpointing_thread = wait_for_all_threads(&enter_time,
+//                 &curr_ckpt, &should_abort);
+//         if (should_abort) {
+// 
+//             VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
+// 
+//             rm_stack(false, 0, "checkpoint", /* NULL, 0, */ 0, false);
+//             ADD_TO_OVERHEAD
+// #ifdef __CHIMES_PROFILE
+//             pp.add_time(CHECKPOINT, __start_time);
+// #endif
+//             return;
+//         } else if (checkpointing_thread && checkpoint_thread_running == 0) {
+//             VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
+// 
+//             if (checkpoint_thread_running == 1) {
+//                 VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+//             } else {
+// #ifdef __CHIMES_PROFILE
+//                 __prep_start_time = perf_profile::current_time_ns();
+// #endif
+//                 checkpoint_thread_running = 1;
+// 
+//                 /*
+//                  * At this stage we assume we only have a single stack to checkpoint
+//                  * and it belongs to the calling thread, so those addresses will
+//                  * remain valid for checkpointing as long as we're still here.
+//                  * Therefore, we must checkpoint stack variables from here before
+//                  * returning.
+//                  */
+// 
+//                 set<size_t> *all_changed = new set<size_t>();
+//                 for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
+//                         e = thread_ctxs.end(); i != e; i++) {
+//                     thread_ctx *ctx = i->second;
+//                     set_of_aliases *changed = ctx->get_changed_groups();
+// 
+//                     for (unsigned loc = 0; loc < changed->capacity; loc++) {
+//                         if ((changed->set)[loc]) {
+//                             for (set<size_t>::iterator iter =
+//                                     change_loc_id_to_aliases.at(loc).begin(), end =
+//                                     change_loc_id_to_aliases.at(loc).end();
+//                                     iter != end; iter++) {
+//                                 size_t group = *iter;
+//                                 collect_all_aliases(group, all_changed);
+//                             }
+//                         }
+//                     }
+// 
+//                     for (set<size_t>::iterator iter =
+//                             changed->explicit_aliases.begin(), end =
+//                             changed->explicit_aliases.end(); iter != end; iter++) {
+//                         size_t group = *iter;
+//                         collect_all_aliases(group, all_changed);
+//                     }
+//                     ctx->clear_changed_groups();
+//                 }
+// #ifdef VERBOSE
+//                 fprintf(stderr, "checkpointing the following alias groups:\n");
+//                 for (set<size_t>::iterator changed_iter = all_changed->begin(),
+//                         changed_end = all_changed->end();
+//                         changed_iter != changed_end; changed_iter++) {
+//                     size_t alias = *changed_iter;
+//                     fprintf(stderr, "    %lu\n", alias);
+//                 }
+// #endif
+// 
+//                 vector<pair<size_t, heap_allocation *> > heap_to_checkpoint_sorted;
+//                 heap_to_checkpoint_sorted.reserve(heap.size());
+//                 for (map<void *, heap_allocation *>::iterator heap_iter =
+//                         heap.begin(), heap_end = heap.end(); heap_iter != heap_end;
+//                         heap_iter++) {
+//                     heap_allocation *curr = heap_iter->second;
+//                     /*
+//                      * At the moment, we don't calculate alias groups for CUDA
+//                      * allocations because they are never dereferenced from the
+//                      * host. In future TODO work, we could track which allocations
+//                      * are passed to kernels and use that as a way to reduce the
+//                      * number of CUDA allocations that need to be checkpointed.
+//                      */
+//                     if (all_changed->find(curr->get_alias_group()) !=
+//                             all_changed->end() || curr->get_is_cuda_alloc()) {
+// #ifdef VERBOSE
+//                         fprintf(stderr, "  because of group %lu we checkpoint heap "
+//                                 "allocation %p, size=%lu\n",
+//                                 curr->get_alias_group(), curr->get_address(),
+//                                 curr->get_size());
+// #endif
+//                         heap_to_checkpoint_sorted.push_back(
+//                                 pair<size_t, heap_allocation *>(curr->get_size(),
+//                                     curr));
+//                     }
+//                 }
+// 
+//                 std::sort(heap_to_checkpoint_sorted.begin(),
+//                         heap_to_checkpoint_sorted.end(), compare_heap_allocations);
+//                 vector<checkpointable_heap_allocation> *to_checkpoint =
+//                     new vector<checkpointable_heap_allocation>();
+// 
+// #ifdef __CHIMES_PROFILE
+//                 const unsigned long long __hashing_start = perf_profile::current_time_ns();
+// #endif
+//                 const size_t desired_checkpoint_size =
+//                     (size_t)(target_checkpoint_size_perc *
+//                             (double)total_allocations);
+//                 size_t copied_so_far = 0;
+// #ifdef HASHING_DIAGNOSTICS
+//                 fprintf(stderr, "Hashing diagnostics for checkpoint:\n");
+// #endif
+//                 for (vector<pair<size_t, heap_allocation *> >::iterator i =
+//                         heap_to_checkpoint_sorted.begin(),
+//                         e = heap_to_checkpoint_sorted.end(); i != e; i++) {
+//                     heap_allocation *curr = i->second;
+//                     if (!should_hash(curr->get_size(), desired_checkpoint_size,
+//                                 copied_so_far)) {
+// #ifdef HASHING_DIAGNOSTICS
+//                         fprintf(stderr, "  not hashing allocation, size=%lu "
+//                                 "invalid hashes=%d copied_so_far=%lu desired=%lu\n",
+//                                 curr->get_size(), curr->hashes_invalid(),
+//                                 copied_so_far, desired_checkpoint_size);
+// #endif
+//                         to_checkpoint->push_back(checkpointable_heap_allocation(
+//                                     curr));
+//                         curr->invalidate_hashes();
+//                         copied_so_far += curr->get_size();
+//                     } else {
+//                         if (curr->hashes_invalid()) {
+// #ifdef HASHING_DIAGNOSTICS
+//                             fprintf(stderr, "  hashing allocation due to invalid hashes, size=%lu "
+//                                     "copied_so_far=%lu desired=%lu\n", curr->get_size(),
+//                                     copied_so_far, desired_checkpoint_size);
+// #endif
+// 
+//                             curr->update_hashes();
+//                             to_checkpoint->push_back(checkpointable_heap_allocation(
+//                                         curr));
+//                             curr->mark_hashes_valid();
+//                             copied_so_far += curr->get_size();
+//                         } else {
+//                             size_t n_bytes_changed = 0;
+//                             vector<pair<size_t, size_t> > ranges;
+//                             for (unsigned chunk = 0; chunk < curr->get_n_hash_chunks(); chunk++) {
+//                                 unsigned long long curr_hash = curr->get_hash(chunk);
+//                                 unsigned long long new_hash =
+//                                     curr->calculate_hash(chunk);
+//                                 if (curr_hash != new_hash) {
+//                                     const size_t chunk_start =
+//                                         curr->get_hash_chunk_start(chunk);
+//                                     const size_t chunk_end =
+//                                         curr->get_hash_chunk_end(chunk);
+//                                     const size_t chunk_size =
+//                                         chunk_end - chunk_start;
+//                                     if (ranges.size() == 0) {
+//                                         ranges.push_back(pair<size_t, size_t>(
+//                                                     chunk_start, chunk_end));
+//                                     } else {
+//                                         if (ranges.back().second == chunk_start) {
+//                                             ranges.back().second = chunk_end;
+//                                         } else {
+//                                             ranges.push_back(pair<size_t, size_t>(
+//                                                         chunk_start, chunk_end));
+//                                         }
+//                                     }
+//                                     n_bytes_changed += chunk_size;
+//                                     curr->update_hash(chunk, new_hash);
+//                                 }
+//                             }
+// #ifdef HASHING_DIAGNOSTICS
+//                             fprintf(stderr, "  hashing reduced allocation size "
+//                                     "from %lu to %lu, copied_so_far=%lu "
+//                                     "desired=%lu\n", curr->get_size(),
+//                                     n_bytes_changed, copied_so_far,
+//                                     desired_checkpoint_size);
+// #endif
+//                             size_t packed_so_far = 0;
+//                             unsigned char *source = (unsigned char *)curr->get_address();
+//                             unsigned char *buffer = (unsigned char *)malloc(n_bytes_changed);
+//                             for (vector<pair<size_t, size_t> >::iterator i =
+//                                     ranges.begin(), e = ranges.end(); i != e; i++) {
+//                                 if (curr->get_is_cuda_alloc()) {
+//                                     CHECK(cudaMemcpy(buffer + packed_so_far,
+//                                                 source + i->first,
+//                                                 i->second - i->first,
+//                                                 cudaMemcpyDeviceToHost));
+//                                 } else {
+//                                     memcpy(buffer + packed_so_far,
+//                                             source + i->first,
+//                                             i->second - i->first); 
+//                                 }
+//                             }
+//                             to_checkpoint->push_back(checkpointable_heap_allocation(
+//                                         curr, buffer, &ranges));
+//                             curr->mark_hashes_valid();
+//                             copied_so_far += n_bytes_changed;
+//                         }
+//                     }
+//                 }
+// #ifdef HASHING_DIAGNOSTICS
+//                 fprintf(stderr, "    Hashed checkpoint size = %lu\n", copied_so_far);
+// #endif
+// 
+// #ifdef __CHIMES_PROFILE
+//                 pp.add_time(HASHING, __hashing_start);
+// #endif
+// 
+//                 delete all_changed;
+// 
+//                 running_checkpoint_ctx.stacks_serialized = serialize_program_stacks(&thread_ctxs,
+//                         &running_checkpoint_ctx.stacks_serialized_len);
+//                 running_checkpoint_ctx.globals_serialized = serialize_globals(&global_vars,
+//                         &running_checkpoint_ctx.globals_serialized_len);
+//                 running_checkpoint_ctx.constants_serialized = serialize_constants(&constants,
+//                         &running_checkpoint_ctx.constants_serialized_len);
+//                 running_checkpoint_ctx.thread_hierarchy_serialized = serialize_thread_hierarchy(
+//                         &thread_ctxs,
+//                         &running_checkpoint_ctx.thread_hierarchy_serialized_len);
+//                 running_checkpoint_ctx.heap_to_checkpoint = to_checkpoint;
+// 
+//                 running_checkpoint_ctx.checkpoint_entry_times =
+//                     new std::vector<std::pair<unsigned, clock_t> >(
+//                             curr_ckpt->get_checkpoint_entry_times());
+//                 std::sort(running_checkpoint_ctx.checkpoint_entry_times->begin(),
+//                         running_checkpoint_ctx.checkpoint_entry_times->end(),
+//                         compare_entry_times);
+// 
+//                 running_checkpoint_ctx.stack_trackers = new map<unsigned, vector<int> *>();
+//                 for (map<unsigned, thread_ctx *>::iterator ti = thread_ctxs.begin(),
+//                         te = thread_ctxs.end(); ti != te; ti++) {
+//                     unsigned thread = ti->first;
+//                     thread_ctx *info = ti->second;
+//                     (*running_checkpoint_ctx.stack_trackers)[thread] = new vector<int>();
+//                     info->get_stack_tracker().copy(running_checkpoint_ctx.stack_trackers->at(thread));
+//                 }
+// 
+//                 VERIFY(pthread_rwlock_rdlock(&contains_lock) == 0);
+//                 running_checkpoint_ctx.contains_serialized = serialize_containers(
+//                         &contains, &(running_checkpoint_ctx.contains_serialized_len));
+//                 VERIFY(pthread_rwlock_unlock(&contains_lock) == 0);
+// 
+//                 VERIFY(pthread_rwlock_rdlock(&aliased_groups_lock) == 0);
+//                 running_checkpoint_ctx.serialized_alias_groups = serialize_alias_groups(
+//                         &aliased_groups,
+//                         &(running_checkpoint_ctx.serialized_alias_groups_len));
+//                 VERIFY(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+// 
+//                 last_checkpoint = perf_profile::current_time_ns();
+// 
+//                 VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
+//                 VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+// 
+//                 if (disable_throttling) {
+//                     /*
+//                      * If we're running in a test that has decided to disable
+//                      * throttling to ensure that useful checkpoints get created that
+//                      * we can test, block on checkpoint creation.
+//                      */
+//                     VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
+//                     while (checkpoint_thread_running == 1) {
+//                         VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
+//                     }
+//                     VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+//                 }
+//             }
+//         }
+//     } else {
+//         rm_stack(false, 0, "checkpoint", /* NULL, 0, */ 0, false);
+//         ADD_TO_OVERHEAD
+// #ifdef __CHIMES_PROFILE
+//         pp.add_time(CHECKPOINT, __start_time);
+// #endif
+//         return;
+//     }
+// 
+//     if (checkpointing_thread) {
+//         curr_ckpt->set_checkpoint_in_progress(false);
+//         if (was_a_replay) {
+//             curr_ckpt->set_exit_time();
+//         }
+// #ifdef __CHIMES_PROFILE
+//         if (__prep_start_time > 0) {
+//             pp.add_time(CHECKPOINT_PREP, __prep_start_time);
+//         }
+// #endif
+//         VERIFY(pthread_cond_broadcast(&thread_count_cond) == 0);
+//     }
+//     clock_t exit_time;
+//     if (was_a_replay) {
+//         exit_time = curr_ckpt->get_exit_time();
+//         unsigned nthreads_left = curr_ckpt->decr_threads_in_checkpoint();
+//         if (nthreads_left == 0) {
+//             // Free checkpoint metadata and remove from checkpoint_info
+//             VERIFY(checkpoint_info.erase(curr_ckpt->get_id()) == 1);
+//             delete curr_ckpt;
+//         }
+//     }
+// 
+//     VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
+// 
+//     if (was_a_replay) {
+//         clock_t my_delta = checkpoint_entry_deltas->at(get_my_tid());
+//         while (clock() - exit_time < my_delta) ;
+//     }
+// 
+//     rm_stack(false, 0, "checkpoint", /* NULL, 0,*/ 0, false);
+//     ADD_TO_OVERHEAD
+// #ifdef __CHIMES_PROFILE
+//     pp.add_time(CHECKPOINT, __start_time);
+// #endif
+// }
 
 #ifdef VERBOSE
 static void add_nesting(int nesting) {
@@ -4124,283 +4124,283 @@ static int wait_for_running_writes(struct aiocb * aio_list[],
     return (n_left_running);
 }
 
-void *checkpoint_func(void *data) {
-    checkpoint_thread_ctx *ctx = (checkpoint_thread_ctx *)data;
-
-    while (true) {
-        VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-
-        while (checkpoint_thread_running == 0) {
-            VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
-        }
-
-        VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-
-        /*
-         * Main thread will signal checkpoint thread to exit by setting an
-         * invalid value.
-         */
-        if (checkpoint_thread_running == -1) break;
-
-#ifdef __CHIMES_PROFILE
-        const unsigned long long __start_time = perf_profile::current_time_ns();
-#endif
-        unsigned char *stacks_serialized = ctx->stacks_serialized;
-        uint64_t stacks_serialized_len = ctx->stacks_serialized_len;
-        unsigned char *globals_serialized = ctx->globals_serialized;
-        uint64_t globals_serialized_len = ctx->globals_serialized_len;
-        unsigned char *constants_serialized = ctx->constants_serialized;
-        uint64_t constants_serialized_len = ctx->constants_serialized_len;
-        unsigned char *thread_hierarchy_serialized =
-            ctx->thread_hierarchy_serialized;
-        uint64_t thread_hierarchy_serialized_len =
-            ctx->thread_hierarchy_serialized_len;
-        vector<checkpointable_heap_allocation> *to_checkpoint =
-            ctx->heap_to_checkpoint;
-        void *contains_serialized = ctx->contains_serialized;
-        size_t contains_serialized_len = ctx->contains_serialized_len;
-        void *serialized_alias_groups = ctx->serialized_alias_groups;
-        size_t serialized_alias_groups_len = ctx->serialized_alias_groups_len;
-
-        vector<aiocb *> async_tokens;
-        off_t count_bytes = 0;
-
-        /*
-         * Until we implement the planned client-server architecture, just dump
-         * checkpoints to a file locally. Right now, we naively dump everything.
-         */
-
-        // Total number of async writes issued below
-        int n_writes_running = 0;
-
-        // Find a unique file for this checkpoint
-        int count = 0;
-        char dump_filename[MAX_CHECKPOINT_FILENAME_LEN];
-        sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
-        int fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
-        while (fd < 0) {
-            count++;
-            sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
-            fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
-        }
-
-#ifdef VERBOSE
-        fprintf(stderr, "Creating checkpoint in \"%s\", previous_checkpoint="
-                "\"%s\"\n", dump_filename, previous_checkpoint_filename);
-#endif
-
-        // Write the name of the preceding checkpoint file out
-        size_t filename_length = strlen(previous_checkpoint_filename) + 1;
-        prep_async_safe_write(fd, &filename_length,
-                sizeof(filename_length), count_bytes, &count_bytes, "filename_length", &async_tokens);
-        prep_async_safe_write(fd, previous_checkpoint_filename,
-                filename_length, count_bytes, &count_bytes, "previous_checkpoint_filename", &async_tokens);
-
-        size_t heap_offset = -1; // placeholder until we figure out the actual value
-        off_t heap_offset_offset = sizeof(filename_length) + filename_length;
-        prep_async_safe_write(fd, &heap_offset,
-                    sizeof(heap_offset), count_bytes, &count_bytes, "heap_offset", &async_tokens);
-
-        // Write the heap entry times to the dump file, sorted by entry order
-        int n_checkpoint_times = ctx->checkpoint_entry_times->size();
-        prep_async_safe_write(fd, &n_checkpoint_times, sizeof(n_checkpoint_times), count_bytes,
-                    &count_bytes, "n_checkpoint_times", &async_tokens);
-        serialized_checkpoint_time *serialized_times = (serialized_checkpoint_time *)malloc(
-                n_checkpoint_times * sizeof(serialized_checkpoint_time));
-        assert(serialized_times);
-
-        int index = 0;
-        clock_t baseline;
-        for (vector<pair<unsigned, clock_t> >::iterator i =
-                ctx->checkpoint_entry_times->begin(),
-                e = ctx->checkpoint_entry_times->end(); i != e; i++) {
-            unsigned tid = i->first;
-            clock_t t = i->second;
-            if (index == 0) {
-                baseline = t;
-            }
-            clock_t delta = t - baseline;
-            serialized_times[index].tid = tid;
-            serialized_times[index].delta = delta;
-            index++;
-        }
-        prep_async_safe_write(fd, serialized_times,
-                    n_checkpoint_times * sizeof(serialized_checkpoint_time), count_bytes,
-                    &count_bytes, "serialized_times", &async_tokens);
-
-        // Write the trace of function calls out
-        size_t serialized_traces_len;
-        void *serialized_traces = serialize_traces(ctx->stack_trackers,
-                &serialized_traces_len);
-        prep_async_safe_write(fd, &serialized_traces_len,
-                    sizeof(serialized_traces_len), count_bytes, &count_bytes, "serialized_traces_len", &async_tokens);
-        prep_async_safe_write(fd, serialized_traces,
-                    serialized_traces_len, count_bytes, &count_bytes, "serialized_traces", &async_tokens);
-
-        // Write the serialized stack out
-        prep_async_safe_write(fd, &stacks_serialized_len,
-                    sizeof(stacks_serialized_len), count_bytes, &count_bytes, "stacks_serialized_len", &async_tokens);
-        prep_async_safe_write(fd, stacks_serialized,
-                    ctx->stacks_serialized_len, count_bytes, &count_bytes, "stacks_serialized", &async_tokens);
-
-        // Write the serialized globals out
-        prep_async_safe_write(fd, &globals_serialized_len,
-                    sizeof(globals_serialized_len), count_bytes, &count_bytes, "globals_serialized_len", &async_tokens);
-        prep_async_safe_write(fd, globals_serialized,
-                globals_serialized_len, count_bytes, &count_bytes, "globals_serialized", &async_tokens);
-
-        // Write the constants out
-        prep_async_safe_write(fd, &constants_serialized_len,
-                sizeof(constants_serialized_len), count_bytes, &count_bytes, "constants_serialized_len", &async_tokens);
-        prep_async_safe_write(fd, constants_serialized,
-                constants_serialized_len, count_bytes, &count_bytes, "constants_serialized", &async_tokens);
-
-        // Write the function pointers out
-        prep_async_safe_write(fd, &text_start, sizeof(text_start), count_bytes,
-                &count_bytes, "text_start", &async_tokens);
-        prep_async_safe_write(fd, &text_len, sizeof(text_len), count_bytes,
-                &count_bytes, "text_len", &async_tokens);
-
-        // Write out the thread hierarchy
-        prep_async_safe_write(fd, &thread_hierarchy_serialized_len,
-                sizeof(thread_hierarchy_serialized_len), count_bytes, &count_bytes, "thread_hierarchy_serialized_len", &async_tokens);
-        prep_async_safe_write(fd, thread_hierarchy_serialized,
-                thread_hierarchy_serialized_len, count_bytes, &count_bytes, "thread_hierarchy_serialized", &async_tokens);
-
-        /*
-         * At the end (after all asynchronous I/Os have completed) we write a
-         * pointer to the heap offset into the file near the front.
-         *
-         * TODO
-         */
-        heap_offset = count_bytes;
-
-        // Write the heap allocations out
-        uint64_t n_heap_allocs = to_checkpoint->size();
-        prep_async_safe_write(fd, &n_heap_allocs,
-                    sizeof(n_heap_allocs), count_bytes, &count_bytes, "n_heap_allocs", &async_tokens);
-        vector<serialized_heap_var> *serialized_heap_vars =
-            serialize_checkpointable_heap(to_checkpoint);
-        assert(serialized_heap_vars->size() == to_checkpoint->size());
-
-        for (unsigned i = 0; i < to_checkpoint->size(); i++) {
-            prep_async_safe_write(fd,
-                        serialized_heap_vars->at(i).get_serialized(),
-                        serialized_heap_vars->at(i).get_serialized_len(), count_bytes,
-                        &count_bytes, "serialized_heap_vars", &async_tokens);
-            prep_async_safe_write(fd,
-                        to_checkpoint->at(i).get_buffer(),
-                        serialized_heap_vars->at(i).get_buffer_len(), count_bytes,
-                        &count_bytes, "to_checkpoint", &async_tokens);
-        }
-
-        prep_async_safe_write(fd, &contains_serialized_len,
-                sizeof(contains_serialized_len), count_bytes, &count_bytes,
-                "contains_serialized_len", &async_tokens);
-        prep_async_safe_write(fd, contains_serialized, contains_serialized_len,
-                    count_bytes, &count_bytes, "serialized_contains",
-                    &async_tokens);
-
-        prep_async_safe_write(fd, &serialized_alias_groups_len,
-                    sizeof(serialized_alias_groups_len), count_bytes, &count_bytes,
-                    "serialized_alias_groups_len", &async_tokens);
-        prep_async_safe_write(fd, serialized_alias_groups,
-                    serialized_alias_groups_len, count_bytes, &count_bytes,
-                    "serialized_alias_groups", &async_tokens);
-
-        /*
-         * Done! Wait for async I/Os and finally write the heap offset info in the
-         * header of the checkpoint file.
-         *
-         * Iterate in reverse so we wait for the last ones first.
-         */
-        struct aiocb * aio_list[async_tokens.size()];
-        while (!async_tokens.empty()) {
-            aiocb *torun = async_tokens.front();
-            async_tokens.erase(async_tokens.begin());
-
-            /*
-             * Some writes may be empty (e.g. if there are no globals then the
-             * serialized globals len will be == 0).
-             */
-            if (torun->aio_nbytes == 0) {
-                free(torun);
-                continue;
-            }
-
-            int err = aio_write(torun);
-
-            if (err == -1) {
-                async_tokens.push_back(torun);
-                if (errno == EAGAIN) {
-                    if (n_writes_running) {
-                        n_writes_running = wait_for_running_writes(aio_list,
-                                n_writes_running, &count_bytes, dump_filename, &async_tokens);
-                    }
-                } else {
-                    fprintf(stderr, "Unexpected error while writing asynchronously "
-                            "to %s\n", dump_filename);
-                    perror(NULL);
-                    exit(1);
-                }
-            } else {
-                aio_list[n_writes_running++] = torun;
-            }
-        }
-
-        while (n_writes_running > 0) {
-            n_writes_running = wait_for_running_writes(aio_list, n_writes_running,
-                    &count_bytes, dump_filename, &async_tokens);
-        }
-
-        VERIFY(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
-                dump_filename) == heap_offset_offset);
-        safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_final",
-                dump_filename);
-        close(fd);
-
-        for (unsigned i = 0; i < to_checkpoint->size(); i++) {
-            free(to_checkpoint->at(i).get_buffer());
-            free(serialized_heap_vars->at(i).get_serialized());
-        }
-
-        free(stacks_serialized);
-        free(globals_serialized);
-        free(constants_serialized);
-        free(thread_hierarchy_serialized);
-        free(serialized_times);
-        free(serialized_traces);
-        free(contains_serialized);
-        free(serialized_alias_groups);
-        delete to_checkpoint;
-        delete ctx->stack_trackers;
-        delete ctx->checkpoint_entry_times;
-        delete serialized_heap_vars;
-
-        strcpy(previous_checkpoint_filename, dump_filename);
-
-        VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-        assert(checkpoint_thread_running == 1 ||
-                checkpoint_thread_running == -1);
-        if (checkpoint_thread_running == -1) break;
-
-        checkpoint_thread_running = 0;
-        /*
-         * This signal isn't necessary for correctness, it is simply used to
-         * signal wait_for_checkpoint during tests. It's okay to signal here in
-         * normal execution because the checkpoint thread is the only thing that
-         * waits on checkpoint_cond, and it can't signal itself.
-         */
-        VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
-        VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-
-#ifdef __CHIMES_PROFILE
-        pp.add_time(CHECKPOINT_THREAD, __start_time);
-#endif
-    }
-
-    return (NULL);
-}
+// void *checkpoint_func(void *data) {
+//     checkpoint_thread_ctx *ctx = (checkpoint_thread_ctx *)data;
+// 
+//     while (true) {
+//         VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
+// 
+//         while (checkpoint_thread_running == 0) {
+//             VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
+//         }
+// 
+//         VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+// 
+//         /*
+//          * Main thread will signal checkpoint thread to exit by setting an
+//          * invalid value.
+//          */
+//         if (checkpoint_thread_running == -1) break;
+// 
+// #ifdef __CHIMES_PROFILE
+//         const unsigned long long __start_time = perf_profile::current_time_ns();
+// #endif
+//         unsigned char *stacks_serialized = ctx->stacks_serialized;
+//         uint64_t stacks_serialized_len = ctx->stacks_serialized_len;
+//         unsigned char *globals_serialized = ctx->globals_serialized;
+//         uint64_t globals_serialized_len = ctx->globals_serialized_len;
+//         unsigned char *constants_serialized = ctx->constants_serialized;
+//         uint64_t constants_serialized_len = ctx->constants_serialized_len;
+//         unsigned char *thread_hierarchy_serialized =
+//             ctx->thread_hierarchy_serialized;
+//         uint64_t thread_hierarchy_serialized_len =
+//             ctx->thread_hierarchy_serialized_len;
+//         vector<checkpointable_heap_allocation> *to_checkpoint =
+//             ctx->heap_to_checkpoint;
+//         void *contains_serialized = ctx->contains_serialized;
+//         size_t contains_serialized_len = ctx->contains_serialized_len;
+//         void *serialized_alias_groups = ctx->serialized_alias_groups;
+//         size_t serialized_alias_groups_len = ctx->serialized_alias_groups_len;
+// 
+//         vector<aiocb *> async_tokens;
+//         off_t count_bytes = 0;
+// 
+//         /*
+//          * Until we implement the planned client-server architecture, just dump
+//          * checkpoints to a file locally. Right now, we naively dump everything.
+//          */
+// 
+//         // Total number of async writes issued below
+//         int n_writes_running = 0;
+// 
+//         // Find a unique file for this checkpoint
+//         int count = 0;
+//         char dump_filename[MAX_CHECKPOINT_FILENAME_LEN];
+//         sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
+//         int fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
+//         while (fd < 0) {
+//             count++;
+//             sprintf(dump_filename, "%s/chimes.%d.ckpt", checkpoint_directory, count);
+//             fd = open(dump_filename, O_CREAT | O_EXCL | O_WRONLY, 0666);
+//         }
+// 
+// #ifdef VERBOSE
+//         fprintf(stderr, "Creating checkpoint in \"%s\", previous_checkpoint="
+//                 "\"%s\"\n", dump_filename, previous_checkpoint_filename);
+// #endif
+// 
+//         // Write the name of the preceding checkpoint file out
+//         size_t filename_length = strlen(previous_checkpoint_filename) + 1;
+//         prep_async_safe_write(fd, &filename_length,
+//                 sizeof(filename_length), count_bytes, &count_bytes, "filename_length", &async_tokens);
+//         prep_async_safe_write(fd, previous_checkpoint_filename,
+//                 filename_length, count_bytes, &count_bytes, "previous_checkpoint_filename", &async_tokens);
+// 
+//         size_t heap_offset = -1; // placeholder until we figure out the actual value
+//         off_t heap_offset_offset = sizeof(filename_length) + filename_length;
+//         prep_async_safe_write(fd, &heap_offset,
+//                     sizeof(heap_offset), count_bytes, &count_bytes, "heap_offset", &async_tokens);
+// 
+//         // Write the heap entry times to the dump file, sorted by entry order
+//         int n_checkpoint_times = ctx->checkpoint_entry_times->size();
+//         prep_async_safe_write(fd, &n_checkpoint_times, sizeof(n_checkpoint_times), count_bytes,
+//                     &count_bytes, "n_checkpoint_times", &async_tokens);
+//         serialized_checkpoint_time *serialized_times = (serialized_checkpoint_time *)malloc(
+//                 n_checkpoint_times * sizeof(serialized_checkpoint_time));
+//         assert(serialized_times);
+// 
+//         int index = 0;
+//         clock_t baseline;
+//         for (vector<pair<unsigned, clock_t> >::iterator i =
+//                 ctx->checkpoint_entry_times->begin(),
+//                 e = ctx->checkpoint_entry_times->end(); i != e; i++) {
+//             unsigned tid = i->first;
+//             clock_t t = i->second;
+//             if (index == 0) {
+//                 baseline = t;
+//             }
+//             clock_t delta = t - baseline;
+//             serialized_times[index].tid = tid;
+//             serialized_times[index].delta = delta;
+//             index++;
+//         }
+//         prep_async_safe_write(fd, serialized_times,
+//                     n_checkpoint_times * sizeof(serialized_checkpoint_time), count_bytes,
+//                     &count_bytes, "serialized_times", &async_tokens);
+// 
+//         // Write the trace of function calls out
+//         size_t serialized_traces_len;
+//         void *serialized_traces = serialize_traces(ctx->stack_trackers,
+//                 &serialized_traces_len);
+//         prep_async_safe_write(fd, &serialized_traces_len,
+//                     sizeof(serialized_traces_len), count_bytes, &count_bytes, "serialized_traces_len", &async_tokens);
+//         prep_async_safe_write(fd, serialized_traces,
+//                     serialized_traces_len, count_bytes, &count_bytes, "serialized_traces", &async_tokens);
+// 
+//         // Write the serialized stack out
+//         prep_async_safe_write(fd, &stacks_serialized_len,
+//                     sizeof(stacks_serialized_len), count_bytes, &count_bytes, "stacks_serialized_len", &async_tokens);
+//         prep_async_safe_write(fd, stacks_serialized,
+//                     ctx->stacks_serialized_len, count_bytes, &count_bytes, "stacks_serialized", &async_tokens);
+// 
+//         // Write the serialized globals out
+//         prep_async_safe_write(fd, &globals_serialized_len,
+//                     sizeof(globals_serialized_len), count_bytes, &count_bytes, "globals_serialized_len", &async_tokens);
+//         prep_async_safe_write(fd, globals_serialized,
+//                 globals_serialized_len, count_bytes, &count_bytes, "globals_serialized", &async_tokens);
+// 
+//         // Write the constants out
+//         prep_async_safe_write(fd, &constants_serialized_len,
+//                 sizeof(constants_serialized_len), count_bytes, &count_bytes, "constants_serialized_len", &async_tokens);
+//         prep_async_safe_write(fd, constants_serialized,
+//                 constants_serialized_len, count_bytes, &count_bytes, "constants_serialized", &async_tokens);
+// 
+//         // Write the function pointers out
+//         prep_async_safe_write(fd, &text_start, sizeof(text_start), count_bytes,
+//                 &count_bytes, "text_start", &async_tokens);
+//         prep_async_safe_write(fd, &text_len, sizeof(text_len), count_bytes,
+//                 &count_bytes, "text_len", &async_tokens);
+// 
+//         // Write out the thread hierarchy
+//         prep_async_safe_write(fd, &thread_hierarchy_serialized_len,
+//                 sizeof(thread_hierarchy_serialized_len), count_bytes, &count_bytes, "thread_hierarchy_serialized_len", &async_tokens);
+//         prep_async_safe_write(fd, thread_hierarchy_serialized,
+//                 thread_hierarchy_serialized_len, count_bytes, &count_bytes, "thread_hierarchy_serialized", &async_tokens);
+// 
+//         /*
+//          * At the end (after all asynchronous I/Os have completed) we write a
+//          * pointer to the heap offset into the file near the front.
+//          *
+//          * TODO
+//          */
+//         heap_offset = count_bytes;
+// 
+//         // Write the heap allocations out
+//         uint64_t n_heap_allocs = to_checkpoint->size();
+//         prep_async_safe_write(fd, &n_heap_allocs,
+//                     sizeof(n_heap_allocs), count_bytes, &count_bytes, "n_heap_allocs", &async_tokens);
+//         vector<serialized_heap_var> *serialized_heap_vars =
+//             serialize_checkpointable_heap(to_checkpoint);
+//         assert(serialized_heap_vars->size() == to_checkpoint->size());
+// 
+//         for (unsigned i = 0; i < to_checkpoint->size(); i++) {
+//             prep_async_safe_write(fd,
+//                         serialized_heap_vars->at(i).get_serialized(),
+//                         serialized_heap_vars->at(i).get_serialized_len(), count_bytes,
+//                         &count_bytes, "serialized_heap_vars", &async_tokens);
+//             prep_async_safe_write(fd,
+//                         to_checkpoint->at(i).get_buffer(),
+//                         serialized_heap_vars->at(i).get_buffer_len(), count_bytes,
+//                         &count_bytes, "to_checkpoint", &async_tokens);
+//         }
+// 
+//         prep_async_safe_write(fd, &contains_serialized_len,
+//                 sizeof(contains_serialized_len), count_bytes, &count_bytes,
+//                 "contains_serialized_len", &async_tokens);
+//         prep_async_safe_write(fd, contains_serialized, contains_serialized_len,
+//                     count_bytes, &count_bytes, "serialized_contains",
+//                     &async_tokens);
+// 
+//         prep_async_safe_write(fd, &serialized_alias_groups_len,
+//                     sizeof(serialized_alias_groups_len), count_bytes, &count_bytes,
+//                     "serialized_alias_groups_len", &async_tokens);
+//         prep_async_safe_write(fd, serialized_alias_groups,
+//                     serialized_alias_groups_len, count_bytes, &count_bytes,
+//                     "serialized_alias_groups", &async_tokens);
+// 
+//         /*
+//          * Done! Wait for async I/Os and finally write the heap offset info in the
+//          * header of the checkpoint file.
+//          *
+//          * Iterate in reverse so we wait for the last ones first.
+//          */
+//         struct aiocb * aio_list[async_tokens.size()];
+//         while (!async_tokens.empty()) {
+//             aiocb *torun = async_tokens.front();
+//             async_tokens.erase(async_tokens.begin());
+// 
+//             /*
+//              * Some writes may be empty (e.g. if there are no globals then the
+//              * serialized globals len will be == 0).
+//              */
+//             if (torun->aio_nbytes == 0) {
+//                 free(torun);
+//                 continue;
+//             }
+// 
+//             int err = aio_write(torun);
+// 
+//             if (err == -1) {
+//                 async_tokens.push_back(torun);
+//                 if (errno == EAGAIN) {
+//                     if (n_writes_running) {
+//                         n_writes_running = wait_for_running_writes(aio_list,
+//                                 n_writes_running, &count_bytes, dump_filename, &async_tokens);
+//                     }
+//                 } else {
+//                     fprintf(stderr, "Unexpected error while writing asynchronously "
+//                             "to %s\n", dump_filename);
+//                     perror(NULL);
+//                     exit(1);
+//                 }
+//             } else {
+//                 aio_list[n_writes_running++] = torun;
+//             }
+//         }
+// 
+//         while (n_writes_running > 0) {
+//             n_writes_running = wait_for_running_writes(aio_list, n_writes_running,
+//                     &count_bytes, dump_filename, &async_tokens);
+//         }
+// 
+//         VERIFY(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
+//                 dump_filename) == heap_offset_offset);
+//         safe_write(fd, &heap_offset, sizeof(heap_offset), "heap_offset_final",
+//                 dump_filename);
+//         close(fd);
+// 
+//         for (unsigned i = 0; i < to_checkpoint->size(); i++) {
+//             free(to_checkpoint->at(i).get_buffer());
+//             free(serialized_heap_vars->at(i).get_serialized());
+//         }
+// 
+//         free(stacks_serialized);
+//         free(globals_serialized);
+//         free(constants_serialized);
+//         free(thread_hierarchy_serialized);
+//         free(serialized_times);
+//         free(serialized_traces);
+//         free(contains_serialized);
+//         free(serialized_alias_groups);
+//         delete to_checkpoint;
+//         delete ctx->stack_trackers;
+//         delete ctx->checkpoint_entry_times;
+//         delete serialized_heap_vars;
+// 
+//         strcpy(previous_checkpoint_filename, dump_filename);
+// 
+//         VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
+//         assert(checkpoint_thread_running == 1 ||
+//                 checkpoint_thread_running == -1);
+//         if (checkpoint_thread_running == -1) break;
+// 
+//         checkpoint_thread_running = 0;
+//         /*
+//          * This signal isn't necessary for correctness, it is simply used to
+//          * signal wait_for_checkpoint during tests. It's okay to signal here in
+//          * normal execution because the checkpoint thread is the only thing that
+//          * waits on checkpoint_cond, and it can't signal itself.
+//          */
+//         VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
+//         VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+// 
+// #ifdef __CHIMES_PROFILE
+//         pp.add_time(CHECKPOINT_THREAD, __start_time);
+// #endif
+//     }
+// 
+//     return (NULL);
+// }
 
 static stack_var *find_var(void *addr,
         vector<stack_frame *> *parent_stack) {
@@ -4440,6 +4440,7 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ns();
     thread_ctx *ctx = get_my_context();
+    fprintf(stderr, "Entering with %p\n", ctx);
 
     ctx->get_stack_tracker().push(lbl);
     ctx->create_new_parent_vars_context();
@@ -4670,6 +4671,8 @@ void thread_leaving() {
 
 static void destroy_thread_ctx(void *thread_ctx_ptr) {
     thread_ctx *ctx = (thread_ctx *)thread_ctx_ptr;
+
+    fprintf(stderr, "Destroying %p\n", ctx);
     assert(ctx->get_stack()->size() == 0);
 
     VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
@@ -4704,6 +4707,7 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         perf_profile::current_time_ns();
     unsigned parent = get_my_tid();
     thread_ctx *my_ctx = get_my_context();
+    fprintf(stderr, "Leaving with %p\n", my_ctx);
     /*
      * If this thread participated in the preceding parallel region, it should
      * have the same stack depth it had before the parallel region, plus one.
@@ -4715,12 +4719,15 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
      * not receive work.
      */
     if (my_ctx->get_parent_region() == region_id) {
+        fprintf(stderr, "Yo A\n");
         assert(my_ctx->get_stack()->size() ==
                 (expected_parent_stack_depth + 1U));
     } else {
+        fprintf(stderr, "Yo B\n");
         assert(my_ctx->get_stack()->size() ==
                 (expected_parent_stack_depth));
     }
+    fprintf(stderr, "Huh A\n", my_ctx);
 
     my_ctx->get_stack_tracker().pop();
     my_ctx->pop_parent_vars_entry();
@@ -4732,6 +4739,8 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
             e = thread_ctxs.end(); i != e; i++) {
         thread_ctx *ctx = i->second;
+
+        fprintf(stderr, "Looking at %p\n", ctx);
 
         if (ctx->has_parent() && ctx->get_parent() == parent &&
                 ctx->get_parent_region() == region_id) {
@@ -4758,6 +4767,7 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
             }
         }
     }
+    fprintf(stderr, "Out\n");
 
     // for (vector<map<unsigned, thread_ctx *>::iterator>::iterator i =
     //         to_erase.begin(), e = to_erase.end(); i != e; i++) {
@@ -4827,39 +4837,39 @@ static std::vector<stack_frame *> *get_my_stack() {
 }
 
 void onexit() {
-#ifdef VERBOSE
-    fprintf(stderr, "Locking...\n");
-#endif
-    VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
-#ifdef VERBOSE
-    fprintf(stderr, "Done\n");
-#endif
-    checkpoint_thread_running = -1;
-#ifdef VERBOSE
-    fprintf(stderr, "Signalling...\n");
-#endif
-    VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
-#ifdef VERBOSE
-    fprintf(stderr, "Unlocking...\n");
-#endif
-    VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
-#ifdef VERBOSE
-    fprintf(stderr, "Joining\n");
-#endif
-
-#ifdef __CHIMES_PROFILE
-    const unsigned long long __start_time = perf_profile::current_time_ns();
-#endif
-    pthread_join(checkpoint_thread, NULL);
-#ifdef __CHIMES_PROFILE
-    pp.add_time(ONEXIT, __start_time);
-#endif
+// #ifdef VERBOSE
+//     fprintf(stderr, "Locking...\n");
+// #endif
+//     VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
+// #ifdef VERBOSE
+//     fprintf(stderr, "Done\n");
+// #endif
+//     checkpoint_thread_running = -1;
+// #ifdef VERBOSE
+//     fprintf(stderr, "Signalling...\n");
+// #endif
+//     VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
+// #ifdef VERBOSE
+//     fprintf(stderr, "Unlocking...\n");
+// #endif
+//     VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
+// #ifdef VERBOSE
+//     fprintf(stderr, "Joining\n");
+// #endif
+// 
+// #ifdef __CHIMES_PROFILE
+//     const unsigned long long __start_time = perf_profile::current_time_ns();
+// #endif
+//     pthread_join(checkpoint_thread, NULL);
+// #ifdef __CHIMES_PROFILE
+//     pp.add_time(ONEXIT, __start_time);
+// #endif
 
 #ifdef __CHIMES_PROFILE
     fprintf(stderr, "%s\n", pp.tostr().c_str());
 #endif
 
-#ifdef VERBOSE
-    fprintf(stderr, "Done\n");
-#endif
+// #ifdef VERBOSE
+//     fprintf(stderr, "Done\n");
+// #endif
 }

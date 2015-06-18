@@ -19,7 +19,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-O0 -g"
+GXX_FLAGS="-O3"
 DEFINES=
 
 while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
