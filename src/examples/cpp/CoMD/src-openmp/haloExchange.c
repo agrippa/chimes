@@ -101,15 +101,15 @@ static HaloExchange* initHaloExchange(Domain* domain);
 static void exchangeData(HaloExchange* haloExchange, void* data, int iAxis);
 
 static int* mkAtomCellList(LinkCell* boxes, int iFace, const int nCells);
-static int loadAtomsBuffer(void* vparms, void* data, int face, char* charBuf);
-static void unloadAtomsBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf);
-static void destroyAtomsExchange(void* vparms);
+int loadAtomsBuffer(void* vparms, void* data, int face, char* charBuf);
+void unloadAtomsBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf);
+void destroyAtomsExchange(void* vparms);
 
 static int* mkForceSendCellList(LinkCell* boxes, int face, int nCells);
 static int* mkForceRecvCellList(LinkCell* boxes, int face, int nCells);
-static int loadForceBuffer(void* vparms, void* data, int face, char* charBuf);
-static void unloadForceBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf);
-static void destroyForceExchange(void* vparms);
+int loadForceBuffer(void* vparms, void* data, int face, char* charBuf);
+void unloadForceBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf);
+void destroyForceExchange(void* vparms);
 static int sortAtomsById(const void* a, const void* b);
 
 /// \details

@@ -140,9 +140,9 @@ typedef struct EamPotentialSt
 } EamPotential;
 
 // EAM functionality
-static int eamForce(SimFlat* s);
-static void eamPrint(FILE* file, BasePotential* pot);
-static void eamDestroy(BasePotential** pot); 
+int eamForce(SimFlat* s);
+void eamPrint(FILE* file, BasePotential* pot);
+void eamDestroy(BasePotential** pot); 
 static void eamBcastPotential(EamPotential* pot);
 
 

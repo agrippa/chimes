@@ -120,6 +120,34 @@ void BraceInserter::VisitStmt(const clang::Stmt *s) {
             }
             break;
         }
+        case clang::Stmt::BinaryOperatorClass: {
+            const clang::BinaryOperator *op =
+                clang::dyn_cast<clang::BinaryOperator>(s);
+            if (op->isAssignmentOp()) {
+                clang::Expr *rhs = op->getRHS();
+                if (rhs->getType().getTypePtr()->isFunctionPointerType()) {
+                    const clang::ImplicitCastExpr *cast =
+                        clang::dyn_cast<clang::ImplicitCastExpr>(rhs);
+                    assert(cast);
+                    const clang::DeclRefExpr *ref =
+                        clang::dyn_cast<clang::DeclRefExpr>(cast->getSubExpr());
+                    assert(ref);
+                    const clang::ValueDecl *decl = ref->getDecl();
+                    const clang::FunctionDecl *fdecl =
+                        clang::dyn_cast<clang::FunctionDecl>(decl);
+                    assert(fdecl);
+
+                    if (!fdecl->isExternallyVisible()) {
+                        std::string fname = fdecl->getName().str();
+                        fprintf(stderr, "ERROR: CHIMES does not support "
+                                "restoring function pointers to 'static' "
+                                "functions. Found an assignment from a pointer "
+                                "to \"%s\".\n", fname.c_str());
+                        exit(1);
+                    }
+                }
+            }
+        }
         default:
             break;
     }

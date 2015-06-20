@@ -91,8 +91,8 @@ typedef struct LjPotentialSt
    real_t epsilon;
 } LjPotential;
 
-static int ljForce(SimFlat* s);
-static void ljPrint(FILE* file, BasePotential* pot);
+int ljForce(SimFlat* s);
+void ljPrint(FILE* file, BasePotential* pot);
 
 void ljDestroy(BasePotential** inppot)
 {

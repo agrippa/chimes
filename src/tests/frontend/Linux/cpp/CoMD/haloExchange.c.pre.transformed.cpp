@@ -2819,22 +2819,22 @@ static void exchangeData(HaloExchange* haloExchange, void* data, int iAxis);
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 static int* mkAtomCellList(LinkCell* boxes, int iFace, const int nCells);
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-static int loadAtomsBuffer(void* vparms, void* data, int face, char* charBuf);
+int loadAtomsBuffer(void* vparms, void* data, int face, char* charBuf);
 # 105 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-static void unloadAtomsBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf);
+void unloadAtomsBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf);
 # 106 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-static void destroyAtomsExchange(void* vparms);
+void destroyAtomsExchange(void* vparms);
 # 107 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 # 108 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 static int* mkForceSendCellList(LinkCell* boxes, int face, int nCells);
 # 109 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 static int* mkForceRecvCellList(LinkCell* boxes, int face, int nCells);
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-static int loadForceBuffer(void* vparms, void* data, int face, char* charBuf);
+int loadForceBuffer(void* vparms, void* data, int face, char* charBuf);
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-static void unloadForceBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf);
+void unloadForceBuffer(void* vparms, void* data, int face, int bufSize, char* charBuf);
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-static void destroyForceExchange(void* vparms);
+void destroyForceExchange(void* vparms);
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
 static int sortAtomsById(const void* a, const void* b);
 # 151 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3656,7 +3656,7 @@ void sortAtomsInCell_npm(Atoms* atoms, LinkCell* boxes, int iBox);
 void sortAtomsInCell_quick(Atoms* atoms, LinkCell* boxes, int iBox); void sortAtomsInCell(Atoms* atoms, LinkCell* boxes, int iBox);
 void sortAtomsInCell_resumable(Atoms* atoms, LinkCell* boxes, int iBox)
 # 629 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-{const int ____chimes_did_disable15 = new_stack((void *)(&sortAtomsInCell), "sortAtomsInCell", &____must_manage_sortAtomsInCell, 3, 0, (size_t)(5897154831253371701UL), (size_t)(5897154831253371702UL), (size_t)(0UL)) ; if (____chimes_replaying) { goto lbl_0; } ; ;
+{const int ____chimes_did_disable15 = new_stack((void *)(&sortAtomsInCell), "sortAtomsInCell", &____must_manage_sortAtomsInCell, 3, 0, (size_t)(5897154831253371715UL), (size_t)(5897154831253371716UL), (size_t)(0UL)) ; if (____chimes_replaying) { goto lbl_0; } ; ;
 # 630 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
     int nAtoms; nAtoms = (boxes->nAtoms[iBox]) ;
 # 631 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -3727,7 +3727,7 @@ int sortAtomsById_npm(const void* a, const void* b);
 int sortAtomsById_quick(const void* a, const void* b); int sortAtomsById(const void* a, const void* b);
 int sortAtomsById_resumable(const void* a, const void* b)
 # 668 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-{const int ____chimes_did_disable16 = new_stack((void *)(&sortAtomsById), "sortAtomsById", &____must_manage_sortAtomsById, 2, 0, (size_t)(5897154831253371747UL), (size_t)(5897154831253371748UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable16 = new_stack((void *)(&sortAtomsById), "sortAtomsById", &____must_manage_sortAtomsById, 2, 0, (size_t)(5897154831253371761UL), (size_t)(5897154831253371762UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 669 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
     int aId; aId = (((AtomMsg *)a)->gid) ;
 # 670 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4536,7 +4536,7 @@ void destroyForceExchange(void* vparms) { (____chimes_replaying ? destroyForceEx
 
 void sortAtomsInCell_quick(Atoms* atoms, LinkCell* boxes, int iBox)
 # 629 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-{const int ____chimes_did_disable15 = new_stack((void *)(&sortAtomsInCell), "sortAtomsInCell", &____must_manage_sortAtomsInCell, 3, 0, (size_t)(5897154831253371701UL), (size_t)(5897154831253371702UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable15 = new_stack((void *)(&sortAtomsInCell), "sortAtomsInCell", &____must_manage_sortAtomsInCell, 3, 0, (size_t)(5897154831253371715UL), (size_t)(5897154831253371716UL), (size_t)(0UL)) ; ; ;
 # 630 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
     int nAtoms; nAtoms = (boxes->nAtoms[iBox]) ;
 # 631 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -4601,7 +4601,7 @@ void sortAtomsInCell(Atoms* atoms, LinkCell* boxes, int iBox) { (____chimes_repl
 
 int sortAtomsById_quick(const void* a, const void* b)
 # 668 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
-{const int ____chimes_did_disable16 = new_stack((void *)(&sortAtomsById), "sortAtomsById", &____must_manage_sortAtomsById, 2, 0, (size_t)(5897154831253371747UL), (size_t)(5897154831253371748UL)) ; ; ;
+{const int ____chimes_did_disable16 = new_stack((void *)(&sortAtomsById), "sortAtomsById", &____must_manage_sortAtomsById, 2, 0, (size_t)(5897154831253371761UL), (size_t)(5897154831253371762UL)) ; ; ;
 # 669 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
     int aId; aId = (((AtomMsg *)a)->gid) ;
 # 670 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c"
@@ -5374,23 +5374,23 @@ static int module_init() {
                             &____alias_loc_id_34, (unsigned)18, (unsigned)1, (5897154831253369269UL + 1750UL), (5897154831253369269UL + 1751UL), (5897154831253369269UL + 1752UL), (5897154831253369269UL + 1753UL), (5897154831253369269UL + 1754UL), (5897154831253369269UL + 1755UL), (5897154831253369269UL + 1756UL), (5897154831253369269UL + 1757UL), (5897154831253369269UL + 1758UL), (5897154831253369269UL + 1759UL), (5897154831253369269UL + 1760UL), (5897154831253369269UL + 1761UL), (5897154831253369269UL + 1762UL), (5897154831253369269UL + 1763UL), (5897154831253369269UL + 1764UL), (5897154831253369269UL + 1765UL), (5897154831253369269UL + 1766UL), (5897154831253369269UL + 1938UL), "getBoxFromTuple", (unsigned)1, (5897154831253369269UL + 1940UL),
                             &____alias_loc_id_35, (unsigned)2, (unsigned)0, (5897154831253369269UL + 1943UL), (5897154831253369269UL + 1958UL),
                             &____alias_loc_id_36, (unsigned)3, (unsigned)1, (5897154831253369269UL + 1960UL), (5897154831253369269UL + 1961UL), (5897154831253369269UL + 1962UL), "exchangeData", (unsigned)2, (5897154831253369269UL + 1983UL), (5897154831253369269UL + 1984UL),
-                            &____alias_loc_id_37, (unsigned)13, (unsigned)0, (5897154831253369269UL + 2144UL), (5897154831253369269UL + 2145UL), (5897154831253369269UL + 2146UL), (5897154831253369269UL + 2147UL), (5897154831253369269UL + 2148UL), (5897154831253369269UL + 2149UL), (5897154831253369269UL + 2150UL), (5897154831253369269UL + 2151UL), (5897154831253369269UL + 2152UL), (5897154831253369269UL + 2153UL), (5897154831253369269UL + 2154UL), (5897154831253369269UL + 2174UL), (5897154831253369269UL + 2199UL),
-                            &____alias_loc_id_38, (unsigned)5, (unsigned)0, (5897154831253369269UL + 2439UL), (5897154831253369269UL + 2440UL), (5897154831253369269UL + 2441UL), (5897154831253369269UL + 2442UL), (5897154831253369269UL + 2443UL),
+                            &____alias_loc_id_37, (unsigned)13, (unsigned)0, (5897154831253369269UL + 2158UL), (5897154831253369269UL + 2159UL), (5897154831253369269UL + 2160UL), (5897154831253369269UL + 2161UL), (5897154831253369269UL + 2162UL), (5897154831253369269UL + 2163UL), (5897154831253369269UL + 2164UL), (5897154831253369269UL + 2165UL), (5897154831253369269UL + 2166UL), (5897154831253369269UL + 2167UL), (5897154831253369269UL + 2168UL), (5897154831253369269UL + 2188UL), (5897154831253369269UL + 2213UL),
+                            &____alias_loc_id_38, (unsigned)5, (unsigned)0, (5897154831253369269UL + 2453UL), (5897154831253369269UL + 2454UL), (5897154831253369269UL + 2455UL), (5897154831253369269UL + 2456UL), (5897154831253369269UL + 2457UL),
                             "initAtomHaloExchange", (void *)(&initAtomHaloExchange_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 2, (5897154831253369269UL + 343UL), (5897154831253369269UL + 104UL), (5897154831253369269UL + 88UL), 4, "initHaloExchange", 1, (5897154831253369269UL + 343UL), (5897154831253369269UL + 88UL), "malloc", 1, 0UL, (5897154831253369269UL + 2526UL), "mkAtomCellList", 3, (5897154831253369269UL + 104UL), 0UL, 0UL, (5897154831253369269UL + 190UL), "malloc", 1, 0UL, (5897154831253369269UL + 190UL),
                             "initForceHaloExchange", (void *)(&initForceHaloExchange_npm), (void *)__null, 3, &____alias_loc_id_10, &____alias_loc_id_11, &____alias_loc_id_12, 2, (5897154831253369269UL + 1251UL), (5897154831253369269UL + 1137UL), (5897154831253369269UL + 1130UL), 4, "initHaloExchange", 1, (5897154831253369269UL + 1251UL), (5897154831253369269UL + 1130UL), "malloc", 1, 0UL, (5897154831253369269UL + 2529UL), "mkForceSendCellList", 3, (5897154831253369269UL + 1137UL), 0UL, 0UL, (5897154831253369269UL + 1217UL), "mkForceRecvCellList", 3, (5897154831253369269UL + 1137UL), 0UL, 0UL, (5897154831253369269UL + 1217UL),
                             "destroyHaloExchange", (void *)(&destroyHaloExchange_npm), (void *)__null, 0, 1, (5897154831253369269UL + 1958UL), 0UL, 2, "free", 1, (5897154831253369269UL + 1949UL), 0UL, "free", 1, (5897154831253369269UL + 1947UL), 0UL,
                             "initHaloExchange", (void *)(&initHaloExchange_npm), (void *)__null, 6, &____alias_loc_id_2, &____alias_loc_id_3, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, 1, (5897154831253369269UL + 396UL), (5897154831253369269UL + 352UL), 7, "malloc", 1, 0UL, (5897154831253369269UL + 352UL), "processorNum", 4, (5897154831253369269UL + 396UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 396UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 396UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 396UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 396UL), 0UL, 0UL, 0UL, 0UL, "processorNum", 4, (5897154831253369269UL + 396UL), 0UL, 0UL, 0UL, 0UL,
-                            "mkAtomCellList", (void *)(&mkAtomCellList_npm), (void *)__null, 1, &____alias_loc_id_9, 3, (5897154831253369269UL + 1039UL), 0UL, 0UL, (5897154831253369269UL + 1037UL), 3, "malloc", 1, 0UL, (5897154831253369269UL + 1037UL), "getBoxFromTuple", 4, (5897154831253369269UL + 1039UL), 0UL, 0UL, 0UL, 0UL, "__assert_fail", 4, (5897154831253369269UL + 2519UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2523UL), 0UL,
+                            "mkAtomCellList", (void *)(&mkAtomCellList_npm), (void *)__null, 1, &____alias_loc_id_9, 3, (5897154831253369269UL + 1039UL), 0UL, 0UL, (5897154831253369269UL + 1037UL), 3, "malloc", 1, 0UL, (5897154831253369269UL + 1037UL), "getBoxFromTuple", 4, (5897154831253369269UL + 1039UL), 0UL, 0UL, 0UL, 0UL, "__assert_fail", 4, (5897154831253369269UL + 2521UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2523UL), 0UL,
                             "loadAtomsBuffer", (void *)(&loadAtomsBuffer_npm), (void *)(loadAtomsBuffer), 0, 4, (5897154831253369269UL + 685UL), (5897154831253369269UL + 686UL), 0UL, (5897154831253369269UL + 688UL), 0UL, 0,
-                            "unloadAtomsBuffer", (void *)(&unloadAtomsBuffer_npm), (void *)(unloadAtomsBuffer), 1, &____alias_loc_id_8, 5, (5897154831253369269UL + 836UL), (5897154831253369269UL + 837UL), 0UL, 0UL, (5897154831253369269UL + 840UL), 0UL, 2, "__assert_fail", 4, (5897154831253369269UL + 2521UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2515UL), 0UL, "putAtomInBox", 10, (5897154831253369269UL + 817UL), (5897154831253369269UL + 817UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "unloadAtomsBuffer", (void *)(&unloadAtomsBuffer_npm), (void *)(unloadAtomsBuffer), 1, &____alias_loc_id_8, 5, (5897154831253369269UL + 836UL), (5897154831253369269UL + 837UL), 0UL, 0UL, (5897154831253369269UL + 840UL), 0UL, 2, "__assert_fail", 4, (5897154831253369269UL + 2511UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2513UL), 0UL, "putAtomInBox", 10, (5897154831253369269UL + 817UL), (5897154831253369269UL + 817UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
                             "destroyAtomsExchange", (void *)(&destroyAtomsExchange_npm), (void *)(destroyAtomsExchange), 0, 1, (5897154831253369269UL + 878UL), 0UL, 2, "free", 1, (5897154831253369269UL + 861UL), 0UL, "free", 1, (5897154831253369269UL + 861UL), 0UL,
-                            "mkForceSendCellList", (void *)(&mkForceSendCellList_npm), (void *)__null, 1, &____alias_loc_id_13, 3, (5897154831253369269UL + 1747UL), 0UL, 0UL, (5897154831253369269UL + 1745UL), 4, "malloc", 1, 0UL, (5897154831253369269UL + 1745UL), "__assert_fail", 4, (5897154831253369269UL + 2517UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2518UL), 0UL, "getBoxFromTuple", 4, (5897154831253369269UL + 1747UL), 0UL, 0UL, 0UL, 0UL, "__assert_fail", 4, (5897154831253369269UL + 2519UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2518UL), 0UL,
-                            "mkForceRecvCellList", (void *)(&mkForceRecvCellList_npm), (void *)__null, 1, &____alias_loc_id_14, 3, (5897154831253369269UL + 1940UL), 0UL, 0UL, (5897154831253369269UL + 1938UL), 4, "malloc", 1, 0UL, (5897154831253369269UL + 1938UL), "__assert_fail", 4, (5897154831253369269UL + 2517UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2518UL), 0UL, "getBoxFromTuple", 4, (5897154831253369269UL + 1940UL), 0UL, 0UL, 0UL, 0UL, "__assert_fail", 4, (5897154831253369269UL + 2519UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2518UL), 0UL,
+                            "mkForceSendCellList", (void *)(&mkForceSendCellList_npm), (void *)__null, 1, &____alias_loc_id_13, 3, (5897154831253369269UL + 1747UL), 0UL, 0UL, (5897154831253369269UL + 1745UL), 4, "malloc", 1, 0UL, (5897154831253369269UL + 1745UL), "__assert_fail", 4, (5897154831253369269UL + 2519UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2520UL), 0UL, "getBoxFromTuple", 4, (5897154831253369269UL + 1747UL), 0UL, 0UL, 0UL, 0UL, "__assert_fail", 4, (5897154831253369269UL + 2521UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2520UL), 0UL,
+                            "mkForceRecvCellList", (void *)(&mkForceRecvCellList_npm), (void *)__null, 1, &____alias_loc_id_14, 3, (5897154831253369269UL + 1940UL), 0UL, 0UL, (5897154831253369269UL + 1938UL), 4, "malloc", 1, 0UL, (5897154831253369269UL + 1938UL), "__assert_fail", 4, (5897154831253369269UL + 2519UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2520UL), 0UL, "getBoxFromTuple", 4, (5897154831253369269UL + 1940UL), 0UL, 0UL, 0UL, 0UL, "__assert_fail", 4, (5897154831253369269UL + 2521UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2520UL), 0UL,
                             "loadForceBuffer", (void *)(&loadForceBuffer_npm), (void *)(loadForceBuffer), 0, 4, (5897154831253369269UL + 1372UL), (5897154831253369269UL + 1373UL), 0UL, (5897154831253369269UL + 1375UL), 0UL, 0,
-                            "unloadForceBuffer", (void *)(&unloadForceBuffer_npm), (void *)(unloadForceBuffer), 0, 5, (5897154831253369269UL + 1425UL), (5897154831253369269UL + 1515UL), 0UL, 0UL, (5897154831253369269UL + 1518UL), 0UL, 2, "__assert_fail", 4, (5897154831253369269UL + 2514UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2515UL), 0UL, "__assert_fail", 4, (5897154831253369269UL + 2516UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2515UL), 0UL,
+                            "unloadForceBuffer", (void *)(&unloadForceBuffer_npm), (void *)(unloadForceBuffer), 0, 5, (5897154831253369269UL + 1425UL), (5897154831253369269UL + 1515UL), 0UL, 0UL, (5897154831253369269UL + 1518UL), 0UL, 2, "__assert_fail", 4, (5897154831253369269UL + 2514UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2513UL), 0UL, "__assert_fail", 4, (5897154831253369269UL + 2516UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2513UL), 0UL,
                             "destroyForceExchange", (void *)(&destroyForceExchange_npm), (void *)(destroyForceExchange), 0, 1, (5897154831253369269UL + 1556UL), 0UL, 2, "free", 1, (5897154831253369269UL + 1539UL), 0UL, "free", 1, (5897154831253369269UL + 1539UL), 0UL,
-                            "sortAtomsInCell", (void *)(&sortAtomsInCell_npm), (void *)__null, 0, 3, (5897154831253369269UL + 2432UL), (5897154831253369269UL + 2433UL), 0UL, 0UL, 1, "qsort", 4, (5897154831253369269UL + 2174UL), 0UL, 0UL, (5897154831253369269UL + 2524UL), 0UL,
-                            "sortAtomsById", (void *)(&sortAtomsById_npm), (void *)__null, 0, 2, (5897154831253369269UL + 2478UL), (5897154831253369269UL + 2479UL), 0UL, 1, "__assert_fail", 4, (5897154831253369269UL + 2511UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2513UL), 0UL,
+                            "sortAtomsInCell", (void *)(&sortAtomsInCell_npm), (void *)__null, 0, 3, (5897154831253369269UL + 2446UL), (5897154831253369269UL + 2447UL), 0UL, 0UL, 1, "qsort", 4, (5897154831253369269UL + 2188UL), 0UL, 0UL, (5897154831253369269UL + 2524UL), 0UL,
+                            "sortAtomsById", (void *)(&sortAtomsById_npm), (void *)__null, 0, 2, (5897154831253369269UL + 2492UL), (5897154831253369269UL + 2493UL), 0UL, 1, "__assert_fail", 4, (5897154831253369269UL + 2517UL), (5897154831253369269UL + 2512UL), 0UL, (5897154831253369269UL + 2518UL), 0UL,
                                "getBoxFromTuple", (void **)&(____chimes_extern_func_getBoxFromTuple),
                                "processorNum", (void **)&(____chimes_extern_func_processorNum),
                                "profileStart", (void **)&(____chimes_extern_func_profileStart),
@@ -5422,8 +5422,7 @@ static int module_init() {
                              (5897154831253369269UL + 2526UL), (5897154831253369269UL + 190UL),
                              (5897154831253369269UL + 2091UL), (5897154831253369269UL + 2112UL),
                              (5897154831253369269UL + 880UL), (5897154831253369269UL + 1039UL),
-                             (5897154831253369269UL + 2144UL), (5897154831253369269UL + 2432UL),
-                             (5897154831253369269UL + 2433UL), (5897154831253369269UL + 2166UL),
+                             (5897154831253369269UL + 2455UL), (5897154831253369269UL + 2493UL),
                              (5897154831253369269UL + 878UL), (5897154831253369269UL + 861UL),
                              (5897154831253369269UL + 1261UL), (5897154831253369269UL + 1301UL),
                              (5897154831253369269UL + 1345UL), (5897154831253369269UL + 1335UL),
@@ -5436,6 +5435,7 @@ static int module_init() {
                              (5897154831253369269UL + 398UL), (5897154831253369269UL + 686UL),
                              (5897154831253369269UL + 1992UL), (5897154831253369269UL + 2100UL),
                              (5897154831253369269UL + 1259UL), (5897154831253369269UL + 1375UL),
+                             (5897154831253369269UL + 2447UL), (5897154831253369269UL + 2180UL),
                              (5897154831253369269UL + 1986UL), (5897154831253369269UL + 2116UL),
                              (5897154831253369269UL + 1UL), (5897154831253369269UL + 343UL),
                              (5897154831253369269UL + 690UL), (5897154831253369269UL + 837UL),
@@ -5444,6 +5444,7 @@ static int module_init() {
                              (5897154831253369269UL + 837UL), (5897154831253369269UL + 817UL),
                              (5897154831253369269UL + 694UL), (5897154831253369269UL + 836UL),
                              (5897154831253369269UL + 695UL), (5897154831253369269UL + 837UL),
+                             (5897154831253369269UL + 2162UL), (5897154831253369269UL + 2186UL),
                              (5897154831253369269UL + 1943UL), (5897154831253369269UL + 1958UL),
                              (5897154831253369269UL + 1425UL), (5897154831253369269UL + 1436UL),
                              (5897154831253369269UL + 1960UL), (5897154831253369269UL + 1983UL),
@@ -5459,27 +5460,27 @@ static int module_init() {
                              (5897154831253369269UL + 1560UL), (5897154831253369269UL + 1745UL),
                              (5897154831253369269UL + 8UL), (5897154831253369269UL + 2526UL),
                              (5897154831253369269UL + 348UL), (5897154831253369269UL + 352UL),
+                             (5897154831253369269UL + 2159UL), (5897154831253369269UL + 2447UL),
                              (5897154831253369269UL + 1258UL), (5897154831253369269UL + 1373UL),
                              (5897154831253369269UL + 1253UL), (5897154831253369269UL + 1372UL),
                              (5897154831253369269UL + 1991UL), (5897154831253369269UL + 2097UL),
-                             (5897154831253369269UL + 2440UL), (5897154831253369269UL + 2478UL),
-                             (5897154831253369269UL + 2441UL), (5897154831253369269UL + 2479UL),
+                             (5897154831253369269UL + 2446UL), (5897154831253369269UL + 2213UL),
                              (5897154831253369269UL + 1377UL), (5897154831253369269UL + 1515UL),
-                             (5897154831253369269UL + 2148UL), (5897154831253369269UL + 2172UL),
                              (5897154831253369269UL + 693UL), (5897154831253369269UL + 840UL),
                              (5897154831253369269UL + 1993UL), (5897154831253369269UL + 2090UL),
                              (5897154831253369269UL + 1130UL), (5897154831253369269UL + 2529UL),
                              (5897154831253369269UL + 447UL), (5897154831253369269UL + 538UL),
                              (5897154831253369269UL + 1961UL), (5897154831253369269UL + 1984UL),
                              (5897154831253369269UL + 1372UL), (5897154831253369269UL + 1301UL),
-                             (5897154831253369269UL + 2432UL), (5897154831253369269UL + 2199UL),
                              (5897154831253369269UL + 1515UL), (5897154831253369269UL + 1486UL),
                              (5897154831253369269UL + 1520UL), (5897154831253369269UL + 1556UL),
+                             (5897154831253369269UL + 2454UL), (5897154831253369269UL + 2492UL),
                              (5897154831253369269UL + 1519UL), (5897154831253369269UL + 1556UL),
                              (5897154831253369269UL + 2UL), (5897154831253369269UL + 104UL),
                              (5897154831253369269UL + 1256UL), (5897154831253369269UL + 1375UL),
                              (5897154831253369269UL + 1958UL), (5897154831253369269UL + 1947UL),
                              (5897154831253369269UL + 1376UL), (5897154831253369269UL + 1425UL),
+                             (5897154831253369269UL + 2158UL), (5897154831253369269UL + 2446UL),
                              (5897154831253369269UL + 1043UL), (5897154831253369269UL + 1137UL),
                              (5897154831253369269UL + 1042UL), (5897154831253369269UL + 1251UL),
                              (5897154831253369269UL + 13UL), (5897154831253369269UL + 343UL),
@@ -5492,7 +5493,6 @@ static int module_init() {
                              (5897154831253369269UL + 1556UL), (5897154831253369269UL + 1539UL),
                              (5897154831253369269UL + 1990UL), (5897154831253369269UL + 2087UL),
                              (5897154831253369269UL + 2529UL), (5897154831253369269UL + 1217UL),
-                             (5897154831253369269UL + 2145UL), (5897154831253369269UL + 2433UL),
                              (5897154831253369269UL + 1373UL), (5897154831253369269UL + 1345UL),
                              (5897154831253369269UL + 689UL), (5897154831253369269UL + 836UL),
                              (5897154831253369269UL + 1750UL), (5897154831253369269UL + 1940UL),
@@ -5521,15 +5521,15 @@ static int module_init() {
                              "initForceHaloExchange", "_Z21initForceHaloExchangeP8DomainStP10LinkCellSt", 3, "initHaloExchange", "mkForceSendCellList", "mkForceRecvCellList",
                              "mkForceSendCellList", "_ZL19mkForceSendCellListP10LinkCellStii", 1, "getBoxFromTuple",
                              "sortAtomsById", "_ZL13sortAtomsByIdPKvS0_", 0,
-                             "loadForceBuffer", "_ZL15loadForceBufferPvS_iPc", 0,
-                             "unloadForceBuffer", "_ZL17unloadForceBufferPvS_iiPc", 0,
+                             "loadForceBuffer", "_Z15loadForceBufferPvS_iPc", 0,
+                             "unloadForceBuffer", "_Z17unloadForceBufferPvS_iiPc", 0,
                              "initHaloExchange", "_ZL16initHaloExchangeP8DomainSt", 6, "processorNum", "processorNum", "processorNum", "processorNum", "processorNum", "processorNum",
                              "mkForceRecvCellList", "_ZL19mkForceRecvCellListP10LinkCellStii", 1, "getBoxFromTuple",
-                             "destroyForceExchange", "_ZL20destroyForceExchangePv", 0,
-                             "unloadAtomsBuffer", "_ZL17unloadAtomsBufferPvS_iiPc", 1, "putAtomInBox",
-                             "loadAtomsBuffer", "_ZL15loadAtomsBufferPvS_iPc", 0,
+                             "destroyForceExchange", "_Z20destroyForceExchangePv", 0,
+                             "unloadAtomsBuffer", "_Z17unloadAtomsBufferPvS_iiPc", 1, "putAtomInBox",
+                             "loadAtomsBuffer", "_Z15loadAtomsBufferPvS_iPc", 0,
                              "mkAtomCellList", "_ZL14mkAtomCellListP10LinkCellStii", 1, "getBoxFromTuple",
-                             "destroyAtomsExchange", "_ZL20destroyAtomsExchangePv", 0,
+                             "destroyAtomsExchange", "_Z20destroyAtomsExchangePv", 0,
                              "sortAtomsInCell", "_Z15sortAtomsInCellP7AtomsStP10LinkCellSti", 0,
                              "haloExchange", "_Z12haloExchangeP14HaloExchangeStPv", 1, "exchangeData",
                              "initAtomHaloExchange", "_Z20initAtomHaloExchangeP8DomainStP10LinkCellSt", 2, "initHaloExchange", "mkAtomCellList",
