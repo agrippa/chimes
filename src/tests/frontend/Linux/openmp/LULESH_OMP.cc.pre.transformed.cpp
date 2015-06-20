@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "LULESH_OMP.cc.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_SQRT_npm = 1;
 static int ____chimes_does_checkpoint_CBRT_npm = 1;
 static int ____chimes_does_checkpoint_FABS_npm = 1;
@@ -211,7 +209,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -237,7 +234,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -19196,57 +19193,57 @@ static int module_init() {
                              (11486493675241826453UL + 13176UL), (11486493675241826453UL + 13588UL),
                      "Domain", 85, "double*", (int)__builtin_offsetof (struct Domain, x), "double*", (int)__builtin_offsetof (struct Domain, y), "double*", (int)__builtin_offsetof (struct Domain, z), "double*", (int)__builtin_offsetof (struct Domain, xd), "double*", (int)__builtin_offsetof (struct Domain, yd), "double*", (int)__builtin_offsetof (struct Domain, zd), "double*", (int)__builtin_offsetof (struct Domain, xdd), "double*", (int)__builtin_offsetof (struct Domain, ydd), "double*", (int)__builtin_offsetof (struct Domain, zdd), "double*", (int)__builtin_offsetof (struct Domain, fx), "double*", (int)__builtin_offsetof (struct Domain, fy), "double*", (int)__builtin_offsetof (struct Domain, fz), "double*", (int)__builtin_offsetof (struct Domain, nodalMass), "int*", (int)__builtin_offsetof (struct Domain, symmX), "int*", (int)__builtin_offsetof (struct Domain, symmY), "int*", (int)__builtin_offsetof (struct Domain, symmZ), "int*", (int)__builtin_offsetof (struct Domain, nodeElemCount), "int*", (int)__builtin_offsetof (struct Domain, nodeElemStart), "int*", (int)__builtin_offsetof (struct Domain, nodeElemCornerList), "int", (int)__builtin_offsetof (struct Domain, cornerListSize), "int*", (int)__builtin_offsetof (struct Domain, matElemlist), "int*", (int)__builtin_offsetof (struct Domain, nodelist), "int*", (int)__builtin_offsetof (struct Domain, lxim), "int*", (int)__builtin_offsetof (struct Domain, lxip), "int*", (int)__builtin_offsetof (struct Domain, letam), "int*", (int)__builtin_offsetof (struct Domain, letap), "int*", (int)__builtin_offsetof (struct Domain, lzetam), "int*", (int)__builtin_offsetof (struct Domain, lzetap), "int*", (int)__builtin_offsetof (struct Domain, elemBC), "double*", (int)__builtin_offsetof (struct Domain, dxx), "double*", (int)__builtin_offsetof (struct Domain, dyy), "double*", (int)__builtin_offsetof (struct Domain, dzz), "double*", (int)__builtin_offsetof (struct Domain, delv_xi), "double*", (int)__builtin_offsetof (struct Domain, delv_eta), "double*", (int)__builtin_offsetof (struct Domain, delv_zeta), "double*", (int)__builtin_offsetof (struct Domain, delx_xi), "double*", (int)__builtin_offsetof (struct Domain, delx_eta), "double*", (int)__builtin_offsetof (struct Domain, delx_zeta), "double*", (int)__builtin_offsetof (struct Domain, e), "double*", (int)__builtin_offsetof (struct Domain, p), "double*", (int)__builtin_offsetof (struct Domain, q), "double*", (int)__builtin_offsetof (struct Domain, ql), "double*", (int)__builtin_offsetof (struct Domain, qq), "double*", (int)__builtin_offsetof (struct Domain, v), "double*", (int)__builtin_offsetof (struct Domain, volo), "double*", (int)__builtin_offsetof (struct Domain, vnew), "double*", (int)__builtin_offsetof (struct Domain, delv), "double*", (int)__builtin_offsetof (struct Domain, vdov), "double*", (int)__builtin_offsetof (struct Domain, arealg), "double*", (int)__builtin_offsetof (struct Domain, ss), "double*", (int)__builtin_offsetof (struct Domain, elemMass), "double", (int)__builtin_offsetof (struct Domain, dtfixed), "double", (int)__builtin_offsetof (struct Domain, time), "double", (int)__builtin_offsetof (struct Domain, deltatime), "double", (int)__builtin_offsetof (struct Domain, deltatimemultlb), "double", (int)__builtin_offsetof (struct Domain, deltatimemultub), "double", (int)__builtin_offsetof (struct Domain, stoptime), "double", (int)__builtin_offsetof (struct Domain, u_cut), "double", (int)__builtin_offsetof (struct Domain, hgcoef), "double", (int)__builtin_offsetof (struct Domain, qstop), "double", (int)__builtin_offsetof (struct Domain, monoq_max_slope), "double", (int)__builtin_offsetof (struct Domain, monoq_limiter_mult), "double", (int)__builtin_offsetof (struct Domain, e_cut), "double", (int)__builtin_offsetof (struct Domain, p_cut), "double", (int)__builtin_offsetof (struct Domain, ss4o3), "double", (int)__builtin_offsetof (struct Domain, q_cut), "double", (int)__builtin_offsetof (struct Domain, v_cut), "double", (int)__builtin_offsetof (struct Domain, qlc_monoq), "double", (int)__builtin_offsetof (struct Domain, qqc_monoq), "double", (int)__builtin_offsetof (struct Domain, qqc), "double", (int)__builtin_offsetof (struct Domain, eosvmax), "double", (int)__builtin_offsetof (struct Domain, eosvmin), "double", (int)__builtin_offsetof (struct Domain, pmin), "double", (int)__builtin_offsetof (struct Domain, emin), "double", (int)__builtin_offsetof (struct Domain, dvovmax), "double", (int)__builtin_offsetof (struct Domain, refdens), "double", (int)__builtin_offsetof (struct Domain, dtcourant), "double", (int)__builtin_offsetof (struct Domain, dthydro), "double", (int)__builtin_offsetof (struct Domain, dtmax), "int", (int)__builtin_offsetof (struct Domain, cycle), "int", (int)__builtin_offsetof (struct Domain, sizeX), "int", (int)__builtin_offsetof (struct Domain, sizeY), "int", (int)__builtin_offsetof (struct Domain, sizeZ), "int", (int)__builtin_offsetof (struct Domain, numElem), "int", (int)__builtin_offsetof (struct Domain, numNode),
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "CalcVolumeForceForElems", 3, "InitStressTermsForElems", "IntegrateStressForElems", "CalcHourglassControlForElems",
-                             "AllocateElemTemporary", 0,
-                             "IntegrateStressForElems", 3, "CalcElemShapeFunctionDerivatives", "CalcElemNodeNormals", "SumElemStressesToNodeForces",
-                             "CalcTimeConstraintsForElems", 2, "CalcCourantConstraintForElems", "CalcHydroConstraintForElems",
-                             "CalcKinematicsForElems", 4, "CalcElemVolume", "CalcElemCharacteristicLength", "CalcElemShapeFunctionDerivatives", "CalcElemVelocityGrandient",
-                             "CalcHourglassControlForElems", 3, "CollectDomainNodesToElemNodes", "CalcElemVolumeDerivative", "CalcFBHourglassForceForElems",
-                             "CalcElemVolumeDerivative", 8, "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer",
-                             "CalcPressureForElems", 1, "FABS",
-                             "AllocateNodeElemIndexes", 0,
-                             "CalcAccelerationForNodes", 0,
-                             "CalcElemVolumeScalar", 0,
-                             "EvalEOSForElems", 2, "CalcEnergyForElems", "CalcSoundSpeedForElems",
-                             "FABS", 0,
-                             "CalcLagrangeElements", 1, "CalcKinematicsForElems",
-                             "VoluDer", 0,
-                             "CalcElemFBHourglassForce", 0,
-                             "UpdateVolumesForElems", 1, "FABS",
-                             "CalcElemShapeFunctionDerivatives", 0,
-                             "CBRT", 0,
-                             "main", 10, "AllocateElemPersistent", "AllocateElemTemporary", "AllocateNodalPersistent", "AllocateNodesets", "AllocateNodeElemIndexes", "CalcElemVolume", "TimeIncrement", "LagrangeLeapFrog", "checkpoint", "FABS",
-                             "CalcMonotonicQRegionForElems", 0,
-                             "InitStressTermsForElems", 0,
-                             "TimeIncrement", 0,
-                             "SumElemStressesToNodeForces", 0,
-                             "CalcMonotonicQGradientsForElems", 3, "SQRT", "SQRT", "SQRT",
-                             "LagrangeElements", 4, "CalcLagrangeElements", "CalcQForElems", "ApplyMaterialPropertiesForElems", "UpdateVolumesForElems",
-                             "AllocateNodesets", 0,
-                             "CalcCourantConstraintForElems", 1, "SQRT",
-                             "AreaFace", 0,
-                             "CalcElemVolume", 1, "CalcElemVolumeScalar",
-                             "CalcPositionForNodes", 0,
-                             "CalcElemVelocityGrandient", 0,
-                             "CollectDomainNodesToElemNodes", 0,
-                             "CalcMonotonicQForElems", 1, "CalcMonotonicQRegionForElems",
-                             "AllocateElemPersistent", 0,
-                             "CalcHydroConstraintForElems", 1, "FABS",
-                             "CalcForceForNodes", 1, "CalcVolumeForceForElems",
-                             "SumElemFaceNormal", 0,
-                             "ApplyMaterialPropertiesForElems", 1, "EvalEOSForElems",
-                             "CalcVelocityForNodes", 3, "FABS", "FABS", "FABS",
-                             "AllocateNodalPersistent", 0,
-                             "LagrangeLeapFrog", 3, "LagrangeNodal", "LagrangeElements", "CalcTimeConstraintsForElems",
-                             "CalcElemNodeNormals", 6, "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal",
-                             "SQRT", 0,
-                             "CalcSoundSpeedForElems", 1, "SQRT",
-                             "CalcElemCharacteristicLength", 7, "AreaFace", "AreaFace", "AreaFace", "AreaFace", "AreaFace", "AreaFace", "SQRT",
-                             "CalcEnergyForElems", 9, "CalcPressureForElems", "SQRT", "FABS", "CalcPressureForElems", "SQRT", "FABS", "CalcPressureForElems", "SQRT", "FABS",
-                             "CalcQForElems", 2, "CalcMonotonicQGradientsForElems", "CalcMonotonicQForElems",
-                             "LagrangeNodal", 5, "CalcForceForNodes", "CalcAccelerationForNodes", "ApplyAccelerationBoundaryConditionsForNodes", "CalcVelocityForNodes", "CalcPositionForNodes",
-                             "CalcFBHourglassForceForElems", 2, "CBRT", "CalcElemFBHourglassForce",
-                             "ApplyAccelerationBoundaryConditionsForNodes", 0,
+                             "CalcVolumeForceForElems", "_ZL23CalcVolumeForceForElemsv", 3, "InitStressTermsForElems", "IntegrateStressForElems", "CalcHourglassControlForElems",
+                             "AllocateElemTemporary", "_Z21AllocateElemTemporaryP6Domainm", 0,
+                             "IntegrateStressForElems", "_ZL23IntegrateStressForElemsiPdS_S_S_", 3, "CalcElemShapeFunctionDerivatives", "CalcElemNodeNormals", "SumElemStressesToNodeForces",
+                             "CalcTimeConstraintsForElems", "_ZL27CalcTimeConstraintsForElemsv", 2, "CalcCourantConstraintForElems", "CalcHydroConstraintForElems",
+                             "CalcKinematicsForElems", "_ZL22CalcKinematicsForElemsid", 4, "CalcElemVolume", "CalcElemCharacteristicLength", "CalcElemShapeFunctionDerivatives", "CalcElemVelocityGrandient",
+                             "CalcHourglassControlForElems", "_ZL28CalcHourglassControlForElemsPdd", 3, "CollectDomainNodesToElemNodes", "CalcElemVolumeDerivative", "CalcFBHourglassForceForElems",
+                             "CalcElemVolumeDerivative", "_ZL24CalcElemVolumeDerivativePdS_S_PKdS1_S1_", 8, "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer", "VoluDer",
+                             "CalcPressureForElems", "_ZL20CalcPressureForElemsPdS_S_S_S_S_dddi", 1, "FABS",
+                             "AllocateNodeElemIndexes", "_Z23AllocateNodeElemIndexesP6Domain", 0,
+                             "CalcAccelerationForNodes", "_ZL24CalcAccelerationForNodesv", 0,
+                             "CalcElemVolumeScalar", "_ZL20CalcElemVolumeScalardddddddddddddddddddddddd", 0,
+                             "EvalEOSForElems", "_ZL15EvalEOSForElemsPdi", 2, "CalcEnergyForElems", "CalcSoundSpeedForElems",
+                             "FABS", "_Z4FABSd", 0,
+                             "CalcLagrangeElements", "_ZL20CalcLagrangeElementsd", 1, "CalcKinematicsForElems",
+                             "VoluDer", "_ZL7VoluDerddddddddddddddddddPdS_S_", 0,
+                             "CalcElemFBHourglassForce", "_ZL24CalcElemFBHourglassForcePdS_S_S_S_S_S_S_S_S_S_dS_S_S_", 0,
+                             "UpdateVolumesForElems", "_ZL21UpdateVolumesForElemsv", 1, "FABS",
+                             "CalcElemShapeFunctionDerivatives", "_ZL32CalcElemShapeFunctionDerivativesPKdS0_S0_PA8_dPd", 0,
+                             "CBRT", "_Z4CBRTd", 0,
+                             "main", "main", 10, "AllocateElemPersistent", "AllocateElemTemporary", "AllocateNodalPersistent", "AllocateNodesets", "AllocateNodeElemIndexes", "CalcElemVolume", "TimeIncrement", "LagrangeLeapFrog", "checkpoint", "FABS",
+                             "CalcMonotonicQRegionForElems", "_ZL28CalcMonotonicQRegionForElemsdddddi", 0,
+                             "InitStressTermsForElems", "_ZL23InitStressTermsForElemsiPdS_S_", 0,
+                             "TimeIncrement", "_ZL13TimeIncrementv", 0,
+                             "SumElemStressesToNodeForces", "_ZL27SumElemStressesToNodeForcesPA8_KddddPdS2_S2_", 0,
+                             "CalcMonotonicQGradientsForElems", "_ZL31CalcMonotonicQGradientsForElemsv", 3, "SQRT", "SQRT", "SQRT",
+                             "LagrangeElements", "_ZL16LagrangeElementsv", 4, "CalcLagrangeElements", "CalcQForElems", "ApplyMaterialPropertiesForElems", "UpdateVolumesForElems",
+                             "AllocateNodesets", "_Z16AllocateNodesetsP6Domainm", 0,
+                             "CalcCourantConstraintForElems", "_ZL29CalcCourantConstraintForElemsv", 1, "SQRT",
+                             "AreaFace", "_ZL8AreaFacedddddddddddd", 0,
+                             "CalcElemVolume", "_ZL14CalcElemVolumePKdS0_S0_", 1, "CalcElemVolumeScalar",
+                             "CalcPositionForNodes", "_ZL20CalcPositionForNodesd", 0,
+                             "CalcElemVelocityGrandient", "_ZL25CalcElemVelocityGrandientPKdS0_S0_PA8_S_dPd", 0,
+                             "CollectDomainNodesToElemNodes", "_ZL29CollectDomainNodesToElemNodesPKiPdS1_S1_", 0,
+                             "CalcMonotonicQForElems", "_ZL22CalcMonotonicQForElemsv", 1, "CalcMonotonicQRegionForElems",
+                             "AllocateElemPersistent", "_Z22AllocateElemPersistentP6Domainm", 0,
+                             "CalcHydroConstraintForElems", "_ZL27CalcHydroConstraintForElemsv", 1, "FABS",
+                             "CalcForceForNodes", "_ZL17CalcForceForNodesv", 1, "CalcVolumeForceForElems",
+                             "SumElemFaceNormal", "_ZL17SumElemFaceNormalPdS_S_S_S_S_S_S_S_S_S_S_dddddddddddd", 0,
+                             "ApplyMaterialPropertiesForElems", "_ZL31ApplyMaterialPropertiesForElemsv", 1, "EvalEOSForElems",
+                             "CalcVelocityForNodes", "_ZL20CalcVelocityForNodesdd", 3, "FABS", "FABS", "FABS",
+                             "AllocateNodalPersistent", "_Z23AllocateNodalPersistentP6Domainm", 0,
+                             "LagrangeLeapFrog", "_ZL16LagrangeLeapFrogv", 3, "LagrangeNodal", "LagrangeElements", "CalcTimeConstraintsForElems",
+                             "CalcElemNodeNormals", "_ZL19CalcElemNodeNormalsPdS_S_PKdS1_S1_", 6, "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal", "SumElemFaceNormal",
+                             "SQRT", "_Z4SQRTd", 0,
+                             "CalcSoundSpeedForElems", "_ZL22CalcSoundSpeedForElemsPddS_S_S_S_di", 1, "SQRT",
+                             "CalcElemCharacteristicLength", "_ZL28CalcElemCharacteristicLengthPKdS0_S0_d", 7, "AreaFace", "AreaFace", "AreaFace", "AreaFace", "AreaFace", "AreaFace", "SQRT",
+                             "CalcEnergyForElems", "_ZL18CalcEnergyForElemsPdS_S_S_S_S_S_S_S_S_S_S_S_dddddS_S_ddi", 9, "CalcPressureForElems", "SQRT", "FABS", "CalcPressureForElems", "SQRT", "FABS", "CalcPressureForElems", "SQRT", "FABS",
+                             "CalcQForElems", "_ZL13CalcQForElemsv", 2, "CalcMonotonicQGradientsForElems", "CalcMonotonicQForElems",
+                             "LagrangeNodal", "_ZL13LagrangeNodalv", 5, "CalcForceForNodes", "CalcAccelerationForNodes", "ApplyAccelerationBoundaryConditionsForNodes", "CalcVelocityForNodes", "CalcPositionForNodes",
+                             "CalcFBHourglassForceForElems", "_ZL28CalcFBHourglassForceForElemsPdS_S_S_S_S_S_d", 2, "CBRT", "CalcElemFBHourglassForce",
+                             "ApplyAccelerationBoundaryConditionsForNodes", "_ZL43ApplyAccelerationBoundaryConditionsForNodesv", 0,
                         "main|x_local|0", 1, "main",
                         "main|start|0", 1, "main",
                         "main|end|0", 1, "main",
@@ -19344,7 +19341,6 @@ static int module_init() {
         "LagrangeLeapFrog", 0UL, (int)0,
         "FABS", 0UL, (int)1, 0UL);
     register_global_var("global|domain", "%struct.Domain = type { double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, i32*, i32*, i32*, i32*, i32*, i32*, i32, i32*, i32*, i32*, i32*, i32*, i32*, i32*, i32*, i32*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double*, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, double, i32, i32, i32, i32, i32, i32 }", (void *)(&domain), 656.0, 0, 1, 50, (int)__builtin_offsetof (struct Domain, x), (int)__builtin_offsetof (struct Domain, y), (int)__builtin_offsetof (struct Domain, z), (int)__builtin_offsetof (struct Domain, xd), (int)__builtin_offsetof (struct Domain, yd), (int)__builtin_offsetof (struct Domain, zd), (int)__builtin_offsetof (struct Domain, xdd), (int)__builtin_offsetof (struct Domain, ydd), (int)__builtin_offsetof (struct Domain, zdd), (int)__builtin_offsetof (struct Domain, fx), (int)__builtin_offsetof (struct Domain, fy), (int)__builtin_offsetof (struct Domain, fz), (int)__builtin_offsetof (struct Domain, nodalMass), (int)__builtin_offsetof (struct Domain, symmX), (int)__builtin_offsetof (struct Domain, symmY), (int)__builtin_offsetof (struct Domain, symmZ), (int)__builtin_offsetof (struct Domain, nodeElemCount), (int)__builtin_offsetof (struct Domain, nodeElemStart), (int)__builtin_offsetof (struct Domain, nodeElemCornerList), (int)__builtin_offsetof (struct Domain, matElemlist), (int)__builtin_offsetof (struct Domain, nodelist), (int)__builtin_offsetof (struct Domain, lxim), (int)__builtin_offsetof (struct Domain, lxip), (int)__builtin_offsetof (struct Domain, letam), (int)__builtin_offsetof (struct Domain, letap), (int)__builtin_offsetof (struct Domain, lzetam), (int)__builtin_offsetof (struct Domain, lzetap), (int)__builtin_offsetof (struct Domain, elemBC), (int)__builtin_offsetof (struct Domain, dxx), (int)__builtin_offsetof (struct Domain, dyy), (int)__builtin_offsetof (struct Domain, dzz), (int)__builtin_offsetof (struct Domain, delv_xi), (int)__builtin_offsetof (struct Domain, delv_eta), (int)__builtin_offsetof (struct Domain, delv_zeta), (int)__builtin_offsetof (struct Domain, delx_xi), (int)__builtin_offsetof (struct Domain, delx_eta), (int)__builtin_offsetof (struct Domain, delx_zeta), (int)__builtin_offsetof (struct Domain, e), (int)__builtin_offsetof (struct Domain, p), (int)__builtin_offsetof (struct Domain, q), (int)__builtin_offsetof (struct Domain, ql), (int)__builtin_offsetof (struct Domain, qq), (int)__builtin_offsetof (struct Domain, v), (int)__builtin_offsetof (struct Domain, volo), (int)__builtin_offsetof (struct Domain, vnew), (int)__builtin_offsetof (struct Domain, delv), (int)__builtin_offsetof (struct Domain, vdov), (int)__builtin_offsetof (struct Domain, arealg), (int)__builtin_offsetof (struct Domain, ss), (int)__builtin_offsetof (struct Domain, elemMass));
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

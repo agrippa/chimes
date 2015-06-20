@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "eam.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_initEamPot_npm = 1;
 static int ____chimes_does_checkpoint_eamForce_npm = 1;
 static int ____chimes_does_checkpoint_eamPrint_npm = 1;
@@ -157,7 +155,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -183,7 +180,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -7191,21 +7188,21 @@ static int module_init() {
                      "_IO_marker", 0,
                      "_buf_2_t", 3, "int", (int)__builtin_offsetof (struct _buf_2_t, n), "double", (int)__builtin_offsetof (struct _buf_2_t, x0), "double", (int)__builtin_offsetof (struct _buf_2_t, invDx),
                      "_buf_t", 6, "double", (int)__builtin_offsetof (struct _buf_t, cutoff), "double", (int)__builtin_offsetof (struct _buf_t, mass), "double", (int)__builtin_offsetof (struct _buf_t, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct _buf_t, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct _buf_t, name), "int", (int)__builtin_offsetof (struct _buf_t, atomicNo),
-                             "eamPrint", 0,
-                             "eamReadFuncfl", 4, "fileNotFound", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
-                             "fileNotFound", 0,
-                             "initInterpolationObject", 0,
-                             "initEamPot", 5, "getMyRank", "eamReadSetfl", "eamReadFuncfl", "typeNotSupported", "eamBcastPotential",
-                             "interpolate", 0,
-                             "eamReadSetfl", 5, "fileNotFound", "notAlloyReady", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
-                             "eamForce", 9, "initForceHaloExchange", "zeroReal3", "interpolate", "interpolate", "interpolate", "profileStart", "haloExchange", "profileStop", "interpolate",
-                             "bcastInterpolationObject", 4, "getMyRank", "bcastParallel", "getMyRank", "bcastParallel",
-                             "zeroReal3", 0,
-                             "eamBcastPotential", 5, "getMyRank", "bcastParallel", "bcastInterpolationObject", "bcastInterpolationObject", "bcastInterpolationObject",
-                             "typeNotSupported", 0,
-                             "notAlloyReady", 0,
-                             "eamDestroy", 4, "destroyInterpolationObject", "destroyInterpolationObject", "destroyInterpolationObject", "destroyHaloExchange",
-                             "destroyInterpolationObject", 0,
+                             "eamPrint", "_ZL8eamPrintP8_IO_FILEP15BasePotentialSt", 0,
+                             "eamReadFuncfl", "_ZL13eamReadFuncflP14EamPotentialStPKcS2_", 4, "fileNotFound", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
+                             "fileNotFound", "_ZL12fileNotFoundPKcS0_", 0,
+                             "initInterpolationObject", "_ZL23initInterpolationObjectiddPd", 0,
+                             "initEamPot", "_Z10initEamPotPKcS0_S0_", 5, "getMyRank", "eamReadSetfl", "eamReadFuncfl", "typeNotSupported", "eamBcastPotential",
+                             "interpolate", "_ZL11interpolateP21InterpolationObjectStdPdS1_", 0,
+                             "eamReadSetfl", "_ZL12eamReadSetflP14EamPotentialStPKcS2_", 5, "fileNotFound", "notAlloyReady", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
+                             "eamForce", "_ZL8eamForceP9SimFlatSt", 9, "initForceHaloExchange", "zeroReal3", "interpolate", "interpolate", "interpolate", "profileStart", "haloExchange", "profileStop", "interpolate",
+                             "bcastInterpolationObject", "_ZL24bcastInterpolationObjectPP21InterpolationObjectSt", 4, "getMyRank", "bcastParallel", "getMyRank", "bcastParallel",
+                             "zeroReal3", "_ZL9zeroReal3Pd", 0,
+                             "eamBcastPotential", "_ZL17eamBcastPotentialP14EamPotentialSt", 5, "getMyRank", "bcastParallel", "bcastInterpolationObject", "bcastInterpolationObject", "bcastInterpolationObject",
+                             "typeNotSupported", "_ZL16typeNotSupportedPKcS0_", 0,
+                             "notAlloyReady", "_ZL13notAlloyReadyPKc", 0,
+                             "eamDestroy", "_ZL10eamDestroyPP15BasePotentialSt", 4, "destroyInterpolationObject", "destroyInterpolationObject", "destroyInterpolationObject", "destroyHaloExchange",
+                             "destroyInterpolationObject", "_ZL26destroyInterpolationObjectPP21InterpolationObjectSt", 0,
                         "initEamPot|dir|0", 2, "getMyRank", "eamBcastPotential",
                         "initEamPot|file|0", 2, "getMyRank", "eamBcastPotential",
                         "initEamPot|type|0", 2, "getMyRank", "eamBcastPotential",
@@ -7267,7 +7264,6 @@ static int module_init() {
         "initInterpolationObject", 5757654513590298480UL, (int)4, 0UL, 0UL, 0UL, 5757654513590298455UL,
         "initInterpolationObject", 5757654513590298480UL, (int)4, 0UL, 0UL, 0UL, 5757654513590298455UL,
         "initInterpolationObject", 5757654513590298480UL, (int)4, 0UL, 0UL, 0UL, 5757654513590298455UL);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

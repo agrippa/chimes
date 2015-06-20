@@ -1,2 +1,2 @@
-foo 0 DOES_NOT
-main 0 DOES foo 16 17 checkpoint 17 5
+foo _Z3foov 0 DOES_NOT
+main main 0 DOES foo 16 17 checkpoint 17 5

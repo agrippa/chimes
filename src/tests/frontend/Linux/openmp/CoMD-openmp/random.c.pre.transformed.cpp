@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "random.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_gasdev_npm = 1;
 static int ____chimes_does_checkpoint_lcg61_npm = 1;
 static int ____chimes_does_checkpoint_mkSeed_npm = 1;
@@ -63,7 +61,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -89,7 +86,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -1447,14 +1444,13 @@ static int module_init() {
                            "mkSeed", &(____chimes_does_checkpoint_mkSeed_npm),
                              (13245176871248214016UL + 1UL), (13245176871248214016UL + 11UL),
                              (13245176871248214016UL + 50UL), (13245176871248214016UL + 67UL),
-                             "gasdev", 2, "lcg61", "lcg61",
-                             "lcg61", 0,
-                             "mkSeed", 1, "lcg61",
+                             "gasdev", "_Z6gasdevPm", 2, "lcg61", "lcg61",
+                             "lcg61", "_Z5lcg61Pm", 0,
+                             "mkSeed", "_Z6mkSeedjj", 1, "lcg61",
                         "mkSeed|iSeed|0", 1, "mkSeed",
         "lcg61", 0UL, (int)1, 13245176871248214027UL,
         "lcg61", 0UL, (int)1, 13245176871248214027UL,
         "lcg61", 0UL, (int)1, 13245176871248214090UL);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

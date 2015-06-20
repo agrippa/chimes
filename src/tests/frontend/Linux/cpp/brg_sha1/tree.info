@@ -1,11 +1,11 @@
-rng_init 0 DOES_NOT sha1_begin 62 3 sha1_hash 63 3 sha1_end 64 3
-sha1_begin 0 DOES_NOT
-sha1_hash 0 DOES_NOT sha1_compile 277 9
-sha1_end 0 DOES_NOT sha1_compile 303 71 sha1_compile 321 5
-rng_spawn 0 DOES_NOT sha1_begin 77 2 sha1_hash 78 2 sha1_hash 79 2 sha1_end 80 2
-rng_rand 0 DOES_NOT
-rng_nextrand 0 DOES_NOT sha1_begin 99 2 sha1_hash 100 2 sha1_end 101 2
-rng_showstate 0 DOES_NOT
-rng_showtype 0 DOES_NOT
-sha1_compile 0 DOES_NOT
-sha1 0 DOES_NOT sha1_begin 332 5 sha1_hash 332 21 sha1_end 332 47
+rng_init _Z8rng_initPhi 0 DOES_NOT sha1_begin 62 3 sha1_hash 63 3 sha1_end 64 3
+sha1_begin _Z10sha1_beginP10sha1_ctx_s 0 DOES_NOT
+sha1_hash _Z9sha1_hashPKhmP10sha1_ctx_s 0 DOES_NOT sha1_compile 277 9
+sha1_end _Z8sha1_endPhP10sha1_ctx_s 0 DOES_NOT sha1_compile 303 71 sha1_compile 321 5
+rng_spawn _Z9rng_spawnPhS_i 0 DOES_NOT sha1_begin 77 2 sha1_hash 78 2 sha1_hash 79 2 sha1_end 80 2
+rng_rand _Z8rng_randPh 0 DOES_NOT
+rng_nextrand _Z12rng_nextrandPh 0 DOES_NOT sha1_begin 99 2 sha1_hash 100 2 sha1_end 101 2
+rng_showstate _Z13rng_showstatePhPc 0 DOES_NOT
+rng_showtype _Z12rng_showtypePci 0 DOES_NOT
+sha1_compile _Z12sha1_compileP10sha1_ctx_s 0 DOES_NOT
+sha1 _Z4sha1PhPKhm 0 DOES_NOT sha1_begin 332 5 sha1_hash 332 21 sha1_end 332 47

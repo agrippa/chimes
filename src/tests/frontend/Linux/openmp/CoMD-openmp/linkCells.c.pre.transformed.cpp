@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "linkCells.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_initLinkCells_npm = 1;
 static int ____chimes_does_checkpoint_destroyLinkCells_npm = 1;
 static int ____chimes_does_checkpoint_getNeighborBoxes_npm = 1;
@@ -96,7 +94,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -122,7 +119,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5445,18 +5442,18 @@ static int module_init() {
                      "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
                      "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes),
                      "TimerHandle", 0,
-                             "getNeighborBoxes", 2, "getTuple", "getBoxFromTuple",
-                             "initLinkCells", 1, "getNeighborBoxes",
-                             "getBoxFromCoord", 1, "getBoxFromTuple",
-                             "getTuple", 0,
-                             "copyAtom", 0,
-                             "updateLinkCells", 3, "emptyHaloCells", "getBoxFromCoord", "moveAtom",
-                             "emptyHaloCells", 0,
-                             "maxOccupancy", 3, "profileStart", "maxIntParallel", "profileStop",
-                             "putAtomInBox", 1, "getBoxFromCoord",
-                             "destroyLinkCells", 0,
-                             "getBoxFromTuple", 0,
-                             "moveAtom", 2, "copyAtom", "copyAtom",
+                             "getNeighborBoxes", "_Z16getNeighborBoxesP10LinkCellStiPi", 2, "getTuple", "getBoxFromTuple",
+                             "initLinkCells", "_Z13initLinkCellsPK8DomainStd", 1, "getNeighborBoxes",
+                             "getBoxFromCoord", "_ZL15getBoxFromCoordP10LinkCellStPd", 1, "getBoxFromTuple",
+                             "getTuple", "_ZL8getTupleP10LinkCellStiPiS1_S1_", 0,
+                             "copyAtom", "_ZL8copyAtomP10LinkCellStP7AtomsStiiii", 0,
+                             "updateLinkCells", "_Z15updateLinkCellsP10LinkCellStP7AtomsSt", 3, "emptyHaloCells", "getBoxFromCoord", "moveAtom",
+                             "emptyHaloCells", "_ZL14emptyHaloCellsP10LinkCellSt", 0,
+                             "maxOccupancy", "_Z12maxOccupancyP10LinkCellSt", 3, "profileStart", "maxIntParallel", "profileStop",
+                             "putAtomInBox", "_Z12putAtomInBoxP10LinkCellStP7AtomsStiidddddd", 1, "getBoxFromCoord",
+                             "destroyLinkCells", "_Z16destroyLinkCellsPP10LinkCellSt", 0,
+                             "getBoxFromTuple", "_Z15getBoxFromTupleP10LinkCellStiii", 0,
+                             "moveAtom", "_Z8moveAtomP10LinkCellStP7AtomsStiii", 2, "copyAtom", "copyAtom",
                         "getNeighborBoxes|ix|0", 1, "getNeighborBoxes",
                         "putAtomInBox|xyz|0", 1, "putAtomInBox",
                         "maxOccupancy|localMax|0", 1, "maxOccupancy",
@@ -5470,7 +5467,6 @@ static int module_init() {
         "getBoxFromCoord", 0UL, (int)2, 15151216426301246796UL, 15151216426301246769UL,
         "moveAtom", 0UL, (int)5, 15151216426301246796UL, 15151216426301246797UL, 0UL, 0UL, 0UL,
         "getBoxFromTuple", 0UL, (int)4, 15151216426301246492UL, 0UL, 0UL, 0UL);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

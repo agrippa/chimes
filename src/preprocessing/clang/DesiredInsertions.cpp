@@ -628,6 +628,10 @@ std::map<std::string, FunctionCallees *> *DesiredInsertions::parseCallTree() {
         line = line.substr(end + 1);
 
         end = line.find(' ');
+        std::string mangled_name = line.substr(0, end);
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
         std::string s_contains_unknown_functions = line.substr(0, end);
         assert(s_contains_unknown_functions == "1" ||
                 s_contains_unknown_functions == "0");
@@ -648,7 +652,7 @@ std::map<std::string, FunctionCallees *> *DesiredInsertions::parseCallTree() {
         }
         line = line.substr(end + 1);
 
-        FunctionCallees *callees = new FunctionCallees(name,
+        FunctionCallees *callees = new FunctionCallees(name, mangled_name,
                 contains_unknown_functions, may_checkpoint);
 
         while (true) {

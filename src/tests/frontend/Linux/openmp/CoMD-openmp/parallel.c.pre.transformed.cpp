@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "parallel.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_getNRanks_npm = 1;
 static int ____chimes_does_checkpoint_getMyRank_npm = 1;
 static int ____chimes_does_checkpoint_printRank_npm = 1;
@@ -97,7 +95,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -123,7 +120,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2669,28 +2666,27 @@ static int module_init() {
                              (7908722846909212036UL + 369UL), (7908722846909212036UL + 34UL),
                              (7908722846909212036UL + 254UL), (7908722846909212036UL + 301UL),
                      "RankReduceDataSt", 2, "double", (int)__builtin_offsetof (struct RankReduceDataSt, val), "int", (int)__builtin_offsetof (struct RankReduceDataSt, rank),
-                             "initParallel", 0,
-                             "maxIntParallel", 0,
-                             "timestampBarrier", 2, "barrierParallel", "printRank",
-                             "destroyParallel", 0,
-                             "bcastParallel", 0,
-                             "addIntParallel", 0,
-                             "minRankDoubleParallel", 0,
-                             "printRank", 0,
-                             "getMyRank", 0,
-                             "addDoubleParallel", 0,
-                             "maxRankDoubleParallel", 0,
-                             "builtWithMpi", 0,
-                             "addRealParallel", 0,
-                             "getNRanks", 0,
-                             "barrierParallel", 0,
-                             "sendReceiveParallel", 0,
+                             "initParallel", "_Z12initParallelPiPPPc", 0,
+                             "maxIntParallel", "_Z14maxIntParallelPiS_i", 0,
+                             "timestampBarrier", "_Z16timestampBarrierPKc", 2, "barrierParallel", "printRank",
+                             "destroyParallel", "_Z15destroyParallelv", 0,
+                             "bcastParallel", "_Z13bcastParallelPvii", 0,
+                             "addIntParallel", "_Z14addIntParallelPiS_i", 0,
+                             "minRankDoubleParallel", "_Z21minRankDoubleParallelP16RankReduceDataStS0_i", 0,
+                             "printRank", "_Z9printRankv", 0,
+                             "getMyRank", "_Z9getMyRankv", 0,
+                             "addDoubleParallel", "_Z17addDoubleParallelPdS_i", 0,
+                             "maxRankDoubleParallel", "_Z21maxRankDoubleParallelP16RankReduceDataStS0_i", 0,
+                             "builtWithMpi", "_Z12builtWithMpiv", 0,
+                             "addRealParallel", "_Z15addRealParallelPdS_i", 0,
+                             "getNRanks", "_Z9getNRanksv", 0,
+                             "barrierParallel", "_Z15barrierParallelv", 0,
+                             "sendReceiveParallel", "_Z19sendReceiveParallelPviiS_ii", 0,
                         "timestampBarrier|t|0", 1, "timestampBarrier",
         "barrierParallel", 0UL, (int)0,
         "printRank", 0UL, (int)0);
     register_global_var("global|nRanks", "i32", (void *)(&nRanks), 4.0, 0, 0, 0);
     register_global_var("global|myRank", "i32", (void *)(&myRank), 4.0, 0, 0, 0);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

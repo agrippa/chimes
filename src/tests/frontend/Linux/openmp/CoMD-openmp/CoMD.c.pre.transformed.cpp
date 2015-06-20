@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "CoMD.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_initSimulation_npm = 1;
 static int ____chimes_does_checkpoint_destroySimulation_npm = 1;
 static int ____chimes_does_checkpoint_initSubsystems_npm = 1;
@@ -189,7 +187,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -215,7 +212,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -6516,19 +6513,19 @@ static int module_init() {
                      "ValidateSt", 2, "double", (int)__builtin_offsetof (struct ValidateSt, eTot0), "int", (int)__builtin_offsetof (struct ValidateSt, nAtoms0),
                      "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0,
-                             "validateResult", 1, "printRank",
-                             "initPotential", 2, "initEamPot", "initLjPot",
-                             "finalizeSubsystems", 1, "yamlEnd",
-                             "initSimulation", 17, "initPotential", "sanityChecks", "initSpecies", "initDecomposition", "initLinkCells", "initAtoms", "createFccLattice", "setTemperature", "randomDisplacements", "initAtomHaloExchange", "profileStart", "redistributeAtoms", "profileStop", "profileStart", "computeForce", "profileStop", "kineticEnergy",
-                             "initSpecies", 0,
-                             "initSubsystems", 1, "yamlBegin",
-                             "sanityChecks", 5, "getNRanks", "printRank", "printRank", "printRank", "bcastParallel",
-                             "printSimulationDataYaml", 4, "maxOccupancy", "printRank", "printSeparator", "printSeparator",
-                             "sumAtoms", 3, "profileStart", "addIntParallel", "profileStop",
-                             "initValidate", 3, "sumAtoms", "printRank", "printSeparator",
-                             "main", 33, "initParallel", "profileStart", "initSubsystems", "timestampBarrier", "yamlAppInfo", "parseCommandLine", "printCmdYaml", "initSimulation", "printSimulationDataYaml", "initValidate", "timestampBarrier", "timestampBarrier", "profileStart", "profileStart", "sumAtoms", "profileStop", "getElapsedTime", "printThings", "profileStart", "timestep", "profileStop", "profileStop", "sumAtoms", "getElapsedTime", "printThings", "timestampBarrier", "validateResult", "profileStop", "printPerformanceResults", "destroySimulation", "finalizeSubsystems", "timestampBarrier", "destroyParallel",
-                             "printThings", 1, "printRank",
-                             "destroySimulation", 3, "destroyLinkCells", "destroyAtoms", "destroyHaloExchange",
+                             "validateResult", "_ZL14validateResultPK10ValidateStP9SimFlatSt", 1, "printRank",
+                             "initPotential", "_ZL13initPotentialiPKcS0_S0_", 2, "initEamPot", "initLjPot",
+                             "finalizeSubsystems", "_ZL18finalizeSubsystemsv", 1, "yamlEnd",
+                             "initSimulation", "_ZL14initSimulation9CommandSt", 17, "initPotential", "sanityChecks", "initSpecies", "initDecomposition", "initLinkCells", "initAtoms", "createFccLattice", "setTemperature", "randomDisplacements", "initAtomHaloExchange", "profileStart", "redistributeAtoms", "profileStop", "profileStart", "computeForce", "profileStop", "kineticEnergy",
+                             "initSpecies", "_ZL11initSpeciesP15BasePotentialSt", 0,
+                             "initSubsystems", "_ZL14initSubsystemsv", 1, "yamlBegin",
+                             "sanityChecks", "_ZL12sanityChecks9CommandStddPc", 5, "getNRanks", "printRank", "printRank", "printRank", "bcastParallel",
+                             "printSimulationDataYaml", "_ZL23printSimulationDataYamlP8_IO_FILEP9SimFlatSt", 4, "maxOccupancy", "printRank", "printSeparator", "printSeparator",
+                             "sumAtoms", "_ZL8sumAtomsP9SimFlatSt", 3, "profileStart", "addIntParallel", "profileStop",
+                             "initValidate", "_ZL12initValidateP9SimFlatSt", 3, "sumAtoms", "printRank", "printSeparator",
+                             "main", "main", 33, "initParallel", "profileStart", "initSubsystems", "timestampBarrier", "yamlAppInfo", "parseCommandLine", "printCmdYaml", "initSimulation", "printSimulationDataYaml", "initValidate", "timestampBarrier", "timestampBarrier", "profileStart", "profileStart", "sumAtoms", "profileStop", "getElapsedTime", "printThings", "profileStart", "timestep", "profileStop", "profileStop", "sumAtoms", "getElapsedTime", "printThings", "timestampBarrier", "validateResult", "profileStop", "printPerformanceResults", "destroySimulation", "finalizeSubsystems", "timestampBarrier", "destroyParallel",
+                             "printThings", "_ZL11printThingsP9SimFlatStid", 1, "printRank",
+                             "destroySimulation", "_ZL17destroySimulationPP9SimFlatSt", 3, "destroyLinkCells", "destroyAtoms", "destroyHaloExchange",
                         "main|argc|0", 1, "main",
                         "main|argv|0", 20, "yamlAppInfo", "validateResult", "timestep", "timestampBarrier", "sumAtoms", "profileStop", "profileStart", "printThings", "printSimulationDataYaml", "printPerformanceResults", "printCmdYaml", "parseCommandLine", "initValidate", "initSubsystems", "initSimulation", "initParallel", "getElapsedTime", "finalizeSubsystems", "destroySimulation", "destroyParallel",
                         "main|cmd|0", 1, "main",
@@ -6635,7 +6632,6 @@ static int module_init() {
         "printSeparator", 0UL, (int)1, 9674039231704591930UL);
     register_global_var("global|iStepPrev", "i32", (void *)(&iStepPrev), 4.0, 0, 0, 0);
     register_global_var("global|firstCall", "i32", (void *)(&firstCall), 4.0, 0, 0, 0);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

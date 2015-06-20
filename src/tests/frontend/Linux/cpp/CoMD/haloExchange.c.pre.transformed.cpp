@@ -8,8 +8,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "haloExchange.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_initAtomHaloExchange_npm = 1;
 static int ____chimes_does_checkpoint_initForceHaloExchange_npm = 1;
 static int ____chimes_does_checkpoint_destroyHaloExchange_npm = 1;
@@ -218,7 +216,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -244,7 +241,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -5569,23 +5566,23 @@ static int module_init() {
                      "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange),
                      "SpeciesDataSt", 0,
                      "TimerHandle", 0,
-                             "destroyHaloExchange", 0,
-                             "initForceHaloExchange", 3, "initHaloExchange", "mkForceSendCellList", "mkForceRecvCellList",
-                             "mkForceSendCellList", 1, "getBoxFromTuple",
-                             "sortAtomsById", 0,
-                             "loadForceBuffer", 0,
-                             "unloadForceBuffer", 0,
-                             "initHaloExchange", 6, "processorNum", "processorNum", "processorNum", "processorNum", "processorNum", "processorNum",
-                             "mkForceRecvCellList", 1, "getBoxFromTuple",
-                             "destroyForceExchange", 0,
-                             "unloadAtomsBuffer", 1, "putAtomInBox",
-                             "loadAtomsBuffer", 0,
-                             "mkAtomCellList", 1, "getBoxFromTuple",
-                             "destroyAtomsExchange", 0,
-                             "sortAtomsInCell", 0,
-                             "haloExchange", 1, "exchangeData",
-                             "initAtomHaloExchange", 2, "initHaloExchange", "mkAtomCellList",
-                             "exchangeData", 4, "profileStart", "sendReceiveParallel", "sendReceiveParallel", "profileStop",
+                             "destroyHaloExchange", "_Z19destroyHaloExchangePP14HaloExchangeSt", 0,
+                             "initForceHaloExchange", "_Z21initForceHaloExchangeP8DomainStP10LinkCellSt", 3, "initHaloExchange", "mkForceSendCellList", "mkForceRecvCellList",
+                             "mkForceSendCellList", "_ZL19mkForceSendCellListP10LinkCellStii", 1, "getBoxFromTuple",
+                             "sortAtomsById", "_ZL13sortAtomsByIdPKvS0_", 0,
+                             "loadForceBuffer", "_ZL15loadForceBufferPvS_iPc", 0,
+                             "unloadForceBuffer", "_ZL17unloadForceBufferPvS_iiPc", 0,
+                             "initHaloExchange", "_ZL16initHaloExchangeP8DomainSt", 6, "processorNum", "processorNum", "processorNum", "processorNum", "processorNum", "processorNum",
+                             "mkForceRecvCellList", "_ZL19mkForceRecvCellListP10LinkCellStii", 1, "getBoxFromTuple",
+                             "destroyForceExchange", "_ZL20destroyForceExchangePv", 0,
+                             "unloadAtomsBuffer", "_ZL17unloadAtomsBufferPvS_iiPc", 1, "putAtomInBox",
+                             "loadAtomsBuffer", "_ZL15loadAtomsBufferPvS_iPc", 0,
+                             "mkAtomCellList", "_ZL14mkAtomCellListP10LinkCellStii", 1, "getBoxFromTuple",
+                             "destroyAtomsExchange", "_ZL20destroyAtomsExchangePv", 0,
+                             "sortAtomsInCell", "_Z15sortAtomsInCellP7AtomsStP10LinkCellSti", 0,
+                             "haloExchange", "_Z12haloExchangeP14HaloExchangeStPv", 1, "exchangeData",
+                             "initAtomHaloExchange", "_Z20initAtomHaloExchangeP8DomainStP10LinkCellSt", 2, "initHaloExchange", "mkAtomCellList",
+                             "exchangeData", "_ZL12exchangeDataP14HaloExchangeStPvi", 4, "profileStart", "sendReceiveParallel", "sendReceiveParallel", "profileStop",
                         "initAtomHaloExchange|domain|0", 2, "mkAtomCellList", "initHaloExchange",
                         "initAtomHaloExchange|boxes|0", 2, "mkAtomCellList", "initHaloExchange",
                         "initAtomHaloExchange|hh|0", 1, "mkAtomCellList",
@@ -5671,7 +5668,6 @@ static int module_init() {
                         "exchangeData|nRecvM|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi",
                         "exchangeData|nRecvP|0", 1, "_ZL12exchangeDataP14HaloExchangeStPvi",
                         "sortAtomsInCell|tmp|0", 1, "sortAtomsInCell");
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

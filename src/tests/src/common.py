@@ -17,6 +17,10 @@ CHIMES_REPLAY_EXIT_CODE = 55
 # than 1 minute.
 MAX_TEST_TIME = 60
 
+# Use a special executable name for runtime tests so that you can run a runtime
+# test in parallel with a frontend test
+RUNTIME_BIN = 'runtime.bin'
+
 LD_LIBRARY_VARS = ['DYLD_LIBRARY_PATH', 'LD_LIBRARY_PATH']
 DYLD_PATH = os.path.join(CHIMES_HOME, 'src', 'libchimes')
 
@@ -672,6 +676,8 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     for input_file in test.input_files:
         compile_cmd += ' -i ' + os.path.join(inputs_dir, input_file)
 
+    compile_cmd += ' -o ' + RUNTIME_BIN
+
     compile_cmd = add_include_paths(compile_cmd, test.includes)
     compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
 
@@ -685,11 +691,11 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
     _, work_folder, root_folder = get_files_from_compiler_stdout(stdout, len(test.input_files))
 
-    if not os.path.isfile('a.out'):
+    if not os.path.isfile(RUNTIME_BIN):
         sys.stderr.write('FATAL: Compilation failed to generate an executable\n')
         sys.exit(1)
 
-    exec_cmd = './a.out '
+    exec_cmd = './' + RUNTIME_BIN + ' '
     if test.cli_args is not None:
         exec_cmd += test.cli_args
 
@@ -765,7 +771,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
     for checkpoint in list_checkpoint_files():
         os.remove(checkpoint)
-    os.remove('a.out')
+    os.remove(RUNTIME_BIN)
     if not config.keep:
         run_cmd('rm -rf ' + root_folder, False)
 

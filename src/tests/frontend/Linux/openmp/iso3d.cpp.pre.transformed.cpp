@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "iso3d.cpp.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_fwd_npm = 1;
 static int ____chimes_does_checkpoint_config_sources_npm = 1;
 static int ____chimes_does_checkpoint_finish_progress_npm = 1;
@@ -76,7 +74,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -102,7 +99,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5814,8 +5811,8 @@ static int module_init() {
                              (15454548431914370836UL + 20UL), (15454548431914370836UL + 244UL),
                      "_config", 12, "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "int", (int)__builtin_offsetof (struct _config, nz), "int", (int)__builtin_offsetof (struct _config, nsteps), "int", (int)__builtin_offsetof (struct _config, save_text), "int", (int)__builtin_offsetof (struct _config, verbose), "int", (int)__builtin_offsetof (struct _config, radius), "int", (int)__builtin_offsetof (struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof (struct _config, srcs), "int", (int)__builtin_offsetof (struct _config, nsrcs), "int", (int)__builtin_offsetof (struct _config, progress_width), "int", (int)__builtin_offsetof (struct _config, progress_disabled),
                      "_source", 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t),
-                             "fwd", 0,
-                             "main", 12, "setup_config", "init_progress", "config_sources", "sample_sources", "init_data", "seconds", "fwd", "checkpoint", "update_progress", "seconds", "finish_progress", "save_layer_text",
+                             "fwd", "_ZL3fwdPfS_S_S_iiiiiii", 0,
+                             "main", "main", 12, "setup_config", "init_progress", "config_sources", "sample_sources", "init_data", "seconds", "fwd", "checkpoint", "update_progress", "seconds", "finish_progress", "save_layer_text",
                         "main|conf|0", 1, "main",
                         "main|elapsed_s|0", 2, "save_layer_text", "finish_progress",
                         "main|point_rate|0", 1, "save_layer_text",
@@ -5830,7 +5827,6 @@ static int module_init() {
         "seconds", 0UL, (int)0,
         "finish_progress", 0UL, (int)0,
         "save_layer_text", 0UL, (int)8, 15454548431914371080UL, 0UL, 0UL, 0UL, 0UL, 0UL, 15454548431914371601UL, 0UL);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

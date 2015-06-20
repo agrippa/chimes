@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "basic_parallel.cpp.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 
 
 
@@ -54,7 +52,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -80,7 +77,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2385,9 +2382,8 @@ static int module_init() {
     init_module(17929019557700912512UL, 1, 2, 0, 1, 0, 0, 0, 0, 0, 0,
                            &____alias_loc_id_0, (unsigned)7, (unsigned)0, (17929019557700912512UL + 3UL), (17929019557700912512UL + 4UL), (17929019557700912512UL + 5UL), (17929019557700912512UL + 6UL), (17929019557700912512UL + 7UL), (17929019557700912512UL + 8UL), (17929019557700912512UL + 9UL),
                              (17929019557700912512UL + 5UL), (17929019557700912512UL + 29UL),
-                             "main", 1, "foo",
-                             "foo", 1, "checkpoint");
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
+                             "main", "main", 1, "foo",
+                             "foo", "_Z3foov", 1, "checkpoint");
     return 0;
 }
 

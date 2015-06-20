@@ -311,7 +311,7 @@ if [[ $COMPILE == 1 ]]; then
     for FINAL_FILE in ${LAST_FILES[@]}; do
         OBJ_FILE=${FINAL_FILE}.o
 
-        ${GXX} -c -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
+        ${GXX} -rdynamic -c -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
             -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
 
         if [[ ! -f ${OBJ_FILE} ]]; then
@@ -327,7 +327,7 @@ else
         FILES_STR="${FILES_STR} $f"
     done
 
-    COMPILE_CMD="${GXX} -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
+    COMPILE_CMD="${GXX} -rdynamic -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
         -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
         ${LINKER_FLAGS}"
     # [[ ! $VERBOSE ]] || echo $COMPILE_CMD

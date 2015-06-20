@@ -16,6 +16,7 @@
 #include <sys/types.h>
 #include <aio.h>
 #include <errno.h>
+#include <dlfcn.h>
 
 #ifdef CUDA_SUPPORT
 #include <cuda_runtime.h>
@@ -37,6 +38,7 @@
 #include "thread_serialization.h"
 #include "global_serialization.h"
 #include "constant_serialization.h"
+#include "function_serialization.h"
 #include "trace_serialization.h"
 #include "container_serialization.h"
 #include "alias_groups_serialization.h"
@@ -113,10 +115,12 @@ typedef struct _checkpoint_thread_ctx {
     unsigned char *stacks_serialized;
     unsigned char *globals_serialized;
     unsigned char *constants_serialized;
+    unsigned char *function_addresses_serialized;
     unsigned char *thread_hierarchy_serialized;
     uint64_t stacks_serialized_len;
     uint64_t globals_serialized_len;
     uint64_t constants_serialized_len;
+    uint64_t function_addresses_serialized_len;
     uint64_t thread_hierarchy_serialized_len;
 
     std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
@@ -291,26 +295,12 @@ static map<size_t, constant_var *> constants;
 static pthread_rwlock_t constants_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
- * The start and end of the TEXT region of the running executable. This
- * information can be used to update function pointers without getting the
- * address of every function in the compilation unit (which messes with compiler
- * inter-procedural analysis).
- *
- * This technique is fragile to code change. If an application uses function
- * pointers and you want to rerun a checkpoint on a slightly modified
- * executable, chances are the offsets of functions won't align anymore and that
- * resume will fail with a SEGFAULT. Finding a way to do this that is more
- * flexible and based on function names (or even ordering) would be helpful.
- * However, we really can't explicitly take an address of a function during
- * module initialization: this really hurts performance as the compiler needs to
- * get much more conservative. This would also make the code more portable, as
- * it now depends on a Linux-specific feature. Possibly could use dlopen and
- * dlsym while iterating over the names of all functions in a compilation unit,
- * passed to init_module?
+ * A mapping from plain function name to its address in the TEXT region,
+ * gathered using ldopen/ldsym. We use ldopen/ldsym rather than simply passing
+ * the address of the functions to a library function because taking the
+ * function pointer in the code severely hamper compiler optimizations.
  */
-static void *text_start = NULL;
-static size_t text_len = 0;
-static set<string> all_functions;
+static map<string, void *> function_addresses;
 
 /*
  * A mapping from alias groups to the alias group that they may contain (in the
@@ -1214,7 +1204,7 @@ void init_chimes() {
             string funcname = ii->first;
             set<size_t> aliases = ii->second;
 
-            if (all_functions.find(funcname) == all_functions.end()) {
+            if (function_addresses.find(funcname) == function_addresses.end()) {
 #ifdef VERBOSE
                 fprintf(stderr, "Missing function %s causes conservative alias "
                         "change groups for location %u\n", funcname.c_str(),
@@ -1344,12 +1334,17 @@ void init_chimes() {
                 constants_serialized_len);
 
         // read in function pointers from previous program execution
-        void *unpacked_text_start;
-        size_t unpacked_text_len;
-        safe_read(fd, &unpacked_text_start, sizeof(unpacked_text_start),
-                "text_start", checkpoint_file);
-        safe_read(fd, &unpacked_text_len, sizeof(unpacked_text_len), "text_len",
-                checkpoint_file);
+        uint64_t func_addresses_serialized_len;
+        safe_read(fd, &func_addresses_serialized_len,
+                sizeof(func_addresses_serialized_len),
+                "func_addresses_serialized_len", checkpoint_file);
+        unsigned char *func_addresses_serialized = (unsigned char *)malloc(
+                func_addresses_serialized_len);
+        safe_read(fd, func_addresses_serialized, func_addresses_serialized_len,
+                "func_addresses_serialized", checkpoint_file);
+        map<string, void *> *unpacked_function_addresses =
+            deserialize_function_addresses(func_addresses_serialized,
+                    func_addresses_serialized_len);
 
         // read in thread state
         uint64_t thread_hierarchy_serialized_len;
@@ -1425,10 +1420,18 @@ void init_chimes() {
                             live->get_length())));
         }
 
-        assert(old_to_new->find(unpacked_text_start) == old_to_new->end());
-        assert(unpacked_text_len == text_len); // This is very strict
-        old_to_new->insert(pair<void *, ptr_and_size *>(unpacked_text_start,
-                    new ptr_and_size(text_start, text_len)));
+        assert(unpacked_function_addresses->size() == function_addresses.size());
+        for (map<string, void *>::iterator i =
+                unpacked_function_addresses->begin(), e =
+                unpacked_function_addresses->end(); i != e; i++) {
+            void *live = function_addresses.at(i->first);
+            void *dead = i->second;
+
+            assert(old_to_new->find(dead) == old_to_new->end());
+            old_to_new->insert(pair<void *, ptr_and_size *>(dead,
+                        new ptr_and_size(live, 1)));
+        }
+        delete unpacked_function_addresses;
 
         /*
          * find pointers in the heap and restore them to point to the correct
@@ -1973,12 +1976,29 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 #endif
     }
 
+    void *app_handle = dlopen(NULL, RTLD_LAZY);
+    assert(app_handle != NULL);
+
     // Parse call tree from arguments.
     for (int i = 0; i < nfunctions; i++) {
         char *func_name = va_arg(vl, char *);
+        char *mangled_func_name = va_arg(vl, char *);
         unsigned n_callees = va_arg(vl, unsigned);
 
         string func_name_str(func_name);
+
+        dlerror(); // Clear existing errors
+        void *func_addr = dlsym(app_handle, mangled_func_name);
+        char *ld_err;
+        if ((ld_err = dlerror()) != NULL) {
+            fprintf(stderr, "WARNING: Unable to load address of function %s, "
+                    "likely because it is a static function. CHIMES will not be "
+                    "able to restore pointers to this function on resume.\n",
+                    func_name);
+        } else {
+            assert(function_addresses.find(func_name_str) == function_addresses.end());
+            function_addresses.insert(pair<string, void *>(func_name_str, func_addr));
+        }
 
         if (call_tree.find(func_name_str) != call_tree.end()) {
             assert(n_callees == call_tree[func_name_str].size());
@@ -2713,16 +2733,6 @@ void register_constant(size_t const_id, void *address, size_t length) {
 #ifdef __CHIMES_PROFILE
     pp.add_time(REGISTER_CONSTANT, __start_time);
 #endif
-}
-
-void register_text(void *start, size_t len) {
-    if (text_start == NULL) {
-        text_start = start;
-        text_len = len;
-    } else {
-        assert(text_start == start);
-        assert(text_len == len);
-    }
 }
 
 int alias_group_changed(unsigned loc_id) {
@@ -3618,6 +3628,9 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                         &running_checkpoint_ctx.globals_serialized_len);
                 running_checkpoint_ctx.constants_serialized = serialize_constants(&constants,
                         &running_checkpoint_ctx.constants_serialized_len);
+                running_checkpoint_ctx.function_addresses_serialized =
+                    serialize_function_addresses(&function_addresses,
+                            &running_checkpoint_ctx.function_addresses_serialized_len);
                 running_checkpoint_ctx.thread_hierarchy_serialized = serialize_thread_hierarchy(
                         &thread_ctxs,
                         &running_checkpoint_ctx.thread_hierarchy_serialized_len);
@@ -4058,6 +4071,8 @@ void *checkpoint_func(void *data) {
         uint64_t globals_serialized_len = ctx->globals_serialized_len;
         unsigned char *constants_serialized = ctx->constants_serialized;
         uint64_t constants_serialized_len = ctx->constants_serialized_len;
+        unsigned char *function_addresses_serialized = ctx->function_addresses_serialized;
+        uint64_t function_addresses_serialized_len = ctx->function_addresses_serialized_len;
         unsigned char *thread_hierarchy_serialized =
             ctx->thread_hierarchy_serialized;
         uint64_t thread_hierarchy_serialized_len =
@@ -4158,15 +4173,19 @@ void *checkpoint_func(void *data) {
 
         // Write the constants out
         prep_async_safe_write(fd, &constants_serialized_len,
-                sizeof(constants_serialized_len), count_bytes, &count_bytes, "constants_serialized_len", &async_tokens);
+                sizeof(constants_serialized_len), count_bytes, &count_bytes,
+                "constants_serialized_len", &async_tokens);
         prep_async_safe_write(fd, constants_serialized,
-                constants_serialized_len, count_bytes, &count_bytes, "constants_serialized", &async_tokens);
+                constants_serialized_len, count_bytes, &count_bytes,
+                "constants_serialized", &async_tokens);
 
         // Write the function pointers out
-        prep_async_safe_write(fd, &text_start, sizeof(text_start), count_bytes,
-                &count_bytes, "text_start", &async_tokens);
-        prep_async_safe_write(fd, &text_len, sizeof(text_len), count_bytes,
-                &count_bytes, "text_len", &async_tokens);
+        prep_async_safe_write(fd, &function_addresses_serialized_len,
+                sizeof(function_addresses_serialized_len), count_bytes,
+                &count_bytes, "function_addresses_serialized_len", &async_tokens);
+        prep_async_safe_write(fd, function_addresses_serialized,
+                function_addresses_serialized_len, count_bytes, &count_bytes,
+                "function_addresses_serialized", &async_tokens);
 
         // Write out the thread hierarchy
         prep_async_safe_write(fd, &thread_hierarchy_serialized_len,
@@ -4274,6 +4293,7 @@ void *checkpoint_func(void *data) {
         free(stacks_serialized);
         free(globals_serialized);
         free(constants_serialized);
+        free(function_addresses_serialized);
         free(thread_hierarchy_serialized);
         free(serialized_times);
         free(serialized_traces);

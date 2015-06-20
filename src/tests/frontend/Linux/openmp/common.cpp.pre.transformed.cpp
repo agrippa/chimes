@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "common.cpp.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_seconds_npm = 1;
 static int ____chimes_does_checkpoint_ricker_wavelet_npm = 1;
 static int ____chimes_does_checkpoint_parse_source_npm = 1;
@@ -77,7 +75,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -103,7 +100,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4988,14 +4985,14 @@ static int module_init() {
                      "_source", 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t),
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
-                             "config_sources", 0,
-                             "init_progress", 0,
-                             "seconds", 0,
-                             "finish_progress", 1, "update_progress",
-                             "update_progress", 0,
-                             "ricker_wavelet", 0,
-                             "parse_source", 0,
-                             "sample_sources", 1, "ricker_wavelet",
+                             "config_sources", "_Z14config_sourcesPP7_sourcePiiii", 0,
+                             "init_progress", "_Z13init_progressiii", 0,
+                             "seconds", "_Z7secondsv", 0,
+                             "finish_progress", "_Z15finish_progressv", 1, "update_progress",
+                             "update_progress", "_Z15update_progressi", 0,
+                             "ricker_wavelet", "_Z14ricker_waveletPfiff", 0,
+                             "parse_source", "_Z12parse_sourcePcP7_source", 0,
+                             "sample_sources", "_Z14sample_sourcesP7_sourceiif", 1, "ricker_wavelet",
                         "seconds|tp|0", 1, "seconds",
         "ricker_wavelet", 0UL, (int)4, 833742015386977089UL, 0UL, 0UL, 0UL,
         "update_progress", 0UL, (int)1, 0UL);
@@ -5004,7 +5001,6 @@ static int module_init() {
     register_global_var("global|progress_length", "i32", (void *)(&progress_length), 4.0, 0, 0, 0);
     register_global_var("global|progress_goal", "i32", (void *)(&progress_goal), 4.0, 0, 0, 0);
     register_global_var("global|progress_num_ticks", "i32", (void *)(&progress_num_ticks), 4.0, 0, 0, 0);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

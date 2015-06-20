@@ -8,8 +8,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "cmdLineParser.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_dupString_npm = 1;
 static int ____chimes_does_checkpoint_myOptionAlloc_npm = 1;
 static int ____chimes_does_checkpoint_myOptionFree_npm = 1;
@@ -86,7 +84,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -112,7 +109,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4013,15 +4010,15 @@ static int module_init() {
                              (808920877031013011UL + 73UL), (808920877031013011UL + 96UL),
                      "MyOptionSt", 8, "char*", (int)__builtin_offsetof (struct MyOptionSt, help), "char*", (int)__builtin_offsetof (struct MyOptionSt, longArg), "[ 2 x unsigned char ]", (int)__builtin_offsetof (struct MyOptionSt, shortArg), "int", (int)__builtin_offsetof (struct MyOptionSt, argFlag), "char", (int)__builtin_offsetof (struct MyOptionSt, type), "int", (int)__builtin_offsetof (struct MyOptionSt, sz), "void*", (int)__builtin_offsetof (struct MyOptionSt, ptr), "void*", (int)__builtin_offsetof (struct MyOptionSt, next),
                      "option", 4, "char*", (int)__builtin_offsetof (struct option, name), "int", (int)__builtin_offsetof (struct option, has_arg), "int*", (int)__builtin_offsetof (struct option, flag), "int", (int)__builtin_offsetof (struct option, val),
-                             "myOptionAlloc", 2, "dupString", "dupString",
-                             "myOptionFree", 0,
-                             "freeArgs", 1, "myOptionFree",
-                             "lastOption", 0,
-                             "addArg", 2, "myOptionAlloc", "lastOption",
-                             "dupString", 0,
-                             "processArgs", 1, "findOption",
-                             "findOption", 0,
-                             "printArgs", 0,
+                             "myOptionAlloc", "_ZL13myOptionAllocPKccicPviS0_", 2, "dupString", "dupString",
+                             "myOptionFree", "_ZL12myOptionFreeP10MyOptionSt", 0,
+                             "freeArgs", "_Z8freeArgsv", 1, "myOptionFree",
+                             "lastOption", "_ZL10lastOptionP10MyOptionSt", 0,
+                             "addArg", "_Z6addArgPKccicPviS0_", 2, "myOptionAlloc", "lastOption",
+                             "dupString", "_ZL9dupStringPKc", 0,
+                             "processArgs", "_Z11processArgsiPPc", 1, "findOption",
+                             "findOption", "_ZL10findOptionP10MyOptionSth", 0,
+                             "printArgs", "_Z9printArgsv", 0,
                         "printArgs|s|0", 1, "printArgs",
                         "processArgs|option_index|0", 1, "processArgs",
         "dupString", 808920877031013107UL, (int)1, 808920877031013178UL,
@@ -4032,7 +4029,6 @@ static int module_init() {
         "findOption", 808920877031013631UL, (int)2, 808920877031013631UL, 0UL);
     register_global_var("global|myargs", "%struct.MyOptionSt*", (void *)(&myargs), 8.0, 1, 0, 0);
     register_global_var("global|longest", "i32", (void *)(&longest), 4.0, 0, 0, 0);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

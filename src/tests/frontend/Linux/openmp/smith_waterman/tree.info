@@ -1,19 +1,19 @@
-GUID_DIAG 0 DOES_NOT
-GUID_RCOL 0 DOES_NOT
-GUID_BROW 0 DOES_NOT
-TILE_ROW 0 DOES_NOT
-TILE_COL 0 DOES_NOT
-GUID_KIND 0 DOES_NOT
-PUT 0 DOES_NOT GUID_DIAG 230 19
-PUT_DIAG 0 DOES_NOT PUT 242 41
-PUT_RCOL 0 DOES_NOT PUT 243 41
-PUT_BROW 0 DOES_NOT PUT 244 41
-char_mapping 0 DOES_NOT
-print_matrix 0 DOES_NOT
-clear_whitespaces_do_mapping 0 DOES_NOT char_mapping 296 42
-read_file 0 DOES_NOT clear_whitespaces_do_mapping 315 16
-add_tile_to_run 0 DOES_NOT
-pop_next_tile 0 DOES_NOT
-task_func 0 DOES_NOT PUT_DIAG 380 31 add_tile_to_run 384 21 PUT_RCOL 389 31 add_tile_to_run 393 21 PUT_BROW 398 31 add_tile_to_run 402 21
-main 0 DOES random_init 440 5 random_init 441 5 PUT_DIAG 473 2 PUT_DIAG 477 3 PUT_DIAG 481 3 PUT_RCOL 490 3 PUT_BROW 499 3 pop_next_tile 578 28 task_func 583 21 checkpoint 597 9
-random_init 0 DOES_NOT
+GUID_DIAG _Z9GUID_DIAGii 0 DOES_NOT
+GUID_RCOL _Z9GUID_RCOLii 0 DOES_NOT
+GUID_BROW _Z9GUID_BROWii 0 DOES_NOT
+TILE_ROW _Z8TILE_ROWi 0 DOES_NOT
+TILE_COL _Z8TILE_COLi 0 DOES_NOT
+GUID_KIND _Z9GUID_KINDi 0 DOES_NOT
+PUT _Z3PUTii 0 DOES_NOT GUID_DIAG 230 19
+PUT_DIAG _Z8PUT_DIAGii 0 DOES_NOT PUT 242 41
+PUT_RCOL _Z8PUT_RCOLii 0 DOES_NOT PUT 243 41
+PUT_BROW _Z8PUT_BROWii 0 DOES_NOT PUT 244 41
+char_mapping _Z12char_mappingc 0 DOES_NOT
+print_matrix _Z12print_matrixPPiii 0 DOES_NOT
+clear_whitespaces_do_mapping _Z28clear_whitespaces_do_mappingPal 0 DOES_NOT char_mapping 296 42
+read_file _Z9read_fileP8_IO_FILEPm 0 DOES_NOT clear_whitespaces_do_mapping 315 16
+add_tile_to_run _Z15add_tile_to_runiiP13_tiles_to_run 0 DOES_NOT
+pop_next_tile _Z13pop_next_tileP13_tiles_to_run 0 DOES_NOT
+task_func _Z9task_funciiP13_tiles_to_run 0 DOES_NOT PUT_DIAG 380 31 add_tile_to_run 384 21 PUT_RCOL 389 31 add_tile_to_run 393 21 PUT_BROW 398 31 add_tile_to_run 402 21
+main main 0 DOES random_init 440 5 random_init 441 5 PUT_DIAG 473 2 PUT_DIAG 477 3 PUT_DIAG 481 3 PUT_RCOL 490 3 PUT_BROW 499 3 pop_next_tile 578 28 task_func 583 21 checkpoint 597 9
+random_init _ZL11random_initPay 0 DOES_NOT

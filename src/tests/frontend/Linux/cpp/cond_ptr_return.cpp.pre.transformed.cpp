@@ -8,8 +8,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "cond_ptr_return.cpp.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_foo_npm = 1;
 
 
@@ -61,7 +59,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -87,7 +84,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1552,10 +1549,9 @@ static int module_init() {
                              (4811097861089011578UL + 2UL), (4811097861089011578UL + 42UL),
                              (4811097861089011578UL + 28UL), (4811097861089011578UL + 41UL),
                              (4811097861089011578UL + 29UL), (4811097861089011578UL + 36UL),
-                             "main", 2, "foo", "checkpoint",
-                             "foo", 0,
+                             "main", "main", 2, "foo", "checkpoint",
+                             "foo", "_Z3foov", 0,
         "foo", 4811097861089011614UL, (int)0);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

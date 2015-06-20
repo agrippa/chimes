@@ -374,10 +374,13 @@ class CheckpointCause {
 
 class FunctionCallees {
     public:
-        FunctionCallees(std::string set_name, bool set_calls_unknown_functions,
+        FunctionCallees(std::string set_name, std::string set_mangled_name,
+                bool set_calls_unknown_functions,
                 CREATES_CHECKPOINT set_may_checkpoint) : name(set_name),
+                mangled_name(set_mangled_name),
                 calls_unknown_functions(set_calls_unknown_functions),
                 may_checkpoint(set_may_checkpoint) { }
+
         void add_checkpoint_cause(std::string cause, int line, int col) {
             checkpoint_causes.push_back(CheckpointCause(cause, line, col));
         }
@@ -399,6 +402,7 @@ class FunctionCallees {
         }
     private:
         std::string name;
+        std::string mangled_name;
         bool calls_unknown_functions;
         CREATES_CHECKPOINT may_checkpoint;
         std::vector<CheckpointCause> checkpoint_causes;

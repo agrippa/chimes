@@ -2811,8 +2811,9 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
 
         std::string *caller_display_name = getFunctionDisplayName(F, M);
         assert(caller_display_name);
-        fprintf(fp, "%s %d", demangledFunctionName(F->getName().str()).c_str(),
-                contains_unknown_functions);
+        fprintf(fp, "%s %s %d",
+                demangledFunctionName(F->getName().str()).c_str(),
+                F->getName().str().c_str(), contains_unknown_functions);
 
         CALLS_CHECKPOINT doesCheckpoint = mayCreateCheckpoint(F);
         if (doesCheckpoint == DOES) {

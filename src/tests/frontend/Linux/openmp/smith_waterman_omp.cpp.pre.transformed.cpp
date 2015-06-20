@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "smith_waterman_omp.cpp.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_GUID_DIAG_npm = 1;
 static int ____chimes_does_checkpoint_GUID_RCOL_npm = 1;
 static int ____chimes_does_checkpoint_GUID_BROW_npm = 1;
@@ -109,7 +107,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -135,7 +132,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4636,25 +4633,25 @@ static int module_init() {
                      "_tile", 2, "int", (int)__builtin_offsetof (struct _tile, row), "int", (int)__builtin_offsetof (struct _tile, col),
                      "_tiles_to_run", 4, "%struct._tile*", (int)__builtin_offsetof (struct _tiles_to_run, q), "%struct._tile*", (int)__builtin_offsetof (struct _tiles_to_run, base), "int", (int)__builtin_offsetof (struct _tiles_to_run, capacity), "int", (int)__builtin_offsetof (struct _tiles_to_run, length),
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "GUID_BROW", 0,
-                             "task_func", 6, "PUT_DIAG", "add_tile_to_run", "PUT_RCOL", "add_tile_to_run", "PUT_BROW", "add_tile_to_run",
-                             "clear_whitespaces_do_mapping", 1, "char_mapping",
-                             "GUID_KIND", 0,
-                             "main", 10, "random_init", "random_init", "PUT_DIAG", "PUT_DIAG", "PUT_DIAG", "PUT_RCOL", "PUT_BROW", "pop_next_tile", "task_func", "checkpoint",
-                             "GUID_DIAG", 0,
-                             "print_matrix", 0,
-                             "PUT_BROW", 1, "PUT",
-                             "pop_next_tile", 0,
-                             "PUT_RCOL", 1, "PUT",
-                             "char_mapping", 0,
-                             "GUID_RCOL", 0,
-                             "read_file", 1, "clear_whitespaces_do_mapping",
-                             "random_init", 0,
-                             "PUT_DIAG", 1, "PUT",
-                             "PUT", 1, "GUID_DIAG",
-                             "add_tile_to_run", 0,
-                             "TILE_ROW", 0,
-                             "TILE_COL", 0,
+                             "GUID_BROW", "_Z9GUID_BROWii", 0,
+                             "task_func", "_Z9task_funciiP13_tiles_to_run", 6, "PUT_DIAG", "add_tile_to_run", "PUT_RCOL", "add_tile_to_run", "PUT_BROW", "add_tile_to_run",
+                             "clear_whitespaces_do_mapping", "_Z28clear_whitespaces_do_mappingPal", 1, "char_mapping",
+                             "GUID_KIND", "_Z9GUID_KINDi", 0,
+                             "main", "main", 10, "random_init", "random_init", "PUT_DIAG", "PUT_DIAG", "PUT_DIAG", "PUT_RCOL", "PUT_BROW", "pop_next_tile", "task_func", "checkpoint",
+                             "GUID_DIAG", "_Z9GUID_DIAGii", 0,
+                             "print_matrix", "_Z12print_matrixPPiii", 0,
+                             "PUT_BROW", "_Z8PUT_BROWii", 1, "PUT",
+                             "pop_next_tile", "_Z13pop_next_tileP13_tiles_to_run", 0,
+                             "PUT_RCOL", "_Z8PUT_RCOLii", 1, "PUT",
+                             "char_mapping", "_Z12char_mappingc", 0,
+                             "GUID_RCOL", "_Z9GUID_RCOLii", 0,
+                             "read_file", "_Z9read_fileP8_IO_FILEPm", 1, "clear_whitespaces_do_mapping",
+                             "random_init", "_ZL11random_initPay", 0,
+                             "PUT_DIAG", "_Z8PUT_DIAGii", 1, "PUT",
+                             "PUT", "_Z3PUTii", 1, "GUID_DIAG",
+                             "add_tile_to_run", "_Z15add_tile_to_runiiP13_tiles_to_run", 0,
+                             "TILE_ROW", "_Z8TILE_ROWi", 0,
+                             "TILE_COL", "_Z8TILE_COLi", 0,
         "GUID_DIAG", 0UL, (int)2, 0UL, 0UL,
         "PUT", 0UL, (int)2, 0UL, 0UL,
         "PUT", 0UL, (int)2, 0UL, 0UL,
@@ -4698,7 +4695,6 @@ static int module_init() {
     register_global_var("global|end", "%struct.timeval = type { i64, i64 }", (void *)(&end), 16.0, 0, 1, 0);
     register_global_var("global|dsizes", "[3 x i32]", (void *)(&dsizes), 12.0, 0, 0, 0);
     register_global_var("global|alignment_score_matrix", "[5 x [5 x i8]]", (void *)(&alignment_score_matrix), 25.0, 0, 0, 0);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 
