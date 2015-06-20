@@ -1,14 +1,14 @@
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 0 : { 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263 } prop:call:putAtomInBox
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 116 9 : { 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263 } prop:call:profileStart
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 128 4 : { 570, 571 } direct:call:computeVcm
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 249 9 : { 727, 728, 729, 731, 732, 733, 734, 735, 736, 737, 738 } prop:call:profileStart
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 26 : { 911, 912, 913, 914, 915, 916, 917, 918, 967 } prop:call:mkSeed
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 181 4 : { 911, 912, 913, 914, 915, 916, 917, 918, 967 } prop:call:setVcm
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 172 48 : { 919 } direct:call:gasdev
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 173 48 : { 967 } direct:call:gasdev
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 174 48 : { 967 } direct:call:gasdev
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 196 4 : { 921, 922, 923, 924, 925, 967 } prop:call:kineticEnergy
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 26 : { 1201, 1202, 1203, 1204, 1205, 1248 } prop:call:mkSeed
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 212 39 : { 1206 } direct:call:lcg61
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 213 39 : { 1248 } direct:call:lcg61
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 214 39 : { 1248 } direct:call:lcg61
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 0 : { 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263 } prop:call:putAtomInBox { putAtomInBox { 504 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 116 9 : { 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263 } prop:call:profileStart { putAtomInBox { 504 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 128 4 : { 570, 571 } direct:call:computeVcm { computeVcm { 572, 725 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 249 9 : { 727, 728, 729, 731, 732, 733, 734, 735, 736, 737, 738 } prop:call:profileStart {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 171 26 : { 911, 912, 913, 914, 915, 916, 917, 918, 967 } prop:call:mkSeed { setVcm { 920, 1189 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 181 4 : { 911, 912, 913, 914, 915, 916, 917, 918, 967 } prop:call:setVcm { setVcm { 920, 1189 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 172 48 : { 919 } direct:call:gasdev { gasdev { 919 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 173 48 : { 967 } direct:call:gasdev { gasdev { 919 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 174 48 : { 967 } direct:call:gasdev { gasdev { 919 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 196 4 : { 921, 922, 923, 924, 925, 967 } prop:call:kineticEnergy { kineticEnergy { 1189 }, setVcm { 920, 1189 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 211 26 : { 1201, 1202, 1203, 1204, 1205, 1248 } prop:call:mkSeed {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 212 39 : { 1206 } direct:call:lcg61 { lcg61 { 1206 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 213 39 : { 1248 } direct:call:lcg61 { lcg61 { 1206 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 214 39 : { 1248 } direct:call:lcg61 { lcg61 { 1206 } }

@@ -16,4 +16,4 @@ add_tile_to_run 0 0 407
 pop_next_tile 457
 task_func 0 0 919
 main 0 1625
-random_init 1678 0
+random_init 1669 0

@@ -12,14 +12,14 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 5  int
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 83 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 9  call_lbl_3: 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 4 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 22  ({  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 22 checkpoint_transformed(3, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 33 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 12 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 4 168  ; int *A;
  register_stack_vars(1, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0);  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 4 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 22  ({  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 22 checkpoint_transformed(3, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 16 33 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/propagation.cpp 5 12 

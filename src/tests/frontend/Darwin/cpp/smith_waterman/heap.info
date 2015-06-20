@@ -1,7 +1,5 @@
-76 47 146 malloc
-109 31 370 malloc
-110 31 370 malloc
-118 28 456 malloc 1 0
-121 28 458 malloc
-166 9 458 free
-168 5 456 free
+73 47 146 malloc
+140 31 235 malloc
+141 31 235 malloc
+145 27 473 malloc
+146 27 473 malloc

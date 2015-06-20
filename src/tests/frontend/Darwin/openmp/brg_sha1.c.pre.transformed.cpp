@@ -8,6 +8,7 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "brg_sha1.c.pre.transformed.cpp"
+
 static int ____must_checkpoint_rng_init_ctx_0 = 2;
 static int ____must_checkpoint_rng_spawn_ctx_0 = 2;
 static int ____must_checkpoint_rng_nextrand_ctx_0 = 2;
@@ -50,8 +51,81 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 64 "/usr/include/stdio.h" 3 4
+
+
+extern void init_chimes();
+extern void checkpoint_transformed(int lbl, unsigned loc_id);
+
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
+extern int get_next_call();
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
+extern void *get_thread_ctx();
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+        unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id, int is_parallel_for);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 36 "/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 1 "/usr/include/string.h" 1 3 4
+# 61 "/usr/include/string.h" 3 4
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 32 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -59,17 +133,7 @@ typedef long unsigned int size_t;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 65 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 66 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 33 "/usr/include/sys/_types.h" 3 4
+# 33 "/usr/include/sys/_types.h" 2 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -239,18 +303,150 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 68 "/usr/include/stdio.h" 2 3 4
+# 62 "/usr/include/string.h" 2 3 4
+
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 64 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 65 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 66 "/usr/include/string.h" 2 3 4
 
 
 
+extern "C" {
+void *memchr(const void *, int, size_t);
+int memcmp(const void *, const void *, size_t);
+void *memcpy(void *, const void *, size_t);
+void *memmove(void *, const void *, size_t);
+void *memset(void *, int, size_t);
+char *strcat(char *, const char *);
+char *strchr(const char *, int);
+int strcmp(const char *, const char *);
+int strcoll(const char *, const char *);
+char *strcpy(char *, const char *);
+size_t strcspn(const char *, const char *);
+char *strerror(int) __asm("_" "strerror" );
+size_t strlen(const char *);
+char *strncat(char *, const char *, size_t);
+int strncmp(const char *, const char *, size_t);
+char *strncpy(char *, const char *, size_t);
+char *strpbrk(const char *, const char *);
+char *strrchr(const char *, int);
+size_t strspn(const char *, const char *);
+char *strstr(const char *, const char *);
+char *strtok(char *, const char *);
+size_t strxfrm(char *, const char *, size_t);
+}
+# 103 "/usr/include/string.h" 3 4
+extern "C" {
+char *strtok_r(char *, const char *, char **);
+}
+# 115 "/usr/include/string.h" 3 4
+extern "C" {
+int strerror_r(int, char *, size_t);
+char *strdup(const char *);
+void *memccpy(void *, const void *, int, size_t);
+}
+# 129 "/usr/include/string.h" 3 4
+extern "C" {
+char *stpcpy(char *, const char *);
+char *stpncpy(char *, const char *, size_t) ;
+char *strndup(const char *, size_t) ;
+size_t strnlen(const char *, size_t) ;
+char *strsignal(int sig);
+}
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
+typedef __darwin_size_t rsize_t;
+# 142 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
+typedef int errno_t;
+# 143 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+errno_t memset_s(void *, rsize_t, int, rsize_t) ;
+}
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 153 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+void *memmem(const void *, size_t, const void *, size_t) ;
+void memset_pattern4(void *, const void *, size_t) ;
+void memset_pattern8(void *, const void *, size_t) ;
+void memset_pattern16(void *, const void *, size_t) ;
+
+char *strcasestr(const char *, const char *);
+char *strnstr(const char *, const char *, size_t);
+size_t strlcat(char *, const char *, size_t);
+size_t strlcpy(char *, const char *, size_t);
+void strmode(int, char *);
+char *strsep(char **, const char *);
+
+
+void swab(const void * , void * , ssize_t);
+}
+
+
+
+
+
+
+# 1 "/usr/include/strings.h" 1 3 4
+# 67 "/usr/include/strings.h" 3 4
+extern "C" {
+
+
+int bcmp(const void *, const void *, size_t) ;
+void bcopy(const void *, void *, size_t) ;
+void bzero(void *, size_t) ;
+char *index(const char *, int) ;
+char *rindex(const char *, int) ;
+
+
+int ffs(int);
+int strcasecmp(const char *, const char *);
+int strncasecmp(const char *, const char *, size_t);
+}
+
+
+
+extern "C" {
+int ffsl(long) ;
+int ffsll(long long) ;
+int fls(int) ;
+int flsl(long) ;
+int flsll(long long) ;
+}
+
+# 1 "/usr/include/string.h" 1 3 4
+# 93 "/usr/include/strings.h" 2 3 4
+# 177 "/usr/include/string.h" 2 3 4
+# 37 "/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c" 2
+# 1 "/usr/include/stdio.h" 1 3 4
+# 71 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
 # 31 "/usr/include/sys/_types/_va_list.h" 3 4
 typedef __darwin_va_list va_list;
 # 72 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 73 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 74 "/usr/include/stdio.h" 2 3 4
+
+
 
 # 1 "/usr/include/sys/stdio.h" 1 3 4
 # 37 "/usr/include/sys/stdio.h" 3 4
@@ -446,12 +642,7 @@ int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)))
 int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
 int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
 }
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
+# 438 "/usr/include/stdio.h" 3 4
 extern "C" {
 int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
 int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
@@ -489,190 +680,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
-extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_stack_vars(int nvars, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern void register_functions(int nfunctions, const char *module_name, ...);
-extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-extern bool disable_current_thread();
-extern void reenable_current_thread(bool was_disabled);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 36 "/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
-# 1 "/usr/include/string.h" 1 3 4
-# 69 "/usr/include/string.h" 3 4
-extern "C" {
-void *memchr(const void *, int, size_t);
-int memcmp(const void *, const void *, size_t);
-void *memcpy(void *, const void *, size_t);
-void *memmove(void *, const void *, size_t);
-void *memset(void *, int, size_t);
-char *strcat(char *, const char *);
-char *strchr(const char *, int);
-int strcmp(const char *, const char *);
-int strcoll(const char *, const char *);
-char *strcpy(char *, const char *);
-size_t strcspn(const char *, const char *);
-char *strerror(int) __asm("_" "strerror" );
-size_t strlen(const char *);
-char *strncat(char *, const char *, size_t);
-int strncmp(const char *, const char *, size_t);
-char *strncpy(char *, const char *, size_t);
-char *strpbrk(const char *, const char *);
-char *strrchr(const char *, int);
-size_t strspn(const char *, const char *);
-char *strstr(const char *, const char *);
-char *strtok(char *, const char *);
-size_t strxfrm(char *, const char *, size_t);
-}
-# 103 "/usr/include/string.h" 3 4
-extern "C" {
-char *strtok_r(char *, const char *, char **);
-}
-# 115 "/usr/include/string.h" 3 4
-extern "C" {
-int strerror_r(int, char *, size_t);
-char *strdup(const char *);
-void *memccpy(void *, const void *, int, size_t);
-}
-# 129 "/usr/include/string.h" 3 4
-extern "C" {
-char *stpcpy(char *, const char *);
-char *stpncpy(char *, const char *, size_t) ;
-char *strndup(const char *, size_t) ;
-size_t strnlen(const char *, size_t) ;
-char *strsignal(int sig);
-}
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
-typedef __darwin_size_t rsize_t;
-# 142 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
-typedef int errno_t;
-# 143 "/usr/include/string.h" 2 3 4
-
-extern "C" {
-errno_t memset_s(void *, rsize_t, int, rsize_t) ;
-}
-
-
-
-
-
-
-
-extern "C" {
-void *memmem(const void *, size_t, const void *, size_t) ;
-void memset_pattern4(void *, const void *, size_t) ;
-void memset_pattern8(void *, const void *, size_t) ;
-void memset_pattern16(void *, const void *, size_t) ;
-
-char *strcasestr(const char *, const char *);
-char *strnstr(const char *, const char *, size_t);
-size_t strlcat(char *, const char *, size_t);
-size_t strlcpy(char *, const char *, size_t);
-void strmode(int, char *);
-char *strsep(char **, const char *);
-
-
-void swab(const void * , void * , ssize_t);
-}
-
-
-
-
-
-
-# 1 "/usr/include/strings.h" 1 3 4
-# 67 "/usr/include/strings.h" 3 4
-extern "C" {
-
-
-int bcmp(const void *, const void *, size_t) ;
-void bcopy(const void *, void *, size_t) ;
-void bzero(void *, size_t) ;
-char *index(const char *, int) ;
-char *rindex(const char *, int) ;
-
-
-int ffs(int);
-int strcasecmp(const char *, const char *);
-int strncasecmp(const char *, const char *, size_t);
-}
-
-
-
-extern "C" {
-int ffsl(long) ;
-int ffsll(long long) ;
-int fls(int) ;
-int flsl(long) ;
-int flsll(long long) ;
-}
-
-# 1 "/usr/include/string.h" 1 3 4
-# 93 "/usr/include/strings.h" 2 3 4
-# 177 "/usr/include/string.h" 2 3 4
-# 37 "/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c" 2
-# 37 "/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
+# 38 "/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c" 2
 # 38 "/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.h" 1
@@ -2515,9 +2523,54 @@ void sha1(unsigned char hval[], const unsigned char data[], unsigned long len)
 
 
 static int module_init() {
-    init_module(3105055156744228427UL, 18, 11, 4, 0, 2, 3105055156744228427UL + 568UL, 3105055156744228427UL + 586UL, 3105055156744228427UL + 607UL, 3105055156744228427UL + 4919UL, 3105055156744228427UL + 4926UL, 3105055156744228427UL + 4947UL, 3105055156744228427UL + 4925UL, 3105055156744228427UL + 4946UL, 3105055156744228427UL + 608UL, 3105055156744228427UL + 4919UL, 3105055156744228427UL + 567UL, 3105055156744228427UL + 585UL, 3105055156744228427UL + 1UL, 3105055156744228427UL + 63UL, 3105055156744228427UL + 436UL, 3105055156744228427UL + 480UL, 3105055156744228427UL + 247UL, 3105055156744228427UL + 434UL, 3105055156744228427UL + 246UL, 3105055156744228427UL + 433UL, 3105055156744228427UL + 521UL, 3105055156744228427UL + 566UL, 3105055156744228427UL + 67UL, 3105055156744228427UL + 99UL, 3105055156744228427UL + 102UL, 3105055156744228427UL + 245UL, 3105055156744228427UL + 100UL, 3105055156744228427UL + 243UL, 3105055156744228427UL + 435UL, 3105055156744228427UL + 479UL, 3105055156744228427UL + 482UL, 3105055156744228427UL + 520UL, 3105055156744228427UL + 589UL, 3105055156744228427UL + 605UL, 3105055156744228427UL + 105UL, 3105055156744228427UL + 243UL, "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state), "sha1", 3, "sha1_begin", "sha1_hash", "sha1_end", "rng_nextrand", 3, "sha1_begin", "sha1_hash", "sha1_end", "rng_showstate", 0, "rng_init", 3, "sha1_begin", "sha1_hash", "sha1_end", "rng_spawn", 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end", "sha1_hash", 1, "sha1_compile", "sha1_end", 2, "sha1_compile", "sha1_compile", "rng_rand", 0, "sha1_compile", 0, "sha1_begin", 0, "rng_showtype", 0, "rng_init|ctx|0", 1, "rng_init", "rng_spawn|ctx|0", 1, "rng_spawn", "rng_nextrand|ctx|0", 1, "rng_nextrand", "sha1|cx|0", 1, "sha1", &____alias_loc_id_0, (unsigned)4, 3105055156744228427UL + 1UL, 3105055156744228427UL + 2UL, 3105055156744228427UL + 4UL, 3105055156744228427UL + 5UL, &____alias_loc_id_1, (unsigned)2, 3105055156744228427UL + 67UL, 3105055156744228427UL + 99UL, &____alias_loc_id_2, (unsigned)8, 3105055156744228427UL + 100UL, 3105055156744228427UL + 101UL, 3105055156744228427UL + 102UL, 3105055156744228427UL + 103UL, 3105055156744228427UL + 104UL, 3105055156744228427UL + 105UL, 3105055156744228427UL + 106UL, 3105055156744228427UL + 245UL, &____alias_loc_id_3, (unsigned)6, 3105055156744228427UL + 246UL, 3105055156744228427UL + 247UL, 3105055156744228427UL + 248UL, 3105055156744228427UL + 249UL, 3105055156744228427UL + 433UL, 3105055156744228427UL + 434UL, &____alias_loc_id_4, (unsigned)4, 3105055156744228427UL + 435UL, 3105055156744228427UL + 436UL, 3105055156744228427UL + 437UL, 3105055156744228427UL + 439UL, &____alias_loc_id_5, (unsigned)3, 3105055156744228427UL + 482UL, 3105055156744228427UL + 483UL, 3105055156744228427UL + 484UL, &____alias_loc_id_6, (unsigned)3, 3105055156744228427UL + 521UL, 3105055156744228427UL + 523UL, 3105055156744228427UL + 524UL, &____alias_loc_id_7, (unsigned)2, 3105055156744228427UL + 567UL, 3105055156744228427UL + 568UL, &____alias_loc_id_8, (unsigned)2, 3105055156744228427UL + 589UL, 3105055156744228427UL + 590UL, &____alias_loc_id_9, (unsigned)8, 3105055156744228427UL + 607UL, 3105055156744228427UL + 608UL, 3105055156744228427UL + 609UL, 3105055156744228427UL + 610UL, 3105055156744228427UL + 611UL, 3105055156744228427UL + 612UL, 3105055156744228427UL + 613UL, 3105055156744228427UL + 4919UL, &____alias_loc_id_10, (unsigned)3, 3105055156744228427UL + 4925UL, 3105055156744228427UL + 4926UL, 3105055156744228427UL + 4927UL);
-    register_functions(11, "brg_sha1.c.pre.hard.cpp", "rng_init", &rng_init, "sha1_begin", &sha1_begin, "sha1_hash", &sha1_hash, "sha1_end", &sha1_end, "rng_spawn", &rng_spawn, "rng_rand", &rng_rand, "rng_nextrand", &rng_nextrand, "rng_showstate", &rng_showstate, "rng_showtype", &rng_showtype, "sha1_compile", &sha1_compile, "sha1", &sha1);
+    init_module(3105055156744228427UL, 18, 11, 4, 11, 0, 0, 0, 0, 0, 2,
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)3, (3105055156744228427UL + 1UL), (3105055156744228427UL + 2UL), (3105055156744228427UL + 4UL), (3105055156744228427UL + 5UL), "sha1_end", (unsigned)2, (3105055156744228427UL + 3UL), (3105055156744228427UL + 63UL), "sha1_begin", (unsigned)1, (3105055156744228427UL + 3UL), "sha1_hash", (unsigned)2, (3105055156744228427UL + 3UL), (3105055156744228427UL + 4UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (3105055156744228427UL + 67UL), (3105055156744228427UL + 99UL),
+                           &____alias_loc_id_2, (unsigned)8, (unsigned)1, (3105055156744228427UL + 100UL), (3105055156744228427UL + 101UL), (3105055156744228427UL + 102UL), (3105055156744228427UL + 103UL), (3105055156744228427UL + 104UL), (3105055156744228427UL + 105UL), (3105055156744228427UL + 106UL), (3105055156744228427UL + 245UL), "sha1_compile", (unsigned)1, (3105055156744228427UL + 245UL),
+                           &____alias_loc_id_3, (unsigned)6, (unsigned)1, (3105055156744228427UL + 246UL), (3105055156744228427UL + 247UL), (3105055156744228427UL + 248UL), (3105055156744228427UL + 249UL), (3105055156744228427UL + 433UL), (3105055156744228427UL + 434UL), "sha1_compile", (unsigned)1, (3105055156744228427UL + 434UL),
+                           &____alias_loc_id_4, (unsigned)4, (unsigned)3, (3105055156744228427UL + 435UL), (3105055156744228427UL + 436UL), (3105055156744228427UL + 437UL), (3105055156744228427UL + 439UL), "sha1_end", (unsigned)2, (3105055156744228427UL + 438UL), (3105055156744228427UL + 480UL), "sha1_begin", (unsigned)1, (3105055156744228427UL + 438UL), "sha1_hash", (unsigned)3, (3105055156744228427UL + 438UL), (3105055156744228427UL + 439UL), (3105055156744228427UL + 479UL),
+                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (3105055156744228427UL + 482UL), (3105055156744228427UL + 483UL), (3105055156744228427UL + 484UL),
+                           &____alias_loc_id_6, (unsigned)3, (unsigned)3, (3105055156744228427UL + 521UL), (3105055156744228427UL + 523UL), (3105055156744228427UL + 524UL), "sha1_end", (unsigned)2, (3105055156744228427UL + 522UL), (3105055156744228427UL + 566UL), "sha1_begin", (unsigned)1, (3105055156744228427UL + 522UL), "sha1_hash", (unsigned)2, (3105055156744228427UL + 522UL), (3105055156744228427UL + 566UL),
+                           &____alias_loc_id_7, (unsigned)2, (unsigned)0, (3105055156744228427UL + 567UL), (3105055156744228427UL + 568UL),
+                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (3105055156744228427UL + 589UL), (3105055156744228427UL + 590UL),
+                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (3105055156744228427UL + 607UL), (3105055156744228427UL + 608UL), (3105055156744228427UL + 609UL), (3105055156744228427UL + 610UL), (3105055156744228427UL + 611UL), (3105055156744228427UL + 612UL), (3105055156744228427UL + 613UL), (3105055156744228427UL + 4919UL),
+                            &____alias_loc_id_10, (unsigned)3, (unsigned)3, (3105055156744228427UL + 4925UL), (3105055156744228427UL + 4926UL), (3105055156744228427UL + 4927UL), "sha1_end", (unsigned)2, (3105055156744228427UL + 4928UL), (3105055156744228427UL + 4946UL), "sha1_begin", (unsigned)1, (3105055156744228427UL + 4928UL), "sha1_hash", (unsigned)2, (3105055156744228427UL + 4928UL), (3105055156744228427UL + 4947UL),
+                             (3105055156744228427UL + 568UL), (3105055156744228427UL + 586UL),
+                             (3105055156744228427UL + 607UL), (3105055156744228427UL + 4919UL),
+                             (3105055156744228427UL + 4926UL), (3105055156744228427UL + 4947UL),
+                             (3105055156744228427UL + 4925UL), (3105055156744228427UL + 4946UL),
+                             (3105055156744228427UL + 608UL), (3105055156744228427UL + 4919UL),
+                             (3105055156744228427UL + 567UL), (3105055156744228427UL + 585UL),
+                             (3105055156744228427UL + 1UL), (3105055156744228427UL + 63UL),
+                             (3105055156744228427UL + 436UL), (3105055156744228427UL + 480UL),
+                             (3105055156744228427UL + 247UL), (3105055156744228427UL + 434UL),
+                             (3105055156744228427UL + 246UL), (3105055156744228427UL + 433UL),
+                             (3105055156744228427UL + 521UL), (3105055156744228427UL + 566UL),
+                             (3105055156744228427UL + 67UL), (3105055156744228427UL + 99UL),
+                             (3105055156744228427UL + 102UL), (3105055156744228427UL + 245UL),
+                             (3105055156744228427UL + 100UL), (3105055156744228427UL + 243UL),
+                             (3105055156744228427UL + 435UL), (3105055156744228427UL + 479UL),
+                             (3105055156744228427UL + 482UL), (3105055156744228427UL + 520UL),
+                             (3105055156744228427UL + 589UL), (3105055156744228427UL + 605UL),
+                             (3105055156744228427UL + 105UL), (3105055156744228427UL + 243UL),
+                     "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf),
+                     "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
+                             "sha1", "sha1", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_nextrand", "rng_nextrand", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_showstate", "rng_showstate", 0,
+                             "rng_init", "rng_init", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_spawn", "rng_spawn", 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end",
+                             "sha1_hash", "sha1_hash", 1, "sha1_compile",
+                             "sha1_end", "sha1_end", 2, "sha1_compile", "sha1_compile",
+                             "rng_rand", "rng_rand", 0,
+                             "sha1_compile", "sha1_compile", 0,
+                             "sha1_begin", "sha1_begin", 0,
+                             "rng_showtype", "rng_showtype", 0,
+                        "rng_init|ctx|0", 1, "rng_init",
+                        "rng_spawn|ctx|0", 1, "rng_spawn",
+                        "rng_nextrand|ctx|0", 1, "rng_nextrand",
+                        "sha1|cx|0", 1, "sha1");
     return 0;
 }
 
-static int __libchimes_module_init = module_init();
+static const int __libchimes_module_init = module_init();

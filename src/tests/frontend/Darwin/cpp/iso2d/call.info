@@ -1,27 +1,27 @@
-_Z12setup_configP7_configiPPc 77 5 0 4 0 342
-_Z13init_progressiii 78 5 0 0 0 0
-printf 89 9 0 598 0 0
-printf 90 9 0 599 0
-printf 91 9 0 599 0
-malloc 94 31 223 0
-malloc 95 28 220 0
-malloc 96 28 220 0
-malloc 97 27 222 0
-fprintf 99 9 0 274 602
-_Z14config_sourcesPP7_sourcePiiii 103 5 0 4 4 0 0 0
-_Z14sample_sourcesP7_sourceiif 104 20 324 165 0 0 0
-_Z9init_dataPfS_S_S_iiff 106 5 0 220 220 222 223 0 0 0 0
-_Z7secondsv 108 20 0
-_ZL3fwdPfS_S_S_iiiii 116 9 0 220 220 222 223 0 0 0 0 0
-_Z10checkpointv 124 9 0
-_Z15update_progressi 127 9 0 0
-_Z7secondsv 129 24 0
-_Z15finish_progressv 131 5 0
-fprintf 134 5 0 274 603 0 0 0
-_Z9save_textPfiiiiPKci 138 9 0 220 0 0 0 0 604 0
-free 141 5 0 223
-free 142 5 0 220
-free 143 5 0 220
-free 144 5 0 222
-free 146 9 0 326
-free 148 5 0 324
+setup_config main 77 5 0 4 0 342
+init_progress main 78 5 0 0 0 0
+printf main 89 9 0 598 0 0
+printf main 90 9 0 599 0
+printf main 91 9 0 599 0
+malloc main 94 31 223 0
+malloc main 95 28 220 0
+malloc main 96 28 220 0
+malloc main 97 27 222 0
+fprintf main 99 9 0 274 602
+config_sources main 103 5 0 4 4 0 0 0
+sample_sources main 104 20 324 165 0 0 0
+init_data main 106 5 0 220 220 222 223 0 0 0 0
+seconds main 108 20 0
+fwd main 116 9 0 220 220 222 223 0 0 0 0 0
+checkpoint main 124 9 0
+update_progress main 127 9 0 0
+seconds main 129 24 0
+finish_progress main 131 5 0
+fprintf main 134 5 0 274 603 0 0 0
+save_text main 138 9 0 220 0 0 0 0 604 0
+free main 141 5 0 223
+free main 142 5 0 220
+free main 143 5 0 220
+free main 144 5 0 222
+free main 146 9 0 326
+free main 148 5 0 324

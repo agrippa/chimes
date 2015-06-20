@@ -19,9 +19,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 5  call
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3 5 len=3 foo_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3 149  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 18  ({  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 18 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 29 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 82 ({ calling_npm(0, 0); foo_npm(ptr[0], a); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 82 ({ calling_npm("foo", 0); foo_npm(ptr[0], a); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 95 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 11 
@@ -33,9 +33,9 @@ int a;
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3 5 len=3 foo_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 3 149  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 7 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 18  ({  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 18 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 14 29 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 82 ({ calling_npm(0, 0); foo_npm(ptr[0], a); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 82 ({ calling_npm("foo", 0); foo_npm(ptr[0], a); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 16 95 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/multi_line_decl.cpp 8 11 

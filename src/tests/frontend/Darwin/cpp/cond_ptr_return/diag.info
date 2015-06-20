@@ -20,16 +20,16 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 17 5  call
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 4 7 len=3 foo_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 4 109  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 15 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 25 ({ calling_npm(1, 0, 8715185705475396347UL, 8715185705475396353UL); foo_npm(); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 25 ({ calling_npm("foo", 0); foo_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 29 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 17 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 17 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 17 29 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 15 167  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 4 7 len=3 foo_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 4 109  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 15 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 25 ({ calling_npm(1, 0, 8715185705475396347UL, 8715185705475396353UL); foo_npm(); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 25 ({ calling_npm("foo", 0); foo_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 16 29 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 17 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 17 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 17 29 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_ptr_return.cpp 15 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

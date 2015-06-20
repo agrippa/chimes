@@ -1,8 +1,8 @@
-initAtoms 8 1 2 3 4 8 20
-zeroReal3 0 134 147
-destroyAtoms 0 148 239
-createFccLattice 0
-setVcm 0 573 574 575 576 577 578 649
-computeVcm 0 739 891
-setTemperature 0 911 912 913 914 915 921 967
-randomDisplacements 0 1201 1202 1203 1204 1205 1248
+initAtoms 8 6 1 2 3 4 8 20 1 zeroReal3 1 20
+zeroReal3 0 2 134 147 0
+destroyAtoms 0 2 148 239 0
+createFccLattice 0 0 1 addIntParallel 1 504
+setVcm 0 7 573 574 575 576 577 578 649 0
+computeVcm 0 2 739 891 1 addRealParallel 2 729 730
+setTemperature 0 7 911 912 913 914 915 921 967 1 kineticEnergy 1 1189
+randomDisplacements 0 6 1201 1202 1203 1204 1205 1248 0

@@ -8,6 +8,15 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "common.cpp.pre.transformed.cpp"
+static int ____chimes_does_checkpoint_seconds_npm = 1;
+static int ____chimes_does_checkpoint_ricker_wavelet_npm = 1;
+static int ____chimes_does_checkpoint_parse_source_npm = 1;
+static int ____chimes_does_checkpoint_config_sources_npm = 1;
+static int ____chimes_does_checkpoint_sample_sources_npm = 1;
+static int ____chimes_does_checkpoint_init_progress_npm = 1;
+static int ____chimes_does_checkpoint_update_progress_npm = 1;
+static int ____chimes_does_checkpoint_finish_progress_npm = 1;
+
 static int ____must_checkpoint_seconds_tp_0 = 2;
 
 static int ____must_manage_config_sources = 2;
@@ -40,8 +49,77 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 64 "/usr/include/stdio.h" 3 4
+
+
+extern void init_chimes();
+extern void checkpoint_transformed(int lbl, unsigned loc_id);
+
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
+extern int get_next_call();
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
+extern void *get_thread_ctx();
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+        unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id, int is_parallel_for);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
+# 33 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
+# 1 "/usr/include/sys/time.h" 1 3 4
+# 67 "/usr/include/sys/time.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -49,15 +127,7 @@ typedef long unsigned int size_t;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 65 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 66 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
+# 68 "/usr/include/sys/time.h" 2 3 4
 # 1 "/usr/include/sys/_types.h" 1 3 4
 # 33 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
@@ -223,24 +293,351 @@ typedef struct _opaque_pthread_rwlock_t __darwin_pthread_rwlock_t;
 typedef struct _opaque_pthread_rwlockattr_t __darwin_pthread_rwlockattr_t;
 typedef struct _opaque_pthread_t *__darwin_pthread_t;
 # 81 "/usr/include/sys/_types.h" 2 3 4
-# 28 "/usr/include/_types.h" 2 3 4
+# 69 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 70 "/usr/include/sys/time.h" 2 3 4
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_fd_def.h" 1 3 4
+# 45 "/usr/include/sys/_types/_fd_def.h" 3 4
+extern "C" {
+typedef struct fd_set {
+ __int32_t fds_bits[((((1024) % ((sizeof(__int32_t) * 8))) == 0) ? ((1024) / ((sizeof(__int32_t) * 8))) : (((1024) / ((sizeof(__int32_t) * 8))) + 1))];
+} fd_set;
+}
+
+
+static inline int
+__darwin_fd_isset(int _n, const struct fd_set *_p)
+{
+ return (_p->fds_bits[(unsigned long)_n/(sizeof(__int32_t) * 8)] & ((__int32_t)(1<<((unsigned long)_n % (sizeof(__int32_t) * 8)))));
+}
+# 76 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_timespec.h" 1 3 4
+# 30 "/usr/include/sys/_types/_timespec.h" 3 4
+struct timespec
+{
+ __darwin_time_t tv_sec;
+ long tv_nsec;
+};
+# 77 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_timeval.h" 1 3 4
+# 30 "/usr/include/sys/_types/_timeval.h" 3 4
+struct timeval
+{
+ __darwin_time_t tv_sec;
+ __darwin_suseconds_t tv_usec;
+};
+# 78 "/usr/include/sys/time.h" 2 3 4
+
+# 1 "/usr/include/sys/_types/_time_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_time_t.h" 3 4
+typedef __darwin_time_t time_t;
+# 80 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_suseconds_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_suseconds_t.h" 3 4
+typedef __darwin_suseconds_t suseconds_t;
+# 81 "/usr/include/sys/time.h" 2 3 4
+
+
+
+
+
+struct itimerval {
+ struct timeval it_interval;
+ struct timeval it_value;
+};
+# 105 "/usr/include/sys/time.h" 3 4
+# 1 "/usr/include/sys/_types/_fd_setsize.h" 1 3 4
+# 106 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_set.h" 1 3 4
+# 107 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_clr.h" 1 3 4
+# 108 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_isset.h" 1 3 4
+# 109 "/usr/include/sys/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_fd_zero.h" 1 3 4
+# 110 "/usr/include/sys/time.h" 2 3 4
+
+
+
+# 1 "/usr/include/sys/_types/_fd_copy.h" 1 3 4
+# 114 "/usr/include/sys/time.h" 2 3 4
+# 124 "/usr/include/sys/time.h" 3 4
+struct timezone {
+ int tz_minuteswest;
+ int tz_dsttime;
+};
+# 167 "/usr/include/sys/time.h" 3 4
+struct clockinfo {
+ int hz;
+ int tick;
+ int tickadj;
+ int stathz;
+ int profhz;
+};
+
+
+
+
+# 1 "/usr/include/time.h" 1 3 4
+# 66 "/usr/include/time.h" 3 4
+# 1 "/usr/include/_types.h" 1 3 4
 # 39 "/usr/include/_types.h" 3 4
 typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 68 "/usr/include/stdio.h" 2 3 4
+# 67 "/usr/include/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_clock_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_clock_t.h" 3 4
+typedef __darwin_clock_t clock_t;
+# 68 "/usr/include/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 69 "/usr/include/time.h" 2 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 70 "/usr/include/time.h" 2 3 4
 
 
 
+struct tm {
+ int tm_sec;
+ int tm_min;
+ int tm_hour;
+ int tm_mday;
+ int tm_mon;
+ int tm_year;
+ int tm_wday;
+ int tm_yday;
+ int tm_isdst;
+ long tm_gmtoff;
+ char *tm_zone;
+};
+# 96 "/usr/include/time.h" 3 4
+extern char *tzname[];
+
+
+extern int getdate_err;
+
+extern long timezone __asm("_" "timezone" );
+
+extern int daylight;
+
+extern "C" {
+char *asctime(const struct tm *);
+clock_t clock(void) __asm("_" "clock" );
+char *ctime(const time_t *);
+double difftime(time_t, time_t);
+struct tm *getdate(const char *);
+struct tm *gmtime(const time_t *);
+struct tm *localtime(const time_t *);
+time_t mktime(struct tm *) __asm("_" "mktime" );
+size_t strftime(char * , size_t, const char * , const struct tm * ) __asm("_" "strftime" );
+char *strptime(const char * , const char * , struct tm * ) __asm("_" "strptime" );
+time_t time(time_t *);
+
+
+void tzset(void);
+
+
+
+char *asctime_r(const struct tm * , char * );
+char *ctime_r(const time_t *, char *);
+struct tm *gmtime_r(const time_t * , struct tm * );
+struct tm *localtime_r(const time_t * , struct tm * );
+
+
+time_t posix2time(time_t);
+
+
+
+void tzsetwall(void);
+time_t time2posix(time_t);
+time_t timelocal(struct tm * const);
+time_t timegm(struct tm * const);
+
+
+
+int nanosleep(const struct timespec *, struct timespec *) __asm("_" "nanosleep" );
+
+}
+# 179 "/usr/include/sys/time.h" 2 3 4
+
+
+extern "C" {
+
+
+int adjtime(const struct timeval *, struct timeval *);
+int futimes(int, const struct timeval *);
+int lutimes(const char *, const struct timeval *) ;
+int settimeofday(const struct timeval *, const struct timezone *);
+
+
+int getitimer(int, struct itimerval *);
+int gettimeofday(struct timeval * , void * );
+
+# 1 "/usr/include/sys/_select.h" 1 3 4
+# 39 "/usr/include/sys/_select.h" 3 4
+int select(int, fd_set * , fd_set * ,
+  fd_set * , struct timeval * )
+
+
+
+
+  __asm("_" "select" "$1050")
+
+
+
+
+  ;
+# 194 "/usr/include/sys/time.h" 2 3 4
+
+int setitimer(int, const struct itimerval * ,
+  struct itimerval * );
+int utimes(const char *, const struct timeval *);
+
+}
+# 34 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 1
+# 26 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h"
+# 1 "/usr/include/string.h" 1 3 4
+# 69 "/usr/include/string.h" 3 4
+extern "C" {
+void *memchr(const void *, int, size_t);
+int memcmp(const void *, const void *, size_t);
+void *memcpy(void *, const void *, size_t);
+void *memmove(void *, const void *, size_t);
+void *memset(void *, int, size_t);
+char *strcat(char *, const char *);
+char *strchr(const char *, int);
+int strcmp(const char *, const char *);
+int strcoll(const char *, const char *);
+char *strcpy(char *, const char *);
+size_t strcspn(const char *, const char *);
+char *strerror(int) __asm("_" "strerror" );
+size_t strlen(const char *);
+char *strncat(char *, const char *, size_t);
+int strncmp(const char *, const char *, size_t);
+char *strncpy(char *, const char *, size_t);
+char *strpbrk(const char *, const char *);
+char *strrchr(const char *, int);
+size_t strspn(const char *, const char *);
+char *strstr(const char *, const char *);
+char *strtok(char *, const char *);
+size_t strxfrm(char *, const char *, size_t);
+}
+# 103 "/usr/include/string.h" 3 4
+extern "C" {
+char *strtok_r(char *, const char *, char **);
+}
+# 115 "/usr/include/string.h" 3 4
+extern "C" {
+int strerror_r(int, char *, size_t);
+char *strdup(const char *);
+void *memccpy(void *, const void *, int, size_t);
+}
+# 129 "/usr/include/string.h" 3 4
+extern "C" {
+char *stpcpy(char *, const char *);
+char *stpncpy(char *, const char *, size_t) ;
+char *strndup(const char *, size_t) ;
+size_t strnlen(const char *, size_t) ;
+char *strsignal(int sig);
+}
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
+typedef __darwin_size_t rsize_t;
+# 142 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
+typedef int errno_t;
+# 143 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+errno_t memset_s(void *, rsize_t, int, rsize_t) ;
+}
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 153 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+void *memmem(const void *, size_t, const void *, size_t) ;
+void memset_pattern4(void *, const void *, size_t) ;
+void memset_pattern8(void *, const void *, size_t) ;
+void memset_pattern16(void *, const void *, size_t) ;
+
+char *strcasestr(const char *, const char *);
+char *strnstr(const char *, const char *, size_t);
+size_t strlcat(char *, const char *, size_t);
+size_t strlcpy(char *, const char *, size_t);
+void strmode(int, char *);
+char *strsep(char **, const char *);
+
+
+void swab(const void * , void * , ssize_t);
+}
+
+
+
+
+
+
+# 1 "/usr/include/strings.h" 1 3 4
+# 67 "/usr/include/strings.h" 3 4
+extern "C" {
+
+
+int bcmp(const void *, const void *, size_t) ;
+void bcopy(const void *, void *, size_t) ;
+void bzero(void *, size_t) ;
+char *index(const char *, int) ;
+char *rindex(const char *, int) ;
+
+
+int ffs(int);
+int strcasecmp(const char *, const char *);
+int strncasecmp(const char *, const char *, size_t);
+}
+
+
+
+extern "C" {
+int ffsl(long) ;
+int ffsll(long long) ;
+int fls(int) ;
+int flsl(long) ;
+int flsll(long long) ;
+}
+
+# 1 "/usr/include/string.h" 1 3 4
+# 93 "/usr/include/strings.h" 2 3 4
+# 177 "/usr/include/string.h" 2 3 4
+# 27 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 2
+# 1 "/usr/include/stdio.h" 1 3 4
+# 71 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
 # 31 "/usr/include/sys/_types/_va_list.h" 3 4
 typedef __darwin_va_list va_list;
 # 72 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 73 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 74 "/usr/include/stdio.h" 2 3 4
+
+
 
 # 1 "/usr/include/sys/stdio.h" 1 3 4
 # 37 "/usr/include/sys/stdio.h" 3 4
@@ -436,12 +833,7 @@ int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)))
 int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
 int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
 }
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
+# 438 "/usr/include/stdio.h" 3 4
 extern "C" {
 int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
 int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
@@ -479,385 +871,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
-extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_stack_vars(int nvars, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern void register_functions(int nfunctions, const char *module_name, ...);
-extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-extern bool disable_current_thread();
-extern void reenable_current_thread(bool was_disabled);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-# 33 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-# 1 "/usr/include/sys/time.h" 1 3 4
-# 75 "/usr/include/sys/time.h" 3 4
-# 1 "/usr/include/sys/_types/_fd_def.h" 1 3 4
-# 45 "/usr/include/sys/_types/_fd_def.h" 3 4
-extern "C" {
-typedef struct fd_set {
- __int32_t fds_bits[((((1024) % ((sizeof(__int32_t) * 8))) == 0) ? ((1024) / ((sizeof(__int32_t) * 8))) : (((1024) / ((sizeof(__int32_t) * 8))) + 1))];
-} fd_set;
-}
-
-
-static inline int
-__darwin_fd_isset(int _n, const struct fd_set *_p)
-{
- return (_p->fds_bits[(unsigned long)_n/(sizeof(__int32_t) * 8)] & ((__int32_t)(1<<((unsigned long)_n % (sizeof(__int32_t) * 8)))));
-}
-# 76 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_timespec.h" 1 3 4
-# 30 "/usr/include/sys/_types/_timespec.h" 3 4
-struct timespec
-{
- __darwin_time_t tv_sec;
- long tv_nsec;
-};
-# 77 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_timeval.h" 1 3 4
-# 30 "/usr/include/sys/_types/_timeval.h" 3 4
-struct timeval
-{
- __darwin_time_t tv_sec;
- __darwin_suseconds_t tv_usec;
-};
-# 78 "/usr/include/sys/time.h" 2 3 4
-
-# 1 "/usr/include/sys/_types/_time_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_time_t.h" 3 4
-typedef __darwin_time_t time_t;
-# 80 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_suseconds_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_suseconds_t.h" 3 4
-typedef __darwin_suseconds_t suseconds_t;
-# 81 "/usr/include/sys/time.h" 2 3 4
-
-
-
-
-
-struct itimerval {
- struct timeval it_interval;
- struct timeval it_value;
-};
-# 105 "/usr/include/sys/time.h" 3 4
-# 1 "/usr/include/sys/_types/_fd_setsize.h" 1 3 4
-# 106 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_set.h" 1 3 4
-# 107 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_clr.h" 1 3 4
-# 108 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_isset.h" 1 3 4
-# 109 "/usr/include/sys/time.h" 2 3 4
-# 1 "/usr/include/sys/_types/_fd_zero.h" 1 3 4
-# 110 "/usr/include/sys/time.h" 2 3 4
-
-
-
-# 1 "/usr/include/sys/_types/_fd_copy.h" 1 3 4
-# 114 "/usr/include/sys/time.h" 2 3 4
-# 124 "/usr/include/sys/time.h" 3 4
-struct timezone {
- int tz_minuteswest;
- int tz_dsttime;
-};
-# 167 "/usr/include/sys/time.h" 3 4
-struct clockinfo {
- int hz;
- int tick;
- int tickadj;
- int stathz;
- int profhz;
-};
-
-
-
-
-# 1 "/usr/include/time.h" 1 3 4
-# 67 "/usr/include/time.h" 3 4
-# 1 "/usr/include/sys/_types/_clock_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_clock_t.h" 3 4
-typedef __darwin_clock_t clock_t;
-# 68 "/usr/include/time.h" 2 3 4
-
-
-
-
-
-struct tm {
- int tm_sec;
- int tm_min;
- int tm_hour;
- int tm_mday;
- int tm_mon;
- int tm_year;
- int tm_wday;
- int tm_yday;
- int tm_isdst;
- long tm_gmtoff;
- char *tm_zone;
-};
-# 96 "/usr/include/time.h" 3 4
-extern char *tzname[];
-
-
-extern int getdate_err;
-
-extern long timezone __asm("_" "timezone" );
-
-extern int daylight;
-
-extern "C" {
-char *asctime(const struct tm *);
-clock_t clock(void) __asm("_" "clock" );
-char *ctime(const time_t *);
-double difftime(time_t, time_t);
-struct tm *getdate(const char *);
-struct tm *gmtime(const time_t *);
-struct tm *localtime(const time_t *);
-time_t mktime(struct tm *) __asm("_" "mktime" );
-size_t strftime(char * , size_t, const char * , const struct tm * ) __asm("_" "strftime" );
-char *strptime(const char * , const char * , struct tm * ) __asm("_" "strptime" );
-time_t time(time_t *);
-
-
-void tzset(void);
-
-
-
-char *asctime_r(const struct tm * , char * );
-char *ctime_r(const time_t *, char *);
-struct tm *gmtime_r(const time_t * , struct tm * );
-struct tm *localtime_r(const time_t * , struct tm * );
-
-
-time_t posix2time(time_t);
-
-
-
-void tzsetwall(void);
-time_t time2posix(time_t);
-time_t timelocal(struct tm * const);
-time_t timegm(struct tm * const);
-
-
-
-int nanosleep(const struct timespec *, struct timespec *) __asm("_" "nanosleep" );
-
-}
-# 179 "/usr/include/sys/time.h" 2 3 4
-
-
-extern "C" {
-
-
-int adjtime(const struct timeval *, struct timeval *);
-int futimes(int, const struct timeval *);
-int lutimes(const char *, const struct timeval *) ;
-int settimeofday(const struct timeval *, const struct timezone *);
-
-
-int getitimer(int, struct itimerval *);
-int gettimeofday(struct timeval * , void * );
-
-# 1 "/usr/include/sys/_select.h" 1 3 4
-# 39 "/usr/include/sys/_select.h" 3 4
-int select(int, fd_set * , fd_set * ,
-  fd_set * , struct timeval * )
-
-
-
-
-  __asm("_" "select" "$1050")
-
-
-
-
-  ;
-# 194 "/usr/include/sys/time.h" 2 3 4
-
-int setitimer(int, const struct itimerval * ,
-  struct itimerval * );
-int utimes(const char *, const struct timeval *);
-
-}
-# 34 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 1
-# 26 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h"
-# 1 "/usr/include/string.h" 1 3 4
-# 69 "/usr/include/string.h" 3 4
-extern "C" {
-void *memchr(const void *, int, size_t);
-int memcmp(const void *, const void *, size_t);
-void *memcpy(void *, const void *, size_t);
-void *memmove(void *, const void *, size_t);
-void *memset(void *, int, size_t);
-char *strcat(char *, const char *);
-char *strchr(const char *, int);
-int strcmp(const char *, const char *);
-int strcoll(const char *, const char *);
-char *strcpy(char *, const char *);
-size_t strcspn(const char *, const char *);
-char *strerror(int) __asm("_" "strerror" );
-size_t strlen(const char *);
-char *strncat(char *, const char *, size_t);
-int strncmp(const char *, const char *, size_t);
-char *strncpy(char *, const char *, size_t);
-char *strpbrk(const char *, const char *);
-char *strrchr(const char *, int);
-size_t strspn(const char *, const char *);
-char *strstr(const char *, const char *);
-char *strtok(char *, const char *);
-size_t strxfrm(char *, const char *, size_t);
-}
-# 103 "/usr/include/string.h" 3 4
-extern "C" {
-char *strtok_r(char *, const char *, char **);
-}
-# 115 "/usr/include/string.h" 3 4
-extern "C" {
-int strerror_r(int, char *, size_t);
-char *strdup(const char *);
-void *memccpy(void *, const void *, int, size_t);
-}
-# 129 "/usr/include/string.h" 3 4
-extern "C" {
-char *stpcpy(char *, const char *);
-char *stpncpy(char *, const char *, size_t) ;
-char *strndup(const char *, size_t) ;
-size_t strnlen(const char *, size_t) ;
-char *strsignal(int sig);
-}
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
-typedef __darwin_size_t rsize_t;
-# 142 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
-typedef int errno_t;
-# 143 "/usr/include/string.h" 2 3 4
-
-extern "C" {
-errno_t memset_s(void *, rsize_t, int, rsize_t) ;
-}
-
-
-
-
-
-
-
-extern "C" {
-void *memmem(const void *, size_t, const void *, size_t) ;
-void memset_pattern4(void *, const void *, size_t) ;
-void memset_pattern8(void *, const void *, size_t) ;
-void memset_pattern16(void *, const void *, size_t) ;
-
-char *strcasestr(const char *, const char *);
-char *strnstr(const char *, const char *, size_t);
-size_t strlcat(char *, const char *, size_t);
-size_t strlcpy(char *, const char *, size_t);
-void strmode(int, char *);
-char *strsep(char **, const char *);
-
-
-void swab(const void * , void * , ssize_t);
-}
-
-
-
-
-
-
-# 1 "/usr/include/strings.h" 1 3 4
-# 67 "/usr/include/strings.h" 3 4
-extern "C" {
-
-
-int bcmp(const void *, const void *, size_t) ;
-void bcopy(const void *, void *, size_t) ;
-void bzero(void *, size_t) ;
-char *index(const char *, int) ;
-char *rindex(const char *, int) ;
-
-
-int ffs(int);
-int strcasecmp(const char *, const char *);
-int strncasecmp(const char *, const char *, size_t);
-}
-
-
-
-extern "C" {
-int ffsl(long) ;
-int ffsll(long long) ;
-int fls(int) ;
-int flsl(long) ;
-int flsll(long long) ;
-}
-
-# 1 "/usr/include/string.h" 1 3 4
-# 93 "/usr/include/strings.h" 2 3 4
-# 177 "/usr/include/string.h" 2 3 4
-# 27 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 2
-
+# 28 "/Users/jmg3/num-debug/src/examples/cpp/include/common.h" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -2672,7 +2686,7 @@ float **sample_sources_resumable(source *srcs, int nsrcs, int nsteps, float dt) 
 # 139 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
         }
 # 140 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-        ({ calling_npm(1, 0, 8150615911090656359UL, 8150615911090656090UL); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
+        ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     } }
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -2823,7 +2837,7 @@ void finish_progress_resumable() {const int ____chimes_did_disable7 = new_stack(
     }
 # 221 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 222 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-    ({ calling_npm(0, 0); update_progress_npm(progress_goal); });
+    ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); });
 # 223 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     fprintf(__stderrp, "\n");
 # 224 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -3019,7 +3033,7 @@ float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt) {con
 # 139 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
         }
 # 140 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-        ({ calling_npm(1, 0, 8150615911090656359UL, 8150615911090656090UL); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
+        ({ calling_npm("ricker_wavelet", 0); ricker_wavelet_npm(src_samples[i], nsteps, dt, srcs[i].freq); });
 # 141 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     } }
 # 142 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -3167,7 +3181,7 @@ void finish_progress_quick() {const int ____chimes_did_disable7 = new_stack((voi
     }
 # 221 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
 # 222 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
-    ({ calling_npm(0, 0); update_progress_npm(progress_goal); });
+    ({ calling_npm("update_progress", 0); update_progress_npm(progress_goal); });
 # 223 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
     fprintf(__stderrp, "\n");
 # 224 "/Users/jmg3/num-debug/src/examples/openmp/lib/common.cpp"
@@ -3515,14 +3529,69 @@ void finish_progress_npm() {
 
 
 static int module_init() {
-    init_module(8150615911090655998UL, 19, 8, 1, 0, 3, 8150615911090655998UL + 201UL, 8150615911090655998UL + 261UL, 8150615911090655998UL + 323UL, 8150615911090655998UL + 400UL, 8150615911090655998UL + 606UL, 8150615911090655998UL + 120UL, 8150615911090655998UL + 612UL, 8150615911090655998UL + 457UL, 8150615911090655998UL + 23UL, 8150615911090655998UL + 92UL, 8150615911090655998UL + 195UL, 8150615911090655998UL + 317UL, 8150615911090655998UL + 196UL, 8150615911090655998UL + 318UL, 8150615911090655998UL + 317UL, 8150615911090655998UL + 261UL, 8150615911090655998UL + 99UL, 8150615911090655998UL + 186UL, 8150615911090655998UL + 98UL, 8150615911090655998UL + 187UL, 8150615911090655998UL + 327UL, 8150615911090655998UL + 341UL, 8150615911090655998UL + 104UL, 8150615911090655998UL + 155UL, 8150615911090655998UL + 102UL, 8150615911090655998UL + 174UL, 8150615911090655998UL + 103UL, 8150615911090655998UL + 174UL, 8150615911090655998UL + 100UL, 8150615911090655998UL + 115UL, 8150615911090655998UL + 101UL, 8150615911090655998UL + 115UL, 8150615911090655998UL + 341UL, 8150615911090655998UL + 361UL, 8150615911090655998UL + 97UL, 8150615911090655998UL + 186UL, 8150615911090655998UL + 105UL, 8150615911090655998UL + 155UL, "_source", 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t), "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "int", (int)__builtin_offsetof (struct timeval, tv_usec), "timezone", 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime), "config_sources", 0, "init_progress", 0, "seconds", 0, "finish_progress", 1, "update_progress", "update_progress", 0, "ricker_wavelet", 0, "parse_source", 0, "sample_sources", 1, "ricker_wavelet", "seconds|tp|0", 1, "seconds", &____alias_loc_id_0, (unsigned)1, 8150615911090655998UL + 3UL, &____alias_loc_id_1, (unsigned)10, 8150615911090655998UL + 23UL, 8150615911090655998UL + 24UL, 8150615911090655998UL + 25UL, 8150615911090655998UL + 26UL, 8150615911090655998UL + 27UL, 8150615911090655998UL + 28UL, 8150615911090655998UL + 29UL, 8150615911090655998UL + 30UL, 8150615911090655998UL + 31UL, 8150615911090655998UL + 92UL, &____alias_loc_id_2, (unsigned)13, 8150615911090655998UL + 97UL, 8150615911090655998UL + 98UL, 8150615911090655998UL + 99UL, 8150615911090655998UL + 100UL, 8150615911090655998UL + 101UL, 8150615911090655998UL + 102UL, 8150615911090655998UL + 103UL, 8150615911090655998UL + 104UL, 8150615911090655998UL + 105UL, 8150615911090655998UL + 115UL, 8150615911090655998UL + 155UL, 8150615911090655998UL + 174UL, 8150615911090655998UL + 187UL, &____alias_loc_id_3, (unsigned)10, 8150615911090655998UL + 195UL, 8150615911090655998UL + 196UL, 8150615911090655998UL + 197UL, 8150615911090655998UL + 198UL, 8150615911090655998UL + 199UL, 8150615911090655998UL + 200UL, 8150615911090655998UL + 201UL, 8150615911090655998UL + 261UL, 8150615911090655998UL + 317UL, 8150615911090655998UL + 318UL, &____alias_loc_id_4, (unsigned)7, 8150615911090655998UL + 323UL, 8150615911090655998UL + 324UL, 8150615911090655998UL + 325UL, 8150615911090655998UL + 326UL, 8150615911090655998UL + 327UL, 8150615911090655998UL + 328UL, 8150615911090655998UL + 341UL, &____alias_loc_id_5, (unsigned)7, 8150615911090655998UL + 404UL, 8150615911090655998UL + 405UL, 8150615911090655998UL + 406UL, 8150615911090655998UL + 407UL, 8150615911090655998UL + 457UL, 8150615911090655998UL + 612UL, 8150615911090655998UL + 615UL, &____alias_loc_id_6, (unsigned)6, 8150615911090655998UL + 457UL, 8150615911090655998UL + 502UL, 8150615911090655998UL + 503UL, 8150615911090655998UL + 504UL, 8150615911090655998UL + 505UL, 8150615911090655998UL + 615UL);
+    init_module(8150615911090655998UL, 19, 8, 1, 7, 8, 0, 8, 2, 0, 3,
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (8150615911090655998UL + 1UL), (8150615911090655998UL + 3UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (8150615911090655998UL + 23UL), (8150615911090655998UL + 24UL), (8150615911090655998UL + 25UL), (8150615911090655998UL + 26UL), (8150615911090655998UL + 27UL), (8150615911090655998UL + 28UL), (8150615911090655998UL + 29UL), (8150615911090655998UL + 30UL), (8150615911090655998UL + 31UL), (8150615911090655998UL + 92UL),
+                           &____alias_loc_id_2, (unsigned)13, (unsigned)0, (8150615911090655998UL + 97UL), (8150615911090655998UL + 98UL), (8150615911090655998UL + 99UL), (8150615911090655998UL + 100UL), (8150615911090655998UL + 101UL), (8150615911090655998UL + 102UL), (8150615911090655998UL + 103UL), (8150615911090655998UL + 104UL), (8150615911090655998UL + 105UL), (8150615911090655998UL + 115UL), (8150615911090655998UL + 155UL), (8150615911090655998UL + 174UL), (8150615911090655998UL + 187UL),
+                           &____alias_loc_id_3, (unsigned)10, (unsigned)0, (8150615911090655998UL + 195UL), (8150615911090655998UL + 196UL), (8150615911090655998UL + 197UL), (8150615911090655998UL + 198UL), (8150615911090655998UL + 199UL), (8150615911090655998UL + 200UL), (8150615911090655998UL + 201UL), (8150615911090655998UL + 261UL), (8150615911090655998UL + 317UL), (8150615911090655998UL + 318UL),
+                           &____alias_loc_id_4, (unsigned)7, (unsigned)1, (8150615911090655998UL + 323UL), (8150615911090655998UL + 324UL), (8150615911090655998UL + 325UL), (8150615911090655998UL + 326UL), (8150615911090655998UL + 327UL), (8150615911090655998UL + 328UL), (8150615911090655998UL + 341UL), "ricker_wavelet", (unsigned)1, (8150615911090655998UL + 361UL),
+                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (8150615911090655998UL + 404UL), (8150615911090655998UL + 405UL), (8150615911090655998UL + 406UL), (8150615911090655998UL + 407UL), (8150615911090655998UL + 457UL), (8150615911090655998UL + 612UL), (8150615911090655998UL + 615UL),
+                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (8150615911090655998UL + 457UL), (8150615911090655998UL + 502UL), (8150615911090655998UL + 503UL), (8150615911090655998UL + 504UL), (8150615911090655998UL + 505UL), (8150615911090655998UL + 615UL),
+                            "seconds", (void *)(&seconds_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (8150615911090655998UL + 1UL), (8150615911090655998UL + 2UL), 0UL,
+                            "ricker_wavelet", (void *)(&ricker_wavelet_npm), (void *)__null, 0, 4, (8150615911090655998UL + 92UL), 0UL, 0UL, 0UL, 0UL, 1, "exp", 1, 0UL, 0UL,
+                            "parse_source", (void *)(&parse_source_npm), (void *)__null, 0, 2, (8150615911090655998UL + 186UL), (8150615911090655998UL + 187UL), 0UL, 13, "strchr", 2, (8150615911090655998UL + 186UL), 0UL, (8150615911090655998UL + 115UL), "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 607UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (8150615911090655998UL + 115UL), 0UL, (8150615911090655998UL + 174UL), "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 607UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (8150615911090655998UL + 174UL), 0UL, (8150615911090655998UL + 155UL), "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 607UL), 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (8150615911090655998UL + 186UL), 0UL, "atoi", 1, (8150615911090655998UL + 115UL), 0UL, "atof", 1, (8150615911090655998UL + 174UL), 0UL, "atoi", 1, (8150615911090655998UL + 155UL), 0UL,
+                            "config_sources", (void *)(&config_sources_npm), (void *)__null, 0, 5, (8150615911090655998UL + 317UL), (8150615911090655998UL + 318UL), 0UL, 0UL, 0UL, 0UL, 9, "malloc", 1, 0UL, (8150615911090655998UL + 261UL), "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 609UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "sample_sources", (void *)(&sample_sources_npm), (void *)__null, 0, 4, (8150615911090655998UL + 400UL), 0UL, 0UL, 0UL, (8150615911090655998UL + 341UL), 7, "malloc", 1, 0UL, (8150615911090655998UL + 341UL), "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (8150615911090655998UL + 361UL), "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "ricker_wavelet", 4, (8150615911090655998UL + 361UL), 0UL, 0UL, 0UL, 0UL,
+                            "init_progress", (void *)(&init_progress_npm), (void *)__null, 0, 3, 0UL, 0UL, 0UL, 0UL, 7, "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 613UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 614UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (8150615911090655998UL + 457UL), "__assert_rtn", 4, (8150615911090655998UL + 616UL), (8150615911090655998UL + 617UL), 0UL, (8150615911090655998UL + 618UL), 0UL, "fprintf", 3, (8150615911090655998UL + 120UL), (8150615911090655998UL + 622UL), (8150615911090655998UL + 457UL), 0UL,
+                            "update_progress", (void *)(&update_progress_npm), (void *)__null, 0, 1, 0UL, 0UL, 6, "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 623UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 624UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 625UL), 0UL, "fprintf", 3, (8150615911090655998UL + 120UL), (8150615911090655998UL + 622UL), (8150615911090655998UL + 457UL), 0UL,
+                            "finish_progress", (void *)(&finish_progress_npm), (void *)__null, 0, 0, 0UL, 3, "update_progress", 1, 0UL, 0UL, "fprintf", 2, (8150615911090655998UL + 120UL), (8150615911090655998UL + 625UL), 0UL, "free", 1, (8150615911090655998UL + 457UL), 0UL,
+                           "seconds", &(____chimes_does_checkpoint_seconds_npm),
+                           "ricker_wavelet", &(____chimes_does_checkpoint_ricker_wavelet_npm),
+                           "parse_source", &(____chimes_does_checkpoint_parse_source_npm),
+                           "config_sources", &(____chimes_does_checkpoint_config_sources_npm),
+                           "sample_sources", &(____chimes_does_checkpoint_sample_sources_npm),
+                           "init_progress", &(____chimes_does_checkpoint_init_progress_npm),
+                           "update_progress", &(____chimes_does_checkpoint_update_progress_npm),
+                           "finish_progress", &(____chimes_does_checkpoint_finish_progress_npm),
+                             (8150615911090655998UL + 201UL), (8150615911090655998UL + 261UL),
+                             (8150615911090655998UL + 323UL), (8150615911090655998UL + 400UL),
+                             (8150615911090655998UL + 606UL), (8150615911090655998UL + 120UL),
+                             (8150615911090655998UL + 612UL), (8150615911090655998UL + 457UL),
+                             (8150615911090655998UL + 23UL), (8150615911090655998UL + 92UL),
+                             (8150615911090655998UL + 195UL), (8150615911090655998UL + 317UL),
+                             (8150615911090655998UL + 196UL), (8150615911090655998UL + 318UL),
+                             (8150615911090655998UL + 317UL), (8150615911090655998UL + 261UL),
+                             (8150615911090655998UL + 99UL), (8150615911090655998UL + 186UL),
+                             (8150615911090655998UL + 98UL), (8150615911090655998UL + 187UL),
+                             (8150615911090655998UL + 327UL), (8150615911090655998UL + 341UL),
+                             (8150615911090655998UL + 104UL), (8150615911090655998UL + 155UL),
+                             (8150615911090655998UL + 102UL), (8150615911090655998UL + 174UL),
+                             (8150615911090655998UL + 103UL), (8150615911090655998UL + 174UL),
+                             (8150615911090655998UL + 100UL), (8150615911090655998UL + 115UL),
+                             (8150615911090655998UL + 101UL), (8150615911090655998UL + 115UL),
+                             (8150615911090655998UL + 341UL), (8150615911090655998UL + 361UL),
+                             (8150615911090655998UL + 97UL), (8150615911090655998UL + 186UL),
+                             (8150615911090655998UL + 105UL), (8150615911090655998UL + 155UL),
+                     "_source", 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t),
+                     "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "int", (int)__builtin_offsetof (struct timeval, tv_usec),
+                     "timezone", 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
+                             "config_sources", "_Z14config_sourcesPP7_sourcePiiii", 0,
+                             "init_progress", "_Z13init_progressiii", 0,
+                             "seconds", "_Z7secondsv", 0,
+                             "finish_progress", "_Z15finish_progressv", 1, "update_progress",
+                             "update_progress", "_Z15update_progressi", 0,
+                             "ricker_wavelet", "_Z14ricker_waveletPfiff", 0,
+                             "parse_source", "_Z12parse_sourcePcP7_source", 0,
+                             "sample_sources", "_Z14sample_sourcesP7_sourceiif", 1, "ricker_wavelet",
+                        "seconds|tp|0", 1, "seconds",
+        "ricker_wavelet", 0UL, (int)4, 8150615911090656359UL, 0UL, 0UL, 0UL,
+        "update_progress", 0UL, (int)1, 0UL);
     register_global_var("global|progress_buffer", "i8*", (void *)(&progress_buffer), 8, 1, 0, 0);
     register_global_var("global|progress_disabled", "i32", (void *)(&progress_disabled), 4, 0, 0, 0);
     register_global_var("global|progress_length", "i32", (void *)(&progress_length), 4, 0, 0, 0);
     register_global_var("global|progress_goal", "i32", (void *)(&progress_goal), 4, 0, 0, 0);
     register_global_var("global|progress_num_ticks", "i32", (void *)(&progress_num_ticks), 4, 0, 0, 0);
-    register_functions(8, "common.cpp.pre.hard.cpp", "seconds", &seconds, "ricker_wavelet", &ricker_wavelet, "parse_source", &parse_source, "config_sources", &config_sources, "sample_sources", &sample_sources, "init_progress", &init_progress, "update_progress", &update_progress, "finish_progress", &finish_progress);
     return 0;
 }
 
-static int __libchimes_module_init = module_init();
+static const int __libchimes_module_init = module_init();

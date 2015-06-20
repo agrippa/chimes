@@ -8,20 +8,28 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "eam.c.pre.transformed.cpp"
-int ____chimes_does_checkpoint_initEamPot_npm = 1;
-int ____chimes_does_checkpoint_eamForce_npm = 1;
-int ____chimes_does_checkpoint_eamPrint_npm = 1;
-int ____chimes_does_checkpoint_eamDestroy_npm = 1;
-int ____chimes_does_checkpoint_eamBcastPotential_npm = 1;
-int ____chimes_does_checkpoint_initInterpolationObject_npm = 1;
-int ____chimes_does_checkpoint_destroyInterpolationObject_npm = 1;
-int ____chimes_does_checkpoint_interpolate_npm = 1;
-int ____chimes_does_checkpoint_bcastInterpolationObject_npm = 1;
-int ____chimes_does_checkpoint_eamReadSetfl_npm = 1;
-int ____chimes_does_checkpoint_eamReadFuncfl_npm = 1;
-int ____chimes_does_checkpoint_fileNotFound_npm = 1;
-int ____chimes_does_checkpoint_notAlloyReady_npm = 1;
-int ____chimes_does_checkpoint_typeNotSupported_npm = 1;
+static int ____chimes_does_checkpoint_initEamPot_npm = 1;
+static int ____chimes_does_checkpoint_eamForce_npm = 1;
+static int ____chimes_does_checkpoint_eamPrint_npm = 1;
+static int ____chimes_does_checkpoint_eamDestroy_npm = 1;
+static int ____chimes_does_checkpoint_eamBcastPotential_npm = 1;
+static int ____chimes_does_checkpoint_initInterpolationObject_npm = 1;
+static int ____chimes_does_checkpoint_destroyInterpolationObject_npm = 1;
+static int ____chimes_does_checkpoint_interpolate_npm = 1;
+static int ____chimes_does_checkpoint_bcastInterpolationObject_npm = 1;
+static int ____chimes_does_checkpoint_eamReadSetfl_npm = 1;
+static int ____chimes_does_checkpoint_eamReadFuncfl_npm = 1;
+static int ____chimes_does_checkpoint_fileNotFound_npm = 1;
+static int ____chimes_does_checkpoint_notAlloyReady_npm = 1;
+static int ____chimes_does_checkpoint_typeNotSupported_npm = 1;
+static int ____chimes_does_checkpoint_bcastParallel_npm = 1;
+static int ____chimes_does_checkpoint_destroyHaloExchange_npm = 1;
+static int ____chimes_does_checkpoint_getMyRank_npm = 1;
+static int ____chimes_does_checkpoint_haloExchange_npm = 1;
+static int ____chimes_does_checkpoint_initForceHaloExchange_npm = 1;
+static int ____chimes_does_checkpoint_profileStart_npm = 1;
+static int ____chimes_does_checkpoint_profileStop_npm = 1;
+static int ____chimes_does_checkpoint_zeroReal3_npm = 1;
 
 static int ____must_checkpoint_initEamPot_dir_0 = 2;
 static int ____must_checkpoint_initEamPot_file_0 = 2;
@@ -106,6 +114,7 @@ static unsigned ____alias_loc_id_20;
 static unsigned ____alias_loc_id_21;
 static unsigned ____alias_loc_id_22;
 static unsigned ____alias_loc_id_23;
+static unsigned ____alias_loc_id_24;
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
@@ -120,8 +129,128 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 64 "/usr/include/stdio.h" 3 4
+
+
+extern void init_chimes();
+extern void checkpoint_transformed(int lbl, unsigned loc_id);
+
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
+extern int get_next_call();
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
+extern void *get_thread_ctx();
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+        unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id, int is_parallel_for);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
+# 88 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.h" 1
+
+
+
+
+
+
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
+# 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h"
+typedef double real_t;
+
+
+
+
+typedef real_t real3[3];
+
+static void zeroReal3(real3 a)
+{
+   a[0] = 0.0;
+   a[1] = 0.0;
+   a[2] = 0.0;
+}
+# 8 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.h" 2
+
+struct BasePotentialSt;
+struct LinkCellSt;
+
+
+
+
+
+typedef struct ForceExchangeDataSt
+{
+   real_t* dfEmbed;
+   struct LinkCellSt* boxes;
+}ForceExchangeData;
+
+struct BasePotentialSt* initEamPot(const char* dir, const char* file, const char* type);
+# 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c" 2
+# 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
+
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 61 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 62 "/usr/include/stdlib.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 32 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -129,17 +258,7 @@ typedef long unsigned int size_t;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 65 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 66 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 33 "/usr/include/sys/_types.h" 3 4
+# 33 "/usr/include/sys/_types.h" 2 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -309,364 +428,8 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 68 "/usr/include/stdio.h" 2 3 4
+# 64 "/usr/include/stdlib.h" 2 3 4
 
-
-
-# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
-# 31 "/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 72 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 73 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 74 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/sys/stdio.h" 1 3 4
-# 37 "/usr/include/sys/stdio.h" 3 4
-extern "C" {
-
-int renameat(int, const char *, int, const char *) ;
-
-}
-# 76 "/usr/include/stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 88 "/usr/include/stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 122 "/usr/include/stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (*_close)(void *);
- int (*_read) (void *, char *, int);
- fpos_t (*_seek) (void *, fpos_t, int);
- int (*_write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-extern "C" {
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-}
-# 230 "/usr/include/stdio.h" 3 4
-extern "C" {
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * , fpos_t *);
-char *fgets(char * , int, FILE *);
-
-
-
-FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
-
-int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs" );
-size_t fread(void * , size_t, size_t, FILE * );
-FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen" );
-int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *);
-int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *, const char *);
-void rewind(FILE *);
-int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * , char * );
-int setvbuf(FILE * , char * , int, size_t);
-int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-}
-# 292 "/usr/include/stdio.h" 3 4
-extern "C" {
-
-
-
-char *ctermid(char *);
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-}
-# 314 "/usr/include/stdio.h" 3 4
-extern "C" {
-int pclose(FILE *);
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" );
-
-}
-# 336 "/usr/include/stdio.h" 3 4
-extern "C" {
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 373 "/usr/include/stdio.h" 3 4
-extern "C" {
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *, const char *) __asm("_" "tempnam" );
-}
-# 411 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 412 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-}
-
-
-
-extern "C" {
-int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-}
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
-ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
-ssize_t getline(char ** , size_t * , FILE * ) ;
-}
-
-
-
-
-
-
-
-extern "C" {
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-FILE *zopen(const char *, const char *, int);
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (*)(void *, char *, int),
-                 int (*)(void *, const char *, int),
-                 fpos_t (*)(void *, fpos_t, int),
-                 int (*)(void *));
-}
-# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling_npm(const char *name, size_t return_alias, int n_params,
-        ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
-extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_stack_vars(int nvars, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern void register_functions(int nfunctions, const char *module_name, ...);
-extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-extern bool disable_current_thread();
-extern void reenable_current_thread(bool was_disabled);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 63 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-# 88 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.h" 1
-
-
-
-
-
-
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h" 1
-# 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h"
-typedef double real_t;
-
-
-
-
-typedef real_t real3[3];
-
-static void zeroReal3(real3 a)
-{
-   a[0] = 0.0;
-   a[1] = 0.0;
-   a[2] = 0.0;
-}
-# 8 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.h" 2
-
-struct BasePotentialSt;
-struct LinkCellSt;
-
-
-
-
-
-typedef struct ForceExchangeDataSt
-{
-   real_t* dfEmbed;
-   struct LinkCellSt* boxes;
-}ForceExchangeData;
-
-struct BasePotentialSt* initEamPot(const char* dir, const char* file, const char* type);
-# 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c" 2
-# 89 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-
-# 1 "/usr/include/stdlib.h" 1 3 4
-# 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
 # 79 "/usr/include/sys/wait.h" 3 4
 typedef enum {
@@ -1132,7 +895,8 @@ typedef struct __darwin_ucontext ucontext_t;
 # 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
 typedef __darwin_sigset_t sigset_t;
 # 154 "/usr/include/sys/signal.h" 2 3 4
-
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 155 "/usr/include/sys/signal.h" 2 3 4
 # 1 "/usr/include/sys/_types/_uid_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uid_t.h" 3 4
 typedef __darwin_uid_t uid_t;
@@ -1593,6 +1357,10 @@ typedef struct {
  long long quot;
  long long rem;
 } lldiv_t;
+
+
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 100 "/usr/include/stdlib.h" 2 3 4
 # 117 "/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 127 "/usr/include/stdlib.h" 3 4
@@ -1894,7 +1662,10 @@ errno_t memset_s(void *, rsize_t, int, rsize_t) ;
 
 
 
-
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 153 "/usr/include/string.h" 2 3 4
 
 extern "C" {
 void *memmem(const void *, size_t, const void *, size_t) ;
@@ -2586,7 +2357,255 @@ void updateLinkCells(LinkCell* boxes, struct AtomsSt* atoms);
 int maxOccupancy(LinkCell* boxes);
 # 99 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c" 2
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 1
-# 9 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h"
+
+
+
+
+
+
+# 1 "/usr/include/stdio.h" 1 3 4
+# 71 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
+# 31 "/usr/include/sys/_types/_va_list.h" 3 4
+typedef __darwin_va_list va_list;
+# 72 "/usr/include/stdio.h" 2 3 4
+
+
+
+# 1 "/usr/include/sys/stdio.h" 1 3 4
+# 37 "/usr/include/sys/stdio.h" 3 4
+extern "C" {
+
+int renameat(int, const char *, int, const char *) ;
+
+}
+# 76 "/usr/include/stdio.h" 2 3 4
+
+typedef __darwin_off_t fpos_t;
+# 88 "/usr/include/stdio.h" 3 4
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+
+
+struct __sFILEX;
+# 122 "/usr/include/stdio.h" 3 4
+typedef struct __sFILE {
+ unsigned char *_p;
+ int _r;
+ int _w;
+ short _flags;
+ short _file;
+ struct __sbuf _bf;
+ int _lbfsize;
+
+
+ void *_cookie;
+ int (*_close)(void *);
+ int (*_read) (void *, char *, int);
+ fpos_t (*_seek) (void *, fpos_t, int);
+ int (*_write)(void *, const char *, int);
+
+
+ struct __sbuf _ub;
+ struct __sFILEX *_extra;
+ int _ur;
+
+
+ unsigned char _ubuf[3];
+ unsigned char _nbuf[1];
+
+
+ struct __sbuf _lb;
+
+
+ int _blksize;
+ fpos_t _offset;
+} FILE;
+
+extern "C" {
+extern FILE *__stdinp;
+extern FILE *__stdoutp;
+extern FILE *__stderrp;
+}
+# 230 "/usr/include/stdio.h" 3 4
+extern "C" {
+void clearerr(FILE *);
+int fclose(FILE *);
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+int fgetc(FILE *);
+int fgetpos(FILE * , fpos_t *);
+char *fgets(char * , int, FILE *);
+
+
+
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
+
+int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int fputc(int, FILE *);
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
+size_t fread(void * , size_t, size_t, FILE * );
+FILE *freopen(const char * , const char * ,
+                 FILE * ) __asm("_" "freopen" );
+int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+int fseek(FILE *, long, int);
+int fsetpos(FILE *, const fpos_t *);
+long ftell(FILE *);
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
+int getc(FILE *);
+int getchar(void);
+char *gets(char *);
+void perror(const char *);
+int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
+int putc(int, FILE *);
+int putchar(int);
+int puts(const char *);
+int remove(const char *);
+int rename (const char *, const char *);
+void rewind(FILE *);
+int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
+void setbuf(FILE * , char * );
+int setvbuf(FILE * , char * , int, size_t);
+int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+FILE *tmpfile(void);
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tmpnam(char *);
+int ungetc(int, FILE *);
+int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
+int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+}
+# 292 "/usr/include/stdio.h" 3 4
+extern "C" {
+
+
+
+char *ctermid(char *);
+
+
+
+
+
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
+
+int fileno(FILE *);
+}
+# 314 "/usr/include/stdio.h" 3 4
+extern "C" {
+int pclose(FILE *);
+
+
+
+FILE *popen(const char *, const char *) __asm("_" "popen" );
+
+}
+# 336 "/usr/include/stdio.h" 3 4
+extern "C" {
+int __srget(FILE *);
+int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int __swbuf(int, FILE *);
+}
+
+
+
+
+
+
+
+inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
+ if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+  return (*_p->_p++ = _c);
+ else
+  return (__swbuf(_c, _p));
+}
+# 373 "/usr/include/stdio.h" 3 4
+extern "C" {
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+
+
+
+int getw(FILE *);
+int putw(int, FILE *);
+
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
+}
+# 411 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_off_t.h" 3 4
+typedef __darwin_off_t off_t;
+# 412 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+}
+
+
+
+extern "C" {
+int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
+int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
+int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
+int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+}
+# 438 "/usr/include/stdio.h" 3 4
+extern "C" {
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
+ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
+ssize_t getline(char ** , size_t * , FILE * ) ;
+}
+
+
+
+
+
+
+
+extern "C" {
+extern const int sys_nerr;
+extern const char *const sys_errlist[];
+
+int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+char *ctermid_r(char *);
+char *fgetln(FILE *, size_t *);
+const char *fmtcheck(const char *, const char *);
+int fpurge(FILE *);
+void setbuffer(FILE *, char *, int);
+int setlinebuf(FILE *);
+int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+FILE *zopen(const char *, const char *, int);
+
+
+
+
+
+FILE *funopen(const void *,
+                 int (*)(void *, char *, int),
+                 int (*)(void *, const char *, int),
+                 fpos_t (*)(void *, fpos_t, int),
+                 int (*)(void *));
+}
+# 8 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMDTypes.h" 2
+
 # 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.h" 1
 
 
@@ -2886,7 +2905,7 @@ static void typeNotSupported(const char* callSite, const char* type);
 # 169 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 170 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 171 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-BasePotential* initEamPot_npm(const char* dir, const char* file, const char* type);void eamBcastPotential_npm(EamPotential* pot);void eamReadSetfl_npm(EamPotential* pot, const char* dir, const char* potName);void eamReadFuncfl_npm(EamPotential* pot, const char* dir, const char* potName);void typeNotSupported_npm(const char* callSite, const char* type);
+BasePotential* initEamPot_npm(const char* dir, const char* file, const char* type);void eamBcastPotential_npm(EamPotential* pot);void eamReadSetfl_npm(EamPotential* pot, const char* dir, const char* potName);void eamReadFuncfl_npm(EamPotential* pot, const char* dir, const char* potName);void typeNotSupported_npm(const char* callSite, const char* type);static int (*____chimes_extern_func_getMyRank)(void) = getMyRank;
 BasePotential* initEamPot_quick(const char* dir, const char* file, const char* type); BasePotential* initEamPot(const char* dir, const char* file, const char* type);void eamBcastPotential_quick(EamPotential* pot); void eamBcastPotential(EamPotential* pot);void eamReadSetfl_quick(EamPotential* pot, const char* dir, const char* potName); void eamReadSetfl(EamPotential* pot, const char* dir, const char* potName);void eamReadFuncfl_quick(EamPotential* pot, const char* dir, const char* potName); void eamReadFuncfl(EamPotential* pot, const char* dir, const char* potName);void typeNotSupported_quick(const char* callSite, const char* type); void typeNotSupported(const char* callSite, const char* type);
 BasePotential* initEamPot_resumable(const char* dir, const char* file, const char* type)
 # 172 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -2921,15 +2940,15 @@ BasePotential* initEamPot_resumable(const char* dir, const char* file, const cha
    pot->forceExchange = __null;
 # 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_5: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 5, 0UL, 0, 0); (getMyRank)(); }) == 0)
+    call_lbl_5: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 5, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) == 0)
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      if (strcmp(type, "setfl") == 0) {({ calling_npm("eamReadSetfl", 0UL, 3, 18420029360357226757UL, 18420029360357226815UL, 18420029360357226816UL); eamReadSetfl_npm(pot, dir, file); }); } else if (strcmp(type, "funcfl") == 0) ({ calling_npm("eamReadFuncfl", 0UL, 3, 18420029360357226757UL, 18420029360357226815UL, 18420029360357226816UL); eamReadFuncfl_npm(pot, dir, file); }); else ({ calling_npm("typeNotSupported", 0UL, 2, 18420029360357228791UL, 18420029360357226817UL); typeNotSupported_npm("initEamPot", type); });;
+      if (strcmp(type, "setfl") == 0) {({ calling_npm("eamReadSetfl", 0); eamReadSetfl_npm(pot, dir, file); }); } else if (strcmp(type, "funcfl") == 0) ({ calling_npm("eamReadFuncfl", 0); eamReadFuncfl_npm(pot, dir, file); }); else ({ calling_npm("typeNotSupported", 0); typeNotSupported_npm("initEamPot", type); });;
 # 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_8: ({ calling((void*)eamBcastPotential, 8, 0UL, 0, 1, (size_t)(18420029360357226757UL)); (eamBcastPotential)(pot); }) ;
+    call_lbl_8: ({ calling((void*)eamBcastPotential, 8, 0, 0UL, 1, (size_t)(18420029360357226757UL)); (eamBcastPotential)(pot); }) ;
 # 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    rm_stack(true, 18420029360357226757UL, "initEamPot", &____must_manage_initEamPot, ____alias_loc_id_10, ____chimes_did_disable0); return (BasePotential*) pot;
@@ -2937,7 +2956,7 @@ BasePotential* initEamPot_resumable(const char* dir, const char* file, const cha
 }
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-int eamForce_npm(SimFlat* s);void interpolate_npm(InterpolationObject* table, real_t r, real_t* f, real_t* df);
+int eamForce_npm(SimFlat* s);void interpolate_npm(InterpolationObject* table, real_t r, real_t* f, real_t* df);static void (*____chimes_extern_func_haloExchange)(struct HaloExchangeSt *, void *) = haloExchange;static struct HaloExchangeSt *(*____chimes_extern_func_initForceHaloExchange)(struct DomainSt *, struct LinkCellSt *) = initForceHaloExchange;static void (*____chimes_extern_func_profileStart)(enum TimerHandle) = profileStart;static void (*____chimes_extern_func_profileStop)(enum TimerHandle) = profileStop;static void (*____chimes_extern_func_zeroReal3)(double *) = zeroReal3;
 int eamForce_quick(SimFlat* s); int eamForce(SimFlat* s);void interpolate_quick(InterpolationObject* table, real_t r, real_t* f, real_t* df); void interpolate(InterpolationObject* table, real_t r, real_t* f, real_t* df);
 int eamForce_resumable(SimFlat* s)
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -2966,7 +2985,7 @@ EamPotential *pot;
 # 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->rhobar = (real_t*)malloc_wrapper(maxTotalAtoms*sizeof(real_t), 18420029360357227392UL, 0, 0);
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-       call_lbl_5: pot->forceExchange = ({ Domain * ____chimes_arg1; LinkCell * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg1 = (s->domain); ____chimes_arg2 = (s->boxes); } calling((void*)initForceHaloExchange, 5, 18420029360357227392UL, ____alias_loc_id_1, 2, (size_t)(18420029360357227392UL), (size_t)(18420029360357227392UL)); (initForceHaloExchange)(____chimes_arg1, ____chimes_arg2); }) ;
+       call_lbl_5: pot->forceExchange = ({ Domain * ____chimes_arg1; LinkCell * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg1 = (s->domain); ____chimes_arg2 = (s->boxes); } calling((void*)initForceHaloExchange, 5, ____alias_loc_id_1, 18420029360357227392UL, 2, (size_t)(18420029360357227392UL), (size_t)(18420029360357227392UL)); (initForceHaloExchange)(____chimes_arg1, ____chimes_arg2); }) ;
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->forceExchangeData = (ForceExchangeData*)malloc_wrapper(sizeof(ForceExchangeData), 18420029360357227392UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes));
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -2983,7 +3002,7 @@ EamPotential *pot;
 # 234 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 235 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 236 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      fsize = (s->boxes->nTotalBoxes * 64); { call_lbl_13: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(13, &____chimes_region_id0, 2, &fEmbed, &phiTmp); int ____chimes_first_iter0 = 1; ;
+      fsize = (s->boxes->nTotalBoxes * 64); { call_lbl_13: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(13, &____chimes_region_id0, 2, &fEmbed, &phiTmp); int ____chimes_first_iter0 = 1; ;
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -2993,7 +3012,7 @@ EamPotential *pot;
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int ii=0; ii<fsize; ii++)
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 2, &fEmbed, &phiTmp); ____chimes_first_iter0 = 0; }
+   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 2, &fEmbed, &phiTmp); ____chimes_first_iter0 = 0; }
 # 240 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       zeroReal3(s->atoms->f[ii]);
 # 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3003,10 +3022,10 @@ EamPotential *pot;
 # 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->rhobar[ii] = 0.;
 # 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
+   } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      nNbrBoxes = (27); { call_lbl_14: bool ____chimes_disable1 = disable_current_thread(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(14, &____chimes_region_id1, 2, &fEmbed, &phiTmp); int ____chimes_first_iter1 = 1; ;
+      nNbrBoxes = (27); { call_lbl_14: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(14, &____chimes_region_id1, 2, &fEmbed, &phiTmp); int ____chimes_first_iter1 = 1; ;
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3017,7 +3036,7 @@ EamPotential *pot;
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &fEmbed, &phiTmp); ____chimes_first_iter1 = 0; }
+   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &fEmbed, &phiTmp); ____chimes_first_iter1 = 0; }
 # 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 252 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3068,9 +3087,9 @@ EamPotential *pot;
 # 279 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
                    real_t dPhi; real_t rhoTmp; real_t dRho; ;
 # 280 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-                  ({ calling_npm("interpolate", 0UL, 4, 18420029360357227392UL, 0UL, 18420029360357226846UL, 18420029360357226847UL); interpolate_npm(pot->phi, r, &phiTmp, &dPhi); });
+                  ({ calling_npm("interpolate", 0); interpolate_npm(pot->phi, r, &phiTmp, &dPhi); });
 # 281 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-                  ({ calling_npm("interpolate", 0UL, 4, 18420029360357227392UL, 0UL, 18420029360357226848UL, 18420029360357226849UL); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); });
+                  ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); });
 # 282 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 283 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
                   { int k; for ( k = (0) ; k<3; k++)
@@ -3100,7 +3119,7 @@ EamPotential *pot;
 # 298 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 299 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); reenable_current_thread(____chimes_disable1); } ; { call_lbl_15: bool ____chimes_disable2 = disable_current_thread(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(15, &____chimes_region_id2, 2, &fEmbed, &phiTmp); int ____chimes_first_iter2 = 1;
+   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); } ; { call_lbl_15: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(15, &____chimes_region_id2, 2, &fEmbed, &phiTmp); int ____chimes_first_iter2 = 1;
 # 300 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 302 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3113,7 +3132,7 @@ EamPotential *pot;
 # 304 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 305 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 2, &fEmbed, &phiTmp); ____chimes_first_iter2 = 0; }
+   {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 2, &fEmbed, &phiTmp); ____chimes_first_iter2 = 0; }
 # 306 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 307 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3125,7 +3144,7 @@ EamPotential *pot;
 # 311 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
           real_t dfEmbed; ;
 # 312 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-         ({ calling_npm("interpolate", 0UL, 4, 18420029360357227392UL, 0UL, 18420029360357226854UL, 18420029360357226855UL); interpolate_npm(pot->f, pot->rhobar[iOff], &fEmbed, &dfEmbed); });
+         ({ calling_npm("interpolate", 0); interpolate_npm(pot->f, pot->rhobar[iOff], &fEmbed, &dfEmbed); });
 # 313 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
          pot->dfEmbed[iOff] = dfEmbed;
 # 314 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3135,15 +3154,15 @@ EamPotential *pot;
 # 316 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 317 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2); reenable_current_thread(____chimes_disable2); }
+   } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
 # 318 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 319 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 320 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   do { call_lbl_8: ({ calling((void*)profileStart, 8, 0UL, ____alias_loc_id_2, 1, (size_t)(0UL)); (profileStart)(eamHaloTimer); }) ; } while(0);
+   do { call_lbl_8: ({ calling((void*)profileStart, 8, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (profileStart)(eamHaloTimer); }) ; } while(0);
 # 321 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_9: ({ HaloExchange * ____chimes_arg4; void * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg4 = (pot->forceExchange); ____chimes_arg5 = (pot->forceExchangeData); } calling((void*)haloExchange, 9, 0UL, 0, 2, (size_t)(18420029360357227392UL), (size_t)(18420029360357227392UL)); (haloExchange)(____chimes_arg4, ____chimes_arg5); }) ;
+    call_lbl_9: ({ HaloExchange * ____chimes_arg4; void * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg4 = (pot->forceExchange); ____chimes_arg5 = (pot->forceExchangeData); } calling((void*)haloExchange, 9, 0, 0UL, 2, (size_t)(18420029360357227392UL), (size_t)(18420029360357227392UL)); (haloExchange)(____chimes_arg4, ____chimes_arg5); }) ;
 # 322 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   do { call_lbl_10: ({ calling((void*)profileStop, 10, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) ; } while(0); { call_lbl_16: bool ____chimes_disable3 = disable_current_thread(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(16, &____chimes_region_id3, 2, &fEmbed, &phiTmp); int ____chimes_first_iter3 = 1; ;
+   do { call_lbl_10: ({ calling((void*)profileStop, 10, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) ; } while(0); { call_lbl_16: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(16, &____chimes_region_id3, 2, &fEmbed, &phiTmp); int ____chimes_first_iter3 = 1; ;
 # 323 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 324 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 325 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3156,7 +3175,7 @@ EamPotential *pot;
 # 327 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 328 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 2, &fEmbed, &phiTmp); ____chimes_first_iter3 = 0; }
+   {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 2, &fEmbed, &phiTmp); ____chimes_first_iter3 = 0; }
 # 329 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 330 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3207,7 +3226,7 @@ EamPotential *pot;
 # 357 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
                   real_t rhoTmp; real_t dRho; ;
 # 358 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-                  ({ calling_npm("interpolate", 0UL, 4, 18420029360357227392UL, 0UL, 18420029360357226867UL, 18420029360357226868UL); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); });
+                  ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); });
 # 359 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 360 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
                   { int k; for ( k = (0) ; k<3; k++)
@@ -3227,7 +3246,7 @@ EamPotential *pot;
 # 368 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 369 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3); reenable_current_thread(____chimes_disable3); }
+   } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); }
 # 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 371 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    s->ePotential = (real_t) etot;
@@ -3263,7 +3282,7 @@ void eamPrint_resumable(FILE* file, BasePotential* pot)
 rm_stack(false, 0UL, "eamPrint", &____must_manage_eamPrint, ____alias_loc_id_12, ____chimes_did_disable2); }
 # 387 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 388 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-void eamDestroy_npm(BasePotential** pPot);void destroyInterpolationObject_npm(InterpolationObject** a);
+void eamDestroy_npm(BasePotential** pPot);void destroyInterpolationObject_npm(InterpolationObject** a);static void (*____chimes_extern_func_destroyHaloExchange)(struct HaloExchangeSt **) = destroyHaloExchange;
 void eamDestroy_quick(BasePotential** pPot); void eamDestroy(BasePotential** pPot);void destroyInterpolationObject_quick(InterpolationObject** a); void destroyInterpolationObject(InterpolationObject** a);
 void eamDestroy_resumable(BasePotential** pPot)
 # 389 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3276,13 +3295,13 @@ void eamDestroy_resumable(BasePotential** pPot)
 # 392 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    if (!pot) {rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_13, ____chimes_did_disable3); return;; };
 # 393 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   ({ calling_npm("destroyInterpolationObject", 0UL, 1, 18420029360357227638UL); destroyInterpolationObject_npm(&(pot->phi)); });
+   ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->phi)); });
 # 394 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   ({ calling_npm("destroyInterpolationObject", 0UL, 1, 18420029360357227638UL); destroyInterpolationObject_npm(&(pot->rho)); });
+   ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->rho)); });
 # 395 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   ({ calling_npm("destroyInterpolationObject", 0UL, 1, 18420029360357227638UL); destroyInterpolationObject_npm(&(pot->f)); });
+   ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->f)); });
 # 396 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_3: ({ HaloExchange ** ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (&(pot->forceExchange)); } calling((void*)destroyHaloExchange, 3, 0UL, ____alias_loc_id_3, 1, (size_t)(18420029360357227638UL)); (destroyHaloExchange)(____chimes_arg7); }) ;
+    call_lbl_3: ({ HaloExchange ** ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = (&(pot->forceExchange)); } calling((void*)destroyHaloExchange, 3, ____alias_loc_id_3, 0UL, 1, (size_t)(18420029360357227638UL)); (destroyHaloExchange)(____chimes_arg7); }) ;
 # 397 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    free_wrapper(pot, 18420029360357227638UL);
 # 398 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3310,7 +3329,7 @@ typedef struct _buf_t {
 # 411 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 412 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 413 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-void bcastInterpolationObject_npm(InterpolationObject** table);
+void bcastInterpolationObject_npm(InterpolationObject** table);static void (*____chimes_extern_func_bcastParallel)(void *, int, int) = bcastParallel;
 void bcastInterpolationObject_quick(InterpolationObject** table); void bcastInterpolationObject(InterpolationObject** table);
 void eamBcastPotential_resumable(EamPotential* pot)
 # 414 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3322,7 +3341,7 @@ void eamBcastPotential_resumable(EamPotential* pot)
      ;
 # 417 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 418 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_4: if (alias_group_changed(____alias_loc_id_4) || ({ calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) == 0)
+    call_lbl_4: if (alias_group_changed(____alias_loc_id_4) || ({ calling((void*)getMyRank, 4, ____alias_loc_id_4, 0UL, 0); (getMyRank)(); }) == 0)
 # 419 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 420 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3340,7 +3359,7 @@ void eamBcastPotential_resumable(EamPotential* pot)
 # 426 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 427 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_7: ({ void * ____chimes_arg8; int ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg8 = (&buf); ____chimes_arg9 = (sizeof (buf)); } calling((void*)bcastParallel, 7, 0UL, ____alias_loc_id_5, 3, (size_t)(18420029360357228193UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg8, ____chimes_arg9, 0); }) ;
+    call_lbl_7: ({ void * ____chimes_arg8; int ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg8 = (&buf); ____chimes_arg9 = (sizeof (buf)); } calling((void*)bcastParallel, 7, ____alias_loc_id_5, 0UL, 3, (size_t)(18420029360357228193UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg8, ____chimes_arg9, 0); }) ;
 # 428 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->cutoff = buf.cutoff;
 # 429 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3355,11 +3374,11 @@ void eamBcastPotential_resumable(EamPotential* pot)
    strcpy(pot->name, buf.name);
 # 434 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 435 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_10: ({ InterpolationObject ** ____chimes_arg11; if (!____chimes_replaying) { ____chimes_arg11 = (&pot->phi); } calling((void*)bcastInterpolationObject, 10, 0UL, ____alias_loc_id_6, 1, (size_t)(18420029360357228288UL)); (bcastInterpolationObject)(____chimes_arg11); }) ;
+    call_lbl_10: ({ InterpolationObject ** ____chimes_arg11; if (!____chimes_replaying) { ____chimes_arg11 = (&pot->phi); } calling((void*)bcastInterpolationObject, 10, ____alias_loc_id_6, 0UL, 1, (size_t)(18420029360357228288UL)); (bcastInterpolationObject)(____chimes_arg11); }) ;
 # 436 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_11: ({ InterpolationObject ** ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = (&pot->rho); } calling((void*)bcastInterpolationObject, 11, 0UL, 0, 1, (size_t)(18420029360357228288UL)); (bcastInterpolationObject)(____chimes_arg12); }) ;
+    call_lbl_11: ({ InterpolationObject ** ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = (&pot->rho); } calling((void*)bcastInterpolationObject, 11, 0, 0UL, 1, (size_t)(18420029360357228288UL)); (bcastInterpolationObject)(____chimes_arg12); }) ;
 # 437 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_12: ({ InterpolationObject ** ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = (&pot->f); } calling((void*)bcastInterpolationObject, 12, 0UL, 0, 1, (size_t)(18420029360357228288UL)); (bcastInterpolationObject)(____chimes_arg13); }) ;
+    call_lbl_12: ({ InterpolationObject ** ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = (&pot->f); } calling((void*)bcastInterpolationObject, 12, 0, 0UL, 1, (size_t)(18420029360357228288UL)); (bcastInterpolationObject)(____chimes_arg13); }) ;
 # 438 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 rm_stack(false, 0UL, "eamBcastPotential", &____must_manage_eamBcastPotential, ____alias_loc_id_17, ____chimes_did_disable4); }
 # 452 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3408,9 +3427,9 @@ void destroyInterpolationObject_resumable(InterpolationObject** a)
 # 477 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(18420029360357228612UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 478 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable6); return;; };
+   if (!a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_22, ____chimes_did_disable6); return;; };
 # 479 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!*a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable6); return;; };
+   if (!*a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_22, ____chimes_did_disable6); return;; };
 # 480 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    if ( (*a)->values)
 # 481 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3427,7 +3446,7 @@ void destroyInterpolationObject_resumable(InterpolationObject** a)
    *a = __null;
 # 487 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 488 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable6); return;
+   rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_22, ____chimes_did_disable6); return;
 # 489 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 }
 # 512 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3470,7 +3489,7 @@ void interpolate_resumable(InterpolationObject* table, real_t r, real_t* f, real
 # 533 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *df = 0.5*(g1 + r*(g2-g1))*table->invDx;
 # 534 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-rm_stack(false, 0UL, "interpolate", &____must_manage_interpolate, ____alias_loc_id_23, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "interpolate", &____must_manage_interpolate, ____alias_loc_id_24, ____chimes_did_disable7); }
 # 535 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 536 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 typedef struct _buf_2_t {
@@ -3491,7 +3510,7 @@ buf_2_t buf;
     ;
 # 552 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 553 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_2: if (alias_group_changed(____alias_loc_id_7) || ({ calling((void*)getMyRank, 2, 0UL, 0, 0); (getMyRank)(); }) == 0)
+    call_lbl_2: if (alias_group_changed(____alias_loc_id_7) || ({ calling((void*)getMyRank, 2, ____alias_loc_id_7, 0UL, 0); (getMyRank)(); }) == 0)
 # 554 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 555 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3503,10 +3522,10 @@ buf_2_t buf;
 # 558 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 559 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_3: ({ void * ____chimes_arg14; int ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg14 = (&buf); ____chimes_arg15 = (sizeof (buf)); } calling((void*)bcastParallel, 3, 0UL, ____alias_loc_id_8, 3, (size_t)(18420029360357228469UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg14, ____chimes_arg15, 0); }) ;
+    call_lbl_3: ({ void * ____chimes_arg14; int ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg14 = (&buf); ____chimes_arg15 = (sizeof (buf)); } calling((void*)bcastParallel, 3, ____alias_loc_id_8, 0UL, 3, (size_t)(18420029360357228469UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg14, ____chimes_arg15, 0); }) ;
 # 560 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 561 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_4: if ( ({ calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) != 0)
+    call_lbl_4: if ( ({ calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) != 0)
 # 562 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 563 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3529,7 +3548,7 @@ buf_2_t buf;
 # 572 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       valuesSize = (sizeof(real_t) * ((*table)->n + 3)) ;
 # 573 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_9: ({ void * ____chimes_arg17; if (!____chimes_replaying) { ____chimes_arg17 = ((*table)->values - 1); } calling((void*)bcastParallel, 9, 0UL, ____alias_loc_id_9, 3, (size_t)(18420029360357228540UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg17, valuesSize, 0); }) ;
+    call_lbl_9: ({ void * ____chimes_arg17; if (!____chimes_replaying) { ____chimes_arg17 = ((*table)->values - 1); } calling((void*)bcastParallel, 9, ____alias_loc_id_9, 0UL, 3, (size_t)(18420029360357228540UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg17, valuesSize, 0); }) ;
 # 574 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 rm_stack(false, 0UL, "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 0, ____chimes_did_disable8); }
 # 575 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3577,7 +3596,7 @@ char tmp[4096];
 # 640 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     FILE *potFile; potFile = (fopen(tmp, "r")) ;
 # 641 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (potFile == __null) {({ calling_npm("fileNotFound", 0UL, 2, 18420029360357228809UL, 18420029360357227669UL); fileNotFound_npm("eamReadSetfl", tmp); }); };
+   if (potFile == __null) {({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadSetfl", tmp); }); };
 # 643 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 644 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 645 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3595,7 +3614,7 @@ char tmp[4096];
 # 652 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    sscanf(tmp, "%d", &nElems);
 # 653 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (nElems != 1) {({ calling_npm("notAlloyReady", 0UL, 1, 18420029360357228809UL); notAlloyReady_npm("eamReadSetfl"); }); };
+   if (nElems != 1) {({ calling_npm("notAlloyReady", 0); notAlloyReady_npm("eamReadSetfl"); }); };
 # 655 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 656 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 657 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3643,13 +3662,13 @@ char tmp[4096];
 # 682 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (0) ;ii < nRho; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
 # 684 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->f = ({ calling_npm("initInterpolationObject", 18420029360357227814UL, 4, 0UL, 0UL, 0UL, 18420029360357227787UL); initInterpolationObject_npm(nRho, x0, dRho, buf); });
+   pot->f = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); });
 # 685 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 686 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 687 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
 # 689 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->rho = ({ calling_npm("initInterpolationObject", 18420029360357227814UL, 4, 0UL, 0UL, 0UL, 18420029360357227787UL); initInterpolationObject_npm(nR, x0, dR, buf); });
+   pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 690 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 691 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 692 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3667,7 +3686,7 @@ char tmp[4096];
 # 699 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    buf[0] = buf[1] + (buf[1] - buf[2]);
 # 700 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->phi = ({ calling_npm("initInterpolationObject", 18420029360357227814UL, 4, 0UL, 0UL, 0UL, 18420029360357227787UL); initInterpolationObject_npm(nR, x0, dR, buf); });
+   pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 701 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 702 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    free_wrapper(buf, 18420029360357227787UL);
@@ -3694,7 +3713,7 @@ char tmp[4096];
 # 758 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     FILE *potFile; potFile = (fopen(tmp, "r")) ;
 # 759 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (potFile == __null) {({ calling_npm("fileNotFound", 0UL, 2, 18420029360357228800UL, 18420029360357227922UL); fileNotFound_npm("eamReadFuncfl", tmp); }); };
+   if (potFile == __null) {({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadFuncfl", tmp); }); };
 # 761 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 762 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 763 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3750,7 +3769,7 @@ char tmp[4096];
 # 792 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (0) ;ii < nRho; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
 # 794 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->f = ({ calling_npm("initInterpolationObject", 18420029360357228059UL, 4, 0UL, 0UL, 0UL, 18420029360357228034UL); initInterpolationObject_npm(nRho, x0, dRho, buf); });
+   pot->f = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); });
 # 795 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 796 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 797 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3770,13 +3789,13 @@ char tmp[4096];
 # 805 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    buf[0] = buf[1] + (buf[1] - buf[2]);
 # 806 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->phi = ({ calling_npm("initInterpolationObject", 18420029360357228059UL, 4, 0UL, 0UL, 0UL, 18420029360357228034UL); initInterpolationObject_npm(nR, x0, dR, buf); });
+   pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 807 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 808 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 809 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
 # 811 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->rho = ({ calling_npm("initInterpolationObject", 18420029360357228059UL, 4, 0UL, 0UL, 0UL, 18420029360357228034UL); initInterpolationObject_npm(nR, x0, dR, buf); });
+   pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 813 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    free_wrapper(buf, 18420029360357228034UL);
@@ -3860,15 +3879,15 @@ BasePotential* initEamPot_quick(const char* dir, const char* file, const char* t
    pot->forceExchange = __null;
 # 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_5: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 5, 0UL, 0, 0); (getMyRank)(); }) == 0)
+    call_lbl_5: if (alias_group_changed(____alias_loc_id_0) || ({ calling((void*)getMyRank, 5, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) == 0)
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      if (strcmp(type, "setfl") == 0) {({ calling_npm("eamReadSetfl", 0UL, 3, 18420029360357226757UL, 18420029360357226815UL, 18420029360357226816UL); eamReadSetfl_npm(pot, dir, file); }); } else if (strcmp(type, "funcfl") == 0) ({ calling_npm("eamReadFuncfl", 0UL, 3, 18420029360357226757UL, 18420029360357226815UL, 18420029360357226816UL); eamReadFuncfl_npm(pot, dir, file); }); else ({ calling_npm("typeNotSupported", 0UL, 2, 18420029360357228791UL, 18420029360357226817UL); typeNotSupported_npm("initEamPot", type); });;
+      if (strcmp(type, "setfl") == 0) {({ calling_npm("eamReadSetfl", 0); eamReadSetfl_npm(pot, dir, file); }); } else if (strcmp(type, "funcfl") == 0) ({ calling_npm("eamReadFuncfl", 0); eamReadFuncfl_npm(pot, dir, file); }); else ({ calling_npm("typeNotSupported", 0); typeNotSupported_npm("initEamPot", type); });;
 # 198 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 199 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_8: ({ calling((void*)eamBcastPotential, 8, 0UL, 0, 1, (size_t)(18420029360357226757UL)); eamBcastPotential_quick(pot); }) ;
+    call_lbl_8: ({ calling((void*)eamBcastPotential, 8, 0, 0UL, 1, (size_t)(18420029360357226757UL)); eamBcastPotential_quick(pot); }) ;
 # 200 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 201 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    rm_stack(true, 18420029360357226757UL, "initEamPot", &____must_manage_initEamPot, ____alias_loc_id_10, ____chimes_did_disable0); return (BasePotential*) pot;
@@ -3904,7 +3923,7 @@ EamPotential *pot;
 # 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->rhobar = (real_t*)malloc_wrapper(maxTotalAtoms*sizeof(real_t), 18420029360357227392UL, 0, 0);
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-       call_lbl_5: pot->forceExchange = ({ calling((void*)initForceHaloExchange, 5, 18420029360357227392UL, ____alias_loc_id_1, 2, (size_t)(18420029360357227392UL), (size_t)(18420029360357227392UL)); (initForceHaloExchange)(s->domain, s->boxes); }) ;
+       call_lbl_5: pot->forceExchange = ({ calling((void*)initForceHaloExchange, 5, ____alias_loc_id_1, 18420029360357227392UL, 2, (size_t)(18420029360357227392UL), (size_t)(18420029360357227392UL)); (initForceHaloExchange)(s->domain, s->boxes); }) ;
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->forceExchangeData = (ForceExchangeData*)malloc_wrapper(sizeof(ForceExchangeData), 18420029360357227392UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes));
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3921,7 +3940,7 @@ EamPotential *pot;
 # 234 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 235 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 236 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      fsize = (s->boxes->nTotalBoxes * 64); { call_lbl_13: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(13, &____chimes_region_id0, 2, &fEmbed, &phiTmp); int ____chimes_first_iter0 = 1; ;
+      fsize = (s->boxes->nTotalBoxes * 64); { call_lbl_13: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(13, &____chimes_region_id0, 2, &fEmbed, &phiTmp); int ____chimes_first_iter0 = 1; ;
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 237 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3931,7 +3950,7 @@ EamPotential *pot;
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int ii=0; ii<fsize; ii++)
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 2, &fEmbed, &phiTmp); ____chimes_first_iter0 = 0; }
+   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 2, &fEmbed, &phiTmp); ____chimes_first_iter0 = 0; }
 # 240 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       zeroReal3(s->atoms->f[ii]);
 # 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3941,10 +3960,10 @@ EamPotential *pot;
 # 243 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->rhobar[ii] = 0.;
 # 244 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
+   } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 245 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 246 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      nNbrBoxes = (27); { call_lbl_14: bool ____chimes_disable1 = disable_current_thread(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(14, &____chimes_region_id1, 2, &fEmbed, &phiTmp); int ____chimes_first_iter1 = 1; ;
+      nNbrBoxes = (27); { call_lbl_14: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(14, &____chimes_region_id1, 2, &fEmbed, &phiTmp); int ____chimes_first_iter1 = 1; ;
 # 247 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 248 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -3955,7 +3974,7 @@ EamPotential *pot;
 # 249 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &fEmbed, &phiTmp); ____chimes_first_iter1 = 0; }
+   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &fEmbed, &phiTmp); ____chimes_first_iter1 = 0; }
 # 251 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 252 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4006,9 +4025,9 @@ EamPotential *pot;
 # 279 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
                    real_t dPhi; real_t rhoTmp; real_t dRho; ;
 # 280 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-                  ({ calling_npm("interpolate", 0UL, 4, 18420029360357227392UL, 0UL, 18420029360357226846UL, 18420029360357226847UL); interpolate_npm(pot->phi, r, &phiTmp, &dPhi); });
+                  ({ calling_npm("interpolate", 0); interpolate_npm(pot->phi, r, &phiTmp, &dPhi); });
 # 281 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-                  ({ calling_npm("interpolate", 0UL, 4, 18420029360357227392UL, 0UL, 18420029360357226848UL, 18420029360357226849UL); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); });
+                  ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); });
 # 282 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 283 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
                   { int k; for ( k = (0) ; k<3; k++)
@@ -4038,7 +4057,7 @@ EamPotential *pot;
 # 298 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 299 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1); reenable_current_thread(____chimes_disable1); } ; { call_lbl_15: bool ____chimes_disable2 = disable_current_thread(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(15, &____chimes_region_id2, 2, &fEmbed, &phiTmp); int ____chimes_first_iter2 = 1;
+   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); } ; { call_lbl_15: bool ____chimes_disable2 = disable_current_thread(); void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(15, &____chimes_region_id2, 2, &fEmbed, &phiTmp); int ____chimes_first_iter2 = 1;
 # 300 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 301 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 302 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4051,7 +4070,7 @@ EamPotential *pot;
 # 304 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 305 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 2, &fEmbed, &phiTmp); ____chimes_first_iter2 = 0; }
+   {if (____chimes_first_iter2) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 2, &fEmbed, &phiTmp); ____chimes_first_iter2 = 0; }
 # 306 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 307 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4063,7 +4082,7 @@ EamPotential *pot;
 # 311 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
           real_t dfEmbed; ;
 # 312 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-         ({ calling_npm("interpolate", 0UL, 4, 18420029360357227392UL, 0UL, 18420029360357226854UL, 18420029360357226855UL); interpolate_npm(pot->f, pot->rhobar[iOff], &fEmbed, &dfEmbed); });
+         ({ calling_npm("interpolate", 0); interpolate_npm(pot->f, pot->rhobar[iOff], &fEmbed, &dfEmbed); });
 # 313 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
          pot->dfEmbed[iOff] = dfEmbed;
 # 314 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4073,15 +4092,15 @@ EamPotential *pot;
 # 316 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 317 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2); reenable_current_thread(____chimes_disable2); }
+   } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
 # 318 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 319 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 320 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   do { call_lbl_8: ({ calling((void*)profileStart, 8, 0UL, ____alias_loc_id_2, 1, (size_t)(0UL)); (profileStart)(eamHaloTimer); }) ; } while(0);
+   do { call_lbl_8: ({ calling((void*)profileStart, 8, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (profileStart)(eamHaloTimer); }) ; } while(0);
 # 321 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_9: ({ calling((void*)haloExchange, 9, 0UL, 0, 2, (size_t)(18420029360357227392UL), (size_t)(18420029360357227392UL)); (haloExchange)(pot->forceExchange, pot->forceExchangeData); }) ;
+    call_lbl_9: ({ calling((void*)haloExchange, 9, 0, 0UL, 2, (size_t)(18420029360357227392UL), (size_t)(18420029360357227392UL)); (haloExchange)(pot->forceExchange, pot->forceExchangeData); }) ;
 # 322 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   do { call_lbl_10: ({ calling((void*)profileStop, 10, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) ; } while(0); { call_lbl_16: bool ____chimes_disable3 = disable_current_thread(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(16, &____chimes_region_id3, 2, &fEmbed, &phiTmp); int ____chimes_first_iter3 = 1; ;
+   do { call_lbl_10: ({ calling((void*)profileStop, 10, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) ; } while(0); { call_lbl_16: bool ____chimes_disable3 = disable_current_thread(); void *____chimes_parent_ctx4 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth3 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth3 = get_thread_stack_depth(); size_t ____chimes_region_id3; unsigned ____chimes_parent_thread3 = entering_omp_parallel(16, &____chimes_region_id3, 2, &fEmbed, &phiTmp); int ____chimes_first_iter3 = 1; ;
 # 323 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 324 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 325 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4094,7 +4113,7 @@ EamPotential *pot;
 # 327 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 328 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 2, &fEmbed, &phiTmp); ____chimes_first_iter3 = 0; }
+   {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 2, &fEmbed, &phiTmp); ____chimes_first_iter3 = 0; }
 # 329 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 330 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4145,7 +4164,7 @@ EamPotential *pot;
 # 357 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
                   real_t rhoTmp; real_t dRho; ;
 # 358 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-                  ({ calling_npm("interpolate", 0UL, 4, 18420029360357227392UL, 0UL, 18420029360357226867UL, 18420029360357226868UL); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); });
+                  ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); });
 # 359 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 360 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
                   { int k; for ( k = (0) ; k<3; k++)
@@ -4165,7 +4184,7 @@ EamPotential *pot;
 # 368 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       } }
 # 369 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3); reenable_current_thread(____chimes_disable3); }
+   } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); }
 # 370 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 371 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    s->ePotential = (real_t) etot;
@@ -4212,13 +4231,13 @@ void eamDestroy_quick(BasePotential** pPot)
 # 392 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    if (!pot) {rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_13, ____chimes_did_disable3); return;; };
 # 393 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   ({ calling_npm("destroyInterpolationObject", 0UL, 1, 18420029360357227638UL); destroyInterpolationObject_npm(&(pot->phi)); });
+   ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->phi)); });
 # 394 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   ({ calling_npm("destroyInterpolationObject", 0UL, 1, 18420029360357227638UL); destroyInterpolationObject_npm(&(pot->rho)); });
+   ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->rho)); });
 # 395 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   ({ calling_npm("destroyInterpolationObject", 0UL, 1, 18420029360357227638UL); destroyInterpolationObject_npm(&(pot->f)); });
+   ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->f)); });
 # 396 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_3: ({ calling((void*)destroyHaloExchange, 3, 0UL, ____alias_loc_id_3, 1, (size_t)(18420029360357227638UL)); (destroyHaloExchange)(&(pot->forceExchange)); }) ;
+    call_lbl_3: ({ calling((void*)destroyHaloExchange, 3, ____alias_loc_id_3, 0UL, 1, (size_t)(18420029360357227638UL)); (destroyHaloExchange)(&(pot->forceExchange)); }) ;
 # 397 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    free_wrapper(pot, 18420029360357227638UL);
 # 398 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4241,7 +4260,7 @@ void eamBcastPotential_quick(EamPotential* pot)
      ;
 # 417 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 418 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_4: if (alias_group_changed(____alias_loc_id_4) || ({ calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) == 0)
+    call_lbl_4: if (alias_group_changed(____alias_loc_id_4) || ({ calling((void*)getMyRank, 4, ____alias_loc_id_4, 0UL, 0); (getMyRank)(); }) == 0)
 # 419 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 420 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4259,7 +4278,7 @@ void eamBcastPotential_quick(EamPotential* pot)
 # 426 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 427 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_7: ({ calling((void*)bcastParallel, 7, 0UL, ____alias_loc_id_5, 3, (size_t)(18420029360357228193UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) ;
+    call_lbl_7: ({ calling((void*)bcastParallel, 7, ____alias_loc_id_5, 0UL, 3, (size_t)(18420029360357228193UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) ;
 # 428 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->cutoff = buf.cutoff;
 # 429 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4274,11 +4293,11 @@ void eamBcastPotential_quick(EamPotential* pot)
    strcpy(pot->name, buf.name);
 # 434 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 435 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_10: ({ calling((void*)bcastInterpolationObject, 10, 0UL, ____alias_loc_id_6, 1, (size_t)(18420029360357228288UL)); bcastInterpolationObject_quick(&pot->phi); }) ;
+    call_lbl_10: ({ calling((void*)bcastInterpolationObject, 10, ____alias_loc_id_6, 0UL, 1, (size_t)(18420029360357228288UL)); bcastInterpolationObject_quick(&pot->phi); }) ;
 # 436 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_11: ({ calling((void*)bcastInterpolationObject, 11, 0UL, 0, 1, (size_t)(18420029360357228288UL)); bcastInterpolationObject_quick(&pot->rho); }) ;
+    call_lbl_11: ({ calling((void*)bcastInterpolationObject, 11, 0, 0UL, 1, (size_t)(18420029360357228288UL)); bcastInterpolationObject_quick(&pot->rho); }) ;
 # 437 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_12: ({ calling((void*)bcastInterpolationObject, 12, 0UL, 0, 1, (size_t)(18420029360357228288UL)); bcastInterpolationObject_quick(&pot->f); }) ;
+    call_lbl_12: ({ calling((void*)bcastInterpolationObject, 12, 0, 0UL, 1, (size_t)(18420029360357228288UL)); bcastInterpolationObject_quick(&pot->f); }) ;
 # 438 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 rm_stack(false, 0UL, "eamBcastPotential", &____must_manage_eamBcastPotential, ____alias_loc_id_17, ____chimes_did_disable4); }
 
@@ -4329,9 +4348,9 @@ void destroyInterpolationObject_quick(InterpolationObject** a)
 # 477 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(18420029360357228612UL)) ; ; ;
 # 478 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable6); return;; };
+   if (!a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_22, ____chimes_did_disable6); return;; };
 # 479 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!*a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable6); return;; };
+   if (!*a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_22, ____chimes_did_disable6); return;; };
 # 480 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    if ( (*a)->values)
 # 481 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4348,7 +4367,7 @@ void destroyInterpolationObject_quick(InterpolationObject** a)
    *a = __null;
 # 487 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 488 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable6); return;
+   rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_22, ____chimes_did_disable6); return;
 # 489 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 }
 
@@ -4392,7 +4411,7 @@ void interpolate_quick(InterpolationObject* table, real_t r, real_t* f, real_t* 
 # 533 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    *df = 0.5*(g1 + r*(g2-g1))*table->invDx;
 # 534 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-rm_stack(false, 0UL, "interpolate", &____must_manage_interpolate, ____alias_loc_id_23, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "interpolate", &____must_manage_interpolate, ____alias_loc_id_24, ____chimes_did_disable7); }
 
 void interpolate(InterpolationObject* table, real_t r, real_t* f, real_t* df) { (____chimes_replaying ? interpolate_resumable(table, r, f, df) : interpolate_quick(table, r, f, df)); }
 
@@ -4405,7 +4424,7 @@ buf_2_t buf;
     ;
 # 552 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 553 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_2: if (alias_group_changed(____alias_loc_id_7) || ({ calling((void*)getMyRank, 2, 0UL, 0, 0); (getMyRank)(); }) == 0)
+    call_lbl_2: if (alias_group_changed(____alias_loc_id_7) || ({ calling((void*)getMyRank, 2, ____alias_loc_id_7, 0UL, 0); (getMyRank)(); }) == 0)
 # 554 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 555 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4417,10 +4436,10 @@ buf_2_t buf;
 # 558 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 559 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_3: ({ calling((void*)bcastParallel, 3, 0UL, ____alias_loc_id_8, 3, (size_t)(18420029360357228469UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) ;
+    call_lbl_3: ({ calling((void*)bcastParallel, 3, ____alias_loc_id_8, 0UL, 3, (size_t)(18420029360357228469UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) ;
 # 560 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 561 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_4: if ( ({ calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) != 0)
+    call_lbl_4: if ( ({ calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) != 0)
 # 562 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 563 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4443,7 +4462,7 @@ buf_2_t buf;
 # 572 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       valuesSize = (sizeof(real_t) * ((*table)->n + 3)) ;
 # 573 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-    call_lbl_9: ({ calling((void*)bcastParallel, 9, 0UL, ____alias_loc_id_9, 3, (size_t)(18420029360357228540UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)((*table)->values - 1, valuesSize, 0); }) ;
+    call_lbl_9: ({ calling((void*)bcastParallel, 9, ____alias_loc_id_9, 0UL, 3, (size_t)(18420029360357228540UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)((*table)->values - 1, valuesSize, 0); }) ;
 # 574 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 rm_stack(false, 0UL, "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 0, ____chimes_did_disable8); }
 
@@ -4462,7 +4481,7 @@ char tmp[4096];
 # 640 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     FILE *potFile; potFile = (fopen(tmp, "r")) ;
 # 641 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (potFile == __null) {({ calling_npm("fileNotFound", 0UL, 2, 18420029360357228809UL, 18420029360357227669UL); fileNotFound_npm("eamReadSetfl", tmp); }); };
+   if (potFile == __null) {({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadSetfl", tmp); }); };
 # 643 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 644 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 645 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4480,7 +4499,7 @@ char tmp[4096];
 # 652 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    sscanf(tmp, "%d", &nElems);
 # 653 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (nElems != 1) {({ calling_npm("notAlloyReady", 0UL, 1, 18420029360357228809UL); notAlloyReady_npm("eamReadSetfl"); }); };
+   if (nElems != 1) {({ calling_npm("notAlloyReady", 0); notAlloyReady_npm("eamReadSetfl"); }); };
 # 655 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 656 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 657 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4528,13 +4547,13 @@ char tmp[4096];
 # 682 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (0) ;ii < nRho; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
 # 684 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->f = ({ calling_npm("initInterpolationObject", 18420029360357227814UL, 4, 0UL, 0UL, 0UL, 18420029360357227787UL); initInterpolationObject_npm(nRho, x0, dRho, buf); });
+   pot->f = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); });
 # 685 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 686 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 687 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
 # 689 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->rho = ({ calling_npm("initInterpolationObject", 18420029360357227814UL, 4, 0UL, 0UL, 0UL, 18420029360357227787UL); initInterpolationObject_npm(nR, x0, dR, buf); });
+   pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 690 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 691 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 692 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4552,7 +4571,7 @@ char tmp[4096];
 # 699 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    buf[0] = buf[1] + (buf[1] - buf[2]);
 # 700 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->phi = ({ calling_npm("initInterpolationObject", 18420029360357227814UL, 4, 0UL, 0UL, 0UL, 18420029360357227787UL); initInterpolationObject_npm(nR, x0, dR, buf); });
+   pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 701 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 702 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    free_wrapper(buf, 18420029360357227787UL);
@@ -4580,7 +4599,7 @@ char tmp[4096];
 # 758 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
     FILE *potFile; potFile = (fopen(tmp, "r")) ;
 # 759 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (potFile == __null) {({ calling_npm("fileNotFound", 0UL, 2, 18420029360357228800UL, 18420029360357227922UL); fileNotFound_npm("eamReadFuncfl", tmp); }); };
+   if (potFile == __null) {({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadFuncfl", tmp); }); };
 # 761 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 762 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 763 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4636,7 +4655,7 @@ char tmp[4096];
 # 792 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (0) ;ii < nRho; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
 # 794 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->f = ({ calling_npm("initInterpolationObject", 18420029360357228059UL, 4, 0UL, 0UL, 0UL, 18420029360357228034UL); initInterpolationObject_npm(nRho, x0, dRho, buf); });
+   pot->f = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); });
 # 795 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 796 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 797 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4656,13 +4675,13 @@ char tmp[4096];
 # 805 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    buf[0] = buf[1] + (buf[1] - buf[2]);
 # 806 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->phi = ({ calling_npm("initInterpolationObject", 18420029360357228059UL, 4, 0UL, 0UL, 0UL, 18420029360357228034UL); initInterpolationObject_npm(nR, x0, dR, buf); });
+   pot->phi = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 807 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 808 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 809 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
 # 811 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   pot->rho = ({ calling_npm("initInterpolationObject", 18420029360357228059UL, 4, 0UL, 0UL, 0UL, 18420029360357228034UL); initInterpolationObject_npm(nR, x0, dR, buf); });
+   pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 813 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    free_wrapper(buf, 18420029360357228034UL);
@@ -4753,7 +4772,7 @@ BasePotential* initEamPot_npm(const char* dir, const char* file, const char* typ
    pot->forceExchange = __null;
 # 189 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 190 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (getMyRank() == 0)
+   if ((*____chimes_extern_func_getMyRank)() == 0)
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4788,7 +4807,7 @@ int eamForce_npm(SimFlat* s)
 # 225 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->rhobar = (real_t*)malloc_wrapper(maxTotalAtoms*sizeof(real_t), 18420029360357227392UL, 0, 0);
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      pot->forceExchange = initForceHaloExchange(s->domain, s->boxes);
+      pot->forceExchange = (*____chimes_extern_func_initForceHaloExchange)(s->domain, s->boxes);
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot->forceExchangeData = (ForceExchangeData*)malloc_wrapper(sizeof(ForceExchangeData), 18420029360357227392UL, 0, 1, (int)sizeof(struct ForceExchangeDataSt), 2, (int)__builtin_offsetof(struct ForceExchangeDataSt, dfEmbed), (int)__builtin_offsetof(struct ForceExchangeDataSt, boxes));
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4817,7 +4836,7 @@ int eamForce_npm(SimFlat* s)
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 240 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      zeroReal3(s->atoms->f[ii]);
+      (*____chimes_extern_func_zeroReal3)(s->atoms->f[ii]);
 # 241 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       s->atoms->U[ii] = 0.;
 # 242 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4961,11 +4980,11 @@ int eamForce_npm(SimFlat* s)
 # 318 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 319 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 320 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   do { profileStart(eamHaloTimer); } while(0);
+   do { (*____chimes_extern_func_profileStart)(eamHaloTimer); } while(0);
 # 321 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   haloExchange(pot->forceExchange, pot->forceExchangeData);
+   (*____chimes_extern_func_haloExchange)(pot->forceExchange, pot->forceExchangeData);
 # 322 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   do { profileStop(eamHaloTimer); } while(0);
+   do { (*____chimes_extern_func_profileStop)(eamHaloTimer); } while(0);
 # 323 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 324 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 325 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5097,7 +5116,7 @@ void eamDestroy_npm(BasePotential** pPot)
 # 395 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    destroyInterpolationObject_npm(&(pot->f));
 # 396 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   destroyHaloExchange(&(pot->forceExchange));
+   (*____chimes_extern_func_destroyHaloExchange)(&(pot->forceExchange));
 # 397 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    free_wrapper(pot, 18420029360357227638UL);
 # 398 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5117,7 +5136,7 @@ void eamBcastPotential_npm(EamPotential* pot)
    buf_t buf;
 # 417 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 418 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (getMyRank() == 0)
+   if ((*____chimes_extern_func_getMyRank)() == 0)
 # 419 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 420 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5135,7 +5154,7 @@ void eamBcastPotential_npm(EamPotential* pot)
 # 426 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 427 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   bcastParallel(&buf, sizeof(buf), 0);
+   (*____chimes_extern_func_bcastParallel)(&buf, sizeof(buf), 0);
 # 428 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->cutoff = buf.cutoff;
 # 429 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5271,7 +5290,7 @@ void bcastInterpolationObject_npm(InterpolationObject** table)
   buf_2_t buf;
 # 552 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 553 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (getMyRank() == 0)
+   if ((*____chimes_extern_func_getMyRank)() == 0)
 # 554 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 555 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5283,10 +5302,10 @@ void bcastInterpolationObject_npm(InterpolationObject** table)
 # 558 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 559 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   bcastParallel(&buf, sizeof(buf), 0);
+   (*____chimes_extern_func_bcastParallel)(&buf, sizeof(buf), 0);
 # 560 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 561 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (getMyRank() != 0)
+   if ((*____chimes_extern_func_getMyRank)() != 0)
 # 562 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 563 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5309,7 +5328,7 @@ void bcastInterpolationObject_npm(InterpolationObject** table)
 # 572 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    int valuesSize = sizeof(real_t) * ((*table)->n+3);
 # 573 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   bcastParallel((*table)->values-1, valuesSize, 0);
+   (*____chimes_extern_func_bcastParallel)((*table)->values-1, valuesSize, 0);
 # 574 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 }
 
@@ -5573,9 +5592,218 @@ void typeNotSupported_npm(const char* callSite, const char* type)
 
 
 static int module_init() {
-    init_module(18420029360357226731UL, 49, 15, 42, 24, 14, 0, 14, 16, &____alias_loc_id_0, (unsigned)5, (18420029360357226731UL + 1UL), (18420029360357226731UL + 2UL), (18420029360357226731UL + 3UL), (18420029360357226731UL + 4UL), (18420029360357226731UL + 26UL), &____alias_loc_id_1, (unsigned)24, (18420029360357226731UL + 96UL), (18420029360357226731UL + 97UL), (18420029360357226731UL + 98UL), (18420029360357226731UL + 99UL), (18420029360357226731UL + 100UL), (18420029360357226731UL + 101UL), (18420029360357226731UL + 102UL), (18420029360357226731UL + 103UL), (18420029360357226731UL + 104UL), (18420029360357226731UL + 105UL), (18420029360357226731UL + 106UL), (18420029360357226731UL + 107UL), (18420029360357226731UL + 108UL), (18420029360357226731UL + 109UL), (18420029360357226731UL + 110UL), (18420029360357226731UL + 111UL), (18420029360357226731UL + 112UL), (18420029360357226731UL + 113UL), (18420029360357226731UL + 114UL), (18420029360357226731UL + 119UL), (18420029360357226731UL + 120UL), (18420029360357226731UL + 121UL), (18420029360357226731UL + 122UL), (18420029360357226731UL + 661UL), &____alias_loc_id_2, (unsigned)24, (18420029360357226731UL + 96UL), (18420029360357226731UL + 97UL), (18420029360357226731UL + 98UL), (18420029360357226731UL + 99UL), (18420029360357226731UL + 100UL), (18420029360357226731UL + 101UL), (18420029360357226731UL + 102UL), (18420029360357226731UL + 103UL), (18420029360357226731UL + 104UL), (18420029360357226731UL + 105UL), (18420029360357226731UL + 106UL), (18420029360357226731UL + 107UL), (18420029360357226731UL + 108UL), (18420029360357226731UL + 109UL), (18420029360357226731UL + 110UL), (18420029360357226731UL + 111UL), (18420029360357226731UL + 112UL), (18420029360357226731UL + 113UL), (18420029360357226731UL + 114UL), (18420029360357226731UL + 119UL), (18420029360357226731UL + 120UL), (18420029360357226731UL + 121UL), (18420029360357226731UL + 122UL), (18420029360357226731UL + 661UL), &____alias_loc_id_3, (unsigned)2, (18420029360357226731UL + 896UL), (18420029360357226731UL + 897UL), &____alias_loc_id_4, (unsigned)1, (18420029360357226731UL + 1461UL), &____alias_loc_id_5, (unsigned)1, (18420029360357226731UL + 1462UL), &____alias_loc_id_6, (unsigned)1, (18420029360357226731UL + 1557UL), &____alias_loc_id_7, (unsigned)1, (18420029360357226731UL + 1737UL), &____alias_loc_id_8, (unsigned)1, (18420029360357226731UL + 1738UL), &____alias_loc_id_9, (unsigned)3, (18420029360357226731UL + 1739UL), (18420029360357226731UL + 1782UL), (18420029360357226731UL + 1784UL), &____alias_loc_id_10, (unsigned)4, (18420029360357226731UL + 1UL), (18420029360357226731UL + 2UL), (18420029360357226731UL + 3UL), (18420029360357226731UL + 4UL), &____alias_loc_id_11, (unsigned)16, (18420029360357226731UL + 96UL), (18420029360357226731UL + 97UL), (18420029360357226731UL + 125UL), (18420029360357226731UL + 126UL), (18420029360357226731UL + 127UL), (18420029360357226731UL + 128UL), (18420029360357226731UL + 129UL), (18420029360357226731UL + 130UL), (18420029360357226731UL + 131UL), (18420029360357226731UL + 132UL), (18420029360357226731UL + 133UL), (18420029360357226731UL + 134UL), (18420029360357226731UL + 135UL), (18420029360357226731UL + 138UL), (18420029360357226731UL + 661UL), (18420029360357226731UL + 848UL), &____alias_loc_id_12, (unsigned)3, (18420029360357226731UL + 849UL), (18420029360357226731UL + 850UL), (18420029360357226731UL + 851UL), &____alias_loc_id_13, (unsigned)3, (18420029360357226731UL + 896UL), (18420029360357226731UL + 897UL), (18420029360357226731UL + 932UL), &____alias_loc_id_14, (unsigned)14, (18420029360357226731UL + 935UL), (18420029360357226731UL + 936UL), (18420029360357226731UL + 937UL), (18420029360357226731UL + 939UL), (18420029360357226731UL + 950UL), (18420029360357226731UL + 951UL), (18420029360357226731UL + 952UL), (18420029360357226731UL + 953UL), (18420029360357226731UL + 954UL), (18420029360357226731UL + 955UL), (18420029360357226731UL + 956UL), (18420029360357226731UL + 957UL), (18420029360357226731UL + 1056UL), (18420029360357226731UL + 1185UL), &____alias_loc_id_15, (unsigned)14, (18420029360357226731UL + 1188UL), (18420029360357226731UL + 1189UL), (18420029360357226731UL + 1190UL), (18420029360357226731UL + 1192UL), (18420029360357226731UL + 1203UL), (18420029360357226731UL + 1204UL), (18420029360357226731UL + 1205UL), (18420029360357226731UL + 1206UL), (18420029360357226731UL + 1207UL), (18420029360357226731UL + 1208UL), (18420029360357226731UL + 1209UL), (18420029360357226731UL + 1210UL), (18420029360357226731UL + 1303UL), (18420029360357226731UL + 1443UL), &____alias_loc_id_16, (unsigned)2, (18420029360357226731UL + 1446UL), (18420029360357226731UL + 1447UL), &____alias_loc_id_17, (unsigned)1, (18420029360357226731UL + 1461UL), &____alias_loc_id_18, (unsigned)2, (18420029360357226731UL + 1565UL), (18420029360357226731UL + 1566UL), &____alias_loc_id_19, (unsigned)8, (18420029360357226731UL + 1589UL), (18420029360357226731UL + 1590UL), (18420029360357226731UL + 1591UL), (18420029360357226731UL + 1592UL), (18420029360357226731UL + 1593UL), (18420029360357226731UL + 1594UL), (18420029360357226731UL + 1622UL), (18420029360357226731UL + 1624UL), &____alias_loc_id_20, (unsigned)1, (18420029360357226731UL + 1724UL), &____alias_loc_id_21, (unsigned)3, (18420029360357226731UL + 1842UL), (18420029360357226731UL + 1850UL), (18420029360357226731UL + 1881UL), &____alias_loc_id_22, (unsigned)2, (18420029360357226731UL + 1885UL), (18420029360357226731UL + 1898UL), &____alias_loc_id_23, (unsigned)10, (18420029360357226731UL + 1900UL), (18420029360357226731UL + 1901UL), (18420029360357226731UL + 1902UL), (18420029360357226731UL + 1903UL), (18420029360357226731UL + 1904UL), (18420029360357226731UL + 1905UL), (18420029360357226731UL + 1906UL), (18420029360357226731UL + 1907UL), (18420029360357226731UL + 2053UL), (18420029360357226731UL + 2054UL), "initEamPot", (void *)(initEamPot_npm), 1, &____alias_loc_id_0, 3, (18420029360357226731UL + 84UL), (18420029360357226731UL + 85UL), (18420029360357226731UL + 86UL), (18420029360357226731UL + 26UL), 9, "malloc", 1, 0UL, (18420029360357226731UL + 26UL), "__assert_rtn", 4, (18420029360357226731UL + 2060UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2062UL), 0UL, "getMyRank", 0, 0UL, "strcmp", 2, (18420029360357226731UL + 86UL), (18420029360357226731UL + 2063UL), 0UL, "eamReadSetfl", 3, (18420029360357226731UL + 26UL), (18420029360357226731UL + 84UL), (18420029360357226731UL + 85UL), 0UL, "strcmp", 2, (18420029360357226731UL + 86UL), (18420029360357226731UL + 2064UL), 0UL, "eamReadFuncfl", 3, (18420029360357226731UL + 26UL), (18420029360357226731UL + 84UL), (18420029360357226731UL + 85UL), 0UL, "typeNotSupported", 2, (18420029360357226731UL + 2060UL), (18420029360357226731UL + 86UL), 0UL, "eamBcastPotential", 1, (18420029360357226731UL + 26UL), 0UL, "eamForce", (void *)(eamForce_npm), 2, &____alias_loc_id_1, &____alias_loc_id_2, 1, (18420029360357226731UL + 848UL), 0UL, 15, "__assert_rtn", 4, (18420029360357226731UL + 2091UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2062UL), 0UL, "malloc", 1, 0UL, (18420029360357226731UL + 661UL), "malloc", 1, 0UL, (18420029360357226731UL + 661UL), "initForceHaloExchange", 2, (18420029360357226731UL + 661UL), (18420029360357226731UL + 661UL), (18420029360357226731UL + 661UL), "malloc", 1, 0UL, (18420029360357226731UL + 661UL), "zeroReal3", 1, (18420029360357226731UL + 661UL), 0UL, "sqrt", 1, 0UL, 0UL, "interpolate", 4, (18420029360357226731UL + 661UL), 0UL, (18420029360357226731UL + 115UL), (18420029360357226731UL + 116UL), 0UL, "interpolate", 4, (18420029360357226731UL + 661UL), 0UL, (18420029360357226731UL + 117UL), (18420029360357226731UL + 118UL), 0UL, "interpolate", 4, (18420029360357226731UL + 661UL), 0UL, (18420029360357226731UL + 123UL), (18420029360357226731UL + 124UL), 0UL, "profileStart", 1, 0UL, 0UL, "haloExchange", 2, (18420029360357226731UL + 661UL), (18420029360357226731UL + 661UL), 0UL, "profileStop", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL, "interpolate", 4, (18420029360357226731UL + 661UL), 0UL, (18420029360357226731UL + 136UL), (18420029360357226731UL + 137UL), 0UL, "eamPrint", (void *)(eamPrint_npm), 0, 2, (18420029360357226731UL + 894UL), (18420029360357226731UL + 895UL), 0UL, 7, "fprintf", 2, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2082UL), 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2074UL), (18420029360357226731UL + 895UL), 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2074UL), 0UL, 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2087UL), 0UL, 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2074UL), (18420029360357226731UL + 895UL), 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2089UL), 0UL, 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2089UL), 0UL, 0UL, "eamDestroy", (void *)(eamDestroy_npm), 1, &____alias_loc_id_3, 1, (18420029360357226731UL + 932UL), 0UL, 5, "destroyInterpolationObject", 1, (18420029360357226731UL + 907UL), 0UL, "destroyInterpolationObject", 1, (18420029360357226731UL + 907UL), 0UL, "destroyInterpolationObject", 1, (18420029360357226731UL + 907UL), 0UL, "destroyHaloExchange", 1, (18420029360357226731UL + 907UL), 0UL, "free", 1, (18420029360357226731UL + 907UL), 0UL, "eamBcastPotential", (void *)(eamBcastPotential_npm), 3, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, 1, (18420029360357226731UL + 1557UL), 0UL, 10, "__assert_rtn", 4, (18420029360357226731UL + 2072UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2062UL), 0UL, "getMyRank", 0, 0UL, "strcpy", 2, (18420029360357226731UL + 1462UL), (18420029360357226731UL + 1557UL), (18420029360357226731UL + 1505UL), "strcpy", 2, (18420029360357226731UL + 1462UL), (18420029360357226731UL + 1557UL), (18420029360357226731UL + 1511UL), "bcastParallel", 3, (18420029360357226731UL + 1462UL), 0UL, 0UL, 0UL, "strcpy", 2, (18420029360357226731UL + 1557UL), (18420029360357226731UL + 1462UL), (18420029360357226731UL + 1540UL), "strcpy", 2, (18420029360357226731UL + 1557UL), (18420029360357226731UL + 1462UL), (18420029360357226731UL + 1546UL), "bcastInterpolationObject", 1, (18420029360357226731UL + 1557UL), 0UL, "bcastInterpolationObject", 1, (18420029360357226731UL + 1557UL), 0UL, "bcastInterpolationObject", 1, (18420029360357226731UL + 1557UL), 0UL, "initInterpolationObject", (void *)(initInterpolationObject_npm), 0, 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1720UL), (18420029360357226731UL + 1624UL), 4, "malloc", 1, 0UL, (18420029360357226731UL + 1624UL), "__assert_rtn", 4, (18420029360357226731UL + 2074UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2063UL), 0UL, "calloc", 2, 0UL, 0UL, (18420029360357226731UL + 1622UL), "__assert_rtn", 4, (18420029360357226731UL + 2074UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2069UL), 0UL, "destroyInterpolationObject", (void *)(destroyInterpolationObject_npm), 0, 1, (18420029360357226731UL + 1881UL), 0UL, 2, "free", 1, (18420029360357226731UL + 1857UL), 0UL, "free", 1, (18420029360357226731UL + 1850UL), 0UL, "interpolate", (void *)(interpolate_npm), 0, 4, (18420029360357226731UL + 2051UL), 0UL, (18420029360357226731UL + 2053UL), (18420029360357226731UL + 2054UL), 0UL, 2, "floor", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL, "bcastInterpolationObject", (void *)(bcastInterpolationObject_npm), 3, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 1, (18420029360357226731UL + 1784UL), 0UL, 7, "getMyRank", 0, 0UL, "bcastParallel", 3, (18420029360357226731UL + 1738UL), 0UL, 0UL, 0UL, "getMyRank", 0, 0UL, "__assert_rtn", 4, (18420029360357226731UL + 2082UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2083UL), 0UL, "malloc", 1, 0UL, (18420029360357226731UL + 1782UL), "malloc", 1, 0UL, (18420029360357226731UL + 1809UL), "bcastParallel", 3, (18420029360357226731UL + 1809UL), 0UL, 0UL, 0UL, "eamReadSetfl", (void *)(eamReadSetfl_npm), 0, 3, (18420029360357226731UL + 1185UL), (18420029360357226731UL + 1186UL), (18420029360357226731UL + 1187UL), 0UL, 22, "sprintf", 4, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2063UL), (18420029360357226731UL + 1186UL), (18420029360357226731UL + 1187UL), 0UL, "_fopen", 2, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2068UL), (18420029360357226731UL + 971UL), "fileNotFound", 2, (18420029360357226731UL + 2078UL), (18420029360357226731UL + 938UL), 0UL, "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 981UL), "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 984UL), "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 987UL), "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 990UL), "sscanf", 3, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2070UL), (18420029360357226731UL + 940UL), 0UL, "notAlloyReady", 1, (18420029360357226731UL + 2078UL), 0UL, "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 1006UL), "sscanf", 7, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2072UL), (18420029360357226731UL + 941UL), (18420029360357226731UL + 943UL), (18420029360357226731UL + 942UL), (18420029360357226731UL + 944UL), (18420029360357226731UL + 945UL), 0UL, "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 1015UL), "sscanf", 6, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2069UL), (18420029360357226731UL + 946UL), (18420029360357226731UL + 947UL), (18420029360357226731UL + 948UL), (18420029360357226731UL + 949UL), 0UL, "strcpy", 2, (18420029360357226731UL + 1185UL), (18420029360357226731UL + 949UL), (18420029360357226731UL + 1040UL), "malloc", 1, 0UL, (18420029360357226731UL + 1056UL), "fscanf", 3, (18420029360357226731UL + 971UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1056UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1056UL), (18420029360357226731UL + 1083UL), "fscanf", 3, (18420029360357226731UL + 971UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1056UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1056UL), (18420029360357226731UL + 1083UL), "fscanf", 3, (18420029360357226731UL + 971UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1056UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1056UL), (18420029360357226731UL + 1083UL), "free", 1, (18420029360357226731UL + 1056UL), 0UL, "eamReadFuncfl", (void *)(eamReadFuncfl_npm), 0, 3, (18420029360357226731UL + 1443UL), (18420029360357226731UL + 1444UL), (18420029360357226731UL + 1445UL), 0UL, 19, "sprintf", 4, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2063UL), (18420029360357226731UL + 1444UL), (18420029360357226731UL + 1445UL), 0UL, "_fopen", 2, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2068UL), (18420029360357226731UL + 1224UL), "fileNotFound", 2, (18420029360357226731UL + 2069UL), (18420029360357226731UL + 1191UL), 0UL, "fgets", 3, (18420029360357226731UL + 1191UL), 0UL, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 1234UL), "sscanf", 3, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2070UL), (18420029360357226731UL + 1193UL), 0UL, "strcpy", 2, (18420029360357226731UL + 1443UL), (18420029360357226731UL + 1193UL), (18420029360357226731UL + 1243UL), "fgets", 3, (18420029360357226731UL + 1191UL), 0UL, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 1250UL), "sscanf", 6, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2069UL), (18420029360357226731UL + 1194UL), (18420029360357226731UL + 1195UL), (18420029360357226731UL + 1196UL), (18420029360357226731UL + 1197UL), 0UL, "strcpy", 2, (18420029360357226731UL + 1443UL), (18420029360357226731UL + 1197UL), (18420029360357226731UL + 1271UL), "fgets", 3, (18420029360357226731UL + 1191UL), 0UL, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 1279UL), "sscanf", 7, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2072UL), (18420029360357226731UL + 1198UL), (18420029360357226731UL + 1200UL), (18420029360357226731UL + 1199UL), (18420029360357226731UL + 1201UL), (18420029360357226731UL + 1202UL), 0UL, "malloc", 1, 0UL, (18420029360357226731UL + 1303UL), "fscanf", 3, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1303UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1303UL), (18420029360357226731UL + 1328UL), "fscanf", 3, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1303UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1303UL), (18420029360357226731UL + 1328UL), "fscanf", 3, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1303UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1303UL), (18420029360357226731UL + 1328UL), "free", 1, (18420029360357226731UL + 1303UL), 0UL, "fileNotFound", (void *)(fileNotFound_npm), 0, 2, (18420029360357226731UL + 1578UL), (18420029360357226731UL + 1579UL), 0UL, 2, "fprintf", 4, (18420029360357226731UL + 1571UL), (18420029360357226731UL + 2077UL), (18420029360357226731UL + 1578UL), (18420029360357226731UL + 1579UL), 0UL, "exit", 1, 0UL, 0UL, "notAlloyReady", (void *)(notAlloyReady_npm), 0, 1, (18420029360357226731UL + 1733UL), 0UL, 2, "fprintf", 3, (18420029360357226731UL + 1571UL), (18420029360357226731UL + 2080UL), (18420029360357226731UL + 1733UL), 0UL, "exit", 1, 0UL, 0UL, "typeNotSupported", (void *)(typeNotSupported_npm), 0, 2, (18420029360357226731UL + 1459UL), (18420029360357226731UL + 1460UL), 0UL, 2, "fprintf", 4, (18420029360357226731UL + 1571UL), (18420029360357226731UL + 2066UL), (18420029360357226731UL + 1459UL), (18420029360357226731UL + 1460UL), 0UL, "exit", 1, 0UL, 0UL, "initEamPot", &(____chimes_does_checkpoint_initEamPot_npm), "eamForce", &(____chimes_does_checkpoint_eamForce_npm), "eamPrint", &(____chimes_does_checkpoint_eamPrint_npm), "eamDestroy", &(____chimes_does_checkpoint_eamDestroy_npm), "eamBcastPotential", &(____chimes_does_checkpoint_eamBcastPotential_npm), "initInterpolationObject", &(____chimes_does_checkpoint_initInterpolationObject_npm), "destroyInterpolationObject", &(____chimes_does_checkpoint_destroyInterpolationObject_npm), "interpolate", &(____chimes_does_checkpoint_interpolate_npm), "bcastInterpolationObject", &(____chimes_does_checkpoint_bcastInterpolationObject_npm), "eamReadSetfl", &(____chimes_does_checkpoint_eamReadSetfl_npm), "eamReadFuncfl", &(____chimes_does_checkpoint_eamReadFuncfl_npm), "fileNotFound", &(____chimes_does_checkpoint_fileNotFound_npm), "notAlloyReady", &(____chimes_does_checkpoint_notAlloyReady_npm), "typeNotSupported", &(____chimes_does_checkpoint_typeNotSupported_npm), (18420029360357226731UL + 1205UL), (18420029360357226731UL + 1303UL), (18420029360357226731UL + 1782UL), (18420029360357226731UL + 1809UL), (18420029360357226731UL + 1784UL), (18420029360357226731UL + 1782UL), (18420029360357226731UL + 1565UL), (18420029360357226731UL + 1578UL), (18420029360357226731UL + 661UL), (18420029360357226731UL + 661UL), (18420029360357226731UL + 1904UL), (18420029360357226731UL + 1919UL), (18420029360357226731UL + 1902UL), (18420029360357226731UL + 2053UL), (18420029360357226731UL + 1903UL), (18420029360357226731UL + 2054UL), (18420029360357226731UL + 1900UL), (18420029360357226731UL + 2051UL), (18420029360357226731UL + 2051UL), (18420029360357226731UL + 1919UL), (18420029360357226731UL + 1447UL), (18420029360357226731UL + 1460UL), (18420029360357226731UL + 26UL), (18420029360357226731UL + 1850UL), (18420029360357226731UL + 1624UL), (18420029360357226731UL + 1622UL), (18420029360357226731UL + 850UL), (18420029360357226731UL + 895UL), (18420029360357226731UL + 851UL), (18420029360357226731UL + 895UL), (18420029360357226731UL + 951UL), (18420029360357226731UL + 1056UL), (18420029360357226731UL + 1190UL), (18420029360357226731UL + 1445UL), (18420029360357226731UL + 1192UL), (18420029360357226731UL + 1224UL), (18420029360357226731UL + 3UL), (18420029360357226731UL + 86UL), (18420029360357226731UL + 1737UL), (18420029360357226731UL + 1784UL), (18420029360357226731UL + 1UL), (18420029360357226731UL + 84UL), (18420029360357226731UL + 1446UL), (18420029360357226731UL + 1459UL), (18420029360357226731UL + 939UL), (18420029360357226731UL + 971UL), (18420029360357226731UL + 2UL), (18420029360357226731UL + 85UL), (18420029360357226731UL + 1443UL), (18420029360357226731UL + 1328UL), (18420029360357226731UL + 4UL), (18420029360357226731UL + 26UL), (18420029360357226731UL + 932UL), (18420029360357226731UL + 907UL), (18420029360357226731UL + 937UL), (18420029360357226731UL + 1187UL), (18420029360357226731UL + 936UL), (18420029360357226731UL + 1186UL), (18420029360357226731UL + 935UL), (18420029360357226731UL + 1185UL), (18420029360357226731UL + 896UL), (18420029360357226731UL + 932UL), (18420029360357226731UL + 897UL), (18420029360357226731UL + 907UL), (18420029360357226731UL + 1593UL), (18420029360357226731UL + 1624UL), (18420029360357226731UL + 1592UL), (18420029360357226731UL + 1720UL), (18420029360357226731UL + 1881UL), (18420029360357226731UL + 1850UL), (18420029360357226731UL + 1885UL), (18420029360357226731UL + 1898UL), (18420029360357226731UL + 97UL), (18420029360357226731UL + 661UL), (18420029360357226731UL + 96UL), (18420029360357226731UL + 848UL), (18420029360357226731UL + 1188UL), (18420029360357226731UL + 1443UL), (18420029360357226731UL + 1189UL), (18420029360357226731UL + 1444UL), (18420029360357226731UL + 1461UL), (18420029360357226731UL + 1557UL), (18420029360357226731UL + 1724UL), (18420029360357226731UL + 1733UL), (18420029360357226731UL + 1185UL), (18420029360357226731UL + 1083UL), (18420029360357226731UL + 849UL), (18420029360357226731UL + 894UL), (18420029360357226731UL + 848UL), (18420029360357226731UL + 661UL), (18420029360357226731UL + 1850UL), (18420029360357226731UL + 1857UL), (18420029360357226731UL + 1566UL), (18420029360357226731UL + 1579UL), (18420029360357226731UL + 1842UL), (18420029360357226731UL + 1881UL), (18420029360357226731UL + 2065UL), (18420029360357226731UL + 1571UL), "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U), "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy), "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent), "EamPotentialSt", 16, "double", (int)__builtin_offsetof (struct EamPotentialSt, cutoff), "double", (int)__builtin_offsetof (struct EamPotentialSt, mass), "double", (int)__builtin_offsetof (struct EamPotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct EamPotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct EamPotentialSt, name), "int", (int)__builtin_offsetof (struct EamPotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct EamPotentialSt, force), "*", (int)__builtin_offsetof (struct EamPotentialSt, print), "*", (int)__builtin_offsetof (struct EamPotentialSt, destroy), "%struct.InterpolationObjectSt*", (int)__builtin_offsetof (struct EamPotentialSt, phi), "%struct.InterpolationObjectSt*", (int)__builtin_offsetof (struct EamPotentialSt, rho), "%struct.InterpolationObjectSt*", (int)__builtin_offsetof (struct EamPotentialSt, f), "double*", (int)__builtin_offsetof (struct EamPotentialSt, rhobar), "double*", (int)__builtin_offsetof (struct EamPotentialSt, dfEmbed), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct EamPotentialSt, forceExchange), "%struct.ForceExchangeDataSt*", (int)__builtin_offsetof (struct EamPotentialSt, forceExchangeData), "ForceExchangeDataSt", 2, "double*", (int)__builtin_offsetof (struct ForceExchangeDataSt, dfEmbed), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct ForceExchangeDataSt, boxes), "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof (struct HaloExchangeSt, parms), "InterpolationObjectSt", 4, "int", (int)__builtin_offsetof (struct InterpolationObjectSt, n), "double", (int)__builtin_offsetof (struct InterpolationObjectSt, x0), "double", (int)__builtin_offsetof (struct InterpolationObjectSt, invDx), "double*", (int)__builtin_offsetof (struct InterpolationObjectSt, values), "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes), "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange), "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass), "TimerHandle", 0, "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset), "__sFILEX", 0, "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size), "_buf_2_t", 3, "int", (int)__builtin_offsetof (struct _buf_2_t, n), "double", (int)__builtin_offsetof (struct _buf_2_t, x0), "double", (int)__builtin_offsetof (struct _buf_2_t, invDx), "_buf_t", 6, "double", (int)__builtin_offsetof (struct _buf_t, cutoff), "double", (int)__builtin_offsetof (struct _buf_t, mass), "double", (int)__builtin_offsetof (struct _buf_t, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct _buf_t, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct _buf_t, name), "int", (int)__builtin_offsetof (struct _buf_t, atomicNo), "eamPrint", 0, "eamReadFuncfl", 4, "fileNotFound", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject", "fileNotFound", 0, "initInterpolationObject", 0, "initEamPot", 5, "getMyRank", "eamReadSetfl", "eamReadFuncfl", "typeNotSupported", "eamBcastPotential", "interpolate", 0, "eamReadSetfl", 5, "fileNotFound", "notAlloyReady", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject", "eamForce", 9, "initForceHaloExchange", "zeroReal3", "interpolate", "interpolate", "interpolate", "profileStart", "haloExchange", "profileStop", "interpolate", "bcastInterpolationObject", 4, "getMyRank", "bcastParallel", "getMyRank", "bcastParallel", "zeroReal3", 0, "eamBcastPotential", 5, "getMyRank", "bcastParallel", "bcastInterpolationObject", "bcastInterpolationObject", "bcastInterpolationObject", "typeNotSupported", 0, "notAlloyReady", 0, "eamDestroy", 4, "destroyInterpolationObject", "destroyInterpolationObject", "destroyInterpolationObject", "destroyHaloExchange", "destroyInterpolationObject", 0, "initEamPot|dir|0", 2, "getMyRank", "eamBcastPotential", "initEamPot|file|0", 2, "getMyRank", "eamBcastPotential", "initEamPot|type|0", 2, "getMyRank", "eamBcastPotential", "initEamPot|pot|0", 2, "getMyRank", "eamBcastPotential", "eamForce|s|0", 4, "profileStop", "profileStart", "initForceHaloExchange", "haloExchange", "eamForce|pot|0", 4, "profileStop", "profileStart", "initForceHaloExchange", "haloExchange", "eamForce|rCut2|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|etot|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|fsize|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|ii|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|nNbrBoxes|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|iBox|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|nIBox|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|jTmp|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|jBox|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|nJBox|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|iOff|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|jOff|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|dr|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|r2|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|k|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|r|0", 3, "profileStop", "profileStart", "haloExchange", "eamForce|phiTmp|0", 1, "eamForce", "eamForce|rhoTmp|0", 1, "eamForce", "eamForce|k|1", 3, "profileStop", "profileStart", "haloExchange", "eamForce|iBox|1", 3, "profileStop", "profileStart", "haloExchange", "eamForce|nIBox|1", 3, "profileStop", "profileStart", "haloExchange", "eamForce|iOff|1", 3, "profileStop", "profileStart", "haloExchange", "eamForce|fEmbed|0", 1, "eamForce", "eamForce|rhoTmp|1", 1, "eamForce", "eamDestroy|pPot|0", 1, "destroyHaloExchange", "eamDestroy|pot|0", 1, "destroyHaloExchange", "eamReadSetfl|tmp|0", 1, "eamReadSetfl", "eamReadSetfl|latticeType|0", 1, "eamReadSetfl", "eamReadFuncfl|tmp|0", 1, "eamReadFuncfl", "eamReadFuncfl|name|0", 1, "eamReadFuncfl", "eamReadFuncfl|latticeType|0", 1, "eamReadFuncfl", "eamBcastPotential|pot|0", 3, "getMyRank", "bcastParallel", "bcastInterpolationObject", "eamBcastPotential|buf|0", 1, "eamBcastPotential", "bcastInterpolationObject|table|0", 2, "getMyRank", "bcastParallel", "bcastInterpolationObject|buf|0", 1, "bcastInterpolationObject", "bcastInterpolationObject|valuesSize|0", 1, "bcastParallel");
-    register_functions(15, "eam.c.pre.extern_ptrs.cpp", "eamPrint", &eamPrint, "eamReadFuncfl", &eamReadFuncfl, "fileNotFound", &fileNotFound, "initInterpolationObject", &initInterpolationObject, "initEamPot", &initEamPot, "interpolate", &interpolate, "eamReadSetfl", &eamReadSetfl, "eamForce", &eamForce, "bcastInterpolationObject", &bcastInterpolationObject, "zeroReal3", &zeroReal3, "eamBcastPotential", &eamBcastPotential, "typeNotSupported", &typeNotSupported, "notAlloyReady", &notAlloyReady, "eamDestroy", &eamDestroy, "destroyInterpolationObject", &destroyInterpolationObject);
+    init_module(18420029360357226731UL, 49, 15, 42, 25, 14, 8, 22, 19, 0, 16,
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (18420029360357226731UL + 1UL), (18420029360357226731UL + 2UL), (18420029360357226731UL + 3UL), (18420029360357226731UL + 4UL), (18420029360357226731UL + 26UL),
+                           &____alias_loc_id_1, (unsigned)24, (unsigned)3, (18420029360357226731UL + 96UL), (18420029360357226731UL + 97UL), (18420029360357226731UL + 98UL), (18420029360357226731UL + 99UL), (18420029360357226731UL + 100UL), (18420029360357226731UL + 101UL), (18420029360357226731UL + 102UL), (18420029360357226731UL + 103UL), (18420029360357226731UL + 104UL), (18420029360357226731UL + 105UL), (18420029360357226731UL + 106UL), (18420029360357226731UL + 107UL), (18420029360357226731UL + 108UL), (18420029360357226731UL + 109UL), (18420029360357226731UL + 110UL), (18420029360357226731UL + 111UL), (18420029360357226731UL + 112UL), (18420029360357226731UL + 113UL), (18420029360357226731UL + 114UL), (18420029360357226731UL + 119UL), (18420029360357226731UL + 120UL), (18420029360357226731UL + 121UL), (18420029360357226731UL + 122UL), (18420029360357226731UL + 661UL), "zeroReal3", (unsigned)1, (18420029360357226731UL + 661UL), "initForceHaloExchange", (unsigned)1, (18420029360357226731UL + 661UL), "interpolate", (unsigned)7, (18420029360357226731UL + 115UL), (18420029360357226731UL + 116UL), (18420029360357226731UL + 117UL), (18420029360357226731UL + 118UL), (18420029360357226731UL + 123UL), (18420029360357226731UL + 124UL), (18420029360357226731UL + 661UL),
+                           &____alias_loc_id_2, (unsigned)24, (unsigned)3, (18420029360357226731UL + 96UL), (18420029360357226731UL + 97UL), (18420029360357226731UL + 98UL), (18420029360357226731UL + 99UL), (18420029360357226731UL + 100UL), (18420029360357226731UL + 101UL), (18420029360357226731UL + 102UL), (18420029360357226731UL + 103UL), (18420029360357226731UL + 104UL), (18420029360357226731UL + 105UL), (18420029360357226731UL + 106UL), (18420029360357226731UL + 107UL), (18420029360357226731UL + 108UL), (18420029360357226731UL + 109UL), (18420029360357226731UL + 110UL), (18420029360357226731UL + 111UL), (18420029360357226731UL + 112UL), (18420029360357226731UL + 113UL), (18420029360357226731UL + 114UL), (18420029360357226731UL + 119UL), (18420029360357226731UL + 120UL), (18420029360357226731UL + 121UL), (18420029360357226731UL + 122UL), (18420029360357226731UL + 661UL), "zeroReal3", (unsigned)1, (18420029360357226731UL + 661UL), "initForceHaloExchange", (unsigned)1, (18420029360357226731UL + 661UL), "interpolate", (unsigned)7, (18420029360357226731UL + 115UL), (18420029360357226731UL + 116UL), (18420029360357226731UL + 117UL), (18420029360357226731UL + 118UL), (18420029360357226731UL + 123UL), (18420029360357226731UL + 124UL), (18420029360357226731UL + 661UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)2, (18420029360357226731UL + 896UL), (18420029360357226731UL + 897UL), "destroyHaloExchange", (unsigned)1, (18420029360357226731UL + 907UL), "destroyInterpolationObject", (unsigned)1, (18420029360357226731UL + 907UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (18420029360357226731UL + 1461UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)1, (18420029360357226731UL + 1462UL), "bcastParallel", (unsigned)1, (18420029360357226731UL + 1462UL),
+                           &____alias_loc_id_6, (unsigned)1, (unsigned)2, (18420029360357226731UL + 1557UL), "bcastParallel", (unsigned)1, (18420029360357226731UL + 1462UL), "bcastInterpolationObject", (unsigned)1, (18420029360357226731UL + 1557UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (18420029360357226731UL + 1737UL),
+                           &____alias_loc_id_8, (unsigned)1, (unsigned)1, (18420029360357226731UL + 1738UL), "bcastParallel", (unsigned)1, (18420029360357226731UL + 1738UL),
+                           &____alias_loc_id_9, (unsigned)3, (unsigned)1, (18420029360357226731UL + 1739UL), (18420029360357226731UL + 1782UL), (18420029360357226731UL + 1784UL), "bcastParallel", (unsigned)1, (18420029360357226731UL + 1809UL),
+                            &____alias_loc_id_10, (unsigned)4, (unsigned)4, (18420029360357226731UL + 1UL), (18420029360357226731UL + 2UL), (18420029360357226731UL + 3UL), (18420029360357226731UL + 4UL), "eamBcastPotential", (unsigned)1, (18420029360357226731UL + 26UL), "eamReadFuncfl", (unsigned)3, (18420029360357226731UL + 26UL), (18420029360357226731UL + 84UL), (18420029360357226731UL + 85UL), "typeNotSupported", (unsigned)2, (18420029360357226731UL + 86UL), (18420029360357226731UL + 2060UL), "eamReadSetfl", (unsigned)3, (18420029360357226731UL + 26UL), (18420029360357226731UL + 84UL), (18420029360357226731UL + 85UL),
+                            &____alias_loc_id_11, (unsigned)16, (unsigned)2, (18420029360357226731UL + 96UL), (18420029360357226731UL + 97UL), (18420029360357226731UL + 125UL), (18420029360357226731UL + 126UL), (18420029360357226731UL + 127UL), (18420029360357226731UL + 128UL), (18420029360357226731UL + 129UL), (18420029360357226731UL + 130UL), (18420029360357226731UL + 131UL), (18420029360357226731UL + 132UL), (18420029360357226731UL + 133UL), (18420029360357226731UL + 134UL), (18420029360357226731UL + 135UL), (18420029360357226731UL + 138UL), (18420029360357226731UL + 661UL), (18420029360357226731UL + 848UL), "haloExchange", (unsigned)1, (18420029360357226731UL + 661UL), "interpolate", (unsigned)3, (18420029360357226731UL + 136UL), (18420029360357226731UL + 137UL), (18420029360357226731UL + 661UL),
+                            &____alias_loc_id_12, (unsigned)3, (unsigned)0, (18420029360357226731UL + 849UL), (18420029360357226731UL + 850UL), (18420029360357226731UL + 851UL),
+                            &____alias_loc_id_13, (unsigned)3, (unsigned)2, (18420029360357226731UL + 896UL), (18420029360357226731UL + 897UL), (18420029360357226731UL + 932UL), "destroyHaloExchange", (unsigned)1, (18420029360357226731UL + 907UL), "destroyInterpolationObject", (unsigned)1, (18420029360357226731UL + 907UL),
+                            &____alias_loc_id_14, (unsigned)15, (unsigned)3, (18420029360357226731UL + 935UL), (18420029360357226731UL + 936UL), (18420029360357226731UL + 937UL), (18420029360357226731UL + 938UL), (18420029360357226731UL + 939UL), (18420029360357226731UL + 950UL), (18420029360357226731UL + 951UL), (18420029360357226731UL + 952UL), (18420029360357226731UL + 953UL), (18420029360357226731UL + 954UL), (18420029360357226731UL + 955UL), (18420029360357226731UL + 956UL), (18420029360357226731UL + 957UL), (18420029360357226731UL + 1056UL), (18420029360357226731UL + 1185UL), "initInterpolationObject", (unsigned)1, (18420029360357226731UL + 1056UL), "fileNotFound", (unsigned)2, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2078UL), "notAlloyReady", (unsigned)1, (18420029360357226731UL + 2078UL),
+                            &____alias_loc_id_15, (unsigned)15, (unsigned)2, (18420029360357226731UL + 1188UL), (18420029360357226731UL + 1189UL), (18420029360357226731UL + 1190UL), (18420029360357226731UL + 1191UL), (18420029360357226731UL + 1192UL), (18420029360357226731UL + 1203UL), (18420029360357226731UL + 1204UL), (18420029360357226731UL + 1205UL), (18420029360357226731UL + 1206UL), (18420029360357226731UL + 1207UL), (18420029360357226731UL + 1208UL), (18420029360357226731UL + 1209UL), (18420029360357226731UL + 1210UL), (18420029360357226731UL + 1303UL), (18420029360357226731UL + 1443UL), "initInterpolationObject", (unsigned)1, (18420029360357226731UL + 1303UL), "fileNotFound", (unsigned)2, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2069UL),
+                            &____alias_loc_id_16, (unsigned)2, (unsigned)0, (18420029360357226731UL + 1446UL), (18420029360357226731UL + 1447UL),
+                            &____alias_loc_id_17, (unsigned)1, (unsigned)1, (18420029360357226731UL + 1461UL), "bcastInterpolationObject", (unsigned)1, (18420029360357226731UL + 1557UL),
+                            &____alias_loc_id_18, (unsigned)2, (unsigned)0, (18420029360357226731UL + 1565UL), (18420029360357226731UL + 1566UL),
+                            &____alias_loc_id_19, (unsigned)8, (unsigned)0, (18420029360357226731UL + 1589UL), (18420029360357226731UL + 1590UL), (18420029360357226731UL + 1591UL), (18420029360357226731UL + 1592UL), (18420029360357226731UL + 1593UL), (18420029360357226731UL + 1594UL), (18420029360357226731UL + 1622UL), (18420029360357226731UL + 1624UL),
+                            &____alias_loc_id_20, (unsigned)1, (unsigned)0, (18420029360357226731UL + 1724UL),
+                            &____alias_loc_id_21, (unsigned)0, (unsigned)1, "bcastParallel", (unsigned)2, (18420029360357226731UL + 1738UL), (18420029360357226731UL + 1809UL),
+                            &____alias_loc_id_22, (unsigned)3, (unsigned)0, (18420029360357226731UL + 1842UL), (18420029360357226731UL + 1850UL), (18420029360357226731UL + 1881UL),
+                            &____alias_loc_id_23, (unsigned)2, (unsigned)0, (18420029360357226731UL + 1885UL), (18420029360357226731UL + 1898UL),
+                            &____alias_loc_id_24, (unsigned)10, (unsigned)0, (18420029360357226731UL + 1900UL), (18420029360357226731UL + 1901UL), (18420029360357226731UL + 1902UL), (18420029360357226731UL + 1903UL), (18420029360357226731UL + 1904UL), (18420029360357226731UL + 1905UL), (18420029360357226731UL + 1906UL), (18420029360357226731UL + 1907UL), (18420029360357226731UL + 2053UL), (18420029360357226731UL + 2054UL),
+                            "initEamPot", (void *)(&initEamPot_npm), (void *)__null, 1, &____alias_loc_id_0, 3, (18420029360357226731UL + 84UL), (18420029360357226731UL + 85UL), (18420029360357226731UL + 86UL), (18420029360357226731UL + 26UL), 9, "malloc", 1, 0UL, (18420029360357226731UL + 26UL), "__assert_rtn", 4, (18420029360357226731UL + 2060UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2062UL), 0UL, "getMyRank", 0, 0UL, "strcmp", 2, (18420029360357226731UL + 86UL), (18420029360357226731UL + 2063UL), 0UL, "eamReadSetfl", 3, (18420029360357226731UL + 26UL), (18420029360357226731UL + 84UL), (18420029360357226731UL + 85UL), 0UL, "strcmp", 2, (18420029360357226731UL + 86UL), (18420029360357226731UL + 2064UL), 0UL, "eamReadFuncfl", 3, (18420029360357226731UL + 26UL), (18420029360357226731UL + 84UL), (18420029360357226731UL + 85UL), 0UL, "typeNotSupported", 2, (18420029360357226731UL + 2060UL), (18420029360357226731UL + 86UL), 0UL, "eamBcastPotential", 1, (18420029360357226731UL + 26UL), 0UL,
+                            "eamForce", (void *)(&eamForce_npm), (void *)(eamForce), 2, &____alias_loc_id_1, &____alias_loc_id_2, 1, (18420029360357226731UL + 848UL), 0UL, 15, "__assert_rtn", 4, (18420029360357226731UL + 2091UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2062UL), 0UL, "malloc", 1, 0UL, (18420029360357226731UL + 661UL), "malloc", 1, 0UL, (18420029360357226731UL + 661UL), "initForceHaloExchange", 2, (18420029360357226731UL + 661UL), (18420029360357226731UL + 661UL), (18420029360357226731UL + 661UL), "malloc", 1, 0UL, (18420029360357226731UL + 661UL), "zeroReal3", 1, (18420029360357226731UL + 661UL), 0UL, "sqrt", 1, 0UL, 0UL, "interpolate", 4, (18420029360357226731UL + 661UL), 0UL, (18420029360357226731UL + 115UL), (18420029360357226731UL + 116UL), 0UL, "interpolate", 4, (18420029360357226731UL + 661UL), 0UL, (18420029360357226731UL + 117UL), (18420029360357226731UL + 118UL), 0UL, "interpolate", 4, (18420029360357226731UL + 661UL), 0UL, (18420029360357226731UL + 123UL), (18420029360357226731UL + 124UL), 0UL, "profileStart", 1, 0UL, 0UL, "haloExchange", 2, (18420029360357226731UL + 661UL), (18420029360357226731UL + 661UL), 0UL, "profileStop", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL, "interpolate", 4, (18420029360357226731UL + 661UL), 0UL, (18420029360357226731UL + 136UL), (18420029360357226731UL + 137UL), 0UL,
+                            "eamPrint", (void *)(&eamPrint_npm), (void *)(eamPrint), 0, 2, (18420029360357226731UL + 894UL), (18420029360357226731UL + 895UL), 0UL, 7, "fprintf", 2, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2082UL), 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2074UL), (18420029360357226731UL + 895UL), 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2074UL), 0UL, 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2087UL), 0UL, 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2074UL), (18420029360357226731UL + 895UL), 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2089UL), 0UL, 0UL, "fprintf", 3, (18420029360357226731UL + 894UL), (18420029360357226731UL + 2089UL), 0UL, 0UL,
+                            "eamDestroy", (void *)(&eamDestroy_npm), (void *)(eamDestroy), 1, &____alias_loc_id_3, 1, (18420029360357226731UL + 932UL), 0UL, 5, "destroyInterpolationObject", 1, (18420029360357226731UL + 907UL), 0UL, "destroyInterpolationObject", 1, (18420029360357226731UL + 907UL), 0UL, "destroyInterpolationObject", 1, (18420029360357226731UL + 907UL), 0UL, "destroyHaloExchange", 1, (18420029360357226731UL + 907UL), 0UL, "free", 1, (18420029360357226731UL + 907UL), 0UL,
+                            "eamBcastPotential", (void *)(&eamBcastPotential_npm), (void *)__null, 3, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, 1, (18420029360357226731UL + 1557UL), 0UL, 10, "__assert_rtn", 4, (18420029360357226731UL + 2072UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2062UL), 0UL, "getMyRank", 0, 0UL, "strcpy", 2, (18420029360357226731UL + 1462UL), (18420029360357226731UL + 1557UL), (18420029360357226731UL + 1505UL), "strcpy", 2, (18420029360357226731UL + 1462UL), (18420029360357226731UL + 1557UL), (18420029360357226731UL + 1511UL), "bcastParallel", 3, (18420029360357226731UL + 1462UL), 0UL, 0UL, 0UL, "strcpy", 2, (18420029360357226731UL + 1557UL), (18420029360357226731UL + 1462UL), (18420029360357226731UL + 1540UL), "strcpy", 2, (18420029360357226731UL + 1557UL), (18420029360357226731UL + 1462UL), (18420029360357226731UL + 1546UL), "bcastInterpolationObject", 1, (18420029360357226731UL + 1557UL), 0UL, "bcastInterpolationObject", 1, (18420029360357226731UL + 1557UL), 0UL, "bcastInterpolationObject", 1, (18420029360357226731UL + 1557UL), 0UL,
+                            "initInterpolationObject", (void *)(&initInterpolationObject_npm), (void *)__null, 0, 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1720UL), (18420029360357226731UL + 1624UL), 4, "malloc", 1, 0UL, (18420029360357226731UL + 1624UL), "__assert_rtn", 4, (18420029360357226731UL + 2074UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2063UL), 0UL, "calloc", 2, 0UL, 0UL, (18420029360357226731UL + 1622UL), "__assert_rtn", 4, (18420029360357226731UL + 2074UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2069UL), 0UL,
+                            "destroyInterpolationObject", (void *)(&destroyInterpolationObject_npm), (void *)__null, 0, 1, (18420029360357226731UL + 1881UL), 0UL, 2, "free", 1, (18420029360357226731UL + 1857UL), 0UL, "free", 1, (18420029360357226731UL + 1850UL), 0UL,
+                            "interpolate", (void *)(&interpolate_npm), (void *)__null, 0, 4, (18420029360357226731UL + 2051UL), 0UL, (18420029360357226731UL + 2053UL), (18420029360357226731UL + 2054UL), 0UL, 2, "floor", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL,
+                            "bcastInterpolationObject", (void *)(&bcastInterpolationObject_npm), (void *)__null, 3, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 1, (18420029360357226731UL + 1784UL), 0UL, 7, "getMyRank", 0, 0UL, "bcastParallel", 3, (18420029360357226731UL + 1738UL), 0UL, 0UL, 0UL, "getMyRank", 0, 0UL, "__assert_rtn", 4, (18420029360357226731UL + 2082UL), (18420029360357226731UL + 2061UL), 0UL, (18420029360357226731UL + 2083UL), 0UL, "malloc", 1, 0UL, (18420029360357226731UL + 1782UL), "malloc", 1, 0UL, (18420029360357226731UL + 1809UL), "bcastParallel", 3, (18420029360357226731UL + 1809UL), 0UL, 0UL, 0UL,
+                            "eamReadSetfl", (void *)(&eamReadSetfl_npm), (void *)__null, 0, 3, (18420029360357226731UL + 1185UL), (18420029360357226731UL + 1186UL), (18420029360357226731UL + 1187UL), 0UL, 22, "sprintf", 4, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2063UL), (18420029360357226731UL + 1186UL), (18420029360357226731UL + 1187UL), 0UL, "_fopen", 2, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2068UL), (18420029360357226731UL + 971UL), "fileNotFound", 2, (18420029360357226731UL + 2078UL), (18420029360357226731UL + 938UL), 0UL, "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 981UL), "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 984UL), "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 987UL), "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 990UL), "sscanf", 3, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2070UL), (18420029360357226731UL + 940UL), 0UL, "notAlloyReady", 1, (18420029360357226731UL + 2078UL), 0UL, "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 1006UL), "sscanf", 7, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2072UL), (18420029360357226731UL + 941UL), (18420029360357226731UL + 943UL), (18420029360357226731UL + 942UL), (18420029360357226731UL + 944UL), (18420029360357226731UL + 945UL), 0UL, "fgets", 3, (18420029360357226731UL + 938UL), 0UL, (18420029360357226731UL + 971UL), (18420029360357226731UL + 1015UL), "sscanf", 6, (18420029360357226731UL + 938UL), (18420029360357226731UL + 2069UL), (18420029360357226731UL + 946UL), (18420029360357226731UL + 947UL), (18420029360357226731UL + 948UL), (18420029360357226731UL + 949UL), 0UL, "strcpy", 2, (18420029360357226731UL + 1185UL), (18420029360357226731UL + 949UL), (18420029360357226731UL + 1040UL), "malloc", 1, 0UL, (18420029360357226731UL + 1056UL), "fscanf", 3, (18420029360357226731UL + 971UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1056UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1056UL), (18420029360357226731UL + 1083UL), "fscanf", 3, (18420029360357226731UL + 971UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1056UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1056UL), (18420029360357226731UL + 1083UL), "fscanf", 3, (18420029360357226731UL + 971UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1056UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1056UL), (18420029360357226731UL + 1083UL), "free", 1, (18420029360357226731UL + 1056UL), 0UL,
+                            "eamReadFuncfl", (void *)(&eamReadFuncfl_npm), (void *)__null, 0, 3, (18420029360357226731UL + 1443UL), (18420029360357226731UL + 1444UL), (18420029360357226731UL + 1445UL), 0UL, 19, "sprintf", 4, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2063UL), (18420029360357226731UL + 1444UL), (18420029360357226731UL + 1445UL), 0UL, "_fopen", 2, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2068UL), (18420029360357226731UL + 1224UL), "fileNotFound", 2, (18420029360357226731UL + 2069UL), (18420029360357226731UL + 1191UL), 0UL, "fgets", 3, (18420029360357226731UL + 1191UL), 0UL, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 1234UL), "sscanf", 3, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2070UL), (18420029360357226731UL + 1193UL), 0UL, "strcpy", 2, (18420029360357226731UL + 1443UL), (18420029360357226731UL + 1193UL), (18420029360357226731UL + 1243UL), "fgets", 3, (18420029360357226731UL + 1191UL), 0UL, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 1250UL), "sscanf", 6, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2069UL), (18420029360357226731UL + 1194UL), (18420029360357226731UL + 1195UL), (18420029360357226731UL + 1196UL), (18420029360357226731UL + 1197UL), 0UL, "strcpy", 2, (18420029360357226731UL + 1443UL), (18420029360357226731UL + 1197UL), (18420029360357226731UL + 1271UL), "fgets", 3, (18420029360357226731UL + 1191UL), 0UL, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 1279UL), "sscanf", 7, (18420029360357226731UL + 1191UL), (18420029360357226731UL + 2072UL), (18420029360357226731UL + 1198UL), (18420029360357226731UL + 1200UL), (18420029360357226731UL + 1199UL), (18420029360357226731UL + 1201UL), (18420029360357226731UL + 1202UL), 0UL, "malloc", 1, 0UL, (18420029360357226731UL + 1303UL), "fscanf", 3, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1303UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1303UL), (18420029360357226731UL + 1328UL), "fscanf", 3, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1303UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1303UL), (18420029360357226731UL + 1328UL), "fscanf", 3, (18420029360357226731UL + 1224UL), (18420029360357226731UL + 2062UL), (18420029360357226731UL + 1303UL), 0UL, "initInterpolationObject", 4, 0UL, 0UL, 0UL, (18420029360357226731UL + 1303UL), (18420029360357226731UL + 1328UL), "free", 1, (18420029360357226731UL + 1303UL), 0UL,
+                            "fileNotFound", (void *)(&fileNotFound_npm), (void *)__null, 0, 2, (18420029360357226731UL + 1578UL), (18420029360357226731UL + 1579UL), 0UL, 2, "fprintf", 4, (18420029360357226731UL + 1571UL), (18420029360357226731UL + 2077UL), (18420029360357226731UL + 1578UL), (18420029360357226731UL + 1579UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "notAlloyReady", (void *)(&notAlloyReady_npm), (void *)__null, 0, 1, (18420029360357226731UL + 1733UL), 0UL, 2, "fprintf", 3, (18420029360357226731UL + 1571UL), (18420029360357226731UL + 2080UL), (18420029360357226731UL + 1733UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "typeNotSupported", (void *)(&typeNotSupported_npm), (void *)__null, 0, 2, (18420029360357226731UL + 1459UL), (18420029360357226731UL + 1460UL), 0UL, 2, "fprintf", 4, (18420029360357226731UL + 1571UL), (18420029360357226731UL + 2066UL), (18420029360357226731UL + 1459UL), (18420029360357226731UL + 1460UL), 0UL, "exit", 1, 0UL, 0UL,
+                               "bcastParallel", (void **)&(____chimes_extern_func_bcastParallel),
+                               "destroyHaloExchange", (void **)&(____chimes_extern_func_destroyHaloExchange),
+                               "getMyRank", (void **)&(____chimes_extern_func_getMyRank),
+                               "haloExchange", (void **)&(____chimes_extern_func_haloExchange),
+                               "initForceHaloExchange", (void **)&(____chimes_extern_func_initForceHaloExchange),
+                               "profileStart", (void **)&(____chimes_extern_func_profileStart),
+                               "profileStop", (void **)&(____chimes_extern_func_profileStop),
+                               "zeroReal3", (void **)&(____chimes_extern_func_zeroReal3),
+                           "initEamPot", &(____chimes_does_checkpoint_initEamPot_npm),
+                           "eamForce", &(____chimes_does_checkpoint_eamForce_npm),
+                           "eamPrint", &(____chimes_does_checkpoint_eamPrint_npm),
+                           "eamDestroy", &(____chimes_does_checkpoint_eamDestroy_npm),
+                           "eamBcastPotential", &(____chimes_does_checkpoint_eamBcastPotential_npm),
+                           "initInterpolationObject", &(____chimes_does_checkpoint_initInterpolationObject_npm),
+                           "destroyInterpolationObject", &(____chimes_does_checkpoint_destroyInterpolationObject_npm),
+                           "interpolate", &(____chimes_does_checkpoint_interpolate_npm),
+                           "bcastInterpolationObject", &(____chimes_does_checkpoint_bcastInterpolationObject_npm),
+                           "eamReadSetfl", &(____chimes_does_checkpoint_eamReadSetfl_npm),
+                           "eamReadFuncfl", &(____chimes_does_checkpoint_eamReadFuncfl_npm),
+                           "fileNotFound", &(____chimes_does_checkpoint_fileNotFound_npm),
+                           "notAlloyReady", &(____chimes_does_checkpoint_notAlloyReady_npm),
+                           "typeNotSupported", &(____chimes_does_checkpoint_typeNotSupported_npm),
+                           "bcastParallel", &(____chimes_does_checkpoint_bcastParallel_npm),
+                           "destroyHaloExchange", &(____chimes_does_checkpoint_destroyHaloExchange_npm),
+                           "getMyRank", &(____chimes_does_checkpoint_getMyRank_npm),
+                           "haloExchange", &(____chimes_does_checkpoint_haloExchange_npm),
+                           "initForceHaloExchange", &(____chimes_does_checkpoint_initForceHaloExchange_npm),
+                           "profileStart", &(____chimes_does_checkpoint_profileStart_npm),
+                           "profileStop", &(____chimes_does_checkpoint_profileStop_npm),
+                           "zeroReal3", &(____chimes_does_checkpoint_zeroReal3_npm),
+                             (18420029360357226731UL + 1205UL), (18420029360357226731UL + 1303UL),
+                             (18420029360357226731UL + 1782UL), (18420029360357226731UL + 1809UL),
+                             (18420029360357226731UL + 1784UL), (18420029360357226731UL + 1782UL),
+                             (18420029360357226731UL + 1565UL), (18420029360357226731UL + 1578UL),
+                             (18420029360357226731UL + 661UL), (18420029360357226731UL + 661UL),
+                             (18420029360357226731UL + 1904UL), (18420029360357226731UL + 1919UL),
+                             (18420029360357226731UL + 1902UL), (18420029360357226731UL + 2053UL),
+                             (18420029360357226731UL + 1903UL), (18420029360357226731UL + 2054UL),
+                             (18420029360357226731UL + 1900UL), (18420029360357226731UL + 2051UL),
+                             (18420029360357226731UL + 2051UL), (18420029360357226731UL + 1919UL),
+                             (18420029360357226731UL + 1447UL), (18420029360357226731UL + 1460UL),
+                             (18420029360357226731UL + 26UL), (18420029360357226731UL + 1850UL),
+                             (18420029360357226731UL + 1624UL), (18420029360357226731UL + 1622UL),
+                             (18420029360357226731UL + 850UL), (18420029360357226731UL + 895UL),
+                             (18420029360357226731UL + 851UL), (18420029360357226731UL + 895UL),
+                             (18420029360357226731UL + 951UL), (18420029360357226731UL + 1056UL),
+                             (18420029360357226731UL + 1190UL), (18420029360357226731UL + 1445UL),
+                             (18420029360357226731UL + 1192UL), (18420029360357226731UL + 1224UL),
+                             (18420029360357226731UL + 3UL), (18420029360357226731UL + 86UL),
+                             (18420029360357226731UL + 1737UL), (18420029360357226731UL + 1784UL),
+                             (18420029360357226731UL + 1UL), (18420029360357226731UL + 84UL),
+                             (18420029360357226731UL + 1446UL), (18420029360357226731UL + 1459UL),
+                             (18420029360357226731UL + 939UL), (18420029360357226731UL + 971UL),
+                             (18420029360357226731UL + 2UL), (18420029360357226731UL + 85UL),
+                             (18420029360357226731UL + 1443UL), (18420029360357226731UL + 1328UL),
+                             (18420029360357226731UL + 4UL), (18420029360357226731UL + 26UL),
+                             (18420029360357226731UL + 932UL), (18420029360357226731UL + 907UL),
+                             (18420029360357226731UL + 937UL), (18420029360357226731UL + 1187UL),
+                             (18420029360357226731UL + 936UL), (18420029360357226731UL + 1186UL),
+                             (18420029360357226731UL + 935UL), (18420029360357226731UL + 1185UL),
+                             (18420029360357226731UL + 896UL), (18420029360357226731UL + 932UL),
+                             (18420029360357226731UL + 897UL), (18420029360357226731UL + 907UL),
+                             (18420029360357226731UL + 1593UL), (18420029360357226731UL + 1624UL),
+                             (18420029360357226731UL + 1592UL), (18420029360357226731UL + 1720UL),
+                             (18420029360357226731UL + 1881UL), (18420029360357226731UL + 1850UL),
+                             (18420029360357226731UL + 1885UL), (18420029360357226731UL + 1898UL),
+                             (18420029360357226731UL + 97UL), (18420029360357226731UL + 661UL),
+                             (18420029360357226731UL + 96UL), (18420029360357226731UL + 848UL),
+                             (18420029360357226731UL + 1188UL), (18420029360357226731UL + 1443UL),
+                             (18420029360357226731UL + 1189UL), (18420029360357226731UL + 1444UL),
+                             (18420029360357226731UL + 1461UL), (18420029360357226731UL + 1557UL),
+                             (18420029360357226731UL + 1724UL), (18420029360357226731UL + 1733UL),
+                             (18420029360357226731UL + 1185UL), (18420029360357226731UL + 1083UL),
+                             (18420029360357226731UL + 849UL), (18420029360357226731UL + 894UL),
+                             (18420029360357226731UL + 848UL), (18420029360357226731UL + 661UL),
+                             (18420029360357226731UL + 1850UL), (18420029360357226731UL + 1857UL),
+                             (18420029360357226731UL + 1566UL), (18420029360357226731UL + 1579UL),
+                             (18420029360357226731UL + 1842UL), (18420029360357226731UL + 1881UL),
+                             (18420029360357226731UL + 2065UL), (18420029360357226731UL + 1571UL),
+                     "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U),
+                     "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy),
+                     "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
+                     "EamPotentialSt", 16, "double", (int)__builtin_offsetof (struct EamPotentialSt, cutoff), "double", (int)__builtin_offsetof (struct EamPotentialSt, mass), "double", (int)__builtin_offsetof (struct EamPotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct EamPotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct EamPotentialSt, name), "int", (int)__builtin_offsetof (struct EamPotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct EamPotentialSt, force), "*", (int)__builtin_offsetof (struct EamPotentialSt, print), "*", (int)__builtin_offsetof (struct EamPotentialSt, destroy), "%struct.InterpolationObjectSt*", (int)__builtin_offsetof (struct EamPotentialSt, phi), "%struct.InterpolationObjectSt*", (int)__builtin_offsetof (struct EamPotentialSt, rho), "%struct.InterpolationObjectSt*", (int)__builtin_offsetof (struct EamPotentialSt, f), "double*", (int)__builtin_offsetof (struct EamPotentialSt, rhobar), "double*", (int)__builtin_offsetof (struct EamPotentialSt, dfEmbed), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct EamPotentialSt, forceExchange), "%struct.ForceExchangeDataSt*", (int)__builtin_offsetof (struct EamPotentialSt, forceExchangeData),
+                     "ForceExchangeDataSt", 2, "double*", (int)__builtin_offsetof (struct ForceExchangeDataSt, dfEmbed), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct ForceExchangeDataSt, boxes),
+                     "HaloExchangeSt", 6, "[ 6 x int ]", (int)__builtin_offsetof (struct HaloExchangeSt, nbrRank), "int", (int)__builtin_offsetof (struct HaloExchangeSt, bufCapacity), "*", (int)__builtin_offsetof (struct HaloExchangeSt, loadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, unloadBuffer), "*", (int)__builtin_offsetof (struct HaloExchangeSt, destroy), "void*", (int)__builtin_offsetof (struct HaloExchangeSt, parms),
+                     "InterpolationObjectSt", 4, "int", (int)__builtin_offsetof (struct InterpolationObjectSt, n), "double", (int)__builtin_offsetof (struct InterpolationObjectSt, x0), "double", (int)__builtin_offsetof (struct InterpolationObjectSt, invDx), "double*", (int)__builtin_offsetof (struct InterpolationObjectSt, values),
+                     "LinkCellSt", 10, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms), "int**", (int)__builtin_offsetof (struct LinkCellSt, nbrBoxes),
+                     "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange),
+                     "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass),
+                     "TimerHandle", 0,
+                     "__sFILE", 20, "unsigned char*", (int)__builtin_offsetof (struct __sFILE, _p), "int", (int)__builtin_offsetof (struct __sFILE, _r), "int", (int)__builtin_offsetof (struct __sFILE, _w), "short", (int)__builtin_offsetof (struct __sFILE, _flags), "short", (int)__builtin_offsetof (struct __sFILE, _file), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _bf), "int", (int)__builtin_offsetof (struct __sFILE, _lbfsize), "void*", (int)__builtin_offsetof (struct __sFILE, _cookie), "*", (int)__builtin_offsetof (struct __sFILE, _close), "*", (int)__builtin_offsetof (struct __sFILE, _read), "*", (int)__builtin_offsetof (struct __sFILE, _seek), "*", (int)__builtin_offsetof (struct __sFILE, _write), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _ub), "%struct.__sFILEX*", (int)__builtin_offsetof (struct __sFILE, _extra), "int", (int)__builtin_offsetof (struct __sFILE, _ur), "[ 3 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _ubuf), "[ 1 x unsigned char ]", (int)__builtin_offsetof (struct __sFILE, _nbuf), "%struct.__sbuf", (int)__builtin_offsetof (struct __sFILE, _lb), "int", (int)__builtin_offsetof (struct __sFILE, _blksize), "long long int", (int)__builtin_offsetof (struct __sFILE, _offset),
+                     "__sFILEX", 0,
+                     "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size),
+                     "_buf_2_t", 3, "int", (int)__builtin_offsetof (struct _buf_2_t, n), "double", (int)__builtin_offsetof (struct _buf_2_t, x0), "double", (int)__builtin_offsetof (struct _buf_2_t, invDx),
+                     "_buf_t", 6, "double", (int)__builtin_offsetof (struct _buf_t, cutoff), "double", (int)__builtin_offsetof (struct _buf_t, mass), "double", (int)__builtin_offsetof (struct _buf_t, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct _buf_t, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct _buf_t, name), "int", (int)__builtin_offsetof (struct _buf_t, atomicNo),
+                             "eamPrint", "_ZL8eamPrintP7__sFILEP15BasePotentialSt", 0,
+                             "eamReadFuncfl", "_ZL13eamReadFuncflP14EamPotentialStPKcS2_", 4, "fileNotFound", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
+                             "fileNotFound", "_ZL12fileNotFoundPKcS0_", 0,
+                             "initInterpolationObject", "_ZL23initInterpolationObjectiddPd", 0,
+                             "initEamPot", "_Z10initEamPotPKcS0_S0_", 5, "getMyRank", "eamReadSetfl", "eamReadFuncfl", "typeNotSupported", "eamBcastPotential",
+                             "interpolate", "_ZL11interpolateP21InterpolationObjectStdPdS1_", 0,
+                             "eamReadSetfl", "_ZL12eamReadSetflP14EamPotentialStPKcS2_", 5, "fileNotFound", "notAlloyReady", "initInterpolationObject", "initInterpolationObject", "initInterpolationObject",
+                             "eamForce", "_ZL8eamForceP9SimFlatSt", 9, "initForceHaloExchange", "zeroReal3", "interpolate", "interpolate", "interpolate", "profileStart", "haloExchange", "profileStop", "interpolate",
+                             "bcastInterpolationObject", "_ZL24bcastInterpolationObjectPP21InterpolationObjectSt", 4, "getMyRank", "bcastParallel", "getMyRank", "bcastParallel",
+                             "zeroReal3", "_ZL9zeroReal3Pd", 0,
+                             "eamBcastPotential", "_ZL17eamBcastPotentialP14EamPotentialSt", 5, "getMyRank", "bcastParallel", "bcastInterpolationObject", "bcastInterpolationObject", "bcastInterpolationObject",
+                             "typeNotSupported", "_ZL16typeNotSupportedPKcS0_", 0,
+                             "notAlloyReady", "_ZL13notAlloyReadyPKc", 0,
+                             "eamDestroy", "_ZL10eamDestroyPP15BasePotentialSt", 4, "destroyInterpolationObject", "destroyInterpolationObject", "destroyInterpolationObject", "destroyHaloExchange",
+                             "destroyInterpolationObject", "_ZL26destroyInterpolationObjectPP21InterpolationObjectSt", 0,
+                        "initEamPot|dir|0", 2, "getMyRank", "eamBcastPotential",
+                        "initEamPot|file|0", 2, "getMyRank", "eamBcastPotential",
+                        "initEamPot|type|0", 2, "getMyRank", "eamBcastPotential",
+                        "initEamPot|pot|0", 2, "getMyRank", "eamBcastPotential",
+                        "eamForce|s|0", 4, "profileStop", "profileStart", "initForceHaloExchange", "haloExchange",
+                        "eamForce|pot|0", 4, "profileStop", "profileStart", "initForceHaloExchange", "haloExchange",
+                        "eamForce|rCut2|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|etot|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|fsize|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|ii|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|nNbrBoxes|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|iBox|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|nIBox|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|jTmp|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|jBox|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|nJBox|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|iOff|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|jOff|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|dr|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|r2|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|k|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|r|0", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|phiTmp|0", 1, "eamForce",
+                        "eamForce|rhoTmp|0", 1, "eamForce",
+                        "eamForce|k|1", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|iBox|1", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|nIBox|1", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|iOff|1", 3, "profileStop", "profileStart", "haloExchange",
+                        "eamForce|fEmbed|0", 1, "eamForce",
+                        "eamForce|rhoTmp|1", 1, "eamForce",
+                        "eamDestroy|pPot|0", 1, "destroyHaloExchange",
+                        "eamDestroy|pot|0", 1, "destroyHaloExchange",
+                        "eamReadSetfl|tmp|0", 1, "eamReadSetfl",
+                        "eamReadSetfl|latticeType|0", 1, "eamReadSetfl",
+                        "eamReadFuncfl|tmp|0", 1, "eamReadFuncfl",
+                        "eamReadFuncfl|name|0", 1, "eamReadFuncfl",
+                        "eamReadFuncfl|latticeType|0", 1, "eamReadFuncfl",
+                        "eamBcastPotential|pot|0", 3, "getMyRank", "bcastParallel", "bcastInterpolationObject",
+                        "eamBcastPotential|buf|0", 1, "eamBcastPotential",
+                        "bcastInterpolationObject|table|0", 2, "getMyRank", "bcastParallel",
+                        "bcastInterpolationObject|buf|0", 1, "bcastInterpolationObject",
+                        "bcastInterpolationObject|valuesSize|0", 1, "bcastParallel",
+        "eamReadSetfl", 0UL, (int)3, 18420029360357226757UL, 18420029360357226815UL, 18420029360357226816UL,
+        "eamReadFuncfl", 0UL, (int)3, 18420029360357226757UL, 18420029360357226815UL, 18420029360357226816UL,
+        "typeNotSupported", 0UL, (int)2, 18420029360357228791UL, 18420029360357226817UL,
+        "interpolate", 0UL, (int)4, 18420029360357227392UL, 0UL, 18420029360357226846UL, 18420029360357226847UL,
+        "interpolate", 0UL, (int)4, 18420029360357227392UL, 0UL, 18420029360357226848UL, 18420029360357226849UL,
+        "interpolate", 0UL, (int)4, 18420029360357227392UL, 0UL, 18420029360357226854UL, 18420029360357226855UL,
+        "interpolate", 0UL, (int)4, 18420029360357227392UL, 0UL, 18420029360357226867UL, 18420029360357226868UL,
+        "destroyInterpolationObject", 0UL, (int)1, 18420029360357227638UL,
+        "destroyInterpolationObject", 0UL, (int)1, 18420029360357227638UL,
+        "destroyInterpolationObject", 0UL, (int)1, 18420029360357227638UL,
+        "fileNotFound", 0UL, (int)2, 18420029360357228809UL, 18420029360357227669UL,
+        "notAlloyReady", 0UL, (int)1, 18420029360357228809UL,
+        "initInterpolationObject", 18420029360357227814UL, (int)4, 0UL, 0UL, 0UL, 18420029360357227787UL,
+        "initInterpolationObject", 18420029360357227814UL, (int)4, 0UL, 0UL, 0UL, 18420029360357227787UL,
+        "initInterpolationObject", 18420029360357227814UL, (int)4, 0UL, 0UL, 0UL, 18420029360357227787UL,
+        "fileNotFound", 0UL, (int)2, 18420029360357228800UL, 18420029360357227922UL,
+        "initInterpolationObject", 18420029360357228059UL, (int)4, 0UL, 0UL, 0UL, 18420029360357228034UL,
+        "initInterpolationObject", 18420029360357228059UL, (int)4, 0UL, 0UL, 0UL, 18420029360357228034UL,
+        "initInterpolationObject", 18420029360357228059UL, (int)4, 0UL, 0UL, 0UL, 18420029360357228034UL);
     return 0;
 }
 
-static int __libchimes_module_init = module_init();
+static const int __libchimes_module_init = module_init();

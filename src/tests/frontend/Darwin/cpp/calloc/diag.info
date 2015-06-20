@@ -10,14 +10,14 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 4 5  int *all
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 4 85 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 6 5  call_lbl_2: 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 3 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 6 18  ({  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 6 18 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 6 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 4 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 4 16 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 3 167  ; int *alloc;
  register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0);  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 3 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 6 18  ({  calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 6 18 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 6 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 4 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/calloc.cpp 4 16 

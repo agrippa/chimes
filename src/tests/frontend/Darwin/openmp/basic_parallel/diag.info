@@ -17,26 +17,28 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 15 2
 InsertText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 6 5  call_lbl_1: 
 InsertText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 17 9  call_lbl_2: 
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 5 6 len=3 foo_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 6 18  ({  calling((void*)checkpoint, 1, 0UL, 0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 6 18 checkpoint_transformed(1, 0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 6 29 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 5 96  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 9 5 len=4 main_quick
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 20 ;  { call_lbl_4: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 18 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  } 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 17 22  ({  calling((void*)foo, 2, 0UL, ____alias_loc_id_0, 0); (foo)(); }) 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 20 ;  { call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 18 5  thread_leaving(); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 18 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0);  } 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 17 22  ({  calling((void*)foo, 2, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 17 26 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 5 ; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 9 168  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 5 6 len=3 foo_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 6 18  ({  calling((void*)checkpoint, 1, 0UL, 0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 6 18 checkpoint_transformed(1, 0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 6 29 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 5 96  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 9 5 len=4 main_resumable
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 20 ;  { call_lbl_4: unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 18 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0);  } 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 17 22  ({  calling((void*)foo, 2, 0UL, ____alias_loc_id_0, 0); (foo)(); }) 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 12 20 ;  { call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
+InsertTextBefore /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 18 5  thread_leaving(); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 18 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0);  } 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 17 22  ({  calling((void*)foo, 2, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 17 26 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 14 5 ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/openmp/basic_parallel.cpp 9 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
