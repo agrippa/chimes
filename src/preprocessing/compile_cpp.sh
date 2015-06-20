@@ -4,6 +4,7 @@ set -e
 
 script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
+source ${CHIMES_HOME}/src/common.conf
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info constants.info tree.info"
 ENABLE_OMP=1
@@ -117,7 +118,6 @@ fi
 echo WORK_DIR = $WORK_DIR
 
 OPT=$(find_opt)
-GXX=${GXX:-/usr/bin/g++}
 CLANG=$(find_clang)
 TRANSFORM=${CHIMES_HOME}/src/preprocessing/clang/transform
 BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert

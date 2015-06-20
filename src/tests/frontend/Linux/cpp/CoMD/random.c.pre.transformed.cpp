@@ -1,10 +1,9 @@
 # 1 "random.c.pre.transformed.cpp"
-# 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
-# 149 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
+# 147 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 212 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "random.c.pre.transformed.cpp"
@@ -23,18 +22,15 @@ static unsigned ____alias_loc_id_1;
 static unsigned ____alias_loc_id_2;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 # 1 "/tmp/chimes-frontend//"
-# 1 "<built-in>"
 # 1 "<command-line>"
-
 # 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
 
 
 
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
-# 149 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
+# 147 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 212 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
@@ -105,23 +101,19 @@ extern int ____chimes_replaying;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 # 6 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 
-
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stdint.h" 1 3 4
+# 9 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stdint.h" 3 4
 # 1 "/usr/include/stdint.h" 1 3 4
 # 26 "/usr/include/stdint.h" 3 4
-
 # 1 "/usr/include/features.h" 1 3 4
 # 361 "/usr/include/features.h" 3 4
-
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 365 "/usr/include/sys/cdefs.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 366 "/usr/include/sys/cdefs.h" 2 3 4
 # 362 "/usr/include/features.h" 2 3 4
 # 385 "/usr/include/features.h" 3 4
-
 # 1 "/usr/include/gnu/stubs.h" 1 3 4
-
 
 
 
@@ -131,15 +123,12 @@ extern int ____chimes_replaying;
 
 
 
-
 # 1 "/usr/include/gnu/stubs-64.h" 1 3 4
 # 10 "/usr/include/gnu/stubs.h" 2 3 4
 # 386 "/usr/include/features.h" 2 3 4
 # 27 "/usr/include/stdint.h" 2 3 4
-
 # 1 "/usr/include/bits/wchar.h" 1 3 4
 # 28 "/usr/include/stdint.h" 2 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 29 "/usr/include/stdint.h" 2 3 4
 # 37 "/usr/include/stdint.h" 3 4
@@ -200,10 +189,16 @@ typedef unsigned long int uintptr_t;
 # 135 "/usr/include/stdint.h" 3 4
 typedef long int intmax_t;
 typedef unsigned long int uintmax_t;
+# 10 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stdint.h" 2 3 4
 # 8 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c" 2
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.h" 1
-# 9 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.h"
+
+
+
+
+
+
+
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mytype.h" 1
 # 13 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mytype.h"
 typedef double real_t;
@@ -233,29 +228,23 @@ uint64_t mkSeed(uint32_t id, uint32_t callSite);
 # 9 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c" 2
 # 9 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c"
 
-
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
 
 
 
-
 # 1 "/usr/include/bits/huge_val.h" 1 3 4
 # 35 "/usr/include/math.h" 2 3 4
 
-
 # 1 "/usr/include/bits/huge_valf.h" 1 3 4
 # 37 "/usr/include/math.h" 2 3 4
-
 # 1 "/usr/include/bits/huge_vall.h" 1 3 4
 # 38 "/usr/include/math.h" 2 3 4
 
 
-
 # 1 "/usr/include/bits/inf.h" 1 3 4
 # 41 "/usr/include/math.h" 2 3 4
-
 
 
 # 1 "/usr/include/bits/nan.h" 1 3 4
@@ -263,10 +252,8 @@ extern "C" {
 
 
 
-
 # 1 "/usr/include/bits/mathdef.h" 1 3 4
 # 26 "/usr/include/bits/mathdef.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 27 "/usr/include/bits/mathdef.h" 2 3 4
 
@@ -277,7 +264,6 @@ typedef float float_t;
 typedef double double_t;
 # 48 "/usr/include/math.h" 2 3 4
 # 71 "/usr/include/math.h" 3 4
-
 # 1 "/usr/include/bits/mathcalls.h" 1 3 4
 # 53 "/usr/include/bits/mathcalls.h" 3 4
 
@@ -573,7 +559,6 @@ extern double fma (double __x, double __y, double __z) throw (); extern double _
 extern double scalb (double __x, double __n) throw (); extern double __scalb (double __x, double __n) throw ();
 # 72 "/usr/include/math.h" 2 3 4
 # 94 "/usr/include/math.h" 3 4
-
 # 1 "/usr/include/bits/mathcalls.h" 1 3 4
 # 53 "/usr/include/bits/mathcalls.h" 3 4
 
@@ -605,13 +590,7 @@ extern float tanhf (float __x) throw (); extern float __tanhf (float __x) throw 
 
 
 
-extern void
- sincosf
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (float __x, float *__sinx, float *__cosx) throw (); extern void
- __sincosf
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (float __x, float *__sinx, float *__cosx) throw ()
+extern void sincosf (float __x, float *__sinx, float *__cosx) throw (); extern void __sincosf (float __x, float *__sinx, float *__cosx) throw ()
                                                            ;
 
 
@@ -875,7 +854,6 @@ extern float fmaf (float __x, float __y, float __z) throw (); extern float __fma
 extern float scalbf (float __x, float __n) throw (); extern float __scalbf (float __x, float __n) throw ();
 # 95 "/usr/include/math.h" 2 3 4
 # 141 "/usr/include/math.h" 3 4
-
 # 1 "/usr/include/bits/mathcalls.h" 1 3 4
 # 53 "/usr/include/bits/mathcalls.h" 3 4
 
@@ -907,13 +885,7 @@ extern long double tanhl (long double __x) throw (); extern long double __tanhl 
 
 
 
-extern void
- sincosl
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (long double __x, long double *__sinx, long double *__cosx) throw (); extern void
- __sincosl
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (long double __x, long double *__sinx, long double *__cosx) throw ()
+extern void sincosl (long double __x, long double *__sinx, long double *__cosx) throw (); extern void __sincosl (long double __x, long double *__sinx, long double *__cosx) throw ()
                                                            ;
 
 
@@ -1222,10 +1194,8 @@ struct __exception
 
 extern int matherr (struct __exception *__exc) throw ();
 # 416 "/usr/include/math.h" 3 4
-
 # 1 "/usr/include/bits/mathinline.h" 1 3 4
 # 25 "/usr/include/bits/mathinline.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 26 "/usr/include/bits/mathinline.h" 2 3 4
 # 37 "/usr/include/bits/mathinline.h" 3 4

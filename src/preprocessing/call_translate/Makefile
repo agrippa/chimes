@@ -5,7 +5,7 @@
 # GXX=/usr/local/bin/g++ make
 #
 
-GXX?=/usr/bin/g++
+include ${CHIMES_HOME}/src/common.conf
 EXE=call_translate
 
 LLVM_CONFIG=$(shell find ${LLVM_INSTALL}/**/bin -name llvm-config)

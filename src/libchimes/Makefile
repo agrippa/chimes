@@ -1,4 +1,5 @@
-GXX?=g++
+include ${CHIMES_HOME}/src/common.conf
+
 NVCC=nvcc
 GXX_FLAGS=-fPIC -Wall -O3
 NVCC_FLAGS=-Xcompiler -fPIC -arch=sm_20

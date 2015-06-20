@@ -43,7 +43,7 @@ class TestConfig(object):
         self.keep = keep
         self.verbose = verbose
         self.targets = targets
-        self.custom_compiler = None
+        # self.custom_compiler = None
         self.custom_compiler_flags = []
         self.update_tests = update_tests
         self.force_update = force_update
@@ -62,15 +62,15 @@ class TestConfig(object):
         """
         self.custom_compiler_flags.append(flag)
 
-    def set_custom_compiler(self, compiler):
-        """
-        Set base compiler to use for compilation (set using the GXX env
-        variable).
+    # def set_custom_compiler(self, compiler):
+    #     """
+    #     Set base compiler to use for compilation (set using the GXX env
+    #     variable).
 
-        :param compiler: Compiler to force.
-        :type compiler: `str`
-        """
-        self.custom_compiler = compiler
+    #     :param compiler: Compiler to force.
+    #     :type compiler: `str`
+    #     """
+    #     self.custom_compiler = compiler
 
     def __str__(self):
         return 'keep=' + str(self.keep) + ', verbose=' + str(self.verbose)
@@ -134,14 +134,14 @@ class FrontendTest(object):
         self.extra_cli_args = '' if extra_cli_args is None else extra_cli_args
 
 
-def set_custom_compiler(CONFIG):
-    if os.path.isfile('/opt/apps/gcc/4.8.2/bin/g++'):
-        CONFIG.set_custom_compiler('/opt/apps/gcc/4.8.2/bin/g++')
-    elif os.path.isfile('/usr/local/bin/g++'):
-        CONFIG.set_custom_compiler('/usr/local/bin/g++')
-    else:
-        print('Could not detect compatible compiler')
-        sys.exit(1)
+# def set_custom_compiler(CONFIG):
+#     if os.path.isfile('/opt/apps/gcc/4.8.2/bin/g++'):
+#         CONFIG.set_custom_compiler('/opt/apps/gcc/4.8.2/bin/g++')
+#     elif os.path.isfile('/usr/local/bin/g++'):
+#         CONFIG.set_custom_compiler('/usr/local/bin/g++')
+#     else:
+#         print('Could not detect compatible compiler')
+#         sys.exit(1)
 
 
 def get_platform_directory():
@@ -503,8 +503,8 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
         return
 
     env = copy_environ()
-    if config.custom_compiler is not None:
-        env['GXX'] = config.custom_compiler
+    # if config.custom_compiler is not None:
+    #     env['GXX'] = config.custom_compiler
 
     clean_and_create_folder(FRONTEND_WORKING_DIR)
     compile_cmd = compile_script_path + ' -k -w ' + FRONTEND_WORKING_DIR + \
@@ -658,8 +658,8 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
     # Compile the input file into an executable
     env = copy_environ()
-    if config.custom_compiler is not None:
-        env['GXX'] = config.custom_compiler
+    # if config.custom_compiler is not None:
+    #     env['GXX'] = config.custom_compiler
 
     compile_cmd = compile_script_path + ' -k'
 

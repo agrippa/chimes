@@ -1,10 +1,9 @@
 # 1 "eam.c.pre.transformed.cpp"
-# 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
-# 149 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
+# 147 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 212 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "eam.c.pre.transformed.cpp"
@@ -134,18 +133,15 @@ static unsigned ____alias_loc_id_24;
 static unsigned ____alias_loc_id_25;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 1 "/tmp/chimes-frontend//"
-# 1 "<built-in>"
 # 1 "<command-line>"
-
 # 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
 
 
 
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
-# 149 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
+# 147 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 212 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
@@ -210,9 +206,7 @@ extern int ____chimes_replaying;
 # 1 "<command-line>" 2
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.h" 1
-
 
 
 
@@ -253,23 +247,17 @@ struct BasePotentialSt* initEamPot(const char* dir, const char* file, const char
 # 89 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c" 2
 # 89 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 
-
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 25 "/usr/include/stdlib.h" 3 4
-
 # 1 "/usr/include/features.h" 1 3 4
 # 361 "/usr/include/features.h" 3 4
-
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 365 "/usr/include/sys/cdefs.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 366 "/usr/include/sys/cdefs.h" 2 3 4
 # 362 "/usr/include/features.h" 2 3 4
 # 385 "/usr/include/features.h" 3 4
-
 # 1 "/usr/include/gnu/stubs.h" 1 3 4
-
 
 
 
@@ -279,13 +267,18 @@ struct BasePotentialSt* initEamPot(const char* dir, const char* file, const char
 
 
 
-
 # 1 "/usr/include/gnu/stubs-64.h" 1 3 4
 # 10 "/usr/include/gnu/stubs.h" 2 3 4
 # 386 "/usr/include/features.h" 2 3 4
 # 26 "/usr/include/stdlib.h" 2 3 4
-# 34 "/usr/include/stdlib.h" 3 4
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+
+
+
+
+
+
+
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 34 "/usr/include/stdlib.h" 2 3 4
 
 extern "C" {
@@ -295,23 +288,17 @@ extern "C" {
 
 
 
-
 # 1 "/usr/include/bits/waitflags.h" 1 3 4
 # 43 "/usr/include/stdlib.h" 2 3 4
-
 # 1 "/usr/include/bits/waitstatus.h" 1 3 4
 # 65 "/usr/include/bits/waitstatus.h" 3 4
-
 # 1 "/usr/include/endian.h" 1 3 4
 # 37 "/usr/include/endian.h" 3 4
-
 # 1 "/usr/include/bits/endian.h" 1 3 4
 # 38 "/usr/include/endian.h" 2 3 4
 # 61 "/usr/include/endian.h" 3 4
-
 # 1 "/usr/include/bits/byteswap.h" 1 3 4
 # 28 "/usr/include/bits/byteswap.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 29 "/usr/include/bits/byteswap.h" 2 3 4
 # 62 "/usr/include/endian.h" 2 3 4
@@ -458,7 +445,6 @@ extern unsigned long long int strtoull (__const char *__restrict __nptr,
      char **__restrict __endptr, int __base)
      throw () __attribute__ ((__nonnull__ (1))) ;
 # 236 "/usr/include/stdlib.h" 3 4
-
 # 1 "/usr/include/xlocale.h" 1 3 4
 # 28 "/usr/include/xlocale.h" 3 4
 typedef struct __locale_struct
@@ -553,15 +539,12 @@ extern long int a64l (__const char *__s)
 
 
 
-
 # 1 "/usr/include/sys/types.h" 1 3 4
 # 28 "/usr/include/sys/types.h" 3 4
 extern "C" {
 
-
 # 1 "/usr/include/bits/types.h" 1 3 4
 # 28 "/usr/include/bits/types.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 29 "/usr/include/bits/types.h" 2 3 4
 
@@ -591,7 +574,6 @@ typedef unsigned long int __uint64_t;
 typedef long int __quad_t;
 typedef unsigned long int __u_quad_t;
 # 131 "/usr/include/bits/types.h" 3 4
-
 # 1 "/usr/include/bits/typesizes.h" 1 3 4
 # 132 "/usr/include/bits/types.h" 2 3 4
 
@@ -750,7 +732,6 @@ typedef __caddr_t caddr_t;
 
 typedef __key_t key_t;
 # 133 "/usr/include/sys/types.h" 3 4
-
 # 1 "/usr/include/time.h" 1 3 4
 # 58 "/usr/include/time.h" 3 4
 
@@ -778,8 +759,7 @@ typedef __suseconds_t suseconds_t;
 
 
 
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 148 "/usr/include/sys/types.h" 2 3 4
 
 
@@ -801,17 +781,13 @@ typedef unsigned int u_int64_t __attribute__ ((__mode__ (__DI__)));
 
 typedef int register_t __attribute__ ((__mode__ (__word__)));
 # 220 "/usr/include/sys/types.h" 3 4
-
 # 1 "/usr/include/sys/select.h" 1 3 4
 # 31 "/usr/include/sys/select.h" 3 4
-
 # 1 "/usr/include/bits/select.h" 1 3 4
 # 23 "/usr/include/bits/select.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 24 "/usr/include/bits/select.h" 2 3 4
 # 32 "/usr/include/sys/select.h" 2 3 4
-
 
 
 # 1 "/usr/include/bits/sigset.h" 1 3 4
@@ -835,7 +811,6 @@ typedef __sigset_t sigset_t;
 
 
 
-
 # 1 "/usr/include/time.h" 1 3 4
 # 120 "/usr/include/time.h" 3 4
 struct timespec
@@ -844,7 +819,6 @@ struct timespec
     long int tv_nsec;
   };
 # 45 "/usr/include/sys/select.h" 2 3 4
-
 
 # 1 "/usr/include/bits/time.h" 1 3 4
 # 75 "/usr/include/bits/time.h" 3 4
@@ -893,7 +867,6 @@ extern int pselect (int __nfds, fd_set *__restrict __readfds,
 
 }
 # 221 "/usr/include/sys/types.h" 2 3 4
-
 
 
 # 1 "/usr/include/sys/sysmacros.h" 1 3 4
@@ -960,10 +933,8 @@ typedef __fsfilcnt64_t fsfilcnt64_t;
 
 
 
-
 # 1 "/usr/include/bits/pthreadtypes.h" 1 3 4
 # 23 "/usr/include/bits/pthreadtypes.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 24 "/usr/include/bits/pthreadtypes.h" 2 3 4
 # 50 "/usr/include/bits/pthreadtypes.h" 3 4
@@ -1264,11 +1235,9 @@ extern void cfree (void *__ptr) throw ();
 
 
 
-
 # 1 "/usr/include/alloca.h" 1 3 4
 # 25 "/usr/include/alloca.h" 3 4
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 26 "/usr/include/alloca.h" 2 3 4
 
 extern "C" {
@@ -1602,7 +1571,6 @@ extern int getloadavg (double __loadavg[], int __nelem)
 # 964 "/usr/include/stdlib.h" 3 4
 }
 # 91 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c" 2
-
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -1610,8 +1578,7 @@ extern "C" {
 
 
 
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 35 "/usr/include/string.h" 2 3 4
 # 44 "/usr/include/string.h" 3 4
 extern void *memcpy (void *__restrict __dest,
@@ -2080,29 +2047,23 @@ extern "C++" __const char *basename (__const char *__filename)
 # 646 "/usr/include/string.h" 3 4
 }
 # 92 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c" 2
-
 # 1 "/usr/include/math.h" 1 3 4
 # 30 "/usr/include/math.h" 3 4
 extern "C" {
 
 
 
-
 # 1 "/usr/include/bits/huge_val.h" 1 3 4
 # 35 "/usr/include/math.h" 2 3 4
 
-
 # 1 "/usr/include/bits/huge_valf.h" 1 3 4
 # 37 "/usr/include/math.h" 2 3 4
-
 # 1 "/usr/include/bits/huge_vall.h" 1 3 4
 # 38 "/usr/include/math.h" 2 3 4
 
 
-
 # 1 "/usr/include/bits/inf.h" 1 3 4
 # 41 "/usr/include/math.h" 2 3 4
-
 
 
 # 1 "/usr/include/bits/nan.h" 1 3 4
@@ -2110,10 +2071,8 @@ extern "C" {
 
 
 
-
 # 1 "/usr/include/bits/mathdef.h" 1 3 4
 # 26 "/usr/include/bits/mathdef.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 27 "/usr/include/bits/mathdef.h" 2 3 4
 
@@ -2124,7 +2083,6 @@ typedef float float_t;
 typedef double double_t;
 # 48 "/usr/include/math.h" 2 3 4
 # 71 "/usr/include/math.h" 3 4
-
 # 1 "/usr/include/bits/mathcalls.h" 1 3 4
 # 53 "/usr/include/bits/mathcalls.h" 3 4
 
@@ -2420,7 +2378,6 @@ extern double fma (double __x, double __y, double __z) throw (); extern double _
 extern double scalb (double __x, double __n) throw (); extern double __scalb (double __x, double __n) throw ();
 # 72 "/usr/include/math.h" 2 3 4
 # 94 "/usr/include/math.h" 3 4
-
 # 1 "/usr/include/bits/mathcalls.h" 1 3 4
 # 53 "/usr/include/bits/mathcalls.h" 3 4
 
@@ -2452,13 +2409,7 @@ extern float tanhf (float __x) throw (); extern float __tanhf (float __x) throw 
 
 
 
-extern void
- sincosf
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (float __x, float *__sinx, float *__cosx) throw (); extern void
- __sincosf
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (float __x, float *__sinx, float *__cosx) throw ()
+extern void sincosf (float __x, float *__sinx, float *__cosx) throw (); extern void __sincosf (float __x, float *__sinx, float *__cosx) throw ()
                                                            ;
 
 
@@ -2722,7 +2673,6 @@ extern float fmaf (float __x, float __y, float __z) throw (); extern float __fma
 extern float scalbf (float __x, float __n) throw (); extern float __scalbf (float __x, float __n) throw ();
 # 95 "/usr/include/math.h" 2 3 4
 # 141 "/usr/include/math.h" 3 4
-
 # 1 "/usr/include/bits/mathcalls.h" 1 3 4
 # 53 "/usr/include/bits/mathcalls.h" 3 4
 
@@ -2754,13 +2704,7 @@ extern long double tanhl (long double __x) throw (); extern long double __tanhl 
 
 
 
-extern void
- sincosl
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (long double __x, long double *__sinx, long double *__cosx) throw (); extern void
- __sincosl
-# 82 "/usr/include/bits/mathcalls.h" 3 4
- (long double __x, long double *__sinx, long double *__cosx) throw ()
+extern void sincosl (long double __x, long double *__sinx, long double *__cosx) throw (); extern void __sincosl (long double __x, long double *__sinx, long double *__cosx) throw ()
                                                            ;
 
 
@@ -3069,10 +3013,8 @@ struct __exception
 
 extern int matherr (struct __exception *__exc) throw ();
 # 416 "/usr/include/math.h" 3 4
-
 # 1 "/usr/include/bits/mathinline.h" 1 3 4
 # 25 "/usr/include/bits/mathinline.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 26 "/usr/include/bits/mathinline.h" 2 3 4
 # 37 "/usr/include/bits/mathinline.h" 3 4
@@ -3110,7 +3052,6 @@ __signbitl (long double __x) throw ()
 # 472 "/usr/include/math.h" 3 4
 }
 # 93 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c" 2
-
 # 1 "/usr/include/assert.h" 1 3 4
 # 66 "/usr/include/assert.h" 3 4
 extern "C" {
@@ -3137,7 +3078,6 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 # 94 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c" 2
 # 94 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c"
 
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/constants.h" 1
 # 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/constants.h"
 static const double amuToInternalMass =
@@ -3153,7 +3093,6 @@ static const double hartreeToEv = 27.21138505;
 
 static const double bohrToAngs = 0.52917721092;
 # 96 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c" 2
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.h" 1
 # 10 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.h"
 typedef struct RankReduceDataSt
@@ -3211,7 +3150,6 @@ void bcastParallel(void* buf, int len, int root);
 
 int builtWithMpi(void);
 # 97 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c" 2
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.h" 1
 # 12 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.h"
 struct DomainSt;
@@ -3251,9 +3189,7 @@ void updateLinkCells(LinkCell* boxes, struct AtomsSt* atoms);
 
 int maxOccupancy(LinkCell* boxes);
 # 98 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c" 2
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 1
-
 
 
 
@@ -3266,8 +3202,7 @@ extern "C" {
 
 
 
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 35 "/usr/include/stdio.h" 2 3 4
 # 45 "/usr/include/stdio.h" 3 4
 struct _IO_FILE;
@@ -3278,16 +3213,12 @@ typedef struct _IO_FILE FILE;
 # 65 "/usr/include/stdio.h" 3 4
 typedef struct _IO_FILE __FILE;
 # 75 "/usr/include/stdio.h" 3 4
-
 # 1 "/usr/include/libio.h" 1 3 4
 # 32 "/usr/include/libio.h" 3 4
-
 # 1 "/usr/include/_G_config.h" 1 3 4
 # 15 "/usr/include/_G_config.h" 3 4
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 16 "/usr/include/_G_config.h" 2 3 4
-
 
 
 
@@ -3326,9 +3257,8 @@ typedef unsigned int _G_uint16_t __attribute__ ((__mode__ (__HI__)));
 typedef unsigned int _G_uint32_t __attribute__ ((__mode__ (__SI__)));
 # 33 "/usr/include/libio.h" 2 3 4
 # 53 "/usr/include/libio.h" 3 4
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h" 1 3 4
-# 40 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stdarg.h" 1 3 4
+# 40 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stdarg.h" 3 4
 typedef __builtin_va_list __gnuc_va_list;
 # 54 "/usr/include/libio.h" 2 3 4
 # 170 "/usr/include/libio.h" 3 4
@@ -3525,7 +3455,6 @@ typedef _G_fpos_t fpos_t;
 
 typedef _G_fpos64_t fpos64_t;
 # 161 "/usr/include/stdio.h" 3 4
-
 # 1 "/usr/include/bits/stdio_lim.h" 1 3 4
 # 162 "/usr/include/stdio.h" 2 3 4
 
@@ -3899,7 +3828,6 @@ extern void perror (__const char *__s);
 
 
 
-
 # 1 "/usr/include/bits/sys_errlist.h" 1 3 4
 # 27 "/usr/include/bits/sys_errlist.h" 3 4
 extern int sys_nerr;
@@ -3969,7 +3897,6 @@ extern int ftrylockfile (FILE *__stream) throw () ;
 
 extern void funlockfile (FILE *__stream) throw ();
 # 929 "/usr/include/stdio.h" 3 4
-
 # 1 "/usr/include/bits/stdio.h" 1 3 4
 # 36 "/usr/include/bits/stdio.h" 3 4
 extern __inline __attribute__ ((__gnu_inline__)) int
@@ -4078,7 +4005,6 @@ ferror_unlocked (FILE *__stream) throw ()
 }
 # 8 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
 
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.h" 1
 
 
@@ -4128,7 +4054,6 @@ void haloExchange(HaloExchange* haloExchange, void* data);
 void sortAtomsInCell(struct AtomsSt* atoms, struct LinkCellSt* boxes, int iBox);
 # 10 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
 
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.h" 1
 # 10 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.h"
 typedef struct DomainSt
@@ -4154,7 +4079,6 @@ struct DomainSt* initDecomposition(int xproc, int yproc, int zproc,
 
 int processorNum(Domain* domain, int dix, int diy, int dik);
 # 12 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMDTypes.h" 2
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.h" 1
 # 9 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.h"
 struct SimFlatSt;
@@ -4247,7 +4171,6 @@ typedef struct SimFlatSt
 
 } SimFlat;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c" 2
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.h" 1
 # 9 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.h"
 enum TimerHandle{
