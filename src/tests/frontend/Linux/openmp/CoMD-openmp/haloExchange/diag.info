@@ -127,11 +127,11 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ha
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 607 1 rm_stack(false, 0UL, "unloadForceBuffer", &____must_manage_unloadForceBuffer, ____alias_loc_id_31, ____chimes_did_disable13); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 610 1 const int ____chimes_did_disable14 = new_stack((void *)(&destroyForceExchange), "destroyForceExchange", &____must_manage_destroyForceExchange, 1, 0, (size_t)(12143118692030656902UL)); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 618 1 rm_stack(false, 0UL, "destroyForceExchange", &____must_manage_destroyForceExchange, ____alias_loc_id_32, ____chimes_did_disable14); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 629 1 const int ____chimes_did_disable15 = new_stack((void *)(&sortAtomsInCell), "sortAtomsInCell", &____must_manage_sortAtomsInCell, 3, 0, (size_t)(12143118692030657778UL), (size_t)(12143118692030657779UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 629 1 const int ____chimes_did_disable15 = new_stack((void *)(&sortAtomsInCell), "sortAtomsInCell", &____must_manage_sortAtomsInCell, 3, 0, (size_t)(12143118692030657792UL), (size_t)(12143118692030657793UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 660 1 rm_stack(false, 0UL, "sortAtomsInCell", &____must_manage_sortAtomsInCell, ____alias_loc_id_37, ____chimes_did_disable15); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 673 20 rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_38, ____chimes_did_disable16); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 675 4 rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_38, ____chimes_did_disable16); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 668 1 const int ____chimes_did_disable16 = new_stack((void *)(&sortAtomsById), "sortAtomsById", &____must_manage_sortAtomsById, 2, 0, (size_t)(12143118692030657824UL), (size_t)(12143118692030657825UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 668 1 const int ____chimes_did_disable16 = new_stack((void *)(&sortAtomsById), "sortAtomsById", &____must_manage_sortAtomsById, 2, 0, (size_t)(12143118692030657838UL), (size_t)(12143118692030657839UL)); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 152 2 const int ____chimes_did_disable0 = new_stack((void *)(&initAtomHaloExchange), "initAtomHaloExchange", &____must_manage_initAtomHaloExchange, 2, 2, (size_t)(12143118692030655689UL), (size_t)(12143118692030655450UL), "initAtomHaloExchange|domain|0", &____must_checkpoint_initAtomHaloExchange_domain_0, "%struct.DomainSt*", (void *)(&domain), (size_t)8, 1, 0, 0, "initAtomHaloExchange|boxes|0", &____must_checkpoint_initAtomHaloExchange_boxes_0, "%struct.LinkCellSt*", (void *)(&boxes), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 152 506 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 4  HaloExchange *hh;  hh = (initHaloExchange(domain)) ;
@@ -426,7 +426,7 @@ InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 617 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 613 9  ii = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 613 17 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 629 2 const int ____chimes_did_disable15 = new_stack((void *)(&sortAtomsInCell), "sortAtomsInCell", &____must_manage_sortAtomsInCell, 3, 0, (size_t)(12143118692030657778UL), (size_t)(12143118692030657779UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 629 2 const int ____chimes_did_disable15 = new_stack((void *)(&sortAtomsInCell), "sortAtomsInCell", &____must_manage_sortAtomsInCell, 3, 0, (size_t)(12143118692030657792UL), (size_t)(12143118692030657793UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 629 218 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 630 4  int nAtoms;  nAtoms = (boxes->nAtoms[iBox]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 630 36 
@@ -444,7 +444,7 @@ InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 658 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 648 9  ii = (begin)  , iTmp = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 648 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 668 2 const int ____chimes_did_disable16 = new_stack((void *)(&sortAtomsById), "sortAtomsById", &____must_manage_sortAtomsById, 2, 0, (size_t)(12143118692030657824UL), (size_t)(12143118692030657825UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 668 2 const int ____chimes_did_disable16 = new_stack((void *)(&sortAtomsById), "sortAtomsById", &____must_manage_sortAtomsById, 2, 0, (size_t)(12143118692030657838UL), (size_t)(12143118692030657839UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 668 197 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 669 4  int aId;  aId = (((AtomMsg *)a)->gid) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 669 33 
