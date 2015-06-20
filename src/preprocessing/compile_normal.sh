@@ -4,6 +4,7 @@ set -e
 
 script_dir="$(dirname $0)"
 source ${script_dir}/common.sh
+source ${CHIMES_HOME}/src/common.conf
 
 INFO_FILES="lines.info struct.info stack.info heap.info func.info call.info exit.info reachable.info globals.info"
 ENABLE_OMP=1
@@ -102,7 +103,6 @@ done
 
 echo ${ABS_INPUTS[@]}
 
-GXX=${GXX:-/usr/bin/g++}
 LAST_FILES=()
 OBJ_FILES=()
 OUTPUT=$(pwd)/${OUTPUT_FILE}

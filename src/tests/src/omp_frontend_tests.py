@@ -6,7 +6,7 @@ import os
 import sys
 from common import run_frontend_test, parse_argv, \
                    CHIMES_HOME, construct_simple_frontend_test, find_file, \
-                   get_platform_directory, FrontendTest, set_custom_compiler
+                   get_platform_directory, FrontendTest
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 OMP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/openmp'
@@ -89,7 +89,6 @@ TESTS.append(RAY_TRACER_OMP)
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
-    set_custom_compiler(CONFIG)
     CONFIG.add_custom_compiler_flag('-fopenmp')
 
     for t in TESTS:

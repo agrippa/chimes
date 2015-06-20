@@ -5,7 +5,7 @@ functionality of the chimes runtime.
 import os
 import sys
 from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
-         cleanup_runtime_files, find_file, set_custom_compiler
+         cleanup_runtime_files, find_file
 
 OMP_H = find_file('omp.h', '/usr/')
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
@@ -54,7 +54,6 @@ OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
-    set_custom_compiler(CONFIG)
     CONFIG.add_custom_compiler_flag('-fopenmp')
     cleanup_runtime_files()
 

@@ -1,10 +1,9 @@
 # 1 "mycommand.c.pre.transformed.cpp"
-# 1 "<built-in>"
 # 1 "<command-line>"
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
-# 149 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
+# 147 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 212 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "mycommand.c.pre.transformed.cpp"
@@ -31,18 +30,15 @@ static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 # 1 "/tmp/chimes-frontend//"
-# 1 "<built-in>"
 # 1 "<command-line>"
-
 # 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
 
 
 
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
-# 149 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
+# 147 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 211 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 3 4
+# 212 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
@@ -110,9 +106,7 @@ extern int ____chimes_replaying;
 # 2 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 # 3 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.h" 1
-
 
 
 
@@ -121,26 +115,20 @@ extern int ____chimes_replaying;
 
 # 1 "/usr/include/stdio.h" 1 3 4
 # 28 "/usr/include/stdio.h" 3 4
-
 # 1 "/usr/include/features.h" 1 3 4
 # 361 "/usr/include/features.h" 3 4
-
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 365 "/usr/include/sys/cdefs.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 366 "/usr/include/sys/cdefs.h" 2 3 4
 # 362 "/usr/include/features.h" 2 3 4
 # 385 "/usr/include/features.h" 3 4
-
 # 1 "/usr/include/gnu/stubs.h" 1 3 4
-
 
 
 
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 5 "/usr/include/gnu/stubs.h" 2 3 4
-
 
 
 
@@ -154,14 +142,11 @@ extern "C" {
 
 
 
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 35 "/usr/include/stdio.h" 2 3 4
-
 
 # 1 "/usr/include/bits/types.h" 1 3 4
 # 28 "/usr/include/bits/types.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 29 "/usr/include/bits/types.h" 2 3 4
 
@@ -191,7 +176,6 @@ typedef unsigned long int __uint64_t;
 typedef long int __quad_t;
 typedef unsigned long int __u_quad_t;
 # 131 "/usr/include/bits/types.h" 3 4
-
 # 1 "/usr/include/bits/typesizes.h" 1 3 4
 # 132 "/usr/include/bits/types.h" 2 3 4
 
@@ -265,16 +249,12 @@ typedef struct _IO_FILE FILE;
 # 65 "/usr/include/stdio.h" 3 4
 typedef struct _IO_FILE __FILE;
 # 75 "/usr/include/stdio.h" 3 4
-
 # 1 "/usr/include/libio.h" 1 3 4
 # 32 "/usr/include/libio.h" 3 4
-
 # 1 "/usr/include/_G_config.h" 1 3 4
 # 15 "/usr/include/_G_config.h" 3 4
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 16 "/usr/include/_G_config.h" 2 3 4
-
 
 
 
@@ -313,9 +293,8 @@ typedef unsigned int _G_uint16_t __attribute__ ((__mode__ (__HI__)));
 typedef unsigned int _G_uint32_t __attribute__ ((__mode__ (__SI__)));
 # 33 "/usr/include/libio.h" 2 3 4
 # 53 "/usr/include/libio.h" 3 4
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h" 1 3 4
-# 40 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stdarg.h" 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stdarg.h" 1 3 4
+# 40 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stdarg.h" 3 4
 typedef __builtin_va_list __gnuc_va_list;
 # 54 "/usr/include/libio.h" 2 3 4
 # 170 "/usr/include/libio.h" 3 4
@@ -530,7 +509,6 @@ typedef _G_fpos_t fpos_t;
 
 typedef _G_fpos64_t fpos64_t;
 # 161 "/usr/include/stdio.h" 3 4
-
 # 1 "/usr/include/bits/stdio_lim.h" 1 3 4
 # 162 "/usr/include/stdio.h" 2 3 4
 
@@ -904,7 +882,6 @@ extern void perror (__const char *__s);
 
 
 
-
 # 1 "/usr/include/bits/sys_errlist.h" 1 3 4
 # 27 "/usr/include/bits/sys_errlist.h" 3 4
 extern int sys_nerr;
@@ -974,7 +951,6 @@ extern int ftrylockfile (FILE *__stream) throw () ;
 
 extern void funlockfile (FILE *__stream) throw ();
 # 929 "/usr/include/stdio.h" 3 4
-
 # 1 "/usr/include/bits/stdio.h" 1 3 4
 # 36 "/usr/include/bits/stdio.h" 3 4
 extern __inline __attribute__ ((__gnu_inline__)) int
@@ -1113,7 +1089,6 @@ void printCmdYaml(FILE* file, Command* cmd);
 # 5 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
 # 5 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 
-
 # 1 "/usr/include/string.h" 1 3 4
 # 29 "/usr/include/string.h" 3 4
 extern "C" {
@@ -1121,8 +1096,7 @@ extern "C" {
 
 
 
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 35 "/usr/include/string.h" 2 3 4
 # 44 "/usr/include/string.h" 3 4
 extern void *memcpy (void *__restrict __dest,
@@ -1220,7 +1194,6 @@ extern int strcoll (__const char *__s1, __const char *__s2)
 extern size_t strxfrm (char *__restrict __dest,
          __const char *__restrict __src, size_t __n)
      throw () __attribute__ ((__nonnull__ (2)));
-
 
 
 
@@ -1618,11 +1591,9 @@ extern "C++" __const char *basename (__const char *__filename)
 # 646 "/usr/include/string.h" 3 4
 }
 # 7 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
-
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 33 "/usr/include/stdlib.h" 3 4
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 34 "/usr/include/stdlib.h" 2 3 4
 
 extern "C" {
@@ -1632,23 +1603,17 @@ extern "C" {
 
 
 
-
 # 1 "/usr/include/bits/waitflags.h" 1 3 4
 # 43 "/usr/include/stdlib.h" 2 3 4
-
 # 1 "/usr/include/bits/waitstatus.h" 1 3 4
 # 65 "/usr/include/bits/waitstatus.h" 3 4
-
 # 1 "/usr/include/endian.h" 1 3 4
 # 37 "/usr/include/endian.h" 3 4
-
 # 1 "/usr/include/bits/endian.h" 1 3 4
 # 38 "/usr/include/endian.h" 2 3 4
 # 61 "/usr/include/endian.h" 3 4
-
 # 1 "/usr/include/bits/byteswap.h" 1 3 4
 # 28 "/usr/include/bits/byteswap.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 29 "/usr/include/bits/byteswap.h" 2 3 4
 # 62 "/usr/include/endian.h" 2 3 4
@@ -1867,7 +1832,6 @@ extern long int a64l (__const char *__s)
 
 
 
-
 # 1 "/usr/include/sys/types.h" 1 3 4
 # 28 "/usr/include/sys/types.h" 3 4
 extern "C" {
@@ -1942,7 +1906,6 @@ typedef __caddr_t caddr_t;
 
 typedef __key_t key_t;
 # 133 "/usr/include/sys/types.h" 3 4
-
 # 1 "/usr/include/time.h" 1 3 4
 # 58 "/usr/include/time.h" 3 4
 
@@ -1970,8 +1933,7 @@ typedef __suseconds_t suseconds_t;
 
 
 
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 148 "/usr/include/sys/types.h" 2 3 4
 
 
@@ -1993,17 +1955,13 @@ typedef unsigned int u_int64_t __attribute__ ((__mode__ (__DI__)));
 
 typedef int register_t __attribute__ ((__mode__ (__word__)));
 # 220 "/usr/include/sys/types.h" 3 4
-
 # 1 "/usr/include/sys/select.h" 1 3 4
 # 31 "/usr/include/sys/select.h" 3 4
-
 # 1 "/usr/include/bits/select.h" 1 3 4
 # 23 "/usr/include/bits/select.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 24 "/usr/include/bits/select.h" 2 3 4
 # 32 "/usr/include/sys/select.h" 2 3 4
-
 
 
 # 1 "/usr/include/bits/sigset.h" 1 3 4
@@ -2027,7 +1985,6 @@ typedef __sigset_t sigset_t;
 
 
 
-
 # 1 "/usr/include/time.h" 1 3 4
 # 120 "/usr/include/time.h" 3 4
 struct timespec
@@ -2036,7 +1993,6 @@ struct timespec
     long int tv_nsec;
   };
 # 45 "/usr/include/sys/select.h" 2 3 4
-
 
 # 1 "/usr/include/bits/time.h" 1 3 4
 # 75 "/usr/include/bits/time.h" 3 4
@@ -2085,7 +2041,6 @@ extern int pselect (int __nfds, fd_set *__restrict __readfds,
 
 }
 # 221 "/usr/include/sys/types.h" 2 3 4
-
 
 
 # 1 "/usr/include/sys/sysmacros.h" 1 3 4
@@ -2152,10 +2107,8 @@ typedef __fsfilcnt64_t fsfilcnt64_t;
 
 
 
-
 # 1 "/usr/include/bits/pthreadtypes.h" 1 3 4
 # 23 "/usr/include/bits/pthreadtypes.h" 3 4
-
 # 1 "/usr/include/bits/wordsize.h" 1 3 4
 # 24 "/usr/include/bits/pthreadtypes.h" 2 3 4
 # 50 "/usr/include/bits/pthreadtypes.h" 3 4
@@ -2456,11 +2409,9 @@ extern void cfree (void *__ptr) throw ();
 
 
 
-
 # 1 "/usr/include/alloca.h" 1 3 4
 # 25 "/usr/include/alloca.h" 3 4
-
-# 1 "/usr/lib/gcc/x86_64-redhat-linux/4.4.7/include/stddef.h" 1 3 4
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/stddef.h" 1 3 4
 # 26 "/usr/include/alloca.h" 2 3 4
 
 extern "C" {
@@ -2796,7 +2747,6 @@ extern int getloadavg (double __loadavg[], int __nelem)
 # 8 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
 # 8 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.h" 1
 # 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.h"
 int addArg(const char *longOption, const char shortOption,
@@ -2811,9 +2761,7 @@ void printArgs(void);
 
 void freeArgs(void);
 # 10 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c" 2
-
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/parallel.h" 1
-
 
 
 

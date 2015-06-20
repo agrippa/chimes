@@ -5,7 +5,7 @@ functionality of the chimes runtime.
 import os
 import sys
 from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
-         cleanup_runtime_files, set_custom_compiler
+         cleanup_runtime_files
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 
@@ -93,7 +93,6 @@ CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
-    set_custom_compiler(CONFIG)
     CONFIG.set_force_sequential()
     cleanup_runtime_files()
 
