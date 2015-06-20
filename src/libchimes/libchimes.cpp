@@ -295,6 +295,18 @@ static pthread_rwlock_t constants_lock = PTHREAD_RWLOCK_INITIALIZER;
  * information can be used to update function pointers without getting the
  * address of every function in the compilation unit (which messes with compiler
  * inter-procedural analysis).
+ *
+ * This technique is fragile to code change. If an application uses function
+ * pointers and you want to rerun a checkpoint on a slightly modified
+ * executable, chances are the offsets of functions won't align anymore and that
+ * resume will fail with a SEGFAULT. Finding a way to do this that is more
+ * flexible and based on function names (or even ordering) would be helpful.
+ * However, we really can't explicitly take an address of a function during
+ * module initialization: this really hurts performance as the compiler needs to
+ * get much more conservative. This would also make the code more portable, as
+ * it now depends on a Linux-specific feature. Possibly could use dlopen and
+ * dlsym while iterating over the names of all functions in a compilation unit,
+ * passed to init_module?
  */
 static void *text_start = NULL;
 static size_t text_len = 0;
