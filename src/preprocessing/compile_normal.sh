@@ -125,7 +125,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
     OBJ_FILES+=($OBJ_FILE)
 
     if [[ ${EXT} == "cpp" || ${EXT} == "cc" || ${EXT} == "c" ]]; then
-        ${GXX} -c ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${DEFINES}
+        ${GXX} -rdynamic -c ${INPUT} -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${DEFINES}
     elif [[ ${EXT} == "cu" ]]; then
         nvcc -arch=sm_20 -c ${GXX_FLAGS} ${INPUT} -o ${OBJ_FILE} \
                    ${INCLUDES} ${DEFINES}
@@ -154,7 +154,7 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    ${GXX} -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
+    ${GXX} -rdynamic -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
         ${GXX_FLAGS} ${INCLUDES} -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 \
         -lcudart ${DEFINES}
 

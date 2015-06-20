@@ -8,8 +8,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "calloc.cpp.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 
 
 
@@ -59,7 +57,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -85,7 +82,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1504,8 +1501,7 @@ static int module_init() {
                            &____alias_loc_id_1, (unsigned)1, (unsigned)0, (13121925483205301712UL + 11UL),
                              (13121925483205301712UL + 3UL), (13121925483205301712UL + 26UL),
                              (13121925483205301712UL + 4UL), (13121925483205301712UL + 11UL),
-                             "main", 1, "checkpoint");
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
+                             "main", "main", 1, "checkpoint");
     return 0;
 }
 

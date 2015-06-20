@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "performanceTimers.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_profileStart_npm = 1;
 static int ____chimes_does_checkpoint_profileStop_npm = 1;
 static int ____chimes_does_checkpoint_getElapsedTime_npm = 1;
@@ -121,7 +119,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -147,7 +144,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4309,14 +4306,14 @@ static int module_init() {
                      "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0,
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                             "printPerformanceResults", 6, "timerStats", "printRank", "getTick", "getMyRank", "getNRanks", "getNRanks",
-                             "printPerformanceResultsYaml", 4, "printRank", "getTick", "getNRanks", "getMyRank",
-                             "getTime", 0,
-                             "profileStop", 1, "getTime",
-                             "getTick", 0,
-                             "getElapsedTime", 1, "getTick",
-                             "profileStart", 1, "getTime",
-                             "timerStats", 7, "addDoubleParallel", "getNRanks", "getMyRank", "minRankDoubleParallel", "maxRankDoubleParallel", "addDoubleParallel", "getNRanks",
+                             "printPerformanceResults", "_Z23printPerformanceResultsii", 6, "timerStats", "printRank", "getTick", "getMyRank", "getNRanks", "getNRanks",
+                             "printPerformanceResultsYaml", "_Z27printPerformanceResultsYamlP8_IO_FILE", 4, "printRank", "getTick", "getNRanks", "getMyRank",
+                             "getTime", "_ZL7getTimev", 0,
+                             "profileStop", "_Z11profileStop11TimerHandle", 1, "getTime",
+                             "getTick", "_ZL7getTickv", 0,
+                             "getElapsedTime", "_Z14getElapsedTime11TimerHandle", 1, "getTick",
+                             "profileStart", "_Z12profileStart11TimerHandle", 1, "getTime",
+                             "timerStats", "_ZL10timerStatsv", 7, "addDoubleParallel", "getNRanks", "getMyRank", "minRankDoubleParallel", "maxRankDoubleParallel", "addDoubleParallel", "getNRanks",
                         "getTime|ptime|0", 1, "getTime",
                         "printPerformanceResults|nGlobalAtoms|0", 4, "timerStats", "printRank", "getNRanks", "getMyRank",
                         "printPerformanceResults|printRate|0", 4, "timerStats", "printRank", "getNRanks", "getMyRank",
@@ -4360,7 +4357,6 @@ static int module_init() {
     register_constant(13147405260753302553UL + 8UL, (void *)((timerName)[8]), 12);
     register_constant(13147405260753302553UL + 9UL, (void *)((timerName)[9]), 9);
     register_constant(13147405260753302553UL + 10UL, (void *)((timerName)[10]), 11);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

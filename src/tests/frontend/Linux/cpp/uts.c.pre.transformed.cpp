@@ -8,8 +8,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "uts.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_uts_error_npm = 1;
 static int ____chimes_does_checkpoint_uts_wctime_npm = 1;
 static int ____chimes_does_checkpoint_rng_toProb_npm = 1;
@@ -138,7 +136,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -164,7 +161,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -5867,19 +5864,19 @@ static int module_init() {
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "uts_geoshape_e", 0,
                      "uts_trees_e", 0,
-                             "uts_numChildren_bin", 2, "rng_rand", "rng_toProb",
-                             "uts_childType", 1, "uts_error",
-                             "uts_error", 1, "impl_abort",
-                             "uts_showStats", 0,
-                             "rng_toProb", 0,
-                             "uts_initRoot", 1, "rng_init",
-                             "uts_numChildren", 5, "uts_numChildren_bin", "uts_numChildren_geo", "uts_numChildren_geo", "uts_numChildren_bin", "uts_error",
-                             "uts_parseParams", 4, "uts_helpMessage", "impl_abort", "impl_parseParam", "impl_abort",
-                             "uts_wctime", 0,
-                             "uts_printParams", 2, "uts_paramsToStr", "impl_paramsToStr",
-                             "uts_helpMessage", 2, "impl_getName", "impl_helpMessage",
-                             "uts_paramsToStr", 2, "impl_getName", "rng_showtype",
-                             "uts_numChildren_geo", 2, "rng_rand", "rng_toProb",
+                             "uts_numChildren_bin", "_Z19uts_numChildren_binP6node_t", 2, "rng_rand", "rng_toProb",
+                             "uts_childType", "_Z13uts_childTypeP6node_t", 1, "uts_error",
+                             "uts_error", "_Z9uts_errorPc", 1, "impl_abort",
+                             "uts_showStats", "_Z13uts_showStatsiidiii", 0,
+                             "rng_toProb", "_Z10rng_toProbi", 0,
+                             "uts_initRoot", "_Z12uts_initRootP6node_ti", 1, "rng_init",
+                             "uts_numChildren", "_Z15uts_numChildrenP6node_t", 5, "uts_numChildren_bin", "uts_numChildren_geo", "uts_numChildren_geo", "uts_numChildren_bin", "uts_error",
+                             "uts_parseParams", "_Z15uts_parseParamsiPPc", 4, "uts_helpMessage", "impl_abort", "impl_parseParam", "impl_abort",
+                             "uts_wctime", "_Z10uts_wctimev", 0,
+                             "uts_printParams", "_Z15uts_printParamsv", 2, "uts_paramsToStr", "impl_paramsToStr",
+                             "uts_helpMessage", "_Z15uts_helpMessagev", 2, "impl_getName", "impl_helpMessage",
+                             "uts_paramsToStr", "_Z15uts_paramsToStrPci", 2, "impl_getName", "rng_showtype",
+                             "uts_numChildren_geo", "_Z19uts_numChildren_geoP6node_t", 2, "rng_rand", "rng_toProb",
                         "uts_wctime|tv|0", 1, "uts_wctime",
                         "uts_initRoot|root|0", 1, "rng_init",
                         "uts_initRoot|type|0", 1, "rng_init",
@@ -5921,7 +5918,6 @@ static int module_init() {
     register_constant(10372134782440949889UL + 4UL, (void *)((uts_geoshapes_str)[1]), 21);
     register_constant(10372134782440949889UL + 5UL, (void *)((uts_geoshapes_str)[2]), 7);
     register_constant(10372134782440949889UL + 6UL, (void *)((uts_geoshapes_str)[3]), 23);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

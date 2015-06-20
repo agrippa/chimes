@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "ray_tracer.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_init_npm = 1;
 static int ____chimes_does_checkpoint_get_coord_npm = 1;
 static int ____chimes_does_checkpoint_modv_npm = 1;
@@ -92,7 +90,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -118,7 +115,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -6561,19 +6558,19 @@ static int module_init() {
                      "_config", 17, "double", (int)__builtin_offsetof (struct _config, px), "double", (int)__builtin_offsetof (struct _config, py), "double", (int)__builtin_offsetof (struct _config, pz), "double", (int)__builtin_offsetof (struct _config, lx), "double", (int)__builtin_offsetof (struct _config, ly), "double", (int)__builtin_offsetof (struct _config, lz), "double", (int)__builtin_offsetof (struct _config, dx), "double", (int)__builtin_offsetof (struct _config, dy), "double", (int)__builtin_offsetof (struct _config, dz), "double", (int)__builtin_offsetof (struct _config, svx), "double", (int)__builtin_offsetof (struct _config, svy), "double", (int)__builtin_offsetof (struct _config, svz), "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "%struct._sphere*", (int)__builtin_offsetof (struct _config, spheres), "int", (int)__builtin_offsetof (struct _config, nspheres), "int", (int)__builtin_offsetof (struct _config, nt),
                      "_rgb", 3, "double", (int)__builtin_offsetof (struct _rgb, r), "double", (int)__builtin_offsetof (struct _rgb, g), "double", (int)__builtin_offsetof (struct _rgb, b),
                      "_sphere", 7, "double", (int)__builtin_offsetof (struct _sphere, cx), "double", (int)__builtin_offsetof (struct _sphere, cy), "double", (int)__builtin_offsetof (struct _sphere, cz), "double", (int)__builtin_offsetof (struct _sphere, radius), "double", (int)__builtin_offsetof (struct _sphere, clR), "double", (int)__builtin_offsetof (struct _sphere, clG), "double", (int)__builtin_offsetof (struct _sphere, clB),
-                             "get_cos_angle_v1v2", 2, "modv", "modv",
-                             "main", 10, "parse_config", "get_coord", "get_coord", "modv", "get_sphere_intersec", "get_sphere_intersec", "get_sphere_intersec", "get_cos_angle_v1v2", "move", "checkpoint",
-                             "modv", 0,
-                             "move", 0,
-                             "get_sphere_intersec", 0,
-                             "move_to", 0,
-                             "get_coord", 0,
-                             "parse_three_doubles", 0,
-                             "init", 0,
-                             "parse_config", 6, "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "init", "usage",
-                             "usage", 0,
-                             "rot_y", 0,
-                             "rot_x", 0,
+                             "get_cos_angle_v1v2", "_Z18get_cos_angle_v1v2dddddd", 2, "modv", "modv",
+                             "main", "main", 10, "parse_config", "get_coord", "get_coord", "modv", "get_sphere_intersec", "get_sphere_intersec", "get_sphere_intersec", "get_cos_angle_v1v2", "move", "checkpoint",
+                             "modv", "_Z4modvddd", 0,
+                             "move", "_Z4moveP7_sphereddd", 0,
+                             "get_sphere_intersec", "_Z19get_sphere_intersecdddddddddd", 0,
+                             "move_to", "_Z7move_toP7_sphereddd", 0,
+                             "get_coord", "_Z9get_coordddddd", 0,
+                             "parse_three_doubles", "_Z19parse_three_doublesPcPdS0_S0_", 0,
+                             "init", "_Z4initP7_sphereddddddd", 0,
+                             "parse_config", "_Z12parse_configiPPcP7_config", 6, "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "init", "usage",
+                             "usage", "_Z5usagePPc", 0,
+                             "rot_y", "_Z5rot_yP7_sphered", 0,
+                             "rot_x", "_Z5rot_xP7_sphered", 0,
                         "main|conf|0", 1, "main",
         "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
         "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
@@ -6592,7 +6589,6 @@ static int module_init() {
         "get_sphere_intersec", 0UL, (int)10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "get_cos_angle_v1v2", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "move", 0UL, (int)4, 14467987423866750538UL, 0UL, 0UL, 0UL);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

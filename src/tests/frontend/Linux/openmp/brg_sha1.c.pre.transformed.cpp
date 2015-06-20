@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "brg_sha1.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 
 static int ____must_checkpoint_rng_init_newstate_0 = 2;
 static int ____must_checkpoint_rng_init_ctx_0 = 2;
@@ -101,7 +99,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -127,7 +124,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3271,17 +3268,17 @@ static int module_init() {
                              (4025409710155506038UL + 105UL), (4025409710155506038UL + 225UL),
                      "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf),
                      "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
-                             "sha1", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_nextrand", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_showstate", 0,
-                             "rng_init", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_spawn", 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end",
-                             "sha1_hash", 1, "sha1_compile",
-                             "sha1_end", 2, "sha1_compile", "sha1_compile",
-                             "rng_rand", 0,
-                             "sha1_compile", 0,
-                             "sha1_begin", 0,
-                             "rng_showtype", 0,
+                             "sha1", "sha1", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_nextrand", "rng_nextrand", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_showstate", "rng_showstate", 0,
+                             "rng_init", "rng_init", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_spawn", "rng_spawn", 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end",
+                             "sha1_hash", "sha1_hash", 1, "sha1_compile",
+                             "sha1_end", "sha1_end", 2, "sha1_compile", "sha1_compile",
+                             "rng_rand", "rng_rand", 0,
+                             "sha1_compile", "sha1_compile", 0,
+                             "sha1_begin", "sha1_begin", 0,
+                             "rng_showtype", "rng_showtype", 0,
                         "rng_init|newstate|0", 2, "sha1_hash", "sha1_end",
                         "rng_init|ctx|0", 1, "rng_init",
                         "sha1_hash|len|0", 1, "sha1_hash",
@@ -3304,7 +3301,6 @@ static int module_init() {
                         "rng_nextrand|ctx|0", 1, "rng_nextrand",
                         "sha1|hval|0", 2, "sha1_hash", "sha1_end",
                         "sha1|cx|0", 1, "sha1");
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

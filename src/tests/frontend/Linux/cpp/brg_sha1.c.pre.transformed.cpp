@@ -8,8 +8,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "brg_sha1.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_rng_init_npm = 1;
 static int ____chimes_does_checkpoint_rng_spawn_npm = 1;
 static int ____chimes_does_checkpoint_rng_rand_npm = 1;
@@ -94,7 +92,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -120,7 +117,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3955,17 +3952,17 @@ static int module_init() {
                              (1633707214412207042UL + 105UL), (1633707214412207042UL + 243UL),
                      "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf),
                      "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
-                             "sha1", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_nextrand", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_showstate", 0,
-                             "rng_init", 3, "sha1_begin", "sha1_hash", "sha1_end",
-                             "rng_spawn", 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end",
-                             "sha1_hash", 1, "sha1_compile",
-                             "sha1_end", 2, "sha1_compile", "sha1_compile",
-                             "rng_rand", 0,
-                             "sha1_compile", 0,
-                             "sha1_begin", 0,
-                             "rng_showtype", 0,
+                             "sha1", "_Z4sha1PhPKhm", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_nextrand", "_Z12rng_nextrandPh", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_showstate", "_Z13rng_showstatePhPc", 0,
+                             "rng_init", "_Z8rng_initPhi", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_spawn", "_Z9rng_spawnPhS_i", 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end",
+                             "sha1_hash", "_Z9sha1_hashPKhmP10sha1_ctx_s", 1, "sha1_compile",
+                             "sha1_end", "_Z8sha1_endPhP10sha1_ctx_s", 2, "sha1_compile", "sha1_compile",
+                             "rng_rand", "_Z8rng_randPh", 0,
+                             "sha1_compile", "_Z12sha1_compileP10sha1_ctx_s", 0,
+                             "sha1_begin", "_Z10sha1_beginP10sha1_ctx_s", 0,
+                             "rng_showtype", "_Z12rng_showtypePci", 0,
                         "rng_init|ctx|0", 1, "rng_init",
                         "rng_spawn|ctx|0", 1, "rng_spawn",
                         "rng_nextrand|ctx|0", 1, "rng_nextrand",
@@ -3986,7 +3983,6 @@ static int module_init() {
         "sha1_begin", 0UL, (int)1, 1633707214412211970UL,
         "sha1_hash", 0UL, (int)3, 1633707214412211989UL, 0UL, 1633707214412211970UL,
         "sha1_end", 0UL, (int)2, 1633707214412211988UL, 1633707214412211970UL);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "uts_shm.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_omp_global_lock_alloc_npm = 1;
 static int ____chimes_does_checkpoint_impl_getName_npm = 1;
 static int ____chimes_does_checkpoint_impl_paramsToStr_npm = 1;
@@ -223,7 +221,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -249,7 +246,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -7827,36 +7824,36 @@ static int module_init() {
                      "omp_lock_t", 1, "[ 4 x unsigned char ]", (int)__builtin_offsetof (omp_lock_t, _x),
                      "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
                      "stealStack_t", 23, "int", (int)__builtin_offsetof (struct stealStack_t, stackSize), "int", (int)__builtin_offsetof (struct stealStack_t, workAvail), "int", (int)__builtin_offsetof (struct stealStack_t, sharedStart), "int", (int)__builtin_offsetof (struct stealStack_t, local), "int", (int)__builtin_offsetof (struct stealStack_t, top), "int", (int)__builtin_offsetof (struct stealStack_t, maxStackDepth), "int", (int)__builtin_offsetof (struct stealStack_t, nNodes), "int", (int)__builtin_offsetof (struct stealStack_t, maxTreeDepth), "int", (int)__builtin_offsetof (struct stealStack_t, nLeaves), "int", (int)__builtin_offsetof (struct stealStack_t, nAcquire), "int", (int)__builtin_offsetof (struct stealStack_t, nRelease), "int", (int)__builtin_offsetof (struct stealStack_t, nSteal), "int", (int)__builtin_offsetof (struct stealStack_t, nFail), "int", (int)__builtin_offsetof (struct stealStack_t, wakeups), "int", (int)__builtin_offsetof (struct stealStack_t, falseWakeups), "int", (int)__builtin_offsetof (struct stealStack_t, nNodes_last), "[ 5 x double ]", (int)__builtin_offsetof (struct stealStack_t, time), "double", (int)__builtin_offsetof (struct stealStack_t, timeLast), "[ 5 x int ]", (int)__builtin_offsetof (struct stealStack_t, entries), "int", (int)__builtin_offsetof (struct stealStack_t, curState), "%struct.omp_lock_t*", (int)__builtin_offsetof (struct stealStack_t, stackLock), "%struct.node_t*", (int)__builtin_offsetof (struct stealStack_t, stack), "%struct.node_t*", (int)__builtin_offsetof (struct stealStack_t, stack_g),
-                             "ss_mkEmpty", 0,
-                             "ss_init", 3, "ss_error", "omp_global_lock_alloc", "ss_mkEmpty",
-                             "genChildren", 7, "uts_numChildren", "uts_childType", "ss_topPosn", "rng_showstate", "rng_spawn", "ss_push", "releaseNodes",
-                             "ss_initState", 1, "uts_wctime",
-                             "showStats", 1, "uts_showStats",
-                             "ss_push", 2, "ss_error", "rng_showstate",
-                             "cbarrier_cancel", 0,
-                             "parTreeSearch", 15, "initNode", "ss_localDepth", "ss_setState", "ss_top", "genChildren", "ss_pop", "releaseNodes", "ss_localDepth", "ss_acquire", "ss_setState", "findwork", "ss_steal", "findwork", "ss_setState", "cbarrier_wait",
-                             "impl_parseParam", 0,
-                             "ss_pop", 2, "ss_error", "rng_showstate",
-                             "ss_acquire", 0,
-                             "ss_topPosn", 1, "ss_error",
-                             "main", 13, "uts_parseParams", "cb_init", "uts_printParams", "ss_init", "initRootNode", "ss_push", "checkpoint", "ss_initState", "uts_wctime", "parTreeSearch", "uts_wctime", "checkpoint", "showStats",
-                             "findwork", 0,
-                             "impl_abort", 0,
-                             "initNode", 0,
-                             "impl_getName", 0,
-                             "ss_top", 2, "ss_error", "rng_showstate",
-                             "impl_paramsToStr", 0,
-                             "ss_setState", 2, "ss_error", "uts_wctime",
-                             "ss_localDepth", 0,
-                             "releaseNodes", 6, "ss_localDepth", "ss_setState", "ss_release", "ss_setState", "cbarrier_cancel", "ss_setState",
-                             "ss_release", 1, "ss_error",
-                             "omp_global_lock_alloc", 0,
-                             "cbarrier_wait", 0,
-                             "ss_steal", 4, "ss_error", "ss_error", "ss_error", "rng_showstate",
-                             "impl_helpMessage", 0,
-                             "ss_error", 0,
-                             "cb_init", 1, "omp_global_lock_alloc",
-                             "initRootNode", 1, "uts_initRoot",
+                             "ss_mkEmpty", "_Z10ss_mkEmptyP12stealStack_t", 0,
+                             "ss_init", "_Z7ss_initP12stealStack_ti", 3, "ss_error", "omp_global_lock_alloc", "ss_mkEmpty",
+                             "genChildren", "_Z11genChildrenP6node_tS0_P12stealStack_t", 7, "uts_numChildren", "uts_childType", "ss_topPosn", "rng_showstate", "rng_spawn", "ss_push", "releaseNodes",
+                             "ss_initState", "_Z12ss_initStateP12stealStack_t", 1, "uts_wctime",
+                             "showStats", "_Z9showStatsd", 1, "uts_showStats",
+                             "ss_push", "_Z7ss_pushP12stealStack_tP6node_t", 2, "ss_error", "rng_showstate",
+                             "cbarrier_cancel", "_Z15cbarrier_cancelv", 0,
+                             "parTreeSearch", "_Z13parTreeSearchP12stealStack_t", 15, "initNode", "ss_localDepth", "ss_setState", "ss_top", "genChildren", "ss_pop", "releaseNodes", "ss_localDepth", "ss_acquire", "ss_setState", "findwork", "ss_steal", "findwork", "ss_setState", "cbarrier_wait",
+                             "impl_parseParam", "_Z15impl_parseParamPcS_", 0,
+                             "ss_pop", "_Z6ss_popP12stealStack_t", 2, "ss_error", "rng_showstate",
+                             "ss_acquire", "_Z10ss_acquireP12stealStack_ti", 0,
+                             "ss_topPosn", "_Z10ss_topPosnP12stealStack_t", 1, "ss_error",
+                             "main", "main", 13, "uts_parseParams", "cb_init", "uts_printParams", "ss_init", "initRootNode", "ss_push", "checkpoint", "ss_initState", "uts_wctime", "parTreeSearch", "uts_wctime", "checkpoint", "showStats",
+                             "findwork", "_Z8findworki", 0,
+                             "impl_abort", "_Z10impl_aborti", 0,
+                             "initNode", "_Z8initNodeP6node_t", 0,
+                             "impl_getName", "_Z12impl_getNamev", 0,
+                             "ss_top", "_Z6ss_topP12stealStack_t", 2, "ss_error", "rng_showstate",
+                             "impl_paramsToStr", "_Z16impl_paramsToStrPci", 0,
+                             "ss_setState", "_Z11ss_setStateP12stealStack_ti", 2, "ss_error", "uts_wctime",
+                             "ss_localDepth", "_Z13ss_localDepthP12stealStack_t", 0,
+                             "releaseNodes", "_Z12releaseNodesP12stealStack_t", 6, "ss_localDepth", "ss_setState", "ss_release", "ss_setState", "cbarrier_cancel", "ss_setState",
+                             "ss_release", "_Z10ss_releaseP12stealStack_ti", 1, "ss_error",
+                             "omp_global_lock_alloc", "_Z21omp_global_lock_allocv", 0,
+                             "cbarrier_wait", "_Z13cbarrier_waitv", 0,
+                             "ss_steal", "_Z8ss_stealP12stealStack_tii", 4, "ss_error", "ss_error", "ss_error", "rng_showstate",
+                             "impl_helpMessage", "_Z16impl_helpMessagev", 0,
+                             "ss_error", "_Z8ss_errorPc", 0,
+                             "cb_init", "_Z7cb_initv", 1, "omp_global_lock_alloc",
+                             "initRootNode", "_Z12initRootNodeP6node_ti", 1, "uts_initRoot",
                         "impl_getName|name|0", 1, "impl_getName",
                         "ss_push|s|0", 1, "rng_showstate",
                         "ss_push|c|0", 1, "rng_showstate",
@@ -7967,7 +7964,6 @@ static int module_init() {
     register_global_var("global|cb_done", "i32", (void *)(&cb_done), 4.0, 0, 0, 0);
     register_global_var("global|cb_lock", "%struct.omp_lock_t*", (void *)(&cb_lock), 8.0, 1, 0, 0);
     register_global_var("global|startTime", "[32 x double]", (void *)(&startTime), 256.0, 0, 0, 0);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "common3d.cpp.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_save_layer_text_npm = 1;
 static int ____chimes_does_checkpoint_init_data_npm = 1;
 static int ____chimes_does_checkpoint_usage_npm = 1;
@@ -76,7 +74,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -102,7 +99,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4866,18 +4863,17 @@ static int module_init() {
                      "_IO_marker", 0,
                      "_config", 12, "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "int", (int)__builtin_offsetof (struct _config, nz), "int", (int)__builtin_offsetof (struct _config, nsteps), "int", (int)__builtin_offsetof (struct _config, save_text), "int", (int)__builtin_offsetof (struct _config, verbose), "int", (int)__builtin_offsetof (struct _config, radius), "int", (int)__builtin_offsetof (struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof (struct _config, srcs), "int", (int)__builtin_offsetof (struct _config, nsrcs), "int", (int)__builtin_offsetof (struct _config, progress_width), "int", (int)__builtin_offsetof (struct _config, progress_disabled),
                      "_source", 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t),
-                             "usage", 0,
-                             "setup_config", 4, "default_config", "parse_source", "usage", "getNumCUDADevices",
-                             "init_data", 0,
-                             "default_config", 0,
-                             "save_layer_text", 0,
+                             "usage", "_Z5usagePPc", 0,
+                             "setup_config", "_Z12setup_configP7_configiPPc", 4, "default_config", "parse_source", "usage", "getNumCUDADevices",
+                             "init_data", "_Z9init_dataPfS_S_S_iiiff", 0,
+                             "default_config", "_Z14default_configP7_config", 0,
+                             "save_layer_text", "_Z15save_layer_textPfiiiiiPKci", 0,
                         "setup_config|conf|0", 2, "parse_source", "getNumCUDADevices",
                         "setup_config|argc|0", 2, "parse_source", "getNumCUDADevices",
                         "setup_config|argv|0", 2, "parse_source", "getNumCUDADevices",
                         "setup_config|c|0", 2, "parse_source", "getNumCUDADevices",
         "default_config", 0UL, (int)1, 1053281035032759841UL,
         "usage", 0UL, (int)1, 1053281035032759843UL);
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

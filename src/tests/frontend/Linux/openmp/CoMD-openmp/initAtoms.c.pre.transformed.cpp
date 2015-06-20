@@ -7,8 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "initAtoms.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_initAtoms_npm = 1;
 static int ____chimes_does_checkpoint_destroyAtoms_npm = 1;
 static int ____chimes_does_checkpoint_createFccLattice_npm = 1;
@@ -149,7 +147,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -175,7 +172,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -5119,14 +5116,14 @@ static int module_init() {
                      "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange),
                      "SpeciesDataSt", 3, "[ 3 x char ]", (int)__builtin_offsetof (struct SpeciesDataSt, name), "int", (int)__builtin_offsetof (struct SpeciesDataSt, atomicNo), "double", (int)__builtin_offsetof (struct SpeciesDataSt, mass),
                      "TimerHandle", 0,
-                             "setTemperature", 7, "mkSeed", "gasdev", "gasdev", "gasdev", "setVcm", "kineticEnergy", "kineticEnergy",
-                             "setVcm", 1, "computeVcm",
-                             "createFccLattice", 4, "putAtomInBox", "profileStart", "addIntParallel", "profileStop",
-                             "destroyAtoms", 0,
-                             "initAtoms", 3, "zeroReal3", "zeroReal3", "zeroReal3",
-                             "zeroReal3", 0,
-                             "randomDisplacements", 4, "mkSeed", "lcg61", "lcg61", "lcg61",
-                             "computeVcm", 3, "profileStart", "addRealParallel", "profileStop",
+                             "setTemperature", "_Z14setTemperatureP9SimFlatStd", 7, "mkSeed", "gasdev", "gasdev", "gasdev", "setVcm", "kineticEnergy", "kineticEnergy",
+                             "setVcm", "_Z6setVcmP9SimFlatStPd", 1, "computeVcm",
+                             "createFccLattice", "_Z16createFccLatticeiiidP9SimFlatSt", 4, "putAtomInBox", "profileStart", "addIntParallel", "profileStop",
+                             "destroyAtoms", "_Z12destroyAtomsP7AtomsSt", 0,
+                             "initAtoms", "_Z9initAtomsP10LinkCellSt", 3, "zeroReal3", "zeroReal3", "zeroReal3",
+                             "zeroReal3", "_ZL9zeroReal3Pd", 0,
+                             "randomDisplacements", "_Z19randomDisplacementsP9SimFlatStd", 4, "mkSeed", "lcg61", "lcg61", "lcg61",
+                             "computeVcm", "_ZL10computeVcmP9SimFlatStPd", 3, "profileStart", "addRealParallel", "profileStop",
                         "createFccLattice|nx|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
                         "createFccLattice|ny|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
                         "createFccLattice|nz|0", 4, "putAtomInBox", "profileStop", "profileStart", "addIntParallel",
@@ -5176,7 +5173,6 @@ static int module_init() {
                         "randomDisplacements|iOff|0", 2, "mkSeed", "lcg61",
                         "randomDisplacements|ii|0", 2, "mkSeed", "lcg61",
                         "randomDisplacements|seed|0", 1, "randomDisplacements");
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 

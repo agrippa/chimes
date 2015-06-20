@@ -17,11 +17,12 @@ class StackVar(object):
 
 
 class Callees(object):
-    def __init__(self, name, calls_unknown, creates_checkpoint, callees):
+    def __init__(self, name, mangled_name, calls_unknown, creates_checkpoint, callees):
         assert calls_unknown == '0' or calls_unknown == '1'
         assert creates_checkpoint == 'DOES' or \
                creates_checkpoint == 'DOES_NOT' or creates_checkpoint == 'MAY'
         self.name = name
+        self.mangled_name = mangled_name
         self.calls_unknown = True if calls_unknown == '1' else False
         self.creates_checkpoint = creates_checkpoint
         self.callees = callees
@@ -115,15 +116,20 @@ def get_call_tree(call_tree_filename):
 
     for line in fp:
         tokens = line.split()
+        fname = tokens[0]
+        mangled_fname = tokens[1]
+        calls_unknown = tokens[2]
+        creates_checkpoint = tokens[3]
 
-        callee_info = tokens[3:]
+        callee_info = tokens[4:]
         callees = []
         index = 0
         while index < len(callee_info):
             callees.append(callee_info[index])
             index += 3
 
-        call_tree[tokens[0]] = Callees(tokens[0], tokens[1], tokens[2], callees)
+        call_tree[fname] = Callees(fname, mangled_fname, calls_unknown,
+                                   creates_checkpoint, callees)
 
     fp.close()
 

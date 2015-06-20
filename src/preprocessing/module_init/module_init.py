@@ -522,9 +522,6 @@ if __name__ == '__main__':
     input_file = open(cfg.input_filename, 'r')
     output_file = open(cfg.output_filename, 'w')
 
-    output_file.write('extern char __executable_start;\n')
-    output_file.write('extern char __etext;\n')
-
     transfer(input_file, output_file)
 
     count_conditionally_checkpointable_vars= 0
@@ -656,7 +653,8 @@ if __name__ == '__main__':
                 output_file.write(', (int)offsetof(struct ' + s.name + ', ' + field.name + ')')
 
     for c in call_tree.values():
-        output_file.write(',\n        /* call tree info */ "' + c.name + '", ' + str(len(c.callees)))
+        output_file.write(',\n        /* call tree info */ "' + c.name +
+                          '", "' + c.mangled_name + '", ' + str(len(c.callees)))
         for callee in c.callees:
             output_file.write(', "' + callee + '"')
 
@@ -676,9 +674,6 @@ if __name__ == '__main__':
 
     for c in constants:
         write_constant(c, module_id_str)
-
-    output_file.write('    register_text((void *)&__executable_start, ' +
-                      '(size_t)((&__etext) - (&__executable_start)));\n')
 
     output_file.write('    return 0;\n')
     output_file.write('}\n')

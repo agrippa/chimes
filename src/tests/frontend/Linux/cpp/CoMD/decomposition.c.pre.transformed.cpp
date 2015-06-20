@@ -8,8 +8,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "decomposition.c.pre.transformed.cpp"
-extern char __executable_start;
-extern char __etext;
 static int ____chimes_does_checkpoint_initDecomposition_npm = 1;
 static int ____chimes_does_checkpoint_processorNum_npm = 1;
 static int ____chimes_does_checkpoint_getMyRank_npm = 1;
@@ -72,7 +70,6 @@ extern void register_global_var(const char *mangled_name, const char *full_type,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
-extern void register_text(void *start, size_t len);
 extern int alias_group_changed(unsigned loc_id);
 extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
         int is_struct, ...);
@@ -98,7 +95,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1880,14 +1877,13 @@ static int module_init() {
                              (5688163497316386527UL + 4UL), (5688163497316386527UL + 226UL),
                              (5688163497316386527UL + 239UL), (5688163497316386527UL + 320UL),
                      "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
-                             "processorNum", 0,
-                             "initDecomposition", 2, "getNRanks", "getMyRank",
+                             "processorNum", "_Z12processorNumP8DomainStiii", 0,
+                             "initDecomposition", "_Z17initDecompositioniiiPd", 2, "getNRanks", "getMyRank",
                         "initDecomposition|xproc|0", 2, "getNRanks", "getMyRank",
                         "initDecomposition|yproc|0", 2, "getNRanks", "getMyRank",
                         "initDecomposition|zproc|0", 2, "getNRanks", "getMyRank",
                         "initDecomposition|globalExtent|0", 2, "getNRanks", "getMyRank",
                         "initDecomposition|dd|0", 1, "getMyRank");
-    register_text((void *)&__executable_start, (size_t)((&__etext) - (&__executable_start)));
     return 0;
 }
 
