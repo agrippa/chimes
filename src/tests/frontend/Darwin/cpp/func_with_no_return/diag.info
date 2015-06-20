@@ -10,12 +10,12 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 6 len=23 haha_this_sux_part_canc_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 188  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5 ({ calling_npm(0, 0); haha_this_sux_part_canc_npm(); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5 ({ calling_npm("haha_this_sux_part_canc", 0); haha_this_sux_part_canc_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 29 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 180  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 6 len=23 haha_this_sux_part_canc_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 6 188  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5 ({ calling_npm(0, 0); haha_this_sux_part_canc_npm(); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 5 ({ calling_npm("haha_this_sux_part_canc", 0); haha_this_sux_part_canc_npm(); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 11 29 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/func_with_no_return.cpp 10 180  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

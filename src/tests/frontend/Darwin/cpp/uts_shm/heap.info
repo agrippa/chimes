@@ -1,2 +1,2 @@
 446 26 134 malloc 0 1 node_t
-1411 37 1158 malloc 0 1 stealStack_t stackLock stack stack_g
+1419 37 1158 malloc 0 1 stealStack_t stackLock stack stack_g

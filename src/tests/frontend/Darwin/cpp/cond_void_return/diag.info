@@ -24,9 +24,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 5  cal
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 6 len=3 bar_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 188  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 5 ({ calling_npm(2, 0, 7569268050213511391UL, 7569268050213511376UL, 7569268050213511415UL, 7569268050213511377UL); bar_npm(A, B); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 5 ({ calling_npm("bar", 0); bar_npm(A, B); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 13 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 18  ({  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 18 checkpoint_transformed(3, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 12 
@@ -38,9 +38,9 @@ int *A;
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 6 len=3 bar_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 5 188  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 17 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 5 ({ calling_npm(2, 0, 7569268050213511391UL, 7569268050213511376UL, 7569268050213511415UL, 7569268050213511377UL); bar_npm(A, B); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 5 ({ calling_npm("bar", 0); bar_npm(A, B); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 21 13 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 18  ({  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 18 checkpoint_transformed(3, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 22 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/cond_void_return.cpp 18 12 

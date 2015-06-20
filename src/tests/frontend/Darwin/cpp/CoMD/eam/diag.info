@@ -29,7 +29,6 @@ ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 564 38 len
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 564 71 , 684635133602954440UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 568 35 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 568 67 , 684635133602954467UL, 0, 0
-ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 576 6 len=14 printTableData_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 635 6 len=12 eamReadSetfl_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 678 27 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 678 57 , 684635133602953714UL, 0, 0
@@ -90,12 +89,12 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 4
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 438 1 rm_stack(false, 0UL, "eamBcastPotential", &____must_manage_eamBcastPotential, ____alias_loc_id_19, ____chimes_did_disable4); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 473 4 rm_stack(true, 684635133602954282UL, "initInterpolationObject", &____must_manage_initInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable5); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 454 1 const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602954378UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 478 13 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_23, ____chimes_did_disable6); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 479 14 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_23, ____chimes_did_disable6); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 488 4 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_23, ____chimes_did_disable6); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 478 13 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_24, ____chimes_did_disable6); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 479 14 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_24, ____chimes_did_disable6); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 488 4 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_24, ____chimes_did_disable6); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 477 1 const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(684635133602954539UL)); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 1 const int ____chimes_did_disable7 = new_stack((void *)(&interpolate), "interpolate", &____must_manage_interpolate, 4, 0, (size_t)(684635133602954703UL), (size_t)(0UL), (size_t)(684635133602954705UL), (size_t)(684635133602954706UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 534 1 rm_stack(false, 0UL, "interpolate", &____must_manage_interpolate, ____alias_loc_id_24, ____chimes_did_disable7); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 534 1 rm_stack(false, 0UL, "interpolate", &____must_manage_interpolate, ____alias_loc_id_25, ____chimes_did_disable7); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 1 const int ____chimes_did_disable8 = new_stack((void *)(&bcastInterpolationObject), "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 1, 1, (size_t)(684635133602954442UL), "bcastInterpolationObject|table|0", &____must_checkpoint_bcastInterpolationObject_table_0, "%struct.InterpolationObjectSt**", (void *)(&table), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 574 1 rm_stack(false, 0UL, "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 0, ____chimes_did_disable8); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 636 1 const int ____chimes_did_disable10 = new_stack((void *)(&eamReadSetfl), "eamReadSetfl", &____must_manage_eamReadSetfl, 3, 0, (size_t)(684635133602953843UL), (size_t)(684635133602953844UL), (size_t)(684635133602953845UL)); 
@@ -359,10 +358,6 @@ ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 836 202
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 4  call_lbl_5: 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 198 4  call_lbl_8: 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 7  call_lbl_5: 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 235 4  call_lbl_7: 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 236 4  call_lbl_8: 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 237 4  call_lbl_9: 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 238 4  call_lbl_10: 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 24  call_lbl_11: 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 9  call_lbl_13: 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 322 4  call_lbl_14: 
@@ -379,48 +374,40 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 4  call
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 4  call_lbl_4: 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 4  call_lbl_9: 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 170 16 len=10 initEamPot_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 64  ({  calling((void*)getMyRank, 5, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 64  ({  calling((void*)getMyRank, 5, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 40 ({ calling_npm(8, 0, 684635133602952548UL, 684635133602953843UL, 684635133602952606UL, 684635133602953844UL, 684635133602952607UL, 684635133602953845UL, 684635133602954730UL, 684635133602954236UL, 684635133602953596UL, 684635133602954237UL, 684635133602954730UL, 684635133602954391UL, 684635133602953741UL, 684635133602954282UL, 684635133602953714UL, 684635133602954378UL); eamReadSetfl_npm(pot, dir, file); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 40 ({ calling_npm("eamReadSetfl", 0); eamReadSetfl_npm(pot, dir, file); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 67 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 114 ({ calling_npm(7, 0, 684635133602952548UL, 684635133602954101UL, 684635133602952606UL, 684635133602954102UL, 684635133602952607UL, 684635133602954103UL, 684635133602954721UL, 684635133602954236UL, 684635133602953849UL, 684635133602954237UL, 684635133602953986UL, 684635133602954282UL, 684635133602953961UL, 684635133602954378UL); eamReadFuncfl_npm(pot, dir, file); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 114 ({ calling_npm("eamReadFuncfl", 0); eamReadFuncfl_npm(pot, dir, file); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 142 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 154 ({ calling_npm(2, 0, 684635133602954712UL, 684635133602954117UL, 684635133602952608UL, 684635133602954118UL); typeNotSupported_npm("initEamPot", type); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 154 ({ calling_npm("typeNotSupported", 0); typeNotSupported_npm("initEamPot", type); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 189 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 198 17  ({  calling((void*)eamBcastPotential, 8, 0UL, 0, 1, (size_t)(684635133602952548UL)); (eamBcastPotential)(pot); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 198 17  ({  calling((void*)eamBcastPotential, 8, 0, 0UL, 1, (size_t)(684635133602952548UL)); (eamBcastPotential)(pot); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 198 38 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 22 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 171 526  ; EamPotential *pot;
  if (____must_checkpoint_initEamPot_pot_0) { register_stack_vars(1, "initEamPot|pot|0", &____must_checkpoint_initEamPot_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 214 5 len=8 eamForce_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 41  ({  calling((void*)initForceHaloExchange, 5, 684635133602952688UL, ____alias_loc_id_1, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); (initForceHaloExchange)(s->domain, s->boxes); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 41  ({  calling((void*)initForceHaloExchange, 5, ____alias_loc_id_1, 684635133602952688UL, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); (initForceHaloExchange)(s->domain, s->boxes); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 82 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 235 17  ({  calling((void*)memset, 7, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); (memset)(s->atoms->f, 0, s->boxes->nTotalBoxes * 64 * sizeof(real3)); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 235 78 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 236 17  ({  calling((void*)memset, 8, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); (memset)(s->atoms->U, 0, s->boxes->nTotalBoxes * 64 * sizeof(real_t)); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 236 79 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 237 17  ({  calling((void*)memset, 9, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); (memset)(pot->dfEmbed, 0, s->boxes->nTotalBoxes * 64 * sizeof(real_t)); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 237 80 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 238 18  ({  calling((void*)memset, 10, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); (memset)(pot->rhobar, 0, s->boxes->nTotalBoxes * 64 * sizeof(real_t)); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 238 80 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 51  ({  calling((void*)getNeighborBoxes, 11, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952623UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 51  ({  calling((void*)getNeighborBoxes, 11, ____alias_loc_id_2, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952623UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 92 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 273 16 ({ calling_npm(3, 0, 684635133602952688UL, 684635133602954703UL, 684635133602952638UL, 684635133602954705UL, 684635133602952639UL, 684635133602954706UL); interpolate_npm(pot->phi, r, &phiTmp, &dPhi); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 273 16 ({ calling_npm("interpolate", 0); interpolate_npm(pot->phi, r, &phiTmp, &dPhi); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 273 55 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 274 16 ({ calling_npm(3, 0, 684635133602952688UL, 684635133602954703UL, 684635133602952640UL, 684635133602954705UL, 684635133602952641UL, 684635133602954706UL); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 274 16 ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 274 55 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 313 10 ({ calling_npm(3, 0, 684635133602952688UL, 684635133602954703UL, 684635133602952648UL, 684635133602954705UL, 684635133602952649UL, 684635133602954706UL); interpolate_npm(pot->f, pot->rhobar[iOff], &fEmbed, &dfEmbed); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 313 10 ({ calling_npm("interpolate", 0); interpolate_npm(pot->f, pot->rhobar[iOff], &fEmbed, &dfEmbed); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 313 66 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 23  ({  calling((void*)profileStart, 13, 0UL, ____alias_loc_id_3, 1, (size_t)(0UL)); (profileStart)(eamHaloTimer); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 23  ({  calling((void*)profileStart, 13, ____alias_loc_id_3, 0UL, 1, (size_t)(0UL)); (profileStart)(eamHaloTimer); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 48 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 322 18  ({  calling((void*)haloExchange, 14, 0UL, 0, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); (haloExchange)(pot->forceExchange, pot->forceExchangeData); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 322 18  ({  calling((void*)haloExchange, 14, 0, 0UL, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); (haloExchange)(pot->forceExchange, pot->forceExchangeData); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 322 73 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 323 23  ({  calling((void*)profileStop, 15, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 323 23  ({  calling((void*)profileStop, 15, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 323 47 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 51  ({  calling((void*)getNeighborBoxes, 16, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952623UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 51  ({  calling((void*)getNeighborBoxes, 16, ____alias_loc_id_4, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952623UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 92 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 358 16 ({ calling_npm(3, 0, 684635133602952688UL, 684635133602954703UL, 684635133602952664UL, 684635133602954705UL, 684635133602952665UL, 684635133602954706UL); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 358 16 ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 358 55 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 216 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 216 22 
@@ -552,28 +539,28 @@ EamPotential *pot;
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 376 6 len=8 eamPrint_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 377 176  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 388 6 len=10 eamDestroy_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 393 4 ({ calling_npm(1, 0, 684635133602953565UL, 684635133602954539UL); destroyInterpolationObject_npm(&(pot->phi)); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 393 4 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->phi)); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 393 42 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 394 4 ({ calling_npm(1, 0, 684635133602953565UL, 684635133602954539UL); destroyInterpolationObject_npm(&(pot->rho)); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 394 4 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->rho)); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 394 42 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 395 4 ({ calling_npm(1, 0, 684635133602953565UL, 684635133602954539UL); destroyInterpolationObject_npm(&(pot->f)); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 395 4 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->f)); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 395 40 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 17  ({  calling((void*)destroyHaloExchange, 3, 0UL, ____alias_loc_id_5, 1, (size_t)(684635133602953565UL)); (destroyHaloExchange)(&(pot->forceExchange)); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 17  ({  calling((void*)destroyHaloExchange, 3, ____alias_loc_id_5, 0UL, 1, (size_t)(684635133602953565UL)); (destroyHaloExchange)(&(pot->forceExchange)); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 58 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 391 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 391 22 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 389 277  ; EamPotential *pot;
  if (____must_checkpoint_eamDestroy_pot_0) { register_stack_vars(1, "eamDestroy|pot|0", &____must_checkpoint_eamDestroy_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 413 6 len=17 eamBcastPotential_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 64  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 64  ({  calling((void*)getMyRank, 4, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 17  ({  calling((void*)bcastParallel, 7, 0UL, ____alias_loc_id_7, 3, (size_t)(684635133602954120UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 17  ({  calling((void*)bcastParallel, 7, ____alias_loc_id_7, 0UL, 3, (size_t)(684635133602954120UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 51 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 18  ({  calling((void*)bcastInterpolationObject, 10, 0UL, ____alias_loc_id_8, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(&pot->phi); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 18  ({  calling((void*)bcastInterpolationObject, 10, ____alias_loc_id_8, 0UL, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(&pot->phi); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 52 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 436 18  ({  calling((void*)bcastInterpolationObject, 11, 0UL, 0, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(&pot->rho); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 436 18  ({  calling((void*)bcastInterpolationObject, 11, 0, 0UL, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(&pot->rho); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 436 52 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 437 18  ({  calling((void*)bcastInterpolationObject, 12, 0UL, 0, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(&pot->f); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 437 18  ({  calling((void*)bcastInterpolationObject, 12, 0, 0UL, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(&pot->f); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 437 50 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 14 
@@ -586,13 +573,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 4
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 512 6 len=11 interpolate_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 232  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 549 6 len=24 bcastInterpolationObject_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 64  ({  calling((void*)getMyRank, 2, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 64  ({  calling((void*)getMyRank, 2, ____alias_loc_id_9, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 17  ({  calling((void*)bcastParallel, 3, 0UL, ____alias_loc_id_10, 3, (size_t)(684635133602954396UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 17  ({  calling((void*)bcastParallel, 3, ____alias_loc_id_10, 0UL, 3, (size_t)(684635133602954396UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 51 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 21  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 21  ({  calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 31 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 17  ({  calling((void*)bcastParallel, 9, 0UL, ____alias_loc_id_11, 3, (size_t)(684635133602954467UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)((*table)->values - 1, valuesSize, 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 17  ({  calling((void*)bcastParallel, 9, ____alias_loc_id_11, 0UL, 3, (size_t)(684635133602954467UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)((*table)->values - 1, valuesSize, 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 64 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 15 
@@ -602,15 +589,15 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 5
 buf_2_t buf;
  if (____must_checkpoint_bcastInterpolationObject_valuesSize_0 || ____must_checkpoint_bcastInterpolationObject_buf_0) { register_stack_vars(2, "bcastInterpolationObject|valuesSize|0", &____must_checkpoint_bcastInterpolationObject_valuesSize_0, "i32", (void *)(&valuesSize), (size_t)4, 0, 0, 0, "bcastInterpolationObject|buf|0", &____must_checkpoint_bcastInterpolationObject_buf_0, "%struct._buf_2_t = type { i32, double, double }", (void *)(&buf), (size_t)24, 0, 1, 0);  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 635 6 len=12 eamReadSetfl_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 28 ({ calling_npm(2, 0, 684635133602954730UL, 684635133602954236UL, 684635133602953596UL, 684635133602954237UL); fileNotFound_npm("eamReadSetfl", tmp); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 28 ({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadSetfl", tmp); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 60 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 653 22 ({ calling_npm(1, 0, 684635133602954730UL, 684635133602954391UL); notAlloyReady_npm("eamReadSetfl"); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 653 22 ({ calling_npm("notAlloyReady", 0); notAlloyReady_npm("eamReadSetfl"); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 653 50 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 684 13 ({ calling_npm(2, 0, 684635133602953741UL, 684635133602954282UL, 684635133602953714UL, 684635133602954378UL); initInterpolationObject_npm(nRho, x0, dRho, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 684 13 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 684 56 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 689 15 ({ calling_npm(2, 0, 684635133602953741UL, 684635133602954282UL, 684635133602953714UL, 684635133602954378UL); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 689 15 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 689 54 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 700 15 ({ calling_npm(2, 0, 684635133602953741UL, 684635133602954282UL, 684635133602953714UL, 684635133602954378UL); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 700 15 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 700 54 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 18 
@@ -620,13 +607,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 6
 char tmp[4096];
  if (____must_checkpoint_eamReadSetfl_latticeType_0 || ____must_checkpoint_eamReadSetfl_tmp_0) { register_stack_vars(2, "eamReadSetfl|latticeType|0", &____must_checkpoint_eamReadSetfl_latticeType_0, "[8 x i8]", (void *)(latticeType), (size_t)8, 0, 0, 0, "eamReadSetfl|tmp|0", &____must_checkpoint_eamReadSetfl_tmp_0, "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0);  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 753 6 len=13 eamReadFuncfl_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 28 ({ calling_npm(2, 0, 684635133602954721UL, 684635133602954236UL, 684635133602953849UL, 684635133602954237UL); fileNotFound_npm("eamReadFuncfl", tmp); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 28 ({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadFuncfl", tmp); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 61 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 794 13 ({ calling_npm(2, 0, 684635133602953986UL, 684635133602954282UL, 684635133602953961UL, 684635133602954378UL); initInterpolationObject_npm(nRho, x0, dRho, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 794 13 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 794 56 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 806 15 ({ calling_npm(2, 0, 684635133602953986UL, 684635133602954282UL, 684635133602953961UL, 684635133602954378UL); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 806 15 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 806 54 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 811 15 ({ calling_npm(2, 0, 684635133602953986UL, 684635133602954282UL, 684635133602953961UL, 684635133602954378UL); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 811 15 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 811 54 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 18 
@@ -645,48 +632,40 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 8
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 835 6 len=16 typeNotSupported_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 836 201  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 170 16 len=10 initEamPot_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 64  ({  calling((void*)getMyRank, 5, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 64  ({  calling((void*)getMyRank, 5, ____alias_loc_id_0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 189 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 40 ({ calling_npm(8, 0, 684635133602952548UL, 684635133602953843UL, 684635133602952606UL, 684635133602953844UL, 684635133602952607UL, 684635133602953845UL, 684635133602954730UL, 684635133602954236UL, 684635133602953596UL, 684635133602954237UL, 684635133602954730UL, 684635133602954391UL, 684635133602953741UL, 684635133602954282UL, 684635133602953714UL, 684635133602954378UL); eamReadSetfl_npm(pot, dir, file); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 40 ({ calling_npm("eamReadSetfl", 0); eamReadSetfl_npm(pot, dir, file); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 67 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 114 ({ calling_npm(7, 0, 684635133602952548UL, 684635133602954101UL, 684635133602952606UL, 684635133602954102UL, 684635133602952607UL, 684635133602954103UL, 684635133602954721UL, 684635133602954236UL, 684635133602953849UL, 684635133602954237UL, 684635133602953986UL, 684635133602954282UL, 684635133602953961UL, 684635133602954378UL); eamReadFuncfl_npm(pot, dir, file); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 114 ({ calling_npm("eamReadFuncfl", 0); eamReadFuncfl_npm(pot, dir, file); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 142 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 154 ({ calling_npm(2, 0, 684635133602954712UL, 684635133602954117UL, 684635133602952608UL, 684635133602954118UL); typeNotSupported_npm("initEamPot", type); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 154 ({ calling_npm("typeNotSupported", 0); typeNotSupported_npm("initEamPot", type); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 191 189 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 198 17  ({  calling((void*)eamBcastPotential, 8, 0UL, 0, 1, (size_t)(684635133602952548UL)); (eamBcastPotential)(pot); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 198 17  ({  calling((void*)eamBcastPotential, 8, 0, 0UL, 1, (size_t)(684635133602952548UL)); (eamBcastPotential)(pot); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 198 38 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 172 22 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 171 526  ; EamPotential *pot;
  if (____must_checkpoint_initEamPot_pot_0) { register_stack_vars(1, "initEamPot|pot|0", &____must_checkpoint_initEamPot_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 214 5 len=8 eamForce_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 41  ({  Domain * ____chimes_arg1;  LinkCell * ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg1 = (s->domain); ____chimes_arg2 = (s->boxes);  }  calling((void*)initForceHaloExchange, 5, 684635133602952688UL, ____alias_loc_id_1, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); (initForceHaloExchange)(____chimes_arg1, ____chimes_arg2); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 41  ({  Domain * ____chimes_arg1;  LinkCell * ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg1 = (s->domain); ____chimes_arg2 = (s->boxes);  }  calling((void*)initForceHaloExchange, 5, ____alias_loc_id_1, 684635133602952688UL, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); (initForceHaloExchange)(____chimes_arg1, ____chimes_arg2); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 225 82 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 235 17  ({  void * ____chimes_arg3;  unsigned long ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg3 = (s->atoms->f); ____chimes_arg5 = (s->boxes->nTotalBoxes * 64 * sizeof(real3));  }  calling((void*)memset, 7, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg3, 0, ____chimes_arg5); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 235 78 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 236 17  ({  void * ____chimes_arg6;  unsigned long ____chimes_arg8;  if (!____chimes_replaying) { ____chimes_arg6 = (s->atoms->U); ____chimes_arg8 = (s->boxes->nTotalBoxes * 64 * sizeof(real_t));  }  calling((void*)memset, 8, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg6, 0, ____chimes_arg8); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 236 79 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 237 17  ({  void * ____chimes_arg9;  unsigned long ____chimes_arg11;  if (!____chimes_replaying) { ____chimes_arg9 = (pot->dfEmbed); ____chimes_arg11 = (s->boxes->nTotalBoxes * 64 * sizeof(real_t));  }  calling((void*)memset, 9, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg9, 0, ____chimes_arg11); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 237 80 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 238 18  ({  void * ____chimes_arg12;  unsigned long ____chimes_arg14;  if (!____chimes_replaying) { ____chimes_arg12 = (pot->rhobar); ____chimes_arg14 = (s->boxes->nTotalBoxes * 64 * sizeof(real_t));  }  calling((void*)memset, 10, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(0UL)); (memset)(____chimes_arg12, 0, ____chimes_arg14); }) 
-ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 238 80 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 51  ({  LinkCell * ____chimes_arg15;  if (!____chimes_replaying) { ____chimes_arg15 = (s->boxes);  }  calling((void*)getNeighborBoxes, 11, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952623UL)); (getNeighborBoxes)(____chimes_arg15, iBox, nbrBoxes); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 51  ({  LinkCell * ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes);  }  calling((void*)getNeighborBoxes, 11, ____alias_loc_id_2, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952623UL)); (getNeighborBoxes)(____chimes_arg3, iBox, nbrBoxes); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 245 92 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 273 16 ({ calling_npm(3, 0, 684635133602952688UL, 684635133602954703UL, 684635133602952638UL, 684635133602954705UL, 684635133602952639UL, 684635133602954706UL); interpolate_npm(pot->phi, r, &phiTmp, &dPhi); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 273 16 ({ calling_npm("interpolate", 0); interpolate_npm(pot->phi, r, &phiTmp, &dPhi); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 273 55 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 274 16 ({ calling_npm(3, 0, 684635133602952688UL, 684635133602954703UL, 684635133602952640UL, 684635133602954705UL, 684635133602952641UL, 684635133602954706UL); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 274 16 ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 274 55 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 313 10 ({ calling_npm(3, 0, 684635133602952688UL, 684635133602954703UL, 684635133602952648UL, 684635133602954705UL, 684635133602952649UL, 684635133602954706UL); interpolate_npm(pot->f, pot->rhobar[iOff], &fEmbed, &dfEmbed); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 313 10 ({ calling_npm("interpolate", 0); interpolate_npm(pot->f, pot->rhobar[iOff], &fEmbed, &dfEmbed); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 313 66 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 23  ({  calling((void*)profileStart, 13, 0UL, ____alias_loc_id_3, 1, (size_t)(0UL)); (profileStart)(eamHaloTimer); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 23  ({  calling((void*)profileStart, 13, ____alias_loc_id_3, 0UL, 1, (size_t)(0UL)); (profileStart)(eamHaloTimer); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 321 48 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 322 18  ({  HaloExchange * ____chimes_arg19;  void * ____chimes_arg20;  if (!____chimes_replaying) { ____chimes_arg19 = (pot->forceExchange); ____chimes_arg20 = (pot->forceExchangeData);  }  calling((void*)haloExchange, 14, 0UL, 0, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); (haloExchange)(____chimes_arg19, ____chimes_arg20); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 322 18  ({  HaloExchange * ____chimes_arg7;  void * ____chimes_arg8;  if (!____chimes_replaying) { ____chimes_arg7 = (pot->forceExchange); ____chimes_arg8 = (pot->forceExchangeData);  }  calling((void*)haloExchange, 14, 0, 0UL, 2, (size_t)(684635133602952688UL), (size_t)(684635133602952688UL)); (haloExchange)(____chimes_arg7, ____chimes_arg8); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 322 73 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 323 23  ({  calling((void*)profileStop, 15, 0UL, 0, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 323 23  ({  calling((void*)profileStop, 15, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(eamHaloTimer); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 323 47 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 51  ({  LinkCell * ____chimes_arg22;  if (!____chimes_replaying) { ____chimes_arg22 = (s->boxes);  }  calling((void*)getNeighborBoxes, 16, 0UL, 0, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952623UL)); (getNeighborBoxes)(____chimes_arg22, iBox, nbrBoxes); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 51  ({  LinkCell * ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg10 = (s->boxes);  }  calling((void*)getNeighborBoxes, 16, ____alias_loc_id_4, 0UL, 3, (size_t)(684635133602952688UL), (size_t)(0UL), (size_t)(684635133602952623UL)); (getNeighborBoxes)(____chimes_arg10, iBox, nbrBoxes); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 330 92 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 358 16 ({ calling_npm(3, 0, 684635133602952688UL, 684635133602954703UL, 684635133602952664UL, 684635133602954705UL, 684635133602952665UL, 684635133602954706UL); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 358 16 ({ calling_npm("interpolate", 0); interpolate_npm(pot->rho, r, &rhoTmp, &dRho); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 358 55 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 216 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 216 22 
@@ -807,7 +786,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 3
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 357 29  if (____chimes_replaying) { goto lbl_35; } 
 InsertTextBefore /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 19  lbl_35: 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  if (____must_checkpoint_eamForce_k_3 != 0) { register_stack_var("eamForce|k|3", &____must_checkpoint_eamForce_k_3, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 360 24  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 215 251  ; real_t fEmbed;
 real_t phiTmp;
 int nbrBoxes[27];
@@ -818,28 +797,28 @@ EamPotential *pot;
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 376 6 len=8 eamPrint_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 377 176  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 388 6 len=10 eamDestroy_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 393 4 ({ calling_npm(1, 0, 684635133602953565UL, 684635133602954539UL); destroyInterpolationObject_npm(&(pot->phi)); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 393 4 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->phi)); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 393 42 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 394 4 ({ calling_npm(1, 0, 684635133602953565UL, 684635133602954539UL); destroyInterpolationObject_npm(&(pot->rho)); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 394 4 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->rho)); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 394 42 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 395 4 ({ calling_npm(1, 0, 684635133602953565UL, 684635133602954539UL); destroyInterpolationObject_npm(&(pot->f)); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 395 4 ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->f)); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 395 40 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 17  ({  HaloExchange ** ____chimes_arg25;  if (!____chimes_replaying) { ____chimes_arg25 = (&(pot->forceExchange));  }  calling((void*)destroyHaloExchange, 3, 0UL, ____alias_loc_id_5, 1, (size_t)(684635133602953565UL)); (destroyHaloExchange)(____chimes_arg25); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 17  ({  HaloExchange ** ____chimes_arg13;  if (!____chimes_replaying) { ____chimes_arg13 = (&(pot->forceExchange));  }  calling((void*)destroyHaloExchange, 3, ____alias_loc_id_5, 0UL, 1, (size_t)(684635133602953565UL)); (destroyHaloExchange)(____chimes_arg13); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 396 58 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 391 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 391 22 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 389 277  ; EamPotential *pot;
  if (____must_checkpoint_eamDestroy_pot_0) { register_stack_vars(1, "eamDestroy|pot|0", &____must_checkpoint_eamDestroy_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 413 6 len=17 eamBcastPotential_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 64  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 64  ({  calling((void*)getMyRank, 4, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 17  ({  void * ____chimes_arg26;  int ____chimes_arg27;  if (!____chimes_replaying) { ____chimes_arg26 = (&buf); ____chimes_arg27 = (sizeof (buf));  }  calling((void*)bcastParallel, 7, 0UL, ____alias_loc_id_7, 3, (size_t)(684635133602954120UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg26, ____chimes_arg27, 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 17  ({  void * ____chimes_arg14;  int ____chimes_arg15;  if (!____chimes_replaying) { ____chimes_arg14 = (&buf); ____chimes_arg15 = (sizeof (buf));  }  calling((void*)bcastParallel, 7, ____alias_loc_id_7, 0UL, 3, (size_t)(684635133602954120UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg14, ____chimes_arg15, 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 51 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 18  ({  InterpolationObject ** ____chimes_arg29;  if (!____chimes_replaying) { ____chimes_arg29 = (&pot->phi);  }  calling((void*)bcastInterpolationObject, 10, 0UL, ____alias_loc_id_8, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(____chimes_arg29); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 18  ({  InterpolationObject ** ____chimes_arg17;  if (!____chimes_replaying) { ____chimes_arg17 = (&pot->phi);  }  calling((void*)bcastInterpolationObject, 10, ____alias_loc_id_8, 0UL, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(____chimes_arg17); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 52 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 436 18  ({  InterpolationObject ** ____chimes_arg30;  if (!____chimes_replaying) { ____chimes_arg30 = (&pot->rho);  }  calling((void*)bcastInterpolationObject, 11, 0UL, 0, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(____chimes_arg30); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 436 18  ({  InterpolationObject ** ____chimes_arg18;  if (!____chimes_replaying) { ____chimes_arg18 = (&pot->rho);  }  calling((void*)bcastInterpolationObject, 11, 0, 0UL, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(____chimes_arg18); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 436 52 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 437 18  ({  InterpolationObject ** ____chimes_arg31;  if (!____chimes_replaying) { ____chimes_arg31 = (&pot->f);  }  calling((void*)bcastInterpolationObject, 12, 0UL, 0, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(____chimes_arg31); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 437 18  ({  InterpolationObject ** ____chimes_arg19;  if (!____chimes_replaying) { ____chimes_arg19 = (&pot->f);  }  calling((void*)bcastInterpolationObject, 12, 0, 0UL, 1, (size_t)(684635133602954215UL)); (bcastInterpolationObject)(____chimes_arg19); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 437 50 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 14 
@@ -852,13 +831,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 4
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 512 6 len=11 interpolate_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 232  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 549 6 len=24 bcastInterpolationObject_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 64  ({  calling((void*)getMyRank, 2, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 64  ({  calling((void*)getMyRank, 2, ____alias_loc_id_9, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 17  ({  void * ____chimes_arg32;  int ____chimes_arg33;  if (!____chimes_replaying) { ____chimes_arg32 = (&buf); ____chimes_arg33 = (sizeof (buf));  }  calling((void*)bcastParallel, 3, 0UL, ____alias_loc_id_10, 3, (size_t)(684635133602954396UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg32, ____chimes_arg33, 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 17  ({  void * ____chimes_arg20;  int ____chimes_arg21;  if (!____chimes_replaying) { ____chimes_arg20 = (&buf); ____chimes_arg21 = (sizeof (buf));  }  calling((void*)bcastParallel, 3, ____alias_loc_id_10, 0UL, 3, (size_t)(684635133602954396UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg20, ____chimes_arg21, 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 51 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 21  ({  calling((void*)getMyRank, 4, 0UL, 0, 0); (getMyRank)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 21  ({  calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 31 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 17  ({  void * ____chimes_arg35;  if (!____chimes_replaying) { ____chimes_arg35 = ((*table)->values - 1);  }  calling((void*)bcastParallel, 9, 0UL, ____alias_loc_id_11, 3, (size_t)(684635133602954467UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg35, valuesSize, 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 17  ({  void * ____chimes_arg23;  if (!____chimes_replaying) { ____chimes_arg23 = ((*table)->values - 1);  }  calling((void*)bcastParallel, 9, ____alias_loc_id_11, 0UL, 3, (size_t)(684635133602954467UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg23, valuesSize, 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 64 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 15 
@@ -868,15 +847,15 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 5
 buf_2_t buf;
  if (____must_checkpoint_bcastInterpolationObject_valuesSize_0 || ____must_checkpoint_bcastInterpolationObject_buf_0) { register_stack_vars(2, "bcastInterpolationObject|valuesSize|0", &____must_checkpoint_bcastInterpolationObject_valuesSize_0, "i32", (void *)(&valuesSize), (size_t)4, 0, 0, 0, "bcastInterpolationObject|buf|0", &____must_checkpoint_bcastInterpolationObject_buf_0, "%struct._buf_2_t = type { i32, double, double }", (void *)(&buf), (size_t)24, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(9): { goto call_lbl_9; } default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 635 6 len=12 eamReadSetfl_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 28 ({ calling_npm(2, 0, 684635133602954730UL, 684635133602954236UL, 684635133602953596UL, 684635133602954237UL); fileNotFound_npm("eamReadSetfl", tmp); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 28 ({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadSetfl", tmp); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 641 60 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 653 22 ({ calling_npm(1, 0, 684635133602954730UL, 684635133602954391UL); notAlloyReady_npm("eamReadSetfl"); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 653 22 ({ calling_npm("notAlloyReady", 0); notAlloyReady_npm("eamReadSetfl"); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 653 50 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 684 13 ({ calling_npm(2, 0, 684635133602953741UL, 684635133602954282UL, 684635133602953714UL, 684635133602954378UL); initInterpolationObject_npm(nRho, x0, dRho, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 684 13 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 684 56 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 689 15 ({ calling_npm(2, 0, 684635133602953741UL, 684635133602954282UL, 684635133602953714UL, 684635133602954378UL); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 689 15 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 689 54 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 700 15 ({ calling_npm(2, 0, 684635133602953741UL, 684635133602954282UL, 684635133602953714UL, 684635133602954378UL); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 700 15 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 700 54 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 637 18 
@@ -886,13 +865,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 6
 char tmp[4096];
  if (____must_checkpoint_eamReadSetfl_latticeType_0 || ____must_checkpoint_eamReadSetfl_tmp_0) { register_stack_vars(2, "eamReadSetfl|latticeType|0", &____must_checkpoint_eamReadSetfl_latticeType_0, "[8 x i8]", (void *)(latticeType), (size_t)8, 0, 0, 0, "eamReadSetfl|tmp|0", &____must_checkpoint_eamReadSetfl_tmp_0, "[4096 x i8]", (void *)(tmp), (size_t)4096, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 753 6 len=13 eamReadFuncfl_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 28 ({ calling_npm(2, 0, 684635133602954721UL, 684635133602954236UL, 684635133602953849UL, 684635133602954237UL); fileNotFound_npm("eamReadFuncfl", tmp); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 28 ({ calling_npm("fileNotFound", 0); fileNotFound_npm("eamReadFuncfl", tmp); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 759 61 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 794 13 ({ calling_npm(2, 0, 684635133602953986UL, 684635133602954282UL, 684635133602953961UL, 684635133602954378UL); initInterpolationObject_npm(nRho, x0, dRho, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 794 13 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 794 56 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 806 15 ({ calling_npm(2, 0, 684635133602953986UL, 684635133602954282UL, 684635133602953961UL, 684635133602954378UL); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 806 15 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 806 54 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 811 15 ({ calling_npm(2, 0, 684635133602953986UL, 684635133602954282UL, 684635133602953961UL, 684635133602954378UL); initInterpolationObject_npm(nR, x0, dR, buf); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 811 15 ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 811 54 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 755 18 

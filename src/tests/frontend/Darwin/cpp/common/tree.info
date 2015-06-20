@@ -1,8 +1,8 @@
-seconds 0 DOES_NOT
-ricker_wavelet 0 DOES_NOT
-parse_source 0 DOES_NOT
-config_sources 0 DOES_NOT
-sample_sources 0 DOES_NOT ricker_wavelet 140 9
-init_progress 0 DOES_NOT
-update_progress 0 DOES_NOT
-finish_progress 0 DOES_NOT update_progress 222 5
+seconds _Z7secondsv 0 DOES_NOT
+ricker_wavelet _Z14ricker_waveletPfiff 0 DOES_NOT
+parse_source _Z12parse_sourcePcP7_source 0 DOES_NOT
+config_sources _Z14config_sourcesPP7_sourcePiiii 0 DOES_NOT
+sample_sources _Z14sample_sourcesP7_sourceiif 0 DOES_NOT ricker_wavelet 140 9
+init_progress _Z13init_progressiii 0 DOES_NOT
+update_progress _Z15update_progressi 0 DOES_NOT
+finish_progress _Z15finish_progressv 0 DOES_NOT update_progress 222 5

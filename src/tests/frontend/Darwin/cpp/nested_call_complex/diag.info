@@ -24,13 +24,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 7 5 len=3 bar_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 7 127  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 11 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 64 ({ calling_npm(0, 0); bar_npm(a); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 64 ({ calling_npm("bar", 0); bar_npm(a); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 69 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 133 ({ calling_npm(0, 0); bar_npm(____chimes_unroll_var_0); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 133 ({ calling_npm("bar", 0); bar_npm(____chimes_unroll_var_0); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 160 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 169 ({ calling_npm(0, 0); foo_npm(5 + ____chimes_unroll_var_1); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 169 ({ calling_npm("foo", 0); foo_npm(5 + ____chimes_unroll_var_1); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 200 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 15 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 15 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 15 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 12 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 12 11 
@@ -41,13 +41,13 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 7 5 len=3 bar_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 7 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 11 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 64 ({ calling_npm(0, 0); bar_npm(a); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 64 ({ calling_npm("bar", 0); bar_npm(a); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 69 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 133 ({ calling_npm(0, 0); bar_npm(____chimes_unroll_var_0); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 133 ({ calling_npm("bar", 0); bar_npm(____chimes_unroll_var_0); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 160 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 169 ({ calling_npm(0, 0); foo_npm(5 + ____chimes_unroll_var_1); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 169 ({ calling_npm("foo", 0); foo_npm(5 + ____chimes_unroll_var_1); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 14 200 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 15 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 15 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 15 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 12 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/nested_call_complex.cpp 12 11 

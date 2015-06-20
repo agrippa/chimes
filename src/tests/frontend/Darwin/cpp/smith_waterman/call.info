@@ -1,33 +1,36 @@
-fprintf 39 13 0 50 594 0
-fprintf 41 9 0 50 595
-fprintf 43 5 0 50 596
-_Z12char_mappingc 63 42 0 0
-fseek 72 5 0 165 0 0
-ftell 73 22 0 165
-fseek 74 5 0 165 0 0
-malloc 76 47 146 0
-fread 78 31 0 146 0 0 165
-_Z28clear_whitespaces_do_mappingPal 82 16 0 146 0
-fprintf 99 9 0 50 598 220
-exit 100 3 0 0
-strtoull 103 34 0 220 610 0
-strtoull 104 34 0 220 610 0
-malloc 109 31 370 0
-malloc 110 31 370 0
-srand 112 5 0 0
-_ZL11random_initPay 113 5 0 370 0
-_ZL11random_initPay 114 5 0 370 0
-fprintf 115 5 0 50 599 0 0
-malloc 118 28 456 0
-__assert_rtn 119 39 0 600 601 0 602
-malloc 121 28 458 0
-__assert_rtn 122 46 0 600 601 0 603
-gettimeofday 133 5 0 188 609
-_Z10checkpointv 153 9 0
-gettimeofday 157 5 0 189 609
-fprintf 158 5 0 50 605 0
-fprintf 163 5 0 50 606 0
-free 166 9 0 458
-free 168 5 0 456
-rand 88 17 0
-__assert_rtn 89 52 0 607 601 0 608
+fprintf print_matrix 36 13 0 50 639 0
+fprintf print_matrix 38 9 0 50 640
+fprintf print_matrix 40 5 0 50 641
+char_mapping clear_whitespaces_do_mapping 60 42 0 0
+fseek read_file 69 5 0 165 0 0
+ftell read_file 70 22 0 165
+fseek read_file 71 5 0 165 0 0
+malloc read_file 73 47 146 0
+fread read_file 75 31 0 146 0 0 165
+clear_whitespaces_do_mapping read_file 79 16 0 146 0
+fprintf main 120 3 0 50 644 375
+exit main 121 3 0 0
+strtoull main 124 43 0 375 657 0
+strtoull main 125 43 0 375 657 0
+strtoull main 126 35 0 375 657 0
+__assert_rtn main 127 50 0 645 646 0 647
+fprintf main 130 9 0 50 648 0 0
+printf main 134 5 0 649 0 0
+srand main 138 5 0 0
+malloc main 140 31 235 0
+malloc main 141 31 235 0
+random_init main 142 5 0 235 0
+random_init main 143 5 0 235 0
+malloc main 145 27 473 0
+malloc main 146 27 473 0
+fprintf main 151 5 0 50 650
+gettimeofday main 153 5 0 348 656
+kernel main 160 9 0 0 0 473 473 0 0
+gettimeofday main 163 9 0 350 656
+fprintf main 167 9 0 50 651 0 0 0 0
+checkpoint main 171 9 0
+gettimeofday main 175 5 0 349 656
+fprintf main 176 5 0 50 652 0
+fprintf main 178 2 0 50 653 0
+rand random_init 85 17 0
+__assert_rtn random_init 86 52 0 654 646 0 655

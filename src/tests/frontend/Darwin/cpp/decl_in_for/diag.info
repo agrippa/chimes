@@ -10,14 +10,14 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 6 10  i 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 6 19 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 10 5  call_lbl_1: 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 10 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 10 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 10 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 11 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 167  ; int a;
  register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0);  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 4 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 10 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 10 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 10 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/decl_in_for.cpp 5 11 

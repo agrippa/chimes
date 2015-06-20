@@ -1,5 +1,5 @@
-_Z5lcg61Py 27 16 0 11
-_Z5lcg61Py 28 16 0 11
-log 32 26 0 0
-sqrt 32 16 0 0
-_Z5lcg61Py 72 46 0 74
+lcg61 gasdev 27 16 0 11
+lcg61 gasdev 28 16 0 11
+log gasdev 32 26 0 0
+sqrt gasdev 32 16 0 0
+lcg61 mkSeed 72 46 0 74

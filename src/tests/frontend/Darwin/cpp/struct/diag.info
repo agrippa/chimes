@@ -12,7 +12,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 17 5  foo *te
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 17 196 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 5  call_lbl_3: 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 12 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 18  ({  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 18 checkpoint_transformed(3, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 14 
@@ -22,7 +22,7 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 12 167  ;
 foo test;
  register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c));  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 12 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 18  ({  calling((void*)checkpoint, 3, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 18 checkpoint_transformed(3, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 21 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 6 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/struct.cpp 13 14 

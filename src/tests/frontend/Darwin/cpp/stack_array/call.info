@@ -1,7 +1,7 @@
-memcpy 5 5 0 4 98 0
-_Z10checkpointv 9 5 0
-__assert_rtn 11 42 0 99 100 0 101
-__assert_rtn 12 42 0 99 100 0 101
-__assert_rtn 13 42 0 99 100 0 101
-__assert_rtn 14 42 0 99 100 0 101
-__assert_rtn 15 42 0 99 100 0 101
+memcpy main 5 5 0 4 98 0
+checkpoint main 9 5 0
+__assert_rtn main 11 42 0 99 100 0 101
+__assert_rtn main 12 42 0 99 100 0 101
+__assert_rtn main 13 42 0 99 100 0 101
+__assert_rtn main 14 42 0 99 100 0 101
+__assert_rtn main 15 42 0 99 100 0 101

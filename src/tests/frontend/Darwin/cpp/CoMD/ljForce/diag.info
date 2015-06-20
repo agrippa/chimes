@@ -114,9 +114,9 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 129 6 len=7 ljPrint_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 130 177  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 143 5 len=7 ljForce_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 7  ({  calling((void*)zeroReal3, -1, 0UL, 0, 1, (size_t)(14970133447157970508UL)); (zeroReal3)(s->atoms->f[iii]); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 7  ({  calling((void*)zeroReal3, -1, 0, 0UL, 1, (size_t)(14970133447157970508UL)); (zeroReal3)(s->atoms->f[iii]); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 33 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 50  ({  calling((void*)getNeighborBoxes, 1, 0UL, 0, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 50  ({  calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 91 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 19 
@@ -201,9 +201,9 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 129 6 len=7 ljPrint_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 130 177  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 143 5 len=7 ljForce_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 7  ({  calling((void*)zeroReal3, -1, 0UL, 0, 1, (size_t)(14970133447157970508UL)); (zeroReal3)(s->atoms->f[iii]); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 7  ({  calling((void*)zeroReal3, -1, 0, 0UL, 1, (size_t)(14970133447157970508UL)); (zeroReal3)(s->atoms->f[iii]); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 157 33 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 50  ({  LinkCell * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes);  }  calling((void*)getNeighborBoxes, 1, 0UL, 0, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 50  ({  LinkCell * ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes);  }  calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(14970133447157970506UL), (size_t)(0UL), (size_t)(14970133447157970321UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 172 91 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 147 19 

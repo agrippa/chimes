@@ -1,18 +1,25 @@
 # 1 "brg_sha1.c.pre.transformed.cpp"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 326 "<built-in>" 3
-# 1 "<command line>" 1
-
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
-# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 1 3 4
+# 147 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
+# 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
-# 4 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "brg_sha1.c.pre.transformed.cpp" 2
+# 1 "<command-line>" 2
+# 1 "brg_sha1.c.pre.transformed.cpp"
+static int ____chimes_does_checkpoint_rng_init_npm = 1;
+static int ____chimes_does_checkpoint_rng_spawn_npm = 1;
+static int ____chimes_does_checkpoint_rng_rand_npm = 1;
+static int ____chimes_does_checkpoint_rng_nextrand_npm = 1;
+static int ____chimes_does_checkpoint_rng_showstate_npm = 1;
+static int ____chimes_does_checkpoint_rng_showtype_npm = 1;
+static int ____chimes_does_checkpoint_sha1_compile_npm = 1;
+static int ____chimes_does_checkpoint_sha1_begin_npm = 1;
+static int ____chimes_does_checkpoint_sha1_hash_npm = 1;
+static int ____chimes_does_checkpoint_sha1_end_npm = 1;
+static int ____chimes_does_checkpoint_sha1_npm = 1;
+
 static int ____must_checkpoint_rng_init_ctx_0 = 2;
 static int ____must_checkpoint_rng_spawn_ctx_0 = 2;
 static int ____must_checkpoint_rng_nextrand_ctx_0 = 2;
@@ -42,24 +49,87 @@ static unsigned ____alias_loc_id_8;
 static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 1 "<built-in>" 1
-# 1 "<built-in>" 3
-# 326 "<built-in>" 3
-# 1 "<command line>" 1
-
-
+# 1 "/tmp/chimes-frontend//"
+# 1 "<built-in>"
+# 1 "<command-line>"
 # 1 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 1
 
 
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 1 3 4
-# 47 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 1 3 4
+# 147 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long int ptrdiff_t;
-# 58 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stddef.h" 3 4
+# 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 64 "/usr/include/stdio.h" 3 4
+
+
+extern void init_chimes();
+extern void checkpoint_transformed(int lbl, unsigned loc_id);
+
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
+extern int get_next_call();
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
+extern void *get_thread_ctx();
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+        unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id, int is_parallel_for);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 74 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
+inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 36 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 1 "/usr/include/string.h" 1 3 4
+# 61 "/usr/include/string.h" 3 4
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 32 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -67,17 +137,7 @@ typedef long unsigned int size_t;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 65 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 66 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 33 "/usr/include/sys/_types.h" 3 4
+# 33 "/usr/include/sys/_types.h" 2 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -176,8 +236,6 @@ typedef __uint32_t __darwin_useconds_t;
 typedef unsigned char __darwin_uuid_t[16];
 typedef char __darwin_uuid_string_t[37];
 
-
-
 # 1 "/usr/include/sys/_pthread/_pthread_types.h" 1 3 4
 # 57 "/usr/include/sys/_pthread/_pthread_types.h" 3 4
 struct __darwin_pthread_handler_rec {
@@ -249,24 +307,156 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 68 "/usr/include/stdio.h" 2 3 4
+# 62 "/usr/include/string.h" 2 3 4
+
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 64 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 65 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 66 "/usr/include/string.h" 2 3 4
 
 
 
+extern "C" {
+void *memchr(const void *, int, size_t);
+int memcmp(const void *, const void *, size_t);
+void *memcpy(void *, const void *, size_t);
+void *memmove(void *, const void *, size_t);
+void *memset(void *, int, size_t);
+char *strcat(char *, const char *);
+char *strchr(const char *, int);
+int strcmp(const char *, const char *);
+int strcoll(const char *, const char *);
+char *strcpy(char *, const char *);
+size_t strcspn(const char *, const char *);
+char *strerror(int) __asm("_" "strerror" );
+size_t strlen(const char *);
+char *strncat(char *, const char *, size_t);
+int strncmp(const char *, const char *, size_t);
+char *strncpy(char *, const char *, size_t);
+char *strpbrk(const char *, const char *);
+char *strrchr(const char *, int);
+size_t strspn(const char *, const char *);
+char *strstr(const char *, const char *);
+char *strtok(char *, const char *);
+size_t strxfrm(char *, const char *, size_t);
+}
+# 103 "/usr/include/string.h" 3 4
+extern "C" {
+char *strtok_r(char *, const char *, char **);
+}
+# 115 "/usr/include/string.h" 3 4
+extern "C" {
+int strerror_r(int, char *, size_t);
+char *strdup(const char *);
+void *memccpy(void *, const void *, int, size_t);
+}
+# 129 "/usr/include/string.h" 3 4
+extern "C" {
+char *stpcpy(char *, const char *);
+char *stpncpy(char *, const char *, size_t) ;
+char *strndup(const char *, size_t) ;
+size_t strnlen(const char *, size_t) ;
+char *strsignal(int sig);
+}
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
+typedef __darwin_size_t rsize_t;
+# 142 "/usr/include/string.h" 2 3 4
+# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
+typedef int errno_t;
+# 143 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+errno_t memset_s(void *, rsize_t, int, rsize_t) ;
+}
+
+
+
+
+
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 153 "/usr/include/string.h" 2 3 4
+
+extern "C" {
+void *memmem(const void *, size_t, const void *, size_t) ;
+void memset_pattern4(void *, const void *, size_t) ;
+void memset_pattern8(void *, const void *, size_t) ;
+void memset_pattern16(void *, const void *, size_t) ;
+
+char *strcasestr(const char *, const char *);
+char *strnstr(const char *, const char *, size_t);
+size_t strlcat(char *, const char *, size_t);
+size_t strlcpy(char *, const char *, size_t);
+void strmode(int, char *);
+char *strsep(char **, const char *);
+
+
+void swab(const void * , void * , ssize_t);
+}
+
+
+
+
+
+
+# 1 "/usr/include/strings.h" 1 3 4
+# 67 "/usr/include/strings.h" 3 4
+extern "C" {
+
+
+int bcmp(const void *, const void *, size_t) ;
+void bcopy(const void *, void *, size_t) ;
+void bzero(void *, size_t) ;
+char *index(const char *, int) ;
+char *rindex(const char *, int) ;
+
+
+int ffs(int);
+int strcasecmp(const char *, const char *);
+int strncasecmp(const char *, const char *, size_t);
+}
+
+
+
+extern "C" {
+int ffsl(long) ;
+int ffsll(long long) ;
+int fls(int) ;
+int flsl(long) ;
+int flsll(long long) ;
+}
+
+# 1 "/usr/include/string.h" 1 3 4
+# 93 "/usr/include/strings.h" 2 3 4
+# 177 "/usr/include/string.h" 2 3 4
+# 37 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
+# 1 "/usr/include/stdio.h" 1 3 4
+# 71 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
 # 31 "/usr/include/sys/_types/_va_list.h" 3 4
 typedef __darwin_va_list va_list;
 # 72 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 73 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 74 "/usr/include/stdio.h" 2 3 4
+
+
 
 # 1 "/usr/include/sys/stdio.h" 1 3 4
 # 37 "/usr/include/sys/stdio.h" 3 4
 extern "C" {
 
-int renameat(int, const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
+int renameat(int, const char *, int, const char *) ;
 
 }
 # 76 "/usr/include/stdio.h" 2 3 4
@@ -456,17 +646,12 @@ int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)))
 int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
 int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
 }
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
+# 438 "/usr/include/stdio.h" 3 4
 extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getdelim(char ** , size_t * , int, FILE * ) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getline(char ** , size_t * , FILE * ) __attribute__((availability(macosx,introduced=10.7)));
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
+ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
+ssize_t getline(char ** , size_t * , FILE * ) ;
 }
 
 
@@ -499,200 +684,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
-extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_stack_vars(int nvars, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern void register_functions(int nfunctions, const char *module_name, ...);
-extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-extern bool disable_current_thread();
-extern void reenable_current_thread(bool was_disabled);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
-inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
-
-
-extern int ____chimes_replaying;
-# 4 "<command line>" 2
-# 1 "<built-in>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
-# 36 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 1 "/usr/include/string.h" 1 3 4
-# 64 "/usr/include/string.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 65 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 66 "/usr/include/string.h" 2 3 4
-
-
-
-extern "C" {
-void *memchr(const void *, int, size_t);
-int memcmp(const void *, const void *, size_t);
-void *memcpy(void *, const void *, size_t);
-void *memmove(void *, const void *, size_t);
-void *memset(void *, int, size_t);
-char *strcat(char *, const char *);
-char *strchr(const char *, int);
-int strcmp(const char *, const char *);
-int strcoll(const char *, const char *);
-char *strcpy(char *, const char *);
-size_t strcspn(const char *, const char *);
-char *strerror(int) __asm("_" "strerror" );
-size_t strlen(const char *);
-char *strncat(char *, const char *, size_t);
-int strncmp(const char *, const char *, size_t);
-char *strncpy(char *, const char *, size_t);
-char *strpbrk(const char *, const char *);
-char *strrchr(const char *, int);
-size_t strspn(const char *, const char *);
-char *strstr(const char *, const char *);
-char *strtok(char *, const char *);
-size_t strxfrm(char *, const char *, size_t);
-}
-# 103 "/usr/include/string.h" 3 4
-extern "C" {
-char *strtok_r(char *, const char *, char **);
-}
-# 115 "/usr/include/string.h" 3 4
-extern "C" {
-int strerror_r(int, char *, size_t);
-char *strdup(const char *);
-void *memccpy(void *, const void *, int, size_t);
-}
-# 129 "/usr/include/string.h" 3 4
-extern "C" {
-char *stpcpy(char *, const char *);
-char *stpncpy(char *, const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-char *strndup(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-size_t strnlen(const char *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-char *strsignal(int sig);
-}
-
-
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_rsize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_rsize_t.h" 3 4
-typedef __darwin_size_t rsize_t;
-# 142 "/usr/include/string.h" 2 3 4
-# 1 "/usr/include/sys/_types/_errno_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_errno_t.h" 3 4
-typedef int errno_t;
-# 143 "/usr/include/string.h" 2 3 4
-
-extern "C" {
-errno_t memset_s(void *, rsize_t, int, rsize_t) __attribute__((availability(macosx,introduced=10.9)));
-}
-
-
-
-
-
-
-
-extern "C" {
-void *memmem(const void *, size_t, const void *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-void memset_pattern4(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern8(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-void memset_pattern16(void *, const void *, size_t) __attribute__((availability(macosx,introduced=10.5)));
-
-char *strcasestr(const char *, const char *);
-char *strnstr(const char *, const char *, size_t);
-size_t strlcat(char *, const char *, size_t);
-size_t strlcpy(char *, const char *, size_t);
-void strmode(int, char *);
-char *strsep(char **, const char *);
-
-
-void swab(const void * , void * , ssize_t);
-}
-
-
-
-
-
-
-
-
-# 1 "/usr/include/strings.h" 1 3 4
-# 65 "/usr/include/strings.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 66 "/usr/include/strings.h" 2 3 4
-
-extern "C" {
-
-
-int bcmp(const void *, const void *, size_t) ;
-void bcopy(const void *, void *, size_t) ;
-void bzero(void *, size_t) ;
-char *index(const char *, int) ;
-char *rindex(const char *, int) ;
-
-
-int ffs(int);
-int strcasecmp(const char *, const char *);
-int strncasecmp(const char *, const char *, size_t);
-}
-
-
-
-extern "C" {
-int ffsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int ffsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-int fls(int) __attribute__((availability(macosx,introduced=10.5)));
-int flsl(long) __attribute__((availability(macosx,introduced=10.5)));
-int flsll(long long) __attribute__((availability(macosx,introduced=10.9)));
-}
-
-
-
-# 1 "/usr/include/string.h" 1 3 4
-# 93 "/usr/include/strings.h" 2 3 4
-# 177 "/usr/include/string.h" 2 3 4
-# 37 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
-# 37 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 38 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.h" 1
@@ -706,8 +698,6 @@ typedef enum {
  P_PID,
  P_PGID
 } idtype_t;
-
-
 
 
 
@@ -1166,8 +1156,7 @@ typedef struct __darwin_ucontext ucontext_t;
 # 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
 typedef __darwin_sigset_t sigset_t;
 # 154 "/usr/include/sys/signal.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 155 "/usr/include/sys/signal.h" 2 3 4
+
 # 1 "/usr/include/sys/_types/_uid_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uid_t.h" 3 4
 typedef __darwin_uid_t uid_t;
@@ -1247,43 +1236,43 @@ void (*signal(int, void (*)(int)))(int);
 # 110 "/usr/include/sys/wait.h" 2 3 4
 # 1 "/usr/include/sys/resource.h" 1 3 4
 # 72 "/usr/include/sys/resource.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 1 3 4
-# 63 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 3 4
-# 1 "/usr/include/stdint.h" 1 3 4
-# 18 "/usr/include/stdint.h" 3 4
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 1 3 4
+# 9 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 3 4
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 1 3 4
+# 27 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 3 4
 # 1 "/usr/include/sys/_types/_int8_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int8_t.h" 3 4
 typedef signed char int8_t;
-# 19 "/usr/include/stdint.h" 2 3 4
+# 28 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_int16_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int16_t.h" 3 4
 typedef short int16_t;
-# 20 "/usr/include/stdint.h" 2 3 4
+# 29 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_int32_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int32_t.h" 3 4
 typedef int int32_t;
-# 21 "/usr/include/stdint.h" 2 3 4
+# 30 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_int64_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_int64_t.h" 3 4
 typedef long long int64_t;
-# 22 "/usr/include/stdint.h" 2 3 4
+# 31 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 
 # 1 "/usr/include/_types/_uint8_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint8_t.h" 3 4
 typedef unsigned char uint8_t;
-# 24 "/usr/include/stdint.h" 2 3 4
+# 33 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uint16_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint16_t.h" 3 4
 typedef unsigned short uint16_t;
-# 25 "/usr/include/stdint.h" 2 3 4
+# 34 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uint32_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint32_t.h" 3 4
 typedef unsigned int uint32_t;
-# 26 "/usr/include/stdint.h" 2 3 4
+# 35 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uint64_t.h" 1 3 4
 # 31 "/usr/include/_types/_uint64_t.h" 3 4
 typedef unsigned long long uint64_t;
-# 27 "/usr/include/stdint.h" 2 3 4
+# 36 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 
 
 typedef int8_t int_least8_t;
@@ -1310,28 +1299,26 @@ typedef uint64_t uint_fast64_t;
 
 
 
-
-
 # 1 "/usr/include/sys/_types/_intptr_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_intptr_t.h" 3 4
 typedef __darwin_intptr_t intptr_t;
-# 54 "/usr/include/stdint.h" 2 3 4
+# 63 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/sys/_types/_uintptr_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uintptr_t.h" 3 4
 typedef unsigned long uintptr_t;
-# 55 "/usr/include/stdint.h" 2 3 4
+# 64 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 
 
 
 # 1 "/usr/include/_types/_intmax_t.h" 1 3 4
 # 32 "/usr/include/_types/_intmax_t.h" 3 4
 typedef long int intmax_t;
-# 59 "/usr/include/stdint.h" 2 3 4
+# 68 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
 # 1 "/usr/include/_types/_uintmax_t.h" 1 3 4
 # 32 "/usr/include/_types/_uintmax_t.h" 3 4
 typedef long unsigned int uintmax_t;
-# 60 "/usr/include/stdint.h" 2 3 4
-# 64 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/stdint.h" 2 3 4
+# 69 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/stdint.h" 2 3 4
+# 10 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stdint.h" 2 3 4
 # 73 "/usr/include/sys/resource.h" 2 3 4
 
 
@@ -1348,14 +1335,7 @@ struct timeval
  __darwin_suseconds_t tv_usec;
 };
 # 81 "/usr/include/sys/resource.h" 2 3 4
-
-
-
-
-
-
-
-
+# 89 "/usr/include/sys/resource.h" 3 4
 typedef __uint64_t rlim_t;
 # 152 "/usr/include/sys/resource.h" 3 4
 struct rusage {
@@ -1485,13 +1465,13 @@ struct proc_rlimit_control_wakeupmon {
 extern "C" {
 int getpriority(int, id_t);
 
-int getiopolicy_np(int, int) __attribute__((availability(macosx,introduced=10.5)));
+int getiopolicy_np(int, int) ;
 
 int getrlimit(int, struct rlimit *) __asm("_" "getrlimit" );
 int getrusage(int, struct rusage *);
 int setpriority(int, id_t, int);
 
-int setiopolicy_np(int, int, int) __attribute__((availability(macosx,introduced=10.5)));
+int setiopolicy_np(int, int, int) ;
 
 int setrlimit(int, const struct rlimit *) __asm("_" "setrlimit" );
 }
@@ -1523,21 +1503,21 @@ _OSSwapInt32(
 )
 {
 
-    return __builtin_bswap32(_data);
 
 
-
+    __asm__ ("bswap   %0" : "+r" (_data));
+    return _data;
 
 }
-
-
+# 91 "/usr/include/libkern/i386/_OSByteOrder.h" 3 4
 static inline
 __uint64_t
 _OSSwapInt64(
     __uint64_t _data
 )
 {
-    return __builtin_bswap64(_data);
+    __asm__ ("bswap   %0" : "+r" (_data));
+    return _data;
 }
 # 67 "/usr/include/libkern/_OSByteOrder.h" 2 3 4
 # 131 "/usr/include/sys/_endian.h" 2 3 4
@@ -1603,23 +1583,12 @@ pid_t wait4(pid_t, int *, int, struct rusage *);
 # 66 "/usr/include/stdlib.h" 2 3 4
 
 # 1 "/usr/include/alloca.h" 1 3 4
-# 29 "/usr/include/alloca.h" 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 30 "/usr/include/alloca.h" 2 3 4
-
+# 31 "/usr/include/alloca.h" 3 4
 extern "C" {
 void *alloca(size_t);
 }
 # 68 "/usr/include/stdlib.h" 2 3 4
-
-
-
-
-
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 74 "/usr/include/stdlib.h" 2 3 4
-
-
+# 76 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/_types/_ct_rune_t.h" 1 3 4
 # 31 "/usr/include/sys/_types/_ct_rune_t.h" 3 4
 typedef __darwin_ct_rune_t ct_rune_t;
@@ -1648,12 +1617,6 @@ typedef struct {
  long long quot;
  long long rem;
 } lldiv_t;
-
-
-
-
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 100 "/usr/include/stdlib.h" 2 3 4
 # 117 "/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 127 "/usr/include/stdlib.h" 3 4
@@ -1686,7 +1649,7 @@ void *malloc(size_t);
 int mblen(const char *, size_t);
 size_t mbstowcs(wchar_t * , const char * , size_t);
 int mbtowc(wchar_t * , const char * , size_t);
-int posix_memalign(void **, size_t, size_t) __attribute__((availability(macosx,introduced=10.6)));
+int posix_memalign(void **, size_t, size_t) ;
 void qsort(void *, size_t, size_t,
      int (*)(const void *, const void *));
 int rand(void);
@@ -1707,7 +1670,7 @@ unsigned long
 unsigned long long
   strtoull(const char *, char **, int);
 
-int system(const char *) __asm("_" "system" ) __attribute__((availability(macosx,introduced=10.0)));
+int system(const char *) __asm("_" "system" ) ;
 size_t wcstombs(char * , const wchar_t * , size_t);
 int wctomb(char *, wchar_t);
 
@@ -1768,8 +1731,6 @@ int unsetenv(const char *) __asm("_" "unsetenv" );
 
 
 
-
-
 # 1 "/usr/include/machine/types.h" 1 3 4
 # 35 "/usr/include/machine/types.h" 3 4
 # 1 "/usr/include/i386/types.h" 1 3 4
@@ -1811,14 +1772,14 @@ typedef __darwin_mode_t mode_t;
 
 u_int32_t arc4random(void);
 void arc4random_addrandom(unsigned char * , int );
-void arc4random_buf(void * , size_t ) __attribute__((availability(macosx,introduced=10.7)));
+void arc4random_buf(void * , size_t ) ;
 void arc4random_stir(void);
 u_int32_t
-  arc4random_uniform(u_int32_t ) __attribute__((availability(macosx,introduced=10.7)));
+  arc4random_uniform(u_int32_t ) ;
 
-int atexit_b(void (^)(void)) __attribute__((availability(macosx,introduced=10.6)));
-void *bsearch_b(const void *, const void *, size_t,
-     size_t, int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
+
 
 
 
@@ -1833,7 +1794,7 @@ int cgetset(const char *);
 int cgetstr(char *, const char *, char **);
 int cgetustr(char *, const char *, char **);
 
-int daemon(int, int) __asm("_" "daemon" "$1050") __attribute__((availability(macosx,introduced=10.0,deprecated=10.5)));
+int daemon(int, int) __asm("_" "daemon" "$1050") __attribute__((deprecated));
 char *devname(dev_t, mode_t);
 char *devname_r(dev_t, mode_t, char *buf, int len);
 char *getbsize(int *, long *);
@@ -1844,26 +1805,26 @@ const char
 int heapsort(void *, size_t, size_t,
      int (*)(const void *, const void *));
 
-int heapsort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 int mergesort(void *, size_t, size_t,
      int (*)(const void *, const void *));
 
-int mergesort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 void psort(void *, size_t, size_t,
-     int (*)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+     int (*)(const void *, const void *)) ;
 
-void psort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 void psort_r(void *, size_t, size_t, void *,
-     int (*)(void *, const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+     int (*)(void *, const void *, const void *)) ;
 
-void qsort_b(void *, size_t, size_t,
-     int (^)(const void *, const void *)) __attribute__((availability(macosx,introduced=10.6)));
+
+
 
 void qsort_r(void *, size_t, size_t, void *,
      int (*)(void *, const void *, const void *));
@@ -1916,8 +1877,6 @@ typedef int32_t daddr_t;
 
 
 typedef u_int32_t fixpt_t;
-
-
 
 # 1 "/usr/include/sys/_types/_blkcnt_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_blkcnt_t.h" 3 4
@@ -1986,8 +1945,7 @@ static inline dev_t makedev(__uint32_t _major, __uint32_t _minor)
 # 30 "/usr/include/sys/_types/_clock_t.h" 3 4
 typedef __darwin_clock_t clock_t;
 # 162 "/usr/include/sys/types.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 163 "/usr/include/sys/types.h" 2 3 4
+
 
 # 1 "/usr/include/sys/_types/_time_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_time_t.h" 3 4
@@ -2023,7 +1981,13 @@ __darwin_fd_isset(int _n, const struct fd_set *_p)
 
 
 typedef __int32_t fd_mask;
-# 194 "/usr/include/sys/types.h" 3 4
+
+
+
+
+
+
+
 # 1 "/usr/include/sys/_types/_fd_setsize.h" 1 3 4
 # 194 "/usr/include/sys/types.h" 2 3 4
 # 1 "/usr/include/sys/_types/_fd_set.h" 1 3 4
@@ -2096,10 +2060,17 @@ typedef __darwin_fsfilcnt_t fsfilcnt_t;
 extern "C" {
 
 
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/limits.h" 1 3 4
+# 34 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/limits.h" 3 4
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/syslimits.h" 1 3 4
 
 
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/limits.h" 1 3 4
-# 37 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/limits.h" 3 4
+
+
+
+
+# 1 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/limits.h" 1 3 4
+# 168 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/limits.h" 3 4
 # 1 "/usr/include/limits.h" 1 3 4
 # 64 "/usr/include/limits.h" 3 4
 # 1 "/usr/include/machine/limits.h" 1 3 4
@@ -2116,26 +2087,21 @@ extern "C" {
 # 65 "/usr/include/limits.h" 2 3 4
 # 1 "/usr/include/sys/syslimits.h" 1 3 4
 # 66 "/usr/include/limits.h" 2 3 4
-# 38 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include/limits.h" 2 3 4
+# 169 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/limits.h" 2 3 4
+# 8 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/syslimits.h" 2 3 4
+# 35 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include-fixed/limits.h" 2 3 4
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_types.h" 2
 # 70 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_types.h"
- typedef unsigned char uint_8t;
+     typedef unsigned char uint_8t;
 # 79 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_types.h"
- typedef unsigned short uint_16t;
+     typedef unsigned short uint_16t;
 # 89 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_types.h"
- typedef unsigned int uint_32t;
+     typedef unsigned int uint_32t;
 # 123 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_types.h"
- typedef unsigned long uint_64t;
+       typedef unsigned long uint_64t;
 # 197 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_types.h"
 }
 # 38 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.h" 2
-
-
-
-
-
-extern "C"
-{
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.h"
 typedef u_int8_t RNG_state;
 typedef u_int8_t uint8;
@@ -2177,57 +2143,726 @@ void sha1_begin(sha1_ctx ctx[1]);
 void sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]);
 void sha1_end(unsigned char hval[], sha1_ctx ctx[1]);
 void sha1(unsigned char hval[], const unsigned char data[], unsigned long len);
-
-
-}
 # 40 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
 # 1 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_endian.h" 1
 # 41 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c" 2
-# 41 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 42 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 43 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-extern "C"
-# 44 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-{
-# 45 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 46 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 47 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 48 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 49 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-void rng_init(RNG_state *newstate, int seed)
+# 49 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+void rng_init_npm(RNG_state *newstate, int seed);void sha1_begin_npm(sha1_ctx ctx[1]);void sha1_hash_npm(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]);void sha1_end_npm(unsigned char hval[], sha1_ctx ctx[1]);
+void rng_init_quick(RNG_state *newstate, int seed); void rng_init(RNG_state *newstate, int seed);void sha1_begin_quick(sha1_ctx ctx[1]); void sha1_begin(sha1_ctx ctx[1]);void sha1_hash_quick(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]); void sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]);void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1]); void sha1_end(unsigned char hval[], sha1_ctx ctx[1]);
+void rng_init_resumable(RNG_state *newstate, int seed)
+# 50 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(2768207732101748634UL), (size_t)(0UL)) ; struct sha1_ctx_s ctx;
+ if (____must_checkpoint_rng_init_ctx_0) { register_stack_vars(1, "rng_init|ctx|0", &____must_checkpoint_rng_init_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 51 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ;
+# 52 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+   struct state_t gen; ;
+# 53 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  int i; ;
+# 54 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 55 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  for (i = 0; i < 16; i++) { gen.state[i] = 0; };
+# 57 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  gen.state[16] = 0xFF & (seed >> 24);
+# 58 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  gen.state[17] = 0xFF & (seed >> 16);
+# 59 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  gen.state[18] = 0xFF & (seed >> 8);
+# 60 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  gen.state[19] = 0xFF & (seed >> 0);
+# 61 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 62 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+# 63 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
+# 64 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
+# 65 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0); }
+# 66 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 67 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+void rng_spawn_npm(RNG_state *mystate, RNG_state *newstate, int spawnnumber);
+void rng_spawn_quick(RNG_state *mystate, RNG_state *newstate, int spawnnumber); void rng_spawn(RNG_state *mystate, RNG_state *newstate, int spawnnumber);
+void rng_spawn_resumable(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
+# 68 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(2768207732101749050UL), (size_t)(2768207732101749051UL), (size_t)(0UL)) ; uint8 bytes[4];
+struct sha1_ctx_s ctx;
+ if (____must_checkpoint_rng_spawn_ctx_0) { register_stack_vars(1, "rng_spawn|ctx|0", &____must_checkpoint_rng_spawn_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 69 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+   ;
+# 70 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  ;
+# 71 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 72 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ bytes[0] = 0xFF & (spawnnumber >> 24);
+# 73 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ bytes[1] = 0xFF & (spawnnumber >> 16);
+# 74 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ bytes[2] = 0xFF & (spawnnumber >> 8);
+# 75 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ bytes[3] = 0xFF & spawnnumber;
+# 76 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 77 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+# 78 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
+# 79 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
+# 80 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
+# 81 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1); }
+# 82 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 83 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+int rng_rand_npm(RNG_state *mystate);
+int rng_rand_quick(RNG_state *mystate); int rng_rand(RNG_state *mystate);
+int rng_rand_resumable(RNG_state *mystate){const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(2768207732101749091UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 84 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        int r; ;
+# 85 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  uint32 b; b = ((mystate[16] << 24) | (mystate[17] << 16) | (mystate[18] << 8) | (mystate[19] << 0)) ;
+# 87 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ b = b & 0x7fffffff;
+# 88 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 89 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ r = (int) b;
+# 90 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 91 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2); return r;
+# 92 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+}
+# 93 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 94 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+int rng_nextrand_npm(RNG_state *mystate);
+int rng_nextrand_quick(RNG_state *mystate); int rng_nextrand(RNG_state *mystate);
+int rng_nextrand_resumable(RNG_state *mystate){const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(2768207732101749137UL)) ; struct sha1_ctx_s ctx;
+ if (____must_checkpoint_rng_nextrand_ctx_0) { register_stack_vars(1, "rng_nextrand|ctx|0", &____must_checkpoint_rng_nextrand_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 95 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+   ;
+# 96 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ int r; ;
+# 97 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ uint32 b; ;
+# 98 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 99 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+# 100 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
+# 101 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
+# 102 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ b = (mystate[16] << 24) | (mystate[17] << 16)
+# 103 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  | (mystate[18] << 8) | (mystate[19] << 0);
+# 104 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ b = b & 0x7fffffff;
+# 105 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 106 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ r = (int) b;
+# 107 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3); return r;
+# 108 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+}
+# 109 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 110 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 111 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+char * rng_showstate_npm(RNG_state *state, char *s);
+char * rng_showstate_quick(RNG_state *state, char *s); char * rng_showstate(RNG_state *state, char *s);
+char * rng_showstate_resumable(RNG_state *state, char *s){const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(2768207732101749156UL), (size_t)(2768207732101749157UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 112 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  sprintf(s,"%.2X%.2X...", state[0],state[1]);
+# 113 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  rm_stack(true, 2768207732101749157UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4); return s;
+# 114 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+}
+# 115 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 116 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 117 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+int rng_showtype_npm(char *strBuf, int ind);
+int rng_showtype_quick(char *strBuf, int ind); int rng_showtype(char *strBuf, int ind);
+int rng_showtype_resumable(char *strBuf, int ind) {const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(2768207732101749176UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 118 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
+# 119 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+                 sizeof(struct state_t));
+# 120 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5); return ind;
+# 121 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+}
+# 195 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 195 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+void sha1_compile_npm(sha1_ctx ctx[1]);
+void sha1_compile_quick(sha1_ctx ctx[1]); void sha1_compile(sha1_ctx ctx[1]);
+void sha1_compile_resumable(sha1_ctx ctx[1])
+# 196 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(2768207732101753490UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t *w; w = (ctx->wbuf) ;
+# 197 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 198 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 199 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 200 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 201 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 202 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    uint_32t v0; uint_32t v1; uint_32t v2; uint_32t v3; uint_32t v4; ;
+# 203 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v0 = ctx->hash[0]; v1 = ctx->hash[1];
+# 204 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v2 = ctx->hash[2]; v3 = ctx->hash[3];
+# 205 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 = ctx->hash[4];
+# 206 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 207 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 208 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 209 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 210 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[0]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[0 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[0 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[0 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[0 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 211 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[5]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[5 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[5 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[5 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[5 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 212 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[10]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[10 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[10 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[10 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[10 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 213 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[15]; v1 = (((v1) >> 2) | ((v1) << (32 - 2)));
+# 214 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 215 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 216 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 217 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 218 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 219 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 220 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + (w[(16) & 15] = (((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) << 1) | ((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2)));
+# 221 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + (w[(17) & 15] = (((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) << 1) | ((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2)));
+# 222 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + (w[(18) & 15] = (((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) << 1) | ((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2)));
+# 223 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + (w[(19) & 15] = (((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) << 1) | ((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 224 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 225 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(20) & 15] = (((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) << 1) | ((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(20 +1) & 15] = (((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) << 1) | ((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(20 +2) & 15] = (((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) << 1) | ((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(20 +3) & 15] = (((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) << 1) | ((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(20 +4) & 15] = (((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) << 1) | ((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 226 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(25) & 15] = (((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) << 1) | ((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(25 +1) & 15] = (((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) << 1) | ((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(25 +2) & 15] = (((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) << 1) | ((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(25 +3) & 15] = (((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) << 1) | ((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(25 +4) & 15] = (((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) << 1) | ((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 227 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(30) & 15] = (((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) << 1) | ((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(30 +1) & 15] = (((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) << 1) | ((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(30 +2) & 15] = (((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) << 1) | ((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(30 +3) & 15] = (((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) << 1) | ((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(30 +4) & 15] = (((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) << 1) | ((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 228 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(35) & 15] = (((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) << 1) | ((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(35 +1) & 15] = (((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) << 1) | ((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(35 +2) & 15] = (((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) << 1) | ((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(35 +3) & 15] = (((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) << 1) | ((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(35 +4) & 15] = (((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) << 1) | ((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 229 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 230 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(40) & 15] = (((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) << 1) | ((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(40 +1) & 15] = (((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) << 1) | ((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(40 +2) & 15] = (((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) << 1) | ((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(40 +3) & 15] = (((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) << 1) | ((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(40 +4) & 15] = (((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) << 1) | ((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 231 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(45) & 15] = (((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) << 1) | ((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(45 +1) & 15] = (((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) << 1) | ((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(45 +2) & 15] = (((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) << 1) | ((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(45 +3) & 15] = (((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) << 1) | ((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(45 +4) & 15] = (((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) << 1) | ((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 232 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(50) & 15] = (((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) << 1) | ((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(50 +1) & 15] = (((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) << 1) | ((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(50 +2) & 15] = (((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) << 1) | ((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(50 +3) & 15] = (((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) << 1) | ((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(50 +4) & 15] = (((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) << 1) | ((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 233 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(55) & 15] = (((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) << 1) | ((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(55 +1) & 15] = (((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) << 1) | ((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(55 +2) & 15] = (((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) << 1) | ((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(55 +3) & 15] = (((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) << 1) | ((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(55 +4) & 15] = (((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) << 1) | ((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 234 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 235 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(60) & 15] = (((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) << 1) | ((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(60 +1) & 15] = (((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) << 1) | ((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(60 +2) & 15] = (((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) << 1) | ((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(60 +3) & 15] = (((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) << 1) | ((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(60 +4) & 15] = (((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) << 1) | ((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 236 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(65) & 15] = (((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) << 1) | ((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(65 +1) & 15] = (((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) << 1) | ((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(65 +2) & 15] = (((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) << 1) | ((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(65 +3) & 15] = (((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) << 1) | ((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(65 +4) & 15] = (((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) << 1) | ((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 237 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(70) & 15] = (((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) << 1) | ((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(70 +1) & 15] = (((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) << 1) | ((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(70 +2) & 15] = (((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) << 1) | ((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(70 +3) & 15] = (((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) << 1) | ((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(70 +4) & 15] = (((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) << 1) | ((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 238 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(75) & 15] = (((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) << 1) | ((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(75 +1) & 15] = (((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) << 1) | ((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(75 +2) & 15] = (((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) << 1) | ((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(75 +3) & 15] = (((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) << 1) | ((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(75 +4) & 15] = (((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) << 1) | ((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 239 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 240 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 241 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 242 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 243 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 244 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 245 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[0] += v0; ctx->hash[1] += v1;
+# 246 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[2] += v2; ctx->hash[3] += v3;
+# 247 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[4] += v4;
+# 248 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 249 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6); }
+# 250 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 251 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+void sha1_begin_resumable(sha1_ctx ctx[1])
+# 252 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&sha1_begin), "sha1_begin", &____must_manage_sha1_begin, 1, 0, (size_t)(2768207732101748670UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 253 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->count[0] = ctx->count[1] = 0;
+# 254 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[0] = 0x67452301;
+# 255 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[1] = 0xefcdab89;
+# 256 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[2] = 0x98badcfe;
+# 257 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[3] = 0x10325476;
+# 258 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[4] = 0xc3d2e1f0;
+# 259 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7); }
+# 260 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 261 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 262 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 263 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 264 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+void sha1_hash_resumable(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
+# 265 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&sha1_hash), "sha1_hash", &____must_manage_sha1_hash, 3, 0, (size_t)(2768207732101748814UL), (size_t)(0UL), (size_t)(2768207732101748816UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t pos; uint_32t space; pos = ((uint_32t)(ctx->count[0] & (64 - 1))) ; space = (64 - pos) ;
+# 267 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+     const unsigned char *sp; sp = (data) ;
+# 268 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 269 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    if ((ctx->count[0] += len) < len) {++(ctx->count[1]); };
+# 271 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 272 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    while(len >= space)
+# 273 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    {
+# 274 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        memcpy(((unsigned char*)ctx->wbuf) + pos, sp, space);
+# 275 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        sp += space; len -= space; space = 64; pos = 0;
+# 276 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        { int _i; _i = ((64 >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
+# 277 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
+# 278 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    }
+# 279 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 280 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
+# 281 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8); }
+# 282 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 283 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 284 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 285 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+void sha1_end_resumable(unsigned char hval[], sha1_ctx ctx[1])
+# 286 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable9 = new_stack((void *)(&sha1_end), "sha1_end", &____must_manage_sha1_end, 2, 0, (size_t)(2768207732101749004UL), (size_t)(2768207732101749005UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; uint_32t i; i = ((uint_32t)(ctx->count[0] & (64 - 1))) ;
+# 287 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 288 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 289 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 290 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 291 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    { int _i; _i = (((i + 3) >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
+# 292 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 293 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 294 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 295 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 296 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 297 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->wbuf[i >> 2] &= 0xffffff80 << 8 * (~i & 3);
+# 298 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->wbuf[i >> 2] |= 0x00000080 << 8 * (~i & 3);
+# 299 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 300 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 301 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 302 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 303 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    if (i > 64 - 9) {{ if (i < 60) ctx->wbuf[15] = 0; ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); }); i = 0; }; } else {i = (i >> 2) + 1; } ;
+# 311 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 312 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    while(i < 14)
+# 313 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        ctx->wbuf[i++] = 0;
+# 314 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 315 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 316 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 317 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 318 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 319 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->wbuf[14] = (ctx->count[1] << 3) | (ctx->count[0] >> 29);
+# 320 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->wbuf[15] = ctx->count[0] << 3;
+# 321 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
+# 322 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 323 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 324 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 325 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
+# 327 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9); }
+# 328 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 329 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+void sha1_npm(unsigned char hval[], const unsigned char data[], unsigned long len);
+void sha1_quick(unsigned char hval[], const unsigned char data[], unsigned long len); void sha1(unsigned char hval[], const unsigned char data[], unsigned long len);
+void sha1_resumable(unsigned char hval[], const unsigned char data[], unsigned long len)
+# 330 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(2768207732101753517UL), (size_t)(2768207732101753518UL), (size_t)(0UL)) ; sha1_ctx cx[1];
+ if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; ;
+# 331 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 332 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
+# 333 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10); }
+void rng_init_quick(RNG_state *newstate, int seed)
+# 50 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(2768207732101748634UL), (size_t)(0UL)) ; struct sha1_ctx_s ctx;
+ if (____must_checkpoint_rng_init_ctx_0) { register_stack_vars(1, "rng_init|ctx|0", &____must_checkpoint_rng_init_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
+# 51 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ;
+# 52 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+   struct state_t gen; ;
+# 53 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  int i; ;
+# 54 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 55 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  for (i = 0; i < 16; i++) { gen.state[i] = 0; };
+# 57 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  gen.state[16] = 0xFF & (seed >> 24);
+# 58 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  gen.state[17] = 0xFF & (seed >> 16);
+# 59 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  gen.state[18] = 0xFF & (seed >> 8);
+# 60 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  gen.state[19] = 0xFF & (seed >> 0);
+# 61 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 62 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+# 63 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  ({ calling_npm("sha1_hash", 0); sha1_hash_npm(gen.state, 20, &ctx); });
+# 64 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
+# 65 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0); }
+
+void rng_init(RNG_state *newstate, int seed) { (____chimes_replaying ? rng_init_resumable(newstate, seed) : rng_init_quick(newstate, seed)); }
+
+void rng_spawn_quick(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
+# 68 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(2768207732101749050UL), (size_t)(2768207732101749051UL), (size_t)(0UL)) ; uint8 bytes[4];
+struct sha1_ctx_s ctx;
+ if (____must_checkpoint_rng_spawn_ctx_0) { register_stack_vars(1, "rng_spawn|ctx|0", &____must_checkpoint_rng_spawn_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
+# 69 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+   ;
+# 70 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  ;
+# 71 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 72 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ bytes[0] = 0xFF & (spawnnumber >> 24);
+# 73 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ bytes[1] = 0xFF & (spawnnumber >> 16);
+# 74 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ bytes[2] = 0xFF & (spawnnumber >> 8);
+# 75 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ bytes[3] = 0xFF & spawnnumber;
+# 76 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 77 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+# 78 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
+# 79 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(bytes, 4, &ctx); });
+# 80 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
+# 81 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1); }
+
+void rng_spawn(RNG_state *mystate, RNG_state *newstate, int spawnnumber) { (____chimes_replaying ? rng_spawn_resumable(mystate, newstate, spawnnumber) : rng_spawn_quick(mystate, newstate, spawnnumber)); }
+
+int rng_rand_quick(RNG_state *mystate){const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(2768207732101749091UL)) ; ; ;
+# 84 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        int r; ;
+# 85 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  uint32 b; b = ((mystate[16] << 24) | (mystate[17] << 16) | (mystate[18] << 8) | (mystate[19] << 0)) ;
+# 87 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ b = b & 0x7fffffff;
+# 88 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 89 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ r = (int) b;
+# 90 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 91 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2); return r;
+# 92 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+}
+
+int rng_rand(RNG_state *mystate) { return (____chimes_replaying ? rng_rand_resumable(mystate) : rng_rand_quick(mystate)); }
+
+int rng_nextrand_quick(RNG_state *mystate){const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(2768207732101749137UL)) ; struct sha1_ctx_s ctx;
+ if (____must_checkpoint_rng_nextrand_ctx_0) { register_stack_vars(1, "rng_nextrand|ctx|0", &____must_checkpoint_rng_nextrand_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
+# 95 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+   ;
+# 96 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ int r; ;
+# 97 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ uint32 b; ;
+# 98 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 99 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_begin", 0); sha1_begin_npm(&ctx); });
+# 100 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_hash", 0); sha1_hash_npm(mystate, 20, &ctx); });
+# 101 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ ({ calling_npm("sha1_end", 0); sha1_end_npm(mystate, &ctx); });
+# 102 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ b = (mystate[16] << 24) | (mystate[17] << 16)
+# 103 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  | (mystate[18] << 8) | (mystate[19] << 0);
+# 104 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ b = b & 0x7fffffff;
+# 105 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 106 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ r = (int) b;
+# 107 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+ rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3); return r;
+# 108 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+}
+
+int rng_nextrand(RNG_state *mystate) { return (____chimes_replaying ? rng_nextrand_resumable(mystate) : rng_nextrand_quick(mystate)); }
+
+char * rng_showstate_quick(RNG_state *state, char *s){const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(2768207732101749156UL), (size_t)(2768207732101749157UL)) ; ; ;
+# 112 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  sprintf(s,"%.2X%.2X...", state[0],state[1]);
+# 113 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  rm_stack(true, 2768207732101749157UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4); return s;
+# 114 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+}
+
+char * rng_showstate(RNG_state *state, char *s) { return (____chimes_replaying ? rng_showstate_resumable(state, s) : rng_showstate_quick(state, s)); }
+
+int rng_showtype_quick(char *strBuf, int ind) {const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(2768207732101749176UL), (size_t)(0UL)) ; ; ;
+# 118 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
+# 119 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+                 sizeof(struct state_t));
+# 120 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+  rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5); return ind;
+# 121 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+}
+
+int rng_showtype(char *strBuf, int ind) { return (____chimes_replaying ? rng_showtype_resumable(strBuf, ind) : rng_showtype_quick(strBuf, ind)); }
+
+void sha1_compile_quick(sha1_ctx ctx[1])
+# 196 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(2768207732101753490UL)) ; ; ; uint_32t *w; w = (ctx->wbuf) ;
+# 197 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 198 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 199 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 200 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 201 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 202 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    uint_32t v0; uint_32t v1; uint_32t v2; uint_32t v3; uint_32t v4; ;
+# 203 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v0 = ctx->hash[0]; v1 = ctx->hash[1];
+# 204 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v2 = ctx->hash[2]; v3 = ctx->hash[3];
+# 205 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 = ctx->hash[4];
+# 206 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 207 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 208 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 209 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 210 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[0]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[0 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[0 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[0 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[0 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 211 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[5]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[5 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[5 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[5 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[5 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 212 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[10]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[10 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[10 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[10 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[10 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 213 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[15]; v1 = (((v1) >> 2) | ((v1) << (32 - 2)));
+# 214 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 215 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 216 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 217 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 218 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 219 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 220 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + (w[(16) & 15] = (((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) << 1) | ((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2)));
+# 221 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + (w[(17) & 15] = (((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) << 1) | ((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2)));
+# 222 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + (w[(18) & 15] = (((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) << 1) | ((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2)));
+# 223 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + (w[(19) & 15] = (((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) << 1) | ((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 224 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 225 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(20) & 15] = (((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) << 1) | ((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(20 +1) & 15] = (((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) << 1) | ((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(20 +2) & 15] = (((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) << 1) | ((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(20 +3) & 15] = (((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) << 1) | ((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(20 +4) & 15] = (((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) << 1) | ((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 226 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(25) & 15] = (((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) << 1) | ((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(25 +1) & 15] = (((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) << 1) | ((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(25 +2) & 15] = (((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) << 1) | ((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(25 +3) & 15] = (((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) << 1) | ((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(25 +4) & 15] = (((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) << 1) | ((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 227 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(30) & 15] = (((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) << 1) | ((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(30 +1) & 15] = (((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) << 1) | ((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(30 +2) & 15] = (((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) << 1) | ((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(30 +3) & 15] = (((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) << 1) | ((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(30 +4) & 15] = (((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) << 1) | ((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 228 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(35) & 15] = (((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) << 1) | ((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(35 +1) & 15] = (((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) << 1) | ((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(35 +2) & 15] = (((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) << 1) | ((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(35 +3) & 15] = (((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) << 1) | ((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(35 +4) & 15] = (((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) << 1) | ((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 229 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 230 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(40) & 15] = (((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) << 1) | ((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(40 +1) & 15] = (((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) << 1) | ((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(40 +2) & 15] = (((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) << 1) | ((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(40 +3) & 15] = (((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) << 1) | ((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(40 +4) & 15] = (((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) << 1) | ((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 231 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(45) & 15] = (((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) << 1) | ((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(45 +1) & 15] = (((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) << 1) | ((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(45 +2) & 15] = (((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) << 1) | ((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(45 +3) & 15] = (((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) << 1) | ((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(45 +4) & 15] = (((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) << 1) | ((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 232 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(50) & 15] = (((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) << 1) | ((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(50 +1) & 15] = (((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) << 1) | ((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(50 +2) & 15] = (((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) << 1) | ((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(50 +3) & 15] = (((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) << 1) | ((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(50 +4) & 15] = (((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) << 1) | ((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 233 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(55) & 15] = (((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) << 1) | ((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(55 +1) & 15] = (((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) << 1) | ((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(55 +2) & 15] = (((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) << 1) | ((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(55 +3) & 15] = (((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) << 1) | ((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(55 +4) & 15] = (((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) << 1) | ((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 234 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 235 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(60) & 15] = (((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) << 1) | ((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(60 +1) & 15] = (((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) << 1) | ((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(60 +2) & 15] = (((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) << 1) | ((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(60 +3) & 15] = (((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) << 1) | ((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(60 +4) & 15] = (((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) << 1) | ((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 236 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(65) & 15] = (((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) << 1) | ((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(65 +1) & 15] = (((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) << 1) | ((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(65 +2) & 15] = (((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) << 1) | ((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(65 +3) & 15] = (((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) << 1) | ((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(65 +4) & 15] = (((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) << 1) | ((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 237 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(70) & 15] = (((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) << 1) | ((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(70 +1) & 15] = (((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) << 1) | ((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(70 +2) & 15] = (((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) << 1) | ((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(70 +3) & 15] = (((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) << 1) | ((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(70 +4) & 15] = (((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) << 1) | ((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 238 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(75) & 15] = (((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) << 1) | ((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(75 +1) & 15] = (((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) << 1) | ((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(75 +2) & 15] = (((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) << 1) | ((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(75 +3) & 15] = (((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) << 1) | ((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(75 +4) & 15] = (((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) << 1) | ((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+# 239 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 240 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 241 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 242 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 243 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 244 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 245 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[0] += v0; ctx->hash[1] += v1;
+# 246 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[2] += v2; ctx->hash[3] += v3;
+# 247 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[4] += v4;
+# 248 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 249 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6); }
+
+void sha1_compile(sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_compile_resumable(ctx) : sha1_compile_quick(ctx)); }
+
+void sha1_begin_quick(sha1_ctx ctx[1])
+# 252 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&sha1_begin), "sha1_begin", &____must_manage_sha1_begin, 1, 0, (size_t)(2768207732101748670UL)) ; ; ;
+# 253 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->count[0] = ctx->count[1] = 0;
+# 254 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[0] = 0x67452301;
+# 255 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[1] = 0xefcdab89;
+# 256 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[2] = 0x98badcfe;
+# 257 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[3] = 0x10325476;
+# 258 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->hash[4] = 0xc3d2e1f0;
+# 259 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7); }
+
+void sha1_begin(sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_begin_resumable(ctx) : sha1_begin_quick(ctx)); }
+
+void sha1_hash_quick(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
+# 265 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&sha1_hash), "sha1_hash", &____must_manage_sha1_hash, 3, 0, (size_t)(2768207732101748814UL), (size_t)(0UL), (size_t)(2768207732101748816UL)) ; ; ; uint_32t pos; uint_32t space; pos = ((uint_32t)(ctx->count[0] & (64 - 1))) ; space = (64 - pos) ;
+# 267 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+     const unsigned char *sp; sp = (data) ;
+# 268 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 269 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    if ((ctx->count[0] += len) < len) {++(ctx->count[1]); };
+# 271 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 272 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    while(len >= space)
+# 273 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    {
+# 274 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        memcpy(((unsigned char*)ctx->wbuf) + pos, sp, space);
+# 275 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        sp += space; len -= space; space = 64; pos = 0;
+# 276 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        { int _i; _i = ((64 >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
+# 277 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
+# 278 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    }
+# 279 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 280 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
+# 281 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8); }
+
+void sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_hash_resumable(data, len, ctx) : sha1_hash_quick(data, len, ctx)); }
+
+void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1])
+# 286 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable9 = new_stack((void *)(&sha1_end), "sha1_end", &____must_manage_sha1_end, 2, 0, (size_t)(2768207732101749004UL), (size_t)(2768207732101749005UL)) ; ; ; uint_32t i; i = ((uint_32t)(ctx->count[0] & (64 - 1))) ;
+# 287 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 288 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 289 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 290 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 291 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    { int _i; _i = (((i + 3) >> 2)) ; while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
+# 292 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 293 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 294 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 295 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 296 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 297 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->wbuf[i >> 2] &= 0xffffff80 << 8 * (~i & 3);
+# 298 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->wbuf[i >> 2] |= 0x00000080 << 8 * (~i & 3);
+# 299 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 300 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 301 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 302 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 303 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    if (i > 64 - 9) {{ if (i < 60) ctx->wbuf[15] = 0; ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); }); i = 0; }; } else {i = (i >> 2) + 1; } ;
+# 311 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 312 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    while(i < 14)
+# 313 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+        ctx->wbuf[i++] = 0;
+# 314 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 315 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 316 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 317 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 318 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 319 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->wbuf[14] = (ctx->count[1] << 3) | (ctx->count[0] >> 29);
+# 320 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ctx->wbuf[15] = ctx->count[0] << 3;
+# 321 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ({ calling_npm("sha1_compile", 0); sha1_compile_npm(ctx); });
+# 322 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 323 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 324 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 325 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
+# 327 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9); }
+
+void sha1_end(unsigned char hval[], sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_end_resumable(hval, ctx) : sha1_end_quick(hval, ctx)); }
+
+void sha1_quick(unsigned char hval[], const unsigned char data[], unsigned long len)
+# 330 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+{const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(2768207732101753517UL), (size_t)(2768207732101753518UL), (size_t)(0UL)) ; sha1_ctx cx[1];
+ if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } ; ; ;
+# 331 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+# 332 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+    ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
+# 333 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
+rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10); }
+
+void sha1(unsigned char hval[], const unsigned char data[], unsigned long len) { (____chimes_replaying ? sha1_resumable(hval, data, len) : sha1_quick(hval, data, len)); }
+
+
+
+void rng_init_npm(RNG_state *newstate, int seed)
 # 50 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {
 # 51 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- struct sha1_ctx_s ctx;
+  struct sha1_ctx_s ctx;
 # 52 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- struct state_t gen;
+  struct state_t gen;
 # 53 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- int i;
+  int i;
 # 54 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 55 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- for (i=0; i < 16; i++)
-# 56 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- gen.state[i] = 0;
+  for (i = 0; i < 16; i++) { gen.state[i] = 0; };
 # 57 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- gen.state[16] = 0xFF & (seed >> 24);
+  gen.state[16] = 0xFF & (seed >> 24);
 # 58 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- gen.state[17] = 0xFF & (seed >> 16);
+  gen.state[17] = 0xFF & (seed >> 16);
 # 59 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- gen.state[18] = 0xFF & (seed >> 8);
+  gen.state[18] = 0xFF & (seed >> 8);
 # 60 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- gen.state[19] = 0xFF & (seed >> 0);
+  gen.state[19] = 0xFF & (seed >> 0);
 # 61 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 62 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_begin(&ctx);
+  sha1_begin_npm(&ctx);
 # 63 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_hash(gen.state, 20, &ctx);
+  sha1_hash_npm(gen.state, 20, &ctx);
 # 64 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_end(newstate, &ctx);
+  sha1_end_npm(newstate, &ctx);
 # 65 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 66 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 67 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-void rng_spawn(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
+
+void rng_spawn_npm(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
 # 68 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {
 # 69 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2245,24 +2880,23 @@ void rng_spawn(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
  bytes[3] = 0xFF & spawnnumber;
 # 76 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 77 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_begin(&ctx);
+ sha1_begin_npm(&ctx);
 # 78 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_hash(mystate, 20, &ctx);
+ sha1_hash_npm(mystate, 20, &ctx);
 # 79 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_hash(bytes, 4, &ctx);
+ sha1_hash_npm(bytes, 4, &ctx);
 # 80 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_end(newstate, &ctx);
+ sha1_end_npm(newstate, &ctx);
 # 81 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 82 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 83 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-int rng_rand(RNG_state *mystate){
+
+int rng_rand_npm(RNG_state *mystate){
 # 84 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- int r;
+        int r;
 # 85 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  uint32 b = (mystate[16] << 24) | (mystate[17] << 16)
 # 86 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- | (mystate[18] << 8) | (mystate[19] << 0);
+  | (mystate[18] << 8) | (mystate[19] << 0);
 # 87 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
 # 88 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2273,9 +2907,8 @@ int rng_rand(RNG_state *mystate){
  return r;
 # 92 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 93 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 94 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-int rng_nextrand(RNG_state *mystate){
+
+int rng_nextrand_npm(RNG_state *mystate){
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  struct sha1_ctx_s ctx;
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2284,15 +2917,15 @@ int rng_nextrand(RNG_state *mystate){
  uint32 b;
 # 98 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 99 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_begin(&ctx);
+ sha1_begin_npm(&ctx);
 # 100 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_hash(mystate, 20, &ctx);
+ sha1_hash_npm(mystate, 20, &ctx);
 # 101 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_end(mystate, &ctx);
+ sha1_end_npm(mystate, &ctx);
 # 102 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  b = (mystate[16] << 24) | (mystate[17] << 16)
 # 103 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- | (mystate[18] << 8) | (mystate[19] << 0);
+  | (mystate[18] << 8) | (mystate[19] << 0);
 # 104 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  b = b & 0x7fffffff;
 # 105 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2302,31 +2935,26 @@ int rng_nextrand(RNG_state *mystate){
  return r;
 # 108 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 109 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 110 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 111 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-char * rng_showstate(RNG_state *state, char *s){
+
+char * rng_showstate_npm(RNG_state *state, char *s){
 # 112 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sprintf(s,"%.2X%.2X...", state[0],state[1]);
+  sprintf(s,"%.2X%.2X...", state[0],state[1]);
 # 113 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- return s;
+  return s;
 # 114 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 115 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 116 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 117 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-int rng_showtype(char *strBuf, int ind) {
+
+int rng_showtype_npm(char *strBuf, int ind) {
 # 118 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
+  ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
 # 119 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sizeof(struct state_t));
+                 sizeof(struct state_t));
 # 120 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- return ind;
+  return ind;
 # 121 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 195 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 195 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-void sha1_compile(sha1_ctx ctx[1])
+
+void sha1_compile_npm(sha1_ctx ctx[1])
 # 196 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 { uint_32t *w = ctx->wbuf;
 # 197 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2335,25 +2963,25 @@ void sha1_compile(sha1_ctx ctx[1])
 # 200 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 201 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 202 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- uint_32t v0, v1, v2, v3, v4;
+    uint_32t v0, v1, v2, v3, v4;
 # 203 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v0 = ctx->hash[0]; v1 = ctx->hash[1];
+    v0 = ctx->hash[0]; v1 = ctx->hash[1];
 # 204 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v2 = ctx->hash[2]; v3 = ctx->hash[3];
+    v2 = ctx->hash[2]; v3 = ctx->hash[3];
 # 205 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 = ctx->hash[4];
+    v4 = ctx->hash[4];
 # 206 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 207 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 208 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 209 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 210 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[0]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[0 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[0 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[0 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[0 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[0]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[0 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[0 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[0 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[0 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 211 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[5]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[5 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[5 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[5 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[5 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[5]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[5 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[5 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[5 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[5 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 212 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[10]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[10 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[10 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[10 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[10 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[10]; v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + w[10 +1]; v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + w[10 +2]; v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + w[10 +3]; v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + w[10 +4]; v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 213 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[15]; v1 = (((v1) >> 2) | ((v1) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v3) ^ ((v1) & ((v2) ^ (v3)))) + 0x5a827999 + w[15]; v1 = (((v1) >> 2) | ((v1) << (32 - 2)));
 # 214 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 215 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 216 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2361,40 +2989,40 @@ void sha1_compile(sha1_ctx ctx[1])
 # 218 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 219 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 220 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + (w[(16) & 15] = (((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) << 1) | ((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2)));
+    v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v2) ^ ((v0) & ((v1) ^ (v2)))) + 0x5a827999 + (w[(16) & 15] = (((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) << 1) | ((w[((16) + 13) & 15] ^ w[((16) + 8) & 15] ^ w[((16) + 2) & 15] ^ w[(16) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2)));
 # 221 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + (w[(17) & 15] = (((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) << 1) | ((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2)));
+    v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v1) ^ ((v4) & ((v0) ^ (v1)))) + 0x5a827999 + (w[(17) & 15] = (((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) << 1) | ((w[((17) + 13) & 15] ^ w[((17) + 8) & 15] ^ w[((17) + 2) & 15] ^ w[(17) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2)));
 # 222 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + (w[(18) & 15] = (((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) << 1) | ((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2)));
+    v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v0) ^ ((v3) & ((v4) ^ (v0)))) + 0x5a827999 + (w[(18) & 15] = (((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) << 1) | ((w[((18) + 13) & 15] ^ w[((18) + 8) & 15] ^ w[((18) + 2) & 15] ^ w[(18) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2)));
 # 223 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + (w[(19) & 15] = (((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) << 1) | ((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v4) ^ ((v2) & ((v3) ^ (v4)))) + 0x5a827999 + (w[(19) & 15] = (((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) << 1) | ((w[((19) + 13) & 15] ^ w[((19) + 8) & 15] ^ w[((19) + 2) & 15] ^ w[(19) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 224 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 225 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(20) & 15] = (((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) << 1) | ((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(20 +1) & 15] = (((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) << 1) | ((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(20 +2) & 15] = (((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) << 1) | ((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(20 +3) & 15] = (((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) << 1) | ((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(20 +4) & 15] = (((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) << 1) | ((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(20) & 15] = (((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) << 1) | ((w[((20) + 13) & 15] ^ w[((20) + 8) & 15] ^ w[((20) + 2) & 15] ^ w[(20) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(20 +1) & 15] = (((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) << 1) | ((w[((20 +1) + 13) & 15] ^ w[((20 +1) + 8) & 15] ^ w[((20 +1) + 2) & 15] ^ w[(20 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(20 +2) & 15] = (((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) << 1) | ((w[((20 +2) + 13) & 15] ^ w[((20 +2) + 8) & 15] ^ w[((20 +2) + 2) & 15] ^ w[(20 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(20 +3) & 15] = (((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) << 1) | ((w[((20 +3) + 13) & 15] ^ w[((20 +3) + 8) & 15] ^ w[((20 +3) + 2) & 15] ^ w[(20 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(20 +4) & 15] = (((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) << 1) | ((w[((20 +4) + 13) & 15] ^ w[((20 +4) + 8) & 15] ^ w[((20 +4) + 2) & 15] ^ w[(20 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 226 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(25) & 15] = (((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) << 1) | ((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(25 +1) & 15] = (((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) << 1) | ((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(25 +2) & 15] = (((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) << 1) | ((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(25 +3) & 15] = (((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) << 1) | ((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(25 +4) & 15] = (((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) << 1) | ((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(25) & 15] = (((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) << 1) | ((w[((25) + 13) & 15] ^ w[((25) + 8) & 15] ^ w[((25) + 2) & 15] ^ w[(25) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(25 +1) & 15] = (((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) << 1) | ((w[((25 +1) + 13) & 15] ^ w[((25 +1) + 8) & 15] ^ w[((25 +1) + 2) & 15] ^ w[(25 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(25 +2) & 15] = (((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) << 1) | ((w[((25 +2) + 13) & 15] ^ w[((25 +2) + 8) & 15] ^ w[((25 +2) + 2) & 15] ^ w[(25 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(25 +3) & 15] = (((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) << 1) | ((w[((25 +3) + 13) & 15] ^ w[((25 +3) + 8) & 15] ^ w[((25 +3) + 2) & 15] ^ w[(25 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(25 +4) & 15] = (((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) << 1) | ((w[((25 +4) + 13) & 15] ^ w[((25 +4) + 8) & 15] ^ w[((25 +4) + 2) & 15] ^ w[(25 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 227 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(30) & 15] = (((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) << 1) | ((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(30 +1) & 15] = (((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) << 1) | ((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(30 +2) & 15] = (((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) << 1) | ((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(30 +3) & 15] = (((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) << 1) | ((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(30 +4) & 15] = (((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) << 1) | ((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(30) & 15] = (((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) << 1) | ((w[((30) + 13) & 15] ^ w[((30) + 8) & 15] ^ w[((30) + 2) & 15] ^ w[(30) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(30 +1) & 15] = (((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) << 1) | ((w[((30 +1) + 13) & 15] ^ w[((30 +1) + 8) & 15] ^ w[((30 +1) + 2) & 15] ^ w[(30 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(30 +2) & 15] = (((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) << 1) | ((w[((30 +2) + 13) & 15] ^ w[((30 +2) + 8) & 15] ^ w[((30 +2) + 2) & 15] ^ w[(30 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(30 +3) & 15] = (((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) << 1) | ((w[((30 +3) + 13) & 15] ^ w[((30 +3) + 8) & 15] ^ w[((30 +3) + 2) & 15] ^ w[(30 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(30 +4) & 15] = (((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) << 1) | ((w[((30 +4) + 13) & 15] ^ w[((30 +4) + 8) & 15] ^ w[((30 +4) + 2) & 15] ^ w[(30 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 228 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(35) & 15] = (((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) << 1) | ((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(35 +1) & 15] = (((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) << 1) | ((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(35 +2) & 15] = (((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) << 1) | ((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(35 +3) & 15] = (((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) << 1) | ((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(35 +4) & 15] = (((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) << 1) | ((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0x6ed9eba1 + (w[(35) & 15] = (((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) << 1) | ((w[((35) + 13) & 15] ^ w[((35) + 8) & 15] ^ w[((35) + 2) & 15] ^ w[(35) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0x6ed9eba1 + (w[(35 +1) & 15] = (((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) << 1) | ((w[((35 +1) + 13) & 15] ^ w[((35 +1) + 8) & 15] ^ w[((35 +1) + 2) & 15] ^ w[(35 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0x6ed9eba1 + (w[(35 +2) & 15] = (((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) << 1) | ((w[((35 +2) + 13) & 15] ^ w[((35 +2) + 8) & 15] ^ w[((35 +2) + 2) & 15] ^ w[(35 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0x6ed9eba1 + (w[(35 +3) & 15] = (((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) << 1) | ((w[((35 +3) + 13) & 15] ^ w[((35 +3) + 8) & 15] ^ w[((35 +3) + 2) & 15] ^ w[(35 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0x6ed9eba1 + (w[(35 +4) & 15] = (((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) << 1) | ((w[((35 +4) + 13) & 15] ^ w[((35 +4) + 8) & 15] ^ w[((35 +4) + 2) & 15] ^ w[(35 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 229 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 230 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(40) & 15] = (((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) << 1) | ((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(40 +1) & 15] = (((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) << 1) | ((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(40 +2) & 15] = (((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) << 1) | ((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(40 +3) & 15] = (((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) << 1) | ((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(40 +4) & 15] = (((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) << 1) | ((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(40) & 15] = (((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) << 1) | ((w[((40) + 13) & 15] ^ w[((40) + 8) & 15] ^ w[((40) + 2) & 15] ^ w[(40) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(40 +1) & 15] = (((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) << 1) | ((w[((40 +1) + 13) & 15] ^ w[((40 +1) + 8) & 15] ^ w[((40 +1) + 2) & 15] ^ w[(40 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(40 +2) & 15] = (((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) << 1) | ((w[((40 +2) + 13) & 15] ^ w[((40 +2) + 8) & 15] ^ w[((40 +2) + 2) & 15] ^ w[(40 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(40 +3) & 15] = (((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) << 1) | ((w[((40 +3) + 13) & 15] ^ w[((40 +3) + 8) & 15] ^ w[((40 +3) + 2) & 15] ^ w[(40 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(40 +4) & 15] = (((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) << 1) | ((w[((40 +4) + 13) & 15] ^ w[((40 +4) + 8) & 15] ^ w[((40 +4) + 2) & 15] ^ w[(40 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 231 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(45) & 15] = (((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) << 1) | ((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(45 +1) & 15] = (((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) << 1) | ((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(45 +2) & 15] = (((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) << 1) | ((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(45 +3) & 15] = (((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) << 1) | ((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(45 +4) & 15] = (((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) << 1) | ((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(45) & 15] = (((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) << 1) | ((w[((45) + 13) & 15] ^ w[((45) + 8) & 15] ^ w[((45) + 2) & 15] ^ w[(45) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(45 +1) & 15] = (((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) << 1) | ((w[((45 +1) + 13) & 15] ^ w[((45 +1) + 8) & 15] ^ w[((45 +1) + 2) & 15] ^ w[(45 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(45 +2) & 15] = (((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) << 1) | ((w[((45 +2) + 13) & 15] ^ w[((45 +2) + 8) & 15] ^ w[((45 +2) + 2) & 15] ^ w[(45 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(45 +3) & 15] = (((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) << 1) | ((w[((45 +3) + 13) & 15] ^ w[((45 +3) + 8) & 15] ^ w[((45 +3) + 2) & 15] ^ w[(45 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(45 +4) & 15] = (((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) << 1) | ((w[((45 +4) + 13) & 15] ^ w[((45 +4) + 8) & 15] ^ w[((45 +4) + 2) & 15] ^ w[(45 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 232 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(50) & 15] = (((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) << 1) | ((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(50 +1) & 15] = (((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) << 1) | ((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(50 +2) & 15] = (((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) << 1) | ((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(50 +3) & 15] = (((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) << 1) | ((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(50 +4) & 15] = (((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) << 1) | ((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(50) & 15] = (((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) << 1) | ((w[((50) + 13) & 15] ^ w[((50) + 8) & 15] ^ w[((50) + 2) & 15] ^ w[(50) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(50 +1) & 15] = (((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) << 1) | ((w[((50 +1) + 13) & 15] ^ w[((50 +1) + 8) & 15] ^ w[((50 +1) + 2) & 15] ^ w[(50 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(50 +2) & 15] = (((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) << 1) | ((w[((50 +2) + 13) & 15] ^ w[((50 +2) + 8) & 15] ^ w[((50 +2) + 2) & 15] ^ w[(50 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(50 +3) & 15] = (((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) << 1) | ((w[((50 +3) + 13) & 15] ^ w[((50 +3) + 8) & 15] ^ w[((50 +3) + 2) & 15] ^ w[(50 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(50 +4) & 15] = (((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) << 1) | ((w[((50 +4) + 13) & 15] ^ w[((50 +4) + 8) & 15] ^ w[((50 +4) + 2) & 15] ^ w[(50 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 233 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(55) & 15] = (((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) << 1) | ((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(55 +1) & 15] = (((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) << 1) | ((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(55 +2) & 15] = (((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) << 1) | ((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(55 +3) & 15] = (((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) << 1) | ((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(55 +4) & 15] = (((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) << 1) | ((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + (((v1) & (v2)) | ((v3) & ((v1) ^ (v2)))) + 0x8f1bbcdc + (w[(55) & 15] = (((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) << 1) | ((w[((55) + 13) & 15] ^ w[((55) + 8) & 15] ^ w[((55) + 2) & 15] ^ w[(55) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + (((v0) & (v1)) | ((v2) & ((v0) ^ (v1)))) + 0x8f1bbcdc + (w[(55 +1) & 15] = (((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) << 1) | ((w[((55 +1) + 13) & 15] ^ w[((55 +1) + 8) & 15] ^ w[((55 +1) + 2) & 15] ^ w[(55 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + (((v4) & (v0)) | ((v1) & ((v4) ^ (v0)))) + 0x8f1bbcdc + (w[(55 +2) & 15] = (((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) << 1) | ((w[((55 +2) + 13) & 15] ^ w[((55 +2) + 8) & 15] ^ w[((55 +2) + 2) & 15] ^ w[(55 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + (((v3) & (v4)) | ((v0) & ((v3) ^ (v4)))) + 0x8f1bbcdc + (w[(55 +3) & 15] = (((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) << 1) | ((w[((55 +3) + 13) & 15] ^ w[((55 +3) + 8) & 15] ^ w[((55 +3) + 2) & 15] ^ w[(55 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + (((v2) & (v3)) | ((v4) & ((v2) ^ (v3)))) + 0x8f1bbcdc + (w[(55 +4) & 15] = (((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) << 1) | ((w[((55 +4) + 13) & 15] ^ w[((55 +4) + 8) & 15] ^ w[((55 +4) + 2) & 15] ^ w[(55 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 234 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 235 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(60) & 15] = (((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) << 1) | ((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(60 +1) & 15] = (((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) << 1) | ((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(60 +2) & 15] = (((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) << 1) | ((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(60 +3) & 15] = (((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) << 1) | ((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(60 +4) & 15] = (((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) << 1) | ((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(60) & 15] = (((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) << 1) | ((w[((60) + 13) & 15] ^ w[((60) + 8) & 15] ^ w[((60) + 2) & 15] ^ w[(60) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(60 +1) & 15] = (((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) << 1) | ((w[((60 +1) + 13) & 15] ^ w[((60 +1) + 8) & 15] ^ w[((60 +1) + 2) & 15] ^ w[(60 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(60 +2) & 15] = (((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) << 1) | ((w[((60 +2) + 13) & 15] ^ w[((60 +2) + 8) & 15] ^ w[((60 +2) + 2) & 15] ^ w[(60 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(60 +3) & 15] = (((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) << 1) | ((w[((60 +3) + 13) & 15] ^ w[((60 +3) + 8) & 15] ^ w[((60 +3) + 2) & 15] ^ w[(60 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(60 +4) & 15] = (((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) << 1) | ((w[((60 +4) + 13) & 15] ^ w[((60 +4) + 8) & 15] ^ w[((60 +4) + 2) & 15] ^ w[(60 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 236 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(65) & 15] = (((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) << 1) | ((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(65 +1) & 15] = (((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) << 1) | ((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(65 +2) & 15] = (((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) << 1) | ((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(65 +3) & 15] = (((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) << 1) | ((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(65 +4) & 15] = (((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) << 1) | ((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(65) & 15] = (((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) << 1) | ((w[((65) + 13) & 15] ^ w[((65) + 8) & 15] ^ w[((65) + 2) & 15] ^ w[(65) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(65 +1) & 15] = (((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) << 1) | ((w[((65 +1) + 13) & 15] ^ w[((65 +1) + 8) & 15] ^ w[((65 +1) + 2) & 15] ^ w[(65 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(65 +2) & 15] = (((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) << 1) | ((w[((65 +2) + 13) & 15] ^ w[((65 +2) + 8) & 15] ^ w[((65 +2) + 2) & 15] ^ w[(65 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(65 +3) & 15] = (((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) << 1) | ((w[((65 +3) + 13) & 15] ^ w[((65 +3) + 8) & 15] ^ w[((65 +3) + 2) & 15] ^ w[(65 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(65 +4) & 15] = (((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) << 1) | ((w[((65 +4) + 13) & 15] ^ w[((65 +4) + 8) & 15] ^ w[((65 +4) + 2) & 15] ^ w[(65 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 237 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(70) & 15] = (((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) << 1) | ((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(70 +1) & 15] = (((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) << 1) | ((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(70 +2) & 15] = (((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) << 1) | ((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(70 +3) & 15] = (((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) << 1) | ((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(70 +4) & 15] = (((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) << 1) | ((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(70) & 15] = (((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) << 1) | ((w[((70) + 13) & 15] ^ w[((70) + 8) & 15] ^ w[((70) + 2) & 15] ^ w[(70) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(70 +1) & 15] = (((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) << 1) | ((w[((70 +1) + 13) & 15] ^ w[((70 +1) + 8) & 15] ^ w[((70 +1) + 2) & 15] ^ w[(70 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(70 +2) & 15] = (((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) << 1) | ((w[((70 +2) + 13) & 15] ^ w[((70 +2) + 8) & 15] ^ w[((70 +2) + 2) & 15] ^ w[(70 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(70 +3) & 15] = (((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) << 1) | ((w[((70 +3) + 13) & 15] ^ w[((70 +3) + 8) & 15] ^ w[((70 +3) + 2) & 15] ^ w[(70 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(70 +4) & 15] = (((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) << 1) | ((w[((70 +4) + 13) & 15] ^ w[((70 +4) + 8) & 15] ^ w[((70 +4) + 2) & 15] ^ w[(70 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 238 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(75) & 15] = (((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) << 1) | ((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(75 +1) & 15] = (((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) << 1) | ((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(75 +2) & 15] = (((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) << 1) | ((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(75 +3) & 15] = (((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) << 1) | ((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(75 +4) & 15] = (((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) << 1) | ((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
+    v4 += (((v0) >> 27) | ((v0) << (32 - 27))) + ((v1) ^ (v2) ^ (v3)) + 0xca62c1d6 + (w[(75) & 15] = (((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) << 1) | ((w[((75) + 13) & 15] ^ w[((75) + 8) & 15] ^ w[((75) + 2) & 15] ^ w[(75) & 15]) >> (32 - 1)))); v1 = (((v1) >> 2) | ((v1) << (32 - 2))); v3 += (((v4) >> 27) | ((v4) << (32 - 27))) + ((v0) ^ (v1) ^ (v2)) + 0xca62c1d6 + (w[(75 +1) & 15] = (((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) << 1) | ((w[((75 +1) + 13) & 15] ^ w[((75 +1) + 8) & 15] ^ w[((75 +1) + 2) & 15] ^ w[(75 +1) & 15]) >> (32 - 1)))); v0 = (((v0) >> 2) | ((v0) << (32 - 2))); v2 += (((v3) >> 27) | ((v3) << (32 - 27))) + ((v4) ^ (v0) ^ (v1)) + 0xca62c1d6 + (w[(75 +2) & 15] = (((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) << 1) | ((w[((75 +2) + 13) & 15] ^ w[((75 +2) + 8) & 15] ^ w[((75 +2) + 2) & 15] ^ w[(75 +2) & 15]) >> (32 - 1)))); v4 = (((v4) >> 2) | ((v4) << (32 - 2))); v1 += (((v2) >> 27) | ((v2) << (32 - 27))) + ((v3) ^ (v4) ^ (v0)) + 0xca62c1d6 + (w[(75 +3) & 15] = (((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) << 1) | ((w[((75 +3) + 13) & 15] ^ w[((75 +3) + 8) & 15] ^ w[((75 +3) + 2) & 15] ^ w[(75 +3) & 15]) >> (32 - 1)))); v3 = (((v3) >> 2) | ((v3) << (32 - 2))); v0 += (((v1) >> 27) | ((v1) << (32 - 27))) + ((v2) ^ (v3) ^ (v4)) + 0xca62c1d6 + (w[(75 +4) & 15] = (((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) << 1) | ((w[((75 +4) + 13) & 15] ^ w[((75 +4) + 8) & 15] ^ w[((75 +4) + 2) & 15] ^ w[(75 +4) & 15]) >> (32 - 1)))); v2 = (((v2) >> 2) | ((v2) << (32 - 2)));
 # 239 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 240 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 241 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2402,75 +3030,65 @@ void sha1_compile(sha1_ctx ctx[1])
 # 243 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 244 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 245 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->hash[0] += v0; ctx->hash[1] += v1;
+    ctx->hash[0] += v0; ctx->hash[1] += v1;
 # 246 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->hash[2] += v2; ctx->hash[3] += v3;
+    ctx->hash[2] += v2; ctx->hash[3] += v3;
 # 247 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->hash[4] += v4;
+    ctx->hash[4] += v4;
 # 248 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 249 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 250 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 251 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-void sha1_begin(sha1_ctx ctx[1])
+
+void sha1_begin_npm(sha1_ctx ctx[1])
 # 252 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {
 # 253 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->count[0] = ctx->count[1] = 0;
+    ctx->count[0] = ctx->count[1] = 0;
 # 254 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->hash[0] = 0x67452301;
+    ctx->hash[0] = 0x67452301;
 # 255 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->hash[1] = 0xefcdab89;
+    ctx->hash[1] = 0xefcdab89;
 # 256 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->hash[2] = 0x98badcfe;
+    ctx->hash[2] = 0x98badcfe;
 # 257 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->hash[3] = 0x10325476;
+    ctx->hash[3] = 0x10325476;
 # 258 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->hash[4] = 0xc3d2e1f0;
+    ctx->hash[4] = 0xc3d2e1f0;
 # 259 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 260 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 261 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 262 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 263 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 264 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-void sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
+
+void sha1_hash_npm(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
 # 265 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 { uint_32t pos = (uint_32t)(ctx->count[0] & (64 - 1)),
 # 266 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- space = 64 - pos;
+            space = 64 - pos;
 # 267 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- const unsigned char *sp = data;
+    const unsigned char *sp = data;
 # 268 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 269 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- if((ctx->count[0] += len) < len)
-# 270 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ++(ctx->count[1]);
+    if ((ctx->count[0] += len) < len) {++(ctx->count[1]); };
 # 271 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 272 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- while(len >= space)
+    while(len >= space)
 # 273 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- {
+    {
 # 274 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- memcpy(((unsigned char*)ctx->wbuf) + pos, sp, space);
+        memcpy(((unsigned char*)ctx->wbuf) + pos, sp, space);
 # 275 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sp += space; len -= space; space = 64; pos = 0;
+        sp += space; len -= space; space = 64; pos = 0;
 # 276 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- { int _i = (64 >> 2); while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
+        { int _i = (64 >> 2); while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
 # 277 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_compile(ctx);
+        sha1_compile_npm(ctx);
 # 278 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- }
+    }
 # 279 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 280 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
+    memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
 # 281 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 282 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 283 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 284 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 285 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-void sha1_end(unsigned char hval[], sha1_ctx ctx[1])
+
+void sha1_end_npm(unsigned char hval[], sha1_ctx ctx[1])
 # 286 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 { uint_32t i = (uint_32t)(ctx->count[0] & (64 - 1));
 # 287 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2478,85 +3096,146 @@ void sha1_end(unsigned char hval[], sha1_ctx ctx[1])
 # 289 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 290 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 291 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- { int _i = ((i + 3) >> 2); while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
+    { int _i = ((i + 3) >> 2); while(_i--) ((uint_32t*)ctx->wbuf)[_i] = ((((((((uint_32t*)ctx->wbuf)[_i])) >> 24) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 24))) & 0x00ff00ff) | (((((((uint_32t*)ctx->wbuf)[_i])) >> 8) | (((((uint_32t*)ctx->wbuf)[_i])) << (32 - 8))) & 0xff00ff00)); };
 # 292 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 293 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 294 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 295 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 296 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 297 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->wbuf[i >> 2] &= 0xffffff80 << 8 * (~i & 3);
+    ctx->wbuf[i >> 2] &= 0xffffff80 << 8 * (~i & 3);
 # 298 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->wbuf[i >> 2] |= 0x00000080 << 8 * (~i & 3);
+    ctx->wbuf[i >> 2] |= 0x00000080 << 8 * (~i & 3);
 # 299 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 300 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 301 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 302 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 303 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- if(i > 64 - 9)
-# 304 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- {
-# 305 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- if(i < 60) ctx->wbuf[15] = 0;
-# 306 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_compile(ctx);
-# 307 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- i = 0;
-# 308 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- }
-# 309 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- else
-# 310 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- i = (i >> 2) + 1;
+    if (i > 64 - 9) {{ if (i < 60) ctx->wbuf[15] = 0; sha1_compile_npm(ctx); i = 0; }; } else {i = (i >> 2) + 1; } ;
 # 311 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 312 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- while(i < 14)
+    while(i < 14)
 # 313 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->wbuf[i++] = 0;
+        ctx->wbuf[i++] = 0;
 # 314 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 315 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 316 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 317 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 318 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 319 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->wbuf[14] = (ctx->count[1] << 3) | (ctx->count[0] >> 29);
+    ctx->wbuf[14] = (ctx->count[1] << 3) | (ctx->count[0] >> 29);
 # 320 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- ctx->wbuf[15] = ctx->count[0] << 3;
+    ctx->wbuf[15] = ctx->count[0] << 3;
 # 321 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_compile(ctx);
+    sha1_compile_npm(ctx);
 # 322 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 323 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 324 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 325 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- for(i = 0; i < 20; ++i)
-# 326 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3)));
+    for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
 # 327 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 328 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 329 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-void sha1(unsigned char hval[], const unsigned char data[], unsigned long len)
+
+void sha1_npm(unsigned char hval[], const unsigned char data[], unsigned long len)
 # 330 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 { sha1_ctx cx[1];
 # 331 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 332 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
- sha1_begin(cx); sha1_hash(data, len, cx); sha1_end(hval, cx);
+    sha1_begin_npm(cx); sha1_hash_npm(data, len, cx); sha1_end_npm(hval, cx);
 # 333 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-# 334 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 335 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-# 336 "/Users/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-}
-
 
 
 
 
 
 static int module_init() {
-    init_module(2768207732101748571UL, 18, 11, 4, 0, 2, 2768207732101748571UL + 568UL, 2768207732101748571UL + 586UL, 2768207732101748571UL + 607UL, 2768207732101748571UL + 4919UL, 2768207732101748571UL + 4926UL, 2768207732101748571UL + 4947UL, 2768207732101748571UL + 4925UL, 2768207732101748571UL + 4946UL, 2768207732101748571UL + 608UL, 2768207732101748571UL + 4919UL, 2768207732101748571UL + 567UL, 2768207732101748571UL + 585UL, 2768207732101748571UL + 1UL, 2768207732101748571UL + 63UL, 2768207732101748571UL + 436UL, 2768207732101748571UL + 480UL, 2768207732101748571UL + 247UL, 2768207732101748571UL + 434UL, 2768207732101748571UL + 246UL, 2768207732101748571UL + 433UL, 2768207732101748571UL + 521UL, 2768207732101748571UL + 566UL, 2768207732101748571UL + 67UL, 2768207732101748571UL + 99UL, 2768207732101748571UL + 102UL, 2768207732101748571UL + 245UL, 2768207732101748571UL + 100UL, 2768207732101748571UL + 243UL, 2768207732101748571UL + 435UL, 2768207732101748571UL + 479UL, 2768207732101748571UL + 482UL, 2768207732101748571UL + 520UL, 2768207732101748571UL + 589UL, 2768207732101748571UL + 605UL, 2768207732101748571UL + 105UL, 2768207732101748571UL + 243UL, "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof(struct sha1_ctx_s, wbuf), "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof(struct state_t, state), "sha1", 3, "sha1_begin", "sha1_hash", "sha1_end", "rng_nextrand", 3, "sha1_begin", "sha1_hash", "sha1_end", "rng_showstate", 0, "rng_init", 3, "sha1_begin", "sha1_hash", "sha1_end", "rng_spawn", 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end", "sha1_hash", 1, "sha1_compile", "sha1_end", 2, "sha1_compile", "sha1_compile", "rng_rand", 0, "sha1_compile", 0, "sha1_begin", 0, "rng_showtype", 0, "rng_init|ctx|0", 1, "rng_init", "rng_spawn|ctx|0", 1, "rng_spawn", "rng_nextrand|ctx|0", 1, "rng_nextrand", "sha1|cx|0", 1, "sha1", &____alias_loc_id_0, (unsigned)4, 2768207732101748571UL + 1UL, 2768207732101748571UL + 2UL, 2768207732101748571UL + 4UL, 2768207732101748571UL + 5UL, &____alias_loc_id_1, (unsigned)2, 2768207732101748571UL + 67UL, 2768207732101748571UL + 99UL, &____alias_loc_id_2, (unsigned)8, 2768207732101748571UL + 100UL, 2768207732101748571UL + 101UL, 2768207732101748571UL + 102UL, 2768207732101748571UL + 103UL, 2768207732101748571UL + 104UL, 2768207732101748571UL + 105UL, 2768207732101748571UL + 106UL, 2768207732101748571UL + 245UL, &____alias_loc_id_3, (unsigned)6, 2768207732101748571UL + 246UL, 2768207732101748571UL + 247UL, 2768207732101748571UL + 248UL, 2768207732101748571UL + 249UL, 2768207732101748571UL + 433UL, 2768207732101748571UL + 434UL, &____alias_loc_id_4, (unsigned)4, 2768207732101748571UL + 435UL, 2768207732101748571UL + 436UL, 2768207732101748571UL + 437UL, 2768207732101748571UL + 439UL, &____alias_loc_id_5, (unsigned)3, 2768207732101748571UL + 482UL, 2768207732101748571UL + 483UL, 2768207732101748571UL + 484UL, &____alias_loc_id_6, (unsigned)3, 2768207732101748571UL + 521UL, 2768207732101748571UL + 523UL, 2768207732101748571UL + 524UL, &____alias_loc_id_7, (unsigned)2, 2768207732101748571UL + 567UL, 2768207732101748571UL + 568UL, &____alias_loc_id_8, (unsigned)2, 2768207732101748571UL + 589UL, 2768207732101748571UL + 590UL, &____alias_loc_id_9, (unsigned)8, 2768207732101748571UL + 607UL, 2768207732101748571UL + 608UL, 2768207732101748571UL + 609UL, 2768207732101748571UL + 610UL, 2768207732101748571UL + 611UL, 2768207732101748571UL + 612UL, 2768207732101748571UL + 613UL, 2768207732101748571UL + 4919UL, &____alias_loc_id_10, (unsigned)3, 2768207732101748571UL + 4925UL, 2768207732101748571UL + 4926UL, 2768207732101748571UL + 4927UL);
-    register_functions(11, "brg_sha1.c.pre.hard.cpp", "rng_init", &rng_init, "sha1_begin", &sha1_begin, "sha1_hash", &sha1_hash, "sha1_end", &sha1_end, "rng_spawn", &rng_spawn, "rng_rand", &rng_rand, "rng_nextrand", &rng_nextrand, "rng_showstate", &rng_showstate, "rng_showtype", &rng_showtype, "sha1_compile", &sha1_compile, "sha1", &sha1);
+    init_module(2768207732101748571UL, 18, 11, 4, 11, 11, 0, 11, 16, 0, 2,
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)3, (2768207732101748571UL + 1UL), (2768207732101748571UL + 2UL), (2768207732101748571UL + 4UL), (2768207732101748571UL + 5UL), "sha1_end", (unsigned)2, (2768207732101748571UL + 3UL), (2768207732101748571UL + 63UL), "sha1_begin", (unsigned)1, (2768207732101748571UL + 3UL), "sha1_hash", (unsigned)2, (2768207732101748571UL + 3UL), (2768207732101748571UL + 4UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (2768207732101748571UL + 67UL), (2768207732101748571UL + 99UL),
+                           &____alias_loc_id_2, (unsigned)8, (unsigned)1, (2768207732101748571UL + 100UL), (2768207732101748571UL + 101UL), (2768207732101748571UL + 102UL), (2768207732101748571UL + 103UL), (2768207732101748571UL + 104UL), (2768207732101748571UL + 105UL), (2768207732101748571UL + 106UL), (2768207732101748571UL + 245UL), "sha1_compile", (unsigned)1, (2768207732101748571UL + 245UL),
+                           &____alias_loc_id_3, (unsigned)6, (unsigned)1, (2768207732101748571UL + 246UL), (2768207732101748571UL + 247UL), (2768207732101748571UL + 248UL), (2768207732101748571UL + 249UL), (2768207732101748571UL + 433UL), (2768207732101748571UL + 434UL), "sha1_compile", (unsigned)1, (2768207732101748571UL + 434UL),
+                           &____alias_loc_id_4, (unsigned)4, (unsigned)3, (2768207732101748571UL + 435UL), (2768207732101748571UL + 436UL), (2768207732101748571UL + 437UL), (2768207732101748571UL + 439UL), "sha1_end", (unsigned)2, (2768207732101748571UL + 438UL), (2768207732101748571UL + 480UL), "sha1_begin", (unsigned)1, (2768207732101748571UL + 438UL), "sha1_hash", (unsigned)3, (2768207732101748571UL + 438UL), (2768207732101748571UL + 439UL), (2768207732101748571UL + 479UL),
+                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (2768207732101748571UL + 482UL), (2768207732101748571UL + 483UL), (2768207732101748571UL + 484UL),
+                           &____alias_loc_id_6, (unsigned)3, (unsigned)3, (2768207732101748571UL + 521UL), (2768207732101748571UL + 523UL), (2768207732101748571UL + 524UL), "sha1_end", (unsigned)2, (2768207732101748571UL + 522UL), (2768207732101748571UL + 566UL), "sha1_begin", (unsigned)1, (2768207732101748571UL + 522UL), "sha1_hash", (unsigned)2, (2768207732101748571UL + 522UL), (2768207732101748571UL + 566UL),
+                           &____alias_loc_id_7, (unsigned)2, (unsigned)0, (2768207732101748571UL + 567UL), (2768207732101748571UL + 568UL),
+                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (2768207732101748571UL + 589UL), (2768207732101748571UL + 590UL),
+                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (2768207732101748571UL + 607UL), (2768207732101748571UL + 608UL), (2768207732101748571UL + 609UL), (2768207732101748571UL + 610UL), (2768207732101748571UL + 611UL), (2768207732101748571UL + 612UL), (2768207732101748571UL + 613UL), (2768207732101748571UL + 4919UL),
+                            &____alias_loc_id_10, (unsigned)3, (unsigned)3, (2768207732101748571UL + 4925UL), (2768207732101748571UL + 4926UL), (2768207732101748571UL + 4927UL), "sha1_end", (unsigned)2, (2768207732101748571UL + 4928UL), (2768207732101748571UL + 4946UL), "sha1_begin", (unsigned)1, (2768207732101748571UL + 4928UL), "sha1_hash", (unsigned)2, (2768207732101748571UL + 4928UL), (2768207732101748571UL + 4947UL),
+                            "rng_init", (void *)(&rng_init_npm), (void *)__null, 0, 2, (2768207732101748571UL + 63UL), 0UL, 0UL, 3, "sha1_begin", 1, (2768207732101748571UL + 3UL), 0UL, "sha1_hash", 3, (2768207732101748571UL + 4UL), 0UL, (2768207732101748571UL + 3UL), 0UL, "sha1_end", 2, (2768207732101748571UL + 63UL), (2768207732101748571UL + 3UL), 0UL,
+                            "rng_spawn", (void *)(&rng_spawn_npm), (void *)__null, 0, 3, (2768207732101748571UL + 479UL), (2768207732101748571UL + 480UL), 0UL, 0UL, 4, "sha1_begin", 1, (2768207732101748571UL + 438UL), 0UL, "sha1_hash", 3, (2768207732101748571UL + 479UL), 0UL, (2768207732101748571UL + 438UL), 0UL, "sha1_hash", 3, (2768207732101748571UL + 439UL), 0UL, (2768207732101748571UL + 438UL), 0UL, "sha1_end", 2, (2768207732101748571UL + 480UL), (2768207732101748571UL + 438UL), 0UL,
+                            "rng_rand", (void *)(&rng_rand_npm), (void *)__null, 0, 1, (2768207732101748571UL + 520UL), 0UL, 0,
+                            "rng_nextrand", (void *)(&rng_nextrand_npm), (void *)__null, 0, 1, (2768207732101748571UL + 566UL), 0UL, 3, "sha1_begin", 1, (2768207732101748571UL + 522UL), 0UL, "sha1_hash", 3, (2768207732101748571UL + 566UL), 0UL, (2768207732101748571UL + 522UL), 0UL, "sha1_end", 2, (2768207732101748571UL + 566UL), (2768207732101748571UL + 522UL), 0UL,
+                            "rng_showstate", (void *)(&rng_showstate_npm), (void *)__null, 0, 2, (2768207732101748571UL + 585UL), (2768207732101748571UL + 586UL), (2768207732101748571UL + 586UL), 1, "sprintf", 4, (2768207732101748571UL + 586UL), (2768207732101748571UL + 4949UL), 0UL, 0UL, 0UL,
+                            "rng_showtype", (void *)(&rng_showtype_npm), (void *)__null, 0, 2, (2768207732101748571UL + 605UL), 0UL, 0UL, 1, "sprintf", 3, (2768207732101748571UL + 605UL), (2768207732101748571UL + 4950UL), 0UL, 0UL,
+                            "sha1_compile", (void *)(&sha1_compile_npm), (void *)__null, 0, 1, (2768207732101748571UL + 4919UL), 0UL, 0,
+                            "sha1_begin", (void *)(&sha1_begin_npm), (void *)__null, 0, 1, (2768207732101748571UL + 99UL), 0UL, 0,
+                            "sha1_hash", (void *)(&sha1_hash_npm), (void *)__null, 0, 3, (2768207732101748571UL + 243UL), 0UL, (2768207732101748571UL + 245UL), 0UL, 3, "memcpy", 3, (2768207732101748571UL + 245UL), (2768207732101748571UL + 243UL), 0UL, 0UL, "sha1_compile", 1, (2768207732101748571UL + 245UL), 0UL, "memcpy", 3, (2768207732101748571UL + 245UL), (2768207732101748571UL + 243UL), 0UL, 0UL,
+                            "sha1_end", (void *)(&sha1_end_npm), (void *)__null, 0, 2, (2768207732101748571UL + 433UL), (2768207732101748571UL + 434UL), 0UL, 2, "sha1_compile", 1, (2768207732101748571UL + 434UL), 0UL, "sha1_compile", 1, (2768207732101748571UL + 434UL), 0UL,
+                            "sha1", (void *)(&sha1_npm), (void *)__null, 0, 3, (2768207732101748571UL + 4946UL), (2768207732101748571UL + 4947UL), 0UL, 0UL, 3, "sha1_begin", 1, (2768207732101748571UL + 4928UL), 0UL, "sha1_hash", 3, (2768207732101748571UL + 4947UL), 0UL, (2768207732101748571UL + 4928UL), 0UL, "sha1_end", 2, (2768207732101748571UL + 4946UL), (2768207732101748571UL + 4928UL), 0UL,
+                           "rng_init", &(____chimes_does_checkpoint_rng_init_npm),
+                           "rng_spawn", &(____chimes_does_checkpoint_rng_spawn_npm),
+                           "rng_rand", &(____chimes_does_checkpoint_rng_rand_npm),
+                           "rng_nextrand", &(____chimes_does_checkpoint_rng_nextrand_npm),
+                           "rng_showstate", &(____chimes_does_checkpoint_rng_showstate_npm),
+                           "rng_showtype", &(____chimes_does_checkpoint_rng_showtype_npm),
+                           "sha1_compile", &(____chimes_does_checkpoint_sha1_compile_npm),
+                           "sha1_begin", &(____chimes_does_checkpoint_sha1_begin_npm),
+                           "sha1_hash", &(____chimes_does_checkpoint_sha1_hash_npm),
+                           "sha1_end", &(____chimes_does_checkpoint_sha1_end_npm),
+                           "sha1", &(____chimes_does_checkpoint_sha1_npm),
+                             (2768207732101748571UL + 568UL), (2768207732101748571UL + 586UL),
+                             (2768207732101748571UL + 607UL), (2768207732101748571UL + 4919UL),
+                             (2768207732101748571UL + 4926UL), (2768207732101748571UL + 4947UL),
+                             (2768207732101748571UL + 4925UL), (2768207732101748571UL + 4946UL),
+                             (2768207732101748571UL + 608UL), (2768207732101748571UL + 4919UL),
+                             (2768207732101748571UL + 567UL), (2768207732101748571UL + 585UL),
+                             (2768207732101748571UL + 1UL), (2768207732101748571UL + 63UL),
+                             (2768207732101748571UL + 436UL), (2768207732101748571UL + 480UL),
+                             (2768207732101748571UL + 247UL), (2768207732101748571UL + 434UL),
+                             (2768207732101748571UL + 246UL), (2768207732101748571UL + 433UL),
+                             (2768207732101748571UL + 521UL), (2768207732101748571UL + 566UL),
+                             (2768207732101748571UL + 67UL), (2768207732101748571UL + 99UL),
+                             (2768207732101748571UL + 102UL), (2768207732101748571UL + 245UL),
+                             (2768207732101748571UL + 100UL), (2768207732101748571UL + 243UL),
+                             (2768207732101748571UL + 435UL), (2768207732101748571UL + 479UL),
+                             (2768207732101748571UL + 482UL), (2768207732101748571UL + 520UL),
+                             (2768207732101748571UL + 589UL), (2768207732101748571UL + 605UL),
+                             (2768207732101748571UL + 105UL), (2768207732101748571UL + 243UL),
+                     "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf),
+                     "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
+                             "sha1", "_Z4sha1PhPKhm", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_nextrand", "_Z12rng_nextrandPh", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_showstate", "_Z13rng_showstatePhPc", 0,
+                             "rng_init", "_Z8rng_initPhi", 3, "sha1_begin", "sha1_hash", "sha1_end",
+                             "rng_spawn", "_Z9rng_spawnPhS_i", 4, "sha1_begin", "sha1_hash", "sha1_hash", "sha1_end",
+                             "sha1_hash", "_Z9sha1_hashPKhmP10sha1_ctx_s", 1, "sha1_compile",
+                             "sha1_end", "_Z8sha1_endPhP10sha1_ctx_s", 2, "sha1_compile", "sha1_compile",
+                             "rng_rand", "_Z8rng_randPh", 0,
+                             "sha1_compile", "_Z12sha1_compileP10sha1_ctx_s", 0,
+                             "sha1_begin", "_Z10sha1_beginP10sha1_ctx_s", 0,
+                             "rng_showtype", "_Z12rng_showtypePci", 0,
+                        "rng_init|ctx|0", 1, "rng_init",
+                        "rng_spawn|ctx|0", 1, "rng_spawn",
+                        "rng_nextrand|ctx|0", 1, "rng_nextrand",
+                        "sha1|cx|0", 1, "sha1",
+        "sha1_begin", 0UL, (int)1, 2768207732101748574UL,
+        "sha1_hash", 0UL, (int)3, 2768207732101748575UL, 0UL, 2768207732101748574UL,
+        "sha1_end", 0UL, (int)2, 2768207732101748634UL, 2768207732101748574UL,
+        "sha1_begin", 0UL, (int)1, 2768207732101749009UL,
+        "sha1_hash", 0UL, (int)3, 2768207732101749050UL, 0UL, 2768207732101749009UL,
+        "sha1_hash", 0UL, (int)3, 2768207732101749010UL, 0UL, 2768207732101749009UL,
+        "sha1_end", 0UL, (int)2, 2768207732101749051UL, 2768207732101749009UL,
+        "sha1_begin", 0UL, (int)1, 2768207732101749093UL,
+        "sha1_hash", 0UL, (int)3, 2768207732101749137UL, 0UL, 2768207732101749093UL,
+        "sha1_end", 0UL, (int)2, 2768207732101749137UL, 2768207732101749093UL,
+        "sha1_compile", 0UL, (int)1, 2768207732101748816UL,
+        "sha1_compile", 0UL, (int)1, 2768207732101749005UL,
+        "sha1_compile", 0UL, (int)1, 2768207732101749005UL,
+        "sha1_begin", 0UL, (int)1, 2768207732101753499UL,
+        "sha1_hash", 0UL, (int)3, 2768207732101753518UL, 0UL, 2768207732101753499UL,
+        "sha1_end", 0UL, (int)2, 2768207732101753517UL, 2768207732101753499UL);
     return 0;
 }
 
-static int __libchimes_module_init = module_init();
+static const int __libchimes_module_init = module_init();

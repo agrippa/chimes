@@ -1,4 +1,4 @@
-_Z3barv 15 36 0
-_Z3fooPii 15 43 0 23 0
-_Z10checkpointv 17 5 0
-__assert_rtn 19 39 0 57 58 0 59
+bar main 15 36 0
+foo main 15 43 0 23 0
+checkpoint main 17 5 0
+__assert_rtn main 19 39 0 57 58 0 59

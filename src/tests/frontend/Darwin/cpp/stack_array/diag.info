@@ -6,14 +6,14 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 5 int 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 5  call_lbl_1: 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 167  ; int a[] = { 1, 2, 3, 4, 5 };
  register_stack_vars(1, "main|a|0", (int *)0x0, "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0);  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 4 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 9 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/stack_array.cpp 5 32 

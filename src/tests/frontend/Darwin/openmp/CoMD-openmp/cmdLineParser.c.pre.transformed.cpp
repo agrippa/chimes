@@ -8,15 +8,15 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "cmdLineParser.c.pre.transformed.cpp"
-int ____chimes_does_checkpoint_dupString_npm = 1;
-int ____chimes_does_checkpoint_myOptionAlloc_npm = 1;
-int ____chimes_does_checkpoint_myOptionFree_npm = 1;
-int ____chimes_does_checkpoint_lastOption_npm = 1;
-int ____chimes_does_checkpoint_findOption_npm = 1;
-int ____chimes_does_checkpoint_addArg_npm = 1;
-int ____chimes_does_checkpoint_freeArgs_npm = 1;
-int ____chimes_does_checkpoint_printArgs_npm = 1;
-int ____chimes_does_checkpoint_processArgs_npm = 1;
+static int ____chimes_does_checkpoint_dupString_npm = 1;
+static int ____chimes_does_checkpoint_myOptionAlloc_npm = 1;
+static int ____chimes_does_checkpoint_myOptionFree_npm = 1;
+static int ____chimes_does_checkpoint_lastOption_npm = 1;
+static int ____chimes_does_checkpoint_findOption_npm = 1;
+static int ____chimes_does_checkpoint_addArg_npm = 1;
+static int ____chimes_does_checkpoint_freeArgs_npm = 1;
+static int ____chimes_does_checkpoint_printArgs_npm = 1;
+static int ____chimes_does_checkpoint_processArgs_npm = 1;
 
 static int ____must_checkpoint_printArgs_s_0 = 2;
 static int ____must_checkpoint_processArgs_option_index_0 = 2;
@@ -54,8 +54,103 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-# 1 "/usr/include/stdio.h" 1 3 4
-# 64 "/usr/include/stdio.h" 3 4
+
+
+extern void init_chimes();
+extern void checkpoint_transformed(int lbl, unsigned loc_id);
+
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
+extern int get_next_call();
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
+extern void *get_thread_ctx();
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+        unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id, int is_parallel_for);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 10 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.h" 1
+# 28 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.h"
+int addArg(const char *longOption, const char shortOption,
+           int has_arg, const char type, void *dataPtr, int dataSize,
+           const char *help);
+
+
+void processArgs(int argc, char **argv);
+
+
+void printArgs(void);
+
+void freeArgs(void);
+# 11 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
+# 11 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+
+# 1 "/usr/include/stdlib.h" 1 3 4
+# 61 "/usr/include/stdlib.h" 3 4
+# 1 "/usr/include/Availability.h" 1 3 4
+# 153 "/usr/include/Availability.h" 3 4
+# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
+# 154 "/usr/include/Availability.h" 2 3 4
+# 62 "/usr/include/stdlib.h" 2 3 4
+
+# 1 "/usr/include/_types.h" 1 3 4
+# 27 "/usr/include/_types.h" 3 4
+# 1 "/usr/include/sys/_types.h" 1 3 4
+# 32 "/usr/include/sys/_types.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
 # 506 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_symbol_aliasing.h" 1 3 4
@@ -63,17 +158,7 @@ typedef long unsigned int size_t;
 # 572 "/usr/include/sys/cdefs.h" 3 4
 # 1 "/usr/include/sys/_posix_availability.h" 1 3 4
 # 573 "/usr/include/sys/cdefs.h" 2 3 4
-# 65 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/Availability.h" 1 3 4
-# 153 "/usr/include/Availability.h" 3 4
-# 1 "/usr/include/AvailabilityInternal.h" 1 3 4
-# 154 "/usr/include/Availability.h" 2 3 4
-# 66 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/_types.h" 1 3 4
-# 27 "/usr/include/_types.h" 3 4
-# 1 "/usr/include/sys/_types.h" 1 3 4
-# 33 "/usr/include/sys/_types.h" 3 4
+# 33 "/usr/include/sys/_types.h" 2 3 4
 # 1 "/usr/include/machine/_types.h" 1 3 4
 # 32 "/usr/include/machine/_types.h" 3 4
 # 1 "/usr/include/i386/_types.h" 1 3 4
@@ -243,339 +328,8 @@ typedef int __darwin_nl_item;
 typedef int __darwin_wctrans_t;
 
 typedef __uint32_t __darwin_wctype_t;
-# 68 "/usr/include/stdio.h" 2 3 4
+# 64 "/usr/include/stdlib.h" 2 3 4
 
-
-
-# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
-# 31 "/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 72 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
-# 73 "/usr/include/stdio.h" 2 3 4
-# 1 "/usr/include/sys/_types/_null.h" 1 3 4
-# 74 "/usr/include/stdio.h" 2 3 4
-
-# 1 "/usr/include/sys/stdio.h" 1 3 4
-# 37 "/usr/include/sys/stdio.h" 3 4
-extern "C" {
-
-int renameat(int, const char *, int, const char *) ;
-
-}
-# 76 "/usr/include/stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 88 "/usr/include/stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 122 "/usr/include/stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (*_close)(void *);
- int (*_read) (void *, char *, int);
- fpos_t (*_seek) (void *, fpos_t, int);
- int (*_write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-
-extern "C" {
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-}
-# 230 "/usr/include/stdio.h" 3 4
-extern "C" {
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * , fpos_t *);
-char *fgets(char * , int, FILE *);
-
-
-
-FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
-
-int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * , FILE * ) __asm("_" "fputs" );
-size_t fread(void * , size_t, size_t, FILE * );
-FILE *freopen(const char * , const char * ,
-                 FILE * ) __asm("_" "freopen" );
-int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *);
-int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *, const char *);
-void rewind(FILE *);
-int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * , char * );
-int setvbuf(FILE * , char * , int, size_t);
-int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-}
-# 292 "/usr/include/stdio.h" 3 4
-extern "C" {
-
-
-
-char *ctermid(char *);
-
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-}
-# 314 "/usr/include/stdio.h" 3 4
-extern "C" {
-int pclose(FILE *);
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" );
-
-}
-# 336 "/usr/include/stdio.h" 3 4
-extern "C" {
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-}
-
-
-
-
-
-
-
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 373 "/usr/include/stdio.h" 3 4
-extern "C" {
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-
-__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *, const char *) __asm("_" "tempnam" );
-}
-# 411 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 412 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-}
-
-
-
-extern "C" {
-int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-}
-# 436 "/usr/include/stdio.h" 3 4
-# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 437 "/usr/include/stdio.h" 2 3 4
-
-extern "C" {
-int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
-int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
-ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
-ssize_t getline(char ** , size_t * , FILE * ) ;
-}
-
-
-
-
-
-
-
-extern "C" {
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
-FILE *zopen(const char *, const char *, int);
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (*)(void *, char *, int),
-                 int (*)(void *, const char *, int),
-                 fpos_t (*)(void *, fpos_t, int),
-                 int (*)(void *));
-}
-# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling_npm(const char *name, size_t return_alias, int n_params,
-        ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
-extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs,
-        int n_provided_npm_functions, int n_external_npm_functions,
-        int n_npm_conditionals, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_stack_vars(int nvars, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern void register_functions(int nfunctions, const char *module_name, ...);
-extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-extern bool disable_current_thread();
-extern void reenable_current_thread(bool was_disabled);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 63 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 10 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.h" 1
-# 28 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.h"
-int addArg(const char *longOption, const char shortOption,
-           int has_arg, const char type, void *dataPtr, int dataSize,
-           const char *help);
-
-
-void processArgs(int argc, char **argv);
-
-
-void printArgs(void);
-
-void freeArgs(void);
-# 11 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
-# 11 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-
-# 1 "/usr/include/stdlib.h" 1 3 4
-# 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
 # 79 "/usr/include/sys/wait.h" 3 4
 typedef enum {
@@ -1041,7 +795,8 @@ typedef struct __darwin_ucontext ucontext_t;
 # 30 "/usr/include/sys/_types/_sigset_t.h" 3 4
 typedef __darwin_sigset_t sigset_t;
 # 154 "/usr/include/sys/signal.h" 2 3 4
-
+# 1 "/usr/include/sys/_types/_size_t.h" 1 3 4
+# 155 "/usr/include/sys/signal.h" 2 3 4
 # 1 "/usr/include/sys/_types/_uid_t.h" 1 3 4
 # 30 "/usr/include/sys/_types/_uid_t.h" 3 4
 typedef __darwin_uid_t uid_t;
@@ -1502,6 +1257,10 @@ typedef struct {
  long long quot;
  long long rem;
 } lldiv_t;
+
+
+# 1 "/usr/include/sys/_types/_null.h" 1 3 4
+# 100 "/usr/include/stdlib.h" 2 3 4
 # 117 "/usr/include/stdlib.h" 3 4
 extern int __mb_cur_max;
 # 127 "/usr/include/stdlib.h" 3 4
@@ -1737,8 +1496,253 @@ void *valloc(size_t);
 
 }
 # 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
-# 13 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
+# 1 "/usr/include/stdio.h" 1 3 4
+# 71 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_va_list.h" 1 3 4
+# 31 "/usr/include/sys/_types/_va_list.h" 3 4
+typedef __darwin_va_list va_list;
+# 72 "/usr/include/stdio.h" 2 3 4
 
+
+
+# 1 "/usr/include/sys/stdio.h" 1 3 4
+# 37 "/usr/include/sys/stdio.h" 3 4
+extern "C" {
+
+int renameat(int, const char *, int, const char *) ;
+
+}
+# 76 "/usr/include/stdio.h" 2 3 4
+
+typedef __darwin_off_t fpos_t;
+# 88 "/usr/include/stdio.h" 3 4
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+
+
+struct __sFILEX;
+# 122 "/usr/include/stdio.h" 3 4
+typedef struct __sFILE {
+ unsigned char *_p;
+ int _r;
+ int _w;
+ short _flags;
+ short _file;
+ struct __sbuf _bf;
+ int _lbfsize;
+
+
+ void *_cookie;
+ int (*_close)(void *);
+ int (*_read) (void *, char *, int);
+ fpos_t (*_seek) (void *, fpos_t, int);
+ int (*_write)(void *, const char *, int);
+
+
+ struct __sbuf _ub;
+ struct __sFILEX *_extra;
+ int _ur;
+
+
+ unsigned char _ubuf[3];
+ unsigned char _nbuf[1];
+
+
+ struct __sbuf _lb;
+
+
+ int _blksize;
+ fpos_t _offset;
+} FILE;
+
+extern "C" {
+extern FILE *__stdinp;
+extern FILE *__stdoutp;
+extern FILE *__stderrp;
+}
+# 230 "/usr/include/stdio.h" 3 4
+extern "C" {
+void clearerr(FILE *);
+int fclose(FILE *);
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+int fgetc(FILE *);
+int fgetpos(FILE * , fpos_t *);
+char *fgets(char * , int, FILE *);
+
+
+
+FILE *fopen(const char * , const char * ) __asm("_" "fopen" );
+
+int fprintf(FILE * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int fputc(int, FILE *);
+int fputs(const char * , FILE * ) __asm("_" "fputs" );
+size_t fread(void * , size_t, size_t, FILE * );
+FILE *freopen(const char * , const char * ,
+                 FILE * ) __asm("_" "freopen" );
+int fscanf(FILE * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+int fseek(FILE *, long, int);
+int fsetpos(FILE *, const fpos_t *);
+long ftell(FILE *);
+size_t fwrite(const void * , size_t, size_t, FILE * ) __asm("_" "fwrite" );
+int getc(FILE *);
+int getchar(void);
+char *gets(char *);
+void perror(const char *);
+int printf(const char * , ...) __attribute__((__format__ (__printf__, 1, 2)));
+int putc(int, FILE *);
+int putchar(int);
+int puts(const char *);
+int remove(const char *);
+int rename (const char *, const char *);
+void rewind(FILE *);
+int scanf(const char * , ...) __attribute__((__format__ (__scanf__, 1, 2)));
+void setbuf(FILE * , char * );
+int setvbuf(FILE * , char * , int, size_t);
+int sprintf(char * , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+int sscanf(const char * , const char * , ...) __attribute__((__format__ (__scanf__, 2, 3)));
+FILE *tmpfile(void);
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tmpnam(char *);
+int ungetc(int, FILE *);
+int vfprintf(FILE * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+int vprintf(const char * , va_list) __attribute__((__format__ (__printf__, 1, 0)));
+int vsprintf(char * , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+}
+# 292 "/usr/include/stdio.h" 3 4
+extern "C" {
+
+
+
+char *ctermid(char *);
+
+
+
+
+
+FILE *fdopen(int, const char *) __asm("_" "fdopen" );
+
+int fileno(FILE *);
+}
+# 314 "/usr/include/stdio.h" 3 4
+extern "C" {
+int pclose(FILE *);
+
+
+
+FILE *popen(const char *, const char *) __asm("_" "popen" );
+
+}
+# 336 "/usr/include/stdio.h" 3 4
+extern "C" {
+int __srget(FILE *);
+int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int __swbuf(int, FILE *);
+}
+
+
+
+
+
+
+
+inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
+ if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
+  return (*_p->_p++ = _c);
+ else
+  return (__swbuf(_c, _p));
+}
+# 373 "/usr/include/stdio.h" 3 4
+extern "C" {
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+
+
+
+int getw(FILE *);
+int putw(int, FILE *);
+
+
+
+__attribute__((deprecated("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
+
+char *tempnam(const char *, const char *) __asm("_" "tempnam" );
+}
+# 411 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_off_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_off_t.h" 3 4
+typedef __darwin_off_t off_t;
+# 412 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+}
+
+
+
+extern "C" {
+int snprintf(char * , size_t, const char * , ...) __attribute__((__format__ (__printf__, 3, 4)));
+int vfscanf(FILE * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+int vscanf(const char * , va_list) __attribute__((__format__ (__scanf__, 1, 0)));
+int vsnprintf(char * , size_t, const char * , va_list) __attribute__((__format__ (__printf__, 3, 0)));
+int vsscanf(const char * , const char * , va_list) __attribute__((__format__ (__scanf__, 2, 0)));
+}
+# 436 "/usr/include/stdio.h" 3 4
+# 1 "/usr/include/sys/_types/_ssize_t.h" 1 3 4
+# 30 "/usr/include/sys/_types/_ssize_t.h" 3 4
+typedef __darwin_ssize_t ssize_t;
+# 437 "/usr/include/stdio.h" 2 3 4
+
+extern "C" {
+int dprintf(int, const char * , ...) __attribute__((__format__ (__printf__, 2, 3))) ;
+int vdprintf(int, const char * , va_list) __attribute__((__format__ (__printf__, 2, 0))) ;
+ssize_t getdelim(char ** , size_t * , int, FILE * ) ;
+ssize_t getline(char ** , size_t * , FILE * ) ;
+}
+
+
+
+
+
+
+
+extern "C" {
+extern const int sys_nerr;
+extern const char *const sys_errlist[];
+
+int asprintf(char ** , const char * , ...) __attribute__((__format__ (__printf__, 2, 3)));
+char *ctermid_r(char *);
+char *fgetln(FILE *, size_t *);
+const char *fmtcheck(const char *, const char *);
+int fpurge(FILE *);
+void setbuffer(FILE *, char *, int);
+int setlinebuf(FILE *);
+int vasprintf(char ** , const char * , va_list) __attribute__((__format__ (__printf__, 2, 0)));
+FILE *zopen(const char *, const char *, int);
+
+
+
+
+
+FILE *funopen(const void *,
+                 int (*)(void *, char *, int),
+                 int (*)(void *, const char *, int),
+                 fpos_t (*)(void *, fpos_t, int),
+                 int (*)(void *));
+}
+# 14 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c" 2
 # 1 "/usr/include/getopt.h" 1 3 4
 # 44 "/usr/include/getopt.h" 3 4
 # 1 "/usr/include/unistd.h" 1 3 4
@@ -2406,9 +2410,9 @@ static MyOption* myOptionAlloc_resumable(
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption *o; o = ((MyOption *)calloc_wrapper(1, sizeof(MyOption), 7180137057745128921UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next))) ;
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   o->help = ({ calling_npm("dupString", 7180137057745128925UL, 1, 7180137057745128996UL); dupString_npm(help); });
+   o->help = ({ calling_npm("dupString", 0); dupString_npm(help); });
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   o->longArg = ({ calling_npm("dupString", 7180137057745128925UL, 1, 7180137057745128981UL); dupString_npm(longOption); });
+   o->longArg = ({ calling_npm("dupString", 0); dupString_npm(longOption); });
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (shortOption) {o->shortArg[0] = (unsigned char)shortOption; } else {{ o->shortArg[0] = iBase; iBase++; }; }
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2501,11 +2505,11 @@ int addArg_resumable(const char* longOption, const char shortOption,
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption *p; ;
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   o = ({ calling_npm("myOptionAlloc", 7180137057745129449UL, 7, 7180137057745128889UL, 0UL, 0UL, 0UL, 7180137057745128893UL, 0UL, 7180137057745128895UL); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); });
+   o = ({ calling_npm("myOptionAlloc", 0); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); });
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (!o) {rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); return 1;; };
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (!myargs) {myargs = o; } else {{ p = ({ calling_npm("lastOption", 7180137057745128877UL, 1, 7180137057745129449UL); lastOption_npm(myargs); }); p->next = (void *)o; }; }
+   if (!myargs) {myargs = o; } else {{ p = ({ calling_npm("lastOption", 0); lastOption_npm(myargs); }); p->next = (void *)o; }; }
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); return 0;
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2523,7 +2527,7 @@ void freeArgs_resumable()
 # 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
 # 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-      myargs = ({ calling_npm("myOptionFree", 7180137057745129449UL, 1, 7180137057745129449UL); myOptionFree_npm(myargs); });
+      myargs = ({ calling_npm("myOptionFree", 0); myOptionFree_npm(myargs); });
 # 119 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2642,7 +2646,7 @@ void processArgs_resumable(int argc, char** argv)
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (c == -1) {break;; };
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-      o = ({ calling_npm("findOption", 7180137057745129449UL, 2, 7180137057745129449UL, 0UL); findOption_npm(myargs, c); });
+      o = ({ calling_npm("findOption", 0); findOption_npm(myargs, c); });
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if ( ! o )
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2767,9 +2771,9 @@ static MyOption* myOptionAlloc_quick(
 # 50 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
     MyOption *o; o = ((MyOption *)calloc_wrapper(1, sizeof(MyOption), 7180137057745128921UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next))) ;
 # 51 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   o->help = ({ calling_npm("dupString", 7180137057745128925UL, 1, 7180137057745128996UL); dupString_npm(help); });
+   o->help = ({ calling_npm("dupString", 0); dupString_npm(help); });
 # 52 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   o->longArg = ({ calling_npm("dupString", 7180137057745128925UL, 1, 7180137057745128981UL); dupString_npm(longOption); });
+   o->longArg = ({ calling_npm("dupString", 0); dupString_npm(longOption); });
 # 53 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (shortOption) {o->shortArg[0] = (unsigned char)shortOption; } else {{ o->shortArg[0] = iBase; iBase++; }; }
 # 59 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2861,11 +2865,11 @@ int addArg_quick(const char* longOption, const char shortOption,
 # 101 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    MyOption *p; ;
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   o = ({ calling_npm("myOptionAlloc", 7180137057745129449UL, 7, 7180137057745128889UL, 0UL, 0UL, 0UL, 7180137057745128893UL, 0UL, 7180137057745128895UL); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); });
+   o = ({ calling_npm("myOptionAlloc", 0); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); });
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    if (!o) {rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); return 1;; };
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-   if (!myargs) {myargs = o; } else {{ p = ({ calling_npm("lastOption", 7180137057745128877UL, 1, 7180137057745129449UL); lastOption_npm(myargs); }); p->next = (void *)o; }; }
+   if (!myargs) {myargs = o; } else {{ p = ({ calling_npm("lastOption", 0); lastOption_npm(myargs); }); p->next = (void *)o; }; }
 # 110 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); return 0;
 # 111 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -2885,7 +2889,7 @@ void freeArgs_quick()
 # 117 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    {
 # 118 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-      myargs = ({ calling_npm("myOptionFree", 7180137057745129449UL, 1, 7180137057745129449UL); myOptionFree_npm(myargs); });
+      myargs = ({ calling_npm("myOptionFree", 0); myOptionFree_npm(myargs); });
 # 119 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
    }
 # 120 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -3002,7 +3006,7 @@ void processArgs_quick(int argc, char** argv)
 # 179 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if (c == -1) {break;; };
 # 180 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
-      o = ({ calling_npm("findOption", 7180137057745129449UL, 2, 7180137057745129449UL, 0UL); findOption_npm(myargs, c); });
+      o = ({ calling_npm("findOption", 0); findOption_npm(myargs, c); });
 # 181 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
       if ( ! o )
 # 182 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c"
@@ -3442,11 +3446,91 @@ void processArgs_npm(int argc, char** argv)
 
 
 static int module_init() {
-    init_module(7180137057745128829UL, 35, 9, 2, 9, 9, 0, 9, 2, &____alias_loc_id_0, (unsigned)12, (7180137057745128829UL + 1UL), (7180137057745128829UL + 2UL), (7180137057745128829UL + 3UL), (7180137057745128829UL + 4UL), (7180137057745128829UL + 5UL), (7180137057745128829UL + 6UL), (7180137057745128829UL + 7UL), (7180137057745128829UL + 8UL), (7180137057745128829UL + 9UL), (7180137057745128829UL + 10UL), (7180137057745128829UL + 48UL), (7180137057745128829UL + 615UL), &____alias_loc_id_1, (unsigned)10, (7180137057745128829UL + 69UL), (7180137057745128829UL + 70UL), (7180137057745128829UL + 71UL), (7180137057745128829UL + 72UL), (7180137057745128829UL + 73UL), (7180137057745128829UL + 74UL), (7180137057745128829UL + 75UL), (7180137057745128829UL + 76UL), (7180137057745128829UL + 92UL), (7180137057745128829UL + 619UL), &____alias_loc_id_2, (unsigned)2, (7180137057745128829UL + 168UL), (7180137057745128829UL + 169UL), &____alias_loc_id_3, (unsigned)1, (7180137057745128829UL + 615UL), &____alias_loc_id_4, (unsigned)3, (7180137057745128829UL + 206UL), (7180137057745128829UL + 207UL), (7180137057745128829UL + 208UL), &____alias_loc_id_5, (unsigned)2, (7180137057745128829UL + 251UL), (7180137057745128829UL + 253UL), &____alias_loc_id_6, (unsigned)12, (7180137057745128829UL + 317UL), (7180137057745128829UL + 318UL), (7180137057745128829UL + 319UL), (7180137057745128829UL + 320UL), (7180137057745128829UL + 321UL), (7180137057745128829UL + 322UL), (7180137057745128829UL + 323UL), (7180137057745128829UL + 324UL), (7180137057745128829UL + 325UL), (7180137057745128829UL + 326UL), (7180137057745128829UL + 381UL), (7180137057745128829UL + 620UL), &____alias_loc_id_7, (unsigned)3, (7180137057745128829UL + 549UL), (7180137057745128829UL + 550UL), (7180137057745128829UL + 551UL), &____alias_loc_id_8, (unsigned)2, (7180137057745128829UL + 591UL), (7180137057745128829UL + 592UL), "dupString", (void *)(dupString_npm), 0, 1, (7180137057745128829UL + 611UL), (7180137057745128829UL + 604UL), 3, "strlen", 1, (7180137057745128829UL + 611UL), 0UL, "calloc", 2, 0UL, 0UL, (7180137057745128829UL + 604UL), "strcpy", 2, (7180137057745128829UL + 604UL), (7180137057745128829UL + 611UL), (7180137057745128829UL + 608UL), "myOptionAlloc", (void *)(myOptionAlloc_npm), 0, 7, (7180137057745128829UL + 152UL), 0UL, 0UL, 0UL, (7180137057745128829UL + 96UL), 0UL, (7180137057745128829UL + 167UL), (7180137057745128829UL + 92UL), 5, "calloc", 2, 0UL, 0UL, (7180137057745128829UL + 92UL), "dupString", 1, (7180137057745128829UL + 167UL), (7180137057745128829UL + 96UL), "dupString", 1, (7180137057745128829UL + 152UL), (7180137057745128829UL + 96UL), "strlen", 1, (7180137057745128829UL + 152UL), 0UL, "strlen", 1, (7180137057745128829UL + 152UL), 0UL, "myOptionFree", (void *)(myOptionFree_npm), 0, 1, (7180137057745128829UL + 250UL), (7180137057745128829UL + 219UL), 3, "free", 1, (7180137057745128829UL + 219UL), 0UL, "free", 1, (7180137057745128829UL + 219UL), 0UL, "free", 1, (7180137057745128829UL + 250UL), 0UL, "lastOption", (void *)(lastOption_npm), 0, 1, (7180137057745128829UL + 196UL), (7180137057745128829UL + 196UL), 0, "findOption", (void *)(findOption_npm), 0, 2, (7180137057745128829UL + 583UL), 0UL, (7180137057745128829UL + 583UL), 0, "addArg", (void *)(addArg_npm), 0, 7, (7180137057745128829UL + 60UL), 0UL, 0UL, 0UL, (7180137057745128829UL + 64UL), 0UL, (7180137057745128829UL + 66UL), 0UL, 2, "myOptionAlloc", 7, (7180137057745128829UL + 60UL), 0UL, 0UL, 0UL, (7180137057745128829UL + 64UL), 0UL, (7180137057745128829UL + 66UL), (7180137057745128829UL + 620UL), "lastOption", 1, (7180137057745128829UL + 620UL), (7180137057745128829UL + 48UL), "freeArgs", (void *)(freeArgs_npm), 0, 0, 0UL, 1, "myOptionFree", 1, (7180137057745128829UL + 620UL), (7180137057745128829UL + 620UL), "printArgs", (void *)(printArgs_npm), 0, 0, 0UL, 5, "fprintf", 2, (7180137057745128829UL + 455UL), (7180137057745128829UL + 617UL), 0UL, "sprintf", 3, (7180137057745128829UL + 252UL), (7180137057745128829UL + 618UL), 0UL, 0UL, "fprintf", 3, (7180137057745128829UL + 455UL), (7180137057745128829UL + 252UL), (7180137057745128829UL + 620UL), 0UL, "fprintf", 6, (7180137057745128829UL + 455UL), (7180137057745128829UL + 621UL), 0UL, 0UL, 0UL, (7180137057745128829UL + 620UL), 0UL, "fprintf", 2, (7180137057745128829UL + 455UL), (7180137057745128829UL + 622UL), 0UL, "processArgs", (void *)(processArgs_npm), 0, 2, 0UL, (7180137057745128829UL + 539UL), 0UL, 15, "calloc", 2, 0UL, 0UL, (7180137057745128829UL + 411UL), "calloc", 2, 0UL, 0UL, (7180137057745128829UL + 381UL), "strcat", 2, (7180137057745128829UL + 411UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 415UL), "strcat", 2, (7180137057745128829UL + 411UL), (7180137057745128829UL + 623UL), (7180137057745128829UL + 422UL), "getopt_long", 5, 0UL, (7180137057745128829UL + 539UL), (7180137057745128829UL + 411UL), (7180137057745128829UL + 381UL), (7180137057745128829UL + 325UL), 0UL, "findOption", 2, (7180137057745128829UL + 620UL), 0UL, (7180137057745128829UL + 620UL), "fprintf", 3, (7180137057745128829UL + 455UL), (7180137057745128829UL + 624UL), 0UL, 0UL, "sscanf", 3, (7180137057745128829UL + 478UL), (7180137057745128829UL + 622UL), (7180137057745128829UL + 620UL), 0UL, "sscanf", 3, (7180137057745128829UL + 478UL), (7180137057745128829UL + 622UL), (7180137057745128829UL + 620UL), 0UL, "sscanf", 3, (7180137057745128829UL + 478UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 620UL), 0UL, "strncpy", 3, (7180137057745128829UL + 620UL), (7180137057745128829UL + 478UL), 0UL, (7180137057745128829UL + 507UL), "sscanf", 3, (7180137057745128829UL + 478UL), (7180137057745128829UL + 622UL), (7180137057745128829UL + 620UL), 0UL, "fprintf", 3, (7180137057745128829UL + 455UL), (7180137057745128829UL + 630UL), 0UL, 0UL, "free", 1, (7180137057745128829UL + 381UL), 0UL, "free", 1, (7180137057745128829UL + 411UL), 0UL, "dupString", &(____chimes_does_checkpoint_dupString_npm), "myOptionAlloc", &(____chimes_does_checkpoint_myOptionAlloc_npm), "myOptionFree", &(____chimes_does_checkpoint_myOptionFree_npm), "lastOption", &(____chimes_does_checkpoint_lastOption_npm), "findOption", &(____chimes_does_checkpoint_findOption_npm), "addArg", &(____chimes_does_checkpoint_addArg_npm), "freeArgs", &(____chimes_does_checkpoint_freeArgs_npm), "printArgs", &(____chimes_does_checkpoint_printArgs_npm), "processArgs", &(____chimes_does_checkpoint_processArgs_npm), (7180137057745128829UL + 591UL), (7180137057745128829UL + 611UL), (7180137057745128829UL + 319UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 318UL), (7180137057745128829UL + 539UL), (7180137057745128829UL + 625UL), (7180137057745128829UL + 478UL), (7180137057745128829UL + 196UL), (7180137057745128829UL + 196UL), (7180137057745128829UL + 550UL), (7180137057745128829UL + 583UL), (7180137057745128829UL + 592UL), (7180137057745128829UL + 604UL), (7180137057745128829UL + 69UL), (7180137057745128829UL + 152UL), (7180137057745128829UL + 253UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 250UL), (7180137057745128829UL + 219UL), (7180137057745128829UL + 251UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 48UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 322UL), (7180137057745128829UL + 381UL), (7180137057745128829UL + 323UL), (7180137057745128829UL + 411UL), (7180137057745128829UL + 2UL), (7180137057745128829UL + 60UL), (7180137057745128829UL + 326UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 6UL), (7180137057745128829UL + 64UL), (7180137057745128829UL + 9UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 8UL), (7180137057745128829UL + 66UL), (7180137057745128829UL + 549UL), (7180137057745128829UL + 583UL), (7180137057745128829UL + 583UL), (7180137057745128829UL + 583UL), (7180137057745128829UL + 207UL), (7180137057745128829UL + 250UL), (7180137057745128829UL + 206UL), (7180137057745128829UL + 219UL), (7180137057745128829UL + 208UL), (7180137057745128829UL + 219UL), (7180137057745128829UL + 616UL), (7180137057745128829UL + 455UL), (7180137057745128829UL + 615UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 76UL), (7180137057745128829UL + 92UL), (7180137057745128829UL + 75UL), (7180137057745128829UL + 167UL), (7180137057745128829UL + 168UL), (7180137057745128829UL + 196UL), (7180137057745128829UL + 169UL), (7180137057745128829UL + 196UL), (7180137057745128829UL + 92UL), (7180137057745128829UL + 96UL), (7180137057745128829UL + 10UL), (7180137057745128829UL + 48UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 381UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 73UL), (7180137057745128829UL + 96UL), "MyOptionSt", 8, "char*", (int)__builtin_offsetof (struct MyOptionSt, help), "char*", (int)__builtin_offsetof (struct MyOptionSt, longArg), "[ 2 x unsigned char ]", (int)__builtin_offsetof (struct MyOptionSt, shortArg), "int", (int)__builtin_offsetof (struct MyOptionSt, argFlag), "char", (int)__builtin_offsetof (struct MyOptionSt, type), "int", (int)__builtin_offsetof (struct MyOptionSt, sz), "void*", (int)__builtin_offsetof (struct MyOptionSt, ptr), "void*", (int)__builtin_offsetof (struct MyOptionSt, next), "option", 4, "char*", (int)__builtin_offsetof (struct option, name), "int", (int)__builtin_offsetof (struct option, has_arg), "int*", (int)__builtin_offsetof (struct option, flag), "int", (int)__builtin_offsetof (struct option, val), "myOptionAlloc", 2, "dupString", "dupString", "myOptionFree", 0, "freeArgs", 1, "myOptionFree", "lastOption", 0, "addArg", 2, "myOptionAlloc", "lastOption", "dupString", 0, "processArgs", 1, "findOption", "findOption", 0, "printArgs", 0, "printArgs|s|0", 1, "printArgs", "processArgs|option_index|0", 1, "processArgs");
+    init_module(7180137057745128829UL, 35, 9, 2, 9, 9, 0, 9, 6, 0, 2,
+                           &____alias_loc_id_0, (unsigned)12, (unsigned)2, (7180137057745128829UL + 1UL), (7180137057745128829UL + 2UL), (7180137057745128829UL + 3UL), (7180137057745128829UL + 4UL), (7180137057745128829UL + 5UL), (7180137057745128829UL + 6UL), (7180137057745128829UL + 7UL), (7180137057745128829UL + 8UL), (7180137057745128829UL + 9UL), (7180137057745128829UL + 10UL), (7180137057745128829UL + 48UL), (7180137057745128829UL + 615UL), "lastOption", (unsigned)1, (7180137057745128829UL + 620UL), "myOptionAlloc", (unsigned)3, (7180137057745128829UL + 60UL), (7180137057745128829UL + 64UL), (7180137057745128829UL + 66UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)1, (7180137057745128829UL + 69UL), (7180137057745128829UL + 70UL), (7180137057745128829UL + 71UL), (7180137057745128829UL + 72UL), (7180137057745128829UL + 73UL), (7180137057745128829UL + 74UL), (7180137057745128829UL + 75UL), (7180137057745128829UL + 76UL), (7180137057745128829UL + 92UL), (7180137057745128829UL + 619UL), "dupString", (unsigned)2, (7180137057745128829UL + 152UL), (7180137057745128829UL + 167UL),
+                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (7180137057745128829UL + 168UL), (7180137057745128829UL + 169UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)1, (7180137057745128829UL + 615UL), "myOptionFree", (unsigned)1, (7180137057745128829UL + 620UL),
+                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (7180137057745128829UL + 206UL), (7180137057745128829UL + 207UL), (7180137057745128829UL + 208UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (7180137057745128829UL + 251UL), (7180137057745128829UL + 253UL),
+                           &____alias_loc_id_6, (unsigned)13, (unsigned)1, (7180137057745128829UL + 317UL), (7180137057745128829UL + 318UL), (7180137057745128829UL + 319UL), (7180137057745128829UL + 320UL), (7180137057745128829UL + 321UL), (7180137057745128829UL + 322UL), (7180137057745128829UL + 323UL), (7180137057745128829UL + 324UL), (7180137057745128829UL + 325UL), (7180137057745128829UL + 326UL), (7180137057745128829UL + 381UL), (7180137057745128829UL + 411UL), (7180137057745128829UL + 620UL), "findOption", (unsigned)1, (7180137057745128829UL + 620UL),
+                           &____alias_loc_id_7, (unsigned)3, (unsigned)0, (7180137057745128829UL + 549UL), (7180137057745128829UL + 550UL), (7180137057745128829UL + 551UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (7180137057745128829UL + 591UL), (7180137057745128829UL + 592UL), (7180137057745128829UL + 604UL),
+                            "dupString", (void *)(&dupString_npm), (void *)__null, 0, 1, (7180137057745128829UL + 611UL), (7180137057745128829UL + 604UL), 3, "strlen", 1, (7180137057745128829UL + 611UL), 0UL, "calloc", 2, 0UL, 0UL, (7180137057745128829UL + 604UL), "strcpy", 2, (7180137057745128829UL + 604UL), (7180137057745128829UL + 611UL), (7180137057745128829UL + 608UL),
+                            "myOptionAlloc", (void *)(&myOptionAlloc_npm), (void *)__null, 0, 7, (7180137057745128829UL + 152UL), 0UL, 0UL, 0UL, (7180137057745128829UL + 96UL), 0UL, (7180137057745128829UL + 167UL), (7180137057745128829UL + 92UL), 5, "calloc", 2, 0UL, 0UL, (7180137057745128829UL + 92UL), "dupString", 1, (7180137057745128829UL + 167UL), (7180137057745128829UL + 96UL), "dupString", 1, (7180137057745128829UL + 152UL), (7180137057745128829UL + 96UL), "strlen", 1, (7180137057745128829UL + 152UL), 0UL, "strlen", 1, (7180137057745128829UL + 152UL), 0UL,
+                            "myOptionFree", (void *)(&myOptionFree_npm), (void *)__null, 0, 1, (7180137057745128829UL + 250UL), (7180137057745128829UL + 219UL), 3, "free", 1, (7180137057745128829UL + 219UL), 0UL, "free", 1, (7180137057745128829UL + 219UL), 0UL, "free", 1, (7180137057745128829UL + 250UL), 0UL,
+                            "lastOption", (void *)(&lastOption_npm), (void *)__null, 0, 1, (7180137057745128829UL + 196UL), (7180137057745128829UL + 196UL), 0,
+                            "findOption", (void *)(&findOption_npm), (void *)__null, 0, 2, (7180137057745128829UL + 583UL), 0UL, (7180137057745128829UL + 583UL), 0,
+                            "addArg", (void *)(&addArg_npm), (void *)__null, 0, 7, (7180137057745128829UL + 60UL), 0UL, 0UL, 0UL, (7180137057745128829UL + 64UL), 0UL, (7180137057745128829UL + 66UL), 0UL, 2, "myOptionAlloc", 7, (7180137057745128829UL + 60UL), 0UL, 0UL, 0UL, (7180137057745128829UL + 64UL), 0UL, (7180137057745128829UL + 66UL), (7180137057745128829UL + 620UL), "lastOption", 1, (7180137057745128829UL + 620UL), (7180137057745128829UL + 48UL),
+                            "freeArgs", (void *)(&freeArgs_npm), (void *)__null, 0, 0, 0UL, 1, "myOptionFree", 1, (7180137057745128829UL + 620UL), (7180137057745128829UL + 620UL),
+                            "printArgs", (void *)(&printArgs_npm), (void *)__null, 0, 0, 0UL, 5, "fprintf", 2, (7180137057745128829UL + 455UL), (7180137057745128829UL + 617UL), 0UL, "sprintf", 3, (7180137057745128829UL + 252UL), (7180137057745128829UL + 618UL), 0UL, 0UL, "fprintf", 3, (7180137057745128829UL + 455UL), (7180137057745128829UL + 252UL), (7180137057745128829UL + 620UL), 0UL, "fprintf", 6, (7180137057745128829UL + 455UL), (7180137057745128829UL + 621UL), 0UL, 0UL, 0UL, (7180137057745128829UL + 620UL), 0UL, "fprintf", 2, (7180137057745128829UL + 455UL), (7180137057745128829UL + 622UL), 0UL,
+                            "processArgs", (void *)(&processArgs_npm), (void *)__null, 0, 2, 0UL, (7180137057745128829UL + 539UL), 0UL, 15, "calloc", 2, 0UL, 0UL, (7180137057745128829UL + 411UL), "calloc", 2, 0UL, 0UL, (7180137057745128829UL + 381UL), "strcat", 2, (7180137057745128829UL + 411UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 415UL), "strcat", 2, (7180137057745128829UL + 411UL), (7180137057745128829UL + 623UL), (7180137057745128829UL + 422UL), "getopt_long", 5, 0UL, (7180137057745128829UL + 539UL), (7180137057745128829UL + 411UL), (7180137057745128829UL + 381UL), (7180137057745128829UL + 325UL), 0UL, "findOption", 2, (7180137057745128829UL + 620UL), 0UL, (7180137057745128829UL + 620UL), "fprintf", 3, (7180137057745128829UL + 455UL), (7180137057745128829UL + 624UL), 0UL, 0UL, "sscanf", 3, (7180137057745128829UL + 478UL), (7180137057745128829UL + 622UL), (7180137057745128829UL + 620UL), 0UL, "sscanf", 3, (7180137057745128829UL + 478UL), (7180137057745128829UL + 622UL), (7180137057745128829UL + 620UL), 0UL, "sscanf", 3, (7180137057745128829UL + 478UL), (7180137057745128829UL + 620UL), (7180137057745128829UL + 620UL), 0UL, "strncpy", 3, (7180137057745128829UL + 620UL), (7180137057745128829UL + 478UL), 0UL, (7180137057745128829UL + 507UL), "sscanf", 3, (7180137057745128829UL + 478UL), (7180137057745128829UL + 622UL), (7180137057745128829UL + 620UL), 0UL, "fprintf", 3, (7180137057745128829UL + 455UL), (7180137057745128829UL + 630UL), 0UL, 0UL, "free", 1, (7180137057745128829UL + 381UL), 0UL, "free", 1, (7180137057745128829UL + 411UL), 0UL,
+                           "dupString", &(____chimes_does_checkpoint_dupString_npm),
+                           "myOptionAlloc", &(____chimes_does_checkpoint_myOptionAlloc_npm),
+                           "myOptionFree", &(____chimes_does_checkpoint_myOptionFree_npm),
+                           "lastOption", &(____chimes_does_checkpoint_lastOption_npm),
+                           "findOption", &(____chimes_does_checkpoint_findOption_npm),
+                           "addArg", &(____chimes_does_checkpoint_addArg_npm),
+                           "freeArgs", &(____chimes_does_checkpoint_freeArgs_npm),
+                           "printArgs", &(____chimes_does_checkpoint_printArgs_npm),
+                           "processArgs", &(____chimes_does_checkpoint_processArgs_npm),
+                             (7180137057745128829UL + 591UL), (7180137057745128829UL + 611UL),
+                             (7180137057745128829UL + 319UL), (7180137057745128829UL + 620UL),
+                             (7180137057745128829UL + 318UL), (7180137057745128829UL + 539UL),
+                             (7180137057745128829UL + 625UL), (7180137057745128829UL + 478UL),
+                             (7180137057745128829UL + 196UL), (7180137057745128829UL + 196UL),
+                             (7180137057745128829UL + 550UL), (7180137057745128829UL + 583UL),
+                             (7180137057745128829UL + 592UL), (7180137057745128829UL + 604UL),
+                             (7180137057745128829UL + 69UL), (7180137057745128829UL + 152UL),
+                             (7180137057745128829UL + 253UL), (7180137057745128829UL + 620UL),
+                             (7180137057745128829UL + 250UL), (7180137057745128829UL + 219UL),
+                             (7180137057745128829UL + 251UL), (7180137057745128829UL + 620UL),
+                             (7180137057745128829UL + 48UL), (7180137057745128829UL + 620UL),
+                             (7180137057745128829UL + 322UL), (7180137057745128829UL + 381UL),
+                             (7180137057745128829UL + 323UL), (7180137057745128829UL + 411UL),
+                             (7180137057745128829UL + 2UL), (7180137057745128829UL + 60UL),
+                             (7180137057745128829UL + 326UL), (7180137057745128829UL + 620UL),
+                             (7180137057745128829UL + 6UL), (7180137057745128829UL + 64UL),
+                             (7180137057745128829UL + 9UL), (7180137057745128829UL + 620UL),
+                             (7180137057745128829UL + 8UL), (7180137057745128829UL + 66UL),
+                             (7180137057745128829UL + 549UL), (7180137057745128829UL + 583UL),
+                             (7180137057745128829UL + 583UL), (7180137057745128829UL + 583UL),
+                             (7180137057745128829UL + 207UL), (7180137057745128829UL + 250UL),
+                             (7180137057745128829UL + 206UL), (7180137057745128829UL + 219UL),
+                             (7180137057745128829UL + 208UL), (7180137057745128829UL + 219UL),
+                             (7180137057745128829UL + 616UL), (7180137057745128829UL + 455UL),
+                             (7180137057745128829UL + 615UL), (7180137057745128829UL + 620UL),
+                             (7180137057745128829UL + 76UL), (7180137057745128829UL + 92UL),
+                             (7180137057745128829UL + 75UL), (7180137057745128829UL + 167UL),
+                             (7180137057745128829UL + 168UL), (7180137057745128829UL + 196UL),
+                             (7180137057745128829UL + 169UL), (7180137057745128829UL + 196UL),
+                             (7180137057745128829UL + 92UL), (7180137057745128829UL + 96UL),
+                             (7180137057745128829UL + 10UL), (7180137057745128829UL + 48UL),
+                             (7180137057745128829UL + 620UL), (7180137057745128829UL + 620UL),
+                             (7180137057745128829UL + 381UL), (7180137057745128829UL + 620UL),
+                             (7180137057745128829UL + 73UL), (7180137057745128829UL + 96UL),
+                     "MyOptionSt", 8, "char*", (int)__builtin_offsetof (struct MyOptionSt, help), "char*", (int)__builtin_offsetof (struct MyOptionSt, longArg), "[ 2 x unsigned char ]", (int)__builtin_offsetof (struct MyOptionSt, shortArg), "int", (int)__builtin_offsetof (struct MyOptionSt, argFlag), "char", (int)__builtin_offsetof (struct MyOptionSt, type), "int", (int)__builtin_offsetof (struct MyOptionSt, sz), "void*", (int)__builtin_offsetof (struct MyOptionSt, ptr), "void*", (int)__builtin_offsetof (struct MyOptionSt, next),
+                     "option", 4, "char*", (int)__builtin_offsetof (struct option, name), "int", (int)__builtin_offsetof (struct option, has_arg), "int*", (int)__builtin_offsetof (struct option, flag), "int", (int)__builtin_offsetof (struct option, val),
+                             "myOptionAlloc", "_ZL13myOptionAllocPKccicPviS0_", 2, "dupString", "dupString",
+                             "myOptionFree", "_ZL12myOptionFreeP10MyOptionSt", 0,
+                             "freeArgs", "_Z8freeArgsv", 1, "myOptionFree",
+                             "lastOption", "_ZL10lastOptionP10MyOptionSt", 0,
+                             "addArg", "_Z6addArgPKccicPviS0_", 2, "myOptionAlloc", "lastOption",
+                             "dupString", "_ZL9dupStringPKc", 0,
+                             "processArgs", "_Z11processArgsiPPc", 1, "findOption",
+                             "findOption", "_ZL10findOptionP10MyOptionSth", 0,
+                             "printArgs", "_Z9printArgsv", 0,
+                        "printArgs|s|0", 1, "printArgs",
+                        "processArgs|option_index|0", 1, "processArgs",
+        "dupString", 7180137057745128925UL, (int)1, 7180137057745128996UL,
+        "dupString", 7180137057745128925UL, (int)1, 7180137057745128981UL,
+        "myOptionAlloc", 7180137057745129449UL, (int)7, 7180137057745128889UL, 0UL, 0UL, 0UL, 7180137057745128893UL, 0UL, 7180137057745128895UL,
+        "lastOption", 7180137057745128877UL, (int)1, 7180137057745129449UL,
+        "myOptionFree", 7180137057745129449UL, (int)1, 7180137057745129449UL,
+        "findOption", 7180137057745129449UL, (int)2, 7180137057745129449UL, 0UL);
     register_global_var("global|myargs", "%struct.MyOptionSt*", (void *)(&myargs), 8, 1, 0, 0);
     register_global_var("global|longest", "i32", (void *)(&longest), 4, 0, 0, 0);
-    register_functions(9, "cmdLineParser.c.pre.extern_ptrs.cpp", "myOptionAlloc", &myOptionAlloc, "myOptionFree", &myOptionFree, "freeArgs", &freeArgs, "lastOption", &lastOption, "addArg", &addArg, "dupString", &dupString, "processArgs", &processArgs, "findOption", &findOption, "printArgs", &printArgs);
     return 0;
 }
 
-static int __libchimes_module_init = module_init();
+static const int __libchimes_module_init = module_init();

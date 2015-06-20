@@ -8,6 +8,19 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "ray_tracer.c.pre.transformed.cpp"
+static int ____chimes_does_checkpoint_init_npm = 1;
+static int ____chimes_does_checkpoint_get_coord_npm = 1;
+static int ____chimes_does_checkpoint_modv_npm = 1;
+static int ____chimes_does_checkpoint_move_npm = 1;
+static int ____chimes_does_checkpoint_move_to_npm = 1;
+static int ____chimes_does_checkpoint_rot_x_npm = 1;
+static int ____chimes_does_checkpoint_rot_y_npm = 1;
+static int ____chimes_does_checkpoint_get_sphere_intersec_npm = 1;
+static int ____chimes_does_checkpoint_get_cos_angle_v1v2_npm = 1;
+static int ____chimes_does_checkpoint_usage_npm = 1;
+static int ____chimes_does_checkpoint_parse_three_doubles_npm = 1;
+static int ____chimes_does_checkpoint_parse_config_npm = 1;
+
 static int ____must_checkpoint_main_conf_0 = 2;
 
 static int ____must_manage_get_cos_angle_v1v2 = 2;
@@ -51,6 +64,74 @@ typedef long int ptrdiff_t;
 # 212 "/usr/local/lib/gcc/x86_64-apple-darwin14.0.0/4.9.2/include/stddef.h" 3 4
 typedef long unsigned int size_t;
 # 5 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
+
+
+extern void init_chimes();
+extern void checkpoint_transformed(int lbl, unsigned loc_id);
+
+extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
+        size_t return_alias, int n_params, ...);
+extern void calling_npm(const char *name, unsigned loc_id);
+extern void calling(void *func_ptr, int lbl, unsigned loc_id,
+        size_t set_return_alias, unsigned naliases, ...);
+extern int get_next_call();
+extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
+        unsigned n_local_arg_aliases, unsigned nargs, ...);
+extern void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
+        int nvars, int n_change_locs, int n_provided_npm_functions,
+        int n_external_npm_functions, int n_npm_conditionals,
+        int n_static_merges, int n_dynamic_merges, int nstructs, ...);
+extern void rm_stack(bool has_return_alias, size_t returned_alias,
+        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+extern void register_stack_var(const char *mangled_name, int *cond_registration,
+        const char *full_type, void *ptr, size_t size, int is_ptr,
+        int is_struct, int n_ptr_fields, ...);
+extern void register_stack_vars(int nvars, ...);
+extern void register_global_var(const char *mangled_name, const char *full_type,
+        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        ...);
+extern void register_constant(size_t const_id, void *address,
+        size_t length);
+extern int alias_group_changed(unsigned loc_id);
+extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
+        int is_struct, ...);
+extern void free_wrapper(void *ptr, size_t group);
+extern bool disable_current_thread();
+extern void reenable_current_thread(bool was_disabled);
+extern void thread_leaving();
+extern void *get_thread_ctx();
+
+extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
+        unsigned nlocals, ...);
+extern void register_thread_local_stack_vars(unsigned relation,
+        unsigned parent, void *parent_ctx_ptr, unsigned threads_in_region,
+        unsigned parent_stack_depth,
+        size_t region_id, unsigned nlocals, ...);
+extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
+        size_t region_id, int is_parallel_for);
+extern unsigned get_parent_vars_stack_depth();
+extern unsigned get_thread_stack_depth();
+
+extern void chimes_error();
+# 67 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
+extern "C" {
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_threads(void) throw ();
+}
+inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
+inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
+
+
+
+
+
+extern int ____chimes_replaying;
+# 1 "<command-line>" 2
+# 1 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 64 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/sys/cdefs.h" 1 3 4
@@ -490,69 +571,7 @@ FILE *funopen(const void *,
                  fpos_t (*)(void *, fpos_t, int),
                  int (*)(void *));
 }
-# 6 "/Users/jmg3/num-debug/src/libchimes/libchimes.h" 2
-
-extern void init_chimes();
-extern void calling_npm(int n_new_aliases, int n_change_locs, ...);
-extern void calling(void *func_ptr, int lbl, size_t set_return_alias,
-        unsigned loc_id, unsigned naliases, ...);
-extern int get_next_call();
-extern int new_stack(void *func_ptr, const char *funcname, int *conditional,
-        unsigned n_local_arg_aliases, unsigned nargs, ...);
-extern void init_module(size_t module_id, int n_contains_mappings,
-        int nfunctions, int nvars, int n_change_locs, int nstructs, ...);
-extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
-extern void register_stack_var(const char *mangled_name, int *cond_registration,
-        const char *full_type, void *ptr, size_t size, int is_ptr,
-        int is_struct, int n_ptr_fields, ...);
-extern void register_stack_vars(int nvars, ...);
-extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...);
-extern void register_constant(size_t const_id, void *address,
-        size_t length);
-extern void register_functions(int nfunctions, const char *module_name, ...);
-extern int alias_group_changed(unsigned loc_id);
-extern void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *calloc_wrapper(size_t num, size_t size, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
-        int is_struct, ...);
-extern void free_wrapper(void *ptr, size_t group);
-extern bool disable_current_thread();
-extern void reenable_current_thread(bool was_disabled);
-
-extern unsigned entering_omp_parallel(unsigned lbl, size_t *region_id,
-        unsigned nlocals, ...);
-extern void register_thread_local_stack_vars(unsigned relation,
-        unsigned parent, unsigned threads_in_region,
-        unsigned parent_stack_depth,
-        size_t region_id, unsigned nlocals, ...);
-extern void leaving_omp_parallel(unsigned expected_parent_stack_depth,
-        size_t region_id);
-extern unsigned get_parent_vars_stack_depth();
-extern unsigned get_thread_stack_depth();
-
-extern void chimes_error();
-# 60 "/Users/jmg3/num-debug/src/libchimes/libchimes.h"
-extern "C" {
-extern int omp_get_thread_num (void) throw ();
-extern int omp_get_num_threads(void) throw ();
-}
-inline unsigned LIBCHIMES_THREAD_NUM() { return omp_get_thread_num(); }
-inline unsigned LIBCHIMES_NUM_THREADS() { return omp_get_num_threads(); }
-
-
-
-
-
-extern int ____chimes_replaying;
-# 1 "<command-line>" 2
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-# 1 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-
+# 2 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c" 2
 # 1 "/usr/include/stdlib.h" 1 3 4
 # 65 "/usr/include/stdlib.h" 3 4
 # 1 "/usr/include/sys/wait.h" 1 3 4
@@ -2887,9 +2906,9 @@ double get_cos_angle_v1v2_resumable(double v1x, double v1y, double v1z, double v
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         double v2y, double v2z) {const int ____chimes_did_disable8 = new_stack((void *)(&get_cos_angle_v1v2), "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-     double a; a = (({ calling_npm(0, 0); modv_npm(v1x, v1y, v1z); })) ;
+     double a; a = (({ calling_npm("modv", 0); modv_npm(v1x, v1y, v1z); })) ;
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-     double b; b = (({ calling_npm(0, 0); modv_npm(v2x, v2y, v2z); })) ;
+     double b; b = (({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })) ;
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8); return (v1x * v2x + v1y * v2y + v1z * v2z) / (a * b);
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -2992,25 +3011,25 @@ void parse_config_resumable(int argc, char **argv, config *conf) {const int ____
 # 155 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
             case 'v':
 # 156 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                ({ calling_npm(4, 0, 2899028330670200146UL, 2899028330670199876UL, 2899028330670200123UL, 2899028330670199878UL, 2899028330670200123UL, 2899028330670199883UL, 2899028330670200123UL, 2899028330670199888UL); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); });
+                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); });
 # 157 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                 break;
 # 158 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
             case 'p':
 # 159 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                ({ calling_npm(4, 0, 2899028330670200146UL, 2899028330670199876UL, 2899028330670200123UL, 2899028330670199878UL, 2899028330670200123UL, 2899028330670199883UL, 2899028330670200123UL, 2899028330670199888UL); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); });
+                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); });
 # 160 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                 break;
 # 161 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
             case 'l':
 # 162 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                ({ calling_npm(4, 0, 2899028330670200146UL, 2899028330670199876UL, 2899028330670200123UL, 2899028330670199878UL, 2899028330670200123UL, 2899028330670199883UL, 2899028330670200123UL, 2899028330670199888UL); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); });
+                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); });
 # 163 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                 break;
 # 164 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
             case 'd':
 # 165 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                ({ calling_npm(4, 0, 2899028330670200146UL, 2899028330670199876UL, 2899028330670200123UL, 2899028330670199878UL, 2899028330670200123UL, 2899028330670199883UL, 2899028330670200123UL, 2899028330670199888UL); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); });
+                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); });
 # 166 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                 break;
 # 167 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3061,7 +3080,7 @@ void parse_config_resumable(int argc, char **argv, config *conf) {const int ____
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                     (conf->nspheres + 1) * sizeof(sphere), 2899028330670200477UL, 0, 1, (int)sizeof(struct _sphere), 0);
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                ({ calling_npm(1, 0, 2899028330670200477UL, 2899028330670199312UL); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
+                ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
 # 196 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                 conf->nspheres += 1;
 # 197 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3078,7 +3097,7 @@ void parse_config_resumable(int argc, char **argv, config *conf) {const int ____
 # 203 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         default:
 # 204 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-            ({ calling_npm(1, 0, 2899028330670200184UL, 2899028330670199823UL); usage_npm(argv); });
+            ({ calling_npm("usage", 0); usage_npm(argv); });
 # 205 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         }
 # 206 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3114,7 +3133,7 @@ config conf;
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       ;
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-    ({ calling_npm(8, 0, 2899028330670200666UL, 2899028330670200184UL, 2899028330670200195UL, 2899028330670200123UL, 2899028330670200146UL, 2899028330670199876UL, 2899028330670200123UL, 2899028330670199878UL, 2899028330670200123UL, 2899028330670199883UL, 2899028330670200123UL, 2899028330670199888UL, 2899028330670200477UL, 2899028330670199312UL, 2899028330670200184UL, 2899028330670199823UL); parse_config_npm(argc, argv, &conf); });
+    ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
        screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 2899028330670200241UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3123,7 +3142,7 @@ config conf;
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( t = (0) ; t < conf.nt; t++) {
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;; { call_lbl_6: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
+       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_2; } ;; { call_lbl_6: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
 # 217 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3132,11 +3151,11 @@ config conf;
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 219 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-      for (i = 0; i < conf.nx * conf.ny; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; }
+      for (i = 0; i < conf.nx * conf.ny; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; }
 # 220 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-           x = (({ calling_npm(0, 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
+           x = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
 # 221 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-           y = (({ calling_npm(0, 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })) ;
+           y = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })) ;
 # 222 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
          double t; t = (1.0E+10) ;
 # 223 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3147,7 +3166,7 @@ config conf;
            vz = (-conf.pz) ;
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-           mod_v = (({ calling_npm(0, 0); modv_npm(vx, vy, vz); })) ;
+           mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         vx = vx / mod_v;
 # 229 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3164,7 +3183,7 @@ config conf;
 # 235 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
              sphn = (conf.spheres + k) ;
 # 236 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-             taux = (({ calling_npm(0, 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
+             taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
           if (taux < 0) {continue;; };
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3190,7 +3209,7 @@ config conf;
              itz = (conf.pz + t * vz) ;
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 251 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-             tauxla = (({ calling_npm(0, 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+             tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
 # 254 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 255 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
           { int k; for ( k = (0) ; k < conf.nspheres; k++) {
@@ -3199,7 +3218,7 @@ config conf;
 # 257 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
             if (sphnb != spherehit) {
 # 258 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                 tauxlb = (({ calling_npm(0, 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+                 tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
 # 262 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
               if (tauxlb > 0 && tauxla < tauxlb) {
 # 263 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3213,7 +3232,7 @@ config conf;
 # 267 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
           } }
 # 268 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-             cost = (({ calling_npm(0, 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })) ;
+             cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })) ;
 # 271 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
           if (cost < 0) {cost = 0; };
 # 272 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3236,18 +3255,18 @@ config conf;
 # 281 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         screen[i].b = color.b;
 # 282 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-      } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
+      } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 283 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 284 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       { lbl_2: int i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } for ( i = (0) ; i < conf.nspheres; i++) {
 # 285 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-          ({ calling_npm(1, 0, 2899028330670200477UL, 2899028330670199447UL); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
+          ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
 # 286 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       } }
 # 287 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 288 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 289 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-         call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+         call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
 # 290 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 291 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 292 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3396,9 +3415,9 @@ double get_cos_angle_v1v2_quick(double v1x, double v1y, double v1z, double v2x,
 # 102 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         double v2y, double v2z) {const int ____chimes_did_disable8 = new_stack((void *)(&get_cos_angle_v1v2), "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 103 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-     double a; a = (({ calling_npm(0, 0); modv_npm(v1x, v1y, v1z); })) ;
+     double a; a = (({ calling_npm("modv", 0); modv_npm(v1x, v1y, v1z); })) ;
 # 104 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-     double b; b = (({ calling_npm(0, 0); modv_npm(v2x, v2y, v2z); })) ;
+     double b; b = (({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })) ;
 # 105 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8); return (v1x * v2x + v1y * v2y + v1z * v2z) / (a * b);
 # 106 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3500,25 +3519,25 @@ void parse_config_quick(int argc, char **argv, config *conf) {const int ____chim
 # 155 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
             case 'v':
 # 156 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                ({ calling_npm(4, 0, 2899028330670200146UL, 2899028330670199876UL, 2899028330670200123UL, 2899028330670199878UL, 2899028330670200123UL, 2899028330670199883UL, 2899028330670200123UL, 2899028330670199888UL); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); });
+                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->svx, &conf->svy, &conf->svz); });
 # 157 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                 break;
 # 158 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
             case 'p':
 # 159 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                ({ calling_npm(4, 0, 2899028330670200146UL, 2899028330670199876UL, 2899028330670200123UL, 2899028330670199878UL, 2899028330670200123UL, 2899028330670199883UL, 2899028330670200123UL, 2899028330670199888UL); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); });
+                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->px, &conf->py, &conf->pz); });
 # 160 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                 break;
 # 161 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
             case 'l':
 # 162 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                ({ calling_npm(4, 0, 2899028330670200146UL, 2899028330670199876UL, 2899028330670200123UL, 2899028330670199878UL, 2899028330670200123UL, 2899028330670199883UL, 2899028330670200123UL, 2899028330670199888UL); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); });
+                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->lx, &conf->ly, &conf->lz); });
 # 163 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                 break;
 # 164 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
             case 'd':
 # 165 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                ({ calling_npm(4, 0, 2899028330670200146UL, 2899028330670199876UL, 2899028330670200123UL, 2899028330670199878UL, 2899028330670200123UL, 2899028330670199883UL, 2899028330670200123UL, 2899028330670199888UL); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); });
+                ({ calling_npm("parse_three_doubles", 0); parse_three_doubles_npm(optarg, &conf->dx, &conf->dy, &conf->dz); });
 # 166 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                 break;
 # 167 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3569,7 +3588,7 @@ void parse_config_quick(int argc, char **argv, config *conf) {const int ____chim
 # 191 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                     (conf->nspheres + 1) * sizeof(sphere), 2899028330670200477UL, 0, 1, (int)sizeof(struct _sphere), 0);
 # 192 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                ({ calling_npm(1, 0, 2899028330670200477UL, 2899028330670199312UL); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
+                ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
 # 196 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
                 conf->nspheres += 1;
 # 197 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3586,7 +3605,7 @@ void parse_config_quick(int argc, char **argv, config *conf) {const int ____chim
 # 203 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         default:
 # 204 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-            ({ calling_npm(1, 0, 2899028330670200184UL, 2899028330670199823UL); usage_npm(argv); });
+            ({ calling_npm("usage", 0); usage_npm(argv); });
 # 205 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         }
 # 206 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3622,7 +3641,7 @@ config conf;
 # 210 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       ;
 # 211 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-    ({ calling_npm(8, 0, 2899028330670200666UL, 2899028330670200184UL, 2899028330670200195UL, 2899028330670200123UL, 2899028330670200146UL, 2899028330670199876UL, 2899028330670200123UL, 2899028330670199878UL, 2899028330670200123UL, 2899028330670199883UL, 2899028330670200123UL, 2899028330670199888UL, 2899028330670200477UL, 2899028330670199312UL, 2899028330670200184UL, 2899028330670199823UL); parse_config_npm(argc, argv, &conf); });
+    ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
 # 212 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
        screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 2899028330670200241UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
 # 213 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3631,7 +3650,7 @@ config conf;
 # 215 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
     { lbl_0: int t; register_stack_var("main|t|0", (int *)0x0, "i32", (void *)(&t), (size_t)4, 0, 0, 0); for ( t = (0) ; t < conf.nt; t++) {
 # 216 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ;; { call_lbl_6: bool ____chimes_disable0 = disable_current_thread(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
+       lbl_1: int i; register_stack_var("main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ;; { call_lbl_6: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(6, &____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); int ____chimes_first_iter0 = 1;
 # 217 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3640,11 +3659,11 @@ config conf;
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 218 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 219 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-      for (i = 0; i < conf.nx * conf.ny; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; }
+      for (i = 0; i < conf.nx * conf.ny; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 19, &bShadow, &color, &cost, &fact, &itx, &ity, &itz, &mod_v, &spherehit, &sphn, &sphnb, &taux, &tauxla, &tauxlb, &vx, &vy, &vz, &x, &y); ____chimes_first_iter0 = 0; }
 # 220 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-           x = (({ calling_npm(0, 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
+           x = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.nx, -f_max, f_max, i / conf.ny); })) ;
 # 221 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-           y = (({ calling_npm(0, 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })) ;
+           y = (({ calling_npm("get_coord", 0); get_coord_npm(0., conf.ny, -f_max, f_max, i % conf.ny); })) ;
 # 222 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
          double t; t = (1.0E+10) ;
 # 223 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3655,7 +3674,7 @@ config conf;
            vz = (-conf.pz) ;
 # 226 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 227 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-           mod_v = (({ calling_npm(0, 0); modv_npm(vx, vy, vz); })) ;
+           mod_v = (({ calling_npm("modv", 0); modv_npm(vx, vy, vz); })) ;
 # 228 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         vx = vx / mod_v;
 # 229 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3672,7 +3691,7 @@ config conf;
 # 235 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
              sphn = (conf.spheres + k) ;
 # 236 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-             taux = (({ calling_npm(0, 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
+             taux = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphn->cx, sphn->cy, sphn->cz, sphn->radius, conf.px, conf.py, conf.pz, vx, vy, vz); })) ;
 # 238 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
           if (taux < 0) {continue;; };
 # 239 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3698,7 +3717,7 @@ config conf;
              itz = (conf.pz + t * vz) ;
 # 250 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 251 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-             tauxla = (({ calling_npm(0, 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+             tauxla = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(spherehit->cx, spherehit->cy, spherehit->cz, spherehit->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
 # 254 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 255 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
           { int k; for ( k = (0) ; k < conf.nspheres; k++) {
@@ -3707,7 +3726,7 @@ config conf;
 # 257 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
             if (sphnb != spherehit) {
 # 258 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-                 tauxlb = (({ calling_npm(0, 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
+                 tauxlb = (({ calling_npm("get_sphere_intersec", 0); get_sphere_intersec_npm(sphnb->cx, sphnb->cy, sphnb->cz, sphnb->radius, conf.lx, conf.ly, conf.lz, itx - conf.lx, ity - conf.ly, itz - conf.lz); })) ;
 # 262 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
               if (tauxlb > 0 && tauxla < tauxlb) {
 # 263 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3721,7 +3740,7 @@ config conf;
 # 267 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
           } }
 # 268 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-             cost = (({ calling_npm(0, 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })) ;
+             cost = (({ calling_npm("get_cos_angle_v1v2", 0); get_cos_angle_v1v2_npm(conf.dx, conf.dy, conf.dz, itx - spherehit->cx, ity - spherehit->cy, itz - spherehit->cz); })) ;
 # 271 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
           if (cost < 0) {cost = 0; };
 # 272 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -3744,18 +3763,18 @@ config conf;
 # 281 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
         screen[i].b = color.b;
 # 282 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-      } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0); reenable_current_thread(____chimes_disable0); }
+      } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 283 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 284 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       { lbl_2: int i; register_stack_var("main|i|1", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); for ( i = (0) ; i < conf.nspheres; i++) {
 # 285 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-          ({ calling_npm(1, 0, 2899028330670200477UL, 2899028330670199447UL); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
+          ({ calling_npm("move", 0); move_npm(conf.spheres + i, conf.svx, conf.svy, conf.svz); });
 # 286 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
       } }
 # 287 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 288 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 289 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
-         call_lbl_2: ({ calling((void*)checkpoint, 2, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) ;
+         call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
 # 290 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 291 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
 # 292 "/Users/jmg3/num-debug/src/examples/openmp/ray_tracer.c"
@@ -4090,9 +4109,111 @@ void parse_config_npm(int argc, char **argv, config *conf) {
 
 
 static int module_init() {
-    init_module(2899028330670199275UL, 31, 13, 1, 1, 3, 2899028330670199275UL + 627UL, 2899028330670199275UL + 871UL, 2899028330670199275UL + 625UL, 2899028330670199275UL + 848UL, 2899028330670199275UL + 624UL, 2899028330670199275UL + 909UL, 2899028330670199275UL + 555UL, 2899028330670199275UL + 613UL, 2899028330670199275UL + 554UL, 2899028330670199275UL + 608UL, 2899028330670199275UL + 557UL, 2899028330670199275UL + 584UL, 2899028330670199275UL + 628UL, 2899028330670199275UL + 757UL, 2899028330670199275UL + 553UL, 2899028330670199275UL + 603UL, 2899028330670199275UL + 552UL, 2899028330670199275UL + 601UL, 2899028330670199275UL + 633UL, 2899028330670199275UL + 823UL, 2899028330670199275UL + 176UL, 2899028330670199275UL + 201UL, 2899028330670199275UL + 256UL, 2899028330670199275UL + 303UL, 2899028330670199275UL + 1UL, 2899028330670199275UL + 37UL, 2899028330670199275UL + 919UL, 2899028330670199275UL + 1391UL, 2899028330670199275UL + 1398UL, 2899028330670199275UL + 898UL, 2899028330670199275UL + 933UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 548UL, 2899028330670199275UL + 543UL, 2899028330670199275UL + 629UL, 2899028330670199275UL + 759UL, 2899028330670199275UL + 935UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 630UL, 2899028330670199275UL + 775UL, 2899028330670199275UL + 631UL, 2899028330670199275UL + 791UL, 2899028330670199275UL + 632UL, 2899028330670199275UL + 807UL, 2899028330670199275UL + 556UL, 2899028330670199275UL + 582UL, 2899028330670199275UL + 205UL, 2899028330670199275UL + 252UL, 2899028330670199275UL + 141UL, 2899028330670199275UL + 172UL, 2899028330670199275UL + 943UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 848UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 537UL, 2899028330670199275UL + 548UL, 2899028330670199275UL + 1405UL, 2899028330670199275UL + 871UL, 2899028330670199275UL + 920UL, 2899028330670199275UL + 1202UL, 2899028330670199275UL + 921UL, 2899028330670199275UL + 966UL, "_config", 17, "double", (int)__builtin_offsetof (struct _config, px), "double", (int)__builtin_offsetof (struct _config, py), "double", (int)__builtin_offsetof (struct _config, pz), "double", (int)__builtin_offsetof (struct _config, lx), "double", (int)__builtin_offsetof (struct _config, ly), "double", (int)__builtin_offsetof (struct _config, lz), "double", (int)__builtin_offsetof (struct _config, dx), "double", (int)__builtin_offsetof (struct _config, dy), "double", (int)__builtin_offsetof (struct _config, dz), "double", (int)__builtin_offsetof (struct _config, svx), "double", (int)__builtin_offsetof (struct _config, svy), "double", (int)__builtin_offsetof (struct _config, svz), "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "%struct._sphere*", (int)__builtin_offsetof (struct _config, spheres), "int", (int)__builtin_offsetof (struct _config, nspheres), "int", (int)__builtin_offsetof (struct _config, nt), "_rgb", 3, "double", (int)__builtin_offsetof (struct _rgb, r), "double", (int)__builtin_offsetof (struct _rgb, g), "double", (int)__builtin_offsetof (struct _rgb, b), "_sphere", 7, "double", (int)__builtin_offsetof (struct _sphere, cx), "double", (int)__builtin_offsetof (struct _sphere, cy), "double", (int)__builtin_offsetof (struct _sphere, cz), "double", (int)__builtin_offsetof (struct _sphere, radius), "double", (int)__builtin_offsetof (struct _sphere, clR), "double", (int)__builtin_offsetof (struct _sphere, clG), "double", (int)__builtin_offsetof (struct _sphere, clB), "get_cos_angle_v1v2", 2, "modv", "modv", "main", 10, "parse_config", "get_coord", "get_coord", "modv", "get_sphere_intersec", "get_sphere_intersec", "get_sphere_intersec", "get_cos_angle_v1v2", "move", "checkpoint", "modv", 0, "move", 0, "get_sphere_intersec", 0, "move_to", 0, "get_coord", 0, "parse_three_doubles", 0, "init", 0, "parse_config", 6, "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "init", "usage", "usage", 0, "rot_y", 0, "rot_x", 0, "main|conf|0", 1, "main", &____alias_loc_id_0, (unsigned)31, 2899028330670199275UL + 917UL, 2899028330670199275UL + 918UL, 2899028330670199275UL + 919UL, 2899028330670199275UL + 921UL, 2899028330670199275UL + 922UL, 2899028330670199275UL + 923UL, 2899028330670199275UL + 924UL, 2899028330670199275UL + 925UL, 2899028330670199275UL + 926UL, 2899028330670199275UL + 927UL, 2899028330670199275UL + 928UL, 2899028330670199275UL + 929UL, 2899028330670199275UL + 930UL, 2899028330670199275UL + 931UL, 2899028330670199275UL + 932UL, 2899028330670199275UL + 933UL, 2899028330670199275UL + 934UL, 2899028330670199275UL + 935UL, 2899028330670199275UL + 936UL, 2899028330670199275UL + 937UL, 2899028330670199275UL + 938UL, 2899028330670199275UL + 939UL, 2899028330670199275UL + 940UL, 2899028330670199275UL + 941UL, 2899028330670199275UL + 942UL, 2899028330670199275UL + 943UL, 2899028330670199275UL + 944UL, 2899028330670199275UL + 945UL, 2899028330670199275UL + 946UL, 2899028330670199275UL + 947UL, 2899028330670199275UL + 966UL, &____alias_loc_id_1, (unsigned)9, 2899028330670199275UL + 1UL, 2899028330670199275UL + 2UL, 2899028330670199275UL + 3UL, 2899028330670199275UL + 4UL, 2899028330670199275UL + 5UL, 2899028330670199275UL + 6UL, 2899028330670199275UL + 7UL, 2899028330670199275UL + 8UL, 2899028330670199275UL + 37UL, &____alias_loc_id_2, (unsigned)5, 2899028330670199275UL + 81UL, 2899028330670199275UL + 82UL, 2899028330670199275UL + 83UL, 2899028330670199275UL + 84UL, 2899028330670199275UL + 85UL, &____alias_loc_id_3, (unsigned)3, 2899028330670199275UL + 115UL, 2899028330670199275UL + 116UL, 2899028330670199275UL + 117UL, &____alias_loc_id_4, (unsigned)5, 2899028330670199275UL + 141UL, 2899028330670199275UL + 142UL, 2899028330670199275UL + 143UL, 2899028330670199275UL + 144UL, 2899028330670199275UL + 172UL, &____alias_loc_id_5, (unsigned)5, 2899028330670199275UL + 176UL, 2899028330670199275UL + 177UL, 2899028330670199275UL + 178UL, 2899028330670199275UL + 179UL, 2899028330670199275UL + 201UL, &____alias_loc_id_6, (unsigned)5, 2899028330670199275UL + 205UL, 2899028330670199275UL + 206UL, 2899028330670199275UL + 207UL, 2899028330670199275UL + 208UL, 2899028330670199275UL + 252UL, &____alias_loc_id_7, (unsigned)5, 2899028330670199275UL + 256UL, 2899028330670199275UL + 257UL, 2899028330670199275UL + 258UL, 2899028330670199275UL + 259UL, 2899028330670199275UL + 303UL, &____alias_loc_id_8, (unsigned)17, 2899028330670199275UL + 305UL, 2899028330670199275UL + 306UL, 2899028330670199275UL + 307UL, 2899028330670199275UL + 308UL, 2899028330670199275UL + 309UL, 2899028330670199275UL + 310UL, 2899028330670199275UL + 311UL, 2899028330670199275UL + 312UL, 2899028330670199275UL + 313UL, 2899028330670199275UL + 314UL, 2899028330670199275UL + 315UL, 2899028330670199275UL + 316UL, 2899028330670199275UL + 317UL, 2899028330670199275UL + 318UL, 2899028330670199275UL + 319UL, 2899028330670199275UL + 320UL, 2899028330670199275UL + 321UL, &____alias_loc_id_9, (unsigned)8, 2899028330670199275UL + 483UL, 2899028330670199275UL + 484UL, 2899028330670199275UL + 485UL, 2899028330670199275UL + 486UL, 2899028330670199275UL + 487UL, 2899028330670199275UL + 488UL, 2899028330670199275UL + 489UL, 2899028330670199275UL + 490UL, &____alias_loc_id_10, (unsigned)1, 2899028330670199275UL + 537UL, &____alias_loc_id_11, (unsigned)11, 2899028330670199275UL + 552UL, 2899028330670199275UL + 553UL, 2899028330670199275UL + 554UL, 2899028330670199275UL + 555UL, 2899028330670199275UL + 556UL, 2899028330670199275UL + 557UL, 2899028330670199275UL + 582UL, 2899028330670199275UL + 584UL, 2899028330670199275UL + 603UL, 2899028330670199275UL + 608UL, 2899028330670199275UL + 613UL, &____alias_loc_id_12, (unsigned)19, 2899028330670199275UL + 623UL, 2899028330670199275UL + 624UL, 2899028330670199275UL + 625UL, 2899028330670199275UL + 626UL, 2899028330670199275UL + 627UL, 2899028330670199275UL + 628UL, 2899028330670199275UL + 629UL, 2899028330670199275UL + 630UL, 2899028330670199275UL + 631UL, 2899028330670199275UL + 632UL, 2899028330670199275UL + 633UL, 2899028330670199275UL + 757UL, 2899028330670199275UL + 759UL, 2899028330670199275UL + 775UL, 2899028330670199275UL + 791UL, 2899028330670199275UL + 807UL, 2899028330670199275UL + 823UL, 2899028330670199275UL + 848UL, 2899028330670199275UL + 1403UL, &____alias_loc_id_13, (unsigned)6, 2899028330670199275UL + 917UL, 2899028330670199275UL + 918UL, 2899028330670199275UL + 919UL, 2899028330670199275UL + 921UL, 2899028330670199275UL + 922UL, 2899028330670199275UL + 923UL);
-    register_functions(13, "ray_tracer.c.pre.hard.cpp", "init", &init, "get_coord", &get_coord, "modv", &modv, "move", &move, "move_to", &move_to, "rot_x", &rot_x, "rot_y", &rot_y, "get_sphere_intersec", &get_sphere_intersec, "get_cos_angle_v1v2", &get_cos_angle_v1v2, "usage", &usage, "parse_three_doubles", &parse_three_doubles, "parse_config", &parse_config, "main", &main);
+    init_module(2899028330670199275UL, 31, 13, 1, 14, 12, 0, 12, 17, 0, 3,
+                           &____alias_loc_id_0, (unsigned)31, (unsigned)2, (2899028330670199275UL + 917UL), (2899028330670199275UL + 918UL), (2899028330670199275UL + 919UL), (2899028330670199275UL + 921UL), (2899028330670199275UL + 922UL), (2899028330670199275UL + 923UL), (2899028330670199275UL + 924UL), (2899028330670199275UL + 925UL), (2899028330670199275UL + 926UL), (2899028330670199275UL + 927UL), (2899028330670199275UL + 928UL), (2899028330670199275UL + 929UL), (2899028330670199275UL + 930UL), (2899028330670199275UL + 931UL), (2899028330670199275UL + 932UL), (2899028330670199275UL + 933UL), (2899028330670199275UL + 934UL), (2899028330670199275UL + 935UL), (2899028330670199275UL + 936UL), (2899028330670199275UL + 937UL), (2899028330670199275UL + 938UL), (2899028330670199275UL + 939UL), (2899028330670199275UL + 940UL), (2899028330670199275UL + 941UL), (2899028330670199275UL + 942UL), (2899028330670199275UL + 943UL), (2899028330670199275UL + 944UL), (2899028330670199275UL + 945UL), (2899028330670199275UL + 946UL), (2899028330670199275UL + 947UL), (2899028330670199275UL + 966UL), "move", (unsigned)1, (2899028330670199275UL + 1202UL), "parse_config", (unsigned)2, (2899028330670199275UL + 920UL), (2899028330670199275UL + 1391UL),
+                           &____alias_loc_id_1, (unsigned)9, (unsigned)0, (2899028330670199275UL + 1UL), (2899028330670199275UL + 2UL), (2899028330670199275UL + 3UL), (2899028330670199275UL + 4UL), (2899028330670199275UL + 5UL), (2899028330670199275UL + 6UL), (2899028330670199275UL + 7UL), (2899028330670199275UL + 8UL), (2899028330670199275UL + 37UL),
+                           &____alias_loc_id_2, (unsigned)5, (unsigned)0, (2899028330670199275UL + 81UL), (2899028330670199275UL + 82UL), (2899028330670199275UL + 83UL), (2899028330670199275UL + 84UL), (2899028330670199275UL + 85UL),
+                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (2899028330670199275UL + 115UL), (2899028330670199275UL + 116UL), (2899028330670199275UL + 117UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (2899028330670199275UL + 141UL), (2899028330670199275UL + 142UL), (2899028330670199275UL + 143UL), (2899028330670199275UL + 144UL), (2899028330670199275UL + 172UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (2899028330670199275UL + 176UL), (2899028330670199275UL + 177UL), (2899028330670199275UL + 178UL), (2899028330670199275UL + 179UL), (2899028330670199275UL + 201UL),
+                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (2899028330670199275UL + 205UL), (2899028330670199275UL + 206UL), (2899028330670199275UL + 207UL), (2899028330670199275UL + 208UL), (2899028330670199275UL + 252UL),
+                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (2899028330670199275UL + 256UL), (2899028330670199275UL + 257UL), (2899028330670199275UL + 258UL), (2899028330670199275UL + 259UL), (2899028330670199275UL + 303UL),
+                           &____alias_loc_id_8, (unsigned)17, (unsigned)0, (2899028330670199275UL + 305UL), (2899028330670199275UL + 306UL), (2899028330670199275UL + 307UL), (2899028330670199275UL + 308UL), (2899028330670199275UL + 309UL), (2899028330670199275UL + 310UL), (2899028330670199275UL + 311UL), (2899028330670199275UL + 312UL), (2899028330670199275UL + 313UL), (2899028330670199275UL + 314UL), (2899028330670199275UL + 315UL), (2899028330670199275UL + 316UL), (2899028330670199275UL + 317UL), (2899028330670199275UL + 318UL), (2899028330670199275UL + 319UL), (2899028330670199275UL + 320UL), (2899028330670199275UL + 321UL),
+                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (2899028330670199275UL + 483UL), (2899028330670199275UL + 484UL), (2899028330670199275UL + 485UL), (2899028330670199275UL + 486UL), (2899028330670199275UL + 487UL), (2899028330670199275UL + 488UL), (2899028330670199275UL + 489UL), (2899028330670199275UL + 490UL),
+                            &____alias_loc_id_10, (unsigned)1, (unsigned)0, (2899028330670199275UL + 537UL),
+                            &____alias_loc_id_11, (unsigned)11, (unsigned)0, (2899028330670199275UL + 552UL), (2899028330670199275UL + 553UL), (2899028330670199275UL + 554UL), (2899028330670199275UL + 555UL), (2899028330670199275UL + 556UL), (2899028330670199275UL + 557UL), (2899028330670199275UL + 582UL), (2899028330670199275UL + 584UL), (2899028330670199275UL + 603UL), (2899028330670199275UL + 608UL), (2899028330670199275UL + 613UL),
+                            &____alias_loc_id_12, (unsigned)19, (unsigned)3, (2899028330670199275UL + 623UL), (2899028330670199275UL + 624UL), (2899028330670199275UL + 625UL), (2899028330670199275UL + 626UL), (2899028330670199275UL + 627UL), (2899028330670199275UL + 628UL), (2899028330670199275UL + 629UL), (2899028330670199275UL + 630UL), (2899028330670199275UL + 631UL), (2899028330670199275UL + 632UL), (2899028330670199275UL + 633UL), (2899028330670199275UL + 757UL), (2899028330670199275UL + 759UL), (2899028330670199275UL + 775UL), (2899028330670199275UL + 791UL), (2899028330670199275UL + 807UL), (2899028330670199275UL + 823UL), (2899028330670199275UL + 848UL), (2899028330670199275UL + 1403UL), "parse_three_doubles", (unsigned)2, (2899028330670199275UL + 848UL), (2899028330670199275UL + 871UL), "usage", (unsigned)1, (2899028330670199275UL + 909UL), "init", (unsigned)1, (2899028330670199275UL + 1202UL),
+                            &____alias_loc_id_13, (unsigned)6, (unsigned)2, (2899028330670199275UL + 917UL), (2899028330670199275UL + 918UL), (2899028330670199275UL + 919UL), (2899028330670199275UL + 921UL), (2899028330670199275UL + 922UL), (2899028330670199275UL + 923UL), "move", (unsigned)1, (2899028330670199275UL + 1202UL), "parse_config", (unsigned)2, (2899028330670199275UL + 920UL), (2899028330670199275UL + 1391UL),
+                            "init", (void *)(&init_npm), (void *)__null, 0, 8, (2899028330670199275UL + 37UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 1, "__assert_rtn", 4, (2899028330670199275UL + 1395UL), (2899028330670199275UL + 1396UL), 0UL, (2899028330670199275UL + 1397UL), 0UL,
+                            "get_coord", (void *)(&get_coord_npm), (void *)__null, 0, 5, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
+                            "modv", (void *)(&modv_npm), (void *)__null, 0, 3, 0UL, 0UL, 0UL, 0UL, 1, "sqrt", 1, 0UL, 0UL,
+                            "move", (void *)(&move_npm), (void *)__null, 0, 4, (2899028330670199275UL + 172UL), 0UL, 0UL, 0UL, 0UL, 0,
+                            "move_to", (void *)(&move_to_npm), (void *)__null, 0, 4, (2899028330670199275UL + 201UL), 0UL, 0UL, 0UL, 0UL, 0,
+                            "rot_x", (void *)(&rot_x_npm), (void *)__null, 0, 2, (2899028330670199275UL + 252UL), 0UL, 0UL, 4, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL,
+                            "rot_y", (void *)(&rot_y_npm), (void *)__null, 0, 2, (2899028330670199275UL + 303UL), 0UL, 0UL, 4, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL,
+                            "get_sphere_intersec", (void *)(&get_sphere_intersec_npm), (void *)__null, 0, 10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2, "sqrt", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "get_cos_angle_v1v2", (void *)(&get_cos_angle_v1v2_npm), (void *)__null, 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2, "modv", 3, 0UL, 0UL, 0UL, 0UL, "modv", 3, 0UL, 0UL, 0UL, 0UL,
+                            "usage", (void *)(&usage_npm), (void *)__null, 0, 1, (2899028330670199275UL + 548UL), 0UL, 2, "fprintf", 3, (2899028330670199275UL + 898UL), (2899028330670199275UL + 1399UL), (2899028330670199275UL + 543UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "parse_three_doubles", (void *)(&parse_three_doubles_npm), (void *)__null, 0, 4, (2899028330670199275UL + 601UL), (2899028330670199275UL + 603UL), (2899028330670199275UL + 608UL), (2899028330670199275UL + 613UL), 0UL, 7, "strchr", 2, (2899028330670199275UL + 601UL), 0UL, (2899028330670199275UL + 582UL), "__assert_rtn", 4, (2899028330670199275UL + 1400UL), (2899028330670199275UL + 1396UL), 0UL, (2899028330670199275UL + 1401UL), 0UL, "strchr", 2, (2899028330670199275UL + 582UL), 0UL, (2899028330670199275UL + 584UL), "__assert_rtn", 4, (2899028330670199275UL + 1400UL), (2899028330670199275UL + 1396UL), 0UL, (2899028330670199275UL + 1402UL), 0UL, "atof", 1, (2899028330670199275UL + 601UL), 0UL, "atof", 1, (2899028330670199275UL + 582UL), 0UL, "atof", 1, (2899028330670199275UL + 584UL), 0UL,
+                            "parse_config", (void *)(&parse_config_npm), (void *)__null, 0, 3, 0UL, (2899028330670199275UL + 909UL), (2899028330670199275UL + 848UL), 0UL, 31, "_getopt", 3, 0UL, (2899028330670199275UL + 909UL), (2899028330670199275UL + 1404UL), 0UL, "atoi", 1, (2899028330670199275UL + 871UL), 0UL, "atoi", 1, (2899028330670199275UL + 871UL), 0UL, "atoi", 1, (2899028330670199275UL + 871UL), 0UL, "parse_three_doubles", 4, (2899028330670199275UL + 871UL), (2899028330670199275UL + 848UL), (2899028330670199275UL + 848UL), (2899028330670199275UL + 848UL), 0UL, "parse_three_doubles", 4, (2899028330670199275UL + 871UL), (2899028330670199275UL + 848UL), (2899028330670199275UL + 848UL), (2899028330670199275UL + 848UL), 0UL, "parse_three_doubles", 4, (2899028330670199275UL + 871UL), (2899028330670199275UL + 848UL), (2899028330670199275UL + 848UL), (2899028330670199275UL + 848UL), 0UL, "parse_three_doubles", 4, (2899028330670199275UL + 871UL), (2899028330670199275UL + 848UL), (2899028330670199275UL + 848UL), (2899028330670199275UL + 848UL), 0UL, "strchr", 2, (2899028330670199275UL + 871UL), 0UL, (2899028330670199275UL + 757UL), "__assert_rtn", 4, (2899028330670199275UL + 1402UL), (2899028330670199275UL + 1396UL), 0UL, (2899028330670199275UL + 1401UL), 0UL, "strchr", 2, (2899028330670199275UL + 757UL), 0UL, (2899028330670199275UL + 759UL), "__assert_rtn", 4, (2899028330670199275UL + 1402UL), (2899028330670199275UL + 1396UL), 0UL, (2899028330670199275UL + 1402UL), 0UL, "strchr", 2, (2899028330670199275UL + 759UL), 0UL, (2899028330670199275UL + 775UL), "__assert_rtn", 4, (2899028330670199275UL + 1402UL), (2899028330670199275UL + 1396UL), 0UL, (2899028330670199275UL + 1401UL), 0UL, "strchr", 2, (2899028330670199275UL + 775UL), 0UL, (2899028330670199275UL + 791UL), "__assert_rtn", 4, (2899028330670199275UL + 1402UL), (2899028330670199275UL + 1396UL), 0UL, (2899028330670199275UL + 1402UL), 0UL, "strchr", 2, (2899028330670199275UL + 791UL), 0UL, (2899028330670199275UL + 807UL), "__assert_rtn", 4, (2899028330670199275UL + 1402UL), (2899028330670199275UL + 1396UL), 0UL, (2899028330670199275UL + 1401UL), 0UL, "strchr", 2, (2899028330670199275UL + 807UL), 0UL, (2899028330670199275UL + 823UL), "__assert_rtn", 4, (2899028330670199275UL + 1402UL), (2899028330670199275UL + 1396UL), 0UL, (2899028330670199275UL + 1401UL), 0UL, "realloc", 2, (2899028330670199275UL + 1202UL), 0UL, (2899028330670199275UL + 1202UL), "atof", 1, (2899028330670199275UL + 871UL), 0UL, "atof", 1, (2899028330670199275UL + 757UL), 0UL, "atof", 1, (2899028330670199275UL + 759UL), 0UL, "atof", 1, (2899028330670199275UL + 775UL), 0UL, "atof", 1, (2899028330670199275UL + 791UL), 0UL, "atof", 1, (2899028330670199275UL + 807UL), 0UL, "atof", 1, (2899028330670199275UL + 823UL), 0UL, "init", 8, (2899028330670199275UL + 1202UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fprintf", 3, (2899028330670199275UL + 898UL), (2899028330670199275UL + 1411UL), 0UL, 0UL, "usage", 1, (2899028330670199275UL + 909UL), 0UL,
+                           "init", &(____chimes_does_checkpoint_init_npm),
+                           "get_coord", &(____chimes_does_checkpoint_get_coord_npm),
+                           "modv", &(____chimes_does_checkpoint_modv_npm),
+                           "move", &(____chimes_does_checkpoint_move_npm),
+                           "move_to", &(____chimes_does_checkpoint_move_to_npm),
+                           "rot_x", &(____chimes_does_checkpoint_rot_x_npm),
+                           "rot_y", &(____chimes_does_checkpoint_rot_y_npm),
+                           "get_sphere_intersec", &(____chimes_does_checkpoint_get_sphere_intersec_npm),
+                           "get_cos_angle_v1v2", &(____chimes_does_checkpoint_get_cos_angle_v1v2_npm),
+                           "usage", &(____chimes_does_checkpoint_usage_npm),
+                           "parse_three_doubles", &(____chimes_does_checkpoint_parse_three_doubles_npm),
+                           "parse_config", &(____chimes_does_checkpoint_parse_config_npm),
+                             (2899028330670199275UL + 627UL), (2899028330670199275UL + 871UL),
+                             (2899028330670199275UL + 625UL), (2899028330670199275UL + 848UL),
+                             (2899028330670199275UL + 624UL), (2899028330670199275UL + 909UL),
+                             (2899028330670199275UL + 555UL), (2899028330670199275UL + 613UL),
+                             (2899028330670199275UL + 554UL), (2899028330670199275UL + 608UL),
+                             (2899028330670199275UL + 557UL), (2899028330670199275UL + 584UL),
+                             (2899028330670199275UL + 628UL), (2899028330670199275UL + 757UL),
+                             (2899028330670199275UL + 553UL), (2899028330670199275UL + 603UL),
+                             (2899028330670199275UL + 552UL), (2899028330670199275UL + 601UL),
+                             (2899028330670199275UL + 633UL), (2899028330670199275UL + 823UL),
+                             (2899028330670199275UL + 176UL), (2899028330670199275UL + 201UL),
+                             (2899028330670199275UL + 256UL), (2899028330670199275UL + 303UL),
+                             (2899028330670199275UL + 1UL), (2899028330670199275UL + 37UL),
+                             (2899028330670199275UL + 919UL), (2899028330670199275UL + 1391UL),
+                             (2899028330670199275UL + 1398UL), (2899028330670199275UL + 898UL),
+                             (2899028330670199275UL + 933UL), (2899028330670199275UL + 1202UL),
+                             (2899028330670199275UL + 548UL), (2899028330670199275UL + 543UL),
+                             (2899028330670199275UL + 629UL), (2899028330670199275UL + 759UL),
+                             (2899028330670199275UL + 935UL), (2899028330670199275UL + 1202UL),
+                             (2899028330670199275UL + 630UL), (2899028330670199275UL + 775UL),
+                             (2899028330670199275UL + 631UL), (2899028330670199275UL + 791UL),
+                             (2899028330670199275UL + 632UL), (2899028330670199275UL + 807UL),
+                             (2899028330670199275UL + 556UL), (2899028330670199275UL + 582UL),
+                             (2899028330670199275UL + 205UL), (2899028330670199275UL + 252UL),
+                             (2899028330670199275UL + 141UL), (2899028330670199275UL + 172UL),
+                             (2899028330670199275UL + 943UL), (2899028330670199275UL + 1202UL),
+                             (2899028330670199275UL + 848UL), (2899028330670199275UL + 1202UL),
+                             (2899028330670199275UL + 537UL), (2899028330670199275UL + 548UL),
+                             (2899028330670199275UL + 1405UL), (2899028330670199275UL + 871UL),
+                             (2899028330670199275UL + 920UL), (2899028330670199275UL + 1202UL),
+                             (2899028330670199275UL + 921UL), (2899028330670199275UL + 966UL),
+                     "_config", 17, "double", (int)__builtin_offsetof (struct _config, px), "double", (int)__builtin_offsetof (struct _config, py), "double", (int)__builtin_offsetof (struct _config, pz), "double", (int)__builtin_offsetof (struct _config, lx), "double", (int)__builtin_offsetof (struct _config, ly), "double", (int)__builtin_offsetof (struct _config, lz), "double", (int)__builtin_offsetof (struct _config, dx), "double", (int)__builtin_offsetof (struct _config, dy), "double", (int)__builtin_offsetof (struct _config, dz), "double", (int)__builtin_offsetof (struct _config, svx), "double", (int)__builtin_offsetof (struct _config, svy), "double", (int)__builtin_offsetof (struct _config, svz), "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "%struct._sphere*", (int)__builtin_offsetof (struct _config, spheres), "int", (int)__builtin_offsetof (struct _config, nspheres), "int", (int)__builtin_offsetof (struct _config, nt),
+                     "_rgb", 3, "double", (int)__builtin_offsetof (struct _rgb, r), "double", (int)__builtin_offsetof (struct _rgb, g), "double", (int)__builtin_offsetof (struct _rgb, b),
+                     "_sphere", 7, "double", (int)__builtin_offsetof (struct _sphere, cx), "double", (int)__builtin_offsetof (struct _sphere, cy), "double", (int)__builtin_offsetof (struct _sphere, cz), "double", (int)__builtin_offsetof (struct _sphere, radius), "double", (int)__builtin_offsetof (struct _sphere, clR), "double", (int)__builtin_offsetof (struct _sphere, clG), "double", (int)__builtin_offsetof (struct _sphere, clB),
+                             "get_cos_angle_v1v2", "_Z18get_cos_angle_v1v2dddddd", 2, "modv", "modv",
+                             "main", "main", 10, "parse_config", "get_coord", "get_coord", "modv", "get_sphere_intersec", "get_sphere_intersec", "get_sphere_intersec", "get_cos_angle_v1v2", "move", "checkpoint",
+                             "modv", "_Z4modvddd", 0,
+                             "move", "_Z4moveP7_sphereddd", 0,
+                             "get_sphere_intersec", "_Z19get_sphere_intersecdddddddddd", 0,
+                             "move_to", "_Z7move_toP7_sphereddd", 0,
+                             "get_coord", "_Z9get_coordddddd", 0,
+                             "parse_three_doubles", "_Z19parse_three_doublesPcPdS0_S0_", 0,
+                             "init", "_Z4initP7_sphereddddddd", 0,
+                             "parse_config", "_Z12parse_configiPPcP7_config", 6, "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "parse_three_doubles", "init", "usage",
+                             "usage", "_Z5usagePPc", 0,
+                             "rot_y", "_Z5rot_yP7_sphered", 0,
+                             "rot_x", "_Z5rot_xP7_sphered", 0,
+                        "main|conf|0", 1, "main",
+        "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
+        "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
+        "parse_three_doubles", 0UL, (int)4, 2899028330670200146UL, 2899028330670200123UL, 2899028330670200123UL, 2899028330670200123UL,
+        "parse_three_doubles", 0UL, (int)4, 2899028330670200146UL, 2899028330670200123UL, 2899028330670200123UL, 2899028330670200123UL,
+        "parse_three_doubles", 0UL, (int)4, 2899028330670200146UL, 2899028330670200123UL, 2899028330670200123UL, 2899028330670200123UL,
+        "parse_three_doubles", 0UL, (int)4, 2899028330670200146UL, 2899028330670200123UL, 2899028330670200123UL, 2899028330670200123UL,
+        "init", 0UL, (int)8, 2899028330670200477UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "usage", 0UL, (int)1, 2899028330670200184UL,
+        "parse_config", 0UL, (int)3, 0UL, 2899028330670200666UL, 2899028330670200195UL,
+        "get_coord", 0UL, (int)5, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "get_coord", 0UL, (int)5, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
+        "get_sphere_intersec", 0UL, (int)10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "get_sphere_intersec", 0UL, (int)10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "get_sphere_intersec", 0UL, (int)10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "get_cos_angle_v1v2", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "move", 0UL, (int)4, 2899028330670200477UL, 0UL, 0UL, 0UL);
     return 0;
 }
 
-static int __libchimes_module_init = module_init();
+static const int __libchimes_module_init = module_init();

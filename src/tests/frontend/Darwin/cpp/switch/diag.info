@@ -20,11 +20,11 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 3 127  ;
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 7 5 len=3 bar_quick
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 7 127  ;  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 11 5 len=4 main_quick
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 15 17 ({ calling_npm(0, 0); foo_npm(argc); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 15 17 ({ calling_npm("foo", 0); foo_npm(argc); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 15 25 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 18 17 ({ calling_npm(0, 0); bar_npm(argc); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 18 17 ({ calling_npm("bar", 0); bar_npm(argc); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 18 25 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 23 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 23 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 23 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 10 
@@ -35,11 +35,11 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 3 127  ; 
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 7 5 len=3 bar_resumable
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 7 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 11 5 len=4 main_resumable
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 15 17 ({ calling_npm(0, 0); foo_npm(argc); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 15 17 ({ calling_npm("foo", 0); foo_npm(argc); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 15 25 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 18 17 ({ calling_npm(0, 0); bar_npm(argc); })
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 18 17 ({ calling_npm("bar", 0); bar_npm(argc); })
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 18 25 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 23 18  ({  calling((void*)checkpoint, 1, 0UL, ____alias_loc_id_0, 0); (checkpoint)(); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 23 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 23 29 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 5 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/switch.cpp 12 10 
