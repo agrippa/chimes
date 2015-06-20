@@ -648,7 +648,9 @@ bool any_aliased(int ngroups, ...) {
         }
     }
     VERIFY(pthread_rwlock_unlock(&aliased_groups_lock) == 0);
+#ifdef VERBOSE
     fprintf(stderr, "Aliases? %d\n", alias_exists);
+#endif
     return alias_exists;
 }
 
@@ -4440,7 +4442,6 @@ unsigned entering_omp_parallel(unsigned lbl, size_t *unique_region_id,
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ns();
     thread_ctx *ctx = get_my_context();
-    fprintf(stderr, "Entering with %p\n", ctx);
 
     ctx->get_stack_tracker().push(lbl);
     ctx->create_new_parent_vars_context();
@@ -4672,7 +4673,6 @@ void thread_leaving() {
 static void destroy_thread_ctx(void *thread_ctx_ptr) {
     thread_ctx *ctx = (thread_ctx *)thread_ctx_ptr;
 
-    fprintf(stderr, "Destroying %p\n", ctx);
     assert(ctx->get_stack()->size() == 0);
 
     VERIFY(pthread_rwlock_wrlock(&pthread_to_id_lock) == 0);
@@ -4707,7 +4707,6 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
         perf_profile::current_time_ns();
     unsigned parent = get_my_tid();
     thread_ctx *my_ctx = get_my_context();
-    fprintf(stderr, "Leaving with %p\n", my_ctx);
     /*
      * If this thread participated in the preceding parallel region, it should
      * have the same stack depth it had before the parallel region, plus one.
@@ -4719,15 +4718,12 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
      * not receive work.
      */
     if (my_ctx->get_parent_region() == region_id) {
-        fprintf(stderr, "Yo A\n");
         assert(my_ctx->get_stack()->size() ==
                 (expected_parent_stack_depth + 1U));
     } else {
-        fprintf(stderr, "Yo B\n");
         assert(my_ctx->get_stack()->size() ==
                 (expected_parent_stack_depth));
     }
-    fprintf(stderr, "Huh A\n", my_ctx);
 
     my_ctx->get_stack_tracker().pop();
     my_ctx->pop_parent_vars_entry();
@@ -4739,8 +4735,6 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
     for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
             e = thread_ctxs.end(); i != e; i++) {
         thread_ctx *ctx = i->second;
-
-        fprintf(stderr, "Looking at %p\n", ctx);
 
         if (ctx->has_parent() && ctx->get_parent() == parent &&
                 ctx->get_parent_region() == region_id) {
@@ -4767,7 +4761,6 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
             }
         }
     }
-    fprintf(stderr, "Out\n");
 
     // for (vector<map<unsigned, thread_ctx *>::iterator>::iterator i =
     //         to_erase.begin(), e = to_erase.end(); i != e; i++) {
