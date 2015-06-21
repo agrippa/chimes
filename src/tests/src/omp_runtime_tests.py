@@ -28,7 +28,8 @@ ISO3D_OMP = RuntimeTest('Iso3D-OMP',
 SMITH_WATERMAN_OMP = RuntimeTest('SmithWaterman-OMP',
                              ['smithWaterman/smith_waterman_omp.cpp'], 0, -1,
                              cli_args='12 12 1 1')
-LULESH_OMP = RuntimeTest('Lulesh-OMP', ['lulesh/LULESH_OMP.cc'], 0, -1, cli_args='1')
+LULESH_OMP = RuntimeTest('Lulesh-OMP', ['lulesh/LULESH_OMP.cc'], 0, -1,
+                         cli_args='1', extra_compile_args='-y -O0')
 COMD_OMP = RuntimeTest('CoMD-OMP', ['CoMD/src-openmp/CoMD.c', 'CoMD/src-openmp/decomposition.c',
                      'CoMD/src-openmp/haloExchange.c', 'CoMD/src-openmp/linkCells.c',
                      'CoMD/src-openmp/mycommand.c',

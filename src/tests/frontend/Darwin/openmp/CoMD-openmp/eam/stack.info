@@ -100,6 +100,16 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c typeNotSupported|type|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamBcastPotential|pot|0 " %struct.EamPotentialSt* " 64 1 0 1 bcastInterpolationObject bcastParallel getMyRank
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamBcastPotential|buf|0 " %struct._buf_t = type { double, double, double, [8 x i8], [3 x i8], i32 } " 320 0 1 _buf_t 0 1 eamBcastPotential
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h zeroReal3|a|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|table|0 " %struct.InterpolationObjectSt* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|r|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|f|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|df|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|tt|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|ii|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|g1|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|g2|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c destroyInterpolationObject|a|0 " %struct.InterpolationObjectSt** " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c fileNotFound|callSite|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c fileNotFound|filename|0 " i8* " 64 1 0 0
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initInterpolationObject|n|0 " i32 " 32 0 0 0
@@ -112,13 +122,3 @@
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c bcastInterpolationObject|table|0 " %struct.InterpolationObjectSt** " 64 1 0 1 bcastParallel getMyRank
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c bcastInterpolationObject|buf|0 " %struct._buf_2_t = type { i32, double, double } " 192 0 1 _buf_2_t 0 1 bcastInterpolationObject
 /Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c bcastInterpolationObject|valuesSize|0 " i32 " 32 0 0 1 bcastParallel
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c destroyInterpolationObject|a|0 " %struct.InterpolationObjectSt** " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h zeroReal3|a|0 " double* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|table|0 " %struct.InterpolationObjectSt* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|r|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|f|0 " double* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|df|0 " double* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|tt|0 " double* " 64 1 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|ii|0 " i32 " 32 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|g1|0 " double " 64 0 0 0
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|g2|0 " double " 64 0 0 0

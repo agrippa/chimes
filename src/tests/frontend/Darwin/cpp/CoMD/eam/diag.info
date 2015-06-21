@@ -15,20 +15,20 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 3
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 413 6 len=17 eamBcastPotential_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 452 22 len=23 initInterpolationObject_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 456 30 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 456 63 , 684635133602954282UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 456 63 , 684635133602954494UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 459 29 len=6 calloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 459 58 , 684635133602954280UL, 0, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 459 58 , 684635133602954492UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 476 6 len=26 destroyInterpolationObject_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 483 7 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 483 18 , 684635133602954515UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 483 18 , 684635133602954403UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 485 4 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 485 10 , 684635133602954508UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 485 10 , 684635133602954396UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 512 6 len=11 interpolate_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 549 6 len=24 bcastInterpolationObject_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 564 38 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 564 71 , 684635133602954440UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 564 71 , 684635133602954652UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 568 35 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 568 67 , 684635133602954467UL, 0, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 568 67 , 684635133602954679UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 635 6 len=12 eamReadSetfl_npm
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 678 27 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 678 57 , 684635133602953714UL, 0, 0
@@ -56,17 +56,17 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 2
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 397 4 len=4 free_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 397 9 , 684635133602953565UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 456 30 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 456 63 , 684635133602954282UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 456 63 , 684635133602954494UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 459 29 len=6 calloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 459 58 , 684635133602954280UL, 0, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 459 58 , 684635133602954492UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 483 7 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 483 18 , 684635133602954515UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 483 18 , 684635133602954403UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 485 4 len=4 free_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 485 10 , 684635133602954508UL
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 485 10 , 684635133602954396UL
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 564 38 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 564 71 , 684635133602954440UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 564 71 , 684635133602954652UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values)
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 568 35 len=6 malloc_wrapper
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 568 67 , 684635133602954467UL, 0, 0
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 568 67 , 684635133602954679UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 678 27 len=6 malloc_wrapper
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 678 57 , 684635133602953714UL, 0, 0
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 702 4 len=4 free_wrapper
@@ -87,24 +87,24 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 400 4 rm_st
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 389 1 const int ____chimes_did_disable3 = new_stack((void *)(&eamDestroy), "eamDestroy", &____must_manage_eamDestroy, 1, 1, (size_t)(684635133602953590UL), "eamDestroy|pPot|0", &____must_checkpoint_eamDestroy_pPot_0, "%struct.BasePotentialSt**", (void *)(&pPot), (size_t)8, 1, 0, 0); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 414 1 const int ____chimes_did_disable4 = new_stack((void *)(&eamBcastPotential), "eamBcastPotential", &____must_manage_eamBcastPotential, 1, 1, (size_t)(684635133602954215UL), "eamBcastPotential|pot|0", &____must_checkpoint_eamBcastPotential_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 438 1 rm_stack(false, 0UL, "eamBcastPotential", &____must_manage_eamBcastPotential, ____alias_loc_id_19, ____chimes_did_disable4); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 473 4 rm_stack(true, 684635133602954282UL, "initInterpolationObject", &____must_manage_initInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable5); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 454 1 const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602954378UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 478 13 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_24, ____chimes_did_disable6); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 479 14 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_24, ____chimes_did_disable6); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 488 4 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_24, ____chimes_did_disable6); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 477 1 const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(684635133602954539UL)); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 1 const int ____chimes_did_disable7 = new_stack((void *)(&interpolate), "interpolate", &____must_manage_interpolate, 4, 0, (size_t)(684635133602954703UL), (size_t)(0UL), (size_t)(684635133602954705UL), (size_t)(684635133602954706UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 534 1 rm_stack(false, 0UL, "interpolate", &____must_manage_interpolate, ____alias_loc_id_25, ____chimes_did_disable7); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 1 const int ____chimes_did_disable8 = new_stack((void *)(&bcastInterpolationObject), "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 1, 1, (size_t)(684635133602954442UL), "bcastInterpolationObject|table|0", &____must_checkpoint_bcastInterpolationObject_table_0, "%struct.InterpolationObjectSt**", (void *)(&table), (size_t)8, 1, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 473 4 rm_stack(true, 684635133602954494UL, "initInterpolationObject", &____must_manage_initInterpolationObject, ____alias_loc_id_23, ____chimes_did_disable5); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 454 1 const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602954590UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 478 13 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable6); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 479 14 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable6); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 488 4 rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_21, ____chimes_did_disable6); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 477 1 const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(684635133602954427UL)); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 1 const int ____chimes_did_disable7 = new_stack((void *)(&interpolate), "interpolate", &____must_manage_interpolate, 4, 0, (size_t)(684635133602954378UL), (size_t)(0UL), (size_t)(684635133602954380UL), (size_t)(684635133602954381UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 534 1 rm_stack(false, 0UL, "interpolate", &____must_manage_interpolate, ____alias_loc_id_20, ____chimes_did_disable7); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 1 const int ____chimes_did_disable8 = new_stack((void *)(&bcastInterpolationObject), "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 1, 1, (size_t)(684635133602954654UL), "bcastInterpolationObject|table|0", &____must_checkpoint_bcastInterpolationObject_table_0, "%struct.InterpolationObjectSt**", (void *)(&table), (size_t)8, 1, 0, 0); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 574 1 rm_stack(false, 0UL, "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 0, ____chimes_did_disable8); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 636 1 const int ____chimes_did_disable10 = new_stack((void *)(&eamReadSetfl), "eamReadSetfl", &____must_manage_eamReadSetfl, 3, 0, (size_t)(684635133602953843UL), (size_t)(684635133602953844UL), (size_t)(684635133602953845UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 708 1 rm_stack(false, 0UL, "eamReadSetfl", &____must_manage_eamReadSetfl, ____alias_loc_id_16, ____chimes_did_disable10); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 754 1 const int ____chimes_did_disable11 = new_stack((void *)(&eamReadFuncfl), "eamReadFuncfl", &____must_manage_eamReadFuncfl, 3, 0, (size_t)(684635133602954101UL), (size_t)(684635133602954102UL), (size_t)(684635133602954103UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 818 1 rm_stack(false, 0UL, "eamReadFuncfl", &____must_manage_eamReadFuncfl, ____alias_loc_id_17, ____chimes_did_disable11); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 821 1 const int ____chimes_did_disable12 = new_stack((void *)(&fileNotFound), "fileNotFound", &____must_manage_fileNotFound, 2, 0, (size_t)(684635133602954236UL), (size_t)(684635133602954237UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 825 1 rm_stack(false, 0UL, "fileNotFound", &____must_manage_fileNotFound, ____alias_loc_id_20, ____chimes_did_disable12); 
-InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 828 1 const int ____chimes_did_disable13 = new_stack((void *)(&notAlloyReady), "notAlloyReady", &____must_manage_notAlloyReady, 1, 0, (size_t)(684635133602954391UL)); 
-InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 833 1 rm_stack(false, 0UL, "notAlloyReady", &____must_manage_notAlloyReady, ____alias_loc_id_22, ____chimes_did_disable13); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 821 1 const int ____chimes_did_disable12 = new_stack((void *)(&fileNotFound), "fileNotFound", &____must_manage_fileNotFound, 2, 0, (size_t)(684635133602954448UL), (size_t)(684635133602954449UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 825 1 rm_stack(false, 0UL, "fileNotFound", &____must_manage_fileNotFound, ____alias_loc_id_22, ____chimes_did_disable12); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 828 1 const int ____chimes_did_disable13 = new_stack((void *)(&notAlloyReady), "notAlloyReady", &____must_manage_notAlloyReady, 1, 0, (size_t)(684635133602954602UL)); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 833 1 rm_stack(false, 0UL, "notAlloyReady", &____must_manage_notAlloyReady, ____alias_loc_id_24, ____chimes_did_disable13); 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 836 1 const int ____chimes_did_disable14 = new_stack((void *)(&typeNotSupported), "typeNotSupported", &____must_manage_typeNotSupported, 2, 0, (size_t)(684635133602954117UL), (size_t)(684635133602954118UL)); 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 840 1 rm_stack(false, 0UL, "typeNotSupported", &____must_manage_typeNotSupported, ____alias_loc_id_18, ____chimes_did_disable14); 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 171 2 const int ____chimes_did_disable0 = new_stack((void *)(&initEamPot), "initEamPot", &____must_manage_initEamPot, 3, 3, (size_t)(684635133602952606UL), (size_t)(684635133602952607UL), (size_t)(684635133602952608UL), "initEamPot|dir|0", &____must_checkpoint_initEamPot_dir_0, "i8*", (void *)(&dir), (size_t)8, 1, 0, 0, "initEamPot|file|0", &____must_checkpoint_initEamPot_file_0, "i8*", (void *)(&file), (size_t)8, 1, 0, 0, "initEamPot|type|0", &____must_checkpoint_initEamPot_type_0, "i8*", (void *)(&type), (size_t)8, 1, 0, 0); ;
@@ -229,17 +229,17 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 414 2
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 414 308 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 4  buf_t buf; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 416 13 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 454 2 const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602954378UL)); ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 454 2 const int ____chimes_did_disable5 = new_stack((void *)(&initInterpolationObject), "initInterpolationObject", &____must_manage_initInterpolationObject, 4, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(684635133602954590UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 454 235 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 455 4  InterpolationObject *table;  table = ((InterpolationObject *)malloc_wrapper(sizeof(InterpolationObject), 684635133602954282UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values))) ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 455 4  InterpolationObject *table;  table = ((InterpolationObject *)malloc_wrapper(sizeof(InterpolationObject), 684635133602954494UL, 0, 1, (int)sizeof(struct InterpolationObjectSt), 1, (int)__builtin_offsetof(struct InterpolationObjectSt, values))) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 456 211 
 InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 467 4 {  int ii; 
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 467 66  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 467 9  ii = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 467 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 477 2 const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(684635133602954539UL)); ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 477 2 const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(684635133602954427UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 477 199 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 2 const int ____chimes_did_disable7 = new_stack((void *)(&interpolate), "interpolate", &____must_manage_interpolate, 4, 0, (size_t)(684635133602954703UL), (size_t)(0UL), (size_t)(684635133602954705UL), (size_t)(684635133602954706UL)); ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 2 const int ____chimes_did_disable7 = new_stack((void *)(&interpolate), "interpolate", &____must_manage_interpolate, 4, 0, (size_t)(684635133602954378UL), (size_t)(0UL), (size_t)(684635133602954380UL), (size_t)(684635133602954381UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 513 233 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 514 4  const real_t *tt;  tt = (table->values) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 514 36 
@@ -249,7 +249,7 @@ ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 528 4
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 528 35 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 529 4  real_t g2;  g2 = (tt[ii + 2] - tt[ii]) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 529 33 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 2 const int ____chimes_did_disable8 = new_stack((void *)(&bcastInterpolationObject), "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 1, 1, (size_t)(684635133602954442UL), "bcastInterpolationObject|table|0", &____must_checkpoint_bcastInterpolationObject_table_0, "%struct.InterpolationObjectSt**", (void *)(&table), (size_t)8, 1, 0, 0); ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 2 const int ____chimes_did_disable8 = new_stack((void *)(&bcastInterpolationObject), "bcastInterpolationObject", &____must_manage_bcastInterpolationObject, 1, 1, (size_t)(684635133602954654UL), "bcastInterpolationObject|table|0", &____must_checkpoint_bcastInterpolationObject_table_0, "%struct.InterpolationObjectSt**", (void *)(&table), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 550 357 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 3  buf_2_t buf; ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 14 
@@ -349,9 +349,9 @@ InsertText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 4 {  in
 InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 71  }
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 9  ii = (0) ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 809 19 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 821 2 const int ____chimes_did_disable12 = new_stack((void *)(&fileNotFound), "fileNotFound", &____must_manage_fileNotFound, 2, 0, (size_t)(684635133602954236UL), (size_t)(684635133602954237UL)); ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 821 2 const int ____chimes_did_disable12 = new_stack((void *)(&fileNotFound), "fileNotFound", &____must_manage_fileNotFound, 2, 0, (size_t)(684635133602954448UL), (size_t)(684635133602954449UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 821 190 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 828 2 const int ____chimes_did_disable13 = new_stack((void *)(&notAlloyReady), "notAlloyReady", &____must_manage_notAlloyReady, 1, 0, (size_t)(684635133602954391UL)); ;
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 828 2 const int ____chimes_did_disable13 = new_stack((void *)(&notAlloyReady), "notAlloyReady", &____must_manage_notAlloyReady, 1, 0, (size_t)(684635133602954602UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 828 161 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 836 2 const int ____chimes_did_disable14 = new_stack((void *)(&typeNotSupported), "typeNotSupported", &____must_manage_typeNotSupported, 2, 0, (size_t)(684635133602954117UL), (size_t)(684635133602954118UL)); ;
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 836 202 
@@ -575,11 +575,11 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 5
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 549 6 len=24 bcastInterpolationObject_quick
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 64  ({  calling((void*)getMyRank, 2, ____alias_loc_id_9, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 17  ({  calling((void*)bcastParallel, 3, ____alias_loc_id_10, 0UL, 3, (size_t)(684635133602954396UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 17  ({  calling((void*)bcastParallel, 3, ____alias_loc_id_10, 0UL, 3, (size_t)(684635133602954608UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(&buf, sizeof (buf), 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 51 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 21  ({  calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 31 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 17  ({  calling((void*)bcastParallel, 9, ____alias_loc_id_11, 0UL, 3, (size_t)(684635133602954467UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)((*table)->values - 1, valuesSize, 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 17  ({  calling((void*)bcastParallel, 9, ____alias_loc_id_11, 0UL, 3, (size_t)(684635133602954679UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)((*table)->values - 1, valuesSize, 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 64 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 15 
@@ -833,11 +833,11 @@ InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 5
 ReplaceText /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 549 6 len=24 bcastInterpolationObject_resumable
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 64  ({  calling((void*)getMyRank, 2, ____alias_loc_id_9, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 74 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 17  ({  void * ____chimes_arg20;  int ____chimes_arg21;  if (!____chimes_replaying) { ____chimes_arg20 = (&buf); ____chimes_arg21 = (sizeof (buf));  }  calling((void*)bcastParallel, 3, ____alias_loc_id_10, 0UL, 3, (size_t)(684635133602954396UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg20, ____chimes_arg21, 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 17  ({  void * ____chimes_arg20;  int ____chimes_arg21;  if (!____chimes_replaying) { ____chimes_arg20 = (&buf); ____chimes_arg21 = (sizeof (buf));  }  calling((void*)bcastParallel, 3, ____alias_loc_id_10, 0UL, 3, (size_t)(684635133602954608UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg20, ____chimes_arg21, 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 51 
 ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 21  ({  calling((void*)getMyRank, 4, 0, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 561 31 
-ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 17  ({  void * ____chimes_arg23;  if (!____chimes_replaying) { ____chimes_arg23 = ((*table)->values - 1);  }  calling((void*)bcastParallel, 9, ____alias_loc_id_11, 0UL, 3, (size_t)(684635133602954467UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg23, valuesSize, 0); }) 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 17  ({  void * ____chimes_arg23;  if (!____chimes_replaying) { ____chimes_arg23 = ((*table)->values - 1);  }  calling((void*)bcastParallel, 9, ____alias_loc_id_11, 0UL, 3, (size_t)(684635133602954679UL), (size_t)(0UL), (size_t)(0UL)); (bcastParallel)(____chimes_arg23, valuesSize, 0); }) 
 ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 64 
 RemoveTextBegin /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 4 
 RemoveTextEnd /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 551 15 
