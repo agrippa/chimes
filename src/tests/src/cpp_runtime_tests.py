@@ -61,7 +61,8 @@ ISO3D = RuntimeTest('Iso3D',
 SMITH_WATERMAN = RuntimeTest('SmithWaterman',
                              ['smithWaterman/smith_waterman.cpp'], 0, -1,
                              cli_args='20 20 2')
-LULESH = RuntimeTest('Lulesh', ['lulesh/LULESH.cc'], 0, -1, cli_args='1')
+LULESH = RuntimeTest('Lulesh', ['lulesh/LULESH.cc'], 0, -1, cli_args='1',
+                     extra_compile_args='-y -O0')
 COMD = RuntimeTest('CoMD',
                    ['CoMD/src-mpi/CoMD.c', 'CoMD/src-mpi/decomposition.c',
                     'CoMD/src-mpi/haloExchange.c', 'CoMD/src-mpi/linkCells.c',

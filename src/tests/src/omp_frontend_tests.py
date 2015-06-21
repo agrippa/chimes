@@ -48,7 +48,8 @@ COMD_OMP = FrontendTest('CoMD-OMP',
                      'CoMD-openmp/ljForce', 'CoMD-openmp/parallel', 'CoMD-openmp/random',
                      'CoMD-openmp/yamlOutput'], False, includes=[os.path.dirname(OMP_H)])
 LULESH_OMP = FrontendTest('Lulesh-OMP', ['lulesh/LULESH_OMP.cc'],
-                      ['LULESH_OMP.cc.pre.transformed.cpp'], ['lulesh'], False)
+                      ['LULESH_OMP.cc.pre.transformed.cpp'], ['lulesh'], False,
+                      extra_cli_args='-y -O0')
 ISO3D = FrontendTest('Iso3D-OMP',
                      ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'],
                      ['iso3d.cpp.pre.transformed.cpp',

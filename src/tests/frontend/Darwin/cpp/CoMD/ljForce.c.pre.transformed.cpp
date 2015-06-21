@@ -2213,9 +2213,9 @@ typedef struct LjPotentialSt
 } LjPotential;
 # 93 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 94 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-static int ljForce(SimFlat* s);
+int ljForce(SimFlat* s);
 # 95 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-static void ljPrint(FILE* file, BasePotential* pot);
+void ljPrint(FILE* file, BasePotential* pot);
 # 96 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 97 "/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljDestroy_npm(BasePotential** inppot);
@@ -2999,11 +2999,11 @@ static int module_init() {
                            &____alias_loc_id_2, (unsigned)2, (unsigned)0, (14970133447157970232UL + 29UL), (14970133447157970232UL + 31UL),
                            &____alias_loc_id_3, (unsigned)33, (unsigned)2, (14970133447157970232UL + 77UL), (14970133447157970232UL + 78UL), (14970133447157970232UL + 79UL), (14970133447157970232UL + 80UL), (14970133447157970232UL + 81UL), (14970133447157970232UL + 82UL), (14970133447157970232UL + 83UL), (14970133447157970232UL + 84UL), (14970133447157970232UL + 85UL), (14970133447157970232UL + 86UL), (14970133447157970232UL + 87UL), (14970133447157970232UL + 88UL), (14970133447157970232UL + 90UL), (14970133447157970232UL + 91UL), (14970133447157970232UL + 92UL), (14970133447157970232UL + 93UL), (14970133447157970232UL + 94UL), (14970133447157970232UL + 95UL), (14970133447157970232UL + 96UL), (14970133447157970232UL + 97UL), (14970133447157970232UL + 98UL), (14970133447157970232UL + 99UL), (14970133447157970232UL + 100UL), (14970133447157970232UL + 101UL), (14970133447157970232UL + 102UL), (14970133447157970232UL + 103UL), (14970133447157970232UL + 104UL), (14970133447157970232UL + 105UL), (14970133447157970232UL + 106UL), (14970133447157970232UL + 107UL), (14970133447157970232UL + 108UL), (14970133447157970232UL + 272UL), (14970133447157970232UL + 276UL), "zeroReal3", (unsigned)1, (14970133447157970232UL + 276UL), "getNeighborBoxes", (unsigned)2, (14970133447157970232UL + 89UL), (14970133447157970232UL + 274UL),
                            &____alias_loc_id_4, (unsigned)3, (unsigned)0, (14970133447157970232UL + 566UL), (14970133447157970232UL + 567UL), (14970133447157970232UL + 568UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (14970133447157970232UL + 625UL), (14970133447157970232UL + 638UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (14970133447157970232UL + 627UL), (14970133447157970232UL + 640UL),
                             "ljDestroy", (void *)(&ljDestroy_npm), (void *)(ljDestroy), 0, 1, (14970133447157970232UL + 25UL), 0UL, 1, "free", 1, (14970133447157970232UL + 11UL), 0UL,
                             "initLjPot", (void *)(&initLjPot_npm), (void *)__null, 0, 0, (14970133447157970232UL + 31UL), 3, "malloc", 1, 0UL, (14970133447157970232UL + 31UL), "strcpy", 2, (14970133447157970232UL + 31UL), (14970133447157970232UL + 650UL), (14970133447157970232UL + 58UL), "strcpy", 2, (14970133447157970232UL + 31UL), (14970133447157970232UL + 651UL), (14970133447157970232UL + 69UL),
-                            "ljPrint", (void *)(&ljPrint_npm), (void *)(ljPrint), 0, 2, (14970133447157970232UL + 621UL), (14970133447157970232UL + 622UL), 0UL, 9, "fprintf", 2, (14970133447157970232UL + 621UL), (14970133447157970232UL + 655UL), 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 656UL), (14970133447157970232UL + 622UL), 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 656UL), 0UL, 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 658UL), 0UL, 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 656UL), (14970133447157970232UL + 622UL), 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 655UL), 0UL, 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 655UL), 0UL, 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 662UL), 0UL, 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 655UL), 0UL, 0UL,
-                            "ljForce", (void *)(&ljForce_npm), (void *)(ljForce), 1, &____alias_loc_id_0, 1, (14970133447157970232UL + 272UL), 0UL, 3, "zeroReal3", 1, (14970133447157970232UL + 276UL), 0UL, "getNeighborBoxes", 3, (14970133447157970232UL + 274UL), 0UL, (14970133447157970232UL + 89UL), 0UL, "__assert_rtn", 4, (14970133447157970232UL + 652UL), (14970133447157970232UL + 653UL), 0UL, (14970133447157970232UL + 652UL), 0UL,
+                            "ljPrint", (void *)(&ljPrint_npm), (void *)(ljPrint), 0, 2, (14970133447157970232UL + 621UL), (14970133447157970232UL + 622UL), 0UL, 9, "fprintf", 2, (14970133447157970232UL + 621UL), (14970133447157970232UL + 652UL), 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 653UL), (14970133447157970232UL + 622UL), 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 653UL), 0UL, 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 655UL), 0UL, 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 653UL), (14970133447157970232UL + 622UL), 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 652UL), 0UL, 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 652UL), 0UL, 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 659UL), 0UL, 0UL, "fprintf", 3, (14970133447157970232UL + 621UL), (14970133447157970232UL + 652UL), 0UL, 0UL,
+                            "ljForce", (void *)(&ljForce_npm), (void *)(ljForce), 1, &____alias_loc_id_0, 1, (14970133447157970232UL + 272UL), 0UL, 3, "zeroReal3", 1, (14970133447157970232UL + 276UL), 0UL, "getNeighborBoxes", 3, (14970133447157970232UL + 274UL), 0UL, (14970133447157970232UL + 89UL), 0UL, "__assert_rtn", 4, (14970133447157970232UL + 661UL), (14970133447157970232UL + 662UL), 0UL, (14970133447157970232UL + 661UL), 0UL,
                                "getNeighborBoxes", (void **)&(____chimes_extern_func_getNeighborBoxes),
                                "zeroReal3", (void **)&(____chimes_extern_func_zeroReal3),
                            "ljDestroy", &(____chimes_does_checkpoint_ljDestroy_npm),
@@ -3015,7 +3015,6 @@ static int module_init() {
                              (14970133447157970232UL + 568UL), (14970133447157970232UL + 622UL),
                              (14970133447157970232UL + 25UL), (14970133447157970232UL + 11UL),
                              (14970133447157970232UL + 77UL), (14970133447157970232UL + 272UL),
-                             (14970133447157970232UL + 625UL), (14970133447157970232UL + 638UL),
                              (14970133447157970232UL + 31UL), (14970133447157970232UL + 664UL),
                              (14970133447157970232UL + 29UL), (14970133447157970232UL + 31UL),
                              (14970133447157970232UL + 566UL), (14970133447157970232UL + 621UL),
@@ -3024,6 +3023,7 @@ static int module_init() {
                              (14970133447157970232UL + 272UL), (14970133447157970232UL + 274UL),
                              (14970133447157970232UL + 2UL), (14970133447157970232UL + 11UL),
                              (14970133447157970232UL + 274UL), (14970133447157970232UL + 276UL),
+                             (14970133447157970232UL + 627UL), (14970133447157970232UL + 640UL),
                              (14970133447157970232UL + 78UL), (14970133447157970232UL + 274UL),
                      "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U),
                      "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "*", (int)__builtin_offsetof (struct BasePotentialSt, force), "*", (int)__builtin_offsetof (struct BasePotentialSt, print), "*", (int)__builtin_offsetof (struct BasePotentialSt, destroy),
@@ -3037,9 +3037,9 @@ static int module_init() {
                      "__sFILEX", 0,
                      "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size),
                              "initLjPot", "_Z9initLjPotv", 0,
-                             "ljPrint", "_ZL7ljPrintP7__sFILEP15BasePotentialSt", 0,
+                             "ljPrint", "_Z7ljPrintP7__sFILEP15BasePotentialSt", 0,
                              "zeroReal3", "_ZL9zeroReal3Pd", 0,
-                             "ljForce", "_ZL7ljForceP9SimFlatSt", 2, "zeroReal3", "getNeighborBoxes",
+                             "ljForce", "_Z7ljForceP9SimFlatSt", 2, "zeroReal3", "getNeighborBoxes",
                              "ljDestroy", "_Z9ljDestroyPP15BasePotentialSt", 0,
                         "ljForce|s|0", 1, "getNeighborBoxes",
                         "ljForce|epsilon|0", 1, "getNeighborBoxes",
