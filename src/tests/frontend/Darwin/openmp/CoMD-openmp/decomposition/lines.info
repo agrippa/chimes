@@ -1,2 +1,0 @@
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 20 35 : { 1, 2, 3, 4 } direct:call:getNRanks {  }
-/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/decomposition.c 27 17 : { 5, 6, 38 } prop:call:getMyRank {  }

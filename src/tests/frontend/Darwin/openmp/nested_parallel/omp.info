@@ -1,2 +1,0 @@
-9 9 #pragma omp parallel firstprivate(a) private(b, c)
-12 12 #pragma omp parallel private(inside)

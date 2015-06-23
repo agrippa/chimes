@@ -1,7 +1,0 @@
-malloc main 17 25 65 0
-fprintf main 19 5 0 26 94
-checkpoint main 21 5 0
-__assert_rtn main 23 44 0 95 96 0 97
-__assert_rtn main 24 49 0 95 96 0 98
-__assert_rtn main 25 49 0 95 96 0 98
-__assert_rtn main 26 48 0 95 96 0 100

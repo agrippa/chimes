@@ -1,4 +1,0 @@
-377 377 #pragma omp critical
-416 416 #pragma omp parallel
-571 571 #pragma omp parallel firstprivate(mine)
-576 576 #pragma omp critical

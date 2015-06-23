@@ -1,7 +1,0 @@
-memcpy main 5 5 0 4 98 0
-checkpoint main 9 5 0
-__assert_rtn main 11 42 0 99 100 0 101
-__assert_rtn main 12 42 0 99 100 0 101
-__assert_rtn main 13 42 0 99 100 0 101
-__assert_rtn main 14 42 0 99 100 0 101
-__assert_rtn main 15 42 0 99 100 0 101

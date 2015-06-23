@@ -1,8 +1,0 @@
-barrierParallel timestampBarrier 53 4 0
-printRank timestampBarrier 54 9 0
-time timestampBarrier 56 14 0 380
-ctime timestampBarrier 57 23 29 16
-fprintf timestampBarrier 59 4 0 34 376 29 42
-fflush timestampBarrier 60 4 0 34
-__assert_rtn sendReceiveParallel 106 46 0 377 378 0 379
-memcpy sendReceiveParallel 107 4 0 91 92 0

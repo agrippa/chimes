@@ -1,4 +1,0 @@
-getNRanks initDecomposition 20 35 0
-__assert_rtn initDecomposition 20 124 0 334 335 0 336
-malloc initDecomposition 22 26 38 0
-getMyRank initDecomposition 27 17 0
