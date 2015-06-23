@@ -1,0 +1,9 @@
+gettimeofday gettime 28 3 0 1 174
+setup main 38 9 0 0 30
+printf bpnn_train_kernel 51 3 0 173
+bpnn_layerforward bpnn_train_kernel 52 3 0 67 67 67 0 0
+bpnn_layerforward bpnn_train_kernel 53 3 0 67 67 67 0 0
+bpnn_output_error bpnn_train_kernel 54 3 0 67 67 67 0 39
+bpnn_hidden_error bpnn_train_kernel 55 3 0 67 0 67 0 67 67 40
+bpnn_adjust_weights bpnn_train_kernel 56 3 0 67 0 67 0 67 67
+bpnn_adjust_weights bpnn_train_kernel 57 3 0 67 0 67 0 67 67

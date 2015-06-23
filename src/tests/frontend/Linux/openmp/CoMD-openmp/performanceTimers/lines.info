@@ -9,6 +9,6 @@
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 4 : { 327, 774 } prop:call:maxRankDoubleParallel { maxRankDoubleParallel { 324, 325 }, minRankDoubleParallel { 324, 325 } }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 4 : { 320, 328, 329, 330, 774 } prop:call:addDoubleParallel { addDoubleParallel { 320, 321 }, maxRankDoubleParallel { 324, 325 } }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 38 : { 331, 332, 774 } prop:call:getNRanks { addDoubleParallel { 320, 321 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 9 : { 545 } direct:call:printRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 10 : { 545 } direct:call:printRank {  }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 35 : { 546, 547 } direct:call:getNRanks {  }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 35 : { 548 } direct:call:getMyRank {  }

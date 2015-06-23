@@ -1298,7 +1298,7 @@ uint64_t mkSeed_resumable(uint32_t id, uint32_t callSite)
 # 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
       iSeed = (((4294967296ULL) * s1) + s2) ;
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-   { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); }); } };
+   { unsigned int jj; for ( jj = (0) ;jj<10; ++jj) { ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); }); } };
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2); return iSeed;
@@ -1359,7 +1359,7 @@ uint64_t mkSeed_quick(uint32_t id, uint32_t callSite)
 # 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
       iSeed = (((4294967296ULL) * s1) + s2) ;
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-   { unsigned int jj; for ( jj = (0) ;jj < 10; ++jj) { ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); }); } };
+   { unsigned int jj; for ( jj = (0) ;jj<10; ++jj) { ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); }); } };
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2); return iSeed;
@@ -1420,7 +1420,7 @@ uint64_t mkSeed_npm(uint32_t id, uint32_t callSite)
 # 70 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    uint64_t iSeed = ((0x100000000ULL) * s1) + s2;
 # 71 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
-   for (unsigned int jj = 0;jj < 10; ++jj) { lcg61_npm(&iSeed); };
+   for (unsigned jj=0;jj<10; ++jj) { lcg61_npm(&iSeed); };
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
 # 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/random.c"
    return iSeed;

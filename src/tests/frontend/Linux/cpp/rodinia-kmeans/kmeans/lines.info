@@ -1,0 +1,13 @@
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 149 23 : { 20, 21, 22, 23, 24, 25, 28, 31, 32, 33, 34, 35, 36, 39, 430 } prop:call:open { cluster { 28, 168 }, open { 435, 444 }, read { 31, 32, 321 }, rewind { 293 }, strtok { 33, 438 }, usage { 110 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 175 17 : { 20, 21, 22, 23, 24, 25, 28, 31, 32, 33, 34, 35, 36, 39, 430 } prop:call:strtok { cluster { 28, 168 }, open { 435, 444 }, read { 31, 32, 321 }, rewind { 293 }, strtok { 33, 438 }, usage { 110 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 177 9 : { 20, 21, 22, 23, 24, 25, 28, 31, 32, 33, 34, 35, 36, 39, 430 } prop:call:rewind { cluster { 28, 168 }, open { 435, 444 }, read { 31, 32, 321 }, rewind { 293 }, strtok { 33, 438 }, usage { 110 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 153 9 : { 38 } prop:call:read { open { 435, 444 }, read { 32 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 164 9 : { 26, 27, 29, 168 } prop:call:read { read { 31, 32, 321 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 212 9 : { 28, 29, 37 } prop:call:cluster { cluster { 28, 168 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 221 14 : { 28, 29, 37 } prop:call:omp_get_wtime { cluster { 28, 168 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 179 17 : { 26, 27, 29, 33, 168 } prop:call:strtok { rewind { 293 }, strtok { 33, 435, 438, 444 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 193 9 : { 26, 27, 29, 33, 168 } prop:call:rewind { rewind { 293 }, strtok { 33, 435, 438, 444 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 196 17 : { 29, 30, 33, 40, 321 } prop:call:strtok { rewind { 293 }, strtok { 33, 435, 438, 444 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 208 11 : { 29, 30, 33, 40, 321 } prop:call:omp_get_wtime { rewind { 293 }, strtok { 33, 435, 438, 444 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 181 24 : { 31 } prop:call:strtok { strtok { 435, 444 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 198 51 : { 29, 30, 33, 40, 321 } prop:call:strtok { strtok { 33, 435, 438, 444 } }

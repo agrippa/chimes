@@ -4785,7 +4785,7 @@ SimFlat *sim;
 # 176 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       latticeConstant = (cmd.lat) ;
 # 177 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (cmd.lat < 0.) {latticeConstant = sim->pot->lat; };
+   if (cmd.lat < 0.0) {latticeConstant = sim->pot->lat; };
 # 179 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -4853,12 +4853,12 @@ void destroySimulation_resumable(SimFlat** ps)
 {const int ____chimes_did_disable2 = new_stack((void *)(&destroySimulation), "destroySimulation", &____must_manage_destroySimulation, 1, 1, (size_t)(9903828072463844323UL), "destroySimulation|ps|0", &____must_checkpoint_destroySimulation_ps_0, "%struct.SimFlatSt**", (void *)(&ps), (size_t)8, 1, 0, 0) ; SimFlat *s;
  if (____must_checkpoint_destroySimulation_s_0) { register_stack_vars(1, "destroySimulation|s|0", &____must_checkpoint_destroySimulation_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
 # 220 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (!ps) {rm_stack(false, 0UL, "destroySimulation", &____must_manage_destroySimulation, ____alias_loc_id_38, ____chimes_did_disable2); return;; };
+   if (! ps) {rm_stack(false, 0UL, "destroySimulation", &____must_manage_destroySimulation, ____alias_loc_id_38, ____chimes_did_disable2); return; };
 # 221 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       s = (*ps) ;
 # 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (!s) {rm_stack(false, 0UL, "destroySimulation", &____must_manage_destroySimulation, ____alias_loc_id_38, ____chimes_did_disable2); return;; };
+   if (! s) {rm_stack(false, 0UL, "destroySimulation", &____must_manage_destroySimulation, ____alias_loc_id_38, ____chimes_did_disable2); return; };
 # 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     BasePotential *pot; pot = (s->pot) ;
@@ -5084,7 +5084,7 @@ void printThings_resumable(SimFlat* s, int iStep, double elapsedTime)
    iStepPrev = iStep;
 # 351 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 352 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   alias_group_changed(____alias_loc_id_22); call_lbl_2: if (!(____chimes_does_checkpoint_printRank_npm ? ( ({ calling((void*)printRank, 2, ____alias_loc_id_22, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_22); (*____chimes_extern_func_printRank)(); })))) {rm_stack(false, 0UL, "printThings", &____must_manage_printThings, ____alias_loc_id_36, ____chimes_did_disable10); return;; };
+   alias_group_changed(____alias_loc_id_22); call_lbl_2: if (! (____chimes_does_checkpoint_printRank_npm ? ( ({ calling((void*)printRank, 2, ____alias_loc_id_22, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_22); (*____chimes_extern_func_printRank)(); })))) {rm_stack(false, 0UL, "printThings", &____must_manage_printThings, ____alias_loc_id_36, ____chimes_did_disable10); return; };
 # 354 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 355 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    if (firstCall)
@@ -5145,7 +5145,7 @@ int maxOcc;
 # 382 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 383 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 384 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   alias_group_changed(____alias_loc_id_16); call_lbl_3: if (!(____chimes_does_checkpoint_printRank_npm ? ( ({ calling((void*)printRank, 3, ____alias_loc_id_16, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_16); (*____chimes_extern_func_printRank)(); })))) {rm_stack(false, 0UL, "printSimulationDataYaml", (int *)0x0, 0, ____chimes_did_disable11); return;; };
+   alias_group_changed(____alias_loc_id_16); call_lbl_3: if (! (____chimes_does_checkpoint_printRank_npm ? ( ({ calling((void*)printRank, 3, ____alias_loc_id_16, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_16); (*____chimes_extern_func_printRank)(); })))) {rm_stack(false, 0UL, "printSimulationDataYaml", (int *)0x0, 0, ____chimes_did_disable11); return; };
 # 386 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 387 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    fprintf(file,"Simulation data: \n");
@@ -5262,7 +5262,9 @@ int failCode;
 # 443 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode |= 1;
 # 444 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-       call_lbl_3: if (alias_group_changed(____alias_loc_id_28) || ({ calling((void*)printRank, 3, ____alias_loc_id_28, 0UL, 0); (printRank)(); }) ) {fprintf(stdout, "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
+       call_lbl_3: if (alias_group_changed(____alias_loc_id_28) || ({ calling((void*)printRank, 3, ____alias_loc_id_28, 0UL, 0); (printRank)(); }) ) {fprintf(stdout,
+# 446 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
 # 447 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    }
 # 448 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5287,7 +5289,13 @@ int failCode;
 # 459 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode |= 2;
 # 460 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-       call_lbl_6: if (alias_group_changed(____alias_loc_id_29) || ({ calling((void*)printRank, 6, ____alias_loc_id_29, 0UL, 0); (printRank)(); }) ) {fprintf(stdout, "\nSimulation too small.\n  Increase the number of unit cells to make the simulation\n  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n", minx, miny, minz); };
+       call_lbl_6: if (alias_group_changed(____alias_loc_id_29) || ({ calling((void*)printRank, 6, ____alias_loc_id_29, 0UL, 0); (printRank)(); }) ) {fprintf(stdout,"\nSimulation too small.\n"
+# 462 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "  Increase the number of unit cells to make the simulation\n"
+# 463 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n",
+# 464 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 minx, miny, minz); };
 # 465 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    }
 # 466 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5299,7 +5307,11 @@ int failCode;
 # 470 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode |= 4;
 # 471 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-       call_lbl_10: if (alias_group_changed(____alias_loc_id_30) || ({ calling((void*)printRank, 10, ____alias_loc_id_30, 0UL, 0); (printRank)(); }) ) {fprintf(stdout, "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n", latticeType); };
+       call_lbl_10: if (alias_group_changed(____alias_loc_id_30) || ({ calling((void*)printRank, 10, ____alias_loc_id_30, 0UL, 0); (printRank)(); }) ) {fprintf(stdout,
+# 473 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n",
+# 474 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 latticeType); };
 # 475 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    }
 # 476 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5465,7 +5477,7 @@ SimFlat *sim;
 # 176 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       latticeConstant = (cmd.lat) ;
 # 177 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (cmd.lat < 0.) {latticeConstant = sim->pot->lat; };
+   if (cmd.lat < 0.0) {latticeConstant = sim->pot->lat; };
 # 179 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5532,12 +5544,12 @@ void destroySimulation_quick(SimFlat** ps)
 {const int ____chimes_did_disable2 = new_stack((void *)(&destroySimulation), "destroySimulation", &____must_manage_destroySimulation, 1, 1, (size_t)(9903828072463844323UL), "destroySimulation|ps|0", &____must_checkpoint_destroySimulation_ps_0, "%struct.SimFlatSt**", (void *)(&ps), (size_t)8, 1, 0, 0) ; SimFlat *s;
  if (____must_checkpoint_destroySimulation_s_0) { register_stack_vars(1, "destroySimulation|s|0", &____must_checkpoint_destroySimulation_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); } ; ;
 # 220 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (!ps) {rm_stack(false, 0UL, "destroySimulation", &____must_manage_destroySimulation, ____alias_loc_id_38, ____chimes_did_disable2); return;; };
+   if (! ps) {rm_stack(false, 0UL, "destroySimulation", &____must_manage_destroySimulation, ____alias_loc_id_38, ____chimes_did_disable2); return; };
 # 221 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       s = (*ps) ;
 # 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (!s) {rm_stack(false, 0UL, "destroySimulation", &____must_manage_destroySimulation, ____alias_loc_id_38, ____chimes_did_disable2); return;; };
+   if (! s) {rm_stack(false, 0UL, "destroySimulation", &____must_manage_destroySimulation, ____alias_loc_id_38, ____chimes_did_disable2); return; };
 # 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
     BasePotential *pot; pot = (s->pot) ;
@@ -5763,7 +5775,7 @@ void printThings_quick(SimFlat* s, int iStep, double elapsedTime)
    iStepPrev = iStep;
 # 351 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 352 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   alias_group_changed(____alias_loc_id_22); call_lbl_2: if (!(____chimes_does_checkpoint_printRank_npm ? ( ({ calling((void*)printRank, 2, ____alias_loc_id_22, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_22); (*____chimes_extern_func_printRank)(); })))) {rm_stack(false, 0UL, "printThings", &____must_manage_printThings, ____alias_loc_id_36, ____chimes_did_disable10); return;; };
+   alias_group_changed(____alias_loc_id_22); call_lbl_2: if (! (____chimes_does_checkpoint_printRank_npm ? ( ({ calling((void*)printRank, 2, ____alias_loc_id_22, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_22); (*____chimes_extern_func_printRank)(); })))) {rm_stack(false, 0UL, "printThings", &____must_manage_printThings, ____alias_loc_id_36, ____chimes_did_disable10); return; };
 # 354 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 355 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    if (firstCall)
@@ -5822,7 +5834,7 @@ int maxOcc;
 # 382 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 383 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 384 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   alias_group_changed(____alias_loc_id_16); call_lbl_3: if (!(____chimes_does_checkpoint_printRank_npm ? ( ({ calling((void*)printRank, 3, ____alias_loc_id_16, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_16); (*____chimes_extern_func_printRank)(); })))) {rm_stack(false, 0UL, "printSimulationDataYaml", (int *)0x0, 0, ____chimes_did_disable11); return;; };
+   alias_group_changed(____alias_loc_id_16); call_lbl_3: if (! (____chimes_does_checkpoint_printRank_npm ? ( ({ calling((void*)printRank, 3, ____alias_loc_id_16, 0UL, 0); (printRank)(); }) ) : (({ calling_npm("printRank", ____alias_loc_id_16); (*____chimes_extern_func_printRank)(); })))) {rm_stack(false, 0UL, "printSimulationDataYaml", (int *)0x0, 0, ____chimes_did_disable11); return; };
 # 386 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 387 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    fprintf(file,"Simulation data: \n");
@@ -5938,7 +5950,9 @@ int failCode;
 # 443 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode |= 1;
 # 444 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-       call_lbl_3: if (alias_group_changed(____alias_loc_id_28) || ({ calling((void*)printRank, 3, ____alias_loc_id_28, 0UL, 0); (printRank)(); }) ) {fprintf(stdout, "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
+       call_lbl_3: if (alias_group_changed(____alias_loc_id_28) || ({ calling((void*)printRank, 3, ____alias_loc_id_28, 0UL, 0); (printRank)(); }) ) {fprintf(stdout,
+# 446 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
 # 447 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    }
 # 448 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5963,7 +5977,13 @@ int failCode;
 # 459 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode |= 2;
 # 460 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-       call_lbl_6: if (alias_group_changed(____alias_loc_id_29) || ({ calling((void*)printRank, 6, ____alias_loc_id_29, 0UL, 0); (printRank)(); }) ) {fprintf(stdout, "\nSimulation too small.\n  Increase the number of unit cells to make the simulation\n  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n", minx, miny, minz); };
+       call_lbl_6: if (alias_group_changed(____alias_loc_id_29) || ({ calling((void*)printRank, 6, ____alias_loc_id_29, 0UL, 0); (printRank)(); }) ) {fprintf(stdout,"\nSimulation too small.\n"
+# 462 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "  Increase the number of unit cells to make the simulation\n"
+# 463 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n",
+# 464 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 minx, miny, minz); };
 # 465 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    }
 # 466 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -5975,7 +5995,11 @@ int failCode;
 # 470 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode |= 4;
 # 471 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-       call_lbl_10: if (alias_group_changed(____alias_loc_id_30) || ({ calling((void*)printRank, 10, ____alias_loc_id_30, 0UL, 0); (printRank)(); }) ) {fprintf(stdout, "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n", latticeType); };
+       call_lbl_10: if (alias_group_changed(____alias_loc_id_30) || ({ calling((void*)printRank, 10, ____alias_loc_id_30, 0UL, 0); (printRank)(); }) ) {fprintf(stdout,
+# 473 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n",
+# 474 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 latticeType); };
 # 475 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    }
 # 476 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6025,7 +6049,7 @@ SimFlat* initSimulation_npm(Command cmd)
 # 176 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    real_t latticeConstant = cmd.lat;
 # 177 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (cmd.lat < 0.) {latticeConstant = sim->pot->lat; };
+   if (cmd.lat < 0.0) {latticeConstant = sim->pot->lat; };
 # 179 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6089,12 +6113,12 @@ void destroySimulation_npm(SimFlat** ps)
 # 219 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 {
 # 220 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (!ps) {return;; };
+   if (! ps) {return; };
 # 221 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 222 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    SimFlat* s = *ps;
 # 223 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (!s) {return;; };
+   if (! s) {return; };
 # 224 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 225 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    BasePotential* pot = s->pot;
@@ -6299,7 +6323,7 @@ void printThings_npm(SimFlat* s, int iStep, double elapsedTime)
    iStepPrev = iStep;
 # 351 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 352 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-   if (!(*____chimes_extern_func_printRank)()) {return;; };
+   if (! (*____chimes_extern_func_printRank)()) {return; };
 # 354 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
 # 355 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    if (firstCall)
@@ -6355,7 +6379,9 @@ void sanityChecks_npm(Command cmd, double cutoff, double latticeConst, char latt
 # 443 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode |= 1;
 # 444 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      if ((*____chimes_extern_func_printRank)()) {fprintf(stdout, "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
+      if ((*____chimes_extern_func_printRank)()) {fprintf(stdout,
+# 446 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "\nNumber of MPI ranks must match xproc * yproc * zproc\n"); };
 # 447 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    }
 # 448 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6380,7 +6406,13 @@ void sanityChecks_npm(Command cmd, double cutoff, double latticeConst, char latt
 # 459 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode |= 2;
 # 460 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      if ((*____chimes_extern_func_printRank)()) {fprintf(stdout, "\nSimulation too small.\n  Increase the number of unit cells to make the simulation\n  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n", minx, miny, minz); };
+      if ((*____chimes_extern_func_printRank)()) {fprintf(stdout,"\nSimulation too small.\n"
+# 462 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "  Increase the number of unit cells to make the simulation\n"
+# 463 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "  at least (%3.2f, %3.2f. %3.2f) Ansgstroms in size\n",
+# 464 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 minx, miny, minz); };
 # 465 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    }
 # 466 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
@@ -6392,7 +6424,11 @@ void sanityChecks_npm(Command cmd, double cutoff, double latticeConst, char latt
 # 470 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
       failCode |= 4;
 # 471 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
-      if ((*____chimes_extern_func_printRank)()) {fprintf(stdout, "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n", latticeType); };
+      if ((*____chimes_extern_func_printRank)()) {fprintf(stdout,
+# 473 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 "\nOnly FCC Lattice type supported, not %s. Fatal Error.\n",
+# 474 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
+                 latticeType); };
 # 475 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"
    }
 # 476 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c"

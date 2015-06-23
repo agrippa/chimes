@@ -3936,7 +3936,27 @@ const real_t *localMin;
 # 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    px=py=pz=0.0;
 # 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { for ( ix = (begin[0]) ;ix < end[0]; ++ix) { { { { for ( iy = (begin[1]) ; iy < end[1]; ++iy) for ( iz = (begin[2]) ; iz < end[2]; ++iz) for ( ib = (0) ; ib < nb; ++ib) { rx = ((ix + basis[ib][0]) * lat) ; ry = ((iy + basis[ib][1]) * lat) ; rz = ((iz + basis[ib][2]) * lat) ; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ; call_lbl_3: ({ LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); } calling((void*)putAtomInBox, 3, ____alias_loc_id_0, 0UL, 10, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, id, 0, rx, ry, rz, px, py, pz); }) ; } } } }; } }
+   { for ( ix = (begin[0]) ;ix<end[0]; ++ix) { { for ( iy = (begin[1]) ;iy<end[1]; ++iy) { { for ( iz = (begin[2]) ;iz<end[2]; ++iz) { { for ( ib = (0) ; ib<nb; ++ib)
+# 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+            {
+# 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+                  rx = ((ix + basis[ib][0]) * lat) ;
+# 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+                  ry = ((iy + basis[ib][1]) * lat) ;
+# 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+                  rz = ((iz + basis[ib][2]) * lat) ;
+# 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               if (rx < localMin[0] || rx >= localMax[0]) {continue; };
+# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               if (ry < localMin[1] || ry >= localMax[1]) {continue; };
+# 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               if (rz < localMin[2] || rz >= localMax[2]) {continue; };
+# 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+                  id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
+# 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+                call_lbl_3: ({ LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); } calling((void*)putAtomInBox, 3, ____alias_loc_id_0, 0UL, 10, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, id, 0, rx, ry, rz, px, py, pz); }) ;
+# 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+            } }; } }; } }; } }
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4056,7 +4076,7 @@ int iType;
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (temperature == 0.) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_20, ____chimes_did_disable4); return;; };
+   if (temperature == 0.0) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_20, ____chimes_did_disable4); return; };
 # 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
 # 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4363,7 +4383,27 @@ const real_t *localMin;
 # 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    px=py=pz=0.0;
 # 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   { for ( ix = (begin[0]) ;ix < end[0]; ++ix) { { { { for ( iy = (begin[1]) ; iy < end[1]; ++iy) for ( iz = (begin[2]) ; iz < end[2]; ++iz) for ( ib = (0) ; ib < nb; ++ib) { rx = ((ix + basis[ib][0]) * lat) ; ry = ((iy + basis[ib][1]) * lat) ; rz = ((iz + basis[ib][2]) * lat) ; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ; call_lbl_3: ({ calling((void*)putAtomInBox, 3, ____alias_loc_id_0, 0UL, 10, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }) ; } } } }; } }
+   { for ( ix = (begin[0]) ;ix<end[0]; ++ix) { { for ( iy = (begin[1]) ;iy<end[1]; ++iy) { { for ( iz = (begin[2]) ;iz<end[2]; ++iz) { { for ( ib = (0) ; ib<nb; ++ib)
+# 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+            {
+# 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+                  rx = ((ix + basis[ib][0]) * lat) ;
+# 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+                  ry = ((iy + basis[ib][1]) * lat) ;
+# 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+                  rz = ((iz + basis[ib][2]) * lat) ;
+# 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               if (rx < localMin[0] || rx >= localMax[0]) {continue; };
+# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               if (ry < localMin[1] || ry >= localMax[1]) {continue; };
+# 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               if (rz < localMin[2] || rz >= localMax[2]) {continue; };
+# 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+                  id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
+# 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+                call_lbl_3: ({ calling((void*)putAtomInBox, 3, ____alias_loc_id_0, 0UL, 10, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }) ;
+# 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+            } }; } }; } }; } }
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4479,7 +4519,7 @@ int iType;
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (temperature == 0.) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_20, ____chimes_did_disable4); return;; };
+   if (temperature == 0.0) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_20, ____chimes_did_disable4); return; };
 # 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
 # 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4770,7 +4810,27 @@ void createFccLattice_npm(int nx, int ny, int nz, real_t lat, SimFlat* s)
 # 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    px=py=pz=0.0;
 # 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   for (int ix = begin[0];ix < end[0]; ++ix) { for (int iy = begin[1]; iy < end[1]; ++iy) for (int iz = begin[2]; iz < end[2]; ++iz) for (int ib = 0; ib < nb; ++ib) { real_t rx = (ix + basis[ib][0]) * lat; real_t ry = (iy + basis[ib][1]) * lat; real_t rz = (iz + basis[ib][2]) * lat; if (rx < localMin[0] || rx >= localMax[0]) continue; if (ry < localMin[1] || ry >= localMax[1]) continue; if (rz < localMin[2] || rz >= localMax[2]) continue; int id = ib + nb * (iz + nz * (iy + ny * (ix))); (*____chimes_extern_func_putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }; }
+   for (int ix=begin[0];ix<end[0]; ++ix) { for (int iy=begin[1];iy<end[1]; ++iy) { for (int iz=begin[2];iz<end[2]; ++iz) { for (int ib=0; ib<nb; ++ib)
+# 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+            {
+# 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               real_t rx = (ix+basis[ib][0]) * lat;
+# 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               real_t ry = (iy+basis[ib][1]) * lat;
+# 107 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               real_t rz = (iz+basis[ib][2]) * lat;
+# 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               if (rx < localMin[0] || rx >= localMax[0]) {continue; };
+# 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               if (ry < localMin[1] || ry >= localMax[1]) {continue; };
+# 110 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               if (rz < localMin[2] || rz >= localMax[2]) {continue; };
+# 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               int id = ib+nb*(iz+nz*(iy+ny*(ix)));
+# 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+               (*____chimes_extern_func_putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz);
+# 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
+            }; }; }; }
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 115 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4873,7 +4933,7 @@ void setTemperature_npm(SimFlat* s, real_t temperature)
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (temperature == 0.) {return;; };
+   if (temperature == 0.0) {return; };
 # 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    real_t vZero[3] = {0., 0., 0.};
 # 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -5052,7 +5112,7 @@ static int module_init() {
                             &____alias_loc_id_21, (unsigned)6, (unsigned)0, (2774474540883984311UL + 1195UL), (2774474540883984311UL + 1196UL), (2774474540883984311UL + 1197UL), (2774474540883984311UL + 1198UL), (2774474540883984311UL + 1199UL), (2774474540883984311UL + 1242UL),
                             "initAtoms", (void *)(&initAtoms_npm), (void *)__null, 0, 1, (2774474540883984311UL + 130UL), (2774474540883984311UL + 8UL), 10, "malloc", 1, 0UL, (2774474540883984311UL + 8UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "zeroReal3", 1, (2774474540883984311UL + 20UL), 0UL, "zeroReal3", 1, (2774474540883984311UL + 20UL), 0UL, "zeroReal3", 1, (2774474540883984311UL + 20UL), 0UL,
                             "destroyAtoms", (void *)(&destroyAtoms_npm), (void *)__null, 0, 1, (2774474540883984311UL + 239UL), 0UL, 7, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 239UL), 0UL,
-                            "createFccLattice", (void *)(&createFccLattice_npm), (void *)__null, 1, &____alias_loc_id_1, 5, 0UL, 0UL, 0UL, 0UL, (2774474540883984311UL + 502UL), 0UL, 8, "memcpy", 3, (2774474540883984311UL + 249UL), (2774474540883984311UL + 1318UL), 0UL, 0UL, "floor", 1, 0UL, 0UL, "ceil", 1, 0UL, 0UL, "putAtomInBox", 10, (2774474540883984311UL + 504UL), (2774474540883984311UL + 504UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "profileStart", 1, 0UL, 0UL, "addIntParallel", 3, (2774474540883984311UL + 504UL), (2774474540883984311UL + 504UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL, "__assert_fail", 4, (2774474540883984311UL + 1319UL), (2774474540883984311UL + 1320UL), 0UL, (2774474540883984311UL + 1321UL), 0UL,
+                            "createFccLattice", (void *)(&createFccLattice_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 5, 0UL, 0UL, 0UL, 0UL, (2774474540883984311UL + 502UL), 0UL, 8, "memcpy", 3, (2774474540883984311UL + 249UL), (2774474540883984311UL + 1318UL), 0UL, 0UL, "floor", 1, 0UL, 0UL, "ceil", 1, 0UL, 0UL, "putAtomInBox", 10, (2774474540883984311UL + 504UL), (2774474540883984311UL + 504UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "profileStart", 1, 0UL, 0UL, "addIntParallel", 3, (2774474540883984311UL + 504UL), (2774474540883984311UL + 504UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL, "__assert_fail", 4, (2774474540883984311UL + 1319UL), (2774474540883984311UL + 1320UL), 0UL, (2774474540883984311UL + 1321UL), 0UL,
                             "setVcm", (void *)(&setVcm_npm), (void *)__null, 1, &____alias_loc_id_2, 2, (2774474540883984311UL + 719UL), (2774474540883984311UL + 720UL), 0UL, 1, "computeVcm", 2, (2774474540883984311UL + 719UL), (2774474540883984311UL + 566UL), 0UL,
                             "setTemperature", (void *)(&setTemperature_npm), (void *)__null, 6, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 2, (2774474540883984311UL + 1183UL), 0UL, 0UL, 10, "sqrt", 1, 0UL, 0UL, "mkSeed", 2, 0UL, 0UL, 0UL, "gasdev", 1, (2774474540883984311UL + 913UL), 0UL, "gasdev", 1, (2774474540883984311UL + 913UL), 0UL, "gasdev", 1, (2774474540883984311UL + 913UL), 0UL, "memset", 3, (2774474540883984311UL + 914UL), 0UL, 0UL, 0UL, "setVcm", 2, (2774474540883984311UL + 1183UL), (2774474540883984311UL + 914UL), 0UL, "kineticEnergy", 1, (2774474540883984311UL + 1183UL), 0UL, "sqrt", 1, 0UL, 0UL, "kineticEnergy", 1, (2774474540883984311UL + 1183UL), 0UL,
                             "randomDisplacements", (void *)(&randomDisplacements_npm), (void *)__null, 4, &____alias_loc_id_10, &____alias_loc_id_11, &____alias_loc_id_12, &____alias_loc_id_13, 2, (2774474540883984311UL + 1312UL), 0UL, 0UL, 4, "mkSeed", 2, 0UL, 0UL, 0UL, "lcg61", 1, (2774474540883984311UL + 1200UL), 0UL, "lcg61", 1, (2774474540883984311UL + 1200UL), 0UL, "lcg61", 1, (2774474540883984311UL + 1200UL), 0UL,

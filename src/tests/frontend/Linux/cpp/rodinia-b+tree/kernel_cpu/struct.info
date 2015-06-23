@@ -1,0 +1,2 @@
+knode 0 location "int" indices "[ 509 x int ]" keys "[ 509 x int ]" is_leaf "bool" num_keys "int"
+record 0 value "int"

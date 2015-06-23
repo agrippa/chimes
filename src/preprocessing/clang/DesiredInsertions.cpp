@@ -85,13 +85,19 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
 
             while (index < clauses.size()) {
                 if (clauses[index] == ' ' && paren_depth == 0) {
-                    split_clauses.push_back(clauses.substr(start,
-                                index - start));
-                    index++;
-                    while (index < clauses.size() && index == ' ') {
+                    int seek = index;
+                    while (seek < clauses.size() && clauses[seek] == ' ') seek++;
+                    if (seek < clauses.size() && clauses[seek] == '(') {
+                        index = seek;
+                    } else {
+                        split_clauses.push_back(clauses.substr(start,
+                                    index - start));
                         index++;
+                        while (index < clauses.size() && index == ' ') {
+                            index++;
+                        }
+                        start = index;
                     }
-                    start = index;
                 } else {
                     if (clauses[index] == '(') paren_depth++;
                     else if (clauses[index] == ')') paren_depth--;
@@ -120,6 +126,9 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
                     args = args.substr(0, close);
 
                     std::string clause_name = clause.substr(0, open);
+                    while (clause_name.at(clause_name.size() - 1) == ' ') {
+                        clause_name = clause_name.substr(0, clause_name.size() - 1);
+                    }
 
                     std::vector<std::string> clause_args;
                     int args_index = 0;
@@ -698,6 +707,7 @@ StructFields *DesiredInsertions::get_struct_fields_for(std::string name) {
         StructFields *curr = *i;
         if (curr->get_name() == name) return curr;
     }
+    llvm::errs() << "Getting struct fields for \"" << name << "\"\n";
     return NULL;
 }
 
@@ -1312,12 +1322,22 @@ bool DesiredInsertions::have_main_in_call_tree() {
 }
 
 int DesiredInsertions::get_distance_from_main_helper(std::string curr,
-        std::string target, int depth) {
+        std::string target, int depth, std::vector<string> *visited) {
     if (curr == target) return depth;
+
+    /*
+     * Return if we've already visited this function on this stack, recursion
+     * always leads to a longer stack trace.
+     */
+    if (std::find(visited->begin(), visited->end(), curr) != visited->end()) {
+        return -1;
+    }
 
     if (has_callees(curr)) {
         FunctionCallees *callees = call_tree->at(curr);
         assert(callees);
+
+        visited->push_back(curr);
 
         int min_depth = -1;
         for (std::vector<CheckpointCause>::iterator i = callees->begin(),
@@ -1325,12 +1345,15 @@ int DesiredInsertions::get_distance_from_main_helper(std::string curr,
             CheckpointCause cause = *i;
             std::string fname = cause.get_name();
             int child_depth = get_distance_from_main_helper(fname, target,
-                    depth + 1);
+                    depth + 1, visited);
             if (child_depth != -1 && (min_depth == -1 ||
                         child_depth < min_depth)) {
                 min_depth = child_depth;
             }
         }
+
+        visited->pop_back();
+
         return (min_depth);
     }
     return -1;
@@ -1338,7 +1361,8 @@ int DesiredInsertions::get_distance_from_main_helper(std::string curr,
 
 int DesiredInsertions::get_distance_from_main(std::string fname) {
     assert(have_main_in_call_tree());
-    return get_distance_from_main_helper("main", fname, 0);
+    std::vector<std::string> visited;
+    return get_distance_from_main_helper("main", fname, 0, &visited);
 }
 
 bool DesiredInsertions::has_callees(std::string name) {

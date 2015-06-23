@@ -2844,7 +2844,7 @@ void unloadForceBuffer(void* vparms, void* data, int face, int bufSize, char* ch
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 void destroyForceExchange(void* vparms);
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-static int sortAtomsById(const void* a, const void* b);
+int sortAtomsById(const void* a, const void* b);
 # 151 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 151 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 HaloExchange* initAtomHaloExchange_npm(Domain* domain, LinkCell* boxes);HaloExchange* initHaloExchange_npm(Domain* domain);int* mkAtomCellList_npm(LinkCell* boxes, int iFace, const int nCells);
@@ -2898,7 +2898,7 @@ HaloExchange *hh;
    parms->nCells[5] = parms->nCells[4];
 # 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   { lbl_0: int ii; if (____must_checkpoint_initAtomHaloExchange_ii_0 != 0) { register_stack_var("initAtomHaloExchange|ii|0", &____must_checkpoint_initAtomHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } for ( ii = (0) ;ii < 6; ++ii) { call_lbl_3: parms->cellList[ii] = ({ int ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (parms->nCells[ii]); } calling((void*)mkAtomCellList, 3, ____alias_loc_id_1, 12143118692030655536UL, 3, (size_t)(12143118692030655450UL), (size_t)(0UL), (size_t)(0UL)); (mkAtomCellList)(boxes, ii, ____chimes_arg3); }) ; } };
+   { lbl_0: int ii; if (____must_checkpoint_initAtomHaloExchange_ii_0 != 0) { register_stack_var("initAtomHaloExchange|ii|0", &____must_checkpoint_initAtomHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } for ( ii = (0) ;ii<6; ++ii) { call_lbl_3: parms->cellList[ii] = ({ int ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (parms->nCells[ii]); } calling((void*)mkAtomCellList, 3, ____alias_loc_id_1, 12143118692030655536UL, 3, (size_t)(12143118692030655450UL), (size_t)(0UL), (size_t)(0UL)); (mkAtomCellList)(boxes, ii, ____chimes_arg3); }) ; } };
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    { int ii; for ( ii = (0) ; ii<6; ++ii)
@@ -2907,7 +2907,7 @@ HaloExchange *hh;
 # 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
       parms->pbcFactor[ii] = (real_t*)malloc_wrapper(3*sizeof(real_t), 12143118692030655536UL, 0, 0);
 # 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-      { int jj; for ( jj = (0) ;jj < 3; ++jj) { parms->pbcFactor[ii][jj] = 0.; } };
+      { int jj; for ( jj = (0) ;jj<3; ++jj) { parms->pbcFactor[ii][jj] = 0.0; } };
 # 183 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 184 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -2915,17 +2915,17 @@ HaloExchange *hh;
 # 185 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     int *procGrid; procGrid = (domain->procGrid) ;
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_X_AXIS] == 0) {parms->pbcFactor[0][HALO_X_AXIS] = +1.; };
+   if (procCoord[HALO_X_AXIS] == 0) {parms->pbcFactor[0][HALO_X_AXIS] = +1.0; };
 # 187 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_X_AXIS] == procGrid[HALO_X_AXIS] - 1) {parms->pbcFactor[1][HALO_X_AXIS] = -1.; };
+   if (procCoord[HALO_X_AXIS] == procGrid[HALO_X_AXIS]-1) {parms->pbcFactor[1][HALO_X_AXIS] = -1.0; };
 # 188 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Y_AXIS] == 0) {parms->pbcFactor[2][HALO_Y_AXIS] = +1.; };
+   if (procCoord[HALO_Y_AXIS] == 0) {parms->pbcFactor[2][HALO_Y_AXIS] = +1.0; };
 # 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Y_AXIS] == procGrid[HALO_Y_AXIS] - 1) {parms->pbcFactor[3][HALO_Y_AXIS] = -1.; };
+   if (procCoord[HALO_Y_AXIS] == procGrid[HALO_Y_AXIS]-1) {parms->pbcFactor[3][HALO_Y_AXIS] = -1.0; };
 # 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Z_AXIS] == 0) {parms->pbcFactor[4][HALO_Z_AXIS] = +1.; };
+   if (procCoord[HALO_Z_AXIS] == 0) {parms->pbcFactor[4][HALO_Z_AXIS] = +1.0; };
 # 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Z_AXIS] == procGrid[HALO_Z_AXIS] - 1) {parms->pbcFactor[5][HALO_Z_AXIS] = -1.; };
+   if (procCoord[HALO_Z_AXIS] == procGrid[HALO_Z_AXIS]-1) {parms->pbcFactor[5][HALO_Z_AXIS] = -1.0; };
 # 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 193 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    hh->parms = parms;
@@ -3026,7 +3026,7 @@ void haloExchange_resumable(HaloExchange* haloExchangeData, void* data)
 {const int ____chimes_did_disable3 = new_stack((void *)(&haloExchange), "haloExchange", &____must_manage_haloExchange, 2, 2, (size_t)(12143118692030657329UL), (size_t)(12143118692030657330UL), "haloExchange|haloExchangeData|0", &____must_checkpoint_haloExchange_haloExchangeData_0, "%struct.HaloExchangeSt*", (void *)(&haloExchangeData), (size_t)8, 1, 0, 0, "haloExchange|data|0", &____must_checkpoint_haloExchange_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0) ; int iAxis;
  if (____must_checkpoint_haloExchange_iAxis_0) { register_stack_vars(1, "haloExchange|iAxis|0", &____must_checkpoint_haloExchange_iAxis_0, "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 255 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   { for ( iAxis = (0) ;iAxis < 3; ++iAxis) { call_lbl_1: ({ calling((void*)exchangeData, 1, ____alias_loc_id_15, 0UL, 3, (size_t)(12143118692030657329UL), (size_t)(12143118692030657330UL), (size_t)(0UL)); (exchangeData)(haloExchangeData, data, iAxis); }) ; } };
+   { for ( iAxis = (0) ;iAxis<3; ++iAxis) { call_lbl_1: ({ calling((void*)exchangeData, 1, ____alias_loc_id_15, 0UL, 3, (size_t)(12143118692030657329UL), (size_t)(12143118692030657330UL), (size_t)(0UL)); (exchangeData)(haloExchangeData, data, iAxis); }) ; } };
 # 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 rm_stack(false, 0UL, "haloExchange", &____must_manage_haloExchange, ____alias_loc_id_36, ____chimes_did_disable3); }
 # 258 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3160,17 +3160,17 @@ int *list;
       zEnd = (boxes->gridSize[2] + 1) ;
 # 343 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 344 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 0) {xEnd = xBegin + 2; };
+   if (iFace == 0) {xEnd = xBegin+2; };
 # 345 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 1) {xBegin = xEnd - 2; };
+   if (iFace == 1) {xBegin = xEnd-2; };
 # 346 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 2) {yEnd = yBegin + 2; };
+   if (iFace == 2) {yEnd = yBegin+2; };
 # 347 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 3) {yBegin = yEnd - 2; };
+   if (iFace == 3) {yBegin = yEnd-2; };
 # 348 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 4) {zEnd = zBegin + 2; };
+   if (iFace == 4) {zEnd = zBegin+2; };
 # 349 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 5) {zBegin = zEnd - 2; };
+   if (iFace == 5) {zBegin = zEnd-2; };
 # 350 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 351 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
       count = (0) ;
@@ -3744,7 +3744,7 @@ int sortAtomsById_resumable(const void* a, const void* b)
    ((aId != bId) ? static_cast<void> (0) : __assert_fail ("aId != bId", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 671, __PRETTY_FUNCTION__));
 # 672 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 673 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (aId < bId) {rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_38, ____chimes_did_disable16); return -1;; };
+   if (aId < bId) {rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_38, ____chimes_did_disable16); return -1; };
 # 675 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_38, ____chimes_did_disable16); return 1;
 # 676 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3798,7 +3798,7 @@ HaloExchange *hh;
    parms->nCells[5] = parms->nCells[4];
 # 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   { lbl_0: int ii; if (____must_checkpoint_initAtomHaloExchange_ii_0 != 0) { register_stack_var("initAtomHaloExchange|ii|0", &____must_checkpoint_initAtomHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ;ii < 6; ++ii) { call_lbl_3: parms->cellList[ii] = ({ calling((void*)mkAtomCellList, 3, ____alias_loc_id_1, 12143118692030655536UL, 3, (size_t)(12143118692030655450UL), (size_t)(0UL), (size_t)(0UL)); mkAtomCellList_quick(boxes, ii, parms->nCells[ii]); }) ; } };
+   { lbl_0: int ii; if (____must_checkpoint_initAtomHaloExchange_ii_0 != 0) { register_stack_var("initAtomHaloExchange|ii|0", &____must_checkpoint_initAtomHaloExchange_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ;ii<6; ++ii) { call_lbl_3: parms->cellList[ii] = ({ calling((void*)mkAtomCellList, 3, ____alias_loc_id_1, 12143118692030655536UL, 3, (size_t)(12143118692030655450UL), (size_t)(0UL), (size_t)(0UL)); mkAtomCellList_quick(boxes, ii, parms->nCells[ii]); }) ; } };
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    { int ii; for ( ii = (0) ; ii<6; ++ii)
@@ -3807,7 +3807,7 @@ HaloExchange *hh;
 # 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
       parms->pbcFactor[ii] = (real_t*)malloc_wrapper(3*sizeof(real_t), 12143118692030655536UL, 0, 0);
 # 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-      { int jj; for ( jj = (0) ;jj < 3; ++jj) { parms->pbcFactor[ii][jj] = 0.; } };
+      { int jj; for ( jj = (0) ;jj<3; ++jj) { parms->pbcFactor[ii][jj] = 0.0; } };
 # 183 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    } }
 # 184 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -3815,17 +3815,17 @@ HaloExchange *hh;
 # 185 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
     int *procGrid; procGrid = (domain->procGrid) ;
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_X_AXIS] == 0) {parms->pbcFactor[0][HALO_X_AXIS] = +1.; };
+   if (procCoord[HALO_X_AXIS] == 0) {parms->pbcFactor[0][HALO_X_AXIS] = +1.0; };
 # 187 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_X_AXIS] == procGrid[HALO_X_AXIS] - 1) {parms->pbcFactor[1][HALO_X_AXIS] = -1.; };
+   if (procCoord[HALO_X_AXIS] == procGrid[HALO_X_AXIS]-1) {parms->pbcFactor[1][HALO_X_AXIS] = -1.0; };
 # 188 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Y_AXIS] == 0) {parms->pbcFactor[2][HALO_Y_AXIS] = +1.; };
+   if (procCoord[HALO_Y_AXIS] == 0) {parms->pbcFactor[2][HALO_Y_AXIS] = +1.0; };
 # 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Y_AXIS] == procGrid[HALO_Y_AXIS] - 1) {parms->pbcFactor[3][HALO_Y_AXIS] = -1.; };
+   if (procCoord[HALO_Y_AXIS] == procGrid[HALO_Y_AXIS]-1) {parms->pbcFactor[3][HALO_Y_AXIS] = -1.0; };
 # 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Z_AXIS] == 0) {parms->pbcFactor[4][HALO_Z_AXIS] = +1.; };
+   if (procCoord[HALO_Z_AXIS] == 0) {parms->pbcFactor[4][HALO_Z_AXIS] = +1.0; };
 # 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Z_AXIS] == procGrid[HALO_Z_AXIS] - 1) {parms->pbcFactor[5][HALO_Z_AXIS] = -1.; };
+   if (procCoord[HALO_Z_AXIS] == procGrid[HALO_Z_AXIS]-1) {parms->pbcFactor[5][HALO_Z_AXIS] = -1.0; };
 # 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 193 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    hh->parms = parms;
@@ -3924,7 +3924,7 @@ void haloExchange_quick(HaloExchange* haloExchangeData, void* data)
 {const int ____chimes_did_disable3 = new_stack((void *)(&haloExchange), "haloExchange", &____must_manage_haloExchange, 2, 2, (size_t)(12143118692030657329UL), (size_t)(12143118692030657330UL), "haloExchange|haloExchangeData|0", &____must_checkpoint_haloExchange_haloExchangeData_0, "%struct.HaloExchangeSt*", (void *)(&haloExchangeData), (size_t)8, 1, 0, 0, "haloExchange|data|0", &____must_checkpoint_haloExchange_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0) ; int iAxis;
  if (____must_checkpoint_haloExchange_iAxis_0) { register_stack_vars(1, "haloExchange|iAxis|0", &____must_checkpoint_haloExchange_iAxis_0, "i32", (void *)(&iAxis), (size_t)4, 0, 0, 0); } ; ;
 # 255 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   { for ( iAxis = (0) ;iAxis < 3; ++iAxis) { call_lbl_1: ({ calling((void*)exchangeData, 1, ____alias_loc_id_15, 0UL, 3, (size_t)(12143118692030657329UL), (size_t)(12143118692030657330UL), (size_t)(0UL)); exchangeData_quick(haloExchangeData, data, iAxis); }) ; } };
+   { for ( iAxis = (0) ;iAxis<3; ++iAxis) { call_lbl_1: ({ calling((void*)exchangeData, 1, ____alias_loc_id_15, 0UL, 3, (size_t)(12143118692030657329UL), (size_t)(12143118692030657330UL), (size_t)(0UL)); exchangeData_quick(haloExchangeData, data, iAxis); }) ; } };
 # 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 rm_stack(false, 0UL, "haloExchange", &____must_manage_haloExchange, ____alias_loc_id_36, ____chimes_did_disable3); }
 
@@ -4057,17 +4057,17 @@ int *list;
       zEnd = (boxes->gridSize[2] + 1) ;
 # 343 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 344 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 0) {xEnd = xBegin + 2; };
+   if (iFace == 0) {xEnd = xBegin+2; };
 # 345 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 1) {xBegin = xEnd - 2; };
+   if (iFace == 1) {xBegin = xEnd-2; };
 # 346 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 2) {yEnd = yBegin + 2; };
+   if (iFace == 2) {yEnd = yBegin+2; };
 # 347 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 3) {yBegin = yEnd - 2; };
+   if (iFace == 3) {yBegin = yEnd-2; };
 # 348 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 4) {zEnd = zBegin + 2; };
+   if (iFace == 4) {zEnd = zBegin+2; };
 # 349 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 5) {zBegin = zEnd - 2; };
+   if (iFace == 5) {zBegin = zEnd-2; };
 # 350 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 351 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
       count = (0) ;
@@ -4618,7 +4618,7 @@ int sortAtomsById_quick(const void* a, const void* b)
    ((aId != bId) ? static_cast<void> (0) : __assert_fail ("aId != bId", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 671, __PRETTY_FUNCTION__));
 # 672 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 673 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (aId < bId) {rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_38, ____chimes_did_disable16); return -1;; };
+   if (aId < bId) {rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_38, ____chimes_did_disable16); return -1; };
 # 675 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    rm_stack(false, 0UL, "sortAtomsById", &____must_manage_sortAtomsById, ____alias_loc_id_38, ____chimes_did_disable16); return 1;
 # 676 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -4671,7 +4671,7 @@ HaloExchange* initAtomHaloExchange_npm(Domain* domain, LinkCell* boxes)
    parms->nCells[5] = parms->nCells[4];
 # 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   for (int ii = 0;ii < 6; ++ii) { parms->cellList[ii] = mkAtomCellList_npm(boxes, ii, parms->nCells[ii]); };
+   for (int ii=0;ii<6; ++ii) { parms->cellList[ii] = mkAtomCellList_npm(boxes, ii, parms->nCells[ii]); };
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    for (int ii=0; ii<6; ++ii)
@@ -4680,7 +4680,7 @@ HaloExchange* initAtomHaloExchange_npm(Domain* domain, LinkCell* boxes)
 # 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
       parms->pbcFactor[ii] = (real_t*)malloc_wrapper(3*sizeof(real_t), 12143118692030655536UL, 0, 0);
 # 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-      for (int jj = 0;jj < 3; ++jj) { parms->pbcFactor[ii][jj] = 0.; };
+      for (int jj=0;jj<3; ++jj) { parms->pbcFactor[ii][jj] = 0.0; };
 # 183 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    }
 # 184 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -4688,17 +4688,17 @@ HaloExchange* initAtomHaloExchange_npm(Domain* domain, LinkCell* boxes)
 # 185 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    int* procGrid = domain->procGrid;
 # 186 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_X_AXIS] == 0) {parms->pbcFactor[0][HALO_X_AXIS] = +1.; };
+   if (procCoord[HALO_X_AXIS] == 0) {parms->pbcFactor[0][HALO_X_AXIS] = +1.0; };
 # 187 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_X_AXIS] == procGrid[HALO_X_AXIS] - 1) {parms->pbcFactor[1][HALO_X_AXIS] = -1.; };
+   if (procCoord[HALO_X_AXIS] == procGrid[HALO_X_AXIS]-1) {parms->pbcFactor[1][HALO_X_AXIS] = -1.0; };
 # 188 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Y_AXIS] == 0) {parms->pbcFactor[2][HALO_Y_AXIS] = +1.; };
+   if (procCoord[HALO_Y_AXIS] == 0) {parms->pbcFactor[2][HALO_Y_AXIS] = +1.0; };
 # 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Y_AXIS] == procGrid[HALO_Y_AXIS] - 1) {parms->pbcFactor[3][HALO_Y_AXIS] = -1.; };
+   if (procCoord[HALO_Y_AXIS] == procGrid[HALO_Y_AXIS]-1) {parms->pbcFactor[3][HALO_Y_AXIS] = -1.0; };
 # 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Z_AXIS] == 0) {parms->pbcFactor[4][HALO_Z_AXIS] = +1.; };
+   if (procCoord[HALO_Z_AXIS] == 0) {parms->pbcFactor[4][HALO_Z_AXIS] = +1.0; };
 # 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (procCoord[HALO_Z_AXIS] == procGrid[HALO_Z_AXIS] - 1) {parms->pbcFactor[5][HALO_Z_AXIS] = -1.; };
+   if (procCoord[HALO_Z_AXIS] == procGrid[HALO_Z_AXIS]-1) {parms->pbcFactor[5][HALO_Z_AXIS] = -1.0; };
 # 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 193 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    hh->parms = parms;
@@ -4825,17 +4825,17 @@ int* mkAtomCellList_npm(LinkCell* boxes, int iFace, const int nCells)
    int zEnd = boxes->gridSize[2]+1;
 # 343 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 344 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 0) {xEnd = xBegin + 2; };
+   if (iFace == 0) {xEnd = xBegin+2; };
 # 345 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 1) {xBegin = xEnd - 2; };
+   if (iFace == 1) {xBegin = xEnd-2; };
 # 346 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 2) {yEnd = yBegin + 2; };
+   if (iFace == 2) {yEnd = yBegin+2; };
 # 347 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 3) {yBegin = yEnd - 2; };
+   if (iFace == 3) {yBegin = yEnd-2; };
 # 348 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 4) {zEnd = zBegin + 2; };
+   if (iFace == 4) {zEnd = zBegin+2; };
 # 349 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (iFace == 5) {zBegin = zEnd - 2; };
+   if (iFace == 5) {zBegin = zEnd-2; };
 # 350 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 351 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    int count = 0;
@@ -5333,7 +5333,7 @@ int sortAtomsById_npm(const void* a, const void* b)
    ((aId != bId) ? static_cast<void> (0) : __assert_fail ("aId != bId", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c", 671, __PRETTY_FUNCTION__));
 # 672 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
 # 673 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
-   if (aId < bId) {return -1;; };
+   if (aId < bId) {return -1; };
 # 675 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
    return 1;
 # 676 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c"
@@ -5528,7 +5528,7 @@ static int module_init() {
                              "destroyHaloExchange", "_Z19destroyHaloExchangePP14HaloExchangeSt", 0,
                              "initForceHaloExchange", "_Z21initForceHaloExchangeP8DomainStP10LinkCellSt", 3, "initHaloExchange", "mkForceSendCellList", "mkForceRecvCellList",
                              "mkForceSendCellList", "_ZL19mkForceSendCellListP10LinkCellStii", 1, "getBoxFromTuple",
-                             "sortAtomsById", "_ZL13sortAtomsByIdPKvS0_", 0,
+                             "sortAtomsById", "_Z13sortAtomsByIdPKvS0_", 0,
                              "loadForceBuffer", "_Z15loadForceBufferPvS_iPc", 0,
                              "unloadForceBuffer", "_Z17unloadForceBufferPvS_iiPc", 0,
                              "initHaloExchange", "_ZL16initHaloExchangeP8DomainSt", 6, "processorNum", "processorNum", "processorNum", "processorNum", "processorNum", "processorNum",

@@ -1,0 +1,2 @@
+backprop_face 0 0 2 bpnn_free 1 10 bpnn_train_kernel 3 3 4 10
+setup 0 2 35 36 0

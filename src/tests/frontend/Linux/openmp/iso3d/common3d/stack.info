@@ -1,0 +1,29 @@
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|field|0 " float* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|z|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|dimx|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|dimy|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|ny|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|nx|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|filename|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|radius|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|fp|0 " %struct._IO_FILE* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|y|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp save_layer_text|x|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|curr|0 " float* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|next|0 " float* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|vsq|0 " float* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|h_coeff|0 " float* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|dimx|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|dimy|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|dimz|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|dx|0 " float " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|dt|0 " float " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|i|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|i|1 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp init_data|scale|0 " float " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp usage|argv|0 " i8** " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp default_config|conf|0 " %struct._config* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp setup_config|conf|0 " %struct._config* " 64 1 0 1 getNumCUDADevices parse_source
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp setup_config|argc|0 " i32 " 32 0 0 1 getNumCUDADevices parse_source
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp setup_config|argv|0 " i8** " 64 1 0 1 getNumCUDADevices parse_source
+/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp setup_config|c|0 " i32 " 32 0 0 1 getNumCUDADevices parse_source

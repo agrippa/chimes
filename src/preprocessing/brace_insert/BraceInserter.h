@@ -16,6 +16,7 @@ class BraceInserter : public clang::ConstStmtVisitor<BraceInserter> {
         void visitChildren(const clang::Stmt *s);
         void VisitStmt(const clang::Stmt *s);
         std::string to_string(const clang::Stmt *stmt);
+        const clang::FunctionDecl *getNestedFDecl(const clang::Expr *e);
 
     protected:
         clang::ASTContext *Context;

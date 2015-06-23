@@ -1,0 +1,3 @@
+find_nearest_point 53 0 55 0
+euclid_dist_2 112 113 0
+kmeans_clustering 712 0 0 0 0 717

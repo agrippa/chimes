@@ -1,0 +1,9 @@
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c 76 5 : { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25 } prop:call:ecc { cam { 289, 290, 291 }, ecc { 289, 290, 291 }, fin { 289, 290, 291 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c 91 15 : { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25 } prop:call:cam { cam { 289, 290, 291 }, ecc { 289, 290, 291 }, fin { 289, 290, 291 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c 107 13 : { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25 } prop:call:cam { cam { 289, 290, 291 }, ecc { 289, 290, 291 }, fin { 289, 290, 291 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c 123 14 : { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25 } prop:call:cam { cam { 289, 290, 291 }, ecc { 289, 290, 291 }, fin { 289, 290, 291 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c 196 2 : { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25 } prop:call:fin { cam { 289, 290, 291 }, ecc { 289, 290, 291 }, fin { 289, 290, 291 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c 146 3 : { 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25 } prop:call:ecc { cam { 289, 290, 291 }, ecc { 289, 290, 291 }, fin { 289, 290, 291 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c 157 13 : { 13, 14, 19 } direct:call:cam { cam { 289, 290, 291 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c 169 11 : { 7, 15, 16, 20 } direct:call:cam { cam { 289, 290, 291 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c 181 12 : { 8, 17, 18, 21 } direct:call:cam { cam { 289, 290, 291 } }

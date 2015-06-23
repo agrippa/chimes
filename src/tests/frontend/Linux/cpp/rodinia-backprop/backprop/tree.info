@@ -1,0 +1,20 @@
+drnd _Z4drndv 0 DOES_NOT
+dpn1 _Z4dpn1v 0 DOES_NOT drnd 40 12
+squash _Z6squashf 0 DOES_NOT
+alloc_1d_dbl _Z12alloc_1d_dbli 0 DOES_NOT
+alloc_2d_dbl _Z12alloc_2d_dblii 0 DOES_NOT alloc_1d_dbl 84 18
+bpnn_randomize_weights _Z22bpnn_randomize_weightsPPfii 0 DOES_NOT
+bpnn_randomize_row _Z18bpnn_randomize_rowPfi 0 DOES_NOT
+bpnn_zero_weights _Z17bpnn_zero_weightsPPfii 0 DOES_NOT
+bpnn_initialize _Z15bpnn_initializei 0 DOES_NOT
+bpnn_internal_create _Z20bpnn_internal_createiii 0 DOES_NOT alloc_1d_dbl 145 25 alloc_1d_dbl 146 26 alloc_1d_dbl 147 26 alloc_1d_dbl 149 26 alloc_1d_dbl 150 26 alloc_1d_dbl 151 20 alloc_2d_dbl 153 27 alloc_2d_dbl 154 28 alloc_2d_dbl 156 32 alloc_2d_dbl 157 33
+bpnn_free _Z9bpnn_freeP4BPNN 0 DOES_NOT
+bpnn_create _Z11bpnn_createiii 0 DOES_NOT bpnn_internal_create 210 12 bpnn_randomize_weights 215 3 bpnn_randomize_weights 217 3 bpnn_zero_weights 218 3 bpnn_zero_weights 219 3 bpnn_randomize_row 220 3
+bpnn_layerforward _Z17bpnn_layerforwardPfS_PS_ii 0 MAY omp_set_num_threads 233 3 squash 244 13
+bpnn_output_error _Z17bpnn_output_errorPfS_S_iS_ 0 DOES_NOT
+bpnn_hidden_error _Z17bpnn_hidden_errorPfiS_iPS_S_S_ 0 DOES_NOT
+bpnn_adjust_weights _Z19bpnn_adjust_weightsPfiS_iPS_S0_ 0 MAY omp_set_num_threads 298 3
+bpnn_feedforward _Z16bpnn_feedforwardP4BPNN 0 MAY bpnn_layerforward 323 3 bpnn_layerforward 325 3
+bpnn_train _Z10bpnn_trainP4BPNNPfS1_ 0 MAY bpnn_layerforward 341 3 bpnn_layerforward 343 3 bpnn_output_error 347 3 bpnn_hidden_error 349 3 bpnn_adjust_weights 355 3 bpnn_adjust_weights 357 3
+bpnn_save _Z9bpnn_saveP4BPNNPc 0 DOES_NOT
+bpnn_read _Z9bpnn_readPc 0 MAY open 434 13 read 440 3 read 441 3 read 442 3 bpnn_internal_create 443 13 read 450 3 read 463 3 close 471 3 bpnn_zero_weights 475 3 bpnn_zero_weights 476 3

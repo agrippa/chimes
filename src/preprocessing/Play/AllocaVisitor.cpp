@@ -87,6 +87,14 @@ void AllocaVisitor::visit(Value *val, Value *prev) {
     }
 }
 
+/*
+ * The result of a compare is not relative to the alloca we're looking for, so
+ * don't continue the search in this direction.
+ */
+bool AllocaVisitor::visitCmp(CmpInst *cmp, Value *prev) {
+    return (false);
+}
+
 bool AllocaVisitor::visitLandingPad(LandingPadInst *land, Value *prev) {
     assert(false);
 }

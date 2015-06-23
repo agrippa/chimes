@@ -1,4 +1,4 @@
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 100 0 : { 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263 } prop:call:putAtomInBox { putAtomInBox { 504 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 112 16 : { 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263 } prop:call:putAtomInBox { putAtomInBox { 504 } }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 116 9 : { 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263 } prop:call:profileStart { putAtomInBox { 504 } }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 128 4 : { 564, 565 } direct:call:computeVcm { computeVcm { 566, 719 } }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c 249 9 : { 721, 722, 723, 725, 726, 727, 728, 729, 730, 731, 732 } prop:call:profileStart {  }

@@ -2945,7 +2945,7 @@ Command parseCommandLine_resumable(int argc, char** argv)
 # 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    {
 # 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-      if (strcmp(cmd.potType, "setfl") == 0) {strcpy(cmd.potName, "Cu01.eam.alloy"); };
+      if (strcmp(cmd.potType, "setfl" ) == 0) {strcpy(cmd.potName, "Cu01.eam.alloy"); };
 # 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
       if (strcmp(cmd.potType, "funcfl") == 0) {strcpy(cmd.potName, "Cu_u6.eam"); };
 # 239 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -2978,7 +2978,7 @@ void printCmdYaml_resumable(FILE* file, Command* cmd)
 # 253 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(13866544097710735970UL), (size_t)(13866544097710735971UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 254 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   alias_group_changed(____alias_loc_id_3); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_3, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return;; };
+   alias_group_changed(____alias_loc_id_3); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_3, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return; };
 # 256 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    fprintf(file,
 # 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -3140,7 +3140,7 @@ Command parseCommandLine_quick(int argc, char** argv)
 # 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    {
 # 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-      if (strcmp(cmd.potType, "setfl") == 0) {strcpy(cmd.potName, "Cu01.eam.alloy"); };
+      if (strcmp(cmd.potType, "setfl" ) == 0) {strcpy(cmd.potName, "Cu01.eam.alloy"); };
 # 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
       if (strcmp(cmd.potType, "funcfl") == 0) {strcpy(cmd.potName, "Cu_u6.eam"); };
 # 239 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -3172,7 +3172,7 @@ void printCmdYaml_quick(FILE* file, Command* cmd)
 # 253 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(13866544097710735970UL), (size_t)(13866544097710735971UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; ; ;
 # 254 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   alias_group_changed(____alias_loc_id_3); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_3, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return;; };
+   alias_group_changed(____alias_loc_id_3); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_3, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return; };
 # 256 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    fprintf(file,
 # 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -3338,7 +3338,7 @@ Command parseCommandLine_npm(int argc, char** argv)
 # 234 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    {
 # 235 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-      if (strcmp(cmd.potType, "setfl") == 0) {strcpy(cmd.potName, "Cu01.eam.alloy"); };
+      if (strcmp(cmd.potType, "setfl" ) == 0) {strcpy(cmd.potName, "Cu01.eam.alloy"); };
 # 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
       if (strcmp(cmd.potType, "funcfl") == 0) {strcpy(cmd.potName, "Cu_u6.eam"); };
 # 239 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
@@ -3368,7 +3368,7 @@ void printCmdYaml_npm(FILE* file, Command* cmd)
 # 253 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
 {
 # 254 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
-   if (!(*____chimes_extern_func_printRank)()) {return;; };
+   if (! (*____chimes_extern_func_printRank)()) {return; };
 # 256 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"
    fprintf(file,
 # 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c"

@@ -1,0 +1,10 @@
+knodes " %struct.knode* " 64 1 0 
+krecords " %struct.record* " 64 1 0 
+mem " i8* " 64 1 0 
+freeptr " i64 " 64 0 0 
+malloc_size " i64 " 64 0 0 
+size " i64 " 64 0 0 
+maxheight " i64 " 64 0 0 
+order " i32 " 32 0 0 
+queue " %struct.node* " 64 1 0 
+verbose_output " i8 " 8 0 0 

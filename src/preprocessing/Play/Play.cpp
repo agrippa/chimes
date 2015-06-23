@@ -15,6 +15,9 @@
 #include "ValueVisitor.h"
 #include "Hasher.h"
 
+#include <time.h>
+#include <sys/time.h>
+
 #include <set>
 #include <stdio.h>
 #include <utility>
@@ -26,6 +29,7 @@
 using namespace llvm;
 
 // #define VERBOSE
+// #define PROFILE
 
 namespace {
 
@@ -121,12 +125,12 @@ namespace {
 
     class ReachableInfo {
         public:
-            ReachableInfo(std::map<size_t, size_t> set_contains,
+            ReachableInfo(std::map<size_t, size_t> *set_contains,
                     std::map<Value *, size_t> set_value_to_alias_group) :
                 contains(set_contains),
                 value_to_alias_group(set_value_to_alias_group) {}
 
-            std::map<size_t, size_t> get_contains() {
+            std::map<size_t, size_t> *get_contains() {
                 return contains;
             }
 
@@ -135,12 +139,12 @@ namespace {
             }
 
             size_t get_aliases_stored_in(size_t alias) {
-                assert(contains.find(alias) != contains.end());
-                return contains[alias];
+                assert(contains->find(alias) != contains->end());
+                return contains->at(alias);
             }
 
         private:
-            std::map<size_t, size_t> contains;
+            std::map<size_t, size_t> *contains;
             std::map<Value *, size_t> value_to_alias_group;
     };
 
@@ -236,12 +240,12 @@ namespace {
         void printReachable(ReachableInfo &R);
         void dumpReachable(ReachableInfo &R, const char *filename);
         void handleHostAllocation(CallInst *callInst, Function *callee,
-                FILE *fp, std::set<int> &found_mallocs,
+                FILE *fp,
                 std::map<std::string, StructInfo> *structFields,
                 std::string fname,
                 std::map<Value *, size_t> value_to_alias_group);
         void handleDeviceAllocation(CallInst *callInst, Function *callee,
-                FILE *fp, std::set<int> &found_mallocs,
+                FILE *fp,
                 std::map<std::string, StructInfo> *structFields);
         void dumpCallSiteAliases(Module &M, const char *filename,
                 std::map<Value *, size_t> value_to_alias_group);
@@ -268,7 +272,7 @@ namespace {
                 std::set<BasicBlock *> *visited,
                 std::set<size_t> *changed_at_termination,
                 std::map<std::string, std::set<size_t> > *possibly_changed_at_termination,
-                Module &M, std::map<Value *, size_t> value_to_alias_group);
+                Module &M, std::map<Value *, size_t> value_to_alias_group, int nesting);
 
         void collectChangesAtTerm(std::set<size_t> *groups,
                 std::map<std::string, std::set<size_t> > *groups_possibly_modified,
@@ -278,6 +282,16 @@ namespace {
         Hasher *calculate_hashes(Module &M);
         std::string traverseAllUses(const Value *user, int nesting);
         std::string findReachableUse(const User *user, const Value *parent, int nesting);
+
+#ifdef PROFILE
+        long propagateGroupsDownTime = 0;
+        long mayCreateCheckpointTime = 0;
+        long collectChangesAtTermTime = 0;
+        long addAliasChangeLocTime = 0;
+        long findCallsTime = 0;
+        long checkingVisitedTime = 0;
+        long leftoverTime = 0;
+#endif
     };
 }
 
@@ -287,6 +301,18 @@ static RegisterPass<Play> X("play", "Play Pass");
 static bool basicBlockIsValid(BasicBlock *BB) {
     return BB->getName().str().size() > 0;
 }
+
+#ifdef PROFILE
+static long microseconds() {
+    struct timeval curr;
+    gettimeofday(&curr, NULL);
+    return (curr.tv_sec * 1000000 + curr.tv_usec);
+}
+
+static void indent(int nesting) {
+    for (int i = 0; i < nesting; i++) llvm::errs() << "  ";
+}
+#endif
 
 static bool isCompilerGenerated(std::string fname) {
     return (fname == "__cxx_global_var_init" ||
@@ -352,9 +378,9 @@ void Play::printValuesAndAliasGroups(
 void Play::dumpReachable(ReachableInfo &reachable, const char *filename) {
     FILE *fp = fopen(filename, "w");
 
-    std::map<size_t, size_t> contains = reachable.get_contains();
+    std::map<size_t, size_t> *contains = reachable.get_contains();
     for (std::map<size_t, size_t>::iterator i =
-            contains.begin(), e = contains.end(); i != e; i++) {
+            contains->begin(), e = contains->end(); i != e; i++) {
         size_t container = i->first;
         size_t children = i->second;
 
@@ -365,9 +391,9 @@ void Play::dumpReachable(ReachableInfo &reachable, const char *filename) {
 
 void Play::printReachable(ReachableInfo &reachable) {
     errs() << "Storing:\n";
-    std::map<size_t, size_t> contains = reachable.get_contains();
+    std::map<size_t, size_t> *contains = reachable.get_contains();
     for (std::map<size_t, size_t>::iterator i =
-            contains.begin(), e = contains.end(); i != e; i++) {
+            contains->begin(), e = contains->end(); i != e; i++) {
         size_t dst = i->first;
         size_t dst_contains = i->second;
         errs() << "  " << dst << " -> { " << dst_contains << " }\n";
@@ -600,14 +626,16 @@ bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
         if (var->getName().str() == "fatbinData") {
             return false;
         }
-        /*
-         * TODO named global constants should be simpler to handle, but until I
-         * have an example of them to verify that on I'll hold off on adding
-         * support
-         */
-        llvm::errs() << "\"" << var->getName().str() << "\"\n";
-        llvm::errs() << *var << "\n";
-        assert(false);
+
+        std::string varname = demangleVarName(var->getName().str());
+        Constant *init = var->getInitializer();
+        uint64_t size_in_bits =
+            layout->getTypeSizeInBits(init->getType());
+        assert((size_in_bits % 8) == 0);
+        uint64_t size_in_bytes = size_in_bits / 8;
+
+        fprintf(fp, "%d \"%s\" %lu\n", constant_index, varname.c_str(), size_in_bytes);
+        return true;
     }
 }
 
@@ -631,6 +659,11 @@ void Play::dumpGlobal(GlobalVariable *var, std::string varname,
     std::string struct_name;
     std::vector<std::string> struct_ptr_field_names;
 
+#ifdef VERBOSE
+    llvm::errs() << "Dumping global " << varname << ", is ptr? " <<
+        type->isPointerTy() << ", is struct? " << type->isStructTy() << "\n";
+#endif
+
     if (type->isPointerTy()) {
         is_ptr = 1;
     } else if (type->isStructTy()) {
@@ -642,6 +675,10 @@ void Play::dumpGlobal(GlobalVariable *var, std::string varname,
         if (!structTy->isLiteral()) {
             assert(structTy->getStructName().str().find("struct.") ==
                     0);
+#ifdef VERBOSE
+            llvm::errs() << "  Full struct name " <<
+                structTy->getStructName().str() << "\n";
+#endif
             struct_name = structTy->getStructName().str().substr(7);
 
             for (unsigned int i = 0;
@@ -876,8 +913,8 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
                                 searchForValueInKnownAliases(memset->getDest(),
                                     value_to_alias_group));
 
-                    } else if (isa<MemTransferInst>(&inst)) {
-                        MemTransferInst *transfer = dyn_cast<MemTransferInst>(&inst);
+                    } else if (isa<MemCpyInst>(&inst)) {
+                        MemCpyInst *transfer = dyn_cast<MemCpyInst>(&inst);
                         assert(transfer != NULL);
 
                         fprintf(fp, "memcpy %s %d %d 0 %lu %lu 0\n",
@@ -886,7 +923,29 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
                                     value_to_alias_group),
                                 searchForValueInKnownAliases(transfer->getSource(),
                                     value_to_alias_group));
+                    } else if (isa<MemMoveInst>(&inst)) {
+                        MemMoveInst *transfer = dyn_cast<MemMoveInst>(&inst);
+                        assert(transfer != NULL);
 
+                        fprintf(fp, "memmove %s %d %d 0 %lu %lu 0\n",
+                                caller_name.c_str(), line, col,
+                                searchForValueInKnownAliases(transfer->getDest(),
+                                    value_to_alias_group),
+                                searchForValueInKnownAliases(transfer->getSource(),
+                                    value_to_alias_group));
+
+                    // } else if (isa<VAStartInst>(&inst)) {
+                    //     VAStartInst *va_start = dyn_cast<VAStartInst>(&inst);
+                    //     assert(va_start);
+
+                    //     fprintf(fp, "__builtin_va_start %s %d %d 0 0 0\n",
+                    //             caller_name.c_str(), line, col);
+                    // } else if (isa<VAEndInst>(&inst)) {
+                    //     VAEndInst *va_end = dyn_cast<VAEndInst>(&inst);
+                    //     assert(va_end);
+
+                    //     fprintf(fp, "__builtin_va_end %s %d %d 0 0\n",
+                    //             caller_name.c_str(), line, col);
                     } else if (isa<CallInst>(&inst) &&
                             !isa<IntrinsicInst>(&inst)) {
                         CallInst *call = dyn_cast<CallInst>(&inst);
@@ -985,6 +1044,11 @@ void Play::unionGroups(int line, int col, std::string filename,
         reason_str << demangledFunctionName(reason->getName().str());
     }
 
+#ifdef VERBOSE
+    llvm::errs() << "            Unioning groups with reason_str=" <<
+        reason_str << "\n";
+#endif
+
     unionGroups(line, col, filename, groups, groups_possibly_modified,
             reason_str.str());
 }
@@ -1054,7 +1118,14 @@ void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
         std::set<BasicBlock *> *visited,
         std::set<size_t> *changed_at_termination,
         std::map<std::string, std::set<size_t> > *possibly_changed_at_termination,
-        Module &M, std::map<Value *, size_t> value_to_alias_group) {
+        Module &M, std::map<Value *, size_t> value_to_alias_group, int nesting) {
+#ifdef PROFILE
+    indent(nesting);
+    llvm::errs() << "PROF: Entering propagation at nesting=" <<
+        nesting << " in " << curr->getName().str() << ", " <<
+        curr->getParent()->getName().str() << "\n";
+    const long start_checking = microseconds();
+#endif
     if (visited->find(curr) != visited->end()) {
         /*
          * We have looped back around from the original basic block to itself or
@@ -1066,26 +1137,50 @@ void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
          * loop because we haven't hit a checkpoint within it. So we just
          * return.
          */
+#ifdef PROFILE
+        checkingVisitedTime += (microseconds() - start_checking);
+#endif
         return;
     }
-
     visited->insert(curr);
+#ifdef PROFILE
+    checkingVisitedTime += (microseconds() - start_checking);
+#endif
 
+#ifdef VERBOSE
+    llvm::errs() << "      Propagating to " << curr->getName().str() << "\n";
+#endif
+
+#ifdef PROFILE
+    const long start = microseconds();
+#endif
     for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
             inst_iter != inst_end; inst_iter++) {
         Instruction *inst = inst_iter;
-        if (isa<CallInst>(inst)) {
-            CallInst *call = dyn_cast<CallInst>(inst);
+        if (CallInst *call = dyn_cast<CallInst>(inst)) {
             Function *callee = call->getCalledFunction();
 
             if (addAliasChangeLocation(call, callee, groups,
                         groups_possibly_modified, true, value_to_alias_group,
                         filename, M)) {
+#ifdef PROFILE
+                findCallsTime += (microseconds() - start);
+#endif
                 return;
             }
         }
     }
+#ifdef PROFILE
+    findCallsTime += (microseconds() - start);
+#endif
 
+#ifdef VERBOSE
+    llvm::errs() << "      Done propagating to " << curr->getName().str() << "\n";
+#endif
+
+#ifdef PROFILE
+    long start_leftover = microseconds();
+#endif
     TerminatorInst *term = curr->getTerminator();
     if (term->getNumSuccessors() == 0) {
         // Terminating basic block for a function, so mark this
@@ -1094,11 +1189,20 @@ void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
     } else {
         for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
             BasicBlock *child = term->getSuccessor(i);
+#ifdef PROFILE
+            leftoverTime += (microseconds() - start_leftover);
+#endif
             propagateGroupsDown(child, filename, groups,
                     groups_possibly_modified, visited, changed_at_termination,
-                    possibly_changed_at_termination, M, value_to_alias_group);
+                    possibly_changed_at_termination, M, value_to_alias_group, nesting + 1);
+#ifdef PROFILE
+            start_leftover = microseconds();
+#endif
         }
     }
+#ifdef PROFILE
+    leftoverTime += (microseconds() - start_leftover);
+#endif
 }
 
 /*
@@ -1110,6 +1214,14 @@ bool Play::addAliasChangeLocation(CallInst *call, Function *callee,
         std::map<std::string, std::set<size_t> > *groups_possibly_changed,
         bool isIndirect, std::map<Value *, size_t> value_to_alias_group,
         std::string filename, Module &M) {
+#ifdef PROFILE
+    long start = microseconds();
+#endif
+#ifdef VERBOSE
+    llvm::errs() << "        Adding alias change location at call to \"" <<
+        (callee ? callee->getName().str() : "NULL") << "\", " <<
+        isKnownFunction(callee) << "\n";
+#endif
     /*
      * For functions that we know aren't a part of this compilation
      * unit, update the change set to include any of their pointer
@@ -1119,7 +1231,7 @@ bool Play::addAliasChangeLocation(CallInst *call, Function *callee,
         std::vector<unsigned> changes = functionChanges.at(
                 callee->getName().str());
         for (std::vector<unsigned>::iterator i = changes.begin(),
-                e = changes.end(); i!= e; i++) {
+                e = changes.end(); i != e; i++) {
             unsigned arg = *i;
             assert(arg < call->getNumArgOperands());
             Value *arg_val = call->getArgOperand(arg);
@@ -1170,6 +1282,7 @@ bool Play::addAliasChangeLocation(CallInst *call, Function *callee,
             }
         }
     }
+
     /*
      * If we hit a call, we need to register the changes made within a
      * basic block so that a callee that calls checkpoint() knows to
@@ -1177,13 +1290,30 @@ bool Play::addAliasChangeLocation(CallInst *call, Function *callee,
      */
     if (!isa<IntrinsicInst>(call) && mayCreateCheckpoint(callee) != DOES_NOT) {
         if (groups->size() > 0) {
+#ifdef VERBOSE
+            llvm::errs() << "Unioning...\n";
+#endif
             unionGroups(call->getDebugLoc().getLine(),
                     call->getDebugLoc().getCol(), filename, groups,
                     groups_possibly_changed, isIndirect, true, callee, M);
             groups = new std::set<size_t>();
+#ifdef VERBOSE
+            llvm::errs() << "        Done adding alias change location\n";
+#endif
+#ifdef PROFILE
+            addAliasChangeLocTime += (microseconds() - start);
+#endif
             return true;
         }
     }
+
+#ifdef VERBOSE
+    llvm::errs() << "        Done adding alias change location\n";
+#endif
+
+#ifdef PROFILE
+    addAliasChangeLocTime += (microseconds() - start);
+#endif
     return false;
 }
 
@@ -1191,6 +1321,9 @@ void Play::collectChangesAtTerm(std::set<size_t> *groups,
         std::map<std::string, std::set<size_t> > *groups_possibly_modified,
         std::set<size_t> *changed_at_termination,
         std::map<std::string, std::set<size_t> > *possibly_changed_at_termination) {
+#ifdef PROFILE
+    long start = microseconds();
+#endif
     for (std::set<size_t>::iterator i = groups->begin(), e =
             groups->end(); i != e; i++) {
         changed_at_termination->insert(*i);
@@ -1212,6 +1345,9 @@ void Play::collectChangesAtTerm(std::set<size_t> *groups,
             possibly_changed_at_termination->at(fname).insert(*ii);
         }
     }
+#ifdef PROFILE
+    collectChangesAtTermTime += (microseconds() - start);
+#endif
 }
 
 void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
@@ -1228,14 +1364,17 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
     }
     visited->insert(curr);
 
+#ifdef VERBOSE
+    llvm::errs() << "  Visiting basic block " << curr->getName().str() << "\n";
+#endif
+
     std::set<size_t> *groups = new std::set<size_t>();
     std::map<std::string, std::set<size_t> > *groups_possibly_modified =
         new std::map<std::string, std::set<size_t> >();
 
     /*
      * For each instruction in this basic block, check if it is a STORE and if
-     * so then find the alias group it modifies. Also, find the maximum line in
-     * this basic block.
+     * so then find the alias group it modifies.
      */
     for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
             inst_iter != inst_end; inst_iter++) {
@@ -1267,10 +1406,22 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
             std::set<BasicBlock *> propagation_visited;
             for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
                 BasicBlock *child = term->getSuccessor(i);
+#ifdef VERBOSE
+                llvm::errs() << "    Propagating...\n";
+#endif
+#ifdef PROFILE
+                const long start = microseconds();
+#endif
                 propagateGroupsDown(child, filename, groups,
                         groups_possibly_modified, &propagation_visited,
                         changed_at_termination, possibly_changed_at_termination,
-                        M, value_to_alias_group);
+                        M, value_to_alias_group, 0);
+#ifdef PROFILE
+                propagateGroupsDownTime += (microseconds() - start);
+#endif
+#ifdef VERBOSE
+                llvm::errs() << "    Done\n";
+#endif
             }
         } else {
             collectChangesAtTerm(groups, groups_possibly_modified,
@@ -1360,6 +1511,12 @@ std::map<Function *, TermInfo> *Play::collectLineToGroupsMapping(
         // A function may have no basic blocks if it is defined externally
         if (F->getBasicBlockList().size() > 0) {
             BasicBlock& entry = F->getEntryBlock();
+
+#ifdef VERBOSE
+            llvm::errs() << "Collecting changes in function " <<
+                F->getName().str() << ", " << F->getBasicBlockList().size() <<
+                " basic block(s)\n";
+#endif
 
             if (basicBlockIsValid(&entry)) {
                 std::string filename = findFilenameContainingBB(entry, M);
@@ -1525,8 +1682,12 @@ CALLS_CHECKPOINT Play::mayCreateCheckpointHelper(Function *F,
     if (F == NULL) return MAY;
 
     if (can_call_checkpoint.find(F) != can_call_checkpoint.end()) {
-        return can_call_checkpoint[F];
+        return can_call_checkpoint.at(F);
     }
+
+#ifdef VERBOSE
+    llvm::errs() << "Checking if " << F->getName().str() << " creates checkpoint\n";
+#endif
 
     CALLS_CHECKPOINT result = DOES_NOT;
 
@@ -1551,6 +1712,7 @@ CALLS_CHECKPOINT Play::mayCreateCheckpointHelper(Function *F,
                 if (visited->find(inst) != visited->end()) {
                     continue;
                 }
+                visited->insert(inst);
 
                 if (CallInst *call = dyn_cast<CallInst>(inst)) {
                     // skip LLVM intrinsics
@@ -1574,7 +1736,14 @@ CALLS_CHECKPOINT Play::mayCreateCheckpointHelper(Function *F,
 
 CALLS_CHECKPOINT Play::mayCreateCheckpoint(Function *F) {
     std::set<Instruction *> visited;
-    return mayCreateCheckpointHelper(F, &visited);
+#ifdef PROFILE
+    long start = microseconds();
+#endif
+    CALLS_CHECKPOINT result = mayCreateCheckpointHelper(F, &visited);
+#ifdef PROFILE
+    mayCreateCheckpointTime += (microseconds() - start);
+#endif
+    return result;
 }
 
 static DICompileUnit getCompileUnitFor(Module &M) {
@@ -1650,12 +1819,21 @@ static std::string DType_to_string(DIType curr, int nesting,
 
         switch (composite.getTag()) {
             case (dwarf::DW_TAG_array_type): {
-                assert(fields_defs.getNumElements() == 1);
+                /*
+                 * fields_defs.getNumElements() is the number of dimensions in
+                 * this array type. For example, int a[3][3]; will have 2
+                 * elements.
+                 */
+                assert(fields_defs.getNumElements() > 0);
+                size_t total_num_elements = 1;
+                for (unsigned d = 0; d < fields_defs.getNumElements(); d++) {
+                    assert(fields_defs.getElement(d).isSubrange());
 
-                assert(fields_defs.getElement(0).isSubrange());
-                DISubrange range(fields_defs.getElement(0));
-                assert(range.getLo() == 0);
-                assert(range.getCount() > 0);
+                    DISubrange range(fields_defs.getElement(d));
+                    assert(range.getLo() == 0);
+                    assert(range.getCount() > 0);
+                    total_num_elements *= range.getCount();
+                }
 
                 DIType from = composite.getTypeDerivedFrom().resolve(TypeIdentifierMap);
                 if (from.isType()) {
@@ -1663,7 +1841,7 @@ static std::string DType_to_string(DIType curr, int nesting,
                             TypeIdentifierMap);
                     if (basetype.length() > 0) {
                         std::stringstream acc;
-                        acc << "[ " << range.getCount() << " x " << basetype << " ]";
+                        acc << "[ " << total_num_elements << " x " << basetype << " ]";
                         return acc.str();
                     }
                 }
@@ -1680,7 +1858,7 @@ static std::string DType_to_string(DIType curr, int nesting,
                 assert(false);
             }
             case (dwarf::DW_TAG_enumeration_type): {
-                assert(false);
+                return "int";
             }
             case (dwarf::DW_TAG_subroutine_type): {
                 return "";
@@ -2480,29 +2658,38 @@ void Play::findStackAllocations(Module &M, const char *output_file,
 
 static Type *inferHostAllocationType(CallInst *callInst) {
 
-    Use& use = *(callInst->use_begin());
-    User *user = use.getUser();
+    for (Value::const_use_iterator i = callInst->use_begin(),
+            e = callInst->use_end(); i != e; i++) {
+        const Use *use = &*i;
+        User *user = use->getUser();
 
-    if (CastInst *cast = dyn_cast<CastInst>(user)) {
-        /*
-         * Look for a CallInst, followed immediately (and only) by a CastInst
-         * from which we can infer this allocation's type.
-         */
-        Type *malloc_type = cast->getType();
-        assert(malloc_type->isPointerTy());
-        return malloc_type->getPointerElementType();
-    } else if (StoreInst *store = dyn_cast<StoreInst>(user)) {
-        /*
-         * This value is stored directly to memory, so assume it is whatever the
-         * element type of the target is.
-         */
-        Type *dst_type = store->getPointerOperand()->getType();
-        assert(dst_type->isPointerTy());
-        // Type of the allocation
-        Type *dst_element_type = dst_type->getPointerElementType();
-        // must be true because we're storing the output of malloc in dst
-        assert(dst_element_type->isPointerTy());
-        return dst_element_type->getPointerElementType();
+        if (PHINode *phi = dyn_cast<PHINode>(user)) {
+            if (phi->getNumUses() == 1) {
+                user = (*(phi->use_begin())).getUser();
+            }
+        }
+
+        if (CastInst *cast = dyn_cast<CastInst>(user)) {
+            /*
+             * Look for a CallInst, followed immediately (and only) by a CastInst
+             * from which we can infer this allocation's type.
+             */
+            Type *malloc_type = cast->getType();
+            assert(malloc_type->isPointerTy());
+            return malloc_type->getPointerElementType();
+        } else if (StoreInst *store = dyn_cast<StoreInst>(user)) {
+            /*
+             * This value is stored directly to memory, so assume it is whatever the
+             * element type of the target is.
+             */
+            Type *dst_type = store->getPointerOperand()->getType();
+            assert(dst_type->isPointerTy());
+            // Type of the allocation
+            Type *dst_element_type = dst_type->getPointerElementType();
+            // must be true because we're storing the output of malloc in dst
+            assert(dst_element_type->isPointerTy());
+            return dst_element_type->getPointerElementType();
+        }
     }
 
     errs() << *callInst << "\n";
@@ -2536,7 +2723,7 @@ static void printStructInfo(FILE *fp, Type *base_type,
 }
 
 void Play::handleHostAllocation(CallInst *callInst, Function *callee,
-        FILE *fp, std::set<int> &found_mallocs,
+        FILE *fp,
         std::map<std::string, StructInfo> *structFields,
         std::string fname, std::map<Value *, size_t> value_to_alias_group) {
     int line_no = callInst->getDebugLoc().getLine();
@@ -2568,13 +2755,6 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
 #endif
     assert(alias_no > 0);
 
-    /*
-     * We don't currently support multiple mallocs per
-     * line. TODO.
-     */
-    assert(found_mallocs.find(line_no) == found_mallocs.end());
-    found_mallocs.insert(line_no);
-
     fprintf(fp, "%d %d %lu %s", line_no, col, alias_no,
             callee->getName().str().c_str());
     /*
@@ -2586,18 +2766,13 @@ void Play::handleHostAllocation(CallInst *callInst, Function *callee,
     if (callee->getName().str() == "malloc" ||
             callee->getName().str() == "calloc" ||
             callee->getName().str() == "realloc") {
-        if (callInst->getNumUses() == 1) {
-            Type *base_type = inferHostAllocationType(callInst);
+        Type *base_type = inferHostAllocationType(callInst);
 
-            if (base_type->isPointerTy()) {
-                // is_ptr=1, is_struct=0
-                fprintf(fp, " 1 0");
-            } else if (base_type->isStructTy()) {
-                printStructInfo(fp, base_type, structFields);
-            }
-        } else {
-            // TODO
-            assert(false);
+        if (base_type->isPointerTy()) {
+            // is_ptr=1, is_struct=0
+            fprintf(fp, " 1 0");
+        } else if (base_type->isStructTy()) {
+            printStructInfo(fp, base_type, structFields);
         }
     }
     fprintf(fp, "\n");
@@ -2626,7 +2801,7 @@ static Type *inferDeviceAllocationType(CallInst *callInst) {
 }
 
 void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
-        FILE *fp, std::set<int> &found_mallocs,
+        FILE *fp,
         std::map<std::string, StructInfo> *structFields) {
     int line_no = callInst->getDebugLoc().getLine();
     int col = callInst->getDebugLoc().getCol();
@@ -2634,10 +2809,6 @@ void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
 
     // no alias information supported on GPU yet
     fprintf(fp, "%d %d 0 %s", line_no, col, callee->getName().str().c_str());
-
-    // We don't currently support multiple mallocs per line
-    assert(found_mallocs.find(line_no) == found_mallocs.end());
-    found_mallocs.insert(line_no);
 
     if (callee->getName().str() == "cudaMalloc") {
         Type *base_type = inferDeviceAllocationType(callInst);
@@ -2655,7 +2826,6 @@ void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
 void Play::findHeapAllocations(Module &M, const char *output_file,
         std::map<Value *, size_t> value_to_alias_group) {
     FILE *fp = fopen(output_file, "w");
-    std::set<int> found_mallocs;
 
     std::map<std::string, StructInfo> *structFields =
         getStructFieldNames(M);
@@ -2680,21 +2850,18 @@ void Play::findHeapAllocations(Module &M, const char *output_file,
                                 callee->getName().str() == "calloc" ||
                                 callee->getName().str() == "free") {
                             handleHostAllocation(callInst,
-                                    callee, fp, found_mallocs, structFields,
+                                    callee, fp, structFields,
                                     F->getName().str(), value_to_alias_group);
                         } else if (callee->getName().str() == "cudaMalloc" ||
                                 callee->getName().str() == "cudaFree") {
                             handleDeviceAllocation(callInst, callee, fp,
-                                    found_mallocs, structFields);
+                                    structFields);
                         }
                     }
                 }
             }
         }
     }
-
-    errs() << "\nFound " << found_mallocs.size() << " heap allocation(s), " <<
-        "reallocation(s), or free(s)\n";
 
     fclose(fp);
 }
@@ -2920,6 +3087,9 @@ Hasher *Play::calculate_hashes(Module &M) {
  *  graphs (i.e. functions) in reverse depth traversal order.
  */
 bool Play::runOnModule(Module &M) {
+#ifdef PROFILE
+    const long start_overall = microseconds();
+#endif
     Hasher *hashes = calculate_hashes(M);
 
     initKnownFunctions();
@@ -2939,12 +3109,24 @@ bool Play::runOnModule(Module &M) {
 
     findGlobalsAndConstants(M, "globals.info", "constants.info");
 
+#ifdef PROFILE
+    const long start_propagation = microseconds();
+#endif
     ReachableInfo reachable = propagateAliases(M, hashes);
+#ifdef PROFILE
+    const long elapsed_propagation = microseconds() - start_propagation;
+#endif
 
     dumpReachable(reachable, "reachable.info");
 
+#ifdef PROFILE
+    const long start_groups = microseconds();
+#endif
     std::map<Function *, TermInfo> *func_to_groups_changed =
         collectLineToGroupsMapping(M, reachable.get_value_to_alias_group());
+#ifdef PROFILE
+    const long elapsed_groups = microseconds() - start_groups;
+#endif
 
     dumpLineToGroupsMappingTo("lines.info");
 
@@ -2993,6 +3175,21 @@ bool Play::runOnModule(Module &M) {
     printFunctions(M);
     printValuesAndAliasGroups(reachable.get_value_to_alias_group());
     printReachable(reachable);
+#endif
+
+#ifdef PROFILE
+    const long elapsed_overall = microseconds() - start_overall;
+    llvm::errs() << "Propagation: " << elapsed_propagation << " us\n";
+    llvm::errs() << "Groups:      " << elapsed_groups << " us\n";
+    llvm::errs() << "  PropagateGroupsDown " << propagateGroupsDownTime << " us\n";
+    llvm::errs() << "    AddAliasChangeLoc    " << addAliasChangeLocTime << " us\n";
+    llvm::errs() << "    FindCalls            " << findCallsTime << " us\n";
+    llvm::errs() << "    CheckingVisited      " << checkingVisitedTime << " us\n";
+    llvm::errs() << "    Leftover             " << leftoverTime << " us\n";
+    llvm::errs() << "      CollectChangesAtTerm " << collectChangesAtTermTime << " us\n";
+    llvm::errs() << "  MayCreateCheckpoint " << mayCreateCheckpointTime << " us\n";
+    llvm::errs() << "================\n";
+    llvm::errs() << "Overall:     " << elapsed_overall << " us\n";
 #endif
 
     return false;

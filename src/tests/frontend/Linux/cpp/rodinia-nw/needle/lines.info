@@ -1,0 +1,3 @@
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 71 5 : { 54, 55, 56 } direct:call:runTest { runTest { 67 } }
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 158 5 : { 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 379, 384 } prop:call:omp_set_num_threads { usage { 510 } }
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 173 5 : { 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 379, 384 } prop:call:omp_set_num_threads { usage { 510 } }
