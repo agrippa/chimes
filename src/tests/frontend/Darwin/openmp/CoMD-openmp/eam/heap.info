@@ -7,9 +7,9 @@
 702 4 1056 free
 789 27 1303 malloc
 813 4 1303 free
-456 30 1624 malloc 0 1 InterpolationObjectSt values
-459 29 1622 calloc
-564 38 1782 malloc 0 1 InterpolationObjectSt values
-568 35 1809 malloc
-483 7 1857 free
-485 4 1850 free
+483 7 1751 free
+485 4 1744 free
+456 30 1842 malloc 0 1 InterpolationObjectSt values
+459 29 1840 calloc
+564 38 2000 malloc 0 1 InterpolationObjectSt values
+568 35 2027 malloc

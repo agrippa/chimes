@@ -63,7 +63,7 @@ SMITH_WATERMAN = FrontendTest('SmithWaterman',
                               ['smithWaterman/smith_waterman.cpp'],
                               'smith_waterman', False)
 LULESH = FrontendTest('Lulesh', ['lulesh/LULESH.cc'],
-                      'lulesh', False)
+                      'lulesh', False, extra_cli_args='-s -y -O0')
 COMD = FrontendTest('CoMD',
                     ['src-mpi/CoMD.c', 'src-mpi/decomposition.c',
                      'src-mpi/haloExchange.c', 'src-mpi/linkCells.c',

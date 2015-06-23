@@ -2287,9 +2287,9 @@ typedef struct LjPotentialSt
 } LjPotential;
 # 94 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 95 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-static int ljForce(SimFlat* s);
+int ljForce(SimFlat* s);
 # 96 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-static void ljPrint(FILE* file, BasePotential* pot);
+void ljPrint(FILE* file, BasePotential* pot);
 # 97 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 98 "/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 void ljDestroy_npm(BasePotential** inppot);
@@ -3024,11 +3024,11 @@ static int module_init() {
                            &____alias_loc_id_1, (unsigned)2, (unsigned)0, (17518077371777717449UL + 29UL), (17518077371777717449UL + 31UL),
                            &____alias_loc_id_2, (unsigned)29, (unsigned)1, (17518077371777717449UL + 77UL), (17518077371777717449UL + 78UL), (17518077371777717449UL + 79UL), (17518077371777717449UL + 80UL), (17518077371777717449UL + 81UL), (17518077371777717449UL + 82UL), (17518077371777717449UL + 83UL), (17518077371777717449UL + 84UL), (17518077371777717449UL + 85UL), (17518077371777717449UL + 86UL), (17518077371777717449UL + 87UL), (17518077371777717449UL + 88UL), (17518077371777717449UL + 89UL), (17518077371777717449UL + 90UL), (17518077371777717449UL + 91UL), (17518077371777717449UL + 92UL), (17518077371777717449UL + 93UL), (17518077371777717449UL + 94UL), (17518077371777717449UL + 95UL), (17518077371777717449UL + 96UL), (17518077371777717449UL + 97UL), (17518077371777717449UL + 98UL), (17518077371777717449UL + 99UL), (17518077371777717449UL + 100UL), (17518077371777717449UL + 101UL), (17518077371777717449UL + 102UL), (17518077371777717449UL + 103UL), (17518077371777717449UL + 265UL), (17518077371777717449UL + 269UL), "zeroReal3", (unsigned)1, (17518077371777717449UL + 269UL),
                            &____alias_loc_id_3, (unsigned)3, (unsigned)0, (17518077371777717449UL + 472UL), (17518077371777717449UL + 473UL), (17518077371777717449UL + 474UL),
-                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (17518077371777717449UL + 531UL), (17518077371777717449UL + 544UL),
+                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (17518077371777717449UL + 533UL), (17518077371777717449UL + 546UL),
                             "ljDestroy", (void *)(&ljDestroy_npm), (void *)(ljDestroy), 0, 1, (17518077371777717449UL + 25UL), 0UL, 1, "free", 1, (17518077371777717449UL + 11UL), 0UL,
                             "initLjPot", (void *)(&initLjPot_npm), (void *)__null, 0, 0, (17518077371777717449UL + 31UL), 3, "malloc", 1, 0UL, (17518077371777717449UL + 31UL), "strcpy", 2, (17518077371777717449UL + 31UL), (17518077371777717449UL + 553UL), (17518077371777717449UL + 58UL), "strcpy", 2, (17518077371777717449UL + 31UL), (17518077371777717449UL + 554UL), (17518077371777717449UL + 69UL),
-                            "ljPrint", (void *)(&ljPrint_npm), (void *)(ljPrint), 0, 2, (17518077371777717449UL + 527UL), (17518077371777717449UL + 528UL), 0UL, 9, "fprintf", 2, (17518077371777717449UL + 527UL), (17518077371777717449UL + 558UL), 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 559UL), (17518077371777717449UL + 528UL), 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 559UL), 0UL, 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 561UL), 0UL, 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 559UL), (17518077371777717449UL + 528UL), 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 558UL), 0UL, 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 558UL), 0UL, 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 565UL), 0UL, 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 558UL), 0UL, 0UL,
-                            "ljForce", (void *)(&ljForce_npm), (void *)(ljForce), 0, 1, (17518077371777717449UL + 265UL), 0UL, 2, "zeroReal3", 1, (17518077371777717449UL + 269UL), 0UL, "__assert_rtn", 4, (17518077371777717449UL + 555UL), (17518077371777717449UL + 556UL), 0UL, (17518077371777717449UL + 555UL), 0UL,
+                            "ljPrint", (void *)(&ljPrint_npm), (void *)(ljPrint), 0, 2, (17518077371777717449UL + 527UL), (17518077371777717449UL + 528UL), 0UL, 9, "fprintf", 2, (17518077371777717449UL + 527UL), (17518077371777717449UL + 555UL), 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 556UL), (17518077371777717449UL + 528UL), 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 556UL), 0UL, 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 558UL), 0UL, 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 556UL), (17518077371777717449UL + 528UL), 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 555UL), 0UL, 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 555UL), 0UL, 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 562UL), 0UL, 0UL, "fprintf", 3, (17518077371777717449UL + 527UL), (17518077371777717449UL + 555UL), 0UL, 0UL,
+                            "ljForce", (void *)(&ljForce_npm), (void *)(ljForce), 0, 1, (17518077371777717449UL + 265UL), 0UL, 2, "zeroReal3", 1, (17518077371777717449UL + 269UL), 0UL, "__assert_rtn", 4, (17518077371777717449UL + 564UL), (17518077371777717449UL + 565UL), 0UL, (17518077371777717449UL + 564UL), 0UL,
                                "zeroReal3", (void **)&(____chimes_extern_func_zeroReal3),
                            "ljDestroy", &(____chimes_does_checkpoint_ljDestroy_npm),
                            "initLjPot", &(____chimes_does_checkpoint_initLjPot_npm),
@@ -3039,8 +3039,8 @@ static int module_init() {
                              (17518077371777717449UL + 77UL), (17518077371777717449UL + 265UL),
                              (17518077371777717449UL + 472UL), (17518077371777717449UL + 527UL),
                              (17518077371777717449UL + 31UL), (17518077371777717449UL + 567UL),
-                             (17518077371777717449UL + 531UL), (17518077371777717449UL + 544UL),
                              (17518077371777717449UL + 29UL), (17518077371777717449UL + 31UL),
+                             (17518077371777717449UL + 533UL), (17518077371777717449UL + 546UL),
                              (17518077371777717449UL + 1UL), (17518077371777717449UL + 25UL),
                              (17518077371777717449UL + 473UL), (17518077371777717449UL + 528UL),
                              (17518077371777717449UL + 2UL), (17518077371777717449UL + 11UL),
@@ -3061,9 +3061,9 @@ static int module_init() {
                      "__sFILEX", 0,
                      "__sbuf", 2, "unsigned char*", (int)__builtin_offsetof (struct __sbuf, _base), "int", (int)__builtin_offsetof (struct __sbuf, _size),
                              "initLjPot", "_Z9initLjPotv", 0,
-                             "ljPrint", "_ZL7ljPrintP7__sFILEP15BasePotentialSt", 0,
+                             "ljPrint", "_Z7ljPrintP7__sFILEP15BasePotentialSt", 0,
                              "zeroReal3", "_ZL9zeroReal3Pd", 0,
-                             "ljForce", "_ZL7ljForceP9SimFlatSt", 1, "zeroReal3",
+                             "ljForce", "_Z7ljForceP9SimFlatSt", 1, "zeroReal3",
                              "ljDestroy", "_Z9ljDestroyPP15BasePotentialSt", 0);
     return 0;
 }

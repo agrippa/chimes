@@ -85,7 +85,7 @@ class RuntimeTest(object):
     """
     def __init__(self, name, input_files, expected_code,
                  expected_num_checkpoints, includes=None, dependencies=None,
-                 cli_args=None, defines=None):
+                 cli_args=None, defines=None, extra_compile_args=''):
         self.name = name
         self.input_files = input_files
         self.expected_code = expected_code
@@ -100,6 +100,7 @@ class RuntimeTest(object):
             self.dependencies = dependencies
         self.cli_args = cli_args
         self.defines = [] if defines is None else defines
+        self.extra_compile_args = extra_compile_args
 
 
 class FrontendTest(object):
@@ -652,7 +653,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     # if config.custom_compiler is not None:
     #     env['GXX'] = config.custom_compiler
 
-    compile_cmd = compile_script_path + ' -k'
+    compile_cmd = compile_script_path + ' -k ' + test.extra_compile_args
 
     if config.force_sequential:
         compile_cmd += ' -s '

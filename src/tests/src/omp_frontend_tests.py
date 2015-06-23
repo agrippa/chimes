@@ -30,7 +30,7 @@ COMD_OMP = FrontendTest('CoMD-OMP',
                     'CoMD-openmp', False, src_folder='CoMD',
                     includes=[os.path.dirname(OMP_H)])
 LULESH_OMP = FrontendTest('Lulesh-OMP', ['lulesh/LULESH_OMP.cc'],
-                      'lulesh', False)
+                      'lulesh', False, extra_cli_args='-y -O0')
 ISO3D = FrontendTest('Iso3D-OMP',
                      ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'],
                      'iso3d', False,

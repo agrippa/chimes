@@ -7,6 +7,6 @@
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 418 8 : { 1597 } prop:call:getMyRank {  }
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 427 4 : { 1598 } prop:call:bcastParallel { bcastParallel { 1598 } }
 /Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 435 4 : { 1693 } direct:call:bcastInterpolationObject { bcastInterpolationObject { 1693 }, bcastParallel { 1598 } }
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 8 : { 1873 } direct:call:getMyRank {  }
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 4 : { 1874 } prop:call:bcastParallel { bcastParallel { 1874 } }
-/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 4 : { 1875, 1918, 1920 } prop:call:bcastParallel { bcastParallel { 1945 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 553 8 : { 2085 } direct:call:getMyRank {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 559 4 : { 2086 } prop:call:bcastParallel { bcastParallel { 2086 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c 573 4 : { 2087, 2130, 2132 } prop:call:bcastParallel { bcastParallel { 2157 } }

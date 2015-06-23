@@ -2,4 +2,4 @@ ljDestroy 25
 initLjPot
 ljForce 272
 ljPrint 621 622
-zeroReal3 638
+zeroReal3 640
