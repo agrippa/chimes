@@ -1,6 +1,6 @@
 initHaloExchange initAtomHaloExchange 153 23 88 343
 malloc initAtomHaloExchange 166 51 2526 0
-mkAtomCellList initAtomHaloExchange 175 58 190 104 0 0
+mkAtomCellList initAtomHaloExchange 175 54 190 104 0 0
 malloc initAtomHaloExchange 180 39 190 0
 malloc initHaloExchange 262 38 352 0
 processorNum initHaloExchange 265 21 0 396 0 0 0
@@ -34,7 +34,7 @@ getBoxFromTuple mkForceRecvCellList 543 29 0 1940 0 0 0
 __assert_fail mkForceRecvCellList 548 49 0 2521 2512 0 2520
 free destroyHaloExchange 248 4 0 1949
 free destroyHaloExchange 249 4 0 1947
-exchangeData haloExchange 255 45 0 1983 1984 0
+exchangeData haloExchange 255 41 0 1983 1984 0
 malloc exchangeData 289 28 2087 0
 malloc exchangeData 290 28 2097 0
 malloc exchangeData 291 28 2100 0

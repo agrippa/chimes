@@ -1,4 +1,4 @@
-initAtomHaloExchange _Z20initAtomHaloExchangeP8DomainStP10LinkCellSt 0 MAY initHaloExchange 153 23 mkAtomCellList 175 58
+initAtomHaloExchange _Z20initAtomHaloExchangeP8DomainStP10LinkCellSt 0 MAY initHaloExchange 153 23 mkAtomCellList 175 54
 initHaloExchange _ZL16initHaloExchangeP8DomainSt 0 MAY processorNum 265 21 processorNum 266 21 processorNum 267 21 processorNum 268 21 processorNum 269 21 processorNum 270 21
 loadAtomsBuffer _Z15loadAtomsBufferPvS_iPc 0 DOES_NOT
 unloadAtomsBuffer _Z17unloadAtomsBufferPvS_iiPc 0 MAY putAtomInBox 433 7
@@ -11,7 +11,7 @@ destroyForceExchange _Z20destroyForceExchangePv 0 DOES_NOT
 mkForceSendCellList _ZL19mkForceSendCellListP10LinkCellStii 0 MAY getBoxFromTuple 491 29
 mkForceRecvCellList _ZL19mkForceRecvCellListP10LinkCellStii 0 MAY getBoxFromTuple 543 29
 destroyHaloExchange _Z19destroyHaloExchangePP14HaloExchangeSt 0 DOES_NOT
-haloExchange _Z12haloExchangeP14HaloExchangeStPv 0 MAY exchangeData 255 45
+haloExchange _Z12haloExchangeP14HaloExchangeStPv 0 MAY exchangeData 255 41
 exchangeData _ZL12exchangeDataP14HaloExchangeStPvi 1 MAY profileStart 302 9 sendReceiveParallel 303 13 sendReceiveParallel 304 13 profileStop 305 9
 sortAtomsInCell _Z15sortAtomsInCellP7AtomsStP10LinkCellSti 0 DOES_NOT
-sortAtomsById _ZL13sortAtomsByIdPKvS0_ 0 DOES_NOT
+sortAtomsById _Z13sortAtomsByIdPKvS0_ 0 DOES_NOT

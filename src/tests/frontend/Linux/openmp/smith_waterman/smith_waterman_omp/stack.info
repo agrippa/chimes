@@ -1,0 +1,89 @@
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp GUID_DIAG|r|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp GUID_DIAG|c|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp GUID_RCOL|r|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp GUID_RCOL|c|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp GUID_BROW|r|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp GUID_BROW|c|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp TILE_ROW|guid|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp TILE_COL|guid|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp GUID_KIND|guid|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp PUT|row|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp PUT|col|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp PUT|success|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp PUT|await_tile|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp PUT_DIAG|row|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp PUT_DIAG|col|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp PUT_RCOL|row|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp PUT_RCOL|col|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp PUT_BROW|row|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp PUT_BROW|col|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp char_mapping|c|0 " i8 " 8 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp char_mapping|to_be_returned|0 " i8 " 8 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp print_matrix|matrix|0 " i32** " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp print_matrix|n_rows|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp print_matrix|n_columns|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp print_matrix|i|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp print_matrix|j|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp clear_whitespaces_do_mapping|buffer|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp clear_whitespaces_do_mapping|size|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp clear_whitespaces_do_mapping|non_ws_index|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp clear_whitespaces_do_mapping|traverse_index|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp clear_whitespaces_do_mapping|curr_char|0 " i8 " 8 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp read_file|file|0 " %struct._IO_FILE* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp read_file|n_chars|0 " i64* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp read_file|file_size|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp read_file|file_buffer|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp read_file|n_read_from_file|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp add_tile_to_run|row|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp add_tile_to_run|col|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp add_tile_to_run|q|0 " %struct._tiles_to_run* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp pop_next_tile|q|0 " %struct._tiles_to_run* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp pop_next_tile|next|0 " %struct._tile* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|i|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|j|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|next|0 " %struct._tiles_to_run* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|ii|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|jj|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|threadId|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|local_matrix|0 " i32** " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|diag_index|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|diag|0 " i32* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|tile_edge_y|0 " i32* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|tile_edge_x|0 " i32* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|char_from_1|0 " i8 " 8 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|char_from_2|0 " i8 " 8 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|diag_score|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|left_score|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|top_score|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|bigger_of_left_top|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|success|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|row|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|col|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|success|1 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|row|1 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|col|1 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|success|2 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|row|2 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp task_func|col|2 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|argc|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|argv|0 " i8** " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|i|0 " i32 " 32 0 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|j|0 " i32 " 32 0 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|length1|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|length2|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|n_char_in_file_1|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|n_char_in_file_2|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|num_tiles|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|num_diags|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|result_row|0 " i32 " 32 0 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|result_col|0 " i32 " 32 0 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|curr|0 " %struct._tiles_to_run* " 64 1 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|next|0 " %struct._tiles_to_run* " 64 1 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|mine|0 " %struct._tile* " 64 1 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|done|0 " i8 " 8 0 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|tmp|0 " %struct._tiles_to_run* " 64 1 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp main|score|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp random_init|s|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp random_init|len|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp random_init|i|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp random_init|r|0 " i32 " 32 0 0 0

@@ -1,4 +1,4 @@
-addArg _Z6addArgPKccicPviS0_ 0 DOES_NOT myOptionAlloc 102 8 lastOption 104 49
+addArg _Z6addArgPKccicPviS0_ 0 DOES_NOT myOptionAlloc 102 8 lastOption 107 11
 myOptionAlloc _ZL13myOptionAllocPKccicPviS0_ 0 DOES_NOT dupString 51 14 dupString 52 17
 lastOption _ZL10lastOptionP10MyOptionSt 0 DOES_NOT
 freeArgs _Z8freeArgsv 0 DOES_NOT myOptionFree 118 16

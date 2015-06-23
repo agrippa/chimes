@@ -1,7 +1,7 @@
 getNRanks _Z9getNRanksv 0 DOES_NOT
 getMyRank _Z9getMyRankv 0 DOES_NOT
 printRank _Z9printRankv 0 DOES_NOT
-timestampBarrier _Z16timestampBarrierPKc 0 DOES_NOT barrierParallel 53 4 printRank 54 9
+timestampBarrier _Z16timestampBarrierPKc 0 DOES_NOT barrierParallel 53 4 printRank 54 10
 barrierParallel _Z15barrierParallelv 0 DOES_NOT
 initParallel _Z12initParallelPiPPPc 0 DOES_NOT
 destroyParallel _Z15destroyParallelv 0 DOES_NOT

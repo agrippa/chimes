@@ -1,0 +1,57 @@
+AVI_open_output_file 14 7 1 2 3 4 5 14 6713 2 avi_write 1 6 open 1 99
+avi_write 0 6 111 112 113 114 115 116 1 write 1 158
+AVI_set_video 0 5 161 162 163 164 165 0
+avi_update_header 0 15 232 233 234 235 236 237 238 239 240 241 242 243 244 245 6713 3 avi_sampsize 1 1549 avi_write 1 244 long2str 1 244
+AVI_set_audio 0 7 1550 1551 1552 1553 1554 1555 1651 0
+long2str 0 3 1660 1661 1694 0
+avi_sampsize 0 3 1696 1697 1698 0
+AVI_write_frame 0 7 1738 1739 1740 1741 1742 1791 6713 0
+avi_write_data 0 8 1795 1796 1797 1798 1799 1800 1801 6713 2 avi_add_chunk 4 1802 1895 1896 6717 avi_add_index_entry 3 1802 1895 6717
+AVI_dup_frame 0 4 1900 1901 1943 6713 1 avi_add_index_entry 2 1943 6717
+avi_add_index_entry 0 9 1944 1945 1946 1947 1948 1949 1950 2064 6713 1 long2str 1 1992
+AVI_write_audio 0 6 2069 2070 2071 2072 2111 6713 1 avi_write_data 2 2111 2112
+AVI_append_audio 0 6 2114 2115 2116 2117 2254 6713 0
+str2ulong 0 1 2257 0
+AVI_bytes_remain 0 2 2285 2286 0
+AVI_bytes_written 0 2 2311 2312 0
+AVI_set_audio_track 0 4 2336 2337 2338 2363 0
+AVI_get_audio_track 0 1 2365 0
+AVI_close 0 0 0
+avi_close_output_file 0 16 2422 2424 2425 2426 2427 2428 2429 2430 2431 2433 2434 2435 2436 2437 2438 6713 3 avi_sampsize 1 3838 avi_write 1 2436 long2str 1 2436
+AVI_open_input_file 14 6 14 3839 3840 3841 3842 6713 1 avi_parse_input_file 1 14
+avi_parse_input_file 0 3 3894 5085 6713 5 AVI_close 1 5085 avi_read 2 3915 4632 str2ulong 3 3915 4162 4632 str2ushort 1 4162 strncasecmp 5 3915 4162 4632 5085 6717
+AVI_open_fd 14 6 14 5329 5330 5331 5332 6713 0
+avi_read 0 6 5372 5373 5374 5375 5376 5377 1 read 1 5419
+str2ushort 0 1 5424 0
+AVI_video_frames 0 1 5440 0
+AVI_video_width 0 1 5448 0
+AVI_video_height 0 1 5457 0
+AVI_frame_rate 0 1 5466 0
+AVI_video_compressor 5481 1 5474 0
+AVI_max_video_chunk 0 1 5482 0
+AVI_audio_tracks 0 1 5490 0
+AVI_audio_channels 0 1 5498 0
+AVI_audio_mp3rate 0 1 5513 0
+AVI_audio_bits 0 1 5527 0
+AVI_audio_format 0 1 5542 0
+AVI_audio_rate 0 1 5557 0
+AVI_audio_bytes 0 1 5571 0
+AVI_audio_chunks 0 1 5585 0
+AVI_audio_codech_offset 0 1 5599 0
+AVI_audio_codecf_offset 0 1 5613 0
+AVI_video_codech_offset 0 1 5627 0
+AVI_video_codecf_offset 0 1 5635 0
+AVI_frame_size 0 4 5643 5644 5645 6713 0
+AVI_audio_size 0 4 5690 5691 5692 6713 0
+AVI_get_video_position 0 4 5755 5756 5757 6713 0
+AVI_seek_start 0 4 5802 5803 5829 6713 0
+AVI_set_video_position 0 5 5830 5831 5832 5866 6713 0
+AVI_set_audio_bitrate 0 5 5868 5869 5870 5897 6713 0
+AVI_read_frame 0 6 5899 5900 5901 5902 6002 6713 1 avi_read 1 6003
+AVI_set_audio_position 0 8 6005 6006 6007 6008 6009 6010 6128 6713 0
+AVI_read_audio 0 8 6130 6131 6132 6133 6134 6136 6344 6713 1 avi_read 1 6345
+AVI_read_data 0 7 6347 6348 6349 6350 6351 6352 6353 2 avi_read 3 6355 6515 6517 strncasecmp 3 6355 6514 6717
+AVI_print_error 0 2 6520 6521 0
+AVI_strerror 6625 3 6569 6570 6572 0
+AVI_max_size 0 0 0
+avi_add_chunk 0 3 6635 6704 6713 1 avi_write 1 6706

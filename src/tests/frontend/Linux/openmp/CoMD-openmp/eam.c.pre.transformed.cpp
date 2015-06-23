@@ -4406,7 +4406,7 @@ BasePotential* initEamPot_resumable(const char* dir, const char* file, const cha
 # 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      if (strcmp(type, "setfl") == 0) {({ calling_npm("eamReadSetfl", 0); eamReadSetfl_npm(pot, dir, file); }); } else if (strcmp(type, "funcfl") == 0) ({ calling_npm("eamReadFuncfl", 0); eamReadFuncfl_npm(pot, dir, file); }); else ({ calling_npm("typeNotSupported", 0); typeNotSupported_npm("initEamPot", type); });;
+      if (strcmp(type, "setfl" ) == 0) {({ calling_npm("eamReadSetfl", 0); eamReadSetfl_npm(pot, dir, file); }); } else if (strcmp(type,"funcfl") == 0) {({ calling_npm("eamReadFuncfl", 0); eamReadFuncfl_npm(pot, dir, file); }); } else {({ calling_npm("typeNotSupported", 0); typeNotSupported_npm("initEamPot", type); }); } ;
 # 198 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 199 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4751,11 +4751,11 @@ void eamDestroy_resumable(BasePotential** pPot)
 {const int ____chimes_did_disable3 = new_stack((void *)(&eamDestroy), "eamDestroy", &____must_manage_eamDestroy, 1, 1, (size_t)(5757654513590298084UL), "eamDestroy|pPot|0", &____must_checkpoint_eamDestroy_pPot_0, "%struct.BasePotentialSt**", (void *)(&pPot), (size_t)8, 1, 0, 0) ; EamPotential *pot;
  if (____must_checkpoint_eamDestroy_pot_0) { register_stack_vars(1, "eamDestroy|pot|0", &____must_checkpoint_eamDestroy_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 390 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!pPot) {rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_13, ____chimes_did_disable3); return;; };
+   if (! pPot) {rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_13, ____chimes_did_disable3); return; };
 # 391 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot = (*(EamPotential **)pPot) ;
 # 392 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!pot) {rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_13, ____chimes_did_disable3); return;; };
+   if (! pot) {rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_13, ____chimes_did_disable3); return; };
 # 393 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->phi)); });
 # 394 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -4872,7 +4872,7 @@ InterpolationObject* initInterpolationObject_resumable(
    table->x0 = x0;
 # 466 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 467 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < n; ++ii) { table->values[ii] = data[ii]; } };
+   { int ii; for ( ii = (0) ;ii<n; ++ii) { table->values[ii] = data[ii]; } };
 # 469 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 470 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    table->values[-1] = table->values[0];
@@ -4889,9 +4889,9 @@ void destroyInterpolationObject_resumable(InterpolationObject** a)
 # 477 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(5757654513590298923UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 478 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6); return;; };
+   if (! a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6); return; };
 # 479 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!*a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6); return;; };
+   if (! *a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6); return; };
 # 480 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    if ( (*a)->values)
 # 481 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5019,7 +5019,7 @@ void printTableData(InterpolationObject* table, const char* fileName)
 # 577 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 {
 # 578 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!printRank()) {return;; };
+   if (!printRank()) {return; };
 # 579 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 580 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    FILE *potData; ;
@@ -5122,19 +5122,19 @@ char tmp[4096];
 # 680 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 681 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 682 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nRho; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nRho; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 684 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->f = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); });
 # 685 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 686 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 687 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 689 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 690 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 691 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 692 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 694 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (1) ; ii<nR; ++ii)
 # 695 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5229,13 +5229,13 @@ char tmp[4096];
 # 790 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 791 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 792 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nRho; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nRho; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 794 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->f = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); });
 # 795 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 796 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 797 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 799 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (1) ; ii<nR; ++ii)
 # 800 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5255,7 +5255,7 @@ char tmp[4096];
 # 807 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 808 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 809 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 811 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5345,7 +5345,7 @@ BasePotential* initEamPot_quick(const char* dir, const char* file, const char* t
 # 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      if (strcmp(type, "setfl") == 0) {({ calling_npm("eamReadSetfl", 0); eamReadSetfl_npm(pot, dir, file); }); } else if (strcmp(type, "funcfl") == 0) ({ calling_npm("eamReadFuncfl", 0); eamReadFuncfl_npm(pot, dir, file); }); else ({ calling_npm("typeNotSupported", 0); typeNotSupported_npm("initEamPot", type); });;
+      if (strcmp(type, "setfl" ) == 0) {({ calling_npm("eamReadSetfl", 0); eamReadSetfl_npm(pot, dir, file); }); } else if (strcmp(type,"funcfl") == 0) {({ calling_npm("eamReadFuncfl", 0); eamReadFuncfl_npm(pot, dir, file); }); } else {({ calling_npm("typeNotSupported", 0); typeNotSupported_npm("initEamPot", type); }); } ;
 # 198 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 199 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5687,11 +5687,11 @@ void eamDestroy_quick(BasePotential** pPot)
 {const int ____chimes_did_disable3 = new_stack((void *)(&eamDestroy), "eamDestroy", &____must_manage_eamDestroy, 1, 1, (size_t)(5757654513590298084UL), "eamDestroy|pPot|0", &____must_checkpoint_eamDestroy_pPot_0, "%struct.BasePotentialSt**", (void *)(&pPot), (size_t)8, 1, 0, 0) ; EamPotential *pot;
  if (____must_checkpoint_eamDestroy_pot_0) { register_stack_vars(1, "eamDestroy|pot|0", &____must_checkpoint_eamDestroy_pot_0, "%struct.EamPotentialSt*", (void *)(&pot), (size_t)8, 1, 0, 0); } ; ;
 # 390 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!pPot) {rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_13, ____chimes_did_disable3); return;; };
+   if (! pPot) {rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_13, ____chimes_did_disable3); return; };
 # 391 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
       pot = (*(EamPotential **)pPot) ;
 # 392 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!pot) {rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_13, ____chimes_did_disable3); return;; };
+   if (! pot) {rm_stack(false, 0UL, "eamDestroy", &____must_manage_eamDestroy, ____alias_loc_id_13, ____chimes_did_disable3); return; };
 # 393 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    ({ calling_npm("destroyInterpolationObject", 0); destroyInterpolationObject_npm(&(pot->phi)); });
 # 394 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -5790,7 +5790,7 @@ InterpolationObject* initInterpolationObject_quick(
    table->x0 = x0;
 # 466 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 467 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < n; ++ii) { table->values[ii] = data[ii]; } };
+   { int ii; for ( ii = (0) ;ii<n; ++ii) { table->values[ii] = data[ii]; } };
 # 469 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 470 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    table->values[-1] = table->values[0];
@@ -5810,9 +5810,9 @@ void destroyInterpolationObject_quick(InterpolationObject** a)
 # 477 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&destroyInterpolationObject), "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, 1, 0, (size_t)(5757654513590298923UL)) ; ; ;
 # 478 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6); return;; };
+   if (! a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6); return; };
 # 479 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!*a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6); return;; };
+   if (! *a) {rm_stack(false, 0UL, "destroyInterpolationObject", &____must_manage_destroyInterpolationObject, ____alias_loc_id_20, ____chimes_did_disable6); return; };
 # 480 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    if ( (*a)->values)
 # 481 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6007,19 +6007,19 @@ char tmp[4096];
 # 680 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 681 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 682 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nRho; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nRho; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 684 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->f = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); });
 # 685 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 686 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 687 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 689 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 690 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 691 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 692 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 694 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (1) ; ii<nR; ++ii)
 # 695 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6115,13 +6115,13 @@ char tmp[4096];
 # 790 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 791 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 792 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nRho; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nRho; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 794 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->f = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nRho, x0, dRho, buf); });
 # 795 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 796 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 797 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 799 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    { int ii; for ( ii = (1) ; ii<nR; ++ii)
 # 800 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6141,7 +6141,7 @@ char tmp[4096];
 # 807 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 808 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 809 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   { int ii; for ( ii = (0) ;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); } };
+   { int ii; for ( ii = (0) ;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); } };
 # 811 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->rho = ({ calling_npm("initInterpolationObject", 0); initInterpolationObject_npm(nR, x0, dR, buf); });
 # 812 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6238,7 +6238,7 @@ BasePotential* initEamPot_npm(const char* dir, const char* file, const char* typ
 # 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    {
 # 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-      if (strcmp(type, "setfl") == 0) {eamReadSetfl_npm(pot, dir, file); } else if (strcmp(type, "funcfl") == 0) eamReadFuncfl_npm(pot, dir, file); else typeNotSupported_npm("initEamPot", type);;
+      if (strcmp(type, "setfl" ) == 0) {eamReadSetfl_npm(pot, dir, file); } else if (strcmp(type,"funcfl") == 0) {eamReadFuncfl_npm(pot, dir, file); } else {typeNotSupported_npm("initEamPot", type); } ;
 # 198 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    }
 # 199 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6566,11 +6566,11 @@ void eamDestroy_npm(BasePotential** pPot)
 # 389 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 {
 # 390 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!pPot) {return;; };
+   if (! pPot) {return; };
 # 391 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    EamPotential* pot = *(EamPotential**)pPot;
 # 392 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!pot) {return;; };
+   if (! pot) {return; };
 # 393 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    destroyInterpolationObject_npm(&(pot->phi));
 # 394 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6666,7 +6666,7 @@ InterpolationObject* initInterpolationObject_npm(
    table->x0 = x0;
 # 466 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 467 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   for (int ii = 0;ii < n; ++ii) { table->values[ii] = data[ii]; };
+   for (int ii=0;ii<n; ++ii) { table->values[ii] = data[ii]; };
 # 469 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 470 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    table->values[-1] = table->values[0];
@@ -6682,9 +6682,9 @@ void destroyInterpolationObject_npm(InterpolationObject** a)
 # 477 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 {
 # 478 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!a) {return;; };
+   if (! a) {return; };
 # 479 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   if (!*a) {return;; };
+   if (! *a) {return; };
 # 480 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    if ( (*a)->values)
 # 481 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6869,19 +6869,19 @@ void eamReadSetfl_npm(EamPotential* pot, const char* dir, const char* potName)
 # 680 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 681 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 682 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   for (int ii = 0;ii < nRho; ++ii) { fscanf(potFile, "%lg", buf + ii); };
+   for (int ii=0;ii<nRho; ++ii) { fscanf(potFile, "%lg", buf+ii); };
 # 684 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->f = initInterpolationObject_npm(nRho, x0, dRho, buf);
 # 685 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 686 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 687 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   for (int ii = 0;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); };
+   for (int ii=0;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); };
 # 689 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->rho = initInterpolationObject_npm(nR, x0, dR, buf);
 # 690 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 691 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 692 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   for (int ii = 0;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); };
+   for (int ii=0;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); };
 # 694 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int ii=1; ii<nR; ++ii)
 # 695 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6972,13 +6972,13 @@ void eamReadFuncfl_npm(EamPotential* pot, const char* dir, const char* potName)
 # 790 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 791 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 792 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   for (int ii = 0;ii < nRho; ++ii) { fscanf(potFile, "%lg", buf + ii); };
+   for (int ii=0;ii<nRho; ++ii) { fscanf(potFile, "%lg", buf+ii); };
 # 794 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->f = initInterpolationObject_npm(nRho, x0, dRho, buf);
 # 795 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 796 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 797 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   for (int ii = 0;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); };
+   for (int ii=0;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); };
 # 799 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    for (int ii=1; ii<nR; ++ii)
 # 800 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
@@ -6998,7 +6998,7 @@ void eamReadFuncfl_npm(EamPotential* pot, const char* dir, const char* potName)
 # 807 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 808 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
 # 809 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
-   for (int ii = 0;ii < nR; ++ii) { fscanf(potFile, "%lg", buf + ii); };
+   for (int ii=0;ii<nR; ++ii) { fscanf(potFile, "%lg", buf+ii); };
 # 811 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"
    pot->rho = initInterpolationObject_npm(nR, x0, dR, buf);
 # 812 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c"

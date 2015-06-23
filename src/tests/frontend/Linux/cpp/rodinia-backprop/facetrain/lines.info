@@ -1,0 +1,2 @@
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 22 3 : { 1 } direct:call:load { load { 10 } }
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 42 3 : { 35, 36, 37, 70 } prop:call:bpnn_initialize {  }

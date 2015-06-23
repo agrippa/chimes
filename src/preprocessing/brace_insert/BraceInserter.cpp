@@ -23,25 +23,28 @@ void BraceInserter::visitChildren(const clang::Stmt *s) {
 }
 
 std::string BraceInserter::to_string(const clang::Stmt *stmt) {
-    std::string s;
-    llvm::raw_string_ostream stream(s);
+    return rewriter->getRewrittenText(stmt->getSourceRange());
+}
 
-    stmt->printPretty(stream, NULL, Context->getPrintingPolicy());
-    stream.flush();
 
-    int start_index = 0;
-    while (start_index < s.length() && std::isspace(s[start_index])) {
-        start_index++;
+const clang::FunctionDecl *BraceInserter::getNestedFDecl(const clang::Expr *e) {
+    if (e->getType().getTypePtr()->isFunctionPointerType()) {
+        const clang::ImplicitCastExpr *cast =
+            clang::dyn_cast<clang::ImplicitCastExpr>(e);
+        if (cast) {
+            const clang::DeclRefExpr *ref =
+                clang::dyn_cast<clang::DeclRefExpr>(cast->getSubExpr());
+            if (ref) {
+                const clang::ValueDecl *decl = ref->getDecl();
+                if (const clang::FunctionDecl *fdecl =
+                        clang::dyn_cast<clang::FunctionDecl>(decl)) {
+                    return fdecl;
+                }
+            }
+        }
     }
 
-    int end_index = s.length() - 1;
-    while (end_index >= 0 && std::isspace(s[end_index])) {
-        end_index--;
-    }
-
-    std::string trimmed = s.substr(start_index, end_index - start_index + 1);
-    std::replace(trimmed.begin(), trimmed.end(), '\n', ' ');
-    return trimmed;
+    return NULL;
 }
 
 void BraceInserter::VisitStmt(const clang::Stmt *s) {
@@ -64,15 +67,17 @@ void BraceInserter::VisitStmt(const clang::Stmt *s) {
                 std::string for_str;
                 llvm::raw_string_ostream for_stream(for_str);
 
-                std::string init_str = to_string(f->getInit());
-                std::string cond_str = to_string(f->getCond());
-                std::string inc_str = to_string(f->getInc());
+                // Any of init, cond, or inc may be NULL if not specified in the source
+                std::string init_str = (f->getInit() ? to_string(f->getInit()) : "");
+                std::string cond_str = (f->getCond() ? to_string(f->getCond()) : "");
+                std::string inc_str = (f->getInc() ? to_string(f->getInc()) : "");
                 std::string body_str = to_string(f->getBody());
 
                 for_stream << "for (";
 
                 for_stream << init_str;
-                if (f->getInit()->getStmtClass() != clang::Stmt::DeclStmtClass) {
+                if (f->getInit() == NULL ||
+                        f->getInit()->getStmtClass() != clang::Stmt::DeclStmtClass) {
                     for_stream << "; ";
                 }
 
@@ -121,29 +126,63 @@ void BraceInserter::VisitStmt(const clang::Stmt *s) {
             break;
         }
         case clang::Stmt::BinaryOperatorClass: {
+            /*
+             * Check for an assignment statement that stores the address of a
+             * static function in a variable that may need to be restored on
+             * resume (which is unsupported).
+             */
             const clang::BinaryOperator *op =
                 clang::dyn_cast<clang::BinaryOperator>(s);
             if (op->isAssignmentOp()) {
                 clang::Expr *rhs = op->getRHS();
                 if (rhs->getType().getTypePtr()->isFunctionPointerType()) {
-                    const clang::ImplicitCastExpr *cast =
-                        clang::dyn_cast<clang::ImplicitCastExpr>(rhs);
-                    assert(cast);
-                    const clang::DeclRefExpr *ref =
-                        clang::dyn_cast<clang::DeclRefExpr>(cast->getSubExpr());
-                    assert(ref);
-                    const clang::ValueDecl *decl = ref->getDecl();
-                    const clang::FunctionDecl *fdecl =
-                        clang::dyn_cast<clang::FunctionDecl>(decl);
-                    assert(fdecl);
+                    const clang::FunctionDecl *fdecl = getNestedFDecl(rhs);
+                    if (fdecl) {
+                        /*
+                         * An assignment may come directly from another
+                         * function, or it may come from another variable or
+                         * function parameter that had a function stored in it.
+                         * If it comes from something that isn't a function
+                         * declaration, we assume that the storage it is coming
+                         * from was assigned to somewhere else and this logic
+                         * will catch it there.
+                         */
+                        if (!fdecl->isExternallyVisible()) {
+                            std::string fname = fdecl->getName().str();
+                            fprintf(stderr, "ERROR: CHIMES does not support "
+                                    "restoring function pointers to 'static' "
+                                    "functions. Found an assignment from a pointer "
+                                    "to \"%s\".\n", fname.c_str());
+                            exit(1);
+                        }
+                    }
+                }
+            }
+            break;
+        }
+        case clang::Stmt::CallExprClass: {
+            /*
+             * Check for function pointers being passed to a function call, and
+             * verify that none of them point to static function declarations.
+             */
+            const clang::CallExpr *call = clang::dyn_cast<clang::CallExpr>(s);
+            assert(call);
+            for (unsigned a = 0; a < call->getNumArgs(); a++) {
+                const clang::Expr *arg = call->getArg(a);
+                assert(arg);
 
-                    if (!fdecl->isExternallyVisible()) {
-                        std::string fname = fdecl->getName().str();
-                        fprintf(stderr, "ERROR: CHIMES does not support "
-                                "restoring function pointers to 'static' "
-                                "functions. Found an assignment from a pointer "
-                                "to \"%s\".\n", fname.c_str());
-                        exit(1);
+                if (arg->getType().getTypePtr()->isFunctionPointerType()) {
+                    const clang::FunctionDecl *fdecl = getNestedFDecl(arg);
+                    if (fdecl) {
+                        if (!fdecl->isExternallyVisible()) {
+                            std::string fname = fdecl->getName().str();
+                            fprintf(stderr, "ERROR: CHIMES does not support "
+                                    "restoring function pointers to 'static' "
+                                    "functions. Found a function pointer to \"%s\" "
+                                    "being passed as an argument on the stack.\n",
+                                    fname.c_str());
+                            exit(1);
+                        }
                     }
                 }
             }

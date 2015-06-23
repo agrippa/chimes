@@ -1,0 +1,14 @@
+234 18 150 malloc 1 0
+236 19 146 malloc 1 0
+238 23 369 malloc
+242 17 292 malloc 1 0
+244 18 294 malloc
+247 22 299 malloc 1 0
+249 23 301 malloc
+339 4 369 free
+341 3 146 free
+343 2 150 free
+347 3 294 free
+349 2 292 free
+353 3 301 free
+355 2 299 free

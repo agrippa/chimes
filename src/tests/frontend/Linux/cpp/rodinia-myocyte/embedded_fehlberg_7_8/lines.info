@@ -1,0 +1,13 @@
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 212 2 : { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 37, 40 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 231 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 250 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 269 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 288 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 307 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 326 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 345 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 364 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 383 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 402 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 421 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/embedded_fehlberg_7_8.c 440 2 : { 10, 13, 37 } prop:call:master { master { 37, 48, 1210 } }

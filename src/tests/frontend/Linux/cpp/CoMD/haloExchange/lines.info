@@ -1,5 +1,5 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 23 : { 1, 2 } direct:call:initHaloExchange { initHaloExchange { 343 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 58 : { 3, 4, 5, 6, 7, 8, 9, 88, 2526 } prop:call:mkAtomCellList { mkAtomCellList { 104 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 54 : { 3, 4, 5, 6, 7, 8, 9, 88, 2526 } prop:call:mkAtomCellList { mkAtomCellList { 104 } }
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 265 21 : { 347, 348 } direct:call:processorNum { processorNum { 396 } }
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 266 21 : { 352 } direct:call:processorNum { processorNum { 396 } }
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 267 21 : { 352 } direct:call:processorNum { processorNum { 396 } }
@@ -13,7 +13,7 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 239 30 : { 2529 } direct:call:mkForceRecvCellList { mkForceRecvCellList { 1137 }, mkForceSendCellList { 1137 } }
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 491 29 : { 1557, 1558, 1559, 1560, 1561, 1562, 1563, 1564, 1565, 1566, 1567, 1568, 1569, 1570, 1571, 1572, 1573, 1745 } prop:call:getBoxFromTuple { getBoxFromTuple { 1747 } }
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 543 29 : { 1750, 1751, 1752, 1753, 1754, 1755, 1756, 1757, 1758, 1759, 1760, 1761, 1762, 1763, 1764, 1765, 1766, 1938 } prop:call:getBoxFromTuple { getBoxFromTuple { 1940 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 45 : { 1960, 1961, 1962 } prop:call:exchangeData { exchangeData { 1983, 1984 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 41 : { 1960, 1961, 1962 } prop:call:exchangeData { exchangeData { 1983, 1984 } }
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 294 17 : { 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 2087, 2112, 2116 } direct:call:NULL {  }
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 295 17 : { 1994, 2097, 2112, 2116 } direct:call:NULL {  }
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 302 9 : { 1995, 1996, 1997 } prop:call:profileStart {  }

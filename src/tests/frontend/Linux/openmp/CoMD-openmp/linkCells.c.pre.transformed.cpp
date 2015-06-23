@@ -4152,7 +4152,7 @@ LinkCell* initLinkCells_resumable(const Domain* domain, real_t cutoff)
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 15151216426301245438UL, 0, 0);
 # 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int iBox; for ( iBox = (0) ;iBox < ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
+   { int iBox; for ( iBox = (0) ;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
 # 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    (((ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)) ? static_cast<void> (0) : __assert_fail ("(ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 109, __PRETTY_FUNCTION__));
@@ -4190,9 +4190,9 @@ void destroyLinkCells_resumable(LinkCell** boxes)
 # 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(15151216426301245615UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return;; };
+   if (! boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!*boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return;; };
+   if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    free_wrapper((*boxes)->nAtoms, 15151216426301245604UL);
@@ -4313,7 +4313,48 @@ int getBoxFromTuple_resumable(LinkCell* boxes, int ix, int iy, int iz)
 # 210 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 211 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 212 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (iz == gridSize[2]) {{ iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (gridSize[1] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); }; } else if (iz == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); } else if (iy == gridSize[1]) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * iz + (ix + 1); } else if (iy == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + iz * (gridSize[0] + 2) + (ix + 1); } else if (ix == gridSize[0]) { iBox = boxes->nLocalBoxes + gridSize[1] * gridSize[2] + iz * gridSize[1] + iy; } else if (ix == -1) { iBox = boxes->nLocalBoxes + iz * gridSize[1] + iy; } else { iBox = ix + gridSize[0] * iy + gridSize[0] * gridSize[1] * iz; }
+   if (iz == gridSize[2]) {{
+# 214 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 215 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(gridSize[1]+2) + (gridSize[0]+2)*(iy+1) + (ix+1);
+# 216 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iz == -1) {{
+# 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(iy+1) + (ix+1);
+# 222 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == gridSize[1]) {{
+# 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + gridSize[2]*(gridSize[0]+2) +
+# 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*iz + (ix+1);
+# 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == -1) {{
+# 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + iz*(gridSize[0]+2) + (ix+1);
+# 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == gridSize[0]) {{
+# 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + gridSize[1]*gridSize[2] + iz*gridSize[1] + iy;
+# 238 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == -1)
+# 241 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 242 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + iz*gridSize[1] + iy;
+# 243 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
+# 244 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+# 245 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   else
+# 246 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = ix + gridSize[0]*iy + gridSize[0]*gridSize[1]*iz;
+# 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ((iBox >= 0) ? static_cast<void> (0) : __assert_fail ("iBox >= 0", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 249, __PRETTY_FUNCTION__));
 # 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -4402,7 +4443,7 @@ int maxOccupancy_resumable(LinkCell* boxes)
 # 312 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       localMax = (0) ;
 # 313 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int ii; for ( ii = (0) ;ii < boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); } };
+   { int ii; for ( ii = (0) ;ii<boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); } };
 # 315 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 316 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    int globalMax; ;
@@ -4466,11 +4507,23 @@ int getBoxFromCoord_resumable(LinkCell* boxes, real_t rr[3])
 # 360 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 361 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 362 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[0] < localMax[0]) {{ if (ix == gridSize[0]) ix = gridSize[0] - 1; }; } else {ix = gridSize[0]; } ;
+   if (rr[0] < localMax[0]) {{
+# 364 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (ix == gridSize[0]) {ix = gridSize[0] - 1; };
+# 365 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {ix = gridSize[0]; } ;
 # 368 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[1] < localMax[1]) {{ if (iy == gridSize[1]) iy = gridSize[1] - 1; }; } else {iy = gridSize[1]; } ;
+   if (rr[1] < localMax[1]) {{
+# 370 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iy == gridSize[1]) {iy = gridSize[1] - 1; };
+# 371 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iy = gridSize[1]; } ;
 # 374 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[2] < localMax[2]) {{ if (iz == gridSize[2]) iz = gridSize[2] - 1; }; } else {iz = gridSize[2]; } ;
+   if (rr[2] < localMax[2]) {{
+# 376 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iz == gridSize[2]) {iz = gridSize[2] - 1; };
+# 377 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iz = gridSize[2]; } ;
 # 380 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 381 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int result; result = (({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })) ;
@@ -4485,7 +4538,7 @@ void emptyHaloCells_resumable(LinkCell* boxes)
 # 387 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(15151216426301246827UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 388 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int ii; for ( ii = (boxes->nLocalBoxes) ;ii < boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
+   { int ii; for ( ii = (boxes->nLocalBoxes) ;ii<boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
 # 390 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells, ____alias_loc_id_11, ____chimes_did_disable10); }
 # 400 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -4523,7 +4576,89 @@ void getTuple_resumable(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 # 417 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       ink = iBox - boxes->nLocalBoxes;
 # 418 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-      if (ink < 2 * gridSize[1] * gridSize[2]) {{ if (ink < gridSize[1] * gridSize[2]) { ix = 0; } else { ink -= gridSize[1] * gridSize[2]; ix = gridSize[0] + 1; } iy = 1 + ink % gridSize[1]; iz = 1 + ink / gridSize[1]; }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2))) { ink -= 2 * gridSize[2] * gridSize[1]; if (ink < ((gridSize[0] + 2) * gridSize[2])) { iy = 0; } else { ink -= (gridSize[0] + 2) * gridSize[2]; iy = gridSize[1] + 1; } ix = ink % (gridSize[0] + 2); iz = 1 + ink / (gridSize[0] + 2); } else { ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2); if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2))) { iz = 0; } else { ink -= (gridSize[0] + 2) * (gridSize[1] + 2); iz = gridSize[2] + 1; } ix = ink % (gridSize[0] + 2); iy = ink / (gridSize[0] + 2); }
+      if (ink < 2*gridSize[1]*gridSize[2]) {{
+# 420 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < gridSize[1]*gridSize[2])
+# 421 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 422 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = 0;
+# 423 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 424 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 425 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 426 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= gridSize[1]*gridSize[2];
+# 427 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = gridSize[0] + 1;
+# 428 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 429 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = 1 + ink % gridSize[1];
+# 430 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / gridSize[1];
+# 431 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2)))
+# 433 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 434 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * gridSize[1];
+# 435 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) *gridSize[2]))
+# 436 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 437 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = 0;
+# 438 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 439 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 440 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 441 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * gridSize[2];
+# 442 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = gridSize[1] + 1;
+# 443 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 444 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 445 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / (gridSize[0] + 2);
+# 446 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
+# 447 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      else
+# 448 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 449 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2);
+# 450 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2)))
+# 451 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 452 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = 0;
+# 453 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 454 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 455 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 456 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * (gridSize[1] + 2);
+# 457 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = gridSize[2] + 1;
+# 458 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 459 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 460 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = ink / (gridSize[0] + 2);
+# 461 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
 # 462 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 463 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 464 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -4584,7 +4719,7 @@ LinkCell* initLinkCells_quick(const Domain* domain, real_t cutoff)
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 15151216426301245438UL, 0, 0);
 # 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int iBox; for ( iBox = (0) ;iBox < ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
+   { int iBox; for ( iBox = (0) ;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
 # 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    (((ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)) ? static_cast<void> (0) : __assert_fail ("(ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 109, __PRETTY_FUNCTION__));
@@ -4621,9 +4756,9 @@ void destroyLinkCells_quick(LinkCell** boxes)
 # 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(15151216426301245615UL)) ; ; ;
 # 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return;; };
+   if (! boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!*boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return;; };
+   if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    free_wrapper((*boxes)->nAtoms, 15151216426301245604UL);
@@ -4737,7 +4872,48 @@ int getBoxFromTuple_quick(LinkCell* boxes, int ix, int iy, int iz)
 # 210 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 211 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 212 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (iz == gridSize[2]) {{ iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (gridSize[1] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); }; } else if (iz == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); } else if (iy == gridSize[1]) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * iz + (ix + 1); } else if (iy == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + iz * (gridSize[0] + 2) + (ix + 1); } else if (ix == gridSize[0]) { iBox = boxes->nLocalBoxes + gridSize[1] * gridSize[2] + iz * gridSize[1] + iy; } else if (ix == -1) { iBox = boxes->nLocalBoxes + iz * gridSize[1] + iy; } else { iBox = ix + gridSize[0] * iy + gridSize[0] * gridSize[1] * iz; }
+   if (iz == gridSize[2]) {{
+# 214 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 215 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(gridSize[1]+2) + (gridSize[0]+2)*(iy+1) + (ix+1);
+# 216 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iz == -1) {{
+# 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(iy+1) + (ix+1);
+# 222 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == gridSize[1]) {{
+# 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + gridSize[2]*(gridSize[0]+2) +
+# 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*iz + (ix+1);
+# 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == -1) {{
+# 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + iz*(gridSize[0]+2) + (ix+1);
+# 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == gridSize[0]) {{
+# 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + gridSize[1]*gridSize[2] + iz*gridSize[1] + iy;
+# 238 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == -1)
+# 241 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 242 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + iz*gridSize[1] + iy;
+# 243 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
+# 244 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+# 245 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   else
+# 246 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = ix + gridSize[0]*iy + gridSize[0]*gridSize[1]*iz;
+# 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ((iBox >= 0) ? static_cast<void> (0) : __assert_fail ("iBox >= 0", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 249, __PRETTY_FUNCTION__));
 # 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -4818,7 +4994,7 @@ int maxOccupancy_quick(LinkCell* boxes)
 # 312 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       localMax = (0) ;
 # 313 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int ii; for ( ii = (0) ;ii < boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); } };
+   { int ii; for ( ii = (0) ;ii<boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); } };
 # 315 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 316 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    int globalMax; ;
@@ -4881,11 +5057,23 @@ int getBoxFromCoord_quick(LinkCell* boxes, real_t rr[3])
 # 360 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 361 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 362 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[0] < localMax[0]) {{ if (ix == gridSize[0]) ix = gridSize[0] - 1; }; } else {ix = gridSize[0]; } ;
+   if (rr[0] < localMax[0]) {{
+# 364 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (ix == gridSize[0]) {ix = gridSize[0] - 1; };
+# 365 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {ix = gridSize[0]; } ;
 # 368 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[1] < localMax[1]) {{ if (iy == gridSize[1]) iy = gridSize[1] - 1; }; } else {iy = gridSize[1]; } ;
+   if (rr[1] < localMax[1]) {{
+# 370 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iy == gridSize[1]) {iy = gridSize[1] - 1; };
+# 371 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iy = gridSize[1]; } ;
 # 374 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[2] < localMax[2]) {{ if (iz == gridSize[2]) iz = gridSize[2] - 1; }; } else {iz = gridSize[2]; } ;
+   if (rr[2] < localMax[2]) {{
+# 376 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iz == gridSize[2]) {iz = gridSize[2] - 1; };
+# 377 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iz = gridSize[2]; } ;
 # 380 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 381 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
     int result; result = (({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })) ;
@@ -4900,7 +5088,7 @@ void emptyHaloCells_quick(LinkCell* boxes)
 # 387 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(15151216426301246827UL)) ; ; ;
 # 388 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   { int ii; for ( ii = (boxes->nLocalBoxes) ;ii < boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
+   { int ii; for ( ii = (boxes->nLocalBoxes) ;ii<boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
 # 390 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells, ____alias_loc_id_11, ____chimes_did_disable10); }
 
@@ -4939,7 +5127,89 @@ void getTuple_quick(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 # 417 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       ink = iBox - boxes->nLocalBoxes;
 # 418 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-      if (ink < 2 * gridSize[1] * gridSize[2]) {{ if (ink < gridSize[1] * gridSize[2]) { ix = 0; } else { ink -= gridSize[1] * gridSize[2]; ix = gridSize[0] + 1; } iy = 1 + ink % gridSize[1]; iz = 1 + ink / gridSize[1]; }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2))) { ink -= 2 * gridSize[2] * gridSize[1]; if (ink < ((gridSize[0] + 2) * gridSize[2])) { iy = 0; } else { ink -= (gridSize[0] + 2) * gridSize[2]; iy = gridSize[1] + 1; } ix = ink % (gridSize[0] + 2); iz = 1 + ink / (gridSize[0] + 2); } else { ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2); if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2))) { iz = 0; } else { ink -= (gridSize[0] + 2) * (gridSize[1] + 2); iz = gridSize[2] + 1; } ix = ink % (gridSize[0] + 2); iy = ink / (gridSize[0] + 2); }
+      if (ink < 2*gridSize[1]*gridSize[2]) {{
+# 420 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < gridSize[1]*gridSize[2])
+# 421 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 422 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = 0;
+# 423 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 424 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 425 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 426 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= gridSize[1]*gridSize[2];
+# 427 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = gridSize[0] + 1;
+# 428 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 429 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = 1 + ink % gridSize[1];
+# 430 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / gridSize[1];
+# 431 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2)))
+# 433 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 434 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * gridSize[1];
+# 435 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) *gridSize[2]))
+# 436 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 437 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = 0;
+# 438 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 439 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 440 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 441 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * gridSize[2];
+# 442 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = gridSize[1] + 1;
+# 443 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 444 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 445 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / (gridSize[0] + 2);
+# 446 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
+# 447 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      else
+# 448 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 449 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2);
+# 450 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2)))
+# 451 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 452 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = 0;
+# 453 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 454 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 455 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 456 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * (gridSize[1] + 2);
+# 457 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = gridSize[2] + 1;
+# 458 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 459 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 460 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = ink / (gridSize[0] + 2);
+# 461 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
 # 462 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 463 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 464 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -5005,7 +5275,7 @@ LinkCell* initLinkCells_npm(const Domain* domain, real_t cutoff)
 # 105 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 15151216426301245438UL, 0, 0);
 # 106 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   for (int iBox = 0;iBox < ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; };
+   for (int iBox=0;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; };
 # 108 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 109 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    (((ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)) ? static_cast<void> (0) : __assert_fail ("(ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 109, __PRETTY_FUNCTION__));
@@ -5040,9 +5310,9 @@ void destroyLinkCells_npm(LinkCell** boxes)
 # 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {
 # 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!boxes) {return;; };
+   if (! boxes) {return; };
 # 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (!*boxes) {return;; };
+   if (! *boxes) {return; };
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    free_wrapper((*boxes)->nAtoms, 15151216426301245604UL);
@@ -5142,7 +5412,48 @@ int getBoxFromTuple_npm(LinkCell* boxes, int ix, int iy, int iz)
 # 210 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 211 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 212 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (iz == gridSize[2]) {{ iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (gridSize[1] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); }; } else if (iz == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + 2 * gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * (iy + 1) + (ix + 1); } else if (iy == gridSize[1]) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + gridSize[2] * (gridSize[0] + 2) + (gridSize[0] + 2) * iz + (ix + 1); } else if (iy == -1) { iBox = boxes->nLocalBoxes + 2 * gridSize[2] * gridSize[1] + iz * (gridSize[0] + 2) + (ix + 1); } else if (ix == gridSize[0]) { iBox = boxes->nLocalBoxes + gridSize[1] * gridSize[2] + iz * gridSize[1] + iy; } else if (ix == -1) { iBox = boxes->nLocalBoxes + iz * gridSize[1] + iy; } else { iBox = ix + gridSize[0] * iy + gridSize[0] * gridSize[1] * iz; }
+   if (iz == gridSize[2]) {{
+# 214 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 215 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(gridSize[1]+2) + (gridSize[0]+2)*(iy+1) + (ix+1);
+# 216 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iz == -1) {{
+# 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + 2*gridSize[2]*(gridSize[0]+2) +
+# 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*(iy+1) + (ix+1);
+# 222 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == gridSize[1]) {{
+# 226 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + gridSize[2]*(gridSize[0]+2) +
+# 227 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         (gridSize[0]+2)*iz + (ix+1);
+# 228 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (iy == -1) {{
+# 232 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + 2*gridSize[2]*gridSize[1] + iz*(gridSize[0]+2) + (ix+1);
+# 233 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == gridSize[0]) {{
+# 237 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + gridSize[1]*gridSize[2] + iz*gridSize[1] + iy;
+# 238 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else if (ix == -1)
+# 241 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 242 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = boxes->nLocalBoxes + iz*gridSize[1] + iy;
+# 243 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
+# 244 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+# 245 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   else
+# 246 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   {
+# 247 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      iBox = ix + gridSize[0]*iy + gridSize[0]*gridSize[1]*iz;
+# 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    ((iBox >= 0) ? static_cast<void> (0) : __assert_fail ("iBox >= 0", "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c", 249, __PRETTY_FUNCTION__));
 # 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
@@ -5216,7 +5527,7 @@ int maxOccupancy_npm(LinkCell* boxes)
 # 312 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    int localMax = 0;
 # 313 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   for (int ii = 0;ii < boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); };
+   for (int ii=0;ii<boxes->nLocalBoxes; ++ii) { localMax = ((localMax) > (boxes->nAtoms[ii]) ? (localMax) : (boxes->nAtoms[ii])); };
 # 315 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 316 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    int globalMax;
@@ -5275,11 +5586,23 @@ int getBoxFromCoord_npm(LinkCell* boxes, real_t rr[3])
 # 360 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 361 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 362 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[0] < localMax[0]) {{ if (ix == gridSize[0]) ix = gridSize[0] - 1; }; } else {ix = gridSize[0]; } ;
+   if (rr[0] < localMax[0]) {{
+# 364 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (ix == gridSize[0]) {ix = gridSize[0] - 1; };
+# 365 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {ix = gridSize[0]; } ;
 # 368 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[1] < localMax[1]) {{ if (iy == gridSize[1]) iy = gridSize[1] - 1; }; } else {iy = gridSize[1]; } ;
+   if (rr[1] < localMax[1]) {{
+# 370 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iy == gridSize[1]) {iy = gridSize[1] - 1; };
+# 371 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iy = gridSize[1]; } ;
 # 374 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   if (rr[2] < localMax[2]) {{ if (iz == gridSize[2]) iz = gridSize[2] - 1; }; } else {iz = gridSize[2]; } ;
+   if (rr[2] < localMax[2]) {{
+# 376 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      if (iz == gridSize[2]) {iz = gridSize[2] - 1; };
+# 377 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+   }; } else {iz = gridSize[2]; } ;
 # 380 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 381 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
    int result = getBoxFromTuple_npm(boxes, ix, iy, iz);
@@ -5292,7 +5615,7 @@ void emptyHaloCells_npm(LinkCell* boxes)
 # 387 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 {
 # 388 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-   for (int ii = boxes->nLocalBoxes;ii < boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; };
+   for (int ii=boxes->nLocalBoxes;ii<boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; };
 # 390 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 }
 
@@ -5329,7 +5652,89 @@ void getTuple_npm(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 # 417 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
       ink = iBox - boxes->nLocalBoxes;
 # 418 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
-      if (ink < 2 * gridSize[1] * gridSize[2]) {{ if (ink < gridSize[1] * gridSize[2]) { ix = 0; } else { ink -= gridSize[1] * gridSize[2]; ix = gridSize[0] + 1; } iy = 1 + ink % gridSize[1]; iz = 1 + ink / gridSize[1]; }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2))) { ink -= 2 * gridSize[2] * gridSize[1]; if (ink < ((gridSize[0] + 2) * gridSize[2])) { iy = 0; } else { ink -= (gridSize[0] + 2) * gridSize[2]; iy = gridSize[1] + 1; } ix = ink % (gridSize[0] + 2); iz = 1 + ink / (gridSize[0] + 2); } else { ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2); if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2))) { iz = 0; } else { ink -= (gridSize[0] + 2) * (gridSize[1] + 2); iz = gridSize[2] + 1; } ix = ink % (gridSize[0] + 2); iy = ink / (gridSize[0] + 2); }
+      if (ink < 2*gridSize[1]*gridSize[2]) {{
+# 420 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < gridSize[1]*gridSize[2])
+# 421 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 422 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = 0;
+# 423 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 424 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 425 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 426 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= gridSize[1]*gridSize[2];
+# 427 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ix = gridSize[0] + 1;
+# 428 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 429 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = 1 + ink % gridSize[1];
+# 430 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / gridSize[1];
+# 431 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }; } else if (ink < (2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2)))
+# 433 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 434 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * gridSize[1];
+# 435 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) *gridSize[2]))
+# 436 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 437 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = 0;
+# 438 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 439 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 440 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 441 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * gridSize[2];
+# 442 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iy = gridSize[1] + 1;
+# 443 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 444 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 445 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iz = 1 + ink / (gridSize[0] + 2);
+# 446 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
+# 447 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      else
+# 448 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      {
+# 449 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ink -= 2 * gridSize[2] * (gridSize[1] + gridSize[0] + 2);
+# 450 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         if (ink < ((gridSize[0] + 2) * (gridSize[1] + 2)))
+# 451 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 452 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = 0;
+# 453 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 454 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         else
+# 455 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         {
+# 456 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            ink -= (gridSize[0] + 2) * (gridSize[1] + 2);
+# 457 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+            iz = gridSize[2] + 1;
+# 458 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         }
+# 459 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         ix = ink % (gridSize[0] + 2);
+# 460 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+         iy = ink / (gridSize[0] + 2);
+# 461 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
+      }
 # 462 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 463 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"
 # 464 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/linkCells.c"

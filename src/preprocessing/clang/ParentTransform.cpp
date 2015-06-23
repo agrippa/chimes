@@ -40,13 +40,20 @@ std::string ParentTransform::constructRegisterStackVarArgs(StackAlloc *alloc) {
     ss << (alloc->get_is_struct() ? "1" : "0") << ", ";
     ss << alloc->get_num_ptr_fields();
 
-    for (std::vector<std::string>::iterator ptrs =
-            alloc->ptrs_begin(), ptrs_end = alloc->ptrs_end();
-            ptrs != ptrs_end; ptrs++) {
-        std::string ptr_field = *ptrs;
-        ss << ", (int)__builtin_offsetof(struct " <<
-            alloc->get_struct_type_name() << ", " << ptr_field <<
-            ")";
+    if (alloc->ptrs_begin() != alloc->ptrs_end()) {
+        bool is_unnamed = insertions->get_struct_fields_for(
+                alloc->get_struct_type_name())->get_is_unnamed();
+        std::string full_struct_type_name = (is_unnamed ?
+                alloc->get_struct_type_name() :
+                "struct " + alloc->get_struct_type_name());
+
+        for (std::vector<std::string>::iterator ptrs =
+                alloc->ptrs_begin(), ptrs_end = alloc->ptrs_end();
+                ptrs != ptrs_end; ptrs++) {
+            std::string ptr_field = *ptrs;
+            ss << ", (int)__builtin_offsetof(" << full_struct_type_name << ", " <<
+                ptr_field << ")";
+        }
     }
     return ss.str();
 }

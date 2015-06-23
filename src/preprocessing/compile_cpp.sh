@@ -22,8 +22,9 @@ VERBOSE=0
 LINKER_FLAGS=
 GXX_FLAGS="-O3"
 DEFINES=
+ADDED_INCLUDES=
 
-while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
+while getopts ":kci:I:L:l:o:w:vpx:y:sD:dnf:" opt; do
     case $opt in 
         d)
             DUMMY=1
@@ -70,6 +71,12 @@ while getopts ":kci:I:L:l:o:w:vpx:y:sD:d" opt; do
         D)
             DEFINES="$DEFINES -D${OPTARG}"
             ;;
+        n)
+            GXX=${GCC}
+            ;;
+        f)
+            ADDED_INCLUDES="$ADDED_INCLUDES -include ${OPTARG}"
+            ;;
         \?)
             echo "unrecognized option -$OPTARG" >&2
             exit 1
@@ -113,6 +120,9 @@ OUTPUT=$(pwd)/${OUTPUT_FILE}
 
 if [[ -z ${WORK_DIR} ]]; then
     WORK_DIR=$(mktemp -d /tmp/chimes.XXXXXX)
+else
+    # In case it doesn't exist
+    mkdir -p $WORK_DIR
 fi
 
 echo WORK_DIR = $WORK_DIR
@@ -135,16 +145,21 @@ LLVM_LIB=$(get_llvm_lib)
 
 echo Using GXX ${GXX}
 
+if [[ $COMPILE == 1 && ${#INPUTS[@]} != 1 ]]; then
+    echo 'You cannot specify -c with multiple input files'
+    exit 1
+fi
+
 if [[ $PROFILE == 1 && $DUMMY == 1 ]]; then
-    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes_dummy.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash"
+    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes_dummy.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash ${LINKER_FLAGS}"
     GXX_FLAGS="${GXX_FLAGS} -pg"
 elif [[ $PROFILE == 1 ]]; then
-    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash"
+    LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash ${LINKER_FLAGS}"
     GXX_FLAGS="${GXX_FLAGS} -pg"
 elif [[ $DUMMY == 1 ]]; then
-    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes_dummy"
+    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes_dummy ${LINKER_FLAGS}"
 else
-    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes"
+    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes ${LINKER_FLAGS}"
 fi
 
 if [[ $ENABLE_OMP == 1 ]]; then
@@ -166,12 +181,19 @@ for INPUT in ${ABS_INPUTS[@]}; do
         touch ${INFO_FILE_PREFIX}.omp.info
     fi
 
+    if [[ -f ${WORK_DIR}/${PREPROCESS_FILE} ]]; then
+        echo Duplicate input filename $INPUT in source tree?
+        exit 1
+    fi
+
     echo Preprocessing ${INPUT} into ${PREPROCESS_FILE}
-    cd ${WORK_DIR} && ${GXX} -I${CUDA_HOME}/include \
+    PREPROC_CMD="${GXX} -I${CUDA_HOME}/include \
            -I${CHIMES_HOME}/src/libchimes ${INCLUDES} -E ${INPUT} \
            -o ${PREPROCESS_FILE} -g ${GXX_FLAGS} \
-           -include${CHIMES_HOME}/src/libchimes/libchimes.h \
-           ${CHIMES_DEF} ${DEFINES}
+           -include ${CHIMES_HOME}/src/libchimes/libchimes.h \
+           ${CHIMES_DEF} ${DEFINES} ${ADDED_INCLUDES}"
+    [[ ! $VERBOSE ]] || echo $PREPROC_CMD
+    cd ${WORK_DIR} && ${PREPROC_CMD}
 
     echo Inserting line pragmas in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && cat ${PREPROCESS_FILE} | python ${INSERT_LINES} ${INPUT} > \
@@ -181,7 +203,8 @@ for INPUT in ${ABS_INPUTS[@]}; do
     echo Inserting braces in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${BRACE_INSERT} -o ${PREPROCESS_FILE}.braces \
         ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-        -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
+        -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES} &> \
+        ${WORK_DIR}/$(basename ${INPUT}).brace_insert.log
     cp ${PREPROCESS_FILE}.braces ${PREPROCESS_FILE}
 
     echo Unrolling functions in ${PREPROCESS_FILE}
@@ -219,7 +242,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         ${INFO_FILE_PREFIX}.exit.info
     mv ${PREPROCESSED_WITH_CONDS_FILE} ${PREPROCESS_FILE}
 
-    ${TRANSFORM} \
+    TRANSFORM_CMD="${TRANSFORM} \
             -l ${INFO_FILE_PREFIX}.lines.info \
             -s ${INFO_FILE_PREFIX}.struct.info \
             -a ${INFO_FILE_PREFIX}.stack.info \
@@ -243,7 +266,9 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -j ${INFO_FILE_PREFIX}.fptrs \
             -u ${INFO_FILE_PREFIX}.merge \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
-            -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}
+            -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}"
+    [[ ! $VERBOSE ]] || echo $TRANSFORM_CMD
+    $TRANSFORM_CMD
 
     TRANSFORMED_FILE=$(basename ${PREPROCESS_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
@@ -308,19 +333,23 @@ for f in ${LAST_FILES[@]}; do
 done
 
 if [[ $COMPILE == 1 ]]; then
-    for FINAL_FILE in ${LAST_FILES[@]}; do
-        OBJ_FILE=${FINAL_FILE}.o
+    # Last files must only have one entry, checked by a conditional above
+    FINAL_FILE=${LAST_FILES[0]}
+    OBJ_FILE=${FINAL_FILE}.o
+    if [[ "$OUTPUT_FILE" -ne "a.out" ]]; then
+        # If user specified output file, use that one
+        OBJ_FILE=$OUTPUT_FILE
+    fi
 
-        ${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -c -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
-            -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
+    ${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -c -I${CHIMES_HOME}/src/libchimes ${FINAL_FILE} \
+        -o ${OBJ_FILE} ${GXX_FLAGS} ${INCLUDES} ${CHIMES_DEF} ${DEFINES}
 
-        if [[ ! -f ${OBJ_FILE} ]]; then
-            echo "Missing object file $OBJ_FILE for input $INPUT"
-            exit 1
-        fi
+    if [[ ! -f ${OBJ_FILE} ]]; then
+        echo "Missing object file $OBJ_FILE for input $INPUT"
+        exit 1
+    fi
 
-        echo $OBJ_FILE
-    done
+    echo $OBJ_FILE
 else
     FILES_STR=""
     for f in ${LAST_FILES[@]}; do

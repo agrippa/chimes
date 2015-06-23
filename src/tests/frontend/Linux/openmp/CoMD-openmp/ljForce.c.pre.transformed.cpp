@@ -3174,11 +3174,11 @@ void ljDestroy_resumable(BasePotential** inppot)
 # 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(9533241863568626257UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   if (!inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return;; };
+   if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return; };
 # 101 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
 # 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   if (!pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return;; };
+   if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return; };
 # 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    free_wrapper(pot, 9533241863568626243UL);
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3417,11 +3417,11 @@ void ljDestroy_quick(BasePotential** inppot)
 # 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(9533241863568626257UL)) ; ; ;
 # 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   if (!inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return;; };
+   if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return; };
 # 101 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
 # 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   if (!pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return;; };
+   if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_0, ____chimes_did_disable0); return; };
 # 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    free_wrapper(pot, 9533241863568626243UL);
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3661,11 +3661,11 @@ void ljDestroy_npm(BasePotential** inppot)
 # 99 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 {
 # 100 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   if (!inppot) {return;; };
+   if (! inppot) {return; };
 # 101 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    LjPotential* pot = (LjPotential*)(*inppot);
 # 102 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   if (!pot) {return;; };
+   if (! pot) {return; };
 # 103 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    free_wrapper(pot, 9533241863568626243UL);
 # 104 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"

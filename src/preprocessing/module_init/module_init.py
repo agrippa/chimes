@@ -296,7 +296,10 @@ def get_globals(globals_filename):
         curr = GlobalVar(mangled_name, full_type, type_size_in_bits, is_ptr,
                          is_struct)
 
-        if is_struct > 0:
+        # It is possible no struct name is passed here if it has none (is a
+        # literal, once-defined struct). Not sure there's anything we can do
+        # about these.... TODO
+        if is_struct > 0 and len(tokens) > index + 4:
             curr.set_struct_type_name(tokens[index + 4])
 
             for t in tokens[index + 5:]:

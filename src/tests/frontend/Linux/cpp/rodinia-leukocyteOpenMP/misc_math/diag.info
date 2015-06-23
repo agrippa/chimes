@@ -1,0 +1,68 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 14 7 len=10 gradient_x_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 36 7 len=10 gradient_y_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 57 8 len=4 mean_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 68 8 len=7 std_dev_npm
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 32 2 rm_stack(true, 6260638308248583357UL, "gradient_x", &____must_manage_gradient_x, ____alias_loc_id_2, ____chimes_did_disable1); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 15 1 const int ____chimes_did_disable1 = new_stack((void *)(&gradient_x), "gradient_x", &____must_manage_gradient_x, 1, 1, (size_t)(6260638308248583508UL), "gradient_x|input|0", &____must_checkpoint_gradient_x_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 53 2 rm_stack(true, 6260638308248583528UL, "gradient_y", &____must_manage_gradient_y, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 37 1 const int ____chimes_did_disable2 = new_stack((void *)(&gradient_y), "gradient_y", &____must_manage_gradient_y, 1, 1, (size_t)(6260638308248583679UL), "gradient_y|input|0", &____must_checkpoint_gradient_y_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 64 2 rm_stack(false, 0UL, "mean", &____must_manage_mean, ____alias_loc_id_4, ____chimes_did_disable3); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 58 1 const int ____chimes_did_disable3 = new_stack((void *)(&mean), "mean", &____must_manage_mean, 1, 0, (size_t)(6260638308248583718UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 77 2 rm_stack(false, 0UL, "std_dev", &____must_manage_std_dev, ____alias_loc_id_5, ____chimes_did_disable4); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 69 1 const int ____chimes_did_disable4 = new_stack((void *)(&std_dev), "std_dev", &____must_manage_std_dev, 1, 0, (size_t)(6260638308248583771UL)); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 15 2 const int ____chimes_did_disable1 = new_stack((void *)(&gradient_x), "gradient_x", &____must_manage_gradient_x, 1, 1, (size_t)(6260638308248583508UL), "gradient_x|input|0", &____must_checkpoint_gradient_x_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 15 269 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 16 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 16 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 17 2  MAT *result;  result = (m_get(input->m, input->n)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 17 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 37 2 const int ____chimes_did_disable2 = new_stack((void *)(&gradient_y), "gradient_y", &____must_manage_gradient_y, 1, 1, (size_t)(6260638308248583679UL), "gradient_y|input|0", &____must_checkpoint_gradient_y_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 37 269 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 38 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 38 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 39 2  MAT *result;  result = (m_get(input->m, input->n)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 39 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 58 2 const int ____chimes_did_disable3 = new_stack((void *)(&mean), "mean", &____must_manage_mean, 1, 0, (size_t)(6260638308248583718UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 58 134 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 59 2  double sum;  sum = (0.) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 59 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 60 2 int i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 60 7 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 69 2 const int ____chimes_did_disable4 = new_stack((void *)(&std_dev), "std_dev", &____must_manage_std_dev, 1, 0, (size_t)(6260638308248583771UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 69 143 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 70 2  double m;  double sum;  m = (mean(in))  ; sum = (0.) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 70 31 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 71 2 int i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 71 7 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 74 3  double temp;  temp = (((in)->ve[(i)]) - m) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 74 36 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 17 17  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 39 17  call_lbl_1: 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 14 7 len=10 gradient_x_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 17 40  ({  calling((void*)m_get, 1, ____alias_loc_id_0, 6260638308248583357UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(input->m, input->n); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 17 64 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 15 268  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 36 7 len=10 gradient_y_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 39 40  ({  calling((void*)m_get, 1, ____alias_loc_id_1, 6260638308248583528UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(input->m, input->n); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 39 64 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 37 268  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 57 8 len=4 mean_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 58 133  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 68 8 len=7 std_dev_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 70 32 ({ calling_npm("mean", 0); mean_npm(in); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 70 39 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 69 142  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 14 7 len=10 gradient_x_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 17 40  ({  int ____chimes_arg0;  int ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg0 = (input->m); ____chimes_arg1 = (input->n);  }  calling((void*)m_get, 1, ____alias_loc_id_0, 6260638308248583357UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg0, ____chimes_arg1); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 17 64 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 15 268  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 36 7 len=10 gradient_y_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 39 40  ({  int ____chimes_arg2;  int ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg2 = (input->m); ____chimes_arg3 = (input->n);  }  calling((void*)m_get, 1, ____alias_loc_id_1, 6260638308248583528UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg2, ____chimes_arg3); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 39 64 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 37 268  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 57 8 len=4 mean_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 58 133  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 68 8 len=7 std_dev_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 70 32 ({ calling_npm("mean", 0); mean_npm(in); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 70 39 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 69 142  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

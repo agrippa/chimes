@@ -1,0 +1,13 @@
+InsertText /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 13 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 8 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(16078043286575642294UL)); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 8 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16078043286575642294UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 8 171 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 12 5  call_lbl_3: 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 8 5 len=4 main_quick
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 12 18 checkpoint_transformed(3, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 12 29 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 8 168  ;  
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 8 5 len=4 main_resumable
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 12 18 checkpoint_transformed(3, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 12 29 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./globals.cpp 8 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  

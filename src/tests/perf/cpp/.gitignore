@@ -19,3 +19,11 @@ sw_chimes_omp
 sw_normal_omp
 uts_chimes_omp
 uts_normal_omp
+nabmd_chimes
+nabmd_normal
+botsalgn_chimes
+botsalgn_normal
+botsspar_chimes
+compile_imagick.sh
+imagick_convert_normal
+imagick_validator_normal

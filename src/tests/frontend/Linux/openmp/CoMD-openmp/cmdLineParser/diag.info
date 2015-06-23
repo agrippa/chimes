@@ -50,20 +50,20 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cm
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 70 13 rm_stack(true, 4461972309412152063UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 75 4 rm_stack(true, 4461972309412152063UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 68 1 const int ____chimes_did_disable2 = new_stack((void *)(&myOptionFree), "myOptionFree", &____must_manage_myOptionFree, 1, 0, (size_t)(4461972309412152094UL)); 
-InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 80 13 rm_stack(true, 4461972309412152040UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 80 14 rm_stack(true, 4461972309412152040UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 82 4 rm_stack(true, 4461972309412152040UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 79 1 const int ____chimes_did_disable3 = new_stack((void *)(&lastOption), "lastOption", &____must_manage_lastOption, 1, 0, (size_t)(4461972309412152040UL)); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 89 40 rm_stack(true, 4461972309412152427UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 92 4 rm_stack(true, 4461972309412152427UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 86 1 const int ____chimes_did_disable4 = new_stack((void *)(&findOption), "findOption", &____must_manage_findOption, 2, 0, (size_t)(4461972309412152427UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 103 13 rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 103 14 rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 110 4 rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 99 1 const int ____chimes_did_disable5 = new_stack((void *)(&addArg), "addArg", &____must_manage_addArg, 7, 0, (size_t)(4461972309412151904UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(4461972309412151908UL), (size_t)(0UL), (size_t)(4461972309412151910UL)); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 120 4 rm_stack(false, 0UL, "freeArgs", &____must_manage_freeArgs, ____alias_loc_id_3, ____chimes_did_disable6); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 115 1 const int ____chimes_did_disable6 = new_stack((void *)(&freeArgs), "freeArgs", &____must_manage_freeArgs, 0, 0); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 141 4 rm_stack(false, 0UL, "printArgs", &____must_manage_printArgs, ____alias_loc_id_5, ____chimes_did_disable7); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 124 1 const int ____chimes_did_disable7 = new_stack((void *)(&printArgs), "printArgs", &____must_manage_printArgs, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 153 18 rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 153 19 rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 227 4 rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 145 1 const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(4461972309412152383UL)); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 37 2 const int ____chimes_did_disable0 = new_stack((void *)(&dupString), "dupString", &____must_manage_dupString, 1, 0, (size_t)(4461972309412152455UL)); ;
@@ -135,8 +135,8 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 96 5 len=6 addArg_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 102 8 ({ calling_npm("myOptionAlloc", 0); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 102 80 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 104 49 ({ calling_npm("lastOption", 0); lastOption_npm(myargs); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 104 66 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 107 11 ({ calling_npm("lastOption", 0); lastOption_npm(myargs); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 107 28 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 99 265  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 114 6 len=8 freeArgs_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 118 16 ({ calling_npm("myOptionFree", 0); myOptionFree_npm(myargs); })
@@ -171,8 +171,8 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 96 5 len=6 addArg_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 102 8 ({ calling_npm("myOptionAlloc", 0); myOptionAlloc_npm(longOption, shortOption, has_arg, type, dataPtr, dataSize, help); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 102 80 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 104 49 ({ calling_npm("lastOption", 0); lastOption_npm(myargs); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 104 66 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 107 11 ({ calling_npm("lastOption", 0); lastOption_npm(myargs); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 107 28 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 99 265  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 114 6 len=8 freeArgs_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c 118 16 ({ calling_npm("myOptionFree", 0); myOptionFree_npm(myargs); })

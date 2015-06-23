@@ -67,9 +67,9 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 138
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 161 2 const int ____chimes_did_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(7237354288423011652UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 161 304 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 4 {  int ii; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 103  }
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 99  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 9  ii = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 19 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 17 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 39 12  call_lbl_1: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 41 12  call_lbl_2: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 44 7  call_lbl_3: 
@@ -96,7 +96,7 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 162 4  
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 164 9  call_lbl_2: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 165 4  call_lbl_3: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 166 9  call_lbl_4: 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 69  call_lbl_5: 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 67  call_lbl_5: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 35 8 len=8 timestep_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 39 25  ({  calling((void*)profileStart, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 39 51 
@@ -175,8 +175,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 1
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 165 52 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 166 22  ({  calling((void*)profileStop, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 166 47 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 82  ({  calling((void*)sortAtomsInCell, 5, ____alias_loc_id_3, 0UL, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(sim->atoms, sim->boxes, ii); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 124 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 80  ({  calling((void*)sortAtomsInCell, 5, ____alias_loc_id_3, 0UL, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(sim->atoms, sim->boxes, ii); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 122 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 7 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 13 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 161 303  ; int ii;
@@ -259,8 +259,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 1
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 165 52 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 166 22  ({  calling((void*)profileStop, 4, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(atomHaloTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 166 47 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 82  ({  Atoms * ____chimes_arg24;  LinkCell * ____chimes_arg25;  if (!____chimes_replaying) { ____chimes_arg24 = (sim->atoms); ____chimes_arg25 = (sim->boxes);  }  calling((void*)sortAtomsInCell, 5, ____alias_loc_id_3, 0UL, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(____chimes_arg24, ____chimes_arg25, ii); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 124 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 80  ({  Atoms * ____chimes_arg24;  LinkCell * ____chimes_arg25;  if (!____chimes_replaying) { ____chimes_arg24 = (sim->atoms); ____chimes_arg25 = (sim->boxes);  }  calling((void*)sortAtomsInCell, 5, ____alias_loc_id_3, 0UL, 3, (size_t)(7237354288423011654UL), (size_t)(7237354288423011654UL), (size_t)(0UL)); (sortAtomsInCell)(____chimes_arg24, ____chimes_arg25, ii); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 122 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 7 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 13 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 161 303  ; int ii;

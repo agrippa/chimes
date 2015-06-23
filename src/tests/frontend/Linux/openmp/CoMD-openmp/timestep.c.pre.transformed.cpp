@@ -2914,7 +2914,7 @@ void redistributeAtoms_resumable(SimFlat* sim)
 # 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-   for (int ii = 0;ii < sim->boxes->nTotalBoxes; ++ii) {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 0); ____chimes_first_iter3 = 0; } call_lbl_5: sortAtomsInCell(sim->atoms, sim->boxes, ii); } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); } ;
+   for (int ii=0;ii<sim->boxes->nTotalBoxes; ++ii) {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 0); ____chimes_first_iter3 = 0; } call_lbl_5: sortAtomsInCell(sim->atoms, sim->boxes, ii); } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); } ;
 # 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_9, ____chimes_did_disable5); }
 double timestep_quick(SimFlat* s, int nSteps, real_t dt)
@@ -3158,7 +3158,7 @@ void redistributeAtoms_quick(SimFlat* sim)
 # 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-   for (int ii = 0;ii < sim->boxes->nTotalBoxes; ++ii) {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 0); ____chimes_first_iter3 = 0; } call_lbl_5: sortAtomsInCell(sim->atoms, sim->boxes, ii); } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); } ;
+   for (int ii=0;ii<sim->boxes->nTotalBoxes; ++ii) {if (____chimes_first_iter3) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread3, ____chimes_parent_ctx4, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth3, ____chimes_region_id3, 0); ____chimes_first_iter3 = 0; } call_lbl_5: sortAtomsInCell(sim->atoms, sim->boxes, ii); } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); } ;
 # 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_9, ____chimes_did_disable5); }
 
@@ -3309,7 +3309,7 @@ void redistributeAtoms_npm(SimFlat* sim)
 # 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 176 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
-   for (int ii = 0;ii < sim->boxes->nTotalBoxes; ++ii) { (*____chimes_extern_func_sortAtomsInCell)(sim->atoms, sim->boxes, ii); };
+   for (int ii=0;ii<sim->boxes->nTotalBoxes; ++ii) { (*____chimes_extern_func_sortAtomsInCell)(sim->atoms, sim->boxes, ii); };
 # 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c"
 }
 

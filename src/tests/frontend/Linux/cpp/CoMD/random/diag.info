@@ -24,9 +24,9 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 69 46
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 71 4  uint64_t iSeed;  iSeed = ((4294967296ULL * s1) + s2) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 71 47 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 4 {  unsigned int jj; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 61  }
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 53  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 9  jj = (0) ;
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 28 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 22 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 22 8 len=6 gasdev_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 27 16 ({ calling_npm("lcg61", 0); lcg61_npm(seed); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 27 26 
@@ -36,8 +36,8 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 42 8 len=5 lcg61_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 43 137  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 66 10 len=6 mkSeed_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 57 ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 69 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 55 ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 67 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 71 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 71 19 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 67 136  ; uint64_t iSeed;
@@ -51,8 +51,8 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 42 8 len=5 lcg61_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 43 137  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 66 10 len=6 mkSeed_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 57 ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 69 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 55 ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 67 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 71 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 71 19 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 67 136  ; uint64_t iSeed;

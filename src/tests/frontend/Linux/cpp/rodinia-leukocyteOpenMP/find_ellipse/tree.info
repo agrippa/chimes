@@ -1,0 +1,14 @@
+get_time _Z8get_timev 0 DOES_NOT
+get_frame _Z9get_frameP5avi_tiii 0 MAY AVI_video_width 35 14 AVI_video_height 36 15 AVI_set_video_position 40 2 AVI_read_frame 43 5 AVI_print_error 44 3 chop_flip_image 51 19 chop_flip_image 54 19
+chop_flip_image _Z15chop_flip_imagePhiiiiiii 0 MAY m_get 65 17
+ellipsematching _Z15ellipsematchingP3MATS0_ 0 MAY m_get 111 16
+structuring_element _Z19structuring_elementi 0 MAY m_get 166 17
+dilate_f _Z8dilate_fP3MATS0_ 0 MAY m_get 185 18
+TMatrix _Z7TMatrixjj 0 MAY m_get 252 6 m_get 253 7 m_zero 257 3 mtrm_mlt 281 11 m_inverse 282 15 mmtr_mlt 283 10 m_free 285 2 m_free 286 2 m_free 287 2 m_free 288 2
+uniformseg _Z10uniformsegP3VECS0_P3MATS2_ 0 DOES_NOT
+m_min _Z5m_minP3MAT 0 DOES_NOT
+m_max _Z5m_maxP3MAT 0 DOES_NOT
+getsampling _Z11getsamplingP3MATi 0 MAY v_get 377 17
+getfdriv _Z8getfdrivP3MATi 0 MAY v_get 429 17
+linear_interp2 _Z14linear_interp2P3MATP3VECS2_ 0 MAY m_get 481 17
+splineenergyform01 _Z18splineenergyform01P3MATS0_S0_S0_iddi 0 MAY getsampling 515 6 getsampling 516 6 getfdriv 517 7 getfdriv 518 7 v_get 520 7 v_get 524 7 v_get 528 7 v_get 532 7 v_get 536 7 v_get 540 7 linear_interp2 544 12 linear_interp2 545 12 linear_interp2 546 12 linear_interp2 547 12 v_get 549 8 v_get 550 8 v_get 551 8 v_get 552 8 get_row 554 8 get_row 555 8 get_row 556 8 get_row 557 8 v_get 584 7 v_get 588 7 v_get 592 7 v_get 596 8 v_get 597 8 v_free 701 2 v_free 701 15 v_free 701 28 v_free 701 40 v_free 701 52 v_free 705 2 v_free 705 15 v_free 705 28 v_free 705 41 m_free 707 2 m_free 707 19 m_free 707 36 m_free 707 53 v_free 709 2 v_free 709 14 v_free 709 26 v_free 709 38 v_free 709 50 v_free 709 62 v_free 709 74 v_free 709 86 v_free 709 98 v_free 709 109

@@ -1,5 +1,0 @@
-/home/jmg3/num-debug/src/examples/cpp/nocheckpoint_attr.cpp main|argc|0 " i32 " 32 0 0 0
-/home/jmg3/num-debug/src/examples/cpp/nocheckpoint_attr.cpp main|argv|0 " i8** " 64 1 0 0
-/home/jmg3/num-debug/src/examples/cpp/nocheckpoint_attr.cpp main|a|0 " i32* " 64 1 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/nocheckpoint_attr.cpp main|b|0 " i32* " 64 1 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/nocheckpoint_attr.cpp main|c|0 " i32 " 32 0 0 0

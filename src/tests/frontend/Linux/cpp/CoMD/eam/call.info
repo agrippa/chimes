@@ -2,10 +2,10 @@ malloc initEamPot 172 39 22 0
 __assert_fail initEamPot 173 37 0 2164 2165 0 2166
 getMyRank initEamPot 189 8 0
 strcmp initEamPot 191 11 0 82 2167
-eamReadSetfl initEamPot 191 40 0 22 80 81
-strcmp initEamPot 191 81 0 82 2168
-eamReadFuncfl initEamPot 191 114 0 22 80 81
-typeNotSupported initEamPot 191 154 0 2169 82
+eamReadSetfl initEamPot 191 41 0 22 80 81
+strcmp initEamPot 191 82 0 82 2168
+eamReadFuncfl initEamPot 191 111 0 22 80 81
+typeNotSupported initEamPot 191 151 0 2169 82
 eamBcastPotential initEamPot 198 4 0 22
 __assert_fail eamForce 217 37 0 2164 2165 0 2170
 malloc eamForce 223 31 156 0
@@ -54,11 +54,11 @@ fgets eamReadSetfl 666 4 1141 1064 0 1097
 sscanf eamReadSetfl 670 4 0 1064 2182 1072 1073 1074 1075
 strcpy eamReadSetfl 674 4 1166 1311 1075
 malloc eamReadSetfl 678 27 1182 0
-fscanf eamReadSetfl 682 39 0 1097 2164 1182
+fscanf eamReadSetfl 682 35 0 1097 2164 1182
 initInterpolationObject eamReadSetfl 684 13 1209 0 0 0 1182
-fscanf eamReadSetfl 687 37 0 1097 2164 1182
+fscanf eamReadSetfl 687 33 0 1097 2164 1182
 initInterpolationObject eamReadSetfl 689 15 1209 0 0 0 1182
-fscanf eamReadSetfl 692 37 0 1097 2164 1182
+fscanf eamReadSetfl 692 33 0 1097 2164 1182
 initInterpolationObject eamReadSetfl 700 15 1209 0 0 0 1182
 free eamReadSetfl 702 4 0 1182
 sprintf eamReadFuncfl 757 4 0 1317 2167 1570 1571
@@ -73,11 +73,11 @@ strcpy eamReadFuncfl 777 4 1397 1569 1323
 fgets eamReadFuncfl 782 4 1405 1317 0 1350
 sscanf eamReadFuncfl 783 4 0 1317 2185 1324 1326 1325 1327 1328
 malloc eamReadFuncfl 789 27 1429 0
-fscanf eamReadFuncfl 792 39 0 1350 2164 1429
+fscanf eamReadFuncfl 792 35 0 1350 2164 1429
 initInterpolationObject eamReadFuncfl 794 13 1454 0 0 0 1429
-fscanf eamReadFuncfl 797 37 0 1350 2164 1429
+fscanf eamReadFuncfl 797 33 0 1350 2164 1429
 initInterpolationObject eamReadFuncfl 806 15 1454 0 0 0 1429
-fscanf eamReadFuncfl 809 37 0 1350 2164 1429
+fscanf eamReadFuncfl 809 33 0 1350 2164 1429
 initInterpolationObject eamReadFuncfl 811 15 1454 0 0 0 1429
 free eamReadFuncfl 813 4 0 1429
 fprintf typeNotSupported 837 4 0 1905 2179 1585 1586

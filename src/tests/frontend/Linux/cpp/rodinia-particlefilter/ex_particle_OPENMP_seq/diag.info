@@ -1,0 +1,823 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 31 11 len=8 get_time_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 7 len=12 elapsed_time_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 44 8 len=11 roundDouble_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 60 6 len=5 setIf_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 79 8 len=5 randu_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 93 8 len=5 randn_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 109 6 len=8 addNoise_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 124 6 len=9 strelDisk_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 147 6 len=13 dilate_matrix_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 180 6 len=13 imdilate_disk_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 200 6 len=12 getneighbors_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 227 6 len=13 videoSequence_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 247 27 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 247 56 , 7756533236910310412UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 257 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 257 7 , 7756533236910310412UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 8 len=17 calcLikelihoodSum_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 287 5 len=9 findIndex_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 311 5 len=12 findIndexBin_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 345 6 len=14 particleFilter_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 356 22 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 356 57 , 7756533236910310803UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 366 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 366 61 , 7756533236910311084UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 372 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 372 53 , 7756533236910311249UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 380 34 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 380 56 , 7756533236910311202UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 381 30 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 381 52 , 7756533236910311076UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 382 30 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 382 52 , 7756533236910311092UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 383 26 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 383 48 , 7756533236910311587UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 26 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 48 , 7756533236910311597UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 27 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 49 , 7756533236910311452UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 386 25 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 386 47 , 7756533236910311500UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 387 20 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 387 49 , 7756533236910311125UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 7 , 7756533236910310803UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 7 , 7756533236910311084UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 512 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 512 7 , 7756533236910311249UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 7 , 7756533236910311202UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 7 , 7756533236910311587UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 7 , 7756533236910311597UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 7 , 7756533236910311076UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 7 , 7756533236910311092UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 7 , 7756533236910311452UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 7 , 7756533236910311500UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 7 , 7756533236910311125UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 22 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 41 , 7756533236910311820UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 19 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 48 , 7756533236910311838UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 600 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 600 7 , 7756533236910311820UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 601 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 601 7 , 7756533236910311838UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 247 27 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 247 56 , 7756533236910310412UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 257 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 257 7 , 7756533236910310412UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 356 22 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 356 57 , 7756533236910310803UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 366 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 366 61 , 7756533236910311084UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 372 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 372 53 , 7756533236910311249UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 380 34 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 380 56 , 7756533236910311202UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 381 30 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 381 52 , 7756533236910311076UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 382 30 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 382 52 , 7756533236910311092UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 383 26 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 383 48 , 7756533236910311587UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 26 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 48 , 7756533236910311597UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 27 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 49 , 7756533236910311452UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 386 25 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 386 47 , 7756533236910311500UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 387 20 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 387 49 , 7756533236910311125UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 510 7 , 7756533236910310803UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 511 7 , 7756533236910311084UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 512 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 512 7 , 7756533236910311249UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 513 7 , 7756533236910311202UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 514 7 , 7756533236910311587UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 515 7 , 7756533236910311597UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 516 7 , 7756533236910311076UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 517 7 , 7756533236910311092UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 518 7 , 7756533236910311452UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 519 7 , 7756533236910311500UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 520 7 , 7756533236910311125UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 22 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 41 , 7756533236910311820UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 19 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 48 , 7756533236910311838UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 600 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 600 7 , 7756533236910311820UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 601 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 601 7 , 7756533236910311838UL
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 34 2 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_3, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 31 22 const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 38 9 rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_4, ____chimes_did_disable1); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 62 const int ____chimes_did_disable1 = new_stack((void *)(&elapsed_time), "elapsed_time", &____must_manage_elapsed_time, 2, 0, (size_t)(0UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 46 30 rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_5, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 46 56 rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_5, ____chimes_did_disable2); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 44 33 const int ____chimes_did_disable2 = new_stack((void *)(&roundDouble), "roundDouble", &____must_manage_roundDouble, 1, 0, (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 50 1 rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_5, ____chimes_did_disable2); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 60 91 const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910309646UL), (size_t)(7756533236910309647UL), (size_t)(7756533236910309648UL), (size_t)(7756533236910309649UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 70 1 rm_stack(false, 0UL, "setIf", &____must_manage_setIf, ____alias_loc_id_6, ____chimes_did_disable3); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 83 2 rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_7, ____chimes_did_disable4); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 80 1 const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(7756533236910309689UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 99 2 rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_8, ____chimes_did_disable5); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 93 36 const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(7756533236910309727UL), (size_t)(0UL)); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 109 77 const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(7756533236910309831UL), (size_t)(7756533236910309832UL), (size_t)(7756533236910309833UL), (size_t)(7756533236910309834UL), (size_t)(7756533236910309835UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 118 1 rm_stack(false, 0UL, "addNoise", &____must_manage_addNoise, ____alias_loc_id_9, ____chimes_did_disable6); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 125 1 const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(7756533236910309907UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 135 1 rm_stack(false, 0UL, "strelDisk", &____must_manage_strelDisk, ____alias_loc_id_10, ____chimes_did_disable7); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 148 1 const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(7756533236910310058UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 169 1 rm_stack(false, 0UL, "dilate_matrix", &____must_manage_dilate_matrix, ____alias_loc_id_11, ____chimes_did_disable8); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 181 1 const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(7756533236910310151UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310156UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 192 1 rm_stack(false, 0UL, "imdilate_disk", &____must_manage_imdilate_disk, ____alias_loc_id_12, ____chimes_did_disable9); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 200 73 const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 4, 0, (size_t)(7756533236910310246UL), (size_t)(0UL), (size_t)(7756533236910310248UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 214 1 rm_stack(false, 0UL, "getneighbors", &____must_manage_getneighbors, ____alias_loc_id_13, ____chimes_did_disable10); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 227 69 const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", &____must_manage_videoSequence, 5, 5, (size_t)(7756533236910310456UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310460UL), "videoSequence|I|0", &____must_checkpoint_videoSequence_I_0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "videoSequence|IszX|0", &____must_checkpoint_videoSequence_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "videoSequence|IszY|0", &____must_checkpoint_videoSequence_IszY_0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "videoSequence|Nfr|0", &____must_checkpoint_videoSequence_Nfr_0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "videoSequence|seed|0", &____must_checkpoint_videoSequence_seed_0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 264 1 rm_stack(false, 0UL, "videoSequence", &____must_manage_videoSequence, ____alias_loc_id_14, ____chimes_did_disable11); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 277 2 rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_15, ____chimes_did_disable12); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 58 const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(7756533236910310520UL), (size_t)(7756533236910310521UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 297 3 rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_16, ____chimes_did_disable13); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 299 2 rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_16, ____chimes_did_disable13); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 287 57 const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(7756533236910310572UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 312 30 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 319 26 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 319 86 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 327 4 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 33 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 332 2 rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 311 75 const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(7756533236910310689UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 345 86 const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter), "particleFilter", &____must_manage_particleFilter, 6, 0, (size_t)(7756533236910311668UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311672UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 521 1 rm_stack(false, 0UL, "particleFilter", &____must_manage_particleFilter, ____alias_loc_id_18, ____chimes_did_disable15); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 529 3 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 534 3 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 542 5 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 547 3 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 553 5 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 558 3 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 564 5 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 569 3 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 575 5 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 580 3 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 602 2 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 522 34 const int ____chimes_did_disable16 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(7756533236910311898UL)); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 31 23 const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 31 134 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 32 2  struct timeval tv; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 32 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 63 const int ____chimes_did_disable1 = new_stack((void *)(&elapsed_time), "elapsed_time", &____must_manage_elapsed_time, 2, 0, (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 216 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 44 34 const int ____chimes_did_disable2 = new_stack((void *)(&roundDouble), "roundDouble", &____must_manage_roundDouble, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 44 169 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 45 2  int newValue;  newValue = ((int)(value)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 45 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 60 92 const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910309646UL), (size_t)(7756533236910309647UL), (size_t)(7756533236910309648UL), (size_t)(7756533236910309649UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 60 356 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 61 2 int x; int y; int z; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 61 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 80 2 const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(7756533236910309689UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 80 152 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 81 2  int num;  num = (A * seed[index] + C) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 81 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 93 37 const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(7756533236910309727UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 93 187 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 95 2  double u;  u = (randu(seed, index)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 95 31 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 2  double v;  v = (randu(seed, index)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 31 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 97 2  double cosine;  cosine = (cos(2 * 3.1415926535897931 * v)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 97 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 98 2  double rt;  rt = (-2 * log(u)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 98 23 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 109 78 const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(7756533236910309831UL), (size_t)(7756533236910309832UL), (size_t)(7756533236910309833UL), (size_t)(7756533236910309834UL), (size_t)(7756533236910309835UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 109 354 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 110 2 int x; int y; int z; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 110 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 125 2 const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(7756533236910309907UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 125 164 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 126 2  int diameter;  diameter = (radius * 2 - 1) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 126 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 127 2 int x; int y; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 127 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 130 4  double distance;  distance = (sqrt(pow((double)(x - radius + 1), 2) + pow((double)(y - radius + 1), 2))) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 130 85 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 148 2 const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(7756533236910310058UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 148 266 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 149 2  int startX;  startX = (posX - error) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 149 27 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 152 2  int startY;  startY = (posY - error) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 152 27 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 155 2  int endX;  endX = (posX + error) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 155 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 158 2  int endY;  endY = (posY + error) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 158 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 161 2 int x; int y; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 161 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 164 4  double distance;  distance = (sqrt(pow((double)(x - posX), 2) + pow((double)(y - posY), 2))) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 164 79 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 181 2 const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(7756533236910310151UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310156UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 181 254 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 182 2 int x; int y; int z; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 182 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 200 74 const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 4, 0, (size_t)(7756533236910310246UL), (size_t)(0UL), (size_t)(7756533236910310248UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 200 294 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 201 2 int x; int y; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 201 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 202 2  int neighY;  neighY = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 202 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 203 2  int center;  center = (radius - 1) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 203 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 204 2  int diameter;  diameter = (radius * 2 - 1) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 204 28 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 227 70 const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", &____must_manage_videoSequence, 5, 5, (size_t)(7756533236910310456UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310460UL), "videoSequence|I|0", &____must_checkpoint_videoSequence_I_0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "videoSequence|IszX|0", &____must_checkpoint_videoSequence_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "videoSequence|IszY|0", &____must_checkpoint_videoSequence_IszY_0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "videoSequence|Nfr|0", &____must_checkpoint_videoSequence_Nfr_0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "videoSequence|seed|0", &____must_checkpoint_videoSequence_seed_0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 227 853 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 228 2 int k; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 228 7 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 229 2  int max_size;  max_size = (IszX * IszY * Nfr) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 229 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 2  int x0;  x0 = ((int)roundDouble(IszY / 2.)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 2  int y0;  y0 = ((int)roundDouble(IszX / 2.)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 2 int xk; int yk; int pos; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 247 2  int *newMatrix;  newMatrix = ((int *)malloc_wrapper(sizeof(int) * IszX * IszY * Nfr, 7756533236910310412UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 247 97 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 249 2 int x; int y; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 249 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 59 const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(7756533236910310520UL), (size_t)(7756533236910310521UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 279 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 273 2  double likelihoodSum;  likelihoodSum = (0.) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 273 28 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 2 int y; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 274 7 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 287 58 const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(7756533236910310572UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 287 236 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 288 2  int index;  index = (-1) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 288 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 289 2 int x; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 289 7 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 311 76 const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(7756533236910310689UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 311 278 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 314 2  int middleIndex;  middleIndex = (beginIndex + ((endIndex - beginIndex) / 2)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 314 60 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 345 87 const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter), "particleFilter", &____must_manage_particleFilter, 6, 0, (size_t)(7756533236910311668UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311672UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 345 343 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 347 2  int max_size;  max_size = (IszX * IszY * Nfr) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 347 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 348 2  long long start;  start = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 348 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 2  double xe;  xe = (roundDouble(IszY / 2.)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 351 2  double ye;  ye = (roundDouble(IszX / 2.)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 351 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 354 2  int radius;  radius = (5) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 354 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 355 2  int diameter;  diameter = (radius * 2 - 1) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 355 29 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 356 2  int *disk;  disk = ((int *)malloc_wrapper(diameter * diameter * sizeof(int), 7756533236910310803UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 356 96 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 358 2  int countOnes;  countOnes = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 358 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 359 2 int x; int y; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 359 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 366 2  double *objxy;  objxy = ((double *)malloc_wrapper(countOnes * 2 * sizeof(double), 7756533236910311084UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 366 100 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 369 2  long long get_neighbors;  get_neighbors = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 369 38 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 3  float ____chimes_unroll_var_0;  ____chimes_unroll_var_0 = (elapsed_time(start, get_neighbors)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 69 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 372 2  double *weights;  weights = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311249UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 372 101 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 377 2  long long get_weights;  get_weights = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 377 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 378 3  float ____chimes_unroll_var_1;  ____chimes_unroll_var_1 = (elapsed_time(get_neighbors, get_weights)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 378 75 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 380 2  double *likelihood;  likelihood = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311202UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 380 104 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 381 2  double *arrayX;  arrayX = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311076UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 381 100 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 382 2  double *arrayY;  arrayY = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311092UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 382 100 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 383 2  double *xj;  xj = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311587UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 383 96 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 2  double *yj;  yj = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311597UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 384 96 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 2  double *CDF;  CDF = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311452UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 385 97 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 386 2  double *u;  u = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311500UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 386 95 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 387 2  int *ind;  ind = ((int *)malloc_wrapper(sizeof(int) * countOnes * Nparticles, 7756533236910311125UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 387 97 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 393 2 int k; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 393 7 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 3  long long ____chimes_unroll_var_2;  ____chimes_unroll_var_2 = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 49 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 52  float ____chimes_unroll_var_3;  ____chimes_unroll_var_3 = (elapsed_time(get_weights, ____chimes_unroll_var_2)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 134 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 396 2 int indX; int indY; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 396 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 398 3  long long set_arrays;  set_arrays = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 398 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 407 3  long long error;  error = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 407 31 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 4  float ____chimes_unroll_var_4;  ____chimes_unroll_var_4 = (elapsed_time(set_arrays, error)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 67 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 429 3  long long likelihood_time;  likelihood_time = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 429 41 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 430 4  float ____chimes_unroll_var_5;  ____chimes_unroll_var_5 = (elapsed_time(error, likelihood_time)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 430 72 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 437 3  long long exponential;  exponential = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 437 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 438 4  float ____chimes_unroll_var_6;  ____chimes_unroll_var_6 = (elapsed_time(likelihood_time, exponential)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 438 78 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 439 3  double sumWeights;  sumWeights = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 439 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 444 3  long long sum_time;  sum_time = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 444 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 4  float ____chimes_unroll_var_7;  ____chimes_unroll_var_7 = (elapsed_time(exponential, sum_time)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 71 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 450 3  long long normalize;  normalize = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 450 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 4  float ____chimes_unroll_var_8;  ____chimes_unroll_var_8 = (elapsed_time(sum_time, normalize)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 69 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 460 3  long long move_time;  move_time = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 460 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 461 4  float ____chimes_unroll_var_9;  ____chimes_unroll_var_9 = (elapsed_time(normalize, move_time)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 461 70 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 4  double ____chimes_unroll_var_10;  ____chimes_unroll_var_10 = (roundDouble(IszY / 2.)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 59 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 62  double ____chimes_unroll_var_11;  ____chimes_unroll_var_11 = (roundDouble(IszX / 2.)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 117 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 119  double distance;  distance = (sqrt(pow((double)(xe - (int)____chimes_unroll_var_10), 2) + pow((double)(ye - (int)____chimes_unroll_var_11), 2))) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 246 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 3  long long cum_sum;  cum_sum = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 478 4  float ____chimes_unroll_var_12;  ____chimes_unroll_var_12 = (elapsed_time(move_time, cum_sum)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 478 69 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 3  double u1;  u1 = ((1 / ((double)(Nparticles))) * randu(seed, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 56 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 484 3  long long u_time;  u_time = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 484 32 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 485 4  float ____chimes_unroll_var_13;  ____chimes_unroll_var_13 = (elapsed_time(cum_sum, u_time)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 485 66 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 486 3 int j; int i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 486 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 497 3  long long xyj_time;  xyj_time = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 497 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 4  float ____chimes_unroll_var_14;  ____chimes_unroll_var_14 = (elapsed_time(u_time, xyj_time)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 67 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 507 3  long long reset;  reset = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 507 31 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 508 4  float ____chimes_unroll_var_15;  ____chimes_unroll_var_15 = (elapsed_time(xyj_time, reset)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 508 66 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 522 35 const int ____chimes_did_disable16 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(7756533236910311898UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 522 183 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 524 2  char *usage;  usage = ("openmp.out -x <dimX> -y <dimY> -z <Nfr> -np <Nparticles>") ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 524 74 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 2 int IszX; int IszY; int Nfr; int Nparticles; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 2  int *seed;  seed = ((int *)malloc_wrapper(sizeof(int) * Nparticles, 7756533236910311820UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 89 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 584 2 int i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 584 7 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 2  int *I;  I = ((int *)malloc_wrapper(sizeof(int) * IszX * IszY * Nfr, 7756533236910311838UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 89 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 589 2  long long start;  start = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 589 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 592 2  long long endVideoSequence;  endVideoSequence = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 592 41 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 593 3  float ____chimes_unroll_var_16;  ____chimes_unroll_var_16 = (elapsed_time(start, endVideoSequence)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 593 73 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 596 2  long long endParticleFilter;  endParticleFilter = (get_time()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 596 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 597 3  float ____chimes_unroll_var_17;  ____chimes_unroll_var_17 = (elapsed_time(endVideoSequence, endParticleFilter)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 597 85 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 598 3  float ____chimes_unroll_var_18;  ____chimes_unroll_var_18 = (elapsed_time(start, endParticleFilter)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 598 74 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 238 3  call_lbl_1: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 239 3  call_lbl_2: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 591 2  call_lbl_32: 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 31 11 len=8 get_time_quick
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 32 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 32 20 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 31 133  ; struct timeval tv;
+ if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 7 len=12 elapsed_time_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 215  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 44 8 len=11 roundDouble_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 44 168  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 60 6 len=5 setIf_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 60 355  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 79 8 len=5 randu_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 80 151  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 93 8 len=5 randn_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 95 19 ({ calling_npm("randu", 0); randu_npm(seed, index); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 95 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 19 ({ calling_npm("randu", 0); randu_npm(seed, index); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 36 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 93 186  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 109 6 len=8 addNoise_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 114 103 ({ calling_npm("randn", 0); randn_npm(seed, 0); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 114 116 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 109 353  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 124 6 len=9 strelDisk_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 125 163  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 147 6 len=13 dilate_matrix_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 148 265  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 180 6 len=13 imdilate_disk_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 187 6 ({ calling_npm("dilate_matrix", 0); dilate_matrix_npm(newMatrix, x, y, z, dimX, dimY, dimZ, error); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 187 63 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 181 253  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 200 6 len=12 getneighbors_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 200 293  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 227 6 len=13 videoSequence_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 23 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 23 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 238 21 (____chimes_does_checkpoint_abs_npm ? ( ({  calling((void*)abs, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (abs)(x0 + (k - 1)); }) ) : (({ calling_npm("abs", ____alias_loc_id_0); (*____chimes_extern_func_abs)(x0 + (k-1)); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 238 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 239 21 (____chimes_does_checkpoint_abs_npm ? ( ({  calling((void*)abs, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (abs)(y0 - 2 * (k - 1)); }) ) : (({ calling_npm("abs", ____alias_loc_id_1); (*____chimes_extern_func_abs)(y0 - 2*(k-1)); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 239 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 248 2 ({ calling_npm("imdilate_disk", 0); imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 248 48 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 260 2 ({ calling_npm("setIf", 0); setIf_npm(0, 100, I, &IszX, &IszY, &Nfr); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 260 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 261 2 ({ calling_npm("setIf", 0); setIf_npm(1, 228, I, &IszX, &IszY, &Nfr); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 261 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 263 2 ({ calling_npm("addNoise", 0); addNoise_npm(I, &IszX, &IszY, &Nfr, seed); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 263 38 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 228 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 228 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 229 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 229 15 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 10 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 16 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 18 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 25 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 227 852  ; int pos;
+int yk;
+int xk;
+int y0;
+int x0;
+int max_size;
+int k;
+ if (____must_checkpoint_videoSequence_pos_0 || ____must_checkpoint_videoSequence_yk_0 || ____must_checkpoint_videoSequence_xk_0 || ____must_checkpoint_videoSequence_y0_0 || ____must_checkpoint_videoSequence_x0_0 || ____must_checkpoint_videoSequence_max_size_0 || ____must_checkpoint_videoSequence_k_0) { register_stack_vars(7, "videoSequence|pos|0", &____must_checkpoint_videoSequence_pos_0, "i32", (void *)(&pos), (size_t)4, 0, 0, 0, "videoSequence|yk|0", &____must_checkpoint_videoSequence_yk_0, "i32", (void *)(&yk), (size_t)4, 0, 0, 0, "videoSequence|xk|0", &____must_checkpoint_videoSequence_xk_0, "i32", (void *)(&xk), (size_t)4, 0, 0, 0, "videoSequence|y0|0", &____must_checkpoint_videoSequence_y0_0, "i32", (void *)(&y0), (size_t)4, 0, 0, 0, "videoSequence|x0|0", &____must_checkpoint_videoSequence_x0_0, "i32", (void *)(&x0), (size_t)4, 0, 0, 0, "videoSequence|max_size|0", &____must_checkpoint_videoSequence_max_size_0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0, "videoSequence|k|0", &____must_checkpoint_videoSequence_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 8 len=17 calcLikelihoodSum_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 278  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 287 5 len=9 findIndex_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 287 235  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 311 5 len=12 findIndexBin_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 156 ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 206 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 332 125 ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 332 173 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 311 277  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 345 6 len=14 particleFilter_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 348 30 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 348 39 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 21 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 351 21 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 351 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 357 2 ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 357 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 367 2 ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, countOnes, objxy, radius); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 367 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 369 46 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 369 55 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 63 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 96 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 377 42 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 377 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 378 63 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 378 102 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 67 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 76 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 142 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_weights, ____chimes_unroll_var_2); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 191 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 398 41 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 398 50 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 404 23 ({ calling_npm("randn", 0); randn_npm(seed, x); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 404 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 24 ({ calling_npm("randn", 0); randn_npm(seed, x); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 407 31 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 407 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(set_arrays, error); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 94 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 418 12 ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayX[x]); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 418 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 12 ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayY[x]); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 429 51 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 429 60 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 430 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(error, likelihood_time); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 430 99 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 437 43 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 437 52 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 438 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(likelihood_time, exponential); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 438 105 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 444 37 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 444 46 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(exponential, sum_time); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 98 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 450 39 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 450 48 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(sum_time, normalize); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 96 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 460 39 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 460 48 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 461 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(normalize, move_time); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 461 97 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 67 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 88 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 157 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 178 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 35 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 478 66 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(move_time, cum_sum); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 478 97 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 53 ({ calling_npm("randu", 0); randu_npm(seed, 0); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 66 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 484 33 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 484 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 485 66 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(cum_sum, u_time); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 485 94 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 8 ({ calling_npm("findIndex", 0); findIndex_npm(CDF, Nparticles, u[j]); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 39 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 497 37 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 497 46 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 66 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(u_time, xyj_time); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 95 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 507 31 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 507 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 508 66 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(xyj_time, reset); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 508 94 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 345 342  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 522 5 len=4 main_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 589 30 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 589 39 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 591 16 (____chimes_does_checkpoint_videoSequence_npm ? ( ({  calling((void*)videoSequence, 32, ____alias_loc_id_2, 0UL, 5, (size_t)(7756533236910311838UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311820UL)); (videoSequence)(I, IszX, IszY, Nfr, seed); }) ) : (({ calling_npm("videoSequence", ____alias_loc_id_2); videoSequence_npm(I, IszX, IszY, Nfr, seed); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 591 54 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 592 52 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 592 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 593 65 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endVideoSequence); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 593 101 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 595 2 ({ calling_npm("particleFilter", 0); particleFilter_npm(I, IszX, IszY, Nfr, seed, Nparticles); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 595 53 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 596 54 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 596 63 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 597 65 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(endVideoSequence, endParticleFilter); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 597 113 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 598 65 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 598 102 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 10 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 12 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 20 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 22 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 29 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 31 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 45 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 12 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 589 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 589 18 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 522 182  ; long long start;
+int *I;
+int *seed;
+int Nparticles;
+int Nfr;
+int IszY;
+int IszX;
+ if (____must_checkpoint_main_start_0 || ____must_checkpoint_main_I_0 || ____must_checkpoint_main_seed_0 || ____must_checkpoint_main_Nparticles_0 || ____must_checkpoint_main_Nfr_0 || ____must_checkpoint_main_IszY_0 || ____must_checkpoint_main_IszX_0) { register_stack_vars(7, "main|start|0", &____must_checkpoint_main_start_0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", &____must_checkpoint_main_I_0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", &____must_checkpoint_main_seed_0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", &____must_checkpoint_main_Nparticles_0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", &____must_checkpoint_main_Nfr_0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", &____must_checkpoint_main_IszY_0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", &____must_checkpoint_main_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 31 11 len=8 get_time_resumable
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 32 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 32 20 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 31 133  ; struct timeval tv;
+ if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 7 len=12 elapsed_time_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 37 215  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 44 8 len=11 roundDouble_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 44 168  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 60 6 len=5 setIf_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 60 355  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 79 8 len=5 randu_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 80 151  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 93 8 len=5 randn_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 95 19 ({ calling_npm("randu", 0); randu_npm(seed, index); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 95 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 19 ({ calling_npm("randu", 0); randu_npm(seed, index); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 96 36 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 93 186  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 109 6 len=8 addNoise_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 114 103 ({ calling_npm("randn", 0); randn_npm(seed, 0); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 114 116 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 109 353  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 124 6 len=9 strelDisk_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 125 163  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 147 6 len=13 dilate_matrix_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 148 265  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 180 6 len=13 imdilate_disk_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 187 6 ({ calling_npm("dilate_matrix", 0); dilate_matrix_npm(newMatrix, x, y, z, dimX, dimY, dimZ, error); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 187 63 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 181 253  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 200 6 len=12 getneighbors_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 200 293  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 227 6 len=13 videoSequence_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 23 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 23 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 238 21 (____chimes_does_checkpoint_abs_npm ? ( ({  int ____chimes_arg0;  if (!____chimes_replaying) { ____chimes_arg0 = (x0 + (k - 1));  }  calling((void*)abs, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg0); }) ) : (({ calling_npm("abs", ____alias_loc_id_0); (*____chimes_extern_func_abs)(x0 + (k-1)); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 238 35 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 239 21 (____chimes_does_checkpoint_abs_npm ? ( ({  int ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (y0 - 2 * (k - 1));  }  calling((void*)abs, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg1); }) ) : (({ calling_npm("abs", ____alias_loc_id_1); (*____chimes_extern_func_abs)(y0 - 2*(k-1)); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 239 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 248 2 ({ calling_npm("imdilate_disk", 0); imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 248 48 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 260 2 ({ calling_npm("setIf", 0); setIf_npm(0, 100, I, &IszX, &IszY, &Nfr); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 260 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 261 2 ({ calling_npm("setIf", 0); setIf_npm(1, 228, I, &IszX, &IszY, &Nfr); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 261 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 263 2 ({ calling_npm("addNoise", 0); addNoise_npm(I, &IszX, &IszY, &Nfr, seed); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 263 38 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 228 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 228 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 229 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 229 15 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 231 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 232 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 10 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 16 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 18 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 236 25 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 227 852  ; int pos;
+int yk;
+int xk;
+int y0;
+int x0;
+int max_size;
+int k;
+ if (____must_checkpoint_videoSequence_pos_0 || ____must_checkpoint_videoSequence_yk_0 || ____must_checkpoint_videoSequence_xk_0 || ____must_checkpoint_videoSequence_y0_0 || ____must_checkpoint_videoSequence_x0_0 || ____must_checkpoint_videoSequence_max_size_0 || ____must_checkpoint_videoSequence_k_0) { register_stack_vars(7, "videoSequence|pos|0", &____must_checkpoint_videoSequence_pos_0, "i32", (void *)(&pos), (size_t)4, 0, 0, 0, "videoSequence|yk|0", &____must_checkpoint_videoSequence_yk_0, "i32", (void *)(&yk), (size_t)4, 0, 0, 0, "videoSequence|xk|0", &____must_checkpoint_videoSequence_xk_0, "i32", (void *)(&xk), (size_t)4, 0, 0, 0, "videoSequence|y0|0", &____must_checkpoint_videoSequence_y0_0, "i32", (void *)(&y0), (size_t)4, 0, 0, 0, "videoSequence|x0|0", &____must_checkpoint_videoSequence_x0_0, "i32", (void *)(&x0), (size_t)4, 0, 0, 0, "videoSequence|max_size|0", &____must_checkpoint_videoSequence_max_size_0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0, "videoSequence|k|0", &____must_checkpoint_videoSequence_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 8 len=17 calcLikelihoodSum_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 272 278  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 287 5 len=9 findIndex_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 287 235  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 311 5 len=12 findIndexBin_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 156 ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 330 206 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 332 125 ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 332 173 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 311 277  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 345 6 len=14 particleFilter_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 348 30 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 348 39 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 21 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 350 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 351 21 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 351 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 357 2 ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 357 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 367 2 ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, countOnes, objxy, radius); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 367 45 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 369 46 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 369 55 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 63 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 370 96 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 377 42 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 377 51 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 378 63 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 378 102 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 67 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 76 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 142 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_weights, ____chimes_unroll_var_2); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 395 191 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 398 41 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 398 50 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 404 23 ({ calling_npm("randn", 0); randn_npm(seed, x); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 404 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 24 ({ calling_npm("randn", 0); randn_npm(seed, x); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 405 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 407 31 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 407 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(set_arrays, error); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 408 94 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 418 12 ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayX[x]); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 418 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 12 ({ calling_npm("roundDouble", 0); roundDouble_npm(arrayY[x]); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 419 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 429 51 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 429 60 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 430 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(error, likelihood_time); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 430 99 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 437 43 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 437 52 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 438 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(likelihood_time, exponential); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 438 105 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 444 37 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 444 46 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(exponential, sum_time); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 445 98 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 450 39 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 450 48 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(sum_time, normalize); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 451 96 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 460 39 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 460 48 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 461 64 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(normalize, move_time); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 461 97 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 67 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszY / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 88 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 157 ({ calling_npm("roundDouble", 0); roundDouble_npm(IszX / 2.); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 464 178 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 35 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 477 44 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 478 66 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(move_time, cum_sum); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 478 97 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 53 ({ calling_npm("randu", 0); randu_npm(seed, 0); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 479 66 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 484 33 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 484 42 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 485 66 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(cum_sum, u_time); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 485 94 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 8 ({ calling_npm("findIndex", 0); findIndex_npm(CDF, Nparticles, u[j]); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 490 39 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 497 37 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 497 46 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 66 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(u_time, xyj_time); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 498 95 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 507 31 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 507 40 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 508 66 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(xyj_time, reset); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 508 94 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 345 342  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 522 5 len=4 main_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 589 30 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 589 39 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 591 16 (____chimes_does_checkpoint_videoSequence_npm ? ( ({  calling((void*)videoSequence, 32, ____alias_loc_id_2, 0UL, 5, (size_t)(7756533236910311838UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311820UL)); (videoSequence)(I, IszX, IszY, Nfr, seed); }) ) : (({ calling_npm("videoSequence", ____alias_loc_id_2); videoSequence_npm(I, IszX, IszY, Nfr, seed); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 591 54 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 592 52 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 592 61 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 593 65 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endVideoSequence); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 593 101 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 595 2 ({ calling_npm("particleFilter", 0); particleFilter_npm(I, IszX, IszY, Nfr, seed, Nparticles); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 595 53 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 596 54 ({ calling_npm("get_time", 0); get_time_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 596 63 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 597 65 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(endVideoSequence, endParticleFilter); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 597 113 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 598 65 ({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 598 102 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 10 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 12 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 20 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 22 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 29 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 31 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 537 45 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 583 12 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 588 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 589 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 589 18 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c 522 182  ; long long start;
+int *I;
+int *seed;
+int Nparticles;
+int Nfr;
+int IszY;
+int IszX;
+ if (____must_checkpoint_main_start_0 || ____must_checkpoint_main_I_0 || ____must_checkpoint_main_seed_0 || ____must_checkpoint_main_Nparticles_0 || ____must_checkpoint_main_Nfr_0 || ____must_checkpoint_main_IszY_0 || ____must_checkpoint_main_IszX_0) { register_stack_vars(7, "main|start|0", &____must_checkpoint_main_start_0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", &____must_checkpoint_main_I_0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", &____must_checkpoint_main_seed_0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", &____must_checkpoint_main_Nparticles_0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", &____must_checkpoint_main_Nfr_0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", &____must_checkpoint_main_IszY_0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", &____must_checkpoint_main_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(32): { goto call_lbl_32; } default: { chimes_error(); } }  }  

@@ -23,7 +23,7 @@ updateLinkCells redistributeAtoms 162 4 0 401 401
 profileStart redistributeAtoms 164 9 0 0
 haloExchange redistributeAtoms 165 4 0 401 399
 profileStop redistributeAtoms 166 9 0 0
-sortAtomsInCell redistributeAtoms 168 58 0 401 401 0
+sortAtomsInCell redistributeAtoms 168 54 0 401 401 0
 anon computeForce 87 4 0 445
 profileStart kineticEnergy 139 9 0 0
 addRealParallel kineticEnergy 140 4 0 447 453 0

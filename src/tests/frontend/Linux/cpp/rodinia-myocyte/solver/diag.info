@@ -1,0 +1,153 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 75 5 len=6 solver_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 24 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 47 , 6850351079512197186UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 26 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 49 , 6850351079512197190UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 23 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 46 , 6850351079512197194UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 271 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 271 7 , 6850351079512197186UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 272 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 272 7 , 6850351079512197190UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 273 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 273 7 , 6850351079512197194UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 24 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 47 , 6850351079512197186UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 26 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 49 , 6850351079512197190UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 23 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 46 , 6850351079512197194UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 271 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 271 7 , 6850351079512197186UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 272 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 272 7 , 6850351079512197190UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 273 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 273 7 , 6850351079512197194UL
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 126 3 rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 131 3 rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 262 4 rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 279 2 rm_stack(false, 0UL, "solver", &____must_manage_solver, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 79 16 const int ____chimes_did_disable0 = new_stack((void *)(&solver), "solver", &____must_manage_solver, 5, 5, (size_t)(6850351079512197554UL), (size_t)(6850351079512197555UL), (size_t)(0UL), (size_t)(6850351079512197557UL), (size_t)(0UL), "solver|y|0", &____must_checkpoint_solver_y_0, "float**", (void *)(&y), (size_t)8, 1, 0, 0, "solver|x|0", &____must_checkpoint_solver_x_0, "float*", (void *)(&x), (size_t)8, 1, 0, 0, "solver|xmax|0", &____must_checkpoint_solver_xmax_0, "i32", (void *)(&xmax), (size_t)4, 0, 0, 0, "solver|params|0", &____must_checkpoint_solver_params_0, "float*", (void *)(&params), (size_t)8, 1, 0, 0, "solver|mode|0", &____must_checkpoint_solver_mode_0, "i32", (void *)(&mode), (size_t)4, 0, 0, 0); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 79 17 const int ____chimes_did_disable0 = new_stack((void *)(&solver), "solver", &____must_manage_solver, 5, 5, (size_t)(6850351079512197554UL), (size_t)(6850351079512197555UL), (size_t)(0UL), (size_t)(6850351079512197557UL), (size_t)(0UL), "solver|y|0", &____must_checkpoint_solver_y_0, "float**", (void *)(&y), (size_t)8, 1, 0, 0, "solver|x|0", &____must_checkpoint_solver_x_0, "float*", (void *)(&x), (size_t)8, 1, 0, 0, "solver|xmax|0", &____must_checkpoint_solver_xmax_0, "i32", (void *)(&xmax), (size_t)4, 0, 0, 0, "solver|params|0", &____must_checkpoint_solver_params_0, "float*", (void *)(&params), (size_t)8, 1, 0, 0, "solver|mode|0", &____must_checkpoint_solver_mode_0, "i32", (void *)(&mode), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 79 734 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 86 2 float err_exponent; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 86 20 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 87 2 float last_interval; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 87 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 88 2 int error; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 88 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 89 2 int outside; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 89 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 90 2 float h; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 90 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 91 2 float h_init; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 91 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 92 2 float tolerance; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 92 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 93 2 int xmin; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 93 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 96 2 float scale_min; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 96 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 97 2 float scale_fina; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 97 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 2  float *err;  err = ((float *)malloc_wrapper(91 * sizeof(float), 6850351079512197186UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 86 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 2  float *scale;  scale = ((float *)malloc_wrapper(91 * sizeof(float), 6850351079512197190UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 88 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 2  float *yy;  yy = ((float *)malloc_wrapper(91 * sizeof(float), 6850351079512197194UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 85 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 2 int i; int j; int k; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 13 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 174 4  call_lbl_6: 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 75 5 len=6 solver_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 174 17  ({  calling((void*)embedded_fehlberg_7_8, 6, ____alias_loc_id_0, 0UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(6850351079512197282UL), (size_t)(6850351079512197282UL), (size_t)(6850351079512197186UL), (size_t)(6850351079512197557UL), (size_t)(0UL)); (embedded_fehlberg_7_8)(x[k], h, y[k - 1], y[k], err, params, mode); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 180 19 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 86 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 86 20 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 88 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 88 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 89 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 89 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 90 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 90 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 91 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 91 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 92 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 92 17 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 96 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 96 17 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 97 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 97 18 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 15 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 12 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 9 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 16 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 21 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 79 733  ; int k;
+int j;
+int i;
+float *yy;
+float *scale;
+float *err;
+float scale_fina;
+float scale_min;
+float tolerance;
+float h_init;
+float h;
+int outside;
+int error;
+float err_exponent;
+ if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_i_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_scale_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_fina_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(14, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|i|0", &____must_checkpoint_solver_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "float*", (void *)(&yy), (size_t)8, 1, 0, 0, "solver|scale|0", &____must_checkpoint_solver_scale_0, "float*", (void *)(&scale), (size_t)8, 1, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "float*", (void *)(&err), (size_t)8, 1, 0, 0, "solver|scale_fina|0", &____must_checkpoint_solver_scale_fina_0, "float", (void *)(&scale_fina), (size_t)4, 0, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 75 5 len=6 solver_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 174 17  ({  float ____chimes_arg0;  float * ____chimes_arg2;  float * ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg0 = (x[k]); ____chimes_arg2 = (y[k - 1]); ____chimes_arg3 = (y[k]);  }  calling((void*)embedded_fehlberg_7_8, 6, ____alias_loc_id_0, 0UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(6850351079512197282UL), (size_t)(6850351079512197282UL), (size_t)(6850351079512197186UL), (size_t)(6850351079512197557UL), (size_t)(0UL)); (embedded_fehlberg_7_8)(____chimes_arg0, h, ____chimes_arg2, ____chimes_arg3, err, params, mode); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 180 19 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 86 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 86 20 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 88 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 88 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 89 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 89 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 90 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 90 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 91 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 91 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 92 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 92 17 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 96 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 96 17 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 97 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 97 18 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 98 13 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 99 15 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 100 12 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 9 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 16 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 103 21 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c 79 733  ; int k;
+int j;
+int i;
+float *yy;
+float *scale;
+float *err;
+float scale_fina;
+float scale_min;
+float tolerance;
+float h_init;
+float h;
+int outside;
+int error;
+float err_exponent;
+ if (____must_checkpoint_solver_k_0 || ____must_checkpoint_solver_j_0 || ____must_checkpoint_solver_i_0 || ____must_checkpoint_solver_yy_0 || ____must_checkpoint_solver_scale_0 || ____must_checkpoint_solver_err_0 || ____must_checkpoint_solver_scale_fina_0 || ____must_checkpoint_solver_scale_min_0 || ____must_checkpoint_solver_tolerance_0 || ____must_checkpoint_solver_h_init_0 || ____must_checkpoint_solver_h_0 || ____must_checkpoint_solver_outside_0 || ____must_checkpoint_solver_error_0 || ____must_checkpoint_solver_err_exponent_0) { register_stack_vars(14, "solver|k|0", &____must_checkpoint_solver_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "solver|j|0", &____must_checkpoint_solver_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "solver|i|0", &____must_checkpoint_solver_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "solver|yy|0", &____must_checkpoint_solver_yy_0, "float*", (void *)(&yy), (size_t)8, 1, 0, 0, "solver|scale|0", &____must_checkpoint_solver_scale_0, "float*", (void *)(&scale), (size_t)8, 1, 0, 0, "solver|err|0", &____must_checkpoint_solver_err_0, "float*", (void *)(&err), (size_t)8, 1, 0, 0, "solver|scale_fina|0", &____must_checkpoint_solver_scale_fina_0, "float", (void *)(&scale_fina), (size_t)4, 0, 0, 0, "solver|scale_min|0", &____must_checkpoint_solver_scale_min_0, "float", (void *)(&scale_min), (size_t)4, 0, 0, 0, "solver|tolerance|0", &____must_checkpoint_solver_tolerance_0, "float", (void *)(&tolerance), (size_t)4, 0, 0, 0, "solver|h_init|0", &____must_checkpoint_solver_h_init_0, "float", (void *)(&h_init), (size_t)4, 0, 0, 0, "solver|h|0", &____must_checkpoint_solver_h_0, "float", (void *)(&h), (size_t)4, 0, 0, 0, "solver|outside|0", &____must_checkpoint_solver_outside_0, "i32", (void *)(&outside), (size_t)4, 0, 0, 0, "solver|error|0", &____must_checkpoint_solver_error_0, "i32", (void *)(&error), (size_t)4, 0, 0, 0, "solver|err_exponent|0", &____must_checkpoint_solver_err_exponent_0, "float", (void *)(&err_exponent), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  

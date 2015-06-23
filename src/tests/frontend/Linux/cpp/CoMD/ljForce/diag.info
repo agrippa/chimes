@@ -10,8 +10,8 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 102 4 l
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 102 9 , 15692222973149250874UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 111 37 len=6 malloc_wrapper
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 111 62 , 15692222973149250894UL, 0, 1, (int)sizeof(struct LjPotentialSt), 3, (int)__builtin_offsetof(struct LjPotentialSt, force), (int)__builtin_offsetof(struct LjPotentialSt, print), (int)__builtin_offsetof(struct LjPotentialSt, destroy)
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 99 18 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 101 15 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 99 19 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 101 16 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 105 4 rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 98 1 const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(15692222973149250888UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c 126 4 rm_stack(true, 15692222973149250894UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1); 

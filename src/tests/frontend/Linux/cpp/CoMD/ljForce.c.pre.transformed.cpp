@@ -3122,11 +3122,11 @@ void ljDestroy_resumable(BasePotential** inppot)
 # 98 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(15692222973149250888UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   if (!inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return;; };
+   if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return; };
 # 100 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   if (!pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return;; };
+   if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    free_wrapper(pot, 15692222973149250874UL);
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3283,7 +3283,7 @@ real_t epsilon;
 # 170 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          nIBox = (s->boxes->nAtoms[iBox]) ;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      if (nIBox == 0) {continue;; };
+      if (nIBox == 0) {continue; };
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
           call_lbl_1: nNbrBoxes = ( ({ LinkCell * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (s->boxes); } calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15692222973149251133UL), (size_t)(0UL), (size_t)(15692222973149250952UL)); (getNeighborBoxes)(____chimes_arg1, iBox, nbrBoxes); }) ) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3300,7 +3300,7 @@ real_t epsilon;
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             nJBox = (s->boxes->nAtoms[jBox]) ;
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-         if (nJBox == 0) {continue;; };
+         if (nJBox == 0) {continue; };
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 184 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3319,7 +3319,7 @@ real_t epsilon;
 # 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   jId = (s->atoms->gid[jOff]) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue;; };
+               if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue; };
 # 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   r2 = (0.) ;
 # 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3334,7 +3334,7 @@ real_t epsilon;
                } }
 # 200 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 201 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               if (r2 > rCut2) {continue;; };
+               if (r2 > rCut2) {continue; };
 # 202 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 203 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 204 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3389,11 +3389,11 @@ void ljDestroy_quick(BasePotential** inppot)
 # 98 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(15692222973149250888UL)) ; ; ;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   if (!inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return;; };
+   if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return; };
 # 100 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   if (!pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return;; };
+   if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    free_wrapper(pot, 15692222973149250874UL);
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3546,7 +3546,7 @@ real_t epsilon;
 # 170 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          nIBox = (s->boxes->nAtoms[iBox]) ;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      if (nIBox == 0) {continue;; };
+      if (nIBox == 0) {continue; };
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
           call_lbl_1: nNbrBoxes = ( ({ calling((void*)getNeighborBoxes, 1, ____alias_loc_id_0, 0UL, 3, (size_t)(15692222973149251133UL), (size_t)(0UL), (size_t)(15692222973149250952UL)); (getNeighborBoxes)(s->boxes, iBox, nbrBoxes); }) ) ;
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3563,7 +3563,7 @@ real_t epsilon;
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
             nJBox = (s->boxes->nAtoms[jBox]) ;
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-         if (nJBox == 0) {continue;; };
+         if (nJBox == 0) {continue; };
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 184 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3582,7 +3582,7 @@ real_t epsilon;
 # 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   jId = (s->atoms->gid[jOff]) ;
 # 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue;; };
+               if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue; };
 # 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                   r2 = (0.) ;
 # 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3597,7 +3597,7 @@ real_t epsilon;
                } }
 # 200 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 201 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               if (r2 > rCut2) {continue;; };
+               if (r2 > rCut2) {continue; };
 # 202 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 203 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 204 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3657,11 +3657,11 @@ void ljDestroy_npm(BasePotential** inppot)
 # 98 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   if (!inppot) {return;; };
+   if (! inppot) {return; };
 # 100 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    LjPotential* pot = (LjPotential*)(*inppot);
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   if (!pot) {return;; };
+   if (! pot) {return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    free_wrapper(pot, 15692222973149250874UL);
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3783,7 +3783,7 @@ int ljForce_npm(SimFlat* s)
 # 170 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       int nIBox = s->boxes->nAtoms[iBox];
 # 171 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-      if (nIBox == 0) {continue;; };
+      if (nIBox == 0) {continue; };
 # 172 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
       int nNbrBoxes = (*____chimes_extern_func_getNeighborBoxes)(s->boxes, iBox, nbrBoxes);
 # 173 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3800,7 +3800,7 @@ int ljForce_npm(SimFlat* s)
 # 180 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
          int nJBox = s->boxes->nAtoms[jBox];
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-         if (nJBox == 0) {continue;; };
+         if (nJBox == 0) {continue; };
 # 182 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 183 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 184 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3819,7 +3819,7 @@ int ljForce_npm(SimFlat* s)
 # 191 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                int jId = s->atoms->gid[jOff];
 # 192 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue;; };
+               if (jBox < s->boxes->nLocalBoxes && jId <= iId) {continue; };
 # 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
                real_t r2 = 0.0;
 # 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3834,7 +3834,7 @@ int ljForce_npm(SimFlat* s)
                }
 # 200 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 201 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-               if (r2 > rCut2) {continue;; };
+               if (r2 > rCut2) {continue; };
 # 202 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 203 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 204 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"

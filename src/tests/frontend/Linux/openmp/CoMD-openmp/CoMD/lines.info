@@ -14,12 +14,12 @@
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 199 4 : { 316 } direct:call:createFccLattice { createFccLattice { 316 } }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 206 9 : { 316 } prop:call:profileStart { initAtomHaloExchange { 1254 }, randomDisplacements { 316 }, setTemperature { 316 } }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 383 17 : { 339, 340 } direct:call:maxOccupancy { maxOccupancy { 349 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 386 9 : { 341 } direct:call:printRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 386 10 : { 341 } direct:call:printRank {  }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 413 4 : { 349, 548 } direct:call:NULL { printSeparator { 548 } }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 284 4 : { 550 } direct:call:sumAtoms { sumAtoms { 605 } }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 289 8 : { 551, 557 } direct:call:printRank {  }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 338 9 : { 606, 607, 652 } prop:call:profileStart {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 354 9 : { 666, 667, 668, 669, 1231 } direct:call:printRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 354 10 : { 666, 667, 668, 669, 1231 } direct:call:printRank {  }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 302 8 : { 798, 799 } direct:call:printRank {  }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 229 4 : { 882, 883, 884 } prop:call:destroyLinkCells { destroyLinkCells { 893 } }
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c 263 22 : { 954, 955, 956, 957, 958 } prop:call:initEamPot { initEamPot { 991, 992, 993 } }

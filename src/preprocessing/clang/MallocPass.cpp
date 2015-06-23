@@ -98,14 +98,17 @@ void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                                     alloc.get_struct_type_name());
                         assert(struct_info);
 
-                        // Element size for each struct
+                        std::string full_type_name;
                         if (struct_info->get_is_unnamed()) {
-                            ss2 << ", (int)sizeof(" <<
-                                alloc.get_struct_type_name() << "), ";
+                            full_type_name = alloc.get_struct_type_name();
                         } else {
-                            ss2 << ", (int)sizeof(struct " <<
-                                alloc.get_struct_type_name() << "), ";
+                            full_type_name = "struct " + alloc.get_struct_type_name();
                         }
+
+                        // Element size for each struct
+                        ss2 << ", (int)sizeof(" << full_type_name << "), ";
+
+                        // Number of pointer-typed fields
                         ss2 << alloc.get_num_field_ptrs();
 
                         // Offests in struct of all pointer fields
@@ -115,9 +118,8 @@ void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                                 struct_field_ptrs->begin(), p_e =
                                 struct_field_ptrs->end(); p_i != p_e; p_i++) {
                             std::string fieldname = *p_i;
-                            ss2 << ", (int)__builtin_offsetof(struct " <<
-                                alloc.get_struct_type_name() << ", " <<
-                                fieldname << ")";
+                            ss2 << ", (int)__builtin_offsetof(" <<
+                                full_type_name << ", " << fieldname << ")";
                         }
                     } else {
                         ss2 << ", 0, 0";

@@ -3,9 +3,10 @@
 // #define VERBOSE
 
 using namespace llvm;
+using namespace std;
 
 static void addMapping(size_t from, size_t to,
-        std::map<size_t, size_t> &m);
+        std::map<size_t, size_t> *m);
 
 void ValueVisitor::driver() {
 
@@ -17,6 +18,12 @@ void ValueVisitor::driver() {
 }
 
 size_t ValueVisitor::visit(Value *val, Value *prev) {
+
+    std::map<Value *, size_t>::iterator found = value_to_alias_group.find(val);
+    if (found != value_to_alias_group.end()) {
+        return found->second;
+    }
+
 #ifdef VERBOSE
     if (prev == NULL) {
         errs() << "Visiting [" << *val << "] from prev [ NULL ]\n";
@@ -24,10 +31,6 @@ size_t ValueVisitor::visit(Value *val, Value *prev) {
         errs() << "Visiting [" << *val << "] from prev [ " << *prev << " ]\n";
     }
 #endif
-
-    if (value_to_alias_group.find(val) != value_to_alias_group.end()) {
-        return value_to_alias_group[val];
-    }
 
     size_t alias = 0;
     if (CastInst *cast = dyn_cast<CastInst>(val)) {
@@ -89,8 +92,8 @@ size_t ValueVisitor::visitExtractValue(ExtractValueInst *ex, Value *prev) {
         Value *agg = ex->getAggregateOperand();
         size_t loading_from_group = visit(agg, ex);
         size_t loading_into_group;
-        if (contains.find(loading_from_group) != contains.end()) {
-            loading_into_group = contains[loading_from_group];
+        if (contains->find(loading_from_group) != contains->end()) {
+            loading_into_group = contains->at(loading_from_group);
         } else {
             loading_into_group = H->get(ex);
         }
@@ -161,7 +164,10 @@ size_t ValueVisitor::visitBinary(BinaryOperator *bin, Value *prev) {
 
 size_t ValueVisitor::visitCast(CastInst *cast, Value *prev) {
     assert(cast->getDestTy()->isPointerTy());
-    assert(cast->getSrcTy()->isPointerTy());
+    if (!cast->getSrcTy()->isPointerTy()) {
+        // Casting from something that isn't a pointer (e.g. 0x0)
+        return -1;
+    }
 
     assert(cast->getNumOperands() == 1);
     return visit(cast->getOperand(0), cast);
@@ -194,8 +200,8 @@ size_t ValueVisitor::visitStore(StoreInst *store, Value *prev) {
             *store << "\n";
 #endif
 
-        if (contains.find(dst_hash) != contains.end()) {
-            size_t dst_hash_contains = contains[dst_hash];
+        if (contains->find(dst_hash) != contains->end()) {
+            size_t dst_hash_contains = contains->at(dst_hash);
             mergeAliasGroups(storing_hash, dst_hash_contains);
 
             // if (storing_hash == dst_hash) {
@@ -217,8 +223,8 @@ size_t ValueVisitor::visitLoad(LoadInst *load, Value *prev) {
 
     if (load->getType()->isPointerTy()) {
         size_t loading_into_group;
-        if (contains.find(loading_from_group) != contains.end()) {
-            loading_into_group = contains[loading_from_group];
+        if (contains->find(loading_from_group) != contains->end()) {
+            loading_into_group = contains->at(loading_from_group);
         } else {
             loading_into_group = H->get(load);
         }
@@ -261,7 +267,7 @@ bool ValueVisitor::setAlias(Value *val, Value *setter, size_t alias) {
     assert(alias > 0);
 
     if (value_to_alias_group.find(val) != value_to_alias_group.end()) {
-        if (value_to_alias_group[val] != alias) {
+        if (value_to_alias_group.at(val) != alias) {
 #ifdef VERBOSE
             if (setter) {
                 errs() << "Mismatch in aliases on [" << *val <<
@@ -292,92 +298,337 @@ bool ValueVisitor::setAlias(Value *val, Value *setter, size_t alias) {
                 ", setter=[NULL]\n";
         }
 #endif
-        value_to_alias_group[val] = alias;
+        bool success = value_to_alias_group.insert(pair<Value *, size_t>(
+                        val, alias)).second;
+        assert(success);
         return true;
     }
 }
 
 #ifdef VERBOSE
-static std::string map_to_string(std::map<size_t, size_t> m) {
+static std::string map_to_string(std::map<size_t, size_t> *m) {
     std::stringstream stream;
     stream << "{  \n";
-    for (std::map<size_t, size_t>::iterator i = m.begin(),
-            e = m.end(); i != e; i++) {
+    for (std::map<size_t, size_t>::iterator i = m->begin(),
+            e = m->end(); i != e; i++) {
         stream << "  " << i->first << " -> " << i->second << "\n";
     }
     return stream.str();
 }
 #endif
 
-static std::map<size_t, size_t> translate(
-        std::map<size_t, size_t> m, size_t from, size_t to) {
-    std::map<size_t, size_t> new_m;
-
-    for (std::map<size_t, size_t>::iterator i = m.begin(),
-            e = m.end(); i != e; i++) {
-        size_t key, val;
-        if (i->first == from) {
-#ifdef VERBOSE
-            errs() << "Replacing parent " << from << " (child " << i->second <<
-                ") with " << to << "\n";
-#endif
-            key = to;
-        } else {
-            key = i->first;
-        }
-
-        if (i->second == from) {
-#ifdef VERBOSE
-            errs() << "Replacing child " << from << " (parent " << i->first <<
-                ") with " << to << "\n";
-#endif
-            val = to;
-        } else {
-            val = i->second;
-        }
-
-        if (new_m.find(key) != new_m.end()) {
-            assert(new_m[key] == val);
-        } else {
-            new_m[key] = val;
-        }
+void ValueVisitor::collectMerges(size_t from, size_t to,
+        set<pair<size_t, size_t> > *to_merge) {
+    pair<size_t, size_t> curr(from, to);
+    if (to_merge->find(curr) != to_merge->end()) {
+        return;
     }
-    return new_m;
+
+    to_merge->insert(curr);
+
+    if (contains->find(to) != contains->end() &&
+            contains->find(from) != contains->end() &&
+            contains->at(from) != contains->at(to)) {
+        collectMerges(contains->at(from), contains->at(to), to_merge);
+    }
 }
+
+class GroupPlaceholder {
+    public:
+        GroupPlaceholder(size_t set_to, map<size_t,
+                GroupPlaceholder *> *set_new_groups) : to(set_to),
+                new_groups(set_new_groups) {
+            members.insert(set_to);
+        }
+        void add_member(size_t add) { members.insert(add); }
+        void update_to(size_t new_to) { add_member(new_to); to = new_to; }
+        void add_contains(GroupPlaceholder *child) {
+            for (set<size_t>::iterator i = child->mem_begin(),
+                    e = child->mem_end(); i != e; i++) {
+                contains.insert(*i);
+            }
+        }
+
+        void update_contains() {
+            resolved_contains.clear();
+            for (set<size_t>::iterator i = contains.begin(), e = contains.end();
+                    i != e; i++) {
+                size_t group = *i;
+                if (new_groups->find(group) != new_groups->end()) {
+                    /*
+                     * Because this function is called from a lot of contexts to
+                     * ensure we have the most up to date contains info, it's
+                     * possible for some groups to be missing from new_groups.
+                     * An example would be calling anything that triggers
+                     * update_contains before we make the final pass over all
+                     * Value to group mappings and add in any that are missing
+                     * from the updated groups info. It is up to the calling
+                     * context to be sure that this is okay.
+                     */
+                    resolved_contains.insert(new_groups->at(*i));
+                }
+            }
+        }
+
+        bool has_multiple_children() {
+            update_contains();
+            return resolved_contains.size() > 1;
+        }
+
+        bool is_child_of_itself() {
+            update_contains();
+            return (resolved_contains.find(this) != resolved_contains.end());
+        }
+
+        set<GroupPlaceholder *> *get_contains() {
+            update_contains();
+            return &resolved_contains;
+        }
+        size_t get_to() { return to; }
+
+        set<size_t>::iterator mem_begin() { return members.begin(); }
+        set<size_t>::iterator mem_end() { return members.end(); }
+
+        set<size_t>::iterator contains_begin() { return contains.begin(); }
+        set<size_t>::iterator contains_end() { return contains.end(); }
+
+        void add_all_members(GroupPlaceholder *other) {
+            for (set<size_t>::iterator i = other->mem_begin(),
+                    e = other->mem_end(); i != e; i++) {
+                members.insert(*i);
+            }
+        }
+
+        void add_all_children(GroupPlaceholder *other) {
+            for (set<size_t>::iterator i = other->contains_begin(),
+                    e = other->contains_end(); i != e; i++) {
+                contains.insert(*i);
+            }
+        }
+
+    private:
+        size_t to;
+        set<size_t> members;
+        set<size_t> contains;
+        set<GroupPlaceholder *> resolved_contains;
+        map<size_t, GroupPlaceholder *> *new_groups;
+};
 
 void ValueVisitor::mergeAliasGroups(size_t from, size_t to) {
 #ifdef VERBOSE
     errs() << "Merging " << from << " into " << to << "\n";
 #endif
 
-    for (std::map<Value *, size_t>::iterator i = value_to_alias_group.begin(),
-            e = value_to_alias_group.end(); i != e; i++) {
-        if (i->second == from) {
-            i->second = to;
+    // Collect mappings of from->to of alias groups to merge together
+    set<pair<size_t, size_t> > to_merge;
+    collectMerges(from, to, &to_merge);
+
+#ifdef VERBOSE
+    errs() << "Got " << to_merge.size() << " pairs of alias groups to merge\n";
+#endif
+
+    // A mapping from the new group name to its placeholder
+    map<size_t, GroupPlaceholder *> new_groups;
+
+    // First use to the merge mappings to construct initial new groups
+    for (set<pair<size_t, size_t> >::iterator i = to_merge.begin(),
+            e = to_merge.end(); i != e; i++) {
+        pair<size_t, size_t> curr = *i;
+        size_t from = curr.first;
+        size_t to = curr.second;
+
+        if (new_groups.find(to) != new_groups.end()) {
+            GroupPlaceholder *to_holder = new_groups.at(to);
+            // There already exists a group for to that we need to merge into
+            if (new_groups.find(from) == new_groups.end()) {
+                /*
+                 * No mapping for from to merge from, so just insert from into
+                 * to's group.
+                 */
+                to_holder->add_member(from);
+                new_groups.insert(pair<size_t, GroupPlaceholder *>(from,
+                            to_holder));
+            } else {
+                /*
+                 * Have a from group already, need to merge all of its members
+                 * into to.
+                 */
+                GroupPlaceholder *from_holder = new_groups.at(from);
+                for (set<size_t>::iterator mem_iter = from_holder->mem_begin(),
+                        mem_end = from_holder->mem_end(); mem_iter != mem_end;
+                        mem_iter++) {
+                    to_holder->add_member(*mem_iter);
+                }
+                new_groups.erase(from);
+                // delete from_holder;
+            }
+        } else {
+            // There is not to group to merge into
+            if (new_groups.find(from) == new_groups.end()) {
+                // No from group either
+                GroupPlaceholder *new_holder = new GroupPlaceholder(to, &new_groups);
+                new_holder->add_member(from);
+
+                new_groups.insert(pair<size_t, GroupPlaceholder *>(to, new_holder));
+                new_groups.insert(pair<size_t, GroupPlaceholder *>(from, new_holder));
+            } else {
+                // There is already a from group, can re-use but update its to
+                GroupPlaceholder *from_holder = new_groups.at(from);
+                from_holder->update_to(to);
+                new_groups.insert(pair<size_t, GroupPlaceholder *>(to, from_holder));
+            }
         }
     }
+
+#ifdef VERBOSE
+    errs() << "After creation of placeholder groups, " << new_groups.size() <<
+        " unique groups left\n";
+#endif
+
+    /*
+     * Add in the representation of any groups we're missing so that all are
+     * represented uniformly.
+     */
+    for (std::map<Value *, size_t>::iterator i = value_to_alias_group.begin(),
+            e = value_to_alias_group.end(); i != e; i++) {
+        if (new_groups.find(i->second) == new_groups.end()) {
+            new_groups.insert(pair<size_t, GroupPlaceholder *>(i->second,
+                        new GroupPlaceholder(i->second, &new_groups)));
+        }
+    }
+
+#ifdef VERBOSE
+    errs() << "After adding all group aliases, now have " <<
+        new_groups.size() << " placeholders\n";
+#endif
+
+    /*
+     * Use contains and the new_groups mapping to merge groups together that are
+     * contained by the same thing.
+     */
+    for (map<size_t, size_t>::iterator contains_iter = contains->begin(),
+            contains_end = contains->end(); contains_iter != contains_end;
+            contains_iter++) {
+        size_t container = contains_iter->first;
+        size_t containee = contains_iter->second;
+
+        GroupPlaceholder *container_holder = new_groups.at(container);
+        GroupPlaceholder *containee_holder = new_groups.at(containee);
+        container_holder->add_contains(containee_holder);
+    }
+
+    bool change;
+    do {
+        change = false;
+        GroupPlaceholder *new_place_holder = NULL;
+
+        for (map<size_t, GroupPlaceholder *>::iterator i = new_groups.begin(),
+                e = new_groups.end(); i != e; i++) {
+            GroupPlaceholder *placeholder = i->second;
+            set<GroupPlaceholder *> *resolved_children = placeholder->get_contains();
+
+#ifdef VERBOSE
+                errs() << "Placeholder " << placeholder->get_to() << " has " <<
+                    resolved_children->size() <<
+                    " children.\n";
+#endif
+
+            if (resolved_children->size() > 1) {
+
+                bool child_of_itself = (resolved_children->find(placeholder) !=
+                        resolved_children->end());
+#ifdef VERBOSE
+                errs() << "  child of itself? " << child_of_itself << "\n";
+#endif
+
+                size_t merge_to;
+                if (child_of_itself) {
+                    merge_to = placeholder->get_to();
+                } else {
+                    merge_to = (*(resolved_children->begin()))->get_to();
+                }
+
+#ifdef VERBOSE
+                errs() << "  merge_to=" << merge_to << "\n";
+#endif
+
+                GroupPlaceholder *merged = new GroupPlaceholder(merge_to, &new_groups);
+                for (set<GroupPlaceholder *>::iterator ii = resolved_children->begin(),
+                        ee = resolved_children->end(); ii != ee; ii++) {
+                    GroupPlaceholder *merging = *ii;
+
+                    merged->add_all_members(merging);
+                    merged->add_all_children(merging);
+                    // delete merging;
+                }
+#ifdef VERBOSE
+                errs() << "  merged all into merging\n";
+#endif
+
+                new_place_holder = merged;
+                break;
+            }
+        }
+
+        if (new_place_holder) {
+            for (set<size_t>::iterator ii = new_place_holder->mem_begin(),
+                    ee = new_place_holder->mem_end(); ii != ee; ii++) {
+                map<size_t, GroupPlaceholder *>::iterator found = new_groups.find(*ii);
+                assert(found != new_groups.end());
+                found->second = new_place_holder;
+            }
+            change = true;
+        }
+
+    } while (change);
 
 #ifdef VERBOSE
     errs() << "Original contains=\n" << map_to_string(contains) << "\n";
 #endif
 
     /*
-     * If there are already items in the map keyed on both from and to then
-     * doing the translation below would cause a key clash that would lead to
-     * one of the values being essentially erased. Therefore, if the values are
-     * different we have to first merge them together, then do the update.
+     * Update all contains information at the very end and verify that only one
+     * child exists for each.
      */
-    if (contains.find(to) != contains.end() &&
-            contains.find(from) != contains.end() &&
-            contains[from] != contains[to]) {
-        mergeAliasGroups(contains[from], contains[to]);
+    map<size_t, size_t> *new_contains = new map<size_t, size_t>();
+    for (map<size_t, GroupPlaceholder *>::iterator i = new_groups.begin(),
+            e = new_groups.end(); i != e; i++) {
+        GroupPlaceholder *curr = i->second;
+
+        set<GroupPlaceholder *> *curr_contains = curr->get_contains();
+        if (curr_contains->size() > 1) {
+            fprintf(stderr, "Expected only one child but got %lu\n",
+                    curr_contains->size());
+            exit(1);
+        }
+
+        if (curr_contains->size() == 1) {
+            GroupPlaceholder *child = *(curr_contains->begin());
+            if (new_contains->find(curr->get_to()) != new_contains->end()) {
+                // Verify the existing contains mapping maps the one we expect
+                assert(new_contains->at(curr->get_to()) == child->get_to());
+            } else {
+                // Insert a contains mapping
+                new_contains->insert(pair<size_t, size_t>(curr->get_to(),
+                            child->get_to()));
+            }
+        }
     }
 
-    contains = translate(contains, from, to);
+    // delete contains;
+    contains = new_contains;
 
 #ifdef VERBOSE
     errs() << "New contains=\n" << map_to_string(contains) << "\n";
 #endif
+
+    // Finally, update the Value * to group mappings
+    for (std::map<Value *, size_t>::iterator i = value_to_alias_group.begin(),
+            e = value_to_alias_group.end(); i != e; i++) {
+        size_t curr_group = i->second;
+        GroupPlaceholder *new_group = new_groups.at(curr_group);
+        i->second = new_group->get_to();
+    }
 }
 
 void ValueVisitor::storesReferencesToGroup(size_t container, size_t child) {
@@ -385,8 +636,11 @@ void ValueVisitor::storesReferencesToGroup(size_t container, size_t child) {
 }
 
 static void addMapping(size_t from, size_t to,
-        std::map<size_t, size_t> &m) {
-    assert(m.find(from) == m.end() || m.at(from) == to);
-    m.insert(std::pair<size_t, size_t>(from, to));
+        std::map<size_t, size_t> *m) {
+    if (m->find(from) == m->end()) {
+        m->insert(std::pair<size_t, size_t>(from, to));
+    } else {
+        assert(m->at(from) == to);
+    }
 }
 

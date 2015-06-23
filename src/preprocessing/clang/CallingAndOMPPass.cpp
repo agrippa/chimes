@@ -541,8 +541,8 @@ void CallingAndOMPPass::verify_supported_clauses(std::string pragma_name,
     for(map<string, vector<string> >::iterator clause_i = clauses->begin(),
             clause_e = clauses->end(); clause_i != clause_e; clause_i++) {
         if (supported.find(clause_i->first) == supported.end()) {
-            llvm::errs() << "Unsupported OMP clause " << clause_i->first <<
-                " for pragma " << pragma_name << "\n";
+            llvm::errs() << "Unsupported OMP clause \"" << clause_i->first <<
+                "\" for pragma \"" << pragma_name << "\"\n";
             assert(false);
         }
     }
@@ -1189,6 +1189,19 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
             if (ignorable->find(loc.get_funcname()) == ignorable->end()) {
 
+                std::string llvm_funcname = loc.get_funcname();
+                if (loc.get_funcname() == "bzero") {
+                    /*
+                     * LLVM converts all memset operations to the same
+                     * instrinsic instruction (MemSetIntrinsic) so it's
+                     * impossible to tell the difference between a bzero and a
+                     * memset at that level. Here, if we find a bzero (or any
+                     * other function that maps down to a memset intrinsic)
+                     * convert it to look like a memset for the purposes of
+                     * finding the call.
+                     */
+                    llvm_funcname = "memset";
+                }
                 std::vector<AliasesPassedToCallSite>::iterator found;
                 if (call_tracker.find(loc.get_funcname()) !=
                         call_tracker.end()) {
@@ -1246,10 +1259,11 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                  * conditionally do the merge at runtime if we find a definition
                  * for it.
                  */
+                const int main_dist = (insertions->have_main_in_call_tree() ?
+                        insertions->get_distance_from_main(curr_func) : -1);
                 if (call->getDirectCallee() && !always_checkpoints &&
                         !calls_unknown &&
-                        insertions->have_main_in_call_tree() &&
-                        insertions->get_distance_from_main(curr_func) < 2 &&
+                        (main_dist != -1 && main_dist < 2) &&
                         loc.get_funcname() != "checkpoint") {
                     /*
                      * Use a function pointer if this is an externally
