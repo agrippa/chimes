@@ -13,5 +13,5 @@ mkForceRecvCellList 1964 0 0
 destroyHaloExchange 1982
 haloExchange 2007 2008
 exchangeData 2115 2140 0
-sortAtomsInCell 2456 2457 0
-sortAtomsById 2506 2507
+sortAtomsInCell 2472 2473 0
+sortAtomsById 2522 2523
