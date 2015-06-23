@@ -1,1 +1,0 @@
-/Users/jmg3/num-debug/src/examples/cpp/call_passed_indirectly_to_call.cpp 17 5 : { 20, 21, 22, 24 } direct:call:checkpoint { foo { 23 } }

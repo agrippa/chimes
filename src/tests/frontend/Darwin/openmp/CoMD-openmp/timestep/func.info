@@ -1,6 +1,0 @@
-timestep 21 0 0
-advanceVelocity 224 0 0
-advancePosition 382 0 0
-redistributeAtoms 399
-computeForce 445
-kineticEnergy 617

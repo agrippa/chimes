@@ -1,6 +1,0 @@
-checkpoint foo 12 5 0
-__assert_rtn foo 13 39 0 91 92 0 93
-__assert_rtn foo 14 39 0 91 92 0 93
-__assert_rtn foo 15 43 0 91 92 0 95
-foo main 21 13 0 0
-bar main 22 12 0 0
