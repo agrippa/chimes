@@ -1386,8 +1386,7 @@ void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
                     value_to_alias_group.end());
             size_t group = value_to_alias_group[store->getPointerOperand()];
             groups->insert(group);
-        } else if (isa<CallInst>(curr_inst)) {
-            CallInst *call = dyn_cast<CallInst>(curr_inst);
+        } else if (CallInst *call = dyn_cast<CallInst>(curr_inst)) {
             Function *callee = call->getCalledFunction();
 
             if (addAliasChangeLocation(call, callee, groups,
