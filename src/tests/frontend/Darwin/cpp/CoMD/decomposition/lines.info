@@ -1,0 +1,2 @@
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 35 : { 1, 2, 3, 4 } direct:call:getNRanks {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 27 17 : { 5, 6, 38 } prop:call:getMyRank {  }

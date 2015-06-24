@@ -1,0 +1,5 @@
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c parseCommandLine|argc|0 " i32 " 32 0 0 1 addArg freeArgs printArgs processArgs
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c parseCommandLine|argv|0 " i8** " 64 1 0 1 addArg freeArgs printArgs processArgs
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c parseCommandLine|help|0 " i32 " 32 0 0 1 parseCommandLine
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c printCmdYaml|file|0 " %struct.__sFILE* " 64 1 0 1 printRank
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mycommand.c printCmdYaml|cmd|0 " %struct.CommandSt* " 64 1 0 1 printRank

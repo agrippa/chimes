@@ -1,0 +1,4 @@
+checkpoint foo 6 5 0
+omp_get_thread_num main 23 40 0
+printf main 23 9 0 39 0 0
+foo main 24 9 0

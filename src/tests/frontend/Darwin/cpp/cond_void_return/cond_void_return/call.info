@@ -1,0 +1,6 @@
+malloc main 18 21 36 0
+malloc main 19 21 60 0
+bar main 21 5 0 36 60
+checkpoint main 22 5 0
+__assert_rtn main 24 42 0 81 82 0 83
+__assert_rtn main 25 44 0 81 82 0 83

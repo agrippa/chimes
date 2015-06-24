@@ -1,0 +1,6 @@
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 41 12 : { 1, 2, 3, 4 } prop:call:profileStart { kineticEnergy { 21 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 82 4 : { 1, 2, 3, 4 } prop:call:kineticEnergy { kineticEnergy { 21 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 170 4 : { 385 } direct:call:updateLinkCells { updateLinkCells { 401 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 177 54 : { 386 } prop:call:sortAtomsInCell { sortAtomsInCell { 401 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 89 4 : { 434, 445 } direct:call:NULL {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c 147 9 : { 446, 447, 448, 449, 450, 451, 452, 453 } prop:call:profileStart {  }

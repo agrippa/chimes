@@ -1,0 +1,3 @@
+gasdev _Z6gasdevPy 0 DOES_NOT lcg61 27 16 lcg61 28 16
+lcg61 _Z5lcg61Py 0 DOES_NOT
+mkSeed _Z6mkSeedjj 0 DOES_NOT lcg61 72 38

@@ -1,0 +1,5 @@
+yamlBegin 0 2 2 3 0
+yamlAppInfo 0 1 51 2 getTimeString 1 52 printSeparator 1 111
+printSeparator 0 1 112 0
+getTimeString 0 3 121 122 123 0
+yamlEnd 0 0 0

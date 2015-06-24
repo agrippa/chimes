@@ -1,0 +1,5 @@
+progress_buffer " i8* " 64 1 0 
+progress_disabled " i32 " 32 0 0 
+progress_length " i32 " 32 0 0 
+progress_goal " i32 " 32 0 0 
+progress_num_ticks " i32 " 32 0 0 

@@ -1,0 +1,15 @@
+173 39 26 malloc 0 1 EamPotentialSt force print destroy phi rho f rhobar dfEmbed forceExchange forceExchangeData
+224 31 661 malloc
+225 30 661 malloc
+227 52 661 malloc 0 1 ForceExchangeDataSt dfEmbed boxes
+397 4 907 free
+678 27 1056 malloc
+702 4 1056 free
+789 27 1303 malloc
+813 4 1303 free
+483 7 1751 free
+485 4 1744 free
+456 30 1842 malloc 0 1 InterpolationObjectSt values
+459 29 1840 calloc
+564 38 2000 malloc 0 1 InterpolationObjectSt values
+568 35 2027 malloc

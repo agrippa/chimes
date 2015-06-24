@@ -1,0 +1,35 @@
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 4 7 len=3 foo_npm
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 5 21 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 5 42 , 608094051474199378UL, 0, 0
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 5 21 len=6 malloc_wrapper
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 5 42 , 608094051474199378UL, 0, 0
+InsertText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 9 9 rm_stack(true, 608094051474199378UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 12 5 rm_stack(true, 608094051474199378UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 4 13 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0); 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 18 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 15 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(608094051474199377UL)); 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 4 14 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 0, 0); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 4 110 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 5 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 608094051474199378UL, 0, 0)) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 5 81 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 15 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(608094051474199377UL)); ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 15 169 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 16 5  void *tmp;  tmp = (foo()) ;
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 16 22 
+InsertText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 17 5  call_lbl_1: 
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 4 7 len=3 foo_quick
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 4 109  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 15 5 len=4 main_quick
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 16 25 ({ calling_npm("foo", 0); foo_npm(); })
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 16 29 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 17 18 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 17 29 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 15 166  ;  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 4 7 len=3 foo_resumable
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 4 109  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 15 5 len=4 main_resumable
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 16 25 ({ calling_npm("foo", 0); foo_npm(); })
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 16 29 
+ReplaceTextStart /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 17 18 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 17 29 
+InsertTextAfterToken /Users/jmg3/num-debug/src/examples/cpp/./cond_ptr_return.cpp 15 166  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

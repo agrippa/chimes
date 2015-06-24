@@ -1,0 +1,16 @@
+getNRanks 0 0 0
+getMyRank 0 0 0
+printRank 0 1 5 0
+timestampBarrier 0 5 15 16 17 29 380 0
+barrierParallel 0 0 0
+initParallel 0 2 51 52 0
+destroyParallel 0 0 0
+sendReceiveParallel 0 6 61 62 63 64 65 66 0
+addIntParallel 0 5 115 116 117 118 149 0
+addRealParallel 0 5 151 152 153 154 185 0
+addDoubleParallel 0 5 187 188 189 190 221 0
+maxIntParallel 0 5 223 224 225 226 257 0
+minRankDoubleParallel 0 5 259 260 261 262 307 0
+maxRankDoubleParallel 0 5 309 310 311 312 357 0
+bcastParallel 0 3 359 360 361 0
+builtWithMpi 0 0 0

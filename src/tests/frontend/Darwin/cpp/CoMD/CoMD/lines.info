@@ -1,0 +1,32 @@
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 88 4 : { 1, 2, 3 } direct:call:initParallel { initParallel { 2, 3 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 102 4 : { 5 } direct:call:printSimulationDataYaml { initSimulation { 6 }, parseCommandLine { 4, 128 }, printCmdYaml { 4, 904 }, printSimulationDataYaml { 66, 904 }, timestampBarrier { 1352 }, yamlAppInfo { 904 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 105 4 : { 7 } direct:call:timestampBarrier { initValidate { 66 }, timestampBarrier { 1352 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 113 4 : { 8, 9, 10 } direct:call:profileStart { timestampBarrier { 1355 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 72 : { 11 } direct:call:printThings { printThings { 66 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 116 12 : { 10 } prop:call:profileStart {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 128 4 : { 10 } prop:call:profileStop {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 69 : { 12 } direct:call:printThings { printThings { 66 }, sumAtoms { 66 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 175 15 : { 143, 316 } direct:call:initPotential { initPotential { 333 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 4 : { 144, 316 } prop:call:sanityChecks { sanityChecks { 145, 1397 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 190 18 : { 146, 316 } direct:call:initDecomposition { initDecomposition { 146 }, initSpecies { 1397 }, sanityChecks { 145, 1397 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 193 17 : { 316 } direct:call:initLinkCells { initLinkCells { 1397 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 194 17 : { 316 } direct:call:initAtoms { initAtoms { 1397 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 197 4 : { 316 } direct:call:createFccLattice { createFccLattice { 316 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 204 9 : { 316 } prop:call:profileStart { initAtomHaloExchange { 1397 }, randomDisplacements { 316 }, setTemperature { 316 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 17 : { 339, 340 } direct:call:maxOccupancy { maxOccupancy { 357 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 10 : { 341 } direct:call:printRank {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 4 : { 357, 676 } direct:call:NULL { printSeparator { 676 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 4 : { 342, 343, 344, 345, 346, 347, 348, 349 } direct:call:printSeparator { printSeparator { 676 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 282 4 : { 678 } direct:call:sumAtoms { sumAtoms { 733 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 8 : { 679, 685 } direct:call:printRank {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 336 9 : { 734, 735, 780 } prop:call:profileStart {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 10 : { 794, 795, 796, 797, 1374 } direct:call:printRank {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 8 : { 926, 927 } direct:call:printRank {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 227 4 : { 1010, 1011, 1012 } prop:call:destroyLinkCells { destroyLinkCells { 1021 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 261 22 : { 1082, 1083, 1084, 1085, 1086 } prop:call:initEamPot { initEamPot { 1123, 1124, 1125 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 261 75 : { 1082, 1083, 1084, 1085, 1086 } prop:call:initLjPot { initEamPot { 1123, 1124, 1125 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 441 18 : { 1126, 1127, 1128, 1129, 1130 } direct:call:getNRanks {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 11 : { 1129 } direct:call:printRank {  }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 11 : { 1129, 1131, 1132, 1133, 1134, 1135, 1136, 1137 } prop:call:printRank { bcastParallel { 1137 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 11 : { 1129, 1131, 1132, 1133, 1134, 1135, 1136, 1137 } prop:call:printRank { bcastParallel { 1137 } }
+/Users/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 4 : { 1129, 1131, 1132, 1133, 1134, 1135, 1136, 1137 } prop:call:bcastParallel { bcastParallel { 1137 } }

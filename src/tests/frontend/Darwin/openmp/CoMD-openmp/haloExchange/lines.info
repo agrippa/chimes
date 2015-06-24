@@ -1,0 +1,23 @@
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 153 23 : { 1, 2 } direct:call:initHaloExchange { initHaloExchange { 343 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 175 54 : { 3, 4, 5, 6, 7, 8, 9, 88, 2556 } prop:call:mkAtomCellList { mkAtomCellList { 104 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 265 21 : { 347, 348 } direct:call:processorNum { processorNum { 396 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 266 21 : { 352 } direct:call:processorNum { processorNum { 396 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 267 21 : { 352 } direct:call:processorNum { processorNum { 396 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 268 21 : { 352 } direct:call:processorNum { processorNum { 396 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 269 21 : { 352 } direct:call:processorNum { processorNum { 396 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 270 21 : { 352 } direct:call:processorNum { processorNum { 396 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 433 7 : { 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706 } prop:call:putAtomInBox { putAtomInBox { 821 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 355 29 : { 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 1045 } prop:call:getBoxFromTuple { getBoxFromTuple { 1047 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 214 23 : { 1050, 1051 } direct:call:initHaloExchange { initHaloExchange { 1259 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 238 30 : { 1052, 1053, 1054, 1055, 1056, 1057, 1058, 1138, 2559 } prop:call:mkForceSendCellList { mkForceSendCellList { 1145 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 239 30 : { 2559 } direct:call:mkForceRecvCellList { mkForceRecvCellList { 1145 }, mkForceSendCellList { 1145 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 491 29 : { 1573, 1574, 1575, 1576, 1577, 1578, 1579, 1580, 1581, 1582, 1583, 1584, 1585, 1586, 1587, 1588, 1589, 1765 } prop:call:getBoxFromTuple { getBoxFromTuple { 1767 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 543 29 : { 1770, 1771, 1772, 1773, 1774, 1775, 1776, 1777, 1778, 1779, 1780, 1781, 1782, 1783, 1784, 1785, 1786, 1962 } prop:call:getBoxFromTuple { getBoxFromTuple { 1964 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 255 41 : { 1984, 1985, 1986 } prop:call:exchangeData { exchangeData { 2007, 2008 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 294 17 : { 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2111, 2136, 2140 } direct:call:NULL {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 295 17 : { 2018, 2121, 2136, 2140 } direct:call:NULL {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 302 9 : { 2019, 2020, 2021 } prop:call:profileStart {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 304 13 : { 2023 } direct:call:sendReceiveParallel { sendReceiveParallel { 2111, 2114, 2121, 2124 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 305 9 : { 2022 } prop:call:profileStop {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 307 4 : { 2124, 2136, 2140 } direct:call:NULL {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/haloExchange.c 308 4 : { 2114, 2136, 2140 } direct:call:NULL {  }
