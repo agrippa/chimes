@@ -1,0 +1,72 @@
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c initAtoms|boxes|0 " %struct.LinkCellSt* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c initAtoms|atoms|0 " %struct.AtomsSt* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c initAtoms|maxTotalAtoms|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c initAtoms|iOff|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h zeroReal3|a|0 " double* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c destroyAtoms|atoms|0 " %struct.AtomsSt* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|nx|0 " i32 " 32 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|ny|0 " i32 " 32 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|nz|0 " i32 " 32 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|lat|0 " double " 64 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|s|0 " %struct.SimFlatSt* " 64 1 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|localMin|0 " double* " 64 1 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|localMax|0 " double* " 64 1 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|nb|0 " i32 " 32 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|basis|0 " [4 x [3 x double]] " 768 0 0 1 createFccLattice
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|begin|0 " [3 x i32] " 96 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|end|0 " [3 x i32] " 96 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|ii|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|px|0 " double " 64 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|py|0 " double " 64 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|pz|0 " double " 64 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|ix|0 " i32 " 32 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|iy|0 " i32 " 32 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|iz|0 " i32 " 32 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|ib|0 " i32 " 32 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|rx|0 " double " 64 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|ry|0 " double " 64 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|rz|0 " double " 64 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c createFccLattice|id|0 " i32 " 32 0 0 1 addIntParallel profileStart profileStop putAtomInBox
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setVcm|s|0 " %struct.SimFlatSt* " 64 1 0 1 computeVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setVcm|newVcm|0 " double* " 64 1 0 1 computeVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setVcm|oldVcm|0 " [3 x double] " 192 0 0 1 setVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setVcm|vShift|0 " [3 x double] " 192 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setVcm|iBox|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setVcm|iOff|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setVcm|ii|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setVcm|iSpecies|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setVcm|mass|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|s|0 " %struct.SimFlatSt* " 64 1 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|vcm|0 " double* " 64 1 0 1 addRealParallel profileStart profileStop
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|vcmLocal|0 " [4 x double] " 256 0 0 1 computeVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|vcmSum|0 " [4 x double] " 256 0 0 1 computeVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|v0|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|v1|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|v2|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|v3|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|iBox|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|iOff|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|ii|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|iSpecies|0 " i32 " 32 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c computeVcm|totalMass|0 " double " 64 0 0 0
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|s|0 " %struct.SimFlatSt* " 64 1 0 1 gasdev kineticEnergy mkSeed setVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|temperature|0 " double " 64 0 0 1 gasdev kineticEnergy mkSeed setVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|iBox|0 " i32 " 32 0 0 1 gasdev kineticEnergy mkSeed setVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|iOff|0 " i32 " 32 0 0 1 gasdev kineticEnergy mkSeed setVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|ii|0 " i32 " 32 0 0 1 gasdev kineticEnergy mkSeed setVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|iType|0 " i32 " 32 0 0 1 gasdev kineticEnergy mkSeed setVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|mass|0 " double " 64 0 0 1 gasdev kineticEnergy mkSeed setVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|sigma|0 " double " 64 0 0 1 gasdev kineticEnergy mkSeed setVcm
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|seed|0 " i64 " 64 0 0 1 setTemperature
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|vZero|0 " [3 x double] " 192 0 0 1 setTemperature
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|temp|0 " double " 64 0 0 1 kineticEnergy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|scaleFactor|0 " double " 64 0 0 1 kineticEnergy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|iBox|1 " i32 " 32 0 0 1 kineticEnergy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|iOff|1 " i32 " 32 0 0 1 kineticEnergy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c setTemperature|ii|1 " i32 " 32 0 0 1 kineticEnergy
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c randomDisplacements|s|0 " %struct.SimFlatSt* " 64 1 0 1 lcg61 mkSeed
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c randomDisplacements|delta|0 " double " 64 0 0 1 lcg61 mkSeed
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c randomDisplacements|iBox|0 " i32 " 32 0 0 1 lcg61 mkSeed
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c randomDisplacements|iOff|0 " i32 " 32 0 0 1 lcg61 mkSeed
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c randomDisplacements|ii|0 " i32 " 32 0 0 1 lcg61 mkSeed
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c randomDisplacements|seed|0 " i64 " 64 0 0 1 randomDisplacements

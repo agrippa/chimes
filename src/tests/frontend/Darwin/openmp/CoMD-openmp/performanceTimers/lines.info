@@ -1,0 +1,14 @@
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 4 : { 95, 96 } direct:call:timerStats {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 35 : { 97, 98 } direct:call:getMyRank {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 147 35 : { 99, 100, 101 } prop:call:getNRanks {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 47 : { 102, 103 } prop:call:getNRanks {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 4 : { 321, 323 } prop:call:addDoubleParallel { addDoubleParallel { 321, 322 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 95 : { 324, 325, 327, 775 } prop:call:getNRanks { addDoubleParallel { 321, 322 }, minRankDoubleParallel { 325, 326 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 32 : { 324, 325, 327, 775 } prop:call:getMyRank { addDoubleParallel { 321, 322 }, minRankDoubleParallel { 325, 326 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 4 : { 324, 325, 327, 775 } prop:call:minRankDoubleParallel { addDoubleParallel { 321, 322 }, minRankDoubleParallel { 325, 326 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 4 : { 328, 775 } prop:call:maxRankDoubleParallel { maxRankDoubleParallel { 325, 326 }, minRankDoubleParallel { 325, 326 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 4 : { 321, 329, 330, 331, 775 } prop:call:addDoubleParallel { addDoubleParallel { 321, 322 }, maxRankDoubleParallel { 325, 326 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 38 : { 332, 333, 775 } prop:call:getNRanks { addDoubleParallel { 321, 322 } }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 10 : { 546 } direct:call:printRank {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 35 : { 547, 548 } direct:call:getNRanks {  }
+/Users/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 35 : { 549 } direct:call:getMyRank {  }

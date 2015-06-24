@@ -1,0 +1,8 @@
+seconds
+ricker_wavelet 92 0 0 0
+parse_source 186 187
+config_sources 317 318 0 0 0
+sample_sources 400 0 0 0
+init_progress 0 0 0
+update_progress 0
+finish_progress
