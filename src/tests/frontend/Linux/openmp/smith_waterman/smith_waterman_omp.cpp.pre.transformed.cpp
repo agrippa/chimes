@@ -103,7 +103,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -4537,26 +4537,26 @@ void task_func_npm(int i, int j, tiles_to_run *next) {
 
 static int module_init() {
     init_module(17943224531889794728UL, 33, 19, 0, 20, 18, 0, 18, 21, 0, 7,
-                           &____alias_loc_id_0, (unsigned)32, (unsigned)3, (17943224531889794728UL + 137UL), (17943224531889794728UL + 515UL), (17943224531889794728UL + 536UL), (17943224531889794728UL + 538UL), (17943224531889794728UL + 727UL), (17943224531889794728UL + 906UL), (17943224531889794728UL + 907UL), (17943224531889794728UL + 908UL), (17943224531889794728UL + 909UL), (17943224531889794728UL + 910UL), (17943224531889794728UL + 912UL), (17943224531889794728UL + 913UL), (17943224531889794728UL + 914UL), (17943224531889794728UL + 915UL), (17943224531889794728UL + 916UL), (17943224531889794728UL + 917UL), (17943224531889794728UL + 918UL), (17943224531889794728UL + 919UL), (17943224531889794728UL + 920UL), (17943224531889794728UL + 921UL), (17943224531889794728UL + 922UL), (17943224531889794728UL + 923UL), (17943224531889794728UL + 924UL), (17943224531889794728UL + 1362UL), (17943224531889794728UL + 1371UL), (17943224531889794728UL + 1662UL), (17943224531889794728UL + 1664UL), (17943224531889794728UL + 1670UL), (17943224531889794728UL + 1672UL), (17943224531889794728UL + 1674UL), (17943224531889794728UL + 1680UL), (17943224531889794728UL + 1682UL), "task_func", (unsigned)1, (17943224531889794728UL + 1362UL), "random_init", (unsigned)1, (17943224531889794728UL + 627UL), "pop_next_tile", (unsigned)1, (17943224531889794728UL + 1362UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (17943224531889794728UL + 1UL), (17943224531889794728UL + 2UL),
-                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (17943224531889794728UL + 22UL), (17943224531889794728UL + 23UL),
-                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (17943224531889794728UL + 41UL), (17943224531889794728UL + 42UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (17943224531889794728UL + 60UL),
-                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (17943224531889794728UL + 72UL),
-                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (17943224531889794728UL + 84UL),
-                           &____alias_loc_id_7, (unsigned)6, (unsigned)0, (17943224531889794728UL + 94UL), (17943224531889794728UL + 95UL), (17943224531889794728UL + 96UL), (17943224531889794728UL + 97UL), (17943224531889794728UL + 98UL), (17943224531889794728UL + 137UL),
-                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (17943224531889794728UL + 162UL), (17943224531889794728UL + 163UL),
-                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (17943224531889794728UL + 176UL), (17943224531889794728UL + 177UL),
-                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (17943224531889794728UL + 189UL), (17943224531889794728UL + 190UL),
-                            &____alias_loc_id_11, (unsigned)2, (unsigned)0, (17943224531889794728UL + 202UL), (17943224531889794728UL + 203UL),
-                            &____alias_loc_id_12, (unsigned)5, (unsigned)0, (17943224531889794728UL + 224UL), (17943224531889794728UL + 225UL), (17943224531889794728UL + 226UL), (17943224531889794728UL + 227UL), (17943224531889794728UL + 228UL),
-                            &____alias_loc_id_13, (unsigned)6, (unsigned)0, (17943224531889794728UL + 280UL), (17943224531889794728UL + 281UL), (17943224531889794728UL + 282UL), (17943224531889794728UL + 283UL), (17943224531889794728UL + 284UL), (17943224531889794728UL + 322UL),
-                            &____alias_loc_id_14, (unsigned)7, (unsigned)1, (17943224531889794728UL + 324UL), (17943224531889794728UL + 325UL), (17943224531889794728UL + 326UL), (17943224531889794728UL + 327UL), (17943224531889794728UL + 328UL), (17943224531889794728UL + 345UL), (17943224531889794728UL + 365UL), "clear_whitespaces_do_mapping", (unsigned)1, (17943224531889794728UL + 345UL),
-                            &____alias_loc_id_15, (unsigned)5, (unsigned)0, (17943224531889794728UL + 375UL), (17943224531889794728UL + 376UL), (17943224531889794728UL + 377UL), (17943224531889794728UL + 397UL), (17943224531889794728UL + 403UL),
-                            &____alias_loc_id_16, (unsigned)4, (unsigned)0, (17943224531889794728UL + 429UL), (17943224531889794728UL + 430UL), (17943224531889794728UL + 431UL), (17943224531889794728UL + 443UL),
-                            &____alias_loc_id_17, (unsigned)29, (unsigned)1, (17943224531889794728UL + 137UL), (17943224531889794728UL + 475UL), (17943224531889794728UL + 476UL), (17943224531889794728UL + 477UL), (17943224531889794728UL + 478UL), (17943224531889794728UL + 479UL), (17943224531889794728UL + 480UL), (17943224531889794728UL + 481UL), (17943224531889794728UL + 482UL), (17943224531889794728UL + 483UL), (17943224531889794728UL + 484UL), (17943224531889794728UL + 485UL), (17943224531889794728UL + 486UL), (17943224531889794728UL + 487UL), (17943224531889794728UL + 488UL), (17943224531889794728UL + 489UL), (17943224531889794728UL + 490UL), (17943224531889794728UL + 491UL), (17943224531889794728UL + 492UL), (17943224531889794728UL + 493UL), (17943224531889794728UL + 494UL), (17943224531889794728UL + 495UL), (17943224531889794728UL + 496UL), (17943224531889794728UL + 497UL), (17943224531889794728UL + 498UL), (17943224531889794728UL + 499UL), (17943224531889794728UL + 500UL), (17943224531889794728UL + 538UL), (17943224531889794728UL + 729UL), "add_tile_to_run", (unsigned)1, (17943224531889794728UL + 905UL),
-                            &____alias_loc_id_18, (unsigned)30, (unsigned)3, (17943224531889794728UL + 137UL), (17943224531889794728UL + 515UL), (17943224531889794728UL + 536UL), (17943224531889794728UL + 538UL), (17943224531889794728UL + 727UL), (17943224531889794728UL + 906UL), (17943224531889794728UL + 907UL), (17943224531889794728UL + 908UL), (17943224531889794728UL + 909UL), (17943224531889794728UL + 910UL), (17943224531889794728UL + 912UL), (17943224531889794728UL + 913UL), (17943224531889794728UL + 914UL), (17943224531889794728UL + 915UL), (17943224531889794728UL + 916UL), (17943224531889794728UL + 917UL), (17943224531889794728UL + 918UL), (17943224531889794728UL + 919UL), (17943224531889794728UL + 920UL), (17943224531889794728UL + 921UL), (17943224531889794728UL + 925UL), (17943224531889794728UL + 1362UL), (17943224531889794728UL + 1371UL), (17943224531889794728UL + 1662UL), (17943224531889794728UL + 1664UL), (17943224531889794728UL + 1670UL), (17943224531889794728UL + 1672UL), (17943224531889794728UL + 1674UL), (17943224531889794728UL + 1680UL), (17943224531889794728UL + 1682UL), "task_func", (unsigned)1, (17943224531889794728UL + 1362UL), "random_init", (unsigned)1, (17943224531889794728UL + 627UL), "pop_next_tile", (unsigned)1, (17943224531889794728UL + 1362UL),
-                            &____alias_loc_id_19, (unsigned)5, (unsigned)0, (17943224531889794728UL + 1616UL), (17943224531889794728UL + 1617UL), (17943224531889794728UL + 1618UL), (17943224531889794728UL + 1619UL), (17943224531889794728UL + 1648UL),
+                           &____alias_loc_id_0, (unsigned)32, (unsigned)0, (unsigned)0, (17943224531889794728UL + 137UL), (17943224531889794728UL + 515UL), (17943224531889794728UL + 536UL), (17943224531889794728UL + 538UL), (17943224531889794728UL + 727UL), (17943224531889794728UL + 906UL), (17943224531889794728UL + 907UL), (17943224531889794728UL + 908UL), (17943224531889794728UL + 909UL), (17943224531889794728UL + 910UL), (17943224531889794728UL + 912UL), (17943224531889794728UL + 913UL), (17943224531889794728UL + 914UL), (17943224531889794728UL + 915UL), (17943224531889794728UL + 916UL), (17943224531889794728UL + 917UL), (17943224531889794728UL + 918UL), (17943224531889794728UL + 919UL), (17943224531889794728UL + 920UL), (17943224531889794728UL + 921UL), (17943224531889794728UL + 922UL), (17943224531889794728UL + 923UL), (17943224531889794728UL + 924UL), (17943224531889794728UL + 1362UL), (17943224531889794728UL + 1371UL), (17943224531889794728UL + 1662UL), (17943224531889794728UL + 1664UL), (17943224531889794728UL + 1670UL), (17943224531889794728UL + 1672UL), (17943224531889794728UL + 1674UL), (17943224531889794728UL + 1680UL), (17943224531889794728UL + 1682UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (17943224531889794728UL + 1UL), (17943224531889794728UL + 2UL),
+                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (unsigned)0, (17943224531889794728UL + 22UL), (17943224531889794728UL + 23UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (17943224531889794728UL + 41UL), (17943224531889794728UL + 42UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (17943224531889794728UL + 60UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (17943224531889794728UL + 72UL),
+                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)0, (17943224531889794728UL + 84UL),
+                           &____alias_loc_id_7, (unsigned)6, (unsigned)0, (unsigned)0, (17943224531889794728UL + 94UL), (17943224531889794728UL + 95UL), (17943224531889794728UL + 96UL), (17943224531889794728UL + 97UL), (17943224531889794728UL + 98UL), (17943224531889794728UL + 137UL),
+                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)0, (17943224531889794728UL + 162UL), (17943224531889794728UL + 163UL),
+                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)0, (17943224531889794728UL + 176UL), (17943224531889794728UL + 177UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (17943224531889794728UL + 189UL), (17943224531889794728UL + 190UL),
+                            &____alias_loc_id_11, (unsigned)2, (unsigned)0, (unsigned)0, (17943224531889794728UL + 202UL), (17943224531889794728UL + 203UL),
+                            &____alias_loc_id_12, (unsigned)5, (unsigned)0, (unsigned)0, (17943224531889794728UL + 224UL), (17943224531889794728UL + 225UL), (17943224531889794728UL + 226UL), (17943224531889794728UL + 227UL), (17943224531889794728UL + 228UL),
+                            &____alias_loc_id_13, (unsigned)6, (unsigned)0, (unsigned)0, (17943224531889794728UL + 280UL), (17943224531889794728UL + 281UL), (17943224531889794728UL + 282UL), (17943224531889794728UL + 283UL), (17943224531889794728UL + 284UL), (17943224531889794728UL + 322UL),
+                            &____alias_loc_id_14, (unsigned)7, (unsigned)0, (unsigned)0, (17943224531889794728UL + 324UL), (17943224531889794728UL + 325UL), (17943224531889794728UL + 326UL), (17943224531889794728UL + 327UL), (17943224531889794728UL + 328UL), (17943224531889794728UL + 345UL), (17943224531889794728UL + 365UL),
+                            &____alias_loc_id_15, (unsigned)5, (unsigned)0, (unsigned)0, (17943224531889794728UL + 375UL), (17943224531889794728UL + 376UL), (17943224531889794728UL + 377UL), (17943224531889794728UL + 397UL), (17943224531889794728UL + 403UL),
+                            &____alias_loc_id_16, (unsigned)4, (unsigned)0, (unsigned)0, (17943224531889794728UL + 429UL), (17943224531889794728UL + 430UL), (17943224531889794728UL + 431UL), (17943224531889794728UL + 443UL),
+                            &____alias_loc_id_17, (unsigned)29, (unsigned)0, (unsigned)0, (17943224531889794728UL + 137UL), (17943224531889794728UL + 475UL), (17943224531889794728UL + 476UL), (17943224531889794728UL + 477UL), (17943224531889794728UL + 478UL), (17943224531889794728UL + 479UL), (17943224531889794728UL + 480UL), (17943224531889794728UL + 481UL), (17943224531889794728UL + 482UL), (17943224531889794728UL + 483UL), (17943224531889794728UL + 484UL), (17943224531889794728UL + 485UL), (17943224531889794728UL + 486UL), (17943224531889794728UL + 487UL), (17943224531889794728UL + 488UL), (17943224531889794728UL + 489UL), (17943224531889794728UL + 490UL), (17943224531889794728UL + 491UL), (17943224531889794728UL + 492UL), (17943224531889794728UL + 493UL), (17943224531889794728UL + 494UL), (17943224531889794728UL + 495UL), (17943224531889794728UL + 496UL), (17943224531889794728UL + 497UL), (17943224531889794728UL + 498UL), (17943224531889794728UL + 499UL), (17943224531889794728UL + 500UL), (17943224531889794728UL + 538UL), (17943224531889794728UL + 729UL),
+                            &____alias_loc_id_18, (unsigned)30, (unsigned)0, (unsigned)0, (17943224531889794728UL + 137UL), (17943224531889794728UL + 515UL), (17943224531889794728UL + 536UL), (17943224531889794728UL + 538UL), (17943224531889794728UL + 727UL), (17943224531889794728UL + 906UL), (17943224531889794728UL + 907UL), (17943224531889794728UL + 908UL), (17943224531889794728UL + 909UL), (17943224531889794728UL + 910UL), (17943224531889794728UL + 912UL), (17943224531889794728UL + 913UL), (17943224531889794728UL + 914UL), (17943224531889794728UL + 915UL), (17943224531889794728UL + 916UL), (17943224531889794728UL + 917UL), (17943224531889794728UL + 918UL), (17943224531889794728UL + 919UL), (17943224531889794728UL + 920UL), (17943224531889794728UL + 921UL), (17943224531889794728UL + 925UL), (17943224531889794728UL + 1362UL), (17943224531889794728UL + 1371UL), (17943224531889794728UL + 1662UL), (17943224531889794728UL + 1664UL), (17943224531889794728UL + 1670UL), (17943224531889794728UL + 1672UL), (17943224531889794728UL + 1674UL), (17943224531889794728UL + 1680UL), (17943224531889794728UL + 1682UL),
+                            &____alias_loc_id_19, (unsigned)5, (unsigned)0, (unsigned)0, (17943224531889794728UL + 1616UL), (17943224531889794728UL + 1617UL), (17943224531889794728UL + 1618UL), (17943224531889794728UL + 1619UL), (17943224531889794728UL + 1648UL),
                             "GUID_DIAG", (void *)(&GUID_DIAG_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 0,
                             "GUID_RCOL", (void *)(&GUID_RCOL_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 0,
                             "GUID_BROW", (void *)(&GUID_BROW_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 0,
@@ -4673,28 +4673,28 @@ static int module_init() {
         "PUT_BROW", 0UL, (int)2, 0UL, 0UL,
         "pop_next_tile", 17943224531889796186UL, (int)1, 17943224531889796090UL,
         "task_func", 0UL, (int)3, 0UL, 0UL, 17943224531889796090UL);
-    register_global_var("global|string_1", "i8*", (void *)(&string_1), 8.0, 1, 0, 0);
-    register_global_var("global|string_2", "i8*", (void *)(&string_2), 8.0, 1, 0, 0);
-    register_global_var("global|strlen_1", "i32", (void *)(&strlen_1), 4.0, 0, 0, 0);
-    register_global_var("global|strlen_2", "i32", (void *)(&strlen_2), 4.0, 0, 0, 0);
-    register_global_var("global|tile_width", "i32", (void *)(&tile_width), 4.0, 0, 0, 0);
-    register_global_var("global|tile_height", "i32", (void *)(&tile_height), 4.0, 0, 0, 0);
-    register_global_var("global|n_tiles_x", "i32", (void *)(&n_tiles_x), 4.0, 0, 0, 0);
-    register_global_var("global|n_tiles_y", "i32", (void *)(&n_tiles_y), 4.0, 0, 0, 0);
-    register_global_var("global|tile_edges_x", "i32**", (void *)(&tile_edges_x), 8.0, 1, 0, 0);
-    register_global_var("global|tile_edges_y", "i32**", (void *)(&tile_edges_y), 8.0, 1, 0, 0);
-    register_global_var("global|tile_diag", "i32*", (void *)(&tile_diag), 8.0, 1, 0, 0);
-    register_global_var("global|put_counts", "i32*", (void *)(&put_counts), 8.0, 1, 0, 0);
-    register_global_var("global|worker_tiles", "i32***", (void *)(&worker_tiles), 8.0, 1, 0, 0);
-    register_global_var("global|max_buffer", "i32*", (void *)(&max_buffer), 8.0, 1, 0, 0);
-    register_global_var("global|temp_buffer", "i32*", (void *)(&temp_buffer), 8.0, 1, 0, 0);
-    register_global_var("global|max_size", "i32", (void *)(&max_size), 4.0, 0, 0, 0);
-    register_global_var("global|done", "i32", (void *)(&done), 4.0, 0, 0, 0);
-    register_global_var("global|nthreads", "i32", (void *)(&nthreads), 4.0, 0, 0, 0);
-    register_global_var("global|begin", "%struct.timeval = type { i64, i64 }", (void *)(&begin), 16.0, 0, 1, 0);
-    register_global_var("global|end", "%struct.timeval = type { i64, i64 }", (void *)(&end), 16.0, 0, 1, 0);
-    register_global_var("global|dsizes", "[3 x i32]", (void *)(&dsizes), 12.0, 0, 0, 0);
-    register_global_var("global|alignment_score_matrix", "[5 x [5 x i8]]", (void *)(&alignment_score_matrix), 25.0, 0, 0, 0);
+    register_global_var("global|string_1", "i8*", (void *)(&string_1), 8.0, 1, 0, (17943224531889794728UL + 1662UL), 0);
+    register_global_var("global|string_2", "i8*", (void *)(&string_2), 8.0, 1, 0, (17943224531889794728UL + 1662UL), 0);
+    register_global_var("global|strlen_1", "i32", (void *)(&strlen_1), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|strlen_2", "i32", (void *)(&strlen_2), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|tile_width", "i32", (void *)(&tile_width), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|tile_height", "i32", (void *)(&tile_height), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|n_tiles_x", "i32", (void *)(&n_tiles_x), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|n_tiles_y", "i32", (void *)(&n_tiles_y), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|tile_edges_x", "i32**", (void *)(&tile_edges_x), 8.0, 1, 0, (17943224531889794728UL + 1670UL), 0);
+    register_global_var("global|tile_edges_y", "i32**", (void *)(&tile_edges_y), 8.0, 1, 0, (17943224531889794728UL + 1670UL), 0);
+    register_global_var("global|tile_diag", "i32*", (void *)(&tile_diag), 8.0, 1, 0, (17943224531889794728UL + 1672UL), 0);
+    register_global_var("global|put_counts", "i32*", (void *)(&put_counts), 8.0, 1, 0, (17943224531889794728UL + 1672UL), 0);
+    register_global_var("global|worker_tiles", "i32***", (void *)(&worker_tiles), 8.0, 1, 0, (17943224531889794728UL + 1674UL), 0);
+    register_global_var("global|max_buffer", "i32*", (void *)(&max_buffer), 8.0, 1, 0, (17943224531889794728UL + 1672UL), 0);
+    register_global_var("global|temp_buffer", "i32*", (void *)(&temp_buffer), 8.0, 1, 0, (17943224531889794728UL + 1672UL), 0);
+    register_global_var("global|max_size", "i32", (void *)(&max_size), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|done", "i32", (void *)(&done), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|nthreads", "i32", (void *)(&nthreads), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|begin", "%struct.timeval = type { i64, i64 }", (void *)(&begin), 16.0, 0, 1, 0UL, 0);
+    register_global_var("global|end", "%struct.timeval = type { i64, i64 }", (void *)(&end), 16.0, 0, 1, 0UL, 0);
+    register_global_var("global|dsizes", "[3 x i32]", (void *)(&dsizes), 12.0, 0, 0, 0UL, 0);
+    register_global_var("global|alignment_score_matrix", "[5 x [5 x i8]]", (void *)(&alignment_score_matrix), 25.0, 0, 0, 0UL, 0);
     return 0;
 }
 

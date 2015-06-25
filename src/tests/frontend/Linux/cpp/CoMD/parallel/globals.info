@@ -1,2 +1,2 @@
-nRanks " i32 " 32 0 0 
-myRank " i32 " 32 0 0 
+nRanks " i32 " 32 0 0 0 
+myRank " i32 " 32 0 0 0 

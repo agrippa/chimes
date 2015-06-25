@@ -57,7 +57,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1427,9 +1427,9 @@ uint64_t mkSeed_npm(uint32_t id, uint32_t callSite)
 
 static int module_init() {
     init_module(14584644095263535659UL, 2, 3, 1, 3, 3, 0, 3, 3, 0, 0,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)1, (14584644095263535659UL + 1UL), (14584644095263535659UL + 2UL), (14584644095263535659UL + 3UL), (14584644095263535659UL + 4UL), "lcg61", (unsigned)1, (14584644095263535659UL + 11UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (14584644095263535659UL + 50UL), (14584644095263535659UL + 67UL),
-                           &____alias_loc_id_2, (unsigned)6, (unsigned)1, (14584644095263535659UL + 70UL), (14584644095263535659UL + 71UL), (14584644095263535659UL + 72UL), (14584644095263535659UL + 73UL), (14584644095263535659UL + 74UL), (14584644095263535659UL + 75UL), "lcg61", (unsigned)1, (14584644095263535659UL + 74UL),
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (14584644095263535659UL + 1UL), (14584644095263535659UL + 2UL), (14584644095263535659UL + 3UL), (14584644095263535659UL + 4UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (14584644095263535659UL + 50UL), (14584644095263535659UL + 67UL),
+                           &____alias_loc_id_2, (unsigned)6, (unsigned)0, (unsigned)0, (14584644095263535659UL + 70UL), (14584644095263535659UL + 71UL), (14584644095263535659UL + 72UL), (14584644095263535659UL + 73UL), (14584644095263535659UL + 74UL), (14584644095263535659UL + 75UL),
                             "gasdev", (void *)(&gasdev_npm), (void *)__null, 0, 1, (14584644095263535659UL + 11UL), 0UL, 4, "lcg61", 1, (14584644095263535659UL + 11UL), 0UL, "lcg61", 1, (14584644095263535659UL + 11UL), 0UL, "log", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
                             "lcg61", (void *)(&lcg61_npm), (void *)__null, 0, 1, (14584644095263535659UL + 67UL), 0UL, 0,
                             "mkSeed", (void *)(&mkSeed_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 1, "lcg61", 1, (14584644095263535659UL + 74UL), 0UL,

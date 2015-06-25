@@ -1,25 +1,25 @@
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 481 53 : { 206, 207 } prop:call:rng_showstate { rng_showstate { 288, 1819 }, ss_error { 1840 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 497 53 : { 315, 316 } prop:call:rng_showstate { rng_showstate { 338, 1819 }, ss_error { 1842 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 511 53 : { 368, 369, 422 } prop:call:rng_showstate { rng_showstate { 395, 1819 }, ss_error { 1842 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 629 43 : { 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 777, 1158 } prop:call:rng_showstate { rng_showstate { 716, 1819 }, ss_error { 1848, 1849, 1852 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 674 17 : { 819 } direct:call:uts_wctime {  }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 691 10 : { 867, 868 } prop:call:uts_wctime { ss_error { 1857 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 912 3 : { 954, 955 } direct:call:uts_initRoot { uts_initRoot { 964 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 959 17 : { 968, 969, 970, 971 } direct:call:uts_numChildren { uts_numChildren { 1081 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 960 15 : { 972 } direct:call:uts_childType { uts_childType { 1081 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 965 86 : { 973, 974, 975, 976, 977, 1081, 1082 } prop:call:rng_showstate { rng_showstate { 1081, 1819 }, rng_spawn { 1081, 1082 }, ss_push { 1082, 1083 }, ss_topPosn { 1083 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 986 9 : { 973, 974, 975, 976, 977, 1081, 1082 } prop:call:rng_spawn { rng_showstate { 1081, 1819 }, rng_spawn { 1081, 1082 }, ss_push { 1082, 1083 }, ss_topPosn { 1083 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 988 7 : { 973, 974, 975, 976, 977, 1081, 1082 } prop:call:ss_push { rng_showstate { 1081, 1819 }, rng_spawn { 1081, 1082 }, ss_push { 1082, 1083 }, ss_topPosn { 1083 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1100 7 : { 1089 } prop:call:ss_setState { ss_localDepth { 1122 }, ss_setState { 1122 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1140 7 : { 1246, 1247, 1250, 1251, 1252 } prop:call:ss_setState { initNode { 1249 }, releaseNodes { 1351 }, ss_acquire { 1351 }, ss_localDepth { 1351 }, ss_setState { 1351 }, ss_steal { 1351 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1189 7 : { 1246, 1247, 1250, 1251, 1252 } prop:call:ss_setState { initNode { 1249 }, releaseNodes { 1351 }, ss_acquire { 1351 }, ss_localDepth { 1351 }, ss_setState { 1351 }, ss_steal { 1351 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1206 5 : { 1246, 1247, 1250, 1251, 1252 } prop:call:ss_setState { initNode { 1249 }, releaseNodes { 1351 }, ss_acquire { 1351 }, ss_localDepth { 1351 }, ss_setState { 1351 }, ss_steal { 1351 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1146 2 : { 1248 } prop:call:genChildren { genChildren { 1249, 1282, 1351 }, ss_pop { 1351 }, ss_setState { 1351 }, ss_top { 1351 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1155 9 : { 1248 } prop:call:ss_pop { genChildren { 1249, 1282, 1351 }, ss_pop { 1351 }, ss_setState { 1351 }, ss_top { 1351 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1168 11 : { 1250 } prop:call:checkpoint { releaseNodes { 1351 }, ss_acquire { 1351 }, ss_localDepth { 1351 }, ss_setState { 1351 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1193 14 : { 1251, 1252 } prop:call:ss_steal { ss_acquire { 1351 }, ss_localDepth { 1351 }, ss_setState { 1351 }, ss_steal { 1351 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1281 3 : { 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366 } prop:call:uts_showStats {  }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1378 3 : { 1759, 1760, 1761 } direct:call:uts_parseParams { uts_parseParams { 1810 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1426 7 : { 1766, 1820 } direct:call:initRootNode { initRootNode { 1762 }, ss_init { 1158 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1437 5 : { 1763 } direct:call:parTreeSearch { parTreeSearch { 1158 }, ss_initState { 1158 }, ss_push { 1158, 1762 } }
-/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1451 7 : { 1764, 1765 } direct:call:showStats {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 481 53 : { 206, 207 } {  } call:rng_showstate { rng_showstate { 232, 288, 1819 } }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 497 53 : { 315, 316 } {  } call:rng_showstate { rng_showstate { 338, 350, 1819 } }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 511 53 : { 368, 369, 422 } {  } call:rng_showstate { rng_showstate { 395, 407, 1819 } }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 629 43 : { 547, 548, 549 } {  } call:rng_showstate { rng_showstate { 716, 724, 1819 } }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 674 17 : { 819 } {  } call:uts_wctime {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 691 10 : { 867, 868 } {  } call:uts_wctime {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 912 3 : { 954, 955 } {  } call:uts_initRoot { uts_initRoot { 964 } }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 960 15 : { 972 } {  } call:uts_childType { uts_childType { 1081 } }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 965 86 : { 973, 974, 1081 } {  } call:rng_showstate { rng_showstate { 1014, 1081, 1819 } }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 959 17 : { 968, 969, 970, 971 } {  } call:uts_numChildren { uts_numChildren { 1081 } }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 988 7 : { 976, 977, 1082 } {  } call:ss_push {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 986 9 : { 976, 977, 1082 } {  } call:rng_spawn { rng_spawn { 1081, 1082 } }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1100 7 : { 1089 } {  } call:ss_setState {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1168 11 : { 1250 } {  } call:checkpoint {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1206 5 : { 1250, 1251, 1252 } {  } call:ss_setState {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1189 7 : { 1250, 1251 } {  } call:ss_setState {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1193 14 : { 1251, 1252 } {  } call:ss_steal {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1146 2 : { 1248 } {  } call:genChildren {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1155 9 : { 1248 } {  } call:ss_pop {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1140 7 : { 1250 } {  } call:ss_setState {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1281 3 : { 1352, 1353, 1354, 1355, 1356, 1357, 1358, 1359, 1360, 1361, 1362, 1363, 1364, 1365, 1366 } {  } call:uts_showStats {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1451 7 : { 1764, 1765 } {  } call:showStats {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1437 5 : { 1763 } {  } call:parTreeSearch {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1426 7 : { 1766, 1820 } {  } call:initRootNode {  }
+/home/jmg3/num-debug/src/examples/cpp/uts/uts_shm.c 1378 3 : { 1759, 1760, 1761 } {  } call:uts_parseParams { uts_parseParams { 1810 } }

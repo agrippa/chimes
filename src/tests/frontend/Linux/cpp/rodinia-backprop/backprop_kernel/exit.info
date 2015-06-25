@@ -1,3 +1,3 @@
-gettime 0 1 1 0
-main 0 0 0
-bpnn_train_kernel 0 0 4 bpnn_adjust_weights 1 67 bpnn_hidden_error 2 40 67 bpnn_layerforward 1 67 bpnn_output_error 2 39 67
+gettime 0 1 1 0 0
+main 0 0 0 0
+bpnn_train_kernel 0 0 0 0

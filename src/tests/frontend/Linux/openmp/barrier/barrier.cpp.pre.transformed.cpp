@@ -48,7 +48,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -2400,7 +2400,7 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 static int module_init() {
     init_module(8458064826126135466UL, 1, 2, 0, 1, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)8, (unsigned)0, (8458064826126135466UL + 3UL), (8458064826126135466UL + 4UL), (8458064826126135466UL + 5UL), (8458064826126135466UL + 6UL), (8458064826126135466UL + 7UL), (8458064826126135466UL + 8UL), (8458064826126135466UL + 9UL), (8458064826126135466UL + 10UL),
+                           &____alias_loc_id_0, (unsigned)8, (unsigned)0, (unsigned)0, (8458064826126135466UL + 3UL), (8458064826126135466UL + 4UL), (8458064826126135466UL + 5UL), (8458064826126135466UL + 6UL), (8458064826126135466UL + 7UL), (8458064826126135466UL + 8UL), (8458064826126135466UL + 9UL), (8458064826126135466UL + 10UL),
                              (8458064826126135466UL + 5UL), (8458064826126135466UL + 32UL),
                              "main", "main", 1, "foo",
                              "foo", "_Z3foov", 1, "checkpoint");

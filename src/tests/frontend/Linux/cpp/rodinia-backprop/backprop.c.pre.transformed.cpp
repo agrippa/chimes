@@ -163,7 +163,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -5042,7 +5042,7 @@ float squash_resumable(float x)
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  rm_stack(false, 0UL, "squash", &____must_manage_squash, ____alias_loc_id_10, ____chimes_did_disable2); return (1.0 / (1.0 + exp(-x)));
+  rm_stack(false, 0UL, "squash", &____must_manage_squash, ____alias_loc_id_12, ____chimes_did_disable2); return (1.0 / (1.0 + exp(-x)));
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5065,11 +5065,11 @@ float *alloc_1d_dbl_resumable(int n)
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
     printf("ALLOC_1D_DBL: Couldn't allocate array of floats\n");
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-    rm_stack(true, 12828305900417644640UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_11, ____chimes_did_disable3); return (__null);
+    rm_stack(true, 12828305900417644640UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_13, ____chimes_did_disable3); return (__null);
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  rm_stack(true, 12828305900417644640UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_11, ____chimes_did_disable3); return (new_mem);
+  rm_stack(true, 12828305900417644640UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_13, ____chimes_did_disable3); return (new_mem);
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5094,7 +5094,7 @@ float **alloc_2d_dbl_resumable(int m, int n)
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
     printf("ALLOC_2D_DBL: Couldn't allocate array of dbl ptrs\n");
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-    rm_stack(true, 12828305900417644673UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_12, ____chimes_did_disable4); return (__null);
+    rm_stack(true, 12828305900417644673UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_14, ____chimes_did_disable4); return (__null);
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5106,7 +5106,7 @@ float **alloc_2d_dbl_resumable(int m, int n)
   }
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  rm_stack(true, 12828305900417644673UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_12, ____chimes_did_disable4); return (new_mem);
+  rm_stack(true, 12828305900417644673UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_14, ____chimes_did_disable4); return (new_mem);
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5132,7 +5132,7 @@ void bpnn_randomize_weights_resumable(float **w, int m, int n)
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_randomize_weights", &____must_manage_bpnn_randomize_weights, ____alias_loc_id_13, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "bpnn_randomize_weights", &____must_manage_bpnn_randomize_weights, ____alias_loc_id_15, ____chimes_did_disable5); }
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 void bpnn_randomize_row_npm(float *w, int m);
@@ -5150,7 +5150,7 @@ void bpnn_randomize_row_resumable(float *w, int m)
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
     }
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_randomize_row", &____must_manage_bpnn_randomize_row, ____alias_loc_id_14, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "bpnn_randomize_row", &____must_manage_bpnn_randomize_row, ____alias_loc_id_16, ____chimes_did_disable6); }
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5173,7 +5173,7 @@ void bpnn_zero_weights_resumable(float **w, int m, int n)
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_zero_weights", &____must_manage_bpnn_zero_weights, ____alias_loc_id_15, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "bpnn_zero_weights", &____must_manage_bpnn_zero_weights, ____alias_loc_id_17, ____chimes_did_disable7); }
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5187,7 +5187,7 @@ void bpnn_initialize_resumable(int seed)
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   srand(seed);
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_initialize", &____must_manage_bpnn_initialize, ____alias_loc_id_16, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "bpnn_initialize", &____must_manage_bpnn_initialize, ____alias_loc_id_18, ____chimes_did_disable8); }
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5206,7 +5206,7 @@ BPNN *bpnn_internal_create_resumable(int n_in, int n_hidden, int n_out)
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
     printf("BPNN_CREATE: Couldn't allocate neural network\n");
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-    rm_stack(true, 12828305900417646088UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_17, ____chimes_did_disable9); return (__null);
+    rm_stack(true, 12828305900417646088UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_19, ____chimes_did_disable9); return (__null);
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5241,7 +5241,7 @@ BPNN *bpnn_internal_create_resumable(int n_in, int n_hidden, int n_out)
   newnet->hidden_prev_weights = ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); });
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  rm_stack(true, 12828305900417646088UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_17, ____chimes_did_disable9); return (newnet);
+  rm_stack(true, 12828305900417646088UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_19, ____chimes_did_disable9); return (newnet);
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5303,7 +5303,7 @@ void bpnn_free_resumable(BPNN *net)
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   free_wrapper((char *) net, 12828305900417645081UL);
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_free", &____must_manage_bpnn_free, ____alias_loc_id_18, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "bpnn_free", &____must_manage_bpnn_free, ____alias_loc_id_20, ____chimes_did_disable10); }
 # 205 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 205 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 BPNN *bpnn_create_npm(int n_in, int n_hidden, int n_out);
@@ -5333,7 +5333,7 @@ BPNN *bpnn_create_resumable(int n_in, int n_hidden, int n_out)
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   ({ calling_npm("bpnn_randomize_row", 0); bpnn_randomize_row_npm(newnet->target, n_out); });
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  rm_stack(true, 12828305900417645097UL, "bpnn_create", &____must_manage_bpnn_create, ____alias_loc_id_19, ____chimes_did_disable11); return (newnet);
+  rm_stack(true, 12828305900417645097UL, "bpnn_create", &____must_manage_bpnn_create, ____alias_loc_id_21, ____chimes_did_disable11); return (newnet);
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5376,7 +5376,7 @@ void bpnn_layerforward_resumable(float *l1, float *l2, float **conn, int n1, int
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_layerforward", &____must_manage_bpnn_layerforward, ____alias_loc_id_20, ____chimes_did_disable12); }
+rm_stack(false, 0UL, "bpnn_layerforward", &____must_manage_bpnn_layerforward, ____alias_loc_id_22, ____chimes_did_disable12); }
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5406,7 +5406,7 @@ void bpnn_output_error_resumable(float *delta, float *target, float *output, int
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   *err = errsum;
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_output_error", &____must_manage_bpnn_output_error, ____alias_loc_id_21, ____chimes_did_disable13); }
+rm_stack(false, 0UL, "bpnn_output_error", &____must_manage_bpnn_output_error, ____alias_loc_id_23, ____chimes_did_disable13); }
 # 262 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 263 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5455,7 +5455,7 @@ void bpnn_hidden_error_resumable(float *delta_h,
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   *err = errsum;
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_hidden_error", &____must_manage_bpnn_hidden_error, ____alias_loc_id_22, ____chimes_did_disable14); }
+rm_stack(false, 0UL, "bpnn_hidden_error", &____must_manage_bpnn_hidden_error, ____alias_loc_id_24, ____chimes_did_disable14); }
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5497,7 +5497,7 @@ void bpnn_adjust_weights_resumable(float *delta, int ndelta, float *ly, int nly,
 # 310 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_adjust_weights", &____must_manage_bpnn_adjust_weights, ____alias_loc_id_23, ____chimes_did_disable15); }
+rm_stack(false, 0UL, "bpnn_adjust_weights", &____must_manage_bpnn_adjust_weights, ____alias_loc_id_25, ____chimes_did_disable15); }
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 313 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5553,7 +5553,7 @@ int in;
 # 339 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 340 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_1: ({ float * ____chimes_arg12; float * ____chimes_arg13; float ** ____chimes_arg14; if (!____chimes_replaying) { ____chimes_arg12 = (net->input_units); ____chimes_arg13 = (net->hidden_units); ____chimes_arg14 = (net->input_weights); } calling((void*)bpnn_layerforward, 1, ____alias_loc_id_3, 0UL, 5, (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_layerforward)(____chimes_arg12, ____chimes_arg13, ____chimes_arg14, in, hid); }) ;
+   call_lbl_1: ({ float * ____chimes_arg12; float * ____chimes_arg13; float ** ____chimes_arg14; if (!____chimes_replaying) { ____chimes_arg12 = (net->input_units); ____chimes_arg13 = (net->hidden_units); ____chimes_arg14 = (net->input_weights); } calling((void*)bpnn_layerforward, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_layerforward)(____chimes_arg12, ____chimes_arg13, ____chimes_arg14, in, hid); }) ;
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
    call_lbl_2: ({ float * ____chimes_arg17; float * ____chimes_arg18; float ** ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg17 = (net->hidden_units); ____chimes_arg18 = (net->output_units); ____chimes_arg19 = (net->hidden_weights); } calling((void*)bpnn_layerforward, 2, 0, 0UL, 5, (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_layerforward)(____chimes_arg17, ____chimes_arg18, ____chimes_arg19, hid, out); }) ;
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5569,7 +5569,7 @@ int in;
 # 353 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 354 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_3: ({ float * ____chimes_arg22; float * ____chimes_arg24; float ** ____chimes_arg26; float ** ____chimes_arg27; if (!____chimes_replaying) { ____chimes_arg22 = (net->output_delta); ____chimes_arg24 = (net->hidden_units); ____chimes_arg26 = (net->hidden_weights); ____chimes_arg27 = (net->hidden_prev_weights); } calling((void*)bpnn_adjust_weights, 3, ____alias_loc_id_4, 0UL, 6, (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL)); (bpnn_adjust_weights)(____chimes_arg22, out, ____chimes_arg24, hid, ____chimes_arg26, ____chimes_arg27); }) ;
+   call_lbl_3: ({ float * ____chimes_arg22; float * ____chimes_arg24; float ** ____chimes_arg26; float ** ____chimes_arg27; if (!____chimes_replaying) { ____chimes_arg22 = (net->output_delta); ____chimes_arg24 = (net->hidden_units); ____chimes_arg26 = (net->hidden_weights); ____chimes_arg27 = (net->hidden_prev_weights); } calling((void*)bpnn_adjust_weights, 3, ____alias_loc_id_3, 0UL, 6, (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL)); (bpnn_adjust_weights)(____chimes_arg22, out, ____chimes_arg24, hid, ____chimes_arg26, ____chimes_arg27); }) ;
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
    call_lbl_4: ({ float * ____chimes_arg28; float * ____chimes_arg30; float ** ____chimes_arg32; float ** ____chimes_arg33; if (!____chimes_replaying) { ____chimes_arg28 = (net->hidden_delta); ____chimes_arg30 = (net->input_units); ____chimes_arg32 = (net->input_weights); ____chimes_arg33 = (net->input_prev_weights); } calling((void*)bpnn_adjust_weights, 4, 0, 0UL, 6, (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL)); (bpnn_adjust_weights)(____chimes_arg28, hid, ____chimes_arg30, in, ____chimes_arg32, ____chimes_arg33); }) ;
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5713,11 +5713,11 @@ char *mem;
   printf("Reading '%s'\n", filename);
 # 439 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 440 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_4: ({ void * ____chimes_arg38; unsigned long ____chimes_arg39; if (!____chimes_replaying) { ____chimes_arg38 = ((char *)&n1); ____chimes_arg39 = (sizeof(int)); } calling((void*)read, 4, ____alias_loc_id_6, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645992UL), (size_t)(0UL)); (read)(fd, ____chimes_arg38, ____chimes_arg39); }) ;
+   call_lbl_4: ({ void * ____chimes_arg38; unsigned long ____chimes_arg39; if (!____chimes_replaying) { ____chimes_arg38 = ((char *)&n1); ____chimes_arg39 = (sizeof(int)); } calling((void*)read, 4, ____alias_loc_id_11, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645992UL), (size_t)(0UL)); (read)(fd, ____chimes_arg38, ____chimes_arg39); }) ;
 # 441 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_5: ({ void * ____chimes_arg41; unsigned long ____chimes_arg42; if (!____chimes_replaying) { ____chimes_arg41 = ((char *)&n2); ____chimes_arg42 = (sizeof(int)); } calling((void*)read, 5, 0, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645993UL), (size_t)(0UL)); (read)(fd, ____chimes_arg41, ____chimes_arg42); }) ;
+   call_lbl_5: ({ void * ____chimes_arg41; unsigned long ____chimes_arg42; if (!____chimes_replaying) { ____chimes_arg41 = ((char *)&n2); ____chimes_arg42 = (sizeof(int)); } calling((void*)read, 5, ____alias_loc_id_10, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645993UL), (size_t)(0UL)); (read)(fd, ____chimes_arg41, ____chimes_arg42); }) ;
 # 442 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_6: ({ void * ____chimes_arg44; unsigned long ____chimes_arg45; if (!____chimes_replaying) { ____chimes_arg44 = ((char *)&n3); ____chimes_arg45 = (sizeof(int)); } calling((void*)read, 6, 0, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645994UL), (size_t)(0UL)); (read)(fd, ____chimes_arg44, ____chimes_arg45); }) ;
+   call_lbl_6: ({ void * ____chimes_arg44; unsigned long ____chimes_arg45; if (!____chimes_replaying) { ____chimes_arg44 = ((char *)&n3); ____chimes_arg45 = (sizeof(int)); } calling((void*)read, 6, ____alias_loc_id_9, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645994UL), (size_t)(0UL)); (read)(fd, ____chimes_arg44, ____chimes_arg45); }) ;
 # 443 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   new_mem = ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n1, n2, n3); });
 # 444 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5731,7 +5731,7 @@ char *mem;
 # 449 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   mem = (char *) malloc_wrapper ((unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417646098UL, 0, 0);
 # 450 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_10: ({ unsigned long ____chimes_arg48; if (!____chimes_replaying) { ____chimes_arg48 = ((n1 + 1) * (n2 + 1) * sizeof(float)); } calling((void*)read, 10, ____alias_loc_id_7, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417646098UL), (size_t)(0UL)); (read)(fd, mem, ____chimes_arg48); }) ;
+   call_lbl_10: ({ unsigned long ____chimes_arg48; if (!____chimes_replaying) { ____chimes_arg48 = ((n1 + 1) * (n2 + 1) * sizeof(float)); } calling((void*)read, 10, ____alias_loc_id_8, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417646098UL), (size_t)(0UL)); (read)(fd, mem, ____chimes_arg48); }) ;
 # 451 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   for (i = 0; i <= n1; i++) {
 # 452 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5755,7 +5755,7 @@ char *mem;
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   mem = (char *) malloc_wrapper ((unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417646098UL, 0, 0);
 # 463 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_14: ({ unsigned long ____chimes_arg51; if (!____chimes_replaying) { ____chimes_arg51 = ((n2 + 1) * (n3 + 1) * sizeof(float)); } calling((void*)read, 14, ____alias_loc_id_8, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417646098UL), (size_t)(0UL)); (read)(fd, mem, ____chimes_arg51); }) ;
+   call_lbl_14: ({ unsigned long ____chimes_arg51; if (!____chimes_replaying) { ____chimes_arg51 = ((n2 + 1) * (n3 + 1) * sizeof(float)); } calling((void*)read, 14, ____alias_loc_id_7, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417646098UL), (size_t)(0UL)); (read)(fd, mem, ____chimes_arg51); }) ;
 # 464 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   for (i = 0; i <= n2; i++) {
 # 465 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5771,7 +5771,7 @@ char *mem;
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   free_wrapper(mem, 12828305900417646098UL);
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_16: ({ calling((void*)close, 16, ____alias_loc_id_9, 0UL, 1, (size_t)(0UL)); (close)(fd); }) ;
+   call_lbl_16: ({ calling((void*)close, 16, ____alias_loc_id_6, 0UL, 1, (size_t)(0UL)); (close)(fd); }) ;
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   printf("Done\n");
@@ -5814,7 +5814,7 @@ float squash_quick(float x)
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  rm_stack(false, 0UL, "squash", &____must_manage_squash, ____alias_loc_id_10, ____chimes_did_disable2); return (1.0 / (1.0 + exp(-x)));
+  rm_stack(false, 0UL, "squash", &____must_manage_squash, ____alias_loc_id_12, ____chimes_did_disable2); return (1.0 / (1.0 + exp(-x)));
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 
@@ -5833,11 +5833,11 @@ float *alloc_1d_dbl_quick(int n)
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
     printf("ALLOC_1D_DBL: Couldn't allocate array of floats\n");
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-    rm_stack(true, 12828305900417644640UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_11, ____chimes_did_disable3); return (__null);
+    rm_stack(true, 12828305900417644640UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_13, ____chimes_did_disable3); return (__null);
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  rm_stack(true, 12828305900417644640UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_11, ____chimes_did_disable3); return (new_mem);
+  rm_stack(true, 12828305900417644640UL, "alloc_1d_dbl", &____must_manage_alloc_1d_dbl, ____alias_loc_id_13, ____chimes_did_disable3); return (new_mem);
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 
@@ -5858,7 +5858,7 @@ float **alloc_2d_dbl_quick(int m, int n)
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
     printf("ALLOC_2D_DBL: Couldn't allocate array of dbl ptrs\n");
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-    rm_stack(true, 12828305900417644673UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_12, ____chimes_did_disable4); return (__null);
+    rm_stack(true, 12828305900417644673UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_14, ____chimes_did_disable4); return (__null);
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5870,7 +5870,7 @@ float **alloc_2d_dbl_quick(int m, int n)
   }
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  rm_stack(true, 12828305900417644673UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_12, ____chimes_did_disable4); return (new_mem);
+  rm_stack(true, 12828305900417644673UL, "alloc_2d_dbl", &____must_manage_alloc_2d_dbl, ____alias_loc_id_14, ____chimes_did_disable4); return (new_mem);
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 
@@ -5894,7 +5894,7 @@ void bpnn_randomize_weights_quick(float **w, int m, int n)
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_randomize_weights", &____must_manage_bpnn_randomize_weights, ____alias_loc_id_13, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "bpnn_randomize_weights", &____must_manage_bpnn_randomize_weights, ____alias_loc_id_15, ____chimes_did_disable5); }
 
 void bpnn_randomize_weights(float **w, int m, int n) { (____chimes_replaying ? bpnn_randomize_weights_resumable(w, m, n) : bpnn_randomize_weights_quick(w, m, n)); }
 
@@ -5911,7 +5911,7 @@ void bpnn_randomize_row_quick(float *w, int m)
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
     }
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_randomize_row", &____must_manage_bpnn_randomize_row, ____alias_loc_id_14, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "bpnn_randomize_row", &____must_manage_bpnn_randomize_row, ____alias_loc_id_16, ____chimes_did_disable6); }
 
 void bpnn_randomize_row(float *w, int m) { (____chimes_replaying ? bpnn_randomize_row_resumable(w, m) : bpnn_randomize_row_quick(w, m)); }
 
@@ -5932,7 +5932,7 @@ void bpnn_zero_weights_quick(float **w, int m, int n)
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_zero_weights", &____must_manage_bpnn_zero_weights, ____alias_loc_id_15, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "bpnn_zero_weights", &____must_manage_bpnn_zero_weights, ____alias_loc_id_17, ____chimes_did_disable7); }
 
 void bpnn_zero_weights(float **w, int m, int n) { (____chimes_replaying ? bpnn_zero_weights_resumable(w, m, n) : bpnn_zero_weights_quick(w, m, n)); }
 
@@ -5944,7 +5944,7 @@ void bpnn_initialize_quick(int seed)
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   srand(seed);
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_initialize", &____must_manage_bpnn_initialize, ____alias_loc_id_16, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "bpnn_initialize", &____must_manage_bpnn_initialize, ____alias_loc_id_18, ____chimes_did_disable8); }
 
 void bpnn_initialize(int seed) { (____chimes_replaying ? bpnn_initialize_resumable(seed) : bpnn_initialize_quick(seed)); }
 
@@ -5961,7 +5961,7 @@ BPNN *bpnn_internal_create_quick(int n_in, int n_hidden, int n_out)
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
     printf("BPNN_CREATE: Couldn't allocate neural network\n");
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-    rm_stack(true, 12828305900417646088UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_17, ____chimes_did_disable9); return (__null);
+    rm_stack(true, 12828305900417646088UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_19, ____chimes_did_disable9); return (__null);
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -5996,7 +5996,7 @@ BPNN *bpnn_internal_create_quick(int n_in, int n_hidden, int n_out)
   newnet->hidden_prev_weights = ({ calling_npm("alloc_2d_dbl", 0); alloc_2d_dbl_npm(n_hidden + 1, n_out + 1); });
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  rm_stack(true, 12828305900417646088UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_17, ____chimes_did_disable9); return (newnet);
+  rm_stack(true, 12828305900417646088UL, "bpnn_internal_create", &____must_manage_bpnn_internal_create, ____alias_loc_id_19, ____chimes_did_disable9); return (newnet);
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 
@@ -6056,7 +6056,7 @@ void bpnn_free_quick(BPNN *net)
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   free_wrapper((char *) net, 12828305900417645081UL);
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_free", &____must_manage_bpnn_free, ____alias_loc_id_18, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "bpnn_free", &____must_manage_bpnn_free, ____alias_loc_id_20, ____chimes_did_disable10); }
 
 void bpnn_free(BPNN *net) { (____chimes_replaying ? bpnn_free_resumable(net) : bpnn_free_quick(net)); }
 
@@ -6085,7 +6085,7 @@ BPNN *bpnn_create_quick(int n_in, int n_hidden, int n_out)
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   ({ calling_npm("bpnn_randomize_row", 0); bpnn_randomize_row_npm(newnet->target, n_out); });
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-  rm_stack(true, 12828305900417645097UL, "bpnn_create", &____must_manage_bpnn_create, ____alias_loc_id_19, ____chimes_did_disable11); return (newnet);
+  rm_stack(true, 12828305900417645097UL, "bpnn_create", &____must_manage_bpnn_create, ____alias_loc_id_21, ____chimes_did_disable11); return (newnet);
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 }
 
@@ -6126,7 +6126,7 @@ void bpnn_layerforward_quick(float *l1, float *l2, float **conn, int n1, int n2)
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_layerforward", &____must_manage_bpnn_layerforward, ____alias_loc_id_20, ____chimes_did_disable12); }
+rm_stack(false, 0UL, "bpnn_layerforward", &____must_manage_bpnn_layerforward, ____alias_loc_id_22, ____chimes_did_disable12); }
 
 void bpnn_layerforward(float *l1, float *l2, float **conn, int n1, int n2) { (____chimes_replaying ? bpnn_layerforward_resumable(l1, l2, conn, n1, n2) : bpnn_layerforward_quick(l1, l2, conn, n1, n2)); }
 
@@ -6154,7 +6154,7 @@ void bpnn_output_error_quick(float *delta, float *target, float *output, int nj,
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   *err = errsum;
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_output_error", &____must_manage_bpnn_output_error, ____alias_loc_id_21, ____chimes_did_disable13); }
+rm_stack(false, 0UL, "bpnn_output_error", &____must_manage_bpnn_output_error, ____alias_loc_id_23, ____chimes_did_disable13); }
 
 void bpnn_output_error(float *delta, float *target, float *output, int nj, float *err) { (____chimes_replaying ? bpnn_output_error_resumable(delta, target, output, nj, err) : bpnn_output_error_quick(delta, target, output, nj, err)); }
 
@@ -6201,7 +6201,7 @@ void bpnn_hidden_error_quick(float *delta_h,
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   *err = errsum;
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_hidden_error", &____must_manage_bpnn_hidden_error, ____alias_loc_id_22, ____chimes_did_disable14); }
+rm_stack(false, 0UL, "bpnn_hidden_error", &____must_manage_bpnn_hidden_error, ____alias_loc_id_24, ____chimes_did_disable14); }
 
 void bpnn_hidden_error(float *delta_h,
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6253,7 +6253,7 @@ void bpnn_adjust_weights_quick(float *delta, int ndelta, float *ly, int nly, flo
 # 310 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   }
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-rm_stack(false, 0UL, "bpnn_adjust_weights", &____must_manage_bpnn_adjust_weights, ____alias_loc_id_23, ____chimes_did_disable15); }
+rm_stack(false, 0UL, "bpnn_adjust_weights", &____must_manage_bpnn_adjust_weights, ____alias_loc_id_25, ____chimes_did_disable15); }
 
 void bpnn_adjust_weights(float *delta, int ndelta, float *ly, int nly, float **w, float **oldw) { (____chimes_replaying ? bpnn_adjust_weights_resumable(delta, ndelta, ly, nly, w, oldw) : bpnn_adjust_weights_quick(delta, ndelta, ly, nly, w, oldw)); }
 
@@ -6305,7 +6305,7 @@ int in;
 # 339 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 340 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_1: ({ calling((void*)bpnn_layerforward, 1, ____alias_loc_id_3, 0UL, 5, (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(0UL)); bpnn_layerforward_quick(net->input_units, net->hidden_units, net->input_weights, in, hid); }) ;
+   call_lbl_1: ({ calling((void*)bpnn_layerforward, 1, ____alias_loc_id_4, 0UL, 5, (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(0UL)); bpnn_layerforward_quick(net->input_units, net->hidden_units, net->input_weights, in, hid); }) ;
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
    call_lbl_2: ({ calling((void*)bpnn_layerforward, 2, 0, 0UL, 5, (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(0UL)); bpnn_layerforward_quick(net->hidden_units, net->output_units, net->hidden_weights, hid, out); }) ;
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6321,7 +6321,7 @@ int in;
 # 353 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 354 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_3: ({ calling((void*)bpnn_adjust_weights, 3, ____alias_loc_id_4, 0UL, 6, (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL)); bpnn_adjust_weights_quick(net->output_delta, out, net->hidden_units, hid, net->hidden_weights, net->hidden_prev_weights); }) ;
+   call_lbl_3: ({ calling((void*)bpnn_adjust_weights, 3, ____alias_loc_id_3, 0UL, 6, (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL)); bpnn_adjust_weights_quick(net->output_delta, out, net->hidden_units, hid, net->hidden_weights, net->hidden_prev_weights); }) ;
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
    call_lbl_4: ({ calling((void*)bpnn_adjust_weights, 4, 0, 0UL, 6, (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(0UL), (size_t)(12828305900417645628UL), (size_t)(12828305900417645628UL)); bpnn_adjust_weights_quick(net->hidden_delta, hid, net->input_units, in, net->input_weights, net->input_prev_weights); }) ;
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6459,11 +6459,11 @@ char *mem;
   printf("Reading '%s'\n", filename);
 # 439 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 440 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_4: ({ calling((void*)read, 4, ____alias_loc_id_6, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645992UL), (size_t)(0UL)); (read)(fd, (char *)&n1, sizeof(int)); }) ;
+   call_lbl_4: ({ calling((void*)read, 4, ____alias_loc_id_11, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645992UL), (size_t)(0UL)); (read)(fd, (char *)&n1, sizeof(int)); }) ;
 # 441 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_5: ({ calling((void*)read, 5, 0, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645993UL), (size_t)(0UL)); (read)(fd, (char *)&n2, sizeof(int)); }) ;
+   call_lbl_5: ({ calling((void*)read, 5, ____alias_loc_id_10, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645993UL), (size_t)(0UL)); (read)(fd, (char *)&n2, sizeof(int)); }) ;
 # 442 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_6: ({ calling((void*)read, 6, 0, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645994UL), (size_t)(0UL)); (read)(fd, (char *)&n3, sizeof(int)); }) ;
+   call_lbl_6: ({ calling((void*)read, 6, ____alias_loc_id_9, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417645994UL), (size_t)(0UL)); (read)(fd, (char *)&n3, sizeof(int)); }) ;
 # 443 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   new_mem = ({ calling_npm("bpnn_internal_create", 0); bpnn_internal_create_npm(n1, n2, n3); });
 # 444 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6477,7 +6477,7 @@ char *mem;
 # 449 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   mem = (char *) malloc_wrapper ((unsigned) ((n1+1) * (n2+1) * sizeof(float)), 12828305900417646098UL, 0, 0);
 # 450 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_10: ({ calling((void*)read, 10, ____alias_loc_id_7, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417646098UL), (size_t)(0UL)); (read)(fd, mem, (n1 + 1) * (n2 + 1) * sizeof(float)); }) ;
+   call_lbl_10: ({ calling((void*)read, 10, ____alias_loc_id_8, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417646098UL), (size_t)(0UL)); (read)(fd, mem, (n1 + 1) * (n2 + 1) * sizeof(float)); }) ;
 # 451 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   for (i = 0; i <= n1; i++) {
 # 452 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6501,7 +6501,7 @@ char *mem;
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   mem = (char *) malloc_wrapper ((unsigned) ((n2+1) * (n3+1) * sizeof(float)), 12828305900417646098UL, 0, 0);
 # 463 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_14: ({ calling((void*)read, 14, ____alias_loc_id_8, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417646098UL), (size_t)(0UL)); (read)(fd, mem, (n2 + 1) * (n3 + 1) * sizeof(float)); }) ;
+   call_lbl_14: ({ calling((void*)read, 14, ____alias_loc_id_7, 0UL, 3, (size_t)(0UL), (size_t)(12828305900417646098UL), (size_t)(0UL)); (read)(fd, mem, (n2 + 1) * (n3 + 1) * sizeof(float)); }) ;
 # 464 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   for (i = 0; i <= n2; i++) {
 # 465 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6517,7 +6517,7 @@ char *mem;
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   free_wrapper(mem, 12828305900417646098UL);
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-   call_lbl_16: ({ calling((void*)close, 16, ____alias_loc_id_9, 0UL, 1, (size_t)(0UL)); (close)(fd); }) ;
+   call_lbl_16: ({ calling((void*)close, 16, ____alias_loc_id_6, 0UL, 1, (size_t)(0UL)); (close)(fd); }) ;
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   printf("Done\n");
@@ -7219,34 +7219,34 @@ BPNN *bpnn_read_npm(char *filename)
 
 static int module_init() {
     init_module(12828305900417644601UL, 64, 20, 44, 28, 20, 4, 24, 24, 0, 3,
-                           &____alias_loc_id_0, (unsigned)6, (unsigned)0, (12828305900417644601UL + 532UL), (12828305900417644601UL + 533UL), (12828305900417644601UL + 534UL), (12828305900417644601UL + 535UL), (12828305900417644601UL + 536UL), (12828305900417644601UL + 606UL),
-                           &____alias_loc_id_1, (unsigned)7, (unsigned)0, (12828305900417644601UL + 840UL), (12828305900417644601UL + 841UL), (12828305900417644601UL + 842UL), (12828305900417644601UL + 843UL), (12828305900417644601UL + 844UL), (12828305900417644601UL + 845UL), (12828305900417644601UL + 943UL),
-                           &____alias_loc_id_2, (unsigned)4, (unsigned)1, (12828305900417644601UL + 947UL), (12828305900417644601UL + 948UL), (12828305900417644601UL + 949UL), (12828305900417644601UL + 950UL), "bpnn_layerforward", (unsigned)1, (12828305900417644601UL + 970UL),
-                           &____alias_loc_id_3, (unsigned)6, (unsigned)1, (12828305900417644601UL + 994UL), (12828305900417644601UL + 995UL), (12828305900417644601UL + 996UL), (12828305900417644601UL + 997UL), (12828305900417644601UL + 998UL), (12828305900417644601UL + 999UL), "bpnn_layerforward", (unsigned)1, (12828305900417644601UL + 1027UL),
-                           &____alias_loc_id_4, (unsigned)2, (unsigned)4, (12828305900417644601UL + 1113UL), (12828305900417644601UL + 1114UL), "bpnn_output_error", (unsigned)2, (12828305900417644601UL + 1000UL), (12828305900417644601UL + 1027UL), "bpnn_layerforward", (unsigned)1, (12828305900417644601UL + 1027UL), "bpnn_adjust_weights", (unsigned)1, (12828305900417644601UL + 1027UL), "bpnn_hidden_error", (unsigned)2, (12828305900417644601UL + 1001UL), (12828305900417644601UL + 1027UL),
-                           &____alias_loc_id_5, (unsigned)1, (unsigned)1, (12828305900417644601UL + 1387UL), "open", (unsigned)1, (12828305900417644601UL + 1650UL),
-                           &____alias_loc_id_6, (unsigned)1, (unsigned)1, (12828305900417644601UL + 1390UL), "read", (unsigned)1, (12828305900417644601UL + 1391UL),
-                           &____alias_loc_id_7, (unsigned)3, (unsigned)1, (12828305900417644601UL + 1388UL), (12828305900417644601UL + 1389UL), (12828305900417644601UL + 1396UL), "read", (unsigned)4, (12828305900417644601UL + 1391UL), (12828305900417644601UL + 1392UL), (12828305900417644601UL + 1393UL), (12828305900417644601UL + 1497UL),
-                           &____alias_loc_id_8, (unsigned)9, (unsigned)1, (12828305900417644601UL + 1388UL), (12828305900417644601UL + 1394UL), (12828305900417644601UL + 1395UL), (12828305900417644601UL + 1396UL), (12828305900417644601UL + 1397UL), (12828305900417644601UL + 1398UL), (12828305900417644601UL + 1399UL), (12828305900417644601UL + 1400UL), (12828305900417644601UL + 1491UL), "read", (unsigned)1, (12828305900417644601UL + 1497UL),
-                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (12828305900417644601UL + 1394UL), (12828305900417644601UL + 1395UL), (12828305900417644601UL + 1396UL), (12828305900417644601UL + 1401UL), (12828305900417644601UL + 1402UL), (12828305900417644601UL + 1403UL), (12828305900417644601UL + 1404UL), (12828305900417644601UL + 1491UL),
-                            &____alias_loc_id_10, (unsigned)1, (unsigned)0, (12828305900417644601UL + 11UL),
-                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (12828305900417644601UL + 28UL), (12828305900417644601UL + 29UL), (12828305900417644601UL + 30UL),
-                            &____alias_loc_id_12, (unsigned)6, (unsigned)0, (12828305900417644601UL + 56UL), (12828305900417644601UL + 57UL), (12828305900417644601UL + 58UL), (12828305900417644601UL + 59UL), (12828305900417644601UL + 60UL), (12828305900417644601UL + 72UL),
-                            &____alias_loc_id_13, (unsigned)6, (unsigned)0, (12828305900417644601UL + 106UL), (12828305900417644601UL + 107UL), (12828305900417644601UL + 108UL), (12828305900417644601UL + 109UL), (12828305900417644601UL + 110UL), (12828305900417644601UL + 140UL),
-                            &____alias_loc_id_14, (unsigned)4, (unsigned)0, (12828305900417644601UL + 157UL), (12828305900417644601UL + 158UL), (12828305900417644601UL + 159UL), (12828305900417644601UL + 182UL),
-                            &____alias_loc_id_15, (unsigned)6, (unsigned)0, (12828305900417644601UL + 184UL), (12828305900417644601UL + 185UL), (12828305900417644601UL + 186UL), (12828305900417644601UL + 187UL), (12828305900417644601UL + 188UL), (12828305900417644601UL + 215UL),
-                            &____alias_loc_id_16, (unsigned)1, (unsigned)0, (12828305900417644601UL + 232UL),
-                            &____alias_loc_id_17, (unsigned)6, (unsigned)0, (12828305900417644601UL + 242UL), (12828305900417644601UL + 243UL), (12828305900417644601UL + 244UL), (12828305900417644601UL + 245UL), (12828305900417644601UL + 246UL), (12828305900417644601UL + 1487UL),
-                            &____alias_loc_id_18, (unsigned)4, (unsigned)0, (12828305900417644601UL + 351UL), (12828305900417644601UL + 352UL), (12828305900417644601UL + 353UL), (12828305900417644601UL + 354UL),
-                            &____alias_loc_id_19, (unsigned)4, (unsigned)3, (12828305900417644601UL + 482UL), (12828305900417644601UL + 483UL), (12828305900417644601UL + 484UL), (12828305900417644601UL + 485UL), "bpnn_randomize_row", (unsigned)1, (12828305900417644601UL + 500UL), "bpnn_randomize_weights", (unsigned)1, (12828305900417644601UL + 500UL), "bpnn_zero_weights", (unsigned)1, (12828305900417644601UL + 500UL),
-                            &____alias_loc_id_20, (unsigned)4, (unsigned)0, (12828305900417644601UL + 537UL), (12828305900417644601UL + 538UL), (12828305900417644601UL + 539UL), (12828305900417644601UL + 607UL),
-                            &____alias_loc_id_21, (unsigned)11, (unsigned)0, (12828305900417644601UL + 612UL), (12828305900417644601UL + 613UL), (12828305900417644601UL + 614UL), (12828305900417644601UL + 615UL), (12828305900417644601UL + 616UL), (12828305900417644601UL + 617UL), (12828305900417644601UL + 618UL), (12828305900417644601UL + 619UL), (12828305900417644601UL + 620UL), (12828305900417644601UL + 687UL), (12828305900417644601UL + 709UL),
-                            &____alias_loc_id_22, (unsigned)14, (unsigned)0, (12828305900417644601UL + 710UL), (12828305900417644601UL + 711UL), (12828305900417644601UL + 712UL), (12828305900417644601UL + 713UL), (12828305900417644601UL + 714UL), (12828305900417644601UL + 715UL), (12828305900417644601UL + 716UL), (12828305900417644601UL + 717UL), (12828305900417644601UL + 718UL), (12828305900417644601UL + 719UL), (12828305900417644601UL + 720UL), (12828305900417644601UL + 721UL), (12828305900417644601UL + 815UL), (12828305900417644601UL + 839UL),
-                            &____alias_loc_id_23, (unsigned)5, (unsigned)0, (12828305900417644601UL + 846UL), (12828305900417644601UL + 847UL), (12828305900417644601UL + 848UL), (12828305900417644601UL + 900UL), (12828305900417644601UL + 915UL),
-                            &____alias_loc_id_24, (unsigned)0, (unsigned)1, "bpnn_layerforward", (unsigned)1, (12828305900417644601UL + 970UL),
-                            &____alias_loc_id_25, (unsigned)0, (unsigned)1, "bpnn_adjust_weights", (unsigned)1, (12828305900417644601UL + 1027UL),
-                            &____alias_loc_id_26, (unsigned)21, (unsigned)0, (12828305900417644601UL + 1115UL), (12828305900417644601UL + 1116UL), (12828305900417644601UL + 1117UL), (12828305900417644601UL + 1118UL), (12828305900417644601UL + 1119UL), (12828305900417644601UL + 1120UL), (12828305900417644601UL + 1121UL), (12828305900417644601UL + 1122UL), (12828305900417644601UL + 1123UL), (12828305900417644601UL + 1124UL), (12828305900417644601UL + 1125UL), (12828305900417644601UL + 1126UL), (12828305900417644601UL + 1127UL), (12828305900417644601UL + 1128UL), (12828305900417644601UL + 1129UL), (12828305900417644601UL + 1130UL), (12828305900417644601UL + 1131UL), (12828305900417644601UL + 1132UL), (12828305900417644601UL + 1133UL), (12828305900417644601UL + 1134UL), (12828305900417644601UL + 1192UL),
-                            &____alias_loc_id_27, (unsigned)2, (unsigned)1, (12828305900417644601UL + 1386UL), (12828305900417644601UL + 1390UL), "bpnn_zero_weights", (unsigned)1, (12828305900417644601UL + 1489UL),
+                           &____alias_loc_id_0, (unsigned)6, (unsigned)0, (unsigned)0, (12828305900417644601UL + 532UL), (12828305900417644601UL + 533UL), (12828305900417644601UL + 534UL), (12828305900417644601UL + 535UL), (12828305900417644601UL + 536UL), (12828305900417644601UL + 606UL),
+                           &____alias_loc_id_1, (unsigned)7, (unsigned)0, (unsigned)0, (12828305900417644601UL + 840UL), (12828305900417644601UL + 841UL), (12828305900417644601UL + 842UL), (12828305900417644601UL + 843UL), (12828305900417644601UL + 844UL), (12828305900417644601UL + 845UL), (12828305900417644601UL + 943UL),
+                           &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)0, (12828305900417644601UL + 947UL), (12828305900417644601UL + 948UL), (12828305900417644601UL + 949UL), (12828305900417644601UL + 950UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (12828305900417644601UL + 1113UL), (12828305900417644601UL + 1114UL),
+                           &____alias_loc_id_4, (unsigned)6, (unsigned)0, (unsigned)0, (12828305900417644601UL + 994UL), (12828305900417644601UL + 995UL), (12828305900417644601UL + 996UL), (12828305900417644601UL + 997UL), (12828305900417644601UL + 998UL), (12828305900417644601UL + 999UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)1, (12828305900417644601UL + 1387UL), "open", (unsigned)1, (12828305900417644601UL + 1650UL),
+                           &____alias_loc_id_6, (unsigned)8, (unsigned)0, (unsigned)0, (12828305900417644601UL + 1394UL), (12828305900417644601UL + 1395UL), (12828305900417644601UL + 1396UL), (12828305900417644601UL + 1401UL), (12828305900417644601UL + 1402UL), (12828305900417644601UL + 1403UL), (12828305900417644601UL + 1404UL), (12828305900417644601UL + 1491UL),
+                           &____alias_loc_id_7, (unsigned)9, (unsigned)0, (unsigned)1, (12828305900417644601UL + 1388UL), (12828305900417644601UL + 1394UL), (12828305900417644601UL + 1395UL), (12828305900417644601UL + 1396UL), (12828305900417644601UL + 1397UL), (12828305900417644601UL + 1398UL), (12828305900417644601UL + 1399UL), (12828305900417644601UL + 1400UL), (12828305900417644601UL + 1491UL), "read", (unsigned)1, (12828305900417644601UL + 1497UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)1, (12828305900417644601UL + 1388UL), (12828305900417644601UL + 1389UL), (12828305900417644601UL + 1396UL), "read", (unsigned)1, (12828305900417644601UL + 1497UL),
+                           &____alias_loc_id_9, (unsigned)0, (unsigned)0, (unsigned)1, "read", (unsigned)1, (12828305900417644601UL + 1393UL),
+                            &____alias_loc_id_10, (unsigned)0, (unsigned)0, (unsigned)1, "read", (unsigned)1, (12828305900417644601UL + 1392UL),
+                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)1, (12828305900417644601UL + 1390UL), "read", (unsigned)1, (12828305900417644601UL + 1391UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (12828305900417644601UL + 11UL),
+                            &____alias_loc_id_13, (unsigned)3, (unsigned)0, (unsigned)0, (12828305900417644601UL + 28UL), (12828305900417644601UL + 29UL), (12828305900417644601UL + 30UL),
+                            &____alias_loc_id_14, (unsigned)6, (unsigned)0, (unsigned)0, (12828305900417644601UL + 56UL), (12828305900417644601UL + 57UL), (12828305900417644601UL + 58UL), (12828305900417644601UL + 59UL), (12828305900417644601UL + 60UL), (12828305900417644601UL + 72UL),
+                            &____alias_loc_id_15, (unsigned)6, (unsigned)0, (unsigned)0, (12828305900417644601UL + 106UL), (12828305900417644601UL + 107UL), (12828305900417644601UL + 108UL), (12828305900417644601UL + 109UL), (12828305900417644601UL + 110UL), (12828305900417644601UL + 140UL),
+                            &____alias_loc_id_16, (unsigned)4, (unsigned)0, (unsigned)0, (12828305900417644601UL + 157UL), (12828305900417644601UL + 158UL), (12828305900417644601UL + 159UL), (12828305900417644601UL + 182UL),
+                            &____alias_loc_id_17, (unsigned)6, (unsigned)0, (unsigned)0, (12828305900417644601UL + 184UL), (12828305900417644601UL + 185UL), (12828305900417644601UL + 186UL), (12828305900417644601UL + 187UL), (12828305900417644601UL + 188UL), (12828305900417644601UL + 215UL),
+                            &____alias_loc_id_18, (unsigned)1, (unsigned)0, (unsigned)0, (12828305900417644601UL + 232UL),
+                            &____alias_loc_id_19, (unsigned)6, (unsigned)0, (unsigned)0, (12828305900417644601UL + 242UL), (12828305900417644601UL + 243UL), (12828305900417644601UL + 244UL), (12828305900417644601UL + 245UL), (12828305900417644601UL + 246UL), (12828305900417644601UL + 1487UL),
+                            &____alias_loc_id_20, (unsigned)4, (unsigned)0, (unsigned)0, (12828305900417644601UL + 351UL), (12828305900417644601UL + 352UL), (12828305900417644601UL + 353UL), (12828305900417644601UL + 354UL),
+                            &____alias_loc_id_21, (unsigned)4, (unsigned)0, (unsigned)0, (12828305900417644601UL + 482UL), (12828305900417644601UL + 483UL), (12828305900417644601UL + 484UL), (12828305900417644601UL + 485UL),
+                            &____alias_loc_id_22, (unsigned)4, (unsigned)0, (unsigned)0, (12828305900417644601UL + 537UL), (12828305900417644601UL + 538UL), (12828305900417644601UL + 539UL), (12828305900417644601UL + 607UL),
+                            &____alias_loc_id_23, (unsigned)11, (unsigned)0, (unsigned)0, (12828305900417644601UL + 612UL), (12828305900417644601UL + 613UL), (12828305900417644601UL + 614UL), (12828305900417644601UL + 615UL), (12828305900417644601UL + 616UL), (12828305900417644601UL + 617UL), (12828305900417644601UL + 618UL), (12828305900417644601UL + 619UL), (12828305900417644601UL + 620UL), (12828305900417644601UL + 687UL), (12828305900417644601UL + 709UL),
+                            &____alias_loc_id_24, (unsigned)14, (unsigned)0, (unsigned)0, (12828305900417644601UL + 710UL), (12828305900417644601UL + 711UL), (12828305900417644601UL + 712UL), (12828305900417644601UL + 713UL), (12828305900417644601UL + 714UL), (12828305900417644601UL + 715UL), (12828305900417644601UL + 716UL), (12828305900417644601UL + 717UL), (12828305900417644601UL + 718UL), (12828305900417644601UL + 719UL), (12828305900417644601UL + 720UL), (12828305900417644601UL + 721UL), (12828305900417644601UL + 815UL), (12828305900417644601UL + 839UL),
+                            &____alias_loc_id_25, (unsigned)5, (unsigned)0, (unsigned)0, (12828305900417644601UL + 846UL), (12828305900417644601UL + 847UL), (12828305900417644601UL + 848UL), (12828305900417644601UL + 900UL), (12828305900417644601UL + 915UL),
+                            &____alias_loc_id_26, (unsigned)22, (unsigned)0, (unsigned)0, (12828305900417644601UL + 1115UL), (12828305900417644601UL + 1116UL), (12828305900417644601UL + 1117UL), (12828305900417644601UL + 1118UL), (12828305900417644601UL + 1119UL), (12828305900417644601UL + 1120UL), (12828305900417644601UL + 1121UL), (12828305900417644601UL + 1122UL), (12828305900417644601UL + 1123UL), (12828305900417644601UL + 1124UL), (12828305900417644601UL + 1125UL), (12828305900417644601UL + 1126UL), (12828305900417644601UL + 1127UL), (12828305900417644601UL + 1128UL), (12828305900417644601UL + 1129UL), (12828305900417644601UL + 1130UL), (12828305900417644601UL + 1131UL), (12828305900417644601UL + 1132UL), (12828305900417644601UL + 1133UL), (12828305900417644601UL + 1134UL), (12828305900417644601UL + 1150UL), (12828305900417644601UL + 1192UL),
+                            &____alias_loc_id_27, (unsigned)2, (unsigned)0, (unsigned)0, (12828305900417644601UL + 1386UL), (12828305900417644601UL + 1390UL),
                             "drnd", (void *)(&drnd_npm), (void *)__null, 0, 0, 0UL, 1, "rand", 0, 0UL,
                             "dpn1", (void *)(&dpn1_npm), (void *)__null, 0, 0, 0UL, 1, "drnd", 0, 0UL,
                             "squash", (void *)(&squash_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "exp", 1, 0UL, 0UL,
@@ -7266,7 +7266,7 @@ static int module_init() {
                             "bpnn_feedforward", (void *)(&bpnn_feedforward_npm), (void *)__null, 1, &____alias_loc_id_2, 1, (12828305900417644601UL + 993UL), 0UL, 2, "bpnn_layerforward", 5, (12828305900417644601UL + 970UL), (12828305900417644601UL + 970UL), (12828305900417644601UL + 970UL), 0UL, 0UL, 0UL, "bpnn_layerforward", 5, (12828305900417644601UL + 970UL), (12828305900417644601UL + 970UL), (12828305900417644601UL + 970UL), 0UL, 0UL, 0UL,
                             "bpnn_train", (void *)(&bpnn_train_npm), (void *)__null, 2, &____alias_loc_id_3, &____alias_loc_id_4, 3, (12828305900417644601UL + 1112UL), (12828305900417644601UL + 1113UL), (12828305900417644601UL + 1114UL), 0UL, 6, "bpnn_layerforward", 5, (12828305900417644601UL + 1027UL), (12828305900417644601UL + 1027UL), (12828305900417644601UL + 1027UL), 0UL, 0UL, 0UL, "bpnn_layerforward", 5, (12828305900417644601UL + 1027UL), (12828305900417644601UL + 1027UL), (12828305900417644601UL + 1027UL), 0UL, 0UL, 0UL, "bpnn_output_error", 5, (12828305900417644601UL + 1027UL), (12828305900417644601UL + 1027UL), (12828305900417644601UL + 1027UL), 0UL, (12828305900417644601UL + 1000UL), 0UL, "bpnn_hidden_error", 7, (12828305900417644601UL + 1027UL), 0UL, (12828305900417644601UL + 1027UL), 0UL, (12828305900417644601UL + 1027UL), (12828305900417644601UL + 1027UL), (12828305900417644601UL + 1001UL), 0UL, "bpnn_adjust_weights", 6, (12828305900417644601UL + 1027UL), 0UL, (12828305900417644601UL + 1027UL), 0UL, (12828305900417644601UL + 1027UL), (12828305900417644601UL + 1027UL), 0UL, "bpnn_adjust_weights", 6, (12828305900417644601UL + 1027UL), 0UL, (12828305900417644601UL + 1027UL), 0UL, (12828305900417644601UL + 1027UL), (12828305900417644601UL + 1027UL), 0UL,
                             "bpnn_save", (void *)(&bpnn_save_npm), (void *)__null, 0, 2, (12828305900417644601UL + 1377UL), (12828305900417644601UL + 1378UL), 0UL, 12, "fopen", 2, (12828305900417644601UL + 1378UL), (12828305900417644601UL + 1661UL), (12828305900417644601UL + 1150UL), "printf", 5, (12828305900417644601UL + 1662UL), 0UL, 0UL, 0UL, (12828305900417644601UL + 1378UL), 0UL, "fwrite", 4, (12828305900417644601UL + 1117UL), 0UL, 0UL, (12828305900417644601UL + 1150UL), 0UL, "fwrite", 4, (12828305900417644601UL + 1118UL), 0UL, 0UL, (12828305900417644601UL + 1150UL), 0UL, "fwrite", 4, (12828305900417644601UL + 1119UL), 0UL, 0UL, (12828305900417644601UL + 1150UL), 0UL, "malloc", 1, 0UL, (12828305900417644601UL + 1192UL), "fwrite", 4, (12828305900417644601UL + 1192UL), 0UL, 0UL, (12828305900417644601UL + 1150UL), 0UL, "free", 1, (12828305900417644601UL + 1192UL), 0UL, "malloc", 1, 0UL, (12828305900417644601UL + 1192UL), "fwrite", 4, (12828305900417644601UL + 1192UL), 0UL, 0UL, (12828305900417644601UL + 1150UL), 0UL, "free", 1, (12828305900417644601UL + 1192UL), 0UL, "fclose", 1, (12828305900417644601UL + 1150UL), 0UL,
-                            "bpnn_read", (void *)(&bpnn_read_npm), (void *)__null, 5, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 1, (12828305900417644601UL + 1650UL), (12828305900417644601UL + 1487UL), 19, "open", 3, (12828305900417644601UL + 1650UL), 0UL, 0UL, 0UL, "printf", 2, (12828305900417644601UL + 1663UL), (12828305900417644601UL + 1650UL), 0UL, "read", 3, 0UL, (12828305900417644601UL + 1391UL), 0UL, 0UL, "read", 3, 0UL, (12828305900417644601UL + 1392UL), 0UL, 0UL, "read", 3, 0UL, (12828305900417644601UL + 1393UL), 0UL, 0UL, "bpnn_internal_create", 3, 0UL, 0UL, 0UL, (12828305900417644601UL + 1487UL), "printf", 5, (12828305900417644601UL + 1659UL), (12828305900417644601UL + 1650UL), 0UL, 0UL, 0UL, 0UL, "printf", 1, (12828305900417644601UL + 1665UL), 0UL, "malloc", 1, 0UL, (12828305900417644601UL + 1497UL), "read", 3, 0UL, (12828305900417644601UL + 1497UL), 0UL, 0UL, "free", 1, (12828305900417644601UL + 1497UL), 0UL, "printf", 1, (12828305900417644601UL + 1666UL), 0UL, "malloc", 1, 0UL, (12828305900417644601UL + 1497UL), "read", 3, 0UL, (12828305900417644601UL + 1497UL), 0UL, 0UL, "free", 1, (12828305900417644601UL + 1497UL), 0UL, "close", 1, 0UL, 0UL, "printf", 1, (12828305900417644601UL + 1667UL), 0UL, "bpnn_zero_weights", 3, (12828305900417644601UL + 1489UL), 0UL, 0UL, 0UL, "bpnn_zero_weights", 3, (12828305900417644601UL + 1489UL), 0UL, 0UL, 0UL,
+                            "bpnn_read", (void *)(&bpnn_read_npm), (void *)__null, 7, &____alias_loc_id_10, &____alias_loc_id_11, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 1, (12828305900417644601UL + 1650UL), (12828305900417644601UL + 1487UL), 19, "open", 3, (12828305900417644601UL + 1650UL), 0UL, 0UL, 0UL, "printf", 2, (12828305900417644601UL + 1663UL), (12828305900417644601UL + 1650UL), 0UL, "read", 3, 0UL, (12828305900417644601UL + 1391UL), 0UL, 0UL, "read", 3, 0UL, (12828305900417644601UL + 1392UL), 0UL, 0UL, "read", 3, 0UL, (12828305900417644601UL + 1393UL), 0UL, 0UL, "bpnn_internal_create", 3, 0UL, 0UL, 0UL, (12828305900417644601UL + 1487UL), "printf", 5, (12828305900417644601UL + 1659UL), (12828305900417644601UL + 1650UL), 0UL, 0UL, 0UL, 0UL, "printf", 1, (12828305900417644601UL + 1665UL), 0UL, "malloc", 1, 0UL, (12828305900417644601UL + 1497UL), "read", 3, 0UL, (12828305900417644601UL + 1497UL), 0UL, 0UL, "free", 1, (12828305900417644601UL + 1497UL), 0UL, "printf", 1, (12828305900417644601UL + 1666UL), 0UL, "malloc", 1, 0UL, (12828305900417644601UL + 1497UL), "read", 3, 0UL, (12828305900417644601UL + 1497UL), 0UL, 0UL, "free", 1, (12828305900417644601UL + 1497UL), 0UL, "close", 1, 0UL, 0UL, "printf", 1, (12828305900417644601UL + 1667UL), 0UL, "bpnn_zero_weights", 3, (12828305900417644601UL + 1489UL), 0UL, 0UL, 0UL, "bpnn_zero_weights", 3, (12828305900417644601UL + 1489UL), 0UL, 0UL, 0UL,
                                "close", (void **)&(____chimes_extern_func_close),
                                "omp_set_num_threads", (void **)&(____chimes_extern_func_omp_set_num_threads),
                                "open", (void **)&(____chimes_extern_func_open),

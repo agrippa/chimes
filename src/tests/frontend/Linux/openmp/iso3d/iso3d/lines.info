@@ -1,7 +1,8 @@
-/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 91 5 : { 1, 2, 3 } direct:call:setup_config { setup_config { 4, 372 } }
-/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 118 5 : { 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 } prop:call:config_sources { config_sources { 4 } }
-/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 121 5 : { 15 } direct:call:init_data { config_sources { 4 }, init_data { 244, 246, 247 }, sample_sources { 180 } }
-/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 140 9 : { 12, 13, 16, 17, 18, 19, 20, 244 } prop:call:checkpoint { fwd { 244, 246, 247 } }
-/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 145 24 : { 12, 13, 16, 17, 18, 19, 20, 244 } prop:call:seconds { fwd { 244, 246, 247 } }
-/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 147 5 : { 21 } direct:call:finish_progress {  }
-/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 154 9 : { 22 } prop:call:save_layer_text { save_layer_text { 244, 765 } }
+/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 147 5 : { 21 } {  } call:finish_progress {  }
+/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 154 9 : { 22 } {  } call:save_layer_text { save_layer_text { 244, 765 } }
+/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 91 5 : { 1, 2, 3 } {  } call:setup_config { setup_config { 4, 372 } }
+/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 145 24 : { 16, 17 } {  } call:seconds {  }
+/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 121 5 : { 15 } {  } call:init_data { init_data { 244, 246, 247 } }
+/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 140 9 : { 12, 13, 16, 17, 18, 19, 20, 244 } {  } call:checkpoint {  }
+/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 119 20 : {  } {  } call:sample_sources { sample_sources { 180, 354 } }
+/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp 118 5 : {  } {  } call:config_sources { config_sources { 4 } }

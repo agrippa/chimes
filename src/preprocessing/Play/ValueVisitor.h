@@ -24,26 +24,6 @@
 
 using namespace llvm;
 
-class Mark {
-    public:
-        Mark(Value *set_val, Value *set_prev, size_t set_alias,
-                bool set_downward) : val(set_val), prev(set_prev),
-                alias(set_alias), downward(set_downward) {}
-
-        Value *get_val() { return val; }
-        Value *get_prev() { return prev; }
-        size_t get_alias() { return alias; }
-        bool get_downward() { return downward; }
-
-        void update_alias(size_t set) { alias = set; }
-
-    private:
-        Value *val;
-        Value *prev;
-        size_t alias;
-        bool downward;
-};
-
 class ValueVisitor {
     public:
         ValueVisitor(std::vector<Value *> *initial_insns,

@@ -1,8 +1,8 @@
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 127 28 : { 189, 190, 191, 196 } prop:call:AVI_open_input_file { AVI_open_input_file { 219 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 129 6 : { 194, 197 } prop:call:AVI_print_error { AVI_print_error { 1831 }, AVI_video_frames { 813 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 134 15 : { 194, 197 } prop:call:AVI_video_frames { AVI_print_error { 1831 }, AVI_video_frames { 813 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 135 19 : { 194 } direct:call:AVI_video_height { AVI_video_height { 813 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 136 19 : { 194 } direct:call:AVI_video_width { AVI_video_width { 813 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 538 17 : { 192, 193, 194, 195, 198, 813 } prop:call:get_frame { get_frame { 813 }, kernel { 199, 200 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 548 3 : { 194 } direct:call:omp_set_num_threads { get_frame { 813 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 553 4 : { 192 } prop:call:kernel { get_frame { 813 }, kernel { 199, 200 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 136 19 : { 194 } {  } call:AVI_video_width { AVI_video_width { 813 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 129 6 : { 197 } {  } call:AVI_print_error { AVI_print_error { 1831 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 548 3 : { 194 } {  } call:omp_set_num_threads {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 553 4 : { 192 } {  } call:kernel { kernel { 199, 200 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 135 19 : { 194 } {  } call:AVI_video_height { AVI_video_height { 813 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 127 28 : { 189, 190, 191, 196 } {  } call:AVI_open_input_file { AVI_open_input_file { 219, 813 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 538 17 : { 192, 194, 195, 813 } {  } call:get_frame { get_frame { 813 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 134 15 : { 194, 197 } {  } call:AVI_video_frames { AVI_video_frames { 813 } }

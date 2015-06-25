@@ -10,6 +10,7 @@
 #include "llvm/IR/DebugInfo.h"
 #include "llvm/IR/IntrinsicInst.h"
 #include "llvm/IR/Operator.h"
+#include "llvm/IR/CFG.h"
 
 #include "AllocaVisitor.h"
 #include "ValueVisitor.h"
@@ -18,18 +19,22 @@
 #include <time.h>
 #include <sys/time.h>
 
-#include <set>
 #include <stdio.h>
 #include <utility>
-#include <set>
 #include <sstream>
 #include <functional>
 #include <cxxabi.h>
+#include <string>
+#include <map>
+#include <set>
 
 using namespace llvm;
+using namespace std;
 
 // #define VERBOSE
 // #define PROFILE
+
+static std::string demangledFunctionName(std::string fname);
 
 namespace {
 
@@ -43,26 +48,30 @@ namespace {
 
     typedef struct _GroupsModifiedAtLine {
         SimpleLoc loc;
-        std::set<size_t> *groups;
-        std::map<std::string, std::set<size_t> > *groups_possibly_modified;
-        std::string *reason;
+        set<size_t> *groups;
+        set<size_t> *groups_and_children;
+        map<string, set<size_t> > *groups_possibly_modified;
+        string *reason;
     } GroupsModifiedAtLine;
 
     class TermInfo {
         public:
-            TermInfo(std::set<size_t> *set_groups,
-                    std::map<std::string, std::set<size_t> > *set_possibly_changed_at_termination) :
-                groups(set_groups),
+            TermInfo(set<size_t> *set_groups,
+                    set<size_t> *set_groups_and_children,
+                    map<string, set<size_t> > *set_possibly_changed_at_termination) :
+                groups(set_groups), groups_and_children(set_groups_and_children),
                 possibly_changed_at_termination(set_possibly_changed_at_termination) { }
 
-            std::set<size_t> *get_groups() { return groups; }
-            std::map<std::string, std::set<size_t> > *get_possibly_changed_at_termination() {
+            set<size_t> *get_groups() { return groups; }
+            set<size_t> *get_groups_and_children() { return groups_and_children; }
+            map<string, set<size_t> > *get_possibly_changed_at_termination() {
                 return possibly_changed_at_termination;
             }
 
         private:
-            std::set<size_t> *groups;
-            std::map<std::string, std::set<size_t> > *possibly_changed_at_termination;
+            set<size_t> *groups;
+            set<size_t> *groups_and_children;
+            map<string, set<size_t> > *possibly_changed_at_termination;
     };
 
     typedef struct _StackAllocInfo {
@@ -95,6 +104,142 @@ namespace {
         std::vector<Argument *> *arguments;
         std::vector<CallInfo *> *passed;
     } FunctionInfo;
+
+    class GroupPropagation {
+        public:
+            GroupPropagation(Instruction *set_creating_instruction,
+                    size_t set_group) :
+                    creating_instruction(set_creating_instruction),
+                    group(set_group) { }
+            void add_traversed(BasicBlock *block) { traversed.insert(block); }
+            bool has_traversed(BasicBlock *block) {
+                return (traversed.find(block) != traversed.end());
+            }
+            BasicBlock *get_creating_bb() {
+                return creating_instruction->getParent();
+            }
+            Instruction *get_creating_instruction() {
+                return creating_instruction;
+            }
+            size_t get_group() { return group; }
+
+            void add_traversed_from(GroupPropagation *other) {
+                for (set<BasicBlock *>::iterator i = other->traversed.begin(),
+                        e = other->traversed.end(); i != e; i++) {
+                    traversed.insert(*i);
+                }
+            }
+
+            std::string str() {
+                std::stringstream ss;
+                ss << "[grp=" << group << ", crt=[";
+
+                std::string insn_string;
+                raw_string_ostream stream(insn_string);
+                creating_instruction->print(stream);
+                stream.flush();
+                ss << insn_string;
+
+                ss << "], crt_bb=" << creating_instruction->getParent()->getName().str() << ", traversed={";
+                for (set<BasicBlock *>::iterator i = traversed.begin(),
+                        e = traversed.end(); i != e; i++) {
+                    ss << " " << (*i)->getName().str();
+                }
+                ss << " }]";
+                return ss.str();
+            }
+
+        private:
+            Instruction *creating_instruction;
+            set<BasicBlock *> traversed;
+            size_t group;
+    };
+
+    class CollectedTraversal {
+        public:
+            CollectedTraversal() { }
+
+            set<size_t> *get_changed() { return &changed; }
+            set<size_t> *get_changed_and_children() { return &changed_and_children; }
+            map<string, set<size_t> > *get_possibly_changed() { return &possibly_changed; }
+
+            void add_all(set<size_t> *from, set<size_t> *to) {
+                for (set<size_t>::iterator i = from->begin(),
+                        e = from->end(); i != e; i++) {
+                    to->insert(*i);
+                }
+            }
+            
+            void merge_from(CollectedTraversal *other) {
+                add_all(&other->changed, &changed);
+                add_all(&other->changed_and_children, &changed_and_children);
+
+                for (map<string, set<size_t> >::iterator i =
+                        other->possibly_changed.begin(), e =
+                        other->possibly_changed.end(); i != e; i++) {
+                    if (possibly_changed.find(i->first) == possibly_changed.end()) {
+                        possibly_changed.insert(pair<string, set<size_t> >(
+                                    i->first, set<size_t>()));
+                    }
+                    for (set<size_t>::iterator ii = i->second.begin(),
+                            ee = i->second.end(); ii != ee; ii++) {
+                        possibly_changed.at(i->first).insert(*ii);
+                    }
+                }
+            }
+
+            void add_to(set<size_t> *target_changed,
+                    set<size_t> *target_changed_and_children,
+                    map<string, set<size_t> > *target_possibly_changed) {
+                add_all(&changed, target_changed);
+                add_all(&changed_and_children, target_changed_and_children);
+
+                for (map<string, set<size_t> >::iterator i =
+                        possibly_changed.begin(), e = possibly_changed.end();
+                        i != e; i++) {
+                    if (target_possibly_changed->find(i->first) == target_possibly_changed->end()) {
+                        target_possibly_changed->insert(
+                                pair<string, set<size_t> >(i->first,
+                                    set<size_t>()));
+                    }
+                    for (set<size_t>::iterator ii = i->second.begin(),
+                            ee = i->second.end(); ii != ee; ii++) {
+                        target_possibly_changed->at(i->first).insert(*ii);
+                    }
+                }
+            }
+
+        private:
+            set<size_t> changed;
+            set<size_t> changed_and_children;
+            map<string, set<size_t> > possibly_changed;
+    };
+
+    class ReverseBasicBlockContext {
+        public:
+            ReverseBasicBlockContext(BasicBlock::reverse_iterator set_start,
+                    BasicBlock *set_parent, set<size_t> *set_changed,
+                    set<size_t> *set_changed_and_children,
+                    map<string, set<size_t> > *set_possibly_changed) :
+                start(set_start), parent(set_parent), changed(set_changed),
+                changed_and_children(set_changed_and_children),
+                possibly_changed(set_possibly_changed) { }
+
+            BasicBlock::reverse_iterator get_start() { return start; }
+            BasicBlock *get_parent() { return parent; }
+            set<size_t> *get_changed() { return changed; }
+            set<size_t> *get_changed_and_children() { return changed_and_children; }
+            map<string, set<size_t> > *get_possibly_changed() {
+                return possibly_changed;
+            }
+
+        private:
+            BasicBlock::reverse_iterator start;
+            BasicBlock *parent;
+            set<size_t> *changed;
+            set<size_t> *changed_and_children;
+            map<string, set<size_t> > *possibly_changed;
+    };
 
     class StructFieldInfo {
         public:
@@ -134,8 +279,8 @@ namespace {
                 return contains;
             }
 
-            std::map<Value *, size_t> get_value_to_alias_group() {
-                return value_to_alias_group;
+            std::map<Value *, size_t> *get_value_to_alias_group() {
+                return &value_to_alias_group;
             }
 
             size_t get_aliases_stored_in(size_t alias) {
@@ -175,37 +320,46 @@ namespace {
 
         void printFunctions(Module &M);
         void printValuesAndAliasGroups(
-                std::map<Value *, size_t> value_to_alias_group);
+                std::map<Value *, size_t> *value_to_alias_group);
         void dumpFunctionArgumentsToAliasMappings(Module &M,
-                const char *filename, std::map<Value *, size_t> value_to_alias_group);
+                const char *filename, std::map<Value *, size_t> *value_to_alias_group);
         size_t searchForValueInKnownAliases(Value *val,
-                std::map<Value *, size_t> value_to_alias_group, bool force = true);
+                std::map<Value *, size_t> *value_to_alias_group, bool force = true);
         std::map<Function *, TermInfo> *collectLineToGroupsMapping(
-                Module &M, std::map<Value *, size_t> value_to_alias_group);
-        void collectLineToGroupsMappingInFunction(BasicBlock *curr,
-                std::set<BasicBlock *> *visited, std::string filename,
-                std::map<Value *, size_t> value_to_alias_group,
-                std::set<size_t> *changed_at_termination,
-                std::map<std::string, std::set<size_t> > *possibly_changed_at_termination,
-                Module &M);
-        void unionGroups(int line, int col, std::string filename,
-                std::set<size_t> *groups,
-                std::map<std::string, std::set<size_t> > *groups_possibly_modified, std::string reason);
-        void unionGroups(int line, int col, std::string filename,
-                std::set<size_t> *groups,
-                std::map<std::string, std::set<size_t> > *groups_possibly_modified, bool isIndirect,
-                bool isCall, Function *reason_callee, Module &M);
+                Module &M, std::map<Value *, size_t> *value_to_alias_group);
+        void collectLineToGroupsMappingInFunction(Function *func,
+                map<Value *, size_t> *value_to_alias_group, string filename,
+                Module &M, set<size_t> *changed_at_termination,
+                set<size_t> *changed_and_children_at_termination,
+                map<string, set<size_t> > *possibly_changed_at_termination);
+        CollectedTraversal *traverseBBBackwards(
+                BasicBlock::reverse_iterator start, BasicBlock *curr, bool from_beginning,
+                vector<ReverseBasicBlockContext> *to_process,
+                set<CallInst *> *processed, string filename,
+                map<Value *, size_t> *value_to_alias_group, Module &M,
+                set<BasicBlock *> *visited, map<BasicBlock *, CollectedTraversal *> *cache);
+        void createNewAliasLocation(int line, int col, string filename,
+                bool isCall, Function *reason, set<size_t> **changed_ptr,
+                set<size_t> **changed_and_children_ptr,
+                map<string, set<size_t> > **possibly_changed_ptr);
+        void updateChanges(CallInst *call, Function *callee,
+                set<size_t> *changed, set<size_t> *changed_and_children,
+                map<string, set<size_t> > *possibly_changed,
+                std::map<Value *, size_t> *value_to_alias_group,
+                string filename, Module &M);
+
         bool addAliasChangeLocation(CallInst *call, Function *callee,
-                std::set<size_t> *groups, std::map<std::string, std::set<size_t> > *groups_possibly_changed,
-                bool isindirect, std::map<Value *, size_t> value_to_alias_group,
-                std::string filename, Module &M);
+                set<size_t> *changed, set<size_t> *changed_and_children,
+                map<string, set<size_t> > *possibly_changed,
+                std::map<Value *, size_t> *value_to_alias_group, std::string filename,
+                Module &M);
         void dumpLineToGroupsMappingTo(const char *filename);
 
         std::map<Value *, std::string> *mapValuesToOriginalVarName(Function *F);
         void findStackAllocations(Module &M, const char *output_file,
                 const char *struct_info_filename);
         void findHeapAllocations(Module &M, const char *output_file,
-                std::map<Value *, size_t> value_to_alias_group);
+                std::map<Value *, size_t> *value_to_alias_group);
         std::map<std::string, StructInfo> *getStructFieldNames(
                 Module &M);
         void dumpStructInfoToFile(const char *filename,
@@ -243,48 +397,38 @@ namespace {
                 FILE *fp,
                 std::map<std::string, StructInfo> *structFields,
                 std::string fname,
-                std::map<Value *, size_t> value_to_alias_group);
+                std::map<Value *, size_t> *value_to_alias_group);
         void handleDeviceAllocation(CallInst *callInst, Function *callee,
                 FILE *fp,
                 std::map<std::string, StructInfo> *structFields);
         void dumpCallSiteAliases(Module &M, const char *filename,
-                std::map<Value *, size_t> value_to_alias_group);
+                std::map<Value *, size_t> *value_to_alias_group);
         ReachableInfo propagateAliases(Module &M, Hasher *H);
         std::vector<Value *> *collectInitialInstructionsToVisit(Module &M);
         std::map<Value *, size_t> *collectInitialAliasMappings(Module &M, Hasher *H);
         void dumpFunctionCallTree(Module &M, const char *output_file);
         void findFunctionExits(Module &M, const char *output_file,
-                std::map<Value *, size_t> value_to_alias_group,
+                std::map<Value *, size_t> *value_to_alias_group,
                 std::map<Function *, TermInfo> *func_to_groups_changed);
         void printGroupsChanged(FILE *fp, Function *F,
                 std::map<Function *, TermInfo> *func_to_groups_changed);
         void dumpGlobal(GlobalVariable *var, std::string varname,
                 FILE *globals_fp, DataLayout *layout,
-                std::map<std::string, StructInfo> *structFields);
+                std::map<std::string, StructInfo> *structFields,
+                std::map<Value *, size_t> *value_to_alias_group);
         bool dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
                 DataLayout *layout);
         void findGlobalsAndConstants(Module &M, const char *globals_filename,
-                const char *constants_filename);
+                const char *constants_filename, std::map<Value *, size_t> *value_to_alias_group);
         std::map<std::string, std::string> *mapGlobalsToOriginalName(Module &M);
-        void propagateGroupsDown(BasicBlock *curr, std::string filename,
-                std::set<size_t> *groups,
-                std::map<std::string, std::set<size_t> > *groups_possibly_modified,
-                std::set<BasicBlock *> *visited,
-                std::set<size_t> *changed_at_termination,
-                std::map<std::string, std::set<size_t> > *possibly_changed_at_termination,
-                Module &M, std::map<Value *, size_t> value_to_alias_group, int nesting);
 
-        void collectChangesAtTerm(std::set<size_t> *groups,
-                std::map<std::string, std::set<size_t> > *groups_possibly_modified,
-                std::set<size_t> *changed_at_termination,
-                std::map<std::string, std::set<size_t> > *possibly_changed_at_termination);
         std::string *getFunctionDisplayName(Function *F, Module &M);
         Hasher *calculate_hashes(Module &M);
         std::string traverseAllUses(const Value *user, int nesting);
         std::string findReachableUse(const User *user, const Value *parent, int nesting);
 
 #ifdef PROFILE
-        long propagateGroupsDownTime = 0;
+        // long propagateGroupsDownTime = 0;
         long mayCreateCheckpointTime = 0;
         long collectChangesAtTermTime = 0;
         long addAliasChangeLocTime = 0;
@@ -301,6 +445,16 @@ static RegisterPass<Play> X("play", "Play Pass");
 static bool basicBlockIsValid(BasicBlock *BB) {
     return BB->getName().str().size() > 0;
 }
+
+#ifdef VERBOSE
+static std::string value_to_string(Value *insn) {
+    std::string insn_string;
+    raw_string_ostream stream(insn_string);
+    insn->print(stream);
+    stream.flush();
+    return insn_string;
+}
+#endif
 
 #ifdef PROFILE
 static long microseconds() {
@@ -364,9 +518,9 @@ void Play::printFunctions(Module &M) {
 }
 
 void Play::printValuesAndAliasGroups(
-        std::map<Value *, size_t> value_to_alias_group) {
-    for (std::map<Value *, size_t>::iterator i = value_to_alias_group.begin(),
-            e = value_to_alias_group.end(); i != e; i++) {
+        std::map<Value *, size_t> *value_to_alias_group) {
+    for (std::map<Value *, size_t>::iterator i = value_to_alias_group->begin(),
+            e = value_to_alias_group->end(); i != e; i++) {
         Value *val = i->first;
         size_t alias = i->second;
 
@@ -641,7 +795,8 @@ bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
 
 void Play::dumpGlobal(GlobalVariable *var, std::string varname,
         FILE *globals_fp, DataLayout *layout,
-        std::map<std::string, StructInfo> *structFields) {
+        std::map<std::string, StructInfo> *structFields,
+        std::map<Value *, size_t> *value_to_alias_group) {
     /*
      * All globals look like pointers to clang, but need to be
      * converted to their base value
@@ -656,6 +811,7 @@ void Play::dumpGlobal(GlobalVariable *var, std::string varname,
     size_t type_size = layout->getTypeSizeInBits(type);
     int is_ptr = 0;
     int is_struct = 0;
+    size_t group = 0;
     std::string struct_name;
     std::vector<std::string> struct_ptr_field_names;
 
@@ -666,6 +822,7 @@ void Play::dumpGlobal(GlobalVariable *var, std::string varname,
 
     if (type->isPointerTy()) {
         is_ptr = 1;
+        group = searchForValueInKnownAliases(var, value_to_alias_group);
     } else if (type->isStructTy()) {
         is_struct = 1;
 
@@ -693,8 +850,8 @@ void Play::dumpGlobal(GlobalVariable *var, std::string varname,
         }
     }
     // Variable name, Full type, type size in bits, is ptr?, is struct?
-    fprintf(globals_fp, "%s \" %s \" %lu %d %d ", varname.c_str(),
-            backing_string.c_str(), type_size, is_ptr, is_struct);
+    fprintf(globals_fp, "%s \" %s \" %lu %d %d %lu ", varname.c_str(),
+            backing_string.c_str(), type_size, is_ptr, is_struct, group);
     if (is_struct) {
         fprintf(globals_fp, "%s ", struct_name.c_str());
         for (std::vector<std::string>::iterator field_iter =
@@ -708,7 +865,8 @@ void Play::dumpGlobal(GlobalVariable *var, std::string varname,
 }
 
 void Play::findGlobalsAndConstants(Module &M, const char *globals_filename,
-        const char *constants_filename) {
+        const char *constants_filename,
+        std::map<Value *, size_t> *value_to_alias_group) {
     DataLayout *layout = new DataLayout(&M);
 
     std::set<std::string> excluded_globals;
@@ -754,12 +912,12 @@ void Play::findGlobalsAndConstants(Module &M, const char *globals_filename,
                 }
 
                 std::string varname = (*global_names)[var->getName().str()];
-
                 if (excluded_globals.find(varname) != excluded_globals.end()) {
                     continue;
                 }
 
-                dumpGlobal(var, varname, globals_fp, layout, structFields);
+                dumpGlobal(var, varname, globals_fp, layout, structFields,
+                        value_to_alias_group);
             }
         }
     }
@@ -840,7 +998,7 @@ static std::string removeTemplatedMangling(std::string fname) {
 }
 
 void Play::dumpFunctionArgumentsToAliasMappings(Module &M,
-        const char *filename, std::map<Value *, size_t> value_to_alias_group) {
+        const char *filename, std::map<Value *, size_t> *value_to_alias_group) {
     FILE *fp = fopen(filename, "w");
     assert(fp);
 
@@ -882,7 +1040,7 @@ void Play::dumpFunctionArgumentsToAliasMappings(Module &M,
 }
 
 void Play::dumpCallSiteAliases(Module &M, const char *filename,
-        std::map<Value *, size_t> value_to_alias_group) {
+        std::map<Value *, size_t> *value_to_alias_group) {
     FILE *fp = fopen(filename, "w");
     assert(fp);
 
@@ -1002,15 +1160,12 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
 }
 
 size_t Play::searchForValueInKnownAliases(Value *val,
-        std::map<Value *, size_t> value_to_alias_group, bool force) {
-    for (std::map<Value *, size_t>::iterator value_iter =
-            value_to_alias_group.begin(), value_end =
-            value_to_alias_group.end(); value_iter != value_end;
-            value_iter++) {
-        if (value_iter->first == val) {
-            return value_iter->second;
-        }
+        std::map<Value *, size_t> *value_to_alias_group, bool force) {
+    std::map<Value *, size_t>::iterator found = value_to_alias_group->find(val);
+    if (found != value_to_alias_group->end()) {
+        return found->second;
     }
+
     if (force) {
         errs() << *val << "\n";
         assert(false);
@@ -1018,18 +1173,32 @@ size_t Play::searchForValueInKnownAliases(Value *val,
     return 0;
 }
 
-void Play::unionGroups(int line, int col, std::string filename,
-        std::set<size_t> *groups,
-        std::map<std::string, std::set<size_t> > *groups_possibly_modified,
-        bool isIndirect, bool isCall, Function *reason, Module &M) {
-    std::ostringstream reason_str;
-
-    if (isIndirect) {
-        reason_str << "prop:";
-    } else {
-        reason_str << "direct:";
+static bool is_empty_map(map<string, set<size_t> > *m) {
+    for (map<string, set<size_t> >::iterator i = m->begin(), e = m->end();
+            i != e; i++) {
+        if (i->second.size() > 0) return false;
     }
+    return true;
+}
 
+void Play::createNewAliasLocation(int line, int col, string filename,
+        bool isCall, Function *reason, set<size_t> **changed_ptr,
+        set<size_t> **changed_and_children_ptr,
+        map<string, set<size_t> > **possibly_changed_ptr) {
+    bool existing = false;
+    for (std::vector<GroupsModifiedAtLine *>::iterator i =
+            line_to_groups_modified.begin(), e = line_to_groups_modified.end();
+            i != e; i++) {
+        GroupsModifiedAtLine *curr = *i;
+        if (curr->loc.line_no == line && *(curr->loc.filename) == filename &&
+                curr->loc.col == col) {
+            existing = true;
+            break;
+        }
+    }
+    assert(!existing);
+
+    std::stringstream reason_str;
     if (isCall) {
         reason_str << "call:";
     } else {
@@ -1044,165 +1213,118 @@ void Play::unionGroups(int line, int col, std::string filename,
         reason_str << demangledFunctionName(reason->getName().str());
     }
 
-#ifdef VERBOSE
-    llvm::errs() << "            Unioning groups with reason_str=" <<
-        reason_str << "\n";
-#endif
-
-    unionGroups(line, col, filename, groups, groups_possibly_modified,
-            reason_str.str());
+    GroupsModifiedAtLine *g = (GroupsModifiedAtLine *)malloc(
+            sizeof(GroupsModifiedAtLine));
+    g->loc.line_no = line;
+    g->loc.filename = new string(filename);
+    g->loc.col = col;
+    g->groups = new set<size_t>();
+    *changed_ptr = g->groups;
+    g->groups_and_children = new set<size_t>();
+    *changed_and_children_ptr = g->groups_and_children;
+    g->groups_possibly_modified = new map<string, set<size_t> >();
+    *possibly_changed_ptr = g->groups_possibly_modified;
+    g->reason = new string(reason_str.str());
+    line_to_groups_modified.push_back(g);
 }
 
-/*
- * Combine these groups with any others that were found to be modified at the
- * specified line and column in the specified file. Store the merged results in
- * line_to_groups_modified.
- */
-void Play::unionGroups(int line, int col, std::string filename,
-        std::set<size_t> *groups,
-        std::map<std::string, std::set<size_t> > *groups_possibly_modified,
-        std::string reason) {
-    std::set<size_t> *existing = NULL;
-    std::map<std::string, std::set<size_t> > *existing_possible = NULL;
-    for (std::vector<GroupsModifiedAtLine *>::iterator i =
-            line_to_groups_modified.begin(), e = line_to_groups_modified.end();
-            i != e; i++) {
-        GroupsModifiedAtLine *curr = *i;
-        if (curr->loc.line_no == line && *(curr->loc.filename) == filename &&
-                curr->loc.col == col) {
-            existing = curr->groups;
-            existing_possible = curr->groups_possibly_modified;
-            break;
-        }
-    }
-
-    if (existing == NULL) {
-        GroupsModifiedAtLine *g = (GroupsModifiedAtLine *)malloc(
-                sizeof(GroupsModifiedAtLine));
-        g->loc.line_no = line;
-        g->loc.filename = new std::string(filename);
-        g->loc.col = col;
-        g->groups = groups;
-        g->groups_possibly_modified = groups_possibly_modified;
-        g->reason = new std::string(reason);
-        line_to_groups_modified.push_back(g);
-    } else {
-        for (std::set<size_t>::iterator parent_iter = groups->begin(),
-                parent_end = groups->end(); parent_iter != parent_end;
-                parent_iter++) {
-            existing->insert(*parent_iter);
-        }
-
-        for (std::map<std::string, std::set<size_t> >::iterator iter =
-                groups_possibly_modified->begin(), end =
-                groups_possibly_modified->end(); iter != end; iter++) {
-            std::string fname = iter->first;
-            if (existing_possible->find(fname) == existing_possible->end()) {
-                existing_possible->insert(std::pair<std::string,
-                        std::set<size_t> >(fname,
-                            std::set<size_t>()));
-            }
-            std::set<size_t> groups = iter->second;
-            for (std::set<size_t>::iterator i = groups.begin(),
-                    e = groups.end(); i != e; i++) {
-                size_t group = *i;
-                existing_possible->at(fname).insert(group);
-            }
-        }
-    }
-}
-
-void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
-        std::set<size_t> *groups,
-        std::map<std::string, std::set<size_t> > *groups_possibly_modified,
-        std::set<BasicBlock *> *visited,
-        std::set<size_t> *changed_at_termination,
-        std::map<std::string, std::set<size_t> > *possibly_changed_at_termination,
-        Module &M, std::map<Value *, size_t> value_to_alias_group, int nesting) {
-#ifdef PROFILE
-    indent(nesting);
-    llvm::errs() << "PROF: Entering propagation at nesting=" <<
-        nesting << " in " << curr->getName().str() << ", " <<
-        curr->getParent()->getName().str() << "\n";
-    const long start_checking = microseconds();
-#endif
-    if (visited->find(curr) != visited->end()) {
+void Play::updateChanges(CallInst *call, Function *callee,
+        set<size_t> *changed, set<size_t> *changed_and_children,
+        map<string, set<size_t> > *possibly_changed,
+        std::map<Value *, size_t> *value_to_alias_group,
+        string filename, Module &M) {
+    if (isKnownFunction(callee)) {
         /*
-         * We have looped back around from the original basic block to itself or
-         * to some other block we already visited,
-         * indicating a loop in the control flow of this sample. Either 1) there
-         * is a statically defined infinite loop and this example is broken
-         * anyway, or 2) there must be some other control flow that breaks out
-         * of this loop, so we don't need to mark the aliases changed within the
-         * loop because we haven't hit a checkpoint within it. So we just
-         * return.
+         * For external functions that we know about (e.g. printf) and that
+         * obviously don't checkpoint, we explicitly know what parameters or
+         * return types are changed by the called method. So just add to
+         * changed.
          */
-#ifdef PROFILE
-        checkingVisitedTime += (microseconds() - start_checking);
-#endif
-        return;
-    }
-    visited->insert(curr);
-#ifdef PROFILE
-    checkingVisitedTime += (microseconds() - start_checking);
-#endif
-
+        std::vector<unsigned> changes = functionChanges.at(
+                callee->getName().str());
+        for (std::vector<unsigned>::iterator i = changes.begin(),
+                e = changes.end(); i != e; i++) {
+            unsigned arg = *i;
+            /*
+             * arg == 0 indicates a pointer return that has been modified or
+             * set by this function.
+             */
+            if (arg == 0) {
+                assert(callee->getReturnType()->isPointerTy());
+                changed->insert(value_to_alias_group->at(call));
+            } else {
+                arg = arg - 1;
+                assert(arg < call->getNumArgOperands());
+                Value *arg_val = call->getArgOperand(arg);
+                assert(arg_val->getType()->isPointerTy());
+                changed->insert(value_to_alias_group->at(arg_val));
+            }
+        }
+    } else {
 #ifdef VERBOSE
-    llvm::errs() << "      Propagating to " << curr->getName().str() << "\n";
+        llvm::errs() << "For call [" << value_to_string(call) << "], callee=" <<
+            callee << ", is not intrinsic? " << !isa<IntrinsicInst>(call) <<
+            ", callee empty? " << (callee == NULL ? 1 : callee->empty()) << "\n";
+#endif
+        if (callee == NULL) {
+            /*
+             * if this call is made through a function pointer we have no
+             * way of identifying it at compile time. We conservatively mark
+             * all pointer-typed arguments and the return value (if
+             * pointer-typed) as changed and create an alias location,
+             * because we don't know if a checkpoint will be taken or not.
+             * This marking includes all children of the passed pointers,
+             * and will also cause global values to be marked changed.
+             *
+             * TODO this is extremely conservative and could probably be
+             * optimized.
+             */
+#ifdef VERBOSE
+            llvm::errs() << "  Handling as function pointer\n";
+#endif
+            if (call->getType()->isPointerTy()) {
+                changed_and_children->insert(value_to_alias_group->at(call));
+            }
+            for (unsigned arg = 0; arg < call->getNumArgOperands(); arg++) {
+                Value *arg_val = call->getArgOperand(arg);
+                if (arg_val->getType()->isPointerTy()) {
+                    changed_and_children->insert(value_to_alias_group->at(arg_val));
+                }
+            }
+        } else if (!isa<IntrinsicInst>(call) && callee->empty()) {
+            /*
+             * For externally defined functions we may be able to resolve
+             * them at runtime. We mark their pointer-typed arguments and
+             * return value as possibly changed before deciding at runtime
+             * if the function definition is truly missing.
+             */
+            std::string fname = demangledFunctionName(callee->getName().str());
+#ifdef VERBOSE
+            llvm::errs() << "  Handling as extern call, fname=" << fname << "\n";
 #endif
 
-#ifdef PROFILE
-    const long start = microseconds();
-#endif
-    for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
-            inst_iter != inst_end; inst_iter++) {
-        Instruction *inst = inst_iter;
-        if (CallInst *call = dyn_cast<CallInst>(inst)) {
-            Function *callee = call->getCalledFunction();
+            if (possibly_changed->find(fname) == possibly_changed->end()) {
+                possibly_changed->insert(pair<string, set<size_t> >(fname,
+                            set<size_t>()));
+            }
 
-            if (addAliasChangeLocation(call, callee, groups,
-                        groups_possibly_modified, true, value_to_alias_group,
-                        filename, M)) {
-#ifdef PROFILE
-                findCallsTime += (microseconds() - start);
+            if (callee->getReturnType()->isPointerTy()) {
+#ifdef VERBOSE
+                llvm::errs() << "    Marking return value as possibly changed\n";
 #endif
-                return;
+                possibly_changed->at(fname).insert(value_to_alias_group->at(call));
+            }
+            for (unsigned arg = 0; arg < call->getNumArgOperands(); arg++) {
+                Value *arg_val = call->getArgOperand(arg);
+                if (arg_val->getType()->isPointerTy()) {
+#ifdef VERBOSE
+                    llvm::errs() << "    Marking argument " << arg << " as possibly changed\n";
+#endif
+                    possibly_changed->at(fname).insert(value_to_alias_group->at(arg_val));
+                }
             }
         }
     }
-#ifdef PROFILE
-    findCallsTime += (microseconds() - start);
-#endif
-
-#ifdef VERBOSE
-    llvm::errs() << "      Done propagating to " << curr->getName().str() << "\n";
-#endif
-
-#ifdef PROFILE
-    long start_leftover = microseconds();
-#endif
-    TerminatorInst *term = curr->getTerminator();
-    if (term->getNumSuccessors() == 0) {
-        // Terminating basic block for a function, so mark this
-        collectChangesAtTerm(groups, groups_possibly_modified,
-                changed_at_termination, possibly_changed_at_termination);
-    } else {
-        for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
-            BasicBlock *child = term->getSuccessor(i);
-#ifdef PROFILE
-            leftoverTime += (microseconds() - start_leftover);
-#endif
-            propagateGroupsDown(child, filename, groups,
-                    groups_possibly_modified, visited, changed_at_termination,
-                    possibly_changed_at_termination, M, value_to_alias_group, nesting + 1);
-#ifdef PROFILE
-            start_leftover = microseconds();
-#endif
-        }
-    }
-#ifdef PROFILE
-    leftoverTime += (microseconds() - start_leftover);
-#endif
 }
 
 /*
@@ -1210,78 +1332,18 @@ void Play::propagateGroupsDown(BasicBlock *curr, std::string filename,
  * and inserts if so (i.e. if the callee may create a checkpoint).
  */
 bool Play::addAliasChangeLocation(CallInst *call, Function *callee,
-        std::set<size_t> *groups,
-        std::map<std::string, std::set<size_t> > *groups_possibly_changed,
-        bool isIndirect, std::map<Value *, size_t> value_to_alias_group,
-        std::string filename, Module &M) {
+        set<size_t> *changed, set<size_t> *changed_and_children,
+        map<string, set<size_t> > *possibly_changed,
+        std::map<Value *, size_t> *value_to_alias_group,
+        string filename, Module &M) {
 #ifdef PROFILE
     long start = microseconds();
 #endif
 #ifdef VERBOSE
     llvm::errs() << "        Adding alias change location at call to \"" <<
-        (callee ? callee->getName().str() : "NULL") << "\", " <<
+        (callee ? callee->getName().str() : "NULL") << "\", is known? " <<
         isKnownFunction(callee) << "\n";
 #endif
-    /*
-     * For functions that we know aren't a part of this compilation
-     * unit, update the change set to include any of their pointer
-     * arguments that we know are modified.
-     */
-    if (isKnownFunction(callee)) {
-        std::vector<unsigned> changes = functionChanges.at(
-                callee->getName().str());
-        for (std::vector<unsigned>::iterator i = changes.begin(),
-                e = changes.end(); i != e; i++) {
-            unsigned arg = *i;
-            assert(arg < call->getNumArgOperands());
-            Value *arg_val = call->getArgOperand(arg);
-            assert(arg_val->getType()->isPointerTy());
-            size_t group = value_to_alias_group.at(arg_val);
-            groups->insert(group);
-        }
-    } else {
-        /*
-         * For external functions, we may get instrumented versions of
-         * them at runtime or we may not. To handle this, we mark some
-         * groups as optionally included in an alias change location at
-         * compile-time and make the determination to add them or not at
-         * runtime.
-         */
-        if (callee == NULL || callee->getName().str().size() == 0) {
-            // Function pointer call
-            for (unsigned arg = 0; arg < call->getNumArgOperands(); arg++) {
-                Value *arg_val = call->getArgOperand(arg);
-                if (arg_val->getType()->isPointerTy()) {
-                    size_t group = value_to_alias_group.at(arg_val);
-                    groups->insert(group);
-                }
-            }
-        } else if (!isa<IntrinsicInst>(call)) {
-            std::string fname = demangledFunctionName(callee->getName().str());
-
-            int n_pointer_args = 0;
-            for (unsigned arg = 0; arg < call->getNumArgOperands(); arg++) {
-                Value *arg_val = call->getArgOperand(arg);
-                if (arg_val->getType()->isPointerTy()) n_pointer_args++;
-            }
-
-            if (n_pointer_args > 0) {
-                if (groups_possibly_changed->find(fname) ==
-                        groups_possibly_changed->end()) {
-                    groups_possibly_changed->insert(std::pair<std::string,
-                            std::set<size_t> >(fname, std::set<size_t>()));
-                }
-
-                for (unsigned arg = 0; arg < call->getNumArgOperands(); arg++) {
-                    Value *arg_val = call->getArgOperand(arg);
-                    if (arg_val->getType()->isPointerTy()) {
-                        size_t group = value_to_alias_group.at(arg_val);
-                        groups_possibly_changed->at(fname).insert(group);
-                    }
-                }
-            }
-        }
-    }
 
     /*
      * If we hit a call, we need to register the changes made within a
@@ -1289,23 +1351,18 @@ bool Play::addAliasChangeLocation(CallInst *call, Function *callee,
      * checkpoint that state.
      */
     if (!isa<IntrinsicInst>(call) && mayCreateCheckpoint(callee) != DOES_NOT) {
-        if (groups->size() > 0) {
 #ifdef VERBOSE
-            llvm::errs() << "Unioning...\n";
-#endif
-            unionGroups(call->getDebugLoc().getLine(),
-                    call->getDebugLoc().getCol(), filename, groups,
-                    groups_possibly_changed, isIndirect, true, callee, M);
-            groups = new std::set<size_t>();
-#ifdef VERBOSE
-            llvm::errs() << "        Done adding alias change location\n";
+        llvm::errs() << "        Done adding alias change location\n";
 #endif
 #ifdef PROFILE
-            addAliasChangeLocTime += (microseconds() - start);
+        addAliasChangeLocTime += (microseconds() - start);
 #endif
-            return true;
-        }
+        return true;
     }
+
+    // Perform updates to the change sets
+    updateChanges(call, callee, changed, changed_and_children, possibly_changed,
+            value_to_alias_group, filename, M);
 
 #ifdef VERBOSE
     llvm::errs() << "        Done adding alias change location\n";
@@ -1317,122 +1374,196 @@ bool Play::addAliasChangeLocation(CallInst *call, Function *callee,
     return false;
 }
 
-void Play::collectChangesAtTerm(std::set<size_t> *groups,
-        std::map<std::string, std::set<size_t> > *groups_possibly_modified,
-        std::set<size_t> *changed_at_termination,
-        std::map<std::string, std::set<size_t> > *possibly_changed_at_termination) {
-#ifdef PROFILE
-    long start = microseconds();
+#ifdef VERBOSE
+static void printAccumulatedState(set<size_t> *changed,
+        set<size_t> *changed_and_children,
+        map<string, set<size_t> > *possibly_changed) {
+    llvm::errs() << "  Changed={";
+    for (set<size_t>::iterator i = changed->begin(),
+            e = changed->end(); i != e; i++) {
+        llvm::errs() << " " << *i;
+    }
+    llvm::errs() << "  }\n  Change w/ children={";
+    for (set<size_t>::iterator i = changed_and_children->begin(),
+            e = changed_and_children->end(); i != e; i++) {
+        llvm::errs() << " " << *i;
+    }
+    llvm::errs() << "  }\n  Possibly changed={\n";
+    for (map<string, set<size_t> >::iterator i =
+            possibly_changed->begin(), e =
+            possibly_changed->end(); i != e; i++) {
+        llvm::errs() << "    " << i->first << " -> [";
+        for (set<size_t>::iterator ii = i->second.begin(),
+                ee = i->second.end(); ii != ee; ii++) {
+            llvm::errs() << " " << *ii;
+        }
+        llvm::errs() << " ]\n";
+    }
+    llvm::errs() << "  }\n";
+}
 #endif
-    for (std::set<size_t>::iterator i = groups->begin(), e =
-            groups->end(); i != e; i++) {
-        changed_at_termination->insert(*i);
+
+CollectedTraversal *Play::traverseBBBackwards(
+        BasicBlock::reverse_iterator start, BasicBlock *curr, bool from_beginning,
+        vector<ReverseBasicBlockContext> *to_process,
+        set<CallInst *> *processed, string filename,
+        map<Value *, size_t> *value_to_alias_group, Module &M,
+        set<BasicBlock *> *visited, map<BasicBlock *, CollectedTraversal *> *cache) {
+    if (visited->find(curr) != visited->end()) {
+        return NULL;
+    }
+    if (from_beginning) {
+        visited->insert(curr);
+    }
+    if (from_beginning && cache->find(curr) != cache->end()) {
+        return cache->at(curr);
     }
 
-    for (std::map<std::string, std::set<size_t> >::iterator i =
-            groups_possibly_modified->begin(), e =
-            groups_possibly_modified->end(); i != e; i++) {
-        std::string fname = i->first;
-        std::set<size_t> groups = i->second;
-        if (possibly_changed_at_termination->find(fname) ==
-                possibly_changed_at_termination->end()) {
-            possibly_changed_at_termination->insert(
-                    std::pair<std::string, std::set<size_t> >(fname,
-                        std::set<size_t>()));
+    CollectedTraversal *results = new CollectedTraversal();
+
+    while (start != curr->rend()) {
+        Instruction *insn = &*start;
+#ifdef VERBOSE
+        llvm::errs() << "Traversing backwards over [" <<
+            value_to_string(insn) << "]\n";
+#endif
+        if (StoreInst *store = dyn_cast<StoreInst>(insn)) {
+            size_t group = value_to_alias_group->at(store->getPointerOperand());
+            results->get_changed()->insert(group);
+        } else if (CallInst *call = dyn_cast<CallInst>(insn)) {
+            Function *callee = call->getCalledFunction();
+            bool is_change_loc = addAliasChangeLocation(call, callee, results->get_changed(),
+                    results->get_changed_and_children(), results->get_possibly_changed(),
+                    value_to_alias_group, filename, M);
+            if (is_change_loc) {
+                if (processed->find(call) == processed->end()) {
+                    bool already_added = false;
+                    for (vector<ReverseBasicBlockContext>::iterator i =
+                            to_process->begin(), e = to_process->end(); i != e;
+                            i++) {
+                        if (i->get_start() == start) already_added = true;
+                    }
+
+                    if (!already_added) {
+                        set<size_t> *changed_ptr, *changed_and_children_ptr;
+                        map<string, set<size_t> > *possibly_changed_ptr;
+                        createNewAliasLocation(call->getDebugLoc().getLine(),
+                                call->getDebugLoc().getCol(), filename, true,
+                                callee, &changed_ptr, &changed_and_children_ptr,
+                                &possibly_changed_ptr);
+                        to_process->push_back(ReverseBasicBlockContext(
+                                    BasicBlock::reverse_iterator(start),
+                                    curr, changed_ptr, changed_and_children_ptr,
+                                    possibly_changed_ptr));
+                    }
+                }
+                return results;
+            }
         }
-        for (std::set<size_t>::iterator ii = groups.begin(),
-                ee = groups.end(); ii != ee; ii++) {
-            possibly_changed_at_termination->at(fname).insert(*ii);
+        start++;
+    }
+
+    set<BasicBlock *> unique_preds;
+
+    for (auto i = pred_begin(curr),
+            e = pred_end(curr); i != e; i++) {
+        BasicBlock *pred = *i;
+        unique_preds.insert(pred);
+    }
+    for (set<BasicBlock *>::iterator i = unique_preds.begin(),
+            e = unique_preds.end(); i != e; i++) {
+        BasicBlock *pred = *i;
+        CollectedTraversal *child_results = traverseBBBackwards(pred->rbegin(),
+                pred, true, to_process, processed, filename,
+                value_to_alias_group, M, visited, cache);
+        if (child_results) {
+            results->merge_from(child_results);
         }
     }
-#ifdef PROFILE
-    collectChangesAtTermTime += (microseconds() - start);
-#endif
+
+    if (from_beginning) {
+        bool success = cache->insert(pair<BasicBlock *, CollectedTraversal *>(
+                    curr, results)).second;
+        assert(success);
+    }
+    return results;
 }
 
-void Play::collectLineToGroupsMappingInFunction(BasicBlock *curr,
-        std::set<BasicBlock *> *visited, std::string filename,
-        std::map<Value *, size_t> value_to_alias_group,
-        std::set<size_t> *changed_at_termination,
-        std::map<std::string, std::set<size_t> > *possibly_changed_at_termination,
-        Module &M) {
-    assert(curr != NULL);
+void Play::collectLineToGroupsMappingInFunction(Function *func,
+        map<Value *, size_t> *value_to_alias_group, string filename, Module &M,
+        set<size_t> *changed_at_termination,
+        set<size_t> *changed_and_children_at_termination,
+        map<string, set<size_t> > *possibly_changed_at_termination) {
 
-    // Only analyze each basic block once
-    if (visited->find(curr) != visited->end()) {
-        return;
-    }
-    visited->insert(curr);
-
+    set<CallInst *> processed;
+    vector<ReverseBasicBlockContext> to_process;
+    int count_instructions = 0;
+    for (inst_iterator i = inst_begin(func), e = inst_end(func); i != e; i++) {
+        Instruction *curr = &*i;
+        if (ReturnInst *ret = dyn_cast<ReturnInst>(curr)) {
 #ifdef VERBOSE
-    llvm::errs() << "  Visiting basic block " << curr->getName().str() << "\n";
+            llvm::errs() << "Found return " << value_to_string(ret) <<
+                " in " << func->getName().str() << "\n";
 #endif
-
-    std::set<size_t> *groups = new std::set<size_t>();
-    std::map<std::string, std::set<size_t> > *groups_possibly_modified =
-        new std::map<std::string, std::set<size_t> >();
-
-    /*
-     * For each instruction in this basic block, check if it is a STORE and if
-     * so then find the alias group it modifies.
-     */
-    for (BasicBlock::iterator inst_iter = curr->begin(), inst_end = curr->end();
-            inst_iter != inst_end; inst_iter++) {
-        Instruction *curr_inst = inst_iter;
-
-        if (StoreInst *store = dyn_cast<StoreInst>(curr_inst)) {
-            // Mark the destination alias group as modified
-            assert(value_to_alias_group.find(store->getPointerOperand()) !=
-                    value_to_alias_group.end());
-            size_t group = value_to_alias_group[store->getPointerOperand()];
-            groups->insert(group);
-        } else if (CallInst *call = dyn_cast<CallInst>(curr_inst)) {
-            Function *callee = call->getCalledFunction();
-
-            if (addAliasChangeLocation(call, callee, groups,
-                        groups_possibly_modified, false, value_to_alias_group,
-                        filename, M)) {
-                groups = new std::set<size_t>();
-                groups_possibly_modified =
-                    new std::map<std::string, std::set<size_t> >();
-            }
+            BasicBlock *parent = ret->getParent();
+            to_process.push_back(ReverseBasicBlockContext(parent->rbegin(),
+                        parent, changed_at_termination,
+                        changed_and_children_at_termination,
+                        possibly_changed_at_termination));
         }
+        count_instructions++;
     }
 
-    TerminatorInst *term = curr->getTerminator();
-    if (groups->size() > 0 || groups_possibly_modified->size() > 0) {
-        if (term->getNumSuccessors() > 0) {
-            std::set<BasicBlock *> propagation_visited;
-            for (unsigned i = 0; i < term->getNumSuccessors(); i++) {
-                BasicBlock *child = term->getSuccessor(i);
 #ifdef VERBOSE
-                llvm::errs() << "    Propagating...\n";
+    llvm::errs() << "After initial seeding of returns, have " <<
+        to_process.size() << " locations to process, " <<
+        count_instructions << " instructions in this function\n";
 #endif
-#ifdef PROFILE
-                const long start = microseconds();
-#endif
-                propagateGroupsDown(child, filename, groups,
-                        groups_possibly_modified, &propagation_visited,
-                        changed_at_termination, possibly_changed_at_termination,
-                        M, value_to_alias_group, 0);
-#ifdef PROFILE
-                propagateGroupsDownTime += (microseconds() - start);
-#endif
-#ifdef VERBOSE
-                llvm::errs() << "    Done\n";
-#endif
-            }
-        } else {
-            collectChangesAtTerm(groups, groups_possibly_modified,
-                    changed_at_termination, possibly_changed_at_termination);
+
+    map<BasicBlock *, CollectedTraversal *> cache;
+    while (to_process.size() > 0) {
+        ReverseBasicBlockContext ctx = to_process.front();
+        to_process.erase(to_process.begin());
+        BasicBlock::reverse_iterator start = ctx.get_start();
+
+        Instruction *starting = &*(start);
+        if (CallInst *call = dyn_cast<CallInst>(starting)) {
+            processed.insert(call);
+            /*
+             * Add the changes contributed by the call we are tracing backwards
+             * from before we start the actual traversal.
+             */
+            updateChanges(call, call->getCalledFunction(),
+                    ctx.get_changed(), ctx.get_changed_and_children(),
+                    ctx.get_possibly_changed(), value_to_alias_group, filename,
+                    M);
+            start++;
         }
-    }
 
-    for (unsigned int i = 0; i < term->getNumSuccessors(); i++) {
-        BasicBlock *child = term->getSuccessor(i);
-        collectLineToGroupsMappingInFunction(child, visited, filename,
-                value_to_alias_group, changed_at_termination,
-                possibly_changed_at_termination, M);
+#ifdef VERBOSE
+        llvm::errs() << "Traversing backwards from [" << value_to_string(starting) << "]\n";
+        printAccumulatedState(ctx.get_changed(), ctx.get_changed_and_children(),
+                ctx.get_possibly_changed());
+#endif
+
+        set<BasicBlock *> visited;
+        CollectedTraversal *collected = traverseBBBackwards(start, ctx.get_parent(), false,
+                &to_process, &processed, filename,
+                value_to_alias_group, M, &visited, &cache);
+        assert(collected);
+#ifdef VERBOSE
+        llvm::errs() << "Calculated values for traversal from [" <<
+            value_to_string(starting) << "]:\n";
+        printAccumulatedState(collected->get_changed(), collected->get_changed_and_children(),
+                collected->get_possibly_changed());
+#endif
+        collected->add_to(ctx.get_changed(), ctx.get_changed_and_children(),
+                ctx.get_possibly_changed());
+#ifdef VERBOSE
+        llvm::errs() << "For [" << value_to_string(starting) << "]\n";
+        printAccumulatedState(ctx.get_changed(), ctx.get_changed_and_children(),
+                ctx.get_possibly_changed());
+#endif
     }
 }
 
@@ -1499,7 +1630,23 @@ std::string Play::findFilenameContainingBB(BasicBlock &bb, Module &M) {
  * mapping during the analysis stage are the same.
  */
 std::map<Function *, TermInfo> *Play::collectLineToGroupsMapping(
-        Module& M, std::map<Value *, size_t> value_to_alias_group) {
+        Module& M, std::map<Value *, size_t> *value_to_alias_group) {
+#ifdef VERBOSE
+    int count_functions = 0;
+    for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
+        Function *F = &*I;
+
+        if (F->getBasicBlockList().size() > 0) {
+            BasicBlock& entry = F->getEntryBlock();
+            if (basicBlockIsValid(&entry)) {
+            }
+            count_functions++;
+        }
+    }
+    llvm::errs() << "In total, " << count_functions << " functions to " <<
+        "analyze in this module\n";
+#endif
+
     std::map<Function *, TermInfo> *result =
         new std::map<Function *, TermInfo>();
     for (Module::iterator I = M.begin(), E = M.end(); I != E; I++) {
@@ -1520,19 +1667,36 @@ std::map<Function *, TermInfo> *Play::collectLineToGroupsMapping(
             if (basicBlockIsValid(&entry)) {
                 std::string filename = findFilenameContainingBB(entry, M);
                 std::set<size_t> *changed_at_termination = new std::set<size_t>();
+                std::set<size_t> *changed_and_children_at_termination = new std::set<size_t>();
                 std::map<std::string, std::set<size_t> > *possibly_changed_at_termination =
                     new std::map<std::string, std::set<size_t> >();
 
-                collectLineToGroupsMappingInFunction(&entry, &visited, filename,
-                        value_to_alias_group, changed_at_termination,
-                        possibly_changed_at_termination, M);
+                collectLineToGroupsMappingInFunction(F, value_to_alias_group,
+                        filename, M, changed_at_termination,
+                        changed_and_children_at_termination,
+                        possibly_changed_at_termination);
 
                 result->insert(std::pair<Function *, TermInfo>(F,
                             TermInfo(changed_at_termination,
+                                changed_and_children_at_termination,
                                 possibly_changed_at_termination)));
             }
         }
     }
+
+
+    std::vector<GroupsModifiedAtLine *> final_line_to_groups_modified;
+    for (std::vector<GroupsModifiedAtLine *>::iterator i =
+            line_to_groups_modified.begin(), e = line_to_groups_modified.end();
+            i != e; i++) {
+        GroupsModifiedAtLine *curr = *i;
+        if (!(curr->groups->size() == 0 &&
+                curr->groups_and_children->size() == 0 &&
+                is_empty_map(curr->groups_possibly_modified))) {
+            final_line_to_groups_modified.push_back(curr);
+        }
+    }
+    line_to_groups_modified = final_line_to_groups_modified;
 
     return result;
 }
@@ -1545,6 +1709,7 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
             line_to_groups_modified.end(); line_iter != line_end; line_iter++) {
         GroupsModifiedAtLine *curr = *line_iter;
         std::set<size_t> *groups = curr->groups;
+        std::set<size_t> *groups_and_children = curr->groups_and_children;
         std::map<std::string, std::set<size_t> > *groups_possibly_modified =
             curr->groups_possibly_modified;
 
@@ -1554,6 +1719,15 @@ void Play::dumpLineToGroupsMappingTo(const char *filename) {
         for (std::set<size_t>::iterator groups_iter = groups->begin(),
                 groups_end = groups->end(); groups_iter != groups_end;
                 groups_iter++) {
+            if (groups_iter != groups->begin()) fprintf(fp, ", ");
+            fprintf(fp, "%lu", *groups_iter);
+        }
+
+        fprintf(fp, " } { ");
+
+        for (set<size_t>::iterator groups_iter = groups_and_children->begin(),
+                groups_end = groups_and_children->end();
+                groups_iter != groups_end; groups_iter++) {
             if (groups_iter != groups->begin()) fprintf(fp, ", ");
             fprintf(fp, "%lu", *groups_iter);
         }
@@ -1673,20 +1847,20 @@ bool Play::isMarkedWithNoCheckpoint(Function *F) {
 
 CALLS_CHECKPOINT Play::knownFunctionCreatesCheckpoint(Function *F) {
     assert(isKnownFunction(F));
-    return doesFunctionCreateCheckpoint[F->getName().str()];
+    return doesFunctionCreateCheckpoint.at(F->getName().str());
 }
 
 CALLS_CHECKPOINT Play::mayCreateCheckpointHelper(Function *F,
         std::set<Instruction *> *visited) {
     if (F == NULL) return MAY;
 
-    if (can_call_checkpoint.find(F) != can_call_checkpoint.end()) {
-        return can_call_checkpoint.at(F);
-    }
-
 #ifdef VERBOSE
     llvm::errs() << "Checking if " << F->getName().str() << " creates checkpoint\n";
 #endif
+
+    if (can_call_checkpoint.find(F) != can_call_checkpoint.end()) {
+        return can_call_checkpoint.at(F);
+    }
 
     CALLS_CHECKPOINT result = DOES_NOT;
 
@@ -2724,7 +2898,7 @@ static void printStructInfo(FILE *fp, Type *base_type,
 void Play::handleHostAllocation(CallInst *callInst, Function *callee,
         FILE *fp,
         std::map<std::string, StructInfo> *structFields,
-        std::string fname, std::map<Value *, size_t> value_to_alias_group) {
+        std::string fname, std::map<Value *, size_t> *value_to_alias_group) {
     int line_no = callInst->getDebugLoc().getLine();
     int col = callInst->getDebugLoc().getCol();
     assert(line_no != 0);
@@ -2823,7 +2997,7 @@ void Play::handleDeviceAllocation(CallInst *callInst, Function *callee,
 }
 
 void Play::findHeapAllocations(Module &M, const char *output_file,
-        std::map<Value *, size_t> value_to_alias_group) {
+        std::map<Value *, size_t> *value_to_alias_group) {
     FILE *fp = fopen(output_file, "w");
 
     std::map<std::string, StructInfo> *structFields =
@@ -2870,6 +3044,7 @@ void Play::printGroupsChanged(FILE *fp, Function *F,
     assert(func_to_groups_changed->find(F) != func_to_groups_changed->end());
     TermInfo changed = func_to_groups_changed->at(F);
     std::set<size_t> *groups = changed.get_groups();
+    std::set<size_t> *groups_and_children = changed.get_groups_and_children();
     std::map<std::string, std::set<size_t> > *possibly_changed_at_termination =
         changed.get_possibly_changed_at_termination();
 
@@ -2877,6 +3052,14 @@ void Play::printGroupsChanged(FILE *fp, Function *F,
 
     for (std::set<size_t>::iterator i = groups->begin(), e = groups->end();
             i != e; i++) {
+        size_t curr = *i;
+        fprintf(fp, " %lu", curr);
+    }
+
+    fprintf(fp, " %lu", groups_and_children->size());
+
+    for (set<size_t>::iterator i = groups_and_children->begin(),
+            e = groups_and_children->end(); i != e; i++) {
         size_t curr = *i;
         fprintf(fp, " %lu", curr);
     }
@@ -3003,7 +3186,7 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
 }
 
 void Play::findFunctionExits(Module &M, const char *output_file,
-        std::map<Value *, size_t> value_to_alias_group,
+        std::map<Value *, size_t> *value_to_alias_group,
         std::map<Function *, TermInfo> *func_to_groups_changed) {
     FILE *fp = fopen(output_file, "w");
 
@@ -3106,8 +3289,6 @@ bool Play::runOnModule(Module &M) {
      * well as the alias sets that should be marked by those calls.
      */
 
-    findGlobalsAndConstants(M, "globals.info", "constants.info");
-
 #ifdef PROFILE
     const long start_propagation = microseconds();
 #endif
@@ -3117,6 +3298,9 @@ bool Play::runOnModule(Module &M) {
 #endif
 
     dumpReachable(reachable, "reachable.info");
+
+    findGlobalsAndConstants(M, "globals.info", "constants.info",
+            reachable.get_value_to_alias_group());
 
 #ifdef PROFILE
     const long start_groups = microseconds();
@@ -3180,7 +3364,7 @@ bool Play::runOnModule(Module &M) {
     const long elapsed_overall = microseconds() - start_overall;
     llvm::errs() << "Propagation: " << elapsed_propagation << " us\n";
     llvm::errs() << "Groups:      " << elapsed_groups << " us\n";
-    llvm::errs() << "  PropagateGroupsDown " << propagateGroupsDownTime << " us\n";
+    // llvm::errs() << "  PropagateGroupsDown " << propagateGroupsDownTime << " us\n";
     llvm::errs() << "    AddAliasChangeLoc    " << addAliasChangeLocTime << " us\n";
     llvm::errs() << "    FindCalls            " << findCallsTime << " us\n";
     llvm::errs() << "    CheckingVisited      " << checkingVisitedTime << " us\n";

@@ -220,6 +220,19 @@ std::map<std::string, FunctionExit *> *DesiredInsertions::parseFunctionExits() {
         }
 
         end = line.find(' ');
+        int n_groups_and_children = atoi(line.substr(0, end).c_str());
+        line = line.substr(end + 1);
+
+        for (int i = 0; i < n_groups_and_children; i++) {
+            end = line.find(' ');
+            assert(end != std::string::npos);
+            size_t alias = unique_alias(strtoul(line.substr(0, end).c_str(),
+                        NULL, 10));
+            info->add_changed_group_and_children_at_term(alias);
+            line = line.substr(end + 1);
+        }
+
+        end = line.find(' ');
         int n_possible_groups = atoi(line.substr(0, end).c_str());
 
         if (end == std::string::npos) {
@@ -259,7 +272,8 @@ std::map<std::string, FunctionExit *> *DesiredInsertions::parseFunctionExits() {
         }
 
         if (info->get_groups_changed_at_termination().size() > 0 ||
-                info->get_groups_possibly_changed_at_termination().size() > 0) {
+                info->get_groups_possibly_changed_at_termination().size() > 0 ||
+                info->get_groups_and_children_changed_at_termination().size() > 0) {
             info->update_id(count_locs++);
         }
         (*result)[funcname] = info;
@@ -799,21 +813,38 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
             groups->push_back(group);
 
             if (line[group_end + 1] == '}') {
-                line = line.substr(group_end + 3);
+                line = line.substr(group_end + 5);
                 break;
             }
 
             line = line.substr(group_end + 2);
         }
 
+        std::vector<size_t> *groups_and_children = new std::vector<size_t>();
+        if (line[0] == ' ') {
+            // No groups_and_children changed
+            line = line.substr(3);
+        } else {
+            while (1) {
+                int group_end = find_group_end(&line);
+                std::string group_str = line.substr(0, group_end);
+                size_t group = unique_alias(strtoul(group_str.c_str(), NULL, 10));
+                groups_and_children->push_back(group);
+
+                if (line[group_end + 1] == '}') {
+                    line = line.substr(group_end + 3);
+                    break;
+                }
+
+                line = line.substr(group_end + 2);
+            }
+        }
+
         size_t first_colon = line.find(':');
-        std::string direct = line.substr(0, first_colon);
+        std::string call = line.substr(0, first_colon);
         line = line.substr(first_colon + 1);
-        size_t second_colon = line.find(':');
-        std::string call = line.substr(0, second_colon);
-        line = line.substr(second_colon + 1);
-        size_t reason_end = line.find(' ');
-        std::string reason = line.substr(0, reason_end);
+        size_t end_reason = line.find(' ');
+        std::string reason = line.substr(0, end_reason);
 
         std::map<std::string, std::set<size_t> > *groups_possibly_changed =
             new std::map<std::string, std::set<size_t> >();
@@ -860,8 +891,8 @@ std::vector<StateChangeInsertion *> *DesiredInsertions::parseStateChangeInsertio
         }
 
         StateChangeInsertion *change = new StateChangeInsertion(count_locs,
-                filename, line_no, col, groups, groups_possibly_changed, direct,
-                call, reason);
+                filename, line_no, col, groups, groups_and_children,
+                groups_possibly_changed, call, reason);
 #ifdef VERBOSE
         llvm::errs() << "CHANGE\n";
         llvm::errs() << change->str() << "\n";

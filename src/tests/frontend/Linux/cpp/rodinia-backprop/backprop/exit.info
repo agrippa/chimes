@@ -1,20 +1,20 @@
-drnd 0 0 0
-dpn1 0 0 0
-squash 0 1 11 0
-alloc_1d_dbl 39 3 28 29 30 0
-alloc_2d_dbl 72 6 56 57 58 59 60 72 0
-bpnn_randomize_weights 0 6 106 107 108 109 110 140 0
-bpnn_randomize_row 0 4 157 158 159 182 0
-bpnn_zero_weights 0 6 184 185 186 187 188 215 0
-bpnn_initialize 0 1 232 0
-bpnn_internal_create 1487 6 242 243 244 245 246 1487 0
-bpnn_free 0 4 351 352 353 354 0
-bpnn_create 496 4 482 483 484 485 3 bpnn_randomize_row 1 500 bpnn_randomize_weights 1 500 bpnn_zero_weights 1 500
-bpnn_layerforward 0 4 537 538 539 607 0
-bpnn_output_error 0 11 612 613 614 615 616 617 618 619 620 687 709 0
-bpnn_hidden_error 0 14 710 711 712 713 714 715 716 717 718 719 720 721 815 839 0
-bpnn_adjust_weights 0 5 846 847 848 900 915 0
-bpnn_feedforward 0 0 1 bpnn_layerforward 1 970
-bpnn_train 0 0 1 bpnn_adjust_weights 1 1027
-bpnn_save 0 21 1115 1116 1117 1118 1119 1120 1121 1122 1123 1124 1125 1126 1127 1128 1129 1130 1131 1132 1133 1134 1192 0
-bpnn_read 1487 2 1386 1390 1 bpnn_zero_weights 1 1489
+drnd 0 0 0 0
+dpn1 0 0 0 0
+squash 0 1 11 0 0
+alloc_1d_dbl 39 3 28 29 30 0 0
+alloc_2d_dbl 72 6 56 57 58 59 60 72 0 0
+bpnn_randomize_weights 0 6 106 107 108 109 110 140 0 0
+bpnn_randomize_row 0 4 157 158 159 182 0 0
+bpnn_zero_weights 0 6 184 185 186 187 188 215 0 0
+bpnn_initialize 0 1 232 0 0
+bpnn_internal_create 1487 6 242 243 244 245 246 1487 0 0
+bpnn_free 0 4 351 352 353 354 0 0
+bpnn_create 496 4 482 483 484 485 0 0
+bpnn_layerforward 0 4 537 538 539 607 0 0
+bpnn_output_error 0 11 612 613 614 615 616 617 618 619 620 687 709 0 0
+bpnn_hidden_error 0 14 710 711 712 713 714 715 716 717 718 719 720 721 815 839 0 0
+bpnn_adjust_weights 0 5 846 847 848 900 915 0 0
+bpnn_feedforward 0 0 0 0
+bpnn_train 0 0 0 0
+bpnn_save 0 22 1115 1116 1117 1118 1119 1120 1121 1122 1123 1124 1125 1126 1127 1128 1129 1130 1131 1132 1133 1134 1150 1192 0 0
+bpnn_read 1487 2 1386 1390 0 0

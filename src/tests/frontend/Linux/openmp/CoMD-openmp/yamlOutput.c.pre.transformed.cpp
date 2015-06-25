@@ -70,7 +70,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -3084,11 +3084,11 @@ void printSeparator_npm(FILE* file)
 
 static int module_init() {
     init_module(8440722059901884527UL, 6, 5, 6, 5, 5, 2, 7, 2, 0, 3,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (8440722059901884527UL + 50UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (8440722059901884527UL + 2UL), (8440722059901884527UL + 3UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)2, (8440722059901884527UL + 51UL), "printSeparator", (unsigned)1, (8440722059901884527UL + 109UL), "getTimeString", (unsigned)1, (8440722059901884527UL + 52UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (8440722059901884527UL + 110UL),
-                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (8440722059901884527UL + 119UL), (8440722059901884527UL + 120UL), (8440722059901884527UL + 121UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (8440722059901884527UL + 50UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (8440722059901884527UL + 2UL), (8440722059901884527UL + 3UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (8440722059901884527UL + 51UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (8440722059901884527UL + 110UL),
+                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (8440722059901884527UL + 119UL), (8440722059901884527UL + 120UL), (8440722059901884527UL + 121UL),
                             "getTimeString", (void *)(&getTimeString_npm), (void *)__null, 0, 1, (8440722059901884527UL + 152UL), 0UL, 3, "time", 1, (8440722059901884527UL + 120UL), 0UL, "localtime", 1, (8440722059901884527UL + 120UL), (8440722059901884527UL + 127UL), "sprintf", 8, (8440722059901884527UL + 152UL), (8440722059901884527UL + 159UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
                             "yamlBegin", (void *)(&yamlBegin_npm), (void *)__null, 0, 0, 0UL, 5, "printRank", 0, 0UL, "time", 1, (8440722059901884527UL + 2UL), 0UL, "localtime", 1, (8440722059901884527UL + 2UL), (8440722059901884527UL + 13UL), "sprintf", 8, (8440722059901884527UL + 4UL), (8440722059901884527UL + 159UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "sprintf", 4, (8440722059901884527UL + 1UL), (8440722059901884527UL + 160UL), (8440722059901884527UL + 62UL), (8440722059901884527UL + 4UL), 0UL,
                             "yamlAppInfo", (void *)(&yamlAppInfo_npm), (void *)__null, 1, &____alias_loc_id_0, 1, (8440722059901884527UL + 109UL), 0UL, 21, "printRank", 0, 0UL, "printSeparator", 1, (8440722059901884527UL + 109UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 162UL), (8440722059901884527UL + 62UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 162UL), (8440722059901884527UL + 62UL), 0UL, "fprintf", 2, (8440722059901884527UL + 109UL), (8440722059901884527UL + 160UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 166UL), (8440722059901884527UL + 167UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 168UL), (8440722059901884527UL + 169UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 170UL), (8440722059901884527UL + 169UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 172UL), (8440722059901884527UL + 173UL), 0UL, "fprintf", 2, (8440722059901884527UL + 109UL), (8440722059901884527UL + 174UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 175UL), (8440722059901884527UL + 176UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 177UL), (8440722059901884527UL + 175UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 179UL), (8440722059901884527UL + 180UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 181UL), (8440722059901884527UL + 173UL), 0UL, "builtWithMpi", 0, 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 172UL), (8440722059901884527UL + 184UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 177UL), (8440722059901884527UL + 184UL), 0UL, "getTimeString", 1, (8440722059901884527UL + 52UL), 0UL, "fprintf", 3, (8440722059901884527UL + 109UL), (8440722059901884527UL + 168UL), (8440722059901884527UL + 52UL), 0UL, "fprintf", 2, (8440722059901884527UL + 109UL), (8440722059901884527UL + 188UL), 0UL, "fflush", 1, (8440722059901884527UL + 109UL), 0UL,
@@ -3125,8 +3125,8 @@ static int module_init() {
                         "getTimeString|rawtime|0", 1, "getTimeString",
         "printSeparator", 0UL, (int)1, 8440722059901884636UL,
         "getTimeString", 0UL, (int)1, 8440722059901884579UL);
-    register_global_var("global|CoMDVariant", "i8*", (void *)(&CoMDVariant), 8.0, 1, 0, 0);
-    register_global_var("global|CoMDVersion", "i8*", (void *)(&CoMDVersion), 8.0, 1, 0, 0);
+    register_global_var("global|CoMDVariant", "i8*", (void *)(&CoMDVariant), 8.0, 1, 0, (8440722059901884527UL + 161UL), 0);
+    register_global_var("global|CoMDVersion", "i8*", (void *)(&CoMDVersion), 8.0, 1, 0, (8440722059901884527UL + 161UL), 0);
     register_constant(8440722059901884527UL + 0UL, (void *)CoMDVersion, 4);
     register_constant(8440722059901884527UL + 1UL, (void *)CoMDVariant, 12);
     return 0;

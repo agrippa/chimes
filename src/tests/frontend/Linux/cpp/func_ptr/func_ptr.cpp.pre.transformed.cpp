@@ -52,7 +52,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1445,7 +1445,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = n
         call_lbl_1: b = (((int (*)(int))(translate_fptr((void *)(*fptr), 1, 0, 0UL, 1, 0UL)))(6)) ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp"
-     call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_1);
+     call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp"
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return b;
@@ -1467,7 +1467,7 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_s
         call_lbl_1: b = (((int (*)(int))(translate_fptr((void *)(*fptr), 1, 0, 0UL, 1, 0UL)))(6)) ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp"
-     call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_1);
+     call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp"
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return b;
@@ -1490,16 +1490,16 @@ int foo_npm(int a) {
 
 static int module_init() {
     init_module(1118257419494346108UL, 2, 2, 0, 3, 1, 0, 1, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (1118257419494346108UL + 10UL), (1118257419494346108UL + 11UL), (1118257419494346108UL + 12UL), (1118257419494346108UL + 29UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (1118257419494346108UL + 13UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (1118257419494346108UL + 1UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (1118257419494346108UL + 13UL),
+                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (1118257419494346108UL + 10UL), (1118257419494346108UL + 11UL), (1118257419494346108UL + 12UL), (1118257419494346108UL + 29UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (1118257419494346108UL + 1UL),
                             "foo", (void *)(&foo_npm), (void *)(foo), 0, 1, 0UL, 0UL, 0,
                            "foo", &(____chimes_does_checkpoint_foo_npm),
                              (1118257419494346108UL + 12UL), (1118257419494346108UL + 28UL),
                              (1118257419494346108UL + 29UL), (1118257419494346108UL + 30UL),
                              "main", "main", 1, "checkpoint",
                              "foo", "_Z3fooi", 0);
-    register_global_var("global|fptr", "i32 (i32)*", (void *)(&fptr), 8.0, 1, 0, 0);
+    register_global_var("global|fptr", "i32 (i32)*", (void *)(&fptr), 8.0, 1, 0, (1118257419494346108UL + 29UL), 0);
     return 0;
 }
 

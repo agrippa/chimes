@@ -50,7 +50,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -405,7 +405,7 @@ void resize_npm( float* input,
 
 static int module_init() {
     init_module(10788734578353475988UL, 2, 1, 0, 1, 1, 0, 1, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)12, (unsigned)0, (10788734578353475988UL + 1UL), (10788734578353475988UL + 2UL), (10788734578353475988UL + 3UL), (10788734578353475988UL + 4UL), (10788734578353475988UL + 5UL), (10788734578353475988UL + 6UL), (10788734578353475988UL + 7UL), (10788734578353475988UL + 8UL), (10788734578353475988UL + 9UL), (10788734578353475988UL + 10UL), (10788734578353475988UL + 11UL), (10788734578353475988UL + 171UL),
+                           &____alias_loc_id_0, (unsigned)12, (unsigned)0, (unsigned)0, (10788734578353475988UL + 1UL), (10788734578353475988UL + 2UL), (10788734578353475988UL + 3UL), (10788734578353475988UL + 4UL), (10788734578353475988UL + 5UL), (10788734578353475988UL + 6UL), (10788734578353475988UL + 7UL), (10788734578353475988UL + 8UL), (10788734578353475988UL + 9UL), (10788734578353475988UL + 10UL), (10788734578353475988UL + 11UL), (10788734578353475988UL + 171UL),
                             "resize", (void *)(&resize_npm), (void *)__null, 0, 7, (10788734578353475988UL + 168UL), 0UL, 0UL, (10788734578353475988UL + 171UL), 0UL, 0UL, 0UL, 0UL, 0,
                            "resize", &(____chimes_does_checkpoint_resize_npm),
                              (10788734578353475988UL + 1UL), (10788734578353475988UL + 168UL),

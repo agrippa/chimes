@@ -70,7 +70,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -2999,11 +2999,11 @@ void printSeparator_npm(FILE* file)
 
 static int module_init() {
     init_module(6662524296122130922UL, 6, 5, 6, 5, 5, 2, 7, 2, 0, 3,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (6662524296122130922UL + 50UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (6662524296122130922UL + 2UL), (6662524296122130922UL + 3UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)2, (6662524296122130922UL + 51UL), "printSeparator", (unsigned)1, (6662524296122130922UL + 111UL), "getTimeString", (unsigned)1, (6662524296122130922UL + 52UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (6662524296122130922UL + 112UL),
-                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (6662524296122130922UL + 121UL), (6662524296122130922UL + 122UL), (6662524296122130922UL + 123UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (6662524296122130922UL + 50UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (6662524296122130922UL + 2UL), (6662524296122130922UL + 3UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (6662524296122130922UL + 51UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (6662524296122130922UL + 112UL),
+                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (6662524296122130922UL + 121UL), (6662524296122130922UL + 122UL), (6662524296122130922UL + 123UL),
                             "getTimeString", (void *)(&getTimeString_npm), (void *)__null, 0, 1, (6662524296122130922UL + 154UL), 0UL, 3, "time", 1, (6662524296122130922UL + 122UL), 0UL, "localtime", 1, (6662524296122130922UL + 122UL), (6662524296122130922UL + 129UL), "sprintf", 8, (6662524296122130922UL + 154UL), (6662524296122130922UL + 161UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
                             "yamlBegin", (void *)(&yamlBegin_npm), (void *)__null, 0, 0, 0UL, 5, "printRank", 0, 0UL, "time", 1, (6662524296122130922UL + 2UL), 0UL, "localtime", 1, (6662524296122130922UL + 2UL), (6662524296122130922UL + 13UL), "sprintf", 8, (6662524296122130922UL + 4UL), (6662524296122130922UL + 161UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "sprintf", 4, (6662524296122130922UL + 1UL), (6662524296122130922UL + 162UL), (6662524296122130922UL + 62UL), (6662524296122130922UL + 4UL), 0UL,
                             "yamlAppInfo", (void *)(&yamlAppInfo_npm), (void *)__null, 1, &____alias_loc_id_0, 1, (6662524296122130922UL + 111UL), 0UL, 22, "printRank", 0, 0UL, "printSeparator", 1, (6662524296122130922UL + 111UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 164UL), (6662524296122130922UL + 62UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 164UL), (6662524296122130922UL + 62UL), 0UL, "fprintf", 2, (6662524296122130922UL + 111UL), (6662524296122130922UL + 162UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 168UL), (6662524296122130922UL + 169UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 170UL), (6662524296122130922UL + 171UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 172UL), (6662524296122130922UL + 171UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 174UL), (6662524296122130922UL + 175UL), 0UL, "fprintf", 2, (6662524296122130922UL + 111UL), (6662524296122130922UL + 176UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 177UL), (6662524296122130922UL + 178UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 179UL), (6662524296122130922UL + 177UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 181UL), (6662524296122130922UL + 182UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 183UL), (6662524296122130922UL + 175UL), 0UL, "builtWithMpi", 0, 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 174UL), (6662524296122130922UL + 186UL), 0UL, "fprintf", 2, (6662524296122130922UL + 111UL), (6662524296122130922UL + 170UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 179UL), (6662524296122130922UL + 186UL), 0UL, "getTimeString", 1, (6662524296122130922UL + 52UL), 0UL, "fprintf", 3, (6662524296122130922UL + 111UL), (6662524296122130922UL + 170UL), (6662524296122130922UL + 52UL), 0UL, "fprintf", 2, (6662524296122130922UL + 111UL), (6662524296122130922UL + 191UL), 0UL, "fflush", 1, (6662524296122130922UL + 111UL), 0UL,
@@ -3040,8 +3040,8 @@ static int module_init() {
                         "getTimeString|rawtime|0", 1, "getTimeString",
         "printSeparator", 0UL, (int)1, 6662524296122131033UL,
         "getTimeString", 0UL, (int)1, 6662524296122130974UL);
-    register_global_var("global|CoMDVariant", "i8*", (void *)(&CoMDVariant), 8.0, 1, 0, 0);
-    register_global_var("global|CoMDVersion", "i8*", (void *)(&CoMDVersion), 8.0, 1, 0, 0);
+    register_global_var("global|CoMDVariant", "i8*", (void *)(&CoMDVariant), 8.0, 1, 0, (6662524296122130922UL + 163UL), 0);
+    register_global_var("global|CoMDVersion", "i8*", (void *)(&CoMDVersion), 8.0, 1, 0, (6662524296122130922UL + 163UL), 0);
     register_constant(6662524296122130922UL + 0UL, (void *)CoMDVersion, 4);
     register_constant(6662524296122130922UL + 1UL, (void *)CoMDVariant, 12);
     return 0;

@@ -1,7 +1,7 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./call_passed_directly_to_call.cpp 4 5 len=3 foo_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./call_passed_directly_to_call.cpp 8 5 len=3 bar_npm
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_directly_to_call.cpp 4 24 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(8063099132378862917UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_directly_to_call.cpp 6 1 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_directly_to_call.cpp 6 1 rm_stack(false, 0UL, "foo", &____must_manage_foo, 0, ____chimes_did_disable0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_directly_to_call.cpp 9 5 rm_stack(false, 0UL, "bar", &____must_manage_bar, 0, ____chimes_did_disable1); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_directly_to_call.cpp 8 11 const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_directly_to_call.cpp 20 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable2); 

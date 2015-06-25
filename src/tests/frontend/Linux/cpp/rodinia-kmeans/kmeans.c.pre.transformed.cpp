@@ -88,7 +88,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -5469,7 +5469,7 @@ void usage_resumable(char *argv0) {const int ____chimes_did_disable0 = new_stack
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
     exit(-1);
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_13, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable0); }
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5575,7 +5575,7 @@ int nclusters;
 # 148 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
          lbl_0: int infile; if (____must_checkpoint_main_infile_0 != 0) { register_stack_var("main|infile|0", &____must_checkpoint_main_infile_0, "i32", (void *)(&infile), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } ;
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_5: if ((infile = (____chimes_does_checkpoint_open_npm ? ( ({ calling((void*)open, 5, ____alias_loc_id_0, 0UL, 3, (size_t)(10963612600445403371UL), (size_t)(0UL), (size_t)(10963612600445403362UL)); (open)(filename, 0, "0600"); }) ) : (({ calling_npm("open", ____alias_loc_id_0); (*____chimes_extern_func_open)(filename, 00, "0600"); })))) == -1) {
+         call_lbl_5: if ((infile = (____chimes_does_checkpoint_open_npm ? ( ({ calling((void*)open, 5, ____alias_loc_id_13, 0UL, 3, (size_t)(10963612600445403371UL), (size_t)(0UL), (size_t)(10963612600445403362UL)); (open)(filename, 0, "0600"); }) ) : (({ calling_npm("open", ____alias_loc_id_13); (*____chimes_extern_func_open)(filename, 00, "0600"); })))) == -1) {
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
             fprintf(stderr, "Error: no such file (%s)\n", filename);
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5583,9 +5583,9 @@ int nclusters;
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         }
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_8: (____chimes_does_checkpoint_read_npm ? ( ({ void * ____chimes_arg4; unsigned long ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg4 = (&numObjects); ____chimes_arg5 = (sizeof(int)); } calling((void*)read, 8, ____alias_loc_id_3, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445402959UL), (size_t)(0UL)); (read)(infile, ____chimes_arg4, ____chimes_arg5); }) ) : (({ calling_npm("read", ____alias_loc_id_3); (*____chimes_extern_func_read)(infile, &numObjects, sizeof(int)); })));
+         call_lbl_8: (____chimes_does_checkpoint_read_npm ? ( ({ void * ____chimes_arg4; unsigned long ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg4 = (&numObjects); ____chimes_arg5 = (sizeof(int)); } calling((void*)read, 8, ____alias_loc_id_12, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445402959UL), (size_t)(0UL)); (read)(infile, ____chimes_arg4, ____chimes_arg5); }) ) : (({ calling_npm("read", ____alias_loc_id_12); (*____chimes_extern_func_read)(infile, &numObjects, sizeof(int)); })));
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_9: (____chimes_does_checkpoint_read_npm ? ( ({ void * ____chimes_arg7; unsigned long ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg7 = (&numAttributes); ____chimes_arg8 = (sizeof(int)); } calling((void*)read, 9, 0, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445402958UL), (size_t)(0UL)); (read)(infile, ____chimes_arg7, ____chimes_arg8); }) ) : (({ calling_npm("read", 0); (*____chimes_extern_func_read)(infile, &numAttributes, sizeof(int)); })));
+         call_lbl_9: (____chimes_does_checkpoint_read_npm ? ( ({ void * ____chimes_arg7; unsigned long ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg7 = (&numAttributes); ____chimes_arg8 = (sizeof(int)); } calling((void*)read, 9, ____alias_loc_id_10, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445402958UL), (size_t)(0UL)); (read)(infile, ____chimes_arg7, ____chimes_arg8); }) ) : (({ calling_npm("read", ____alias_loc_id_10); (*____chimes_extern_func_read)(infile, &numAttributes, sizeof(int)); })));
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5599,7 +5599,7 @@ int nclusters;
         for (i=1; i<numObjects; i++) { attributes[i] = attributes[i-1] + numAttributes; };
 # 163 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 164 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_13: (____chimes_does_checkpoint_read_npm ? ( ({ unsigned long ____chimes_arg11; if (!____chimes_replaying) { ____chimes_arg11 = (numObjects * numAttributes * sizeof(float)); } calling((void*)read, 13, ____alias_loc_id_4, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445403248UL), (size_t)(0UL)); (read)(infile, buf, ____chimes_arg11); }) ) : (({ calling_npm("read", ____alias_loc_id_4); (*____chimes_extern_func_read)(infile, buf, numObjects*numAttributes*sizeof(float)); })));
+         call_lbl_13: (____chimes_does_checkpoint_read_npm ? ( ({ unsigned long ____chimes_arg11; if (!____chimes_replaying) { ____chimes_arg11 = (numObjects * numAttributes * sizeof(float)); } calling((void*)read, 13, ____alias_loc_id_6, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445403248UL), (size_t)(0UL)); (read)(infile, buf, ____chimes_arg11); }) ) : (({ calling_npm("read", ____alias_loc_id_6); (*____chimes_extern_func_read)(infile, buf, numObjects*numAttributes*sizeof(float)); })));
 # 165 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 166 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
          call_lbl_14: (____chimes_does_checkpoint_close_npm ? ( ({ calling((void*)close, 14, 0, 0UL, 1, (size_t)(0UL)); (close)(infile); }) ) : (({ calling_npm("close", 0); (*____chimes_extern_func_close)(infile); })));
@@ -5620,16 +5620,16 @@ int nclusters;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
          call_lbl_20: while (fgets(line, 1024, infile) != __null)
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-            if (alias_group_changed(____alias_loc_id_1) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 20, ____alias_loc_id_1, 10963612600445403141UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_1); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) != 0) {numObjects++; };
+            if (alias_group_changed(____alias_loc_id_11) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 20, ____alias_loc_id_11, 10963612600445403141UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_11); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) != 0) {numObjects++; };
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_21: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 21, ____alias_loc_id_2, 0UL, 1, (size_t)(10963612600445403220UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_2); (*____chimes_extern_func_rewind)(infile); })));
+         call_lbl_21: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 21, ____alias_loc_id_8, 0UL, 1, (size_t)(10963612600445403220UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_8); (*____chimes_extern_func_rewind)(infile); })));
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         while (fgets(line, 1024, infile) != __null) {
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-             call_lbl_24: if (alias_group_changed(____alias_loc_id_7) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 24, ____alias_loc_id_7, 10963612600445403158UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_7); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) != 0) {
+             call_lbl_24: if (alias_group_changed(____alias_loc_id_9) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 24, ____alias_loc_id_9, 10963612600445403158UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_9); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) != 0) {
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-                alias_group_changed(____alias_loc_id_11); call_lbl_26: while ((____chimes_does_checkpoint_strtok_npm ? ( ({ char * ____chimes_arg18; if (!____chimes_replaying) { ____chimes_arg18 = (__null); } calling((void*)strtok, 26, ____alias_loc_id_11, 10963612600445403162UL, 2, (size_t)(10963612600445403371UL), (size_t)(10963612600445403362UL)); (strtok)(____chimes_arg18, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_11); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); }))) != __null) numAttributes++;
+                alias_group_changed(____alias_loc_id_7); call_lbl_26: while ((____chimes_does_checkpoint_strtok_npm ? ( ({ char * ____chimes_arg18; if (!____chimes_replaying) { ____chimes_arg18 = (__null); } calling((void*)strtok, 26, ____alias_loc_id_7, 10963612600445403162UL, 2, (size_t)(10963612600445403371UL), (size_t)(10963612600445403362UL)); (strtok)(____chimes_arg18, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_7); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); }))) != __null) numAttributes++;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
                 break;
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5648,17 +5648,17 @@ int nclusters;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         for (i=1; i<numObjects; i++) { attributes[i] = attributes[i-1] + numAttributes; };
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_30: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 30, ____alias_loc_id_8, 0UL, 1, (size_t)(10963612600445403220UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_8); (*____chimes_extern_func_rewind)(infile); })));
+         call_lbl_30: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 30, ____alias_loc_id_3, 0UL, 1, (size_t)(10963612600445403220UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_3); (*____chimes_extern_func_rewind)(infile); })));
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         i = 0;
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         while (fgets(line, 1024, infile) != __null) {
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-             call_lbl_33: if (alias_group_changed(____alias_loc_id_9) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 33, ____alias_loc_id_9, 10963612600445403230UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_9); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) == __null) {continue; };
+             call_lbl_33: if (alias_group_changed(____alias_loc_id_4) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 33, ____alias_loc_id_4, 10963612600445403230UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_4); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) == __null) {continue; };
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
             for (j=0; j<numAttributes; j++) {
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-                     call_lbl_34: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_strtok_npm ? ( ({ char * ____chimes_arg23; if (!____chimes_replaying) { ____chimes_arg23 = (__null); } calling((void*)strtok, 34, ____alias_loc_id_12, 10963612600445403241UL, 2, (size_t)(10963612600445403371UL), (size_t)(10963612600445403362UL)); (strtok)(____chimes_arg23, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_12); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); })))) ; buf[i] = atof(____chimes_unroll_var_0);
+                     call_lbl_34: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_strtok_npm ? ( ({ char * ____chimes_arg23; if (!____chimes_replaying) { ____chimes_arg23 = (__null); } calling((void*)strtok, 34, ____alias_loc_id_5, 10963612600445403241UL, 2, (size_t)(10963612600445403371UL), (size_t)(10963612600445403362UL)); (strtok)(____chimes_arg23, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_5); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); })))) ; buf[i] = atof(____chimes_unroll_var_0);
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
                 i++;
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5676,19 +5676,19 @@ int nclusters;
  memcpy(attributes[0], buf, numObjects*numAttributes*sizeof(float));
 # 207 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-  call_lbl_39: timing = (____chimes_does_checkpoint_omp_get_wtime_npm ? ( ({ calling((void*)omp_get_wtime, 39, ____alias_loc_id_10, 0UL, 0); (omp_get_wtime)(); }) ) : (({ calling_npm("omp_get_wtime", ____alias_loc_id_10); (*____chimes_extern_func_omp_get_wtime)(); })));
+  call_lbl_39: timing = (____chimes_does_checkpoint_omp_get_wtime_npm ? ( ({ calling((void*)omp_get_wtime, 39, ____alias_loc_id_1, 0UL, 0); (omp_get_wtime)(); }) ) : (({ calling_npm("omp_get_wtime", ____alias_loc_id_1); (*____chimes_extern_func_omp_get_wtime)(); })));
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
     for (i=0; i<nloops; i++) {
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         cluster_centres = __null;
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_40: (____chimes_does_checkpoint_cluster_npm ? ( ({ calling((void*)cluster, 40, ____alias_loc_id_5, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445403095UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445402955UL)); (cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); }) ) : (({ calling_npm("cluster", ____alias_loc_id_5); (*____chimes_extern_func_cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); })));
+         call_lbl_40: (____chimes_does_checkpoint_cluster_npm ? ( ({ calling((void*)cluster, 40, ____alias_loc_id_2, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445403095UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445402955UL)); (cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); }) ) : (({ calling_npm("cluster", ____alias_loc_id_2); (*____chimes_extern_func_cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); })));
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
     }
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-    alias_group_changed(____alias_loc_id_6); call_lbl_42: timing = (____chimes_does_checkpoint_omp_get_wtime_npm ? ( ({ calling((void*)omp_get_wtime, 42, ____alias_loc_id_6, 0UL, 0); (omp_get_wtime)(); }) ) : (({ calling_npm("omp_get_wtime", ____alias_loc_id_6); (*____chimes_extern_func_omp_get_wtime)(); }))) - timing;
+    alias_group_changed(____alias_loc_id_0); call_lbl_42: timing = (____chimes_does_checkpoint_omp_get_wtime_npm ? ( ({ calling((void*)omp_get_wtime, 42, ____alias_loc_id_0, 0UL, 0); (omp_get_wtime)(); }) ) : (({ calling_npm("omp_get_wtime", ____alias_loc_id_0); (*____chimes_extern_func_omp_get_wtime)(); }))) - timing;
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5719,7 +5719,7 @@ void usage_quick(char *argv0) {const int ____chimes_did_disable0 = new_stack((vo
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
     exit(-1);
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_13, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable0); }
 
 void usage(char *argv0) { (____chimes_replaying ? usage_resumable(argv0) : usage_quick(argv0)); }
 
@@ -5823,7 +5823,7 @@ int nclusters;
 # 148 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
          lbl_0: int infile; if (____must_checkpoint_main_infile_0 != 0) { register_stack_var("main|infile|0", &____must_checkpoint_main_infile_0, "i32", (void *)(&infile), (size_t)4, 0, 0, 0); } ;
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_5: if ((infile = (____chimes_does_checkpoint_open_npm ? ( ({ calling((void*)open, 5, ____alias_loc_id_0, 0UL, 3, (size_t)(10963612600445403371UL), (size_t)(0UL), (size_t)(10963612600445403362UL)); (open)(filename, 0, "0600"); }) ) : (({ calling_npm("open", ____alias_loc_id_0); (*____chimes_extern_func_open)(filename, 00, "0600"); })))) == -1) {
+         call_lbl_5: if ((infile = (____chimes_does_checkpoint_open_npm ? ( ({ calling((void*)open, 5, ____alias_loc_id_13, 0UL, 3, (size_t)(10963612600445403371UL), (size_t)(0UL), (size_t)(10963612600445403362UL)); (open)(filename, 0, "0600"); }) ) : (({ calling_npm("open", ____alias_loc_id_13); (*____chimes_extern_func_open)(filename, 00, "0600"); })))) == -1) {
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
             fprintf(stderr, "Error: no such file (%s)\n", filename);
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5831,9 +5831,9 @@ int nclusters;
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         }
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_8: (____chimes_does_checkpoint_read_npm ? ( ({ calling((void*)read, 8, ____alias_loc_id_3, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445402959UL), (size_t)(0UL)); (read)(infile, &numObjects, sizeof(int)); }) ) : (({ calling_npm("read", ____alias_loc_id_3); (*____chimes_extern_func_read)(infile, &numObjects, sizeof(int)); })));
+         call_lbl_8: (____chimes_does_checkpoint_read_npm ? ( ({ calling((void*)read, 8, ____alias_loc_id_12, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445402959UL), (size_t)(0UL)); (read)(infile, &numObjects, sizeof(int)); }) ) : (({ calling_npm("read", ____alias_loc_id_12); (*____chimes_extern_func_read)(infile, &numObjects, sizeof(int)); })));
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_9: (____chimes_does_checkpoint_read_npm ? ( ({ calling((void*)read, 9, 0, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445402958UL), (size_t)(0UL)); (read)(infile, &numAttributes, sizeof(int)); }) ) : (({ calling_npm("read", 0); (*____chimes_extern_func_read)(infile, &numAttributes, sizeof(int)); })));
+         call_lbl_9: (____chimes_does_checkpoint_read_npm ? ( ({ calling((void*)read, 9, ____alias_loc_id_10, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445402958UL), (size_t)(0UL)); (read)(infile, &numAttributes, sizeof(int)); }) ) : (({ calling_npm("read", ____alias_loc_id_10); (*____chimes_extern_func_read)(infile, &numAttributes, sizeof(int)); })));
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5847,7 +5847,7 @@ int nclusters;
         for (i=1; i<numObjects; i++) { attributes[i] = attributes[i-1] + numAttributes; };
 # 163 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 164 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_13: (____chimes_does_checkpoint_read_npm ? ( ({ calling((void*)read, 13, ____alias_loc_id_4, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445403248UL), (size_t)(0UL)); (read)(infile, buf, numObjects * numAttributes * sizeof(float)); }) ) : (({ calling_npm("read", ____alias_loc_id_4); (*____chimes_extern_func_read)(infile, buf, numObjects*numAttributes*sizeof(float)); })));
+         call_lbl_13: (____chimes_does_checkpoint_read_npm ? ( ({ calling((void*)read, 13, ____alias_loc_id_6, 0UL, 3, (size_t)(0UL), (size_t)(10963612600445403248UL), (size_t)(0UL)); (read)(infile, buf, numObjects * numAttributes * sizeof(float)); }) ) : (({ calling_npm("read", ____alias_loc_id_6); (*____chimes_extern_func_read)(infile, buf, numObjects*numAttributes*sizeof(float)); })));
 # 165 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 166 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
          call_lbl_14: (____chimes_does_checkpoint_close_npm ? ( ({ calling((void*)close, 14, 0, 0UL, 1, (size_t)(0UL)); (close)(infile); }) ) : (({ calling_npm("close", 0); (*____chimes_extern_func_close)(infile); })));
@@ -5868,16 +5868,16 @@ int nclusters;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
          call_lbl_20: while (fgets(line, 1024, infile) != __null)
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-            if (alias_group_changed(____alias_loc_id_1) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 20, ____alias_loc_id_1, 10963612600445403141UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_1); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) != 0) {numObjects++; };
+            if (alias_group_changed(____alias_loc_id_11) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 20, ____alias_loc_id_11, 10963612600445403141UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_11); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) != 0) {numObjects++; };
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_21: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 21, ____alias_loc_id_2, 0UL, 1, (size_t)(10963612600445403220UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_2); (*____chimes_extern_func_rewind)(infile); })));
+         call_lbl_21: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 21, ____alias_loc_id_8, 0UL, 1, (size_t)(10963612600445403220UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_8); (*____chimes_extern_func_rewind)(infile); })));
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         while (fgets(line, 1024, infile) != __null) {
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-             call_lbl_24: if (alias_group_changed(____alias_loc_id_7) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 24, ____alias_loc_id_7, 10963612600445403158UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_7); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) != 0) {
+             call_lbl_24: if (alias_group_changed(____alias_loc_id_9) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 24, ____alias_loc_id_9, 10963612600445403158UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_9); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) != 0) {
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-                alias_group_changed(____alias_loc_id_11); call_lbl_26: while ((____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 26, ____alias_loc_id_11, 10963612600445403162UL, 2, (size_t)(10963612600445403371UL), (size_t)(10963612600445403362UL)); (strtok)(__null, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_11); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); }))) != __null) numAttributes++;
+                alias_group_changed(____alias_loc_id_7); call_lbl_26: while ((____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 26, ____alias_loc_id_7, 10963612600445403162UL, 2, (size_t)(10963612600445403371UL), (size_t)(10963612600445403362UL)); (strtok)(__null, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_7); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); }))) != __null) numAttributes++;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
                 break;
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5896,17 +5896,17 @@ int nclusters;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         for (i=1; i<numObjects; i++) { attributes[i] = attributes[i-1] + numAttributes; };
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_30: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 30, ____alias_loc_id_8, 0UL, 1, (size_t)(10963612600445403220UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_8); (*____chimes_extern_func_rewind)(infile); })));
+         call_lbl_30: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 30, ____alias_loc_id_3, 0UL, 1, (size_t)(10963612600445403220UL)); (rewind)(infile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_3); (*____chimes_extern_func_rewind)(infile); })));
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         i = 0;
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         while (fgets(line, 1024, infile) != __null) {
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-             call_lbl_33: if (alias_group_changed(____alias_loc_id_9) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 33, ____alias_loc_id_9, 10963612600445403230UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_9); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) == __null) {continue; };
+             call_lbl_33: if (alias_group_changed(____alias_loc_id_4) || (____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 33, ____alias_loc_id_4, 10963612600445403230UL, 2, (size_t)(10963612600445402960UL), (size_t)(10963612600445403365UL)); (strtok)(line, " \t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_4); (*____chimes_extern_func_strtok)(line, " \t\n"); }))) == __null) {continue; };
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
             for (j=0; j<numAttributes; j++) {
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-                     call_lbl_34: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 34, ____alias_loc_id_12, 10963612600445403241UL, 2, (size_t)(10963612600445403371UL), (size_t)(10963612600445403362UL)); (strtok)(__null, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_12); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); })))) ; buf[i] = atof(____chimes_unroll_var_0);
+                     call_lbl_34: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_strtok_npm ? ( ({ calling((void*)strtok, 34, ____alias_loc_id_5, 10963612600445403241UL, 2, (size_t)(10963612600445403371UL), (size_t)(10963612600445403362UL)); (strtok)(__null, " ,\t\n"); }) ) : (({ calling_npm("strtok", ____alias_loc_id_5); (*____chimes_extern_func_strtok)(__null, " ,\t\n"); })))) ; buf[i] = atof(____chimes_unroll_var_0);
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
                 i++;
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5924,19 +5924,19 @@ int nclusters;
  memcpy(attributes[0], buf, numObjects*numAttributes*sizeof(float));
 # 207 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-  call_lbl_39: timing = (____chimes_does_checkpoint_omp_get_wtime_npm ? ( ({ calling((void*)omp_get_wtime, 39, ____alias_loc_id_10, 0UL, 0); (omp_get_wtime)(); }) ) : (({ calling_npm("omp_get_wtime", ____alias_loc_id_10); (*____chimes_extern_func_omp_get_wtime)(); })));
+  call_lbl_39: timing = (____chimes_does_checkpoint_omp_get_wtime_npm ? ( ({ calling((void*)omp_get_wtime, 39, ____alias_loc_id_1, 0UL, 0); (omp_get_wtime)(); }) ) : (({ calling_npm("omp_get_wtime", ____alias_loc_id_1); (*____chimes_extern_func_omp_get_wtime)(); })));
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
     for (i=0; i<nloops; i++) {
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
         cluster_centres = __null;
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-         call_lbl_40: (____chimes_does_checkpoint_cluster_npm ? ( ({ calling((void*)cluster, 40, ____alias_loc_id_5, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445403095UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445402955UL)); (cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); }) ) : (({ calling_npm("cluster", ____alias_loc_id_5); (*____chimes_extern_func_cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); })));
+         call_lbl_40: (____chimes_does_checkpoint_cluster_npm ? ( ({ calling((void*)cluster, 40, ____alias_loc_id_2, 0UL, 6, (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445403095UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10963612600445402955UL)); (cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); }) ) : (({ calling_npm("cluster", ____alias_loc_id_2); (*____chimes_extern_func_cluster)(numObjects, numAttributes, attributes, nclusters, threshold, &cluster_centres); })));
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
     }
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
-    alias_group_changed(____alias_loc_id_6); call_lbl_42: timing = (____chimes_does_checkpoint_omp_get_wtime_npm ? ( ({ calling((void*)omp_get_wtime, 42, ____alias_loc_id_6, 0UL, 0); (omp_get_wtime)(); }) ) : (({ calling_npm("omp_get_wtime", ____alias_loc_id_6); (*____chimes_extern_func_omp_get_wtime)(); }))) - timing;
+    alias_group_changed(____alias_loc_id_0); call_lbl_42: timing = (____chimes_does_checkpoint_omp_get_wtime_npm ? ( ({ calling((void*)omp_get_wtime, 42, ____alias_loc_id_0, 0UL, 0); (omp_get_wtime)(); }) ) : (({ calling_npm("omp_get_wtime", ____alias_loc_id_0); (*____chimes_extern_func_omp_get_wtime)(); }))) - timing;
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c"
@@ -5992,21 +5992,21 @@ void usage_npm(char *argv0) {
 
 static int module_init() {
     init_module(10963612600445402927UL, 14, 2, 16, 15, 1, 7, 8, 3, 15, 2,
-                           &____alias_loc_id_0, (unsigned)15, (unsigned)6, (10963612600445402927UL + 20UL), (10963612600445402927UL + 21UL), (10963612600445402927UL + 22UL), (10963612600445402927UL + 23UL), (10963612600445402927UL + 24UL), (10963612600445402927UL + 25UL), (10963612600445402927UL + 28UL), (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 34UL), (10963612600445402927UL + 35UL), (10963612600445402927UL + 36UL), (10963612600445402927UL + 39UL), (10963612600445402927UL + 430UL), "strtok", (unsigned)2, (10963612600445402927UL + 33UL), (10963612600445402927UL + 438UL), "read", (unsigned)3, (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 321UL), "cluster", (unsigned)2, (10963612600445402927UL + 28UL), (10963612600445402927UL + 168UL), "rewind", (unsigned)1, (10963612600445402927UL + 293UL), "usage", (unsigned)1, (10963612600445402927UL + 110UL), "open", (unsigned)2, (10963612600445402927UL + 435UL), (10963612600445402927UL + 444UL),
-                           &____alias_loc_id_1, (unsigned)15, (unsigned)6, (10963612600445402927UL + 20UL), (10963612600445402927UL + 21UL), (10963612600445402927UL + 22UL), (10963612600445402927UL + 23UL), (10963612600445402927UL + 24UL), (10963612600445402927UL + 25UL), (10963612600445402927UL + 28UL), (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 34UL), (10963612600445402927UL + 35UL), (10963612600445402927UL + 36UL), (10963612600445402927UL + 39UL), (10963612600445402927UL + 430UL), "strtok", (unsigned)2, (10963612600445402927UL + 33UL), (10963612600445402927UL + 438UL), "read", (unsigned)3, (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 321UL), "cluster", (unsigned)2, (10963612600445402927UL + 28UL), (10963612600445402927UL + 168UL), "rewind", (unsigned)1, (10963612600445402927UL + 293UL), "usage", (unsigned)1, (10963612600445402927UL + 110UL), "open", (unsigned)2, (10963612600445402927UL + 435UL), (10963612600445402927UL + 444UL),
-                           &____alias_loc_id_2, (unsigned)15, (unsigned)6, (10963612600445402927UL + 20UL), (10963612600445402927UL + 21UL), (10963612600445402927UL + 22UL), (10963612600445402927UL + 23UL), (10963612600445402927UL + 24UL), (10963612600445402927UL + 25UL), (10963612600445402927UL + 28UL), (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 34UL), (10963612600445402927UL + 35UL), (10963612600445402927UL + 36UL), (10963612600445402927UL + 39UL), (10963612600445402927UL + 430UL), "strtok", (unsigned)2, (10963612600445402927UL + 33UL), (10963612600445402927UL + 438UL), "read", (unsigned)3, (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 321UL), "cluster", (unsigned)2, (10963612600445402927UL + 28UL), (10963612600445402927UL + 168UL), "rewind", (unsigned)1, (10963612600445402927UL + 293UL), "usage", (unsigned)1, (10963612600445402927UL + 110UL), "open", (unsigned)2, (10963612600445402927UL + 435UL), (10963612600445402927UL + 444UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)2, (10963612600445402927UL + 38UL), "read", (unsigned)1, (10963612600445402927UL + 32UL), "open", (unsigned)2, (10963612600445402927UL + 435UL), (10963612600445402927UL + 444UL),
-                           &____alias_loc_id_4, (unsigned)4, (unsigned)1, (10963612600445402927UL + 26UL), (10963612600445402927UL + 27UL), (10963612600445402927UL + 29UL), (10963612600445402927UL + 168UL), "read", (unsigned)3, (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 321UL),
-                           &____alias_loc_id_5, (unsigned)3, (unsigned)1, (10963612600445402927UL + 28UL), (10963612600445402927UL + 29UL), (10963612600445402927UL + 37UL), "cluster", (unsigned)2, (10963612600445402927UL + 28UL), (10963612600445402927UL + 168UL),
-                           &____alias_loc_id_6, (unsigned)3, (unsigned)1, (10963612600445402927UL + 28UL), (10963612600445402927UL + 29UL), (10963612600445402927UL + 37UL), "cluster", (unsigned)2, (10963612600445402927UL + 28UL), (10963612600445402927UL + 168UL),
-                           &____alias_loc_id_7, (unsigned)5, (unsigned)2, (10963612600445402927UL + 26UL), (10963612600445402927UL + 27UL), (10963612600445402927UL + 29UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 168UL), "strtok", (unsigned)4, (10963612600445402927UL + 33UL), (10963612600445402927UL + 435UL), (10963612600445402927UL + 438UL), (10963612600445402927UL + 444UL), "rewind", (unsigned)1, (10963612600445402927UL + 293UL),
-                           &____alias_loc_id_8, (unsigned)5, (unsigned)2, (10963612600445402927UL + 26UL), (10963612600445402927UL + 27UL), (10963612600445402927UL + 29UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 168UL), "strtok", (unsigned)4, (10963612600445402927UL + 33UL), (10963612600445402927UL + 435UL), (10963612600445402927UL + 438UL), (10963612600445402927UL + 444UL), "rewind", (unsigned)1, (10963612600445402927UL + 293UL),
-                           &____alias_loc_id_9, (unsigned)5, (unsigned)2, (10963612600445402927UL + 29UL), (10963612600445402927UL + 30UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 40UL), (10963612600445402927UL + 321UL), "strtok", (unsigned)4, (10963612600445402927UL + 33UL), (10963612600445402927UL + 435UL), (10963612600445402927UL + 438UL), (10963612600445402927UL + 444UL), "rewind", (unsigned)1, (10963612600445402927UL + 293UL),
-                            &____alias_loc_id_10, (unsigned)5, (unsigned)2, (10963612600445402927UL + 29UL), (10963612600445402927UL + 30UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 40UL), (10963612600445402927UL + 321UL), "strtok", (unsigned)4, (10963612600445402927UL + 33UL), (10963612600445402927UL + 435UL), (10963612600445402927UL + 438UL), (10963612600445402927UL + 444UL), "rewind", (unsigned)1, (10963612600445402927UL + 293UL),
-                            &____alias_loc_id_11, (unsigned)1, (unsigned)1, (10963612600445402927UL + 31UL), "strtok", (unsigned)2, (10963612600445402927UL + 435UL), (10963612600445402927UL + 444UL),
-                            &____alias_loc_id_12, (unsigned)5, (unsigned)1, (10963612600445402927UL + 29UL), (10963612600445402927UL + 30UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 40UL), (10963612600445402927UL + 321UL), "strtok", (unsigned)4, (10963612600445402927UL + 33UL), (10963612600445402927UL + 435UL), (10963612600445402927UL + 438UL), (10963612600445402927UL + 444UL),
-                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (10963612600445402927UL + 1UL), (10963612600445402927UL + 2UL),
-                            &____alias_loc_id_14, (unsigned)16, (unsigned)4, (10963612600445402927UL + 20UL), (10963612600445402927UL + 21UL), (10963612600445402927UL + 22UL), (10963612600445402927UL + 23UL), (10963612600445402927UL + 24UL), (10963612600445402927UL + 25UL), (10963612600445402927UL + 28UL), (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 34UL), (10963612600445402927UL + 35UL), (10963612600445402927UL + 36UL), (10963612600445402927UL + 37UL), (10963612600445402927UL + 38UL), (10963612600445402927UL + 39UL), (10963612600445402927UL + 430UL), "read", (unsigned)3, (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 321UL), "cluster", (unsigned)2, (10963612600445402927UL + 28UL), (10963612600445402927UL + 168UL), "open", (unsigned)2, (10963612600445402927UL + 435UL), (10963612600445402927UL + 444UL), "usage", (unsigned)1, (10963612600445402927UL + 110UL),
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (10963612600445402927UL + 29UL), (10963612600445402927UL + 37UL),
+                           &____alias_loc_id_1, (unsigned)5, (unsigned)0, (unsigned)0, (10963612600445402927UL + 29UL), (10963612600445402927UL + 30UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 40UL), (10963612600445402927UL + 321UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)1, (10963612600445402927UL + 28UL), (10963612600445402927UL + 29UL), (10963612600445402927UL + 37UL), "cluster", (unsigned)2, (10963612600445402927UL + 28UL), (10963612600445402927UL + 168UL),
+                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (unsigned)1, (10963612600445402927UL + 26UL), (10963612600445402927UL + 27UL), (10963612600445402927UL + 29UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 168UL), "rewind", (unsigned)1, (10963612600445402927UL + 293UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)1, (10963612600445402927UL + 29UL), (10963612600445402927UL + 30UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 40UL), (10963612600445402927UL + 321UL), "strtok", (unsigned)3, (10963612600445402927UL + 33UL), (10963612600445402927UL + 303UL), (10963612600445402927UL + 438UL),
+                           &____alias_loc_id_5, (unsigned)4, (unsigned)0, (unsigned)1, (10963612600445402927UL + 29UL), (10963612600445402927UL + 30UL), (10963612600445402927UL + 40UL), (10963612600445402927UL + 321UL), "strtok", (unsigned)3, (10963612600445402927UL + 314UL), (10963612600445402927UL + 435UL), (10963612600445402927UL + 444UL),
+                           &____alias_loc_id_6, (unsigned)4, (unsigned)0, (unsigned)1, (10963612600445402927UL + 26UL), (10963612600445402927UL + 27UL), (10963612600445402927UL + 29UL), (10963612600445402927UL + 168UL), "read", (unsigned)1, (10963612600445402927UL + 321UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (10963612600445402927UL + 31UL), "strtok", (unsigned)3, (10963612600445402927UL + 235UL), (10963612600445402927UL + 435UL), (10963612600445402927UL + 444UL),
+                           &____alias_loc_id_8, (unsigned)16, (unsigned)0, (unsigned)1, (10963612600445402927UL + 20UL), (10963612600445402927UL + 21UL), (10963612600445402927UL + 22UL), (10963612600445402927UL + 23UL), (10963612600445402927UL + 24UL), (10963612600445402927UL + 25UL), (10963612600445402927UL + 28UL), (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 34UL), (10963612600445402927UL + 35UL), (10963612600445402927UL + 36UL), (10963612600445402927UL + 39UL), (10963612600445402927UL + 293UL), (10963612600445402927UL + 430UL), "rewind", (unsigned)1, (10963612600445402927UL + 293UL),
+                           &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)1, (10963612600445402927UL + 33UL), "strtok", (unsigned)3, (10963612600445402927UL + 33UL), (10963612600445402927UL + 231UL), (10963612600445402927UL + 438UL),
+                            &____alias_loc_id_10, (unsigned)0, (unsigned)0, (unsigned)1, "read", (unsigned)1, (10963612600445402927UL + 31UL),
+                            &____alias_loc_id_11, (unsigned)16, (unsigned)0, (unsigned)1, (10963612600445402927UL + 20UL), (10963612600445402927UL + 21UL), (10963612600445402927UL + 22UL), (10963612600445402927UL + 23UL), (10963612600445402927UL + 24UL), (10963612600445402927UL + 25UL), (10963612600445402927UL + 28UL), (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 33UL), (10963612600445402927UL + 34UL), (10963612600445402927UL + 35UL), (10963612600445402927UL + 36UL), (10963612600445402927UL + 39UL), (10963612600445402927UL + 293UL), (10963612600445402927UL + 430UL), "strtok", (unsigned)3, (10963612600445402927UL + 33UL), (10963612600445402927UL + 214UL), (10963612600445402927UL + 438UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)1, (10963612600445402927UL + 38UL), "read", (unsigned)1, (10963612600445402927UL + 32UL),
+                            &____alias_loc_id_13, (unsigned)13, (unsigned)0, (unsigned)1, (10963612600445402927UL + 20UL), (10963612600445402927UL + 21UL), (10963612600445402927UL + 22UL), (10963612600445402927UL + 23UL), (10963612600445402927UL + 24UL), (10963612600445402927UL + 25UL), (10963612600445402927UL + 28UL), (10963612600445402927UL + 31UL), (10963612600445402927UL + 32UL), (10963612600445402927UL + 34UL), (10963612600445402927UL + 35UL), (10963612600445402927UL + 36UL), (10963612600445402927UL + 430UL), "open", (unsigned)2, (10963612600445402927UL + 435UL), (10963612600445402927UL + 444UL),
+                            &____alias_loc_id_14, (unsigned)1, (unsigned)0, (unsigned)0, (10963612600445402927UL + 37UL),
                             "usage", (void *)(&usage_npm), (void *)__null, 0, 1, (10963612600445402927UL + 14UL), 0UL, 2, "fprintf", 3, (10963612600445402927UL + 7UL), (10963612600445402927UL + 431UL), (10963612600445402927UL + 14UL), 0UL, "exit", 1, 0UL, 0UL,
                                "close", (void **)&(____chimes_extern_func_close),
                                "cluster", (void **)&(____chimes_extern_func_cluster),
@@ -6075,7 +6075,7 @@ static int module_init() {
         "omp_get_wtime", 0UL, (int)0,
         "cluster", 0UL, (int)6, 0UL, 0UL, 10963612600445403095UL, 0UL, 0UL, 10963612600445402955UL,
         "omp_get_wtime", 0UL, (int)0);
-    register_global_var("global|num_omp_threads", "i32", (void *)(&num_omp_threads), 4.0, 0, 0, 0);
+    register_global_var("global|num_omp_threads", "i32", (void *)(&num_omp_threads), 4.0, 0, 0, 0UL, 0);
     return 0;
 }
 

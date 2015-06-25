@@ -10,7 +10,7 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 28 len=6
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 63 , 17693923976101510249UL, 0, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 2 len=4 free_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 7 , 17693923976101510249UL
-InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 2 alias_group_changed(____alias_loc_id_3); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 2 alias_group_changed(____alias_loc_id_0); 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 28 len=6 malloc_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 49 72 , 17693923976101510176UL, 0, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 81 38 len=6 malloc_wrapper
@@ -21,9 +21,9 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 28 len=6
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 118 63 , 17693923976101510249UL, 0, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 2 len=4 free_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 135 7 , 17693923976101510249UL
-InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 95 2 rm_stack(true, 17693923976101510176UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_5, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 95 2 rm_stack(true, 17693923976101510176UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 21 24 const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17693923976101510198UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 138 2 rm_stack(true, 17693923976101510269UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_6, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 138 2 rm_stack(true, 17693923976101510269UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 106 22 const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 5, 5, (size_t)(17693923976101510275UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0, "get_frame|converted|0", &____must_checkpoint_get_frame_converted_0, "i32", (void *)(&converted), (size_t)4, 0, 0, 0); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 21 25 const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17693923976101510198UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 21 266 
@@ -71,15 +71,15 @@ InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 121 3  call_l
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 16 8 len=15 chop_flip_image_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 21 265  ;  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 102 8 len=9 get_frame_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 37  ({  calling((void*)AVI_video_width, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_width)(cell_file); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 37  ({  calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_width)(cell_file); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 62 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 39  ({  calling((void*)AVI_video_height, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_height)(cell_file); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 39  ({  calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_height)(cell_file); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 65 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 115 15  ({  calling((void*)AVI_set_video_position, 3, ____alias_loc_id_2, 0UL, 2, (size_t)(17693923976101510275UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 115 15  ({  calling((void*)AVI_set_video_position, 3, ____alias_loc_id_1, 0UL, 2, (size_t)(17693923976101510275UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 115 58 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 65  ({  calling((void*)AVI_read_frame, 6, ____alias_loc_id_3, 0UL, 3, (size_t)(17693923976101510275UL), (size_t)(17693923976101510249UL), (size_t)(17693923976101510213UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 65  ({  calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(17693923976101510275UL), (size_t)(17693923976101510249UL), (size_t)(17693923976101510213UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 108 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 121 16  ({  calling((void*)AVI_print_error, 7, ____alias_loc_id_4, 0UL, 1, (size_t)(17693923976101510289UL)); (AVI_print_error)((char *)"Error with AVI_read_frame"); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 121 16  ({  calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(17693923976101510289UL)); (AVI_print_error)((char *)"Error with AVI_read_frame"); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 121 67 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 127 18 ({ calling_npm("chop_flip_image", 0); chop_flip_image_npm(image_buf, height, width, cropped, scaled, converted); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 132 24 
@@ -102,15 +102,15 @@ int dummy;
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 16 8 len=15 chop_flip_image_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 21 265  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 102 8 len=9 get_frame_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 37  ({  calling((void*)AVI_video_width, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_width)(cell_file); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 37  ({  calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_width)(cell_file); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 110 62 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 39  ({  calling((void*)AVI_video_height, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_height)(cell_file); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 39  ({  calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_height)(cell_file); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 111 65 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 115 15  ({  calling((void*)AVI_set_video_position, 3, ____alias_loc_id_2, 0UL, 2, (size_t)(17693923976101510275UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 115 15  ({  calling((void*)AVI_set_video_position, 3, ____alias_loc_id_1, 0UL, 2, (size_t)(17693923976101510275UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 115 58 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 65  ({  calling((void*)AVI_read_frame, 6, ____alias_loc_id_3, 0UL, 3, (size_t)(17693923976101510275UL), (size_t)(17693923976101510249UL), (size_t)(17693923976101510213UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 65  ({  calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(17693923976101510275UL), (size_t)(17693923976101510249UL), (size_t)(17693923976101510213UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 119 108 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 121 16  ({  char * ____chimes_arg7;  if (!____chimes_replaying) { ____chimes_arg7 = ((char *)"Error with AVI_read_frame");  }  calling((void*)AVI_print_error, 7, ____alias_loc_id_4, 0UL, 1, (size_t)(17693923976101510289UL)); (AVI_print_error)(____chimes_arg7); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 121 16  ({  char * ____chimes_arg7;  if (!____chimes_replaying) { ____chimes_arg7 = ((char *)"Error with AVI_read_frame");  }  calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(17693923976101510289UL)); (AVI_print_error)(____chimes_arg7); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 121 67 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 127 18 ({ calling_npm("chop_flip_image", 0); chop_flip_image_npm(image_buf, height, width, cropped, scaled, converted); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c 132 24 

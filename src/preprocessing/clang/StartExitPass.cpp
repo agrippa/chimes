@@ -167,8 +167,13 @@ std::string StartExitPass::constructFunctionEndingStmts(bool inserting_rm,
     FunctionExit *info = insertions->getFunctionExitInfo(curr_func);
     std::set<size_t> groups_changed =
         info->get_groups_changed_at_termination();
+    std::set<size_t> groups_and_children_changed =
+        info->get_groups_and_children_changed_at_termination();
+    std::map<std::string, std::set<size_t> > groups_possibly_changed =
+        info->get_groups_possibly_changed_at_termination();
     std::string loc_id;
-    if (groups_changed.size() > 0) {
+    if (groups_changed.size() > 0 || groups_and_children_changed.size() > 0 ||
+            groups_possibly_changed.size() > 0) {
         loc_id = insertions->get_alias_loc_var(info->get_id());
     } else {
         loc_id = "0";
@@ -193,7 +198,9 @@ std::string StartExitPass::constructFunctionEndingStmts(bool inserting_rm,
                 loc_id << ", " << *current_disable_varname << "); ";
         }
     } else {
-        if (groups_changed.size() > 0) {
+        if (groups_changed.size() > 0 ||
+                groups_and_children_changed.size() > 0 ||
+                groups_possibly_changed.size() > 0) {
             ss << "alias_group_changed(" <<
                 insertions->get_alias_loc_var(info->get_id()) << "); ";
         }

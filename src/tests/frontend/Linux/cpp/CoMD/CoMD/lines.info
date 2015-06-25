@@ -1,32 +1,52 @@
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 88 4 : { 1, 2, 3 } direct:call:initParallel { initParallel { 2, 3 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 102 4 : { 5 } direct:call:printSimulationDataYaml { initSimulation { 6 }, parseCommandLine { 4, 128 }, printCmdYaml { 4, 904 }, printSimulationDataYaml { 66, 904 }, timestampBarrier { 1342 }, yamlAppInfo { 904 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 105 4 : { 7 } direct:call:timestampBarrier { initValidate { 66 }, timestampBarrier { 1342 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 113 4 : { 8, 9, 10 } direct:call:profileStart { timestampBarrier { 1345 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 72 : { 11 } direct:call:printThings { printThings { 66 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 116 12 : { 10 } prop:call:profileStart {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 128 4 : { 10 } prop:call:profileStop {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 69 : { 12 } direct:call:printThings { printThings { 66 }, sumAtoms { 66 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 175 15 : { 143, 316 } direct:call:initPotential { initPotential { 333 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 4 : { 144, 316 } prop:call:sanityChecks { sanityChecks { 145, 1387 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 190 18 : { 146, 316 } direct:call:initDecomposition { initDecomposition { 146 }, initSpecies { 1387 }, sanityChecks { 145, 1387 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 193 17 : { 316 } direct:call:initLinkCells { initLinkCells { 1387 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 194 17 : { 316 } direct:call:initAtoms { initAtoms { 1387 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 197 4 : { 316 } direct:call:createFccLattice { createFccLattice { 316 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 204 9 : { 316 } prop:call:profileStart { initAtomHaloExchange { 1387 }, randomDisplacements { 316 }, setTemperature { 316 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 17 : { 339, 340 } direct:call:maxOccupancy { maxOccupancy { 357 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 10 : { 341 } direct:call:printRank {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 4 : { 357, 676 } direct:call:NULL { printSeparator { 676 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 4 : { 342, 343, 344, 345, 346, 347, 348, 349 } direct:call:printSeparator { printSeparator { 676 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 282 4 : { 678 } direct:call:sumAtoms { sumAtoms { 733 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 8 : { 679, 685 } direct:call:printRank {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 336 9 : { 734, 735, 780 } prop:call:profileStart {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 10 : { 794, 795, 796, 797, 1364 } direct:call:printRank {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 8 : { 926, 927 } direct:call:printRank {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 227 4 : { 1010, 1011, 1012 } prop:call:destroyLinkCells { destroyLinkCells { 1021 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 261 22 : { 1082, 1083, 1084, 1085, 1086 } prop:call:initEamPot { initEamPot { 1119, 1120, 1121 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 261 75 : { 1082, 1083, 1084, 1085, 1086 } prop:call:initLjPot { initEamPot { 1119, 1120, 1121 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 441 18 : { 1122, 1123, 1124, 1125, 1126 } direct:call:getNRanks {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 11 : { 1125 } direct:call:printRank {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 11 : { 1125, 1127, 1128, 1129, 1130, 1131, 1132, 1133 } prop:call:printRank { bcastParallel { 1133 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 11 : { 1125, 1127, 1128, 1129, 1130, 1131, 1132, 1133 } prop:call:printRank { bcastParallel { 1133 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 4 : { 1125, 1127, 1128, 1129, 1130, 1131, 1132, 1133 } prop:call:bcastParallel { bcastParallel { 1133 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 145 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1347 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 132 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1346 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 131 69 : { 12 } {  } call:printThings {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 128 4 : { 10 } {  } call:profileStop {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 113 4 : { 8, 9, 10 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 107 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1345 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 123 7 : {  } {  } call:timestep { timestep { 66 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 105 4 : { 7 } {  } call:timestampBarrier { timestampBarrier { 1342 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 120 72 : { 11 } {  } call:printThings {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 102 4 : { 5 } {  } call:printSimulationDataYaml {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 98 4 : {  } {  } call:printCmdYaml { printCmdYaml { 4, 904 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 96 18 : {  } {  } call:parseCommandLine { parseCommandLine { 4, 128 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 116 12 : { 10 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 94 4 : {  } {  } call:yamlAppInfo { yamlAppInfo { 904 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 91 4 : {  } {  } call:timestampBarrier { timestampBarrier { 1342 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 88 4 : { 1, 2, 3 } {  } call:initParallel { initParallel { 2, 3 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 212 4 : {  } {  } call:kineticEnergy { kineticEnergy { 316 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 209 4 : {  } {  } call:computeForce { computeForce { 316 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 205 4 : {  } {  } call:redistributeAtoms { redistributeAtoms { 316 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 204 9 : { 316 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 201 24 : {  } {  } call:initAtomHaloExchange { initAtomHaloExchange { 1387 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 199 4 : {  } {  } call:randomDisplacements { randomDisplacements { 316 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 198 4 : {  } {  } call:setTemperature { setTemperature { 316 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 197 4 : { 316 } {  } call:createFccLattice { createFccLattice { 316 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 194 17 : { 316 } {  } call:initAtoms { initAtoms { 1387 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 193 17 : { 316 } {  } call:initLinkCells { initLinkCells { 1387 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 190 18 : { 146, 316 } {  } call:initDecomposition { initDecomposition { 146, 1387 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 181 4 : { 144, 316 } {  } call:sanityChecks {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 175 15 : { 143, 316 } {  } call:initPotential {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 424 4 : { 342, 343, 344, 345, 346, 347, 348, 349 } {  } call:printSeparator { printSeparator { 676 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 384 10 : { 341 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 411 4 : {  } { , 357, 676 } call:NULL {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 381 17 : { 339, 340 } {  } call:maxOccupancy { maxOccupancy { 357 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 409 4 : {  } {  } call:printSeparator { printSeparator { 676 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 394 4 : {  } {  } call:printSeparator { printSeparator { 676 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 287 8 : { 679, 685 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 290 7 : {  } {  } call:printSeparator { printSeparator { 904 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 282 4 : { 678 } {  } call:sumAtoms {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 337 4 : {  } {  } call:addIntParallel { addIntParallel { 780 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 336 9 : { 734, 735, 780 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 352 10 : { 794, 795, 796, 797, 1364 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 300 8 : { 926, 927 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 229 4 : {  } {  } call:destroyHaloExchange { destroyHaloExchange { 1021 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 228 4 : {  } {  } call:destroyAtoms { destroyAtoms { 1030 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 227 4 : { 1011, 1012 } {  } call:destroyLinkCells { destroyLinkCells { 1021 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 261 22 : { 1082, 1083, 1084, 1085, 1086 } {  } call:initEamPot { initEamPot { 1116, 1119, 1120, 1121 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 261 75 : { 1082, 1083, 1084, 1085, 1086 } {  } call:initLjPot { initLjPot { 1116 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 477 4 : { 1127, 1128, 1129, 1130, 1131, 1132, 1133 } {  } call:bcastParallel { bcastParallel { 1133 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 441 18 : { 1122, 1123, 1124, 1125, 1126 } {  } call:getNRanks {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 444 11 : { 1125 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 460 11 : { 1125, 1127, 1128, 1129, 1130, 1131, 1132 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/CoMD.c 471 11 : { 1125, 1127, 1128, 1129, 1130, 1131, 1132 } {  } call:printRank {  }

@@ -69,9 +69,6 @@ static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
 static unsigned ____alias_loc_id_6;
 static unsigned ____alias_loc_id_7;
-static unsigned ____alias_loc_id_8;
-static unsigned ____alias_loc_id_9;
-static unsigned ____alias_loc_id_10;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -109,7 +106,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -2487,7 +2484,7 @@ double delta;
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_1: ({ calling((void*)omp_set_num_threads, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ;
+  call_lbl_1: ({ calling((void*)omp_set_num_threads, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 #pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static)
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
@@ -2604,7 +2601,7 @@ double delta;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_2: ({ calling((void*)omp_set_num_threads, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ;
+  call_lbl_2: ({ calling((void*)omp_set_num_threads, 2, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 #pragma omp parallel for shared(result, temp) private(r, c) schedule(static)
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
@@ -2696,7 +2693,7 @@ void fatal_resumable(char *s)
 # 163 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
 # 164 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "fatal", &____must_manage_fatal, ____alias_loc_id_7, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "fatal", &____must_manage_fatal, 0, ____chimes_did_disable2); }
 # 165 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 166 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void read_input_npm(double *vect, int grid_rows, int grid_cols, char *file);static int (*____chimes_extern_func_feof)(struct _IO_FILE *) = feof;
@@ -2737,7 +2734,7 @@ int i;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fclose(fp);
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "read_input", &____must_manage_read_input, ____alias_loc_id_8, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "read_input", &____must_manage_read_input, ____alias_loc_id_7, ____chimes_did_disable3); }
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void usage_npm(int argc, char **argv);
@@ -2762,7 +2759,7 @@ void usage_resumable(int argc, char **argv)
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_9, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable4); }
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
@@ -2848,7 +2845,7 @@ double delta;
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_1: ({ calling((void*)omp_set_num_threads, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ;
+  call_lbl_1: ({ calling((void*)omp_set_num_threads, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 #pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static)
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
@@ -2965,7 +2962,7 @@ double delta;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_2: ({ calling((void*)omp_set_num_threads, 2, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ;
+  call_lbl_2: ({ calling((void*)omp_set_num_threads, 2, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 #pragma omp parallel for shared(result, temp) private(r, c) schedule(static)
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
@@ -3055,7 +3052,7 @@ void fatal_quick(char *s)
 # 163 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
 # 164 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "fatal", &____must_manage_fatal, ____alias_loc_id_7, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "fatal", &____must_manage_fatal, 0, ____chimes_did_disable2); }
 
 void fatal(char *s) { (____chimes_replaying ? fatal_resumable(s) : fatal_quick(s)); }
 
@@ -3095,7 +3092,7 @@ int i;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fclose(fp);
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "read_input", &____must_manage_read_input, ____alias_loc_id_8, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "read_input", &____must_manage_read_input, ____alias_loc_id_7, ____chimes_did_disable3); }
 
 void read_input(double *vect, int grid_rows, int grid_cols, char *file) { (____chimes_replaying ? read_input_resumable(vect, grid_rows, grid_cols, file) : read_input_quick(vect, grid_rows, grid_cols, file)); }
 
@@ -3119,7 +3116,7 @@ void usage_quick(int argc, char **argv)
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_9, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable4); }
 
 void usage(int argc, char **argv) { (____chimes_replaying ? usage_resumable(argc, argv) : usage_quick(argc, argv)); }
 
@@ -3464,18 +3461,15 @@ void usage_npm(int argc, char **argv)
 
 
 static int module_init() {
-    init_module(10021604361511766085UL, 20, 6, 38, 11, 5, 2, 7, 10, 1, 2,
-                           &____alias_loc_id_0, (unsigned)10, (unsigned)0, (10021604361511766085UL + 1UL), (10021604361511766085UL + 2UL), (10021604361511766085UL + 3UL), (10021604361511766085UL + 4UL), (10021604361511766085UL + 5UL), (10021604361511766085UL + 6UL), (10021604361511766085UL + 7UL), (10021604361511766085UL + 8UL), (10021604361511766085UL + 9UL), (10021604361511766085UL + 10UL),
-                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (10021604361511766085UL + 11UL), (10021604361511766085UL + 12UL), (10021604361511766085UL + 13UL), (10021604361511766085UL + 814UL),
-                           &____alias_loc_id_2, (unsigned)15, (unsigned)1, (10021604361511766085UL + 827UL), (10021604361511766085UL + 828UL), (10021604361511766085UL + 829UL), (10021604361511766085UL + 830UL), (10021604361511766085UL + 831UL), (10021604361511766085UL + 832UL), (10021604361511766085UL + 833UL), (10021604361511766085UL + 834UL), (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL), (10021604361511766085UL + 837UL), (10021604361511766085UL + 838UL), (10021604361511766085UL + 839UL), (10021604361511766085UL + 840UL), (10021604361511766085UL + 842UL), "single_iteration", (unsigned)3, (10021604361511766085UL + 934UL), (10021604361511766085UL + 936UL), (10021604361511766085UL + 937UL),
-                           &____alias_loc_id_3, (unsigned)8, (unsigned)2, (10021604361511766085UL + 953UL), (10021604361511766085UL + 954UL), (10021604361511766085UL + 955UL), (10021604361511766085UL + 956UL), (10021604361511766085UL + 957UL), (10021604361511766085UL + 959UL), (10021604361511766085UL + 960UL), (10021604361511766085UL + 1020UL), "fatal", (unsigned)3, (10021604361511766085UL + 1204UL), (10021604361511766085UL + 1205UL), (10021604361511766085UL + 1207UL), "feof", (unsigned)1, (10021604361511766085UL + 976UL),
-                           &____alias_loc_id_4, (unsigned)12, (unsigned)3, (10021604361511766085UL + 1061UL), (10021604361511766085UL + 1062UL), (10021604361511766085UL + 1063UL), (10021604361511766085UL + 1064UL), (10021604361511766085UL + 1065UL), (10021604361511766085UL + 1066UL), (10021604361511766085UL + 1068UL), (10021604361511766085UL + 1069UL), (10021604361511766085UL + 1070UL), (10021604361511766085UL + 1071UL), (10021604361511766085UL + 1072UL), (10021604361511766085UL + 1200UL), "usage", (unsigned)1, (10021604361511766085UL + 1190UL), "fatal", (unsigned)1, (10021604361511766085UL + 1215UL), "read_input", (unsigned)2, (10021604361511766085UL + 1096UL), (10021604361511766085UL + 1130UL),
-                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (10021604361511766085UL + 12UL), (10021604361511766085UL + 13UL), (10021604361511766085UL + 815UL),
-                           &____alias_loc_id_6, (unsigned)15, (unsigned)1, (10021604361511766085UL + 827UL), (10021604361511766085UL + 828UL), (10021604361511766085UL + 829UL), (10021604361511766085UL + 830UL), (10021604361511766085UL + 831UL), (10021604361511766085UL + 832UL), (10021604361511766085UL + 833UL), (10021604361511766085UL + 834UL), (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL), (10021604361511766085UL + 837UL), (10021604361511766085UL + 838UL), (10021604361511766085UL + 839UL), (10021604361511766085UL + 840UL), (10021604361511766085UL + 842UL), "single_iteration", (unsigned)3, (10021604361511766085UL + 934UL), (10021604361511766085UL + 936UL), (10021604361511766085UL + 937UL),
-                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (10021604361511766085UL + 940UL),
-                           &____alias_loc_id_8, (unsigned)8, (unsigned)2, (10021604361511766085UL + 953UL), (10021604361511766085UL + 954UL), (10021604361511766085UL + 955UL), (10021604361511766085UL + 956UL), (10021604361511766085UL + 957UL), (10021604361511766085UL + 959UL), (10021604361511766085UL + 960UL), (10021604361511766085UL + 1020UL), "fatal", (unsigned)3, (10021604361511766085UL + 1204UL), (10021604361511766085UL + 1205UL), (10021604361511766085UL + 1207UL), "feof", (unsigned)1, (10021604361511766085UL + 976UL),
-                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (10021604361511766085UL + 1033UL), (10021604361511766085UL + 1034UL),
-                            &____alias_loc_id_10, (unsigned)0, (unsigned)4, "usage", (unsigned)1, (10021604361511766085UL + 1190UL), "fatal", (unsigned)1, (10021604361511766085UL + 1215UL), "compute_tran_temp", (unsigned)3, (10021604361511766085UL + 1130UL), (10021604361511766085UL + 1137UL), (10021604361511766085UL + 1144UL), "read_input", (unsigned)3, (10021604361511766085UL + 1096UL), (10021604361511766085UL + 1130UL), (10021604361511766085UL + 1137UL),
+    init_module(10021604361511766085UL, 20, 6, 38, 8, 5, 2, 7, 10, 1, 2,
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (10021604361511766085UL + 11UL), (10021604361511766085UL + 12UL), (10021604361511766085UL + 13UL), (10021604361511766085UL + 814UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1UL), (10021604361511766085UL + 2UL), (10021604361511766085UL + 3UL), (10021604361511766085UL + 4UL), (10021604361511766085UL + 5UL), (10021604361511766085UL + 6UL), (10021604361511766085UL + 7UL), (10021604361511766085UL + 8UL), (10021604361511766085UL + 9UL), (10021604361511766085UL + 10UL),
+                           &____alias_loc_id_2, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 827UL), (10021604361511766085UL + 828UL), (10021604361511766085UL + 829UL), (10021604361511766085UL + 830UL), (10021604361511766085UL + 831UL), (10021604361511766085UL + 832UL), (10021604361511766085UL + 833UL), (10021604361511766085UL + 834UL), (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL), (10021604361511766085UL + 837UL), (10021604361511766085UL + 838UL), (10021604361511766085UL + 839UL), (10021604361511766085UL + 840UL), (10021604361511766085UL + 842UL),
+                           &____alias_loc_id_3, (unsigned)9, (unsigned)0, (unsigned)1, (10021604361511766085UL + 953UL), (10021604361511766085UL + 954UL), (10021604361511766085UL + 955UL), (10021604361511766085UL + 956UL), (10021604361511766085UL + 957UL), (10021604361511766085UL + 959UL), (10021604361511766085UL + 960UL), (10021604361511766085UL + 976UL), (10021604361511766085UL + 1020UL), "feof", (unsigned)1, (10021604361511766085UL + 976UL),
+                           &____alias_loc_id_4, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1061UL), (10021604361511766085UL + 1062UL), (10021604361511766085UL + 1063UL), (10021604361511766085UL + 1064UL), (10021604361511766085UL + 1065UL), (10021604361511766085UL + 1066UL), (10021604361511766085UL + 1068UL), (10021604361511766085UL + 1069UL), (10021604361511766085UL + 1070UL), (10021604361511766085UL + 1071UL), (10021604361511766085UL + 1072UL), (10021604361511766085UL + 1130UL), (10021604361511766085UL + 1137UL), (10021604361511766085UL + 1144UL), (10021604361511766085UL + 1200UL),
+                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (10021604361511766085UL + 12UL), (10021604361511766085UL + 13UL), (10021604361511766085UL + 815UL),
+                           &____alias_loc_id_6, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 827UL), (10021604361511766085UL + 828UL), (10021604361511766085UL + 829UL), (10021604361511766085UL + 830UL), (10021604361511766085UL + 831UL), (10021604361511766085UL + 832UL), (10021604361511766085UL + 833UL), (10021604361511766085UL + 834UL), (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL), (10021604361511766085UL + 837UL), (10021604361511766085UL + 838UL), (10021604361511766085UL + 839UL), (10021604361511766085UL + 840UL), (10021604361511766085UL + 842UL),
+                           &____alias_loc_id_7, (unsigned)8, (unsigned)0, (unsigned)0, (10021604361511766085UL + 953UL), (10021604361511766085UL + 954UL), (10021604361511766085UL + 955UL), (10021604361511766085UL + 956UL), (10021604361511766085UL + 957UL), (10021604361511766085UL + 959UL), (10021604361511766085UL + 976UL), (10021604361511766085UL + 1020UL),
                             "single_iteration", (void *)(&single_iteration_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 10, (10021604361511766085UL + 814UL), (10021604361511766085UL + 815UL), (10021604361511766085UL + 816UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2, "omp_set_num_threads", 1, 0UL, 0UL, "omp_set_num_threads", 1, 0UL, 0UL,
                             "compute_tran_temp", (void *)(&compute_tran_temp_npm), (void *)__null, 1, &____alias_loc_id_2, 6, (10021604361511766085UL + 934UL), 0UL, (10021604361511766085UL + 936UL), (10021604361511766085UL + 937UL), 0UL, 0UL, 0UL, 1, "single_iteration", 10, (10021604361511766085UL + 934UL), (10021604361511766085UL + 936UL), (10021604361511766085UL + 937UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
                             "fatal", (void *)(&fatal_npm), (void *)__null, 0, 1, (10021604361511766085UL + 949UL), 0UL, 2, "fprintf", 3, (10021604361511766085UL + 943UL), (10021604361511766085UL + 1202UL), (10021604361511766085UL + 949UL), 0UL, "exit", 1, 0UL, 0UL,
@@ -3567,11 +3561,11 @@ static int module_init() {
         "read_input", 0UL, (int)4, 10021604361511767222UL, 0UL, 0UL, 10021604361511767181UL,
         "compute_tran_temp", 0UL, (int)6, 10021604361511767229UL, 0UL, 10021604361511767215UL, 10021604361511767222UL, 0UL, 0UL,
         "feof", 0UL, (int)1, 10021604361511767061UL);
-    register_global_var("global|t_chip", "double", (void *)(&t_chip), 8.0, 0, 0, 0);
-    register_global_var("global|chip_height", "double", (void *)(&chip_height), 8.0, 0, 0, 0);
-    register_global_var("global|chip_width", "double", (void *)(&chip_width), 8.0, 0, 0, 0);
-    register_global_var("global|amb_temp", "double", (void *)(&amb_temp), 8.0, 0, 0, 0);
-    register_global_var("global|num_omp_threads", "i32", (void *)(&num_omp_threads), 4.0, 0, 0, 0);
+    register_global_var("global|t_chip", "double", (void *)(&t_chip), 8.0, 0, 0, 0UL, 0);
+    register_global_var("global|chip_height", "double", (void *)(&chip_height), 8.0, 0, 0, 0UL, 0);
+    register_global_var("global|chip_width", "double", (void *)(&chip_width), 8.0, 0, 0, 0UL, 0);
+    register_global_var("global|amb_temp", "double", (void *)(&amb_temp), 8.0, 0, 0, 0UL, 0);
+    register_global_var("global|num_omp_threads", "i32", (void *)(&num_omp_threads), 4.0, 0, 0, 0UL, 0);
     return 0;
 }
 

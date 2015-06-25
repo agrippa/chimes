@@ -1,1 +1,1 @@
-/home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 9 : { 3, 4, 5, 6, 7, 8, 9, 10 } direct:call:foo {  }
+/home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 9 : { 3, 4, 5, 6, 7, 8, 9, 10 } {  } call:foo {  }

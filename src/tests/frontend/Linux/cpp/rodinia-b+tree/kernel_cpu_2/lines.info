@@ -1,5 +1,5 @@
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 71 10 : { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 } direct:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 78 17 : { 15 } direct:call:omp_get_max_threads {  }
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 80 2 : { 19 } direct:call:omp_set_num_threads {  }
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 86 10 : { 20 } direct:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 153 10 : { 16, 18, 21, 22, 436, 437, 438, 439, 442, 443 } prop:call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 153 10 : { 16, 18, 21, 22, 436, 437, 438, 439, 442, 443 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 86 10 : { 20 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 80 2 : { 19 } {  } call:omp_set_num_threads {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 78 17 : { 15 } {  } call:omp_get_max_threads {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 71 10 : { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 } {  } call:get_time {  }

@@ -55,7 +55,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1513,10 +1513,10 @@ int foo_npm(int a) {
 
 static int module_init() {
     init_module(9595904162166493394UL, 1, 3, 0, 4, 2, 0, 2, 2, 0, 0,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (9595904162166493394UL + 18UL), (9595904162166493394UL + 19UL), (9595904162166493394UL + 20UL), (9595904162166493394UL + 21UL), (9595904162166493394UL + 22UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (9595904162166493394UL + 1UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (9595904162166493394UL + 10UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (9595904162166493394UL + 22UL),
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (9595904162166493394UL + 18UL), (9595904162166493394UL + 19UL), (9595904162166493394UL + 20UL), (9595904162166493394UL + 21UL), (9595904162166493394UL + 22UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (9595904162166493394UL + 1UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (9595904162166493394UL + 10UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (9595904162166493394UL + 22UL),
                             "bar", (void *)(&bar_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
                             "foo", (void *)(&foo_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "bar", 1, 0UL, 0UL,
                            "bar", &(____chimes_does_checkpoint_bar_npm),

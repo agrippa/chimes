@@ -123,7 +123,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -3953,7 +3953,7 @@ long long time0;
  long long time10; ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4026,7 +4026,7 @@ long long time0;
   ;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4056,7 +4056,7 @@ long long time0;
  }
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_10: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 10, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(threads); })));
+  call_lbl_10: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 10, ____alias_loc_id_10, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_10); (*____chimes_extern_func_omp_set_num_threads)(threads); })));
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4079,7 +4079,7 @@ long long time0;
  image_ori = (float*)malloc_wrapper(sizeof(float) * image_ori_elem, 7677405821689735599UL, 0, 0);
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("../../../data/srad/image.pgm"); } calling((void*)read_graphics, 13, ____alias_loc_id_3, 0UL, 5, (size_t)(7677405821689735857UL), (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)(____chimes_arg1, image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_3); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
+  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("../../../data/srad/image.pgm"); } calling((void*)read_graphics, 13, ____alias_loc_id_9, 0UL, 5, (size_t)(7677405821689735857UL), (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)(____chimes_arg1, image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_9); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_14: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4095,7 +4095,7 @@ long long time0;
  image = (float*)malloc_wrapper(sizeof(float) * Ne, 7677405821689735122UL, 0, 0);
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_4, 0UL, 7, (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_4); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
+  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_8, 0UL, 7, (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_8); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_17: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 17, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4171,7 +4171,7 @@ long long time0;
     jE[Nc-1] = Nc-1;
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_27: time5 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 27, ____alias_loc_id_5, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_5); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_27: time5 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 27, ____alias_loc_id_7, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_7); (*____chimes_extern_func_get_time)(); })));
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4326,7 +4326,7 @@ long long time0;
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_30: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 30, ____alias_loc_id_7, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_7); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_30: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 30, ____alias_loc_id_5, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_5); (*____chimes_extern_func_get_time)(); })));
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4341,14 +4341,14 @@ long long time0;
  }
 # 336 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 337 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_32: time8 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 32, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_32: time8 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 32, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
 # 338 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 339 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 340 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_33: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ char * ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = ("image_out.pgm"); } calling((void*)write_graphics, 33, ____alias_loc_id_9, 0UL, 6, (size_t)(7677405821689735858UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)(____chimes_arg13, image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_9); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
+  call_lbl_33: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ char * ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = ("image_out.pgm"); } calling((void*)write_graphics, 33, ____alias_loc_id_3, 0UL, 6, (size_t)(7677405821689735858UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)(____chimes_arg13, image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_3); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
 # 349 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 350 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_34: time9 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 34, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4370,7 +4370,7 @@ long long time0;
     free_wrapper(c, 7677405821689735414UL);
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_46: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 46, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_46: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 46, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4496,7 +4496,7 @@ long long time0;
  long long time10; ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4569,7 +4569,7 @@ long long time0;
   ;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4599,7 +4599,7 @@ long long time0;
  }
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_10: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 10, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(threads); })));
+  call_lbl_10: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 10, ____alias_loc_id_10, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_10); (*____chimes_extern_func_omp_set_num_threads)(threads); })));
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4622,7 +4622,7 @@ long long time0;
  image_ori = (float*)malloc_wrapper(sizeof(float) * image_ori_elem, 7677405821689735599UL, 0, 0);
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ calling((void*)read_graphics, 13, ____alias_loc_id_3, 0UL, 5, (size_t)(7677405821689735857UL), (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_3); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
+  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ calling((void*)read_graphics, 13, ____alias_loc_id_9, 0UL, 5, (size_t)(7677405821689735857UL), (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_9); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_14: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4638,7 +4638,7 @@ long long time0;
  image = (float*)malloc_wrapper(sizeof(float) * Ne, 7677405821689735122UL, 0, 0);
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_4, 0UL, 7, (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_4); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
+  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_8, 0UL, 7, (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_8); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_17: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 17, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4714,7 +4714,7 @@ long long time0;
     jE[Nc-1] = Nc-1;
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_27: time5 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 27, ____alias_loc_id_5, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_5); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_27: time5 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 27, ____alias_loc_id_7, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_7); (*____chimes_extern_func_get_time)(); })));
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4869,7 +4869,7 @@ long long time0;
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_30: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 30, ____alias_loc_id_7, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_7); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_30: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 30, ____alias_loc_id_5, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_5); (*____chimes_extern_func_get_time)(); })));
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4884,14 +4884,14 @@ long long time0;
  }
 # 336 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 337 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_32: time8 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 32, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_32: time8 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 32, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
 # 338 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 339 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 340 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_33: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ calling((void*)write_graphics, 33, ____alias_loc_id_9, 0UL, 6, (size_t)(7677405821689735858UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_9); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
+  call_lbl_33: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ calling((void*)write_graphics, 33, ____alias_loc_id_3, 0UL, 6, (size_t)(7677405821689735858UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_3); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
 # 349 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 350 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_34: time9 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 34, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4913,7 +4913,7 @@ long long time0;
     free_wrapper(c, 7677405821689735414UL);
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_46: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 46, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_46: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 46, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4963,18 +4963,18 @@ int main(int argc, char *argv []) { init_chimes(); return (____chimes_replaying 
 
 static int module_init() {
     init_module(7677405821689734771UL, 13, 1, 58, 12, 0, 5, 5, 0, 15, 0,
-                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 2UL), (7677405821689734771UL + 3UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (7677405821689734771UL + 4UL),
-                           &____alias_loc_id_2, (unsigned)6, (unsigned)0, (7677405821689734771UL + 5UL), (7677405821689734771UL + 20UL), (7677405821689734771UL + 21UL), (7677405821689734771UL + 23UL), (7677405821689734771UL + 24UL), (7677405821689734771UL + 60UL),
-                           &____alias_loc_id_3, (unsigned)5, (unsigned)1, (7677405821689734771UL + 6UL), (7677405821689734771UL + 15UL), (7677405821689734771UL + 16UL), (7677405821689734771UL + 17UL), (7677405821689734771UL + 18UL), "read_graphics", (unsigned)2, (7677405821689734771UL + 828UL), (7677405821689734771UL + 1086UL),
-                           &____alias_loc_id_4, (unsigned)3, (unsigned)1, (7677405821689734771UL + 7UL), (7677405821689734771UL + 19UL), (7677405821689734771UL + 22UL), "resize", (unsigned)2, (7677405821689734771UL + 351UL), (7677405821689734771UL + 828UL),
-                           &____alias_loc_id_5, (unsigned)21, (unsigned)0, (7677405821689734771UL + 8UL), (7677405821689734771UL + 25UL), (7677405821689734771UL + 26UL), (7677405821689734771UL + 27UL), (7677405821689734771UL + 28UL), (7677405821689734771UL + 29UL), (7677405821689734771UL + 33UL), (7677405821689734771UL + 34UL), (7677405821689734771UL + 35UL), (7677405821689734771UL + 36UL), (7677405821689734771UL + 38UL), (7677405821689734771UL + 39UL), (7677405821689734771UL + 40UL), (7677405821689734771UL + 41UL), (7677405821689734771UL + 51UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 280UL), (7677405821689734771UL + 287UL), (7677405821689734771UL + 506UL), (7677405821689734771UL + 524UL),
-                           &____alias_loc_id_6, (unsigned)3, (unsigned)0, (7677405821689734771UL + 9UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 351UL),
-                           &____alias_loc_id_7, (unsigned)28, (unsigned)0, (7677405821689734771UL + 10UL), (7677405821689734771UL + 30UL), (7677405821689734771UL + 31UL), (7677405821689734771UL + 32UL), (7677405821689734771UL + 37UL), (7677405821689734771UL + 42UL), (7677405821689734771UL + 43UL), (7677405821689734771UL + 44UL), (7677405821689734771UL + 45UL), (7677405821689734771UL + 46UL), (7677405821689734771UL + 47UL), (7677405821689734771UL + 48UL), (7677405821689734771UL + 49UL), (7677405821689734771UL + 50UL), (7677405821689734771UL + 52UL), (7677405821689734771UL + 53UL), (7677405821689734771UL + 54UL), (7677405821689734771UL + 55UL), (7677405821689734771UL + 56UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 59UL), (7677405821689734771UL + 351UL), (7677405821689734771UL + 482UL), (7677405821689734771UL + 500UL), (7677405821689734771UL + 518UL), (7677405821689734771UL + 536UL), (7677405821689734771UL + 643UL),
-                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (7677405821689734771UL + 11UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 351UL),
-                           &____alias_loc_id_9, (unsigned)1, (unsigned)1, (7677405821689734771UL + 12UL), "write_graphics", (unsigned)2, (7677405821689734771UL + 351UL), (7677405821689734771UL + 1087UL),
-                            &____alias_loc_id_10, (unsigned)1, (unsigned)0, (7677405821689734771UL + 13UL),
-                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 5UL), (7677405821689734771UL + 14UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (7677405821689734771UL + 4UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (7677405821689734771UL + 13UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 2UL), (7677405821689734771UL + 3UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (7677405821689734771UL + 12UL), "write_graphics", (unsigned)2, (7677405821689734771UL + 351UL), (7677405821689734771UL + 1087UL),
+                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 11UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 351UL),
+                           &____alias_loc_id_5, (unsigned)28, (unsigned)0, (unsigned)0, (7677405821689734771UL + 10UL), (7677405821689734771UL + 30UL), (7677405821689734771UL + 31UL), (7677405821689734771UL + 32UL), (7677405821689734771UL + 37UL), (7677405821689734771UL + 42UL), (7677405821689734771UL + 43UL), (7677405821689734771UL + 44UL), (7677405821689734771UL + 45UL), (7677405821689734771UL + 46UL), (7677405821689734771UL + 47UL), (7677405821689734771UL + 48UL), (7677405821689734771UL + 49UL), (7677405821689734771UL + 50UL), (7677405821689734771UL + 52UL), (7677405821689734771UL + 53UL), (7677405821689734771UL + 54UL), (7677405821689734771UL + 55UL), (7677405821689734771UL + 56UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 59UL), (7677405821689734771UL + 351UL), (7677405821689734771UL + 482UL), (7677405821689734771UL + 500UL), (7677405821689734771UL + 518UL), (7677405821689734771UL + 536UL), (7677405821689734771UL + 643UL),
+                           &____alias_loc_id_6, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 9UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 351UL),
+                           &____alias_loc_id_7, (unsigned)21, (unsigned)0, (unsigned)0, (7677405821689734771UL + 8UL), (7677405821689734771UL + 25UL), (7677405821689734771UL + 26UL), (7677405821689734771UL + 27UL), (7677405821689734771UL + 28UL), (7677405821689734771UL + 29UL), (7677405821689734771UL + 33UL), (7677405821689734771UL + 34UL), (7677405821689734771UL + 35UL), (7677405821689734771UL + 36UL), (7677405821689734771UL + 38UL), (7677405821689734771UL + 39UL), (7677405821689734771UL + 40UL), (7677405821689734771UL + 41UL), (7677405821689734771UL + 51UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 280UL), (7677405821689734771UL + 287UL), (7677405821689734771UL + 506UL), (7677405821689734771UL + 524UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)1, (7677405821689734771UL + 7UL), (7677405821689734771UL + 19UL), (7677405821689734771UL + 22UL), "resize", (unsigned)2, (7677405821689734771UL + 351UL), (7677405821689734771UL + 828UL),
+                           &____alias_loc_id_9, (unsigned)5, (unsigned)0, (unsigned)1, (7677405821689734771UL + 6UL), (7677405821689734771UL + 15UL), (7677405821689734771UL + 16UL), (7677405821689734771UL + 17UL), (7677405821689734771UL + 18UL), "read_graphics", (unsigned)2, (7677405821689734771UL + 828UL), (7677405821689734771UL + 1086UL),
+                            &____alias_loc_id_10, (unsigned)6, (unsigned)0, (unsigned)0, (7677405821689734771UL + 5UL), (7677405821689734771UL + 20UL), (7677405821689734771UL + 21UL), (7677405821689734771UL + 23UL), (7677405821689734771UL + 24UL), (7677405821689734771UL + 60UL),
+                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 5UL), (7677405821689734771UL + 14UL),
                                "get_time", (void **)&(____chimes_extern_func_get_time),
                                "omp_set_num_threads", (void **)&(____chimes_extern_func_omp_set_num_threads),
                                "read_graphics", (void **)&(____chimes_extern_func_read_graphics),

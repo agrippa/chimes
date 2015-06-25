@@ -76,7 +76,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -3938,15 +3938,15 @@ void processArgs_npm(int argc, char** argv)
 
 static int module_init() {
     init_module(808920877031013011UL, 35, 9, 2, 9, 9, 0, 9, 6, 0, 2,
-                           &____alias_loc_id_0, (unsigned)12, (unsigned)2, (808920877031013011UL + 1UL), (808920877031013011UL + 2UL), (808920877031013011UL + 3UL), (808920877031013011UL + 4UL), (808920877031013011UL + 5UL), (808920877031013011UL + 6UL), (808920877031013011UL + 7UL), (808920877031013011UL + 8UL), (808920877031013011UL + 9UL), (808920877031013011UL + 10UL), (808920877031013011UL + 48UL), (808920877031013011UL + 615UL), "lastOption", (unsigned)1, (808920877031013011UL + 620UL), "myOptionAlloc", (unsigned)3, (808920877031013011UL + 60UL), (808920877031013011UL + 64UL), (808920877031013011UL + 66UL),
-                           &____alias_loc_id_1, (unsigned)10, (unsigned)1, (808920877031013011UL + 69UL), (808920877031013011UL + 70UL), (808920877031013011UL + 71UL), (808920877031013011UL + 72UL), (808920877031013011UL + 73UL), (808920877031013011UL + 74UL), (808920877031013011UL + 75UL), (808920877031013011UL + 76UL), (808920877031013011UL + 92UL), (808920877031013011UL + 619UL), "dupString", (unsigned)2, (808920877031013011UL + 152UL), (808920877031013011UL + 167UL),
-                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (808920877031013011UL + 168UL), (808920877031013011UL + 169UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)1, (808920877031013011UL + 615UL), "myOptionFree", (unsigned)1, (808920877031013011UL + 620UL),
-                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (808920877031013011UL + 206UL), (808920877031013011UL + 207UL), (808920877031013011UL + 208UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (808920877031013011UL + 251UL), (808920877031013011UL + 253UL),
-                           &____alias_loc_id_6, (unsigned)13, (unsigned)1, (808920877031013011UL + 317UL), (808920877031013011UL + 318UL), (808920877031013011UL + 319UL), (808920877031013011UL + 320UL), (808920877031013011UL + 321UL), (808920877031013011UL + 322UL), (808920877031013011UL + 323UL), (808920877031013011UL + 324UL), (808920877031013011UL + 325UL), (808920877031013011UL + 326UL), (808920877031013011UL + 381UL), (808920877031013011UL + 411UL), (808920877031013011UL + 620UL), "findOption", (unsigned)1, (808920877031013011UL + 620UL),
-                           &____alias_loc_id_7, (unsigned)3, (unsigned)0, (808920877031013011UL + 549UL), (808920877031013011UL + 550UL), (808920877031013011UL + 551UL),
-                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (808920877031013011UL + 591UL), (808920877031013011UL + 592UL), (808920877031013011UL + 604UL),
+                           &____alias_loc_id_0, (unsigned)12, (unsigned)0, (unsigned)0, (808920877031013011UL + 1UL), (808920877031013011UL + 2UL), (808920877031013011UL + 3UL), (808920877031013011UL + 4UL), (808920877031013011UL + 5UL), (808920877031013011UL + 6UL), (808920877031013011UL + 7UL), (808920877031013011UL + 8UL), (808920877031013011UL + 9UL), (808920877031013011UL + 10UL), (808920877031013011UL + 48UL), (808920877031013011UL + 615UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (808920877031013011UL + 69UL), (808920877031013011UL + 70UL), (808920877031013011UL + 71UL), (808920877031013011UL + 72UL), (808920877031013011UL + 73UL), (808920877031013011UL + 74UL), (808920877031013011UL + 75UL), (808920877031013011UL + 76UL), (808920877031013011UL + 92UL), (808920877031013011UL + 619UL),
+                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (unsigned)0, (808920877031013011UL + 168UL), (808920877031013011UL + 169UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (808920877031013011UL + 615UL),
+                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (808920877031013011UL + 206UL), (808920877031013011UL + 207UL), (808920877031013011UL + 208UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (808920877031013011UL + 251UL), (808920877031013011UL + 253UL),
+                           &____alias_loc_id_6, (unsigned)13, (unsigned)0, (unsigned)0, (808920877031013011UL + 317UL), (808920877031013011UL + 318UL), (808920877031013011UL + 319UL), (808920877031013011UL + 320UL), (808920877031013011UL + 321UL), (808920877031013011UL + 322UL), (808920877031013011UL + 323UL), (808920877031013011UL + 324UL), (808920877031013011UL + 325UL), (808920877031013011UL + 326UL), (808920877031013011UL + 381UL), (808920877031013011UL + 411UL), (808920877031013011UL + 620UL),
+                           &____alias_loc_id_7, (unsigned)3, (unsigned)0, (unsigned)0, (808920877031013011UL + 549UL), (808920877031013011UL + 550UL), (808920877031013011UL + 551UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)0, (808920877031013011UL + 591UL), (808920877031013011UL + 592UL), (808920877031013011UL + 604UL),
                             "dupString", (void *)(&dupString_npm), (void *)__null, 0, 1, (808920877031013011UL + 611UL), (808920877031013011UL + 604UL), 3, "strlen", 1, (808920877031013011UL + 611UL), 0UL, "calloc", 2, 0UL, 0UL, (808920877031013011UL + 604UL), "strcpy", 2, (808920877031013011UL + 604UL), (808920877031013011UL + 611UL), (808920877031013011UL + 608UL),
                             "myOptionAlloc", (void *)(&myOptionAlloc_npm), (void *)__null, 0, 7, (808920877031013011UL + 152UL), 0UL, 0UL, 0UL, (808920877031013011UL + 96UL), 0UL, (808920877031013011UL + 167UL), (808920877031013011UL + 92UL), 5, "calloc", 2, 0UL, 0UL, (808920877031013011UL + 92UL), "dupString", 1, (808920877031013011UL + 167UL), (808920877031013011UL + 96UL), "dupString", 1, (808920877031013011UL + 152UL), (808920877031013011UL + 96UL), "strlen", 1, (808920877031013011UL + 152UL), 0UL, "strlen", 1, (808920877031013011UL + 152UL), 0UL,
                             "myOptionFree", (void *)(&myOptionFree_npm), (void *)__null, 0, 1, (808920877031013011UL + 250UL), (808920877031013011UL + 219UL), 3, "free", 1, (808920877031013011UL + 219UL), 0UL, "free", 1, (808920877031013011UL + 219UL), 0UL, "free", 1, (808920877031013011UL + 250UL), 0UL,
@@ -4019,8 +4019,8 @@ static int module_init() {
         "lastOption", 808920877031013059UL, (int)1, 808920877031013631UL,
         "myOptionFree", 808920877031013631UL, (int)1, 808920877031013631UL,
         "findOption", 808920877031013631UL, (int)2, 808920877031013631UL, 0UL);
-    register_global_var("global|myargs", "%struct.MyOptionSt*", (void *)(&myargs), 8.0, 1, 0, 0);
-    register_global_var("global|longest", "i32", (void *)(&longest), 4.0, 0, 0, 0);
+    register_global_var("global|myargs", "%struct.MyOptionSt*", (void *)(&myargs), 8.0, 1, 0, (808920877031013011UL + 615UL), 0);
+    register_global_var("global|longest", "i32", (void *)(&longest), 4.0, 0, 0, 0UL, 0);
     return 0;
 }
 

@@ -106,6 +106,8 @@ static unsigned ____alias_loc_id_18;
 static unsigned ____alias_loc_id_19;
 static unsigned ____alias_loc_id_20;
 static unsigned ____alias_loc_id_21;
+static unsigned ____alias_loc_id_22;
+static unsigned ____alias_loc_id_23;
 # 1 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -143,7 +145,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -3834,7 +3836,7 @@ Atoms* initAtoms_resumable(LinkCell* boxes)
    } }
 # 48 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 49 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   rm_stack(true, 2774474540883984319UL, "initAtoms", &____must_manage_initAtoms, ____alias_loc_id_14, ____chimes_did_disable0); return atoms;
+   rm_stack(true, 2774474540883984319UL, "initAtoms", &____must_manage_initAtoms, ____alias_loc_id_17, ____chimes_did_disable0); return atoms;
 # 50 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
 # 51 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -3877,7 +3879,7 @@ void destroyAtoms_resumable(Atoms *atoms)
 # 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    free_wrapper(atoms, 2774474540883984550UL);
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_16, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_19, ____chimes_did_disable1); }
 # 74 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 75 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 76 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -3954,7 +3956,7 @@ const real_t *localMin;
 # 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                   id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-                call_lbl_3: ({ LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); } calling((void*)putAtomInBox, 3, ____alias_loc_id_0, 0UL, 10, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, id, 0, rx, ry, rz, px, py, pz); }) ;
+                call_lbl_3: ({ LinkCell * ____chimes_arg3; Atoms * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg3 = (s->boxes); ____chimes_arg4 = (s->atoms); } calling((void*)putAtomInBox, 3, ____alias_loc_id_2, 0UL, 10, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(____chimes_arg3, ____chimes_arg4, id, 0, rx, ry, rz, px, py, pz); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             } }; } }; } }; } }
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -3962,7 +3964,7 @@ const real_t *localMin;
 # 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_4: ({ calling((void*)profileStart, 4, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_5: ({ int * ____chimes_arg14; int * ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg14 = (&s->atoms->nLocal); ____chimes_arg15 = (&s->atoms->nGlobal); } calling((void*)addIntParallel, 5, 0, 0UL, 3, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL)); (addIntParallel)(____chimes_arg14, ____chimes_arg15, 1); }) ;
+    call_lbl_5: ({ int * ____chimes_arg14; int * ____chimes_arg15; if (!____chimes_replaying) { ____chimes_arg14 = (&s->atoms->nLocal); ____chimes_arg15 = (&s->atoms->nGlobal); } calling((void*)addIntParallel, 5, ____alias_loc_id_0, 0UL, 3, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL)); (addIntParallel)(____chimes_arg14, ____chimes_arg15, 1); }) ;
 # 118 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_6: ({ calling((void*)profileStop, 6, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 119 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -3984,7 +3986,7 @@ real_t oldVcm[3];
 # 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
 # 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_1: ({ calling((void*)computeVcm, 1, ____alias_loc_id_2, 0UL, 2, (size_t)(2774474540883985030UL), (size_t)(2774474540883984877UL)); (computeVcm)(s, oldVcm); }) ;
+    call_lbl_1: ({ calling((void*)computeVcm, 1, ____alias_loc_id_3, 0UL, 2, (size_t)(2774474540883985030UL), (size_t)(2774474540883984877UL)); (computeVcm)(s, oldVcm); }) ;
 # 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
@@ -4025,7 +4027,7 @@ real_t oldVcm[3];
 # 147 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 148 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "setVcm", &____must_manage_setVcm, ____alias_loc_id_18, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "setVcm", &____must_manage_setVcm, ____alias_loc_id_20, ____chimes_did_disable3); }
 # 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 void setTemperature_npm(SimFlat* s, real_t temperature);static double (*____chimes_extern_func_gasdev)(unsigned long *) = gasdev;static void (*____chimes_extern_func_kineticEnergy)(struct SimFlatSt *) = kineticEnergy;static unsigned long (*____chimes_extern_func_mkSeed)(unsigned int, unsigned int) = mkSeed;
@@ -4076,13 +4078,13 @@ int iType;
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (temperature == 0.0) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_20, ____chimes_did_disable4); return; };
+   if (temperature == 0.0) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_22, ____chimes_did_disable4); return; };
 # 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
 # 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_7: ({ calling((void*)setVcm, 7, ____alias_loc_id_5, 0UL, 2, (size_t)(2774474540883985494UL), (size_t)(2774474540883985225UL)); (setVcm)(s, vZero); }) ;
+    call_lbl_7: ({ calling((void*)setVcm, 7, ____alias_loc_id_10, 0UL, 2, (size_t)(2774474540883985494UL), (size_t)(2774474540883985225UL)); (setVcm)(s, vZero); }) ;
 # 182 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_8: ({ calling((void*)kineticEnergy, 8, 0, 0UL, 1, (size_t)(2774474540883985494UL)); (kineticEnergy)(s); }) ;
+    call_lbl_8: ({ calling((void*)kineticEnergy, 8, ____alias_loc_id_8, 0UL, 1, (size_t)(2774474540883985494UL)); (kineticEnergy)(s); }) ;
 # 183 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
 # 184 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4113,11 +4115,11 @@ int iType;
 # 195 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
 # 196 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_10: ({ calling((void*)kineticEnergy, 10, ____alias_loc_id_9, 0UL, 1, (size_t)(2774474540883985494UL)); (kineticEnergy)(s); }) ;
+    call_lbl_10: ({ calling((void*)kineticEnergy, 10, ____alias_loc_id_6, 0UL, 1, (size_t)(2774474540883985494UL)); (kineticEnergy)(s); }) ;
 # 197 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    temp = s->eKinetic/s->atoms->nGlobal/kB_eV/1.5;
 # 198 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_20, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_22, ____chimes_did_disable4); }
 # 199 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 200 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 201 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4159,7 +4161,7 @@ int iOff;
 # 216 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); }
 # 217 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "randomDisplacements", &____must_manage_randomDisplacements, ____alias_loc_id_21, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "randomDisplacements", &____must_manage_randomDisplacements, ____alias_loc_id_23, ____chimes_did_disable5); }
 # 218 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 219 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4223,9 +4225,9 @@ real_t vcmLocal[4] = { 0., 0., 0., 0. };
   vcmLocal[3] = v3;
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_2: ({ calling((void*)addRealParallel, 2, 0, 0UL, 3, (size_t)(2774474540883985034UL), (size_t)(2774474540883985035UL), (size_t)(0UL)); (addRealParallel)(vcmLocal, vcmSum, 4); }) ;
+    call_lbl_2: ({ calling((void*)addRealParallel, 2, ____alias_loc_id_4, 0UL, 3, (size_t)(2774474540883985034UL), (size_t)(2774474540883985035UL), (size_t)(0UL)); (addRealParallel)(vcmLocal, vcmSum, 4); }) ;
 # 251 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 252 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4238,7 +4240,7 @@ real_t vcmLocal[4] = { 0., 0., 0., 0. };
 # 256 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[2] = vcmSum[2]/totalMass;
 # 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "computeVcm", &____must_manage_computeVcm, ____alias_loc_id_19, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "computeVcm", &____must_manage_computeVcm, ____alias_loc_id_21, ____chimes_did_disable6); }
 Atoms* initAtoms_quick(LinkCell* boxes)
 # 24 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&initAtoms), "initAtoms", &____must_manage_initAtoms, 1, 0, (size_t)(2774474540883984441UL)) ; ; ;
@@ -4286,7 +4288,7 @@ Atoms* initAtoms_quick(LinkCell* boxes)
    } }
 # 48 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 49 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   rm_stack(true, 2774474540883984319UL, "initAtoms", &____must_manage_initAtoms, ____alias_loc_id_14, ____chimes_did_disable0); return atoms;
+   rm_stack(true, 2774474540883984319UL, "initAtoms", &____must_manage_initAtoms, ____alias_loc_id_17, ____chimes_did_disable0); return atoms;
 # 50 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 }
 
@@ -4328,7 +4330,7 @@ void destroyAtoms_quick(Atoms *atoms)
 # 72 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    free_wrapper(atoms, 2774474540883984550UL);
 # 73 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_16, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "destroyAtoms", &____must_manage_destroyAtoms, ____alias_loc_id_19, ____chimes_did_disable1); }
 
 void destroyAtoms(Atoms *atoms) { (____chimes_replaying ? destroyAtoms_resumable(atoms) : destroyAtoms_quick(atoms)); }
 
@@ -4401,7 +4403,7 @@ const real_t *localMin;
 # 111 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
                   id = (ib + nb * (iz + nz * (iy + ny * (ix)))) ;
 # 112 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-                call_lbl_3: ({ calling((void*)putAtomInBox, 3, ____alias_loc_id_0, 0UL, 10, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }) ;
+                call_lbl_3: ({ calling((void*)putAtomInBox, 3, ____alias_loc_id_2, 0UL, 10, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (putAtomInBox)(s->boxes, s->atoms, id, 0, rx, ry, rz, px, py, pz); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
             } }; } }; } }; } }
 # 114 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4409,7 +4411,7 @@ const real_t *localMin;
 # 116 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_4: ({ calling((void*)profileStart, 4, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 117 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_5: ({ calling((void*)addIntParallel, 5, 0, 0UL, 3, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL)); (addIntParallel)(&s->atoms->nLocal, &s->atoms->nGlobal, 1); }) ;
+    call_lbl_5: ({ calling((void*)addIntParallel, 5, ____alias_loc_id_0, 0UL, 3, (size_t)(2774474540883984815UL), (size_t)(2774474540883984815UL), (size_t)(0UL)); (addIntParallel)(&s->atoms->nLocal, &s->atoms->nGlobal, 1); }) ;
 # 118 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_6: ({ calling((void*)profileStop, 6, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 119 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4428,7 +4430,7 @@ real_t oldVcm[3];
 # 127 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
 # 128 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_1: ({ calling((void*)computeVcm, 1, ____alias_loc_id_2, 0UL, 2, (size_t)(2774474540883985030UL), (size_t)(2774474540883984877UL)); computeVcm_quick(s, oldVcm); }) ;
+    call_lbl_1: ({ calling((void*)computeVcm, 1, ____alias_loc_id_3, 0UL, 2, (size_t)(2774474540883985030UL), (size_t)(2774474540883984877UL)); computeVcm_quick(s, oldVcm); }) ;
 # 129 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 130 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
@@ -4469,7 +4471,7 @@ real_t oldVcm[3];
 # 147 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 148 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "setVcm", &____must_manage_setVcm, ____alias_loc_id_18, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "setVcm", &____must_manage_setVcm, ____alias_loc_id_20, ____chimes_did_disable3); }
 
 void setVcm(SimFlat* s, real_t newVcm[3]) { (____chimes_replaying ? setVcm_resumable(s, newVcm) : setVcm_quick(s, newVcm)); }
 
@@ -4519,13 +4521,13 @@ int iType;
 # 177 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 178 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 179 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   if (temperature == 0.0) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_20, ____chimes_did_disable4); return; };
+   if (temperature == 0.0) {rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_22, ____chimes_did_disable4); return; };
 # 180 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
     ;
 # 181 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_7: ({ calling((void*)setVcm, 7, ____alias_loc_id_5, 0UL, 2, (size_t)(2774474540883985494UL), (size_t)(2774474540883985225UL)); setVcm_quick(s, vZero); }) ;
+    call_lbl_7: ({ calling((void*)setVcm, 7, ____alias_loc_id_10, 0UL, 2, (size_t)(2774474540883985494UL), (size_t)(2774474540883985225UL)); setVcm_quick(s, vZero); }) ;
 # 182 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_8: ({ calling((void*)kineticEnergy, 8, 0, 0UL, 1, (size_t)(2774474540883985494UL)); (kineticEnergy)(s); }) ;
+    call_lbl_8: ({ calling((void*)kineticEnergy, 8, ____alias_loc_id_8, 0UL, 1, (size_t)(2774474540883985494UL)); (kineticEnergy)(s); }) ;
 # 183 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
       temp = ((s->eKinetic / s->atoms->nGlobal) / kB_eV / 1.5) ;
 # 184 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4556,11 +4558,11 @@ int iType;
 # 195 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 1); reenable_current_thread(____chimes_disable2); }
 # 196 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_10: ({ calling((void*)kineticEnergy, 10, ____alias_loc_id_9, 0UL, 1, (size_t)(2774474540883985494UL)); (kineticEnergy)(s); }) ;
+    call_lbl_10: ({ calling((void*)kineticEnergy, 10, ____alias_loc_id_6, 0UL, 1, (size_t)(2774474540883985494UL)); (kineticEnergy)(s); }) ;
 # 197 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    temp = s->eKinetic/s->atoms->nGlobal/kB_eV/1.5;
 # 198 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_20, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "setTemperature", &____must_manage_setTemperature, ____alias_loc_id_22, ____chimes_did_disable4); }
 
 void setTemperature(SimFlat* s, real_t temperature) { (____chimes_replaying ? setTemperature_resumable(s, temperature) : setTemperature_quick(s, temperature)); }
 
@@ -4597,7 +4599,7 @@ int iOff;
 # 216 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    } leaving_omp_parallel(____chimes_call_stack_depth3, ____chimes_region_id3, 1); reenable_current_thread(____chimes_disable3); }
 # 217 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "randomDisplacements", &____must_manage_randomDisplacements, ____alias_loc_id_21, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "randomDisplacements", &____must_manage_randomDisplacements, ____alias_loc_id_23, ____chimes_did_disable5); }
 
 void randomDisplacements(SimFlat* s, real_t delta) { (____chimes_replaying ? randomDisplacements_resumable(s, delta) : randomDisplacements_quick(s, delta)); }
 
@@ -4660,9 +4662,9 @@ real_t vcmLocal[4] = { 0., 0., 0., 0. };
   vcmLocal[3] = v3;
 # 248 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
 # 249 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-   do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
+   do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_5, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 250 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-    call_lbl_2: ({ calling((void*)addRealParallel, 2, 0, 0UL, 3, (size_t)(2774474540883985034UL), (size_t)(2774474540883985035UL), (size_t)(0UL)); (addRealParallel)(vcmLocal, vcmSum, 4); }) ;
+    call_lbl_2: ({ calling((void*)addRealParallel, 2, ____alias_loc_id_4, 0UL, 3, (size_t)(2774474540883985034UL), (size_t)(2774474540883985035UL), (size_t)(0UL)); (addRealParallel)(vcmLocal, vcmSum, 4); }) ;
 # 251 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 252 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
@@ -4675,7 +4677,7 @@ real_t vcmLocal[4] = { 0., 0., 0., 0. };
 # 256 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
    vcm[2] = vcmSum[2]/totalMass;
 # 257 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/initAtoms.c"
-rm_stack(false, 0UL, "computeVcm", &____must_manage_computeVcm, ____alias_loc_id_19, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "computeVcm", &____must_manage_computeVcm, ____alias_loc_id_21, ____chimes_did_disable6); }
 
 void computeVcm(SimFlat* s, real_t vcm[3]) { (____chimes_replaying ? computeVcm_resumable(s, vcm) : computeVcm_quick(s, vcm)); }
 
@@ -5087,36 +5089,38 @@ void computeVcm_npm(SimFlat* s, real_t vcm[3])
 
 
 static int module_init() {
-    init_module(2774474540883984311UL, 24, 8, 49, 22, 7, 10, 17, 0, 0, 8,
-                           &____alias_loc_id_0, (unsigned)22, (unsigned)1, (2774474540883984311UL + 241UL), (2774474540883984311UL + 242UL), (2774474540883984311UL + 243UL), (2774474540883984311UL + 244UL), (2774474540883984311UL + 245UL), (2774474540883984311UL + 246UL), (2774474540883984311UL + 247UL), (2774474540883984311UL + 248UL), (2774474540883984311UL + 250UL), (2774474540883984311UL + 251UL), (2774474540883984311UL + 252UL), (2774474540883984311UL + 253UL), (2774474540883984311UL + 254UL), (2774474540883984311UL + 255UL), (2774474540883984311UL + 256UL), (2774474540883984311UL + 257UL), (2774474540883984311UL + 258UL), (2774474540883984311UL + 259UL), (2774474540883984311UL + 260UL), (2774474540883984311UL + 261UL), (2774474540883984311UL + 262UL), (2774474540883984311UL + 263UL), "putAtomInBox", (unsigned)1, (2774474540883984311UL + 504UL),
-                           &____alias_loc_id_1, (unsigned)22, (unsigned)1, (2774474540883984311UL + 241UL), (2774474540883984311UL + 242UL), (2774474540883984311UL + 243UL), (2774474540883984311UL + 244UL), (2774474540883984311UL + 245UL), (2774474540883984311UL + 246UL), (2774474540883984311UL + 247UL), (2774474540883984311UL + 248UL), (2774474540883984311UL + 250UL), (2774474540883984311UL + 251UL), (2774474540883984311UL + 252UL), (2774474540883984311UL + 253UL), (2774474540883984311UL + 254UL), (2774474540883984311UL + 255UL), (2774474540883984311UL + 256UL), (2774474540883984311UL + 257UL), (2774474540883984311UL + 258UL), (2774474540883984311UL + 259UL), (2774474540883984311UL + 260UL), (2774474540883984311UL + 261UL), (2774474540883984311UL + 262UL), (2774474540883984311UL + 263UL), "putAtomInBox", (unsigned)1, (2774474540883984311UL + 504UL),
-                           &____alias_loc_id_2, (unsigned)2, (unsigned)1, (2774474540883984311UL + 564UL), (2774474540883984311UL + 565UL), "computeVcm", (unsigned)2, (2774474540883984311UL + 566UL), (2774474540883984311UL + 719UL),
-                           &____alias_loc_id_3, (unsigned)11, (unsigned)0, (2774474540883984311UL + 721UL), (2774474540883984311UL + 722UL), (2774474540883984311UL + 723UL), (2774474540883984311UL + 725UL), (2774474540883984311UL + 726UL), (2774474540883984311UL + 727UL), (2774474540883984311UL + 728UL), (2774474540883984311UL + 729UL), (2774474540883984311UL + 730UL), (2774474540883984311UL + 731UL), (2774474540883984311UL + 732UL),
-                           &____alias_loc_id_4, (unsigned)9, (unsigned)1, (2774474540883984311UL + 905UL), (2774474540883984311UL + 906UL), (2774474540883984311UL + 907UL), (2774474540883984311UL + 908UL), (2774474540883984311UL + 909UL), (2774474540883984311UL + 910UL), (2774474540883984311UL + 911UL), (2774474540883984311UL + 912UL), (2774474540883984311UL + 961UL), "setVcm", (unsigned)2, (2774474540883984311UL + 914UL), (2774474540883984311UL + 1183UL),
-                           &____alias_loc_id_5, (unsigned)9, (unsigned)1, (2774474540883984311UL + 905UL), (2774474540883984311UL + 906UL), (2774474540883984311UL + 907UL), (2774474540883984311UL + 908UL), (2774474540883984311UL + 909UL), (2774474540883984311UL + 910UL), (2774474540883984311UL + 911UL), (2774474540883984311UL + 912UL), (2774474540883984311UL + 961UL), "setVcm", (unsigned)2, (2774474540883984311UL + 914UL), (2774474540883984311UL + 1183UL),
-                           &____alias_loc_id_6, (unsigned)1, (unsigned)1, (2774474540883984311UL + 913UL), "gasdev", (unsigned)1, (2774474540883984311UL + 913UL),
-                           &____alias_loc_id_7, (unsigned)1, (unsigned)1, (2774474540883984311UL + 961UL), "gasdev", (unsigned)1, (2774474540883984311UL + 913UL),
-                           &____alias_loc_id_8, (unsigned)1, (unsigned)1, (2774474540883984311UL + 961UL), "gasdev", (unsigned)1, (2774474540883984311UL + 913UL),
-                           &____alias_loc_id_9, (unsigned)6, (unsigned)2, (2774474540883984311UL + 915UL), (2774474540883984311UL + 916UL), (2774474540883984311UL + 917UL), (2774474540883984311UL + 918UL), (2774474540883984311UL + 919UL), (2774474540883984311UL + 961UL), "setVcm", (unsigned)2, (2774474540883984311UL + 914UL), (2774474540883984311UL + 1183UL), "kineticEnergy", (unsigned)1, (2774474540883984311UL + 1183UL),
-                            &____alias_loc_id_10, (unsigned)6, (unsigned)0, (2774474540883984311UL + 1195UL), (2774474540883984311UL + 1196UL), (2774474540883984311UL + 1197UL), (2774474540883984311UL + 1198UL), (2774474540883984311UL + 1199UL), (2774474540883984311UL + 1242UL),
-                            &____alias_loc_id_11, (unsigned)1, (unsigned)1, (2774474540883984311UL + 1200UL), "lcg61", (unsigned)1, (2774474540883984311UL + 1200UL),
-                            &____alias_loc_id_12, (unsigned)1, (unsigned)1, (2774474540883984311UL + 1242UL), "lcg61", (unsigned)1, (2774474540883984311UL + 1200UL),
-                            &____alias_loc_id_13, (unsigned)1, (unsigned)1, (2774474540883984311UL + 1242UL), "lcg61", (unsigned)1, (2774474540883984311UL + 1200UL),
-                            &____alias_loc_id_14, (unsigned)6, (unsigned)1, (2774474540883984311UL + 1UL), (2774474540883984311UL + 2UL), (2774474540883984311UL + 3UL), (2774474540883984311UL + 4UL), (2774474540883984311UL + 8UL), (2774474540883984311UL + 20UL), "zeroReal3", (unsigned)1, (2774474540883984311UL + 20UL),
-                            &____alias_loc_id_15, (unsigned)2, (unsigned)0, (2774474540883984311UL + 134UL), (2774474540883984311UL + 147UL),
-                            &____alias_loc_id_16, (unsigned)2, (unsigned)0, (2774474540883984311UL + 148UL), (2774474540883984311UL + 239UL),
-                            &____alias_loc_id_17, (unsigned)0, (unsigned)1, "addIntParallel", (unsigned)1, (2774474540883984311UL + 504UL),
-                            &____alias_loc_id_18, (unsigned)7, (unsigned)0, (2774474540883984311UL + 567UL), (2774474540883984311UL + 568UL), (2774474540883984311UL + 569UL), (2774474540883984311UL + 570UL), (2774474540883984311UL + 571UL), (2774474540883984311UL + 572UL), (2774474540883984311UL + 643UL),
-                            &____alias_loc_id_19, (unsigned)2, (unsigned)1, (2774474540883984311UL + 733UL), (2774474540883984311UL + 885UL), "addRealParallel", (unsigned)2, (2774474540883984311UL + 723UL), (2774474540883984311UL + 724UL),
-                            &____alias_loc_id_20, (unsigned)7, (unsigned)1, (2774474540883984311UL + 905UL), (2774474540883984311UL + 906UL), (2774474540883984311UL + 907UL), (2774474540883984311UL + 908UL), (2774474540883984311UL + 909UL), (2774474540883984311UL + 915UL), (2774474540883984311UL + 961UL), "kineticEnergy", (unsigned)1, (2774474540883984311UL + 1183UL),
-                            &____alias_loc_id_21, (unsigned)6, (unsigned)0, (2774474540883984311UL + 1195UL), (2774474540883984311UL + 1196UL), (2774474540883984311UL + 1197UL), (2774474540883984311UL + 1198UL), (2774474540883984311UL + 1199UL), (2774474540883984311UL + 1242UL),
+    init_module(2774474540883984311UL, 24, 8, 49, 24, 7, 10, 17, 0, 0, 8,
+                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "addIntParallel", (unsigned)1, (2774474540883984311UL + 504UL),
+                           &____alias_loc_id_1, (unsigned)21, (unsigned)0, (unsigned)0, (2774474540883984311UL + 241UL), (2774474540883984311UL + 242UL), (2774474540883984311UL + 243UL), (2774474540883984311UL + 244UL), (2774474540883984311UL + 245UL), (2774474540883984311UL + 246UL), (2774474540883984311UL + 247UL), (2774474540883984311UL + 248UL), (2774474540883984311UL + 250UL), (2774474540883984311UL + 251UL), (2774474540883984311UL + 252UL), (2774474540883984311UL + 253UL), (2774474540883984311UL + 254UL), (2774474540883984311UL + 255UL), (2774474540883984311UL + 256UL), (2774474540883984311UL + 257UL), (2774474540883984311UL + 258UL), (2774474540883984311UL + 259UL), (2774474540883984311UL + 260UL), (2774474540883984311UL + 261UL), (2774474540883984311UL + 262UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (2774474540883984311UL + 263UL), "putAtomInBox", (unsigned)1, (2774474540883984311UL + 504UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (2774474540883984311UL + 564UL), (2774474540883984311UL + 565UL),
+                           &____alias_loc_id_4, (unsigned)0, (unsigned)0, (unsigned)1, "addRealParallel", (unsigned)2, (2774474540883984311UL + 723UL), (2774474540883984311UL + 724UL),
+                           &____alias_loc_id_5, (unsigned)11, (unsigned)0, (unsigned)0, (2774474540883984311UL + 721UL), (2774474540883984311UL + 722UL), (2774474540883984311UL + 723UL), (2774474540883984311UL + 725UL), (2774474540883984311UL + 726UL), (2774474540883984311UL + 727UL), (2774474540883984311UL + 728UL), (2774474540883984311UL + 729UL), (2774474540883984311UL + 730UL), (2774474540883984311UL + 731UL), (2774474540883984311UL + 732UL),
+                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)1, (2774474540883984311UL + 915UL), (2774474540883984311UL + 916UL), (2774474540883984311UL + 917UL), (2774474540883984311UL + 918UL), (2774474540883984311UL + 919UL), (2774474540883984311UL + 961UL), "kineticEnergy", (unsigned)1, (2774474540883984311UL + 1183UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (2774474540883984311UL + 961UL), "gasdev", (unsigned)1, (2774474540883984311UL + 913UL),
+                           &____alias_loc_id_8, (unsigned)0, (unsigned)0, (unsigned)1, "kineticEnergy", (unsigned)1, (2774474540883984311UL + 1183UL),
+                           &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)1, (2774474540883984311UL + 961UL), "gasdev", (unsigned)1, (2774474540883984311UL + 913UL),
+                            &____alias_loc_id_10, (unsigned)6, (unsigned)0, (unsigned)0, (2774474540883984311UL + 905UL), (2774474540883984311UL + 906UL), (2774474540883984311UL + 907UL), (2774474540883984311UL + 908UL), (2774474540883984311UL + 909UL), (2774474540883984311UL + 961UL),
+                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)1, (2774474540883984311UL + 913UL), "gasdev", (unsigned)1, (2774474540883984311UL + 913UL),
+                            &____alias_loc_id_12, (unsigned)6, (unsigned)0, (unsigned)0, (2774474540883984311UL + 908UL), (2774474540883984311UL + 909UL), (2774474540883984311UL + 910UL), (2774474540883984311UL + 911UL), (2774474540883984311UL + 912UL), (2774474540883984311UL + 961UL),
+                            &____alias_loc_id_13, (unsigned)1, (unsigned)0, (unsigned)1, (2774474540883984311UL + 1242UL), "lcg61", (unsigned)1, (2774474540883984311UL + 1200UL),
+                            &____alias_loc_id_14, (unsigned)1, (unsigned)0, (unsigned)1, (2774474540883984311UL + 1242UL), "lcg61", (unsigned)1, (2774474540883984311UL + 1200UL),
+                            &____alias_loc_id_15, (unsigned)1, (unsigned)0, (unsigned)1, (2774474540883984311UL + 1200UL), "lcg61", (unsigned)1, (2774474540883984311UL + 1200UL),
+                            &____alias_loc_id_16, (unsigned)3, (unsigned)0, (unsigned)0, (2774474540883984311UL + 1198UL), (2774474540883984311UL + 1199UL), (2774474540883984311UL + 1242UL),
+                            &____alias_loc_id_17, (unsigned)6, (unsigned)0, (unsigned)0, (2774474540883984311UL + 1UL), (2774474540883984311UL + 2UL), (2774474540883984311UL + 3UL), (2774474540883984311UL + 4UL), (2774474540883984311UL + 8UL), (2774474540883984311UL + 20UL),
+                            &____alias_loc_id_18, (unsigned)2, (unsigned)0, (unsigned)0, (2774474540883984311UL + 134UL), (2774474540883984311UL + 147UL),
+                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (unsigned)0, (2774474540883984311UL + 148UL), (2774474540883984311UL + 239UL),
+                            &____alias_loc_id_20, (unsigned)7, (unsigned)0, (unsigned)0, (2774474540883984311UL + 567UL), (2774474540883984311UL + 568UL), (2774474540883984311UL + 569UL), (2774474540883984311UL + 570UL), (2774474540883984311UL + 571UL), (2774474540883984311UL + 572UL), (2774474540883984311UL + 643UL),
+                            &____alias_loc_id_21, (unsigned)2, (unsigned)0, (unsigned)0, (2774474540883984311UL + 733UL), (2774474540883984311UL + 885UL),
+                            &____alias_loc_id_22, (unsigned)7, (unsigned)0, (unsigned)0, (2774474540883984311UL + 905UL), (2774474540883984311UL + 906UL), (2774474540883984311UL + 907UL), (2774474540883984311UL + 908UL), (2774474540883984311UL + 909UL), (2774474540883984311UL + 915UL), (2774474540883984311UL + 961UL),
+                            &____alias_loc_id_23, (unsigned)6, (unsigned)0, (unsigned)0, (2774474540883984311UL + 1195UL), (2774474540883984311UL + 1196UL), (2774474540883984311UL + 1197UL), (2774474540883984311UL + 1198UL), (2774474540883984311UL + 1199UL), (2774474540883984311UL + 1242UL),
                             "initAtoms", (void *)(&initAtoms_npm), (void *)__null, 0, 1, (2774474540883984311UL + 130UL), (2774474540883984311UL + 8UL), 10, "malloc", 1, 0UL, (2774474540883984311UL + 8UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "malloc", 1, 0UL, (2774474540883984311UL + 20UL), "zeroReal3", 1, (2774474540883984311UL + 20UL), 0UL, "zeroReal3", 1, (2774474540883984311UL + 20UL), 0UL, "zeroReal3", 1, (2774474540883984311UL + 20UL), 0UL,
                             "destroyAtoms", (void *)(&destroyAtoms_npm), (void *)__null, 0, 1, (2774474540883984311UL + 239UL), 0UL, 7, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 153UL), 0UL, "free", 1, (2774474540883984311UL + 239UL), 0UL,
-                            "createFccLattice", (void *)(&createFccLattice_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 5, 0UL, 0UL, 0UL, 0UL, (2774474540883984311UL + 502UL), 0UL, 8, "memcpy", 3, (2774474540883984311UL + 249UL), (2774474540883984311UL + 1318UL), 0UL, 0UL, "floor", 1, 0UL, 0UL, "ceil", 1, 0UL, 0UL, "putAtomInBox", 10, (2774474540883984311UL + 504UL), (2774474540883984311UL + 504UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "profileStart", 1, 0UL, 0UL, "addIntParallel", 3, (2774474540883984311UL + 504UL), (2774474540883984311UL + 504UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL, "__assert_fail", 4, (2774474540883984311UL + 1319UL), (2774474540883984311UL + 1320UL), 0UL, (2774474540883984311UL + 1321UL), 0UL,
-                            "setVcm", (void *)(&setVcm_npm), (void *)__null, 1, &____alias_loc_id_2, 2, (2774474540883984311UL + 719UL), (2774474540883984311UL + 720UL), 0UL, 1, "computeVcm", 2, (2774474540883984311UL + 719UL), (2774474540883984311UL + 566UL), 0UL,
-                            "setTemperature", (void *)(&setTemperature_npm), (void *)__null, 6, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 2, (2774474540883984311UL + 1183UL), 0UL, 0UL, 10, "sqrt", 1, 0UL, 0UL, "mkSeed", 2, 0UL, 0UL, 0UL, "gasdev", 1, (2774474540883984311UL + 913UL), 0UL, "gasdev", 1, (2774474540883984311UL + 913UL), 0UL, "gasdev", 1, (2774474540883984311UL + 913UL), 0UL, "memset", 3, (2774474540883984311UL + 914UL), 0UL, 0UL, 0UL, "setVcm", 2, (2774474540883984311UL + 1183UL), (2774474540883984311UL + 914UL), 0UL, "kineticEnergy", 1, (2774474540883984311UL + 1183UL), 0UL, "sqrt", 1, 0UL, 0UL, "kineticEnergy", 1, (2774474540883984311UL + 1183UL), 0UL,
-                            "randomDisplacements", (void *)(&randomDisplacements_npm), (void *)__null, 4, &____alias_loc_id_10, &____alias_loc_id_11, &____alias_loc_id_12, &____alias_loc_id_13, 2, (2774474540883984311UL + 1312UL), 0UL, 0UL, 4, "mkSeed", 2, 0UL, 0UL, 0UL, "lcg61", 1, (2774474540883984311UL + 1200UL), 0UL, "lcg61", 1, (2774474540883984311UL + 1200UL), 0UL, "lcg61", 1, (2774474540883984311UL + 1200UL), 0UL,
-                            "computeVcm", (void *)(&computeVcm_npm), (void *)__null, 1, &____alias_loc_id_3, 2, (2774474540883984311UL + 903UL), (2774474540883984311UL + 885UL), 0UL, 5, "memset", 3, (2774474540883984311UL + 723UL), 0UL, 0UL, 0UL, "memset", 3, (2774474540883984311UL + 724UL), 0UL, 0UL, 0UL, "profileStart", 1, 0UL, 0UL, "addRealParallel", 3, (2774474540883984311UL + 723UL), (2774474540883984311UL + 724UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL,
+                            "createFccLattice", (void *)(&createFccLattice_npm), (void *)__null, 3, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, 5, 0UL, 0UL, 0UL, 0UL, (2774474540883984311UL + 502UL), 0UL, 8, "memcpy", 3, (2774474540883984311UL + 249UL), (2774474540883984311UL + 1318UL), 0UL, 0UL, "floor", 1, 0UL, 0UL, "ceil", 1, 0UL, 0UL, "putAtomInBox", 10, (2774474540883984311UL + 504UL), (2774474540883984311UL + 504UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "profileStart", 1, 0UL, 0UL, "addIntParallel", 3, (2774474540883984311UL + 504UL), (2774474540883984311UL + 504UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL, "__assert_fail", 4, (2774474540883984311UL + 1319UL), (2774474540883984311UL + 1320UL), 0UL, (2774474540883984311UL + 1321UL), 0UL,
+                            "setVcm", (void *)(&setVcm_npm), (void *)__null, 1, &____alias_loc_id_3, 2, (2774474540883984311UL + 719UL), (2774474540883984311UL + 720UL), 0UL, 1, "computeVcm", 2, (2774474540883984311UL + 719UL), (2774474540883984311UL + 566UL), 0UL,
+                            "setTemperature", (void *)(&setTemperature_npm), (void *)__null, 7, &____alias_loc_id_10, &____alias_loc_id_11, &____alias_loc_id_12, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 2, (2774474540883984311UL + 1183UL), 0UL, 0UL, 10, "sqrt", 1, 0UL, 0UL, "mkSeed", 2, 0UL, 0UL, 0UL, "gasdev", 1, (2774474540883984311UL + 913UL), 0UL, "gasdev", 1, (2774474540883984311UL + 913UL), 0UL, "gasdev", 1, (2774474540883984311UL + 913UL), 0UL, "memset", 3, (2774474540883984311UL + 914UL), 0UL, 0UL, 0UL, "setVcm", 2, (2774474540883984311UL + 1183UL), (2774474540883984311UL + 914UL), 0UL, "kineticEnergy", 1, (2774474540883984311UL + 1183UL), 0UL, "sqrt", 1, 0UL, 0UL, "kineticEnergy", 1, (2774474540883984311UL + 1183UL), 0UL,
+                            "randomDisplacements", (void *)(&randomDisplacements_npm), (void *)__null, 4, &____alias_loc_id_13, &____alias_loc_id_14, &____alias_loc_id_15, &____alias_loc_id_16, 2, (2774474540883984311UL + 1312UL), 0UL, 0UL, 4, "mkSeed", 2, 0UL, 0UL, 0UL, "lcg61", 1, (2774474540883984311UL + 1200UL), 0UL, "lcg61", 1, (2774474540883984311UL + 1200UL), 0UL, "lcg61", 1, (2774474540883984311UL + 1200UL), 0UL,
+                            "computeVcm", (void *)(&computeVcm_npm), (void *)__null, 2, &____alias_loc_id_4, &____alias_loc_id_5, 2, (2774474540883984311UL + 903UL), (2774474540883984311UL + 885UL), 0UL, 5, "memset", 3, (2774474540883984311UL + 723UL), 0UL, 0UL, 0UL, "memset", 3, (2774474540883984311UL + 724UL), 0UL, 0UL, 0UL, "profileStart", 1, 0UL, 0UL, "addRealParallel", 3, (2774474540883984311UL + 723UL), (2774474540883984311UL + 724UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL,
                                "addIntParallel", (void **)&(____chimes_extern_func_addIntParallel),
                                "addRealParallel", (void **)&(____chimes_extern_func_addRealParallel),
                                "gasdev", (void **)&(____chimes_extern_func_gasdev),

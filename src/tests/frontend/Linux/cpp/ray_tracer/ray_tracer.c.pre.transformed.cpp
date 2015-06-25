@@ -48,7 +48,6 @@ static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
-static unsigned ____alias_loc_id_13;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -86,7 +85,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -5294,7 +5293,7 @@ void usage_resumable(char **argv) {const int ____chimes_did_disable9 = new_stack
 # 111 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     exit(1);
 # 112 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_10, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable9); }
 # 113 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 114 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 void parse_three_doubles_npm(char *def, double *a, double *b, double *c);
@@ -5321,7 +5320,7 @@ void parse_three_doubles_resumable(char *def, double *a, double *b, double *c) {
 # 125 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     *c = atof(second_comma + 1);
 # 126 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles, ____alias_loc_id_11, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles, ____alias_loc_id_10, ____chimes_did_disable10); }
 # 127 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 128 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 void parse_config_npm(int argc, char **argv, config *conf);
@@ -5472,7 +5471,7 @@ void parse_config_resumable(int argc, char **argv, config *conf) {const int ____
 # 206 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     }
 # 207 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_loc_id_12, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_loc_id_11, ____chimes_did_disable11); }
 # 208 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 209 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
@@ -5642,7 +5641,7 @@ config conf;
 # 295 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     free_wrapper(screen, 11205885433679075207UL);
 # 296 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable12); return (0);
+    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12); return (0);
 # 297 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 }
 void init_quick(sphere *s, double cx, double cy, double cz, double radius, double clR,
@@ -5800,7 +5799,7 @@ void usage_quick(char **argv) {const int ____chimes_did_disable9 = new_stack((vo
 # 111 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     exit(1);
 # 112 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_10, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable9); }
 
 void usage(char **argv) { (____chimes_replaying ? usage_resumable(argv) : usage_quick(argv)); }
 
@@ -5826,7 +5825,7 @@ void parse_three_doubles_quick(char *def, double *a, double *b, double *c) {cons
 # 125 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     *c = atof(second_comma + 1);
 # 126 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles, ____alias_loc_id_11, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles, ____alias_loc_id_10, ____chimes_did_disable10); }
 
 void parse_three_doubles(char *def, double *a, double *b, double *c) { (____chimes_replaying ? parse_three_doubles_resumable(def, a, b, c) : parse_three_doubles_quick(def, a, b, c)); }
 
@@ -5976,7 +5975,7 @@ void parse_config_quick(int argc, char **argv, config *conf) {const int ____chim
 # 206 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     }
 # 207 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_loc_id_12, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_loc_id_11, ____chimes_did_disable11); }
 
 void parse_config(int argc, char **argv, config *conf) { (____chimes_replaying ? parse_config_resumable(argc, argv, conf) : parse_config_quick(argc, argv, conf)); }
 
@@ -6146,7 +6145,7 @@ config conf;
 # 295 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     free_wrapper(screen, 11205885433679075207UL);
 # 296 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable12); return (0);
+    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12); return (0);
 # 297 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 }
 
@@ -6470,21 +6469,20 @@ void parse_config_npm(int argc, char **argv, config *conf) {
 
 
 static int module_init() {
-    init_module(11205885433679074279UL, 31, 13, 1, 14, 12, 0, 12, 17, 0, 3,
-                           &____alias_loc_id_0, (unsigned)31, (unsigned)2, (11205885433679074279UL + 879UL), (11205885433679074279UL + 880UL), (11205885433679074279UL + 881UL), (11205885433679074279UL + 883UL), (11205885433679074279UL + 884UL), (11205885433679074279UL + 885UL), (11205885433679074279UL + 886UL), (11205885433679074279UL + 887UL), (11205885433679074279UL + 888UL), (11205885433679074279UL + 889UL), (11205885433679074279UL + 890UL), (11205885433679074279UL + 891UL), (11205885433679074279UL + 892UL), (11205885433679074279UL + 893UL), (11205885433679074279UL + 894UL), (11205885433679074279UL + 895UL), (11205885433679074279UL + 896UL), (11205885433679074279UL + 897UL), (11205885433679074279UL + 898UL), (11205885433679074279UL + 899UL), (11205885433679074279UL + 900UL), (11205885433679074279UL + 901UL), (11205885433679074279UL + 902UL), (11205885433679074279UL + 903UL), (11205885433679074279UL + 904UL), (11205885433679074279UL + 905UL), (11205885433679074279UL + 906UL), (11205885433679074279UL + 907UL), (11205885433679074279UL + 908UL), (11205885433679074279UL + 909UL), (11205885433679074279UL + 928UL), "move", (unsigned)1, (11205885433679074279UL + 1164UL), "parse_config", (unsigned)2, (11205885433679074279UL + 882UL), (11205885433679074279UL + 1353UL),
-                           &____alias_loc_id_1, (unsigned)9, (unsigned)0, (11205885433679074279UL + 1UL), (11205885433679074279UL + 2UL), (11205885433679074279UL + 3UL), (11205885433679074279UL + 4UL), (11205885433679074279UL + 5UL), (11205885433679074279UL + 6UL), (11205885433679074279UL + 7UL), (11205885433679074279UL + 8UL), (11205885433679074279UL + 33UL),
-                           &____alias_loc_id_2, (unsigned)5, (unsigned)0, (11205885433679074279UL + 75UL), (11205885433679074279UL + 76UL), (11205885433679074279UL + 77UL), (11205885433679074279UL + 78UL), (11205885433679074279UL + 79UL),
-                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (11205885433679074279UL + 109UL), (11205885433679074279UL + 110UL), (11205885433679074279UL + 111UL),
-                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (11205885433679074279UL + 135UL), (11205885433679074279UL + 136UL), (11205885433679074279UL + 137UL), (11205885433679074279UL + 138UL), (11205885433679074279UL + 166UL),
-                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (11205885433679074279UL + 170UL), (11205885433679074279UL + 171UL), (11205885433679074279UL + 172UL), (11205885433679074279UL + 173UL), (11205885433679074279UL + 195UL),
-                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (11205885433679074279UL + 199UL), (11205885433679074279UL + 200UL), (11205885433679074279UL + 201UL), (11205885433679074279UL + 202UL), (11205885433679074279UL + 246UL),
-                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (11205885433679074279UL + 250UL), (11205885433679074279UL + 251UL), (11205885433679074279UL + 252UL), (11205885433679074279UL + 253UL), (11205885433679074279UL + 297UL),
-                           &____alias_loc_id_8, (unsigned)17, (unsigned)0, (11205885433679074279UL + 299UL), (11205885433679074279UL + 300UL), (11205885433679074279UL + 301UL), (11205885433679074279UL + 302UL), (11205885433679074279UL + 303UL), (11205885433679074279UL + 304UL), (11205885433679074279UL + 305UL), (11205885433679074279UL + 306UL), (11205885433679074279UL + 307UL), (11205885433679074279UL + 308UL), (11205885433679074279UL + 309UL), (11205885433679074279UL + 310UL), (11205885433679074279UL + 311UL), (11205885433679074279UL + 312UL), (11205885433679074279UL + 313UL), (11205885433679074279UL + 314UL), (11205885433679074279UL + 315UL),
-                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (11205885433679074279UL + 477UL), (11205885433679074279UL + 478UL), (11205885433679074279UL + 479UL), (11205885433679074279UL + 480UL), (11205885433679074279UL + 481UL), (11205885433679074279UL + 482UL), (11205885433679074279UL + 483UL), (11205885433679074279UL + 484UL),
-                            &____alias_loc_id_10, (unsigned)1, (unsigned)0, (11205885433679074279UL + 531UL),
-                            &____alias_loc_id_11, (unsigned)11, (unsigned)0, (11205885433679074279UL + 546UL), (11205885433679074279UL + 547UL), (11205885433679074279UL + 548UL), (11205885433679074279UL + 549UL), (11205885433679074279UL + 550UL), (11205885433679074279UL + 551UL), (11205885433679074279UL + 572UL), (11205885433679074279UL + 574UL), (11205885433679074279UL + 589UL), (11205885433679074279UL + 594UL), (11205885433679074279UL + 599UL),
-                            &____alias_loc_id_12, (unsigned)19, (unsigned)3, (11205885433679074279UL + 609UL), (11205885433679074279UL + 610UL), (11205885433679074279UL + 611UL), (11205885433679074279UL + 612UL), (11205885433679074279UL + 613UL), (11205885433679074279UL + 614UL), (11205885433679074279UL + 615UL), (11205885433679074279UL + 616UL), (11205885433679074279UL + 617UL), (11205885433679074279UL + 618UL), (11205885433679074279UL + 619UL), (11205885433679074279UL + 739UL), (11205885433679074279UL + 741UL), (11205885433679074279UL + 753UL), (11205885433679074279UL + 765UL), (11205885433679074279UL + 777UL), (11205885433679074279UL + 789UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 1365UL), "parse_three_doubles", (unsigned)2, (11205885433679074279UL + 810UL), (11205885433679074279UL + 833UL), "usage", (unsigned)1, (11205885433679074279UL + 871UL), "init", (unsigned)1, (11205885433679074279UL + 1164UL),
-                            &____alias_loc_id_13, (unsigned)6, (unsigned)2, (11205885433679074279UL + 879UL), (11205885433679074279UL + 880UL), (11205885433679074279UL + 881UL), (11205885433679074279UL + 883UL), (11205885433679074279UL + 884UL), (11205885433679074279UL + 885UL), "move", (unsigned)1, (11205885433679074279UL + 1164UL), "parse_config", (unsigned)2, (11205885433679074279UL + 882UL), (11205885433679074279UL + 1353UL),
+    init_module(11205885433679074279UL, 31, 13, 1, 13, 12, 0, 12, 17, 0, 3,
+                           &____alias_loc_id_0, (unsigned)31, (unsigned)0, (unsigned)0, (11205885433679074279UL + 879UL), (11205885433679074279UL + 880UL), (11205885433679074279UL + 881UL), (11205885433679074279UL + 883UL), (11205885433679074279UL + 884UL), (11205885433679074279UL + 885UL), (11205885433679074279UL + 886UL), (11205885433679074279UL + 887UL), (11205885433679074279UL + 888UL), (11205885433679074279UL + 889UL), (11205885433679074279UL + 890UL), (11205885433679074279UL + 891UL), (11205885433679074279UL + 892UL), (11205885433679074279UL + 893UL), (11205885433679074279UL + 894UL), (11205885433679074279UL + 895UL), (11205885433679074279UL + 896UL), (11205885433679074279UL + 897UL), (11205885433679074279UL + 898UL), (11205885433679074279UL + 899UL), (11205885433679074279UL + 900UL), (11205885433679074279UL + 901UL), (11205885433679074279UL + 902UL), (11205885433679074279UL + 903UL), (11205885433679074279UL + 904UL), (11205885433679074279UL + 905UL), (11205885433679074279UL + 906UL), (11205885433679074279UL + 907UL), (11205885433679074279UL + 908UL), (11205885433679074279UL + 909UL), (11205885433679074279UL + 928UL),
+                           &____alias_loc_id_1, (unsigned)9, (unsigned)0, (unsigned)0, (11205885433679074279UL + 1UL), (11205885433679074279UL + 2UL), (11205885433679074279UL + 3UL), (11205885433679074279UL + 4UL), (11205885433679074279UL + 5UL), (11205885433679074279UL + 6UL), (11205885433679074279UL + 7UL), (11205885433679074279UL + 8UL), (11205885433679074279UL + 33UL),
+                           &____alias_loc_id_2, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 75UL), (11205885433679074279UL + 76UL), (11205885433679074279UL + 77UL), (11205885433679074279UL + 78UL), (11205885433679074279UL + 79UL),
+                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (unsigned)0, (11205885433679074279UL + 109UL), (11205885433679074279UL + 110UL), (11205885433679074279UL + 111UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 135UL), (11205885433679074279UL + 136UL), (11205885433679074279UL + 137UL), (11205885433679074279UL + 138UL), (11205885433679074279UL + 166UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 170UL), (11205885433679074279UL + 171UL), (11205885433679074279UL + 172UL), (11205885433679074279UL + 173UL), (11205885433679074279UL + 195UL),
+                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 199UL), (11205885433679074279UL + 200UL), (11205885433679074279UL + 201UL), (11205885433679074279UL + 202UL), (11205885433679074279UL + 246UL),
+                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 250UL), (11205885433679074279UL + 251UL), (11205885433679074279UL + 252UL), (11205885433679074279UL + 253UL), (11205885433679074279UL + 297UL),
+                           &____alias_loc_id_8, (unsigned)17, (unsigned)0, (unsigned)0, (11205885433679074279UL + 299UL), (11205885433679074279UL + 300UL), (11205885433679074279UL + 301UL), (11205885433679074279UL + 302UL), (11205885433679074279UL + 303UL), (11205885433679074279UL + 304UL), (11205885433679074279UL + 305UL), (11205885433679074279UL + 306UL), (11205885433679074279UL + 307UL), (11205885433679074279UL + 308UL), (11205885433679074279UL + 309UL), (11205885433679074279UL + 310UL), (11205885433679074279UL + 311UL), (11205885433679074279UL + 312UL), (11205885433679074279UL + 313UL), (11205885433679074279UL + 314UL), (11205885433679074279UL + 315UL),
+                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (unsigned)0, (11205885433679074279UL + 477UL), (11205885433679074279UL + 478UL), (11205885433679074279UL + 479UL), (11205885433679074279UL + 480UL), (11205885433679074279UL + 481UL), (11205885433679074279UL + 482UL), (11205885433679074279UL + 483UL), (11205885433679074279UL + 484UL),
+                            &____alias_loc_id_10, (unsigned)11, (unsigned)0, (unsigned)0, (11205885433679074279UL + 546UL), (11205885433679074279UL + 547UL), (11205885433679074279UL + 548UL), (11205885433679074279UL + 549UL), (11205885433679074279UL + 550UL), (11205885433679074279UL + 551UL), (11205885433679074279UL + 572UL), (11205885433679074279UL + 574UL), (11205885433679074279UL + 589UL), (11205885433679074279UL + 594UL), (11205885433679074279UL + 599UL),
+                            &____alias_loc_id_11, (unsigned)19, (unsigned)0, (unsigned)0, (11205885433679074279UL + 609UL), (11205885433679074279UL + 610UL), (11205885433679074279UL + 611UL), (11205885433679074279UL + 612UL), (11205885433679074279UL + 613UL), (11205885433679074279UL + 614UL), (11205885433679074279UL + 615UL), (11205885433679074279UL + 616UL), (11205885433679074279UL + 617UL), (11205885433679074279UL + 618UL), (11205885433679074279UL + 619UL), (11205885433679074279UL + 739UL), (11205885433679074279UL + 741UL), (11205885433679074279UL + 753UL), (11205885433679074279UL + 765UL), (11205885433679074279UL + 777UL), (11205885433679074279UL + 789UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 1365UL),
+                            &____alias_loc_id_12, (unsigned)6, (unsigned)0, (unsigned)0, (11205885433679074279UL + 879UL), (11205885433679074279UL + 880UL), (11205885433679074279UL + 881UL), (11205885433679074279UL + 883UL), (11205885433679074279UL + 884UL), (11205885433679074279UL + 885UL),
                             "init", (void *)(&init_npm), (void *)__null, 0, 8, (11205885433679074279UL + 33UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 1, "__assert_fail", 4, (11205885433679074279UL + 1357UL), (11205885433679074279UL + 1358UL), 0UL, (11205885433679074279UL + 1359UL), 0UL,
                             "get_coord", (void *)(&get_coord_npm), (void *)__null, 0, 5, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
                             "modv", (void *)(&modv_npm), (void *)__null, 0, 3, 0UL, 0UL, 0UL, 0UL, 1, "sqrt", 1, 0UL, 0UL,

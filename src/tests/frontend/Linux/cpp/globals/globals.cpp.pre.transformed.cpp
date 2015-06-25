@@ -48,7 +48,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -2262,13 +2262,13 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 static int module_init() {
     init_module(16078043286575642275UL, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (16078043286575642275UL + 1UL), (16078043286575642275UL + 2UL), (16078043286575642275UL + 3UL), (16078043286575642275UL + 23UL),
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (16078043286575642275UL + 1UL), (16078043286575642275UL + 2UL), (16078043286575642275UL + 3UL), (16078043286575642275UL + 23UL),
                              (16078043286575642275UL + 3UL), (16078043286575642275UL + 19UL),
                              (16078043286575642275UL + 26UL), (16078043286575642275UL + 10UL),
                              "main", "main", 1, "checkpoint");
-    register_global_var("global|a", "i32", (void *)(&a), 4.0, 0, 0, 0);
-    register_global_var("global|b", "i32", (void *)(&b), 4.0, 0, 0, 0);
-    register_global_var("global|hello_world", "i8*", (void *)(&hello_world), 8.0, 1, 0, 0);
+    register_global_var("global|a", "i32", (void *)(&a), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|b", "i32", (void *)(&b), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|hello_world", "i8*", (void *)(&hello_world), 8.0, 1, 0, (16078043286575642275UL + 26UL), 0);
     register_constant(16078043286575642275UL + 0UL, (void *)hello_world, 12);
     return 0;
 }

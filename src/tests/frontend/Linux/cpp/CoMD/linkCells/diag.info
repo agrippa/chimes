@@ -26,32 +26,32 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 4
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 118 19 , 13307200203520302191UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 4 len=4 free_wrapper
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 119 10 , 13307200203520302184UL
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 110 4 rm_stack(true, 13307200203520301969UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 110 4 rm_stack(true, 13307200203520301969UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 1 const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302167UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 115 18 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_2, ____chimes_did_disable1); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 116 19 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_2, ____chimes_did_disable1); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 122 4 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_2, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 115 18 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 116 19 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 122 4 rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 114 1 const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(13307200203520302202UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 145 4 rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 145 4 rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 132 1 const int ____chimes_did_disable2 = new_stack((void *)(&getNeighborBoxes), "getNeighborBoxes", &____must_manage_getNeighborBoxes, 3, 0, (size_t)(13307200203520302287UL), (size_t)(0UL), (size_t)(13307200203520302289UL)); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 163 1 const int ____chimes_did_disable3 = new_stack((void *)(&putAtomInBox), "putAtomInBox", &____must_manage_putAtomInBox, 10, 0, (size_t)(13307200203520302992UL), (size_t)(13307200203520302993UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 185 1 rm_stack(false, 0UL, "putAtomInBox", &____must_manage_putAtomInBox, ____alias_loc_id_6, ____chimes_did_disable3); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 239 4 rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_5, ____chimes_did_disable4); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 185 1 rm_stack(false, 0UL, "putAtomInBox", &____must_manage_putAtomInBox, ____alias_loc_id_7, ____chimes_did_disable3); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 239 4 rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 194 1 const int ____chimes_did_disable4 = new_stack((void *)(&getBoxFromTuple), "getBoxFromTuple", &____must_manage_getBoxFromTuple, 4, 0, (size_t)(13307200203520302823UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 261 4 rm_stack(false, 0UL, "moveAtom", &____must_manage_moveAtom, ____alias_loc_id_8, ____chimes_did_disable5); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 261 4 rm_stack(false, 0UL, "moveAtom", &____must_manage_moveAtom, ____alias_loc_id_9, ____chimes_did_disable5); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 247 1 const int ____chimes_did_disable5 = new_stack((void *)(&moveAtom), "moveAtom", &____must_manage_moveAtom, 5, 0, (size_t)(13307200203520303224UL), (size_t)(13307200203520303265UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 1 const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(13307200203520303469UL), (size_t)(13307200203520303470UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 294 1 rm_stack(false, 0UL, "updateLinkCells", &____must_manage_updateLinkCells, ____alias_loc_id_10, ____chimes_did_disable6); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 294 1 rm_stack(false, 0UL, "updateLinkCells", &____must_manage_updateLinkCells, ____alias_loc_id_11, ____chimes_did_disable6); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 309 4 rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, 0, ____chimes_did_disable7); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 298 1 const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303532UL)); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 316 1 const int ____chimes_did_disable8 = new_stack((void *)(&copyAtom), "copyAtom", &____must_manage_copyAtom, 6, 0, (size_t)(13307200203520303390UL), (size_t)(13307200203520303391UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 325 1 rm_stack(false, 0UL, "copyAtom", &____must_manage_copyAtom, ____alias_loc_id_9, ____chimes_did_disable8); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 369 4 rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_7, ____chimes_did_disable9); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 325 1 rm_stack(false, 0UL, "copyAtom", &____must_manage_copyAtom, ____alias_loc_id_10, ____chimes_did_disable8); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 369 4 rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 338 1 const int ____chimes_did_disable9 = new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(13307200203520303165UL), (size_t)(13307200203520303166UL)); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 374 1 const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(13307200203520303500UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 377 1 rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells, ____alias_loc_id_11, ____chimes_did_disable10); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 377 1 rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells, ____alias_loc_id_12, ____chimes_did_disable10); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 388 1 const int ____chimes_did_disable11 = new_stack((void *)(&getTuple), "getTuple", &____must_manage_getTuple, 5, 0, (size_t)(13307200203520302567UL), (size_t)(0UL), (size_t)(13307200203520302569UL), (size_t)(13307200203520302570UL), (size_t)(13307200203520302571UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 459 1 rm_stack(false, 0UL, "getTuple", &____must_manage_getTuple, ____alias_loc_id_4, ____chimes_did_disable11); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 459 1 rm_stack(false, 0UL, "getTuple", &____must_manage_getTuple, ____alias_loc_id_5, ____chimes_did_disable11); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 2 const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302167UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 84 177 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 86 4  LinkCell *ll;  ll = ((LinkCell *)malloc_wrapper(sizeof(LinkCell), 13307200203520301969UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms))) ;
@@ -202,9 +202,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 66 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 201  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 22  ({  calling((void*)profileStart, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 22  ({  calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 50 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 17  ({  calling((void*)maxIntParallel, 2, 0, 0UL, 3, (size_t)(13307200203520303502UL), (size_t)(13307200203520303504UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 17  ({  calling((void*)maxIntParallel, 2, ____alias_loc_id_0, 0UL, 3, (size_t)(13307200203520303502UL), (size_t)(13307200203520303504UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 56 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 22  ({  calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 49 
@@ -259,9 +259,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 288 66 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 278 201  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 297 5 len=12 maxOccupancy_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 22  ({  calling((void*)profileStart, 1, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 22  ({  calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 305 50 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 17  ({  calling((void*)maxIntParallel, 2, 0, 0UL, 3, (size_t)(13307200203520303502UL), (size_t)(13307200203520303504UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 17  ({  calling((void*)maxIntParallel, 2, ____alias_loc_id_0, 0UL, 3, (size_t)(13307200203520303502UL), (size_t)(13307200203520303504UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 306 56 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 22  ({  calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c 307 49 

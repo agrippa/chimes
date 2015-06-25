@@ -62,7 +62,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -3366,18 +3366,18 @@ BPNN *net;
 # 19 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
    float hid_err; ;
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_1: net = ({ calling((void*)bpnn_create, 1, 0, 3513164141371984898UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_create)(layer_size, 16, 1); }) ;
+   call_lbl_1: net = ({ calling((void*)bpnn_create, 1, ____alias_loc_id_3, 3513164141371984898UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_create)(layer_size, 16, 1); }) ;
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   printf("Input layer size : %d\n", layer_size);
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_3: ({ calling((void*)load, 3, ____alias_loc_id_0, 0UL, 1, (size_t)(3513164141371984898UL)); (load)(net); }) ;
+   call_lbl_3: ({ calling((void*)load, 3, ____alias_loc_id_2, 0UL, 1, (size_t)(3513164141371984898UL)); (load)(net); }) ;
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   printf("Starting training kernel\n");
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_5: ({ calling((void*)bpnn_train_kernel, 5, 0, 0UL, 3, (size_t)(3513164141371984898UL), (size_t)(3513164141371984891UL), (size_t)(3513164141371984892UL)); (bpnn_train_kernel)(net, &out_err, &hid_err); }) ;
+   call_lbl_5: ({ calling((void*)bpnn_train_kernel, 5, ____alias_loc_id_1, 0UL, 3, (size_t)(3513164141371984898UL), (size_t)(3513164141371984891UL), (size_t)(3513164141371984892UL)); (bpnn_train_kernel)(net, &out_err, &hid_err); }) ;
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_6: ({ calling((void*)bpnn_free, 6, 0, 0UL, 1, (size_t)(3513164141371984898UL)); (bpnn_free)(net); }) ;
+   call_lbl_6: ({ calling((void*)bpnn_free, 6, ____alias_loc_id_0, 0UL, 1, (size_t)(3513164141371984898UL)); (bpnn_free)(net); }) ;
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   printf("Training done\n");
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
@@ -3407,14 +3407,14 @@ int setup_resumable(int argc, char *argv[])
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   seed = 7;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_4: ({ calling((void*)bpnn_initialize, 4, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (bpnn_initialize)(seed); }) ;
+   call_lbl_4: ({ calling((void*)bpnn_initialize, 4, 0, 0UL, 1, (size_t)(0UL)); (bpnn_initialize)(seed); }) ;
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
    call_lbl_5: ({ calling((void*)backprop_face, 5, 0, 0UL, 0); (backprop_face)(); }) ;
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   exit(0);
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-rm_stack(false, 0UL, "setup", &____must_manage_setup, ____alias_loc_id_3, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "setup", &____must_manage_setup, 0, ____chimes_did_disable1); }
 void backprop_face_quick()
 # 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&backprop_face), "backprop_face", &____must_manage_backprop_face, 0, 0) ; float out_err;
@@ -3427,18 +3427,18 @@ BPNN *net;
 # 19 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
    float hid_err; ;
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_1: net = ({ calling((void*)bpnn_create, 1, 0, 3513164141371984898UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_create)(layer_size, 16, 1); }) ;
+   call_lbl_1: net = ({ calling((void*)bpnn_create, 1, ____alias_loc_id_3, 3513164141371984898UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_create)(layer_size, 16, 1); }) ;
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   printf("Input layer size : %d\n", layer_size);
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_3: ({ calling((void*)load, 3, ____alias_loc_id_0, 0UL, 1, (size_t)(3513164141371984898UL)); (load)(net); }) ;
+   call_lbl_3: ({ calling((void*)load, 3, ____alias_loc_id_2, 0UL, 1, (size_t)(3513164141371984898UL)); (load)(net); }) ;
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   printf("Starting training kernel\n");
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_5: ({ calling((void*)bpnn_train_kernel, 5, 0, 0UL, 3, (size_t)(3513164141371984898UL), (size_t)(3513164141371984891UL), (size_t)(3513164141371984892UL)); (bpnn_train_kernel)(net, &out_err, &hid_err); }) ;
+   call_lbl_5: ({ calling((void*)bpnn_train_kernel, 5, ____alias_loc_id_1, 0UL, 3, (size_t)(3513164141371984898UL), (size_t)(3513164141371984891UL), (size_t)(3513164141371984892UL)); (bpnn_train_kernel)(net, &out_err, &hid_err); }) ;
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_6: ({ calling((void*)bpnn_free, 6, 0, 0UL, 1, (size_t)(3513164141371984898UL)); (bpnn_free)(net); }) ;
+   call_lbl_6: ({ calling((void*)bpnn_free, 6, ____alias_loc_id_0, 0UL, 1, (size_t)(3513164141371984898UL)); (bpnn_free)(net); }) ;
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   printf("Training done\n");
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
@@ -3467,14 +3467,14 @@ int setup_quick(int argc, char *argv[])
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   seed = 7;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-   call_lbl_4: ({ calling((void*)bpnn_initialize, 4, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (bpnn_initialize)(seed); }) ;
+   call_lbl_4: ({ calling((void*)bpnn_initialize, 4, 0, 0UL, 1, (size_t)(0UL)); (bpnn_initialize)(seed); }) ;
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
    call_lbl_5: ({ calling((void*)backprop_face, 5, 0, 0UL, 0); backprop_face_quick(); }) ;
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   exit(0);
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-rm_stack(false, 0UL, "setup", &____must_manage_setup, ____alias_loc_id_3, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "setup", &____must_manage_setup, 0, ____chimes_did_disable1); }
 
 int setup(int argc, char *argv[]) { return (____chimes_replaying ? setup_resumable(argc, argv) : setup_quick(argc, argv)); }
 
@@ -3543,12 +3543,12 @@ int setup_npm(int argc, char *argv[])
 
 static int module_init() {
     init_module(3513164141371984888UL, 4, 2, 2, 4, 2, 5, 7, 0, 0, 1,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)1, (3513164141371984888UL + 1UL), "load", (unsigned)1, (3513164141371984888UL + 10UL),
-                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (3513164141371984888UL + 35UL), (3513164141371984888UL + 36UL), (3513164141371984888UL + 37UL), (3513164141371984888UL + 70UL),
-                           &____alias_loc_id_2, (unsigned)0, (unsigned)2, "bpnn_free", (unsigned)1, (3513164141371984888UL + 10UL), "bpnn_train_kernel", (unsigned)3, (3513164141371984888UL + 3UL), (3513164141371984888UL + 4UL), (3513164141371984888UL + 10UL),
-                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (3513164141371984888UL + 35UL), (3513164141371984888UL + 36UL),
-                            "backprop_face", (void *)(&backprop_face_npm), (void *)__null, 1, &____alias_loc_id_0, 0, 0UL, 7, "bpnn_create", 3, 0UL, 0UL, 0UL, (3513164141371984888UL + 10UL), "printf", 2, (3513164141371984888UL + 71UL), 0UL, 0UL, "load", 1, (3513164141371984888UL + 10UL), 0UL, "printf", 1, (3513164141371984888UL + 72UL), 0UL, "bpnn_train_kernel", 3, (3513164141371984888UL + 10UL), (3513164141371984888UL + 3UL), (3513164141371984888UL + 4UL), 0UL, "bpnn_free", 1, (3513164141371984888UL + 10UL), 0UL, "printf", 1, (3513164141371984888UL + 73UL), 0UL,
-                            "setup", (void *)(&setup_npm), (void *)__null, 1, &____alias_loc_id_1, 2, 0UL, (3513164141371984888UL + 64UL), 0UL, 6, "fprintf", 2, (3513164141371984888UL + 45UL), (3513164141371984888UL + 75UL), 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (3513164141371984888UL + 51UL), 0UL, "bpnn_initialize", 1, 0UL, 0UL, "backprop_face", 0, 0UL, "exit", 1, 0UL, 0UL,
+                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "bpnn_free", (unsigned)1, (3513164141371984888UL + 10UL),
+                           &____alias_loc_id_1, (unsigned)0, (unsigned)0, (unsigned)1, "bpnn_train_kernel", (unsigned)3, (3513164141371984888UL + 3UL), (3513164141371984888UL + 4UL), (3513164141371984888UL + 10UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (3513164141371984888UL + 1UL), "load", (unsigned)1, (3513164141371984888UL + 10UL),
+                           &____alias_loc_id_3, (unsigned)0, (unsigned)0, (unsigned)1, "bpnn_create", (unsigned)1, (3513164141371984888UL + 10UL),
+                            "backprop_face", (void *)(&backprop_face_npm), (void *)__null, 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 0, 0UL, 7, "bpnn_create", 3, 0UL, 0UL, 0UL, (3513164141371984888UL + 10UL), "printf", 2, (3513164141371984888UL + 71UL), 0UL, 0UL, "load", 1, (3513164141371984888UL + 10UL), 0UL, "printf", 1, (3513164141371984888UL + 72UL), 0UL, "bpnn_train_kernel", 3, (3513164141371984888UL + 10UL), (3513164141371984888UL + 3UL), (3513164141371984888UL + 4UL), 0UL, "bpnn_free", 1, (3513164141371984888UL + 10UL), 0UL, "printf", 1, (3513164141371984888UL + 73UL), 0UL,
+                            "setup", (void *)(&setup_npm), (void *)__null, 0, 2, 0UL, (3513164141371984888UL + 64UL), 0UL, 6, "fprintf", 2, (3513164141371984888UL + 45UL), (3513164141371984888UL + 75UL), 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (3513164141371984888UL + 51UL), 0UL, "bpnn_initialize", 1, 0UL, 0UL, "backprop_face", 0, 0UL, "exit", 1, 0UL, 0UL,
                                "bpnn_create", (void **)&(____chimes_extern_func_bpnn_create),
                                "bpnn_free", (void **)&(____chimes_extern_func_bpnn_free),
                                "bpnn_initialize", (void **)&(____chimes_extern_func_bpnn_initialize),
@@ -3570,7 +3570,7 @@ static int module_init() {
                              "backprop_face", "_Z13backprop_facev", 4, "bpnn_create", "load", "bpnn_train_kernel", "bpnn_free",
                         "backprop_face|net|0", 3, "load", "bpnn_train_kernel", "bpnn_free",
                         "backprop_face|out_err|0", 1, "backprop_face");
-    register_global_var("global|layer_size", "i32", (void *)(&layer_size), 4.0, 0, 0, 0);
+    register_global_var("global|layer_size", "i32", (void *)(&layer_size), 4.0, 0, 0, 0UL, 0);
     return 0;
 }
 
