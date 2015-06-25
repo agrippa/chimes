@@ -6,9 +6,9 @@ ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performance
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 243 17 len=7 getTime_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 257 15 len=7 getTick_npm
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 264 6 len=10 timerStats_npm
-InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 4 alias_group_changed(____alias_loc_id_3); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 4 alias_group_changed(____alias_loc_id_0); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 4 alias_group_changed(____alias_loc_id_11); 
-InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 49 alias_group_changed(____alias_loc_id_5); 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 49 alias_group_changed(____alias_loc_id_10); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 93 1 const int ____chimes_did_disable0 = new_stack((void *)(&profileStart), "profileStart", &____must_manage_profileStart, 1, 0, (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 95 1 rm_stack(false, 0UL, "profileStart", &____must_manage_profileStart, ____alias_loc_id_14, ____chimes_did_disable0); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 98 1 const int ____chimes_did_disable1 = new_stack((void *)(&profileStop), "profileStop", &____must_manage_profileStop, 1, 0, (size_t)(0UL)); 
@@ -98,7 +98,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/pe
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 269 9  ii = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 269 19 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 4 {  int ii; 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 149  }
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 150  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 9  ii = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 19 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 278 4  RankReduceData reduceSendBuf[11];  RankReduceData reduceRecvBuf[11]; ;
@@ -136,7 +136,7 @@ InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceT
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 36  call_lbl_5: 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 36  call_lbl_8: 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 4  call_lbl_1: 
-InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 101  call_lbl_3: 
+InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 102  call_lbl_3: 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 7  call_lbl_4: 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 4  call_lbl_5: 
 InsertText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 4  call_lbl_6: 
@@ -155,17 +155,17 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/perfor
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 37 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 109 145  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 120 6 len=23 printPerformanceResults_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 17  ({  calling((void*)timerStats, 1, ____alias_loc_id_0, 0UL, 0); (timerStats)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 17  ({  calling((void*)timerStats, 1, ____alias_loc_id_1, 0UL, 0); (timerStats)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 28 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 22  ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 32 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 27 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 76  ({  calling((void*)getMyRank, 4, ____alias_loc_id_1, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 76  ({  calling((void*)getMyRank, 4, ____alias_loc_id_3, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 86 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 147 76  ({  calling((void*)getNRanks, 9, ____alias_loc_id_2, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 147 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 121  ({  calling((void*)getNRanks, 15, ____alias_loc_id_3, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 121  ({  calling((void*)getNRanks, 15, ____alias_loc_id_0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 131 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 16 
@@ -194,9 +194,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/perfor
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 75 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 27 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 76  ({  calling((void*)getNRanks, 5, ____alias_loc_id_12, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 76  ({  calling((void*)getNRanks, 5, ____alias_loc_id_13, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 76  ({  calling((void*)getMyRank, 8, ____alias_loc_id_13, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 76  ({  calling((void*)getMyRank, 8, ____alias_loc_id_12, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 86 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 16 
@@ -216,19 +216,19 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/pe
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 257 15 len=7 getTick_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 258 109  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 264 6 len=10 timerStats_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 17  ({  calling((void*)addDoubleParallel, 1, ____alias_loc_id_4, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 17  ({  calling((void*)addDoubleParallel, 1, ____alias_loc_id_9, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 160  ({  calling((void*)getNRanks, 3, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 170 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 45  ({  calling((void*)getMyRank, 4, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 161  ({  calling((void*)getNRanks, 3, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 171 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 45  ({  calling((void*)getMyRank, 4, ____alias_loc_id_8, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 55 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 17  ({  calling((void*)minRankDoubleParallel, 5, ____alias_loc_id_7, 0UL, 3, (size_t)(13147405260753302877UL), (size_t)(13147405260753302878UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 83 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 17  ({  calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_8, 0UL, 3, (size_t)(13147405260753302877UL), (size_t)(13147405260753302878UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 17  ({  calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_6, 0UL, 3, (size_t)(13147405260753302877UL), (size_t)(13147405260753302878UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 83 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 17  ({  calling((void*)addDoubleParallel, 7, ____alias_loc_id_9, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 17  ({  calling((void*)addDoubleParallel, 7, ____alias_loc_id_4, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 79  ({  calling((void*)getNRanks, 8, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 79  ({  calling((void*)getNRanks, 8, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 89 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 266 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 266 22 
@@ -280,17 +280,17 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/perfor
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 110 37 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 109 145  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 120 6 len=23 printPerformanceResults_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 17  ({  calling((void*)timerStats, 1, ____alias_loc_id_0, 0UL, 0); (timerStats)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 17  ({  calling((void*)timerStats, 1, ____alias_loc_id_1, 0UL, 0); (timerStats)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 28 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 22  ({  calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 125 32 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 27 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 76  ({  calling((void*)getMyRank, 4, ____alias_loc_id_1, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 76  ({  calling((void*)getMyRank, 4, ____alias_loc_id_3, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 86 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 147 76  ({  calling((void*)getNRanks, 9, ____alias_loc_id_2, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 147 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 121  ({  calling((void*)getNRanks, 15, ____alias_loc_id_3, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 121  ({  calling((void*)getNRanks, 15, ____alias_loc_id_0, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 131 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 129 16 
@@ -319,9 +319,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/perfor
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 75 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 27 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 76  ({  calling((void*)getNRanks, 5, ____alias_loc_id_12, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 76  ({  calling((void*)getNRanks, 5, ____alias_loc_id_13, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 86 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 76  ({  calling((void*)getMyRank, 8, ____alias_loc_id_13, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 76  ({  calling((void*)getMyRank, 8, ____alias_loc_id_12, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 86 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 185 16 
@@ -341,19 +341,19 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/pe
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 257 15 len=7 getTick_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 258 109  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 264 6 len=10 timerStats_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 17  ({  calling((void*)addDoubleParallel, 1, ____alias_loc_id_4, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 17  ({  calling((void*)addDoubleParallel, 1, ____alias_loc_id_9, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 160  ({  calling((void*)getNRanks, 3, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) 
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 170 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 45  ({  calling((void*)getMyRank, 4, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 161  ({  calling((void*)getNRanks, 3, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 171 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 45  ({  calling((void*)getMyRank, 4, ____alias_loc_id_8, 0UL, 0); (getMyRank)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 55 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 17  ({  calling((void*)minRankDoubleParallel, 5, ____alias_loc_id_7, 0UL, 3, (size_t)(13147405260753302877UL), (size_t)(13147405260753302878UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 83 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 17  ({  calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_8, 0UL, 3, (size_t)(13147405260753302877UL), (size_t)(13147405260753302878UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 17  ({  calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_6, 0UL, 3, (size_t)(13147405260753302877UL), (size_t)(13147405260753302878UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 83 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 17  ({  calling((void*)addDoubleParallel, 7, ____alias_loc_id_9, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 17  ({  calling((void*)addDoubleParallel, 7, ____alias_loc_id_4, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 67 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 79  ({  calling((void*)getNRanks, 8, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 79  ({  calling((void*)getNRanks, 8, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 89 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 266 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 266 22 

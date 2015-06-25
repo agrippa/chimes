@@ -54,7 +54,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -3999,8 +3999,8 @@ int cluster_npm(int numObjects,
 
 static int module_init() {
     init_module(433509646541986798UL, 6, 1, 2, 2, 1, 1, 2, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)7, (unsigned)1, (433509646541986798UL + 1UL), (433509646541986798UL + 2UL), (433509646541986798UL + 3UL), (433509646541986798UL + 4UL), (433509646541986798UL + 5UL), (433509646541986798UL + 6UL), (433509646541986798UL + 7UL), "kmeans_clustering", (unsigned)2, (433509646541986798UL + 26UL), (433509646541986798UL + 62UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (433509646541986798UL + 8UL), (433509646541986798UL + 65UL),
+                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)1, (433509646541986798UL + 1UL), (433509646541986798UL + 2UL), (433509646541986798UL + 3UL), (433509646541986798UL + 4UL), (433509646541986798UL + 5UL), (433509646541986798UL + 6UL), (433509646541986798UL + 7UL), "kmeans_clustering", (unsigned)3, (433509646541986798UL + 26UL), (433509646541986798UL + 39UL), (433509646541986798UL + 62UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (433509646541986798UL + 8UL), (433509646541986798UL + 65UL),
                             "cluster", (void *)(&cluster_npm), (void *)__null, 1, &____alias_loc_id_0, 6, 0UL, 0UL, (433509646541986798UL + 62UL), 0UL, 0UL, (433509646541986798UL + 65UL), 0UL, 6, "malloc", 1, 0UL, (433509646541986798UL + 26UL), "srand", 1, 0UL, 0UL, "kmeans_clustering", 6, (433509646541986798UL + 62UL), 0UL, 0UL, 0UL, 0UL, (433509646541986798UL + 26UL), (433509646541986798UL + 39UL), "free", 1, (433509646541986798UL + 45UL), 0UL, "free", 1, (433509646541986798UL + 39UL), 0UL, "free", 1, (433509646541986798UL + 26UL), 0UL,
                                "kmeans_clustering", (void **)&(____chimes_extern_func_kmeans_clustering),
                            "cluster", &(____chimes_does_checkpoint_cluster_npm),

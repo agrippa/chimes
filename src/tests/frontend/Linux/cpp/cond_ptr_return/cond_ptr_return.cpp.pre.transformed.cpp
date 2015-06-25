@@ -51,7 +51,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1511,8 +1511,8 @@ void *foo_npm() {
 
 static int module_init() {
     init_module(1528448604885476947UL, 4, 2, 0, 2, 1, 0, 1, 1, 0, 0,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (1528448604885476947UL + 26UL), (1528448604885476947UL + 27UL), (1528448604885476947UL + 28UL), (1528448604885476947UL + 29UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (1528448604885476947UL + 1UL), (1528448604885476947UL + 2UL), (1528448604885476947UL + 42UL),
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (1528448604885476947UL + 26UL), (1528448604885476947UL + 27UL), (1528448604885476947UL + 28UL), (1528448604885476947UL + 29UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (1528448604885476947UL + 1UL), (1528448604885476947UL + 2UL), (1528448604885476947UL + 42UL),
                             "foo", (void *)(&foo_npm), (void *)__null, 0, 0, (1528448604885476947UL + 42UL), 1, "malloc", 1, 0UL, (1528448604885476947UL + 42UL),
                            "foo", &(____chimes_does_checkpoint_foo_npm),
                              (1528448604885476947UL + 1UL), (1528448604885476947UL + 42UL),

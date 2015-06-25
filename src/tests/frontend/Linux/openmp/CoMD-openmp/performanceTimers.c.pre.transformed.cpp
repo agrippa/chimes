@@ -115,7 +115,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -3257,7 +3257,7 @@ double tick;
  if (____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0 || ____must_checkpoint_printPerformanceResults_totalTime_0 || ____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0 || ____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(5, "printPerformanceResults|____chimes_unroll_var_1|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0, "i32", (void *)(&____chimes_unroll_var_1), (size_t)4, 0, 0, 0, "printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0, "printPerformanceResults|____chimes_unroll_var_0|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
 # 122 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 123 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-    call_lbl_1: ({ calling((void*)timerStats, 1, ____alias_loc_id_0, 0UL, 0); (timerStats)(); }) ;
+    call_lbl_1: ({ calling((void*)timerStats, 1, ____alias_loc_id_1, 0UL, 0); (timerStats)(); }) ;
 # 124 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 125 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_2: if (! ({ calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3); return; };
@@ -3269,7 +3269,7 @@ double tick;
       loopTime = (perfTimer[loopTimer].total * tick) ;
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-        call_lbl_4: ____chimes_unroll_var_0 = ( ({ calling((void*)getMyRank, 4, ____alias_loc_id_1, 0UL, 0); (getMyRank)(); }) ) ; fprintf(stdout, "\n\nTimings for Rank %d\n", ____chimes_unroll_var_0);
+        call_lbl_4: ____chimes_unroll_var_0 = ( ({ calling((void*)getMyRank, 4, ____alias_loc_id_3, 0UL, 0); (getMyRank)(); }) ) ; fprintf(stdout, "\n\nTimings for Rank %d\n", ____chimes_unroll_var_0);
 # 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(stdout, "        Timer        # Calls    Avg/Call (s)   Total (s)    %% Loop\n");
 # 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3319,7 +3319,7 @@ double tick;
 # 159 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
 # 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   alias_group_changed(____alias_loc_id_3); double atomsPerTask; call_lbl_15: atomsPerTask = (nGlobalAtoms / (real_t) ({ calling((void*)getNRanks, 15, ____alias_loc_id_3, 0UL, 0); (getNRanks)(); }) ) ;
+   alias_group_changed(____alias_loc_id_0); double atomsPerTask; call_lbl_15: atomsPerTask = (nGlobalAtoms / (real_t) ({ calling((void*)getNRanks, 15, ____alias_loc_id_0, 0UL, 0); (getNRanks)(); }) ) ;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomRate = perfTimer[timestepTimer].average * tick * 1e6 /
 # 162 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3374,11 +3374,11 @@ double tick;
 # 188 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file,"\nPerformance Results:\n");
 # 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-        call_lbl_5: ____chimes_unroll_var_2 = ( ({ calling((void*)getNRanks, 5, ____alias_loc_id_12, 0UL, 0); (getNRanks)(); }) ) ; fprintf(file, "  TotalRanks: %d\n", ____chimes_unroll_var_2);
+        call_lbl_5: ____chimes_unroll_var_2 = ( ({ calling((void*)getNRanks, 5, ____alias_loc_id_13, 0UL, 0); (getNRanks)(); }) ) ; fprintf(file, "  TotalRanks: %d\n", ____chimes_unroll_var_2);
 # 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  ReportingTimeUnits: seconds\n");
 # 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-     int ____chimes_unroll_var_3; call_lbl_8: ____chimes_unroll_var_3 = ( ({ calling((void*)getMyRank, 8, ____alias_loc_id_13, 0UL, 0); (getMyRank)(); }) ) ; fprintf(file, "Performance Results For Rank %d:\n", ____chimes_unroll_var_3);
+     int ____chimes_unroll_var_3; call_lbl_8: ____chimes_unroll_var_3 = ( ({ calling((void*)getMyRank, 8, ____alias_loc_id_12, 0UL, 0); (getMyRank)(); }) ) ; fprintf(file, "Performance Results For Rank %d:\n", ____chimes_unroll_var_3);
 # 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 193 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3512,10 +3512,10 @@ double sendBuf[11];
 # 269 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { int ii; for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
 # 271 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-    call_lbl_1: ({ calling((void*)addDoubleParallel, 1, ____alias_loc_id_4, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+    call_lbl_1: ({ calling((void*)addDoubleParallel, 1, ____alias_loc_id_9, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
 # 272 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 273 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   { lbl_0: int ii; if (____must_checkpoint_timerStats_ii_1 != 0) { register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(____alias_loc_id_5); call_lbl_3: perfTimer[ii].average = recvBuf[ii] / (double) ({ calling((void*)getNRanks, 3, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) ; } };
+   { lbl_0: int ii; if (____must_checkpoint_timerStats_ii_1 != 0) { register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(____alias_loc_id_10); call_lbl_3: perfTimer[ii].average = recvBuf[ii] / (double) ({ calling((void*)getNRanks, 3, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) ; } };
 # 275 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 276 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 277 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3528,7 +3528,7 @@ double sendBuf[11];
 # 281 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       reduceSendBuf[ii].val = (double)perfTimer[ii].total;
 # 282 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-       call_lbl_4: reduceSendBuf[ii].rank = ({ calling((void*)getMyRank, 4, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) ;
+       call_lbl_4: reduceSendBuf[ii].rank = ({ calling((void*)getMyRank, 4, ____alias_loc_id_8, 0UL, 0); (getMyRank)(); }) ;
 # 283 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
 # 284 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3544,7 +3544,7 @@ double sendBuf[11];
 # 289 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
 # 290 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-    call_lbl_6: ({ calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_8, 0UL, 3, (size_t)(13147405260753302877UL), (size_t)(13147405260753302878UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
+    call_lbl_6: ({ calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_6, 0UL, 3, (size_t)(13147405260753302877UL), (size_t)(13147405260753302878UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
 # 291 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_3: int ii; if (____must_checkpoint_timerStats_ii_4 != 0) { register_stack_var("timerStats|ii|4", &____must_checkpoint_timerStats_ii_4, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_4; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 292 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3568,13 +3568,13 @@ double sendBuf[11];
 # 302 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
 # 303 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-    call_lbl_7: ({ calling((void*)addDoubleParallel, 7, ____alias_loc_id_9, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+    call_lbl_7: ({ calling((void*)addDoubleParallel, 7, ____alias_loc_id_4, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
 # 304 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_5: int ii; if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 305 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
 # 306 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-           call_lbl_8: ____chimes_unroll_var_4 = ( ({ calling((void*)getNRanks, 8, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) ) ; perfTimer[ii].stdev = sqrt(recvBuf[ii] / (double) ____chimes_unroll_var_4);
+           call_lbl_8: ____chimes_unroll_var_4 = ( ({ calling((void*)getNRanks, 8, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) ) ; perfTimer[ii].stdev = sqrt(recvBuf[ii] / (double) ____chimes_unroll_var_4);
 # 307 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
 # 308 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3630,7 +3630,7 @@ double tick;
  if (____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0 || ____must_checkpoint_printPerformanceResults_totalTime_0 || ____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0 || ____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(5, "printPerformanceResults|____chimes_unroll_var_1|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0, "i32", (void *)(&____chimes_unroll_var_1), (size_t)4, 0, 0, 0, "printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0, "printPerformanceResults|____chimes_unroll_var_0|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } ; ;
 # 122 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 123 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-    call_lbl_1: ({ calling((void*)timerStats, 1, ____alias_loc_id_0, 0UL, 0); timerStats_quick(); }) ;
+    call_lbl_1: ({ calling((void*)timerStats, 1, ____alias_loc_id_1, 0UL, 0); timerStats_quick(); }) ;
 # 124 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 125 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
     call_lbl_2: if (! ({ calling((void*)printRank, 2, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3); return; };
@@ -3642,7 +3642,7 @@ double tick;
       loopTime = (perfTimer[loopTimer].total * tick) ;
 # 131 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 132 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-        call_lbl_4: ____chimes_unroll_var_0 = ( ({ calling((void*)getMyRank, 4, ____alias_loc_id_1, 0UL, 0); (getMyRank)(); }) ) ; fprintf(stdout, "\n\nTimings for Rank %d\n", ____chimes_unroll_var_0);
+        call_lbl_4: ____chimes_unroll_var_0 = ( ({ calling((void*)getMyRank, 4, ____alias_loc_id_3, 0UL, 0); (getMyRank)(); }) ) ; fprintf(stdout, "\n\nTimings for Rank %d\n", ____chimes_unroll_var_0);
 # 133 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(stdout, "        Timer        # Calls    Avg/Call (s)   Total (s)    %% Loop\n");
 # 134 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3692,7 +3692,7 @@ double tick;
 # 159 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
 # 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   alias_group_changed(____alias_loc_id_3); double atomsPerTask; call_lbl_15: atomsPerTask = (nGlobalAtoms / (real_t) ({ calling((void*)getNRanks, 15, ____alias_loc_id_3, 0UL, 0); (getNRanks)(); }) ) ;
+   alias_group_changed(____alias_loc_id_0); double atomsPerTask; call_lbl_15: atomsPerTask = (nGlobalAtoms / (real_t) ({ calling((void*)getNRanks, 15, ____alias_loc_id_0, 0UL, 0); (getNRanks)(); }) ) ;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    perfGlobal.atomRate = perfTimer[timestepTimer].average * tick * 1e6 /
 # 162 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3746,11 +3746,11 @@ double tick;
 # 188 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file,"\nPerformance Results:\n");
 # 189 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-        call_lbl_5: ____chimes_unroll_var_2 = ( ({ calling((void*)getNRanks, 5, ____alias_loc_id_12, 0UL, 0); (getNRanks)(); }) ) ; fprintf(file, "  TotalRanks: %d\n", ____chimes_unroll_var_2);
+        call_lbl_5: ____chimes_unroll_var_2 = ( ({ calling((void*)getNRanks, 5, ____alias_loc_id_13, 0UL, 0); (getNRanks)(); }) ) ; fprintf(file, "  TotalRanks: %d\n", ____chimes_unroll_var_2);
 # 190 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    fprintf(file, "  ReportingTimeUnits: seconds\n");
 # 191 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-     int ____chimes_unroll_var_3; call_lbl_8: ____chimes_unroll_var_3 = ( ({ calling((void*)getMyRank, 8, ____alias_loc_id_13, 0UL, 0); (getMyRank)(); }) ) ; fprintf(file, "Performance Results For Rank %d:\n", ____chimes_unroll_var_3);
+     int ____chimes_unroll_var_3; call_lbl_8: ____chimes_unroll_var_3 = ( ({ calling((void*)getMyRank, 8, ____alias_loc_id_12, 0UL, 0); (getMyRank)(); }) ) ; fprintf(file, "Performance Results For Rank %d:\n", ____chimes_unroll_var_3);
 # 192 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { int ii; for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 193 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3881,10 +3881,10 @@ double sendBuf[11];
 # 269 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { int ii; for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
 # 271 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-    call_lbl_1: ({ calling((void*)addDoubleParallel, 1, ____alias_loc_id_4, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+    call_lbl_1: ({ calling((void*)addDoubleParallel, 1, ____alias_loc_id_9, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
 # 272 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 273 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-   { lbl_0: int ii; if (____must_checkpoint_timerStats_ii_1 != 0) { register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(____alias_loc_id_5); call_lbl_3: perfTimer[ii].average = recvBuf[ii] / (double) ({ calling((void*)getNRanks, 3, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) ; } };
+   { lbl_0: int ii; if (____must_checkpoint_timerStats_ii_1 != 0) { register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(____alias_loc_id_10); call_lbl_3: perfTimer[ii].average = recvBuf[ii] / (double) ({ calling((void*)getNRanks, 3, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) ; } };
 # 275 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 276 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
 # 277 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3897,7 +3897,7 @@ double sendBuf[11];
 # 281 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
       reduceSendBuf[ii].val = (double)perfTimer[ii].total;
 # 282 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-       call_lbl_4: reduceSendBuf[ii].rank = ({ calling((void*)getMyRank, 4, ____alias_loc_id_6, 0UL, 0); (getMyRank)(); }) ;
+       call_lbl_4: reduceSendBuf[ii].rank = ({ calling((void*)getMyRank, 4, ____alias_loc_id_8, 0UL, 0); (getMyRank)(); }) ;
 # 283 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
 # 284 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3913,7 +3913,7 @@ double sendBuf[11];
 # 289 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
 # 290 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-    call_lbl_6: ({ calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_8, 0UL, 3, (size_t)(13147405260753302877UL), (size_t)(13147405260753302878UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
+    call_lbl_6: ({ calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_6, 0UL, 3, (size_t)(13147405260753302877UL), (size_t)(13147405260753302878UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
 # 291 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_3: int ii; if (____must_checkpoint_timerStats_ii_4 != 0) { register_stack_var("timerStats|ii|4", &____must_checkpoint_timerStats_ii_4, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 292 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -3937,13 +3937,13 @@ double sendBuf[11];
 # 302 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
 # 303 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-    call_lbl_7: ({ calling((void*)addDoubleParallel, 7, ____alias_loc_id_9, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+    call_lbl_7: ({ calling((void*)addDoubleParallel, 7, ____alias_loc_id_4, 0UL, 3, (size_t)(13147405260753302873UL), (size_t)(13147405260753302874UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
 # 304 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    { lbl_5: int ii; if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 305 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    {
 # 306 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
-           call_lbl_8: ____chimes_unroll_var_4 = ( ({ calling((void*)getNRanks, 8, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) ) ; perfTimer[ii].stdev = sqrt(recvBuf[ii] / (double) ____chimes_unroll_var_4);
+           call_lbl_8: ____chimes_unroll_var_4 = ( ({ calling((void*)getNRanks, 8, ____alias_loc_id_5, 0UL, 0); (getNRanks)(); }) ) ; perfTimer[ii].stdev = sqrt(recvBuf[ii] / (double) ____chimes_unroll_var_4);
 # 307 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
    } }
 # 308 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c"
@@ -4300,28 +4300,28 @@ void timerStats_npm(void)
 
 static int module_init() {
     init_module(13147405260753302553UL, 3, 8, 24, 22, 8, 6, 14, 5, 0, 7,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (13147405260753302553UL + 94UL), (13147405260753302553UL + 95UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (13147405260753302553UL + 96UL), (13147405260753302553UL + 97UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (13147405260753302553UL + 98UL), (13147405260753302553UL + 99UL), (13147405260753302553UL + 100UL),
-                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (13147405260753302553UL + 101UL), (13147405260753302553UL + 102UL),
-                           &____alias_loc_id_4, (unsigned)2, (unsigned)1, (13147405260753302553UL + 320UL), (13147405260753302553UL + 322UL), "addDoubleParallel", (unsigned)2, (13147405260753302553UL + 320UL), (13147405260753302553UL + 321UL),
-                           &____alias_loc_id_5, (unsigned)4, (unsigned)2, (13147405260753302553UL + 323UL), (13147405260753302553UL + 324UL), (13147405260753302553UL + 326UL), (13147405260753302553UL + 774UL), "addDoubleParallel", (unsigned)2, (13147405260753302553UL + 320UL), (13147405260753302553UL + 321UL), "minRankDoubleParallel", (unsigned)2, (13147405260753302553UL + 324UL), (13147405260753302553UL + 325UL),
-                           &____alias_loc_id_6, (unsigned)4, (unsigned)2, (13147405260753302553UL + 323UL), (13147405260753302553UL + 324UL), (13147405260753302553UL + 326UL), (13147405260753302553UL + 774UL), "addDoubleParallel", (unsigned)2, (13147405260753302553UL + 320UL), (13147405260753302553UL + 321UL), "minRankDoubleParallel", (unsigned)2, (13147405260753302553UL + 324UL), (13147405260753302553UL + 325UL),
-                           &____alias_loc_id_7, (unsigned)4, (unsigned)2, (13147405260753302553UL + 323UL), (13147405260753302553UL + 324UL), (13147405260753302553UL + 326UL), (13147405260753302553UL + 774UL), "addDoubleParallel", (unsigned)2, (13147405260753302553UL + 320UL), (13147405260753302553UL + 321UL), "minRankDoubleParallel", (unsigned)2, (13147405260753302553UL + 324UL), (13147405260753302553UL + 325UL),
-                           &____alias_loc_id_8, (unsigned)2, (unsigned)2, (13147405260753302553UL + 327UL), (13147405260753302553UL + 774UL), "maxRankDoubleParallel", (unsigned)2, (13147405260753302553UL + 324UL), (13147405260753302553UL + 325UL), "minRankDoubleParallel", (unsigned)2, (13147405260753302553UL + 324UL), (13147405260753302553UL + 325UL),
-                           &____alias_loc_id_9, (unsigned)5, (unsigned)2, (13147405260753302553UL + 320UL), (13147405260753302553UL + 328UL), (13147405260753302553UL + 329UL), (13147405260753302553UL + 330UL), (13147405260753302553UL + 774UL), "addDoubleParallel", (unsigned)2, (13147405260753302553UL + 320UL), (13147405260753302553UL + 321UL), "maxRankDoubleParallel", (unsigned)2, (13147405260753302553UL + 324UL), (13147405260753302553UL + 325UL),
-                            &____alias_loc_id_10, (unsigned)3, (unsigned)1, (13147405260753302553UL + 331UL), (13147405260753302553UL + 332UL), (13147405260753302553UL + 774UL), "addDoubleParallel", (unsigned)2, (13147405260753302553UL + 320UL), (13147405260753302553UL + 321UL),
-                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (13147405260753302553UL + 545UL),
-                            &____alias_loc_id_12, (unsigned)2, (unsigned)0, (13147405260753302553UL + 546UL), (13147405260753302553UL + 547UL),
-                            &____alias_loc_id_13, (unsigned)1, (unsigned)0, (13147405260753302553UL + 548UL),
-                            &____alias_loc_id_14, (unsigned)2, (unsigned)0, (13147405260753302553UL + 1UL), (13147405260753302553UL + 774UL),
-                            &____alias_loc_id_15, (unsigned)2, (unsigned)0, (13147405260753302553UL + 14UL), (13147405260753302553UL + 15UL),
-                            &____alias_loc_id_16, (unsigned)3, (unsigned)0, (13147405260753302553UL + 29UL), (13147405260753302553UL + 30UL), (13147405260753302553UL + 774UL),
-                            &____alias_loc_id_17, (unsigned)3, (unsigned)0, (13147405260753302553UL + 67UL), (13147405260753302553UL + 68UL), (13147405260753302553UL + 774UL),
-                            &____alias_loc_id_18, (unsigned)1, (unsigned)0, (13147405260753302553UL + 89UL),
-                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (13147405260753302553UL + 103UL), (13147405260753302553UL + 784UL),
-                            &____alias_loc_id_20, (unsigned)3, (unsigned)1, (13147405260753302553UL + 331UL), (13147405260753302553UL + 332UL), (13147405260753302553UL + 774UL), "addDoubleParallel", (unsigned)2, (13147405260753302553UL + 320UL), (13147405260753302553UL + 321UL),
-                            &____alias_loc_id_21, (unsigned)4, (unsigned)0, (13147405260753302553UL + 549UL), (13147405260753302553UL + 550UL), (13147405260753302553UL + 551UL), (13147405260753302553UL + 552UL),
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (13147405260753302553UL + 101UL), (13147405260753302553UL + 102UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (13147405260753302553UL + 94UL), (13147405260753302553UL + 95UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (13147405260753302553UL + 98UL), (13147405260753302553UL + 99UL), (13147405260753302553UL + 100UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (13147405260753302553UL + 96UL), (13147405260753302553UL + 97UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)1, (13147405260753302553UL + 320UL), (13147405260753302553UL + 328UL), (13147405260753302553UL + 329UL), (13147405260753302553UL + 330UL), (13147405260753302553UL + 774UL), "addDoubleParallel", (unsigned)2, (13147405260753302553UL + 320UL), (13147405260753302553UL + 321UL),
+                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (13147405260753302553UL + 331UL), (13147405260753302553UL + 332UL), (13147405260753302553UL + 774UL),
+                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)1, (13147405260753302553UL + 327UL), (13147405260753302553UL + 774UL), "maxRankDoubleParallel", (unsigned)2, (13147405260753302553UL + 324UL), (13147405260753302553UL + 325UL),
+                           &____alias_loc_id_7, (unsigned)4, (unsigned)0, (unsigned)1, (13147405260753302553UL + 323UL), (13147405260753302553UL + 324UL), (13147405260753302553UL + 326UL), (13147405260753302553UL + 774UL), "minRankDoubleParallel", (unsigned)2, (13147405260753302553UL + 324UL), (13147405260753302553UL + 325UL),
+                           &____alias_loc_id_8, (unsigned)4, (unsigned)0, (unsigned)0, (13147405260753302553UL + 323UL), (13147405260753302553UL + 324UL), (13147405260753302553UL + 326UL), (13147405260753302553UL + 774UL),
+                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)1, (13147405260753302553UL + 320UL), (13147405260753302553UL + 322UL), "addDoubleParallel", (unsigned)2, (13147405260753302553UL + 320UL), (13147405260753302553UL + 321UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (13147405260753302553UL + 323UL), (13147405260753302553UL + 774UL),
+                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)0, (13147405260753302553UL + 545UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (13147405260753302553UL + 548UL),
+                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (13147405260753302553UL + 546UL), (13147405260753302553UL + 547UL),
+                            &____alias_loc_id_14, (unsigned)2, (unsigned)0, (unsigned)0, (13147405260753302553UL + 1UL), (13147405260753302553UL + 774UL),
+                            &____alias_loc_id_15, (unsigned)2, (unsigned)0, (unsigned)0, (13147405260753302553UL + 14UL), (13147405260753302553UL + 15UL),
+                            &____alias_loc_id_16, (unsigned)3, (unsigned)0, (unsigned)0, (13147405260753302553UL + 29UL), (13147405260753302553UL + 30UL), (13147405260753302553UL + 774UL),
+                            &____alias_loc_id_17, (unsigned)3, (unsigned)0, (unsigned)0, (13147405260753302553UL + 67UL), (13147405260753302553UL + 68UL), (13147405260753302553UL + 774UL),
+                            &____alias_loc_id_18, (unsigned)1, (unsigned)0, (unsigned)0, (13147405260753302553UL + 89UL),
+                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (unsigned)0, (13147405260753302553UL + 103UL), (13147405260753302553UL + 784UL),
+                            &____alias_loc_id_20, (unsigned)3, (unsigned)0, (unsigned)0, (13147405260753302553UL + 331UL), (13147405260753302553UL + 332UL), (13147405260753302553UL + 774UL),
+                            &____alias_loc_id_21, (unsigned)4, (unsigned)0, (unsigned)0, (13147405260753302553UL + 549UL), (13147405260753302553UL + 550UL), (13147405260753302553UL + 551UL), (13147405260753302553UL + 552UL),
                             "profileStart", (void *)(&profileStart_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "getTime", 0, 0UL,
                             "profileStop", (void *)(&profileStop_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "getTime", 0, 0UL,
                             "getElapsedTime", (void *)(&getElapsedTime_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "getTick", 0, 0UL,
@@ -4397,9 +4397,9 @@ static int module_init() {
         "getTick", 0UL, (int)0,
         "getTick", 0UL, (int)0,
         "getTick", 0UL, (int)0);
-    register_global_var("global|timerName", "[11 x i8*]", (void *)(&timerName), 88.0, 0, 0, 0);
-    register_global_var("global|perfTimer", "[11 x %struct.TimersSt]", (void *)(&perfTimer), 792.0, 0, 0, 0);
-    register_global_var("global|perfGlobal", "%struct.TimerGlobalSt = type { double, double, double }", (void *)(&perfGlobal), 24.0, 0, 1, 0);
+    register_global_var("global|timerName", "[11 x i8*]", (void *)(&timerName), 88.0, 0, 0, 0UL, 0);
+    register_global_var("global|perfTimer", "[11 x %struct.TimersSt]", (void *)(&perfTimer), 792.0, 0, 0, 0UL, 0);
+    register_global_var("global|perfGlobal", "%struct.TimerGlobalSt = type { double, double, double }", (void *)(&perfGlobal), 24.0, 0, 1, 0UL, 0);
     register_constant(13147405260753302553UL + 0UL, (void *)((timerName)[0]), 6);
     register_constant(13147405260753302553UL + 1UL, (void *)((timerName)[1]), 5);
     register_constant(13147405260753302553UL + 2UL, (void *)((timerName)[2]), 9);

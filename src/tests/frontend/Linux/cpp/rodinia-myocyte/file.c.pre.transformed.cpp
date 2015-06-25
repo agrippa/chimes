@@ -54,7 +54,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -3856,8 +3856,8 @@ void read_npm( char* filename,
 
 static int module_init() {
     init_module(3544992386570270451UL, 6, 2, 1, 2, 2, 0, 2, 0, 0, 2,
-                           &____alias_loc_id_0, (unsigned)9, (unsigned)0, (3544992386570270451UL + 1UL), (3544992386570270451UL + 2UL), (3544992386570270451UL + 3UL), (3544992386570270451UL + 4UL), (3544992386570270451UL + 5UL), (3544992386570270451UL + 6UL), (3544992386570270451UL + 7UL), (3544992386570270451UL + 8UL), (3544992386570270451UL + 9UL),
-                           &____alias_loc_id_1, (unsigned)9, (unsigned)0, (3544992386570270451UL + 128UL), (3544992386570270451UL + 129UL), (3544992386570270451UL + 130UL), (3544992386570270451UL + 131UL), (3544992386570270451UL + 132UL), (3544992386570270451UL + 133UL), (3544992386570270451UL + 134UL), (3544992386570270451UL + 135UL), (3544992386570270451UL + 239UL),
+                           &____alias_loc_id_0, (unsigned)10, (unsigned)0, (unsigned)0, (3544992386570270451UL + 1UL), (3544992386570270451UL + 2UL), (3544992386570270451UL + 3UL), (3544992386570270451UL + 4UL), (3544992386570270451UL + 5UL), (3544992386570270451UL + 6UL), (3544992386570270451UL + 7UL), (3544992386570270451UL + 8UL), (3544992386570270451UL + 9UL), (3544992386570270451UL + 26UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (3544992386570270451UL + 128UL), (3544992386570270451UL + 129UL), (3544992386570270451UL + 130UL), (3544992386570270451UL + 131UL), (3544992386570270451UL + 132UL), (3544992386570270451UL + 133UL), (3544992386570270451UL + 134UL), (3544992386570270451UL + 135UL), (3544992386570270451UL + 154UL), (3544992386570270451UL + 239UL),
                             "write", (void *)(&write_npm), (void *)__null, 0, 6, (3544992386570270451UL + 114UL), (3544992386570270451UL + 115UL), 0UL, 0UL, 0UL, 0UL, 0UL, 7, "fopen", 2, (3544992386570270451UL + 114UL), (3544992386570270451UL + 245UL), (3544992386570270451UL + 26UL), "printf", 1, (3544992386570270451UL + 246UL), 0UL, "fprintf", 3, (3544992386570270451UL + 26UL), (3544992386570270451UL + 247UL), 0UL, 0UL, "fprintf", 2, (3544992386570270451UL + 26UL), (3544992386570270451UL + 245UL), 0UL, "fprintf", 3, (3544992386570270451UL + 26UL), (3544992386570270451UL + 247UL), 0UL, 0UL, "fprintf", 2, (3544992386570270451UL + 26UL), (3544992386570270451UL + 245UL), 0UL, "fclose", 1, (3544992386570270451UL + 26UL), 0UL,
                             "read", (void *)(&read_npm), (void *)__null, 0, 5, (3544992386570270451UL + 238UL), (3544992386570270451UL + 239UL), 0UL, 0UL, 0UL, 0UL, 5, "fopen", 2, (3544992386570270451UL + 238UL), (3544992386570270451UL + 245UL), (3544992386570270451UL + 154UL), "printf", 1, (3544992386570270451UL + 250UL), 0UL, "fscanf", 3, (3544992386570270451UL + 154UL), (3544992386570270451UL + 251UL), (3544992386570270451UL + 137UL), 0UL, "fscanf", 3, (3544992386570270451UL + 154UL), (3544992386570270451UL + 251UL), (3544992386570270451UL + 137UL), 0UL, "fclose", 1, (3544992386570270451UL + 154UL), 0UL,
                            "write", &(____chimes_does_checkpoint_write_npm),

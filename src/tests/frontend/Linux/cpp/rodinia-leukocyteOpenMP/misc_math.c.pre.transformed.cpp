@@ -64,7 +64,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -4569,12 +4569,12 @@ double std_dev_npm(VEC * in)
 
 static int module_init() {
     init_module(6260638308248583341UL, 16, 4, 2, 6, 4, 1, 5, 1, 0, 2,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (6260638308248583341UL + 1UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (6260638308248583341UL + 172UL),
-                           &____alias_loc_id_2, (unsigned)4, (unsigned)0, (6260638308248583341UL + 2UL), (6260638308248583341UL + 3UL), (6260638308248583341UL + 4UL), (6260638308248583341UL + 150UL),
-                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (6260638308248583341UL + 173UL), (6260638308248583341UL + 174UL), (6260638308248583341UL + 175UL), (6260638308248583341UL + 321UL),
-                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (6260638308248583341UL + 339UL), (6260638308248583341UL + 340UL), (6260638308248583341UL + 341UL),
-                           &____alias_loc_id_5, (unsigned)5, (unsigned)1, (6260638308248583341UL + 378UL), (6260638308248583341UL + 379UL), (6260638308248583341UL + 380UL), (6260638308248583341UL + 381UL), (6260638308248583341UL + 382UL), "mean", (unsigned)1, (6260638308248583341UL + 430UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (6260638308248583341UL + 1UL), "m_get", (unsigned)1, (6260638308248583341UL + 16UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (6260638308248583341UL + 172UL), "m_get", (unsigned)1, (6260638308248583341UL + 187UL),
+                           &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)0, (6260638308248583341UL + 2UL), (6260638308248583341UL + 3UL), (6260638308248583341UL + 4UL), (6260638308248583341UL + 150UL),
+                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)0, (6260638308248583341UL + 173UL), (6260638308248583341UL + 174UL), (6260638308248583341UL + 175UL), (6260638308248583341UL + 321UL),
+                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (6260638308248583341UL + 339UL), (6260638308248583341UL + 340UL), (6260638308248583341UL + 341UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (6260638308248583341UL + 378UL), (6260638308248583341UL + 379UL), (6260638308248583341UL + 380UL), (6260638308248583341UL + 381UL), (6260638308248583341UL + 382UL),
                             "gradient_x", (void *)(&gradient_x_npm), (void *)__null, 1, &____alias_loc_id_0, 1, (6260638308248583341UL + 167UL), (6260638308248583341UL + 16UL), 1, "m_get", 2, 0UL, 0UL, (6260638308248583341UL + 16UL),
                             "gradient_y", (void *)(&gradient_y_npm), (void *)__null, 1, &____alias_loc_id_1, 1, (6260638308248583341UL + 338UL), (6260638308248583341UL + 187UL), 1, "m_get", 2, 0UL, 0UL, (6260638308248583341UL + 187UL),
                             "mean", (void *)(&mean_npm), (void *)__null, 0, 1, (6260638308248583341UL + 377UL), 0UL, 0,

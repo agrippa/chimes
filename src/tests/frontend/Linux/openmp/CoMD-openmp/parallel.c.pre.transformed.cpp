@@ -91,7 +91,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -2602,17 +2602,17 @@ int builtWithMpi_npm(void)
 
 static int module_init() {
     init_module(7908722846909212036UL, 20, 16, 1, 11, 16, 0, 16, 2, 0, 1,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (7908722846909212036UL + 5UL),
-                           &____alias_loc_id_1, (unsigned)5, (unsigned)0, (7908722846909212036UL + 15UL), (7908722846909212036UL + 16UL), (7908722846909212036UL + 17UL), (7908722846909212036UL + 29UL), (7908722846909212036UL + 374UL),
-                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (7908722846909212036UL + 51UL), (7908722846909212036UL + 52UL),
-                           &____alias_loc_id_3, (unsigned)6, (unsigned)0, (7908722846909212036UL + 61UL), (7908722846909212036UL + 62UL), (7908722846909212036UL + 63UL), (7908722846909212036UL + 64UL), (7908722846909212036UL + 65UL), (7908722846909212036UL + 66UL),
-                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (7908722846909212036UL + 109UL), (7908722846909212036UL + 110UL), (7908722846909212036UL + 111UL), (7908722846909212036UL + 112UL), (7908722846909212036UL + 143UL),
-                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (7908722846909212036UL + 145UL), (7908722846909212036UL + 146UL), (7908722846909212036UL + 147UL), (7908722846909212036UL + 148UL), (7908722846909212036UL + 179UL),
-                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (7908722846909212036UL + 181UL), (7908722846909212036UL + 182UL), (7908722846909212036UL + 183UL), (7908722846909212036UL + 184UL), (7908722846909212036UL + 215UL),
-                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (7908722846909212036UL + 217UL), (7908722846909212036UL + 218UL), (7908722846909212036UL + 219UL), (7908722846909212036UL + 220UL), (7908722846909212036UL + 251UL),
-                           &____alias_loc_id_8, (unsigned)5, (unsigned)0, (7908722846909212036UL + 253UL), (7908722846909212036UL + 254UL), (7908722846909212036UL + 255UL), (7908722846909212036UL + 256UL), (7908722846909212036UL + 301UL),
-                           &____alias_loc_id_9, (unsigned)5, (unsigned)0, (7908722846909212036UL + 303UL), (7908722846909212036UL + 304UL), (7908722846909212036UL + 305UL), (7908722846909212036UL + 306UL), (7908722846909212036UL + 351UL),
-                            &____alias_loc_id_10, (unsigned)3, (unsigned)0, (7908722846909212036UL + 353UL), (7908722846909212036UL + 354UL), (7908722846909212036UL + 355UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (7908722846909212036UL + 5UL),
+                           &____alias_loc_id_1, (unsigned)5, (unsigned)0, (unsigned)0, (7908722846909212036UL + 15UL), (7908722846909212036UL + 16UL), (7908722846909212036UL + 17UL), (7908722846909212036UL + 29UL), (7908722846909212036UL + 374UL),
+                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (unsigned)0, (7908722846909212036UL + 51UL), (7908722846909212036UL + 52UL),
+                           &____alias_loc_id_3, (unsigned)6, (unsigned)0, (unsigned)0, (7908722846909212036UL + 61UL), (7908722846909212036UL + 62UL), (7908722846909212036UL + 63UL), (7908722846909212036UL + 64UL), (7908722846909212036UL + 65UL), (7908722846909212036UL + 66UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (7908722846909212036UL + 109UL), (7908722846909212036UL + 110UL), (7908722846909212036UL + 111UL), (7908722846909212036UL + 112UL), (7908722846909212036UL + 143UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (7908722846909212036UL + 145UL), (7908722846909212036UL + 146UL), (7908722846909212036UL + 147UL), (7908722846909212036UL + 148UL), (7908722846909212036UL + 179UL),
+                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (unsigned)0, (7908722846909212036UL + 181UL), (7908722846909212036UL + 182UL), (7908722846909212036UL + 183UL), (7908722846909212036UL + 184UL), (7908722846909212036UL + 215UL),
+                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (7908722846909212036UL + 217UL), (7908722846909212036UL + 218UL), (7908722846909212036UL + 219UL), (7908722846909212036UL + 220UL), (7908722846909212036UL + 251UL),
+                           &____alias_loc_id_8, (unsigned)5, (unsigned)0, (unsigned)0, (7908722846909212036UL + 253UL), (7908722846909212036UL + 254UL), (7908722846909212036UL + 255UL), (7908722846909212036UL + 256UL), (7908722846909212036UL + 301UL),
+                           &____alias_loc_id_9, (unsigned)5, (unsigned)0, (unsigned)0, (7908722846909212036UL + 303UL), (7908722846909212036UL + 304UL), (7908722846909212036UL + 305UL), (7908722846909212036UL + 306UL), (7908722846909212036UL + 351UL),
+                            &____alias_loc_id_10, (unsigned)3, (unsigned)0, (unsigned)0, (7908722846909212036UL + 353UL), (7908722846909212036UL + 354UL), (7908722846909212036UL + 355UL),
                             "getNRanks", (void *)(&getNRanks_npm), (void *)__null, 0, 0, 0UL, 0,
                             "getMyRank", (void *)(&getMyRank_npm), (void *)__null, 0, 0, 0UL, 0,
                             "printRank", (void *)(&printRank_npm), (void *)__null, 0, 0, 0UL, 0,
@@ -2685,8 +2685,8 @@ static int module_init() {
                         "timestampBarrier|t|0", 1, "timestampBarrier",
         "barrierParallel", 0UL, (int)0,
         "printRank", 0UL, (int)0);
-    register_global_var("global|nRanks", "i32", (void *)(&nRanks), 4.0, 0, 0, 0);
-    register_global_var("global|myRank", "i32", (void *)(&myRank), 4.0, 0, 0, 0);
+    register_global_var("global|nRanks", "i32", (void *)(&nRanks), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|myRank", "i32", (void *)(&myRank), 4.0, 0, 0, 0UL, 0);
     return 0;
 }
 

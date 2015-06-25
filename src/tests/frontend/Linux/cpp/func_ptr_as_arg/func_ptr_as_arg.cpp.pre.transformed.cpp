@@ -53,7 +53,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1447,10 +1447,10 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = n
  register_stack_vars(1, "main|c|0", (int *)0x0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-        call_lbl_1: c = ( ({ calling((void*)foo, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(10590874921352380174UL)); (foo)(bar); }) ) ;
+        call_lbl_1: c = ( ({ calling((void*)foo, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(10590874921352380174UL)); (foo)(bar); }) ) ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-     call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_2);
+     call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_1);
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable2); return c;
@@ -1476,10 +1476,10 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_s
  register_stack_vars(1, "main|c|0", (int *)0x0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); ; ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-        call_lbl_1: c = ( ({ calling((void*)foo, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(10590874921352380174UL)); foo_quick(bar); }) ) ;
+        call_lbl_1: c = ( ({ calling((void*)foo, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(10590874921352380174UL)); foo_quick(bar); }) ) ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
-     call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_2);
+     call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_1);
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable2); return c;
@@ -1502,10 +1502,10 @@ int bar_npm(int a) {
 
 static int module_init() {
     init_module(10590874921352380140UL, 2, 3, 0, 4, 1, 0, 1, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (10590874921352380140UL + 10UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)1, (10590874921352380140UL + 17UL), (10590874921352380140UL + 18UL), (10590874921352380140UL + 19UL), "foo", (unsigned)1, (10590874921352380140UL + 34UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (10590874921352380140UL + 20UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (10590874921352380140UL + 1UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (10590874921352380140UL + 10UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (10590874921352380140UL + 20UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (10590874921352380140UL + 17UL), (10590874921352380140UL + 18UL), (10590874921352380140UL + 19UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (10590874921352380140UL + 1UL),
                             "bar", (void *)(&bar_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
                            "bar", &(____chimes_does_checkpoint_bar_npm),
                              (10590874921352380140UL + 19UL), (10590874921352380140UL + 33UL),

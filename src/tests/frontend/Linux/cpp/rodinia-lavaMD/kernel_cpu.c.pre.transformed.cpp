@@ -84,7 +84,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -3729,12 +3729,12 @@ void kernel_cpu( par_str par,
 
 static int module_init() {
     init_module(6604445872224807446UL, 8, 1, 30, 6, 0, 0, 0, 0, 0, 6,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (6604445872224807446UL + 1UL), (6604445872224807446UL + 2UL), (6604445872224807446UL + 3UL), (6604445872224807446UL + 4UL), (6604445872224807446UL + 5UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (6604445872224807446UL + 6UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (6604445872224807446UL + 7UL),
-                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (6604445872224807446UL + 8UL), (6604445872224807446UL + 11UL), (6604445872224807446UL + 12UL),
-                           &____alias_loc_id_4, (unsigned)21, (unsigned)0, (6604445872224807446UL + 9UL), (6604445872224807446UL + 13UL), (6604445872224807446UL + 14UL), (6604445872224807446UL + 15UL), (6604445872224807446UL + 16UL), (6604445872224807446UL + 17UL), (6604445872224807446UL + 18UL), (6604445872224807446UL + 19UL), (6604445872224807446UL + 20UL), (6604445872224807446UL + 21UL), (6604445872224807446UL + 22UL), (6604445872224807446UL + 23UL), (6604445872224807446UL + 24UL), (6604445872224807446UL + 25UL), (6604445872224807446UL + 26UL), (6604445872224807446UL + 27UL), (6604445872224807446UL + 28UL), (6604445872224807446UL + 29UL), (6604445872224807446UL + 30UL), (6604445872224807446UL + 31UL), (6604445872224807446UL + 464UL),
-                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (6604445872224807446UL + 10UL),
+                           &____alias_loc_id_0, (unsigned)21, (unsigned)0, (unsigned)0, (6604445872224807446UL + 9UL), (6604445872224807446UL + 13UL), (6604445872224807446UL + 14UL), (6604445872224807446UL + 15UL), (6604445872224807446UL + 16UL), (6604445872224807446UL + 17UL), (6604445872224807446UL + 18UL), (6604445872224807446UL + 19UL), (6604445872224807446UL + 20UL), (6604445872224807446UL + 21UL), (6604445872224807446UL + 22UL), (6604445872224807446UL + 23UL), (6604445872224807446UL + 24UL), (6604445872224807446UL + 25UL), (6604445872224807446UL + 26UL), (6604445872224807446UL + 27UL), (6604445872224807446UL + 28UL), (6604445872224807446UL + 29UL), (6604445872224807446UL + 30UL), (6604445872224807446UL + 31UL), (6604445872224807446UL + 464UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (6604445872224807446UL + 8UL), (6604445872224807446UL + 11UL), (6604445872224807446UL + 12UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (6604445872224807446UL + 7UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (6604445872224807446UL + 6UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (6604445872224807446UL + 1UL), (6604445872224807446UL + 2UL), (6604445872224807446UL + 3UL), (6604445872224807446UL + 4UL), (6604445872224807446UL + 5UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (6604445872224807446UL + 10UL),
                              (6604445872224807446UL + 22UL), (6604445872224807446UL + 176UL),
                              (6604445872224807446UL + 23UL), (6604445872224807446UL + 297UL),
                              (6604445872224807446UL + 19UL), (6604445872224807446UL + 464UL),

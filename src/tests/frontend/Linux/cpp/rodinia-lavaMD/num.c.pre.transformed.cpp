@@ -49,7 +49,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -143,7 +143,7 @@ int isInteger(char *str){
 
 static int module_init() {
     init_module(15022235177203167110UL, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (15022235177203167110UL + 1UL), (15022235177203167110UL + 2UL),
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (15022235177203167110UL + 1UL), (15022235177203167110UL + 2UL),
                              (15022235177203167110UL + 2UL), (15022235177203167110UL + 39UL),
                              "isInteger", "isInteger", 0);
     return 0;

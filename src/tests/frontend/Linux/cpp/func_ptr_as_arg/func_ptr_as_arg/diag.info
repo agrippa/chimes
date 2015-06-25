@@ -23,9 +23,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 8 9
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 8 103 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 7 145  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 11 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 32  ({  calling((void*)foo, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(10590874921352380174UL)); (foo)(bar); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 32  ({  calling((void*)foo, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(10590874921352380174UL)); (foo)(bar); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 39 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 15 18 checkpoint_transformed(2, ____alias_loc_id_2)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 15 18 checkpoint_transformed(2, ____alias_loc_id_1)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 15 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 11 
@@ -38,9 +38,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 8 9
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 8 103 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 7 145  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 11 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 32  ({  calling((void*)foo, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(10590874921352380174UL)); (foo)(bar); }) 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 32  ({  calling((void*)foo, 1, ____alias_loc_id_2, 0UL, 1, (size_t)(10590874921352380174UL)); (foo)(bar); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 39 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 15 18 checkpoint_transformed(2, ____alias_loc_id_2)
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 15 18 checkpoint_transformed(2, ____alias_loc_id_1)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 15 29 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr_as_arg.cpp 13 11 

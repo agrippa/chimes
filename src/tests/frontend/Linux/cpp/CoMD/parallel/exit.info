@@ -1,16 +1,16 @@
-getNRanks 0 0 0
-getMyRank 0 0 0
-printRank 0 1 5 0
-timestampBarrier 0 5 15 16 17 29 374 0
-barrierParallel 0 0 0
-initParallel 0 2 51 52 0
-destroyParallel 0 0 0
-sendReceiveParallel 0 6 61 62 63 64 65 66 0
-addIntParallel 0 5 109 110 111 112 143 0
-addRealParallel 0 5 145 146 147 148 179 0
-addDoubleParallel 0 5 181 182 183 184 215 0
-maxIntParallel 0 5 217 218 219 220 251 0
-minRankDoubleParallel 0 5 253 254 255 256 301 0
-maxRankDoubleParallel 0 5 303 304 305 306 351 0
-bcastParallel 0 3 353 354 355 0
-builtWithMpi 0 0 0
+getNRanks 0 0 0 0
+getMyRank 0 0 0 0
+printRank 0 1 5 0 0
+timestampBarrier 0 5 15 16 17 29 374 0 0
+barrierParallel 0 0 0 0
+initParallel 0 2 51 52 0 0
+destroyParallel 0 0 0 0
+sendReceiveParallel 0 6 61 62 63 64 65 66 0 0
+addIntParallel 0 5 109 110 111 112 143 0 0
+addRealParallel 0 5 145 146 147 148 179 0 0
+addDoubleParallel 0 5 181 182 183 184 215 0 0
+maxIntParallel 0 5 217 218 219 220 251 0 0
+minRankDoubleParallel 0 5 253 254 255 256 301 0 0
+maxRankDoubleParallel 0 5 303 304 305 306 351 0 0
+bcastParallel 0 3 353 354 355 0 0
+builtWithMpi 0 0 0 0

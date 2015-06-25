@@ -35,7 +35,7 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 59 18 const 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 73 5 rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable2); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 70 1 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(322747555189993882UL)); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 77 1 const int ____chimes_did_disable3 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(322747555189994347UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 83 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_6, ____chimes_did_disable3); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 83 1 rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable3); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 90 1 const int ____chimes_did_disable4 = new_stack((void *)(&runTest), "runTest", &____must_manage_runTest, 2, 0, (size_t)(0UL), (size_t)(322747555189994325UL)); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 250 1 rm_stack(false, 0UL, "runTest", &____must_manage_runTest, ____alias_loc_id_5, ____chimes_did_disable4); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 17 11 const int ____chimes_did_disable0 = new_stack((void *)(&maximum), "maximum", &____must_manage_maximum, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
@@ -121,11 +121,11 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 77 150  ;
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 89 1 len=7 runTest_quick
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 108 3 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 108 19 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 158 19 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 15, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 158 19 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 15, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 158 54 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 163 33 ({ calling_npm("maximum", 0); maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 165 55 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 173 19 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 17, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 173 19 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 17, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 173 54 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 178 28 ({ calling_npm("maximum", 0); maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 180 56 
@@ -176,11 +176,11 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 77 150  ;  i
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 89 1 len=7 runTest_resumable
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 108 3 ({ calling_npm("usage", 0); usage_npm(argc, argv); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 108 19 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 158 19 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 15, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 158 19 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 15, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 158 54 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 163 33 ({ calling_npm("maximum", 0); maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 165 55 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 173 19 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 17, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 173 19 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 17, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 173 54 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 178 28 ({ calling_npm("maximum", 0); maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty); })
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp 180 56 

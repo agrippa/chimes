@@ -52,7 +52,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1475,15 +1475,15 @@ void haha_this_sux_part_canc_npm() {
 
 static int module_init() {
     init_module(2695830911852358533UL, 1, 2, 0, 2, 1, 0, 1, 1, 0, 0,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (2695830911852358533UL + 17UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (2695830911852358533UL + 3UL), (2695830911852358533UL + 4UL), (2695830911852358533UL + 5UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (2695830911852358533UL + 17UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (2695830911852358533UL + 3UL), (2695830911852358533UL + 4UL), (2695830911852358533UL + 5UL),
                             "haha_this_sux_part_canc", (void *)(&haha_this_sux_part_canc_npm), (void *)__null, 0, 0, 0UL, 0,
                            "haha_this_sux_part_canc", &(____chimes_does_checkpoint_haha_this_sux_part_canc_npm),
                              (2695830911852358533UL + 5UL), (2695830911852358533UL + 14UL),
                              "main", "main", 1, "haha_this_sux_part_canc",
                              "haha_this_sux_part_canc", "_Z23haha_this_sux_part_cancv", 0,
         "haha_this_sux_part_canc", 0UL, (int)0);
-    register_global_var("global|a", "i32", (void *)(&a), 4.0, 0, 0, 0);
+    register_global_var("global|a", "i32", (void *)(&a), 4.0, 0, 0, 0UL, 0);
     return 0;
 }
 

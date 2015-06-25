@@ -51,7 +51,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1537,8 +1537,8 @@ void handler_npm(void *ptr) {
 
 static int module_init() {
     init_module(1944833083709766336UL, 4, 2, 0, 2, 1, 0, 1, 0, 0, 1,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (1944833083709766336UL + 16UL), (1944833083709766336UL + 17UL), (1944833083709766336UL + 18UL), (1944833083709766336UL + 19UL), (1944833083709766336UL + 27UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (1944833083709766336UL + 1UL), (1944833083709766336UL + 2UL), (1944833083709766336UL + 13UL),
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (1944833083709766336UL + 16UL), (1944833083709766336UL + 17UL), (1944833083709766336UL + 18UL), (1944833083709766336UL + 19UL), (1944833083709766336UL + 27UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (1944833083709766336UL + 1UL), (1944833083709766336UL + 2UL), (1944833083709766336UL + 13UL),
                             "handler", (void *)(&handler_npm), (void *)__null, 0, 1, (1944833083709766336UL + 13UL), 0UL, 0,
                            "handler", &(____chimes_does_checkpoint_handler_npm),
                              (1944833083709766336UL + 1UL), (1944833083709766336UL + 13UL),

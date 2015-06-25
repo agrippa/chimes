@@ -1,1 +1,1 @@
-/home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 15 5 : { 17, 18, 19, 20, 21, 22 } direct:call:checkpoint {  }
+/home/jmg3/num-debug/src/examples/cpp/./nested_call_complex.cpp 15 5 : { 17, 18, 19, 20, 21, 22 } {  } call:checkpoint {  }

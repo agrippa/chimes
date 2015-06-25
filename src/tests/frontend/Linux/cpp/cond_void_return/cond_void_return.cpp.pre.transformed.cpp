@@ -51,7 +51,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1567,8 +1567,8 @@ void bar_npm(int *A, int *B) {
 
 static int module_init() {
     init_module(1131839765304168615UL, 5, 2, 0, 2, 1, 0, 1, 1, 0, 0,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)1, (1131839765304168615UL + 25UL), (1131839765304168615UL + 26UL), (1131839765304168615UL + 27UL), (1131839765304168615UL + 28UL), (1131839765304168615UL + 29UL), "bar", (unsigned)2, (1131839765304168615UL + 36UL), (1131839765304168615UL + 56UL),
-                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (1131839765304168615UL + 1UL), (1131839765304168615UL + 2UL), (1131839765304168615UL + 21UL), (1131839765304168615UL + 22UL),
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (1131839765304168615UL + 25UL), (1131839765304168615UL + 26UL), (1131839765304168615UL + 27UL), (1131839765304168615UL + 28UL), (1131839765304168615UL + 29UL),
+                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (1131839765304168615UL + 1UL), (1131839765304168615UL + 2UL), (1131839765304168615UL + 21UL), (1131839765304168615UL + 22UL),
                             "bar", (void *)(&bar_npm), (void *)__null, 0, 2, (1131839765304168615UL + 21UL), (1131839765304168615UL + 22UL), 0UL, 0,
                            "bar", &(____chimes_does_checkpoint_bar_npm),
                              (1131839765304168615UL + 1UL), (1131839765304168615UL + 21UL),

@@ -1,11 +1,11 @@
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 60 10 : { 1, 2, 3 } direct:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 109 10 : { 4 } direct:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 127 2 : { 5, 20, 21, 23, 24, 60 } prop:call:omp_set_num_threads {  }
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 144 2 : { 6, 15, 16, 17, 18 } direct:call:read_graphics { read_graphics { 828, 1086 } }
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 160 2 : { 7, 19, 22 } direct:call:resize { resize { 351, 828 } }
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 214 10 : { 8, 25, 26, 27, 28, 29, 33, 34, 35, 36, 38, 39, 40, 41, 51, 57, 58, 280, 287, 506, 524 } prop:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 225 10 : { 9, 57, 351 } prop:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 326 10 : { 10, 30, 31, 32, 37, 42, 43, 44, 45, 46, 47, 48, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 351, 482, 500, 518, 536, 643 } prop:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 337 10 : { 11, 57, 351 } prop:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 343 2 : { 12 } direct:call:write_graphics { write_graphics { 351, 1087 } }
-/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 363 11 : { 13 } direct:call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 109 10 : { 4 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 363 11 : { 13 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 60 10 : { 1, 2, 3 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 343 2 : { 12 } {  } call:write_graphics { write_graphics { 351, 1087 } }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 337 10 : { 11, 57, 351 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 326 10 : { 10, 30, 31, 32, 37, 42, 43, 44, 45, 46, 47, 48, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 351, 482, 500, 518, 536, 643 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 225 10 : { 9, 57, 351 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 214 10 : { 8, 25, 26, 27, 28, 29, 33, 34, 35, 36, 38, 39, 40, 41, 51, 57, 58, 280, 287, 506, 524 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 160 2 : { 7, 19, 22 } {  } call:resize { resize { 351, 828 } }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 144 2 : { 6, 15, 16, 17, 18 } {  } call:read_graphics { read_graphics { 828, 1086 } }
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c 127 2 : { 5, 20, 21, 23, 24, 60 } {  } call:omp_set_num_threads {  }

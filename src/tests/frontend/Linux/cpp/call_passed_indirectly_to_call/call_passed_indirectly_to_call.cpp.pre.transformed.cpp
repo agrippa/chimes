@@ -16,7 +16,6 @@ static int ____must_manage_foo = 2;
 static int ____must_manage_bar = 2;
 
 static unsigned ____alias_loc_id_0;
-static unsigned ____alias_loc_id_1;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -54,7 +53,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1456,7 +1455,7 @@ int foo_resumable(int *a, int s) {const int ____chimes_did_disable0 = new_stack(
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp"
     *a = s;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp"
-rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "foo", &____must_manage_foo, 0, ____chimes_did_disable0); }
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp"
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp"
 int bar_npm();
@@ -1490,7 +1489,7 @@ int foo_quick(int *a, int s) {const int ____chimes_did_disable0 = new_stack((voi
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp"
     *a = s;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp"
-rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "foo", &____must_manage_foo, 0, ____chimes_did_disable0); }
 
 int foo(int *a, int s) { return (____chimes_replaying ? foo_resumable(a, s) : foo_quick(a, s)); }
 
@@ -1541,9 +1540,8 @@ int bar_npm() {
 
 
 static int module_init() {
-    init_module(11060080868604300641UL, 2, 3, 1, 2, 2, 0, 2, 2, 0, 0,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)1, (11060080868604300641UL + 20UL), (11060080868604300641UL + 21UL), (11060080868604300641UL + 22UL), (11060080868604300641UL + 24UL), "foo", (unsigned)1, (11060080868604300641UL + 23UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (11060080868604300641UL + 2UL), (11060080868604300641UL + 3UL), (11060080868604300641UL + 15UL),
+    init_module(11060080868604300641UL, 2, 3, 1, 1, 2, 0, 2, 2, 0, 0,
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (11060080868604300641UL + 20UL), (11060080868604300641UL + 21UL), (11060080868604300641UL + 22UL), (11060080868604300641UL + 24UL),
                             "foo", (void *)(&foo_npm), (void *)__null, 0, 2, (11060080868604300641UL + 15UL), 0UL, 0UL, 0,
                             "bar", (void *)(&bar_npm), (void *)__null, 0, 0, 0UL, 0,
                            "foo", &(____chimes_does_checkpoint_foo_npm),

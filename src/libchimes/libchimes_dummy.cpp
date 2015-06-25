@@ -322,7 +322,7 @@ void register_stack_vars(int nvars, ...) {
 }
 
 void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...) { }
 
 void register_constant(size_t const_id, void *address,

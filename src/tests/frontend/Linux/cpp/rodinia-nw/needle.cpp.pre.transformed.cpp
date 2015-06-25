@@ -37,7 +37,6 @@ static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
-static unsigned ____alias_loc_id_6;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -75,7 +74,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -4038,7 +4037,7 @@ void usage_resumable(int argc, char **argv)
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  exit(1);
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_6, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable3); }
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
@@ -4167,7 +4166,7 @@ int max_cols;
     { lbl_0: int i; if (____must_checkpoint_runTest_i_4 != 0) { register_stack_var("runTest|i|4", &____must_checkpoint_runTest_i_4, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } for( i = (0) ; i < max_cols-2 ; i++){
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-     call_lbl_15: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 15, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })));
+     call_lbl_15: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 15, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })));
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 #pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index)
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
@@ -4189,7 +4188,7 @@ int max_cols;
  { lbl_1: int i; if (____must_checkpoint_runTest_i_5 != 0) { register_stack_var("runTest|i|5", &____must_checkpoint_runTest_i_5, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } default: { chimes_error(); } } } for( i = (max_cols - 4) ; i >= 0 ; i--){
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-     call_lbl_17: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 17, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })));
+     call_lbl_17: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 17, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })));
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 #pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index)
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
@@ -4280,7 +4279,7 @@ void usage_quick(int argc, char **argv)
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  exit(1);
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_6, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable3); }
 
 void usage(int argc, char **argv) { (____chimes_replaying ? usage_resumable(argc, argv) : usage_quick(argc, argv)); }
 
@@ -4406,7 +4405,7 @@ int max_cols;
     { lbl_0: int i; if (____must_checkpoint_runTest_i_4 != 0) { register_stack_var("runTest|i|4", &____must_checkpoint_runTest_i_4, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } for( i = (0) ; i < max_cols-2 ; i++){
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-     call_lbl_15: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 15, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })));
+     call_lbl_15: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 15, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })));
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 #pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index)
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
@@ -4428,7 +4427,7 @@ int max_cols;
  { lbl_1: int i; if (____must_checkpoint_runTest_i_5 != 0) { register_stack_var("runTest|i|5", &____must_checkpoint_runTest_i_5, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } for( i = (max_cols - 4) ; i >= 0 ; i--){
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-     call_lbl_17: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 17, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })));
+     call_lbl_17: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 17, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); })));
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 #pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index)
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
@@ -4669,14 +4668,13 @@ runTest_npm( int argc, char** argv)
 
 
 static int module_init() {
-    init_module(322747555189993815UL, 9, 5, 11, 7, 4, 1, 5, 4, 2, 1,
-                           &____alias_loc_id_0, (unsigned)3, (unsigned)1, (322747555189993815UL + 54UL), (322747555189993815UL + 55UL), (322747555189993815UL + 56UL), "runTest", (unsigned)1, (322747555189993815UL + 67UL),
-                           &____alias_loc_id_1, (unsigned)23, (unsigned)1, (322747555189993815UL + 68UL), (322747555189993815UL + 69UL), (322747555189993815UL + 70UL), (322747555189993815UL + 71UL), (322747555189993815UL + 72UL), (322747555189993815UL + 73UL), (322747555189993815UL + 74UL), (322747555189993815UL + 75UL), (322747555189993815UL + 76UL), (322747555189993815UL + 77UL), (322747555189993815UL + 82UL), (322747555189993815UL + 83UL), (322747555189993815UL + 84UL), (322747555189993815UL + 85UL), (322747555189993815UL + 86UL), (322747555189993815UL + 87UL), (322747555189993815UL + 88UL), (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 91UL), (322747555189993815UL + 92UL), (322747555189993815UL + 379UL), (322747555189993815UL + 384UL), "usage", (unsigned)1, (322747555189993815UL + 510UL),
-                           &____alias_loc_id_2, (unsigned)23, (unsigned)1, (322747555189993815UL + 68UL), (322747555189993815UL + 69UL), (322747555189993815UL + 70UL), (322747555189993815UL + 71UL), (322747555189993815UL + 72UL), (322747555189993815UL + 73UL), (322747555189993815UL + 74UL), (322747555189993815UL + 75UL), (322747555189993815UL + 76UL), (322747555189993815UL + 77UL), (322747555189993815UL + 82UL), (322747555189993815UL + 83UL), (322747555189993815UL + 84UL), (322747555189993815UL + 85UL), (322747555189993815UL + 86UL), (322747555189993815UL + 87UL), (322747555189993815UL + 88UL), (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 91UL), (322747555189993815UL + 92UL), (322747555189993815UL + 379UL), (322747555189993815UL + 384UL), "usage", (unsigned)1, (322747555189993815UL + 510UL),
-                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (322747555189993815UL + 1UL), (322747555189993815UL + 2UL), (322747555189993815UL + 3UL), (322747555189993815UL + 4UL), (322747555189993815UL + 5UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (322747555189993815UL + 40UL),
-                           &____alias_loc_id_5, (unsigned)23, (unsigned)1, (322747555189993815UL + 68UL), (322747555189993815UL + 69UL), (322747555189993815UL + 70UL), (322747555189993815UL + 71UL), (322747555189993815UL + 72UL), (322747555189993815UL + 73UL), (322747555189993815UL + 74UL), (322747555189993815UL + 75UL), (322747555189993815UL + 76UL), (322747555189993815UL + 77UL), (322747555189993815UL + 82UL), (322747555189993815UL + 83UL), (322747555189993815UL + 84UL), (322747555189993815UL + 85UL), (322747555189993815UL + 86UL), (322747555189993815UL + 87UL), (322747555189993815UL + 88UL), (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 91UL), (322747555189993815UL + 92UL), (322747555189993815UL + 379UL), (322747555189993815UL + 384UL), "usage", (unsigned)1, (322747555189993815UL + 510UL),
-                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (322747555189993815UL + 511UL), (322747555189993815UL + 512UL),
+    init_module(322747555189993815UL, 9, 5, 11, 6, 4, 1, 5, 4, 2, 1,
+                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (322747555189993815UL + 54UL), (322747555189993815UL + 55UL), (322747555189993815UL + 56UL),
+                           &____alias_loc_id_1, (unsigned)23, (unsigned)0, (unsigned)0, (322747555189993815UL + 68UL), (322747555189993815UL + 69UL), (322747555189993815UL + 70UL), (322747555189993815UL + 71UL), (322747555189993815UL + 72UL), (322747555189993815UL + 73UL), (322747555189993815UL + 74UL), (322747555189993815UL + 75UL), (322747555189993815UL + 76UL), (322747555189993815UL + 77UL), (322747555189993815UL + 82UL), (322747555189993815UL + 83UL), (322747555189993815UL + 84UL), (322747555189993815UL + 85UL), (322747555189993815UL + 86UL), (322747555189993815UL + 87UL), (322747555189993815UL + 88UL), (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 91UL), (322747555189993815UL + 92UL), (322747555189993815UL + 379UL), (322747555189993815UL + 384UL),
+                           &____alias_loc_id_2, (unsigned)22, (unsigned)0, (unsigned)0, (322747555189993815UL + 68UL), (322747555189993815UL + 69UL), (322747555189993815UL + 70UL), (322747555189993815UL + 71UL), (322747555189993815UL + 72UL), (322747555189993815UL + 73UL), (322747555189993815UL + 74UL), (322747555189993815UL + 75UL), (322747555189993815UL + 76UL), (322747555189993815UL + 77UL), (322747555189993815UL + 82UL), (322747555189993815UL + 83UL), (322747555189993815UL + 84UL), (322747555189993815UL + 85UL), (322747555189993815UL + 86UL), (322747555189993815UL + 87UL), (322747555189993815UL + 88UL), (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 91UL), (322747555189993815UL + 379UL), (322747555189993815UL + 384UL),
+                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (unsigned)0, (322747555189993815UL + 1UL), (322747555189993815UL + 2UL), (322747555189993815UL + 3UL), (322747555189993815UL + 4UL), (322747555189993815UL + 5UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (322747555189993815UL + 40UL),
+                           &____alias_loc_id_5, (unsigned)23, (unsigned)0, (unsigned)0, (322747555189993815UL + 68UL), (322747555189993815UL + 69UL), (322747555189993815UL + 70UL), (322747555189993815UL + 71UL), (322747555189993815UL + 72UL), (322747555189993815UL + 73UL), (322747555189993815UL + 74UL), (322747555189993815UL + 75UL), (322747555189993815UL + 76UL), (322747555189993815UL + 77UL), (322747555189993815UL + 82UL), (322747555189993815UL + 83UL), (322747555189993815UL + 84UL), (322747555189993815UL + 85UL), (322747555189993815UL + 86UL), (322747555189993815UL + 87UL), (322747555189993815UL + 88UL), (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 91UL), (322747555189993815UL + 92UL), (322747555189993815UL + 379UL), (322747555189993815UL + 384UL),
                             "maximum", (void *)(&maximum_npm), (void *)__null, 0, 3, 0UL, 0UL, 0UL, 0UL, 0,
                             "gettime", (void *)(&gettime_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (322747555189993815UL + 40UL), (322747555189993815UL + 553UL), 0UL,
                             "usage", (void *)(&usage_npm), (void *)__null, 0, 2, 0UL, (322747555189993815UL + 532UL), 0UL, 5, "fprintf", 3, (322747555189993815UL + 517UL), (322747555189993815UL + 544UL), (322747555189993815UL + 520UL), 0UL, "fprintf", 2, (322747555189993815UL + 517UL), (322747555189993815UL + 545UL), 0UL, "fprintf", 2, (322747555189993815UL + 517UL), (322747555189993815UL + 546UL), 0UL, "fprintf", 2, (322747555189993815UL + 517UL), (322747555189993815UL + 547UL), 0UL, "exit", 1, 0UL, 0UL,
@@ -4719,7 +4717,7 @@ static int module_init() {
         "maximum", 0UL, (int)3, 0UL, 0UL, 0UL,
         "omp_set_num_threads", 0UL, (int)1, 0UL,
         "omp_set_num_threads", 0UL, (int)1, 0UL);
-    register_global_var("global|blosum62", "[24 x [24 x i32]]", (void *)(&blosum62), 2304.0, 0, 0, 0);
+    register_global_var("global|blosum62", "[24 x [24 x i32]]", (void *)(&blosum62), 2304.0, 0, 0, 0UL, 0);
     return 0;
 }
 

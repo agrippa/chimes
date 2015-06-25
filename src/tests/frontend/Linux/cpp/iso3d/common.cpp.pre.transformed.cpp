@@ -71,7 +71,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -4933,13 +4933,13 @@ void finish_progress_npm() {
 
 static int module_init() {
     init_module(2057649082944447898UL, 19, 8, 1, 7, 8, 0, 8, 2, 0, 3,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (2057649082944447898UL + 1UL), (2057649082944447898UL + 3UL),
-                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (2057649082944447898UL + 22UL), (2057649082944447898UL + 23UL), (2057649082944447898UL + 24UL), (2057649082944447898UL + 25UL), (2057649082944447898UL + 26UL), (2057649082944447898UL + 27UL), (2057649082944447898UL + 28UL), (2057649082944447898UL + 29UL), (2057649082944447898UL + 30UL), (2057649082944447898UL + 91UL),
-                           &____alias_loc_id_2, (unsigned)13, (unsigned)0, (2057649082944447898UL + 96UL), (2057649082944447898UL + 97UL), (2057649082944447898UL + 98UL), (2057649082944447898UL + 99UL), (2057649082944447898UL + 100UL), (2057649082944447898UL + 101UL), (2057649082944447898UL + 102UL), (2057649082944447898UL + 103UL), (2057649082944447898UL + 104UL), (2057649082944447898UL + 114UL), (2057649082944447898UL + 154UL), (2057649082944447898UL + 173UL), (2057649082944447898UL + 186UL),
-                           &____alias_loc_id_3, (unsigned)10, (unsigned)0, (2057649082944447898UL + 194UL), (2057649082944447898UL + 195UL), (2057649082944447898UL + 196UL), (2057649082944447898UL + 197UL), (2057649082944447898UL + 198UL), (2057649082944447898UL + 199UL), (2057649082944447898UL + 200UL), (2057649082944447898UL + 260UL), (2057649082944447898UL + 316UL), (2057649082944447898UL + 317UL),
-                           &____alias_loc_id_4, (unsigned)7, (unsigned)1, (2057649082944447898UL + 322UL), (2057649082944447898UL + 323UL), (2057649082944447898UL + 324UL), (2057649082944447898UL + 325UL), (2057649082944447898UL + 326UL), (2057649082944447898UL + 327UL), (2057649082944447898UL + 340UL), "ricker_wavelet", (unsigned)1, (2057649082944447898UL + 360UL),
-                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (2057649082944447898UL + 403UL), (2057649082944447898UL + 404UL), (2057649082944447898UL + 405UL), (2057649082944447898UL + 406UL), (2057649082944447898UL + 452UL), (2057649082944447898UL + 605UL), (2057649082944447898UL + 608UL),
-                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (2057649082944447898UL + 452UL), (2057649082944447898UL + 495UL), (2057649082944447898UL + 496UL), (2057649082944447898UL + 497UL), (2057649082944447898UL + 498UL), (2057649082944447898UL + 608UL),
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (2057649082944447898UL + 1UL), (2057649082944447898UL + 3UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (2057649082944447898UL + 22UL), (2057649082944447898UL + 23UL), (2057649082944447898UL + 24UL), (2057649082944447898UL + 25UL), (2057649082944447898UL + 26UL), (2057649082944447898UL + 27UL), (2057649082944447898UL + 28UL), (2057649082944447898UL + 29UL), (2057649082944447898UL + 30UL), (2057649082944447898UL + 91UL),
+                           &____alias_loc_id_2, (unsigned)13, (unsigned)0, (unsigned)0, (2057649082944447898UL + 96UL), (2057649082944447898UL + 97UL), (2057649082944447898UL + 98UL), (2057649082944447898UL + 99UL), (2057649082944447898UL + 100UL), (2057649082944447898UL + 101UL), (2057649082944447898UL + 102UL), (2057649082944447898UL + 103UL), (2057649082944447898UL + 104UL), (2057649082944447898UL + 114UL), (2057649082944447898UL + 154UL), (2057649082944447898UL + 173UL), (2057649082944447898UL + 186UL),
+                           &____alias_loc_id_3, (unsigned)10, (unsigned)0, (unsigned)0, (2057649082944447898UL + 194UL), (2057649082944447898UL + 195UL), (2057649082944447898UL + 196UL), (2057649082944447898UL + 197UL), (2057649082944447898UL + 198UL), (2057649082944447898UL + 199UL), (2057649082944447898UL + 200UL), (2057649082944447898UL + 260UL), (2057649082944447898UL + 316UL), (2057649082944447898UL + 317UL),
+                           &____alias_loc_id_4, (unsigned)7, (unsigned)0, (unsigned)0, (2057649082944447898UL + 322UL), (2057649082944447898UL + 323UL), (2057649082944447898UL + 324UL), (2057649082944447898UL + 325UL), (2057649082944447898UL + 326UL), (2057649082944447898UL + 327UL), (2057649082944447898UL + 340UL),
+                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (unsigned)0, (2057649082944447898UL + 403UL), (2057649082944447898UL + 404UL), (2057649082944447898UL + 405UL), (2057649082944447898UL + 406UL), (2057649082944447898UL + 452UL), (2057649082944447898UL + 605UL), (2057649082944447898UL + 608UL),
+                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)0, (2057649082944447898UL + 452UL), (2057649082944447898UL + 495UL), (2057649082944447898UL + 496UL), (2057649082944447898UL + 497UL), (2057649082944447898UL + 498UL), (2057649082944447898UL + 608UL),
                             "seconds", (void *)(&seconds_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (2057649082944447898UL + 1UL), (2057649082944447898UL + 2UL), 0UL,
                             "ricker_wavelet", (void *)(&ricker_wavelet_npm), (void *)__null, 0, 4, (2057649082944447898UL + 91UL), 0UL, 0UL, 0UL, 0UL, 1, "exp", 1, 0UL, 0UL,
                             "parse_source", (void *)(&parse_source_npm), (void *)__null, 0, 2, (2057649082944447898UL + 185UL), (2057649082944447898UL + 186UL), 0UL, 13, "strchr", 2, (2057649082944447898UL + 185UL), 0UL, (2057649082944447898UL + 114UL), "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 600UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (2057649082944447898UL + 114UL), 0UL, (2057649082944447898UL + 173UL), "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 600UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (2057649082944447898UL + 173UL), 0UL, (2057649082944447898UL + 154UL), "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 600UL), 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (2057649082944447898UL + 185UL), 0UL, "atoi", 1, (2057649082944447898UL + 114UL), 0UL, "atof", 1, (2057649082944447898UL + 173UL), 0UL, "atoi", 1, (2057649082944447898UL + 154UL), 0UL,
@@ -4989,11 +4989,11 @@ static int module_init() {
                         "seconds|tp|0", 1, "seconds",
         "ricker_wavelet", 0UL, (int)4, 2057649082944448258UL, 0UL, 0UL, 0UL,
         "update_progress", 0UL, (int)1, 0UL);
-    register_global_var("global|progress_buffer", "i8*", (void *)(&progress_buffer), 8.0, 1, 0, 0);
-    register_global_var("global|progress_disabled", "i32", (void *)(&progress_disabled), 4.0, 0, 0, 0);
-    register_global_var("global|progress_length", "i32", (void *)(&progress_length), 4.0, 0, 0, 0);
-    register_global_var("global|progress_goal", "i32", (void *)(&progress_goal), 4.0, 0, 0, 0);
-    register_global_var("global|progress_num_ticks", "i32", (void *)(&progress_num_ticks), 4.0, 0, 0, 0);
+    register_global_var("global|progress_buffer", "i8*", (void *)(&progress_buffer), 8.0, 1, 0, (2057649082944447898UL + 605UL), 0);
+    register_global_var("global|progress_disabled", "i32", (void *)(&progress_disabled), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|progress_length", "i32", (void *)(&progress_length), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|progress_goal", "i32", (void *)(&progress_goal), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|progress_num_ticks", "i32", (void *)(&progress_num_ticks), 4.0, 0, 0, 0UL, 0);
     return 0;
 }
 

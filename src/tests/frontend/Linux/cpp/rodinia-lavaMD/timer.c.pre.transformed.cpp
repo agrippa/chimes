@@ -50,7 +50,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1548,7 +1548,7 @@ long long get_time() {
 
 static int module_init() {
     init_module(8128970918226351760UL, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (8128970918226351760UL + 1UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (8128970918226351760UL + 1UL),
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                              "get_time", "get_time", 0,
                         "get_time|tv|0", 1, "get_time");

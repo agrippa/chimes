@@ -49,7 +49,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1496,8 +1496,8 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 static int module_init() {
     init_module(15999745647169967707UL, 2, 1, 0, 2, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (15999745647169967707UL + 1UL), (15999745647169967707UL + 2UL), (15999745647169967707UL + 3UL), (15999745647169967707UL + 4UL), (15999745647169967707UL + 11UL),
-                           &____alias_loc_id_1, (unsigned)5, (unsigned)0, (15999745647169967707UL + 1UL), (15999745647169967707UL + 2UL), (15999745647169967707UL + 3UL), (15999745647169967707UL + 4UL), (15999745647169967707UL + 11UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (15999745647169967707UL + 11UL),
+                           &____alias_loc_id_1, (unsigned)5, (unsigned)0, (unsigned)0, (15999745647169967707UL + 1UL), (15999745647169967707UL + 2UL), (15999745647169967707UL + 3UL), (15999745647169967707UL + 4UL), (15999745647169967707UL + 11UL),
                              (15999745647169967707UL + 3UL), (15999745647169967707UL + 46UL),
                              (15999745647169967707UL + 4UL), (15999745647169967707UL + 11UL),
                              "main", "main", 1, "checkpoint");

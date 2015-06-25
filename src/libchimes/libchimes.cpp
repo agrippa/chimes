@@ -285,6 +285,7 @@ static pthread_rwlock_t aliased_groups_lock = PTHREAD_RWLOCK_INITIALIZER;
  * declared inside a function.
  */
 static map<std::string, stack_var *> global_vars;
+static set<size_t> global_aliases;
 static pthread_rwlock_t globals_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
@@ -412,6 +413,7 @@ static map<string, bool> need_to_checkpoint;
  * modified by that location.
  */
 static map<unsigned, set<size_t> > change_loc_id_to_aliases;
+static map<unsigned, set<size_t> > change_loc_id_to_aliases_and_children;
 static unsigned count_change_locations = 1;
 
 /*
@@ -1212,7 +1214,8 @@ void init_chimes() {
 #endif
                 for (set<size_t>::iterator iii = aliases.begin(),
                         eee = aliases.end(); iii != eee; iii++) {
-                    change_loc_id_to_aliases.at(loc_id).insert(*iii);
+                    change_loc_id_to_aliases_and_children.at(loc_id).insert(
+                            *iii);
                 }
             } else {
 #ifdef VERBOSE
@@ -1764,6 +1767,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         unsigned *change_loc_id_ptr = va_arg(vl, unsigned *);
         // Number of aliases that have definitely changed at this location
         const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
+        const unsigned n_aliases_and_children_at_loc = va_arg(vl, unsigned);
         /*
          * Number of aliases which may have to be marked changed at this
          * location. These are groups that are passed to externally defined
@@ -1773,9 +1777,9 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
 
 #ifdef VERBOSE
-        fprintf(stderr, "Change location %u has %u aliases, %u more possible "
-                "aliases\n", this_loc_id, n_aliases_at_loc,
-                n_possible_aliases_at_loc);
+        fprintf(stderr, "Change location %u has %u aliases, %u with children, "
+                "%u more possible aliases\n", this_loc_id, n_aliases_at_loc,
+                n_aliases_and_children_at_loc, n_possible_aliases_at_loc);
 #endif
 
         // Read definite changes
@@ -1786,6 +1790,15 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         }
         change_loc_id_to_aliases.insert(pair<unsigned, set<size_t> >(
                     this_loc_id, aliases_changed));
+
+        // Read conservative changes forced by function pointer use
+        set<size_t> aliases_and_children_changed;
+        for (unsigned j = 0; j < n_aliases_and_children_at_loc; j++) {
+            size_t alias = va_arg(vl, size_t);
+            aliases_and_children_changed.insert(alias);
+        }
+        change_loc_id_to_aliases_and_children.insert(pair<unsigned, set<size_t> >(
+                    this_loc_id, aliases_and_children_changed));
 
         /*
          * Read a mapping from externally defined function name to the aliases
@@ -2694,8 +2707,8 @@ void register_stack_var(const char *mangled_name, int *cond_registration,
 }
 
 void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
-        ...) {
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group,
+        int n_ptr_fields, ...) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -2708,8 +2721,11 @@ void register_global_var(const char *mangled_name, const char *full_type,
     std::string mangled_name_str(mangled_name);
 
     VERIFY(pthread_rwlock_wrlock(&globals_lock) == 0);
-    assert(global_vars.find(mangled_name_str) == global_vars.end());
-    global_vars[mangled_name_str] = new_var;
+    VERIFY(global_vars.insert(pair<string, stack_var *>(mangled_name_str,
+                    new_var)).second);
+    if (group) {
+        global_aliases.insert(group);
+    }
     VERIFY(pthread_rwlock_unlock(&globals_lock) == 0);
 
 #ifdef __CHIMES_PROFILE
@@ -3243,6 +3259,20 @@ static void collect_all_aliases(size_t group, set<size_t> *all_changed) {
     }
 }
 
+static void collect_all_aliases_and_children(size_t group, set<size_t> *all_changed) {
+    set<size_t> full_hierarchy;
+
+    size_t curr = group;
+    while (contains.find(curr) != contains.end() && full_hierarchy.find(curr) == full_hierarchy.end()) {
+        full_hierarchy.insert(curr);
+
+        collect_all_aliases(curr, all_changed);
+
+        curr = contains.at(curr);
+    }
+    collect_all_aliases(curr, all_changed);
+}
+
 bool disable_current_thread() {
     thread_ctx *ctx = get_my_context();
     std::vector<stack_frame *> *stack = ctx->get_stack();
@@ -3447,6 +3477,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                  */
 
                 set<size_t> *all_changed = new set<size_t>();
+                bool any_unknown_func_calls = false;
                 for (map<unsigned, thread_ctx *>::iterator i = thread_ctxs.begin(),
                         e = thread_ctxs.end(); i != e; i++) {
                     thread_ctx *ctx = i->second;
@@ -3454,12 +3485,31 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
                     for (unsigned loc = 0; loc < changed->capacity; loc++) {
                         if ((changed->set)[loc]) {
+                            /*
+                             * While the set of aliases and children may not be
+                             * the same here as when the group change was
+                             * registered, it is guaranteed to be a superset.
+                             * For efficiency we assume it is better to possibly
+                             * include some unnecessary data in the checkpoint
+                             * than to do expensive tree traversal at every
+                             * alias group change location.
+                             */
                             for (set<size_t>::iterator iter =
                                     change_loc_id_to_aliases.at(loc).begin(), end =
                                     change_loc_id_to_aliases.at(loc).end();
                                     iter != end; iter++) {
                                 size_t group = *iter;
                                 collect_all_aliases(group, all_changed);
+                            }
+
+                            for (set<size_t>::iterator iter =
+                                    change_loc_id_to_aliases_and_children.at(loc).begin(),
+                                    end = change_loc_id_to_aliases_and_children.at(loc).end();
+                                    iter != end; iter++) {
+                                size_t group = *iter;
+                                collect_all_aliases_and_children(group,
+                                        all_changed);
+                                any_unknown_func_calls = true;
                             }
                         }
                     }
@@ -3471,6 +3521,21 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                         collect_all_aliases(group, all_changed);
                     }
                     ctx->clear_changed_groups();
+                }
+
+                if (any_unknown_func_calls) {
+                    /*
+                     * We also called into something that we have no view into
+                     * (e.g. a function pointer or an externally defined
+                     * function that wasn't instrumented with CHIMES). We can't
+                     * know what it modified, so we make a conservative
+                     * assumption and say it may have modified anything
+                     * reachable from global variables as well.
+                     */
+                    for (set<size_t>::iterator gi = global_aliases.begin(),
+                            ge = global_aliases.end(); gi != ge; gi++) {
+                        collect_all_aliases_and_children(*gi, all_changed);
+                    }
                 }
 #ifdef VERBOSE
                 fprintf(stderr, "checkpointing the following alias groups:\n");

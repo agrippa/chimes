@@ -128,7 +128,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -4281,27 +4281,27 @@ int uts_numChildren_resumable(Node *parent) {const int ____chimes_did_disable6 =
 # 229 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case BIN:
 # 230 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-      if (parent->height == 0) {numChildren = (int) floor(b_0); } else { call_lbl_2: numChildren = ({ calling((void*)uts_numChildren_bin, 2, ____alias_loc_id_5, 0UL, 1, (size_t)(10372134782440950194UL)); (uts_numChildren_bin)(parent); }) ; } ;
+      if (parent->height == 0) {numChildren = (int) floor(b_0); } else { call_lbl_2: numChildren = ({ calling((void*)uts_numChildren_bin, 2, ____alias_loc_id_4, 0UL, 1, (size_t)(10372134782440950194UL)); (uts_numChildren_bin)(parent); }) ; } ;
 # 234 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
       break;
 # 235 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 236 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case GEO:
 # 237 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       call_lbl_3: numChildren = ({ calling((void*)uts_numChildren_geo, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(10372134782440950194UL)); (uts_numChildren_geo)(parent); }) ;
+       call_lbl_3: numChildren = ({ calling((void*)uts_numChildren_geo, 3, ____alias_loc_id_8, 0UL, 1, (size_t)(10372134782440950194UL)); (uts_numChildren_geo)(parent); }) ;
 # 238 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
       break;
 # 239 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 240 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case HYBRID:
 # 241 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-      if (parent->height < shiftDepth * gen_mx) { call_lbl_4: numChildren = ({ calling((void*)uts_numChildren_geo, 4, ____alias_loc_id_7, 0UL, 1, (size_t)(10372134782440950194UL)); (uts_numChildren_geo)(parent); }) ; } else { call_lbl_5: numChildren = ({ calling((void*)uts_numChildren_bin, 5, ____alias_loc_id_8, 0UL, 1, (size_t)(10372134782440950194UL)); (uts_numChildren_bin)(parent); }) ; } ;
+      if (parent->height < shiftDepth * gen_mx) { call_lbl_4: numChildren = ({ calling((void*)uts_numChildren_geo, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(10372134782440950194UL)); (uts_numChildren_geo)(parent); }) ; } else { call_lbl_5: numChildren = ({ calling((void*)uts_numChildren_bin, 5, ____alias_loc_id_6, 0UL, 1, (size_t)(10372134782440950194UL)); (uts_numChildren_bin)(parent); }) ; } ;
 # 245 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
       break;
 # 246 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
      call_lbl_6: default:
 # 247 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       ({ char * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = ("parTreeSearch(): Unknown tree type"); } calling((void*)uts_error, 6, ____alias_loc_id_4, 0UL, 1, (size_t)(10372134782440950805UL)); (uts_error)(____chimes_arg9); }) ;
+       ({ char * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = ("parTreeSearch(): Unknown tree type"); } calling((void*)uts_error, 6, ____alias_loc_id_7, 0UL, 1, (size_t)(10372134782440950805UL)); (uts_error)(____chimes_arg9); }) ;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 249 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4385,7 +4385,7 @@ char *____chimes_unroll_var_0;
  if (____must_checkpoint_uts_paramsToStr_es_0 || ____must_checkpoint_uts_paramsToStr_m_0 || ____must_checkpoint_uts_paramsToStr_q_0 || ____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0) { register_stack_vars(4, "uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0, "uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0, "uts_paramsToStr|____chimes_unroll_var_0|0", &____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } ; ;
 # 292 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 293 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_10, 10372134782440950237UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
+       call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_11, 10372134782440950237UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
 # 294 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 295 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 296 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4434,7 +4434,7 @@ char *____chimes_unroll_var_0;
 # 321 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Random number generator: ");
 # 322 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   call_lbl_10: ind = ({ calling((void*)rng_showtype, 10, ____alias_loc_id_11, 0UL, 2, (size_t)(10372134782440950377UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
+   call_lbl_10: ind = ({ calling((void*)rng_showtype, 10, ____alias_loc_id_10, 0UL, 2, (size_t)(10372134782440950377UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
 # 323 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
 # 324 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4460,9 +4460,9 @@ char strBuf[5000];
 # 334 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   if (verbose > 0) {
 # 335 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-     call_lbl_1: ind = ({ calling((void*)uts_paramsToStr, 1, ____alias_loc_id_12, 0UL, 2, (size_t)(10372134782440950383UL), (size_t)(0UL)); (uts_paramsToStr)(strBuf, ind); }) ;
+     call_lbl_1: ind = ({ calling((void*)uts_paramsToStr, 1, ____alias_loc_id_13, 0UL, 2, (size_t)(10372134782440950383UL), (size_t)(0UL)); (uts_paramsToStr)(strBuf, ind); }) ;
 # 336 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-     call_lbl_2: ind = ({ calling((void*)impl_paramsToStr, 2, ____alias_loc_id_13, 0UL, 2, (size_t)(10372134782440950383UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) ;
+     call_lbl_2: ind = ({ calling((void*)impl_paramsToStr, 2, ____alias_loc_id_12, 0UL, 2, (size_t)(10372134782440950383UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) ;
 # 337 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     printf("%s\n",strBuf);
 # 338 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4485,7 +4485,7 @@ int i;
 # 345 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     if (argv[i][0] == '-' && argv[i][1] == 'h') {{
 # 346 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-         call_lbl_1: ({ calling((void*)uts_helpMessage, 1, ____alias_loc_id_14, 0UL, 0); (uts_helpMessage)(); }) ;
+         call_lbl_1: ({ calling((void*)uts_helpMessage, 1, 0, 0UL, 0); (uts_helpMessage)(); }) ;
 # 347 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
          call_lbl_2: ({ calling((void*)impl_abort, 2, 0, 0UL, 1, (size_t)(0UL)); (impl_abort)(0); }) ;
 # 348 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4499,7 +4499,7 @@ int i;
 # 353 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 354 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 355 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_16); call_lbl_5: if (! ({ char * ____chimes_arg18; char * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (argv[i]); ____chimes_arg19 = (argv[i + 1]); } calling((void*)impl_parseParam, 5, ____alias_loc_id_16, 0UL, 2, (size_t)(10372134782440950653UL), (size_t)(10372134782440950653UL)); (impl_parseParam)(____chimes_arg18, ____chimes_arg19); }) ) {
+    alias_group_changed(____alias_loc_id_14); call_lbl_5: if (! ({ char * ____chimes_arg18; char * ____chimes_arg19; if (!____chimes_replaying) { ____chimes_arg18 = (argv[i]); ____chimes_arg19 = (argv[i + 1]); } calling((void*)impl_parseParam, 5, ____alias_loc_id_14, 0UL, 2, (size_t)(10372134782440950653UL), (size_t)(10372134782440950653UL)); (impl_parseParam)(____chimes_arg18, ____chimes_arg19); }) ) {
 # 356 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
       i += 2;
 # 357 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4594,7 +4594,7 @@ static void (*____chimes_extern_func_impl_helpMessage)(void) = impl_helpMessage;
 void uts_helpMessage_resumable() {const int ____chimes_did_disable11 = new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0) ; char *____chimes_unroll_var_1;
  if (____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0) { register_stack_vars(1, "uts_helpMessage|____chimes_unroll_var_1|0", &____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0, "i8*", (void *)(&____chimes_unroll_var_1), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
 # 405 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 1, 0, 10372134782440950677UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
+       call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_17, 10372134782440950677UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
 # 406 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   printf("    usage:  uts-bin [parameter value] ...\n\n");
 # 407 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4630,7 +4630,7 @@ void uts_helpMessage_resumable() {const int ____chimes_did_disable11 = new_stack
 # 423 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   printf("\n  Additional Implementation Parameters:\n");
 # 424 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   call_lbl_19: ({ calling((void*)impl_helpMessage, 19, ____alias_loc_id_17, 0UL, 0); (impl_helpMessage)(); }) ;
+   call_lbl_19: ({ calling((void*)impl_helpMessage, 19, ____alias_loc_id_16, 0UL, 0); (impl_helpMessage)(); }) ;
 # 425 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   printf("\n");
 # 426 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4833,27 +4833,27 @@ int uts_numChildren_quick(Node *parent) {const int ____chimes_did_disable6 = new
 # 229 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case BIN:
 # 230 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-      if (parent->height == 0) {numChildren = (int) floor(b_0); } else { call_lbl_2: numChildren = ({ calling((void*)uts_numChildren_bin, 2, ____alias_loc_id_5, 0UL, 1, (size_t)(10372134782440950194UL)); uts_numChildren_bin_quick(parent); }) ; } ;
+      if (parent->height == 0) {numChildren = (int) floor(b_0); } else { call_lbl_2: numChildren = ({ calling((void*)uts_numChildren_bin, 2, ____alias_loc_id_4, 0UL, 1, (size_t)(10372134782440950194UL)); uts_numChildren_bin_quick(parent); }) ; } ;
 # 234 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
       break;
 # 235 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 236 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case GEO:
 # 237 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       call_lbl_3: numChildren = ({ calling((void*)uts_numChildren_geo, 3, ____alias_loc_id_6, 0UL, 1, (size_t)(10372134782440950194UL)); uts_numChildren_geo_quick(parent); }) ;
+       call_lbl_3: numChildren = ({ calling((void*)uts_numChildren_geo, 3, ____alias_loc_id_8, 0UL, 1, (size_t)(10372134782440950194UL)); uts_numChildren_geo_quick(parent); }) ;
 # 238 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
       break;
 # 239 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 240 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case HYBRID:
 # 241 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-      if (parent->height < shiftDepth * gen_mx) { call_lbl_4: numChildren = ({ calling((void*)uts_numChildren_geo, 4, ____alias_loc_id_7, 0UL, 1, (size_t)(10372134782440950194UL)); uts_numChildren_geo_quick(parent); }) ; } else { call_lbl_5: numChildren = ({ calling((void*)uts_numChildren_bin, 5, ____alias_loc_id_8, 0UL, 1, (size_t)(10372134782440950194UL)); uts_numChildren_bin_quick(parent); }) ; } ;
+      if (parent->height < shiftDepth * gen_mx) { call_lbl_4: numChildren = ({ calling((void*)uts_numChildren_geo, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(10372134782440950194UL)); uts_numChildren_geo_quick(parent); }) ; } else { call_lbl_5: numChildren = ({ calling((void*)uts_numChildren_bin, 5, ____alias_loc_id_6, 0UL, 1, (size_t)(10372134782440950194UL)); uts_numChildren_bin_quick(parent); }) ; } ;
 # 245 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
       break;
 # 246 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
      call_lbl_6: default:
 # 247 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       ({ calling((void*)uts_error, 6, ____alias_loc_id_4, 0UL, 1, (size_t)(10372134782440950805UL)); uts_error_quick("parTreeSearch(): Unknown tree type"); }) ;
+       ({ calling((void*)uts_error, 6, ____alias_loc_id_7, 0UL, 1, (size_t)(10372134782440950805UL)); uts_error_quick("parTreeSearch(): Unknown tree type"); }) ;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 249 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4932,7 +4932,7 @@ char *____chimes_unroll_var_0;
  if (____must_checkpoint_uts_paramsToStr_es_0 || ____must_checkpoint_uts_paramsToStr_m_0 || ____must_checkpoint_uts_paramsToStr_q_0 || ____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0) { register_stack_vars(4, "uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0, "uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0, "uts_paramsToStr|____chimes_unroll_var_0|0", &____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } ; ;
 # 292 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 293 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_10, 10372134782440950237UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
+       call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_11, 10372134782440950237UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
 # 294 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 295 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 296 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4981,7 +4981,7 @@ char *____chimes_unroll_var_0;
 # 321 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Random number generator: ");
 # 322 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   call_lbl_10: ind = ({ calling((void*)rng_showtype, 10, ____alias_loc_id_11, 0UL, 2, (size_t)(10372134782440950377UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
+   call_lbl_10: ind = ({ calling((void*)rng_showtype, 10, ____alias_loc_id_10, 0UL, 2, (size_t)(10372134782440950377UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
 # 323 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
 # 324 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -5005,9 +5005,9 @@ char strBuf[5000];
 # 334 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   if (verbose > 0) {
 # 335 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-     call_lbl_1: ind = ({ calling((void*)uts_paramsToStr, 1, ____alias_loc_id_12, 0UL, 2, (size_t)(10372134782440950383UL), (size_t)(0UL)); uts_paramsToStr_quick(strBuf, ind); }) ;
+     call_lbl_1: ind = ({ calling((void*)uts_paramsToStr, 1, ____alias_loc_id_13, 0UL, 2, (size_t)(10372134782440950383UL), (size_t)(0UL)); uts_paramsToStr_quick(strBuf, ind); }) ;
 # 336 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-     call_lbl_2: ind = ({ calling((void*)impl_paramsToStr, 2, ____alias_loc_id_13, 0UL, 2, (size_t)(10372134782440950383UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) ;
+     call_lbl_2: ind = ({ calling((void*)impl_paramsToStr, 2, ____alias_loc_id_12, 0UL, 2, (size_t)(10372134782440950383UL), (size_t)(0UL)); (impl_paramsToStr)(strBuf, ind); }) ;
 # 337 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     printf("%s\n",strBuf);
 # 338 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -5029,7 +5029,7 @@ int i;
 # 345 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     if (argv[i][0] == '-' && argv[i][1] == 'h') {{
 # 346 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-         call_lbl_1: ({ calling((void*)uts_helpMessage, 1, ____alias_loc_id_14, 0UL, 0); uts_helpMessage_quick(); }) ;
+         call_lbl_1: ({ calling((void*)uts_helpMessage, 1, 0, 0UL, 0); uts_helpMessage_quick(); }) ;
 # 347 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
          call_lbl_2: ({ calling((void*)impl_abort, 2, 0, 0UL, 1, (size_t)(0UL)); (impl_abort)(0); }) ;
 # 348 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -5043,7 +5043,7 @@ int i;
 # 353 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 354 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 355 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-    alias_group_changed(____alias_loc_id_16); call_lbl_5: if (! ({ calling((void*)impl_parseParam, 5, ____alias_loc_id_16, 0UL, 2, (size_t)(10372134782440950653UL), (size_t)(10372134782440950653UL)); (impl_parseParam)(argv[i], argv[i + 1]); }) ) {
+    alias_group_changed(____alias_loc_id_14); call_lbl_5: if (! ({ calling((void*)impl_parseParam, 5, ____alias_loc_id_14, 0UL, 2, (size_t)(10372134782440950653UL), (size_t)(10372134782440950653UL)); (impl_parseParam)(argv[i], argv[i + 1]); }) ) {
 # 356 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
       i += 2;
 # 357 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -5138,7 +5138,7 @@ void uts_parseParams(int argc, char *argv[]) { (____chimes_replaying ? uts_parse
 void uts_helpMessage_quick() {const int ____chimes_did_disable11 = new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0) ; char *____chimes_unroll_var_1;
  if (____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0) { register_stack_vars(1, "uts_helpMessage|____chimes_unroll_var_1|0", &____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0, "i8*", (void *)(&____chimes_unroll_var_1), (size_t)8, 1, 0, 0); } ; ;
 # 405 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 1, 0, 10372134782440950677UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
+       call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_17, 10372134782440950677UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
 # 406 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   printf("    usage:  uts-bin [parameter value] ...\n\n");
 # 407 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -5174,7 +5174,7 @@ void uts_helpMessage_quick() {const int ____chimes_did_disable11 = new_stack((vo
 # 423 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   printf("\n  Additional Implementation Parameters:\n");
 # 424 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   call_lbl_19: ({ calling((void*)impl_helpMessage, 19, ____alias_loc_id_17, 0UL, 0); (impl_helpMessage)(); }) ;
+   call_lbl_19: ({ calling((void*)impl_helpMessage, 19, ____alias_loc_id_16, 0UL, 0); (impl_helpMessage)(); }) ;
 # 425 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   printf("\n");
 # 426 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -5726,34 +5726,34 @@ void uts_showStats_npm(int nPes, int chunkSize, double walltime, int nNodes, int
 
 static int module_init() {
     init_module(10372134782440949889UL, 13, 13, 19, 28, 13, 8, 21, 2, 0, 5,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (10372134782440949889UL + 1UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)1, (10372134782440949889UL + 47UL), (10372134782440949889UL + 48UL), (10372134782440949889UL + 78UL), "rng_init", (unsigned)1, (10372134782440949889UL + 78UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)1, (10372134782440949889UL + 82UL), "rng_rand", (unsigned)1, (10372134782440949889UL + 107UL),
-                           &____alias_loc_id_3, (unsigned)4, (unsigned)1, (10372134782440949889UL + 109UL), (10372134782440949889UL + 110UL), (10372134782440949889UL + 111UL), (10372134782440949889UL + 114UL), "rng_rand", (unsigned)1, (10372134782440949889UL + 214UL),
-                           &____alias_loc_id_4, (unsigned)2, (unsigned)3, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL), "uts_error", (unsigned)1, (10372134782440949889UL + 916UL), "uts_numChildren_bin", (unsigned)1, (10372134782440949889UL + 305UL), "uts_numChildren_geo", (unsigned)1, (10372134782440949889UL + 305UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)3, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL), "uts_error", (unsigned)1, (10372134782440949889UL + 916UL), "uts_numChildren_bin", (unsigned)1, (10372134782440949889UL + 305UL), "uts_numChildren_geo", (unsigned)1, (10372134782440949889UL + 305UL),
-                           &____alias_loc_id_6, (unsigned)2, (unsigned)3, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL), "uts_error", (unsigned)1, (10372134782440949889UL + 916UL), "uts_numChildren_bin", (unsigned)1, (10372134782440949889UL + 305UL), "uts_numChildren_geo", (unsigned)1, (10372134782440949889UL + 305UL),
-                           &____alias_loc_id_7, (unsigned)2, (unsigned)3, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL), "uts_error", (unsigned)1, (10372134782440949889UL + 916UL), "uts_numChildren_bin", (unsigned)1, (10372134782440949889UL + 305UL), "uts_numChildren_geo", (unsigned)1, (10372134782440949889UL + 305UL),
-                           &____alias_loc_id_8, (unsigned)2, (unsigned)3, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL), "uts_error", (unsigned)1, (10372134782440949889UL + 916UL), "uts_numChildren_bin", (unsigned)1, (10372134782440949889UL + 305UL), "uts_numChildren_geo", (unsigned)1, (10372134782440949889UL + 305UL),
-                           &____alias_loc_id_9, (unsigned)1, (unsigned)1, (10372134782440949889UL + 308UL), "uts_error", (unsigned)1, (10372134782440949889UL + 919UL),
-                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (10372134782440949889UL + 337UL), (10372134782440949889UL + 338UL),
-                            &____alias_loc_id_11, (unsigned)5, (unsigned)1, (10372134782440949889UL + 338UL), (10372134782440949889UL + 339UL), (10372134782440949889UL + 340UL), (10372134782440949889UL + 341UL), (10372134782440949889UL + 342UL), "rng_showtype", (unsigned)1, (10372134782440949889UL + 488UL),
-                            &____alias_loc_id_12, (unsigned)2, (unsigned)1, (10372134782440949889UL + 494UL), (10372134782440949889UL + 495UL), "uts_paramsToStr", (unsigned)1, (10372134782440949889UL + 494UL),
-                            &____alias_loc_id_13, (unsigned)1, (unsigned)2, (10372134782440949889UL + 495UL), "uts_paramsToStr", (unsigned)1, (10372134782440949889UL + 494UL), "impl_paramsToStr", (unsigned)1, (10372134782440949889UL + 494UL),
-                            &____alias_loc_id_14, (unsigned)6, (unsigned)1, (10372134782440949889UL + 518UL), (10372134782440949889UL + 519UL), (10372134782440949889UL + 520UL), (10372134782440949889UL + 521UL), (10372134782440949889UL + 902UL), (10372134782440949889UL + 903UL), "impl_parseParam", (unsigned)1, (10372134782440949889UL + 764UL),
-                            &____alias_loc_id_15, (unsigned)6, (unsigned)1, (10372134782440949889UL + 518UL), (10372134782440949889UL + 519UL), (10372134782440949889UL + 520UL), (10372134782440949889UL + 521UL), (10372134782440949889UL + 902UL), (10372134782440949889UL + 903UL), "impl_parseParam", (unsigned)1, (10372134782440949889UL + 764UL),
-                            &____alias_loc_id_16, (unsigned)6, (unsigned)1, (10372134782440949889UL + 518UL), (10372134782440949889UL + 519UL), (10372134782440949889UL + 520UL), (10372134782440949889UL + 521UL), (10372134782440949889UL + 902UL), (10372134782440949889UL + 903UL), "impl_parseParam", (unsigned)1, (10372134782440949889UL + 764UL),
-                            &____alias_loc_id_17, (unsigned)1, (unsigned)0, (10372134782440949889UL + 786UL),
-                            &____alias_loc_id_18, (unsigned)1, (unsigned)0, (10372134782440949889UL + 13UL),
-                            &____alias_loc_id_19, (unsigned)1, (unsigned)0, (10372134782440949889UL + 27UL),
-                            &____alias_loc_id_20, (unsigned)2, (unsigned)0, (10372134782440949889UL + 83UL), (10372134782440949889UL + 84UL),
-                            &____alias_loc_id_21, (unsigned)3, (unsigned)0, (10372134782440949889UL + 112UL), (10372134782440949889UL + 113UL), (10372134782440949889UL + 115UL),
-                            &____alias_loc_id_22, (unsigned)3, (unsigned)3, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL), (10372134782440949889UL + 222UL), "uts_error", (unsigned)1, (10372134782440949889UL + 916UL), "uts_numChildren_bin", (unsigned)1, (10372134782440949889UL + 305UL), "uts_numChildren_geo", (unsigned)1, (10372134782440949889UL + 305UL),
-                            &____alias_loc_id_23, (unsigned)2, (unsigned)1, (10372134782440949889UL + 307UL), (10372134782440949889UL + 308UL), "uts_error", (unsigned)1, (10372134782440949889UL + 919UL),
-                            &____alias_loc_id_24, (unsigned)1, (unsigned)0, (10372134782440949889UL + 338UL),
-                            &____alias_loc_id_25, (unsigned)2, (unsigned)1, (10372134782440949889UL + 494UL), (10372134782440949889UL + 495UL), "uts_paramsToStr", (unsigned)1, (10372134782440949889UL + 494UL),
-                            &____alias_loc_id_26, (unsigned)6, (unsigned)1, (10372134782440949889UL + 518UL), (10372134782440949889UL + 519UL), (10372134782440949889UL + 520UL), (10372134782440949889UL + 521UL), (10372134782440949889UL + 902UL), (10372134782440949889UL + 903UL), "impl_parseParam", (unsigned)1, (10372134782440949889UL + 764UL),
-                            &____alias_loc_id_27, (unsigned)6, (unsigned)0, (10372134782440949889UL + 816UL), (10372134782440949889UL + 817UL), (10372134782440949889UL + 818UL), (10372134782440949889UL + 819UL), (10372134782440949889UL + 820UL), (10372134782440949889UL + 821UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (10372134782440949889UL + 1UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)1, (10372134782440949889UL + 47UL), (10372134782440949889UL + 48UL), (10372134782440949889UL + 78UL), "rng_init", (unsigned)1, (10372134782440949889UL + 78UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (10372134782440949889UL + 82UL), "rng_rand", (unsigned)1, (10372134782440949889UL + 107UL),
+                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)1, (10372134782440949889UL + 109UL), (10372134782440949889UL + 110UL), (10372134782440949889UL + 111UL), (10372134782440949889UL + 114UL), "rng_rand", (unsigned)1, (10372134782440949889UL + 214UL),
+                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL),
+                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)0, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL),
+                           &____alias_loc_id_7, (unsigned)2, (unsigned)0, (unsigned)0, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL),
+                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)0, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL),
+                           &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)0, (10372134782440949889UL + 308UL),
+                            &____alias_loc_id_10, (unsigned)5, (unsigned)0, (unsigned)1, (10372134782440949889UL + 338UL), (10372134782440949889UL + 339UL), (10372134782440949889UL + 340UL), (10372134782440949889UL + 341UL), (10372134782440949889UL + 342UL), "rng_showtype", (unsigned)1, (10372134782440949889UL + 488UL),
+                            &____alias_loc_id_11, (unsigned)2, (unsigned)0, (unsigned)1, (10372134782440949889UL + 337UL), (10372134782440949889UL + 338UL), "impl_getName", (unsigned)1, (10372134782440949889UL + 348UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)1, (10372134782440949889UL + 495UL), "impl_paramsToStr", (unsigned)1, (10372134782440949889UL + 494UL),
+                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (10372134782440949889UL + 494UL), (10372134782440949889UL + 495UL),
+                            &____alias_loc_id_14, (unsigned)0, (unsigned)0, (unsigned)1, "impl_parseParam", (unsigned)1, (10372134782440949889UL + 764UL),
+                            &____alias_loc_id_15, (unsigned)6, (unsigned)0, (unsigned)0, (10372134782440949889UL + 518UL), (10372134782440949889UL + 519UL), (10372134782440949889UL + 520UL), (10372134782440949889UL + 521UL), (10372134782440949889UL + 902UL), (10372134782440949889UL + 903UL),
+                            &____alias_loc_id_16, (unsigned)1, (unsigned)0, (unsigned)0, (10372134782440949889UL + 786UL),
+                            &____alias_loc_id_17, (unsigned)0, (unsigned)0, (unsigned)1, "impl_getName", (unsigned)1, (10372134782440949889UL + 788UL),
+                            &____alias_loc_id_18, (unsigned)1, (unsigned)0, (unsigned)0, (10372134782440949889UL + 13UL),
+                            &____alias_loc_id_19, (unsigned)1, (unsigned)0, (unsigned)0, (10372134782440949889UL + 27UL),
+                            &____alias_loc_id_20, (unsigned)2, (unsigned)0, (unsigned)0, (10372134782440949889UL + 83UL), (10372134782440949889UL + 84UL),
+                            &____alias_loc_id_21, (unsigned)3, (unsigned)0, (unsigned)0, (10372134782440949889UL + 112UL), (10372134782440949889UL + 113UL), (10372134782440949889UL + 115UL),
+                            &____alias_loc_id_22, (unsigned)3, (unsigned)0, (unsigned)0, (10372134782440949889UL + 220UL), (10372134782440949889UL + 221UL), (10372134782440949889UL + 222UL),
+                            &____alias_loc_id_23, (unsigned)2, (unsigned)0, (unsigned)0, (10372134782440949889UL + 307UL), (10372134782440949889UL + 308UL),
+                            &____alias_loc_id_24, (unsigned)1, (unsigned)0, (unsigned)0, (10372134782440949889UL + 338UL),
+                            &____alias_loc_id_25, (unsigned)2, (unsigned)0, (unsigned)0, (10372134782440949889UL + 494UL), (10372134782440949889UL + 495UL),
+                            &____alias_loc_id_26, (unsigned)6, (unsigned)0, (unsigned)0, (10372134782440949889UL + 518UL), (10372134782440949889UL + 519UL), (10372134782440949889UL + 520UL), (10372134782440949889UL + 521UL), (10372134782440949889UL + 902UL), (10372134782440949889UL + 903UL),
+                            &____alias_loc_id_27, (unsigned)6, (unsigned)0, (unsigned)0, (10372134782440949889UL + 816UL), (10372134782440949889UL + 817UL), (10372134782440949889UL + 818UL), (10372134782440949889UL + 819UL), (10372134782440949889UL + 820UL), (10372134782440949889UL + 821UL),
                             "uts_error", (void *)(&uts_error_npm), (void *)__null, 1, &____alias_loc_id_0, 1, (10372134782440949889UL + 8UL), 0UL, 2, "printf", 2, (10372134782440949889UL + 913UL), (10372134782440949889UL + 8UL), 0UL, "impl_abort", 1, 0UL, 0UL,
                             "uts_wctime", (void *)(&uts_wctime_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (10372134782440949889UL + 13UL), (10372134782440949889UL + 955UL), 0UL,
                             "rng_toProb", (void *)(&rng_toProb_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "printf", 2, (10372134782440949889UL + 914UL), 0UL, 0UL,
@@ -5764,8 +5764,8 @@ static int module_init() {
                             "uts_childType", (void *)(&uts_childType_npm), (void *)__null, 1, &____alias_loc_id_9, 1, (10372134782440949889UL + 336UL), 0UL, 1, "uts_error", 1, (10372134782440949889UL + 919UL), 0UL,
                             "uts_paramsToStr", (void *)(&uts_paramsToStr_npm), (void *)__null, 2, &____alias_loc_id_10, &____alias_loc_id_11, 2, (10372134782440949889UL + 488UL), 0UL, 0UL, 12, "impl_getName", 0, (10372134782440949889UL + 348UL), "sprintf", 4, (10372134782440949889UL + 488UL), (10372134782440949889UL + 914UL), (10372134782440949889UL + 921UL), (10372134782440949889UL + 348UL), 0UL, "sprintf", 4, (10372134782440949889UL + 488UL), (10372134782440949889UL + 898UL), 0UL, (10372134782440949889UL + 367UL), 0UL, "sprintf", 2, (10372134782440949889UL + 488UL), (10372134782440949889UL + 923UL), 0UL, "sprintf", 4, (10372134782440949889UL + 488UL), (10372134782440949889UL + 924UL), 0UL, 0UL, 0UL, "sprintf", 5, (10372134782440949889UL + 488UL), (10372134782440949889UL + 925UL), 0UL, 0UL, (10372134782440949889UL + 405UL), 0UL, "sprintf", 6, (10372134782440949889UL + 488UL), (10372134782440949889UL + 926UL), 0UL, 0UL, 0UL, 0UL, 0UL, "ceil", 1, 0UL, 0UL, "sprintf", 3, (10372134782440949889UL + 488UL), (10372134782440949889UL + 918UL), 0UL, 0UL, "sprintf", 2, (10372134782440949889UL + 488UL), (10372134782440949889UL + 928UL), 0UL, "rng_showtype", 2, (10372134782440949889UL + 488UL), 0UL, 0UL, "sprintf", 3, (10372134782440949889UL + 488UL), (10372134782440949889UL + 928UL), 0UL, 0UL,
                             "uts_printParams", (void *)(&uts_printParams_npm), (void *)__null, 2, &____alias_loc_id_12, &____alias_loc_id_13, 0, 0UL, 3, "uts_paramsToStr", 2, (10372134782440949889UL + 494UL), 0UL, 0UL, "impl_paramsToStr", 2, (10372134782440949889UL + 494UL), 0UL, 0UL, "printf", 2, (10372134782440949889UL + 921UL), (10372134782440949889UL + 494UL), 0UL,
-                            "uts_parseParams", (void *)(&uts_parseParams_npm), (void *)__null, 3, &____alias_loc_id_14, &____alias_loc_id_15, &____alias_loc_id_16, 2, 0UL, (10372134782440949889UL + 762UL), 0UL, 19, "uts_helpMessage", 0, 0UL, "impl_abort", 1, 0UL, 0UL, "strlen", 1, (10372134782440949889UL + 764UL), 0UL, "impl_parseParam", 2, (10372134782440949889UL + 764UL), (10372134782440949889UL + 764UL), 0UL, "atof", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atof", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atof", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "printf", 3, (10372134782440949889UL + 931UL), (10372134782440949889UL + 764UL), (10372134782440949889UL + 764UL), 0UL, "printf", 1, (10372134782440949889UL + 933UL), 0UL, "impl_abort", 1, 0UL, 0UL,
-                            "uts_helpMessage", (void *)(&uts_helpMessage_npm), (void *)__null, 1, &____alias_loc_id_17, 0, 0UL, 20, "impl_getName", 0, (10372134782440949889UL + 788UL), "printf", 3, (10372134782440949889UL + 934UL), (10372134782440949889UL + 921UL), (10372134782440949889UL + 788UL), 0UL, "printf", 1, (10372134782440949889UL + 935UL), 0UL, "printf", 1, (10372134782440949889UL + 928UL), 0UL, "printf", 1, (10372134782440949889UL + 917UL), 0UL, "printf", 1, (10372134782440949889UL + 928UL), 0UL, "printf", 1, (10372134782440949889UL + 924UL), 0UL, "printf", 1, (10372134782440949889UL + 940UL), 0UL, "printf", 1, (10372134782440949889UL + 919UL), 0UL, "printf", 1, (10372134782440949889UL + 942UL), 0UL, "printf", 1, (10372134782440949889UL + 943UL), 0UL, "printf", 1, (10372134782440949889UL + 918UL), 0UL, "printf", 1, (10372134782440949889UL + 917UL), 0UL, "printf", 1, (10372134782440949889UL + 946UL), 0UL, "printf", 1, (10372134782440949889UL + 947UL), 0UL, "printf", 1, (10372134782440949889UL + 935UL), 0UL, "printf", 1, (10372134782440949889UL + 928UL), 0UL, "printf", 1, (10372134782440949889UL + 950UL), 0UL, "impl_helpMessage", 0, 0UL, "printf", 1, (10372134782440949889UL + 951UL), 0UL,
+                            "uts_parseParams", (void *)(&uts_parseParams_npm), (void *)__null, 2, &____alias_loc_id_14, &____alias_loc_id_15, 2, 0UL, (10372134782440949889UL + 762UL), 0UL, 19, "uts_helpMessage", 0, 0UL, "impl_abort", 1, 0UL, 0UL, "strlen", 1, (10372134782440949889UL + 764UL), 0UL, "impl_parseParam", 2, (10372134782440949889UL + 764UL), (10372134782440949889UL + 764UL), 0UL, "atof", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atof", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atof", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "atoi", 1, (10372134782440949889UL + 764UL), 0UL, "printf", 3, (10372134782440949889UL + 931UL), (10372134782440949889UL + 764UL), (10372134782440949889UL + 764UL), 0UL, "printf", 1, (10372134782440949889UL + 933UL), 0UL, "impl_abort", 1, 0UL, 0UL,
+                            "uts_helpMessage", (void *)(&uts_helpMessage_npm), (void *)__null, 2, &____alias_loc_id_16, &____alias_loc_id_17, 0, 0UL, 20, "impl_getName", 0, (10372134782440949889UL + 788UL), "printf", 3, (10372134782440949889UL + 934UL), (10372134782440949889UL + 921UL), (10372134782440949889UL + 788UL), 0UL, "printf", 1, (10372134782440949889UL + 935UL), 0UL, "printf", 1, (10372134782440949889UL + 928UL), 0UL, "printf", 1, (10372134782440949889UL + 917UL), 0UL, "printf", 1, (10372134782440949889UL + 928UL), 0UL, "printf", 1, (10372134782440949889UL + 924UL), 0UL, "printf", 1, (10372134782440949889UL + 940UL), 0UL, "printf", 1, (10372134782440949889UL + 919UL), 0UL, "printf", 1, (10372134782440949889UL + 942UL), 0UL, "printf", 1, (10372134782440949889UL + 943UL), 0UL, "printf", 1, (10372134782440949889UL + 918UL), 0UL, "printf", 1, (10372134782440949889UL + 917UL), 0UL, "printf", 1, (10372134782440949889UL + 946UL), 0UL, "printf", 1, (10372134782440949889UL + 947UL), 0UL, "printf", 1, (10372134782440949889UL + 935UL), 0UL, "printf", 1, (10372134782440949889UL + 928UL), 0UL, "printf", 1, (10372134782440949889UL + 950UL), 0UL, "impl_helpMessage", 0, 0UL, "printf", 1, (10372134782440949889UL + 951UL), 0UL,
                             "uts_showStats", (void *)(&uts_showStats_npm), (void *)__null, 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 3, "printf", 14, (10372134782440949889UL + 952UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "printf", 5, (10372134782440949889UL + 926UL), 0UL, 0UL, 0UL, 0UL, 0UL, "printf", 4, (10372134782440949889UL + 954UL), 0UL, 0UL, 0UL, 0UL,
                                "impl_abort", (void **)&(____chimes_extern_func_impl_abort),
                                "impl_getName", (void **)&(____chimes_extern_func_impl_getName),
@@ -5848,19 +5848,19 @@ static int module_init() {
                         "uts_helpMessage|____chimes_unroll_var_1|0", 1, "impl_helpMessage",
         "rng_toProb", 0UL, (int)1, 0UL,
         "rng_toProb", 0UL, (int)1, 0UL);
-    register_global_var("global|uts_trees_str", "[3 x i8*]", (void *)(&uts_trees_str), 24.0, 0, 0, 0);
-    register_global_var("global|uts_geoshapes_str", "[4 x i8*]", (void *)(&uts_geoshapes_str), 32.0, 0, 0, 0);
-    register_global_var("global|type", "i32", (void *)(&type), 4.0, 0, 0, 0);
-    register_global_var("global|b_0", "double", (void *)(&b_0), 8.0, 0, 0, 0);
-    register_global_var("global|rootId", "i32", (void *)(&rootId), 4.0, 0, 0, 0);
-    register_global_var("global|nonLeafBF", "i32", (void *)(&nonLeafBF), 4.0, 0, 0, 0);
-    register_global_var("global|nonLeafProb", "double", (void *)(&nonLeafProb), 8.0, 0, 0, 0);
-    register_global_var("global|gen_mx", "i32", (void *)(&gen_mx), 4.0, 0, 0, 0);
-    register_global_var("global|shape_fn", "i32", (void *)(&shape_fn), 4.0, 0, 0, 0);
-    register_global_var("global|shiftDepth", "double", (void *)(&shiftDepth), 8.0, 0, 0, 0);
-    register_global_var("global|computeGranularity", "i32", (void *)(&computeGranularity), 4.0, 0, 0, 0);
-    register_global_var("global|debug", "i32", (void *)(&debug), 4.0, 0, 0, 0);
-    register_global_var("global|verbose", "i32", (void *)(&verbose), 4.0, 0, 0, 0);
+    register_global_var("global|uts_trees_str", "[3 x i8*]", (void *)(&uts_trees_str), 24.0, 0, 0, 0UL, 0);
+    register_global_var("global|uts_geoshapes_str", "[4 x i8*]", (void *)(&uts_geoshapes_str), 32.0, 0, 0, 0UL, 0);
+    register_global_var("global|type", "i32", (void *)(&type), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|b_0", "double", (void *)(&b_0), 8.0, 0, 0, 0UL, 0);
+    register_global_var("global|rootId", "i32", (void *)(&rootId), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|nonLeafBF", "i32", (void *)(&nonLeafBF), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|nonLeafProb", "double", (void *)(&nonLeafProb), 8.0, 0, 0, 0UL, 0);
+    register_global_var("global|gen_mx", "i32", (void *)(&gen_mx), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|shape_fn", "i32", (void *)(&shape_fn), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|shiftDepth", "double", (void *)(&shiftDepth), 8.0, 0, 0, 0UL, 0);
+    register_global_var("global|computeGranularity", "i32", (void *)(&computeGranularity), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|debug", "i32", (void *)(&debug), 4.0, 0, 0, 0UL, 0);
+    register_global_var("global|verbose", "i32", (void *)(&verbose), 4.0, 0, 0, 0UL, 0);
     register_constant(10372134782440949889UL + 0UL, (void *)((uts_trees_str)[0]), 9);
     register_constant(10372134782440949889UL + 1UL, (void *)((uts_trees_str)[1]), 10);
     register_constant(10372134782440949889UL + 2UL, (void *)((uts_trees_str)[2]), 7);

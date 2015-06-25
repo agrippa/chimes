@@ -51,7 +51,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1483,8 +1483,8 @@ void *haha_this_sux_part_deux_npm() {
 
 static int module_init() {
     init_module(12223054536323561875UL, 3, 2, 0, 2, 1, 0, 1, 1, 0, 0,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (12223054536323561875UL + 12UL), (12223054536323561875UL + 13UL), (12223054536323561875UL + 14UL), (12223054536323561875UL + 15UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (12223054536323561875UL + 1UL),
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (12223054536323561875UL + 12UL), (12223054536323561875UL + 13UL), (12223054536323561875UL + 14UL), (12223054536323561875UL + 15UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (12223054536323561875UL + 1UL),
                             "haha_this_sux_part_deux", (void *)(&haha_this_sux_part_deux_npm), (void *)__null, 0, 0, (12223054536323561875UL + 3UL), 1, "malloc", 1, 0UL, (12223054536323561875UL + 3UL),
                            "haha_this_sux_part_deux", &(____chimes_does_checkpoint_haha_this_sux_part_deux_npm),
                              (12223054536323561875UL + 1UL), (12223054536323561875UL + 3UL),

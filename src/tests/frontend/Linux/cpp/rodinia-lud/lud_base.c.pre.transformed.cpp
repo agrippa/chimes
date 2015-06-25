@@ -50,7 +50,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -207,7 +207,7 @@ void lud_base_npm(float *a, int size)
 
 static int module_init() {
     init_module(7743237120547627087UL, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (7743237120547627087UL + 1UL), (7743237120547627087UL + 2UL), (7743237120547627087UL + 3UL), (7743237120547627087UL + 4UL), (7743237120547627087UL + 5UL), (7743237120547627087UL + 6UL), (7743237120547627087UL + 168UL),
+                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)0, (7743237120547627087UL + 1UL), (7743237120547627087UL + 2UL), (7743237120547627087UL + 3UL), (7743237120547627087UL + 4UL), (7743237120547627087UL + 5UL), (7743237120547627087UL + 6UL), (7743237120547627087UL + 168UL),
                             "lud_base", (void *)(&lud_base_npm), (void *)__null, 0, 2, (7743237120547627087UL + 168UL), 0UL, 0UL, 0,
                            "lud_base", &(____chimes_does_checkpoint_lud_base_npm),
                              (7743237120547627087UL + 1UL), (7743237120547627087UL + 168UL),

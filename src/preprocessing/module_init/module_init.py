@@ -130,12 +130,14 @@ class FunctionInfo(object):
 
 
 class GlobalVar(object):
-    def __init__(self, name, full_type, type_size_in_bits, is_ptr, is_struct):
+    def __init__(self, name, full_type, type_size_in_bits, is_ptr, is_struct,
+                 group):
         self.name = name
         self.full_type = full_type
         self.type_size_in_bits = type_size_in_bits
         self.is_ptr = is_ptr
         self.is_struct = is_struct
+        self.group = group
         self.struct_type_name = None
         self.struct_ptr_fields = []
 
@@ -293,16 +295,18 @@ def get_globals(globals_filename):
 
         is_struct = int(tokens[index + 3])
 
+        group = tokens[index + 4]
+
         curr = GlobalVar(mangled_name, full_type, type_size_in_bits, is_ptr,
-                         is_struct)
+                         is_struct, group)
 
         # It is possible no struct name is passed here if it has none (is a
         # literal, once-defined struct). Not sure there's anything we can do
         # about these.... TODO
-        if is_struct > 0 and len(tokens) > index + 4:
-            curr.set_struct_type_name(tokens[index + 4])
+        if is_struct > 0 and len(tokens) > index + 5:
+            curr.set_struct_type_name(tokens[index + 5])
 
-            for t in tokens[index + 5:]:
+            for t in tokens[index + 6:]:
                 curr.add_struct_ptr_field(t)
 
         glbls.append(curr)
@@ -372,11 +376,12 @@ def get_merges(filename):
     return merges
 
 
-def write_global(g, func_name, var_label):
+def write_global(g, func_name, var_label, module_id_str):
     output_file.write('    ' + func_name + '("' + var_label + '|' + g.name + '", "' +
                       g.full_type + '", (void *)(&' + g.name + '), ' +
                       str(g.type_size_in_bits / 8) + ', ' + str(g.is_ptr) +
                       ', ' + str(g.is_struct) + ', ' +
+                      get_alias_str(module_id_str, g.group) + ', ' +
                       str(len(g.struct_ptr_fields)))
     for field_name in g.struct_ptr_fields:
         output_file.write(', (int)offsetof(struct ' + g.struct_type_name + \
@@ -519,7 +524,8 @@ if __name__ == '__main__':
 
     n_change_locs = len(changed)
     for e in exits:
-        if len(e.groups_changed) > 0 or len(e.possible_groups_changed) > 0:
+        if len(e.groups_changed) > 0 or len(e.possible_groups_changed) > 0 or \
+                len(e.groups_and_children_changed) > 0:
             n_change_locs += 1
 
     input_file = open(cfg.input_filename, 'r')
@@ -561,8 +567,13 @@ if __name__ == '__main__':
                           ', (unsigned)' +
                           str(len(change_set.aliases_changed)) +
                           ', (unsigned)' +
+                          str(len(change_set.aliases_and_children_changed)) +
+                          ', (unsigned)' +
                           str(len(change_set.possible_aliases_changed)))
         for alias in change_set.aliases_changed:
+            output_file.write(', ' + get_alias_str(module_id_str, alias))
+
+        for alias in change_set.aliases_and_children_changed:
             output_file.write(', ' + get_alias_str(module_id_str, alias))
 
         write_possible_changes(output_file, change_set.possible_aliases_changed,
@@ -570,13 +581,18 @@ if __name__ == '__main__':
         count += 1
 
     for ex in exits:
-        if len(ex.groups_changed) > 0 or len(ex.possible_groups_changed) > 0:
+        if len(ex.groups_changed) > 0 or len(ex.possible_groups_changed) > 0 or \
+                len(ex.groups_and_children_changed):
             output_file.write(',\n         /* alias loc ' + str(count) +
                               ' */ &' + get_alias_loc_var(count) +
                               ', (unsigned)' + str(len(ex.groups_changed)) +
                               ', (unsigned)' +
+                              str(len(ex.groups_and_children_changed)) +
+                              ', (unsigned)' +
                               str(len(ex.possible_groups_changed)))
             for alias in ex.groups_changed:
+                output_file.write(', ' + get_alias_str(module_id_str, alias))
+            for alias in ex.groups_and_children_changed:
                 output_file.write(', ' + get_alias_str(module_id_str, alias))
             write_possible_changes(output_file, ex.possible_groups_changed,
                                    module_id_str)
@@ -673,7 +689,7 @@ if __name__ == '__main__':
     output_file.write(');\n')
 
     for g in glbls:
-        write_global(g, 'register_global_var', 'global')
+        write_global(g, 'register_global_var', 'global', module_id_str)
 
     for c in constants:
         write_constant(c, module_id_str)

@@ -1,4 +1,5 @@
 #include "ValueVisitor.h"
+#include "llvm/IR/InstVisitor.h"
 
 // #define VERBOSE
 
@@ -33,37 +34,116 @@ size_t ValueVisitor::visit(Value *val, Value *prev) {
 #endif
 
     size_t alias = 0;
-    if (CastInst *cast = dyn_cast<CastInst>(val)) {
-        alias = visitCast(cast, prev);
-    } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
+
+    if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
         alias = visitGEP(getele, prev);
-    } else if (StoreInst *store = dyn_cast<StoreInst>(val)) {
-        alias = visitStore(store, prev);
-    } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
-        alias = visitLoad(load, prev);
-    } else if (ReturnInst *ret = dyn_cast<ReturnInst>(val)) {
-        alias = visitReturn(ret, prev);
-    } else if (CallInst *call = dyn_cast<CallInst>(val)) {
-        alias = visitCall(call, prev);
-    } else if (BinaryOperator *bin = dyn_cast<BinaryOperator>(val)) {
-        alias = visitBinary(bin, prev);
     } else if (Constant *cons = dyn_cast<Constant>(val)) {
         alias = visitConstant(cons, prev);
-    } else if (PHINode *phi = dyn_cast<PHINode>(val)) {
-        alias = visitPhi(phi, prev);
-    } else if (ExtractValueInst *ex = dyn_cast<ExtractValueInst>(val)) {
-        alias = visitExtractValue(ex, prev);
-    } else if (LandingPadInst *land = dyn_cast<LandingPadInst>(val)) {
-        alias = visitLandingPad(land, prev);
-    } else if (SelectInst *slct = dyn_cast<SelectInst>(val)) {
-        alias = visitSelect(slct, prev);
-    } else if (isa<CmpInst>(val)) {
-        // A compare instruction always simply returns a boolean value
-        alias = 0;
+    } else if (Instruction *insn = dyn_cast<Instruction>(val)) {
+        switch (insn->getOpcode()) {
+            case (Instruction::Trunc):
+            case (Instruction::ZExt):
+            case (Instruction::SExt):
+            case (Instruction::FPToUI):
+            case (Instruction::FPToSI):
+            case (Instruction::UIToFP):
+            case (Instruction::SIToFP):
+            case (Instruction::FPTrunc):
+            case (Instruction::FPExt):
+            case (Instruction::PtrToInt):
+            case (Instruction::IntToPtr):
+            case (Instruction::BitCast):
+            case (Instruction::AddrSpaceCast):
+                alias = visitCast((CastInst *)val, prev);
+                break;
+            case (Instruction::Add):
+            case (Instruction::FAdd):
+            case (Instruction::Sub):
+            case (Instruction::FSub):
+            case (Instruction::Mul):
+            case (Instruction::FMul):
+            case (Instruction::UDiv):
+            case (Instruction::SDiv):
+            case (Instruction::FDiv):
+            case (Instruction::URem):
+            case (Instruction::SRem):
+            case (Instruction::FRem):
+            case (Instruction::Shl):
+            case (Instruction::LShr):
+            case (Instruction::AShr):
+            case (Instruction::And):
+            case (Instruction::Or):
+            case (Instruction::Xor):
+                alias = visitBinary((BinaryOperator *)val, prev);
+                break;
+            case (Instruction::Store):
+                alias = visitStore((StoreInst *)val, prev);
+                break;
+            case (Instruction::Load):
+                alias = visitLoad((LoadInst *)val, prev);
+                break;
+            case (Instruction::Ret):
+                alias = visitReturn((ReturnInst *)val, prev);
+                break;
+            case (Instruction::Call):
+                alias = visitCall((CallInst *)val, prev);
+                break;
+            case (Instruction::PHI):
+                alias = visitPhi((PHINode *)val, prev);
+                break;
+            case (Instruction::ExtractValue):
+                alias = visitExtractValue((ExtractValueInst *)val, prev);
+                break;
+            case (Instruction::LandingPad):
+                alias = visitLandingPad((LandingPadInst *)val, prev);
+                break;
+            case (Instruction::Select):
+                alias = visitSelect((SelectInst *)val, prev);
+                break;
+            case (Instruction::ICmp):
+            case (Instruction::FCmp):
+                alias = 0;
+                break;
+            default:
+                errs() << "Unsupported " << *val << "\n";
+                assert(false);
+        }
     } else {
         errs() << "Unsupported " << *val << "\n";
         assert(false);
     }
+
+    // if (CastInst *cast = dyn_cast<CastInst>(val)) {
+    //     alias = visitCast(cast, prev);
+    // } else if (GEPOperator *getele = dyn_cast<GEPOperator>(val)) {
+    //     alias = visitGEP(getele, prev);
+    // } else if (StoreInst *store = dyn_cast<StoreInst>(val)) {
+    //     alias = visitStore(store, prev);
+    // } else if (LoadInst *load = dyn_cast<LoadInst>(val)) {
+    //     alias = visitLoad(load, prev);
+    // } else if (ReturnInst *ret = dyn_cast<ReturnInst>(val)) {
+    //     alias = visitReturn(ret, prev);
+    // } else if (CallInst *call = dyn_cast<CallInst>(val)) {
+    //     alias = visitCall(call, prev);
+    // } else if (BinaryOperator *bin = dyn_cast<BinaryOperator>(val)) {
+    //     alias = visitBinary(bin, prev);
+    // } else if (Constant *cons = dyn_cast<Constant>(val)) {
+    //     alias = visitConstant(cons, prev);
+    // } else if (PHINode *phi = dyn_cast<PHINode>(val)) {
+    //     alias = visitPhi(phi, prev);
+    // } else if (ExtractValueInst *ex = dyn_cast<ExtractValueInst>(val)) {
+    //     alias = visitExtractValue(ex, prev);
+    // } else if (LandingPadInst *land = dyn_cast<LandingPadInst>(val)) {
+    //     alias = visitLandingPad(land, prev);
+    // } else if (SelectInst *slct = dyn_cast<SelectInst>(val)) {
+    //     alias = visitSelect(slct, prev);
+    // } else if (isa<CmpInst>(val)) {
+    //     // A compare instruction always simply returns a boolean value
+    //     alias = 0;
+    // } else {
+    //     errs() << "Unsupported " << *val << "\n";
+    //     assert(false);
+    // }
 
     if (alias > 0) {
         setAlias(val, prev, alias);

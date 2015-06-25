@@ -53,7 +53,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1552,10 +1552,10 @@ int bar_npm(int a)
 
 static int module_init() {
     init_module(2262120925167450082UL, 1, 3, 0, 4, 1, 0, 1, 1, 0, 0,
-                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (2262120925167450082UL + 10UL), (2262120925167450082UL + 11UL), (2262120925167450082UL + 12UL),
-                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (2262120925167450082UL + 56UL), (2262120925167450082UL + 57UL), (2262120925167450082UL + 58UL), (2262120925167450082UL + 59UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (2262120925167450082UL + 1UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (2262120925167450082UL + 60UL),
+                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (2262120925167450082UL + 10UL), (2262120925167450082UL + 11UL), (2262120925167450082UL + 12UL),
+                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (2262120925167450082UL + 56UL), (2262120925167450082UL + 57UL), (2262120925167450082UL + 58UL), (2262120925167450082UL + 59UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (2262120925167450082UL + 1UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (2262120925167450082UL + 60UL),
                             "bar", (void *)(&bar_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
                            "bar", &(____chimes_does_checkpoint_bar_npm),
                              (2262120925167450082UL + 58UL), (2262120925167450082UL + 76UL),

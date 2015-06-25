@@ -32,7 +32,6 @@ static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
-static unsigned ____alias_loc_id_6;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -70,7 +69,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -4194,7 +4193,7 @@ void usage_resumable(char **argv) {const int ____chimes_did_disable2 = new_stack
 # 52 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     exit(1);
 # 53 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable2); }
 # 54 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
 # 55 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
 void default_config_npm(config *conf);
@@ -4225,7 +4224,7 @@ void default_config_resumable(config *conf) {const int ____chimes_did_disable3 =
 # 68 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     conf->progress_disabled = 0;
 # 69 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_4, ____chimes_did_disable3); }
 # 70 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
 # 71 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
 void setup_config_npm(config *conf, int argc, char **argv);static int (*____chimes_extern_func_getNumCUDADevices)(void) = getNumCUDADevices;static void (*____chimes_extern_func_parse_source)(char *, struct _source *) = parse_source;
@@ -4330,7 +4329,7 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 121 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     }
 # 122 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_5, ____chimes_did_disable4); }
 void save_text_quick(float *field, const int dimx, const int dimy,
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
         const int ny, const int nx, const char *filename, int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&save_text), "save_text", &____must_manage_save_text, 7, 0, (size_t)(16130283350629161540UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(16130283350629161545UL), (size_t)(0UL)) ; ; ;
@@ -4423,7 +4422,7 @@ void usage_quick(char **argv) {const int ____chimes_did_disable2 = new_stack((vo
 # 52 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     exit(1);
 # 53 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, ____alias_loc_id_4, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable2); }
 
 void usage(char **argv) { (____chimes_replaying ? usage_resumable(argv) : usage_quick(argv)); }
 
@@ -4453,7 +4452,7 @@ void default_config_quick(config *conf) {const int ____chimes_did_disable3 = new
 # 68 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     conf->progress_disabled = 0;
 # 69 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_5, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_4, ____chimes_did_disable3); }
 
 void default_config(config *conf) { (____chimes_replaying ? default_config_resumable(conf) : default_config_quick(conf)); }
 
@@ -4557,7 +4556,7 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 121 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
     }
 # 122 "/home/jmg3/num-debug/src/examples/cpp/./lib/common2d.cpp"
-rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_6, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_5, ____chimes_did_disable4); }
 
 void setup_config(config *conf, int argc, char **argv) { (____chimes_replaying ? setup_config_resumable(conf, argc, argv) : setup_config_quick(conf, argc, argv)); }
 
@@ -4781,14 +4780,13 @@ void setup_config_npm(config *conf, int argc, char **argv) {
 
 
 static int module_init() {
-    init_module(16130283350629161456UL, 16, 5, 4, 7, 5, 2, 7, 2, 0, 4,
-                           &____alias_loc_id_0, (unsigned)6, (unsigned)3, (16130283350629161456UL + 285UL), (16130283350629161456UL + 286UL), (16130283350629161456UL + 287UL), (16130283350629161456UL + 288UL), (16130283350629161456UL + 406UL), (16130283350629161456UL + 423UL), "usage", (unsigned)1, (16130283350629161456UL + 408UL), "parse_source", (unsigned)2, (16130283350629161456UL + 308UL), (16130283350629161456UL + 336UL), "default_config", (unsigned)1, (16130283350629161456UL + 406UL),
-                           &____alias_loc_id_1, (unsigned)6, (unsigned)3, (16130283350629161456UL + 285UL), (16130283350629161456UL + 286UL), (16130283350629161456UL + 287UL), (16130283350629161456UL + 288UL), (16130283350629161456UL + 406UL), (16130283350629161456UL + 423UL), "usage", (unsigned)1, (16130283350629161456UL + 408UL), "parse_source", (unsigned)2, (16130283350629161456UL + 308UL), (16130283350629161456UL + 336UL), "default_config", (unsigned)1, (16130283350629161456UL + 406UL),
-                           &____alias_loc_id_2, (unsigned)10, (unsigned)0, (16130283350629161456UL + 1UL), (16130283350629161456UL + 2UL), (16130283350629161456UL + 3UL), (16130283350629161456UL + 4UL), (16130283350629161456UL + 5UL), (16130283350629161456UL + 6UL), (16130283350629161456UL + 7UL), (16130283350629161456UL + 8UL), (16130283350629161456UL + 9UL), (16130283350629161456UL + 10UL),
-                           &____alias_loc_id_3, (unsigned)15, (unsigned)0, (16130283350629161456UL + 99UL), (16130283350629161456UL + 100UL), (16130283350629161456UL + 101UL), (16130283350629161456UL + 102UL), (16130283350629161456UL + 103UL), (16130283350629161456UL + 104UL), (16130283350629161456UL + 105UL), (16130283350629161456UL + 106UL), (16130283350629161456UL + 107UL), (16130283350629161456UL + 108UL), (16130283350629161456UL + 109UL), (16130283350629161456UL + 222UL), (16130283350629161456UL + 223UL), (16130283350629161456UL + 224UL), (16130283350629161456UL + 225UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (16130283350629161456UL + 235UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (16130283350629161456UL + 247UL), (16130283350629161456UL + 284UL),
-                           &____alias_loc_id_6, (unsigned)6, (unsigned)3, (16130283350629161456UL + 285UL), (16130283350629161456UL + 286UL), (16130283350629161456UL + 287UL), (16130283350629161456UL + 288UL), (16130283350629161456UL + 406UL), (16130283350629161456UL + 423UL), "usage", (unsigned)1, (16130283350629161456UL + 408UL), "parse_source", (unsigned)2, (16130283350629161456UL + 308UL), (16130283350629161456UL + 336UL), "default_config", (unsigned)1, (16130283350629161456UL + 406UL),
+    init_module(16130283350629161456UL, 16, 5, 4, 6, 5, 2, 7, 2, 0, 4,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (16130283350629161456UL + 406UL), "parse_source", (unsigned)2, (16130283350629161456UL + 308UL), (16130283350629161456UL + 336UL),
+                           &____alias_loc_id_1, (unsigned)6, (unsigned)0, (unsigned)0, (16130283350629161456UL + 285UL), (16130283350629161456UL + 286UL), (16130283350629161456UL + 287UL), (16130283350629161456UL + 288UL), (16130283350629161456UL + 406UL), (16130283350629161456UL + 423UL),
+                           &____alias_loc_id_2, (unsigned)11, (unsigned)0, (unsigned)0, (16130283350629161456UL + 1UL), (16130283350629161456UL + 2UL), (16130283350629161456UL + 3UL), (16130283350629161456UL + 4UL), (16130283350629161456UL + 5UL), (16130283350629161456UL + 6UL), (16130283350629161456UL + 7UL), (16130283350629161456UL + 8UL), (16130283350629161456UL + 9UL), (16130283350629161456UL + 10UL), (16130283350629161456UL + 27UL),
+                           &____alias_loc_id_3, (unsigned)15, (unsigned)0, (unsigned)0, (16130283350629161456UL + 99UL), (16130283350629161456UL + 100UL), (16130283350629161456UL + 101UL), (16130283350629161456UL + 102UL), (16130283350629161456UL + 103UL), (16130283350629161456UL + 104UL), (16130283350629161456UL + 105UL), (16130283350629161456UL + 106UL), (16130283350629161456UL + 107UL), (16130283350629161456UL + 108UL), (16130283350629161456UL + 109UL), (16130283350629161456UL + 222UL), (16130283350629161456UL + 223UL), (16130283350629161456UL + 224UL), (16130283350629161456UL + 225UL),
+                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (16130283350629161456UL + 247UL), (16130283350629161456UL + 284UL),
+                           &____alias_loc_id_5, (unsigned)6, (unsigned)0, (unsigned)0, (16130283350629161456UL + 285UL), (16130283350629161456UL + 286UL), (16130283350629161456UL + 287UL), (16130283350629161456UL + 288UL), (16130283350629161456UL + 406UL), (16130283350629161456UL + 423UL),
                             "save_text", (void *)(&save_text_npm), (void *)__null, 0, 7, (16130283350629161456UL + 84UL), 0UL, 0UL, 0UL, 0UL, (16130283350629161456UL + 89UL), 0UL, 0UL, 6, "fopen", 2, (16130283350629161456UL + 89UL), (16130283350629161456UL + 417UL), (16130283350629161456UL + 27UL), "fprintf", 3, (16130283350629161456UL + 387UL), (16130283350629161456UL + 419UL), (16130283350629161456UL + 89UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 5, (16130283350629161456UL + 27UL), (16130283350629161456UL + 420UL), 0UL, 0UL, 0UL, 0UL, "fprintf", 2, (16130283350629161456UL + 27UL), (16130283350629161456UL + 421UL), 0UL, "fclose", 1, (16130283350629161456UL + 27UL), 0UL,
                             "init_data", (void *)(&init_data_npm), (void *)__null, 0, 8, (16130283350629161456UL + 222UL), (16130283350629161456UL + 223UL), (16130283350629161456UL + 224UL), (16130283350629161456UL + 225UL), 0UL, 0UL, 0UL, 0UL, 0UL, 1, "memset", 3, (16130283350629161456UL + 225UL), 0UL, 0UL, 0UL,
                             "usage", (void *)(&usage_npm), (void *)__null, 0, 1, (16130283350629161456UL + 246UL), 0UL, 2, "fprintf", 3, (16130283350629161456UL + 387UL), (16130283350629161456UL + 422UL), (16130283350629161456UL + 241UL), 0UL, "exit", 1, 0UL, 0UL,

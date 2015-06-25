@@ -50,7 +50,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -2351,7 +2351,7 @@ void load_npm(BPNN *net)
 
 static int module_init() {
     init_module(2167082750985355777UL, 3, 1, 0, 1, 1, 0, 1, 0, 0, 1,
-                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (2167082750985355777UL + 1UL), (2167082750985355777UL + 2UL), (2167082750985355777UL + 3UL), (2167082750985355777UL + 5UL), (2167082750985355777UL + 6UL), (2167082750985355777UL + 8UL), (2167082750985355777UL + 26UL),
+                           &____alias_loc_id_0, (unsigned)7, (unsigned)0, (unsigned)0, (2167082750985355777UL + 1UL), (2167082750985355777UL + 2UL), (2167082750985355777UL + 3UL), (2167082750985355777UL + 5UL), (2167082750985355777UL + 6UL), (2167082750985355777UL + 8UL), (2167082750985355777UL + 26UL),
                             "load", (void *)(&load_npm), (void *)__null, 0, 1, (2167082750985355777UL + 52UL), 0UL, 1, "rand", 0, 0UL,
                            "load", &(____chimes_does_checkpoint_load_npm),
                              (2167082750985355777UL + 1UL), (2167082750985355777UL + 52UL),

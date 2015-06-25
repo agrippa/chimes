@@ -1,5 +1,5 @@
-AVI_errno " i64 " 64 0 0 
-id_str " [64 x i8] " 512 0 0 
-avi_errors " [15 x i8*] " 960 0 0 
-num_avi_errors " i32 " 32 0 0 
-error_string " [4096 x i8] " 32768 0 0 
+AVI_errno " i64 " 64 0 0 0 
+id_str " [64 x i8] " 512 0 0 0 
+avi_errors " [15 x i8*] " 960 0 0 0 
+num_avi_errors " i32 " 32 0 0 0 
+error_string " [4096 x i8] " 32768 0 0 0 

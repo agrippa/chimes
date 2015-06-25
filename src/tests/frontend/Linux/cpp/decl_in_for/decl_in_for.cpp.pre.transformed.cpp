@@ -48,7 +48,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1496,7 +1496,7 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 static int module_init() {
     init_module(7303474631874868827UL, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (7303474631874868827UL + 1UL), (7303474631874868827UL + 2UL), (7303474631874868827UL + 3UL), (7303474631874868827UL + 4UL), (7303474631874868827UL + 5UL),
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (7303474631874868827UL + 1UL), (7303474631874868827UL + 2UL), (7303474631874868827UL + 3UL), (7303474631874868827UL + 4UL), (7303474631874868827UL + 5UL),
                              (7303474631874868827UL + 3UL), (7303474631874868827UL + 38UL),
                              "main", "main", 1, "checkpoint");
     return 0;

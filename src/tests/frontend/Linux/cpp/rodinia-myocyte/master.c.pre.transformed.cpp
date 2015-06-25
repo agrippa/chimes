@@ -81,7 +81,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -2646,7 +2646,7 @@ int i;
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     parameter_offset_ecc = 0;
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_1: ({ calling((void*)ecc, 1, ____alias_loc_id_0, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
+     call_lbl_1: ({ calling((void*)ecc, 1, ____alias_loc_id_3, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -2662,7 +2662,7 @@ int i;
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     CaDyad = initvalu[35]*1e3;
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_2: JCaDyad = ({ calling((void*)cam, 2, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
+     call_lbl_2: JCaDyad = ({ calling((void*)cam, 2, ____alias_loc_id_4, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -2694,7 +2694,7 @@ int i;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     CaCyt = initvalu[37]*1e3;
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_4: JCaCyt = ({ calling((void*)cam, 4, ____alias_loc_id_3, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
+     call_lbl_4: JCaCyt = ({ calling((void*)cam, 4, ____alias_loc_id_5, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -2718,7 +2718,7 @@ int i;
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   parameter_offset_ecc = 0;
 # 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_5: ({ calling((void*)ecc, 5, ____alias_loc_id_5, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
+   call_lbl_5: ({ calling((void*)ecc, 5, ____alias_loc_id_8, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2728,7 +2728,7 @@ int i;
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaDyad = initvalu[35]*1e3;
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_6: JCaDyad = ({ calling((void*)cam, 6, ____alias_loc_id_6, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
+   call_lbl_6: JCaDyad = ({ calling((void*)cam, 6, ____alias_loc_id_7, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
 # 164 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 165 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 166 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2738,7 +2738,7 @@ int i;
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaSL = initvalu[36]*1e3;
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_7: JCaSL = ({ calling((void*)cam, 7, ____alias_loc_id_7, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
+   call_lbl_7: JCaSL = ({ calling((void*)cam, 7, ____alias_loc_id_6, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2748,7 +2748,7 @@ int i;
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaCyt = initvalu[37]*1e3;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_8: JCaCyt = ({ calling((void*)cam, 8, ____alias_loc_id_8, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
+   call_lbl_8: JCaCyt = ({ calling((void*)cam, 8, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
  }
@@ -2759,7 +2759,7 @@ int i;
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-  call_lbl_9: ({ calling((void*)fin, 9, ____alias_loc_id_4, 0UL, 10, (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(6849693010381407518UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
+  call_lbl_9: ({ calling((void*)fin, 9, ____alias_loc_id_0, 0UL, 10, (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(6849693010381407518UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2906,7 +2906,7 @@ int i;
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     parameter_offset_ecc = 0;
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_1: ({ calling((void*)ecc, 1, ____alias_loc_id_0, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
+     call_lbl_1: ({ calling((void*)ecc, 1, ____alias_loc_id_3, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -2922,7 +2922,7 @@ int i;
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     CaDyad = initvalu[35]*1e3;
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_2: JCaDyad = ({ calling((void*)cam, 2, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
+     call_lbl_2: JCaDyad = ({ calling((void*)cam, 2, ____alias_loc_id_4, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -2954,7 +2954,7 @@ int i;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
     CaCyt = initvalu[37]*1e3;
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-     call_lbl_4: JCaCyt = ({ calling((void*)cam, 4, ____alias_loc_id_3, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
+     call_lbl_4: JCaCyt = ({ calling((void*)cam, 4, ____alias_loc_id_5, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
    }
@@ -2978,7 +2978,7 @@ int i;
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   parameter_offset_ecc = 0;
 # 146 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_5: ({ calling((void*)ecc, 5, ____alias_loc_id_5, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
+   call_lbl_5: ({ calling((void*)ecc, 5, ____alias_loc_id_8, 0UL, 6, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL)); (ecc)(timeinst, initvalu, initvalu_offset_ecc, parameter, parameter_offset_ecc, finavalu); }) ;
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2988,7 +2988,7 @@ int i;
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaDyad = initvalu[35]*1e3;
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_6: JCaDyad = ({ calling((void*)cam, 6, ____alias_loc_id_6, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
+   call_lbl_6: JCaDyad = ({ calling((void*)cam, 6, ____alias_loc_id_7, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Dyad, parameter, parameter_offset_Dyad, finavalu, CaDyad); }) ;
 # 164 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 165 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 166 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2998,7 +2998,7 @@ int i;
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaSL = initvalu[36]*1e3;
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_7: JCaSL = ({ calling((void*)cam, 7, ____alias_loc_id_7, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
+   call_lbl_7: JCaSL = ({ calling((void*)cam, 7, ____alias_loc_id_6, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_SL, parameter, parameter_offset_SL, finavalu, CaSL); }) ;
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -3008,7 +3008,7 @@ int i;
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
   CaCyt = initvalu[37]*1e3;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-   call_lbl_8: JCaCyt = ({ calling((void*)cam, 8, ____alias_loc_id_8, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
+   call_lbl_8: JCaCyt = ({ calling((void*)cam, 8, ____alias_loc_id_1, 0UL, 7, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(0UL), (size_t)(6849693010381407518UL), (size_t)(0UL)); (cam)(timeinst, initvalu, initvalu_offset_Cyt, parameter, parameter_offset_Cyt, finavalu, CaCyt); }) ;
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
  }
@@ -3019,7 +3019,7 @@ int i;
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-  call_lbl_9: ({ calling((void*)fin, 9, ____alias_loc_id_4, 0UL, 10, (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(6849693010381407518UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
+  call_lbl_9: ({ calling((void*)fin, 9, ____alias_loc_id_0, 0UL, 10, (size_t)(6849693010381407516UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6849693010381407517UL), (size_t)(6849693010381407518UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (fin)(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt); }) ;
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 207 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -3308,16 +3308,16 @@ void master_npm(float timeinst,
 
 static int module_init() {
     init_module(6849693010381407227UL, 3, 1, 19, 10, 1, 3, 4, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)23, (unsigned)3, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 7UL), (6849693010381407227UL + 8UL), (6849693010381407227UL + 9UL), (6849693010381407227UL + 11UL), (6849693010381407227UL + 12UL), (6849693010381407227UL + 13UL), (6849693010381407227UL + 14UL), (6849693010381407227UL + 15UL), (6849693010381407227UL + 16UL), (6849693010381407227UL + 17UL), (6849693010381407227UL + 18UL), (6849693010381407227UL + 19UL), (6849693010381407227UL + 20UL), (6849693010381407227UL + 21UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "fin", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "ecc", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
-                           &____alias_loc_id_1, (unsigned)23, (unsigned)3, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 7UL), (6849693010381407227UL + 8UL), (6849693010381407227UL + 9UL), (6849693010381407227UL + 11UL), (6849693010381407227UL + 12UL), (6849693010381407227UL + 13UL), (6849693010381407227UL + 14UL), (6849693010381407227UL + 15UL), (6849693010381407227UL + 16UL), (6849693010381407227UL + 17UL), (6849693010381407227UL + 18UL), (6849693010381407227UL + 19UL), (6849693010381407227UL + 20UL), (6849693010381407227UL + 21UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "fin", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "ecc", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
-                           &____alias_loc_id_2, (unsigned)23, (unsigned)3, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 7UL), (6849693010381407227UL + 8UL), (6849693010381407227UL + 9UL), (6849693010381407227UL + 11UL), (6849693010381407227UL + 12UL), (6849693010381407227UL + 13UL), (6849693010381407227UL + 14UL), (6849693010381407227UL + 15UL), (6849693010381407227UL + 16UL), (6849693010381407227UL + 17UL), (6849693010381407227UL + 18UL), (6849693010381407227UL + 19UL), (6849693010381407227UL + 20UL), (6849693010381407227UL + 21UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "fin", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "ecc", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
-                           &____alias_loc_id_3, (unsigned)23, (unsigned)3, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 7UL), (6849693010381407227UL + 8UL), (6849693010381407227UL + 9UL), (6849693010381407227UL + 11UL), (6849693010381407227UL + 12UL), (6849693010381407227UL + 13UL), (6849693010381407227UL + 14UL), (6849693010381407227UL + 15UL), (6849693010381407227UL + 16UL), (6849693010381407227UL + 17UL), (6849693010381407227UL + 18UL), (6849693010381407227UL + 19UL), (6849693010381407227UL + 20UL), (6849693010381407227UL + 21UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "fin", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "ecc", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
-                           &____alias_loc_id_4, (unsigned)23, (unsigned)3, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 7UL), (6849693010381407227UL + 8UL), (6849693010381407227UL + 9UL), (6849693010381407227UL + 11UL), (6849693010381407227UL + 12UL), (6849693010381407227UL + 13UL), (6849693010381407227UL + 14UL), (6849693010381407227UL + 15UL), (6849693010381407227UL + 16UL), (6849693010381407227UL + 17UL), (6849693010381407227UL + 18UL), (6849693010381407227UL + 19UL), (6849693010381407227UL + 20UL), (6849693010381407227UL + 21UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "fin", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "ecc", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
-                           &____alias_loc_id_5, (unsigned)23, (unsigned)3, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 7UL), (6849693010381407227UL + 8UL), (6849693010381407227UL + 9UL), (6849693010381407227UL + 11UL), (6849693010381407227UL + 12UL), (6849693010381407227UL + 13UL), (6849693010381407227UL + 14UL), (6849693010381407227UL + 15UL), (6849693010381407227UL + 16UL), (6849693010381407227UL + 17UL), (6849693010381407227UL + 18UL), (6849693010381407227UL + 19UL), (6849693010381407227UL + 20UL), (6849693010381407227UL + 21UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "fin", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "ecc", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
-                           &____alias_loc_id_6, (unsigned)3, (unsigned)1, (6849693010381407227UL + 13UL), (6849693010381407227UL + 14UL), (6849693010381407227UL + 19UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
-                           &____alias_loc_id_7, (unsigned)4, (unsigned)1, (6849693010381407227UL + 7UL), (6849693010381407227UL + 15UL), (6849693010381407227UL + 16UL), (6849693010381407227UL + 20UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
-                           &____alias_loc_id_8, (unsigned)4, (unsigned)1, (6849693010381407227UL + 8UL), (6849693010381407227UL + 17UL), (6849693010381407227UL + 18UL), (6849693010381407227UL + 21UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
-                           &____alias_loc_id_9, (unsigned)2, (unsigned)1, (6849693010381407227UL + 6UL), (6849693010381407227UL + 291UL), "fin", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
+                           &____alias_loc_id_0, (unsigned)12, (unsigned)0, (unsigned)1, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 7UL), (6849693010381407227UL + 8UL), (6849693010381407227UL + 9UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "fin", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
+                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)1, (6849693010381407227UL + 8UL), (6849693010381407227UL + 17UL), (6849693010381407227UL + 18UL), (6849693010381407227UL + 21UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
+                           &____alias_loc_id_2, (unsigned)13, (unsigned)0, (unsigned)1, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 7UL), (6849693010381407227UL + 15UL), (6849693010381407227UL + 16UL), (6849693010381407227UL + 20UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
+                           &____alias_loc_id_3, (unsigned)11, (unsigned)0, (unsigned)1, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 11UL), (6849693010381407227UL + 12UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "ecc", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
+                           &____alias_loc_id_4, (unsigned)12, (unsigned)0, (unsigned)1, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 13UL), (6849693010381407227UL + 14UL), (6849693010381407227UL + 19UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
+                           &____alias_loc_id_5, (unsigned)14, (unsigned)0, (unsigned)1, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 6UL), (6849693010381407227UL + 7UL), (6849693010381407227UL + 8UL), (6849693010381407227UL + 17UL), (6849693010381407227UL + 18UL), (6849693010381407227UL + 21UL), (6849693010381407227UL + 23UL), (6849693010381407227UL + 24UL), (6849693010381407227UL + 25UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
+                           &____alias_loc_id_6, (unsigned)4, (unsigned)0, (unsigned)1, (6849693010381407227UL + 7UL), (6849693010381407227UL + 15UL), (6849693010381407227UL + 16UL), (6849693010381407227UL + 20UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
+                           &____alias_loc_id_7, (unsigned)3, (unsigned)0, (unsigned)1, (6849693010381407227UL + 13UL), (6849693010381407227UL + 14UL), (6849693010381407227UL + 19UL), "cam", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
+                           &____alias_loc_id_8, (unsigned)8, (unsigned)0, (unsigned)1, (6849693010381407227UL + 1UL), (6849693010381407227UL + 2UL), (6849693010381407227UL + 3UL), (6849693010381407227UL + 4UL), (6849693010381407227UL + 5UL), (6849693010381407227UL + 11UL), (6849693010381407227UL + 12UL), (6849693010381407227UL + 23UL), "ecc", (unsigned)3, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL),
+                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)0, (6849693010381407227UL + 6UL), (6849693010381407227UL + 291UL),
                             "master", (void *)(&master_npm), (void *)__null, 9, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, 5, 0UL, (6849693010381407227UL + 289UL), (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), 0UL, 0UL, 11, "ecc", 6, 0UL, (6849693010381407227UL + 289UL), 0UL, (6849693010381407227UL + 290UL), 0UL, (6849693010381407227UL + 291UL), 0UL, "cam", 7, 0UL, (6849693010381407227UL + 289UL), 0UL, (6849693010381407227UL + 290UL), 0UL, (6849693010381407227UL + 291UL), 0UL, 0UL, "cam", 7, 0UL, (6849693010381407227UL + 289UL), 0UL, (6849693010381407227UL + 290UL), 0UL, (6849693010381407227UL + 291UL), 0UL, 0UL, "cam", 7, 0UL, (6849693010381407227UL + 289UL), 0UL, (6849693010381407227UL + 290UL), 0UL, (6849693010381407227UL + 291UL), 0UL, 0UL, "ecc", 6, 0UL, (6849693010381407227UL + 289UL), 0UL, (6849693010381407227UL + 290UL), 0UL, (6849693010381407227UL + 291UL), 0UL, "cam", 7, 0UL, (6849693010381407227UL + 289UL), 0UL, (6849693010381407227UL + 290UL), 0UL, (6849693010381407227UL + 291UL), 0UL, 0UL, "cam", 7, 0UL, (6849693010381407227UL + 289UL), 0UL, (6849693010381407227UL + 290UL), 0UL, (6849693010381407227UL + 291UL), 0UL, 0UL, "cam", 7, 0UL, (6849693010381407227UL + 289UL), 0UL, (6849693010381407227UL + 290UL), 0UL, (6849693010381407227UL + 291UL), 0UL, 0UL, "fin", 10, (6849693010381407227UL + 289UL), 0UL, 0UL, 0UL, 0UL, (6849693010381407227UL + 290UL), (6849693010381407227UL + 291UL), 0UL, 0UL, 0UL, 0UL, "__isnanf", 1, 0UL, 0UL, "__isinff", 1, 0UL, 0UL,
                                "cam", (void **)&(____chimes_extern_func_cam),
                                "ecc", (void **)&(____chimes_extern_func_ecc),

@@ -49,7 +49,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -2365,8 +2365,8 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 static int module_init() {
     init_module(460194934375909730UL, 5, 1, 0, 2, 0, 0, 0, 0, 0, 2,
-                           &____alias_loc_id_0, (unsigned)11, (unsigned)0, (460194934375909730UL + 1UL), (460194934375909730UL + 2UL), (460194934375909730UL + 3UL), (460194934375909730UL + 4UL), (460194934375909730UL + 5UL), (460194934375909730UL + 6UL), (460194934375909730UL + 7UL), (460194934375909730UL + 8UL), (460194934375909730UL + 9UL), (460194934375909730UL + 10UL), (460194934375909730UL + 27UL),
-                           &____alias_loc_id_1, (unsigned)11, (unsigned)0, (460194934375909730UL + 1UL), (460194934375909730UL + 2UL), (460194934375909730UL + 3UL), (460194934375909730UL + 4UL), (460194934375909730UL + 5UL), (460194934375909730UL + 6UL), (460194934375909730UL + 7UL), (460194934375909730UL + 8UL), (460194934375909730UL + 9UL), (460194934375909730UL + 11UL), (460194934375909730UL + 27UL),
+                           &____alias_loc_id_0, (unsigned)11, (unsigned)0, (unsigned)0, (460194934375909730UL + 1UL), (460194934375909730UL + 2UL), (460194934375909730UL + 3UL), (460194934375909730UL + 4UL), (460194934375909730UL + 5UL), (460194934375909730UL + 6UL), (460194934375909730UL + 7UL), (460194934375909730UL + 8UL), (460194934375909730UL + 9UL), (460194934375909730UL + 10UL), (460194934375909730UL + 27UL),
+                           &____alias_loc_id_1, (unsigned)12, (unsigned)0, (unsigned)0, (460194934375909730UL + 1UL), (460194934375909730UL + 2UL), (460194934375909730UL + 3UL), (460194934375909730UL + 4UL), (460194934375909730UL + 5UL), (460194934375909730UL + 6UL), (460194934375909730UL + 7UL), (460194934375909730UL + 8UL), (460194934375909730UL + 9UL), (460194934375909730UL + 11UL), (460194934375909730UL + 27UL), (460194934375909730UL + 129UL),
                              (460194934375909730UL + 9UL), (460194934375909730UL + 27UL),
                              (460194934375909730UL + 8UL), (460194934375909730UL + 27UL),
                              (460194934375909730UL + 3UL), (460194934375909730UL + 151UL),

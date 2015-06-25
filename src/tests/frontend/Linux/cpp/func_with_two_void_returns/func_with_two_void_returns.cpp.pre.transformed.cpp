@@ -50,7 +50,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -1502,14 +1502,14 @@ void haha_this_sux2_npm() {
 
 static int module_init() {
     init_module(18305889038884447142UL, 1, 2, 0, 1, 1, 0, 1, 1, 0, 0,
-                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (18305889038884447142UL + 7UL), (18305889038884447142UL + 8UL), (18305889038884447142UL + 9UL),
+                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (18305889038884447142UL + 7UL), (18305889038884447142UL + 8UL), (18305889038884447142UL + 9UL),
                             "haha_this_sux2", (void *)(&haha_this_sux2_npm), (void *)__null, 0, 0, 0UL, 0,
                            "haha_this_sux2", &(____chimes_does_checkpoint_haha_this_sux2_npm),
                              (18305889038884447142UL + 9UL), (18305889038884447142UL + 19UL),
                              "haha_this_sux2", "_Z14haha_this_sux2v", 0,
                              "main", "main", 2, "haha_this_sux2", "checkpoint",
         "haha_this_sux2", 0UL, (int)0);
-    register_global_var("global|a", "i32", (void *)(&a), 4.0, 0, 0, 0);
+    register_global_var("global|a", "i32", (void *)(&a), 4.0, 0, 0, 0UL, 0);
     return 0;
 }
 

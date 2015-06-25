@@ -55,9 +55,6 @@ static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
 static unsigned ____alias_loc_id_13;
-static unsigned ____alias_loc_id_14;
-static unsigned ____alias_loc_id_15;
-static unsigned ____alias_loc_id_16;
 # 1 "/home/jmg3/num-debug/src/examples/openmp/uts/rng/brg_sha1.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -95,7 +92,7 @@ extern void register_stack_var(const char *mangled_name, int *cond_registration,
         int is_struct, int n_ptr_fields, ...);
 extern void register_stack_vars(int nvars, ...);
 extern void register_global_var(const char *mangled_name, const char *full_type,
-        void *ptr, size_t size, int is_ptr, int is_struct, int n_ptr_fields,
+        void *ptr, size_t size, int is_ptr, int is_struct, size_t group, int n_ptr_fields,
         ...);
 extern void register_constant(size_t const_id, void *address,
         size_t length);
@@ -3230,24 +3227,21 @@ void sha1(unsigned char hval[], const unsigned char data[], unsigned long len)
 
 
 static int module_init() {
-    init_module(4025409710155506038UL, 18, 11, 22, 17, 0, 0, 0, 0, 0, 2,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)2, (4025409710155506038UL + 1UL), (4025409710155506038UL + 2UL), (4025409710155506038UL + 4UL), (4025409710155506038UL + 5UL), "sha1_begin", (unsigned)1, (4025409710155506038UL + 3UL), "sha1_hash", (unsigned)2, (4025409710155506038UL + 3UL), (4025409710155506038UL + 4UL),
-                           &____alias_loc_id_1, (unsigned)11, (unsigned)1, (4025409710155506038UL + 100UL), (4025409710155506038UL + 101UL), (4025409710155506038UL + 102UL), (4025409710155506038UL + 103UL), (4025409710155506038UL + 104UL), (4025409710155506038UL + 105UL), (4025409710155506038UL + 106UL), (4025409710155506038UL + 107UL), (4025409710155506038UL + 108UL), (4025409710155506038UL + 109UL), (4025409710155506038UL + 227UL), "sha1_compile", (unsigned)1, (4025409710155506038UL + 227UL),
-                           &____alias_loc_id_2, (unsigned)8, (unsigned)1, (4025409710155506038UL + 228UL), (4025409710155506038UL + 229UL), (4025409710155506038UL + 230UL), (4025409710155506038UL + 231UL), (4025409710155506038UL + 232UL), (4025409710155506038UL + 233UL), (4025409710155506038UL + 234UL), (4025409710155506038UL + 398UL), "sha1_compile", (unsigned)1, (4025409710155506038UL + 398UL),
-                           &____alias_loc_id_3, (unsigned)4, (unsigned)2, (4025409710155506038UL + 399UL), (4025409710155506038UL + 400UL), (4025409710155506038UL + 401UL), (4025409710155506038UL + 403UL), "sha1_begin", (unsigned)1, (4025409710155506038UL + 402UL), "sha1_hash", (unsigned)2, (4025409710155506038UL + 402UL), (4025409710155506038UL + 443UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)2, (4025409710155506038UL + 485UL), "sha1_begin", (unsigned)1, (4025409710155506038UL + 486UL), "sha1_hash", (unsigned)2, (4025409710155506038UL + 486UL), (4025409710155506038UL + 530UL),
-                           &____alias_loc_id_5, (unsigned)3, (unsigned)2, (4025409710155506038UL + 4889UL), (4025409710155506038UL + 4890UL), (4025409710155506038UL + 4891UL), "sha1_begin", (unsigned)1, (4025409710155506038UL + 4892UL), "sha1_hash", (unsigned)2, (4025409710155506038UL + 4892UL), (4025409710155506038UL + 4911UL),
-                           &____alias_loc_id_6, (unsigned)0, (unsigned)1, "sha1_end", (unsigned)2, (4025409710155506038UL + 3UL), (4025409710155506038UL + 63UL),
-                           &____alias_loc_id_7, (unsigned)2, (unsigned)0, (4025409710155506038UL + 67UL), (4025409710155506038UL + 99UL),
-                           &____alias_loc_id_8, (unsigned)10, (unsigned)1, (4025409710155506038UL + 100UL), (4025409710155506038UL + 101UL), (4025409710155506038UL + 102UL), (4025409710155506038UL + 103UL), (4025409710155506038UL + 104UL), (4025409710155506038UL + 105UL), (4025409710155506038UL + 106UL), (4025409710155506038UL + 107UL), (4025409710155506038UL + 109UL), (4025409710155506038UL + 227UL), "sha1_compile", (unsigned)1, (4025409710155506038UL + 227UL),
-                           &____alias_loc_id_9, (unsigned)8, (unsigned)1, (4025409710155506038UL + 228UL), (4025409710155506038UL + 229UL), (4025409710155506038UL + 230UL), (4025409710155506038UL + 231UL), (4025409710155506038UL + 232UL), (4025409710155506038UL + 234UL), (4025409710155506038UL + 397UL), (4025409710155506038UL + 398UL), "sha1_compile", (unsigned)1, (4025409710155506038UL + 398UL),
-                            &____alias_loc_id_10, (unsigned)0, (unsigned)2, "sha1_end", (unsigned)2, (4025409710155506038UL + 402UL), (4025409710155506038UL + 444UL), "sha1_hash", (unsigned)2, (4025409710155506038UL + 402UL), (4025409710155506038UL + 403UL),
-                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (4025409710155506038UL + 446UL), (4025409710155506038UL + 447UL), (4025409710155506038UL + 448UL),
-                            &____alias_loc_id_12, (unsigned)2, (unsigned)1, (4025409710155506038UL + 487UL), (4025409710155506038UL + 488UL), "sha1_end", (unsigned)2, (4025409710155506038UL + 486UL), (4025409710155506038UL + 530UL),
-                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (4025409710155506038UL + 531UL), (4025409710155506038UL + 532UL),
-                            &____alias_loc_id_14, (unsigned)2, (unsigned)0, (4025409710155506038UL + 553UL), (4025409710155506038UL + 554UL),
-                            &____alias_loc_id_15, (unsigned)8, (unsigned)0, (4025409710155506038UL + 571UL), (4025409710155506038UL + 572UL), (4025409710155506038UL + 573UL), (4025409710155506038UL + 574UL), (4025409710155506038UL + 575UL), (4025409710155506038UL + 576UL), (4025409710155506038UL + 577UL), (4025409710155506038UL + 4883UL),
-                            &____alias_loc_id_16, (unsigned)0, (unsigned)1, "sha1_end", (unsigned)2, (4025409710155506038UL + 4892UL), (4025409710155506038UL + 4910UL),
+    init_module(4025409710155506038UL, 18, 11, 22, 14, 0, 0, 0, 0, 0, 2,
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (4025409710155506038UL + 1UL), (4025409710155506038UL + 2UL), (4025409710155506038UL + 4UL), (4025409710155506038UL + 5UL),
+                           &____alias_loc_id_1, (unsigned)9, (unsigned)0, (unsigned)0, (4025409710155506038UL + 101UL), (4025409710155506038UL + 103UL), (4025409710155506038UL + 104UL), (4025409710155506038UL + 105UL), (4025409710155506038UL + 106UL), (4025409710155506038UL + 107UL), (4025409710155506038UL + 108UL), (4025409710155506038UL + 109UL), (4025409710155506038UL + 227UL),
+                           &____alias_loc_id_2, (unsigned)8, (unsigned)0, (unsigned)0, (4025409710155506038UL + 228UL), (4025409710155506038UL + 229UL), (4025409710155506038UL + 230UL), (4025409710155506038UL + 231UL), (4025409710155506038UL + 232UL), (4025409710155506038UL + 233UL), (4025409710155506038UL + 234UL), (4025409710155506038UL + 398UL),
+                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)0, (4025409710155506038UL + 399UL), (4025409710155506038UL + 400UL), (4025409710155506038UL + 401UL), (4025409710155506038UL + 403UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (4025409710155506038UL + 485UL),
+                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (4025409710155506038UL + 4889UL), (4025409710155506038UL + 4890UL), (4025409710155506038UL + 4891UL),
+                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)0, (4025409710155506038UL + 67UL), (4025409710155506038UL + 99UL),
+                           &____alias_loc_id_7, (unsigned)10, (unsigned)0, (unsigned)0, (4025409710155506038UL + 100UL), (4025409710155506038UL + 101UL), (4025409710155506038UL + 102UL), (4025409710155506038UL + 103UL), (4025409710155506038UL + 104UL), (4025409710155506038UL + 105UL), (4025409710155506038UL + 106UL), (4025409710155506038UL + 107UL), (4025409710155506038UL + 109UL), (4025409710155506038UL + 227UL),
+                           &____alias_loc_id_8, (unsigned)8, (unsigned)0, (unsigned)0, (4025409710155506038UL + 228UL), (4025409710155506038UL + 229UL), (4025409710155506038UL + 230UL), (4025409710155506038UL + 231UL), (4025409710155506038UL + 232UL), (4025409710155506038UL + 234UL), (4025409710155506038UL + 397UL), (4025409710155506038UL + 398UL),
+                           &____alias_loc_id_9, (unsigned)3, (unsigned)0, (unsigned)0, (4025409710155506038UL + 446UL), (4025409710155506038UL + 447UL), (4025409710155506038UL + 448UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (4025409710155506038UL + 487UL), (4025409710155506038UL + 488UL),
+                            &____alias_loc_id_11, (unsigned)2, (unsigned)0, (unsigned)0, (4025409710155506038UL + 531UL), (4025409710155506038UL + 532UL),
+                            &____alias_loc_id_12, (unsigned)2, (unsigned)0, (unsigned)0, (4025409710155506038UL + 553UL), (4025409710155506038UL + 554UL),
+                            &____alias_loc_id_13, (unsigned)8, (unsigned)0, (unsigned)0, (4025409710155506038UL + 571UL), (4025409710155506038UL + 572UL), (4025409710155506038UL + 573UL), (4025409710155506038UL + 574UL), (4025409710155506038UL + 575UL), (4025409710155506038UL + 576UL), (4025409710155506038UL + 577UL), (4025409710155506038UL + 4883UL),
                              (4025409710155506038UL + 4889UL), (4025409710155506038UL + 4910UL),
                              (4025409710155506038UL + 4890UL), (4025409710155506038UL + 4911UL),
                              (4025409710155506038UL + 485UL), (4025409710155506038UL + 530UL),

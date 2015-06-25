@@ -1,46 +1,74 @@
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 10 34 : { 1, 2, 3 } direct:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 29 21 : { 4, 5, 6, 1306 } prop:call:AVI_open_input_file { AVI_open_input_file { 107 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 31 3 : { 7, 12, 13, 14, 15, 16, 29, 30, 31, 32, 33 } prop:call:AVI_print_error { AVI_print_error { 1310 }, get_frame { 156 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 41 23 : { 7, 12, 13, 14, 15, 16, 29, 30, 31, 32, 33 } prop:call:get_frame { AVI_print_error { 1310 }, get_frame { 156 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 45 16 : { 34 } direct:call:gradient_x { gradient_x { 157 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 46 16 : { 35 } direct:call:gradient_y { gradient_y { 157 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 48 2 : { 36 } direct:call:m_free { m_free { 157 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 52 15 : { 37 } direct:call:ellipsematching { ellipsematching { 835, 1147 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 55 19 : { 38 } direct:call:m_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 63 29 : { 8, 9, 39, 40, 227 } prop:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 66 32 : { 41 } direct:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 67 15 : { 42 } direct:call:structuring_element {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 68 21 : { 43 } direct:call:dilate_f { dilate_f { 223, 247 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 69 30 : { 44 } direct:call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 110 10 : { 8, 9, 10, 11, 12, 13, 21, 22, 23, 24, 25, 45, 375, 381, 394, 495, 522, 547, 627 } prop:call:m_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 111 10 : { 18 } direct:call:m_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 119 6 : { 8, 9, 19, 542, 567 } prop:call:TMatrix {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 135 8 : { 16, 17, 20, 26, 27, 28 } prop:call:m_get { m_free { 580 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 232 2 : { 16, 17, 20, 26, 27, 28 } prop:call:m_free { m_free { 580 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 136 8 : { 46 } direct:call:m_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 138 12 : { 47 } direct:call:v_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 139 12 : { 48 } direct:call:v_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 142 12 : { 49 } direct:call:get_row { get_row { 538, 1099 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 143 12 : { 48 } direct:call:get_row { get_row { 563, 1097 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 144 4 : { 49 } direct:call:uniformseg { uniformseg { 1097, 1099, 1101, 1103 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 151 10 : { 50 } direct:call:m_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 152 10 : { 51 } direct:call:mmtr_mlt { mmtr_mlt { 580, 795, 1103 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 153 10 : { 50 } direct:call:mmtr_mlt { mmtr_mlt { 580, 740, 1101 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 155 15 : { 51 } direct:call:m_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 167 6 : { 8, 52, 62, 744 } prop:call:splineenergyform01 { getsampling { 795 }, splineenergyform01 { 740, 795, 835, 1147 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 170 9 : { 8, 52, 62, 744 } prop:call:getsampling { getsampling { 795 }, splineenergyform01 { 740, 795, 835, 1147 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 173 9 : { 8, 60, 823 } prop:call:getsampling { getsampling { 795, 819 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 175 11 : { 61 } direct:call:linear_interp2 { getsampling { 819 }, linear_interp2 { 797, 833, 835 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 176 11 : { 53 } direct:call:linear_interp2 { linear_interp2 { 797, 833, 835 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 177 10 : { 54 } direct:call:getfdriv { getfdriv { 795 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 178 10 : { 55 } direct:call:getfdriv { getfdriv { 740 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 180 10 : { 56 } direct:call:v_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 184 10 : { 8, 58, 910 } prop:call:v_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 188 9 : { 8, 59, 976 } prop:call:v_get {  }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 192 12 : { 8, 57, 1036 } prop:call:mean { mean { 1034 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 195 28 : { 585 } direct:call:mean { mean { 797, 1034 }, std_dev { 1034 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 196 28 : { 591 } direct:call:mean { mean { 833 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 201 5 : { 16, 597 } direct:call:v_free { v_free { 1034 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 255 34 : { 63 } prop:call:get_time { m_free { 223, 252, 385, 538, 563, 580, 835, 1147 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 257 2 : { 64, 65 } direct:call:ellipsetrack { ellipsetrack { 156, 591, 597 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 261 42 : { 66 } direct:call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 31 3 : { 7 } {  } call:AVI_print_error { AVI_print_error { 1310 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 261 42 : { 66 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 29 21 : { 4, 5, 6, 1306 } {  } call:AVI_open_input_file { AVI_open_input_file { 107, 156 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 10 34 : { 1, 2, 3 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 257 2 : { 64, 65 } {  } call:ellipsetrack { ellipsetrack { 156, 591, 597 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 255 34 : { 63 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 239 2 : {  } {  } call:m_free { m_free { 835 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 238 2 : {  } {  } call:m_free { m_free { 1147 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 237 2 : {  } {  } call:m_free { m_free { 385 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 236 2 : {  } {  } call:m_free { m_free { 223 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 235 2 : {  } {  } call:m_free { m_free { 252 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 234 2 : {  } {  } call:m_free { m_free { 538 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 233 2 : {  } {  } call:m_free { m_free { 563 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 232 2 : { 16, 17, 20, 26, 27, 28 } {  } call:m_free { m_free { 580 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 119 6 : { 8, 9, 19, 542, 567 } {  } call:TMatrix { TMatrix { 580 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 219 4 : {  } {  } call:m_free { m_free { 1103 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 111 10 : { 18 } {  } call:m_get { m_get { 563 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 218 4 : {  } {  } call:m_free { m_free { 1101 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 110 10 : { 8, 9, 10, 11, 12, 13, 21, 22, 23, 24, 25, 45, 375, 381, 394, 495, 522, 547, 627 } {  } call:m_get { m_get { 538 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 217 4 : {  } {  } call:v_free { v_free { 1099 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 69 30 : { 44 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 216 4 : {  } {  } call:v_free { v_free { 1097 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 68 21 : { 43 } {  } call:dilate_f { dilate_f { 223, 247, 252 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 212 5 : {  } {  } call:m_free { m_free { 795 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 147 9 : {  } {  } call:m_min { m_min { 1103 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 147 27 : {  } {  } call:m_min { m_min { 1101 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 147 45 : {  } {  } call:m_max { m_max { 1103 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 147 82 : {  } {  } call:m_max { m_max { 1101 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 67 15 : { 42 } {  } call:structuring_element { structuring_element { 247 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 211 5 : {  } {  } call:m_free { m_free { 740 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 144 4 : { 49 } {  } call:uniformseg { uniformseg { 1097, 1099, 1101, 1103 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 66 32 : { 41 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 210 5 : {  } {  } call:m_free { m_free { 819 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 143 12 : { 48 } {  } call:get_row { get_row { 563, 1097 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 63 29 : { 8, 9, 39, 40, 227 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 209 5 : {  } {  } call:v_free { v_free { 797 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 142 12 : { 49 } {  } call:get_row { get_row { 538, 1099 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 55 19 : { 38 } {  } call:m_get { m_get { 223 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 208 5 : {  } {  } call:v_free { v_free { 833 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 139 12 : { 48 } {  } call:v_get { v_get { 1097 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 52 15 : { 37 } {  } call:ellipsematching { ellipsematching { 385, 835, 1147 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 207 5 : {  } {  } call:m_free { m_free { 999 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 138 12 : { 47 } {  } call:v_get { v_get { 1099 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 206 5 : {  } {  } call:m_free { m_free { 1016 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 136 8 : { 46 } {  } call:m_get { m_get { 1101 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 48 2 : { 36 } {  } call:m_free { m_free { 157 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 205 5 : {  } {  } call:v_free { v_free { 875 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 135 8 : {  } {  } call:m_get { m_get { 1103 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 46 16 : { 35 } {  } call:gradient_y { gradient_y { 157, 1147 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 204 5 : {  } {  } call:v_free { v_free { 868 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 45 16 : { 34 } {  } call:gradient_x { gradient_x { 157, 835 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 203 5 : {  } {  } call:v_free { v_free { 908 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 41 23 : { 7, 12, 13, 14, 15, 16, 29, 30, 31, 32, 33 } {  } call:get_frame { get_frame { 156, 157 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 202 5 : {  } {  } call:v_free { v_free { 974 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 201 5 : { 16, 597 } {  } call:v_free { v_free { 1034 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 196 28 : { 591 } {  } call:mean { mean { 833 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 195 28 : { 585 } {  } call:mean { mean { 797 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 192 22 : {  } {  } call:std_dev { std_dev { 1034 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 192 12 : { 8, 57, 1036 } {  } call:mean { mean { 1034 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 188 9 : { 8, 59, 976 } {  } call:v_get { v_get { 1034 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 184 10 : { 8, 58, 910 } {  } call:v_get { v_get { 974 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 180 10 : { 56 } {  } call:v_get { v_get { 908 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 178 10 : { 55 } {  } call:getfdriv { getfdriv { 740, 868 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 177 10 : { 54 } {  } call:getfdriv { getfdriv { 795, 875 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 176 11 : { 53 } {  } call:linear_interp2 { linear_interp2 { 797, 833, 835, 1016 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 175 11 : { 61 } {  } call:linear_interp2 { linear_interp2 { 797, 833, 835, 999 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 173 9 : { 8, 60, 823 } {  } call:getsampling { getsampling { 819, 833 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 170 9 : { 8, 52, 744 } {  } call:getsampling { getsampling { 795, 797 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 167 6 : { 8, 52, 62, 744 } {  } call:splineenergyform01 { splineenergyform01 { 740, 795, 835, 1147 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 155 15 : { 51 } {  } call:m_get { m_get { 819 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 153 10 : { 50 } {  } call:mmtr_mlt { mmtr_mlt { 580, 740, 1101 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 152 10 : { 51 } {  } call:mmtr_mlt { mmtr_mlt { 580, 795, 1103 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 151 10 : { 50 } {  } call:m_get { m_get { 740 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c 150 10 : {  } {  } call:m_get { m_get { 795 } }
