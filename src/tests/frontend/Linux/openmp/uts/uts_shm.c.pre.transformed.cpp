@@ -5462,8 +5462,9 @@ Node root;
 #pragma omp parallel firstprivate(t1) firstprivate(t2) firstprivate(et) firstprivate(ss)
 # 1377 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1377 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
+ { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 4, &et, &ss, &t1, &t2); ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } default: { chimes_error(); } } }
 # 1378 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 4, &et, &ss, &t1, &t2); ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } default: { chimes_error(); } } }
+  {
 # 1379 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
        ;
 # 1380 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -5545,7 +5546,7 @@ Node root;
 # 1447 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
     }
 # 1448 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-   thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
+  } thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
 # 1449 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1450 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1451 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -6673,8 +6674,9 @@ Node root;
 #pragma omp parallel firstprivate(t1) firstprivate(t2) firstprivate(et) firstprivate(ss)
 # 1377 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1377 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
+ { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 4, &et, &ss, &t1, &t2); ;
 # 1378 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-  { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 4, &et, &ss, &t1, &t2); ;
+  {
 # 1379 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
        ;
 # 1380 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
@@ -6756,7 +6758,7 @@ Node root;
 # 1447 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
     }
 # 1448 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
-   thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
+  } thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
 # 1449 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1450 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"
 # 1451 "/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c"

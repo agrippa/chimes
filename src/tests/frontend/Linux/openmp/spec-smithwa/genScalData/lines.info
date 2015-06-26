@@ -1,0 +1,7 @@
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 325 20 : { 844 } {  } call:insertValidation {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 322 19 : { 8, 16, 275 } {  } call:insertValidation {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 297 3 : { 8, 15, 275 } {  } call:spec_init_genrand {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 303 46 : { 8, 16, 275 } {  } call:spec_genrand_int32 {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 271 3 : { 1, 2, 3, 4, 5, 6, 8, 10, 844 } {  } call:spec_init_genrand {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 277 46 : { 8, 15, 275 } {  } call:spec_genrand_int32 {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c 56 46 : { 483, 484, 485, 486, 487, 488, 493, 496 } {  } call:spec_genrand_int32 {  }

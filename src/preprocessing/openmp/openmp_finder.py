@@ -19,6 +19,10 @@ if __name__ == '__main__':
     
     line_no = 1
 
+    # This line will throw an exception similar to:
+    #     UnicodeDecodeError: 'utf8' codec can't decode byte 0xd6 in position \
+    #         84: invalid continuation byte
+    # if it finds a non-ASCII character in an input file.
     line = input_fp.readline()
     while len(line) > 0:
         # For efficiency, quickly filter out all but preprocessor lines

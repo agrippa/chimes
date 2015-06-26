@@ -24,14 +24,13 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 29
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 5 96  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 9 5 len=4 main_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 13 20 ;  { call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 15 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
-InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 25 5  thread_leaving(); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 25 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0);  } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 16 34 ; bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread(); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 21 9  reenable_current_thread(____chimes_disable1); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 14 1  {  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 25 5  thread_leaving(); }  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0);  } 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 16 34  ; { bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread(); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 21 9  reenable_current_thread(____chimes_disable1); } 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 22  ({  calling((void*)foo, 2, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 26 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 15 5 ; 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 14 1 ; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 9 167  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 5 6 len=3 foo_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 18 checkpoint_transformed(1, 0)
@@ -39,12 +38,11 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 6 29
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 5 96  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 9 5 len=4 main_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 13 20 ;  { call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 3, &a, &b, &c); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 15 5  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
-InsertTextBefore /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 25 5  thread_leaving(); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 25 5  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0);  } 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 16 34 ; bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread(); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 21 9  reenable_current_thread(____chimes_disable1); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 14 1  {  register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 25 5  thread_leaving(); }  leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0);  } 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 16 34  ; { bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread(); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 21 9  reenable_current_thread(____chimes_disable1); } 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 22  ({  calling((void*)foo, 2, ____alias_loc_id_0, 0UL, 0); (foo)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 24 26 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 15 5 ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 14 1 ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/openmp/./critical.cpp 9 167  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  

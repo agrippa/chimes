@@ -1,0 +1,1 @@
+97 97 #pragma omp parallel for private (i, thid)

@@ -5253,7 +5253,7 @@ static void fwd_resumable(float *next, float *curr, float *vsq,
         int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(18208841949269015159UL), (size_t)(18208841949269015160UL), (size_t)(18208841949269015161UL), (size_t)(18208841949269015162UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 55 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 56 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     size_t total_iters; total_iters = (nz * ny * nx); { call_lbl_2: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
+     size_t total_iters; total_iters = (nz * ny * nx); { call_lbl_2: ; bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
 # 57 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
@@ -5262,7 +5262,7 @@ static void fwd_resumable(float *next, float *curr, float *vsq,
 # 58 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 59 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-    for (size_t i = 0; i < total_iters; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
+    for (size_t i = 0; i < total_iters; i++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
 # 60 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
          int z; z = ((i / (ny * nx))) ;
 # 61 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
@@ -5303,7 +5303,7 @@ static void fwd_resumable(float *next, float *curr, float *vsq,
 # 85 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
         next[this_offset] = temp + div * vsq[this_offset];
 # 86 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
+    } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 87 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_9, ____chimes_did_disable0); }
 # 88 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
@@ -5470,7 +5470,7 @@ static void fwd_quick(float *next, float *curr, float *vsq,
         int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(18208841949269015159UL), (size_t)(18208841949269015160UL), (size_t)(18208841949269015161UL), (size_t)(18208841949269015162UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 55 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 56 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-     size_t total_iters; total_iters = (nz * ny * nx); { call_lbl_2: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
+     size_t total_iters; total_iters = (nz * ny * nx); { call_lbl_2: ; bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(2, &____chimes_region_id0, 0); int ____chimes_first_iter0 = 1; ;
 # 57 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
@@ -5479,7 +5479,7 @@ static void fwd_quick(float *next, float *curr, float *vsq,
 # 58 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 58 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 # 59 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-    for (size_t i = 0; i < total_iters; i++) {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
+    for (size_t i = 0; i < total_iters; i++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ____chimes_first_iter0 = 0; }
 # 60 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
          int z; z = ((i / (ny * nx))) ;
 # 61 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
@@ -5520,7 +5520,7 @@ static void fwd_quick(float *next, float *curr, float *vsq,
 # 85 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
         next[this_offset] = temp + div * vsq[this_offset];
 # 86 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
-    } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
+    } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 87 "/home/jmg3/num-debug/src/examples/openmp/./iso3d.cpp"
 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_9, ____chimes_did_disable0); }
 

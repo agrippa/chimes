@@ -1,0 +1,1 @@
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 182 3 : { 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 132, 133, 134, 135, 177, 406, 412, 414, 539, 541, 699, 701, 707, 710, 717 } {  } call:omp_set_num_threads {  }

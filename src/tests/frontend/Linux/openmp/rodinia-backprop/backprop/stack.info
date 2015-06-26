@@ -1,0 +1,121 @@
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c squash|x|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c alloc_1d_dbl|n|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c alloc_1d_dbl|new_mem|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c alloc_2d_dbl|m|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c alloc_2d_dbl|n|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c alloc_2d_dbl|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c alloc_2d_dbl|new_mem|0 " float** " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_randomize_weights|w|0 " float** " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_randomize_weights|m|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_randomize_weights|n|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_randomize_weights|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_randomize_weights|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_randomize_row|w|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_randomize_row|m|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_randomize_row|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_zero_weights|w|0 " float** " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_zero_weights|m|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_zero_weights|n|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_zero_weights|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_zero_weights|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_initialize|seed|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_internal_create|n_in|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_internal_create|n_hidden|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_internal_create|n_out|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_internal_create|newnet|0 " %struct.BPNN* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_free|net|0 " %struct.BPNN* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_free|n1|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_free|n2|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_free|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_create|n_in|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_create|n_hidden|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_create|n_out|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_create|newnet|0 " %struct.BPNN* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_layerforward|l1|0 " float* " 64 1 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_layerforward|l2|0 " float* " 64 1 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_layerforward|conn|0 " float** " 64 1 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_layerforward|n1|0 " i32 " 32 0 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_layerforward|n2|0 " i32 " 32 0 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_layerforward|sum|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_layerforward|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_layerforward|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_output_error|delta|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_output_error|target|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_output_error|output|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_output_error|nj|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_output_error|err|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_output_error|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_output_error|o|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_output_error|t|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_output_error|errsum|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|delta_h|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|nh|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|delta_o|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|no|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|who|0 " float** " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|hidden|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|err|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|h|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|sum|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_hidden_error|errsum|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_adjust_weights|delta|0 " float* " 64 1 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_adjust_weights|ndelta|0 " i32 " 32 0 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_adjust_weights|ly|0 " float* " 64 1 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_adjust_weights|nly|0 " i32 " 32 0 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_adjust_weights|w|0 " float** " 64 1 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_adjust_weights|oldw|0 " float** " 64 1 0 1 omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_adjust_weights|new_dw|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_adjust_weights|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_adjust_weights|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_feedforward|net|0 " %struct.BPNN* " 64 1 0 1 bpnn_layerforward
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_feedforward|in|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_feedforward|hid|0 " i32 " 32 0 0 1 bpnn_layerforward
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_feedforward|out|0 " i32 " 32 0 0 1 bpnn_layerforward
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_train|net|0 " %struct.BPNN* " 64 1 0 1 bpnn_adjust_weights bpnn_layerforward
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_train|eo|0 " float* " 64 1 0 1 bpnn_adjust_weights bpnn_layerforward
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_train|eh|0 " float* " 64 1 0 1 bpnn_adjust_weights bpnn_layerforward
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_train|in|0 " i32 " 32 0 0 1 bpnn_adjust_weights bpnn_layerforward
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_train|hid|0 " i32 " 32 0 0 1 bpnn_adjust_weights bpnn_layerforward
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_train|out|0 " i32 " 32 0 0 1 bpnn_adjust_weights bpnn_layerforward
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_train|out_err|0 " float " 32 0 0 1 bpnn_train
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_train|hid_err|0 " float " 32 0 0 1 bpnn_train
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|net|0 " %struct.BPNN* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|filename|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|n1|0 " i32 " 32 0 0 1 bpnn_save
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|n2|0 " i32 " 32 0 0 1 bpnn_save
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|n3|0 " i32 " 32 0 0 1 bpnn_save
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|memcnt|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|dvalue|0 " float " 32 0 0 1 bpnn_save
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|w|0 " float** " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|mem|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|pFile|0 " %struct._IO_FILE* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|_to|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|_from|0 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|_i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|_l|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|_to|1 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|_from|1 " i8* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|_i|1 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_save|_l|1 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|filename|0 " i8* " 64 1 0 1 close open read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|mem|0 " i8* " 64 1 0 1 close read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|new_mem|0 " %struct.BPNN* " 64 1 0 1 close read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|fd|0 " i32 " 32 0 0 1 close read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|n1|0 " i32 " 32 0 0 1 bpnn_read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|n2|0 " i32 " 32 0 0 1 bpnn_read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|n3|0 " i32 " 32 0 0 1 bpnn_read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|i|0 " i32 " 32 0 0 1 close read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|j|0 " i32 " 32 0 0 1 close read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|memcnt|0 " i32 " 32 0 0 1 close read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|_to|0 " i8* " 64 1 0 1 close read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|_from|0 " i8* " 64 1 0 1 close read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|_i|0 " i32 " 32 0 0 1 close read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|_l|0 " i32 " 32 0 0 1 close read
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|_to|1 " i8* " 64 1 0 1 close
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|_from|1 " i8* " 64 1 0 1 close
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|_i|1 " i32 " 32 0 0 1 close
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c bpnn_read|_l|1 " i32 " 32 0 0 1 close

@@ -1,0 +1,4 @@
+gradient_x _Z10gradient_xP3MAT 0 MAY m_get 17 17
+gradient_y _Z10gradient_yP3MAT 0 MAY m_get 39 17
+mean _Z4meanP3VEC 0 DOES_NOT
+std_dev _Z7std_devP3VEC 0 DOES_NOT mean 70 13

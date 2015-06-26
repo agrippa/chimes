@@ -1,0 +1,7 @@
+/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c load|net|0 " %struct.BPNN* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c load|units|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c load|nr|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c load|nc|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c load|imgsize|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c load|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c load|k|0 " i32 " 32 0 0 0

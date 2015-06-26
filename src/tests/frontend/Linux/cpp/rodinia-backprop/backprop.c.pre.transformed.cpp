@@ -5477,8 +5477,8 @@ void bpnn_adjust_weights_resumable(float *delta, int ndelta, float *ly, int nly,
 # 298 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
    call_lbl_1: ({ calling((void*)omp_set_num_threads, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(8); }) ;
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-#pragma omp parallel for shared(oldw, w, delta) private(j, k, new_dw) firstprivate(ndelta, nly)
 # 300 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
+#pragma omp parallel for shared(oldw, w, delta) private(j, k, new_dw) firstprivate(ndelta, nly)
 # 301 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 302 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6233,8 +6233,8 @@ void bpnn_adjust_weights_quick(float *delta, int ndelta, float *ly, int nly, flo
 # 298 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
    call_lbl_1: ({ calling((void*)omp_set_num_threads, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(8); }) ;
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-#pragma omp parallel for shared(oldw, w, delta) private(j, k, new_dw) firstprivate(ndelta, nly)
 # 300 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
+#pragma omp parallel for shared(oldw, w, delta) private(j, k, new_dw) firstprivate(ndelta, nly)
 # 301 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 302 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
@@ -6942,8 +6942,8 @@ void bpnn_adjust_weights_npm(float *delta, int ndelta, float *ly, int nly, float
 # 298 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
   (*____chimes_extern_func_omp_set_num_threads)(8);
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
-#pragma omp parallel for shared(oldw, w, delta) private(j, k, new_dw) firstprivate(ndelta, nly)
 # 300 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
+#pragma omp parallel for shared(oldw, w, delta) private(j, k, new_dw) firstprivate(ndelta, nly)
 # 301 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 302 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop.c"

@@ -93,7 +93,7 @@ std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
                         split_clauses.push_back(clauses.substr(start,
                                     index - start));
                         index++;
-                        while (index < clauses.size() && index == ' ') {
+                        while (index < clauses.size() && clauses[index] == ' ') {
                             index++;
                         }
                         start = index;

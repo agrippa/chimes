@@ -1,0 +1,2 @@
+bstr 0 bestScores "long long int**" numThreads "int" numReports "int*" bestStartsI "int**" bestStartsJ "int**" bestEndsI "int**" bestEndsJ "int**" bestSeqsI "unsigned char***" bestSeqsJ "unsigned char***"
+cstr 0 finalScores "long long int*" numReports "int" finalStartsI "int*" finalStartsJ "int*" finalEndsI "int*" finalEndsJ "int*" finalSeqsI "unsigned char**" finalSeqsJ "unsigned char**"

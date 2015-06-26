@@ -3281,7 +3281,7 @@ int ljForce_resumable(SimFlat* s)
 # 154 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    s->ePotential = 0.0;
 # 155 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    int fSize; fSize = (s->boxes->nTotalBoxes * 64); { call_lbl_3: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(3, &____chimes_region_id0, 1, &dr); int ____chimes_first_iter0 = 1; ;
+    int fSize; fSize = (s->boxes->nTotalBoxes * 64); { call_lbl_3: ; bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(3, &____chimes_region_id0, 1, &dr); int ____chimes_first_iter0 = 1; ;
 # 156 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 156 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 156 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3291,13 +3291,13 @@ int ljForce_resumable(SimFlat* s)
 # 157 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    for (int ii=0; ii<fSize; ++ii)
 # 158 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &dr); ____chimes_first_iter0 = 0; }
+   { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &dr); ____chimes_first_iter0 = 0; }
 # 159 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
       zeroReal3(s->atoms->f[ii]);
 # 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
       s->atoms->U[ii] = 0.;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
+   } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 162 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
     real_t s6; s6 = (sigma * sigma * sigma * sigma * sigma * sigma) ;
@@ -3308,7 +3308,7 @@ int ljForce_resumable(SimFlat* s)
     real_t eShift; eShift = (1. * rCut6 * (rCut6 - 1.)) ;
 # 167 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    int nNbrBoxes; nNbrBoxes = (27); { call_lbl_4: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(4, &____chimes_region_id1, 1, &dr); int ____chimes_first_iter1 = 1; ;
+    int nNbrBoxes; nNbrBoxes = (27); { call_lbl_4: ; bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(4, &____chimes_region_id1, 1, &dr); int ____chimes_first_iter1 = 1; ;
 # 169 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 170 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 171 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3320,7 +3320,7 @@ int ljForce_resumable(SimFlat* s)
 # 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &dr); ____chimes_first_iter1 = 0; }
+   { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &dr); ____chimes_first_iter1 = 0; }
 # 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3402,7 +3402,7 @@ int ljForce_resumable(SimFlat* s)
 # 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
       } }
 # 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+   } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
 # 222 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    ePot = ePot*4.0*epsilon;
@@ -3520,7 +3520,7 @@ int ljForce_quick(SimFlat* s)
 # 154 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    s->ePotential = 0.0;
 # 155 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    int fSize; fSize = (s->boxes->nTotalBoxes * 64); { call_lbl_3: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(3, &____chimes_region_id0, 1, &dr); int ____chimes_first_iter0 = 1; ;
+    int fSize; fSize = (s->boxes->nTotalBoxes * 64); { call_lbl_3: ; bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(3, &____chimes_region_id0, 1, &dr); int ____chimes_first_iter0 = 1; ;
 # 156 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 156 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 156 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3530,13 +3530,13 @@ int ljForce_quick(SimFlat* s)
 # 157 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    for (int ii=0; ii<fSize; ++ii)
 # 158 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   {if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &dr); ____chimes_first_iter0 = 0; }
+   { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 1, &dr); ____chimes_first_iter0 = 0; }
 # 159 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
       zeroReal3(s->atoms->f[ii]);
 # 160 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
       s->atoms->U[ii] = 0.;
 # 161 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
+   } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 162 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 163 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
     real_t s6; s6 = (sigma * sigma * sigma * sigma * sigma * sigma) ;
@@ -3547,7 +3547,7 @@ int ljForce_quick(SimFlat* s)
     real_t eShift; eShift = (1. * rCut6 * (rCut6 - 1.)) ;
 # 167 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 168 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-    int nNbrBoxes; nNbrBoxes = (27); { call_lbl_4: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(4, &____chimes_region_id1, 1, &dr); int ____chimes_first_iter1 = 1; ;
+    int nNbrBoxes; nNbrBoxes = (27); { call_lbl_4: ; bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(4, &____chimes_region_id1, 1, &dr); int ____chimes_first_iter1 = 1; ;
 # 169 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 170 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 171 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3559,7 +3559,7 @@ int ljForce_quick(SimFlat* s)
 # 172 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    for (int iBox=0; iBox<s->boxes->nLocalBoxes; iBox++)
 # 173 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   {if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &dr); ____chimes_first_iter1 = 0; }
+   { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 1, &dr); ____chimes_first_iter1 = 0; }
 # 174 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
        int nIBox; nIBox = (s->boxes->nAtoms[iBox]) ;
 # 175 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
@@ -3641,7 +3641,7 @@ int ljForce_quick(SimFlat* s)
 # 220 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
       } }
 # 221 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
-   } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+   } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
 # 222 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
 # 223 "/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/ljForce.c"
    ePot = ePot*4.0*epsilon;

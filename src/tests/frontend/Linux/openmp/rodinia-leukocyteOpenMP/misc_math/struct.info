@@ -1,0 +1,2 @@
+MAT 1 m "unsigned int" n "unsigned int" max_m "unsigned int" max_n "unsigned int" max_size "unsigned int" me "double**" base "double*"
+VEC 1 dim "unsigned int" max_dim "unsigned int" ve "double*"

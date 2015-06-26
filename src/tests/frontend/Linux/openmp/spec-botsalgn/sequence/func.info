@@ -1,0 +1,6 @@
+strlcpy 70 71 0
+fill_chartab 128
+encode 226 227 0
+alloc_aln 0
+get_seq 461 462 463 464
+readseqs 0 575

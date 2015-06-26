@@ -1,0 +1,6 @@
+malloc cluster 90 25 26 0
+srand cluster 92 5 0 0
+kmeans_clustering cluster 94 27 39 62 0 0 0 0 26
+free cluster 102 3 0 45
+free cluster 103 9 0 39
+free cluster 108 2 0 26

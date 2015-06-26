@@ -1,177 +1,177 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 22 6 len=5 Usage_npm
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 42 6 len=8 BFSGraph_npm
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 69 32 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 69 52 , 17351084539009084381UL, 0, 1, (int)sizeof(struct Node), 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 51 , 17351084539009084394UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 40 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 60 , 17351084539009084399UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 34 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 54 , 17351084539009084404UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 30 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 49 , 17351084539009084449UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 110 23 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 110 43 , 17351084539009084647UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 167 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 167 8 , 17351084539009084381UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 43 6 len=8 BFSGraph_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 32 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 52 , 17351084539009084383UL, 0, 1, (int)sizeof(struct Node), 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 51 , 17351084539009084396UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 40 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 60 , 17351084539009084401UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 73 34 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 73 54 , 17351084539009084406UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 30 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 49 , 17351084539009084451UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 23 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 43 , 17351084539009084649UL, 0, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 168 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 168 8 , 17351084539009084449UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 168 8 , 17351084539009084383UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 169 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 169 8 , 17351084539009084394UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 169 8 , 17351084539009084451UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 170 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 170 8 , 17351084539009084399UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 170 8 , 17351084539009084396UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 171 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 171 8 , 17351084539009084404UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 171 8 , 17351084539009084401UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 172 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 172 8 , 17351084539009084647UL
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 69 32 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 69 52 , 17351084539009084381UL, 0, 1, (int)sizeof(struct Node), 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 51 , 17351084539009084394UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 40 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 60 , 17351084539009084399UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 34 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 54 , 17351084539009084404UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 30 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 49 , 17351084539009084449UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 110 23 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 110 43 , 17351084539009084647UL, 0, 0
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 167 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 167 8 , 17351084539009084381UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 172 8 , 17351084539009084406UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 173 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 173 8 , 17351084539009084649UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 32 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 52 , 17351084539009084383UL, 0, 1, (int)sizeof(struct Node), 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 51 , 17351084539009084396UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 40 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 60 , 17351084539009084401UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 73 34 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 73 54 , 17351084539009084406UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 30 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 49 , 17351084539009084451UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 23 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 43 , 17351084539009084649UL, 0, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 168 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 168 8 , 17351084539009084449UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 168 8 , 17351084539009084383UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 169 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 169 8 , 17351084539009084394UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 169 8 , 17351084539009084451UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 170 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 170 8 , 17351084539009084399UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 170 8 , 17351084539009084396UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 171 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 171 8 , 17351084539009084404UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 171 8 , 17351084539009084401UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 172 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 172 8 , 17351084539009084647UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 172 8 , 17351084539009084406UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 173 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 173 8 , 17351084539009084649UL
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 22 33 const int ____chimes_did_disable0 = new_stack((void *)(&Usage), "Usage", &____must_manage_Usage, 2, 0, (size_t)(0UL), (size_t)(17351084539009084261UL)); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 26 1 rm_stack(false, 0UL, "Usage", &____must_manage_Usage, ____alias_loc_id_2, ____chimes_did_disable0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 31 1 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(17351084539009084279UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 35 1 rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 61 3 rm_stack(false, 0UL, "BFSGraph", &____must_manage_BFSGraph, ____alias_loc_id_3, ____chimes_did_disable2); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 43 1 const int ____chimes_did_disable2 = new_stack((void *)(&BFSGraph), "BFSGraph", &____must_manage_BFSGraph, 2, 0, (size_t)(0UL), (size_t)(17351084539009084677UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 174 1 rm_stack(false, 0UL, "BFSGraph", &____must_manage_BFSGraph, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 35 5 rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable1); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 31 1 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(17351084539009084281UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 62 3 rm_stack(false, 0UL, "BFSGraph", &____must_manage_BFSGraph, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 44 1 const int ____chimes_did_disable2 = new_stack((void *)(&BFSGraph), "BFSGraph", &____must_manage_BFSGraph, 2, 0, (size_t)(0UL), (size_t)(17351084539009084679UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 175 1 rm_stack(false, 0UL, "BFSGraph", &____must_manage_BFSGraph, ____alias_loc_id_3, ____chimes_did_disable2); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 22 34 const int ____chimes_did_disable0 = new_stack((void *)(&Usage), "Usage", &____must_manage_Usage, 2, 0, (size_t)(0UL), (size_t)(17351084539009084261UL)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 22 185 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 31 2 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(17351084539009084279UL)); ;
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 31 2 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(17351084539009084281UL)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 31 150 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 43 2 const int ____chimes_did_disable2 = new_stack((void *)(&BFSGraph), "BFSGraph", &____must_manage_BFSGraph, 2, 0, (size_t)(0UL), (size_t)(17351084539009084677UL)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 43 162 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 44 5 char *input_f; ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 44 18 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 45 2 int num_omp_threads; ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 45 21 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 64 2  int source;  source = (0) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 64 16 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 69 2  Node *h_graph_nodes;  h_graph_nodes = ((Node *)malloc_wrapper(sizeof(Node) * no_of_nodes, 17351084539009084381UL, 0, 1, (int)sizeof(struct Node), 0)) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 69 131 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 2  bool *h_graph_mask;  h_graph_mask = ((bool *)malloc_wrapper(sizeof(bool) * no_of_nodes, 17351084539009084394UL, 0, 0)) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 101 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 2  bool *h_updating_graph_mask;  h_updating_graph_mask = ((bool *)malloc_wrapper(sizeof(bool) * no_of_nodes, 17351084539009084399UL, 0, 0)) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 110 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 2  bool *h_graph_visited;  h_graph_visited = ((bool *)malloc_wrapper(sizeof(bool) * no_of_nodes, 17351084539009084404UL, 0, 0)) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 104 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 74 2 int start; int edgeno; ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 74 19 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 76 2 {  unsigned int i; 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 84 2  }
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 76 7  i = (0) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 76 25 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 2 int id; int cost; ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 13 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 2  int *h_graph_edges;  h_graph_edges = ((int *)malloc_wrapper(sizeof(int) * edge_list_size, 17351084539009084449UL, 0, 0)) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 102 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 2 {  int i; 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 103 2  }
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 6  i = (0) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 13 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 110 2  int *h_cost;  h_cost = ((int *)malloc_wrapper(sizeof(int) * no_of_nodes, 17351084539009084647UL, 0, 0)) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 110 93 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 2 {  int i; 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 51  }
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 7  i = (0) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 14 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 117 2  int k;  k = (0) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 117 9 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 119 2 bool stop; ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 119 11 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 129 3 {  int tid; 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 143 3  }
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 129 7  tid = (0) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 129 18 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 4 {  int i; 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 141 5  }
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 8  i = (h_graph_nodes[tid].starting) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 41 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 5  int id;  id = (h_graph_edges[i]) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 30 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 145 5 {  int tid; 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 153 3  }
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 145 9  tid = (0) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 145 18 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 159 2  FILE *fpo;  fpo = (fopen("result.txt", "w")) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 159 37 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 160 2 {  int i; 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 160 79  }
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 160 7  i = (0) ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 160 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 44 2 const int ____chimes_did_disable2 = new_stack((void *)(&BFSGraph), "BFSGraph", &____must_manage_BFSGraph, 2, 0, (size_t)(0UL), (size_t)(17351084539009084679UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 44 162 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 45 5 char *input_f; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 45 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 46 2 int num_omp_threads; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 46 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 65 2  int source;  source = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 65 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 2  Node *h_graph_nodes;  h_graph_nodes = ((Node *)malloc_wrapper(sizeof(Node) * no_of_nodes, 17351084539009084383UL, 0, 1, (int)sizeof(struct Node), 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 131 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 2  bool *h_graph_mask;  h_graph_mask = ((bool *)malloc_wrapper(sizeof(bool) * no_of_nodes, 17351084539009084396UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 101 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 2  bool *h_updating_graph_mask;  h_updating_graph_mask = ((bool *)malloc_wrapper(sizeof(bool) * no_of_nodes, 17351084539009084401UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 110 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 73 2  bool *h_graph_visited;  h_graph_visited = ((bool *)malloc_wrapper(sizeof(bool) * no_of_nodes, 17351084539009084406UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 73 104 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 75 2 int start; int edgeno; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 75 19 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 77 2 {  unsigned int i; 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 85 2  }
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 77 7  i = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 77 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 2 int id; int cost; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 2  int *h_graph_edges;  h_graph_edges = ((int *)malloc_wrapper(sizeof(int) * edge_list_size, 17351084539009084451UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 102 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 99 2 {  int i; 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 104 2  }
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 99 6  i = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 99 13 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 2  int *h_cost;  h_cost = ((int *)malloc_wrapper(sizeof(int) * no_of_nodes, 17351084539009084649UL, 0, 0)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 93 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 112 2 {  int i; 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 112 51  }
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 112 7  i = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 112 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 118 2  int k;  k = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 118 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 120 2 bool stop; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 120 11 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 130 3 {  int tid; 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 144 3  }
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 130 7  tid = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 130 18 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 4 {  int i; 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 142 5  }
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 8  i = (h_graph_nodes[tid].starting) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 41 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 136 5  int id;  id = (h_graph_edges[i]) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 136 30 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 146 5 {  int tid; 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 154 3  }
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 146 9  tid = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 146 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 160 2  FILE *fpo;  fpo = (fopen("result.txt", "w")) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 160 37 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 161 2 {  int i; 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 161 79  }
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 161 7  i = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 161 14 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 34 2  call_lbl_1: 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 126 3  call_lbl_21: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 127 3  call_lbl_21: 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 22 6 len=5 Usage_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 22 184  ;  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 30 5 len=4 main_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 34 15 (____chimes_does_checkpoint_BFSGraph_npm ? ( ({  calling((void*)BFSGraph, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(17351084539009084279UL)); (BFSGraph)(argc, argv); }) ) : (({ calling_npm("BFSGraph", ____alias_loc_id_0); BFSGraph_npm(argc, argv); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 34 15 (____chimes_does_checkpoint_BFSGraph_npm ? ( ({  calling((void*)BFSGraph, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(17351084539009084281UL)); (BFSGraph)(argc, argv); }) ) : (({ calling_npm("BFSGraph", ____alias_loc_id_0); BFSGraph_npm(argc, argv); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 34 35 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 31 149  ;  
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 42 6 len=8 BFSGraph_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 48 2 ({ calling_npm("Usage", 0); Usage_npm(argc, argv); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 48 18 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 126 17 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 21, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(num_omp_threads); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 126 52 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 45 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 45 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 64 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 64 13 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 69 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 69 22 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 43 6 len=8 BFSGraph_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 49 2 ({ calling_npm("Usage", 0); Usage_npm(argc, argv); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 49 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 127 17 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 21, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(num_omp_threads); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 127 52 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 46 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 46 21 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 65 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 65 13 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 21 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 22 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 30 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 21 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 24 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 74 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 74 11 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 10 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 18 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 110 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 110 14 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 117 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 117 8 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 119 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 119 11 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 2  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 8  if (____must_checkpoint_BFSGraph_id_0 != 0) { register_stack_var("BFSGraph|id|0", &____must_checkpoint_BFSGraph_id_0, "i32", (void *)(&id), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 8 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 129 6  lbl_1: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 129 13  if (____must_checkpoint_BFSGraph_tid_0 != 0) { register_stack_var("BFSGraph|tid|0", &____must_checkpoint_BFSGraph_tid_0, "i32", (void *)(&tid), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 129 13 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 7  lbl_2: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 12  if (____must_checkpoint_BFSGraph_i_3 != 0) { register_stack_var("BFSGraph|i|3", &____must_checkpoint_BFSGraph_i_3, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 12 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 6  lbl_3: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 12  if (____must_checkpoint_BFSGraph_id_1 != 0) { register_stack_var("BFSGraph|id|1", &____must_checkpoint_BFSGraph_id_1, "i32", (void *)(&id), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 12 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 145 8  lbl_4: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 145 15  if (____must_checkpoint_BFSGraph_tid_1 != 0) { register_stack_var("BFSGraph|tid|1", &____must_checkpoint_BFSGraph_tid_1, "i32", (void *)(&tid), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 145 15 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 43 161  ; bool stop;
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 30 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 73 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 73 24 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 75 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 75 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 10 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 18 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 21 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 118 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 118 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 120 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 120 11 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 2  lbl_0: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 8  if (____must_checkpoint_BFSGraph_id_0 != 0) { register_stack_var("BFSGraph|id|0", &____must_checkpoint_BFSGraph_id_0, "i32", (void *)(&id), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 8 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 130 6  lbl_1: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 130 13  if (____must_checkpoint_BFSGraph_tid_0 != 0) { register_stack_var("BFSGraph|tid|0", &____must_checkpoint_BFSGraph_tid_0, "i32", (void *)(&tid), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 130 13 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 7  lbl_2: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 12  if (____must_checkpoint_BFSGraph_i_3 != 0) { register_stack_var("BFSGraph|i|3", &____must_checkpoint_BFSGraph_i_3, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 12 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 136 6  lbl_3: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 136 12  if (____must_checkpoint_BFSGraph_id_1 != 0) { register_stack_var("BFSGraph|id|1", &____must_checkpoint_BFSGraph_id_1, "i32", (void *)(&id), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 136 12 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 146 8  lbl_4: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 146 15  if (____must_checkpoint_BFSGraph_tid_1 != 0) { register_stack_var("BFSGraph|tid|1", &____must_checkpoint_BFSGraph_tid_1, "i32", (void *)(&tid), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 146 15 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 44 161  ; bool stop;
 int k;
 int *h_cost;
 int *h_graph_edges;
@@ -187,54 +187,54 @@ int num_omp_threads;
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 22 6 len=5 Usage_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 22 184  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 30 5 len=4 main_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 34 15 (____chimes_does_checkpoint_BFSGraph_npm ? ( ({  calling((void*)BFSGraph, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(17351084539009084279UL)); (BFSGraph)(argc, argv); }) ) : (({ calling_npm("BFSGraph", ____alias_loc_id_0); BFSGraph_npm(argc, argv); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 34 15 (____chimes_does_checkpoint_BFSGraph_npm ? ( ({  calling((void*)BFSGraph, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(17351084539009084281UL)); (BFSGraph)(argc, argv); }) ) : (({ calling_npm("BFSGraph", ____alias_loc_id_0); BFSGraph_npm(argc, argv); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 34 35 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 31 149  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 42 6 len=8 BFSGraph_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 48 2 ({ calling_npm("Usage", 0); Usage_npm(argc, argv); })
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 48 18 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 126 17 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 21, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(num_omp_threads); })))
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 126 52 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 45 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 45 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 64 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 64 13 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 69 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 69 22 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 43 6 len=8 BFSGraph_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 49 2 ({ calling_npm("Usage", 0); Usage_npm(argc, argv); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 49 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 127 17 (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({  calling((void*)omp_set_num_threads, 21, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(num_omp_threads); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 127 52 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 46 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 46 21 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 65 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 65 13 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 21 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 70 22 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 30 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 71 21 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 24 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 74 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 74 11 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 10 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 18 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 21 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 110 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 110 14 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 117 3 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 117 8 
-RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 119 2 
-RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 119 11 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 2  lbl_0: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 8  if (____must_checkpoint_BFSGraph_id_0 != 0) { register_stack_var("BFSGraph|id|0", &____must_checkpoint_BFSGraph_id_0, "i32", (void *)(&id), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 96 8  if (____chimes_replaying) { goto lbl_1; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 129 6  lbl_1: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 129 13  if (____must_checkpoint_BFSGraph_tid_0 != 0) { register_stack_var("BFSGraph|tid|0", &____must_checkpoint_BFSGraph_tid_0, "i32", (void *)(&tid), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 129 13  if (____chimes_replaying) { goto lbl_2; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 7  lbl_2: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 12  if (____must_checkpoint_BFSGraph_i_3 != 0) { register_stack_var("BFSGraph|i|3", &____must_checkpoint_BFSGraph_i_3, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 133 12  if (____chimes_replaying) { goto lbl_3; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 6  lbl_3: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 12  if (____must_checkpoint_BFSGraph_id_1 != 0) { register_stack_var("BFSGraph|id|1", &____must_checkpoint_BFSGraph_id_1, "i32", (void *)(&id), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 135 12  if (____chimes_replaying) { goto lbl_4; } 
-InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 145 8  lbl_4: 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 145 15  if (____must_checkpoint_BFSGraph_tid_1 != 0) { register_stack_var("BFSGraph|tid|1", &____must_checkpoint_BFSGraph_tid_1, "i32", (void *)(&tid), (size_t)4, 0, 0, 0); } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 145 15  if (____chimes_replaying) {  switch(get_next_call()) { case(21): { goto call_lbl_21; } default: { chimes_error(); } }  } 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 43 161  ; bool stop;
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 72 30 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 73 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 73 24 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 75 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 75 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 10 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 18 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 98 21 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 111 14 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 118 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 118 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 120 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 120 11 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 2  lbl_0: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 8  if (____must_checkpoint_BFSGraph_id_0 != 0) { register_stack_var("BFSGraph|id|0", &____must_checkpoint_BFSGraph_id_0, "i32", (void *)(&id), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 97 8  if (____chimes_replaying) { goto lbl_1; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 130 6  lbl_1: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 130 13  if (____must_checkpoint_BFSGraph_tid_0 != 0) { register_stack_var("BFSGraph|tid|0", &____must_checkpoint_BFSGraph_tid_0, "i32", (void *)(&tid), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 130 13  if (____chimes_replaying) { goto lbl_2; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 7  lbl_2: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 12  if (____must_checkpoint_BFSGraph_i_3 != 0) { register_stack_var("BFSGraph|i|3", &____must_checkpoint_BFSGraph_i_3, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 134 12  if (____chimes_replaying) { goto lbl_3; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 136 6  lbl_3: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 136 12  if (____must_checkpoint_BFSGraph_id_1 != 0) { register_stack_var("BFSGraph|id|1", &____must_checkpoint_BFSGraph_id_1, "i32", (void *)(&id), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 136 12  if (____chimes_replaying) { goto lbl_4; } 
+InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 146 8  lbl_4: 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 146 15  if (____must_checkpoint_BFSGraph_tid_1 != 0) { register_stack_var("BFSGraph|tid|1", &____must_checkpoint_BFSGraph_tid_1, "i32", (void *)(&tid), (size_t)4, 0, 0, 0); } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 146 15  if (____chimes_replaying) {  switch(get_next_call()) { case(21): { goto call_lbl_21; } default: { chimes_error(); } }  } 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 44 161  ; bool stop;
 int k;
 int *h_cost;
 int *h_graph_edges;

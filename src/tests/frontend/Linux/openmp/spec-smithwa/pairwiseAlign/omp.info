@@ -1,0 +1,1 @@
+394 399 #pragma omp parallel firstprivate(llMinScore, maxReports, matchLimit, minSeparation) private (i, j, k, r, m, n, sortReports, report, worst, index, best, goodEndsI, goodEndsJ, gapFirst, gapExtend, iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, mainSeq, matchSeq, weights, goodScores, scores, V, F, G, Vp, E, W, threadNum, myTaskID, beginTime, endTime)

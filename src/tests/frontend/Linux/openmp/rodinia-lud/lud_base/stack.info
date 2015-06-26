@@ -1,0 +1,6 @@
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c lud_base|a|0 " float* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c lud_base|size|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c lud_base|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c lud_base|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c lud_base|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c lud_base|sum|0 " float " 32 0 0 0

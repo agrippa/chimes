@@ -1,0 +1,2 @@
+105 105 #pragma omp parallel for shared(z, target_lat, target_long) private(i, rec_iter, tmp_lat, tmp_long)
+111 111 #pragma omp barrier
