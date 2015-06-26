@@ -1,0 +1,518 @@
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 26 5 len=8 gridInfo_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 6 len=10 bubbleSort_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 6 len=5 qSort_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 175 6 len=15 bubbleSort_both_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 6 len=10 qSort_both_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 277 9 len=13 pairwiseAlign_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 22 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 43 , 7066887875038564445UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 61 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 38 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 75 , 7066887875038564686UL, 1, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 62 , 7066887875038564686UL, 1, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 62 , 7066887875038564686UL, 1, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 57 , 7066887875038563892UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 64 , 7066887875038563846UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 64 , 7066887875038563914UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 34 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 73 , 7066887875038564010UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 27 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 60 , 7066887875038564348UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 25 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 58 , 7066887875038563998UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 22 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 69 , 7066887875038563340UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 22 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 69 , 7066887875038563412UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 62 , 7066887875038563437UL, 1, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 28 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 58 , 7066887875038563434UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 73 , 7066887875038563617UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 73 , 7066887875038563620UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 15 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 49 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 9 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 37 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 9 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 37 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 15 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 53 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 9 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 41 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 9 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 41 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 16 , 7066887875038563434UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 12 , 7066887875038563437UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 12 , 7066887875038563892UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 12 , 7066887875038563846UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 12 , 7066887875038563914UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 12 , 7066887875038563620UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 12 , 7066887875038563617UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 12 , 7066887875038564010UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 12 , 7066887875038564348UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 12 , 7066887875038563998UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 12 , 7066887875038563340UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 12 , 7066887875038563412UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 9 len=5 freeA_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 15 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 4 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 24 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 15 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 4 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 23 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 15 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 4 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 23 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 15 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 10 , 7066887875038564831UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 22 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 301 43 , 7066887875038564445UL, 0, 1, (int)sizeof(struct astr), 6, (int)__builtin_offsetof(struct astr, seqData), (int)__builtin_offsetof(struct astr, simMatrix), (int)__builtin_offsetof(struct astr, goodScores), (int)__builtin_offsetof(struct astr, numReports), (int)__builtin_offsetof(struct astr, goodEndsI), (int)__builtin_offsetof(struct astr, goodEndsJ)
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 339 61 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 38 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 347 75 , 7066887875038564686UL, 1, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 356 62 , 7066887875038564686UL, 1, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 364 62 , 7066887875038564686UL, 1, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 18 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 446 57 , 7066887875038563892UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 455 64 , 7066887875038563846UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 464 64 , 7066887875038563914UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 34 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 483 73 , 7066887875038564010UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 27 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 493 60 , 7066887875038564348UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 25 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 502 58 , 7066887875038563998UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 22 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 548 69 , 7066887875038563340UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 22 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 563 69 , 7066887875038563412UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 584 62 , 7066887875038563437UL, 1, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 28 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 594 58 , 7066887875038563434UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 641 73 , 7066887875038563617UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 655 73 , 7066887875038563620UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 15 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 985 49 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 9 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 995 37 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 9 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1005 37 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 15 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1049 53 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 9 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1060 41 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 9 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1070 41 , 7066887875038564686UL, 0, 0
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1107 16 , 7066887875038563434UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1109 12 , 7066887875038563437UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1110 12 , 7066887875038563892UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1111 12 , 7066887875038563846UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1112 12 , 7066887875038563914UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1113 12 , 7066887875038563620UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1114 12 , 7066887875038563617UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1115 12 , 7066887875038564010UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1116 12 , 7066887875038564348UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1117 12 , 7066887875038563998UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1119 12 , 7066887875038563340UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1120 12 , 7066887875038563412UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1136 15 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 4 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1142 24 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1146 15 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 4 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1152 23 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1156 15 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 4 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1162 23 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 7 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1166 15 , 7066887875038564686UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 5 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1169 10 , 7066887875038564831UL
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 100 5 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 104 5 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 1 const int ____chimes_did_disable0 = new_stack((void *)(&gridInfo), "gridInfo", &____must_manage_gridInfo, 4, 0, (size_t)(7066887875038562599UL), (size_t)(7066887875038562600UL), (size_t)(7066887875038562601UL), (size_t)(7066887875038562602UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 106 1 rm_stack(false, 0UL, "gridInfo", &____must_manage_gridInfo, ____alias_loc_id_2, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 46 const int ____chimes_did_disable1 = new_stack((void *)(&bubbleSort), "bubbleSort", &____must_manage_bubbleSort, 3, 0, (size_t)(7066887875038562729UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 132 1 rm_stack(false, 0UL, "bubbleSort", &____must_manage_bubbleSort, ____alias_loc_id_4, ____chimes_did_disable1); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 67 const int ____chimes_did_disable2 = new_stack((void *)(&qSort), "qSort", &____must_manage_qSort, 4, 0, (size_t)(7066887875038562646UL), (size_t)(7066887875038562647UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 159 1 rm_stack(false, 0UL, "qSort", &____must_manage_qSort, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 175 65 const int ____chimes_did_disable3 = new_stack((void *)(&bubbleSort_both), "bubbleSort_both", &____must_manage_bubbleSort_both, 4, 0, (size_t)(7066887875038562890UL), (size_t)(7066887875038562891UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 192 1 rm_stack(false, 0UL, "bubbleSort_both", &____must_manage_bubbleSort_both, ____alias_loc_id_6, ____chimes_did_disable3); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 72 const int ____chimes_did_disable4 = new_stack((void *)(&qSort_both), "qSort_both", &____must_manage_qSort_both, 4, 0, (size_t)(7066887875038562778UL), (size_t)(7066887875038562779UL), (size_t)(7066887875038562780UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 219 1 rm_stack(false, 0UL, "qSort_both", &____must_manage_qSort_both, ____alias_loc_id_5, ____chimes_did_disable4); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1125 3 rm_stack(true, 7066887875038564445UL, "pairwiseAlign", &____must_manage_pairwiseAlign, ____alias_loc_id_7, ____chimes_did_disable5); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 58 const int ____chimes_did_disable5 = new_stack((void *)(&pairwiseAlign), "pairwiseAlign", &____must_manage_pairwiseAlign, 5, 2, (size_t)(7066887875038564686UL), (size_t)(7066887875038564686UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "pairwiseAlign|maxReports|0", &____must_checkpoint_pairwiseAlign_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "pairwiseAlign|minSeparation|0", &____must_checkpoint_pairwiseAlign_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1171 3 rm_stack(true, 7066887875038564445UL, "freeA", &____must_manage_freeA, ____alias_loc_id_8, ____chimes_did_disable6); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 26 const int ____chimes_did_disable6 = new_stack((void *)(&freeA), "freeA", &____must_manage_freeA, 1, 0, (size_t)(7066887875038564831UL)); 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 2 const int ____chimes_did_disable0 = new_stack((void *)(&gridInfo), "gridInfo", &____must_manage_gridInfo, 4, 0, (size_t)(7066887875038562599UL), (size_t)(7066887875038562600UL), (size_t)(7066887875038562601UL), (size_t)(7066887875038562602UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 245 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 29 3 int i; int threadNum; int numThreads; int minPer; int per; int row; int col; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 29 54 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 47 const int ____chimes_did_disable1 = new_stack((void *)(&bubbleSort), "bubbleSort", &____must_manage_bubbleSort, 3, 0, (size_t)(7066887875038562729UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 227 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 121 3 int i; int j; int t; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 121 14 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 68 const int ____chimes_did_disable2 = new_stack((void *)(&qSort), "qSort", &____must_manage_qSort, 4, 0, (size_t)(7066887875038562646UL), (size_t)(7066887875038562647UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 266 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 147 3 int i; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 147 8 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 175 66 const int ____chimes_did_disable3 = new_stack((void *)(&bubbleSort_both), "bubbleSort_both", &____must_manage_bubbleSort_both, 4, 0, (size_t)(7066887875038562890UL), (size_t)(7066887875038562891UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 175 294 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 177 3 int i; int j; int t; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 177 14 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 178 3 long long lT; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 178 15 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 73 const int ____chimes_did_disable4 = new_stack((void *)(&qSort_both), "qSort_both", &____must_manage_qSort_both, 4, 0, (size_t)(7066887875038562778UL), (size_t)(7066887875038562779UL), (size_t)(7066887875038562780UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 304 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 207 3 int i; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 207 8 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 59 const int ____chimes_did_disable5 = new_stack((void *)(&pairwiseAlign), "pairwiseAlign", &____must_manage_pairwiseAlign, 5, 2, (size_t)(7066887875038564686UL), (size_t)(7066887875038564686UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "pairwiseAlign|maxReports|0", &____must_checkpoint_pairwiseAlign_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "pairwiseAlign|minSeparation|0", &____must_checkpoint_pairwiseAlign_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 563 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 3 int i; int j; int k; int r; int n; int m; int sortReports; int report; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 44 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 3 int *index; int *best; int *goodEndsI; int *goodEndsJ; int gapFirst; int gapExtend; int worst; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 72 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 3 int iBeg; int iEnd; int jBeg; int jEnd; int myRow; int myCol; int npRow; int npCol; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 57 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 3 int myTaskID; int threadNum; int maxThreads; int matchLimit; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 50 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 3 unsigned char *mainSeq; unsigned char *matchSeq; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 36 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 285 3 char **weights; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 285 17 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 286 3 long long *goodScores; long long *scores; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 286 33 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 3 long long *V; long long *F; long long G; long long Vp; long long E; long long W; long long llMinScore; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 44 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 288 3  ASTR_T *A;  A = (__null) ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 288 19 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 289 3 double beginTime; double endTime; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 289 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 27 const int ____chimes_did_disable6 = new_stack((void *)(&freeA), "freeA", &____must_manage_freeA, 1, 0, (size_t)(7066887875038564831UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 162 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1132 3 int i; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1132 8 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 7  call_lbl_52: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 848 8  call_lbl_53: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 7  call_lbl_54: 
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 26 5 len=8 gridInfo_quick
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 244  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 6 len=10 bubbleSort_quick
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 226  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 6 len=5 qSort_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 158 3 ({ calling_npm("bubbleSort", 0); bubbleSort_npm(b, left, right); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 158 28 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 265  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 175 6 len=15 bubbleSort_both_quick
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 175 293  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 6 len=10 qSort_both_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 218 3 ({ calling_npm("bubbleSort_both", 0); bubbleSort_both_npm(y, a, 1, n); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 218 29 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 303  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 277 9 len=13 pairwiseAlign_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 5 ({ calling_npm("gridInfo", 0); gridInfo_npm(&npRow, &npCol, &myRow, &myCol); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 44 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 33  ({  calling((void*)getSeconds, 52, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) 
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 44 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 848 27  ({  calling((void*)abs, 53, 0, 0UL, 1, (size_t)(0UL)); (abs)(j - goodEndsJ[r]); }) 
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 848 47 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 912 8 ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 912 57 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 915 8 ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 915 45 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 31  ({  calling((void*)getSeconds, 54, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) 
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 42 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1024 4 ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1024 48 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1089 4 ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1089 48 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 8 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 10 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 15 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 17 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 22 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 24 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 29 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 45 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 60 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 62 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 72 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 13 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 15 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 24 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 26 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 40 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 42 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 56 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 58 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 70 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 72 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 85 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 87 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 96 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 11 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 13 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 21 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 23 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 31 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 33 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 41 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 43 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 52 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 15 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 17 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 30 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 25 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 27 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 50 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 285 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 285 17 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 286 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 286 24 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 286 26 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 286 43 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 15 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 17 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 29 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 31 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 42 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 44 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 56 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 58 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 69 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 71 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 82 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 84 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 104 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 288 4 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 288 13 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 289 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 289 19 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 562  ; double beginTime;
+ASTR_T *A;
+long long llMinScore;
+long long W;
+long long E;
+long long Vp;
+long long G;
+long long *F;
+long long *V;
+long long *scores;
+long long *goodScores;
+char **weights;
+unsigned char *matchSeq;
+unsigned char *mainSeq;
+int threadNum;
+int myTaskID;
+int myRow;
+int jEnd;
+int jBeg;
+int iEnd;
+int iBeg;
+int worst;
+int gapExtend;
+int gapFirst;
+int *goodEndsJ;
+int *goodEndsI;
+int *best;
+int *index;
+int report;
+int sortReports;
+int r;
+int k;
+int j;
+int i;
+ if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_W_0 || ____must_checkpoint_pairwiseAlign_E_0 || ____must_checkpoint_pairwiseAlign_Vp_0 || ____must_checkpoint_pairwiseAlign_G_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myTaskID_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_worst_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0 || ____must_checkpoint_pairwiseAlign_r_0 || ____must_checkpoint_pairwiseAlign_k_0 || ____must_checkpoint_pairwiseAlign_j_0 || ____must_checkpoint_pairwiseAlign_i_0) { register_stack_vars(34, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|W|0", &____must_checkpoint_pairwiseAlign_W_0, "i64", (void *)(&W), (size_t)8, 0, 0, 0, "pairwiseAlign|E|0", &____must_checkpoint_pairwiseAlign_E_0, "i64", (void *)(&E), (size_t)8, 0, 0, 0, "pairwiseAlign|Vp|0", &____must_checkpoint_pairwiseAlign_Vp_0, "i64", (void *)(&Vp), (size_t)8, 0, 0, 0, "pairwiseAlign|G|0", &____must_checkpoint_pairwiseAlign_G_0, "i64", (void *)(&G), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myTaskID|0", &____must_checkpoint_pairwiseAlign_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|worst|0", &____must_checkpoint_pairwiseAlign_worst_0, "i32", (void *)(&worst), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0, "pairwiseAlign|r|0", &____must_checkpoint_pairwiseAlign_r_0, "i32", (void *)(&r), (size_t)4, 0, 0, 0, "pairwiseAlign|k|0", &____must_checkpoint_pairwiseAlign_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "pairwiseAlign|j|0", &____must_checkpoint_pairwiseAlign_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "pairwiseAlign|i|0", &____must_checkpoint_pairwiseAlign_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 9 len=5 freeA_quick
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 161  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 26 5 len=8 gridInfo_resumable
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 27 244  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 6 len=10 bubbleSort_resumable
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 119 226  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 6 len=5 qSort_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 158 3 ({ calling_npm("bubbleSort", 0); bubbleSort_npm(b, left, right); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 158 28 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 145 265  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 175 6 len=15 bubbleSort_both_resumable
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 175 293  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 6 len=10 qSort_both_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 218 3 ({ calling_npm("bubbleSort_both", 0); bubbleSort_both_npm(y, a, 1, n); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 218 29 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 205 303  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 277 9 len=13 pairwiseAlign_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 5 ({ calling_npm("gridInfo", 0); gridInfo_npm(&npRow, &npCol, &myRow, &myCol); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 44 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 33  ({  calling((void*)getSeconds, 52, ____alias_loc_id_1, 0UL, 0); (getSeconds)(); }) 
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 44 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 848 27  ({  int ____chimes_arg0;  if (!____chimes_replaying) { ____chimes_arg0 = (j - goodEndsJ[r]);  }  calling((void*)abs, 53, 0, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg0); }) 
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 848 47 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 912 8 ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, sortReports); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 912 57 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 915 8 ({ calling_npm("qSort", 0); qSort_npm(best, index, worst, sortReports); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 915 45 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 31  ({  calling((void*)getSeconds, 54, ____alias_loc_id_0, 0UL, 0); (getSeconds)(); }) 
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 42 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1024 4 ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1024 48 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1089 4 ({ calling_npm("qSort_both", 0); qSort_both_npm(scores, index, goodScores, report); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1089 48 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 8 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 10 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 15 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 17 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 22 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 24 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 29 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 45 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 60 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 62 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 280 72 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 13 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 15 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 24 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 26 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 40 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 42 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 56 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 58 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 70 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 72 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 85 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 87 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 281 96 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 11 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 13 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 21 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 23 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 31 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 33 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 41 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 43 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 282 52 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 15 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 17 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 283 30 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 25 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 27 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 284 50 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 285 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 285 17 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 286 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 286 24 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 286 26 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 286 43 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 15 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 17 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 29 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 31 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 42 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 44 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 56 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 58 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 69 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 71 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 82 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 84 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 287 104 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 288 4 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 288 13 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 289 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 289 19 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 278 562  ; double beginTime;
+ASTR_T *A;
+long long llMinScore;
+long long W;
+long long E;
+long long Vp;
+long long G;
+long long *F;
+long long *V;
+long long *scores;
+long long *goodScores;
+char **weights;
+unsigned char *matchSeq;
+unsigned char *mainSeq;
+int threadNum;
+int myTaskID;
+int myRow;
+int jEnd;
+int jBeg;
+int iEnd;
+int iBeg;
+int worst;
+int gapExtend;
+int gapFirst;
+int *goodEndsJ;
+int *goodEndsI;
+int *best;
+int *index;
+int report;
+int sortReports;
+int r;
+int k;
+int j;
+int i;
+ if (____must_checkpoint_pairwiseAlign_beginTime_0 || ____must_checkpoint_pairwiseAlign_A_0 || ____must_checkpoint_pairwiseAlign_llMinScore_0 || ____must_checkpoint_pairwiseAlign_W_0 || ____must_checkpoint_pairwiseAlign_E_0 || ____must_checkpoint_pairwiseAlign_Vp_0 || ____must_checkpoint_pairwiseAlign_G_0 || ____must_checkpoint_pairwiseAlign_F_0 || ____must_checkpoint_pairwiseAlign_V_0 || ____must_checkpoint_pairwiseAlign_scores_0 || ____must_checkpoint_pairwiseAlign_goodScores_0 || ____must_checkpoint_pairwiseAlign_weights_0 || ____must_checkpoint_pairwiseAlign_matchSeq_0 || ____must_checkpoint_pairwiseAlign_mainSeq_0 || ____must_checkpoint_pairwiseAlign_threadNum_0 || ____must_checkpoint_pairwiseAlign_myTaskID_0 || ____must_checkpoint_pairwiseAlign_myRow_0 || ____must_checkpoint_pairwiseAlign_jEnd_0 || ____must_checkpoint_pairwiseAlign_jBeg_0 || ____must_checkpoint_pairwiseAlign_iEnd_0 || ____must_checkpoint_pairwiseAlign_iBeg_0 || ____must_checkpoint_pairwiseAlign_worst_0 || ____must_checkpoint_pairwiseAlign_gapExtend_0 || ____must_checkpoint_pairwiseAlign_gapFirst_0 || ____must_checkpoint_pairwiseAlign_goodEndsJ_0 || ____must_checkpoint_pairwiseAlign_goodEndsI_0 || ____must_checkpoint_pairwiseAlign_best_0 || ____must_checkpoint_pairwiseAlign_index_0 || ____must_checkpoint_pairwiseAlign_report_0 || ____must_checkpoint_pairwiseAlign_sortReports_0 || ____must_checkpoint_pairwiseAlign_r_0 || ____must_checkpoint_pairwiseAlign_k_0 || ____must_checkpoint_pairwiseAlign_j_0 || ____must_checkpoint_pairwiseAlign_i_0) { register_stack_vars(34, "pairwiseAlign|beginTime|0", &____must_checkpoint_pairwiseAlign_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "pairwiseAlign|A|0", &____must_checkpoint_pairwiseAlign_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "pairwiseAlign|llMinScore|0", &____must_checkpoint_pairwiseAlign_llMinScore_0, "i64", (void *)(&llMinScore), (size_t)8, 0, 0, 0, "pairwiseAlign|W|0", &____must_checkpoint_pairwiseAlign_W_0, "i64", (void *)(&W), (size_t)8, 0, 0, 0, "pairwiseAlign|E|0", &____must_checkpoint_pairwiseAlign_E_0, "i64", (void *)(&E), (size_t)8, 0, 0, 0, "pairwiseAlign|Vp|0", &____must_checkpoint_pairwiseAlign_Vp_0, "i64", (void *)(&Vp), (size_t)8, 0, 0, 0, "pairwiseAlign|G|0", &____must_checkpoint_pairwiseAlign_G_0, "i64", (void *)(&G), (size_t)8, 0, 0, 0, "pairwiseAlign|F|0", &____must_checkpoint_pairwiseAlign_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "pairwiseAlign|V|0", &____must_checkpoint_pairwiseAlign_V_0, "i64*", (void *)(&V), (size_t)8, 1, 0, 0, "pairwiseAlign|scores|0", &____must_checkpoint_pairwiseAlign_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "pairwiseAlign|goodScores|0", &____must_checkpoint_pairwiseAlign_goodScores_0, "i64*", (void *)(&goodScores), (size_t)8, 1, 0, 0, "pairwiseAlign|weights|0", &____must_checkpoint_pairwiseAlign_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "pairwiseAlign|matchSeq|0", &____must_checkpoint_pairwiseAlign_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|mainSeq|0", &____must_checkpoint_pairwiseAlign_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "pairwiseAlign|threadNum|0", &____must_checkpoint_pairwiseAlign_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "pairwiseAlign|myTaskID|0", &____must_checkpoint_pairwiseAlign_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0, "pairwiseAlign|myRow|0", &____must_checkpoint_pairwiseAlign_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "pairwiseAlign|jEnd|0", &____must_checkpoint_pairwiseAlign_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|jBeg|0", &____must_checkpoint_pairwiseAlign_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|iEnd|0", &____must_checkpoint_pairwiseAlign_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "pairwiseAlign|iBeg|0", &____must_checkpoint_pairwiseAlign_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "pairwiseAlign|worst|0", &____must_checkpoint_pairwiseAlign_worst_0, "i32", (void *)(&worst), (size_t)4, 0, 0, 0, "pairwiseAlign|gapExtend|0", &____must_checkpoint_pairwiseAlign_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "pairwiseAlign|gapFirst|0", &____must_checkpoint_pairwiseAlign_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "pairwiseAlign|goodEndsJ|0", &____must_checkpoint_pairwiseAlign_goodEndsJ_0, "i32*", (void *)(&goodEndsJ), (size_t)8, 1, 0, 0, "pairwiseAlign|goodEndsI|0", &____must_checkpoint_pairwiseAlign_goodEndsI_0, "i32*", (void *)(&goodEndsI), (size_t)8, 1, 0, 0, "pairwiseAlign|best|0", &____must_checkpoint_pairwiseAlign_best_0, "i32*", (void *)(&best), (size_t)8, 1, 0, 0, "pairwiseAlign|index|0", &____must_checkpoint_pairwiseAlign_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "pairwiseAlign|report|0", &____must_checkpoint_pairwiseAlign_report_0, "i32", (void *)(&report), (size_t)4, 0, 0, 0, "pairwiseAlign|sortReports|0", &____must_checkpoint_pairwiseAlign_sortReports_0, "i32", (void *)(&sortReports), (size_t)4, 0, 0, 0, "pairwiseAlign|r|0", &____must_checkpoint_pairwiseAlign_r_0, "i32", (void *)(&r), (size_t)4, 0, 0, 0, "pairwiseAlign|k|0", &____must_checkpoint_pairwiseAlign_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "pairwiseAlign|j|0", &____must_checkpoint_pairwiseAlign_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "pairwiseAlign|i|0", &____must_checkpoint_pairwiseAlign_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(52): { goto call_lbl_52; } case(53): { goto call_lbl_53; } case(54): { goto call_lbl_54; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 9 len=5 freeA_resumable
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 1130 161  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

@@ -1,0 +1,43 @@
+301 22 1954 malloc 0 1 astr seqData simMatrix goodScores numReports goodEndsI goodEndsJ
+339 31 2195 malloc
+347 38 2195 malloc 1 0
+356 31 2195 malloc 1 0
+364 31 2195 malloc 1 0
+446 18 1401 malloc
+455 31 1355 malloc
+464 31 1423 malloc
+483 34 1519 malloc
+493 27 1857 malloc
+502 25 1507 malloc
+548 22 849 malloc
+563 22 921 malloc
+584 31 946 malloc 1 0
+594 28 943 malloc
+641 29 1126 malloc
+655 29 1129 malloc
+985 15 2195 malloc
+995 9 2195 malloc
+1005 9 2195 malloc
+1049 15 2195 malloc
+1060 9 2195 malloc
+1070 9 2195 malloc
+1107 2 943 free
+1109 7 946 free
+1110 7 1401 free
+1111 7 1355 free
+1112 7 1423 free
+1113 7 1129 free
+1114 7 1126 free
+1115 7 1519 free
+1116 7 1857 free
+1117 7 1507 free
+1119 7 849 free
+1120 7 921 free
+1136 7 2195 free
+1142 4 2195 free
+1146 7 2195 free
+1152 4 2195 free
+1156 7 2195 free
+1162 4 2195 free
+1166 7 2195 free
+1169 5 2340 free

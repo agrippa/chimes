@@ -1956,7 +1956,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         bool insert_new = false;
         if (structs.find(struct_name_str) == structs.end()) {
             insert_new = true;
-            structs[struct_name_str] = new std::vector<struct_field>();
+            VERIFY(structs.insert(pair<string, vector<struct_field> *>(struct_name_str,
+                        new vector<struct_field>())).second);
         }
 
 #ifdef VERBOSE
@@ -1964,7 +1965,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
                 struct_name_str.c_str(), nfields, insert_new);
 #endif
         if (!insert_new) {
-            assert((unsigned)nfields == structs[struct_name_str]->size());
+            assert((unsigned)nfields == structs.at(struct_name_str)->size());
         }
 
         for (int j = 0; j < nfields; j++) {
@@ -1974,11 +1975,11 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
             assert(offset >= 0);
             if (insert_new) {
-                structs[struct_name_str]->push_back(struct_field(offset,
+                structs.at(struct_name_str)->push_back(struct_field(offset,
                             ty_str));
             } else {
-                assert(structs[struct_name_str]->at(j).get_offset() == offset);
-                assert(structs[struct_name_str]->at(j).get_ty() == ty_str);
+                assert(structs.at(struct_name_str)->at(j).get_offset() == offset);
+                assert(structs.at(struct_name_str)->at(j).get_ty() == ty_str);
             }
 #ifdef VERBOSE
             fprintf(stderr, " %d", offset);
