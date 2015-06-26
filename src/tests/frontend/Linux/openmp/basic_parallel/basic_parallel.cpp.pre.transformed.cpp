@@ -2318,8 +2318,9 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = n
 #pragma omp parallel firstprivate(a) private(b, c)
 # 13 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
+ { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
 # 14 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
-    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } }
+    {
 # 15 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
          int inside; inside = (6) ;
 # 16 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
@@ -2327,7 +2328,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = n
 # 17 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
          call_lbl_2: ({ calling((void*)foo, 2, ____alias_loc_id_0, 0UL, 0); (foo)(); }) ;
 # 18 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
-     thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
+    } thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
 # 19 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
 # 20 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;
@@ -2354,8 +2355,9 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_s
 #pragma omp parallel firstprivate(a) private(b, c)
 # 13 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
+ { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ;
 # 14 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
-    { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &a, &b, &c); ;
+    {
 # 15 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
          int inside; inside = (6) ;
 # 16 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
@@ -2363,7 +2365,7 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_s
 # 17 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
          call_lbl_2: ({ calling((void*)foo, 2, ____alias_loc_id_0, 0UL, 0); foo_quick(); }) ;
 # 18 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
-     thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
+    } thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
 # 19 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
 # 20 "/home/jmg3/num-debug/src/examples/openmp/./basic_parallel.cpp"
     rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;

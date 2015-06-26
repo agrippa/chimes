@@ -1,0 +1,4 @@
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 26 3 : {  } {  } call:bpnn_free { bpnn_free { 10 } }
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 25 3 : {  } {  } call:bpnn_train_kernel { bpnn_train_kernel { 3, 4, 10 } }
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 22 3 : { 1 } {  } call:load { load { 10 } }
+/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 20 9 : {  } {  } call:bpnn_create { bpnn_create { 10 } }

@@ -1,0 +1,24 @@
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|timeinst|0 " float " 32 0 0 1 cam ecc fin omp_get_max_threads
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|initvalu|0 " float* " 64 1 0 1 cam ecc fin omp_get_max_threads
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|parameter|0 " float* " 64 1 0 1 cam ecc fin omp_get_max_threads
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|finavalu|0 " float* " 64 1 0 1 cam ecc fin omp_get_max_threads
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|mode|0 " i32 " 32 0 0 1 cam ecc fin omp_get_max_threads
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|i|0 " i32 " 32 0 0 1 cam ecc fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|JCaDyad|0 " float " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|JCaSL|0 " float " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|JCaCyt|0 " float " 32 0 0 1 fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|initvalu_offset_ecc|0 " i32 " 32 0 0 1 cam ecc fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|parameter_offset_ecc|0 " i32 " 32 0 0 1 cam ecc fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|initvalu_offset_Dyad|0 " i32 " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|parameter_offset_Dyad|0 " i32 " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|initvalu_offset_SL|0 " i32 " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|parameter_offset_SL|0 " i32 " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|initvalu_offset_Cyt|0 " i32 " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|parameter_offset_Cyt|0 " i32 " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|CaDyad|0 " float " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|CaSL|0 " float " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|CaCyt|0 " float " 32 0 0 1 cam fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|th_id|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|nthreads|0 " i32 " 32 0 0 1 cam ecc fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|th_count|0 " [4 x i32] " 128 0 0 1 cam ecc fin
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c master|temp|0 " i32 " 32 0 0 1 cam ecc fin

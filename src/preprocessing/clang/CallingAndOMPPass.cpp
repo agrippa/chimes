@@ -47,6 +47,7 @@ CallingAndOMPPass::CallingAndOMPPass(bool set_gen_quick) :
     supported_parallel_clauses.insert("private");
     supported_parallel_clauses.insert("firstprivate");
     supported_parallel_clauses.insert("reduction"); // no explicit support required
+    supported_parallel_clauses.insert("num_threads");
     /*
      * We don't actually support checkpointing inside parallel for loops, but we
      * allow them to exist as long as checkpoint() isn't called inside.
@@ -54,18 +55,41 @@ CallingAndOMPPass::CallingAndOMPPass(bool set_gen_quick) :
     supported_parallel_clauses.insert("for");
     // doesn't seem like anything special needs to be done to support this
     supported_parallel_clauses.insert("shared");
+    supported_parallel_clauses.insert("schedule");
     supported_omp_clauses.insert(pair<string, set<string> >("parallel",
                 supported_parallel_clauses));
 
     std::set<std::string> supported_for_clauses;
     supported_for_clauses.insert("firstprivate");
+    supported_for_clauses.insert("private");
+    supported_for_clauses.insert("reduction");
+    supported_for_clauses.insert("schedule");
     supported_omp_clauses.insert(pair<string, set<string> >("for",
                 supported_for_clauses));
+
+    std::set<std::string> supported_task_clauses;
+    supported_task_clauses.insert("firstprivate");
+    supported_task_clauses.insert("private");
+    supported_task_clauses.insert("shared");
+    supported_task_clauses.insert("untied");
+    supported_omp_clauses.insert(pair<string, set<string> >("task",
+                supported_task_clauses));
+
+    std::set<std::string> supported_single_clauses;
+    supported_single_clauses.insert("nowait");
+    supported_omp_clauses.insert(pair<string, set<string> >("single",
+                supported_single_clauses));
 
     supported_omp_pragmas.insert("parallel");
     supported_omp_pragmas.insert("for");
     supported_omp_pragmas.insert("critical");
     supported_omp_pragmas.insert("barrier");
+    supported_omp_pragmas.insert("task");
+    supported_omp_pragmas.insert("single");
+    // don't need to do anything, but we also don't support checkpoints inside task
+    supported_omp_pragmas.insert("taskwait");
+    // don't need to do anything
+    supported_omp_pragmas.insert("flush");
 }
 
 std::string CallingAndOMPPass::get_unique_argument_varname() {
@@ -388,6 +412,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             toInsertAt = for_stmt->getBody()->getLocStart();
         } else {
             toInsertAt = region->get_start();
+            toInsertAt = adjustInnerOMPLoc(toInsertAt, region->get_last_line());
         }
     }
 
@@ -531,20 +556,25 @@ bool CallingAndOMPPass::is_inside_while_cond(const clang::Stmt *stmt) {
 }
 
 void CallingAndOMPPass::verify_supported_clauses(std::string pragma_name,
-        map<string, vector<string> > *clauses) {
+        map<string, vector<string> > *clauses, int line) {
     set<string> supported;
     if (supported_omp_clauses.find(pragma_name) !=
             supported_omp_clauses.end()) {
-        supported = supported_omp_clauses[pragma_name];
+        supported = supported_omp_clauses.at(pragma_name);
     }
 
+    bool success = true;
     for(map<string, vector<string> >::iterator clause_i = clauses->begin(),
             clause_e = clauses->end(); clause_i != clause_e; clause_i++) {
         if (supported.find(clause_i->first) == supported.end()) {
             llvm::errs() << "Unsupported OMP clause \"" << clause_i->first <<
-                "\" for pragma \"" << pragma_name << "\"\n";
-            assert(false);
+                "\" for pragma \"" << pragma_name << "\" on line " << line << "\n";
+            success = false;
         }
+    }
+
+    if (!success) {
+        assert(false);
     }
 }
 
@@ -616,7 +646,7 @@ std::string CallingAndOMPPass::get_region_setup_code(
     // Call label to jump to when resuming inside this parallel region
     entering_ss << "; " << " { call_lbl_" << region->get_lbl() << ": ";
     if (is_parallel_for) {
-        entering_ss << " bool " + disable_varname +
+        entering_ss << " ; bool " + disable_varname +
             " = disable_current_thread(); ";
     }
     entering_ss << "void *" << parent_ctx_varname << " = get_thread_ctx(); ";
@@ -647,18 +677,19 @@ std::string CallingAndOMPPass::get_region_setup_code(
 }
 
 std::string CallingAndOMPPass::get_region_interior_code(bool is_parallel_for,
-        std::string blocker_varname, std::string parent_thread_varname, std::string parent_ctx_varname,
-        std::string stack_depth_varname, std::string region_id_varname,
-        std::set<std::string> private_vars) {
+        std::string blocker_varname, std::string parent_thread_varname,
+        std::string parent_ctx_varname, std::string stack_depth_varname,
+        std::string region_id_varname, std::set<std::string> private_vars) {
     std::stringstream register_ss;
+    register_ss << " { ";
     if (is_parallel_for) {
         register_ss << "if (" << blocker_varname << ") {";
     }
     register_ss << " " <<
         "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
-        parent_thread_varname << ", " << parent_ctx_varname << ", LIBCHIMES_NUM_THREADS(), " <<
-        stack_depth_varname << ", " << region_id_varname << ", " <<
-        private_vars.size();
+        parent_thread_varname << ", " << parent_ctx_varname <<
+        ", LIBCHIMES_NUM_THREADS(), " << stack_depth_varname << ", " <<
+        region_id_varname << ", " << private_vars.size();
     for (std::set<std::string>::iterator varsi = private_vars.begin(),
             varse = private_vars.end(); varsi != varse; varsi++) {
         register_ss << ", &" << *varsi;
@@ -971,6 +1002,15 @@ void CallingAndOMPPass::addStaticMerge(AliasesPassedToCallSite callsite,
     }
 }
 
+clang::SourceLocation CallingAndOMPPass::adjustInnerOMPLoc(
+        clang::SourceLocation loc, int target_line) {
+    while (SM->getPresumedLoc(loc).getLine() >= target_line) {
+        loc = loc.getLocWithOffset(-1);
+    }
+    loc = loc.getLocWithOffset(1);
+    return loc;
+}
+
 void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
     if (new_stack_calls.find(curr_func_decl) == new_stack_calls.end()) {
@@ -1060,6 +1100,10 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         bool is_parallel = (pragma_name == "parallel");
         bool is_for = (pragma_name == "for");
         bool is_critical = (pragma_name == "critical");
+        bool is_task = (pragma_name == "task");
+        bool is_single = (pragma_name == "single");
+        bool is_taskwait = (pragma_name == "taskwait");
+        bool is_flush = (pragma_name == "flush");
         if (supported_omp_pragmas.find(pragma_name) == supported_omp_pragmas.end()) {
             llvm::errs() << "Unexpected pragma name " << pragma_name << "\n";
             assert(false);
@@ -1068,7 +1112,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         OMPRegion *region = ompTree->find_region_for_line(pragma.get_line());
         if (!region) continue;
 
-        verify_supported_clauses(pragma_name, &clauses);
+        verify_supported_clauses(pragma_name, &clauses, pragma.get_line());
 
         bool is_parallel_for = region->is_parallel_for();
         bool is_omp_for = region->is_omp_for();
@@ -1100,7 +1144,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             pre_loc = pre->getLocEnd();
         }
 
-        const clang::Stmt *post = successors[pragma.get_line()];
+        const clang::Stmt *post = successors.at(pragma.get_line());
         clang::SourceLocation post_loc = post->getLocEnd();
         clang::SourceLocation inner_loc = post->getLocStart();
         if (is_parallel_for || is_omp_for) {
@@ -1108,6 +1152,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     post);
             assert(for_stmt);
             inner_loc = for_stmt->getBody()->getLocStart();
+        } else {
+            inner_loc = adjustInnerOMPLoc(inner_loc, region->get_last_line());
         }
 
         if (is_parallel) {
@@ -1140,30 +1186,46 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     stack_depth_varname, region_id_varname, private_vars);
             InsertTextAfterToken(inner_loc, interior);
 
-            if (!is_parallel_for) {
-                InsertTextBefore(post_loc, " thread_leaving(); ");
-            }
             std::string leaving = get_region_cleanup_code(is_parallel_for,
                     disable_varname, call_depth_varname, region_id_varname);
-            InsertTextAfterToken(post_loc, leaving);
+            if (!is_parallel_for) {
+                InsertTextAfterToken(post_loc, " thread_leaving(); } " + leaving);
+            } else {
+                InsertTextAfterToken(post_loc, " } " + leaving);
+            }
 
         } else if (is_critical || is_for) {
             // Disable any threads inside
             std::string disable_varname = get_unique_disable_varname();
-            std::string pre = "; bool " + disable_varname + "; " +
+            std::string pre = " ; { bool " + disable_varname + "; " +
                 disable_varname + " = disable_current_thread(); ";
             std::string post = " reenable_current_thread(" + disable_varname +
-                "); ";
+                "); } ";
 
             assert(new_stack_calls.find(curr_func_decl) !=
                     new_stack_calls.end());
-            if (new_stack_calls[curr_func_decl]->getLocEnd() == pre_loc) {
+            if (new_stack_calls.at(curr_func_decl)->getLocEnd() == pre_loc) {
                 insert_at_front = pre;
             } else {
                 InsertTextAfterToken(pre_loc, pre);
             }
 
             InsertTextAfterToken(post_loc, post);
+        } else if (is_task || is_single) {
+            std::string disable_varname = get_unique_disable_varname();
+            std::string pre = " ; { bool " + disable_varname + "; " +
+                disable_varname + " = disable_current_thread(); ";
+            std::string post = " reenable_current_thread(" + disable_varname +
+                "); } ";
+
+            const clang::Stmt *body = successors.at(pragma.get_line());
+            clang::SourceLocation inner_loc = body->getLocStart();
+            inner_loc = adjustInnerOMPLoc(inner_loc, region->get_last_line());
+
+            InsertTextAfterToken(inner_loc, pre);
+
+            InsertTextAfterToken(body->getLocEnd(), post);
+        } else if (is_taskwait || is_flush) {
         } else {
             assert(false);
         }

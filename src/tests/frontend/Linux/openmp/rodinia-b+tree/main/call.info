@@ -1,0 +1,372 @@
+list_item_delete list_delete 170 5 0 1326 1326
+anon list_item_delete 536 5 0 83
+free list_item_delete 539 3 0 90
+list_delete list_reset 180 3 0 98
+list_item_get_datum list_insert_item_sorted 264 39 346 1326
+list_item_get_datum list_insert_item_sorted 264 97 350 1326
+anon list_insert_item_sorted 264 150 0 346 350
+malloc list_insert_head 291 50 1326 0
+fprintf list_insert_head 291 74 0 2630 6530 6531 0
+exit list_insert_head 291 179 0 0
+list_item_init list_insert_head 292 3 0 1326 526
+malloc list_insert_tail 312 50 1326 0
+fprintf list_insert_tail 312 74 0 2630 6530 6531 0
+exit list_insert_tail 312 179 0 0
+list_item_init list_insert_tail 313 3 0 1326 623
+malloc list_insert_before 333 50 1326 0
+fprintf list_insert_before 333 74 0 2630 6530 6531 0
+exit list_insert_before 333 179 0 0
+list_item_init list_insert_before 334 3 0 1326 705
+malloc list_insert_after 359 50 1326 0
+fprintf list_insert_after 359 74 0 2630 6530 6531 0
+exit list_insert_after 359 179 0 0
+list_item_init list_insert_after 360 3 0 1326 787
+malloc list_insert_sorted 385 50 1326 0
+fprintf list_insert_sorted 385 74 0 2630 6530 6531 0
+exit list_insert_sorted 385 179 0 0
+list_item_init list_insert_sorted 386 3 0 1326 922
+list_item_get_datum list_insert_sorted 390 39 826 1326
+list_item_get_datum list_insert_sorted 390 97 830 1326
+anon list_insert_sorted 390 150 0 826 830
+list_item_delete list_remove_item 430 3 0 1009 1326
+list_remove_item list_remove_head 436 3 0 1019 1016
+list_remove_item list_remove_tail 442 3 0 1029 1026
+list_item_get_datum list_find_item 451 37 1041 1040
+anon list_find_item 451 87 0 1070 1041
+list_item_get_datum list_find 476 37 1098 5627
+anon list_find 476 87 0 1135 1098
+list_item_get_datum list_visit_items 519 77 1217 1209
+anon list_visit_items 519 102 0 1217
+printf kmalloc 639 3 0 6532
+exit kmalloc 640 3 0 0
+gettimeofday transform_to_cuda 653 2 0 1426 6630
+log transform_to_cuda 654 36 0 0
+log transform_to_cuda 654 46 0 0
+pow transform_to_cuda 654 26 0 0 0
+malloc transform_to_cuda 656 43 5938 0
+fprintf transform_to_cuda 656 67 0 2630 6530 6531 0
+exit transform_to_cuda 656 172 0 0
+printf transform_to_cuda 658 3 0 6533
+exit transform_to_cuda 659 3 0 0
+kmalloc transform_to_cuda 663 24 1814 0
+kmalloc transform_to_cuda 665 20 1583 0
+enqueue transform_to_cuda 669 2 0 1864
+dequeue transform_to_cuda 679 7 1617
+enqueue transform_to_cuda 695 5 0 1635
+enqueue transform_to_cuda 703 4 0 1635
+printf transform_to_cuda 723 4 0 6534 0
+printf transform_to_cuda 724 4 0 6535 0 0
+printf transform_to_cuda 725 4 0 6536
+printf transform_to_cuda 726 36 0 6537 0
+printf transform_to_cuda 728 4 0 6538
+printf transform_to_cuda 729 36 0 6537 0
+printf transform_to_cuda 731 4 0 6539
+printf transform_to_cuda 736 32 0 6540 0
+printf transform_to_cuda 738 3 0 6541 0 0 0
+printf transform_to_cuda 739 3 0 6542 0 0 0
+printf transform_to_cuda 740 3 0 6543 0
+gettimeofday transform_to_cuda 742 2 0 1427 6630
+printf transform_to_cuda 746 2 0 6530 0
+find_leaf findRange 760 13 1942 2036 0 0
+malloc findRange 764 59 6634 0
+fprintf findRange 764 86 0 2630 6530 6531 0
+exit findRange 764 191 0 0
+list_init findRange 765 2 0 6634 6632 6633
+printf find_leaf 959 17 0 6565
+printf find_leaf 965 4 0 6567
+printf find_leaf 966 44 0 6540 0
+printf find_leaf 968 4 0 6568 0
+printf find_leaf 977 17 0 6573 0
+printf find_leaf 982 3 0 6573
+printf find_leaf 983 43 0 6540 0
+printf find_leaf 985 3 0 6538 0
+printf usage_1 791 2 0 6533 0
+printf usage_1 792 2 0 6546 6540
+printf usage_1 793 2 0 6548
+printf usage_1 794 2 0 6549
+printf usage_1 795 2 0 6550
+printf usage_1 796 2 0 6532
+printf usage_1 797 2 0 6552
+printf usage_1 798 2 0 6553
+printf usage_2 807 2 0 6554
+printf usage_2 808 2 0 6555
+printf usage_2 809 2 0 6534
+printf usage_2 810 2 0 6557
+printf usage_2 811 2 0 6558
+printf usage_2 812 2 0 6559
+printf usage_2 813 2 0 6560
+printf usage_2 814 2 0 6561
+printf usage_2 815 2 0 6549
+printf usage_2 816 2 0 6530
+printf usage_2 817 2 0 6564
+printf print_leaves 856 3 0 6565
+printf print_leaves 863 25 0 6540 0
+printf print_leaves 870 4 0 6540
+printf print_leaves 876 2 0 6567
+printf print_tree 916 3 0 6565
+enqueue print_tree 920 2 0 2523
+dequeue print_tree 922 7 5627
+path_to_root print_tree 924 15 0 2523 5627
+printf print_tree 927 5 0 6567
+printf print_tree 930 24 0 6568 5627
+printf print_tree 933 25 0 6540 5627
+printf print_tree 935 4 0 6540 0
+enqueue print_tree 937 58 0 5627
+printf print_tree 941 21 0 6540 5627
+printf print_tree 941 69 0 6540 5627
+printf print_tree 946 3 0 6539
+printf print_tree 948 2 0 6567
+find_leaf find 997 13 2544 2595 0 0
+malloc make_record 1028 62 2646 0
+fprintf make_record 1028 89 0 2630 6530 6531 0
+exit make_record 1028 195 0 0
+perror make_record 1030 3 0 6532
+exit make_record 1031 3 0 0
+malloc make_node 1044 50 2663 0
+fprintf make_node 1044 75 0 2630 6530 6531 0
+exit make_node 1044 181 0 0
+perror make_node 1046 3 0 6577
+exit make_node 1047 3 0 0
+malloc make_node 1049 55 5627 0
+fprintf make_node 1049 93 0 2630 6530 6531 0
+exit make_node 1049 199 0 0
+perror make_node 1051 3 0 6578
+exit make_node 1052 3 0 0
+malloc make_node 1054 61 5627 0
+fprintf make_node 1054 96 0 2630 6530 6531 0
+exit make_node 1054 202 0 0
+perror make_node 1056 3 0 6579
+exit make_node 1057 3 0 0
+make_node make_leaf 1070 15 2753
+make_leaf insert_into_leaf_after_splitting 1121 13 5627
+malloc insert_into_leaf_after_splitting 1123 50 3097 0
+fprintf insert_into_leaf_after_splitting 1123 82 0 2630 6530 6531 0
+exit insert_into_leaf_after_splitting 1123 188 0 0
+perror insert_into_leaf_after_splitting 1125 3 0 6533
+exit insert_into_leaf_after_splitting 1126 3 0 0
+malloc insert_into_leaf_after_splitting 1129 56 3085 0
+fprintf insert_into_leaf_after_splitting 1129 91 0 2630 6530 6531 0
+exit insert_into_leaf_after_splitting 1129 197 0 0
+perror insert_into_leaf_after_splitting 1131 3 0 6560
+exit insert_into_leaf_after_splitting 1132 3 0 0
+cut insert_into_leaf_after_splitting 1150 10 0 0
+free insert_into_leaf_after_splitting 1164 2 0 3085
+free insert_into_leaf_after_splitting 1165 2 0 3097
+insert_into_parent insert_into_leaf_after_splitting 1178 9 3254 3256 3257 0 5627
+insert_into_new_root insert_into_parent 1300 32 3314 3320 0 3322
+get_left_index insert_into_parent 1311 15 0 3279 3320
+insert_into_node insert_into_parent 1317 44 3314 3319 3279 0 0 3322
+insert_into_node_after_splitting insert_into_parent 1324 9 3314 3319 3279 0 0 3322
+malloc insert_into_node_after_splitting 1225 56 3603 0
+fprintf insert_into_node_after_splitting 1225 97 0 2630 6530 6531 0
+exit insert_into_node_after_splitting 1225 203 0 0
+perror insert_into_node_after_splitting 1227 3 0 6582
+exit insert_into_node_after_splitting 1228 3 0 0
+malloc insert_into_node_after_splitting 1230 50 3616 0
+fprintf insert_into_node_after_splitting 1230 82 0 2630 6530 6531 0
+exit insert_into_node_after_splitting 1230 188 0 0
+perror insert_into_node_after_splitting 1232 3 0 6534
+exit insert_into_node_after_splitting 1233 3 0 0
+cut insert_into_node_after_splitting 1253 10 0 0
+make_node insert_into_node_after_splitting 1254 13 3738
+free insert_into_node_after_splitting 1269 2 0 3603
+free insert_into_node_after_splitting 1270 2 0 3616
+insert_into_parent insert_into_node_after_splitting 1282 9 3758 3760 3761 0 3738
+make_node insert_into_new_root 1334 16 5627
+make_leaf start_new_tree 1351 16 3827
+find insert 1371 6 3878 3918 0 0
+make_record insert 1375 12 3885 0
+start_new_tree insert 1378 30 3918 0 3885
+find_leaf insert 1382 9 3915 3918 0 0
+insert_into_leaf insert 1386 10 3915 3915 0 3885
+insert_into_leaf_after_splitting insert 1391 9 3918 3918 3915 0 3885
+printf get_neighbor_index 1416 2 0 6542
+exit get_neighbor_index 1418 2 0 0
+free adjust_root 1495 2 0 5627
+free adjust_root 1496 2 0 5627
+free adjust_root 1497 2 0 5627
+cut coalesce_nodes 1572 12 0 0
+delete_entry coalesce_nodes 1627 10 4598 4598 4574 0 4574
+free coalesce_nodes 1628 3 0 4574
+free coalesce_nodes 1629 3 0 4574
+free coalesce_nodes 1630 3 0 4574
+remove_entry_from_node delete_entry 1737 6 4657 4657 0 4756
+adjust_root delete_entry 1742 25 4748 4748
+cut delete_entry 1754 26 0 0
+cut delete_entry 1754 43 0 0
+get_neighbor_index delete_entry 1775 19 0 4657
+coalesce_nodes delete_entry 1785 59 4748 4748 4657 4696 0 0
+redistribute_nodes delete_entry 1785 135 4748 4748 4657 4696 0 0 0
+find deleteVal 1803 15 5170 5195 0 0
+find_leaf deleteVal 1804 13 5174 5195 0 0
+free deleteVal 1806 3 0 5170
+delete_entry deleteVal 1807 10 5195 5195 5174 0 5170
+free destroy_tree_nodes 1817 61 0 5221
+destroy_tree_nodes destroy_tree_nodes 1817 141 0 5221
+free destroy_tree_nodes 1823 2 0 5219
+free destroy_tree_nodes 1824 2 0 5219
+free destroy_tree_nodes 1825 2 0 5267
+destroy_tree_nodes destroy_tree 1832 2 0 5274
+strcmp main 1859 8 0 5627 6537
+isInteger main 1863 11 0 5627
+atoi main 1864 15 0 5627
+printf main 1866 5 0 6541
+printf main 1873 3 0 6588
+strcmp main 1877 18 0 5627 6568
+printf main 1888 8 0 6590
+strcmp main 1891 17 0 5627 6538
+printf main 1901 8 0 6592
+printf main 1907 55 0 6541
+printf main 1911 4 0 6532 5627
+printf main 1912 4 0 6595 5627
+fopen main 1919 20 5499 5627 6539
+fprintf main 1920 32 0 2630 6595 2630
+exit main 1920 79 0 0
+fseek main 1923 6 0 5499 0 0
+ftell main 1924 14 0 5499
+rewind main 1925 6 0 5499
+malloc main 1928 58 5642 0
+fprintf main 1928 89 0 2630 6530 6531 0
+exit main 1928 195 0 0
+fprintf main 1929 36 0 2630 6598 2630
+exit main 1929 92 0 0
+fread main 1932 15 0 5642 0 0 5499
+fprintf main 1933 28 0 2630 6535 2630
+exit main 1933 83 0 0
+fclose main 1938 6 0 5499
+printf main 1942 6 0 6600
+printf main 1943 6 0 6539 5642
+fopen main 1947 14 5969 6536 6539
+fprintf main 1949 8 0 2630 6595 6536
+exit main 1950 8 0 0
+fprintf main 1952 6 0 5969 6533
+fclose main 1953 6 0 5969
+printf main 1978 3 0 6605 5627
+fopen main 1981 18 5600 5627 6567
+perror main 1983 4 0 6598
+exit main 1984 4 0 0
+fscanf main 1988 3 0 5600 6540 5294
+feof main 1992 11 0 5600
+fscanf main 1993 4 0 5600 6540 5294
+insert main 1994 11 5627 5627 0 0
+fclose main 1998 3 0 5600
+printf main 2004 3 0 6605
+printf main 2012 2 0 6610
+transform_to_cuda main 2013 18 0 5627 0
+height main 2014 14 0 5627
+printf main 2022 2 0 6578
+printf main 2023 2 0 6539
+sscanf main 2024 9 0 5642 6539 5295
+scanf main 2033 5 0 6539 5294
+getchar main 2034 12 0
+insert main 2035 12 5627 5627 0 0
+print_tree main 2036 5 0 5627
+scanf main 2054 5 0 6539 5294
+getchar main 2055 12 0
+find main 2056 9 5691 5627 0 0
+printf main 2057 23 0 6564 0
+printf main 2057 83 0 6600 0
+scanf main 2070 5 0 6539 5294
+getchar main 2071 12 0
+deleteVal main 2072 21 5627 5627 0
+print_tree main 2073 5 0 5627
+getchar main 2083 12 0
+destroy_tree main 2084 12 5627 5627
+print_tree main 2085 5 0 5627
+getchar main 2095 12 0
+print_leaves main 2096 5 0 5627
+getchar main 2106 12 0
+print_tree main 2107 5 0 5627
+getchar main 2117 12 0
+getchar main 2128 12 0
+sscanf main 2141 5 0 5642 6539 5299
+printf main 2145 5 0 6617 0
+printf main 2148 6 0 6618
+exit main 2149 6 0 0
+malloc main 2166 53 5944 0
+fprintf main 2166 84 0 2630 6530 6531 0
+exit main 2166 190 0 0
+memset main 2168 5 0 5944 0 0
+malloc main 2172 50 5945 0
+fprintf main 2172 81 0 2630 6530 6531 0
+exit main 2172 187 0 0
+memset main 2174 5 0 5945 0 0
+malloc main 2178 47 5894 0
+fprintf main 2178 77 0 2630 6530 6531 0
+exit main 2178 183 0 0
+rand main 2182 17 0
+malloc main 2186 57 5928 0
+fprintf main 2186 90 0 2630 6530 6531 0
+exit main 2186 196 0 0
+kernel_cpu main 2193 5 0 0 5938 5939 0 0 0 0 5944 5945 5894 5928
+fopen main 2218 13 5969 6536 6540
+fprintf main 2221 9 0 2630 6595 6536
+exit main 2222 21 0 0
+fprintf main 2225 5 0 5969 6617 0
+fprintf main 2227 7 0 5969 6620 0 0
+fprintf main 2229 5 0 5969 6539
+fclose main 2230 33 0 5969
+free main 2233 5 0 5944
+free main 2234 5 0 5945
+free main 2235 5 0 5894
+free main 2236 5 0 5928
+scanf main 2250 5 0 6539 5319
+scanf main 2251 5 0 6539 5320
+printf main 2257 5 0 6578 0 0
+findRange main 2259 15 6022 5627 0 0
+list_get_length main 2260 41 0 6022
+printf main 2260 67 0 6600 0
+free main 2262 5 0 6022
+sscanf main 2275 5 0 5642 6539 5323
+sscanf main 2280 5 0 5642 6539 5324
+printf main 2284 5 0 6624 0 0
+printf main 2287 6 0 6625 0
+exit main 2288 6 0 0
+malloc main 2299 53 6378 0
+fprintf main 2299 84 0 2630 6530 6531 0
+exit main 2299 190 0 0
+memset main 2301 5 0 6378 0 0
+malloc main 2305 50 6379 0
+fprintf main 2305 81 0 2630 6530 6531 0
+exit main 2305 187 0 0
+memset main 2307 5 0 6379 0 0
+malloc main 2311 53 6380 0
+fprintf main 2311 84 0 2630 6530 6531 0
+exit main 2311 190 0 0
+memset main 2313 5 0 6380 0 0
+malloc main 2317 52 6381 0
+fprintf main 2317 83 0 2630 6530 6531 0
+exit main 2317 189 0 0
+memset main 2319 5 0 6381 0 0
+malloc main 2323 48 6256 0
+fprintf main 2323 78 0 2630 6530 6531 0
+exit main 2323 184 0 0
+malloc main 2325 46 6268 0
+fprintf main 2325 76 0 2630 6530 6531 0
+exit main 2325 182 0 0
+rand main 2329 18 0
+malloc main 2339 51 6359 0
+fprintf main 2339 81 0 2630 6530 6531 0
+exit main 2339 187 0 0
+malloc main 2341 52 6364 0
+fprintf main 2341 82 0 2630 6530 6531 0
+exit main 2341 188 0 0
+kernel_cpu_2 main 2349 5 0 0 6373 0 0 0 0 6378 6379 6380 6381 6256 6268 6359 6364
+fopen main 2375 13 5969 6536 6540
+fprintf main 2378 9 0 2630 6595 6536
+exit main 2379 21 0 0
+fprintf main 2382 5 0 5969 6624 0 0
+fprintf main 2384 7 0 5969 6626 0 0 0
+fprintf main 2386 5 0 5969 6539
+fclose main 2387 33 0 5969
+free main 2390 5 0 6378
+free main 2391 5 0 6379
+free main 2392 5 0 6380
+free main 2393 5 0 6381
+free main 2394 5 0 6256
+free main 2395 5 0 6268
+free main 2396 5 0 6359
+free main 2397 5 0 6364
+printf main 2417 3 0 6539
+printf main 2420 2 0 6567
+free main 2426 2 0 5938

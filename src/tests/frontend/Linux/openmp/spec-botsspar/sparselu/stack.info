@@ -1,0 +1,63 @@
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c checkmat|M|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c checkmat|N|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c checkmat|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c checkmat|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c checkmat|r_err|0 " float " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c genmat|M|0 " float** " 64 1 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c genmat|null_entry|0 " i32 " 32 0 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c genmat|init_val|0 " i32 " 32 0 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c genmat|i|0 " i32 " 32 0 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c genmat|j|0 " i32 " 32 0 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c genmat|ii|0 " i32 " 32 0 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c genmat|jj|0 " i32 " 32 0 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c genmat|p|0 " float* " 64 1 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c genmat|prow|0 " float* " 64 1 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c genmat|rowsum|0 " float " 32 0 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c print_structure|name|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c print_structure|M|0 " float** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c print_structure|ii|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c print_structure|jj|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c allocate_clean_block|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c allocate_clean_block|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c allocate_clean_block|p|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c allocate_clean_block|q|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c lu0|diag|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c lu0|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c lu0|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c lu0|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bdiv|diag|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bdiv|row|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bdiv|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bdiv|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bdiv|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bmod|row|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bmod|col|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bmod|inner|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bmod|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bmod|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c bmod|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c fwd|diag|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c fwd|col|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c fwd|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c fwd|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c fwd|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_init|pBENCH|0 " float*** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_init|pass|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|BENCH|0 " float** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|ii|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|jj|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|kk|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_seq_call|BENCH|0 " float** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_seq_call|ii|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_seq_call|jj|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_seq_call|kk|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_fini|BENCH|0 " float** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_fini|pass|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_check|SEQ|0 " float** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_check|BENCH|0 " float** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_check|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_check|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_check|ok|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c checkmat1|N|0 " float* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c checkmat1|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c checkmat1|j|0 " i32 " 32 0 0 0

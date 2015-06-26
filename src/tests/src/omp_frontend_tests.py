@@ -7,6 +7,7 @@ import sys
 from common import run_frontend_test, parse_argv, \
                    CHIMES_HOME, construct_simple_frontend_test, find_file, \
                    get_platform_directory, FrontendTest
+from shared_frontend_tests import ALL_RODINIA_TESTS, ALL_SPEC_TESTS
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 OMP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/openmp'
@@ -58,6 +59,14 @@ TESTS.append(ISO3D)
 TESTS.append(SMITH_WATERMAN_OMP)
 TESTS.append(UTS_OMP)
 TESTS.append(RAY_TRACER_OMP)
+
+for t in ALL_RODINIA_TESTS:
+    t.extra_cli_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+TESTS.extend(ALL_RODINIA_TESTS)
+
+for t in ALL_SPEC_TESTS:
+    t.extra_cli_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+TESTS.extend(ALL_SPEC_TESTS)
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)

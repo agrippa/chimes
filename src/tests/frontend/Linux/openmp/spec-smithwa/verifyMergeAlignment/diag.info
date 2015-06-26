@@ -1,0 +1,15 @@
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 35 6 len=20 verifyMergeAlignment_npm
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 35 78 const int ____chimes_did_disable0 = new_stack((void *)(&verifyMergeAlignment), "verifyMergeAlignment", &____must_manage_verifyMergeAlignment, 3, 0, (size_t)(4537958249174287476UL), (size_t)(4537958249174287477UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 175 1 rm_stack(false, 0UL, "verifyMergeAlignment", &____must_manage_verifyMergeAlignment, ____alias_loc_id_0, ____chimes_did_disable0); 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 35 79 const int ____chimes_did_disable0 = new_stack((void *)(&verifyMergeAlignment), "verifyMergeAlignment", &____must_manage_verifyMergeAlignment, 3, 0, (size_t)(4537958249174287476UL), (size_t)(4537958249174287477UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 35 307 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 37 3 int c; int r; int numReports; int displayReports; int mainMatch; int matchMatch; int myTaskID; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 37 72 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 38 3 char *main; char *match; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 38 21 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 39 3 long long score; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 39 18 
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 35 6 len=20 verifyMergeAlignment_quick
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 35 306  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 35 6 len=20 verifyMergeAlignment_resumable
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyMergeAlignment.c 35 306  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

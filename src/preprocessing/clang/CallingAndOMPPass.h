@@ -142,7 +142,7 @@ private:
             std::string *transition_str_ptr, bool has_callbacks);
     void VisitRegion(OMPRegion *region);
     void verify_supported_clauses(std::string pragma_name,
-            std::map<std::string, std::vector<std::string> > *clauses);
+            std::map<std::string, std::vector<std::string> > *clauses, int line);
     std::string generateNPMCall(CallLocation loc,
             AliasesPassedToCallSite callsite, const CallExpr *call,
             bool use_function_pointer);
@@ -155,12 +155,14 @@ private:
             std::vector<std::string> > *clauses);
     std::string get_region_setup_code(std::set<std::string> private_vars,
             bool is_parallel_for, std::string disable_varname,
-            std::string blocker_varname, std::string parent_thread_varname, std::string parent_ctx_varname,
+            std::string blocker_varname, std::string parent_thread_varname,
+            std::string parent_ctx_varname,
             std::string stack_depth_varname, std::string region_id_varname,
             std::string call_depth_varname, OMPRegion *region,
             OpenMPPragma pragma);
     std::string get_region_interior_code(bool is_parallel_for,
-            std::string blocker_varname, std::string parent_thread_varname, std::string parent_ctx_varname,
+            std::string blocker_varname, std::string parent_thread_varname,
+            std::string parent_ctx_varname,
             std::string stack_depth_varname, std::string region_id_varname,
             std::set<std::string> private_vars);
     std::string get_region_cleanup_code(bool is_parallel_for,
@@ -177,6 +179,9 @@ private:
             std::vector<std::pair<size_t, size_t> > *new_aliases,
             std::set<std::string> *changed_alias_locs,
             std::set<std::string> *visited);
+
+    clang::SourceLocation adjustInnerOMPLoc(
+            clang::SourceLocation loc, int target_line);
 
     std::map<std::string, std::map<int, std::vector<StateChangeInsertion *>::iterator> > change_loc_iters;
     std::map<std::string, std::set<std::string> > supported_omp_clauses;

@@ -1,0 +1,2 @@
+write _Z5writePcPfiiii 0 DOES_NOT
+read _Z4readPcPfiii 0 DOES_NOT

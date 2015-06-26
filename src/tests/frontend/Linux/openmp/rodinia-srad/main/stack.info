@@ -1,0 +1,59 @@
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|argc|0 " i32 " 32 0 0 1 get_time omp_set_num_threads read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|argv|0 " i8** " 64 1 0 1 get_time omp_set_num_threads read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time0|0 " i64 " 64 0 0 1 get_time omp_set_num_threads read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time1|0 " i64 " 64 0 0 1 get_time omp_set_num_threads read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time2|0 " i64 " 64 0 0 1 get_time read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time3|0 " i64 " 64 0 0 1 get_time resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time4|0 " i64 " 64 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time5|0 " i64 " 64 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time6|0 " i64 " 64 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time7|0 " i64 " 64 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time8|0 " i64 " 64 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time9|0 " i64 " 64 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|time10|0 " i64 " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image_ori|0 " float* " 64 1 0 1 get_time read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image_ori_rows|0 " i32 " 32 0 0 1 get_time read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image_ori_cols|0 " i32 " 32 0 0 1 get_time read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image_ori_elem|0 " i64 " 64 0 0 1 get_time read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|image|0 " float* " 64 1 0 1 get_time resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|Nr|0 " i64 " 64 0 0 1 get_time omp_set_num_threads read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|Nc|0 " i64 " 64 0 0 1 get_time omp_set_num_threads read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|Ne|0 " i64 " 64 0 0 1 get_time resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|niter|0 " i32 " 32 0 0 1 get_time omp_set_num_threads read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|lambda|0 " float " 32 0 0 1 get_time omp_set_num_threads read_graphics resize write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|r1|0 " i32 " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|r2|0 " i32 " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|c1|0 " i32 " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|c2|0 " i32 " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|NeROI|0 " i64 " 64 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|meanROI|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|varROI|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|q0sqr|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|iN|0 " i32* " 64 1 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|iS|0 " i32* " 64 1 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|jE|0 " i32* " 64 1 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|jW|0 " i32* " 64 1 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|Jc|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|dN|0 " float* " 64 1 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|dS|0 " float* " 64 1 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|dW|0 " float* " 64 1 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|dE|0 " float* " 64 1 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|tmp|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|sum|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|sum2|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|G2|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|L|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|num|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|den|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|qsqr|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|D|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|c|0 " float* " 64 1 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|cN|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|cS|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|cW|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|cE|0 " float " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|iter|0 " i32 " 32 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|i|0 " i64 " 64 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|j|0 " i64 " 64 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|k|0 " i64 " 64 0 0 1 get_time write_graphics
+/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c main|threads|0 " i32 " 32 0 0 1 get_time omp_set_num_threads read_graphics resize write_graphics

@@ -109,7 +109,10 @@ if __name__ == '__main__':
               unfiltered_acc = unfiltered_acc.strip()
 
               for clause in list_of_clauses:
-                  assert(count_lines == (clause.ending_line - line_no))
+                  # assert(count_lines == (clause.ending_line - line_no)), \
+                  #                     'line_no=' + str(line_no) + \
+                  #                     ', count_lines=' + str(count_lines) + \
+                  #                     ', ending_line=' + str(clause.ending_line)
 
                   unfiltered_acc += ' firstprivate(' + clause.varname + ')'
               unfiltered_acc += '\n'

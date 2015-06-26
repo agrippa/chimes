@@ -1,0 +1,6 @@
+strlcpy _Z7strlcpyPcPKcm 0 DOES_NOT
+fill_chartab _Z12fill_chartabPc 0 MAY tolower 74 33
+encode _Z6encodePcS_i 0 DOES_NOT
+alloc_aln _Z9alloc_alni 0 DOES_NOT
+get_seq _Z7get_seqPcPiS_P8_IO_FILE 0 DOES_NOT strlcpy 134 4
+readseqs _Z8readseqsiPc 0 MAY fill_chartab 170 4 alloc_aln 173 4 get_seq 176 14 encode 181 7

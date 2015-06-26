@@ -1,0 +1,103 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 26 8 len=7 gettime_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 42 6 len=17 bpnn_train_kernel_npm
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 29 3 rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_7, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 26 18 const int ____chimes_did_disable0 = new_stack((void *)(&gettime), "gettime", &____must_manage_gettime, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 38 2 rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable1); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 37 1 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(17666616532252949239UL)); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 43 1 const int ____chimes_did_disable2 = new_stack((void *)(&bpnn_train_kernel), "bpnn_train_kernel", &____must_manage_bpnn_train_kernel, 3, 1, (size_t)(17666616532252949355UL), (size_t)(17666616532252949356UL), (size_t)(17666616532252949357UL), "bpnn_train_kernel|net|0", &____must_checkpoint_bpnn_train_kernel_net_0, "%struct.BPNN*", (void *)(&net), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 59 1 rm_stack(false, 0UL, "bpnn_train_kernel", &____must_manage_bpnn_train_kernel, 0, ____chimes_did_disable2); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 26 19 const int ____chimes_did_disable0 = new_stack((void *)(&gettime), "gettime", &____must_manage_gettime, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 26 127 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 27 3  struct timeval t; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 27 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 37 2 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(17666616532252949239UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 37 150 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 43 2 const int ____chimes_did_disable2 = new_stack((void *)(&bpnn_train_kernel), "bpnn_train_kernel", &____must_manage_bpnn_train_kernel, 3, 1, (size_t)(17666616532252949355UL), (size_t)(17666616532252949356UL), (size_t)(17666616532252949357UL), "bpnn_train_kernel|net|0", &____must_checkpoint_bpnn_train_kernel_net_0, "%struct.BPNN*", (void *)(&net), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 43 368 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 3 int in; int hid; int out; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 45 3 float out_err; float hid_err; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 45 25 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 38 83  call_lbl_2: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 52 3  call_lbl_2: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 53 3  call_lbl_3: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 54 3  call_lbl_4: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 55 3  call_lbl_5: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 56 3  call_lbl_6: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 57 3  call_lbl_7: 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 26 8 len=7 gettime_quick
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 27 4 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 27 20 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 26 126  ; struct timeval t;
+ if (____must_checkpoint_gettime_t_0) { register_stack_vars(1, "gettime|t|0", &____must_checkpoint_gettime_t_0, "%struct.timeval = type { i64, i64 }", (void *)(&t), (size_t)16, 0, 1, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 36 1 len=4 main_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 38 103 (____chimes_does_checkpoint_setup_npm ? ( ({  calling((void*)setup, 2, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(17666616532252949239UL)); (setup)(argc, argv); }) ) : (({ calling_npm("setup", ____alias_loc_id_0); (*____chimes_extern_func_setup)(argc, argv); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 38 119 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 37 149  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 42 6 len=17 bpnn_train_kernel_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 52 16  ({  calling((void*)bpnn_layerforward, 2, ____alias_loc_id_6, 0UL, 5, (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_layerforward)(net->input_units, net->hidden_units, net->input_weights, in, hid); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 52 97 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 53 16  ({  calling((void*)bpnn_layerforward, 3, ____alias_loc_id_5, 0UL, 5, (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_layerforward)(net->hidden_units, net->output_units, net->hidden_weights, hid, out); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 53 101 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 54 16  ({  calling((void*)bpnn_output_error, 4, ____alias_loc_id_4, 0UL, 5, (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949248UL)); (bpnn_output_error)(net->output_delta, net->target, net->output_units, out, &out_err); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 54 98 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 55 16  ({  calling((void*)bpnn_hidden_error, 5, ____alias_loc_id_3, 0UL, 7, (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949249UL)); (bpnn_hidden_error)(net->hidden_delta, hid, net->output_delta, out, net->hidden_weights, net->hidden_units, &hid_err); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 55 130 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 56 16  ({  calling((void*)bpnn_adjust_weights, 6, ____alias_loc_id_2, 0UL, 6, (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL)); (bpnn_adjust_weights)(net->output_delta, out, net->hidden_units, hid, net->hidden_weights, net->hidden_prev_weights); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 56 129 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 57 16  ({  calling((void*)bpnn_adjust_weights, 7, ____alias_loc_id_1, 0UL, 6, (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL)); (bpnn_adjust_weights)(net->hidden_delta, hid, net->input_units, in, net->input_weights, net->input_prev_weights); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 57 125 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 11 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 18 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 20 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 27 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 45 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 45 16 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 45 18 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 45 31 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 43 367  ; float hid_err;
+float out_err;
+int out;
+int hid;
+int in;
+ if (____must_checkpoint_bpnn_train_kernel_hid_err_0 || ____must_checkpoint_bpnn_train_kernel_out_err_0 || ____must_checkpoint_bpnn_train_kernel_out_0 || ____must_checkpoint_bpnn_train_kernel_hid_0 || ____must_checkpoint_bpnn_train_kernel_in_0) { register_stack_vars(5, "bpnn_train_kernel|hid_err|0", &____must_checkpoint_bpnn_train_kernel_hid_err_0, "float", (void *)(&hid_err), (size_t)4, 0, 0, 0, "bpnn_train_kernel|out_err|0", &____must_checkpoint_bpnn_train_kernel_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0, "bpnn_train_kernel|out|0", &____must_checkpoint_bpnn_train_kernel_out_0, "i32", (void *)(&out), (size_t)4, 0, 0, 0, "bpnn_train_kernel|hid|0", &____must_checkpoint_bpnn_train_kernel_hid_0, "i32", (void *)(&hid), (size_t)4, 0, 0, 0, "bpnn_train_kernel|in|0", &____must_checkpoint_bpnn_train_kernel_in_0, "i32", (void *)(&in), (size_t)4, 0, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 26 8 len=7 gettime_resumable
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 27 4 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 27 20 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 26 126  ; struct timeval t;
+ if (____must_checkpoint_gettime_t_0) { register_stack_vars(1, "gettime|t|0", &____must_checkpoint_gettime_t_0, "%struct.timeval = type { i64, i64 }", (void *)(&t), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 36 1 len=4 main_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 38 103 (____chimes_does_checkpoint_setup_npm ? ( ({  calling((void*)setup, 2, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(17666616532252949239UL)); (setup)(argc, argv); }) ) : (({ calling_npm("setup", ____alias_loc_id_0); (*____chimes_extern_func_setup)(argc, argv); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 38 119 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 37 149  ;  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 42 6 len=17 bpnn_train_kernel_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 52 16  ({  float * ____chimes_arg2;  float * ____chimes_arg3;  float ** ____chimes_arg4;  if (!____chimes_replaying) { ____chimes_arg2 = (net->input_units); ____chimes_arg3 = (net->hidden_units); ____chimes_arg4 = (net->input_weights);  }  calling((void*)bpnn_layerforward, 2, ____alias_loc_id_6, 0UL, 5, (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_layerforward)(____chimes_arg2, ____chimes_arg3, ____chimes_arg4, in, hid); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 52 97 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 53 16  ({  float * ____chimes_arg7;  float * ____chimes_arg8;  float ** ____chimes_arg9;  if (!____chimes_replaying) { ____chimes_arg7 = (net->hidden_units); ____chimes_arg8 = (net->output_units); ____chimes_arg9 = (net->hidden_weights);  }  calling((void*)bpnn_layerforward, 3, ____alias_loc_id_5, 0UL, 5, (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_layerforward)(____chimes_arg7, ____chimes_arg8, ____chimes_arg9, hid, out); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 53 101 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 54 16  ({  float * ____chimes_arg12;  float * ____chimes_arg13;  float * ____chimes_arg14;  if (!____chimes_replaying) { ____chimes_arg12 = (net->output_delta); ____chimes_arg13 = (net->target); ____chimes_arg14 = (net->output_units);  }  calling((void*)bpnn_output_error, 4, ____alias_loc_id_4, 0UL, 5, (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949248UL)); (bpnn_output_error)(____chimes_arg12, ____chimes_arg13, ____chimes_arg14, out, &out_err); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 54 98 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 55 16  ({  float * ____chimes_arg17;  float * ____chimes_arg19;  float ** ____chimes_arg21;  float * ____chimes_arg22;  if (!____chimes_replaying) { ____chimes_arg17 = (net->hidden_delta); ____chimes_arg19 = (net->output_delta); ____chimes_arg21 = (net->hidden_weights); ____chimes_arg22 = (net->hidden_units);  }  calling((void*)bpnn_hidden_error, 5, ____alias_loc_id_3, 0UL, 7, (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949249UL)); (bpnn_hidden_error)(____chimes_arg17, hid, ____chimes_arg19, out, ____chimes_arg21, ____chimes_arg22, &hid_err); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 55 130 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 56 16  ({  float * ____chimes_arg24;  float * ____chimes_arg26;  float ** ____chimes_arg28;  float ** ____chimes_arg29;  if (!____chimes_replaying) { ____chimes_arg24 = (net->output_delta); ____chimes_arg26 = (net->hidden_units); ____chimes_arg28 = (net->hidden_weights); ____chimes_arg29 = (net->hidden_prev_weights);  }  calling((void*)bpnn_adjust_weights, 6, ____alias_loc_id_2, 0UL, 6, (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL)); (bpnn_adjust_weights)(____chimes_arg24, out, ____chimes_arg26, hid, ____chimes_arg28, ____chimes_arg29); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 56 129 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 57 16  ({  float * ____chimes_arg30;  float * ____chimes_arg32;  float ** ____chimes_arg34;  float ** ____chimes_arg35;  if (!____chimes_replaying) { ____chimes_arg30 = (net->hidden_delta); ____chimes_arg32 = (net->input_units); ____chimes_arg34 = (net->input_weights); ____chimes_arg35 = (net->input_prev_weights);  }  calling((void*)bpnn_adjust_weights, 7, ____alias_loc_id_1, 0UL, 6, (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(0UL), (size_t)(17666616532252949276UL), (size_t)(17666616532252949276UL)); (bpnn_adjust_weights)(____chimes_arg30, hid, ____chimes_arg32, in, ____chimes_arg34, ____chimes_arg35); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 57 125 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 9 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 11 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 18 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 20 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 44 27 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 45 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 45 16 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 45 18 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 45 31 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 43 367  ; float hid_err;
+float out_err;
+int out;
+int hid;
+int in;
+ if (____must_checkpoint_bpnn_train_kernel_hid_err_0 || ____must_checkpoint_bpnn_train_kernel_out_err_0 || ____must_checkpoint_bpnn_train_kernel_out_0 || ____must_checkpoint_bpnn_train_kernel_hid_0 || ____must_checkpoint_bpnn_train_kernel_in_0) { register_stack_vars(5, "bpnn_train_kernel|hid_err|0", &____must_checkpoint_bpnn_train_kernel_hid_err_0, "float", (void *)(&hid_err), (size_t)4, 0, 0, 0, "bpnn_train_kernel|out_err|0", &____must_checkpoint_bpnn_train_kernel_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0, "bpnn_train_kernel|out|0", &____must_checkpoint_bpnn_train_kernel_out_0, "i32", (void *)(&out), (size_t)4, 0, 0, 0, "bpnn_train_kernel|hid|0", &____must_checkpoint_bpnn_train_kernel_hid_0, "i32", (void *)(&hid), (size_t)4, 0, 0, 0, "bpnn_train_kernel|in|0", &____must_checkpoint_bpnn_train_kernel_in_0, "i32", (void *)(&in), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } default: { chimes_error(); } }  }  

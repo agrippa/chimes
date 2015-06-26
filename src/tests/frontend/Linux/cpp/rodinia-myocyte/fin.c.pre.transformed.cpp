@@ -2422,7 +2422,81 @@ __signbitl (long double __x) throw ()
 # 472 "/usr/include/math.h" 3 4
 }
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h"
+# 1 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/omp.h" 1 3 4
+# 34 "/opt/apps/gcc/4.8.2/lib/gcc/x86_64-unknown-linux-gnu/4.8.2/include/omp.h" 3 4
+typedef struct
+{
+  unsigned char _x[4]
+    __attribute__((__aligned__(4)));
+} omp_lock_t;
+
+typedef struct
+{
+  unsigned char _x[16]
+    __attribute__((__aligned__(8)));
+} omp_nest_lock_t;
+
+
+typedef enum omp_sched_t
+{
+  omp_sched_static = 1,
+  omp_sched_dynamic = 2,
+  omp_sched_guided = 3,
+  omp_sched_auto = 4
+} omp_sched_t;
+
+
+extern "C" {
+
+
+
+
+
+extern void omp_set_num_threads (int) throw ();
+extern int omp_get_num_threads (void) throw ();
+extern int omp_get_max_threads (void) throw ();
+extern int omp_get_thread_num (void) throw ();
+extern int omp_get_num_procs (void) throw ();
+
+extern int omp_in_parallel (void) throw ();
+
+extern void omp_set_dynamic (int) throw ();
+extern int omp_get_dynamic (void) throw ();
+
+extern void omp_set_nested (int) throw ();
+extern int omp_get_nested (void) throw ();
+
+extern void omp_init_lock (omp_lock_t *) throw ();
+extern void omp_destroy_lock (omp_lock_t *) throw ();
+extern void omp_set_lock (omp_lock_t *) throw ();
+extern void omp_unset_lock (omp_lock_t *) throw ();
+extern int omp_test_lock (omp_lock_t *) throw ();
+
+extern void omp_init_nest_lock (omp_nest_lock_t *) throw ();
+extern void omp_destroy_nest_lock (omp_nest_lock_t *) throw ();
+extern void omp_set_nest_lock (omp_nest_lock_t *) throw ();
+extern void omp_unset_nest_lock (omp_nest_lock_t *) throw ();
+extern int omp_test_nest_lock (omp_nest_lock_t *) throw ();
+
+extern double omp_get_wtime (void) throw ();
+extern double omp_get_wtick (void) throw ();
+
+void omp_set_schedule (omp_sched_t, int) throw ();
+void omp_get_schedule (omp_sched_t *, int *) throw ();
+int omp_get_thread_limit (void) throw ();
+void omp_set_max_active_levels (int) throw ();
+int omp_get_max_active_levels (void) throw ();
+int omp_get_level (void) throw ();
+int omp_get_ancestor_thread_num (int) throw ();
+int omp_get_team_size (int) throw ();
+int omp_get_active_level (void) throw ();
+
+int omp_in_final (void) throw ();
+
+
+}
+# 9 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h" 2
+# 18 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/define.h"
 extern float embedded_fehlberg_7_8( float timeinst,
                float h,
                float* initvalu,

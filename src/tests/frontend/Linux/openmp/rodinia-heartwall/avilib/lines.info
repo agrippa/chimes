@@ -1,0 +1,73 @@
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 242 16 : { 2, 3, 5 } {  } call:open { open { 99 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 257 7 : { 4 } {  } call:close {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 254 8 : { 4, 6, 14 } {  } call:avi_write {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 85 11 : { 112, 113, 114, 115, 116 } {  } call:write { write { 158 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 291 4 : { 219 } {  } call:avi_update_header {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 283 7 : { 161, 162, 163, 164, 165, 219 } {  } call:strncmp { strncmp { 223, 6702 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 562 9 : { 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 315 4 : { 1550, 1551, 1552, 1553, 1554, 1555, 1651 } {  } call:avi_update_header {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 936 6 : { 1739, 1740, 1741, 1742, 1743 } {  } call:avi_write_data {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 919 10 : { 1801 } {  } call:avi_add_chunk {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 921 10 : { 1801 } {  } call:avi_add_chunk {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 959 8 : { 2070, 2071, 2072 } {  } call:avi_write_data {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 996 3 : { 2117, 2118 } {  } call:avi_write {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 987 3 : { 2115, 2116, 2117, 2119, 2120, 2254 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1053 4 : { 2373, 2374 } {  } call:close {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1047 13 : { 2373 } {  } call:avi_close_output_file {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 867 9 : { 2424, 2425, 2426, 2427, 2428, 2429, 2430, 2431, 2433, 2434, 2435, 2436, 2437, 2438, 6701 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 603 10 : { 2423, 2430, 2432 } {  } call:avi_add_chunk {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1089 15 : { 14, 3840, 3841, 3842 } {  } call:open { open { 3892 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1097 3 : { 14 } {  } call:avi_parse_input_file {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1174 32 : { 3902, 3904 } {  } call:AVI_close {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1197 28 : { 5081 } {  } call:AVI_close {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1325 4 : { 3897, 3899, 3900, 3909, 3910, 3911, 3912, 3914, 5081 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1240 19 : {  } {  } call:strncasecmp { strncasecmp { 4161, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1308 45 : { 3897, 3899, 3900, 3910, 3911, 3912, 3914, 5081 } {  } call:AVI_close {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1345 27 : { 3897, 3901 } {  } call:AVI_close {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1422 31 : { 3897, 3901, 3905, 3906, 3909, 5081 } {  } call:AVI_close {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1424 30 : { 3897, 3901, 3905, 3906, 3909, 5081 } {  } call:AVI_close {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1429 40 : { 3897, 3901, 3905, 3906, 3909, 5081 } {  } call:AVI_close {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1466 4 : { 3897, 3901, 3905, 3906, 3907, 3908, 3909, 4631, 5081 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1148 8 : { 3895, 3896, 3903, 3904, 3910, 3911, 3912, 3913, 3914 } {  } call:avi_read {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1150 8 : {  } {  } call:strncasecmp { strncasecmp { 3915, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1151 8 : {  } {  } call:strncasecmp { strncasecmp { 3915, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1170 13 : { 3898 } {  } call:strncasecmp { strncasecmp { 3915, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1180 17 : { 3903 } {  } call:avi_read {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1190 15 : {  } {  } call:strncasecmp { strncasecmp { 3915, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1198 13 : { 5081 } {  } call:avi_read {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1161 11 : { 3902 } {  } call:avi_read {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1213 10 : { 3897, 3899, 3900, 3910, 3911, 3912, 3914, 5081 } {  } call:strncasecmp { strncasecmp { 4161, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1223 13 : { 3897 } {  } call:strncasecmp { strncasecmp { 4161, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1265 15 : {  } {  } call:strncasecmp { strncasecmp { 4161, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1344 14 : { 3897, 3901 } {  } call:strncasecmp { strncasecmp { 4631, 5081 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1352 11 : {  } {  } call:strncasecmp { strncasecmp { 3915, 4631 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1361 14 : {  } {  } call:strncasecmp { strncasecmp { 3915, 4631 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1379 14 : { 5081 } {  } call:avi_read {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1412 9 : { 3897, 3901, 3905, 3906, 3909 } {  } call:strncasecmp { strncasecmp { 4631, 5081 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1414 36 : { 3905, 3906, 3909 } {  } call:strncasecmp { strncasecmp { 4631, 5081 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1451 11 : { 3905, 3906, 3908, 3909, 4631 } {  } call:strncasecmp { strncasecmp { 4631, 5081 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1441 9 : { 3897, 3901, 3905, 3906, 3907, 3908, 3909, 4631, 5081 } {  } call:strncasecmp { strncasecmp { 4631, 5081 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1166 10 : { 3898 } {  } call:strncasecmp { strncasecmp { 3915, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1178 22 : { 3902, 3904 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1185 13 : { 5081 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1220 10 : { 3898 } {  } call:strncasecmp { strncasecmp { 4161, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1350 7 : { 3897, 3901, 3916, 3917 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1373 7 : { 3901 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1182 18 : {  } {  } call:strncasecmp { strncasecmp { 3915, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1384 13 : { 3898 } {  } call:strncasecmp { strncasecmp { 3915, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1123 3 : { 14, 5326, 5327, 5328 } {  } call:avi_parse_input_file {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 69 11 : { 5369, 5370, 5371, 5372, 5373 } {  } call:read { read { 5415 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1590 4 : { 5799 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1622 4 : { 5899, 6000 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1685 7 : { 6131, 6132, 6133 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1726 11 : { 6344, 6345, 6346, 6347, 6348, 6349 } {  } call:avi_read {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1744 13 : { 6510, 6515 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1747 13 : { 6510, 6515 } {  } call:avi_read {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1755 13 : { 6515 } {  } call:lseek {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1758 13 : { 6515 } {  } call:avi_read {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1738 10 : { 6350 } {  } call:strncasecmp { strncasecmp { 6351, 6510 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1750 15 : {  } {  } call:strncasecmp { strncasecmp { 6351, 6510 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1730 10 : {  } {  } call:strncasecmp { strncasecmp { 6351, 6705 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1823 57 : {  } {  } call:strerror { strerror { 6606 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 1823 68 : { 6566 } {  } call:__errno_location { __errno_location { 6604 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avilib.c 159 8 : { 6624, 6625, 6626, 6627 } {  } call:avi_write {  }

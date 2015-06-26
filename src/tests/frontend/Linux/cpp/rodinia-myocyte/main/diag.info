@@ -3,7 +3,7 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 234 50 , 35
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 236 19 len=6 malloc_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 236 48 , 3544992459305491802UL, 1, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 238 23 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 238 46 , 3544992459305492025UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 238 46 , 3544992459305492026UL, 0, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 242 17 len=6 malloc_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 242 49 , 3544992459305491948UL, 1, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 244 18 len=6 malloc_wrapper
@@ -13,7 +13,7 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 247 54 , 35
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 249 23 len=6 malloc_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 249 47 , 3544992459305491957UL, 0, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 339 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 339 15 , 3544992459305492025UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 339 15 , 3544992459305492026UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 341 3 len=4 free_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 341 11 , 3544992459305491802UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 343 2 len=4 free_wrapper
@@ -31,7 +31,7 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 234 50 , 35
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 236 19 len=6 malloc_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 236 48 , 3544992459305491802UL, 1, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 238 23 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 238 46 , 3544992459305492025UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 238 46 , 3544992459305492026UL, 0, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 242 17 len=6 malloc_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 242 49 , 3544992459305491948UL, 1, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 244 18 len=6 malloc_wrapper
@@ -41,7 +41,7 @@ InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 247 54 , 35
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 249 23 len=6 malloc_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 249 47 , 3544992459305491957UL, 0, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 339 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 339 15 , 3544992459305492025UL
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 339 15 , 3544992459305492026UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 341 3 len=4 free_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 341 11 , 3544992459305491802UL
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 343 2 len=4 free_wrapper
@@ -60,9 +60,9 @@ InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 187 4 rm_stack(false,
 InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 198 4 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_10, ____chimes_did_disable0); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 208 4 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_10, ____chimes_did_disable0); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 227 3 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_10, ____chimes_did_disable0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 99 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(3544992459305492197UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 99 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(3544992459305492198UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
 InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 376 1 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_10, ____chimes_did_disable0); 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 99 35 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(3544992459305492197UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 99 35 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(3544992459305492198UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 99 369 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 109 2 long long time0; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 109 17 
@@ -122,9 +122,9 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 214 24 (____chi
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 214 33 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 24 (____chimes_does_checkpoint_get_time_npm ? ( ({  calling((void*)get_time, 27, ____alias_loc_id_7, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_7); (*____chimes_extern_func_get_time)(); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 33 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 260 17 (____chimes_does_checkpoint_read_npm ? ( ({  calling((void*)read, 28, ____alias_loc_id_8, 0UL, 5, (size_t)(3544992459305492221UL), (size_t)(3544992459305492025UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read)("../../data/myocyte/y.txt", y[i][0], 91, 1, 0); }) ) : (({ calling_npm("read", ____alias_loc_id_8); (*____chimes_extern_func_read)("../../data/myocyte/y.txt", y[i][0], 91, 1, 0); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 260 17 (____chimes_does_checkpoint_read_npm ? ( ({  calling((void*)read, 28, ____alias_loc_id_8, 0UL, 5, (size_t)(3544992459305492222UL), (size_t)(3544992459305492026UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read)("../../data/myocyte/y.txt", y[i][0], 91, 1, 0); }) ) : (({ calling_npm("read", ____alias_loc_id_8); (*____chimes_extern_func_read)("../../data/myocyte/y.txt", y[i][0], 91, 1, 0); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 264 7 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 269 17 (____chimes_does_checkpoint_read_npm ? ( ({  calling((void*)read, 29, ____alias_loc_id_9, 0UL, 5, (size_t)(3544992459305492222UL), (size_t)(3544992459305491957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read)("../../data/myocyte/params.txt", params[i], 16, 1, 0); }) ) : (({ calling_npm("read", ____alias_loc_id_9); (*____chimes_extern_func_read)("../../data/myocyte/params.txt", params[i], 16, 1, 0); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 269 17 (____chimes_does_checkpoint_read_npm ? ( ({  calling((void*)read, 29, ____alias_loc_id_9, 0UL, 5, (size_t)(3544992459305492223UL), (size_t)(3544992459305491957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read)("../../data/myocyte/params.txt", params[i], 16, 1, 0); }) ) : (({ calling_npm("read", ____alias_loc_id_9); (*____chimes_extern_func_read)("../../data/myocyte/params.txt", params[i], 16, 1, 0); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 273 7 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 276 24 (____chimes_does_checkpoint_get_time_npm ? ( ({  calling((void*)get_time, 30, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 276 33 
@@ -191,9 +191,9 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 214 24 (____chi
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 214 33 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 24 (____chimes_does_checkpoint_get_time_npm ? ( ({  calling((void*)get_time, 27, ____alias_loc_id_7, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_7); (*____chimes_extern_func_get_time)(); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 252 33 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 260 17 (____chimes_does_checkpoint_read_npm ? ( ({  char * ____chimes_arg1;  float * ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg1 = ("../../data/myocyte/y.txt"); ____chimes_arg2 = (y[i][0]);  }  calling((void*)read, 28, ____alias_loc_id_8, 0UL, 5, (size_t)(3544992459305492221UL), (size_t)(3544992459305492025UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read)(____chimes_arg1, ____chimes_arg2, 91, 1, 0); }) ) : (({ calling_npm("read", ____alias_loc_id_8); (*____chimes_extern_func_read)("../../data/myocyte/y.txt", y[i][0], 91, 1, 0); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 260 17 (____chimes_does_checkpoint_read_npm ? ( ({  char * ____chimes_arg1;  float * ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg1 = ("../../data/myocyte/y.txt"); ____chimes_arg2 = (y[i][0]);  }  calling((void*)read, 28, ____alias_loc_id_8, 0UL, 5, (size_t)(3544992459305492222UL), (size_t)(3544992459305492026UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read)(____chimes_arg1, ____chimes_arg2, 91, 1, 0); }) ) : (({ calling_npm("read", ____alias_loc_id_8); (*____chimes_extern_func_read)("../../data/myocyte/y.txt", y[i][0], 91, 1, 0); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 264 7 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 269 17 (____chimes_does_checkpoint_read_npm ? ( ({  char * ____chimes_arg6;  float * ____chimes_arg7;  if (!____chimes_replaying) { ____chimes_arg6 = ("../../data/myocyte/params.txt"); ____chimes_arg7 = (params[i]);  }  calling((void*)read, 29, ____alias_loc_id_9, 0UL, 5, (size_t)(3544992459305492222UL), (size_t)(3544992459305491957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read)(____chimes_arg6, ____chimes_arg7, 16, 1, 0); }) ) : (({ calling_npm("read", ____alias_loc_id_9); (*____chimes_extern_func_read)("../../data/myocyte/params.txt", params[i], 16, 1, 0); })))
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 269 17 (____chimes_does_checkpoint_read_npm ? ( ({  char * ____chimes_arg6;  float * ____chimes_arg7;  if (!____chimes_replaying) { ____chimes_arg6 = ("../../data/myocyte/params.txt"); ____chimes_arg7 = (params[i]);  }  calling((void*)read, 29, ____alias_loc_id_9, 0UL, 5, (size_t)(3544992459305492223UL), (size_t)(3544992459305491957UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read)(____chimes_arg6, ____chimes_arg7, 16, 1, 0); }) ) : (({ calling_npm("read", ____alias_loc_id_9); (*____chimes_extern_func_read)("../../data/myocyte/params.txt", params[i], 16, 1, 0); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 273 7 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 276 24 (____chimes_does_checkpoint_get_time_npm ? ( ({  calling((void*)get_time, 30, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 276 33 

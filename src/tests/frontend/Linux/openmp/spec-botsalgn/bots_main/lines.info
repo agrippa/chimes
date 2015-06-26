@@ -1,0 +1,11 @@
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 292 4 : { 55, 359 } {  } call:bots_get_date { bots_get_date { 359 } }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 291 38 : { 52, 53 } {  } call:__xpg_basename { __xpg_basename { 64, 65 } }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 451 4 : { 265, 266 } {  } call:bots_get_params_common {  }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 541 4 : { 353 } {  } call:bots_print_results {  }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 531 4 : { 300, 373 } {  } call:align_end {  }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 527 4 : { 299 } {  } call:align {  }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 522 4 : { 300, 373 } {  } call:align_init {  }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 514 7 : { 299 } {  } call:align_seq {  }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 498 4 : {  } {  } call:pairalign_init { pairalign_init { 376 } }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 497 4 : { 296, 297, 298 } {  } call:bots_get_params {  }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c 509 7 : { 353 } {  } call:align_seq_init {  }

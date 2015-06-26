@@ -1,0 +1,12 @@
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 292 4 : { 57, 408 } {  } call:bots_get_date { bots_get_date { 408 } }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 291 38 : { 54, 55 } {  } call:__xpg_basename { __xpg_basename { 66, 67 } }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 451 4 : { 293, 294 } {  } call:bots_get_params_common {  }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 541 4 : { 402 } {  } call:bots_print_results {  }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 535 20 : {  } {  } call:sparselu_check { sparselu_check { 374, 386 } }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 531 4 : { 332, 422 } {  } call:sparselu_fini { sparselu_fini { 374, 457 } }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 527 4 : { 331 } {  } call:sparselu_par_call { sparselu_par_call { 374 } }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 522 4 : {  } {  } call:sparselu_init { sparselu_init { 334, 457 } }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 518 7 : { 332, 422 } {  } call:sparselu_fini { sparselu_fini { 386, 456 } }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 497 4 : { 328, 329, 330 } {  } call:bots_get_params {  }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 514 7 : { 331 } {  } call:sparselu_seq_call { sparselu_seq_call { 386 } }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/common/bots_main.c 509 7 : { 402 } {  } call:sparselu_init { sparselu_init { 333, 456 } }

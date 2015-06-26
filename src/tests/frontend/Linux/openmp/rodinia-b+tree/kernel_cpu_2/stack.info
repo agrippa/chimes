@@ -1,0 +1,22 @@
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|cores_arg|0 " i32 " 32 0 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|knodes|0 " %struct.knode* " 64 1 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|knodes_elem|0 " i64 " 64 0 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|order|0 " i32 " 32 0 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|maxheight|0 " i64 " 64 0 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|count|0 " i32 " 32 0 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|currKnode|0 " i64* " 64 1 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|offset|0 " i64* " 64 1 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|lastKnode|0 " i64* " 64 1 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|offset_2|0 " i64* " 64 1 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|start|0 " i32* " 64 1 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|end|0 " i32* " 64 1 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|recstart|0 " i32* " 64 1 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|reclength|0 " i32* " 64 1 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|time0|0 " i64 " 64 0 0 1 get_time omp_get_max_threads omp_set_num_threads
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|time1|0 " i64 " 64 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|time2|0 " i64 " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|i|0 " i32 " 32 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|max_nthreads|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|threadsPerBlock|0 " i32 " 32 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|thid|0 " i32 " 32 0 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c kernel_cpu_2|bid|0 " i32 " 32 0 0 1 get_time

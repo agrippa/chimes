@@ -1,0 +1,10 @@
+ellipsetrack _Z12ellipsetrackP5avi_tPdS1_iiii 0 MAY alloc_2d_double 33 16 alloc_2d_double 34 16 alloc_3d_double 35 16 alloc_3d_double 36 16 alloc_3d_double 37 16 get_frame 69 12 m_get 113 16 gradient_x 121 14 gradient_y 122 14 m_get 123 14 get_time 133 32 MGVF 134 17 get_time 135 17 get_time 143 33 ellipseevolve 144 4 get_time 145 18 m_free 164 4 free_2d_double 189 2 free_2d_double 190 2 free_3d_double 191 2 free_3d_double 192 2 free_3d_double 193 2
+alloc_2d_double _Z15alloc_2d_doubleii 0 DOES_NOT
+alloc_3d_double _Z15alloc_3d_doubleiii 0 DOES_NOT
+MGVF _Z4MGVFP3MATdd 0 MAY m_get 260 15 m_get 287 11 m_get 287 29 m_get 287 47 m_get 287 65 m_get 288 12 m_get 288 31 m_get 288 50 m_get 288 69 m_get 289 13 m_get 289 33 m_get 289 53 m_get 289 73 m_get 290 14 m_get 290 35 m_get 290 56 m_get 290 77 heaviside 318 3 heaviside 319 3 heaviside 320 3 heaviside 321 3 heaviside 322 3 heaviside 323 3 heaviside 324 3 heaviside 325 3 m_free 366 2 m_free 366 13 m_free 366 24 m_free 366 35 m_free 367 2 m_free 367 14 m_free 367 26 m_free 367 38 m_free 368 2 m_free 368 15 m_free 368 28 m_free 368 41 m_free 369 2 m_free 369 16 m_free 369 30 m_free 369 44
+ellipseevolve _Z13ellipseevolveP3MATPdS1_S1_S1_idd 0 MAY gradient_x 448 12 gradient_y 449 12 v_get 464 11 v_get 465 11 linear_interp2 511 13 linear_interp2 512 14 linear_interp2 513 14 sum_m 516 19 sum_m 517 20 sum_m 518 20 m_get 522 14 m_free 547 3 m_free 548 3 m_free 549 3 m_free 550 3 v_free 563 2 v_free 563 14 m_free 564 2 m_free 564 14
+free_2d_double _Z14free_2d_doublePPd 0 DOES_NOT
+free_3d_double _Z14free_3d_doublePPPd 0 DOES_NOT
+heaviside _Z9heavisideP3MATS0_dd 0 MAY atan 388 33
+sum_m _Z5sum_mP3MAT 0 DOES_NOT
+sum_v _Z5sum_vP3VEC 0 DOES_NOT

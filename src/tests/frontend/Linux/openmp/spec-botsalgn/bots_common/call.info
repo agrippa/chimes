@@ -1,0 +1,90 @@
+fprintf bots_error 42 13 0 30 444 0 445
+fprintf bots_error 45 13 0 30 444 0 445
+fprintf bots_error 48 13 0 30 444 0 447
+bots_print_usage bots_error 49 13 0
+fprintf bots_error 52 13 0 30 444 0 448
+fprintf bots_error 55 16 0 30 444 0 41
+exit bots_error 57 4 0 0
+fprintf bots_warning 68 13 0 30 449 0 450
+fprintf bots_warning 71 13 0 30 449 0 451
+fprintf bots_warning 74 16 0 30 449 0 74
+gettimeofday bots_usecs 81 4 0 75 512
+time bots_get_date 89 4 0 88
+gmtime bots_get_date 90 43 95 88
+strftime bots_get_date 90 57 0 101 0 452 95
+sprintf bots_get_architecture 121 41 0 115 453
+sprintf bots_get_load_average 122 41 0 124 454
+sprintf bots_print_results 149 4 0 125 454 456
+sprintf bots_print_results 150 4 0 126 454 456
+sprintf bots_print_results 151 4 0 127 454 456
+sprintf bots_print_results 152 4 0 145 454 456
+sprintf bots_print_results 153 4 0 128 454 456
+sprintf bots_print_results 157 10 0 129 462
+sprintf bots_print_results 160 10 0 129 463
+sprintf bots_print_results 163 10 0 129 464
+sprintf bots_print_results 166 10 0 129 465
+sprintf bots_print_results 169 10 0 129 466
+sprintf bots_print_results 172 4 0 130 454 0
+sprintf bots_print_results 173 31 0 131 454 0
+sprintf bots_print_results 173 98 0 131 462
+sprintf bots_print_results 175 31 0 132 466 0
+sprintf bots_print_results 175 112 0 132 462
+sprintf bots_print_results 179 4 0 133 466 0
+sprintf bots_print_results 180 4 0 134 466 0
+sprintf bots_print_results 182 4 0 135 454 456
+sprintf bots_print_results 183 4 0 136 454 456
+bots_get_architecture bots_print_results 184 4 0 137
+bots_get_load_average bots_print_results 185 4 0 138
+sprintf bots_print_results 186 4 0 139 454 456
+sprintf bots_print_results 187 4 0 140 454 456
+sprintf bots_print_results 188 4 0 141 454 456
+sprintf bots_print_results 189 4 0 142 454 456
+sprintf bots_print_results 190 4 0 143 454 456
+sprintf bots_print_results 191 4 0 144 454 456
+fprintf bots_print_results 202 1 0 30 484
+fprintf bots_print_results 213 1 0 30 485
+fprintf bots_print_results 229 3 0 30 453
+fprintf bots_print_results 230 10 0 30 487 125
+fprintf bots_print_results 231 10 0 30 487 126
+fprintf bots_print_results 232 10 0 30 487 127
+fprintf bots_print_results 233 10 0 30 487 145
+fprintf bots_print_results 237 10 0 30 487 129
+fprintf bots_print_results 243 12 0 30 492 131
+fprintf bots_print_results 244 12 0 30 487 132
+fprintf bots_print_results 248 12 0 30 487 133
+fprintf bots_print_results 249 12 0 30 487 134
+fprintf bots_print_results 255 10 0 30 487 136
+fprintf bots_print_results 257 10 0 30 487 137
+fprintf bots_print_results 258 10 0 30 487 138
+fprintf bots_print_results 260 10 0 30 487 139
+fprintf bots_print_results 261 10 0 30 487 140
+fprintf bots_print_results 263 10 0 30 487 141
+fprintf bots_print_results 264 10 0 30 487 142
+fprintf bots_print_results 265 10 0 30 487 143
+fprintf bots_print_results 266 10 0 30 487 144
+fflush bots_print_results 267 3 0 30
+fprintf bots_print_results 270 10 0 30 445 125 126 127 145 128 129
+fprintf bots_print_results 278 10 0 30 506 130 131 132
+fprintf bots_print_results 283 10 0 30 507 133 134
+fprintf bots_print_results 287 10 0 30 507 135 136
+fprintf bots_print_results 291 10 0 30 507 137 138
+fprintf bots_print_results 295 10 0 30 507 139 140
+fprintf bots_print_results 299 10 0 30 464 141 142 143 144
+fprintf bots_print_results 305 10 0 30 453
+fprintf bots_print_results 308 3 0 30 453
+fprintf bots_print_results 309 10 0 30 487 125
+fprintf bots_print_results 310 10 0 30 487 126
+fprintf bots_print_results 311 10 0 30 487 127
+fprintf bots_print_results 312 10 0 30 487 145
+fprintf bots_print_results 313 10 0 30 487 128
+fprintf bots_print_results 314 10 0 30 487 129
+fprintf bots_print_results 316 10 0 30 492 130
+fprintf bots_print_results 318 12 0 30 492 131
+fprintf bots_print_results 319 12 0 30 487 132
+fprintf bots_print_results 323 12 0 30 487 133
+fprintf bots_print_results 324 12 0 30 487 134
+fprintf bots_print_results 328 10 0 30 445 125 126 127 145 128 129
+fprintf bots_print_results 336 10 0 30 506 130 131 132
+fprintf bots_print_results 341 10 0 30 507 133 134
+fprintf bots_print_results 345 10 0 30 453
+bots_error bots_print_results 348 10 0 0 447

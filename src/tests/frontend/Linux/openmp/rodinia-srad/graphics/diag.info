@@ -1,0 +1,62 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 23 6 len=14 write_graphics_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 92 6 len=13 read_graphics_npm
+InsertText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 3 alias_group_changed(____alias_loc_id_0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 44 3 rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 28 25 const int ____chimes_did_disable0 = new_stack((void *)(&write_graphics), "write_graphics", &____must_manage_write_graphics, 6, 0, (size_t)(9161344876833312862UL), (size_t)(9161344876833312863UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 84 1 rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 114 3 rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 96 20 const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(9161344876833313006UL), (size_t)(9161344876833313007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 156 1 rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 28 26 const int ____chimes_did_disable0 = new_stack((void *)(&write_graphics), "write_graphics", &____must_manage_write_graphics, 6, 0, (size_t)(9161344876833312862UL), (size_t)(9161344876833312863UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 28 281 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 34 2 FILE *fid; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 34 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 35 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 35 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 96 21 const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(9161344876833313006UL), (size_t)(9161344876833313007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 96 741 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 102 2 FILE *fid; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 102 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 103 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 103 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 104 2 char c; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 104 8 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 105 2 int temp; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 105 10 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 44  call_lbl_5: 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 23 6 len=14 write_graphics_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 28 280  ;  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 92 6 len=13 read_graphics_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 61  ({  calling((void*)fgetc, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 70 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 102 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 102 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 103 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 103 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 104 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 104 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 105 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 105 10 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 96 740  ; int temp;
+char c;
+int i;
+FILE *fid;
+ if (____must_checkpoint_read_graphics_temp_0 || ____must_checkpoint_read_graphics_c_0 || ____must_checkpoint_read_graphics_i_0 || ____must_checkpoint_read_graphics_fid_0) { register_stack_vars(4, "read_graphics|temp|0", &____must_checkpoint_read_graphics_temp_0, "i32", (void *)(&temp), (size_t)4, 0, 0, 0, "read_graphics|c|0", &____must_checkpoint_read_graphics_c_0, "i8", (void *)(&c), (size_t)1, 0, 0, 0, "read_graphics|i|0", &____must_checkpoint_read_graphics_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "read_graphics|fid|0", &____must_checkpoint_read_graphics_fid_0, "%struct._IO_FILE*", (void *)(&fid), (size_t)8, 1, 0, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 23 6 len=14 write_graphics_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 28 280  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 92 6 len=13 read_graphics_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 61  ({  calling((void*)fgetc, 5, ____alias_loc_id_0, 0UL, 1, (size_t)(9161344876833312902UL)); (fgetc)(fid); }) 
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 123 70 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 102 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 102 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 103 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 103 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 104 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 104 8 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 105 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 105 10 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c 96 740  ; int temp;
+char c;
+int i;
+FILE *fid;
+ if (____must_checkpoint_read_graphics_temp_0 || ____must_checkpoint_read_graphics_c_0 || ____must_checkpoint_read_graphics_i_0 || ____must_checkpoint_read_graphics_fid_0) { register_stack_vars(4, "read_graphics|temp|0", &____must_checkpoint_read_graphics_temp_0, "i32", (void *)(&temp), (size_t)4, 0, 0, 0, "read_graphics|c|0", &____must_checkpoint_read_graphics_c_0, "i8", (void *)(&c), (size_t)1, 0, 0, 0, "read_graphics|i|0", &____must_checkpoint_read_graphics_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "read_graphics|fid|0", &____must_checkpoint_read_graphics_fid_0, "%struct._IO_FILE*", (void *)(&fid), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  
