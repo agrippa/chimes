@@ -1,0 +1,10 @@
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 25 8 len=10 getSeconds_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 54 6 len=15 dispElapsedTime_npm
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 48 3 rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, 0, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 26 1 const int ____chimes_did_disable0 = new_stack((void *)(&getSeconds), "getSeconds", &____must_manage_getSeconds, 0, 0); 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 26 2 const int ____chimes_did_disable0 = new_stack((void *)(&getSeconds), "getSeconds", &____must_manage_getSeconds, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 26 119 
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 25 8 len=10 getSeconds_quick
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 26 118  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 25 8 len=10 getSeconds_resumable
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c 26 118  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

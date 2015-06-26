@@ -2,7 +2,7 @@ _IO_FILE 0 _flags "int" _IO_read_ptr "char*" _IO_read_end "char*" _IO_read_base 
 _IO_marker 0
 knode 0 location "int" indices "[ 509 x int ]" keys "[ 509 x int ]" is_leaf "bool" num_keys "int"
 list_item 0 pred "%struct.list_item*" next "%struct.list_item*" datum "void*"
-list_t 0 head "%struct.list_item*" tail "%struct.list_item*" length "unsigned int" compare "*" datum_delete "*"
+list_t 0 head "%struct.list_item*" tail "%struct.list_item*" length "unsigned int" compare "func*" datum_delete "func*"
 node 0 pointers "void**" keys "int*" parent "%struct.node*" is_leaf "bool" num_keys "int" next "%struct.node*"
 record 0 value "int"
 timeval 0 tv_sec "long int" tv_usec "long int"

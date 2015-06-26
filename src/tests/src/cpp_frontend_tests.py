@@ -141,6 +141,74 @@ for rtest in RODINIA_TESTS:
                             extra_cli_args=compilation_args)
     TESTS.append(test_obj)
 
+# SPEC tests
+SPEC_HOME = os.environ['SPEC_HOME']
+
+SPEC_BOTSALGN_ROOT = os.path.join(SPEC_HOME, 'benchspec', 'OMP2012',
+                                  '358.botsalgn', 'src')
+SPEC_BOTSALGN_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
+                       SPEC_BOTSALGN_ROOT + '/common -I ' + \
+                       SPEC_BOTSALGN_ROOT + '/omp-tasks/alignment/alignment_for'
+SPEC_BOTSALGN = FrontendTest('SPECBotsAlgn',
+                             ['common/bots_common.c','common/bots_main.c',
+                              'omp-tasks/alignment/alignment_for/alignment.c',
+                              'omp-tasks/alignment/alignment_for/sequence.c'],
+                             'spec-botsalgn', True,
+                             src_folder=SPEC_BOTSALGN_ROOT,
+                             extra_cli_args=SPEC_BOTSALGN_CUSTOM)
+
+SPEC_BOTSSPAR_ROOT = os.path.join(SPEC_HOME, 'benchspec', 'OMP2012',
+                                  '359.botsspar', 'src')
+SPEC_BOTSSPAR_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
+                       SPEC_BOTSSPAR_ROOT + '/common -I ' + \
+                       SPEC_BOTSSPAR_ROOT + '/omp-tasks/sparselu/sparselu_single'
+SPEC_BOTSSPAR = FrontendTest('SPECBotsSpar',
+                             ['common/bots_common.c', 'common/bots_main.c',
+                              'omp-tasks/sparselu/sparselu_single/sparselu.c'],
+                             'spec-botsspar', True,
+                             src_folder=SPEC_BOTSSPAR_ROOT,
+                             extra_cli_args=SPEC_BOTSSPAR_CUSTOM)
+
+SPEC_SMITHWA_ROOT = os.path.join(SPEC_HOME, 'benchspec', 'OMP2012',
+                                  '372.smithwa', 'src')
+SPEC_SMITHWA_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
+                      SPEC_SMITHWA_ROOT
+SPEC_SMITHWA = FrontendTest('SPECSmithwa',
+                            ['dispElapsedTime.c', 'genScalData.c',
+                             'genSimMatrix.c', 'getUserParameters.c',
+                             'mergeAlignment.c', 'pairwiseAlign.c',
+                             'scanBackward.c', 'sequenceAlignment.c',
+                             'specrand.c', 'verifyAlignment.c', 'verifyData.c',
+                             'verifyMergeAlignment.c'], 'spec-smithwa', True,
+                            src_folder=SPEC_SMITHWA_ROOT,
+                            extra_cli_args=SPEC_SMITHWA_CUSTOM)
+
+SPEC_KDTREE_ROOT = os.path.join(SPEC_HOME, 'benchspec', 'OMP2012',
+                                '376.kdtree', 'src')
+SPEC_KDTREE_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
+                      SPEC_KDTREE_ROOT
+SPEC_KDTREE = FrontendTest('SPECKDTree', ['specrand.c'], 'spec-kdtree', True,
+                           src_folder=SPEC_KDTREE_ROOT,
+                           extra_cli_args=SPEC_KDTREE_CUSTOM)
+
+
+# Imagick has some weird stuff in it, not sure if we can support it easily
+# SPEC_IMAGICK_ROOT = os.path.join(SPEC_HOME, 'benchspec', 'OMP2012',
+#                                  '367.imagick', 'src')
+# SPEC_IMAGICK_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
+#                       SPEC_IMAGICK_ROOT
+# SPEC_IMAGICK_SRC = [f for f in os.listdir(SPEC_IMAGICK_ROOT) if \
+#                     os.path.isfile(os.path.join(SPEC_IMAGICK_ROOT, f)) and \
+#                             f != 'utilities_convert.c']
+# SPEC_IMAGICK = FrontendTest('SPECImagick', SPEC_IMAGICK_SRC, 'spec-imagick',
+#                             True, src_folder=SPEC_IMAGICK_ROOT,
+#                             extra_cli_args=SPEC_IMAGICK_CUSTOM)
+
+TESTS.append(SPEC_BOTSALGN)
+TESTS.append(SPEC_BOTSSPAR)
+TESTS.append(SPEC_SMITHWA)
+TESTS.append(SPEC_KDTREE)
+
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
     CONFIG.set_force_sequential()

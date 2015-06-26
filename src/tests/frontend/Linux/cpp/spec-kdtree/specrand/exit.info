@@ -1,0 +1,11 @@
+spec_srand 0 1 1 0 0
+spec_init_genrand 0 3 11 379 380 0 0
+spec_rand 0 0 0 0
+spec_genrand_int32 0 4 59 60 379 380 0 0
+spec_lrand48 0 0 0 0
+spec_init_by_array 0 6 202 203 204 205 206 379 0 0
+spec_genrand_int31 0 0 0 0
+spec_genrand_real1 0 0 0 0
+spec_genrand_real2 0 0 0 0
+spec_genrand_real3 0 0 0 0
+spec_genrand_res53 0 2 361 362 0 0

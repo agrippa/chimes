@@ -782,14 +782,23 @@ bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
         }
 
         std::string varname = demangleVarName(var->getName().str());
-        Constant *init = var->getInitializer();
-        uint64_t size_in_bits =
-            layout->getTypeSizeInBits(init->getType());
-        assert((size_in_bits % 8) == 0);
-        uint64_t size_in_bytes = size_in_bits / 8;
+        if (var->hasExternalLinkage()) {
+            /*
+             * If this constant is externally initialized we should be able to
+             * pick up that initialization in another source file, which will
+             * actually perform the constant registration.
+             */
+            return false;
+        } else {
+            Constant *init = var->getInitializer();
+            uint64_t size_in_bits =
+                layout->getTypeSizeInBits(init->getType());
+            assert((size_in_bits % 8) == 0);
+            uint64_t size_in_bytes = size_in_bits / 8;
 
-        fprintf(fp, "%d \"%s\" %lu\n", constant_index, varname.c_str(), size_in_bytes);
-        return true;
+            fprintf(fp, "%d \"%s\" %lu\n", constant_index, varname.c_str(), size_in_bytes);
+            return true;
+        }
     }
 }
 
@@ -1185,18 +1194,17 @@ void Play::createNewAliasLocation(int line, int col, string filename,
         bool isCall, Function *reason, set<size_t> **changed_ptr,
         set<size_t> **changed_and_children_ptr,
         map<string, set<size_t> > **possibly_changed_ptr) {
-    bool existing = false;
+    GroupsModifiedAtLine *existing = NULL;
     for (std::vector<GroupsModifiedAtLine *>::iterator i =
             line_to_groups_modified.begin(), e = line_to_groups_modified.end();
             i != e; i++) {
         GroupsModifiedAtLine *curr = *i;
         if (curr->loc.line_no == line && *(curr->loc.filename) == filename &&
                 curr->loc.col == col) {
-            existing = true;
+            existing = curr;
             break;
         }
     }
-    assert(!existing);
 
     std::stringstream reason_str;
     if (isCall) {
@@ -1211,6 +1219,13 @@ void Play::createNewAliasLocation(int line, int col, string filename,
         reason_str << "anon";
     } else {
         reason_str << demangledFunctionName(reason->getName().str());
+    }
+
+    if (existing) {
+        llvm::errs() << filename << ":" << line << ":" << col <<
+            " curr_reason=" << reason_str.str() << ", old_reason=" <<
+            *(existing->reason) << "\n";
+        assert(false);
     }
 
     GroupsModifiedAtLine *g = (GroupsModifiedAtLine *)malloc(
@@ -2034,7 +2049,7 @@ static std::string DType_to_string(DIType curr, int nesting,
                 return "int";
             }
             case (dwarf::DW_TAG_subroutine_type): {
-                return "";
+                return "func";
             }
             case (dwarf::DW_TAG_class_type): {
                 return "";

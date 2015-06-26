@@ -7,7 +7,7 @@ ForceExchangeDataSt 0 dfEmbed "double*" boxes "%struct.LinkCellSt*"
 ForceExchangeParmsSt 0 nCells "[ 6 x int ]" sendCells "[ 6 x int* ]" recvCells "[ 6 x int* ]"
 ForceMsgSt 0 dfEmbed "double"
 HaloAxisOrder 0
-HaloExchangeSt 0 nbrRank "[ 6 x int ]" bufCapacity "int" loadBuffer "*" unloadBuffer "*" destroy "*" parms "void*"
+HaloExchangeSt 0 nbrRank "[ 6 x int ]" bufCapacity "int" loadBuffer "func*" unloadBuffer "func*" destroy "func*" parms "void*"
 LinkCellSt 0 gridSize "[ 3 x int ]" nLocalBoxes "int" nHaloBoxes "int" nTotalBoxes "int" localMin "[ 3 x double ]" localMax "[ 3 x double ]" boxSize "[ 3 x double ]" invBoxSize "[ 3 x double ]" nAtoms "int*" nbrBoxes "int**"
 SimFlatSt 0 nSteps "int" printRate "int" dt "double" domain "%struct.DomainSt*" boxes "%struct.LinkCellSt*" atoms "%struct.AtomsSt*" species "%struct.SpeciesDataSt*" ePotential "double" eKinetic "double" pot "%struct.BasePotentialSt*" atomExchange "%struct.HaloExchangeSt*"
 SpeciesDataSt 0
