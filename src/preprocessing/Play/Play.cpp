@@ -1264,6 +1264,7 @@ void Play::updateChanges(CallInst *call, Function *callee,
              * arg == 0 indicates a pointer return that has been modified or
              * set by this function.
              */
+            llvm::errs() << callee->getName().str() << "\n";
             if (arg == 0) {
                 assert(callee->getReturnType()->isPointerTy());
                 changed->insert(value_to_alias_group->at(call));

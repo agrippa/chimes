@@ -7,7 +7,7 @@ import sys
 from common import FrontendTest, run_frontend_test, parse_argv, \
                    CHIMES_HOME, construct_simple_frontend_test, \
                    get_platform_directory
-from shared_frontend_tests import ALL_RODINIA_TESTS, ALL_SPEC_TESTS
+from shared_tests import ALL_RODINIA_FRONTEND_TESTS, ALL_SPEC_FRONTEND_TESTS
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
@@ -91,9 +91,9 @@ TESTS.append(COMD)
 TESTS.append(UTS)
 TESTS.append(RAY_TRACER)
 
-TESTS.extend(ALL_RODINIA_TESTS)
+TESTS.extend(ALL_RODINIA_FRONTEND_TESTS)
 
-TESTS.extend(ALL_SPEC_TESTS)
+TESTS.extend(ALL_SPEC_FRONTEND_TESTS)
 
 
 # Imagick has some weird stuff in it, not sure if we can support it easily

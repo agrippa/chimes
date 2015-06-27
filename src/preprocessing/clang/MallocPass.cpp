@@ -16,6 +16,12 @@ extern std::set<std::string> npm_functions;
 
 void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
+#ifdef VERBOSE
+    llvm::errs() << "Visiting function " <<
+        toplevel->getNameInfo().getAsString() <<
+        " in MallocPass during NPM pass\n";
+#endif
+
     if (npm_pass) {
         clang::PresumedLoc presumed_start = SM->getPresumedLoc(
                 toplevel->getLocStart());
@@ -24,17 +30,16 @@ void MallocPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 function_starting_lines.end());
         function_starting_lines.insert(std::pair<std::string, int>(fname,
                     presumed_start.getLine()));
-    }
 
-    if (npm_pass && toplevel->getNameInfo().getAsString() != "main" &&
-            insertions->eligible_npm_function(toplevel->getNameAsString())) {
-        clang::SourceLocation name_start = toplevel->getNameInfo().getLoc();
-        int current_name_len = toplevel->getNameInfo().getAsString().size();
+        if (toplevel->getNameInfo().getAsString() != "main" &&
+                insertions->eligible_npm_function(toplevel->getNameAsString())) {
+            clang::SourceLocation name_start = toplevel->getNameInfo().getLoc();
+            int current_name_len = toplevel->getNameInfo().getAsString().size();
 
-        npm_functions.insert(toplevel->getNameAsString());
-        ReplaceText(name_start, current_name_len,
-                toplevel->getNameInfo().getAsString() + "_npm");
-
+            npm_functions.insert(toplevel->getNameAsString());
+            ReplaceText(name_start, current_name_len,
+                    toplevel->getNameInfo().getAsString() + "_npm");
+        }
     }
    
     // For each line that has a memory allocation or free statement

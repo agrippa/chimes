@@ -1,7 +1,7 @@
 include ${CHIMES_HOME}/src/common.conf
 
 NVCC=nvcc
-GXX_FLAGS=-fPIC -Wall -O3
+GXX_FLAGS=-fPIC -Wall -O0 -g -DVERBOSE
 NVCC_FLAGS=-Xcompiler -fPIC -arch=sm_20
 SRC=libchimes.cpp stack_frame.cpp stack_serialization.cpp \
 	global_serialization.cpp chimes_stack.cpp heap_allocation.cpp \

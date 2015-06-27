@@ -1,13 +1,39 @@
 #!/usr/bin/python
 import os
+from os import path
 import sys
-from common import FrontendTest
+from common import FrontendTest, RuntimeTest
 
 # Rodinia benchmarks
 RODINIA_HOME = os.environ['RODINIA_HOME']
+RODINIA_DATA = path.join(RODINIA_HOME, 'data')
 RODINIA_TESTS = ['backprop', 'bfs', 'b+tree', 'heartwall', 'hotspot',
                  'kmeans', 'lavaMD', 'leukocyte/OpenMP', 'lud', 'myocyte',
                  'nn', 'nw', 'particlefilter', 'srad']
+RODINIA_CLI_ARGS = {'backprop': '65536',
+                    'bfs': '4 ' + path.join(RODINIA_DATA, 'bfs/graph1MW_6.txt'),
+                    'b+tree': 'core 2 file ' + path.join(RODINIA_DATA,
+                                                         'b+tree/mil.txt') + \
+                              ' command ' + path.join(RODINIA_DATA,
+                                                      'b+tree/command.txt'),
+                    'heartwall': path.join(RODINIA_DATA,
+                                           'heartwall/test.avi') + ' 20 4',
+                    'hotspot': '512 512 2 4 ' + path.join(RODINIA_DATA,
+                                                          'hotspot/temp_512') + \
+                               ' ' + path.join(RODINIA_DATA,
+                                               'hotspot/power_512'),
+                    'kmeans': '-n 4 -i ' + path.join(RODINIA_DATA,
+                                                     'kmeans/kdd_cup'),
+                    'lavaMD': '-cores 4 -boxes1d 10',
+                    'leukocyte/OpenMP': '5 4 ' + \
+                                        path.join(RODINIA_DATA,
+                                                  'leukocyte/testfile.avi'),
+                    'lud': '-s 256 -v',
+                    'myocyte': '100 1 0 4',
+                    'nn': 'filelist_4 5 30 90',
+                    'nw': '2048 10 2',
+                    'particlefilter': '-x 128 -y 128 -z 10 -np 10000',
+                    'srad': '100 0.5 502 458 4'}
 EXCLUDED_FILES={'lud': ['omp/lud.c', 'omp/lud_omp.c', 'gen_input.c'],
                 'nn': ['hurricane_gen.c'],
                 'srad': ['srad_v2/srad.cpp']}
@@ -17,15 +43,16 @@ EXCLUDED_FILES={'lud': ['omp/lud.c', 'omp/lud_omp.c', 'gen_input.c'],
 #   3. pathfinder uses C++
 #   3. streamcluster uses C++
 EXCLUDED_RODINIA_TEST = ['cfd', 'mummergpu', 'pathfinder', 'streamcluster']
-ALL_RODINIA_TESTS = []
+ALL_RODINIA_FRONTEND_TESTS = []
+ALL_RODINIA_RUNTIME_TESTS = []
 for rtest in RODINIA_TESTS:
-    test_path = os.path.join(RODINIA_HOME, 'openmp', rtest)
+    test_path = path.join(RODINIA_HOME, 'openmp', rtest)
     test_name = 'Rodinia' + rtest.replace('/', '').capitalize()
 
     source_files = []
     for root, dirnames, filenames in os.walk(test_path):
         for filename in filenames:
-            full_path = os.path.join(root, filename)
+            full_path = path.join(root, filename)
             is_source = filename.endswith('.c') or filename.endswith('.cpp')
 
             is_included = True
@@ -41,25 +68,32 @@ for rtest in RODINIA_TESTS:
     compilation_args = '-D ANSI_C'
 
     if rtest == 'leukocyte/OpenMP':
-        compilation_args += ' -I ' + os.path.join(RODINIA_HOME, 'openmp',
+        compilation_args += ' -I ' + path.join(RODINIA_HOME, 'openmp',
                                                  'leukocyte', 'meschach_lib')
-        compilation_args += ' -x ' + os.path.join(RODINIA_HOME, 'openmp',
+        compilation_args += ' -x ' + path.join(RODINIA_HOME, 'openmp',
                                                  'leukocyte', 'meschach_lib',
                                                  'libmeschach.a')
     elif rtest == 'lud':
-        compilation_args += ' -I ' + os.path.join(RODINIA_HOME, 'openmp', 'lud',
+        compilation_args += ' -I ' + path.join(RODINIA_HOME, 'openmp', 'lud',
                                                   'common')
 
-    test_obj = FrontendTest(test_name, source_files, 'rodinia-' + rtest.replace('/', ''),
+    frontend_test_obj = FrontendTest(test_name, source_files,
+                            'rodinia-' + rtest.replace('/', ''),
                             False, src_folder='/',
                             extra_cli_args=compilation_args)
-    ALL_RODINIA_TESTS.append(test_obj)
+    ALL_RODINIA_FRONTEND_TESTS.append(frontend_test_obj)
+    # runtime_test_obj = RuntimeTest(test_name, source_files, 0, -1,
+    runtime_test_obj = RuntimeTest(test_name, source_files, 0, 0,
+                                   src_folder='/',
+                                   extra_compile_args=compilation_args,
+                                   cli_args=RODINIA_CLI_ARGS[rtest])
+    ALL_RODINIA_RUNTIME_TESTS.append(runtime_test_obj)
 
 # SPEC tests
 SPEC_HOME = os.environ['SPEC_HOME']
-ALL_SPEC_TESTS = []
+ALL_SPEC_FRONTEND_TESTS = []
 
-SPEC_BOTSALGN_ROOT = os.path.join(SPEC_HOME, 'benchspec', 'OMP2012',
+SPEC_BOTSALGN_ROOT = path.join(SPEC_HOME, 'benchspec', 'OMP2012',
                                   '358.botsalgn', 'src')
 SPEC_BOTSALGN_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
                        SPEC_BOTSALGN_ROOT + '/common -I ' + \
@@ -71,9 +105,9 @@ SPEC_BOTSALGN = FrontendTest('SPECBotsAlgn',
                              'spec-botsalgn', True,
                              src_folder=SPEC_BOTSALGN_ROOT,
                              extra_cli_args=SPEC_BOTSALGN_CUSTOM)
-ALL_SPEC_TESTS.append(SPEC_BOTSALGN)
+ALL_SPEC_FRONTEND_TESTS.append(SPEC_BOTSALGN)
 
-SPEC_BOTSSPAR_ROOT = os.path.join(SPEC_HOME, 'benchspec', 'OMP2012',
+SPEC_BOTSSPAR_ROOT = path.join(SPEC_HOME, 'benchspec', 'OMP2012',
                                   '359.botsspar', 'src')
 SPEC_BOTSSPAR_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
                        SPEC_BOTSSPAR_ROOT + '/common -I ' + \
@@ -84,9 +118,9 @@ SPEC_BOTSSPAR = FrontendTest('SPECBotsSpar',
                              'spec-botsspar', True,
                              src_folder=SPEC_BOTSSPAR_ROOT,
                              extra_cli_args=SPEC_BOTSSPAR_CUSTOM)
-ALL_SPEC_TESTS.append(SPEC_BOTSSPAR)
+ALL_SPEC_FRONTEND_TESTS.append(SPEC_BOTSSPAR)
 
-SPEC_SMITHWA_ROOT = os.path.join(SPEC_HOME, 'benchspec', 'OMP2012',
+SPEC_SMITHWA_ROOT = path.join(SPEC_HOME, 'benchspec', 'OMP2012',
                                   '372.smithwa', 'src')
 SPEC_SMITHWA_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
                       SPEC_SMITHWA_ROOT
@@ -99,15 +133,13 @@ SPEC_SMITHWA = FrontendTest('SPECSmithwa',
                              'verifyMergeAlignment.c'], 'spec-smithwa', True,
                             src_folder=SPEC_SMITHWA_ROOT,
                             extra_cli_args=SPEC_SMITHWA_CUSTOM)
-ALL_SPEC_TESTS.append(SPEC_SMITHWA)
+ALL_SPEC_FRONTEND_TESTS.append(SPEC_SMITHWA)
 
-SPEC_KDTREE_ROOT = os.path.join(SPEC_HOME, 'benchspec', 'OMP2012',
+SPEC_KDTREE_ROOT = path.join(SPEC_HOME, 'benchspec', 'OMP2012',
                                 '376.kdtree', 'src')
 SPEC_KDTREE_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
                       SPEC_KDTREE_ROOT
 SPEC_KDTREE = FrontendTest('SPECKDTree', ['specrand.c'], 'spec-kdtree', True,
                            src_folder=SPEC_KDTREE_ROOT,
                            extra_cli_args=SPEC_KDTREE_CUSTOM)
-ALL_SPEC_TESTS.append(SPEC_KDTREE)
-
-
+ALL_SPEC_FRONTEND_TESTS.append(SPEC_KDTREE)

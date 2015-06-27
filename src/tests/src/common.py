@@ -85,7 +85,8 @@ class RuntimeTest(object):
     """
     def __init__(self, name, input_files, expected_code,
                  expected_num_checkpoints, includes=None, dependencies=None,
-                 cli_args=None, defines=None, extra_compile_args=''):
+                 cli_args=None, defines=None, extra_compile_args='',
+                 src_folder=None):
         self.name = name
         self.input_files = input_files
         self.expected_code = expected_code
@@ -101,6 +102,7 @@ class RuntimeTest(object):
         self.cli_args = cli_args
         self.defines = [] if defines is None else defines
         self.extra_compile_args = extra_compile_args
+        self.src_folder = src_folder
 
 
 class FrontendTest(object):
@@ -666,7 +668,10 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     compile_cmd += ' -D __CHIMES_TESTING'
 
     for input_file in test.input_files:
-        compile_cmd += ' -i ' + os.path.join(inputs_dir, input_file)
+        if test.src_folder is not None:
+            compile_cmd += ' -i ' + os.path.join(test.src_folder, input_file)
+        else:
+            compile_cmd += ' -i ' + os.path.join(inputs_dir, input_file)
 
     compile_cmd += ' -o ' + RUNTIME_BIN
 
