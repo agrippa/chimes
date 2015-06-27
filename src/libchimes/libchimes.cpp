@@ -1616,11 +1616,22 @@ static map<size_t, size_t>::iterator find_alias_in_contains(size_t alias,
     return contains.end();
 }
 
-static void merge_alias_groups(size_t alias1, size_t alias2) {
+static void merge_alias_groups_helper(size_t alias1, size_t alias2, set<pair<size_t, size_t> > *merged) {
     assert(valid_group(alias1));
     assert(valid_group(alias2));
 
-    if (aliased(alias1, alias2, false)) return;
+    if (aliased(alias1, alias2, false) ||
+            merged->find(pair<size_t, size_t>(alias1, alias2)) !=
+                merged->end()) {
+        return;
+    }
+
+    merged->insert(pair<size_t, size_t>(alias1, alias2));
+    merged->insert(pair<size_t, size_t>(alias2, alias1));
+
+#ifdef VERBOSE
+    fprintf(stderr, "Merging %lu and %lu\n", alias1, alias2);
+#endif
 
     VERIFY(pthread_rwlock_rdlock(&contains_lock) == 0);
     size_t alias1_alias, alias2_alias;
@@ -1631,9 +1642,9 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
     map<size_t, size_t>::iterator end = contains.end();
 
     if (child1_iter != end && child2_iter == end) {
-        contains[alias2] = contains[alias1_alias];
+        VERIFY(contains.insert(pair<size_t, size_t>(alias2, alias1_alias)).second);
     } else if (child1_iter == end && child2_iter != end) {
-        contains[alias1] = contains[alias2_alias];
+        VERIFY(contains.insert(pair<size_t, size_t>(alias1, alias2_alias)).second);
     } else if (child1_iter != end && child2_iter != end) {
         size_t child1 = child1_iter->second;
         size_t child2 = child2_iter->second;
@@ -1643,9 +1654,7 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
          * children (e.g. if you cast a pointer to store it in itself). This
          * doesn't really fix the problem except for in trivial cases, so TODO.
          */
-        if (child1 != alias1 || child2 != alias2) {
-            merge_alias_groups(child1, child2);
-        }
+        merge_alias_groups_helper(child1, child2, merged);
     }
     VERIFY(pthread_rwlock_unlock(&contains_lock) == 0);
 
@@ -1668,8 +1677,8 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
         std::vector<size_t> *new_aliases = new std::vector<size_t>();
         new_aliases->push_back(alias1);
         new_aliases->push_back(alias2);
-        aliased_groups[alias1] = new_aliases;
-        aliased_groups[alias2] = new_aliases;
+        VERIFY(aliased_groups.insert(pair<unsigned, vector<size_t> *>(alias1, new_aliases)).second);
+        VERIFY(aliased_groups.insert(pair<unsigned, vector<size_t> *>(alias2, new_aliases)).second);
     } else if (existing1 != NULL && existing2 != NULL) {
         if (existing1 == existing2) {
             /*
@@ -1694,18 +1703,23 @@ static void merge_alias_groups(size_t alias1, size_t alias2) {
 
             for (std::vector<size_t>::iterator i = new_groups->begin(),
                     e = new_groups->end(); i != e; i++) {
-                aliased_groups[*i] = new_groups;
+                aliased_groups.find(*i)->second = new_groups;
             }
         }
     } else if (existing1 != NULL) {
         // alias2 is missing
         existing1->push_back(alias2);
-        aliased_groups[alias2] = existing1;
+        VERIFY(aliased_groups.insert(pair<unsigned, vector<size_t> *>(alias2, existing1)).second);
     } else if (existing2 != NULL) {
         // alias1 is missing
         existing2->push_back(alias1);
-        aliased_groups[alias1] = existing2;
+        VERIFY(aliased_groups.insert(pair<unsigned, vector<size_t> *>(alias1, existing2)).second);
     }
+}
+
+static void merge_alias_groups(size_t alias1, size_t alias2) {
+    set<pair<size_t, size_t> > merged;
+    merge_alias_groups_helper(alias1, alias2, &merged);
 }
 
 static void parse_merges(int n_merges, va_list vl,
@@ -2307,6 +2321,10 @@ static void calling_npm_helper(const char *name, unsigned loc_id,
 }
 
 void calling_npm(const char *name, unsigned loc_id) {
+#ifdef VERBOSE
+    fprintf(stderr, "NPM call to %s\n", name);
+#endif
+
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif

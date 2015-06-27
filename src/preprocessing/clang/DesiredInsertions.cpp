@@ -1427,9 +1427,14 @@ bool DesiredInsertions::no_children_call_function_ptrs(std::string fname,
 
 bool DesiredInsertions::eligible_npm_function(std::string fname) {
     std::set<std::string> visited;
-    return (call_tree->find(fname) != call_tree->end() &&
+    bool eligible = (call_tree->find(fname) != call_tree->end() &&
             no_children_call_function_ptrs(fname, &visited) &&
             call_tree->at(fname)->get_may_checkpoint() != DOES);
+#ifdef VERBOSE
+    llvm::errs() << "Is " << fname << " an eligible NPM function? " <<
+        eligible << "\n";
+#endif
+    return eligible;
 }
 
 bool DesiredInsertions::calls_unknown_functions(std::string fname) {
