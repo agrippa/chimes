@@ -279,6 +279,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
             -g ${INFO_FILE_PREFIX}.list_of_externs \
             -j ${INFO_FILE_PREFIX}.fptrs \
             -u ${INFO_FILE_PREFIX}.merge \
+            -y ${INFO_FILE_PREFIX}.allocators.info \
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}"
     [[ ! $VERBOSE ]] || echo $TRANSFORM_CMD
