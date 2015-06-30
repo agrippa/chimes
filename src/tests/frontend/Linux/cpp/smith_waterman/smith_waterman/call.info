@@ -1,36 +1,36 @@
-fprintf print_matrix 36 13 0 50 625 0
-fprintf print_matrix 38 9 0 50 626
-fprintf print_matrix 40 5 0 50 627
+fprintf print_matrix 36 13 0 54 645 0
+fprintf print_matrix 38 9 0 54 646
+fprintf print_matrix 40 5 0 54 647
 char_mapping clear_whitespaces_do_mapping 60 42 0 0
-fseek read_file 69 5 0 165 0 0
-ftell read_file 70 22 0 165
-fseek read_file 71 5 0 165 0 0
-malloc read_file 73 47 146 0
-fread read_file 75 31 0 146 0 0 165
-clear_whitespaces_do_mapping read_file 79 16 0 146 0
-fprintf main 120 3 0 50 630 375
+fseek read_file 69 5 0 177 0 0
+ftell read_file 70 22 0 177
+fseek read_file 71 5 0 177 0 0
+malloc read_file 73 47 155 0
+fread read_file 75 31 0 155 0 0 177
+clear_whitespaces_do_mapping read_file 79 16 0 155 0
+fprintf main 120 3 0 54 650 389
 exit main 121 3 0 0
-strtoull main 124 43 0 375 643 0
-strtoull main 125 43 0 375 643 0
-strtoull main 126 35 0 375 643 0
-__assert_fail main 127 52 0 631 632 0 633
-fprintf main 130 9 0 50 634 0 0
-printf main 134 5 0 635 0 0
+strtoull main 124 43 0 389 663 0
+strtoull main 125 43 0 389 663 0
+strtoull main 126 35 0 389 663 0
+__assert_fail main 127 52 0 651 652 0 653
+fprintf main 130 9 0 54 654 0 0
+printf main 134 5 0 655 0 0
 srand main 138 5 0 0
-malloc main 140 31 235 0
-malloc main 141 31 235 0
-random_init main 142 5 0 235 0
-random_init main 143 5 0 235 0
-malloc main 145 27 469 0
-malloc main 146 27 469 0
-fprintf main 151 5 0 50 636
-gettimeofday main 153 5 0 348 642
-kernel main 160 9 0 0 0 469 469 0 0
-gettimeofday main 163 9 0 350 642
-fprintf main 167 9 0 50 637 0 0 0 0
+malloc main 140 31 247 0
+malloc main 141 31 247 0
+random_init main 142 5 0 247 0
+random_init main 143 5 0 247 0
+malloc main 145 27 486 0
+malloc main 146 27 486 0
+fprintf main 151 5 0 54 656
+gettimeofday main 153 5 0 361 662
+kernel main 160 9 0 0 0 486 486 0 0
+gettimeofday main 163 9 0 363 662
+fprintf main 167 9 0 54 657 0 0 0 0
 checkpoint main 171 9 0
-gettimeofday main 175 5 0 349 642
-fprintf main 176 5 0 50 638 0
-fprintf main 178 2 0 50 639 0
+gettimeofday main 175 5 0 362 662
+fprintf main 176 5 0 54 658 0
+fprintf main 178 2 0 54 659 0
 rand random_init 85 17 0
-__assert_fail random_init 86 54 0 640 632 0 637
+__assert_fail random_init 86 54 0 660 652 0 657

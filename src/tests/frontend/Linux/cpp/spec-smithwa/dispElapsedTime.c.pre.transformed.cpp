@@ -15,6 +15,7 @@ static int ____must_manage_dispElapsedTime = 2;
 static int ____must_manage_getSeconds = 2;
 
 static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -2559,10 +2560,10 @@ double getSeconds_resumable( void )
 {const int ____chimes_did_disable0 = new_stack((void *)(&getSeconds), "getSeconds", &____must_manage_getSeconds, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-  rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, 0, ____chimes_did_disable0); return ( ( (double) 0.0) );
+   double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (( ( (double) 0.0) )); rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-}
+rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, ____alias_loc_id_0, ____chimes_did_disable0); }
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
@@ -2577,10 +2578,10 @@ double getSeconds_quick( void )
 {const int ____chimes_did_disable0 = new_stack((void *)(&getSeconds), "getSeconds", &____must_manage_getSeconds, 0, 0) ; ; ;
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-  rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, 0, ____chimes_did_disable0); return ( ( (double) 0.0) );
+   double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (( ( (double) 0.0) )); rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-}
+rm_stack(false, 0UL, "getSeconds", &____must_manage_getSeconds, ____alias_loc_id_0, ____chimes_did_disable0); }
 
 double getSeconds( void ) { return (____chimes_replaying ? getSeconds_resumable() : getSeconds_quick()); }
 
@@ -2591,7 +2592,7 @@ double getSeconds_npm( void )
 {
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
-  return ( ( (double) 0.0) );
+   double ____chimes_ret_var_0; ____chimes_ret_var_0 = (( ( (double) 0.0) )); return ____chimes_ret_var_0; ;
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/dispElapsedTime.c"
 }
@@ -2606,8 +2607,9 @@ void dispElapsedTime_npm(double startTime) {
 
 
 static int module_init() {
-    init_module(1228571069279002029UL, 0, 2, 0, 1, 2, 0, 2, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (1228571069279002029UL + 2UL),
+    init_module(1228571069279002029UL, 0, 2, 0, 2, 2, 0, 2, 0, 0, 0,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (1228571069279002029UL + 1UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (1228571069279002029UL + 8UL),
                             "getSeconds", (void *)(&getSeconds_npm), (void *)__null, 0, 0, 0UL, 0,
                             "dispElapsedTime", (void *)(&dispElapsedTime_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
                            "getSeconds", &(____chimes_does_checkpoint_getSeconds_npm),

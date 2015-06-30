@@ -1276,6 +1276,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     found = insertions->findFirstMatchingCallsiteAfter(
                             i->first, loc.get_funcname(), begin);
                 }
+
+                if (found == insertions->getCallsiteEnd()) continue;
+
                 call_tracker[loc.get_funcname()] = found;
                 AliasesPassedToCallSite callsite = *found;
 

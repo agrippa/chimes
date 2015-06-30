@@ -1413,26 +1413,26 @@ extern int getloadavg (double __loadavg[], int __nelem)
 # 2 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1816405653872939695UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1816405653872939703UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
      int a; a = (atoi(argv[1])) ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
-    if (a < 3) {rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return 4; };
+    if (a < 3) { int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (4); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ; };
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return 5;
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (5); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
-}
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1816405653872939695UL)) ; ; ;
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); }
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(1816405653872939703UL)) ; ; ;
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
      int a; a = (atoi(argv[1])) ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
-    if (a < 3) {rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return 4; };
+    if (a < 3) { int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (4); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ; };
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return 5;
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (5); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./if_braces.cpp"
-}
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -1444,9 +1444,9 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 static int module_init() {
     init_module(1816405653872939669UL, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (1816405653872939669UL + 1UL), (1816405653872939669UL + 2UL), (1816405653872939669UL + 3UL), (1816405653872939669UL + 4UL),
-                             (1816405653872939669UL + 3UL), (1816405653872939669UL + 26UL),
-                             (1816405653872939669UL + 26UL), (1816405653872939669UL + 13UL),
+                           &____alias_loc_id_0, (unsigned)6, (unsigned)0, (unsigned)0, (1816405653872939669UL + 1UL), (1816405653872939669UL + 2UL), (1816405653872939669UL + 3UL), (1816405653872939669UL + 4UL), (1816405653872939669UL + 5UL), (1816405653872939669UL + 6UL),
+                             (1816405653872939669UL + 3UL), (1816405653872939669UL + 34UL),
+                             (1816405653872939669UL + 34UL), (1816405653872939669UL + 15UL),
                              "main", "main", 0);
     return 0;
 }

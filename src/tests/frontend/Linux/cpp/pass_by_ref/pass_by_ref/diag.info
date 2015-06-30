@@ -1,9 +1,12 @@
-InsertText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 12 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 8 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332564UL)); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 8 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332564UL)); ;
+InsertText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 12 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 8 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332568UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 13 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 8 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332568UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 8 171 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 9 5 int b; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 9 10 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 12 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 12 30 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 10 5  call_lbl_1: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 11 5  call_lbl_2: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp 8 5 len=4 main_quick

@@ -2,6 +2,7 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c initAtoms|atoms|0 " %struct.AtomsSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c initAtoms|maxTotalAtoms|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c initAtoms|iOff|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c initAtoms|____chimes_ret_var_0|0 " %struct.AtomsSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mytype.h zeroReal3|a|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c destroyAtoms|atoms|0 " %struct.AtomsSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c createFccLattice|nx|0 " i32 " 32 0 0 1 addIntParallel profileStart profileStop putAtomInBox

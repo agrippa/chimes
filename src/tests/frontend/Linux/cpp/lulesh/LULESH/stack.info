@@ -60,14 +60,17 @@
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|k|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|AbsDiff|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|RelDiff|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc main|____chimes_ret_var_7|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemVolumeWrapper|x|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemVolumeWrapper|y|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemVolumeWrapper|z|0 " double* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemVolumeWrapper|____chimes_ret_var_4|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc TimeIncrement|targetdt|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc TimeIncrement|ratio|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc TimeIncrement|olddt|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc TimeIncrement|newdt|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc FABS|arg|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc FABS|____chimes_ret_var_2|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc LagrangeNodal|delt|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc LagrangeNodal|u_cut|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc LagrangeElements|deltatime|0 " double " 64 0 0 0
@@ -87,6 +90,7 @@
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcHydroConstraintForElems|indx|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcHydroConstraintForElems|dtdvov|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc SQRT|arg|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc SQRT|____chimes_ret_var_0|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcLagrangeElements|deltatime|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcLagrangeElements|numElem|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcLagrangeElements|k|0 " i32 " 32 0 0 0
@@ -346,6 +350,7 @@
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemCharacteristicLength|volume|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemCharacteristicLength|a|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemCharacteristicLength|charLength|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemCharacteristicLength|____chimes_ret_var_6|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemShapeFunctionDerivatives|x|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemShapeFunctionDerivatives|y|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemShapeFunctionDerivatives|z|0 " double* " 64 1 0 0
@@ -428,6 +433,7 @@
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc AreaFace|gy|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc AreaFace|gz|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc AreaFace|area|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc AreaFace|____chimes_ret_var_5|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcForceForNodes|numNode|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcForceForNodes|i|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcAccelerationForNodes|numNode|0 " i32 " 32 0 0 0
@@ -559,6 +565,7 @@
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcFBHourglassForceForElems|n6si2|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcFBHourglassForceForElems|n7si2|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CBRT|arg|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CBRT|____chimes_ret_var_1|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemFBHourglassForce|xd|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemFBHourglassForce|yd|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemFBHourglassForce|zd|0 " double* " 64 1 0 0
@@ -737,3 +744,4 @@
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemVolume|dy25|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemVolume|dz25|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemVolume|volume|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc CalcElemVolume|____chimes_ret_var_3|0 " double " 64 0 0 0

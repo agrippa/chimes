@@ -1,14 +1,14 @@
-checkmat 118 119
-genmat 355
-print_structure 437 438
+checkmat 126 127
+genmat 363
+print_structure 445 446
 allocate_clean_block
-lu0 611
-bdiv 726 727
-bmod 815 816 817
-fwd 904 905
-sparselu_init 925 926
-sparselu_par_call 1162
-sparselu_seq_call 1382
-sparselu_fini 1390 1391
-sparselu_check 1445 1446
-checkmat1 1495
+lu0 623
+bdiv 738 739
+bmod 827 828 829
+fwd 916 917
+sparselu_init 937 938
+sparselu_par_call 1174
+sparselu_seq_call 1394
+sparselu_fini 1402 1403
+sparselu_check 1461 1462
+checkmat1 1515

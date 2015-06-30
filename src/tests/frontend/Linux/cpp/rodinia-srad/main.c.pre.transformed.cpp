@@ -8,7 +8,6 @@ typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "main.c.pre.transformed.cpp"
 static int ____chimes_does_checkpoint_get_time_npm = 1;
-static int ____chimes_does_checkpoint_omp_set_num_threads_npm = 1;
 static int ____chimes_does_checkpoint_read_graphics_npm = 1;
 static int ____chimes_does_checkpoint_resize_npm = 1;
 static int ____chimes_does_checkpoint_write_graphics_npm = 1;
@@ -3864,9 +3863,9 @@ extern void resize( float* input,
 # 31 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c" 2
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-static long long (*____chimes_extern_func_get_time)(void) = get_time;static void (*____chimes_extern_func_omp_set_num_threads)(int) = omp_set_num_threads;static void (*____chimes_extern_func_read_graphics)(char *, float *, int, int, int) = read_graphics;static void (*____chimes_extern_func_resize)(float *, int, int, float *, int, int, int) = resize;static void (*____chimes_extern_func_write_graphics)(char *, float *, int, int, int, int) = write_graphics;
+static long long (*____chimes_extern_func_get_time)(void) = get_time;static void (*____chimes_extern_func_read_graphics)(char *, float *, int, int, int) = read_graphics;static void (*____chimes_extern_func_resize)(float *, int, int, float *, int, int, int) = resize;static void (*____chimes_extern_func_write_graphics)(char *, float *, int, int, int, int) = write_graphics;
 int main_quick(int argc, char *argv []); int main(int argc, char *argv []);
-int main_resumable(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(7677405821689735827UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int threads;
+int main_resumable(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(7677405821689735836UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int threads;
 long k;
 long j;
 long i;
@@ -3922,7 +3921,7 @@ long long time3;
 long long time2;
 long long time1;
 long long time0;
- if (____must_checkpoint_main_threads_0 || ____must_checkpoint_main_k_0 || ____must_checkpoint_main_j_0 || ____must_checkpoint_main_i_0 || ____must_checkpoint_main_iter_0 || ____must_checkpoint_main_cE_0 || ____must_checkpoint_main_cW_0 || ____must_checkpoint_main_cS_0 || ____must_checkpoint_main_cN_0 || ____must_checkpoint_main_c_0 || ____must_checkpoint_main_D_0 || ____must_checkpoint_main_qsqr_0 || ____must_checkpoint_main_den_0 || ____must_checkpoint_main_num_0 || ____must_checkpoint_main_L_0 || ____must_checkpoint_main_G2_0 || ____must_checkpoint_main_sum2_0 || ____must_checkpoint_main_sum_0 || ____must_checkpoint_main_tmp_0 || ____must_checkpoint_main_dE_0 || ____must_checkpoint_main_dW_0 || ____must_checkpoint_main_dS_0 || ____must_checkpoint_main_dN_0 || ____must_checkpoint_main_Jc_0 || ____must_checkpoint_main_jW_0 || ____must_checkpoint_main_jE_0 || ____must_checkpoint_main_iS_0 || ____must_checkpoint_main_iN_0 || ____must_checkpoint_main_q0sqr_0 || ____must_checkpoint_main_varROI_0 || ____must_checkpoint_main_meanROI_0 || ____must_checkpoint_main_NeROI_0 || ____must_checkpoint_main_c2_0 || ____must_checkpoint_main_c1_0 || ____must_checkpoint_main_r2_0 || ____must_checkpoint_main_r1_0 || ____must_checkpoint_main_lambda_0 || ____must_checkpoint_main_niter_0 || ____must_checkpoint_main_Ne_0 || ____must_checkpoint_main_Nc_0 || ____must_checkpoint_main_Nr_0 || ____must_checkpoint_main_image_0 || ____must_checkpoint_main_image_ori_elem_0 || ____must_checkpoint_main_image_ori_cols_0 || ____must_checkpoint_main_image_ori_rows_0 || ____must_checkpoint_main_image_ori_0 || ____must_checkpoint_main_time9_0 || ____must_checkpoint_main_time8_0 || ____must_checkpoint_main_time7_0 || ____must_checkpoint_main_time6_0 || ____must_checkpoint_main_time5_0 || ____must_checkpoint_main_time4_0 || ____must_checkpoint_main_time3_0 || ____must_checkpoint_main_time2_0 || ____must_checkpoint_main_time1_0 || ____must_checkpoint_main_time0_0) { register_stack_vars(56, "main|threads|0", &____must_checkpoint_main_threads_0, "i32", (void *)(&threads), (size_t)4, 0, 0, 0, "main|k|0", &____must_checkpoint_main_k_0, "i64", (void *)(&k), (size_t)8, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i64", (void *)(&j), (size_t)8, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|iter|0", &____must_checkpoint_main_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|cE|0", &____must_checkpoint_main_cE_0, "float", (void *)(&cE), (size_t)4, 0, 0, 0, "main|cW|0", &____must_checkpoint_main_cW_0, "float", (void *)(&cW), (size_t)4, 0, 0, 0, "main|cS|0", &____must_checkpoint_main_cS_0, "float", (void *)(&cS), (size_t)4, 0, 0, 0, "main|cN|0", &____must_checkpoint_main_cN_0, "float", (void *)(&cN), (size_t)4, 0, 0, 0, "main|c|0", &____must_checkpoint_main_c_0, "float*", (void *)(&c), (size_t)8, 1, 0, 0, "main|D|0", &____must_checkpoint_main_D_0, "float", (void *)(&D), (size_t)4, 0, 0, 0, "main|qsqr|0", &____must_checkpoint_main_qsqr_0, "float", (void *)(&qsqr), (size_t)4, 0, 0, 0, "main|den|0", &____must_checkpoint_main_den_0, "float", (void *)(&den), (size_t)4, 0, 0, 0, "main|num|0", &____must_checkpoint_main_num_0, "float", (void *)(&num), (size_t)4, 0, 0, 0, "main|L|0", &____must_checkpoint_main_L_0, "float", (void *)(&L), (size_t)4, 0, 0, 0, "main|G2|0", &____must_checkpoint_main_G2_0, "float", (void *)(&G2), (size_t)4, 0, 0, 0, "main|sum2|0", &____must_checkpoint_main_sum2_0, "float", (void *)(&sum2), (size_t)4, 0, 0, 0, "main|sum|0", &____must_checkpoint_main_sum_0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "main|tmp|0", &____must_checkpoint_main_tmp_0, "float", (void *)(&tmp), (size_t)4, 0, 0, 0, "main|dE|0", &____must_checkpoint_main_dE_0, "float*", (void *)(&dE), (size_t)8, 1, 0, 0, "main|dW|0", &____must_checkpoint_main_dW_0, "float*", (void *)(&dW), (size_t)8, 1, 0, 0, "main|dS|0", &____must_checkpoint_main_dS_0, "float*", (void *)(&dS), (size_t)8, 1, 0, 0, "main|dN|0", &____must_checkpoint_main_dN_0, "float*", (void *)(&dN), (size_t)8, 1, 0, 0, "main|Jc|0", &____must_checkpoint_main_Jc_0, "float", (void *)(&Jc), (size_t)4, 0, 0, 0, "main|jW|0", &____must_checkpoint_main_jW_0, "i32*", (void *)(&jW), (size_t)8, 1, 0, 0, "main|jE|0", &____must_checkpoint_main_jE_0, "i32*", (void *)(&jE), (size_t)8, 1, 0, 0, "main|iS|0", &____must_checkpoint_main_iS_0, "i32*", (void *)(&iS), (size_t)8, 1, 0, 0, "main|iN|0", &____must_checkpoint_main_iN_0, "i32*", (void *)(&iN), (size_t)8, 1, 0, 0, "main|q0sqr|0", &____must_checkpoint_main_q0sqr_0, "float", (void *)(&q0sqr), (size_t)4, 0, 0, 0, "main|varROI|0", &____must_checkpoint_main_varROI_0, "float", (void *)(&varROI), (size_t)4, 0, 0, 0, "main|meanROI|0", &____must_checkpoint_main_meanROI_0, "float", (void *)(&meanROI), (size_t)4, 0, 0, 0, "main|NeROI|0", &____must_checkpoint_main_NeROI_0, "i64", (void *)(&NeROI), (size_t)8, 0, 0, 0, "main|c2|0", &____must_checkpoint_main_c2_0, "i32", (void *)(&c2), (size_t)4, 0, 0, 0, "main|c1|0", &____must_checkpoint_main_c1_0, "i32", (void *)(&c1), (size_t)4, 0, 0, 0, "main|r2|0", &____must_checkpoint_main_r2_0, "i32", (void *)(&r2), (size_t)4, 0, 0, 0, "main|r1|0", &____must_checkpoint_main_r1_0, "i32", (void *)(&r1), (size_t)4, 0, 0, 0, "main|lambda|0", &____must_checkpoint_main_lambda_0, "float", (void *)(&lambda), (size_t)4, 0, 0, 0, "main|niter|0", &____must_checkpoint_main_niter_0, "i32", (void *)(&niter), (size_t)4, 0, 0, 0, "main|Ne|0", &____must_checkpoint_main_Ne_0, "i64", (void *)(&Ne), (size_t)8, 0, 0, 0, "main|Nc|0", &____must_checkpoint_main_Nc_0, "i64", (void *)(&Nc), (size_t)8, 0, 0, 0, "main|Nr|0", &____must_checkpoint_main_Nr_0, "i64", (void *)(&Nr), (size_t)8, 0, 0, 0, "main|image|0", &____must_checkpoint_main_image_0, "float*", (void *)(&image), (size_t)8, 1, 0, 0, "main|image_ori_elem|0", &____must_checkpoint_main_image_ori_elem_0, "i64", (void *)(&image_ori_elem), (size_t)8, 0, 0, 0, "main|image_ori_cols|0", &____must_checkpoint_main_image_ori_cols_0, "i32", (void *)(&image_ori_cols), (size_t)4, 0, 0, 0, "main|image_ori_rows|0", &____must_checkpoint_main_image_ori_rows_0, "i32", (void *)(&image_ori_rows), (size_t)4, 0, 0, 0, "main|image_ori|0", &____must_checkpoint_main_image_ori_0, "float*", (void *)(&image_ori), (size_t)8, 1, 0, 0, "main|time9|0", &____must_checkpoint_main_time9_0, "i64", (void *)(&time9), (size_t)8, 0, 0, 0, "main|time8|0", &____must_checkpoint_main_time8_0, "i64", (void *)(&time8), (size_t)8, 0, 0, 0, "main|time7|0", &____must_checkpoint_main_time7_0, "i64", (void *)(&time7), (size_t)8, 0, 0, 0, "main|time6|0", &____must_checkpoint_main_time6_0, "i64", (void *)(&time6), (size_t)8, 0, 0, 0, "main|time5|0", &____must_checkpoint_main_time5_0, "i64", (void *)(&time5), (size_t)8, 0, 0, 0, "main|time4|0", &____must_checkpoint_main_time4_0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", &____must_checkpoint_main_time3_0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", &____must_checkpoint_main_time2_0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", &____must_checkpoint_main_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", &____must_checkpoint_main_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(27): { goto call_lbl_27; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(46): { goto call_lbl_46; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_main_threads_0 || ____must_checkpoint_main_k_0 || ____must_checkpoint_main_j_0 || ____must_checkpoint_main_i_0 || ____must_checkpoint_main_iter_0 || ____must_checkpoint_main_cE_0 || ____must_checkpoint_main_cW_0 || ____must_checkpoint_main_cS_0 || ____must_checkpoint_main_cN_0 || ____must_checkpoint_main_c_0 || ____must_checkpoint_main_D_0 || ____must_checkpoint_main_qsqr_0 || ____must_checkpoint_main_den_0 || ____must_checkpoint_main_num_0 || ____must_checkpoint_main_L_0 || ____must_checkpoint_main_G2_0 || ____must_checkpoint_main_sum2_0 || ____must_checkpoint_main_sum_0 || ____must_checkpoint_main_tmp_0 || ____must_checkpoint_main_dE_0 || ____must_checkpoint_main_dW_0 || ____must_checkpoint_main_dS_0 || ____must_checkpoint_main_dN_0 || ____must_checkpoint_main_Jc_0 || ____must_checkpoint_main_jW_0 || ____must_checkpoint_main_jE_0 || ____must_checkpoint_main_iS_0 || ____must_checkpoint_main_iN_0 || ____must_checkpoint_main_q0sqr_0 || ____must_checkpoint_main_varROI_0 || ____must_checkpoint_main_meanROI_0 || ____must_checkpoint_main_NeROI_0 || ____must_checkpoint_main_c2_0 || ____must_checkpoint_main_c1_0 || ____must_checkpoint_main_r2_0 || ____must_checkpoint_main_r1_0 || ____must_checkpoint_main_lambda_0 || ____must_checkpoint_main_niter_0 || ____must_checkpoint_main_Ne_0 || ____must_checkpoint_main_Nc_0 || ____must_checkpoint_main_Nr_0 || ____must_checkpoint_main_image_0 || ____must_checkpoint_main_image_ori_elem_0 || ____must_checkpoint_main_image_ori_cols_0 || ____must_checkpoint_main_image_ori_rows_0 || ____must_checkpoint_main_image_ori_0 || ____must_checkpoint_main_time9_0 || ____must_checkpoint_main_time8_0 || ____must_checkpoint_main_time7_0 || ____must_checkpoint_main_time6_0 || ____must_checkpoint_main_time5_0 || ____must_checkpoint_main_time4_0 || ____must_checkpoint_main_time3_0 || ____must_checkpoint_main_time2_0 || ____must_checkpoint_main_time1_0 || ____must_checkpoint_main_time0_0) { register_stack_vars(56, "main|threads|0", &____must_checkpoint_main_threads_0, "i32", (void *)(&threads), (size_t)4, 0, 0, 0, "main|k|0", &____must_checkpoint_main_k_0, "i64", (void *)(&k), (size_t)8, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i64", (void *)(&j), (size_t)8, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|iter|0", &____must_checkpoint_main_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|cE|0", &____must_checkpoint_main_cE_0, "float", (void *)(&cE), (size_t)4, 0, 0, 0, "main|cW|0", &____must_checkpoint_main_cW_0, "float", (void *)(&cW), (size_t)4, 0, 0, 0, "main|cS|0", &____must_checkpoint_main_cS_0, "float", (void *)(&cS), (size_t)4, 0, 0, 0, "main|cN|0", &____must_checkpoint_main_cN_0, "float", (void *)(&cN), (size_t)4, 0, 0, 0, "main|c|0", &____must_checkpoint_main_c_0, "float*", (void *)(&c), (size_t)8, 1, 0, 0, "main|D|0", &____must_checkpoint_main_D_0, "float", (void *)(&D), (size_t)4, 0, 0, 0, "main|qsqr|0", &____must_checkpoint_main_qsqr_0, "float", (void *)(&qsqr), (size_t)4, 0, 0, 0, "main|den|0", &____must_checkpoint_main_den_0, "float", (void *)(&den), (size_t)4, 0, 0, 0, "main|num|0", &____must_checkpoint_main_num_0, "float", (void *)(&num), (size_t)4, 0, 0, 0, "main|L|0", &____must_checkpoint_main_L_0, "float", (void *)(&L), (size_t)4, 0, 0, 0, "main|G2|0", &____must_checkpoint_main_G2_0, "float", (void *)(&G2), (size_t)4, 0, 0, 0, "main|sum2|0", &____must_checkpoint_main_sum2_0, "float", (void *)(&sum2), (size_t)4, 0, 0, 0, "main|sum|0", &____must_checkpoint_main_sum_0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "main|tmp|0", &____must_checkpoint_main_tmp_0, "float", (void *)(&tmp), (size_t)4, 0, 0, 0, "main|dE|0", &____must_checkpoint_main_dE_0, "float*", (void *)(&dE), (size_t)8, 1, 0, 0, "main|dW|0", &____must_checkpoint_main_dW_0, "float*", (void *)(&dW), (size_t)8, 1, 0, 0, "main|dS|0", &____must_checkpoint_main_dS_0, "float*", (void *)(&dS), (size_t)8, 1, 0, 0, "main|dN|0", &____must_checkpoint_main_dN_0, "float*", (void *)(&dN), (size_t)8, 1, 0, 0, "main|Jc|0", &____must_checkpoint_main_Jc_0, "float", (void *)(&Jc), (size_t)4, 0, 0, 0, "main|jW|0", &____must_checkpoint_main_jW_0, "i32*", (void *)(&jW), (size_t)8, 1, 0, 0, "main|jE|0", &____must_checkpoint_main_jE_0, "i32*", (void *)(&jE), (size_t)8, 1, 0, 0, "main|iS|0", &____must_checkpoint_main_iS_0, "i32*", (void *)(&iS), (size_t)8, 1, 0, 0, "main|iN|0", &____must_checkpoint_main_iN_0, "i32*", (void *)(&iN), (size_t)8, 1, 0, 0, "main|q0sqr|0", &____must_checkpoint_main_q0sqr_0, "float", (void *)(&q0sqr), (size_t)4, 0, 0, 0, "main|varROI|0", &____must_checkpoint_main_varROI_0, "float", (void *)(&varROI), (size_t)4, 0, 0, 0, "main|meanROI|0", &____must_checkpoint_main_meanROI_0, "float", (void *)(&meanROI), (size_t)4, 0, 0, 0, "main|NeROI|0", &____must_checkpoint_main_NeROI_0, "i64", (void *)(&NeROI), (size_t)8, 0, 0, 0, "main|c2|0", &____must_checkpoint_main_c2_0, "i32", (void *)(&c2), (size_t)4, 0, 0, 0, "main|c1|0", &____must_checkpoint_main_c1_0, "i32", (void *)(&c1), (size_t)4, 0, 0, 0, "main|r2|0", &____must_checkpoint_main_r2_0, "i32", (void *)(&r2), (size_t)4, 0, 0, 0, "main|r1|0", &____must_checkpoint_main_r1_0, "i32", (void *)(&r1), (size_t)4, 0, 0, 0, "main|lambda|0", &____must_checkpoint_main_lambda_0, "float", (void *)(&lambda), (size_t)4, 0, 0, 0, "main|niter|0", &____must_checkpoint_main_niter_0, "i32", (void *)(&niter), (size_t)4, 0, 0, 0, "main|Ne|0", &____must_checkpoint_main_Ne_0, "i64", (void *)(&Ne), (size_t)8, 0, 0, 0, "main|Nc|0", &____must_checkpoint_main_Nc_0, "i64", (void *)(&Nc), (size_t)8, 0, 0, 0, "main|Nr|0", &____must_checkpoint_main_Nr_0, "i64", (void *)(&Nr), (size_t)8, 0, 0, 0, "main|image|0", &____must_checkpoint_main_image_0, "float*", (void *)(&image), (size_t)8, 1, 0, 0, "main|image_ori_elem|0", &____must_checkpoint_main_image_ori_elem_0, "i64", (void *)(&image_ori_elem), (size_t)8, 0, 0, 0, "main|image_ori_cols|0", &____must_checkpoint_main_image_ori_cols_0, "i32", (void *)(&image_ori_cols), (size_t)4, 0, 0, 0, "main|image_ori_rows|0", &____must_checkpoint_main_image_ori_rows_0, "i32", (void *)(&image_ori_rows), (size_t)4, 0, 0, 0, "main|image_ori|0", &____must_checkpoint_main_image_ori_0, "float*", (void *)(&image_ori), (size_t)8, 1, 0, 0, "main|time9|0", &____must_checkpoint_main_time9_0, "i64", (void *)(&time9), (size_t)8, 0, 0, 0, "main|time8|0", &____must_checkpoint_main_time8_0, "i64", (void *)(&time8), (size_t)8, 0, 0, 0, "main|time7|0", &____must_checkpoint_main_time7_0, "i64", (void *)(&time7), (size_t)8, 0, 0, 0, "main|time6|0", &____must_checkpoint_main_time6_0, "i64", (void *)(&time6), (size_t)8, 0, 0, 0, "main|time5|0", &____must_checkpoint_main_time5_0, "i64", (void *)(&time5), (size_t)8, 0, 0, 0, "main|time4|0", &____must_checkpoint_main_time4_0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", &____must_checkpoint_main_time3_0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", &____must_checkpoint_main_time2_0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", &____must_checkpoint_main_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", &____must_checkpoint_main_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(27): { goto call_lbl_27; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(46): { goto call_lbl_46; } default: { chimes_error(); } } } ; ;
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4037,7 +4036,7 @@ long long time0;
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   printf("ERROR: wrong number of arguments\n");
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); return 0;
+   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
  }
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4056,12 +4055,12 @@ long long time0;
  }
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_10: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 10, ____alias_loc_id_10, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_10); (*____chimes_extern_func_omp_set_num_threads)(threads); })));
+ omp_set_num_threads(threads);
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_11: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_11: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4076,10 +4075,10 @@ long long time0;
  image_ori_elem = image_ori_rows * image_ori_cols;
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image_ori = (float*)malloc_wrapper(sizeof(float) * image_ori_elem, 7677405821689735599UL, 0, 0);
+ image_ori = (float*)malloc_wrapper(sizeof(float) * image_ori_elem, 7677405821689735604UL, 0, 0);
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("../../../data/srad/image.pgm"); } calling((void*)read_graphics, 13, ____alias_loc_id_9, 0UL, 5, (size_t)(7677405821689735857UL), (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)(____chimes_arg1, image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_9); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
+  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = ("../../../data/srad/image.pgm"); } calling((void*)read_graphics, 13, ____alias_loc_id_9, 0UL, 5, (size_t)(7677405821689735866UL), (size_t)(7677405821689735604UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)(____chimes_arg0, image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_9); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_14: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4092,10 +4091,10 @@ long long time0;
  Ne = Nr*Nc;
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image = (float*)malloc_wrapper(sizeof(float) * Ne, 7677405821689735122UL, 0, 0);
+ image = (float*)malloc_wrapper(sizeof(float) * Ne, 7677405821689735127UL, 0, 0);
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_8, 0UL, 7, (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_8); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
+  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_8, 0UL, 7, (size_t)(7677405821689735604UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_8); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_17: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 17, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4119,27 +4118,27 @@ long long time0;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iN = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735051UL, 0, 0) ;
+    iN = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735056UL, 0, 0) ;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iS = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735058UL, 0, 0) ;
+    iS = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735063UL, 0, 0) ;
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jW = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735277UL, 0, 0) ;
+    jW = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735282UL, 0, 0) ;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jE = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735295UL, 0, 0) ;
+    jE = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735300UL, 0, 0) ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- dN = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735253UL, 0, 0) ;
+ dN = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735258UL, 0, 0) ;
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dS = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735271UL, 0, 0) ;
+    dS = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735276UL, 0, 0) ;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dW = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735289UL, 0, 0) ;
+    dW = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735294UL, 0, 0) ;
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dE = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735307UL, 0, 0) ;
+    dE = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735312UL, 0, 0) ;
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    c = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735414UL, 0, 0) ;
+    c = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735419UL, 0, 0) ;
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4348,7 +4347,7 @@ long long time0;
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_33: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ char * ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg13 = ("image_out.pgm"); } calling((void*)write_graphics, 33, ____alias_loc_id_3, 0UL, 6, (size_t)(7677405821689735858UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)(____chimes_arg13, image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_3); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
+  call_lbl_33: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ char * ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = ("image_out.pgm"); } calling((void*)write_graphics, 33, ____alias_loc_id_3, 0UL, 6, (size_t)(7677405821689735867UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)(____chimes_arg12, image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_3); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
 # 349 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 350 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_34: time9 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 34, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4358,16 +4357,16 @@ long long time0;
 # 354 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- free_wrapper(image_ori, 7677405821689735599UL);
+ free_wrapper(image_ori, 7677405821689735604UL);
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- free_wrapper(image, 7677405821689735122UL);
+ free_wrapper(image, 7677405821689735127UL);
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(iN, 7677405821689735051UL); free_wrapper(iS, 7677405821689735058UL); free_wrapper(jW, 7677405821689735277UL); free_wrapper(jE, 7677405821689735295UL);
+    free_wrapper(iN, 7677405821689735056UL); free_wrapper(iS, 7677405821689735063UL); free_wrapper(jW, 7677405821689735282UL); free_wrapper(jE, 7677405821689735300UL);
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(dN, 7677405821689735253UL); free_wrapper(dS, 7677405821689735271UL); free_wrapper(dW, 7677405821689735289UL); free_wrapper(dE, 7677405821689735307UL);
+    free_wrapper(dN, 7677405821689735258UL); free_wrapper(dS, 7677405821689735276UL); free_wrapper(dW, 7677405821689735294UL); free_wrapper(dE, 7677405821689735312UL);
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(c, 7677405821689735414UL);
+    free_wrapper(c, 7677405821689735419UL);
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_46: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 46, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
@@ -4407,9 +4406,10 @@ long long time0;
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); }
-int main_quick(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(7677405821689735827UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int threads;
+int main_quick(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(7677405821689735836UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int threads;
 long k;
 long j;
 long i;
@@ -4580,7 +4580,7 @@ long long time0;
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   printf("ERROR: wrong number of arguments\n");
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); return 0;
+   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
  }
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4599,12 +4599,12 @@ long long time0;
  }
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_10: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 10, ____alias_loc_id_10, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_10); (*____chimes_extern_func_omp_set_num_threads)(threads); })));
+ omp_set_num_threads(threads);
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_11: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
+  call_lbl_11: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4619,10 +4619,10 @@ long long time0;
  image_ori_elem = image_ori_rows * image_ori_cols;
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image_ori = (float*)malloc_wrapper(sizeof(float) * image_ori_elem, 7677405821689735599UL, 0, 0);
+ image_ori = (float*)malloc_wrapper(sizeof(float) * image_ori_elem, 7677405821689735604UL, 0, 0);
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ calling((void*)read_graphics, 13, ____alias_loc_id_9, 0UL, 5, (size_t)(7677405821689735857UL), (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_9); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
+  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ calling((void*)read_graphics, 13, ____alias_loc_id_9, 0UL, 5, (size_t)(7677405821689735866UL), (size_t)(7677405821689735604UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_9); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_14: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4635,10 +4635,10 @@ long long time0;
  Ne = Nr*Nc;
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image = (float*)malloc_wrapper(sizeof(float) * Ne, 7677405821689735122UL, 0, 0);
+ image = (float*)malloc_wrapper(sizeof(float) * Ne, 7677405821689735127UL, 0, 0);
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_8, 0UL, 7, (size_t)(7677405821689735599UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_8); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
+  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_8, 0UL, 7, (size_t)(7677405821689735604UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_8); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_17: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 17, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4662,27 +4662,27 @@ long long time0;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iN = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735051UL, 0, 0) ;
+    iN = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735056UL, 0, 0) ;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iS = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735058UL, 0, 0) ;
+    iS = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735063UL, 0, 0) ;
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jW = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735277UL, 0, 0) ;
+    jW = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735282UL, 0, 0) ;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jE = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735295UL, 0, 0) ;
+    jE = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735300UL, 0, 0) ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- dN = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735253UL, 0, 0) ;
+ dN = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735258UL, 0, 0) ;
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dS = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735271UL, 0, 0) ;
+    dS = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735276UL, 0, 0) ;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dW = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735289UL, 0, 0) ;
+    dW = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735294UL, 0, 0) ;
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dE = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735307UL, 0, 0) ;
+    dE = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735312UL, 0, 0) ;
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    c = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735414UL, 0, 0) ;
+    c = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735419UL, 0, 0) ;
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4891,7 +4891,7 @@ long long time0;
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_33: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ calling((void*)write_graphics, 33, ____alias_loc_id_3, 0UL, 6, (size_t)(7677405821689735858UL), (size_t)(7677405821689735122UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_3); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
+  call_lbl_33: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ calling((void*)write_graphics, 33, ____alias_loc_id_3, 0UL, 6, (size_t)(7677405821689735867UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_3); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
 # 349 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 350 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_34: time9 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 34, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
@@ -4901,16 +4901,16 @@ long long time0;
 # 354 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- free_wrapper(image_ori, 7677405821689735599UL);
+ free_wrapper(image_ori, 7677405821689735604UL);
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- free_wrapper(image, 7677405821689735122UL);
+ free_wrapper(image, 7677405821689735127UL);
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(iN, 7677405821689735051UL); free_wrapper(iS, 7677405821689735058UL); free_wrapper(jW, 7677405821689735277UL); free_wrapper(jE, 7677405821689735295UL);
+    free_wrapper(iN, 7677405821689735056UL); free_wrapper(iS, 7677405821689735063UL); free_wrapper(jW, 7677405821689735282UL); free_wrapper(jE, 7677405821689735300UL);
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(dN, 7677405821689735253UL); free_wrapper(dS, 7677405821689735271UL); free_wrapper(dW, 7677405821689735289UL); free_wrapper(dE, 7677405821689735307UL);
+    free_wrapper(dN, 7677405821689735258UL); free_wrapper(dS, 7677405821689735276UL); free_wrapper(dW, 7677405821689735294UL); free_wrapper(dE, 7677405821689735312UL);
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(c, 7677405821689735414UL);
+    free_wrapper(c, 7677405821689735419UL);
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_46: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 46, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
@@ -4950,6 +4950,7 @@ long long time0;
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); }
 
@@ -4962,47 +4963,45 @@ int main(int argc, char *argv []) { init_chimes(); return (____chimes_replaying 
 
 
 static int module_init() {
-    init_module(7677405821689734771UL, 13, 1, 58, 12, 0, 5, 5, 0, 15, 0,
+    init_module(7677405821689734771UL, 13, 1, 58, 12, 0, 4, 4, 0, 14, 0,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (7677405821689734771UL + 4UL),
                            &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (7677405821689734771UL + 13UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 2UL), (7677405821689734771UL + 3UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (7677405821689734771UL + 12UL), "write_graphics", (unsigned)2, (7677405821689734771UL + 351UL), (7677405821689734771UL + 1087UL),
-                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 11UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 351UL),
-                           &____alias_loc_id_5, (unsigned)28, (unsigned)0, (unsigned)0, (7677405821689734771UL + 10UL), (7677405821689734771UL + 30UL), (7677405821689734771UL + 31UL), (7677405821689734771UL + 32UL), (7677405821689734771UL + 37UL), (7677405821689734771UL + 42UL), (7677405821689734771UL + 43UL), (7677405821689734771UL + 44UL), (7677405821689734771UL + 45UL), (7677405821689734771UL + 46UL), (7677405821689734771UL + 47UL), (7677405821689734771UL + 48UL), (7677405821689734771UL + 49UL), (7677405821689734771UL + 50UL), (7677405821689734771UL + 52UL), (7677405821689734771UL + 53UL), (7677405821689734771UL + 54UL), (7677405821689734771UL + 55UL), (7677405821689734771UL + 56UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 59UL), (7677405821689734771UL + 351UL), (7677405821689734771UL + 482UL), (7677405821689734771UL + 500UL), (7677405821689734771UL + 518UL), (7677405821689734771UL + 536UL), (7677405821689734771UL + 643UL),
-                           &____alias_loc_id_6, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 9UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 351UL),
-                           &____alias_loc_id_7, (unsigned)21, (unsigned)0, (unsigned)0, (7677405821689734771UL + 8UL), (7677405821689734771UL + 25UL), (7677405821689734771UL + 26UL), (7677405821689734771UL + 27UL), (7677405821689734771UL + 28UL), (7677405821689734771UL + 29UL), (7677405821689734771UL + 33UL), (7677405821689734771UL + 34UL), (7677405821689734771UL + 35UL), (7677405821689734771UL + 36UL), (7677405821689734771UL + 38UL), (7677405821689734771UL + 39UL), (7677405821689734771UL + 40UL), (7677405821689734771UL + 41UL), (7677405821689734771UL + 51UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 280UL), (7677405821689734771UL + 287UL), (7677405821689734771UL + 506UL), (7677405821689734771UL + 524UL),
-                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)1, (7677405821689734771UL + 7UL), (7677405821689734771UL + 19UL), (7677405821689734771UL + 22UL), "resize", (unsigned)2, (7677405821689734771UL + 351UL), (7677405821689734771UL + 828UL),
-                           &____alias_loc_id_9, (unsigned)5, (unsigned)0, (unsigned)1, (7677405821689734771UL + 6UL), (7677405821689734771UL + 15UL), (7677405821689734771UL + 16UL), (7677405821689734771UL + 17UL), (7677405821689734771UL + 18UL), "read_graphics", (unsigned)2, (7677405821689734771UL + 828UL), (7677405821689734771UL + 1086UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (7677405821689734771UL + 12UL), "write_graphics", (unsigned)2, (7677405821689734771UL + 356UL), (7677405821689734771UL + 1096UL),
+                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 11UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 356UL),
+                           &____alias_loc_id_5, (unsigned)28, (unsigned)0, (unsigned)0, (7677405821689734771UL + 10UL), (7677405821689734771UL + 30UL), (7677405821689734771UL + 31UL), (7677405821689734771UL + 32UL), (7677405821689734771UL + 37UL), (7677405821689734771UL + 42UL), (7677405821689734771UL + 43UL), (7677405821689734771UL + 44UL), (7677405821689734771UL + 45UL), (7677405821689734771UL + 46UL), (7677405821689734771UL + 47UL), (7677405821689734771UL + 48UL), (7677405821689734771UL + 49UL), (7677405821689734771UL + 50UL), (7677405821689734771UL + 52UL), (7677405821689734771UL + 53UL), (7677405821689734771UL + 54UL), (7677405821689734771UL + 55UL), (7677405821689734771UL + 56UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 59UL), (7677405821689734771UL + 356UL), (7677405821689734771UL + 487UL), (7677405821689734771UL + 505UL), (7677405821689734771UL + 523UL), (7677405821689734771UL + 541UL), (7677405821689734771UL + 648UL),
+                           &____alias_loc_id_6, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 9UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 356UL),
+                           &____alias_loc_id_7, (unsigned)21, (unsigned)0, (unsigned)0, (7677405821689734771UL + 8UL), (7677405821689734771UL + 25UL), (7677405821689734771UL + 26UL), (7677405821689734771UL + 27UL), (7677405821689734771UL + 28UL), (7677405821689734771UL + 29UL), (7677405821689734771UL + 33UL), (7677405821689734771UL + 34UL), (7677405821689734771UL + 35UL), (7677405821689734771UL + 36UL), (7677405821689734771UL + 38UL), (7677405821689734771UL + 39UL), (7677405821689734771UL + 40UL), (7677405821689734771UL + 41UL), (7677405821689734771UL + 51UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 285UL), (7677405821689734771UL + 292UL), (7677405821689734771UL + 511UL), (7677405821689734771UL + 529UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)1, (7677405821689734771UL + 7UL), (7677405821689734771UL + 19UL), (7677405821689734771UL + 22UL), "resize", (unsigned)2, (7677405821689734771UL + 356UL), (7677405821689734771UL + 833UL),
+                           &____alias_loc_id_9, (unsigned)5, (unsigned)0, (unsigned)1, (7677405821689734771UL + 6UL), (7677405821689734771UL + 15UL), (7677405821689734771UL + 16UL), (7677405821689734771UL + 17UL), (7677405821689734771UL + 18UL), "read_graphics", (unsigned)2, (7677405821689734771UL + 833UL), (7677405821689734771UL + 1095UL),
                             &____alias_loc_id_10, (unsigned)6, (unsigned)0, (unsigned)0, (7677405821689734771UL + 5UL), (7677405821689734771UL + 20UL), (7677405821689734771UL + 21UL), (7677405821689734771UL + 23UL), (7677405821689734771UL + 24UL), (7677405821689734771UL + 60UL),
-                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 5UL), (7677405821689734771UL + 14UL),
+                            &____alias_loc_id_11, (unsigned)5, (unsigned)0, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 5UL), (7677405821689734771UL + 14UL), (7677405821689734771UL + 61UL), (7677405821689734771UL + 62UL),
                                "get_time", (void **)&(____chimes_extern_func_get_time),
-                               "omp_set_num_threads", (void **)&(____chimes_extern_func_omp_set_num_threads),
                                "read_graphics", (void **)&(____chimes_extern_func_read_graphics),
                                "resize", (void **)&(____chimes_extern_func_resize),
                                "write_graphics", (void **)&(____chimes_extern_func_write_graphics),
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
-                           "omp_set_num_threads", &(____chimes_does_checkpoint_omp_set_num_threads_npm),
                            "read_graphics", &(____chimes_does_checkpoint_read_graphics_npm),
                            "resize", &(____chimes_does_checkpoint_resize_npm),
                            "write_graphics", &(____chimes_does_checkpoint_write_graphics_npm),
-                             (7677405821689734771UL + 39UL), (7677405821689734771UL + 500UL),
-                             (7677405821689734771UL + 38UL), (7677405821689734771UL + 482UL),
-                             (7677405821689734771UL + 15UL), (7677405821689734771UL + 828UL),
-                             (7677405821689734771UL + 1056UL), (7677405821689734771UL + 135UL),
-                             (7677405821689734771UL + 19UL), (7677405821689734771UL + 351UL),
-                             (7677405821689734771UL + 51UL), (7677405821689734771UL + 643UL),
-                             (7677405821689734771UL + 36UL), (7677405821689734771UL + 506UL),
-                             (7677405821689734771UL + 35UL), (7677405821689734771UL + 524UL),
-                             (7677405821689734771UL + 34UL), (7677405821689734771UL + 287UL),
-                             (7677405821689734771UL + 33UL), (7677405821689734771UL + 280UL),
-                             (7677405821689734771UL + 3UL), (7677405821689734771UL + 1056UL),
-                             (7677405821689734771UL + 40UL), (7677405821689734771UL + 518UL),
-                             (7677405821689734771UL + 41UL), (7677405821689734771UL + 536UL),
-                             "main", "main", 15, "get_time", "get_time", "omp_set_num_threads", "get_time", "read_graphics", "get_time", "resize", "get_time", "get_time", "get_time", "get_time", "get_time", "write_graphics", "get_time", "get_time",
-                        "main|argc|0", 5, "write_graphics", "resize", "read_graphics", "omp_set_num_threads", "get_time",
-                        "main|argv|0", 5, "write_graphics", "resize", "read_graphics", "omp_set_num_threads", "get_time",
-                        "main|time0|0", 5, "write_graphics", "resize", "read_graphics", "omp_set_num_threads", "get_time",
-                        "main|time1|0", 5, "write_graphics", "resize", "read_graphics", "omp_set_num_threads", "get_time",
+                             (7677405821689734771UL + 39UL), (7677405821689734771UL + 505UL),
+                             (7677405821689734771UL + 38UL), (7677405821689734771UL + 487UL),
+                             (7677405821689734771UL + 15UL), (7677405821689734771UL + 833UL),
+                             (7677405821689734771UL + 19UL), (7677405821689734771UL + 356UL),
+                             (7677405821689734771UL + 1065UL), (7677405821689734771UL + 140UL),
+                             (7677405821689734771UL + 51UL), (7677405821689734771UL + 648UL),
+                             (7677405821689734771UL + 36UL), (7677405821689734771UL + 511UL),
+                             (7677405821689734771UL + 35UL), (7677405821689734771UL + 529UL),
+                             (7677405821689734771UL + 34UL), (7677405821689734771UL + 292UL),
+                             (7677405821689734771UL + 33UL), (7677405821689734771UL + 285UL),
+                             (7677405821689734771UL + 3UL), (7677405821689734771UL + 1065UL),
+                             (7677405821689734771UL + 40UL), (7677405821689734771UL + 523UL),
+                             (7677405821689734771UL + 41UL), (7677405821689734771UL + 541UL),
+                             "main", "main", 14, "get_time", "get_time", "get_time", "read_graphics", "get_time", "resize", "get_time", "get_time", "get_time", "get_time", "get_time", "write_graphics", "get_time", "get_time",
+                        "main|argc|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
+                        "main|argv|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
+                        "main|time0|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
+                        "main|time1|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
                         "main|time2|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
                         "main|time3|0", 3, "write_graphics", "resize", "get_time",
                         "main|time4|0", 2, "write_graphics", "get_time",
@@ -5016,11 +5015,11 @@ static int module_init() {
                         "main|image_ori_cols|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
                         "main|image_ori_elem|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
                         "main|image|0", 3, "write_graphics", "resize", "get_time",
-                        "main|Nr|0", 5, "write_graphics", "resize", "read_graphics", "omp_set_num_threads", "get_time",
-                        "main|Nc|0", 5, "write_graphics", "resize", "read_graphics", "omp_set_num_threads", "get_time",
+                        "main|Nr|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
+                        "main|Nc|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
                         "main|Ne|0", 3, "write_graphics", "resize", "get_time",
-                        "main|niter|0", 5, "write_graphics", "resize", "read_graphics", "omp_set_num_threads", "get_time",
-                        "main|lambda|0", 5, "write_graphics", "resize", "read_graphics", "omp_set_num_threads", "get_time",
+                        "main|niter|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
+                        "main|lambda|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
                         "main|r1|0", 2, "write_graphics", "get_time",
                         "main|r2|0", 2, "write_graphics", "get_time",
                         "main|c1|0", 2, "write_graphics", "get_time",
@@ -5056,20 +5055,19 @@ static int module_init() {
                         "main|i|0", 2, "write_graphics", "get_time",
                         "main|j|0", 2, "write_graphics", "get_time",
                         "main|k|0", 2, "write_graphics", "get_time",
-                        "main|threads|0", 5, "write_graphics", "resize", "read_graphics", "omp_set_num_threads", "get_time",
-        "get_time", 0UL, (int)0,
-        "get_time", 0UL, (int)0,
-        "omp_set_num_threads", 0UL, (int)1, 0UL,
-        "get_time", 0UL, (int)0,
-        "read_graphics", 0UL, (int)5, 7677405821689735857UL, 7677405821689735599UL, 0UL, 0UL, 0UL,
-        "get_time", 0UL, (int)0,
-        "resize", 0UL, (int)7, 7677405821689735599UL, 0UL, 0UL, 7677405821689735122UL, 0UL, 0UL, 0UL,
+                        "main|threads|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
+        "read_graphics", 0UL, (int)5, 7677405821689735866UL, 7677405821689735604UL, 0UL, 0UL, 0UL,
+        "get_time", 0UL, (int)0,
+        "resize", 0UL, (int)7, 7677405821689735604UL, 0UL, 0UL, 7677405821689735127UL, 0UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
-        "write_graphics", 0UL, (int)6, 7677405821689735858UL, 7677405821689735122UL, 0UL, 0UL, 0UL, 0UL,
+        "get_time", 0UL, (int)0,
+        "get_time", 0UL, (int)0,
+        "get_time", 0UL, (int)0,
+        "write_graphics", 0UL, (int)6, 7677405821689735867UL, 7677405821689735127UL, 0UL, 0UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0);
     return 0;

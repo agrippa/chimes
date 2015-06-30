@@ -4054,9 +4054,9 @@ int calc_score_resumable(int iat, int jat, int v1, int v2, int seq1, int seq2)
    j = seq_array[seq2][jpos];
 # 93 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 94 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "calc_score", &____must_manage_calc_score, ____alias_loc_id_4, ____chimes_did_disable2); return (matrix[i][j]);
+    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((matrix[i][j])); rm_stack(false, 0UL, "calc_score", &____must_manage_calc_score, ____alias_loc_id_4, ____chimes_did_disable2); return ____chimes_ret_var_0; ;
 # 95 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "calc_score", &____must_manage_calc_score, ____alias_loc_id_4, ____chimes_did_disable2); }
 # 96 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 97 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 98 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4066,7 +4066,7 @@ int get_matrix_npm(int *matptr, int *xref, int scale);
 int get_matrix_quick(int *matptr, int *xref, int scale); int get_matrix(int *matptr, int *xref, int scale);
 int get_matrix_resumable(int *matptr, int *xref, int scale)
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(2235191825397910012UL), (size_t)(2235191825397910013UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(2235191825397910020UL), (size_t)(2235191825397910021UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int gg_score; gg_score = (0) ;
 # 103 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4184,9 +4184,9 @@ int get_matrix_resumable(int *matptr, int *xref, int scale)
    maxres += 2;
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "get_matrix", &____must_manage_get_matrix, ____alias_loc_id_5, ____chimes_did_disable3); return(maxres);
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((maxres)); rm_stack(false, 0UL, "get_matrix", &____must_manage_get_matrix, ____alias_loc_id_5, ____chimes_did_disable3); return ____chimes_ret_var_1; ;
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "get_matrix", &____must_manage_get_matrix, ____alias_loc_id_5, ____chimes_did_disable3); }
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4196,7 +4196,7 @@ void forward_pass_npm(char *ia, char *ib, int n, int m, int *se1, int *se2, int 
 void forward_pass_quick(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh); void forward_pass(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh);
 void forward_pass_resumable(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh)
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&forward_pass), "forward_pass", &____must_manage_forward_pass, 9, 0, (size_t)(2235191825397910229UL), (size_t)(2235191825397910230UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910233UL), (size_t)(2235191825397910234UL), (size_t)(2235191825397910235UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
+{const int ____chimes_did_disable4 = new_stack((void *)(&forward_pass), "forward_pass", &____must_manage_forward_pass, 9, 0, (size_t)(2235191825397910237UL), (size_t)(2235191825397910238UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910241UL), (size_t)(2235191825397910242UL), (size_t)(2235191825397910243UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
 int HH[5000];
  if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 177 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4270,7 +4270,7 @@ void reverse_pass_npm(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, 
 void reverse_pass_quick(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh); void reverse_pass(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh);
 void reverse_pass_resumable(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh)
 # 218 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&reverse_pass), "reverse_pass", &____must_manage_reverse_pass, 9, 0, (size_t)(2235191825397910459UL), (size_t)(2235191825397910460UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910463UL), (size_t)(2235191825397910464UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
+{const int ____chimes_did_disable5 = new_stack((void *)(&reverse_pass), "reverse_pass", &____must_manage_reverse_pass, 9, 0, (size_t)(2235191825397910467UL), (size_t)(2235191825397910468UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910471UL), (size_t)(2235191825397910472UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
 int HH[5000];
  if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4350,7 +4350,7 @@ int diff_npm (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *l
 int diff_quick (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh); int diff (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh);
 int diff_resumable (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh)
 # 263 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&diff), "diff", &____must_manage_diff, 13, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911243UL), (size_t)(2235191825397911244UL), (size_t)(2235191825397911245UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int SS[5000];
+{const int ____chimes_did_disable6 = new_stack((void *)(&diff), "diff", &____must_manage_diff, 13, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911267UL), (size_t)(2235191825397911268UL), (size_t)(2235191825397911269UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int SS[5000];
 int RR[5000];
 int DD[5000];
 int HH[5000];
@@ -4369,13 +4369,13 @@ int HH[5000];
     ;
 # 270 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (N <= 0) {if (M > 0) {({ calling_npm("del", 0); del_npm(M, print_ptr, last_print, displ); }); }; rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return( - (int) ((M) <= 0 ? 0 : tb + gh * (M))); }
+   if (N <= 0) {if (M > 0) {({ calling_npm("del", 0); del_npm(M, print_ptr, last_print, displ); }); }; int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (( - (int) ((M) <= 0 ? 0 : tb + gh * (M)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return ____chimes_ret_var_2; ; }
 # 272 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 273 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (M <= 1) {
 # 274 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 275 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      if (M <= 0) {({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); }); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return( - (int)((N) <= 0 ? 0 : tb + gh * (N)));}
+      if (M <= 0) {({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); }); int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (( - (int)((N) <= 0 ? 0 : tb + gh * (N)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return ____chimes_ret_var_3; ;}
 # 276 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 277 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midh = -(tb+gh) - ((N) <= 0 ? 0 : te + gh * (N));
@@ -4414,7 +4414,7 @@ int HH[5000];
       }
 # 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return midh;
+       int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (midh); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return ____chimes_ret_var_4; ;
 # 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4563,9 +4563,9 @@ int HH[5000];
    }
 # 380 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 381 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return midh;
+    int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (midh); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return ____chimes_ret_var_5; ;
 # 382 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); }
 # 383 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 384 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 385 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4575,7 +4575,7 @@ double tracepath_npm(int tsb1, int tsb2, int *print_ptr, int *last_print, int *d
 double tracepath_quick(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2); double tracepath(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2);
 double tracepath_resumable(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2)
 # 388 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&tracepath), "tracepath", &____must_manage_tracepath, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911396UL), (size_t)(2235191825397911397UL), (size_t)(2235191825397911398UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable7 = new_stack((void *)(&tracepath), "tracepath", &____must_manage_tracepath, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911424UL), (size_t)(2235191825397911425UL), (size_t)(2235191825397911426UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 389 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int k; ;
 # 390 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4620,9 +4620,9 @@ double tracepath_resumable(int tsb1, int tsb2, int *print_ptr, int *last_print, 
    }
 # 412 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 413 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "tracepath", &____must_manage_tracepath, ____alias_loc_id_9, ____chimes_did_disable7); return (100.0 * (double) count);
+    double ____chimes_ret_var_6; ; ____chimes_ret_var_6 = ((100.0 * (double) count)); rm_stack(false, 0UL, "tracepath", &____must_manage_tracepath, ____alias_loc_id_9, ____chimes_did_disable7); return ____chimes_ret_var_6; ;
 # 414 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "tracepath", &____must_manage_tracepath, ____alias_loc_id_9, ____chimes_did_disable7); }
 # 415 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 416 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 417 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4650,7 +4650,7 @@ int se1;
 # 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
 # 427 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (maxres == 0) {rm_stack(false, 0UL, "pairalign", &____must_manage_pairalign, ____alias_loc_id_10, ____chimes_did_disable8); return(-1); };
+   if (maxres == 0) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((-1)); rm_stack(false, 0UL, "pairalign", &____must_manage_pairalign, ____alias_loc_id_10, ____chimes_did_disable8); return ____chimes_ret_var_7; ; };
 # 428 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Start aligning "); } };
@@ -4750,9 +4750,9 @@ int se1;
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "pairalign", &____must_manage_pairalign, ____alias_loc_id_10, ____chimes_did_disable8); return 0;
+    int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (0); rm_stack(false, 0UL, "pairalign", &____must_manage_pairalign, ____alias_loc_id_10, ____chimes_did_disable8); return ____chimes_ret_var_8; ;
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "pairalign", &____must_manage_pairalign, ____alias_loc_id_10, ____chimes_did_disable8); }
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 487 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 int pairalign_seq_npm(int istart, int iend, int jstart, int jend);
@@ -4779,7 +4779,7 @@ int se1;
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (maxres == 0) {rm_stack(false, 0UL, "pairalign_seq", &____must_manage_pairalign_seq, ____alias_loc_id_11, ____chimes_did_disable9); return(-1); };
+   if (maxres == 0) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = ((-1)); rm_stack(false, 0UL, "pairalign_seq", &____must_manage_pairalign_seq, ____alias_loc_id_11, ____chimes_did_disable9); return ____chimes_ret_var_9; ; };
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (si = 0; si < nseqs; si++) {
@@ -4855,9 +4855,9 @@ int se1;
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 541 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "pairalign_seq", &____must_manage_pairalign_seq, ____alias_loc_id_11, ____chimes_did_disable9); return 0;
+    int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (0); rm_stack(false, 0UL, "pairalign_seq", &____must_manage_pairalign_seq, ____alias_loc_id_11, ____chimes_did_disable9); return ____chimes_ret_var_10; ;
 # 542 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "pairalign_seq", &____must_manage_pairalign_seq, ____alias_loc_id_11, ____chimes_did_disable9); }
 # 543 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 544 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 545 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4894,14 +4894,14 @@ void pairalign_init_npm (char *filename);static void (*____chimes_extern_func_bo
 void pairalign_init_quick (char *filename); void pairalign_init (char *filename);
 void pairalign_init_resumable (char *filename)
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&pairalign_init), "pairalign_init", &____must_manage_pairalign_init, 1, 1, (size_t)(2235191825397912206UL), "pairalign_init|filename|0", &____must_checkpoint_pairalign_init_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&pairalign_init), "pairalign_init", &____must_manage_pairalign_init, 1, 1, (size_t)(2235191825397912250UL), "pairalign_init|filename|0", &____must_checkpoint_pairalign_init_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 566 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; ;
 # 567 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 568 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (!filename || !filename[0]) {
 # 569 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-       call_lbl_1: ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("Please specify an input file with the -f option\n"); } calling((void*)bots_error, 1, ____alias_loc_id_1, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912444UL)); (bots_error)(0, ____chimes_arg1); }) ;
+       call_lbl_1: ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("Please specify an input file with the -f option\n"); } calling((void*)bots_error, 1, ____alias_loc_id_1, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912492UL)); (bots_error)(0, ____chimes_arg1); }) ;
 # 570 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 571 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -4910,7 +4910,7 @@ void pairalign_init_resumable (char *filename)
 # 573 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 574 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 575 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-    call_lbl_2: nseqs = ({ calling((void*)readseqs, 2, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912206UL)); (readseqs)(1, filename); }) ;
+    call_lbl_2: nseqs = ({ calling((void*)readseqs, 2, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912250UL)); (readseqs)(1, filename); }) ;
 # 576 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 577 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Multiple Pairwise Alignment (%d sequences)\n" ,nseqs); } };
@@ -4944,7 +4944,7 @@ void align_init_resumable ()
 # 593 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 594 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912221UL, 0, 0);
+   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912265UL, 0, 0);
 # 595 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 596 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
@@ -4971,9 +4971,9 @@ void align_seq_init_resumable ()
 # 608 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 609 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912221UL, 0, 0);
+   seq_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912265UL, 0, 0);
 # 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912221UL, 0, 0);
+   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912265UL, 0, 0);
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
@@ -5026,9 +5026,9 @@ int align_verify_resumable ()
 # 663 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }; }
 # 664 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "align_verify", &____must_manage_align_verify, ____alias_loc_id_17, ____chimes_did_disable17); return result;
+    int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = (result); rm_stack(false, 0UL, "align_verify", &____must_manage_align_verify, ____alias_loc_id_17, ____chimes_did_disable17); return ____chimes_ret_var_11; ;
 # 665 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "align_verify", &____must_manage_align_verify, ____alias_loc_id_17, ____chimes_did_disable17); }
 void del_quick(int k, int *print_ptr, int *last_print, int *displ)
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&del), "del", &____must_manage_del, 4, 0, (size_t)(0UL), (size_t)(2235191825397909493UL), (size_t)(2235191825397909494UL), (size_t)(2235191825397909495UL)) ; ; ;
@@ -5075,15 +5075,15 @@ int calc_score_quick(int iat, int jat, int v1, int v2, int seq1, int seq2)
    j = seq_array[seq2][jpos];
 # 93 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 94 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "calc_score", &____must_manage_calc_score, ____alias_loc_id_4, ____chimes_did_disable2); return (matrix[i][j]);
+    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((matrix[i][j])); rm_stack(false, 0UL, "calc_score", &____must_manage_calc_score, ____alias_loc_id_4, ____chimes_did_disable2); return ____chimes_ret_var_0; ;
 # 95 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "calc_score", &____must_manage_calc_score, ____alias_loc_id_4, ____chimes_did_disable2); }
 
 int calc_score(int iat, int jat, int v1, int v2, int seq1, int seq2) { return (____chimes_replaying ? calc_score_resumable(iat, jat, v1, v2, seq1, seq2) : calc_score_quick(iat, jat, v1, v2, seq1, seq2)); }
 
 int get_matrix_quick(int *matptr, int *xref, int scale)
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(2235191825397910012UL), (size_t)(2235191825397910013UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&get_matrix), "get_matrix", &____must_manage_get_matrix, 3, 0, (size_t)(2235191825397910020UL), (size_t)(2235191825397910021UL), (size_t)(0UL)) ; ; ;
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
     int gg_score; gg_score = (0) ;
 # 103 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5201,15 +5201,15 @@ int get_matrix_quick(int *matptr, int *xref, int scale)
    maxres += 2;
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "get_matrix", &____must_manage_get_matrix, ____alias_loc_id_5, ____chimes_did_disable3); return(maxres);
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((maxres)); rm_stack(false, 0UL, "get_matrix", &____must_manage_get_matrix, ____alias_loc_id_5, ____chimes_did_disable3); return ____chimes_ret_var_1; ;
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "get_matrix", &____must_manage_get_matrix, ____alias_loc_id_5, ____chimes_did_disable3); }
 
 int get_matrix(int *matptr, int *xref, int scale) { return (____chimes_replaying ? get_matrix_resumable(matptr, xref, scale) : get_matrix_quick(matptr, xref, scale)); }
 
 void forward_pass_quick(char *ia, char *ib, int n, int m, int *se1, int *se2, int *maxscore, int g, int gh)
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&forward_pass), "forward_pass", &____must_manage_forward_pass, 9, 0, (size_t)(2235191825397910229UL), (size_t)(2235191825397910230UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910233UL), (size_t)(2235191825397910234UL), (size_t)(2235191825397910235UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
+{const int ____chimes_did_disable4 = new_stack((void *)(&forward_pass), "forward_pass", &____must_manage_forward_pass, 9, 0, (size_t)(2235191825397910237UL), (size_t)(2235191825397910238UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910241UL), (size_t)(2235191825397910242UL), (size_t)(2235191825397910243UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
 int HH[5000];
  ; ;
 # 177 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5279,7 +5279,7 @@ void forward_pass(char *ia, char *ib, int n, int m, int *se1, int *se2, int *max
 
 void reverse_pass_quick(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int maxscore, int g, int gh)
 # 218 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&reverse_pass), "reverse_pass", &____must_manage_reverse_pass, 9, 0, (size_t)(2235191825397910459UL), (size_t)(2235191825397910460UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910463UL), (size_t)(2235191825397910464UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
+{const int ____chimes_did_disable5 = new_stack((void *)(&reverse_pass), "reverse_pass", &____must_manage_reverse_pass, 9, 0, (size_t)(2235191825397910467UL), (size_t)(2235191825397910468UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397910471UL), (size_t)(2235191825397910472UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int DD[5000];
 int HH[5000];
  ; ;
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5355,7 +5355,7 @@ void reverse_pass(char *ia, char *ib, int se1, int se2, int *sb1, int *sb2, int 
 
 int diff_quick (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh)
 # 263 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&diff), "diff", &____must_manage_diff, 13, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911243UL), (size_t)(2235191825397911244UL), (size_t)(2235191825397911245UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int SS[5000];
+{const int ____chimes_did_disable6 = new_stack((void *)(&diff), "diff", &____must_manage_diff, 13, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911267UL), (size_t)(2235191825397911268UL), (size_t)(2235191825397911269UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; int SS[5000];
 int RR[5000];
 int DD[5000];
 int HH[5000];
@@ -5374,13 +5374,13 @@ int HH[5000];
     ;
 # 270 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (N <= 0) {if (M > 0) {({ calling_npm("del", 0); del_npm(M, print_ptr, last_print, displ); }); }; rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return( - (int) ((M) <= 0 ? 0 : tb + gh * (M))); }
+   if (N <= 0) {if (M > 0) {({ calling_npm("del", 0); del_npm(M, print_ptr, last_print, displ); }); }; int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (( - (int) ((M) <= 0 ? 0 : tb + gh * (M)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return ____chimes_ret_var_2; ; }
 # 272 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 273 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (M <= 1) {
 # 274 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 275 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      if (M <= 0) {({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); }); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return( - (int)((N) <= 0 ? 0 : tb + gh * (N)));}
+      if (M <= 0) {({ calling_npm("add", 0); add_npm(N, print_ptr, last_print, displ); }); int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (( - (int)((N) <= 0 ? 0 : tb + gh * (N)))); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return ____chimes_ret_var_3; ;}
 # 276 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 277 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midh = -(tb+gh) - ((N) <= 0 ? 0 : te + gh * (N));
@@ -5419,7 +5419,7 @@ int HH[5000];
       }
 # 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return midh;
+       int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (midh); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return ____chimes_ret_var_4; ;
 # 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5568,15 +5568,15 @@ int HH[5000];
    }
 # 380 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 381 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return midh;
+    int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (midh); rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); return ____chimes_ret_var_5; ;
 # 382 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "diff", &____must_manage_diff, ____alias_loc_id_8, ____chimes_did_disable6); }
 
 int diff (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *last_print, int *displ, int seq1, int seq2, int g, int gh) { return (____chimes_replaying ? diff_resumable(A, B, M, N, tb, te, print_ptr, last_print, displ, seq1, seq2, g, gh) : diff_quick(A, B, M, N, tb, te, print_ptr, last_print, displ, seq1, seq2, g, gh)); }
 
 double tracepath_quick(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2)
 # 388 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&tracepath), "tracepath", &____must_manage_tracepath, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911396UL), (size_t)(2235191825397911397UL), (size_t)(2235191825397911398UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable7 = new_stack((void *)(&tracepath), "tracepath", &____must_manage_tracepath, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(2235191825397911424UL), (size_t)(2235191825397911425UL), (size_t)(2235191825397911426UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 389 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int k; ;
 # 390 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5621,9 +5621,9 @@ double tracepath_quick(int tsb1, int tsb2, int *print_ptr, int *last_print, int 
    }
 # 412 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 413 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "tracepath", &____must_manage_tracepath, ____alias_loc_id_9, ____chimes_did_disable7); return (100.0 * (double) count);
+    double ____chimes_ret_var_6; ; ____chimes_ret_var_6 = ((100.0 * (double) count)); rm_stack(false, 0UL, "tracepath", &____must_manage_tracepath, ____alias_loc_id_9, ____chimes_did_disable7); return ____chimes_ret_var_6; ;
 # 414 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "tracepath", &____must_manage_tracepath, ____alias_loc_id_9, ____chimes_did_disable7); }
 
 double tracepath(int tsb1, int tsb2, int *print_ptr, int *last_print, int *displ, int seq1, int seq2) { return (____chimes_replaying ? tracepath_resumable(tsb1, tsb2, print_ptr, last_print, displ, seq1, seq2) : tracepath_quick(tsb1, tsb2, print_ptr, last_print, displ, seq1, seq2)); }
 
@@ -5649,7 +5649,7 @@ int se1;
 # 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
 # 427 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (maxres == 0) {rm_stack(false, 0UL, "pairalign", &____must_manage_pairalign, ____alias_loc_id_10, ____chimes_did_disable8); return(-1); };
+   if (maxres == 0) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((-1)); rm_stack(false, 0UL, "pairalign", &____must_manage_pairalign, ____alias_loc_id_10, ____chimes_did_disable8); return ____chimes_ret_var_7; ; };
 # 428 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Start aligning "); } };
@@ -5749,9 +5749,9 @@ int se1;
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "pairalign", &____must_manage_pairalign, ____alias_loc_id_10, ____chimes_did_disable8); return 0;
+    int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (0); rm_stack(false, 0UL, "pairalign", &____must_manage_pairalign, ____alias_loc_id_10, ____chimes_did_disable8); return ____chimes_ret_var_8; ;
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "pairalign", &____must_manage_pairalign, ____alias_loc_id_10, ____chimes_did_disable8); }
 
 int pairalign(int istart, int iend, int jstart, int jend) { return (____chimes_replaying ? pairalign_resumable(istart, iend, jstart, jend) : pairalign_quick(istart, iend, jstart, jend)); }
 
@@ -5777,7 +5777,7 @@ int se1;
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres = ({ calling_npm("get_matrix", 0); get_matrix_npm(matptr, mat_xref, 10); });
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (maxres == 0) {rm_stack(false, 0UL, "pairalign_seq", &____must_manage_pairalign_seq, ____alias_loc_id_11, ____chimes_did_disable9); return(-1); };
+   if (maxres == 0) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = ((-1)); rm_stack(false, 0UL, "pairalign_seq", &____must_manage_pairalign_seq, ____alias_loc_id_11, ____chimes_did_disable9); return ____chimes_ret_var_9; ; };
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (si = 0; si < nseqs; si++) {
@@ -5853,9 +5853,9 @@ int se1;
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 541 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "pairalign_seq", &____must_manage_pairalign_seq, ____alias_loc_id_11, ____chimes_did_disable9); return 0;
+    int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (0); rm_stack(false, 0UL, "pairalign_seq", &____must_manage_pairalign_seq, ____alias_loc_id_11, ____chimes_did_disable9); return ____chimes_ret_var_10; ;
 # 542 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "pairalign_seq", &____must_manage_pairalign_seq, ____alias_loc_id_11, ____chimes_did_disable9); }
 
 int pairalign_seq(int istart, int iend, int jstart, int jend) { return (____chimes_replaying ? pairalign_seq_resumable(istart, iend, jstart, jend) : pairalign_seq_quick(istart, iend, jstart, jend)); }
 
@@ -5886,14 +5886,14 @@ void init_matrix(void) { (____chimes_replaying ? init_matrix_resumable() : init_
 
 void pairalign_init_quick (char *filename)
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&pairalign_init), "pairalign_init", &____must_manage_pairalign_init, 1, 1, (size_t)(2235191825397912206UL), "pairalign_init|filename|0", &____must_checkpoint_pairalign_init_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0) ; ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&pairalign_init), "pairalign_init", &____must_manage_pairalign_init, 1, 1, (size_t)(2235191825397912250UL), "pairalign_init|filename|0", &____must_checkpoint_pairalign_init_filename_0, "i8*", (void *)(&filename), (size_t)8, 1, 0, 0) ; ; ;
 # 566 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; ;
 # 567 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 568 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (!filename || !filename[0]) {
 # 569 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-       call_lbl_1: ({ calling((void*)bots_error, 1, ____alias_loc_id_1, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912444UL)); (bots_error)(0, "Please specify an input file with the -f option\n"); }) ;
+       call_lbl_1: ({ calling((void*)bots_error, 1, ____alias_loc_id_1, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912492UL)); (bots_error)(0, "Please specify an input file with the -f option\n"); }) ;
 # 570 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 571 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -5902,7 +5902,7 @@ void pairalign_init_quick (char *filename)
 # 573 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 574 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 575 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-    call_lbl_2: nseqs = ({ calling((void*)readseqs, 2, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912206UL)); (readseqs)(1, filename); }) ;
+    call_lbl_2: nseqs = ({ calling((void*)readseqs, 2, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(2235191825397912250UL)); (readseqs)(1, filename); }) ;
 # 576 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 577 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Multiple Pairwise Alignment (%d sequences)\n" ,nseqs); } };
@@ -5935,7 +5935,7 @@ void align_init_quick ()
 # 593 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 594 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912221UL, 0, 0);
+   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912265UL, 0, 0);
 # 595 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 596 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
@@ -5960,9 +5960,9 @@ void align_seq_init_quick ()
 # 608 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i; int j; ;
 # 609 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912221UL, 0, 0);
+   seq_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912265UL, 0, 0);
 # 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912221UL, 0, 0);
+   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912265UL, 0, 0);
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
@@ -6011,9 +6011,9 @@ int align_verify_quick ()
 # 663 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }; }
 # 664 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   rm_stack(false, 0UL, "align_verify", &____must_manage_align_verify, ____alias_loc_id_17, ____chimes_did_disable17); return result;
+    int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = (result); rm_stack(false, 0UL, "align_verify", &____must_manage_align_verify, ____alias_loc_id_17, ____chimes_did_disable17); return ____chimes_ret_var_11; ;
 # 665 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-}
+rm_stack(false, 0UL, "align_verify", &____must_manage_align_verify, ____alias_loc_id_17, ____chimes_did_disable17); }
 
 int align_verify () { return (____chimes_replaying ? align_verify_resumable() : align_verify_quick()); }
 
@@ -6061,7 +6061,7 @@ int calc_score_npm(int iat, int jat, int v1, int v2, int seq1, int seq2)
    j = seq_array[seq2][jpos];
 # 93 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 94 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   return (matrix[i][j]);
+    int ____chimes_ret_var_0; ____chimes_ret_var_0 = ((matrix[i][j])); return ____chimes_ret_var_0; ;
 # 95 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
 
@@ -6185,7 +6185,7 @@ int get_matrix_npm(int *matptr, int *xref, int scale)
    maxres += 2;
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   return(maxres);
+    int ____chimes_ret_var_1; ____chimes_ret_var_1 = ((maxres)); return ____chimes_ret_var_1; ;
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
 
@@ -6344,13 +6344,13 @@ int diff_npm (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *l
    int SS[5000];
 # 270 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 271 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (N <= 0) {if (M > 0) {del_npm(M, print_ptr, last_print, displ); }; return( - (int) ((M) <= 0 ? 0 : tb + gh * (M))); }
+   if (N <= 0) {if (M > 0) {del_npm(M, print_ptr, last_print, displ); }; int ____chimes_ret_var_2; ____chimes_ret_var_2 = (( - (int) ((M) <= 0 ? 0 : tb + gh * (M)))); return ____chimes_ret_var_2; ; }
 # 272 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 273 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    if (M <= 1) {
 # 274 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 275 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      if (M <= 0) {add_npm(N, print_ptr, last_print, displ); return( - (int)((N) <= 0 ? 0 : tb + gh * (N)));}
+      if (M <= 0) {add_npm(N, print_ptr, last_print, displ); int ____chimes_ret_var_3; ____chimes_ret_var_3 = (( - (int)((N) <= 0 ? 0 : tb + gh * (N)))); return ____chimes_ret_var_3; ;}
 # 276 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 277 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
       midh = -(tb+gh) - ((N) <= 0 ? 0 : te + gh * (N));
@@ -6389,7 +6389,7 @@ int diff_npm (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *l
       }
 # 296 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 297 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-      return midh;
+       int ____chimes_ret_var_4; ____chimes_ret_var_4 = (midh); return ____chimes_ret_var_4; ;
 # 298 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 299 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
@@ -6538,7 +6538,7 @@ int diff_npm (int A, int B, int M, int N, int tb, int te, int *print_ptr, int *l
    }
 # 380 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 381 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   return midh;
+    int ____chimes_ret_var_5; ____chimes_ret_var_5 = (midh); return ____chimes_ret_var_5; ;
 # 382 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
 
@@ -6589,7 +6589,7 @@ double tracepath_npm(int tsb1, int tsb2, int *print_ptr, int *last_print, int *d
    }
 # 412 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 413 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   return (100.0 * (double) count);
+    double ____chimes_ret_var_6; ____chimes_ret_var_6 = ((100.0 * (double) count)); return ____chimes_ret_var_6; ;
 # 414 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
 
@@ -6612,7 +6612,7 @@ int pairalign_npm(int istart, int iend, int jstart, int jend)
 # 426 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres = get_matrix_npm(matptr, mat_xref, 10);
 # 427 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (maxres == 0) {return(-1); };
+   if (maxres == 0) { int ____chimes_ret_var_7; ____chimes_ret_var_7 = ((-1)); return ____chimes_ret_var_7; ; };
 # 428 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Start aligning "); } };
@@ -6712,7 +6712,7 @@ int pairalign_npm(int istart, int iend, int jstart, int jend)
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   return 0;
+    int ____chimes_ret_var_8; ____chimes_ret_var_8 = (0); return ____chimes_ret_var_8; ;
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
 
@@ -6735,7 +6735,7 @@ int pairalign_seq_npm(int istart, int iend, int jstart, int jend)
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    maxres = get_matrix_npm(matptr, mat_xref, 10);
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   if (maxres == 0) {return(-1); };
+   if (maxres == 0) { int ____chimes_ret_var_9; ____chimes_ret_var_9 = ((-1)); return ____chimes_ret_var_9; ; };
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (si = 0; si < nseqs; si++) {
@@ -6811,7 +6811,7 @@ int pairalign_seq_npm(int istart, int iend, int jstart, int jend)
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    }
 # 541 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   return 0;
+    int ____chimes_ret_var_10; ____chimes_ret_var_10 = (0); return ____chimes_ret_var_10; ;
 # 542 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
 
@@ -6887,7 +6887,7 @@ void align_init_npm ()
 # 593 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i,j;
 # 594 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912221UL, 0, 0);
+   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912265UL, 0, 0);
 # 595 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 596 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { bench_output[i*nseqs+j] = 0; }; };
@@ -6908,9 +6908,9 @@ void align_seq_init_npm ()
 # 608 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    int i,j;
 # 609 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   seq_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912221UL, 0, 0);
+   seq_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912265UL, 0, 0);
 # 610 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912221UL, 0, 0);
+   bench_output = (int *) malloc_wrapper(sizeof(int)*nseqs*nseqs, 2235191825397912265UL, 0, 0);
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
    for (i = 0; i<nseqs; i++) { for (j = 0; j<nseqs; j++) { seq_output[i*nseqs+j] = 0; }; };
@@ -6953,7 +6953,7 @@ int align_verify_npm ()
 # 663 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
          }; }
 # 664 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
-   return result;
+    int ____chimes_ret_var_11; ____chimes_ret_var_11 = (result); return ____chimes_ret_var_11; ;
 # 665 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c"
 }
 
@@ -6963,42 +6963,42 @@ int align_verify_npm ()
 
 static int module_init() {
     init_module(2235191825397909448UL, 33, 18, 7, 18, 18, 2, 20, 27, 0, 1,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (2235191825397909448UL + 2713UL), "readseqs", (unsigned)1, (2235191825397909448UL + 2758UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (2235191825397909448UL + 2713UL), "bots_error", (unsigned)1, (2235191825397909448UL + 2996UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (2235191825397909448UL + 2757UL), "readseqs", (unsigned)1, (2235191825397909448UL + 2802UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (2235191825397909448UL + 2757UL), "bots_error", (unsigned)1, (2235191825397909448UL + 3044UL),
                            &____alias_loc_id_2, (unsigned)7, (unsigned)0, (unsigned)0, (2235191825397909448UL + 1UL), (2235191825397909448UL + 2UL), (2235191825397909448UL + 3UL), (2235191825397909448UL + 4UL), (2235191825397909448UL + 45UL), (2235191825397909448UL + 46UL), (2235191825397909448UL + 47UL),
                            &____alias_loc_id_3, (unsigned)7, (unsigned)0, (unsigned)0, (2235191825397909448UL + 50UL), (2235191825397909448UL + 51UL), (2235191825397909448UL + 52UL), (2235191825397909448UL + 53UL), (2235191825397909448UL + 99UL), (2235191825397909448UL + 100UL), (2235191825397909448UL + 101UL),
-                           &____alias_loc_id_4, (unsigned)10, (unsigned)0, (unsigned)0, (2235191825397909448UL + 102UL), (2235191825397909448UL + 103UL), (2235191825397909448UL + 104UL), (2235191825397909448UL + 105UL), (2235191825397909448UL + 106UL), (2235191825397909448UL + 107UL), (2235191825397909448UL + 108UL), (2235191825397909448UL + 109UL), (2235191825397909448UL + 110UL), (2235191825397909448UL + 111UL),
-                           &____alias_loc_id_5, (unsigned)19, (unsigned)0, (unsigned)0, (2235191825397909448UL + 172UL), (2235191825397909448UL + 173UL), (2235191825397909448UL + 174UL), (2235191825397909448UL + 175UL), (2235191825397909448UL + 176UL), (2235191825397909448UL + 177UL), (2235191825397909448UL + 178UL), (2235191825397909448UL + 179UL), (2235191825397909448UL + 180UL), (2235191825397909448UL + 181UL), (2235191825397909448UL + 182UL), (2235191825397909448UL + 183UL), (2235191825397909448UL + 184UL), (2235191825397909448UL + 185UL), (2235191825397909448UL + 186UL), (2235191825397909448UL + 187UL), (2235191825397909448UL + 188UL), (2235191825397909448UL + 2965UL), (2235191825397909448UL + 2991UL),
-                           &____alias_loc_id_6, (unsigned)20, (unsigned)0, (unsigned)0, (2235191825397909448UL + 567UL), (2235191825397909448UL + 568UL), (2235191825397909448UL + 569UL), (2235191825397909448UL + 570UL), (2235191825397909448UL + 571UL), (2235191825397909448UL + 572UL), (2235191825397909448UL + 573UL), (2235191825397909448UL + 574UL), (2235191825397909448UL + 575UL), (2235191825397909448UL + 576UL), (2235191825397909448UL + 577UL), (2235191825397909448UL + 578UL), (2235191825397909448UL + 579UL), (2235191825397909448UL + 580UL), (2235191825397909448UL + 581UL), (2235191825397909448UL + 582UL), (2235191825397909448UL + 583UL), (2235191825397909448UL + 785UL), (2235191825397909448UL + 786UL), (2235191825397909448UL + 787UL),
-                           &____alias_loc_id_7, (unsigned)20, (unsigned)0, (unsigned)0, (2235191825397909448UL + 790UL), (2235191825397909448UL + 791UL), (2235191825397909448UL + 792UL), (2235191825397909448UL + 793UL), (2235191825397909448UL + 794UL), (2235191825397909448UL + 795UL), (2235191825397909448UL + 796UL), (2235191825397909448UL + 797UL), (2235191825397909448UL + 798UL), (2235191825397909448UL + 799UL), (2235191825397909448UL + 800UL), (2235191825397909448UL + 801UL), (2235191825397909448UL + 802UL), (2235191825397909448UL + 803UL), (2235191825397909448UL + 804UL), (2235191825397909448UL + 805UL), (2235191825397909448UL + 806UL), (2235191825397909448UL + 807UL), (2235191825397909448UL + 1015UL), (2235191825397909448UL + 1016UL),
-                           &____alias_loc_id_8, (unsigned)32, (unsigned)0, (unsigned)0, (2235191825397909448UL + 1020UL), (2235191825397909448UL + 1021UL), (2235191825397909448UL + 1022UL), (2235191825397909448UL + 1023UL), (2235191825397909448UL + 1024UL), (2235191825397909448UL + 1025UL), (2235191825397909448UL + 1026UL), (2235191825397909448UL + 1027UL), (2235191825397909448UL + 1028UL), (2235191825397909448UL + 1029UL), (2235191825397909448UL + 1030UL), (2235191825397909448UL + 1031UL), (2235191825397909448UL + 1032UL), (2235191825397909448UL + 1033UL), (2235191825397909448UL + 1034UL), (2235191825397909448UL + 1035UL), (2235191825397909448UL + 1036UL), (2235191825397909448UL + 1037UL), (2235191825397909448UL + 1038UL), (2235191825397909448UL + 1039UL), (2235191825397909448UL + 1040UL), (2235191825397909448UL + 1041UL), (2235191825397909448UL + 1042UL), (2235191825397909448UL + 1043UL), (2235191825397909448UL + 1044UL), (2235191825397909448UL + 1045UL), (2235191825397909448UL + 1046UL), (2235191825397909448UL + 1047UL), (2235191825397909448UL + 1048UL), (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL),
-                           &____alias_loc_id_9, (unsigned)15, (unsigned)0, (unsigned)0, (2235191825397909448UL + 1802UL), (2235191825397909448UL + 1803UL), (2235191825397909448UL + 1804UL), (2235191825397909448UL + 1805UL), (2235191825397909448UL + 1806UL), (2235191825397909448UL + 1807UL), (2235191825397909448UL + 1808UL), (2235191825397909448UL + 1809UL), (2235191825397909448UL + 1810UL), (2235191825397909448UL + 1811UL), (2235191825397909448UL + 1812UL), (2235191825397909448UL + 1813UL), (2235191825397909448UL + 1814UL), (2235191825397909448UL + 1815UL), (2235191825397909448UL + 1816UL),
-                            &____alias_loc_id_10, (unsigned)26, (unsigned)0, (unsigned)0, (2235191825397909448UL + 1953UL), (2235191825397909448UL + 1954UL), (2235191825397909448UL + 1955UL), (2235191825397909448UL + 1956UL), (2235191825397909448UL + 1957UL), (2235191825397909448UL + 1958UL), (2235191825397909448UL + 1959UL), (2235191825397909448UL + 1960UL), (2235191825397909448UL + 1961UL), (2235191825397909448UL + 1962UL), (2235191825397909448UL + 1963UL), (2235191825397909448UL + 1964UL), (2235191825397909448UL + 1965UL), (2235191825397909448UL + 1966UL), (2235191825397909448UL + 1967UL), (2235191825397909448UL + 1968UL), (2235191825397909448UL + 1969UL), (2235191825397909448UL + 1970UL), (2235191825397909448UL + 1976UL), (2235191825397909448UL + 1977UL), (2235191825397909448UL + 1978UL), (2235191825397909448UL + 1979UL), (2235191825397909448UL + 1981UL), (2235191825397909448UL + 1982UL), (2235191825397909448UL + 1983UL), (2235191825397909448UL + 2773UL),
-                            &____alias_loc_id_11, (unsigned)26, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2304UL), (2235191825397909448UL + 2305UL), (2235191825397909448UL + 2306UL), (2235191825397909448UL + 2307UL), (2235191825397909448UL + 2308UL), (2235191825397909448UL + 2309UL), (2235191825397909448UL + 2310UL), (2235191825397909448UL + 2311UL), (2235191825397909448UL + 2312UL), (2235191825397909448UL + 2313UL), (2235191825397909448UL + 2314UL), (2235191825397909448UL + 2315UL), (2235191825397909448UL + 2316UL), (2235191825397909448UL + 2317UL), (2235191825397909448UL + 2318UL), (2235191825397909448UL + 2319UL), (2235191825397909448UL + 2320UL), (2235191825397909448UL + 2321UL), (2235191825397909448UL + 2327UL), (2235191825397909448UL + 2328UL), (2235191825397909448UL + 2329UL), (2235191825397909448UL + 2330UL), (2235191825397909448UL + 2332UL), (2235191825397909448UL + 2333UL), (2235191825397909448UL + 2334UL), (2235191825397909448UL + 2773UL),
-                            &____alias_loc_id_12, (unsigned)6, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2640UL), (2235191825397909448UL + 2641UL), (2235191825397909448UL + 2642UL), (2235191825397909448UL + 2643UL), (2235191825397909448UL + 2965UL), (2235191825397909448UL + 2977UL),
-                            &____alias_loc_id_13, (unsigned)3, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2714UL), (2235191825397909448UL + 2965UL), (2235191825397909448UL + 2980UL),
-                            &____alias_loc_id_14, (unsigned)4, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2763UL), (2235191825397909448UL + 2764UL), (2235191825397909448UL + 2773UL), (2235191825397909448UL + 2976UL),
-                            &____alias_loc_id_15, (unsigned)4, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2773UL), (2235191825397909448UL + 2813UL), (2235191825397909448UL + 2814UL), (2235191825397909448UL + 2976UL),
-                            &____alias_loc_id_16, (unsigned)2, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2871UL), (2235191825397909448UL + 2872UL),
-                            &____alias_loc_id_17, (unsigned)3, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2910UL), (2235191825397909448UL + 2911UL), (2235191825397909448UL + 2912UL),
+                           &____alias_loc_id_4, (unsigned)11, (unsigned)0, (unsigned)0, (2235191825397909448UL + 102UL), (2235191825397909448UL + 103UL), (2235191825397909448UL + 104UL), (2235191825397909448UL + 105UL), (2235191825397909448UL + 106UL), (2235191825397909448UL + 107UL), (2235191825397909448UL + 108UL), (2235191825397909448UL + 109UL), (2235191825397909448UL + 110UL), (2235191825397909448UL + 111UL), (2235191825397909448UL + 112UL),
+                           &____alias_loc_id_5, (unsigned)20, (unsigned)0, (unsigned)0, (2235191825397909448UL + 176UL), (2235191825397909448UL + 177UL), (2235191825397909448UL + 178UL), (2235191825397909448UL + 179UL), (2235191825397909448UL + 180UL), (2235191825397909448UL + 181UL), (2235191825397909448UL + 182UL), (2235191825397909448UL + 183UL), (2235191825397909448UL + 184UL), (2235191825397909448UL + 185UL), (2235191825397909448UL + 186UL), (2235191825397909448UL + 187UL), (2235191825397909448UL + 188UL), (2235191825397909448UL + 189UL), (2235191825397909448UL + 190UL), (2235191825397909448UL + 191UL), (2235191825397909448UL + 192UL), (2235191825397909448UL + 193UL), (2235191825397909448UL + 3013UL), (2235191825397909448UL + 3039UL),
+                           &____alias_loc_id_6, (unsigned)20, (unsigned)0, (unsigned)0, (2235191825397909448UL + 575UL), (2235191825397909448UL + 576UL), (2235191825397909448UL + 577UL), (2235191825397909448UL + 578UL), (2235191825397909448UL + 579UL), (2235191825397909448UL + 580UL), (2235191825397909448UL + 581UL), (2235191825397909448UL + 582UL), (2235191825397909448UL + 583UL), (2235191825397909448UL + 584UL), (2235191825397909448UL + 585UL), (2235191825397909448UL + 586UL), (2235191825397909448UL + 587UL), (2235191825397909448UL + 588UL), (2235191825397909448UL + 589UL), (2235191825397909448UL + 590UL), (2235191825397909448UL + 591UL), (2235191825397909448UL + 793UL), (2235191825397909448UL + 794UL), (2235191825397909448UL + 795UL),
+                           &____alias_loc_id_7, (unsigned)20, (unsigned)0, (unsigned)0, (2235191825397909448UL + 798UL), (2235191825397909448UL + 799UL), (2235191825397909448UL + 800UL), (2235191825397909448UL + 801UL), (2235191825397909448UL + 802UL), (2235191825397909448UL + 803UL), (2235191825397909448UL + 804UL), (2235191825397909448UL + 805UL), (2235191825397909448UL + 806UL), (2235191825397909448UL + 807UL), (2235191825397909448UL + 808UL), (2235191825397909448UL + 809UL), (2235191825397909448UL + 810UL), (2235191825397909448UL + 811UL), (2235191825397909448UL + 812UL), (2235191825397909448UL + 813UL), (2235191825397909448UL + 814UL), (2235191825397909448UL + 815UL), (2235191825397909448UL + 1023UL), (2235191825397909448UL + 1024UL),
+                           &____alias_loc_id_8, (unsigned)36, (unsigned)0, (unsigned)0, (2235191825397909448UL + 1028UL), (2235191825397909448UL + 1029UL), (2235191825397909448UL + 1030UL), (2235191825397909448UL + 1031UL), (2235191825397909448UL + 1032UL), (2235191825397909448UL + 1033UL), (2235191825397909448UL + 1034UL), (2235191825397909448UL + 1035UL), (2235191825397909448UL + 1036UL), (2235191825397909448UL + 1037UL), (2235191825397909448UL + 1038UL), (2235191825397909448UL + 1039UL), (2235191825397909448UL + 1040UL), (2235191825397909448UL + 1041UL), (2235191825397909448UL + 1042UL), (2235191825397909448UL + 1043UL), (2235191825397909448UL + 1044UL), (2235191825397909448UL + 1045UL), (2235191825397909448UL + 1046UL), (2235191825397909448UL + 1047UL), (2235191825397909448UL + 1048UL), (2235191825397909448UL + 1049UL), (2235191825397909448UL + 1050UL), (2235191825397909448UL + 1051UL), (2235191825397909448UL + 1052UL), (2235191825397909448UL + 1053UL), (2235191825397909448UL + 1054UL), (2235191825397909448UL + 1055UL), (2235191825397909448UL + 1056UL), (2235191825397909448UL + 1057UL), (2235191825397909448UL + 1058UL), (2235191825397909448UL + 1059UL), (2235191825397909448UL + 1060UL), (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL),
+                           &____alias_loc_id_9, (unsigned)16, (unsigned)0, (unsigned)0, (2235191825397909448UL + 1826UL), (2235191825397909448UL + 1827UL), (2235191825397909448UL + 1828UL), (2235191825397909448UL + 1829UL), (2235191825397909448UL + 1830UL), (2235191825397909448UL + 1831UL), (2235191825397909448UL + 1832UL), (2235191825397909448UL + 1833UL), (2235191825397909448UL + 1834UL), (2235191825397909448UL + 1835UL), (2235191825397909448UL + 1836UL), (2235191825397909448UL + 1837UL), (2235191825397909448UL + 1838UL), (2235191825397909448UL + 1839UL), (2235191825397909448UL + 1840UL), (2235191825397909448UL + 1841UL),
+                            &____alias_loc_id_10, (unsigned)28, (unsigned)0, (unsigned)0, (2235191825397909448UL + 1981UL), (2235191825397909448UL + 1982UL), (2235191825397909448UL + 1983UL), (2235191825397909448UL + 1984UL), (2235191825397909448UL + 1985UL), (2235191825397909448UL + 1986UL), (2235191825397909448UL + 1987UL), (2235191825397909448UL + 1988UL), (2235191825397909448UL + 1989UL), (2235191825397909448UL + 1990UL), (2235191825397909448UL + 1991UL), (2235191825397909448UL + 1992UL), (2235191825397909448UL + 1993UL), (2235191825397909448UL + 1994UL), (2235191825397909448UL + 1995UL), (2235191825397909448UL + 1996UL), (2235191825397909448UL + 1997UL), (2235191825397909448UL + 1998UL), (2235191825397909448UL + 1999UL), (2235191825397909448UL + 2005UL), (2235191825397909448UL + 2006UL), (2235191825397909448UL + 2007UL), (2235191825397909448UL + 2008UL), (2235191825397909448UL + 2010UL), (2235191825397909448UL + 2011UL), (2235191825397909448UL + 2012UL), (2235191825397909448UL + 2013UL), (2235191825397909448UL + 2817UL),
+                            &____alias_loc_id_11, (unsigned)28, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2340UL), (2235191825397909448UL + 2341UL), (2235191825397909448UL + 2342UL), (2235191825397909448UL + 2343UL), (2235191825397909448UL + 2344UL), (2235191825397909448UL + 2345UL), (2235191825397909448UL + 2346UL), (2235191825397909448UL + 2347UL), (2235191825397909448UL + 2348UL), (2235191825397909448UL + 2349UL), (2235191825397909448UL + 2350UL), (2235191825397909448UL + 2351UL), (2235191825397909448UL + 2352UL), (2235191825397909448UL + 2353UL), (2235191825397909448UL + 2354UL), (2235191825397909448UL + 2355UL), (2235191825397909448UL + 2356UL), (2235191825397909448UL + 2357UL), (2235191825397909448UL + 2358UL), (2235191825397909448UL + 2364UL), (2235191825397909448UL + 2365UL), (2235191825397909448UL + 2366UL), (2235191825397909448UL + 2367UL), (2235191825397909448UL + 2369UL), (2235191825397909448UL + 2370UL), (2235191825397909448UL + 2371UL), (2235191825397909448UL + 2372UL), (2235191825397909448UL + 2817UL),
+                            &____alias_loc_id_12, (unsigned)6, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2684UL), (2235191825397909448UL + 2685UL), (2235191825397909448UL + 2686UL), (2235191825397909448UL + 2687UL), (2235191825397909448UL + 3013UL), (2235191825397909448UL + 3025UL),
+                            &____alias_loc_id_13, (unsigned)3, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2758UL), (2235191825397909448UL + 3013UL), (2235191825397909448UL + 3028UL),
+                            &____alias_loc_id_14, (unsigned)4, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2807UL), (2235191825397909448UL + 2808UL), (2235191825397909448UL + 2817UL), (2235191825397909448UL + 3024UL),
+                            &____alias_loc_id_15, (unsigned)4, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2817UL), (2235191825397909448UL + 2857UL), (2235191825397909448UL + 2858UL), (2235191825397909448UL + 3024UL),
+                            &____alias_loc_id_16, (unsigned)2, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2915UL), (2235191825397909448UL + 2916UL),
+                            &____alias_loc_id_17, (unsigned)4, (unsigned)0, (unsigned)0, (2235191825397909448UL + 2954UL), (2235191825397909448UL + 2955UL), (2235191825397909448UL + 2956UL), (2235191825397909448UL + 2957UL),
                             "del", (void *)(&del_npm), (void *)__null, 0, 4, 0UL, (2235191825397909448UL + 45UL), (2235191825397909448UL + 46UL), (2235191825397909448UL + 47UL), 0UL, 0,
                             "add", (void *)(&add_npm), (void *)__null, 0, 4, 0UL, (2235191825397909448UL + 99UL), (2235191825397909448UL + 100UL), (2235191825397909448UL + 101UL), 0UL, 0,
                             "calc_score", (void *)(&calc_score_npm), (void *)__null, 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
-                            "get_matrix", (void *)(&get_matrix_npm), (void *)__null, 0, 3, (2235191825397909448UL + 564UL), (2235191825397909448UL + 565UL), 0UL, 0UL, 0,
-                            "forward_pass", (void *)(&forward_pass_npm), (void *)__null, 0, 9, (2235191825397909448UL + 781UL), (2235191825397909448UL + 782UL), 0UL, 0UL, (2235191825397909448UL + 785UL), (2235191825397909448UL + 786UL), (2235191825397909448UL + 787UL), 0UL, 0UL, 0UL, 0,
-                            "reverse_pass", (void *)(&reverse_pass_npm), (void *)__null, 0, 9, (2235191825397909448UL + 1011UL), (2235191825397909448UL + 1012UL), 0UL, 0UL, (2235191825397909448UL + 1015UL), (2235191825397909448UL + 1016UL), 0UL, 0UL, 0UL, 0UL, 0,
-                            "diff", (void *)(&diff_npm), (void *)__null, 0, 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, 0UL, 0UL, 0UL, 0UL, 14, "del", 4, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "del", 4, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, 0UL, 0UL, 0UL, 0UL, "del", 4, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1795UL), (2235191825397909448UL + 1796UL), (2235191825397909448UL + 1797UL), 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "tracepath", (void *)(&tracepath_npm), (void *)__null, 0, 7, 0UL, 0UL, (2235191825397909448UL + 1948UL), (2235191825397909448UL + 1949UL), (2235191825397909448UL + 1950UL), 0UL, 0UL, 0UL, 0,
-                            "pairalign", (void *)(&pairalign_npm), (void *)__null, 0, 4, 0UL, 0UL, 0UL, 0UL, 0UL, 8, "get_matrix", 3, (2235191825397909448UL + 2964UL), (2235191825397909448UL + 2977UL), 0UL, 0UL, "fprintf", 2, (2235191825397909448UL + 2932UL), (2235191825397909448UL + 2994UL), 0UL, "log", 1, 0UL, 0UL, "forward_pass", 9, (2235191825397909448UL + 142UL), (2235191825397909448UL + 142UL), 0UL, 0UL, (2235191825397909448UL + 1971UL), (2235191825397909448UL + 1972UL), (2235191825397909448UL + 1975UL), 0UL, 0UL, 0UL, "reverse_pass", 9, (2235191825397909448UL + 142UL), (2235191825397909448UL + 142UL), 0UL, 0UL, (2235191825397909448UL + 1973UL), (2235191825397909448UL + 1974UL), 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1981UL), (2235191825397909448UL + 1982UL), (2235191825397909448UL + 1980UL), 0UL, 0UL, 0UL, 0UL, 0UL, "tracepath", 7, 0UL, 0UL, (2235191825397909448UL + 1981UL), (2235191825397909448UL + 1982UL), (2235191825397909448UL + 1980UL), 0UL, 0UL, 0UL, "fprintf", 2, (2235191825397909448UL + 2932UL), (2235191825397909448UL + 2995UL), 0UL,
-                            "pairalign_seq", (void *)(&pairalign_seq_npm), (void *)__null, 0, 4, 0UL, 0UL, 0UL, 0UL, 0UL, 6, "get_matrix", 3, (2235191825397909448UL + 2964UL), (2235191825397909448UL + 2977UL), 0UL, 0UL, "log", 1, 0UL, 0UL, "forward_pass", 9, (2235191825397909448UL + 142UL), (2235191825397909448UL + 142UL), 0UL, 0UL, (2235191825397909448UL + 2322UL), (2235191825397909448UL + 2323UL), (2235191825397909448UL + 2326UL), 0UL, 0UL, 0UL, "reverse_pass", 9, (2235191825397909448UL + 142UL), (2235191825397909448UL + 142UL), 0UL, 0UL, (2235191825397909448UL + 2324UL), (2235191825397909448UL + 2325UL), 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 2332UL), (2235191825397909448UL + 2333UL), (2235191825397909448UL + 2331UL), 0UL, 0UL, 0UL, 0UL, 0UL, "tracepath", 7, 0UL, 0UL, (2235191825397909448UL + 2332UL), (2235191825397909448UL + 2333UL), (2235191825397909448UL + 2331UL), 0UL, 0UL, 0UL,
-                            "init_matrix", (void *)(&init_matrix_npm), (void *)__null, 0, 0, 0UL, 1, "strlen", 1, (2235191825397909448UL + 2650UL), 0UL,
-                            "pairalign_init", (void *)(&pairalign_init_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 1, (2235191825397909448UL + 2758UL), 0UL, 4, "bots_error", 2, 0UL, (2235191825397909448UL + 2996UL), 0UL, "init_matrix", 0, 0UL, "readseqs", 2, 0UL, (2235191825397909448UL + 2758UL), 0UL, "fprintf", 3, (2235191825397909448UL + 2932UL), (2235191825397909448UL + 2997UL), 0UL, 0UL,
-                            "align_init", (void *)(&align_init_npm), (void *)__null, 0, 0, 0UL, 1, "malloc", 1, 0UL, (2235191825397909448UL + 2773UL),
+                            "get_matrix", (void *)(&get_matrix_npm), (void *)__null, 0, 3, (2235191825397909448UL + 572UL), (2235191825397909448UL + 573UL), 0UL, 0UL, 0,
+                            "forward_pass", (void *)(&forward_pass_npm), (void *)__null, 0, 9, (2235191825397909448UL + 789UL), (2235191825397909448UL + 790UL), 0UL, 0UL, (2235191825397909448UL + 793UL), (2235191825397909448UL + 794UL), (2235191825397909448UL + 795UL), 0UL, 0UL, 0UL, 0,
+                            "reverse_pass", (void *)(&reverse_pass_npm), (void *)__null, 0, 9, (2235191825397909448UL + 1019UL), (2235191825397909448UL + 1020UL), 0UL, 0UL, (2235191825397909448UL + 1023UL), (2235191825397909448UL + 1024UL), 0UL, 0UL, 0UL, 0UL, 0,
+                            "diff", (void *)(&diff_npm), (void *)__null, 0, 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, 0UL, 0UL, 0UL, 0UL, 14, "del", 4, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "del", 4, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, "add", 4, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "calc_score", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, 0UL, 0UL, 0UL, 0UL, "del", 4, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 1819UL), (2235191825397909448UL + 1820UL), (2235191825397909448UL + 1821UL), 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "tracepath", (void *)(&tracepath_npm), (void *)__null, 0, 7, 0UL, 0UL, (2235191825397909448UL + 1976UL), (2235191825397909448UL + 1977UL), (2235191825397909448UL + 1978UL), 0UL, 0UL, 0UL, 0,
+                            "pairalign", (void *)(&pairalign_npm), (void *)__null, 0, 4, 0UL, 0UL, 0UL, 0UL, 0UL, 8, "get_matrix", 3, (2235191825397909448UL + 3012UL), (2235191825397909448UL + 3025UL), 0UL, 0UL, "fprintf", 2, (2235191825397909448UL + 2977UL), (2235191825397909448UL + 3042UL), 0UL, "log", 1, 0UL, 0UL, "forward_pass", 9, (2235191825397909448UL + 143UL), (2235191825397909448UL + 143UL), 0UL, 0UL, (2235191825397909448UL + 2000UL), (2235191825397909448UL + 2001UL), (2235191825397909448UL + 2004UL), 0UL, 0UL, 0UL, "reverse_pass", 9, (2235191825397909448UL + 143UL), (2235191825397909448UL + 143UL), 0UL, 0UL, (2235191825397909448UL + 2002UL), (2235191825397909448UL + 2003UL), 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 2010UL), (2235191825397909448UL + 2011UL), (2235191825397909448UL + 2009UL), 0UL, 0UL, 0UL, 0UL, 0UL, "tracepath", 7, 0UL, 0UL, (2235191825397909448UL + 2010UL), (2235191825397909448UL + 2011UL), (2235191825397909448UL + 2009UL), 0UL, 0UL, 0UL, "fprintf", 2, (2235191825397909448UL + 2977UL), (2235191825397909448UL + 3043UL), 0UL,
+                            "pairalign_seq", (void *)(&pairalign_seq_npm), (void *)__null, 0, 4, 0UL, 0UL, 0UL, 0UL, 0UL, 6, "get_matrix", 3, (2235191825397909448UL + 3012UL), (2235191825397909448UL + 3025UL), 0UL, 0UL, "log", 1, 0UL, 0UL, "forward_pass", 9, (2235191825397909448UL + 143UL), (2235191825397909448UL + 143UL), 0UL, 0UL, (2235191825397909448UL + 2359UL), (2235191825397909448UL + 2360UL), (2235191825397909448UL + 2363UL), 0UL, 0UL, 0UL, "reverse_pass", 9, (2235191825397909448UL + 143UL), (2235191825397909448UL + 143UL), 0UL, 0UL, (2235191825397909448UL + 2361UL), (2235191825397909448UL + 2362UL), 0UL, 0UL, 0UL, 0UL, "diff", 13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (2235191825397909448UL + 2369UL), (2235191825397909448UL + 2370UL), (2235191825397909448UL + 2368UL), 0UL, 0UL, 0UL, 0UL, 0UL, "tracepath", 7, 0UL, 0UL, (2235191825397909448UL + 2369UL), (2235191825397909448UL + 2370UL), (2235191825397909448UL + 2368UL), 0UL, 0UL, 0UL,
+                            "init_matrix", (void *)(&init_matrix_npm), (void *)__null, 0, 0, 0UL, 1, "strlen", 1, (2235191825397909448UL + 2694UL), 0UL,
+                            "pairalign_init", (void *)(&pairalign_init_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 1, (2235191825397909448UL + 2802UL), 0UL, 4, "bots_error", 2, 0UL, (2235191825397909448UL + 3044UL), 0UL, "init_matrix", 0, 0UL, "readseqs", 2, 0UL, (2235191825397909448UL + 2802UL), 0UL, "fprintf", 3, (2235191825397909448UL + 2977UL), (2235191825397909448UL + 3045UL), 0UL, 0UL,
+                            "align_init", (void *)(&align_init_npm), (void *)__null, 0, 0, 0UL, 1, "malloc", 1, 0UL, (2235191825397909448UL + 2817UL),
                             "align", (void *)(&align_npm), (void *)__null, 0, 0, 0UL, 1, "pairalign", 4, 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "align_seq_init", (void *)(&align_seq_init_npm), (void *)__null, 0, 0, 0UL, 2, "malloc", 1, 0UL, (2235191825397909448UL + 2773UL), "malloc", 1, 0UL, (2235191825397909448UL + 2773UL),
+                            "align_seq_init", (void *)(&align_seq_init_npm), (void *)__null, 0, 0, 0UL, 2, "malloc", 1, 0UL, (2235191825397909448UL + 2817UL), "malloc", 1, 0UL, (2235191825397909448UL + 2817UL),
                             "align_seq", (void *)(&align_seq_npm), (void *)__null, 0, 0, 0UL, 1, "pairalign_seq", 4, 0UL, 0UL, 0UL, 0UL, 0UL,
                             "align_end", (void *)(&align_end_npm), (void *)__null, 0, 0, 0UL, 0,
-                            "align_verify", (void *)(&align_verify_npm), (void *)__null, 0, 0, 0UL, 1, "fprintf", 5, (2235191825397909448UL + 2932UL), (2235191825397909448UL + 2998UL), 0UL, 0UL, 0UL, 0UL,
+                            "align_verify", (void *)(&align_verify_npm), (void *)__null, 0, 0, 0UL, 1, "fprintf", 5, (2235191825397909448UL + 2977UL), (2235191825397909448UL + 3046UL), 0UL, 0UL, 0UL, 0UL,
                                "bots_error", (void **)&(____chimes_extern_func_bots_error),
                                "readseqs", (void **)&(____chimes_extern_func_readseqs),
                            "del", &(____chimes_does_checkpoint_del_npm),
@@ -7021,39 +7021,39 @@ static int module_init() {
                            "align_verify", &(____chimes_does_checkpoint_align_verify_npm),
                            "bots_error", &(____chimes_does_checkpoint_bots_error_npm),
                            "readseqs", &(____chimes_does_checkpoint_readseqs_npm),
-                             (2235191825397909448UL + 2713UL), (2235191825397909448UL + 2758UL),
-                             (2235191825397909448UL + 2961UL), (2235191825397909448UL + 2650UL),
-                             (2235191825397909448UL + 573UL), (2235191825397909448UL + 787UL),
-                             (2235191825397909448UL + 572UL), (2235191825397909448UL + 786UL),
-                             (2235191825397909448UL + 571UL), (2235191825397909448UL + 785UL),
-                             (2235191825397909448UL + 173UL), (2235191825397909448UL + 565UL),
-                             (2235191825397909448UL + 172UL), (2235191825397909448UL + 564UL),
-                             (2235191825397909448UL + 795UL), (2235191825397909448UL + 1016UL),
-                             (2235191825397909448UL + 794UL), (2235191825397909448UL + 1015UL),
-                             (2235191825397909448UL + 1968UL), (2235191825397909448UL + 2977UL),
-                             (2235191825397909448UL + 1969UL), (2235191825397909448UL + 2964UL),
-                             (2235191825397909448UL + 791UL), (2235191825397909448UL + 1012UL),
-                             (2235191825397909448UL + 790UL), (2235191825397909448UL + 1011UL),
-                             (2235191825397909448UL + 1029UL), (2235191825397909448UL + 1797UL),
+                             (2235191825397909448UL + 579UL), (2235191825397909448UL + 793UL),
+                             (2235191825397909448UL + 3024UL), (2235191825397909448UL + 2817UL),
+                             (2235191825397909448UL + 576UL), (2235191825397909448UL + 790UL),
+                             (2235191825397909448UL + 575UL), (2235191825397909448UL + 789UL),
+                             (2235191825397909448UL + 3041UL), (2235191825397909448UL + 2977UL),
+                             (2235191825397909448UL + 177UL), (2235191825397909448UL + 573UL),
+                             (2235191825397909448UL + 176UL), (2235191825397909448UL + 572UL),
+                             (2235191825397909448UL + 3009UL), (2235191825397909448UL + 2694UL),
+                             (2235191825397909448UL + 1830UL), (2235191825397909448UL + 1978UL),
+                             (2235191825397909448UL + 581UL), (2235191825397909448UL + 795UL),
+                             (2235191825397909448UL + 799UL), (2235191825397909448UL + 1020UL),
+                             (2235191825397909448UL + 798UL), (2235191825397909448UL + 1019UL),
                              (2235191825397909448UL + 3UL), (2235191825397909448UL + 46UL),
                              (2235191825397909448UL + 2UL), (2235191825397909448UL + 45UL),
                              (2235191825397909448UL + 4UL), (2235191825397909448UL + 47UL),
-                             (2235191825397909448UL + 568UL), (2235191825397909448UL + 782UL),
-                             (2235191825397909448UL + 140UL), (2235191825397909448UL + 142UL),
-                             (2235191825397909448UL + 1805UL), (2235191825397909448UL + 1949UL),
-                             (2235191825397909448UL + 567UL), (2235191825397909448UL + 781UL),
-                             (2235191825397909448UL + 2320UL), (2235191825397909448UL + 2964UL),
-                             (2235191825397909448UL + 2976UL), (2235191825397909448UL + 2773UL),
-                             (2235191825397909448UL + 1806UL), (2235191825397909448UL + 1950UL),
-                             (2235191825397909448UL + 1027UL), (2235191825397909448UL + 1795UL),
-                             (2235191825397909448UL + 1804UL), (2235191825397909448UL + 1948UL),
-                             (2235191825397909448UL + 2988UL), (2235191825397909448UL + 140UL),
-                             (2235191825397909448UL + 2319UL), (2235191825397909448UL + 2977UL),
-                             (2235191825397909448UL + 2993UL), (2235191825397909448UL + 2932UL),
+                             (2235191825397909448UL + 1036UL), (2235191825397909448UL + 1820UL),
+                             (2235191825397909448UL + 1037UL), (2235191825397909448UL + 1821UL),
+                             (2235191825397909448UL + 1035UL), (2235191825397909448UL + 1819UL),
+                             (2235191825397909448UL + 580UL), (2235191825397909448UL + 794UL),
+                             (2235191825397909448UL + 141UL), (2235191825397909448UL + 143UL),
+                             (2235191825397909448UL + 1829UL), (2235191825397909448UL + 1977UL),
+                             (2235191825397909448UL + 1828UL), (2235191825397909448UL + 1976UL),
+                             (2235191825397909448UL + 1997UL), (2235191825397909448UL + 3012UL),
+                             (2235191825397909448UL + 1996UL), (2235191825397909448UL + 3025UL),
+                             (2235191825397909448UL + 3036UL), (2235191825397909448UL + 141UL),
                              (2235191825397909448UL + 51UL), (2235191825397909448UL + 99UL),
-                             (2235191825397909448UL + 1028UL), (2235191825397909448UL + 1796UL),
                              (2235191825397909448UL + 53UL), (2235191825397909448UL + 101UL),
                              (2235191825397909448UL + 52UL), (2235191825397909448UL + 100UL),
+                             (2235191825397909448UL + 2757UL), (2235191825397909448UL + 2802UL),
+                             (2235191825397909448UL + 803UL), (2235191825397909448UL + 1024UL),
+                             (2235191825397909448UL + 802UL), (2235191825397909448UL + 1023UL),
+                             (2235191825397909448UL + 2356UL), (2235191825397909448UL + 3012UL),
+                             (2235191825397909448UL + 2355UL), (2235191825397909448UL + 3025UL),
                      "bots_verbose_mode_t", 0,
                              "align_verify", "_Z12align_verifyv", 0,
                              "pairalign", "_Z9pairaligniiii", 5, "get_matrix", "forward_pass", "reverse_pass", "diff", "tracepath",
@@ -7080,35 +7080,35 @@ static int module_init() {
                         "pairalign_seq|sb1|0", 1, "pairalign_seq",
                         "pairalign_seq|displ|0", 1, "pairalign_seq",
                         "pairalign_init|filename|0", 2, "readseqs", "bots_error",
-        "del", 0UL, (int)4, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL,
-        "add", 0UL, (int)4, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL,
+        "del", 0UL, (int)4, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL,
+        "add", 0UL, (int)4, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL,
         "calc_score", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "del", 0UL, (int)4, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL,
-        "add", 0UL, (int)4, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL,
-        "add", 0UL, (int)4, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL,
-        "add", 0UL, (int)4, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL,
+        "del", 0UL, (int)4, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL,
+        "add", 0UL, (int)4, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL,
+        "add", 0UL, (int)4, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL,
+        "add", 0UL, (int)4, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL,
         "calc_score", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "calc_score", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL, 0UL, 0UL, 0UL, 0UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL, 0UL, 0UL, 0UL, 0UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL, 0UL, 0UL, 0UL, 0UL,
-        "del", 0UL, (int)4, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911243UL, 2235191825397911244UL, 2235191825397911245UL, 0UL, 0UL, 0UL, 0UL,
-        "get_matrix", 0UL, (int)3, 2235191825397912412UL, 2235191825397912425UL, 0UL,
-        "forward_pass", 0UL, (int)9, 2235191825397909590UL, 2235191825397909590UL, 0UL, 0UL, 2235191825397911419UL, 2235191825397911420UL, 2235191825397911423UL, 0UL, 0UL,
-        "reverse_pass", 0UL, (int)9, 2235191825397909590UL, 2235191825397909590UL, 0UL, 0UL, 2235191825397911421UL, 2235191825397911422UL, 0UL, 0UL, 0UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911429UL, 2235191825397911430UL, 2235191825397911428UL, 0UL, 0UL, 0UL, 0UL,
-        "tracepath", 0UL, (int)7, 0UL, 0UL, 2235191825397911429UL, 2235191825397911430UL, 2235191825397911428UL, 0UL, 0UL,
-        "get_matrix", 0UL, (int)3, 2235191825397912412UL, 2235191825397912425UL, 0UL,
-        "forward_pass", 0UL, (int)9, 2235191825397909590UL, 2235191825397909590UL, 0UL, 0UL, 2235191825397911770UL, 2235191825397911771UL, 2235191825397911774UL, 0UL, 0UL,
-        "reverse_pass", 0UL, (int)9, 2235191825397909590UL, 2235191825397909590UL, 0UL, 0UL, 2235191825397911772UL, 2235191825397911773UL, 0UL, 0UL, 0UL,
-        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911780UL, 2235191825397911781UL, 2235191825397911779UL, 0UL, 0UL, 0UL, 0UL,
-        "tracepath", 0UL, (int)7, 0UL, 0UL, 2235191825397911780UL, 2235191825397911781UL, 2235191825397911779UL, 0UL, 0UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL, 0UL, 0UL, 0UL, 0UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL, 0UL, 0UL, 0UL, 0UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL, 0UL, 0UL, 0UL, 0UL,
+        "del", 0UL, (int)4, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911267UL, 2235191825397911268UL, 2235191825397911269UL, 0UL, 0UL, 0UL, 0UL,
+        "get_matrix", 0UL, (int)3, 2235191825397912460UL, 2235191825397912473UL, 0UL,
+        "forward_pass", 0UL, (int)9, 2235191825397909591UL, 2235191825397909591UL, 0UL, 0UL, 2235191825397911448UL, 2235191825397911449UL, 2235191825397911452UL, 0UL, 0UL,
+        "reverse_pass", 0UL, (int)9, 2235191825397909591UL, 2235191825397909591UL, 0UL, 0UL, 2235191825397911450UL, 2235191825397911451UL, 0UL, 0UL, 0UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911458UL, 2235191825397911459UL, 2235191825397911457UL, 0UL, 0UL, 0UL, 0UL,
+        "tracepath", 0UL, (int)7, 0UL, 0UL, 2235191825397911458UL, 2235191825397911459UL, 2235191825397911457UL, 0UL, 0UL,
+        "get_matrix", 0UL, (int)3, 2235191825397912460UL, 2235191825397912473UL, 0UL,
+        "forward_pass", 0UL, (int)9, 2235191825397909591UL, 2235191825397909591UL, 0UL, 0UL, 2235191825397911807UL, 2235191825397911808UL, 2235191825397911811UL, 0UL, 0UL,
+        "reverse_pass", 0UL, (int)9, 2235191825397909591UL, 2235191825397909591UL, 0UL, 0UL, 2235191825397911809UL, 2235191825397911810UL, 0UL, 0UL, 0UL,
+        "diff", 0UL, (int)13, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2235191825397911817UL, 2235191825397911818UL, 2235191825397911816UL, 0UL, 0UL, 0UL, 0UL,
+        "tracepath", 0UL, (int)7, 0UL, 0UL, 2235191825397911817UL, 2235191825397911818UL, 2235191825397911816UL, 0UL, 0UL,
         "init_matrix", 0UL, (int)0,
         "pairalign", 0UL, (int)4, 0UL, 0UL, 0UL, 0UL,
         "pairalign_seq", 0UL, (int)4, 0UL, 0UL, 0UL, 0UL);
-    register_global_var("global|amino_acid_order", "i8*", (void *)(&amino_acid_order), 8.0, 1, 0, (2235191825397909448UL + 2961UL), 0);
-    register_global_var("global|amino_acid_codes", "i8*", (void *)(&amino_acid_codes), 8.0, 1, 0, (2235191825397909448UL + 2961UL), 0);
+    register_global_var("global|amino_acid_order", "i8*", (void *)(&amino_acid_order), 8.0, 1, 0, (2235191825397909448UL + 3009UL), 0);
+    register_global_var("global|amino_acid_codes", "i8*", (void *)(&amino_acid_codes), 8.0, 1, 0, (2235191825397909448UL + 3009UL), 0);
     register_global_var("global|gon250mt", "[276 x i32]", (void *)(&gon250mt), 1104.0, 0, 0, 0UL, 0);
     register_global_var("global|ktup", "i32", (void *)(&ktup), 4.0, 0, 0, 0UL, 0);
     register_global_var("global|window", "i32", (void *)(&window), 4.0, 0, 0, 0UL, 0);
@@ -7121,10 +7121,10 @@ static int module_init() {
     register_global_var("global|mat_avscore", "i32", (void *)(&mat_avscore), 4.0, 0, 0, 0UL, 0);
     register_global_var("global|nseqs", "i32", (void *)(&nseqs), 4.0, 0, 0, 0UL, 0);
     register_global_var("global|max_aa", "i32", (void *)(&max_aa), 4.0, 0, 0, 0UL, 0);
-    register_global_var("global|seqlen_array", "i32*", (void *)(&seqlen_array), 8.0, 1, 0, (2235191825397909448UL + 2976UL), 0);
+    register_global_var("global|seqlen_array", "i32*", (void *)(&seqlen_array), 8.0, 1, 0, (2235191825397909448UL + 3024UL), 0);
     register_global_var("global|def_aa_xref", "[33 x i32]", (void *)(&def_aa_xref), 132.0, 0, 0, 0UL, 0);
-    register_global_var("global|bench_output", "i32*", (void *)(&bench_output), 8.0, 1, 0, (2235191825397909448UL + 2976UL), 0);
-    register_global_var("global|seq_output", "i32*", (void *)(&seq_output), 8.0, 1, 0, (2235191825397909448UL + 2976UL), 0);
+    register_global_var("global|bench_output", "i32*", (void *)(&bench_output), 8.0, 1, 0, (2235191825397909448UL + 3024UL), 0);
+    register_global_var("global|seq_output", "i32*", (void *)(&seq_output), 8.0, 1, 0, (2235191825397909448UL + 3024UL), 0);
     register_global_var("global|gap_open", "double", (void *)(&gap_open), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|gap_extend", "double", (void *)(&gap_extend), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|prot_gap_open", "double", (void *)(&prot_gap_open), 8.0, 0, 0, 0UL, 0);
@@ -7133,9 +7133,9 @@ static int module_init() {
     register_global_var("global|pw_ge_penalty", "double", (void *)(&pw_ge_penalty), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|prot_pw_go_penalty", "double", (void *)(&prot_pw_go_penalty), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|prot_pw_ge_penalty", "double", (void *)(&prot_pw_ge_penalty), 8.0, 0, 0, 0UL, 0);
-    register_global_var("global|args", "i8**", (void *)(&args), 8.0, 1, 0, (2235191825397909448UL + 2988UL), 0);
-    register_global_var("global|names", "i8**", (void *)(&names), 8.0, 1, 0, (2235191825397909448UL + 2988UL), 0);
-    register_global_var("global|seq_array", "i8**", (void *)(&seq_array), 8.0, 1, 0, (2235191825397909448UL + 2988UL), 0);
+    register_global_var("global|args", "i8**", (void *)(&args), 8.0, 1, 0, (2235191825397909448UL + 3036UL), 0);
+    register_global_var("global|names", "i8**", (void *)(&names), 8.0, 1, 0, (2235191825397909448UL + 3036UL), 0);
+    register_global_var("global|seq_array", "i8**", (void *)(&seq_array), 8.0, 1, 0, (2235191825397909448UL + 3036UL), 0);
     register_global_var("global|matrix", "[32 x [32 x i32]]", (void *)(&matrix), 4096.0, 0, 0, 0UL, 0);
     register_constant(2235191825397909448UL + 0UL, (void *)amino_acid_order, 24);
     register_constant(2235191825397909448UL + 1UL, (void *)amino_acid_codes, 26);

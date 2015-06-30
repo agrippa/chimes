@@ -7,7 +7,6 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "nn_openmp.c.pre.transformed.cpp"
-static int ____chimes_does_checkpoint_feof_npm = 1;
 static int ____chimes_does_checkpoint_ferror_npm = 1;
 
 static int ____must_checkpoint_main_flist_0 = 2;
@@ -32,7 +31,6 @@ static int ____must_manage_main = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
-static unsigned ____alias_loc_id_2;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -3916,9 +3914,9 @@ struct neighbor {
 };
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-static int (*____chimes_extern_func_feof)(struct _IO_FILE *) = feof;static int (*____chimes_extern_func_ferror)(struct _IO_FILE *) = ferror;
+static int (*____chimes_extern_func_ferror)(struct _IO_FILE *) = ferror;
 int main_quick(int argc, char* argv[]); int main(int argc, char* argv[]);
-int main_resumable(int argc, char* argv[]) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(9808122005516792252UL)) ; int max_idx;
+int main_resumable(int argc, char* argv[]) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(9808122005516792256UL)) ; int max_idx;
 float max_dist;
 float *z;
 float tmp_long;
@@ -3935,7 +3933,7 @@ int j;
 int i;
 FILE *fp;
 FILE *flist;
- if (____must_checkpoint_main_max_idx_0 || ____must_checkpoint_main_max_dist_0 || ____must_checkpoint_main_z_0 || ____must_checkpoint_main_tmp_long_0 || ____must_checkpoint_main_tmp_lat_0 || ____must_checkpoint_main_target_long_0 || ____must_checkpoint_main_target_lat_0 || ____must_checkpoint_main_neighbors_0 || ____must_checkpoint_main_dbname_0 || ____must_checkpoint_main_sandbox_0 || ____must_checkpoint_main_done_0 || ____must_checkpoint_main_rec_count_0 || ____must_checkpoint_main_k_0 || ____must_checkpoint_main_j_0 || ____must_checkpoint_main_i_0 || ____must_checkpoint_main_fp_0 || ____must_checkpoint_main_flist_0) { register_stack_vars(17, "main|max_idx|0", &____must_checkpoint_main_max_idx_0, "i32", (void *)(&max_idx), (size_t)4, 0, 0, 0, "main|max_dist|0", &____must_checkpoint_main_max_dist_0, "float", (void *)(&max_dist), (size_t)4, 0, 0, 0, "main|z|0", &____must_checkpoint_main_z_0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|tmp_long|0", &____must_checkpoint_main_tmp_long_0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", &____must_checkpoint_main_tmp_lat_0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", &____must_checkpoint_main_target_long_0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", &____must_checkpoint_main_target_lat_0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", &____must_checkpoint_main_neighbors_0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", &____must_checkpoint_main_dbname_0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|sandbox|0", &____must_checkpoint_main_sandbox_0, "[490 x i8]", (void *)(sandbox), (size_t)490, 0, 0, 0, "main|done|0", &____must_checkpoint_main_done_0, "i32", (void *)(&done), (size_t)4, 0, 0, 0, "main|rec_count|0", &____must_checkpoint_main_rec_count_0, "i32", (void *)(&rec_count), (size_t)4, 0, 0, 0, "main|k|0", &____must_checkpoint_main_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|fp|0", &____must_checkpoint_main_fp_0, "%struct._IO_FILE*", (void *)(&fp), (size_t)8, 1, 0, 0, "main|flist|0", &____must_checkpoint_main_flist_0, "%struct._IO_FILE*", (void *)(&flist), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(21): { goto call_lbl_21; } case(24): { goto call_lbl_24; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_main_max_idx_0 || ____must_checkpoint_main_max_dist_0 || ____must_checkpoint_main_z_0 || ____must_checkpoint_main_tmp_long_0 || ____must_checkpoint_main_tmp_lat_0 || ____must_checkpoint_main_target_long_0 || ____must_checkpoint_main_target_lat_0 || ____must_checkpoint_main_neighbors_0 || ____must_checkpoint_main_dbname_0 || ____must_checkpoint_main_sandbox_0 || ____must_checkpoint_main_done_0 || ____must_checkpoint_main_rec_count_0 || ____must_checkpoint_main_k_0 || ____must_checkpoint_main_j_0 || ____must_checkpoint_main_i_0 || ____must_checkpoint_main_fp_0 || ____must_checkpoint_main_flist_0) { register_stack_vars(17, "main|max_idx|0", &____must_checkpoint_main_max_idx_0, "i32", (void *)(&max_idx), (size_t)4, 0, 0, 0, "main|max_dist|0", &____must_checkpoint_main_max_dist_0, "float", (void *)(&max_dist), (size_t)4, 0, 0, 0, "main|z|0", &____must_checkpoint_main_z_0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|tmp_long|0", &____must_checkpoint_main_tmp_long_0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", &____must_checkpoint_main_tmp_lat_0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", &____must_checkpoint_main_target_long_0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", &____must_checkpoint_main_target_lat_0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", &____must_checkpoint_main_neighbors_0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", &____must_checkpoint_main_dbname_0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|sandbox|0", &____must_checkpoint_main_sandbox_0, "[490 x i8]", (void *)(sandbox), (size_t)490, 0, 0, 0, "main|done|0", &____must_checkpoint_main_done_0, "i32", (void *)(&done), (size_t)4, 0, 0, 0, "main|rec_count|0", &____must_checkpoint_main_rec_count_0, "i32", (void *)(&rec_count), (size_t)4, 0, 0, 0, "main|k|0", &____must_checkpoint_main_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|fp|0", &____must_checkpoint_main_fp_0, "%struct._IO_FILE*", (void *)(&fp), (size_t)8, 1, 0, 0, "main|flist|0", &____must_checkpoint_main_flist_0, "%struct._IO_FILE*", (void *)(&flist), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(21): { goto call_lbl_21; } default: { chimes_error(); } } } ; ;
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    ;
 # 30 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -3975,7 +3973,7 @@ FILE *flist;
  target_long = atof(argv[4]);
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- neighbors = (struct neighbor *)malloc_wrapper(k*sizeof(struct neighbor), 9808122005516792291UL, 0, 1, (int)sizeof(struct neighbor), 0);
+ neighbors = (struct neighbor *)malloc_wrapper(k*sizeof(struct neighbor), 9808122005516792295UL, 0, 1, (int)sizeof(struct neighbor), 0);
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  if(neighbors == __null) {
@@ -4017,7 +4015,7 @@ FILE *flist;
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   ;
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- z = (float *) malloc_wrapper(10 * sizeof(float), 9808122005516792109UL, 0, 0);
+ z = (float *) malloc_wrapper(10 * sizeof(float), 9808122005516792110UL, 0, 0);
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  while(!done) {
@@ -4027,12 +4025,12 @@ FILE *flist;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   if( rec_count != 10 ) {
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   alias_group_changed(____alias_loc_id_1); call_lbl_21: if(!(____chimes_does_checkpoint_ferror_npm ? ( ({ calling((void*)ferror, 21, ____alias_loc_id_1, 0UL, 1, (size_t)(9808122005516792002UL)); (ferror)(flist); }) ) : (({ calling_npm("ferror", ____alias_loc_id_1); (*____chimes_extern_func_ferror)(flist); })))) {
+   alias_group_changed(____alias_loc_id_0); call_lbl_21: if(!(____chimes_does_checkpoint_ferror_npm ? ( ({ calling((void*)ferror, 21, ____alias_loc_id_0, 0UL, 1, (size_t)(9808122005516792003UL)); (ferror)(flist); }) ) : (({ calling_npm("ferror", ____alias_loc_id_0); (*____chimes_extern_func_ferror)(flist); })))) {
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     fclose(fp);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-     call_lbl_24: if (alias_group_changed(____alias_loc_id_0) || (____chimes_does_checkpoint_feof_npm ? ( ({ calling((void*)feof, 24, ____alias_loc_id_0, 0UL, 1, (size_t)(9808122005516792002UL)); (feof)(flist); }) ) : (({ calling_npm("feof", ____alias_loc_id_0); (*____chimes_extern_func_feof)(flist); })))) {done = 1; } else {{
+    if (feof(flist)) {done = 1; } else {{
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
       if(fscanf(flist, "%s\n", dbname) != 1) {
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4129,10 +4127,10 @@ FILE *flist;
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  fclose(flist);
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_2, ____chimes_did_disable0); return 0;
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-}
-int main_quick(int argc, char* argv[]) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(9808122005516792252UL)) ; int max_idx;
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable0); }
+int main_quick(int argc, char* argv[]) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(9808122005516792256UL)) ; int max_idx;
 float max_dist;
 float *z;
 float tmp_long;
@@ -4189,7 +4187,7 @@ FILE *flist;
  target_long = atof(argv[4]);
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- neighbors = (struct neighbor *)malloc_wrapper(k*sizeof(struct neighbor), 9808122005516792291UL, 0, 1, (int)sizeof(struct neighbor), 0);
+ neighbors = (struct neighbor *)malloc_wrapper(k*sizeof(struct neighbor), 9808122005516792295UL, 0, 1, (int)sizeof(struct neighbor), 0);
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  if(neighbors == __null) {
@@ -4231,7 +4229,7 @@ FILE *flist;
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   ;
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- z = (float *) malloc_wrapper(10 * sizeof(float), 9808122005516792109UL, 0, 0);
+ z = (float *) malloc_wrapper(10 * sizeof(float), 9808122005516792110UL, 0, 0);
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  while(!done) {
@@ -4241,12 +4239,12 @@ FILE *flist;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   if( rec_count != 10 ) {
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   alias_group_changed(____alias_loc_id_1); call_lbl_21: if(!(____chimes_does_checkpoint_ferror_npm ? ( ({ calling((void*)ferror, 21, ____alias_loc_id_1, 0UL, 1, (size_t)(9808122005516792002UL)); (ferror)(flist); }) ) : (({ calling_npm("ferror", ____alias_loc_id_1); (*____chimes_extern_func_ferror)(flist); })))) {
+   alias_group_changed(____alias_loc_id_0); call_lbl_21: if(!(____chimes_does_checkpoint_ferror_npm ? ( ({ calling((void*)ferror, 21, ____alias_loc_id_0, 0UL, 1, (size_t)(9808122005516792003UL)); (ferror)(flist); }) ) : (({ calling_npm("ferror", ____alias_loc_id_0); (*____chimes_extern_func_ferror)(flist); })))) {
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     fclose(fp);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-     call_lbl_24: if (alias_group_changed(____alias_loc_id_0) || (____chimes_does_checkpoint_feof_npm ? ( ({ calling((void*)feof, 24, ____alias_loc_id_0, 0UL, 1, (size_t)(9808122005516792002UL)); (feof)(flist); }) ) : (({ calling_npm("feof", ____alias_loc_id_0); (*____chimes_extern_func_feof)(flist); })))) {done = 1; } else {{
+    if (feof(flist)) {done = 1; } else {{
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
       if(fscanf(flist, "%s\n", dbname) != 1) {
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
@@ -4343,9 +4341,9 @@ FILE *flist;
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  fclose(flist);
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_2, ____chimes_did_disable0); return 0;
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-}
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable0); }
 
 int main(int argc, char* argv[]) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -4356,45 +4354,41 @@ int main(int argc, char* argv[]) { init_chimes(); return (____chimes_replaying ?
 
 
 static int module_init() {
-    init_module(9808122005516791887UL, 8, 1, 17, 3, 0, 2, 2, 0, 2, 3,
-                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "feof", (unsigned)1, (9808122005516791887UL + 115UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (9808122005516791887UL + 9UL), "ferror", (unsigned)1, (9808122005516791887UL + 115UL),
-                           &____alias_loc_id_2, (unsigned)24, (unsigned)0, (unsigned)0, (9808122005516791887UL + 1UL), (9808122005516791887UL + 2UL), (9808122005516791887UL + 3UL), (9808122005516791887UL + 4UL), (9808122005516791887UL + 5UL), (9808122005516791887UL + 6UL), (9808122005516791887UL + 7UL), (9808122005516791887UL + 8UL), (9808122005516791887UL + 9UL), (9808122005516791887UL + 10UL), (9808122005516791887UL + 11UL), (9808122005516791887UL + 12UL), (9808122005516791887UL + 14UL), (9808122005516791887UL + 15UL), (9808122005516791887UL + 16UL), (9808122005516791887UL + 17UL), (9808122005516791887UL + 18UL), (9808122005516791887UL + 19UL), (9808122005516791887UL + 20UL), (9808122005516791887UL + 21UL), (9808122005516791887UL + 115UL), (9808122005516791887UL + 125UL), (9808122005516791887UL + 222UL), (9808122005516791887UL + 404UL),
-                               "feof", (void **)&(____chimes_extern_func_feof),
+    init_module(9808122005516791887UL, 8, 1, 17, 2, 0, 1, 1, 0, 1, 3,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (9808122005516791887UL + 9UL), "ferror", (unsigned)1, (9808122005516791887UL + 116UL),
+                           &____alias_loc_id_1, (unsigned)25, (unsigned)0, (unsigned)0, (9808122005516791887UL + 1UL), (9808122005516791887UL + 2UL), (9808122005516791887UL + 3UL), (9808122005516791887UL + 4UL), (9808122005516791887UL + 5UL), (9808122005516791887UL + 6UL), (9808122005516791887UL + 7UL), (9808122005516791887UL + 8UL), (9808122005516791887UL + 9UL), (9808122005516791887UL + 10UL), (9808122005516791887UL + 11UL), (9808122005516791887UL + 12UL), (9808122005516791887UL + 14UL), (9808122005516791887UL + 15UL), (9808122005516791887UL + 16UL), (9808122005516791887UL + 17UL), (9808122005516791887UL + 18UL), (9808122005516791887UL + 19UL), (9808122005516791887UL + 20UL), (9808122005516791887UL + 21UL), (9808122005516791887UL + 22UL), (9808122005516791887UL + 116UL), (9808122005516791887UL + 126UL), (9808122005516791887UL + 223UL), (9808122005516791887UL + 408UL),
                                "ferror", (void **)&(____chimes_extern_func_ferror),
-                           "feof", &(____chimes_does_checkpoint_feof_npm),
                            "ferror", &(____chimes_does_checkpoint_ferror_npm),
                              (9808122005516791887UL + 12UL), (9808122005516791887UL + 11UL),
-                             (9808122005516791887UL + 14UL), (9808122005516791887UL + 404UL),
-                             (9808122005516791887UL + 19UL), (9808122005516791887UL + 222UL),
-                             (9808122005516791887UL + 392UL), (9808122005516791887UL + 53UL),
-                             (9808122005516791887UL + 3UL), (9808122005516791887UL + 365UL),
-                             (9808122005516791887UL + 5UL), (9808122005516791887UL + 125UL),
-                             (9808122005516791887UL + 4UL), (9808122005516791887UL + 115UL),
-                             (9808122005516791887UL + 365UL), (9808122005516791887UL + 59UL),
+                             (9808122005516791887UL + 14UL), (9808122005516791887UL + 408UL),
+                             (9808122005516791887UL + 19UL), (9808122005516791887UL + 223UL),
+                             (9808122005516791887UL + 3UL), (9808122005516791887UL + 369UL),
+                             (9808122005516791887UL + 5UL), (9808122005516791887UL + 126UL),
+                             (9808122005516791887UL + 4UL), (9808122005516791887UL + 116UL),
+                             (9808122005516791887UL + 369UL), (9808122005516791887UL + 60UL),
+                             (9808122005516791887UL + 396UL), (9808122005516791887UL + 54UL),
                      "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0,
                      "neighbor", 2, "[ 49 x char ]", (int)__builtin_offsetof (struct neighbor, entry), "double", (int)__builtin_offsetof (struct neighbor, dist),
-                             "main", "main", 2, "ferror", "feof",
-                        "main|flist|0", 2, "ferror", "feof",
-                        "main|fp|0", 2, "ferror", "feof",
-                        "main|i|0", 2, "ferror", "feof",
-                        "main|j|0", 2, "ferror", "feof",
-                        "main|k|0", 2, "ferror", "feof",
-                        "main|rec_count|0", 2, "ferror", "feof",
-                        "main|done|0", 2, "ferror", "feof",
+                             "main", "main", 1, "ferror",
+                        "main|flist|0", 1, "ferror",
+                        "main|fp|0", 1, "ferror",
+                        "main|i|0", 1, "ferror",
+                        "main|j|0", 1, "ferror",
+                        "main|k|0", 1, "ferror",
+                        "main|rec_count|0", 1, "ferror",
+                        "main|done|0", 1, "ferror",
                         "main|sandbox|0", 1, "main",
                         "main|dbname|0", 1, "main",
-                        "main|neighbors|0", 2, "ferror", "feof",
-                        "main|target_lat|0", 2, "ferror", "feof",
-                        "main|target_long|0", 2, "ferror", "feof",
+                        "main|neighbors|0", 1, "ferror",
+                        "main|target_lat|0", 1, "ferror",
+                        "main|target_long|0", 1, "ferror",
                         "main|tmp_lat|0", 1, "main",
-                        "main|tmp_long|0", 2, "ferror", "feof",
-                        "main|z|0", 2, "ferror", "feof",
-                        "main|max_dist|0", 2, "ferror", "feof",
-                        "main|max_idx|0", 2, "ferror", "feof",
-        "ferror", 0UL, (int)1, 9808122005516792002UL,
-        "feof", 0UL, (int)1, 9808122005516792002UL);
+                        "main|tmp_long|0", 1, "ferror",
+                        "main|z|0", 1, "ferror",
+                        "main|max_dist|0", 1, "ferror",
+                        "main|max_idx|0", 1, "ferror",
+        "ferror", 0UL, (int)1, 9808122005516792003UL);
     return 0;
 }
 

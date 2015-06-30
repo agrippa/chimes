@@ -1,14 +1,20 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 5 5 len=3 foo_npm
-InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 6 5 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_2, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 6 64 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_2, ____chimes_did_disable0); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 5 16 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 15 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 9 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1118257419494346136UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 7 1 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_2, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 15 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable1); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 9 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1118257419494346144UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 16 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable1); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 5 17 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 5 128 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 9 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1118257419494346136UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 6 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 6 30 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 9 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1118257419494346144UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 9 170 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 5  int b;  b = ((*fptr)(6)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 23 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 15 6 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 15 30 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 14  call_lbl_1: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 5  call_lbl_2: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 5 5 len=3 foo_quick

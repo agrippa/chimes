@@ -1,51 +1,52 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 52 13 len=3 fwd_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 31 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 54 , 9340484138469209096UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 54 , 9340484138469209101UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 35 , 9340484138469209093UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 35 , 9340484138469209098UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 108 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 108 35 , 9340484138469209093UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 108 35 , 9340484138469209098UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 109 27 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 109 34 , 9340484138469209095UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 109 34 , 9340484138469209100UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 155 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 155 10 , 9340484138469209096UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 155 10 , 9340484138469209101UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 156 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 156 10 , 9340484138469209093UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 156 10 , 9340484138469209098UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 157 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 157 10 , 9340484138469209093UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 157 10 , 9340484138469209098UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 158 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 158 10 , 9340484138469209095UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 158 10 , 9340484138469209100UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 160 9 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 160 20 , 9340484138469209205UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 160 20 , 9340484138469209210UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 162 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 162 10 , 9340484138469209203UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 162 10 , 9340484138469209208UL
 InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 142 5 alias_group_changed(____alias_loc_id_3); 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 31 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 54 , 9340484138469209096UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 54 , 9340484138469209101UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 35 , 9340484138469209093UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 35 , 9340484138469209098UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 108 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 108 35 , 9340484138469209093UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 108 35 , 9340484138469209098UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 109 27 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 109 34 , 9340484138469209095UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 109 34 , 9340484138469209100UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 155 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 155 10 , 9340484138469209096UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 155 10 , 9340484138469209101UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 156 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 156 10 , 9340484138469209093UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 156 10 , 9340484138469209098UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 157 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 157 10 , 9340484138469209093UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 157 10 , 9340484138469209098UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 158 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 158 10 , 9340484138469209095UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 158 10 , 9340484138469209100UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 160 9 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 160 20 , 9340484138469209205UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 160 20 , 9340484138469209210UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 162 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 162 10 , 9340484138469209203UL
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 54 21 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(9340484138469209575UL), (size_t)(9340484138469209576UL), (size_t)(9340484138469209577UL), (size_t)(9340484138469209578UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 162 10 , 9340484138469209208UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 54 21 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(9340484138469209583UL), (size_t)(9340484138469209584UL), (size_t)(9340484138469209585UL), (size_t)(9340484138469209586UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 84 1 rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_9, ____chimes_did_disable0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 112 9 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 164 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 36 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(9340484138469209221UL)); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 54 22 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(9340484138469209575UL), (size_t)(9340484138469209576UL), (size_t)(9340484138469209577UL), (size_t)(9340484138469209578UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 112 64 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 164 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 36 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(9340484138469209229UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 165 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable1); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 54 22 const int ____chimes_did_disable0 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 11, 0, (size_t)(9340484138469209583UL), (size_t)(9340484138469209584UL), (size_t)(9340484138469209585UL), (size_t)(9340484138469209586UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 54 356 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 56 5 {  int z; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 83 5  }
@@ -81,7 +82,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 71 21  int x_
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 72 36 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 73 21  int x_neg_offset;  x_neg_offset = ((((radius) + (z)) * (dimy) * (dimx) + ((radius) + (y)) * (dimx) + ((radius) + (x - d)))) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 74 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 37 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9340484138469209221UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 37 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9340484138469209229UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 173 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 87 5  config conf; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 87 16 
@@ -97,14 +98,16 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 97 5  size_t 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 97 42 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 98 5  size_t nbytes;  nbytes = (dimx * dimy * dimz * sizeof(float)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 98 55 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 5  float *c_coeff;  c_coeff = ((float *)malloc_wrapper(sizeof(float) * 20, 9340484138469209096UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 5  float *c_coeff;  c_coeff = ((float *)malloc_wrapper(sizeof(float) * 20, 9340484138469209101UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 106 94 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 5  float *curr;  curr = ((float *)malloc_wrapper(nbytes, 9340484138469209093UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 5  float *curr;  curr = ((float *)malloc_wrapper(nbytes, 9340484138469209098UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 107 79 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 108 5  float *next;  next = ((float *)malloc_wrapper(nbytes, 9340484138469209093UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 108 5  float *next;  next = ((float *)malloc_wrapper(nbytes, 9340484138469209098UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 108 79 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 109 5  float *vsq;  vsq = ((float *)malloc_wrapper(nbytes, 9340484138469209095UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 109 5  float *vsq;  vsq = ((float *)malloc_wrapper(nbytes, 9340484138469209100UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 109 78 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 112 10 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 112 34 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 116 5  float **srcs;  srcs = (sample_sources(conf.srcs, conf.nsrcs, conf.nsteps, dt)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 116 74 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 120 5  double start;  start = (seconds()) ;
@@ -129,6 +132,8 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 159 5 {  int i;
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 161 5  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 159 10  i = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 159 19 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 164 6 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 164 30 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 88 5  call_lbl_1: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 89 5  call_lbl_2: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 115 5  call_lbl_12: 
@@ -143,15 +148,15 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 151 9  call_lbl_22:
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 52 13 len=3 fwd_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 54 355  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 5 len=4 main_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 88 18 (____chimes_does_checkpoint_setup_config_npm ? ( ({  calling((void*)setup_config, 1, ____alias_loc_id_2, 0UL, 3, (size_t)(9340484138469208853UL), (size_t)(0UL), (size_t)(9340484138469209221UL)); (setup_config)(&conf, argc, argv); }) ) : (({ calling_npm("setup_config", ____alias_loc_id_2); (*____chimes_extern_func_setup_config)(&conf, argc, argv); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 88 18 (____chimes_does_checkpoint_setup_config_npm ? ( ({  calling((void*)setup_config, 1, ____alias_loc_id_2, 0UL, 3, (size_t)(9340484138469208853UL), (size_t)(0UL), (size_t)(9340484138469209229UL)); (setup_config)(&conf, argc, argv); }) ) : (({ calling_npm("setup_config", ____alias_loc_id_2); (*____chimes_extern_func_setup_config)(&conf, argc, argv); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 88 48 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 89 18 (____chimes_does_checkpoint_init_progress_npm ? ( ({  calling((void*)init_progress, 2, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); }) ) : (({ calling_npm("init_progress", 0); (*____chimes_extern_func_init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 89 88 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 115 19 (____chimes_does_checkpoint_config_sources_npm ? ( ({  calling((void*)config_sources, 12, ____alias_loc_id_7, 0UL, 5, (size_t)(9340484138469208853UL), (size_t)(9340484138469208853UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); }) ) : (({ calling_npm("config_sources", ____alias_loc_id_7); (*____chimes_extern_func_config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 115 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 116 43 (____chimes_does_checkpoint_sample_sources_npm ? ( ({  calling((void*)sample_sources, 13, ____alias_loc_id_6, 9340484138469209203UL, 4, (size_t)(9340484138469209029UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); }) ) : (({ calling_npm("sample_sources", ____alias_loc_id_6); (*____chimes_extern_func_sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 116 43 (____chimes_does_checkpoint_sample_sources_npm ? ( ({  calling((void*)sample_sources, 13, ____alias_loc_id_6, 9340484138469209208UL, 4, (size_t)(9340484138469209034UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); }) ) : (({ calling_npm("sample_sources", ____alias_loc_id_6); (*____chimes_extern_func_sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 116 96 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 118 19 (____chimes_does_checkpoint_init_data_npm ? ( ({  calling((void*)init_data, 14, ____alias_loc_id_4, 0UL, 9, (size_t)(9340484138469209093UL), (size_t)(9340484138469209093UL), (size_t)(9340484138469209095UL), (size_t)(9340484138469209096UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ) : (({ calling_npm("init_data", ____alias_loc_id_4); (*____chimes_extern_func_init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 118 19 (____chimes_does_checkpoint_init_data_npm ? ( ({  calling((void*)init_data, 14, ____alias_loc_id_4, 0UL, 9, (size_t)(9340484138469209098UL), (size_t)(9340484138469209098UL), (size_t)(9340484138469209100UL), (size_t)(9340484138469209101UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ) : (({ calling_npm("init_data", ____alias_loc_id_4); (*____chimes_extern_func_init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 118 79 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 120 44 (____chimes_does_checkpoint_seconds_npm ? ( ({  calling((void*)seconds, 15, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 120 52 
@@ -165,7 +170,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 142 93 (____c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 142 101 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 144 19 (____chimes_does_checkpoint_finish_progress_npm ? ( ({  calling((void*)finish_progress, 20, ____alias_loc_id_0, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_0); (*____chimes_extern_func_finish_progress)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 144 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 151 23 (____chimes_does_checkpoint_save_layer_text_npm ? ( ({  calling((void*)save_layer_text, 22, ____alias_loc_id_1, 0UL, 8, (size_t)(9340484138469209093UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9340484138469209602UL), (size_t)(0UL)); (save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); }) ) : (({ calling_npm("save_layer_text", ____alias_loc_id_1); (*____chimes_extern_func_save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 151 23 (____chimes_does_checkpoint_save_layer_text_npm ? ( ({  calling((void*)save_layer_text, 22, ____alias_loc_id_1, 0UL, 8, (size_t)(9340484138469209098UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9340484138469209610UL), (size_t)(0UL)); (save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); }) ) : (({ calling_npm("save_layer_text", ____alias_loc_id_1); (*____chimes_extern_func_save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 152 41 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 87 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 87 17 
@@ -228,15 +233,15 @@ config conf;
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 52 13 len=3 fwd_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 54 355  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 86 5 len=4 main_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 88 18 (____chimes_does_checkpoint_setup_config_npm ? ( ({  calling((void*)setup_config, 1, ____alias_loc_id_2, 0UL, 3, (size_t)(9340484138469208853UL), (size_t)(0UL), (size_t)(9340484138469209221UL)); (setup_config)(&conf, argc, argv); }) ) : (({ calling_npm("setup_config", ____alias_loc_id_2); (*____chimes_extern_func_setup_config)(&conf, argc, argv); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 88 18 (____chimes_does_checkpoint_setup_config_npm ? ( ({  calling((void*)setup_config, 1, ____alias_loc_id_2, 0UL, 3, (size_t)(9340484138469208853UL), (size_t)(0UL), (size_t)(9340484138469209229UL)); (setup_config)(&conf, argc, argv); }) ) : (({ calling_npm("setup_config", ____alias_loc_id_2); (*____chimes_extern_func_setup_config)(&conf, argc, argv); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 88 48 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 89 18 (____chimes_does_checkpoint_init_progress_npm ? ( ({  int ____chimes_arg3;  int ____chimes_arg4;  int ____chimes_arg5;  if (!____chimes_replaying) { ____chimes_arg3 = (conf.progress_width); ____chimes_arg4 = (conf.nsteps); ____chimes_arg5 = (conf.progress_disabled);  }  calling((void*)init_progress, 2, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_progress)(____chimes_arg3, ____chimes_arg4, ____chimes_arg5); }) ) : (({ calling_npm("init_progress", 0); (*____chimes_extern_func_init_progress)(conf.progress_width, conf.nsteps, conf.progress_disabled); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 89 88 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 115 19 (____chimes_does_checkpoint_config_sources_npm ? ( ({  source ** ____chimes_arg6;  int * ____chimes_arg7;  int ____chimes_arg8;  int ____chimes_arg9;  int ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg6 = (&conf.srcs); ____chimes_arg7 = (&conf.nsrcs); ____chimes_arg8 = (conf.nx); ____chimes_arg9 = (conf.ny); ____chimes_arg10 = (conf.nsteps);  }  calling((void*)config_sources, 12, ____alias_loc_id_7, 0UL, 5, (size_t)(9340484138469208853UL), (size_t)(9340484138469208853UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (config_sources)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8, ____chimes_arg9, ____chimes_arg10); }) ) : (({ calling_npm("config_sources", ____alias_loc_id_7); (*____chimes_extern_func_config_sources)(&conf.srcs, &conf.nsrcs, conf.nx, conf.ny, conf.nsteps); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 115 88 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 116 43 (____chimes_does_checkpoint_sample_sources_npm ? ( ({  source * ____chimes_arg11;  int ____chimes_arg12;  int ____chimes_arg13;  if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps);  }  calling((void*)sample_sources, 13, ____alias_loc_id_6, 9340484138469209203UL, 4, (size_t)(9340484138469209029UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) ) : (({ calling_npm("sample_sources", ____alias_loc_id_6); (*____chimes_extern_func_sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 116 43 (____chimes_does_checkpoint_sample_sources_npm ? ( ({  source * ____chimes_arg11;  int ____chimes_arg12;  int ____chimes_arg13;  if (!____chimes_replaying) { ____chimes_arg11 = (conf.srcs); ____chimes_arg12 = (conf.nsrcs); ____chimes_arg13 = (conf.nsteps);  }  calling((void*)sample_sources, 13, ____alias_loc_id_6, 9340484138469209208UL, 4, (size_t)(9340484138469209034UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (sample_sources)(____chimes_arg11, ____chimes_arg12, ____chimes_arg13, dt); }) ) : (({ calling_npm("sample_sources", ____alias_loc_id_6); (*____chimes_extern_func_sample_sources)(conf.srcs, conf.nsrcs, conf.nsteps, dt); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 116 96 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 118 19 (____chimes_does_checkpoint_init_data_npm ? ( ({  calling((void*)init_data, 14, ____alias_loc_id_4, 0UL, 9, (size_t)(9340484138469209093UL), (size_t)(9340484138469209093UL), (size_t)(9340484138469209095UL), (size_t)(9340484138469209096UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ) : (({ calling_npm("init_data", ____alias_loc_id_4); (*____chimes_extern_func_init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 118 19 (____chimes_does_checkpoint_init_data_npm ? ( ({  calling((void*)init_data, 14, ____alias_loc_id_4, 0UL, 9, (size_t)(9340484138469209098UL), (size_t)(9340484138469209098UL), (size_t)(9340484138469209100UL), (size_t)(9340484138469209101UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); }) ) : (({ calling_npm("init_data", ____alias_loc_id_4); (*____chimes_extern_func_init_data)(curr, next, vsq, c_coeff, dimx, dimy, dimz, dx, dt); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 118 79 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 120 44 (____chimes_does_checkpoint_seconds_npm ? ( ({  calling((void*)seconds, 15, 0, 0UL, 0); (seconds)(); }) ) : (({ calling_npm("seconds", 0); (*____chimes_extern_func_seconds)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 120 52 
@@ -250,7 +255,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 142 93 (____c
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 142 101 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 144 19 (____chimes_does_checkpoint_finish_progress_npm ? ( ({  calling((void*)finish_progress, 20, ____alias_loc_id_0, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_0); (*____chimes_extern_func_finish_progress)(); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 144 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 151 23 (____chimes_does_checkpoint_save_layer_text_npm ? ( ({  int ____chimes_arg26;  int ____chimes_arg29;  int ____chimes_arg30;  int ____chimes_arg32;  if (!____chimes_replaying) { ____chimes_arg26 = (conf.save_text); ____chimes_arg29 = (conf.ny); ____chimes_arg30 = (conf.nx); ____chimes_arg32 = (conf.radius);  }  calling((void*)save_layer_text, 22, ____alias_loc_id_1, 0UL, 8, (size_t)(9340484138469209093UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9340484138469209602UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg26, dimx, dimy, ____chimes_arg29, ____chimes_arg30, "snap.text", ____chimes_arg32); }) ) : (({ calling_npm("save_layer_text", ____alias_loc_id_1); (*____chimes_extern_func_save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); })))
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 151 23 (____chimes_does_checkpoint_save_layer_text_npm ? ( ({  int ____chimes_arg26;  int ____chimes_arg29;  int ____chimes_arg30;  int ____chimes_arg32;  if (!____chimes_replaying) { ____chimes_arg26 = (conf.save_text); ____chimes_arg29 = (conf.ny); ____chimes_arg30 = (conf.nx); ____chimes_arg32 = (conf.radius);  }  calling((void*)save_layer_text, 22, ____alias_loc_id_1, 0UL, 8, (size_t)(9340484138469209098UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(9340484138469209610UL), (size_t)(0UL)); (save_layer_text)(curr, ____chimes_arg26, dimx, dimy, ____chimes_arg29, ____chimes_arg30, "snap.text", ____chimes_arg32); }) ) : (({ calling_npm("save_layer_text", ____alias_loc_id_1); (*____chimes_extern_func_save_layer_text)(curr, conf.save_text, dimx, dimy, conf.ny, conf.nx, "snap.text", conf.radius); })))
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 152 41 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 87 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp 87 17 

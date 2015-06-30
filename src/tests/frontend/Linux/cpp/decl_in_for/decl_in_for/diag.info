@@ -1,6 +1,7 @@
-InsertText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 13 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868865UL)); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868865UL)); ;
+InsertText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 13 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868869UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 14 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868869UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 170 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 5 5  int a;  a = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 5 14 
@@ -8,6 +9,8 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 6 5 {  int i;
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 8 5  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 6 10  i = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 6 19 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 13 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 13 30 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 10 5  call_lbl_1: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 4 5 len=4 main_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp 10 18 checkpoint_transformed(1, ____alias_loc_id_0)

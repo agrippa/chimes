@@ -1,24 +1,24 @@
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 54 : { 3, 4, 5, 6, 7, 8, 9, 88, 2526 } {  } call:mkAtomCellList {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 175 54 : { 3, 4, 5, 6, 7, 8, 9, 89, 2566 } {  } call:mkAtomCellList {  }
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 153 23 : { 1, 2 } {  } call:initHaloExchange {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 270 21 : { 352 } {  } call:processorNum { processorNum { 396 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 269 21 : { 352 } {  } call:processorNum { processorNum { 396 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 268 21 : { 352 } {  } call:processorNum { processorNum { 396 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 267 21 : { 352 } {  } call:processorNum { processorNum { 396 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 266 21 : { 352 } {  } call:processorNum { processorNum { 396 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 265 21 : { 347, 348 } {  } call:processorNum { processorNum { 396 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 433 7 : { 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706 } {  } call:putAtomInBox { putAtomInBox { 817 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 355 29 : { 890, 893, 1037 } {  } call:getBoxFromTuple { getBoxFromTuple { 1039 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 23 : { 1042, 1043 } {  } call:initHaloExchange {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 239 30 : { 2529 } {  } call:mkForceRecvCellList {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 238 30 : { 1044, 1045, 1046, 1047, 1048, 1049, 1050, 1130, 2529 } {  } call:mkForceSendCellList {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 491 29 : { 1570, 1573, 1745 } {  } call:getBoxFromTuple { getBoxFromTuple { 1747 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 543 29 : { 1763, 1766, 1938 } {  } call:getBoxFromTuple { getBoxFromTuple { 1940 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 41 : { 1960, 1961, 1962 } {  } call:exchangeData {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 308 4 : {  } { , 2090, 2112, 2116 } call:NULL {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 307 4 : {  } { , 2100, 2112, 2116 } call:NULL {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 305 9 : { 1998 } {  } call:profileStop {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 304 13 : { 1999 } {  } call:sendReceiveParallel { sendReceiveParallel { 2097, 2100 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 303 13 : {  } {  } call:sendReceiveParallel { sendReceiveParallel { 2087, 2090 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 302 9 : { 1995, 1996, 1997 } {  } call:profileStart {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 295 17 : { 1994 } { , 2097, 2112, 2116 } call:NULL {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 294 17 : { 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993 } { , 2087, 2112, 2116 } call:NULL {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 270 21 : { 357 } {  } call:processorNum { processorNum { 404 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 269 21 : { 357 } {  } call:processorNum { processorNum { 404 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 268 21 : { 357 } {  } call:processorNum { processorNum { 404 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 267 21 : { 357 } {  } call:processorNum { processorNum { 404 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 266 21 : { 357 } {  } call:processorNum { processorNum { 404 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 265 21 : { 351, 352 } {  } call:processorNum { processorNum { 404 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 433 7 : { 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718 } {  } call:putAtomInBox { putAtomInBox { 829 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 355 29 : { 902, 905, 1051 } {  } call:getBoxFromTuple { getBoxFromTuple { 1055 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 214 23 : { 1058, 1059 } {  } call:initHaloExchange {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 239 30 : { 2569 } {  } call:mkForceRecvCellList {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 238 30 : { 1060, 1061, 1062, 1063, 1064, 1065, 1066, 1147, 2569 } {  } call:mkForceSendCellList {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 491 29 : { 1594, 1597, 1771 } {  } call:getBoxFromTuple { getBoxFromTuple { 1775 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 543 29 : { 1791, 1794, 1968 } {  } call:getBoxFromTuple { getBoxFromTuple { 1972 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 255 41 : { 1992, 1993, 1994 } {  } call:exchangeData {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 308 4 : {  } { , 2122, 2144, 2148 } call:NULL {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 307 4 : {  } { , 2132, 2144, 2148 } call:NULL {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 305 9 : { 2030 } {  } call:profileStop {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 304 13 : { 2031 } {  } call:sendReceiveParallel { sendReceiveParallel { 2129, 2132 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 303 13 : {  } {  } call:sendReceiveParallel { sendReceiveParallel { 2119, 2122 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 302 9 : { 2027, 2028, 2029 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 295 17 : { 2026 } { , 2129, 2144, 2148 } call:NULL {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/haloExchange.c 294 17 : { 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 } { , 2119, 2144, 2148 } call:NULL {  }

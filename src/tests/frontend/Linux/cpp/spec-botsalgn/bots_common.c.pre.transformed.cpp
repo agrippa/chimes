@@ -16,14 +16,10 @@ static int ____chimes_does_checkpoint_bots_get_architecture_npm = 1;
 static int ____chimes_does_checkpoint_bots_get_load_average_npm = 1;
 static int ____chimes_does_checkpoint_bots_print_results_npm = 1;
 static int ____chimes_does_checkpoint_bots_print_usage_npm = 1;
-static int ____chimes_does_checkpoint_gmtime_npm = 1;
-static int ____chimes_does_checkpoint_strftime_npm = 1;
 
 static int ____must_checkpoint_bots_error_error_0 = 2;
 static int ____must_checkpoint_bots_usecs_t_0 = 2;
-static int ____must_checkpoint_bots_get_date_str_0 = 2;
 static int ____must_checkpoint_bots_get_date_now_0 = 2;
-static int ____must_checkpoint_bots_get_date_____chimes_unroll_var_0_0 = 2;
 static int ____must_checkpoint_bots_print_results_str_name_0 = 2;
 static int ____must_checkpoint_bots_print_results_str_parameters_0 = 2;
 static int ____must_checkpoint_bots_print_results_str_model_0 = 2;
@@ -4833,7 +4829,7 @@ bots_warning_resumable(int warning, char *message)
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }; } else {fprintf(stderr, "Warning (%d): %s\n",warning,message); } ;
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-rm_stack(false, 0UL, "bots_warning", &____must_manage_bots_warning, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "bots_warning", &____must_manage_bots_warning, ____alias_loc_id_0, ____chimes_did_disable1); }
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 long bots_usecs_npm (void);
@@ -4847,41 +4843,40 @@ long bots_usecs_resumable (void)
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    gettimeofday(&t,__null);
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-   rm_stack(false, 0UL, "bots_usecs", &____must_manage_bots_usecs, ____alias_loc_id_3, ____chimes_did_disable2); return t.tv_sec*1000000+t.tv_usec;
+    long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (t.tv_sec*1000000+t.tv_usec); rm_stack(false, 0UL, "bots_usecs", &____must_manage_bots_usecs, ____alias_loc_id_1, ____chimes_did_disable2); return ____chimes_ret_var_0; ;
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-}
+rm_stack(false, 0UL, "bots_usecs", &____must_manage_bots_usecs, ____alias_loc_id_1, ____chimes_did_disable2); }
 # 84 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 # 85 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-void bots_get_date_npm(char *str);static struct tm *(*____chimes_extern_func_gmtime)(const long *) = gmtime;static unsigned long (*____chimes_extern_func_strftime)(char *, unsigned long, const char *, const struct tm *) = strftime;
+void bots_get_date_npm(char *str);
 void bots_get_date_quick(char *str); void bots_get_date(char *str);
 void
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_get_date_resumable(char *str)
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 1, (size_t)(268134479069371286UL), "bots_get_date|str|0", &____must_checkpoint_bots_get_date_str_0, "i8*", (void *)(&str), (size_t)8, 1, 0, 0) ; struct tm *____chimes_unroll_var_0;
-time_t now;
- if (____must_checkpoint_bots_get_date_____chimes_unroll_var_0_0 || ____must_checkpoint_bots_get_date_now_0) { register_stack_vars(2, "bots_get_date|____chimes_unroll_var_0|0", &____must_checkpoint_bots_get_date_____chimes_unroll_var_0_0, "%struct.tm*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0, "bots_get_date|now|0", &____must_checkpoint_bots_get_date_now_0, "i64", (void *)(&now), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 0, (size_t)(268134479069371286UL)) ; time_t now;
+ if (____must_checkpoint_bots_get_date_now_0) { register_stack_vars(1, "bots_get_date|now|0", &____must_checkpoint_bots_get_date_now_0, "i64", (void *)(&now), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    time(&now);
 # 90 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-        call_lbl_2: ____chimes_unroll_var_0 = ( ({ const time_t * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (&now); } calling((void*)gmtime, 2, ____alias_loc_id_1, 268134479069371280UL, 1, (size_t)(268134479069371273UL)); (gmtime)(____chimes_arg0); }) ) ; call_lbl_3: ({ size_t ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (32); } calling((void*)strftime, 3, ____alias_loc_id_0, 0UL, 4, (size_t)(268134479069371286UL), (size_t)(0UL), (size_t)(268134479069371637UL), (size_t)(268134479069371280UL)); (strftime)(str, ____chimes_arg2, "%Y/%m/%d;%H:%M", ____chimes_unroll_var_0); }) ;
+   strftime(str, 32, "%Y/%m/%d;%H:%M", gmtime(&now));
 # 91 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-rm_stack(false, 0UL, "bots_get_date", &____must_manage_bots_get_date, 0, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "bots_get_date", &____must_manage_bots_get_date, ____alias_loc_id_2, ____chimes_did_disable3); }
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 int bots_get_max_cpus_npm(void);
 int bots_get_max_cpus_quick(void); int bots_get_max_cpus(void);
 void bots_get_architecture_npm(char *str);
-int bots_get_max_cpus_resumable(void) {const int ____chimes_did_disable4 = new_stack((void *)(&bots_get_max_cpus), "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, 0, ____chimes_did_disable4); return 0; }
+int bots_get_max_cpus_resumable(void) {const int ____chimes_did_disable4 = new_stack((void *)(&bots_get_max_cpus), "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, ____alias_loc_id_3, ____chimes_did_disable4); return ____chimes_ret_var_1; ; rm_stack(false, 0UL, "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, ____alias_loc_id_3, ____chimes_did_disable4); }
 # 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_get_architecture_quick(char *str); void bots_get_architecture(char *str);
 void bots_get_load_average_npm(char *str);
-void bots_get_architecture_resumable(char *str) {const int ____chimes_did_disable5 = new_stack((void *)(&bots_get_architecture), "bots_get_architecture", &____must_manage_bots_get_architecture, 1, 0, (size_t)(268134479069371300UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; sprintf(str,";"); rm_stack(false, 0UL, "bots_get_architecture", &____must_manage_bots_get_architecture, ____alias_loc_id_4, ____chimes_did_disable5); }
+void bots_get_architecture_resumable(char *str) {const int ____chimes_did_disable5 = new_stack((void *)(&bots_get_architecture), "bots_get_architecture", &____must_manage_bots_get_architecture, 1, 0, (size_t)(268134479069371304UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; sprintf(str,";"); rm_stack(false, 0UL, "bots_get_architecture", &____must_manage_bots_get_architecture, ____alias_loc_id_4, ____chimes_did_disable5); }
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_get_load_average_quick(char *str); void bots_get_load_average(char *str);
-void bots_get_load_average_resumable(char *str) {const int ____chimes_did_disable6 = new_stack((void *)(&bots_get_load_average), "bots_get_load_average", &____must_manage_bots_get_load_average, 1, 0, (size_t)(268134479069371309UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; sprintf(str,";;"); rm_stack(false, 0UL, "bots_get_load_average", &____must_manage_bots_get_load_average, ____alias_loc_id_5, ____chimes_did_disable6); }
+void bots_get_load_average_resumable(char *str) {const int ____chimes_did_disable6 = new_stack((void *)(&bots_get_load_average), "bots_get_load_average", &____must_manage_bots_get_load_average, 1, 0, (size_t)(268134479069371313UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; sprintf(str,";;"); rm_stack(false, 0UL, "bots_get_load_average", &____must_manage_bots_get_load_average, ____alias_loc_id_5, ____chimes_did_disable6); }
 # 123 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 void bots_print_results_npm();
@@ -5318,7 +5313,7 @@ fprintf(stdout,
 # 347 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
        call_lbl_72: default:
 # 348 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-          ({ char * ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = ("No valid output format\n"); } calling((void*)bots_error, 72, 0, 0UL, 2, (size_t)(0UL), (size_t)(268134479069371632UL)); (bots_error)(0, ____chimes_arg6); }) ;
+          ({ char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = ("No valid output format\n"); } calling((void*)bots_error, 72, 0, 0UL, 2, (size_t)(0UL), (size_t)(268134479069371636UL)); (bots_error)(0, ____chimes_arg1); }) ;
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
 # 350 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
@@ -5403,7 +5398,7 @@ bots_warning_quick(int warning, char *message)
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    }; } else {fprintf(stderr, "Warning (%d): %s\n",warning,message); } ;
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-rm_stack(false, 0UL, "bots_warning", &____must_manage_bots_warning, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "bots_warning", &____must_manage_bots_warning, ____alias_loc_id_0, ____chimes_did_disable1); }
 
 void
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
@@ -5418,9 +5413,9 @@ long bots_usecs_quick (void)
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    gettimeofday(&t,__null);
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-   rm_stack(false, 0UL, "bots_usecs", &____must_manage_bots_usecs, ____alias_loc_id_3, ____chimes_did_disable2); return t.tv_sec*1000000+t.tv_usec;
+    long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (t.tv_sec*1000000+t.tv_usec); rm_stack(false, 0UL, "bots_usecs", &____must_manage_bots_usecs, ____alias_loc_id_1, ____chimes_did_disable2); return ____chimes_ret_var_0; ;
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-}
+rm_stack(false, 0UL, "bots_usecs", &____must_manage_bots_usecs, ____alias_loc_id_1, ____chimes_did_disable2); }
 
 long bots_usecs (void) { return (____chimes_replaying ? bots_usecs_resumable() : bots_usecs_quick()); }
 
@@ -5428,31 +5423,30 @@ void
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_get_date_quick(char *str)
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 1, (size_t)(268134479069371286UL), "bots_get_date|str|0", &____must_checkpoint_bots_get_date_str_0, "i8*", (void *)(&str), (size_t)8, 1, 0, 0) ; struct tm *____chimes_unroll_var_0;
-time_t now;
- if (____must_checkpoint_bots_get_date_____chimes_unroll_var_0_0 || ____must_checkpoint_bots_get_date_now_0) { register_stack_vars(2, "bots_get_date|____chimes_unroll_var_0|0", &____must_checkpoint_bots_get_date_____chimes_unroll_var_0_0, "%struct.tm*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0, "bots_get_date|now|0", &____must_checkpoint_bots_get_date_now_0, "i64", (void *)(&now), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&bots_get_date), "bots_get_date", &____must_manage_bots_get_date, 1, 0, (size_t)(268134479069371286UL)) ; time_t now;
+ if (____must_checkpoint_bots_get_date_now_0) { register_stack_vars(1, "bots_get_date|now|0", &____must_checkpoint_bots_get_date_now_0, "i64", (void *)(&now), (size_t)8, 0, 0, 0); } ; ;
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
     ;
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    time(&now);
 # 90 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-        call_lbl_2: ____chimes_unroll_var_0 = ( ({ calling((void*)gmtime, 2, ____alias_loc_id_1, 268134479069371280UL, 1, (size_t)(268134479069371273UL)); (gmtime)(&now); }) ) ; call_lbl_3: ({ calling((void*)strftime, 3, ____alias_loc_id_0, 0UL, 4, (size_t)(268134479069371286UL), (size_t)(0UL), (size_t)(268134479069371637UL), (size_t)(268134479069371280UL)); (strftime)(str, 32, "%Y/%m/%d;%H:%M", ____chimes_unroll_var_0); }) ;
+   strftime(str, 32, "%Y/%m/%d;%H:%M", gmtime(&now));
 # 91 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-rm_stack(false, 0UL, "bots_get_date", &____must_manage_bots_get_date, 0, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "bots_get_date", &____must_manage_bots_get_date, ____alias_loc_id_2, ____chimes_did_disable3); }
 
 void
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 bots_get_date(char *str) { (____chimes_replaying ? bots_get_date_resumable(str) : bots_get_date_quick(str)); }
 
-int bots_get_max_cpus_quick(void) {const int ____chimes_did_disable4 = new_stack((void *)(&bots_get_max_cpus), "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, 0, 0) ; ; ; rm_stack(false, 0UL, "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, 0, ____chimes_did_disable4); return 0; }
+int bots_get_max_cpus_quick(void) {const int ____chimes_did_disable4 = new_stack((void *)(&bots_get_max_cpus), "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, 0, 0) ; ; ; int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, ____alias_loc_id_3, ____chimes_did_disable4); return ____chimes_ret_var_1; ; rm_stack(false, 0UL, "bots_get_max_cpus", &____must_manage_bots_get_max_cpus, ____alias_loc_id_3, ____chimes_did_disable4); }
 
 int bots_get_max_cpus(void) { return (____chimes_replaying ? bots_get_max_cpus_resumable() : bots_get_max_cpus_quick()); }
 
-void bots_get_architecture_quick(char *str) {const int ____chimes_did_disable5 = new_stack((void *)(&bots_get_architecture), "bots_get_architecture", &____must_manage_bots_get_architecture, 1, 0, (size_t)(268134479069371300UL)) ; ; ; sprintf(str,";"); rm_stack(false, 0UL, "bots_get_architecture", &____must_manage_bots_get_architecture, ____alias_loc_id_4, ____chimes_did_disable5); }
+void bots_get_architecture_quick(char *str) {const int ____chimes_did_disable5 = new_stack((void *)(&bots_get_architecture), "bots_get_architecture", &____must_manage_bots_get_architecture, 1, 0, (size_t)(268134479069371304UL)) ; ; ; sprintf(str,";"); rm_stack(false, 0UL, "bots_get_architecture", &____must_manage_bots_get_architecture, ____alias_loc_id_4, ____chimes_did_disable5); }
 
 void bots_get_architecture(char *str) { (____chimes_replaying ? bots_get_architecture_resumable(str) : bots_get_architecture_quick(str)); }
 
-void bots_get_load_average_quick(char *str) {const int ____chimes_did_disable6 = new_stack((void *)(&bots_get_load_average), "bots_get_load_average", &____must_manage_bots_get_load_average, 1, 0, (size_t)(268134479069371309UL)) ; ; ; sprintf(str,";;"); rm_stack(false, 0UL, "bots_get_load_average", &____must_manage_bots_get_load_average, ____alias_loc_id_5, ____chimes_did_disable6); }
+void bots_get_load_average_quick(char *str) {const int ____chimes_did_disable6 = new_stack((void *)(&bots_get_load_average), "bots_get_load_average", &____must_manage_bots_get_load_average, 1, 0, (size_t)(268134479069371313UL)) ; ; ; sprintf(str,";;"); rm_stack(false, 0UL, "bots_get_load_average", &____must_manage_bots_get_load_average, ____alias_loc_id_5, ____chimes_did_disable6); }
 
 void bots_get_load_average(char *str) { (____chimes_replaying ? bots_get_load_average_resumable(str) : bots_get_load_average_quick(str)); }
 
@@ -5888,7 +5882,7 @@ fprintf(stdout,
 # 347 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
        call_lbl_72: default:
 # 348 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-          ({ calling((void*)bots_error, 72, 0, 0UL, 2, (size_t)(0UL), (size_t)(268134479069371632UL)); bots_error_quick(0, "No valid output format\n"); }) ;
+          ({ calling((void*)bots_error, 72, 0, 0UL, 2, (size_t)(0UL), (size_t)(268134479069371636UL)); bots_error_quick(0, "No valid output format\n"); }) ;
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
          break;
 # 350 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
@@ -5984,7 +5978,7 @@ long bots_usecs_npm (void)
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    gettimeofday(&t,__null);
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-   return t.tv_sec*1000000+t.tv_usec;
+    long ____chimes_ret_var_0; ____chimes_ret_var_0 = (t.tv_sec*1000000+t.tv_usec); return ____chimes_ret_var_0; ;
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 }
 
@@ -5998,11 +5992,11 @@ bots_get_date_npm(char *str)
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
    time(&now);
 # 90 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
-    struct tm * ____chimes_unroll_var_0 = (*____chimes_extern_func_gmtime)(&now); (*____chimes_extern_func_strftime)(str, 32, "%Y/%m/%d;%H:%M", ____chimes_unroll_var_0);
+   strftime(str, 32, "%Y/%m/%d;%H:%M", gmtime(&now));
 # 91 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c"
 }
 
-int bots_get_max_cpus_npm(void) { return 0; }
+int bots_get_max_cpus_npm(void) { int ____chimes_ret_var_1; ____chimes_ret_var_1 = (0); return ____chimes_ret_var_1; ; }
 
 void bots_get_architecture_npm(char *str) { sprintf(str,";"); }
 
@@ -6432,24 +6426,22 @@ fprintf(stdout,
 
 
 static int module_init() {
-    init_module(268134479069371185UL, 7, 8, 26, 6, 8, 3, 11, 2, 0, 2,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (268134479069371185UL + 89UL), "strftime", (unsigned)3, (268134479069371185UL + 95UL), (268134479069371185UL + 101UL), (268134479069371185UL + 452UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)1, (268134479069371185UL + 87UL), (268134479069371185UL + 88UL), "gmtime", (unsigned)2, (268134479069371185UL + 88UL), (268134479069371185UL + 95UL),
-                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (unsigned)0, (268134479069371185UL + 47UL), (268134479069371185UL + 48UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (268134479069371185UL + 75UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (268134479069371185UL + 109UL),
-                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (268134479069371185UL + 118UL),
-                            "bots_error", (void *)(&bots_error_npm), (void *)__null, 0, 2, 0UL, (268134479069371185UL + 41UL), 0UL, 7, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 444UL), 0UL, (268134479069371185UL + 445UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 444UL), 0UL, (268134479069371185UL + 445UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 444UL), 0UL, (268134479069371185UL + 447UL), 0UL, "bots_print_usage", 0, 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 444UL), 0UL, (268134479069371185UL + 448UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 444UL), 0UL, (268134479069371185UL + 41UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "bots_warning", (void *)(&bots_warning_npm), (void *)__null, 0, 2, 0UL, (268134479069371185UL + 74UL), 0UL, 3, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 449UL), 0UL, (268134479069371185UL + 450UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 449UL), 0UL, (268134479069371185UL + 451UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 449UL), 0UL, (268134479069371185UL + 74UL), 0UL,
-                            "bots_usecs", (void *)(&bots_usecs_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (268134479069371185UL + 75UL), (268134479069371185UL + 512UL), 0UL,
-                            "bots_get_date", (void *)(&bots_get_date_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 1, (268134479069371185UL + 101UL), 0UL, 3, "time", 1, (268134479069371185UL + 88UL), 0UL, "gmtime", 1, (268134479069371185UL + 88UL), (268134479069371185UL + 95UL), "strftime", 4, (268134479069371185UL + 101UL), 0UL, (268134479069371185UL + 452UL), (268134479069371185UL + 95UL), 0UL,
+    init_module(268134479069371185UL, 6, 8, 24, 6, 8, 1, 9, 2, 0, 1,
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (268134479069371185UL + 47UL), (268134479069371185UL + 48UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (268134479069371185UL + 75UL), (268134479069371185UL + 76UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (268134479069371185UL + 91UL), (268134479069371185UL + 92UL), (268134479069371185UL + 101UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (268134479069371185UL + 108UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (268134479069371185UL + 113UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (268134479069371185UL + 122UL),
+                            "bots_error", (void *)(&bots_error_npm), (void *)__null, 0, 2, 0UL, (268134479069371185UL + 41UL), 0UL, 7, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 448UL), 0UL, (268134479069371185UL + 449UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 448UL), 0UL, (268134479069371185UL + 449UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 448UL), 0UL, (268134479069371185UL + 451UL), 0UL, "bots_print_usage", 0, 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 448UL), 0UL, (268134479069371185UL + 452UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 448UL), 0UL, (268134479069371185UL + 41UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "bots_warning", (void *)(&bots_warning_npm), (void *)__null, 0, 2, 0UL, (268134479069371185UL + 74UL), 0UL, 3, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 453UL), 0UL, (268134479069371185UL + 454UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 453UL), 0UL, (268134479069371185UL + 455UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 453UL), 0UL, (268134479069371185UL + 74UL), 0UL,
+                            "bots_usecs", (void *)(&bots_usecs_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (268134479069371185UL + 75UL), (268134479069371185UL + 516UL), 0UL,
+                            "bots_get_date", (void *)(&bots_get_date_npm), (void *)__null, 0, 1, (268134479069371185UL + 101UL), 0UL, 3, "time", 1, (268134479069371185UL + 92UL), 0UL, "gmtime", 1, (268134479069371185UL + 92UL), (268134479069371185UL + 98UL), "strftime", 4, (268134479069371185UL + 101UL), 0UL, (268134479069371185UL + 456UL), (268134479069371185UL + 98UL), 0UL,
                             "bots_get_max_cpus", (void *)(&bots_get_max_cpus_npm), (void *)__null, 0, 0, 0UL, 0,
-                            "bots_get_architecture", (void *)(&bots_get_architecture_npm), (void *)__null, 0, 1, (268134479069371185UL + 115UL), 0UL, 1, "sprintf", 2, (268134479069371185UL + 115UL), (268134479069371185UL + 453UL), 0UL,
-                            "bots_get_load_average", (void *)(&bots_get_load_average_npm), (void *)__null, 0, 1, (268134479069371185UL + 124UL), 0UL, 1, "sprintf", 2, (268134479069371185UL + 124UL), (268134479069371185UL + 454UL), 0UL,
-                            "bots_print_results", (void *)(&bots_print_results_npm), (void *)__null, 0, 0, 0UL, 74, "sprintf", 3, (268134479069371185UL + 125UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 3, (268134479069371185UL + 126UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 3, (268134479069371185UL + 127UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 3, (268134479069371185UL + 145UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 3, (268134479069371185UL + 128UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 2, (268134479069371185UL + 129UL), (268134479069371185UL + 462UL), 0UL, "sprintf", 2, (268134479069371185UL + 129UL), (268134479069371185UL + 463UL), 0UL, "sprintf", 2, (268134479069371185UL + 129UL), (268134479069371185UL + 464UL), 0UL, "sprintf", 2, (268134479069371185UL + 129UL), (268134479069371185UL + 465UL), 0UL, "sprintf", 2, (268134479069371185UL + 129UL), (268134479069371185UL + 466UL), 0UL, "sprintf", 3, (268134479069371185UL + 130UL), (268134479069371185UL + 454UL), 0UL, 0UL, "sprintf", 3, (268134479069371185UL + 131UL), (268134479069371185UL + 454UL), 0UL, 0UL, "sprintf", 2, (268134479069371185UL + 131UL), (268134479069371185UL + 462UL), 0UL, "sprintf", 3, (268134479069371185UL + 132UL), (268134479069371185UL + 466UL), 0UL, 0UL, "sprintf", 2, (268134479069371185UL + 132UL), (268134479069371185UL + 462UL), 0UL, "sprintf", 3, (268134479069371185UL + 133UL), (268134479069371185UL + 466UL), 0UL, 0UL, "sprintf", 3, (268134479069371185UL + 134UL), (268134479069371185UL + 466UL), 0UL, 0UL, "sprintf", 3, (268134479069371185UL + 135UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 3, (268134479069371185UL + 136UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "bots_get_architecture", 1, (268134479069371185UL + 137UL), 0UL, "bots_get_load_average", 1, (268134479069371185UL + 138UL), 0UL, "sprintf", 3, (268134479069371185UL + 139UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 3, (268134479069371185UL + 140UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 3, (268134479069371185UL + 141UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 3, (268134479069371185UL + 142UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 3, (268134479069371185UL + 143UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "sprintf", 3, (268134479069371185UL + 144UL), (268134479069371185UL + 454UL), (268134479069371185UL + 456UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 484UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 485UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 453UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 125UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 126UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 127UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 145UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 129UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 492UL), (268134479069371185UL + 131UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 132UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 133UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 134UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 136UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 137UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 138UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 139UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 140UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 141UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 142UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 143UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 144UL), 0UL, "fflush", 1, (268134479069371185UL + 30UL), 0UL, "fprintf", 8, (268134479069371185UL + 30UL), (268134479069371185UL + 445UL), (268134479069371185UL + 125UL), (268134479069371185UL + 126UL), (268134479069371185UL + 127UL), (268134479069371185UL + 145UL), (268134479069371185UL + 128UL), (268134479069371185UL + 129UL), 0UL, "fprintf", 5, (268134479069371185UL + 30UL), (268134479069371185UL + 506UL), (268134479069371185UL + 130UL), (268134479069371185UL + 131UL), (268134479069371185UL + 132UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 507UL), (268134479069371185UL + 133UL), (268134479069371185UL + 134UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 507UL), (268134479069371185UL + 135UL), (268134479069371185UL + 136UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 507UL), (268134479069371185UL + 137UL), (268134479069371185UL + 138UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 507UL), (268134479069371185UL + 139UL), (268134479069371185UL + 140UL), 0UL, "fprintf", 6, (268134479069371185UL + 30UL), (268134479069371185UL + 464UL), (268134479069371185UL + 141UL), (268134479069371185UL + 142UL), (268134479069371185UL + 143UL), (268134479069371185UL + 144UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 453UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 453UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 125UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 126UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 127UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 145UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 128UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 129UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 492UL), (268134479069371185UL + 130UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 492UL), (268134479069371185UL + 131UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 132UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 133UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 487UL), (268134479069371185UL + 134UL), 0UL, "fprintf", 8, (268134479069371185UL + 30UL), (268134479069371185UL + 445UL), (268134479069371185UL + 125UL), (268134479069371185UL + 126UL), (268134479069371185UL + 127UL), (268134479069371185UL + 145UL), (268134479069371185UL + 128UL), (268134479069371185UL + 129UL), 0UL, "fprintf", 5, (268134479069371185UL + 30UL), (268134479069371185UL + 506UL), (268134479069371185UL + 130UL), (268134479069371185UL + 131UL), (268134479069371185UL + 132UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 507UL), (268134479069371185UL + 133UL), (268134479069371185UL + 134UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 453UL), 0UL, "bots_error", 2, 0UL, (268134479069371185UL + 447UL), 0UL,
+                            "bots_get_architecture", (void *)(&bots_get_architecture_npm), (void *)__null, 0, 1, (268134479069371185UL + 119UL), 0UL, 1, "sprintf", 2, (268134479069371185UL + 119UL), (268134479069371185UL + 457UL), 0UL,
+                            "bots_get_load_average", (void *)(&bots_get_load_average_npm), (void *)__null, 0, 1, (268134479069371185UL + 128UL), 0UL, 1, "sprintf", 2, (268134479069371185UL + 128UL), (268134479069371185UL + 458UL), 0UL,
+                            "bots_print_results", (void *)(&bots_print_results_npm), (void *)__null, 0, 0, 0UL, 74, "sprintf", 3, (268134479069371185UL + 129UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 130UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 131UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 149UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 132UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 2, (268134479069371185UL + 133UL), (268134479069371185UL + 466UL), 0UL, "sprintf", 2, (268134479069371185UL + 133UL), (268134479069371185UL + 467UL), 0UL, "sprintf", 2, (268134479069371185UL + 133UL), (268134479069371185UL + 468UL), 0UL, "sprintf", 2, (268134479069371185UL + 133UL), (268134479069371185UL + 469UL), 0UL, "sprintf", 2, (268134479069371185UL + 133UL), (268134479069371185UL + 470UL), 0UL, "sprintf", 3, (268134479069371185UL + 134UL), (268134479069371185UL + 458UL), 0UL, 0UL, "sprintf", 3, (268134479069371185UL + 135UL), (268134479069371185UL + 458UL), 0UL, 0UL, "sprintf", 2, (268134479069371185UL + 135UL), (268134479069371185UL + 466UL), 0UL, "sprintf", 3, (268134479069371185UL + 136UL), (268134479069371185UL + 470UL), 0UL, 0UL, "sprintf", 2, (268134479069371185UL + 136UL), (268134479069371185UL + 466UL), 0UL, "sprintf", 3, (268134479069371185UL + 137UL), (268134479069371185UL + 470UL), 0UL, 0UL, "sprintf", 3, (268134479069371185UL + 138UL), (268134479069371185UL + 470UL), 0UL, 0UL, "sprintf", 3, (268134479069371185UL + 139UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 140UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "bots_get_architecture", 1, (268134479069371185UL + 141UL), 0UL, "bots_get_load_average", 1, (268134479069371185UL + 142UL), 0UL, "sprintf", 3, (268134479069371185UL + 143UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 144UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 145UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 146UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 147UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "sprintf", 3, (268134479069371185UL + 148UL), (268134479069371185UL + 458UL), (268134479069371185UL + 460UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 488UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 489UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 457UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 129UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 130UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 131UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 149UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 133UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 496UL), (268134479069371185UL + 135UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 136UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 137UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 138UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 140UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 141UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 142UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 143UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 144UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 145UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 146UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 147UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 148UL), 0UL, "fflush", 1, (268134479069371185UL + 30UL), 0UL, "fprintf", 8, (268134479069371185UL + 30UL), (268134479069371185UL + 449UL), (268134479069371185UL + 129UL), (268134479069371185UL + 130UL), (268134479069371185UL + 131UL), (268134479069371185UL + 149UL), (268134479069371185UL + 132UL), (268134479069371185UL + 133UL), 0UL, "fprintf", 5, (268134479069371185UL + 30UL), (268134479069371185UL + 510UL), (268134479069371185UL + 134UL), (268134479069371185UL + 135UL), (268134479069371185UL + 136UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 511UL), (268134479069371185UL + 137UL), (268134479069371185UL + 138UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 511UL), (268134479069371185UL + 139UL), (268134479069371185UL + 140UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 511UL), (268134479069371185UL + 141UL), (268134479069371185UL + 142UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 511UL), (268134479069371185UL + 143UL), (268134479069371185UL + 144UL), 0UL, "fprintf", 6, (268134479069371185UL + 30UL), (268134479069371185UL + 468UL), (268134479069371185UL + 145UL), (268134479069371185UL + 146UL), (268134479069371185UL + 147UL), (268134479069371185UL + 148UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 457UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 457UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 129UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 130UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 131UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 149UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 132UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 133UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 496UL), (268134479069371185UL + 134UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 496UL), (268134479069371185UL + 135UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 136UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 137UL), 0UL, "fprintf", 3, (268134479069371185UL + 30UL), (268134479069371185UL + 491UL), (268134479069371185UL + 138UL), 0UL, "fprintf", 8, (268134479069371185UL + 30UL), (268134479069371185UL + 449UL), (268134479069371185UL + 129UL), (268134479069371185UL + 130UL), (268134479069371185UL + 131UL), (268134479069371185UL + 149UL), (268134479069371185UL + 132UL), (268134479069371185UL + 133UL), 0UL, "fprintf", 5, (268134479069371185UL + 30UL), (268134479069371185UL + 510UL), (268134479069371185UL + 134UL), (268134479069371185UL + 135UL), (268134479069371185UL + 136UL), 0UL, "fprintf", 4, (268134479069371185UL + 30UL), (268134479069371185UL + 511UL), (268134479069371185UL + 137UL), (268134479069371185UL + 138UL), 0UL, "fprintf", 2, (268134479069371185UL + 30UL), (268134479069371185UL + 457UL), 0UL, "bots_error", 2, 0UL, (268134479069371185UL + 451UL), 0UL,
                                "bots_print_usage", (void **)&(____chimes_extern_func_bots_print_usage),
-                               "gmtime", (void **)&(____chimes_extern_func_gmtime),
-                               "strftime", (void **)&(____chimes_extern_func_strftime),
                            "bots_error", &(____chimes_does_checkpoint_bots_error_npm),
                            "bots_warning", &(____chimes_does_checkpoint_bots_warning_npm),
                            "bots_usecs", &(____chimes_does_checkpoint_bots_usecs_npm),
@@ -6459,30 +6451,24 @@ static int module_init() {
                            "bots_get_load_average", &(____chimes_does_checkpoint_bots_get_load_average_npm),
                            "bots_print_results", &(____chimes_does_checkpoint_bots_print_results_npm),
                            "bots_print_usage", &(____chimes_does_checkpoint_bots_print_usage_npm),
-                           "gmtime", &(____chimes_does_checkpoint_gmtime_npm),
-                           "strftime", &(____chimes_does_checkpoint_strftime_npm),
                              (268134479069371185UL + 48UL), (268134479069371185UL + 74UL),
-                             (268134479069371185UL + 443UL), (268134479069371185UL + 30UL),
-                             (268134479069371185UL + 87UL), (268134479069371185UL + 101UL),
+                             (268134479069371185UL + 447UL), (268134479069371185UL + 30UL),
+                             (268134479069371185UL + 122UL), (268134479069371185UL + 128UL),
                              (268134479069371185UL + 2UL), (268134479069371185UL + 41UL),
-                             (268134479069371185UL + 89UL), (268134479069371185UL + 95UL),
-                             (268134479069371185UL + 118UL), (268134479069371185UL + 124UL),
-                             (268134479069371185UL + 109UL), (268134479069371185UL + 115UL),
+                             (268134479069371185UL + 113UL), (268134479069371185UL + 119UL),
+                             (268134479069371185UL + 91UL), (268134479069371185UL + 101UL),
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                     "tm", 11, "int", (int)__builtin_offsetof (struct tm, tm_sec), "int", (int)__builtin_offsetof (struct tm, tm_min), "int", (int)__builtin_offsetof (struct tm, tm_hour), "int", (int)__builtin_offsetof (struct tm, tm_mday), "int", (int)__builtin_offsetof (struct tm, tm_mon), "int", (int)__builtin_offsetof (struct tm, tm_year), "int", (int)__builtin_offsetof (struct tm, tm_wday), "int", (int)__builtin_offsetof (struct tm, tm_yday), "int", (int)__builtin_offsetof (struct tm, tm_isdst), "long int", (int)__builtin_offsetof (struct tm, tm_gmtoff), "char*", (int)__builtin_offsetof (struct tm, tm_zone),
                              "bots_get_load_average", "_Z21bots_get_load_averagePc", 0,
                              "bots_usecs", "_Z10bots_usecsv", 0,
                              "bots_get_max_cpus", "_Z17bots_get_max_cpusv", 0,
                              "bots_get_architecture", "_Z21bots_get_architecturePc", 0,
                              "bots_warning", "_Z12bots_warningiPc", 0,
                              "bots_print_results", "_Z18bots_print_resultsv", 3, "bots_get_architecture", "bots_get_load_average", "bots_error",
-                             "bots_get_date", "_Z13bots_get_datePc", 2, "gmtime", "strftime",
+                             "bots_get_date", "_Z13bots_get_datePc", 0,
                              "bots_error", "_Z10bots_erroriPc", 1, "bots_print_usage",
                         "bots_error|error|0", 1, "bots_print_usage",
                         "bots_usecs|t|0", 1, "bots_usecs",
-                        "bots_get_date|str|0", 2, "strftime", "gmtime",
                         "bots_get_date|now|0", 1, "bots_get_date",
-                        "bots_get_date|____chimes_unroll_var_0|0", 1, "strftime",
                         "bots_print_results|str_name|0", 1, "bots_print_results",
                         "bots_print_results|str_parameters|0", 1, "bots_print_results",
                         "bots_print_results|str_model|0", 1, "bots_print_results",
@@ -6504,8 +6490,8 @@ static int module_init() {
                         "bots_print_results|str_ld|0", 1, "bots_print_results",
                         "bots_print_results|str_ldflags|0", 1, "bots_print_results",
                         "bots_print_results|str_cutoff|0", 1, "bots_print_results",
-        "bots_get_architecture", 0UL, (int)1, 268134479069371322UL,
-        "bots_get_load_average", 0UL, (int)1, 268134479069371323UL);
+        "bots_get_architecture", 0UL, (int)1, 268134479069371326UL,
+        "bots_get_load_average", 0UL, (int)1, 268134479069371327UL);
     return 0;
 }
 

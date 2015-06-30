@@ -43,7 +43,7 @@ class TestConfig(object):
         self.keep = keep
         self.verbose = verbose
         self.targets = targets
-        # self.custom_compiler = None
+        self.found_target = False
         self.custom_compiler_flags = []
         self.update_tests = update_tests
         self.force_update = force_update
@@ -87,6 +87,7 @@ class RuntimeTest(object):
                  expected_num_checkpoints, includes=None, dependencies=None,
                  cli_args=None, defines=None, extra_compile_args='',
                  src_folder=None):
+        assert not name.endswith('-')
         self.name = name
         self.input_files = input_files
         self.expected_code = expected_code
@@ -127,6 +128,7 @@ class FrontendTest(object):
     """
     def __init__(self, name, input_files, ref_folder, expect_err, src_folder='./',
                  includes=None, dependencies=None, extra_cli_args=None):
+        assert not name.endswith('-')
         self.name = name
         self.src_folder = src_folder
         self.input_files = input_files
@@ -468,6 +470,113 @@ def query_user(msg):
     return do_update
 
 
+def test_enabled(name, config):
+    if config.found_target or len(config.targets) == 0:
+        return True
+
+    for target in config.targets:
+        all_after = False
+        if target.endswith('-'):
+            target = target[:len(target) - 1]
+            all_after = True
+
+        if name == target:
+            if all_after:
+                config.found_target = True
+            return True
+
+    return False
+
+
+def extract_warnings(stderr):
+    warnings = []
+    lines = stderr.split('\n')
+    for line in lines:
+        tokens = line.split()
+        if len(tokens) > 0 and tokens[0] == 'WARNING:':
+            warnings.append(line.strip())
+    return warnings
+
+
+def compare_files(correct, generated, diff_fp, update_tests, force_update):
+    if not os.path.isfile(generated):
+        sys.stderr.write('FATAL: Missing file ' + generated + '\n')
+        sys.exit(1)
+
+    if not os.path.isfile(correct):
+        sys.stderr.write('FATAL: Missing file ' + correct + '\n')
+        if force_update or (update_tests and \
+                query_user('Copy file from test output?')):
+            if not os.path.isdir(os.path.dirname(correct)):
+                os.makedirs(os.path.dirname(correct))
+            shutil.copyfile(generated, correct)
+        else:
+            sys.exit(1)
+
+    diff_cmd = 'diff ' + correct + ' ' + generated
+    stdout, _, _ = run_cmd(diff_cmd, True)
+
+    if len(stdout.strip()) != 0:
+        diff_fp.write('===== Correct:   ' + correct + ' =====\n')
+        diff_fp.write('===== Generated: ' + generated + ' =====\n')
+        diff_fp.write('\n')
+        diff_fp.write(stdout)
+        diff_fp.write('\n')
+        return False
+    else:
+        return True
+        failure = True
+        any_failures = True
+
+
+def update_files(testname, diff_file, files_to_update, update_tests, force_update):
+    if update_tests:
+        do_update = True
+        if not force_update:
+            run_cmd('view +1 ' + diff_file, False, interactive=True)
+
+            do_update = query_user('Update test?')
+
+        if do_update:
+            for comparison in files_to_update:
+                correct = comparison[0]
+                generated = comparison[1]
+
+                shutil.copyfile(generated, correct)
+        else:
+            print(testname + ' FAILED')
+            print(diff_file)
+            sys.exit(1)
+    else:
+        print(testname + ' FAILED')
+        print(diff_file)
+        sys.exit(1)
+
+
+def check_warnings(testname, stderr, input_dir, output_dir, warnings_filename,
+                   update_tests, force_update):
+    warnings = extract_warnings(stderr)
+    warnings_file = os.path.join(input_dir, warnings_filename)
+    warnings_fp = open(warnings_file, 'w')
+    warnings_fp.write('\n'.join(warnings))
+    warnings_fp.close()
+    correct_warnings_file = os.path.join(output_dir, warnings_filename)
+    diff_file = os.path.join(input_dir, warnings_filename + '.diff')
+    diff_fp = open(diff_file, 'w')
+    success = compare_files(correct_warnings_file, warnings_file, diff_fp,
+                            update_tests, force_update)
+    diff_fp.close()
+
+    if not success:
+        # If the user decides not to update the files, update_files will exit
+        # immediately. If we get to this point, we know they decided to update
+        # the files so we can return False, indicating success.
+        update_files(testname, diff_file,
+                     [(correct_warnings_file, warnings_file)], update_tests,
+                     force_update)
+    return False
+
+
 def run_frontend_test(test, compile_script_path, examples_dir_path,
                       test_dir_path, config):
     """
@@ -485,7 +594,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     :param config: Configuration for tests
     :type config: `class` TestConfig
     """
-    if len(config.targets) > 0 and test.name not in config.targets:
+    if not test_enabled(test.name, config):
         print(test.name + ' SKIPPING')
         return
 
@@ -514,10 +623,8 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
 
     # Try building the test
     stdout, stderr, _ = run_cmd(compile_cmd, test.expect_err, env=env)
-
     if config.verbose:
         print_and_abort(stdout, stderr, abort=False)
-
     assert test.expect_err or os.path.isfile('a.out')
 
     if config.just_compile:
@@ -528,7 +635,12 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
             get_files_from_compiler_stdout(stdout, len(test.input_files))
     assert len(transformed) == len(test.input_files)
 
+    check_warnings(test.name, stderr, work_folder,
+                   os.path.join(test_dir_path, test.ref_folder),
+                   'clang_warnings', config.update_tests,
+                   config.force_update)
     any_failures = False
+
     # Diff the test output and the expected output
     for i in range(len(test.input_files)):
         files_to_compare = []
@@ -565,57 +677,17 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
         for comparison in files_to_compare:
             correct = comparison[0]
             generated = comparison[1]
-
-            if not os.path.isfile(generated):
-                sys.stderr.write('FATAL: Missing file ' + generated + '\n')
-                sys.exit(1)
-
-            if not os.path.isfile(correct):
-                sys.stderr.write('FATAL: Missing file ' + correct + '\n')
-                if config.force_update or (config.update_tests and \
-                        query_user('Copy file from test output?')):
-                    if not os.path.isdir(os.path.dirname(correct)):
-                        os.makedirs(os.path.dirname(correct))
-                    shutil.copyfile(generated, correct)
-                else:
-                    sys.exit(1)
-
-            diff_cmd = 'diff ' + correct + ' ' + generated
-            stdout, _, _ = run_cmd(diff_cmd, True)
-
-            if len(stdout.strip()) != 0:
-                diff_fp.write('===== Correct:   ' + correct + ' =====\n')
-                diff_fp.write('===== Generated: ' + generated + ' =====\n')
-                diff_fp.write('\n')
-                diff_fp.write(stdout)
-                diff_fp.write('\n')
+            success = compare_files(correct, generated, diff_fp,
+                                    config.update_tests, config.force_update)
+            if not success:
                 failure = True
                 any_failures = True
 
         diff_fp.close()
 
         if failure:
-            if config.update_tests:
-                do_update = True
-                if not config.force_update:
-                    run_cmd('view +1 ' + diff_file, False, interactive=True)
-
-                    do_update = query_user('Update test?')
-
-                if do_update:
-                    for comparison in files_to_compare:
-                        correct = comparison[0]
-                        generated = comparison[1]
-
-                        shutil.copyfile(generated, correct)
-                else:
-                    print(test.name + ' FAILED')
-                    print(diff_file)
-                    sys.exit(1)
-            else:
-                print(test.name + ' FAILED')
-                print(diff_file)
-                sys.exit(1)
+            update_files(test.name, diff_file, files_to_compare, config.update_tests,
+                         config.force_update)
 
     if not config.keep:
         run_cmd('rm -rf ' + root_folder, False)
@@ -646,7 +718,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         sys.exit(1)
     checkpoint_directory = os.environ[CHECKPOINT_DIR_ENV_VAR]
 
-    if len(config.targets) > 0 and test.name not in config.targets:
+    if not test_enabled(test.name, config):
         print(test.name + ' SKIPPING')
         return
 
@@ -667,16 +739,17 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         compile_cmd += ' -D ' + d
     compile_cmd += ' -D __CHIMES_TESTING'
 
+    test_dir_path = test.src_folder if test.src_folder is not None else inputs_dir
     for input_file in test.input_files:
-        if test.src_folder is not None:
-            compile_cmd += ' -i ' + os.path.join(test.src_folder, input_file)
-        else:
-            compile_cmd += ' -i ' + os.path.join(inputs_dir, input_file)
+        compile_cmd += ' -i ' + os.path.join(test_dir_path, input_file)
 
     compile_cmd += ' -o ' + RUNTIME_BIN
 
     compile_cmd = add_include_paths(compile_cmd, test.includes)
     compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
+
+    if config.verbose:
+        print(compile_cmd)
 
     stdout, stderr, code = run_cmd(compile_cmd, False, env=env)
 
@@ -720,6 +793,9 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     if config.verbose:
         print_and_abort(stdout, stderr, abort=False)
 
+    check_warnings(test.name, stderr, work_folder, os.path.join(inputs_dir, test.name),
+                   'exec_warnings', True, config.force_update)
+
     # Run all generated checkpoints
     chimes_files = list_checkpoint_files()
     if test.expected_num_checkpoints != -1 and len(chimes_files) != \
@@ -745,7 +821,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     while len(chimes_files) > 0 and (time.time() - start_time) < MAX_TEST_TIME:
         checkpoint = random.choice(chimes_files)
         if config.verbose:
-            sys.stderr.write('Testing checkpoint file ' + checkpoint)
+            sys.stderr.write('Testing checkpoint file ' + checkpoint + '\n')
 
         chimes_files.remove(checkpoint)
         env['CHIMES_CHECKPOINT_FILE'] = checkpoint
@@ -756,6 +832,9 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
                              checkpoint + ' expected exit code ' +
                              str(CHIMES_REPLAY_EXIT_CODE) + ' but got ' +
                              str(code) + '\n')
+            sys.stderr.write('CHIMES_DISABLE_THROTTLING=TRUE ' +
+                             'CHIMES_CHECKPOINT_FILE=' + checkpoint + ' ' +
+                             exec_cmd + '\n')
             sys.stderr.write('Folder ' + work_folder + '\n')
             print_and_abort(stdout, stderr)
 

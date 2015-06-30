@@ -1,1 +1,1 @@
-kernel_cpu kernel_cpu 0 MAY get_time 55 10 get_time 89 10 omp_set_num_threads 95 2 get_time 97 10 get_time 106 10 get_time 198 10
+kernel_cpu kernel_cpu 0 MAY get_time 55 10 get_time 89 10 get_time 97 10 get_time 106 10 get_time 198 10

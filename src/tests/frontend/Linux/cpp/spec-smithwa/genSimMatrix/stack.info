@@ -14,4 +14,6 @@
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c genSimMatrix|k|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c genSimMatrix|ccode|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c genSimMatrix|ccode2|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c genSimMatrix|____chimes_ret_var_0|0 " %struct.simmat* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c freeSimMatrix|M|0 " %struct.simmat* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c freeSimMatrix|____chimes_ret_var_1|0 " %struct.simmat* " 64 1 0 0

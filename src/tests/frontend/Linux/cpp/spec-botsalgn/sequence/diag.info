@@ -3,52 +3,55 @@ ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alig
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 81 6 len=6 encode_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 104 6 len=9 alloc_aln_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 108 22 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 108 56 , 13606384021850635552UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 108 56 , 13606384021850635561UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 109 26 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 109 60 , 13606384021850635552UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 109 60 , 13606384021850635561UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 110 27 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 110 58 , 13606384021850635562UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 110 58 , 13606384021850635571UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 113 28 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 113 57 , 13606384021850635554UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 113 57 , 13606384021850635563UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 121 8 len=7 get_seq_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 42 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 72 , 13606384021850635554UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 72 , 13606384021850635563UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 100 len=7 realloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 145 , 13606384021850635554UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 145 , 13606384021850635563UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 154 5 len=8 readseqs_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 179 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 179 61 , 13606384021850635554UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 179 61 , 13606384021850635563UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 12 , 13606384021850635557UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 12 , 13606384021850635566UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 108 22 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 108 56 , 13606384021850635552UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 108 56 , 13606384021850635561UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 109 26 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 109 60 , 13606384021850635552UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 109 60 , 13606384021850635561UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 110 27 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 110 58 , 13606384021850635562UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 110 58 , 13606384021850635571UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 113 28 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 113 57 , 13606384021850635554UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 113 57 , 13606384021850635563UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 42 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 72 , 13606384021850635554UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 72 , 13606384021850635563UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 100 len=7 realloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 145 , 13606384021850635554UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 138 145 , 13606384021850635563UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 179 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 179 61 , 13606384021850635554UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 179 61 , 13606384021850635563UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 12 , 13606384021850635557UL
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 60 4 rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 39 1 const int ____chimes_did_disable0 = new_stack((void *)(&strlcpy), "strlcpy", &____must_manage_strlcpy, 3, 0, (size_t)(13606384021850635088UL), (size_t)(13606384021850635089UL), (size_t)(0UL)); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 67 1 const int ____chimes_did_disable1 = new_stack((void *)(&fill_chartab), "fill_chartab", &____must_manage_fill_chartab, 1, 1, (size_t)(13606384021850635146UL), "fill_chartab|chartab|0", &____must_checkpoint_fill_chartab_chartab_0, "i8*", (void *)(&chartab), (size_t)8, 1, 0, 0); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 183 12 , 13606384021850635566UL
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 60 74 rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 39 1 const int ____chimes_did_disable0 = new_stack((void *)(&strlcpy), "strlcpy", &____must_manage_strlcpy, 3, 0, (size_t)(13606384021850635092UL), (size_t)(13606384021850635093UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 61 1 rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 67 1 const int ____chimes_did_disable1 = new_stack((void *)(&fill_chartab), "fill_chartab", &____must_manage_fill_chartab, 1, 1, (size_t)(13606384021850635150UL), "fill_chartab|chartab|0", &____must_checkpoint_fill_chartab_chartab_0, "i8*", (void *)(&chartab), (size_t)8, 1, 0, 0); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 76 1 rm_stack(false, 0UL, "fill_chartab", &____must_manage_fill_chartab, ____alias_loc_id_3, ____chimes_did_disable1); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 82 1 const int ____chimes_did_disable2 = new_stack((void *)(&encode), "encode", &____must_manage_encode, 3, 0, (size_t)(13606384021850635244UL), (size_t)(13606384021850635245UL), (size_t)(0UL)); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 82 1 const int ____chimes_did_disable2 = new_stack((void *)(&encode), "encode", &____must_manage_encode, 3, 0, (size_t)(13606384021850635248UL), (size_t)(13606384021850635249UL), (size_t)(0UL)); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 98 1 rm_stack(false, 0UL, "encode", &____must_manage_encode, ____alias_loc_id_4, ____chimes_did_disable2); 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 105 1 const int ____chimes_did_disable3 = new_stack((void *)(&alloc_aln), "alloc_aln", &____must_manage_alloc_aln, 1, 0, (size_t)(0UL)); 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 116 1 rm_stack(false, 0UL, "alloc_aln", &____must_manage_alloc_aln, ____alias_loc_id_5, ____chimes_did_disable3); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 151 4 rm_stack(true, 13606384021850635554UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 122 1 const int ____chimes_did_disable4 = new_stack((void *)(&get_seq), "get_seq", &____must_manage_get_seq, 4, 0, (size_t)(13606384021850635479UL), (size_t)(13606384021850635480UL), (size_t)(13606384021850635481UL), (size_t)(13606384021850635482UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 186 4 rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 155 1 const int ____chimes_did_disable5 = new_stack((void *)(&readseqs), "readseqs", &____must_manage_readseqs, 2, 0, (size_t)(0UL), (size_t)(13606384021850635593UL)); 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 39 2 const int ____chimes_did_disable0 = new_stack((void *)(&strlcpy), "strlcpy", &____must_manage_strlcpy, 3, 0, (size_t)(13606384021850635088UL), (size_t)(13606384021850635089UL), (size_t)(0UL)); ;
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 151 64 rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 122 1 const int ____chimes_did_disable4 = new_stack((void *)(&get_seq), "get_seq", &____must_manage_get_seq, 4, 0, (size_t)(13606384021850635487UL), (size_t)(13606384021850635488UL), (size_t)(13606384021850635489UL), (size_t)(13606384021850635490UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 152 1 rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 186 65 rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 155 1 const int ____chimes_did_disable5 = new_stack((void *)(&readseqs), "readseqs", &____must_manage_readseqs, 2, 0, (size_t)(0UL), (size_t)(13606384021850635605UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 187 1 rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5); 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 39 2 const int ____chimes_did_disable0 = new_stack((void *)(&strlcpy), "strlcpy", &____must_manage_strlcpy, 3, 0, (size_t)(13606384021850635092UL), (size_t)(13606384021850635093UL), (size_t)(0UL)); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 39 193 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 40 4  char *d;  d = (dst) ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 40 17 
@@ -56,13 +59,15 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 41 23 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 42 4  size_t n;  n = (siz) ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 42 18 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 67 2 const int ____chimes_did_disable1 = new_stack((void *)(&fill_chartab), "fill_chartab", &____must_manage_fill_chartab, 1, 1, (size_t)(13606384021850635146UL), "fill_chartab|chartab|0", &____must_checkpoint_fill_chartab_chartab_0, "i8*", (void *)(&chartab), (size_t)8, 1, 0, 0); ;
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 60 5 size_t ____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 60 32 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 67 2 const int ____chimes_did_disable1 = new_stack((void *)(&fill_chartab), "fill_chartab", &____must_manage_fill_chartab, 1, 1, (size_t)(13606384021850635150UL), "fill_chartab|chartab|0", &____must_checkpoint_fill_chartab_chartab_0, "i8*", (void *)(&chartab), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 67 277 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 68 4 int i; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 68 9 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 73 7  char c;  c = (amino_acid_codes[i]) ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 73 35 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 82 2 const int ____chimes_did_disable2 = new_stack((void *)(&encode), "encode", &____must_manage_encode, 3, 0, (size_t)(13606384021850635244UL), (size_t)(13606384021850635245UL), (size_t)(0UL)); ;
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 82 2 const int ____chimes_did_disable2 = new_stack((void *)(&encode), "encode", &____must_manage_encode, 3, 0, (size_t)(13606384021850635248UL), (size_t)(13606384021850635249UL), (size_t)(0UL)); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 82 190 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 83 4 int i; int j; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 83 12 
@@ -72,7 +77,7 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 105 131 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 106 4 int i; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 106 9 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 122 2 const int ____chimes_did_disable4 = new_stack((void *)(&get_seq), "get_seq", &____must_manage_get_seq, 4, 0, (size_t)(13606384021850635479UL), (size_t)(13606384021850635480UL), (size_t)(13606384021850635481UL), (size_t)(13606384021850635482UL)); ;
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 122 2 const int ____chimes_did_disable4 = new_stack((void *)(&get_seq), "get_seq", &____must_manage_get_seq, 4, 0, (size_t)(13606384021850635487UL), (size_t)(13606384021850635488UL), (size_t)(13606384021850635489UL), (size_t)(13606384021850635490UL)); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 122 246 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 123 4 int i; int j; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 123 12 
@@ -80,7 +85,9 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 124 16 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 125 4 static char line[513]; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 125 28 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 155 2 const int ____chimes_did_disable5 = new_stack((void *)(&readseqs), "readseqs", &____must_manage_readseqs, 2, 0, (size_t)(0UL), (size_t)(13606384021850635593UL)); ;
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 151 5 char *____chimes_ret_var_1; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 151 32 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 155 2 const int ____chimes_did_disable5 = new_stack((void *)(&readseqs), "readseqs", &____must_manage_readseqs, 2, 0, (size_t)(0UL), (size_t)(13606384021850635605UL)); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 155 162 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 156 4 int i; int l1; int no_seqs; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 156 22 
@@ -88,6 +95,8 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 157 13 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 158 4 char *seq1; char chartab[128]; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 158 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 186 5 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 186 29 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 74 7  call_lbl_1: 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 170 4  call_lbl_7: 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 38 8 len=7 strlcpy_quick
@@ -111,7 +120,7 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 134 38 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 122 245  ;  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 154 5 len=8 readseqs_quick
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 170 17  ({  calling((void*)fill_chartab, 7, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635496UL)); (fill_chartab)(chartab); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 170 17  ({  calling((void*)fill_chartab, 7, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635504UL)); (fill_chartab)(chartab); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 170 37 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 173 4 ({ calling_npm("alloc_aln", 0); alloc_aln_npm(no_seqs); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 173 21 
@@ -153,7 +162,7 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 134 38 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 122 245  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 154 5 len=8 readseqs_resumable
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 170 17  ({  calling((void*)fill_chartab, 7, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635496UL)); (fill_chartab)(chartab); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 170 17  ({  calling((void*)fill_chartab, 7, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635504UL)); (fill_chartab)(chartab); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 170 37 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 173 4 ({ calling_npm("alloc_aln", 0); alloc_aln_npm(no_seqs); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c 173 21 

@@ -2230,7 +2230,7 @@ ferror_unlocked (FILE *__stream) throw ()
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(13383618805175514626UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(13383618805175514630UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
     if (argc == 0) {printf("hello there\n"); };
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
@@ -2241,10 +2241,10 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
     { int i; for ( i = (0) ;i < argc; i++) { printf("ha\n"); } };
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return 0;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-}
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(13383618805175514626UL)) ; ; ;
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); }
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(13383618805175514630UL)) ; ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
     if (argc == 0) {printf("hello there\n"); };
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
@@ -2255,9 +2255,9 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
     { int i; for ( i = (0) ;i < argc; i++) { printf("ha\n"); } };
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return 0;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./braces.cpp"
-}
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_0, ____chimes_did_disable0); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -2269,8 +2269,8 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 static int module_init() {
     init_module(13383618805175514591UL, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (13383618805175514591UL + 1UL), (13383618805175514591UL + 2UL), (13383618805175514591UL + 3UL), (13383618805175514591UL + 4UL),
-                             (13383618805175514591UL + 3UL), (13383618805175514591UL + 35UL),
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (13383618805175514591UL + 1UL), (13383618805175514591UL + 2UL), (13383618805175514591UL + 3UL), (13383618805175514591UL + 4UL), (13383618805175514591UL + 5UL),
+                             (13383618805175514591UL + 3UL), (13383618805175514591UL + 39UL),
                              "main", "main", 0);
     return 0;
 }

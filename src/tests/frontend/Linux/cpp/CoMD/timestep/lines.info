@@ -1,8 +1,8 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 80 4 : { 1, 2, 3, 4 } {  } call:kineticEnergy {  }
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 39 12 : { 1, 2, 3, 4 } {  } call:profileStart {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 54 : { 386 } {  } call:sortAtomsInCell { sortAtomsInCell { 401 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 165 4 : {  } {  } call:haloExchange { haloExchange { 399, 401 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 162 4 : { 385 } {  } call:updateLinkCells { updateLinkCells { 401 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 87 4 : { 434 } { , 445 } call:NULL {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 140 4 : {  } {  } call:addRealParallel { addRealParallel { 447, 453 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 139 9 : { 446, 447, 448, 449, 450, 451, 452 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 54 : { 390 } {  } call:sortAtomsInCell { sortAtomsInCell { 405 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 165 4 : {  } {  } call:haloExchange { haloExchange { 403, 405 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 162 4 : { 389 } {  } call:updateLinkCells { updateLinkCells { 405 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 87 4 : { 438 } { , 449 } call:NULL {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 140 4 : {  } {  } call:addRealParallel { addRealParallel { 451, 457 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 139 9 : { 450, 451, 452, 453, 454, 455, 456 } {  } call:profileStart {  }

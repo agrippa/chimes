@@ -2,6 +2,7 @@
 #include "heap_allocation.h"
 #include "ptr_and_size.h"
 #include "chimes_common.h"
+#include "heap_tree.h"
 #include <map>
 #include <cstdarg>
 
@@ -49,11 +50,10 @@ cudaError_t cudaFree_wrapper(void *ptr, size_t group) {
 }
 
 void translate_cuda_pointers(void *d_arr, int nelems, int elem_size,
-        std::vector<int> ptr_offsets, map<void *, ptr_and_size *> *old_to_new) {
+        std::vector<int> ptr_offsets,
+        // map<void *, ptr_and_size *> *old_to_new) {
+        heap_tree *old_to_new) {
     int *h_ptr_offsets = (int *)malloc(sizeof(int) * ptr_offsets.size());
-    void **h_old = (void **)malloc(sizeof(void *) * old_to_new->size());
-    void **h_new = (void **)malloc(sizeof(void *) * old_to_new->size());
-    size_t *h_size = (size_t *)malloc(sizeof(size_t) * old_to_new->size());
 
     int *d_ptr_offsets;
     void **d_old, **d_new;
@@ -63,23 +63,17 @@ void translate_cuda_pointers(void *d_arr, int nelems, int elem_size,
         h_ptr_offsets[i] = ptr_offsets[i];
     }
 
-    int index = 0;
-    for (map<void *, ptr_and_size *>::iterator i = old_to_new->begin(),
-            e = old_to_new->end(); i != e; i++) {
-        void *old = i->first;
-        ptr_and_size *new_ptr = i->second;
-        h_old[index] = old;
-        h_new[index] = new_ptr->get_ptr();
-        h_size[index] = new_ptr->get_size();
-        index++;
-    }
+    void **h_old, **h_new;
+    size_t *h_size;
+    const int index = old_to_new->serialize(&h_old, &h_new, &h_size);
 
     CHECK(cudaMalloc((void **)&d_ptr_offsets, sizeof(int) * ptr_offsets.size()));
     CHECK(cudaMalloc((void **)&d_old, sizeof(void *) * index));
     CHECK(cudaMalloc((void **)&d_new, sizeof(void *) * index));
     CHECK(cudaMalloc((void **)&d_size, sizeof(size_t) * index));
 
-    CHECK(cudaMemcpy(d_ptr_offsets, h_ptr_offsets, sizeof(int) * ptr_offsets.size(), cudaMemcpyHostToDevice));
+    CHECK(cudaMemcpy(d_ptr_offsets, h_ptr_offsets,
+                sizeof(int) * ptr_offsets.size(), cudaMemcpyHostToDevice));
     CHECK(cudaMemcpy(d_old, h_old, sizeof(void *) * index, cudaMemcpyHostToDevice));
     CHECK(cudaMemcpy(d_new, h_new, sizeof(void *) * index, cudaMemcpyHostToDevice));
     CHECK(cudaMemcpy(d_size, h_size, sizeof(size_t) * index, cudaMemcpyHostToDevice));

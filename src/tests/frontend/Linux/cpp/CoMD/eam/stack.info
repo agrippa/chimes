@@ -2,6 +2,7 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c initEamPot|file|0 " i8* " 64 1 0 1 eamBcastPotential getMyRank
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c initEamPot|type|0 " i8* " 64 1 0 1 eamBcastPotential getMyRank
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c initEamPot|pot|0 " %struct.EamPotentialSt* " 64 1 0 1 eamBcastPotential getMyRank
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c initEamPot|____chimes_ret_var_0|0 " %struct.BasePotentialSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamForce|s|0 " %struct.SimFlatSt* " 64 1 0 1 getNeighborBoxes haloExchange initForceHaloExchange profileStart profileStop
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamForce|pot|0 " %struct.EamPotentialSt* " 64 1 0 1 getNeighborBoxes haloExchange initForceHaloExchange profileStart profileStop
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamForce|maxTotalAtoms|0 " i32 " 32 0 0 0
@@ -50,6 +51,7 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamForce|rhoTmp|1 " double " 64 0 0 1 eamForce
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamForce|dRho|1 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamForce|k|3 " i32 " 32 0 0 1 getNeighborBoxes
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamForce|____chimes_ret_var_1|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamPrint|file|0 " %struct._IO_FILE* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamPrint|pot|0 " %struct.BasePotentialSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c eamPrint|eamPot|0 " %struct.EamPotentialSt* " 64 1 0 0
@@ -122,6 +124,7 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c initInterpolationObject|data|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c initInterpolationObject|table|0 " %struct.InterpolationObjectSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c initInterpolationObject|ii|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c initInterpolationObject|____chimes_ret_var_2|0 " %struct.InterpolationObjectSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c notAlloyReady|callSite|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c bcastInterpolationObject|table|0 " %struct.InterpolationObjectSt** " 64 1 0 1 bcastParallel getMyRank
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/eam.c bcastInterpolationObject|buf|0 " %struct._buf_2_t = type { i32, double, double } " 192 0 1 _buf_2_t 0 1 bcastInterpolationObject

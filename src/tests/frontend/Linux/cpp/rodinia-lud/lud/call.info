@@ -1,31 +1,31 @@
-getopt_long main 50 17 0 0 147 177 199 6
-atoi main 60 24 0 197
-fprintf main 61 11 0 76 181
-fprintf main 62 11 0 76 182 79
+getopt_long main 50 17 0 0 151 181 203 6
+atoi main 60 24 0 201
+fprintf main 61 11 0 77 185
+fprintf main 62 11 0 77 186 80
 exit main 63 11 0 0
-fprintf main 65 11 0 76 183
-fprintf main 68 11 0 76 184
-fprintf main 71 11 0 76 182 79
+fprintf main 65 11 0 77 187
+fprintf main 68 11 0 77 188
+fprintf main 71 11 0 77 186 80
 exit main 73 11 0 0
-fprintf main 78 7 0 76 182 79
+fprintf main 78 7 0 77 186 80
 exit main 79 7 0 0
-printf main 83 7 0 186 197
-create_matrix_from_file main 84 13 0 9 197 4
-fprintf main 87 11 0 76 187 197
+printf main 83 7 0 190 201
+create_matrix_from_file main 84 13 0 9 201 4
+fprintf main 87 11 0 77 191 201
 exit main 88 11 0 0
-printf main 91 5 0 188
+printf main 91 5 0 192
 exit main 92 5 0 0
-printf main 96 5 0 189
-print_matrix main 97 5 0 116 0
-matrix_duplicate main 98 5 0 116 10 0
+printf main 96 5 0 193
+print_matrix main 97 5 0 117 0
+matrix_duplicate main 98 5 0 117 10 0
 stopwatch_start main 101 3 0 11
-lud_base main 102 3 0 116 0
+lud_base main 102 3 0 117 0
 stopwatch_stop main 103 3 0 11
 get_interval_by_sec main 104 37 0 11
-printf main 104 63 0 190 0
-printf main 107 5 0 191
-print_matrix main 108 5 0 116 0
-printf main 109 5 0 192
-lud_verify main 110 5 0 134 116 0
-free main 111 5 0 134
-free main 114 3 0 116
+printf main 104 63 0 194 0
+printf main 107 5 0 195
+print_matrix main 108 5 0 117 0
+printf main 109 5 0 196
+lud_verify main 110 5 0 135 117 0
+free main 111 5 0 135
+free main 114 3 0 117

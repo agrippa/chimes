@@ -3706,17 +3706,17 @@ typedef real8 Real_t ;
 # 94 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 inline real8 SQRT_npm(real8 arg);
 inline real8 SQRT_quick(real8 arg); inline real8 SQRT(real8 arg);
-inline real8 SQRT_resumable(real8 arg) {const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_13, ____chimes_did_disable0); return sqrt(arg) ; }
+inline real8 SQRT_resumable(real8 arg) {const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (sqrt(arg)); rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_13, ____chimes_did_disable0); return ____chimes_ret_var_0; ; rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_13, ____chimes_did_disable0); }
 # 95 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 96 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 inline real8 CBRT_npm(real8 arg);
 inline real8 CBRT_quick(real8 arg); inline real8 CBRT(real8 arg);
-inline real8 CBRT_resumable(real8 arg) {const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_42, ____chimes_did_disable1); return cbrt(arg) ; }
+inline real8 CBRT_resumable(real8 arg) {const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (cbrt(arg)); rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_42, ____chimes_did_disable1); return ____chimes_ret_var_1; ; rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_42, ____chimes_did_disable1); }
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 inline real8 FABS_npm(real8 arg);
 inline real8 FABS_quick(real8 arg); inline real8 FABS(real8 arg);
-inline real8 FABS_resumable(real8 arg) {const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_8, ____chimes_did_disable2); return fabs(arg) ; }
+inline real8 FABS_resumable(real8 arg) {const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (fabs(arg)); rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_8, ____chimes_did_disable2); return ____chimes_ret_var_2; ; rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_8, ____chimes_did_disable2); }
 # 107 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 107 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 struct Mesh {
@@ -4182,7 +4182,7 @@ void InitStressTermsForElems_resumable(Index_t numElem,
 # 526 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                              Real_t *sigxx, Real_t *sigyy, Real_t *sigzz)
 # 527 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable8 = new_stack((void *)(&InitStressTermsForElems), "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, 4, 0, (size_t)(0UL), (size_t)(6311287552475753244UL), (size_t)(6311287552475753245UL), (size_t)(6311287552475753246UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&InitStressTermsForElems), "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, 4, 0, (size_t)(0UL), (size_t)(6311287552475753268UL), (size_t)(6311287552475753269UL), (size_t)(6311287552475753270UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 528 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 529 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 530 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -4210,7 +4210,7 @@ void CalcElemShapeFunctionDerivatives_resumable( const Real_t* const x,
 # 541 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                                        Real_t* const volume )
 # 542 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable9 = new_stack((void *)(&CalcElemShapeFunctionDerivatives), "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, 5, 0, (size_t)(6311287552475752043UL), (size_t)(6311287552475752044UL), (size_t)(6311287552475752045UL), (size_t)(6311287552475752046UL), (size_t)(6311287552475752047UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&CalcElemShapeFunctionDerivatives), "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, 5, 0, (size_t)(6311287552475752063UL), (size_t)(6311287552475752064UL), (size_t)(6311287552475752065UL), (size_t)(6311287552475752066UL), (size_t)(6311287552475752067UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 543 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    Real_t x0; x0 = (x[0]) ; Real_t x1; x1 = (x[1]) ;
 # 544 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -4376,7 +4376,7 @@ void SumElemFaceNormal_resumable(Real_t *normalX0, Real_t *normalY0, Real_t *nor
 # 633 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                        const Real_t x3, const Real_t y3, const Real_t z3)
 # 634 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable10 = new_stack((void *)(&SumElemFaceNormal), "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, 24, 0, (size_t)(6311287552475758943UL), (size_t)(6311287552475758944UL), (size_t)(6311287552475758945UL), (size_t)(6311287552475758946UL), (size_t)(6311287552475758947UL), (size_t)(6311287552475758948UL), (size_t)(6311287552475758949UL), (size_t)(6311287552475758950UL), (size_t)(6311287552475758951UL), (size_t)(6311287552475758952UL), (size_t)(6311287552475758953UL), (size_t)(6311287552475758954UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable10 = new_stack((void *)(&SumElemFaceNormal), "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, 24, 0, (size_t)(6311287552475758971UL), (size_t)(6311287552475758972UL), (size_t)(6311287552475758973UL), (size_t)(6311287552475758974UL), (size_t)(6311287552475758975UL), (size_t)(6311287552475758976UL), (size_t)(6311287552475758977UL), (size_t)(6311287552475758978UL), (size_t)(6311287552475758979UL), (size_t)(6311287552475758980UL), (size_t)(6311287552475758981UL), (size_t)(6311287552475758982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 635 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t bisectX0; bisectX0 = (Real_t(0.5) * (x3 + x2 - x1 - x0)) ;
 # 636 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -4442,7 +4442,7 @@ void CalcElemNodeNormals_resumable(Real_t pfx[8],
 # 667 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                          const Real_t z[8])
 # 668 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable11 = new_stack((void *)(&CalcElemNodeNormals), "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, 6, 0, (size_t)(6311287552475758340UL), (size_t)(6311287552475758341UL), (size_t)(6311287552475758342UL), (size_t)(6311287552475758343UL), (size_t)(6311287552475758344UL), (size_t)(6311287552475758345UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&CalcElemNodeNormals), "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, 6, 0, (size_t)(6311287552475758368UL), (size_t)(6311287552475758369UL), (size_t)(6311287552475758370UL), (size_t)(6311287552475758371UL), (size_t)(6311287552475758372UL), (size_t)(6311287552475758373UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 669 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < 8 ; ++i) {
 # 670 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -4493,7 +4493,7 @@ void SumElemStressesToNodeForces_resumable( const Real_t B[][8],
 # 725 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                                   Real_t* const fz )
 # 726 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable12 = new_stack((void *)(&SumElemStressesToNodeForces), "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, 7, 0, (size_t)(6311287552475758704UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475758708UL), (size_t)(6311287552475758709UL), (size_t)(6311287552475758710UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable12 = new_stack((void *)(&SumElemStressesToNodeForces), "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, 7, 0, (size_t)(6311287552475758732UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475758736UL), (size_t)(6311287552475758737UL), (size_t)(6311287552475758738UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 727 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    Real_t pfx0; pfx0 = (B[0][0]) ; Real_t pfx1; pfx1 = (B[0][1]) ;
 # 728 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -4585,7 +4585,7 @@ void IntegrateStressForElems_resumable( Index_t numElem,
 # 773 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                               Real_t *determ)
 # 774 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable13 = new_stack((void *)(&IntegrateStressForElems), "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, 5, 0, (size_t)(0UL), (size_t)(6311287552475753438UL), (size_t)(6311287552475753439UL), (size_t)(6311287552475753440UL), (size_t)(6311287552475753441UL)) ; Real_t fz_local[8];
+{const int ____chimes_did_disable13 = new_stack((void *)(&IntegrateStressForElems), "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, 5, 0, (size_t)(0UL), (size_t)(6311287552475753462UL), (size_t)(6311287552475753463UL), (size_t)(6311287552475753464UL), (size_t)(6311287552475753465UL)) ; Real_t fz_local[8];
 Real_t fy_local[8];
 Real_t fx_local[8];
 Real_t z_local[8];
@@ -4675,7 +4675,7 @@ void CollectDomainNodesToElemNodes_resumable(const Index_t* elemToNode,
 # 822 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                                    Real_t elemZ[8])
 # 823 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable14 = new_stack((void *)(&CollectDomainNodesToElemNodes), "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, 4, 0, (size_t)(6311287552475753935UL), (size_t)(6311287552475753936UL), (size_t)(6311287552475753937UL), (size_t)(6311287552475753938UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable14 = new_stack((void *)(&CollectDomainNodesToElemNodes), "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, 4, 0, (size_t)(6311287552475753959UL), (size_t)(6311287552475753960UL), (size_t)(6311287552475753961UL), (size_t)(6311287552475753962UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 824 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Index_t nd0i; nd0i = (elemToNode[0]) ;
 # 825 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -4766,7 +4766,7 @@ void VoluDer_resumable(const Real_t x0, const Real_t x1, const Real_t x2,
 # 869 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
              Real_t* dvdx, Real_t* dvdy, Real_t* dvdz)
 # 870 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable15 = new_stack((void *)(&VoluDer), "VoluDer", &____must_manage_VoluDer, 21, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475757925UL), (size_t)(6311287552475757926UL), (size_t)(6311287552475757927UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable15 = new_stack((void *)(&VoluDer), "VoluDer", &____must_manage_VoluDer, 21, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475757953UL), (size_t)(6311287552475757954UL), (size_t)(6311287552475757955UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 871 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t twelfth; twelfth = (Real_t(1.) / Real_t(12.)) ;
 # 872 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -4822,7 +4822,7 @@ void CalcElemVolumeDerivative_resumable(Real_t dvdx[8],
 # 898 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                               const Real_t z[8])
 # 899 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable16 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(6311287552475754446UL), (size_t)(6311287552475754447UL), (size_t)(6311287552475754448UL), (size_t)(6311287552475754449UL), (size_t)(6311287552475754450UL), (size_t)(6311287552475754451UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable16 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(6311287552475754470UL), (size_t)(6311287552475754471UL), (size_t)(6311287552475754472UL), (size_t)(6311287552475754473UL), (size_t)(6311287552475754474UL), (size_t)(6311287552475754475UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 900 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    ({ calling_npm("VoluDer", 0); VoluDer_npm(x[1], x[2], x[3], x[4], x[5], x[7], y[1], y[2], y[3], y[4], y[5], y[7], z[1], z[2], z[3], z[4], z[5], z[7], &dvdx[0], &dvdy[0], &dvdz[0]); });
 # 904 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -4857,7 +4857,7 @@ void CalcElemFBHourglassForce_resumable(Real_t *xd, Real_t *yd, Real_t *zd, Real
 # 939 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                               Real_t *hgfx, Real_t *hgfy, Real_t *hgfz )
 # 940 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable17 = new_stack((void *)(&CalcElemFBHourglassForce), "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, 15, 0, (size_t)(6311287552475757660UL), (size_t)(6311287552475757661UL), (size_t)(6311287552475757662UL), (size_t)(6311287552475757663UL), (size_t)(6311287552475757664UL), (size_t)(6311287552475757665UL), (size_t)(6311287552475757666UL), (size_t)(6311287552475757667UL), (size_t)(6311287552475757668UL), (size_t)(6311287552475757669UL), (size_t)(6311287552475757670UL), (size_t)(0UL), (size_t)(6311287552475757672UL), (size_t)(6311287552475757673UL), (size_t)(6311287552475757674UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable17 = new_stack((void *)(&CalcElemFBHourglassForce), "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, 15, 0, (size_t)(6311287552475757688UL), (size_t)(6311287552475757689UL), (size_t)(6311287552475757690UL), (size_t)(6311287552475757691UL), (size_t)(6311287552475757692UL), (size_t)(6311287552475757693UL), (size_t)(6311287552475757694UL), (size_t)(6311287552475757695UL), (size_t)(6311287552475757696UL), (size_t)(6311287552475757697UL), (size_t)(6311287552475757698UL), (size_t)(0UL), (size_t)(6311287552475757700UL), (size_t)(6311287552475757701UL), (size_t)(6311287552475757702UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 941 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Index_t i00; i00 = (0) ;
 # 942 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -5152,7 +5152,7 @@ void CalcFBHourglassForceForElems_resumable(Real_t *determ,
 # 1121 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
             Real_t hourg)
 # 1122 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable18 = new_stack((void *)(&CalcFBHourglassForceForElems), "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, 8, 0, (size_t)(6311287552475755755UL), (size_t)(6311287552475755756UL), (size_t)(6311287552475755757UL), (size_t)(6311287552475755758UL), (size_t)(6311287552475755759UL), (size_t)(6311287552475755760UL), (size_t)(6311287552475755761UL), (size_t)(0UL)) ; Real_t zd1[8];
+{const int ____chimes_did_disable18 = new_stack((void *)(&CalcFBHourglassForceForElems), "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, 8, 0, (size_t)(6311287552475755779UL), (size_t)(6311287552475755780UL), (size_t)(6311287552475755781UL), (size_t)(6311287552475755782UL), (size_t)(6311287552475755783UL), (size_t)(6311287552475755784UL), (size_t)(6311287552475755785UL), (size_t)(0UL)) ; Real_t zd1[8];
 Real_t yd1[8];
 Real_t xd1[8];
 Real_t hourgam7[4];
@@ -5494,7 +5494,7 @@ static inline
 # 1322 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 void CalcHourglassControlForElems_resumable(Real_t determ[], Real_t hgcoef)
 # 1323 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable19 = new_stack((void *)(&CalcHourglassControlForElems), "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, 2, 0, (size_t)(6311287552475753680UL), (size_t)(0UL)) ; Real_t pfz[8];
+{const int ____chimes_did_disable19 = new_stack((void *)(&CalcHourglassControlForElems), "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, 2, 0, (size_t)(6311287552475753704UL), (size_t)(0UL)) ; Real_t pfz[8];
 Real_t pfy[8];
 Real_t pfx[8];
 Real_t z1[8];
@@ -5512,17 +5512,17 @@ Real_t x1[8];
 # 1328 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Index_t numElem8; numElem8 = (numElem * 8) ;
 # 1329 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *dvdx; dvdx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753486UL, 0, 0)) ;
+    Real_t *dvdx; dvdx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753510UL, 0, 0)) ;
 # 1330 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *dvdy; dvdy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753493UL, 0, 0)) ;
+    Real_t *dvdy; dvdy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753517UL, 0, 0)) ;
 # 1331 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *dvdz; dvdz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753500UL, 0, 0)) ;
+    Real_t *dvdz; dvdz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753524UL, 0, 0)) ;
 # 1332 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *x8n; x8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753507UL, 0, 0)) ;
+    Real_t *x8n; x8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753531UL, 0, 0)) ;
 # 1333 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *y8n; y8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753514UL, 0, 0)) ;
+    Real_t *y8n; y8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753538UL, 0, 0)) ;
 # 1334 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *z8n; z8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753521UL, 0, 0)) ;
+    Real_t *z8n; z8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753545UL, 0, 0)) ;
 # 1335 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1336 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1337 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -5578,17 +5578,17 @@ Real_t x1[8];
    }
 # 1367 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1368 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(z8n, 6311287552475753521UL) ;
+   free_wrapper(z8n, 6311287552475753545UL) ;
 # 1369 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(y8n, 6311287552475753514UL) ;
+   free_wrapper(y8n, 6311287552475753538UL) ;
 # 1370 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(x8n, 6311287552475753507UL) ;
+   free_wrapper(x8n, 6311287552475753531UL) ;
 # 1371 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(dvdz, 6311287552475753500UL) ;
+   free_wrapper(dvdz, 6311287552475753524UL) ;
 # 1372 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(dvdy, 6311287552475753493UL) ;
+   free_wrapper(dvdy, 6311287552475753517UL) ;
 # 1373 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(dvdx, 6311287552475753486UL) ;
+   free_wrapper(dvdx, 6311287552475753510UL) ;
 # 1374 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1375 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_38, ____chimes_did_disable19); return ;
@@ -5610,13 +5610,13 @@ void CalcVolumeForceForElems_resumable()
 # 1383 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
        Real_t hgcoef; hgcoef = (mesh.hgcoef) ;
 # 1384 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       Real_t *sigxx; sigxx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0)) ;
+       Real_t *sigxx; sigxx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753209UL, 0, 0)) ;
 # 1385 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       Real_t *sigyy; sigyy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753182UL, 0, 0)) ;
+       Real_t *sigyy; sigyy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753206UL, 0, 0)) ;
 # 1386 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       Real_t *sigzz; sigzz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753179UL, 0, 0)) ;
+       Real_t *sigzz; sigzz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753203UL, 0, 0)) ;
 # 1387 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       Real_t *determ; determ = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753161UL, 0, 0)) ;
+       Real_t *determ; determ = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0)) ;
 # 1388 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1389 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1390 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -5643,13 +5643,13 @@ void CalcVolumeForceForElems_resumable()
       ({ calling_npm("CalcHourglassControlForElems", 0); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
 # 1404 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1405 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(determ, 6311287552475753161UL) ;
+      free_wrapper(determ, 6311287552475753185UL) ;
 # 1406 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(sigzz, 6311287552475753179UL) ;
+      free_wrapper(sigzz, 6311287552475753203UL) ;
 # 1407 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(sigyy, 6311287552475753182UL) ;
+      free_wrapper(sigyy, 6311287552475753206UL) ;
 # 1408 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(sigxx, 6311287552475753185UL) ;
+      free_wrapper(sigxx, 6311287552475753209UL) ;
 # 1409 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    }
 # 1410 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -5961,9 +5961,9 @@ Real_t CalcElemVolume_resumable( const Real_t x0, const Real_t x1,
   volume *= twelveth;
 # 1592 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1593 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-  rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_48, ____chimes_did_disable27); return volume ;
+   Real_t ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (volume); rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_48, ____chimes_did_disable27); return ____chimes_ret_var_3; ;
 # 1594 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-}
+rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_48, ____chimes_did_disable27); }
 # 1595 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1596 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 static inline Real_t CalcElemVolumeWrapper_npm( const Real_t x[8], const Real_t y[8], const Real_t z[8] );
@@ -5972,11 +5972,11 @@ static inline
 # 1597 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 Real_t CalcElemVolumeWrapper_resumable( const Real_t x[8], const Real_t y[8], const Real_t z[8] )
 # 1598 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeWrapper), "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, 3, 0, (size_t)(6311287552475746910UL), (size_t)(6311287552475746911UL), (size_t)(6311287552475746912UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeWrapper), "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, 3, 0, (size_t)(6311287552475746918UL), (size_t)(6311287552475746919UL), (size_t)(6311287552475746920UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1599 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); return ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); });
+ Real_t ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); })); rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); return ____chimes_ret_var_4; ;
 # 1602 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-}
+rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); }
 # 1603 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1604 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 static inline Real_t AreaFace_npm( const Real_t x0, const Real_t x1, const Real_t x2, const Real_t x3, const Real_t y0, const Real_t y1, const Real_t y2, const Real_t y3, const Real_t z0, const Real_t z1, const Real_t z2, const Real_t z3);
@@ -6011,9 +6011,9 @@ Real_t AreaFace_resumable( const Real_t x0, const Real_t x1,
 # 1618 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t area; area = ((fx * fx + fy * fy + fz * fz) * (gx * gx + gy * gy + gz * gz) - (fx * gx + fy * gy + fz * gz) * (fx * gx + fy * gy + fz * gz)) ;
 # 1623 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_29, ____chimes_did_disable29); return area ;
+    Real_t ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (area); rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_29, ____chimes_did_disable29); return ____chimes_ret_var_5; ;
 # 1624 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-}
+rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_29, ____chimes_did_disable29); }
 # 1625 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1626 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 static inline Real_t CalcElemCharacteristicLength_npm( const Real_t x[8], const Real_t y[8], const Real_t z[8], const Real_t volume);
@@ -6028,7 +6028,7 @@ Real_t CalcElemCharacteristicLength_resumable( const Real_t x[8],
 # 1630 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                                      const Real_t volume)
 # 1631 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable30 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 0, (size_t)(6311287552475751130UL), (size_t)(6311287552475751142UL), (size_t)(6311287552475751154UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable30 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 0, (size_t)(6311287552475751147UL), (size_t)(6311287552475751159UL), (size_t)(6311287552475751171UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1632 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    Real_t a; Real_t charLength; charLength = (0.) ;
 # 1633 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -6066,9 +6066,9 @@ Real_t CalcElemCharacteristicLength_resumable( const Real_t x[8],
    charLength = 4.0 * volume / ({ calling_npm("SQRT", 0); SQRT_npm(charLength); });
 # 1665 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1666 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); return charLength;
+    Real_t ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (charLength); rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); return ____chimes_ret_var_6; ;
 # 1667 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-}
+rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); }
 # 1668 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1669 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 static inline void CalcElemVelocityGrandient_npm( const Real_t* const xvel, const Real_t* const yvel, const Real_t* const zvel, Real_t b[][8], const Real_t detJ, Real_t* const d );
@@ -6087,7 +6087,7 @@ void CalcElemVelocityGrandient_resumable( const Real_t* const xvel,
 # 1675 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                                 Real_t* const d )
 # 1676 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemVelocityGrandient), "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, 6, 0, (size_t)(6311287552475752579UL), (size_t)(6311287552475752580UL), (size_t)(6311287552475752581UL), (size_t)(6311287552475752582UL), (size_t)(0UL), (size_t)(6311287552475752584UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemVelocityGrandient), "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, 6, 0, (size_t)(6311287552475752599UL), (size_t)(6311287552475752600UL), (size_t)(6311287552475752601UL), (size_t)(6311287552475752602UL), (size_t)(0UL), (size_t)(6311287552475752604UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1677 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    Real_t inv_detJ; inv_detJ = (Real_t(1.) / detJ) ;
 # 1678 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -6984,7 +6984,7 @@ void CalcPressureForElems_resumable(Real_t* p_new, Real_t* bvc,
 # 2193 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                           Index_t length)
 # 2194 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable38 = new_stack((void *)(&CalcPressureForElems), "CalcPressureForElems", &____must_manage_CalcPressureForElems, 10, 0, (size_t)(6311287552475749176UL), (size_t)(6311287552475749177UL), (size_t)(6311287552475749178UL), (size_t)(6311287552475749179UL), (size_t)(6311287552475749180UL), (size_t)(6311287552475749181UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable38 = new_stack((void *)(&CalcPressureForElems), "CalcPressureForElems", &____must_manage_CalcPressureForElems, 10, 0, (size_t)(6311287552475749192UL), (size_t)(6311287552475749193UL), (size_t)(6311287552475749194UL), (size_t)(6311287552475749195UL), (size_t)(6311287552475749196UL), (size_t)(6311287552475749197UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 2195 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t c1s; c1s = (Real_t(2.) / Real_t(3.)) ;
 # 2196 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -7039,11 +7039,11 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2225 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                         Index_t length)
 # 2226 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable39 = new_stack((void *)(&CalcEnergyForElems), "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, 23, 0, (size_t)(6311287552475748908UL), (size_t)(6311287552475748909UL), (size_t)(6311287552475748910UL), (size_t)(6311287552475748911UL), (size_t)(6311287552475748912UL), (size_t)(6311287552475748913UL), (size_t)(6311287552475748914UL), (size_t)(6311287552475748915UL), (size_t)(6311287552475748916UL), (size_t)(6311287552475748917UL), (size_t)(6311287552475748918UL), (size_t)(6311287552475748919UL), (size_t)(6311287552475748920UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475748926UL), (size_t)(6311287552475748927UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable39 = new_stack((void *)(&CalcEnergyForElems), "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, 23, 0, (size_t)(6311287552475748924UL), (size_t)(6311287552475748925UL), (size_t)(6311287552475748926UL), (size_t)(6311287552475748927UL), (size_t)(6311287552475748928UL), (size_t)(6311287552475748929UL), (size_t)(6311287552475748930UL), (size_t)(6311287552475748931UL), (size_t)(6311287552475748932UL), (size_t)(6311287552475748933UL), (size_t)(6311287552475748934UL), (size_t)(6311287552475748935UL), (size_t)(6311287552475748936UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475748942UL), (size_t)(6311287552475748943UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 2227 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t sixth; sixth = (Real_t(1.) / Real_t(6.)) ;
 # 2228 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *pHalfStep; pHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475748346UL, 0, 0)) ;
+    Real_t *pHalfStep; pHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475748362UL, 0, 0)) ;
 # 2229 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2230 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < length ; ++i) {
@@ -7215,7 +7215,7 @@ void CalcEnergyForElems_resumable(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    } }
 # 2331 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2332 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(pHalfStep, 6311287552475748346UL) ;
+   free_wrapper(pHalfStep, 6311287552475748362UL) ;
 # 2333 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2334 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_19, ____chimes_did_disable39); return ;
@@ -7233,7 +7233,7 @@ void CalcSoundSpeedForElems_resumable(Real_t *vnewc, Real_t rho0, Real_t *enewc,
 # 2340 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                             Real_t *bvc, Real_t ss4o3, Index_t nz)
 # 2341 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable40 = new_stack((void *)(&CalcSoundSpeedForElems), "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, 8, 0, (size_t)(6311287552475749029UL), (size_t)(0UL), (size_t)(6311287552475749031UL), (size_t)(6311287552475749032UL), (size_t)(6311287552475749033UL), (size_t)(6311287552475749034UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable40 = new_stack((void *)(&CalcSoundSpeedForElems), "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, 8, 0, (size_t)(6311287552475749045UL), (size_t)(0UL), (size_t)(6311287552475749047UL), (size_t)(6311287552475749048UL), (size_t)(6311287552475749049UL), (size_t)(6311287552475749050UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 2342 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < nz ; ++i) {
 # 2343 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -7260,7 +7260,7 @@ static inline
 # 2354 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 void EvalEOSForElems_resumable(Real_t *vnewc, Index_t length)
 # 2355 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable41 = new_stack((void *)(&EvalEOSForElems), "EvalEOSForElems", &____must_manage_EvalEOSForElems, 2, 0, (size_t)(6311287552475748256UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable41 = new_stack((void *)(&EvalEOSForElems), "EvalEOSForElems", &____must_manage_EvalEOSForElems, 2, 0, (size_t)(6311287552475748272UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 2356 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t e_cut; e_cut = (mesh.e_cut) ;
 # 2357 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -7282,33 +7282,33 @@ void EvalEOSForElems_resumable(Real_t *vnewc, Index_t length)
     Real_t rho0; rho0 = (mesh.refdens) ;
 # 2366 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2367 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *e_old; e_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747718UL, 0, 0)) ;
+    Real_t *e_old; e_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747734UL, 0, 0)) ;
 # 2368 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *delvc; delvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747725UL, 0, 0)) ;
+    Real_t *delvc; delvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747741UL, 0, 0)) ;
 # 2369 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *p_old; p_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747732UL, 0, 0)) ;
+    Real_t *p_old; p_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747748UL, 0, 0)) ;
 # 2370 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *q_old; q_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747739UL, 0, 0)) ;
+    Real_t *q_old; q_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747755UL, 0, 0)) ;
 # 2371 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *compression; compression = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747746UL, 0, 0)) ;
+    Real_t *compression; compression = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747762UL, 0, 0)) ;
 # 2372 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *compHalfStep; compHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747753UL, 0, 0)) ;
+    Real_t *compHalfStep; compHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747769UL, 0, 0)) ;
 # 2373 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *qq; qq = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747760UL, 0, 0)) ;
+    Real_t *qq; qq = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747776UL, 0, 0)) ;
 # 2374 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *ql; ql = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747767UL, 0, 0)) ;
+    Real_t *ql; ql = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747783UL, 0, 0)) ;
 # 2375 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *work; work = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747774UL, 0, 0)) ;
+    Real_t *work; work = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747790UL, 0, 0)) ;
 # 2376 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *p_new; p_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747781UL, 0, 0)) ;
+    Real_t *p_new; p_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747797UL, 0, 0)) ;
 # 2377 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *e_new; e_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747788UL, 0, 0)) ;
+    Real_t *e_new; e_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747804UL, 0, 0)) ;
 # 2378 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *q_new; q_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747795UL, 0, 0)) ;
+    Real_t *q_new; q_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747811UL, 0, 0)) ;
 # 2379 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *bvc; bvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747802UL, 0, 0)) ;
+    Real_t *bvc; bvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747818UL, 0, 0)) ;
 # 2380 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *pbvc; pbvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747809UL, 0, 0)) ;
+    Real_t *pbvc; pbvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747825UL, 0, 0)) ;
 # 2381 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2382 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2383 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -7442,33 +7442,33 @@ void EvalEOSForElems_resumable(Real_t *vnewc, Index_t length)
    ({ calling_npm("CalcSoundSpeedForElems", 0); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
 # 2459 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2460 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(pbvc, 6311287552475747809UL) ;
+   free_wrapper(pbvc, 6311287552475747825UL) ;
 # 2461 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(bvc, 6311287552475747802UL) ;
+   free_wrapper(bvc, 6311287552475747818UL) ;
 # 2462 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(q_new, 6311287552475747795UL) ;
+   free_wrapper(q_new, 6311287552475747811UL) ;
 # 2463 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(e_new, 6311287552475747788UL) ;
+   free_wrapper(e_new, 6311287552475747804UL) ;
 # 2464 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(p_new, 6311287552475747781UL) ;
+   free_wrapper(p_new, 6311287552475747797UL) ;
 # 2465 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(work, 6311287552475747774UL) ;
+   free_wrapper(work, 6311287552475747790UL) ;
 # 2466 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(ql, 6311287552475747767UL) ;
+   free_wrapper(ql, 6311287552475747783UL) ;
 # 2467 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(qq, 6311287552475747760UL) ;
+   free_wrapper(qq, 6311287552475747776UL) ;
 # 2468 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(compHalfStep, 6311287552475747753UL) ;
+   free_wrapper(compHalfStep, 6311287552475747769UL) ;
 # 2469 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(compression, 6311287552475747746UL) ;
+   free_wrapper(compression, 6311287552475747762UL) ;
 # 2470 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(q_old, 6311287552475747739UL) ;
+   free_wrapper(q_old, 6311287552475747755UL) ;
 # 2471 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(p_old, 6311287552475747732UL) ;
+   free_wrapper(p_old, 6311287552475747748UL) ;
 # 2472 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(delvc, 6311287552475747725UL) ;
+   free_wrapper(delvc, 6311287552475747741UL) ;
 # 2473 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(e_old, 6311287552475747718UL) ;
+   free_wrapper(e_old, 6311287552475747734UL) ;
 # 2474 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_18, ____chimes_did_disable41); }
 # 2475 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -7491,7 +7491,7 @@ void ApplyMaterialPropertiesForElems_resumable()
 # 2484 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
      Real_t eosvmax; eosvmax = (mesh.eosvmax) ;
 # 2485 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-     Real_t *vnewc; vnewc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747458UL, 0, 0)) ;
+     Real_t *vnewc; vnewc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747474UL, 0, 0)) ;
 # 2486 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2487 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     { Index_t i; for ( i = (0) ; i<length ; ++i) {
@@ -7555,7 +7555,7 @@ void ApplyMaterialPropertiesForElems_resumable()
     ({ calling_npm("EvalEOSForElems", 0); EvalEOSForElems_npm(vnewc, length); });
 # 2523 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2524 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    free_wrapper(vnewc, 6311287552475747458UL) ;
+    free_wrapper(vnewc, 6311287552475747474UL) ;
 # 2525 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2526 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
   }
@@ -7796,7 +7796,7 @@ rm_stack(false, 0UL, "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, _
 int main_quick(int argc, char *argv[]); int main(int argc, char *argv[]);
 int main_resumable(int argc, char *argv[])
 # 2661 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable49 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(6311287552475746825UL)) ; timeval end;
+{const int ____chimes_did_disable49 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(6311287552475746829UL)) ; timeval end;
 timeval start;
 Real_t z_local[8];
 Real_t y_local[8];
@@ -8246,18 +8246,18 @@ Index_t edgeElems;
 # 2929 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2930 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2931 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable49); return 0 ;
+    int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable49); return ____chimes_ret_var_7; ;
 # 2932 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-}
-inline real8 SQRT_quick(real8 arg) {const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_13, ____chimes_did_disable0); return sqrt(arg) ; }
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable49); }
+inline real8 SQRT_quick(real8 arg) {const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)) ; ; ; double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (sqrt(arg)); rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_13, ____chimes_did_disable0); return ____chimes_ret_var_0; ; rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_13, ____chimes_did_disable0); }
 
 inline real8 SQRT(real8 arg) { return (____chimes_replaying ? SQRT_resumable(arg) : SQRT_quick(arg)); }
 
-inline real8 CBRT_quick(real8 arg) {const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_42, ____chimes_did_disable1); return cbrt(arg) ; }
+inline real8 CBRT_quick(real8 arg) {const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)) ; ; ; double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (cbrt(arg)); rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_42, ____chimes_did_disable1); return ____chimes_ret_var_1; ; rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_42, ____chimes_did_disable1); }
 
 inline real8 CBRT(real8 arg) { return (____chimes_replaying ? CBRT_resumable(arg) : CBRT_quick(arg)); }
 
-inline real8 FABS_quick(real8 arg) {const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)) ; ; ; rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_8, ____chimes_did_disable2); return fabs(arg) ; }
+inline real8 FABS_quick(real8 arg) {const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)) ; ; ; double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (fabs(arg)); rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_8, ____chimes_did_disable2); return ____chimes_ret_var_2; ; rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_8, ____chimes_did_disable2); }
 
 inline real8 FABS(real8 arg) { return (____chimes_replaying ? FABS_resumable(arg) : FABS_quick(arg)); }
 
@@ -8517,7 +8517,7 @@ void InitStressTermsForElems_quick(Index_t numElem,
 # 526 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                              Real_t *sigxx, Real_t *sigyy, Real_t *sigzz)
 # 527 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable8 = new_stack((void *)(&InitStressTermsForElems), "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, 4, 0, (size_t)(0UL), (size_t)(6311287552475753244UL), (size_t)(6311287552475753245UL), (size_t)(6311287552475753246UL)) ; ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&InitStressTermsForElems), "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, 4, 0, (size_t)(0UL), (size_t)(6311287552475753268UL), (size_t)(6311287552475753269UL), (size_t)(6311287552475753270UL)) ; ; ;
 # 528 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 529 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 530 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -8548,7 +8548,7 @@ void CalcElemShapeFunctionDerivatives_quick( const Real_t* const x,
 # 541 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                                        Real_t* const volume )
 # 542 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable9 = new_stack((void *)(&CalcElemShapeFunctionDerivatives), "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, 5, 0, (size_t)(6311287552475752043UL), (size_t)(6311287552475752044UL), (size_t)(6311287552475752045UL), (size_t)(6311287552475752046UL), (size_t)(6311287552475752047UL)) ; ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&CalcElemShapeFunctionDerivatives), "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, 5, 0, (size_t)(6311287552475752063UL), (size_t)(6311287552475752064UL), (size_t)(6311287552475752065UL), (size_t)(6311287552475752066UL), (size_t)(6311287552475752067UL)) ; ; ;
 # 543 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    Real_t x0; x0 = (x[0]) ; Real_t x1; x1 = (x[1]) ;
 # 544 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -8723,7 +8723,7 @@ void SumElemFaceNormal_quick(Real_t *normalX0, Real_t *normalY0, Real_t *normalZ
 # 633 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                        const Real_t x3, const Real_t y3, const Real_t z3)
 # 634 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable10 = new_stack((void *)(&SumElemFaceNormal), "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, 24, 0, (size_t)(6311287552475758943UL), (size_t)(6311287552475758944UL), (size_t)(6311287552475758945UL), (size_t)(6311287552475758946UL), (size_t)(6311287552475758947UL), (size_t)(6311287552475758948UL), (size_t)(6311287552475758949UL), (size_t)(6311287552475758950UL), (size_t)(6311287552475758951UL), (size_t)(6311287552475758952UL), (size_t)(6311287552475758953UL), (size_t)(6311287552475758954UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable10 = new_stack((void *)(&SumElemFaceNormal), "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, 24, 0, (size_t)(6311287552475758971UL), (size_t)(6311287552475758972UL), (size_t)(6311287552475758973UL), (size_t)(6311287552475758974UL), (size_t)(6311287552475758975UL), (size_t)(6311287552475758976UL), (size_t)(6311287552475758977UL), (size_t)(6311287552475758978UL), (size_t)(6311287552475758979UL), (size_t)(6311287552475758980UL), (size_t)(6311287552475758981UL), (size_t)(6311287552475758982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 635 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t bisectX0; bisectX0 = (Real_t(0.5) * (x3 + x2 - x1 - x0)) ;
 # 636 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -8804,7 +8804,7 @@ void CalcElemNodeNormals_quick(Real_t pfx[8],
 # 667 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                          const Real_t z[8])
 # 668 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable11 = new_stack((void *)(&CalcElemNodeNormals), "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, 6, 0, (size_t)(6311287552475758340UL), (size_t)(6311287552475758341UL), (size_t)(6311287552475758342UL), (size_t)(6311287552475758343UL), (size_t)(6311287552475758344UL), (size_t)(6311287552475758345UL)) ; ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&CalcElemNodeNormals), "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, 6, 0, (size_t)(6311287552475758368UL), (size_t)(6311287552475758369UL), (size_t)(6311287552475758370UL), (size_t)(6311287552475758371UL), (size_t)(6311287552475758372UL), (size_t)(6311287552475758373UL)) ; ; ;
 # 669 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < 8 ; ++i) {
 # 670 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -8866,7 +8866,7 @@ void SumElemStressesToNodeForces_quick( const Real_t B[][8],
 # 725 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                                   Real_t* const fz )
 # 726 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable12 = new_stack((void *)(&SumElemStressesToNodeForces), "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, 7, 0, (size_t)(6311287552475758704UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475758708UL), (size_t)(6311287552475758709UL), (size_t)(6311287552475758710UL)) ; ; ;
+{const int ____chimes_did_disable12 = new_stack((void *)(&SumElemStressesToNodeForces), "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, 7, 0, (size_t)(6311287552475758732UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475758736UL), (size_t)(6311287552475758737UL), (size_t)(6311287552475758738UL)) ; ; ;
 # 727 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    Real_t pfx0; pfx0 = (B[0][0]) ; Real_t pfx1; pfx1 = (B[0][1]) ;
 # 728 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -8971,7 +8971,7 @@ void IntegrateStressForElems_quick( Index_t numElem,
 # 773 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                               Real_t *determ)
 # 774 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable13 = new_stack((void *)(&IntegrateStressForElems), "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, 5, 0, (size_t)(0UL), (size_t)(6311287552475753438UL), (size_t)(6311287552475753439UL), (size_t)(6311287552475753440UL), (size_t)(6311287552475753441UL)) ; Real_t fz_local[8];
+{const int ____chimes_did_disable13 = new_stack((void *)(&IntegrateStressForElems), "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, 5, 0, (size_t)(0UL), (size_t)(6311287552475753462UL), (size_t)(6311287552475753463UL), (size_t)(6311287552475753464UL), (size_t)(6311287552475753465UL)) ; Real_t fz_local[8];
 Real_t fy_local[8];
 Real_t fx_local[8];
 Real_t z_local[8];
@@ -9066,7 +9066,7 @@ void CollectDomainNodesToElemNodes_quick(const Index_t* elemToNode,
 # 822 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                                    Real_t elemZ[8])
 # 823 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable14 = new_stack((void *)(&CollectDomainNodesToElemNodes), "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, 4, 0, (size_t)(6311287552475753935UL), (size_t)(6311287552475753936UL), (size_t)(6311287552475753937UL), (size_t)(6311287552475753938UL)) ; ; ;
+{const int ____chimes_did_disable14 = new_stack((void *)(&CollectDomainNodesToElemNodes), "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, 4, 0, (size_t)(6311287552475753959UL), (size_t)(6311287552475753960UL), (size_t)(6311287552475753961UL), (size_t)(6311287552475753962UL)) ; ; ;
 # 824 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Index_t nd0i; nd0i = (elemToNode[0]) ;
 # 825 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -9164,7 +9164,7 @@ void VoluDer_quick(const Real_t x0, const Real_t x1, const Real_t x2,
 # 869 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
              Real_t* dvdx, Real_t* dvdy, Real_t* dvdz)
 # 870 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable15 = new_stack((void *)(&VoluDer), "VoluDer", &____must_manage_VoluDer, 21, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475757925UL), (size_t)(6311287552475757926UL), (size_t)(6311287552475757927UL)) ; ; ;
+{const int ____chimes_did_disable15 = new_stack((void *)(&VoluDer), "VoluDer", &____must_manage_VoluDer, 21, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475757953UL), (size_t)(6311287552475757954UL), (size_t)(6311287552475757955UL)) ; ; ;
 # 871 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t twelfth; twelfth = (Real_t(1.) / Real_t(12.)) ;
 # 872 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -9233,7 +9233,7 @@ void CalcElemVolumeDerivative_quick(Real_t dvdx[8],
 # 898 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                               const Real_t z[8])
 # 899 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable16 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(6311287552475754446UL), (size_t)(6311287552475754447UL), (size_t)(6311287552475754448UL), (size_t)(6311287552475754449UL), (size_t)(6311287552475754450UL), (size_t)(6311287552475754451UL)) ; ; ;
+{const int ____chimes_did_disable16 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(6311287552475754470UL), (size_t)(6311287552475754471UL), (size_t)(6311287552475754472UL), (size_t)(6311287552475754473UL), (size_t)(6311287552475754474UL), (size_t)(6311287552475754475UL)) ; ; ;
 # 900 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    ({ calling_npm("VoluDer", 0); VoluDer_npm(x[1], x[2], x[3], x[4], x[5], x[7], y[1], y[2], y[3], y[4], y[5], y[7], z[1], z[2], z[3], z[4], z[5], z[7], &dvdx[0], &dvdy[0], &dvdz[0]); });
 # 904 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -9279,7 +9279,7 @@ void CalcElemFBHourglassForce_quick(Real_t *xd, Real_t *yd, Real_t *zd, Real_t *
 # 939 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                               Real_t *hgfx, Real_t *hgfy, Real_t *hgfz )
 # 940 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable17 = new_stack((void *)(&CalcElemFBHourglassForce), "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, 15, 0, (size_t)(6311287552475757660UL), (size_t)(6311287552475757661UL), (size_t)(6311287552475757662UL), (size_t)(6311287552475757663UL), (size_t)(6311287552475757664UL), (size_t)(6311287552475757665UL), (size_t)(6311287552475757666UL), (size_t)(6311287552475757667UL), (size_t)(6311287552475757668UL), (size_t)(6311287552475757669UL), (size_t)(6311287552475757670UL), (size_t)(0UL), (size_t)(6311287552475757672UL), (size_t)(6311287552475757673UL), (size_t)(6311287552475757674UL)) ; ; ;
+{const int ____chimes_did_disable17 = new_stack((void *)(&CalcElemFBHourglassForce), "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, 15, 0, (size_t)(6311287552475757688UL), (size_t)(6311287552475757689UL), (size_t)(6311287552475757690UL), (size_t)(6311287552475757691UL), (size_t)(6311287552475757692UL), (size_t)(6311287552475757693UL), (size_t)(6311287552475757694UL), (size_t)(6311287552475757695UL), (size_t)(6311287552475757696UL), (size_t)(6311287552475757697UL), (size_t)(6311287552475757698UL), (size_t)(0UL), (size_t)(6311287552475757700UL), (size_t)(6311287552475757701UL), (size_t)(6311287552475757702UL)) ; ; ;
 # 941 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Index_t i00; i00 = (0) ;
 # 942 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -9583,7 +9583,7 @@ void CalcFBHourglassForceForElems_quick(Real_t *determ,
 # 1121 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
             Real_t hourg)
 # 1122 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable18 = new_stack((void *)(&CalcFBHourglassForceForElems), "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, 8, 0, (size_t)(6311287552475755755UL), (size_t)(6311287552475755756UL), (size_t)(6311287552475755757UL), (size_t)(6311287552475755758UL), (size_t)(6311287552475755759UL), (size_t)(6311287552475755760UL), (size_t)(6311287552475755761UL), (size_t)(0UL)) ; Real_t zd1[8];
+{const int ____chimes_did_disable18 = new_stack((void *)(&CalcFBHourglassForceForElems), "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, 8, 0, (size_t)(6311287552475755779UL), (size_t)(6311287552475755780UL), (size_t)(6311287552475755781UL), (size_t)(6311287552475755782UL), (size_t)(6311287552475755783UL), (size_t)(6311287552475755784UL), (size_t)(6311287552475755785UL), (size_t)(0UL)) ; Real_t zd1[8];
 Real_t yd1[8];
 Real_t xd1[8];
 Real_t hourgam7[4];
@@ -9932,7 +9932,7 @@ static inline
 # 1322 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 void CalcHourglassControlForElems_quick(Real_t determ[], Real_t hgcoef)
 # 1323 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable19 = new_stack((void *)(&CalcHourglassControlForElems), "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, 2, 0, (size_t)(6311287552475753680UL), (size_t)(0UL)) ; Real_t pfz[8];
+{const int ____chimes_did_disable19 = new_stack((void *)(&CalcHourglassControlForElems), "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, 2, 0, (size_t)(6311287552475753704UL), (size_t)(0UL)) ; Real_t pfz[8];
 Real_t pfy[8];
 Real_t pfx[8];
 Real_t z1[8];
@@ -9950,17 +9950,17 @@ Real_t x1[8];
 # 1328 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Index_t numElem8; numElem8 = (numElem * 8) ;
 # 1329 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *dvdx; dvdx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753486UL, 0, 0)) ;
+    Real_t *dvdx; dvdx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753510UL, 0, 0)) ;
 # 1330 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *dvdy; dvdy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753493UL, 0, 0)) ;
+    Real_t *dvdy; dvdy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753517UL, 0, 0)) ;
 # 1331 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *dvdz; dvdz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753500UL, 0, 0)) ;
+    Real_t *dvdz; dvdz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753524UL, 0, 0)) ;
 # 1332 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *x8n; x8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753507UL, 0, 0)) ;
+    Real_t *x8n; x8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753531UL, 0, 0)) ;
 # 1333 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *y8n; y8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753514UL, 0, 0)) ;
+    Real_t *y8n; y8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753538UL, 0, 0)) ;
 # 1334 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *z8n; z8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753521UL, 0, 0)) ;
+    Real_t *z8n; z8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753545UL, 0, 0)) ;
 # 1335 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1336 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1337 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -10016,17 +10016,17 @@ Real_t x1[8];
    }
 # 1367 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1368 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(z8n, 6311287552475753521UL) ;
+   free_wrapper(z8n, 6311287552475753545UL) ;
 # 1369 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(y8n, 6311287552475753514UL) ;
+   free_wrapper(y8n, 6311287552475753538UL) ;
 # 1370 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(x8n, 6311287552475753507UL) ;
+   free_wrapper(x8n, 6311287552475753531UL) ;
 # 1371 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(dvdz, 6311287552475753500UL) ;
+   free_wrapper(dvdz, 6311287552475753524UL) ;
 # 1372 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(dvdy, 6311287552475753493UL) ;
+   free_wrapper(dvdy, 6311287552475753517UL) ;
 # 1373 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(dvdx, 6311287552475753486UL) ;
+   free_wrapper(dvdx, 6311287552475753510UL) ;
 # 1374 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1375 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_38, ____chimes_did_disable19); return ;
@@ -10049,13 +10049,13 @@ void CalcVolumeForceForElems_quick()
 # 1383 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
        Real_t hgcoef; hgcoef = (mesh.hgcoef) ;
 # 1384 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       Real_t *sigxx; sigxx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0)) ;
+       Real_t *sigxx; sigxx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753209UL, 0, 0)) ;
 # 1385 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       Real_t *sigyy; sigyy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753182UL, 0, 0)) ;
+       Real_t *sigyy; sigyy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753206UL, 0, 0)) ;
 # 1386 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       Real_t *sigzz; sigzz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753179UL, 0, 0)) ;
+       Real_t *sigzz; sigzz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753203UL, 0, 0)) ;
 # 1387 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-       Real_t *determ; determ = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753161UL, 0, 0)) ;
+       Real_t *determ; determ = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0)) ;
 # 1388 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1389 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1390 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -10082,13 +10082,13 @@ void CalcVolumeForceForElems_quick()
       ({ calling_npm("CalcHourglassControlForElems", 0); CalcHourglassControlForElems_npm(determ, hgcoef); }) ;
 # 1404 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1405 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(determ, 6311287552475753161UL) ;
+      free_wrapper(determ, 6311287552475753185UL) ;
 # 1406 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(sigzz, 6311287552475753179UL) ;
+      free_wrapper(sigzz, 6311287552475753203UL) ;
 # 1407 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(sigyy, 6311287552475753182UL) ;
+      free_wrapper(sigyy, 6311287552475753206UL) ;
 # 1408 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(sigxx, 6311287552475753185UL) ;
+      free_wrapper(sigxx, 6311287552475753209UL) ;
 # 1409 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    }
 # 1410 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -10405,9 +10405,9 @@ Real_t CalcElemVolume_quick( const Real_t x0, const Real_t x1,
   volume *= twelveth;
 # 1592 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1593 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-  rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_48, ____chimes_did_disable27); return volume ;
+   Real_t ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (volume); rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_48, ____chimes_did_disable27); return ____chimes_ret_var_3; ;
 # 1594 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-}
+rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_48, ____chimes_did_disable27); }
 
 static inline
 # 1512 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -10439,11 +10439,11 @@ static inline
 # 1597 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 Real_t CalcElemVolumeWrapper_quick( const Real_t x[8], const Real_t y[8], const Real_t z[8] )
 # 1598 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeWrapper), "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, 3, 0, (size_t)(6311287552475746910UL), (size_t)(6311287552475746911UL), (size_t)(6311287552475746912UL)) ; ; ;
+{const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeWrapper), "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, 3, 0, (size_t)(6311287552475746918UL), (size_t)(6311287552475746919UL), (size_t)(6311287552475746920UL)) ; ; ;
 # 1599 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); return ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); });
+ Real_t ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); })); rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); return ____chimes_ret_var_4; ;
 # 1602 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-}
+rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); }
 
 static inline
 # 1597 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -10479,9 +10479,9 @@ Real_t AreaFace_quick( const Real_t x0, const Real_t x1,
 # 1618 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t area; area = ((fx * fx + fy * fy + fz * fz) * (gx * gx + gy * gy + gz * gz) - (fx * gx + fy * gy + fz * gz) * (fx * gx + fy * gy + fz * gz)) ;
 # 1623 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_29, ____chimes_did_disable29); return area ;
+    Real_t ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (area); rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_29, ____chimes_did_disable29); return ____chimes_ret_var_5; ;
 # 1624 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-}
+rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_29, ____chimes_did_disable29); }
 
 static inline
 # 1605 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -10507,7 +10507,7 @@ Real_t CalcElemCharacteristicLength_quick( const Real_t x[8],
 # 1630 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                                      const Real_t volume)
 # 1631 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable30 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 0, (size_t)(6311287552475751130UL), (size_t)(6311287552475751142UL), (size_t)(6311287552475751154UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable30 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 0, (size_t)(6311287552475751147UL), (size_t)(6311287552475751159UL), (size_t)(6311287552475751171UL), (size_t)(0UL)) ; ; ;
 # 1632 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    Real_t a; Real_t charLength; charLength = (0.) ;
 # 1633 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -10545,9 +10545,9 @@ Real_t CalcElemCharacteristicLength_quick( const Real_t x[8],
    charLength = 4.0 * volume / ({ calling_npm("SQRT", 0); SQRT_npm(charLength); });
 # 1665 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1666 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); return charLength;
+    Real_t ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (charLength); rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); return ____chimes_ret_var_6; ;
 # 1667 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-}
+rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); }
 
 static inline
 # 1627 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -10573,7 +10573,7 @@ void CalcElemVelocityGrandient_quick( const Real_t* const xvel,
 # 1675 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                                 Real_t* const d )
 # 1676 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemVelocityGrandient), "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, 6, 0, (size_t)(6311287552475752579UL), (size_t)(6311287552475752580UL), (size_t)(6311287552475752581UL), (size_t)(6311287552475752582UL), (size_t)(0UL), (size_t)(6311287552475752584UL)) ; ; ;
+{const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemVelocityGrandient), "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, 6, 0, (size_t)(6311287552475752599UL), (size_t)(6311287552475752600UL), (size_t)(6311287552475752601UL), (size_t)(6311287552475752602UL), (size_t)(0UL), (size_t)(6311287552475752604UL)) ; ; ;
 # 1677 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    Real_t inv_detJ; inv_detJ = (Real_t(1.) / detJ) ;
 # 1678 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -11501,7 +11501,7 @@ void CalcPressureForElems_quick(Real_t* p_new, Real_t* bvc,
 # 2193 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                           Index_t length)
 # 2194 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable38 = new_stack((void *)(&CalcPressureForElems), "CalcPressureForElems", &____must_manage_CalcPressureForElems, 10, 0, (size_t)(6311287552475749176UL), (size_t)(6311287552475749177UL), (size_t)(6311287552475749178UL), (size_t)(6311287552475749179UL), (size_t)(6311287552475749180UL), (size_t)(6311287552475749181UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable38 = new_stack((void *)(&CalcPressureForElems), "CalcPressureForElems", &____must_manage_CalcPressureForElems, 10, 0, (size_t)(6311287552475749192UL), (size_t)(6311287552475749193UL), (size_t)(6311287552475749194UL), (size_t)(6311287552475749195UL), (size_t)(6311287552475749196UL), (size_t)(6311287552475749197UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 2195 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t c1s; c1s = (Real_t(2.) / Real_t(3.)) ;
 # 2196 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -11567,11 +11567,11 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2225 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                         Index_t length)
 # 2226 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable39 = new_stack((void *)(&CalcEnergyForElems), "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, 23, 0, (size_t)(6311287552475748908UL), (size_t)(6311287552475748909UL), (size_t)(6311287552475748910UL), (size_t)(6311287552475748911UL), (size_t)(6311287552475748912UL), (size_t)(6311287552475748913UL), (size_t)(6311287552475748914UL), (size_t)(6311287552475748915UL), (size_t)(6311287552475748916UL), (size_t)(6311287552475748917UL), (size_t)(6311287552475748918UL), (size_t)(6311287552475748919UL), (size_t)(6311287552475748920UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475748926UL), (size_t)(6311287552475748927UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable39 = new_stack((void *)(&CalcEnergyForElems), "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, 23, 0, (size_t)(6311287552475748924UL), (size_t)(6311287552475748925UL), (size_t)(6311287552475748926UL), (size_t)(6311287552475748927UL), (size_t)(6311287552475748928UL), (size_t)(6311287552475748929UL), (size_t)(6311287552475748930UL), (size_t)(6311287552475748931UL), (size_t)(6311287552475748932UL), (size_t)(6311287552475748933UL), (size_t)(6311287552475748934UL), (size_t)(6311287552475748935UL), (size_t)(6311287552475748936UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475748942UL), (size_t)(6311287552475748943UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 2227 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t sixth; sixth = (Real_t(1.) / Real_t(6.)) ;
 # 2228 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *pHalfStep; pHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475748346UL, 0, 0)) ;
+    Real_t *pHalfStep; pHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475748362UL, 0, 0)) ;
 # 2229 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2230 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < length ; ++i) {
@@ -11743,7 +11743,7 @@ void CalcEnergyForElems_quick(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    } }
 # 2331 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2332 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(pHalfStep, 6311287552475748346UL) ;
+   free_wrapper(pHalfStep, 6311287552475748362UL) ;
 # 2333 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2334 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_19, ____chimes_did_disable39); return ;
@@ -11780,7 +11780,7 @@ void CalcSoundSpeedForElems_quick(Real_t *vnewc, Real_t rho0, Real_t *enewc,
 # 2340 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
                             Real_t *bvc, Real_t ss4o3, Index_t nz)
 # 2341 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable40 = new_stack((void *)(&CalcSoundSpeedForElems), "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, 8, 0, (size_t)(6311287552475749029UL), (size_t)(0UL), (size_t)(6311287552475749031UL), (size_t)(6311287552475749032UL), (size_t)(6311287552475749033UL), (size_t)(6311287552475749034UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable40 = new_stack((void *)(&CalcSoundSpeedForElems), "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, 8, 0, (size_t)(6311287552475749045UL), (size_t)(0UL), (size_t)(6311287552475749047UL), (size_t)(6311287552475749048UL), (size_t)(6311287552475749049UL), (size_t)(6311287552475749050UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 2342 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    { Index_t i; for ( i = (0) ; i < nz ; ++i) {
 # 2343 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -11812,7 +11812,7 @@ static inline
 # 2354 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 void EvalEOSForElems_quick(Real_t *vnewc, Index_t length)
 # 2355 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable41 = new_stack((void *)(&EvalEOSForElems), "EvalEOSForElems", &____must_manage_EvalEOSForElems, 2, 0, (size_t)(6311287552475748256UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable41 = new_stack((void *)(&EvalEOSForElems), "EvalEOSForElems", &____must_manage_EvalEOSForElems, 2, 0, (size_t)(6311287552475748272UL), (size_t)(0UL)) ; ; ;
 # 2356 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t e_cut; e_cut = (mesh.e_cut) ;
 # 2357 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -11834,33 +11834,33 @@ void EvalEOSForElems_quick(Real_t *vnewc, Index_t length)
     Real_t rho0; rho0 = (mesh.refdens) ;
 # 2366 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2367 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *e_old; e_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747718UL, 0, 0)) ;
+    Real_t *e_old; e_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747734UL, 0, 0)) ;
 # 2368 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *delvc; delvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747725UL, 0, 0)) ;
+    Real_t *delvc; delvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747741UL, 0, 0)) ;
 # 2369 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *p_old; p_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747732UL, 0, 0)) ;
+    Real_t *p_old; p_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747748UL, 0, 0)) ;
 # 2370 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *q_old; q_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747739UL, 0, 0)) ;
+    Real_t *q_old; q_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747755UL, 0, 0)) ;
 # 2371 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *compression; compression = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747746UL, 0, 0)) ;
+    Real_t *compression; compression = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747762UL, 0, 0)) ;
 # 2372 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *compHalfStep; compHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747753UL, 0, 0)) ;
+    Real_t *compHalfStep; compHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747769UL, 0, 0)) ;
 # 2373 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *qq; qq = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747760UL, 0, 0)) ;
+    Real_t *qq; qq = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747776UL, 0, 0)) ;
 # 2374 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *ql; ql = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747767UL, 0, 0)) ;
+    Real_t *ql; ql = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747783UL, 0, 0)) ;
 # 2375 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *work; work = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747774UL, 0, 0)) ;
+    Real_t *work; work = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747790UL, 0, 0)) ;
 # 2376 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *p_new; p_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747781UL, 0, 0)) ;
+    Real_t *p_new; p_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747797UL, 0, 0)) ;
 # 2377 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *e_new; e_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747788UL, 0, 0)) ;
+    Real_t *e_new; e_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747804UL, 0, 0)) ;
 # 2378 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *q_new; q_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747795UL, 0, 0)) ;
+    Real_t *q_new; q_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747811UL, 0, 0)) ;
 # 2379 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *bvc; bvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747802UL, 0, 0)) ;
+    Real_t *bvc; bvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747818UL, 0, 0)) ;
 # 2380 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *pbvc; pbvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747809UL, 0, 0)) ;
+    Real_t *pbvc; pbvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747825UL, 0, 0)) ;
 # 2381 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2382 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2383 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -11994,33 +11994,33 @@ void EvalEOSForElems_quick(Real_t *vnewc, Index_t length)
    ({ calling_npm("CalcSoundSpeedForElems", 0); CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length); }) ;
 # 2459 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2460 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(pbvc, 6311287552475747809UL) ;
+   free_wrapper(pbvc, 6311287552475747825UL) ;
 # 2461 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(bvc, 6311287552475747802UL) ;
+   free_wrapper(bvc, 6311287552475747818UL) ;
 # 2462 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(q_new, 6311287552475747795UL) ;
+   free_wrapper(q_new, 6311287552475747811UL) ;
 # 2463 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(e_new, 6311287552475747788UL) ;
+   free_wrapper(e_new, 6311287552475747804UL) ;
 # 2464 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(p_new, 6311287552475747781UL) ;
+   free_wrapper(p_new, 6311287552475747797UL) ;
 # 2465 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(work, 6311287552475747774UL) ;
+   free_wrapper(work, 6311287552475747790UL) ;
 # 2466 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(ql, 6311287552475747767UL) ;
+   free_wrapper(ql, 6311287552475747783UL) ;
 # 2467 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(qq, 6311287552475747760UL) ;
+   free_wrapper(qq, 6311287552475747776UL) ;
 # 2468 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(compHalfStep, 6311287552475747753UL) ;
+   free_wrapper(compHalfStep, 6311287552475747769UL) ;
 # 2469 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(compression, 6311287552475747746UL) ;
+   free_wrapper(compression, 6311287552475747762UL) ;
 # 2470 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(q_old, 6311287552475747739UL) ;
+   free_wrapper(q_old, 6311287552475747755UL) ;
 # 2471 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(p_old, 6311287552475747732UL) ;
+   free_wrapper(p_old, 6311287552475747748UL) ;
 # 2472 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(delvc, 6311287552475747725UL) ;
+   free_wrapper(delvc, 6311287552475747741UL) ;
 # 2473 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(e_old, 6311287552475747718UL) ;
+   free_wrapper(e_old, 6311287552475747734UL) ;
 # 2474 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_18, ____chimes_did_disable41); }
 
@@ -12044,7 +12044,7 @@ void ApplyMaterialPropertiesForElems_quick()
 # 2484 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
      Real_t eosvmax; eosvmax = (mesh.eosvmax) ;
 # 2485 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-     Real_t *vnewc; vnewc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747458UL, 0, 0)) ;
+     Real_t *vnewc; vnewc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747474UL, 0, 0)) ;
 # 2486 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2487 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     { Index_t i; for ( i = (0) ; i<length ; ++i) {
@@ -12108,7 +12108,7 @@ void ApplyMaterialPropertiesForElems_quick()
     ({ calling_npm("EvalEOSForElems", 0); EvalEOSForElems_npm(vnewc, length); });
 # 2523 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2524 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    free_wrapper(vnewc, 6311287552475747458UL) ;
+    free_wrapper(vnewc, 6311287552475747474UL) ;
 # 2525 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2526 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
   }
@@ -12357,7 +12357,7 @@ void LagrangeLeapFrog() { (____chimes_replaying ? LagrangeLeapFrog_resumable() :
 
 int main_quick(int argc, char *argv[])
 # 2661 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-{const int ____chimes_did_disable49 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(6311287552475746825UL)) ; timeval end;
+{const int ____chimes_did_disable49 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(6311287552475746829UL)) ; timeval end;
 timeval start;
 Real_t z_local[8];
 Real_t y_local[8];
@@ -12807,19 +12807,19 @@ Index_t edgeElems;
 # 2929 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2930 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2931 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable49); return 0 ;
+    int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable49); return ____chimes_ret_var_7; ;
 # 2932 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable49); }
 
 int main(int argc, char *argv[]) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
 
 
-inline real8 SQRT_npm(real8 arg) { return sqrt(arg) ; }
+inline real8 SQRT_npm(real8 arg) { double ____chimes_ret_var_0; ____chimes_ret_var_0 = (sqrt(arg)); return ____chimes_ret_var_0; ; }
 
-inline real8 CBRT_npm(real8 arg) { return cbrt(arg) ; }
+inline real8 CBRT_npm(real8 arg) { double ____chimes_ret_var_1; ____chimes_ret_var_1 = (cbrt(arg)); return ____chimes_ret_var_1; ; }
 
-inline real8 FABS_npm(real8 arg) { return fabs(arg) ; }
+inline real8 FABS_npm(real8 arg) { double ____chimes_ret_var_2; ____chimes_ret_var_2 = (fabs(arg)); return ____chimes_ret_var_2; ; }
 
 void AllocateNodalPersistent_npm(Mesh *mesh, size_t size)
 # 355 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -14390,17 +14390,17 @@ void CalcHourglassControlForElems_npm(Real_t determ[], Real_t hgcoef)
 # 1328 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    Index_t numElem8 = numElem * 8 ;
 # 1329 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *dvdx = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753486UL, 0, 0) ;
+   Real_t *dvdx = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753510UL, 0, 0) ;
 # 1330 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *dvdy = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753493UL, 0, 0) ;
+   Real_t *dvdy = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753517UL, 0, 0) ;
 # 1331 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *dvdz = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753500UL, 0, 0) ;
+   Real_t *dvdz = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753524UL, 0, 0) ;
 # 1332 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *x8n = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753507UL, 0, 0) ;
+   Real_t *x8n = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753531UL, 0, 0) ;
 # 1333 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *y8n = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753514UL, 0, 0) ;
+   Real_t *y8n = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753538UL, 0, 0) ;
 # 1334 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *z8n = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753521UL, 0, 0) ;
+   Real_t *z8n = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753545UL, 0, 0) ;
 # 1335 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1336 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1337 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -14456,17 +14456,17 @@ void CalcHourglassControlForElems_npm(Real_t determ[], Real_t hgcoef)
    }
 # 1367 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1368 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(z8n, 6311287552475753521UL) ;
+   free_wrapper(z8n, 6311287552475753545UL) ;
 # 1369 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(y8n, 6311287552475753514UL) ;
+   free_wrapper(y8n, 6311287552475753538UL) ;
 # 1370 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(x8n, 6311287552475753507UL) ;
+   free_wrapper(x8n, 6311287552475753531UL) ;
 # 1371 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(dvdz, 6311287552475753500UL) ;
+   free_wrapper(dvdz, 6311287552475753524UL) ;
 # 1372 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(dvdy, 6311287552475753493UL) ;
+   free_wrapper(dvdy, 6311287552475753517UL) ;
 # 1373 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(dvdx, 6311287552475753486UL) ;
+   free_wrapper(dvdx, 6311287552475753510UL) ;
 # 1374 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1375 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    return ;
@@ -14485,13 +14485,13 @@ void CalcVolumeForceForElems_npm()
 # 1383 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
       Real_t hgcoef = mesh.hgcoef ;
 # 1384 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      Real_t *sigxx = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0) ;
+      Real_t *sigxx = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753209UL, 0, 0) ;
 # 1385 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      Real_t *sigyy = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753182UL, 0, 0) ;
+      Real_t *sigyy = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753206UL, 0, 0) ;
 # 1386 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      Real_t *sigzz = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753179UL, 0, 0) ;
+      Real_t *sigzz = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753203UL, 0, 0) ;
 # 1387 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      Real_t *determ = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753161UL, 0, 0) ;
+      Real_t *determ = (Real_t*)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0) ;
 # 1388 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1389 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1390 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -14518,13 +14518,13 @@ void CalcVolumeForceForElems_npm()
       CalcHourglassControlForElems_npm(determ, hgcoef) ;
 # 1404 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1405 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(determ, 6311287552475753161UL) ;
+      free_wrapper(determ, 6311287552475753185UL) ;
 # 1406 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(sigzz, 6311287552475753179UL) ;
+      free_wrapper(sigzz, 6311287552475753203UL) ;
 # 1407 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(sigyy, 6311287552475753182UL) ;
+      free_wrapper(sigyy, 6311287552475753206UL) ;
 # 1408 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-      free_wrapper(sigxx, 6311287552475753185UL) ;
+      free_wrapper(sigxx, 6311287552475753209UL) ;
 # 1409 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    }
 # 1410 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -14830,7 +14830,7 @@ Real_t CalcElemVolume_npm( const Real_t x0, const Real_t x1,
   volume *= twelveth;
 # 1592 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1593 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-  return volume ;
+   Real_t ____chimes_ret_var_3; ____chimes_ret_var_3 = (volume); return ____chimes_ret_var_3; ;
 # 1594 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 }
 
@@ -14840,7 +14840,7 @@ Real_t CalcElemVolumeWrapper_npm( const Real_t x[8], const Real_t y[8], const Re
 # 1598 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 {
 # 1599 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-return CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]);
+ Real_t ____chimes_ret_var_4; ____chimes_ret_var_4 = (CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7])); return ____chimes_ret_var_4; ;
 # 1602 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 }
 
@@ -14882,7 +14882,7 @@ Real_t AreaFace_npm( const Real_t x0, const Real_t x1,
 # 1622 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
       (fx * gx + fy * gy + fz * gz);
 # 1623 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   return area ;
+    Real_t ____chimes_ret_var_5; ____chimes_ret_var_5 = (area); return ____chimes_ret_var_5; ;
 # 1624 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 }
 
@@ -14934,7 +14934,7 @@ Real_t CalcElemCharacteristicLength_npm( const Real_t x[8],
    charLength = 4.0 * volume / SQRT_npm(charLength);
 # 1665 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 1666 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   return charLength;
+    Real_t ____chimes_ret_var_6; ____chimes_ret_var_6 = (charLength); return ____chimes_ret_var_6; ;
 # 1667 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 }
 
@@ -15876,7 +15876,7 @@ void CalcEnergyForElems_npm(Real_t* p_new, Real_t* e_new, Real_t* q_new,
 # 2227 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    Real_t sixth = Real_t(1.0) / Real_t(6.0) ;
 # 2228 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *pHalfStep = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475748346UL, 0, 0) ;
+   Real_t *pHalfStep = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475748362UL, 0, 0) ;
 # 2229 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2230 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    for (Index_t i = 0 ; i < length ; ++i) {
@@ -16054,7 +16054,7 @@ void CalcEnergyForElems_npm(Real_t* p_new, Real_t* e_new, Real_t* q_new,
    }
 # 2331 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2332 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(pHalfStep, 6311287552475748346UL) ;
+   free_wrapper(pHalfStep, 6311287552475748362UL) ;
 # 2333 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2334 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
    return ;
@@ -16117,33 +16117,33 @@ void EvalEOSForElems_npm(Real_t *vnewc, Index_t length)
    Real_t rho0 = mesh.refdens ;
 # 2366 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2367 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *e_old = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747718UL, 0, 0) ;
+   Real_t *e_old = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747734UL, 0, 0) ;
 # 2368 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *delvc = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747725UL, 0, 0) ;
+   Real_t *delvc = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747741UL, 0, 0) ;
 # 2369 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *p_old = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747732UL, 0, 0) ;
+   Real_t *p_old = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747748UL, 0, 0) ;
 # 2370 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *q_old = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747739UL, 0, 0) ;
+   Real_t *q_old = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747755UL, 0, 0) ;
 # 2371 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *compression = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747746UL, 0, 0) ;
+   Real_t *compression = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747762UL, 0, 0) ;
 # 2372 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *compHalfStep = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747753UL, 0, 0) ;
+   Real_t *compHalfStep = (Real_t*)malloc_wrapper(sizeof(Real_t)*length, 6311287552475747769UL, 0, 0) ;
 # 2373 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *qq = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747760UL, 0, 0) ;
+   Real_t *qq = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747776UL, 0, 0) ;
 # 2374 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *ql = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747767UL, 0, 0) ;
+   Real_t *ql = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747783UL, 0, 0) ;
 # 2375 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *work = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747774UL, 0, 0) ;
+   Real_t *work = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747790UL, 0, 0) ;
 # 2376 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *p_new = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747781UL, 0, 0) ;
+   Real_t *p_new = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747797UL, 0, 0) ;
 # 2377 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *e_new = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747788UL, 0, 0) ;
+   Real_t *e_new = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747804UL, 0, 0) ;
 # 2378 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *q_new = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747795UL, 0, 0) ;
+   Real_t *q_new = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747811UL, 0, 0) ;
 # 2379 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *bvc = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747802UL, 0, 0) ;
+   Real_t *bvc = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747818UL, 0, 0) ;
 # 2380 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   Real_t *pbvc = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747809UL, 0, 0) ;
+   Real_t *pbvc = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747825UL, 0, 0) ;
 # 2381 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2382 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2383 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
@@ -16277,33 +16277,33 @@ void EvalEOSForElems_npm(Real_t *vnewc, Index_t length)
    CalcSoundSpeedForElems_npm(vnewc, rho0, e_new, p_new, pbvc, bvc, ss4o3, length) ;
 # 2459 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2460 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(pbvc, 6311287552475747809UL) ;
+   free_wrapper(pbvc, 6311287552475747825UL) ;
 # 2461 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(bvc, 6311287552475747802UL) ;
+   free_wrapper(bvc, 6311287552475747818UL) ;
 # 2462 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(q_new, 6311287552475747795UL) ;
+   free_wrapper(q_new, 6311287552475747811UL) ;
 # 2463 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(e_new, 6311287552475747788UL) ;
+   free_wrapper(e_new, 6311287552475747804UL) ;
 # 2464 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(p_new, 6311287552475747781UL) ;
+   free_wrapper(p_new, 6311287552475747797UL) ;
 # 2465 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(work, 6311287552475747774UL) ;
+   free_wrapper(work, 6311287552475747790UL) ;
 # 2466 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(ql, 6311287552475747767UL) ;
+   free_wrapper(ql, 6311287552475747783UL) ;
 # 2467 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(qq, 6311287552475747760UL) ;
+   free_wrapper(qq, 6311287552475747776UL) ;
 # 2468 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(compHalfStep, 6311287552475747753UL) ;
+   free_wrapper(compHalfStep, 6311287552475747769UL) ;
 # 2469 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(compression, 6311287552475747746UL) ;
+   free_wrapper(compression, 6311287552475747762UL) ;
 # 2470 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(q_old, 6311287552475747739UL) ;
+   free_wrapper(q_old, 6311287552475747755UL) ;
 # 2471 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(p_old, 6311287552475747732UL) ;
+   free_wrapper(p_old, 6311287552475747748UL) ;
 # 2472 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(delvc, 6311287552475747725UL) ;
+   free_wrapper(delvc, 6311287552475747741UL) ;
 # 2473 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-   free_wrapper(e_old, 6311287552475747718UL) ;
+   free_wrapper(e_old, 6311287552475747734UL) ;
 # 2474 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 }
 
@@ -16323,7 +16323,7 @@ void ApplyMaterialPropertiesForElems_npm()
 # 2484 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     Real_t eosvmax = mesh.eosvmax ;
 # 2485 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    Real_t *vnewc = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747458UL, 0, 0) ;
+    Real_t *vnewc = (Real_t*)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747474UL, 0, 0) ;
 # 2486 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2487 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
     for (Index_t i=0 ; i<length ; ++i) {
@@ -16387,7 +16387,7 @@ void ApplyMaterialPropertiesForElems_npm()
     EvalEOSForElems_npm(vnewc, length);
 # 2523 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2524 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
-    free_wrapper(vnewc, 6311287552475747458UL) ;
+    free_wrapper(vnewc, 6311287552475747474UL) ;
 # 2525 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
 # 2526 "/home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc"
   }
@@ -16612,55 +16612,55 @@ void LagrangeLeapFrog_npm()
 
 static int module_init() {
     init_module(6311287552475745391UL, 154, 50, 8, 49, 49, 0, 49, 87, 0, 2,
-                           &____alias_loc_id_0, (unsigned)46, (unsigned)0, (unsigned)0, (6311287552475745391UL + 459UL), (6311287552475745391UL + 460UL), (6311287552475745391UL + 461UL), (6311287552475745391UL + 462UL), (6311287552475745391UL + 463UL), (6311287552475745391UL + 464UL), (6311287552475745391UL + 465UL), (6311287552475745391UL + 466UL), (6311287552475745391UL + 467UL), (6311287552475745391UL + 468UL), (6311287552475745391UL + 469UL), (6311287552475745391UL + 470UL), (6311287552475745391UL + 471UL), (6311287552475745391UL + 472UL), (6311287552475745391UL + 473UL), (6311287552475745391UL + 474UL), (6311287552475745391UL + 475UL), (6311287552475745391UL + 476UL), (6311287552475745391UL + 477UL), (6311287552475745391UL + 478UL), (6311287552475745391UL + 479UL), (6311287552475745391UL + 480UL), (6311287552475745391UL + 481UL), (6311287552475745391UL + 482UL), (6311287552475745391UL + 483UL), (6311287552475745391UL + 484UL), (6311287552475745391UL + 485UL), (6311287552475745391UL + 486UL), (6311287552475745391UL + 487UL), (6311287552475745391UL + 488UL), (6311287552475745391UL + 489UL), (6311287552475745391UL + 490UL), (6311287552475745391UL + 491UL), (6311287552475745391UL + 492UL), (6311287552475745391UL + 493UL), (6311287552475745391UL + 494UL), (6311287552475745391UL + 495UL), (6311287552475745391UL + 496UL), (6311287552475745391UL + 497UL), (6311287552475745391UL + 498UL), (6311287552475745391UL + 499UL), (6311287552475745391UL + 500UL), (6311287552475745391UL + 501UL), (6311287552475745391UL + 502UL), (6311287552475745391UL + 1995UL), (6311287552475745391UL + 14007UL),
+                           &____alias_loc_id_0, (unsigned)46, (unsigned)0, (unsigned)0, (6311287552475745391UL + 459UL), (6311287552475745391UL + 460UL), (6311287552475745391UL + 461UL), (6311287552475745391UL + 462UL), (6311287552475745391UL + 463UL), (6311287552475745391UL + 464UL), (6311287552475745391UL + 465UL), (6311287552475745391UL + 466UL), (6311287552475745391UL + 467UL), (6311287552475745391UL + 468UL), (6311287552475745391UL + 469UL), (6311287552475745391UL + 470UL), (6311287552475745391UL + 471UL), (6311287552475745391UL + 472UL), (6311287552475745391UL + 473UL), (6311287552475745391UL + 474UL), (6311287552475745391UL + 475UL), (6311287552475745391UL + 476UL), (6311287552475745391UL + 477UL), (6311287552475745391UL + 478UL), (6311287552475745391UL + 479UL), (6311287552475745391UL + 480UL), (6311287552475745391UL + 481UL), (6311287552475745391UL + 482UL), (6311287552475745391UL + 483UL), (6311287552475745391UL + 484UL), (6311287552475745391UL + 485UL), (6311287552475745391UL + 486UL), (6311287552475745391UL + 487UL), (6311287552475745391UL + 488UL), (6311287552475745391UL + 489UL), (6311287552475745391UL + 490UL), (6311287552475745391UL + 491UL), (6311287552475745391UL + 492UL), (6311287552475745391UL + 493UL), (6311287552475745391UL + 494UL), (6311287552475745391UL + 495UL), (6311287552475745391UL + 496UL), (6311287552475745391UL + 497UL), (6311287552475745391UL + 498UL), (6311287552475745391UL + 499UL), (6311287552475745391UL + 500UL), (6311287552475745391UL + 501UL), (6311287552475745391UL + 502UL), (6311287552475745391UL + 2011UL), (6311287552475745391UL + 14039UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1UL), (6311287552475745391UL + 2UL), (6311287552475745391UL + 148UL),
                            &____alias_loc_id_2, (unsigned)5, (unsigned)0, (unsigned)0, (6311287552475745391UL + 158UL), (6311287552475745391UL + 159UL), (6311287552475745391UL + 160UL), (6311287552475745391UL + 167UL), (6311287552475745391UL + 348UL),
                            &____alias_loc_id_3, (unsigned)3, (unsigned)0, (unsigned)0, (6311287552475745391UL + 350UL), (6311287552475745391UL + 351UL), (6311287552475745391UL + 427UL),
                            &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (6311287552475745391UL + 429UL), (6311287552475745391UL + 430UL), (6311287552475745391UL + 457UL),
-                           &____alias_loc_id_5, (unsigned)56, (unsigned)0, (unsigned)0, (6311287552475745391UL + 459UL), (6311287552475745391UL + 460UL), (6311287552475745391UL + 461UL), (6311287552475745391UL + 462UL), (6311287552475745391UL + 463UL), (6311287552475745391UL + 464UL), (6311287552475745391UL + 465UL), (6311287552475745391UL + 466UL), (6311287552475745391UL + 467UL), (6311287552475745391UL + 468UL), (6311287552475745391UL + 469UL), (6311287552475745391UL + 470UL), (6311287552475745391UL + 471UL), (6311287552475745391UL + 472UL), (6311287552475745391UL + 473UL), (6311287552475745391UL + 474UL), (6311287552475745391UL + 475UL), (6311287552475745391UL + 476UL), (6311287552475745391UL + 477UL), (6311287552475745391UL + 478UL), (6311287552475745391UL + 479UL), (6311287552475745391UL + 480UL), (6311287552475745391UL + 481UL), (6311287552475745391UL + 482UL), (6311287552475745391UL + 483UL), (6311287552475745391UL + 484UL), (6311287552475745391UL + 485UL), (6311287552475745391UL + 486UL), (6311287552475745391UL + 487UL), (6311287552475745391UL + 488UL), (6311287552475745391UL + 489UL), (6311287552475745391UL + 490UL), (6311287552475745391UL + 491UL), (6311287552475745391UL + 492UL), (6311287552475745391UL + 493UL), (6311287552475745391UL + 494UL), (6311287552475745391UL + 495UL), (6311287552475745391UL + 496UL), (6311287552475745391UL + 497UL), (6311287552475745391UL + 498UL), (6311287552475745391UL + 499UL), (6311287552475745391UL + 500UL), (6311287552475745391UL + 501UL), (6311287552475745391UL + 502UL), (6311287552475745391UL + 503UL), (6311287552475745391UL + 504UL), (6311287552475745391UL + 505UL), (6311287552475745391UL + 506UL), (6311287552475745391UL + 507UL), (6311287552475745391UL + 508UL), (6311287552475745391UL + 509UL), (6311287552475745391UL + 510UL), (6311287552475745391UL + 511UL), (6311287552475745391UL + 512UL), (6311287552475745391UL + 1995UL), (6311287552475745391UL + 14007UL),
-                           &____alias_loc_id_6, (unsigned)3, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1436UL), (6311287552475745391UL + 1437UL), (6311287552475745391UL + 1438UL),
-                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1524UL), (6311287552475745391UL + 1525UL), (6311287552475745391UL + 1526UL), (6311287552475745391UL + 1527UL), (6311287552475745391UL + 14007UL),
-                           &____alias_loc_id_8, (unsigned)1, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1632UL),
-                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1640UL), (6311287552475745391UL + 1641UL),
-                            &____alias_loc_id_10, (unsigned)1, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1657UL),
-                            &____alias_loc_id_11, (unsigned)9, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1670UL), (6311287552475745391UL + 1671UL), (6311287552475745391UL + 1672UL), (6311287552475745391UL + 1673UL), (6311287552475745391UL + 1674UL), (6311287552475745391UL + 1675UL), (6311287552475745391UL + 1676UL), (6311287552475745391UL + 1677UL), (6311287552475745391UL + 14007UL),
-                            &____alias_loc_id_12, (unsigned)8, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1797UL), (6311287552475745391UL + 1798UL), (6311287552475745391UL + 1799UL), (6311287552475745391UL + 1800UL), (6311287552475745391UL + 1801UL), (6311287552475745391UL + 1802UL), (6311287552475745391UL + 1803UL), (6311287552475745391UL + 14007UL),
-                            &____alias_loc_id_13, (unsigned)1, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1868UL),
-                            &____alias_loc_id_14, (unsigned)6, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1876UL), (6311287552475745391UL + 1877UL), (6311287552475745391UL + 1878UL), (6311287552475745391UL + 1879UL), (6311287552475745391UL + 1880UL), (6311287552475745391UL + 1995UL),
-                            &____alias_loc_id_15, (unsigned)4, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1969UL), (6311287552475745391UL + 1970UL), (6311287552475745391UL + 1971UL), (6311287552475745391UL + 1972UL),
-                            &____alias_loc_id_16, (unsigned)12, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2016UL), (6311287552475745391UL + 2017UL), (6311287552475745391UL + 2018UL), (6311287552475745391UL + 2019UL), (6311287552475745391UL + 2020UL), (6311287552475745391UL + 2021UL), (6311287552475745391UL + 2022UL), (6311287552475745391UL + 2023UL), (6311287552475745391UL + 2024UL), (6311287552475745391UL + 2025UL), (6311287552475745391UL + 2026UL), (6311287552475745391UL + 2067UL),
-                            &____alias_loc_id_17, (unsigned)5, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 2198UL), (6311287552475745391UL + 2199UL), (6311287552475745391UL + 2200UL), (6311287552475745391UL + 2201UL),
-                            &____alias_loc_id_18, (unsigned)55, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 2247UL), (6311287552475745391UL + 2248UL), (6311287552475745391UL + 2249UL), (6311287552475745391UL + 2250UL), (6311287552475745391UL + 2251UL), (6311287552475745391UL + 2252UL), (6311287552475745391UL + 2253UL), (6311287552475745391UL + 2254UL), (6311287552475745391UL + 2255UL), (6311287552475745391UL + 2256UL), (6311287552475745391UL + 2257UL), (6311287552475745391UL + 2258UL), (6311287552475745391UL + 2259UL), (6311287552475745391UL + 2260UL), (6311287552475745391UL + 2261UL), (6311287552475745391UL + 2262UL), (6311287552475745391UL + 2263UL), (6311287552475745391UL + 2264UL), (6311287552475745391UL + 2265UL), (6311287552475745391UL + 2266UL), (6311287552475745391UL + 2267UL), (6311287552475745391UL + 2268UL), (6311287552475745391UL + 2269UL), (6311287552475745391UL + 2270UL), (6311287552475745391UL + 2271UL), (6311287552475745391UL + 2272UL), (6311287552475745391UL + 2273UL), (6311287552475745391UL + 2274UL), (6311287552475745391UL + 2275UL), (6311287552475745391UL + 2276UL), (6311287552475745391UL + 2277UL), (6311287552475745391UL + 2278UL), (6311287552475745391UL + 2279UL), (6311287552475745391UL + 2280UL), (6311287552475745391UL + 2281UL), (6311287552475745391UL + 2282UL), (6311287552475745391UL + 2283UL), (6311287552475745391UL + 2284UL), (6311287552475745391UL + 2285UL), (6311287552475745391UL + 2286UL), (6311287552475745391UL + 2287UL), (6311287552475745391UL + 2288UL), (6311287552475745391UL + 2289UL), (6311287552475745391UL + 2290UL), (6311287552475745391UL + 2291UL), (6311287552475745391UL + 2327UL), (6311287552475745391UL + 2334UL), (6311287552475745391UL + 2341UL), (6311287552475745391UL + 2348UL), (6311287552475745391UL + 2355UL), (6311287552475745391UL + 2362UL), (6311287552475745391UL + 2369UL), (6311287552475745391UL + 2376UL), (6311287552475745391UL + 2383UL),
-                            &____alias_loc_id_19, (unsigned)37, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2868UL), (6311287552475745391UL + 2869UL), (6311287552475745391UL + 2870UL), (6311287552475745391UL + 2871UL), (6311287552475745391UL + 2872UL), (6311287552475745391UL + 2873UL), (6311287552475745391UL + 2874UL), (6311287552475745391UL + 2875UL), (6311287552475745391UL + 2876UL), (6311287552475745391UL + 2877UL), (6311287552475745391UL + 2878UL), (6311287552475745391UL + 2879UL), (6311287552475745391UL + 2880UL), (6311287552475745391UL + 2881UL), (6311287552475745391UL + 2882UL), (6311287552475745391UL + 2883UL), (6311287552475745391UL + 2884UL), (6311287552475745391UL + 2885UL), (6311287552475745391UL + 2886UL), (6311287552475745391UL + 2887UL), (6311287552475745391UL + 2888UL), (6311287552475745391UL + 2889UL), (6311287552475745391UL + 2890UL), (6311287552475745391UL + 2891UL), (6311287552475745391UL + 2892UL), (6311287552475745391UL + 2893UL), (6311287552475745391UL + 2894UL), (6311287552475745391UL + 2895UL), (6311287552475745391UL + 2896UL), (6311287552475745391UL + 2897UL), (6311287552475745391UL + 2898UL), (6311287552475745391UL + 2899UL), (6311287552475745391UL + 2900UL), (6311287552475745391UL + 2901UL), (6311287552475745391UL + 2902UL), (6311287552475745391UL + 3518UL), (6311287552475745391UL + 3519UL),
-                            &____alias_loc_id_20, (unsigned)12, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 3540UL), (6311287552475745391UL + 3541UL), (6311287552475745391UL + 3542UL), (6311287552475745391UL + 3543UL), (6311287552475745391UL + 3544UL), (6311287552475745391UL + 3545UL), (6311287552475745391UL + 3546UL), (6311287552475745391UL + 3547UL), (6311287552475745391UL + 3548UL), (6311287552475745391UL + 3549UL), (6311287552475745391UL + 3550UL),
-                            &____alias_loc_id_21, (unsigned)16, (unsigned)0, (unsigned)0, (6311287552475745391UL + 3646UL), (6311287552475745391UL + 3647UL), (6311287552475745391UL + 3648UL), (6311287552475745391UL + 3649UL), (6311287552475745391UL + 3650UL), (6311287552475745391UL + 3651UL), (6311287552475745391UL + 3652UL), (6311287552475745391UL + 3653UL), (6311287552475745391UL + 3654UL), (6311287552475745391UL + 3655UL), (6311287552475745391UL + 3656UL), (6311287552475745391UL + 3657UL), (6311287552475745391UL + 3658UL), (6311287552475745391UL + 3785UL), (6311287552475745391UL + 3786UL), (6311287552475745391UL + 3787UL),
-                            &____alias_loc_id_22, (unsigned)78, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 3795UL), (6311287552475745391UL + 3796UL), (6311287552475745391UL + 3797UL), (6311287552475745391UL + 3798UL), (6311287552475745391UL + 3799UL), (6311287552475745391UL + 3800UL), (6311287552475745391UL + 3801UL), (6311287552475745391UL + 3802UL), (6311287552475745391UL + 3803UL), (6311287552475745391UL + 3804UL), (6311287552475745391UL + 3805UL), (6311287552475745391UL + 3806UL), (6311287552475745391UL + 3807UL), (6311287552475745391UL + 3808UL), (6311287552475745391UL + 3809UL), (6311287552475745391UL + 3810UL), (6311287552475745391UL + 3811UL), (6311287552475745391UL + 3812UL), (6311287552475745391UL + 3813UL), (6311287552475745391UL + 3814UL), (6311287552475745391UL + 3815UL), (6311287552475745391UL + 3816UL), (6311287552475745391UL + 3817UL), (6311287552475745391UL + 3818UL), (6311287552475745391UL + 3819UL), (6311287552475745391UL + 3820UL), (6311287552475745391UL + 3821UL), (6311287552475745391UL + 3822UL), (6311287552475745391UL + 3823UL), (6311287552475745391UL + 3824UL), (6311287552475745391UL + 3825UL), (6311287552475745391UL + 3826UL), (6311287552475745391UL + 3827UL), (6311287552475745391UL + 3828UL), (6311287552475745391UL + 3829UL), (6311287552475745391UL + 3830UL), (6311287552475745391UL + 3831UL), (6311287552475745391UL + 3832UL), (6311287552475745391UL + 3833UL), (6311287552475745391UL + 3834UL), (6311287552475745391UL + 3835UL), (6311287552475745391UL + 3836UL), (6311287552475745391UL + 3837UL), (6311287552475745391UL + 3838UL), (6311287552475745391UL + 3839UL), (6311287552475745391UL + 3840UL), (6311287552475745391UL + 3841UL), (6311287552475745391UL + 3842UL), (6311287552475745391UL + 3843UL), (6311287552475745391UL + 3844UL), (6311287552475745391UL + 3845UL), (6311287552475745391UL + 3846UL), (6311287552475745391UL + 3847UL), (6311287552475745391UL + 3848UL), (6311287552475745391UL + 3849UL), (6311287552475745391UL + 3850UL), (6311287552475745391UL + 3851UL), (6311287552475745391UL + 3852UL), (6311287552475745391UL + 3853UL), (6311287552475745391UL + 3854UL), (6311287552475745391UL + 3855UL), (6311287552475745391UL + 3856UL), (6311287552475745391UL + 3857UL), (6311287552475745391UL + 3858UL), (6311287552475745391UL + 3859UL), (6311287552475745391UL + 3860UL), (6311287552475745391UL + 3861UL), (6311287552475745391UL + 3862UL), (6311287552475745391UL + 3863UL), (6311287552475745391UL + 3864UL), (6311287552475745391UL + 3865UL), (6311287552475745391UL + 3866UL), (6311287552475745391UL + 3867UL), (6311287552475745391UL + 3868UL), (6311287552475745391UL + 3869UL), (6311287552475745391UL + 3870UL), (6311287552475745391UL + 3871UL),
-                            &____alias_loc_id_23, (unsigned)6, (unsigned)0, (unsigned)0, (6311287552475745391UL + 4832UL), (6311287552475745391UL + 4833UL), (6311287552475745391UL + 4834UL), (6311287552475745391UL + 4835UL), (6311287552475745391UL + 4836UL), (6311287552475745391UL + 4837UL),
-                            &____alias_loc_id_24, (unsigned)22, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 4867UL), (6311287552475745391UL + 4868UL), (6311287552475745391UL + 4869UL), (6311287552475745391UL + 4870UL), (6311287552475745391UL + 4871UL), (6311287552475745391UL + 4872UL), (6311287552475745391UL + 4873UL), (6311287552475745391UL + 4874UL), (6311287552475745391UL + 4875UL), (6311287552475745391UL + 4876UL), (6311287552475745391UL + 4877UL), (6311287552475745391UL + 4878UL), (6311287552475745391UL + 4879UL), (6311287552475745391UL + 4880UL), (6311287552475745391UL + 4881UL), (6311287552475745391UL + 4882UL), (6311287552475745391UL + 4883UL), (6311287552475745391UL + 4884UL), (6311287552475745391UL + 4885UL), (6311287552475745391UL + 4886UL), (6311287552475745391UL + 4887UL),
-                            &____alias_loc_id_25, (unsigned)20, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 5400UL), (6311287552475745391UL + 5401UL), (6311287552475745391UL + 5404UL), (6311287552475745391UL + 5405UL), (6311287552475745391UL + 5406UL), (6311287552475745391UL + 5407UL), (6311287552475745391UL + 5408UL), (6311287552475745391UL + 5409UL), (6311287552475745391UL + 5410UL), (6311287552475745391UL + 5411UL), (6311287552475745391UL + 5412UL), (6311287552475745391UL + 5413UL), (6311287552475745391UL + 5414UL), (6311287552475745391UL + 5415UL), (6311287552475745391UL + 5416UL), (6311287552475745391UL + 5417UL), (6311287552475745391UL + 5418UL), (6311287552475745391UL + 5419UL), (6311287552475745391UL + 5420UL),
-                            &____alias_loc_id_26, (unsigned)6, (unsigned)0, (unsigned)0, (6311287552475745391UL + 5674UL), (6311287552475745391UL + 5675UL), (6311287552475745391UL + 5676UL), (6311287552475745391UL + 5677UL), (6311287552475745391UL + 5678UL), (6311287552475745391UL + 5679UL),
-                            &____alias_loc_id_27, (unsigned)49, (unsigned)0, (unsigned)0, (6311287552475745391UL + 5991UL), (6311287552475745391UL + 5992UL), (6311287552475745391UL + 5993UL), (6311287552475745391UL + 5994UL), (6311287552475745391UL + 5995UL), (6311287552475745391UL + 5996UL), (6311287552475745391UL + 5997UL), (6311287552475745391UL + 5998UL), (6311287552475745391UL + 5999UL), (6311287552475745391UL + 6000UL), (6311287552475745391UL + 6001UL), (6311287552475745391UL + 6002UL), (6311287552475745391UL + 6003UL), (6311287552475745391UL + 6004UL), (6311287552475745391UL + 6005UL), (6311287552475745391UL + 6006UL), (6311287552475745391UL + 6007UL), (6311287552475745391UL + 6008UL), (6311287552475745391UL + 6009UL), (6311287552475745391UL + 6010UL), (6311287552475745391UL + 6011UL), (6311287552475745391UL + 6012UL), (6311287552475745391UL + 6013UL), (6311287552475745391UL + 6014UL), (6311287552475745391UL + 6015UL), (6311287552475745391UL + 6016UL), (6311287552475745391UL + 6017UL), (6311287552475745391UL + 6018UL), (6311287552475745391UL + 6019UL), (6311287552475745391UL + 6020UL), (6311287552475745391UL + 6021UL), (6311287552475745391UL + 6022UL), (6311287552475745391UL + 6023UL), (6311287552475745391UL + 6024UL), (6311287552475745391UL + 6025UL), (6311287552475745391UL + 6026UL), (6311287552475745391UL + 6027UL), (6311287552475745391UL + 6028UL), (6311287552475745391UL + 6029UL), (6311287552475745391UL + 6030UL), (6311287552475745391UL + 6031UL), (6311287552475745391UL + 6032UL), (6311287552475745391UL + 6033UL), (6311287552475745391UL + 6034UL), (6311287552475745391UL + 6035UL), (6311287552475745391UL + 6036UL), (6311287552475745391UL + 6037UL), (6311287552475745391UL + 6655UL), (6311287552475745391UL + 6656UL),
-                            &____alias_loc_id_28, (unsigned)17, (unsigned)0, (unsigned)0, (6311287552475745391UL + 6657UL), (6311287552475745391UL + 6658UL), (6311287552475745391UL + 6659UL), (6311287552475745391UL + 6660UL), (6311287552475745391UL + 6661UL), (6311287552475745391UL + 6662UL), (6311287552475745391UL + 6663UL), (6311287552475745391UL + 6664UL), (6311287552475745391UL + 6665UL), (6311287552475745391UL + 6666UL), (6311287552475745391UL + 6667UL), (6311287552475745391UL + 6668UL), (6311287552475745391UL + 6669UL), (6311287552475745391UL + 6670UL), (6311287552475745391UL + 6671UL), (6311287552475745391UL + 6672UL), (6311287552475745391UL + 7193UL),
-                            &____alias_loc_id_29, (unsigned)19, (unsigned)0, (unsigned)0, (6311287552475745391UL + 7194UL), (6311287552475745391UL + 7195UL), (6311287552475745391UL + 7196UL), (6311287552475745391UL + 7197UL), (6311287552475745391UL + 7198UL), (6311287552475745391UL + 7199UL), (6311287552475745391UL + 7200UL), (6311287552475745391UL + 7201UL), (6311287552475745391UL + 7202UL), (6311287552475745391UL + 7203UL), (6311287552475745391UL + 7204UL), (6311287552475745391UL + 7205UL), (6311287552475745391UL + 7206UL), (6311287552475745391UL + 7207UL), (6311287552475745391UL + 7208UL), (6311287552475745391UL + 7209UL), (6311287552475745391UL + 7210UL), (6311287552475745391UL + 7211UL), (6311287552475745391UL + 7212UL),
-                            &____alias_loc_id_30, (unsigned)3, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 7354UL), (6311287552475745391UL + 7355UL),
-                            &____alias_loc_id_31, (unsigned)3, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 7388UL), (6311287552475745391UL + 7389UL),
-                            &____alias_loc_id_32, (unsigned)5, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 7454UL), (6311287552475745391UL + 7455UL), (6311287552475745391UL + 7456UL), (6311287552475745391UL + 7457UL),
-                            &____alias_loc_id_33, (unsigned)8, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 7529UL), (6311287552475745391UL + 7530UL), (6311287552475745391UL + 7531UL), (6311287552475745391UL + 7532UL), (6311287552475745391UL + 7533UL), (6311287552475745391UL + 7534UL), (6311287552475745391UL + 7535UL),
-                            &____alias_loc_id_34, (unsigned)4, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 7642UL), (6311287552475745391UL + 7643UL), (6311287552475745391UL + 7644UL),
-                            &____alias_loc_id_35, (unsigned)7, (unsigned)0, (unsigned)0, (6311287552475745391UL + 7706UL), (6311287552475745391UL + 7707UL), (6311287552475745391UL + 7708UL), (6311287552475745391UL + 7709UL), (6311287552475745391UL + 7710UL), (6311287552475745391UL + 7711UL), (6311287552475745391UL + 7712UL),
-                            &____alias_loc_id_36, (unsigned)8, (unsigned)0, (unsigned)0, (6311287552475745391UL + 7799UL), (6311287552475745391UL + 7800UL), (6311287552475745391UL + 7801UL), (6311287552475745391UL + 7802UL), (6311287552475745391UL + 7803UL), (6311287552475745391UL + 7853UL), (6311287552475745391UL + 7854UL), (6311287552475745391UL + 7855UL),
-                            &____alias_loc_id_37, (unsigned)15, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 7856UL), (6311287552475745391UL + 7857UL), (6311287552475745391UL + 7858UL), (6311287552475745391UL + 7859UL), (6311287552475745391UL + 7860UL), (6311287552475745391UL + 7862UL), (6311287552475745391UL + 7863UL), (6311287552475745391UL + 7864UL), (6311287552475745391UL + 7868UL), (6311287552475745391UL + 7869UL), (6311287552475745391UL + 7870UL), (6311287552475745391UL + 7871UL), (6311287552475745391UL + 7872UL), (6311287552475745391UL + 7873UL),
-                            &____alias_loc_id_38, (unsigned)21, (unsigned)0, (unsigned)0, (6311287552475745391UL + 8051UL), (6311287552475745391UL + 8052UL), (6311287552475745391UL + 8053UL), (6311287552475745391UL + 8054UL), (6311287552475745391UL + 8055UL), (6311287552475745391UL + 8062UL), (6311287552475745391UL + 8063UL), (6311287552475745391UL + 8064UL), (6311287552475745391UL + 8065UL), (6311287552475745391UL + 8066UL), (6311287552475745391UL + 8067UL), (6311287552475745391UL + 8068UL), (6311287552475745391UL + 8069UL), (6311287552475745391UL + 8070UL), (6311287552475745391UL + 8095UL), (6311287552475745391UL + 8102UL), (6311287552475745391UL + 8109UL), (6311287552475745391UL + 8116UL), (6311287552475745391UL + 8123UL), (6311287552475745391UL + 8130UL), (6311287552475745391UL + 8289UL),
-                            &____alias_loc_id_39, (unsigned)15, (unsigned)0, (unsigned)0, (6311287552475745391UL + 8291UL), (6311287552475745391UL + 8292UL), (6311287552475745391UL + 8293UL), (6311287552475745391UL + 8294UL), (6311287552475745391UL + 8295UL), (6311287552475745391UL + 8296UL), (6311287552475745391UL + 8297UL), (6311287552475745391UL + 8298UL), (6311287552475745391UL + 8299UL), (6311287552475745391UL + 8300UL), (6311287552475745391UL + 8301UL), (6311287552475745391UL + 8302UL), (6311287552475745391UL + 8545UL), (6311287552475745391UL + 8546UL), (6311287552475745391UL + 8547UL),
-                            &____alias_loc_id_40, (unsigned)6, (unsigned)0, (unsigned)0, (6311287552475745391UL + 8548UL), (6311287552475745391UL + 8549UL), (6311287552475745391UL + 8550UL), (6311287552475745391UL + 8551UL), (6311287552475745391UL + 8552UL), (6311287552475745391UL + 8553UL),
-                            &____alias_loc_id_41, (unsigned)42, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 9061UL), (6311287552475745391UL + 9062UL), (6311287552475745391UL + 9063UL), (6311287552475745391UL + 9064UL), (6311287552475745391UL + 9065UL), (6311287552475745391UL + 9066UL), (6311287552475745391UL + 9067UL), (6311287552475745391UL + 9068UL), (6311287552475745391UL + 9069UL), (6311287552475745391UL + 9073UL), (6311287552475745391UL + 9074UL), (6311287552475745391UL + 9075UL), (6311287552475745391UL + 9076UL), (6311287552475745391UL + 9077UL), (6311287552475745391UL + 9078UL), (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), (6311287552475745391UL + 9082UL), (6311287552475745391UL + 9083UL), (6311287552475745391UL + 9084UL), (6311287552475745391UL + 9085UL), (6311287552475745391UL + 9086UL), (6311287552475745391UL + 9087UL), (6311287552475745391UL + 9088UL), (6311287552475745391UL + 9089UL), (6311287552475745391UL + 9090UL), (6311287552475745391UL + 9091UL), (6311287552475745391UL + 9092UL), (6311287552475745391UL + 9093UL), (6311287552475745391UL + 9094UL), (6311287552475745391UL + 9095UL), (6311287552475745391UL + 9096UL), (6311287552475745391UL + 9097UL), (6311287552475745391UL + 9098UL), (6311287552475745391UL + 9099UL), (6311287552475745391UL + 9100UL), (6311287552475745391UL + 9101UL), (6311287552475745391UL + 9102UL), (6311287552475745391UL + 9103UL), (6311287552475745391UL + 9104UL),
-                            &____alias_loc_id_42, (unsigned)1, (unsigned)0, (unsigned)0, (6311287552475745391UL + 10372UL),
-                            &____alias_loc_id_43, (unsigned)26, (unsigned)0, (unsigned)0, (6311287552475745391UL + 10379UL), (6311287552475745391UL + 10380UL), (6311287552475745391UL + 10381UL), (6311287552475745391UL + 10382UL), (6311287552475745391UL + 10383UL), (6311287552475745391UL + 10384UL), (6311287552475745391UL + 10385UL), (6311287552475745391UL + 10386UL), (6311287552475745391UL + 10387UL), (6311287552475745391UL + 10388UL), (6311287552475745391UL + 10389UL), (6311287552475745391UL + 10390UL), (6311287552475745391UL + 10391UL), (6311287552475745391UL + 10392UL), (6311287552475745391UL + 10393UL), (6311287552475745391UL + 10394UL), (6311287552475745391UL + 10395UL), (6311287552475745391UL + 10396UL), (6311287552475745391UL + 10397UL), (6311287552475745391UL + 10398UL), (6311287552475745391UL + 10399UL), (6311287552475745391UL + 10400UL), (6311287552475745391UL + 10401UL), (6311287552475745391UL + 12281UL), (6311287552475745391UL + 12282UL), (6311287552475745391UL + 12283UL),
-                            &____alias_loc_id_44, (unsigned)25, (unsigned)0, (unsigned)0, (6311287552475745391UL + 12285UL), (6311287552475745391UL + 12286UL), (6311287552475745391UL + 12287UL), (6311287552475745391UL + 12288UL), (6311287552475745391UL + 12289UL), (6311287552475745391UL + 12290UL), (6311287552475745391UL + 12291UL), (6311287552475745391UL + 12292UL), (6311287552475745391UL + 12293UL), (6311287552475745391UL + 12294UL), (6311287552475745391UL + 12295UL), (6311287552475745391UL + 12296UL), (6311287552475745391UL + 12297UL), (6311287552475745391UL + 12298UL), (6311287552475745391UL + 12299UL), (6311287552475745391UL + 12300UL), (6311287552475745391UL + 12301UL), (6311287552475745391UL + 12302UL), (6311287552475745391UL + 12303UL), (6311287552475745391UL + 12304UL), (6311287552475745391UL + 12305UL), (6311287552475745391UL + 12306UL), (6311287552475745391UL + 12534UL), (6311287552475745391UL + 12535UL), (6311287552475745391UL + 12536UL),
-                            &____alias_loc_id_45, (unsigned)10, (unsigned)0, (unsigned)0, (6311287552475745391UL + 12537UL), (6311287552475745391UL + 12538UL), (6311287552475745391UL + 12539UL), (6311287552475745391UL + 12540UL), (6311287552475745391UL + 12541UL), (6311287552475745391UL + 12542UL), (6311287552475745391UL + 12543UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL),
-                            &____alias_loc_id_46, (unsigned)34, (unsigned)0, (unsigned)0, (6311287552475745391UL + 12955UL), (6311287552475745391UL + 12956UL), (6311287552475745391UL + 12957UL), (6311287552475745391UL + 12958UL), (6311287552475745391UL + 12959UL), (6311287552475745391UL + 12960UL), (6311287552475745391UL + 12961UL), (6311287552475745391UL + 12962UL), (6311287552475745391UL + 12963UL), (6311287552475745391UL + 12964UL), (6311287552475745391UL + 12965UL), (6311287552475745391UL + 12966UL), (6311287552475745391UL + 12967UL), (6311287552475745391UL + 12968UL), (6311287552475745391UL + 12969UL), (6311287552475745391UL + 12970UL), (6311287552475745391UL + 12971UL), (6311287552475745391UL + 12972UL), (6311287552475745391UL + 12973UL), (6311287552475745391UL + 12974UL), (6311287552475745391UL + 12975UL), (6311287552475745391UL + 12976UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12980UL), (6311287552475745391UL + 12981UL), (6311287552475745391UL + 12982UL), (6311287552475745391UL + 12983UL), (6311287552475745391UL + 12984UL), (6311287552475745391UL + 12985UL), (6311287552475745391UL + 13317UL), (6311287552475745391UL + 13318UL), (6311287552475745391UL + 13319UL),
-                            &____alias_loc_id_47, (unsigned)45, (unsigned)0, (unsigned)0, (6311287552475745391UL + 13320UL), (6311287552475745391UL + 13321UL), (6311287552475745391UL + 13322UL), (6311287552475745391UL + 13323UL), (6311287552475745391UL + 13324UL), (6311287552475745391UL + 13325UL), (6311287552475745391UL + 13326UL), (6311287552475745391UL + 13327UL), (6311287552475745391UL + 13328UL), (6311287552475745391UL + 13329UL), (6311287552475745391UL + 13330UL), (6311287552475745391UL + 13331UL), (6311287552475745391UL + 13332UL), (6311287552475745391UL + 13333UL), (6311287552475745391UL + 13334UL), (6311287552475745391UL + 13335UL), (6311287552475745391UL + 13336UL), (6311287552475745391UL + 13337UL), (6311287552475745391UL + 13338UL), (6311287552475745391UL + 13339UL), (6311287552475745391UL + 13340UL), (6311287552475745391UL + 13341UL), (6311287552475745391UL + 13342UL), (6311287552475745391UL + 13343UL), (6311287552475745391UL + 13344UL), (6311287552475745391UL + 13345UL), (6311287552475745391UL + 13346UL), (6311287552475745391UL + 13347UL), (6311287552475745391UL + 13348UL), (6311287552475745391UL + 13349UL), (6311287552475745391UL + 13350UL), (6311287552475745391UL + 13351UL), (6311287552475745391UL + 13352UL), (6311287552475745391UL + 13552UL), (6311287552475745391UL + 13553UL), (6311287552475745391UL + 13554UL), (6311287552475745391UL + 13555UL), (6311287552475745391UL + 13556UL), (6311287552475745391UL + 13557UL), (6311287552475745391UL + 13558UL), (6311287552475745391UL + 13559UL), (6311287552475745391UL + 13560UL), (6311287552475745391UL + 13561UL), (6311287552475745391UL + 13562UL), (6311287552475745391UL + 13563UL),
-                            &____alias_loc_id_48, (unsigned)62, (unsigned)0, (unsigned)0, (6311287552475745391UL + 13576UL), (6311287552475745391UL + 13577UL), (6311287552475745391UL + 13578UL), (6311287552475745391UL + 13579UL), (6311287552475745391UL + 13580UL), (6311287552475745391UL + 13581UL), (6311287552475745391UL + 13582UL), (6311287552475745391UL + 13583UL), (6311287552475745391UL + 13584UL), (6311287552475745391UL + 13585UL), (6311287552475745391UL + 13586UL), (6311287552475745391UL + 13587UL), (6311287552475745391UL + 13588UL), (6311287552475745391UL + 13589UL), (6311287552475745391UL + 13590UL), (6311287552475745391UL + 13591UL), (6311287552475745391UL + 13592UL), (6311287552475745391UL + 13593UL), (6311287552475745391UL + 13594UL), (6311287552475745391UL + 13595UL), (6311287552475745391UL + 13596UL), (6311287552475745391UL + 13597UL), (6311287552475745391UL + 13598UL), (6311287552475745391UL + 13599UL), (6311287552475745391UL + 13600UL), (6311287552475745391UL + 13601UL), (6311287552475745391UL + 13602UL), (6311287552475745391UL + 13603UL), (6311287552475745391UL + 13604UL), (6311287552475745391UL + 13605UL), (6311287552475745391UL + 13606UL), (6311287552475745391UL + 13607UL), (6311287552475745391UL + 13608UL), (6311287552475745391UL + 13609UL), (6311287552475745391UL + 13610UL), (6311287552475745391UL + 13611UL), (6311287552475745391UL + 13612UL), (6311287552475745391UL + 13613UL), (6311287552475745391UL + 13614UL), (6311287552475745391UL + 13615UL), (6311287552475745391UL + 13616UL), (6311287552475745391UL + 13617UL), (6311287552475745391UL + 13618UL), (6311287552475745391UL + 13619UL), (6311287552475745391UL + 13620UL), (6311287552475745391UL + 13621UL), (6311287552475745391UL + 13622UL), (6311287552475745391UL + 13623UL), (6311287552475745391UL + 13624UL), (6311287552475745391UL + 13625UL), (6311287552475745391UL + 13626UL), (6311287552475745391UL + 13627UL), (6311287552475745391UL + 13628UL), (6311287552475745391UL + 13629UL), (6311287552475745391UL + 13630UL), (6311287552475745391UL + 13631UL), (6311287552475745391UL + 13632UL), (6311287552475745391UL + 13633UL), (6311287552475745391UL + 13634UL), (6311287552475745391UL + 13635UL), (6311287552475745391UL + 13636UL), (6311287552475745391UL + 13637UL),
+                           &____alias_loc_id_5, (unsigned)57, (unsigned)0, (unsigned)0, (6311287552475745391UL + 459UL), (6311287552475745391UL + 460UL), (6311287552475745391UL + 461UL), (6311287552475745391UL + 462UL), (6311287552475745391UL + 463UL), (6311287552475745391UL + 464UL), (6311287552475745391UL + 465UL), (6311287552475745391UL + 466UL), (6311287552475745391UL + 467UL), (6311287552475745391UL + 468UL), (6311287552475745391UL + 469UL), (6311287552475745391UL + 470UL), (6311287552475745391UL + 471UL), (6311287552475745391UL + 472UL), (6311287552475745391UL + 473UL), (6311287552475745391UL + 474UL), (6311287552475745391UL + 475UL), (6311287552475745391UL + 476UL), (6311287552475745391UL + 477UL), (6311287552475745391UL + 478UL), (6311287552475745391UL + 479UL), (6311287552475745391UL + 480UL), (6311287552475745391UL + 481UL), (6311287552475745391UL + 482UL), (6311287552475745391UL + 483UL), (6311287552475745391UL + 484UL), (6311287552475745391UL + 485UL), (6311287552475745391UL + 486UL), (6311287552475745391UL + 487UL), (6311287552475745391UL + 488UL), (6311287552475745391UL + 489UL), (6311287552475745391UL + 490UL), (6311287552475745391UL + 491UL), (6311287552475745391UL + 492UL), (6311287552475745391UL + 493UL), (6311287552475745391UL + 494UL), (6311287552475745391UL + 495UL), (6311287552475745391UL + 496UL), (6311287552475745391UL + 497UL), (6311287552475745391UL + 498UL), (6311287552475745391UL + 499UL), (6311287552475745391UL + 500UL), (6311287552475745391UL + 501UL), (6311287552475745391UL + 502UL), (6311287552475745391UL + 503UL), (6311287552475745391UL + 504UL), (6311287552475745391UL + 505UL), (6311287552475745391UL + 506UL), (6311287552475745391UL + 507UL), (6311287552475745391UL + 508UL), (6311287552475745391UL + 509UL), (6311287552475745391UL + 510UL), (6311287552475745391UL + 511UL), (6311287552475745391UL + 512UL), (6311287552475745391UL + 513UL), (6311287552475745391UL + 2011UL), (6311287552475745391UL + 14039UL),
+                           &____alias_loc_id_6, (unsigned)4, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1440UL), (6311287552475745391UL + 1441UL), (6311287552475745391UL + 1442UL), (6311287552475745391UL + 1443UL),
+                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1532UL), (6311287552475745391UL + 1533UL), (6311287552475745391UL + 1534UL), (6311287552475745391UL + 1535UL), (6311287552475745391UL + 14039UL),
+                           &____alias_loc_id_8, (unsigned)2, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1640UL), (6311287552475745391UL + 1641UL),
+                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1652UL), (6311287552475745391UL + 1653UL),
+                            &____alias_loc_id_10, (unsigned)1, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1669UL),
+                            &____alias_loc_id_11, (unsigned)9, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1682UL), (6311287552475745391UL + 1683UL), (6311287552475745391UL + 1684UL), (6311287552475745391UL + 1685UL), (6311287552475745391UL + 1686UL), (6311287552475745391UL + 1687UL), (6311287552475745391UL + 1688UL), (6311287552475745391UL + 1689UL), (6311287552475745391UL + 14039UL),
+                            &____alias_loc_id_12, (unsigned)8, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1809UL), (6311287552475745391UL + 1810UL), (6311287552475745391UL + 1811UL), (6311287552475745391UL + 1812UL), (6311287552475745391UL + 1813UL), (6311287552475745391UL + 1814UL), (6311287552475745391UL + 1815UL), (6311287552475745391UL + 14039UL),
+                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1880UL), (6311287552475745391UL + 1881UL),
+                            &____alias_loc_id_14, (unsigned)6, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1892UL), (6311287552475745391UL + 1893UL), (6311287552475745391UL + 1894UL), (6311287552475745391UL + 1895UL), (6311287552475745391UL + 1896UL), (6311287552475745391UL + 2011UL),
+                            &____alias_loc_id_15, (unsigned)4, (unsigned)0, (unsigned)0, (6311287552475745391UL + 1985UL), (6311287552475745391UL + 1986UL), (6311287552475745391UL + 1987UL), (6311287552475745391UL + 1988UL),
+                            &____alias_loc_id_16, (unsigned)12, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2032UL), (6311287552475745391UL + 2033UL), (6311287552475745391UL + 2034UL), (6311287552475745391UL + 2035UL), (6311287552475745391UL + 2036UL), (6311287552475745391UL + 2037UL), (6311287552475745391UL + 2038UL), (6311287552475745391UL + 2039UL), (6311287552475745391UL + 2040UL), (6311287552475745391UL + 2041UL), (6311287552475745391UL + 2042UL), (6311287552475745391UL + 2083UL),
+                            &____alias_loc_id_17, (unsigned)5, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 2214UL), (6311287552475745391UL + 2215UL), (6311287552475745391UL + 2216UL), (6311287552475745391UL + 2217UL),
+                            &____alias_loc_id_18, (unsigned)55, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 2263UL), (6311287552475745391UL + 2264UL), (6311287552475745391UL + 2265UL), (6311287552475745391UL + 2266UL), (6311287552475745391UL + 2267UL), (6311287552475745391UL + 2268UL), (6311287552475745391UL + 2269UL), (6311287552475745391UL + 2270UL), (6311287552475745391UL + 2271UL), (6311287552475745391UL + 2272UL), (6311287552475745391UL + 2273UL), (6311287552475745391UL + 2274UL), (6311287552475745391UL + 2275UL), (6311287552475745391UL + 2276UL), (6311287552475745391UL + 2277UL), (6311287552475745391UL + 2278UL), (6311287552475745391UL + 2279UL), (6311287552475745391UL + 2280UL), (6311287552475745391UL + 2281UL), (6311287552475745391UL + 2282UL), (6311287552475745391UL + 2283UL), (6311287552475745391UL + 2284UL), (6311287552475745391UL + 2285UL), (6311287552475745391UL + 2286UL), (6311287552475745391UL + 2287UL), (6311287552475745391UL + 2288UL), (6311287552475745391UL + 2289UL), (6311287552475745391UL + 2290UL), (6311287552475745391UL + 2291UL), (6311287552475745391UL + 2292UL), (6311287552475745391UL + 2293UL), (6311287552475745391UL + 2294UL), (6311287552475745391UL + 2295UL), (6311287552475745391UL + 2296UL), (6311287552475745391UL + 2297UL), (6311287552475745391UL + 2298UL), (6311287552475745391UL + 2299UL), (6311287552475745391UL + 2300UL), (6311287552475745391UL + 2301UL), (6311287552475745391UL + 2302UL), (6311287552475745391UL + 2303UL), (6311287552475745391UL + 2304UL), (6311287552475745391UL + 2305UL), (6311287552475745391UL + 2306UL), (6311287552475745391UL + 2307UL), (6311287552475745391UL + 2343UL), (6311287552475745391UL + 2350UL), (6311287552475745391UL + 2357UL), (6311287552475745391UL + 2364UL), (6311287552475745391UL + 2371UL), (6311287552475745391UL + 2378UL), (6311287552475745391UL + 2385UL), (6311287552475745391UL + 2392UL), (6311287552475745391UL + 2399UL),
+                            &____alias_loc_id_19, (unsigned)37, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2884UL), (6311287552475745391UL + 2885UL), (6311287552475745391UL + 2886UL), (6311287552475745391UL + 2887UL), (6311287552475745391UL + 2888UL), (6311287552475745391UL + 2889UL), (6311287552475745391UL + 2890UL), (6311287552475745391UL + 2891UL), (6311287552475745391UL + 2892UL), (6311287552475745391UL + 2893UL), (6311287552475745391UL + 2894UL), (6311287552475745391UL + 2895UL), (6311287552475745391UL + 2896UL), (6311287552475745391UL + 2897UL), (6311287552475745391UL + 2898UL), (6311287552475745391UL + 2899UL), (6311287552475745391UL + 2900UL), (6311287552475745391UL + 2901UL), (6311287552475745391UL + 2902UL), (6311287552475745391UL + 2903UL), (6311287552475745391UL + 2904UL), (6311287552475745391UL + 2905UL), (6311287552475745391UL + 2906UL), (6311287552475745391UL + 2907UL), (6311287552475745391UL + 2908UL), (6311287552475745391UL + 2909UL), (6311287552475745391UL + 2910UL), (6311287552475745391UL + 2911UL), (6311287552475745391UL + 2912UL), (6311287552475745391UL + 2913UL), (6311287552475745391UL + 2914UL), (6311287552475745391UL + 2915UL), (6311287552475745391UL + 2916UL), (6311287552475745391UL + 2917UL), (6311287552475745391UL + 2918UL), (6311287552475745391UL + 3534UL), (6311287552475745391UL + 3535UL),
+                            &____alias_loc_id_20, (unsigned)12, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 3556UL), (6311287552475745391UL + 3557UL), (6311287552475745391UL + 3558UL), (6311287552475745391UL + 3559UL), (6311287552475745391UL + 3560UL), (6311287552475745391UL + 3561UL), (6311287552475745391UL + 3562UL), (6311287552475745391UL + 3563UL), (6311287552475745391UL + 3564UL), (6311287552475745391UL + 3565UL), (6311287552475745391UL + 3566UL),
+                            &____alias_loc_id_21, (unsigned)16, (unsigned)0, (unsigned)0, (6311287552475745391UL + 3662UL), (6311287552475745391UL + 3663UL), (6311287552475745391UL + 3664UL), (6311287552475745391UL + 3665UL), (6311287552475745391UL + 3666UL), (6311287552475745391UL + 3667UL), (6311287552475745391UL + 3668UL), (6311287552475745391UL + 3669UL), (6311287552475745391UL + 3670UL), (6311287552475745391UL + 3671UL), (6311287552475745391UL + 3672UL), (6311287552475745391UL + 3673UL), (6311287552475745391UL + 3674UL), (6311287552475745391UL + 3801UL), (6311287552475745391UL + 3802UL), (6311287552475745391UL + 3803UL),
+                            &____alias_loc_id_22, (unsigned)78, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 3811UL), (6311287552475745391UL + 3812UL), (6311287552475745391UL + 3813UL), (6311287552475745391UL + 3814UL), (6311287552475745391UL + 3815UL), (6311287552475745391UL + 3816UL), (6311287552475745391UL + 3817UL), (6311287552475745391UL + 3818UL), (6311287552475745391UL + 3819UL), (6311287552475745391UL + 3820UL), (6311287552475745391UL + 3821UL), (6311287552475745391UL + 3822UL), (6311287552475745391UL + 3823UL), (6311287552475745391UL + 3824UL), (6311287552475745391UL + 3825UL), (6311287552475745391UL + 3826UL), (6311287552475745391UL + 3827UL), (6311287552475745391UL + 3828UL), (6311287552475745391UL + 3829UL), (6311287552475745391UL + 3830UL), (6311287552475745391UL + 3831UL), (6311287552475745391UL + 3832UL), (6311287552475745391UL + 3833UL), (6311287552475745391UL + 3834UL), (6311287552475745391UL + 3835UL), (6311287552475745391UL + 3836UL), (6311287552475745391UL + 3837UL), (6311287552475745391UL + 3838UL), (6311287552475745391UL + 3839UL), (6311287552475745391UL + 3840UL), (6311287552475745391UL + 3841UL), (6311287552475745391UL + 3842UL), (6311287552475745391UL + 3843UL), (6311287552475745391UL + 3844UL), (6311287552475745391UL + 3845UL), (6311287552475745391UL + 3846UL), (6311287552475745391UL + 3847UL), (6311287552475745391UL + 3848UL), (6311287552475745391UL + 3849UL), (6311287552475745391UL + 3850UL), (6311287552475745391UL + 3851UL), (6311287552475745391UL + 3852UL), (6311287552475745391UL + 3853UL), (6311287552475745391UL + 3854UL), (6311287552475745391UL + 3855UL), (6311287552475745391UL + 3856UL), (6311287552475745391UL + 3857UL), (6311287552475745391UL + 3858UL), (6311287552475745391UL + 3859UL), (6311287552475745391UL + 3860UL), (6311287552475745391UL + 3861UL), (6311287552475745391UL + 3862UL), (6311287552475745391UL + 3863UL), (6311287552475745391UL + 3864UL), (6311287552475745391UL + 3865UL), (6311287552475745391UL + 3866UL), (6311287552475745391UL + 3867UL), (6311287552475745391UL + 3868UL), (6311287552475745391UL + 3869UL), (6311287552475745391UL + 3870UL), (6311287552475745391UL + 3871UL), (6311287552475745391UL + 3872UL), (6311287552475745391UL + 3873UL), (6311287552475745391UL + 3874UL), (6311287552475745391UL + 3875UL), (6311287552475745391UL + 3876UL), (6311287552475745391UL + 3877UL), (6311287552475745391UL + 3878UL), (6311287552475745391UL + 3879UL), (6311287552475745391UL + 3880UL), (6311287552475745391UL + 3881UL), (6311287552475745391UL + 3882UL), (6311287552475745391UL + 3883UL), (6311287552475745391UL + 3884UL), (6311287552475745391UL + 3885UL), (6311287552475745391UL + 3886UL), (6311287552475745391UL + 3887UL),
+                            &____alias_loc_id_23, (unsigned)6, (unsigned)0, (unsigned)0, (6311287552475745391UL + 4848UL), (6311287552475745391UL + 4849UL), (6311287552475745391UL + 4850UL), (6311287552475745391UL + 4851UL), (6311287552475745391UL + 4852UL), (6311287552475745391UL + 4853UL),
+                            &____alias_loc_id_24, (unsigned)22, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 4883UL), (6311287552475745391UL + 4884UL), (6311287552475745391UL + 4885UL), (6311287552475745391UL + 4886UL), (6311287552475745391UL + 4887UL), (6311287552475745391UL + 4888UL), (6311287552475745391UL + 4889UL), (6311287552475745391UL + 4890UL), (6311287552475745391UL + 4891UL), (6311287552475745391UL + 4892UL), (6311287552475745391UL + 4893UL), (6311287552475745391UL + 4894UL), (6311287552475745391UL + 4895UL), (6311287552475745391UL + 4896UL), (6311287552475745391UL + 4897UL), (6311287552475745391UL + 4898UL), (6311287552475745391UL + 4899UL), (6311287552475745391UL + 4900UL), (6311287552475745391UL + 4901UL), (6311287552475745391UL + 4902UL), (6311287552475745391UL + 4903UL),
+                            &____alias_loc_id_25, (unsigned)20, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 5416UL), (6311287552475745391UL + 5417UL), (6311287552475745391UL + 5420UL), (6311287552475745391UL + 5421UL), (6311287552475745391UL + 5422UL), (6311287552475745391UL + 5423UL), (6311287552475745391UL + 5424UL), (6311287552475745391UL + 5425UL), (6311287552475745391UL + 5426UL), (6311287552475745391UL + 5427UL), (6311287552475745391UL + 5428UL), (6311287552475745391UL + 5429UL), (6311287552475745391UL + 5430UL), (6311287552475745391UL + 5431UL), (6311287552475745391UL + 5432UL), (6311287552475745391UL + 5433UL), (6311287552475745391UL + 5434UL), (6311287552475745391UL + 5435UL), (6311287552475745391UL + 5436UL),
+                            &____alias_loc_id_26, (unsigned)7, (unsigned)0, (unsigned)0, (6311287552475745391UL + 5690UL), (6311287552475745391UL + 5691UL), (6311287552475745391UL + 5692UL), (6311287552475745391UL + 5693UL), (6311287552475745391UL + 5694UL), (6311287552475745391UL + 5695UL), (6311287552475745391UL + 5696UL),
+                            &____alias_loc_id_27, (unsigned)49, (unsigned)0, (unsigned)0, (6311287552475745391UL + 6011UL), (6311287552475745391UL + 6012UL), (6311287552475745391UL + 6013UL), (6311287552475745391UL + 6014UL), (6311287552475745391UL + 6015UL), (6311287552475745391UL + 6016UL), (6311287552475745391UL + 6017UL), (6311287552475745391UL + 6018UL), (6311287552475745391UL + 6019UL), (6311287552475745391UL + 6020UL), (6311287552475745391UL + 6021UL), (6311287552475745391UL + 6022UL), (6311287552475745391UL + 6023UL), (6311287552475745391UL + 6024UL), (6311287552475745391UL + 6025UL), (6311287552475745391UL + 6026UL), (6311287552475745391UL + 6027UL), (6311287552475745391UL + 6028UL), (6311287552475745391UL + 6029UL), (6311287552475745391UL + 6030UL), (6311287552475745391UL + 6031UL), (6311287552475745391UL + 6032UL), (6311287552475745391UL + 6033UL), (6311287552475745391UL + 6034UL), (6311287552475745391UL + 6035UL), (6311287552475745391UL + 6036UL), (6311287552475745391UL + 6037UL), (6311287552475745391UL + 6038UL), (6311287552475745391UL + 6039UL), (6311287552475745391UL + 6040UL), (6311287552475745391UL + 6041UL), (6311287552475745391UL + 6042UL), (6311287552475745391UL + 6043UL), (6311287552475745391UL + 6044UL), (6311287552475745391UL + 6045UL), (6311287552475745391UL + 6046UL), (6311287552475745391UL + 6047UL), (6311287552475745391UL + 6048UL), (6311287552475745391UL + 6049UL), (6311287552475745391UL + 6050UL), (6311287552475745391UL + 6051UL), (6311287552475745391UL + 6052UL), (6311287552475745391UL + 6053UL), (6311287552475745391UL + 6054UL), (6311287552475745391UL + 6055UL), (6311287552475745391UL + 6056UL), (6311287552475745391UL + 6057UL), (6311287552475745391UL + 6675UL), (6311287552475745391UL + 6676UL),
+                            &____alias_loc_id_28, (unsigned)17, (unsigned)0, (unsigned)0, (6311287552475745391UL + 6677UL), (6311287552475745391UL + 6678UL), (6311287552475745391UL + 6679UL), (6311287552475745391UL + 6680UL), (6311287552475745391UL + 6681UL), (6311287552475745391UL + 6682UL), (6311287552475745391UL + 6683UL), (6311287552475745391UL + 6684UL), (6311287552475745391UL + 6685UL), (6311287552475745391UL + 6686UL), (6311287552475745391UL + 6687UL), (6311287552475745391UL + 6688UL), (6311287552475745391UL + 6689UL), (6311287552475745391UL + 6690UL), (6311287552475745391UL + 6691UL), (6311287552475745391UL + 6692UL), (6311287552475745391UL + 7213UL),
+                            &____alias_loc_id_29, (unsigned)20, (unsigned)0, (unsigned)0, (6311287552475745391UL + 7214UL), (6311287552475745391UL + 7215UL), (6311287552475745391UL + 7216UL), (6311287552475745391UL + 7217UL), (6311287552475745391UL + 7218UL), (6311287552475745391UL + 7219UL), (6311287552475745391UL + 7220UL), (6311287552475745391UL + 7221UL), (6311287552475745391UL + 7222UL), (6311287552475745391UL + 7223UL), (6311287552475745391UL + 7224UL), (6311287552475745391UL + 7225UL), (6311287552475745391UL + 7226UL), (6311287552475745391UL + 7227UL), (6311287552475745391UL + 7228UL), (6311287552475745391UL + 7229UL), (6311287552475745391UL + 7230UL), (6311287552475745391UL + 7231UL), (6311287552475745391UL + 7232UL), (6311287552475745391UL + 7233UL),
+                            &____alias_loc_id_30, (unsigned)3, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 7378UL), (6311287552475745391UL + 7379UL),
+                            &____alias_loc_id_31, (unsigned)3, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 7412UL), (6311287552475745391UL + 7413UL),
+                            &____alias_loc_id_32, (unsigned)5, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 7478UL), (6311287552475745391UL + 7479UL), (6311287552475745391UL + 7480UL), (6311287552475745391UL + 7481UL),
+                            &____alias_loc_id_33, (unsigned)8, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 7553UL), (6311287552475745391UL + 7554UL), (6311287552475745391UL + 7555UL), (6311287552475745391UL + 7556UL), (6311287552475745391UL + 7557UL), (6311287552475745391UL + 7558UL), (6311287552475745391UL + 7559UL),
+                            &____alias_loc_id_34, (unsigned)4, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 7666UL), (6311287552475745391UL + 7667UL), (6311287552475745391UL + 7668UL),
+                            &____alias_loc_id_35, (unsigned)7, (unsigned)0, (unsigned)0, (6311287552475745391UL + 7730UL), (6311287552475745391UL + 7731UL), (6311287552475745391UL + 7732UL), (6311287552475745391UL + 7733UL), (6311287552475745391UL + 7734UL), (6311287552475745391UL + 7735UL), (6311287552475745391UL + 7736UL),
+                            &____alias_loc_id_36, (unsigned)8, (unsigned)0, (unsigned)0, (6311287552475745391UL + 7823UL), (6311287552475745391UL + 7824UL), (6311287552475745391UL + 7825UL), (6311287552475745391UL + 7826UL), (6311287552475745391UL + 7827UL), (6311287552475745391UL + 7877UL), (6311287552475745391UL + 7878UL), (6311287552475745391UL + 7879UL),
+                            &____alias_loc_id_37, (unsigned)15, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 7880UL), (6311287552475745391UL + 7881UL), (6311287552475745391UL + 7882UL), (6311287552475745391UL + 7883UL), (6311287552475745391UL + 7884UL), (6311287552475745391UL + 7886UL), (6311287552475745391UL + 7887UL), (6311287552475745391UL + 7888UL), (6311287552475745391UL + 7892UL), (6311287552475745391UL + 7893UL), (6311287552475745391UL + 7894UL), (6311287552475745391UL + 7895UL), (6311287552475745391UL + 7896UL), (6311287552475745391UL + 7897UL),
+                            &____alias_loc_id_38, (unsigned)21, (unsigned)0, (unsigned)0, (6311287552475745391UL + 8075UL), (6311287552475745391UL + 8076UL), (6311287552475745391UL + 8077UL), (6311287552475745391UL + 8078UL), (6311287552475745391UL + 8079UL), (6311287552475745391UL + 8086UL), (6311287552475745391UL + 8087UL), (6311287552475745391UL + 8088UL), (6311287552475745391UL + 8089UL), (6311287552475745391UL + 8090UL), (6311287552475745391UL + 8091UL), (6311287552475745391UL + 8092UL), (6311287552475745391UL + 8093UL), (6311287552475745391UL + 8094UL), (6311287552475745391UL + 8119UL), (6311287552475745391UL + 8126UL), (6311287552475745391UL + 8133UL), (6311287552475745391UL + 8140UL), (6311287552475745391UL + 8147UL), (6311287552475745391UL + 8154UL), (6311287552475745391UL + 8313UL),
+                            &____alias_loc_id_39, (unsigned)15, (unsigned)0, (unsigned)0, (6311287552475745391UL + 8315UL), (6311287552475745391UL + 8316UL), (6311287552475745391UL + 8317UL), (6311287552475745391UL + 8318UL), (6311287552475745391UL + 8319UL), (6311287552475745391UL + 8320UL), (6311287552475745391UL + 8321UL), (6311287552475745391UL + 8322UL), (6311287552475745391UL + 8323UL), (6311287552475745391UL + 8324UL), (6311287552475745391UL + 8325UL), (6311287552475745391UL + 8326UL), (6311287552475745391UL + 8569UL), (6311287552475745391UL + 8570UL), (6311287552475745391UL + 8571UL),
+                            &____alias_loc_id_40, (unsigned)6, (unsigned)0, (unsigned)0, (6311287552475745391UL + 8572UL), (6311287552475745391UL + 8573UL), (6311287552475745391UL + 8574UL), (6311287552475745391UL + 8575UL), (6311287552475745391UL + 8576UL), (6311287552475745391UL + 8577UL),
+                            &____alias_loc_id_41, (unsigned)42, (unsigned)0, (unsigned)0, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 9085UL), (6311287552475745391UL + 9086UL), (6311287552475745391UL + 9087UL), (6311287552475745391UL + 9088UL), (6311287552475745391UL + 9089UL), (6311287552475745391UL + 9090UL), (6311287552475745391UL + 9091UL), (6311287552475745391UL + 9092UL), (6311287552475745391UL + 9093UL), (6311287552475745391UL + 9097UL), (6311287552475745391UL + 9098UL), (6311287552475745391UL + 9099UL), (6311287552475745391UL + 9100UL), (6311287552475745391UL + 9101UL), (6311287552475745391UL + 9102UL), (6311287552475745391UL + 9103UL), (6311287552475745391UL + 9104UL), (6311287552475745391UL + 9105UL), (6311287552475745391UL + 9106UL), (6311287552475745391UL + 9107UL), (6311287552475745391UL + 9108UL), (6311287552475745391UL + 9109UL), (6311287552475745391UL + 9110UL), (6311287552475745391UL + 9111UL), (6311287552475745391UL + 9112UL), (6311287552475745391UL + 9113UL), (6311287552475745391UL + 9114UL), (6311287552475745391UL + 9115UL), (6311287552475745391UL + 9116UL), (6311287552475745391UL + 9117UL), (6311287552475745391UL + 9118UL), (6311287552475745391UL + 9119UL), (6311287552475745391UL + 9120UL), (6311287552475745391UL + 9121UL), (6311287552475745391UL + 9122UL), (6311287552475745391UL + 9123UL), (6311287552475745391UL + 9124UL), (6311287552475745391UL + 9125UL), (6311287552475745391UL + 9126UL), (6311287552475745391UL + 9127UL), (6311287552475745391UL + 9128UL),
+                            &____alias_loc_id_42, (unsigned)2, (unsigned)0, (unsigned)0, (6311287552475745391UL + 10396UL), (6311287552475745391UL + 10397UL),
+                            &____alias_loc_id_43, (unsigned)26, (unsigned)0, (unsigned)0, (6311287552475745391UL + 10407UL), (6311287552475745391UL + 10408UL), (6311287552475745391UL + 10409UL), (6311287552475745391UL + 10410UL), (6311287552475745391UL + 10411UL), (6311287552475745391UL + 10412UL), (6311287552475745391UL + 10413UL), (6311287552475745391UL + 10414UL), (6311287552475745391UL + 10415UL), (6311287552475745391UL + 10416UL), (6311287552475745391UL + 10417UL), (6311287552475745391UL + 10418UL), (6311287552475745391UL + 10419UL), (6311287552475745391UL + 10420UL), (6311287552475745391UL + 10421UL), (6311287552475745391UL + 10422UL), (6311287552475745391UL + 10423UL), (6311287552475745391UL + 10424UL), (6311287552475745391UL + 10425UL), (6311287552475745391UL + 10426UL), (6311287552475745391UL + 10427UL), (6311287552475745391UL + 10428UL), (6311287552475745391UL + 10429UL), (6311287552475745391UL + 12309UL), (6311287552475745391UL + 12310UL), (6311287552475745391UL + 12311UL),
+                            &____alias_loc_id_44, (unsigned)25, (unsigned)0, (unsigned)0, (6311287552475745391UL + 12313UL), (6311287552475745391UL + 12314UL), (6311287552475745391UL + 12315UL), (6311287552475745391UL + 12316UL), (6311287552475745391UL + 12317UL), (6311287552475745391UL + 12318UL), (6311287552475745391UL + 12319UL), (6311287552475745391UL + 12320UL), (6311287552475745391UL + 12321UL), (6311287552475745391UL + 12322UL), (6311287552475745391UL + 12323UL), (6311287552475745391UL + 12324UL), (6311287552475745391UL + 12325UL), (6311287552475745391UL + 12326UL), (6311287552475745391UL + 12327UL), (6311287552475745391UL + 12328UL), (6311287552475745391UL + 12329UL), (6311287552475745391UL + 12330UL), (6311287552475745391UL + 12331UL), (6311287552475745391UL + 12332UL), (6311287552475745391UL + 12333UL), (6311287552475745391UL + 12334UL), (6311287552475745391UL + 12562UL), (6311287552475745391UL + 12563UL), (6311287552475745391UL + 12564UL),
+                            &____alias_loc_id_45, (unsigned)10, (unsigned)0, (unsigned)0, (6311287552475745391UL + 12565UL), (6311287552475745391UL + 12566UL), (6311287552475745391UL + 12567UL), (6311287552475745391UL + 12568UL), (6311287552475745391UL + 12569UL), (6311287552475745391UL + 12570UL), (6311287552475745391UL + 12571UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL),
+                            &____alias_loc_id_46, (unsigned)34, (unsigned)0, (unsigned)0, (6311287552475745391UL + 12983UL), (6311287552475745391UL + 12984UL), (6311287552475745391UL + 12985UL), (6311287552475745391UL + 12986UL), (6311287552475745391UL + 12987UL), (6311287552475745391UL + 12988UL), (6311287552475745391UL + 12989UL), (6311287552475745391UL + 12990UL), (6311287552475745391UL + 12991UL), (6311287552475745391UL + 12992UL), (6311287552475745391UL + 12993UL), (6311287552475745391UL + 12994UL), (6311287552475745391UL + 12995UL), (6311287552475745391UL + 12996UL), (6311287552475745391UL + 12997UL), (6311287552475745391UL + 12998UL), (6311287552475745391UL + 12999UL), (6311287552475745391UL + 13000UL), (6311287552475745391UL + 13001UL), (6311287552475745391UL + 13002UL), (6311287552475745391UL + 13003UL), (6311287552475745391UL + 13004UL), (6311287552475745391UL + 13005UL), (6311287552475745391UL + 13006UL), (6311287552475745391UL + 13007UL), (6311287552475745391UL + 13008UL), (6311287552475745391UL + 13009UL), (6311287552475745391UL + 13010UL), (6311287552475745391UL + 13011UL), (6311287552475745391UL + 13012UL), (6311287552475745391UL + 13013UL), (6311287552475745391UL + 13345UL), (6311287552475745391UL + 13346UL), (6311287552475745391UL + 13347UL),
+                            &____alias_loc_id_47, (unsigned)45, (unsigned)0, (unsigned)0, (6311287552475745391UL + 13348UL), (6311287552475745391UL + 13349UL), (6311287552475745391UL + 13350UL), (6311287552475745391UL + 13351UL), (6311287552475745391UL + 13352UL), (6311287552475745391UL + 13353UL), (6311287552475745391UL + 13354UL), (6311287552475745391UL + 13355UL), (6311287552475745391UL + 13356UL), (6311287552475745391UL + 13357UL), (6311287552475745391UL + 13358UL), (6311287552475745391UL + 13359UL), (6311287552475745391UL + 13360UL), (6311287552475745391UL + 13361UL), (6311287552475745391UL + 13362UL), (6311287552475745391UL + 13363UL), (6311287552475745391UL + 13364UL), (6311287552475745391UL + 13365UL), (6311287552475745391UL + 13366UL), (6311287552475745391UL + 13367UL), (6311287552475745391UL + 13368UL), (6311287552475745391UL + 13369UL), (6311287552475745391UL + 13370UL), (6311287552475745391UL + 13371UL), (6311287552475745391UL + 13372UL), (6311287552475745391UL + 13373UL), (6311287552475745391UL + 13374UL), (6311287552475745391UL + 13375UL), (6311287552475745391UL + 13376UL), (6311287552475745391UL + 13377UL), (6311287552475745391UL + 13378UL), (6311287552475745391UL + 13379UL), (6311287552475745391UL + 13380UL), (6311287552475745391UL + 13580UL), (6311287552475745391UL + 13581UL), (6311287552475745391UL + 13582UL), (6311287552475745391UL + 13583UL), (6311287552475745391UL + 13584UL), (6311287552475745391UL + 13585UL), (6311287552475745391UL + 13586UL), (6311287552475745391UL + 13587UL), (6311287552475745391UL + 13588UL), (6311287552475745391UL + 13589UL), (6311287552475745391UL + 13590UL), (6311287552475745391UL + 13591UL),
+                            &____alias_loc_id_48, (unsigned)63, (unsigned)0, (unsigned)0, (6311287552475745391UL + 13604UL), (6311287552475745391UL + 13605UL), (6311287552475745391UL + 13606UL), (6311287552475745391UL + 13607UL), (6311287552475745391UL + 13608UL), (6311287552475745391UL + 13609UL), (6311287552475745391UL + 13610UL), (6311287552475745391UL + 13611UL), (6311287552475745391UL + 13612UL), (6311287552475745391UL + 13613UL), (6311287552475745391UL + 13614UL), (6311287552475745391UL + 13615UL), (6311287552475745391UL + 13616UL), (6311287552475745391UL + 13617UL), (6311287552475745391UL + 13618UL), (6311287552475745391UL + 13619UL), (6311287552475745391UL + 13620UL), (6311287552475745391UL + 13621UL), (6311287552475745391UL + 13622UL), (6311287552475745391UL + 13623UL), (6311287552475745391UL + 13624UL), (6311287552475745391UL + 13625UL), (6311287552475745391UL + 13626UL), (6311287552475745391UL + 13627UL), (6311287552475745391UL + 13628UL), (6311287552475745391UL + 13629UL), (6311287552475745391UL + 13630UL), (6311287552475745391UL + 13631UL), (6311287552475745391UL + 13632UL), (6311287552475745391UL + 13633UL), (6311287552475745391UL + 13634UL), (6311287552475745391UL + 13635UL), (6311287552475745391UL + 13636UL), (6311287552475745391UL + 13637UL), (6311287552475745391UL + 13638UL), (6311287552475745391UL + 13639UL), (6311287552475745391UL + 13640UL), (6311287552475745391UL + 13641UL), (6311287552475745391UL + 13642UL), (6311287552475745391UL + 13643UL), (6311287552475745391UL + 13644UL), (6311287552475745391UL + 13645UL), (6311287552475745391UL + 13646UL), (6311287552475745391UL + 13647UL), (6311287552475745391UL + 13648UL), (6311287552475745391UL + 13649UL), (6311287552475745391UL + 13650UL), (6311287552475745391UL + 13651UL), (6311287552475745391UL + 13652UL), (6311287552475745391UL + 13653UL), (6311287552475745391UL + 13654UL), (6311287552475745391UL + 13655UL), (6311287552475745391UL + 13656UL), (6311287552475745391UL + 13657UL), (6311287552475745391UL + 13658UL), (6311287552475745391UL + 13659UL), (6311287552475745391UL + 13660UL), (6311287552475745391UL + 13661UL), (6311287552475745391UL + 13662UL), (6311287552475745391UL + 13663UL), (6311287552475745391UL + 13664UL), (6311287552475745391UL + 13665UL), (6311287552475745391UL + 13666UL),
                             "SQRT", (void *)(&SQRT_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "sqrt", 1, 0UL, 0UL,
                             "CBRT", (void *)(&CBRT_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "cbrt", 1, 0UL, 0UL,
                             "FABS", (void *)(&FABS_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "fabs", 1, 0UL, 0UL,
@@ -16669,19 +16669,19 @@ static int module_init() {
                             "AllocateElemTemporary", (void *)(&AllocateElemTemporary_npm), (void *)__null, 0, 2, (6311287552475745391UL + 427UL), 0UL, 0UL, 10, "malloc", 1, 0UL, (6311287552475745391UL + 358UL), "malloc", 1, 0UL, (6311287552475745391UL + 358UL), "malloc", 1, 0UL, (6311287552475745391UL + 358UL), "malloc", 1, 0UL, (6311287552475745391UL + 358UL), "malloc", 1, 0UL, (6311287552475745391UL + 358UL), "malloc", 1, 0UL, (6311287552475745391UL + 358UL), "malloc", 1, 0UL, (6311287552475745391UL + 358UL), "malloc", 1, 0UL, (6311287552475745391UL + 358UL), "malloc", 1, 0UL, (6311287552475745391UL + 358UL), "malloc", 1, 0UL, (6311287552475745391UL + 358UL),
                             "AllocateNodesets", (void *)(&AllocateNodesets_npm), (void *)__null, 0, 2, (6311287552475745391UL + 457UL), 0UL, 0UL, 3, "malloc", 1, 0UL, (6311287552475745391UL + 437UL), "malloc", 1, 0UL, (6311287552475745391UL + 437UL), "malloc", 1, 0UL, (6311287552475745391UL + 437UL),
                             "TimeIncrement", (void *)(&TimeIncrement_npm), (void *)__null, 0, 0, 0UL, 0,
-                            "InitStressTermsForElems", (void *)(&InitStressTermsForElems_npm), (void *)__null, 0, 4, 0UL, (6311287552475745391UL + 7853UL), (6311287552475745391UL + 7854UL), (6311287552475745391UL + 7855UL), 0UL, 0,
-                            "CalcElemShapeFunctionDerivatives", (void *)(&CalcElemShapeFunctionDerivatives_npm), (void *)__null, 0, 5, (6311287552475745391UL + 6652UL), (6311287552475745391UL + 6653UL), (6311287552475745391UL + 6654UL), (6311287552475745391UL + 6655UL), (6311287552475745391UL + 6656UL), 0UL, 0,
-                            "SumElemFaceNormal", (void *)(&SumElemFaceNormal_npm), (void *)__null, 0, 24, (6311287552475745391UL + 13552UL), (6311287552475745391UL + 13553UL), (6311287552475745391UL + 13554UL), (6311287552475745391UL + 13555UL), (6311287552475745391UL + 13556UL), (6311287552475745391UL + 13557UL), (6311287552475745391UL + 13558UL), (6311287552475745391UL + 13559UL), (6311287552475745391UL + 13560UL), (6311287552475745391UL + 13561UL), (6311287552475745391UL + 13562UL), (6311287552475745391UL + 13563UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
-                            "CalcElemNodeNormals", (void *)(&CalcElemNodeNormals_npm), (void *)__null, 0, 6, (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12952UL), (6311287552475745391UL + 12953UL), (6311287552475745391UL + 12954UL), 0UL, 6, "SumElemFaceNormal", 24, (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), (6311287552475745391UL + 12949UL), (6311287552475745391UL + 12950UL), (6311287552475745391UL + 12951UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "SumElemStressesToNodeForces", (void *)(&SumElemStressesToNodeForces_npm), (void *)__null, 0, 7, (6311287552475745391UL + 13313UL), 0UL, 0UL, 0UL, (6311287552475745391UL + 13317UL), (6311287552475745391UL + 13318UL), (6311287552475745391UL + 13319UL), 0UL, 0,
-                            "IntegrateStressForElems", (void *)(&IntegrateStressForElems_npm), (void *)__null, 0, 5, 0UL, (6311287552475745391UL + 8047UL), (6311287552475745391UL + 8048UL), (6311287552475745391UL + 8049UL), (6311287552475745391UL + 8050UL), 0UL, 3, "CalcElemShapeFunctionDerivatives", 5, (6311287552475745391UL + 7862UL), (6311287552475745391UL + 7863UL), (6311287552475745391UL + 7864UL), (6311287552475745391UL + 7861UL), (6311287552475745391UL + 8050UL), 0UL, "CalcElemNodeNormals", 6, (6311287552475745391UL + 7861UL), (6311287552475745391UL + 7861UL), (6311287552475745391UL + 7861UL), (6311287552475745391UL + 7862UL), (6311287552475745391UL + 7863UL), (6311287552475745391UL + 7864UL), 0UL, "SumElemStressesToNodeForces", 7, (6311287552475745391UL + 7861UL), 0UL, 0UL, 0UL, (6311287552475745391UL + 7865UL), (6311287552475745391UL + 7866UL), (6311287552475745391UL + 7867UL), 0UL,
-                            "CollectDomainNodesToElemNodes", (void *)(&CollectDomainNodesToElemNodes_npm), (void *)__null, 0, 4, (6311287552475745391UL + 8544UL), (6311287552475745391UL + 8545UL), (6311287552475745391UL + 8546UL), (6311287552475745391UL + 8547UL), 0UL, 0,
-                            "VoluDer", (void *)(&VoluDer_npm), (void *)__null, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 12534UL), (6311287552475745391UL + 12535UL), (6311287552475745391UL + 12536UL), 0UL, 0,
-                            "CalcElemVolumeDerivative", (void *)(&CalcElemVolumeDerivative_npm), (void *)__null, 0, 6, (6311287552475745391UL + 9055UL), (6311287552475745391UL + 9056UL), (6311287552475745391UL + 9057UL), (6311287552475745391UL + 9058UL), (6311287552475745391UL + 9059UL), (6311287552475745391UL + 9060UL), 0UL, 8, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9055UL), (6311287552475745391UL + 9056UL), (6311287552475745391UL + 9057UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9055UL), (6311287552475745391UL + 9056UL), (6311287552475745391UL + 9057UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9055UL), (6311287552475745391UL + 9056UL), (6311287552475745391UL + 9057UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9055UL), (6311287552475745391UL + 9056UL), (6311287552475745391UL + 9057UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9055UL), (6311287552475745391UL + 9056UL), (6311287552475745391UL + 9057UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9055UL), (6311287552475745391UL + 9056UL), (6311287552475745391UL + 9057UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9055UL), (6311287552475745391UL + 9056UL), (6311287552475745391UL + 9057UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9055UL), (6311287552475745391UL + 9056UL), (6311287552475745391UL + 9057UL), 0UL,
-                            "CalcElemFBHourglassForce", (void *)(&CalcElemFBHourglassForce_npm), (void *)__null, 0, 15, (6311287552475745391UL + 12269UL), (6311287552475745391UL + 12270UL), (6311287552475745391UL + 12271UL), (6311287552475745391UL + 12272UL), (6311287552475745391UL + 12273UL), (6311287552475745391UL + 12274UL), (6311287552475745391UL + 12275UL), (6311287552475745391UL + 12276UL), (6311287552475745391UL + 12277UL), (6311287552475745391UL + 12278UL), (6311287552475745391UL + 12279UL), 0UL, (6311287552475745391UL + 12281UL), (6311287552475745391UL + 12282UL), (6311287552475745391UL + 12283UL), 0UL, 0,
-                            "CalcFBHourglassForceForElems", (void *)(&CalcFBHourglassForceForElems_npm), (void *)__null, 0, 8, (6311287552475745391UL + 10364UL), (6311287552475745391UL + 10365UL), (6311287552475745391UL + 10366UL), (6311287552475745391UL + 10367UL), (6311287552475745391UL + 10368UL), (6311287552475745391UL + 10369UL), (6311287552475745391UL + 10370UL), 0UL, 0UL, 2, "CBRT", 1, 0UL, 0UL, "CalcElemFBHourglassForce", 15, (6311287552475745391UL + 9083UL), (6311287552475745391UL + 9084UL), (6311287552475745391UL + 9085UL), (6311287552475745391UL + 9075UL), (6311287552475745391UL + 9076UL), (6311287552475745391UL + 9077UL), (6311287552475745391UL + 9078UL), (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), (6311287552475745391UL + 9082UL), 0UL, (6311287552475745391UL + 9070UL), (6311287552475745391UL + 9071UL), (6311287552475745391UL + 9072UL), 0UL,
-                            "CalcHourglassControlForElems", (void *)(&CalcHourglassControlForElems_npm), (void *)__null, 0, 2, (6311287552475745391UL + 8289UL), 0UL, 0UL, 16, "malloc", 1, 0UL, (6311287552475745391UL + 8095UL), "malloc", 1, 0UL, (6311287552475745391UL + 8102UL), "malloc", 1, 0UL, (6311287552475745391UL + 8109UL), "malloc", 1, 0UL, (6311287552475745391UL + 8116UL), "malloc", 1, 0UL, (6311287552475745391UL + 8123UL), "malloc", 1, 0UL, (6311287552475745391UL + 8130UL), "CollectDomainNodesToElemNodes", 4, (6311287552475745391UL + 1995UL), (6311287552475745391UL + 8056UL), (6311287552475745391UL + 8057UL), (6311287552475745391UL + 8058UL), 0UL, "CalcElemVolumeDerivative", 6, (6311287552475745391UL + 8059UL), (6311287552475745391UL + 8060UL), (6311287552475745391UL + 8061UL), (6311287552475745391UL + 8056UL), (6311287552475745391UL + 8057UL), (6311287552475745391UL + 8058UL), 0UL, "exit", 1, 0UL, 0UL, "CalcFBHourglassForceForElems", 8, (6311287552475745391UL + 8289UL), (6311287552475745391UL + 8116UL), (6311287552475745391UL + 8123UL), (6311287552475745391UL + 8130UL), (6311287552475745391UL + 8095UL), (6311287552475745391UL + 8102UL), (6311287552475745391UL + 8109UL), 0UL, 0UL, "free", 1, (6311287552475745391UL + 8130UL), 0UL, "free", 1, (6311287552475745391UL + 8123UL), 0UL, "free", 1, (6311287552475745391UL + 8116UL), 0UL, "free", 1, (6311287552475745391UL + 8109UL), 0UL, "free", 1, (6311287552475745391UL + 8102UL), 0UL, "free", 1, (6311287552475745391UL + 8095UL), 0UL,
-                            "CalcVolumeForceForElems", (void *)(&CalcVolumeForceForElems_npm), (void *)__null, 0, 0, 0UL, 12, "malloc", 1, 0UL, (6311287552475745391UL + 7794UL), "malloc", 1, 0UL, (6311287552475745391UL + 7791UL), "malloc", 1, 0UL, (6311287552475745391UL + 7788UL), "malloc", 1, 0UL, (6311287552475745391UL + 7770UL), "InitStressTermsForElems", 4, 0UL, (6311287552475745391UL + 7794UL), (6311287552475745391UL + 7791UL), (6311287552475745391UL + 7788UL), 0UL, "IntegrateStressForElems", 5, 0UL, (6311287552475745391UL + 7794UL), (6311287552475745391UL + 7791UL), (6311287552475745391UL + 7788UL), (6311287552475745391UL + 7770UL), 0UL, "exit", 1, 0UL, 0UL, "CalcHourglassControlForElems", 2, (6311287552475745391UL + 7770UL), 0UL, 0UL, "free", 1, (6311287552475745391UL + 7770UL), 0UL, "free", 1, (6311287552475745391UL + 7788UL), 0UL, "free", 1, (6311287552475745391UL + 7791UL), 0UL, "free", 1, (6311287552475745391UL + 7794UL), 0UL,
+                            "InitStressTermsForElems", (void *)(&InitStressTermsForElems_npm), (void *)__null, 0, 4, 0UL, (6311287552475745391UL + 7877UL), (6311287552475745391UL + 7878UL), (6311287552475745391UL + 7879UL), 0UL, 0,
+                            "CalcElemShapeFunctionDerivatives", (void *)(&CalcElemShapeFunctionDerivatives_npm), (void *)__null, 0, 5, (6311287552475745391UL + 6672UL), (6311287552475745391UL + 6673UL), (6311287552475745391UL + 6674UL), (6311287552475745391UL + 6675UL), (6311287552475745391UL + 6676UL), 0UL, 0,
+                            "SumElemFaceNormal", (void *)(&SumElemFaceNormal_npm), (void *)__null, 0, 24, (6311287552475745391UL + 13580UL), (6311287552475745391UL + 13581UL), (6311287552475745391UL + 13582UL), (6311287552475745391UL + 13583UL), (6311287552475745391UL + 13584UL), (6311287552475745391UL + 13585UL), (6311287552475745391UL + 13586UL), (6311287552475745391UL + 13587UL), (6311287552475745391UL + 13588UL), (6311287552475745391UL + 13589UL), (6311287552475745391UL + 13590UL), (6311287552475745391UL + 13591UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
+                            "CalcElemNodeNormals", (void *)(&CalcElemNodeNormals_npm), (void *)__null, 0, 6, (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12980UL), (6311287552475745391UL + 12981UL), (6311287552475745391UL + 12982UL), 0UL, 6, "SumElemFaceNormal", 24, (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SumElemFaceNormal", 24, (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), (6311287552475745391UL + 12977UL), (6311287552475745391UL + 12978UL), (6311287552475745391UL + 12979UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "SumElemStressesToNodeForces", (void *)(&SumElemStressesToNodeForces_npm), (void *)__null, 0, 7, (6311287552475745391UL + 13341UL), 0UL, 0UL, 0UL, (6311287552475745391UL + 13345UL), (6311287552475745391UL + 13346UL), (6311287552475745391UL + 13347UL), 0UL, 0,
+                            "IntegrateStressForElems", (void *)(&IntegrateStressForElems_npm), (void *)__null, 0, 5, 0UL, (6311287552475745391UL + 8071UL), (6311287552475745391UL + 8072UL), (6311287552475745391UL + 8073UL), (6311287552475745391UL + 8074UL), 0UL, 3, "CalcElemShapeFunctionDerivatives", 5, (6311287552475745391UL + 7886UL), (6311287552475745391UL + 7887UL), (6311287552475745391UL + 7888UL), (6311287552475745391UL + 7885UL), (6311287552475745391UL + 8074UL), 0UL, "CalcElemNodeNormals", 6, (6311287552475745391UL + 7885UL), (6311287552475745391UL + 7885UL), (6311287552475745391UL + 7885UL), (6311287552475745391UL + 7886UL), (6311287552475745391UL + 7887UL), (6311287552475745391UL + 7888UL), 0UL, "SumElemStressesToNodeForces", 7, (6311287552475745391UL + 7885UL), 0UL, 0UL, 0UL, (6311287552475745391UL + 7889UL), (6311287552475745391UL + 7890UL), (6311287552475745391UL + 7891UL), 0UL,
+                            "CollectDomainNodesToElemNodes", (void *)(&CollectDomainNodesToElemNodes_npm), (void *)__null, 0, 4, (6311287552475745391UL + 8568UL), (6311287552475745391UL + 8569UL), (6311287552475745391UL + 8570UL), (6311287552475745391UL + 8571UL), 0UL, 0,
+                            "VoluDer", (void *)(&VoluDer_npm), (void *)__null, 0, 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 12562UL), (6311287552475745391UL + 12563UL), (6311287552475745391UL + 12564UL), 0UL, 0,
+                            "CalcElemVolumeDerivative", (void *)(&CalcElemVolumeDerivative_npm), (void *)__null, 0, 6, (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), (6311287552475745391UL + 9082UL), (6311287552475745391UL + 9083UL), (6311287552475745391UL + 9084UL), 0UL, 8, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), 0UL, "VoluDer", 21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 9079UL), (6311287552475745391UL + 9080UL), (6311287552475745391UL + 9081UL), 0UL,
+                            "CalcElemFBHourglassForce", (void *)(&CalcElemFBHourglassForce_npm), (void *)__null, 0, 15, (6311287552475745391UL + 12297UL), (6311287552475745391UL + 12298UL), (6311287552475745391UL + 12299UL), (6311287552475745391UL + 12300UL), (6311287552475745391UL + 12301UL), (6311287552475745391UL + 12302UL), (6311287552475745391UL + 12303UL), (6311287552475745391UL + 12304UL), (6311287552475745391UL + 12305UL), (6311287552475745391UL + 12306UL), (6311287552475745391UL + 12307UL), 0UL, (6311287552475745391UL + 12309UL), (6311287552475745391UL + 12310UL), (6311287552475745391UL + 12311UL), 0UL, 0,
+                            "CalcFBHourglassForceForElems", (void *)(&CalcFBHourglassForceForElems_npm), (void *)__null, 0, 8, (6311287552475745391UL + 10388UL), (6311287552475745391UL + 10389UL), (6311287552475745391UL + 10390UL), (6311287552475745391UL + 10391UL), (6311287552475745391UL + 10392UL), (6311287552475745391UL + 10393UL), (6311287552475745391UL + 10394UL), 0UL, 0UL, 2, "CBRT", 1, 0UL, 0UL, "CalcElemFBHourglassForce", 15, (6311287552475745391UL + 9107UL), (6311287552475745391UL + 9108UL), (6311287552475745391UL + 9109UL), (6311287552475745391UL + 9099UL), (6311287552475745391UL + 9100UL), (6311287552475745391UL + 9101UL), (6311287552475745391UL + 9102UL), (6311287552475745391UL + 9103UL), (6311287552475745391UL + 9104UL), (6311287552475745391UL + 9105UL), (6311287552475745391UL + 9106UL), 0UL, (6311287552475745391UL + 9094UL), (6311287552475745391UL + 9095UL), (6311287552475745391UL + 9096UL), 0UL,
+                            "CalcHourglassControlForElems", (void *)(&CalcHourglassControlForElems_npm), (void *)__null, 0, 2, (6311287552475745391UL + 8313UL), 0UL, 0UL, 16, "malloc", 1, 0UL, (6311287552475745391UL + 8119UL), "malloc", 1, 0UL, (6311287552475745391UL + 8126UL), "malloc", 1, 0UL, (6311287552475745391UL + 8133UL), "malloc", 1, 0UL, (6311287552475745391UL + 8140UL), "malloc", 1, 0UL, (6311287552475745391UL + 8147UL), "malloc", 1, 0UL, (6311287552475745391UL + 8154UL), "CollectDomainNodesToElemNodes", 4, (6311287552475745391UL + 2011UL), (6311287552475745391UL + 8080UL), (6311287552475745391UL + 8081UL), (6311287552475745391UL + 8082UL), 0UL, "CalcElemVolumeDerivative", 6, (6311287552475745391UL + 8083UL), (6311287552475745391UL + 8084UL), (6311287552475745391UL + 8085UL), (6311287552475745391UL + 8080UL), (6311287552475745391UL + 8081UL), (6311287552475745391UL + 8082UL), 0UL, "exit", 1, 0UL, 0UL, "CalcFBHourglassForceForElems", 8, (6311287552475745391UL + 8313UL), (6311287552475745391UL + 8140UL), (6311287552475745391UL + 8147UL), (6311287552475745391UL + 8154UL), (6311287552475745391UL + 8119UL), (6311287552475745391UL + 8126UL), (6311287552475745391UL + 8133UL), 0UL, 0UL, "free", 1, (6311287552475745391UL + 8154UL), 0UL, "free", 1, (6311287552475745391UL + 8147UL), 0UL, "free", 1, (6311287552475745391UL + 8140UL), 0UL, "free", 1, (6311287552475745391UL + 8133UL), 0UL, "free", 1, (6311287552475745391UL + 8126UL), 0UL, "free", 1, (6311287552475745391UL + 8119UL), 0UL,
+                            "CalcVolumeForceForElems", (void *)(&CalcVolumeForceForElems_npm), (void *)__null, 0, 0, 0UL, 12, "malloc", 1, 0UL, (6311287552475745391UL + 7818UL), "malloc", 1, 0UL, (6311287552475745391UL + 7815UL), "malloc", 1, 0UL, (6311287552475745391UL + 7812UL), "malloc", 1, 0UL, (6311287552475745391UL + 7794UL), "InitStressTermsForElems", 4, 0UL, (6311287552475745391UL + 7818UL), (6311287552475745391UL + 7815UL), (6311287552475745391UL + 7812UL), 0UL, "IntegrateStressForElems", 5, 0UL, (6311287552475745391UL + 7818UL), (6311287552475745391UL + 7815UL), (6311287552475745391UL + 7812UL), (6311287552475745391UL + 7794UL), 0UL, "exit", 1, 0UL, 0UL, "CalcHourglassControlForElems", 2, (6311287552475745391UL + 7794UL), 0UL, 0UL, "free", 1, (6311287552475745391UL + 7794UL), 0UL, "free", 1, (6311287552475745391UL + 7812UL), 0UL, "free", 1, (6311287552475745391UL + 7815UL), 0UL, "free", 1, (6311287552475745391UL + 7818UL), 0UL,
                             "CalcForceForNodes", (void *)(&CalcForceForNodes_npm), (void *)__null, 0, 0, 0UL, 1, "CalcVolumeForceForElems", 0, 0UL,
                             "CalcAccelerationForNodes", (void *)(&CalcAccelerationForNodes_npm), (void *)__null, 0, 0, 0UL, 0,
                             "ApplyAccelerationBoundaryConditionsForNodes", (void *)(&ApplyAccelerationBoundaryConditionsForNodes_npm), (void *)__null, 0, 0, 0UL, 0,
@@ -16689,21 +16689,21 @@ static int module_init() {
                             "CalcPositionForNodes", (void *)(&CalcPositionForNodes_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
                             "LagrangeNodal", (void *)(&LagrangeNodal_npm), (void *)__null, 0, 0, 0UL, 5, "CalcForceForNodes", 0, 0UL, "CalcAccelerationForNodes", 0, 0UL, "ApplyAccelerationBoundaryConditionsForNodes", 0, 0UL, "CalcVelocityForNodes", 2, 0UL, 0UL, 0UL, "CalcPositionForNodes", 1, 0UL, 0UL,
                             "CalcElemVolume", (void *)(&CalcElemVolume_npm), (void *)__null, 0, 24, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
-                            "CalcElemVolumeWrapper", (void *)(&CalcElemVolumeWrapper_npm), (void *)__null, 0, 3, (6311287552475745391UL + 1519UL), (6311287552475745391UL + 1520UL), (6311287552475745391UL + 1521UL), 0UL, 1, "CalcElemVolume", 24, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "CalcElemVolumeWrapper", (void *)(&CalcElemVolumeWrapper_npm), (void *)__null, 0, 3, (6311287552475745391UL + 1527UL), (6311287552475745391UL + 1528UL), (6311287552475745391UL + 1529UL), 0UL, 1, "CalcElemVolume", 24, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
                             "AreaFace", (void *)(&AreaFace_npm), (void *)__null, 0, 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
-                            "CalcElemCharacteristicLength", (void *)(&CalcElemCharacteristicLength_npm), (void *)__null, 0, 4, (6311287552475745391UL + 5739UL), (6311287552475745391UL + 5751UL), (6311287552475745391UL + 5763UL), 0UL, 0UL, 7, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL,
-                            "CalcElemVelocityGrandient", (void *)(&CalcElemVelocityGrandient_npm), (void *)__null, 0, 6, (6311287552475745391UL + 7188UL), (6311287552475745391UL + 7189UL), (6311287552475745391UL + 7190UL), (6311287552475745391UL + 7191UL), 0UL, (6311287552475745391UL + 7193UL), 0UL, 0,
-                            "CalcKinematicsForElems", (void *)(&CalcKinematicsForElems_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 4, "CalcElemVolumeWrapper", 3, (6311287552475745391UL + 5404UL), (6311287552475745391UL + 5405UL), (6311287552475745391UL + 5406UL), 0UL, "CalcElemCharacteristicLength", 4, (6311287552475745391UL + 5404UL), (6311287552475745391UL + 5405UL), (6311287552475745391UL + 5406UL), 0UL, 0UL, "CalcElemShapeFunctionDerivatives", 5, (6311287552475745391UL + 5404UL), (6311287552475745391UL + 5405UL), (6311287552475745391UL + 5406UL), (6311287552475745391UL + 5402UL), (6311287552475745391UL + 5410UL), 0UL, "CalcElemVelocityGrandient", 6, (6311287552475745391UL + 5407UL), (6311287552475745391UL + 5408UL), (6311287552475745391UL + 5409UL), (6311287552475745391UL + 5402UL), 0UL, (6311287552475745391UL + 5403UL), 0UL,
+                            "CalcElemCharacteristicLength", (void *)(&CalcElemCharacteristicLength_npm), (void *)__null, 0, 4, (6311287552475745391UL + 5756UL), (6311287552475745391UL + 5768UL), (6311287552475745391UL + 5780UL), 0UL, 0UL, 7, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "AreaFace", 12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL,
+                            "CalcElemVelocityGrandient", (void *)(&CalcElemVelocityGrandient_npm), (void *)__null, 0, 6, (6311287552475745391UL + 7208UL), (6311287552475745391UL + 7209UL), (6311287552475745391UL + 7210UL), (6311287552475745391UL + 7211UL), 0UL, (6311287552475745391UL + 7213UL), 0UL, 0,
+                            "CalcKinematicsForElems", (void *)(&CalcKinematicsForElems_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 4, "CalcElemVolumeWrapper", 3, (6311287552475745391UL + 5420UL), (6311287552475745391UL + 5421UL), (6311287552475745391UL + 5422UL), 0UL, "CalcElemCharacteristicLength", 4, (6311287552475745391UL + 5420UL), (6311287552475745391UL + 5421UL), (6311287552475745391UL + 5422UL), 0UL, 0UL, "CalcElemShapeFunctionDerivatives", 5, (6311287552475745391UL + 5420UL), (6311287552475745391UL + 5421UL), (6311287552475745391UL + 5422UL), (6311287552475745391UL + 5418UL), (6311287552475745391UL + 5426UL), 0UL, "CalcElemVelocityGrandient", 6, (6311287552475745391UL + 5423UL), (6311287552475745391UL + 5424UL), (6311287552475745391UL + 5425UL), (6311287552475745391UL + 5418UL), 0UL, (6311287552475745391UL + 5419UL), 0UL,
                             "CalcLagrangeElements", (void *)(&CalcLagrangeElements_npm), (void *)__null, 0, 1, 0UL, 0UL, 2, "CalcKinematicsForElems", 2, 0UL, 0UL, 0UL, "exit", 1, 0UL, 0UL,
                             "CalcMonotonicQGradientsForElems", (void *)(&CalcMonotonicQGradientsForElems_npm), (void *)__null, 0, 0, 0UL, 3, "SQRT", 1, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "SQRT", 1, 0UL, 0UL,
                             "CalcMonotonicQRegionForElems", (void *)(&CalcMonotonicQRegionForElems_npm), (void *)__null, 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
                             "CalcMonotonicQForElems", (void *)(&CalcMonotonicQForElems_npm), (void *)__null, 0, 0, 0UL, 1, "CalcMonotonicQRegionForElems", 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
                             "CalcQForElems", (void *)(&CalcQForElems_npm), (void *)__null, 0, 0, 0UL, 3, "CalcMonotonicQGradientsForElems", 0, 0UL, "CalcMonotonicQForElems", 0, 0UL, "exit", 1, 0UL, 0UL,
-                            "CalcPressureForElems", (void *)(&CalcPressureForElems_npm), (void *)__null, 0, 10, (6311287552475745391UL + 3785UL), (6311287552475745391UL + 3786UL), (6311287552475745391UL + 3787UL), (6311287552475745391UL + 3788UL), (6311287552475745391UL + 3789UL), (6311287552475745391UL + 3790UL), 0UL, 0UL, 0UL, 0UL, 0UL, 1, "FABS", 1, 0UL, 0UL,
-                            "CalcEnergyForElems", (void *)(&CalcEnergyForElems_npm), (void *)__null, 0, 23, (6311287552475745391UL + 3517UL), (6311287552475745391UL + 3518UL), (6311287552475745391UL + 3519UL), (6311287552475745391UL + 3520UL), (6311287552475745391UL + 3521UL), (6311287552475745391UL + 3522UL), (6311287552475745391UL + 3523UL), (6311287552475745391UL + 3524UL), (6311287552475745391UL + 3525UL), (6311287552475745391UL + 3526UL), (6311287552475745391UL + 3527UL), (6311287552475745391UL + 3528UL), (6311287552475745391UL + 3529UL), 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 3535UL), (6311287552475745391UL + 3536UL), 0UL, 0UL, 0UL, 0UL, 11, "malloc", 1, 0UL, (6311287552475745391UL + 2955UL), "CalcPressureForElems", 10, (6311287552475745391UL + 2955UL), (6311287552475745391UL + 3520UL), (6311287552475745391UL + 3521UL), (6311287552475745391UL + 3518UL), (6311287552475745391UL + 3526UL), (6311287552475745391UL + 3527UL), 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL, "CalcPressureForElems", 10, (6311287552475745391UL + 3517UL), (6311287552475745391UL + 3520UL), (6311287552475745391UL + 3521UL), (6311287552475745391UL + 3518UL), (6311287552475745391UL + 3525UL), (6311287552475745391UL + 3527UL), 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL, "CalcPressureForElems", 10, (6311287552475745391UL + 3517UL), (6311287552475745391UL + 3520UL), (6311287552475745391UL + 3521UL), (6311287552475745391UL + 3518UL), (6311287552475745391UL + 3525UL), (6311287552475745391UL + 3527UL), 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL, "free", 1, (6311287552475745391UL + 2955UL), 0UL,
-                            "CalcSoundSpeedForElems", (void *)(&CalcSoundSpeedForElems_npm), (void *)__null, 0, 8, (6311287552475745391UL + 3638UL), 0UL, (6311287552475745391UL + 3640UL), (6311287552475745391UL + 3641UL), (6311287552475745391UL + 3642UL), (6311287552475745391UL + 3643UL), 0UL, 0UL, 0UL, 1, "SQRT", 1, 0UL, 0UL,
-                            "EvalEOSForElems", (void *)(&EvalEOSForElems_npm), (void *)__null, 0, 2, (6311287552475745391UL + 2865UL), 0UL, 0UL, 30, "malloc", 1, 0UL, (6311287552475745391UL + 2327UL), "malloc", 1, 0UL, (6311287552475745391UL + 2334UL), "malloc", 1, 0UL, (6311287552475745391UL + 2341UL), "malloc", 1, 0UL, (6311287552475745391UL + 2348UL), "malloc", 1, 0UL, (6311287552475745391UL + 2355UL), "malloc", 1, 0UL, (6311287552475745391UL + 2362UL), "malloc", 1, 0UL, (6311287552475745391UL + 2369UL), "malloc", 1, 0UL, (6311287552475745391UL + 2376UL), "malloc", 1, 0UL, (6311287552475745391UL + 2383UL), "malloc", 1, 0UL, (6311287552475745391UL + 2390UL), "malloc", 1, 0UL, (6311287552475745391UL + 2397UL), "malloc", 1, 0UL, (6311287552475745391UL + 2404UL), "malloc", 1, 0UL, (6311287552475745391UL + 2411UL), "malloc", 1, 0UL, (6311287552475745391UL + 2418UL), "CalcEnergyForElems", 23, (6311287552475745391UL + 2390UL), (6311287552475745391UL + 2397UL), (6311287552475745391UL + 2404UL), (6311287552475745391UL + 2411UL), (6311287552475745391UL + 2418UL), (6311287552475745391UL + 2341UL), (6311287552475745391UL + 2327UL), (6311287552475745391UL + 2348UL), (6311287552475745391UL + 2355UL), (6311287552475745391UL + 2362UL), (6311287552475745391UL + 2865UL), (6311287552475745391UL + 2383UL), (6311287552475745391UL + 2334UL), 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 2369UL), (6311287552475745391UL + 2376UL), 0UL, 0UL, 0UL, 0UL, "CalcSoundSpeedForElems", 8, (6311287552475745391UL + 2865UL), 0UL, (6311287552475745391UL + 2397UL), (6311287552475745391UL + 2390UL), (6311287552475745391UL + 2418UL), (6311287552475745391UL + 2411UL), 0UL, 0UL, 0UL, "free", 1, (6311287552475745391UL + 2418UL), 0UL, "free", 1, (6311287552475745391UL + 2411UL), 0UL, "free", 1, (6311287552475745391UL + 2404UL), 0UL, "free", 1, (6311287552475745391UL + 2397UL), 0UL, "free", 1, (6311287552475745391UL + 2390UL), 0UL, "free", 1, (6311287552475745391UL + 2383UL), 0UL, "free", 1, (6311287552475745391UL + 2376UL), 0UL, "free", 1, (6311287552475745391UL + 2369UL), 0UL, "free", 1, (6311287552475745391UL + 2362UL), 0UL, "free", 1, (6311287552475745391UL + 2355UL), 0UL, "free", 1, (6311287552475745391UL + 2348UL), 0UL, "free", 1, (6311287552475745391UL + 2341UL), 0UL, "free", 1, (6311287552475745391UL + 2334UL), 0UL, "free", 1, (6311287552475745391UL + 2327UL), 0UL,
-                            "ApplyMaterialPropertiesForElems", (void *)(&ApplyMaterialPropertiesForElems_npm), (void *)__null, 0, 0, 0UL, 4, "malloc", 1, 0UL, (6311287552475745391UL + 2067UL), "exit", 1, 0UL, 0UL, "EvalEOSForElems", 2, (6311287552475745391UL + 2067UL), 0UL, 0UL, "free", 1, (6311287552475745391UL + 2067UL), 0UL,
+                            "CalcPressureForElems", (void *)(&CalcPressureForElems_npm), (void *)__null, 0, 10, (6311287552475745391UL + 3801UL), (6311287552475745391UL + 3802UL), (6311287552475745391UL + 3803UL), (6311287552475745391UL + 3804UL), (6311287552475745391UL + 3805UL), (6311287552475745391UL + 3806UL), 0UL, 0UL, 0UL, 0UL, 0UL, 1, "FABS", 1, 0UL, 0UL,
+                            "CalcEnergyForElems", (void *)(&CalcEnergyForElems_npm), (void *)__null, 0, 23, (6311287552475745391UL + 3533UL), (6311287552475745391UL + 3534UL), (6311287552475745391UL + 3535UL), (6311287552475745391UL + 3536UL), (6311287552475745391UL + 3537UL), (6311287552475745391UL + 3538UL), (6311287552475745391UL + 3539UL), (6311287552475745391UL + 3540UL), (6311287552475745391UL + 3541UL), (6311287552475745391UL + 3542UL), (6311287552475745391UL + 3543UL), (6311287552475745391UL + 3544UL), (6311287552475745391UL + 3545UL), 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 3551UL), (6311287552475745391UL + 3552UL), 0UL, 0UL, 0UL, 0UL, 11, "malloc", 1, 0UL, (6311287552475745391UL + 2971UL), "CalcPressureForElems", 10, (6311287552475745391UL + 2971UL), (6311287552475745391UL + 3536UL), (6311287552475745391UL + 3537UL), (6311287552475745391UL + 3534UL), (6311287552475745391UL + 3542UL), (6311287552475745391UL + 3543UL), 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL, "CalcPressureForElems", 10, (6311287552475745391UL + 3533UL), (6311287552475745391UL + 3536UL), (6311287552475745391UL + 3537UL), (6311287552475745391UL + 3534UL), (6311287552475745391UL + 3541UL), (6311287552475745391UL + 3543UL), 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL, "CalcPressureForElems", 10, (6311287552475745391UL + 3533UL), (6311287552475745391UL + 3536UL), (6311287552475745391UL + 3537UL), (6311287552475745391UL + 3534UL), (6311287552475745391UL + 3541UL), (6311287552475745391UL + 3543UL), 0UL, 0UL, 0UL, 0UL, 0UL, "SQRT", 1, 0UL, 0UL, "FABS", 1, 0UL, 0UL, "free", 1, (6311287552475745391UL + 2971UL), 0UL,
+                            "CalcSoundSpeedForElems", (void *)(&CalcSoundSpeedForElems_npm), (void *)__null, 0, 8, (6311287552475745391UL + 3654UL), 0UL, (6311287552475745391UL + 3656UL), (6311287552475745391UL + 3657UL), (6311287552475745391UL + 3658UL), (6311287552475745391UL + 3659UL), 0UL, 0UL, 0UL, 1, "SQRT", 1, 0UL, 0UL,
+                            "EvalEOSForElems", (void *)(&EvalEOSForElems_npm), (void *)__null, 0, 2, (6311287552475745391UL + 2881UL), 0UL, 0UL, 30, "malloc", 1, 0UL, (6311287552475745391UL + 2343UL), "malloc", 1, 0UL, (6311287552475745391UL + 2350UL), "malloc", 1, 0UL, (6311287552475745391UL + 2357UL), "malloc", 1, 0UL, (6311287552475745391UL + 2364UL), "malloc", 1, 0UL, (6311287552475745391UL + 2371UL), "malloc", 1, 0UL, (6311287552475745391UL + 2378UL), "malloc", 1, 0UL, (6311287552475745391UL + 2385UL), "malloc", 1, 0UL, (6311287552475745391UL + 2392UL), "malloc", 1, 0UL, (6311287552475745391UL + 2399UL), "malloc", 1, 0UL, (6311287552475745391UL + 2406UL), "malloc", 1, 0UL, (6311287552475745391UL + 2413UL), "malloc", 1, 0UL, (6311287552475745391UL + 2420UL), "malloc", 1, 0UL, (6311287552475745391UL + 2427UL), "malloc", 1, 0UL, (6311287552475745391UL + 2434UL), "CalcEnergyForElems", 23, (6311287552475745391UL + 2406UL), (6311287552475745391UL + 2413UL), (6311287552475745391UL + 2420UL), (6311287552475745391UL + 2427UL), (6311287552475745391UL + 2434UL), (6311287552475745391UL + 2357UL), (6311287552475745391UL + 2343UL), (6311287552475745391UL + 2364UL), (6311287552475745391UL + 2371UL), (6311287552475745391UL + 2378UL), (6311287552475745391UL + 2881UL), (6311287552475745391UL + 2399UL), (6311287552475745391UL + 2350UL), 0UL, 0UL, 0UL, 0UL, 0UL, (6311287552475745391UL + 2385UL), (6311287552475745391UL + 2392UL), 0UL, 0UL, 0UL, 0UL, "CalcSoundSpeedForElems", 8, (6311287552475745391UL + 2881UL), 0UL, (6311287552475745391UL + 2413UL), (6311287552475745391UL + 2406UL), (6311287552475745391UL + 2434UL), (6311287552475745391UL + 2427UL), 0UL, 0UL, 0UL, "free", 1, (6311287552475745391UL + 2434UL), 0UL, "free", 1, (6311287552475745391UL + 2427UL), 0UL, "free", 1, (6311287552475745391UL + 2420UL), 0UL, "free", 1, (6311287552475745391UL + 2413UL), 0UL, "free", 1, (6311287552475745391UL + 2406UL), 0UL, "free", 1, (6311287552475745391UL + 2399UL), 0UL, "free", 1, (6311287552475745391UL + 2392UL), 0UL, "free", 1, (6311287552475745391UL + 2385UL), 0UL, "free", 1, (6311287552475745391UL + 2378UL), 0UL, "free", 1, (6311287552475745391UL + 2371UL), 0UL, "free", 1, (6311287552475745391UL + 2364UL), 0UL, "free", 1, (6311287552475745391UL + 2357UL), 0UL, "free", 1, (6311287552475745391UL + 2350UL), 0UL, "free", 1, (6311287552475745391UL + 2343UL), 0UL,
+                            "ApplyMaterialPropertiesForElems", (void *)(&ApplyMaterialPropertiesForElems_npm), (void *)__null, 0, 0, 0UL, 4, "malloc", 1, 0UL, (6311287552475745391UL + 2083UL), "exit", 1, 0UL, 0UL, "EvalEOSForElems", 2, (6311287552475745391UL + 2083UL), 0UL, 0UL, "free", 1, (6311287552475745391UL + 2083UL), 0UL,
                             "UpdateVolumesForElems", (void *)(&UpdateVolumesForElems_npm), (void *)__null, 0, 0, 0UL, 1, "FABS", 1, 0UL, 0UL,
                             "LagrangeElements", (void *)(&LagrangeElements_npm), (void *)__null, 0, 0, 0UL, 4, "CalcLagrangeElements", 1, 0UL, 0UL, "CalcQForElems", 0, 0UL, "ApplyMaterialPropertiesForElems", 0, 0UL, "UpdateVolumesForElems", 0, 0UL,
                             "CalcCourantConstraintForElems", (void *)(&CalcCourantConstraintForElems_npm), (void *)__null, 0, 0, 0UL, 1, "SQRT", 1, 0UL, 0UL,
@@ -16759,159 +16759,159 @@ static int module_init() {
                            "CalcHydroConstraintForElems", &(____chimes_does_checkpoint_CalcHydroConstraintForElems_npm),
                            "CalcTimeConstraintsForElems", &(____chimes_does_checkpoint_CalcTimeConstraintsForElems_npm),
                            "LagrangeLeapFrog", &(____chimes_does_checkpoint_LagrangeLeapFrog_npm),
-                             (6311287552475745391UL + 3649UL), (6311287552475745391UL + 3788UL),
-                             (6311287552475745391UL + 3648UL), (6311287552475745391UL + 3787UL),
-                             (6311287552475745391UL + 8549UL), (6311287552475745391UL + 9056UL),
-                             (6311287552475745391UL + 8548UL), (6311287552475745391UL + 9055UL),
-                             (6311287552475745391UL + 3650UL), (6311287552475745391UL + 3789UL),
-                             (6311287552475745391UL + 3651UL), (6311287552475745391UL + 3790UL),
-                             (6311287552475745391UL + 2019UL), (6311287552475745391UL + 2067UL),
-                             (6311287552475745391UL + 2247UL), (6311287552475745391UL + 2865UL),
+                             (6311287552475745391UL + 13357UL), (6311287552475745391UL + 13589UL),
+                             (6311287552475745391UL + 13356UL), (6311287552475745391UL + 13588UL),
+                             (6311287552475745391UL + 3556UL), (6311287552475745391UL + 3654UL),
+                             (6311287552475745391UL + 8094UL), (6311287552475745391UL + 2011UL),
+                             (6311287552475745391UL + 8093UL), (6311287552475745391UL + 8154UL),
+                             (6311287552475745391UL + 8092UL), (6311287552475745391UL + 8147UL),
+                             (6311287552475745391UL + 8091UL), (6311287552475745391UL + 8140UL),
+                             (6311287552475745391UL + 8090UL), (6311287552475745391UL + 8133UL),
+                             (6311287552475745391UL + 3559UL), (6311287552475745391UL + 3657UL),
+                             (6311287552475745391UL + 3558UL), (6311287552475745391UL + 3656UL),
                              (6311287552475745391UL + 348UL), (6311287552475745391UL + 167UL),
-                             (6311287552475745391UL + 7801UL), (6311287552475745391UL + 7854UL),
-                             (6311287552475745391UL + 7800UL), (6311287552475745391UL + 7853UL),
-                             (6311287552475745391UL + 9063UL), (6311287552475745391UL + 10366UL),
-                             (6311287552475745391UL + 7802UL), (6311287552475745391UL + 7855UL),
-                             (6311287552475745391UL + 9065UL), (6311287552475745391UL + 10368UL),
-                             (6311287552475745391UL + 9064UL), (6311287552475745391UL + 10367UL),
-                             (6311287552475745391UL + 9067UL), (6311287552475745391UL + 10370UL),
-                             (6311287552475745391UL + 9066UL), (6311287552475745391UL + 10369UL),
-                             (6311287552475745391UL + 5995UL), (6311287552475745391UL + 6656UL),
-                             (6311287552475745391UL + 5994UL), (6311287552475745391UL + 6655UL),
-                             (6311287552475745391UL + 5991UL), (6311287552475745391UL + 6652UL),
-                             (6311287552475745391UL + 5993UL), (6311287552475745391UL + 6654UL),
-                             (6311287552475745391UL + 5992UL), (6311287552475745391UL + 6653UL),
-                             (6311287552475745391UL + 3647UL), (6311287552475745391UL + 3786UL),
-                             (6311287552475745391UL + 3646UL), (6311287552475745391UL + 3785UL),
-                             (6311287552475745391UL + 10387UL), (6311287552475745391UL + 12277UL),
-                             (6311287552475745391UL + 6659UL), (6311287552475745391UL + 7190UL),
-                             (6311287552475745391UL + 6658UL), (6311287552475745391UL + 7189UL),
-                             (6311287552475745391UL + 6657UL), (6311287552475745391UL + 7188UL),
-                             (6311287552475745391UL + 10385UL), (6311287552475745391UL + 12275UL),
-                             (6311287552475745391UL + 12538UL), (6311287552475745391UL + 12950UL),
-                             (6311287552475745391UL + 12539UL), (6311287552475745391UL + 12951UL),
-                             (6311287552475745391UL + 12305UL), (6311287552475745391UL + 12536UL),
-                             (6311287552475745391UL + 12304UL), (6311287552475745391UL + 12535UL),
-                             (6311287552475745391UL + 10384UL), (6311287552475745391UL + 12274UL),
-                             (6311287552475745391UL + 2264UL), (6311287552475745391UL + 2369UL),
-                             (6311287552475745391UL + 2259UL), (6311287552475745391UL + 2334UL),
-                             (6311287552475745391UL + 2258UL), (6311287552475745391UL + 2327UL),
-                             (6311287552475745391UL + 13320UL), (6311287552475745391UL + 13552UL),
-                             (6311287552475745391UL + 13324UL), (6311287552475745391UL + 13556UL),
-                             (6311287552475745391UL + 8294UL), (6311287552475745391UL + 8547UL),
-                             (6311287552475745391UL + 10382UL), (6311287552475745391UL + 12272UL),
-                             (6311287552475745391UL + 13322UL), (6311287552475745391UL + 13554UL),
-                             (6311287552475745391UL + 12955UL), (6311287552475745391UL + 13313UL),
-                             (6311287552475745391UL + 13323UL), (6311287552475745391UL + 13555UL),
-                             (6311287552475745391UL + 8070UL), (6311287552475745391UL + 1995UL),
-                             (6311287552475745391UL + 13325UL), (6311287552475745391UL + 13557UL),
-                             (6311287552475745391UL + 5414UL), (6311287552475745391UL + 1995UL),
-                             (6311287552475745391UL + 6662UL), (6311287552475745391UL + 7193UL),
-                             (6311287552475745391UL + 13328UL), (6311287552475745391UL + 13560UL),
-                             (6311287552475745391UL + 6660UL), (6311287552475745391UL + 7191UL),
-                             (6311287552475745391UL + 13329UL), (6311287552475745391UL + 13561UL),
-                             (6311287552475745391UL + 429UL), (6311287552475745391UL + 457UL),
-                             (6311287552475745391UL + 2268UL), (6311287552475745391UL + 2397UL),
-                             (6311287552475745391UL + 2269UL), (6311287552475745391UL + 2404UL),
-                             (6311287552475745391UL + 2262UL), (6311287552475745391UL + 2355UL),
-                             (6311287552475745391UL + 2263UL), (6311287552475745391UL + 2362UL),
-                             (6311287552475745391UL + 2260UL), (6311287552475745391UL + 2341UL),
-                             (6311287552475745391UL + 2261UL), (6311287552475745391UL + 2348UL),
-                             (6311287552475745391UL + 2266UL), (6311287552475745391UL + 2383UL),
-                             (6311287552475745391UL + 2267UL), (6311287552475745391UL + 2390UL),
+                             (6311287552475745391UL + 13353UL), (6311287552475745391UL + 13585UL),
+                             (6311287552475745391UL + 3560UL), (6311287552475745391UL + 3658UL),
+                             (6311287552475745391UL + 7733UL), (6311287552475745391UL + 7815UL),
+                             (6311287552475745391UL + 3561UL), (6311287552475745391UL + 3659UL),
+                             (6311287552475745391UL + 7732UL), (6311287552475745391UL + 7818UL),
+                             (6311287552475745391UL + 6011UL), (6311287552475745391UL + 6672UL),
+                             (6311287552475745391UL + 6013UL), (6311287552475745391UL + 6674UL),
+                             (6311287552475745391UL + 6012UL), (6311287552475745391UL + 6673UL),
+                             (6311287552475745391UL + 6015UL), (6311287552475745391UL + 6676UL),
+                             (6311287552475745391UL + 6014UL), (6311287552475745391UL + 6675UL),
+                             (6311287552475745391UL + 5692UL), (6311287552475745391UL + 5780UL),
+                             (6311287552475745391UL + 5690UL), (6311287552475745391UL + 5756UL),
+                             (6311287552475745391UL + 5691UL), (6311287552475745391UL + 5768UL),
                              (6311287552475745391UL + 427UL), (6311287552475745391UL + 358UL),
-                             (6311287552475745391UL + 2265UL), (6311287552475745391UL + 2376UL),
-                             (6311287552475745391UL + 12303UL), (6311287552475745391UL + 12534UL),
-                             (6311287552475745391UL + 9087UL), (6311287552475745391UL + 1995UL),
-                             (6311287552475745391UL + 6671UL), (6311287552475745391UL + 7191UL),
-                             (6311287552475745391UL + 5675UL), (6311287552475745391UL + 5751UL),
-                             (6311287552475745391UL + 5676UL), (6311287552475745391UL + 5763UL),
-                             (6311287552475745391UL + 6672UL), (6311287552475745391UL + 7191UL),
-                             (6311287552475745391UL + 13327UL), (6311287552475745391UL + 13559UL),
-                             (6311287552475745391UL + 7869UL), (6311287552475745391UL + 1995UL),
-                             (6311287552475745391UL + 1436UL), (6311287552475745391UL + 1519UL),
-                             (6311287552475745391UL + 1437UL), (6311287552475745391UL + 1520UL),
-                             (6311287552475745391UL + 1434UL), (6311287552475745391UL + 521UL),
-                             (6311287552475745391UL + 2271UL), (6311287552475745391UL + 2418UL),
-                             (6311287552475745391UL + 2270UL), (6311287552475745391UL + 2411UL),
-                             (6311287552475745391UL + 13331UL), (6311287552475745391UL + 13563UL),
-                             (6311287552475745391UL + 13330UL), (6311287552475745391UL + 13562UL),
-                             (6311287552475745391UL + 7708UL), (6311287552475745391UL + 7794UL),
-                             (6311287552475745391UL + 7709UL), (6311287552475745391UL + 7791UL),
-                             (6311287552475745391UL + 12537UL), (6311287552475745391UL + 12949UL),
-                             (6311287552475745391UL + 5674UL), (6311287552475745391UL + 5739UL),
-                             (6311287552475745391UL + 6670UL), (6311287552475745391UL + 7191UL),
-                             (6311287552475745391UL + 8051UL), (6311287552475745391UL + 8289UL),
-                             (6311287552475745391UL + 3804UL), (6311287552475745391UL + 1995UL),
-                             (6311287552475745391UL + 7860UL), (6311287552475745391UL + 8050UL),
+                             (6311287552475745391UL + 7893UL), (6311287552475745391UL + 2011UL),
+                             (6311287552475745391UL + 2903UL), (6311287552475745391UL + 3552UL),
+                             (6311287552475745391UL + 2902UL), (6311287552475745391UL + 3551UL),
+                             (6311287552475745391UL + 3820UL), (6311287552475745391UL + 2011UL),
+                             (6311287552475745391UL + 2908UL), (6311287552475745391UL + 2971UL),
+                             (6311287552475745391UL + 9090UL), (6311287552475745391UL + 10393UL),
+                             (6311287552475745391UL + 9091UL), (6311287552475745391UL + 10394UL),
+                             (6311287552475745391UL + 12987UL), (6311287552475745391UL + 13345UL),
+                             (6311287552475745391UL + 12983UL), (6311287552475745391UL + 13341UL),
+                             (6311287552475745391UL + 12989UL), (6311287552475745391UL + 13347UL),
+                             (6311287552475745391UL + 12988UL), (6311287552475745391UL + 13346UL),
+                             (6311287552475745391UL + 9089UL), (6311287552475745391UL + 10392UL),
+                             (6311287552475745391UL + 9088UL), (6311287552475745391UL + 10391UL),
+                             (6311287552475745391UL + 429UL), (6311287552475745391UL + 457UL),
+                             (6311287552475745391UL + 9087UL), (6311287552475745391UL + 10390UL),
+                             (6311287552475745391UL + 9086UL), (6311287552475745391UL + 10389UL),
+                             (6311287552475745391UL + 7881UL), (6311287552475745391UL + 8071UL),
+                             (6311287552475745391UL + 2263UL), (6311287552475745391UL + 2881UL),
+                             (6311287552475745391UL + 7883UL), (6311287552475745391UL + 8073UL),
+                             (6311287552475745391UL + 7882UL), (6311287552475745391UL + 8072UL),
+                             (6311287552475745391UL + 7884UL), (6311287552475745391UL + 8074UL),
+                             (6311287552475745391UL + 7735UL), (6311287552475745391UL + 7794UL),
+                             (6311287552475745391UL + 7734UL), (6311287552475745391UL + 7812UL),
+                             (6311287552475745391UL + 3665UL), (6311287552475745391UL + 3804UL),
+                             (6311287552475745391UL + 3664UL), (6311287552475745391UL + 3803UL),
+                             (6311287552475745391UL + 3667UL), (6311287552475745391UL + 3806UL),
+                             (6311287552475745391UL + 3666UL), (6311287552475745391UL + 3805UL),
+                             (6311287552475745391UL + 3663UL), (6311287552475745391UL + 3802UL),
+                             (6311287552475745391UL + 3662UL), (6311287552475745391UL + 3801UL),
+                             (6311287552475745391UL + 2280UL), (6311287552475745391UL + 2385UL),
+                             (6311287552475745391UL + 2281UL), (6311287552475745391UL + 2392UL),
+                             (6311287552475745391UL + 2282UL), (6311287552475745391UL + 2399UL),
+                             (6311287552475745391UL + 2283UL), (6311287552475745391UL + 2406UL),
+                             (6311287552475745391UL + 2284UL), (6311287552475745391UL + 2413UL),
+                             (6311287552475745391UL + 2285UL), (6311287552475745391UL + 2420UL),
+                             (6311287552475745391UL + 2286UL), (6311287552475745391UL + 2427UL),
+                             (6311287552475745391UL + 2287UL), (6311287552475745391UL + 2434UL),
+                             (6311287552475745391UL + 6677UL), (6311287552475745391UL + 7208UL),
+                             (6311287552475745391UL + 10420UL), (6311287552475745391UL + 12310UL),
+                             (6311287552475745391UL + 10421UL), (6311287552475745391UL + 12311UL),
+                             (6311287552475745391UL + 6679UL), (6311287552475745391UL + 7210UL),
+                             (6311287552475745391UL + 6678UL), (6311287552475745391UL + 7209UL),
+                             (6311287552475745391UL + 2275UL), (6311287552475745391UL + 2350UL),
+                             (6311287552475745391UL + 2274UL), (6311287552475745391UL + 2343UL),
+                             (6311287552475745391UL + 2277UL), (6311287552475745391UL + 2364UL),
+                             (6311287552475745391UL + 2276UL), (6311287552475745391UL + 2357UL),
+                             (6311287552475745391UL + 2279UL), (6311287552475745391UL + 2378UL),
+                             (6311287552475745391UL + 2278UL), (6311287552475745391UL + 2371UL),
+                             (6311287552475745391UL + 1438UL), (6311287552475745391UL + 522UL),
+                             (6311287552475745391UL + 10417UL), (6311287552475745391UL + 12307UL),
+                             (6311287552475745391UL + 10416UL), (6311287552475745391UL + 12306UL),
+                             (6311287552475745391UL + 10415UL), (6311287552475745391UL + 12305UL),
+                             (6311287552475745391UL + 10414UL), (6311287552475745391UL + 12304UL),
+                             (6311287552475745391UL + 10413UL), (6311287552475745391UL + 12303UL),
+                             (6311287552475745391UL + 10412UL), (6311287552475745391UL + 12302UL),
+                             (6311287552475745391UL + 10411UL), (6311287552475745391UL + 12301UL),
+                             (6311287552475745391UL + 10410UL), (6311287552475745391UL + 12300UL),
+                             (6311287552475745391UL + 14039UL), (6311287552475745391UL + 2011UL),
+                             (6311287552475745391UL + 10419UL), (6311287552475745391UL + 12309UL),
                              (6311287552475745391UL + 457UL), (6311287552475745391UL + 437UL),
-                             (6311287552475745391UL + 8291UL), (6311287552475745391UL + 8544UL),
-                             (6311287552475745391UL + 10386UL), (6311287552475745391UL + 12276UL),
-                             (6311287552475745391UL + 8293UL), (6311287552475745391UL + 8546UL),
-                             (6311287552475745391UL + 8292UL), (6311287552475745391UL + 8545UL),
-                             (6311287552475745391UL + 10383UL), (6311287552475745391UL + 12273UL),
-                             (6311287552475745391UL + 7857UL), (6311287552475745391UL + 8047UL),
-                             (6311287552475745391UL + 10381UL), (6311287552475745391UL + 12271UL),
-                             (6311287552475745391UL + 10380UL), (6311287552475745391UL + 12270UL),
-                             (6311287552475745391UL + 7858UL), (6311287552475745391UL + 8048UL),
-                             (6311287552475745391UL + 7859UL), (6311287552475745391UL + 8049UL),
-                             (6311287552475745391UL + 12961UL), (6311287552475745391UL + 13319UL),
-                             (6311287552475745391UL + 12960UL), (6311287552475745391UL + 13318UL),
-                             (6311287552475745391UL + 10389UL), (6311287552475745391UL + 12279UL),
-                             (6311287552475745391UL + 10388UL), (6311287552475745391UL + 12278UL),
-                             (6311287552475745391UL + 7711UL), (6311287552475745391UL + 7770UL),
-                             (6311287552475745391UL + 7710UL), (6311287552475745391UL + 7788UL),
-                             (6311287552475745391UL + 2880UL), (6311287552475745391UL + 3529UL),
+                             (6311287552475745391UL + 12566UL), (6311287552475745391UL + 12978UL),
+                             (6311287552475745391UL + 12569UL), (6311287552475745391UL + 12981UL),
+                             (6311287552475745391UL + 12568UL), (6311287552475745391UL + 12980UL),
+                             (6311287552475745391UL + 5430UL), (6311287552475745391UL + 2011UL),
                              (6311287552475745391UL + 2886UL), (6311287552475745391UL + 3535UL),
                              (6311287552475745391UL + 2887UL), (6311287552475745391UL + 3536UL),
-                             (6311287552475745391UL + 2869UL), (6311287552475745391UL + 3518UL),
-                             (6311287552475745391UL + 8068UL), (6311287552475745391UL + 8123UL),
-                             (6311287552475745391UL + 8069UL), (6311287552475745391UL + 8130UL),
-                             (6311287552475745391UL + 8066UL), (6311287552475745391UL + 8109UL),
-                             (6311287552475745391UL + 8067UL), (6311287552475745391UL + 8116UL),
-                             (6311287552475745391UL + 8064UL), (6311287552475745391UL + 8095UL),
-                             (6311287552475745391UL + 8065UL), (6311287552475745391UL + 8102UL),
-                             (6311287552475745391UL + 461UL), (6311287552475745391UL + 1434UL),
-                             (6311287552475745391UL + 10391UL), (6311287552475745391UL + 12281UL),
-                             (6311287552475745391UL + 10392UL), (6311287552475745391UL + 12282UL),
-                             (6311287552475745391UL + 10393UL), (6311287552475745391UL + 12283UL),
-                             (6311287552475745391UL + 13321UL), (6311287552475745391UL + 13553UL),
-                             (6311287552475745391UL + 2892UL), (6311287552475745391UL + 2955UL),
-                             (6311287552475745391UL + 12542UL), (6311287552475745391UL + 12954UL),
-                             (6311287552475745391UL + 9061UL), (6311287552475745391UL + 10364UL),
-                             (6311287552475745391UL + 2868UL), (6311287552475745391UL + 3517UL),
+                             (6311287552475745391UL + 2884UL), (6311287552475745391UL + 3533UL),
+                             (6311287552475745391UL + 2885UL), (6311287552475745391UL + 3534UL),
+                             (6311287552475745391UL + 2888UL), (6311287552475745391UL + 3537UL),
+                             (6311287552475745391UL + 2889UL), (6311287552475745391UL + 3538UL),
+                             (6311287552475745391UL + 12565UL), (6311287552475745391UL + 12977UL),
+                             (6311287552475745391UL + 12567UL), (6311287552475745391UL + 12979UL),
+                             (6311287552475745391UL + 7826UL), (6311287552475745391UL + 7879UL),
+                             (6311287552475745391UL + 6680UL), (6311287552475745391UL + 7211UL),
+                             (6311287552475745391UL + 6682UL), (6311287552475745391UL + 7213UL),
+                             (6311287552475745391UL + 12331UL), (6311287552475745391UL + 12562UL),
+                             (6311287552475745391UL + 12332UL), (6311287552475745391UL + 12563UL),
+                             (6311287552475745391UL + 12333UL), (6311287552475745391UL + 12564UL),
+                             (6311287552475745391UL + 10407UL), (6311287552475745391UL + 12297UL),
+                             (6311287552475745391UL + 10408UL), (6311287552475745391UL + 12298UL),
+                             (6311287552475745391UL + 10409UL), (6311287552475745391UL + 12299UL),
+                             (6311287552475745391UL + 461UL), (6311287552475745391UL + 1438UL),
+                             (6311287552475745391UL + 8574UL), (6311287552475745391UL + 9081UL),
+                             (6311287552475745391UL + 8575UL), (6311287552475745391UL + 9082UL),
+                             (6311287552475745391UL + 8576UL), (6311287552475745391UL + 9083UL),
+                             (6311287552475745391UL + 8577UL), (6311287552475745391UL + 9084UL),
+                             (6311287552475745391UL + 13355UL), (6311287552475745391UL + 13587UL),
+                             (6311287552475745391UL + 13354UL), (6311287552475745391UL + 13586UL),
+                             (6311287552475745391UL + 8572UL), (6311287552475745391UL + 9079UL),
+                             (6311287552475745391UL + 8573UL), (6311287552475745391UL + 9080UL),
+                             (6311287552475745391UL + 13359UL), (6311287552475745391UL + 13591UL),
+                             (6311287552475745391UL + 13358UL), (6311287552475745391UL + 13590UL),
+                             (6311287552475745391UL + 2895UL), (6311287552475745391UL + 3544UL),
+                             (6311287552475745391UL + 2894UL), (6311287552475745391UL + 3543UL),
+                             (6311287552475745391UL + 12570UL), (6311287552475745391UL + 12982UL),
+                             (6311287552475745391UL + 2896UL), (6311287552475745391UL + 3545UL),
+                             (6311287552475745391UL + 2891UL), (6311287552475745391UL + 3540UL),
+                             (6311287552475745391UL + 2890UL), (6311287552475745391UL + 3539UL),
+                             (6311287552475745391UL + 2893UL), (6311287552475745391UL + 3542UL),
+                             (6311287552475745391UL + 2892UL), (6311287552475745391UL + 3541UL),
+                             (6311287552475745391UL + 6692UL), (6311287552475745391UL + 7211UL),
+                             (6311287552475745391UL + 6691UL), (6311287552475745391UL + 7211UL),
+                             (6311287552475745391UL + 6690UL), (6311287552475745391UL + 7211UL),
                              (6311287552475745391UL + 158UL), (6311287552475745391UL + 348UL),
-                             (6311287552475745391UL + 9062UL), (6311287552475745391UL + 10365UL),
-                             (6311287552475745391UL + 1438UL), (6311287552475745391UL + 1521UL),
-                             (6311287552475745391UL + 12541UL), (6311287552475745391UL + 12953UL),
-                             (6311287552475745391UL + 12540UL), (6311287552475745391UL + 12952UL),
-                             (6311287552475745391UL + 13326UL), (6311287552475745391UL + 13558UL),
+                             (6311287552475745391UL + 8075UL), (6311287552475745391UL + 8313UL),
+                             (6311287552475745391UL + 13348UL), (6311287552475745391UL + 13580UL),
+                             (6311287552475745391UL + 13349UL), (6311287552475745391UL + 13581UL),
+                             (6311287552475745391UL + 9085UL), (6311287552475745391UL + 10388UL),
                              (6311287552475745391UL + 1UL), (6311287552475745391UL + 148UL),
-                             (6311287552475745391UL + 2873UL), (6311287552475745391UL + 3522UL),
-                             (6311287552475745391UL + 2872UL), (6311287552475745391UL + 3521UL),
-                             (6311287552475745391UL + 2871UL), (6311287552475745391UL + 3520UL),
-                             (6311287552475745391UL + 2870UL), (6311287552475745391UL + 3519UL),
-                             (6311287552475745391UL + 2877UL), (6311287552475745391UL + 3526UL),
-                             (6311287552475745391UL + 2876UL), (6311287552475745391UL + 3525UL),
-                             (6311287552475745391UL + 2875UL), (6311287552475745391UL + 3524UL),
-                             (6311287552475745391UL + 2874UL), (6311287552475745391UL + 3523UL),
-                             (6311287552475745391UL + 2879UL), (6311287552475745391UL + 3528UL),
-                             (6311287552475745391UL + 2878UL), (6311287552475745391UL + 3527UL),
-                             (6311287552475745391UL + 12959UL), (6311287552475745391UL + 13317UL),
+                             (6311287552475745391UL + 2035UL), (6311287552475745391UL + 2083UL),
+                             (6311287552475745391UL + 1442UL), (6311287552475745391UL + 1529UL),
+                             (6311287552475745391UL + 1441UL), (6311287552475745391UL + 1528UL),
+                             (6311287552475745391UL + 1440UL), (6311287552475745391UL + 1527UL),
+                             (6311287552475745391UL + 9111UL), (6311287552475745391UL + 2011UL),
                              (6311287552475745391UL + 148UL), (6311287552475745391UL + 9UL),
-                             (6311287552475745391UL + 14007UL), (6311287552475745391UL + 1995UL),
-                             (6311287552475745391UL + 8552UL), (6311287552475745391UL + 9059UL),
-                             (6311287552475745391UL + 8553UL), (6311287552475745391UL + 9060UL),
-                             (6311287552475745391UL + 8550UL), (6311287552475745391UL + 9057UL),
-                             (6311287552475745391UL + 8551UL), (6311287552475745391UL + 9058UL),
-                             (6311287552475745391UL + 10379UL), (6311287552475745391UL + 12269UL),
-                             (6311287552475745391UL + 482UL), (6311287552475745391UL + 1995UL),
-                             (6311287552475745391UL + 3544UL), (6311287552475745391UL + 3642UL),
-                             (6311287552475745391UL + 3545UL), (6311287552475745391UL + 3643UL),
-                             (6311287552475745391UL + 3540UL), (6311287552475745391UL + 3638UL),
-                             (6311287552475745391UL + 3542UL), (6311287552475745391UL + 3640UL),
-                             (6311287552475745391UL + 3543UL), (6311287552475745391UL + 3641UL),
-                             (6311287552475745391UL + 476UL), (6311287552475745391UL + 1995UL),
+                             (6311287552475745391UL + 8315UL), (6311287552475745391UL + 8568UL),
+                             (6311287552475745391UL + 8316UL), (6311287552475745391UL + 8569UL),
+                             (6311287552475745391UL + 8317UL), (6311287552475745391UL + 8570UL),
+                             (6311287552475745391UL + 8318UL), (6311287552475745391UL + 8571UL),
+                             (6311287552475745391UL + 482UL), (6311287552475745391UL + 2011UL),
+                             (6311287552475745391UL + 7825UL), (6311287552475745391UL + 7878UL),
+                             (6311287552475745391UL + 7824UL), (6311287552475745391UL + 7877UL),
+                             (6311287552475745391UL + 13351UL), (6311287552475745391UL + 13583UL),
+                             (6311287552475745391UL + 13350UL), (6311287552475745391UL + 13582UL),
+                             (6311287552475745391UL + 8088UL), (6311287552475745391UL + 8119UL),
+                             (6311287552475745391UL + 8089UL), (6311287552475745391UL + 8126UL),
+                             (6311287552475745391UL + 13352UL), (6311287552475745391UL + 13584UL),
+                             (6311287552475745391UL + 476UL), (6311287552475745391UL + 2011UL),
                              (6311287552475745391UL + 350UL), (6311287552475745391UL + 427UL),
                      "Mesh", 81, "double*", (int)__builtin_offsetof (struct Mesh, x), "double*", (int)__builtin_offsetof (struct Mesh, y), "double*", (int)__builtin_offsetof (struct Mesh, z), "double*", (int)__builtin_offsetof (struct Mesh, xd), "double*", (int)__builtin_offsetof (struct Mesh, yd), "double*", (int)__builtin_offsetof (struct Mesh, zd), "double*", (int)__builtin_offsetof (struct Mesh, xdd), "double*", (int)__builtin_offsetof (struct Mesh, ydd), "double*", (int)__builtin_offsetof (struct Mesh, zdd), "double*", (int)__builtin_offsetof (struct Mesh, fx), "double*", (int)__builtin_offsetof (struct Mesh, fy), "double*", (int)__builtin_offsetof (struct Mesh, fz), "double*", (int)__builtin_offsetof (struct Mesh, nodalMass), "int*", (int)__builtin_offsetof (struct Mesh, symmX), "int*", (int)__builtin_offsetof (struct Mesh, symmY), "int*", (int)__builtin_offsetof (struct Mesh, symmZ), "int*", (int)__builtin_offsetof (struct Mesh, matElemlist), "int*", (int)__builtin_offsetof (struct Mesh, nodelist), "int*", (int)__builtin_offsetof (struct Mesh, lxim), "int*", (int)__builtin_offsetof (struct Mesh, lxip), "int*", (int)__builtin_offsetof (struct Mesh, letam), "int*", (int)__builtin_offsetof (struct Mesh, letap), "int*", (int)__builtin_offsetof (struct Mesh, lzetam), "int*", (int)__builtin_offsetof (struct Mesh, lzetap), "int*", (int)__builtin_offsetof (struct Mesh, elemBC), "double*", (int)__builtin_offsetof (struct Mesh, dxx), "double*", (int)__builtin_offsetof (struct Mesh, dyy), "double*", (int)__builtin_offsetof (struct Mesh, dzz), "double*", (int)__builtin_offsetof (struct Mesh, delv_xi), "double*", (int)__builtin_offsetof (struct Mesh, delv_eta), "double*", (int)__builtin_offsetof (struct Mesh, delv_zeta), "double*", (int)__builtin_offsetof (struct Mesh, delx_xi), "double*", (int)__builtin_offsetof (struct Mesh, delx_eta), "double*", (int)__builtin_offsetof (struct Mesh, delx_zeta), "double*", (int)__builtin_offsetof (struct Mesh, e), "double*", (int)__builtin_offsetof (struct Mesh, p), "double*", (int)__builtin_offsetof (struct Mesh, q), "double*", (int)__builtin_offsetof (struct Mesh, ql), "double*", (int)__builtin_offsetof (struct Mesh, qq), "double*", (int)__builtin_offsetof (struct Mesh, v), "double*", (int)__builtin_offsetof (struct Mesh, volo), "double*", (int)__builtin_offsetof (struct Mesh, vnew), "double*", (int)__builtin_offsetof (struct Mesh, delv), "double*", (int)__builtin_offsetof (struct Mesh, vdov), "double*", (int)__builtin_offsetof (struct Mesh, arealg), "double*", (int)__builtin_offsetof (struct Mesh, ss), "double*", (int)__builtin_offsetof (struct Mesh, elemMass), "double", (int)__builtin_offsetof (struct Mesh, dtfixed), "double", (int)__builtin_offsetof (struct Mesh, time), "double", (int)__builtin_offsetof (struct Mesh, deltatime), "double", (int)__builtin_offsetof (struct Mesh, deltatimemultlb), "double", (int)__builtin_offsetof (struct Mesh, deltatimemultub), "double", (int)__builtin_offsetof (struct Mesh, stoptime), "double", (int)__builtin_offsetof (struct Mesh, u_cut), "double", (int)__builtin_offsetof (struct Mesh, hgcoef), "double", (int)__builtin_offsetof (struct Mesh, qstop), "double", (int)__builtin_offsetof (struct Mesh, monoq_max_slope), "double", (int)__builtin_offsetof (struct Mesh, monoq_limiter_mult), "double", (int)__builtin_offsetof (struct Mesh, e_cut), "double", (int)__builtin_offsetof (struct Mesh, p_cut), "double", (int)__builtin_offsetof (struct Mesh, ss4o3), "double", (int)__builtin_offsetof (struct Mesh, q_cut), "double", (int)__builtin_offsetof (struct Mesh, v_cut), "double", (int)__builtin_offsetof (struct Mesh, qlc_monoq), "double", (int)__builtin_offsetof (struct Mesh, qqc_monoq), "double", (int)__builtin_offsetof (struct Mesh, qqc), "double", (int)__builtin_offsetof (struct Mesh, eosvmax), "double", (int)__builtin_offsetof (struct Mesh, eosvmin), "double", (int)__builtin_offsetof (struct Mesh, pmin), "double", (int)__builtin_offsetof (struct Mesh, emin), "double", (int)__builtin_offsetof (struct Mesh, dvovmax), "double", (int)__builtin_offsetof (struct Mesh, refdens), "double", (int)__builtin_offsetof (struct Mesh, dtcourant), "double", (int)__builtin_offsetof (struct Mesh, dthydro), "double", (int)__builtin_offsetof (struct Mesh, dtmax), "int", (int)__builtin_offsetof (struct Mesh, cycle), "int", (int)__builtin_offsetof (struct Mesh, sizeX), "int", (int)__builtin_offsetof (struct Mesh, sizeY), "int", (int)__builtin_offsetof (struct Mesh, sizeZ), "int", (int)__builtin_offsetof (struct Mesh, numElem), "int", (int)__builtin_offsetof (struct Mesh, numNode),
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
@@ -16973,31 +16973,31 @@ static int module_init() {
                         "IntegrateStressForElems|B|0", 1, "IntegrateStressForElems",
                         "CalcHourglassControlForElems|x1|0", 1, "CalcHourglassControlForElems",
                         "CalcFBHourglassForceForElems|hgfx|0", 1, "CalcFBHourglassForceForElems",
-        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 6311287552475758340UL, 6311287552475758341UL, 6311287552475758342UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "CalcElemShapeFunctionDerivatives", 0UL, (int)5, 6311287552475753253UL, 6311287552475753254UL, 6311287552475753255UL, 6311287552475753252UL, 6311287552475753441UL,
-        "CalcElemNodeNormals", 0UL, (int)6, 6311287552475753252UL, 6311287552475753252UL, 6311287552475753252UL, 6311287552475753253UL, 6311287552475753254UL, 6311287552475753255UL,
-        "SumElemStressesToNodeForces", 0UL, (int)7, 6311287552475753252UL, 0UL, 0UL, 0UL, 6311287552475753256UL, 6311287552475753257UL, 6311287552475753258UL,
-        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754446UL, 6311287552475754447UL, 6311287552475754448UL,
-        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754446UL, 6311287552475754447UL, 6311287552475754448UL,
-        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754446UL, 6311287552475754447UL, 6311287552475754448UL,
-        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754446UL, 6311287552475754447UL, 6311287552475754448UL,
-        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754446UL, 6311287552475754447UL, 6311287552475754448UL,
-        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754446UL, 6311287552475754447UL, 6311287552475754448UL,
-        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754446UL, 6311287552475754447UL, 6311287552475754448UL,
-        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754446UL, 6311287552475754447UL, 6311287552475754448UL,
+        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "SumElemFaceNormal", 0UL, (int)24, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 6311287552475758368UL, 6311287552475758369UL, 6311287552475758370UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "CalcElemShapeFunctionDerivatives", 0UL, (int)5, 6311287552475753277UL, 6311287552475753278UL, 6311287552475753279UL, 6311287552475753276UL, 6311287552475753465UL,
+        "CalcElemNodeNormals", 0UL, (int)6, 6311287552475753276UL, 6311287552475753276UL, 6311287552475753276UL, 6311287552475753277UL, 6311287552475753278UL, 6311287552475753279UL,
+        "SumElemStressesToNodeForces", 0UL, (int)7, 6311287552475753276UL, 0UL, 0UL, 0UL, 6311287552475753280UL, 6311287552475753281UL, 6311287552475753282UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754470UL, 6311287552475754471UL, 6311287552475754472UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754470UL, 6311287552475754471UL, 6311287552475754472UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754470UL, 6311287552475754471UL, 6311287552475754472UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754470UL, 6311287552475754471UL, 6311287552475754472UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754470UL, 6311287552475754471UL, 6311287552475754472UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754470UL, 6311287552475754471UL, 6311287552475754472UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754470UL, 6311287552475754471UL, 6311287552475754472UL,
+        "VoluDer", 0UL, (int)21, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475754470UL, 6311287552475754471UL, 6311287552475754472UL,
         "CBRT", 0UL, (int)1, 0UL,
-        "CalcElemFBHourglassForce", 0UL, (int)15, 6311287552475754474UL, 6311287552475754475UL, 6311287552475754476UL, 6311287552475754466UL, 6311287552475754467UL, 6311287552475754468UL, 6311287552475754469UL, 6311287552475754470UL, 6311287552475754471UL, 6311287552475754472UL, 6311287552475754473UL, 0UL, 6311287552475754461UL, 6311287552475754462UL, 6311287552475754463UL,
-        "CollectDomainNodesToElemNodes", 0UL, (int)4, 6311287552475747386UL, 6311287552475753447UL, 6311287552475753448UL, 6311287552475753449UL,
-        "CalcElemVolumeDerivative", 0UL, (int)6, 6311287552475753450UL, 6311287552475753451UL, 6311287552475753452UL, 6311287552475753447UL, 6311287552475753448UL, 6311287552475753449UL,
-        "CalcFBHourglassForceForElems", 0UL, (int)8, 6311287552475753680UL, 6311287552475753507UL, 6311287552475753514UL, 6311287552475753521UL, 6311287552475753486UL, 6311287552475753493UL, 6311287552475753500UL, 0UL,
-        "InitStressTermsForElems", 0UL, (int)4, 0UL, 6311287552475753185UL, 6311287552475753182UL, 6311287552475753179UL,
-        "IntegrateStressForElems", 0UL, (int)5, 0UL, 6311287552475753185UL, 6311287552475753182UL, 6311287552475753179UL, 6311287552475753161UL,
-        "CalcHourglassControlForElems", 0UL, (int)2, 6311287552475753161UL, 0UL,
+        "CalcElemFBHourglassForce", 0UL, (int)15, 6311287552475754498UL, 6311287552475754499UL, 6311287552475754500UL, 6311287552475754490UL, 6311287552475754491UL, 6311287552475754492UL, 6311287552475754493UL, 6311287552475754494UL, 6311287552475754495UL, 6311287552475754496UL, 6311287552475754497UL, 0UL, 6311287552475754485UL, 6311287552475754486UL, 6311287552475754487UL,
+        "CollectDomainNodesToElemNodes", 0UL, (int)4, 6311287552475747402UL, 6311287552475753471UL, 6311287552475753472UL, 6311287552475753473UL,
+        "CalcElemVolumeDerivative", 0UL, (int)6, 6311287552475753474UL, 6311287552475753475UL, 6311287552475753476UL, 6311287552475753471UL, 6311287552475753472UL, 6311287552475753473UL,
+        "CalcFBHourglassForceForElems", 0UL, (int)8, 6311287552475753704UL, 6311287552475753531UL, 6311287552475753538UL, 6311287552475753545UL, 6311287552475753510UL, 6311287552475753517UL, 6311287552475753524UL, 0UL,
+        "InitStressTermsForElems", 0UL, (int)4, 0UL, 6311287552475753209UL, 6311287552475753206UL, 6311287552475753203UL,
+        "IntegrateStressForElems", 0UL, (int)5, 0UL, 6311287552475753209UL, 6311287552475753206UL, 6311287552475753203UL, 6311287552475753185UL,
+        "CalcHourglassControlForElems", 0UL, (int)2, 6311287552475753185UL, 0UL,
         "CalcVolumeForceForElems", 0UL, (int)0,
         "FABS", 0UL, (int)1, 0UL,
         "FABS", 0UL, (int)1, 0UL,
@@ -17015,10 +17015,10 @@ static int module_init() {
         "AreaFace", 0UL, (int)12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "AreaFace", 0UL, (int)12, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "SQRT", 0UL, (int)1, 0UL,
-        "CalcElemVolumeWrapper", 0UL, (int)3, 6311287552475750795UL, 6311287552475750796UL, 6311287552475750797UL,
-        "CalcElemCharacteristicLength", 0UL, (int)4, 6311287552475750795UL, 6311287552475750796UL, 6311287552475750797UL, 0UL,
-        "CalcElemShapeFunctionDerivatives", 0UL, (int)5, 6311287552475750795UL, 6311287552475750796UL, 6311287552475750797UL, 6311287552475750793UL, 6311287552475750801UL,
-        "CalcElemVelocityGrandient", 0UL, (int)6, 6311287552475750798UL, 6311287552475750799UL, 6311287552475750800UL, 6311287552475750793UL, 0UL, 6311287552475750794UL,
+        "CalcElemVolumeWrapper", 0UL, (int)3, 6311287552475750811UL, 6311287552475750812UL, 6311287552475750813UL,
+        "CalcElemCharacteristicLength", 0UL, (int)4, 6311287552475750811UL, 6311287552475750812UL, 6311287552475750813UL, 0UL,
+        "CalcElemShapeFunctionDerivatives", 0UL, (int)5, 6311287552475750811UL, 6311287552475750812UL, 6311287552475750813UL, 6311287552475750809UL, 6311287552475750817UL,
+        "CalcElemVelocityGrandient", 0UL, (int)6, 6311287552475750814UL, 6311287552475750815UL, 6311287552475750816UL, 6311287552475750809UL, 0UL, 6311287552475750810UL,
         "CalcKinematicsForElems", 0UL, (int)2, 0UL, 0UL,
         "SQRT", 0UL, (int)1, 0UL,
         "SQRT", 0UL, (int)1, 0UL,
@@ -17027,19 +17027,19 @@ static int module_init() {
         "CalcMonotonicQGradientsForElems", 0UL, (int)0,
         "CalcMonotonicQForElems", 0UL, (int)0,
         "FABS", 0UL, (int)1, 0UL,
-        "CalcPressureForElems", 0UL, (int)10, 6311287552475748346UL, 6311287552475748911UL, 6311287552475748912UL, 6311287552475748909UL, 6311287552475748917UL, 6311287552475748918UL, 0UL, 0UL, 0UL, 0UL,
+        "CalcPressureForElems", 0UL, (int)10, 6311287552475748362UL, 6311287552475748927UL, 6311287552475748928UL, 6311287552475748925UL, 6311287552475748933UL, 6311287552475748934UL, 0UL, 0UL, 0UL, 0UL,
         "SQRT", 0UL, (int)1, 0UL,
         "FABS", 0UL, (int)1, 0UL,
-        "CalcPressureForElems", 0UL, (int)10, 6311287552475748908UL, 6311287552475748911UL, 6311287552475748912UL, 6311287552475748909UL, 6311287552475748916UL, 6311287552475748918UL, 0UL, 0UL, 0UL, 0UL,
+        "CalcPressureForElems", 0UL, (int)10, 6311287552475748924UL, 6311287552475748927UL, 6311287552475748928UL, 6311287552475748925UL, 6311287552475748932UL, 6311287552475748934UL, 0UL, 0UL, 0UL, 0UL,
         "SQRT", 0UL, (int)1, 0UL,
         "FABS", 0UL, (int)1, 0UL,
-        "CalcPressureForElems", 0UL, (int)10, 6311287552475748908UL, 6311287552475748911UL, 6311287552475748912UL, 6311287552475748909UL, 6311287552475748916UL, 6311287552475748918UL, 0UL, 0UL, 0UL, 0UL,
+        "CalcPressureForElems", 0UL, (int)10, 6311287552475748924UL, 6311287552475748927UL, 6311287552475748928UL, 6311287552475748925UL, 6311287552475748932UL, 6311287552475748934UL, 0UL, 0UL, 0UL, 0UL,
         "SQRT", 0UL, (int)1, 0UL,
         "FABS", 0UL, (int)1, 0UL,
         "SQRT", 0UL, (int)1, 0UL,
-        "CalcEnergyForElems", 0UL, (int)23, 6311287552475747781UL, 6311287552475747788UL, 6311287552475747795UL, 6311287552475747802UL, 6311287552475747809UL, 6311287552475747732UL, 6311287552475747718UL, 6311287552475747739UL, 6311287552475747746UL, 6311287552475747753UL, 6311287552475748256UL, 6311287552475747774UL, 6311287552475747725UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475747760UL, 6311287552475747767UL, 0UL, 0UL, 0UL,
-        "CalcSoundSpeedForElems", 0UL, (int)8, 6311287552475748256UL, 0UL, 6311287552475747788UL, 6311287552475747781UL, 6311287552475747809UL, 6311287552475747802UL, 0UL, 0UL,
-        "EvalEOSForElems", 0UL, (int)2, 6311287552475747458UL, 0UL,
+        "CalcEnergyForElems", 0UL, (int)23, 6311287552475747797UL, 6311287552475747804UL, 6311287552475747811UL, 6311287552475747818UL, 6311287552475747825UL, 6311287552475747748UL, 6311287552475747734UL, 6311287552475747755UL, 6311287552475747762UL, 6311287552475747769UL, 6311287552475748272UL, 6311287552475747790UL, 6311287552475747741UL, 0UL, 0UL, 0UL, 0UL, 0UL, 6311287552475747776UL, 6311287552475747783UL, 0UL, 0UL, 0UL,
+        "CalcSoundSpeedForElems", 0UL, (int)8, 6311287552475748272UL, 0UL, 6311287552475747804UL, 6311287552475747797UL, 6311287552475747825UL, 6311287552475747818UL, 0UL, 0UL,
+        "EvalEOSForElems", 0UL, (int)2, 6311287552475747474UL, 0UL,
         "FABS", 0UL, (int)1, 0UL,
         "CalcLagrangeElements", 0UL, (int)1, 0UL,
         "CalcQForElems", 0UL, (int)0,
@@ -17052,10 +17052,10 @@ static int module_init() {
         "LagrangeNodal", 0UL, (int)0,
         "LagrangeElements", 0UL, (int)0,
         "CalcTimeConstraintsForElems", 0UL, (int)0,
-        "AllocateElemPersistent", 0UL, (int)2, 6311287552475759398UL, 0UL,
-        "AllocateElemTemporary", 0UL, (int)2, 6311287552475759398UL, 0UL,
-        "AllocateNodalPersistent", 0UL, (int)2, 6311287552475759398UL, 0UL,
-        "AllocateNodesets", 0UL, (int)2, 6311287552475759398UL, 0UL,
+        "AllocateElemPersistent", 0UL, (int)2, 6311287552475759430UL, 0UL,
+        "AllocateElemTemporary", 0UL, (int)2, 6311287552475759430UL, 0UL,
+        "AllocateNodalPersistent", 0UL, (int)2, 6311287552475759430UL, 0UL,
+        "AllocateNodesets", 0UL, (int)2, 6311287552475759430UL, 0UL,
         "CalcElemVolumeWrapper", 0UL, (int)3, 6311287552475745870UL, 6311287552475745871UL, 6311287552475745872UL,
         "TimeIncrement", 0UL, (int)0,
         "LagrangeLeapFrog", 0UL, (int)0,

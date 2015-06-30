@@ -72,7 +72,6 @@ static int ____chimes_does_checkpoint_delete_entry_npm = 1;
 static int ____chimes_does_checkpoint_deleteVal_npm = 1;
 static int ____chimes_does_checkpoint_destroy_tree_nodes_npm = 1;
 static int ____chimes_does_checkpoint_destroy_tree_npm = 1;
-static int ____chimes_does_checkpoint_feof_npm = 1;
 static int ____chimes_does_checkpoint_getchar_npm = 1;
 static int ____chimes_does_checkpoint_isInteger_npm = 1;
 static int ____chimes_does_checkpoint_kernel_cpu_npm = 1;
@@ -335,7 +334,6 @@ static unsigned ____alias_loc_id_92;
 static unsigned ____alias_loc_id_93;
 static unsigned ____alias_loc_id_94;
 static unsigned ____alias_loc_id_95;
-static unsigned ____alias_loc_id_96;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -4708,7 +4706,7 @@ list_init_resumable( list_t *l,
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    void (*datum_delete)(void *))
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&list_init), "list_init", &____must_manage_list_init, 3, 0, (size_t)(10498980943454487579UL), (size_t)(10498980943454488877UL), (size_t)(10498980943454488877UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&list_init), "list_init", &____must_manage_list_init, 3, 0, (size_t)(10498980943454487579UL), (size_t)(10498980943454488931UL), (size_t)(10498980943454488931UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->head = l->tail = __null;
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -4718,7 +4716,7 @@ list_init_resumable( list_t *l,
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->datum_delete = datum_delete;
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_init", &____must_manage_list_init, ____alias_loc_id_26, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "list_init", &____must_manage_list_init, ____alias_loc_id_25, ____chimes_did_disable0); }
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_delete_quick(list_t *l); void list_delete(list_t *l);void list_item_delete_quick( list_item_t *li, void (*datum_delete)(void *datum)); void list_item_delete( list_item_t *li, void (*datum_delete)(void *datum));
@@ -4741,7 +4739,7 @@ list_item_t *li;
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     li = li->next;
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_1: ({ void (*____chimes_arg1)(void *); if (!____chimes_replaying) { ____chimes_arg1 = (l->datum_delete); } calling((void*)list_item_delete, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(10498980943454488877UL), (size_t)(10498980943454488877UL)); (list_item_delete)(del, ____chimes_arg1); }) ;
+     call_lbl_1: ({ void (*____chimes_arg1)(void *); if (!____chimes_replaying) { ____chimes_arg1 = (l->datum_delete); } calling((void*)list_item_delete, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(10498980943454488931UL), (size_t)(10498980943454488931UL)); (list_item_delete)(del, ____chimes_arg1); }) ;
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   }
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -4750,7 +4748,7 @@ list_item_t *li;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length = 0;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_delete", &____must_manage_list_delete, ____alias_loc_id_27, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "list_delete", &____must_manage_list_delete, ____alias_loc_id_26, ____chimes_did_disable1); }
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_reset_quick(list_t *l); void list_reset(list_t *l);
@@ -4773,7 +4771,7 @@ list_insert_item_head_resumable( list_t *l,
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       list_item_t *i)
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&list_insert_item_head), "list_insert_item_head", &____must_manage_list_insert_item_head, 2, 0, (size_t)(10498980943454487703UL), (size_t)(10498980943454488877UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&list_insert_item_head), "list_insert_item_head", &____must_manage_list_insert_item_head, 2, 0, (size_t)(10498980943454487703UL), (size_t)(10498980943454488931UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (l->head) {
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -4795,7 +4793,7 @@ list_insert_item_head_resumable( list_t *l,
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_item_head", &____must_manage_list_insert_item_head, ____alias_loc_id_29, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "list_insert_item_head", &____must_manage_list_insert_item_head, ____alias_loc_id_28, ____chimes_did_disable3); }
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_insert_item_tail_npm( list_t *l, list_item_t *i);
@@ -4806,7 +4804,7 @@ list_insert_item_tail_resumable( list_t *l,
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       list_item_t *i)
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&list_insert_item_tail), "list_insert_item_tail", &____must_manage_list_insert_item_tail, 2, 0, (size_t)(10498980943454487756UL), (size_t)(10498980943454488877UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&list_insert_item_tail), "list_insert_item_tail", &____must_manage_list_insert_item_tail, 2, 0, (size_t)(10498980943454487756UL), (size_t)(10498980943454488931UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 203 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (l->head) {
 # 204 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -4828,7 +4826,7 @@ list_insert_item_tail_resumable( list_t *l,
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_item_tail", &____must_manage_list_insert_item_tail, ____alias_loc_id_30, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "list_insert_item_tail", &____must_manage_list_insert_item_tail, ____alias_loc_id_29, ____chimes_did_disable4); }
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_insert_item_before_npm(list_t *l, list_item_t *next, list_item_t *i);
@@ -4841,7 +4839,7 @@ list_insert_item_before_resumable(list_t *l,
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       list_item_t *i)
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&list_insert_item_before), "list_insert_item_before", &____must_manage_list_insert_item_before, 3, 0, (size_t)(10498980943454487816UL), (size_t)(10498980943454488877UL), (size_t)(10498980943454488877UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable5 = new_stack((void *)(&list_insert_item_before), "list_insert_item_before", &____must_manage_list_insert_item_before, 3, 0, (size_t)(10498980943454487816UL), (size_t)(10498980943454488931UL), (size_t)(10498980943454488931UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -4869,7 +4867,7 @@ list_insert_item_before_resumable(list_t *l,
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_item_before", &____must_manage_list_insert_item_before, ____alias_loc_id_31, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "list_insert_item_before", &____must_manage_list_insert_item_before, ____alias_loc_id_30, ____chimes_did_disable5); }
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 236 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_insert_item_after_npm( list_t *l, list_item_t *pred, list_item_t *i);
@@ -4882,7 +4880,7 @@ list_insert_item_after_resumable( list_t *l,
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       list_item_t *i)
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&list_insert_item_after), "list_insert_item_after", &____must_manage_list_insert_item_after, 3, 0, (size_t)(10498980943454487877UL), (size_t)(10498980943454488877UL), (size_t)(10498980943454488877UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable6 = new_stack((void *)(&list_insert_item_after), "list_insert_item_after", &____must_manage_list_insert_item_after, 3, 0, (size_t)(10498980943454487877UL), (size_t)(10498980943454488931UL), (size_t)(10498980943454488931UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -4910,7 +4908,7 @@ list_insert_item_after_resumable( list_t *l,
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_item_after", &____must_manage_list_insert_item_after, ____alias_loc_id_32, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "list_insert_item_after", &____must_manage_list_insert_item_after, ____alias_loc_id_31, ____chimes_did_disable6); }
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void * list_item_get_datum_npm(list_item_t *li);
@@ -4921,7 +4919,7 @@ list_insert_item_sorted_resumable(list_t *l,
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       list_item_t *i)
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&list_insert_item_sorted), "list_insert_item_sorted", (int *)0, 2, 2, (size_t)(10498980943454487992UL), (size_t)(10498980943454488877UL), "list_insert_item_sorted|l|0", &____must_checkpoint_list_insert_item_sorted_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_insert_item_sorted|i|0", &____must_checkpoint_list_insert_item_sorted_i_0, "%struct.list_item*", (void *)(&i), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_1;
+{const int ____chimes_did_disable7 = new_stack((void *)(&list_insert_item_sorted), "list_insert_item_sorted", (int *)0, 2, 2, (size_t)(10498980943454487992UL), (size_t)(10498980943454488931UL), "list_insert_item_sorted|l|0", &____must_checkpoint_list_insert_item_sorted_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_insert_item_sorted|i|0", &____must_checkpoint_list_insert_item_sorted_i_0, "%struct.list_item*", (void *)(&i), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_1;
 void *____chimes_unroll_var_0;
 list_item_t *itr;
  if (____must_checkpoint_list_insert_item_sorted_____chimes_unroll_var_1_0 || ____must_checkpoint_list_insert_item_sorted_____chimes_unroll_var_0_0 || ____must_checkpoint_list_insert_item_sorted_itr_0) { register_stack_vars(3, "list_insert_item_sorted|____chimes_unroll_var_1|0", &____must_checkpoint_list_insert_item_sorted_____chimes_unroll_var_1_0, "i8*", (void *)(&____chimes_unroll_var_1), (size_t)8, 1, 0, 0, "list_insert_item_sorted|____chimes_unroll_var_0|0", &____must_checkpoint_list_insert_item_sorted_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0, "list_insert_item_sorted|itr|0", &____must_checkpoint_list_insert_item_sorted_itr_0, "%struct.list_item*", (void *)(&itr), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
@@ -4965,7 +4963,7 @@ list_item_t *itr;
 # 283 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 284 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_item_sorted", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "list_insert_item_sorted", (int *)0x0, ____alias_loc_id_32, ____chimes_did_disable7); }
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_insert_head_npm( list_t *l, void *v);void list_item_init_npm( list_item_t *li, void *datum);
@@ -4976,11 +4974,11 @@ list_insert_head_resumable( list_t *l,
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void *v)
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&list_insert_head), "list_insert_head", &____must_manage_list_insert_head, 2, 0, (size_t)(10498980943454488076UL), (size_t)(10498980943454488077UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&list_insert_head), "list_insert_head", &____must_manage_list_insert_head, 2, 0, (size_t)(10498980943454488080UL), (size_t)(10498980943454488081UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i; ;
 # 291 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 291); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 291); exit(-1); } _tmp; });
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5005,7 +5003,7 @@ list_insert_head_resumable( list_t *l,
   l->length++;
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 304 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_head", &____must_manage_list_insert_head, ____alias_loc_id_35, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "list_insert_head", &____must_manage_list_insert_head, ____alias_loc_id_34, ____chimes_did_disable8); }
 # 305 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 306 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_insert_tail_npm( list_t *l, void *v);
@@ -5016,12 +5014,12 @@ list_insert_tail_resumable( list_t *l,
 # 308 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void *v)
 # 309 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&list_insert_tail), "list_insert_tail", &____must_manage_list_insert_tail, 2, 0, (size_t)(10498980943454488173UL), (size_t)(10498980943454488174UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&list_insert_tail), "list_insert_tail", &____must_manage_list_insert_tail, 2, 0, (size_t)(10498980943454488177UL), (size_t)(10498980943454488178UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 310 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i; ;
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 312); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 312); exit(-1); } _tmp; });
 # 313 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5045,7 +5043,7 @@ list_insert_tail_resumable( list_t *l,
 # 323 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_tail", &____must_manage_list_insert_tail, ____alias_loc_id_37, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "list_insert_tail", &____must_manage_list_insert_tail, ____alias_loc_id_36, ____chimes_did_disable9); }
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_insert_before_npm( list_t *l, list_item_t *next, void *v);
@@ -5058,12 +5056,12 @@ list_insert_before_resumable( list_t *l,
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void *v)
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&list_insert_before), "list_insert_before", &____must_manage_list_insert_before, 3, 0, (size_t)(10498980943454488254UL), (size_t)(10498980943454488877UL), (size_t)(10498980943454488256UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable10 = new_stack((void *)(&list_insert_before), "list_insert_before", &____must_manage_list_insert_before, 3, 0, (size_t)(10498980943454488258UL), (size_t)(10498980943454488931UL), (size_t)(10498980943454488260UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 331 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i; ;
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 333); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 333); exit(-1); } _tmp; });
 # 334 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 335 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5094,7 +5092,7 @@ list_insert_before_resumable( list_t *l,
 # 349 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 350 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_before", &____must_manage_list_insert_before, ____alias_loc_id_38, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "list_insert_before", &____must_manage_list_insert_before, ____alias_loc_id_37, ____chimes_did_disable10); }
 # 351 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 352 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_insert_after_npm( list_t *l, list_item_t *pred, void *v);
@@ -5107,12 +5105,12 @@ list_insert_after_resumable( list_t *l,
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void *v)
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&list_insert_after), "list_insert_after", &____must_manage_list_insert_after, 3, 0, (size_t)(10498980943454488336UL), (size_t)(10498980943454488877UL), (size_t)(10498980943454488338UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&list_insert_after), "list_insert_after", &____must_manage_list_insert_after, 3, 0, (size_t)(10498980943454488340UL), (size_t)(10498980943454488931UL), (size_t)(10498980943454488342UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i; ;
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 359); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 359); exit(-1); } _tmp; });
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5143,7 +5141,7 @@ list_insert_after_resumable( list_t *l,
 # 375 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 376 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_after", &____must_manage_list_insert_after, ____alias_loc_id_39, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "list_insert_after", &____must_manage_list_insert_after, ____alias_loc_id_38, ____chimes_did_disable11); }
 # 377 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 378 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_insert_sorted_quick( list_t *l, void *v); void list_insert_sorted( list_t *l, void *v);
@@ -5153,7 +5151,7 @@ list_insert_sorted_resumable( list_t *l,
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void *v)
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&list_insert_sorted), "list_insert_sorted", (int *)0, 2, 1, (size_t)(10498980943454488472UL), (size_t)(10498980943454488473UL), "list_insert_sorted|l|0", &____must_checkpoint_list_insert_sorted_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_3;
+{const int ____chimes_did_disable12 = new_stack((void *)(&list_insert_sorted), "list_insert_sorted", (int *)0, 2, 1, (size_t)(10498980943454488476UL), (size_t)(10498980943454488477UL), "list_insert_sorted|l|0", &____must_checkpoint_list_insert_sorted_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_3;
 void *____chimes_unroll_var_2;
 list_item_t *i;
 list_item_t *itr;
@@ -5164,7 +5162,7 @@ list_item_t *itr;
    ;
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 385); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 385); exit(-1); } _tmp; });
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5172,7 +5170,7 @@ list_item_t *itr;
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (l->head) {
 # 390 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        ____chimes_unroll_var_2 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(i); })) ; ____chimes_unroll_var_3 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(itr); })) ; alias_group_changed(____alias_loc_id_4); call_lbl_5: for (itr = l->head; itr && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 5, 0, 0UL, 2, 10498980943454488377UL, 10498980943454488381UL)))(____chimes_unroll_var_2, ____chimes_unroll_var_3) < 0; itr = itr->next) { ;; }
+        ____chimes_unroll_var_2 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(i); })) ; ____chimes_unroll_var_3 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(itr); })) ; alias_group_changed(____alias_loc_id_4); call_lbl_5: for (itr = l->head; itr && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 5, 0, 0UL, 2, 10498980943454488381UL, 10498980943454488385UL)))(____chimes_unroll_var_2, ____chimes_unroll_var_3) < 0; itr = itr->next) { ;; }
 # 394 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     if (itr) {
 # 395 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5206,7 +5204,7 @@ list_item_t *itr;
 # 409 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 410 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_sorted", (int *)0x0, ____alias_loc_id_40, ____chimes_did_disable12); }
+rm_stack(false, 0UL, "list_insert_sorted", (int *)0x0, ____alias_loc_id_39, ____chimes_did_disable12); }
 # 411 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 412 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_remove_item_quick( list_t *l, list_item_t *i); void list_remove_item( list_t *l, list_item_t *i);
@@ -5216,7 +5214,7 @@ list_remove_item_resumable( list_t *l,
 # 414 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      list_item_t *i)
 # 415 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&list_remove_item), "list_remove_item", &____must_manage_list_remove_item, 2, 0, (size_t)(10498980943454488559UL), (size_t)(10498980943454488560UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable13 = new_stack((void *)(&list_remove_item), "list_remove_item", &____must_manage_list_remove_item, 2, 0, (size_t)(10498980943454488563UL), (size_t)(10498980943454488564UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 416 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (i == l->head) {{
 # 417 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5240,7 +5238,7 @@ list_remove_item_resumable( list_t *l,
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length--;
 # 430 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   call_lbl_1: ({ void (*____chimes_arg4)(void *); if (!____chimes_replaying) { ____chimes_arg4 = (l->datum_delete); } calling((void*)list_item_delete, 1, ____alias_loc_id_5, 0UL, 2, (size_t)(10498980943454488560UL), (size_t)(10498980943454488877UL)); (list_item_delete)(i, ____chimes_arg4); }) ;
+   call_lbl_1: ({ void (*____chimes_arg4)(void *); if (!____chimes_replaying) { ____chimes_arg4 = (l->datum_delete); } calling((void*)list_item_delete, 1, ____alias_loc_id_5, 0UL, 2, (size_t)(10498980943454488564UL), (size_t)(10498980943454488931UL)); (list_item_delete)(i, ____chimes_arg4); }) ;
 # 431 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_remove_item", &____must_manage_list_remove_item, 0, ____chimes_did_disable13); }
 # 432 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5250,9 +5248,9 @@ void
 # 434 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_remove_head_resumable(list_t *l)
 # 435 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable14 = new_stack((void *)(&list_remove_head), "list_remove_head", &____must_manage_list_remove_head, 1, 0, (size_t)(10498980943454488570UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable14 = new_stack((void *)(&list_remove_head), "list_remove_head", &____must_manage_list_remove_head, 1, 0, (size_t)(10498980943454488574UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   call_lbl_1: ({ list_item_t * ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = (l->head); } calling((void*)list_remove_item, 1, ____alias_loc_id_6, 0UL, 2, (size_t)(10498980943454488570UL), (size_t)(10498980943454488567UL)); (list_remove_item)(l, ____chimes_arg6); }) ;
+   call_lbl_1: ({ list_item_t * ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg6 = (l->head); } calling((void*)list_remove_item, 1, ____alias_loc_id_6, 0UL, 2, (size_t)(10498980943454488574UL), (size_t)(10498980943454488571UL)); (list_remove_item)(l, ____chimes_arg6); }) ;
 # 437 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_remove_head", &____must_manage_list_remove_head, 0, ____chimes_did_disable14); }
 # 438 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5262,9 +5260,9 @@ void
 # 440 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_remove_tail_resumable(list_t *l)
 # 441 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable15 = new_stack((void *)(&list_remove_tail), "list_remove_tail", &____must_manage_list_remove_tail, 1, 0, (size_t)(10498980943454488580UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable15 = new_stack((void *)(&list_remove_tail), "list_remove_tail", &____must_manage_list_remove_tail, 1, 0, (size_t)(10498980943454488584UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 442 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   call_lbl_1: ({ list_item_t * ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg8 = (l->tail); } calling((void*)list_remove_item, 1, ____alias_loc_id_7, 0UL, 2, (size_t)(10498980943454488580UL), (size_t)(10498980943454488577UL)); (list_remove_item)(l, ____chimes_arg8); }) ;
+   call_lbl_1: ({ list_item_t * ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg8 = (l->tail); } calling((void*)list_remove_item, 1, ____alias_loc_id_7, 0UL, 2, (size_t)(10498980943454488584UL), (size_t)(10498980943454488581UL)); (list_remove_item)(l, ____chimes_arg8); }) ;
 # 443 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_remove_tail", &____must_manage_list_remove_tail, 0, ____chimes_did_disable15); }
 # 444 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5276,19 +5274,19 @@ list_find_item_resumable( list_t *l,
 # 447 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     void *datum)
 # 448 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable16 = new_stack((void *)(&list_find_item), "list_find_item", (int *)0, 2, 2, (size_t)(10498980943454488620UL), (size_t)(10498980943454488621UL), "list_find_item|l|0", &____must_checkpoint_list_find_item_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_find_item|datum|0", &____must_checkpoint_list_find_item_datum_0, "i8*", (void *)(&datum), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_4;
+{const int ____chimes_did_disable16 = new_stack((void *)(&list_find_item), "list_find_item", (int *)0, 2, 2, (size_t)(10498980943454488628UL), (size_t)(10498980943454488629UL), "list_find_item|l|0", &____must_checkpoint_list_find_item_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_find_item|datum|0", &____must_checkpoint_list_find_item_datum_0, "i8*", (void *)(&datum), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_4;
 list_item_t *li;
  if (____must_checkpoint_list_find_item_____chimes_unroll_var_4_0 || ____must_checkpoint_list_find_item_li_0) { register_stack_vars(2, "list_find_item|____chimes_unroll_var_4|0", &____must_checkpoint_list_find_item_____chimes_unroll_var_4_0, "i8*", (void *)(&____chimes_unroll_var_4), (size_t)8, 1, 0, 0, "list_find_item|li|0", &____must_checkpoint_list_find_item_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 449 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    ;
 # 450 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 451 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      ____chimes_unroll_var_4 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; alias_group_changed(____alias_loc_id_8); call_lbl_2: for (li = l->head; li && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 2, 0, 0UL, 2, 10498980943454488621UL, 10498980943454488592UL)))(datum, ____chimes_unroll_var_4); li = li->next) { ;; }
+      ____chimes_unroll_var_4 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; alias_group_changed(____alias_loc_id_8); call_lbl_2: for (li = l->head; li && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 2, 0, 0UL, 2, 10498980943454488629UL, 10498980943454488597UL)))(datum, ____chimes_unroll_var_4); li = li->next) { ;; }
 # 454 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 455 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454488591UL, "list_find_item", (int *)0x0, ____alias_loc_id_41, ____chimes_did_disable16); return li;
+   list_item_t *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (li); rm_stack(true, 10498980943454488596UL, "list_find_item", (int *)0x0, ____alias_loc_id_40, ____chimes_did_disable16); return ____chimes_ret_var_0; ;
 # 456 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454488596UL, "list_find_item", (int *)0x0, ____alias_loc_id_40, ____chimes_did_disable16); }
 # 457 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 458 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_item_t* list_get_head_item_npm(list_t *l);
@@ -5297,11 +5295,11 @@ list_item_t*
 # 459 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_get_head_item_resumable(list_t *l)
 # 460 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable17 = new_stack((void *)(&list_get_head_item), "list_get_head_item", &____must_manage_list_get_head_item, 1, 0, (size_t)(10498980943454488629UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable17 = new_stack((void *)(&list_get_head_item), "list_get_head_item", &____must_manage_list_get_head_item, 1, 0, (size_t)(10498980943454488641UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 461 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454488627UL, "list_get_head_item", &____must_manage_list_get_head_item, ____alias_loc_id_42, ____chimes_did_disable17); return l->head;
+   list_item_t *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (l->head); rm_stack(true, 10498980943454488637UL, "list_get_head_item", &____must_manage_list_get_head_item, ____alias_loc_id_41, ____chimes_did_disable17); return ____chimes_ret_var_1; ;
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454488637UL, "list_get_head_item", &____must_manage_list_get_head_item, ____alias_loc_id_41, ____chimes_did_disable17); }
 # 463 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 464 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_item_t* list_get_tail_item_npm(list_t *l);
@@ -5310,11 +5308,11 @@ list_item_t*
 # 465 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_get_tail_item_resumable(list_t *l)
 # 466 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable18 = new_stack((void *)(&list_get_tail_item), "list_get_tail_item", &____must_manage_list_get_tail_item, 1, 0, (size_t)(10498980943454488637UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable18 = new_stack((void *)(&list_get_tail_item), "list_get_tail_item", &____must_manage_list_get_tail_item, 1, 0, (size_t)(10498980943454488653UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454488635UL, "list_get_tail_item", &____must_manage_list_get_tail_item, ____alias_loc_id_43, ____chimes_did_disable18); return l->tail;
+   list_item_t *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (l->tail); rm_stack(true, 10498980943454488649UL, "list_get_tail_item", &____must_manage_list_get_tail_item, ____alias_loc_id_42, ____chimes_did_disable18); return ____chimes_ret_var_2; ;
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454488649UL, "list_get_tail_item", &____must_manage_list_get_tail_item, ____alias_loc_id_42, ____chimes_did_disable18); }
 # 469 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void* list_find_quick( list_t *l, void *datum); void* list_find( list_t *l, void *datum);
@@ -5324,19 +5322,19 @@ list_find_resumable( list_t *l,
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    void *datum)
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable19 = new_stack((void *)(&list_find), "list_find", (int *)0, 2, 2, (size_t)(10498980943454488685UL), (size_t)(10498980943454488686UL), "list_find|l|0", &____must_checkpoint_list_find_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_find|datum|0", &____must_checkpoint_list_find_datum_0, "i8*", (void *)(&datum), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_5;
+{const int ____chimes_did_disable19 = new_stack((void *)(&list_find), "list_find", (int *)0, 2, 2, (size_t)(10498980943454488705UL), (size_t)(10498980943454488706UL), "list_find|l|0", &____must_checkpoint_list_find_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_find|datum|0", &____must_checkpoint_list_find_datum_0, "i8*", (void *)(&datum), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_5;
 list_item_t *li;
  if (____must_checkpoint_list_find_____chimes_unroll_var_5_0 || ____must_checkpoint_list_find_li_0) { register_stack_vars(2, "list_find|____chimes_unroll_var_5|0", &____must_checkpoint_list_find_____chimes_unroll_var_5_0, "i8*", (void *)(&____chimes_unroll_var_5), (size_t)8, 1, 0, 0, "list_find|li|0", &____must_checkpoint_list_find_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 474 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    ;
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 476 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      ____chimes_unroll_var_5 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; alias_group_changed(____alias_loc_id_9); call_lbl_2: for (li = l->head; li && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 2, 0, 0UL, 2, 10498980943454488686UL, 10498980943454488649UL)))(datum, ____chimes_unroll_var_5); li = li->next) { ;; }
+      ____chimes_unroll_var_5 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; alias_group_changed(____alias_loc_id_9); call_lbl_2: for (li = l->head; li && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 2, 0, 0UL, 2, 10498980943454488706UL, 10498980943454488666UL)))(datum, ____chimes_unroll_var_5); li = li->next) { ;; }
 # 479 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 480 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454493178UL, "list_find", (int *)0x0, ____alias_loc_id_44, ____chimes_did_disable19); return li ? li->datum : __null;
+   void *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (li ? li->datum : __null); rm_stack(true, 10498980943454493441UL, "list_find", (int *)0x0, ____alias_loc_id_43, ____chimes_did_disable19); return ____chimes_ret_var_3; ;
 # 481 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "list_find", (int *)0x0, ____alias_loc_id_43, ____chimes_did_disable19); }
 # 482 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 483 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void* list_get_head_npm(list_t *l);
@@ -5345,11 +5343,11 @@ void*
 # 484 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_get_head_resumable(list_t *l)
 # 485 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable20 = new_stack((void *)(&list_get_head), "list_get_head", &____must_manage_list_get_head, 1, 0, (size_t)(10498980943454488695UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable20 = new_stack((void *)(&list_get_head), "list_get_head", &____must_manage_list_get_head, 1, 0, (size_t)(10498980943454488717UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 486 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454493178UL, "list_get_head", &____must_manage_list_get_head, ____alias_loc_id_45, ____chimes_did_disable20); return l->head ? l->head->datum : __null;
+   void *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (l->head ? l->head->datum : __null); rm_stack(true, 10498980943454493441UL, "list_get_head", &____must_manage_list_get_head, ____alias_loc_id_44, ____chimes_did_disable20); return ____chimes_ret_var_4; ;
 # 487 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "list_get_head", &____must_manage_list_get_head, ____alias_loc_id_44, ____chimes_did_disable20); }
 # 488 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 489 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void* list_get_tail_npm(list_t *l);
@@ -5358,11 +5356,11 @@ void*
 # 490 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_get_tail_resumable(list_t *l)
 # 491 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable21 = new_stack((void *)(&list_get_tail), "list_get_tail", &____must_manage_list_get_tail, 1, 0, (size_t)(10498980943454488713UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable21 = new_stack((void *)(&list_get_tail), "list_get_tail", &____must_manage_list_get_tail, 1, 0, (size_t)(10498980943454488739UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 492 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454493178UL, "list_get_tail", &____must_manage_list_get_tail, ____alias_loc_id_46, ____chimes_did_disable21); return l->tail ? l->tail->datum : __null;
+   void *____chimes_ret_var_5; ; ____chimes_ret_var_5 = (l->tail ? l->tail->datum : __null); rm_stack(true, 10498980943454493441UL, "list_get_tail", &____must_manage_list_get_tail, ____alias_loc_id_45, ____chimes_did_disable21); return ____chimes_ret_var_5; ;
 # 493 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "list_get_tail", &____must_manage_list_get_tail, ____alias_loc_id_45, ____chimes_did_disable21); }
 # 494 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 495 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 uint32_t list_get_length_npm(list_t *l);
@@ -5371,11 +5369,11 @@ uint32_t
 # 496 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_get_length_resumable(list_t *l)
 # 497 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable22 = new_stack((void *)(&list_get_length), "list_get_length", &____must_manage_list_get_length, 1, 0, (size_t)(10498980943454488730UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable22 = new_stack((void *)(&list_get_length), "list_get_length", &____must_manage_list_get_length, 1, 0, (size_t)(10498980943454488762UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 498 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "list_get_length", &____must_manage_list_get_length, ____alias_loc_id_47, ____chimes_did_disable22); return l->length;
+   uint32_t ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (l->length); rm_stack(false, 0UL, "list_get_length", &____must_manage_list_get_length, ____alias_loc_id_46, ____chimes_did_disable22); return ____chimes_ret_var_6; ;
 # 499 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "list_get_length", &____must_manage_list_get_length, ____alias_loc_id_46, ____chimes_did_disable22); }
 # 500 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 501 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 bool list_is_empty_npm(list_t *l);
@@ -5384,11 +5382,11 @@ bool
 # 502 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_is_empty_resumable(list_t *l)
 # 503 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable23 = new_stack((void *)(&list_is_empty), "list_is_empty", &____must_manage_list_is_empty, 1, 0, (size_t)(10498980943454488739UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable23 = new_stack((void *)(&list_is_empty), "list_is_empty", &____must_manage_list_is_empty, 1, 0, (size_t)(10498980943454488777UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 504 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "list_is_empty", &____must_manage_list_is_empty, ____alias_loc_id_48, ____chimes_did_disable23); return (l->length == 0);
+   bool ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((l->length == 0)); rm_stack(false, 0UL, "list_is_empty", &____must_manage_list_is_empty, ____alias_loc_id_47, ____chimes_did_disable23); return ____chimes_ret_var_7; ;
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "list_is_empty", &____must_manage_list_is_empty, ____alias_loc_id_47, ____chimes_did_disable23); }
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 bool list_not_empty_npm(list_t *l);
@@ -5397,11 +5395,11 @@ bool
 # 508 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_not_empty_resumable(list_t *l)
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable24 = new_stack((void *)(&list_not_empty), "list_not_empty", &____must_manage_list_not_empty, 1, 0, (size_t)(10498980943454488748UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable24 = new_stack((void *)(&list_not_empty), "list_not_empty", &____must_manage_list_not_empty, 1, 0, (size_t)(10498980943454488792UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "list_not_empty", &____must_manage_list_not_empty, ____alias_loc_id_49, ____chimes_did_disable24); return (l->length != 0);
+   bool ____chimes_ret_var_8; ; ____chimes_ret_var_8 = ((l->length != 0)); rm_stack(false, 0UL, "list_not_empty", &____must_manage_list_not_empty, ____alias_loc_id_48, ____chimes_did_disable24); return ____chimes_ret_var_8; ;
 # 511 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "list_not_empty", &____must_manage_list_not_empty, ____alias_loc_id_48, ____chimes_did_disable24); }
 # 512 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 513 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_visit_items_quick( list_t *l, void (*visitor)(void *v)); void list_visit_items( list_t *l, void (*visitor)(void *v));
@@ -5411,16 +5409,16 @@ list_visit_items_resumable( list_t *l,
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void (*visitor)(void *v))
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable25 = new_stack((void *)(&list_visit_items), "list_visit_items", (int *)0, 2, 1, (size_t)(10498980943454488780UL), (size_t)(10498980943454488781UL), "list_visit_items|visitor|0", &____must_checkpoint_list_visit_items_visitor_0, "void (i8*)*", (void *)(&visitor), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_6;
+{const int ____chimes_did_disable25 = new_stack((void *)(&list_visit_items), "list_visit_items", (int *)0, 2, 1, (size_t)(10498980943454488824UL), (size_t)(10498980943454488825UL), "list_visit_items|visitor|0", &____must_checkpoint_list_visit_items_visitor_0, "void (i8*)*", (void *)(&visitor), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_6;
 list_item_t *li;
  if (____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0 || ____must_checkpoint_list_visit_items_li_0) { register_stack_vars(2, "list_visit_items|____chimes_unroll_var_6|0", &____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0, "i8*", (void *)(&____chimes_unroll_var_6), (size_t)8, 1, 0, 0, "list_visit_items|li|0", &____must_checkpoint_list_visit_items_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    ;
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  for (li = l->head; li; li = li->next) { ____chimes_unroll_var_6 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; call_lbl_1: ((void (*)(void *))(translate_fptr((void *)visitor, 1, 0, 0UL, 1, 10498980943454488768UL)))(____chimes_unroll_var_6); };
+  for (li = l->head; li; li = li->next) { ____chimes_unroll_var_6 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; call_lbl_1: ((void (*)(void *))(translate_fptr((void *)visitor, 1, 0, 0UL, 1, 10498980943454488812UL)))(____chimes_unroll_var_6); };
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_visit_items", (int *)0x0, ____alias_loc_id_50, ____chimes_did_disable25); }
+rm_stack(false, 0UL, "list_visit_items", (int *)0x0, ____alias_loc_id_49, ____chimes_did_disable25); }
 # 522 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 523 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void
@@ -5429,13 +5427,13 @@ list_item_init_resumable( list_item_t *li,
 # 525 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     void *datum)
 # 526 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable26 = new_stack((void *)(&list_item_init), "list_item_init", &____must_manage_list_item_init, 2, 0, (size_t)(10498980943454488099UL), (size_t)(10498980943454488877UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable26 = new_stack((void *)(&list_item_init), "list_item_init", &____must_manage_list_item_init, 2, 0, (size_t)(10498980943454488103UL), (size_t)(10498980943454488931UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 527 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   li->pred = li->next = __null;
 # 528 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   li->datum = datum;
 # 529 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_item_init", &____must_manage_list_item_init, ____alias_loc_id_36, ____chimes_did_disable26); }
+rm_stack(false, 0UL, "list_item_init", &____must_manage_list_item_init, ____alias_loc_id_35, ____chimes_did_disable26); }
 # 530 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 531 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void
@@ -5455,18 +5453,18 @@ list_item_delete_resumable( list_item_t *li,
 # 539 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   free_wrapper(li, 10498980943454487641UL);
 # 540 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_item_delete", (int *)0x0, ____alias_loc_id_28, ____chimes_did_disable27); }
+rm_stack(false, 0UL, "list_item_delete", (int *)0x0, ____alias_loc_id_27, ____chimes_did_disable27); }
 # 541 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 542 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void *
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_item_get_datum_resumable(list_item_t *li)
 # 544 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable28 = new_stack((void *)(&list_item_get_datum), "list_item_get_datum", &____must_manage_list_item_get_datum, 1, 0, (size_t)(10498980943454488001UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable28 = new_stack((void *)(&list_item_get_datum), "list_item_get_datum", &____must_manage_list_item_get_datum, 1, 0, (size_t)(10498980943454488005UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 545 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454487999UL, "list_item_get_datum", &____must_manage_list_item_get_datum, ____alias_loc_id_34, ____chimes_did_disable28); return li->datum;
+   void *____chimes_ret_var_9; ; ____chimes_ret_var_9 = (li->datum); rm_stack(true, 10498980943454488001UL, "list_item_get_datum", &____must_manage_list_item_get_datum, ____alias_loc_id_33, ____chimes_did_disable28); return ____chimes_ret_var_9; ;
 # 546 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454488001UL, "list_item_get_datum", &____must_manage_list_item_get_datum, ____alias_loc_id_33, ____chimes_did_disable28); }
 # 547 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 548 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_iterator_init_npm( list_t *l, list_iterator_t *li);
@@ -5477,11 +5475,11 @@ list_iterator_init_resumable( list_t *l,
 # 550 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      list_iterator_t *li)
 # 551 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable29 = new_stack((void *)(&list_iterator_init), "list_iterator_init", &____must_manage_list_iterator_init, 2, 0, (size_t)(10498980943454488792UL), (size_t)(10498980943454488798UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable29 = new_stack((void *)(&list_iterator_init), "list_iterator_init", &____must_manage_list_iterator_init, 2, 0, (size_t)(10498980943454488836UL), (size_t)(10498980943454488842UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 552 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   *li = l ? l->head : __null;
 # 553 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_iterator_init", &____must_manage_list_iterator_init, ____alias_loc_id_51, ____chimes_did_disable29); }
+rm_stack(false, 0UL, "list_iterator_init", &____must_manage_list_iterator_init, ____alias_loc_id_50, ____chimes_did_disable29); }
 # 554 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 555 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_iterator_delete_npm(list_iterator_t *li);
@@ -5490,11 +5488,11 @@ void
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_iterator_delete_resumable(list_iterator_t *li)
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable30 = new_stack((void *)(&list_iterator_delete), "list_iterator_delete", &____must_manage_list_iterator_delete, 1, 0, (size_t)(10498980943454488809UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable30 = new_stack((void *)(&list_iterator_delete), "list_iterator_delete", &____must_manage_list_iterator_delete, 1, 0, (size_t)(10498980943454488853UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   *li = __null;
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_iterator_delete", &____must_manage_list_iterator_delete, ____alias_loc_id_52, ____chimes_did_disable30); }
+rm_stack(false, 0UL, "list_iterator_delete", &____must_manage_list_iterator_delete, ____alias_loc_id_51, ____chimes_did_disable30); }
 # 560 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 561 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_iterator_next_npm(list_iterator_t *li);
@@ -5503,11 +5501,11 @@ void
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_iterator_next_resumable(list_iterator_t *li)
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable31 = new_stack((void *)(&list_iterator_next), "list_iterator_next", &____must_manage_list_iterator_next, 1, 0, (size_t)(10498980943454488825UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable31 = new_stack((void *)(&list_iterator_next), "list_iterator_next", &____must_manage_list_iterator_next, 1, 0, (size_t)(10498980943454488869UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (*li) {*li = (*li)->next; };
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_iterator_next", &____must_manage_list_iterator_next, ____alias_loc_id_53, ____chimes_did_disable31); }
+rm_stack(false, 0UL, "list_iterator_next", &____must_manage_list_iterator_next, ____alias_loc_id_52, ____chimes_did_disable31); }
 # 567 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 568 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_iterator_prev_npm(list_iterator_t *li);
@@ -5516,11 +5514,11 @@ void
 # 569 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_iterator_prev_resumable(list_iterator_t *li)
 # 570 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable32 = new_stack((void *)(&list_iterator_prev), "list_iterator_prev", &____must_manage_list_iterator_prev, 1, 0, (size_t)(10498980943454488841UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable32 = new_stack((void *)(&list_iterator_prev), "list_iterator_prev", &____must_manage_list_iterator_prev, 1, 0, (size_t)(10498980943454488885UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 571 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (*li) {*li = (*li)->pred; };
 # 573 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_iterator_prev", &____must_manage_list_iterator_prev, ____alias_loc_id_54, ____chimes_did_disable32); }
+rm_stack(false, 0UL, "list_iterator_prev", &____must_manage_list_iterator_prev, ____alias_loc_id_53, ____chimes_did_disable32); }
 # 574 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void * list_iterator_get_datum_npm(list_iterator_t *li);
@@ -5529,11 +5527,11 @@ void *
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_iterator_get_datum_resumable(list_iterator_t *li)
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable33 = new_stack((void *)(&list_iterator_get_datum), "list_iterator_get_datum", &____must_manage_list_iterator_get_datum, 1, 0, (size_t)(10498980943454488849UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable33 = new_stack((void *)(&list_iterator_get_datum), "list_iterator_get_datum", &____must_manage_list_iterator_get_datum, 1, 0, (size_t)(10498980943454488895UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 578 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454493178UL, "list_iterator_get_datum", &____must_manage_list_iterator_get_datum, ____alias_loc_id_55, ____chimes_did_disable33); return *li ? (*li)->datum : __null;
+   void *____chimes_ret_var_10; ; ____chimes_ret_var_10 = (*li ? (*li)->datum : __null); rm_stack(true, 10498980943454493441UL, "list_iterator_get_datum", &____must_manage_list_iterator_get_datum, ____alias_loc_id_54, ____chimes_did_disable33); return ____chimes_ret_var_10; ;
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "list_iterator_get_datum", &____must_manage_list_iterator_get_datum, ____alias_loc_id_54, ____chimes_did_disable33); }
 # 580 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 581 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 bool list_iterator_is_valid_npm(list_iterator_t *li);
@@ -5542,11 +5540,11 @@ bool
 # 582 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_iterator_is_valid_resumable(list_iterator_t *li)
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable34 = new_stack((void *)(&list_iterator_is_valid), "list_iterator_is_valid", &____must_manage_list_iterator_is_valid, 1, 0, (size_t)(10498980943454488865UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable34 = new_stack((void *)(&list_iterator_is_valid), "list_iterator_is_valid", &____must_manage_list_iterator_is_valid, 1, 0, (size_t)(10498980943454488919UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "list_iterator_is_valid", &____must_manage_list_iterator_is_valid, ____alias_loc_id_56, ____chimes_did_disable34); return (*li != __null);
+   bool ____chimes_ret_var_11; ; ____chimes_ret_var_11 = ((*li != __null)); rm_stack(false, 0UL, "list_iterator_is_valid", &____must_manage_list_iterator_is_valid, ____alias_loc_id_55, ____chimes_did_disable34); return ____chimes_ret_var_11; ;
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "list_iterator_is_valid", &____must_manage_list_iterator_is_valid, ____alias_loc_id_55, ____chimes_did_disable34); }
 # 586 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_reverse_iterator_init_npm( list_t *l, list_reverse_iterator_t *li);
@@ -5557,11 +5555,11 @@ list_reverse_iterator_init_resumable( list_t *l,
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        list_reverse_iterator_t *li)
 # 590 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable35 = new_stack((void *)(&list_reverse_iterator_init), "list_reverse_iterator_init", &____must_manage_list_reverse_iterator_init, 2, 0, (size_t)(10498980943454488875UL), (size_t)(10498980943454488881UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable35 = new_stack((void *)(&list_reverse_iterator_init), "list_reverse_iterator_init", &____must_manage_list_reverse_iterator_init, 2, 0, (size_t)(10498980943454488929UL), (size_t)(10498980943454488935UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 591 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   *li = l ? l->tail : __null;
 # 592 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_reverse_iterator_init", &____must_manage_list_reverse_iterator_init, ____alias_loc_id_57, ____chimes_did_disable35); }
+rm_stack(false, 0UL, "list_reverse_iterator_init", &____must_manage_list_reverse_iterator_init, ____alias_loc_id_56, ____chimes_did_disable35); }
 # 593 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 594 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_reverse_iterator_delete_npm(list_reverse_iterator_t *li);
@@ -5570,11 +5568,11 @@ void
 # 595 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_reverse_iterator_delete_resumable(list_reverse_iterator_t *li)
 # 596 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable36 = new_stack((void *)(&list_reverse_iterator_delete), "list_reverse_iterator_delete", &____must_manage_list_reverse_iterator_delete, 1, 0, (size_t)(10498980943454488892UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable36 = new_stack((void *)(&list_reverse_iterator_delete), "list_reverse_iterator_delete", &____must_manage_list_reverse_iterator_delete, 1, 0, (size_t)(10498980943454488946UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 597 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   *li = __null;
 # 598 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_reverse_iterator_delete", &____must_manage_list_reverse_iterator_delete, ____alias_loc_id_58, ____chimes_did_disable36); }
+rm_stack(false, 0UL, "list_reverse_iterator_delete", &____must_manage_list_reverse_iterator_delete, ____alias_loc_id_57, ____chimes_did_disable36); }
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_reverse_iterator_next_npm(list_reverse_iterator_t *li);
@@ -5583,11 +5581,11 @@ void
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_reverse_iterator_next_resumable(list_reverse_iterator_t *li)
 # 602 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable37 = new_stack((void *)(&list_reverse_iterator_next), "list_reverse_iterator_next", &____must_manage_list_reverse_iterator_next, 1, 0, (size_t)(10498980943454488908UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable37 = new_stack((void *)(&list_reverse_iterator_next), "list_reverse_iterator_next", &____must_manage_list_reverse_iterator_next, 1, 0, (size_t)(10498980943454488962UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 603 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (*li) {*li = (*li)->pred; };
 # 605 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_reverse_iterator_next", &____must_manage_list_reverse_iterator_next, ____alias_loc_id_59, ____chimes_did_disable37); }
+rm_stack(false, 0UL, "list_reverse_iterator_next", &____must_manage_list_reverse_iterator_next, ____alias_loc_id_58, ____chimes_did_disable37); }
 # 606 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 607 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void list_reverse_iterator_prev_npm(list_reverse_iterator_t *li);
@@ -5596,11 +5594,11 @@ void
 # 608 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_reverse_iterator_prev_resumable(list_reverse_iterator_t *li)
 # 609 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable38 = new_stack((void *)(&list_reverse_iterator_prev), "list_reverse_iterator_prev", &____must_manage_list_reverse_iterator_prev, 1, 0, (size_t)(10498980943454488924UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable38 = new_stack((void *)(&list_reverse_iterator_prev), "list_reverse_iterator_prev", &____must_manage_list_reverse_iterator_prev, 1, 0, (size_t)(10498980943454488978UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 610 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (*li) {*li = (*li)->next; };
 # 612 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_reverse_iterator_prev", &____must_manage_list_reverse_iterator_prev, ____alias_loc_id_60, ____chimes_did_disable38); }
+rm_stack(false, 0UL, "list_reverse_iterator_prev", &____must_manage_list_reverse_iterator_prev, ____alias_loc_id_59, ____chimes_did_disable38); }
 # 613 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 614 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 void * list_reverse_iterator_get_datum_npm(list_reverse_iterator_t *li);
@@ -5609,11 +5607,11 @@ void *
 # 615 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_reverse_iterator_get_datum_resumable(list_reverse_iterator_t *li)
 # 616 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable39 = new_stack((void *)(&list_reverse_iterator_get_datum), "list_reverse_iterator_get_datum", &____must_manage_list_reverse_iterator_get_datum, 1, 0, (size_t)(10498980943454488932UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable39 = new_stack((void *)(&list_reverse_iterator_get_datum), "list_reverse_iterator_get_datum", &____must_manage_list_reverse_iterator_get_datum, 1, 0, (size_t)(10498980943454488988UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 617 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454493178UL, "list_reverse_iterator_get_datum", &____must_manage_list_reverse_iterator_get_datum, ____alias_loc_id_61, ____chimes_did_disable39); return *li ? (*li)->datum : __null;
+   void *____chimes_ret_var_12; ; ____chimes_ret_var_12 = (*li ? (*li)->datum : __null); rm_stack(true, 10498980943454493441UL, "list_reverse_iterator_get_datum", &____must_manage_list_reverse_iterator_get_datum, ____alias_loc_id_60, ____chimes_did_disable39); return ____chimes_ret_var_12; ;
 # 618 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "list_reverse_iterator_get_datum", &____must_manage_list_reverse_iterator_get_datum, ____alias_loc_id_60, ____chimes_did_disable39); }
 # 619 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 620 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 bool list_reverse_iterator_is_valid_npm(list_reverse_iterator_t *li);
@@ -5622,11 +5620,11 @@ bool
 # 621 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_reverse_iterator_is_valid_resumable(list_reverse_iterator_t *li)
 # 622 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable40 = new_stack((void *)(&list_reverse_iterator_is_valid), "list_reverse_iterator_is_valid", &____must_manage_list_reverse_iterator_is_valid, 1, 0, (size_t)(10498980943454488947UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable40 = new_stack((void *)(&list_reverse_iterator_is_valid), "list_reverse_iterator_is_valid", &____must_manage_list_reverse_iterator_is_valid, 1, 0, (size_t)(10498980943454489011UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 623 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "list_reverse_iterator_is_valid", &____must_manage_list_reverse_iterator_is_valid, ____alias_loc_id_62, ____chimes_did_disable40); return (li != __null);
+   bool ____chimes_ret_var_13; ; ____chimes_ret_var_13 = ((li != __null)); rm_stack(false, 0UL, "list_reverse_iterator_is_valid", &____must_manage_list_reverse_iterator_is_valid, ____alias_loc_id_61, ____chimes_did_disable40); return ____chimes_ret_var_13; ;
 # 624 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "list_reverse_iterator_is_valid", &____must_manage_list_reverse_iterator_is_valid, ____alias_loc_id_61, ____chimes_did_disable40); }
 # 625 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 626 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 627 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5656,9 +5654,9 @@ kmalloc_resumable(int size)
 # 641 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 642 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454493490UL, "kmalloc", &____must_manage_kmalloc, ____alias_loc_id_63, ____chimes_did_disable41); return r;
+  void *____chimes_ret_var_14; ; ____chimes_ret_var_14 = (r); rm_stack(true, 10498980943454493756UL, "kmalloc", &____must_manage_kmalloc, ____alias_loc_id_62, ____chimes_did_disable41); return ____chimes_ret_var_14; ;
 # 643 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493756UL, "kmalloc", &____must_manage_kmalloc, ____alias_loc_id_62, ____chimes_did_disable41); }
 # 644 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 645 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 646 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5670,7 +5668,7 @@ transform_to_cuda_resumable( node * root,
 # 648 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      bool verbose)
 # 649 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable42 = new_stack((void *)(&transform_to_cuda), "transform_to_cuda", &____must_manage_transform_to_cuda, 2, 0, (size_t)(10498980943454489415UL), (size_t)(0UL)) ; struct timeval two;
+{const int ____chimes_did_disable42 = new_stack((void *)(&transform_to_cuda), "transform_to_cuda", &____must_manage_transform_to_cuda, 2, 0, (size_t)(10498980943454489487UL), (size_t)(0UL)) ; struct timeval two;
 struct timeval one;
  if (____must_checkpoint_transform_to_cuda_two_0 || ____must_checkpoint_transform_to_cuda_one_0) { register_stack_vars(2, "transform_to_cuda|two|0", &____must_checkpoint_transform_to_cuda_two_0, "%struct.timeval = type { i64, i64 }", (void *)(&two), (size_t)16, 0, 1, 0, "transform_to_cuda|one|0", &____must_checkpoint_transform_to_cuda_one_0, "%struct.timeval = type { i64, i64 }", (void *)(&one), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 650 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5685,7 +5683,7 @@ struct timeval one;
 # 655 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  malloc_size = size*sizeof(record) + max_nodes*sizeof(knode);
 # 656 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- mem = (char*)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(malloc_size, 10498980943454493489UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 656); exit(-1); } _tmp; });
+ mem = (char*)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(malloc_size, 10498980943454493755UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 656); exit(-1); } _tmp; });
 # 657 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if(mem==__null){
 # 658 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5840,10 +5838,10 @@ struct timeval one;
  printf("Tree transformation took %f\n", time);
 # 747 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 748 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(false, 0UL, "transform_to_cuda", &____must_manage_transform_to_cuda, ____alias_loc_id_64, ____chimes_did_disable42); return mem_used;
+  long ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (mem_used); rm_stack(false, 0UL, "transform_to_cuda", &____must_manage_transform_to_cuda, ____alias_loc_id_63, ____chimes_did_disable42); return ____chimes_ret_var_15; ;
 # 749 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 750 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "transform_to_cuda", &____must_manage_transform_to_cuda, ____alias_loc_id_63, ____chimes_did_disable42); }
 # 751 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 752 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 753 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5857,7 +5855,7 @@ findRange_resumable( node * root,
 # 756 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    int end)
 # 757 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable43 = new_stack((void *)(&findRange), "findRange", &____must_manage_findRange, 3, 0, (size_t)(10498980943454489587UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable43 = new_stack((void *)(&findRange), "findRange", &____must_manage_findRange, 3, 0, (size_t)(10498980943454489671UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 758 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 759 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
@@ -5865,12 +5863,12 @@ findRange_resumable( node * root,
   node *c; c = (({ calling_npm("find_leaf", 0); find_leaf_npm(root, start, false); })) ;
 # 761 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 762 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (c == __null) {rm_stack(true, 10498980943454494185UL, "findRange", &____must_manage_findRange, ____alias_loc_id_67, ____chimes_did_disable43); return __null; };
+ if (c == __null) { list_t *____chimes_ret_var_16; ; ____chimes_ret_var_16 = (__null); rm_stack(true, 10498980943454494454UL, "findRange", &____must_manage_findRange, ____alias_loc_id_66, ____chimes_did_disable43); return ____chimes_ret_var_16; ; };
 # 763 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 764 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_t *retList; retList = ((list_t *)({
     void *_tmp;
-    if (!(_tmp = malloc_wrapper(sizeof(list_t), 10498980943454494185UL, 0, 0))) {
+    if (!(_tmp = malloc_wrapper(sizeof(list_t), 10498980943454494454UL, 0, 0))) {
         fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 764);
         exit(-1);
     }
@@ -5911,9 +5909,9 @@ findRange_resumable( node * root,
 # 782 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 783 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454494185UL, "findRange", &____must_manage_findRange, ____alias_loc_id_67, ____chimes_did_disable43); return retList;
+  list_t *____chimes_ret_var_17; ; ____chimes_ret_var_17 = (retList); rm_stack(true, 10498980943454494454UL, "findRange", &____must_manage_findRange, ____alias_loc_id_66, ____chimes_did_disable43); return ____chimes_ret_var_17; ;
 # 784 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454494454UL, "findRange", &____must_manage_findRange, ____alias_loc_id_66, ____chimes_did_disable43); }
 # 785 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 786 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 787 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -5986,7 +5984,7 @@ void
 # 822 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 enqueue_resumable( node* new_node )
 # 823 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable46 = new_stack((void *)(&enqueue), "enqueue", &____must_manage_enqueue, 1, 0, (size_t)(10498980943454493178UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable46 = new_stack((void *)(&enqueue), "enqueue", &____must_manage_enqueue, 1, 0, (size_t)(10498980943454493441UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 824 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *c; ;
 # 825 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6014,7 +6012,7 @@ enqueue_resumable( node* new_node )
 # 836 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 837 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "enqueue", &____must_manage_enqueue, ____alias_loc_id_65, ____chimes_did_disable46); }
+rm_stack(false, 0UL, "enqueue", &____must_manage_enqueue, ____alias_loc_id_64, ____chimes_did_disable46); }
 # 838 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 839 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 840 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6030,9 +6028,9 @@ dequeue_resumable( void )
 # 845 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  n->next = __null;
 # 846 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454493178UL, "dequeue", &____must_manage_dequeue, ____alias_loc_id_66, ____chimes_did_disable47); return n;
+  node *____chimes_ret_var_18; ; ____chimes_ret_var_18 = (n); rm_stack(true, 10498980943454493441UL, "dequeue", &____must_manage_dequeue, ____alias_loc_id_65, ____chimes_did_disable47); return ____chimes_ret_var_18; ;
 # 847 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "dequeue", &____must_manage_dequeue, ____alias_loc_id_65, ____chimes_did_disable47); }
 # 848 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 849 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 850 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6042,7 +6040,7 @@ void
 # 851 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 print_leaves_resumable( node* root )
 # 852 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable48 = new_stack((void *)(&print_leaves), "print_leaves", &____must_manage_print_leaves, 1, 0, (size_t)(10498980943454489852UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable48 = new_stack((void *)(&print_leaves), "print_leaves", &____must_manage_print_leaves, 1, 0, (size_t)(10498980943454489944UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 853 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
 # 854 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6052,7 +6050,7 @@ print_leaves_resumable( node* root )
 # 856 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   printf("Empty tree.\n");
 # 857 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "print_leaves", &____must_manage_print_leaves, ____alias_loc_id_69, ____chimes_did_disable48); return;
+  rm_stack(false, 0UL, "print_leaves", &____must_manage_print_leaves, ____alias_loc_id_68, ____chimes_did_disable48); return;
 # 858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 859 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6080,7 +6078,7 @@ print_leaves_resumable( node* root )
 # 876 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  printf("\n");
 # 877 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "print_leaves", &____must_manage_print_leaves, ____alias_loc_id_69, ____chimes_did_disable48); }
+rm_stack(false, 0UL, "print_leaves", &____must_manage_print_leaves, ____alias_loc_id_68, ____chimes_did_disable48); }
 # 878 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 879 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 880 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6090,7 +6088,7 @@ int
 # 881 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 height_resumable( node* root )
 # 882 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable49 = new_stack((void *)(&height), "height", &____must_manage_height, 1, 0, (size_t)(10498980943454489883UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable49 = new_stack((void *)(&height), "height", &____must_manage_height, 1, 0, (size_t)(10498980943454489979UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 883 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int h; h = (0) ;
 # 884 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6104,9 +6102,9 @@ height_resumable( node* root )
 # 888 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 889 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(false, 0UL, "height", &____must_manage_height, ____alias_loc_id_70, ____chimes_did_disable49); return h;
+  int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (h); rm_stack(false, 0UL, "height", &____must_manage_height, ____alias_loc_id_69, ____chimes_did_disable49); return ____chimes_ret_var_19; ;
 # 890 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "height", &____must_manage_height, ____alias_loc_id_69, ____chimes_did_disable49); }
 # 891 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 892 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 893 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6116,7 +6114,7 @@ int
 # 894 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 path_to_root_resumable( node* root, node* child )
 # 895 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable50 = new_stack((void *)(&path_to_root), "path_to_root", &____must_manage_path_to_root, 2, 0, (size_t)(10498980943454489912UL), (size_t)(10498980943454489913UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable50 = new_stack((void *)(&path_to_root), "path_to_root", &____must_manage_path_to_root, 2, 0, (size_t)(10498980943454490012UL), (size_t)(10498980943454490013UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 896 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int length; length = (0) ;
 # 897 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6130,9 +6128,9 @@ path_to_root_resumable( node* root, node* child )
 # 901 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 902 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(false, 0UL, "path_to_root", &____must_manage_path_to_root, ____alias_loc_id_71, ____chimes_did_disable50); return length;
+  int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (length); rm_stack(false, 0UL, "path_to_root", &____must_manage_path_to_root, ____alias_loc_id_70, ____chimes_did_disable50); return ____chimes_ret_var_20; ;
 # 903 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "path_to_root", &____must_manage_path_to_root, ____alias_loc_id_70, ____chimes_did_disable50); }
 # 904 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 905 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 906 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6142,7 +6140,7 @@ void
 # 907 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 print_tree_resumable( node* root )
 # 908 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable51 = new_stack((void *)(&print_tree), "print_tree", &____must_manage_print_tree, 1, 0, (size_t)(10498980943454490074UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable51 = new_stack((void *)(&print_tree), "print_tree", &____must_manage_print_tree, 1, 0, (size_t)(10498980943454490174UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 909 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 910 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *n; n = (__null) ;
@@ -6158,7 +6156,7 @@ print_tree_resumable( node* root )
 # 916 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   printf("Empty tree.\n");
 # 917 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "print_tree", &____must_manage_print_tree, ____alias_loc_id_72, ____chimes_did_disable51); return;
+  rm_stack(false, 0UL, "print_tree", &____must_manage_print_tree, ____alias_loc_id_71, ____chimes_did_disable51); return;
 # 918 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 919 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6208,7 +6206,7 @@ print_tree_resumable( node* root )
 # 948 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  printf("\n");
 # 949 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "print_tree", &____must_manage_print_tree, ____alias_loc_id_72, ____chimes_did_disable51); }
+rm_stack(false, 0UL, "print_tree", &____must_manage_print_tree, ____alias_loc_id_71, ____chimes_did_disable51); }
 # 950 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 951 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 952 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6216,7 +6214,7 @@ node *
 # 953 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 find_leaf_resumable( node* root, int key, bool verbose )
 # 954 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable52 = new_stack((void *)(&find_leaf), "find_leaf", &____must_manage_find_leaf, 3, 0, (size_t)(10498980943454489741UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable52 = new_stack((void *)(&find_leaf), "find_leaf", &____must_manage_find_leaf, 3, 0, (size_t)(10498980943454489833UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 955 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 956 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int i; i = (0) ;
@@ -6227,7 +6225,7 @@ find_leaf_resumable( node* root, int key, bool verbose )
 # 959 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (verbose) {printf("Empty tree.\n"); };
 # 961 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454489741UL, "find_leaf", &____must_manage_find_leaf, ____alias_loc_id_68, ____chimes_did_disable52); return c;
+   node *____chimes_ret_var_21; ; ____chimes_ret_var_21 = (c); rm_stack(true, 10498980943454489833UL, "find_leaf", &____must_manage_find_leaf, ____alias_loc_id_67, ____chimes_did_disable52); return ____chimes_ret_var_21; ;
 # 962 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 963 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6267,10 +6265,10 @@ find_leaf_resumable( node* root, int key, bool verbose )
 # 986 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 987 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454489741UL, "find_leaf", &____must_manage_find_leaf, ____alias_loc_id_68, ____chimes_did_disable52); return c;
+  node *____chimes_ret_var_22; ; ____chimes_ret_var_22 = (c); rm_stack(true, 10498980943454489833UL, "find_leaf", &____must_manage_find_leaf, ____alias_loc_id_67, ____chimes_did_disable52); return ____chimes_ret_var_22; ;
 # 988 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 989 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454489833UL, "find_leaf", &____must_manage_find_leaf, ____alias_loc_id_67, ____chimes_did_disable52); }
 # 990 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 991 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 992 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6280,21 +6278,21 @@ record *
 # 993 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 find_resumable( node* root, int key, bool verbose )
 # 994 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable53 = new_stack((void *)(&find), "find", &____must_manage_find, 3, 0, (size_t)(10498980943454490146UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable53 = new_stack((void *)(&find), "find", &____must_manage_find, 3, 0, (size_t)(10498980943454490258UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 995 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 996 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int i; i = (0) ;
 # 997 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *c; c = (({ calling_npm("find_leaf", 0); find_leaf_npm(root, key, verbose); })) ;
 # 998 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (c == __null) {rm_stack(true, 10498980943454490140UL, "find", &____must_manage_find, ____alias_loc_id_73, ____chimes_did_disable53); return __null; };
+ if (c == __null) { record *____chimes_ret_var_23; ; ____chimes_ret_var_23 = (__null); rm_stack(true, 10498980943454490250UL, "find", &____must_manage_find, ____alias_loc_id_72, ____chimes_did_disable53); return ____chimes_ret_var_23; ; };
 # 1000 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  for (i = 0; i < c->num_keys; i++) { if (c->keys[i] == key) {break; }; };
 # 1003 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (i == c->num_keys) {rm_stack(true, 10498980943454490140UL, "find", &____must_manage_find, ____alias_loc_id_73, ____chimes_did_disable53); return __null; } else {rm_stack(true, 10498980943454490140UL, "find", &____must_manage_find, ____alias_loc_id_73, ____chimes_did_disable53); return (record *)c->pointers[i]; } ;
+ if (i == c->num_keys) { record *____chimes_ret_var_24; ; ____chimes_ret_var_24 = (__null); rm_stack(true, 10498980943454490250UL, "find", &____must_manage_find, ____alias_loc_id_72, ____chimes_did_disable53); return ____chimes_ret_var_24; ; } else { record *____chimes_ret_var_25; ; ____chimes_ret_var_25 = ((record *)c->pointers[i]); rm_stack(true, 10498980943454490250UL, "find", &____must_manage_find, ____alias_loc_id_72, ____chimes_did_disable53); return ____chimes_ret_var_25; ; } ;
 # 1007 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1008 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(true, 10498980943454490140UL, "find", &____must_manage_find, ____alias_loc_id_73, ____chimes_did_disable53); }
+rm_stack(true, 10498980943454490250UL, "find", &____must_manage_find, ____alias_loc_id_72, ____chimes_did_disable53); }
 # 1009 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1010 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1011 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6306,9 +6304,9 @@ cut_resumable( int length )
 # 1013 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {const int ____chimes_did_disable54 = new_stack((void *)(&cut), "cut", &____must_manage_cut, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1014 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (length % 2 == 0) {rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_74, ____chimes_did_disable54); return length/2; } else {rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_74, ____chimes_did_disable54); return length/2 + 1; } ;
+ if (length % 2 == 0) { int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = (length/2); rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_73, ____chimes_did_disable54); return ____chimes_ret_var_26; ; } else { int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = (length/2 + 1); rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_73, ____chimes_did_disable54); return ____chimes_ret_var_27; ; } ;
 # 1018 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_74, ____chimes_did_disable54); }
+rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_73, ____chimes_did_disable54); }
 # 1019 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1020 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1021 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6326,7 +6324,7 @@ make_record_resumable(int value)
 # 1028 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   record *new_record; new_record = ((record *)({
     void *_tmp;
-    if (!(_tmp = malloc_wrapper(sizeof(record), 10498980943454490197UL, 0, 0))) {
+    if (!(_tmp = malloc_wrapper(sizeof(record), 10498980943454490318UL, 0, 0))) {
         fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1028);
         exit(-1);
     }
@@ -6347,9 +6345,9 @@ make_record_resumable(int value)
 # 1035 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1036 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490197UL, "make_record", &____must_manage_make_record, ____alias_loc_id_75, ____chimes_did_disable55); return new_record;
+  record *____chimes_ret_var_28; ; ____chimes_ret_var_28 = (new_record); rm_stack(true, 10498980943454490318UL, "make_record", &____must_manage_make_record, ____alias_loc_id_74, ____chimes_did_disable55); return ____chimes_ret_var_28; ;
 # 1037 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454490318UL, "make_record", &____must_manage_make_record, ____alias_loc_id_74, ____chimes_did_disable55); }
 # 1038 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1039 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1040 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6363,7 +6361,7 @@ make_node_resumable( void )
 # 1043 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *new_node; ;
 # 1044 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node = (node *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof(node), 10498980943454490214UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1044); exit(-1); } _tmp; });
+ new_node = (node *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof(node), 10498980943454490339UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1044); exit(-1); } _tmp; });
 # 1045 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node == __null) {
 # 1046 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6373,7 +6371,7 @@ make_node_resumable( void )
 # 1048 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1049 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper((order - 1) * sizeof(int), 10498980943454493178UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1049); exit(-1); } _tmp; });
+ new_node->keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper((order - 1) * sizeof(int), 10498980943454493441UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1049); exit(-1); } _tmp; });
 # 1050 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->keys == __null) {
 # 1051 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6383,7 +6381,7 @@ make_node_resumable( void )
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->pointers = (void **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454493178UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1054); exit(-1); } _tmp; });
+ new_node->pointers = (void **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454493441UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1054); exit(-1); } _tmp; });
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->pointers == __null) {
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6401,9 +6399,9 @@ make_node_resumable( void )
 # 1062 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->next = __null;
 # 1063 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490214UL, "make_node", &____must_manage_make_node, ____alias_loc_id_76, ____chimes_did_disable56); return new_node;
+  node *____chimes_ret_var_29; ; ____chimes_ret_var_29 = (new_node); rm_stack(true, 10498980943454490339UL, "make_node", &____must_manage_make_node, ____alias_loc_id_75, ____chimes_did_disable56); return ____chimes_ret_var_29; ;
 # 1064 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454490339UL, "make_node", &____must_manage_make_node, ____alias_loc_id_75, ____chimes_did_disable56); }
 # 1065 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1066 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1067 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6419,9 +6417,9 @@ make_leaf_resumable( void )
 # 1071 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  leaf->is_leaf = true;
 # 1072 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490304UL, "make_leaf", &____must_manage_make_leaf, ____alias_loc_id_77, ____chimes_did_disable57); return leaf;
+  node *____chimes_ret_var_30; ; ____chimes_ret_var_30 = (leaf); rm_stack(true, 10498980943454490433UL, "make_leaf", &____must_manage_make_leaf, ____alias_loc_id_76, ____chimes_did_disable57); return ____chimes_ret_var_30; ;
 # 1073 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454490433UL, "make_leaf", &____must_manage_make_leaf, ____alias_loc_id_76, ____chimes_did_disable57); }
 # 1074 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1075 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1076 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6431,7 +6429,7 @@ int
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 get_left_index_resumable(node* parent, node* left)
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable58 = new_stack((void *)(&get_left_index), "get_left_index", &____must_manage_get_left_index, 2, 0, (size_t)(10498980943454490346UL), (size_t)(10498980943454490347UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable58 = new_stack((void *)(&get_left_index), "get_left_index", &____must_manage_get_left_index, 2, 0, (size_t)(10498980943454490482UL), (size_t)(10498980943454490483UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1080 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int left_index; left_index = (0) ;
@@ -6442,9 +6440,9 @@ get_left_index_resumable(node* parent, node* left)
 # 1083 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  left_index++;
 # 1084 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(false, 0UL, "get_left_index", &____must_manage_get_left_index, ____alias_loc_id_78, ____chimes_did_disable58); return left_index;
+  int ____chimes_ret_var_31; ; ____chimes_ret_var_31 = (left_index); rm_stack(false, 0UL, "get_left_index", &____must_manage_get_left_index, ____alias_loc_id_77, ____chimes_did_disable58); return ____chimes_ret_var_31; ;
 # 1085 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "get_left_index", &____must_manage_get_left_index, ____alias_loc_id_77, ____chimes_did_disable58); }
 # 1086 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1087 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1088 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6454,7 +6452,7 @@ node *
 # 1089 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 insert_into_leaf_resumable( node* leaf, int key, record* pointer )
 # 1090 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable59 = new_stack((void *)(&insert_into_leaf), "insert_into_leaf", &____must_manage_insert_into_leaf, 3, 0, (size_t)(10498980943454490453UL), (size_t)(0UL), (size_t)(10498980943454490416UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable59 = new_stack((void *)(&insert_into_leaf), "insert_into_leaf", &____must_manage_insert_into_leaf, 3, 0, (size_t)(10498980943454490593UL), (size_t)(0UL), (size_t)(10498980943454490553UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1091 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; int insertion_point; ;
@@ -6481,9 +6479,9 @@ insert_into_leaf_resumable( node* leaf, int key, record* pointer )
 # 1104 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  leaf->num_keys++;
 # 1105 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490453UL, "insert_into_leaf", &____must_manage_insert_into_leaf, ____alias_loc_id_79, ____chimes_did_disable59); return leaf;
+  node *____chimes_ret_var_32; ; ____chimes_ret_var_32 = (leaf); rm_stack(true, 10498980943454490593UL, "insert_into_leaf", &____must_manage_insert_into_leaf, ____alias_loc_id_78, ____chimes_did_disable59); return ____chimes_ret_var_32; ;
 # 1106 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454490593UL, "insert_into_leaf", &____must_manage_insert_into_leaf, ____alias_loc_id_78, ____chimes_did_disable59); }
 # 1107 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1108 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1109 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6499,7 +6497,7 @@ insert_into_leaf_after_splitting_resumable( node* root,
 # 1113 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
          record* pointer)
 # 1114 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable60 = new_stack((void *)(&insert_into_leaf_after_splitting), "insert_into_leaf_after_splitting", &____must_manage_insert_into_leaf_after_splitting, 4, 0, (size_t)(10498980943454490807UL), (size_t)(10498980943454490808UL), (size_t)(0UL), (size_t)(10498980943454493178UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable60 = new_stack((void *)(&insert_into_leaf_after_splitting), "insert_into_leaf_after_splitting", &____must_manage_insert_into_leaf_after_splitting, 4, 0, (size_t)(10498980943454490951UL), (size_t)(10498980943454490952UL), (size_t)(0UL), (size_t)(10498980943454493441UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1115 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1116 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *new_leaf; ;
@@ -6514,7 +6512,7 @@ insert_into_leaf_after_splitting_resumable( node* root,
  new_leaf = ({ calling_npm("make_leaf", 0); make_leaf_npm(); });
 # 1122 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1123 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454490648UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1123); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454490789UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1123); exit(-1); } _tmp; });
 # 1124 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1125 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6525,7 +6523,7 @@ insert_into_leaf_after_splitting_resumable( node* root,
  }
 # 1128 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1129 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (void **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454490636UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1129); exit(-1); } _tmp; });
+ temp_pointers = (void **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454490777UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1129); exit(-1); } _tmp; });
 # 1130 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1131 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6587,9 +6585,9 @@ insert_into_leaf_after_splitting_resumable( node* root,
  }
 # 1163 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1164 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_pointers, 10498980943454490636UL);
+ free_wrapper(temp_pointers, 10498980943454490777UL);
 # 1165 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_keys, 10498980943454490648UL);
+ free_wrapper(temp_keys, 10498980943454490789UL);
 # 1166 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1167 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_leaf->pointers[order - 1] = leaf->pointers[order - 1];
@@ -6607,9 +6605,9 @@ insert_into_leaf_after_splitting_resumable( node* root,
  new_key = new_leaf->keys[0];
 # 1177 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1178 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490805UL, "insert_into_leaf_after_splitting", &____must_manage_insert_into_leaf_after_splitting, ____alias_loc_id_80, ____chimes_did_disable60); return ({ calling_npm("insert_into_parent", 0); insert_into_parent_npm(root, leaf, new_key, new_leaf); });
+  node *____chimes_ret_var_33; ; ____chimes_ret_var_33 = (({ calling_npm("insert_into_parent", 0); insert_into_parent_npm(root, leaf, new_key, new_leaf); })); rm_stack(true, 10498980943454490947UL, "insert_into_leaf_after_splitting", &____must_manage_insert_into_leaf_after_splitting, ____alias_loc_id_79, ____chimes_did_disable60); return ____chimes_ret_var_33; ;
 # 1179 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454490947UL, "insert_into_leaf_after_splitting", &____must_manage_insert_into_leaf_after_splitting, ____alias_loc_id_79, ____chimes_did_disable60); }
 # 1180 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1181 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1182 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6627,7 +6625,7 @@ insert_into_node_resumable( node* root,
 # 1187 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      node* right)
 # 1188 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable61 = new_stack((void *)(&insert_into_node), "insert_into_node", &____must_manage_insert_into_node, 5, 0, (size_t)(10498980943454490960UL), (size_t)(10498980943454490961UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454490906UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable61 = new_stack((void *)(&insert_into_node), "insert_into_node", &____must_manage_insert_into_node, 5, 0, (size_t)(10498980943454491120UL), (size_t)(10498980943454491121UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454491063UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1189 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1190 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
@@ -6647,9 +6645,9 @@ insert_into_node_resumable( node* root,
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  n->num_keys++;
 # 1199 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490960UL, "insert_into_node", &____must_manage_insert_into_node, ____alias_loc_id_82, ____chimes_did_disable61); return root;
+  node *____chimes_ret_var_34; ; ____chimes_ret_var_34 = (root); rm_stack(true, 10498980943454491120UL, "insert_into_node", &____must_manage_insert_into_node, ____alias_loc_id_81, ____chimes_did_disable61); return ____chimes_ret_var_34; ;
 # 1200 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491120UL, "insert_into_node", &____must_manage_insert_into_node, ____alias_loc_id_81, ____chimes_did_disable61); }
 # 1201 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1202 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1203 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6667,7 +6665,7 @@ insert_into_node_after_splitting_resumable( node* root,
 # 1208 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
          node * right)
 # 1209 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable62 = new_stack((void *)(&insert_into_node_after_splitting), "insert_into_node_after_splitting", &____must_manage_insert_into_node_after_splitting, 5, 0, (size_t)(10498980943454491311UL), (size_t)(10498980943454491312UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454491293UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable62 = new_stack((void *)(&insert_into_node_after_splitting), "insert_into_node_after_splitting", &____must_manage_insert_into_node_after_splitting, 5, 0, (size_t)(10498980943454491475UL), (size_t)(10498980943454491476UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454491454UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1210 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1211 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; int j; int split; int k_prime; ;
@@ -6679,7 +6677,7 @@ insert_into_node_after_splitting_resumable( node* root,
  node **temp_pointers; ;
 # 1225 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1225 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (node **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper((order + 1) * sizeof(node *), 10498980943454491154UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1225); exit(-1); } _tmp; });
+ temp_pointers = (node **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper((order + 1) * sizeof(node *), 10498980943454491315UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1225); exit(-1); } _tmp; });
 # 1226 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1227 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6689,7 +6687,7 @@ insert_into_node_after_splitting_resumable( node* root,
 # 1229 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1230 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454491167UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1230); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454491328UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1230); exit(-1); } _tmp; });
 # 1231 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1232 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6759,9 +6757,9 @@ insert_into_node_after_splitting_resumable( node* root,
 # 1268 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->pointers[j] = temp_pointers[i];
 # 1269 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_pointers, 10498980943454491154UL);
+ free_wrapper(temp_pointers, 10498980943454491315UL);
 # 1270 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_keys, 10498980943454491167UL);
+ free_wrapper(temp_keys, 10498980943454491328UL);
 # 1271 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->parent = old_node->parent;
 # 1272 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6779,9 +6777,9 @@ insert_into_node_after_splitting_resumable( node* root,
 # 1280 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1281 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1282 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454491309UL, "insert_into_node_after_splitting", &____must_manage_insert_into_node_after_splitting, ____alias_loc_id_83, ____chimes_did_disable62); return ({ calling_npm("insert_into_parent", 0); insert_into_parent_npm(root, old_node, k_prime, new_node); });
+  node *____chimes_ret_var_35; ; ____chimes_ret_var_35 = (({ calling_npm("insert_into_parent", 0); insert_into_parent_npm(root, old_node, k_prime, new_node); })); rm_stack(true, 10498980943454491471UL, "insert_into_node_after_splitting", &____must_manage_insert_into_node_after_splitting, ____alias_loc_id_82, ____chimes_did_disable62); return ____chimes_ret_var_35; ;
 # 1283 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491471UL, "insert_into_node_after_splitting", &____must_manage_insert_into_node_after_splitting, ____alias_loc_id_82, ____chimes_did_disable62); }
 # 1284 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1285 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1286 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6797,7 +6795,7 @@ insert_into_parent_resumable( node* root,
 # 1290 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      node* right)
 # 1291 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable63 = new_stack((void *)(&insert_into_parent), "insert_into_parent", &____must_manage_insert_into_parent, 4, 0, (size_t)(10498980943454490870UL), (size_t)(10498980943454490871UL), (size_t)(0UL), (size_t)(10498980943454490873UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable63 = new_stack((void *)(&insert_into_parent), "insert_into_parent", &____must_manage_insert_into_parent, 4, 0, (size_t)(10498980943454491026UL), (size_t)(10498980943454491027UL), (size_t)(0UL), (size_t)(10498980943454491029UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1292 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1293 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int left_index; ;
@@ -6810,7 +6808,7 @@ insert_into_parent_resumable( node* root,
 # 1298 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1299 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1300 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (parent == __null) {rm_stack(true, 10498980943454490865UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_81, ____chimes_did_disable63); return ({ calling_npm("insert_into_new_root", 0); insert_into_new_root_npm(left, key, right); }); };
+ if (parent == __null) { node *____chimes_ret_var_36; ; ____chimes_ret_var_36 = (({ calling_npm("insert_into_new_root", 0); insert_into_new_root_npm(left, key, right); })); rm_stack(true, 10498980943454491019UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_80, ____chimes_did_disable63); return ____chimes_ret_var_36; ; };
 # 1311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  left_index = ({ calling_npm("get_left_index", 0); get_left_index_npm(parent, left); });
@@ -6820,16 +6818,16 @@ insert_into_parent_resumable( node* root,
 # 1315 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1316 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1317 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (parent->num_keys < order - 1) {rm_stack(true, 10498980943454490865UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_81, ____chimes_did_disable63); return ({ calling_npm("insert_into_node", 0); insert_into_node_npm(root, parent, left_index, key, right); }); };
+ if (parent->num_keys < order - 1) { node *____chimes_ret_var_37; ; ____chimes_ret_var_37 = (({ calling_npm("insert_into_node", 0); insert_into_node_npm(root, parent, left_index, key, right); })); rm_stack(true, 10498980943454491019UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_80, ____chimes_did_disable63); return ____chimes_ret_var_37; ; };
 # 1319 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1320 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1321 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1322 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1323 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1324 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490865UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_81, ____chimes_did_disable63); return ({ calling_npm("insert_into_node_after_splitting", 0); insert_into_node_after_splitting_npm(root, parent, left_index, key, right); });
+  node *____chimes_ret_var_38; ; ____chimes_ret_var_38 = (({ calling_npm("insert_into_node_after_splitting", 0); insert_into_node_after_splitting_npm(root, parent, left_index, key, right); })); rm_stack(true, 10498980943454491019UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_80, ____chimes_did_disable63); return ____chimes_ret_var_38; ;
 # 1325 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491019UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_80, ____chimes_did_disable63); }
 # 1326 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1327 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1328 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6841,7 +6839,7 @@ insert_into_new_root_resumable( node* left,
 # 1331 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       node* right)
 # 1332 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable64 = new_stack((void *)(&insert_into_new_root), "insert_into_new_root", &____must_manage_insert_into_new_root, 3, 0, (size_t)(10498980943454493178UL), (size_t)(0UL), (size_t)(10498980943454493178UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable64 = new_stack((void *)(&insert_into_new_root), "insert_into_new_root", &____must_manage_insert_into_new_root, 3, 0, (size_t)(10498980943454493441UL), (size_t)(0UL), (size_t)(10498980943454493441UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1333 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1334 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *root; root = (({ calling_npm("make_node", 0); make_node_npm(); })) ;
@@ -6860,9 +6858,9 @@ insert_into_new_root_resumable( node* left,
 # 1341 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  right->parent = root;
 # 1342 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454493178UL, "insert_into_new_root", &____must_manage_insert_into_new_root, ____alias_loc_id_84, ____chimes_did_disable64); return root;
+  node *____chimes_ret_var_39; ; ____chimes_ret_var_39 = (root); rm_stack(true, 10498980943454493441UL, "insert_into_new_root", &____must_manage_insert_into_new_root, ____alias_loc_id_83, ____chimes_did_disable64); return ____chimes_ret_var_39; ;
 # 1343 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "insert_into_new_root", &____must_manage_insert_into_new_root, ____alias_loc_id_83, ____chimes_did_disable64); }
 # 1344 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1345 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1346 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6874,7 +6872,7 @@ start_new_tree_resumable( int key,
 # 1348 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     record* pointer)
 # 1349 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable65 = new_stack((void *)(&start_new_tree), "start_new_tree", &____must_manage_start_new_tree, 2, 0, (size_t)(0UL), (size_t)(10498980943454493178UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable65 = new_stack((void *)(&start_new_tree), "start_new_tree", &____must_manage_start_new_tree, 2, 0, (size_t)(0UL), (size_t)(10498980943454493441UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1350 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1351 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *root; root = (({ calling_npm("make_leaf", 0); make_leaf_npm(); })) ;
@@ -6889,9 +6887,9 @@ start_new_tree_resumable( int key,
 # 1356 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  root->num_keys++;
 # 1357 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454491378UL, "start_new_tree", &____must_manage_start_new_tree, ____alias_loc_id_85, ____chimes_did_disable65); return root;
+  node *____chimes_ret_var_40; ; ____chimes_ret_var_40 = (root); rm_stack(true, 10498980943454491547UL, "start_new_tree", &____must_manage_start_new_tree, ____alias_loc_id_84, ____chimes_did_disable65); return ____chimes_ret_var_40; ;
 # 1358 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491547UL, "start_new_tree", &____must_manage_start_new_tree, ____alias_loc_id_84, ____chimes_did_disable65); }
 # 1359 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1360 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1361 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6905,7 +6903,7 @@ insert_resumable( node* root,
 # 1364 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int value )
 # 1365 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable66 = new_stack((void *)(&insert), "insert", &____must_manage_insert, 3, 0, (size_t)(10498980943454491469UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable66 = new_stack((void *)(&insert), "insert", &____must_manage_insert, 3, 0, (size_t)(10498980943454491655UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1366 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1367 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  record *pointer; ;
@@ -6914,7 +6912,7 @@ insert_resumable( node* root,
 # 1369 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1370 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1371 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (({ calling_npm("find", 0); find_npm(root, key, false); }) != __null) {rm_stack(true, 10498980943454491469UL, "insert", &____must_manage_insert, ____alias_loc_id_86, ____chimes_did_disable66); return root; };
+ if (({ calling_npm("find", 0); find_npm(root, key, false); }) != __null) { node *____chimes_ret_var_41; ; ____chimes_ret_var_41 = (root); rm_stack(true, 10498980943454491655UL, "insert", &____must_manage_insert, ____alias_loc_id_85, ____chimes_did_disable66); return ____chimes_ret_var_41; ; };
 # 1373 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1374 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1375 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6922,7 +6920,7 @@ insert_resumable( node* root,
 # 1376 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1377 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1378 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root == __null) {rm_stack(true, 10498980943454491469UL, "insert", &____must_manage_insert, ____alias_loc_id_86, ____chimes_did_disable66); return ({ calling_npm("start_new_tree", 0); start_new_tree_npm(key, pointer); }); };
+ if (root == __null) { node *____chimes_ret_var_42; ; ____chimes_ret_var_42 = (({ calling_npm("start_new_tree", 0); start_new_tree_npm(key, pointer); })); rm_stack(true, 10498980943454491655UL, "insert", &____must_manage_insert, ____alias_loc_id_85, ____chimes_did_disable66); return ____chimes_ret_var_42; ; };
 # 1380 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1381 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1382 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6934,15 +6932,15 @@ insert_resumable( node* root,
 # 1386 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   leaf = ({ calling_npm("insert_into_leaf", 0); insert_into_leaf_npm(leaf, key, pointer); });
 # 1387 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454491469UL, "insert", &____must_manage_insert, ____alias_loc_id_86, ____chimes_did_disable66); return root;
+   node *____chimes_ret_var_43; ; ____chimes_ret_var_43 = (root); rm_stack(true, 10498980943454491655UL, "insert", &____must_manage_insert, ____alias_loc_id_85, ____chimes_did_disable66); return ____chimes_ret_var_43; ;
 # 1388 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1389 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1390 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1391 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454491469UL, "insert", &____must_manage_insert, ____alias_loc_id_86, ____chimes_did_disable66); return ({ calling_npm("insert_into_leaf_after_splitting", 0); insert_into_leaf_after_splitting_npm(root, leaf, key, pointer); });
+  node *____chimes_ret_var_44; ; ____chimes_ret_var_44 = (({ calling_npm("insert_into_leaf_after_splitting", 0); insert_into_leaf_after_splitting_npm(root, leaf, key, pointer); })); rm_stack(true, 10498980943454491655UL, "insert", &____must_manage_insert, ____alias_loc_id_85, ____chimes_did_disable66); return ____chimes_ret_var_44; ;
 # 1392 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491655UL, "insert", &____must_manage_insert, ____alias_loc_id_85, ____chimes_did_disable66); }
 # 1393 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1394 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1395 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6956,7 +6954,7 @@ int
 # 1400 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 get_neighbor_index_resumable( node* n )
 # 1401 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable67 = new_stack((void *)(&get_neighbor_index), "get_neighbor_index", &____must_manage_get_neighbor_index, 1, 0, (size_t)(10498980943454491516UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable67 = new_stack((void *)(&get_neighbor_index), "get_neighbor_index", &____must_manage_get_neighbor_index, 1, 0, (size_t)(10498980943454491708UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1402 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1403 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
@@ -6968,7 +6966,7 @@ get_neighbor_index_resumable( node* n )
 # 1409 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1410 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1411 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- for (i = 0; i <= n->parent->num_keys; i++) { if (n->parent->pointers[i] == n) {rm_stack(false, 0UL, "get_neighbor_index", &____must_manage_get_neighbor_index, ____alias_loc_id_87, ____chimes_did_disable67); return i - 1; }; };
+ for (i = 0; i <= n->parent->num_keys; i++) { if (n->parent->pointers[i] == n) { int ____chimes_ret_var_45; ; ____chimes_ret_var_45 = (i - 1); rm_stack(false, 0UL, "get_neighbor_index", &____must_manage_get_neighbor_index, ____alias_loc_id_86, ____chimes_did_disable67); return ____chimes_ret_var_45; ; }; };
 # 1414 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1415 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1416 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6977,7 +6975,7 @@ get_neighbor_index_resumable( node* n )
 # 1418 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  exit(1);
 # 1419 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "get_neighbor_index", &____must_manage_get_neighbor_index, ____alias_loc_id_87, ____chimes_did_disable67); }
+rm_stack(false, 0UL, "get_neighbor_index", &____must_manage_get_neighbor_index, ____alias_loc_id_86, ____chimes_did_disable67); }
 # 1420 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1421 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1422 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -6991,7 +6989,7 @@ remove_entry_from_node_resumable( node* n,
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       node * pointer)
 # 1426 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable68 = new_stack((void *)(&remove_entry_from_node), "remove_entry_from_node", &____must_manage_remove_entry_from_node, 3, 0, (size_t)(10498980943454491585UL), (size_t)(0UL), (size_t)(10498980943454491697UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable68 = new_stack((void *)(&remove_entry_from_node), "remove_entry_from_node", &____must_manage_remove_entry_from_node, 3, 0, (size_t)(10498980943454491778UL), (size_t)(0UL), (size_t)(10498980943454491893UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1428 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; int num_pointers; ;
@@ -7030,9 +7028,9 @@ remove_entry_from_node_resumable( node* n,
  if (n->is_leaf) {for (i = n->num_keys; i < order - 1; i++) { n->pointers[i] = __null; }; } else {for (i = n->num_keys + 1; i < order; i++) { n->pointers[i] = __null; }; } ;
 # 1458 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1459 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454491585UL, "remove_entry_from_node", &____must_manage_remove_entry_from_node, ____alias_loc_id_88, ____chimes_did_disable68); return n;
+  node *____chimes_ret_var_46; ; ____chimes_ret_var_46 = (n); rm_stack(true, 10498980943454491778UL, "remove_entry_from_node", &____must_manage_remove_entry_from_node, ____alias_loc_id_87, ____chimes_did_disable68); return ____chimes_ret_var_46; ;
 # 1460 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491778UL, "remove_entry_from_node", &____must_manage_remove_entry_from_node, ____alias_loc_id_87, ____chimes_did_disable68); }
 # 1461 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1462 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1463 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7042,7 +7040,7 @@ node*
 # 1464 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 adjust_root_resumable(node* root)
 # 1465 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable69 = new_stack((void *)(&adjust_root), "adjust_root", &____must_manage_adjust_root, 1, 0, (size_t)(10498980943454493178UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable69 = new_stack((void *)(&adjust_root), "adjust_root", &____must_manage_adjust_root, 1, 0, (size_t)(10498980943454493441UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1466 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1467 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *new_root; ;
@@ -7053,7 +7051,7 @@ adjust_root_resumable(node* root)
 # 1472 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1473 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1474 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->num_keys > 0) {rm_stack(true, 10498980943454493178UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_89, ____chimes_did_disable69); return root; };
+ if (root->num_keys > 0) { node *____chimes_ret_var_47; ; ____chimes_ret_var_47 = (root); rm_stack(true, 10498980943454493441UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_88, ____chimes_did_disable69); return ____chimes_ret_var_47; ; };
 # 1484 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1484 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (!root->is_leaf) {{
@@ -7065,16 +7063,16 @@ adjust_root_resumable(node* root)
  }; } else {new_root = __null; } ;
 # 1494 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1495 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->keys, 10498980943454493178UL);
+ free_wrapper(root->keys, 10498980943454493441UL);
 # 1496 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->pointers, 10498980943454493178UL);
+ free_wrapper(root->pointers, 10498980943454493441UL);
 # 1497 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root, 10498980943454493178UL);
+ free_wrapper(root, 10498980943454493441UL);
 # 1498 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1499 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454493178UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_89, ____chimes_did_disable69); return new_root;
+  node *____chimes_ret_var_48; ; ____chimes_ret_var_48 = (new_root); rm_stack(true, 10498980943454493441UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_88, ____chimes_did_disable69); return ____chimes_ret_var_48; ;
 # 1500 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_88, ____chimes_did_disable69); }
 # 1501 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1502 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1503 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7092,7 +7090,7 @@ coalesce_nodes_resumable( node* root,
 # 1508 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     int k_prime)
 # 1509 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    {const int ____chimes_did_disable70 = new_stack((void *)(&coalesce_nodes), "coalesce_nodes", &____must_manage_coalesce_nodes, 5, 0, (size_t)(10498980943454492149UL), (size_t)(10498980943454492125UL), (size_t)(10498980943454492125UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+    {const int ____chimes_did_disable70 = new_stack((void *)(&coalesce_nodes), "coalesce_nodes", &____must_manage_coalesce_nodes, 5, 0, (size_t)(10498980943454492357UL), (size_t)(10498980943454492330UL), (size_t)(10498980943454492330UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1510 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1511 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; int j; int neighbor_insertion_index; int n_start; int n_end; int new_k_prime; ;
@@ -7247,11 +7245,11 @@ coalesce_nodes_resumable( node* root,
 # 1627 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, n->parent, k_prime, n); });
 # 1628 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(n->keys, 10498980943454492125UL);
+  free_wrapper(n->keys, 10498980943454492330UL);
 # 1629 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(n->pointers, 10498980943454492125UL);
+  free_wrapper(n->pointers, 10498980943454492330UL);
 # 1630 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(n, 10498980943454492125UL);
+  free_wrapper(n, 10498980943454492330UL);
 # 1631 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }; } else {for (i = 0; i < n->parent->num_keys; i++) { if (n->parent->pointers[i + 1] == n) {
 # 1635 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7262,10 +7260,10 @@ coalesce_nodes_resumable( node* root,
  }; }; }
 # 1638 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1639 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454492149UL, "coalesce_nodes", &____must_manage_coalesce_nodes, ____alias_loc_id_90, ____chimes_did_disable70); return root;
+  node *____chimes_ret_var_49; ; ____chimes_ret_var_49 = (root); rm_stack(true, 10498980943454492357UL, "coalesce_nodes", &____must_manage_coalesce_nodes, ____alias_loc_id_89, ____chimes_did_disable70); return ____chimes_ret_var_49; ;
 # 1640 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1641 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454492357UL, "coalesce_nodes", &____must_manage_coalesce_nodes, ____alias_loc_id_89, ____chimes_did_disable70); }
 # 1642 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1643 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1644 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7285,7 +7283,7 @@ redistribute_nodes_resumable( node* root,
 # 1650 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      int k_prime)
 # 1651 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable71 = new_stack((void *)(&redistribute_nodes), "redistribute_nodes", &____must_manage_redistribute_nodes, 6, 0, (size_t)(10498980943454492703UL), (size_t)(10498980943454493178UL), (size_t)(10498980943454492705UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable71 = new_stack((void *)(&redistribute_nodes), "redistribute_nodes", &____must_manage_redistribute_nodes, 6, 0, (size_t)(10498980943454492931UL), (size_t)(10498980943454493441UL), (size_t)(10498980943454492933UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1652 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1653 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
@@ -7395,9 +7393,9 @@ redistribute_nodes_resumable( node* root,
  neighbor->num_keys--;
 # 1717 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1718 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454492703UL, "redistribute_nodes", &____must_manage_redistribute_nodes, ____alias_loc_id_92, ____chimes_did_disable71); return root;
+  node *____chimes_ret_var_50; ; ____chimes_ret_var_50 = (root); rm_stack(true, 10498980943454492931UL, "redistribute_nodes", &____must_manage_redistribute_nodes, ____alias_loc_id_91, ____chimes_did_disable71); return ____chimes_ret_var_50; ;
 # 1719 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454492931UL, "redistribute_nodes", &____must_manage_redistribute_nodes, ____alias_loc_id_91, ____chimes_did_disable71); }
 # 1720 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1721 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1722 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7411,7 +7409,7 @@ delete_entry_resumable( node* root,
 # 1726 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     void* pointer )
 # 1727 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable72 = new_stack((void *)(&delete_entry), "delete_entry", &____must_manage_delete_entry, 4, 0, (size_t)(10498980943454492299UL), (size_t)(10498980943454492208UL), (size_t)(0UL), (size_t)(10498980943454492307UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable72 = new_stack((void *)(&delete_entry), "delete_entry", &____must_manage_delete_entry, 4, 0, (size_t)(10498980943454492521UL), (size_t)(10498980943454492423UL), (size_t)(0UL), (size_t)(10498980943454492531UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1728 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1729 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int min_keys; ;
@@ -7433,7 +7431,7 @@ delete_entry_resumable( node* root,
 # 1740 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1741 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1742 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (n == root) {rm_stack(true, 10498980943454492299UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_91, ____chimes_did_disable72); return ({ calling_npm("adjust_root", 0); adjust_root_npm(root); }); };
+ if (n == root) { node *____chimes_ret_var_51; ; ____chimes_ret_var_51 = (({ calling_npm("adjust_root", 0); adjust_root_npm(root); })); rm_stack(true, 10498980943454492521UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_90, ____chimes_did_disable72); return ____chimes_ret_var_51; ; };
 # 1754 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1754 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  min_keys = n->is_leaf ? ({ calling_npm("cut", 0); cut_npm(order - 1); }) : ({ calling_npm("cut", 0); cut_npm(order); }) - 1;
@@ -7443,7 +7441,7 @@ delete_entry_resumable( node* root,
 # 1758 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1759 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1760 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (n->num_keys >= min_keys) {rm_stack(true, 10498980943454492299UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_91, ____chimes_did_disable72); return root; };
+ if (n->num_keys >= min_keys) { node *____chimes_ret_var_52; ; ____chimes_ret_var_52 = (root); rm_stack(true, 10498980943454492521UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_90, ____chimes_did_disable72); return ____chimes_ret_var_52; ; };
 # 1775 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1775 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  neighbor_index = ({ calling_npm("get_neighbor_index", 0); get_neighbor_index_npm(n); });
@@ -7462,9 +7460,9 @@ delete_entry_resumable( node* root,
 # 1783 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1784 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1785 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (neighbor->num_keys + n->num_keys < capacity) {rm_stack(true, 10498980943454492299UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_91, ____chimes_did_disable72); return ({ calling_npm("coalesce_nodes", 0); coalesce_nodes_npm(root, n, neighbor, neighbor_index, k_prime); }); } else {rm_stack(true, 10498980943454492299UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_91, ____chimes_did_disable72); return ({ calling_npm("redistribute_nodes", 0); redistribute_nodes_npm(root, n, neighbor, neighbor_index, k_prime_index, k_prime); }); } ;
+ if (neighbor->num_keys + n->num_keys < capacity) { node *____chimes_ret_var_53; ; ____chimes_ret_var_53 = (({ calling_npm("coalesce_nodes", 0); coalesce_nodes_npm(root, n, neighbor, neighbor_index, k_prime); })); rm_stack(true, 10498980943454492521UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_90, ____chimes_did_disable72); return ____chimes_ret_var_53; ; } else { node *____chimes_ret_var_54; ; ____chimes_ret_var_54 = (({ calling_npm("redistribute_nodes", 0); redistribute_nodes_npm(root, n, neighbor, neighbor_index, k_prime_index, k_prime); })); rm_stack(true, 10498980943454492521UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_90, ____chimes_did_disable72); return ____chimes_ret_var_54; ; } ;
 # 1792 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(true, 10498980943454492299UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_91, ____chimes_did_disable72); }
+rm_stack(true, 10498980943454492521UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_90, ____chimes_did_disable72); }
 # 1793 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1794 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1795 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7476,7 +7474,7 @@ deleteVal_resumable( node* root,
 # 1797 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    int key)
 # 1798 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable73 = new_stack((void *)(&deleteVal), "deleteVal", &____must_manage_deleteVal, 2, 0, (size_t)(10498980943454492746UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable73 = new_stack((void *)(&deleteVal), "deleteVal", &____must_manage_deleteVal, 2, 0, (size_t)(10498980943454492978UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1799 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1800 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *key_leaf; ;
@@ -7490,15 +7488,15 @@ deleteVal_resumable( node* root,
 # 1805 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (key_record != __null && key_leaf != __null) {
 # 1806 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(key_record, 10498980943454492721UL);
+  free_wrapper(key_record, 10498980943454492950UL);
 # 1807 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, key_leaf, key, key_record); });
 # 1808 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1809 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454492746UL, "deleteVal", &____must_manage_deleteVal, ____alias_loc_id_93, ____chimes_did_disable73); return root;
+  node *____chimes_ret_var_55; ; ____chimes_ret_var_55 = (root); rm_stack(true, 10498980943454492978UL, "deleteVal", &____must_manage_deleteVal, ____alias_loc_id_92, ____chimes_did_disable73); return ____chimes_ret_var_55; ;
 # 1810 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454492978UL, "deleteVal", &____must_manage_deleteVal, ____alias_loc_id_92, ____chimes_did_disable73); }
 # 1811 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1812 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1813 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7508,19 +7506,19 @@ void
 # 1814 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 destroy_tree_nodes_resumable(node* root)
 # 1815 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable74 = new_stack((void *)(&destroy_tree_nodes), "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, 1, 0, (size_t)(10498980943454492818UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable74 = new_stack((void *)(&destroy_tree_nodes), "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, 1, 0, (size_t)(10498980943454493050UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1816 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
 # 1817 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { free_wrapper(root->pointers[i], 10498980943454492772UL); }; } else {for (i = 0; i < root->num_keys + 1; i++) { ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
+ if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { free_wrapper(root->pointers[i], 10498980943454493004UL); }; } else {for (i = 0; i < root->num_keys + 1; i++) { ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
 # 1823 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->pointers, 10498980943454492770UL);
+ free_wrapper(root->pointers, 10498980943454493002UL);
 # 1824 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->keys, 10498980943454492770UL);
+ free_wrapper(root->keys, 10498980943454493002UL);
 # 1825 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root, 10498980943454492818UL);
+ free_wrapper(root, 10498980943454493050UL);
 # 1826 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, ____alias_loc_id_94, ____chimes_did_disable74); }
+rm_stack(false, 0UL, "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, ____alias_loc_id_93, ____chimes_did_disable74); }
 # 1827 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1828 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1829 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7530,16 +7528,16 @@ node*
 # 1830 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 destroy_tree_resumable(node* root)
 # 1831 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable75 = new_stack((void *)(&destroy_tree), "destroy_tree", &____must_manage_destroy_tree, 1, 0, (size_t)(10498980943454492825UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable75 = new_stack((void *)(&destroy_tree), "destroy_tree", &____must_manage_destroy_tree, 1, 0, (size_t)(10498980943454493061UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1832 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm(root); });
 # 1833 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454493178UL, "destroy_tree", &____must_manage_destroy_tree, ____alias_loc_id_95, ____chimes_did_disable75); return __null;
+  node *____chimes_ret_var_56; ; ____chimes_ret_var_56 = (__null); rm_stack(true, 10498980943454493441UL, "destroy_tree", &____must_manage_destroy_tree, ____alias_loc_id_94, ____chimes_did_disable75); return ____chimes_ret_var_56; ;
 # 1834 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "destroy_tree", &____must_manage_destroy_tree, ____alias_loc_id_94, ____chimes_did_disable75); }
 # 1844 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1844 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-static int (*____chimes_extern_func_feof)(struct _IO_FILE *) = feof;static int (*____chimes_extern_func_getchar)(void) = getchar;static int (*____chimes_extern_func_isInteger)(char *) = isInteger;static void (*____chimes_extern_func_kernel_cpu)(int, struct record *, struct knode *, long, int, long, int, long *, long *, int *, struct record *) = kernel_cpu;static void (*____chimes_extern_func_kernel_cpu_2)(int, struct knode *, long, int, long, int, long *, long *, long *, long *, int *, int *, int *, int *) = kernel_cpu_2;static void (*____chimes_extern_func_rewind)(struct _IO_FILE *) = rewind;static int (*____chimes_extern_func_scanf)(const char *, ...) = scanf;
+static int (*____chimes_extern_func_getchar)(void) = getchar;static int (*____chimes_extern_func_isInteger)(char *) = isInteger;static void (*____chimes_extern_func_kernel_cpu)(int, struct record *, struct knode *, long, int, long, int, long *, long *, int *, struct record *) = kernel_cpu;static void (*____chimes_extern_func_kernel_cpu_2)(int, struct knode *, long, int, long, int, long *, long *, long *, long *, int *, int *, int *, int *) = kernel_cpu_2;static void (*____chimes_extern_func_rewind)(struct _IO_FILE *) = rewind;static int (*____chimes_extern_func_scanf)(const char *, ...) = scanf;
 int main_quick( int argc, char** argv ); int main( int argc, char** argv );
 int
 # 1845 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7547,7 +7545,7 @@ main_resumable( int argc,
 # 1846 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   char** argv )
 # 1847 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable76 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(10498980943454494017UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int *reclength;
+{const int ____chimes_did_disable76 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(10498980943454494286UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int *reclength;
 int *recstart;
 long *offset_2;
 long *lastKnode;
@@ -7601,7 +7599,7 @@ int cur_arg;
      if(argc>=cur_arg+1){
 # 1862 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1863 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        call_lbl_3: if(alias_group_changed(____alias_loc_id_11) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ char * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = (argv[cur_arg + 1]); } calling((void*)isInteger, 3, ____alias_loc_id_11, 0UL, 1, (size_t)(10498980943454493178UL)); (isInteger)(____chimes_arg9); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_11); (*____chimes_extern_func_isInteger)(argv[cur_arg+1]); })))==1){
+        call_lbl_3: if(alias_group_changed(____alias_loc_id_11) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ char * ____chimes_arg9; if (!____chimes_replaying) { ____chimes_arg9 = (argv[cur_arg + 1]); } calling((void*)isInteger, 3, ____alias_loc_id_11, 0UL, 1, (size_t)(10498980943454493441UL)); (isInteger)(____chimes_arg9); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_11); (*____chimes_extern_func_isInteger)(argv[cur_arg+1]); })))==1){
 # 1864 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   cores_arg = atoi(argv[cur_arg+1]);
 # 1865 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7609,7 +7607,7 @@ int cur_arg;
 # 1866 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     printf("ERROR: Wrong value to cores parameter, cannot be <=0\n");
 # 1867 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return -1;
+     int ____chimes_ret_var_57; ; ____chimes_ret_var_57 = (-1); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_57; ;
 # 1868 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   }
 # 1869 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7622,7 +7620,7 @@ int cur_arg;
 # 1873 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   printf("ERROR: Value to cores parameter in not a number\n");
 # 1874 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return 0;
+   int ____chimes_ret_var_58; ; ____chimes_ret_var_58 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_58; ;
 # 1875 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        }
 # 1876 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7645,7 +7643,7 @@ int cur_arg;
 # 1888 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        printf("ERROR: Missing value to -file parameter\n");
 # 1889 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return -1;
+        int ____chimes_ret_var_59; ; ____chimes_ret_var_59 = (-1); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_59; ;
 # 1890 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      }
 # 1891 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7666,7 +7664,7 @@ int cur_arg;
 # 1901 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        printf("ERROR: Missing value to command parameter\n");
 # 1902 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return -1;
+        int ____chimes_ret_var_60; ; ____chimes_ret_var_60 = (-1); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_60; ;
 # 1903 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      }
 # 1904 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7703,11 +7701,11 @@ int cur_arg;
 # 1924 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lSize = ftell (commandFile);
 # 1925 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      call_lbl_23: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 23, ____alias_loc_id_12, 0UL, 1, (size_t)(10498980943454493050UL)); (rewind)(commandFile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_12); (*____chimes_extern_func_rewind)(commandFile); })));
+      call_lbl_23: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 23, ____alias_loc_id_12, 0UL, 1, (size_t)(10498980943454493305UL)); (rewind)(commandFile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_12); (*____chimes_extern_func_rewind)(commandFile); })));
 # 1926 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1927 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1928 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     commandBuffer = (char*) ({ lbl_0: void *_tmp; if (____must_checkpoint_main__tmp_0 != 0) { register_stack_var("main|_tmp|0", &____must_checkpoint_main__tmp_0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_1; } ; if (!(_tmp = malloc_wrapper(sizeof(char)*lSize, 10498980943454493193UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1928); exit(-1); } _tmp; });
+     commandBuffer = (char*) ({ lbl_0: void *_tmp; if (____must_checkpoint_main__tmp_0 != 0) { register_stack_var("main|_tmp|0", &____must_checkpoint_main__tmp_0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_1; } ; if (!(_tmp = malloc_wrapper(sizeof(char)*(lSize + 1), 10498980943454493456UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1928); exit(-1); } _tmp; });
 # 1929 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      if (commandBuffer == __null) {fprintf (stderr, "Command Buffer memory error",stderr); exit (2);}
 # 1930 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -7717,710 +7715,712 @@ int cur_arg;
 # 1933 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      if (result != lSize) {fprintf (stderr, "Command file reading error",stderr); exit (3);}
 # 1934 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     commandBuffer[lSize] = '\0';
 # 1935 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1936 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1937 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1938 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     fclose (commandFile);
 # 1939 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     fclose (commandFile);
 # 1940 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1941 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      char *sPointer; sPointer = (commandBuffer) ;
 # 1942 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     printf("Command Buffer: \n");
+      char *sPointer; sPointer = (commandBuffer) ;
 # 1943 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     printf("%s",commandBuffer);
+     printf("Command Buffer: \n");
 # 1944 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     printf("%s",commandBuffer);
 # 1945 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1946 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1947 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     pFile = fopen (output,"w+");
 # 1948 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     if (pFile==__null) {
+     pFile = fopen (output,"w+");
 # 1949 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       fprintf (stderr, "Fail to open %s !\n",output);
+     if (pFile==__null) {
 # 1950 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       exit (1);
+       fprintf (stderr, "Fail to open %s !\n",output);
 # 1951 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     }
+       exit (1);
 # 1952 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     fprintf(pFile,"******starting******\n");
+     }
 # 1953 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     fclose(pFile);
+     fprintf(pFile,"******starting******\n");
 # 1954 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     fclose(pFile);
 # 1955 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1956 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1957 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1958 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1959 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1960 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ;
 # 1961 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
 # 1962 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- root = __null;
-# 1963 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
+# 1963 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ root = __null;
 # 1964 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
 # 1965 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
 # 1966 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- order = 508;
+  ;
 # 1967 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ order = 508;
+# 1968 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  verbose_output = false;
-# 1976 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-# 1976 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (input_file != __null) {
 # 1977 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+# 1977 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ if (input_file != __null) {
 # 1978 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  printf("Getting input from file %s...\n", argv[1]);
 # 1979 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  printf("Getting input from file %s...\n", argv[1]);
 # 1980 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1981 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  file_pointer = fopen(input_file, "r");
 # 1982 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  if (file_pointer == __null) {
+  file_pointer = fopen(input_file, "r");
 # 1983 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   perror("Failure to open input file.");
+  if (file_pointer == __null) {
 # 1984 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   exit(1);
+   perror("Failure to open input file.");
 # 1985 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  }
+   exit(1);
 # 1986 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  }
 # 1987 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1988 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  fscanf(file_pointer, "%d\n", &input);
 # 1989 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  size = input;
+  fscanf(file_pointer, "%d\n", &input);
 # 1990 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  size = input;
 # 1991 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1992 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  alias_group_changed(____alias_loc_id_13); call_lbl_46: while (!(____chimes_does_checkpoint_feof_npm ? ( ({ calling((void*)feof, 46, ____alias_loc_id_13, 0UL, 1, (size_t)(10498980943454493151UL)); (feof)(file_pointer); }) ) : (({ calling_npm("feof", ____alias_loc_id_13); (*____chimes_extern_func_feof)(file_pointer); })))) {
 # 1993 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   fscanf(file_pointer, "%d\n", &input);
+  while (!feof(file_pointer)) {
 # 1994 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   root = ({ calling_npm("insert", 0); insert_npm(root, input, input); });
+   fscanf(file_pointer, "%d\n", &input);
 # 1995 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  }
+   root = ({ calling_npm("insert", 0); insert_npm(root, input, input); });
 # 1996 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  }
 # 1997 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1998 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  fclose(file_pointer);
 # 1999 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  fclose(file_pointer);
 # 2000 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2001 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2002 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- }
 # 2003 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- else{
-# 2004 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  printf("ERROR: Argument -file missing\n");
-# 2005 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return 0;
-# 2006 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
+# 2004 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ else{
+# 2005 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  printf("ERROR: Argument -file missing\n");
+# 2006 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   int ____chimes_ret_var_61; ; ____chimes_ret_var_61 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_61; ;
 # 2007 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ }
 # 2008 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2009 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2010 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2011 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2012 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- printf("Transforming data to a GPU suitable structure...\n");
 # 2013 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    mem_used = (({ calling_npm("transform_to_cuda", 0); transform_to_cuda_npm(root, 0); })) ;
+ printf("Transforming data to a GPU suitable structure...\n");
 # 2014 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- maxheight = ({ calling_npm("height", 0); height_npm(root); });
+    mem_used = (({ calling_npm("transform_to_cuda", 0); transform_to_cuda_npm(root, 0); })) ;
 # 2015 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    rootLoc = ((long)knodes - (long)mem) ;
+ maxheight = ({ calling_npm("height", 0); height_npm(root); });
 # 2016 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    rootLoc = ((long)knodes - (long)mem) ;
 # 2017 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2018 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2019 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2020 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    commandPointer = (commandBuffer) ;
 # 2021 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    commandPointer = (commandBuffer) ;
 # 2022 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- printf("Waiting for command\n");
 # 2023 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- printf("> ");
+ printf("Waiting for command\n");
 # 2024 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- while (sscanf(commandPointer, "%c", &instruction) != (-1)) {
+ printf("> ");
 # 2025 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   commandPointer++;
+ while (sscanf(commandPointer, "%c", &instruction) != (-1)) {
 # 2026 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  switch (instruction) {
+   commandPointer++;
 # 2027 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  switch (instruction) {
 # 2028 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2029 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2030 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2031 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'i':
 # 2032 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'i':
 # 2033 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_55: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 55, ____alias_loc_id_22, 0UL, 2, (size_t)(10498980943454494090UL), (size_t)(10498980943454492845UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_22); (*____chimes_extern_func_scanf)("%d", &input); })));
+   {
 # 2034 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_56: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 56, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+     call_lbl_54: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 54, ____alias_loc_id_21, 0UL, 2, (size_t)(10498980943454494359UL), (size_t)(10498980943454493085UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_21); (*____chimes_extern_func_scanf)("%d", &input); })));
 # 2035 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    root = ({ calling_npm("insert", 0); insert_npm(root, input, input); });
+     call_lbl_55: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 55, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2036 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
+    root = ({ calling_npm("insert", 0); insert_npm(root, input, input); });
 # 2037 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
 # 2038 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2039 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2040 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2041 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2042 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2043 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2044 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'f':
 # 2045 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'f':
 # 2046 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+   {
 # 2047 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2048 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2049 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2050 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2051 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2052 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'p':
 # 2053 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'p':
 # 2054 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_57: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 57, ____alias_loc_id_23, 0UL, 2, (size_t)(10498980943454494090UL), (size_t)(10498980943454492845UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_23); (*____chimes_extern_func_scanf)("%d", &input); })));
+   {
 # 2055 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_58: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 58, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+     call_lbl_56: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 56, ____alias_loc_id_22, 0UL, 2, (size_t)(10498980943454494359UL), (size_t)(10498980943454493085UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_22); (*____chimes_extern_func_scanf)("%d", &input); })));
 # 2056 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    r = ({ calling_npm("find", 0); find_npm(root, input, instruction == 'p'); });
+     call_lbl_57: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 57, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2057 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    r = ({ calling_npm("find", 0); find_npm(root, input, instruction == 'p'); });
+# 2058 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     if (r == __null) {printf("Record not found under key %d.\n", input); } else {printf("Record found: %d\n",r->value); } ;
-# 2061 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
 # 2062 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2063 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2064 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2065 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2066 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2067 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2068 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'd':
 # 2069 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'd':
 # 2070 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_61: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 61, ____alias_loc_id_24, 0UL, 2, (size_t)(10498980943454494090UL), (size_t)(10498980943454492845UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_24); (*____chimes_extern_func_scanf)("%d", &input); })));
+   {
 # 2071 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_62: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 62, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+     call_lbl_60: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 60, ____alias_loc_id_23, 0UL, 2, (size_t)(10498980943454494359UL), (size_t)(10498980943454493085UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_23); (*____chimes_extern_func_scanf)("%d", &input); })));
 # 2072 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    root = (node *) ({ calling_npm("deleteVal", 0); deleteVal_npm(root, input); });
+     call_lbl_61: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 61, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2073 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
+    root = (node *) ({ calling_npm("deleteVal", 0); deleteVal_npm(root, input); });
 # 2074 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
 # 2075 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2076 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2077 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2078 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2079 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2080 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2081 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'x':
 # 2082 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'x':
 # 2083 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    alias_group_changed(____alias_loc_id_14); call_lbl_64: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 64, ____alias_loc_id_14, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_14); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+   {
 # 2084 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    root = ({ calling_npm("destroy_tree", 0); destroy_tree_npm(root); });
+    alias_group_changed(____alias_loc_id_14); call_lbl_63: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 63, ____alias_loc_id_14, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_14); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2085 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
+    root = ({ calling_npm("destroy_tree", 0); destroy_tree_npm(root); });
 # 2086 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
 # 2087 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2088 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2089 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2090 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2091 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2092 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2093 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'l':
 # 2094 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'l':
 # 2095 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    alias_group_changed(____alias_loc_id_15); call_lbl_66: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 66, ____alias_loc_id_15, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_15); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+   {
 # 2096 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ({ calling_npm("print_leaves", 0); print_leaves_npm(root); });
+    alias_group_changed(____alias_loc_id_15); call_lbl_65: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 65, ____alias_loc_id_15, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_15); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2097 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    ({ calling_npm("print_leaves", 0); print_leaves_npm(root); });
 # 2098 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2099 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2100 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2101 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2102 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2103 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2104 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 't':
 # 2105 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 't':
 # 2106 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    alias_group_changed(____alias_loc_id_16); call_lbl_68: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 68, ____alias_loc_id_16, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_16); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+   {
 # 2107 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
+    alias_group_changed(____alias_loc_id_16); call_lbl_67: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 67, ____alias_loc_id_16, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_16); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2108 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
 # 2109 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2110 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2111 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2112 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2113 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2114 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2115 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'v':
 # 2116 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'v':
 # 2117 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    alias_group_changed(____alias_loc_id_17); call_lbl_70: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 70, ____alias_loc_id_17, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_17); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+   {
 # 2118 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    verbose_output = !verbose_output;
+    alias_group_changed(____alias_loc_id_17); call_lbl_69: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 69, ____alias_loc_id_17, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_17); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2119 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    verbose_output = !verbose_output;
 # 2120 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2121 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2122 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2123 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2124 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2125 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2126 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'q':
 # 2127 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'q':
 # 2128 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    alias_group_changed(____alias_loc_id_21); call_lbl_72: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 72, ____alias_loc_id_21, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_21); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+   {
 # 2129 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return 0;
+    alias_group_changed(____alias_loc_id_20); call_lbl_71: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 71, ____alias_loc_id_20, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_20); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2130 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+     int ____chimes_ret_var_62; ; ____chimes_ret_var_62 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_62; ;
 # 2131 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2132 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2133 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2134 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2135 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2136 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'k':
 # 2137 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'k':
 # 2138 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   {
 # 2139 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2140 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_1: int count; if (____must_checkpoint_main_count_0 != 0) { register_stack_var("main|count|0", &____must_checkpoint_main_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } ;
 # 2141 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    sscanf(commandPointer, "%d", &count);
+     lbl_1: int count; if (____must_checkpoint_main_count_0 != 0) { register_stack_var("main|count|0", &____must_checkpoint_main_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_2; } ;
 # 2142 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    while(*commandPointer!=(char)32 && *commandPointer!='\n')
+    sscanf(commandPointer, "%d", &count);
 # 2143 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      commandPointer++;
+    while(*commandPointer!=(char)32 && *commandPointer!='\n')
 # 2144 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+      commandPointer++;
 # 2145 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    printf("\n ******command: k count=%d \n",count);
 # 2146 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    printf("\n ******command: k count=%d \n",count);
 # 2147 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    if(count > 65535){
 # 2148 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     printf("ERROR: Number of requested querries should be 65,535 at most. (limited by # of CUDA blocks)\n");
+    if(count > 65535){
 # 2149 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     exit(0);
+     printf("ERROR: Number of requested querries should be 65,535 at most. (limited by # of CUDA blocks)\n");
 # 2150 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     exit(0);
 # 2151 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2152 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2153 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       records = ((record *)mem) ;
 # 2154 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     long records_elem; records_elem = ((long)rootLoc / sizeof(record)) ;
+       records = ((record *)mem) ;
 # 2155 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     long records_mem; records_mem = ((long)rootLoc) ;
+     long records_elem; records_elem = ((long)rootLoc / sizeof(record)) ;
 # 2156 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     long records_mem; records_mem = ((long)rootLoc) ;
 # 2157 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2158 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2159 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_2: knode *knodes; if (____must_checkpoint_main_knodes_0 != 0) { register_stack_var("main|knodes|0", &____must_checkpoint_main_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_3; } knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2160 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_3: long knodes_elem; if (____must_checkpoint_main_knodes_elem_0 != 0) { register_stack_var("main|knodes_elem|0", &____must_checkpoint_main_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_4; } knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
+      lbl_2: knode *knodes; if (____must_checkpoint_main_knodes_0 != 0) { register_stack_var("main|knodes|0", &____must_checkpoint_main_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_3; } knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2161 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
+      lbl_3: long knodes_elem; if (____must_checkpoint_main_knodes_elem_0 != 0) { register_stack_var("main|knodes_elem|0", &____must_checkpoint_main_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_4; } knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
 # 2162 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
 # 2163 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2164 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2165 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_4: long *currKnode; if (____must_checkpoint_main_currKnode_0 != 0) { register_stack_var("main|currKnode|0", &____must_checkpoint_main_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_5; } ;
 # 2166 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ lbl_5: void *_tmp; if (____must_checkpoint_main__tmp_1 != 0) { register_stack_var("main|_tmp|1", &____must_checkpoint_main__tmp_1, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_6; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493495UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2166); exit(-1); } _tmp; });
+     lbl_4: long *currKnode; if (____must_checkpoint_main_currKnode_0 != 0) { register_stack_var("main|currKnode|0", &____must_checkpoint_main_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_5; } ;
 # 2167 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    currKnode = (long *)({ lbl_5: void *_tmp; if (____must_checkpoint_main__tmp_1 != 0) { register_stack_var("main|_tmp|1", &____must_checkpoint_main__tmp_1, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_6; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493761UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2167); exit(-1); } _tmp; });
 # 2168 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset(currKnode, 0, count*sizeof(long));
 # 2169 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset(currKnode, 0, count*sizeof(long));
 # 2170 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2171 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_6: long *offset; if (____must_checkpoint_main_offset_0 != 0) { register_stack_var("main|offset|0", &____must_checkpoint_main_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_7; } ;
 # 2172 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ lbl_7: void *_tmp; if (____must_checkpoint_main__tmp_2 != 0) { register_stack_var("main|_tmp|2", &____must_checkpoint_main__tmp_2, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_8; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493496UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2172); exit(-1); } _tmp; });
+     lbl_6: long *offset; if (____must_checkpoint_main_offset_0 != 0) { register_stack_var("main|offset|0", &____must_checkpoint_main_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_7; } ;
 # 2173 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    offset = (long *)({ lbl_7: void *_tmp; if (____must_checkpoint_main__tmp_2 != 0) { register_stack_var("main|_tmp|2", &____must_checkpoint_main__tmp_2, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_8; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493762UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2173); exit(-1); } _tmp; });
 # 2174 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset(offset, 0, count*sizeof(long));
 # 2175 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset(offset, 0, count*sizeof(long));
 # 2176 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2177 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
 # 2178 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    keys = (int *)({ lbl_8: void *_tmp; if (____must_checkpoint_main__tmp_3 != 0) { register_stack_var("main|_tmp|3", &____must_checkpoint_main__tmp_3, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_9; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493445UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2178); exit(-1); } _tmp; });
+     ;
 # 2179 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    keys = (int *)({ lbl_8: void *_tmp; if (____must_checkpoint_main__tmp_3 != 0) { register_stack_var("main|_tmp|3", &____must_checkpoint_main__tmp_3, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_9; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493711UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2179); exit(-1); } _tmp; });
 # 2180 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_9: int i; if (____must_checkpoint_main_i_0 != 0) { register_stack_var("main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_10; } ;
 # 2181 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
+     lbl_9: int i; if (____must_checkpoint_main_i_0 != 0) { register_stack_var("main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_10; } ;
 # 2182 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     keys[i] = (rand()/(float)2147483647)*size;
+    for(i = 0; i < count; i++){
 # 2183 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     keys[i] = (rand()/(float)2147483647)*size;
 # 2184 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2185 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2186 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+# 2187 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        ans = ((record *)({
      lbl_10: void *_tmp; if (____must_checkpoint_main__tmp_4 != 0) { register_stack_var("main|_tmp|4", &____must_checkpoint_main__tmp_4, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_11; }
-    if (!(_tmp = malloc_wrapper(sizeof(record) * count, 10498980943454493479UL, 0, 0))) {
-        fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2186);
+    if (!(_tmp = malloc_wrapper(sizeof(record) * count, 10498980943454493745UL, 0, 0))) {
+        fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2187);
         exit(-1);
     }
     _tmp;
 })) ;
-# 2187 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2188 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
 # 2189 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ans[i].value = -1;
+    for(i = 0; i < count; i++){
 # 2190 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     ans[i].value = -1;
 # 2191 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2192 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2193 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_93: (____chimes_does_checkpoint_kernel_cpu_npm ? ( ({ calling((void*)kernel_cpu, 93, ____alias_loc_id_18, 0UL, 11, (size_t)(0UL), (size_t)(10498980943454493489UL), (size_t)(10498980943454493490UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454493495UL), (size_t)(10498980943454493496UL), (size_t)(10498980943454493445UL), (size_t)(10498980943454493479UL)); (kernel_cpu)(cores_arg, records, knodes, knodes_elem, order, maxheight, count, currKnode, offset, keys, ans); }) ) : (({ calling_npm("kernel_cpu", ____alias_loc_id_18); (*____chimes_extern_func_kernel_cpu)(cores_arg, records, knodes, knodes_elem, order, maxheight, count, currKnode, offset, keys, ans); })));
-# 2218 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-# 2218 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    pFile = fopen (output,"aw+");
+# 2194 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     call_lbl_92: (____chimes_does_checkpoint_kernel_cpu_npm ? ( ({ calling((void*)kernel_cpu, 92, ____alias_loc_id_13, 0UL, 11, (size_t)(0UL), (size_t)(10498980943454493755UL), (size_t)(10498980943454493756UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454493761UL), (size_t)(10498980943454493762UL), (size_t)(10498980943454493711UL), (size_t)(10498980943454493745UL)); (kernel_cpu)(cores_arg, records, knodes, knodes_elem, order, maxheight, count, currKnode, offset, keys, ans); }) ) : (({ calling_npm("kernel_cpu", ____alias_loc_id_13); (*____chimes_extern_func_kernel_cpu)(cores_arg, records, knodes, knodes_elem, order, maxheight, count, currKnode, offset, keys, ans); })));
 # 2219 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    if (pFile==__null)
+# 2219 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    pFile = fopen (output,"aw+");
 # 2220 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      {
+    if (pFile==__null)
 # 2221 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        fprintf(stderr, "Fail to open %s !\n",output);
+      {
 # 2222 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-                    exit(1);
+        fprintf(stderr, "Fail to open %s !\n",output);
 # 2223 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      }
+                    exit(1);
 # 2224 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+      }
 # 2225 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    fprintf(pFile,"\n ******command: k count=%d \n",count);
 # 2226 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
+    fprintf(pFile,"\n ******command: k count=%d \n",count);
 # 2227 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      fprintf(pFile, "%d    %d\n",i, ans[i].value);
+    for(i = 0; i < count; i++){
 # 2228 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+      fprintf(pFile, "%d    %d\n",i, ans[i].value);
 # 2229 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    fprintf(pFile, " \n");
+    }
 # 2230 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-                                fclose(pFile);
+    fprintf(pFile, " \n");
 # 2231 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+                                fclose(pFile);
 # 2232 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2233 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(currKnode, 10498980943454493495UL);
 # 2234 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(offset, 10498980943454493496UL);
+    free_wrapper(currKnode, 10498980943454493761UL);
 # 2235 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(keys, 10498980943454493445UL);
+    free_wrapper(offset, 10498980943454493762UL);
 # 2236 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(ans, 10498980943454493479UL);
+    free_wrapper(keys, 10498980943454493711UL);
 # 2237 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    free_wrapper(ans, 10498980943454493745UL);
 # 2238 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2239 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
 # 2240 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    break;
 # 2241 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
 # 2242 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2243 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2244 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2245 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2246 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2247 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'r':
 # 2248 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'r':
 # 2249 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_11: int start; if (____must_checkpoint_main_start_0 != 0) { register_stack_var("main|start|0", &____must_checkpoint_main_start_0, "i32", (void *)(&start), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_12; } lbl_12: int end; if (____must_checkpoint_main_end_0 != 0) { register_stack_var("main|end|0", &____must_checkpoint_main_end_0, "i32", (void *)(&end), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_13; } ;
+   {
 # 2250 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_105: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 105, ____alias_loc_id_25, 0UL, 2, (size_t)(10498980943454494090UL), (size_t)(10498980943454492870UL)); (scanf)("%d", &start); }) ) : (({ calling_npm("scanf", ____alias_loc_id_25); (*____chimes_extern_func_scanf)("%d", &start); })));
+     lbl_11: int start; if (____must_checkpoint_main_start_0 != 0) { register_stack_var("main|start|0", &____must_checkpoint_main_start_0, "i32", (void *)(&start), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_12; } lbl_12: int end; if (____must_checkpoint_main_end_0 != 0) { register_stack_var("main|end|0", &____must_checkpoint_main_end_0, "i32", (void *)(&end), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_13; } ;
 # 2251 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_106: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 106, ____alias_loc_id_19, 0UL, 2, (size_t)(10498980943454494090UL), (size_t)(10498980943454492871UL)); (scanf)("%d", &end); }) ) : (({ calling_npm("scanf", ____alias_loc_id_19); (*____chimes_extern_func_scanf)("%d", &end); })));
+     call_lbl_104: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 104, ____alias_loc_id_24, 0UL, 2, (size_t)(10498980943454494359UL), (size_t)(10498980943454493112UL)); (scanf)("%d", &start); }) ) : (({ calling_npm("scanf", ____alias_loc_id_24); (*____chimes_extern_func_scanf)("%d", &start); })));
 # 2252 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    if(start > end){
+     call_lbl_105: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 105, ____alias_loc_id_18, 0UL, 2, (size_t)(10498980943454494359UL), (size_t)(10498980943454493113UL)); (scanf)("%d", &end); }) ) : (({ calling_npm("scanf", ____alias_loc_id_18); (*____chimes_extern_func_scanf)("%d", &end); })));
 # 2253 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     input = start;
+    if(start > end){
 # 2254 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     start = end;
+     input = start;
 # 2255 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     end = input;
+     start = end;
 # 2256 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     end = input;
 # 2257 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    printf("For range %d to %d, ",start,end);
+    }
 # 2258 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
+    printf("For range %d to %d, ",start,end);
 # 2259 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ansList = ({ calling_npm("findRange", 0); findRange_npm(root, start, end); });
+     ;
 # 2260 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
+    ansList = ({ calling_npm("findRange", 0); findRange_npm(root, start, end); });
 # 2261 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+        ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
 # 2262 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(ansList, 10498980943454493573UL);
 # 2263 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    free_wrapper(ansList, 10498980943454493839UL);
 # 2264 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2265 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2266 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2267 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2268 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2269 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2270 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'j':
 # 2271 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'j':
 # 2272 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   {
 # 2273 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2274 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_13: int count; if (____must_checkpoint_main_count_1 != 0) { register_stack_var("main|count|1", &____must_checkpoint_main_count_1, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_14; } ;
 # 2275 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    sscanf(commandPointer, "%d", &count);
+     lbl_13: int count; if (____must_checkpoint_main_count_1 != 0) { register_stack_var("main|count|1", &____must_checkpoint_main_count_1, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_14; } ;
 # 2276 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    while(*commandPointer!=32 && *commandPointer!='\n')
+    sscanf(commandPointer, "%d", &count);
 # 2277 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      commandPointer++;
-# 2278 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-# 2279 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
-# 2280 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    sscanf(commandPointer, "%d", &rSize);
-# 2281 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     while(*commandPointer!=32 && *commandPointer!='\n')
-# 2282 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+# 2278 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       commandPointer++;
+# 2279 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+# 2280 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     ;
+# 2281 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    sscanf(commandPointer, "%d", &rSize);
+# 2282 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    while(*commandPointer!=32 && *commandPointer!='\n')
 # 2283 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+      commandPointer++;
 # 2284 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    printf("\n******command: j count=%d, rSize=%d \n",count, rSize);
 # 2285 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    printf("\n******command: j count=%d, rSize=%d \n",count, rSize);
 # 2286 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    if(rSize > size || rSize < 0) {
 # 2287 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     printf("Search range size is larger than data set size %d.\n", (int)size);
+    if(rSize > size || rSize < 0) {
 # 2288 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     exit(0);
+     printf("Search range size is larger than data set size %d.\n", (int)size);
 # 2289 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     exit(0);
 # 2290 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2291 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2292 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_14: knode *knodes; if (____must_checkpoint_main_knodes_1 != 0) { register_stack_var("main|knodes|1", &____must_checkpoint_main_knodes_1, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_15; } knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2293 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_15: long knodes_elem; if (____must_checkpoint_main_knodes_elem_1 != 0) { register_stack_var("main|knodes_elem|1", &____must_checkpoint_main_knodes_elem_1, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_16; } knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
+      lbl_14: knode *knodes; if (____must_checkpoint_main_knodes_1 != 0) { register_stack_var("main|knodes|1", &____must_checkpoint_main_knodes_1, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_15; } knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2294 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
+      lbl_15: long knodes_elem; if (____must_checkpoint_main_knodes_elem_1 != 0) { register_stack_var("main|knodes_elem|1", &____must_checkpoint_main_knodes_elem_1, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { goto lbl_16; } knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
 # 2295 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
 # 2296 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2297 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2298 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_16: long *currKnode; if (____must_checkpoint_main_currKnode_1 != 0) { register_stack_var("main|currKnode|1", &____must_checkpoint_main_currKnode_1, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_17; } ;
 # 2299 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ lbl_17: void *_tmp; if (____must_checkpoint_main__tmp_5 != 0) { register_stack_var("main|_tmp|5", &____must_checkpoint_main__tmp_5, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_18; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493929UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2299); exit(-1); } _tmp; });
+     lbl_16: long *currKnode; if (____must_checkpoint_main_currKnode_1 != 0) { register_stack_var("main|currKnode|1", &____must_checkpoint_main_currKnode_1, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_17; } ;
 # 2300 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    currKnode = (long *)({ lbl_17: void *_tmp; if (____must_checkpoint_main__tmp_5 != 0) { register_stack_var("main|_tmp|5", &____must_checkpoint_main__tmp_5, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_18; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494195UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2300); exit(-1); } _tmp; });
 # 2301 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset (currKnode, 0, count*sizeof(long));
 # 2302 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset (currKnode, 0, count*sizeof(long));
 # 2303 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2304 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_18: long *offset; if (____must_checkpoint_main_offset_1 != 0) { register_stack_var("main|offset|1", &____must_checkpoint_main_offset_1, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_19; } ;
 # 2305 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ lbl_19: void *_tmp; if (____must_checkpoint_main__tmp_6 != 0) { register_stack_var("main|_tmp|6", &____must_checkpoint_main__tmp_6, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_20; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493930UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2305); exit(-1); } _tmp; });
+     lbl_18: long *offset; if (____must_checkpoint_main_offset_1 != 0) { register_stack_var("main|offset|1", &____must_checkpoint_main_offset_1, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_19; } ;
 # 2306 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    offset = (long *)({ lbl_19: void *_tmp; if (____must_checkpoint_main__tmp_6 != 0) { register_stack_var("main|_tmp|6", &____must_checkpoint_main__tmp_6, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_20; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494196UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2306); exit(-1); } _tmp; });
 # 2307 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset (offset, 0, count*sizeof(long));
 # 2308 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset (offset, 0, count*sizeof(long));
 # 2309 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2310 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
 # 2311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    lastKnode = (long *)({ lbl_20: void *_tmp; if (____must_checkpoint_main__tmp_7 != 0) { register_stack_var("main|_tmp|7", &____must_checkpoint_main__tmp_7, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_21; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2311); exit(-1); } _tmp; });
+     ;
 # 2312 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    lastKnode = (long *)({ lbl_20: void *_tmp; if (____must_checkpoint_main__tmp_7 != 0) { register_stack_var("main|_tmp|7", &____must_checkpoint_main__tmp_7, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_21; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494197UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2312); exit(-1); } _tmp; });
 # 2313 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset (lastKnode, 0, count*sizeof(long));
 # 2314 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset (lastKnode, 0, count*sizeof(long));
 # 2315 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2316 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
 # 2317 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset_2 = (long *)({ lbl_21: void *_tmp; if (____must_checkpoint_main__tmp_8 != 0) { register_stack_var("main|_tmp|8", &____must_checkpoint_main__tmp_8, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_22; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493932UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2317); exit(-1); } _tmp; });
+     ;
 # 2318 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    offset_2 = (long *)({ lbl_21: void *_tmp; if (____must_checkpoint_main__tmp_8 != 0) { register_stack_var("main|_tmp|8", &____must_checkpoint_main__tmp_8, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_22; } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494198UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2318); exit(-1); } _tmp; });
 # 2319 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset (offset_2, 0, count*sizeof(long));
 # 2320 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset (offset_2, 0, count*sizeof(long));
 # 2321 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2322 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_22: int *start; if (____must_checkpoint_main_start_1 != 0) { register_stack_var("main|start|1", &____must_checkpoint_main_start_1, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_23; } ;
 # 2323 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    start = (int *)({ lbl_23: void *_tmp; if (____must_checkpoint_main__tmp_9 != 0) { register_stack_var("main|_tmp|9", &____must_checkpoint_main__tmp_9, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_24; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493807UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2323); exit(-1); } _tmp; });
+     lbl_22: int *start; if (____must_checkpoint_main_start_1 != 0) { register_stack_var("main|start|1", &____must_checkpoint_main_start_1, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_23; } ;
 # 2324 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_24: int *end; if (____must_checkpoint_main_end_1 != 0) { register_stack_var("main|end|1", &____must_checkpoint_main_end_1, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_25; } ;
+    start = (int *)({ lbl_23: void *_tmp; if (____must_checkpoint_main__tmp_9 != 0) { register_stack_var("main|_tmp|9", &____must_checkpoint_main__tmp_9, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_24; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494073UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2324); exit(-1); } _tmp; });
 # 2325 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    end = (int *)({ lbl_25: void *_tmp; if (____must_checkpoint_main__tmp_10 != 0) { register_stack_var("main|_tmp|10", &____must_checkpoint_main__tmp_10, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_26; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493819UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2325); exit(-1); } _tmp; });
+     lbl_24: int *end; if (____must_checkpoint_main_end_1 != 0) { register_stack_var("main|end|1", &____must_checkpoint_main_end_1, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_25; } ;
 # 2326 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    end = (int *)({ lbl_25: void *_tmp; if (____must_checkpoint_main__tmp_10 != 0) { register_stack_var("main|_tmp|10", &____must_checkpoint_main__tmp_10, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_26; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494085UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2326); exit(-1); } _tmp; });
 # 2327 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_26: int i; if (____must_checkpoint_main_i_1 != 0) { register_stack_var("main|i|1", &____must_checkpoint_main_i_1, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_27; } ;
 # 2328 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
+     lbl_26: int i; if (____must_checkpoint_main_i_1 != 0) { register_stack_var("main|i|1", &____must_checkpoint_main_i_1, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_27; } ;
 # 2329 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     start[i] = (rand()/(float)2147483647)*size;
+    for(i = 0; i < count; i++){
 # 2330 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     end[i] = start[i]+rSize;
+     start[i] = (rand()/(float)2147483647)*size;
 # 2331 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     if(end[i] >= size){
+     end[i] = start[i]+rSize;
 # 2332 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      start[i] = start[i] - (end[i] - size);
+     if(end[i] >= size){
 # 2333 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      end[i]= size-1;
+      start[i] = start[i] - (end[i] - size);
 # 2334 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     }
+      end[i]= size-1;
 # 2335 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     }
 # 2336 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2337 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2338 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
 # 2339 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    recstart = (int *)({ lbl_27: void *_tmp; if (____must_checkpoint_main__tmp_11 != 0) { register_stack_var("main|_tmp|11", &____must_checkpoint_main__tmp_11, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_28; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493910UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2339); exit(-1); } _tmp; });
-# 2340 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
+# 2340 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    recstart = (int *)({ lbl_27: void *_tmp; if (____must_checkpoint_main__tmp_11 != 0) { register_stack_var("main|_tmp|11", &____must_checkpoint_main__tmp_11, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_28; } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494176UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2340); exit(-1); } _tmp; });
 # 2341 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    reclength = (int *)({ lbl_28: void *_tmp; if (____must_checkpoint_main__tmp_12 != 0) { register_stack_var("main|_tmp|12", &____must_checkpoint_main__tmp_12, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(23): { goto call_lbl_23; } case(46): { goto call_lbl_46; } case(55): { goto call_lbl_55; } case(56): { goto call_lbl_56; } case(57): { goto call_lbl_57; } case(58): { goto call_lbl_58; } case(61): { goto call_lbl_61; } case(62): { goto call_lbl_62; } case(64): { goto call_lbl_64; } case(66): { goto call_lbl_66; } case(68): { goto call_lbl_68; } case(70): { goto call_lbl_70; } case(72): { goto call_lbl_72; } case(93): { goto call_lbl_93; } case(105): { goto call_lbl_105; } case(106): { goto call_lbl_106; } case(144): { goto call_lbl_144; } default: { chimes_error(); } } } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493915UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2341); exit(-1); } _tmp; });
+     ;
 # 2342 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    reclength = (int *)({ lbl_28: void *_tmp; if (____must_checkpoint_main__tmp_12 != 0) { register_stack_var("main|_tmp|12", &____must_checkpoint_main__tmp_12, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(23): { goto call_lbl_23; } case(54): { goto call_lbl_54; } case(55): { goto call_lbl_55; } case(56): { goto call_lbl_56; } case(57): { goto call_lbl_57; } case(60): { goto call_lbl_60; } case(61): { goto call_lbl_61; } case(63): { goto call_lbl_63; } case(65): { goto call_lbl_65; } case(67): { goto call_lbl_67; } case(69): { goto call_lbl_69; } case(71): { goto call_lbl_71; } case(92): { goto call_lbl_92; } case(104): { goto call_lbl_104; } case(105): { goto call_lbl_105; } case(143): { goto call_lbl_143; } default: { chimes_error(); } } } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494181UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2342); exit(-1); } _tmp; });
 # 2343 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
 # 2344 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     recstart[i] = 0;
+    for(i = 0; i < count; i++){
 # 2345 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     reclength[i] = 0;
+     recstart[i] = 0;
 # 2346 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     reclength[i] = 0;
 # 2347 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2348 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2349 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_144: (____chimes_does_checkpoint_kernel_cpu_2_npm ? ( ({ calling((void*)kernel_cpu_2, 144, ____alias_loc_id_20, 0UL, 14, (size_t)(0UL), (size_t)(10498980943454493924UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454493929UL), (size_t)(10498980943454493930UL), (size_t)(10498980943454493931UL), (size_t)(10498980943454493932UL), (size_t)(10498980943454493807UL), (size_t)(10498980943454493819UL), (size_t)(10498980943454493910UL), (size_t)(10498980943454493915UL)); (kernel_cpu_2)(cores_arg, knodes, knodes_elem, order, maxheight, count, currKnode, offset, lastKnode, offset_2, start, end, recstart, reclength); }) ) : (({ calling_npm("kernel_cpu_2", ____alias_loc_id_20); (*____chimes_extern_func_kernel_cpu_2)(cores_arg, knodes, knodes_elem, order, maxheight, count, currKnode, offset, lastKnode, offset_2, start, end, recstart, reclength); })));
-# 2375 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-# 2375 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    pFile = fopen (output,"aw+");
+# 2350 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     call_lbl_143: (____chimes_does_checkpoint_kernel_cpu_2_npm ? ( ({ calling((void*)kernel_cpu_2, 143, ____alias_loc_id_19, 0UL, 14, (size_t)(0UL), (size_t)(10498980943454494190UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454494195UL), (size_t)(10498980943454494196UL), (size_t)(10498980943454494197UL), (size_t)(10498980943454494198UL), (size_t)(10498980943454494073UL), (size_t)(10498980943454494085UL), (size_t)(10498980943454494176UL), (size_t)(10498980943454494181UL)); (kernel_cpu_2)(cores_arg, knodes, knodes_elem, order, maxheight, count, currKnode, offset, lastKnode, offset_2, start, end, recstart, reclength); }) ) : (({ calling_npm("kernel_cpu_2", ____alias_loc_id_19); (*____chimes_extern_func_kernel_cpu_2)(cores_arg, knodes, knodes_elem, order, maxheight, count, currKnode, offset, lastKnode, offset_2, start, end, recstart, reclength); })));
 # 2376 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    if (pFile==__null)
+# 2376 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    pFile = fopen (output,"aw+");
 # 2377 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      {
+    if (pFile==__null)
 # 2378 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        fprintf (stderr, "Fail to open %s !\n",output);
+      {
 # 2379 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-                    exit(1);
+        fprintf (stderr, "Fail to open %s !\n",output);
 # 2380 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      }
+                    exit(1);
 # 2381 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+      }
 # 2382 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    fprintf(pFile,"\n******command: j count=%d, rSize=%d \n",count, rSize);
 # 2383 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
+    fprintf(pFile,"\n******command: j count=%d, rSize=%d \n",count, rSize);
 # 2384 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      fprintf(pFile, "%d    %d    %d\n",i, recstart[i],reclength[i]);
+    for(i = 0; i < count; i++){
 # 2385 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+      fprintf(pFile, "%d    %d    %d\n",i, recstart[i],reclength[i]);
 # 2386 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    fprintf(pFile, " \n");
+    }
 # 2387 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-                                fclose(pFile);
+    fprintf(pFile, " \n");
 # 2388 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+                                fclose(pFile);
 # 2389 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2390 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(currKnode, 10498980943454493929UL);
 # 2391 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(offset, 10498980943454493930UL);
+    free_wrapper(currKnode, 10498980943454494195UL);
 # 2392 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(lastKnode, 10498980943454493931UL);
+    free_wrapper(offset, 10498980943454494196UL);
 # 2393 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(offset_2, 10498980943454493932UL);
+    free_wrapper(lastKnode, 10498980943454494197UL);
 # 2394 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(start, 10498980943454493807UL);
+    free_wrapper(offset_2, 10498980943454494198UL);
 # 2395 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(end, 10498980943454493819UL);
+    free_wrapper(start, 10498980943454494073UL);
 # 2396 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(recstart, 10498980943454493910UL);
+    free_wrapper(end, 10498980943454494085UL);
 # 2397 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(reclength, 10498980943454493915UL);
+    free_wrapper(recstart, 10498980943454494176UL);
 # 2398 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    free_wrapper(reclength, 10498980943454494181UL);
 # 2399 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2400 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
 # 2401 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    break;
 # 2402 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
 # 2403 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2404 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2405 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2406 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2407 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2408 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   default:
 # 2409 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   default:
 # 2410 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   {
 # 2411 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2412 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
 # 2413 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    break;
 # 2414 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
 # 2415 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2416 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  }
 # 2417 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  printf("> ");
+  }
 # 2418 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  printf("> ");
 # 2419 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- }
 # 2420 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- printf("\n");
+ }
 # 2421 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ printf("\n");
 # 2422 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2423 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2424 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2425 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2426 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(mem, 10498980943454493489UL);
 # 2427 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return 0;
+ free_wrapper(mem, 10498980943454493755UL);
 # 2428 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  int ____chimes_ret_var_63; ; ____chimes_ret_var_63 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_63; ;
 # 2429 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+# 2430 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); }
 void
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_init_quick( list_t *l,
@@ -8431,7 +8431,7 @@ list_init_quick( list_t *l,
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    void (*datum_delete)(void *))
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&list_init), "list_init", &____must_manage_list_init, 3, 0, (size_t)(10498980943454487579UL), (size_t)(10498980943454488877UL), (size_t)(10498980943454488877UL)) ; ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&list_init), "list_init", &____must_manage_list_init, 3, 0, (size_t)(10498980943454487579UL), (size_t)(10498980943454488931UL), (size_t)(10498980943454488931UL)) ; ; ;
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->head = l->tail = __null;
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8441,7 +8441,7 @@ list_init_quick( list_t *l,
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->datum_delete = datum_delete;
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_init", &____must_manage_list_init, ____alias_loc_id_26, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "list_init", &____must_manage_list_init, ____alias_loc_id_25, ____chimes_did_disable0); }
 
 void
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8472,7 +8472,7 @@ list_item_t *li;
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     li = li->next;
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_1: ({ calling((void*)list_item_delete, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(10498980943454488877UL), (size_t)(10498980943454488877UL)); list_item_delete_quick(del, l->datum_delete); }) ;
+     call_lbl_1: ({ calling((void*)list_item_delete, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(10498980943454488931UL), (size_t)(10498980943454488931UL)); list_item_delete_quick(del, l->datum_delete); }) ;
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   }
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8481,7 +8481,7 @@ list_item_t *li;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length = 0;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_delete", &____must_manage_list_delete, ____alias_loc_id_27, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "list_delete", &____must_manage_list_delete, ____alias_loc_id_26, ____chimes_did_disable1); }
 
 void
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8507,7 +8507,7 @@ list_insert_item_head_quick( list_t *l,
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       list_item_t *i)
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&list_insert_item_head), "list_insert_item_head", &____must_manage_list_insert_item_head, 2, 0, (size_t)(10498980943454487703UL), (size_t)(10498980943454488877UL)) ; ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&list_insert_item_head), "list_insert_item_head", &____must_manage_list_insert_item_head, 2, 0, (size_t)(10498980943454487703UL), (size_t)(10498980943454488931UL)) ; ; ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (l->head) {
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8529,7 +8529,7 @@ list_insert_item_head_quick( list_t *l,
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_item_head", &____must_manage_list_insert_item_head, ____alias_loc_id_29, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "list_insert_item_head", &____must_manage_list_insert_item_head, ____alias_loc_id_28, ____chimes_did_disable3); }
 
 void
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8543,7 +8543,7 @@ list_insert_item_tail_quick( list_t *l,
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       list_item_t *i)
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&list_insert_item_tail), "list_insert_item_tail", &____must_manage_list_insert_item_tail, 2, 0, (size_t)(10498980943454487756UL), (size_t)(10498980943454488877UL)) ; ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&list_insert_item_tail), "list_insert_item_tail", &____must_manage_list_insert_item_tail, 2, 0, (size_t)(10498980943454487756UL), (size_t)(10498980943454488931UL)) ; ; ;
 # 203 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (l->head) {
 # 204 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8565,7 +8565,7 @@ list_insert_item_tail_quick( list_t *l,
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_item_tail", &____must_manage_list_insert_item_tail, ____alias_loc_id_30, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "list_insert_item_tail", &____must_manage_list_insert_item_tail, ____alias_loc_id_29, ____chimes_did_disable4); }
 
 void
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8581,7 +8581,7 @@ list_insert_item_before_quick(list_t *l,
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       list_item_t *i)
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&list_insert_item_before), "list_insert_item_before", &____must_manage_list_insert_item_before, 3, 0, (size_t)(10498980943454487816UL), (size_t)(10498980943454488877UL), (size_t)(10498980943454488877UL)) ; ; ;
+{const int ____chimes_did_disable5 = new_stack((void *)(&list_insert_item_before), "list_insert_item_before", &____must_manage_list_insert_item_before, 3, 0, (size_t)(10498980943454487816UL), (size_t)(10498980943454488931UL), (size_t)(10498980943454488931UL)) ; ; ;
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8609,7 +8609,7 @@ list_insert_item_before_quick(list_t *l,
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_item_before", &____must_manage_list_insert_item_before, ____alias_loc_id_31, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "list_insert_item_before", &____must_manage_list_insert_item_before, ____alias_loc_id_30, ____chimes_did_disable5); }
 
 void
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8627,7 +8627,7 @@ list_insert_item_after_quick( list_t *l,
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       list_item_t *i)
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&list_insert_item_after), "list_insert_item_after", &____must_manage_list_insert_item_after, 3, 0, (size_t)(10498980943454487877UL), (size_t)(10498980943454488877UL), (size_t)(10498980943454488877UL)) ; ; ;
+{const int ____chimes_did_disable6 = new_stack((void *)(&list_insert_item_after), "list_insert_item_after", &____must_manage_list_insert_item_after, 3, 0, (size_t)(10498980943454487877UL), (size_t)(10498980943454488931UL), (size_t)(10498980943454488931UL)) ; ; ;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8655,7 +8655,7 @@ list_insert_item_after_quick( list_t *l,
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_item_after", &____must_manage_list_insert_item_after, ____alias_loc_id_32, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "list_insert_item_after", &____must_manage_list_insert_item_after, ____alias_loc_id_31, ____chimes_did_disable6); }
 
 void
 # 237 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8671,7 +8671,7 @@ list_insert_item_sorted_quick(list_t *l,
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       list_item_t *i)
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&list_insert_item_sorted), "list_insert_item_sorted", (int *)0, 2, 2, (size_t)(10498980943454487992UL), (size_t)(10498980943454488877UL), "list_insert_item_sorted|l|0", &____must_checkpoint_list_insert_item_sorted_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_insert_item_sorted|i|0", &____must_checkpoint_list_insert_item_sorted_i_0, "%struct.list_item*", (void *)(&i), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_1;
+{const int ____chimes_did_disable7 = new_stack((void *)(&list_insert_item_sorted), "list_insert_item_sorted", (int *)0, 2, 2, (size_t)(10498980943454487992UL), (size_t)(10498980943454488931UL), "list_insert_item_sorted|l|0", &____must_checkpoint_list_insert_item_sorted_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_insert_item_sorted|i|0", &____must_checkpoint_list_insert_item_sorted_i_0, "%struct.list_item*", (void *)(&i), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_1;
 void *____chimes_unroll_var_0;
 list_item_t *itr;
  if (____must_checkpoint_list_insert_item_sorted_____chimes_unroll_var_1_0 || ____must_checkpoint_list_insert_item_sorted_____chimes_unroll_var_0_0 || ____must_checkpoint_list_insert_item_sorted_itr_0) { register_stack_vars(3, "list_insert_item_sorted|____chimes_unroll_var_1|0", &____must_checkpoint_list_insert_item_sorted_____chimes_unroll_var_1_0, "i8*", (void *)(&____chimes_unroll_var_1), (size_t)8, 1, 0, 0, "list_insert_item_sorted|____chimes_unroll_var_0|0", &____must_checkpoint_list_insert_item_sorted_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0, "list_insert_item_sorted|itr|0", &____must_checkpoint_list_insert_item_sorted_itr_0, "%struct.list_item*", (void *)(&itr), (size_t)8, 1, 0, 0); } ; ;
@@ -8715,7 +8715,7 @@ list_item_t *itr;
 # 283 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 284 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_item_sorted", (int *)0x0, ____alias_loc_id_33, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "list_insert_item_sorted", (int *)0x0, ____alias_loc_id_32, ____chimes_did_disable7); }
 
 void
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8729,11 +8729,11 @@ list_insert_head_quick( list_t *l,
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void *v)
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&list_insert_head), "list_insert_head", &____must_manage_list_insert_head, 2, 0, (size_t)(10498980943454488076UL), (size_t)(10498980943454488077UL)) ; ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&list_insert_head), "list_insert_head", &____must_manage_list_insert_head, 2, 0, (size_t)(10498980943454488080UL), (size_t)(10498980943454488081UL)) ; ; ;
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i; ;
 # 291 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 291); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 291); exit(-1); } _tmp; });
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8758,7 +8758,7 @@ list_insert_head_quick( list_t *l,
   l->length++;
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 304 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_head", &____must_manage_list_insert_head, ____alias_loc_id_35, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "list_insert_head", &____must_manage_list_insert_head, ____alias_loc_id_34, ____chimes_did_disable8); }
 
 void
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8772,12 +8772,12 @@ list_insert_tail_quick( list_t *l,
 # 308 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void *v)
 # 309 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&list_insert_tail), "list_insert_tail", &____must_manage_list_insert_tail, 2, 0, (size_t)(10498980943454488173UL), (size_t)(10498980943454488174UL)) ; ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&list_insert_tail), "list_insert_tail", &____must_manage_list_insert_tail, 2, 0, (size_t)(10498980943454488177UL), (size_t)(10498980943454488178UL)) ; ; ;
 # 310 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i; ;
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 312); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 312); exit(-1); } _tmp; });
 # 313 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8801,7 +8801,7 @@ list_insert_tail_quick( list_t *l,
 # 323 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_tail", &____must_manage_list_insert_tail, ____alias_loc_id_37, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "list_insert_tail", &____must_manage_list_insert_tail, ____alias_loc_id_36, ____chimes_did_disable9); }
 
 void
 # 307 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8817,12 +8817,12 @@ list_insert_before_quick( list_t *l,
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void *v)
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&list_insert_before), "list_insert_before", &____must_manage_list_insert_before, 3, 0, (size_t)(10498980943454488254UL), (size_t)(10498980943454488877UL), (size_t)(10498980943454488256UL)) ; ; ;
+{const int ____chimes_did_disable10 = new_stack((void *)(&list_insert_before), "list_insert_before", &____must_manage_list_insert_before, 3, 0, (size_t)(10498980943454488258UL), (size_t)(10498980943454488931UL), (size_t)(10498980943454488260UL)) ; ; ;
 # 331 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i; ;
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 333); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 333); exit(-1); } _tmp; });
 # 334 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 335 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8853,7 +8853,7 @@ list_insert_before_quick( list_t *l,
 # 349 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 350 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_before", &____must_manage_list_insert_before, ____alias_loc_id_38, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "list_insert_before", &____must_manage_list_insert_before, ____alias_loc_id_37, ____chimes_did_disable10); }
 
 void
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8871,12 +8871,12 @@ list_insert_after_quick( list_t *l,
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void *v)
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&list_insert_after), "list_insert_after", &____must_manage_list_insert_after, 3, 0, (size_t)(10498980943454488336UL), (size_t)(10498980943454488877UL), (size_t)(10498980943454488338UL)) ; ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&list_insert_after), "list_insert_after", &____must_manage_list_insert_after, 3, 0, (size_t)(10498980943454488340UL), (size_t)(10498980943454488931UL), (size_t)(10498980943454488342UL)) ; ; ;
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i; ;
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 359); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 359); exit(-1); } _tmp; });
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8907,7 +8907,7 @@ list_insert_after_quick( list_t *l,
 # 375 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 376 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_after", &____must_manage_list_insert_after, ____alias_loc_id_39, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "list_insert_after", &____must_manage_list_insert_after, ____alias_loc_id_38, ____chimes_did_disable11); }
 
 void
 # 353 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8923,7 +8923,7 @@ list_insert_sorted_quick( list_t *l,
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void *v)
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&list_insert_sorted), "list_insert_sorted", (int *)0, 2, 1, (size_t)(10498980943454488472UL), (size_t)(10498980943454488473UL), "list_insert_sorted|l|0", &____must_checkpoint_list_insert_sorted_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_3;
+{const int ____chimes_did_disable12 = new_stack((void *)(&list_insert_sorted), "list_insert_sorted", (int *)0, 2, 1, (size_t)(10498980943454488476UL), (size_t)(10498980943454488477UL), "list_insert_sorted|l|0", &____must_checkpoint_list_insert_sorted_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_3;
 void *____chimes_unroll_var_2;
 list_item_t *i;
 list_item_t *itr;
@@ -8934,7 +8934,7 @@ list_item_t *itr;
    ;
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 385); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 385); exit(-1); } _tmp; });
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ({ calling_npm("list_item_init", 0); list_item_init_npm(i, v); });
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8942,7 +8942,7 @@ list_item_t *itr;
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (l->head) {
 # 390 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        ____chimes_unroll_var_2 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(i); })) ; ____chimes_unroll_var_3 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(itr); })) ; alias_group_changed(____alias_loc_id_4); call_lbl_5: for (itr = l->head; itr && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 5, 0, 0UL, 2, 10498980943454488377UL, 10498980943454488381UL)))(____chimes_unroll_var_2, ____chimes_unroll_var_3) < 0; itr = itr->next) { ;; }
+        ____chimes_unroll_var_2 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(i); })) ; ____chimes_unroll_var_3 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(itr); })) ; alias_group_changed(____alias_loc_id_4); call_lbl_5: for (itr = l->head; itr && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 5, 0, 0UL, 2, 10498980943454488381UL, 10498980943454488385UL)))(____chimes_unroll_var_2, ____chimes_unroll_var_3) < 0; itr = itr->next) { ;; }
 # 394 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     if (itr) {
 # 395 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8976,7 +8976,7 @@ list_item_t *itr;
 # 409 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length++;
 # 410 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_insert_sorted", (int *)0x0, ____alias_loc_id_40, ____chimes_did_disable12); }
+rm_stack(false, 0UL, "list_insert_sorted", (int *)0x0, ____alias_loc_id_39, ____chimes_did_disable12); }
 
 void
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -8990,7 +8990,7 @@ list_remove_item_quick( list_t *l,
 # 414 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      list_item_t *i)
 # 415 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&list_remove_item), "list_remove_item", &____must_manage_list_remove_item, 2, 0, (size_t)(10498980943454488559UL), (size_t)(10498980943454488560UL)) ; ; ;
+{const int ____chimes_did_disable13 = new_stack((void *)(&list_remove_item), "list_remove_item", &____must_manage_list_remove_item, 2, 0, (size_t)(10498980943454488563UL), (size_t)(10498980943454488564UL)) ; ; ;
 # 416 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (i == l->head) {{
 # 417 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9014,7 +9014,7 @@ list_remove_item_quick( list_t *l,
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   l->length--;
 # 430 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   call_lbl_1: ({ calling((void*)list_item_delete, 1, ____alias_loc_id_5, 0UL, 2, (size_t)(10498980943454488560UL), (size_t)(10498980943454488877UL)); list_item_delete_quick(i, l->datum_delete); }) ;
+   call_lbl_1: ({ calling((void*)list_item_delete, 1, ____alias_loc_id_5, 0UL, 2, (size_t)(10498980943454488564UL), (size_t)(10498980943454488931UL)); list_item_delete_quick(i, l->datum_delete); }) ;
 # 431 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_remove_item", &____must_manage_list_remove_item, 0, ____chimes_did_disable13); }
 
@@ -9028,9 +9028,9 @@ void
 # 434 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_remove_head_quick(list_t *l)
 # 435 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable14 = new_stack((void *)(&list_remove_head), "list_remove_head", &____must_manage_list_remove_head, 1, 0, (size_t)(10498980943454488570UL)) ; ; ;
+{const int ____chimes_did_disable14 = new_stack((void *)(&list_remove_head), "list_remove_head", &____must_manage_list_remove_head, 1, 0, (size_t)(10498980943454488574UL)) ; ; ;
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   call_lbl_1: ({ calling((void*)list_remove_item, 1, ____alias_loc_id_6, 0UL, 2, (size_t)(10498980943454488570UL), (size_t)(10498980943454488567UL)); list_remove_item_quick(l, l->head); }) ;
+   call_lbl_1: ({ calling((void*)list_remove_item, 1, ____alias_loc_id_6, 0UL, 2, (size_t)(10498980943454488574UL), (size_t)(10498980943454488571UL)); list_remove_item_quick(l, l->head); }) ;
 # 437 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_remove_head", &____must_manage_list_remove_head, 0, ____chimes_did_disable14); }
 
@@ -9042,9 +9042,9 @@ void
 # 440 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_remove_tail_quick(list_t *l)
 # 441 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable15 = new_stack((void *)(&list_remove_tail), "list_remove_tail", &____must_manage_list_remove_tail, 1, 0, (size_t)(10498980943454488580UL)) ; ; ;
+{const int ____chimes_did_disable15 = new_stack((void *)(&list_remove_tail), "list_remove_tail", &____must_manage_list_remove_tail, 1, 0, (size_t)(10498980943454488584UL)) ; ; ;
 # 442 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   call_lbl_1: ({ calling((void*)list_remove_item, 1, ____alias_loc_id_7, 0UL, 2, (size_t)(10498980943454488580UL), (size_t)(10498980943454488577UL)); list_remove_item_quick(l, l->tail); }) ;
+   call_lbl_1: ({ calling((void*)list_remove_item, 1, ____alias_loc_id_7, 0UL, 2, (size_t)(10498980943454488584UL), (size_t)(10498980943454488581UL)); list_remove_item_quick(l, l->tail); }) ;
 # 443 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 rm_stack(false, 0UL, "list_remove_tail", &____must_manage_list_remove_tail, 0, ____chimes_did_disable15); }
 
@@ -9058,19 +9058,19 @@ list_find_item_quick( list_t *l,
 # 447 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     void *datum)
 # 448 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable16 = new_stack((void *)(&list_find_item), "list_find_item", (int *)0, 2, 2, (size_t)(10498980943454488620UL), (size_t)(10498980943454488621UL), "list_find_item|l|0", &____must_checkpoint_list_find_item_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_find_item|datum|0", &____must_checkpoint_list_find_item_datum_0, "i8*", (void *)(&datum), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_4;
+{const int ____chimes_did_disable16 = new_stack((void *)(&list_find_item), "list_find_item", (int *)0, 2, 2, (size_t)(10498980943454488628UL), (size_t)(10498980943454488629UL), "list_find_item|l|0", &____must_checkpoint_list_find_item_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_find_item|datum|0", &____must_checkpoint_list_find_item_datum_0, "i8*", (void *)(&datum), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_4;
 list_item_t *li;
  if (____must_checkpoint_list_find_item_____chimes_unroll_var_4_0 || ____must_checkpoint_list_find_item_li_0) { register_stack_vars(2, "list_find_item|____chimes_unroll_var_4|0", &____must_checkpoint_list_find_item_____chimes_unroll_var_4_0, "i8*", (void *)(&____chimes_unroll_var_4), (size_t)8, 1, 0, 0, "list_find_item|li|0", &____must_checkpoint_list_find_item_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } ; ;
 # 449 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    ;
 # 450 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 451 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      ____chimes_unroll_var_4 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; alias_group_changed(____alias_loc_id_8); call_lbl_2: for (li = l->head; li && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 2, 0, 0UL, 2, 10498980943454488621UL, 10498980943454488592UL)))(datum, ____chimes_unroll_var_4); li = li->next) { ;; }
+      ____chimes_unroll_var_4 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; alias_group_changed(____alias_loc_id_8); call_lbl_2: for (li = l->head; li && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 2, 0, 0UL, 2, 10498980943454488629UL, 10498980943454488597UL)))(datum, ____chimes_unroll_var_4); li = li->next) { ;; }
 # 454 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 455 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454488591UL, "list_find_item", (int *)0x0, ____alias_loc_id_41, ____chimes_did_disable16); return li;
+   list_item_t *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (li); rm_stack(true, 10498980943454488596UL, "list_find_item", (int *)0x0, ____alias_loc_id_40, ____chimes_did_disable16); return ____chimes_ret_var_0; ;
 # 456 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454488596UL, "list_find_item", (int *)0x0, ____alias_loc_id_40, ____chimes_did_disable16); }
 
 list_item_t*
 # 446 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9082,11 +9082,11 @@ list_item_t*
 # 459 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_get_head_item_quick(list_t *l)
 # 460 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable17 = new_stack((void *)(&list_get_head_item), "list_get_head_item", &____must_manage_list_get_head_item, 1, 0, (size_t)(10498980943454488629UL)) ; ; ;
+{const int ____chimes_did_disable17 = new_stack((void *)(&list_get_head_item), "list_get_head_item", &____must_manage_list_get_head_item, 1, 0, (size_t)(10498980943454488641UL)) ; ; ;
 # 461 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454488627UL, "list_get_head_item", &____must_manage_list_get_head_item, ____alias_loc_id_42, ____chimes_did_disable17); return l->head;
+   list_item_t *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (l->head); rm_stack(true, 10498980943454488637UL, "list_get_head_item", &____must_manage_list_get_head_item, ____alias_loc_id_41, ____chimes_did_disable17); return ____chimes_ret_var_1; ;
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454488637UL, "list_get_head_item", &____must_manage_list_get_head_item, ____alias_loc_id_41, ____chimes_did_disable17); }
 
 list_item_t*
 # 459 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9096,11 +9096,11 @@ list_item_t*
 # 465 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_get_tail_item_quick(list_t *l)
 # 466 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable18 = new_stack((void *)(&list_get_tail_item), "list_get_tail_item", &____must_manage_list_get_tail_item, 1, 0, (size_t)(10498980943454488637UL)) ; ; ;
+{const int ____chimes_did_disable18 = new_stack((void *)(&list_get_tail_item), "list_get_tail_item", &____must_manage_list_get_tail_item, 1, 0, (size_t)(10498980943454488653UL)) ; ; ;
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454488635UL, "list_get_tail_item", &____must_manage_list_get_tail_item, ____alias_loc_id_43, ____chimes_did_disable18); return l->tail;
+   list_item_t *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (l->tail); rm_stack(true, 10498980943454488649UL, "list_get_tail_item", &____must_manage_list_get_tail_item, ____alias_loc_id_42, ____chimes_did_disable18); return ____chimes_ret_var_2; ;
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454488649UL, "list_get_tail_item", &____must_manage_list_get_tail_item, ____alias_loc_id_42, ____chimes_did_disable18); }
 
 list_item_t*
 # 465 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9112,19 +9112,19 @@ list_find_quick( list_t *l,
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    void *datum)
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable19 = new_stack((void *)(&list_find), "list_find", (int *)0, 2, 2, (size_t)(10498980943454488685UL), (size_t)(10498980943454488686UL), "list_find|l|0", &____must_checkpoint_list_find_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_find|datum|0", &____must_checkpoint_list_find_datum_0, "i8*", (void *)(&datum), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_5;
+{const int ____chimes_did_disable19 = new_stack((void *)(&list_find), "list_find", (int *)0, 2, 2, (size_t)(10498980943454488705UL), (size_t)(10498980943454488706UL), "list_find|l|0", &____must_checkpoint_list_find_l_0, "%struct.list_t*", (void *)(&l), (size_t)8, 1, 0, 0, "list_find|datum|0", &____must_checkpoint_list_find_datum_0, "i8*", (void *)(&datum), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_5;
 list_item_t *li;
  if (____must_checkpoint_list_find_____chimes_unroll_var_5_0 || ____must_checkpoint_list_find_li_0) { register_stack_vars(2, "list_find|____chimes_unroll_var_5|0", &____must_checkpoint_list_find_____chimes_unroll_var_5_0, "i8*", (void *)(&____chimes_unroll_var_5), (size_t)8, 1, 0, 0, "list_find|li|0", &____must_checkpoint_list_find_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } ; ;
 # 474 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    ;
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 476 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      ____chimes_unroll_var_5 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; alias_group_changed(____alias_loc_id_9); call_lbl_2: for (li = l->head; li && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 2, 0, 0UL, 2, 10498980943454488686UL, 10498980943454488649UL)))(datum, ____chimes_unroll_var_5); li = li->next) { ;; }
+      ____chimes_unroll_var_5 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; alias_group_changed(____alias_loc_id_9); call_lbl_2: for (li = l->head; li && ((int32_t (*)(const void *, const void *))(translate_fptr((void *)l->compare, 2, 0, 0UL, 2, 10498980943454488706UL, 10498980943454488666UL)))(datum, ____chimes_unroll_var_5); li = li->next) { ;; }
 # 479 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 480 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454493178UL, "list_find", (int *)0x0, ____alias_loc_id_44, ____chimes_did_disable19); return li ? li->datum : __null;
+   void *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (li ? li->datum : __null); rm_stack(true, 10498980943454493441UL, "list_find", (int *)0x0, ____alias_loc_id_43, ____chimes_did_disable19); return ____chimes_ret_var_3; ;
 # 481 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "list_find", (int *)0x0, ____alias_loc_id_43, ____chimes_did_disable19); }
 
 void*
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9136,11 +9136,11 @@ void*
 # 484 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_get_head_quick(list_t *l)
 # 485 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable20 = new_stack((void *)(&list_get_head), "list_get_head", &____must_manage_list_get_head, 1, 0, (size_t)(10498980943454488695UL)) ; ; ;
+{const int ____chimes_did_disable20 = new_stack((void *)(&list_get_head), "list_get_head", &____must_manage_list_get_head, 1, 0, (size_t)(10498980943454488717UL)) ; ; ;
 # 486 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454493178UL, "list_get_head", &____must_manage_list_get_head, ____alias_loc_id_45, ____chimes_did_disable20); return l->head ? l->head->datum : __null;
+   void *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (l->head ? l->head->datum : __null); rm_stack(true, 10498980943454493441UL, "list_get_head", &____must_manage_list_get_head, ____alias_loc_id_44, ____chimes_did_disable20); return ____chimes_ret_var_4; ;
 # 487 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "list_get_head", &____must_manage_list_get_head, ____alias_loc_id_44, ____chimes_did_disable20); }
 
 void*
 # 484 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9150,11 +9150,11 @@ void*
 # 490 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_get_tail_quick(list_t *l)
 # 491 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable21 = new_stack((void *)(&list_get_tail), "list_get_tail", &____must_manage_list_get_tail, 1, 0, (size_t)(10498980943454488713UL)) ; ; ;
+{const int ____chimes_did_disable21 = new_stack((void *)(&list_get_tail), "list_get_tail", &____must_manage_list_get_tail, 1, 0, (size_t)(10498980943454488739UL)) ; ; ;
 # 492 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454493178UL, "list_get_tail", &____must_manage_list_get_tail, ____alias_loc_id_46, ____chimes_did_disable21); return l->tail ? l->tail->datum : __null;
+   void *____chimes_ret_var_5; ; ____chimes_ret_var_5 = (l->tail ? l->tail->datum : __null); rm_stack(true, 10498980943454493441UL, "list_get_tail", &____must_manage_list_get_tail, ____alias_loc_id_45, ____chimes_did_disable21); return ____chimes_ret_var_5; ;
 # 493 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "list_get_tail", &____must_manage_list_get_tail, ____alias_loc_id_45, ____chimes_did_disable21); }
 
 void*
 # 490 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9164,11 +9164,11 @@ uint32_t
 # 496 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_get_length_quick(list_t *l)
 # 497 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable22 = new_stack((void *)(&list_get_length), "list_get_length", &____must_manage_list_get_length, 1, 0, (size_t)(10498980943454488730UL)) ; ; ;
+{const int ____chimes_did_disable22 = new_stack((void *)(&list_get_length), "list_get_length", &____must_manage_list_get_length, 1, 0, (size_t)(10498980943454488762UL)) ; ; ;
 # 498 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "list_get_length", &____must_manage_list_get_length, ____alias_loc_id_47, ____chimes_did_disable22); return l->length;
+   uint32_t ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (l->length); rm_stack(false, 0UL, "list_get_length", &____must_manage_list_get_length, ____alias_loc_id_46, ____chimes_did_disable22); return ____chimes_ret_var_6; ;
 # 499 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "list_get_length", &____must_manage_list_get_length, ____alias_loc_id_46, ____chimes_did_disable22); }
 
 uint32_t
 # 496 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9178,11 +9178,11 @@ bool
 # 502 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_is_empty_quick(list_t *l)
 # 503 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable23 = new_stack((void *)(&list_is_empty), "list_is_empty", &____must_manage_list_is_empty, 1, 0, (size_t)(10498980943454488739UL)) ; ; ;
+{const int ____chimes_did_disable23 = new_stack((void *)(&list_is_empty), "list_is_empty", &____must_manage_list_is_empty, 1, 0, (size_t)(10498980943454488777UL)) ; ; ;
 # 504 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "list_is_empty", &____must_manage_list_is_empty, ____alias_loc_id_48, ____chimes_did_disable23); return (l->length == 0);
+   bool ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((l->length == 0)); rm_stack(false, 0UL, "list_is_empty", &____must_manage_list_is_empty, ____alias_loc_id_47, ____chimes_did_disable23); return ____chimes_ret_var_7; ;
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "list_is_empty", &____must_manage_list_is_empty, ____alias_loc_id_47, ____chimes_did_disable23); }
 
 bool
 # 502 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9192,11 +9192,11 @@ bool
 # 508 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_not_empty_quick(list_t *l)
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable24 = new_stack((void *)(&list_not_empty), "list_not_empty", &____must_manage_list_not_empty, 1, 0, (size_t)(10498980943454488748UL)) ; ; ;
+{const int ____chimes_did_disable24 = new_stack((void *)(&list_not_empty), "list_not_empty", &____must_manage_list_not_empty, 1, 0, (size_t)(10498980943454488792UL)) ; ; ;
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "list_not_empty", &____must_manage_list_not_empty, ____alias_loc_id_49, ____chimes_did_disable24); return (l->length != 0);
+   bool ____chimes_ret_var_8; ; ____chimes_ret_var_8 = ((l->length != 0)); rm_stack(false, 0UL, "list_not_empty", &____must_manage_list_not_empty, ____alias_loc_id_48, ____chimes_did_disable24); return ____chimes_ret_var_8; ;
 # 511 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "list_not_empty", &____must_manage_list_not_empty, ____alias_loc_id_48, ____chimes_did_disable24); }
 
 bool
 # 508 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9208,16 +9208,16 @@ list_visit_items_quick( list_t *l,
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      void (*visitor)(void *v))
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable25 = new_stack((void *)(&list_visit_items), "list_visit_items", (int *)0, 2, 1, (size_t)(10498980943454488780UL), (size_t)(10498980943454488781UL), "list_visit_items|visitor|0", &____must_checkpoint_list_visit_items_visitor_0, "void (i8*)*", (void *)(&visitor), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_6;
+{const int ____chimes_did_disable25 = new_stack((void *)(&list_visit_items), "list_visit_items", (int *)0, 2, 1, (size_t)(10498980943454488824UL), (size_t)(10498980943454488825UL), "list_visit_items|visitor|0", &____must_checkpoint_list_visit_items_visitor_0, "void (i8*)*", (void *)(&visitor), (size_t)8, 1, 0, 0) ; void *____chimes_unroll_var_6;
 list_item_t *li;
  if (____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0 || ____must_checkpoint_list_visit_items_li_0) { register_stack_vars(2, "list_visit_items|____chimes_unroll_var_6|0", &____must_checkpoint_list_visit_items_____chimes_unroll_var_6_0, "i8*", (void *)(&____chimes_unroll_var_6), (size_t)8, 1, 0, 0, "list_visit_items|li|0", &____must_checkpoint_list_visit_items_li_0, "%struct.list_item*", (void *)(&li), (size_t)8, 1, 0, 0); } ; ;
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    ;
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  for (li = l->head; li; li = li->next) { ____chimes_unroll_var_6 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; call_lbl_1: ((void (*)(void *))(translate_fptr((void *)visitor, 1, 0, 0UL, 1, 10498980943454488768UL)))(____chimes_unroll_var_6); };
+  for (li = l->head; li; li = li->next) { ____chimes_unroll_var_6 = (({ calling_npm("list_item_get_datum", 0); list_item_get_datum_npm(li); })) ; call_lbl_1: ((void (*)(void *))(translate_fptr((void *)visitor, 1, 0, 0UL, 1, 10498980943454488812UL)))(____chimes_unroll_var_6); };
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_visit_items", (int *)0x0, ____alias_loc_id_50, ____chimes_did_disable25); }
+rm_stack(false, 0UL, "list_visit_items", (int *)0x0, ____alias_loc_id_49, ____chimes_did_disable25); }
 
 void
 # 514 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9231,13 +9231,13 @@ list_item_init_quick( list_item_t *li,
 # 525 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     void *datum)
 # 526 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable26 = new_stack((void *)(&list_item_init), "list_item_init", &____must_manage_list_item_init, 2, 0, (size_t)(10498980943454488099UL), (size_t)(10498980943454488877UL)) ; ; ;
+{const int ____chimes_did_disable26 = new_stack((void *)(&list_item_init), "list_item_init", &____must_manage_list_item_init, 2, 0, (size_t)(10498980943454488103UL), (size_t)(10498980943454488931UL)) ; ; ;
 # 527 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   li->pred = li->next = __null;
 # 528 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   li->datum = datum;
 # 529 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_item_init", &____must_manage_list_item_init, ____alias_loc_id_36, ____chimes_did_disable26); }
+rm_stack(false, 0UL, "list_item_init", &____must_manage_list_item_init, ____alias_loc_id_35, ____chimes_did_disable26); }
 
 void
 # 524 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9262,7 +9262,7 @@ list_item_delete_quick( list_item_t *li,
 # 539 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   free_wrapper(li, 10498980943454487641UL);
 # 540 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_item_delete", (int *)0x0, ____alias_loc_id_28, ____chimes_did_disable27); }
+rm_stack(false, 0UL, "list_item_delete", (int *)0x0, ____alias_loc_id_27, ____chimes_did_disable27); }
 
 void
 # 532 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9274,11 +9274,11 @@ void *
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_item_get_datum_quick(list_item_t *li)
 # 544 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable28 = new_stack((void *)(&list_item_get_datum), "list_item_get_datum", &____must_manage_list_item_get_datum, 1, 0, (size_t)(10498980943454488001UL)) ; ; ;
+{const int ____chimes_did_disable28 = new_stack((void *)(&list_item_get_datum), "list_item_get_datum", &____must_manage_list_item_get_datum, 1, 0, (size_t)(10498980943454488005UL)) ; ; ;
 # 545 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454487999UL, "list_item_get_datum", &____must_manage_list_item_get_datum, ____alias_loc_id_34, ____chimes_did_disable28); return li->datum;
+   void *____chimes_ret_var_9; ; ____chimes_ret_var_9 = (li->datum); rm_stack(true, 10498980943454488001UL, "list_item_get_datum", &____must_manage_list_item_get_datum, ____alias_loc_id_33, ____chimes_did_disable28); return ____chimes_ret_var_9; ;
 # 546 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454488001UL, "list_item_get_datum", &____must_manage_list_item_get_datum, ____alias_loc_id_33, ____chimes_did_disable28); }
 
 void *
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9290,11 +9290,11 @@ list_iterator_init_quick( list_t *l,
 # 550 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      list_iterator_t *li)
 # 551 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable29 = new_stack((void *)(&list_iterator_init), "list_iterator_init", &____must_manage_list_iterator_init, 2, 0, (size_t)(10498980943454488792UL), (size_t)(10498980943454488798UL)) ; ; ;
+{const int ____chimes_did_disable29 = new_stack((void *)(&list_iterator_init), "list_iterator_init", &____must_manage_list_iterator_init, 2, 0, (size_t)(10498980943454488836UL), (size_t)(10498980943454488842UL)) ; ; ;
 # 552 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   *li = l ? l->head : __null;
 # 553 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_iterator_init", &____must_manage_list_iterator_init, ____alias_loc_id_51, ____chimes_did_disable29); }
+rm_stack(false, 0UL, "list_iterator_init", &____must_manage_list_iterator_init, ____alias_loc_id_50, ____chimes_did_disable29); }
 
 void
 # 549 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9306,11 +9306,11 @@ void
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_iterator_delete_quick(list_iterator_t *li)
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable30 = new_stack((void *)(&list_iterator_delete), "list_iterator_delete", &____must_manage_list_iterator_delete, 1, 0, (size_t)(10498980943454488809UL)) ; ; ;
+{const int ____chimes_did_disable30 = new_stack((void *)(&list_iterator_delete), "list_iterator_delete", &____must_manage_list_iterator_delete, 1, 0, (size_t)(10498980943454488853UL)) ; ; ;
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   *li = __null;
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_iterator_delete", &____must_manage_list_iterator_delete, ____alias_loc_id_52, ____chimes_did_disable30); }
+rm_stack(false, 0UL, "list_iterator_delete", &____must_manage_list_iterator_delete, ____alias_loc_id_51, ____chimes_did_disable30); }
 
 void
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9320,11 +9320,11 @@ void
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_iterator_next_quick(list_iterator_t *li)
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable31 = new_stack((void *)(&list_iterator_next), "list_iterator_next", &____must_manage_list_iterator_next, 1, 0, (size_t)(10498980943454488825UL)) ; ; ;
+{const int ____chimes_did_disable31 = new_stack((void *)(&list_iterator_next), "list_iterator_next", &____must_manage_list_iterator_next, 1, 0, (size_t)(10498980943454488869UL)) ; ; ;
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (*li) {*li = (*li)->next; };
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_iterator_next", &____must_manage_list_iterator_next, ____alias_loc_id_53, ____chimes_did_disable31); }
+rm_stack(false, 0UL, "list_iterator_next", &____must_manage_list_iterator_next, ____alias_loc_id_52, ____chimes_did_disable31); }
 
 void
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9334,11 +9334,11 @@ void
 # 569 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_iterator_prev_quick(list_iterator_t *li)
 # 570 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable32 = new_stack((void *)(&list_iterator_prev), "list_iterator_prev", &____must_manage_list_iterator_prev, 1, 0, (size_t)(10498980943454488841UL)) ; ; ;
+{const int ____chimes_did_disable32 = new_stack((void *)(&list_iterator_prev), "list_iterator_prev", &____must_manage_list_iterator_prev, 1, 0, (size_t)(10498980943454488885UL)) ; ; ;
 # 571 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (*li) {*li = (*li)->pred; };
 # 573 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_iterator_prev", &____must_manage_list_iterator_prev, ____alias_loc_id_54, ____chimes_did_disable32); }
+rm_stack(false, 0UL, "list_iterator_prev", &____must_manage_list_iterator_prev, ____alias_loc_id_53, ____chimes_did_disable32); }
 
 void
 # 569 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9348,11 +9348,11 @@ void *
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_iterator_get_datum_quick(list_iterator_t *li)
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable33 = new_stack((void *)(&list_iterator_get_datum), "list_iterator_get_datum", &____must_manage_list_iterator_get_datum, 1, 0, (size_t)(10498980943454488849UL)) ; ; ;
+{const int ____chimes_did_disable33 = new_stack((void *)(&list_iterator_get_datum), "list_iterator_get_datum", &____must_manage_list_iterator_get_datum, 1, 0, (size_t)(10498980943454488895UL)) ; ; ;
 # 578 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454493178UL, "list_iterator_get_datum", &____must_manage_list_iterator_get_datum, ____alias_loc_id_55, ____chimes_did_disable33); return *li ? (*li)->datum : __null;
+   void *____chimes_ret_var_10; ; ____chimes_ret_var_10 = (*li ? (*li)->datum : __null); rm_stack(true, 10498980943454493441UL, "list_iterator_get_datum", &____must_manage_list_iterator_get_datum, ____alias_loc_id_54, ____chimes_did_disable33); return ____chimes_ret_var_10; ;
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "list_iterator_get_datum", &____must_manage_list_iterator_get_datum, ____alias_loc_id_54, ____chimes_did_disable33); }
 
 void *
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9362,11 +9362,11 @@ bool
 # 582 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_iterator_is_valid_quick(list_iterator_t *li)
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable34 = new_stack((void *)(&list_iterator_is_valid), "list_iterator_is_valid", &____must_manage_list_iterator_is_valid, 1, 0, (size_t)(10498980943454488865UL)) ; ; ;
+{const int ____chimes_did_disable34 = new_stack((void *)(&list_iterator_is_valid), "list_iterator_is_valid", &____must_manage_list_iterator_is_valid, 1, 0, (size_t)(10498980943454488919UL)) ; ; ;
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "list_iterator_is_valid", &____must_manage_list_iterator_is_valid, ____alias_loc_id_56, ____chimes_did_disable34); return (*li != __null);
+   bool ____chimes_ret_var_11; ; ____chimes_ret_var_11 = ((*li != __null)); rm_stack(false, 0UL, "list_iterator_is_valid", &____must_manage_list_iterator_is_valid, ____alias_loc_id_55, ____chimes_did_disable34); return ____chimes_ret_var_11; ;
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "list_iterator_is_valid", &____must_manage_list_iterator_is_valid, ____alias_loc_id_55, ____chimes_did_disable34); }
 
 bool
 # 582 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9378,11 +9378,11 @@ list_reverse_iterator_init_quick( list_t *l,
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        list_reverse_iterator_t *li)
 # 590 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable35 = new_stack((void *)(&list_reverse_iterator_init), "list_reverse_iterator_init", &____must_manage_list_reverse_iterator_init, 2, 0, (size_t)(10498980943454488875UL), (size_t)(10498980943454488881UL)) ; ; ;
+{const int ____chimes_did_disable35 = new_stack((void *)(&list_reverse_iterator_init), "list_reverse_iterator_init", &____must_manage_list_reverse_iterator_init, 2, 0, (size_t)(10498980943454488929UL), (size_t)(10498980943454488935UL)) ; ; ;
 # 591 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   *li = l ? l->tail : __null;
 # 592 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_reverse_iterator_init", &____must_manage_list_reverse_iterator_init, ____alias_loc_id_57, ____chimes_did_disable35); }
+rm_stack(false, 0UL, "list_reverse_iterator_init", &____must_manage_list_reverse_iterator_init, ____alias_loc_id_56, ____chimes_did_disable35); }
 
 void
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9394,11 +9394,11 @@ void
 # 595 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_reverse_iterator_delete_quick(list_reverse_iterator_t *li)
 # 596 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable36 = new_stack((void *)(&list_reverse_iterator_delete), "list_reverse_iterator_delete", &____must_manage_list_reverse_iterator_delete, 1, 0, (size_t)(10498980943454488892UL)) ; ; ;
+{const int ____chimes_did_disable36 = new_stack((void *)(&list_reverse_iterator_delete), "list_reverse_iterator_delete", &____must_manage_list_reverse_iterator_delete, 1, 0, (size_t)(10498980943454488946UL)) ; ; ;
 # 597 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   *li = __null;
 # 598 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_reverse_iterator_delete", &____must_manage_list_reverse_iterator_delete, ____alias_loc_id_58, ____chimes_did_disable36); }
+rm_stack(false, 0UL, "list_reverse_iterator_delete", &____must_manage_list_reverse_iterator_delete, ____alias_loc_id_57, ____chimes_did_disable36); }
 
 void
 # 595 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9408,11 +9408,11 @@ void
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_reverse_iterator_next_quick(list_reverse_iterator_t *li)
 # 602 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable37 = new_stack((void *)(&list_reverse_iterator_next), "list_reverse_iterator_next", &____must_manage_list_reverse_iterator_next, 1, 0, (size_t)(10498980943454488908UL)) ; ; ;
+{const int ____chimes_did_disable37 = new_stack((void *)(&list_reverse_iterator_next), "list_reverse_iterator_next", &____must_manage_list_reverse_iterator_next, 1, 0, (size_t)(10498980943454488962UL)) ; ; ;
 # 603 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (*li) {*li = (*li)->pred; };
 # 605 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_reverse_iterator_next", &____must_manage_list_reverse_iterator_next, ____alias_loc_id_59, ____chimes_did_disable37); }
+rm_stack(false, 0UL, "list_reverse_iterator_next", &____must_manage_list_reverse_iterator_next, ____alias_loc_id_58, ____chimes_did_disable37); }
 
 void
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9422,11 +9422,11 @@ void
 # 608 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_reverse_iterator_prev_quick(list_reverse_iterator_t *li)
 # 609 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable38 = new_stack((void *)(&list_reverse_iterator_prev), "list_reverse_iterator_prev", &____must_manage_list_reverse_iterator_prev, 1, 0, (size_t)(10498980943454488924UL)) ; ; ;
+{const int ____chimes_did_disable38 = new_stack((void *)(&list_reverse_iterator_prev), "list_reverse_iterator_prev", &____must_manage_list_reverse_iterator_prev, 1, 0, (size_t)(10498980943454488978UL)) ; ; ;
 # 610 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (*li) {*li = (*li)->next; };
 # 612 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "list_reverse_iterator_prev", &____must_manage_list_reverse_iterator_prev, ____alias_loc_id_60, ____chimes_did_disable38); }
+rm_stack(false, 0UL, "list_reverse_iterator_prev", &____must_manage_list_reverse_iterator_prev, ____alias_loc_id_59, ____chimes_did_disable38); }
 
 void
 # 608 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9436,11 +9436,11 @@ void *
 # 615 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_reverse_iterator_get_datum_quick(list_reverse_iterator_t *li)
 # 616 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable39 = new_stack((void *)(&list_reverse_iterator_get_datum), "list_reverse_iterator_get_datum", &____must_manage_list_reverse_iterator_get_datum, 1, 0, (size_t)(10498980943454488932UL)) ; ; ;
+{const int ____chimes_did_disable39 = new_stack((void *)(&list_reverse_iterator_get_datum), "list_reverse_iterator_get_datum", &____must_manage_list_reverse_iterator_get_datum, 1, 0, (size_t)(10498980943454488988UL)) ; ; ;
 # 617 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454493178UL, "list_reverse_iterator_get_datum", &____must_manage_list_reverse_iterator_get_datum, ____alias_loc_id_61, ____chimes_did_disable39); return *li ? (*li)->datum : __null;
+   void *____chimes_ret_var_12; ; ____chimes_ret_var_12 = (*li ? (*li)->datum : __null); rm_stack(true, 10498980943454493441UL, "list_reverse_iterator_get_datum", &____must_manage_list_reverse_iterator_get_datum, ____alias_loc_id_60, ____chimes_did_disable39); return ____chimes_ret_var_12; ;
 # 618 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "list_reverse_iterator_get_datum", &____must_manage_list_reverse_iterator_get_datum, ____alias_loc_id_60, ____chimes_did_disable39); }
 
 void *
 # 615 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9450,11 +9450,11 @@ bool
 # 621 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 list_reverse_iterator_is_valid_quick(list_reverse_iterator_t *li)
 # 622 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable40 = new_stack((void *)(&list_reverse_iterator_is_valid), "list_reverse_iterator_is_valid", &____must_manage_list_reverse_iterator_is_valid, 1, 0, (size_t)(10498980943454488947UL)) ; ; ;
+{const int ____chimes_did_disable40 = new_stack((void *)(&list_reverse_iterator_is_valid), "list_reverse_iterator_is_valid", &____must_manage_list_reverse_iterator_is_valid, 1, 0, (size_t)(10498980943454489011UL)) ; ; ;
 # 623 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "list_reverse_iterator_is_valid", &____must_manage_list_reverse_iterator_is_valid, ____alias_loc_id_62, ____chimes_did_disable40); return (li != __null);
+   bool ____chimes_ret_var_13; ; ____chimes_ret_var_13 = ((li != __null)); rm_stack(false, 0UL, "list_reverse_iterator_is_valid", &____must_manage_list_reverse_iterator_is_valid, ____alias_loc_id_61, ____chimes_did_disable40); return ____chimes_ret_var_13; ;
 # 624 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "list_reverse_iterator_is_valid", &____must_manage_list_reverse_iterator_is_valid, ____alias_loc_id_61, ____chimes_did_disable40); }
 
 bool
 # 621 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9480,9 +9480,9 @@ kmalloc_quick(int size)
 # 641 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 642 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454493490UL, "kmalloc", &____must_manage_kmalloc, ____alias_loc_id_63, ____chimes_did_disable41); return r;
+  void *____chimes_ret_var_14; ; ____chimes_ret_var_14 = (r); rm_stack(true, 10498980943454493756UL, "kmalloc", &____must_manage_kmalloc, ____alias_loc_id_62, ____chimes_did_disable41); return ____chimes_ret_var_14; ;
 # 643 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493756UL, "kmalloc", &____must_manage_kmalloc, ____alias_loc_id_62, ____chimes_did_disable41); }
 
 void *
 # 632 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9494,7 +9494,7 @@ transform_to_cuda_quick( node * root,
 # 648 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      bool verbose)
 # 649 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable42 = new_stack((void *)(&transform_to_cuda), "transform_to_cuda", &____must_manage_transform_to_cuda, 2, 0, (size_t)(10498980943454489415UL), (size_t)(0UL)) ; struct timeval two;
+{const int ____chimes_did_disable42 = new_stack((void *)(&transform_to_cuda), "transform_to_cuda", &____must_manage_transform_to_cuda, 2, 0, (size_t)(10498980943454489487UL), (size_t)(0UL)) ; struct timeval two;
 struct timeval one;
  if (____must_checkpoint_transform_to_cuda_two_0 || ____must_checkpoint_transform_to_cuda_one_0) { register_stack_vars(2, "transform_to_cuda|two|0", &____must_checkpoint_transform_to_cuda_two_0, "%struct.timeval = type { i64, i64 }", (void *)(&two), (size_t)16, 0, 1, 0, "transform_to_cuda|one|0", &____must_checkpoint_transform_to_cuda_one_0, "%struct.timeval = type { i64, i64 }", (void *)(&one), (size_t)16, 0, 1, 0); } ; ;
 # 650 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9509,7 +9509,7 @@ struct timeval one;
 # 655 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  malloc_size = size*sizeof(record) + max_nodes*sizeof(knode);
 # 656 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- mem = (char*)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(malloc_size, 10498980943454493489UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 656); exit(-1); } _tmp; });
+ mem = (char*)({ void *_tmp; ; if (!(_tmp = malloc_wrapper(malloc_size, 10498980943454493755UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 656); exit(-1); } _tmp; });
 # 657 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if(mem==__null){
 # 658 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9664,10 +9664,10 @@ struct timeval one;
  printf("Tree transformation took %f\n", time);
 # 747 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 748 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(false, 0UL, "transform_to_cuda", &____must_manage_transform_to_cuda, ____alias_loc_id_64, ____chimes_did_disable42); return mem_used;
+  long ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (mem_used); rm_stack(false, 0UL, "transform_to_cuda", &____must_manage_transform_to_cuda, ____alias_loc_id_63, ____chimes_did_disable42); return ____chimes_ret_var_15; ;
 # 749 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 750 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "transform_to_cuda", &____must_manage_transform_to_cuda, ____alias_loc_id_63, ____chimes_did_disable42); }
 
 long
 # 647 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9683,7 +9683,7 @@ findRange_quick( node * root,
 # 756 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    int end)
 # 757 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable43 = new_stack((void *)(&findRange), "findRange", &____must_manage_findRange, 3, 0, (size_t)(10498980943454489587UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable43 = new_stack((void *)(&findRange), "findRange", &____must_manage_findRange, 3, 0, (size_t)(10498980943454489671UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 758 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 759 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
@@ -9691,12 +9691,12 @@ findRange_quick( node * root,
   node *c; c = (({ calling_npm("find_leaf", 0); find_leaf_npm(root, start, false); })) ;
 # 761 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 762 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (c == __null) {rm_stack(true, 10498980943454494185UL, "findRange", &____must_manage_findRange, ____alias_loc_id_67, ____chimes_did_disable43); return __null; };
+ if (c == __null) { list_t *____chimes_ret_var_16; ; ____chimes_ret_var_16 = (__null); rm_stack(true, 10498980943454494454UL, "findRange", &____must_manage_findRange, ____alias_loc_id_66, ____chimes_did_disable43); return ____chimes_ret_var_16; ; };
 # 763 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 764 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_t *retList; retList = ((list_t *)({
     void *_tmp;
-    if (!(_tmp = malloc_wrapper(sizeof(list_t), 10498980943454494185UL, 0, 0))) {
+    if (!(_tmp = malloc_wrapper(sizeof(list_t), 10498980943454494454UL, 0, 0))) {
         fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 764);
         exit(-1);
     }
@@ -9737,9 +9737,9 @@ findRange_quick( node * root,
 # 782 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 783 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454494185UL, "findRange", &____must_manage_findRange, ____alias_loc_id_67, ____chimes_did_disable43); return retList;
+  list_t *____chimes_ret_var_17; ; ____chimes_ret_var_17 = (retList); rm_stack(true, 10498980943454494454UL, "findRange", &____must_manage_findRange, ____alias_loc_id_66, ____chimes_did_disable43); return ____chimes_ret_var_17; ;
 # 784 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454494454UL, "findRange", &____must_manage_findRange, ____alias_loc_id_66, ____chimes_did_disable43); }
 
 list_t *
 # 754 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9818,7 +9818,7 @@ void
 # 822 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 enqueue_quick( node* new_node )
 # 823 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable46 = new_stack((void *)(&enqueue), "enqueue", &____must_manage_enqueue, 1, 0, (size_t)(10498980943454493178UL)) ; ; ;
+{const int ____chimes_did_disable46 = new_stack((void *)(&enqueue), "enqueue", &____must_manage_enqueue, 1, 0, (size_t)(10498980943454493441UL)) ; ; ;
 # 824 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *c; ;
 # 825 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9846,7 +9846,7 @@ enqueue_quick( node* new_node )
 # 836 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 837 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "enqueue", &____must_manage_enqueue, ____alias_loc_id_65, ____chimes_did_disable46); }
+rm_stack(false, 0UL, "enqueue", &____must_manage_enqueue, ____alias_loc_id_64, ____chimes_did_disable46); }
 
 void
 # 822 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9864,9 +9864,9 @@ dequeue_quick( void )
 # 845 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  n->next = __null;
 # 846 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454493178UL, "dequeue", &____must_manage_dequeue, ____alias_loc_id_66, ____chimes_did_disable47); return n;
+  node *____chimes_ret_var_18; ; ____chimes_ret_var_18 = (n); rm_stack(true, 10498980943454493441UL, "dequeue", &____must_manage_dequeue, ____alias_loc_id_65, ____chimes_did_disable47); return ____chimes_ret_var_18; ;
 # 847 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "dequeue", &____must_manage_dequeue, ____alias_loc_id_65, ____chimes_did_disable47); }
 
 node *
 # 841 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9876,7 +9876,7 @@ void
 # 851 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 print_leaves_quick( node* root )
 # 852 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable48 = new_stack((void *)(&print_leaves), "print_leaves", &____must_manage_print_leaves, 1, 0, (size_t)(10498980943454489852UL)) ; ; ;
+{const int ____chimes_did_disable48 = new_stack((void *)(&print_leaves), "print_leaves", &____must_manage_print_leaves, 1, 0, (size_t)(10498980943454489944UL)) ; ; ;
 # 853 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
 # 854 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9886,7 +9886,7 @@ print_leaves_quick( node* root )
 # 856 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   printf("Empty tree.\n");
 # 857 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "print_leaves", &____must_manage_print_leaves, ____alias_loc_id_69, ____chimes_did_disable48); return;
+  rm_stack(false, 0UL, "print_leaves", &____must_manage_print_leaves, ____alias_loc_id_68, ____chimes_did_disable48); return;
 # 858 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 859 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9914,7 +9914,7 @@ print_leaves_quick( node* root )
 # 876 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  printf("\n");
 # 877 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "print_leaves", &____must_manage_print_leaves, ____alias_loc_id_69, ____chimes_did_disable48); }
+rm_stack(false, 0UL, "print_leaves", &____must_manage_print_leaves, ____alias_loc_id_68, ____chimes_did_disable48); }
 
 void
 # 851 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9924,7 +9924,7 @@ int
 # 881 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 height_quick( node* root )
 # 882 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable49 = new_stack((void *)(&height), "height", &____must_manage_height, 1, 0, (size_t)(10498980943454489883UL)) ; ; ;
+{const int ____chimes_did_disable49 = new_stack((void *)(&height), "height", &____must_manage_height, 1, 0, (size_t)(10498980943454489979UL)) ; ; ;
 # 883 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int h; h = (0) ;
 # 884 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9938,9 +9938,9 @@ height_quick( node* root )
 # 888 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 889 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(false, 0UL, "height", &____must_manage_height, ____alias_loc_id_70, ____chimes_did_disable49); return h;
+  int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (h); rm_stack(false, 0UL, "height", &____must_manage_height, ____alias_loc_id_69, ____chimes_did_disable49); return ____chimes_ret_var_19; ;
 # 890 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "height", &____must_manage_height, ____alias_loc_id_69, ____chimes_did_disable49); }
 
 int
 # 881 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9950,7 +9950,7 @@ int
 # 894 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 path_to_root_quick( node* root, node* child )
 # 895 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable50 = new_stack((void *)(&path_to_root), "path_to_root", &____must_manage_path_to_root, 2, 0, (size_t)(10498980943454489912UL), (size_t)(10498980943454489913UL)) ; ; ;
+{const int ____chimes_did_disable50 = new_stack((void *)(&path_to_root), "path_to_root", &____must_manage_path_to_root, 2, 0, (size_t)(10498980943454490012UL), (size_t)(10498980943454490013UL)) ; ; ;
 # 896 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int length; length = (0) ;
 # 897 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9964,9 +9964,9 @@ path_to_root_quick( node* root, node* child )
 # 901 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 902 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(false, 0UL, "path_to_root", &____must_manage_path_to_root, ____alias_loc_id_71, ____chimes_did_disable50); return length;
+  int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (length); rm_stack(false, 0UL, "path_to_root", &____must_manage_path_to_root, ____alias_loc_id_70, ____chimes_did_disable50); return ____chimes_ret_var_20; ;
 # 903 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "path_to_root", &____must_manage_path_to_root, ____alias_loc_id_70, ____chimes_did_disable50); }
 
 int
 # 894 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -9976,7 +9976,7 @@ void
 # 907 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 print_tree_quick( node* root )
 # 908 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable51 = new_stack((void *)(&print_tree), "print_tree", &____must_manage_print_tree, 1, 0, (size_t)(10498980943454490074UL)) ; ; ;
+{const int ____chimes_did_disable51 = new_stack((void *)(&print_tree), "print_tree", &____must_manage_print_tree, 1, 0, (size_t)(10498980943454490174UL)) ; ; ;
 # 909 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 910 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *n; n = (__null) ;
@@ -9992,7 +9992,7 @@ print_tree_quick( node* root )
 # 916 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   printf("Empty tree.\n");
 # 917 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "print_tree", &____must_manage_print_tree, ____alias_loc_id_72, ____chimes_did_disable51); return;
+  rm_stack(false, 0UL, "print_tree", &____must_manage_print_tree, ____alias_loc_id_71, ____chimes_did_disable51); return;
 # 918 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 919 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10042,7 +10042,7 @@ print_tree_quick( node* root )
 # 948 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  printf("\n");
 # 949 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "print_tree", &____must_manage_print_tree, ____alias_loc_id_72, ____chimes_did_disable51); }
+rm_stack(false, 0UL, "print_tree", &____must_manage_print_tree, ____alias_loc_id_71, ____chimes_did_disable51); }
 
 void
 # 907 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10052,7 +10052,7 @@ node *
 # 953 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 find_leaf_quick( node* root, int key, bool verbose )
 # 954 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable52 = new_stack((void *)(&find_leaf), "find_leaf", &____must_manage_find_leaf, 3, 0, (size_t)(10498980943454489741UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable52 = new_stack((void *)(&find_leaf), "find_leaf", &____must_manage_find_leaf, 3, 0, (size_t)(10498980943454489833UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 955 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 956 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int i; i = (0) ;
@@ -10063,7 +10063,7 @@ find_leaf_quick( node* root, int key, bool verbose )
 # 959 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (verbose) {printf("Empty tree.\n"); };
 # 961 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454489741UL, "find_leaf", &____must_manage_find_leaf, ____alias_loc_id_68, ____chimes_did_disable52); return c;
+   node *____chimes_ret_var_21; ; ____chimes_ret_var_21 = (c); rm_stack(true, 10498980943454489833UL, "find_leaf", &____must_manage_find_leaf, ____alias_loc_id_67, ____chimes_did_disable52); return ____chimes_ret_var_21; ;
 # 962 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 963 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10103,10 +10103,10 @@ find_leaf_quick( node* root, int key, bool verbose )
 # 986 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 987 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454489741UL, "find_leaf", &____must_manage_find_leaf, ____alias_loc_id_68, ____chimes_did_disable52); return c;
+  node *____chimes_ret_var_22; ; ____chimes_ret_var_22 = (c); rm_stack(true, 10498980943454489833UL, "find_leaf", &____must_manage_find_leaf, ____alias_loc_id_67, ____chimes_did_disable52); return ____chimes_ret_var_22; ;
 # 988 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 989 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454489833UL, "find_leaf", &____must_manage_find_leaf, ____alias_loc_id_67, ____chimes_did_disable52); }
 
 node *
 # 953 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10116,21 +10116,21 @@ record *
 # 993 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 find_quick( node* root, int key, bool verbose )
 # 994 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable53 = new_stack((void *)(&find), "find", &____must_manage_find, 3, 0, (size_t)(10498980943454490146UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable53 = new_stack((void *)(&find), "find", &____must_manage_find, 3, 0, (size_t)(10498980943454490258UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 995 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 996 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int i; i = (0) ;
 # 997 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *c; c = (({ calling_npm("find_leaf", 0); find_leaf_npm(root, key, verbose); })) ;
 # 998 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (c == __null) {rm_stack(true, 10498980943454490140UL, "find", &____must_manage_find, ____alias_loc_id_73, ____chimes_did_disable53); return __null; };
+ if (c == __null) { record *____chimes_ret_var_23; ; ____chimes_ret_var_23 = (__null); rm_stack(true, 10498980943454490250UL, "find", &____must_manage_find, ____alias_loc_id_72, ____chimes_did_disable53); return ____chimes_ret_var_23; ; };
 # 1000 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  for (i = 0; i < c->num_keys; i++) { if (c->keys[i] == key) {break; }; };
 # 1003 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (i == c->num_keys) {rm_stack(true, 10498980943454490140UL, "find", &____must_manage_find, ____alias_loc_id_73, ____chimes_did_disable53); return __null; } else {rm_stack(true, 10498980943454490140UL, "find", &____must_manage_find, ____alias_loc_id_73, ____chimes_did_disable53); return (record *)c->pointers[i]; } ;
+ if (i == c->num_keys) { record *____chimes_ret_var_24; ; ____chimes_ret_var_24 = (__null); rm_stack(true, 10498980943454490250UL, "find", &____must_manage_find, ____alias_loc_id_72, ____chimes_did_disable53); return ____chimes_ret_var_24; ; } else { record *____chimes_ret_var_25; ; ____chimes_ret_var_25 = ((record *)c->pointers[i]); rm_stack(true, 10498980943454490250UL, "find", &____must_manage_find, ____alias_loc_id_72, ____chimes_did_disable53); return ____chimes_ret_var_25; ; } ;
 # 1007 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1008 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(true, 10498980943454490140UL, "find", &____must_manage_find, ____alias_loc_id_73, ____chimes_did_disable53); }
+rm_stack(true, 10498980943454490250UL, "find", &____must_manage_find, ____alias_loc_id_72, ____chimes_did_disable53); }
 
 record *
 # 993 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10142,9 +10142,9 @@ cut_quick( int length )
 # 1013 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {const int ____chimes_did_disable54 = new_stack((void *)(&cut), "cut", &____must_manage_cut, 1, 0, (size_t)(0UL)) ; ; ;
 # 1014 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (length % 2 == 0) {rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_74, ____chimes_did_disable54); return length/2; } else {rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_74, ____chimes_did_disable54); return length/2 + 1; } ;
+ if (length % 2 == 0) { int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = (length/2); rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_73, ____chimes_did_disable54); return ____chimes_ret_var_26; ; } else { int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = (length/2 + 1); rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_73, ____chimes_did_disable54); return ____chimes_ret_var_27; ; } ;
 # 1018 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_74, ____chimes_did_disable54); }
+rm_stack(false, 0UL, "cut", &____must_manage_cut, ____alias_loc_id_73, ____chimes_did_disable54); }
 
 int
 # 1012 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10158,7 +10158,7 @@ make_record_quick(int value)
 # 1028 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   record *new_record; new_record = ((record *)({
     void *_tmp;
-    if (!(_tmp = malloc_wrapper(sizeof(record), 10498980943454490197UL, 0, 0))) {
+    if (!(_tmp = malloc_wrapper(sizeof(record), 10498980943454490318UL, 0, 0))) {
         fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1028);
         exit(-1);
     }
@@ -10179,9 +10179,9 @@ make_record_quick(int value)
 # 1035 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1036 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490197UL, "make_record", &____must_manage_make_record, ____alias_loc_id_75, ____chimes_did_disable55); return new_record;
+  record *____chimes_ret_var_28; ; ____chimes_ret_var_28 = (new_record); rm_stack(true, 10498980943454490318UL, "make_record", &____must_manage_make_record, ____alias_loc_id_74, ____chimes_did_disable55); return ____chimes_ret_var_28; ;
 # 1037 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454490318UL, "make_record", &____must_manage_make_record, ____alias_loc_id_74, ____chimes_did_disable55); }
 
 record *
 # 1026 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10195,7 +10195,7 @@ make_node_quick( void )
 # 1043 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *new_node; ;
 # 1044 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node = (node *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof(node), 10498980943454490214UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1044); exit(-1); } _tmp; });
+ new_node = (node *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(sizeof(node), 10498980943454490339UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1044); exit(-1); } _tmp; });
 # 1045 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node == __null) {
 # 1046 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10205,7 +10205,7 @@ make_node_quick( void )
 # 1048 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1049 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper((order - 1) * sizeof(int), 10498980943454493178UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1049); exit(-1); } _tmp; });
+ new_node->keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper((order - 1) * sizeof(int), 10498980943454493441UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1049); exit(-1); } _tmp; });
 # 1050 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->keys == __null) {
 # 1051 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10215,7 +10215,7 @@ make_node_quick( void )
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->pointers = (void **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454493178UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1054); exit(-1); } _tmp; });
+ new_node->pointers = (void **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454493441UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1054); exit(-1); } _tmp; });
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->pointers == __null) {
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10233,9 +10233,9 @@ make_node_quick( void )
 # 1062 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->next = __null;
 # 1063 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490214UL, "make_node", &____must_manage_make_node, ____alias_loc_id_76, ____chimes_did_disable56); return new_node;
+  node *____chimes_ret_var_29; ; ____chimes_ret_var_29 = (new_node); rm_stack(true, 10498980943454490339UL, "make_node", &____must_manage_make_node, ____alias_loc_id_75, ____chimes_did_disable56); return ____chimes_ret_var_29; ;
 # 1064 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454490339UL, "make_node", &____must_manage_make_node, ____alias_loc_id_75, ____chimes_did_disable56); }
 
 node *
 # 1041 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10251,9 +10251,9 @@ make_leaf_quick( void )
 # 1071 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  leaf->is_leaf = true;
 # 1072 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490304UL, "make_leaf", &____must_manage_make_leaf, ____alias_loc_id_77, ____chimes_did_disable57); return leaf;
+  node *____chimes_ret_var_30; ; ____chimes_ret_var_30 = (leaf); rm_stack(true, 10498980943454490433UL, "make_leaf", &____must_manage_make_leaf, ____alias_loc_id_76, ____chimes_did_disable57); return ____chimes_ret_var_30; ;
 # 1073 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454490433UL, "make_leaf", &____must_manage_make_leaf, ____alias_loc_id_76, ____chimes_did_disable57); }
 
 node *
 # 1068 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10263,7 +10263,7 @@ int
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 get_left_index_quick(node* parent, node* left)
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable58 = new_stack((void *)(&get_left_index), "get_left_index", &____must_manage_get_left_index, 2, 0, (size_t)(10498980943454490346UL), (size_t)(10498980943454490347UL)) ; ; ;
+{const int ____chimes_did_disable58 = new_stack((void *)(&get_left_index), "get_left_index", &____must_manage_get_left_index, 2, 0, (size_t)(10498980943454490482UL), (size_t)(10498980943454490483UL)) ; ; ;
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1080 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int left_index; left_index = (0) ;
@@ -10274,9 +10274,9 @@ get_left_index_quick(node* parent, node* left)
 # 1083 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  left_index++;
 # 1084 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(false, 0UL, "get_left_index", &____must_manage_get_left_index, ____alias_loc_id_78, ____chimes_did_disable58); return left_index;
+  int ____chimes_ret_var_31; ; ____chimes_ret_var_31 = (left_index); rm_stack(false, 0UL, "get_left_index", &____must_manage_get_left_index, ____alias_loc_id_77, ____chimes_did_disable58); return ____chimes_ret_var_31; ;
 # 1085 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(false, 0UL, "get_left_index", &____must_manage_get_left_index, ____alias_loc_id_77, ____chimes_did_disable58); }
 
 int
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10286,7 +10286,7 @@ node *
 # 1089 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 insert_into_leaf_quick( node* leaf, int key, record* pointer )
 # 1090 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable59 = new_stack((void *)(&insert_into_leaf), "insert_into_leaf", &____must_manage_insert_into_leaf, 3, 0, (size_t)(10498980943454490453UL), (size_t)(0UL), (size_t)(10498980943454490416UL)) ; ; ;
+{const int ____chimes_did_disable59 = new_stack((void *)(&insert_into_leaf), "insert_into_leaf", &____must_manage_insert_into_leaf, 3, 0, (size_t)(10498980943454490593UL), (size_t)(0UL), (size_t)(10498980943454490553UL)) ; ; ;
 # 1091 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; int insertion_point; ;
@@ -10313,9 +10313,9 @@ insert_into_leaf_quick( node* leaf, int key, record* pointer )
 # 1104 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  leaf->num_keys++;
 # 1105 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490453UL, "insert_into_leaf", &____must_manage_insert_into_leaf, ____alias_loc_id_79, ____chimes_did_disable59); return leaf;
+  node *____chimes_ret_var_32; ; ____chimes_ret_var_32 = (leaf); rm_stack(true, 10498980943454490593UL, "insert_into_leaf", &____must_manage_insert_into_leaf, ____alias_loc_id_78, ____chimes_did_disable59); return ____chimes_ret_var_32; ;
 # 1106 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454490593UL, "insert_into_leaf", &____must_manage_insert_into_leaf, ____alias_loc_id_78, ____chimes_did_disable59); }
 
 node *
 # 1089 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10331,7 +10331,7 @@ insert_into_leaf_after_splitting_quick( node* root,
 # 1113 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
          record* pointer)
 # 1114 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable60 = new_stack((void *)(&insert_into_leaf_after_splitting), "insert_into_leaf_after_splitting", &____must_manage_insert_into_leaf_after_splitting, 4, 0, (size_t)(10498980943454490807UL), (size_t)(10498980943454490808UL), (size_t)(0UL), (size_t)(10498980943454493178UL)) ; ; ;
+{const int ____chimes_did_disable60 = new_stack((void *)(&insert_into_leaf_after_splitting), "insert_into_leaf_after_splitting", &____must_manage_insert_into_leaf_after_splitting, 4, 0, (size_t)(10498980943454490951UL), (size_t)(10498980943454490952UL), (size_t)(0UL), (size_t)(10498980943454493441UL)) ; ; ;
 # 1115 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1116 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *new_leaf; ;
@@ -10346,7 +10346,7 @@ insert_into_leaf_after_splitting_quick( node* root,
  new_leaf = ({ calling_npm("make_leaf", 0); make_leaf_npm(); });
 # 1122 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1123 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454490648UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1123); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454490789UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1123); exit(-1); } _tmp; });
 # 1124 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1125 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10357,7 +10357,7 @@ insert_into_leaf_after_splitting_quick( node* root,
  }
 # 1128 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1129 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (void **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454490636UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1129); exit(-1); } _tmp; });
+ temp_pointers = (void **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454490777UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1129); exit(-1); } _tmp; });
 # 1130 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1131 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10419,9 +10419,9 @@ insert_into_leaf_after_splitting_quick( node* root,
  }
 # 1163 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1164 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_pointers, 10498980943454490636UL);
+ free_wrapper(temp_pointers, 10498980943454490777UL);
 # 1165 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_keys, 10498980943454490648UL);
+ free_wrapper(temp_keys, 10498980943454490789UL);
 # 1166 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1167 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_leaf->pointers[order - 1] = leaf->pointers[order - 1];
@@ -10439,9 +10439,9 @@ insert_into_leaf_after_splitting_quick( node* root,
  new_key = new_leaf->keys[0];
 # 1177 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1178 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490805UL, "insert_into_leaf_after_splitting", &____must_manage_insert_into_leaf_after_splitting, ____alias_loc_id_80, ____chimes_did_disable60); return ({ calling_npm("insert_into_parent", 0); insert_into_parent_npm(root, leaf, new_key, new_leaf); });
+  node *____chimes_ret_var_33; ; ____chimes_ret_var_33 = (({ calling_npm("insert_into_parent", 0); insert_into_parent_npm(root, leaf, new_key, new_leaf); })); rm_stack(true, 10498980943454490947UL, "insert_into_leaf_after_splitting", &____must_manage_insert_into_leaf_after_splitting, ____alias_loc_id_79, ____chimes_did_disable60); return ____chimes_ret_var_33; ;
 # 1179 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454490947UL, "insert_into_leaf_after_splitting", &____must_manage_insert_into_leaf_after_splitting, ____alias_loc_id_79, ____chimes_did_disable60); }
 
 node *
 # 1110 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10465,7 +10465,7 @@ insert_into_node_quick( node* root,
 # 1187 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      node* right)
 # 1188 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable61 = new_stack((void *)(&insert_into_node), "insert_into_node", &____must_manage_insert_into_node, 5, 0, (size_t)(10498980943454490960UL), (size_t)(10498980943454490961UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454490906UL)) ; ; ;
+{const int ____chimes_did_disable61 = new_stack((void *)(&insert_into_node), "insert_into_node", &____must_manage_insert_into_node, 5, 0, (size_t)(10498980943454491120UL), (size_t)(10498980943454491121UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454491063UL)) ; ; ;
 # 1189 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1190 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
@@ -10485,9 +10485,9 @@ insert_into_node_quick( node* root,
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  n->num_keys++;
 # 1199 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490960UL, "insert_into_node", &____must_manage_insert_into_node, ____alias_loc_id_82, ____chimes_did_disable61); return root;
+  node *____chimes_ret_var_34; ; ____chimes_ret_var_34 = (root); rm_stack(true, 10498980943454491120UL, "insert_into_node", &____must_manage_insert_into_node, ____alias_loc_id_81, ____chimes_did_disable61); return ____chimes_ret_var_34; ;
 # 1200 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491120UL, "insert_into_node", &____must_manage_insert_into_node, ____alias_loc_id_81, ____chimes_did_disable61); }
 
 node *
 # 1183 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10513,7 +10513,7 @@ insert_into_node_after_splitting_quick( node* root,
 # 1208 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
          node * right)
 # 1209 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable62 = new_stack((void *)(&insert_into_node_after_splitting), "insert_into_node_after_splitting", &____must_manage_insert_into_node_after_splitting, 5, 0, (size_t)(10498980943454491311UL), (size_t)(10498980943454491312UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454491293UL)) ; ; ;
+{const int ____chimes_did_disable62 = new_stack((void *)(&insert_into_node_after_splitting), "insert_into_node_after_splitting", &____must_manage_insert_into_node_after_splitting, 5, 0, (size_t)(10498980943454491475UL), (size_t)(10498980943454491476UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454491454UL)) ; ; ;
 # 1210 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1211 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; int j; int split; int k_prime; ;
@@ -10525,7 +10525,7 @@ insert_into_node_after_splitting_quick( node* root,
  node **temp_pointers; ;
 # 1225 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1225 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (node **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper((order + 1) * sizeof(node *), 10498980943454491154UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1225); exit(-1); } _tmp; });
+ temp_pointers = (node **) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper((order + 1) * sizeof(node *), 10498980943454491315UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1225); exit(-1); } _tmp; });
 # 1226 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1227 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10535,7 +10535,7 @@ insert_into_node_after_splitting_quick( node* root,
 # 1229 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1230 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454491167UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1230); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; ; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454491328UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1230); exit(-1); } _tmp; });
 # 1231 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1232 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10605,9 +10605,9 @@ insert_into_node_after_splitting_quick( node* root,
 # 1268 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->pointers[j] = temp_pointers[i];
 # 1269 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_pointers, 10498980943454491154UL);
+ free_wrapper(temp_pointers, 10498980943454491315UL);
 # 1270 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_keys, 10498980943454491167UL);
+ free_wrapper(temp_keys, 10498980943454491328UL);
 # 1271 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->parent = old_node->parent;
 # 1272 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10625,9 +10625,9 @@ insert_into_node_after_splitting_quick( node* root,
 # 1280 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1281 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1282 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454491309UL, "insert_into_node_after_splitting", &____must_manage_insert_into_node_after_splitting, ____alias_loc_id_83, ____chimes_did_disable62); return ({ calling_npm("insert_into_parent", 0); insert_into_parent_npm(root, old_node, k_prime, new_node); });
+  node *____chimes_ret_var_35; ; ____chimes_ret_var_35 = (({ calling_npm("insert_into_parent", 0); insert_into_parent_npm(root, old_node, k_prime, new_node); })); rm_stack(true, 10498980943454491471UL, "insert_into_node_after_splitting", &____must_manage_insert_into_node_after_splitting, ____alias_loc_id_82, ____chimes_did_disable62); return ____chimes_ret_var_35; ;
 # 1283 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491471UL, "insert_into_node_after_splitting", &____must_manage_insert_into_node_after_splitting, ____alias_loc_id_82, ____chimes_did_disable62); }
 
 node *
 # 1204 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10651,7 +10651,7 @@ insert_into_parent_quick( node* root,
 # 1290 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      node* right)
 # 1291 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable63 = new_stack((void *)(&insert_into_parent), "insert_into_parent", &____must_manage_insert_into_parent, 4, 0, (size_t)(10498980943454490870UL), (size_t)(10498980943454490871UL), (size_t)(0UL), (size_t)(10498980943454490873UL)) ; ; ;
+{const int ____chimes_did_disable63 = new_stack((void *)(&insert_into_parent), "insert_into_parent", &____must_manage_insert_into_parent, 4, 0, (size_t)(10498980943454491026UL), (size_t)(10498980943454491027UL), (size_t)(0UL), (size_t)(10498980943454491029UL)) ; ; ;
 # 1292 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1293 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int left_index; ;
@@ -10664,7 +10664,7 @@ insert_into_parent_quick( node* root,
 # 1298 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1299 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1300 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (parent == __null) {rm_stack(true, 10498980943454490865UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_81, ____chimes_did_disable63); return ({ calling_npm("insert_into_new_root", 0); insert_into_new_root_npm(left, key, right); }); };
+ if (parent == __null) { node *____chimes_ret_var_36; ; ____chimes_ret_var_36 = (({ calling_npm("insert_into_new_root", 0); insert_into_new_root_npm(left, key, right); })); rm_stack(true, 10498980943454491019UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_80, ____chimes_did_disable63); return ____chimes_ret_var_36; ; };
 # 1311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  left_index = ({ calling_npm("get_left_index", 0); get_left_index_npm(parent, left); });
@@ -10674,16 +10674,16 @@ insert_into_parent_quick( node* root,
 # 1315 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1316 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1317 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (parent->num_keys < order - 1) {rm_stack(true, 10498980943454490865UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_81, ____chimes_did_disable63); return ({ calling_npm("insert_into_node", 0); insert_into_node_npm(root, parent, left_index, key, right); }); };
+ if (parent->num_keys < order - 1) { node *____chimes_ret_var_37; ; ____chimes_ret_var_37 = (({ calling_npm("insert_into_node", 0); insert_into_node_npm(root, parent, left_index, key, right); })); rm_stack(true, 10498980943454491019UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_80, ____chimes_did_disable63); return ____chimes_ret_var_37; ; };
 # 1319 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1320 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1321 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1322 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1323 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1324 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454490865UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_81, ____chimes_did_disable63); return ({ calling_npm("insert_into_node_after_splitting", 0); insert_into_node_after_splitting_npm(root, parent, left_index, key, right); });
+  node *____chimes_ret_var_38; ; ____chimes_ret_var_38 = (({ calling_npm("insert_into_node_after_splitting", 0); insert_into_node_after_splitting_npm(root, parent, left_index, key, right); })); rm_stack(true, 10498980943454491019UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_80, ____chimes_did_disable63); return ____chimes_ret_var_38; ;
 # 1325 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491019UL, "insert_into_parent", &____must_manage_insert_into_parent, ____alias_loc_id_80, ____chimes_did_disable63); }
 
 node *
 # 1287 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10703,7 +10703,7 @@ insert_into_new_root_quick( node* left,
 # 1331 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       node* right)
 # 1332 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable64 = new_stack((void *)(&insert_into_new_root), "insert_into_new_root", &____must_manage_insert_into_new_root, 3, 0, (size_t)(10498980943454493178UL), (size_t)(0UL), (size_t)(10498980943454493178UL)) ; ; ;
+{const int ____chimes_did_disable64 = new_stack((void *)(&insert_into_new_root), "insert_into_new_root", &____must_manage_insert_into_new_root, 3, 0, (size_t)(10498980943454493441UL), (size_t)(0UL), (size_t)(10498980943454493441UL)) ; ; ;
 # 1333 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1334 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *root; root = (({ calling_npm("make_node", 0); make_node_npm(); })) ;
@@ -10722,9 +10722,9 @@ insert_into_new_root_quick( node* left,
 # 1341 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  right->parent = root;
 # 1342 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454493178UL, "insert_into_new_root", &____must_manage_insert_into_new_root, ____alias_loc_id_84, ____chimes_did_disable64); return root;
+  node *____chimes_ret_var_39; ; ____chimes_ret_var_39 = (root); rm_stack(true, 10498980943454493441UL, "insert_into_new_root", &____must_manage_insert_into_new_root, ____alias_loc_id_83, ____chimes_did_disable64); return ____chimes_ret_var_39; ;
 # 1343 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "insert_into_new_root", &____must_manage_insert_into_new_root, ____alias_loc_id_83, ____chimes_did_disable64); }
 
 node *
 # 1329 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10740,7 +10740,7 @@ start_new_tree_quick( int key,
 # 1348 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     record* pointer)
 # 1349 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable65 = new_stack((void *)(&start_new_tree), "start_new_tree", &____must_manage_start_new_tree, 2, 0, (size_t)(0UL), (size_t)(10498980943454493178UL)) ; ; ;
+{const int ____chimes_did_disable65 = new_stack((void *)(&start_new_tree), "start_new_tree", &____must_manage_start_new_tree, 2, 0, (size_t)(0UL), (size_t)(10498980943454493441UL)) ; ; ;
 # 1350 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1351 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   node *root; root = (({ calling_npm("make_leaf", 0); make_leaf_npm(); })) ;
@@ -10755,9 +10755,9 @@ start_new_tree_quick( int key,
 # 1356 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  root->num_keys++;
 # 1357 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454491378UL, "start_new_tree", &____must_manage_start_new_tree, ____alias_loc_id_85, ____chimes_did_disable65); return root;
+  node *____chimes_ret_var_40; ; ____chimes_ret_var_40 = (root); rm_stack(true, 10498980943454491547UL, "start_new_tree", &____must_manage_start_new_tree, ____alias_loc_id_84, ____chimes_did_disable65); return ____chimes_ret_var_40; ;
 # 1358 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491547UL, "start_new_tree", &____must_manage_start_new_tree, ____alias_loc_id_84, ____chimes_did_disable65); }
 
 node *
 # 1347 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10773,7 +10773,7 @@ insert_quick( node* root,
 # 1364 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   int value )
 # 1365 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable66 = new_stack((void *)(&insert), "insert", &____must_manage_insert, 3, 0, (size_t)(10498980943454491469UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable66 = new_stack((void *)(&insert), "insert", &____must_manage_insert, 3, 0, (size_t)(10498980943454491655UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 1366 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1367 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  record *pointer; ;
@@ -10782,7 +10782,7 @@ insert_quick( node* root,
 # 1369 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1370 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1371 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (({ calling_npm("find", 0); find_npm(root, key, false); }) != __null) {rm_stack(true, 10498980943454491469UL, "insert", &____must_manage_insert, ____alias_loc_id_86, ____chimes_did_disable66); return root; };
+ if (({ calling_npm("find", 0); find_npm(root, key, false); }) != __null) { node *____chimes_ret_var_41; ; ____chimes_ret_var_41 = (root); rm_stack(true, 10498980943454491655UL, "insert", &____must_manage_insert, ____alias_loc_id_85, ____chimes_did_disable66); return ____chimes_ret_var_41; ; };
 # 1373 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1374 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1375 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10790,7 +10790,7 @@ insert_quick( node* root,
 # 1376 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1377 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1378 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root == __null) {rm_stack(true, 10498980943454491469UL, "insert", &____must_manage_insert, ____alias_loc_id_86, ____chimes_did_disable66); return ({ calling_npm("start_new_tree", 0); start_new_tree_npm(key, pointer); }); };
+ if (root == __null) { node *____chimes_ret_var_42; ; ____chimes_ret_var_42 = (({ calling_npm("start_new_tree", 0); start_new_tree_npm(key, pointer); })); rm_stack(true, 10498980943454491655UL, "insert", &____must_manage_insert, ____alias_loc_id_85, ____chimes_did_disable66); return ____chimes_ret_var_42; ; };
 # 1380 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1381 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1382 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10802,15 +10802,15 @@ insert_quick( node* root,
 # 1386 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   leaf = ({ calling_npm("insert_into_leaf", 0); insert_into_leaf_npm(leaf, key, pointer); });
 # 1387 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(true, 10498980943454491469UL, "insert", &____must_manage_insert, ____alias_loc_id_86, ____chimes_did_disable66); return root;
+   node *____chimes_ret_var_43; ; ____chimes_ret_var_43 = (root); rm_stack(true, 10498980943454491655UL, "insert", &____must_manage_insert, ____alias_loc_id_85, ____chimes_did_disable66); return ____chimes_ret_var_43; ;
 # 1388 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1389 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1390 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1391 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454491469UL, "insert", &____must_manage_insert, ____alias_loc_id_86, ____chimes_did_disable66); return ({ calling_npm("insert_into_leaf_after_splitting", 0); insert_into_leaf_after_splitting_npm(root, leaf, key, pointer); });
+  node *____chimes_ret_var_44; ; ____chimes_ret_var_44 = (({ calling_npm("insert_into_leaf_after_splitting", 0); insert_into_leaf_after_splitting_npm(root, leaf, key, pointer); })); rm_stack(true, 10498980943454491655UL, "insert", &____must_manage_insert, ____alias_loc_id_85, ____chimes_did_disable66); return ____chimes_ret_var_44; ;
 # 1392 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491655UL, "insert", &____must_manage_insert, ____alias_loc_id_85, ____chimes_did_disable66); }
 
 node *
 # 1362 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10824,7 +10824,7 @@ int
 # 1400 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 get_neighbor_index_quick( node* n )
 # 1401 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable67 = new_stack((void *)(&get_neighbor_index), "get_neighbor_index", &____must_manage_get_neighbor_index, 1, 0, (size_t)(10498980943454491516UL)) ; ; ;
+{const int ____chimes_did_disable67 = new_stack((void *)(&get_neighbor_index), "get_neighbor_index", &____must_manage_get_neighbor_index, 1, 0, (size_t)(10498980943454491708UL)) ; ; ;
 # 1402 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1403 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
@@ -10836,7 +10836,7 @@ get_neighbor_index_quick( node* n )
 # 1409 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1410 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1411 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- for (i = 0; i <= n->parent->num_keys; i++) { if (n->parent->pointers[i] == n) {rm_stack(false, 0UL, "get_neighbor_index", &____must_manage_get_neighbor_index, ____alias_loc_id_87, ____chimes_did_disable67); return i - 1; }; };
+ for (i = 0; i <= n->parent->num_keys; i++) { if (n->parent->pointers[i] == n) { int ____chimes_ret_var_45; ; ____chimes_ret_var_45 = (i - 1); rm_stack(false, 0UL, "get_neighbor_index", &____must_manage_get_neighbor_index, ____alias_loc_id_86, ____chimes_did_disable67); return ____chimes_ret_var_45; ; }; };
 # 1414 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1415 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1416 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10845,7 +10845,7 @@ get_neighbor_index_quick( node* n )
 # 1418 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  exit(1);
 # 1419 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "get_neighbor_index", &____must_manage_get_neighbor_index, ____alias_loc_id_87, ____chimes_did_disable67); }
+rm_stack(false, 0UL, "get_neighbor_index", &____must_manage_get_neighbor_index, ____alias_loc_id_86, ____chimes_did_disable67); }
 
 int
 # 1400 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10859,7 +10859,7 @@ remove_entry_from_node_quick( node* n,
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       node * pointer)
 # 1426 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable68 = new_stack((void *)(&remove_entry_from_node), "remove_entry_from_node", &____must_manage_remove_entry_from_node, 3, 0, (size_t)(10498980943454491585UL), (size_t)(0UL), (size_t)(10498980943454491697UL)) ; ; ;
+{const int ____chimes_did_disable68 = new_stack((void *)(&remove_entry_from_node), "remove_entry_from_node", &____must_manage_remove_entry_from_node, 3, 0, (size_t)(10498980943454491778UL), (size_t)(0UL), (size_t)(10498980943454491893UL)) ; ; ;
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1428 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; int num_pointers; ;
@@ -10898,9 +10898,9 @@ remove_entry_from_node_quick( node* n,
  if (n->is_leaf) {for (i = n->num_keys; i < order - 1; i++) { n->pointers[i] = __null; }; } else {for (i = n->num_keys + 1; i < order; i++) { n->pointers[i] = __null; }; } ;
 # 1458 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1459 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454491585UL, "remove_entry_from_node", &____must_manage_remove_entry_from_node, ____alias_loc_id_88, ____chimes_did_disable68); return n;
+  node *____chimes_ret_var_46; ; ____chimes_ret_var_46 = (n); rm_stack(true, 10498980943454491778UL, "remove_entry_from_node", &____must_manage_remove_entry_from_node, ____alias_loc_id_87, ____chimes_did_disable68); return ____chimes_ret_var_46; ;
 # 1460 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454491778UL, "remove_entry_from_node", &____must_manage_remove_entry_from_node, ____alias_loc_id_87, ____chimes_did_disable68); }
 
 node*
 # 1423 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10914,7 +10914,7 @@ node*
 # 1464 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 adjust_root_quick(node* root)
 # 1465 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable69 = new_stack((void *)(&adjust_root), "adjust_root", &____must_manage_adjust_root, 1, 0, (size_t)(10498980943454493178UL)) ; ; ;
+{const int ____chimes_did_disable69 = new_stack((void *)(&adjust_root), "adjust_root", &____must_manage_adjust_root, 1, 0, (size_t)(10498980943454493441UL)) ; ; ;
 # 1466 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1467 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *new_root; ;
@@ -10925,7 +10925,7 @@ adjust_root_quick(node* root)
 # 1472 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1473 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1474 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->num_keys > 0) {rm_stack(true, 10498980943454493178UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_89, ____chimes_did_disable69); return root; };
+ if (root->num_keys > 0) { node *____chimes_ret_var_47; ; ____chimes_ret_var_47 = (root); rm_stack(true, 10498980943454493441UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_88, ____chimes_did_disable69); return ____chimes_ret_var_47; ; };
 # 1484 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1484 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (!root->is_leaf) {{
@@ -10937,16 +10937,16 @@ adjust_root_quick(node* root)
  }; } else {new_root = __null; } ;
 # 1494 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1495 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->keys, 10498980943454493178UL);
+ free_wrapper(root->keys, 10498980943454493441UL);
 # 1496 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->pointers, 10498980943454493178UL);
+ free_wrapper(root->pointers, 10498980943454493441UL);
 # 1497 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root, 10498980943454493178UL);
+ free_wrapper(root, 10498980943454493441UL);
 # 1498 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1499 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454493178UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_89, ____chimes_did_disable69); return new_root;
+  node *____chimes_ret_var_48; ; ____chimes_ret_var_48 = (new_root); rm_stack(true, 10498980943454493441UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_88, ____chimes_did_disable69); return ____chimes_ret_var_48; ;
 # 1500 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "adjust_root", &____must_manage_adjust_root, ____alias_loc_id_88, ____chimes_did_disable69); }
 
 node*
 # 1464 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -10964,7 +10964,7 @@ coalesce_nodes_quick( node* root,
 # 1508 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     int k_prime)
 # 1509 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    {const int ____chimes_did_disable70 = new_stack((void *)(&coalesce_nodes), "coalesce_nodes", &____must_manage_coalesce_nodes, 5, 0, (size_t)(10498980943454492149UL), (size_t)(10498980943454492125UL), (size_t)(10498980943454492125UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+    {const int ____chimes_did_disable70 = new_stack((void *)(&coalesce_nodes), "coalesce_nodes", &____must_manage_coalesce_nodes, 5, 0, (size_t)(10498980943454492357UL), (size_t)(10498980943454492330UL), (size_t)(10498980943454492330UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 1510 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1511 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; int j; int neighbor_insertion_index; int n_start; int n_end; int new_k_prime; ;
@@ -11119,11 +11119,11 @@ coalesce_nodes_quick( node* root,
 # 1627 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, n->parent, k_prime, n); });
 # 1628 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(n->keys, 10498980943454492125UL);
+  free_wrapper(n->keys, 10498980943454492330UL);
 # 1629 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(n->pointers, 10498980943454492125UL);
+  free_wrapper(n->pointers, 10498980943454492330UL);
 # 1630 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(n, 10498980943454492125UL);
+  free_wrapper(n, 10498980943454492330UL);
 # 1631 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }; } else {for (i = 0; i < n->parent->num_keys; i++) { if (n->parent->pointers[i + 1] == n) {
 # 1635 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11134,10 +11134,10 @@ coalesce_nodes_quick( node* root,
  }; }; }
 # 1638 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1639 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454492149UL, "coalesce_nodes", &____must_manage_coalesce_nodes, ____alias_loc_id_90, ____chimes_did_disable70); return root;
+  node *____chimes_ret_var_49; ; ____chimes_ret_var_49 = (root); rm_stack(true, 10498980943454492357UL, "coalesce_nodes", &____must_manage_coalesce_nodes, ____alias_loc_id_89, ____chimes_did_disable70); return ____chimes_ret_var_49; ;
 # 1640 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1641 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454492357UL, "coalesce_nodes", &____must_manage_coalesce_nodes, ____alias_loc_id_89, ____chimes_did_disable70); }
 
 node*
 # 1504 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11165,7 +11165,7 @@ redistribute_nodes_quick( node* root,
 # 1650 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      int k_prime)
 # 1651 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable71 = new_stack((void *)(&redistribute_nodes), "redistribute_nodes", &____must_manage_redistribute_nodes, 6, 0, (size_t)(10498980943454492703UL), (size_t)(10498980943454493178UL), (size_t)(10498980943454492705UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable71 = new_stack((void *)(&redistribute_nodes), "redistribute_nodes", &____must_manage_redistribute_nodes, 6, 0, (size_t)(10498980943454492931UL), (size_t)(10498980943454493441UL), (size_t)(10498980943454492933UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 1652 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1653 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
@@ -11275,9 +11275,9 @@ redistribute_nodes_quick( node* root,
  neighbor->num_keys--;
 # 1717 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1718 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454492703UL, "redistribute_nodes", &____must_manage_redistribute_nodes, ____alias_loc_id_92, ____chimes_did_disable71); return root;
+  node *____chimes_ret_var_50; ; ____chimes_ret_var_50 = (root); rm_stack(true, 10498980943454492931UL, "redistribute_nodes", &____must_manage_redistribute_nodes, ____alias_loc_id_91, ____chimes_did_disable71); return ____chimes_ret_var_50; ;
 # 1719 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454492931UL, "redistribute_nodes", &____must_manage_redistribute_nodes, ____alias_loc_id_91, ____chimes_did_disable71); }
 
 node*
 # 1645 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11303,7 +11303,7 @@ delete_entry_quick( node* root,
 # 1726 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     void* pointer )
 # 1727 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable72 = new_stack((void *)(&delete_entry), "delete_entry", &____must_manage_delete_entry, 4, 0, (size_t)(10498980943454492299UL), (size_t)(10498980943454492208UL), (size_t)(0UL), (size_t)(10498980943454492307UL)) ; ; ;
+{const int ____chimes_did_disable72 = new_stack((void *)(&delete_entry), "delete_entry", &____must_manage_delete_entry, 4, 0, (size_t)(10498980943454492521UL), (size_t)(10498980943454492423UL), (size_t)(0UL), (size_t)(10498980943454492531UL)) ; ; ;
 # 1728 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1729 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int min_keys; ;
@@ -11325,7 +11325,7 @@ delete_entry_quick( node* root,
 # 1740 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1741 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1742 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (n == root) {rm_stack(true, 10498980943454492299UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_91, ____chimes_did_disable72); return ({ calling_npm("adjust_root", 0); adjust_root_npm(root); }); };
+ if (n == root) { node *____chimes_ret_var_51; ; ____chimes_ret_var_51 = (({ calling_npm("adjust_root", 0); adjust_root_npm(root); })); rm_stack(true, 10498980943454492521UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_90, ____chimes_did_disable72); return ____chimes_ret_var_51; ; };
 # 1754 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1754 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  min_keys = n->is_leaf ? ({ calling_npm("cut", 0); cut_npm(order - 1); }) : ({ calling_npm("cut", 0); cut_npm(order); }) - 1;
@@ -11335,7 +11335,7 @@ delete_entry_quick( node* root,
 # 1758 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1759 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1760 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (n->num_keys >= min_keys) {rm_stack(true, 10498980943454492299UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_91, ____chimes_did_disable72); return root; };
+ if (n->num_keys >= min_keys) { node *____chimes_ret_var_52; ; ____chimes_ret_var_52 = (root); rm_stack(true, 10498980943454492521UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_90, ____chimes_did_disable72); return ____chimes_ret_var_52; ; };
 # 1775 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1775 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  neighbor_index = ({ calling_npm("get_neighbor_index", 0); get_neighbor_index_npm(n); });
@@ -11354,9 +11354,9 @@ delete_entry_quick( node* root,
 # 1783 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1784 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1785 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (neighbor->num_keys + n->num_keys < capacity) {rm_stack(true, 10498980943454492299UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_91, ____chimes_did_disable72); return ({ calling_npm("coalesce_nodes", 0); coalesce_nodes_npm(root, n, neighbor, neighbor_index, k_prime); }); } else {rm_stack(true, 10498980943454492299UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_91, ____chimes_did_disable72); return ({ calling_npm("redistribute_nodes", 0); redistribute_nodes_npm(root, n, neighbor, neighbor_index, k_prime_index, k_prime); }); } ;
+ if (neighbor->num_keys + n->num_keys < capacity) { node *____chimes_ret_var_53; ; ____chimes_ret_var_53 = (({ calling_npm("coalesce_nodes", 0); coalesce_nodes_npm(root, n, neighbor, neighbor_index, k_prime); })); rm_stack(true, 10498980943454492521UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_90, ____chimes_did_disable72); return ____chimes_ret_var_53; ; } else { node *____chimes_ret_var_54; ; ____chimes_ret_var_54 = (({ calling_npm("redistribute_nodes", 0); redistribute_nodes_npm(root, n, neighbor, neighbor_index, k_prime_index, k_prime); })); rm_stack(true, 10498980943454492521UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_90, ____chimes_did_disable72); return ____chimes_ret_var_54; ; } ;
 # 1792 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(true, 10498980943454492299UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_91, ____chimes_did_disable72); }
+rm_stack(true, 10498980943454492521UL, "delete_entry", &____must_manage_delete_entry, ____alias_loc_id_90, ____chimes_did_disable72); }
 
 node*
 # 1723 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11374,7 +11374,7 @@ deleteVal_quick( node* root,
 # 1797 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
    int key)
 # 1798 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable73 = new_stack((void *)(&deleteVal), "deleteVal", &____must_manage_deleteVal, 2, 0, (size_t)(10498980943454492746UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable73 = new_stack((void *)(&deleteVal), "deleteVal", &____must_manage_deleteVal, 2, 0, (size_t)(10498980943454492978UL), (size_t)(0UL)) ; ; ;
 # 1799 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1800 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node *key_leaf; ;
@@ -11388,15 +11388,15 @@ deleteVal_quick( node* root,
 # 1805 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (key_record != __null && key_leaf != __null) {
 # 1806 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(key_record, 10498980943454492721UL);
+  free_wrapper(key_record, 10498980943454492950UL);
 # 1807 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   root = ({ calling_npm("delete_entry", 0); delete_entry_npm(root, key_leaf, key, key_record); });
 # 1808 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1809 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454492746UL, "deleteVal", &____must_manage_deleteVal, ____alias_loc_id_93, ____chimes_did_disable73); return root;
+  node *____chimes_ret_var_55; ; ____chimes_ret_var_55 = (root); rm_stack(true, 10498980943454492978UL, "deleteVal", &____must_manage_deleteVal, ____alias_loc_id_92, ____chimes_did_disable73); return ____chimes_ret_var_55; ;
 # 1810 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454492978UL, "deleteVal", &____must_manage_deleteVal, ____alias_loc_id_92, ____chimes_did_disable73); }
 
 node*
 # 1796 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11408,19 +11408,19 @@ void
 # 1814 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 destroy_tree_nodes_quick(node* root)
 # 1815 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable74 = new_stack((void *)(&destroy_tree_nodes), "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, 1, 0, (size_t)(10498980943454492818UL)) ; ; ;
+{const int ____chimes_did_disable74 = new_stack((void *)(&destroy_tree_nodes), "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, 1, 0, (size_t)(10498980943454493050UL)) ; ; ;
 # 1816 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i; ;
 # 1817 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { free_wrapper(root->pointers[i], 10498980943454492772UL); }; } else {for (i = 0; i < root->num_keys + 1; i++) { ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
+ if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { free_wrapper(root->pointers[i], 10498980943454493004UL); }; } else {for (i = 0; i < root->num_keys + 1; i++) { ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm((node *) root->pointers[i]); }); }; } ;
 # 1823 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->pointers, 10498980943454492770UL);
+ free_wrapper(root->pointers, 10498980943454493002UL);
 # 1824 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->keys, 10498980943454492770UL);
+ free_wrapper(root->keys, 10498980943454493002UL);
 # 1825 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root, 10498980943454492818UL);
+ free_wrapper(root, 10498980943454493050UL);
 # 1826 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-rm_stack(false, 0UL, "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, ____alias_loc_id_94, ____chimes_did_disable74); }
+rm_stack(false, 0UL, "destroy_tree_nodes", &____must_manage_destroy_tree_nodes, ____alias_loc_id_93, ____chimes_did_disable74); }
 
 void
 # 1814 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11430,13 +11430,13 @@ node*
 # 1830 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 destroy_tree_quick(node* root)
 # 1831 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable75 = new_stack((void *)(&destroy_tree), "destroy_tree", &____must_manage_destroy_tree, 1, 0, (size_t)(10498980943454492825UL)) ; ; ;
+{const int ____chimes_did_disable75 = new_stack((void *)(&destroy_tree), "destroy_tree", &____must_manage_destroy_tree, 1, 0, (size_t)(10498980943454493061UL)) ; ; ;
 # 1832 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  ({ calling_npm("destroy_tree_nodes", 0); destroy_tree_nodes_npm(root); });
 # 1833 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(true, 10498980943454493178UL, "destroy_tree", &____must_manage_destroy_tree, ____alias_loc_id_95, ____chimes_did_disable75); return __null;
+  node *____chimes_ret_var_56; ; ____chimes_ret_var_56 = (__null); rm_stack(true, 10498980943454493441UL, "destroy_tree", &____must_manage_destroy_tree, ____alias_loc_id_94, ____chimes_did_disable75); return ____chimes_ret_var_56; ;
 # 1834 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+rm_stack(true, 10498980943454493441UL, "destroy_tree", &____must_manage_destroy_tree, ____alias_loc_id_94, ____chimes_did_disable75); }
 
 node*
 # 1830 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11448,7 +11448,7 @@ main_quick( int argc,
 # 1846 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   char** argv )
 # 1847 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-{const int ____chimes_did_disable76 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(10498980943454494017UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int *reclength;
+{const int ____chimes_did_disable76 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(10498980943454494286UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int *reclength;
 int *recstart;
 long *offset_2;
 long *lastKnode;
@@ -11502,7 +11502,7 @@ int cur_arg;
      if(argc>=cur_arg+1){
 # 1862 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1863 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        call_lbl_3: if(alias_group_changed(____alias_loc_id_11) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ calling((void*)isInteger, 3, ____alias_loc_id_11, 0UL, 1, (size_t)(10498980943454493178UL)); (isInteger)(argv[cur_arg + 1]); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_11); (*____chimes_extern_func_isInteger)(argv[cur_arg+1]); })))==1){
+        call_lbl_3: if(alias_group_changed(____alias_loc_id_11) || (____chimes_does_checkpoint_isInteger_npm ? ( ({ calling((void*)isInteger, 3, ____alias_loc_id_11, 0UL, 1, (size_t)(10498980943454493441UL)); (isInteger)(argv[cur_arg + 1]); }) ) : (({ calling_npm("isInteger", ____alias_loc_id_11); (*____chimes_extern_func_isInteger)(argv[cur_arg+1]); })))==1){
 # 1864 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   cores_arg = atoi(argv[cur_arg+1]);
 # 1865 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11510,7 +11510,7 @@ int cur_arg;
 # 1866 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     printf("ERROR: Wrong value to cores parameter, cannot be <=0\n");
 # 1867 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return -1;
+     int ____chimes_ret_var_57; ; ____chimes_ret_var_57 = (-1); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_57; ;
 # 1868 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   }
 # 1869 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11523,7 +11523,7 @@ int cur_arg;
 # 1873 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   printf("ERROR: Value to cores parameter in not a number\n");
 # 1874 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return 0;
+   int ____chimes_ret_var_58; ; ____chimes_ret_var_58 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_58; ;
 # 1875 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        }
 # 1876 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11546,7 +11546,7 @@ int cur_arg;
 # 1888 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        printf("ERROR: Missing value to -file parameter\n");
 # 1889 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return -1;
+        int ____chimes_ret_var_59; ; ____chimes_ret_var_59 = (-1); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_59; ;
 # 1890 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      }
 # 1891 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11567,7 +11567,7 @@ int cur_arg;
 # 1901 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        printf("ERROR: Missing value to command parameter\n");
 # 1902 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return -1;
+        int ____chimes_ret_var_60; ; ____chimes_ret_var_60 = (-1); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_60; ;
 # 1903 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      }
 # 1904 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11604,11 +11604,11 @@ int cur_arg;
 # 1924 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      lSize = ftell (commandFile);
 # 1925 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      call_lbl_23: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 23, ____alias_loc_id_12, 0UL, 1, (size_t)(10498980943454493050UL)); (rewind)(commandFile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_12); (*____chimes_extern_func_rewind)(commandFile); })));
+      call_lbl_23: (____chimes_does_checkpoint_rewind_npm ? ( ({ calling((void*)rewind, 23, ____alias_loc_id_12, 0UL, 1, (size_t)(10498980943454493305UL)); (rewind)(commandFile); }) ) : (({ calling_npm("rewind", ____alias_loc_id_12); (*____chimes_extern_func_rewind)(commandFile); })));
 # 1926 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1927 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1928 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     commandBuffer = (char*) ({ lbl_0: void *_tmp; if (____must_checkpoint_main__tmp_0 != 0) { register_stack_var("main|_tmp|0", &____must_checkpoint_main__tmp_0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(sizeof(char)*lSize, 10498980943454493193UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1928); exit(-1); } _tmp; });
+     commandBuffer = (char*) ({ lbl_0: void *_tmp; if (____must_checkpoint_main__tmp_0 != 0) { register_stack_var("main|_tmp|0", &____must_checkpoint_main__tmp_0, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(sizeof(char)*(lSize + 1), 10498980943454493456UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1928); exit(-1); } _tmp; });
 # 1929 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      if (commandBuffer == __null) {fprintf (stderr, "Command Buffer memory error",stderr); exit (2);}
 # 1930 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -11618,710 +11618,712 @@ int cur_arg;
 # 1933 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      if (result != lSize) {fprintf (stderr, "Command file reading error",stderr); exit (3);}
 # 1934 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     commandBuffer[lSize] = '\0';
 # 1935 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1936 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1937 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1938 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     fclose (commandFile);
 # 1939 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     fclose (commandFile);
 # 1940 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1941 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      char *sPointer; sPointer = (commandBuffer) ;
 # 1942 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     printf("Command Buffer: \n");
+      char *sPointer; sPointer = (commandBuffer) ;
 # 1943 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     printf("%s",commandBuffer);
+     printf("Command Buffer: \n");
 # 1944 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     printf("%s",commandBuffer);
 # 1945 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1946 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1947 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     pFile = fopen (output,"w+");
 # 1948 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     if (pFile==__null) {
+     pFile = fopen (output,"w+");
 # 1949 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       fprintf (stderr, "Fail to open %s !\n",output);
+     if (pFile==__null) {
 # 1950 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       exit (1);
+       fprintf (stderr, "Fail to open %s !\n",output);
 # 1951 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     }
+       exit (1);
 # 1952 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     fprintf(pFile,"******starting******\n");
+     }
 # 1953 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     fclose(pFile);
+     fprintf(pFile,"******starting******\n");
 # 1954 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     fclose(pFile);
 # 1955 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1956 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1957 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1958 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1959 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1960 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  ;
 # 1961 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
 # 1962 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- root = __null;
-# 1963 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
+# 1963 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ root = __null;
 # 1964 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
 # 1965 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   ;
 # 1966 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- order = 508;
+  ;
 # 1967 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ order = 508;
+# 1968 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  verbose_output = false;
-# 1976 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-# 1976 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (input_file != __null) {
 # 1977 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+# 1977 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ if (input_file != __null) {
 # 1978 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  printf("Getting input from file %s...\n", argv[1]);
 # 1979 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  printf("Getting input from file %s...\n", argv[1]);
 # 1980 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1981 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  file_pointer = fopen(input_file, "r");
 # 1982 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  if (file_pointer == __null) {
+  file_pointer = fopen(input_file, "r");
 # 1983 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   perror("Failure to open input file.");
+  if (file_pointer == __null) {
 # 1984 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   exit(1);
+   perror("Failure to open input file.");
 # 1985 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  }
+   exit(1);
 # 1986 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  }
 # 1987 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1988 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  fscanf(file_pointer, "%d\n", &input);
 # 1989 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  size = input;
+  fscanf(file_pointer, "%d\n", &input);
 # 1990 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  size = input;
 # 1991 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1992 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  alias_group_changed(____alias_loc_id_13); call_lbl_46: while (!(____chimes_does_checkpoint_feof_npm ? ( ({ calling((void*)feof, 46, ____alias_loc_id_13, 0UL, 1, (size_t)(10498980943454493151UL)); (feof)(file_pointer); }) ) : (({ calling_npm("feof", ____alias_loc_id_13); (*____chimes_extern_func_feof)(file_pointer); })))) {
 # 1993 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   fscanf(file_pointer, "%d\n", &input);
+  while (!feof(file_pointer)) {
 # 1994 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   root = ({ calling_npm("insert", 0); insert_npm(root, input, input); });
+   fscanf(file_pointer, "%d\n", &input);
 # 1995 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  }
+   root = ({ calling_npm("insert", 0); insert_npm(root, input, input); });
 # 1996 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  }
 # 1997 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1998 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  fclose(file_pointer);
 # 1999 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  fclose(file_pointer);
 # 2000 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2001 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2002 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- }
 # 2003 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- else{
-# 2004 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  printf("ERROR: Argument -file missing\n");
-# 2005 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return 0;
-# 2006 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
+# 2004 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ else{
+# 2005 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  printf("ERROR: Argument -file missing\n");
+# 2006 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   int ____chimes_ret_var_61; ; ____chimes_ret_var_61 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_61; ;
 # 2007 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ }
 # 2008 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2009 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2010 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2011 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2012 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- printf("Transforming data to a GPU suitable structure...\n");
 # 2013 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    mem_used = (({ calling_npm("transform_to_cuda", 0); transform_to_cuda_npm(root, 0); })) ;
+ printf("Transforming data to a GPU suitable structure...\n");
 # 2014 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- maxheight = ({ calling_npm("height", 0); height_npm(root); });
+    mem_used = (({ calling_npm("transform_to_cuda", 0); transform_to_cuda_npm(root, 0); })) ;
 # 2015 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    rootLoc = ((long)knodes - (long)mem) ;
+ maxheight = ({ calling_npm("height", 0); height_npm(root); });
 # 2016 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    rootLoc = ((long)knodes - (long)mem) ;
 # 2017 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2018 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2019 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2020 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    commandPointer = (commandBuffer) ;
 # 2021 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    commandPointer = (commandBuffer) ;
 # 2022 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- printf("Waiting for command\n");
 # 2023 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- printf("> ");
+ printf("Waiting for command\n");
 # 2024 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- while (sscanf(commandPointer, "%c", &instruction) != (-1)) {
+ printf("> ");
 # 2025 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   commandPointer++;
+ while (sscanf(commandPointer, "%c", &instruction) != (-1)) {
 # 2026 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  switch (instruction) {
+   commandPointer++;
 # 2027 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  switch (instruction) {
 # 2028 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2029 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2030 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2031 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'i':
 # 2032 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'i':
 # 2033 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_55: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 55, ____alias_loc_id_22, 0UL, 2, (size_t)(10498980943454494090UL), (size_t)(10498980943454492845UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_22); (*____chimes_extern_func_scanf)("%d", &input); })));
+   {
 # 2034 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_56: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 56, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+     call_lbl_54: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 54, ____alias_loc_id_21, 0UL, 2, (size_t)(10498980943454494359UL), (size_t)(10498980943454493085UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_21); (*____chimes_extern_func_scanf)("%d", &input); })));
 # 2035 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    root = ({ calling_npm("insert", 0); insert_npm(root, input, input); });
+     call_lbl_55: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 55, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2036 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
+    root = ({ calling_npm("insert", 0); insert_npm(root, input, input); });
 # 2037 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
 # 2038 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2039 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2040 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2041 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2042 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2043 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2044 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'f':
 # 2045 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'f':
 # 2046 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+   {
 # 2047 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2048 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2049 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2050 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2051 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2052 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'p':
 # 2053 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'p':
 # 2054 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_57: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 57, ____alias_loc_id_23, 0UL, 2, (size_t)(10498980943454494090UL), (size_t)(10498980943454492845UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_23); (*____chimes_extern_func_scanf)("%d", &input); })));
+   {
 # 2055 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_58: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 58, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+     call_lbl_56: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 56, ____alias_loc_id_22, 0UL, 2, (size_t)(10498980943454494359UL), (size_t)(10498980943454493085UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_22); (*____chimes_extern_func_scanf)("%d", &input); })));
 # 2056 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    r = ({ calling_npm("find", 0); find_npm(root, input, instruction == 'p'); });
+     call_lbl_57: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 57, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2057 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    r = ({ calling_npm("find", 0); find_npm(root, input, instruction == 'p'); });
+# 2058 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     if (r == __null) {printf("Record not found under key %d.\n", input); } else {printf("Record found: %d\n",r->value); } ;
-# 2061 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
 # 2062 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2063 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2064 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2065 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2066 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2067 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2068 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'd':
 # 2069 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'd':
 # 2070 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_61: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 61, ____alias_loc_id_24, 0UL, 2, (size_t)(10498980943454494090UL), (size_t)(10498980943454492845UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_24); (*____chimes_extern_func_scanf)("%d", &input); })));
+   {
 # 2071 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_62: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 62, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+     call_lbl_60: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 60, ____alias_loc_id_23, 0UL, 2, (size_t)(10498980943454494359UL), (size_t)(10498980943454493085UL)); (scanf)("%d", &input); }) ) : (({ calling_npm("scanf", ____alias_loc_id_23); (*____chimes_extern_func_scanf)("%d", &input); })));
 # 2072 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    root = (node *) ({ calling_npm("deleteVal", 0); deleteVal_npm(root, input); });
+     call_lbl_61: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 61, 0, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", 0); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2073 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
+    root = (node *) ({ calling_npm("deleteVal", 0); deleteVal_npm(root, input); });
 # 2074 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
 # 2075 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2076 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2077 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2078 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2079 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2080 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2081 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'x':
 # 2082 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'x':
 # 2083 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    alias_group_changed(____alias_loc_id_14); call_lbl_64: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 64, ____alias_loc_id_14, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_14); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+   {
 # 2084 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    root = ({ calling_npm("destroy_tree", 0); destroy_tree_npm(root); });
+    alias_group_changed(____alias_loc_id_14); call_lbl_63: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 63, ____alias_loc_id_14, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_14); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2085 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
+    root = ({ calling_npm("destroy_tree", 0); destroy_tree_npm(root); });
 # 2086 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
 # 2087 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2088 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2089 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2090 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2091 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2092 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2093 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'l':
 # 2094 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'l':
 # 2095 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    alias_group_changed(____alias_loc_id_15); call_lbl_66: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 66, ____alias_loc_id_15, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_15); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+   {
 # 2096 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ({ calling_npm("print_leaves", 0); print_leaves_npm(root); });
+    alias_group_changed(____alias_loc_id_15); call_lbl_65: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 65, ____alias_loc_id_15, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_15); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2097 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    ({ calling_npm("print_leaves", 0); print_leaves_npm(root); });
 # 2098 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2099 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2100 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2101 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2102 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2103 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2104 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 't':
 # 2105 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 't':
 # 2106 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    alias_group_changed(____alias_loc_id_16); call_lbl_68: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 68, ____alias_loc_id_16, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_16); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+   {
 # 2107 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
+    alias_group_changed(____alias_loc_id_16); call_lbl_67: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 67, ____alias_loc_id_16, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_16); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2108 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    ({ calling_npm("print_tree", 0); print_tree_npm(root); });
 # 2109 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2110 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2111 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2112 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2113 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2114 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2115 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'v':
 # 2116 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'v':
 # 2117 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    alias_group_changed(____alias_loc_id_17); call_lbl_70: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 70, ____alias_loc_id_17, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_17); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+   {
 # 2118 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    verbose_output = !verbose_output;
+    alias_group_changed(____alias_loc_id_17); call_lbl_69: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 69, ____alias_loc_id_17, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_17); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2119 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    verbose_output = !verbose_output;
 # 2120 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2121 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2122 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2123 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2124 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2125 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2126 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'q':
 # 2127 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'q':
 # 2128 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    alias_group_changed(____alias_loc_id_21); call_lbl_72: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 72, ____alias_loc_id_21, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_21); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
+   {
 # 2129 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return 0;
+    alias_group_changed(____alias_loc_id_20); call_lbl_71: while ((____chimes_does_checkpoint_getchar_npm ? ( ({ calling((void*)getchar, 71, ____alias_loc_id_20, 0UL, 0); (getchar)(); }) ) : (({ calling_npm("getchar", ____alias_loc_id_20); (*____chimes_extern_func_getchar)(); }))) != (int)'\n');
 # 2130 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+     int ____chimes_ret_var_62; ; ____chimes_ret_var_62 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_62; ;
 # 2131 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2132 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2133 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2134 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2135 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2136 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'k':
 # 2137 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'k':
 # 2138 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   {
 # 2139 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2140 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_1: int count; if (____must_checkpoint_main_count_0 != 0) { register_stack_var("main|count|0", &____must_checkpoint_main_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } ;
 # 2141 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    sscanf(commandPointer, "%d", &count);
+     lbl_1: int count; if (____must_checkpoint_main_count_0 != 0) { register_stack_var("main|count|0", &____must_checkpoint_main_count_0, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } ;
 # 2142 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    while(*commandPointer!=(char)32 && *commandPointer!='\n')
+    sscanf(commandPointer, "%d", &count);
 # 2143 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      commandPointer++;
+    while(*commandPointer!=(char)32 && *commandPointer!='\n')
 # 2144 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+      commandPointer++;
 # 2145 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    printf("\n ******command: k count=%d \n",count);
 # 2146 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    printf("\n ******command: k count=%d \n",count);
 # 2147 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    if(count > 65535){
 # 2148 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     printf("ERROR: Number of requested querries should be 65,535 at most. (limited by # of CUDA blocks)\n");
+    if(count > 65535){
 # 2149 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     exit(0);
+     printf("ERROR: Number of requested querries should be 65,535 at most. (limited by # of CUDA blocks)\n");
 # 2150 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     exit(0);
 # 2151 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2152 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2153 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-       records = ((record *)mem) ;
 # 2154 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     long records_elem; records_elem = ((long)rootLoc / sizeof(record)) ;
+       records = ((record *)mem) ;
 # 2155 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     long records_mem; records_mem = ((long)rootLoc) ;
+     long records_elem; records_elem = ((long)rootLoc / sizeof(record)) ;
 # 2156 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     long records_mem; records_mem = ((long)rootLoc) ;
 # 2157 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2158 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2159 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_2: knode *knodes; if (____must_checkpoint_main_knodes_0 != 0) { register_stack_var("main|knodes|0", &____must_checkpoint_main_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); } knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2160 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_3: long knodes_elem; if (____must_checkpoint_main_knodes_elem_0 != 0) { register_stack_var("main|knodes_elem|0", &____must_checkpoint_main_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); } knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
+      lbl_2: knode *knodes; if (____must_checkpoint_main_knodes_0 != 0) { register_stack_var("main|knodes|0", &____must_checkpoint_main_knodes_0, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); } knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2161 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
+      lbl_3: long knodes_elem; if (____must_checkpoint_main_knodes_elem_0 != 0) { register_stack_var("main|knodes_elem|0", &____must_checkpoint_main_knodes_elem_0, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); } knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
 # 2162 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
 # 2163 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2164 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2165 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_4: long *currKnode; if (____must_checkpoint_main_currKnode_0 != 0) { register_stack_var("main|currKnode|0", &____must_checkpoint_main_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } ;
 # 2166 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ lbl_5: void *_tmp; if (____must_checkpoint_main__tmp_1 != 0) { register_stack_var("main|_tmp|1", &____must_checkpoint_main__tmp_1, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493495UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2166); exit(-1); } _tmp; });
+     lbl_4: long *currKnode; if (____must_checkpoint_main_currKnode_0 != 0) { register_stack_var("main|currKnode|0", &____must_checkpoint_main_currKnode_0, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } ;
 # 2167 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    currKnode = (long *)({ lbl_5: void *_tmp; if (____must_checkpoint_main__tmp_1 != 0) { register_stack_var("main|_tmp|1", &____must_checkpoint_main__tmp_1, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493761UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2167); exit(-1); } _tmp; });
 # 2168 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset(currKnode, 0, count*sizeof(long));
 # 2169 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset(currKnode, 0, count*sizeof(long));
 # 2170 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2171 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_6: long *offset; if (____must_checkpoint_main_offset_0 != 0) { register_stack_var("main|offset|0", &____must_checkpoint_main_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } ;
 # 2172 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ lbl_7: void *_tmp; if (____must_checkpoint_main__tmp_2 != 0) { register_stack_var("main|_tmp|2", &____must_checkpoint_main__tmp_2, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493496UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2172); exit(-1); } _tmp; });
+     lbl_6: long *offset; if (____must_checkpoint_main_offset_0 != 0) { register_stack_var("main|offset|0", &____must_checkpoint_main_offset_0, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } ;
 # 2173 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    offset = (long *)({ lbl_7: void *_tmp; if (____must_checkpoint_main__tmp_2 != 0) { register_stack_var("main|_tmp|2", &____must_checkpoint_main__tmp_2, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493762UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2173); exit(-1); } _tmp; });
 # 2174 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset(offset, 0, count*sizeof(long));
 # 2175 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset(offset, 0, count*sizeof(long));
 # 2176 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2177 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
 # 2178 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    keys = (int *)({ lbl_8: void *_tmp; if (____must_checkpoint_main__tmp_3 != 0) { register_stack_var("main|_tmp|3", &____must_checkpoint_main__tmp_3, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493445UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2178); exit(-1); } _tmp; });
+     ;
 # 2179 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    keys = (int *)({ lbl_8: void *_tmp; if (____must_checkpoint_main__tmp_3 != 0) { register_stack_var("main|_tmp|3", &____must_checkpoint_main__tmp_3, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493711UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2179); exit(-1); } _tmp; });
 # 2180 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_9: int i; if (____must_checkpoint_main_i_0 != 0) { register_stack_var("main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ;
 # 2181 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
+     lbl_9: int i; if (____must_checkpoint_main_i_0 != 0) { register_stack_var("main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ;
 # 2182 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     keys[i] = (rand()/(float)2147483647)*size;
+    for(i = 0; i < count; i++){
 # 2183 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     keys[i] = (rand()/(float)2147483647)*size;
 # 2184 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2185 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2186 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+# 2187 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
        ans = ((record *)({
      lbl_10: void *_tmp; if (____must_checkpoint_main__tmp_4 != 0) { register_stack_var("main|_tmp|4", &____must_checkpoint_main__tmp_4, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); }
-    if (!(_tmp = malloc_wrapper(sizeof(record) * count, 10498980943454493479UL, 0, 0))) {
-        fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2186);
+    if (!(_tmp = malloc_wrapper(sizeof(record) * count, 10498980943454493745UL, 0, 0))) {
+        fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2187);
         exit(-1);
     }
     _tmp;
 })) ;
-# 2187 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2188 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
 # 2189 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ans[i].value = -1;
+    for(i = 0; i < count; i++){
 # 2190 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     ans[i].value = -1;
 # 2191 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2192 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2193 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_93: (____chimes_does_checkpoint_kernel_cpu_npm ? ( ({ calling((void*)kernel_cpu, 93, ____alias_loc_id_18, 0UL, 11, (size_t)(0UL), (size_t)(10498980943454493489UL), (size_t)(10498980943454493490UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454493495UL), (size_t)(10498980943454493496UL), (size_t)(10498980943454493445UL), (size_t)(10498980943454493479UL)); (kernel_cpu)(cores_arg, records, knodes, knodes_elem, order, maxheight, count, currKnode, offset, keys, ans); }) ) : (({ calling_npm("kernel_cpu", ____alias_loc_id_18); (*____chimes_extern_func_kernel_cpu)(cores_arg, records, knodes, knodes_elem, order, maxheight, count, currKnode, offset, keys, ans); })));
-# 2218 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-# 2218 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    pFile = fopen (output,"aw+");
+# 2194 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     call_lbl_92: (____chimes_does_checkpoint_kernel_cpu_npm ? ( ({ calling((void*)kernel_cpu, 92, ____alias_loc_id_13, 0UL, 11, (size_t)(0UL), (size_t)(10498980943454493755UL), (size_t)(10498980943454493756UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454493761UL), (size_t)(10498980943454493762UL), (size_t)(10498980943454493711UL), (size_t)(10498980943454493745UL)); (kernel_cpu)(cores_arg, records, knodes, knodes_elem, order, maxheight, count, currKnode, offset, keys, ans); }) ) : (({ calling_npm("kernel_cpu", ____alias_loc_id_13); (*____chimes_extern_func_kernel_cpu)(cores_arg, records, knodes, knodes_elem, order, maxheight, count, currKnode, offset, keys, ans); })));
 # 2219 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    if (pFile==__null)
+# 2219 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    pFile = fopen (output,"aw+");
 # 2220 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      {
+    if (pFile==__null)
 # 2221 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        fprintf(stderr, "Fail to open %s !\n",output);
+      {
 # 2222 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-                    exit(1);
+        fprintf(stderr, "Fail to open %s !\n",output);
 # 2223 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      }
+                    exit(1);
 # 2224 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+      }
 # 2225 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    fprintf(pFile,"\n ******command: k count=%d \n",count);
 # 2226 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
+    fprintf(pFile,"\n ******command: k count=%d \n",count);
 # 2227 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      fprintf(pFile, "%d    %d\n",i, ans[i].value);
+    for(i = 0; i < count; i++){
 # 2228 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+      fprintf(pFile, "%d    %d\n",i, ans[i].value);
 # 2229 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    fprintf(pFile, " \n");
+    }
 # 2230 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-                                fclose(pFile);
+    fprintf(pFile, " \n");
 # 2231 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+                                fclose(pFile);
 # 2232 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2233 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(currKnode, 10498980943454493495UL);
 # 2234 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(offset, 10498980943454493496UL);
+    free_wrapper(currKnode, 10498980943454493761UL);
 # 2235 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(keys, 10498980943454493445UL);
+    free_wrapper(offset, 10498980943454493762UL);
 # 2236 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(ans, 10498980943454493479UL);
+    free_wrapper(keys, 10498980943454493711UL);
 # 2237 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    free_wrapper(ans, 10498980943454493745UL);
 # 2238 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2239 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
 # 2240 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    break;
 # 2241 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
 # 2242 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2243 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2244 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2245 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2246 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2247 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'r':
 # 2248 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'r':
 # 2249 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_11: int start; if (____must_checkpoint_main_start_0 != 0) { register_stack_var("main|start|0", &____must_checkpoint_main_start_0, "i32", (void *)(&start), (size_t)4, 0, 0, 0); } lbl_12: int end; if (____must_checkpoint_main_end_0 != 0) { register_stack_var("main|end|0", &____must_checkpoint_main_end_0, "i32", (void *)(&end), (size_t)4, 0, 0, 0); } ;
+   {
 # 2250 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_105: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 105, ____alias_loc_id_25, 0UL, 2, (size_t)(10498980943454494090UL), (size_t)(10498980943454492870UL)); (scanf)("%d", &start); }) ) : (({ calling_npm("scanf", ____alias_loc_id_25); (*____chimes_extern_func_scanf)("%d", &start); })));
+     lbl_11: int start; if (____must_checkpoint_main_start_0 != 0) { register_stack_var("main|start|0", &____must_checkpoint_main_start_0, "i32", (void *)(&start), (size_t)4, 0, 0, 0); } lbl_12: int end; if (____must_checkpoint_main_end_0 != 0) { register_stack_var("main|end|0", &____must_checkpoint_main_end_0, "i32", (void *)(&end), (size_t)4, 0, 0, 0); } ;
 # 2251 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_106: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 106, ____alias_loc_id_19, 0UL, 2, (size_t)(10498980943454494090UL), (size_t)(10498980943454492871UL)); (scanf)("%d", &end); }) ) : (({ calling_npm("scanf", ____alias_loc_id_19); (*____chimes_extern_func_scanf)("%d", &end); })));
+     call_lbl_104: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 104, ____alias_loc_id_24, 0UL, 2, (size_t)(10498980943454494359UL), (size_t)(10498980943454493112UL)); (scanf)("%d", &start); }) ) : (({ calling_npm("scanf", ____alias_loc_id_24); (*____chimes_extern_func_scanf)("%d", &start); })));
 # 2252 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    if(start > end){
+     call_lbl_105: (____chimes_does_checkpoint_scanf_npm ? ( ({ calling((void*)scanf, 105, ____alias_loc_id_18, 0UL, 2, (size_t)(10498980943454494359UL), (size_t)(10498980943454493113UL)); (scanf)("%d", &end); }) ) : (({ calling_npm("scanf", ____alias_loc_id_18); (*____chimes_extern_func_scanf)("%d", &end); })));
 # 2253 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     input = start;
+    if(start > end){
 # 2254 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     start = end;
+     input = start;
 # 2255 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     end = input;
+     start = end;
 # 2256 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     end = input;
 # 2257 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    printf("For range %d to %d, ",start,end);
+    }
 # 2258 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
+    printf("For range %d to %d, ",start,end);
 # 2259 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    ansList = ({ calling_npm("findRange", 0); findRange_npm(root, start, end); });
+     ;
 # 2260 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
+    ansList = ({ calling_npm("findRange", 0); findRange_npm(root, start, end); });
 # 2261 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+        ____chimes_unroll_var_7 = (({ calling_npm("list_get_length", 0); list_get_length_npm(ansList); })) ; printf("%d records found\n", ____chimes_unroll_var_7);
 # 2262 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(ansList, 10498980943454493573UL);
 # 2263 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
+    free_wrapper(ansList, 10498980943454493839UL);
 # 2264 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
+    break;
 # 2265 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2266 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2267 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2268 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2269 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2270 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   case 'j':
 # 2271 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   case 'j':
 # 2272 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   {
 # 2273 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2274 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_13: int count; if (____must_checkpoint_main_count_1 != 0) { register_stack_var("main|count|1", &____must_checkpoint_main_count_1, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } ;
 # 2275 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    sscanf(commandPointer, "%d", &count);
+     lbl_13: int count; if (____must_checkpoint_main_count_1 != 0) { register_stack_var("main|count|1", &____must_checkpoint_main_count_1, "i32", (void *)(&count), (size_t)4, 0, 0, 0); } ;
 # 2276 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    while(*commandPointer!=32 && *commandPointer!='\n')
+    sscanf(commandPointer, "%d", &count);
 # 2277 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      commandPointer++;
-# 2278 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-# 2279 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
-# 2280 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    sscanf(commandPointer, "%d", &rSize);
-# 2281 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
     while(*commandPointer!=32 && *commandPointer!='\n')
-# 2282 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+# 2278 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
       commandPointer++;
+# 2279 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+# 2280 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     ;
+# 2281 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    sscanf(commandPointer, "%d", &rSize);
+# 2282 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    while(*commandPointer!=32 && *commandPointer!='\n')
 # 2283 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+      commandPointer++;
 # 2284 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    printf("\n******command: j count=%d, rSize=%d \n",count, rSize);
 # 2285 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    printf("\n******command: j count=%d, rSize=%d \n",count, rSize);
 # 2286 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    if(rSize > size || rSize < 0) {
 # 2287 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     printf("Search range size is larger than data set size %d.\n", (int)size);
+    if(rSize > size || rSize < 0) {
 # 2288 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     exit(0);
+     printf("Search range size is larger than data set size %d.\n", (int)size);
 # 2289 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     exit(0);
 # 2290 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2291 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2292 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_14: knode *knodes; if (____must_checkpoint_main_knodes_1 != 0) { register_stack_var("main|knodes|1", &____must_checkpoint_main_knodes_1, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); } knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2293 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      lbl_15: long knodes_elem; if (____must_checkpoint_main_knodes_elem_1 != 0) { register_stack_var("main|knodes_elem|1", &____must_checkpoint_main_knodes_elem_1, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); } knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
+      lbl_14: knode *knodes; if (____must_checkpoint_main_knodes_1 != 0) { register_stack_var("main|knodes|1", &____must_checkpoint_main_knodes_1, "%struct.knode*", (void *)(&knodes), (size_t)8, 1, 0, 0); } knodes = ((knode *)((long)mem + (long)rootLoc)) ;
 # 2294 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
+      lbl_15: long knodes_elem; if (____must_checkpoint_main_knodes_elem_1 != 0) { register_stack_var("main|knodes_elem|1", &____must_checkpoint_main_knodes_elem_1, "i64", (void *)(&knodes_elem), (size_t)8, 0, 0, 0); } knodes_elem = (((long)(mem_used) - (long)rootLoc) / sizeof(knode)) ;
 # 2295 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     long knodes_mem; knodes_mem = ((long)(mem_used) - (long)rootLoc) ;
 # 2296 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2297 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2298 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_16: long *currKnode; if (____must_checkpoint_main_currKnode_1 != 0) { register_stack_var("main|currKnode|1", &____must_checkpoint_main_currKnode_1, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } ;
 # 2299 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    currKnode = (long *)({ lbl_17: void *_tmp; if (____must_checkpoint_main__tmp_5 != 0) { register_stack_var("main|_tmp|5", &____must_checkpoint_main__tmp_5, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493929UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2299); exit(-1); } _tmp; });
+     lbl_16: long *currKnode; if (____must_checkpoint_main_currKnode_1 != 0) { register_stack_var("main|currKnode|1", &____must_checkpoint_main_currKnode_1, "i64*", (void *)(&currKnode), (size_t)8, 1, 0, 0); } ;
 # 2300 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    currKnode = (long *)({ lbl_17: void *_tmp; if (____must_checkpoint_main__tmp_5 != 0) { register_stack_var("main|_tmp|5", &____must_checkpoint_main__tmp_5, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494195UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2300); exit(-1); } _tmp; });
 # 2301 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset (currKnode, 0, count*sizeof(long));
 # 2302 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset (currKnode, 0, count*sizeof(long));
 # 2303 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2304 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_18: long *offset; if (____must_checkpoint_main_offset_1 != 0) { register_stack_var("main|offset|1", &____must_checkpoint_main_offset_1, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } ;
 # 2305 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset = (long *)({ lbl_19: void *_tmp; if (____must_checkpoint_main__tmp_6 != 0) { register_stack_var("main|_tmp|6", &____must_checkpoint_main__tmp_6, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493930UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2305); exit(-1); } _tmp; });
+     lbl_18: long *offset; if (____must_checkpoint_main_offset_1 != 0) { register_stack_var("main|offset|1", &____must_checkpoint_main_offset_1, "i64*", (void *)(&offset), (size_t)8, 1, 0, 0); } ;
 # 2306 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    offset = (long *)({ lbl_19: void *_tmp; if (____must_checkpoint_main__tmp_6 != 0) { register_stack_var("main|_tmp|6", &____must_checkpoint_main__tmp_6, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494196UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2306); exit(-1); } _tmp; });
 # 2307 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset (offset, 0, count*sizeof(long));
 # 2308 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset (offset, 0, count*sizeof(long));
 # 2309 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2310 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
 # 2311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    lastKnode = (long *)({ lbl_20: void *_tmp; if (____must_checkpoint_main__tmp_7 != 0) { register_stack_var("main|_tmp|7", &____must_checkpoint_main__tmp_7, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2311); exit(-1); } _tmp; });
+     ;
 # 2312 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    lastKnode = (long *)({ lbl_20: void *_tmp; if (____must_checkpoint_main__tmp_7 != 0) { register_stack_var("main|_tmp|7", &____must_checkpoint_main__tmp_7, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494197UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2312); exit(-1); } _tmp; });
 # 2313 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset (lastKnode, 0, count*sizeof(long));
 # 2314 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset (lastKnode, 0, count*sizeof(long));
 # 2315 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2316 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
 # 2317 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    offset_2 = (long *)({ lbl_21: void *_tmp; if (____must_checkpoint_main__tmp_8 != 0) { register_stack_var("main|_tmp|8", &____must_checkpoint_main__tmp_8, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454493932UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2317); exit(-1); } _tmp; });
+     ;
 # 2318 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    offset_2 = (long *)({ lbl_21: void *_tmp; if (____must_checkpoint_main__tmp_8 != 0) { register_stack_var("main|_tmp|8", &____must_checkpoint_main__tmp_8, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(long), 10498980943454494198UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2318); exit(-1); } _tmp; });
 # 2319 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    memset (offset_2, 0, count*sizeof(long));
 # 2320 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    memset (offset_2, 0, count*sizeof(long));
 # 2321 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2322 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_22: int *start; if (____must_checkpoint_main_start_1 != 0) { register_stack_var("main|start|1", &____must_checkpoint_main_start_1, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); } ;
 # 2323 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    start = (int *)({ lbl_23: void *_tmp; if (____must_checkpoint_main__tmp_9 != 0) { register_stack_var("main|_tmp|9", &____must_checkpoint_main__tmp_9, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493807UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2323); exit(-1); } _tmp; });
+     lbl_22: int *start; if (____must_checkpoint_main_start_1 != 0) { register_stack_var("main|start|1", &____must_checkpoint_main_start_1, "i32*", (void *)(&start), (size_t)8, 1, 0, 0); } ;
 # 2324 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_24: int *end; if (____must_checkpoint_main_end_1 != 0) { register_stack_var("main|end|1", &____must_checkpoint_main_end_1, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); } ;
+    start = (int *)({ lbl_23: void *_tmp; if (____must_checkpoint_main__tmp_9 != 0) { register_stack_var("main|_tmp|9", &____must_checkpoint_main__tmp_9, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494073UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2324); exit(-1); } _tmp; });
 # 2325 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    end = (int *)({ lbl_25: void *_tmp; if (____must_checkpoint_main__tmp_10 != 0) { register_stack_var("main|_tmp|10", &____must_checkpoint_main__tmp_10, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493819UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2325); exit(-1); } _tmp; });
+     lbl_24: int *end; if (____must_checkpoint_main_end_1 != 0) { register_stack_var("main|end|1", &____must_checkpoint_main_end_1, "i32*", (void *)(&end), (size_t)8, 1, 0, 0); } ;
 # 2326 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    end = (int *)({ lbl_25: void *_tmp; if (____must_checkpoint_main__tmp_10 != 0) { register_stack_var("main|_tmp|10", &____must_checkpoint_main__tmp_10, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494085UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2326); exit(-1); } _tmp; });
 # 2327 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     lbl_26: int i; if (____must_checkpoint_main_i_1 != 0) { register_stack_var("main|i|1", &____must_checkpoint_main_i_1, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ;
 # 2328 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
+     lbl_26: int i; if (____must_checkpoint_main_i_1 != 0) { register_stack_var("main|i|1", &____must_checkpoint_main_i_1, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ;
 # 2329 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     start[i] = (rand()/(float)2147483647)*size;
+    for(i = 0; i < count; i++){
 # 2330 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     end[i] = start[i]+rSize;
+     start[i] = (rand()/(float)2147483647)*size;
 # 2331 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     if(end[i] >= size){
+     end[i] = start[i]+rSize;
 # 2332 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      start[i] = start[i] - (end[i] - size);
+     if(end[i] >= size){
 # 2333 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      end[i]= size-1;
+      start[i] = start[i] - (end[i] - size);
 # 2334 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     }
+      end[i]= size-1;
 # 2335 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     }
 # 2336 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2337 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2338 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     ;
 # 2339 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    recstart = (int *)({ lbl_27: void *_tmp; if (____must_checkpoint_main__tmp_11 != 0) { register_stack_var("main|_tmp|11", &____must_checkpoint_main__tmp_11, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493910UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2339); exit(-1); } _tmp; });
-# 2340 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
      ;
+# 2340 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    recstart = (int *)({ lbl_27: void *_tmp; if (____must_checkpoint_main__tmp_11 != 0) { register_stack_var("main|_tmp|11", &____must_checkpoint_main__tmp_11, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494176UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2340); exit(-1); } _tmp; });
 # 2341 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    reclength = (int *)({ lbl_28: void *_tmp; if (____must_checkpoint_main__tmp_12 != 0) { register_stack_var("main|_tmp|12", &____must_checkpoint_main__tmp_12, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454493915UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2341); exit(-1); } _tmp; });
+     ;
 # 2342 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    reclength = (int *)({ lbl_28: void *_tmp; if (____must_checkpoint_main__tmp_12 != 0) { register_stack_var("main|_tmp|12", &____must_checkpoint_main__tmp_12, "i8*", (void *)(&_tmp), (size_t)8, 1, 0, 0); } ; if (!(_tmp = malloc_wrapper(count*sizeof(int), 10498980943454494181UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 2342); exit(-1); } _tmp; });
 # 2343 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
 # 2344 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     recstart[i] = 0;
+    for(i = 0; i < count; i++){
 # 2345 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     reclength[i] = 0;
+     recstart[i] = 0;
 # 2346 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+     reclength[i] = 0;
 # 2347 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    }
 # 2348 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2349 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-     call_lbl_144: (____chimes_does_checkpoint_kernel_cpu_2_npm ? ( ({ calling((void*)kernel_cpu_2, 144, ____alias_loc_id_20, 0UL, 14, (size_t)(0UL), (size_t)(10498980943454493924UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454493929UL), (size_t)(10498980943454493930UL), (size_t)(10498980943454493931UL), (size_t)(10498980943454493932UL), (size_t)(10498980943454493807UL), (size_t)(10498980943454493819UL), (size_t)(10498980943454493910UL), (size_t)(10498980943454493915UL)); (kernel_cpu_2)(cores_arg, knodes, knodes_elem, order, maxheight, count, currKnode, offset, lastKnode, offset_2, start, end, recstart, reclength); }) ) : (({ calling_npm("kernel_cpu_2", ____alias_loc_id_20); (*____chimes_extern_func_kernel_cpu_2)(cores_arg, knodes, knodes_elem, order, maxheight, count, currKnode, offset, lastKnode, offset_2, start, end, recstart, reclength); })));
-# 2375 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-# 2375 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    pFile = fopen (output,"aw+");
+# 2350 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+     call_lbl_143: (____chimes_does_checkpoint_kernel_cpu_2_npm ? ( ({ calling((void*)kernel_cpu_2, 143, ____alias_loc_id_19, 0UL, 14, (size_t)(0UL), (size_t)(10498980943454494190UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10498980943454494195UL), (size_t)(10498980943454494196UL), (size_t)(10498980943454494197UL), (size_t)(10498980943454494198UL), (size_t)(10498980943454494073UL), (size_t)(10498980943454494085UL), (size_t)(10498980943454494176UL), (size_t)(10498980943454494181UL)); (kernel_cpu_2)(cores_arg, knodes, knodes_elem, order, maxheight, count, currKnode, offset, lastKnode, offset_2, start, end, recstart, reclength); }) ) : (({ calling_npm("kernel_cpu_2", ____alias_loc_id_19); (*____chimes_extern_func_kernel_cpu_2)(cores_arg, knodes, knodes_elem, order, maxheight, count, currKnode, offset, lastKnode, offset_2, start, end, recstart, reclength); })));
 # 2376 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    if (pFile==__null)
+# 2376 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    pFile = fopen (output,"aw+");
 # 2377 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      {
+    if (pFile==__null)
 # 2378 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-        fprintf (stderr, "Fail to open %s !\n",output);
+      {
 # 2379 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-                    exit(1);
+        fprintf (stderr, "Fail to open %s !\n",output);
 # 2380 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      }
+                    exit(1);
 # 2381 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+      }
 # 2382 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    fprintf(pFile,"\n******command: j count=%d, rSize=%d \n",count, rSize);
 # 2383 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    for(i = 0; i < count; i++){
+    fprintf(pFile,"\n******command: j count=%d, rSize=%d \n",count, rSize);
 # 2384 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-      fprintf(pFile, "%d    %d    %d\n",i, recstart[i],reclength[i]);
+    for(i = 0; i < count; i++){
 # 2385 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    }
+      fprintf(pFile, "%d    %d    %d\n",i, recstart[i],reclength[i]);
 # 2386 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    fprintf(pFile, " \n");
+    }
 # 2387 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-                                fclose(pFile);
+    fprintf(pFile, " \n");
 # 2388 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+                                fclose(pFile);
 # 2389 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2390 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(currKnode, 10498980943454493929UL);
 # 2391 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(offset, 10498980943454493930UL);
+    free_wrapper(currKnode, 10498980943454494195UL);
 # 2392 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(lastKnode, 10498980943454493931UL);
+    free_wrapper(offset, 10498980943454494196UL);
 # 2393 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(offset_2, 10498980943454493932UL);
+    free_wrapper(lastKnode, 10498980943454494197UL);
 # 2394 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(start, 10498980943454493807UL);
+    free_wrapper(offset_2, 10498980943454494198UL);
 # 2395 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(end, 10498980943454493819UL);
+    free_wrapper(start, 10498980943454494073UL);
 # 2396 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(recstart, 10498980943454493910UL);
+    free_wrapper(end, 10498980943454494085UL);
 # 2397 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    free_wrapper(reclength, 10498980943454493915UL);
+    free_wrapper(recstart, 10498980943454494176UL);
 # 2398 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    free_wrapper(reclength, 10498980943454494181UL);
 # 2399 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2400 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
 # 2401 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    break;
 # 2402 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
 # 2403 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2404 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2405 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2406 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2407 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2408 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   default:
 # 2409 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   {
+   default:
 # 2410 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   {
 # 2411 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2412 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-    break;
 # 2413 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+    break;
 # 2414 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-   }
 # 2415 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+   }
 # 2416 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  }
 # 2417 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  printf("> ");
+  }
 # 2418 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  printf("> ");
 # 2419 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- }
 # 2420 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- printf("\n");
+ }
 # 2421 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+ printf("\n");
 # 2422 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2423 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2424 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2425 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 2426 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(mem, 10498980943454493489UL);
 # 2427 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_96, ____chimes_did_disable76); return 0;
+ free_wrapper(mem, 10498980943454493755UL);
 # 2428 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+  int ____chimes_ret_var_63; ; ____chimes_ret_var_63 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); return ____chimes_ret_var_63; ;
 # 2429 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-}
+# 2430 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_95, ____chimes_did_disable76); }
 
 int
 # 1845 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12499,7 +12501,7 @@ list_insert_head_npm( list_t *l,
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_t *i;
 # 291 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 291); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 291); exit(-1); } _tmp; });
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_init_npm(i, v);
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12537,7 +12539,7 @@ list_insert_tail_npm( list_t *l,
   list_item_t *i;
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 312); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 312); exit(-1); } _tmp; });
 # 313 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_init_npm(i, v);
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12576,7 +12578,7 @@ list_insert_before_npm( list_t *l,
   list_item_t *i;
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 333); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 333); exit(-1); } _tmp; });
 # 334 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_init_npm(i, v);
 # 335 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12622,7 +12624,7 @@ list_insert_after_npm( list_t *l,
   list_item_t *i;
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  i = (list_item_t *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488877UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 359); exit(-1); } _tmp; });
+  i = (list_item_t *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof (*i), 10498980943454488931UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 359); exit(-1); } _tmp; });
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   list_item_init_npm(i, v);
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -12661,7 +12663,7 @@ list_get_head_item_npm(list_t *l)
 # 460 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 461 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return l->head;
+   list_item_t * ____chimes_ret_var_1; ____chimes_ret_var_1 = (l->head); return ____chimes_ret_var_1; ;
 # 462 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12671,7 +12673,7 @@ list_get_tail_item_npm(list_t *l)
 # 466 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return l->tail;
+   list_item_t * ____chimes_ret_var_2; ____chimes_ret_var_2 = (l->tail); return ____chimes_ret_var_2; ;
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12681,7 +12683,7 @@ list_get_head_npm(list_t *l)
 # 485 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 486 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return l->head ? l->head->datum : __null;
+   void * ____chimes_ret_var_4; ____chimes_ret_var_4 = (l->head ? l->head->datum : __null); return ____chimes_ret_var_4; ;
 # 487 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12691,7 +12693,7 @@ list_get_tail_npm(list_t *l)
 # 491 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 492 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return l->tail ? l->tail->datum : __null;
+   void * ____chimes_ret_var_5; ____chimes_ret_var_5 = (l->tail ? l->tail->datum : __null); return ____chimes_ret_var_5; ;
 # 493 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12701,7 +12703,7 @@ list_get_length_npm(list_t *l)
 # 497 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 498 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return l->length;
+   uint32_t ____chimes_ret_var_6; ____chimes_ret_var_6 = (l->length); return ____chimes_ret_var_6; ;
 # 499 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12711,7 +12713,7 @@ list_is_empty_npm(list_t *l)
 # 503 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 504 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return (l->length == 0);
+   bool ____chimes_ret_var_7; ____chimes_ret_var_7 = ((l->length == 0)); return ____chimes_ret_var_7; ;
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12721,7 +12723,7 @@ list_not_empty_npm(list_t *l)
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return (l->length != 0);
+   bool ____chimes_ret_var_8; ____chimes_ret_var_8 = ((l->length != 0)); return ____chimes_ret_var_8; ;
 # 511 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12745,7 +12747,7 @@ list_item_get_datum_npm(list_item_t *li)
 # 544 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 545 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return li->datum;
+   void * ____chimes_ret_var_9; ____chimes_ret_var_9 = (li->datum); return ____chimes_ret_var_9; ;
 # 546 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12797,7 +12799,7 @@ list_iterator_get_datum_npm(list_iterator_t *li)
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 578 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return *li ? (*li)->datum : __null;
+   void * ____chimes_ret_var_10; ____chimes_ret_var_10 = (*li ? (*li)->datum : __null); return ____chimes_ret_var_10; ;
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12807,7 +12809,7 @@ list_iterator_is_valid_npm(list_iterator_t *li)
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return (*li != __null);
+   bool ____chimes_ret_var_11; ____chimes_ret_var_11 = ((*li != __null)); return ____chimes_ret_var_11; ;
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12859,7 +12861,7 @@ list_reverse_iterator_get_datum_npm(list_reverse_iterator_t *li)
 # 616 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 617 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return *li ? (*li)->datum : __null;
+   void * ____chimes_ret_var_12; ____chimes_ret_var_12 = (*li ? (*li)->datum : __null); return ____chimes_ret_var_12; ;
 # 618 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12869,7 +12871,7 @@ list_reverse_iterator_is_valid_npm(list_reverse_iterator_t *li)
 # 622 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 623 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return (li != __null);
+   bool ____chimes_ret_var_13; ____chimes_ret_var_13 = ((li != __null)); return ____chimes_ret_var_13; ;
 # 624 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12893,7 +12895,7 @@ kmalloc_npm(int size)
 # 641 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 642 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return r;
+  void * ____chimes_ret_var_14; ____chimes_ret_var_14 = (r); return ____chimes_ret_var_14; ;
 # 643 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -12916,7 +12918,7 @@ transform_to_cuda_npm( node * root,
 # 655 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  malloc_size = size*sizeof(record) + max_nodes*sizeof(knode);
 # 656 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- mem = (char*)({ void *_tmp; if (!(_tmp = malloc_wrapper(malloc_size, 10498980943454493489UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 656); exit(-1); } _tmp; });
+ mem = (char*)({ void *_tmp; if (!(_tmp = malloc_wrapper(malloc_size, 10498980943454493755UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 656); exit(-1); } _tmp; });
 # 657 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if(mem==__null){
 # 658 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13071,7 +13073,7 @@ transform_to_cuda_npm( node * root,
  printf("Tree transformation took %f\n", time);
 # 747 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 748 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return mem_used;
+  long ____chimes_ret_var_15; ____chimes_ret_var_15 = (mem_used); return ____chimes_ret_var_15; ;
 # 749 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 750 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
@@ -13092,10 +13094,10 @@ findRange_npm( node * root,
  node * c = find_leaf_npm(root, start, false);
 # 761 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 762 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (c == __null) {return __null; };
+ if (c == __null) { list_t * ____chimes_ret_var_16; ____chimes_ret_var_16 = (__null); return ____chimes_ret_var_16; ; };
 # 763 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 764 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- list_t * retList = (list_t *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof(list_t), 10498980943454494185UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 764); exit(-1); } _tmp; });
+ list_t * retList = (list_t *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof(list_t), 10498980943454494454UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 764); exit(-1); } _tmp; });
 # 765 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  list_init_npm(retList, __null, __null);
 # 766 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13131,7 +13133,7 @@ findRange_npm( node * root,
 # 782 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 783 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return retList;
+  list_t * ____chimes_ret_var_17; ____chimes_ret_var_17 = (retList); return ____chimes_ret_var_17; ;
 # 784 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13238,7 +13240,7 @@ dequeue_npm( void )
 # 845 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  n->next = __null;
 # 846 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return n;
+  node * ____chimes_ret_var_18; ____chimes_ret_var_18 = (n); return ____chimes_ret_var_18; ;
 # 847 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13304,7 +13306,7 @@ height_npm( node* root )
 # 888 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 889 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return h;
+  int ____chimes_ret_var_19; ____chimes_ret_var_19 = (h); return ____chimes_ret_var_19; ;
 # 890 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13326,7 +13328,7 @@ path_to_root_npm( node* root, node* child )
 # 901 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 902 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return length;
+  int ____chimes_ret_var_20; ____chimes_ret_var_20 = (length); return ____chimes_ret_var_20; ;
 # 903 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13417,7 +13419,7 @@ find_leaf_npm( node* root, int key, bool verbose )
 # 959 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   if (verbose) {printf("Empty tree.\n"); };
 # 961 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return c;
+   node * ____chimes_ret_var_21; ____chimes_ret_var_21 = (c); return ____chimes_ret_var_21; ;
 # 962 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 963 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13457,7 +13459,7 @@ find_leaf_npm( node* root, int key, bool verbose )
 # 986 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 987 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return c;
+  node * ____chimes_ret_var_22; ____chimes_ret_var_22 = (c); return ____chimes_ret_var_22; ;
 # 988 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 989 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
@@ -13473,11 +13475,11 @@ find_npm( node* root, int key, bool verbose )
 # 997 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node * c = find_leaf_npm(root, key, verbose);
 # 998 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (c == __null) {return __null; };
+ if (c == __null) { record * ____chimes_ret_var_23; ____chimes_ret_var_23 = (__null); return ____chimes_ret_var_23; ; };
 # 1000 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  for (i = 0; i < c->num_keys; i++) { if (c->keys[i] == key) {break; }; };
 # 1003 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (i == c->num_keys) {return __null; } else {return (record *)c->pointers[i]; } ;
+ if (i == c->num_keys) { record * ____chimes_ret_var_24; ____chimes_ret_var_24 = (__null); return ____chimes_ret_var_24; ; } else { record * ____chimes_ret_var_25; ____chimes_ret_var_25 = ((record *)c->pointers[i]); return ____chimes_ret_var_25; ; } ;
 # 1007 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1008 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
@@ -13488,7 +13490,7 @@ cut_npm( int length )
 # 1013 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 1014 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (length % 2 == 0) {return length/2; } else {return length/2 + 1; } ;
+ if (length % 2 == 0) { int ____chimes_ret_var_26; ____chimes_ret_var_26 = (length/2); return ____chimes_ret_var_26; ; } else { int ____chimes_ret_var_27; ____chimes_ret_var_27 = (length/2 + 1); return ____chimes_ret_var_27; ; } ;
 # 1018 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13498,7 +13500,7 @@ make_record_npm(int value)
 # 1027 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 {
 # 1028 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- record * new_record = (record *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof(record), 10498980943454490197UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1028); exit(-1); } _tmp; });
+ record * new_record = (record *)({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof(record), 10498980943454490318UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1028); exit(-1); } _tmp; });
 # 1029 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_record == __null) {
 # 1030 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13514,7 +13516,7 @@ make_record_npm(int value)
 # 1035 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1036 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return new_record;
+  record * ____chimes_ret_var_28; ____chimes_ret_var_28 = (new_record); return ____chimes_ret_var_28; ;
 # 1037 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13526,7 +13528,7 @@ make_node_npm( void )
 # 1043 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  node * new_node;
 # 1044 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node = (node *) ({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof(node), 10498980943454490214UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1044); exit(-1); } _tmp; });
+ new_node = (node *) ({ void *_tmp; if (!(_tmp = malloc_wrapper(sizeof(node), 10498980943454490339UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1044); exit(-1); } _tmp; });
 # 1045 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node == __null) {
 # 1046 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13536,7 +13538,7 @@ make_node_npm( void )
 # 1048 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1049 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->keys = (int *) ({ void *_tmp; if (!(_tmp = malloc_wrapper((order - 1) * sizeof(int), 10498980943454493178UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1049); exit(-1); } _tmp; });
+ new_node->keys = (int *) ({ void *_tmp; if (!(_tmp = malloc_wrapper((order - 1) * sizeof(int), 10498980943454493441UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1049); exit(-1); } _tmp; });
 # 1050 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->keys == __null) {
 # 1051 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13546,7 +13548,7 @@ make_node_npm( void )
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- new_node->pointers = (void **) ({ void *_tmp; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454493178UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1054); exit(-1); } _tmp; });
+ new_node->pointers = (void **) ({ void *_tmp; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454493441UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1054); exit(-1); } _tmp; });
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (new_node->pointers == __null) {
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13564,7 +13566,7 @@ make_node_npm( void )
 # 1062 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->next = __null;
 # 1063 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return new_node;
+  node * ____chimes_ret_var_29; ____chimes_ret_var_29 = (new_node); return ____chimes_ret_var_29; ;
 # 1064 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13578,7 +13580,7 @@ make_leaf_npm( void )
 # 1071 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  leaf->is_leaf = true;
 # 1072 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return leaf;
+  node * ____chimes_ret_var_30; ____chimes_ret_var_30 = (leaf); return ____chimes_ret_var_30; ;
 # 1073 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13597,7 +13599,7 @@ get_left_index_npm(node* parent, node* left)
 # 1083 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  left_index++;
 # 1084 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return left_index;
+  int ____chimes_ret_var_31; ____chimes_ret_var_31 = (left_index); return ____chimes_ret_var_31; ;
 # 1085 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13632,7 +13634,7 @@ insert_into_leaf_npm( node* leaf, int key, record* pointer )
 # 1104 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  leaf->num_keys++;
 # 1105 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return leaf;
+  node * ____chimes_ret_var_32; ____chimes_ret_var_32 = (leaf); return ____chimes_ret_var_32; ;
 # 1106 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13661,7 +13663,7 @@ insert_into_leaf_after_splitting_npm( node* root,
  new_leaf = make_leaf_npm();
 # 1122 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1123 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454490648UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1123); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454490789UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1123); exit(-1); } _tmp; });
 # 1124 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1125 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13672,7 +13674,7 @@ insert_into_leaf_after_splitting_npm( node* root,
  }
 # 1128 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1129 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (void **) ({ void *_tmp; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454490636UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1129); exit(-1); } _tmp; });
+ temp_pointers = (void **) ({ void *_tmp; if (!(_tmp = malloc_wrapper(order * sizeof(void *), 10498980943454490777UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1129); exit(-1); } _tmp; });
 # 1130 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1131 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13734,9 +13736,9 @@ insert_into_leaf_after_splitting_npm( node* root,
  }
 # 1163 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1164 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_pointers, 10498980943454490636UL);
+ free_wrapper(temp_pointers, 10498980943454490777UL);
 # 1165 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_keys, 10498980943454490648UL);
+ free_wrapper(temp_keys, 10498980943454490789UL);
 # 1166 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1167 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_leaf->pointers[order - 1] = leaf->pointers[order - 1];
@@ -13754,7 +13756,7 @@ insert_into_leaf_after_splitting_npm( node* root,
  new_key = new_leaf->keys[0];
 # 1177 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1178 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return insert_into_parent_npm(root, leaf, new_key, new_leaf);
+  node * ____chimes_ret_var_33; ____chimes_ret_var_33 = (insert_into_parent_npm(root, leaf, new_key, new_leaf)); return ____chimes_ret_var_33; ;
 # 1179 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13790,7 +13792,7 @@ insert_into_node_npm( node* root,
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  n->num_keys++;
 # 1199 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return root;
+  node * ____chimes_ret_var_34; ____chimes_ret_var_34 = (root); return ____chimes_ret_var_34; ;
 # 1200 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13818,7 +13820,7 @@ insert_into_node_after_splitting_npm( node* root,
  node ** temp_pointers;
 # 1225 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1225 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_pointers = (node **) ({ void *_tmp; if (!(_tmp = malloc_wrapper((order + 1) * sizeof(node *), 10498980943454491154UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1225); exit(-1); } _tmp; });
+ temp_pointers = (node **) ({ void *_tmp; if (!(_tmp = malloc_wrapper((order + 1) * sizeof(node *), 10498980943454491315UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1225); exit(-1); } _tmp; });
 # 1226 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_pointers == __null) {
 # 1227 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13828,7 +13830,7 @@ insert_into_node_after_splitting_npm( node* root,
 # 1229 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1230 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- temp_keys = (int *) ({ void *_tmp; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454491167UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1230); exit(-1); } _tmp; });
+ temp_keys = (int *) ({ void *_tmp; if (!(_tmp = malloc_wrapper(order * sizeof(int), 10498980943454491328UL, 0, 0))) { fprintf(stderr, "Allocation failed at %s:%d!\n", "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c", 1230); exit(-1); } _tmp; });
 # 1231 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (temp_keys == __null) {
 # 1232 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13898,9 +13900,9 @@ insert_into_node_after_splitting_npm( node* root,
 # 1268 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->pointers[j] = temp_pointers[i];
 # 1269 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_pointers, 10498980943454491154UL);
+ free_wrapper(temp_pointers, 10498980943454491315UL);
 # 1270 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(temp_keys, 10498980943454491167UL);
+ free_wrapper(temp_keys, 10498980943454491328UL);
 # 1271 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  new_node->parent = old_node->parent;
 # 1272 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -13918,7 +13920,7 @@ insert_into_node_after_splitting_npm( node* root,
 # 1280 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1281 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1282 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return insert_into_parent_npm(root, old_node, k_prime, new_node);
+  node * ____chimes_ret_var_35; ____chimes_ret_var_35 = (insert_into_parent_npm(root, old_node, k_prime, new_node)); return ____chimes_ret_var_35; ;
 # 1283 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13945,7 +13947,7 @@ insert_into_parent_npm( node* root,
 # 1298 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1299 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1300 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (parent == __null) {return insert_into_new_root_npm(left, key, right); };
+ if (parent == __null) { node * ____chimes_ret_var_36; ____chimes_ret_var_36 = (insert_into_new_root_npm(left, key, right)); return ____chimes_ret_var_36; ; };
 # 1311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1311 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  left_index = get_left_index_npm(parent, left);
@@ -13955,14 +13957,14 @@ insert_into_parent_npm( node* root,
 # 1315 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1316 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1317 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (parent->num_keys < order - 1) {return insert_into_node_npm(root, parent, left_index, key, right); };
+ if (parent->num_keys < order - 1) { node * ____chimes_ret_var_37; ____chimes_ret_var_37 = (insert_into_node_npm(root, parent, left_index, key, right)); return ____chimes_ret_var_37; ; };
 # 1319 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1320 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1321 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1322 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1323 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1324 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return insert_into_node_after_splitting_npm(root, parent, left_index, key, right);
+  node * ____chimes_ret_var_38; ____chimes_ret_var_38 = (insert_into_node_after_splitting_npm(root, parent, left_index, key, right)); return ____chimes_ret_var_38; ;
 # 1325 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -13993,7 +13995,7 @@ insert_into_new_root_npm( node* left,
 # 1341 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  right->parent = root;
 # 1342 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return root;
+  node * ____chimes_ret_var_39; ____chimes_ret_var_39 = (root); return ____chimes_ret_var_39; ;
 # 1343 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -14018,7 +14020,7 @@ start_new_tree_npm( int key,
 # 1356 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  root->num_keys++;
 # 1357 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return root;
+  node * ____chimes_ret_var_40; ____chimes_ret_var_40 = (root); return ____chimes_ret_var_40; ;
 # 1358 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -14039,7 +14041,7 @@ insert_npm( node* root,
 # 1369 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1370 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1371 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (find_npm(root, key, false) != __null) {return root; };
+ if (find_npm(root, key, false) != __null) { node * ____chimes_ret_var_41; ____chimes_ret_var_41 = (root); return ____chimes_ret_var_41; ; };
 # 1373 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1374 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1375 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -14047,7 +14049,7 @@ insert_npm( node* root,
 # 1376 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1377 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1378 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root == __null) {return start_new_tree_npm(key, pointer); };
+ if (root == __null) { node * ____chimes_ret_var_42; ____chimes_ret_var_42 = (start_new_tree_npm(key, pointer)); return ____chimes_ret_var_42; ; };
 # 1380 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1381 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1382 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -14059,13 +14061,13 @@ insert_npm( node* root,
 # 1386 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   leaf = insert_into_leaf_npm(leaf, key, pointer);
 # 1387 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  return root;
+   node * ____chimes_ret_var_43; ____chimes_ret_var_43 = (root); return ____chimes_ret_var_43; ;
 # 1388 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1389 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1390 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1391 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return insert_into_leaf_after_splitting_npm(root, leaf, key, pointer);
+  node * ____chimes_ret_var_44; ____chimes_ret_var_44 = (insert_into_leaf_after_splitting_npm(root, leaf, key, pointer)); return ____chimes_ret_var_44; ;
 # 1392 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -14085,7 +14087,7 @@ get_neighbor_index_npm( node* n )
 # 1409 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1410 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1411 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- for (i = 0; i <= n->parent->num_keys; i++) { if (n->parent->pointers[i] == n) {return i - 1; }; };
+ for (i = 0; i <= n->parent->num_keys; i++) { if (n->parent->pointers[i] == n) { int ____chimes_ret_var_45; ____chimes_ret_var_45 = (i - 1); return ____chimes_ret_var_45; ; }; };
 # 1414 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1415 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1416 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -14143,7 +14145,7 @@ remove_entry_from_node_npm( node* n,
  if (n->is_leaf) {for (i = n->num_keys; i < order - 1; i++) { n->pointers[i] = __null; }; } else {for (i = n->num_keys + 1; i < order; i++) { n->pointers[i] = __null; }; } ;
 # 1458 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1459 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return n;
+  node * ____chimes_ret_var_46; ____chimes_ret_var_46 = (n); return ____chimes_ret_var_46; ;
 # 1460 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -14162,7 +14164,7 @@ adjust_root_npm(node* root)
 # 1472 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1473 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1474 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->num_keys > 0) {return root; };
+ if (root->num_keys > 0) { node * ____chimes_ret_var_47; ____chimes_ret_var_47 = (root); return ____chimes_ret_var_47; ; };
 # 1484 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1484 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (!root->is_leaf) {{
@@ -14174,14 +14176,14 @@ adjust_root_npm(node* root)
  }; } else {new_root = __null; } ;
 # 1494 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1495 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->keys, 10498980943454493178UL);
+ free_wrapper(root->keys, 10498980943454493441UL);
 # 1496 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->pointers, 10498980943454493178UL);
+ free_wrapper(root->pointers, 10498980943454493441UL);
 # 1497 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root, 10498980943454493178UL);
+ free_wrapper(root, 10498980943454493441UL);
 # 1498 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1499 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return new_root;
+  node * ____chimes_ret_var_48; ____chimes_ret_var_48 = (new_root); return ____chimes_ret_var_48; ;
 # 1500 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -14352,11 +14354,11 @@ coalesce_nodes_npm( node* root,
 # 1627 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   root = delete_entry_npm(root, n->parent, k_prime, n);
 # 1628 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(n->keys, 10498980943454492125UL);
+  free_wrapper(n->keys, 10498980943454492330UL);
 # 1629 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(n->pointers, 10498980943454492125UL);
+  free_wrapper(n->pointers, 10498980943454492330UL);
 # 1630 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(n, 10498980943454492125UL);
+  free_wrapper(n, 10498980943454492330UL);
 # 1631 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }; } else {for (i = 0; i < n->parent->num_keys; i++) { if (n->parent->pointers[i + 1] == n) {
 # 1635 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
@@ -14367,7 +14369,7 @@ coalesce_nodes_npm( node* root,
  }; }; }
 # 1638 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1639 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return root;
+  node * ____chimes_ret_var_49; ____chimes_ret_var_49 = (root); return ____chimes_ret_var_49; ;
 # 1640 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1641 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
@@ -14496,7 +14498,7 @@ redistribute_nodes_npm( node* root,
  neighbor->num_keys--;
 # 1717 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1718 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return root;
+  node * ____chimes_ret_var_50; ____chimes_ret_var_50 = (root); return ____chimes_ret_var_50; ;
 # 1719 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -14532,7 +14534,7 @@ delete_entry_npm( node* root,
 # 1740 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1741 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1742 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (n == root) {return adjust_root_npm(root); };
+ if (n == root) { node * ____chimes_ret_var_51; ____chimes_ret_var_51 = (adjust_root_npm(root)); return ____chimes_ret_var_51; ; };
 # 1754 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1754 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  min_keys = n->is_leaf ? cut_npm(order - 1) : cut_npm(order) - 1;
@@ -14542,7 +14544,7 @@ delete_entry_npm( node* root,
 # 1758 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1759 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1760 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (n->num_keys >= min_keys) {return root; };
+ if (n->num_keys >= min_keys) { node * ____chimes_ret_var_52; ____chimes_ret_var_52 = (root); return ____chimes_ret_var_52; ; };
 # 1775 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1775 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  neighbor_index = get_neighbor_index_npm(n);
@@ -14561,7 +14563,7 @@ delete_entry_npm( node* root,
 # 1783 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1784 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 # 1785 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (neighbor->num_keys + n->num_keys < capacity) {return coalesce_nodes_npm(root, n, neighbor, neighbor_index, k_prime); } else {return redistribute_nodes_npm(root, n, neighbor, neighbor_index, k_prime_index, k_prime); } ;
+ if (neighbor->num_keys + n->num_keys < capacity) { node * ____chimes_ret_var_53; ____chimes_ret_var_53 = (coalesce_nodes_npm(root, n, neighbor, neighbor_index, k_prime)); return ____chimes_ret_var_53; ; } else { node * ____chimes_ret_var_54; ____chimes_ret_var_54 = (redistribute_nodes_npm(root, n, neighbor, neighbor_index, k_prime_index, k_prime)); return ____chimes_ret_var_54; ; } ;
 # 1792 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -14585,13 +14587,13 @@ deleteVal_npm( node* root,
 # 1805 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  if (key_record != __null && key_leaf != __null) {
 # 1806 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
-  free_wrapper(key_record, 10498980943454492721UL);
+  free_wrapper(key_record, 10498980943454492950UL);
 # 1807 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
   root = delete_entry_npm(root, key_leaf, key, key_record);
 # 1808 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  }
 # 1809 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return root;
+  node * ____chimes_ret_var_55; ____chimes_ret_var_55 = (root); return ____chimes_ret_var_55; ;
 # 1810 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -14603,13 +14605,13 @@ destroy_tree_nodes_npm(node* root)
 # 1816 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  int i;
 # 1817 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { free_wrapper(root->pointers[i], 10498980943454492772UL); }; } else {for (i = 0; i < root->num_keys + 1; i++) { destroy_tree_nodes_npm((node *) root->pointers[i]); }; } ;
+ if (root->is_leaf) {for (i = 0; i < root->num_keys; i++) { free_wrapper(root->pointers[i], 10498980943454493004UL); }; } else {for (i = 0; i < root->num_keys + 1; i++) { destroy_tree_nodes_npm((node *) root->pointers[i]); }; } ;
 # 1823 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->pointers, 10498980943454492770UL);
+ free_wrapper(root->pointers, 10498980943454493002UL);
 # 1824 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root->keys, 10498980943454492770UL);
+ free_wrapper(root->keys, 10498980943454493002UL);
 # 1825 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- free_wrapper(root, 10498980943454492818UL);
+ free_wrapper(root, 10498980943454493050UL);
 # 1826 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -14621,7 +14623,7 @@ destroy_tree_npm(node* root)
 # 1832 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
  destroy_tree_nodes_npm(root);
 # 1833 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
- return __null;
+  node * ____chimes_ret_var_56; ____chimes_ret_var_56 = (__null); return ____chimes_ret_var_56; ;
 # 1834 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/main.c"
 }
 
@@ -14630,170 +14632,168 @@ destroy_tree_npm(node* root)
 
 
 static int module_init() {
-    init_module(10498980943454487551UL, 355, 77, 86, 97, 65, 7, 72, 72, 18, 8,
+    init_module(10498980943454487551UL, 400, 77, 86, 96, 65, 6, 71, 72, 17, 8,
                            &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 33UL), (10498980943454487551UL + 34UL), (10498980943454487551UL + 35UL),
                            &____alias_loc_id_1, (unsigned)2, (unsigned)2, (unsigned)0, (10498980943454487551UL + 71UL), (10498980943454487551UL + 72UL), (10498980943454487551UL + 71UL), (10498980943454487551UL + 72UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 92UL),
                            &____alias_loc_id_3, (unsigned)3, (unsigned)3, (unsigned)0, (10498980943454487551UL + 331UL), (10498980943454487551UL + 332UL), (10498980943454487551UL + 333UL), (10498980943454487551UL + 331UL), (10498980943454487551UL + 332UL), (10498980943454487551UL + 333UL),
-                           &____alias_loc_id_4, (unsigned)8, (unsigned)8, (unsigned)0, (10498980943454487551UL + 788UL), (10498980943454487551UL + 789UL), (10498980943454487551UL + 790UL), (10498980943454487551UL + 791UL), (10498980943454487551UL + 792UL), (10498980943454487551UL + 793UL), (10498980943454487551UL + 794UL), (10498980943454487551UL + 795UL), (10498980943454487551UL + 788UL), (10498980943454487551UL + 789UL), (10498980943454487551UL + 790UL), (10498980943454487551UL + 791UL), (10498980943454487551UL + 792UL), (10498980943454487551UL + 793UL), (10498980943454487551UL + 794UL), (10498980943454487551UL + 795UL),
-                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 923UL), (10498980943454487551UL + 924UL), (10498980943454487551UL + 981UL), (10498980943454487551UL + 1008UL), (10498980943454487551UL + 1326UL),
-                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1010UL),
-                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1020UL),
-                           &____alias_loc_id_8, (unsigned)4, (unsigned)4, (unsigned)0, (10498980943454487551UL + 1030UL), (10498980943454487551UL + 1031UL), (10498980943454487551UL + 1032UL), (10498980943454487551UL + 1033UL), (10498980943454487551UL + 1030UL), (10498980943454487551UL + 1031UL), (10498980943454487551UL + 1032UL), (10498980943454487551UL + 1033UL),
-                           &____alias_loc_id_9, (unsigned)4, (unsigned)4, (unsigned)0, (10498980943454487551UL + 1087UL), (10498980943454487551UL + 1088UL), (10498980943454487551UL + 1089UL), (10498980943454487551UL + 1090UL), (10498980943454487551UL + 1087UL), (10498980943454487551UL + 1088UL), (10498980943454487551UL + 1089UL), (10498980943454487551UL + 1090UL),
-                            &____alias_loc_id_10, (unsigned)4, (unsigned)4, (unsigned)0, (10498980943454487551UL + 1198UL), (10498980943454487551UL + 1199UL), (10498980943454487551UL + 1200UL), (10498980943454487551UL + 1201UL), (10498980943454487551UL + 1198UL), (10498980943454487551UL + 1199UL), (10498980943454487551UL + 1200UL), (10498980943454487551UL + 1201UL),
-                            &____alias_loc_id_11, (unsigned)0, (unsigned)0, (unsigned)1, "isInteger", (unsigned)1, (10498980943454487551UL + 5627UL),
-                            &____alias_loc_id_12, (unsigned)11, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5275UL), (10498980943454487551UL + 5276UL), (10498980943454487551UL + 5277UL), (10498980943454487551UL + 5278UL), (10498980943454487551UL + 5279UL), (10498980943454487551UL + 5280UL), (10498980943454487551UL + 5281UL), (10498980943454487551UL + 5282UL), (10498980943454487551UL + 5284UL), (10498980943454487551UL + 5285UL), (10498980943454487551UL + 5499UL), "rewind", (unsigned)1, (10498980943454487551UL + 5499UL),
-                            &____alias_loc_id_13, (unsigned)13, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5283UL), (10498980943454487551UL + 5286UL), (10498980943454487551UL + 5287UL), (10498980943454487551UL + 5288UL), (10498980943454487551UL + 5289UL), (10498980943454487551UL + 5290UL), (10498980943454487551UL + 5291UL), (10498980943454487551UL + 5292UL), (10498980943454487551UL + 5600UL), (10498980943454487551UL + 5969UL), (10498980943454487551UL + 6522UL), (10498980943454487551UL + 6526UL), (10498980943454487551UL + 6528UL), "feof", (unsigned)1, (10498980943454487551UL + 5600UL),
-                            &____alias_loc_id_14, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5298UL),
-                            &____alias_loc_id_15, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5298UL),
-                            &____alias_loc_id_16, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5298UL),
-                            &____alias_loc_id_17, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5298UL),
-                            &____alias_loc_id_18, (unsigned)22, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5298UL), (10498980943454487551UL + 5300UL), (10498980943454487551UL + 5301UL), (10498980943454487551UL + 5302UL), (10498980943454487551UL + 5303UL), (10498980943454487551UL + 5304UL), (10498980943454487551UL + 5305UL), (10498980943454487551UL + 5306UL), (10498980943454487551UL + 5307UL), (10498980943454487551UL + 5308UL), (10498980943454487551UL + 5309UL), (10498980943454487551UL + 5310UL), (10498980943454487551UL + 5311UL), (10498980943454487551UL + 5312UL), (10498980943454487551UL + 5313UL), (10498980943454487551UL + 5314UL), (10498980943454487551UL + 5315UL), (10498980943454487551UL + 5316UL), (10498980943454487551UL + 5317UL), (10498980943454487551UL + 5318UL), (10498980943454487551UL + 5894UL), (10498980943454487551UL + 5928UL), "kernel_cpu", (unsigned)6, (10498980943454487551UL + 5894UL), (10498980943454487551UL + 5928UL), (10498980943454487551UL + 5938UL), (10498980943454487551UL + 5939UL), (10498980943454487551UL + 5944UL), (10498980943454487551UL + 5945UL),
-                            &____alias_loc_id_19, (unsigned)0, (unsigned)0, (unsigned)1, "scanf", (unsigned)2, (10498980943454487551UL + 5320UL), (10498980943454487551UL + 6539UL),
-                            &____alias_loc_id_20, (unsigned)33, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5298UL), (10498980943454487551UL + 5325UL), (10498980943454487551UL + 5326UL), (10498980943454487551UL + 5327UL), (10498980943454487551UL + 5328UL), (10498980943454487551UL + 5329UL), (10498980943454487551UL + 5330UL), (10498980943454487551UL + 5331UL), (10498980943454487551UL + 5332UL), (10498980943454487551UL + 5333UL), (10498980943454487551UL + 5334UL), (10498980943454487551UL + 5335UL), (10498980943454487551UL + 5336UL), (10498980943454487551UL + 5337UL), (10498980943454487551UL + 5338UL), (10498980943454487551UL + 5339UL), (10498980943454487551UL + 5340UL), (10498980943454487551UL + 5341UL), (10498980943454487551UL + 5342UL), (10498980943454487551UL + 5343UL), (10498980943454487551UL + 5344UL), (10498980943454487551UL + 5345UL), (10498980943454487551UL + 5346UL), (10498980943454487551UL + 5347UL), (10498980943454487551UL + 5348UL), (10498980943454487551UL + 5349UL), (10498980943454487551UL + 5350UL), (10498980943454487551UL + 5351UL), (10498980943454487551UL + 5352UL), (10498980943454487551UL + 6256UL), (10498980943454487551UL + 6268UL), (10498980943454487551UL + 6359UL), (10498980943454487551UL + 6364UL), "kernel_cpu_2", (unsigned)9, (10498980943454487551UL + 6256UL), (10498980943454487551UL + 6268UL), (10498980943454487551UL + 6359UL), (10498980943454487551UL + 6364UL), (10498980943454487551UL + 6373UL), (10498980943454487551UL + 6378UL), (10498980943454487551UL + 6379UL), (10498980943454487551UL + 6380UL), (10498980943454487551UL + 6381UL),
-                            &____alias_loc_id_21, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5298UL),
-                            &____alias_loc_id_22, (unsigned)1, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5298UL), "scanf", (unsigned)2, (10498980943454487551UL + 5294UL), (10498980943454487551UL + 6539UL),
-                            &____alias_loc_id_23, (unsigned)1, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5298UL), "scanf", (unsigned)2, (10498980943454487551UL + 5294UL), (10498980943454487551UL + 6539UL),
-                            &____alias_loc_id_24, (unsigned)1, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5298UL), "scanf", (unsigned)2, (10498980943454487551UL + 5294UL), (10498980943454487551UL + 6539UL),
-                            &____alias_loc_id_25, (unsigned)1, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5298UL), "scanf", (unsigned)2, (10498980943454487551UL + 5319UL), (10498980943454487551UL + 6539UL),
-                            &____alias_loc_id_26, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1UL), (10498980943454487551UL + 2UL), (10498980943454487551UL + 3UL), (10498980943454487551UL + 28UL),
-                            &____alias_loc_id_27, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 33UL), (10498980943454487551UL + 34UL), (10498980943454487551UL + 70UL),
-                            &____alias_loc_id_28, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 71UL), (10498980943454487551UL + 72UL),
-                            &____alias_loc_id_29, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 99UL), (10498980943454487551UL + 100UL), (10498980943454487551UL + 152UL), (10498980943454487551UL + 1326UL),
-                            &____alias_loc_id_30, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 154UL), (10498980943454487551UL + 155UL), (10498980943454487551UL + 205UL), (10498980943454487551UL + 1326UL),
-                            &____alias_loc_id_31, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 207UL), (10498980943454487551UL + 208UL), (10498980943454487551UL + 209UL), (10498980943454487551UL + 265UL), (10498980943454487551UL + 1326UL),
-                            &____alias_loc_id_32, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 268UL), (10498980943454487551UL + 269UL), (10498980943454487551UL + 270UL), (10498980943454487551UL + 326UL), (10498980943454487551UL + 1326UL),
-                            &____alias_loc_id_33, (unsigned)7, (unsigned)0, (unsigned)0, (10498980943454487551UL + 329UL), (10498980943454487551UL + 330UL), (10498980943454487551UL + 331UL), (10498980943454487551UL + 332UL), (10498980943454487551UL + 333UL), (10498980943454487551UL + 441UL), (10498980943454487551UL + 1326UL),
-                            &____alias_loc_id_34, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 443UL),
-                            &____alias_loc_id_35, (unsigned)7, (unsigned)0, (unsigned)0, (10498980943454487551UL + 451UL), (10498980943454487551UL + 452UL), (10498980943454487551UL + 453UL), (10498980943454487551UL + 454UL), (10498980943454487551UL + 455UL), (10498980943454487551UL + 525UL), (10498980943454487551UL + 1326UL),
-                            &____alias_loc_id_36, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 531UL), (10498980943454487551UL + 532UL), (10498980943454487551UL + 548UL),
-                            &____alias_loc_id_37, (unsigned)7, (unsigned)0, (unsigned)0, (10498980943454487551UL + 550UL), (10498980943454487551UL + 551UL), (10498980943454487551UL + 552UL), (10498980943454487551UL + 553UL), (10498980943454487551UL + 554UL), (10498980943454487551UL + 622UL), (10498980943454487551UL + 1326UL),
-                            &____alias_loc_id_38, (unsigned)8, (unsigned)0, (unsigned)0, (10498980943454487551UL + 624UL), (10498980943454487551UL + 625UL), (10498980943454487551UL + 626UL), (10498980943454487551UL + 627UL), (10498980943454487551UL + 628UL), (10498980943454487551UL + 629UL), (10498980943454487551UL + 703UL), (10498980943454487551UL + 1326UL),
-                            &____alias_loc_id_39, (unsigned)8, (unsigned)0, (unsigned)0, (10498980943454487551UL + 706UL), (10498980943454487551UL + 707UL), (10498980943454487551UL + 708UL), (10498980943454487551UL + 709UL), (10498980943454487551UL + 710UL), (10498980943454487551UL + 711UL), (10498980943454487551UL + 785UL), (10498980943454487551UL + 1326UL),
-                            &____alias_loc_id_40, (unsigned)10, (unsigned)0, (unsigned)0, (10498980943454487551UL + 788UL), (10498980943454487551UL + 789UL), (10498980943454487551UL + 790UL), (10498980943454487551UL + 791UL), (10498980943454487551UL + 792UL), (10498980943454487551UL + 793UL), (10498980943454487551UL + 794UL), (10498980943454487551UL + 795UL), (10498980943454487551UL + 921UL), (10498980943454487551UL + 1326UL),
-                            &____alias_loc_id_41, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1030UL), (10498980943454487551UL + 1031UL), (10498980943454487551UL + 1032UL), (10498980943454487551UL + 1033UL),
-                            &____alias_loc_id_42, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1071UL),
-                            &____alias_loc_id_43, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1079UL),
-                            &____alias_loc_id_44, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1087UL), (10498980943454487551UL + 1088UL), (10498980943454487551UL + 1089UL), (10498980943454487551UL + 1090UL),
-                            &____alias_loc_id_45, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1136UL),
-                            &____alias_loc_id_46, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1154UL),
-                            &____alias_loc_id_47, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1172UL),
-                            &____alias_loc_id_48, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1180UL),
-                            &____alias_loc_id_49, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1189UL),
-                            &____alias_loc_id_50, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1198UL), (10498980943454487551UL + 1199UL), (10498980943454487551UL + 1200UL),
-                            &____alias_loc_id_51, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1232UL), (10498980943454487551UL + 1233UL), (10498980943454487551UL + 1247UL),
-                            &____alias_loc_id_52, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1252UL), (10498980943454487551UL + 1258UL),
-                            &____alias_loc_id_53, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1259UL), (10498980943454487551UL + 1274UL),
-                            &____alias_loc_id_54, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1275UL), (10498980943454487551UL + 1290UL),
-                            &____alias_loc_id_55, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1291UL),
-                            &____alias_loc_id_56, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1307UL),
-                            &____alias_loc_id_57, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1315UL), (10498980943454487551UL + 1316UL), (10498980943454487551UL + 1330UL),
-                            &____alias_loc_id_58, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1335UL), (10498980943454487551UL + 1341UL),
-                            &____alias_loc_id_59, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1342UL), (10498980943454487551UL + 1357UL),
-                            &____alias_loc_id_60, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1358UL), (10498980943454487551UL + 1373UL),
-                            &____alias_loc_id_61, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1374UL),
-                            &____alias_loc_id_62, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1390UL),
-                            &____alias_loc_id_63, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1397UL), (10498980943454487551UL + 1398UL), (10498980943454487551UL + 6522UL),
-                            &____alias_loc_id_64, (unsigned)24, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1424UL), (10498980943454487551UL + 1425UL), (10498980943454487551UL + 1426UL), (10498980943454487551UL + 1427UL), (10498980943454487551UL + 1428UL), (10498980943454487551UL + 1429UL), (10498980943454487551UL + 1430UL), (10498980943454487551UL + 1431UL), (10498980943454487551UL + 1432UL), (10498980943454487551UL + 1433UL), (10498980943454487551UL + 1434UL), (10498980943454487551UL + 1435UL), (10498980943454487551UL + 1436UL), (10498980943454487551UL + 1437UL), (10498980943454487551UL + 1438UL), (10498980943454487551UL + 1439UL), (10498980943454487551UL + 1440UL), (10498980943454487551UL + 1583UL), (10498980943454487551UL + 1814UL), (10498980943454487551UL + 6519UL), (10498980943454487551UL + 6520UL), (10498980943454487551UL + 6521UL), (10498980943454487551UL + 6522UL), (10498980943454487551UL + 6527UL),
-                            &____alias_loc_id_65, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1871UL), (10498980943454487551UL + 1872UL), (10498980943454487551UL + 5627UL), (10498980943454487551UL + 6527UL),
-                            &____alias_loc_id_66, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1908UL), (10498980943454487551UL + 5627UL), (10498980943454487551UL + 6527UL),
-                            &____alias_loc_id_67, (unsigned)11, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1921UL), (10498980943454487551UL + 1922UL), (10498980943454487551UL + 1923UL), (10498980943454487551UL + 1924UL), (10498980943454487551UL + 1925UL), (10498980943454487551UL + 1926UL), (10498980943454487551UL + 1927UL), (10498980943454487551UL + 1928UL), (10498980943454487551UL + 1929UL), (10498980943454487551UL + 1930UL), (10498980943454487551UL + 1931UL),
-                            &____alias_loc_id_68, (unsigned)6, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2039UL), (10498980943454487551UL + 2040UL), (10498980943454487551UL + 2041UL), (10498980943454487551UL + 2042UL), (10498980943454487551UL + 2043UL), (10498980943454487551UL + 2044UL),
-                            &____alias_loc_id_69, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2215UL), (10498980943454487551UL + 2216UL), (10498980943454487551UL + 2217UL),
-                            &____alias_loc_id_70, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2302UL), (10498980943454487551UL + 2303UL), (10498980943454487551UL + 2304UL),
-                            &____alias_loc_id_71, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2333UL), (10498980943454487551UL + 2334UL), (10498980943454487551UL + 2335UL), (10498980943454487551UL + 2336UL),
-                            &____alias_loc_id_72, (unsigned)6, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2363UL), (10498980943454487551UL + 2364UL), (10498980943454487551UL + 2365UL), (10498980943454487551UL + 2366UL), (10498980943454487551UL + 2367UL), (10498980943454487551UL + 6527UL),
-                            &____alias_loc_id_73, (unsigned)6, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2524UL), (10498980943454487551UL + 2525UL), (10498980943454487551UL + 2526UL), (10498980943454487551UL + 2527UL), (10498980943454487551UL + 2528UL), (10498980943454487551UL + 2529UL),
-                            &____alias_loc_id_74, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2598UL), (10498980943454487551UL + 2599UL),
-                            &____alias_loc_id_75, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2618UL), (10498980943454487551UL + 2619UL), (10498980943454487551UL + 2620UL), (10498980943454487551UL + 2621UL), (10498980943454487551UL + 2646UL),
-                            &____alias_loc_id_76, (unsigned)8, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2654UL), (10498980943454487551UL + 2655UL), (10498980943454487551UL + 2656UL), (10498980943454487551UL + 2657UL), (10498980943454487551UL + 2658UL), (10498980943454487551UL + 2659UL), (10498980943454487551UL + 2660UL), (10498980943454487551UL + 2663UL),
-                            &____alias_loc_id_77, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 2753UL),
-                            &____alias_loc_id_78, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2760UL), (10498980943454487551UL + 2761UL), (10498980943454487551UL + 2762UL),
-                            &____alias_loc_id_79, (unsigned)7, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2797UL), (10498980943454487551UL + 2798UL), (10498980943454487551UL + 2799UL), (10498980943454487551UL + 2800UL), (10498980943454487551UL + 2801UL), (10498980943454487551UL + 2848UL), (10498980943454487551UL + 2902UL),
-                            &____alias_loc_id_80, (unsigned)20, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2905UL), (10498980943454487551UL + 2906UL), (10498980943454487551UL + 2907UL), (10498980943454487551UL + 2908UL), (10498980943454487551UL + 2909UL), (10498980943454487551UL + 2910UL), (10498980943454487551UL + 2911UL), (10498980943454487551UL + 2912UL), (10498980943454487551UL + 2913UL), (10498980943454487551UL + 2914UL), (10498980943454487551UL + 2915UL), (10498980943454487551UL + 2916UL), (10498980943454487551UL + 2917UL), (10498980943454487551UL + 2918UL), (10498980943454487551UL + 2919UL), (10498980943454487551UL + 2920UL), (10498980943454487551UL + 3085UL), (10498980943454487551UL + 3097UL), (10498980943454487551UL + 3257UL), (10498980943454487551UL + 5627UL),
-                            &____alias_loc_id_81, (unsigned)7, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3260UL), (10498980943454487551UL + 3261UL), (10498980943454487551UL + 3262UL), (10498980943454487551UL + 3263UL), (10498980943454487551UL + 3264UL), (10498980943454487551UL + 3265UL), (10498980943454487551UL + 3266UL),
-                            &____alias_loc_id_82, (unsigned)8, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3323UL), (10498980943454487551UL + 3324UL), (10498980943454487551UL + 3325UL), (10498980943454487551UL + 3326UL), (10498980943454487551UL + 3327UL), (10498980943454487551UL + 3328UL), (10498980943454487551UL + 3353UL), (10498980943454487551UL + 3410UL),
-                            &____alias_loc_id_83, (unsigned)23, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3414UL), (10498980943454487551UL + 3415UL), (10498980943454487551UL + 3416UL), (10498980943454487551UL + 3417UL), (10498980943454487551UL + 3418UL), (10498980943454487551UL + 3419UL), (10498980943454487551UL + 3420UL), (10498980943454487551UL + 3421UL), (10498980943454487551UL + 3422UL), (10498980943454487551UL + 3423UL), (10498980943454487551UL + 3424UL), (10498980943454487551UL + 3425UL), (10498980943454487551UL + 3426UL), (10498980943454487551UL + 3427UL), (10498980943454487551UL + 3428UL), (10498980943454487551UL + 3429UL), (10498980943454487551UL + 3430UL), (10498980943454487551UL + 3603UL), (10498980943454487551UL + 3616UL), (10498980943454487551UL + 3738UL), (10498980943454487551UL + 3740UL), (10498980943454487551UL + 3742UL), (10498980943454487551UL + 3761UL),
-                            &____alias_loc_id_84, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3765UL), (10498980943454487551UL + 3766UL), (10498980943454487551UL + 3767UL), (10498980943454487551UL + 3768UL), (10498980943454487551UL + 5627UL),
-                            &____alias_loc_id_85, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3819UL), (10498980943454487551UL + 3820UL), (10498980943454487551UL + 3821UL), (10498980943454487551UL + 3827UL), (10498980943454487551UL + 5627UL),
-                            &____alias_loc_id_86, (unsigned)6, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3862UL), (10498980943454487551UL + 3863UL), (10498980943454487551UL + 3864UL), (10498980943454487551UL + 3865UL), (10498980943454487551UL + 3866UL), (10498980943454487551UL + 3867UL),
-                            &____alias_loc_id_87, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3926UL), (10498980943454487551UL + 3927UL),
-                            &____alias_loc_id_88, (unsigned)7, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3966UL), (10498980943454487551UL + 3967UL), (10498980943454487551UL + 3968UL), (10498980943454487551UL + 3969UL), (10498980943454487551UL + 3970UL), (10498980943454487551UL + 4009UL), (10498980943454487551UL + 4034UL),
-                            &____alias_loc_id_89, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4147UL), (10498980943454487551UL + 4148UL), (10498980943454487551UL + 4149UL), (10498980943454487551UL + 5627UL),
-                            &____alias_loc_id_90, (unsigned)14, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4198UL), (10498980943454487551UL + 4199UL), (10498980943454487551UL + 4200UL), (10498980943454487551UL + 4201UL), (10498980943454487551UL + 4202UL), (10498980943454487551UL + 4203UL), (10498980943454487551UL + 4204UL), (10498980943454487551UL + 4205UL), (10498980943454487551UL + 4206UL), (10498980943454487551UL + 4207UL), (10498980943454487551UL + 4208UL), (10498980943454487551UL + 4209UL), (10498980943454487551UL + 4210UL), (10498980943454487551UL + 4574UL),
-                            &____alias_loc_id_91, (unsigned)11, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4603UL), (10498980943454487551UL + 4604UL), (10498980943454487551UL + 4605UL), (10498980943454487551UL + 4606UL), (10498980943454487551UL + 4607UL), (10498980943454487551UL + 4608UL), (10498980943454487551UL + 4609UL), (10498980943454487551UL + 4610UL), (10498980943454487551UL + 4611UL), (10498980943454487551UL + 4612UL), (10498980943454487551UL + 4613UL),
-                            &____alias_loc_id_92, (unsigned)11, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4757UL), (10498980943454487551UL + 4758UL), (10498980943454487551UL + 4759UL), (10498980943454487551UL + 4760UL), (10498980943454487551UL + 4761UL), (10498980943454487551UL + 4762UL), (10498980943454487551UL + 4763UL), (10498980943454487551UL + 4764UL), (10498980943454487551UL + 5088UL), (10498980943454487551UL + 5154UL), (10498980943454487551UL + 5627UL),
-                            &____alias_loc_id_93, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5158UL), (10498980943454487551UL + 5159UL), (10498980943454487551UL + 5160UL), (10498980943454487551UL + 5161UL),
-                            &____alias_loc_id_94, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5197UL), (10498980943454487551UL + 5198UL),
-                            &____alias_loc_id_95, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5268UL),
-                            &____alias_loc_id_96, (unsigned)30, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5275UL), (10498980943454487551UL + 5276UL), (10498980943454487551UL + 5277UL), (10498980943454487551UL + 5278UL), (10498980943454487551UL + 5279UL), (10498980943454487551UL + 5280UL), (10498980943454487551UL + 5281UL), (10498980943454487551UL + 5282UL), (10498980943454487551UL + 5283UL), (10498980943454487551UL + 5286UL), (10498980943454487551UL + 5287UL), (10498980943454487551UL + 5288UL), (10498980943454487551UL + 5289UL), (10498980943454487551UL + 5290UL), (10498980943454487551UL + 5292UL), (10498980943454487551UL + 5293UL), (10498980943454487551UL + 5294UL), (10498980943454487551UL + 5296UL), (10498980943454487551UL + 5297UL), (10498980943454487551UL + 5298UL), (10498980943454487551UL + 5315UL), (10498980943454487551UL + 5319UL), (10498980943454487551UL + 5320UL), (10498980943454487551UL + 5321UL), (10498980943454487551UL + 5322UL), (10498980943454487551UL + 5346UL), (10498980943454487551UL + 5969UL), (10498980943454487551UL + 6522UL), (10498980943454487551UL + 6526UL), (10498980943454487551UL + 6528UL),
-                            "list_init", (void *)(&list_init_npm), (void *)__null, 0, 3, (10498980943454487551UL + 28UL), (10498980943454487551UL + 1326UL), (10498980943454487551UL + 1326UL), 0UL, 0,
-                            "list_insert_item_head", (void *)(&list_insert_item_head_npm), (void *)__null, 0, 2, (10498980943454487551UL + 152UL), (10498980943454487551UL + 1326UL), 0UL, 0,
-                            "list_insert_item_tail", (void *)(&list_insert_item_tail_npm), (void *)__null, 0, 2, (10498980943454487551UL + 205UL), (10498980943454487551UL + 1326UL), 0UL, 0,
-                            "list_insert_item_before", (void *)(&list_insert_item_before_npm), (void *)__null, 0, 3, (10498980943454487551UL + 265UL), (10498980943454487551UL + 1326UL), (10498980943454487551UL + 1326UL), 0UL, 0,
-                            "list_insert_item_after", (void *)(&list_insert_item_after_npm), (void *)__null, 0, 3, (10498980943454487551UL + 326UL), (10498980943454487551UL + 1326UL), (10498980943454487551UL + 1326UL), 0UL, 0,
-                            "list_insert_head", (void *)(&list_insert_head_npm), (void *)__null, 0, 2, (10498980943454487551UL + 525UL), (10498980943454487551UL + 526UL), 0UL, 4, "malloc", 1, 0UL, (10498980943454487551UL + 1326UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "list_item_init", 2, (10498980943454487551UL + 1326UL), (10498980943454487551UL + 526UL), 0UL,
-                            "list_insert_tail", (void *)(&list_insert_tail_npm), (void *)__null, 0, 2, (10498980943454487551UL + 622UL), (10498980943454487551UL + 623UL), 0UL, 4, "malloc", 1, 0UL, (10498980943454487551UL + 1326UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "list_item_init", 2, (10498980943454487551UL + 1326UL), (10498980943454487551UL + 623UL), 0UL,
-                            "list_insert_before", (void *)(&list_insert_before_npm), (void *)__null, 0, 3, (10498980943454487551UL + 703UL), (10498980943454487551UL + 1326UL), (10498980943454487551UL + 705UL), 0UL, 4, "malloc", 1, 0UL, (10498980943454487551UL + 1326UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "list_item_init", 2, (10498980943454487551UL + 1326UL), (10498980943454487551UL + 705UL), 0UL,
-                            "list_insert_after", (void *)(&list_insert_after_npm), (void *)__null, 0, 3, (10498980943454487551UL + 785UL), (10498980943454487551UL + 1326UL), (10498980943454487551UL + 787UL), 0UL, 4, "malloc", 1, 0UL, (10498980943454487551UL + 1326UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "list_item_init", 2, (10498980943454487551UL + 1326UL), (10498980943454487551UL + 787UL), 0UL,
-                            "list_get_head_item", (void *)(&list_get_head_item_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1078UL), (10498980943454487551UL + 1076UL), 0,
-                            "list_get_tail_item", (void *)(&list_get_tail_item_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1086UL), (10498980943454487551UL + 1084UL), 0,
-                            "list_get_head", (void *)(&list_get_head_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1144UL), (10498980943454487551UL + 5627UL), 0,
-                            "list_get_tail", (void *)(&list_get_tail_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1162UL), (10498980943454487551UL + 5627UL), 0,
-                            "list_get_length", (void *)(&list_get_length_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1179UL), 0UL, 0,
-                            "list_is_empty", (void *)(&list_is_empty_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1188UL), 0UL, 0,
-                            "list_not_empty", (void *)(&list_not_empty_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1197UL), 0UL, 0,
-                            "list_item_init", (void *)(&list_item_init_npm), (void *)__null, 0, 2, (10498980943454487551UL + 548UL), (10498980943454487551UL + 1326UL), 0UL, 0,
-                            "list_item_get_datum", (void *)(&list_item_get_datum_npm), (void *)__null, 0, 1, (10498980943454487551UL + 450UL), (10498980943454487551UL + 448UL), 0,
-                            "list_iterator_init", (void *)(&list_iterator_init_npm), (void *)__null, 0, 2, (10498980943454487551UL + 1241UL), (10498980943454487551UL + 1247UL), 0UL, 0,
-                            "list_iterator_delete", (void *)(&list_iterator_delete_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1258UL), 0UL, 0,
-                            "list_iterator_next", (void *)(&list_iterator_next_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1274UL), 0UL, 0,
-                            "list_iterator_prev", (void *)(&list_iterator_prev_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1290UL), 0UL, 0,
-                            "list_iterator_get_datum", (void *)(&list_iterator_get_datum_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1298UL), (10498980943454487551UL + 5627UL), 0,
-                            "list_iterator_is_valid", (void *)(&list_iterator_is_valid_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1314UL), 0UL, 0,
-                            "list_reverse_iterator_init", (void *)(&list_reverse_iterator_init_npm), (void *)__null, 0, 2, (10498980943454487551UL + 1324UL), (10498980943454487551UL + 1330UL), 0UL, 0,
-                            "list_reverse_iterator_delete", (void *)(&list_reverse_iterator_delete_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1341UL), 0UL, 0,
-                            "list_reverse_iterator_next", (void *)(&list_reverse_iterator_next_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1357UL), 0UL, 0,
-                            "list_reverse_iterator_prev", (void *)(&list_reverse_iterator_prev_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1373UL), 0UL, 0,
-                            "list_reverse_iterator_get_datum", (void *)(&list_reverse_iterator_get_datum_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1381UL), (10498980943454487551UL + 5627UL), 0,
-                            "list_reverse_iterator_is_valid", (void *)(&list_reverse_iterator_is_valid_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1396UL), 0UL, 0,
-                            "kmalloc", (void *)(&kmalloc_npm), (void *)__null, 0, 1, 0UL, (10498980943454487551UL + 5939UL), 2, "printf", 1, (10498980943454487551UL + 6532UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "transform_to_cuda", (void *)(&transform_to_cuda_npm), (void *)__null, 0, 2, (10498980943454487551UL + 1864UL), 0UL, 0UL, 28, "gettimeofday", 2, (10498980943454487551UL + 1426UL), (10498980943454487551UL + 6630UL), 0UL, "log", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "malloc", 1, 0UL, (10498980943454487551UL + 5938UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6533UL), 0UL, "exit", 1, 0UL, 0UL, "kmalloc", 1, 0UL, (10498980943454487551UL + 1814UL), "kmalloc", 1, 0UL, (10498980943454487551UL + 1583UL), "enqueue", 1, (10498980943454487551UL + 1864UL), 0UL, "dequeue", 0, (10498980943454487551UL + 1617UL), "enqueue", 1, (10498980943454487551UL + 1635UL), 0UL, "enqueue", 1, (10498980943454487551UL + 1635UL), 0UL, "printf", 2, (10498980943454487551UL + 6534UL), 0UL, 0UL, "printf", 3, (10498980943454487551UL + 6535UL), 0UL, 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6536UL), 0UL, "printf", 2, (10498980943454487551UL + 6537UL), 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6538UL), 0UL, "printf", 2, (10498980943454487551UL + 6537UL), 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6539UL), 0UL, "printf", 2, (10498980943454487551UL + 6540UL), 0UL, 0UL, "printf", 4, (10498980943454487551UL + 6541UL), 0UL, 0UL, 0UL, 0UL, "printf", 4, (10498980943454487551UL + 6542UL), 0UL, 0UL, 0UL, 0UL, "printf", 2, (10498980943454487551UL + 6543UL), 0UL, 0UL, "gettimeofday", 2, (10498980943454487551UL + 1427UL), (10498980943454487551UL + 6630UL), 0UL, "printf", 2, (10498980943454487551UL + 6530UL), 0UL, 0UL,
-                            "findRange", (void *)(&findRange_npm), (void *)__null, 0, 3, (10498980943454487551UL + 2036UL), 0UL, 0UL, (10498980943454487551UL + 6634UL), 5, "find_leaf", 3, (10498980943454487551UL + 2036UL), 0UL, 0UL, (10498980943454487551UL + 1942UL), "malloc", 1, 0UL, (10498980943454487551UL + 6634UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "list_init", 3, (10498980943454487551UL + 6634UL), (10498980943454487551UL + 6632UL), (10498980943454487551UL + 6633UL), 0UL,
-                            "usage_1", (void *)(&usage_1_npm), (void *)__null, 0, 0, 0UL, 8, "printf", 2, (10498980943454487551UL + 6533UL), 0UL, 0UL, "printf", 2, (10498980943454487551UL + 6546UL), (10498980943454487551UL + 6540UL), 0UL, "printf", 1, (10498980943454487551UL + 6548UL), 0UL, "printf", 1, (10498980943454487551UL + 6549UL), 0UL, "printf", 1, (10498980943454487551UL + 6550UL), 0UL, "printf", 1, (10498980943454487551UL + 6532UL), 0UL, "printf", 1, (10498980943454487551UL + 6552UL), 0UL, "printf", 1, (10498980943454487551UL + 6553UL), 0UL,
-                            "usage_2", (void *)(&usage_2_npm), (void *)__null, 0, 0, 0UL, 11, "printf", 1, (10498980943454487551UL + 6554UL), 0UL, "printf", 1, (10498980943454487551UL + 6555UL), 0UL, "printf", 1, (10498980943454487551UL + 6534UL), 0UL, "printf", 1, (10498980943454487551UL + 6557UL), 0UL, "printf", 1, (10498980943454487551UL + 6558UL), 0UL, "printf", 1, (10498980943454487551UL + 6559UL), 0UL, "printf", 1, (10498980943454487551UL + 6560UL), 0UL, "printf", 1, (10498980943454487551UL + 6561UL), 0UL, "printf", 1, (10498980943454487551UL + 6549UL), 0UL, "printf", 1, (10498980943454487551UL + 6530UL), 0UL, "printf", 1, (10498980943454487551UL + 6564UL), 0UL,
-                            "enqueue", (void *)(&enqueue_npm), (void *)__null, 0, 1, (10498980943454487551UL + 5627UL), 0UL, 0,
-                            "dequeue", (void *)(&dequeue_npm), (void *)__null, 0, 0, (10498980943454487551UL + 5627UL), 0,
-                            "print_leaves", (void *)(&print_leaves_npm), (void *)__null, 0, 1, (10498980943454487551UL + 2301UL), 0UL, 4, "printf", 1, (10498980943454487551UL + 6565UL), 0UL, "printf", 2, (10498980943454487551UL + 6540UL), 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6540UL), 0UL, "printf", 1, (10498980943454487551UL + 6567UL), 0UL,
-                            "height", (void *)(&height_npm), (void *)__null, 0, 1, (10498980943454487551UL + 2332UL), 0UL, 0,
-                            "path_to_root", (void *)(&path_to_root_npm), (void *)__null, 0, 2, (10498980943454487551UL + 2361UL), (10498980943454487551UL + 2362UL), 0UL, 0,
-                            "print_tree", (void *)(&print_tree_npm), (void *)__null, 0, 1, (10498980943454487551UL + 2523UL), 0UL, 13, "printf", 1, (10498980943454487551UL + 6565UL), 0UL, "enqueue", 1, (10498980943454487551UL + 2523UL), 0UL, "dequeue", 0, (10498980943454487551UL + 5627UL), "path_to_root", 2, (10498980943454487551UL + 2523UL), (10498980943454487551UL + 5627UL), 0UL, "printf", 1, (10498980943454487551UL + 6567UL), 0UL, "printf", 2, (10498980943454487551UL + 6568UL), (10498980943454487551UL + 5627UL), 0UL, "printf", 2, (10498980943454487551UL + 6540UL), (10498980943454487551UL + 5627UL), 0UL, "printf", 2, (10498980943454487551UL + 6540UL), 0UL, 0UL, "enqueue", 1, (10498980943454487551UL + 5627UL), 0UL, "printf", 2, (10498980943454487551UL + 6540UL), (10498980943454487551UL + 5627UL), 0UL, "printf", 2, (10498980943454487551UL + 6540UL), (10498980943454487551UL + 5627UL), 0UL, "printf", 1, (10498980943454487551UL + 6539UL), 0UL, "printf", 1, (10498980943454487551UL + 6567UL), 0UL,
-                            "find_leaf", (void *)(&find_leaf_npm), (void *)__null, 0, 3, (10498980943454487551UL + 2190UL), 0UL, 0UL, (10498980943454487551UL + 2190UL), 8, "printf", 1, (10498980943454487551UL + 6565UL), 0UL, "printf", 1, (10498980943454487551UL + 6567UL), 0UL, "printf", 2, (10498980943454487551UL + 6540UL), 0UL, 0UL, "printf", 2, (10498980943454487551UL + 6568UL), 0UL, 0UL, "printf", 2, (10498980943454487551UL + 6573UL), 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6573UL), 0UL, "printf", 2, (10498980943454487551UL + 6540UL), 0UL, 0UL, "printf", 2, (10498980943454487551UL + 6538UL), 0UL, 0UL,
-                            "find", (void *)(&find_npm), (void *)__null, 0, 3, (10498980943454487551UL + 2595UL), 0UL, 0UL, (10498980943454487551UL + 2589UL), 1, "find_leaf", 3, (10498980943454487551UL + 2595UL), 0UL, 0UL, (10498980943454487551UL + 2544UL),
+                           &____alias_loc_id_4, (unsigned)8, (unsigned)8, (unsigned)0, (10498980943454487551UL + 792UL), (10498980943454487551UL + 793UL), (10498980943454487551UL + 794UL), (10498980943454487551UL + 795UL), (10498980943454487551UL + 796UL), (10498980943454487551UL + 797UL), (10498980943454487551UL + 798UL), (10498980943454487551UL + 799UL), (10498980943454487551UL + 792UL), (10498980943454487551UL + 793UL), (10498980943454487551UL + 794UL), (10498980943454487551UL + 795UL), (10498980943454487551UL + 796UL), (10498980943454487551UL + 797UL), (10498980943454487551UL + 798UL), (10498980943454487551UL + 799UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 927UL), (10498980943454487551UL + 928UL), (10498980943454487551UL + 985UL), (10498980943454487551UL + 1012UL), (10498980943454487551UL + 1380UL),
+                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1014UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1024UL),
+                           &____alias_loc_id_8, (unsigned)4, (unsigned)4, (unsigned)0, (10498980943454487551UL + 1034UL), (10498980943454487551UL + 1035UL), (10498980943454487551UL + 1036UL), (10498980943454487551UL + 1037UL), (10498980943454487551UL + 1034UL), (10498980943454487551UL + 1035UL), (10498980943454487551UL + 1036UL), (10498980943454487551UL + 1037UL),
+                           &____alias_loc_id_9, (unsigned)4, (unsigned)4, (unsigned)0, (10498980943454487551UL + 1103UL), (10498980943454487551UL + 1104UL), (10498980943454487551UL + 1105UL), (10498980943454487551UL + 1106UL), (10498980943454487551UL + 1103UL), (10498980943454487551UL + 1104UL), (10498980943454487551UL + 1105UL), (10498980943454487551UL + 1106UL),
+                            &____alias_loc_id_10, (unsigned)4, (unsigned)4, (unsigned)0, (10498980943454487551UL + 1242UL), (10498980943454487551UL + 1243UL), (10498980943454487551UL + 1244UL), (10498980943454487551UL + 1245UL), (10498980943454487551UL + 1242UL), (10498980943454487551UL + 1243UL), (10498980943454487551UL + 1244UL), (10498980943454487551UL + 1245UL),
+                            &____alias_loc_id_11, (unsigned)0, (unsigned)0, (unsigned)1, "isInteger", (unsigned)1, (10498980943454487551UL + 5890UL),
+                            &____alias_loc_id_12, (unsigned)11, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5511UL), (10498980943454487551UL + 5512UL), (10498980943454487551UL + 5513UL), (10498980943454487551UL + 5514UL), (10498980943454487551UL + 5515UL), (10498980943454487551UL + 5516UL), (10498980943454487551UL + 5517UL), (10498980943454487551UL + 5518UL), (10498980943454487551UL + 5524UL), (10498980943454487551UL + 5525UL), (10498980943454487551UL + 5754UL), "rewind", (unsigned)1, (10498980943454487551UL + 5754UL),
+                            &____alias_loc_id_13, (unsigned)22, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5539UL), (10498980943454487551UL + 5542UL), (10498980943454487551UL + 5543UL), (10498980943454487551UL + 5544UL), (10498980943454487551UL + 5545UL), (10498980943454487551UL + 5546UL), (10498980943454487551UL + 5547UL), (10498980943454487551UL + 5548UL), (10498980943454487551UL + 5549UL), (10498980943454487551UL + 5550UL), (10498980943454487551UL + 5551UL), (10498980943454487551UL + 5552UL), (10498980943454487551UL + 5553UL), (10498980943454487551UL + 5554UL), (10498980943454487551UL + 5555UL), (10498980943454487551UL + 5556UL), (10498980943454487551UL + 5557UL), (10498980943454487551UL + 5558UL), (10498980943454487551UL + 5559UL), (10498980943454487551UL + 5560UL), (10498980943454487551UL + 6160UL), (10498980943454487551UL + 6194UL), "kernel_cpu", (unsigned)6, (10498980943454487551UL + 6160UL), (10498980943454487551UL + 6194UL), (10498980943454487551UL + 6204UL), (10498980943454487551UL + 6205UL), (10498980943454487551UL + 6210UL), (10498980943454487551UL + 6211UL),
+                            &____alias_loc_id_14, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5539UL),
+                            &____alias_loc_id_15, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5539UL),
+                            &____alias_loc_id_16, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5539UL),
+                            &____alias_loc_id_17, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5539UL),
+                            &____alias_loc_id_18, (unsigned)0, (unsigned)0, (unsigned)1, "scanf", (unsigned)2, (10498980943454487551UL + 5562UL), (10498980943454487551UL + 6808UL),
+                            &____alias_loc_id_19, (unsigned)33, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5539UL), (10498980943454487551UL + 5567UL), (10498980943454487551UL + 5568UL), (10498980943454487551UL + 5569UL), (10498980943454487551UL + 5570UL), (10498980943454487551UL + 5571UL), (10498980943454487551UL + 5572UL), (10498980943454487551UL + 5573UL), (10498980943454487551UL + 5574UL), (10498980943454487551UL + 5575UL), (10498980943454487551UL + 5576UL), (10498980943454487551UL + 5577UL), (10498980943454487551UL + 5578UL), (10498980943454487551UL + 5579UL), (10498980943454487551UL + 5580UL), (10498980943454487551UL + 5581UL), (10498980943454487551UL + 5582UL), (10498980943454487551UL + 5583UL), (10498980943454487551UL + 5584UL), (10498980943454487551UL + 5585UL), (10498980943454487551UL + 5586UL), (10498980943454487551UL + 5587UL), (10498980943454487551UL + 5588UL), (10498980943454487551UL + 5589UL), (10498980943454487551UL + 5590UL), (10498980943454487551UL + 5591UL), (10498980943454487551UL + 5592UL), (10498980943454487551UL + 5593UL), (10498980943454487551UL + 5594UL), (10498980943454487551UL + 6522UL), (10498980943454487551UL + 6534UL), (10498980943454487551UL + 6625UL), (10498980943454487551UL + 6630UL), "kernel_cpu_2", (unsigned)9, (10498980943454487551UL + 6522UL), (10498980943454487551UL + 6534UL), (10498980943454487551UL + 6625UL), (10498980943454487551UL + 6630UL), (10498980943454487551UL + 6639UL), (10498980943454487551UL + 6644UL), (10498980943454487551UL + 6645UL), (10498980943454487551UL + 6646UL), (10498980943454487551UL + 6647UL),
+                            &____alias_loc_id_20, (unsigned)1, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5539UL),
+                            &____alias_loc_id_21, (unsigned)1, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5539UL), "scanf", (unsigned)2, (10498980943454487551UL + 5534UL), (10498980943454487551UL + 6808UL),
+                            &____alias_loc_id_22, (unsigned)1, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5539UL), "scanf", (unsigned)2, (10498980943454487551UL + 5534UL), (10498980943454487551UL + 6808UL),
+                            &____alias_loc_id_23, (unsigned)1, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5539UL), "scanf", (unsigned)2, (10498980943454487551UL + 5534UL), (10498980943454487551UL + 6808UL),
+                            &____alias_loc_id_24, (unsigned)1, (unsigned)0, (unsigned)1, (10498980943454487551UL + 5539UL), "scanf", (unsigned)2, (10498980943454487551UL + 5561UL), (10498980943454487551UL + 6808UL),
+                            &____alias_loc_id_25, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1UL), (10498980943454487551UL + 2UL), (10498980943454487551UL + 3UL), (10498980943454487551UL + 28UL),
+                            &____alias_loc_id_26, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 33UL), (10498980943454487551UL + 34UL), (10498980943454487551UL + 70UL),
+                            &____alias_loc_id_27, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 71UL), (10498980943454487551UL + 72UL),
+                            &____alias_loc_id_28, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 99UL), (10498980943454487551UL + 100UL), (10498980943454487551UL + 152UL), (10498980943454487551UL + 1380UL),
+                            &____alias_loc_id_29, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 154UL), (10498980943454487551UL + 155UL), (10498980943454487551UL + 205UL), (10498980943454487551UL + 1380UL),
+                            &____alias_loc_id_30, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 207UL), (10498980943454487551UL + 208UL), (10498980943454487551UL + 209UL), (10498980943454487551UL + 265UL), (10498980943454487551UL + 1380UL),
+                            &____alias_loc_id_31, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 268UL), (10498980943454487551UL + 269UL), (10498980943454487551UL + 270UL), (10498980943454487551UL + 326UL), (10498980943454487551UL + 1380UL),
+                            &____alias_loc_id_32, (unsigned)7, (unsigned)0, (unsigned)0, (10498980943454487551UL + 329UL), (10498980943454487551UL + 330UL), (10498980943454487551UL + 331UL), (10498980943454487551UL + 332UL), (10498980943454487551UL + 333UL), (10498980943454487551UL + 441UL), (10498980943454487551UL + 1380UL),
+                            &____alias_loc_id_33, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 443UL), (10498980943454487551UL + 444UL),
+                            &____alias_loc_id_34, (unsigned)7, (unsigned)0, (unsigned)0, (10498980943454487551UL + 455UL), (10498980943454487551UL + 456UL), (10498980943454487551UL + 457UL), (10498980943454487551UL + 458UL), (10498980943454487551UL + 459UL), (10498980943454487551UL + 529UL), (10498980943454487551UL + 1380UL),
+                            &____alias_loc_id_35, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 535UL), (10498980943454487551UL + 536UL), (10498980943454487551UL + 552UL),
+                            &____alias_loc_id_36, (unsigned)7, (unsigned)0, (unsigned)0, (10498980943454487551UL + 554UL), (10498980943454487551UL + 555UL), (10498980943454487551UL + 556UL), (10498980943454487551UL + 557UL), (10498980943454487551UL + 558UL), (10498980943454487551UL + 626UL), (10498980943454487551UL + 1380UL),
+                            &____alias_loc_id_37, (unsigned)8, (unsigned)0, (unsigned)0, (10498980943454487551UL + 628UL), (10498980943454487551UL + 629UL), (10498980943454487551UL + 630UL), (10498980943454487551UL + 631UL), (10498980943454487551UL + 632UL), (10498980943454487551UL + 633UL), (10498980943454487551UL + 707UL), (10498980943454487551UL + 1380UL),
+                            &____alias_loc_id_38, (unsigned)8, (unsigned)0, (unsigned)0, (10498980943454487551UL + 710UL), (10498980943454487551UL + 711UL), (10498980943454487551UL + 712UL), (10498980943454487551UL + 713UL), (10498980943454487551UL + 714UL), (10498980943454487551UL + 715UL), (10498980943454487551UL + 789UL), (10498980943454487551UL + 1380UL),
+                            &____alias_loc_id_39, (unsigned)10, (unsigned)0, (unsigned)0, (10498980943454487551UL + 792UL), (10498980943454487551UL + 793UL), (10498980943454487551UL + 794UL), (10498980943454487551UL + 795UL), (10498980943454487551UL + 796UL), (10498980943454487551UL + 797UL), (10498980943454487551UL + 798UL), (10498980943454487551UL + 799UL), (10498980943454487551UL + 925UL), (10498980943454487551UL + 1380UL),
+                            &____alias_loc_id_40, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1034UL), (10498980943454487551UL + 1035UL), (10498980943454487551UL + 1036UL), (10498980943454487551UL + 1037UL), (10498980943454487551UL + 1038UL),
+                            &____alias_loc_id_41, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1079UL), (10498980943454487551UL + 1080UL),
+                            &____alias_loc_id_42, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1091UL), (10498980943454487551UL + 1092UL),
+                            &____alias_loc_id_43, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1103UL), (10498980943454487551UL + 1104UL), (10498980943454487551UL + 1105UL), (10498980943454487551UL + 1106UL), (10498980943454487551UL + 1107UL),
+                            &____alias_loc_id_44, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1156UL), (10498980943454487551UL + 1157UL),
+                            &____alias_loc_id_45, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1178UL), (10498980943454487551UL + 1179UL),
+                            &____alias_loc_id_46, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1200UL), (10498980943454487551UL + 1201UL),
+                            &____alias_loc_id_47, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1212UL), (10498980943454487551UL + 1213UL),
+                            &____alias_loc_id_48, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1227UL), (10498980943454487551UL + 1228UL),
+                            &____alias_loc_id_49, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1242UL), (10498980943454487551UL + 1243UL), (10498980943454487551UL + 1244UL),
+                            &____alias_loc_id_50, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1276UL), (10498980943454487551UL + 1277UL), (10498980943454487551UL + 1291UL),
+                            &____alias_loc_id_51, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1296UL), (10498980943454487551UL + 1302UL),
+                            &____alias_loc_id_52, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1303UL), (10498980943454487551UL + 1318UL),
+                            &____alias_loc_id_53, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1319UL), (10498980943454487551UL + 1334UL),
+                            &____alias_loc_id_54, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1335UL), (10498980943454487551UL + 1336UL),
+                            &____alias_loc_id_55, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1355UL), (10498980943454487551UL + 1356UL),
+                            &____alias_loc_id_56, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1369UL), (10498980943454487551UL + 1370UL), (10498980943454487551UL + 1384UL),
+                            &____alias_loc_id_57, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1389UL), (10498980943454487551UL + 1395UL),
+                            &____alias_loc_id_58, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1396UL), (10498980943454487551UL + 1411UL),
+                            &____alias_loc_id_59, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1412UL), (10498980943454487551UL + 1427UL),
+                            &____alias_loc_id_60, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1428UL), (10498980943454487551UL + 1429UL),
+                            &____alias_loc_id_61, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1448UL), (10498980943454487551UL + 1449UL),
+                            &____alias_loc_id_62, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1461UL), (10498980943454487551UL + 1462UL), (10498980943454487551UL + 1463UL), (10498980943454487551UL + 6791UL),
+                            &____alias_loc_id_63, (unsigned)25, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1492UL), (10498980943454487551UL + 1493UL), (10498980943454487551UL + 1494UL), (10498980943454487551UL + 1495UL), (10498980943454487551UL + 1496UL), (10498980943454487551UL + 1497UL), (10498980943454487551UL + 1498UL), (10498980943454487551UL + 1499UL), (10498980943454487551UL + 1500UL), (10498980943454487551UL + 1501UL), (10498980943454487551UL + 1502UL), (10498980943454487551UL + 1503UL), (10498980943454487551UL + 1504UL), (10498980943454487551UL + 1505UL), (10498980943454487551UL + 1506UL), (10498980943454487551UL + 1507UL), (10498980943454487551UL + 1508UL), (10498980943454487551UL + 1509UL), (10498980943454487551UL + 1652UL), (10498980943454487551UL + 1883UL), (10498980943454487551UL + 6788UL), (10498980943454487551UL + 6789UL), (10498980943454487551UL + 6790UL), (10498980943454487551UL + 6791UL), (10498980943454487551UL + 6796UL),
+                            &____alias_loc_id_64, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1943UL), (10498980943454487551UL + 1944UL), (10498980943454487551UL + 5890UL), (10498980943454487551UL + 6796UL),
+                            &____alias_loc_id_65, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1980UL), (10498980943454487551UL + 1981UL), (10498980943454487551UL + 5890UL), (10498980943454487551UL + 6796UL),
+                            &____alias_loc_id_66, (unsigned)13, (unsigned)0, (unsigned)0, (10498980943454487551UL + 1997UL), (10498980943454487551UL + 1998UL), (10498980943454487551UL + 1999UL), (10498980943454487551UL + 2000UL), (10498980943454487551UL + 2001UL), (10498980943454487551UL + 2002UL), (10498980943454487551UL + 2003UL), (10498980943454487551UL + 2004UL), (10498980943454487551UL + 2005UL), (10498980943454487551UL + 2006UL), (10498980943454487551UL + 2007UL), (10498980943454487551UL + 2008UL), (10498980943454487551UL + 2009UL),
+                            &____alias_loc_id_67, (unsigned)8, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2123UL), (10498980943454487551UL + 2124UL), (10498980943454487551UL + 2125UL), (10498980943454487551UL + 2126UL), (10498980943454487551UL + 2127UL), (10498980943454487551UL + 2128UL), (10498980943454487551UL + 2129UL), (10498980943454487551UL + 2130UL),
+                            &____alias_loc_id_68, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2307UL), (10498980943454487551UL + 2308UL), (10498980943454487551UL + 2309UL),
+                            &____alias_loc_id_69, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2394UL), (10498980943454487551UL + 2395UL), (10498980943454487551UL + 2396UL), (10498980943454487551UL + 2397UL),
+                            &____alias_loc_id_70, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2429UL), (10498980943454487551UL + 2430UL), (10498980943454487551UL + 2431UL), (10498980943454487551UL + 2432UL), (10498980943454487551UL + 2433UL),
+                            &____alias_loc_id_71, (unsigned)6, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2463UL), (10498980943454487551UL + 2464UL), (10498980943454487551UL + 2465UL), (10498980943454487551UL + 2466UL), (10498980943454487551UL + 2467UL), (10498980943454487551UL + 6796UL),
+                            &____alias_loc_id_72, (unsigned)9, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2624UL), (10498980943454487551UL + 2625UL), (10498980943454487551UL + 2626UL), (10498980943454487551UL + 2627UL), (10498980943454487551UL + 2628UL), (10498980943454487551UL + 2629UL), (10498980943454487551UL + 2630UL), (10498980943454487551UL + 2631UL), (10498980943454487551UL + 2632UL),
+                            &____alias_loc_id_73, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2710UL), (10498980943454487551UL + 2711UL), (10498980943454487551UL + 2712UL), (10498980943454487551UL + 2713UL),
+                            &____alias_loc_id_74, (unsigned)6, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2738UL), (10498980943454487551UL + 2739UL), (10498980943454487551UL + 2740UL), (10498980943454487551UL + 2741UL), (10498980943454487551UL + 2742UL), (10498980943454487551UL + 2767UL),
+                            &____alias_loc_id_75, (unsigned)9, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2778UL), (10498980943454487551UL + 2779UL), (10498980943454487551UL + 2780UL), (10498980943454487551UL + 2781UL), (10498980943454487551UL + 2782UL), (10498980943454487551UL + 2783UL), (10498980943454487551UL + 2784UL), (10498980943454487551UL + 2785UL), (10498980943454487551UL + 2788UL),
+                            &____alias_loc_id_76, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2879UL), (10498980943454487551UL + 2880UL), (10498980943454487551UL + 2882UL),
+                            &____alias_loc_id_77, (unsigned)4, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2892UL), (10498980943454487551UL + 2893UL), (10498980943454487551UL + 2894UL), (10498980943454487551UL + 2895UL),
+                            &____alias_loc_id_78, (unsigned)8, (unsigned)0, (unsigned)0, (10498980943454487551UL + 2933UL), (10498980943454487551UL + 2934UL), (10498980943454487551UL + 2935UL), (10498980943454487551UL + 2936UL), (10498980943454487551UL + 2937UL), (10498980943454487551UL + 2938UL), (10498980943454487551UL + 2985UL), (10498980943454487551UL + 3042UL),
+                            &____alias_loc_id_79, (unsigned)21, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3045UL), (10498980943454487551UL + 3046UL), (10498980943454487551UL + 3047UL), (10498980943454487551UL + 3048UL), (10498980943454487551UL + 3049UL), (10498980943454487551UL + 3050UL), (10498980943454487551UL + 3051UL), (10498980943454487551UL + 3052UL), (10498980943454487551UL + 3053UL), (10498980943454487551UL + 3054UL), (10498980943454487551UL + 3055UL), (10498980943454487551UL + 3056UL), (10498980943454487551UL + 3057UL), (10498980943454487551UL + 3058UL), (10498980943454487551UL + 3059UL), (10498980943454487551UL + 3060UL), (10498980943454487551UL + 3061UL), (10498980943454487551UL + 3226UL), (10498980943454487551UL + 3238UL), (10498980943454487551UL + 3401UL), (10498980943454487551UL + 5890UL),
+                            &____alias_loc_id_80, (unsigned)10, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3404UL), (10498980943454487551UL + 3405UL), (10498980943454487551UL + 3406UL), (10498980943454487551UL + 3407UL), (10498980943454487551UL + 3408UL), (10498980943454487551UL + 3409UL), (10498980943454487551UL + 3410UL), (10498980943454487551UL + 3411UL), (10498980943454487551UL + 3412UL), (10498980943454487551UL + 3413UL),
+                            &____alias_loc_id_81, (unsigned)9, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3479UL), (10498980943454487551UL + 3480UL), (10498980943454487551UL + 3481UL), (10498980943454487551UL + 3482UL), (10498980943454487551UL + 3483UL), (10498980943454487551UL + 3484UL), (10498980943454487551UL + 3485UL), (10498980943454487551UL + 3510UL), (10498980943454487551UL + 3570UL),
+                            &____alias_loc_id_82, (unsigned)24, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3574UL), (10498980943454487551UL + 3575UL), (10498980943454487551UL + 3576UL), (10498980943454487551UL + 3577UL), (10498980943454487551UL + 3578UL), (10498980943454487551UL + 3579UL), (10498980943454487551UL + 3580UL), (10498980943454487551UL + 3581UL), (10498980943454487551UL + 3582UL), (10498980943454487551UL + 3583UL), (10498980943454487551UL + 3584UL), (10498980943454487551UL + 3585UL), (10498980943454487551UL + 3586UL), (10498980943454487551UL + 3587UL), (10498980943454487551UL + 3588UL), (10498980943454487551UL + 3589UL), (10498980943454487551UL + 3590UL), (10498980943454487551UL + 3591UL), (10498980943454487551UL + 3764UL), (10498980943454487551UL + 3777UL), (10498980943454487551UL + 3899UL), (10498980943454487551UL + 3901UL), (10498980943454487551UL + 3903UL), (10498980943454487551UL + 3925UL),
+                            &____alias_loc_id_83, (unsigned)6, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3929UL), (10498980943454487551UL + 3930UL), (10498980943454487551UL + 3931UL), (10498980943454487551UL + 3932UL), (10498980943454487551UL + 3933UL), (10498980943454487551UL + 5890UL),
+                            &____alias_loc_id_84, (unsigned)6, (unsigned)0, (unsigned)0, (10498980943454487551UL + 3987UL), (10498980943454487551UL + 3988UL), (10498980943454487551UL + 3989UL), (10498980943454487551UL + 3990UL), (10498980943454487551UL + 3996UL), (10498980943454487551UL + 5890UL),
+                            &____alias_loc_id_85, (unsigned)10, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4034UL), (10498980943454487551UL + 4035UL), (10498980943454487551UL + 4036UL), (10498980943454487551UL + 4037UL), (10498980943454487551UL + 4038UL), (10498980943454487551UL + 4039UL), (10498980943454487551UL + 4040UL), (10498980943454487551UL + 4041UL), (10498980943454487551UL + 4042UL), (10498980943454487551UL + 4043UL),
+                            &____alias_loc_id_86, (unsigned)3, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4114UL), (10498980943454487551UL + 4115UL), (10498980943454487551UL + 4116UL),
+                            &____alias_loc_id_87, (unsigned)8, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4158UL), (10498980943454487551UL + 4159UL), (10498980943454487551UL + 4160UL), (10498980943454487551UL + 4161UL), (10498980943454487551UL + 4162UL), (10498980943454487551UL + 4163UL), (10498980943454487551UL + 4202UL), (10498980943454487551UL + 4227UL),
+                            &____alias_loc_id_88, (unsigned)6, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4343UL), (10498980943454487551UL + 4344UL), (10498980943454487551UL + 4345UL), (10498980943454487551UL + 4346UL), (10498980943454487551UL + 4347UL), (10498980943454487551UL + 5890UL),
+                            &____alias_loc_id_89, (unsigned)15, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4402UL), (10498980943454487551UL + 4403UL), (10498980943454487551UL + 4404UL), (10498980943454487551UL + 4405UL), (10498980943454487551UL + 4406UL), (10498980943454487551UL + 4407UL), (10498980943454487551UL + 4408UL), (10498980943454487551UL + 4409UL), (10498980943454487551UL + 4410UL), (10498980943454487551UL + 4411UL), (10498980943454487551UL + 4412UL), (10498980943454487551UL + 4413UL), (10498980943454487551UL + 4414UL), (10498980943454487551UL + 4415UL), (10498980943454487551UL + 4779UL),
+                            &____alias_loc_id_90, (unsigned)15, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4811UL), (10498980943454487551UL + 4812UL), (10498980943454487551UL + 4813UL), (10498980943454487551UL + 4814UL), (10498980943454487551UL + 4815UL), (10498980943454487551UL + 4816UL), (10498980943454487551UL + 4817UL), (10498980943454487551UL + 4818UL), (10498980943454487551UL + 4819UL), (10498980943454487551UL + 4820UL), (10498980943454487551UL + 4821UL), (10498980943454487551UL + 4822UL), (10498980943454487551UL + 4823UL), (10498980943454487551UL + 4824UL), (10498980943454487551UL + 4825UL),
+                            &____alias_loc_id_91, (unsigned)12, (unsigned)0, (unsigned)0, (10498980943454487551UL + 4981UL), (10498980943454487551UL + 4982UL), (10498980943454487551UL + 4983UL), (10498980943454487551UL + 4984UL), (10498980943454487551UL + 4985UL), (10498980943454487551UL + 4986UL), (10498980943454487551UL + 4987UL), (10498980943454487551UL + 4988UL), (10498980943454487551UL + 4989UL), (10498980943454487551UL + 5313UL), (10498980943454487551UL + 5382UL), (10498980943454487551UL + 5890UL),
+                            &____alias_loc_id_92, (unsigned)5, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5386UL), (10498980943454487551UL + 5387UL), (10498980943454487551UL + 5388UL), (10498980943454487551UL + 5389UL), (10498980943454487551UL + 5390UL),
+                            &____alias_loc_id_93, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5429UL), (10498980943454487551UL + 5430UL),
+                            &____alias_loc_id_94, (unsigned)2, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5500UL), (10498980943454487551UL + 5501UL),
+                            &____alias_loc_id_95, (unsigned)40, (unsigned)0, (unsigned)0, (10498980943454487551UL + 5511UL), (10498980943454487551UL + 5512UL), (10498980943454487551UL + 5513UL), (10498980943454487551UL + 5514UL), (10498980943454487551UL + 5515UL), (10498980943454487551UL + 5516UL), (10498980943454487551UL + 5517UL), (10498980943454487551UL + 5518UL), (10498980943454487551UL + 5519UL), (10498980943454487551UL + 5520UL), (10498980943454487551UL + 5521UL), (10498980943454487551UL + 5522UL), (10498980943454487551UL + 5523UL), (10498980943454487551UL + 5526UL), (10498980943454487551UL + 5527UL), (10498980943454487551UL + 5528UL), (10498980943454487551UL + 5529UL), (10498980943454487551UL + 5530UL), (10498980943454487551UL + 5531UL), (10498980943454487551UL + 5532UL), (10498980943454487551UL + 5533UL), (10498980943454487551UL + 5534UL), (10498980943454487551UL + 5536UL), (10498980943454487551UL + 5537UL), (10498980943454487551UL + 5538UL), (10498980943454487551UL + 5539UL), (10498980943454487551UL + 5540UL), (10498980943454487551UL + 5557UL), (10498980943454487551UL + 5561UL), (10498980943454487551UL + 5562UL), (10498980943454487551UL + 5563UL), (10498980943454487551UL + 5564UL), (10498980943454487551UL + 5588UL), (10498980943454487551UL + 5595UL), (10498980943454487551UL + 5860UL), (10498980943454487551UL + 5905UL), (10498980943454487551UL + 6235UL), (10498980943454487551UL + 6791UL), (10498980943454487551UL + 6795UL), (10498980943454487551UL + 6797UL),
+                            "list_init", (void *)(&list_init_npm), (void *)__null, 0, 3, (10498980943454487551UL + 28UL), (10498980943454487551UL + 1380UL), (10498980943454487551UL + 1380UL), 0UL, 0,
+                            "list_insert_item_head", (void *)(&list_insert_item_head_npm), (void *)__null, 0, 2, (10498980943454487551UL + 152UL), (10498980943454487551UL + 1380UL), 0UL, 0,
+                            "list_insert_item_tail", (void *)(&list_insert_item_tail_npm), (void *)__null, 0, 2, (10498980943454487551UL + 205UL), (10498980943454487551UL + 1380UL), 0UL, 0,
+                            "list_insert_item_before", (void *)(&list_insert_item_before_npm), (void *)__null, 0, 3, (10498980943454487551UL + 265UL), (10498980943454487551UL + 1380UL), (10498980943454487551UL + 1380UL), 0UL, 0,
+                            "list_insert_item_after", (void *)(&list_insert_item_after_npm), (void *)__null, 0, 3, (10498980943454487551UL + 326UL), (10498980943454487551UL + 1380UL), (10498980943454487551UL + 1380UL), 0UL, 0,
+                            "list_insert_head", (void *)(&list_insert_head_npm), (void *)__null, 0, 2, (10498980943454487551UL + 529UL), (10498980943454487551UL + 530UL), 0UL, 4, "malloc", 1, 0UL, (10498980943454487551UL + 1380UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "list_item_init", 2, (10498980943454487551UL + 1380UL), (10498980943454487551UL + 530UL), 0UL,
+                            "list_insert_tail", (void *)(&list_insert_tail_npm), (void *)__null, 0, 2, (10498980943454487551UL + 626UL), (10498980943454487551UL + 627UL), 0UL, 4, "malloc", 1, 0UL, (10498980943454487551UL + 1380UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "list_item_init", 2, (10498980943454487551UL + 1380UL), (10498980943454487551UL + 627UL), 0UL,
+                            "list_insert_before", (void *)(&list_insert_before_npm), (void *)__null, 0, 3, (10498980943454487551UL + 707UL), (10498980943454487551UL + 1380UL), (10498980943454487551UL + 709UL), 0UL, 4, "malloc", 1, 0UL, (10498980943454487551UL + 1380UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "list_item_init", 2, (10498980943454487551UL + 1380UL), (10498980943454487551UL + 709UL), 0UL,
+                            "list_insert_after", (void *)(&list_insert_after_npm), (void *)__null, 0, 3, (10498980943454487551UL + 789UL), (10498980943454487551UL + 1380UL), (10498980943454487551UL + 791UL), 0UL, 4, "malloc", 1, 0UL, (10498980943454487551UL + 1380UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "list_item_init", 2, (10498980943454487551UL + 1380UL), (10498980943454487551UL + 791UL), 0UL,
+                            "list_get_head_item", (void *)(&list_get_head_item_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1090UL), (10498980943454487551UL + 1086UL), 0,
+                            "list_get_tail_item", (void *)(&list_get_tail_item_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1102UL), (10498980943454487551UL + 1098UL), 0,
+                            "list_get_head", (void *)(&list_get_head_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1166UL), (10498980943454487551UL + 5890UL), 0,
+                            "list_get_tail", (void *)(&list_get_tail_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1188UL), (10498980943454487551UL + 5890UL), 0,
+                            "list_get_length", (void *)(&list_get_length_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1211UL), 0UL, 0,
+                            "list_is_empty", (void *)(&list_is_empty_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1226UL), 0UL, 0,
+                            "list_not_empty", (void *)(&list_not_empty_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1241UL), 0UL, 0,
+                            "list_item_init", (void *)(&list_item_init_npm), (void *)__null, 0, 2, (10498980943454487551UL + 552UL), (10498980943454487551UL + 1380UL), 0UL, 0,
+                            "list_item_get_datum", (void *)(&list_item_get_datum_npm), (void *)__null, 0, 1, (10498980943454487551UL + 454UL), (10498980943454487551UL + 450UL), 0,
+                            "list_iterator_init", (void *)(&list_iterator_init_npm), (void *)__null, 0, 2, (10498980943454487551UL + 1285UL), (10498980943454487551UL + 1291UL), 0UL, 0,
+                            "list_iterator_delete", (void *)(&list_iterator_delete_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1302UL), 0UL, 0,
+                            "list_iterator_next", (void *)(&list_iterator_next_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1318UL), 0UL, 0,
+                            "list_iterator_prev", (void *)(&list_iterator_prev_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1334UL), 0UL, 0,
+                            "list_iterator_get_datum", (void *)(&list_iterator_get_datum_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1344UL), (10498980943454487551UL + 5890UL), 0,
+                            "list_iterator_is_valid", (void *)(&list_iterator_is_valid_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1368UL), 0UL, 0,
+                            "list_reverse_iterator_init", (void *)(&list_reverse_iterator_init_npm), (void *)__null, 0, 2, (10498980943454487551UL + 1378UL), (10498980943454487551UL + 1384UL), 0UL, 0,
+                            "list_reverse_iterator_delete", (void *)(&list_reverse_iterator_delete_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1395UL), 0UL, 0,
+                            "list_reverse_iterator_next", (void *)(&list_reverse_iterator_next_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1411UL), 0UL, 0,
+                            "list_reverse_iterator_prev", (void *)(&list_reverse_iterator_prev_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1427UL), 0UL, 0,
+                            "list_reverse_iterator_get_datum", (void *)(&list_reverse_iterator_get_datum_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1437UL), (10498980943454487551UL + 5890UL), 0,
+                            "list_reverse_iterator_is_valid", (void *)(&list_reverse_iterator_is_valid_npm), (void *)__null, 0, 1, (10498980943454487551UL + 1460UL), 0UL, 0,
+                            "kmalloc", (void *)(&kmalloc_npm), (void *)__null, 0, 1, 0UL, (10498980943454487551UL + 6205UL), 2, "printf", 1, (10498980943454487551UL + 6801UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "transform_to_cuda", (void *)(&transform_to_cuda_npm), (void *)__null, 0, 2, (10498980943454487551UL + 1936UL), 0UL, 0UL, 28, "gettimeofday", 2, (10498980943454487551UL + 1494UL), (10498980943454487551UL + 6899UL), 0UL, "log", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "malloc", 1, 0UL, (10498980943454487551UL + 6204UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6802UL), 0UL, "exit", 1, 0UL, 0UL, "kmalloc", 1, 0UL, (10498980943454487551UL + 1883UL), "kmalloc", 1, 0UL, (10498980943454487551UL + 1652UL), "enqueue", 1, (10498980943454487551UL + 1936UL), 0UL, "dequeue", 0, (10498980943454487551UL + 1686UL), "enqueue", 1, (10498980943454487551UL + 1704UL), 0UL, "enqueue", 1, (10498980943454487551UL + 1704UL), 0UL, "printf", 2, (10498980943454487551UL + 6803UL), 0UL, 0UL, "printf", 3, (10498980943454487551UL + 6804UL), 0UL, 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6805UL), 0UL, "printf", 2, (10498980943454487551UL + 6806UL), 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6807UL), 0UL, "printf", 2, (10498980943454487551UL + 6806UL), 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6808UL), 0UL, "printf", 2, (10498980943454487551UL + 6809UL), 0UL, 0UL, "printf", 4, (10498980943454487551UL + 6810UL), 0UL, 0UL, 0UL, 0UL, "printf", 4, (10498980943454487551UL + 6811UL), 0UL, 0UL, 0UL, 0UL, "printf", 2, (10498980943454487551UL + 6812UL), 0UL, 0UL, "gettimeofday", 2, (10498980943454487551UL + 1495UL), (10498980943454487551UL + 6899UL), 0UL, "printf", 2, (10498980943454487551UL + 6799UL), 0UL, 0UL,
+                            "findRange", (void *)(&findRange_npm), (void *)__null, 0, 3, (10498980943454487551UL + 2120UL), 0UL, 0UL, (10498980943454487551UL + 6903UL), 5, "find_leaf", 3, (10498980943454487551UL + 2120UL), 0UL, 0UL, (10498980943454487551UL + 2020UL), "malloc", 1, 0UL, (10498980943454487551UL + 6903UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "list_init", 3, (10498980943454487551UL + 6903UL), (10498980943454487551UL + 6901UL), (10498980943454487551UL + 6902UL), 0UL,
+                            "usage_1", (void *)(&usage_1_npm), (void *)__null, 0, 0, 0UL, 8, "printf", 2, (10498980943454487551UL + 6802UL), 0UL, 0UL, "printf", 2, (10498980943454487551UL + 6815UL), (10498980943454487551UL + 6809UL), 0UL, "printf", 1, (10498980943454487551UL + 6817UL), 0UL, "printf", 1, (10498980943454487551UL + 6818UL), 0UL, "printf", 1, (10498980943454487551UL + 6819UL), 0UL, "printf", 1, (10498980943454487551UL + 6801UL), 0UL, "printf", 1, (10498980943454487551UL + 6821UL), 0UL, "printf", 1, (10498980943454487551UL + 6822UL), 0UL,
+                            "usage_2", (void *)(&usage_2_npm), (void *)__null, 0, 0, 0UL, 11, "printf", 1, (10498980943454487551UL + 6823UL), 0UL, "printf", 1, (10498980943454487551UL + 6824UL), 0UL, "printf", 1, (10498980943454487551UL + 6803UL), 0UL, "printf", 1, (10498980943454487551UL + 6826UL), 0UL, "printf", 1, (10498980943454487551UL + 6827UL), 0UL, "printf", 1, (10498980943454487551UL + 6828UL), 0UL, "printf", 1, (10498980943454487551UL + 6829UL), 0UL, "printf", 1, (10498980943454487551UL + 6830UL), 0UL, "printf", 1, (10498980943454487551UL + 6818UL), 0UL, "printf", 1, (10498980943454487551UL + 6799UL), 0UL, "printf", 1, (10498980943454487551UL + 6833UL), 0UL,
+                            "enqueue", (void *)(&enqueue_npm), (void *)__null, 0, 1, (10498980943454487551UL + 5890UL), 0UL, 0,
+                            "dequeue", (void *)(&dequeue_npm), (void *)__null, 0, 0, (10498980943454487551UL + 5890UL), 0,
+                            "print_leaves", (void *)(&print_leaves_npm), (void *)__null, 0, 1, (10498980943454487551UL + 2393UL), 0UL, 4, "printf", 1, (10498980943454487551UL + 6834UL), 0UL, "printf", 2, (10498980943454487551UL + 6809UL), 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6809UL), 0UL, "printf", 1, (10498980943454487551UL + 6836UL), 0UL,
+                            "height", (void *)(&height_npm), (void *)__null, 0, 1, (10498980943454487551UL + 2428UL), 0UL, 0,
+                            "path_to_root", (void *)(&path_to_root_npm), (void *)__null, 0, 2, (10498980943454487551UL + 2461UL), (10498980943454487551UL + 2462UL), 0UL, 0,
+                            "print_tree", (void *)(&print_tree_npm), (void *)__null, 0, 1, (10498980943454487551UL + 2623UL), 0UL, 13, "printf", 1, (10498980943454487551UL + 6834UL), 0UL, "enqueue", 1, (10498980943454487551UL + 2623UL), 0UL, "dequeue", 0, (10498980943454487551UL + 5890UL), "path_to_root", 2, (10498980943454487551UL + 2623UL), (10498980943454487551UL + 5890UL), 0UL, "printf", 1, (10498980943454487551UL + 6836UL), 0UL, "printf", 2, (10498980943454487551UL + 6837UL), (10498980943454487551UL + 5890UL), 0UL, "printf", 2, (10498980943454487551UL + 6809UL), (10498980943454487551UL + 5890UL), 0UL, "printf", 2, (10498980943454487551UL + 6809UL), 0UL, 0UL, "enqueue", 1, (10498980943454487551UL + 5890UL), 0UL, "printf", 2, (10498980943454487551UL + 6809UL), (10498980943454487551UL + 5890UL), 0UL, "printf", 2, (10498980943454487551UL + 6809UL), (10498980943454487551UL + 5890UL), 0UL, "printf", 1, (10498980943454487551UL + 6808UL), 0UL, "printf", 1, (10498980943454487551UL + 6836UL), 0UL,
+                            "find_leaf", (void *)(&find_leaf_npm), (void *)__null, 0, 3, (10498980943454487551UL + 2282UL), 0UL, 0UL, (10498980943454487551UL + 2282UL), 8, "printf", 1, (10498980943454487551UL + 6834UL), 0UL, "printf", 1, (10498980943454487551UL + 6836UL), 0UL, "printf", 2, (10498980943454487551UL + 6809UL), 0UL, 0UL, "printf", 2, (10498980943454487551UL + 6837UL), 0UL, 0UL, "printf", 2, (10498980943454487551UL + 6842UL), 0UL, 0UL, "printf", 1, (10498980943454487551UL + 6842UL), 0UL, "printf", 2, (10498980943454487551UL + 6809UL), 0UL, 0UL, "printf", 2, (10498980943454487551UL + 6807UL), 0UL, 0UL,
+                            "find", (void *)(&find_npm), (void *)__null, 0, 3, (10498980943454487551UL + 2707UL), 0UL, 0UL, (10498980943454487551UL + 2699UL), 1, "find_leaf", 3, (10498980943454487551UL + 2707UL), 0UL, 0UL, (10498980943454487551UL + 2647UL),
                             "cut", (void *)(&cut_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
-                            "make_record", (void *)(&make_record_npm), (void *)__null, 0, 1, 0UL, (10498980943454487551UL + 2646UL), 5, "malloc", 1, 0UL, (10498980943454487551UL + 2646UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6532UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "make_node", (void *)(&make_node_npm), (void *)__null, 0, 0, (10498980943454487551UL + 2663UL), 15, "malloc", 1, 0UL, (10498980943454487551UL + 2663UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6577UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10498980943454487551UL + 5627UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6578UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10498980943454487551UL + 5627UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6579UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "make_leaf", (void *)(&make_leaf_npm), (void *)__null, 0, 0, (10498980943454487551UL + 2753UL), 1, "make_node", 0, (10498980943454487551UL + 2753UL),
-                            "get_left_index", (void *)(&get_left_index_npm), (void *)__null, 0, 2, (10498980943454487551UL + 2795UL), (10498980943454487551UL + 2796UL), 0UL, 0,
-                            "insert_into_leaf", (void *)(&insert_into_leaf_npm), (void *)__null, 0, 3, (10498980943454487551UL + 2902UL), 0UL, (10498980943454487551UL + 2865UL), (10498980943454487551UL + 2902UL), 0,
-                            "insert_into_leaf_after_splitting", (void *)(&insert_into_leaf_after_splitting_npm), (void *)__null, 0, 4, (10498980943454487551UL + 3256UL), (10498980943454487551UL + 3257UL), 0UL, (10498980943454487551UL + 5627UL), (10498980943454487551UL + 3254UL), 15, "make_leaf", 0, (10498980943454487551UL + 5627UL), "malloc", 1, 0UL, (10498980943454487551UL + 3097UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6533UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10498980943454487551UL + 3085UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6560UL), 0UL, "exit", 1, 0UL, 0UL, "cut", 1, 0UL, 0UL, "free", 1, (10498980943454487551UL + 3085UL), 0UL, "free", 1, (10498980943454487551UL + 3097UL), 0UL, "insert_into_parent", 4, (10498980943454487551UL + 3256UL), (10498980943454487551UL + 3257UL), 0UL, (10498980943454487551UL + 5627UL), (10498980943454487551UL + 3254UL),
-                            "insert_into_node", (void *)(&insert_into_node_npm), (void *)__null, 0, 5, (10498980943454487551UL + 3409UL), (10498980943454487551UL + 3410UL), 0UL, 0UL, (10498980943454487551UL + 3355UL), (10498980943454487551UL + 3409UL), 0,
-                            "insert_into_node_after_splitting", (void *)(&insert_into_node_after_splitting_npm), (void *)__null, 0, 5, (10498980943454487551UL + 3760UL), (10498980943454487551UL + 3761UL), 0UL, 0UL, (10498980943454487551UL + 3742UL), (10498980943454487551UL + 3758UL), 15, "malloc", 1, 0UL, (10498980943454487551UL + 3603UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6582UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10498980943454487551UL + 3616UL), "fprintf", 4, (10498980943454487551UL + 2630UL), (10498980943454487551UL + 6530UL), (10498980943454487551UL + 6531UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6534UL), 0UL, "exit", 1, 0UL, 0UL, "cut", 1, 0UL, 0UL, "make_node", 0, (10498980943454487551UL + 3738UL), "free", 1, (10498980943454487551UL + 3603UL), 0UL, "free", 1, (10498980943454487551UL + 3616UL), 0UL, "insert_into_parent", 4, (10498980943454487551UL + 3760UL), (10498980943454487551UL + 3761UL), 0UL, (10498980943454487551UL + 3738UL), (10498980943454487551UL + 3758UL),
-                            "insert_into_parent", (void *)(&insert_into_parent_npm), (void *)__null, 0, 4, (10498980943454487551UL + 3319UL), (10498980943454487551UL + 3320UL), 0UL, (10498980943454487551UL + 3322UL), (10498980943454487551UL + 3314UL), 4, "insert_into_new_root", 3, (10498980943454487551UL + 3320UL), 0UL, (10498980943454487551UL + 3322UL), (10498980943454487551UL + 3314UL), "get_left_index", 2, (10498980943454487551UL + 3279UL), (10498980943454487551UL + 3320UL), 0UL, "insert_into_node", 5, (10498980943454487551UL + 3319UL), (10498980943454487551UL + 3279UL), 0UL, 0UL, (10498980943454487551UL + 3322UL), (10498980943454487551UL + 3314UL), "insert_into_node_after_splitting", 5, (10498980943454487551UL + 3319UL), (10498980943454487551UL + 3279UL), 0UL, 0UL, (10498980943454487551UL + 3322UL), (10498980943454487551UL + 3314UL),
-                            "insert_into_new_root", (void *)(&insert_into_new_root_npm), (void *)__null, 0, 3, (10498980943454487551UL + 5627UL), 0UL, (10498980943454487551UL + 5627UL), (10498980943454487551UL + 5627UL), 1, "make_node", 0, (10498980943454487551UL + 5627UL),
-                            "start_new_tree", (void *)(&start_new_tree_npm), (void *)__null, 0, 2, 0UL, (10498980943454487551UL + 5627UL), (10498980943454487551UL + 3827UL), 1, "make_leaf", 0, (10498980943454487551UL + 3827UL),
-                            "insert", (void *)(&insert_npm), (void *)__null, 0, 3, (10498980943454487551UL + 3918UL), 0UL, 0UL, (10498980943454487551UL + 3918UL), 6, "find", 3, (10498980943454487551UL + 3918UL), 0UL, 0UL, (10498980943454487551UL + 3878UL), "make_record", 1, 0UL, (10498980943454487551UL + 3885UL), "start_new_tree", 2, 0UL, (10498980943454487551UL + 3885UL), (10498980943454487551UL + 3918UL), "find_leaf", 3, (10498980943454487551UL + 3918UL), 0UL, 0UL, (10498980943454487551UL + 3915UL), "insert_into_leaf", 3, (10498980943454487551UL + 3915UL), 0UL, (10498980943454487551UL + 3885UL), (10498980943454487551UL + 3915UL), "insert_into_leaf_after_splitting", 4, (10498980943454487551UL + 3918UL), (10498980943454487551UL + 3915UL), 0UL, (10498980943454487551UL + 3885UL), (10498980943454487551UL + 3918UL),
-                            "get_neighbor_index", (void *)(&get_neighbor_index_npm), (void *)__null, 0, 1, (10498980943454487551UL + 3965UL), 0UL, 2, "printf", 1, (10498980943454487551UL + 6542UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "remove_entry_from_node", (void *)(&remove_entry_from_node_npm), (void *)__null, 0, 3, (10498980943454487551UL + 4034UL), 0UL, (10498980943454487551UL + 4146UL), (10498980943454487551UL + 4034UL), 0,
-                            "adjust_root", (void *)(&adjust_root_npm), (void *)__null, 0, 1, (10498980943454487551UL + 5627UL), (10498980943454487551UL + 5627UL), 3, "free", 1, (10498980943454487551UL + 5627UL), 0UL, "free", 1, (10498980943454487551UL + 5627UL), 0UL, "free", 1, (10498980943454487551UL + 5627UL), 0UL,
-                            "coalesce_nodes", (void *)(&coalesce_nodes_npm), (void *)__null, 0, 5, (10498980943454487551UL + 4598UL), (10498980943454487551UL + 4574UL), (10498980943454487551UL + 4574UL), 0UL, 0UL, (10498980943454487551UL + 4598UL), 5, "cut", 1, 0UL, 0UL, "delete_entry", 4, (10498980943454487551UL + 4598UL), (10498980943454487551UL + 4574UL), 0UL, (10498980943454487551UL + 4574UL), (10498980943454487551UL + 4598UL), "free", 1, (10498980943454487551UL + 4574UL), 0UL, "free", 1, (10498980943454487551UL + 4574UL), 0UL, "free", 1, (10498980943454487551UL + 4574UL), 0UL,
-                            "redistribute_nodes", (void *)(&redistribute_nodes_npm), (void *)__null, 0, 6, (10498980943454487551UL + 5152UL), (10498980943454487551UL + 5627UL), (10498980943454487551UL + 5154UL), 0UL, 0UL, 0UL, (10498980943454487551UL + 5152UL), 0,
-                            "delete_entry", (void *)(&delete_entry_npm), (void *)__null, 0, 4, (10498980943454487551UL + 4748UL), (10498980943454487551UL + 4657UL), 0UL, (10498980943454487551UL + 4756UL), (10498980943454487551UL + 4748UL), 7, "remove_entry_from_node", 3, (10498980943454487551UL + 4657UL), 0UL, (10498980943454487551UL + 4756UL), (10498980943454487551UL + 4657UL), "adjust_root", 1, (10498980943454487551UL + 4748UL), (10498980943454487551UL + 4748UL), "cut", 1, 0UL, 0UL, "cut", 1, 0UL, 0UL, "get_neighbor_index", 1, (10498980943454487551UL + 4657UL), 0UL, "coalesce_nodes", 5, (10498980943454487551UL + 4748UL), (10498980943454487551UL + 4657UL), (10498980943454487551UL + 4696UL), 0UL, 0UL, (10498980943454487551UL + 4748UL), "redistribute_nodes", 6, (10498980943454487551UL + 4748UL), (10498980943454487551UL + 4657UL), (10498980943454487551UL + 4696UL), 0UL, 0UL, 0UL, (10498980943454487551UL + 4748UL),
-                            "deleteVal", (void *)(&deleteVal_npm), (void *)__null, 0, 2, (10498980943454487551UL + 5195UL), 0UL, (10498980943454487551UL + 5195UL), 4, "find", 3, (10498980943454487551UL + 5195UL), 0UL, 0UL, (10498980943454487551UL + 5170UL), "find_leaf", 3, (10498980943454487551UL + 5195UL), 0UL, 0UL, (10498980943454487551UL + 5174UL), "free", 1, (10498980943454487551UL + 5170UL), 0UL, "delete_entry", 4, (10498980943454487551UL + 5195UL), (10498980943454487551UL + 5174UL), 0UL, (10498980943454487551UL + 5170UL), (10498980943454487551UL + 5195UL),
-                            "destroy_tree_nodes", (void *)(&destroy_tree_nodes_npm), (void *)__null, 0, 1, (10498980943454487551UL + 5267UL), 0UL, 5, "free", 1, (10498980943454487551UL + 5221UL), 0UL, "destroy_tree_nodes", 1, (10498980943454487551UL + 5221UL), 0UL, "free", 1, (10498980943454487551UL + 5219UL), 0UL, "free", 1, (10498980943454487551UL + 5219UL), 0UL, "free", 1, (10498980943454487551UL + 5267UL), 0UL,
-                            "destroy_tree", (void *)(&destroy_tree_npm), (void *)__null, 0, 1, (10498980943454487551UL + 5274UL), (10498980943454487551UL + 5627UL), 1, "destroy_tree_nodes", 1, (10498980943454487551UL + 5274UL), 0UL,
-                               "feof", (void **)&(____chimes_extern_func_feof),
+                            "make_record", (void *)(&make_record_npm), (void *)__null, 0, 1, 0UL, (10498980943454487551UL + 2767UL), 5, "malloc", 1, 0UL, (10498980943454487551UL + 2767UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6801UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "make_node", (void *)(&make_node_npm), (void *)__null, 0, 0, (10498980943454487551UL + 2788UL), 15, "malloc", 1, 0UL, (10498980943454487551UL + 2788UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6846UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10498980943454487551UL + 5890UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6847UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10498980943454487551UL + 5890UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6848UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "make_leaf", (void *)(&make_leaf_npm), (void *)__null, 0, 0, (10498980943454487551UL + 2882UL), 1, "make_node", 0, (10498980943454487551UL + 2882UL),
+                            "get_left_index", (void *)(&get_left_index_npm), (void *)__null, 0, 2, (10498980943454487551UL + 2931UL), (10498980943454487551UL + 2932UL), 0UL, 0,
+                            "insert_into_leaf", (void *)(&insert_into_leaf_npm), (void *)__null, 0, 3, (10498980943454487551UL + 3042UL), 0UL, (10498980943454487551UL + 3002UL), (10498980943454487551UL + 3042UL), 0,
+                            "insert_into_leaf_after_splitting", (void *)(&insert_into_leaf_after_splitting_npm), (void *)__null, 0, 4, (10498980943454487551UL + 3400UL), (10498980943454487551UL + 3401UL), 0UL, (10498980943454487551UL + 5890UL), (10498980943454487551UL + 3396UL), 15, "make_leaf", 0, (10498980943454487551UL + 5890UL), "malloc", 1, 0UL, (10498980943454487551UL + 3238UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6802UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10498980943454487551UL + 3226UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6829UL), 0UL, "exit", 1, 0UL, 0UL, "cut", 1, 0UL, 0UL, "free", 1, (10498980943454487551UL + 3226UL), 0UL, "free", 1, (10498980943454487551UL + 3238UL), 0UL, "insert_into_parent", 4, (10498980943454487551UL + 3400UL), (10498980943454487551UL + 3401UL), 0UL, (10498980943454487551UL + 5890UL), (10498980943454487551UL + 3396UL),
+                            "insert_into_node", (void *)(&insert_into_node_npm), (void *)__null, 0, 5, (10498980943454487551UL + 3569UL), (10498980943454487551UL + 3570UL), 0UL, 0UL, (10498980943454487551UL + 3512UL), (10498980943454487551UL + 3569UL), 0,
+                            "insert_into_node_after_splitting", (void *)(&insert_into_node_after_splitting_npm), (void *)__null, 0, 5, (10498980943454487551UL + 3924UL), (10498980943454487551UL + 3925UL), 0UL, 0UL, (10498980943454487551UL + 3903UL), (10498980943454487551UL + 3920UL), 15, "malloc", 1, 0UL, (10498980943454487551UL + 3764UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6851UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (10498980943454487551UL + 3777UL), "fprintf", 4, (10498980943454487551UL + 2751UL), (10498980943454487551UL + 6799UL), (10498980943454487551UL + 6800UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "perror", 1, (10498980943454487551UL + 6803UL), 0UL, "exit", 1, 0UL, 0UL, "cut", 1, 0UL, 0UL, "make_node", 0, (10498980943454487551UL + 3899UL), "free", 1, (10498980943454487551UL + 3764UL), 0UL, "free", 1, (10498980943454487551UL + 3777UL), 0UL, "insert_into_parent", 4, (10498980943454487551UL + 3924UL), (10498980943454487551UL + 3925UL), 0UL, (10498980943454487551UL + 3899UL), (10498980943454487551UL + 3920UL),
+                            "insert_into_parent", (void *)(&insert_into_parent_npm), (void *)__null, 0, 4, (10498980943454487551UL + 3475UL), (10498980943454487551UL + 3476UL), 0UL, (10498980943454487551UL + 3478UL), (10498980943454487551UL + 3468UL), 4, "insert_into_new_root", 3, (10498980943454487551UL + 3476UL), 0UL, (10498980943454487551UL + 3478UL), (10498980943454487551UL + 3468UL), "get_left_index", 2, (10498980943454487551UL + 3426UL), (10498980943454487551UL + 3476UL), 0UL, "insert_into_node", 5, (10498980943454487551UL + 3475UL), (10498980943454487551UL + 3426UL), 0UL, 0UL, (10498980943454487551UL + 3478UL), (10498980943454487551UL + 3468UL), "insert_into_node_after_splitting", 5, (10498980943454487551UL + 3475UL), (10498980943454487551UL + 3426UL), 0UL, 0UL, (10498980943454487551UL + 3478UL), (10498980943454487551UL + 3468UL),
+                            "insert_into_new_root", (void *)(&insert_into_new_root_npm), (void *)__null, 0, 3, (10498980943454487551UL + 5890UL), 0UL, (10498980943454487551UL + 5890UL), (10498980943454487551UL + 5890UL), 1, "make_node", 0, (10498980943454487551UL + 5890UL),
+                            "start_new_tree", (void *)(&start_new_tree_npm), (void *)__null, 0, 2, 0UL, (10498980943454487551UL + 5890UL), (10498980943454487551UL + 3996UL), 1, "make_leaf", 0, (10498980943454487551UL + 3996UL),
+                            "insert", (void *)(&insert_npm), (void *)__null, 0, 3, (10498980943454487551UL + 4104UL), 0UL, 0UL, (10498980943454487551UL + 4104UL), 6, "find", 3, (10498980943454487551UL + 4104UL), 0UL, 0UL, (10498980943454487551UL + 4054UL), "make_record", 1, 0UL, (10498980943454487551UL + 4064UL), "start_new_tree", 2, 0UL, (10498980943454487551UL + 4064UL), (10498980943454487551UL + 4104UL), "find_leaf", 3, (10498980943454487551UL + 4104UL), 0UL, 0UL, (10498980943454487551UL + 4101UL), "insert_into_leaf", 3, (10498980943454487551UL + 4101UL), 0UL, (10498980943454487551UL + 4064UL), (10498980943454487551UL + 4101UL), "insert_into_leaf_after_splitting", 4, (10498980943454487551UL + 4104UL), (10498980943454487551UL + 4101UL), 0UL, (10498980943454487551UL + 4064UL), (10498980943454487551UL + 4104UL),
+                            "get_neighbor_index", (void *)(&get_neighbor_index_npm), (void *)__null, 0, 1, (10498980943454487551UL + 4157UL), 0UL, 2, "printf", 1, (10498980943454487551UL + 6811UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "remove_entry_from_node", (void *)(&remove_entry_from_node_npm), (void *)__null, 0, 3, (10498980943454487551UL + 4227UL), 0UL, (10498980943454487551UL + 4342UL), (10498980943454487551UL + 4227UL), 0,
+                            "adjust_root", (void *)(&adjust_root_npm), (void *)__null, 0, 1, (10498980943454487551UL + 5890UL), (10498980943454487551UL + 5890UL), 3, "free", 1, (10498980943454487551UL + 5890UL), 0UL, "free", 1, (10498980943454487551UL + 5890UL), 0UL, "free", 1, (10498980943454487551UL + 5890UL), 0UL,
+                            "coalesce_nodes", (void *)(&coalesce_nodes_npm), (void *)__null, 0, 5, (10498980943454487551UL + 4806UL), (10498980943454487551UL + 4779UL), (10498980943454487551UL + 4779UL), 0UL, 0UL, (10498980943454487551UL + 4806UL), 5, "cut", 1, 0UL, 0UL, "delete_entry", 4, (10498980943454487551UL + 4806UL), (10498980943454487551UL + 4779UL), 0UL, (10498980943454487551UL + 4779UL), (10498980943454487551UL + 4806UL), "free", 1, (10498980943454487551UL + 4779UL), 0UL, "free", 1, (10498980943454487551UL + 4779UL), 0UL, "free", 1, (10498980943454487551UL + 4779UL), 0UL,
+                            "redistribute_nodes", (void *)(&redistribute_nodes_npm), (void *)__null, 0, 6, (10498980943454487551UL + 5380UL), (10498980943454487551UL + 5890UL), (10498980943454487551UL + 5382UL), 0UL, 0UL, 0UL, (10498980943454487551UL + 5380UL), 0,
+                            "delete_entry", (void *)(&delete_entry_npm), (void *)__null, 0, 4, (10498980943454487551UL + 4970UL), (10498980943454487551UL + 4872UL), 0UL, (10498980943454487551UL + 4980UL), (10498980943454487551UL + 4970UL), 7, "remove_entry_from_node", 3, (10498980943454487551UL + 4872UL), 0UL, (10498980943454487551UL + 4980UL), (10498980943454487551UL + 4872UL), "adjust_root", 1, (10498980943454487551UL + 4970UL), (10498980943454487551UL + 4970UL), "cut", 1, 0UL, 0UL, "cut", 1, 0UL, 0UL, "get_neighbor_index", 1, (10498980943454487551UL + 4872UL), 0UL, "coalesce_nodes", 5, (10498980943454487551UL + 4970UL), (10498980943454487551UL + 4872UL), (10498980943454487551UL + 4914UL), 0UL, 0UL, (10498980943454487551UL + 4970UL), "redistribute_nodes", 6, (10498980943454487551UL + 4970UL), (10498980943454487551UL + 4872UL), (10498980943454487551UL + 4914UL), 0UL, 0UL, 0UL, (10498980943454487551UL + 4970UL),
+                            "deleteVal", (void *)(&deleteVal_npm), (void *)__null, 0, 2, (10498980943454487551UL + 5427UL), 0UL, (10498980943454487551UL + 5427UL), 4, "find", 3, (10498980943454487551UL + 5427UL), 0UL, 0UL, (10498980943454487551UL + 5399UL), "find_leaf", 3, (10498980943454487551UL + 5427UL), 0UL, 0UL, (10498980943454487551UL + 5403UL), "free", 1, (10498980943454487551UL + 5399UL), 0UL, "delete_entry", 4, (10498980943454487551UL + 5427UL), (10498980943454487551UL + 5403UL), 0UL, (10498980943454487551UL + 5399UL), (10498980943454487551UL + 5427UL),
+                            "destroy_tree_nodes", (void *)(&destroy_tree_nodes_npm), (void *)__null, 0, 1, (10498980943454487551UL + 5499UL), 0UL, 5, "free", 1, (10498980943454487551UL + 5453UL), 0UL, "destroy_tree_nodes", 1, (10498980943454487551UL + 5453UL), 0UL, "free", 1, (10498980943454487551UL + 5451UL), 0UL, "free", 1, (10498980943454487551UL + 5451UL), 0UL, "free", 1, (10498980943454487551UL + 5499UL), 0UL,
+                            "destroy_tree", (void *)(&destroy_tree_npm), (void *)__null, 0, 1, (10498980943454487551UL + 5510UL), (10498980943454487551UL + 5890UL), 1, "destroy_tree_nodes", 1, (10498980943454487551UL + 5510UL), 0UL,
                                "getchar", (void **)&(____chimes_extern_func_getchar),
                                "isInteger", (void **)&(____chimes_extern_func_isInteger),
                                "kernel_cpu", (void **)&(____chimes_extern_func_kernel_cpu),
@@ -14865,368 +14865,412 @@ static int module_init() {
                            "deleteVal", &(____chimes_does_checkpoint_deleteVal_npm),
                            "destroy_tree_nodes", &(____chimes_does_checkpoint_destroy_tree_nodes_npm),
                            "destroy_tree", &(____chimes_does_checkpoint_destroy_tree_npm),
-                           "feof", &(____chimes_does_checkpoint_feof_npm),
                            "getchar", &(____chimes_does_checkpoint_getchar_npm),
                            "isInteger", &(____chimes_does_checkpoint_isInteger_npm),
                            "kernel_cpu", &(____chimes_does_checkpoint_kernel_cpu_npm),
                            "kernel_cpu_2", &(____chimes_does_checkpoint_kernel_cpu_2_npm),
                            "rewind", &(____chimes_does_checkpoint_rewind_npm),
                            "scanf", &(____chimes_does_checkpoint_scanf_npm),
-                             (10498980943454487551UL + 5310UL), (10498980943454487551UL + 5945UL),
-                             (10498980943454487551UL + 3926UL), (10498980943454487551UL + 3965UL),
-                             (10498980943454487551UL + 452UL), (10498980943454487551UL + 526UL),
-                             (10498980943454487551UL + 5316UL), (10498980943454487551UL + 5928UL),
-                             (10498980943454487551UL + 4149UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 4148UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 1942UL), (10498980943454487551UL + 1992UL),
-                             (10498980943454487551UL + 4147UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 3257UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 2910UL), (10498980943454487551UL + 3097UL),
-                             (10498980943454487551UL + 2911UL), (10498980943454487551UL + 3085UL),
-                             (10498980943454487551UL + 2917UL), (10498980943454487551UL + 3097UL),
-                             (10498980943454487551UL + 2918UL), (10498980943454487551UL + 3097UL),
-                             (10498980943454487551UL + 2919UL), (10498980943454487551UL + 3085UL),
-                             (10498980943454487551UL + 711UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 710UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1069UL), (10498980943454487551UL + 1040UL),
-                             (10498980943454487551UL + 5309UL), (10498980943454487551UL + 5945UL),
-                             (10498980943454487551UL + 5300UL), (10498980943454487551UL + 5938UL),
-                             (10498980943454487551UL + 5303UL), (10498980943454487551UL + 5939UL),
-                             (10498980943454487551UL + 5306UL), (10498980943454487551UL + 5944UL),
-                             (10498980943454487551UL + 5268UL), (10498980943454487551UL + 5274UL),
-                             (10498980943454487551UL + 1390UL), (10498980943454487551UL + 1396UL),
-                             (10498980943454487551UL + 1087UL), (10498980943454487551UL + 1134UL),
-                             (10498980943454487551UL + 1086UL), (10498980943454487551UL + 1084UL),
-                             (10498980943454487551UL + 1089UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 1088UL), (10498980943454487551UL + 1135UL),
-                             (10498980943454487551UL + 270UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 4657UL), (10498980943454487551UL + 4681UL),
-                             (10498980943454487551UL + 2544UL), (10498980943454487551UL + 2563UL),
-                             (10498980943454487551UL + 525UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1019UL), (10498980943454487551UL + 1016UL),
-                             (10498980943454487551UL + 1010UL), (10498980943454487551UL + 1019UL),
-                             (10498980943454487551UL + 1232UL), (10498980943454487551UL + 1241UL),
-                             (10498980943454487551UL + 1233UL), (10498980943454487551UL + 1247UL),
-                             (10498980943454487551UL + 1335UL), (10498980943454487551UL + 1341UL),
-                             (10498980943454487551UL + 2761UL), (10498980943454487551UL + 2796UL),
-                             (10498980943454487551UL + 2760UL), (10498980943454487551UL + 2795UL),
-                             (10498980943454487551UL + 1330UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 100UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 2044UL), (10498980943454487551UL + 2190UL),
-                             (10498980943454487551UL + 2040UL), (10498980943454487551UL + 2190UL),
+                             (10498980943454487551UL + 3925UL), (10498980943454487551UL + 3901UL),
+                             (10498980943454487551UL + 5560UL), (10498980943454487551UL + 6194UL),
+                             (10498980943454487551UL + 3929UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 799UL), (10498980943454487551UL + 834UL),
+                             (10498980943454487551UL + 1943UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 1944UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 3996UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 3990UL), (10498980943454487551UL + 3996UL),
+                             (10498980943454487551UL + 2913UL), (10498980943454487551UL + 2915UL),
+                             (10498980943454487551UL + 715UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 714UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 713UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 712UL), (10498980943454487551UL + 791UL),
+                             (10498980943454487551UL + 711UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 710UL), (10498980943454487551UL + 789UL),
+                             (10498980943454487551UL + 1492UL), (10498980943454487551UL + 1936UL),
+                             (10498980943454487551UL + 1498UL), (10498980943454487551UL + 6204UL),
+                             (10498980943454487551UL + 1499UL), (10498980943454487551UL + 6204UL),
+                             (10498980943454487551UL + 6796UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 6790UL), (10498980943454487551UL + 6204UL),
+                             (10498980943454487551UL + 6798UL), (10498980943454487551UL + 2751UL),
+                             (10498980943454487551UL + 1080UL), (10498980943454487551UL + 1086UL),
+                             (10498980943454487551UL + 270UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 2985UL), (10498980943454487551UL + 3002UL),
+                             (10498980943454487551UL + 1014UL), (10498980943454487551UL + 1023UL),
+                             (10498980943454487551UL + 1400UL), (10498980943454487551UL + 1400UL),
+                             (10498980943454487551UL + 529UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 1012UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 1013UL), (10498980943454487551UL + 985UL),
+                             (10498980943454487551UL + 3583UL), (10498980943454487551UL + 3899UL),
+                             (10498980943454487551UL + 3584UL), (10498980943454487551UL + 3903UL),
+                             (10498980943454487551UL + 3585UL), (10498980943454487551UL + 3777UL),
+                             (10498980943454487551UL + 3586UL), (10498980943454487551UL + 3764UL),
+                             (10498980943454487551UL + 3587UL), (10498980943454487551UL + 3764UL),
+                             (10498980943454487551UL + 3588UL), (10498980943454487551UL + 3764UL),
+                             (10498980943454487551UL + 3589UL), (10498980943454487551UL + 3777UL),
+                             (10498980943454487551UL + 441UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 1336UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 444UL), (10498980943454487551UL + 450UL),
+                             (10498980943454487551UL + 100UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 4813UL), (10498980943454487551UL + 4872UL),
+                             (10498980943454487551UL + 4812UL), (10498980943454487551UL + 4970UL),
+                             (10498980943454487551UL + 4811UL), (10498980943454487551UL + 4970UL),
+                             (10498980943454487551UL + 4817UL), (10498980943454487551UL + 4914UL),
+                             (10498980943454487551UL + 4815UL), (10498980943454487551UL + 4980UL),
+                             (10498980943454487551UL + 5578UL), (10498980943454487551UL + 6646UL),
                              (10498980943454487551UL + 33UL), (10498980943454487551UL + 70UL),
-                             (10498980943454487551UL + 35UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 34UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1241UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1247UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 331UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 330UL), (10498980943454487551UL + 1326UL),
+                             (10498980943454487551UL + 5576UL), (10498980943454487551UL + 6646UL),
+                             (10498980943454487551UL + 5575UL), (10498980943454487551UL + 6645UL),
+                             (10498980943454487551UL + 5574UL), (10498980943454487551UL + 6645UL),
+                             (10498980943454487551UL + 5573UL), (10498980943454487551UL + 6645UL),
+                             (10498980943454487551UL + 5572UL), (10498980943454487551UL + 6644UL),
+                             (10498980943454487551UL + 35UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 34UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 1212UL), (10498980943454487551UL + 1226UL),
+                             (10498980943454487551UL + 1243UL), (10498980943454487551UL + 1274UL),
+                             (10498980943454487551UL + 1242UL), (10498980943454487551UL + 1273UL),
+                             (10498980943454487551UL + 1245UL), (10498980943454487551UL + 1261UL),
+                             (10498980943454487551UL + 1244UL), (10498980943454487551UL + 1253UL),
+                             (10498980943454487551UL + 331UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 330UL), (10498980943454487551UL + 1380UL),
                              (10498980943454487551UL + 333UL), (10498980943454487551UL + 350UL),
                              (10498980943454487551UL + 332UL), (10498980943454487551UL + 346UL),
-                             (10498980943454487551UL + 1908UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 3867UL), (10498980943454487551UL + 3915UL),
-                             (10498980943454487551UL + 3866UL), (10498980943454487551UL + 3885UL),
+                             (10498980943454487551UL + 3510UL), (10498980943454487551UL + 3512UL),
+                             (10498980943454487551UL + 3899UL), (10498980943454487551UL + 3901UL),
+                             (10498980943454487551UL + 2630UL), (10498980943454487551UL + 2699UL),
                              (10498980943454487551UL + 99UL), (10498980943454487551UL + 152UL),
                              (10498980943454487551UL + 90UL), (10498980943454487551UL + 83UL),
                              (10498980943454487551UL + 92UL), (10498980943454487551UL + 98UL),
-                             (10498980943454487551UL + 1992UL), (10498980943454487551UL + 1942UL),
-                             (10498980943454487551UL + 3966UL), (10498980943454487551UL + 4034UL),
-                             (10498980943454487551UL + 3965UL), (10498980943454487551UL + 3945UL),
-                             (10498980943454487551UL + 3968UL), (10498980943454487551UL + 4146UL),
-                             (10498980943454487551UL + 554UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 551UL), (10498980943454487551UL + 623UL),
-                             (10498980943454487551UL + 550UL), (10498980943454487551UL + 622UL),
-                             (10498980943454487551UL + 553UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 552UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1199UL), (10498980943454487551UL + 1230UL),
-                             (10498980943454487551UL + 1198UL), (10498980943454487551UL + 1229UL),
-                             (10498980943454487551UL + 5352UL), (10498980943454487551UL + 6364UL),
-                             (10498980943454487551UL + 5351UL), (10498980943454487551UL + 6364UL),
-                             (10498980943454487551UL + 5350UL), (10498980943454487551UL + 6364UL),
+                             (10498980943454487551UL + 4779UL), (10498980943454487551UL + 4779UL),
+                             (10498980943454487551UL + 1997UL), (10498980943454487551UL + 6903UL),
+                             (10498980943454487551UL + 1998UL), (10498980943454487551UL + 2120UL),
+                             (10498980943454487551UL + 558UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 555UL), (10498980943454487551UL + 627UL),
+                             (10498980943454487551UL + 554UL), (10498980943454487551UL + 626UL),
+                             (10498980943454487551UL + 557UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 556UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 552UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 3061UL), (10498980943454487551UL + 3396UL),
+                             (10498980943454487551UL + 3060UL), (10498980943454487551UL + 3226UL),
+                             (10498980943454487551UL + 5451UL), (10498980943454487551UL + 5453UL),
                              (10498980943454487551UL + 1UL), (10498980943454487551UL + 28UL),
-                             (10498980943454487551UL + 1279UL), (10498980943454487551UL + 1279UL),
-                             (10498980943454487551UL + 5289UL), (10498980943454487551UL + 5642UL),
-                             (10498980943454487551UL + 1172UL), (10498980943454487551UL + 1179UL),
-                             (10498980943454487551UL + 1274UL), (10498980943454487551UL + 1263UL),
-                             (10498980943454487551UL + 1275UL), (10498980943454487551UL + 1290UL),
-                             (10498980943454487551UL + 2920UL), (10498980943454487551UL + 3085UL),
-                             (10498980943454487551UL + 2659UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 1307UL), (10498980943454487551UL + 1314UL),
-                             (10498980943454487551UL + 2657UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 2656UL), (10498980943454487551UL + 2663UL),
-                             (10498980943454487551UL + 2655UL), (10498980943454487551UL + 2663UL),
-                             (10498980943454487551UL + 2654UL), (10498980943454487551UL + 2663UL),
-                             (10498980943454487551UL + 3414UL), (10498980943454487551UL + 3760UL),
-                             (10498980943454487551UL + 3415UL), (10498980943454487551UL + 3761UL),
-                             (10498980943454487551UL + 3410UL), (10498980943454487551UL + 3353UL),
-                             (10498980943454487551UL + 3418UL), (10498980943454487551UL + 3742UL),
-                             (10498980943454487551UL + 5627UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 28UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1373UL), (10498980943454487551UL + 1362UL),
-                             (10498980943454487551UL + 1374UL), (10498980943454487551UL + 1381UL),
-                             (10498980943454487551UL + 451UL), (10498980943454487551UL + 525UL),
-                             (10498980943454487551UL + 629UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 5267UL), (10498980943454487551UL + 5219UL),
-                             (10498980943454487551UL + 453UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1346UL), (10498980943454487551UL + 1346UL),
-                             (10498980943454487551UL + 2902UL), (10498980943454487551UL + 2848UL),
-                             (10498980943454487551UL + 708UL), (10498980943454487551UL + 787UL),
-                             (10498980943454487551UL + 709UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 2905UL), (10498980943454487551UL + 3256UL),
-                             (10498980943454487551UL + 2909UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 2908UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 703UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 5307UL), (10498980943454487551UL + 5944UL),
-                             (10498980943454487551UL + 795UL), (10498980943454487551UL + 830UL),
-                             (10498980943454487551UL + 794UL), (10498980943454487551UL + 826UL),
-                             (10498980943454487551UL + 793UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 792UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 791UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 790UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 2301UL), (10498980943454487551UL + 2278UL),
-                             (10498980943454487551UL + 5312UL), (10498980943454487551UL + 5894UL),
-                             (10498980943454487551UL + 5311UL), (10498980943454487551UL + 5945UL),
-                             (10498980943454487551UL + 2302UL), (10498980943454487551UL + 2332UL),
-                             (10498980943454487551UL + 5317UL), (10498980943454487551UL + 5928UL),
-                             (10498980943454487551UL + 2304UL), (10498980943454487551UL + 2332UL),
-                             (10498980943454487551UL + 5314UL), (10498980943454487551UL + 5894UL),
-                             (10498980943454487551UL + 3742UL), (10498980943454487551UL + 3738UL),
-                             (10498980943454487551UL + 1136UL), (10498980943454487551UL + 1144UL),
-                             (10498980943454487551UL + 3740UL), (10498980943454487551UL + 3742UL),
-                             (10498980943454487551UL + 1134UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 1432UL), (10498980943454487551UL + 1617UL),
-                             (10498980943454487551UL + 1433UL), (10498980943454487551UL + 1583UL),
-                             (10498980943454487551UL + 1430UL), (10498980943454487551UL + 5938UL),
-                             (10498980943454487551UL + 1431UL), (10498980943454487551UL + 5938UL),
-                             (10498980943454487551UL + 2278UL), (10498980943454487551UL + 2301UL),
-                             (10498980943454487551UL + 2797UL), (10498980943454487551UL + 2902UL),
-                             (10498980943454487551UL + 1009UL), (10498980943454487551UL + 981UL),
-                             (10498980943454487551UL + 1008UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 622UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 627UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 626UL), (10498980943454487551UL + 705UL),
-                             (10498980943454487551UL + 625UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 624UL), (10498980943454487551UL + 703UL),
-                             (10498980943454487551UL + 450UL), (10498980943454487551UL + 448UL),
-                             (10498980943454487551UL + 1341UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1342UL), (10498980943454487551UL + 1357UL),
-                             (10498980943454487551UL + 628UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 454UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 455UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1229UL), (10498980943454487551UL + 1209UL),
-                             (10498980943454487551UL + 1872UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 1871UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 2UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 3085UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 2620UL), (10498980943454487551UL + 2646UL),
-                             (10498980943454487551UL + 2621UL), (10498980943454487551UL + 2646UL),
-                             (10498980943454487551UL + 2751UL), (10498980943454487551UL + 2753UL),
-                             (10498980943454487551UL + 4764UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 5219UL), (10498980943454487551UL + 5221UL),
-                             (10498980943454487551UL + 4009UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 1619UL), (10498980943454487551UL + 1635UL),
-                             (10498980943454487551UL + 1617UL), (10498980943454487551UL + 1619UL),
-                             (10498980943454487551UL + 5197UL), (10498980943454487551UL + 5267UL),
-                             (10498980943454487551UL + 326UL), (10498980943454487551UL + 1326UL),
+                             (10498980943454487551UL + 1344UL), (10498980943454487551UL + 1345UL),
+                             (10498980943454487551UL + 1273UL), (10498980943454487551UL + 1253UL),
+                             (10498980943454487551UL + 1276UL), (10498980943454487551UL + 1285UL),
+                             (10498980943454487551UL + 1277UL), (10498980943454487551UL + 1291UL),
+                             (10498980943454487551UL + 5533UL), (10498980943454487551UL + 5954UL),
+                             (10498980943454487551UL + 5532UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 5531UL), (10498980943454487551UL + 5860UL),
+                             (10498980943454487551UL + 5530UL), (10498980943454487551UL + 5905UL),
+                             (10498980943454487551UL + 5539UL), (10498980943454487551UL + 5905UL),
+                             (10498980943454487551UL + 1285UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 2123UL), (10498980943454487551UL + 2282UL),
+                             (10498980943454487551UL + 2124UL), (10498980943454487551UL + 2282UL),
+                             (10498980943454487551UL + 2129UL), (10498980943454487551UL + 2282UL),
+                             (10498980943454487551UL + 2128UL), (10498980943454487551UL + 2282UL),
+                             (10498980943454487551UL + 1190UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 458UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 1307UL), (10498980943454487551UL + 1307UL),
+                             (10498980943454487551UL + 1302UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 1303UL), (10498980943454487551UL + 1318UL),
+                             (10498980943454487551UL + 3412UL), (10498980943454487551UL + 3468UL),
+                             (10498980943454487551UL + 3413UL), (10498980943454487551UL + 3468UL),
+                             (10498980943454487551UL + 3410UL), (10498980943454487551UL + 3426UL),
+                             (10498980943454487551UL + 3411UL), (10498980943454487551UL + 3468UL),
+                             (10498980943454487551UL + 4227UL), (10498980943454487551UL + 4202UL),
+                             (10498980943454487551UL + 5586UL), (10498980943454487551UL + 6534UL),
+                             (10498980943454487551UL + 5587UL), (10498980943454487551UL + 6534UL),
+                             (10498980943454487551UL + 5584UL), (10498980943454487551UL + 6522UL),
+                             (10498980943454487551UL + 5585UL), (10498980943454487551UL + 6534UL),
+                             (10498980943454487551UL + 5582UL), (10498980943454487551UL + 6522UL),
+                             (10498980943454487551UL + 5583UL), (10498980943454487551UL + 6522UL),
+                             (10498980943454487551UL + 5580UL), (10498980943454487551UL + 6647UL),
+                             (10498980943454487551UL + 5581UL), (10498980943454487551UL + 6647UL),
+                             (10498980943454487551UL + 28UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 5589UL), (10498980943454487551UL + 6625UL),
+                             (10498980943454487551UL + 4981UL), (10498980943454487551UL + 5380UL),
+                             (10498980943454487551UL + 1370UL), (10498980943454487551UL + 1384UL),
+                             (10498980943454487551UL + 4983UL), (10498980943454487551UL + 5382UL),
+                             (10498980943454487551UL + 4982UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 4989UL), (10498980943454487551UL + 5380UL),
+                             (10498980943454487551UL + 4988UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 443UL), (10498980943454487551UL + 454UL),
+                             (10498980943454487551UL + 5382UL), (10498980943454487551UL + 5313UL),
+                             (10498980943454487551UL + 5386UL), (10498980943454487551UL + 5427UL),
+                             (10498980943454487551UL + 5388UL), (10498980943454487551UL + 5403UL),
+                             (10498980943454487551UL + 5389UL), (10498980943454487551UL + 5399UL),
+                             (10498980943454487551UL + 3931UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 3933UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 1345UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 4035UL), (10498980943454487551UL + 4104UL),
+                             (10498980943454487551UL + 4034UL), (10498980943454487551UL + 4104UL),
+                             (10498980943454487551UL + 4039UL), (10498980943454487551UL + 4101UL),
+                             (10498980943454487551UL + 4038UL), (10498980943454487551UL + 4064UL),
+                             (10498980943454487551UL + 5594UL), (10498980943454487551UL + 6630UL),
+                             (10498980943454487551UL + 4134UL), (10498980943454487551UL + 4136UL),
+                             (10498980943454487551UL + 4136UL), (10498980943454487551UL + 4138UL),
+                             (10498980943454487551UL + 707UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 5499UL), (10498980943454487551UL + 5451UL),
+                             (10498980943454487551UL + 797UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 796UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 795UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 794UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 793UL), (10498980943454487551UL + 926UL),
+                             (10498980943454487551UL + 792UL), (10498980943454487551UL + 925UL),
+                             (10498980943454487551UL + 4042UL), (10498980943454487551UL + 4104UL),
+                             (10498980943454487551UL + 4043UL), (10498980943454487551UL + 4104UL),
+                             (10498980943454487551UL + 5313UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 6788UL), (10498980943454487551UL + 1652UL),
+                             (10498980943454487551UL + 2307UL), (10498980943454487551UL + 2393UL),
+                             (10498980943454487551UL + 798UL), (10498980943454487551UL + 830UL),
+                             (10498980943454487551UL + 1389UL), (10498980943454487551UL + 1395UL),
+                             (10498980943454487551UL + 2282UL), (10498980943454487551UL + 2181UL),
+                             (10498980943454487551UL + 5548UL), (10498980943454487551UL + 6210UL),
+                             (10498980943454487551UL + 2394UL), (10498980943454487551UL + 2428UL),
+                             (10498980943454487551UL + 1178UL), (10498980943454487551UL + 1188UL),
+                             (10498980943454487551UL + 1437UL), (10498980943454487551UL + 1438UL),
+                             (10498980943454487551UL + 1438UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 2370UL), (10498980943454487551UL + 2393UL),
+                             (10498980943454487551UL + 1227UL), (10498980943454487551UL + 1241UL),
+                             (10498980943454487551UL + 459UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 3591UL), (10498980943454487551UL + 3920UL),
+                             (10498980943454487551UL + 3590UL), (10498980943454487551UL + 3777UL),
+                             (10498980943454487551UL + 626UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 629UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 628UL), (10498980943454487551UL + 707UL),
+                             (10498980943454487551UL + 454UL), (10498980943454487551UL + 450UL),
+                             (10498980943454487551UL + 455UL), (10498980943454487551UL + 529UL),
+                             (10498980943454487551UL + 456UL), (10498980943454487551UL + 530UL),
+                             (10498980943454487551UL + 457UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 4347UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 4346UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 4345UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 4344UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 4343UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 2880UL), (10498980943454487551UL + 2882UL),
+                             (10498980943454487551UL + 5549UL), (10498980943454487551UL + 6210UL),
+                             (10498980943454487551UL + 5542UL), (10498980943454487551UL + 6204UL),
+                             (10498980943454487551UL + 4824UL), (10498980943454487551UL + 4970UL),
+                             (10498980943454487551UL + 4825UL), (10498980943454487551UL + 4970UL),
+                             (10498980943454487551UL + 4822UL), (10498980943454487551UL + 4970UL),
+                             (10498980943454487551UL + 4823UL), (10498980943454487551UL + 4970UL),
+                             (10498980943454487551UL + 5545UL), (10498980943454487551UL + 6205UL),
+                             (10498980943454487551UL + 1500UL), (10498980943454487551UL + 1686UL),
+                             (10498980943454487551UL + 2UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 2624UL), (10498980943454487551UL + 2699UL),
+                             (10498980943454487551UL + 2625UL), (10498980943454487551UL + 2707UL),
+                             (10498980943454487551UL + 2629UL), (10498980943454487551UL + 2647UL),
+                             (10498980943454487551UL + 5890UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 1501UL), (10498980943454487551UL + 1652UL),
+                             (10498980943454487551UL + 2020UL), (10498980943454487551UL + 2073UL),
+                             (10498980943454487551UL + 3901UL), (10498980943454487551UL + 3903UL),
+                             (10498980943454487551UL + 3903UL), (10498980943454487551UL + 3899UL),
+                             (10498980943454487551UL + 4163UL), (10498980943454487551UL + 4227UL),
+                             (10498980943454487551UL + 4160UL), (10498980943454487551UL + 4342UL),
+                             (10498980943454487551UL + 326UL), (10498980943454487551UL + 1380UL),
                              (10498980943454487551UL + 329UL), (10498980943454487551UL + 441UL),
-                             (10498980943454487551UL + 205UL), (10498980943454487551UL + 1326UL),
+                             (10498980943454487551UL + 205UL), (10498980943454487551UL + 1380UL),
                              (10498980943454487551UL + 207UL), (10498980943454487551UL + 265UL),
-                             (10498980943454487551UL + 209UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 208UL), (10498980943454487551UL + 1326UL),
+                             (10498980943454487551UL + 209UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 208UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 2879UL), (10498980943454487551UL + 2882UL),
                              (10498980943454487551UL + 72UL), (10498980943454487551UL + 91UL),
-                             (10498980943454487551UL + 3353UL), (10498980943454487551UL + 3355UL),
-                             (10498980943454487551UL + 70UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 2332UL), (10498980943454487551UL + 2321UL),
-                             (10498980943454487551UL + 2333UL), (10498980943454487551UL + 2361UL),
-                             (10498980943454487551UL + 2334UL), (10498980943454487551UL + 2362UL),
-                             (10498980943454487551UL + 2336UL), (10498980943454487551UL + 2362UL),
-                             (10498980943454487551UL + 1146UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 1144UL), (10498980943454487551UL + 1146UL),
-                             (10498980943454487551UL + 1263UL), (10498980943454487551UL + 1263UL),
-                             (10498980943454487551UL + 2658UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 4574UL), (10498980943454487551UL + 4574UL),
-                             (10498980943454487551UL + 2092UL), (10498980943454487551UL + 2190UL),
-                             (10498980943454487551UL + 2525UL), (10498980943454487551UL + 2595UL),
-                             (10498980943454487551UL + 2524UL), (10498980943454487551UL + 2589UL),
-                             (10498980943454487551UL + 2529UL), (10498980943454487551UL + 2544UL),
-                             (10498980943454487551UL + 548UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1316UL), (10498980943454487551UL + 1330UL),
-                             (10498980943454487551UL + 1315UL), (10498980943454487551UL + 1324UL),
-                             (10498980943454487551UL + 1314UL), (10498980943454487551UL + 1311UL),
-                             (10498980943454487551UL + 5347UL), (10498980943454487551UL + 6359UL),
-                             (10498980943454487551UL + 2217UL), (10498980943454487551UL + 2301UL),
-                             (10498980943454487551UL + 5341UL), (10498980943454487551UL + 6256UL),
-                             (10498980943454487551UL + 2215UL), (10498980943454487551UL + 2301UL),
-                             (10498980943454487551UL + 1189UL), (10498980943454487551UL + 1197UL),
-                             (10498980943454487551UL + 2799UL), (10498980943454487551UL + 2865UL),
-                             (10498980943454487551UL + 921UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 923UL), (10498980943454487551UL + 1008UL),
-                             (10498980943454487551UL + 924UL), (10498980943454487551UL + 1009UL),
-                             (10498980943454487551UL + 1381UL), (10498980943454487551UL + 1382UL),
-                             (10498980943454487551UL + 1382UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 2795UL), (10498980943454487551UL + 2780UL),
-                             (10498980943454487551UL + 3827UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 3821UL), (10498980943454487551UL + 3827UL),
-                             (10498980943454487551UL + 3820UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 5348UL), (10498980943454487551UL + 6359UL),
-                             (10498980943454487551UL + 3945UL), (10498980943454487551UL + 3947UL),
-                             (10498980943454487551UL + 3947UL), (10498980943454487551UL + 3949UL),
-                             (10498980943454487551UL + 1921UL), (10498980943454487551UL + 6634UL),
-                             (10498980943454487551UL + 1922UL), (10498980943454487551UL + 2036UL),
-                             (10498980943454487551UL + 1926UL), (10498980943454487551UL + 1942UL),
-                             (10498980943454487551UL + 1927UL), (10498980943454487551UL + 6634UL),
-                             (10498980943454487551UL + 1928UL), (10498980943454487551UL + 6634UL),
-                             (10498980943454487551UL + 1929UL), (10498980943454487551UL + 6634UL),
-                             (10498980943454487551UL + 4198UL), (10498980943454487551UL + 4598UL),
-                             (10498980943454487551UL + 4199UL), (10498980943454487551UL + 4574UL),
-                             (10498980943454487551UL + 443UL), (10498980943454487551UL + 450UL),
-                             (10498980943454487551UL + 3UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 2663UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 2660UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 441UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 5325UL), (10498980943454487551UL + 6373UL),
-                             (10498980943454487551UL + 5321UL), (10498980943454487551UL + 6022UL),
-                             (10498980943454487551UL + 5328UL), (10498980943454487551UL + 6378UL),
-                             (10498980943454487551UL + 5329UL), (10498980943454487551UL + 6378UL),
-                             (10498980943454487551UL + 4758UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 785UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 788UL), (10498980943454487551UL + 921UL),
-                             (10498980943454487551UL + 789UL), (10498980943454487551UL + 922UL),
-                             (10498980943454487551UL + 4757UL), (10498980943454487551UL + 5152UL),
-                             (10498980943454487551UL + 2190UL), (10498980943454487551UL + 2092UL),
-                             (10498980943454487551UL + 155UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1424UL), (10498980943454487551UL + 1864UL),
-                             (10498980943454487551UL + 2563UL), (10498980943454487551UL + 2589UL),
-                             (10498980943454487551UL + 1032UL), (10498980943454487551UL + 1040UL),
-                             (10498980943454487551UL + 1033UL), (10498980943454487551UL + 1041UL),
-                             (10498980943454487551UL + 1030UL), (10498980943454487551UL + 1069UL),
-                             (10498980943454487551UL + 1031UL), (10498980943454487551UL + 1070UL),
-                             (10498980943454487551UL + 2363UL), (10498980943454487551UL + 2523UL),
-                             (10498980943454487551UL + 2362UL), (10498980943454487551UL + 2362UL),
-                             (10498980943454487551UL + 1358UL), (10498980943454487551UL + 1373UL),
-                             (10498980943454487551UL + 4759UL), (10498980943454487551UL + 5154UL),
-                             (10498980943454487551UL + 1357UL), (10498980943454487551UL + 1346UL),
-                             (10498980943454487551UL + 6521UL), (10498980943454487551UL + 5938UL),
-                             (10498980943454487551UL + 6520UL), (10498980943454487551UL + 1814UL),
-                             (10498980943454487551UL + 6527UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 6529UL), (10498980943454487551UL + 2630UL),
-                             (10498980943454487551UL + 4683UL), (10498980943454487551UL + 4696UL),
-                             (10498980943454487551UL + 4681UL), (10498980943454487551UL + 4683UL),
-                             (10498980943454487551UL + 5298UL), (10498980943454487551UL + 5642UL),
-                             (10498980943454487551UL + 3863UL), (10498980943454487551UL + 3918UL),
-                             (10498980943454487551UL + 3862UL), (10498980943454487551UL + 3918UL),
-                             (10498980943454487551UL + 5292UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 5293UL), (10498980943454487551UL + 5691UL),
-                             (10498980943454487551UL + 5290UL), (10498980943454487551UL + 5642UL),
-                             (10498980943454487551UL + 5291UL), (10498980943454487551UL + 5600UL),
-                             (10498980943454487551UL + 3430UL), (10498980943454487551UL + 3616UL),
-                             (10498980943454487551UL + 2039UL), (10498980943454487551UL + 2190UL),
-                             (10498980943454487551UL + 4034UL), (10498980943454487551UL + 4009UL),
-                             (10498980943454487551UL + 2848UL), (10498980943454487551UL + 2865UL),
-                             (10498980943454487551UL + 3320UL), (10498980943454487551UL + 3279UL),
-                             (10498980943454487551UL + 3323UL), (10498980943454487551UL + 3409UL),
-                             (10498980943454487551UL + 3324UL), (10498980943454487551UL + 3410UL),
-                             (10498980943454487551UL + 3327UL), (10498980943454487551UL + 3355UL),
-                             (10498980943454487551UL + 2321UL), (10498980943454487551UL + 2332UL),
-                             (10498980943454487551UL + 5277UL), (10498980943454487551UL + 6466UL),
-                             (10498980943454487551UL + 1078UL), (10498980943454487551UL + 1076UL),
-                             (10498980943454487551UL + 1079UL), (10498980943454487551UL + 1086UL),
-                             (10498980943454487551UL + 1071UL), (10498980943454487551UL + 1078UL),
-                             (10498980943454487551UL + 3761UL), (10498980943454487551UL + 3740UL),
-                             (10498980943454487551UL + 1090UL), (10498980943454487551UL + 1098UL),
-                             (10498980943454487551UL + 3765UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 3767UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 3768UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 1154UL), (10498980943454487551UL + 1162UL),
-                             (10498980943454487551UL + 2619UL), (10498980943454487551UL + 2646UL),
-                             (10498980943454487551UL + 265UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 269UL), (10498980943454487551UL + 1326UL),
+                             (10498980943454487551UL + 3058UL), (10498980943454487551UL + 3238UL),
+                             (10498980943454487551UL + 70UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 3057UL), (10498980943454487551UL + 3238UL),
+                             (10498980943454487551UL + 3050UL), (10498980943454487551UL + 3238UL),
+                             (10498980943454487551UL + 3051UL), (10498980943454487551UL + 3226UL),
+                             (10498980943454487551UL + 1045UL), (10498980943454487551UL + 1045UL),
+                             (10498980943454487551UL + 1686UL), (10498980943454487551UL + 1688UL),
+                             (10498980943454487551UL + 1688UL), (10498980943454487551UL + 1704UL),
+                             (10498980943454487551UL + 5577UL), (10498980943454487551UL + 6646UL),
+                             (10498980943454487551UL + 3570UL), (10498980943454487551UL + 3510UL),
+                             (10498980943454487551UL + 5500UL), (10498980943454487551UL + 5510UL),
+                             (10498980943454487551UL + 5501UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 4901UL), (10498980943454487551UL + 4914UL),
+                             (10498980943454487551UL + 1463UL), (10498980943454487551UL + 6205UL),
+                             (10498980943454487551UL + 1462UL), (10498980943454487551UL + 6205UL),
+                             (10498980943454487551UL + 2464UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 2462UL), (10498980943454487551UL + 2462UL),
+                             (10498980943454487551UL + 2463UL), (10498980943454487551UL + 2623UL),
+                             (10498980943454487551UL + 1319UL), (10498980943454487551UL + 1334UL),
+                             (10498980943454487551UL + 1318UL), (10498980943454487551UL + 1307UL),
+                             (10498980943454487551UL + 3401UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 3405UL), (10498980943454487551UL + 3475UL),
+                             (10498980943454487551UL + 3404UL), (10498980943454487551UL + 3468UL),
+                             (10498980943454487551UL + 3406UL), (10498980943454487551UL + 3476UL),
+                             (10498980943454487551UL + 3408UL), (10498980943454487551UL + 3478UL),
+                             (10498980943454487551UL + 5591UL), (10498980943454487551UL + 6625UL),
+                             (10498980943454487551UL + 5590UL), (10498980943454487551UL + 6625UL),
+                             (10498980943454487551UL + 5593UL), (10498980943454487551UL + 6630UL),
+                             (10498980943454487551UL + 5592UL), (10498980943454487551UL + 6630UL),
+                             (10498980943454487551UL + 1023UL), (10498980943454487551UL + 1020UL),
+                             (10498980943454487551UL + 4872UL), (10498980943454487551UL + 4899UL),
+                             (10498980943454487551UL + 4404UL), (10498980943454487551UL + 4779UL),
+                             (10498980943454487551UL + 4402UL), (10498980943454487551UL + 4806UL),
+                             (10498980943454487551UL + 4403UL), (10498980943454487551UL + 4779UL),
+                             (10498980943454487551UL + 928UL), (10498980943454487551UL + 1013UL),
+                             (10498980943454487551UL + 2414UL), (10498980943454487551UL + 2428UL),
+                             (10498980943454487551UL + 1384UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 1380UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 925UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 927UL), (10498980943454487551UL + 1012UL),
+                             (10498980943454487551UL + 5390UL), (10498980943454487551UL + 5427UL),
+                             (10498980943454487551UL + 3476UL), (10498980943454487551UL + 3426UL),
+                             (10498980943454487551UL + 3578UL), (10498980943454487551UL + 3903UL),
+                             (10498980943454487551UL + 3575UL), (10498980943454487551UL + 3925UL),
+                             (10498980943454487551UL + 3574UL), (10498980943454487551UL + 3924UL),
+                             (10498980943454487551UL + 3479UL), (10498980943454487551UL + 3569UL),
+                             (10498980943454487551UL + 1335UL), (10498980943454487551UL + 1344UL),
+                             (10498980943454487551UL + 3UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 1334UL), (10498980943454487551UL + 1323UL),
+                             (10498980943454487551UL + 2669UL), (10498980943454487551UL + 2699UL),
+                             (10498980943454487551UL + 2938UL), (10498980943454487551UL + 3042UL),
+                             (10498980943454487551UL + 2935UL), (10498980943454487551UL + 3002UL),
+                             (10498980943454487551UL + 2933UL), (10498980943454487551UL + 3042UL),
+                             (10498980943454487551UL + 2931UL), (10498980943454487551UL + 2913UL),
+                             (10498980943454487551UL + 789UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 5552UL), (10498980943454487551UL + 6211UL),
+                             (10498980943454487551UL + 1427UL), (10498980943454487551UL + 1416UL),
+                             (10498980943454487551UL + 1429UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 1428UL), (10498980943454487551UL + 1437UL),
+                             (10498980943454487551UL + 1038UL), (10498980943454487551UL + 1045UL),
+                             (10498980943454487551UL + 1033UL), (10498980943454487551UL + 1030UL),
+                             (10498980943454487551UL + 1036UL), (10498980943454487551UL + 1045UL),
+                             (10498980943454487551UL + 1037UL), (10498980943454487551UL + 1046UL),
+                             (10498980943454487551UL + 1034UL), (10498980943454487551UL + 1077UL),
+                             (10498980943454487551UL + 1035UL), (10498980943454487551UL + 1078UL),
+                             (10498980943454487551UL + 2428UL), (10498980943454487551UL + 2414UL),
+                             (10498980943454487551UL + 631UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 632UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 633UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 1355UL), (10498980943454487551UL + 1368UL),
+                             (10498980943454487551UL + 5555UL), (10498980943454487551UL + 6160UL),
+                             (10498980943454487551UL + 5554UL), (10498980943454487551UL + 6160UL),
+                             (10498980943454487551UL + 5556UL), (10498980943454487551UL + 6160UL),
+                             (10498980943454487551UL + 5551UL), (10498980943454487551UL + 6211UL),
+                             (10498980943454487551UL + 5550UL), (10498980943454487551UL + 6210UL),
+                             (10498980943454487551UL + 5553UL), (10498980943454487551UL + 6211UL),
+                             (10498980943454487551UL + 1378UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 5559UL), (10498980943454487551UL + 6194UL),
+                             (10498980943454487551UL + 5558UL), (10498980943454487551UL + 6194UL),
+                             (10498980943454487551UL + 5579UL), (10498980943454487551UL + 6647UL),
+                             (10498980943454487551UL + 2893UL), (10498980943454487551UL + 2932UL),
+                             (10498980943454487551UL + 2892UL), (10498980943454487551UL + 2931UL),
+                             (10498980943454487551UL + 1106UL), (10498980943454487551UL + 1115UL),
+                             (10498980943454487551UL + 1107UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 1104UL), (10498980943454487551UL + 1155UL),
+                             (10498980943454487551UL + 1105UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 1102UL), (10498980943454487551UL + 1098UL),
+                             (10498980943454487551UL + 1103UL), (10498980943454487551UL + 1154UL),
+                             (10498980943454487551UL + 2631UL), (10498980943454487551UL + 2699UL),
+                             (10498980943454487551UL + 2739UL), (10498980943454487551UL + 2767UL),
+                             (10498980943454487551UL + 2632UL), (10498980943454487551UL + 2699UL),
+                             (10498980943454487551UL + 5571UL), (10498980943454487551UL + 6644UL),
+                             (10498980943454487551UL + 3764UL), (10498980943454487551UL + 3903UL),
+                             (10498980943454487551UL + 5570UL), (10498980943454487551UL + 6644UL),
+                             (10498980943454487551UL + 2741UL), (10498980943454487551UL + 2767UL),
+                             (10498980943454487551UL + 2740UL), (10498980943454487551UL + 2767UL),
+                             (10498980943454487551UL + 2742UL), (10498980943454487551UL + 2767UL),
+                             (10498980943454487551UL + 3480UL), (10498980943454487551UL + 3570UL),
+                             (10498980943454487551UL + 1157UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 6789UL), (10498980943454487551UL + 1883UL),
+                             (10498980943454487551UL + 6735UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 3932UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 4157UL), (10498980943454487551UL + 4134UL),
+                             (10498980943454487551UL + 4158UL), (10498980943454487551UL + 4227UL),
+                             (10498980943454487551UL + 3226UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 3988UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 3989UL), (10498980943454487551UL + 3996UL),
+                             (10498980943454487551UL + 3049UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 3048UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 3042UL), (10498980943454487551UL + 2985UL),
+                             (10498980943454487551UL + 3045UL), (10498980943454487551UL + 3400UL),
+                             (10498980943454487551UL + 269UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 3046UL), (10498980943454487551UL + 3401UL),
+                             (10498980943454487551UL + 1079UL), (10498980943454487551UL + 1090UL),
+                             (10498980943454487551UL + 1077UL), (10498980943454487551UL + 1045UL),
+                             (10498980943454487551UL + 1179UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 1090UL), (10498980943454487551UL + 1086UL),
+                             (10498980943454487551UL + 1091UL), (10498980943454487551UL + 1102UL),
+                             (10498980943454487551UL + 1092UL), (10498980943454487551UL + 1098UL),
+                             (10498980943454487551UL + 1154UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 3483UL), (10498980943454487551UL + 3512UL),
+                             (10498980943454487551UL + 1156UL), (10498980943454487551UL + 1166UL),
+                             (10498980943454487551UL + 3485UL), (10498980943454487551UL + 3569UL),
+                             (10498980943454487551UL + 5519UL), (10498980943454487551UL + 6235UL),
+                             (10498980943454487551UL + 5518UL), (10498980943454487551UL + 6805UL),
+                             (10498980943454487551UL + 265UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 5513UL), (10498980943454487551UL + 6735UL),
                              (10498980943454487551UL + 268UL), (10498980943454487551UL + 326UL),
-                             (10498980943454487551UL + 532UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 531UL), (10498980943454487551UL + 548UL),
-                             (10498980943454487551UL + 5158UL), (10498980943454487551UL + 5195UL),
-                             (10498980943454487551UL + 1326UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1324UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 5288UL), (10498980943454487551UL + 5642UL),
-                             (10498980943454487551UL + 981UL), (10498980943454487551UL + 981UL),
-                             (10498980943454487551UL + 5154UL), (10498980943454487551UL + 5088UL),
-                             (10498980943454487551UL + 4209UL), (10498980943454487551UL + 4574UL),
-                             (10498980943454487551UL + 4200UL), (10498980943454487551UL + 4574UL),
-                             (10498980943454487551UL + 6519UL), (10498980943454487551UL + 1583UL),
-                             (10498980943454487551UL + 2780UL), (10498980943454487551UL + 2782UL),
-                             (10498980943454487551UL + 1252UL), (10498980943454487551UL + 1258UL),
-                             (10498980943454487551UL + 1398UL), (10498980943454487551UL + 5939UL),
-                             (10498980943454487551UL + 1258UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1259UL), (10498980943454487551UL + 1274UL),
-                             (10498980943454487551UL + 3261UL), (10498980943454487551UL + 3319UL),
-                             (10498980943454487551UL + 3260UL), (10498980943454487551UL + 3314UL),
-                             (10498980943454487551UL + 3262UL), (10498980943454487551UL + 3320UL),
-                             (10498980943454487551UL + 3264UL), (10498980943454487551UL + 3322UL),
-                             (10498980943454487551UL + 3266UL), (10498980943454487551UL + 3279UL),
-                             (10498980943454487551UL + 5088UL), (10498980943454487551UL + 5627UL),
+                             (10498980943454487551UL + 5517UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 5516UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 2396UL), (10498980943454487551UL + 2428UL),
+                             (10498980943454487551UL + 536UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 535UL), (10498980943454487551UL + 552UL),
+                             (10498980943454487551UL + 2393UL), (10498980943454487551UL + 2370UL),
+                             (10498980943454487551UL + 1411UL), (10498980943454487551UL + 1400UL),
+                             (10498980943454487551UL + 1412UL), (10498980943454487551UL + 1427UL),
+                             (10498980943454487551UL + 1416UL), (10498980943454487551UL + 1416UL),
+                             (10498980943454487551UL + 2778UL), (10498980943454487551UL + 2788UL),
+                             (10498980943454487551UL + 1323UL), (10498980943454487551UL + 1323UL),
+                             (10498980943454487551UL + 4899UL), (10498980943454487551UL + 4901UL),
+                             (10498980943454487551UL + 985UL), (10498980943454487551UL + 985UL),
+                             (10498980943454487551UL + 4202UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 2785UL), (10498980943454487551UL + 2788UL),
+                             (10498980943454487551UL + 2784UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 2781UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 2780UL), (10498980943454487551UL + 2788UL),
+                             (10498980943454487551UL + 2783UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 2782UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 4415UL), (10498980943454487551UL + 4806UL),
+                             (10498980943454487551UL + 5567UL), (10498980943454487551UL + 6639UL),
+                             (10498980943454487551UL + 4413UL), (10498980943454487551UL + 4779UL),
+                             (10498980943454487551UL + 2788UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 5563UL), (10498980943454487551UL + 6288UL),
+                             (10498980943454487551UL + 1253UL), (10498980943454487551UL + 1253UL),
+                             (10498980943454487551UL + 2073UL), (10498980943454487551UL + 2020UL),
+                             (10498980943454487551UL + 1396UL), (10498980943454487551UL + 1411UL),
+                             (10498980943454487551UL + 1395UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 4114UL), (10498980943454487551UL + 4157UL),
                              (10498980943454487551UL + 71UL), (10498980943454487551UL + 90UL),
-                             (10498980943454487551UL + 5308UL), (10498980943454487551UL + 5944UL),
-                             (10498980943454487551UL + 5331UL), (10498980943454487551UL + 6379UL),
-                             (10498980943454487551UL + 5330UL), (10498980943454487551UL + 6378UL),
-                             (10498980943454487551UL + 5333UL), (10498980943454487551UL + 6379UL),
-                             (10498980943454487551UL + 5332UL), (10498980943454487551UL + 6379UL),
-                             (10498980943454487551UL + 5335UL), (10498980943454487551UL + 6380UL),
-                             (10498980943454487551UL + 5334UL), (10498980943454487551UL + 6380UL),
-                             (10498980943454487551UL + 5337UL), (10498980943454487551UL + 6381UL),
-                             (10498980943454487551UL + 5336UL), (10498980943454487551UL + 6380UL),
-                             (10498980943454487551UL + 5339UL), (10498980943454487551UL + 6381UL),
-                             (10498980943454487551UL + 5338UL), (10498980943454487551UL + 6381UL),
-                             (10498980943454487551UL + 2906UL), (10498980943454487551UL + 3257UL),
-                             (10498980943454487551UL + 706UL), (10498980943454487551UL + 785UL),
-                             (10498980943454487551UL + 3603UL), (10498980943454487551UL + 3742UL),
-                             (10498980943454487551UL + 707UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1040UL), (10498980943454487551UL + 1040UL),
-                             (10498980943454487551UL + 4609UL), (10498980943454487551UL + 4696UL),
-                             (10498980943454487551UL + 4607UL), (10498980943454487551UL + 4756UL),
-                             (10498980943454487551UL + 4604UL), (10498980943454487551UL + 4748UL),
-                             (10498980943454487551UL + 4605UL), (10498980943454487551UL + 4657UL),
-                             (10498980943454487551UL + 4603UL), (10498980943454487551UL + 4748UL),
-                             (10498980943454487551UL + 5344UL), (10498980943454487551UL + 6268UL),
-                             (10498980943454487551UL + 5345UL), (10498980943454487551UL + 6268UL),
-                             (10498980943454487551UL + 2364UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 5340UL), (10498980943454487551UL + 6256UL),
-                             (10498980943454487551UL + 1020UL), (10498980943454487551UL + 1029UL),
-                             (10498980943454487551UL + 5342UL), (10498980943454487551UL + 6256UL),
-                             (10498980943454487551UL + 5343UL), (10498980943454487551UL + 6268UL),
-                             (10498980943454487551UL + 1029UL), (10498980943454487551UL + 1026UL),
-                             (10498980943454487551UL + 5349UL), (10498980943454487551UL + 6359UL),
-                             (10498980943454487551UL + 1180UL), (10498980943454487551UL + 1188UL),
-                             (10498980943454487551UL + 1164UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 152UL), (10498980943454487551UL + 1326UL),
-                             (10498980943454487551UL + 1209UL), (10498980943454487551UL + 1209UL),
+                             (10498980943454487551UL + 2779UL), (10498980943454487551UL + 2788UL),
+                             (10498980943454487551UL + 3059UL), (10498980943454487551UL + 3226UL),
+                             (10498980943454487551UL + 1980UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 1981UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 2181UL), (10498980943454487551UL + 2282UL),
+                             (10498980943454487551UL + 1024UL), (10498980943454487551UL + 1033UL),
+                             (10498980943454487551UL + 5429UL), (10498980943454487551UL + 5499UL),
+                             (10498980943454487551UL + 1188UL), (10498980943454487551UL + 1190UL),
+                             (10498980943454487551UL + 630UL), (10498980943454487551UL + 709UL),
+                             (10498980943454487551UL + 1166UL), (10498980943454487551UL + 1168UL),
+                             (10498980943454487551UL + 152UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 155UL), (10498980943454487551UL + 1380UL),
                              (10498980943454487551UL + 154UL), (10498980943454487551UL + 205UL),
-                             (10498980943454487551UL + 1162UL), (10498980943454487551UL + 1164UL),
-                             (10498980943454487551UL + 1201UL), (10498980943454487551UL + 1217UL),
-                             (10498980943454487551UL + 1200UL), (10498980943454487551UL + 1209UL),
-                             (10498980943454487551UL + 6466UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 3738UL), (10498980943454487551UL + 3740UL),
-                             (10498980943454487551UL + 1298UL), (10498980943454487551UL + 1299UL),
-                             (10498980943454487551UL + 1299UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 1290UL), (10498980943454487551UL + 1279UL),
-                             (10498980943454487551UL + 1291UL), (10498980943454487551UL + 1298UL),
-                             (10498980943454487551UL + 5160UL), (10498980943454487551UL + 5174UL),
-                             (10498980943454487551UL + 5161UL), (10498980943454487551UL + 5170UL),
-                             (10498980943454487551UL + 5281UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 5280UL), (10498980943454487551UL + 5627UL),
-                             (10498980943454487551UL + 5283UL), (10498980943454487551UL + 5969UL),
-                             (10498980943454487551UL + 5282UL), (10498980943454487551UL + 6536UL),
-                             (10498980943454487551UL + 5284UL), (10498980943454487551UL + 5499UL),
-                             (10498980943454487551UL + 5286UL), (10498980943454487551UL + 5642UL),
-                             (10498980943454487551UL + 5318UL), (10498980943454487551UL + 5928UL),
-                             (10498980943454487551UL + 3429UL), (10498980943454487551UL + 3616UL),
-                             (10498980943454487551UL + 3428UL), (10498980943454487551UL + 3603UL),
-                             (10498980943454487551UL + 3423UL), (10498980943454487551UL + 3738UL),
-                             (10498980943454487551UL + 3427UL), (10498980943454487551UL + 3603UL),
-                             (10498980943454487551UL + 3426UL), (10498980943454487551UL + 3603UL),
-                             (10498980943454487551UL + 3425UL), (10498980943454487551UL + 3616UL),
-                             (10498980943454487551UL + 3424UL), (10498980943454487551UL + 3742UL),
-                             (10498980943454487551UL + 5313UL), (10498980943454487551UL + 5894UL),
-                             (10498980943454487551UL + 1362UL), (10498980943454487551UL + 1362UL),
+                             (10498980943454487551UL + 2429UL), (10498980943454487551UL + 2461UL),
+                             (10498980943454487551UL + 2432UL), (10498980943454487551UL + 2462UL),
+                             (10498980943454487551UL + 2430UL), (10498980943454487551UL + 2462UL),
+                             (10498980943454487551UL + 1168UL), (10498980943454487551UL + 5890UL),
+                             (10498980943454487551UL + 1200UL), (10498980943454487551UL + 1211UL),
+                             (10498980943454487551UL + 5524UL), (10498980943454487551UL + 5754UL),
+                             (10498980943454487551UL + 5526UL), (10498980943454487551UL + 5905UL),
+                             (10498980943454487551UL + 5528UL), (10498980943454487551UL + 5905UL),
+                             (10498980943454487551UL + 5529UL), (10498980943454487551UL + 5905UL),
+                             (10498980943454487551UL + 2130UL), (10498980943454487551UL + 2282UL),
+                             (10498980943454487551UL + 1291UL), (10498980943454487551UL + 1380UL),
+                             (10498980943454487551UL + 1296UL), (10498980943454487551UL + 1302UL),
+                             (10498980943454487551UL + 1448UL), (10498980943454487551UL + 1460UL),
+                             (10498980943454487551UL + 2309UL), (10498980943454487551UL + 2393UL),
+                             (10498980943454487551UL + 2647UL), (10498980943454487551UL + 2669UL),
+                             (10498980943454487551UL + 4040UL), (10498980943454487551UL + 4104UL),
+                             (10498980943454487551UL + 4041UL), (10498980943454487551UL + 4104UL),
+                             (10498980943454487551UL + 2002UL), (10498980943454487551UL + 2020UL),
+                             (10498980943454487551UL + 2003UL), (10498980943454487551UL + 6903UL),
+                             (10498980943454487551UL + 2006UL), (10498980943454487551UL + 6903UL),
+                             (10498980943454487551UL + 2004UL), (10498980943454487551UL + 6903UL),
+                             (10498980943454487551UL + 2005UL), (10498980943454487551UL + 6903UL),
+                             (10498980943454487551UL + 2009UL), (10498980943454487551UL + 6903UL),
+                             (10498980943454487551UL + 1368UL), (10498980943454487551UL + 1361UL),
+                             (10498980943454487551UL + 1369UL), (10498980943454487551UL + 1378UL),
                      "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
                      "_IO_marker", 0,
                      "knode", 5, "int", (int)__builtin_offsetof (struct knode, location), "[ 509 x int ]", (int)__builtin_offsetof (struct knode, indices), "[ 509 x int ]", (int)__builtin_offsetof (struct knode, keys), "bool", (int)__builtin_offsetof (struct knode, is_leaf), "int", (int)__builtin_offsetof (struct knode, num_keys),
@@ -15267,7 +15311,7 @@ static int module_init() {
                              "list_item_get_datum", "_Z19list_item_get_datumP9list_item", 0,
                              "insert_into_node", "_Z16insert_into_nodeP4nodeS0_iiS0_", 0,
                              "list_insert_sorted", "_Z18list_insert_sortedP6list_tPv", 3, "list_item_init", "list_item_get_datum", "list_item_get_datum",
-                             "main", "main", 32, "isInteger", "rewind", "feof", "insert", "transform_to_cuda", "height", "scanf", "getchar", "insert", "print_tree", "scanf", "getchar", "find", "scanf", "getchar", "deleteVal", "print_tree", "getchar", "destroy_tree", "print_tree", "getchar", "print_leaves", "getchar", "print_tree", "getchar", "getchar", "kernel_cpu", "scanf", "scanf", "findRange", "list_get_length", "kernel_cpu_2",
+                             "main", "main", 31, "isInteger", "rewind", "insert", "transform_to_cuda", "height", "scanf", "getchar", "insert", "print_tree", "scanf", "getchar", "find", "scanf", "getchar", "deleteVal", "print_tree", "getchar", "destroy_tree", "print_tree", "getchar", "print_leaves", "getchar", "print_tree", "getchar", "getchar", "kernel_cpu", "scanf", "scanf", "findRange", "list_get_length", "kernel_cpu_2",
                              "make_node", "_Z9make_nodev", 0,
                              "list_get_tail_item", "_Z18list_get_tail_itemP6list_t", 0,
                              "list_insert_item_tail", "_Z21list_insert_item_tailP6list_tP9list_item", 0,
@@ -15339,21 +15383,21 @@ static int module_init() {
                         "list_visit_items|____chimes_unroll_var_6|0", 1, "_Z16list_visit_itemsP6list_tPFvPvE",
                         "transform_to_cuda|one|0", 1, "transform_to_cuda",
                         "transform_to_cuda|two|0", 1, "transform_to_cuda",
-                        "main|argc|0", 7, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar", "feof",
-                        "main|argv|0", 7, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar", "feof",
-                        "main|cur_arg|0", 7, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar", "feof",
-                        "main|cores_arg|0", 7, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar", "feof",
-                        "main|input_file|0", 7, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar", "feof",
-                        "main|command_file|0", 7, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar", "feof",
-                        "main|output|0", 7, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar", "feof",
-                        "main|pFile|0", 5, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar", "feof",
-                        "main|commandFile|0", 6, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "getchar", "feof",
-                        "main|lSize|0", 6, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "getchar", "feof",
-                        "main|commandBuffer|0", 5, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar", "feof",
-                        "main|result|0", 5, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar", "feof",
-                        "main|_tmp|0", 5, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar", "feof",
-                        "main|file_pointer|0", 5, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar", "feof",
-                        "main|root|0", 5, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar", "feof",
+                        "main|argc|0", 6, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar",
+                        "main|argv|0", 6, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar",
+                        "main|cur_arg|0", 6, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar",
+                        "main|cores_arg|0", 6, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar",
+                        "main|input_file|0", 6, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar",
+                        "main|command_file|0", 6, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar",
+                        "main|output|0", 6, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "isInteger", "getchar",
+                        "main|pFile|0", 4, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar",
+                        "main|commandFile|0", 5, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "getchar",
+                        "main|lSize|0", 5, "scanf", "rewind", "kernel_cpu_2", "kernel_cpu", "getchar",
+                        "main|commandBuffer|0", 4, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar",
+                        "main|result|0", 4, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar",
+                        "main|_tmp|0", 4, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar",
+                        "main|file_pointer|0", 4, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar",
+                        "main|root|0", 4, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar",
                         "main|r|0", 4, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar",
                         "main|input|0", 1, "main",
                         "main|instruction|0", 1, "main",
@@ -15398,105 +15442,104 @@ static int module_init() {
                         "main|_tmp|11", 4, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar",
                         "main|reclength|0", 4, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar",
                         "main|_tmp|12", 4, "scanf", "kernel_cpu_2", "kernel_cpu", "getchar",
-        "list_item_get_datum", 10498980943454487897UL, (int)1, 10498980943454488877UL,
-        "list_item_get_datum", 10498980943454487897UL, (int)1, 10498980943454488877UL,
-        "list_item_init", 0UL, (int)2, 10498980943454488877UL, 10498980943454488077UL,
-        "list_item_init", 0UL, (int)2, 10498980943454488877UL, 10498980943454488174UL,
-        "list_item_init", 0UL, (int)2, 10498980943454488877UL, 10498980943454488256UL,
-        "list_item_init", 0UL, (int)2, 10498980943454488877UL, 10498980943454488338UL,
-        "list_item_init", 0UL, (int)2, 10498980943454488877UL, 10498980943454488473UL,
-        "list_item_get_datum", 10498980943454488377UL, (int)1, 10498980943454488877UL,
-        "list_item_get_datum", 10498980943454488377UL, (int)1, 10498980943454488877UL,
-        "list_item_get_datum", 10498980943454488592UL, (int)1, 10498980943454488591UL,
-        "list_item_get_datum", 10498980943454488649UL, (int)1, 10498980943454493178UL,
-        "list_item_get_datum", 10498980943454488768UL, (int)1, 10498980943454488760UL,
-        "kmalloc", 10498980943454489365UL, (int)1, 0UL,
-        "kmalloc", 10498980943454489134UL, (int)1, 0UL,
-        "enqueue", 0UL, (int)1, 10498980943454489415UL,
-        "dequeue", 10498980943454489168UL, (int)0,
-        "enqueue", 0UL, (int)1, 10498980943454489186UL,
-        "enqueue", 0UL, (int)1, 10498980943454489186UL,
-        "find_leaf", 10498980943454489493UL, (int)3, 10498980943454489587UL, 0UL, 0UL,
-        "list_init", 0UL, (int)3, 10498980943454494185UL, 10498980943454494183UL, 10498980943454494184UL,
-        "enqueue", 0UL, (int)1, 10498980943454490074UL,
-        "dequeue", 10498980943454493178UL, (int)0,
-        "path_to_root", 0UL, (int)2, 10498980943454490074UL, 10498980943454493178UL,
-        "enqueue", 0UL, (int)1, 10498980943454493178UL,
-        "find_leaf", 10498980943454490095UL, (int)3, 10498980943454490146UL, 0UL, 0UL,
-        "make_node", 10498980943454490304UL, (int)0,
-        "make_leaf", 10498980943454493178UL, (int)0,
+        "list_item_get_datum", 10498980943454487897UL, (int)1, 10498980943454488931UL,
+        "list_item_get_datum", 10498980943454487897UL, (int)1, 10498980943454488931UL,
+        "list_item_init", 0UL, (int)2, 10498980943454488931UL, 10498980943454488081UL,
+        "list_item_init", 0UL, (int)2, 10498980943454488931UL, 10498980943454488178UL,
+        "list_item_init", 0UL, (int)2, 10498980943454488931UL, 10498980943454488260UL,
+        "list_item_init", 0UL, (int)2, 10498980943454488931UL, 10498980943454488342UL,
+        "list_item_init", 0UL, (int)2, 10498980943454488931UL, 10498980943454488477UL,
+        "list_item_get_datum", 10498980943454488381UL, (int)1, 10498980943454488931UL,
+        "list_item_get_datum", 10498980943454488381UL, (int)1, 10498980943454488931UL,
+        "list_item_get_datum", 10498980943454488597UL, (int)1, 10498980943454488596UL,
+        "list_item_get_datum", 10498980943454488666UL, (int)1, 10498980943454493441UL,
+        "list_item_get_datum", 10498980943454488812UL, (int)1, 10498980943454488804UL,
+        "kmalloc", 10498980943454489434UL, (int)1, 0UL,
+        "kmalloc", 10498980943454489203UL, (int)1, 0UL,
+        "enqueue", 0UL, (int)1, 10498980943454489487UL,
+        "dequeue", 10498980943454489237UL, (int)0,
+        "enqueue", 0UL, (int)1, 10498980943454489255UL,
+        "enqueue", 0UL, (int)1, 10498980943454489255UL,
+        "find_leaf", 10498980943454489571UL, (int)3, 10498980943454489671UL, 0UL, 0UL,
+        "list_init", 0UL, (int)3, 10498980943454494454UL, 10498980943454494452UL, 10498980943454494453UL,
+        "enqueue", 0UL, (int)1, 10498980943454490174UL,
+        "dequeue", 10498980943454493441UL, (int)0,
+        "path_to_root", 0UL, (int)2, 10498980943454490174UL, 10498980943454493441UL,
+        "enqueue", 0UL, (int)1, 10498980943454493441UL,
+        "find_leaf", 10498980943454490198UL, (int)3, 10498980943454490258UL, 0UL, 0UL,
+        "make_node", 10498980943454490433UL, (int)0,
+        "make_leaf", 10498980943454493441UL, (int)0,
         "cut", 0UL, (int)1, 0UL,
-        "insert_into_parent", 10498980943454490805UL, (int)4, 10498980943454490807UL, 10498980943454490808UL, 0UL, 10498980943454493178UL,
+        "insert_into_parent", 10498980943454490947UL, (int)4, 10498980943454490951UL, 10498980943454490952UL, 0UL, 10498980943454493441UL,
         "cut", 0UL, (int)1, 0UL,
-        "make_node", 10498980943454491289UL, (int)0,
-        "insert_into_parent", 10498980943454491309UL, (int)4, 10498980943454491311UL, 10498980943454491312UL, 0UL, 10498980943454491289UL,
-        "insert_into_new_root", 10498980943454490865UL, (int)3, 10498980943454490871UL, 0UL, 10498980943454490873UL,
-        "get_left_index", 0UL, (int)2, 10498980943454490830UL, 10498980943454490871UL,
-        "insert_into_node", 10498980943454490865UL, (int)5, 10498980943454490870UL, 10498980943454490830UL, 0UL, 0UL, 10498980943454490873UL,
-        "insert_into_node_after_splitting", 10498980943454490865UL, (int)5, 10498980943454490870UL, 10498980943454490830UL, 0UL, 0UL, 10498980943454490873UL,
-        "make_node", 10498980943454493178UL, (int)0,
-        "make_leaf", 10498980943454491378UL, (int)0,
-        "find", 10498980943454491429UL, (int)3, 10498980943454491469UL, 0UL, 0UL,
-        "make_record", 10498980943454491436UL, (int)1, 0UL,
-        "start_new_tree", 10498980943454491469UL, (int)2, 0UL, 10498980943454491436UL,
-        "find_leaf", 10498980943454491466UL, (int)3, 10498980943454491469UL, 0UL, 0UL,
-        "insert_into_leaf", 10498980943454491466UL, (int)3, 10498980943454491466UL, 0UL, 10498980943454491436UL,
-        "insert_into_leaf_after_splitting", 10498980943454491469UL, (int)4, 10498980943454491469UL, 10498980943454491466UL, 0UL, 10498980943454491436UL,
+        "make_node", 10498980943454491450UL, (int)0,
+        "insert_into_parent", 10498980943454491471UL, (int)4, 10498980943454491475UL, 10498980943454491476UL, 0UL, 10498980943454491450UL,
+        "insert_into_new_root", 10498980943454491019UL, (int)3, 10498980943454491027UL, 0UL, 10498980943454491029UL,
+        "get_left_index", 0UL, (int)2, 10498980943454490977UL, 10498980943454491027UL,
+        "insert_into_node", 10498980943454491019UL, (int)5, 10498980943454491026UL, 10498980943454490977UL, 0UL, 0UL, 10498980943454491029UL,
+        "insert_into_node_after_splitting", 10498980943454491019UL, (int)5, 10498980943454491026UL, 10498980943454490977UL, 0UL, 0UL, 10498980943454491029UL,
+        "make_node", 10498980943454493441UL, (int)0,
+        "make_leaf", 10498980943454491547UL, (int)0,
+        "find", 10498980943454491605UL, (int)3, 10498980943454491655UL, 0UL, 0UL,
+        "make_record", 10498980943454491615UL, (int)1, 0UL,
+        "start_new_tree", 10498980943454491655UL, (int)2, 0UL, 10498980943454491615UL,
+        "find_leaf", 10498980943454491652UL, (int)3, 10498980943454491655UL, 0UL, 0UL,
+        "insert_into_leaf", 10498980943454491652UL, (int)3, 10498980943454491652UL, 0UL, 10498980943454491615UL,
+        "insert_into_leaf_after_splitting", 10498980943454491655UL, (int)4, 10498980943454491655UL, 10498980943454491652UL, 0UL, 10498980943454491615UL,
         "cut", 0UL, (int)1, 0UL,
-        "delete_entry", 10498980943454492149UL, (int)4, 10498980943454492149UL, 10498980943454492125UL, 0UL, 10498980943454492125UL,
-        "remove_entry_from_node", 10498980943454492208UL, (int)3, 10498980943454492208UL, 0UL, 10498980943454492307UL,
-        "adjust_root", 10498980943454492299UL, (int)1, 10498980943454492299UL,
+        "delete_entry", 10498980943454492357UL, (int)4, 10498980943454492357UL, 10498980943454492330UL, 0UL, 10498980943454492330UL,
+        "remove_entry_from_node", 10498980943454492423UL, (int)3, 10498980943454492423UL, 0UL, 10498980943454492531UL,
+        "adjust_root", 10498980943454492521UL, (int)1, 10498980943454492521UL,
         "cut", 0UL, (int)1, 0UL,
         "cut", 0UL, (int)1, 0UL,
-        "get_neighbor_index", 0UL, (int)1, 10498980943454492208UL,
-        "coalesce_nodes", 10498980943454492299UL, (int)5, 10498980943454492299UL, 10498980943454492208UL, 10498980943454492247UL, 0UL, 0UL,
-        "redistribute_nodes", 10498980943454492299UL, (int)6, 10498980943454492299UL, 10498980943454492208UL, 10498980943454492247UL, 0UL, 0UL, 0UL,
-        "find", 10498980943454492721UL, (int)3, 10498980943454492746UL, 0UL, 0UL,
-        "find_leaf", 10498980943454492725UL, (int)3, 10498980943454492746UL, 0UL, 0UL,
-        "delete_entry", 10498980943454492746UL, (int)4, 10498980943454492746UL, 10498980943454492725UL, 0UL, 10498980943454492721UL,
-        "destroy_tree_nodes", 0UL, (int)1, 10498980943454492772UL,
-        "destroy_tree_nodes", 0UL, (int)1, 10498980943454492825UL,
-        "insert", 10498980943454493178UL, (int)3, 10498980943454493178UL, 0UL, 0UL,
-        "transform_to_cuda", 0UL, (int)2, 10498980943454493178UL, 0UL,
-        "height", 0UL, (int)1, 10498980943454493178UL,
-        "insert", 10498980943454493178UL, (int)3, 10498980943454493178UL, 0UL, 0UL,
-        "print_tree", 0UL, (int)1, 10498980943454493178UL,
-        "find", 10498980943454493242UL, (int)3, 10498980943454493178UL, 0UL, 0UL,
-        "deleteVal", 10498980943454493178UL, (int)2, 10498980943454493178UL, 0UL,
-        "print_tree", 0UL, (int)1, 10498980943454493178UL,
-        "destroy_tree", 10498980943454493178UL, (int)1, 10498980943454493178UL,
-        "print_tree", 0UL, (int)1, 10498980943454493178UL,
-        "print_leaves", 0UL, (int)1, 10498980943454493178UL,
-        "print_tree", 0UL, (int)1, 10498980943454493178UL,
-        "findRange", 10498980943454493573UL, (int)3, 10498980943454493178UL, 0UL, 0UL,
-        "list_get_length", 0UL, (int)1, 10498980943454493573UL,
-        "isInteger", 0UL, (int)1, 10498980943454493178UL,
-        "rewind", 0UL, (int)1, 10498980943454493050UL,
-        "feof", 0UL, (int)1, 10498980943454493151UL,
-        "scanf", 0UL, (int)2, 10498980943454494090UL, 10498980943454492845UL,
+        "get_neighbor_index", 0UL, (int)1, 10498980943454492423UL,
+        "coalesce_nodes", 10498980943454492521UL, (int)5, 10498980943454492521UL, 10498980943454492423UL, 10498980943454492465UL, 0UL, 0UL,
+        "redistribute_nodes", 10498980943454492521UL, (int)6, 10498980943454492521UL, 10498980943454492423UL, 10498980943454492465UL, 0UL, 0UL, 0UL,
+        "find", 10498980943454492950UL, (int)3, 10498980943454492978UL, 0UL, 0UL,
+        "find_leaf", 10498980943454492954UL, (int)3, 10498980943454492978UL, 0UL, 0UL,
+        "delete_entry", 10498980943454492978UL, (int)4, 10498980943454492978UL, 10498980943454492954UL, 0UL, 10498980943454492950UL,
+        "destroy_tree_nodes", 0UL, (int)1, 10498980943454493004UL,
+        "destroy_tree_nodes", 0UL, (int)1, 10498980943454493061UL,
+        "insert", 10498980943454493441UL, (int)3, 10498980943454493441UL, 0UL, 0UL,
+        "transform_to_cuda", 0UL, (int)2, 10498980943454493441UL, 0UL,
+        "height", 0UL, (int)1, 10498980943454493441UL,
+        "insert", 10498980943454493441UL, (int)3, 10498980943454493441UL, 0UL, 0UL,
+        "print_tree", 0UL, (int)1, 10498980943454493441UL,
+        "find", 10498980943454493505UL, (int)3, 10498980943454493441UL, 0UL, 0UL,
+        "deleteVal", 10498980943454493441UL, (int)2, 10498980943454493441UL, 0UL,
+        "print_tree", 0UL, (int)1, 10498980943454493441UL,
+        "destroy_tree", 10498980943454493441UL, (int)1, 10498980943454493441UL,
+        "print_tree", 0UL, (int)1, 10498980943454493441UL,
+        "print_leaves", 0UL, (int)1, 10498980943454493441UL,
+        "print_tree", 0UL, (int)1, 10498980943454493441UL,
+        "findRange", 10498980943454493839UL, (int)3, 10498980943454493441UL, 0UL, 0UL,
+        "list_get_length", 0UL, (int)1, 10498980943454493839UL,
+        "isInteger", 0UL, (int)1, 10498980943454493441UL,
+        "rewind", 0UL, (int)1, 10498980943454493305UL,
+        "scanf", 0UL, (int)2, 10498980943454494359UL, 10498980943454493085UL,
         "getchar", 0UL, (int)0,
-        "scanf", 0UL, (int)2, 10498980943454494090UL, 10498980943454492845UL,
+        "scanf", 0UL, (int)2, 10498980943454494359UL, 10498980943454493085UL,
         "getchar", 0UL, (int)0,
-        "scanf", 0UL, (int)2, 10498980943454494090UL, 10498980943454492845UL,
-        "getchar", 0UL, (int)0,
+        "scanf", 0UL, (int)2, 10498980943454494359UL, 10498980943454493085UL,
         "getchar", 0UL, (int)0,
         "getchar", 0UL, (int)0,
         "getchar", 0UL, (int)0,
         "getchar", 0UL, (int)0,
         "getchar", 0UL, (int)0,
-        "kernel_cpu", 0UL, (int)11, 0UL, 10498980943454493489UL, 10498980943454493490UL, 0UL, 0UL, 0UL, 0UL, 10498980943454493495UL, 10498980943454493496UL, 10498980943454493445UL, 10498980943454493479UL,
-        "scanf", 0UL, (int)2, 10498980943454494090UL, 10498980943454492870UL,
-        "scanf", 0UL, (int)2, 10498980943454494090UL, 10498980943454492871UL,
-        "kernel_cpu_2", 0UL, (int)14, 0UL, 10498980943454493924UL, 0UL, 0UL, 0UL, 0UL, 10498980943454493929UL, 10498980943454493930UL, 10498980943454493931UL, 10498980943454493932UL, 10498980943454493807UL, 10498980943454493819UL, 10498980943454493910UL, 10498980943454493915UL);
-    register_global_var("global|knodes", "%struct.knode*", (void *)(&knodes), 8.0, 1, 0, (10498980943454487551UL + 6519UL), 0);
-    register_global_var("global|krecords", "%struct.record*", (void *)(&krecords), 8.0, 1, 0, (10498980943454487551UL + 6520UL), 0);
-    register_global_var("global|mem", "i8*", (void *)(&mem), 8.0, 1, 0, (10498980943454487551UL + 6521UL), 0);
+        "getchar", 0UL, (int)0,
+        "kernel_cpu", 0UL, (int)11, 0UL, 10498980943454493755UL, 10498980943454493756UL, 0UL, 0UL, 0UL, 0UL, 10498980943454493761UL, 10498980943454493762UL, 10498980943454493711UL, 10498980943454493745UL,
+        "scanf", 0UL, (int)2, 10498980943454494359UL, 10498980943454493112UL,
+        "scanf", 0UL, (int)2, 10498980943454494359UL, 10498980943454493113UL,
+        "kernel_cpu_2", 0UL, (int)14, 0UL, 10498980943454494190UL, 0UL, 0UL, 0UL, 0UL, 10498980943454494195UL, 10498980943454494196UL, 10498980943454494197UL, 10498980943454494198UL, 10498980943454494073UL, 10498980943454494085UL, 10498980943454494176UL, 10498980943454494181UL);
+    register_global_var("global|knodes", "%struct.knode*", (void *)(&knodes), 8.0, 1, 0, (10498980943454487551UL + 6788UL), 0);
+    register_global_var("global|krecords", "%struct.record*", (void *)(&krecords), 8.0, 1, 0, (10498980943454487551UL + 6789UL), 0);
+    register_global_var("global|mem", "i8*", (void *)(&mem), 8.0, 1, 0, (10498980943454487551UL + 6790UL), 0);
     register_global_var("global|freeptr", "i64", (void *)(&freeptr), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|malloc_size", "i64", (void *)(&malloc_size), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|size", "i64", (void *)(&size), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|maxheight", "i64", (void *)(&maxheight), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|order", "i32", (void *)(&order), 4.0, 0, 0, 0UL, 0);
-    register_global_var("global|queue", "%struct.node*", (void *)(&queue), 8.0, 1, 0, (10498980943454487551UL + 6527UL), 0);
+    register_global_var("global|queue", "%struct.node*", (void *)(&queue), 8.0, 1, 0, (10498980943454487551UL + 6796UL), 0);
     register_global_var("global|verbose_output", "i8", (void *)(&verbose_output), 1.0, 0, 0, 0UL, 0);
     return 0;
 }

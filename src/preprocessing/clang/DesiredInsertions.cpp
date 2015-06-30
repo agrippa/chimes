@@ -737,6 +737,10 @@ std::vector<StructFields *> *DesiredInsertions::parseStructs() {
         line = line.substr(end + 1);
 
         end = line.find(' ');
+        uint64_t size_in_bits = strtoul(line.substr(0, end).c_str(), NULL, 10);
+        line = line.substr(end + 1);
+
+        end = line.find(' ');
         std::string unnamed_str = line.substr(0, end);
         bool unnamed = false;
         if (unnamed_str == "1") {
@@ -745,7 +749,7 @@ std::vector<StructFields *> *DesiredInsertions::parseStructs() {
             assert(unnamed_str == "0");
         }
 
-        StructFields *curr = new StructFields(name, unnamed);
+        StructFields *curr = new StructFields(name, unnamed, size_in_bits);
 
         if (end != std::string::npos) {
             line = line.substr(end + 1);
@@ -1103,6 +1107,10 @@ std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::getCallsiteSta
     return callsites->begin();
 }
 
+std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::getCallsiteEnd() {
+    return callsites->end();
+}
+
 std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::findFirstMatchingCallsiteAfter(
         int line, std::string callee_name,
         std::vector<AliasesPassedToCallSite>::iterator start) {
@@ -1117,9 +1125,8 @@ std::vector<AliasesPassedToCallSite>::iterator DesiredInsertions::findFirstMatch
     }
 
     if (i == e) {
-        llvm::errs() << "Unable to find match for call site on line " << line <<
-            " with name " << callee_name << "\n";
-        assert(false);
+        llvm::errs() << "WARNING: Unable to find match for call site " <<
+            "targeting " << callee_name << " on line " << line << "\n";
     }
 
     return i;

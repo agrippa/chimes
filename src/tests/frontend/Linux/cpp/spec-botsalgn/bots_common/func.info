@@ -3,6 +3,6 @@ bots_warning 0 74
 bots_usecs
 bots_get_date 101
 bots_get_max_cpus
-bots_get_architecture 115
-bots_get_load_average 124
+bots_get_architecture 119
+bots_get_load_average 128
 bots_print_results

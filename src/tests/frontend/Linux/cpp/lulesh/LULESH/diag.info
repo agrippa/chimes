@@ -113,46 +113,46 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 935 6 len=2
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1118 6 len=28 CalcFBHourglassForceForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1322 6 len=28 CalcHourglassControlForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 52 , 6311287552475753486UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 52 , 6311287552475753510UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 52 , 6311287552475753493UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 52 , 6311287552475753517UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 52 , 6311287552475753500UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 52 , 6311287552475753524UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 27 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 51 , 6311287552475753507UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 51 , 6311287552475753531UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 27 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 51 , 6311287552475753514UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 51 , 6311287552475753538UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 27 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 51 , 6311287552475753521UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 51 , 6311287552475753545UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 9 , 6311287552475753521UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 9 , 6311287552475753545UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 9 , 6311287552475753514UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 9 , 6311287552475753538UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 9 , 6311287552475753507UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 9 , 6311287552475753531UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 9 , 6311287552475753500UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 9 , 6311287552475753524UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 9 , 6311287552475753493UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 9 , 6311287552475753517UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 9 , 6311287552475753486UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 9 , 6311287552475753510UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1379 6 len=23 CalcVolumeForceForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 32 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 56 , 6311287552475753185UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 56 , 6311287552475753209UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 32 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 56 , 6311287552475753182UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 56 , 6311287552475753206UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 32 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 56 , 6311287552475753179UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 56 , 6311287552475753203UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 33 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 57 , 6311287552475753161UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 57 , 6311287552475753185UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 7 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 12 , 6311287552475753161UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 12 , 6311287552475753185UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 7 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 12 , 6311287552475753179UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 12 , 6311287552475753203UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 7 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 12 , 6311287552475753182UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 12 , 6311287552475753206UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 7 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 12 , 6311287552475753185UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 12 , 6311287552475753209UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1412 20 len=17 CalcForceForNodes_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1430 6 len=24 CalcAccelerationForNodes_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1441 6 len=43 ApplyAccelerationBoundaryConditionsForNodes_npm
@@ -173,72 +173,72 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2155 6 len=
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2188 6 len=20 CalcPressureForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2216 6 len=18 CalcEnergyForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 33 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 55 , 6311287552475748346UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 55 , 6311287552475748362UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 9 , 6311287552475748346UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 9 , 6311287552475748362UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2338 6 len=22 CalcSoundSpeedForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2354 6 len=15 EvalEOSForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 51 , 6311287552475747718UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 51 , 6311287552475747734UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 51 , 6311287552475747725UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 51 , 6311287552475747741UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 51 , 6311287552475747732UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 51 , 6311287552475747748UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 51 , 6311287552475747739UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 51 , 6311287552475747755UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 35 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 57 , 6311287552475747746UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 57 , 6311287552475747762UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 36 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 58 , 6311287552475747753UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 58 , 6311287552475747769UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 26 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 50 , 6311287552475747760UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 50 , 6311287552475747776UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 26 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 50 , 6311287552475747767UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 50 , 6311287552475747783UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 52 , 6311287552475747774UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 52 , 6311287552475747790UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 53 , 6311287552475747781UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 53 , 6311287552475747797UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 53 , 6311287552475747788UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 53 , 6311287552475747804UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 53 , 6311287552475747795UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 53 , 6311287552475747811UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 27 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 51 , 6311287552475747802UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 51 , 6311287552475747818UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 52 , 6311287552475747809UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 52 , 6311287552475747825UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 9 , 6311287552475747809UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 9 , 6311287552475747825UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 9 , 6311287552475747802UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 9 , 6311287552475747818UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 9 , 6311287552475747795UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 9 , 6311287552475747811UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 9 , 6311287552475747788UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 9 , 6311287552475747804UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 9 , 6311287552475747781UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 9 , 6311287552475747797UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 9 , 6311287552475747774UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 9 , 6311287552475747790UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 9 , 6311287552475747767UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 9 , 6311287552475747783UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 9 , 6311287552475747760UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 9 , 6311287552475747776UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 9 , 6311287552475747753UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 9 , 6311287552475747769UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 9 , 6311287552475747746UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 9 , 6311287552475747762UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 9 , 6311287552475747739UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 9 , 6311287552475747755UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 9 , 6311287552475747732UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 9 , 6311287552475747748UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 9 , 6311287552475747725UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 9 , 6311287552475747741UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 9 , 6311287552475747718UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 9 , 6311287552475747734UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2477 6 len=31 ApplyMaterialPropertiesForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 30 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 54 , 6311287552475747458UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 54 , 6311287552475747474UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 10 , 6311287552475747458UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 10 , 6311287552475747474UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2530 6 len=21 UpdateVolumesForElems_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2550 6 len=16 LagrangeElements_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2565 6 len=29 CalcCourantConstraintForElems_npm
@@ -340,115 +340,118 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 44
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 31 len=6 malloc_wrapper
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 442 59 , 6311287552475745828UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 52 , 6311287552475753486UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 52 , 6311287552475753510UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 52 , 6311287552475753493UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 52 , 6311287552475753517UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 52 , 6311287552475753500UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 52 , 6311287552475753524UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 27 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 51 , 6311287552475753507UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 51 , 6311287552475753531UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 27 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 51 , 6311287552475753514UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 51 , 6311287552475753538UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 27 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 51 , 6311287552475753521UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 51 , 6311287552475753545UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 9 , 6311287552475753521UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1368 9 , 6311287552475753545UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 9 , 6311287552475753514UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1369 9 , 6311287552475753538UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 9 , 6311287552475753507UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1370 9 , 6311287552475753531UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 9 , 6311287552475753500UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1371 9 , 6311287552475753524UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 9 , 6311287552475753493UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1372 9 , 6311287552475753517UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 9 , 6311287552475753486UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1373 9 , 6311287552475753510UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 32 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 56 , 6311287552475753185UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 56 , 6311287552475753209UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 32 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 56 , 6311287552475753182UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 56 , 6311287552475753206UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 32 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 56 , 6311287552475753179UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 56 , 6311287552475753203UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 33 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 57 , 6311287552475753161UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 57 , 6311287552475753185UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 7 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 12 , 6311287552475753161UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1405 12 , 6311287552475753185UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 7 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 12 , 6311287552475753179UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1406 12 , 6311287552475753203UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 7 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 12 , 6311287552475753182UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1407 12 , 6311287552475753206UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 7 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 12 , 6311287552475753185UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1408 12 , 6311287552475753209UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 33 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 55 , 6311287552475748346UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 55 , 6311287552475748362UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 9 , 6311287552475748346UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2332 9 , 6311287552475748362UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 51 , 6311287552475747718UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 51 , 6311287552475747734UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 51 , 6311287552475747725UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 51 , 6311287552475747741UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 51 , 6311287552475747732UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 51 , 6311287552475747748UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 51 , 6311287552475747739UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 51 , 6311287552475747755UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 35 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 57 , 6311287552475747746UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 57 , 6311287552475747762UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 36 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 58 , 6311287552475747753UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 58 , 6311287552475747769UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 26 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 50 , 6311287552475747760UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 50 , 6311287552475747776UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 26 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 50 , 6311287552475747767UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 50 , 6311287552475747783UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 52 , 6311287552475747774UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 52 , 6311287552475747790UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 53 , 6311287552475747781UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 53 , 6311287552475747797UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 53 , 6311287552475747788UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 53 , 6311287552475747804UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 29 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 53 , 6311287552475747795UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 53 , 6311287552475747811UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 27 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 51 , 6311287552475747802UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 51 , 6311287552475747818UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 28 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 52 , 6311287552475747809UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 52 , 6311287552475747825UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 9 , 6311287552475747809UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2460 9 , 6311287552475747825UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 9 , 6311287552475747802UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2461 9 , 6311287552475747818UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 9 , 6311287552475747795UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2462 9 , 6311287552475747811UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 9 , 6311287552475747788UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2463 9 , 6311287552475747804UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 9 , 6311287552475747781UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2464 9 , 6311287552475747797UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 9 , 6311287552475747774UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2465 9 , 6311287552475747790UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 9 , 6311287552475747767UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2466 9 , 6311287552475747783UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 9 , 6311287552475747760UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2467 9 , 6311287552475747776UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 9 , 6311287552475747753UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2468 9 , 6311287552475747769UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 9 , 6311287552475747746UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2469 9 , 6311287552475747762UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 9 , 6311287552475747739UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2470 9 , 6311287552475747755UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 9 , 6311287552475747732UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2471 9 , 6311287552475747748UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 9 , 6311287552475747725UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2472 9 , 6311287552475747741UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 9 , 6311287552475747718UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2473 9 , 6311287552475747734UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 30 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 54 , 6311287552475747458UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 54 , 6311287552475747474UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 5 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 10 , 6311287552475747458UL
-InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 32 rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_13, ____chimes_did_disable0); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2524 10 , 6311287552475747474UL
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 98 rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_13, ____chimes_did_disable0); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 30 const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 96 32 rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_42, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 130 rm_stack(false, 0UL, "SQRT", &____must_manage_SQRT, ____alias_loc_id_13, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 96 98 rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_42, ____chimes_did_disable1); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 96 30 const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 32 rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_8, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 96 130 rm_stack(false, 0UL, "CBRT", &____must_manage_CBRT, ____alias_loc_id_42, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 98 rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_8, ____chimes_did_disable2); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 30 const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 130 rm_stack(false, 0UL, "FABS", &____must_manage_FABS, ____alias_loc_id_8, ____chimes_did_disable2); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 355 4 const int ____chimes_did_disable3 = new_stack((void *)(&AllocateNodalPersistent), "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, 2, 0, (size_t)(6311287552475745539UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 380 4 rm_stack(false, 0UL, "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, ____alias_loc_id_1, ____chimes_did_disable3); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 383 4 const int ____chimes_did_disable4 = new_stack((void *)(&AllocateElemPersistent), "AllocateElemPersistent", &____must_manage_AllocateElemPersistent, 2, 0, (size_t)(6311287552475745739UL), (size_t)(0UL)); 
@@ -459,30 +462,30 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 43
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 443 4 rm_stack(false, 0UL, "AllocateNodesets", &____must_manage_AllocateNodesets, ____alias_loc_id_4, ____chimes_did_disable6); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 477 1 const int ____chimes_did_disable7 = new_stack((void *)(&TimeIncrement), "TimeIncrement", &____must_manage_TimeIncrement, 0, 0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 522 1 rm_stack(false, 0UL, "TimeIncrement", &____must_manage_TimeIncrement, ____alias_loc_id_7, ____chimes_did_disable7); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 527 1 const int ____chimes_did_disable8 = new_stack((void *)(&InitStressTermsForElems), "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, 4, 0, (size_t)(0UL), (size_t)(6311287552475753244UL), (size_t)(6311287552475753245UL), (size_t)(6311287552475753246UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 527 1 const int ____chimes_did_disable8 = new_stack((void *)(&InitStressTermsForElems), "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, 4, 0, (size_t)(0UL), (size_t)(6311287552475753268UL), (size_t)(6311287552475753269UL), (size_t)(6311287552475753270UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 534 1 rm_stack(false, 0UL, "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, ____alias_loc_id_36, ____chimes_did_disable8); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 542 1 const int ____chimes_did_disable9 = new_stack((void *)(&CalcElemShapeFunctionDerivatives), "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, 5, 0, (size_t)(6311287552475752043UL), (size_t)(6311287552475752044UL), (size_t)(6311287552475752045UL), (size_t)(6311287552475752046UL), (size_t)(6311287552475752047UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 542 1 const int ____chimes_did_disable9 = new_stack((void *)(&CalcElemShapeFunctionDerivatives), "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, 5, 0, (size_t)(6311287552475752063UL), (size_t)(6311287552475752064UL), (size_t)(6311287552475752065UL), (size_t)(6311287552475752066UL), (size_t)(6311287552475752067UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 623 1 rm_stack(false, 0UL, "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, ____alias_loc_id_27, ____chimes_did_disable9); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 634 1 const int ____chimes_did_disable10 = new_stack((void *)(&SumElemFaceNormal), "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, 24, 0, (size_t)(6311287552475758943UL), (size_t)(6311287552475758944UL), (size_t)(6311287552475758945UL), (size_t)(6311287552475758946UL), (size_t)(6311287552475758947UL), (size_t)(6311287552475758948UL), (size_t)(6311287552475758949UL), (size_t)(6311287552475758950UL), (size_t)(6311287552475758951UL), (size_t)(6311287552475758952UL), (size_t)(6311287552475758953UL), (size_t)(6311287552475758954UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 634 1 const int ____chimes_did_disable10 = new_stack((void *)(&SumElemFaceNormal), "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, 24, 0, (size_t)(6311287552475758971UL), (size_t)(6311287552475758972UL), (size_t)(6311287552475758973UL), (size_t)(6311287552475758974UL), (size_t)(6311287552475758975UL), (size_t)(6311287552475758976UL), (size_t)(6311287552475758977UL), (size_t)(6311287552475758978UL), (size_t)(6311287552475758979UL), (size_t)(6311287552475758980UL), (size_t)(6311287552475758981UL), (size_t)(6311287552475758982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 659 1 rm_stack(false, 0UL, "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, ____alias_loc_id_47, ____chimes_did_disable10); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 668 1 const int ____chimes_did_disable11 = new_stack((void *)(&CalcElemNodeNormals), "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, 6, 0, (size_t)(6311287552475758340UL), (size_t)(6311287552475758341UL), (size_t)(6311287552475758342UL), (size_t)(6311287552475758343UL), (size_t)(6311287552475758344UL), (size_t)(6311287552475758345UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 668 1 const int ____chimes_did_disable11 = new_stack((void *)(&CalcElemNodeNormals), "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, 6, 0, (size_t)(6311287552475758368UL), (size_t)(6311287552475758369UL), (size_t)(6311287552475758370UL), (size_t)(6311287552475758371UL), (size_t)(6311287552475758372UL), (size_t)(6311287552475758373UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 716 1 rm_stack(false, 0UL, "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, ____alias_loc_id_45, ____chimes_did_disable11); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 726 1 const int ____chimes_did_disable12 = new_stack((void *)(&SumElemStressesToNodeForces), "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, 7, 0, (size_t)(6311287552475758704UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475758708UL), (size_t)(6311287552475758709UL), (size_t)(6311287552475758710UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 726 1 const int ____chimes_did_disable12 = new_stack((void *)(&SumElemStressesToNodeForces), "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, 7, 0, (size_t)(6311287552475758732UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475758736UL), (size_t)(6311287552475758737UL), (size_t)(6311287552475758738UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 768 1 rm_stack(false, 0UL, "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, ____alias_loc_id_46, ____chimes_did_disable12); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 774 1 const int ____chimes_did_disable13 = new_stack((void *)(&IntegrateStressForElems), "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, 5, 0, (size_t)(0UL), (size_t)(6311287552475753438UL), (size_t)(6311287552475753439UL), (size_t)(6311287552475753440UL), (size_t)(6311287552475753441UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 774 1 const int ____chimes_did_disable13 = new_stack((void *)(&IntegrateStressForElems), "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, 5, 0, (size_t)(0UL), (size_t)(6311287552475753462UL), (size_t)(6311287552475753463UL), (size_t)(6311287552475753464UL), (size_t)(6311287552475753465UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 816 1 rm_stack(false, 0UL, "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, ____alias_loc_id_37, ____chimes_did_disable13); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 823 1 const int ____chimes_did_disable14 = new_stack((void *)(&CollectDomainNodesToElemNodes), "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, 4, 0, (size_t)(6311287552475753935UL), (size_t)(6311287552475753936UL), (size_t)(6311287552475753937UL), (size_t)(6311287552475753938UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 823 1 const int ____chimes_did_disable14 = new_stack((void *)(&CollectDomainNodesToElemNodes), "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, 4, 0, (size_t)(6311287552475753959UL), (size_t)(6311287552475753960UL), (size_t)(6311287552475753961UL), (size_t)(6311287552475753962UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 860 1 rm_stack(false, 0UL, "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, ____alias_loc_id_39, ____chimes_did_disable14); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 870 1 const int ____chimes_did_disable15 = new_stack((void *)(&VoluDer), "VoluDer", &____must_manage_VoluDer, 21, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475757925UL), (size_t)(6311287552475757926UL), (size_t)(6311287552475757927UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 870 1 const int ____chimes_did_disable15 = new_stack((void *)(&VoluDer), "VoluDer", &____must_manage_VoluDer, 21, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475757953UL), (size_t)(6311287552475757954UL), (size_t)(6311287552475757955UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 890 1 rm_stack(false, 0UL, "VoluDer", &____must_manage_VoluDer, ____alias_loc_id_44, ____chimes_did_disable15); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 899 1 const int ____chimes_did_disable16 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(6311287552475754446UL), (size_t)(6311287552475754447UL), (size_t)(6311287552475754448UL), (size_t)(6311287552475754449UL), (size_t)(6311287552475754450UL), (size_t)(6311287552475754451UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 899 1 const int ____chimes_did_disable16 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(6311287552475754470UL), (size_t)(6311287552475754471UL), (size_t)(6311287552475754472UL), (size_t)(6311287552475754473UL), (size_t)(6311287552475754474UL), (size_t)(6311287552475754475UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 932 1 rm_stack(false, 0UL, "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, ____alias_loc_id_40, ____chimes_did_disable16); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 940 1 const int ____chimes_did_disable17 = new_stack((void *)(&CalcElemFBHourglassForce), "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, 15, 0, (size_t)(6311287552475757660UL), (size_t)(6311287552475757661UL), (size_t)(6311287552475757662UL), (size_t)(6311287552475757663UL), (size_t)(6311287552475757664UL), (size_t)(6311287552475757665UL), (size_t)(6311287552475757666UL), (size_t)(6311287552475757667UL), (size_t)(6311287552475757668UL), (size_t)(6311287552475757669UL), (size_t)(6311287552475757670UL), (size_t)(0UL), (size_t)(6311287552475757672UL), (size_t)(6311287552475757673UL), (size_t)(6311287552475757674UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 940 1 const int ____chimes_did_disable17 = new_stack((void *)(&CalcElemFBHourglassForce), "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, 15, 0, (size_t)(6311287552475757688UL), (size_t)(6311287552475757689UL), (size_t)(6311287552475757690UL), (size_t)(6311287552475757691UL), (size_t)(6311287552475757692UL), (size_t)(6311287552475757693UL), (size_t)(6311287552475757694UL), (size_t)(6311287552475757695UL), (size_t)(6311287552475757696UL), (size_t)(6311287552475757697UL), (size_t)(6311287552475757698UL), (size_t)(0UL), (size_t)(6311287552475757700UL), (size_t)(6311287552475757701UL), (size_t)(6311287552475757702UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1115 1 rm_stack(false, 0UL, "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, ____alias_loc_id_43, ____chimes_did_disable17); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1122 1 const int ____chimes_did_disable18 = new_stack((void *)(&CalcFBHourglassForceForElems), "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, 8, 0, (size_t)(6311287552475755755UL), (size_t)(6311287552475755756UL), (size_t)(6311287552475755757UL), (size_t)(6311287552475755758UL), (size_t)(6311287552475755759UL), (size_t)(6311287552475755760UL), (size_t)(6311287552475755761UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1122 1 const int ____chimes_did_disable18 = new_stack((void *)(&CalcFBHourglassForceForElems), "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, 8, 0, (size_t)(6311287552475755779UL), (size_t)(6311287552475755780UL), (size_t)(6311287552475755781UL), (size_t)(6311287552475755782UL), (size_t)(6311287552475755783UL), (size_t)(6311287552475755784UL), (size_t)(6311287552475755785UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1319 1 rm_stack(false, 0UL, "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, ____alias_loc_id_41, ____chimes_did_disable18); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1375 4 rm_stack(false, 0UL, "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, ____alias_loc_id_38, ____chimes_did_disable19); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1323 1 const int ____chimes_did_disable19 = new_stack((void *)(&CalcHourglassControlForElems), "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, 2, 0, (size_t)(6311287552475753680UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1323 1 const int ____chimes_did_disable19 = new_stack((void *)(&CalcHourglassControlForElems), "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, 2, 0, (size_t)(6311287552475753704UL), (size_t)(0UL)); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1380 1 const int ____chimes_did_disable20 = new_stack((void *)(&CalcVolumeForceForElems), "CalcVolumeForceForElems", &____must_manage_CalcVolumeForceForElems, 0, 0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1410 1 rm_stack(false, 0UL, "CalcVolumeForceForElems", &____must_manage_CalcVolumeForceForElems, ____alias_loc_id_35, ____chimes_did_disable20); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1413 1 const int ____chimes_did_disable21 = new_stack((void *)(&CalcForceForNodes), "CalcForceForNodes", &____must_manage_CalcForceForNodes, 0, 0); 
@@ -497,15 +500,19 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 14
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1488 1 rm_stack(false, 0UL, "CalcPositionForNodes", &____must_manage_CalcPositionForNodes, ____alias_loc_id_34, ____chimes_did_disable25); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1508 3 rm_stack(false, 0UL, "LagrangeNodal", &____must_manage_LagrangeNodal, ____alias_loc_id_9, ____chimes_did_disable26); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1492 1 const int ____chimes_did_disable26 = new_stack((void *)(&LagrangeNodal), "LagrangeNodal", &____must_manage_LagrangeNodal, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1593 3 rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_48, ____chimes_did_disable27); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1593 66 rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_48, ____chimes_did_disable27); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1524 1 const int ____chimes_did_disable27 = new_stack((void *)(&CalcElemVolume), "CalcElemVolume", &____must_manage_CalcElemVolume, 24, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1599 1 rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1598 1 const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeWrapper), "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, 3, 0, (size_t)(6311287552475746910UL), (size_t)(6311287552475746911UL), (size_t)(6311287552475746912UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1623 4 rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_29, ____chimes_did_disable29); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1594 1 rm_stack(false, 0UL, "CalcElemVolume", &____must_manage_CalcElemVolume, ____alias_loc_id_48, ____chimes_did_disable27); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1601 74 rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1598 1 const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeWrapper), "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, 3, 0, (size_t)(6311287552475746918UL), (size_t)(6311287552475746919UL), (size_t)(6311287552475746920UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1602 1 rm_stack(false, 0UL, "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, ____alias_loc_id_6, ____chimes_did_disable28); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1623 65 rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_29, ____chimes_did_disable29); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1611 1 const int ____chimes_did_disable29 = new_stack((void *)(&AreaFace), "AreaFace", &____must_manage_AreaFace, 12, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1666 4 rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1631 1 const int ____chimes_did_disable30 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 0, (size_t)(6311287552475751130UL), (size_t)(6311287552475751142UL), (size_t)(6311287552475751154UL), (size_t)(0UL)); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1676 1 const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemVelocityGrandient), "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, 6, 0, (size_t)(6311287552475752579UL), (size_t)(6311287552475752580UL), (size_t)(6311287552475752581UL), (size_t)(6311287552475752582UL), (size_t)(0UL), (size_t)(6311287552475752584UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1624 1 rm_stack(false, 0UL, "AreaFace", &____must_manage_AreaFace, ____alias_loc_id_29, ____chimes_did_disable29); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1666 71 rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1631 1 const int ____chimes_did_disable30 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 0, (size_t)(6311287552475751147UL), (size_t)(6311287552475751159UL), (size_t)(6311287552475751171UL), (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1667 1 rm_stack(false, 0UL, "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, ____alias_loc_id_26, ____chimes_did_disable30); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1676 1 const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemVelocityGrandient), "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, 6, 0, (size_t)(6311287552475752599UL), (size_t)(6311287552475752600UL), (size_t)(6311287552475752601UL), (size_t)(6311287552475752602UL), (size_t)(0UL), (size_t)(6311287552475752604UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1730 1 rm_stack(false, 0UL, "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, ____alias_loc_id_28, ____chimes_did_disable31); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1734 1 const int ____chimes_did_disable32 = new_stack((void *)(&CalcKinematicsForElems), "CalcKinematicsForElems", &____must_manage_CalcKinematicsForElems, 2, 0, (size_t)(0UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1805 1 rm_stack(false, 0UL, "CalcKinematicsForElems", &____must_manage_CalcKinematicsForElems, ____alias_loc_id_25, ____chimes_did_disable32); 
@@ -519,13 +526,13 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 21
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2152 1 rm_stack(false, 0UL, "CalcMonotonicQForElems", &____must_manage_CalcMonotonicQForElems, ____alias_loc_id_23, ____chimes_did_disable36); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2156 1 const int ____chimes_did_disable37 = new_stack((void *)(&CalcQForElems), "CalcQForElems", &____must_manage_CalcQForElems, 0, 0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2185 1 rm_stack(false, 0UL, "CalcQForElems", &____must_manage_CalcQForElems, ____alias_loc_id_15, ____chimes_did_disable37); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2194 1 const int ____chimes_did_disable38 = new_stack((void *)(&CalcPressureForElems), "CalcPressureForElems", &____must_manage_CalcPressureForElems, 10, 0, (size_t)(6311287552475749176UL), (size_t)(6311287552475749177UL), (size_t)(6311287552475749178UL), (size_t)(6311287552475749179UL), (size_t)(6311287552475749180UL), (size_t)(6311287552475749181UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2194 1 const int ____chimes_did_disable38 = new_stack((void *)(&CalcPressureForElems), "CalcPressureForElems", &____must_manage_CalcPressureForElems, 10, 0, (size_t)(6311287552475749192UL), (size_t)(6311287552475749193UL), (size_t)(6311287552475749194UL), (size_t)(6311287552475749195UL), (size_t)(6311287552475749196UL), (size_t)(6311287552475749197UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2213 1 rm_stack(false, 0UL, "CalcPressureForElems", &____must_manage_CalcPressureForElems, ____alias_loc_id_21, ____chimes_did_disable38); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2334 4 rm_stack(false, 0UL, "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, ____alias_loc_id_19, ____chimes_did_disable39); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2226 1 const int ____chimes_did_disable39 = new_stack((void *)(&CalcEnergyForElems), "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, 23, 0, (size_t)(6311287552475748908UL), (size_t)(6311287552475748909UL), (size_t)(6311287552475748910UL), (size_t)(6311287552475748911UL), (size_t)(6311287552475748912UL), (size_t)(6311287552475748913UL), (size_t)(6311287552475748914UL), (size_t)(6311287552475748915UL), (size_t)(6311287552475748916UL), (size_t)(6311287552475748917UL), (size_t)(6311287552475748918UL), (size_t)(6311287552475748919UL), (size_t)(6311287552475748920UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475748926UL), (size_t)(6311287552475748927UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2341 1 const int ____chimes_did_disable40 = new_stack((void *)(&CalcSoundSpeedForElems), "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, 8, 0, (size_t)(6311287552475749029UL), (size_t)(0UL), (size_t)(6311287552475749031UL), (size_t)(6311287552475749032UL), (size_t)(6311287552475749033UL), (size_t)(6311287552475749034UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2226 1 const int ____chimes_did_disable39 = new_stack((void *)(&CalcEnergyForElems), "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, 23, 0, (size_t)(6311287552475748924UL), (size_t)(6311287552475748925UL), (size_t)(6311287552475748926UL), (size_t)(6311287552475748927UL), (size_t)(6311287552475748928UL), (size_t)(6311287552475748929UL), (size_t)(6311287552475748930UL), (size_t)(6311287552475748931UL), (size_t)(6311287552475748932UL), (size_t)(6311287552475748933UL), (size_t)(6311287552475748934UL), (size_t)(6311287552475748935UL), (size_t)(6311287552475748936UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475748942UL), (size_t)(6311287552475748943UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2341 1 const int ____chimes_did_disable40 = new_stack((void *)(&CalcSoundSpeedForElems), "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, 8, 0, (size_t)(6311287552475749045UL), (size_t)(0UL), (size_t)(6311287552475749047UL), (size_t)(6311287552475749048UL), (size_t)(6311287552475749049UL), (size_t)(6311287552475749050UL), (size_t)(0UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2351 1 rm_stack(false, 0UL, "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, ____alias_loc_id_20, ____chimes_did_disable40); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2355 1 const int ____chimes_did_disable41 = new_stack((void *)(&EvalEOSForElems), "EvalEOSForElems", &____must_manage_EvalEOSForElems, 2, 0, (size_t)(6311287552475748256UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2355 1 const int ____chimes_did_disable41 = new_stack((void *)(&EvalEOSForElems), "EvalEOSForElems", &____must_manage_EvalEOSForElems, 2, 0, (size_t)(6311287552475748272UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2474 1 rm_stack(false, 0UL, "EvalEOSForElems", &____must_manage_EvalEOSForElems, ____alias_loc_id_18, ____chimes_did_disable41); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2478 1 const int ____chimes_did_disable42 = new_stack((void *)(&ApplyMaterialPropertiesForElems), "ApplyMaterialPropertiesForElems", &____must_manage_ApplyMaterialPropertiesForElems, 0, 0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2527 1 rm_stack(false, 0UL, "ApplyMaterialPropertiesForElems", &____must_manage_ApplyMaterialPropertiesForElems, ____alias_loc_id_16, ____chimes_did_disable42); 
@@ -541,14 +548,21 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 26
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2642 1 rm_stack(false, 0UL, "CalcTimeConstraintsForElems", &____must_manage_CalcTimeConstraintsForElems, 0, ____chimes_did_disable47); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2646 1 const int ____chimes_did_disable48 = new_stack((void *)(&LagrangeLeapFrog), "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, 0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2658 1 rm_stack(false, 0UL, "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, ____chimes_did_disable48); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2931 4 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable49); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2661 1 const int ____chimes_did_disable49 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(6311287552475746825UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2931 59 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable49); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2661 1 const int ____chimes_did_disable49 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(6311287552475746829UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2932 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable49); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 31 const int ____chimes_did_disable0 = new_stack((void *)(&SQRT), "SQRT", &____must_manage_SQRT, 1, 0, (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 145 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 149 double ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 176 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 96 31 const int ____chimes_did_disable1 = new_stack((void *)(&CBRT), "CBRT", &____must_manage_CBRT, 1, 0, (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 96 145 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 96 149 double ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 96 176 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 31 const int ____chimes_did_disable2 = new_stack((void *)(&FABS), "FABS", &____must_manage_FABS, 1, 0, (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 145 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 149 double ____chimes_ret_var_2; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 98 176 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 355 5 const int ____chimes_did_disable3 = new_stack((void *)(&AllocateNodalPersistent), "AllocateNodalPersistent", &____must_manage_AllocateNodalPersistent, 2, 0, (size_t)(6311287552475745539UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 355 209 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 383 5 const int ____chimes_did_disable4 = new_stack((void *)(&AllocateElemPersistent), "AllocateElemPersistent", &____must_manage_AllocateElemPersistent, 2, 0, (size_t)(6311287552475745739UL), (size_t)(0UL)); ;
@@ -571,13 +585,13 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 482 7 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 482 37 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 485 7  Real_t newdt;  newdt = (Real_t(1.0E+20)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 485 38 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 527 2 const int ____chimes_did_disable8 = new_stack((void *)(&InitStressTermsForElems), "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, 4, 0, (size_t)(0UL), (size_t)(6311287552475753244UL), (size_t)(6311287552475753245UL), (size_t)(6311287552475753246UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 527 2 const int ____chimes_did_disable8 = new_stack((void *)(&InitStressTermsForElems), "InitStressTermsForElems", &____must_manage_InitStressTermsForElems, 4, 0, (size_t)(0UL), (size_t)(6311287552475753268UL), (size_t)(6311287552475753269UL), (size_t)(6311287552475753270UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 527 272 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 531 4 {  Index_t i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 533 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 531 9  i = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 531 23 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 542 2 const int ____chimes_did_disable9 = new_stack((void *)(&CalcElemShapeFunctionDerivatives), "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, 5, 0, (size_t)(6311287552475752043UL), (size_t)(6311287552475752044UL), (size_t)(6311287552475752045UL), (size_t)(6311287552475752046UL), (size_t)(6311287552475752047UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 542 2 const int ____chimes_did_disable9 = new_stack((void *)(&CalcElemShapeFunctionDerivatives), "CalcElemShapeFunctionDerivatives", &____must_manage_CalcElemShapeFunctionDerivatives, 5, 0, (size_t)(6311287552475752063UL), (size_t)(6311287552475752064UL), (size_t)(6311287552475752065UL), (size_t)(6311287552475752066UL), (size_t)(6311287552475752067UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 542 350 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 543 3  Real_t x0;  x0 = (x[0]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 543 20 
@@ -639,7 +653,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 562 3 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 562 29 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 563 3 Real_t cjzxi; Real_t cjzet; Real_t cjzze; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 563 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 634 2 const int ____chimes_did_disable10 = new_stack((void *)(&SumElemFaceNormal), "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, 24, 0, (size_t)(6311287552475758943UL), (size_t)(6311287552475758944UL), (size_t)(6311287552475758945UL), (size_t)(6311287552475758946UL), (size_t)(6311287552475758947UL), (size_t)(6311287552475758948UL), (size_t)(6311287552475758949UL), (size_t)(6311287552475758950UL), (size_t)(6311287552475758951UL), (size_t)(6311287552475758952UL), (size_t)(6311287552475758953UL), (size_t)(6311287552475758954UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 634 2 const int ____chimes_did_disable10 = new_stack((void *)(&SumElemFaceNormal), "SumElemFaceNormal", &____must_manage_SumElemFaceNormal, 24, 0, (size_t)(6311287552475758971UL), (size_t)(6311287552475758972UL), (size_t)(6311287552475758973UL), (size_t)(6311287552475758974UL), (size_t)(6311287552475758975UL), (size_t)(6311287552475758976UL), (size_t)(6311287552475758977UL), (size_t)(6311287552475758978UL), (size_t)(6311287552475758979UL), (size_t)(6311287552475758980UL), (size_t)(6311287552475758981UL), (size_t)(6311287552475758982UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 634 718 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 635 4  Real_t bisectX0;  bisectX0 = (Real_t(0.5) * (x3 + x2 - x1 - x0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 635 55 
@@ -659,13 +673,13 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 642 4 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 642 77 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 643 4  Real_t areaZ;  areaZ = (Real_t(0.25) * (bisectX0 * bisectY1 - bisectY0 * bisectX1)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 643 77 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 668 2 const int ____chimes_did_disable11 = new_stack((void *)(&CalcElemNodeNormals), "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, 6, 0, (size_t)(6311287552475758340UL), (size_t)(6311287552475758341UL), (size_t)(6311287552475758342UL), (size_t)(6311287552475758343UL), (size_t)(6311287552475758344UL), (size_t)(6311287552475758345UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 668 2 const int ____chimes_did_disable11 = new_stack((void *)(&CalcElemNodeNormals), "CalcElemNodeNormals", &____must_manage_CalcElemNodeNormals, 6, 0, (size_t)(6311287552475758368UL), (size_t)(6311287552475758369UL), (size_t)(6311287552475758370UL), (size_t)(6311287552475758371UL), (size_t)(6311287552475758372UL), (size_t)(6311287552475758373UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 668 345 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 669 4 {  Index_t i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 673 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 669 9  i = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 669 23 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 726 2 const int ____chimes_did_disable12 = new_stack((void *)(&SumElemStressesToNodeForces), "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, 7, 0, (size_t)(6311287552475758704UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475758708UL), (size_t)(6311287552475758709UL), (size_t)(6311287552475758710UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 726 2 const int ____chimes_did_disable12 = new_stack((void *)(&SumElemStressesToNodeForces), "SumElemStressesToNodeForces", &____must_manage_SumElemStressesToNodeForces, 7, 0, (size_t)(6311287552475758732UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475758736UL), (size_t)(6311287552475758737UL), (size_t)(6311287552475758738UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 726 348 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 727 3  Real_t pfx0;  pfx0 = (B[0][0]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 727 25 
@@ -715,7 +729,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 740 3 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 740 25 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 740 27  Real_t pfz7;  pfz7 = (B[2][7]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 740 49 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 774 2 const int ____chimes_did_disable13 = new_stack((void *)(&IntegrateStressForElems), "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, 5, 0, (size_t)(0UL), (size_t)(6311287552475753438UL), (size_t)(6311287552475753439UL), (size_t)(6311287552475753440UL), (size_t)(6311287552475753441UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 774 2 const int ____chimes_did_disable13 = new_stack((void *)(&IntegrateStressForElems), "IntegrateStressForElems", &____must_manage_IntegrateStressForElems, 5, 0, (size_t)(0UL), (size_t)(6311287552475753462UL), (size_t)(6311287552475753463UL), (size_t)(6311287552475753464UL), (size_t)(6311287552475753465UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 774 306 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 775 3 Real_t B[3][8]; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 775 18 
@@ -749,7 +763,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 808 10
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 808 26 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 810 7  Index_t gnode;  gnode = (elemNodes[lnode]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 810 39 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 823 2 const int ____chimes_did_disable14 = new_stack((void *)(&CollectDomainNodesToElemNodes), "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, 4, 0, (size_t)(6311287552475753935UL), (size_t)(6311287552475753936UL), (size_t)(6311287552475753937UL), (size_t)(6311287552475753938UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 823 2 const int ____chimes_did_disable14 = new_stack((void *)(&CollectDomainNodesToElemNodes), "CollectDomainNodesToElemNodes", &____must_manage_CollectDomainNodesToElemNodes, 4, 0, (size_t)(6311287552475753959UL), (size_t)(6311287552475753960UL), (size_t)(6311287552475753961UL), (size_t)(6311287552475753962UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 823 309 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 824 4  Index_t nd0i;  nd0i = (elemToNode[0]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 824 33 
@@ -767,13 +781,13 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 830 4 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 830 33 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 831 4  Index_t nd7i;  nd7i = (elemToNode[7]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 831 33 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 870 2 const int ____chimes_did_disable15 = new_stack((void *)(&VoluDer), "VoluDer", &____must_manage_VoluDer, 21, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475757925UL), (size_t)(6311287552475757926UL), (size_t)(6311287552475757927UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 870 2 const int ____chimes_did_disable15 = new_stack((void *)(&VoluDer), "VoluDer", &____must_manage_VoluDer, 21, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475757953UL), (size_t)(6311287552475757954UL), (size_t)(6311287552475757955UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 870 481 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 871 4  Real_t twelfth;  twelfth = (Real_t(1.) / Real_t(12.)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 871 48 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 899 2 const int ____chimes_did_disable16 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(6311287552475754446UL), (size_t)(6311287552475754447UL), (size_t)(6311287552475754448UL), (size_t)(6311287552475754449UL), (size_t)(6311287552475754450UL), (size_t)(6311287552475754451UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 899 2 const int ____chimes_did_disable16 = new_stack((void *)(&CalcElemVolumeDerivative), "CalcElemVolumeDerivative", &____must_manage_CalcElemVolumeDerivative, 6, 0, (size_t)(6311287552475754470UL), (size_t)(6311287552475754471UL), (size_t)(6311287552475754472UL), (size_t)(6311287552475754473UL), (size_t)(6311287552475754474UL), (size_t)(6311287552475754475UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 899 360 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 940 2 const int ____chimes_did_disable17 = new_stack((void *)(&CalcElemFBHourglassForce), "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, 15, 0, (size_t)(6311287552475757660UL), (size_t)(6311287552475757661UL), (size_t)(6311287552475757662UL), (size_t)(6311287552475757663UL), (size_t)(6311287552475757664UL), (size_t)(6311287552475757665UL), (size_t)(6311287552475757666UL), (size_t)(6311287552475757667UL), (size_t)(6311287552475757668UL), (size_t)(6311287552475757669UL), (size_t)(6311287552475757670UL), (size_t)(0UL), (size_t)(6311287552475757672UL), (size_t)(6311287552475757673UL), (size_t)(6311287552475757674UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 940 2 const int ____chimes_did_disable17 = new_stack((void *)(&CalcElemFBHourglassForce), "CalcElemFBHourglassForce", &____must_manage_CalcElemFBHourglassForce, 15, 0, (size_t)(6311287552475757688UL), (size_t)(6311287552475757689UL), (size_t)(6311287552475757690UL), (size_t)(6311287552475757691UL), (size_t)(6311287552475757692UL), (size_t)(6311287552475757693UL), (size_t)(6311287552475757694UL), (size_t)(6311287552475757695UL), (size_t)(6311287552475757696UL), (size_t)(6311287552475757697UL), (size_t)(6311287552475757698UL), (size_t)(0UL), (size_t)(6311287552475757700UL), (size_t)(6311287552475757701UL), (size_t)(6311287552475757702UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 940 640 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 941 4  Index_t i00;  i00 = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 941 17 
@@ -791,7 +805,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 958 4 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 962 52 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 964 4  Real_t h03;  h03 = (hourgam0[i03] * xd[0] + hourgam1[i03] * xd[1] + hourgam2[i03] * xd[2] + hourgam3[i03] * xd[3] + hourgam4[i03] * xd[4] + hourgam5[i03] * xd[5] + hourgam6[i03] * xd[6] + hourgam7[i03] * xd[7]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 968 52 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1122 2 const int ____chimes_did_disable18 = new_stack((void *)(&CalcFBHourglassForceForElems), "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, 8, 0, (size_t)(6311287552475755755UL), (size_t)(6311287552475755756UL), (size_t)(6311287552475755757UL), (size_t)(6311287552475755758UL), (size_t)(6311287552475755759UL), (size_t)(6311287552475755760UL), (size_t)(6311287552475755761UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1122 2 const int ____chimes_did_disable18 = new_stack((void *)(&CalcFBHourglassForceForElems), "CalcFBHourglassForceForElems", &____must_manage_CalcFBHourglassForceForElems, 8, 0, (size_t)(6311287552475755779UL), (size_t)(6311287552475755780UL), (size_t)(6311287552475755781UL), (size_t)(6311287552475755782UL), (size_t)(6311287552475755783UL), (size_t)(6311287552475755784UL), (size_t)(6311287552475755785UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1122 420 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1130 4  Index_t numElem;  numElem = (mesh.numElem) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1130 35 
@@ -845,7 +859,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1250 7
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1250 36 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1251 7  Index_t n7si2;  n7si2 = (elemToNode[7]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1251 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1323 2 const int ____chimes_did_disable19 = new_stack((void *)(&CalcHourglassControlForElems), "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, 2, 0, (size_t)(6311287552475753680UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1323 2 const int ____chimes_did_disable19 = new_stack((void *)(&CalcHourglassControlForElems), "CalcHourglassControlForElems", &____must_manage_CalcHourglassControlForElems, 2, 0, (size_t)(6311287552475753704UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1323 222 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1324 4 Index_t i; Index_t ii; Index_t jj; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1324 22 
@@ -857,17 +871,17 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1327 4
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1327 35 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1328 4  Index_t numElem8;  numElem8 = (numElem * 8) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1328 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 4  Real_t *dvdx;  dvdx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753486UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 4  Real_t *dvdx;  dvdx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753510UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1329 99 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 4  Real_t *dvdy;  dvdy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753493UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 4  Real_t *dvdy;  dvdy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753517UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1330 99 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 4  Real_t *dvdz;  dvdz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753500UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 4  Real_t *dvdz;  dvdz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753524UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1331 99 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 4  Real_t *x8n;  x8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753507UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 4  Real_t *x8n;  x8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753531UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1332 98 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 4  Real_t *y8n;  y8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753514UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 4  Real_t *y8n;  y8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753538UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1333 98 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 4  Real_t *z8n;  z8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753521UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 4  Real_t *z8n;  z8n = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem8, 6311287552475753545UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1334 98 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1339 7  Index_t *elemToNode;  elemToNode = (&mesh.nodelist[8 * i]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1339 50 
@@ -877,13 +891,13 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1381 4
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1381 35 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1383 7  Real_t hgcoef;  hgcoef = (mesh.hgcoef) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1383 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 7  Real_t *sigxx;  sigxx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 7  Real_t *sigxx;  sigxx = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753209UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1384 102 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 7  Real_t *sigyy;  sigyy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753182UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 7  Real_t *sigyy;  sigyy = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753206UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1385 102 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 7  Real_t *sigzz;  sigzz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753179UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 7  Real_t *sigzz;  sigzz = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753203UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1386 102 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 7  Real_t *determ;  determ = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753161UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 7  Real_t *determ;  determ = ((Real_t *)malloc_wrapper(sizeof(Real_t) * numElem, 6311287552475753185UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1387 103 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1397 7 {  Index_t k; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1401 7  }
@@ -1023,8 +1037,12 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1573 3
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1573 24 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1578 3  Real_t volume;  volume = (((dx31 + dx72) * ((dy63) * (dz20) - (dy20) * (dz63)) + (dy31 + dy72) * ((dx20) * (dz63) - (dx63) * (dz20)) + (dz31 + dz72) * ((dx63) * (dy20) - (dx20) * (dy63))) + ((dx43 + dx57) * ((dy64) * (dz70) - (dy70) * (dz64)) + (dy43 + dy57) * ((dx70) * (dz64) - (dx64) * (dz70)) + (dz43 + dz57) * ((dx64) * (dy70) - (dx70) * (dy64))) + ((dx14 + dx25) * ((dy61) * (dz50) - (dy50) * (dz61)) + (dy14 + dy25) * ((dx50) * (dz61) - (dx61) * (dz50)) + (dz14 + dz25) * ((dx61) * (dy50) - (dx50) * (dy61)))) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1587 32 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1598 2 const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeWrapper), "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, 3, 0, (size_t)(6311287552475746910UL), (size_t)(6311287552475746911UL), (size_t)(6311287552475746912UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1593 4 Real_t ____chimes_ret_var_3; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1593 31 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1598 2 const int ____chimes_did_disable28 = new_stack((void *)(&CalcElemVolumeWrapper), "CalcElemVolumeWrapper", &____must_manage_CalcElemVolumeWrapper, 3, 0, (size_t)(6311287552475746918UL), (size_t)(6311287552475746919UL), (size_t)(6311287552475746920UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1598 252 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1599 2 Real_t ____chimes_ret_var_4; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1599 29 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1611 2 const int ____chimes_did_disable29 = new_stack((void *)(&AreaFace), "AreaFace", &____must_manage_AreaFace, 12, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1611 295 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1612 4  Real_t fx;  fx = ((x2 - x0) - (x3 - x1)) ;
@@ -1041,11 +1059,15 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1617 4
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1617 37 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1618 4  Real_t area;  area = ((fx * fx + fy * fy + fz * fz) * (gx * gx + gy * gy + gz * gz) - (fx * gx + fy * gy + fz * gz) * (fx * gx + fy * gy + fz * gz)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1622 36 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1631 2 const int ____chimes_did_disable30 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 0, (size_t)(6311287552475751130UL), (size_t)(6311287552475751142UL), (size_t)(6311287552475751154UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1623 5 Real_t ____chimes_ret_var_5; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1623 32 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1631 2 const int ____chimes_did_disable30 = new_stack((void *)(&CalcElemCharacteristicLength), "CalcElemCharacteristicLength", &____must_manage_CalcElemCharacteristicLength, 4, 0, (size_t)(6311287552475751147UL), (size_t)(6311287552475751159UL), (size_t)(6311287552475751171UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1631 288 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1632 4 Real_t a;  Real_t charLength;  charLength = (0.) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1632 30 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1676 2 const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemVelocityGrandient), "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, 6, 0, (size_t)(6311287552475752579UL), (size_t)(6311287552475752580UL), (size_t)(6311287552475752581UL), (size_t)(6311287552475752582UL), (size_t)(0UL), (size_t)(6311287552475752584UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1666 5 Real_t ____chimes_ret_var_6; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1666 32 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1676 2 const int ____chimes_did_disable31 = new_stack((void *)(&CalcElemVelocityGrandient), "CalcElemVelocityGrandient", &____must_manage_CalcElemVelocityGrandient, 6, 0, (size_t)(6311287552475752599UL), (size_t)(6311287552475752600UL), (size_t)(6311287552475752601UL), (size_t)(6311287552475752602UL), (size_t)(0UL), (size_t)(6311287552475752604UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1676 345 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1677 3  Real_t inv_detJ;  inv_detJ = (Real_t(1.) / detJ) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1677 40 
@@ -1319,7 +1341,7 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2174 7 {  In
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2179 7  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2174 12  i = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2174 23 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2194 2 const int ____chimes_did_disable38 = new_stack((void *)(&CalcPressureForElems), "CalcPressureForElems", &____must_manage_CalcPressureForElems, 10, 0, (size_t)(6311287552475749176UL), (size_t)(6311287552475749177UL), (size_t)(6311287552475749178UL), (size_t)(6311287552475749179UL), (size_t)(6311287552475749180UL), (size_t)(6311287552475749181UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2194 2 const int ____chimes_did_disable38 = new_stack((void *)(&CalcPressureForElems), "CalcPressureForElems", &____must_manage_CalcPressureForElems, 10, 0, (size_t)(6311287552475749192UL), (size_t)(6311287552475749193UL), (size_t)(6311287552475749194UL), (size_t)(6311287552475749195UL), (size_t)(6311287552475749196UL), (size_t)(6311287552475749197UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2194 409 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2195 4  Real_t c1s;  c1s = (Real_t(2.) / Real_t(3.)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2195 41 
@@ -1331,11 +1353,11 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2201 4 {  In
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2212 4  }
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2201 9  i = (0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2201 23 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2226 2 const int ____chimes_did_disable39 = new_stack((void *)(&CalcEnergyForElems), "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, 23, 0, (size_t)(6311287552475748908UL), (size_t)(6311287552475748909UL), (size_t)(6311287552475748910UL), (size_t)(6311287552475748911UL), (size_t)(6311287552475748912UL), (size_t)(6311287552475748913UL), (size_t)(6311287552475748914UL), (size_t)(6311287552475748915UL), (size_t)(6311287552475748916UL), (size_t)(6311287552475748917UL), (size_t)(6311287552475748918UL), (size_t)(6311287552475748919UL), (size_t)(6311287552475748920UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475748926UL), (size_t)(6311287552475748927UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2226 2 const int ____chimes_did_disable39 = new_stack((void *)(&CalcEnergyForElems), "CalcEnergyForElems", &____must_manage_CalcEnergyForElems, 23, 0, (size_t)(6311287552475748924UL), (size_t)(6311287552475748925UL), (size_t)(6311287552475748926UL), (size_t)(6311287552475748927UL), (size_t)(6311287552475748928UL), (size_t)(6311287552475748929UL), (size_t)(6311287552475748930UL), (size_t)(6311287552475748931UL), (size_t)(6311287552475748932UL), (size_t)(6311287552475748933UL), (size_t)(6311287552475748934UL), (size_t)(6311287552475748935UL), (size_t)(6311287552475748936UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(6311287552475748942UL), (size_t)(6311287552475748943UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2226 760 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2227 4  Real_t sixth;  sixth = (Real_t(1.) / Real_t(6.)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2227 45 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 4  Real_t *pHalfStep;  pHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475748346UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 4  Real_t *pHalfStep;  pHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475748362UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2228 100 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2230 4 {  Index_t i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2237 4  }
@@ -1367,7 +1389,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2314 9
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2314 23 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2317 10  Real_t ssc;  ssc = ((pbvc[i] * e_new[i] + vnewc[i] * vnewc[i] * bvc[i] * p_new[i]) / rho0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2318 69 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2341 2 const int ____chimes_did_disable40 = new_stack((void *)(&CalcSoundSpeedForElems), "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, 8, 0, (size_t)(6311287552475749029UL), (size_t)(0UL), (size_t)(6311287552475749031UL), (size_t)(6311287552475749032UL), (size_t)(6311287552475749033UL), (size_t)(6311287552475749034UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2341 2 const int ____chimes_did_disable40 = new_stack((void *)(&CalcSoundSpeedForElems), "CalcSoundSpeedForElems", &____must_manage_CalcSoundSpeedForElems, 8, 0, (size_t)(6311287552475749045UL), (size_t)(0UL), (size_t)(6311287552475749047UL), (size_t)(6311287552475749048UL), (size_t)(6311287552475749049UL), (size_t)(6311287552475749050UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2341 366 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2342 4 {  Index_t i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2350 4  }
@@ -1377,7 +1399,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2343 7
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2343 39 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2344 7  Real_t ssTmp;  ssTmp = ((pbvc[i] * enewc[i] + vnewc[i] * vnewc[i] * bvc[i] * pnewc[i]) / rho0) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2345 43 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2355 2 const int ____chimes_did_disable41 = new_stack((void *)(&EvalEOSForElems), "EvalEOSForElems", &____must_manage_EvalEOSForElems, 2, 0, (size_t)(6311287552475748256UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2355 2 const int ____chimes_did_disable41 = new_stack((void *)(&EvalEOSForElems), "EvalEOSForElems", &____must_manage_EvalEOSForElems, 2, 0, (size_t)(6311287552475748272UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2355 183 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2356 4  Real_t e_cut;  e_cut = (mesh.e_cut) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2356 29 
@@ -1397,33 +1419,33 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2364 4
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2364 28 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2365 4  Real_t rho0;  rho0 = (mesh.refdens) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2365 31 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 4  Real_t *e_old;  e_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747718UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 4  Real_t *e_old;  e_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747734UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2367 96 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 4  Real_t *delvc;  delvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747725UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 4  Real_t *delvc;  delvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747741UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2368 96 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 4  Real_t *p_old;  p_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747732UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 4  Real_t *p_old;  p_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747748UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2369 96 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 4  Real_t *q_old;  q_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747739UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 4  Real_t *q_old;  q_old = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747755UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2370 96 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 4  Real_t *compression;  compression = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747746UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 4  Real_t *compression;  compression = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747762UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2371 102 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 4  Real_t *compHalfStep;  compHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747753UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 4  Real_t *compHalfStep;  compHalfStep = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747769UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2372 103 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 4  Real_t *qq;  qq = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747760UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 4  Real_t *qq;  qq = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747776UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2373 95 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 4  Real_t *ql;  ql = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747767UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 4  Real_t *ql;  ql = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747783UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2374 95 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 4  Real_t *work;  work = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747774UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 4  Real_t *work;  work = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747790UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2375 97 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 4  Real_t *p_new;  p_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747781UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 4  Real_t *p_new;  p_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747797UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2376 98 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 4  Real_t *e_new;  e_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747788UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 4  Real_t *e_new;  e_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747804UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2377 98 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 4  Real_t *q_new;  q_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747795UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 4  Real_t *q_new;  q_new = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747811UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2378 98 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 4  Real_t *bvc;  bvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747802UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 4  Real_t *bvc;  bvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747818UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2379 96 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 4  Real_t *pbvc;  pbvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747809UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 4  Real_t *pbvc;  pbvc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747825UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2380 97 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2383 4 {  Index_t i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2386 4  }
@@ -1495,7 +1517,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2483 5
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2483 35 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2484 5  Real_t eosvmax;  eosvmax = (mesh.eosvmax) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2484 35 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 5  Real_t *vnewc;  vnewc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747458UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 5  Real_t *vnewc;  vnewc = ((Real_t *)malloc_wrapper(sizeof(Real_t) * length, 6311287552475747474UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2485 99 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2487 5 {  Index_t i; 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2490 5  }
@@ -1577,7 +1599,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2636 3
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2636 206 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2646 2 const int ____chimes_did_disable48 = new_stack((void *)(&LagrangeLeapFrog), "LagrangeLeapFrog", &____must_manage_LagrangeLeapFrog, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2646 138 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2661 2 const int ____chimes_did_disable49 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(6311287552475746825UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2661 2 const int ____chimes_did_disable49 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(6311287552475746829UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2661 139 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2662 4  Index_t edgeElems;  edgeElems = (atoi(argv[1])) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2662 37 
@@ -1713,6 +1735,8 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2909 2
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2909 93 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2914 25  Real_t RelDiff;  RelDiff = (AbsDiff / mesh.e[k * edgeElems + j]) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2914 73 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2931 5 int ____chimes_ret_var_7; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2931 29 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 2887 7  call_lbl_3: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 14 len=4 SQRT_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 94 144  ;  
@@ -1923,7 +1947,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 14
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1512 8 len=14 CalcElemVolume_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1524 492  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1597 8 len=21 CalcElemVolumeWrapper_quick
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1599 141 ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1599 57 ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1601 70 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1598 251  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1605 8 len=8 AreaFace_quick
@@ -2325,7 +2349,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 14
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1512 8 len=14 CalcElemVolume_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1524 492  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1597 8 len=21 CalcElemVolumeWrapper_resumable
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1599 141 ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); })
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1599 57 ({ calling_npm("CalcElemVolume", 0); CalcElemVolume_npm(x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], y[0], y[1], y[2], y[3], y[4], y[5], y[6], y[7], z[0], z[1], z[2], z[3], z[4], z[5], z[6], z[7]); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1601 70 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1598 251  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./lulesh/LULESH.cc 1605 8 len=8 AreaFace_resumable

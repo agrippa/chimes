@@ -11,6 +11,7 @@ typedef long unsigned int size_t;
 
 
 static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -2225,7 +2226,7 @@ const char *hello_world = "hello world";
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16078043286575642294UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16078043286575642298UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
     a = 4;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
@@ -2235,10 +2236,10 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
      call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return b + a;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (b + a); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
-}
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16078043286575642294UL)) ; ; ;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(16078043286575642298UL)) ; ; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
     a = 4;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
@@ -2248,9 +2249,9 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
      call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return b + a;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (b + a); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./globals.cpp"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -2261,14 +2262,15 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(16078043286575642275UL, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (16078043286575642275UL + 1UL), (16078043286575642275UL + 2UL), (16078043286575642275UL + 3UL), (16078043286575642275UL + 23UL),
-                             (16078043286575642275UL + 3UL), (16078043286575642275UL + 19UL),
-                             (16078043286575642275UL + 26UL), (16078043286575642275UL + 10UL),
+    init_module(16078043286575642275UL, 2, 1, 0, 2, 0, 0, 0, 0, 0, 0,
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (16078043286575642275UL + 1UL), (16078043286575642275UL + 2UL), (16078043286575642275UL + 3UL), (16078043286575642275UL + 27UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (16078043286575642275UL + 4UL),
+                             (16078043286575642275UL + 3UL), (16078043286575642275UL + 23UL),
+                             (16078043286575642275UL + 30UL), (16078043286575642275UL + 11UL),
                              "main", "main", 1, "checkpoint");
     register_global_var("global|a", "i32", (void *)(&a), 4.0, 0, 0, 0UL, 0);
     register_global_var("global|b", "i32", (void *)(&b), 4.0, 0, 0, 0UL, 0);
-    register_global_var("global|hello_world", "i8*", (void *)(&hello_world), 8.0, 1, 0, (16078043286575642275UL + 26UL), 0);
+    register_global_var("global|hello_world", "i8*", (void *)(&hello_world), 8.0, 1, 0, (16078043286575642275UL + 30UL), 0);
     register_constant(16078043286575642275UL + 0UL, (void *)hello_world, 12);
     return 0;
 }

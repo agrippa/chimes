@@ -11,3 +11,4 @@
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c main|A|0 " %struct.astr* " 64 1 0 1 dispElapsedTime freeA freeB freeC freeSeqData freeSimMatrix getSeconds mergeAlignment scanBackward verifyAlignment verifyMergeAlignment
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c main|B|0 " %struct.bstr* " 64 1 0 1 dispElapsedTime freeA freeB freeC freeSeqData freeSimMatrix getSeconds mergeAlignment verifyAlignment verifyMergeAlignment
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c main|C|0 " %struct.cstr* " 64 1 0 1 dispElapsedTime freeA freeB freeC freeSeqData freeSimMatrix verifyMergeAlignment
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c main|____chimes_ret_var_0|0 " i32 " 32 0 0 0

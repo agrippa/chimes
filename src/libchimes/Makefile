@@ -1,7 +1,7 @@
 include ${CHIMES_HOME}/src/common.conf
 
 NVCC=nvcc
-GXX_FLAGS=-fPIC -Wall -O0 -g -DVERBOSE
+GXX_FLAGS=-fPIC -Wall -O3 -DVERBOSE
 NVCC_FLAGS=-Xcompiler -fPIC -arch=sm_20
 SRC=libchimes.cpp stack_frame.cpp stack_serialization.cpp \
 	global_serialization.cpp chimes_stack.cpp heap_allocation.cpp \
@@ -9,7 +9,7 @@ SRC=libchimes.cpp stack_frame.cpp stack_serialization.cpp \
 	thread_serialization.cpp constant_serialization.cpp hash_chunker.cpp \
 	trace_serialization.cpp alias_groups_serialization.cpp \
 	checkpointable_heap_serialization.cpp container_serialization.cpp \
-	function_serialization.cpp
+	function_serialization.cpp heap_tree.cpp
 OBJ=$(patsubst %.cpp,%.o,$(SRC)) 
 
 OMP_LIB=-lgomp

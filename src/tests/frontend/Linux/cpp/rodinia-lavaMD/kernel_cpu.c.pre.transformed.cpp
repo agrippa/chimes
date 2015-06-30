@@ -7,6 +7,8 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "kernel_cpu.c.pre.transformed.cpp"
+static int ____chimes_does_checkpoint_kernel_cpu_npm = 1;
+static int ____chimes_does_checkpoint_get_time_npm = 1;
 
 static int ____must_checkpoint_kernel_cpu_par_0 = 2;
 static int ____must_checkpoint_kernel_cpu_box_0 = 2;
@@ -3463,7 +3465,9 @@ void kernel_cpu( par_str par,
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
-void kernel_cpu( par_str par,
+void kernel_cpu_npm( par_str par, dim_str dim, box_str* box, FOUR_VECTOR* rv, double* qv, FOUR_VECTOR* fv);static long long (*____chimes_extern_func_get_time)(void) = get_time;
+void kernel_cpu_quick( par_str par, dim_str dim, box_str* box, FOUR_VECTOR* rv, double* qv, FOUR_VECTOR* fv); void kernel_cpu( par_str par, dim_str dim, box_str* box, FOUR_VECTOR* rv, double* qv, FOUR_VECTOR* fv);
+void kernel_cpu_resumable( par_str par,
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
      dim_str dim,
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
@@ -3475,7 +3479,32 @@ void kernel_cpu( par_str par,
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
      FOUR_VECTOR* fv)
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
-{
+{const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu), "kernel_cpu", &____must_manage_kernel_cpu, 6, 5, (size_t)(0UL), (size_t)(6604445872224807906UL), (size_t)(6604445872224807907UL), (size_t)(6604445872224807622UL), (size_t)(6604445872224807743UL), (size_t)(6604445872224807910UL), "kernel_cpu|par|0", &____must_checkpoint_kernel_cpu_par_0, "%struct.par_str = type { double }", (void *)(&par), (size_t)8, 0, 1, 0, "kernel_cpu|box|0", &____must_checkpoint_kernel_cpu_box_0, "%struct.box_str*", (void *)(&box), (size_t)8, 1, 0, 0, "kernel_cpu|rv|0", &____must_checkpoint_kernel_cpu_rv_0, "%struct.FOUR_VECTOR*", (void *)(&rv), (size_t)8, 1, 0, 0, "kernel_cpu|qv|0", &____must_checkpoint_kernel_cpu_qv_0, "double*", (void *)(&qv), (size_t)8, 1, 0, 0, "kernel_cpu|fv|0", &____must_checkpoint_kernel_cpu_fv_0, "%struct.FOUR_VECTOR*", (void *)(&fv), (size_t)8, 1, 0, 0) ; THREE_VECTOR d;
+double fzij;
+double fyij;
+double fxij;
+double vij;
+double fs;
+double u2;
+double r2;
+double *qB;
+FOUR_VECTOR *rB;
+long first_j;
+int pointer;
+FOUR_VECTOR *fA;
+FOUR_VECTOR *rA;
+long first_i;
+int l;
+int k;
+int j;
+int i;
+double a2;
+double alpha;
+long long time3;
+long long time2;
+long long time1;
+long long time0;
+ if (____must_checkpoint_kernel_cpu_d_0 || ____must_checkpoint_kernel_cpu_fzij_0 || ____must_checkpoint_kernel_cpu_fyij_0 || ____must_checkpoint_kernel_cpu_fxij_0 || ____must_checkpoint_kernel_cpu_vij_0 || ____must_checkpoint_kernel_cpu_fs_0 || ____must_checkpoint_kernel_cpu_u2_0 || ____must_checkpoint_kernel_cpu_r2_0 || ____must_checkpoint_kernel_cpu_qB_0 || ____must_checkpoint_kernel_cpu_rB_0 || ____must_checkpoint_kernel_cpu_first_j_0 || ____must_checkpoint_kernel_cpu_pointer_0 || ____must_checkpoint_kernel_cpu_fA_0 || ____must_checkpoint_kernel_cpu_rA_0 || ____must_checkpoint_kernel_cpu_first_i_0 || ____must_checkpoint_kernel_cpu_l_0 || ____must_checkpoint_kernel_cpu_k_0 || ____must_checkpoint_kernel_cpu_j_0 || ____must_checkpoint_kernel_cpu_i_0 || ____must_checkpoint_kernel_cpu_a2_0 || ____must_checkpoint_kernel_cpu_alpha_0 || ____must_checkpoint_kernel_cpu_time3_0 || ____must_checkpoint_kernel_cpu_time2_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(25, "kernel_cpu|d|0", &____must_checkpoint_kernel_cpu_d_0, "%struct.THREE_VECTOR = type { double, double, double }", (void *)(&d), (size_t)24, 0, 1, 0, "kernel_cpu|fzij|0", &____must_checkpoint_kernel_cpu_fzij_0, "double", (void *)(&fzij), (size_t)8, 0, 0, 0, "kernel_cpu|fyij|0", &____must_checkpoint_kernel_cpu_fyij_0, "double", (void *)(&fyij), (size_t)8, 0, 0, 0, "kernel_cpu|fxij|0", &____must_checkpoint_kernel_cpu_fxij_0, "double", (void *)(&fxij), (size_t)8, 0, 0, 0, "kernel_cpu|vij|0", &____must_checkpoint_kernel_cpu_vij_0, "double", (void *)(&vij), (size_t)8, 0, 0, 0, "kernel_cpu|fs|0", &____must_checkpoint_kernel_cpu_fs_0, "double", (void *)(&fs), (size_t)8, 0, 0, 0, "kernel_cpu|u2|0", &____must_checkpoint_kernel_cpu_u2_0, "double", (void *)(&u2), (size_t)8, 0, 0, 0, "kernel_cpu|r2|0", &____must_checkpoint_kernel_cpu_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0, "kernel_cpu|qB|0", &____must_checkpoint_kernel_cpu_qB_0, "double*", (void *)(&qB), (size_t)8, 1, 0, 0, "kernel_cpu|rB|0", &____must_checkpoint_kernel_cpu_rB_0, "%struct.FOUR_VECTOR*", (void *)(&rB), (size_t)8, 1, 0, 0, "kernel_cpu|first_j|0", &____must_checkpoint_kernel_cpu_first_j_0, "i64", (void *)(&first_j), (size_t)8, 0, 0, 0, "kernel_cpu|pointer|0", &____must_checkpoint_kernel_cpu_pointer_0, "i32", (void *)(&pointer), (size_t)4, 0, 0, 0, "kernel_cpu|fA|0", &____must_checkpoint_kernel_cpu_fA_0, "%struct.FOUR_VECTOR*", (void *)(&fA), (size_t)8, 1, 0, 0, "kernel_cpu|rA|0", &____must_checkpoint_kernel_cpu_rA_0, "%struct.FOUR_VECTOR*", (void *)(&rA), (size_t)8, 1, 0, 0, "kernel_cpu|first_i|0", &____must_checkpoint_kernel_cpu_first_i_0, "i64", (void *)(&first_i), (size_t)8, 0, 0, 0, "kernel_cpu|l|0", &____must_checkpoint_kernel_cpu_l_0, "i32", (void *)(&l), (size_t)4, 0, 0, 0, "kernel_cpu|k|0", &____must_checkpoint_kernel_cpu_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "kernel_cpu|j|0", &____must_checkpoint_kernel_cpu_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "kernel_cpu|i|0", &____must_checkpoint_kernel_cpu_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "kernel_cpu|a2|0", &____must_checkpoint_kernel_cpu_a2_0, "double", (void *)(&a2), (size_t)8, 0, 0, 0, "kernel_cpu|alpha|0", &____must_checkpoint_kernel_cpu_alpha_0, "double", (void *)(&alpha), (size_t)8, 0, 0, 0, "kernel_cpu|time3|0", &____must_checkpoint_kernel_cpu_time3_0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "kernel_cpu|time2|0", &____must_checkpoint_kernel_cpu_time2_0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } ; ;
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
@@ -3483,65 +3512,65 @@ void kernel_cpu( par_str par,
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- long long time0;
+  ;
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- time0 = get_time();
+  call_lbl_1: time0 = ({ calling((void*)get_time, 1, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ;
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- long long time1;
+  ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- long long time2;
+  ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- long long time3;
+  ;
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- long long time4;
+ long long time4; ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- double alpha;
+  ;
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- double a2;
+  ;
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- int i, j, k, l;
+     ;
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- long first_i;
+  ;
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- FOUR_VECTOR* rA;
+  ;
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- FOUR_VECTOR* fA;
+  ;
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- int pointer;
+  ;
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- long first_j;
+  ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- FOUR_VECTOR* rB;
+  ;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- double* qB;
+  ;
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- double r2;
+  ;
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- double u2;
+  ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- double fs;
+  ;
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- double vij;
+  ;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- double fxij,fyij,fzij;
+    ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- THREE_VECTOR d;
+   ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- time1 = get_time();
+  call_lbl_2: time1 = ({ calling((void*)get_time, 2, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ;
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
@@ -3551,7 +3580,7 @@ void kernel_cpu( par_str par,
  omp_set_num_threads(dim.cores_arg);
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- time2 = get_time();
+  call_lbl_4: time2 = ({ calling((void*)get_time, 4, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ;
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
@@ -3563,7 +3592,7 @@ void kernel_cpu( par_str par,
  a2 = 2.0*alpha*alpha;
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- time3 = get_time();
+  call_lbl_5: time3 = ({ calling((void*)get_time, 5, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
@@ -3692,7 +3721,559 @@ void kernel_cpu( par_str par,
  }
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
- time4 = get_time();
+  call_lbl_7: time4 = ({ calling((void*)get_time, 7, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ;
+# 199 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 200 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 201 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 202 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 203 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 204 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("Time spent in different stages of CPU/MCPU KERNEL:\n");
+# 205 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("%15.12f s, %15.12f % : CPU/MCPU: VARIABLES\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time4-time0) * 100);
+# 207 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("%15.12f s, %15.12f % : MCPU: SET DEVICE\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time4-time0) * 100);
+# 208 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("%15.12f s, %15.12f % : CPU/MCPU: INPUTS\n", (float) (time3-time2) / 1000000, (float) (time3-time2) / (float) (time4-time0) * 100);
+# 209 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("%15.12f s, %15.12f % : CPU/MCPU: KERNEL\n", (float) (time4-time3) / 1000000, (float) (time4-time3) / (float) (time4-time0) * 100);
+# 210 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 211 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("Total time:\n");
+# 212 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("%.12f s\n", (float) (time4-time0) / 1000000);
+# 213 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 214 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+rm_stack(false, 0UL, "kernel_cpu", &____must_manage_kernel_cpu, ____alias_loc_id_5, ____chimes_did_disable0); }
+# 215 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 216 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 217 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+}
+void kernel_cpu_quick( par_str par,
+# 41 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     dim_str dim,
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     box_str* box,
+# 43 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     FOUR_VECTOR* rv,
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     double* qv,
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     FOUR_VECTOR* fv)
+# 46 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+{const int ____chimes_did_disable0 = new_stack((void *)(&kernel_cpu), "kernel_cpu", &____must_manage_kernel_cpu, 6, 5, (size_t)(0UL), (size_t)(6604445872224807906UL), (size_t)(6604445872224807907UL), (size_t)(6604445872224807622UL), (size_t)(6604445872224807743UL), (size_t)(6604445872224807910UL), "kernel_cpu|par|0", &____must_checkpoint_kernel_cpu_par_0, "%struct.par_str = type { double }", (void *)(&par), (size_t)8, 0, 1, 0, "kernel_cpu|box|0", &____must_checkpoint_kernel_cpu_box_0, "%struct.box_str*", (void *)(&box), (size_t)8, 1, 0, 0, "kernel_cpu|rv|0", &____must_checkpoint_kernel_cpu_rv_0, "%struct.FOUR_VECTOR*", (void *)(&rv), (size_t)8, 1, 0, 0, "kernel_cpu|qv|0", &____must_checkpoint_kernel_cpu_qv_0, "double*", (void *)(&qv), (size_t)8, 1, 0, 0, "kernel_cpu|fv|0", &____must_checkpoint_kernel_cpu_fv_0, "%struct.FOUR_VECTOR*", (void *)(&fv), (size_t)8, 1, 0, 0) ; THREE_VECTOR d;
+double fzij;
+double fyij;
+double fxij;
+double vij;
+double fs;
+double u2;
+double r2;
+double *qB;
+FOUR_VECTOR *rB;
+long first_j;
+int pointer;
+FOUR_VECTOR *fA;
+FOUR_VECTOR *rA;
+long first_i;
+int l;
+int k;
+int j;
+int i;
+double a2;
+double alpha;
+long long time3;
+long long time2;
+long long time1;
+long long time0;
+ if (____must_checkpoint_kernel_cpu_d_0 || ____must_checkpoint_kernel_cpu_fzij_0 || ____must_checkpoint_kernel_cpu_fyij_0 || ____must_checkpoint_kernel_cpu_fxij_0 || ____must_checkpoint_kernel_cpu_vij_0 || ____must_checkpoint_kernel_cpu_fs_0 || ____must_checkpoint_kernel_cpu_u2_0 || ____must_checkpoint_kernel_cpu_r2_0 || ____must_checkpoint_kernel_cpu_qB_0 || ____must_checkpoint_kernel_cpu_rB_0 || ____must_checkpoint_kernel_cpu_first_j_0 || ____must_checkpoint_kernel_cpu_pointer_0 || ____must_checkpoint_kernel_cpu_fA_0 || ____must_checkpoint_kernel_cpu_rA_0 || ____must_checkpoint_kernel_cpu_first_i_0 || ____must_checkpoint_kernel_cpu_l_0 || ____must_checkpoint_kernel_cpu_k_0 || ____must_checkpoint_kernel_cpu_j_0 || ____must_checkpoint_kernel_cpu_i_0 || ____must_checkpoint_kernel_cpu_a2_0 || ____must_checkpoint_kernel_cpu_alpha_0 || ____must_checkpoint_kernel_cpu_time3_0 || ____must_checkpoint_kernel_cpu_time2_0 || ____must_checkpoint_kernel_cpu_time1_0 || ____must_checkpoint_kernel_cpu_time0_0) { register_stack_vars(25, "kernel_cpu|d|0", &____must_checkpoint_kernel_cpu_d_0, "%struct.THREE_VECTOR = type { double, double, double }", (void *)(&d), (size_t)24, 0, 1, 0, "kernel_cpu|fzij|0", &____must_checkpoint_kernel_cpu_fzij_0, "double", (void *)(&fzij), (size_t)8, 0, 0, 0, "kernel_cpu|fyij|0", &____must_checkpoint_kernel_cpu_fyij_0, "double", (void *)(&fyij), (size_t)8, 0, 0, 0, "kernel_cpu|fxij|0", &____must_checkpoint_kernel_cpu_fxij_0, "double", (void *)(&fxij), (size_t)8, 0, 0, 0, "kernel_cpu|vij|0", &____must_checkpoint_kernel_cpu_vij_0, "double", (void *)(&vij), (size_t)8, 0, 0, 0, "kernel_cpu|fs|0", &____must_checkpoint_kernel_cpu_fs_0, "double", (void *)(&fs), (size_t)8, 0, 0, 0, "kernel_cpu|u2|0", &____must_checkpoint_kernel_cpu_u2_0, "double", (void *)(&u2), (size_t)8, 0, 0, 0, "kernel_cpu|r2|0", &____must_checkpoint_kernel_cpu_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0, "kernel_cpu|qB|0", &____must_checkpoint_kernel_cpu_qB_0, "double*", (void *)(&qB), (size_t)8, 1, 0, 0, "kernel_cpu|rB|0", &____must_checkpoint_kernel_cpu_rB_0, "%struct.FOUR_VECTOR*", (void *)(&rB), (size_t)8, 1, 0, 0, "kernel_cpu|first_j|0", &____must_checkpoint_kernel_cpu_first_j_0, "i64", (void *)(&first_j), (size_t)8, 0, 0, 0, "kernel_cpu|pointer|0", &____must_checkpoint_kernel_cpu_pointer_0, "i32", (void *)(&pointer), (size_t)4, 0, 0, 0, "kernel_cpu|fA|0", &____must_checkpoint_kernel_cpu_fA_0, "%struct.FOUR_VECTOR*", (void *)(&fA), (size_t)8, 1, 0, 0, "kernel_cpu|rA|0", &____must_checkpoint_kernel_cpu_rA_0, "%struct.FOUR_VECTOR*", (void *)(&rA), (size_t)8, 1, 0, 0, "kernel_cpu|first_i|0", &____must_checkpoint_kernel_cpu_first_i_0, "i64", (void *)(&first_i), (size_t)8, 0, 0, 0, "kernel_cpu|l|0", &____must_checkpoint_kernel_cpu_l_0, "i32", (void *)(&l), (size_t)4, 0, 0, 0, "kernel_cpu|k|0", &____must_checkpoint_kernel_cpu_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "kernel_cpu|j|0", &____must_checkpoint_kernel_cpu_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "kernel_cpu|i|0", &____must_checkpoint_kernel_cpu_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "kernel_cpu|a2|0", &____must_checkpoint_kernel_cpu_a2_0, "double", (void *)(&a2), (size_t)8, 0, 0, 0, "kernel_cpu|alpha|0", &____must_checkpoint_kernel_cpu_alpha_0, "double", (void *)(&alpha), (size_t)8, 0, 0, 0, "kernel_cpu|time3|0", &____must_checkpoint_kernel_cpu_time3_0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "kernel_cpu|time2|0", &____must_checkpoint_kernel_cpu_time2_0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "kernel_cpu|time1|0", &____must_checkpoint_kernel_cpu_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "kernel_cpu|time0|0", &____must_checkpoint_kernel_cpu_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } ; ;
+# 47 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 48 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 49 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 50 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 51 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 52 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 53 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 54 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 55 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  call_lbl_1: time0 = ({ calling((void*)get_time, 1, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ;
+# 56 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 57 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 58 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 59 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 60 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 61 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ long long time4; ;
+# 62 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 63 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 65 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 66 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 67 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 68 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     ;
+# 69 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 70 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 71 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 72 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 73 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 74 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 75 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 76 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 77 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 78 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 79 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 80 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 81 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 82 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 83 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 84 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 85 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  ;
+# 86 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+    ;
+# 87 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   ;
+# 88 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 89 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  call_lbl_2: time1 = ({ calling((void*)get_time, 2, ____alias_loc_id_3, 0UL, 0); (get_time)(); }) ;
+# 90 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 91 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 92 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 94 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 95 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ omp_set_num_threads(dim.cores_arg);
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 97 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  call_lbl_4: time2 = ({ calling((void*)get_time, 4, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ;
+# 98 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 99 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 100 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 101 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 102 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 103 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ alpha = par.alpha;
+# 104 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ a2 = 2.0*alpha*alpha;
+# 105 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 106 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  call_lbl_5: time3 = ({ calling((void*)get_time, 5, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ;
+# 107 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 108 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 109 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 110 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 111 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 112 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+#pragma omp parallel for private(i, j, k) private(first_i, rA, fA) private(pointer, first_j, rB, qB) private(r2, u2, fs, vij, fxij, fyij, fzij, d)
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 115 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 116 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 117 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ for(l=0; l<dim.number_boxes; l=l+1){
+# 118 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 119 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 120 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 121 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 122 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 123 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  first_i = box[l].offset;
+# 124 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 125 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 126 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 127 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 129 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  rA = &rv[first_i];
+# 130 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  fA = &fv[first_i];
+# 131 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 132 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 133 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 134 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 135 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 136 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  for (k=0; k<(1+box[l].nn); k++)
+# 137 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  {
+# 138 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 139 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 140 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 141 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 142 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 143 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   if(k==0){
+# 144 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+    pointer = l;
+# 145 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   }
+# 146 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   else{
+# 147 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+    pointer = box[l].nei[k-1].number;
+# 148 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   }
+# 149 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 150 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 151 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 152 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 153 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 154 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   first_j = box[pointer].offset;
+# 155 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 156 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 157 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 158 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 159 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 160 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   rB = &rv[first_j];
+# 161 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   qB = &qv[first_j];
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 163 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 164 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 165 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 166 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 167 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   for (i=0; i<100; i=i+1){
+# 168 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 169 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 170 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+    for (j=0; j<100; j=j+1){
+# 171 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 172 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 173 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     r2 = rA[i].v + rB[j].v - ((rA[i].x)*(rB[j].x)+(rA[i].y)*(rB[j].y)+(rA[i].z)*(rB[j].z));
+# 174 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     u2 = a2*r2;
+# 175 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     vij= exp(-u2);
+# 176 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fs = 2.*vij;
+# 177 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     d.x = rA[i].x - rB[j].x;
+# 178 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     d.y = rA[i].y - rB[j].y;
+# 179 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     d.z = rA[i].z - rB[j].z;
+# 180 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fxij=fs*d.x;
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fyij=fs*d.y;
+# 182 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fzij=fs*d.z;
+# 183 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 184 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 185 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fA[i].v += qB[j]*vij;
+# 186 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fA[i].x += qB[j]*fxij;
+# 187 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fA[i].y += qB[j]*fyij;
+# 188 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fA[i].z += qB[j]*fzij;
+# 189 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 190 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+    }
+# 191 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 192 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   }
+# 193 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 194 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  }
+# 195 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 196 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ }
+# 197 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 198 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  call_lbl_7: time4 = ({ calling((void*)get_time, 7, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ;
+# 199 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 200 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 201 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 202 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 203 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 204 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("Time spent in different stages of CPU/MCPU KERNEL:\n");
+# 205 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 206 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("%15.12f s, %15.12f % : CPU/MCPU: VARIABLES\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time4-time0) * 100);
+# 207 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("%15.12f s, %15.12f % : MCPU: SET DEVICE\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time4-time0) * 100);
+# 208 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("%15.12f s, %15.12f % : CPU/MCPU: INPUTS\n", (float) (time3-time2) / 1000000, (float) (time3-time2) / (float) (time4-time0) * 100);
+# 209 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("%15.12f s, %15.12f % : CPU/MCPU: KERNEL\n", (float) (time4-time3) / 1000000, (float) (time4-time3) / (float) (time4-time0) * 100);
+# 210 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 211 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("Total time:\n");
+# 212 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ printf("%.12f s\n", (float) (time4-time0) / 1000000);
+# 213 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 214 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+rm_stack(false, 0UL, "kernel_cpu", &____must_manage_kernel_cpu, ____alias_loc_id_5, ____chimes_did_disable0); }
+
+void kernel_cpu( par_str par,
+# 41 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     dim_str dim,
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     box_str* box,
+# 43 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     FOUR_VECTOR* rv,
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     double* qv,
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     FOUR_VECTOR* fv) { (____chimes_replaying ? kernel_cpu_resumable(par, dim, box, rv, qv, fv) : kernel_cpu_quick(par, dim, box, rv, qv, fv)); }
+
+
+
+void kernel_cpu_npm( par_str par,
+# 41 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     dim_str dim,
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     box_str* box,
+# 43 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     FOUR_VECTOR* rv,
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     double* qv,
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     FOUR_VECTOR* fv)
+# 46 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+{
+# 47 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 48 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 49 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 50 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 51 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 52 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 53 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ long long time0;
+# 54 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 55 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ time0 = (*____chimes_extern_func_get_time)();
+# 56 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 57 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 58 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ long long time1;
+# 59 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ long long time2;
+# 60 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ long long time3;
+# 61 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ long long time4;
+# 62 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 63 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ double alpha;
+# 65 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ double a2;
+# 66 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 67 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 68 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ int i, j, k, l;
+# 69 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 70 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 71 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ long first_i;
+# 72 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ FOUR_VECTOR* rA;
+# 73 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ FOUR_VECTOR* fA;
+# 74 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 75 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 76 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ int pointer;
+# 77 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ long first_j;
+# 78 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ FOUR_VECTOR* rB;
+# 79 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ double* qB;
+# 80 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 81 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 82 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ double r2;
+# 83 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ double u2;
+# 84 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ double fs;
+# 85 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ double vij;
+# 86 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ double fxij,fyij,fzij;
+# 87 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ THREE_VECTOR d;
+# 88 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 89 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ time1 = (*____chimes_extern_func_get_time)();
+# 90 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 91 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 92 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 94 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 95 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ omp_set_num_threads(dim.cores_arg);
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 97 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ time2 = (*____chimes_extern_func_get_time)();
+# 98 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 99 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 100 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 101 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 102 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 103 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ alpha = par.alpha;
+# 104 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ a2 = 2.0*alpha*alpha;
+# 105 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 106 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ time3 = (*____chimes_extern_func_get_time)();
+# 107 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 108 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 109 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 110 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 111 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 112 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+#pragma omp parallel for private(i, j, k) private(first_i, rA, fA) private(pointer, first_j, rB, qB) private(r2, u2, fs, vij, fxij, fyij, fzij, d)
+# 113 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 115 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 116 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 117 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ for(l=0; l<dim.number_boxes; l=l+1){
+# 118 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 119 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 120 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 121 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 122 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 123 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  first_i = box[l].offset;
+# 124 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 125 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 126 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 127 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 129 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  rA = &rv[first_i];
+# 130 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  fA = &fv[first_i];
+# 131 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 132 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 133 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 134 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 135 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 136 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  for (k=0; k<(1+box[l].nn); k++)
+# 137 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  {
+# 138 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 139 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 140 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 141 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 142 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 143 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   if(k==0){
+# 144 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+    pointer = l;
+# 145 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   }
+# 146 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   else{
+# 147 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+    pointer = box[l].nei[k-1].number;
+# 148 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   }
+# 149 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 150 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 151 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 152 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 153 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 154 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   first_j = box[pointer].offset;
+# 155 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 156 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 157 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 158 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 159 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 160 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   rB = &rv[first_j];
+# 161 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   qB = &qv[first_j];
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 163 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 164 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 165 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 166 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 167 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   for (i=0; i<100; i=i+1){
+# 168 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 169 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 170 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+    for (j=0; j<100; j=j+1){
+# 171 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 172 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 173 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     r2 = rA[i].v + rB[j].v - ((rA[i].x)*(rB[j].x)+(rA[i].y)*(rB[j].y)+(rA[i].z)*(rB[j].z));
+# 174 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     u2 = a2*r2;
+# 175 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     vij= exp(-u2);
+# 176 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fs = 2.*vij;
+# 177 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     d.x = rA[i].x - rB[j].x;
+# 178 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     d.y = rA[i].y - rB[j].y;
+# 179 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     d.z = rA[i].z - rB[j].z;
+# 180 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fxij=fs*d.x;
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fyij=fs*d.y;
+# 182 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fzij=fs*d.z;
+# 183 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 184 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 185 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fA[i].v += qB[j]*vij;
+# 186 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fA[i].x += qB[j]*fxij;
+# 187 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fA[i].y += qB[j]*fyij;
+# 188 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+     fA[i].z += qB[j]*fzij;
+# 189 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 190 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+    }
+# 191 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 192 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+   }
+# 193 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 194 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+  }
+# 195 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 196 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ }
+# 197 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+# 198 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
+ time4 = (*____chimes_extern_func_get_time)();
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
@@ -3717,24 +4298,23 @@ void kernel_cpu( par_str par,
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
 }
-# 215 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
-# 217 "/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c"
-}
-
 
 
 
 
 
 static int module_init() {
-    init_module(6604445872224807446UL, 8, 1, 30, 6, 0, 0, 0, 0, 0, 6,
+    init_module(6604445872224807446UL, 8, 1, 30, 6, 1, 1, 2, 0, 0, 6,
                            &____alias_loc_id_0, (unsigned)21, (unsigned)0, (unsigned)0, (6604445872224807446UL + 9UL), (6604445872224807446UL + 13UL), (6604445872224807446UL + 14UL), (6604445872224807446UL + 15UL), (6604445872224807446UL + 16UL), (6604445872224807446UL + 17UL), (6604445872224807446UL + 18UL), (6604445872224807446UL + 19UL), (6604445872224807446UL + 20UL), (6604445872224807446UL + 21UL), (6604445872224807446UL + 22UL), (6604445872224807446UL + 23UL), (6604445872224807446UL + 24UL), (6604445872224807446UL + 25UL), (6604445872224807446UL + 26UL), (6604445872224807446UL + 27UL), (6604445872224807446UL + 28UL), (6604445872224807446UL + 29UL), (6604445872224807446UL + 30UL), (6604445872224807446UL + 31UL), (6604445872224807446UL + 464UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (6604445872224807446UL + 8UL), (6604445872224807446UL + 11UL), (6604445872224807446UL + 12UL),
                            &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (6604445872224807446UL + 7UL),
                            &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (6604445872224807446UL + 6UL),
                            &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (6604445872224807446UL + 1UL), (6604445872224807446UL + 2UL), (6604445872224807446UL + 3UL), (6604445872224807446UL + 4UL), (6604445872224807446UL + 5UL),
                            &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (6604445872224807446UL + 10UL),
+                            "kernel_cpu", (void *)(&kernel_cpu_npm), (void *)__null, 5, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, &____alias_loc_id_4, 6, 0UL, (6604445872224807446UL + 460UL), (6604445872224807446UL + 461UL), (6604445872224807446UL + 176UL), (6604445872224807446UL + 297UL), (6604445872224807446UL + 464UL), 0UL, 14, "get_time", 0, 0UL, "get_time", 0, 0UL, "omp_set_num_threads", 1, 0UL, 0UL, "get_time", 0, 0UL, "get_time", 0, 0UL, "exp", 1, 0UL, 0UL, "get_time", 0, 0UL, "printf", 1, (6604445872224807446UL + 470UL), 0UL, "printf", 3, (6604445872224807446UL + 471UL), 0UL, 0UL, 0UL, "printf", 3, (6604445872224807446UL + 472UL), 0UL, 0UL, 0UL, "printf", 3, (6604445872224807446UL + 472UL), 0UL, 0UL, 0UL, "printf", 3, (6604445872224807446UL + 472UL), 0UL, 0UL, 0UL, "printf", 1, (6604445872224807446UL + 475UL), 0UL, "printf", 2, (6604445872224807446UL + 476UL), 0UL, 0UL,
+                               "get_time", (void **)&(____chimes_extern_func_get_time),
+                           "kernel_cpu", &(____chimes_does_checkpoint_kernel_cpu_npm),
+                           "get_time", &(____chimes_does_checkpoint_get_time_npm),
                              (6604445872224807446UL + 22UL), (6604445872224807446UL + 176UL),
                              (6604445872224807446UL + 23UL), (6604445872224807446UL + 297UL),
                              (6604445872224807446UL + 19UL), (6604445872224807446UL + 464UL),
@@ -3749,14 +4329,14 @@ static int module_init() {
                      "dim_str", 9, "int", (int)__builtin_offsetof (struct dim_str, cur_arg), "int", (int)__builtin_offsetof (struct dim_str, arch_arg), "int", (int)__builtin_offsetof (struct dim_str, cores_arg), "int", (int)__builtin_offsetof (struct dim_str, boxes1d_arg), "long int", (int)__builtin_offsetof (struct dim_str, number_boxes), "long int", (int)__builtin_offsetof (struct dim_str, box_mem), "long int", (int)__builtin_offsetof (struct dim_str, space_elem), "long int", (int)__builtin_offsetof (struct dim_str, space_mem), "long int", (int)__builtin_offsetof (struct dim_str, space_mem2),
                      "nei_str", 5, "int", (int)__builtin_offsetof (struct nei_str, x), "int", (int)__builtin_offsetof (struct nei_str, y), "int", (int)__builtin_offsetof (struct nei_str, z), "int", (int)__builtin_offsetof (struct nei_str, number), "long int", (int)__builtin_offsetof (struct nei_str, offset),
                      "par_str", 1, "double", (int)__builtin_offsetof (struct par_str, alpha),
-                             "kernel_cpu", "kernel_cpu", 6, "get_time", "get_time", "omp_set_num_threads", "get_time", "get_time", "get_time",
-                        "kernel_cpu|par|0", 2, "omp_set_num_threads", "get_time",
-                        "kernel_cpu|box|0", 2, "omp_set_num_threads", "get_time",
-                        "kernel_cpu|rv|0", 2, "omp_set_num_threads", "get_time",
-                        "kernel_cpu|qv|0", 2, "omp_set_num_threads", "get_time",
-                        "kernel_cpu|fv|0", 2, "omp_set_num_threads", "get_time",
-                        "kernel_cpu|time0|0", 2, "omp_set_num_threads", "get_time",
-                        "kernel_cpu|time1|0", 2, "omp_set_num_threads", "get_time",
+                             "kernel_cpu", "kernel_cpu", 5, "get_time", "get_time", "get_time", "get_time", "get_time",
+                        "kernel_cpu|par|0", 1, "get_time",
+                        "kernel_cpu|box|0", 1, "get_time",
+                        "kernel_cpu|rv|0", 1, "get_time",
+                        "kernel_cpu|qv|0", 1, "get_time",
+                        "kernel_cpu|fv|0", 1, "get_time",
+                        "kernel_cpu|time0|0", 1, "get_time",
+                        "kernel_cpu|time1|0", 1, "get_time",
                         "kernel_cpu|time2|0", 1, "get_time",
                         "kernel_cpu|time3|0", 1, "get_time",
                         "kernel_cpu|alpha|0", 1, "get_time",

@@ -1,625 +1,686 @@
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 16 len=11 copyStringR_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 33 38 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 33 72 , 12370633197367790810UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 33 72 , 12370633197367790811UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 86 5 len=10 tracePathR_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 320 5 len=6 doScan_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 379 26 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 379 55 , 12370633197367792495UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 379 55 , 12370633197367792533UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 387 25 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 387 57 , 12370633197367792821UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 387 57 , 12370633197367792862UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 398 25 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 398 57 , 12370633197367793274UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 398 57 , 12370633197367793345UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 406 26 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 406 58 , 12370633197367793279UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 406 58 , 12370633197367793350UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 13 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 13 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 13 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 13 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 10 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 10 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 10 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 10 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 10 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 10 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 14 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 14 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 14 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 14 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 11 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 11 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 11 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 11 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 11 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 11 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 10 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 10 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 10 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 10 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 7 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 7 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 7 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 7 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 7 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 7 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 11 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 11 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 11 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 11 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 8 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 8 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 8 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 8 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 8 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 8 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 9 len=12 scanBackward_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 845 22 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 845 43 , 12370633197367794414UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 845 43 , 12370633197367794538UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 867 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 867 61 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 867 61 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 876 15 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 876 52 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 876 52 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 884 33 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 884 64 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 884 64 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 892 33 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 892 64 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 892 64 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 900 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 900 62 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 900 62 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 908 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 908 62 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 908 62 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 917 20 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 917 62 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 917 62 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 927 20 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 927 62 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 927 62 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1014 38 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1014 76 , 12370633197367791284UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1014 76 , 12370633197367791289UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1024 33 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1024 65 , 12370633197367791304UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1024 65 , 12370633197367791309UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1033 33 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1033 65 , 12370633197367791299UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1033 65 , 12370633197367791304UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1042 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1042 63 , 12370633197367791294UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1042 63 , 12370633197367791299UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1051 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1051 63 , 12370633197367791289UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1051 63 , 12370633197367791294UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1061 23 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1061 66 , 12370633197367791314UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1061 66 , 12370633197367791319UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1072 23 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1072 66 , 12370633197367792059UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1072 66 , 12370633197367792064UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1087 24 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1087 66 , 12370633197367791311UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1087 66 , 12370633197367791316UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1098 24 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1098 66 , 12370633197367792061UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1098 66 , 12370633197367792066UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1144 22 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1144 69 , 12370633197367791424UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1144 69 , 12370633197367791429UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1156 22 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1156 69 , 12370633197367791496UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1156 69 , 12370633197367791501UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1173 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1173 64 , 12370633197367791521UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1173 64 , 12370633197367791526UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1183 28 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1183 60 , 12370633197367791518UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1183 60 , 12370633197367791523UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1209 34 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1209 74 , 12370633197367791619UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1209 74 , 12370633197367791624UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1219 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1219 68 , 12370633197367791616UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1219 68 , 12370633197367791621UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 8 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 16 , 12370633197367791616UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 16 , 12370633197367791621UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 11 , 12370633197367791619UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 11 , 12370633197367791624UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1298 20 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1298 56 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1298 56 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1308 14 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1308 43 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1308 43 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1319 14 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1319 43 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1319 43 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1330 14 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1330 43 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1330 43 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1341 14 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1341 43 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1341 43 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1352 25 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1352 67 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1352 67 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1364 25 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1364 67 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1364 67 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 12 , 12370633197367791284UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 12 , 12370633197367791289UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 12 , 12370633197367791304UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 12 , 12370633197367791309UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 12 , 12370633197367791299UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 12 , 12370633197367791304UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 12 , 12370633197367791294UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 12 , 12370633197367791299UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 12 , 12370633197367791289UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 12 , 12370633197367791294UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 18 , 12370633197367791311UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 18 , 12370633197367791316UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 18 , 12370633197367792061UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 18 , 12370633197367792066UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 12 , 12370633197367791314UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 12 , 12370633197367791319UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 12 , 12370633197367792059UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 12 , 12370633197367792064UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 16 , 12370633197367791518UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 16 , 12370633197367791523UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 12 , 12370633197367791521UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 12 , 12370633197367791526UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 10 , 12370633197367791616UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 10 , 12370633197367791621UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 12 , 12370633197367791619UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 12 , 12370633197367791624UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 12 , 12370633197367791424UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 12 , 12370633197367791429UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 12 , 12370633197367791496UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 12 , 12370633197367791501UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 9 len=5 freeB_npm
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 24 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 24 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 25 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 25 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 25 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 25 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 23 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 23 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 23 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 23 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 8 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 30 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 30 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 23 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 23 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 8 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 30 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 30 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 23 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 23 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 10 , 12370633197367793976UL
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 4 alias_group_changed(____alias_loc_id_2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1249 7 alias_group_changed(____alias_loc_id_1) || 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 10 , 12370633197367794060UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 33 38 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 33 72 , 12370633197367790810UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 33 72 , 12370633197367790811UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 379 26 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 379 55 , 12370633197367792495UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 379 55 , 12370633197367792533UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 387 25 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 387 57 , 12370633197367792821UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 387 57 , 12370633197367792862UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 398 25 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 398 57 , 12370633197367793274UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 398 57 , 12370633197367793345UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 406 26 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 406 58 , 12370633197367793279UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 406 58 , 12370633197367793350UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 13 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 427 13 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 13 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 428 13 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 10 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 429 10 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 10 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 430 10 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 10 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 431 10 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 480 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 481 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 482 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 483 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 484 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 493 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 494 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 495 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 496 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 497 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 526 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 527 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 528 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 529 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 530 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 539 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 540 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 541 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 542 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 543 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 14 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 566 14 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 14 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 567 14 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 11 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 568 11 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 11 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 569 11 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 11 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 570 11 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 580 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 581 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 582 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 583 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 584 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 601 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 602 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 603 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 604 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 605 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 614 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 615 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 616 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 617 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 618 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 633 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 634 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 635 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 636 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 637 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 10 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 667 10 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 10 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 668 10 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 7 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 669 7 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 7 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 670 7 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 7 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 671 7 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 694 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 695 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 696 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 697 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 698 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 707 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 12 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 708 12 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 9 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 709 9 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 9 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 710 9 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 9 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 711 9 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 11 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 740 11 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 11 , 12370633197367792821UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 741 11 , 12370633197367792862UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 8 , 12370633197367792495UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 742 8 , 12370633197367792533UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 8 , 12370633197367793274UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 743 8 , 12370633197367793345UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 3 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 8 , 12370633197367793279UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 744 8 , 12370633197367793350UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 845 22 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 845 43 , 12370633197367794414UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 845 43 , 12370633197367794538UL, 0, 1, (int)sizeof(struct bstr), 8, (int)__builtin_offsetof(struct bstr, bestScores), (int)__builtin_offsetof(struct bstr, numReports), (int)__builtin_offsetof(struct bstr, bestStartsI), (int)__builtin_offsetof(struct bstr, bestStartsJ), (int)__builtin_offsetof(struct bstr, bestEndsI), (int)__builtin_offsetof(struct bstr, bestEndsJ), (int)__builtin_offsetof(struct bstr, bestSeqsI), (int)__builtin_offsetof(struct bstr, bestSeqsJ)
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 867 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 867 61 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 867 61 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 876 15 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 876 52 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 876 52 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 884 33 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 884 64 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 884 64 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 892 33 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 892 64 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 892 64 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 900 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 900 62 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 900 62 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 908 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 908 62 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 908 62 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 917 20 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 917 62 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 917 62 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 927 20 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 927 62 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 927 62 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1014 38 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1014 76 , 12370633197367791284UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1014 76 , 12370633197367791289UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1024 33 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1024 65 , 12370633197367791304UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1024 65 , 12370633197367791309UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1033 33 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1033 65 , 12370633197367791299UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1033 65 , 12370633197367791304UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1042 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1042 63 , 12370633197367791294UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1042 63 , 12370633197367791299UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1051 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1051 63 , 12370633197367791289UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1051 63 , 12370633197367791294UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1061 23 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1061 66 , 12370633197367791314UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1061 66 , 12370633197367791319UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1072 23 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1072 66 , 12370633197367792059UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1072 66 , 12370633197367792064UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1087 24 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1087 66 , 12370633197367791311UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1087 66 , 12370633197367791316UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1098 24 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1098 66 , 12370633197367792061UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1098 66 , 12370633197367792066UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1144 22 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1144 69 , 12370633197367791424UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1144 69 , 12370633197367791429UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1156 22 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1156 69 , 12370633197367791496UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1156 69 , 12370633197367791501UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1173 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1173 64 , 12370633197367791521UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1173 64 , 12370633197367791526UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1183 28 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1183 60 , 12370633197367791518UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1183 60 , 12370633197367791523UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1209 34 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1209 74 , 12370633197367791619UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1209 74 , 12370633197367791624UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1219 31 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1219 68 , 12370633197367791616UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1219 68 , 12370633197367791621UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 8 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 16 , 12370633197367791616UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1265 16 , 12370633197367791621UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 6 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 11 , 12370633197367791619UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1267 11 , 12370633197367791624UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1298 20 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1298 56 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1298 56 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1308 14 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1308 43 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1308 43 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1319 14 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1319 43 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1319 43 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1330 14 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1330 43 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1330 43 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1341 14 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1341 43 , 12370633197367793787UL, 0, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1341 43 , 12370633197367793868UL, 0, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1352 25 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1352 67 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1352 67 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1364 25 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1364 67 , 12370633197367793787UL, 1, 0
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1364 67 , 12370633197367793868UL, 1, 0
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 12 , 12370633197367791284UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1451 12 , 12370633197367791289UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 12 , 12370633197367791304UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1452 12 , 12370633197367791309UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 12 , 12370633197367791299UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1453 12 , 12370633197367791304UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 12 , 12370633197367791294UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1454 12 , 12370633197367791299UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 12 , 12370633197367791289UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1455 12 , 12370633197367791294UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 18 , 12370633197367791311UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1458 18 , 12370633197367791316UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 18 , 12370633197367792061UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1459 18 , 12370633197367792066UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 12 , 12370633197367791314UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1462 12 , 12370633197367791319UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 12 , 12370633197367792059UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1463 12 , 12370633197367792064UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 16 , 12370633197367791518UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1466 16 , 12370633197367791523UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 12 , 12370633197367791521UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1468 12 , 12370633197367791526UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 2 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 10 , 12370633197367791616UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1471 10 , 12370633197367791621UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 12 , 12370633197367791619UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1473 12 , 12370633197367791624UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 12 , 12370633197367791424UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1475 12 , 12370633197367791429UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 12 , 12370633197367791496UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1476 12 , 12370633197367791501UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 24 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1493 24 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1497 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 25 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1503 25 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1507 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 25 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1513 25 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1517 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 23 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1523 23 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1527 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 23 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1533 23 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1537 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 8 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 30 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1545 30 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 23 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1549 23 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1553 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 8 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 30 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1561 30 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 4 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 23 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1565 23 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1569 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 7 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 15 , 12370633197367793787UL
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1573 15 , 12370633197367793868UL
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 10 , 12370633197367793976UL
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 43 3 rm_stack(true, 12370633197367790810UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_3, ____chimes_did_disable0); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 60 const int ____chimes_did_disable0 = new_stack((void *)(&copyStringR), "copyStringR", &____must_manage_copyStringR, 1, 0, (size_t)(12370633197367790825UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 118 5 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_7, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 140 5 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_7, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 169 5 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_7, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 173 5 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_7, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 177 5 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_7, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 181 5 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_7, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 202 7 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_7, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 215 7 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_7, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 228 7 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_7, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 244 3 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_7, ____chimes_did_disable1); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 93 47 const int ____chimes_did_disable1 = new_stack((void *)(&tracePathR), "tracePathR", &____must_manage_tracePathR, 18, 0, (size_t)(12370633197367794349UL), (size_t)(12370633197367794350UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367794357UL), (size_t)(12370633197367794358UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367794363UL), (size_t)(12370633197367794364UL), (size_t)(12370633197367794365UL), (size_t)(12370633197367794366UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 343 5 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 351 5 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 359 5 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 367 5 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 432 5 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 485 4 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 498 4 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 531 4 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 544 4 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 571 6 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 585 4 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 606 4 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 619 4 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 638 4 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 672 2 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 699 4 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 712 4 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 745 3 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 331 28 const int ____chimes_did_disable2 = new_stack((void *)(&doScan), "doScan", &____must_manage_doScan, 28, 24, (size_t)(12370633197367793439UL), (size_t)(12370633197367793440UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793444UL), (size_t)(12370633197367793445UL), (size_t)(12370633197367793446UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793459UL), (size_t)(12370633197367793005UL), (size_t)(12370633197367793014UL), (size_t)(12370633197367793462UL), (size_t)(12370633197367793463UL), (size_t)(12370633197367793464UL), (size_t)(12370633197367793465UL), (size_t)(12370633197367793466UL), "doScan|A|0", &____must_checkpoint_doScan_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "doScan|T|0", &____must_checkpoint_doScan_T_0, "i8**", (void *)(&T), (size_t)8, 1, 0, 0, "doScan|sizeT|0", &____must_checkpoint_doScan_sizeT_0, "i32", (void *)(&sizeT), (size_t)4, 0, 0, 0, "doScan|ei|0", &____must_checkpoint_doScan_ei_0, "i32", (void *)(&ei), (size_t)4, 0, 0, 0, "doScan|ej|0", &____must_checkpoint_doScan_ej_0, "i32", (void *)(&ej), (size_t)4, 0, 0, 0, "doScan|mainSeq|0", &____must_checkpoint_doScan_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "doScan|matchSeq|0", &____must_checkpoint_doScan_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "doScan|minSeparation|0", &____must_checkpoint_doScan_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0, "doScan|goal|0", &____must_checkpoint_doScan_goal_0, "i64", (void *)(&goal), (size_t)8, 0, 0, 0, "doScan|iBeg|0", &____must_checkpoint_doScan_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "doScan|jBeg|0", &____must_checkpoint_doScan_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "doScan|iFin|0", &____must_checkpoint_doScan_iFin_0, "i32", (void *)(&iFin), (size_t)4, 0, 0, 0, "doScan|jFin|0", &____must_checkpoint_doScan_jFin_0, "i32", (void *)(&jFin), (size_t)4, 0, 0, 0, "doScan|iEnd|0", &____must_checkpoint_doScan_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "doScan|jEnd|0", &____must_checkpoint_doScan_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "doScan|threadNum|0", &____must_checkpoint_doScan_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "doScan|bestR|0", &____must_checkpoint_doScan_bestR_0, "i32*", (void *)(&bestR), (size_t)8, 1, 0, 0, "doScan|bestStartsI|0", &____must_checkpoint_doScan_bestStartsI_0, "i32*", (void *)(&bestStartsI), (size_t)8, 1, 0, 0, "doScan|bestStartsJ|0", &____must_checkpoint_doScan_bestStartsJ_0, "i32*", (void *)(&bestStartsJ), (size_t)8, 1, 0, 0, "doScan|bestEndsI|0", &____must_checkpoint_doScan_bestEndsI_0, "i32*", (void *)(&bestEndsI), (size_t)8, 1, 0, 0, "doScan|bestEndsJ|0", &____must_checkpoint_doScan_bestEndsJ_0, "i32*", (void *)(&bestEndsJ), (size_t)8, 1, 0, 0, "doScan|bestSeqsI|0", &____must_checkpoint_doScan_bestSeqsI_0, "i8**", (void *)(&bestSeqsI), (size_t)8, 1, 0, 0, "doScan|bestSeqsJ|0", &____must_checkpoint_doScan_bestSeqsJ_0, "i8**", (void *)(&bestSeqsJ), (size_t)8, 1, 0, 0, "doScan|bestScores|0", &____must_checkpoint_doScan_bestScores_0, "i64*", (void *)(&bestScores), (size_t)8, 1, 0, 0); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1480 3 rm_stack(true, 12370633197367794414UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_4, ____chimes_did_disable3); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 86 const int ____chimes_did_disable3 = new_stack((void *)(&scanBackward), "scanBackward", &____must_manage_scanBackward, 4, 4, (size_t)(12370633197367791583UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "scanBackward|A|0", &____must_checkpoint_scanBackward_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "scanBackward|maxReports|0", &____must_checkpoint_scanBackward_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "scanBackward|minSeparation|0", &____must_checkpoint_scanBackward_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0, "scanBackward|maxDoublings|0", &____must_checkpoint_scanBackward_maxDoublings_0, "i32", (void *)(&maxDoublings), (size_t)4, 0, 0, 0); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1578 3 rm_stack(true, 12370633197367794414UL, "freeB", &____must_manage_freeB, ____alias_loc_id_6, ____chimes_did_disable4); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 26 const int ____chimes_did_disable4 = new_stack((void *)(&freeB), "freeB", &____must_manage_freeB, 1, 0, (size_t)(12370633197367793976UL)); 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 61 const int ____chimes_did_disable0 = new_stack((void *)(&copyStringR), "copyStringR", &____must_manage_copyStringR, 1, 0, (size_t)(12370633197367790825UL)); ;
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1576 10 , 12370633197367794060UL
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 43 80 rm_stack(true, 12370633197367790811UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 60 const int ____chimes_did_disable0 = new_stack((void *)(&copyStringR), "copyStringR", &____must_manage_copyStringR, 1, 0, (size_t)(12370633197367790829UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 44 1 rm_stack(true, 12370633197367790811UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 118 62 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 140 63 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 169 63 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 173 63 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 177 63 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 181 63 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 202 64 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 215 64 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 228 64 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 244 63 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 93 47 const int ____chimes_did_disable1 = new_stack((void *)(&tracePathR), "tracePathR", &____must_manage_tracePathR, 18, 0, (size_t)(12370633197367794473UL), (size_t)(12370633197367794474UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367794481UL), (size_t)(12370633197367794482UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367794487UL), (size_t)(12370633197367794488UL), (size_t)(12370633197367794489UL), (size_t)(12370633197367794490UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 245 1 rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 343 66 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 351 66 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 359 66 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 367 66 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 432 65 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 485 64 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 498 64 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 531 64 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 544 64 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 571 67 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 585 65 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 606 64 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 619 64 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 638 65 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 672 61 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 699 64 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 712 64 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 745 64 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 331 28 const int ____chimes_did_disable2 = new_stack((void *)(&doScan), "doScan", &____must_manage_doScan, 28, 0, (size_t)(12370633197367793519UL), (size_t)(12370633197367793520UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793524UL), (size_t)(12370633197367793525UL), (size_t)(12370633197367793526UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793539UL), (size_t)(12370633197367793058UL), (size_t)(12370633197367793067UL), (size_t)(12370633197367793542UL), (size_t)(12370633197367793543UL), (size_t)(12370633197367793544UL), (size_t)(12370633197367793545UL), (size_t)(12370633197367793546UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 746 1 rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1480 67 rm_stack(true, 12370633197367794538UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_2, ____chimes_did_disable3); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 86 const int ____chimes_did_disable3 = new_stack((void *)(&scanBackward), "scanBackward", &____must_manage_scanBackward, 4, 4, (size_t)(12370633197367791588UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "scanBackward|A|0", &____must_checkpoint_scanBackward_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "scanBackward|maxReports|0", &____must_checkpoint_scanBackward_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "scanBackward|minSeparation|0", &____must_checkpoint_scanBackward_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0, "scanBackward|maxDoublings|0", &____must_checkpoint_scanBackward_maxDoublings_0, "i32", (void *)(&maxDoublings), (size_t)4, 0, 0, 0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1481 1 rm_stack(true, 12370633197367794538UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_2, ____chimes_did_disable3); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1578 72 rm_stack(true, 12370633197367794538UL, "freeB", &____must_manage_freeB, ____alias_loc_id_4, ____chimes_did_disable4); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 26 const int ____chimes_did_disable4 = new_stack((void *)(&freeB), "freeB", &____must_manage_freeB, 1, 0, (size_t)(12370633197367794060UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1579 1 rm_stack(true, 12370633197367794538UL, "freeB", &____must_manage_freeB, ____alias_loc_id_4, ____chimes_did_disable4); 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 61 const int ____chimes_did_disable0 = new_stack((void *)(&copyStringR), "copyStringR", &____must_manage_copyStringR, 1, 0, (size_t)(12370633197367790829UL)); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 215 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 22 3 int c; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 22 8 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 23 3 unsigned char *outString; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 23 27 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 93 48 const int ____chimes_did_disable1 = new_stack((void *)(&tracePathR), "tracePathR", &____must_manage_tracePathR, 18, 0, (size_t)(12370633197367794349UL), (size_t)(12370633197367794350UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367794357UL), (size_t)(12370633197367794358UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367794363UL), (size_t)(12370633197367794364UL), (size_t)(12370633197367794365UL), (size_t)(12370633197367794366UL)); ;
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 43 4 unsigned char *____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 43 40 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 93 48 const int ____chimes_did_disable1 = new_stack((void *)(&tracePathR), "tracePathR", &____must_manage_tracePathR, 18, 0, (size_t)(12370633197367794473UL), (size_t)(12370633197367794474UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367794481UL), (size_t)(12370633197367794482UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367794487UL), (size_t)(12370633197367794488UL), (size_t)(12370633197367794489UL), (size_t)(12370633197367794490UL)); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 93 588 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 331 29 const int ____chimes_did_disable2 = new_stack((void *)(&doScan), "doScan", &____must_manage_doScan, 28, 24, (size_t)(12370633197367793439UL), (size_t)(12370633197367793440UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793444UL), (size_t)(12370633197367793445UL), (size_t)(12370633197367793446UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793459UL), (size_t)(12370633197367793005UL), (size_t)(12370633197367793014UL), (size_t)(12370633197367793462UL), (size_t)(12370633197367793463UL), (size_t)(12370633197367793464UL), (size_t)(12370633197367793465UL), (size_t)(12370633197367793466UL), "doScan|A|0", &____must_checkpoint_doScan_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "doScan|T|0", &____must_checkpoint_doScan_T_0, "i8**", (void *)(&T), (size_t)8, 1, 0, 0, "doScan|sizeT|0", &____must_checkpoint_doScan_sizeT_0, "i32", (void *)(&sizeT), (size_t)4, 0, 0, 0, "doScan|ei|0", &____must_checkpoint_doScan_ei_0, "i32", (void *)(&ei), (size_t)4, 0, 0, 0, "doScan|ej|0", &____must_checkpoint_doScan_ej_0, "i32", (void *)(&ej), (size_t)4, 0, 0, 0, "doScan|mainSeq|0", &____must_checkpoint_doScan_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "doScan|matchSeq|0", &____must_checkpoint_doScan_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "doScan|minSeparation|0", &____must_checkpoint_doScan_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0, "doScan|goal|0", &____must_checkpoint_doScan_goal_0, "i64", (void *)(&goal), (size_t)8, 0, 0, 0, "doScan|iBeg|0", &____must_checkpoint_doScan_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "doScan|jBeg|0", &____must_checkpoint_doScan_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "doScan|iFin|0", &____must_checkpoint_doScan_iFin_0, "i32", (void *)(&iFin), (size_t)4, 0, 0, 0, "doScan|jFin|0", &____must_checkpoint_doScan_jFin_0, "i32", (void *)(&jFin), (size_t)4, 0, 0, 0, "doScan|iEnd|0", &____must_checkpoint_doScan_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "doScan|jEnd|0", &____must_checkpoint_doScan_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "doScan|threadNum|0", &____must_checkpoint_doScan_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "doScan|bestR|0", &____must_checkpoint_doScan_bestR_0, "i32*", (void *)(&bestR), (size_t)8, 1, 0, 0, "doScan|bestStartsI|0", &____must_checkpoint_doScan_bestStartsI_0, "i32*", (void *)(&bestStartsI), (size_t)8, 1, 0, 0, "doScan|bestStartsJ|0", &____must_checkpoint_doScan_bestStartsJ_0, "i32*", (void *)(&bestStartsJ), (size_t)8, 1, 0, 0, "doScan|bestEndsI|0", &____must_checkpoint_doScan_bestEndsI_0, "i32*", (void *)(&bestEndsI), (size_t)8, 1, 0, 0, "doScan|bestEndsJ|0", &____must_checkpoint_doScan_bestEndsJ_0, "i32*", (void *)(&bestEndsJ), (size_t)8, 1, 0, 0, "doScan|bestSeqsI|0", &____must_checkpoint_doScan_bestSeqsI_0, "i8**", (void *)(&bestSeqsI), (size_t)8, 1, 0, 0, "doScan|bestSeqsJ|0", &____must_checkpoint_doScan_bestSeqsJ_0, "i8**", (void *)(&bestSeqsJ), (size_t)8, 1, 0, 0, "doScan|bestScores|0", &____must_checkpoint_doScan_bestScores_0, "i64*", (void *)(&bestScores), (size_t)8, 1, 0, 0); ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 331 3309 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 118 6 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 118 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 140 6 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 140 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 169 6 int ____chimes_ret_var_3; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 169 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 173 6 int ____chimes_ret_var_4; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 173 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 177 6 int ____chimes_ret_var_5; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 177 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 181 6 int ____chimes_ret_var_6; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 181 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 202 8 int ____chimes_ret_var_7; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 202 32 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 215 8 int ____chimes_ret_var_8; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 215 32 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 228 8 int ____chimes_ret_var_9; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 228 32 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 244 4 int ____chimes_ret_var_10; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 244 29 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 331 29 const int ____chimes_did_disable2 = new_stack((void *)(&doScan), "doScan", &____must_manage_doScan, 28, 0, (size_t)(12370633197367793519UL), (size_t)(12370633197367793520UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793524UL), (size_t)(12370633197367793525UL), (size_t)(12370633197367793526UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793539UL), (size_t)(12370633197367793058UL), (size_t)(12370633197367793067UL), (size_t)(12370633197367793542UL), (size_t)(12370633197367793543UL), (size_t)(12370633197367793544UL), (size_t)(12370633197367793545UL), (size_t)(12370633197367793546UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 331 802 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 3 int i; int j; int r; int v; int m; int e; int f; int di; int dj; int fi; int fj; int li; int lj; int rsi; int rsj; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 60 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 3 long long **V; long long *E; long long *F; long long G; long long s; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 30 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 87 const int ____chimes_did_disable3 = new_stack((void *)(&scanBackward), "scanBackward", &____must_manage_scanBackward, 4, 4, (size_t)(12370633197367791583UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "scanBackward|A|0", &____must_checkpoint_scanBackward_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "scanBackward|maxReports|0", &____must_checkpoint_scanBackward_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "scanBackward|minSeparation|0", &____must_checkpoint_scanBackward_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0, "scanBackward|maxDoublings|0", &____must_checkpoint_scanBackward_maxDoublings_0, "i32", (void *)(&maxDoublings), (size_t)4, 0, 0, 0); ;
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 343 6 int ____chimes_ret_var_11; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 343 31 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 351 6 int ____chimes_ret_var_12; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 351 31 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 359 6 int ____chimes_ret_var_13; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 359 31 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 367 6 int ____chimes_ret_var_14; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 367 31 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 432 6 int ____chimes_ret_var_15; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 432 31 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 485 5 int ____chimes_ret_var_16; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 485 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 498 5 int ____chimes_ret_var_17; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 498 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 531 5 int ____chimes_ret_var_18; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 531 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 544 5 int ____chimes_ret_var_19; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 544 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 571 7 int ____chimes_ret_var_20; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 571 32 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 585 5 int ____chimes_ret_var_21; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 585 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 606 5 int ____chimes_ret_var_22; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 606 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 619 5 int ____chimes_ret_var_23; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 619 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 638 5 int ____chimes_ret_var_24; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 638 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 672 3 int ____chimes_ret_var_25; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 672 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 699 5 int ____chimes_ret_var_26; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 699 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 712 5 int ____chimes_ret_var_27; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 712 30 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 745 4 int ____chimes_ret_var_28; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 745 29 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 87 const int ____chimes_did_disable3 = new_stack((void *)(&scanBackward), "scanBackward", &____must_manage_scanBackward, 4, 4, (size_t)(12370633197367791588UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "scanBackward|A|0", &____must_checkpoint_scanBackward_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "scanBackward|maxReports|0", &____must_checkpoint_scanBackward_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "scanBackward|minSeparation|0", &____must_checkpoint_scanBackward_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0, "scanBackward|maxDoublings|0", &____must_checkpoint_scanBackward_maxDoublings_0, "i32", (void *)(&maxDoublings), (size_t)4, 0, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 795 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 3 int i; int j; int m; int n; int r; int c; int sizeT; int bestR; int ei; int ej; int doublings; int matchLimit; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 68 
@@ -639,16 +700,15 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackwa
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 824 25 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 825 3  BSTR_T *B;  B = (__null) ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 825 19 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 27 const int ____chimes_did_disable4 = new_stack((void *)(&freeB), "freeB", &____must_manage_freeB, 1, 0, (size_t)(12370633197367793976UL)); ;
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1480 4 BSTR_T *____chimes_ret_var_29; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1480 34 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 27 const int ____chimes_did_disable4 = new_stack((void *)(&freeB), "freeB", &____must_manage_freeB, 1, 0, (size_t)(12370633197367794060UL)); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 163 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1487 3 int i; int j; ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1487 11 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 45  call_lbl_46: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 45  call_lbl_47: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 45  call_lbl_48: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 45  call_lbl_49: 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1578 4 BSTR_T *____chimes_ret_var_30; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1578 34 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 5  call_lbl_28: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1249 2  call_lbl_74: 
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 16 len=11 copyStringR_quick
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 214  ;  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 86 5 len=10 tracePathR_quick
@@ -660,48 +720,16 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackwa
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 223 29 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 93 587  ;  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 320 5 len=6 doScan_quick
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 109  ({  calling((void*)abs, 46, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (abs)(di - bestStartsI[r]); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 132 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 136  ({  calling((void*)abs, 47, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (abs)(dj - bestStartsJ[r]); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 159 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 164  ({  calling((void*)abs, 48, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (abs)(di - bestStartsI[r]); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 187 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 191  ({  calling((void*)abs, 49, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (abs)(dj - bestStartsJ[r]); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 214 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 621 2 ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, e, f, 0, threadNum, &rsi, &rsj, bestSeqsI[*bestR+1], bestSeqsJ[*bestR+1]); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 624 58 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 17 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 22 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 38 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 43 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 45 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 50 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 52 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 58 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 60 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 66 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 100 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 107 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 16 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 18 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 30 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 32 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 44 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 331 3308  ; long long *F;
-long long *E;
-long long **V;
-int rsi;
-int dj;
-int di;
-int f;
-int e;
-int r;
- if (____must_checkpoint_doScan_F_0 || ____must_checkpoint_doScan_E_0 || ____must_checkpoint_doScan_V_0 || ____must_checkpoint_doScan_rsi_0 || ____must_checkpoint_doScan_dj_0 || ____must_checkpoint_doScan_di_0 || ____must_checkpoint_doScan_f_0 || ____must_checkpoint_doScan_e_0 || ____must_checkpoint_doScan_r_0) { register_stack_vars(9, "doScan|F|0", &____must_checkpoint_doScan_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "doScan|E|0", &____must_checkpoint_doScan_E_0, "i64*", (void *)(&E), (size_t)8, 1, 0, 0, "doScan|V|0", &____must_checkpoint_doScan_V_0, "i64**", (void *)(&V), (size_t)8, 1, 0, 0, "doScan|rsi|0", &____must_checkpoint_doScan_rsi_0, "i32", (void *)(&rsi), (size_t)4, 0, 0, 0, "doScan|dj|0", &____must_checkpoint_doScan_dj_0, "i32", (void *)(&dj), (size_t)4, 0, 0, 0, "doScan|di|0", &____must_checkpoint_doScan_di_0, "i32", (void *)(&di), (size_t)4, 0, 0, 0, "doScan|f|0", &____must_checkpoint_doScan_f_0, "i32", (void *)(&f), (size_t)4, 0, 0, 0, "doScan|e|0", &____must_checkpoint_doScan_e_0, "i32", (void *)(&e), (size_t)4, 0, 0, 0, "doScan|r|0", &____must_checkpoint_doScan_r_0, "i32", (void *)(&r), (size_t)4, 0, 0, 0);  }  
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 331 801  ; int rsi;
+ if (____must_checkpoint_doScan_rsi_0) { register_stack_vars(1, "doScan|rsi|0", &____must_checkpoint_doScan_rsi_0, "i32", (void *)(&rsi), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 9 len=12 scanBackward_quick
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 19  ({  calling((void*)gridInfo, 28, ____alias_loc_id_0, 0UL, 4, (size_t)(12370633197367790856UL), (size_t)(12370633197367790857UL), (size_t)(12370633197367790858UL), (size_t)(12370633197367790859UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 19  ({  calling((void*)gridInfo, 28, ____alias_loc_id_0, 0UL, 4, (size_t)(12370633197367790860UL), (size_t)(12370633197367790861UL), (size_t)(12370633197367790862UL), (size_t)(12370633197367790863UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 58 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1249 64  ({  calling((void*)doScan, 74, ____alias_loc_id_1, 0UL, 28, (size_t)(12370633197367791583UL), (size_t)(12370633197367791619UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367791424UL), (size_t)(12370633197367791496UL), (size_t)(12370633197367791521UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367790845UL), (size_t)(12370633197367791304UL), (size_t)(12370633197367791299UL), (size_t)(12370633197367791294UL), (size_t)(12370633197367791289UL), (size_t)(12370633197367791314UL), (size_t)(12370633197367792059UL), (size_t)(12370633197367791284UL)); (doScan)(A, T, sizeT, ei, ej, mainSeq, matchSeq, weights, gapFirst, gapExtend, minSeparation, r, goal, iBeg, jBeg, iFin, jFin, iEnd, jEnd, myTaskID, &bestR, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, bestScores); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1249 7 ({ calling_npm("doScan", 0); doScan_npm(A, T, sizeT, ei, ej, mainSeq, matchSeq, weights, gapFirst, gapExtend, minSeparation, r, goal, iBeg, jBeg, iFin, jFin, iEnd, jEnd, myTaskID, &bestR, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, bestScores); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1253 39 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1383 33 ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsI[j]); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1383 57 
@@ -709,113 +737,20 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackwa
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1384 57 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 3 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 8 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 10 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 15 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 17 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 22 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 24 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 29 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 31 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 36 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 45 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 54 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 56 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 65 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 67 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 73 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 75 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 81 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 83 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 96 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 98 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 112 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 15 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 17 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 30 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 32 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 44 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 62 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 75 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 77 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 89 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 3 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 12 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 47 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 55 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 57 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 65 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 67 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 75 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 77 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 85 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 87 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 95 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 97 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 105 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 19 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 21 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 37 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 39 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 53 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 55 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 69 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 25 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 27 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 50 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 52 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 69 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 822 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 822 28 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 822 30 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 822 55 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 823 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 823 24 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 823 26 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 823 40 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 824 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 824 17 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 825 4 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 825 13 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 794  ; BSTR_T *B;
-char **weights;
-long long goal;
-long long *bestScores;
-unsigned char **bestSeqsJ;
-unsigned char **bestSeqsI;
-unsigned char **T;
-unsigned char *matchSeq;
-unsigned char *mainSeq;
-int *bestEndsJ;
-int *bestEndsI;
-int *bestStartsJ;
-int *bestStartsI;
-int jEnd;
-int iEnd;
-int jFin;
-int iFin;
-int jBeg;
-int iBeg;
 int npRow;
-int myTaskID;
-int threadNum;
-int gapFirst;
-int gapExtend;
-int gapStart;
 int matchLimit;
-int doublings;
-int ej;
-int ei;
 int bestR;
-int sizeT;
-int r;
-int n;
-int m;
-int j;
 int i;
- if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_weights_0 || ____must_checkpoint_scanBackward_goal_0 || ____must_checkpoint_scanBackward_bestScores_0 || ____must_checkpoint_scanBackward_bestSeqsJ_0 || ____must_checkpoint_scanBackward_bestSeqsI_0 || ____must_checkpoint_scanBackward_T_0 || ____must_checkpoint_scanBackward_matchSeq_0 || ____must_checkpoint_scanBackward_mainSeq_0 || ____must_checkpoint_scanBackward_bestEndsJ_0 || ____must_checkpoint_scanBackward_bestEndsI_0 || ____must_checkpoint_scanBackward_bestStartsJ_0 || ____must_checkpoint_scanBackward_bestStartsI_0 || ____must_checkpoint_scanBackward_jEnd_0 || ____must_checkpoint_scanBackward_iEnd_0 || ____must_checkpoint_scanBackward_jFin_0 || ____must_checkpoint_scanBackward_iFin_0 || ____must_checkpoint_scanBackward_jBeg_0 || ____must_checkpoint_scanBackward_iBeg_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_myTaskID_0 || ____must_checkpoint_scanBackward_threadNum_0 || ____must_checkpoint_scanBackward_gapFirst_0 || ____must_checkpoint_scanBackward_gapExtend_0 || ____must_checkpoint_scanBackward_gapStart_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_doublings_0 || ____must_checkpoint_scanBackward_ej_0 || ____must_checkpoint_scanBackward_ei_0 || ____must_checkpoint_scanBackward_bestR_0 || ____must_checkpoint_scanBackward_sizeT_0 || ____must_checkpoint_scanBackward_r_0 || ____must_checkpoint_scanBackward_n_0 || ____must_checkpoint_scanBackward_m_0 || ____must_checkpoint_scanBackward_j_0 || ____must_checkpoint_scanBackward_i_0) { register_stack_vars(36, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|weights|0", &____must_checkpoint_scanBackward_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "scanBackward|goal|0", &____must_checkpoint_scanBackward_goal_0, "i64", (void *)(&goal), (size_t)8, 0, 0, 0, "scanBackward|bestScores|0", &____must_checkpoint_scanBackward_bestScores_0, "i64*", (void *)(&bestScores), (size_t)8, 1, 0, 0, "scanBackward|bestSeqsJ|0", &____must_checkpoint_scanBackward_bestSeqsJ_0, "i8**", (void *)(&bestSeqsJ), (size_t)8, 1, 0, 0, "scanBackward|bestSeqsI|0", &____must_checkpoint_scanBackward_bestSeqsI_0, "i8**", (void *)(&bestSeqsI), (size_t)8, 1, 0, 0, "scanBackward|T|0", &____must_checkpoint_scanBackward_T_0, "i8**", (void *)(&T), (size_t)8, 1, 0, 0, "scanBackward|matchSeq|0", &____must_checkpoint_scanBackward_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "scanBackward|mainSeq|0", &____must_checkpoint_scanBackward_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "scanBackward|bestEndsJ|0", &____must_checkpoint_scanBackward_bestEndsJ_0, "i32*", (void *)(&bestEndsJ), (size_t)8, 1, 0, 0, "scanBackward|bestEndsI|0", &____must_checkpoint_scanBackward_bestEndsI_0, "i32*", (void *)(&bestEndsI), (size_t)8, 1, 0, 0, "scanBackward|bestStartsJ|0", &____must_checkpoint_scanBackward_bestStartsJ_0, "i32*", (void *)(&bestStartsJ), (size_t)8, 1, 0, 0, "scanBackward|bestStartsI|0", &____must_checkpoint_scanBackward_bestStartsI_0, "i32*", (void *)(&bestStartsI), (size_t)8, 1, 0, 0, "scanBackward|jEnd|0", &____must_checkpoint_scanBackward_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "scanBackward|iEnd|0", &____must_checkpoint_scanBackward_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "scanBackward|jFin|0", &____must_checkpoint_scanBackward_jFin_0, "i32", (void *)(&jFin), (size_t)4, 0, 0, 0, "scanBackward|iFin|0", &____must_checkpoint_scanBackward_iFin_0, "i32", (void *)(&iFin), (size_t)4, 0, 0, 0, "scanBackward|jBeg|0", &____must_checkpoint_scanBackward_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "scanBackward|iBeg|0", &____must_checkpoint_scanBackward_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|myTaskID|0", &____must_checkpoint_scanBackward_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0, "scanBackward|threadNum|0", &____must_checkpoint_scanBackward_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "scanBackward|gapFirst|0", &____must_checkpoint_scanBackward_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "scanBackward|gapExtend|0", &____must_checkpoint_scanBackward_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "scanBackward|gapStart|0", &____must_checkpoint_scanBackward_gapStart_0, "i32", (void *)(&gapStart), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|doublings|0", &____must_checkpoint_scanBackward_doublings_0, "i32", (void *)(&doublings), (size_t)4, 0, 0, 0, "scanBackward|ej|0", &____must_checkpoint_scanBackward_ej_0, "i32", (void *)(&ej), (size_t)4, 0, 0, 0, "scanBackward|ei|0", &____must_checkpoint_scanBackward_ei_0, "i32", (void *)(&ei), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0, "scanBackward|sizeT|0", &____must_checkpoint_scanBackward_sizeT_0, "i32", (void *)(&sizeT), (size_t)4, 0, 0, 0, "scanBackward|r|0", &____must_checkpoint_scanBackward_r_0, "i32", (void *)(&r), (size_t)4, 0, 0, 0, "scanBackward|n|0", &____must_checkpoint_scanBackward_n_0, "i32", (void *)(&n), (size_t)4, 0, 0, 0, "scanBackward|m|0", &____must_checkpoint_scanBackward_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "scanBackward|j|0", &____must_checkpoint_scanBackward_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "scanBackward|i|0", &____must_checkpoint_scanBackward_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  
+ if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_bestR_0 || ____must_checkpoint_scanBackward_i_0) { register_stack_vars(5, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0, "scanBackward|i|0", &____must_checkpoint_scanBackward_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 9 len=5 freeB_quick
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 162  ;  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 20 16 len=11 copyStringR_resumable
@@ -829,48 +764,16 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackwa
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 223 29 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 93 587  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 320 5 len=6 doScan_resumable
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 109  ({  int ____chimes_arg0;  if (!____chimes_replaying) { ____chimes_arg0 = (di - bestStartsI[r]);  }  calling((void*)abs, 46, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg0); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 132 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 136  ({  int ____chimes_arg1;  if (!____chimes_replaying) { ____chimes_arg1 = (dj - bestStartsJ[r]);  }  calling((void*)abs, 47, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg1); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 159 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 164  ({  int ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg2 = (di - bestStartsI[r]);  }  calling((void*)abs, 48, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg2); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 187 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 191  ({  int ____chimes_arg3;  if (!____chimes_replaying) { ____chimes_arg3 = (dj - bestStartsJ[r]);  }  calling((void*)abs, 49, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg3); }) 
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 214 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 621 2 ({ calling_npm("tracePathR", 0); tracePathR_npm(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, e, f, 0, threadNum, &rsi, &rsj, bestSeqsI[*bestR+1], bestSeqsJ[*bestR+1]); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 624 58 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 17 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 22 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 38 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 43 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 45 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 50 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 52 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 58 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 60 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 66 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 100 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 333 107 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 16 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 18 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 30 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 32 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 334 44 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 331 3308  ; long long *F;
-long long *E;
-long long **V;
-int rsi;
-int dj;
-int di;
-int f;
-int e;
-int r;
- if (____must_checkpoint_doScan_F_0 || ____must_checkpoint_doScan_E_0 || ____must_checkpoint_doScan_V_0 || ____must_checkpoint_doScan_rsi_0 || ____must_checkpoint_doScan_dj_0 || ____must_checkpoint_doScan_di_0 || ____must_checkpoint_doScan_f_0 || ____must_checkpoint_doScan_e_0 || ____must_checkpoint_doScan_r_0) { register_stack_vars(9, "doScan|F|0", &____must_checkpoint_doScan_F_0, "i64*", (void *)(&F), (size_t)8, 1, 0, 0, "doScan|E|0", &____must_checkpoint_doScan_E_0, "i64*", (void *)(&E), (size_t)8, 1, 0, 0, "doScan|V|0", &____must_checkpoint_doScan_V_0, "i64**", (void *)(&V), (size_t)8, 1, 0, 0, "doScan|rsi|0", &____must_checkpoint_doScan_rsi_0, "i32", (void *)(&rsi), (size_t)4, 0, 0, 0, "doScan|dj|0", &____must_checkpoint_doScan_dj_0, "i32", (void *)(&dj), (size_t)4, 0, 0, 0, "doScan|di|0", &____must_checkpoint_doScan_di_0, "i32", (void *)(&di), (size_t)4, 0, 0, 0, "doScan|f|0", &____must_checkpoint_doScan_f_0, "i32", (void *)(&f), (size_t)4, 0, 0, 0, "doScan|e|0", &____must_checkpoint_doScan_e_0, "i32", (void *)(&e), (size_t)4, 0, 0, 0, "doScan|r|0", &____must_checkpoint_doScan_r_0, "i32", (void *)(&r), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(46): { goto call_lbl_46; } case(47): { goto call_lbl_47; } case(48): { goto call_lbl_48; } case(49): { goto call_lbl_49; } default: { chimes_error(); } }  }  
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 331 801  ; int rsi;
+ if (____must_checkpoint_doScan_rsi_0) { register_stack_vars(1, "doScan|rsi|0", &____must_checkpoint_doScan_rsi_0, "i32", (void *)(&rsi), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 9 len=12 scanBackward_resumable
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 19  ({  calling((void*)gridInfo, 28, ____alias_loc_id_0, 0UL, 4, (size_t)(12370633197367790856UL), (size_t)(12370633197367790857UL), (size_t)(12370633197367790858UL), (size_t)(12370633197367790859UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 19  ({  calling((void*)gridInfo, 28, ____alias_loc_id_0, 0UL, 4, (size_t)(12370633197367790860UL), (size_t)(12370633197367790861UL), (size_t)(12370633197367790862UL), (size_t)(12370633197367790863UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) 
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 58 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1249 64  ({  calling((void*)doScan, 74, ____alias_loc_id_1, 0UL, 28, (size_t)(12370633197367791583UL), (size_t)(12370633197367791619UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367791424UL), (size_t)(12370633197367791496UL), (size_t)(12370633197367791521UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367790845UL), (size_t)(12370633197367791304UL), (size_t)(12370633197367791299UL), (size_t)(12370633197367791294UL), (size_t)(12370633197367791289UL), (size_t)(12370633197367791314UL), (size_t)(12370633197367792059UL), (size_t)(12370633197367791284UL)); (doScan)(A, T, sizeT, ei, ej, mainSeq, matchSeq, weights, gapFirst, gapExtend, minSeparation, r, goal, iBeg, jBeg, iFin, jFin, iEnd, jEnd, myTaskID, &bestR, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, bestScores); }) 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1249 7 ({ calling_npm("doScan", 0); doScan_npm(A, T, sizeT, ei, ej, mainSeq, matchSeq, weights, gapFirst, gapExtend, minSeparation, r, goal, iBeg, jBeg, iFin, jFin, iEnd, jEnd, myTaskID, &bestR, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, bestScores); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1253 39 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1383 33 ({ calling_npm("copyStringR", 0); copyStringR_npm(bestSeqsI[j]); })
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1383 57 
@@ -878,112 +781,19 @@ ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackwa
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1384 57 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 3 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 8 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 10 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 15 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 17 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 22 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 24 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 29 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 31 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 36 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 45 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 54 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 56 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 65 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 67 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 73 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 75 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 81 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 83 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 96 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 98 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 817 112 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 15 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 17 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 30 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 32 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 44 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 62 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 75 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 77 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 818 89 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 3 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 12 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 47 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 55 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 57 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 65 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 67 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 75 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 77 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 85 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 87 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 95 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 97 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 819 105 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 19 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 21 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 37 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 39 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 53 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 55 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 820 69 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 25 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 27 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 50 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 52 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 821 69 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 822 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 822 28 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 822 30 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 822 55 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 823 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 823 24 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 823 26 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 823 40 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 824 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 824 17 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 825 4 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 825 13 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 815 794  ; BSTR_T *B;
-char **weights;
-long long goal;
-long long *bestScores;
-unsigned char **bestSeqsJ;
-unsigned char **bestSeqsI;
-unsigned char **T;
-unsigned char *matchSeq;
-unsigned char *mainSeq;
-int *bestEndsJ;
-int *bestEndsI;
-int *bestStartsJ;
-int *bestStartsI;
-int jEnd;
-int iEnd;
-int jFin;
-int iFin;
-int jBeg;
-int iBeg;
 int npRow;
-int myTaskID;
-int threadNum;
-int gapFirst;
-int gapExtend;
-int gapStart;
 int matchLimit;
-int doublings;
-int ej;
-int ei;
 int bestR;
-int sizeT;
-int r;
-int n;
-int m;
-int j;
 int i;
- if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_weights_0 || ____must_checkpoint_scanBackward_goal_0 || ____must_checkpoint_scanBackward_bestScores_0 || ____must_checkpoint_scanBackward_bestSeqsJ_0 || ____must_checkpoint_scanBackward_bestSeqsI_0 || ____must_checkpoint_scanBackward_T_0 || ____must_checkpoint_scanBackward_matchSeq_0 || ____must_checkpoint_scanBackward_mainSeq_0 || ____must_checkpoint_scanBackward_bestEndsJ_0 || ____must_checkpoint_scanBackward_bestEndsI_0 || ____must_checkpoint_scanBackward_bestStartsJ_0 || ____must_checkpoint_scanBackward_bestStartsI_0 || ____must_checkpoint_scanBackward_jEnd_0 || ____must_checkpoint_scanBackward_iEnd_0 || ____must_checkpoint_scanBackward_jFin_0 || ____must_checkpoint_scanBackward_iFin_0 || ____must_checkpoint_scanBackward_jBeg_0 || ____must_checkpoint_scanBackward_iBeg_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_myTaskID_0 || ____must_checkpoint_scanBackward_threadNum_0 || ____must_checkpoint_scanBackward_gapFirst_0 || ____must_checkpoint_scanBackward_gapExtend_0 || ____must_checkpoint_scanBackward_gapStart_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_doublings_0 || ____must_checkpoint_scanBackward_ej_0 || ____must_checkpoint_scanBackward_ei_0 || ____must_checkpoint_scanBackward_bestR_0 || ____must_checkpoint_scanBackward_sizeT_0 || ____must_checkpoint_scanBackward_r_0 || ____must_checkpoint_scanBackward_n_0 || ____must_checkpoint_scanBackward_m_0 || ____must_checkpoint_scanBackward_j_0 || ____must_checkpoint_scanBackward_i_0) { register_stack_vars(36, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|weights|0", &____must_checkpoint_scanBackward_weights_0, "i8**", (void *)(&weights), (size_t)8, 1, 0, 0, "scanBackward|goal|0", &____must_checkpoint_scanBackward_goal_0, "i64", (void *)(&goal), (size_t)8, 0, 0, 0, "scanBackward|bestScores|0", &____must_checkpoint_scanBackward_bestScores_0, "i64*", (void *)(&bestScores), (size_t)8, 1, 0, 0, "scanBackward|bestSeqsJ|0", &____must_checkpoint_scanBackward_bestSeqsJ_0, "i8**", (void *)(&bestSeqsJ), (size_t)8, 1, 0, 0, "scanBackward|bestSeqsI|0", &____must_checkpoint_scanBackward_bestSeqsI_0, "i8**", (void *)(&bestSeqsI), (size_t)8, 1, 0, 0, "scanBackward|T|0", &____must_checkpoint_scanBackward_T_0, "i8**", (void *)(&T), (size_t)8, 1, 0, 0, "scanBackward|matchSeq|0", &____must_checkpoint_scanBackward_matchSeq_0, "i8*", (void *)(&matchSeq), (size_t)8, 1, 0, 0, "scanBackward|mainSeq|0", &____must_checkpoint_scanBackward_mainSeq_0, "i8*", (void *)(&mainSeq), (size_t)8, 1, 0, 0, "scanBackward|bestEndsJ|0", &____must_checkpoint_scanBackward_bestEndsJ_0, "i32*", (void *)(&bestEndsJ), (size_t)8, 1, 0, 0, "scanBackward|bestEndsI|0", &____must_checkpoint_scanBackward_bestEndsI_0, "i32*", (void *)(&bestEndsI), (size_t)8, 1, 0, 0, "scanBackward|bestStartsJ|0", &____must_checkpoint_scanBackward_bestStartsJ_0, "i32*", (void *)(&bestStartsJ), (size_t)8, 1, 0, 0, "scanBackward|bestStartsI|0", &____must_checkpoint_scanBackward_bestStartsI_0, "i32*", (void *)(&bestStartsI), (size_t)8, 1, 0, 0, "scanBackward|jEnd|0", &____must_checkpoint_scanBackward_jEnd_0, "i32", (void *)(&jEnd), (size_t)4, 0, 0, 0, "scanBackward|iEnd|0", &____must_checkpoint_scanBackward_iEnd_0, "i32", (void *)(&iEnd), (size_t)4, 0, 0, 0, "scanBackward|jFin|0", &____must_checkpoint_scanBackward_jFin_0, "i32", (void *)(&jFin), (size_t)4, 0, 0, 0, "scanBackward|iFin|0", &____must_checkpoint_scanBackward_iFin_0, "i32", (void *)(&iFin), (size_t)4, 0, 0, 0, "scanBackward|jBeg|0", &____must_checkpoint_scanBackward_jBeg_0, "i32", (void *)(&jBeg), (size_t)4, 0, 0, 0, "scanBackward|iBeg|0", &____must_checkpoint_scanBackward_iBeg_0, "i32", (void *)(&iBeg), (size_t)4, 0, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|myTaskID|0", &____must_checkpoint_scanBackward_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0, "scanBackward|threadNum|0", &____must_checkpoint_scanBackward_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "scanBackward|gapFirst|0", &____must_checkpoint_scanBackward_gapFirst_0, "i32", (void *)(&gapFirst), (size_t)4, 0, 0, 0, "scanBackward|gapExtend|0", &____must_checkpoint_scanBackward_gapExtend_0, "i32", (void *)(&gapExtend), (size_t)4, 0, 0, 0, "scanBackward|gapStart|0", &____must_checkpoint_scanBackward_gapStart_0, "i32", (void *)(&gapStart), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|doublings|0", &____must_checkpoint_scanBackward_doublings_0, "i32", (void *)(&doublings), (size_t)4, 0, 0, 0, "scanBackward|ej|0", &____must_checkpoint_scanBackward_ej_0, "i32", (void *)(&ej), (size_t)4, 0, 0, 0, "scanBackward|ei|0", &____must_checkpoint_scanBackward_ei_0, "i32", (void *)(&ei), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0, "scanBackward|sizeT|0", &____must_checkpoint_scanBackward_sizeT_0, "i32", (void *)(&sizeT), (size_t)4, 0, 0, 0, "scanBackward|r|0", &____must_checkpoint_scanBackward_r_0, "i32", (void *)(&r), (size_t)4, 0, 0, 0, "scanBackward|n|0", &____must_checkpoint_scanBackward_n_0, "i32", (void *)(&n), (size_t)4, 0, 0, 0, "scanBackward|m|0", &____must_checkpoint_scanBackward_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "scanBackward|j|0", &____must_checkpoint_scanBackward_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "scanBackward|i|0", &____must_checkpoint_scanBackward_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(28): { goto call_lbl_28; } case(74): { goto call_lbl_74; } default: { chimes_error(); } }  }  
+ if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_bestR_0 || ____must_checkpoint_scanBackward_i_0) { register_stack_vars(5, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0, "scanBackward|i|0", &____must_checkpoint_scanBackward_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(28): { goto call_lbl_28; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 9 len=5 freeB_resumable
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1485 162  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

@@ -1422,10 +1422,10 @@ extern void register_custom_init_handler(const char *obj_name,
 # 2 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(14294407443907813615UL)) ; int *alloc;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(14294407443907813619UL)) ; int *alloc;
  register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
-       alloc = ((int *)calloc_wrapper(10, sizeof(int), 14294407443907813600UL, 0, 0)) ;
+       alloc = ((int *)calloc_wrapper(10, sizeof(int), 14294407443907813601UL, 0, 0)) ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
@@ -1436,13 +1436,13 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
     alloc[1] = 3;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return alloc[1];
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (alloc[1]); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
-}
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(14294407443907813615UL)) ; int *alloc;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(14294407443907813619UL)) ; int *alloc;
  register_stack_vars(1, "main|alloc|0", (int *)0x0, "i32*", (void *)(&alloc), (size_t)8, 1, 0, 0); ; ;
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
-       alloc = ((int *)calloc_wrapper(10, sizeof(int), 14294407443907813600UL, 0, 0)) ;
+       alloc = ((int *)calloc_wrapper(10, sizeof(int), 14294407443907813601UL, 0, 0)) ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
@@ -1453,9 +1453,9 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
     alloc[1] = 3;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return alloc[1];
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (alloc[1]); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./calloc.cpp"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -1467,10 +1467,10 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 static int module_init() {
     init_module(14294407443907813589UL, 2, 1, 0, 2, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (14294407443907813589UL + 1UL), (14294407443907813589UL + 2UL), (14294407443907813589UL + 3UL), (14294407443907813589UL + 4UL), (14294407443907813589UL + 11UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (14294407443907813589UL + 11UL),
-                             (14294407443907813589UL + 3UL), (14294407443907813589UL + 26UL),
-                             (14294407443907813589UL + 4UL), (14294407443907813589UL + 11UL),
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (14294407443907813589UL + 1UL), (14294407443907813589UL + 2UL), (14294407443907813589UL + 3UL), (14294407443907813589UL + 4UL), (14294407443907813589UL + 12UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (14294407443907813589UL + 5UL), (14294407443907813589UL + 12UL),
+                             (14294407443907813589UL + 3UL), (14294407443907813589UL + 30UL),
+                             (14294407443907813589UL + 4UL), (14294407443907813589UL + 12UL),
                              "main", "main", 1, "checkpoint");
     return 0;
 }

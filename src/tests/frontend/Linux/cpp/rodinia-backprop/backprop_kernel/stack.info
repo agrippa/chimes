@@ -1,11 +1,13 @@
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c gettime|t|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 gettime
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c gettime|____chimes_ret_var_0|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c main|argc|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c main|argv|0 " i8** " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|net|0 " %struct.BPNN* " 64 1 0 1 bpnn_adjust_weights bpnn_hidden_error bpnn_layerforward bpnn_output_error
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c main|____chimes_ret_var_1|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|net|0 " %struct.BPNN* " 64 1 0 1 bpnn_adjust_weights bpnn_hidden_error bpnn_layerforward bpnn_output_error checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|eo|0 " float* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|eh|0 " float* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|in|0 " i32 " 32 0 0 1 bpnn_adjust_weights bpnn_hidden_error bpnn_layerforward bpnn_output_error
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|hid|0 " i32 " 32 0 0 1 bpnn_adjust_weights bpnn_hidden_error bpnn_layerforward bpnn_output_error
-/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|out|0 " i32 " 32 0 0 1 bpnn_adjust_weights bpnn_hidden_error bpnn_layerforward bpnn_output_error
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|in|0 " i32 " 32 0 0 1 bpnn_adjust_weights bpnn_hidden_error bpnn_layerforward bpnn_output_error checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|hid|0 " i32 " 32 0 0 1 bpnn_adjust_weights bpnn_hidden_error bpnn_layerforward bpnn_output_error checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|out|0 " i32 " 32 0 0 1 bpnn_adjust_weights bpnn_hidden_error bpnn_layerforward bpnn_output_error checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|out_err|0 " float " 32 0 0 1 bpnn_train_kernel
 /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c bpnn_train_kernel|hid_err|0 " float " 32 0 0 1 bpnn_train_kernel

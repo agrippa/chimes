@@ -1,3 +1,1 @@
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 5 : { 46, 47, 48, 49, 50, 61, 65, 91, 2999, 3626 } {  } call:gridInfo { gridInfo { 68, 69, 70, 71 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 1249 7 : { 50, 51, 52, 53, 54, 56, 57, 58, 59, 60, 62, 63, 64, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 496, 501, 506, 511, 516, 526, 636, 708, 730, 733, 828, 831, 1271 } {  } call:doScan {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 560 12 : { 1567 } {  } call:abs {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c 968 5 : { 50, 51, 52, 53, 54, 65, 69, 95, 3080, 3750 } {  } call:gridInfo { gridInfo { 72, 73, 74, 75 } }

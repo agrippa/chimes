@@ -1,88 +1,88 @@
-fopen write_data 48 8 37 172 1819
-printf write_data 50 3 0 1820
-fprintf write_data 58 7 0 37 1821 0
-fprintf write_data 59 7 0 37 1821 0
-fprintf write_data 60 7 0 37 1823 0
-fprintf write_data 61 7 0 37 1824 0
-fprintf write_data 64 6 0 37 1823 0
-fprintf write_data 65 6 0 37 1826 0
-fprintf write_data 67 8 0 37 1827 0
-fprintf write_data 69 6 0 37 1828
-fprintf write_data 72 8 0 37 1827 0
-fprintf write_data 74 6 0 37 1829 0
-fprintf write_data 77 8 0 37 1827 0
-fprintf write_data 79 6 0 37 1828
-fprintf write_data 82 8 0 37 1827 0
+fopen write_data 48 8 37 172 1837
+printf write_data 50 3 0 1838
+fprintf write_data 58 7 0 37 1839 0
+fprintf write_data 59 7 0 37 1839 0
+fprintf write_data 60 7 0 37 1841 0
+fprintf write_data 61 7 0 37 1842 0
+fprintf write_data 64 6 0 37 1841 0
+fprintf write_data 65 6 0 37 1844 0
+fprintf write_data 67 8 0 37 1845 0
+fprintf write_data 69 6 0 37 1846
+fprintf write_data 72 8 0 37 1845 0
+fprintf write_data 74 6 0 37 1847 0
+fprintf write_data 77 8 0 37 1845 0
+fprintf write_data 79 6 0 37 1846
+fprintf write_data 82 8 0 37 1845 0
 fclose write_data 89 2 0 37
-printf main 120 3 0 1830
+printf main 120 3 0 1848
 exit main 121 3 0 0
-AVI_open_input_file main 127 28 813 219 0
-AVI_print_error main 129 6 0 1831
-AVI_video_frames main 134 15 0 813
-AVI_video_height main 135 19 0 813
-AVI_video_width main 136 19 0 813
-atoi main 145 21 0 219
-printf main 147 3 0 1832 0 0
-atoi main 152 20 0 219
-printf main 154 5 0 1833
-printf main 158 2 0 1834 0
-malloc main 170 25 813 0
-malloc main 191 25 813 0
-malloc main 212 29 813 0
-malloc main 213 29 813 0
-malloc main 221 24 813 0
-malloc main 253 24 813 0
-malloc main 285 28 813 0
-malloc main 286 28 813 0
-malloc main 308 37 813 0
-malloc main 309 41 813 0
-malloc main 310 34 813 0
-malloc main 311 32 813 0
-malloc main 324 28 813 0
-malloc main 325 32 813 0
-malloc main 338 31 813 0
-malloc main 339 31 813 0
-malloc main 346 25 813 0
-malloc main 347 24 813 0
-malloc main 385 29 813 0
-malloc main 407 32 813 0
-malloc main 431 32 813 0
-malloc main 452 37 813 0
-malloc main 487 30 813 0
-malloc main 517 34 813 0
-printf main 524 2 0 1835
-fflush main 525 2 0 1837
-get_frame main 538 17 813 813 0 0 0 0
+AVI_open_input_file main 127 28 826 223 0
+AVI_print_error main 129 6 0 1849
+AVI_video_frames main 134 15 0 826
+AVI_video_height main 135 19 0 826
+AVI_video_width main 136 19 0 826
+atoi main 145 21 0 223
+printf main 147 3 0 1850 0 0
+atoi main 152 20 0 223
+printf main 154 5 0 1851
+printf main 158 2 0 1852 0
+malloc main 170 25 826 0
+malloc main 191 25 826 0
+malloc main 212 29 826 0
+malloc main 213 29 826 0
+malloc main 221 24 826 0
+malloc main 253 24 826 0
+malloc main 285 28 826 0
+malloc main 286 28 826 0
+malloc main 308 37 826 0
+malloc main 309 41 826 0
+malloc main 310 34 826 0
+malloc main 311 32 826 0
+malloc main 324 28 826 0
+malloc main 325 32 826 0
+malloc main 338 31 826 0
+malloc main 339 31 826 0
+malloc main 346 25 826 0
+malloc main 347 24 826 0
+malloc main 385 29 826 0
+malloc main 407 32 826 0
+malloc main 431 32 826 0
+malloc main 452 37 826 0
+malloc main 487 30 826 0
+malloc main 517 34 826 0
+printf main 524 2 0 1853
+fflush main 525 2 0 1855
+get_frame main 538 17 826 826 0 0 0 0
 omp_set_num_threads main 548 3 0 0
-memcpy main 553 4 0 199 194 0
-memcpy main 553 4 0 200 195 0
-kernel main 553 4 0 199 200
-free main 562 3 0 813
-printf main 568 3 0 1827 0
-fflush main 569 3 0 1837
-printf main 577 2 0 1828
-fflush main 578 2 0 1837
-free main 606 2 0 813
-free main 607 2 0 813
-free main 608 2 0 813
-free main 609 2 0 813
-free main 610 2 0 813
-free main 612 2 0 813
-free main 613 2 0 813
-free main 614 2 0 813
-free main 615 2 0 813
-free main 616 2 0 813
-free main 623 3 0 813
-free main 624 3 0 813
-free main 625 3 0 813
-free main 626 3 0 813
-free main 628 3 0 813
-free main 629 3 0 813
-free main 631 3 0 813
-free main 632 3 0 813
-free main 634 3 0 813
-free main 636 3 0 813
-free main 638 3 0 813
-free main 640 3 0 813
-free main 642 3 0 813
-free main 643 3 0 813
+memcpy main 553 4 0 202 194 0
+memcpy main 553 4 0 203 195 0
+kernel main 553 4 0 202 203
+free main 562 3 0 826
+printf main 568 3 0 1845 0
+fflush main 569 3 0 1855
+printf main 577 2 0 1846
+fflush main 578 2 0 1855
+free main 606 2 0 826
+free main 607 2 0 826
+free main 608 2 0 826
+free main 609 2 0 826
+free main 610 2 0 826
+free main 612 2 0 826
+free main 613 2 0 826
+free main 614 2 0 826
+free main 615 2 0 826
+free main 616 2 0 826
+free main 623 3 0 826
+free main 624 3 0 826
+free main 625 3 0 826
+free main 626 3 0 826
+free main 628 3 0 826
+free main 629 3 0 826
+free main 631 3 0 826
+free main 632 3 0 826
+free main 634 3 0 826
+free main 636 3 0 826
+free main 638 3 0 826
+free main 640 3 0 826
+free main 642 3 0 826
+free main 643 3 0 826

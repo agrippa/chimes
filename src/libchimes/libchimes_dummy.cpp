@@ -85,7 +85,7 @@ void onexit() {
 }
 #endif
 
-void init_chimes() {
+void init_chimes(int argc, char **argv) {
 #ifdef __CHIMES_PROFILE
     atexit(onexit);
 #endif

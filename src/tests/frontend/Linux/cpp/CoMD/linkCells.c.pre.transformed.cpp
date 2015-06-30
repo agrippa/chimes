@@ -53,6 +53,7 @@ static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
+static unsigned ____alias_loc_id_13;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -4105,11 +4106,11 @@ LinkCell* initLinkCells_npm(const Domain* domain, real_t cutoff);
 LinkCell* initLinkCells_quick(const Domain* domain, real_t cutoff); LinkCell* initLinkCells(const Domain* domain, real_t cutoff);
 LinkCell* initLinkCells_resumable(const Domain* domain, real_t cutoff)
 # 84 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302167UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302171UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 85 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    ((domain) ? static_cast<void> (0) : __assert_fail ("domain", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 85, __PRETTY_FUNCTION__));
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-    LinkCell *ll; ll = ((LinkCell *)malloc_wrapper(sizeof(LinkCell), 13307200203520301969UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms))) ;
+    LinkCell *ll; ll = ((LinkCell *)malloc_wrapper(sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms))) ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    { int i; for ( i = (0) ; i < 3; i++)
@@ -4142,32 +4143,32 @@ LinkCell* initLinkCells_resumable(const Domain* domain, real_t cutoff)
    ll->nTotalBoxes = ll->nLocalBoxes + ll->nHaloBoxes;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 105 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 13307200203520302135UL, 0, 0);
+   ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0);
 # 106 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    { int iBox; for ( iBox = (0) ;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
 # 108 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 109 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    (((ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)) ? static_cast<void> (0) : __assert_fail ("(ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 109, __PRETTY_FUNCTION__));
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   rm_stack(true, 13307200203520301969UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0); return ll;
+    LinkCell *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (ll); rm_stack(true, 13307200203520301970UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-}
+rm_stack(true, 13307200203520301970UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0); }
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 void destroyLinkCells_npm(LinkCell** boxes);
 void destroyLinkCells_quick(LinkCell** boxes); void destroyLinkCells(LinkCell** boxes);
 void destroyLinkCells_resumable(LinkCell** boxes)
 # 114 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(13307200203520302202UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(13307200203520302206UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 115 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    if (! boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 116 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 117 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 118 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   free_wrapper((*boxes)->nAtoms, 13307200203520302191UL);
+   free_wrapper((*boxes)->nAtoms, 13307200203520302195UL);
 # 119 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   free_wrapper(*boxes, 13307200203520302184UL);
+   free_wrapper(*boxes, 13307200203520302188UL);
 # 120 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    *boxes = __null;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4187,7 +4188,7 @@ int getNeighborBoxes_npm(LinkCell* boxes, int iBox, int* nbrBoxes);int getBoxFro
 int getNeighborBoxes_quick(LinkCell* boxes, int iBox, int* nbrBoxes); int getNeighborBoxes(LinkCell* boxes, int iBox, int* nbrBoxes);int getBoxFromTuple_quick(LinkCell* boxes, int ix, int iy, int iz); int getBoxFromTuple(LinkCell* boxes, int ix, int iy, int iz);void getTuple_quick(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp); void getTuple(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp);
 int getNeighborBoxes_resumable(LinkCell* boxes, int iBox, int* nbrBoxes)
 # 132 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&getNeighborBoxes), "getNeighborBoxes", &____must_manage_getNeighborBoxes, 3, 0, (size_t)(13307200203520302287UL), (size_t)(0UL), (size_t)(13307200203520302289UL)) ; int ix;
+{const int ____chimes_did_disable2 = new_stack((void *)(&getNeighborBoxes), "getNeighborBoxes", &____must_manage_getNeighborBoxes, 3, 0, (size_t)(13307200203520302295UL), (size_t)(0UL), (size_t)(13307200203520302297UL)) ; int ix;
  if (____must_checkpoint_getNeighborBoxes_ix_0) { register_stack_vars(1, "getNeighborBoxes|ix|0", &____must_checkpoint_getNeighborBoxes_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 133 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     int iy; int iz; ;
@@ -4212,9 +4213,9 @@ int getNeighborBoxes_resumable(LinkCell* boxes, int iBox, int* nbrBoxes)
    } }
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2); return count;
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (count); rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2); return ____chimes_ret_var_1; ;
 # 146 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-}
+rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2); }
 # 159 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 159 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 void putAtomInBox_npm(LinkCell* boxes, Atoms* atoms, const int gid, const int iType, const real_t x, const real_t y, const real_t z, const real_t px, const real_t py, const real_t pz);int getBoxFromCoord_npm(LinkCell* boxes, real_t rr[3]);
@@ -4227,7 +4228,7 @@ void putAtomInBox_resumable(LinkCell* boxes, Atoms* atoms,
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
                   const real_t px, const real_t py, const real_t pz)
 # 163 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&putAtomInBox), "putAtomInBox", &____must_manage_putAtomInBox, 10, 0, (size_t)(13307200203520302992UL), (size_t)(13307200203520302993UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; real_t xyz[3];
+{const int ____chimes_did_disable3 = new_stack((void *)(&putAtomInBox), "putAtomInBox", &____must_manage_putAtomInBox, 10, 0, (size_t)(13307200203520303004UL), (size_t)(13307200203520303005UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; real_t xyz[3];
  if (____must_checkpoint_putAtomInBox_xyz_0) { register_stack_vars(1, "putAtomInBox|xyz|0", &____must_checkpoint_putAtomInBox_xyz_0, "[3 x double]", (void *)(xyz), (size_t)24, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 164 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     ; xyz[0] = x; xyz[1] = y; xyz[2] = z;
@@ -4275,7 +4276,7 @@ rm_stack(false, 0UL, "putAtomInBox", &____must_manage_putAtomInBox, ____alias_lo
 # 193 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 int getBoxFromTuple_resumable(LinkCell* boxes, int ix, int iy, int iz)
 # 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&getBoxFromTuple), "getBoxFromTuple", &____must_manage_getBoxFromTuple, 4, 0, (size_t)(13307200203520302823UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&getBoxFromTuple), "getBoxFromTuple", &____must_manage_getBoxFromTuple, 4, 0, (size_t)(13307200203520302832UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     int iBox; iBox = (0) ;
 # 196 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4331,9 +4332,9 @@ int getBoxFromTuple_resumable(LinkCell* boxes, int ix, int iy, int iz)
    ((iBox < boxes->nTotalBoxes) ? static_cast<void> (0) : __assert_fail ("iBox < boxes->nTotalBoxes", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 237, __PRETTY_FUNCTION__));
 # 238 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 239 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4); return iBox;
+    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (iBox); rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4); return ____chimes_ret_var_2; ;
 # 240 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-}
+rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4); }
 # 241 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 242 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 243 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4344,7 +4345,7 @@ void moveAtom_npm(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox);vo
 void moveAtom_quick(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox); void moveAtom(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox);void copyAtom_quick(LinkCell* boxes, Atoms* atoms, int iAtom, int iBox, int jAtom, int jBox); void copyAtom(LinkCell* boxes, Atoms* atoms, int iAtom, int iBox, int jAtom, int jBox);
 void moveAtom_resumable(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox)
 # 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&moveAtom), "moveAtom", &____must_manage_moveAtom, 5, 0, (size_t)(13307200203520303224UL), (size_t)(13307200203520303265UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable5 = new_stack((void *)(&moveAtom), "moveAtom", &____must_manage_moveAtom, 5, 0, (size_t)(13307200203520303240UL), (size_t)(13307200203520303281UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     int nj; nj = (boxes->nAtoms[jBox]) ;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4375,7 +4376,7 @@ void updateLinkCells_npm(LinkCell* boxes, Atoms* atoms);void emptyHaloCells_npm(
 void updateLinkCells_quick(LinkCell* boxes, Atoms* atoms); void updateLinkCells(LinkCell* boxes, Atoms* atoms);void emptyHaloCells_quick(LinkCell* boxes); void emptyHaloCells(LinkCell* boxes);
 void updateLinkCells_resumable(LinkCell* boxes, Atoms* atoms)
 # 278 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(13307200203520303469UL), (size_t)(13307200203520303470UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(13307200203520303485UL), (size_t)(13307200203520303486UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 279 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); });
 # 280 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4408,7 +4409,7 @@ int maxOccupancy_npm(LinkCell* boxes);static void (*____chimes_extern_func_maxIn
 int maxOccupancy_quick(LinkCell* boxes); int maxOccupancy(LinkCell* boxes);
 int maxOccupancy_resumable(LinkCell* boxes)
 # 298 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303532UL)) ; int localMax;
+{const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303549UL)) ; int localMax;
  if (____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(1, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 299 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
       localMax = (0) ;
@@ -4421,14 +4422,14 @@ int maxOccupancy_resumable(LinkCell* boxes)
 # 305 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 306 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-    call_lbl_2: ({ calling((void*)maxIntParallel, 2, ____alias_loc_id_0, 0UL, 3, (size_t)(13307200203520303502UL), (size_t)(13307200203520303504UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) ;
+    call_lbl_2: ({ calling((void*)maxIntParallel, 2, ____alias_loc_id_0, 0UL, 3, (size_t)(13307200203520303518UL), (size_t)(13307200203520303520UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) ;
 # 307 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 308 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 309 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, 0, ____chimes_did_disable7); return globalMax;
+    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (globalMax); rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, ____alias_loc_id_13, ____chimes_did_disable7); return ____chimes_ret_var_3; ;
 # 310 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-}
+rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, ____alias_loc_id_13, ____chimes_did_disable7); }
 # 311 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 312 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 313 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4436,7 +4437,7 @@ int maxOccupancy_resumable(LinkCell* boxes)
 # 315 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 void copyAtom_resumable(LinkCell* boxes, Atoms* atoms, int iAtom, int iBox, int jAtom, int jBox)
 # 316 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&copyAtom), "copyAtom", &____must_manage_copyAtom, 6, 0, (size_t)(13307200203520303390UL), (size_t)(13307200203520303391UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&copyAtom), "copyAtom", &____must_manage_copyAtom, 6, 0, (size_t)(13307200203520303406UL), (size_t)(13307200203520303407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 317 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     int iOff; iOff = (64 * iBox + iAtom) ;
 # 318 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4459,7 +4460,7 @@ rm_stack(false, 0UL, "copyAtom", &____must_manage_copyAtom, ____alias_loc_id_10,
 # 337 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 int getBoxFromCoord_resumable(LinkCell* boxes, real_t rr[3])
 # 338 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(13307200203520303165UL), (size_t)(13307200203520303166UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(13307200203520303181UL), (size_t)(13307200203520303182UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 339 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     const real_t *localMin; localMin = (boxes->localMin) ;
 # 340 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4498,15 +4499,15 @@ int getBoxFromCoord_resumable(LinkCell* boxes, real_t rr[3])
 # 368 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     int result; result = (({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })) ;
 # 369 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9); return result;
+    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (result); rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9); return ____chimes_ret_var_4; ;
 # 370 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-}
+rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9); }
 # 371 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 372 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 373 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 void emptyHaloCells_resumable(LinkCell* boxes)
 # 374 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(13307200203520303500UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(13307200203520303516UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 375 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    { int ii; for ( ii = (boxes->nLocalBoxes) ;ii<boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
 # 377 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4515,7 +4516,7 @@ rm_stack(false, 0UL, "emptyHaloCells", &____must_manage_emptyHaloCells, ____alia
 # 387 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 void getTuple_resumable(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 # 388 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&getTuple), "getTuple", &____must_manage_getTuple, 5, 0, (size_t)(13307200203520302567UL), (size_t)(0UL), (size_t)(13307200203520302569UL), (size_t)(13307200203520302570UL), (size_t)(13307200203520302571UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&getTuple), "getTuple", &____must_manage_getTuple, 5, 0, (size_t)(13307200203520302575UL), (size_t)(0UL), (size_t)(13307200203520302577UL), (size_t)(13307200203520302578UL), (size_t)(13307200203520302579UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 389 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    int ix; int iy; int iz; ;
 # 390 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4650,11 +4651,11 @@ void getTuple_resumable(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 rm_stack(false, 0UL, "getTuple", &____must_manage_getTuple, ____alias_loc_id_5, ____chimes_did_disable11); }
 LinkCell* initLinkCells_quick(const Domain* domain, real_t cutoff)
 # 84 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302167UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&initLinkCells), "initLinkCells", &____must_manage_initLinkCells, 2, 0, (size_t)(13307200203520302171UL), (size_t)(0UL)) ; ; ;
 # 85 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    ((domain) ? static_cast<void> (0) : __assert_fail ("domain", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 85, __PRETTY_FUNCTION__));
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-    LinkCell *ll; ll = ((LinkCell *)malloc_wrapper(sizeof(LinkCell), 13307200203520301969UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms))) ;
+    LinkCell *ll; ll = ((LinkCell *)malloc_wrapper(sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms))) ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    { int i; for ( i = (0) ; i < 3; i++)
@@ -4687,31 +4688,31 @@ LinkCell* initLinkCells_quick(const Domain* domain, real_t cutoff)
    ll->nTotalBoxes = ll->nLocalBoxes + ll->nHaloBoxes;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 105 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 13307200203520302135UL, 0, 0);
+   ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0);
 # 106 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    { int iBox; for ( iBox = (0) ;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; } };
 # 108 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 109 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    (((ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)) ? static_cast<void> (0) : __assert_fail ("(ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 109, __PRETTY_FUNCTION__));
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   rm_stack(true, 13307200203520301969UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0); return ll;
+    LinkCell *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (ll); rm_stack(true, 13307200203520301970UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-}
+rm_stack(true, 13307200203520301970UL, "initLinkCells", &____must_manage_initLinkCells, ____alias_loc_id_2, ____chimes_did_disable0); }
 
 LinkCell* initLinkCells(const Domain* domain, real_t cutoff) { return (____chimes_replaying ? initLinkCells_resumable(domain, cutoff) : initLinkCells_quick(domain, cutoff)); }
 
 void destroyLinkCells_quick(LinkCell** boxes)
 # 114 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(13307200203520302202UL)) ; ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&destroyLinkCells), "destroyLinkCells", &____must_manage_destroyLinkCells, 1, 0, (size_t)(13307200203520302206UL)) ; ; ;
 # 115 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    if (! boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 116 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    if (! *boxes) {rm_stack(false, 0UL, "destroyLinkCells", &____must_manage_destroyLinkCells, ____alias_loc_id_3, ____chimes_did_disable1); return; };
 # 117 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 118 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   free_wrapper((*boxes)->nAtoms, 13307200203520302191UL);
+   free_wrapper((*boxes)->nAtoms, 13307200203520302195UL);
 # 119 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   free_wrapper(*boxes, 13307200203520302184UL);
+   free_wrapper(*boxes, 13307200203520302188UL);
 # 120 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    *boxes = __null;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4724,7 +4725,7 @@ void destroyLinkCells(LinkCell** boxes) { (____chimes_replaying ? destroyLinkCel
 
 int getNeighborBoxes_quick(LinkCell* boxes, int iBox, int* nbrBoxes)
 # 132 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&getNeighborBoxes), "getNeighborBoxes", &____must_manage_getNeighborBoxes, 3, 0, (size_t)(13307200203520302287UL), (size_t)(0UL), (size_t)(13307200203520302289UL)) ; int ix;
+{const int ____chimes_did_disable2 = new_stack((void *)(&getNeighborBoxes), "getNeighborBoxes", &____must_manage_getNeighborBoxes, 3, 0, (size_t)(13307200203520302295UL), (size_t)(0UL), (size_t)(13307200203520302297UL)) ; int ix;
  if (____must_checkpoint_getNeighborBoxes_ix_0) { register_stack_vars(1, "getNeighborBoxes|ix|0", &____must_checkpoint_getNeighborBoxes_ix_0, "i32", (void *)(&ix), (size_t)4, 0, 0, 0); } ; ;
 # 133 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     int iy; int iz; ;
@@ -4749,9 +4750,9 @@ int getNeighborBoxes_quick(LinkCell* boxes, int iBox, int* nbrBoxes)
    } }
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2); return count;
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (count); rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2); return ____chimes_ret_var_1; ;
 # 146 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-}
+rm_stack(false, 0UL, "getNeighborBoxes", &____must_manage_getNeighborBoxes, ____alias_loc_id_4, ____chimes_did_disable2); }
 
 int getNeighborBoxes(LinkCell* boxes, int iBox, int* nbrBoxes) { return (____chimes_replaying ? getNeighborBoxes_resumable(boxes, iBox, nbrBoxes) : getNeighborBoxes_quick(boxes, iBox, nbrBoxes)); }
 
@@ -4763,7 +4764,7 @@ void putAtomInBox_quick(LinkCell* boxes, Atoms* atoms,
 # 162 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
                   const real_t px, const real_t py, const real_t pz)
 # 163 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&putAtomInBox), "putAtomInBox", &____must_manage_putAtomInBox, 10, 0, (size_t)(13307200203520302992UL), (size_t)(13307200203520302993UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; real_t xyz[3];
+{const int ____chimes_did_disable3 = new_stack((void *)(&putAtomInBox), "putAtomInBox", &____must_manage_putAtomInBox, 10, 0, (size_t)(13307200203520303004UL), (size_t)(13307200203520303005UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; real_t xyz[3];
  if (____must_checkpoint_putAtomInBox_xyz_0) { register_stack_vars(1, "putAtomInBox|xyz|0", &____must_checkpoint_putAtomInBox_xyz_0, "[3 x double]", (void *)(xyz), (size_t)24, 0, 0, 0); } ; ;
 # 164 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     ; xyz[0] = x; xyz[1] = y; xyz[2] = z;
@@ -4812,7 +4813,7 @@ void putAtomInBox(LinkCell* boxes, Atoms* atoms,
 
 int getBoxFromTuple_quick(LinkCell* boxes, int ix, int iy, int iz)
 # 194 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&getBoxFromTuple), "getBoxFromTuple", &____must_manage_getBoxFromTuple, 4, 0, (size_t)(13307200203520302823UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&getBoxFromTuple), "getBoxFromTuple", &____must_manage_getBoxFromTuple, 4, 0, (size_t)(13307200203520302832UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 195 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     int iBox; iBox = (0) ;
 # 196 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4868,15 +4869,15 @@ int getBoxFromTuple_quick(LinkCell* boxes, int ix, int iy, int iz)
    ((iBox < boxes->nTotalBoxes) ? static_cast<void> (0) : __assert_fail ("iBox < boxes->nTotalBoxes", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 237, __PRETTY_FUNCTION__));
 # 238 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 239 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4); return iBox;
+    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (iBox); rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4); return ____chimes_ret_var_2; ;
 # 240 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-}
+rm_stack(false, 0UL, "getBoxFromTuple", &____must_manage_getBoxFromTuple, ____alias_loc_id_6, ____chimes_did_disable4); }
 
 int getBoxFromTuple(LinkCell* boxes, int ix, int iy, int iz) { return (____chimes_replaying ? getBoxFromTuple_resumable(boxes, ix, iy, iz) : getBoxFromTuple_quick(boxes, ix, iy, iz)); }
 
 void moveAtom_quick(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox)
 # 247 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&moveAtom), "moveAtom", &____must_manage_moveAtom, 5, 0, (size_t)(13307200203520303224UL), (size_t)(13307200203520303265UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable5 = new_stack((void *)(&moveAtom), "moveAtom", &____must_manage_moveAtom, 5, 0, (size_t)(13307200203520303240UL), (size_t)(13307200203520303281UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     int nj; nj = (boxes->nAtoms[jBox]) ;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4906,7 +4907,7 @@ void moveAtom(LinkCell* boxes, Atoms* atoms, int iId, int iBox, int jBox) { (___
 
 void updateLinkCells_quick(LinkCell* boxes, Atoms* atoms)
 # 278 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(13307200203520303469UL), (size_t)(13307200203520303470UL)) ; ; ;
+{const int ____chimes_did_disable6 = new_stack((void *)(&updateLinkCells), "updateLinkCells", &____must_manage_updateLinkCells, 2, 0, (size_t)(13307200203520303485UL), (size_t)(13307200203520303486UL)) ; ; ;
 # 279 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    ({ calling_npm("emptyHaloCells", 0); emptyHaloCells_npm(boxes); });
 # 280 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4937,7 +4938,7 @@ void updateLinkCells(LinkCell* boxes, Atoms* atoms) { (____chimes_replaying ? up
 
 int maxOccupancy_quick(LinkCell* boxes)
 # 298 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303532UL)) ; int localMax;
+{const int ____chimes_did_disable7 = new_stack((void *)(&maxOccupancy), "maxOccupancy", &____must_manage_maxOccupancy, 1, 0, (size_t)(13307200203520303549UL)) ; int localMax;
  if (____must_checkpoint_maxOccupancy_localMax_0) { register_stack_vars(1, "maxOccupancy|localMax|0", &____must_checkpoint_maxOccupancy_localMax_0, "i32", (void *)(&localMax), (size_t)4, 0, 0, 0); } ; ;
 # 299 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
       localMax = (0) ;
@@ -4950,20 +4951,20 @@ int maxOccupancy_quick(LinkCell* boxes)
 # 305 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    do { call_lbl_1: ({ calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) ; } while(0);
 # 306 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-    call_lbl_2: ({ calling((void*)maxIntParallel, 2, ____alias_loc_id_0, 0UL, 3, (size_t)(13307200203520303502UL), (size_t)(13307200203520303504UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) ;
+    call_lbl_2: ({ calling((void*)maxIntParallel, 2, ____alias_loc_id_0, 0UL, 3, (size_t)(13307200203520303518UL), (size_t)(13307200203520303520UL), (size_t)(0UL)); (maxIntParallel)(&localMax, &globalMax, 1); }) ;
 # 307 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    do { call_lbl_3: ({ calling((void*)profileStop, 3, 0, 0UL, 1, (size_t)(0UL)); (profileStop)(commReduceTimer); }) ; } while(0);
 # 308 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 309 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, 0, ____chimes_did_disable7); return globalMax;
+    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (globalMax); rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, ____alias_loc_id_13, ____chimes_did_disable7); return ____chimes_ret_var_3; ;
 # 310 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-}
+rm_stack(false, 0UL, "maxOccupancy", &____must_manage_maxOccupancy, ____alias_loc_id_13, ____chimes_did_disable7); }
 
 int maxOccupancy(LinkCell* boxes) { return (____chimes_replaying ? maxOccupancy_resumable(boxes) : maxOccupancy_quick(boxes)); }
 
 void copyAtom_quick(LinkCell* boxes, Atoms* atoms, int iAtom, int iBox, int jAtom, int jBox)
 # 316 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&copyAtom), "copyAtom", &____must_manage_copyAtom, 6, 0, (size_t)(13307200203520303390UL), (size_t)(13307200203520303391UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&copyAtom), "copyAtom", &____must_manage_copyAtom, 6, 0, (size_t)(13307200203520303406UL), (size_t)(13307200203520303407UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 317 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     int iOff; iOff = (64 * iBox + iAtom) ;
 # 318 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -4987,7 +4988,7 @@ void copyAtom(LinkCell* boxes, Atoms* atoms, int iAtom, int iBox, int jAtom, int
 
 int getBoxFromCoord_quick(LinkCell* boxes, real_t rr[3])
 # 338 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(13307200203520303165UL), (size_t)(13307200203520303166UL)) ; ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&getBoxFromCoord), "getBoxFromCoord", &____must_manage_getBoxFromCoord, 2, 0, (size_t)(13307200203520303181UL), (size_t)(13307200203520303182UL)) ; ; ;
 # 339 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     const real_t *localMin; localMin = (boxes->localMin) ;
 # 340 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -5026,15 +5027,15 @@ int getBoxFromCoord_quick(LinkCell* boxes, real_t rr[3])
 # 368 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
     int result; result = (({ calling_npm("getBoxFromTuple", 0); getBoxFromTuple_npm(boxes, ix, iy, iz); })) ;
 # 369 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9); return result;
+    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (result); rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9); return ____chimes_ret_var_4; ;
 # 370 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-}
+rm_stack(false, 0UL, "getBoxFromCoord", &____must_manage_getBoxFromCoord, ____alias_loc_id_8, ____chimes_did_disable9); }
 
 int getBoxFromCoord(LinkCell* boxes, real_t rr[3]) { return (____chimes_replaying ? getBoxFromCoord_resumable(boxes, rr) : getBoxFromCoord_quick(boxes, rr)); }
 
 void emptyHaloCells_quick(LinkCell* boxes)
 # 374 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(13307200203520303500UL)) ; ; ;
+{const int ____chimes_did_disable10 = new_stack((void *)(&emptyHaloCells), "emptyHaloCells", &____must_manage_emptyHaloCells, 1, 0, (size_t)(13307200203520303516UL)) ; ; ;
 # 375 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    { int ii; for ( ii = (boxes->nLocalBoxes) ;ii<boxes->nTotalBoxes; ++ii) { boxes->nAtoms[ii] = 0; } };
 # 377 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -5044,7 +5045,7 @@ void emptyHaloCells(LinkCell* boxes) { (____chimes_replaying ? emptyHaloCells_re
 
 void getTuple_quick(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 # 388 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&getTuple), "getTuple", &____must_manage_getTuple, 5, 0, (size_t)(13307200203520302567UL), (size_t)(0UL), (size_t)(13307200203520302569UL), (size_t)(13307200203520302570UL), (size_t)(13307200203520302571UL)) ; ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&getTuple), "getTuple", &____must_manage_getTuple, 5, 0, (size_t)(13307200203520302575UL), (size_t)(0UL), (size_t)(13307200203520302577UL), (size_t)(13307200203520302578UL), (size_t)(13307200203520302579UL)) ; ; ;
 # 389 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    int ix; int iy; int iz; ;
 # 390 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -5188,7 +5189,7 @@ LinkCell* initLinkCells_npm(const Domain* domain, real_t cutoff)
 # 85 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    ((domain) ? static_cast<void> (0) : __assert_fail ("domain", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 85, __PRETTY_FUNCTION__));
 # 86 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   LinkCell* ll = (LinkCell*)malloc_wrapper(sizeof(LinkCell), 13307200203520301969UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms));
+   LinkCell* ll = (LinkCell*)malloc_wrapper(sizeof(LinkCell), 13307200203520301970UL, 0, 1, (int)sizeof(struct LinkCellSt), 1, (int)__builtin_offsetof(struct LinkCellSt, nAtoms));
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    for (int i = 0; i < 3; i++)
@@ -5221,14 +5222,14 @@ LinkCell* initLinkCells_npm(const Domain* domain, real_t cutoff)
    ll->nTotalBoxes = ll->nLocalBoxes + ll->nHaloBoxes;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 105 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 13307200203520302135UL, 0, 0);
+   ll->nAtoms = (int*)malloc_wrapper(ll->nTotalBoxes*sizeof(int), 13307200203520302136UL, 0, 0);
 # 106 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    for (int iBox=0;iBox<ll->nTotalBoxes; ++iBox) { ll->nAtoms[iBox] = 0; };
 # 108 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 109 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    (((ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)) ? static_cast<void> (0) : __assert_fail ("(ll->gridSize[0] >= 2) && (ll->gridSize[1] >= 2) && (ll->gridSize[2] >= 2)", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 109, __PRETTY_FUNCTION__));
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   return ll;
+    LinkCell * ____chimes_ret_var_0; ____chimes_ret_var_0 = (ll); return ____chimes_ret_var_0; ;
 # 111 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 
@@ -5241,9 +5242,9 @@ void destroyLinkCells_npm(LinkCell** boxes)
    if (! *boxes) {return; };
 # 117 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 118 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   free_wrapper((*boxes)->nAtoms, 13307200203520302191UL);
+   free_wrapper((*boxes)->nAtoms, 13307200203520302195UL);
 # 119 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   free_wrapper(*boxes, 13307200203520302184UL);
+   free_wrapper(*boxes, 13307200203520302188UL);
 # 120 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    *boxes = __null;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
@@ -5278,7 +5279,7 @@ int getNeighborBoxes_npm(LinkCell* boxes, int iBox, int* nbrBoxes)
    }
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   return count;
+    int ____chimes_ret_var_1; ____chimes_ret_var_1 = (count); return ____chimes_ret_var_1; ;
 # 146 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 
@@ -5386,7 +5387,7 @@ int getBoxFromTuple_npm(LinkCell* boxes, int ix, int iy, int iz)
    ((iBox < boxes->nTotalBoxes) ? static_cast<void> (0) : __assert_fail ("iBox < boxes->nTotalBoxes", "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c", 237, __PRETTY_FUNCTION__));
 # 238 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 239 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   return iBox;
+    int ____chimes_ret_var_2; ____chimes_ret_var_2 = (iBox); return ____chimes_ret_var_2; ;
 # 240 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 
@@ -5466,7 +5467,7 @@ int maxOccupancy_npm(LinkCell* boxes)
    do { (*____chimes_extern_func_profileStop)(commReduceTimer); } while(0);
 # 308 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 # 309 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   return globalMax;
+    int ____chimes_ret_var_3; ____chimes_ret_var_3 = (globalMax); return ____chimes_ret_var_3; ;
 # 310 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 
@@ -5533,7 +5534,7 @@ int getBoxFromCoord_npm(LinkCell* boxes, real_t rr[3])
 # 368 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
    int result = getBoxFromTuple_npm(boxes, ix, iy, iz);
 # 369 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
-   return result;
+    int ____chimes_ret_var_4; ____chimes_ret_var_4 = (result); return ____chimes_ret_var_4; ;
 # 370 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/linkCells.c"
 }
 
@@ -5686,32 +5687,33 @@ void getTuple_npm(LinkCell* boxes, int iBox, int* ixp, int* iyp, int* izp)
 
 
 static int module_init() {
-    init_module(13307200203520301951UL, 38, 12, 3, 13, 12, 3, 15, 9, 0, 4,
-                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "maxIntParallel", (unsigned)2, (13307200203520301951UL + 1551UL), (13307200203520301951UL + 1553UL),
-                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1550UL), (13307200203520301951UL + 1551UL), (13307200203520301951UL + 1552UL),
-                           &____alias_loc_id_2, (unsigned)7, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1UL), (13307200203520301951UL + 2UL), (13307200203520301951UL + 3UL), (13307200203520301951UL + 4UL), (13307200203520301951UL + 5UL), (13307200203520301951UL + 18UL), (13307200203520301951UL + 184UL),
-                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (13307200203520301951UL + 225UL), (13307200203520301951UL + 251UL),
-                           &____alias_loc_id_4, (unsigned)8, (unsigned)0, (unsigned)0, (13307200203520301951UL + 253UL), (13307200203520301951UL + 254UL), (13307200203520301951UL + 255UL), (13307200203520301951UL + 259UL), (13307200203520301951UL + 260UL), (13307200203520301951UL + 261UL), (13307200203520301951UL + 262UL), (13307200203520301951UL + 338UL),
-                           &____alias_loc_id_5, (unsigned)13, (unsigned)0, (unsigned)0, (13307200203520301951UL + 339UL), (13307200203520301951UL + 340UL), (13307200203520301951UL + 341UL), (13307200203520301951UL + 342UL), (13307200203520301951UL + 343UL), (13307200203520301951UL + 344UL), (13307200203520301951UL + 345UL), (13307200203520301951UL + 346UL), (13307200203520301951UL + 347UL), (13307200203520301951UL + 348UL), (13307200203520301951UL + 618UL), (13307200203520301951UL + 619UL), (13307200203520301951UL + 620UL),
-                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)0, (13307200203520301951UL + 621UL), (13307200203520301951UL + 622UL), (13307200203520301951UL + 623UL), (13307200203520301951UL + 624UL), (13307200203520301951UL + 625UL), (13307200203520301951UL + 626UL),
-                           &____alias_loc_id_7, (unsigned)16, (unsigned)0, (unsigned)0, (13307200203520301951UL + 887UL), (13307200203520301951UL + 888UL), (13307200203520301951UL + 889UL), (13307200203520301951UL + 890UL), (13307200203520301951UL + 891UL), (13307200203520301951UL + 892UL), (13307200203520301951UL + 893UL), (13307200203520301951UL + 894UL), (13307200203520301951UL + 895UL), (13307200203520301951UL + 896UL), (13307200203520301951UL + 897UL), (13307200203520301951UL + 898UL), (13307200203520301951UL + 899UL), (13307200203520301951UL + 943UL), (13307200203520301951UL + 975UL), (13307200203520301951UL + 1042UL),
-                           &____alias_loc_id_8, (unsigned)9, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1051UL), (13307200203520301951UL + 1052UL), (13307200203520301951UL + 1053UL), (13307200203520301951UL + 1054UL), (13307200203520301951UL + 1055UL), (13307200203520301951UL + 1056UL), (13307200203520301951UL + 1057UL), (13307200203520301951UL + 1058UL), (13307200203520301951UL + 1059UL),
-                           &____alias_loc_id_9, (unsigned)9, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1216UL), (13307200203520301951UL + 1217UL), (13307200203520301951UL + 1218UL), (13307200203520301951UL + 1219UL), (13307200203520301951UL + 1220UL), (13307200203520301951UL + 1221UL), (13307200203520301951UL + 1222UL), (13307200203520301951UL + 1275UL), (13307200203520301951UL + 1314UL),
-                            &____alias_loc_id_10, (unsigned)9, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1318UL), (13307200203520301951UL + 1319UL), (13307200203520301951UL + 1320UL), (13307200203520301951UL + 1321UL), (13307200203520301951UL + 1322UL), (13307200203520301951UL + 1323UL), (13307200203520301951UL + 1324UL), (13307200203520301951UL + 1325UL), (13307200203520301951UL + 1354UL),
-                            &____alias_loc_id_11, (unsigned)6, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1445UL), (13307200203520301951UL + 1446UL), (13307200203520301951UL + 1447UL), (13307200203520301951UL + 1448UL), (13307200203520301951UL + 1449UL), (13307200203520301951UL + 1450UL),
-                            &____alias_loc_id_12, (unsigned)3, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1520UL), (13307200203520301951UL + 1521UL), (13307200203520301951UL + 1540UL),
-                            "initLinkCells", (void *)(&initLinkCells_npm), (void *)__null, 0, 2, (13307200203520301951UL + 216UL), 0UL, (13307200203520301951UL + 18UL), 4, "__assert_fail", 4, (13307200203520301951UL + 1616UL), (13307200203520301951UL + 1617UL), 0UL, (13307200203520301951UL + 1618UL), 0UL, "malloc", 1, 0UL, (13307200203520301951UL + 18UL), "malloc", 1, 0UL, (13307200203520301951UL + 184UL), "__assert_fail", 4, (13307200203520301951UL + 1619UL), (13307200203520301951UL + 1617UL), 0UL, (13307200203520301951UL + 1618UL), 0UL,
-                            "destroyLinkCells", (void *)(&destroyLinkCells_npm), (void *)__null, 0, 1, (13307200203520301951UL + 251UL), 0UL, 2, "free", 1, (13307200203520301951UL + 240UL), 0UL, "free", 1, (13307200203520301951UL + 233UL), 0UL,
-                            "getNeighborBoxes", (void *)(&getNeighborBoxes_npm), (void *)__null, 0, 3, (13307200203520301951UL + 336UL), 0UL, (13307200203520301951UL + 338UL), 0UL, 2, "getTuple", 5, (13307200203520301951UL + 336UL), 0UL, (13307200203520301951UL + 256UL), (13307200203520301951UL + 257UL), (13307200203520301951UL + 258UL), 0UL, "getBoxFromTuple", 4, (13307200203520301951UL + 336UL), 0UL, 0UL, 0UL, 0UL,
-                            "putAtomInBox", (void *)(&putAtomInBox_npm), (void *)__null, 0, 10, (13307200203520301951UL + 1041UL), (13307200203520301951UL + 1042UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 1, "getBoxFromCoord", 2, (13307200203520301951UL + 1041UL), (13307200203520301951UL + 897UL), 0UL,
-                            "getBoxFromTuple", (void *)(&getBoxFromTuple_npm), (void *)__null, 0, 4, (13307200203520301951UL + 872UL), 0UL, 0UL, 0UL, 0UL, 2, "__assert_fail", 4, (13307200203520301951UL + 1620UL), (13307200203520301951UL + 1617UL), 0UL, (13307200203520301951UL + 1621UL), 0UL, "__assert_fail", 4, (13307200203520301951UL + 1622UL), (13307200203520301951UL + 1617UL), 0UL, (13307200203520301951UL + 1621UL), 0UL,
-                            "moveAtom", (void *)(&moveAtom_npm), (void *)__null, 0, 5, (13307200203520301951UL + 1273UL), (13307200203520301951UL + 1314UL), 0UL, 0UL, 0UL, 0UL, 3, "copyAtom", 6, (13307200203520301951UL + 1273UL), (13307200203520301951UL + 1314UL), 0UL, 0UL, 0UL, 0UL, 0UL, "__assert_fail", 4, (13307200203520301951UL + 1623UL), (13307200203520301951UL + 1617UL), 0UL, (13307200203520301951UL + 1624UL), 0UL, "copyAtom", 6, (13307200203520301951UL + 1273UL), (13307200203520301951UL + 1314UL), 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "updateLinkCells", (void *)(&updateLinkCells_npm), (void *)__null, 0, 2, (13307200203520301951UL + 1518UL), (13307200203520301951UL + 1519UL), 0UL, 3, "emptyHaloCells", 1, (13307200203520301951UL + 1518UL), 0UL, "getBoxFromCoord", 2, (13307200203520301951UL + 1518UL), (13307200203520301951UL + 1491UL), 0UL, "moveAtom", 5, (13307200203520301951UL + 1518UL), (13307200203520301951UL + 1519UL), 0UL, 0UL, 0UL, 0UL,
-                            "maxOccupancy", (void *)(&maxOccupancy_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 1, (13307200203520301951UL + 1581UL), 0UL, 3, "profileStart", 1, 0UL, 0UL, "maxIntParallel", 3, (13307200203520301951UL + 1551UL), (13307200203520301951UL + 1553UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL,
-                            "copyAtom", (void *)(&copyAtom_npm), (void *)__null, 0, 6, (13307200203520301951UL + 1439UL), (13307200203520301951UL + 1440UL), 0UL, 0UL, 0UL, 0UL, 0UL, 4, "memcpy", 3, (13307200203520301951UL + 1354UL), (13307200203520301951UL + 1354UL), 0UL, 0UL, "memcpy", 3, (13307200203520301951UL + 1354UL), (13307200203520301951UL + 1354UL), 0UL, 0UL, "memcpy", 3, (13307200203520301951UL + 1354UL), (13307200203520301951UL + 1354UL), 0UL, 0UL, "memcpy", 3, (13307200203520301951UL + 1354UL), (13307200203520301951UL + 1354UL), 0UL, 0UL,
-                            "getBoxFromCoord", (void *)(&getBoxFromCoord_npm), (void *)__null, 0, 2, (13307200203520301951UL + 1214UL), (13307200203520301951UL + 1215UL), 0UL, 4, "floor", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL, "getBoxFromTuple", 4, (13307200203520301951UL + 1214UL), 0UL, 0UL, 0UL, 0UL,
-                            "emptyHaloCells", (void *)(&emptyHaloCells_npm), (void *)__null, 0, 1, (13307200203520301951UL + 1549UL), 0UL, 0,
-                            "getTuple", (void *)(&getTuple_npm), (void *)__null, 0, 5, (13307200203520301951UL + 616UL), 0UL, (13307200203520301951UL + 618UL), (13307200203520301951UL + 619UL), (13307200203520301951UL + 620UL), 0UL, 0,
+    init_module(13307200203520301951UL, 39, 12, 3, 14, 12, 3, 15, 9, 0, 4,
+                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "maxIntParallel", (unsigned)2, (13307200203520301951UL + 1567UL), (13307200203520301951UL + 1569UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1566UL), (13307200203520301951UL + 1567UL), (13307200203520301951UL + 1568UL),
+                           &____alias_loc_id_2, (unsigned)8, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1UL), (13307200203520301951UL + 2UL), (13307200203520301951UL + 3UL), (13307200203520301951UL + 4UL), (13307200203520301951UL + 5UL), (13307200203520301951UL + 6UL), (13307200203520301951UL + 19UL), (13307200203520301951UL + 185UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (13307200203520301951UL + 229UL), (13307200203520301951UL + 255UL),
+                           &____alias_loc_id_4, (unsigned)9, (unsigned)0, (unsigned)0, (13307200203520301951UL + 257UL), (13307200203520301951UL + 258UL), (13307200203520301951UL + 259UL), (13307200203520301951UL + 263UL), (13307200203520301951UL + 264UL), (13307200203520301951UL + 265UL), (13307200203520301951UL + 266UL), (13307200203520301951UL + 267UL), (13307200203520301951UL + 346UL),
+                           &____alias_loc_id_5, (unsigned)13, (unsigned)0, (unsigned)0, (13307200203520301951UL + 347UL), (13307200203520301951UL + 348UL), (13307200203520301951UL + 349UL), (13307200203520301951UL + 350UL), (13307200203520301951UL + 351UL), (13307200203520301951UL + 352UL), (13307200203520301951UL + 353UL), (13307200203520301951UL + 354UL), (13307200203520301951UL + 355UL), (13307200203520301951UL + 356UL), (13307200203520301951UL + 626UL), (13307200203520301951UL + 627UL), (13307200203520301951UL + 628UL),
+                           &____alias_loc_id_6, (unsigned)7, (unsigned)0, (unsigned)0, (13307200203520301951UL + 629UL), (13307200203520301951UL + 630UL), (13307200203520301951UL + 631UL), (13307200203520301951UL + 632UL), (13307200203520301951UL + 633UL), (13307200203520301951UL + 634UL), (13307200203520301951UL + 635UL),
+                           &____alias_loc_id_7, (unsigned)16, (unsigned)0, (unsigned)0, (13307200203520301951UL + 899UL), (13307200203520301951UL + 900UL), (13307200203520301951UL + 901UL), (13307200203520301951UL + 902UL), (13307200203520301951UL + 903UL), (13307200203520301951UL + 904UL), (13307200203520301951UL + 905UL), (13307200203520301951UL + 906UL), (13307200203520301951UL + 907UL), (13307200203520301951UL + 908UL), (13307200203520301951UL + 909UL), (13307200203520301951UL + 910UL), (13307200203520301951UL + 911UL), (13307200203520301951UL + 955UL), (13307200203520301951UL + 987UL), (13307200203520301951UL + 1054UL),
+                           &____alias_loc_id_8, (unsigned)10, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1063UL), (13307200203520301951UL + 1064UL), (13307200203520301951UL + 1065UL), (13307200203520301951UL + 1066UL), (13307200203520301951UL + 1067UL), (13307200203520301951UL + 1068UL), (13307200203520301951UL + 1069UL), (13307200203520301951UL + 1070UL), (13307200203520301951UL + 1071UL), (13307200203520301951UL + 1072UL),
+                           &____alias_loc_id_9, (unsigned)9, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1232UL), (13307200203520301951UL + 1233UL), (13307200203520301951UL + 1234UL), (13307200203520301951UL + 1235UL), (13307200203520301951UL + 1236UL), (13307200203520301951UL + 1237UL), (13307200203520301951UL + 1238UL), (13307200203520301951UL + 1291UL), (13307200203520301951UL + 1330UL),
+                            &____alias_loc_id_10, (unsigned)9, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1334UL), (13307200203520301951UL + 1335UL), (13307200203520301951UL + 1336UL), (13307200203520301951UL + 1337UL), (13307200203520301951UL + 1338UL), (13307200203520301951UL + 1339UL), (13307200203520301951UL + 1340UL), (13307200203520301951UL + 1341UL), (13307200203520301951UL + 1370UL),
+                            &____alias_loc_id_11, (unsigned)6, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1461UL), (13307200203520301951UL + 1462UL), (13307200203520301951UL + 1463UL), (13307200203520301951UL + 1464UL), (13307200203520301951UL + 1465UL), (13307200203520301951UL + 1466UL),
+                            &____alias_loc_id_12, (unsigned)3, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1536UL), (13307200203520301951UL + 1537UL), (13307200203520301951UL + 1556UL),
+                            &____alias_loc_id_13, (unsigned)1, (unsigned)0, (unsigned)0, (13307200203520301951UL + 1570UL),
+                            "initLinkCells", (void *)(&initLinkCells_npm), (void *)__null, 0, 2, (13307200203520301951UL + 220UL), 0UL, (13307200203520301951UL + 19UL), 4, "__assert_fail", 4, (13307200203520301951UL + 1636UL), (13307200203520301951UL + 1637UL), 0UL, (13307200203520301951UL + 1638UL), 0UL, "malloc", 1, 0UL, (13307200203520301951UL + 19UL), "malloc", 1, 0UL, (13307200203520301951UL + 185UL), "__assert_fail", 4, (13307200203520301951UL + 1639UL), (13307200203520301951UL + 1637UL), 0UL, (13307200203520301951UL + 1638UL), 0UL,
+                            "destroyLinkCells", (void *)(&destroyLinkCells_npm), (void *)__null, 0, 1, (13307200203520301951UL + 255UL), 0UL, 2, "free", 1, (13307200203520301951UL + 244UL), 0UL, "free", 1, (13307200203520301951UL + 237UL), 0UL,
+                            "getNeighborBoxes", (void *)(&getNeighborBoxes_npm), (void *)__null, 0, 3, (13307200203520301951UL + 344UL), 0UL, (13307200203520301951UL + 346UL), 0UL, 2, "getTuple", 5, (13307200203520301951UL + 344UL), 0UL, (13307200203520301951UL + 260UL), (13307200203520301951UL + 261UL), (13307200203520301951UL + 262UL), 0UL, "getBoxFromTuple", 4, (13307200203520301951UL + 344UL), 0UL, 0UL, 0UL, 0UL,
+                            "putAtomInBox", (void *)(&putAtomInBox_npm), (void *)__null, 0, 10, (13307200203520301951UL + 1053UL), (13307200203520301951UL + 1054UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 1, "getBoxFromCoord", 2, (13307200203520301951UL + 1053UL), (13307200203520301951UL + 909UL), 0UL,
+                            "getBoxFromTuple", (void *)(&getBoxFromTuple_npm), (void *)__null, 0, 4, (13307200203520301951UL + 881UL), 0UL, 0UL, 0UL, 0UL, 2, "__assert_fail", 4, (13307200203520301951UL + 1640UL), (13307200203520301951UL + 1637UL), 0UL, (13307200203520301951UL + 1641UL), 0UL, "__assert_fail", 4, (13307200203520301951UL + 1642UL), (13307200203520301951UL + 1637UL), 0UL, (13307200203520301951UL + 1641UL), 0UL,
+                            "moveAtom", (void *)(&moveAtom_npm), (void *)__null, 0, 5, (13307200203520301951UL + 1289UL), (13307200203520301951UL + 1330UL), 0UL, 0UL, 0UL, 0UL, 3, "copyAtom", 6, (13307200203520301951UL + 1289UL), (13307200203520301951UL + 1330UL), 0UL, 0UL, 0UL, 0UL, 0UL, "__assert_fail", 4, (13307200203520301951UL + 1643UL), (13307200203520301951UL + 1637UL), 0UL, (13307200203520301951UL + 1644UL), 0UL, "copyAtom", 6, (13307200203520301951UL + 1289UL), (13307200203520301951UL + 1330UL), 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "updateLinkCells", (void *)(&updateLinkCells_npm), (void *)__null, 0, 2, (13307200203520301951UL + 1534UL), (13307200203520301951UL + 1535UL), 0UL, 3, "emptyHaloCells", 1, (13307200203520301951UL + 1534UL), 0UL, "getBoxFromCoord", 2, (13307200203520301951UL + 1534UL), (13307200203520301951UL + 1507UL), 0UL, "moveAtom", 5, (13307200203520301951UL + 1534UL), (13307200203520301951UL + 1535UL), 0UL, 0UL, 0UL, 0UL,
+                            "maxOccupancy", (void *)(&maxOccupancy_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 1, (13307200203520301951UL + 1598UL), 0UL, 3, "profileStart", 1, 0UL, 0UL, "maxIntParallel", 3, (13307200203520301951UL + 1567UL), (13307200203520301951UL + 1569UL), 0UL, 0UL, "profileStop", 1, 0UL, 0UL,
+                            "copyAtom", (void *)(&copyAtom_npm), (void *)__null, 0, 6, (13307200203520301951UL + 1455UL), (13307200203520301951UL + 1456UL), 0UL, 0UL, 0UL, 0UL, 0UL, 4, "memcpy", 3, (13307200203520301951UL + 1370UL), (13307200203520301951UL + 1370UL), 0UL, 0UL, "memcpy", 3, (13307200203520301951UL + 1370UL), (13307200203520301951UL + 1370UL), 0UL, 0UL, "memcpy", 3, (13307200203520301951UL + 1370UL), (13307200203520301951UL + 1370UL), 0UL, 0UL, "memcpy", 3, (13307200203520301951UL + 1370UL), (13307200203520301951UL + 1370UL), 0UL, 0UL,
+                            "getBoxFromCoord", (void *)(&getBoxFromCoord_npm), (void *)__null, 0, 2, (13307200203520301951UL + 1230UL), (13307200203520301951UL + 1231UL), 0UL, 4, "floor", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL, "floor", 1, 0UL, 0UL, "getBoxFromTuple", 4, (13307200203520301951UL + 1230UL), 0UL, 0UL, 0UL, 0UL,
+                            "emptyHaloCells", (void *)(&emptyHaloCells_npm), (void *)__null, 0, 1, (13307200203520301951UL + 1565UL), 0UL, 0,
+                            "getTuple", (void *)(&getTuple_npm), (void *)__null, 0, 5, (13307200203520301951UL + 624UL), 0UL, (13307200203520301951UL + 626UL), (13307200203520301951UL + 627UL), (13307200203520301951UL + 628UL), 0UL, 0,
                                "maxIntParallel", (void **)&(____chimes_extern_func_maxIntParallel),
                                "profileStart", (void **)&(____chimes_extern_func_profileStart),
                                "profileStop", (void **)&(____chimes_extern_func_profileStop),
@@ -5730,44 +5732,45 @@ static int module_init() {
                            "maxIntParallel", &(____chimes_does_checkpoint_maxIntParallel_npm),
                            "profileStart", &(____chimes_does_checkpoint_profileStart_npm),
                            "profileStop", &(____chimes_does_checkpoint_profileStop_npm),
-                             (13307200203520301951UL + 621UL), (13307200203520301951UL + 872UL),
-                             (13307200203520301951UL + 339UL), (13307200203520301951UL + 616UL),
-                             (13307200203520301951UL + 626UL), (13307200203520301951UL + 872UL),
-                             (13307200203520301951UL + 888UL), (13307200203520301951UL + 1042UL),
-                             (13307200203520301951UL + 253UL), (13307200203520301951UL + 336UL),
-                             (13307200203520301951UL + 887UL), (13307200203520301951UL + 1041UL),
-                             (13307200203520301951UL + 251UL), (13307200203520301951UL + 233UL),
-                             (13307200203520301951UL + 255UL), (13307200203520301951UL + 338UL),
-                             (13307200203520301951UL + 1051UL), (13307200203520301951UL + 1214UL),
-                             (13307200203520301951UL + 1052UL), (13307200203520301951UL + 1215UL),
-                             (13307200203520301951UL + 1053UL), (13307200203520301951UL + 1214UL),
-                             (13307200203520301951UL + 1054UL), (13307200203520301951UL + 1214UL),
-                             (13307200203520301951UL + 1055UL), (13307200203520301951UL + 1214UL),
-                             (13307200203520301951UL + 1581UL), (13307200203520301951UL + 1583UL),
-                             (13307200203520301951UL + 1445UL), (13307200203520301951UL + 1518UL),
-                             (13307200203520301951UL + 1549UL), (13307200203520301951UL + 1540UL),
-                             (13307200203520301951UL + 1UL), (13307200203520301951UL + 216UL),
-                             (13307200203520301951UL + 1446UL), (13307200203520301951UL + 1519UL),
-                             (13307200203520301951UL + 3UL), (13307200203520301951UL + 18UL),
-                             (13307200203520301951UL + 347UL), (13307200203520301951UL + 616UL),
-                             (13307200203520301951UL + 1520UL), (13307200203520301951UL + 1549UL),
-                             (13307200203520301951UL + 341UL), (13307200203520301951UL + 618UL),
-                             (13307200203520301951UL + 342UL), (13307200203520301951UL + 619UL),
-                             (13307200203520301951UL + 343UL), (13307200203520301951UL + 620UL),
-                             (13307200203520301951UL + 233UL), (13307200203520301951UL + 240UL),
-                             (13307200203520301951UL + 1518UL), (13307200203520301951UL + 1478UL),
-                             (13307200203520301951UL + 1216UL), (13307200203520301951UL + 1273UL),
-                             (13307200203520301951UL + 1217UL), (13307200203520301951UL + 1314UL),
-                             (13307200203520301951UL + 1550UL), (13307200203520301951UL + 1581UL),
-                             (13307200203520301951UL + 1273UL), (13307200203520301951UL + 1275UL),
-                             (13307200203520301951UL + 1319UL), (13307200203520301951UL + 1440UL),
-                             (13307200203520301951UL + 1318UL), (13307200203520301951UL + 1439UL),
-                             (13307200203520301951UL + 225UL), (13307200203520301951UL + 251UL),
-                             (13307200203520301951UL + 1042UL), (13307200203520301951UL + 975UL),
-                             (13307200203520301951UL + 1041UL), (13307200203520301951UL + 943UL),
-                             (13307200203520301951UL + 18UL), (13307200203520301951UL + 184UL),
-                             (13307200203520301951UL + 1519UL), (13307200203520301951UL + 1491UL),
-                             (13307200203520301951UL + 1440UL), (13307200203520301951UL + 1354UL),
+                             (13307200203520301951UL + 1289UL), (13307200203520301951UL + 1291UL),
+                             (13307200203520301951UL + 629UL), (13307200203520301951UL + 881UL),
+                             (13307200203520301951UL + 1565UL), (13307200203520301951UL + 1556UL),
+                             (13307200203520301951UL + 259UL), (13307200203520301951UL + 346UL),
+                             (13307200203520301951UL + 237UL), (13307200203520301951UL + 244UL),
+                             (13307200203520301951UL + 257UL), (13307200203520301951UL + 344UL),
+                             (13307200203520301951UL + 255UL), (13307200203520301951UL + 237UL),
+                             (13307200203520301951UL + 1053UL), (13307200203520301951UL + 955UL),
+                             (13307200203520301951UL + 1054UL), (13307200203520301951UL + 987UL),
+                             (13307200203520301951UL + 1535UL), (13307200203520301951UL + 1507UL),
+                             (13307200203520301951UL + 1456UL), (13307200203520301951UL + 1370UL),
+                             (13307200203520301951UL + 1UL), (13307200203520301951UL + 220UL),
+                             (13307200203520301951UL + 3UL), (13307200203520301951UL + 19UL),
+                             (13307200203520301951UL + 347UL), (13307200203520301951UL + 624UL),
+                             (13307200203520301951UL + 6UL), (13307200203520301951UL + 19UL),
+                             (13307200203520301951UL + 1461UL), (13307200203520301951UL + 1534UL),
+                             (13307200203520301951UL + 349UL), (13307200203520301951UL + 626UL),
+                             (13307200203520301951UL + 1566UL), (13307200203520301951UL + 1598UL),
+                             (13307200203520301951UL + 1462UL), (13307200203520301951UL + 1535UL),
+                             (13307200203520301951UL + 634UL), (13307200203520301951UL + 881UL),
+                             (13307200203520301951UL + 1232UL), (13307200203520301951UL + 1289UL),
+                             (13307200203520301951UL + 1233UL), (13307200203520301951UL + 1330UL),
+                             (13307200203520301951UL + 1335UL), (13307200203520301951UL + 1456UL),
+                             (13307200203520301951UL + 899UL), (13307200203520301951UL + 1053UL),
+                             (13307200203520301951UL + 229UL), (13307200203520301951UL + 255UL),
+                             (13307200203520301951UL + 1334UL), (13307200203520301951UL + 1455UL),
+                             (13307200203520301951UL + 1598UL), (13307200203520301951UL + 1600UL),
+                             (13307200203520301951UL + 900UL), (13307200203520301951UL + 1054UL),
+                             (13307200203520301951UL + 19UL), (13307200203520301951UL + 185UL),
+                             (13307200203520301951UL + 1063UL), (13307200203520301951UL + 1230UL),
+                             (13307200203520301951UL + 1065UL), (13307200203520301951UL + 1230UL),
+                             (13307200203520301951UL + 1064UL), (13307200203520301951UL + 1231UL),
+                             (13307200203520301951UL + 1067UL), (13307200203520301951UL + 1230UL),
+                             (13307200203520301951UL + 1066UL), (13307200203520301951UL + 1230UL),
+                             (13307200203520301951UL + 1536UL), (13307200203520301951UL + 1565UL),
+                             (13307200203520301951UL + 355UL), (13307200203520301951UL + 624UL),
+                             (13307200203520301951UL + 1534UL), (13307200203520301951UL + 1494UL),
+                             (13307200203520301951UL + 351UL), (13307200203520301951UL + 628UL),
+                             (13307200203520301951UL + 350UL), (13307200203520301951UL + 627UL),
                      "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U),
                      "DomainSt", 8, "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procGrid), "[ 3 x int ]", (int)__builtin_offsetof (struct DomainSt, procCoord), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, globalExtent), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct DomainSt, localExtent),
                      "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms),
@@ -5787,15 +5790,15 @@ static int module_init() {
                         "getNeighborBoxes|ix|0", 1, "getNeighborBoxes",
                         "putAtomInBox|xyz|0", 1, "putAtomInBox",
                         "maxOccupancy|localMax|0", 1, "maxOccupancy",
-        "getTuple", 0UL, (int)5, 13307200203520302287UL, 0UL, 13307200203520302207UL, 13307200203520302208UL, 13307200203520302209UL,
-        "getBoxFromTuple", 0UL, (int)4, 13307200203520302287UL, 0UL, 0UL, 0UL,
-        "getBoxFromCoord", 0UL, (int)2, 13307200203520302992UL, 13307200203520302848UL,
-        "copyAtom", 0UL, (int)6, 13307200203520303224UL, 13307200203520303265UL, 0UL, 0UL, 0UL, 0UL,
-        "copyAtom", 0UL, (int)6, 13307200203520303224UL, 13307200203520303265UL, 0UL, 0UL, 0UL, 0UL,
-        "emptyHaloCells", 0UL, (int)1, 13307200203520303469UL,
-        "getBoxFromCoord", 0UL, (int)2, 13307200203520303469UL, 13307200203520303442UL,
-        "moveAtom", 0UL, (int)5, 13307200203520303469UL, 13307200203520303470UL, 0UL, 0UL, 0UL,
-        "getBoxFromTuple", 0UL, (int)4, 13307200203520303165UL, 0UL, 0UL, 0UL);
+        "getTuple", 0UL, (int)5, 13307200203520302295UL, 0UL, 13307200203520302211UL, 13307200203520302212UL, 13307200203520302213UL,
+        "getBoxFromTuple", 0UL, (int)4, 13307200203520302295UL, 0UL, 0UL, 0UL,
+        "getBoxFromCoord", 0UL, (int)2, 13307200203520303004UL, 13307200203520302860UL,
+        "copyAtom", 0UL, (int)6, 13307200203520303240UL, 13307200203520303281UL, 0UL, 0UL, 0UL, 0UL,
+        "copyAtom", 0UL, (int)6, 13307200203520303240UL, 13307200203520303281UL, 0UL, 0UL, 0UL, 0UL,
+        "emptyHaloCells", 0UL, (int)1, 13307200203520303485UL,
+        "getBoxFromCoord", 0UL, (int)2, 13307200203520303485UL, 13307200203520303458UL,
+        "moveAtom", 0UL, (int)5, 13307200203520303485UL, 13307200203520303486UL, 0UL, 0UL, 0UL,
+        "getBoxFromTuple", 0UL, (int)4, 13307200203520303181UL, 0UL, 0UL, 0UL);
     return 0;
 }
 

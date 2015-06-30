@@ -1,15 +1,15 @@
 del 0 45 46 47
 add 0 99 100 101
 calc_score 0 0 0 0 0 0
-get_matrix 564 565 0
-forward_pass 781 782 0 0 785 786 787 0 0
-reverse_pass 1011 1012 0 0 1015 1016 0 0 0
-diff 0 0 0 0 0 0 1795 1796 1797 0 0 0 0
-tracepath 0 0 1948 1949 1950 0 0
+get_matrix 572 573 0
+forward_pass 789 790 0 0 793 794 795 0 0
+reverse_pass 1019 1020 0 0 1023 1024 0 0 0
+diff 0 0 0 0 0 0 1819 1820 1821 0 0 0 0
+tracepath 0 0 1976 1977 1978 0 0
 pairalign 0 0 0 0
 pairalign_seq 0 0 0 0
 init_matrix
-pairalign_init 2758
+pairalign_init 2802
 align_init
 align
 align_seq_init

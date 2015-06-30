@@ -21,18 +21,7 @@ static int ____chimes_does_checkpoint_sparselu_seq_call_npm = 1;
 static int ____chimes_does_checkpoint_sparselu_fini_npm = 1;
 static int ____chimes_does_checkpoint_sparselu_check_npm = 1;
 static int ____chimes_does_checkpoint_checkmat1_npm = 1;
-static int ____chimes_does_checkpoint_abs_npm = 1;
 
-static int ____must_checkpoint_genmat_M_0 = 2;
-static int ____must_checkpoint_genmat_null_entry_0 = 2;
-static int ____must_checkpoint_genmat_init_val_0 = 2;
-static int ____must_checkpoint_genmat_i_0 = 2;
-static int ____must_checkpoint_genmat_j_0 = 2;
-static int ____must_checkpoint_genmat_ii_0 = 2;
-static int ____must_checkpoint_genmat_jj_0 = 2;
-static int ____must_checkpoint_genmat_p_0 = 2;
-static int ____must_checkpoint_genmat_prow_0 = 2;
-static int ____must_checkpoint_genmat_rowsum_0 = 2;
 
 static int ____must_manage_print_structure = 2;
 static int ____must_manage_allocate_clean_block = 2;
@@ -63,8 +52,6 @@ static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
 static unsigned ____alias_loc_id_13;
-static unsigned ____alias_loc_id_14;
-static unsigned ____alias_loc_id_15;
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -3901,7 +3888,7 @@ int checkmat_npm (float *M, float *N);
 int checkmat_quick (float *M, float *N); int checkmat (float *M, float *N);
 int checkmat_resumable (float *M, float *N)
 # 34 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(15559110349592348314UL), (size_t)(15559110349592348315UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(15559110349592348322UL), (size_t)(15559110349592348323UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; ;
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -3930,7 +3917,7 @@ int checkmat_resumable (float *M, float *N)
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                                                     ;
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_3, ____chimes_did_disable0); return 0;
+             int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -3938,35 +3925,26 @@ int checkmat_resumable (float *M, float *N)
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_3, ____chimes_did_disable0); return 1;
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (1); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
 # 54 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_0, ____chimes_did_disable0); }
 # 55 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-void genmat_npm (float *M[]);static int (*____chimes_extern_func_abs)(int) = abs;
+void genmat_npm (float *M[]);
 void genmat_quick (float *M[]); void genmat (float *M[]);
 void genmat_resumable (float *M[])
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 1, (size_t)(15559110349592348551UL), "genmat|M|0", &____must_checkpoint_genmat_M_0, "float**", (void *)(&M), (size_t)8, 1, 0, 0) ; float rowsum;
-float *prow;
-float *p;
-int jj;
-int ii;
-int j;
-int i;
-int init_val;
-int null_entry;
- if (____must_checkpoint_genmat_rowsum_0 || ____must_checkpoint_genmat_prow_0 || ____must_checkpoint_genmat_p_0 || ____must_checkpoint_genmat_jj_0 || ____must_checkpoint_genmat_ii_0 || ____must_checkpoint_genmat_j_0 || ____must_checkpoint_genmat_i_0 || ____must_checkpoint_genmat_init_val_0 || ____must_checkpoint_genmat_null_entry_0) { register_stack_vars(9, "genmat|rowsum|0", &____must_checkpoint_genmat_rowsum_0, "float", (void *)(&rowsum), (size_t)4, 0, 0, 0, "genmat|prow|0", &____must_checkpoint_genmat_prow_0, "float*", (void *)(&prow), (size_t)8, 1, 0, 0, "genmat|p|0", &____must_checkpoint_genmat_p_0, "float*", (void *)(&p), (size_t)8, 1, 0, 0, "genmat|jj|0", &____must_checkpoint_genmat_jj_0, "i32", (void *)(&jj), (size_t)4, 0, 0, 0, "genmat|ii|0", &____must_checkpoint_genmat_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "genmat|j|0", &____must_checkpoint_genmat_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "genmat|i|0", &____must_checkpoint_genmat_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "genmat|init_val|0", &____must_checkpoint_genmat_init_val_0, "i32", (void *)(&init_val), (size_t)4, 0, 0, 0, "genmat|null_entry|0", &____must_checkpoint_genmat_null_entry_0, "i32", (void *)(&null_entry), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 0, (size_t)(15559110349592348559UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         ;
+   int null_entry; int init_val; int i; int j; int ii; int jj; ;
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
+   float *p; ;
 # 62 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
+   float *prow; ;
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
+   float rowsum; ;
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    init_val = 1325;
@@ -4001,7 +3979,7 @@ int null_entry;
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348478UL, 0, 0);
+            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0);
 # 84 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
 # 85 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4033,13 +4011,13 @@ int null_entry;
 # 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                    (*p) = (float)((init_val - 32768.0) / 16384.0);
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                    alias_group_changed(____alias_loc_id_1); call_lbl_5: rowsum += ({ int ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (*p); } calling((void*)abs, 5, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg0); }) ;
+                    rowsum += abs(*p);
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                     p++;
 # 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }
 # 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               if (ii == jj) {alias_group_changed(____alias_loc_id_0); call_lbl_7: *(prow+i) = rowsum * (float) bots_arg_size + ({ int ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (*(prow + i)); } calling((void*)abs, 7, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg1); }) ; };
+               if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + abs(*(prow+i)); };
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                prow += bots_arg_size_1;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4059,7 +4037,7 @@ int null_entry;
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_4, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_1, ____chimes_did_disable1); }
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4068,7 +4046,7 @@ void print_structure_npm(char *name, float *M[]);
 void print_structure_quick(char *name, float *M[]); void print_structure(char *name, float *M[]);
 void print_structure_resumable(char *name, float *M[])
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(15559110349592348633UL), (size_t)(15559110349592348634UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(15559110349592348641UL), (size_t)(15559110349592348642UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 121 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; ;
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4090,7 +4068,7 @@ void print_structure_resumable(char *name, float *M[])
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_5, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_2, ____chimes_did_disable2); }
 # 132 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 133 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 134 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4106,7 +4084,7 @@ float * allocate_clean_block_resumable()
   float *p; float *q; ;
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348648UL, 0, 0);
+  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0);
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4127,9 +4105,9 @@ float * allocate_clean_block_resumable()
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  rm_stack(true, 15559110349592348648UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_6, ____chimes_did_disable3); return (q);
+   float *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((q)); rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_3, ____chimes_did_disable3); return ____chimes_ret_var_2; ;
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_3, ____chimes_did_disable3); }
 # 154 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4139,7 +4117,7 @@ void lu0_npm(float *diag);
 void lu0_quick(float *diag); void lu0(float *diag);
 void lu0_resumable(float *diag)
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(15559110349592348807UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(15559110349592348819UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 160 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4154,7 +4132,7 @@ void lu0_resumable(float *diag)
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }; }
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_7, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_4, ____chimes_did_disable4); }
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4164,7 +4142,7 @@ void bdiv_npm(float *diag, float *row);
 void bdiv_quick(float *diag, float *row); void bdiv(float *diag, float *row);
 void bdiv_resumable(float *diag, float *row)
 # 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(15559110349592348922UL), (size_t)(15559110349592348923UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(15559110349592348934UL), (size_t)(15559110349592348935UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
 # 177 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4178,7 +4156,7 @@ void bdiv_resumable(float *diag, float *row)
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }; }
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_8, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_5, ____chimes_did_disable5); }
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4187,13 +4165,13 @@ void bmod_npm(float *row, float *col, float *inner);
 void bmod_quick(float *row, float *col, float *inner); void bmod(float *row, float *col, float *inner);
 void bmod_resumable(float *row, float *col, float *inner)
 # 189 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(15559110349592349011UL), (size_t)(15559110349592349012UL), (size_t)(15559110349592349013UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(15559110349592349023UL), (size_t)(15559110349592349024UL), (size_t)(15559110349592349025UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 190 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
 # 191 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i=0; i<bots_arg_size_1; i++) { for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
 # 195 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_9, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_6, ____chimes_did_disable6); }
 # 196 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 197 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 198 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4202,13 +4180,13 @@ void fwd_npm(float *diag, float *col);
 void fwd_quick(float *diag, float *col); void fwd(float *diag, float *col);
 void fwd_resumable(float *diag, float *col)
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(15559110349592349100UL), (size_t)(15559110349592349101UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(15559110349592349112UL), (size_t)(15559110349592349113UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++) { col[i*bots_arg_size_1+j] = col[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_10, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_7, ____chimes_did_disable7); }
 # 207 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 208 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 209 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4216,21 +4194,21 @@ void sparselu_init_npm (float ***pBENCH, char *pass);
 void sparselu_init_quick (float ***pBENCH, char *pass); void sparselu_init (float ***pBENCH, char *pass);
 void sparselu_init_resumable (float ***pBENCH, char *pass)
 # 210 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349121UL), (size_t)(15559110349592349122UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349133UL), (size_t)(15559110349592349134UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349113UL, 1, 0);
+   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0);
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    call_lbl_2: ({ float ** ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (*pBENCH); } calling((void*)genmat, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(15559110349592349113UL)); (genmat)(____chimes_arg2); }) ;
+   ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 214 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, 0, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, ____alias_loc_id_8, ____chimes_did_disable8); }
 # 215 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 216 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_par_call_npm(float **BENCH);
 void sparselu_par_call_quick(float **BENCH); void sparselu_par_call(float **BENCH);
 void sparselu_par_call_resumable(float **BENCH)
 # 217 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", &____must_manage_sparselu_par_call, 1, 0, (size_t)(15559110349592349358UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", &____must_manage_sparselu_par_call, 1, 0, (size_t)(15559110349592349370UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 218 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; int kk; ;
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4296,7 +4274,7 @@ void sparselu_par_call_resumable(float **BENCH)
 # 256 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
 # 257 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_par_call", &____must_manage_sparselu_par_call, ____alias_loc_id_11, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "sparselu_par_call", &____must_manage_sparselu_par_call, ____alias_loc_id_9, ____chimes_did_disable9); }
 # 258 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 259 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 260 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4304,7 +4282,7 @@ void sparselu_seq_call_npm(float **BENCH);
 void sparselu_seq_call_quick(float **BENCH); void sparselu_seq_call(float **BENCH);
 void sparselu_seq_call_resumable(float **BENCH)
 # 261 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(15559110349592349578UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(15559110349592349590UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 262 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; int kk; ;
 # 263 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4344,17 +4322,17 @@ void sparselu_seq_call_resumable(float **BENCH)
 # 286 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 287 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_12, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_10, ____chimes_did_disable10); }
 # 288 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 289 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_fini_npm (float **BENCH, char *pass);
 void sparselu_fini_quick (float **BENCH, char *pass); void sparselu_fini (float **BENCH, char *pass);
 void sparselu_fini_resumable (float **BENCH, char *pass)
 # 290 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(15559110349592349586UL), (size_t)(15559110349592349587UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(15559110349592349598UL), (size_t)(15559110349592349599UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_13, ____chimes_did_disable11); return;
+   rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_11, ____chimes_did_disable11); return;
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
 # 321 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4365,7 +4343,7 @@ int sparselu_check_npm(float **SEQ, float **BENCH);int checkmat1_npm (float *N);
 int sparselu_check_quick(float **SEQ, float **BENCH); int sparselu_check(float **SEQ, float **BENCH);int checkmat1_quick (float *N); int checkmat1 (float *N);
 int sparselu_check_resumable(float **SEQ, float **BENCH)
 # 323 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(15559110349592349641UL), (size_t)(15559110349592349642UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(15559110349592349657UL), (size_t)(15559110349592349658UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int ok; ;
 # 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4386,13 +4364,13 @@ int sparselu_check_resumable(float **SEQ, float **BENCH)
 # 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_14, ____chimes_did_disable12); return 1;
+    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (1); rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_12, ____chimes_did_disable12); return ____chimes_ret_var_3; ;
 # 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_12, ____chimes_did_disable12); }
 # 336 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat1_resumable (float *N)
 # 337 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(15559110349592349691UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(15559110349592349711UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 338 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; ;
 # 339 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4413,12 +4391,12 @@ int checkmat1_resumable (float *N)
 # 347 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 348 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_15, ____chimes_did_disable13); return 1;
+    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (1); rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_13, ____chimes_did_disable13); return ____chimes_ret_var_4; ;
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_13, ____chimes_did_disable13); }
 int checkmat_quick (float *M, float *N)
 # 34 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(15559110349592348314UL), (size_t)(15559110349592348315UL)) ; ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(15559110349592348322UL), (size_t)(15559110349592348323UL)) ; ; ;
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; ;
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4447,7 +4425,7 @@ int checkmat_quick (float *M, float *N)
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                                                     ;
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_3, ____chimes_did_disable0); return 0;
+             int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4455,32 +4433,23 @@ int checkmat_quick (float *M, float *N)
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_3, ____chimes_did_disable0); return 1;
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (1); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
 # 54 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_0, ____chimes_did_disable0); }
 
 int checkmat (float *M, float *N) { return (____chimes_replaying ? checkmat_resumable(M, N) : checkmat_quick(M, N)); }
 
 void genmat_quick (float *M[])
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 1, (size_t)(15559110349592348551UL), "genmat|M|0", &____must_checkpoint_genmat_M_0, "float**", (void *)(&M), (size_t)8, 1, 0, 0) ; float rowsum;
-float *prow;
-float *p;
-int jj;
-int ii;
-int j;
-int i;
-int init_val;
-int null_entry;
- if (____must_checkpoint_genmat_rowsum_0 || ____must_checkpoint_genmat_prow_0 || ____must_checkpoint_genmat_p_0 || ____must_checkpoint_genmat_jj_0 || ____must_checkpoint_genmat_ii_0 || ____must_checkpoint_genmat_j_0 || ____must_checkpoint_genmat_i_0 || ____must_checkpoint_genmat_init_val_0 || ____must_checkpoint_genmat_null_entry_0) { register_stack_vars(9, "genmat|rowsum|0", &____must_checkpoint_genmat_rowsum_0, "float", (void *)(&rowsum), (size_t)4, 0, 0, 0, "genmat|prow|0", &____must_checkpoint_genmat_prow_0, "float*", (void *)(&prow), (size_t)8, 1, 0, 0, "genmat|p|0", &____must_checkpoint_genmat_p_0, "float*", (void *)(&p), (size_t)8, 1, 0, 0, "genmat|jj|0", &____must_checkpoint_genmat_jj_0, "i32", (void *)(&jj), (size_t)4, 0, 0, 0, "genmat|ii|0", &____must_checkpoint_genmat_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "genmat|j|0", &____must_checkpoint_genmat_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "genmat|i|0", &____must_checkpoint_genmat_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "genmat|init_val|0", &____must_checkpoint_genmat_init_val_0, "i32", (void *)(&init_val), (size_t)4, 0, 0, 0, "genmat|null_entry|0", &____must_checkpoint_genmat_null_entry_0, "i32", (void *)(&null_entry), (size_t)4, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 0, (size_t)(15559110349592348559UL)) ; ; ;
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         ;
+   int null_entry; int init_val; int i; int j; int ii; int jj; ;
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
+   float *p; ;
 # 62 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
+   float *prow; ;
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
+   float rowsum; ;
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    init_val = 1325;
@@ -4515,7 +4484,7 @@ int null_entry;
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348478UL, 0, 0);
+            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0);
 # 84 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
 # 85 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4547,13 +4516,13 @@ int null_entry;
 # 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                    (*p) = (float)((init_val - 32768.0) / 16384.0);
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                    alias_group_changed(____alias_loc_id_1); call_lbl_5: rowsum += ({ calling((void*)abs, 5, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (abs)(*p); }) ;
+                    rowsum += abs(*p);
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                     p++;
 # 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }
 # 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               if (ii == jj) {alias_group_changed(____alias_loc_id_0); call_lbl_7: *(prow+i) = rowsum * (float) bots_arg_size + ({ calling((void*)abs, 7, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (abs)(*(prow + i)); }) ; };
+               if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + abs(*(prow+i)); };
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                prow += bots_arg_size_1;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4573,13 +4542,13 @@ int null_entry;
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_4, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_1, ____chimes_did_disable1); }
 
 void genmat (float *M[]) { (____chimes_replaying ? genmat_resumable(M) : genmat_quick(M)); }
 
 void print_structure_quick(char *name, float *M[])
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(15559110349592348633UL), (size_t)(15559110349592348634UL)) ; ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(15559110349592348641UL), (size_t)(15559110349592348642UL)) ; ; ;
 # 121 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; ;
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4601,7 +4570,7 @@ void print_structure_quick(char *name, float *M[])
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_5, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_2, ____chimes_did_disable2); }
 
 void print_structure(char *name, float *M[]) { (____chimes_replaying ? print_structure_resumable(name, M) : print_structure_quick(name, M)); }
 
@@ -4614,7 +4583,7 @@ float * allocate_clean_block_quick()
   float *p; float *q; ;
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348648UL, 0, 0);
+  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0);
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4635,15 +4604,15 @@ float * allocate_clean_block_quick()
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  rm_stack(true, 15559110349592348648UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_6, ____chimes_did_disable3); return (q);
+   float *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((q)); rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_3, ____chimes_did_disable3); return ____chimes_ret_var_2; ;
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_3, ____chimes_did_disable3); }
 
 float * allocate_clean_block() { return (____chimes_replaying ? allocate_clean_block_resumable() : allocate_clean_block_quick()); }
 
 void lu0_quick(float *diag)
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(15559110349592348807UL)) ; ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(15559110349592348819UL)) ; ; ;
 # 160 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4658,13 +4627,13 @@ void lu0_quick(float *diag)
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }; }
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_7, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_4, ____chimes_did_disable4); }
 
 void lu0(float *diag) { (____chimes_replaying ? lu0_resumable(diag) : lu0_quick(diag)); }
 
 void bdiv_quick(float *diag, float *row)
 # 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(15559110349592348922UL), (size_t)(15559110349592348923UL)) ; ; ;
+{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(15559110349592348934UL), (size_t)(15559110349592348935UL)) ; ; ;
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
 # 177 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4678,50 +4647,50 @@ void bdiv_quick(float *diag, float *row)
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }; }
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_8, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_5, ____chimes_did_disable5); }
 
 void bdiv(float *diag, float *row) { (____chimes_replaying ? bdiv_resumable(diag, row) : bdiv_quick(diag, row)); }
 
 void bmod_quick(float *row, float *col, float *inner)
 # 189 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(15559110349592349011UL), (size_t)(15559110349592349012UL), (size_t)(15559110349592349013UL)) ; ; ;
+{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(15559110349592349023UL), (size_t)(15559110349592349024UL), (size_t)(15559110349592349025UL)) ; ; ;
 # 190 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
 # 191 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i=0; i<bots_arg_size_1; i++) { for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
 # 195 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_9, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_6, ____chimes_did_disable6); }
 
 void bmod(float *row, float *col, float *inner) { (____chimes_replaying ? bmod_resumable(row, col, inner) : bmod_quick(row, col, inner)); }
 
 void fwd_quick(float *diag, float *col)
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(15559110349592349100UL), (size_t)(15559110349592349101UL)) ; ; ;
+{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(15559110349592349112UL), (size_t)(15559110349592349113UL)) ; ; ;
 # 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++) { col[i*bots_arg_size_1+j] = col[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_10, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_7, ____chimes_did_disable7); }
 
 void fwd(float *diag, float *col) { (____chimes_replaying ? fwd_resumable(diag, col) : fwd_quick(diag, col)); }
 
 void sparselu_init_quick (float ***pBENCH, char *pass)
 # 210 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349121UL), (size_t)(15559110349592349122UL)) ; ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349133UL), (size_t)(15559110349592349134UL)) ; ; ;
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349113UL, 1, 0);
+   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0);
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    call_lbl_2: ({ calling((void*)genmat, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(15559110349592349113UL)); genmat_quick(*pBENCH); }) ;
+   ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 214 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, 0, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, ____alias_loc_id_8, ____chimes_did_disable8); }
 
 void sparselu_init (float ***pBENCH, char *pass) { (____chimes_replaying ? sparselu_init_resumable(pBENCH, pass) : sparselu_init_quick(pBENCH, pass)); }
 
 void sparselu_par_call_quick(float **BENCH)
 # 217 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", &____must_manage_sparselu_par_call, 1, 0, (size_t)(15559110349592349358UL)) ; ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", &____must_manage_sparselu_par_call, 1, 0, (size_t)(15559110349592349370UL)) ; ; ;
 # 218 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; int kk; ;
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4787,13 +4756,13 @@ void sparselu_par_call_quick(float **BENCH)
 # 256 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
 # 257 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_par_call", &____must_manage_sparselu_par_call, ____alias_loc_id_11, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "sparselu_par_call", &____must_manage_sparselu_par_call, ____alias_loc_id_9, ____chimes_did_disable9); }
 
 void sparselu_par_call(float **BENCH) { (____chimes_replaying ? sparselu_par_call_resumable(BENCH) : sparselu_par_call_quick(BENCH)); }
 
 void sparselu_seq_call_quick(float **BENCH)
 # 261 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(15559110349592349578UL)) ; ; ;
+{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(15559110349592349590UL)) ; ; ;
 # 262 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; int kk; ;
 # 263 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4833,16 +4802,16 @@ void sparselu_seq_call_quick(float **BENCH)
 # 286 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 287 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_12, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_10, ____chimes_did_disable10); }
 
 void sparselu_seq_call(float **BENCH) { (____chimes_replaying ? sparselu_seq_call_resumable(BENCH) : sparselu_seq_call_quick(BENCH)); }
 
 void sparselu_fini_quick (float **BENCH, char *pass)
 # 290 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(15559110349592349586UL), (size_t)(15559110349592349587UL)) ; ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(15559110349592349598UL), (size_t)(15559110349592349599UL)) ; ; ;
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_13, ____chimes_did_disable11); return;
+   rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_11, ____chimes_did_disable11); return;
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
 
@@ -4850,7 +4819,7 @@ void sparselu_fini (float **BENCH, char *pass) { (____chimes_replaying ? sparsel
 
 int sparselu_check_quick(float **SEQ, float **BENCH)
 # 323 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(15559110349592349641UL), (size_t)(15559110349592349642UL)) ; ; ;
+{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(15559110349592349657UL), (size_t)(15559110349592349658UL)) ; ; ;
 # 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int ok; ;
 # 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4871,15 +4840,15 @@ int sparselu_check_quick(float **SEQ, float **BENCH)
 # 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_14, ____chimes_did_disable12); return 1;
+    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (1); rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_12, ____chimes_did_disable12); return ____chimes_ret_var_3; ;
 # 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_12, ____chimes_did_disable12); }
 
 int sparselu_check(float **SEQ, float **BENCH) { return (____chimes_replaying ? sparselu_check_resumable(SEQ, BENCH) : sparselu_check_quick(SEQ, BENCH)); }
 
 int checkmat1_quick (float *N)
 # 337 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(15559110349592349691UL)) ; ; ;
+{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(15559110349592349711UL)) ; ; ;
 # 338 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; ;
 # 339 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4900,9 +4869,9 @@ int checkmat1_quick (float *N)
 # 347 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 348 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_15, ____chimes_did_disable13); return 1;
+    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (1); rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_13, ____chimes_did_disable13); return ____chimes_ret_var_4; ;
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_13, ____chimes_did_disable13); }
 
 int checkmat1 (float *N) { return (____chimes_replaying ? checkmat1_resumable(N) : checkmat1_quick(N)); }
 
@@ -4939,7 +4908,7 @@ int checkmat_npm (float *M, float *N)
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                                                     ;
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            return 0;
+             int ____chimes_ret_var_0; ____chimes_ret_var_0 = (0); return ____chimes_ret_var_0; ;
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -4947,7 +4916,7 @@ int checkmat_npm (float *M, float *N)
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   return 1;
+    int ____chimes_ret_var_1; ____chimes_ret_var_1 = (1); return ____chimes_ret_var_1; ;
 # 54 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
 
@@ -4996,7 +4965,7 @@ void genmat_npm (float *M[])
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          if (null_entry == 0){
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348478UL, 0, 0);
+            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0);
 # 84 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
      if ((M[ii*bots_arg_size+jj] == __null))
 # 85 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5028,13 +4997,13 @@ void genmat_npm (float *M[])
 # 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                    (*p) = (float)((init_val - 32768.0) / 16384.0);
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                    rowsum += (*____chimes_extern_func_abs)(*p);
+                    rowsum += abs(*p);
 # 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                     p++;
 # 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }
 # 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + (*____chimes_extern_func_abs)(*(prow+i)); };
+               if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + abs(*(prow+i)); };
 # 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                prow += bots_arg_size_1;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5091,7 +5060,7 @@ float * allocate_clean_block_npm()
   float *p, *q;
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348648UL, 0, 0);
+  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0);
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   q=p;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5112,7 +5081,7 @@ float * allocate_clean_block_npm()
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  return (q);
+   float * ____chimes_ret_var_2; ____chimes_ret_var_2 = ((q)); return ____chimes_ret_var_2; ;
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
 
@@ -5177,7 +5146,7 @@ void sparselu_init_npm (float ***pBENCH, char *pass)
 # 210 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349113UL, 1, 0);
+   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0);
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    genmat_npm(*pBENCH);
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
@@ -5330,7 +5299,7 @@ int sparselu_check_npm(float **SEQ, float **BENCH)
 # 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   return 1;
+    int ____chimes_ret_var_3; ____chimes_ret_var_3 = (1); return ____chimes_ret_var_3; ;
 # 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
 
@@ -5357,7 +5326,7 @@ int checkmat1_npm (float *N)
 # 347 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
 # 348 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   return 1;
+    int ____chimes_ret_var_4; ____chimes_ret_var_4 = (1); return ____chimes_ret_var_4; ;
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
 
@@ -5366,38 +5335,35 @@ int checkmat1_npm (float *N)
 
 
 static int module_init() {
-    init_module(15559110349592348196UL, 33, 14, 10, 16, 14, 1, 15, 11, 0, 1,
-                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (15559110349592348196UL + 128UL), (15559110349592348196UL + 131UL), (15559110349592348196UL + 133UL),
-                           &____alias_loc_id_1, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 126UL), (15559110349592348196UL + 128UL), (15559110349592348196UL + 131UL), (15559110349592348196UL + 133UL), (15559110349592348196UL + 282UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (15559110349592348196UL + 906UL), (15559110349592348196UL + 907UL), (15559110349592348196UL + 925UL),
-                           &____alias_loc_id_3, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1UL), (15559110349592348196UL + 2UL), (15559110349592348196UL + 3UL), (15559110349592348196UL + 4UL), (15559110349592348196UL + 5UL), (15559110349592348196UL + 6UL),
-                           &____alias_loc_id_4, (unsigned)12, (unsigned)0, (unsigned)0, (15559110349592348196UL + 124UL), (15559110349592348196UL + 125UL), (15559110349592348196UL + 126UL), (15559110349592348196UL + 127UL), (15559110349592348196UL + 128UL), (15559110349592348196UL + 129UL), (15559110349592348196UL + 130UL), (15559110349592348196UL + 131UL), (15559110349592348196UL + 132UL), (15559110349592348196UL + 133UL), (15559110349592348196UL + 282UL), (15559110349592348196UL + 355UL),
-                           &____alias_loc_id_5, (unsigned)4, (unsigned)0, (unsigned)0, (15559110349592348196UL + 359UL), (15559110349592348196UL + 360UL), (15559110349592348196UL + 361UL), (15559110349592348196UL + 362UL),
-                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 439UL), (15559110349592348196UL + 440UL), (15559110349592348196UL + 441UL), (15559110349592348196UL + 442UL), (15559110349592348196UL + 452UL),
-                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 498UL), (15559110349592348196UL + 499UL), (15559110349592348196UL + 500UL), (15559110349592348196UL + 501UL), (15559110349592348196UL + 611UL),
-                           &____alias_loc_id_8, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 612UL), (15559110349592348196UL + 613UL), (15559110349592348196UL + 614UL), (15559110349592348196UL + 615UL), (15559110349592348196UL + 616UL), (15559110349592348196UL + 727UL),
-                           &____alias_loc_id_9, (unsigned)7, (unsigned)0, (unsigned)0, (15559110349592348196UL + 728UL), (15559110349592348196UL + 729UL), (15559110349592348196UL + 730UL), (15559110349592348196UL + 731UL), (15559110349592348196UL + 732UL), (15559110349592348196UL + 733UL), (15559110349592348196UL + 817UL),
-                            &____alias_loc_id_10, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 818UL), (15559110349592348196UL + 819UL), (15559110349592348196UL + 820UL), (15559110349592348196UL + 821UL), (15559110349592348196UL + 822UL), (15559110349592348196UL + 905UL),
-                            &____alias_loc_id_11, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 927UL), (15559110349592348196UL + 928UL), (15559110349592348196UL + 929UL), (15559110349592348196UL + 930UL), (15559110349592348196UL + 1162UL),
-                            &____alias_loc_id_12, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1163UL), (15559110349592348196UL + 1164UL), (15559110349592348196UL + 1165UL), (15559110349592348196UL + 1166UL), (15559110349592348196UL + 1382UL),
-                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1383UL), (15559110349592348196UL + 1384UL),
-                            &____alias_loc_id_14, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1392UL), (15559110349592348196UL + 1393UL), (15559110349592348196UL + 1394UL), (15559110349592348196UL + 1395UL), (15559110349592348196UL + 1396UL),
-                            &____alias_loc_id_15, (unsigned)3, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1447UL), (15559110349592348196UL + 1448UL), (15559110349592348196UL + 1449UL),
-                            "checkmat", (void *)(&checkmat_npm), (void *)__null, 0, 2, (15559110349592348196UL + 118UL), (15559110349592348196UL + 119UL), 0UL, 1, "fprintf", 9, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1499UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "genmat", (void *)(&genmat_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 1, (15559110349592348196UL + 355UL), 0UL, 5, "malloc", 1, 0UL, (15559110349592348196UL + 282UL), "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1501UL), 0UL, "exit", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL,
-                            "print_structure", (void *)(&print_structure_npm), (void *)__null, 0, 2, (15559110349592348196UL + 437UL), (15559110349592348196UL + 438UL), 0UL, 5, "fprintf", 4, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1502UL), (15559110349592348196UL + 437UL), (15559110349592348196UL + 438UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1503UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1503UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1503UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1503UL), 0UL,
-                            "allocate_clean_block", (void *)(&allocate_clean_block_npm), (void *)__null, 0, 0, (15559110349592348196UL + 452UL), 3, "malloc", 1, 0UL, (15559110349592348196UL + 452UL), "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1501UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "lu0", (void *)(&lu0_npm), (void *)__null, 0, 1, (15559110349592348196UL + 611UL), 0UL, 0,
-                            "bdiv", (void *)(&bdiv_npm), (void *)__null, 0, 2, (15559110349592348196UL + 726UL), (15559110349592348196UL + 727UL), 0UL, 0,
-                            "bmod", (void *)(&bmod_npm), (void *)__null, 0, 3, (15559110349592348196UL + 815UL), (15559110349592348196UL + 816UL), (15559110349592348196UL + 817UL), 0UL, 0,
-                            "fwd", (void *)(&fwd_npm), (void *)__null, 0, 2, (15559110349592348196UL + 904UL), (15559110349592348196UL + 905UL), 0UL, 0,
-                            "sparselu_init", (void *)(&sparselu_init_npm), (void *)__null, 1, &____alias_loc_id_2, 2, (15559110349592348196UL + 925UL), (15559110349592348196UL + 926UL), 0UL, 2, "malloc", 1, 0UL, (15559110349592348196UL + 917UL), "genmat", 1, (15559110349592348196UL + 917UL), 0UL,
-                            "sparselu_par_call", (void *)(&sparselu_par_call_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1162UL), 0UL, 7, "fprintf", 6, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1506UL), 0UL, 0UL, 0UL, 0UL, 0UL, "lu0", 1, (15559110349592348196UL + 960UL), 0UL, "fwd", 2, (15559110349592348196UL + 960UL), (15559110349592348196UL + 960UL), 0UL, "bdiv", 2, (15559110349592348196UL + 960UL), (15559110349592348196UL + 960UL), 0UL, "allocate_clean_block", 0, (15559110349592348196UL + 960UL), "bmod", 3, (15559110349592348196UL + 960UL), (15559110349592348196UL + 960UL), (15559110349592348196UL + 960UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1507UL), 0UL,
-                            "sparselu_seq_call", (void *)(&sparselu_seq_call_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1382UL), 0UL, 5, "lu0", 1, (15559110349592348196UL + 1186UL), 0UL, "fwd", 2, (15559110349592348196UL + 1186UL), (15559110349592348196UL + 1186UL), 0UL, "bdiv", 2, (15559110349592348196UL + 1186UL), (15559110349592348196UL + 1186UL), 0UL, "allocate_clean_block", 0, (15559110349592348196UL + 1186UL), "bmod", 3, (15559110349592348196UL + 1186UL), (15559110349592348196UL + 1186UL), (15559110349592348196UL + 1186UL), 0UL,
-                            "sparselu_fini", (void *)(&sparselu_fini_npm), (void *)__null, 0, 2, (15559110349592348196UL + 1390UL), (15559110349592348196UL + 1391UL), 0UL, 0,
-                            "sparselu_check", (void *)(&sparselu_check_npm), (void *)__null, 0, 2, (15559110349592348196UL + 1445UL), (15559110349592348196UL + 1446UL), 0UL, 2, "fprintf", 3, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1508UL), 0UL, 0UL, "checkmat1", 1, (15559110349592348196UL + 1431UL), 0UL,
-                            "checkmat1", (void *)(&checkmat1_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1495UL), 0UL, 1, "fprintf", 5, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1509UL), 0UL, 0UL, 0UL, 0UL,
-                               "abs", (void **)&(____chimes_extern_func_abs),
+    init_module(15559110349592348196UL, 34, 14, 0, 14, 14, 0, 14, 12, 0, 1,
+                           &____alias_loc_id_0, (unsigned)8, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1UL), (15559110349592348196UL + 2UL), (15559110349592348196UL + 3UL), (15559110349592348196UL + 4UL), (15559110349592348196UL + 5UL), (15559110349592348196UL + 6UL), (15559110349592348196UL + 7UL), (15559110349592348196UL + 8UL),
+                           &____alias_loc_id_1, (unsigned)12, (unsigned)0, (unsigned)0, (15559110349592348196UL + 132UL), (15559110349592348196UL + 133UL), (15559110349592348196UL + 134UL), (15559110349592348196UL + 135UL), (15559110349592348196UL + 136UL), (15559110349592348196UL + 137UL), (15559110349592348196UL + 138UL), (15559110349592348196UL + 139UL), (15559110349592348196UL + 140UL), (15559110349592348196UL + 141UL), (15559110349592348196UL + 290UL), (15559110349592348196UL + 363UL),
+                           &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)0, (15559110349592348196UL + 367UL), (15559110349592348196UL + 368UL), (15559110349592348196UL + 369UL), (15559110349592348196UL + 370UL),
+                           &____alias_loc_id_3, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 447UL), (15559110349592348196UL + 448UL), (15559110349592348196UL + 449UL), (15559110349592348196UL + 450UL), (15559110349592348196UL + 451UL), (15559110349592348196UL + 461UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 510UL), (15559110349592348196UL + 511UL), (15559110349592348196UL + 512UL), (15559110349592348196UL + 513UL), (15559110349592348196UL + 623UL),
+                           &____alias_loc_id_5, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 624UL), (15559110349592348196UL + 625UL), (15559110349592348196UL + 626UL), (15559110349592348196UL + 627UL), (15559110349592348196UL + 628UL), (15559110349592348196UL + 739UL),
+                           &____alias_loc_id_6, (unsigned)7, (unsigned)0, (unsigned)0, (15559110349592348196UL + 740UL), (15559110349592348196UL + 741UL), (15559110349592348196UL + 742UL), (15559110349592348196UL + 743UL), (15559110349592348196UL + 744UL), (15559110349592348196UL + 745UL), (15559110349592348196UL + 829UL),
+                           &____alias_loc_id_7, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 830UL), (15559110349592348196UL + 831UL), (15559110349592348196UL + 832UL), (15559110349592348196UL + 833UL), (15559110349592348196UL + 834UL), (15559110349592348196UL + 917UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)0, (15559110349592348196UL + 918UL), (15559110349592348196UL + 919UL), (15559110349592348196UL + 937UL),
+                           &____alias_loc_id_9, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 939UL), (15559110349592348196UL + 940UL), (15559110349592348196UL + 941UL), (15559110349592348196UL + 942UL), (15559110349592348196UL + 1174UL),
+                            &____alias_loc_id_10, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1175UL), (15559110349592348196UL + 1176UL), (15559110349592348196UL + 1177UL), (15559110349592348196UL + 1178UL), (15559110349592348196UL + 1394UL),
+                            &____alias_loc_id_11, (unsigned)2, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1395UL), (15559110349592348196UL + 1396UL),
+                            &____alias_loc_id_12, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1404UL), (15559110349592348196UL + 1405UL), (15559110349592348196UL + 1406UL), (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1408UL), (15559110349592348196UL + 1409UL),
+                            &____alias_loc_id_13, (unsigned)4, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1463UL), (15559110349592348196UL + 1464UL), (15559110349592348196UL + 1465UL), (15559110349592348196UL + 1466UL),
+                            "checkmat", (void *)(&checkmat_npm), (void *)__null, 0, 2, (15559110349592348196UL + 126UL), (15559110349592348196UL + 127UL), 0UL, 1, "fprintf", 9, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1519UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "genmat", (void *)(&genmat_npm), (void *)__null, 0, 1, (15559110349592348196UL + 363UL), 0UL, 5, "malloc", 1, 0UL, (15559110349592348196UL + 290UL), "fprintf", 2, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1521UL), 0UL, "exit", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL,
+                            "print_structure", (void *)(&print_structure_npm), (void *)__null, 0, 2, (15559110349592348196UL + 445UL), (15559110349592348196UL + 446UL), 0UL, 5, "fprintf", 4, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1522UL), (15559110349592348196UL + 445UL), (15559110349592348196UL + 446UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1523UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1523UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1523UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1523UL), 0UL,
+                            "allocate_clean_block", (void *)(&allocate_clean_block_npm), (void *)__null, 0, 0, (15559110349592348196UL + 461UL), 3, "malloc", 1, 0UL, (15559110349592348196UL + 461UL), "fprintf", 2, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1521UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "lu0", (void *)(&lu0_npm), (void *)__null, 0, 1, (15559110349592348196UL + 623UL), 0UL, 0,
+                            "bdiv", (void *)(&bdiv_npm), (void *)__null, 0, 2, (15559110349592348196UL + 738UL), (15559110349592348196UL + 739UL), 0UL, 0,
+                            "bmod", (void *)(&bmod_npm), (void *)__null, 0, 3, (15559110349592348196UL + 827UL), (15559110349592348196UL + 828UL), (15559110349592348196UL + 829UL), 0UL, 0,
+                            "fwd", (void *)(&fwd_npm), (void *)__null, 0, 2, (15559110349592348196UL + 916UL), (15559110349592348196UL + 917UL), 0UL, 0,
+                            "sparselu_init", (void *)(&sparselu_init_npm), (void *)__null, 0, 2, (15559110349592348196UL + 937UL), (15559110349592348196UL + 938UL), 0UL, 2, "malloc", 1, 0UL, (15559110349592348196UL + 929UL), "genmat", 1, (15559110349592348196UL + 929UL), 0UL,
+                            "sparselu_par_call", (void *)(&sparselu_par_call_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1174UL), 0UL, 7, "fprintf", 6, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1526UL), 0UL, 0UL, 0UL, 0UL, 0UL, "lu0", 1, (15559110349592348196UL + 972UL), 0UL, "fwd", 2, (15559110349592348196UL + 972UL), (15559110349592348196UL + 972UL), 0UL, "bdiv", 2, (15559110349592348196UL + 972UL), (15559110349592348196UL + 972UL), 0UL, "allocate_clean_block", 0, (15559110349592348196UL + 972UL), "bmod", 3, (15559110349592348196UL + 972UL), (15559110349592348196UL + 972UL), (15559110349592348196UL + 972UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1527UL), 0UL,
+                            "sparselu_seq_call", (void *)(&sparselu_seq_call_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1394UL), 0UL, 5, "lu0", 1, (15559110349592348196UL + 1198UL), 0UL, "fwd", 2, (15559110349592348196UL + 1198UL), (15559110349592348196UL + 1198UL), 0UL, "bdiv", 2, (15559110349592348196UL + 1198UL), (15559110349592348196UL + 1198UL), 0UL, "allocate_clean_block", 0, (15559110349592348196UL + 1198UL), "bmod", 3, (15559110349592348196UL + 1198UL), (15559110349592348196UL + 1198UL), (15559110349592348196UL + 1198UL), 0UL,
+                            "sparselu_fini", (void *)(&sparselu_fini_npm), (void *)__null, 0, 2, (15559110349592348196UL + 1402UL), (15559110349592348196UL + 1403UL), 0UL, 0,
+                            "sparselu_check", (void *)(&sparselu_check_npm), (void *)__null, 0, 2, (15559110349592348196UL + 1461UL), (15559110349592348196UL + 1462UL), 0UL, 2, "fprintf", 3, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1528UL), 0UL, 0UL, "checkmat1", 1, (15559110349592348196UL + 1444UL), 0UL,
+                            "checkmat1", (void *)(&checkmat1_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1515UL), 0UL, 1, "fprintf", 5, (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1529UL), 0UL, 0UL, 0UL, 0UL,
                            "checkmat", &(____chimes_does_checkpoint_checkmat_npm),
                            "genmat", &(____chimes_does_checkpoint_genmat_npm),
                            "print_structure", &(____chimes_does_checkpoint_print_structure_npm),
@@ -5412,40 +5378,40 @@ static int module_init() {
                            "sparselu_fini", &(____chimes_does_checkpoint_sparselu_fini_npm),
                            "sparselu_check", &(____chimes_does_checkpoint_sparselu_check_npm),
                            "checkmat1", &(____chimes_does_checkpoint_checkmat1_npm),
-                           "abs", &(____chimes_does_checkpoint_abs_npm),
-                             (15559110349592348196UL + 1162UL), (15559110349592348196UL + 960UL),
-                             (15559110349592348196UL + 1163UL), (15559110349592348196UL + 1382UL),
-                             (15559110349592348196UL + 1383UL), (15559110349592348196UL + 1390UL),
-                             (15559110349592348196UL + 132UL), (15559110349592348196UL + 282UL),
-                             (15559110349592348196UL + 131UL), (15559110349592348196UL + 282UL),
-                             (15559110349592348196UL + 498UL), (15559110349592348196UL + 611UL),
-                             (15559110349592348196UL + 1447UL), (15559110349592348196UL + 1495UL),
-                             (15559110349592348196UL + 819UL), (15559110349592348196UL + 905UL),
-                             (15559110349592348196UL + 818UL), (15559110349592348196UL + 904UL),
-                             (15559110349592348196UL + 730UL), (15559110349592348196UL + 817UL),
-                             (15559110349592348196UL + 3UL), (15559110349592348196UL + 119UL),
-                             (15559110349592348196UL + 2UL), (15559110349592348196UL + 118UL),
-                             (15559110349592348196UL + 613UL), (15559110349592348196UL + 727UL),
-                             (15559110349592348196UL + 1393UL), (15559110349592348196UL + 1446UL),
-                             (15559110349592348196UL + 1392UL), (15559110349592348196UL + 1445UL),
-                             (15559110349592348196UL + 360UL), (15559110349592348196UL + 438UL),
-                             (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1431UL),
-                             (15559110349592348196UL + 612UL), (15559110349592348196UL + 726UL),
-                             (15559110349592348196UL + 442UL), (15559110349592348196UL + 452UL),
-                             (15559110349592348196UL + 441UL), (15559110349592348196UL + 452UL),
-                             (15559110349592348196UL + 124UL), (15559110349592348196UL + 355UL),
-                             (15559110349592348196UL + 1498UL), (15559110349592348196UL + 1407UL),
-                             (15559110349592348196UL + 906UL), (15559110349592348196UL + 925UL),
-                             (15559110349592348196UL + 907UL), (15559110349592348196UL + 926UL),
-                             (15559110349592348196UL + 1382UL), (15559110349592348196UL + 1186UL),
-                             (15559110349592348196UL + 355UL), (15559110349592348196UL + 282UL),
-                             (15559110349592348196UL + 359UL), (15559110349592348196UL + 437UL),
-                             (15559110349592348196UL + 438UL), (15559110349592348196UL + 397UL),
-                             (15559110349592348196UL + 1384UL), (15559110349592348196UL + 1391UL),
-                             (15559110349592348196UL + 927UL), (15559110349592348196UL + 1162UL),
-                             (15559110349592348196UL + 925UL), (15559110349592348196UL + 917UL),
-                             (15559110349592348196UL + 728UL), (15559110349592348196UL + 815UL),
-                             (15559110349592348196UL + 729UL), (15559110349592348196UL + 816UL),
+                             (15559110349592348196UL + 740UL), (15559110349592348196UL + 827UL),
+                             (15559110349592348196UL + 741UL), (15559110349592348196UL + 828UL),
+                             (15559110349592348196UL + 742UL), (15559110349592348196UL + 829UL),
+                             (15559110349592348196UL + 625UL), (15559110349592348196UL + 739UL),
+                             (15559110349592348196UL + 624UL), (15559110349592348196UL + 738UL),
+                             (15559110349592348196UL + 450UL), (15559110349592348196UL + 461UL),
+                             (15559110349592348196UL + 451UL), (15559110349592348196UL + 461UL),
+                             (15559110349592348196UL + 1175UL), (15559110349592348196UL + 1394UL),
+                             (15559110349592348196UL + 132UL), (15559110349592348196UL + 363UL),
+                             (15559110349592348196UL + 139UL), (15559110349592348196UL + 290UL),
+                             (15559110349592348196UL + 830UL), (15559110349592348196UL + 916UL),
+                             (15559110349592348196UL + 831UL), (15559110349592348196UL + 917UL),
+                             (15559110349592348196UL + 1518UL), (15559110349592348196UL + 1420UL),
+                             (15559110349592348196UL + 939UL), (15559110349592348196UL + 1174UL),
+                             (15559110349592348196UL + 3UL), (15559110349592348196UL + 127UL),
+                             (15559110349592348196UL + 2UL), (15559110349592348196UL + 126UL),
+                             (15559110349592348196UL + 919UL), (15559110349592348196UL + 938UL),
+                             (15559110349592348196UL + 918UL), (15559110349592348196UL + 937UL),
+                             (15559110349592348196UL + 368UL), (15559110349592348196UL + 446UL),
+                             (15559110349592348196UL + 367UL), (15559110349592348196UL + 445UL),
+                             (15559110349592348196UL + 1395UL), (15559110349592348196UL + 1402UL),
+                             (15559110349592348196UL + 1394UL), (15559110349592348196UL + 1198UL),
+                             (15559110349592348196UL + 937UL), (15559110349592348196UL + 929UL),
+                             (15559110349592348196UL + 363UL), (15559110349592348196UL + 290UL),
+                             (15559110349592348196UL + 1405UL), (15559110349592348196UL + 1462UL),
+                             (15559110349592348196UL + 1404UL), (15559110349592348196UL + 1461UL),
+                             (15559110349592348196UL + 449UL), (15559110349592348196UL + 461UL),
+                             (15559110349592348196UL + 1174UL), (15559110349592348196UL + 972UL),
+                             (15559110349592348196UL + 140UL), (15559110349592348196UL + 290UL),
+                             (15559110349592348196UL + 446UL), (15559110349592348196UL + 405UL),
+                             (15559110349592348196UL + 1396UL), (15559110349592348196UL + 1403UL),
+                             (15559110349592348196UL + 1463UL), (15559110349592348196UL + 1515UL),
+                             (15559110349592348196UL + 510UL), (15559110349592348196UL + 623UL),
+                             (15559110349592348196UL + 1462UL), (15559110349592348196UL + 1444UL),
                      "bots_verbose_mode_t", 0,
                              "print_structure", "_Z15print_structurePcPPf", 0,
                              "allocate_clean_block", "_Z20allocate_clean_blockv", 0,
@@ -5459,29 +5425,20 @@ static int module_init() {
                              "sparselu_init", "_Z13sparselu_initPPPfPc", 1, "genmat",
                              "sparselu_check", "_Z14sparselu_checkPPfS0_", 1, "checkmat1",
                              "sparselu_seq_call", "_Z17sparselu_seq_callPPf", 5, "lu0", "fwd", "bdiv", "allocate_clean_block", "bmod",
-                             "genmat", "_Z6genmatPPf", 2, "abs", "abs",
+                             "genmat", "_Z6genmatPPf", 0,
                              "bdiv", "_Z4bdivPfS_", 0,
-                        "genmat|M|0", 1, "abs",
-                        "genmat|null_entry|0", 1, "abs",
-                        "genmat|init_val|0", 1, "abs",
-                        "genmat|i|0", 1, "abs",
-                        "genmat|j|0", 1, "abs",
-                        "genmat|ii|0", 1, "abs",
-                        "genmat|jj|0", 1, "abs",
-                        "genmat|p|0", 1, "abs",
-                        "genmat|prow|0", 1, "abs",
-                        "genmat|rowsum|0", 1, "abs",
-        "lu0", 0UL, (int)1, 15559110349592349156UL,
-        "fwd", 0UL, (int)2, 15559110349592349156UL, 15559110349592349156UL,
-        "bdiv", 0UL, (int)2, 15559110349592349156UL, 15559110349592349156UL,
-        "allocate_clean_block", 15559110349592349156UL, (int)0,
-        "bmod", 0UL, (int)3, 15559110349592349156UL, 15559110349592349156UL, 15559110349592349156UL,
-        "lu0", 0UL, (int)1, 15559110349592349382UL,
-        "fwd", 0UL, (int)2, 15559110349592349382UL, 15559110349592349382UL,
-        "bdiv", 0UL, (int)2, 15559110349592349382UL, 15559110349592349382UL,
-        "allocate_clean_block", 15559110349592349382UL, (int)0,
-        "bmod", 0UL, (int)3, 15559110349592349382UL, 15559110349592349382UL, 15559110349592349382UL,
-        "checkmat1", 0UL, (int)1, 15559110349592349627UL);
+        "genmat", 0UL, (int)1, 15559110349592349125UL,
+        "lu0", 0UL, (int)1, 15559110349592349168UL,
+        "fwd", 0UL, (int)2, 15559110349592349168UL, 15559110349592349168UL,
+        "bdiv", 0UL, (int)2, 15559110349592349168UL, 15559110349592349168UL,
+        "allocate_clean_block", 15559110349592349168UL, (int)0,
+        "bmod", 0UL, (int)3, 15559110349592349168UL, 15559110349592349168UL, 15559110349592349168UL,
+        "lu0", 0UL, (int)1, 15559110349592349394UL,
+        "fwd", 0UL, (int)2, 15559110349592349394UL, 15559110349592349394UL,
+        "bdiv", 0UL, (int)2, 15559110349592349394UL, 15559110349592349394UL,
+        "allocate_clean_block", 15559110349592349394UL, (int)0,
+        "bmod", 0UL, (int)3, 15559110349592349394UL, 15559110349592349394UL, 15559110349592349394UL,
+        "checkmat1", 0UL, (int)1, 15559110349592349640UL);
     return 0;
 }
 

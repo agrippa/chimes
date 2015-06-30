@@ -2,15 +2,19 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c gradient_x|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c gradient_x|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c gradient_x|result|0 " %struct.MAT* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c gradient_x|____chimes_ret_var_1|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c gradient_y|input|0 " %struct.MAT* " 64 1 0 1 m_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c gradient_y|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c gradient_y|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c gradient_y|result|0 " %struct.MAT* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c gradient_y|____chimes_ret_var_2|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c mean|in|0 " %struct.VEC* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c mean|sum|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c mean|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c mean|____chimes_ret_var_3|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c std_dev|in|0 " %struct.VEC* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c std_dev|m|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c std_dev|sum|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c std_dev|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c std_dev|temp|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c std_dev|____chimes_ret_var_4|0 " double " 64 0 0 0

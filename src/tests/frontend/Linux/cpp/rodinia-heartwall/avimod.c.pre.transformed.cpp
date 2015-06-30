@@ -5016,7 +5016,7 @@ float* chop_flip_image_resumable( char *image,
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
         int scaled,
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-        int converted) {const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17693923976101510198UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+        int converted) {const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17693923976101510202UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5064,7 +5064,7 @@ float* chop_flip_image_resumable( char *image,
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *result; result = ((float *)malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510176UL, 0, 0)) ;
+  float *result; result = ((float *)malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0)) ;
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5124,7 +5124,7 @@ float* chop_flip_image_resumable( char *image,
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *result_converted; result_converted = ((float *)malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510176UL, 0, 0)) ;
+  float *result_converted; result_converted = ((float *)malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0)) ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  if(converted==1){
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5146,13 +5146,13 @@ float* chop_flip_image_resumable( char *image,
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  }
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- free_wrapper(result, 17693923976101510176UL);
+ free_wrapper(result, 17693923976101510177UL);
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- rm_stack(true, 17693923976101510176UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0); return result_converted;
+  float *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (result_converted); rm_stack(true, 17693923976101510177UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-}
+rm_stack(true, 17693923976101510177UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0); }
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5169,7 +5169,7 @@ float* get_frame_resumable( avi_t* cell_file,
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
       int scaled,
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-      int converted) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 5, 5, (size_t)(17693923976101510275UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0, "get_frame|converted|0", &____must_checkpoint_get_frame_converted_0, "i32", (void *)(&converted), (size_t)4, 0, 0, 0) ; char *image_buf;
+      int converted) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 5, 5, (size_t)(17693923976101510283UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0, "get_frame|converted|0", &____must_checkpoint_get_frame_converted_0, "i32", (void *)(&converted), (size_t)4, 0, 0, 0) ; char *image_buf;
 int status;
 int height;
 int width;
@@ -5180,25 +5180,25 @@ int dummy;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
   ;
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-     call_lbl_1: width = ( ({ calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_width)(cell_file); }) ) ;
+     call_lbl_1: width = ( ({ calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(17693923976101510283UL)); (AVI_video_width)(cell_file); }) ) ;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-     call_lbl_2: height = ( ({ calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_height)(cell_file); }) ) ;
+     call_lbl_2: height = ( ({ calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(17693923976101510283UL)); (AVI_video_height)(cell_file); }) ) ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
   ;
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  call_lbl_3: ({ calling((void*)AVI_set_video_position, 3, ____alias_loc_id_1, 0UL, 2, (size_t)(17693923976101510275UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
+  call_lbl_3: ({ calling((void*)AVI_set_video_position, 3, ____alias_loc_id_1, 0UL, 2, (size_t)(17693923976101510283UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-    image_buf = ((char *)malloc_wrapper(width * height * sizeof(char), 17693923976101510249UL, 0, 0)) ;
+    image_buf = ((char *)malloc_wrapper(width * height * sizeof(char), 17693923976101510254UL, 0, 0)) ;
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- alias_group_changed(____alias_loc_id_0); call_lbl_6: status = ({ calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(17693923976101510275UL), (size_t)(17693923976101510249UL), (size_t)(17693923976101510213UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) ;
+ alias_group_changed(____alias_loc_id_0); call_lbl_6: status = ({ calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(17693923976101510283UL), (size_t)(17693923976101510254UL), (size_t)(17693923976101510217UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) ;
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  if(status == -1) {
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-   call_lbl_7: ({ char * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = ((char *)"Error with AVI_read_frame"); } calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(17693923976101510289UL)); (AVI_print_error)(____chimes_arg7); }) ;
+   call_lbl_7: ({ char * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = ((char *)"Error with AVI_read_frame"); } calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(17693923976101510297UL)); (AVI_print_error)(____chimes_arg7); }) ;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
   exit(-1);
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5212,14 +5212,14 @@ int dummy;
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- free_wrapper(image_buf, 17693923976101510249UL);
+ free_wrapper(image_buf, 17693923976101510254UL);
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- rm_stack(true, 17693923976101510269UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1); return image_chopped;
+  float *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (image_chopped); rm_stack(true, 17693923976101510274UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-}
+rm_stack(true, 17693923976101510274UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1); }
 float* chop_flip_image_quick( char *image,
 # 17 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
         int height,
@@ -5230,7 +5230,7 @@ float* chop_flip_image_quick( char *image,
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
         int scaled,
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-        int converted) {const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17693923976101510198UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+        int converted) {const int ____chimes_did_disable0 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 6, 0, (size_t)(17693923976101510202UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5278,7 +5278,7 @@ float* chop_flip_image_quick( char *image,
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *result; result = ((float *)malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510176UL, 0, 0)) ;
+  float *result; result = ((float *)malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0)) ;
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5338,7 +5338,7 @@ float* chop_flip_image_quick( char *image,
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  float *result_converted; result_converted = ((float *)malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510176UL, 0, 0)) ;
+  float *result_converted; result_converted = ((float *)malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0)) ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  if(converted==1){
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5360,13 +5360,13 @@ float* chop_flip_image_quick( char *image,
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  }
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- free_wrapper(result, 17693923976101510176UL);
+ free_wrapper(result, 17693923976101510177UL);
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- rm_stack(true, 17693923976101510176UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0); return result_converted;
+  float *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (result_converted); rm_stack(true, 17693923976101510177UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-}
+rm_stack(true, 17693923976101510177UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_4, ____chimes_did_disable0); }
 
 float* chop_flip_image( char *image,
 # 17 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5388,7 +5388,7 @@ float* get_frame_quick( avi_t* cell_file,
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
       int scaled,
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-      int converted) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 5, 5, (size_t)(17693923976101510275UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0, "get_frame|converted|0", &____must_checkpoint_get_frame_converted_0, "i32", (void *)(&converted), (size_t)4, 0, 0, 0) ; char *image_buf;
+      int converted) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 5, 5, (size_t)(17693923976101510283UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0, "get_frame|converted|0", &____must_checkpoint_get_frame_converted_0, "i32", (void *)(&converted), (size_t)4, 0, 0, 0) ; char *image_buf;
 int status;
 int height;
 int width;
@@ -5399,25 +5399,25 @@ int dummy;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
   ;
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-     call_lbl_1: width = ( ({ calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_width)(cell_file); }) ) ;
+     call_lbl_1: width = ( ({ calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(17693923976101510283UL)); (AVI_video_width)(cell_file); }) ) ;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-     call_lbl_2: height = ( ({ calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(17693923976101510275UL)); (AVI_video_height)(cell_file); }) ) ;
+     call_lbl_2: height = ( ({ calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(17693923976101510283UL)); (AVI_video_height)(cell_file); }) ) ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
   ;
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-  call_lbl_3: ({ calling((void*)AVI_set_video_position, 3, ____alias_loc_id_1, 0UL, 2, (size_t)(17693923976101510275UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
+  call_lbl_3: ({ calling((void*)AVI_set_video_position, 3, ____alias_loc_id_1, 0UL, 2, (size_t)(17693923976101510283UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-    image_buf = ((char *)malloc_wrapper(width * height * sizeof(char), 17693923976101510249UL, 0, 0)) ;
+    image_buf = ((char *)malloc_wrapper(width * height * sizeof(char), 17693923976101510254UL, 0, 0)) ;
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- alias_group_changed(____alias_loc_id_0); call_lbl_6: status = ({ calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(17693923976101510275UL), (size_t)(17693923976101510249UL), (size_t)(17693923976101510213UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) ;
+ alias_group_changed(____alias_loc_id_0); call_lbl_6: status = ({ calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(17693923976101510283UL), (size_t)(17693923976101510254UL), (size_t)(17693923976101510217UL)); (AVI_read_frame)(cell_file, image_buf, &dummy); }) ;
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  if(status == -1) {
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-   call_lbl_7: ({ calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(17693923976101510289UL)); (AVI_print_error)((char *)"Error with AVI_read_frame"); }) ;
+   call_lbl_7: ({ calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(17693923976101510297UL)); (AVI_print_error)((char *)"Error with AVI_read_frame"); }) ;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
   exit(-1);
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5431,14 +5431,14 @@ int dummy;
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- free_wrapper(image_buf, 17693923976101510249UL);
+ free_wrapper(image_buf, 17693923976101510254UL);
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- rm_stack(true, 17693923976101510269UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1); return image_chopped;
+  float *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (image_chopped); rm_stack(true, 17693923976101510274UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
-}
+rm_stack(true, 17693923976101510274UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_5, ____chimes_did_disable1); }
 
 float* get_frame( avi_t* cell_file,
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5510,7 +5510,7 @@ float* chop_flip_image_npm( char *image,
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- float* result = (float *) malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510176UL, 0, 0);
+ float* result = (float *) malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0);
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5570,7 +5570,7 @@ float* chop_flip_image_npm( char *image,
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- float* result_converted = (float *) malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510176UL, 0, 0);
+ float* result_converted = (float *) malloc_wrapper(height_new * width_new * sizeof(float), 17693923976101510177UL, 0, 0);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  if(converted==1){
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5592,11 +5592,11 @@ float* chop_flip_image_npm( char *image,
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  }
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- free_wrapper(result, 17693923976101510176UL);
+ free_wrapper(result, 17693923976101510177UL);
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- return result_converted;
+  float * ____chimes_ret_var_0; ____chimes_ret_var_0 = (result_converted); return ____chimes_ret_var_0; ;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 }
 
@@ -5626,7 +5626,7 @@ float* get_frame_npm( avi_t* cell_file,
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- char* image_buf = (char*) malloc_wrapper(width * height * sizeof(char), 17693923976101510249UL, 0, 0);
+ char* image_buf = (char*) malloc_wrapper(width * height * sizeof(char), 17693923976101510254UL, 0, 0);
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
  status = (*____chimes_extern_func_AVI_read_frame)(cell_file, image_buf, &dummy);
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
@@ -5646,11 +5646,11 @@ float* get_frame_npm( avi_t* cell_file,
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- free_wrapper(image_buf, 17693923976101510249UL);
+ free_wrapper(image_buf, 17693923976101510254UL);
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
- return image_chopped;
+  float * ____chimes_ret_var_1; ____chimes_ret_var_1 = (image_chopped); return ____chimes_ret_var_1; ;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/heartwall/AVI/avimod.c"
 }
@@ -5660,15 +5660,15 @@ float* get_frame_npm( avi_t* cell_file,
 
 
 static int module_init() {
-    init_module(17693923976101509920UL, 6, 2, 10, 6, 2, 5, 7, 1, 0, 4,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (17693923976101509920UL + 297UL), "AVI_read_frame", (unsigned)3, (17693923976101509920UL + 293UL), (17693923976101509920UL + 329UL), (17693923976101509920UL + 355UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (17693923976101509920UL + 295UL), "AVI_set_video_position", (unsigned)1, (17693923976101509920UL + 355UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (17693923976101509920UL + 294UL), "AVI_video_height", (unsigned)1, (17693923976101509920UL + 355UL),
-                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (unsigned)1, (17693923976101509920UL + 288UL), (17693923976101509920UL + 289UL), (17693923976101509920UL + 290UL), (17693923976101509920UL + 291UL), (17693923976101509920UL + 292UL), "AVI_video_width", (unsigned)1, (17693923976101509920UL + 355UL),
-                           &____alias_loc_id_4, (unsigned)19, (unsigned)0, (unsigned)0, (17693923976101509920UL + 1UL), (17693923976101509920UL + 2UL), (17693923976101509920UL + 3UL), (17693923976101509920UL + 4UL), (17693923976101509920UL + 5UL), (17693923976101509920UL + 6UL), (17693923976101509920UL + 7UL), (17693923976101509920UL + 8UL), (17693923976101509920UL + 9UL), (17693923976101509920UL + 10UL), (17693923976101509920UL + 11UL), (17693923976101509920UL + 12UL), (17693923976101509920UL + 13UL), (17693923976101509920UL + 14UL), (17693923976101509920UL + 15UL), (17693923976101509920UL + 16UL), (17693923976101509920UL + 17UL), (17693923976101509920UL + 18UL), (17693923976101509920UL + 256UL),
-                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (17693923976101509920UL + 296UL), (17693923976101509920UL + 298UL),
-                            "chop_flip_image", (void *)(&chop_flip_image_npm), (void *)__null, 0, 6, (17693923976101509920UL + 278UL), 0UL, 0UL, 0UL, 0UL, 0UL, (17693923976101509920UL + 256UL), 3, "malloc", 1, 0UL, (17693923976101509920UL + 256UL), "malloc", 1, 0UL, (17693923976101509920UL + 256UL), "free", 1, (17693923976101509920UL + 256UL), 0UL,
-                            "get_frame", (void *)(&get_frame_npm), (void *)__null, 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 5, (17693923976101509920UL + 355UL), 0UL, 0UL, 0UL, 0UL, (17693923976101509920UL + 349UL), 9, "AVI_video_width", 1, (17693923976101509920UL + 355UL), 0UL, "AVI_video_height", 1, (17693923976101509920UL + 355UL), 0UL, "AVI_set_video_position", 2, (17693923976101509920UL + 355UL), 0UL, 0UL, "malloc", 1, 0UL, (17693923976101509920UL + 329UL), "AVI_read_frame", 3, (17693923976101509920UL + 355UL), (17693923976101509920UL + 329UL), (17693923976101509920UL + 293UL), 0UL, "AVI_print_error", 1, (17693923976101509920UL + 369UL), 0UL, "exit", 1, 0UL, 0UL, "chop_flip_image", 6, (17693923976101509920UL + 329UL), 0UL, 0UL, 0UL, 0UL, 0UL, (17693923976101509920UL + 349UL), "free", 1, (17693923976101509920UL + 329UL), 0UL,
+    init_module(17693923976101509920UL, 8, 2, 10, 6, 2, 5, 7, 1, 0, 4,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (17693923976101509920UL + 301UL), "AVI_read_frame", (unsigned)3, (17693923976101509920UL + 297UL), (17693923976101509920UL + 334UL), (17693923976101509920UL + 363UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (17693923976101509920UL + 299UL), "AVI_set_video_position", (unsigned)1, (17693923976101509920UL + 363UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (17693923976101509920UL + 298UL), "AVI_video_height", (unsigned)1, (17693923976101509920UL + 363UL),
+                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (unsigned)1, (17693923976101509920UL + 292UL), (17693923976101509920UL + 293UL), (17693923976101509920UL + 294UL), (17693923976101509920UL + 295UL), (17693923976101509920UL + 296UL), "AVI_video_width", (unsigned)1, (17693923976101509920UL + 363UL),
+                           &____alias_loc_id_4, (unsigned)20, (unsigned)0, (unsigned)0, (17693923976101509920UL + 1UL), (17693923976101509920UL + 2UL), (17693923976101509920UL + 3UL), (17693923976101509920UL + 4UL), (17693923976101509920UL + 5UL), (17693923976101509920UL + 6UL), (17693923976101509920UL + 7UL), (17693923976101509920UL + 8UL), (17693923976101509920UL + 9UL), (17693923976101509920UL + 10UL), (17693923976101509920UL + 11UL), (17693923976101509920UL + 12UL), (17693923976101509920UL + 13UL), (17693923976101509920UL + 14UL), (17693923976101509920UL + 15UL), (17693923976101509920UL + 16UL), (17693923976101509920UL + 17UL), (17693923976101509920UL + 18UL), (17693923976101509920UL + 19UL), (17693923976101509920UL + 257UL),
+                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (17693923976101509920UL + 300UL), (17693923976101509920UL + 302UL), (17693923976101509920UL + 303UL),
+                            "chop_flip_image", (void *)(&chop_flip_image_npm), (void *)__null, 0, 6, (17693923976101509920UL + 282UL), 0UL, 0UL, 0UL, 0UL, 0UL, (17693923976101509920UL + 257UL), 3, "malloc", 1, 0UL, (17693923976101509920UL + 257UL), "malloc", 1, 0UL, (17693923976101509920UL + 257UL), "free", 1, (17693923976101509920UL + 257UL), 0UL,
+                            "get_frame", (void *)(&get_frame_npm), (void *)__null, 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 5, (17693923976101509920UL + 363UL), 0UL, 0UL, 0UL, 0UL, (17693923976101509920UL + 354UL), 9, "AVI_video_width", 1, (17693923976101509920UL + 363UL), 0UL, "AVI_video_height", 1, (17693923976101509920UL + 363UL), 0UL, "AVI_set_video_position", 2, (17693923976101509920UL + 363UL), 0UL, 0UL, "malloc", 1, 0UL, (17693923976101509920UL + 334UL), "AVI_read_frame", 3, (17693923976101509920UL + 363UL), (17693923976101509920UL + 334UL), (17693923976101509920UL + 297UL), 0UL, "AVI_print_error", 1, (17693923976101509920UL + 377UL), 0UL, "exit", 1, 0UL, 0UL, "chop_flip_image", 6, (17693923976101509920UL + 334UL), 0UL, 0UL, 0UL, 0UL, 0UL, (17693923976101509920UL + 354UL), "free", 1, (17693923976101509920UL + 334UL), 0UL,
                                "AVI_print_error", (void **)&(____chimes_extern_func_AVI_print_error),
                                "AVI_read_frame", (void **)&(____chimes_extern_func_AVI_read_frame),
                                "AVI_set_video_position", (void **)&(____chimes_extern_func_AVI_set_video_position),
@@ -5681,12 +5681,14 @@ static int module_init() {
                            "AVI_set_video_position", &(____chimes_does_checkpoint_AVI_set_video_position_npm),
                            "AVI_video_height", &(____chimes_does_checkpoint_AVI_video_height_npm),
                            "AVI_video_width", &(____chimes_does_checkpoint_AVI_video_width_npm),
-                             (17693923976101509920UL + 15UL), (17693923976101509920UL + 256UL),
-                             (17693923976101509920UL + 18UL), (17693923976101509920UL + 256UL),
-                             (17693923976101509920UL + 1UL), (17693923976101509920UL + 278UL),
-                             (17693923976101509920UL + 288UL), (17693923976101509920UL + 355UL),
-                             (17693923976101509920UL + 298UL), (17693923976101509920UL + 349UL),
-                             (17693923976101509920UL + 297UL), (17693923976101509920UL + 329UL),
+                             (17693923976101509920UL + 15UL), (17693923976101509920UL + 257UL),
+                             (17693923976101509920UL + 19UL), (17693923976101509920UL + 257UL),
+                             (17693923976101509920UL + 18UL), (17693923976101509920UL + 257UL),
+                             (17693923976101509920UL + 302UL), (17693923976101509920UL + 354UL),
+                             (17693923976101509920UL + 303UL), (17693923976101509920UL + 354UL),
+                             (17693923976101509920UL + 1UL), (17693923976101509920UL + 282UL),
+                             (17693923976101509920UL + 301UL), (17693923976101509920UL + 334UL),
+                             (17693923976101509920UL + 292UL), (17693923976101509920UL + 363UL),
                      "audio_index_entry", 0,
                      "avi_t", 26, "long int", (int)__builtin_offsetof (avi_t, fdes), "long int", (int)__builtin_offsetof (avi_t, mode), "long int", (int)__builtin_offsetof (avi_t, width), "long int", (int)__builtin_offsetof (avi_t, height), "double", (int)__builtin_offsetof (avi_t, fps), "[ 8 x char ]", (int)__builtin_offsetof (avi_t, compressor), "[ 8 x char ]", (int)__builtin_offsetof (avi_t, compressor2), "long int", (int)__builtin_offsetof (avi_t, video_strn), "long int", (int)__builtin_offsetof (avi_t, video_frames), "[ 4 x char ]", (int)__builtin_offsetof (avi_t, video_tag), "long int", (int)__builtin_offsetof (avi_t, video_pos), "long unsigned int", (int)__builtin_offsetof (avi_t, max_len), "[ 8 x %struct.track_s ]", (int)__builtin_offsetof (avi_t, track), "long unsigned int", (int)__builtin_offsetof (avi_t, pos), "long int", (int)__builtin_offsetof (avi_t, n_idx), "long int", (int)__builtin_offsetof (avi_t, max_idx), "long int", (int)__builtin_offsetof (avi_t, v_codech_off), "long int", (int)__builtin_offsetof (avi_t, v_codecf_off), "[ 16 x unsigned char ]*", (int)__builtin_offsetof (avi_t, idx), "%struct.video_index_entry*", (int)__builtin_offsetof (avi_t, video_index), "long unsigned int", (int)__builtin_offsetof (avi_t, last_pos), "long unsigned int", (int)__builtin_offsetof (avi_t, last_len), "int", (int)__builtin_offsetof (avi_t, must_use_index), "long unsigned int", (int)__builtin_offsetof (avi_t, movi_start), "int", (int)__builtin_offsetof (avi_t, anum), "int", (int)__builtin_offsetof (avi_t, aptr),
                      "track_s", 14, "long int", (int)__builtin_offsetof (struct track_s, a_fmt), "long int", (int)__builtin_offsetof (struct track_s, a_chans), "long int", (int)__builtin_offsetof (struct track_s, a_rate), "long int", (int)__builtin_offsetof (struct track_s, a_bits), "long int", (int)__builtin_offsetof (struct track_s, mp3rate), "long int", (int)__builtin_offsetof (struct track_s, audio_strn), "long int", (int)__builtin_offsetof (struct track_s, audio_bytes), "long int", (int)__builtin_offsetof (struct track_s, audio_chunks), "[ 4 x char ]", (int)__builtin_offsetof (struct track_s, audio_tag), "long int", (int)__builtin_offsetof (struct track_s, audio_posc), "long int", (int)__builtin_offsetof (struct track_s, audio_posb), "long int", (int)__builtin_offsetof (struct track_s, a_codech_off), "long int", (int)__builtin_offsetof (struct track_s, a_codecf_off), "%struct.audio_index_entry*", (int)__builtin_offsetof (struct track_s, audio_index),
@@ -5703,7 +5705,7 @@ static int module_init() {
                         "get_frame|height|0", 3, "AVI_set_video_position", "AVI_read_frame", "AVI_print_error",
                         "get_frame|status|0", 1, "AVI_print_error",
                         "get_frame|image_buf|0", 2, "AVI_read_frame", "AVI_print_error",
-        "chop_flip_image", 17693923976101510269UL, (int)6, 17693923976101510249UL, 0UL, 0UL, 0UL, 0UL, 0UL);
+        "chop_flip_image", 17693923976101510274UL, (int)6, 17693923976101510254UL, 0UL, 0UL, 0UL, 0UL, 0UL);
     return 0;
 }
 

@@ -1,0 +1,10 @@
+WARNING: Unable to load address of function avi_write, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function avi_add_index_entry, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function str2ulong, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function avi_add_chunk, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function avi_read, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function avi_write_data, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function avi_close_output_file, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function avi_sampsize, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function long2str, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.
+WARNING: Unable to load address of function str2ushort, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.

@@ -251,6 +251,7 @@ static unsigned ____alias_loc_id_79;
 static unsigned ____alias_loc_id_80;
 static unsigned ____alias_loc_id_81;
 static unsigned ____alias_loc_id_82;
+static unsigned ____alias_loc_id_83;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -6940,9 +6941,9 @@ long long get_time_resumable() {const int ____chimes_did_disable0 = new_stack((v
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  gettimeofday(&tv, __null);
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_71, ____chimes_did_disable0); return (tv.tv_sec * 1000000) + tv.tv_usec;
+  long long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_71, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_71, ____chimes_did_disable0); }
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -6952,7 +6953,7 @@ long long get_time_resumable() {const int ____chimes_did_disable0 = new_stack((v
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 MAT * get_frame_npm(avi_t *cell_file, int frame_num, int cropped, int scaled);MAT * chop_flip_image_npm(unsigned char *image, int height, int width, int top, int bottom, int left, int right, int scaled);static void (*____chimes_extern_func_AVI_print_error)(char *) = AVI_print_error;static long (*____chimes_extern_func_AVI_read_frame)(avi_t *, char *, int *) = AVI_read_frame;static int (*____chimes_extern_func_AVI_set_video_position)(avi_t *, long) = AVI_set_video_position;static int (*____chimes_extern_func_AVI_video_height)(avi_t *) = AVI_video_height;static int (*____chimes_extern_func_AVI_video_width)(avi_t *) = AVI_video_width;
 MAT * get_frame_quick(avi_t *cell_file, int frame_num, int cropped, int scaled); MAT * get_frame(avi_t *cell_file, int frame_num, int cropped, int scaled);MAT * chop_flip_image_quick(unsigned char *image, int height, int width, int top, int bottom, int left, int right, int scaled); MAT * chop_flip_image(unsigned char *image, int height, int width, int top, int bottom, int left, int right, int scaled);
-MAT * get_frame_resumable(avi_t *cell_file, int frame_num, int cropped, int scaled) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 4, 4, (size_t)(8194319462526367154UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0) ; unsigned char *image_buf;
+MAT * get_frame_resumable(avi_t *cell_file, int frame_num, int cropped, int scaled) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 4, 4, (size_t)(8194319462526367162UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0) ; unsigned char *image_buf;
 int height;
 int width;
 int dummy;
@@ -6960,21 +6961,21 @@ int dummy;
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
   ;
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-     call_lbl_1: width = ( ({ calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(8194319462526367154UL)); (AVI_video_width)(cell_file); }) ) ;
+     call_lbl_1: width = ( ({ calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(8194319462526367162UL)); (AVI_video_width)(cell_file); }) ) ;
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-     call_lbl_2: height = ( ({ calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(8194319462526367154UL)); (AVI_video_height)(cell_file); }) ) ;
+     call_lbl_2: height = ( ({ calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(8194319462526367162UL)); (AVI_video_height)(cell_file); }) ) ;
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-    image_buf = ((unsigned char *)malloc_wrapper(width * height, 8194319462526367112UL, 0, 0)) ;
+    image_buf = ((unsigned char *)malloc_wrapper(width * height, 8194319462526367117UL, 0, 0)) ;
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_4: ({ calling((void*)AVI_set_video_position, 4, ____alias_loc_id_1, 0UL, 2, (size_t)(8194319462526367154UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
+  call_lbl_4: ({ calling((void*)AVI_set_video_position, 4, ____alias_loc_id_1, 0UL, 2, (size_t)(8194319462526367162UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_6: if(alias_group_changed(____alias_loc_id_0) || ({ char * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = ((char *)image_buf); } calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(8194319462526367154UL), (size_t)(8194319462526367112UL), (size_t)(8194319462526367085UL)); (AVI_read_frame)(cell_file, ____chimes_arg5, &dummy); }) == -1) {
+  call_lbl_6: if(alias_group_changed(____alias_loc_id_0) || ({ char * ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = ((char *)image_buf); } calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(8194319462526367162UL), (size_t)(8194319462526367117UL), (size_t)(8194319462526367089UL)); (AVI_read_frame)(cell_file, ____chimes_arg5, &dummy); }) == -1) {
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-   call_lbl_7: ({ char * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = ("Error with AVI_read_frame"); } calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(8194319462526371804UL)); (AVI_print_error)(____chimes_arg7); }) ;
+   call_lbl_7: ({ char * ____chimes_arg7; if (!____chimes_replaying) { ____chimes_arg7 = ("Error with AVI_read_frame"); } calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(8194319462526371852UL)); (AVI_print_error)(____chimes_arg7); }) ;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
   exit(-1);
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -6986,30 +6987,30 @@ int dummy;
  if (cropped) {
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-   call_lbl_9: image_chopped = ({ int ____chimes_arg14; if (!____chimes_replaying) { ____chimes_arg14 = (width - 1); } calling((void*)chop_flip_image, 9, 0, 8194319462526367147UL, 8, (size_t)(8194319462526367112UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (chop_flip_image)(image_buf, height, width, 110, 328, 0, ____chimes_arg14, scaled); }) ;
+   call_lbl_9: image_chopped = ({ int ____chimes_arg14; if (!____chimes_replaying) { ____chimes_arg14 = (width - 1); } calling((void*)chop_flip_image, 9, 0, 8194319462526367152UL, 8, (size_t)(8194319462526367117UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (chop_flip_image)(image_buf, height, width, 110, 328, 0, ____chimes_arg14, scaled); }) ;
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  } else {
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-   call_lbl_10: image_chopped = ({ int ____chimes_arg20; int ____chimes_arg22; if (!____chimes_replaying) { ____chimes_arg20 = (height - 1); ____chimes_arg22 = (width - 1); } calling((void*)chop_flip_image, 10, 0, 8194319462526367147UL, 8, (size_t)(8194319462526367112UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (chop_flip_image)(image_buf, height, width, 0, ____chimes_arg20, 0, ____chimes_arg22, scaled); }) ;
+   call_lbl_10: image_chopped = ({ int ____chimes_arg20; int ____chimes_arg22; if (!____chimes_replaying) { ____chimes_arg20 = (height - 1); ____chimes_arg22 = (width - 1); } calling((void*)chop_flip_image, 10, 0, 8194319462526367152UL, 8, (size_t)(8194319462526367117UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (chop_flip_image)(image_buf, height, width, 0, ____chimes_arg20, 0, ____chimes_arg22, scaled); }) ;
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  }
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(image_buf, 8194319462526367112UL);
+ free_wrapper(image_buf, 8194319462526367117UL);
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526367147UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_72, ____chimes_did_disable1); return image_chopped;
+  MAT *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (image_chopped); rm_stack(true, 8194319462526367152UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_72, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526367152UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_72, ____chimes_did_disable1); }
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 static MAT *(*____chimes_extern_func_m_get)(int, int) = m_get;
-MAT * chop_flip_image_resumable(unsigned char *image, int height, int width, int top, int bottom, int left, int right, int scaled) {const int ____chimes_did_disable2 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 8, 8, (size_t)(8194319462526367328UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "chop_flip_image|image|0", &____must_checkpoint_chop_flip_image_image_0, "i8*", (void *)(&image), (size_t)8, 1, 0, 0, "chop_flip_image|height|0", &____must_checkpoint_chop_flip_image_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "chop_flip_image|width|0", &____must_checkpoint_chop_flip_image_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "chop_flip_image|top|0", &____must_checkpoint_chop_flip_image_top_0, "i32", (void *)(&top), (size_t)4, 0, 0, 0, "chop_flip_image|bottom|0", &____must_checkpoint_chop_flip_image_bottom_0, "i32", (void *)(&bottom), (size_t)4, 0, 0, 0, "chop_flip_image|left|0", &____must_checkpoint_chop_flip_image_left_0, "i32", (void *)(&left), (size_t)4, 0, 0, 0, "chop_flip_image|right|0", &____must_checkpoint_chop_flip_image_right_0, "i32", (void *)(&right), (size_t)4, 0, 0, 0, "chop_flip_image|scaled|0", &____must_checkpoint_chop_flip_image_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+MAT * chop_flip_image_resumable(unsigned char *image, int height, int width, int top, int bottom, int left, int right, int scaled) {const int ____chimes_did_disable2 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 8, 8, (size_t)(8194319462526367340UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "chop_flip_image|image|0", &____must_checkpoint_chop_flip_image_image_0, "i8*", (void *)(&image), (size_t)8, 1, 0, 0, "chop_flip_image|height|0", &____must_checkpoint_chop_flip_image_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "chop_flip_image|width|0", &____must_checkpoint_chop_flip_image_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "chop_flip_image|top|0", &____must_checkpoint_chop_flip_image_top_0, "i32", (void *)(&top), (size_t)4, 0, 0, 0, "chop_flip_image|bottom|0", &____must_checkpoint_chop_flip_image_bottom_0, "i32", (void *)(&bottom), (size_t)4, 0, 0, 0, "chop_flip_image|left|0", &____must_checkpoint_chop_flip_image_left_0, "i32", (void *)(&left), (size_t)4, 0, 0, 0, "chop_flip_image|right|0", &____must_checkpoint_chop_flip_image_right_0, "i32", (void *)(&right), (size_t)4, 0, 0, 0, "chop_flip_image|scaled|0", &____must_checkpoint_chop_flip_image_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  MAT *result; call_lbl_1: result = ( ({ int ____chimes_arg24; int ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg24 = (bottom - top + 1); ____chimes_arg25 = (right - left + 1); } calling((void*)m_get, 1, ____alias_loc_id_4, 8194319462526367205UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg24, ____chimes_arg25); }) ) ;
+  MAT *result; call_lbl_1: result = ( ({ int ____chimes_arg24; int ____chimes_arg25; if (!____chimes_replaying) { ____chimes_arg24 = (bottom - top + 1); ____chimes_arg25 = (right - left + 1); } calling((void*)m_get, 1, ____alias_loc_id_4, 8194319462526367214UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg24, ____chimes_arg25); }) ) ;
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7026,9 +7027,9 @@ MAT * chop_flip_image_resumable(unsigned char *image, int height, int width, int
  }
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526367205UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_73, ____chimes_did_disable2); return result;
+  MAT *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (result); rm_stack(true, 8194319462526367214UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_73, ____chimes_did_disable2); return ____chimes_ret_var_2; ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526367214UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_73, ____chimes_did_disable2); }
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7036,7 +7037,7 @@ MAT * chop_flip_image_resumable(unsigned char *image, int height, int width, int
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 MAT * ellipsematching_npm(MAT * grad_x, MAT * grad_y);
 MAT * ellipsematching_quick(MAT * grad_x, MAT * grad_y); MAT * ellipsematching(MAT * grad_x, MAT * grad_y);
-MAT * ellipsematching_resumable(MAT * grad_x, MAT * grad_y) {const int ____chimes_did_disable3 = new_stack((void *)(&ellipsematching), "ellipsematching", &____must_manage_ellipsematching, 2, 2, (size_t)(8194319462526367682UL), (size_t)(8194319462526367683UL), "ellipsematching|grad_x|0", &____must_checkpoint_ellipsematching_grad_x_0, "%struct.MAT*", (void *)(&grad_x), (size_t)8, 1, 0, 0, "ellipsematching|grad_y|0", &____must_checkpoint_ellipsematching_grad_y_0, "%struct.MAT*", (void *)(&grad_y), (size_t)8, 1, 0, 0) ; double Grad[150];
+MAT * ellipsematching_resumable(MAT * grad_x, MAT * grad_y) {const int ____chimes_did_disable3 = new_stack((void *)(&ellipsematching), "ellipsematching", &____must_manage_ellipsematching, 2, 2, (size_t)(8194319462526367698UL), (size_t)(8194319462526367699UL), "ellipsematching|grad_x|0", &____must_checkpoint_ellipsematching_grad_x_0, "%struct.MAT*", (void *)(&grad_x), (size_t)8, 1, 0, 0, "ellipsematching|grad_y|0", &____must_checkpoint_ellipsematching_grad_y_0, "%struct.MAT*", (void *)(&grad_y), (size_t)8, 1, 0, 0) ; double Grad[150];
 int width;
 int height;
 int MaxR;
@@ -7088,7 +7089,7 @@ double sin_angle[150];
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
       height = (grad_x->m) ; width = (grad_x->n) ;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  MAT *gicov; call_lbl_5: gicov = ( ({ calling((void*)m_get, 5, ____alias_loc_id_5, 8194319462526367680UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(height, width); }) ) ;
+  MAT *gicov; call_lbl_5: gicov = ( ({ calling((void*)m_get, 5, ____alias_loc_id_5, 8194319462526367694UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(height, width); }) ) ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7166,9 +7167,9 @@ double sin_angle[150];
  }
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526367680UL, "ellipsematching", &____must_manage_ellipsematching, ____alias_loc_id_74, ____chimes_did_disable3); return gicov;
+  MAT *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (gicov); rm_stack(true, 8194319462526367694UL, "ellipsematching", &____must_manage_ellipsematching, ____alias_loc_id_74, ____chimes_did_disable3); return ____chimes_ret_var_3; ;
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526367694UL, "ellipsematching", &____must_manage_ellipsematching, ____alias_loc_id_74, ____chimes_did_disable3); }
 # 162 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 163 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 164 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7177,7 +7178,7 @@ MAT * structuring_element_npm(int radius);
 MAT * structuring_element_quick(int radius); MAT * structuring_element(int radius);
 MAT * structuring_element_resumable(int radius) {const int ____chimes_did_disable4 = new_stack((void *)(&structuring_element), "structuring_element", &____must_manage_structuring_element, 1, 1, (size_t)(0UL), "structuring_element|radius|0", &____must_checkpoint_structuring_element_radius_0, "i32", (void *)(&radius), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 166 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  MAT *result; call_lbl_1: result = ( ({ int ____chimes_arg28; int ____chimes_arg29; if (!____chimes_replaying) { ____chimes_arg28 = (radius * 2 + 1); ____chimes_arg29 = (radius * 2 + 1); } calling((void*)m_get, 1, ____alias_loc_id_6, 8194319462526367700UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg28, ____chimes_arg29); }) ) ;
+  MAT *result; call_lbl_1: result = ( ({ int ____chimes_arg28; int ____chimes_arg29; if (!____chimes_replaying) { ____chimes_arg28 = (radius * 2 + 1); ____chimes_arg29 = (radius * 2 + 1); } calling((void*)m_get, 1, ____alias_loc_id_6, 8194319462526367717UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg28, ____chimes_arg29); }) ) ;
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
@@ -7193,9 +7194,9 @@ MAT * structuring_element_resumable(int radius) {const int ____chimes_did_disabl
  }
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526367700UL, "structuring_element", &____must_manage_structuring_element, ____alias_loc_id_75, ____chimes_did_disable4); return result;
+  MAT *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (result); rm_stack(true, 8194319462526367717UL, "structuring_element", &____must_manage_structuring_element, ____alias_loc_id_75, ____chimes_did_disable4); return ____chimes_ret_var_4; ;
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526367717UL, "structuring_element", &____must_manage_structuring_element, ____alias_loc_id_75, ____chimes_did_disable4); }
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7203,9 +7204,9 @@ MAT * structuring_element_resumable(int radius) {const int ____chimes_did_disabl
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 MAT * dilate_f_npm(MAT * img_in, MAT * strel);
 MAT * dilate_f_quick(MAT * img_in, MAT * strel); MAT * dilate_f(MAT * img_in, MAT * strel);
-MAT * dilate_f_resumable(MAT * img_in, MAT * strel) {const int ____chimes_did_disable5 = new_stack((void *)(&dilate_f), "dilate_f", &____must_manage_dilate_f, 2, 2, (size_t)(8194319462526367955UL), (size_t)(8194319462526367956UL), "dilate_f|img_in|0", &____must_checkpoint_dilate_f_img_in_0, "%struct.MAT*", (void *)(&img_in), (size_t)8, 1, 0, 0, "dilate_f|strel|0", &____must_checkpoint_dilate_f_strel_0, "%struct.MAT*", (void *)(&strel), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+MAT * dilate_f_resumable(MAT * img_in, MAT * strel) {const int ____chimes_did_disable5 = new_stack((void *)(&dilate_f), "dilate_f", &____must_manage_dilate_f, 2, 2, (size_t)(8194319462526367979UL), (size_t)(8194319462526367980UL), "dilate_f|img_in|0", &____must_checkpoint_dilate_f_img_in_0, "%struct.MAT*", (void *)(&img_in), (size_t)8, 1, 0, 0, "dilate_f|strel|0", &____must_checkpoint_dilate_f_strel_0, "%struct.MAT*", (void *)(&strel), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  MAT *dilated; call_lbl_1: dilated = ( ({ int ____chimes_arg30; int ____chimes_arg31; if (!____chimes_replaying) { ____chimes_arg30 = (img_in->m); ____chimes_arg31 = (img_in->n); } calling((void*)m_get, 1, ____alias_loc_id_7, 8194319462526367803UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg30, ____chimes_arg31); }) ) ;
+  MAT *dilated; call_lbl_1: dilated = ( ({ int ____chimes_arg30; int ____chimes_arg31; if (!____chimes_replaying) { ____chimes_arg30 = (img_in->m); ____chimes_arg31 = (img_in->n); } calling((void*)m_get, 1, ____alias_loc_id_7, 8194319462526367824UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg30, ____chimes_arg31); }) ) ;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7257,9 +7258,9 @@ MAT * dilate_f_resumable(MAT * img_in, MAT * strel) {const int ____chimes_did_di
  }
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526367803UL, "dilate_f", &____must_manage_dilate_f, ____alias_loc_id_76, ____chimes_did_disable5); return dilated;
+  MAT *____chimes_ret_var_5; ; ____chimes_ret_var_5 = (dilated); rm_stack(true, 8194319462526367824UL, "dilate_f", &____must_manage_dilate_f, ____alias_loc_id_76, ____chimes_did_disable5); return ____chimes_ret_var_5; ;
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526367824UL, "dilate_f", &____must_manage_dilate_f, ____alias_loc_id_76, ____chimes_did_disable5); }
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7297,13 +7298,13 @@ MAT *B;
    ;
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368000UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368025UL, 0, 0);
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368006UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368031UL, 0, 0);
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368012UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368037UL, 0, 0);
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368018UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368043UL, 0, 0);
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -7327,16 +7328,16 @@ MAT *B;
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 251 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_5: B = ({ int ____chimes_arg32; if (!____chimes_replaying) { ____chimes_arg32 = (N * M); } calling((void*)m_get, 5, ____alias_loc_id_17, 8194319462526371805UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg32, N); }) ;
+  call_lbl_5: B = ({ int ____chimes_arg32; if (!____chimes_replaying) { ____chimes_arg32 = (N * M); } calling((void*)m_get, 5, ____alias_loc_id_17, 8194319462526371853UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg32, N); }) ;
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_6: LB = ({ calling((void*)m_get, 6, ____alias_loc_id_15, 8194319462526371805UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(M, N); }) ;
+  call_lbl_6: LB = ({ calling((void*)m_get, 6, ____alias_loc_id_15, 8194319462526371853UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(M, N); }) ;
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for(i = 0; i < N; i++)
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  {
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-   call_lbl_7: ({ calling((void*)m_zero, 7, ____alias_loc_id_16, 8194319462526368134UL, 1, (size_t)(8194319462526371805UL)); (m_zero)(LB); }) ;
+   call_lbl_7: ({ calling((void*)m_zero, 7, ____alias_loc_id_16, 8194319462526368159UL, 1, (size_t)(8194319462526371853UL)); (m_zero)(LB); }) ;
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
   for(j = 0; j < M; j++)
@@ -7375,41 +7376,41 @@ MAT *B;
  }
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_8: B_TEMP = ({ calling((void*)mtrm_mlt, 8, ____alias_loc_id_14, 8194319462526371805UL, 3, (size_t)(8194319462526371805UL), (size_t)(8194319462526371805UL), (size_t)(8194319462526371805UL)); (mtrm_mlt)(B, B, B_TEMP); }) ;
+  call_lbl_8: B_TEMP = ({ calling((void*)mtrm_mlt, 8, ____alias_loc_id_14, 8194319462526371853UL, 3, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (mtrm_mlt)(B, B, B_TEMP); }) ;
 # 282 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_9: B_TEMP_INV = ({ calling((void*)m_inverse, 9, ____alias_loc_id_13, 8194319462526371805UL, 2, (size_t)(8194319462526371805UL), (size_t)(8194319462526371805UL)); (m_inverse)(B_TEMP, B_TEMP_INV); }) ;
+  call_lbl_9: B_TEMP_INV = ({ calling((void*)m_inverse, 9, ____alias_loc_id_13, 8194319462526371853UL, 2, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (m_inverse)(B_TEMP, B_TEMP_INV); }) ;
 # 283 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_10: B_RET = ({ calling((void*)mmtr_mlt, 10, ____alias_loc_id_12, 8194319462526371805UL, 3, (size_t)(8194319462526371805UL), (size_t)(8194319462526371805UL), (size_t)(8194319462526371805UL)); (mmtr_mlt)(B_TEMP_INV, B, B_RET); }) ;
+  call_lbl_10: B_RET = ({ calling((void*)mmtr_mlt, 10, ____alias_loc_id_12, 8194319462526371853UL, 3, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (mmtr_mlt)(B_TEMP_INV, B, B_RET); }) ;
 # 284 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_11: ({ calling((void*)m_free, 11, ____alias_loc_id_11, 0UL, 1, (size_t)(8194319462526371805UL)); (m_free)(B); }) ;
+  call_lbl_11: ({ calling((void*)m_free, 11, ____alias_loc_id_11, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B); }) ;
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_12: ({ calling((void*)m_free, 12, ____alias_loc_id_10, 0UL, 1, (size_t)(8194319462526371805UL)); (m_free)(LB); }) ;
+  call_lbl_12: ({ calling((void*)m_free, 12, ____alias_loc_id_10, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(LB); }) ;
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_13: ({ calling((void*)m_free, 13, ____alias_loc_id_9, 0UL, 1, (size_t)(8194319462526371805UL)); (m_free)(B_TEMP); }) ;
+  call_lbl_13: ({ calling((void*)m_free, 13, ____alias_loc_id_9, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B_TEMP); }) ;
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_14: ({ calling((void*)m_free, 14, ____alias_loc_id_8, 0UL, 1, (size_t)(8194319462526371805UL)); (m_free)(B_TEMP_INV); }) ;
+  call_lbl_14: ({ calling((void*)m_free, 14, ____alias_loc_id_8, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B_TEMP_INV); }) ;
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526368018UL);
+ free_wrapper(dindex, 8194319462526368043UL);
 # 291 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(cindex, 8194319462526368012UL);
+ free_wrapper(cindex, 8194319462526368037UL);
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(bindex, 8194319462526368006UL);
+ free_wrapper(bindex, 8194319462526368031UL);
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(aindex, 8194319462526368000UL);
+ free_wrapper(aindex, 8194319462526368025UL);
 # 294 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 295 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526371805UL, "TMatrix", &____must_manage_TMatrix, 0, ____chimes_did_disable6); return B_RET;
+  MAT *____chimes_ret_var_6; ; ____chimes_ret_var_6 = (B_RET); rm_stack(true, 8194319462526371853UL, "TMatrix", &____must_manage_TMatrix, ____alias_loc_id_77, ____chimes_did_disable6); return ____chimes_ret_var_6; ;
 # 296 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526371853UL, "TMatrix", &____must_manage_TMatrix, ____alias_loc_id_77, ____chimes_did_disable6); }
 # 297 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 298 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 void uniformseg_npm(VEC * cellx_row, VEC * celly_row, MAT * x, MAT * y);
 void uniformseg_quick(VEC * cellx_row, VEC * celly_row, MAT * x, MAT * y); void uniformseg(VEC * cellx_row, VEC * celly_row, MAT * x, MAT * y);
 void uniformseg_resumable(VEC * cellx_row, VEC * celly_row, MAT * x, MAT * y)
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&uniformseg), "uniformseg", &____must_manage_uniformseg, 4, 0, (size_t)(8194319462526368640UL), (size_t)(8194319462526368641UL), (size_t)(8194319462526368642UL), (size_t)(8194319462526368643UL)) ; int index[36];
+{const int ____chimes_did_disable7 = new_stack((void *)(&uniformseg), "uniformseg", &____must_manage_uniformseg, 4, 0, (size_t)(8194319462526368668UL), (size_t)(8194319462526368669UL), (size_t)(8194319462526368670UL), (size_t)(8194319462526368671UL)) ; int index[36];
 double dsum[36];
 double dist[36];
 double dy[36];
@@ -7483,7 +7484,7 @@ double dx[36];
 # 335 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  }
 # 336 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-rm_stack(false, 0UL, "uniformseg", &____must_manage_uniformseg, ____alias_loc_id_77, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "uniformseg", &____must_manage_uniformseg, ____alias_loc_id_78, ____chimes_did_disable7); }
 # 337 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 338 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 339 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7491,7 +7492,7 @@ double m_min_npm(MAT * m);
 double m_min_quick(MAT * m); double m_min(MAT * m);
 double m_min_resumable(MAT * m)
 # 340 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&m_min), "m_min", &____must_manage_m_min, 1, 0, (size_t)(8194319462526368704UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&m_min), "m_min", &____must_manage_m_min, 1, 0, (size_t)(8194319462526368736UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7513,9 +7514,9 @@ double m_min_resumable(MAT * m)
 # 351 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  }
 # 352 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(false, 0UL, "m_min", &____must_manage_m_min, ____alias_loc_id_78, ____chimes_did_disable8); return minimum;
+  double ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (minimum); rm_stack(false, 0UL, "m_min", &____must_manage_m_min, ____alias_loc_id_79, ____chimes_did_disable8); return ____chimes_ret_var_7; ;
 # 353 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(false, 0UL, "m_min", &____must_manage_m_min, ____alias_loc_id_79, ____chimes_did_disable8); }
 # 354 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7523,7 +7524,7 @@ double m_max_npm(MAT * m);
 double m_max_quick(MAT * m); double m_max(MAT * m);
 double m_max_resumable(MAT * m)
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&m_max), "m_max", &____must_manage_m_max, 1, 0, (size_t)(8194319462526368764UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&m_max), "m_max", &____must_manage_m_max, 1, 0, (size_t)(8194319462526368800UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7545,16 +7546,16 @@ double m_max_resumable(MAT * m)
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  }
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(false, 0UL, "m_max", &____must_manage_m_max, ____alias_loc_id_79, ____chimes_did_disable9); return maximum;
+  double ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (maximum); rm_stack(false, 0UL, "m_max", &____must_manage_m_max, ____alias_loc_id_80, ____chimes_did_disable9); return ____chimes_ret_var_8; ;
 # 370 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(false, 0UL, "m_max", &____must_manage_m_max, ____alias_loc_id_80, ____chimes_did_disable9); }
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 VEC * getsampling_npm(MAT * m, int ns);static VEC *(*____chimes_extern_func_v_get)(int) = v_get;
 VEC * getsampling_quick(MAT * m, int ns); VEC * getsampling(MAT * m, int ns);
 VEC * getsampling_resumable(MAT * m, int ns)
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&getsampling), "getsampling", &____must_manage_getsampling, 2, 1, (size_t)(8194319462526368798UL), (size_t)(0UL), "getsampling|m|0", &____must_checkpoint_getsampling_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0) ; int M;
+{const int ____chimes_did_disable10 = new_stack((void *)(&getsampling), "getsampling", &____must_manage_getsampling, 2, 1, (size_t)(8194319462526368835UL), (size_t)(0UL), "getsampling|m|0", &____must_checkpoint_getsampling_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0) ; int M;
 int N;
  if (____must_checkpoint_getsampling_M_0 || ____must_checkpoint_getsampling_N_0) { register_stack_vars(2, "getsampling|M|0", &____must_checkpoint_getsampling_M_0, "i32", (void *)(&M), (size_t)4, 0, 0, 0, "getsampling|N|0", &____must_checkpoint_getsampling_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7564,16 +7565,16 @@ int N;
 # 376 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
 # 377 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  VEC *retval; call_lbl_1: retval = ( ({ int ____chimes_arg49; if (!____chimes_replaying) { ____chimes_arg49 = (N * M); } calling((void*)v_get, 1, ____alias_loc_id_18, 8194319462526368817UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg49); }) ) ;
+  VEC *retval; call_lbl_1: retval = ( ({ int ____chimes_arg49; if (!____chimes_replaying) { ____chimes_arg49 = (N * M); } calling((void*)v_get, 1, ____alias_loc_id_18, 8194319462526368854UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg49); }) ) ;
 # 378 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368822UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368859UL, 0, 0);
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368828UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368865UL, 0, 0);
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368834UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368871UL, 0, 0);
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368840UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368877UL, 0, 0);
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -7625,25 +7626,25 @@ int N;
  }
 # 415 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 416 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526368840UL);
+ free_wrapper(dindex, 8194319462526368877UL);
 # 417 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(cindex, 8194319462526368834UL);
+ free_wrapper(cindex, 8194319462526368871UL);
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(bindex, 8194319462526368828UL);
+ free_wrapper(bindex, 8194319462526368865UL);
 # 419 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(aindex, 8194319462526368822UL);
+ free_wrapper(aindex, 8194319462526368859UL);
 # 420 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 421 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526368817UL, "getsampling", &____must_manage_getsampling, ____alias_loc_id_80, ____chimes_did_disable10); return retval;
+  VEC *____chimes_ret_var_9; ; ____chimes_ret_var_9 = (retval); rm_stack(true, 8194319462526368854UL, "getsampling", &____must_manage_getsampling, ____alias_loc_id_81, ____chimes_did_disable10); return ____chimes_ret_var_9; ;
 # 422 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526368854UL, "getsampling", &____must_manage_getsampling, ____alias_loc_id_81, ____chimes_did_disable10); }
 # 423 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 424 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 VEC * getfdriv_npm(MAT * m, int ns);
 VEC * getfdriv_quick(MAT * m, int ns); VEC * getfdriv(MAT * m, int ns);
 VEC * getfdriv_resumable(MAT * m, int ns)
 # 425 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&getfdriv), "getfdriv", &____must_manage_getfdriv, 2, 1, (size_t)(8194319462526369148UL), (size_t)(0UL), "getfdriv|m|0", &____must_checkpoint_getfdriv_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0) ; int M;
+{const int ____chimes_did_disable11 = new_stack((void *)(&getfdriv), "getfdriv", &____must_manage_getfdriv, 2, 1, (size_t)(8194319462526369189UL), (size_t)(0UL), "getfdriv|m|0", &____must_checkpoint_getfdriv_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0) ; int M;
 int N;
  if (____must_checkpoint_getfdriv_M_0 || ____must_checkpoint_getfdriv_N_0) { register_stack_vars(2, "getfdriv|M|0", &____must_checkpoint_getfdriv_M_0, "i32", (void *)(&M), (size_t)4, 0, 0, 0, "getfdriv|N|0", &____must_checkpoint_getfdriv_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7653,16 +7654,16 @@ int N;
 # 428 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  VEC *retval; call_lbl_1: retval = ( ({ int ____chimes_arg50; if (!____chimes_replaying) { ____chimes_arg50 = (N * M); } calling((void*)v_get, 1, ____alias_loc_id_19, 8194319462526369167UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg50); }) ) ;
+  VEC *retval; call_lbl_1: retval = ( ({ int ____chimes_arg50; if (!____chimes_replaying) { ____chimes_arg50 = (N * M); } calling((void*)v_get, 1, ____alias_loc_id_19, 8194319462526369208UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg50); }) ) ;
 # 430 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 431 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369172UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369213UL, 0, 0);
 # 432 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369178UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369219UL, 0, 0);
 # 433 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369184UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369225UL, 0, 0);
 # 434 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369190UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369231UL, 0, 0);
 # 435 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -7714,18 +7715,18 @@ int N;
  }
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526369190UL);
+ free_wrapper(dindex, 8194319462526369231UL);
 # 469 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(cindex, 8194319462526369184UL);
+ free_wrapper(cindex, 8194319462526369225UL);
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(bindex, 8194319462526369178UL);
+ free_wrapper(bindex, 8194319462526369219UL);
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(aindex, 8194319462526369172UL);
+ free_wrapper(aindex, 8194319462526369213UL);
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526369167UL, "getfdriv", &____must_manage_getfdriv, ____alias_loc_id_81, ____chimes_did_disable11); return retval;
+  VEC *____chimes_ret_var_10; ; ____chimes_ret_var_10 = (retval); rm_stack(true, 8194319462526369208UL, "getfdriv", &____must_manage_getfdriv, ____alias_loc_id_82, ____chimes_did_disable11); return ____chimes_ret_var_10; ;
 # 474 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526369208UL, "getfdriv", &____must_manage_getfdriv, ____alias_loc_id_82, ____chimes_did_disable11); }
 # 475 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 476 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 477 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7733,11 +7734,11 @@ MAT * linear_interp2_npm(MAT * m, VEC * X, VEC * Y);
 MAT * linear_interp2_quick(MAT * m, VEC * X, VEC * Y); MAT * linear_interp2(MAT * m, VEC * X, VEC * Y);
 MAT * linear_interp2_resumable(MAT * m, VEC * X, VEC * Y)
 # 478 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&linear_interp2), "linear_interp2", &____must_manage_linear_interp2, 3, 3, (size_t)(8194319462526369605UL), (size_t)(8194319462526369606UL), (size_t)(8194319462526369607UL), "linear_interp2|m|0", &____must_checkpoint_linear_interp2_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0, "linear_interp2|X|0", &____must_checkpoint_linear_interp2_X_0, "%struct.VEC*", (void *)(&X), (size_t)8, 1, 0, 0, "linear_interp2|Y|0", &____must_checkpoint_linear_interp2_Y_0, "%struct.VEC*", (void *)(&Y), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable12 = new_stack((void *)(&linear_interp2), "linear_interp2", &____must_manage_linear_interp2, 3, 3, (size_t)(8194319462526369653UL), (size_t)(8194319462526369654UL), (size_t)(8194319462526369655UL), "linear_interp2|m|0", &____must_checkpoint_linear_interp2_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0, "linear_interp2|X|0", &____must_checkpoint_linear_interp2_X_0, "%struct.VEC*", (void *)(&X), (size_t)8, 1, 0, 0, "linear_interp2|Y|0", &____must_checkpoint_linear_interp2_Y_0, "%struct.VEC*", (void *)(&Y), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 479 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 480 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 481 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  MAT *retval; call_lbl_1: retval = ( ({ int ____chimes_arg52; if (!____chimes_replaying) { ____chimes_arg52 = (X->dim); } calling((void*)m_get, 1, ____alias_loc_id_20, 8194319462526369466UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(1, ____chimes_arg52); }) ) ;
+  MAT *retval; call_lbl_1: retval = ( ({ int ____chimes_arg52; if (!____chimes_replaying) { ____chimes_arg52 = (X->dim); } calling((void*)m_get, 1, ____alias_loc_id_20, 8194319462526369511UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(1, ____chimes_arg52); }) ) ;
 # 482 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  double x_coord; double y_coord; double new_val; double a; double b; ;
 # 483 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -7779,16 +7780,16 @@ MAT * linear_interp2_resumable(MAT * m, VEC * X, VEC * Y)
  }
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526369466UL, "linear_interp2", &____must_manage_linear_interp2, ____alias_loc_id_82, ____chimes_did_disable12); return retval;
+  MAT *____chimes_ret_var_11; ; ____chimes_ret_var_11 = (retval); rm_stack(true, 8194319462526369511UL, "linear_interp2", &____must_manage_linear_interp2, ____alias_loc_id_83, ____chimes_did_disable12); return ____chimes_ret_var_11; ;
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526369511UL, "linear_interp2", &____must_manage_linear_interp2, ____alias_loc_id_83, ____chimes_did_disable12); }
 # 508 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 void splineenergyform01_npm(MAT * Cx, MAT * Cy, MAT * Ix, MAT * Iy, int ns, double delta, double dt, int typeofcell);static VEC *(*____chimes_extern_func_get_row)(const MAT *, unsigned int, VEC *) = get_row;static int (*____chimes_extern_func_v_free)(VEC *) = v_free;
 void splineenergyform01_quick(MAT * Cx, MAT * Cy, MAT * Ix, MAT * Iy, int ns, double delta, double dt, int typeofcell); void splineenergyform01(MAT * Cx, MAT * Cy, MAT * Ix, MAT * Iy, int ns, double delta, double dt, int typeofcell);
 void splineenergyform01_resumable(MAT * Cx, MAT * Cy, MAT * Ix, MAT * Iy, int ns, double delta, double dt, int typeofcell)
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&splineenergyform01), "splineenergyform01", &____must_manage_splineenergyform01, 8, 8, (size_t)(8194319462526371792UL), (size_t)(8194319462526371793UL), (size_t)(8194319462526371794UL), (size_t)(8194319462526371795UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "splineenergyform01|Cx|0", &____must_checkpoint_splineenergyform01_Cx_0, "%struct.MAT*", (void *)(&Cx), (size_t)8, 1, 0, 0, "splineenergyform01|Cy|0", &____must_checkpoint_splineenergyform01_Cy_0, "%struct.MAT*", (void *)(&Cy), (size_t)8, 1, 0, 0, "splineenergyform01|Ix|0", &____must_checkpoint_splineenergyform01_Ix_0, "%struct.MAT*", (void *)(&Ix), (size_t)8, 1, 0, 0, "splineenergyform01|Iy|0", &____must_checkpoint_splineenergyform01_Iy_0, "%struct.MAT*", (void *)(&Iy), (size_t)8, 1, 0, 0, "splineenergyform01|ns|0", &____must_checkpoint_splineenergyform01_ns_0, "i32", (void *)(&ns), (size_t)4, 0, 0, 0, "splineenergyform01|delta|0", &____must_checkpoint_splineenergyform01_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0, "splineenergyform01|dt|0", &____must_checkpoint_splineenergyform01_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0, "splineenergyform01|typeofcell|0", &____must_checkpoint_splineenergyform01_typeofcell_0, "i32", (void *)(&typeofcell), (size_t)4, 0, 0, 0) ; int k;
+{const int ____chimes_did_disable13 = new_stack((void *)(&splineenergyform01), "splineenergyform01", &____must_manage_splineenergyform01, 8, 8, (size_t)(8194319462526371840UL), (size_t)(8194319462526371841UL), (size_t)(8194319462526371842UL), (size_t)(8194319462526371843UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "splineenergyform01|Cx|0", &____must_checkpoint_splineenergyform01_Cx_0, "%struct.MAT*", (void *)(&Cx), (size_t)8, 1, 0, 0, "splineenergyform01|Cy|0", &____must_checkpoint_splineenergyform01_Cy_0, "%struct.MAT*", (void *)(&Cy), (size_t)8, 1, 0, 0, "splineenergyform01|Ix|0", &____must_checkpoint_splineenergyform01_Ix_0, "%struct.MAT*", (void *)(&Ix), (size_t)8, 1, 0, 0, "splineenergyform01|Iy|0", &____must_checkpoint_splineenergyform01_Iy_0, "%struct.MAT*", (void *)(&Iy), (size_t)8, 1, 0, 0, "splineenergyform01|ns|0", &____must_checkpoint_splineenergyform01_ns_0, "i32", (void *)(&ns), (size_t)4, 0, 0, 0, "splineenergyform01|delta|0", &____must_checkpoint_splineenergyform01_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0, "splineenergyform01|dt|0", &____must_checkpoint_splineenergyform01_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0, "splineenergyform01|typeofcell|0", &____must_checkpoint_splineenergyform01_typeofcell_0, "i32", (void *)(&typeofcell), (size_t)4, 0, 0, 0) ; int k;
 double Ty4;
 double Ty3;
 double Ty2;
@@ -7847,70 +7848,70 @@ VEC *X;
         ;
 # 514 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_1: X = ({ calling((void*)getsampling, 1, ____alias_loc_id_70, 8194319462526369714UL, 2, (size_t)(8194319462526371792UL), (size_t)(0UL)); (getsampling)(Cx, ns); }) ;
+  call_lbl_1: X = ({ calling((void*)getsampling, 1, ____alias_loc_id_70, 8194319462526369762UL, 2, (size_t)(8194319462526371840UL), (size_t)(0UL)); (getsampling)(Cx, ns); }) ;
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_2: Y = ({ calling((void*)getsampling, 2, ____alias_loc_id_69, 8194319462526369718UL, 2, (size_t)(8194319462526371793UL), (size_t)(0UL)); (getsampling)(Cy, ns); }) ;
+  call_lbl_2: Y = ({ calling((void*)getsampling, 2, ____alias_loc_id_69, 8194319462526369766UL, 2, (size_t)(8194319462526371841UL), (size_t)(0UL)); (getsampling)(Cy, ns); }) ;
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_3: Xs = ({ calling((void*)getfdriv, 3, ____alias_loc_id_68, 8194319462526369722UL, 2, (size_t)(8194319462526371792UL), (size_t)(0UL)); (getfdriv)(Cx, ns); }) ;
+  call_lbl_3: Xs = ({ calling((void*)getfdriv, 3, ____alias_loc_id_68, 8194319462526369770UL, 2, (size_t)(8194319462526371840UL), (size_t)(0UL)); (getfdriv)(Cx, ns); }) ;
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_4: Ys = ({ calling((void*)getfdriv, 4, ____alias_loc_id_67, 8194319462526369726UL, 2, (size_t)(8194319462526371793UL), (size_t)(0UL)); (getfdriv)(Cy, ns); }) ;
+  call_lbl_4: Ys = ({ calling((void*)getfdriv, 4, ____alias_loc_id_67, 8194319462526369774UL, 2, (size_t)(8194319462526371841UL), (size_t)(0UL)); (getfdriv)(Cy, ns); }) ;
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_5: Nx = ({ int ____chimes_arg61; if (!____chimes_replaying) { ____chimes_arg61 = (Ys->dim); } calling((void*)v_get, 5, ____alias_loc_id_66, 8194319462526369731UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg61); }) ;
+  call_lbl_5: Nx = ({ int ____chimes_arg61; if (!____chimes_replaying) { ____chimes_arg61 = (Ys->dim); } calling((void*)v_get, 5, ____alias_loc_id_66, 8194319462526369779UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg61); }) ;
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Nx->dim; i++) { ((Nx)->ve[(i)] = (((Ys)->ve[(i)]) / sqrt(((Xs)->ve[(i)])*((Xs)->ve[(i)]) + ((Ys)->ve[(i)])*((Ys)->ve[(i)])))); };
 # 523 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 524 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_7: Ny = ({ int ____chimes_arg62; if (!____chimes_replaying) { ____chimes_arg62 = (Xs->dim); } calling((void*)v_get, 7, ____alias_loc_id_65, 8194319462526370008UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg62); }) ;
+  call_lbl_7: Ny = ({ int ____chimes_arg62; if (!____chimes_replaying) { ____chimes_arg62 = (Xs->dim); } calling((void*)v_get, 7, ____alias_loc_id_65, 8194319462526370056UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg62); }) ;
 # 525 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Ny->dim; i++) { ((Ny)->ve[(i)] = (-1.0 * ((Xs)->ve[(i)]) / sqrt(((Xs)->ve[(i)])*((Xs)->ve[(i)]) + ((Ys)->ve[(i)])*((Ys)->ve[(i)])))); };
 # 527 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 528 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_9: X1 = ({ int ____chimes_arg63; if (!____chimes_replaying) { ____chimes_arg63 = (Nx->dim); } calling((void*)v_get, 9, ____alias_loc_id_64, 8194319462526369891UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg63); }) ;
+  call_lbl_9: X1 = ({ int ____chimes_arg63; if (!____chimes_replaying) { ____chimes_arg63 = (Nx->dim); } calling((void*)v_get, 9, ____alias_loc_id_64, 8194319462526369939UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg63); }) ;
 # 529 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < X1->dim; i++) { ((X1)->ve[(i)] = (((X)->ve[(i)]) + delta*((Nx)->ve[(i)]))); };
 # 531 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 532 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_10: Y1 = ({ int ____chimes_arg64; if (!____chimes_replaying) { ____chimes_arg64 = (Ny->dim); } calling((void*)v_get, 10, ____alias_loc_id_63, 8194319462526369933UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg64); }) ;
+  call_lbl_10: Y1 = ({ int ____chimes_arg64; if (!____chimes_replaying) { ____chimes_arg64 = (Ny->dim); } calling((void*)v_get, 10, ____alias_loc_id_63, 8194319462526369981UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg64); }) ;
 # 533 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Y1->dim; i++) { ((Y1)->ve[(i)] = (((Y)->ve[(i)]) + delta*((Ny)->ve[(i)]))); };
 # 535 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 536 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_11: X2 = ({ int ____chimes_arg65; if (!____chimes_replaying) { ____chimes_arg65 = (Nx->dim); } calling((void*)v_get, 11, ____alias_loc_id_62, 8194319462526369975UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg65); }) ;
+  call_lbl_11: X2 = ({ int ____chimes_arg65; if (!____chimes_replaying) { ____chimes_arg65 = (Nx->dim); } calling((void*)v_get, 11, ____alias_loc_id_62, 8194319462526370023UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg65); }) ;
 # 537 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < X2->dim; i++) { ((X2)->ve[(i)] = (((X)->ve[(i)]) - delta*((Nx)->ve[(i)]))); };
 # 539 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 540 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_12: Y2 = ({ int ____chimes_arg66; if (!____chimes_replaying) { ____chimes_arg66 = (Ny->dim); } calling((void*)v_get, 12, ____alias_loc_id_61, 8194319462526370017UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg66); }) ;
+  call_lbl_12: Y2 = ({ int ____chimes_arg66; if (!____chimes_replaying) { ____chimes_arg66 = (Ny->dim); } calling((void*)v_get, 12, ____alias_loc_id_61, 8194319462526370065UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg66); }) ;
 # 541 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Y2->dim; i++) { ((Y2)->ve[(i)] = (((Y)->ve[(i)]) + delta*((Ny)->ve[(i)]))); };
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 544 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_13: Ix1_mat = ({ calling((void*)linear_interp2, 13, ____alias_loc_id_60, 8194319462526370030UL, 3, (size_t)(8194319462526371794UL), (size_t)(8194319462526369891UL), (size_t)(8194319462526369933UL)); (linear_interp2)(Ix, X1, Y1); }) ;
+  call_lbl_13: Ix1_mat = ({ calling((void*)linear_interp2, 13, ____alias_loc_id_60, 8194319462526370078UL, 3, (size_t)(8194319462526371842UL), (size_t)(8194319462526369939UL), (size_t)(8194319462526369981UL)); (linear_interp2)(Ix, X1, Y1); }) ;
 # 545 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_14: Iy1_mat = ({ calling((void*)linear_interp2, 14, ____alias_loc_id_59, 8194319462526370035UL, 3, (size_t)(8194319462526371795UL), (size_t)(8194319462526369891UL), (size_t)(8194319462526369933UL)); (linear_interp2)(Iy, X1, Y1); }) ;
+  call_lbl_14: Iy1_mat = ({ calling((void*)linear_interp2, 14, ____alias_loc_id_59, 8194319462526370083UL, 3, (size_t)(8194319462526371843UL), (size_t)(8194319462526369939UL), (size_t)(8194319462526369981UL)); (linear_interp2)(Iy, X1, Y1); }) ;
 # 546 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_15: Ix2_mat = ({ calling((void*)linear_interp2, 15, ____alias_loc_id_58, 8194319462526370040UL, 3, (size_t)(8194319462526371794UL), (size_t)(8194319462526369975UL), (size_t)(8194319462526370017UL)); (linear_interp2)(Ix, X2, Y2); }) ;
+  call_lbl_15: Ix2_mat = ({ calling((void*)linear_interp2, 15, ____alias_loc_id_58, 8194319462526370088UL, 3, (size_t)(8194319462526371842UL), (size_t)(8194319462526370023UL), (size_t)(8194319462526370065UL)); (linear_interp2)(Ix, X2, Y2); }) ;
 # 547 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_16: Iy2_mat = ({ calling((void*)linear_interp2, 16, ____alias_loc_id_57, 8194319462526370045UL, 3, (size_t)(8194319462526371795UL), (size_t)(8194319462526369975UL), (size_t)(8194319462526370017UL)); (linear_interp2)(Iy, X2, Y2); }) ;
+  call_lbl_16: Iy2_mat = ({ calling((void*)linear_interp2, 16, ____alias_loc_id_57, 8194319462526370093UL, 3, (size_t)(8194319462526371843UL), (size_t)(8194319462526370023UL), (size_t)(8194319462526370065UL)); (linear_interp2)(Iy, X2, Y2); }) ;
 # 548 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 549 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_17: Ix1 = ({ int ____chimes_arg79; if (!____chimes_replaying) { ____chimes_arg79 = (Ix1_mat->n); } calling((void*)v_get, 17, ____alias_loc_id_56, 8194319462526370658UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg79); }) ;
+  call_lbl_17: Ix1 = ({ int ____chimes_arg79; if (!____chimes_replaying) { ____chimes_arg79 = (Ix1_mat->n); } calling((void*)v_get, 17, ____alias_loc_id_56, 8194319462526370706UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg79); }) ;
 # 550 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_18: Iy1 = ({ int ____chimes_arg80; if (!____chimes_replaying) { ____chimes_arg80 = (Iy1_mat->n); } calling((void*)v_get, 18, ____alias_loc_id_55, 8194319462526370668UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg80); }) ;
+  call_lbl_18: Iy1 = ({ int ____chimes_arg80; if (!____chimes_replaying) { ____chimes_arg80 = (Iy1_mat->n); } calling((void*)v_get, 18, ____alias_loc_id_55, 8194319462526370716UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg80); }) ;
 # 551 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_19: Ix2 = ({ int ____chimes_arg81; if (!____chimes_replaying) { ____chimes_arg81 = (Ix2_mat->n); } calling((void*)v_get, 19, ____alias_loc_id_54, 8194319462526370678UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg81); }) ;
+  call_lbl_19: Ix2 = ({ int ____chimes_arg81; if (!____chimes_replaying) { ____chimes_arg81 = (Ix2_mat->n); } calling((void*)v_get, 19, ____alias_loc_id_54, 8194319462526370726UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg81); }) ;
 # 552 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_20: Iy2 = ({ int ____chimes_arg82; if (!____chimes_replaying) { ____chimes_arg82 = (Iy2_mat->n); } calling((void*)v_get, 20, ____alias_loc_id_53, 8194319462526370688UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg82); }) ;
+  call_lbl_20: Iy2 = ({ int ____chimes_arg82; if (!____chimes_replaying) { ____chimes_arg82 = (Iy2_mat->n); } calling((void*)v_get, 20, ____alias_loc_id_53, 8194319462526370736UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg82); }) ;
 # 553 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 554 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_21: Ix1 = ({ unsigned int ____chimes_arg84; if (!____chimes_replaying) { ____chimes_arg84 = (0); } calling((void*)get_row, 21, ____alias_loc_id_52, 8194319462526370658UL, 3, (size_t)(8194319462526370030UL), (size_t)(0UL), (size_t)(8194319462526370658UL)); (get_row)(Ix1_mat, ____chimes_arg84, Ix1); }) ;
+  call_lbl_21: Ix1 = ({ unsigned int ____chimes_arg84; if (!____chimes_replaying) { ____chimes_arg84 = (0); } calling((void*)get_row, 21, ____alias_loc_id_52, 8194319462526370706UL, 3, (size_t)(8194319462526370078UL), (size_t)(0UL), (size_t)(8194319462526370706UL)); (get_row)(Ix1_mat, ____chimes_arg84, Ix1); }) ;
 # 555 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_22: Iy1 = ({ unsigned int ____chimes_arg87; if (!____chimes_replaying) { ____chimes_arg87 = (0); } calling((void*)get_row, 22, ____alias_loc_id_51, 8194319462526370668UL, 3, (size_t)(8194319462526370035UL), (size_t)(0UL), (size_t)(8194319462526370668UL)); (get_row)(Iy1_mat, ____chimes_arg87, Iy1); }) ;
+  call_lbl_22: Iy1 = ({ unsigned int ____chimes_arg87; if (!____chimes_replaying) { ____chimes_arg87 = (0); } calling((void*)get_row, 22, ____alias_loc_id_51, 8194319462526370716UL, 3, (size_t)(8194319462526370083UL), (size_t)(0UL), (size_t)(8194319462526370716UL)); (get_row)(Iy1_mat, ____chimes_arg87, Iy1); }) ;
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_23: Ix2 = ({ unsigned int ____chimes_arg90; if (!____chimes_replaying) { ____chimes_arg90 = (0); } calling((void*)get_row, 23, ____alias_loc_id_50, 8194319462526370678UL, 3, (size_t)(8194319462526370040UL), (size_t)(0UL), (size_t)(8194319462526370678UL)); (get_row)(Ix2_mat, ____chimes_arg90, Ix2); }) ;
+  call_lbl_23: Ix2 = ({ unsigned int ____chimes_arg90; if (!____chimes_replaying) { ____chimes_arg90 = (0); } calling((void*)get_row, 23, ____alias_loc_id_50, 8194319462526370726UL, 3, (size_t)(8194319462526370088UL), (size_t)(0UL), (size_t)(8194319462526370726UL)); (get_row)(Ix2_mat, ____chimes_arg90, Ix2); }) ;
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_24: Iy2 = ({ unsigned int ____chimes_arg93; if (!____chimes_replaying) { ____chimes_arg93 = (0); } calling((void*)get_row, 24, ____alias_loc_id_49, 8194319462526370688UL, 3, (size_t)(8194319462526370045UL), (size_t)(0UL), (size_t)(8194319462526370688UL)); (get_row)(Iy2_mat, ____chimes_arg93, Iy2); }) ;
+  call_lbl_24: Iy2 = ({ unsigned int ____chimes_arg93; if (!____chimes_replaying) { ____chimes_arg93 = (0); } calling((void*)get_row, 24, ____alias_loc_id_49, 8194319462526370736UL, 3, (size_t)(8194319462526370093UL), (size_t)(0UL), (size_t)(8194319462526370736UL)); (get_row)(Iy2_mat, ____chimes_arg93, Iy2); }) ;
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  N = Cx->m;
@@ -7918,13 +7919,13 @@ VEC *X;
 # 561 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370121UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370169UL, 0, 0);
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370143UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370191UL, 0, 0);
 # 565 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370162UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370210UL, 0, 0);
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370187UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370235UL, 0, 0);
 # 567 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 568 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -7947,24 +7948,24 @@ VEC *X;
  dindex[N-1] = 1;
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_29: XY = ({ int ____chimes_arg95; if (!____chimes_replaying) { ____chimes_arg95 = (Xs->dim); } calling((void*)v_get, 29, ____alias_loc_id_48, 8194319462526370237UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg95); }) ;
+  call_lbl_29: XY = ({ int ____chimes_arg95; if (!____chimes_replaying) { ____chimes_arg95 = (Xs->dim); } calling((void*)v_get, 29, ____alias_loc_id_48, 8194319462526370285UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg95); }) ;
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Xs->dim; i++) { ((XY)->ve[(i)] = (((Xs)->ve[(i)]) * ((Ys)->ve[(i)]))); };
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_30: XX = ({ int ____chimes_arg96; if (!____chimes_replaying) { ____chimes_arg96 = (Xs->dim); } calling((void*)v_get, 30, ____alias_loc_id_47, 8194319462526370277UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg96); }) ;
+  call_lbl_30: XX = ({ int ____chimes_arg96; if (!____chimes_replaying) { ____chimes_arg96 = (Xs->dim); } calling((void*)v_get, 30, ____alias_loc_id_47, 8194319462526370325UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg96); }) ;
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Xs->dim; i++) { ((XX)->ve[(i)] = (((Xs)->ve[(i)]) * ((Xs)->ve[(i)]))); };
 # 591 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 592 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_31: YY = ({ int ____chimes_arg97; if (!____chimes_replaying) { ____chimes_arg97 = (Ys->dim); } calling((void*)v_get, 31, ____alias_loc_id_46, 8194319462526370317UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg97); }) ;
+  call_lbl_31: YY = ({ int ____chimes_arg97; if (!____chimes_replaying) { ____chimes_arg97 = (Ys->dim); } calling((void*)v_get, 31, ____alias_loc_id_46, 8194319462526370365UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg97); }) ;
 # 593 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Xs->dim; i++) { ((YY)->ve[(i)] = (((Ys)->ve[(i)]) * ((Ys)->ve[(i)]))); };
 # 595 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 596 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_32: dCx = ({ int ____chimes_arg98; if (!____chimes_replaying) { ____chimes_arg98 = (Cx->m); } calling((void*)v_get, 32, ____alias_loc_id_45, 8194319462526370650UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg98); }) ;
+  call_lbl_32: dCx = ({ int ____chimes_arg98; if (!____chimes_replaying) { ____chimes_arg98 = (Cx->m); } calling((void*)v_get, 32, ____alias_loc_id_45, 8194319462526370698UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg98); }) ;
 # 597 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_33: dCy = ({ int ____chimes_arg99; if (!____chimes_replaying) { ____chimes_arg99 = (Cy->m); } calling((void*)v_get, 33, ____alias_loc_id_44, 8194319462526370712UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg99); }) ;
+  call_lbl_33: dCy = ({ int ____chimes_arg99; if (!____chimes_replaying) { ____chimes_arg99 = (Cy->m); } calling((void*)v_get, 33, ____alias_loc_id_44, 8194319462526370760UL, 1, (size_t)(0UL)); (v_get)(____chimes_arg99); }) ;
 # 598 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -8135,19 +8136,19 @@ VEC *X;
  }
 # 700 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 701 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_35: ({ calling((void*)v_free, 35, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370712UL)); (v_free)(dCy); }) ; call_lbl_36: ({ calling((void*)v_free, 36, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370712UL)); (v_free)(dCx); }) ; call_lbl_37: ({ calling((void*)v_free, 37, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370712UL)); (v_free)(YY); }) ; call_lbl_38: ({ calling((void*)v_free, 38, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370712UL)); (v_free)(XX); }) ; call_lbl_39: ({ calling((void*)v_free, 39, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370712UL)); (v_free)(XY); }) ;
+  call_lbl_35: ({ calling((void*)v_free, 35, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(dCy); }) ; call_lbl_36: ({ calling((void*)v_free, 36, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(dCx); }) ; call_lbl_37: ({ calling((void*)v_free, 37, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(YY); }) ; call_lbl_38: ({ calling((void*)v_free, 38, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(XX); }) ; call_lbl_39: ({ calling((void*)v_free, 39, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(XY); }) ;
 # 702 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 703 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526370187UL); free_wrapper(cindex, 8194319462526370162UL); free_wrapper(bindex, 8194319462526370143UL); free_wrapper(aindex, 8194319462526370121UL);
+ free_wrapper(dindex, 8194319462526370235UL); free_wrapper(cindex, 8194319462526370210UL); free_wrapper(bindex, 8194319462526370191UL); free_wrapper(aindex, 8194319462526370169UL);
 # 704 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 705 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_44: ({ calling((void*)v_free, 44, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370688UL)); (v_free)(Iy2); }) ; call_lbl_45: ({ calling((void*)v_free, 45, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370688UL)); (v_free)(Ix2); }) ; call_lbl_46: ({ calling((void*)v_free, 46, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370688UL)); (v_free)(Iy1); }) ; call_lbl_47: ({ calling((void*)v_free, 47, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370688UL)); (v_free)(Ix1); }) ;
+  call_lbl_44: ({ calling((void*)v_free, 44, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Iy2); }) ; call_lbl_45: ({ calling((void*)v_free, 45, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Ix2); }) ; call_lbl_46: ({ calling((void*)v_free, 46, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Iy1); }) ; call_lbl_47: ({ calling((void*)v_free, 47, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Ix1); }) ;
 # 706 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 707 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_48: ({ calling((void*)m_free, 48, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370045UL)); (m_free)(Iy2_mat); }) ; call_lbl_49: ({ calling((void*)m_free, 49, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370045UL)); (m_free)(Ix2_mat); }) ; call_lbl_50: ({ calling((void*)m_free, 50, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370045UL)); (m_free)(Iy1_mat); }) ; call_lbl_51: ({ calling((void*)m_free, 51, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370045UL)); (m_free)(Ix1_mat); }) ;
+  call_lbl_48: ({ calling((void*)m_free, 48, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Iy2_mat); }) ; call_lbl_49: ({ calling((void*)m_free, 49, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Ix2_mat); }) ; call_lbl_50: ({ calling((void*)m_free, 50, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Iy1_mat); }) ; call_lbl_51: ({ calling((void*)m_free, 51, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Ix1_mat); }) ;
 # 708 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 709 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_52: ({ calling((void*)v_free, 52, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Y2); }) ; call_lbl_53: ({ calling((void*)v_free, 53, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(X2); }) ; call_lbl_54: ({ calling((void*)v_free, 54, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Y1); }) ; call_lbl_55: ({ calling((void*)v_free, 55, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(X1); }) ; call_lbl_56: ({ calling((void*)v_free, 56, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Ny); }) ; call_lbl_57: ({ calling((void*)v_free, 57, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Nx); }) ; call_lbl_58: ({ calling((void*)v_free, 58, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Ys); }) ; call_lbl_59: ({ calling((void*)v_free, 59, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Xs); }) ; call_lbl_60: ({ calling((void*)v_free, 60, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Y); }) ; call_lbl_61: ({ calling((void*)v_free, 61, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(X); }) ;
+  call_lbl_52: ({ calling((void*)v_free, 52, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y2); }) ; call_lbl_53: ({ calling((void*)v_free, 53, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X2); }) ; call_lbl_54: ({ calling((void*)v_free, 54, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y1); }) ; call_lbl_55: ({ calling((void*)v_free, 55, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X1); }) ; call_lbl_56: ({ calling((void*)v_free, 56, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Ny); }) ; call_lbl_57: ({ calling((void*)v_free, 57, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Nx); }) ; call_lbl_58: ({ calling((void*)v_free, 58, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Ys); }) ; call_lbl_59: ({ calling((void*)v_free, 59, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Xs); }) ; call_lbl_60: ({ calling((void*)v_free, 60, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y); }) ; call_lbl_61: ({ calling((void*)v_free, 61, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X); }) ;
 # 710 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 rm_stack(false, 0UL, "splineenergyform01", &____must_manage_splineenergyform01, 0, ____chimes_did_disable13); }
 long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; struct timeval tv;
@@ -8157,13 +8158,13 @@ long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void 
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  gettimeofday(&tv, __null);
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_71, ____chimes_did_disable0); return (tv.tv_sec * 1000000) + tv.tv_usec;
+  long long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_71, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_71, ____chimes_did_disable0); }
 
 long long get_time() { return (____chimes_replaying ? get_time_resumable() : get_time_quick()); }
 
-MAT * get_frame_quick(avi_t *cell_file, int frame_num, int cropped, int scaled) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 4, 4, (size_t)(8194319462526367154UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0) ; unsigned char *image_buf;
+MAT * get_frame_quick(avi_t *cell_file, int frame_num, int cropped, int scaled) {const int ____chimes_did_disable1 = new_stack((void *)(&get_frame), "get_frame", &____must_manage_get_frame, 4, 4, (size_t)(8194319462526367162UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "get_frame|cell_file|0", &____must_checkpoint_get_frame_cell_file_0, "%struct.avi_t*", (void *)(&cell_file), (size_t)8, 1, 0, 0, "get_frame|frame_num|0", &____must_checkpoint_get_frame_frame_num_0, "i32", (void *)(&frame_num), (size_t)4, 0, 0, 0, "get_frame|cropped|0", &____must_checkpoint_get_frame_cropped_0, "i32", (void *)(&cropped), (size_t)4, 0, 0, 0, "get_frame|scaled|0", &____must_checkpoint_get_frame_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0) ; unsigned char *image_buf;
 int height;
 int width;
 int dummy;
@@ -8171,21 +8172,21 @@ int dummy;
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
   ;
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-     call_lbl_1: width = ( ({ calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(8194319462526367154UL)); (AVI_video_width)(cell_file); }) ) ;
+     call_lbl_1: width = ( ({ calling((void*)AVI_video_width, 1, ____alias_loc_id_3, 0UL, 1, (size_t)(8194319462526367162UL)); (AVI_video_width)(cell_file); }) ) ;
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-     call_lbl_2: height = ( ({ calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(8194319462526367154UL)); (AVI_video_height)(cell_file); }) ) ;
+     call_lbl_2: height = ( ({ calling((void*)AVI_video_height, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(8194319462526367162UL)); (AVI_video_height)(cell_file); }) ) ;
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-    image_buf = ((unsigned char *)malloc_wrapper(width * height, 8194319462526367112UL, 0, 0)) ;
+    image_buf = ((unsigned char *)malloc_wrapper(width * height, 8194319462526367117UL, 0, 0)) ;
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_4: ({ calling((void*)AVI_set_video_position, 4, ____alias_loc_id_1, 0UL, 2, (size_t)(8194319462526367154UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
+  call_lbl_4: ({ calling((void*)AVI_set_video_position, 4, ____alias_loc_id_1, 0UL, 2, (size_t)(8194319462526367162UL), (size_t)(0UL)); (AVI_set_video_position)(cell_file, frame_num); }) ;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_6: if(alias_group_changed(____alias_loc_id_0) || ({ calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(8194319462526367154UL), (size_t)(8194319462526367112UL), (size_t)(8194319462526367085UL)); (AVI_read_frame)(cell_file, (char *)image_buf, &dummy); }) == -1) {
+  call_lbl_6: if(alias_group_changed(____alias_loc_id_0) || ({ calling((void*)AVI_read_frame, 6, ____alias_loc_id_0, 0UL, 3, (size_t)(8194319462526367162UL), (size_t)(8194319462526367117UL), (size_t)(8194319462526367089UL)); (AVI_read_frame)(cell_file, (char *)image_buf, &dummy); }) == -1) {
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-   call_lbl_7: ({ calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(8194319462526371804UL)); (AVI_print_error)("Error with AVI_read_frame"); }) ;
+   call_lbl_7: ({ calling((void*)AVI_print_error, 7, 0, 0UL, 1, (size_t)(8194319462526371852UL)); (AVI_print_error)("Error with AVI_read_frame"); }) ;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
   exit(-1);
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -8197,28 +8198,28 @@ int dummy;
  if (cropped) {
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-   call_lbl_9: image_chopped = ({ calling((void*)chop_flip_image, 9, 0, 8194319462526367147UL, 8, (size_t)(8194319462526367112UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); chop_flip_image_quick(image_buf, height, width, 110, 328, 0, width - 1, scaled); }) ;
+   call_lbl_9: image_chopped = ({ calling((void*)chop_flip_image, 9, 0, 8194319462526367152UL, 8, (size_t)(8194319462526367117UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); chop_flip_image_quick(image_buf, height, width, 110, 328, 0, width - 1, scaled); }) ;
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  } else {
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-   call_lbl_10: image_chopped = ({ calling((void*)chop_flip_image, 10, 0, 8194319462526367147UL, 8, (size_t)(8194319462526367112UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); chop_flip_image_quick(image_buf, height, width, 0, height - 1, 0, width - 1, scaled); }) ;
+   call_lbl_10: image_chopped = ({ calling((void*)chop_flip_image, 10, 0, 8194319462526367152UL, 8, (size_t)(8194319462526367117UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); chop_flip_image_quick(image_buf, height, width, 0, height - 1, 0, width - 1, scaled); }) ;
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  }
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(image_buf, 8194319462526367112UL);
+ free_wrapper(image_buf, 8194319462526367117UL);
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526367147UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_72, ____chimes_did_disable1); return image_chopped;
+  MAT *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (image_chopped); rm_stack(true, 8194319462526367152UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_72, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526367152UL, "get_frame", &____must_manage_get_frame, ____alias_loc_id_72, ____chimes_did_disable1); }
 
 MAT * get_frame(avi_t *cell_file, int frame_num, int cropped, int scaled) { return (____chimes_replaying ? get_frame_resumable(cell_file, frame_num, cropped, scaled) : get_frame_quick(cell_file, frame_num, cropped, scaled)); }
 
-MAT * chop_flip_image_quick(unsigned char *image, int height, int width, int top, int bottom, int left, int right, int scaled) {const int ____chimes_did_disable2 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 8, 8, (size_t)(8194319462526367328UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "chop_flip_image|image|0", &____must_checkpoint_chop_flip_image_image_0, "i8*", (void *)(&image), (size_t)8, 1, 0, 0, "chop_flip_image|height|0", &____must_checkpoint_chop_flip_image_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "chop_flip_image|width|0", &____must_checkpoint_chop_flip_image_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "chop_flip_image|top|0", &____must_checkpoint_chop_flip_image_top_0, "i32", (void *)(&top), (size_t)4, 0, 0, 0, "chop_flip_image|bottom|0", &____must_checkpoint_chop_flip_image_bottom_0, "i32", (void *)(&bottom), (size_t)4, 0, 0, 0, "chop_flip_image|left|0", &____must_checkpoint_chop_flip_image_left_0, "i32", (void *)(&left), (size_t)4, 0, 0, 0, "chop_flip_image|right|0", &____must_checkpoint_chop_flip_image_right_0, "i32", (void *)(&right), (size_t)4, 0, 0, 0, "chop_flip_image|scaled|0", &____must_checkpoint_chop_flip_image_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0) ; ; ;
+MAT * chop_flip_image_quick(unsigned char *image, int height, int width, int top, int bottom, int left, int right, int scaled) {const int ____chimes_did_disable2 = new_stack((void *)(&chop_flip_image), "chop_flip_image", &____must_manage_chop_flip_image, 8, 8, (size_t)(8194319462526367340UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "chop_flip_image|image|0", &____must_checkpoint_chop_flip_image_image_0, "i8*", (void *)(&image), (size_t)8, 1, 0, 0, "chop_flip_image|height|0", &____must_checkpoint_chop_flip_image_height_0, "i32", (void *)(&height), (size_t)4, 0, 0, 0, "chop_flip_image|width|0", &____must_checkpoint_chop_flip_image_width_0, "i32", (void *)(&width), (size_t)4, 0, 0, 0, "chop_flip_image|top|0", &____must_checkpoint_chop_flip_image_top_0, "i32", (void *)(&top), (size_t)4, 0, 0, 0, "chop_flip_image|bottom|0", &____must_checkpoint_chop_flip_image_bottom_0, "i32", (void *)(&bottom), (size_t)4, 0, 0, 0, "chop_flip_image|left|0", &____must_checkpoint_chop_flip_image_left_0, "i32", (void *)(&left), (size_t)4, 0, 0, 0, "chop_flip_image|right|0", &____must_checkpoint_chop_flip_image_right_0, "i32", (void *)(&right), (size_t)4, 0, 0, 0, "chop_flip_image|scaled|0", &____must_checkpoint_chop_flip_image_scaled_0, "i32", (void *)(&scaled), (size_t)4, 0, 0, 0) ; ; ;
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  MAT *result; call_lbl_1: result = ( ({ calling((void*)m_get, 1, ____alias_loc_id_4, 8194319462526367205UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(bottom - top + 1, right - left + 1); }) ) ;
+  MAT *result; call_lbl_1: result = ( ({ calling((void*)m_get, 1, ____alias_loc_id_4, 8194319462526367214UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(bottom - top + 1, right - left + 1); }) ) ;
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -8235,13 +8236,13 @@ MAT * chop_flip_image_quick(unsigned char *image, int height, int width, int top
  }
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526367205UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_73, ____chimes_did_disable2); return result;
+  MAT *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (result); rm_stack(true, 8194319462526367214UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_73, ____chimes_did_disable2); return ____chimes_ret_var_2; ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526367214UL, "chop_flip_image", &____must_manage_chop_flip_image, ____alias_loc_id_73, ____chimes_did_disable2); }
 
 MAT * chop_flip_image(unsigned char *image, int height, int width, int top, int bottom, int left, int right, int scaled) { return (____chimes_replaying ? chop_flip_image_resumable(image, height, width, top, bottom, left, right, scaled) : chop_flip_image_quick(image, height, width, top, bottom, left, right, scaled)); }
 
-MAT * ellipsematching_quick(MAT * grad_x, MAT * grad_y) {const int ____chimes_did_disable3 = new_stack((void *)(&ellipsematching), "ellipsematching", &____must_manage_ellipsematching, 2, 2, (size_t)(8194319462526367682UL), (size_t)(8194319462526367683UL), "ellipsematching|grad_x|0", &____must_checkpoint_ellipsematching_grad_x_0, "%struct.MAT*", (void *)(&grad_x), (size_t)8, 1, 0, 0, "ellipsematching|grad_y|0", &____must_checkpoint_ellipsematching_grad_y_0, "%struct.MAT*", (void *)(&grad_y), (size_t)8, 1, 0, 0) ; double Grad[150];
+MAT * ellipsematching_quick(MAT * grad_x, MAT * grad_y) {const int ____chimes_did_disable3 = new_stack((void *)(&ellipsematching), "ellipsematching", &____must_manage_ellipsematching, 2, 2, (size_t)(8194319462526367698UL), (size_t)(8194319462526367699UL), "ellipsematching|grad_x|0", &____must_checkpoint_ellipsematching_grad_x_0, "%struct.MAT*", (void *)(&grad_x), (size_t)8, 1, 0, 0, "ellipsematching|grad_y|0", &____must_checkpoint_ellipsematching_grad_y_0, "%struct.MAT*", (void *)(&grad_y), (size_t)8, 1, 0, 0) ; double Grad[150];
 int width;
 int height;
 int MaxR;
@@ -8293,7 +8294,7 @@ double sin_angle[150];
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
       height = (grad_x->m) ; width = (grad_x->n) ;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  MAT *gicov; call_lbl_5: gicov = ( ({ calling((void*)m_get, 5, ____alias_loc_id_5, 8194319462526367680UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(height, width); }) ) ;
+  MAT *gicov; call_lbl_5: gicov = ( ({ calling((void*)m_get, 5, ____alias_loc_id_5, 8194319462526367694UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(height, width); }) ) ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -8371,15 +8372,15 @@ double sin_angle[150];
  }
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526367680UL, "ellipsematching", &____must_manage_ellipsematching, ____alias_loc_id_74, ____chimes_did_disable3); return gicov;
+  MAT *____chimes_ret_var_3; ; ____chimes_ret_var_3 = (gicov); rm_stack(true, 8194319462526367694UL, "ellipsematching", &____must_manage_ellipsematching, ____alias_loc_id_74, ____chimes_did_disable3); return ____chimes_ret_var_3; ;
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526367694UL, "ellipsematching", &____must_manage_ellipsematching, ____alias_loc_id_74, ____chimes_did_disable3); }
 
 MAT * ellipsematching(MAT * grad_x, MAT * grad_y) { return (____chimes_replaying ? ellipsematching_resumable(grad_x, grad_y) : ellipsematching_quick(grad_x, grad_y)); }
 
 MAT * structuring_element_quick(int radius) {const int ____chimes_did_disable4 = new_stack((void *)(&structuring_element), "structuring_element", &____must_manage_structuring_element, 1, 1, (size_t)(0UL), "structuring_element|radius|0", &____must_checkpoint_structuring_element_radius_0, "i32", (void *)(&radius), (size_t)4, 0, 0, 0) ; ; ;
 # 166 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  MAT *result; call_lbl_1: result = ( ({ calling((void*)m_get, 1, ____alias_loc_id_6, 8194319462526367700UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(radius * 2 + 1, radius * 2 + 1); }) ) ;
+  MAT *result; call_lbl_1: result = ( ({ calling((void*)m_get, 1, ____alias_loc_id_6, 8194319462526367717UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(radius * 2 + 1, radius * 2 + 1); }) ) ;
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
@@ -8395,15 +8396,15 @@ MAT * structuring_element_quick(int radius) {const int ____chimes_did_disable4 =
  }
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526367700UL, "structuring_element", &____must_manage_structuring_element, ____alias_loc_id_75, ____chimes_did_disable4); return result;
+  MAT *____chimes_ret_var_4; ; ____chimes_ret_var_4 = (result); rm_stack(true, 8194319462526367717UL, "structuring_element", &____must_manage_structuring_element, ____alias_loc_id_75, ____chimes_did_disable4); return ____chimes_ret_var_4; ;
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526367717UL, "structuring_element", &____must_manage_structuring_element, ____alias_loc_id_75, ____chimes_did_disable4); }
 
 MAT * structuring_element(int radius) { return (____chimes_replaying ? structuring_element_resumable(radius) : structuring_element_quick(radius)); }
 
-MAT * dilate_f_quick(MAT * img_in, MAT * strel) {const int ____chimes_did_disable5 = new_stack((void *)(&dilate_f), "dilate_f", &____must_manage_dilate_f, 2, 2, (size_t)(8194319462526367955UL), (size_t)(8194319462526367956UL), "dilate_f|img_in|0", &____must_checkpoint_dilate_f_img_in_0, "%struct.MAT*", (void *)(&img_in), (size_t)8, 1, 0, 0, "dilate_f|strel|0", &____must_checkpoint_dilate_f_strel_0, "%struct.MAT*", (void *)(&strel), (size_t)8, 1, 0, 0) ; ; ;
+MAT * dilate_f_quick(MAT * img_in, MAT * strel) {const int ____chimes_did_disable5 = new_stack((void *)(&dilate_f), "dilate_f", &____must_manage_dilate_f, 2, 2, (size_t)(8194319462526367979UL), (size_t)(8194319462526367980UL), "dilate_f|img_in|0", &____must_checkpoint_dilate_f_img_in_0, "%struct.MAT*", (void *)(&img_in), (size_t)8, 1, 0, 0, "dilate_f|strel|0", &____must_checkpoint_dilate_f_strel_0, "%struct.MAT*", (void *)(&strel), (size_t)8, 1, 0, 0) ; ; ;
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  MAT *dilated; call_lbl_1: dilated = ( ({ calling((void*)m_get, 1, ____alias_loc_id_7, 8194319462526367803UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(img_in->m, img_in->n); }) ) ;
+  MAT *dilated; call_lbl_1: dilated = ( ({ calling((void*)m_get, 1, ____alias_loc_id_7, 8194319462526367824UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(img_in->m, img_in->n); }) ) ;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -8455,9 +8456,9 @@ MAT * dilate_f_quick(MAT * img_in, MAT * strel) {const int ____chimes_did_disabl
  }
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526367803UL, "dilate_f", &____must_manage_dilate_f, ____alias_loc_id_76, ____chimes_did_disable5); return dilated;
+  MAT *____chimes_ret_var_5; ; ____chimes_ret_var_5 = (dilated); rm_stack(true, 8194319462526367824UL, "dilate_f", &____must_manage_dilate_f, ____alias_loc_id_76, ____chimes_did_disable5); return ____chimes_ret_var_5; ;
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526367824UL, "dilate_f", &____must_manage_dilate_f, ____alias_loc_id_76, ____chimes_did_disable5); }
 
 MAT * dilate_f(MAT * img_in, MAT * strel) { return (____chimes_replaying ? dilate_f_resumable(img_in, strel) : dilate_f_quick(img_in, strel)); }
 
@@ -8490,13 +8491,13 @@ MAT *B;
    ;
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368000UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368025UL, 0, 0);
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368006UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368031UL, 0, 0);
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368012UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368037UL, 0, 0);
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368018UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368043UL, 0, 0);
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -8520,16 +8521,16 @@ MAT *B;
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 251 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_5: B = ({ calling((void*)m_get, 5, ____alias_loc_id_17, 8194319462526371805UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(N * M, N); }) ;
+  call_lbl_5: B = ({ calling((void*)m_get, 5, ____alias_loc_id_17, 8194319462526371853UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(N * M, N); }) ;
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_6: LB = ({ calling((void*)m_get, 6, ____alias_loc_id_15, 8194319462526371805UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(M, N); }) ;
+  call_lbl_6: LB = ({ calling((void*)m_get, 6, ____alias_loc_id_15, 8194319462526371853UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(M, N); }) ;
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for(i = 0; i < N; i++)
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  {
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-   call_lbl_7: ({ calling((void*)m_zero, 7, ____alias_loc_id_16, 8194319462526368134UL, 1, (size_t)(8194319462526371805UL)); (m_zero)(LB); }) ;
+   call_lbl_7: ({ calling((void*)m_zero, 7, ____alias_loc_id_16, 8194319462526368159UL, 1, (size_t)(8194319462526371853UL)); (m_zero)(LB); }) ;
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
   for(j = 0; j < M; j++)
@@ -8568,40 +8569,40 @@ MAT *B;
  }
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_8: B_TEMP = ({ calling((void*)mtrm_mlt, 8, ____alias_loc_id_14, 8194319462526371805UL, 3, (size_t)(8194319462526371805UL), (size_t)(8194319462526371805UL), (size_t)(8194319462526371805UL)); (mtrm_mlt)(B, B, B_TEMP); }) ;
+  call_lbl_8: B_TEMP = ({ calling((void*)mtrm_mlt, 8, ____alias_loc_id_14, 8194319462526371853UL, 3, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (mtrm_mlt)(B, B, B_TEMP); }) ;
 # 282 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_9: B_TEMP_INV = ({ calling((void*)m_inverse, 9, ____alias_loc_id_13, 8194319462526371805UL, 2, (size_t)(8194319462526371805UL), (size_t)(8194319462526371805UL)); (m_inverse)(B_TEMP, B_TEMP_INV); }) ;
+  call_lbl_9: B_TEMP_INV = ({ calling((void*)m_inverse, 9, ____alias_loc_id_13, 8194319462526371853UL, 2, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (m_inverse)(B_TEMP, B_TEMP_INV); }) ;
 # 283 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_10: B_RET = ({ calling((void*)mmtr_mlt, 10, ____alias_loc_id_12, 8194319462526371805UL, 3, (size_t)(8194319462526371805UL), (size_t)(8194319462526371805UL), (size_t)(8194319462526371805UL)); (mmtr_mlt)(B_TEMP_INV, B, B_RET); }) ;
+  call_lbl_10: B_RET = ({ calling((void*)mmtr_mlt, 10, ____alias_loc_id_12, 8194319462526371853UL, 3, (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL), (size_t)(8194319462526371853UL)); (mmtr_mlt)(B_TEMP_INV, B, B_RET); }) ;
 # 284 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_11: ({ calling((void*)m_free, 11, ____alias_loc_id_11, 0UL, 1, (size_t)(8194319462526371805UL)); (m_free)(B); }) ;
+  call_lbl_11: ({ calling((void*)m_free, 11, ____alias_loc_id_11, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B); }) ;
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_12: ({ calling((void*)m_free, 12, ____alias_loc_id_10, 0UL, 1, (size_t)(8194319462526371805UL)); (m_free)(LB); }) ;
+  call_lbl_12: ({ calling((void*)m_free, 12, ____alias_loc_id_10, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(LB); }) ;
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_13: ({ calling((void*)m_free, 13, ____alias_loc_id_9, 0UL, 1, (size_t)(8194319462526371805UL)); (m_free)(B_TEMP); }) ;
+  call_lbl_13: ({ calling((void*)m_free, 13, ____alias_loc_id_9, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B_TEMP); }) ;
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_14: ({ calling((void*)m_free, 14, ____alias_loc_id_8, 0UL, 1, (size_t)(8194319462526371805UL)); (m_free)(B_TEMP_INV); }) ;
+  call_lbl_14: ({ calling((void*)m_free, 14, ____alias_loc_id_8, 0UL, 1, (size_t)(8194319462526371853UL)); (m_free)(B_TEMP_INV); }) ;
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526368018UL);
+ free_wrapper(dindex, 8194319462526368043UL);
 # 291 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(cindex, 8194319462526368012UL);
+ free_wrapper(cindex, 8194319462526368037UL);
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(bindex, 8194319462526368006UL);
+ free_wrapper(bindex, 8194319462526368031UL);
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(aindex, 8194319462526368000UL);
+ free_wrapper(aindex, 8194319462526368025UL);
 # 294 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 295 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526371805UL, "TMatrix", &____must_manage_TMatrix, 0, ____chimes_did_disable6); return B_RET;
+  MAT *____chimes_ret_var_6; ; ____chimes_ret_var_6 = (B_RET); rm_stack(true, 8194319462526371853UL, "TMatrix", &____must_manage_TMatrix, ____alias_loc_id_77, ____chimes_did_disable6); return ____chimes_ret_var_6; ;
 # 296 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526371853UL, "TMatrix", &____must_manage_TMatrix, ____alias_loc_id_77, ____chimes_did_disable6); }
 
 MAT * TMatrix(unsigned int N, unsigned int M) { return (____chimes_replaying ? TMatrix_resumable(N, M) : TMatrix_quick(N, M)); }
 
 void uniformseg_quick(VEC * cellx_row, VEC * celly_row, MAT * x, MAT * y)
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&uniformseg), "uniformseg", &____must_manage_uniformseg, 4, 0, (size_t)(8194319462526368640UL), (size_t)(8194319462526368641UL), (size_t)(8194319462526368642UL), (size_t)(8194319462526368643UL)) ; int index[36];
+{const int ____chimes_did_disable7 = new_stack((void *)(&uniformseg), "uniformseg", &____must_manage_uniformseg, 4, 0, (size_t)(8194319462526368668UL), (size_t)(8194319462526368669UL), (size_t)(8194319462526368670UL), (size_t)(8194319462526368671UL)) ; int index[36];
 double dsum[36];
 double dist[36];
 double dy[36];
@@ -8675,13 +8676,13 @@ double dx[36];
 # 335 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  }
 # 336 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-rm_stack(false, 0UL, "uniformseg", &____must_manage_uniformseg, ____alias_loc_id_77, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "uniformseg", &____must_manage_uniformseg, ____alias_loc_id_78, ____chimes_did_disable7); }
 
 void uniformseg(VEC * cellx_row, VEC * celly_row, MAT * x, MAT * y) { (____chimes_replaying ? uniformseg_resumable(cellx_row, celly_row, x, y) : uniformseg_quick(cellx_row, celly_row, x, y)); }
 
 double m_min_quick(MAT * m)
 # 340 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&m_min), "m_min", &____must_manage_m_min, 1, 0, (size_t)(8194319462526368704UL)) ; ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&m_min), "m_min", &____must_manage_m_min, 1, 0, (size_t)(8194319462526368736UL)) ; ; ;
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -8703,15 +8704,15 @@ double m_min_quick(MAT * m)
 # 351 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  }
 # 352 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(false, 0UL, "m_min", &____must_manage_m_min, ____alias_loc_id_78, ____chimes_did_disable8); return minimum;
+  double ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (minimum); rm_stack(false, 0UL, "m_min", &____must_manage_m_min, ____alias_loc_id_79, ____chimes_did_disable8); return ____chimes_ret_var_7; ;
 # 353 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(false, 0UL, "m_min", &____must_manage_m_min, ____alias_loc_id_79, ____chimes_did_disable8); }
 
 double m_min(MAT * m) { return (____chimes_replaying ? m_min_resumable(m) : m_min_quick(m)); }
 
 double m_max_quick(MAT * m)
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&m_max), "m_max", &____must_manage_m_max, 1, 0, (size_t)(8194319462526368764UL)) ; ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&m_max), "m_max", &____must_manage_m_max, 1, 0, (size_t)(8194319462526368800UL)) ; ; ;
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -8733,15 +8734,15 @@ double m_max_quick(MAT * m)
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  }
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(false, 0UL, "m_max", &____must_manage_m_max, ____alias_loc_id_79, ____chimes_did_disable9); return maximum;
+  double ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (maximum); rm_stack(false, 0UL, "m_max", &____must_manage_m_max, ____alias_loc_id_80, ____chimes_did_disable9); return ____chimes_ret_var_8; ;
 # 370 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(false, 0UL, "m_max", &____must_manage_m_max, ____alias_loc_id_80, ____chimes_did_disable9); }
 
 double m_max(MAT * m) { return (____chimes_replaying ? m_max_resumable(m) : m_max_quick(m)); }
 
 VEC * getsampling_quick(MAT * m, int ns)
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&getsampling), "getsampling", &____must_manage_getsampling, 2, 1, (size_t)(8194319462526368798UL), (size_t)(0UL), "getsampling|m|0", &____must_checkpoint_getsampling_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0) ; int M;
+{const int ____chimes_did_disable10 = new_stack((void *)(&getsampling), "getsampling", &____must_manage_getsampling, 2, 1, (size_t)(8194319462526368835UL), (size_t)(0UL), "getsampling|m|0", &____must_checkpoint_getsampling_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0) ; int M;
 int N;
  if (____must_checkpoint_getsampling_M_0 || ____must_checkpoint_getsampling_N_0) { register_stack_vars(2, "getsampling|M|0", &____must_checkpoint_getsampling_M_0, "i32", (void *)(&M), (size_t)4, 0, 0, 0, "getsampling|N|0", &____must_checkpoint_getsampling_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0); } ; ;
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -8751,16 +8752,16 @@ int N;
 # 376 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
 # 377 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  VEC *retval; call_lbl_1: retval = ( ({ calling((void*)v_get, 1, ____alias_loc_id_18, 8194319462526368817UL, 1, (size_t)(0UL)); (v_get)(N * M); }) ) ;
+  VEC *retval; call_lbl_1: retval = ( ({ calling((void*)v_get, 1, ____alias_loc_id_18, 8194319462526368854UL, 1, (size_t)(0UL)); (v_get)(N * M); }) ) ;
 # 378 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368822UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368859UL, 0, 0);
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368828UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368865UL, 0, 0);
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368834UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368871UL, 0, 0);
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368840UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368877UL, 0, 0);
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -8812,24 +8813,24 @@ int N;
  }
 # 415 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 416 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526368840UL);
+ free_wrapper(dindex, 8194319462526368877UL);
 # 417 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(cindex, 8194319462526368834UL);
+ free_wrapper(cindex, 8194319462526368871UL);
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(bindex, 8194319462526368828UL);
+ free_wrapper(bindex, 8194319462526368865UL);
 # 419 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(aindex, 8194319462526368822UL);
+ free_wrapper(aindex, 8194319462526368859UL);
 # 420 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 421 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526368817UL, "getsampling", &____must_manage_getsampling, ____alias_loc_id_80, ____chimes_did_disable10); return retval;
+  VEC *____chimes_ret_var_9; ; ____chimes_ret_var_9 = (retval); rm_stack(true, 8194319462526368854UL, "getsampling", &____must_manage_getsampling, ____alias_loc_id_81, ____chimes_did_disable10); return ____chimes_ret_var_9; ;
 # 422 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526368854UL, "getsampling", &____must_manage_getsampling, ____alias_loc_id_81, ____chimes_did_disable10); }
 
 VEC * getsampling(MAT * m, int ns) { return (____chimes_replaying ? getsampling_resumable(m, ns) : getsampling_quick(m, ns)); }
 
 VEC * getfdriv_quick(MAT * m, int ns)
 # 425 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&getfdriv), "getfdriv", &____must_manage_getfdriv, 2, 1, (size_t)(8194319462526369148UL), (size_t)(0UL), "getfdriv|m|0", &____must_checkpoint_getfdriv_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0) ; int M;
+{const int ____chimes_did_disable11 = new_stack((void *)(&getfdriv), "getfdriv", &____must_manage_getfdriv, 2, 1, (size_t)(8194319462526369189UL), (size_t)(0UL), "getfdriv|m|0", &____must_checkpoint_getfdriv_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0) ; int M;
 int N;
  if (____must_checkpoint_getfdriv_M_0 || ____must_checkpoint_getfdriv_N_0) { register_stack_vars(2, "getfdriv|M|0", &____must_checkpoint_getfdriv_M_0, "i32", (void *)(&M), (size_t)4, 0, 0, 0, "getfdriv|N|0", &____must_checkpoint_getfdriv_N_0, "i32", (void *)(&N), (size_t)4, 0, 0, 0); } ; ;
 # 426 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -8839,16 +8840,16 @@ int N;
 # 428 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int i; int j; ;
 # 429 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  VEC *retval; call_lbl_1: retval = ( ({ calling((void*)v_get, 1, ____alias_loc_id_19, 8194319462526369167UL, 1, (size_t)(0UL)); (v_get)(N * M); }) ) ;
+  VEC *retval; call_lbl_1: retval = ( ({ calling((void*)v_get, 1, ____alias_loc_id_19, 8194319462526369208UL, 1, (size_t)(0UL)); (v_get)(N * M); }) ) ;
 # 430 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 431 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369172UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369213UL, 0, 0);
 # 432 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369178UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369219UL, 0, 0);
 # 433 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369184UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369225UL, 0, 0);
 # 434 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369190UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369231UL, 0, 0);
 # 435 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -8900,28 +8901,28 @@ int N;
  }
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526369190UL);
+ free_wrapper(dindex, 8194319462526369231UL);
 # 469 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(cindex, 8194319462526369184UL);
+ free_wrapper(cindex, 8194319462526369225UL);
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(bindex, 8194319462526369178UL);
+ free_wrapper(bindex, 8194319462526369219UL);
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(aindex, 8194319462526369172UL);
+ free_wrapper(aindex, 8194319462526369213UL);
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526369167UL, "getfdriv", &____must_manage_getfdriv, ____alias_loc_id_81, ____chimes_did_disable11); return retval;
+  VEC *____chimes_ret_var_10; ; ____chimes_ret_var_10 = (retval); rm_stack(true, 8194319462526369208UL, "getfdriv", &____must_manage_getfdriv, ____alias_loc_id_82, ____chimes_did_disable11); return ____chimes_ret_var_10; ;
 # 474 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526369208UL, "getfdriv", &____must_manage_getfdriv, ____alias_loc_id_82, ____chimes_did_disable11); }
 
 VEC * getfdriv(MAT * m, int ns) { return (____chimes_replaying ? getfdriv_resumable(m, ns) : getfdriv_quick(m, ns)); }
 
 MAT * linear_interp2_quick(MAT * m, VEC * X, VEC * Y)
 # 478 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&linear_interp2), "linear_interp2", &____must_manage_linear_interp2, 3, 3, (size_t)(8194319462526369605UL), (size_t)(8194319462526369606UL), (size_t)(8194319462526369607UL), "linear_interp2|m|0", &____must_checkpoint_linear_interp2_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0, "linear_interp2|X|0", &____must_checkpoint_linear_interp2_X_0, "%struct.VEC*", (void *)(&X), (size_t)8, 1, 0, 0, "linear_interp2|Y|0", &____must_checkpoint_linear_interp2_Y_0, "%struct.VEC*", (void *)(&Y), (size_t)8, 1, 0, 0) ; ; ;
+{const int ____chimes_did_disable12 = new_stack((void *)(&linear_interp2), "linear_interp2", &____must_manage_linear_interp2, 3, 3, (size_t)(8194319462526369653UL), (size_t)(8194319462526369654UL), (size_t)(8194319462526369655UL), "linear_interp2|m|0", &____must_checkpoint_linear_interp2_m_0, "%struct.MAT*", (void *)(&m), (size_t)8, 1, 0, 0, "linear_interp2|X|0", &____must_checkpoint_linear_interp2_X_0, "%struct.VEC*", (void *)(&X), (size_t)8, 1, 0, 0, "linear_interp2|Y|0", &____must_checkpoint_linear_interp2_Y_0, "%struct.VEC*", (void *)(&Y), (size_t)8, 1, 0, 0) ; ; ;
 # 479 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 480 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 481 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  MAT *retval; call_lbl_1: retval = ( ({ calling((void*)m_get, 1, ____alias_loc_id_20, 8194319462526369466UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(1, X->dim); }) ) ;
+  MAT *retval; call_lbl_1: retval = ( ({ calling((void*)m_get, 1, ____alias_loc_id_20, 8194319462526369511UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(1, X->dim); }) ) ;
 # 482 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  double x_coord; double y_coord; double new_val; double a; double b; ;
 # 483 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -8963,15 +8964,15 @@ MAT * linear_interp2_quick(MAT * m, VEC * X, VEC * Y)
  }
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- rm_stack(true, 8194319462526369466UL, "linear_interp2", &____must_manage_linear_interp2, ____alias_loc_id_82, ____chimes_did_disable12); return retval;
+  MAT *____chimes_ret_var_11; ; ____chimes_ret_var_11 = (retval); rm_stack(true, 8194319462526369511UL, "linear_interp2", &____must_manage_linear_interp2, ____alias_loc_id_83, ____chimes_did_disable12); return ____chimes_ret_var_11; ;
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-}
+rm_stack(true, 8194319462526369511UL, "linear_interp2", &____must_manage_linear_interp2, ____alias_loc_id_83, ____chimes_did_disable12); }
 
 MAT * linear_interp2(MAT * m, VEC * X, VEC * Y) { return (____chimes_replaying ? linear_interp2_resumable(m, X, Y) : linear_interp2_quick(m, X, Y)); }
 
 void splineenergyform01_quick(MAT * Cx, MAT * Cy, MAT * Ix, MAT * Iy, int ns, double delta, double dt, int typeofcell)
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&splineenergyform01), "splineenergyform01", &____must_manage_splineenergyform01, 8, 8, (size_t)(8194319462526371792UL), (size_t)(8194319462526371793UL), (size_t)(8194319462526371794UL), (size_t)(8194319462526371795UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "splineenergyform01|Cx|0", &____must_checkpoint_splineenergyform01_Cx_0, "%struct.MAT*", (void *)(&Cx), (size_t)8, 1, 0, 0, "splineenergyform01|Cy|0", &____must_checkpoint_splineenergyform01_Cy_0, "%struct.MAT*", (void *)(&Cy), (size_t)8, 1, 0, 0, "splineenergyform01|Ix|0", &____must_checkpoint_splineenergyform01_Ix_0, "%struct.MAT*", (void *)(&Ix), (size_t)8, 1, 0, 0, "splineenergyform01|Iy|0", &____must_checkpoint_splineenergyform01_Iy_0, "%struct.MAT*", (void *)(&Iy), (size_t)8, 1, 0, 0, "splineenergyform01|ns|0", &____must_checkpoint_splineenergyform01_ns_0, "i32", (void *)(&ns), (size_t)4, 0, 0, 0, "splineenergyform01|delta|0", &____must_checkpoint_splineenergyform01_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0, "splineenergyform01|dt|0", &____must_checkpoint_splineenergyform01_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0, "splineenergyform01|typeofcell|0", &____must_checkpoint_splineenergyform01_typeofcell_0, "i32", (void *)(&typeofcell), (size_t)4, 0, 0, 0) ; int k;
+{const int ____chimes_did_disable13 = new_stack((void *)(&splineenergyform01), "splineenergyform01", &____must_manage_splineenergyform01, 8, 8, (size_t)(8194319462526371840UL), (size_t)(8194319462526371841UL), (size_t)(8194319462526371842UL), (size_t)(8194319462526371843UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "splineenergyform01|Cx|0", &____must_checkpoint_splineenergyform01_Cx_0, "%struct.MAT*", (void *)(&Cx), (size_t)8, 1, 0, 0, "splineenergyform01|Cy|0", &____must_checkpoint_splineenergyform01_Cy_0, "%struct.MAT*", (void *)(&Cy), (size_t)8, 1, 0, 0, "splineenergyform01|Ix|0", &____must_checkpoint_splineenergyform01_Ix_0, "%struct.MAT*", (void *)(&Ix), (size_t)8, 1, 0, 0, "splineenergyform01|Iy|0", &____must_checkpoint_splineenergyform01_Iy_0, "%struct.MAT*", (void *)(&Iy), (size_t)8, 1, 0, 0, "splineenergyform01|ns|0", &____must_checkpoint_splineenergyform01_ns_0, "i32", (void *)(&ns), (size_t)4, 0, 0, 0, "splineenergyform01|delta|0", &____must_checkpoint_splineenergyform01_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0, "splineenergyform01|dt|0", &____must_checkpoint_splineenergyform01_dt_0, "double", (void *)(&dt), (size_t)8, 0, 0, 0, "splineenergyform01|typeofcell|0", &____must_checkpoint_splineenergyform01_typeofcell_0, "i32", (void *)(&typeofcell), (size_t)4, 0, 0, 0) ; int k;
 double Ty4;
 double Ty3;
 double Ty2;
@@ -9030,70 +9031,70 @@ VEC *X;
         ;
 # 514 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_1: X = ({ calling((void*)getsampling, 1, ____alias_loc_id_70, 8194319462526369714UL, 2, (size_t)(8194319462526371792UL), (size_t)(0UL)); getsampling_quick(Cx, ns); }) ;
+  call_lbl_1: X = ({ calling((void*)getsampling, 1, ____alias_loc_id_70, 8194319462526369762UL, 2, (size_t)(8194319462526371840UL), (size_t)(0UL)); getsampling_quick(Cx, ns); }) ;
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_2: Y = ({ calling((void*)getsampling, 2, ____alias_loc_id_69, 8194319462526369718UL, 2, (size_t)(8194319462526371793UL), (size_t)(0UL)); getsampling_quick(Cy, ns); }) ;
+  call_lbl_2: Y = ({ calling((void*)getsampling, 2, ____alias_loc_id_69, 8194319462526369766UL, 2, (size_t)(8194319462526371841UL), (size_t)(0UL)); getsampling_quick(Cy, ns); }) ;
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_3: Xs = ({ calling((void*)getfdriv, 3, ____alias_loc_id_68, 8194319462526369722UL, 2, (size_t)(8194319462526371792UL), (size_t)(0UL)); getfdriv_quick(Cx, ns); }) ;
+  call_lbl_3: Xs = ({ calling((void*)getfdriv, 3, ____alias_loc_id_68, 8194319462526369770UL, 2, (size_t)(8194319462526371840UL), (size_t)(0UL)); getfdriv_quick(Cx, ns); }) ;
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_4: Ys = ({ calling((void*)getfdriv, 4, ____alias_loc_id_67, 8194319462526369726UL, 2, (size_t)(8194319462526371793UL), (size_t)(0UL)); getfdriv_quick(Cy, ns); }) ;
+  call_lbl_4: Ys = ({ calling((void*)getfdriv, 4, ____alias_loc_id_67, 8194319462526369774UL, 2, (size_t)(8194319462526371841UL), (size_t)(0UL)); getfdriv_quick(Cy, ns); }) ;
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_5: Nx = ({ calling((void*)v_get, 5, ____alias_loc_id_66, 8194319462526369731UL, 1, (size_t)(0UL)); (v_get)(Ys->dim); }) ;
+  call_lbl_5: Nx = ({ calling((void*)v_get, 5, ____alias_loc_id_66, 8194319462526369779UL, 1, (size_t)(0UL)); (v_get)(Ys->dim); }) ;
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Nx->dim; i++) { ((Nx)->ve[(i)] = (((Ys)->ve[(i)]) / sqrt(((Xs)->ve[(i)])*((Xs)->ve[(i)]) + ((Ys)->ve[(i)])*((Ys)->ve[(i)])))); };
 # 523 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 524 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_7: Ny = ({ calling((void*)v_get, 7, ____alias_loc_id_65, 8194319462526370008UL, 1, (size_t)(0UL)); (v_get)(Xs->dim); }) ;
+  call_lbl_7: Ny = ({ calling((void*)v_get, 7, ____alias_loc_id_65, 8194319462526370056UL, 1, (size_t)(0UL)); (v_get)(Xs->dim); }) ;
 # 525 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Ny->dim; i++) { ((Ny)->ve[(i)] = (-1.0 * ((Xs)->ve[(i)]) / sqrt(((Xs)->ve[(i)])*((Xs)->ve[(i)]) + ((Ys)->ve[(i)])*((Ys)->ve[(i)])))); };
 # 527 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 528 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_9: X1 = ({ calling((void*)v_get, 9, ____alias_loc_id_64, 8194319462526369891UL, 1, (size_t)(0UL)); (v_get)(Nx->dim); }) ;
+  call_lbl_9: X1 = ({ calling((void*)v_get, 9, ____alias_loc_id_64, 8194319462526369939UL, 1, (size_t)(0UL)); (v_get)(Nx->dim); }) ;
 # 529 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < X1->dim; i++) { ((X1)->ve[(i)] = (((X)->ve[(i)]) + delta*((Nx)->ve[(i)]))); };
 # 531 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 532 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_10: Y1 = ({ calling((void*)v_get, 10, ____alias_loc_id_63, 8194319462526369933UL, 1, (size_t)(0UL)); (v_get)(Ny->dim); }) ;
+  call_lbl_10: Y1 = ({ calling((void*)v_get, 10, ____alias_loc_id_63, 8194319462526369981UL, 1, (size_t)(0UL)); (v_get)(Ny->dim); }) ;
 # 533 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Y1->dim; i++) { ((Y1)->ve[(i)] = (((Y)->ve[(i)]) + delta*((Ny)->ve[(i)]))); };
 # 535 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 536 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_11: X2 = ({ calling((void*)v_get, 11, ____alias_loc_id_62, 8194319462526369975UL, 1, (size_t)(0UL)); (v_get)(Nx->dim); }) ;
+  call_lbl_11: X2 = ({ calling((void*)v_get, 11, ____alias_loc_id_62, 8194319462526370023UL, 1, (size_t)(0UL)); (v_get)(Nx->dim); }) ;
 # 537 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < X2->dim; i++) { ((X2)->ve[(i)] = (((X)->ve[(i)]) - delta*((Nx)->ve[(i)]))); };
 # 539 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 540 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_12: Y2 = ({ calling((void*)v_get, 12, ____alias_loc_id_61, 8194319462526370017UL, 1, (size_t)(0UL)); (v_get)(Ny->dim); }) ;
+  call_lbl_12: Y2 = ({ calling((void*)v_get, 12, ____alias_loc_id_61, 8194319462526370065UL, 1, (size_t)(0UL)); (v_get)(Ny->dim); }) ;
 # 541 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Y2->dim; i++) { ((Y2)->ve[(i)] = (((Y)->ve[(i)]) + delta*((Ny)->ve[(i)]))); };
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 544 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_13: Ix1_mat = ({ calling((void*)linear_interp2, 13, ____alias_loc_id_60, 8194319462526370030UL, 3, (size_t)(8194319462526371794UL), (size_t)(8194319462526369891UL), (size_t)(8194319462526369933UL)); linear_interp2_quick(Ix, X1, Y1); }) ;
+  call_lbl_13: Ix1_mat = ({ calling((void*)linear_interp2, 13, ____alias_loc_id_60, 8194319462526370078UL, 3, (size_t)(8194319462526371842UL), (size_t)(8194319462526369939UL), (size_t)(8194319462526369981UL)); linear_interp2_quick(Ix, X1, Y1); }) ;
 # 545 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_14: Iy1_mat = ({ calling((void*)linear_interp2, 14, ____alias_loc_id_59, 8194319462526370035UL, 3, (size_t)(8194319462526371795UL), (size_t)(8194319462526369891UL), (size_t)(8194319462526369933UL)); linear_interp2_quick(Iy, X1, Y1); }) ;
+  call_lbl_14: Iy1_mat = ({ calling((void*)linear_interp2, 14, ____alias_loc_id_59, 8194319462526370083UL, 3, (size_t)(8194319462526371843UL), (size_t)(8194319462526369939UL), (size_t)(8194319462526369981UL)); linear_interp2_quick(Iy, X1, Y1); }) ;
 # 546 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_15: Ix2_mat = ({ calling((void*)linear_interp2, 15, ____alias_loc_id_58, 8194319462526370040UL, 3, (size_t)(8194319462526371794UL), (size_t)(8194319462526369975UL), (size_t)(8194319462526370017UL)); linear_interp2_quick(Ix, X2, Y2); }) ;
+  call_lbl_15: Ix2_mat = ({ calling((void*)linear_interp2, 15, ____alias_loc_id_58, 8194319462526370088UL, 3, (size_t)(8194319462526371842UL), (size_t)(8194319462526370023UL), (size_t)(8194319462526370065UL)); linear_interp2_quick(Ix, X2, Y2); }) ;
 # 547 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_16: Iy2_mat = ({ calling((void*)linear_interp2, 16, ____alias_loc_id_57, 8194319462526370045UL, 3, (size_t)(8194319462526371795UL), (size_t)(8194319462526369975UL), (size_t)(8194319462526370017UL)); linear_interp2_quick(Iy, X2, Y2); }) ;
+  call_lbl_16: Iy2_mat = ({ calling((void*)linear_interp2, 16, ____alias_loc_id_57, 8194319462526370093UL, 3, (size_t)(8194319462526371843UL), (size_t)(8194319462526370023UL), (size_t)(8194319462526370065UL)); linear_interp2_quick(Iy, X2, Y2); }) ;
 # 548 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 549 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_17: Ix1 = ({ calling((void*)v_get, 17, ____alias_loc_id_56, 8194319462526370658UL, 1, (size_t)(0UL)); (v_get)(Ix1_mat->n); }) ;
+  call_lbl_17: Ix1 = ({ calling((void*)v_get, 17, ____alias_loc_id_56, 8194319462526370706UL, 1, (size_t)(0UL)); (v_get)(Ix1_mat->n); }) ;
 # 550 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_18: Iy1 = ({ calling((void*)v_get, 18, ____alias_loc_id_55, 8194319462526370668UL, 1, (size_t)(0UL)); (v_get)(Iy1_mat->n); }) ;
+  call_lbl_18: Iy1 = ({ calling((void*)v_get, 18, ____alias_loc_id_55, 8194319462526370716UL, 1, (size_t)(0UL)); (v_get)(Iy1_mat->n); }) ;
 # 551 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_19: Ix2 = ({ calling((void*)v_get, 19, ____alias_loc_id_54, 8194319462526370678UL, 1, (size_t)(0UL)); (v_get)(Ix2_mat->n); }) ;
+  call_lbl_19: Ix2 = ({ calling((void*)v_get, 19, ____alias_loc_id_54, 8194319462526370726UL, 1, (size_t)(0UL)); (v_get)(Ix2_mat->n); }) ;
 # 552 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_20: Iy2 = ({ calling((void*)v_get, 20, ____alias_loc_id_53, 8194319462526370688UL, 1, (size_t)(0UL)); (v_get)(Iy2_mat->n); }) ;
+  call_lbl_20: Iy2 = ({ calling((void*)v_get, 20, ____alias_loc_id_53, 8194319462526370736UL, 1, (size_t)(0UL)); (v_get)(Iy2_mat->n); }) ;
 # 553 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 554 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_21: Ix1 = ({ calling((void*)get_row, 21, ____alias_loc_id_52, 8194319462526370658UL, 3, (size_t)(8194319462526370030UL), (size_t)(0UL), (size_t)(8194319462526370658UL)); (get_row)(Ix1_mat, 0, Ix1); }) ;
+  call_lbl_21: Ix1 = ({ calling((void*)get_row, 21, ____alias_loc_id_52, 8194319462526370706UL, 3, (size_t)(8194319462526370078UL), (size_t)(0UL), (size_t)(8194319462526370706UL)); (get_row)(Ix1_mat, 0, Ix1); }) ;
 # 555 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_22: Iy1 = ({ calling((void*)get_row, 22, ____alias_loc_id_51, 8194319462526370668UL, 3, (size_t)(8194319462526370035UL), (size_t)(0UL), (size_t)(8194319462526370668UL)); (get_row)(Iy1_mat, 0, Iy1); }) ;
+  call_lbl_22: Iy1 = ({ calling((void*)get_row, 22, ____alias_loc_id_51, 8194319462526370716UL, 3, (size_t)(8194319462526370083UL), (size_t)(0UL), (size_t)(8194319462526370716UL)); (get_row)(Iy1_mat, 0, Iy1); }) ;
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_23: Ix2 = ({ calling((void*)get_row, 23, ____alias_loc_id_50, 8194319462526370678UL, 3, (size_t)(8194319462526370040UL), (size_t)(0UL), (size_t)(8194319462526370678UL)); (get_row)(Ix2_mat, 0, Ix2); }) ;
+  call_lbl_23: Ix2 = ({ calling((void*)get_row, 23, ____alias_loc_id_50, 8194319462526370726UL, 3, (size_t)(8194319462526370088UL), (size_t)(0UL), (size_t)(8194319462526370726UL)); (get_row)(Ix2_mat, 0, Ix2); }) ;
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_24: Iy2 = ({ calling((void*)get_row, 24, ____alias_loc_id_49, 8194319462526370688UL, 3, (size_t)(8194319462526370045UL), (size_t)(0UL), (size_t)(8194319462526370688UL)); (get_row)(Iy2_mat, 0, Iy2); }) ;
+  call_lbl_24: Iy2 = ({ calling((void*)get_row, 24, ____alias_loc_id_49, 8194319462526370736UL, 3, (size_t)(8194319462526370093UL), (size_t)(0UL), (size_t)(8194319462526370736UL)); (get_row)(Iy2_mat, 0, Iy2); }) ;
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  N = Cx->m;
@@ -9101,13 +9102,13 @@ VEC *X;
 # 561 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370121UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370169UL, 0, 0);
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370143UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370191UL, 0, 0);
 # 565 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370162UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370210UL, 0, 0);
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370187UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370235UL, 0, 0);
 # 567 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 568 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -9130,24 +9131,24 @@ VEC *X;
  dindex[N-1] = 1;
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_29: XY = ({ calling((void*)v_get, 29, ____alias_loc_id_48, 8194319462526370237UL, 1, (size_t)(0UL)); (v_get)(Xs->dim); }) ;
+  call_lbl_29: XY = ({ calling((void*)v_get, 29, ____alias_loc_id_48, 8194319462526370285UL, 1, (size_t)(0UL)); (v_get)(Xs->dim); }) ;
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Xs->dim; i++) { ((XY)->ve[(i)] = (((Xs)->ve[(i)]) * ((Ys)->ve[(i)]))); };
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_30: XX = ({ calling((void*)v_get, 30, ____alias_loc_id_47, 8194319462526370277UL, 1, (size_t)(0UL)); (v_get)(Xs->dim); }) ;
+  call_lbl_30: XX = ({ calling((void*)v_get, 30, ____alias_loc_id_47, 8194319462526370325UL, 1, (size_t)(0UL)); (v_get)(Xs->dim); }) ;
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Xs->dim; i++) { ((XX)->ve[(i)] = (((Xs)->ve[(i)]) * ((Xs)->ve[(i)]))); };
 # 591 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 592 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_31: YY = ({ calling((void*)v_get, 31, ____alias_loc_id_46, 8194319462526370317UL, 1, (size_t)(0UL)); (v_get)(Ys->dim); }) ;
+  call_lbl_31: YY = ({ calling((void*)v_get, 31, ____alias_loc_id_46, 8194319462526370365UL, 1, (size_t)(0UL)); (v_get)(Ys->dim); }) ;
 # 593 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 0; i < Xs->dim; i++) { ((YY)->ve[(i)] = (((Ys)->ve[(i)]) * ((Ys)->ve[(i)]))); };
 # 595 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 596 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_32: dCx = ({ calling((void*)v_get, 32, ____alias_loc_id_45, 8194319462526370650UL, 1, (size_t)(0UL)); (v_get)(Cx->m); }) ;
+  call_lbl_32: dCx = ({ calling((void*)v_get, 32, ____alias_loc_id_45, 8194319462526370698UL, 1, (size_t)(0UL)); (v_get)(Cx->m); }) ;
 # 597 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_33: dCy = ({ calling((void*)v_get, 33, ____alias_loc_id_44, 8194319462526370712UL, 1, (size_t)(0UL)); (v_get)(Cy->m); }) ;
+  call_lbl_33: dCy = ({ calling((void*)v_get, 33, ____alias_loc_id_44, 8194319462526370760UL, 1, (size_t)(0UL)); (v_get)(Cy->m); }) ;
 # 598 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -9318,19 +9319,19 @@ VEC *X;
  }
 # 700 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 701 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_35: ({ calling((void*)v_free, 35, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370712UL)); (v_free)(dCy); }) ; call_lbl_36: ({ calling((void*)v_free, 36, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370712UL)); (v_free)(dCx); }) ; call_lbl_37: ({ calling((void*)v_free, 37, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370712UL)); (v_free)(YY); }) ; call_lbl_38: ({ calling((void*)v_free, 38, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370712UL)); (v_free)(XX); }) ; call_lbl_39: ({ calling((void*)v_free, 39, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370712UL)); (v_free)(XY); }) ;
+  call_lbl_35: ({ calling((void*)v_free, 35, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(dCy); }) ; call_lbl_36: ({ calling((void*)v_free, 36, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(dCx); }) ; call_lbl_37: ({ calling((void*)v_free, 37, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(YY); }) ; call_lbl_38: ({ calling((void*)v_free, 38, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(XX); }) ; call_lbl_39: ({ calling((void*)v_free, 39, ____alias_loc_id_39, 0UL, 1, (size_t)(8194319462526370760UL)); (v_free)(XY); }) ;
 # 702 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 703 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526370187UL); free_wrapper(cindex, 8194319462526370162UL); free_wrapper(bindex, 8194319462526370143UL); free_wrapper(aindex, 8194319462526370121UL);
+ free_wrapper(dindex, 8194319462526370235UL); free_wrapper(cindex, 8194319462526370210UL); free_wrapper(bindex, 8194319462526370191UL); free_wrapper(aindex, 8194319462526370169UL);
 # 704 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 705 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_44: ({ calling((void*)v_free, 44, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370688UL)); (v_free)(Iy2); }) ; call_lbl_45: ({ calling((void*)v_free, 45, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370688UL)); (v_free)(Ix2); }) ; call_lbl_46: ({ calling((void*)v_free, 46, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370688UL)); (v_free)(Iy1); }) ; call_lbl_47: ({ calling((void*)v_free, 47, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370688UL)); (v_free)(Ix1); }) ;
+  call_lbl_44: ({ calling((void*)v_free, 44, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Iy2); }) ; call_lbl_45: ({ calling((void*)v_free, 45, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Ix2); }) ; call_lbl_46: ({ calling((void*)v_free, 46, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Iy1); }) ; call_lbl_47: ({ calling((void*)v_free, 47, ____alias_loc_id_35, 0UL, 1, (size_t)(8194319462526370736UL)); (v_free)(Ix1); }) ;
 # 706 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 707 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_48: ({ calling((void*)m_free, 48, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370045UL)); (m_free)(Iy2_mat); }) ; call_lbl_49: ({ calling((void*)m_free, 49, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370045UL)); (m_free)(Ix2_mat); }) ; call_lbl_50: ({ calling((void*)m_free, 50, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370045UL)); (m_free)(Iy1_mat); }) ; call_lbl_51: ({ calling((void*)m_free, 51, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370045UL)); (m_free)(Ix1_mat); }) ;
+  call_lbl_48: ({ calling((void*)m_free, 48, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Iy2_mat); }) ; call_lbl_49: ({ calling((void*)m_free, 49, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Ix2_mat); }) ; call_lbl_50: ({ calling((void*)m_free, 50, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Iy1_mat); }) ; call_lbl_51: ({ calling((void*)m_free, 51, ____alias_loc_id_34, 0UL, 1, (size_t)(8194319462526370093UL)); (m_free)(Ix1_mat); }) ;
 # 708 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 709 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
-  call_lbl_52: ({ calling((void*)v_free, 52, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Y2); }) ; call_lbl_53: ({ calling((void*)v_free, 53, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(X2); }) ; call_lbl_54: ({ calling((void*)v_free, 54, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Y1); }) ; call_lbl_55: ({ calling((void*)v_free, 55, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(X1); }) ; call_lbl_56: ({ calling((void*)v_free, 56, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Ny); }) ; call_lbl_57: ({ calling((void*)v_free, 57, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Nx); }) ; call_lbl_58: ({ calling((void*)v_free, 58, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Ys); }) ; call_lbl_59: ({ calling((void*)v_free, 59, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Xs); }) ; call_lbl_60: ({ calling((void*)v_free, 60, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(Y); }) ; call_lbl_61: ({ calling((void*)v_free, 61, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370017UL)); (v_free)(X); }) ;
+  call_lbl_52: ({ calling((void*)v_free, 52, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y2); }) ; call_lbl_53: ({ calling((void*)v_free, 53, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X2); }) ; call_lbl_54: ({ calling((void*)v_free, 54, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y1); }) ; call_lbl_55: ({ calling((void*)v_free, 55, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X1); }) ; call_lbl_56: ({ calling((void*)v_free, 56, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Ny); }) ; call_lbl_57: ({ calling((void*)v_free, 57, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Nx); }) ; call_lbl_58: ({ calling((void*)v_free, 58, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Ys); }) ; call_lbl_59: ({ calling((void*)v_free, 59, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Xs); }) ; call_lbl_60: ({ calling((void*)v_free, 60, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(Y); }) ; call_lbl_61: ({ calling((void*)v_free, 61, ____alias_loc_id_21, 0UL, 1, (size_t)(8194319462526370065UL)); (v_free)(X); }) ;
 # 710 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 rm_stack(false, 0UL, "splineenergyform01", &____must_manage_splineenergyform01, 0, ____chimes_did_disable13); }
 
@@ -9344,7 +9345,7 @@ long long get_time_npm() {
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  gettimeofday(&tv, __null);
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return (tv.tv_sec * 1000000) + tv.tv_usec;
+  long long ____chimes_ret_var_0; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); return ____chimes_ret_var_0; ;
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -9356,7 +9357,7 @@ MAT * get_frame_npm(avi_t *cell_file, int frame_num, int cropped, int scaled) {
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  int height = (*____chimes_extern_func_AVI_video_height)(cell_file);
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- unsigned char *image_buf = (unsigned char *) malloc_wrapper(width * height, 8194319462526367112UL, 0, 0);
+ unsigned char *image_buf = (unsigned char *) malloc_wrapper(width * height, 8194319462526367117UL, 0, 0);
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
@@ -9388,10 +9389,10 @@ MAT * get_frame_npm(avi_t *cell_file, int frame_num, int cropped, int scaled) {
  }
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(image_buf, 8194319462526367112UL);
+ free_wrapper(image_buf, 8194319462526367117UL);
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return image_chopped;
+  MAT * ____chimes_ret_var_1; ____chimes_ret_var_1 = (image_chopped); return ____chimes_ret_var_1; ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -9414,7 +9415,7 @@ MAT * chop_flip_image_npm(unsigned char *image, int height, int width, int top, 
  }
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return result;
+  MAT * ____chimes_ret_var_2; ____chimes_ret_var_2 = (result); return ____chimes_ret_var_2; ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -9539,7 +9540,7 @@ MAT * ellipsematching_npm(MAT * grad_x, MAT * grad_y) {
  }
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return gicov;
+  MAT * ____chimes_ret_var_3; ____chimes_ret_var_3 = (gicov); return ____chimes_ret_var_3; ;
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -9561,7 +9562,7 @@ MAT * structuring_element_npm(int radius) {
  }
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return result;
+  MAT * ____chimes_ret_var_4; ____chimes_ret_var_4 = (result); return ____chimes_ret_var_4; ;
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -9619,7 +9620,7 @@ MAT * dilate_f_npm(MAT * img_in, MAT * strel) {
  }
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return dilated;
+  MAT * ____chimes_ret_var_5; ____chimes_ret_var_5 = (dilated); return ____chimes_ret_var_5; ;
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -9634,13 +9635,13 @@ MAT * TMatrix_npm(unsigned int N, unsigned int M)
  int i, j;
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368000UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368025UL, 0, 0);
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368006UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368031UL, 0, 0);
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368012UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368037UL, 0, 0);
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368018UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368043UL, 0, 0);
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -9728,16 +9729,16 @@ MAT * TMatrix_npm(unsigned int N, unsigned int M)
  (*____chimes_extern_func_m_free)(B_TEMP_INV);
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526368018UL);
+ free_wrapper(dindex, 8194319462526368043UL);
 # 291 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(cindex, 8194319462526368012UL);
+ free_wrapper(cindex, 8194319462526368037UL);
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(bindex, 8194319462526368006UL);
+ free_wrapper(bindex, 8194319462526368031UL);
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(aindex, 8194319462526368000UL);
+ free_wrapper(aindex, 8194319462526368025UL);
 # 294 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 295 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return B_RET;
+  MAT * ____chimes_ret_var_6; ____chimes_ret_var_6 = (B_RET); return ____chimes_ret_var_6; ;
 # 296 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -9838,7 +9839,7 @@ double m_min_npm(MAT * m)
 # 351 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  }
 # 352 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return minimum;
+  double ____chimes_ret_var_7; ____chimes_ret_var_7 = (minimum); return ____chimes_ret_var_7; ;
 # 353 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -9866,7 +9867,7 @@ double m_max_npm(MAT * m)
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  }
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return maximum;
+  double ____chimes_ret_var_8; ____chimes_ret_var_8 = (maximum); return ____chimes_ret_var_8; ;
 # 370 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -9883,13 +9884,13 @@ VEC * getsampling_npm(MAT * m, int ns)
  VEC * retval = (*____chimes_extern_func_v_get)(N*M);
 # 378 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368822UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368859UL, 0, 0);
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368828UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368865UL, 0, 0);
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368834UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368871UL, 0, 0);
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368840UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526368877UL, 0, 0);
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -9941,16 +9942,16 @@ VEC * getsampling_npm(MAT * m, int ns)
  }
 # 415 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 416 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526368840UL);
+ free_wrapper(dindex, 8194319462526368877UL);
 # 417 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(cindex, 8194319462526368834UL);
+ free_wrapper(cindex, 8194319462526368871UL);
 # 418 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(bindex, 8194319462526368828UL);
+ free_wrapper(bindex, 8194319462526368865UL);
 # 419 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(aindex, 8194319462526368822UL);
+ free_wrapper(aindex, 8194319462526368859UL);
 # 420 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 421 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return retval;
+  VEC * ____chimes_ret_var_9; ____chimes_ret_var_9 = (retval); return ____chimes_ret_var_9; ;
 # 422 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -9967,13 +9968,13 @@ VEC * getfdriv_npm(MAT * m, int ns)
  VEC * retval = (*____chimes_extern_func_v_get)(N*M);
 # 430 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 431 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369172UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369213UL, 0, 0);
 # 432 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369178UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369219UL, 0, 0);
 # 433 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369184UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369225UL, 0, 0);
 # 434 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369190UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526369231UL, 0, 0);
 # 435 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 436 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -10025,16 +10026,16 @@ VEC * getfdriv_npm(MAT * m, int ns)
  }
 # 467 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 468 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526369190UL);
+ free_wrapper(dindex, 8194319462526369231UL);
 # 469 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(cindex, 8194319462526369184UL);
+ free_wrapper(cindex, 8194319462526369225UL);
 # 470 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(bindex, 8194319462526369178UL);
+ free_wrapper(bindex, 8194319462526369219UL);
 # 471 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(aindex, 8194319462526369172UL);
+ free_wrapper(aindex, 8194319462526369213UL);
 # 472 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 473 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return retval;
+  VEC * ____chimes_ret_var_10; ____chimes_ret_var_10 = (retval); return ____chimes_ret_var_10; ;
 # 474 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -10086,7 +10087,7 @@ MAT * linear_interp2_npm(MAT * m, VEC * X, VEC * Y)
  }
 # 505 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 506 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- return retval;
+  MAT * ____chimes_ret_var_11; ____chimes_ret_var_11 = (retval); return ____chimes_ret_var_11; ;
 # 507 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 }
 
@@ -10172,13 +10173,13 @@ void splineenergyform01_npm(MAT * Cx, MAT * Cy, MAT * Ix, MAT * Iy, int ns, doub
 # 561 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370121UL, 0, 0);
+ aindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370169UL, 0, 0);
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370143UL, 0, 0);
+ bindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370191UL, 0, 0);
 # 565 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370162UL, 0, 0);
+ cindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370210UL, 0, 0);
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370187UL, 0, 0);
+ dindex = (int *)malloc_wrapper(N*sizeof(int), 8194319462526370235UL, 0, 0);
 # 567 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 568 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  for (i = 1; i < N; i++) { aindex[i] = i-1; };
@@ -10392,7 +10393,7 @@ void splineenergyform01_npm(MAT * Cx, MAT * Cy, MAT * Ix, MAT * Iy, int ns, doub
  (*____chimes_extern_func_v_free)(dCy); (*____chimes_extern_func_v_free)(dCx); (*____chimes_extern_func_v_free)(YY); (*____chimes_extern_func_v_free)(XX); (*____chimes_extern_func_v_free)(XY);
 # 702 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 703 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
- free_wrapper(dindex, 8194319462526370187UL); free_wrapper(cindex, 8194319462526370162UL); free_wrapper(bindex, 8194319462526370143UL); free_wrapper(aindex, 8194319462526370121UL);
+ free_wrapper(dindex, 8194319462526370235UL); free_wrapper(cindex, 8194319462526370210UL); free_wrapper(bindex, 8194319462526370191UL); free_wrapper(aindex, 8194319462526370169UL);
 # 704 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
 # 705 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c"
  (*____chimes_extern_func_v_free)(Iy2); (*____chimes_extern_func_v_free)(Ix2); (*____chimes_extern_func_v_free)(Iy1); (*____chimes_extern_func_v_free)(Ix1);
@@ -10410,104 +10411,105 @@ void splineenergyform01_npm(MAT * Cx, MAT * Cy, MAT * Ix, MAT * Iy, int ns, doub
 
 
 static int module_init() {
-    init_module(8194319462526367066UL, 137, 14, 116, 83, 14, 14, 28, 0, 0, 7,
-                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "AVI_read_frame", (unsigned)3, (8194319462526367066UL + 19UL), (8194319462526367066UL + 46UL), (8194319462526367066UL + 88UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)1, (8194319462526367066UL + 21UL), (8194319462526367066UL + 22UL), "AVI_set_video_position", (unsigned)1, (8194319462526367066UL + 88UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 20UL), "AVI_video_height", (unsigned)1, (8194319462526367066UL + 88UL),
-                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)1, (8194319462526367066UL + 15UL), (8194319462526367066UL + 16UL), (8194319462526367066UL + 17UL), (8194319462526367066UL + 18UL), "AVI_video_width", (unsigned)1, (8194319462526367066UL + 88UL),
-                           &____alias_loc_id_4, (unsigned)8, (unsigned)0, (unsigned)1, (8194319462526367066UL + 102UL), (8194319462526367066UL + 103UL), (8194319462526367066UL + 104UL), (8194319462526367066UL + 105UL), (8194319462526367066UL + 106UL), (8194319462526367066UL + 107UL), (8194319462526367066UL + 108UL), (8194319462526367066UL + 109UL), "m_get", (unsigned)1, (8194319462526367066UL + 139UL),
-                           &____alias_loc_id_5, (unsigned)13, (unsigned)0, (unsigned)1, (8194319462526367066UL + 273UL), (8194319462526367066UL + 274UL), (8194319462526367066UL + 276UL), (8194319462526367066UL + 277UL), (8194319462526367066UL + 278UL), (8194319462526367066UL + 279UL), (8194319462526367066UL + 280UL), (8194319462526367066UL + 281UL), (8194319462526367066UL + 282UL), (8194319462526367066UL + 283UL), (8194319462526367066UL + 284UL), (8194319462526367066UL + 285UL), (8194319462526367066UL + 286UL), "m_get", (unsigned)1, (8194319462526367066UL + 614UL),
-                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 621UL), "m_get", (unsigned)1, (8194319462526367066UL + 634UL),
-                           &____alias_loc_id_7, (unsigned)2, (unsigned)0, (unsigned)1, (8194319462526367066UL + 713UL), (8194319462526367066UL + 714UL), "m_get", (unsigned)1, (8194319462526367066UL + 737UL),
-                           &____alias_loc_id_8, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 4739UL),
-                           &____alias_loc_id_9, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 4739UL),
-                            &____alias_loc_id_10, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 4739UL),
-                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 897UL), "m_free", (unsigned)1, (8194319462526367066UL + 4739UL),
-                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 896UL), "mmtr_mlt", (unsigned)1, (8194319462526367066UL + 4739UL),
-                            &____alias_loc_id_13, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 895UL), "m_inverse", (unsigned)1, (8194319462526367066UL + 4739UL),
-                            &____alias_loc_id_14, (unsigned)11, (unsigned)0, (unsigned)1, (8194319462526367066UL + 894UL), (8194319462526367066UL + 902UL), (8194319462526367066UL + 903UL), (8194319462526367066UL + 904UL), (8194319462526367066UL + 905UL), (8194319462526367066UL + 906UL), (8194319462526367066UL + 907UL), (8194319462526367066UL + 908UL), (8194319462526367066UL + 909UL), (8194319462526367066UL + 910UL), (8194319462526367066UL + 1240UL), "mtrm_mlt", (unsigned)1, (8194319462526367066UL + 4739UL),
-                            &____alias_loc_id_15, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 893UL), "m_get", (unsigned)1, (8194319462526367066UL + 4739UL),
-                            &____alias_loc_id_16, (unsigned)11, (unsigned)0, (unsigned)1, (8194319462526367066UL + 894UL), (8194319462526367066UL + 902UL), (8194319462526367066UL + 903UL), (8194319462526367066UL + 904UL), (8194319462526367066UL + 905UL), (8194319462526367066UL + 906UL), (8194319462526367066UL + 907UL), (8194319462526367066UL + 908UL), (8194319462526367066UL + 909UL), (8194319462526367066UL + 910UL), (8194319462526367066UL + 1240UL), "m_zero", (unsigned)2, (8194319462526367066UL + 1068UL), (8194319462526367066UL + 4739UL),
-                            &____alias_loc_id_17, (unsigned)16, (unsigned)0, (unsigned)1, (8194319462526367066UL + 891UL), (8194319462526367066UL + 892UL), (8194319462526367066UL + 893UL), (8194319462526367066UL + 894UL), (8194319462526367066UL + 895UL), (8194319462526367066UL + 896UL), (8194319462526367066UL + 897UL), (8194319462526367066UL + 898UL), (8194319462526367066UL + 899UL), (8194319462526367066UL + 900UL), (8194319462526367066UL + 901UL), (8194319462526367066UL + 902UL), (8194319462526367066UL + 934UL), (8194319462526367066UL + 940UL), (8194319462526367066UL + 946UL), (8194319462526367066UL + 952UL), "m_get", (unsigned)1, (8194319462526367066UL + 4739UL),
-                            &____alias_loc_id_18, (unsigned)4, (unsigned)0, (unsigned)1, (8194319462526367066UL + 1699UL), (8194319462526367066UL + 1700UL), (8194319462526367066UL + 1701UL), (8194319462526367066UL + 1702UL), "v_get", (unsigned)1, (8194319462526367066UL + 1751UL),
-                            &____alias_loc_id_19, (unsigned)4, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2049UL), (8194319462526367066UL + 2050UL), (8194319462526367066UL + 2051UL), (8194319462526367066UL + 2052UL), "v_get", (unsigned)1, (8194319462526367066UL + 2101UL),
-                            &____alias_loc_id_20, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2378UL), (8194319462526367066UL + 2379UL), (8194319462526367066UL + 2380UL), "m_get", (unsigned)1, (8194319462526367066UL + 2400UL),
-                            &____alias_loc_id_21, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2648UL),
-                            &____alias_loc_id_22, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2652UL),
-                            &____alias_loc_id_23, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2656UL),
-                            &____alias_loc_id_24, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2660UL),
-                            &____alias_loc_id_25, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2665UL),
-                            &____alias_loc_id_26, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2942UL),
-                            &____alias_loc_id_27, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2825UL),
-                            &____alias_loc_id_28, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2867UL),
-                            &____alias_loc_id_29, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2909UL),
-                            &____alias_loc_id_30, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2951UL),
-                            &____alias_loc_id_31, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 2964UL),
-                            &____alias_loc_id_32, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 2969UL),
-                            &____alias_loc_id_33, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 2974UL),
-                            &____alias_loc_id_34, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 2979UL),
-                            &____alias_loc_id_35, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3592UL),
-                            &____alias_loc_id_36, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3602UL),
-                            &____alias_loc_id_37, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3612UL),
-                            &____alias_loc_id_38, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3622UL),
-                            &____alias_loc_id_39, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3171UL),
-                            &____alias_loc_id_40, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3211UL),
-                            &____alias_loc_id_41, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3251UL),
-                            &____alias_loc_id_42, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3584UL),
-                            &____alias_loc_id_43, (unsigned)27, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2564UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 2574UL), (8194319462526367066UL + 2580UL), (8194319462526367066UL + 2581UL), (8194319462526367066UL + 2582UL), (8194319462526367066UL + 2583UL), (8194319462526367066UL + 2584UL), (8194319462526367066UL + 2585UL), (8194319462526367066UL + 2586UL), (8194319462526367066UL + 2587UL), (8194319462526367066UL + 2588UL), (8194319462526367066UL + 2589UL), (8194319462526367066UL + 2590UL), (8194319462526367066UL + 2591UL), (8194319462526367066UL + 2592UL), (8194319462526367066UL + 2593UL), (8194319462526367066UL + 2594UL), (8194319462526367066UL + 2595UL), (8194319462526367066UL + 2596UL), (8194319462526367066UL + 2597UL), (8194319462526367066UL + 2598UL), (8194319462526367066UL + 2599UL), (8194319462526367066UL + 3586UL), (8194319462526367066UL + 3648UL), (8194319462526367066UL + 4515UL), (8194319462526367066UL + 4556UL), "v_free", (unsigned)1, (8194319462526367066UL + 3646UL),
-                            &____alias_loc_id_44, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2563UL), "v_get", (unsigned)1, (8194319462526367066UL + 3646UL),
-                            &____alias_loc_id_45, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2562UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 3253UL), "v_get", (unsigned)1, (8194319462526367066UL + 3584UL),
-                            &____alias_loc_id_46, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2561UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 3213UL), "v_get", (unsigned)1, (8194319462526367066UL + 3251UL),
-                            &____alias_loc_id_47, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2560UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 3173UL), "v_get", (unsigned)1, (8194319462526367066UL + 3211UL),
-                            &____alias_loc_id_48, (unsigned)11, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2568UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 2575UL), (8194319462526367066UL + 2576UL), (8194319462526367066UL + 2577UL), (8194319462526367066UL + 2578UL), (8194319462526367066UL + 2579UL), (8194319462526367066UL + 3055UL), (8194319462526367066UL + 3077UL), (8194319462526367066UL + 3096UL), (8194319462526367066UL + 3121UL), "v_get", (unsigned)1, (8194319462526367066UL + 3171UL),
-                            &____alias_loc_id_49, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2566UL), "get_row", (unsigned)2, (8194319462526367066UL + 2979UL), (8194319462526367066UL + 3622UL),
-                            &____alias_loc_id_50, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2567UL), "get_row", (unsigned)2, (8194319462526367066UL + 2974UL), (8194319462526367066UL + 3612UL),
-                            &____alias_loc_id_51, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2565UL), "get_row", (unsigned)2, (8194319462526367066UL + 2969UL), (8194319462526367066UL + 3602UL),
-                            &____alias_loc_id_52, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2568UL), "get_row", (unsigned)2, (8194319462526367066UL + 2964UL), (8194319462526367066UL + 3592UL),
-                            &____alias_loc_id_53, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2566UL), "v_get", (unsigned)1, (8194319462526367066UL + 3622UL),
-                            &____alias_loc_id_54, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2567UL), "v_get", (unsigned)1, (8194319462526367066UL + 3612UL),
-                            &____alias_loc_id_55, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2565UL), "v_get", (unsigned)1, (8194319462526367066UL + 3602UL),
-                            &____alias_loc_id_56, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2572UL), "v_get", (unsigned)1, (8194319462526367066UL + 3592UL),
-                            &____alias_loc_id_57, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2570UL),
-                            &____alias_loc_id_58, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2571UL),
-                            &____alias_loc_id_59, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2569UL),
-                            &____alias_loc_id_60, (unsigned)3, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2559UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 2953UL),
-                            &____alias_loc_id_61, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2558UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 2911UL), "v_get", (unsigned)1, (8194319462526367066UL + 2951UL),
-                            &____alias_loc_id_62, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2557UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 2869UL), "v_get", (unsigned)1, (8194319462526367066UL + 2909UL),
-                            &____alias_loc_id_63, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2556UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 2827UL), "v_get", (unsigned)1, (8194319462526367066UL + 2867UL),
-                            &____alias_loc_id_64, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2555UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 2944UL), "v_get", (unsigned)1, (8194319462526367066UL + 2825UL),
-                            &____alias_loc_id_65, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2554UL), (8194319462526367066UL + 2573UL), (8194319462526367066UL + 2719UL), "v_get", (unsigned)1, (8194319462526367066UL + 2942UL),
-                            &____alias_loc_id_66, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2553UL), "v_get", (unsigned)1, (8194319462526367066UL + 2665UL),
-                            &____alias_loc_id_67, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2552UL),
-                            &____alias_loc_id_68, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2551UL),
-                            &____alias_loc_id_69, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2550UL),
-                            &____alias_loc_id_70, (unsigned)8, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2542UL), (8194319462526367066UL + 2543UL), (8194319462526367066UL + 2544UL), (8194319462526367066UL + 2545UL), (8194319462526367066UL + 2546UL), (8194319462526367066UL + 2547UL), (8194319462526367066UL + 2548UL), (8194319462526367066UL + 2549UL),
-                            &____alias_loc_id_71, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 1UL),
-                            &____alias_loc_id_72, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 23UL),
-                            &____alias_loc_id_73, (unsigned)5, (unsigned)0, (unsigned)0, (8194319462526367066UL + 110UL), (8194319462526367066UL + 111UL), (8194319462526367066UL + 112UL), (8194319462526367066UL + 113UL), (8194319462526367066UL + 246UL),
-                            &____alias_loc_id_74, (unsigned)13, (unsigned)0, (unsigned)0, (8194319462526367066UL + 275UL), (8194319462526367066UL + 287UL), (8194319462526367066UL + 288UL), (8194319462526367066UL + 289UL), (8194319462526367066UL + 290UL), (8194319462526367066UL + 291UL), (8194319462526367066UL + 292UL), (8194319462526367066UL + 293UL), (8194319462526367066UL + 294UL), (8194319462526367066UL + 295UL), (8194319462526367066UL + 296UL), (8194319462526367066UL + 297UL), (8194319462526367066UL + 589UL),
-                            &____alias_loc_id_75, (unsigned)4, (unsigned)0, (unsigned)0, (8194319462526367066UL + 622UL), (8194319462526367066UL + 623UL), (8194319462526367066UL + 624UL), (8194319462526367066UL + 696UL),
-                            &____alias_loc_id_76, (unsigned)12, (unsigned)0, (unsigned)0, (8194319462526367066UL + 715UL), (8194319462526367066UL + 716UL), (8194319462526367066UL + 717UL), (8194319462526367066UL + 718UL), (8194319462526367066UL + 719UL), (8194319462526367066UL + 720UL), (8194319462526367066UL + 721UL), (8194319462526367066UL + 722UL), (8194319462526367066UL + 723UL), (8194319462526367066UL + 724UL), (8194319462526367066UL + 725UL), (8194319462526367066UL + 874UL),
-                            &____alias_loc_id_77, (unsigned)18, (unsigned)0, (unsigned)0, (8194319462526367066UL + 1317UL), (8194319462526367066UL + 1318UL), (8194319462526367066UL + 1319UL), (8194319462526367066UL + 1320UL), (8194319462526367066UL + 1321UL), (8194319462526367066UL + 1322UL), (8194319462526367066UL + 1323UL), (8194319462526367066UL + 1324UL), (8194319462526367066UL + 1325UL), (8194319462526367066UL + 1326UL), (8194319462526367066UL + 1327UL), (8194319462526367066UL + 1328UL), (8194319462526367066UL + 1329UL), (8194319462526367066UL + 1330UL), (8194319462526367066UL + 1331UL), (8194319462526367066UL + 1332UL), (8194319462526367066UL + 1546UL), (8194319462526367066UL + 1565UL),
-                            &____alias_loc_id_78, (unsigned)5, (unsigned)0, (unsigned)0, (8194319462526367066UL + 1579UL), (8194319462526367066UL + 1580UL), (8194319462526367066UL + 1581UL), (8194319462526367066UL + 1582UL), (8194319462526367066UL + 1583UL),
-                            &____alias_loc_id_79, (unsigned)5, (unsigned)0, (unsigned)0, (8194319462526367066UL + 1639UL), (8194319462526367066UL + 1640UL), (8194319462526367066UL + 1641UL), (8194319462526367066UL + 1642UL), (8194319462526367066UL + 1643UL),
-                            &____alias_loc_id_80, (unsigned)17, (unsigned)0, (unsigned)0, (8194319462526367066UL + 1703UL), (8194319462526367066UL + 1704UL), (8194319462526367066UL + 1705UL), (8194319462526367066UL + 1706UL), (8194319462526367066UL + 1707UL), (8194319462526367066UL + 1708UL), (8194319462526367066UL + 1709UL), (8194319462526367066UL + 1710UL), (8194319462526367066UL + 1711UL), (8194319462526367066UL + 1712UL), (8194319462526367066UL + 1713UL), (8194319462526367066UL + 1714UL), (8194319462526367066UL + 1756UL), (8194319462526367066UL + 1762UL), (8194319462526367066UL + 1768UL), (8194319462526367066UL + 1774UL), (8194319462526367066UL + 2019UL),
-                            &____alias_loc_id_81, (unsigned)17, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2053UL), (8194319462526367066UL + 2054UL), (8194319462526367066UL + 2055UL), (8194319462526367066UL + 2056UL), (8194319462526367066UL + 2057UL), (8194319462526367066UL + 2058UL), (8194319462526367066UL + 2059UL), (8194319462526367066UL + 2060UL), (8194319462526367066UL + 2061UL), (8194319462526367066UL + 2062UL), (8194319462526367066UL + 2063UL), (8194319462526367066UL + 2064UL), (8194319462526367066UL + 2106UL), (8194319462526367066UL + 2112UL), (8194319462526367066UL + 2118UL), (8194319462526367066UL + 2124UL), (8194319462526367066UL + 2349UL),
-                            &____alias_loc_id_82, (unsigned)10, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2381UL), (8194319462526367066UL + 2382UL), (8194319462526367066UL + 2383UL), (8194319462526367066UL + 2384UL), (8194319462526367066UL + 2385UL), (8194319462526367066UL + 2386UL), (8194319462526367066UL + 2387UL), (8194319462526367066UL + 2388UL), (8194319462526367066UL + 2389UL), (8194319462526367066UL + 2529UL),
-                            "get_time", (void *)(&get_time_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (8194319462526367066UL + 1UL), (8194319462526367066UL + 4740UL), 0UL,
-                            "get_frame", (void *)(&get_frame_npm), (void *)__null, 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 4, (8194319462526367066UL + 88UL), 0UL, 0UL, 0UL, (8194319462526367066UL + 81UL), 10, "AVI_video_width", 1, (8194319462526367066UL + 88UL), 0UL, "AVI_video_height", 1, (8194319462526367066UL + 88UL), 0UL, "malloc", 1, 0UL, (8194319462526367066UL + 46UL), "AVI_set_video_position", 2, (8194319462526367066UL + 88UL), 0UL, 0UL, "AVI_read_frame", 3, (8194319462526367066UL + 88UL), (8194319462526367066UL + 46UL), (8194319462526367066UL + 19UL), 0UL, "AVI_print_error", 1, (8194319462526367066UL + 4738UL), 0UL, "exit", 1, 0UL, 0UL, "chop_flip_image", 8, (8194319462526367066UL + 46UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (8194319462526367066UL + 81UL), "chop_flip_image", 8, (8194319462526367066UL + 46UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (8194319462526367066UL + 81UL), "free", 1, (8194319462526367066UL + 46UL), 0UL,
-                            "chop_flip_image", (void *)(&chop_flip_image_npm), (void *)__null, 1, &____alias_loc_id_4, 8, (8194319462526367066UL + 262UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (8194319462526367066UL + 139UL), 1, "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 139UL),
-                            "ellipsematching", (void *)(&ellipsematching_npm), (void *)__null, 1, &____alias_loc_id_5, 2, (8194319462526367066UL + 616UL), (8194319462526367066UL + 617UL), (8194319462526367066UL + 614UL), 6, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 614UL), "sqrt", 1, 0UL, 0UL,
-                            "structuring_element", (void *)(&structuring_element_npm), (void *)__null, 1, &____alias_loc_id_6, 1, 0UL, (8194319462526367066UL + 634UL), 2, "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 634UL), "sqrt", 1, 0UL, 0UL,
-                            "dilate_f", (void *)(&dilate_f_npm), (void *)__null, 1, &____alias_loc_id_7, 2, (8194319462526367066UL + 889UL), (8194319462526367066UL + 890UL), (8194319462526367066UL + 737UL), 1, "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 737UL),
-                            "TMatrix", (void *)(&TMatrix_npm), (void *)__null, 10, &____alias_loc_id_10, &____alias_loc_id_11, &____alias_loc_id_12, &____alias_loc_id_13, &____alias_loc_id_14, &____alias_loc_id_15, &____alias_loc_id_16, &____alias_loc_id_17, &____alias_loc_id_8, &____alias_loc_id_9, 2, 0UL, 0UL, (8194319462526367066UL + 4739UL), 18, "malloc", 1, 0UL, (8194319462526367066UL + 934UL), "malloc", 1, 0UL, (8194319462526367066UL + 940UL), "malloc", 1, 0UL, (8194319462526367066UL + 946UL), "malloc", 1, 0UL, (8194319462526367066UL + 952UL), "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 4739UL), "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 4739UL), "m_zero", 1, (8194319462526367066UL + 4739UL), (8194319462526367066UL + 1068UL), "mtrm_mlt", 3, (8194319462526367066UL + 4739UL), (8194319462526367066UL + 4739UL), (8194319462526367066UL + 4739UL), (8194319462526367066UL + 4739UL), "m_inverse", 2, (8194319462526367066UL + 4739UL), (8194319462526367066UL + 4739UL), (8194319462526367066UL + 4739UL), "mmtr_mlt", 3, (8194319462526367066UL + 4739UL), (8194319462526367066UL + 4739UL), (8194319462526367066UL + 4739UL), (8194319462526367066UL + 4739UL), "m_free", 1, (8194319462526367066UL + 4739UL), 0UL, "m_free", 1, (8194319462526367066UL + 4739UL), 0UL, "m_free", 1, (8194319462526367066UL + 4739UL), 0UL, "m_free", 1, (8194319462526367066UL + 4739UL), 0UL, "free", 1, (8194319462526367066UL + 952UL), 0UL, "free", 1, (8194319462526367066UL + 946UL), 0UL, "free", 1, (8194319462526367066UL + 940UL), 0UL, "free", 1, (8194319462526367066UL + 934UL), 0UL,
-                            "uniformseg", (void *)(&uniformseg_npm), (void *)__null, 0, 4, (8194319462526367066UL + 1574UL), (8194319462526367066UL + 1575UL), (8194319462526367066UL + 1576UL), (8194319462526367066UL + 1577UL), 0UL, 2, "sqrt", 1, 0UL, 0UL, "fabs", 1, 0UL, 0UL,
-                            "m_min", (void *)(&m_min_npm), (void *)__null, 0, 1, (8194319462526367066UL + 1638UL), 0UL, 0,
-                            "m_max", (void *)(&m_max_npm), (void *)__null, 0, 1, (8194319462526367066UL + 1698UL), 0UL, 0,
-                            "getsampling", (void *)(&getsampling_npm), (void *)__null, 1, &____alias_loc_id_18, 2, (8194319462526367066UL + 1732UL), 0UL, (8194319462526367066UL + 1751UL), 9, "v_get", 1, 0UL, (8194319462526367066UL + 1751UL), "malloc", 1, 0UL, (8194319462526367066UL + 1756UL), "malloc", 1, 0UL, (8194319462526367066UL + 1762UL), "malloc", 1, 0UL, (8194319462526367066UL + 1768UL), "malloc", 1, 0UL, (8194319462526367066UL + 1774UL), "free", 1, (8194319462526367066UL + 1774UL), 0UL, "free", 1, (8194319462526367066UL + 1768UL), 0UL, "free", 1, (8194319462526367066UL + 1762UL), 0UL, "free", 1, (8194319462526367066UL + 1756UL), 0UL,
-                            "getfdriv", (void *)(&getfdriv_npm), (void *)__null, 1, &____alias_loc_id_19, 2, (8194319462526367066UL + 2082UL), 0UL, (8194319462526367066UL + 2101UL), 9, "v_get", 1, 0UL, (8194319462526367066UL + 2101UL), "malloc", 1, 0UL, (8194319462526367066UL + 2106UL), "malloc", 1, 0UL, (8194319462526367066UL + 2112UL), "malloc", 1, 0UL, (8194319462526367066UL + 2118UL), "malloc", 1, 0UL, (8194319462526367066UL + 2124UL), "free", 1, (8194319462526367066UL + 2124UL), 0UL, "free", 1, (8194319462526367066UL + 2118UL), 0UL, "free", 1, (8194319462526367066UL + 2112UL), 0UL, "free", 1, (8194319462526367066UL + 2106UL), 0UL,
-                            "linear_interp2", (void *)(&linear_interp2_npm), (void *)__null, 1, &____alias_loc_id_20, 3, (8194319462526367066UL + 2539UL), (8194319462526367066UL + 2540UL), (8194319462526367066UL + 2541UL), (8194319462526367066UL + 2400UL), 1, "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 2400UL),
-                            "splineenergyform01", (void *)(&splineenergyform01_npm), (void *)__null, 50, &____alias_loc_id_21, &____alias_loc_id_22, &____alias_loc_id_23, &____alias_loc_id_24, &____alias_loc_id_25, &____alias_loc_id_26, &____alias_loc_id_27, &____alias_loc_id_28, &____alias_loc_id_29, &____alias_loc_id_30, &____alias_loc_id_31, &____alias_loc_id_32, &____alias_loc_id_33, &____alias_loc_id_34, &____alias_loc_id_35, &____alias_loc_id_36, &____alias_loc_id_37, &____alias_loc_id_38, &____alias_loc_id_39, &____alias_loc_id_40, &____alias_loc_id_41, &____alias_loc_id_42, &____alias_loc_id_43, &____alias_loc_id_44, &____alias_loc_id_45, &____alias_loc_id_46, &____alias_loc_id_47, &____alias_loc_id_48, &____alias_loc_id_49, &____alias_loc_id_50, &____alias_loc_id_51, &____alias_loc_id_52, &____alias_loc_id_53, &____alias_loc_id_54, &____alias_loc_id_55, &____alias_loc_id_56, &____alias_loc_id_57, &____alias_loc_id_58, &____alias_loc_id_59, &____alias_loc_id_60, &____alias_loc_id_61, &____alias_loc_id_62, &____alias_loc_id_63, &____alias_loc_id_64, &____alias_loc_id_65, &____alias_loc_id_66, &____alias_loc_id_67, &____alias_loc_id_68, &____alias_loc_id_69, &____alias_loc_id_70, 8, (8194319462526367066UL + 4726UL), (8194319462526367066UL + 4727UL), (8194319462526367066UL + 4728UL), (8194319462526367066UL + 4729UL), 0UL, 0UL, 0UL, 0UL, 0UL, 61, "getsampling", 2, (8194319462526367066UL + 4726UL), 0UL, (8194319462526367066UL + 2648UL), "getsampling", 2, (8194319462526367066UL + 4727UL), 0UL, (8194319462526367066UL + 2652UL), "getfdriv", 2, (8194319462526367066UL + 4726UL), 0UL, (8194319462526367066UL + 2656UL), "getfdriv", 2, (8194319462526367066UL + 4727UL), 0UL, (8194319462526367066UL + 2660UL), "v_get", 1, 0UL, (8194319462526367066UL + 2665UL), "sqrt", 1, 0UL, 0UL, "v_get", 1, 0UL, (8194319462526367066UL + 2942UL), "sqrt", 1, 0UL, 0UL, "v_get", 1, 0UL, (8194319462526367066UL + 2825UL), "v_get", 1, 0UL, (8194319462526367066UL + 2867UL), "v_get", 1, 0UL, (8194319462526367066UL + 2909UL), "v_get", 1, 0UL, (8194319462526367066UL + 2951UL), "linear_interp2", 3, (8194319462526367066UL + 4728UL), (8194319462526367066UL + 2825UL), (8194319462526367066UL + 2867UL), (8194319462526367066UL + 2964UL), "linear_interp2", 3, (8194319462526367066UL + 4729UL), (8194319462526367066UL + 2825UL), (8194319462526367066UL + 2867UL), (8194319462526367066UL + 2969UL), "linear_interp2", 3, (8194319462526367066UL + 4728UL), (8194319462526367066UL + 2909UL), (8194319462526367066UL + 2951UL), (8194319462526367066UL + 2974UL), "linear_interp2", 3, (8194319462526367066UL + 4729UL), (8194319462526367066UL + 2909UL), (8194319462526367066UL + 2951UL), (8194319462526367066UL + 2979UL), "v_get", 1, 0UL, (8194319462526367066UL + 3592UL), "v_get", 1, 0UL, (8194319462526367066UL + 3602UL), "v_get", 1, 0UL, (8194319462526367066UL + 3612UL), "v_get", 1, 0UL, (8194319462526367066UL + 3622UL), "get_row", 3, (8194319462526367066UL + 2964UL), 0UL, (8194319462526367066UL + 3592UL), (8194319462526367066UL + 3592UL), "get_row", 3, (8194319462526367066UL + 2969UL), 0UL, (8194319462526367066UL + 3602UL), (8194319462526367066UL + 3602UL), "get_row", 3, (8194319462526367066UL + 2974UL), 0UL, (8194319462526367066UL + 3612UL), (8194319462526367066UL + 3612UL), "get_row", 3, (8194319462526367066UL + 2979UL), 0UL, (8194319462526367066UL + 3622UL), (8194319462526367066UL + 3622UL), "malloc", 1, 0UL, (8194319462526367066UL + 3055UL), "malloc", 1, 0UL, (8194319462526367066UL + 3077UL), "malloc", 1, 0UL, (8194319462526367066UL + 3096UL), "malloc", 1, 0UL, (8194319462526367066UL + 3121UL), "v_get", 1, 0UL, (8194319462526367066UL + 3171UL), "v_get", 1, 0UL, (8194319462526367066UL + 3211UL), "v_get", 1, 0UL, (8194319462526367066UL + 3251UL), "v_get", 1, 0UL, (8194319462526367066UL + 3584UL), "v_get", 1, 0UL, (8194319462526367066UL + 3646UL), "sqrt", 1, 0UL, 0UL, "v_free", 1, (8194319462526367066UL + 3646UL), 0UL, "v_free", 1, (8194319462526367066UL + 3584UL), 0UL, "v_free", 1, (8194319462526367066UL + 3251UL), 0UL, "v_free", 1, (8194319462526367066UL + 3211UL), 0UL, "v_free", 1, (8194319462526367066UL + 3171UL), 0UL, "free", 1, (8194319462526367066UL + 3121UL), 0UL, "free", 1, (8194319462526367066UL + 3096UL), 0UL, "free", 1, (8194319462526367066UL + 3077UL), 0UL, "free", 1, (8194319462526367066UL + 3055UL), 0UL, "v_free", 1, (8194319462526367066UL + 3622UL), 0UL, "v_free", 1, (8194319462526367066UL + 3612UL), 0UL, "v_free", 1, (8194319462526367066UL + 3602UL), 0UL, "v_free", 1, (8194319462526367066UL + 3592UL), 0UL, "m_free", 1, (8194319462526367066UL + 2979UL), 0UL, "m_free", 1, (8194319462526367066UL + 2974UL), 0UL, "m_free", 1, (8194319462526367066UL + 2969UL), 0UL, "m_free", 1, (8194319462526367066UL + 2964UL), 0UL, "v_free", 1, (8194319462526367066UL + 2951UL), 0UL, "v_free", 1, (8194319462526367066UL + 2909UL), 0UL, "v_free", 1, (8194319462526367066UL + 2867UL), 0UL, "v_free", 1, (8194319462526367066UL + 2825UL), 0UL, "v_free", 1, (8194319462526367066UL + 2942UL), 0UL, "v_free", 1, (8194319462526367066UL + 2665UL), 0UL, "v_free", 1, (8194319462526367066UL + 2660UL), 0UL, "v_free", 1, (8194319462526367066UL + 2656UL), 0UL, "v_free", 1, (8194319462526367066UL + 2652UL), 0UL, "v_free", 1, (8194319462526367066UL + 2648UL), 0UL,
+    init_module(8194319462526367066UL, 146, 14, 116, 84, 14, 14, 28, 0, 0, 7,
+                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "AVI_read_frame", (unsigned)3, (8194319462526367066UL + 23UL), (8194319462526367066UL + 51UL), (8194319462526367066UL + 96UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)1, (8194319462526367066UL + 25UL), (8194319462526367066UL + 26UL), "AVI_set_video_position", (unsigned)1, (8194319462526367066UL + 96UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 24UL), "AVI_video_height", (unsigned)1, (8194319462526367066UL + 96UL),
+                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)1, (8194319462526367066UL + 19UL), (8194319462526367066UL + 20UL), (8194319462526367066UL + 21UL), (8194319462526367066UL + 22UL), "AVI_video_width", (unsigned)1, (8194319462526367066UL + 96UL),
+                           &____alias_loc_id_4, (unsigned)8, (unsigned)0, (unsigned)1, (8194319462526367066UL + 110UL), (8194319462526367066UL + 111UL), (8194319462526367066UL + 112UL), (8194319462526367066UL + 113UL), (8194319462526367066UL + 114UL), (8194319462526367066UL + 115UL), (8194319462526367066UL + 116UL), (8194319462526367066UL + 117UL), "m_get", (unsigned)1, (8194319462526367066UL + 148UL),
+                           &____alias_loc_id_5, (unsigned)13, (unsigned)0, (unsigned)1, (8194319462526367066UL + 285UL), (8194319462526367066UL + 286UL), (8194319462526367066UL + 288UL), (8194319462526367066UL + 289UL), (8194319462526367066UL + 290UL), (8194319462526367066UL + 291UL), (8194319462526367066UL + 292UL), (8194319462526367066UL + 293UL), (8194319462526367066UL + 294UL), (8194319462526367066UL + 295UL), (8194319462526367066UL + 296UL), (8194319462526367066UL + 297UL), (8194319462526367066UL + 298UL), "m_get", (unsigned)1, (8194319462526367066UL + 628UL),
+                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 637UL), "m_get", (unsigned)1, (8194319462526367066UL + 651UL),
+                           &____alias_loc_id_7, (unsigned)2, (unsigned)0, (unsigned)1, (8194319462526367066UL + 733UL), (8194319462526367066UL + 734UL), "m_get", (unsigned)1, (8194319462526367066UL + 758UL),
+                           &____alias_loc_id_8, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 4787UL),
+                           &____alias_loc_id_9, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 4787UL),
+                            &____alias_loc_id_10, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 4787UL),
+                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 921UL), "m_free", (unsigned)1, (8194319462526367066UL + 4787UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 920UL), "mmtr_mlt", (unsigned)1, (8194319462526367066UL + 4787UL),
+                            &____alias_loc_id_13, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 919UL), "m_inverse", (unsigned)1, (8194319462526367066UL + 4787UL),
+                            &____alias_loc_id_14, (unsigned)11, (unsigned)0, (unsigned)1, (8194319462526367066UL + 918UL), (8194319462526367066UL + 926UL), (8194319462526367066UL + 927UL), (8194319462526367066UL + 928UL), (8194319462526367066UL + 929UL), (8194319462526367066UL + 930UL), (8194319462526367066UL + 931UL), (8194319462526367066UL + 932UL), (8194319462526367066UL + 933UL), (8194319462526367066UL + 934UL), (8194319462526367066UL + 1265UL), "mtrm_mlt", (unsigned)1, (8194319462526367066UL + 4787UL),
+                            &____alias_loc_id_15, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 917UL), "m_get", (unsigned)1, (8194319462526367066UL + 4787UL),
+                            &____alias_loc_id_16, (unsigned)11, (unsigned)0, (unsigned)1, (8194319462526367066UL + 918UL), (8194319462526367066UL + 926UL), (8194319462526367066UL + 927UL), (8194319462526367066UL + 928UL), (8194319462526367066UL + 929UL), (8194319462526367066UL + 930UL), (8194319462526367066UL + 931UL), (8194319462526367066UL + 932UL), (8194319462526367066UL + 933UL), (8194319462526367066UL + 934UL), (8194319462526367066UL + 1265UL), "m_zero", (unsigned)2, (8194319462526367066UL + 1093UL), (8194319462526367066UL + 4787UL),
+                            &____alias_loc_id_17, (unsigned)16, (unsigned)0, (unsigned)1, (8194319462526367066UL + 915UL), (8194319462526367066UL + 916UL), (8194319462526367066UL + 917UL), (8194319462526367066UL + 918UL), (8194319462526367066UL + 919UL), (8194319462526367066UL + 920UL), (8194319462526367066UL + 921UL), (8194319462526367066UL + 922UL), (8194319462526367066UL + 923UL), (8194319462526367066UL + 924UL), (8194319462526367066UL + 925UL), (8194319462526367066UL + 926UL), (8194319462526367066UL + 959UL), (8194319462526367066UL + 965UL), (8194319462526367066UL + 971UL), (8194319462526367066UL + 977UL), "m_get", (unsigned)1, (8194319462526367066UL + 4787UL),
+                            &____alias_loc_id_18, (unsigned)4, (unsigned)0, (unsigned)1, (8194319462526367066UL + 1735UL), (8194319462526367066UL + 1736UL), (8194319462526367066UL + 1737UL), (8194319462526367066UL + 1738UL), "v_get", (unsigned)1, (8194319462526367066UL + 1788UL),
+                            &____alias_loc_id_19, (unsigned)4, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2089UL), (8194319462526367066UL + 2090UL), (8194319462526367066UL + 2091UL), (8194319462526367066UL + 2092UL), "v_get", (unsigned)1, (8194319462526367066UL + 2142UL),
+                            &____alias_loc_id_20, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2422UL), (8194319462526367066UL + 2423UL), (8194319462526367066UL + 2424UL), "m_get", (unsigned)1, (8194319462526367066UL + 2445UL),
+                            &____alias_loc_id_21, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2696UL),
+                            &____alias_loc_id_22, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2700UL),
+                            &____alias_loc_id_23, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2704UL),
+                            &____alias_loc_id_24, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2708UL),
+                            &____alias_loc_id_25, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2713UL),
+                            &____alias_loc_id_26, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2990UL),
+                            &____alias_loc_id_27, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2873UL),
+                            &____alias_loc_id_28, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2915UL),
+                            &____alias_loc_id_29, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2957UL),
+                            &____alias_loc_id_30, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 2999UL),
+                            &____alias_loc_id_31, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 3012UL),
+                            &____alias_loc_id_32, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 3017UL),
+                            &____alias_loc_id_33, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 3022UL),
+                            &____alias_loc_id_34, (unsigned)0, (unsigned)0, (unsigned)1, "m_free", (unsigned)1, (8194319462526367066UL + 3027UL),
+                            &____alias_loc_id_35, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3640UL),
+                            &____alias_loc_id_36, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3650UL),
+                            &____alias_loc_id_37, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3660UL),
+                            &____alias_loc_id_38, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3670UL),
+                            &____alias_loc_id_39, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3219UL),
+                            &____alias_loc_id_40, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3259UL),
+                            &____alias_loc_id_41, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3299UL),
+                            &____alias_loc_id_42, (unsigned)0, (unsigned)0, (unsigned)1, "v_free", (unsigned)1, (8194319462526367066UL + 3632UL),
+                            &____alias_loc_id_43, (unsigned)27, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2612UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 2622UL), (8194319462526367066UL + 2628UL), (8194319462526367066UL + 2629UL), (8194319462526367066UL + 2630UL), (8194319462526367066UL + 2631UL), (8194319462526367066UL + 2632UL), (8194319462526367066UL + 2633UL), (8194319462526367066UL + 2634UL), (8194319462526367066UL + 2635UL), (8194319462526367066UL + 2636UL), (8194319462526367066UL + 2637UL), (8194319462526367066UL + 2638UL), (8194319462526367066UL + 2639UL), (8194319462526367066UL + 2640UL), (8194319462526367066UL + 2641UL), (8194319462526367066UL + 2642UL), (8194319462526367066UL + 2643UL), (8194319462526367066UL + 2644UL), (8194319462526367066UL + 2645UL), (8194319462526367066UL + 2646UL), (8194319462526367066UL + 2647UL), (8194319462526367066UL + 3634UL), (8194319462526367066UL + 3696UL), (8194319462526367066UL + 4563UL), (8194319462526367066UL + 4604UL), "v_free", (unsigned)1, (8194319462526367066UL + 3694UL),
+                            &____alias_loc_id_44, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2611UL), "v_get", (unsigned)1, (8194319462526367066UL + 3694UL),
+                            &____alias_loc_id_45, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2610UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 3301UL), "v_get", (unsigned)1, (8194319462526367066UL + 3632UL),
+                            &____alias_loc_id_46, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2609UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 3261UL), "v_get", (unsigned)1, (8194319462526367066UL + 3299UL),
+                            &____alias_loc_id_47, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2608UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 3221UL), "v_get", (unsigned)1, (8194319462526367066UL + 3259UL),
+                            &____alias_loc_id_48, (unsigned)11, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2616UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 2623UL), (8194319462526367066UL + 2624UL), (8194319462526367066UL + 2625UL), (8194319462526367066UL + 2626UL), (8194319462526367066UL + 2627UL), (8194319462526367066UL + 3103UL), (8194319462526367066UL + 3125UL), (8194319462526367066UL + 3144UL), (8194319462526367066UL + 3169UL), "v_get", (unsigned)1, (8194319462526367066UL + 3219UL),
+                            &____alias_loc_id_49, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2614UL), "get_row", (unsigned)2, (8194319462526367066UL + 3027UL), (8194319462526367066UL + 3670UL),
+                            &____alias_loc_id_50, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2615UL), "get_row", (unsigned)2, (8194319462526367066UL + 3022UL), (8194319462526367066UL + 3660UL),
+                            &____alias_loc_id_51, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2613UL), "get_row", (unsigned)2, (8194319462526367066UL + 3017UL), (8194319462526367066UL + 3650UL),
+                            &____alias_loc_id_52, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2616UL), "get_row", (unsigned)2, (8194319462526367066UL + 3012UL), (8194319462526367066UL + 3640UL),
+                            &____alias_loc_id_53, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2614UL), "v_get", (unsigned)1, (8194319462526367066UL + 3670UL),
+                            &____alias_loc_id_54, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2615UL), "v_get", (unsigned)1, (8194319462526367066UL + 3660UL),
+                            &____alias_loc_id_55, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2613UL), "v_get", (unsigned)1, (8194319462526367066UL + 3650UL),
+                            &____alias_loc_id_56, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2620UL), "v_get", (unsigned)1, (8194319462526367066UL + 3640UL),
+                            &____alias_loc_id_57, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2618UL),
+                            &____alias_loc_id_58, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2619UL),
+                            &____alias_loc_id_59, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2617UL),
+                            &____alias_loc_id_60, (unsigned)3, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2607UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 3001UL),
+                            &____alias_loc_id_61, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2606UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 2959UL), "v_get", (unsigned)1, (8194319462526367066UL + 2999UL),
+                            &____alias_loc_id_62, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2605UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 2917UL), "v_get", (unsigned)1, (8194319462526367066UL + 2957UL),
+                            &____alias_loc_id_63, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2604UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 2875UL), "v_get", (unsigned)1, (8194319462526367066UL + 2915UL),
+                            &____alias_loc_id_64, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2603UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 2992UL), "v_get", (unsigned)1, (8194319462526367066UL + 2873UL),
+                            &____alias_loc_id_65, (unsigned)3, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2602UL), (8194319462526367066UL + 2621UL), (8194319462526367066UL + 2767UL), "v_get", (unsigned)1, (8194319462526367066UL + 2990UL),
+                            &____alias_loc_id_66, (unsigned)1, (unsigned)0, (unsigned)1, (8194319462526367066UL + 2601UL), "v_get", (unsigned)1, (8194319462526367066UL + 2713UL),
+                            &____alias_loc_id_67, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2600UL),
+                            &____alias_loc_id_68, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2599UL),
+                            &____alias_loc_id_69, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2598UL),
+                            &____alias_loc_id_70, (unsigned)8, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2590UL), (8194319462526367066UL + 2591UL), (8194319462526367066UL + 2592UL), (8194319462526367066UL + 2593UL), (8194319462526367066UL + 2594UL), (8194319462526367066UL + 2595UL), (8194319462526367066UL + 2596UL), (8194319462526367066UL + 2597UL),
+                            &____alias_loc_id_71, (unsigned)2, (unsigned)0, (unsigned)0, (8194319462526367066UL + 1UL), (8194319462526367066UL + 2UL),
+                            &____alias_loc_id_72, (unsigned)2, (unsigned)0, (unsigned)0, (8194319462526367066UL + 27UL), (8194319462526367066UL + 28UL),
+                            &____alias_loc_id_73, (unsigned)6, (unsigned)0, (unsigned)0, (8194319462526367066UL + 118UL), (8194319462526367066UL + 119UL), (8194319462526367066UL + 120UL), (8194319462526367066UL + 121UL), (8194319462526367066UL + 122UL), (8194319462526367066UL + 255UL),
+                            &____alias_loc_id_74, (unsigned)14, (unsigned)0, (unsigned)0, (8194319462526367066UL + 287UL), (8194319462526367066UL + 299UL), (8194319462526367066UL + 300UL), (8194319462526367066UL + 301UL), (8194319462526367066UL + 302UL), (8194319462526367066UL + 303UL), (8194319462526367066UL + 304UL), (8194319462526367066UL + 305UL), (8194319462526367066UL + 306UL), (8194319462526367066UL + 307UL), (8194319462526367066UL + 308UL), (8194319462526367066UL + 309UL), (8194319462526367066UL + 310UL), (8194319462526367066UL + 602UL),
+                            &____alias_loc_id_75, (unsigned)5, (unsigned)0, (unsigned)0, (8194319462526367066UL + 638UL), (8194319462526367066UL + 639UL), (8194319462526367066UL + 640UL), (8194319462526367066UL + 641UL), (8194319462526367066UL + 713UL),
+                            &____alias_loc_id_76, (unsigned)13, (unsigned)0, (unsigned)0, (8194319462526367066UL + 735UL), (8194319462526367066UL + 736UL), (8194319462526367066UL + 737UL), (8194319462526367066UL + 738UL), (8194319462526367066UL + 739UL), (8194319462526367066UL + 740UL), (8194319462526367066UL + 741UL), (8194319462526367066UL + 742UL), (8194319462526367066UL + 743UL), (8194319462526367066UL + 744UL), (8194319462526367066UL + 745UL), (8194319462526367066UL + 746UL), (8194319462526367066UL + 895UL),
+                            &____alias_loc_id_77, (unsigned)1, (unsigned)0, (unsigned)0, (8194319462526367066UL + 935UL),
+                            &____alias_loc_id_78, (unsigned)18, (unsigned)0, (unsigned)0, (8194319462526367066UL + 1345UL), (8194319462526367066UL + 1346UL), (8194319462526367066UL + 1347UL), (8194319462526367066UL + 1348UL), (8194319462526367066UL + 1349UL), (8194319462526367066UL + 1350UL), (8194319462526367066UL + 1351UL), (8194319462526367066UL + 1352UL), (8194319462526367066UL + 1353UL), (8194319462526367066UL + 1354UL), (8194319462526367066UL + 1355UL), (8194319462526367066UL + 1356UL), (8194319462526367066UL + 1357UL), (8194319462526367066UL + 1358UL), (8194319462526367066UL + 1359UL), (8194319462526367066UL + 1360UL), (8194319462526367066UL + 1574UL), (8194319462526367066UL + 1593UL),
+                            &____alias_loc_id_79, (unsigned)6, (unsigned)0, (unsigned)0, (8194319462526367066UL + 1607UL), (8194319462526367066UL + 1608UL), (8194319462526367066UL + 1609UL), (8194319462526367066UL + 1610UL), (8194319462526367066UL + 1611UL), (8194319462526367066UL + 1612UL),
+                            &____alias_loc_id_80, (unsigned)6, (unsigned)0, (unsigned)0, (8194319462526367066UL + 1671UL), (8194319462526367066UL + 1672UL), (8194319462526367066UL + 1673UL), (8194319462526367066UL + 1674UL), (8194319462526367066UL + 1675UL), (8194319462526367066UL + 1676UL),
+                            &____alias_loc_id_81, (unsigned)18, (unsigned)0, (unsigned)0, (8194319462526367066UL + 1739UL), (8194319462526367066UL + 1740UL), (8194319462526367066UL + 1741UL), (8194319462526367066UL + 1742UL), (8194319462526367066UL + 1743UL), (8194319462526367066UL + 1744UL), (8194319462526367066UL + 1745UL), (8194319462526367066UL + 1746UL), (8194319462526367066UL + 1747UL), (8194319462526367066UL + 1748UL), (8194319462526367066UL + 1749UL), (8194319462526367066UL + 1750UL), (8194319462526367066UL + 1751UL), (8194319462526367066UL + 1793UL), (8194319462526367066UL + 1799UL), (8194319462526367066UL + 1805UL), (8194319462526367066UL + 1811UL), (8194319462526367066UL + 2056UL),
+                            &____alias_loc_id_82, (unsigned)18, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2093UL), (8194319462526367066UL + 2094UL), (8194319462526367066UL + 2095UL), (8194319462526367066UL + 2096UL), (8194319462526367066UL + 2097UL), (8194319462526367066UL + 2098UL), (8194319462526367066UL + 2099UL), (8194319462526367066UL + 2100UL), (8194319462526367066UL + 2101UL), (8194319462526367066UL + 2102UL), (8194319462526367066UL + 2103UL), (8194319462526367066UL + 2104UL), (8194319462526367066UL + 2105UL), (8194319462526367066UL + 2147UL), (8194319462526367066UL + 2153UL), (8194319462526367066UL + 2159UL), (8194319462526367066UL + 2165UL), (8194319462526367066UL + 2390UL),
+                            &____alias_loc_id_83, (unsigned)11, (unsigned)0, (unsigned)0, (8194319462526367066UL + 2425UL), (8194319462526367066UL + 2426UL), (8194319462526367066UL + 2427UL), (8194319462526367066UL + 2428UL), (8194319462526367066UL + 2429UL), (8194319462526367066UL + 2430UL), (8194319462526367066UL + 2431UL), (8194319462526367066UL + 2432UL), (8194319462526367066UL + 2433UL), (8194319462526367066UL + 2434UL), (8194319462526367066UL + 2574UL),
+                            "get_time", (void *)(&get_time_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (8194319462526367066UL + 1UL), (8194319462526367066UL + 4788UL), 0UL,
+                            "get_frame", (void *)(&get_frame_npm), (void *)__null, 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 4, (8194319462526367066UL + 96UL), 0UL, 0UL, 0UL, (8194319462526367066UL + 86UL), 10, "AVI_video_width", 1, (8194319462526367066UL + 96UL), 0UL, "AVI_video_height", 1, (8194319462526367066UL + 96UL), 0UL, "malloc", 1, 0UL, (8194319462526367066UL + 51UL), "AVI_set_video_position", 2, (8194319462526367066UL + 96UL), 0UL, 0UL, "AVI_read_frame", 3, (8194319462526367066UL + 96UL), (8194319462526367066UL + 51UL), (8194319462526367066UL + 23UL), 0UL, "AVI_print_error", 1, (8194319462526367066UL + 4786UL), 0UL, "exit", 1, 0UL, 0UL, "chop_flip_image", 8, (8194319462526367066UL + 51UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (8194319462526367066UL + 86UL), "chop_flip_image", 8, (8194319462526367066UL + 51UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (8194319462526367066UL + 86UL), "free", 1, (8194319462526367066UL + 51UL), 0UL,
+                            "chop_flip_image", (void *)(&chop_flip_image_npm), (void *)__null, 1, &____alias_loc_id_4, 8, (8194319462526367066UL + 274UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (8194319462526367066UL + 148UL), 1, "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 148UL),
+                            "ellipsematching", (void *)(&ellipsematching_npm), (void *)__null, 1, &____alias_loc_id_5, 2, (8194319462526367066UL + 632UL), (8194319462526367066UL + 633UL), (8194319462526367066UL + 628UL), 6, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 628UL), "sqrt", 1, 0UL, 0UL,
+                            "structuring_element", (void *)(&structuring_element_npm), (void *)__null, 1, &____alias_loc_id_6, 1, 0UL, (8194319462526367066UL + 651UL), 2, "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 651UL), "sqrt", 1, 0UL, 0UL,
+                            "dilate_f", (void *)(&dilate_f_npm), (void *)__null, 1, &____alias_loc_id_7, 2, (8194319462526367066UL + 913UL), (8194319462526367066UL + 914UL), (8194319462526367066UL + 758UL), 1, "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 758UL),
+                            "TMatrix", (void *)(&TMatrix_npm), (void *)__null, 10, &____alias_loc_id_10, &____alias_loc_id_11, &____alias_loc_id_12, &____alias_loc_id_13, &____alias_loc_id_14, &____alias_loc_id_15, &____alias_loc_id_16, &____alias_loc_id_17, &____alias_loc_id_8, &____alias_loc_id_9, 2, 0UL, 0UL, (8194319462526367066UL + 4787UL), 18, "malloc", 1, 0UL, (8194319462526367066UL + 959UL), "malloc", 1, 0UL, (8194319462526367066UL + 965UL), "malloc", 1, 0UL, (8194319462526367066UL + 971UL), "malloc", 1, 0UL, (8194319462526367066UL + 977UL), "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 4787UL), "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 4787UL), "m_zero", 1, (8194319462526367066UL + 4787UL), (8194319462526367066UL + 1093UL), "mtrm_mlt", 3, (8194319462526367066UL + 4787UL), (8194319462526367066UL + 4787UL), (8194319462526367066UL + 4787UL), (8194319462526367066UL + 4787UL), "m_inverse", 2, (8194319462526367066UL + 4787UL), (8194319462526367066UL + 4787UL), (8194319462526367066UL + 4787UL), "mmtr_mlt", 3, (8194319462526367066UL + 4787UL), (8194319462526367066UL + 4787UL), (8194319462526367066UL + 4787UL), (8194319462526367066UL + 4787UL), "m_free", 1, (8194319462526367066UL + 4787UL), 0UL, "m_free", 1, (8194319462526367066UL + 4787UL), 0UL, "m_free", 1, (8194319462526367066UL + 4787UL), 0UL, "m_free", 1, (8194319462526367066UL + 4787UL), 0UL, "free", 1, (8194319462526367066UL + 977UL), 0UL, "free", 1, (8194319462526367066UL + 971UL), 0UL, "free", 1, (8194319462526367066UL + 965UL), 0UL, "free", 1, (8194319462526367066UL + 959UL), 0UL,
+                            "uniformseg", (void *)(&uniformseg_npm), (void *)__null, 0, 4, (8194319462526367066UL + 1602UL), (8194319462526367066UL + 1603UL), (8194319462526367066UL + 1604UL), (8194319462526367066UL + 1605UL), 0UL, 2, "sqrt", 1, 0UL, 0UL, "fabs", 1, 0UL, 0UL,
+                            "m_min", (void *)(&m_min_npm), (void *)__null, 0, 1, (8194319462526367066UL + 1670UL), 0UL, 0,
+                            "m_max", (void *)(&m_max_npm), (void *)__null, 0, 1, (8194319462526367066UL + 1734UL), 0UL, 0,
+                            "getsampling", (void *)(&getsampling_npm), (void *)__null, 1, &____alias_loc_id_18, 2, (8194319462526367066UL + 1769UL), 0UL, (8194319462526367066UL + 1788UL), 9, "v_get", 1, 0UL, (8194319462526367066UL + 1788UL), "malloc", 1, 0UL, (8194319462526367066UL + 1793UL), "malloc", 1, 0UL, (8194319462526367066UL + 1799UL), "malloc", 1, 0UL, (8194319462526367066UL + 1805UL), "malloc", 1, 0UL, (8194319462526367066UL + 1811UL), "free", 1, (8194319462526367066UL + 1811UL), 0UL, "free", 1, (8194319462526367066UL + 1805UL), 0UL, "free", 1, (8194319462526367066UL + 1799UL), 0UL, "free", 1, (8194319462526367066UL + 1793UL), 0UL,
+                            "getfdriv", (void *)(&getfdriv_npm), (void *)__null, 1, &____alias_loc_id_19, 2, (8194319462526367066UL + 2123UL), 0UL, (8194319462526367066UL + 2142UL), 9, "v_get", 1, 0UL, (8194319462526367066UL + 2142UL), "malloc", 1, 0UL, (8194319462526367066UL + 2147UL), "malloc", 1, 0UL, (8194319462526367066UL + 2153UL), "malloc", 1, 0UL, (8194319462526367066UL + 2159UL), "malloc", 1, 0UL, (8194319462526367066UL + 2165UL), "free", 1, (8194319462526367066UL + 2165UL), 0UL, "free", 1, (8194319462526367066UL + 2159UL), 0UL, "free", 1, (8194319462526367066UL + 2153UL), 0UL, "free", 1, (8194319462526367066UL + 2147UL), 0UL,
+                            "linear_interp2", (void *)(&linear_interp2_npm), (void *)__null, 1, &____alias_loc_id_20, 3, (8194319462526367066UL + 2587UL), (8194319462526367066UL + 2588UL), (8194319462526367066UL + 2589UL), (8194319462526367066UL + 2445UL), 1, "m_get", 2, 0UL, 0UL, (8194319462526367066UL + 2445UL),
+                            "splineenergyform01", (void *)(&splineenergyform01_npm), (void *)__null, 50, &____alias_loc_id_21, &____alias_loc_id_22, &____alias_loc_id_23, &____alias_loc_id_24, &____alias_loc_id_25, &____alias_loc_id_26, &____alias_loc_id_27, &____alias_loc_id_28, &____alias_loc_id_29, &____alias_loc_id_30, &____alias_loc_id_31, &____alias_loc_id_32, &____alias_loc_id_33, &____alias_loc_id_34, &____alias_loc_id_35, &____alias_loc_id_36, &____alias_loc_id_37, &____alias_loc_id_38, &____alias_loc_id_39, &____alias_loc_id_40, &____alias_loc_id_41, &____alias_loc_id_42, &____alias_loc_id_43, &____alias_loc_id_44, &____alias_loc_id_45, &____alias_loc_id_46, &____alias_loc_id_47, &____alias_loc_id_48, &____alias_loc_id_49, &____alias_loc_id_50, &____alias_loc_id_51, &____alias_loc_id_52, &____alias_loc_id_53, &____alias_loc_id_54, &____alias_loc_id_55, &____alias_loc_id_56, &____alias_loc_id_57, &____alias_loc_id_58, &____alias_loc_id_59, &____alias_loc_id_60, &____alias_loc_id_61, &____alias_loc_id_62, &____alias_loc_id_63, &____alias_loc_id_64, &____alias_loc_id_65, &____alias_loc_id_66, &____alias_loc_id_67, &____alias_loc_id_68, &____alias_loc_id_69, &____alias_loc_id_70, 8, (8194319462526367066UL + 4774UL), (8194319462526367066UL + 4775UL), (8194319462526367066UL + 4776UL), (8194319462526367066UL + 4777UL), 0UL, 0UL, 0UL, 0UL, 0UL, 61, "getsampling", 2, (8194319462526367066UL + 4774UL), 0UL, (8194319462526367066UL + 2696UL), "getsampling", 2, (8194319462526367066UL + 4775UL), 0UL, (8194319462526367066UL + 2700UL), "getfdriv", 2, (8194319462526367066UL + 4774UL), 0UL, (8194319462526367066UL + 2704UL), "getfdriv", 2, (8194319462526367066UL + 4775UL), 0UL, (8194319462526367066UL + 2708UL), "v_get", 1, 0UL, (8194319462526367066UL + 2713UL), "sqrt", 1, 0UL, 0UL, "v_get", 1, 0UL, (8194319462526367066UL + 2990UL), "sqrt", 1, 0UL, 0UL, "v_get", 1, 0UL, (8194319462526367066UL + 2873UL), "v_get", 1, 0UL, (8194319462526367066UL + 2915UL), "v_get", 1, 0UL, (8194319462526367066UL + 2957UL), "v_get", 1, 0UL, (8194319462526367066UL + 2999UL), "linear_interp2", 3, (8194319462526367066UL + 4776UL), (8194319462526367066UL + 2873UL), (8194319462526367066UL + 2915UL), (8194319462526367066UL + 3012UL), "linear_interp2", 3, (8194319462526367066UL + 4777UL), (8194319462526367066UL + 2873UL), (8194319462526367066UL + 2915UL), (8194319462526367066UL + 3017UL), "linear_interp2", 3, (8194319462526367066UL + 4776UL), (8194319462526367066UL + 2957UL), (8194319462526367066UL + 2999UL), (8194319462526367066UL + 3022UL), "linear_interp2", 3, (8194319462526367066UL + 4777UL), (8194319462526367066UL + 2957UL), (8194319462526367066UL + 2999UL), (8194319462526367066UL + 3027UL), "v_get", 1, 0UL, (8194319462526367066UL + 3640UL), "v_get", 1, 0UL, (8194319462526367066UL + 3650UL), "v_get", 1, 0UL, (8194319462526367066UL + 3660UL), "v_get", 1, 0UL, (8194319462526367066UL + 3670UL), "get_row", 3, (8194319462526367066UL + 3012UL), 0UL, (8194319462526367066UL + 3640UL), (8194319462526367066UL + 3640UL), "get_row", 3, (8194319462526367066UL + 3017UL), 0UL, (8194319462526367066UL + 3650UL), (8194319462526367066UL + 3650UL), "get_row", 3, (8194319462526367066UL + 3022UL), 0UL, (8194319462526367066UL + 3660UL), (8194319462526367066UL + 3660UL), "get_row", 3, (8194319462526367066UL + 3027UL), 0UL, (8194319462526367066UL + 3670UL), (8194319462526367066UL + 3670UL), "malloc", 1, 0UL, (8194319462526367066UL + 3103UL), "malloc", 1, 0UL, (8194319462526367066UL + 3125UL), "malloc", 1, 0UL, (8194319462526367066UL + 3144UL), "malloc", 1, 0UL, (8194319462526367066UL + 3169UL), "v_get", 1, 0UL, (8194319462526367066UL + 3219UL), "v_get", 1, 0UL, (8194319462526367066UL + 3259UL), "v_get", 1, 0UL, (8194319462526367066UL + 3299UL), "v_get", 1, 0UL, (8194319462526367066UL + 3632UL), "v_get", 1, 0UL, (8194319462526367066UL + 3694UL), "sqrt", 1, 0UL, 0UL, "v_free", 1, (8194319462526367066UL + 3694UL), 0UL, "v_free", 1, (8194319462526367066UL + 3632UL), 0UL, "v_free", 1, (8194319462526367066UL + 3299UL), 0UL, "v_free", 1, (8194319462526367066UL + 3259UL), 0UL, "v_free", 1, (8194319462526367066UL + 3219UL), 0UL, "free", 1, (8194319462526367066UL + 3169UL), 0UL, "free", 1, (8194319462526367066UL + 3144UL), 0UL, "free", 1, (8194319462526367066UL + 3125UL), 0UL, "free", 1, (8194319462526367066UL + 3103UL), 0UL, "v_free", 1, (8194319462526367066UL + 3670UL), 0UL, "v_free", 1, (8194319462526367066UL + 3660UL), 0UL, "v_free", 1, (8194319462526367066UL + 3650UL), 0UL, "v_free", 1, (8194319462526367066UL + 3640UL), 0UL, "m_free", 1, (8194319462526367066UL + 3027UL), 0UL, "m_free", 1, (8194319462526367066UL + 3022UL), 0UL, "m_free", 1, (8194319462526367066UL + 3017UL), 0UL, "m_free", 1, (8194319462526367066UL + 3012UL), 0UL, "v_free", 1, (8194319462526367066UL + 2999UL), 0UL, "v_free", 1, (8194319462526367066UL + 2957UL), 0UL, "v_free", 1, (8194319462526367066UL + 2915UL), 0UL, "v_free", 1, (8194319462526367066UL + 2873UL), 0UL, "v_free", 1, (8194319462526367066UL + 2990UL), 0UL, "v_free", 1, (8194319462526367066UL + 2713UL), 0UL, "v_free", 1, (8194319462526367066UL + 2708UL), 0UL, "v_free", 1, (8194319462526367066UL + 2704UL), 0UL, "v_free", 1, (8194319462526367066UL + 2700UL), 0UL, "v_free", 1, (8194319462526367066UL + 2696UL), 0UL,
                                "AVI_print_error", (void **)&(____chimes_extern_func_AVI_print_error),
                                "AVI_read_frame", (void **)&(____chimes_extern_func_AVI_read_frame),
                                "AVI_set_video_position", (void **)&(____chimes_extern_func_AVI_set_video_position),
@@ -10550,143 +10552,152 @@ static int module_init() {
                            "mtrm_mlt", &(____chimes_does_checkpoint_mtrm_mlt_npm),
                            "v_free", &(____chimes_does_checkpoint_v_free_npm),
                            "v_get", &(____chimes_does_checkpoint_v_get_npm),
-                             (8194319462526367066UL + 3592UL), (8194319462526367066UL + 3594UL),
-                             (8194319462526367066UL + 2652UL), (8194319462526367066UL + 2936UL),
-                             (8194319462526367066UL + 2656UL), (8194319462526367066UL + 2686UL),
-                             (8194319462526367066UL + 498UL), (8194319462526367066UL + 500UL),
-                             (8194319462526367066UL + 3646UL), (8194319462526367066UL + 3648UL),
-                             (8194319462526367066UL + 139UL), (8194319462526367066UL + 244UL),
-                             (8194319462526367066UL + 1544UL), (8194319462526367066UL + 1546UL),
-                             (8194319462526367066UL + 694UL), (8194319462526367066UL + 696UL),
-                             (8194319462526367066UL + 23UL), (8194319462526367066UL + 81UL),
-                             (8194319462526367066UL + 3251UL), (8194319462526367066UL + 3253UL),
-                             (8194319462526367066UL + 2400UL), (8194319462526367066UL + 2527UL),
-                             (8194319462526367066UL + 287UL), (8194319462526367066UL + 614UL),
-                             (8194319462526367066UL + 1673UL), (8194319462526367066UL + 1675UL),
-                             (8194319462526367066UL + 1317UL), (8194319462526367066UL + 1574UL),
-                             (8194319462526367066UL + 2461UL), (8194319462526367066UL + 2463UL),
-                             (8194319462526367066UL + 715UL), (8194319462526367066UL + 737UL),
-                             (8194319462526367066UL + 714UL), (8194319462526367066UL + 890UL),
-                             (8194319462526367066UL + 713UL), (8194319462526367066UL + 889UL),
-                             (8194319462526367066UL + 1319UL), (8194319462526367066UL + 1576UL),
-                             (8194319462526367066UL + 1318UL), (8194319462526367066UL + 1575UL),
-                             (8194319462526367066UL + 2553UL), (8194319462526367066UL + 2660UL),
-                             (8194319462526367066UL + 2554UL), (8194319462526367066UL + 2665UL),
-                             (8194319462526367066UL + 2555UL), (8194319462526367066UL + 2942UL),
-                             (8194319462526367066UL + 2550UL), (8194319462526367066UL + 2648UL),
-                             (8194319462526367066UL + 2551UL), (8194319462526367066UL + 2652UL),
-                             (8194319462526367066UL + 2552UL), (8194319462526367066UL + 2656UL),
-                             (8194319462526367066UL + 1703UL), (8194319462526367066UL + 1756UL),
-                             (8194319462526367066UL + 1704UL), (8194319462526367066UL + 1762UL),
-                             (8194319462526367066UL + 1705UL), (8194319462526367066UL + 1768UL),
-                             (8194319462526367066UL + 1706UL), (8194319462526367066UL + 1774UL),
-                             (8194319462526367066UL + 2557UL), (8194319462526367066UL + 2867UL),
-                             (8194319462526367066UL + 2558UL), (8194319462526367066UL + 2909UL),
-                             (8194319462526367066UL + 1709UL), (8194319462526367066UL + 1751UL),
-                             (8194319462526367066UL + 4739UL), (8194319462526367066UL + 1238UL),
-                             (8194319462526367066UL + 2556UL), (8194319462526367066UL + 2825UL),
-                             (8194319462526367066UL + 1698UL), (8194319462526367066UL + 1673UL),
-                             (8194319462526367066UL + 2559UL), (8194319462526367066UL + 2951UL),
-                             (8194319462526367066UL + 2254UL), (8194319462526367066UL + 2256UL),
-                             (8194319462526367066UL + 2648UL), (8194319462526367066UL + 2894UL),
-                             (8194319462526367066UL + 1320UL), (8194319462526367066UL + 1577UL),
-                             (8194319462526367066UL + 2909UL), (8194319462526367066UL + 2911UL),
-                             (8194319462526367066UL + 273UL), (8194319462526367066UL + 616UL),
-                             (8194319462526367066UL + 274UL), (8194319462526367066UL + 617UL),
-                             (8194319462526367066UL + 110UL), (8194319462526367066UL + 139UL),
-                             (8194319462526367066UL + 2825UL), (8194319462526367066UL + 2827UL),
-                             (8194319462526367066UL + 4554UL), (8194319462526367066UL + 4556UL),
-                             (8194319462526367066UL + 2543UL), (8194319462526367066UL + 4727UL),
-                             (8194319462526367066UL + 2542UL), (8194319462526367066UL + 4726UL),
-                             (8194319462526367066UL + 2541UL), (8194319462526367066UL + 2430UL),
-                             (8194319462526367066UL + 2540UL), (8194319462526367066UL + 2422UL),
-                             (8194319462526367066UL + 2545UL), (8194319462526367066UL + 4729UL),
-                             (8194319462526367066UL + 2544UL), (8194319462526367066UL + 4728UL),
-                             (8194319462526367066UL + 4727UL), (8194319462526367066UL + 4554UL),
-                             (8194319462526367066UL + 4726UL), (8194319462526367066UL + 4513UL),
-                             (8194319462526367066UL + 2381UL), (8194319462526367066UL + 2400UL),
-                             (8194319462526367066UL + 2380UL), (8194319462526367066UL + 2541UL),
-                             (8194319462526367066UL + 2665UL), (8194319462526367066UL + 2719UL),
-                             (8194319462526367066UL + 2660UL), (8194319462526367066UL + 2679UL),
-                             (8194319462526367066UL + 828UL), (8194319462526367066UL + 830UL),
-                             (8194319462526367066UL + 587UL), (8194319462526367066UL + 589UL),
-                             (8194319462526367066UL + 3584UL), (8194319462526367066UL + 3586UL),
-                             (8194319462526367066UL + 1238UL), (8194319462526367066UL + 1240UL),
-                             (8194319462526367066UL + 2527UL), (8194319462526367066UL + 2529UL),
-                             (8194319462526367066UL + 244UL), (8194319462526367066UL + 246UL),
-                             (8194319462526367066UL + 102UL), (8194319462526367066UL + 262UL),
-                             (8194319462526367066UL + 3211UL), (8194319462526367066UL + 3213UL),
-                             (8194319462526367066UL + 900UL), (8194319462526367066UL + 946UL),
-                             (8194319462526367066UL + 901UL), (8194319462526367066UL + 952UL),
-                             (8194319462526367066UL + 22UL), (8194319462526367066UL + 46UL),
-                             (8194319462526367066UL + 841UL), (8194319462526367066UL + 843UL),
-                             (8194319462526367066UL + 2579UL), (8194319462526367066UL + 3121UL),
-                             (8194319462526367066UL + 2576UL), (8194319462526367066UL + 3055UL),
-                             (8194319462526367066UL + 2577UL), (8194319462526367066UL + 3077UL),
-                             (8194319462526367066UL + 2572UL), (8194319462526367066UL + 2979UL),
-                             (8194319462526367066UL + 2570UL), (8194319462526367066UL + 2974UL),
-                             (8194319462526367066UL + 2049UL), (8194319462526367066UL + 2082UL),
-                             (8194319462526367066UL + 1638UL), (8194319462526367066UL + 1613UL),
-                             (8194319462526367066UL + 2378UL), (8194319462526367066UL + 2539UL),
-                             (8194319462526367066UL + 2379UL), (8194319462526367066UL + 2540UL),
-                             (8194319462526367066UL + 2560UL), (8194319462526367066UL + 3171UL),
-                             (8194319462526367066UL + 622UL), (8194319462526367066UL + 634UL),
-                             (8194319462526367066UL + 3612UL), (8194319462526367066UL + 3614UL),
-                             (8194319462526367066UL + 2562UL), (8194319462526367066UL + 3251UL),
-                             (8194319462526367066UL + 1904UL), (8194319462526367066UL + 1906UL),
-                             (8194319462526367066UL + 2569UL), (8194319462526367066UL + 2964UL),
-                             (8194319462526367066UL + 2568UL), (8194319462526367066UL + 3622UL),
-                             (8194319462526367066UL + 2053UL), (8194319462526367066UL + 2106UL),
-                             (8194319462526367066UL + 2055UL), (8194319462526367066UL + 2118UL),
-                             (8194319462526367066UL + 2054UL), (8194319462526367066UL + 2112UL),
-                             (8194319462526367066UL + 2056UL), (8194319462526367066UL + 2124UL),
-                             (8194319462526367066UL + 2059UL), (8194319462526367066UL + 2101UL),
-                             (8194319462526367066UL + 1639UL), (8194319462526367066UL + 1698UL),
-                             (8194319462526367066UL + 2563UL), (8194319462526367066UL + 3584UL),
-                             (8194319462526367066UL + 1732UL), (8194319462526367066UL + 1904UL),
-                             (8194319462526367066UL + 2565UL), (8194319462526367066UL + 3592UL),
-                             (8194319462526367066UL + 2564UL), (8194319462526367066UL + 3646UL),
-                             (8194319462526367066UL + 2567UL), (8194319462526367066UL + 3602UL),
-                             (8194319462526367066UL + 2566UL), (8194319462526367066UL + 3612UL),
-                             (8194319462526367066UL + 737UL), (8194319462526367066UL + 872UL),
-                             (8194319462526367066UL + 3602UL), (8194319462526367066UL + 3604UL),
-                             (8194319462526367066UL + 634UL), (8194319462526367066UL + 694UL),
-                             (8194319462526367066UL + 3171UL), (8194319462526367066UL + 3173UL),
-                             (8194319462526367066UL + 2951UL), (8194319462526367066UL + 2953UL),
-                             (8194319462526367066UL + 2561UL), (8194319462526367066UL + 3211UL),
-                             (8194319462526367066UL + 15UL), (8194319462526367066UL + 88UL),
-                             (8194319462526367066UL + 2578UL), (8194319462526367066UL + 3096UL),
-                             (8194319462526367066UL + 2101UL), (8194319462526367066UL + 2349UL),
-                             (8194319462526367066UL + 2867UL), (8194319462526367066UL + 2869UL),
-                             (8194319462526367066UL + 889UL), (8194319462526367066UL + 841UL),
-                             (8194319462526367066UL + 2571UL), (8194319462526367066UL + 2969UL),
-                             (8194319462526367066UL + 2942UL), (8194319462526367066UL + 2944UL),
-                             (8194319462526367066UL + 4513UL), (8194319462526367066UL + 4515UL),
-                             (8194319462526367066UL + 872UL), (8194319462526367066UL + 874UL),
-                             (8194319462526367066UL + 1613UL), (8194319462526367066UL + 1615UL),
-                             (8194319462526367066UL + 1563UL), (8194319462526367066UL + 1565UL),
-                             (8194319462526367066UL + 1751UL), (8194319462526367066UL + 2019UL),
-                             (8194319462526367066UL + 1699UL), (8194319462526367066UL + 1732UL),
-                             (8194319462526367066UL + 890UL), (8194319462526367066UL + 828UL),
-                             (8194319462526367066UL + 893UL), (8194319462526367066UL + 4739UL),
-                             (8194319462526367066UL + 894UL), (8194319462526367066UL + 4739UL),
-                             (8194319462526367066UL + 895UL), (8194319462526367066UL + 4739UL),
-                             (8194319462526367066UL + 896UL), (8194319462526367066UL + 4739UL),
-                             (8194319462526367066UL + 897UL), (8194319462526367066UL + 4739UL),
-                             (8194319462526367066UL + 898UL), (8194319462526367066UL + 934UL),
-                             (8194319462526367066UL + 899UL), (8194319462526367066UL + 940UL),
-                             (8194319462526367066UL + 3622UL), (8194319462526367066UL + 3624UL),
-                             (8194319462526367066UL + 616UL), (8194319462526367066UL + 482UL),
-                             (8194319462526367066UL + 617UL), (8194319462526367066UL + 498UL),
-                             (8194319462526367066UL + 614UL), (8194319462526367066UL + 587UL),
-                             (8194319462526367066UL + 482UL), (8194319462526367066UL + 484UL),
-                             (8194319462526367066UL + 2082UL), (8194319462526367066UL + 2254UL),
-                             (8194319462526367066UL + 1579UL), (8194319462526367066UL + 1638UL),
-                             (8194319462526367066UL + 2539UL), (8194319462526367066UL + 2461UL),
-                             (8194319462526367066UL + 1577UL), (8194319462526367066UL + 1563UL),
-                             (8194319462526367066UL + 1576UL), (8194319462526367066UL + 1544UL),
-                             (8194319462526367066UL + 1575UL), (8194319462526367066UL + 1384UL),
-                             (8194319462526367066UL + 1574UL), (8194319462526367066UL + 1361UL),
+                             (8194319462526367066UL + 1788UL), (8194319462526367066UL + 2056UL),
+                             (8194319462526367066UL + 2617UL), (8194319462526367066UL + 3012UL),
+                             (8194319462526367066UL + 2613UL), (8194319462526367066UL + 3640UL),
+                             (8194319462526367066UL + 2713UL), (8194319462526367066UL + 2767UL),
+                             (8194319462526367066UL + 1263UL), (8194319462526367066UL + 1265UL),
+                             (8194319462526367066UL + 2095UL), (8194319462526367066UL + 2159UL),
+                             (8194319462526367066UL + 2094UL), (8194319462526367066UL + 2153UL),
+                             (8194319462526367066UL + 2096UL), (8194319462526367066UL + 2165UL),
+                             (8194319462526367066UL + 2093UL), (8194319462526367066UL + 2147UL),
+                             (8194319462526367066UL + 4787UL), (8194319462526367066UL + 1263UL),
+                             (8194319462526367066UL + 495UL), (8194319462526367066UL + 497UL),
+                             (8194319462526367066UL + 2099UL), (8194319462526367066UL + 2142UL),
+                             (8194319462526367066UL + 2612UL), (8194319462526367066UL + 3694UL),
+                             (8194319462526367066UL + 3259UL), (8194319462526367066UL + 3261UL),
+                             (8194319462526367066UL + 26UL), (8194319462526367066UL + 51UL),
+                             (8194319462526367066UL + 27UL), (8194319462526367066UL + 86UL),
+                             (8194319462526367066UL + 2611UL), (8194319462526367066UL + 3632UL),
+                             (8194319462526367066UL + 1941UL), (8194319462526367066UL + 1943UL),
+                             (8194319462526367066UL + 28UL), (8194319462526367066UL + 86UL),
+                             (8194319462526367066UL + 285UL), (8194319462526367066UL + 632UL),
+                             (8194319462526367066UL + 1671UL), (8194319462526367066UL + 1734UL),
+                             (8194319462526367066UL + 935UL), (8194319462526367066UL + 4787UL),
+                             (8194319462526367066UL + 286UL), (8194319462526367066UL + 633UL),
+                             (8194319462526367066UL + 2708UL), (8194319462526367066UL + 2727UL),
+                             (8194319462526367066UL + 2704UL), (8194319462526367066UL + 2734UL),
+                             (8194319462526367066UL + 758UL), (8194319462526367066UL + 893UL),
+                             (8194319462526367066UL + 2700UL), (8194319462526367066UL + 2984UL),
+                             (8194319462526367066UL + 711UL), (8194319462526367066UL + 713UL),
+                             (8194319462526367066UL + 2599UL), (8194319462526367066UL + 2700UL),
+                             (8194319462526367066UL + 122UL), (8194319462526367066UL + 148UL),
+                             (8194319462526367066UL + 2295UL), (8194319462526367066UL + 2297UL),
+                             (8194319462526367066UL + 2618UL), (8194319462526367066UL + 3022UL),
+                             (8194319462526367066UL + 3640UL), (8194319462526367066UL + 3642UL),
+                             (8194319462526367066UL + 2610UL), (8194319462526367066UL + 3299UL),
+                             (8194319462526367066UL + 2999UL), (8194319462526367066UL + 3001UL),
+                             (8194319462526367066UL + 1706UL), (8194319462526367066UL + 1708UL),
+                             (8194319462526367066UL + 2619UL), (8194319462526367066UL + 3017UL),
+                             (8194319462526367066UL + 2990UL), (8194319462526367066UL + 2992UL),
+                             (8194319462526367066UL + 2142UL), (8194319462526367066UL + 2390UL),
+                             (8194319462526367066UL + 299UL), (8194319462526367066UL + 628UL),
+                             (8194319462526367066UL + 920UL), (8194319462526367066UL + 4787UL),
+                             (8194319462526367066UL + 921UL), (8194319462526367066UL + 4787UL),
+                             (8194319462526367066UL + 922UL), (8194319462526367066UL + 959UL),
+                             (8194319462526367066UL + 923UL), (8194319462526367066UL + 965UL),
+                             (8194319462526367066UL + 924UL), (8194319462526367066UL + 971UL),
+                             (8194319462526367066UL + 925UL), (8194319462526367066UL + 977UL),
+                             (8194319462526367066UL + 310UL), (8194319462526367066UL + 628UL),
+                             (8194319462526367066UL + 110UL), (8194319462526367066UL + 274UL),
+                             (8194319462526367066UL + 3670UL), (8194319462526367066UL + 3672UL),
+                             (8194319462526367066UL + 118UL), (8194319462526367066UL + 148UL),
+                             (8194319462526367066UL + 3660UL), (8194319462526367066UL + 3662UL),
+                             (8194319462526367066UL + 3650UL), (8194319462526367066UL + 3652UL),
+                             (8194319462526367066UL + 2603UL), (8194319462526367066UL + 2990UL),
+                             (8194319462526367066UL + 919UL), (8194319462526367066UL + 4787UL),
+                             (8194319462526367066UL + 918UL), (8194319462526367066UL + 4787UL),
+                             (8194319462526367066UL + 914UL), (8194319462526367066UL + 849UL),
+                             (8194319462526367066UL + 917UL), (8194319462526367066UL + 4787UL),
+                             (8194319462526367066UL + 913UL), (8194319462526367066UL + 862UL),
+                             (8194319462526367066UL + 2604UL), (8194319462526367066UL + 2873UL),
+                             (8194319462526367066UL + 2605UL), (8194319462526367066UL + 2915UL),
+                             (8194319462526367066UL + 2606UL), (8194319462526367066UL + 2957UL),
+                             (8194319462526367066UL + 2607UL), (8194319462526367066UL + 2999UL),
+                             (8194319462526367066UL + 2600UL), (8194319462526367066UL + 2704UL),
+                             (8194319462526367066UL + 2601UL), (8194319462526367066UL + 2708UL),
+                             (8194319462526367066UL + 2602UL), (8194319462526367066UL + 2713UL),
+                             (8194319462526367066UL + 2445UL), (8194319462526367066UL + 2572UL),
+                             (8194319462526367066UL + 2608UL), (8194319462526367066UL + 3219UL),
+                             (8194319462526367066UL + 2609UL), (8194319462526367066UL + 3259UL),
+                             (8194319462526367066UL + 2696UL), (8194319462526367066UL + 2942UL),
+                             (8194319462526367066UL + 1642UL), (8194319462526367066UL + 1644UL),
+                             (8194319462526367066UL + 2572UL), (8194319462526367066UL + 2574UL),
+                             (8194319462526367066UL + 849UL), (8194319462526367066UL + 851UL),
+                             (8194319462526367066UL + 641UL), (8194319462526367066UL + 651UL),
+                             (8194319462526367066UL + 1742UL), (8194319462526367066UL + 1811UL),
+                             (8194319462526367066UL + 511UL), (8194319462526367066UL + 513UL),
+                             (8194319462526367066UL + 1348UL), (8194319462526367066UL + 1605UL),
+                             (8194319462526367066UL + 2616UL), (8194319462526367066UL + 3670UL),
+                             (8194319462526367066UL + 2615UL), (8194319462526367066UL + 3650UL),
+                             (8194319462526367066UL + 2614UL), (8194319462526367066UL + 3660UL),
+                             (8194319462526367066UL + 2590UL), (8194319462526367066UL + 4774UL),
+                             (8194319462526367066UL + 2591UL), (8194319462526367066UL + 4775UL),
+                             (8194319462526367066UL + 2592UL), (8194319462526367066UL + 4776UL),
+                             (8194319462526367066UL + 2593UL), (8194319462526367066UL + 4777UL),
+                             (8194319462526367066UL + 3694UL), (8194319462526367066UL + 3696UL),
+                             (8194319462526367066UL + 628UL), (8194319462526367066UL + 600UL),
+                             (8194319462526367066UL + 2598UL), (8194319462526367066UL + 2696UL),
+                             (8194319462526367066UL + 1345UL), (8194319462526367066UL + 1602UL),
+                             (8194319462526367066UL + 1346UL), (8194319462526367066UL + 1603UL),
+                             (8194319462526367066UL + 1347UL), (8194319462526367066UL + 1604UL),
+                             (8194319462526367066UL + 4561UL), (8194319462526367066UL + 4563UL),
+                             (8194319462526367066UL + 3299UL), (8194319462526367066UL + 3301UL),
+                             (8194319462526367066UL + 253UL), (8194319462526367066UL + 255UL),
+                             (8194319462526367066UL + 1739UL), (8194319462526367066UL + 1793UL),
+                             (8194319462526367066UL + 1735UL), (8194319462526367066UL + 1769UL),
+                             (8194319462526367066UL + 1734UL), (8194319462526367066UL + 1706UL),
+                             (8194319462526367066UL + 733UL), (8194319462526367066UL + 913UL),
+                             (8194319462526367066UL + 735UL), (8194319462526367066UL + 758UL),
+                             (8194319462526367066UL + 734UL), (8194319462526367066UL + 914UL),
+                             (8194319462526367066UL + 651UL), (8194319462526367066UL + 711UL),
+                             (8194319462526367066UL + 2587UL), (8194319462526367066UL + 2506UL),
+                             (8194319462526367066UL + 632UL), (8194319462526367066UL + 495UL),
+                             (8194319462526367066UL + 633UL), (8194319462526367066UL + 511UL),
+                             (8194319462526367066UL + 2626UL), (8194319462526367066UL + 3144UL),
+                             (8194319462526367066UL + 2627UL), (8194319462526367066UL + 3169UL),
+                             (8194319462526367066UL + 2624UL), (8194319462526367066UL + 3103UL),
+                             (8194319462526367066UL + 2625UL), (8194319462526367066UL + 3125UL),
+                             (8194319462526367066UL + 638UL), (8194319462526367066UL + 651UL),
+                             (8194319462526367066UL + 2422UL), (8194319462526367066UL + 2587UL),
+                             (8194319462526367066UL + 2423UL), (8194319462526367066UL + 2588UL),
+                             (8194319462526367066UL + 2424UL), (8194319462526367066UL + 2589UL),
+                             (8194319462526367066UL + 2425UL), (8194319462526367066UL + 2445UL),
+                             (8194319462526367066UL + 2589UL), (8194319462526367066UL + 2475UL),
+                             (8194319462526367066UL + 2588UL), (8194319462526367066UL + 2467UL),
+                             (8194319462526367066UL + 3219UL), (8194319462526367066UL + 3221UL),
+                             (8194319462526367066UL + 4774UL), (8194319462526367066UL + 4561UL),
+                             (8194319462526367066UL + 4775UL), (8194319462526367066UL + 4602UL),
+                             (8194319462526367066UL + 1591UL), (8194319462526367066UL + 1593UL),
+                             (8194319462526367066UL + 2957UL), (8194319462526367066UL + 2959UL),
+                             (8194319462526367066UL + 4602UL), (8194319462526367066UL + 4604UL),
+                             (8194319462526367066UL + 19UL), (8194319462526367066UL + 96UL),
+                             (8194319462526367066UL + 1670UL), (8194319462526367066UL + 1642UL),
+                             (8194319462526367066UL + 862UL), (8194319462526367066UL + 864UL),
+                             (8194319462526367066UL + 1745UL), (8194319462526367066UL + 1788UL),
+                             (8194319462526367066UL + 1740UL), (8194319462526367066UL + 1799UL),
+                             (8194319462526367066UL + 1741UL), (8194319462526367066UL + 1805UL),
+                             (8194319462526367066UL + 2105UL), (8194319462526367066UL + 2142UL),
+                             (8194319462526367066UL + 600UL), (8194319462526367066UL + 602UL),
+                             (8194319462526367066UL + 746UL), (8194319462526367066UL + 758UL),
+                             (8194319462526367066UL + 3632UL), (8194319462526367066UL + 3634UL),
+                             (8194319462526367066UL + 2620UL), (8194319462526367066UL + 3027UL),
+                             (8194319462526367066UL + 2434UL), (8194319462526367066UL + 2445UL),
+                             (8194319462526367066UL + 2915UL), (8194319462526367066UL + 2917UL),
+                             (8194319462526367066UL + 2506UL), (8194319462526367066UL + 2508UL),
+                             (8194319462526367066UL + 1751UL), (8194319462526367066UL + 1788UL),
+                             (8194319462526367066UL + 2873UL), (8194319462526367066UL + 2875UL),
+                             (8194319462526367066UL + 893UL), (8194319462526367066UL + 895UL),
+                             (8194319462526367066UL + 148UL), (8194319462526367066UL + 253UL),
+                             (8194319462526367066UL + 2123UL), (8194319462526367066UL + 2295UL),
+                             (8194319462526367066UL + 2089UL), (8194319462526367066UL + 2123UL),
+                             (8194319462526367066UL + 1603UL), (8194319462526367066UL + 1412UL),
+                             (8194319462526367066UL + 1602UL), (8194319462526367066UL + 1389UL),
+                             (8194319462526367066UL + 1605UL), (8194319462526367066UL + 1591UL),
+                             (8194319462526367066UL + 1604UL), (8194319462526367066UL + 1572UL),
+                             (8194319462526367066UL + 1607UL), (8194319462526367066UL + 1670UL),
+                             (8194319462526367066UL + 1769UL), (8194319462526367066UL + 1941UL),
+                             (8194319462526367066UL + 1572UL), (8194319462526367066UL + 1574UL),
                      "MAT", 7, "unsigned int", (int)__builtin_offsetof (MAT, m), "unsigned int", (int)__builtin_offsetof (MAT, n), "unsigned int", (int)__builtin_offsetof (MAT, max_m), "unsigned int", (int)__builtin_offsetof (MAT, max_n), "unsigned int", (int)__builtin_offsetof (MAT, max_size), "double**", (int)__builtin_offsetof (MAT, me), "double*", (int)__builtin_offsetof (MAT, base),
                      "VEC", 3, "unsigned int", (int)__builtin_offsetof (VEC, dim), "unsigned int", (int)__builtin_offsetof (VEC, max_dim), "double*", (int)__builtin_offsetof (VEC, ve),
                      "audio_index_entry", 0,

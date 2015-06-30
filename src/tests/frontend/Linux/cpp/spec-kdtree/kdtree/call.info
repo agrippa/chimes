@@ -1,0 +1,71 @@
+malloc empty_kdnode 60 31 4 0
+memset empty_kdnode 61 5 0 4 0 0
+malloc init_kdnode 70 31 29 0
+memset init_kdnode 71 5 0 29 0 0
+downheap heapsort 159 35 0 226 0 0 228 0
+downheap heapsort 165 7 0 226 0 0 228 0
+init_kdnode buildkdtree 229 18 381 0
+init_kdnode buildkdtree 236 18 381 0
+init_kdnode buildkdtree 243 18 381 0
+empty_kdnode buildkdtree 395 18 381
+buildkdtree buildkdtree 408 2 0 381 630 627 626 629 628 0 0 633 0
+empty_kdnode buildkdtree 425 18 381
+buildkdtree buildkdtree 438 2 0 381 630 627 626 629 628 0 0 633 0
+coordkdtree coordkdtree 481 5 0 671 693
+coordkdtree coordkdtree 485 5 0 671 693
+searchkdtree searchkdtree 534 17 0 738 884 0 0 0 0 0
+searchkdtree searchkdtree 556 17 0 738 884 0 0 0 0 0
+searchkdtree sweepkdtree 614 11 0 967 966 0 0 0 0 0
+sweepkdtree sweepkdtree 625 16 0 926 967 0 0 0 0
+sweepkdtree sweepkdtree 638 16 0 926 967 0 0 0 0
+fprintf main 673 5 0 1020 1364 1086
+exit main 674 5 0 0
+atol main 688 9 0 1086
+fprintf main 690 7 0 1020 1365
+exit main 691 7 0 0
+atol main 696 9 0 1086
+fprintf main 698 7 0 1020 1365
+exit main 699 7 0 0
+atol main 701 14 0 1086
+fprintf main 703 7 0 1020 1366
+exit main 704 7 0 0
+atol main 709 9 0 1086
+fprintf main 711 7 0 1020 1365
+exit main 712 7 0 0
+atol main 714 14 0 1086
+fprintf main 716 7 0 1020 1366
+exit main 717 7 0 0
+atoi main 720 16 0 1086
+fprintf main 722 7 0 1020 1367
+exit main 723 7 0 0
+malloc main 744 23 1207 0
+fprintf main 746 6 0 1020 1368
+exit main 747 6 0 0
+malloc main 750 23 1203 0
+fprintf main 752 6 0 1020 1368
+exit main 753 6 0 0
+malloc main 756 23 1199 0
+fprintf main 758 6 0 1020 1368
+exit main 759 6 0 0
+malloc main 762 23 1327 0
+fprintf main 764 6 0 1020 1368
+exit main 765 6 0 0
+malloc main 768 23 1326 0
+fprintf main 770 6 0 1020 1368
+exit main 771 6 0 0
+malloc main 790 20 1260 0
+fprintf main 792 6 0 1020 1373
+exit main 793 6 0 0
+spec_init_genrand main 797 4 0 0
+malloc main 805 24 1262 0
+fprintf main 807 8 0 1020 1374 0
+exit main 808 8 0 0
+spec_genrand_int32 main 822 28 0
+heapsort main 832 4 0 1207 0 1260 0
+heapsort main 833 4 0 1203 0 1260 0
+heapsort main 834 4 0 1199 0 1260 0
+empty_kdnode main 842 11 1320
+buildkdtree main 863 4 0 1320 1207 1203 1199 1326 1327 0 0 1260 0
+coordkdtree main 874 4 0 1320 1260
+sweepkdtree main 896 16 0 1320 1320 0 0 0 0
+printf main 913 4 0 1375 0 0

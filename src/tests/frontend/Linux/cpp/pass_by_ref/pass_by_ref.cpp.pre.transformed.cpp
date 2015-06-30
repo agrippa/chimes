@@ -13,6 +13,7 @@ static int ____must_checkpoint_main_b_0 = 2;
 
 
 static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -2225,7 +2226,7 @@ extern void foo(int *A);
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
 static void (*____chimes_extern_func_foo)(int *) = foo;
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332564UL)) ; int b;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332568UL)) ; int b;
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
      ;
@@ -2234,10 +2235,10 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
      call_lbl_2: checkpoint_transformed(2, 0);
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return b;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (b); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
-}
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332564UL)) ; int b;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11918420205256332568UL)) ; int b;
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0); ; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
      ;
@@ -2246,9 +2247,9 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
      call_lbl_2: checkpoint_transformed(2, 0);
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return b;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (b); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./pass_by_ref.cpp"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -2259,11 +2260,12 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(11918420205256332548UL, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0,
+    init_module(11918420205256332548UL, 1, 1, 1, 2, 0, 1, 1, 0, 1, 0,
                            &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)1, (11918420205256332548UL + 1UL), (11918420205256332548UL + 2UL), (11918420205256332548UL + 3UL), "foo", (unsigned)1, (11918420205256332548UL + 4UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (11918420205256332548UL + 5UL),
                                "foo", (void **)&(____chimes_extern_func_foo),
                            "foo", &(____chimes_does_checkpoint_foo_npm),
-                             (11918420205256332548UL + 3UL), (11918420205256332548UL + 16UL),
+                             (11918420205256332548UL + 3UL), (11918420205256332548UL + 20UL),
                              "main", "main", 2, "foo", "checkpoint",
                         "main|b|0", 1, "main",
         "foo", 0UL, (int)1, 11918420205256332552UL);
