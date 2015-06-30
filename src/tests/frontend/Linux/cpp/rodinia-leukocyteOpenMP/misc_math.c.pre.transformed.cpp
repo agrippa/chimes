@@ -4258,7 +4258,7 @@ inline int double_eq(double f1, double f2)
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 {
 # 10 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- return fabs(f1-f2) < 0.000001;
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (fabs(f1-f2) < 0.000001); return ____chimes_ret_var_0; ;
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 }
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
@@ -4268,11 +4268,11 @@ MAT * gradient_x_npm(MAT * input);static MAT *(*____chimes_extern_func_m_get)(in
 MAT * gradient_x_quick(MAT * input); MAT * gradient_x(MAT * input);
 MAT * gradient_x_resumable(MAT * input)
 # 15 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&gradient_x), "gradient_x", &____must_manage_gradient_x, 1, 1, (size_t)(6260638308248583508UL), "gradient_x|input|0", &____must_checkpoint_gradient_x_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&gradient_x), "gradient_x", &____must_manage_gradient_x, 1, 1, (size_t)(6260638308248583512UL), "gradient_x|input|0", &____must_checkpoint_gradient_x_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 16 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  int i; int j; ;
 # 17 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-  MAT *result; call_lbl_1: result = ( ({ int ____chimes_arg0; int ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg0 = (input->m); ____chimes_arg1 = (input->n); } calling((void*)m_get, 1, ____alias_loc_id_0, 6260638308248583357UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg0, ____chimes_arg1); }) ) ;
+  MAT *result; call_lbl_1: result = ( ({ int ____chimes_arg0; int ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg0 = (input->m); ____chimes_arg1 = (input->n); } calling((void*)m_get, 1, ____alias_loc_id_0, 6260638308248583358UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg0, ____chimes_arg1); }) ) ;
 # 18 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 19 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  for(i = 0; i < result->m; i++)
@@ -4290,9 +4290,9 @@ MAT * gradient_x_resumable(MAT * input)
  }
 # 31 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 32 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- rm_stack(true, 6260638308248583357UL, "gradient_x", &____must_manage_gradient_x, ____alias_loc_id_2, ____chimes_did_disable1); return result;
+  MAT *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (result); rm_stack(true, 6260638308248583358UL, "gradient_x", &____must_manage_gradient_x, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-}
+rm_stack(true, 6260638308248583358UL, "gradient_x", &____must_manage_gradient_x, ____alias_loc_id_2, ____chimes_did_disable1); }
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
@@ -4300,11 +4300,11 @@ MAT * gradient_y_npm(MAT * input);
 MAT * gradient_y_quick(MAT * input); MAT * gradient_y(MAT * input);
 MAT * gradient_y_resumable(MAT * input)
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&gradient_y), "gradient_y", &____must_manage_gradient_y, 1, 1, (size_t)(6260638308248583679UL), "gradient_y|input|0", &____must_checkpoint_gradient_y_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&gradient_y), "gradient_y", &____must_manage_gradient_y, 1, 1, (size_t)(6260638308248583687UL), "gradient_y|input|0", &____must_checkpoint_gradient_y_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  int i; int j; ;
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-  MAT *result; call_lbl_1: result = ( ({ int ____chimes_arg2; int ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg2 = (input->m); ____chimes_arg3 = (input->n); } calling((void*)m_get, 1, ____alias_loc_id_1, 6260638308248583528UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg2, ____chimes_arg3); }) ) ;
+  MAT *result; call_lbl_1: result = ( ({ int ____chimes_arg2; int ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg2 = (input->m); ____chimes_arg3 = (input->n); } calling((void*)m_get, 1, ____alias_loc_id_1, 6260638308248583533UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(____chimes_arg2, ____chimes_arg3); }) ) ;
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  for(i = 0; i < result->n; i++)
@@ -4321,9 +4321,9 @@ MAT * gradient_y_resumable(MAT * input)
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  }
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- rm_stack(true, 6260638308248583528UL, "gradient_y", &____must_manage_gradient_y, ____alias_loc_id_3, ____chimes_did_disable2); return result;
+  MAT *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (result); rm_stack(true, 6260638308248583533UL, "gradient_y", &____must_manage_gradient_y, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_2; ;
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-}
+rm_stack(true, 6260638308248583533UL, "gradient_y", &____must_manage_gradient_y, ____alias_loc_id_3, ____chimes_did_disable2); }
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
@@ -4331,7 +4331,7 @@ double mean_npm(VEC * in);
 double mean_quick(VEC * in); double mean(VEC * in);
 double mean_resumable(VEC * in)
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&mean), "mean", &____must_manage_mean, 1, 0, (size_t)(6260638308248583718UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&mean), "mean", &____must_manage_mean, 1, 0, (size_t)(6260638308248583730UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
   double sum; sum = (0.) ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
@@ -4340,9 +4340,9 @@ double mean_resumable(VEC * in)
  for (i = 0; i < in->dim; i++) { sum+=((in)->ve[(i)]); };
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- rm_stack(false, 0UL, "mean", &____must_manage_mean, ____alias_loc_id_4, ____chimes_did_disable3); return sum/(double)in->dim;
+  double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (sum/(double)in->dim); rm_stack(false, 0UL, "mean", &____must_manage_mean, ____alias_loc_id_4, ____chimes_did_disable3); return ____chimes_ret_var_3; ;
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-}
+rm_stack(false, 0UL, "mean", &____must_manage_mean, ____alias_loc_id_4, ____chimes_did_disable3); }
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
@@ -4350,7 +4350,7 @@ double std_dev_npm(VEC * in);
 double std_dev_quick(VEC * in); double std_dev(VEC * in);
 double std_dev_resumable(VEC * in)
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&std_dev), "std_dev", &____must_manage_std_dev, 1, 0, (size_t)(6260638308248583771UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&std_dev), "std_dev", &____must_manage_std_dev, 1, 0, (size_t)(6260638308248583787UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
   double m; double sum; m = (({ calling_npm("mean", 0); mean_npm(in); })) ; sum = (0.) ;
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
@@ -4366,16 +4366,16 @@ double std_dev_resumable(VEC * in)
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  }
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- rm_stack(false, 0UL, "std_dev", &____must_manage_std_dev, ____alias_loc_id_5, ____chimes_did_disable4); return sqrt(sum/(double)in->dim);
+  double ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (sqrt(sum/(double)in->dim)); rm_stack(false, 0UL, "std_dev", &____must_manage_std_dev, ____alias_loc_id_5, ____chimes_did_disable4); return ____chimes_ret_var_4; ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-}
+rm_stack(false, 0UL, "std_dev", &____must_manage_std_dev, ____alias_loc_id_5, ____chimes_did_disable4); }
 MAT * gradient_x_quick(MAT * input)
 # 15 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&gradient_x), "gradient_x", &____must_manage_gradient_x, 1, 1, (size_t)(6260638308248583508UL), "gradient_x|input|0", &____must_checkpoint_gradient_x_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0) ; ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&gradient_x), "gradient_x", &____must_manage_gradient_x, 1, 1, (size_t)(6260638308248583512UL), "gradient_x|input|0", &____must_checkpoint_gradient_x_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0) ; ; ;
 # 16 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  int i; int j; ;
 # 17 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-  MAT *result; call_lbl_1: result = ( ({ calling((void*)m_get, 1, ____alias_loc_id_0, 6260638308248583357UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(input->m, input->n); }) ) ;
+  MAT *result; call_lbl_1: result = ( ({ calling((void*)m_get, 1, ____alias_loc_id_0, 6260638308248583358UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(input->m, input->n); }) ) ;
 # 18 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 19 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  for(i = 0; i < result->m; i++)
@@ -4393,19 +4393,19 @@ MAT * gradient_x_quick(MAT * input)
  }
 # 31 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 32 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- rm_stack(true, 6260638308248583357UL, "gradient_x", &____must_manage_gradient_x, ____alias_loc_id_2, ____chimes_did_disable1); return result;
+  MAT *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (result); rm_stack(true, 6260638308248583358UL, "gradient_x", &____must_manage_gradient_x, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-}
+rm_stack(true, 6260638308248583358UL, "gradient_x", &____must_manage_gradient_x, ____alias_loc_id_2, ____chimes_did_disable1); }
 
 MAT * gradient_x(MAT * input) { return (____chimes_replaying ? gradient_x_resumable(input) : gradient_x_quick(input)); }
 
 MAT * gradient_y_quick(MAT * input)
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&gradient_y), "gradient_y", &____must_manage_gradient_y, 1, 1, (size_t)(6260638308248583679UL), "gradient_y|input|0", &____must_checkpoint_gradient_y_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0) ; ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&gradient_y), "gradient_y", &____must_manage_gradient_y, 1, 1, (size_t)(6260638308248583687UL), "gradient_y|input|0", &____must_checkpoint_gradient_y_input_0, "%struct.MAT*", (void *)(&input), (size_t)8, 1, 0, 0) ; ; ;
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  int i; int j; ;
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-  MAT *result; call_lbl_1: result = ( ({ calling((void*)m_get, 1, ____alias_loc_id_1, 6260638308248583528UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(input->m, input->n); }) ) ;
+  MAT *result; call_lbl_1: result = ( ({ calling((void*)m_get, 1, ____alias_loc_id_1, 6260638308248583533UL, 2, (size_t)(0UL), (size_t)(0UL)); (m_get)(input->m, input->n); }) ) ;
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  for(i = 0; i < result->n; i++)
@@ -4422,15 +4422,15 @@ MAT * gradient_y_quick(MAT * input)
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  }
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- rm_stack(true, 6260638308248583528UL, "gradient_y", &____must_manage_gradient_y, ____alias_loc_id_3, ____chimes_did_disable2); return result;
+  MAT *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (result); rm_stack(true, 6260638308248583533UL, "gradient_y", &____must_manage_gradient_y, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_2; ;
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-}
+rm_stack(true, 6260638308248583533UL, "gradient_y", &____must_manage_gradient_y, ____alias_loc_id_3, ____chimes_did_disable2); }
 
 MAT * gradient_y(MAT * input) { return (____chimes_replaying ? gradient_y_resumable(input) : gradient_y_quick(input)); }
 
 double mean_quick(VEC * in)
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&mean), "mean", &____must_manage_mean, 1, 0, (size_t)(6260638308248583718UL)) ; ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&mean), "mean", &____must_manage_mean, 1, 0, (size_t)(6260638308248583730UL)) ; ; ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
   double sum; sum = (0.) ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
@@ -4439,15 +4439,15 @@ double mean_quick(VEC * in)
  for (i = 0; i < in->dim; i++) { sum+=((in)->ve[(i)]); };
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- rm_stack(false, 0UL, "mean", &____must_manage_mean, ____alias_loc_id_4, ____chimes_did_disable3); return sum/(double)in->dim;
+  double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (sum/(double)in->dim); rm_stack(false, 0UL, "mean", &____must_manage_mean, ____alias_loc_id_4, ____chimes_did_disable3); return ____chimes_ret_var_3; ;
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-}
+rm_stack(false, 0UL, "mean", &____must_manage_mean, ____alias_loc_id_4, ____chimes_did_disable3); }
 
 double mean(VEC * in) { return (____chimes_replaying ? mean_resumable(in) : mean_quick(in)); }
 
 double std_dev_quick(VEC * in)
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&std_dev), "std_dev", &____must_manage_std_dev, 1, 0, (size_t)(6260638308248583771UL)) ; ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&std_dev), "std_dev", &____must_manage_std_dev, 1, 0, (size_t)(6260638308248583787UL)) ; ; ;
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
   double m; double sum; m = (({ calling_npm("mean", 0); mean_npm(in); })) ; sum = (0.) ;
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
@@ -4463,9 +4463,9 @@ double std_dev_quick(VEC * in)
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  }
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- rm_stack(false, 0UL, "std_dev", &____must_manage_std_dev, ____alias_loc_id_5, ____chimes_did_disable4); return sqrt(sum/(double)in->dim);
+  double ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (sqrt(sum/(double)in->dim)); rm_stack(false, 0UL, "std_dev", &____must_manage_std_dev, ____alias_loc_id_5, ____chimes_did_disable4); return ____chimes_ret_var_4; ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
-}
+rm_stack(false, 0UL, "std_dev", &____must_manage_std_dev, ____alias_loc_id_5, ____chimes_did_disable4); }
 
 double std_dev(VEC * in) { return (____chimes_replaying ? std_dev_resumable(in) : std_dev_quick(in)); }
 
@@ -4495,7 +4495,7 @@ MAT * gradient_x_npm(MAT * input)
  }
 # 31 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 32 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- return result;
+  MAT * ____chimes_ret_var_1; ____chimes_ret_var_1 = (result); return ____chimes_ret_var_1; ;
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 }
 
@@ -4522,7 +4522,7 @@ MAT * gradient_y_npm(MAT * input)
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  }
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- return result;
+  MAT * ____chimes_ret_var_2; ____chimes_ret_var_2 = (result); return ____chimes_ret_var_2; ;
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 }
 
@@ -4537,7 +4537,7 @@ double mean_npm(VEC * in)
  for (i = 0; i < in->dim; i++) { sum+=((in)->ve[(i)]); };
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- return sum/(double)in->dim;
+  double ____chimes_ret_var_3; ____chimes_ret_var_3 = (sum/(double)in->dim); return ____chimes_ret_var_3; ;
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 }
 
@@ -4559,7 +4559,7 @@ double std_dev_npm(VEC * in)
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
  }
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
- return sqrt(sum/(double)in->dim);
+  double ____chimes_ret_var_4; ____chimes_ret_var_4 = (sqrt(sum/(double)in->dim)); return ____chimes_ret_var_4; ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c"
 }
 
@@ -4568,39 +4568,41 @@ double std_dev_npm(VEC * in)
 
 
 static int module_init() {
-    init_module(6260638308248583341UL, 16, 4, 2, 6, 4, 1, 5, 1, 0, 2,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (6260638308248583341UL + 1UL), "m_get", (unsigned)1, (6260638308248583341UL + 16UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (6260638308248583341UL + 172UL), "m_get", (unsigned)1, (6260638308248583341UL + 187UL),
-                           &____alias_loc_id_2, (unsigned)4, (unsigned)0, (unsigned)0, (6260638308248583341UL + 2UL), (6260638308248583341UL + 3UL), (6260638308248583341UL + 4UL), (6260638308248583341UL + 150UL),
-                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)0, (6260638308248583341UL + 173UL), (6260638308248583341UL + 174UL), (6260638308248583341UL + 175UL), (6260638308248583341UL + 321UL),
-                           &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (6260638308248583341UL + 339UL), (6260638308248583341UL + 340UL), (6260638308248583341UL + 341UL),
-                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (6260638308248583341UL + 378UL), (6260638308248583341UL + 379UL), (6260638308248583341UL + 380UL), (6260638308248583341UL + 381UL), (6260638308248583341UL + 382UL),
-                            "gradient_x", (void *)(&gradient_x_npm), (void *)__null, 1, &____alias_loc_id_0, 1, (6260638308248583341UL + 167UL), (6260638308248583341UL + 16UL), 1, "m_get", 2, 0UL, 0UL, (6260638308248583341UL + 16UL),
-                            "gradient_y", (void *)(&gradient_y_npm), (void *)__null, 1, &____alias_loc_id_1, 1, (6260638308248583341UL + 338UL), (6260638308248583341UL + 187UL), 1, "m_get", 2, 0UL, 0UL, (6260638308248583341UL + 187UL),
-                            "mean", (void *)(&mean_npm), (void *)__null, 0, 1, (6260638308248583341UL + 377UL), 0UL, 0,
-                            "std_dev", (void *)(&std_dev_npm), (void *)__null, 0, 1, (6260638308248583341UL + 430UL), 0UL, 2, "mean", 1, (6260638308248583341UL + 430UL), 0UL, "sqrt", 1, 0UL, 0UL,
+    init_module(6260638308248583341UL, 18, 4, 2, 6, 4, 1, 5, 1, 0, 2,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (6260638308248583341UL + 1UL), "m_get", (unsigned)1, (6260638308248583341UL + 17UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (6260638308248583341UL + 176UL), "m_get", (unsigned)1, (6260638308248583341UL + 192UL),
+                           &____alias_loc_id_2, (unsigned)5, (unsigned)0, (unsigned)0, (6260638308248583341UL + 2UL), (6260638308248583341UL + 3UL), (6260638308248583341UL + 4UL), (6260638308248583341UL + 5UL), (6260638308248583341UL + 151UL),
+                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (unsigned)0, (6260638308248583341UL + 177UL), (6260638308248583341UL + 178UL), (6260638308248583341UL + 179UL), (6260638308248583341UL + 180UL), (6260638308248583341UL + 326UL),
+                           &____alias_loc_id_4, (unsigned)4, (unsigned)0, (unsigned)0, (6260638308248583341UL + 347UL), (6260638308248583341UL + 348UL), (6260638308248583341UL + 349UL), (6260638308248583341UL + 350UL),
+                           &____alias_loc_id_5, (unsigned)6, (unsigned)0, (unsigned)0, (6260638308248583341UL + 390UL), (6260638308248583341UL + 391UL), (6260638308248583341UL + 392UL), (6260638308248583341UL + 393UL), (6260638308248583341UL + 394UL), (6260638308248583341UL + 395UL),
+                            "gradient_x", (void *)(&gradient_x_npm), (void *)__null, 1, &____alias_loc_id_0, 1, (6260638308248583341UL + 171UL), (6260638308248583341UL + 17UL), 1, "m_get", 2, 0UL, 0UL, (6260638308248583341UL + 17UL),
+                            "gradient_y", (void *)(&gradient_y_npm), (void *)__null, 1, &____alias_loc_id_1, 1, (6260638308248583341UL + 346UL), (6260638308248583341UL + 192UL), 1, "m_get", 2, 0UL, 0UL, (6260638308248583341UL + 192UL),
+                            "mean", (void *)(&mean_npm), (void *)__null, 0, 1, (6260638308248583341UL + 389UL), 0UL, 0,
+                            "std_dev", (void *)(&std_dev_npm), (void *)__null, 0, 1, (6260638308248583341UL + 446UL), 0UL, 2, "mean", 1, (6260638308248583341UL + 446UL), 0UL, "sqrt", 1, 0UL, 0UL,
                                "m_get", (void **)&(____chimes_extern_func_m_get),
                            "gradient_x", &(____chimes_does_checkpoint_gradient_x_npm),
                            "gradient_y", &(____chimes_does_checkpoint_gradient_y_npm),
                            "mean", &(____chimes_does_checkpoint_mean_npm),
                            "std_dev", &(____chimes_does_checkpoint_std_dev_npm),
                            "m_get", &(____chimes_does_checkpoint_m_get_npm),
-                             (6260638308248583341UL + 430UL), (6260638308248583341UL + 405UL),
-                             (6260638308248583341UL + 319UL), (6260638308248583341UL + 321UL),
-                             (6260638308248583341UL + 339UL), (6260638308248583341UL + 377UL),
-                             (6260638308248583341UL + 338UL), (6260638308248583341UL + 294UL),
-                             (6260638308248583341UL + 16UL), (6260638308248583341UL + 148UL),
-                             (6260638308248583341UL + 148UL), (6260638308248583341UL + 150UL),
-                             (6260638308248583341UL + 1UL), (6260638308248583341UL + 167UL),
-                             (6260638308248583341UL + 378UL), (6260638308248583341UL + 430UL),
-                             (6260638308248583341UL + 294UL), (6260638308248583341UL + 296UL),
-                             (6260638308248583341UL + 123UL), (6260638308248583341UL + 125UL),
-                             (6260638308248583341UL + 4UL), (6260638308248583341UL + 16UL),
-                             (6260638308248583341UL + 175UL), (6260638308248583341UL + 187UL),
-                             (6260638308248583341UL + 167UL), (6260638308248583341UL + 123UL),
-                             (6260638308248583341UL + 172UL), (6260638308248583341UL + 338UL),
-                             (6260638308248583341UL + 377UL), (6260638308248583341UL + 359UL),
-                             (6260638308248583341UL + 187UL), (6260638308248583341UL + 319UL),
+                             (6260638308248583341UL + 324UL), (6260638308248583341UL + 326UL),
+                             (6260638308248583341UL + 17UL), (6260638308248583341UL + 149UL),
+                             (6260638308248583341UL + 390UL), (6260638308248583341UL + 446UL),
+                             (6260638308248583341UL + 299UL), (6260638308248583341UL + 301UL),
+                             (6260638308248583341UL + 346UL), (6260638308248583341UL + 299UL),
+                             (6260638308248583341UL + 149UL), (6260638308248583341UL + 151UL),
+                             (6260638308248583341UL + 1UL), (6260638308248583341UL + 171UL),
+                             (6260638308248583341UL + 446UL), (6260638308248583341UL + 418UL),
+                             (6260638308248583341UL + 180UL), (6260638308248583341UL + 192UL),
+                             (6260638308248583341UL + 347UL), (6260638308248583341UL + 389UL),
+                             (6260638308248583341UL + 124UL), (6260638308248583341UL + 126UL),
+                             (6260638308248583341UL + 4UL), (6260638308248583341UL + 17UL),
+                             (6260638308248583341UL + 179UL), (6260638308248583341UL + 192UL),
+                             (6260638308248583341UL + 176UL), (6260638308248583341UL + 346UL),
+                             (6260638308248583341UL + 5UL), (6260638308248583341UL + 17UL),
+                             (6260638308248583341UL + 389UL), (6260638308248583341UL + 368UL),
+                             (6260638308248583341UL + 192UL), (6260638308248583341UL + 324UL),
+                             (6260638308248583341UL + 171UL), (6260638308248583341UL + 124UL),
                      "MAT", 7, "unsigned int", (int)__builtin_offsetof (MAT, m), "unsigned int", (int)__builtin_offsetof (MAT, n), "unsigned int", (int)__builtin_offsetof (MAT, max_m), "unsigned int", (int)__builtin_offsetof (MAT, max_n), "unsigned int", (int)__builtin_offsetof (MAT, max_size), "double**", (int)__builtin_offsetof (MAT, me), "double*", (int)__builtin_offsetof (MAT, base),
                      "VEC", 3, "unsigned int", (int)__builtin_offsetof (VEC, dim), "unsigned int", (int)__builtin_offsetof (VEC, max_dim), "double*", (int)__builtin_offsetof (VEC, ve),
                              "mean", "_Z4meanP3VEC", 0,
@@ -4609,7 +4611,7 @@ static int module_init() {
                              "gradient_x", "_Z10gradient_xP3MAT", 1, "m_get",
                         "gradient_x|input|0", 1, "m_get",
                         "gradient_y|input|0", 1, "m_get",
-        "mean", 0UL, (int)1, 6260638308248583771UL);
+        "mean", 0UL, (int)1, 6260638308248583787UL);
     return 0;
 }
 

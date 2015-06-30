@@ -14,6 +14,7 @@ static int ____must_manage_handler = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
+static unsigned ____alias_loc_id_2;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -1466,13 +1467,13 @@ rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, __
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1944833083709766382UL)) ; foo *f;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1944833083709766386UL)) ; foo *f;
  register_stack_vars(1, "main|f|0", (int *)0x0, "%struct._foo*", (void *)(&f), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
       lbl_0: register_custom_init_handler("_foo", handler); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ;
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-       f = ((foo *)malloc_wrapper(sizeof(foo), 1944833083709766363UL, 0, 1, (int)sizeof(struct _foo), 0)) ;
+       f = ((foo *)malloc_wrapper(sizeof(foo), 1944833083709766364UL, 0, 1, (int)sizeof(struct _foo), 0)) ;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
     f->a = 3;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
@@ -1484,9 +1485,9 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = n
 # 22 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
     ((f->a == 42) ? static_cast<void> (0) : __assert_fail ("f->a == 42", "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp", 22, __PRETTY_FUNCTION__));
 # 23 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_0; ;
 # 24 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); }
 void handler_quick(void *ptr) {const int ____chimes_did_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(1944833083709766349UL)) ; ; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
      foo *f_ptr; f_ptr = ((foo *)ptr) ;
@@ -1497,13 +1498,13 @@ rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, __
 
 void handler(void *ptr) { (____chimes_replaying ? handler_resumable(ptr) : handler_quick(ptr)); }
 
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1944833083709766382UL)) ; foo *f;
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1944833083709766386UL)) ; foo *f;
  register_stack_vars(1, "main|f|0", (int *)0x0, "%struct._foo*", (void *)(&f), (size_t)8, 1, 0, 0); ; ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
       lbl_0: register_custom_init_handler("_foo", handler);
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-       f = ((foo *)malloc_wrapper(sizeof(foo), 1944833083709766363UL, 0, 1, (int)sizeof(struct _foo), 0)) ;
+       f = ((foo *)malloc_wrapper(sizeof(foo), 1944833083709766364UL, 0, 1, (int)sizeof(struct _foo), 0)) ;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
     f->a = 3;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
@@ -1515,9 +1516,9 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_s
 # 22 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
     ((f->a == 42) ? static_cast<void> (0) : __assert_fail ("f->a == 42", "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp", 22, __PRETTY_FUNCTION__));
 # 23 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); return 0;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_0; ;
 # 24 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -1536,15 +1537,16 @@ void handler_npm(void *ptr) {
 
 
 static int module_init() {
-    init_module(1944833083709766336UL, 4, 2, 0, 2, 1, 0, 1, 0, 0, 1,
-                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (1944833083709766336UL + 16UL), (1944833083709766336UL + 17UL), (1944833083709766336UL + 18UL), (1944833083709766336UL + 19UL), (1944833083709766336UL + 27UL),
+    init_module(1944833083709766336UL, 4, 2, 0, 3, 1, 0, 1, 0, 0, 1,
+                           &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (1944833083709766336UL + 16UL), (1944833083709766336UL + 17UL), (1944833083709766336UL + 18UL), (1944833083709766336UL + 19UL), (1944833083709766336UL + 28UL),
                            &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (1944833083709766336UL + 1UL), (1944833083709766336UL + 2UL), (1944833083709766336UL + 13UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (1944833083709766336UL + 20UL),
                             "handler", (void *)(&handler_npm), (void *)__null, 0, 1, (1944833083709766336UL + 13UL), 0UL, 0,
                            "handler", &(____chimes_does_checkpoint_handler_npm),
                              (1944833083709766336UL + 1UL), (1944833083709766336UL + 13UL),
-                             (1944833083709766336UL + 18UL), (1944833083709766336UL + 46UL),
+                             (1944833083709766336UL + 18UL), (1944833083709766336UL + 50UL),
                              (1944833083709766336UL + 2UL), (1944833083709766336UL + 13UL),
-                             (1944833083709766336UL + 19UL), (1944833083709766336UL + 27UL),
+                             (1944833083709766336UL + 19UL), (1944833083709766336UL + 28UL),
                      "_foo", 1, "int", (int)__builtin_offsetof (struct _foo, a),
                              "main", "main", 1, "checkpoint",
                              "handler", "_Z7handlerPv", 0);

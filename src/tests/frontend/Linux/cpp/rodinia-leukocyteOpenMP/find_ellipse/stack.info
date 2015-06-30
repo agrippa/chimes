@@ -1,4 +1,5 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c get_time|tv|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 get_time
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c get_time|____chimes_ret_var_0|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c get_frame|cell_file|0 " %struct.avi_t* " 64 1 0 1 AVI_print_error AVI_read_frame AVI_set_video_position AVI_video_height AVI_video_width chop_flip_image
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c get_frame|frame_num|0 " i32 " 32 0 0 1 AVI_print_error AVI_read_frame AVI_set_video_position AVI_video_height AVI_video_width chop_flip_image
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c get_frame|cropped|0 " i32 " 32 0 0 1 AVI_print_error AVI_read_frame AVI_set_video_position AVI_video_height AVI_video_width chop_flip_image
@@ -8,6 +9,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c get_frame|height|0 " i32 " 32 0 0 1 AVI_print_error AVI_read_frame AVI_set_video_position chop_flip_image
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c get_frame|image_buf|0 " i8* " 64 1 0 1 AVI_print_error AVI_read_frame AVI_set_video_position chop_flip_image
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c get_frame|image_chopped|0 " %struct.MAT* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c get_frame|____chimes_ret_var_1|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c chop_flip_image|image|0 " i8* " 64 1 0 1 m_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c chop_flip_image|height|0 " i32 " 32 0 0 1 m_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c chop_flip_image|width|0 " i32 " 32 0 0 1 m_get
@@ -20,6 +22,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c chop_flip_image|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c chop_flip_image|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c chop_flip_image|scale|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c chop_flip_image|____chimes_ret_var_2|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c ellipsematching|grad_x|0 " %struct.MAT* " 64 1 0 1 m_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c ellipsematching|grad_y|0 " %struct.MAT* " 64 1 0 1 m_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c ellipsematching|i|0 " i32 " 32 0 0 0
@@ -45,10 +48,12 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c ellipsematching|sum|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c ellipsematching|mean|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c ellipsematching|var|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c ellipsematching|____chimes_ret_var_3|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c structuring_element|radius|0 " i32 " 32 0 0 1 m_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c structuring_element|result|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c structuring_element|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c structuring_element|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c structuring_element|____chimes_ret_var_4|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c dilate_f|img_in|0 " %struct.MAT* " 64 1 0 1 m_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c dilate_f|strel|0 " %struct.MAT* " 64 1 0 1 m_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c dilate_f|dilated|0 " %struct.MAT* " 64 1 0 0
@@ -62,6 +67,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c dilate_f|y|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c dilate_f|max|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c dilate_f|temp|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c dilate_f|____chimes_ret_var_5|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c TMatrix|N|0 " i32 " 32 0 0 1 m_free m_get m_inverse m_zero mmtr_mlt mtrm_mlt
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c TMatrix|M|0 " i32 " 32 0 0 1 m_free m_get m_inverse m_zero mmtr_mlt mtrm_mlt
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c TMatrix|B|0 " %struct.MAT* " 64 1 0 1 m_free m_get m_inverse m_zero mmtr_mlt mtrm_mlt
@@ -82,6 +88,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c TMatrix|d|0 " double " 64 0 0 1 m_free m_inverse m_zero mmtr_mlt mtrm_mlt
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c TMatrix|m|0 " i32 " 32 0 0 1 m_free m_inverse m_zero mmtr_mlt mtrm_mlt
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c TMatrix|n|0 " i32 " 32 0 0 1 m_free m_inverse m_zero mmtr_mlt mtrm_mlt
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c TMatrix|____chimes_ret_var_6|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c uniformseg|cellx_row|0 " %struct.VEC* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c uniformseg|celly_row|0 " %struct.VEC* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c uniformseg|x|0 " %struct.MAT* " 64 1 0 0
@@ -103,11 +110,13 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c m_min|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c m_min|minimum|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c m_min|temp|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c m_min|____chimes_ret_var_7|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c m_max|m|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c m_max|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c m_max|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c m_max|maximum|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c m_max|temp|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c m_max|____chimes_ret_var_8|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getsampling|m|0 " %struct.MAT* " 64 1 0 1 v_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getsampling|ns|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getsampling|N|0 " i32 " 32 0 0 1 v_get
@@ -124,6 +133,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getsampling|b|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getsampling|c|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getsampling|d|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getsampling|____chimes_ret_var_9|0 " %struct.VEC* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getfdriv|m|0 " %struct.MAT* " 64 1 0 1 v_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getfdriv|ns|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getfdriv|N|0 " i32 " 32 0 0 1 v_get
@@ -140,6 +150,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getfdriv|b|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getfdriv|c|0 " double " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getfdriv|d|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c getfdriv|____chimes_ret_var_10|0 " %struct.VEC* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c linear_interp2|m|0 " %struct.MAT* " 64 1 0 1 m_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c linear_interp2|X|0 " %struct.VEC* " 64 1 0 1 m_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c linear_interp2|Y|0 " %struct.VEC* " 64 1 0 1 m_get
@@ -152,6 +163,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c linear_interp2|l|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c linear_interp2|k|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c linear_interp2|i|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c linear_interp2|____chimes_ret_var_11|0 " %struct.MAT* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c splineenergyform01|Cx|0 " %struct.MAT* " 64 1 0 1 get_row getfdriv getsampling linear_interp2 m_free v_free v_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c splineenergyform01|Cy|0 " %struct.MAT* " 64 1 0 1 get_row getfdriv getsampling linear_interp2 m_free v_free v_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/find_ellipse.c splineenergyform01|Ix|0 " %struct.MAT* " 64 1 0 1 get_row getfdriv getsampling linear_interp2 m_free v_free v_get

@@ -1,19 +1,19 @@
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 221 3 : {  } {  } call:freeSeqData { freeSeqData { 106, 188 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 220 3 : { 17 } {  } call:freeSimMatrix { freeSimMatrix { 95, 186 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 219 7 : { 16 } {  } call:freeC { freeC { 164 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 218 7 : { 15 } {  } call:freeB { freeB { 144 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 217 7 : {  } {  } call:freeA { freeA { 127 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 210 3 : {  } {  } call:verifyMergeAlignment { verifyMergeAlignment { 95, 164 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 221 3 : {  } {  } call:freeSeqData { freeSeqData { 107, 189 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 220 3 : { 17 } {  } call:freeSimMatrix { freeSimMatrix { 96, 187 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 219 7 : { 16 } {  } call:freeC { freeC { 165 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 218 7 : { 15 } {  } call:freeB { freeB { 145 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 217 7 : {  } {  } call:freeA { freeA { 128 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 210 3 : {  } {  } call:verifyMergeAlignment { verifyMergeAlignment { 96, 165 } }
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 205 3 : { 17 } {  } call:dispElapsedTime {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 199 7 : { 12 } {  } call:mergeAlignment { mergeAlignment { 144, 164 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 184 3 : {  } {  } call:verifyAlignment { verifyAlignment { 95, 144 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 199 7 : { 12 } {  } call:mergeAlignment { mergeAlignment { 145, 165 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 184 3 : {  } {  } call:verifyAlignment { verifyAlignment { 96, 145 } }
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 3 : { 16 } {  } call:dispElapsedTime {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 173 7 : { 12 } {  } call:scanBackward { scanBackward { 127, 144 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 173 7 : { 12 } {  } call:scanBackward { scanBackward { 128, 145 } }
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 159 3 : { 15 } {  } call:dispElapsedTime {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 152 7 : { 12 } {  } call:pairwiseAlign { pairwiseAlign { 95, 106, 127 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 137 3 : {  } {  } call:verifyData { verifyData { 95, 106 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 152 7 : { 12 } {  } call:pairwiseAlign { pairwiseAlign { 96, 107, 128 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 137 3 : {  } {  } call:verifyData { verifyData { 96, 107 } }
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 132 3 : { 14 } {  } call:dispElapsedTime {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 126 13 : { 13 } {  } call:genScalData { genScalData { 95, 106 } }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 119 15 : { 12 } {  } call:genSimMatrix { genSimMatrix { 95 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 126 13 : { 13 } {  } call:genScalData { genScalData { 96, 107 } }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 119 15 : { 12 } {  } call:genSimMatrix { genSimMatrix { 96 } }
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 115 15 : { 6 } {  } call:getSeconds {  }
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 85 3 : { 1, 2, 3, 4, 7, 8, 9 } {  } call:getUserParameters {  }

@@ -1,8 +1,8 @@
 bots_error 0 0 0 0
 bots_warning 0 2 47 48 0 0
-bots_usecs 0 1 75 0 0
-bots_get_date 0 0 0 0
-bots_get_max_cpus 0 0 0 0
-bots_get_architecture 0 1 109 0 0
-bots_get_load_average 0 1 118 0 0
+bots_usecs 0 2 75 76 0 0
+bots_get_date 0 3 91 92 101 0 0
+bots_get_max_cpus 0 1 108 0 0
+bots_get_architecture 0 1 113 0 0
+bots_get_load_average 0 1 122 0 0
 bots_print_results 0 0 0 0

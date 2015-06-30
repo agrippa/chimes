@@ -23,14 +23,18 @@
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_rand|mystate|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_rand|r|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_rand|b|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_rand|____chimes_ret_var_0|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_nextrand|mystate|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_nextrand|ctx|0 " %struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] } " 736 0 1 sha1_ctx_s 0 1 rng_nextrand
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_nextrand|r|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_nextrand|b|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_nextrand|____chimes_ret_var_1|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_showstate|state|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_showstate|s|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_showstate|____chimes_ret_var_2|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_showtype|strBuf|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_showtype|ind|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c rng_showtype|____chimes_ret_var_3|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c sha1_compile|ctx|0 " %struct.sha1_ctx_s* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c sha1_compile|w|0 " i32* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c sha1_compile|v0|0 " i32 " 32 0 0 0

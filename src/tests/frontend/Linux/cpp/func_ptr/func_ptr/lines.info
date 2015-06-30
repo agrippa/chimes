@@ -1,2 +1,2 @@
-/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 5 : { 13 } {  } call:checkpoint {  }
-/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 13 : { 10, 11, 12, 29 } {  } call:NULL {  }
+/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 13 5 : { 17 } {  } call:checkpoint {  }
+/home/jmg3/num-debug/src/examples/cpp/./func_ptr.cpp 11 13 : { 14, 15, 16, 37 } {  } call:NULL {  }

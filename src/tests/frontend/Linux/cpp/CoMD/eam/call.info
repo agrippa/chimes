@@ -1,113 +1,113 @@
-malloc initEamPot 172 39 22 0
-__assert_fail initEamPot 173 37 0 2164 2165 0 2166
+malloc initEamPot 172 39 23 0
+__assert_fail initEamPot 173 37 0 2176 2177 0 2178
 getMyRank initEamPot 189 8 0
-strcmp initEamPot 191 11 0 82 2167
-eamReadSetfl initEamPot 191 41 0 22 80 81
-strcmp initEamPot 191 82 0 82 2168
-eamReadFuncfl initEamPot 191 111 0 22 80 81
-typeNotSupported initEamPot 191 151 0 2169 82
-eamBcastPotential initEamPot 198 4 0 22
-__assert_fail eamForce 217 37 0 2164 2165 0 2170
-malloc eamForce 223 31 156 0
-malloc eamForce 224 30 156 0
-initForceHaloExchange eamForce 225 28 156 156 156
-malloc eamForce 226 52 156 0
-memset eamForce 235 4 0 156 0 0
-memset eamForce 236 4 0 156 0 0
-memset eamForce 237 4 0 156 0 0
-memset eamForce 238 4 0 156 0 0
-getNeighborBoxes eamForce 245 23 0 156 0 95
+strcmp initEamPot 191 11 0 86 2179
+eamReadSetfl initEamPot 191 41 0 23 84 85
+strcmp initEamPot 191 82 0 86 2180
+eamReadFuncfl initEamPot 191 111 0 23 84 85
+typeNotSupported initEamPot 191 151 0 2181 86
+eamBcastPotential initEamPot 198 4 0 23
+__assert_fail eamForce 217 37 0 2176 2177 0 2182
+malloc eamForce 223 31 161 0
+malloc eamForce 224 30 161 0
+initForceHaloExchange eamForce 225 28 161 161 161
+malloc eamForce 226 52 161 0
+memset eamForce 235 4 0 161 0 0
+memset eamForce 236 4 0 161 0 0
+memset eamForce 237 4 0 161 0 0
+memset eamForce 238 4 0 161 0 0
+getNeighborBoxes eamForce 245 23 0 161 0 99
 sqrt eamForce 270 27 0 0
-interpolate eamForce 273 16 0 156 0 110 111
-interpolate eamForce 274 16 0 156 0 112 113
-interpolate eamForce 313 10 0 156 0 120 121
+interpolate eamForce 273 16 0 161 0 114 115
+interpolate eamForce 274 16 0 161 0 116 117
+interpolate eamForce 313 10 0 161 0 124 125
 profileStart eamForce 321 9 0 0
-haloExchange eamForce 322 4 0 156 156
+haloExchange eamForce 322 4 0 161 161
 profileStop eamForce 323 9 0 0
-getNeighborBoxes eamForce 330 23 0 156 0 95
+getNeighborBoxes eamForce 330 23 0 161 0 99
 sqrt eamForce 355 27 0 0
-interpolate eamForce 358 16 0 156 0 136 137
-fprintf eamPrint 379 4 0 1020 2171
-fprintf eamPrint 380 4 0 1020 2170 1021
-fprintf eamPrint 381 4 0 1020 2170 0
-fprintf eamPrint 382 4 0 1020 2174 0
-fprintf eamPrint 383 4 0 1020 2170 1021
-fprintf eamPrint 384 4 0 1020 2176 0
-fprintf eamPrint 385 4 0 1020 2176 0
-destroyInterpolationObject eamDestroy 393 4 0 1033
-destroyInterpolationObject eamDestroy 394 4 0 1033
-destroyInterpolationObject eamDestroy 395 4 0 1033
-destroyHaloExchange eamDestroy 396 4 0 1033
-free eamDestroy 397 4 0 1033
-sprintf eamReadSetfl 638 4 0 1064 2167 1312 1313
-fopen eamReadSetfl 640 20 1097 1064 2181
-fileNotFound eamReadSetfl 641 28 0 2191 1064
-fgets eamReadSetfl 645 4 1107 1064 0 1097
-fgets eamReadSetfl 646 4 1110 1064 0 1097
-fgets eamReadSetfl 647 4 1113 1064 0 1097
-fgets eamReadSetfl 650 4 1116 1064 0 1097
-sscanf eamReadSetfl 652 4 0 1064 2183 1066
-notAlloyReady eamReadSetfl 653 22 0 2191
-fgets eamReadSetfl 660 4 1132 1064 0 1097
-sscanf eamReadSetfl 661 4 0 1064 2185 1067 1069 1068 1070 1071
-fgets eamReadSetfl 666 4 1141 1064 0 1097
-sscanf eamReadSetfl 670 4 0 1064 2182 1072 1073 1074 1075
-strcpy eamReadSetfl 674 4 1166 1311 1075
-malloc eamReadSetfl 678 27 1182 0
-fscanf eamReadSetfl 682 35 0 1097 2164 1182
-initInterpolationObject eamReadSetfl 684 13 1209 0 0 0 1182
-fscanf eamReadSetfl 687 33 0 1097 2164 1182
-initInterpolationObject eamReadSetfl 689 15 1209 0 0 0 1182
-fscanf eamReadSetfl 692 33 0 1097 2164 1182
-initInterpolationObject eamReadSetfl 700 15 1209 0 0 0 1182
-free eamReadSetfl 702 4 0 1182
-sprintf eamReadFuncfl 757 4 0 1317 2167 1570 1571
-fopen eamReadFuncfl 758 20 1350 1317 2181
-fileNotFound eamReadFuncfl 759 28 0 2182 1317
-fgets eamReadFuncfl 763 4 1360 1317 0 1350
-sscanf eamReadFuncfl 765 4 0 1317 2183 1319
-strcpy eamReadFuncfl 766 4 1369 1569 1319
-fgets eamReadFuncfl 772 4 1376 1317 0 1350
-sscanf eamReadFuncfl 773 4 0 1317 2182 1320 1321 1322 1323
-strcpy eamReadFuncfl 777 4 1397 1569 1323
-fgets eamReadFuncfl 782 4 1405 1317 0 1350
-sscanf eamReadFuncfl 783 4 0 1317 2185 1324 1326 1325 1327 1328
-malloc eamReadFuncfl 789 27 1429 0
-fscanf eamReadFuncfl 792 35 0 1350 2164 1429
-initInterpolationObject eamReadFuncfl 794 13 1454 0 0 0 1429
-fscanf eamReadFuncfl 797 33 0 1350 2164 1429
-initInterpolationObject eamReadFuncfl 806 15 1454 0 0 0 1429
-fscanf eamReadFuncfl 809 33 0 1350 2164 1429
-initInterpolationObject eamReadFuncfl 811 15 1454 0 0 0 1429
-free eamReadFuncfl 813 4 0 1429
-fprintf typeNotSupported 837 4 0 1905 2179 1585 1586
+interpolate eamForce 358 16 0 161 0 140 141
+fprintf eamPrint 379 4 0 1028 2183
+fprintf eamPrint 380 4 0 1028 2182 1029
+fprintf eamPrint 381 4 0 1028 2182 0
+fprintf eamPrint 382 4 0 1028 2186 0
+fprintf eamPrint 383 4 0 1028 2182 1029
+fprintf eamPrint 384 4 0 1028 2188 0
+fprintf eamPrint 385 4 0 1028 2188 0
+destroyInterpolationObject eamDestroy 393 4 0 1041
+destroyInterpolationObject eamDestroy 394 4 0 1041
+destroyInterpolationObject eamDestroy 395 4 0 1041
+destroyHaloExchange eamDestroy 396 4 0 1041
+free eamDestroy 397 4 0 1041
+sprintf eamReadSetfl 638 4 0 1072 2179 1320 1321
+fopen eamReadSetfl 640 20 1105 1072 2193
+fileNotFound eamReadSetfl 641 28 0 2203 1072
+fgets eamReadSetfl 645 4 1115 1072 0 1105
+fgets eamReadSetfl 646 4 1118 1072 0 1105
+fgets eamReadSetfl 647 4 1121 1072 0 1105
+fgets eamReadSetfl 650 4 1124 1072 0 1105
+sscanf eamReadSetfl 652 4 0 1072 2195 1074
+notAlloyReady eamReadSetfl 653 22 0 2203
+fgets eamReadSetfl 660 4 1140 1072 0 1105
+sscanf eamReadSetfl 661 4 0 1072 2197 1075 1077 1076 1078 1079
+fgets eamReadSetfl 666 4 1149 1072 0 1105
+sscanf eamReadSetfl 670 4 0 1072 2194 1080 1081 1082 1083
+strcpy eamReadSetfl 674 4 1174 1319 1083
+malloc eamReadSetfl 678 27 1190 0
+fscanf eamReadSetfl 682 35 0 1105 2176 1190
+initInterpolationObject eamReadSetfl 684 13 1217 0 0 0 1190
+fscanf eamReadSetfl 687 33 0 1105 2176 1190
+initInterpolationObject eamReadSetfl 689 15 1217 0 0 0 1190
+fscanf eamReadSetfl 692 33 0 1105 2176 1190
+initInterpolationObject eamReadSetfl 700 15 1217 0 0 0 1190
+free eamReadSetfl 702 4 0 1190
+sprintf eamReadFuncfl 757 4 0 1325 2179 1578 1579
+fopen eamReadFuncfl 758 20 1358 1325 2193
+fileNotFound eamReadFuncfl 759 28 0 2194 1325
+fgets eamReadFuncfl 763 4 1368 1325 0 1358
+sscanf eamReadFuncfl 765 4 0 1325 2195 1327
+strcpy eamReadFuncfl 766 4 1377 1577 1327
+fgets eamReadFuncfl 772 4 1384 1325 0 1358
+sscanf eamReadFuncfl 773 4 0 1325 2194 1328 1329 1330 1331
+strcpy eamReadFuncfl 777 4 1405 1577 1331
+fgets eamReadFuncfl 782 4 1413 1325 0 1358
+sscanf eamReadFuncfl 783 4 0 1325 2197 1332 1334 1333 1335 1336
+malloc eamReadFuncfl 789 27 1437 0
+fscanf eamReadFuncfl 792 35 0 1358 2176 1437
+initInterpolationObject eamReadFuncfl 794 13 1462 0 0 0 1437
+fscanf eamReadFuncfl 797 33 0 1358 2176 1437
+initInterpolationObject eamReadFuncfl 806 15 1462 0 0 0 1437
+fscanf eamReadFuncfl 809 33 0 1358 2176 1437
+initInterpolationObject eamReadFuncfl 811 15 1462 0 0 0 1437
+free eamReadFuncfl 813 4 0 1437
+fprintf typeNotSupported 837 4 0 1913 2191 1593 1594
 exit typeNotSupported 839 4 0 0
-__assert_fail eamBcastPotential 415 37 0 2164 2165 0 2190
+__assert_fail eamBcastPotential 415 37 0 2176 2177 0 2202
 getMyRank eamBcastPotential 418 8 0
-strcpy eamBcastPotential 424 7 1627 1588 1679
-strcpy eamBcastPotential 425 7 1633 1588 1679
-bcastParallel eamBcastPotential 427 4 0 1588 0 0
-strcpy eamBcastPotential 432 4 1662 1679 1588
-strcpy eamBcastPotential 433 4 1668 1679 1588
-bcastInterpolationObject eamBcastPotential 435 4 0 1679
-bcastInterpolationObject eamBcastPotential 436 4 0 1679
-bcastInterpolationObject eamBcastPotential 437 4 0 1679
+strcpy eamBcastPotential 424 7 1635 1596 1687
+strcpy eamBcastPotential 425 7 1641 1596 1687
+bcastParallel eamBcastPotential 427 4 0 1596 0 0
+strcpy eamBcastPotential 432 4 1670 1687 1596
+strcpy eamBcastPotential 433 4 1676 1687 1596
+bcastInterpolationObject eamBcastPotential 435 4 0 1687
+bcastInterpolationObject eamBcastPotential 436 4 0 1687
+bcastInterpolationObject eamBcastPotential 437 4 0 1687
 floor interpolate 519 18 0 0
 floor interpolate 526 12 0 0
-free destroyInterpolationObject 483 7 0 1867
-free destroyInterpolationObject 485 4 0 1860
-fprintf fileNotFound 822 4 0 1905 2190 1912 1913
+free destroyInterpolationObject 483 7 0 1875
+free destroyInterpolationObject 485 4 0 1868
+fprintf fileNotFound 822 4 0 1913 2202 1920 1921
 exit fileNotFound 824 4 0 0
-malloc initInterpolationObject 456 30 1954 0
-__assert_fail initInterpolationObject 457 39 0 2167 2165 0 2188
-calloc initInterpolationObject 459 29 1952 0 0
-__assert_fail initInterpolationObject 460 47 0 2182 2165 0 2188
-fprintf notAlloyReady 829 4 0 1905 2193 2058
+malloc initInterpolationObject 456 30 1963 0
+__assert_fail initInterpolationObject 457 39 0 2179 2177 0 2200
+calloc initInterpolationObject 459 29 1961 0 0
+__assert_fail initInterpolationObject 460 47 0 2194 2177 0 2200
+fprintf notAlloyReady 829 4 0 1913 2205 2070
 exit notAlloyReady 832 4 0 0
 getMyRank bcastInterpolationObject 553 8 0
-bcastParallel bcastInterpolationObject 559 4 0 2064 0 0
+bcastParallel bcastInterpolationObject 559 4 0 2076 0 0
 getMyRank bcastInterpolationObject 561 8 0
-__assert_fail bcastInterpolationObject 563 53 0 2195 2165 0 2196
-malloc bcastInterpolationObject 564 38 2104 0
-malloc bcastInterpolationObject 568 35 2131 0
-bcastParallel bcastInterpolationObject 573 4 0 2131 0 0
+__assert_fail bcastInterpolationObject 563 53 0 2207 2177 0 2208
+malloc bcastInterpolationObject 564 38 2116 0
+malloc bcastInterpolationObject 568 35 2143 0
+bcastParallel bcastInterpolationObject 573 4 0 2143 0 0

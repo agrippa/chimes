@@ -1,40 +1,40 @@
-printf main 58 7 0 243 61
+printf main 58 7 0 247 62
 exit main 60 5 0 0
-atoi main 66 13 0 61
-printf main 69 2 0 244
+atoi main 66 13 0 62
+printf main 69 2 0 248
 exit main 71 7 0 0
 getUserParameters main 85 3 0
-printf main 88 5 0 245
-printf main 89 5 0 246
-printf main 112 5 0 247
+printf main 88 5 0 249
+printf main 89 5 0 250
+printf main 112 5 0 251
 getSeconds main 115 15 0
-genSimMatrix main 119 15 95 0 0 0 0 0 0 0
-printf main 123 5 0 248
-genScalData main 126 13 106 0 95 0 0 0
-printf main 129 5 0 246
+genSimMatrix main 119 15 96 0 0 0 0 0 0 0
+printf main 123 5 0 252
+genScalData main 126 13 107 0 96 0 0 0
+printf main 129 5 0 250
 dispElapsedTime main 132 3 0 0
-verifyData main 137 3 0 95 106 0 0
-printf main 145 5 0 250
+verifyData main 137 3 0 96 107 0 0
+printf main 145 5 0 254
 getSeconds main 148 15 0
-pairwiseAlign main 152 7 127 106 95 0 0 0
-printf main 156 5 0 251
+pairwiseAlign main 152 7 128 107 96 0 0 0
+printf main 156 5 0 255
 dispElapsedTime main 159 3 0 0
-printf main 166 5 0 250
+printf main 166 5 0 254
 getSeconds main 169 15 0
-scanBackward main 173 7 144 127 0 0 0
-printf main 176 5 0 248
+scanBackward main 173 7 145 128 0 0 0
+printf main 176 5 0 252
 dispElapsedTime main 179 3 0 0
-verifyAlignment main 184 3 0 95 144 0
-printf main 192 5 0 254
+verifyAlignment main 184 3 0 96 145 0
+printf main 192 5 0 258
 getSeconds main 195 15 0
-mergeAlignment main 199 7 164 144 0 0
-printf main 202 5 0 255
+mergeAlignment main 199 7 165 145 0 0
+printf main 202 5 0 259
 dispElapsedTime main 205 3 0 0
-verifyMergeAlignment main 210 3 0 95 164 0
-freeA main 217 7 127 127
-freeB main 218 7 144 144
-freeC main 219 7 164 164
-freeSimMatrix main 220 3 186 95
-freeSeqData main 221 3 188 106
-printf main 228 5 0 245
-printf main 229 5 0 251
+verifyMergeAlignment main 210 3 0 96 165 0
+freeA main 217 7 128 128
+freeB main 218 7 145 145
+freeC main 219 7 165 165
+freeSimMatrix main 220 3 187 96
+freeSeqData main 221 3 189 107
+printf main 228 5 0 249
+printf main 229 5 0 255

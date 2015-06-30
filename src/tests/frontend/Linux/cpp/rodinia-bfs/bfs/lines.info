@@ -1,2 +1,0 @@
-/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 34 2 : { 19, 20, 21, 444 } {  } call:BFSGraph {  }
-/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 127 3 : { 7, 35, 36, 37, 38, 39, 40, 41, 42, 43, 46, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 136, 149, 154, 159, 204, 402, 446 } {  } call:omp_set_num_threads {  }

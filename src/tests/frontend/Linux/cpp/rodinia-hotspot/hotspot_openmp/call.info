@@ -1,38 +1,38 @@
 omp_set_num_threads single_iteration 40 2 0 0
 omp_set_num_threads single_iteration 110 2 0 0
 single_iteration compute_tran_temp 152 3 0 934 936 937 0 0 0 0 0 0 0
-fprintf fatal 162 2 0 943 1202 949
+fprintf fatal 162 2 0 943 1206 949
 exit fatal 163 2 0 0
-fopen read_input 173 7 976 1023 1203
-fatal read_input 174 12 0 1204
+fopen read_input 173 7 976 1023 1207
+fatal read_input 174 12 0 1208
 fgets read_input 178 3 993 960 0 976
 feof read_input 179 7 0 976
-fatal read_input 179 18 0 1205
-sscanf read_input 181 8 0 960 1206 961
-fatal read_input 181 41 0 1207
+fatal read_input 179 18 0 1209
+sscanf read_input 181 8 0 960 1210 961
+fatal read_input 181 41 0 1211
 fclose read_input 186 2 0 976
-fprintf usage 191 2 0 943 1208 1042
-fprintf usage 192 2 0 943 1209
-fprintf usage 193 2 0 943 1210
-fprintf usage 194 2 0 943 1211
-fprintf usage 195 2 0 943 1212
-fprintf usage 196 2 0 943 1213
-fprintf usage 197 2 0 943 1214
+fprintf usage 191 2 0 943 1212 1042
+fprintf usage 192 2 0 943 1213
+fprintf usage 193 2 0 943 1214
+fprintf usage 194 2 0 943 1215
+fprintf usage 195 2 0 943 1216
+fprintf usage 196 2 0 943 1217
+fprintf usage 197 2 0 943 1218
 exit usage 198 2 0 0
-usage main 208 18 0 0 1190
-atoi main 210 19 0 1096
-atoi main 211 16 0 1096
-atoi main 212 15 0 1096
-atoi main 213 22 0 1096
-usage main 213 44 0 0 1190
-calloc main 218 20 1130 0 0
-calloc main 219 21 1137 0 0
-calloc main 220 22 1144 0 0
-fatal main 221 24 0 1215
-read_input main 227 2 0 1130 0 0 1096
-read_input main 228 2 0 1137 0 0 1096
-printf main 230 2 0 1216
-compute_tran_temp main 231 2 0 1144 0 1130 1137 0 0
-printf main 232 2 0 1217
-free main 243 2 0 1130
-free main 244 2 0 1137
+usage main 208 18 0 0 1194
+atoi main 210 19 0 1097
+atoi main 211 16 0 1097
+atoi main 212 15 0 1097
+atoi main 213 22 0 1097
+usage main 213 44 0 0 1194
+calloc main 218 20 1131 0 0
+calloc main 219 21 1138 0 0
+calloc main 220 22 1145 0 0
+fatal main 221 24 0 1219
+read_input main 227 2 0 1131 0 0 1097
+read_input main 228 2 0 1138 0 0 1097
+printf main 230 2 0 1220
+compute_tran_temp main 231 2 0 1145 0 1131 1138 0 0
+printf main 232 2 0 1221
+free main 243 2 0 1131
+free main 244 2 0 1138

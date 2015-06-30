@@ -23,28 +23,13 @@ static int ____chimes_does_checkpoint_calcLikelihoodSum_npm = 1;
 static int ____chimes_does_checkpoint_findIndex_npm = 1;
 static int ____chimes_does_checkpoint_findIndexBin_npm = 1;
 static int ____chimes_does_checkpoint_particleFilter_npm = 1;
-static int ____chimes_does_checkpoint_abs_npm = 1;
 
 static int ____must_checkpoint_get_time_tv_0 = 2;
-static int ____must_checkpoint_videoSequence_I_0 = 2;
 static int ____must_checkpoint_videoSequence_IszX_0 = 2;
-static int ____must_checkpoint_videoSequence_IszY_0 = 2;
-static int ____must_checkpoint_videoSequence_Nfr_0 = 2;
-static int ____must_checkpoint_videoSequence_seed_0 = 2;
-static int ____must_checkpoint_videoSequence_k_0 = 2;
-static int ____must_checkpoint_videoSequence_max_size_0 = 2;
-static int ____must_checkpoint_videoSequence_x0_0 = 2;
-static int ____must_checkpoint_videoSequence_y0_0 = 2;
-static int ____must_checkpoint_videoSequence_xk_0 = 2;
-static int ____must_checkpoint_videoSequence_yk_0 = 2;
-static int ____must_checkpoint_videoSequence_pos_0 = 2;
 static int ____must_checkpoint_main_IszX_0 = 2;
 static int ____must_checkpoint_main_IszY_0 = 2;
 static int ____must_checkpoint_main_Nfr_0 = 2;
 static int ____must_checkpoint_main_Nparticles_0 = 2;
-static int ____must_checkpoint_main_seed_0 = 2;
-static int ____must_checkpoint_main_I_0 = 2;
-static int ____must_checkpoint_main_start_0 = 2;
 
 static int ____must_manage_findIndex = 2;
 static int ____must_manage_calcLikelihoodSum = 2;
@@ -81,9 +66,6 @@ static unsigned ____alias_loc_id_13;
 static unsigned ____alias_loc_id_14;
 static unsigned ____alias_loc_id_15;
 static unsigned ____alias_loc_id_16;
-static unsigned ____alias_loc_id_17;
-static unsigned ____alias_loc_id_18;
-static unsigned ____alias_loc_id_19;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -4261,18 +4243,18 @@ long long get_time_resumable() {const int ____chimes_did_disable0 = new_stack((v
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  gettimeofday(&tv, __null);
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_3, ____chimes_did_disable0); return (tv.tv_sec * 1000000) + tv.tv_usec;
+  long long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); }
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 float elapsed_time_npm(long long start_time, long long end_time);
 float elapsed_time_quick(long long start_time, long long end_time); float elapsed_time(long long start_time, long long end_time);
 float elapsed_time_resumable(long long start_time, long long end_time) {const int ____chimes_did_disable1 = new_stack((void *)(&elapsed_time), "elapsed_time", &____must_manage_elapsed_time, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-        rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_4, ____chimes_did_disable1); return (float) (end_time - start_time) / (1000 * 1000);
+         float ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((float) (end_time - start_time) / (1000 * 1000)); rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_1, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_1, ____chimes_did_disable1); }
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4284,14 +4266,14 @@ double roundDouble_resumable(double value){const int ____chimes_did_disable2 = n
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int newValue; newValue = ((int)(value)) ;
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if (value - newValue < .5) {rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_5, ____chimes_did_disable2); return newValue; } else {rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_5, ____chimes_did_disable2); return newValue++; } ;
+ if (value - newValue < .5) { double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (newValue); rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_2, ____chimes_did_disable2); return ____chimes_ret_var_2; ; } else { double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (newValue++); rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_2, ____chimes_did_disable2); return ____chimes_ret_var_3; ; } ;
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_5, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_2, ____chimes_did_disable2); }
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void setIf_npm(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ);
 void setIf_quick(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ); void setIf(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ);
-void setIf_resumable(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ){const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910309646UL), (size_t)(7756533236910309647UL), (size_t)(7756533236910309648UL), (size_t)(7756533236910309649UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void setIf_resumable(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ){const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910309662UL), (size_t)(7756533236910309663UL), (size_t)(7756533236910309664UL), (size_t)(7756533236910309665UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4309,27 +4291,27 @@ void setIf_resumable(int testValue, int newValue, int * array3D, int * dimX, int
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "setIf", &____must_manage_setIf, ____alias_loc_id_6, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "setIf", &____must_manage_setIf, ____alias_loc_id_3, ____chimes_did_disable3); }
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double randu_npm(int * seed, int index);
 double randu_quick(int * seed, int index); double randu(int * seed, int index);
 double randu_resumable(int * seed, int index)
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(7756533236910309689UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(7756533236910309709UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int num; num = (A * seed[index] + C) ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  seed[index] = num % M;
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_7, ____chimes_did_disable4); return fabs(seed[index]/((double) M));
+  double ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (fabs(seed[index]/((double) M))); rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_4, ____chimes_did_disable4); return ____chimes_ret_var_4; ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_4, ____chimes_did_disable4); }
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double randn_npm(int * seed, int index);
 double randn_quick(int * seed, int index); double randn(int * seed, int index);
-double randn_resumable(int * seed, int index){const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(7756533236910309727UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+double randn_resumable(int * seed, int index){const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(7756533236910309751UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double u; u = (({ calling_npm("randu", 0); randu_npm(seed, index); })) ;
@@ -4340,14 +4322,14 @@ double randn_resumable(int * seed, int index){const int ____chimes_did_disable5 
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double rt; rt = (-2 * log(u)) ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_8, ____chimes_did_disable5); return sqrt(rt)*cosine;
+  double ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (sqrt(rt)*cosine); rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_5, ____chimes_did_disable5); return ____chimes_ret_var_5; ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_5, ____chimes_did_disable5); }
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void addNoise_npm(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed);
 void addNoise_quick(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed); void addNoise(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed);
-void addNoise_resumable(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed){const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(7756533236910309831UL), (size_t)(7756533236910309832UL), (size_t)(7756533236910309833UL), (size_t)(7756533236910309834UL), (size_t)(7756533236910309835UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void addNoise_resumable(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed){const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(7756533236910309855UL), (size_t)(7756533236910309856UL), (size_t)(7756533236910309857UL), (size_t)(7756533236910309858UL), (size_t)(7756533236910309859UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4365,7 +4347,7 @@ void addNoise_resumable(int * array3D, int * dimX, int * dimY, int * dimZ, int *
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "addNoise", &____must_manage_addNoise, ____alias_loc_id_9, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "addNoise", &____must_manage_addNoise, ____alias_loc_id_6, ____chimes_did_disable6); }
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4376,7 +4358,7 @@ void strelDisk_npm(int * disk, int radius);
 void strelDisk_quick(int * disk, int radius); void strelDisk(int * disk, int radius);
 void strelDisk_resumable(int * disk, int radius)
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(7756533236910309907UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(7756533236910309931UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius * 2 - 1) ;
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4394,14 +4376,14 @@ void strelDisk_resumable(int * disk, int radius)
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "strelDisk", &____must_manage_strelDisk, ____alias_loc_id_10, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "strelDisk", &____must_manage_strelDisk, ____alias_loc_id_7, ____chimes_did_disable7); }
 # 147 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 147 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void dilate_matrix_npm(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error);
 void dilate_matrix_quick(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error); void dilate_matrix(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error);
 void dilate_matrix_resumable(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error)
 # 148 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(7756533236910310058UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(7756533236910310082UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int startX; startX = (posX - error) ;
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4441,14 +4423,14 @@ void dilate_matrix_resumable(int * matrix, int posX, int posY, int posZ, int dim
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "dilate_matrix", &____must_manage_dilate_matrix, ____alias_loc_id_11, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "dilate_matrix", &____must_manage_dilate_matrix, ____alias_loc_id_8, ____chimes_did_disable8); }
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void imdilate_disk_npm(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix);
 void imdilate_disk_quick(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix); void imdilate_disk(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix);
 void imdilate_disk_resumable(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix)
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(7756533236910310151UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310156UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(7756533236910310175UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310180UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4470,7 +4452,7 @@ void imdilate_disk_resumable(int * matrix, int dimX, int dimY, int dimZ, int err
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "imdilate_disk", &____must_manage_imdilate_disk, ____alias_loc_id_12, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "imdilate_disk", &____must_manage_imdilate_disk, ____alias_loc_id_9, ____chimes_did_disable9); }
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4481,7 +4463,7 @@ rm_stack(false, 0UL, "imdilate_disk", &____must_manage_imdilate_disk, ____alias_
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void getneighbors_npm(int * se, int numOnes, double * neighbors, int radius);
 void getneighbors_quick(int * se, int numOnes, double * neighbors, int radius); void getneighbors(int * se, int numOnes, double * neighbors, int radius);
-void getneighbors_resumable(int * se, int numOnes, double * neighbors, int radius){const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 4, 0, (size_t)(7756533236910310246UL), (size_t)(0UL), (size_t)(7756533236910310248UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void getneighbors_resumable(int * se, int numOnes, double * neighbors, int radius){const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 4, 0, (size_t)(7756533236910310270UL), (size_t)(0UL), (size_t)(7756533236910310272UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4509,40 +4491,33 @@ void getneighbors_resumable(int * se, int numOnes, double * neighbors, int radiu
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "getneighbors", &____must_manage_getneighbors, ____alias_loc_id_13, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "getneighbors", &____must_manage_getneighbors, ____alias_loc_id_10, ____chimes_did_disable10); }
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-void videoSequence_npm(int * I, int IszX, int IszY, int Nfr, int * seed);static int (*____chimes_extern_func_abs)(int) = abs;
+void videoSequence_npm(int * I, int IszX, int IszY, int Nfr, int * seed);
 void videoSequence_quick(int * I, int IszX, int IszY, int Nfr, int * seed); void videoSequence(int * I, int IszX, int IszY, int Nfr, int * seed);
-void videoSequence_resumable(int * I, int IszX, int IszY, int Nfr, int * seed){const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", &____must_manage_videoSequence, 5, 5, (size_t)(7756533236910310456UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310460UL), "videoSequence|I|0", &____must_checkpoint_videoSequence_I_0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "videoSequence|IszX|0", &____must_checkpoint_videoSequence_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "videoSequence|IszY|0", &____must_checkpoint_videoSequence_IszY_0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "videoSequence|Nfr|0", &____must_checkpoint_videoSequence_Nfr_0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "videoSequence|seed|0", &____must_checkpoint_videoSequence_seed_0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0) ; int pos;
-int yk;
-int xk;
-int y0;
-int x0;
-int max_size;
-int k;
- if (____must_checkpoint_videoSequence_pos_0 || ____must_checkpoint_videoSequence_yk_0 || ____must_checkpoint_videoSequence_xk_0 || ____must_checkpoint_videoSequence_y0_0 || ____must_checkpoint_videoSequence_x0_0 || ____must_checkpoint_videoSequence_max_size_0 || ____must_checkpoint_videoSequence_k_0) { register_stack_vars(7, "videoSequence|pos|0", &____must_checkpoint_videoSequence_pos_0, "i32", (void *)(&pos), (size_t)4, 0, 0, 0, "videoSequence|yk|0", &____must_checkpoint_videoSequence_yk_0, "i32", (void *)(&yk), (size_t)4, 0, 0, 0, "videoSequence|xk|0", &____must_checkpoint_videoSequence_xk_0, "i32", (void *)(&xk), (size_t)4, 0, 0, 0, "videoSequence|y0|0", &____must_checkpoint_videoSequence_y0_0, "i32", (void *)(&y0), (size_t)4, 0, 0, 0, "videoSequence|x0|0", &____must_checkpoint_videoSequence_x0_0, "i32", (void *)(&x0), (size_t)4, 0, 0, 0, "videoSequence|max_size|0", &____must_checkpoint_videoSequence_max_size_0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0, "videoSequence|k|0", &____must_checkpoint_videoSequence_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+void videoSequence_resumable(int * I, int IszX, int IszY, int Nfr, int * seed){const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", &____must_manage_videoSequence, 5, 1, (size_t)(7756533236910310480UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310484UL), "videoSequence|IszX|0", &____must_checkpoint_videoSequence_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ;
+ int k; ;
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    max_size = (IszX * IszY * Nfr) ;
+  int max_size; max_size = (IszX * IszY * Nfr) ;
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    x0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszY / 2.); })) ;
+  int x0; x0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszY / 2.); })) ;
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    y0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszX / 2.); })) ;
+  int y0; y0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszX / 2.); })) ;
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  I[x0 *IszY *Nfr + y0 * Nfr + 0] = 1;
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 236 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    ;
+ int xk; int yk; int pos; ;
 # 237 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(k = 1; k < Nfr; k++){
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   call_lbl_1: xk = (____chimes_does_checkpoint_abs_npm ? ( ({ int ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (x0 + (k - 1)); } calling((void*)abs, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg0); }) ) : (({ calling_npm("abs", ____alias_loc_id_1); (*____chimes_extern_func_abs)(x0 + (k-1)); })));
+  xk = abs(x0 + (k-1));
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   call_lbl_2: yk = (____chimes_does_checkpoint_abs_npm ? ( ({ int ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (y0 - 2 * (k - 1)); } calling((void*)abs, 2, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg1); }) ) : (({ calling_npm("abs", ____alias_loc_id_0); (*____chimes_extern_func_abs)(y0 - 2*(k-1)); })));
+  yk = abs(y0 - 2*(k-1));
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   pos = yk * IszY * Nfr + xk *Nfr + k;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4554,7 +4529,7 @@ int k;
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int *newMatrix; newMatrix = ((int *)malloc_wrapper(sizeof(int) * IszX * IszY * Nfr, 7756533236910310412UL, 0, 0)) ;
+  int *newMatrix; newMatrix = ((int *)malloc_wrapper(sizeof(int) * IszX * IszY * Nfr, 7756533236910310436UL, 0, 0)) ;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  ({ calling_npm("imdilate_disk", 0); imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix); });
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4574,7 +4549,7 @@ int k;
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(newMatrix, 7756533236910310412UL);
+ free_wrapper(newMatrix, 7756533236910310436UL);
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4585,7 +4560,7 @@ int k;
 # 263 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  ({ calling_npm("addNoise", 0); addNoise_npm(I, &IszX, &IszY, &Nfr, seed); });
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "videoSequence", &____must_manage_videoSequence, ____alias_loc_id_14, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "videoSequence", &____must_manage_videoSequence, ____alias_loc_id_11, ____chimes_did_disable11); }
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4596,7 +4571,7 @@ rm_stack(false, 0UL, "videoSequence", &____must_manage_videoSequence, ____alias_
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 double calcLikelihoodSum_npm(int * I, int * ind, int numOnes);
 double calcLikelihoodSum_quick(int * I, int * ind, int numOnes); double calcLikelihoodSum(int * I, int * ind, int numOnes);
-double calcLikelihoodSum_resumable(int * I, int * ind, int numOnes){const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(7756533236910310520UL), (size_t)(7756533236910310521UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+double calcLikelihoodSum_resumable(int * I, int * ind, int numOnes){const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(7756533236910310548UL), (size_t)(7756533236910310549UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double likelihoodSum; likelihoodSum = (0.) ;
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4604,14 +4579,14 @@ double calcLikelihoodSum_resumable(int * I, int * ind, int numOnes){const int __
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (y = 0; y < numOnes; y++) { likelihoodSum += (pow((I[ind[y]] - 100),2) - pow((I[ind[y]]-228),2))/50.0; };
 # 277 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_15, ____chimes_did_disable12); return likelihoodSum;
+  double ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (likelihoodSum); rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_12, ____chimes_did_disable12); return ____chimes_ret_var_6; ;
 # 278 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_12, ____chimes_did_disable12); }
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int findIndex_npm(double * CDF, int lengthCDF, double value);
 int findIndex_quick(double * CDF, int lengthCDF, double value); int findIndex(double * CDF, int lengthCDF, double value);
-int findIndex_resumable(double * CDF, int lengthCDF, double value){const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(7756533236910310572UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int findIndex_resumable(double * CDF, int lengthCDF, double value){const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(7756533236910310608UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int index; index = (-1) ;
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4631,20 +4606,20 @@ int findIndex_resumable(double * CDF, int lengthCDF, double value){const int ___
 # 296 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(index == -1){
 # 297 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_16, ____chimes_did_disable13); return lengthCDF-1;
+   int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (lengthCDF-1); rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_13, ____chimes_did_disable13); return ____chimes_ret_var_7; ;
 # 298 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_16, ____chimes_did_disable13); return index;
+  int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (index); rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_13, ____chimes_did_disable13); return ____chimes_ret_var_8; ;
 # 300 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_13, ____chimes_did_disable13); }
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int findIndexBin_npm(double * CDF, int beginIndex, int endIndex, double value);
 int findIndexBin_quick(double * CDF, int beginIndex, int endIndex, double value); int findIndexBin(double * CDF, int beginIndex, int endIndex, double value);
-int findIndexBin_resumable(double * CDF, int beginIndex, int endIndex, double value){const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(7756533236910310689UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+int findIndexBin_resumable(double * CDF, int beginIndex, int endIndex, double value){const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(7756533236910310749UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if (endIndex < beginIndex) {rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return -1; };
+ if (endIndex < beginIndex) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_9; ; };
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int middleIndex; middleIndex = (beginIndex + ((endIndex - beginIndex) / 2)) ;
 # 315 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4654,7 +4629,7 @@ int findIndexBin_resumable(double * CDF, int beginIndex, int endIndex, double va
  {
 # 318 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 319 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  if (middleIndex == 0) {rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return middleIndex; } else if (CDF[middleIndex-1] < value) {rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return middleIndex; } else if(CDF[middleIndex-1] == value)
+  if (middleIndex == 0) { int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_10; ; } else if (CDF[middleIndex-1] < value) { int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_11; ; } else if(CDF[middleIndex-1] == value)
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   {
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4662,22 +4637,22 @@ int findIndexBin_resumable(double * CDF, int beginIndex, int endIndex, double va
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    middleIndex--;
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return middleIndex;
+    int ____chimes_ret_var_12; ; ____chimes_ret_var_12 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_12; ;
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if (CDF[middleIndex] > value) {rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); }); };
+ if (CDF[middleIndex] > value) { int ____chimes_ret_var_13; ; ____chimes_ret_var_13 = (({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); })); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_13; ; };
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); });
+  int ____chimes_ret_var_14; ; ____chimes_ret_var_14 = (({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); })); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_14; ;
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); }
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 345 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 void particleFilter_npm(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles);
 void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles); void particleFilter(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles);
-void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter), "particleFilter", &____must_manage_particleFilter, 6, 0, (size_t)(7756533236910311668UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311672UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter), "particleFilter", &____must_manage_particleFilter, 6, 0, (size_t)(7756533236910311728UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311732UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 346 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 347 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int max_size; max_size = (IszX * IszY * Nfr) ;
@@ -4695,7 +4670,7 @@ void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, 
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius * 2 - 1) ;
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int *disk; disk = ((int *)malloc_wrapper(diameter * diameter * sizeof(int), 7756533236910310803UL, 0, 0)) ;
+  int *disk; disk = ((int *)malloc_wrapper(diameter * diameter * sizeof(int), 7756533236910310863UL, 0, 0)) ;
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); });
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4713,7 +4688,7 @@ void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, 
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *objxy; objxy = ((double *)malloc_wrapper(countOnes * 2 * sizeof(double), 7756533236910311084UL, 0, 0)) ;
+  double *objxy; objxy = ((double *)malloc_wrapper(countOnes * 2 * sizeof(double), 7756533236910311144UL, 0, 0)) ;
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, countOnes, objxy, radius); });
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4723,7 +4698,7 @@ void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, 
    float ____chimes_unroll_var_0; ____chimes_unroll_var_0 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })) ; printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_0);
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *weights; weights = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311249UL, 0, 0)) ;
+  double *weights; weights = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311309UL, 0, 0)) ;
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(weights, Nparticles) private(x)
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4738,21 +4713,21 @@ void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, 
    float ____chimes_unroll_var_1; ____chimes_unroll_var_1 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })) ; printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_1);
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *likelihood; likelihood = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311202UL, 0, 0)) ;
+  double *likelihood; likelihood = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311262UL, 0, 0)) ;
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *arrayX; arrayX = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311076UL, 0, 0)) ;
+  double *arrayX; arrayX = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311136UL, 0, 0)) ;
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *arrayY; arrayY = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311092UL, 0, 0)) ;
+  double *arrayY; arrayY = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311152UL, 0, 0)) ;
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *xj; xj = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311587UL, 0, 0)) ;
+  double *xj; xj = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311647UL, 0, 0)) ;
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *yj; yj = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311597UL, 0, 0)) ;
+  double *yj; yj = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311657UL, 0, 0)) ;
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *CDF; CDF = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311452UL, 0, 0)) ;
+  double *CDF; CDF = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311512UL, 0, 0)) ;
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *u; u = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311500UL, 0, 0)) ;
+  double *u; u = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311560UL, 0, 0)) ;
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int *ind; ind = ((int *)malloc_wrapper(sizeof(int) * countOnes * Nparticles, 7756533236910311125UL, 0, 0)) ;
+  int *ind; ind = ((int *)malloc_wrapper(sizeof(int) * countOnes * Nparticles, 7756533236910311185UL, 0, 0)) ;
 # 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x)
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -4967,39 +4942,36 @@ void particleFilter_resumable(int * I, int IszX, int IszY, int Nfr, int * seed, 
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(disk, 7756533236910310803UL);
+ free_wrapper(disk, 7756533236910310863UL);
 # 511 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(objxy, 7756533236910311084UL);
+ free_wrapper(objxy, 7756533236910311144UL);
 # 512 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(weights, 7756533236910311249UL);
+ free_wrapper(weights, 7756533236910311309UL);
 # 513 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(likelihood, 7756533236910311202UL);
+ free_wrapper(likelihood, 7756533236910311262UL);
 # 514 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(xj, 7756533236910311587UL);
+ free_wrapper(xj, 7756533236910311647UL);
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(yj, 7756533236910311597UL);
+ free_wrapper(yj, 7756533236910311657UL);
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(arrayX, 7756533236910311076UL);
+ free_wrapper(arrayX, 7756533236910311136UL);
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(arrayY, 7756533236910311092UL);
+ free_wrapper(arrayY, 7756533236910311152UL);
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(CDF, 7756533236910311452UL);
+ free_wrapper(CDF, 7756533236910311512UL);
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(u, 7756533236910311500UL);
+ free_wrapper(u, 7756533236910311560UL);
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(ind, 7756533236910311125UL);
+ free_wrapper(ind, 7756533236910311185UL);
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "particleFilter", &____must_manage_particleFilter, ____alias_loc_id_18, ____chimes_did_disable15); }
+rm_stack(false, 0UL, "particleFilter", &____must_manage_particleFilter, ____alias_loc_id_15, ____chimes_did_disable15); }
 # 522 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 int main_quick(int argc, char * argv[]); int main(int argc, char * argv[]);
-int main_resumable(int argc, char * argv[]){const int ____chimes_did_disable16 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(7756533236910311898UL)) ; long long start;
-int *I;
-int *seed;
-int Nparticles;
+int main_resumable(int argc, char * argv[]){const int ____chimes_did_disable16 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(7756533236910312002UL)) ; int Nparticles;
 int Nfr;
 int IszY;
 int IszX;
- if (____must_checkpoint_main_start_0 || ____must_checkpoint_main_I_0 || ____must_checkpoint_main_seed_0 || ____must_checkpoint_main_Nparticles_0 || ____must_checkpoint_main_Nfr_0 || ____must_checkpoint_main_IszY_0 || ____must_checkpoint_main_IszX_0) { register_stack_vars(7, "main|start|0", &____must_checkpoint_main_start_0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", &____must_checkpoint_main_I_0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", &____must_checkpoint_main_seed_0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", &____must_checkpoint_main_Nparticles_0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", &____must_checkpoint_main_Nfr_0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", &____must_checkpoint_main_IszY_0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", &____must_checkpoint_main_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(32): { goto call_lbl_32; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_main_Nparticles_0 || ____must_checkpoint_main_Nfr_0 || ____must_checkpoint_main_IszY_0 || ____must_checkpoint_main_IszX_0) { register_stack_vars(4, "main|Nparticles|0", &____must_checkpoint_main_Nparticles_0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", &____must_checkpoint_main_Nfr_0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", &____must_checkpoint_main_IszY_0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", &____must_checkpoint_main_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 523 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 524 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   char *usage; usage = ("openmp.out -x <dimX> -y <dimY> -z <Nfr> -np <Nparticles>") ;
@@ -5011,7 +4983,7 @@ int IszX;
 # 528 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("%s\n", usage);
 # 529 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_15; ;
 # 530 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 531 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5020,7 +4992,7 @@ int IszX;
 # 533 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf( "%s\n",usage );
 # 534 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_16; ;
 # 535 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 536 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5033,7 +5005,7 @@ int IszX;
 # 541 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: dimX input is incorrect");
 # 542 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+     int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_17; ;
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 544 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5042,7 +5014,7 @@ int IszX;
 # 546 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("dimX must be > 0\n");
 # 547 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_18; ;
 # 548 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 549 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5052,7 +5024,7 @@ int IszX;
 # 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: dimY input is incorrect");
 # 553 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+     int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_19; ;
 # 554 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 555 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5061,7 +5033,7 @@ int IszX;
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("dimY must be > 0\n");
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_20; ;
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 560 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5071,7 +5043,7 @@ int IszX;
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: Number of frames input is incorrect");
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+     int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_21; ;
 # 565 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5080,7 +5052,7 @@ int IszX;
 # 568 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("number of frames must be > 0\n");
 # 569 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_22; ;
 # 570 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 571 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5090,7 +5062,7 @@ int IszX;
 # 574 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: Number of particles input is incorrect");
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+     int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_23; ;
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5099,24 +5071,24 @@ int IszX;
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("Number of particles must be > 0\n");
 # 580 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_24; ;
 # 581 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 582 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    seed = ((int *)malloc_wrapper(sizeof(int) * Nparticles, 7756533236910311820UL, 0, 0)) ;
+  int *seed; seed = ((int *)malloc_wrapper(sizeof(int) * Nparticles, 7756533236910311921UL, 0, 0)) ;
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int i; ;
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (i = 0; i < Nparticles; i++) { seed[i] = time(0)*i; };
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    I = ((int *)malloc_wrapper(sizeof(int) * IszX * IszY * Nfr, 7756533236910311838UL, 0, 0)) ;
+  int *I; I = ((int *)malloc_wrapper(sizeof(int) * IszX * IszY * Nfr, 7756533236910311939UL, 0, 0)) ;
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+  long long start; start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 590 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 591 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_32: (____chimes_does_checkpoint_videoSequence_npm ? ( ({ calling((void*)videoSequence, 32, ____alias_loc_id_2, 0UL, 5, (size_t)(7756533236910311838UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311820UL)); (videoSequence)(I, IszX, IszY, Nfr, seed); }) ) : (({ calling_npm("videoSequence", ____alias_loc_id_2); videoSequence_npm(I, IszX, IszY, Nfr, seed); })));
+ ({ calling_npm("videoSequence", 0); videoSequence_npm(I, IszX, IszY, Nfr, seed); });
 # 592 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long endVideoSequence; endVideoSequence = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 593 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5132,13 +5104,13 @@ int IszX;
    float ____chimes_unroll_var_18; ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(seed, 7756533236910311820UL);
+ free_wrapper(seed, 7756533236910311921UL);
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(I, 7756533236910311838UL);
+ free_wrapper(I, 7756533236910311939UL);
 # 602 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+  int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_25; ;
 # 603 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); }
 long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; struct timeval tv;
  if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0); } ; ;
 # 32 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5146,17 +5118,17 @@ long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void 
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  gettimeofday(&tv, __null);
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_3, ____chimes_did_disable0); return (tv.tv_sec * 1000000) + tv.tv_usec;
+  long long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); }
 
 long long get_time() { return (____chimes_replaying ? get_time_resumable() : get_time_quick()); }
 
 float elapsed_time_quick(long long start_time, long long end_time) {const int ____chimes_did_disable1 = new_stack((void *)(&elapsed_time), "elapsed_time", &____must_manage_elapsed_time, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-        rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_4, ____chimes_did_disable1); return (float) (end_time - start_time) / (1000 * 1000);
+         float ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((float) (end_time - start_time) / (1000 * 1000)); rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_1, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "elapsed_time", &____must_manage_elapsed_time, ____alias_loc_id_1, ____chimes_did_disable1); }
 
 float elapsed_time(long long start_time, long long end_time) { return (____chimes_replaying ? elapsed_time_resumable(start_time, end_time) : elapsed_time_quick(start_time, end_time)); }
 
@@ -5164,13 +5136,13 @@ double roundDouble_quick(double value){const int ____chimes_did_disable2 = new_s
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int newValue; newValue = ((int)(value)) ;
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if (value - newValue < .5) {rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_5, ____chimes_did_disable2); return newValue; } else {rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_5, ____chimes_did_disable2); return newValue++; } ;
+ if (value - newValue < .5) { double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (newValue); rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_2, ____chimes_did_disable2); return ____chimes_ret_var_2; ; } else { double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (newValue++); rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_2, ____chimes_did_disable2); return ____chimes_ret_var_3; ; } ;
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_5, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "roundDouble", &____must_manage_roundDouble, ____alias_loc_id_2, ____chimes_did_disable2); }
 
 double roundDouble(double value) { return (____chimes_replaying ? roundDouble_resumable(value) : roundDouble_quick(value)); }
 
-void setIf_quick(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ){const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910309646UL), (size_t)(7756533236910309647UL), (size_t)(7756533236910309648UL), (size_t)(7756533236910309649UL)) ; ; ;
+void setIf_quick(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ){const int ____chimes_did_disable3 = new_stack((void *)(&setIf), "setIf", &____must_manage_setIf, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910309662UL), (size_t)(7756533236910309663UL), (size_t)(7756533236910309664UL), (size_t)(7756533236910309665UL)) ; ; ;
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5188,25 +5160,25 @@ void setIf_quick(int testValue, int newValue, int * array3D, int * dimX, int * d
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "setIf", &____must_manage_setIf, ____alias_loc_id_6, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "setIf", &____must_manage_setIf, ____alias_loc_id_3, ____chimes_did_disable3); }
 
 void setIf(int testValue, int newValue, int * array3D, int * dimX, int * dimY, int * dimZ) { (____chimes_replaying ? setIf_resumable(testValue, newValue, array3D, dimX, dimY, dimZ) : setIf_quick(testValue, newValue, array3D, dimX, dimY, dimZ)); }
 
 double randu_quick(int * seed, int index)
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(7756533236910309689UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&randu), "randu", &____must_manage_randu, 2, 0, (size_t)(7756533236910309709UL), (size_t)(0UL)) ; ; ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int num; num = (A * seed[index] + C) ;
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  seed[index] = num % M;
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_7, ____chimes_did_disable4); return fabs(seed[index]/((double) M));
+  double ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (fabs(seed[index]/((double) M))); rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_4, ____chimes_did_disable4); return ____chimes_ret_var_4; ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "randu", &____must_manage_randu, ____alias_loc_id_4, ____chimes_did_disable4); }
 
 double randu(int * seed, int index) { return (____chimes_replaying ? randu_resumable(seed, index) : randu_quick(seed, index)); }
 
-double randn_quick(int * seed, int index){const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(7756533236910309727UL), (size_t)(0UL)) ; ; ;
+double randn_quick(int * seed, int index){const int ____chimes_did_disable5 = new_stack((void *)(&randn), "randn", &____must_manage_randn, 2, 0, (size_t)(7756533236910309751UL), (size_t)(0UL)) ; ; ;
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double u; u = (({ calling_npm("randu", 0); randu_npm(seed, index); })) ;
@@ -5217,13 +5189,13 @@ double randn_quick(int * seed, int index){const int ____chimes_did_disable5 = ne
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double rt; rt = (-2 * log(u)) ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_8, ____chimes_did_disable5); return sqrt(rt)*cosine;
+  double ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (sqrt(rt)*cosine); rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_5, ____chimes_did_disable5); return ____chimes_ret_var_5; ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "randn", &____must_manage_randn, ____alias_loc_id_5, ____chimes_did_disable5); }
 
 double randn(int * seed, int index) { return (____chimes_replaying ? randn_resumable(seed, index) : randn_quick(seed, index)); }
 
-void addNoise_quick(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed){const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(7756533236910309831UL), (size_t)(7756533236910309832UL), (size_t)(7756533236910309833UL), (size_t)(7756533236910309834UL), (size_t)(7756533236910309835UL)) ; ; ;
+void addNoise_quick(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed){const int ____chimes_did_disable6 = new_stack((void *)(&addNoise), "addNoise", &____must_manage_addNoise, 5, 0, (size_t)(7756533236910309855UL), (size_t)(7756533236910309856UL), (size_t)(7756533236910309857UL), (size_t)(7756533236910309858UL), (size_t)(7756533236910309859UL)) ; ; ;
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5241,13 +5213,13 @@ void addNoise_quick(int * array3D, int * dimX, int * dimY, int * dimZ, int * see
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "addNoise", &____must_manage_addNoise, ____alias_loc_id_9, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "addNoise", &____must_manage_addNoise, ____alias_loc_id_6, ____chimes_did_disable6); }
 
 void addNoise(int * array3D, int * dimX, int * dimY, int * dimZ, int * seed) { (____chimes_replaying ? addNoise_resumable(array3D, dimX, dimY, dimZ, seed) : addNoise_quick(array3D, dimX, dimY, dimZ, seed)); }
 
 void strelDisk_quick(int * disk, int radius)
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(7756533236910309907UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable7 = new_stack((void *)(&strelDisk), "strelDisk", &____must_manage_strelDisk, 2, 0, (size_t)(7756533236910309931UL), (size_t)(0UL)) ; ; ;
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius * 2 - 1) ;
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5265,13 +5237,13 @@ void strelDisk_quick(int * disk, int radius)
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "strelDisk", &____must_manage_strelDisk, ____alias_loc_id_10, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "strelDisk", &____must_manage_strelDisk, ____alias_loc_id_7, ____chimes_did_disable7); }
 
 void strelDisk(int * disk, int radius) { (____chimes_replaying ? strelDisk_resumable(disk, radius) : strelDisk_quick(disk, radius)); }
 
 void dilate_matrix_quick(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error)
 # 148 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(7756533236910310058UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&dilate_matrix), "dilate_matrix", &____must_manage_dilate_matrix, 8, 0, (size_t)(7756533236910310082UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int startX; startX = (posX - error) ;
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5311,13 +5283,13 @@ void dilate_matrix_quick(int * matrix, int posX, int posY, int posZ, int dimX, i
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "dilate_matrix", &____must_manage_dilate_matrix, ____alias_loc_id_11, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "dilate_matrix", &____must_manage_dilate_matrix, ____alias_loc_id_8, ____chimes_did_disable8); }
 
 void dilate_matrix(int * matrix, int posX, int posY, int posZ, int dimX, int dimY, int dimZ, int error) { (____chimes_replaying ? dilate_matrix_resumable(matrix, posX, posY, posZ, dimX, dimY, dimZ, error) : dilate_matrix_quick(matrix, posX, posY, posZ, dimX, dimY, dimZ, error)); }
 
 void imdilate_disk_quick(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix)
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(7756533236910310151UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310156UL)) ; ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&imdilate_disk), "imdilate_disk", &____must_manage_imdilate_disk, 6, 0, (size_t)(7756533236910310175UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310180UL)) ; ; ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; int z; ;
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5339,11 +5311,11 @@ void imdilate_disk_quick(int * matrix, int dimX, int dimY, int dimZ, int error, 
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "imdilate_disk", &____must_manage_imdilate_disk, ____alias_loc_id_12, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "imdilate_disk", &____must_manage_imdilate_disk, ____alias_loc_id_9, ____chimes_did_disable9); }
 
 void imdilate_disk(int * matrix, int dimX, int dimY, int dimZ, int error, int * newMatrix) { (____chimes_replaying ? imdilate_disk_resumable(matrix, dimX, dimY, dimZ, error, newMatrix) : imdilate_disk_quick(matrix, dimX, dimY, dimZ, error, newMatrix)); }
 
-void getneighbors_quick(int * se, int numOnes, double * neighbors, int radius){const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 4, 0, (size_t)(7756533236910310246UL), (size_t)(0UL), (size_t)(7756533236910310248UL), (size_t)(0UL)) ; ; ;
+void getneighbors_quick(int * se, int numOnes, double * neighbors, int radius){const int ____chimes_did_disable10 = new_stack((void *)(&getneighbors), "getneighbors", &____must_manage_getneighbors, 4, 0, (size_t)(7756533236910310270UL), (size_t)(0UL), (size_t)(7756533236910310272UL), (size_t)(0UL)) ; ; ;
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int x; int y; ;
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5371,39 +5343,32 @@ void getneighbors_quick(int * se, int numOnes, double * neighbors, int radius){c
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "getneighbors", &____must_manage_getneighbors, ____alias_loc_id_13, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "getneighbors", &____must_manage_getneighbors, ____alias_loc_id_10, ____chimes_did_disable10); }
 
 void getneighbors(int * se, int numOnes, double * neighbors, int radius) { (____chimes_replaying ? getneighbors_resumable(se, numOnes, neighbors, radius) : getneighbors_quick(se, numOnes, neighbors, radius)); }
 
-void videoSequence_quick(int * I, int IszX, int IszY, int Nfr, int * seed){const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", &____must_manage_videoSequence, 5, 5, (size_t)(7756533236910310456UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310460UL), "videoSequence|I|0", &____must_checkpoint_videoSequence_I_0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "videoSequence|IszX|0", &____must_checkpoint_videoSequence_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0, "videoSequence|IszY|0", &____must_checkpoint_videoSequence_IszY_0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "videoSequence|Nfr|0", &____must_checkpoint_videoSequence_Nfr_0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "videoSequence|seed|0", &____must_checkpoint_videoSequence_seed_0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0) ; int pos;
-int yk;
-int xk;
-int y0;
-int x0;
-int max_size;
-int k;
- if (____must_checkpoint_videoSequence_pos_0 || ____must_checkpoint_videoSequence_yk_0 || ____must_checkpoint_videoSequence_xk_0 || ____must_checkpoint_videoSequence_y0_0 || ____must_checkpoint_videoSequence_x0_0 || ____must_checkpoint_videoSequence_max_size_0 || ____must_checkpoint_videoSequence_k_0) { register_stack_vars(7, "videoSequence|pos|0", &____must_checkpoint_videoSequence_pos_0, "i32", (void *)(&pos), (size_t)4, 0, 0, 0, "videoSequence|yk|0", &____must_checkpoint_videoSequence_yk_0, "i32", (void *)(&yk), (size_t)4, 0, 0, 0, "videoSequence|xk|0", &____must_checkpoint_videoSequence_xk_0, "i32", (void *)(&xk), (size_t)4, 0, 0, 0, "videoSequence|y0|0", &____must_checkpoint_videoSequence_y0_0, "i32", (void *)(&y0), (size_t)4, 0, 0, 0, "videoSequence|x0|0", &____must_checkpoint_videoSequence_x0_0, "i32", (void *)(&x0), (size_t)4, 0, 0, 0, "videoSequence|max_size|0", &____must_checkpoint_videoSequence_max_size_0, "i32", (void *)(&max_size), (size_t)4, 0, 0, 0, "videoSequence|k|0", &____must_checkpoint_videoSequence_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0); } ; ;
+void videoSequence_quick(int * I, int IszX, int IszY, int Nfr, int * seed){const int ____chimes_did_disable11 = new_stack((void *)(&videoSequence), "videoSequence", &____must_manage_videoSequence, 5, 1, (size_t)(7756533236910310480UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910310484UL), "videoSequence|IszX|0", &____must_checkpoint_videoSequence_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0) ; ; ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  ;
+ int k; ;
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    max_size = (IszX * IszY * Nfr) ;
+  int max_size; max_size = (IszX * IszY * Nfr) ;
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    x0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszY / 2.); })) ;
+  int x0; x0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszY / 2.); })) ;
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    y0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszX / 2.); })) ;
+  int y0; y0 = ((int)({ calling_npm("roundDouble", 0); roundDouble_npm(IszX / 2.); })) ;
 # 233 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  I[x0 *IszY *Nfr + y0 * Nfr + 0] = 1;
 # 234 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 235 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 236 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    ;
+ int xk; int yk; int pos; ;
 # 237 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(k = 1; k < Nfr; k++){
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   call_lbl_1: xk = (____chimes_does_checkpoint_abs_npm ? ( ({ calling((void*)abs, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (abs)(x0 + (k - 1)); }) ) : (({ calling_npm("abs", ____alias_loc_id_1); (*____chimes_extern_func_abs)(x0 + (k-1)); })));
+  xk = abs(x0 + (k-1));
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   call_lbl_2: yk = (____chimes_does_checkpoint_abs_npm ? ( ({ calling((void*)abs, 2, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (abs)(y0 - 2 * (k - 1)); }) ) : (({ calling_npm("abs", ____alias_loc_id_0); (*____chimes_extern_func_abs)(y0 - 2*(k-1)); })));
+  yk = abs(y0 - 2*(k-1));
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   pos = yk * IszY * Nfr + xk *Nfr + k;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5415,7 +5380,7 @@ int k;
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int *newMatrix; newMatrix = ((int *)malloc_wrapper(sizeof(int) * IszX * IszY * Nfr, 7756533236910310412UL, 0, 0)) ;
+  int *newMatrix; newMatrix = ((int *)malloc_wrapper(sizeof(int) * IszX * IszY * Nfr, 7756533236910310436UL, 0, 0)) ;
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  ({ calling_npm("imdilate_disk", 0); imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix); });
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5435,7 +5400,7 @@ int k;
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(newMatrix, 7756533236910310412UL);
+ free_wrapper(newMatrix, 7756533236910310436UL);
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5446,11 +5411,11 @@ int k;
 # 263 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  ({ calling_npm("addNoise", 0); addNoise_npm(I, &IszX, &IszY, &Nfr, seed); });
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "videoSequence", &____must_manage_videoSequence, ____alias_loc_id_14, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "videoSequence", &____must_manage_videoSequence, ____alias_loc_id_11, ____chimes_did_disable11); }
 
 void videoSequence(int * I, int IszX, int IszY, int Nfr, int * seed) { (____chimes_replaying ? videoSequence_resumable(I, IszX, IszY, Nfr, seed) : videoSequence_quick(I, IszX, IszY, Nfr, seed)); }
 
-double calcLikelihoodSum_quick(int * I, int * ind, int numOnes){const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(7756533236910310520UL), (size_t)(7756533236910310521UL), (size_t)(0UL)) ; ; ;
+double calcLikelihoodSum_quick(int * I, int * ind, int numOnes){const int ____chimes_did_disable12 = new_stack((void *)(&calcLikelihoodSum), "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, 3, 0, (size_t)(7756533236910310548UL), (size_t)(7756533236910310549UL), (size_t)(0UL)) ; ; ;
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   double likelihoodSum; likelihoodSum = (0.) ;
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5458,13 +5423,13 @@ double calcLikelihoodSum_quick(int * I, int * ind, int numOnes){const int ____ch
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (y = 0; y < numOnes; y++) { likelihoodSum += (pow((I[ind[y]] - 100),2) - pow((I[ind[y]]-228),2))/50.0; };
 # 277 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_15, ____chimes_did_disable12); return likelihoodSum;
+  double ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (likelihoodSum); rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_12, ____chimes_did_disable12); return ____chimes_ret_var_6; ;
 # 278 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "calcLikelihoodSum", &____must_manage_calcLikelihoodSum, ____alias_loc_id_12, ____chimes_did_disable12); }
 
 double calcLikelihoodSum(int * I, int * ind, int numOnes) { return (____chimes_replaying ? calcLikelihoodSum_resumable(I, ind, numOnes) : calcLikelihoodSum_quick(I, ind, numOnes)); }
 
-int findIndex_quick(double * CDF, int lengthCDF, double value){const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(7756533236910310572UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+int findIndex_quick(double * CDF, int lengthCDF, double value){const int ____chimes_did_disable13 = new_stack((void *)(&findIndex), "findIndex", &____must_manage_findIndex, 3, 0, (size_t)(7756533236910310608UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int index; index = (-1) ;
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5484,19 +5449,19 @@ int findIndex_quick(double * CDF, int lengthCDF, double value){const int ____chi
 # 296 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(index == -1){
 # 297 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_16, ____chimes_did_disable13); return lengthCDF-1;
+   int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (lengthCDF-1); rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_13, ____chimes_did_disable13); return ____chimes_ret_var_7; ;
 # 298 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_16, ____chimes_did_disable13); return index;
+  int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (index); rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_13, ____chimes_did_disable13); return ____chimes_ret_var_8; ;
 # 300 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "findIndex", &____must_manage_findIndex, ____alias_loc_id_13, ____chimes_did_disable13); }
 
 int findIndex(double * CDF, int lengthCDF, double value) { return (____chimes_replaying ? findIndex_resumable(CDF, lengthCDF, value) : findIndex_quick(CDF, lengthCDF, value)); }
 
-int findIndexBin_quick(double * CDF, int beginIndex, int endIndex, double value){const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(7756533236910310689UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+int findIndexBin_quick(double * CDF, int beginIndex, int endIndex, double value){const int ____chimes_did_disable14 = new_stack((void *)(&findIndexBin), "findIndexBin", &____must_manage_findIndexBin, 4, 0, (size_t)(7756533236910310749UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if (endIndex < beginIndex) {rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return -1; };
+ if (endIndex < beginIndex) { int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_9; ; };
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int middleIndex; middleIndex = (beginIndex + ((endIndex - beginIndex) / 2)) ;
 # 315 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5506,7 +5471,7 @@ int findIndexBin_quick(double * CDF, int beginIndex, int endIndex, double value)
  {
 # 318 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 319 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  if (middleIndex == 0) {rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return middleIndex; } else if (CDF[middleIndex-1] < value) {rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return middleIndex; } else if(CDF[middleIndex-1] == value)
+  if (middleIndex == 0) { int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_10; ; } else if (CDF[middleIndex-1] < value) { int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_11; ; } else if(CDF[middleIndex-1] == value)
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   {
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5514,21 +5479,21 @@ int findIndexBin_quick(double * CDF, int beginIndex, int endIndex, double value)
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    middleIndex--;
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return middleIndex;
+    int ____chimes_ret_var_12; ; ____chimes_ret_var_12 = (middleIndex); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_12; ;
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if (CDF[middleIndex] > value) {rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); }); };
+ if (CDF[middleIndex] > value) { int ____chimes_ret_var_13; ; ____chimes_ret_var_13 = (({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); })); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_13; ; };
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_17, ____chimes_did_disable14); return ({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); });
+  int ____chimes_ret_var_14; ; ____chimes_ret_var_14 = (({ calling_npm("findIndexBin", 0); findIndexBin_npm(CDF, middleIndex-1, endIndex, value); })); rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); return ____chimes_ret_var_14; ;
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "findIndexBin", &____must_manage_findIndexBin, ____alias_loc_id_14, ____chimes_did_disable14); }
 
 int findIndexBin(double * CDF, int beginIndex, int endIndex, double value) { return (____chimes_replaying ? findIndexBin_resumable(CDF, beginIndex, endIndex, value) : findIndexBin_quick(CDF, beginIndex, endIndex, value)); }
 
-void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter), "particleFilter", &____must_manage_particleFilter, 6, 0, (size_t)(7756533236910311668UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311672UL), (size_t)(0UL)) ; ; ;
+void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles){const int ____chimes_did_disable15 = new_stack((void *)(&particleFilter), "particleFilter", &____must_manage_particleFilter, 6, 0, (size_t)(7756533236910311728UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311732UL), (size_t)(0UL)) ; ; ;
 # 346 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 347 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int max_size; max_size = (IszX * IszY * Nfr) ;
@@ -5546,7 +5511,7 @@ void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int 
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   int diameter; diameter = (radius * 2 - 1) ;
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int *disk; disk = ((int *)malloc_wrapper(diameter * diameter * sizeof(int), 7756533236910310803UL, 0, 0)) ;
+  int *disk; disk = ((int *)malloc_wrapper(diameter * diameter * sizeof(int), 7756533236910310863UL, 0, 0)) ;
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  ({ calling_npm("strelDisk", 0); strelDisk_npm(disk, radius); });
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5564,7 +5529,7 @@ void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int 
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *objxy; objxy = ((double *)malloc_wrapper(countOnes * 2 * sizeof(double), 7756533236910311084UL, 0, 0)) ;
+  double *objxy; objxy = ((double *)malloc_wrapper(countOnes * 2 * sizeof(double), 7756533236910311144UL, 0, 0)) ;
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  ({ calling_npm("getneighbors", 0); getneighbors_npm(disk, countOnes, objxy, radius); });
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5574,7 +5539,7 @@ void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int 
    float ____chimes_unroll_var_0; ____chimes_unroll_var_0 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, get_neighbors); })) ; printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_0);
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *weights; weights = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311249UL, 0, 0)) ;
+  double *weights; weights = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311309UL, 0, 0)) ;
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(weights, Nparticles) private(x)
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5589,21 +5554,21 @@ void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int 
    float ____chimes_unroll_var_1; ____chimes_unroll_var_1 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(get_neighbors, get_weights); })) ; printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_1);
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *likelihood; likelihood = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311202UL, 0, 0)) ;
+  double *likelihood; likelihood = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311262UL, 0, 0)) ;
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *arrayX; arrayX = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311076UL, 0, 0)) ;
+  double *arrayX; arrayX = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311136UL, 0, 0)) ;
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *arrayY; arrayY = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311092UL, 0, 0)) ;
+  double *arrayY; arrayY = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311152UL, 0, 0)) ;
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *xj; xj = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311587UL, 0, 0)) ;
+  double *xj; xj = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311647UL, 0, 0)) ;
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *yj; yj = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311597UL, 0, 0)) ;
+  double *yj; yj = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311657UL, 0, 0)) ;
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *CDF; CDF = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311452UL, 0, 0)) ;
+  double *CDF; CDF = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311512UL, 0, 0)) ;
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  double *u; u = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311500UL, 0, 0)) ;
+  double *u; u = ((double *)malloc_wrapper(sizeof(double) * Nparticles, 7756533236910311560UL, 0, 0)) ;
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  int *ind; ind = ((int *)malloc_wrapper(sizeof(int) * countOnes * Nparticles, 7756533236910311125UL, 0, 0)) ;
+  int *ind; ind = ((int *)malloc_wrapper(sizeof(int) * countOnes * Nparticles, 7756533236910311185UL, 0, 0)) ;
 # 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x)
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5818,40 +5783,37 @@ void particleFilter_quick(int * I, int IszX, int IszY, int Nfr, int * seed, int 
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(disk, 7756533236910310803UL);
+ free_wrapper(disk, 7756533236910310863UL);
 # 511 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(objxy, 7756533236910311084UL);
+ free_wrapper(objxy, 7756533236910311144UL);
 # 512 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(weights, 7756533236910311249UL);
+ free_wrapper(weights, 7756533236910311309UL);
 # 513 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(likelihood, 7756533236910311202UL);
+ free_wrapper(likelihood, 7756533236910311262UL);
 # 514 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(xj, 7756533236910311587UL);
+ free_wrapper(xj, 7756533236910311647UL);
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(yj, 7756533236910311597UL);
+ free_wrapper(yj, 7756533236910311657UL);
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(arrayX, 7756533236910311076UL);
+ free_wrapper(arrayX, 7756533236910311136UL);
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(arrayY, 7756533236910311092UL);
+ free_wrapper(arrayY, 7756533236910311152UL);
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(CDF, 7756533236910311452UL);
+ free_wrapper(CDF, 7756533236910311512UL);
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(u, 7756533236910311500UL);
+ free_wrapper(u, 7756533236910311560UL);
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(ind, 7756533236910311125UL);
+ free_wrapper(ind, 7756533236910311185UL);
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-rm_stack(false, 0UL, "particleFilter", &____must_manage_particleFilter, ____alias_loc_id_18, ____chimes_did_disable15); }
+rm_stack(false, 0UL, "particleFilter", &____must_manage_particleFilter, ____alias_loc_id_15, ____chimes_did_disable15); }
 
 void particleFilter(int * I, int IszX, int IszY, int Nfr, int * seed, int Nparticles) { (____chimes_replaying ? particleFilter_resumable(I, IszX, IszY, Nfr, seed, Nparticles) : particleFilter_quick(I, IszX, IszY, Nfr, seed, Nparticles)); }
 
-int main_quick(int argc, char * argv[]){const int ____chimes_did_disable16 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(7756533236910311898UL)) ; long long start;
-int *I;
-int *seed;
-int Nparticles;
+int main_quick(int argc, char * argv[]){const int ____chimes_did_disable16 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(7756533236910312002UL)) ; int Nparticles;
 int Nfr;
 int IszY;
 int IszX;
- if (____must_checkpoint_main_start_0 || ____must_checkpoint_main_I_0 || ____must_checkpoint_main_seed_0 || ____must_checkpoint_main_Nparticles_0 || ____must_checkpoint_main_Nfr_0 || ____must_checkpoint_main_IszY_0 || ____must_checkpoint_main_IszX_0) { register_stack_vars(7, "main|start|0", &____must_checkpoint_main_start_0, "i64", (void *)(&start), (size_t)8, 0, 0, 0, "main|I|0", &____must_checkpoint_main_I_0, "i32*", (void *)(&I), (size_t)8, 1, 0, 0, "main|seed|0", &____must_checkpoint_main_seed_0, "i32*", (void *)(&seed), (size_t)8, 1, 0, 0, "main|Nparticles|0", &____must_checkpoint_main_Nparticles_0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", &____must_checkpoint_main_Nfr_0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", &____must_checkpoint_main_IszY_0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", &____must_checkpoint_main_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0); } ; ;
+ if (____must_checkpoint_main_Nparticles_0 || ____must_checkpoint_main_Nfr_0 || ____must_checkpoint_main_IszY_0 || ____must_checkpoint_main_IszX_0) { register_stack_vars(4, "main|Nparticles|0", &____must_checkpoint_main_Nparticles_0, "i32", (void *)(&Nparticles), (size_t)4, 0, 0, 0, "main|Nfr|0", &____must_checkpoint_main_Nfr_0, "i32", (void *)(&Nfr), (size_t)4, 0, 0, 0, "main|IszY|0", &____must_checkpoint_main_IszY_0, "i32", (void *)(&IszY), (size_t)4, 0, 0, 0, "main|IszX|0", &____must_checkpoint_main_IszX_0, "i32", (void *)(&IszX), (size_t)4, 0, 0, 0); } ; ;
 # 523 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 524 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   char *usage; usage = ("openmp.out -x <dimX> -y <dimY> -z <Nfr> -np <Nparticles>") ;
@@ -5863,7 +5825,7 @@ int IszX;
 # 528 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("%s\n", usage);
 # 529 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_15; ;
 # 530 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 531 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5872,7 +5834,7 @@ int IszX;
 # 533 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf( "%s\n",usage );
 # 534 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_16; ;
 # 535 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 536 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5885,7 +5847,7 @@ int IszX;
 # 541 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: dimX input is incorrect");
 # 542 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+     int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_17; ;
 # 543 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 544 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5894,7 +5856,7 @@ int IszX;
 # 546 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("dimX must be > 0\n");
 # 547 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_18; ;
 # 548 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 549 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5904,7 +5866,7 @@ int IszX;
 # 552 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: dimY input is incorrect");
 # 553 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+     int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_19; ;
 # 554 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 555 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5913,7 +5875,7 @@ int IszX;
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("dimY must be > 0\n");
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_20; ;
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 560 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5923,7 +5885,7 @@ int IszX;
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: Number of frames input is incorrect");
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+     int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_21; ;
 # 565 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5932,7 +5894,7 @@ int IszX;
 # 568 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("number of frames must be > 0\n");
 # 569 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_22; ;
 # 570 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 571 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5942,7 +5904,7 @@ int IszX;
 # 574 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
     printf("ERROR: Number of particles input is incorrect");
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+     int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_23; ;
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5951,24 +5913,24 @@ int IszX;
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   printf("Number of particles must be > 0\n");
 # 580 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+   int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_24; ;
 # 581 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 582 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    seed = ((int *)malloc_wrapper(sizeof(int) * Nparticles, 7756533236910311820UL, 0, 0)) ;
+  int *seed; seed = ((int *)malloc_wrapper(sizeof(int) * Nparticles, 7756533236910311921UL, 0, 0)) ;
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int i; ;
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (i = 0; i < Nparticles; i++) { seed[i] = time(0)*i; };
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 588 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    I = ((int *)malloc_wrapper(sizeof(int) * IszX * IszY * Nfr, 7756533236910311838UL, 0, 0)) ;
+  int *I; I = ((int *)malloc_wrapper(sizeof(int) * IszX * IszY * Nfr, 7756533236910311939UL, 0, 0)) ;
 # 589 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-    start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
+  long long start; start = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 590 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 591 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  call_lbl_32: (____chimes_does_checkpoint_videoSequence_npm ? ( ({ calling((void*)videoSequence, 32, ____alias_loc_id_2, 0UL, 5, (size_t)(7756533236910311838UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7756533236910311820UL)); videoSequence_quick(I, IszX, IszY, Nfr, seed); }) ) : (({ calling_npm("videoSequence", ____alias_loc_id_2); videoSequence_npm(I, IszX, IszY, Nfr, seed); })));
+ ({ calling_npm("videoSequence", 0); videoSequence_npm(I, IszX, IszY, Nfr, seed); });
 # 592 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   long long endVideoSequence; endVideoSequence = (({ calling_npm("get_time", 0); get_time_npm(); })) ;
 # 593 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -5984,13 +5946,13 @@ int IszX;
    float ____chimes_unroll_var_18; ____chimes_unroll_var_18 = (({ calling_npm("elapsed_time", 0); elapsed_time_npm(start, endParticleFilter); })) ; printf("ENTIRE PROGRAM TOOK %f\n", ____chimes_unroll_var_18);
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(seed, 7756533236910311820UL);
+ free_wrapper(seed, 7756533236910311921UL);
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(I, 7756533236910311838UL);
+ free_wrapper(I, 7756533236910311939UL);
 # 602 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable16); return 0;
+  int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); return ____chimes_ret_var_25; ;
 # 603 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-}
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_16, ____chimes_did_disable16); }
 
 int main(int argc, char * argv[]) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -6002,13 +5964,13 @@ long long get_time_npm() {
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  gettimeofday(&tv, __null);
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- return (tv.tv_sec * 1000000) + tv.tv_usec;
+  long long ____chimes_ret_var_0; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); return ____chimes_ret_var_0; ;
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
 
 float elapsed_time_npm(long long start_time, long long end_time) {
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-        return (float) (end_time - start_time) / (1000 * 1000);
+         float ____chimes_ret_var_1; ____chimes_ret_var_1 = ((float) (end_time - start_time) / (1000 * 1000)); return ____chimes_ret_var_1; ;
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
 
@@ -6016,7 +5978,7 @@ double roundDouble_npm(double value){
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int newValue = (int)(value);
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if (value - newValue < .5) {return newValue; } else {return newValue++; } ;
+ if (value - newValue < .5) { double ____chimes_ret_var_2; ____chimes_ret_var_2 = (newValue); return ____chimes_ret_var_2; ; } else { double ____chimes_ret_var_3; ____chimes_ret_var_3 = (newValue++); return ____chimes_ret_var_3; ; } ;
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
 
@@ -6048,7 +6010,7 @@ double randu_npm(int * seed, int index)
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  seed[index] = num % M;
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- return fabs(seed[index]/((double) M));
+  double ____chimes_ret_var_4; ____chimes_ret_var_4 = (fabs(seed[index]/((double) M))); return ____chimes_ret_var_4; ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
 
@@ -6063,7 +6025,7 @@ double randn_npm(int * seed, int index){
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  double rt = -2*log(u);
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- return sqrt(rt)*cosine;
+  double ____chimes_ret_var_5; ____chimes_ret_var_5 = (sqrt(rt)*cosine); return ____chimes_ret_var_5; ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
 
@@ -6228,9 +6190,9 @@ void videoSequence_npm(int * I, int IszX, int IszY, int Nfr, int * seed){
 # 237 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for(k = 1; k < Nfr; k++){
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  xk = (*____chimes_extern_func_abs)(x0 + (k-1));
+  xk = abs(x0 + (k-1));
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  yk = (*____chimes_extern_func_abs)(y0 - 2*(k-1));
+  yk = abs(y0 - 2*(k-1));
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   pos = yk * IszY * Nfr + xk *Nfr + k;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6242,7 +6204,7 @@ void videoSequence_npm(int * I, int IszX, int IszY, int Nfr, int * seed){
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- int * newMatrix = (int *)malloc_wrapper(sizeof(int)*IszX*IszY*Nfr, 7756533236910310412UL, 0, 0);
+ int * newMatrix = (int *)malloc_wrapper(sizeof(int)*IszX*IszY*Nfr, 7756533236910310436UL, 0, 0);
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  imdilate_disk_npm(I, IszX, IszY, Nfr, 5, newMatrix);
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6262,7 +6224,7 @@ void videoSequence_npm(int * I, int IszX, int IszY, int Nfr, int * seed){
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(newMatrix, 7756533236910310412UL);
+ free_wrapper(newMatrix, 7756533236910310436UL);
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6283,7 +6245,7 @@ double calcLikelihoodSum_npm(int * I, int * ind, int numOnes){
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  for (y = 0; y < numOnes; y++) { likelihoodSum += (pow((I[ind[y]] - 100),2) - pow((I[ind[y]]-228),2))/50.0; };
 # 277 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- return likelihoodSum;
+  double ____chimes_ret_var_6; ____chimes_ret_var_6 = (likelihoodSum); return ____chimes_ret_var_6; ;
 # 278 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
 
@@ -6307,17 +6269,17 @@ int findIndex_npm(double * CDF, int lengthCDF, double value){
 # 296 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  if(index == -1){
 # 297 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  return lengthCDF-1;
+   int ____chimes_ret_var_7; ____chimes_ret_var_7 = (lengthCDF-1); return ____chimes_ret_var_7; ;
 # 298 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- return index;
+  int ____chimes_ret_var_8; ____chimes_ret_var_8 = (index); return ____chimes_ret_var_8; ;
 # 300 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
 
 int findIndexBin_npm(double * CDF, int beginIndex, int endIndex, double value){
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if (endIndex < beginIndex) {return -1; };
+ if (endIndex < beginIndex) { int ____chimes_ret_var_9; ____chimes_ret_var_9 = (-1); return ____chimes_ret_var_9; ; };
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int middleIndex = beginIndex + ((endIndex - beginIndex)/2);
 # 315 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6327,7 +6289,7 @@ int findIndexBin_npm(double * CDF, int beginIndex, int endIndex, double value){
  {
 # 318 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 319 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-  if (middleIndex == 0) {return middleIndex; } else if (CDF[middleIndex-1] < value) {return middleIndex; } else if(CDF[middleIndex-1] == value)
+  if (middleIndex == 0) { int ____chimes_ret_var_10; ____chimes_ret_var_10 = (middleIndex); return ____chimes_ret_var_10; ; } else if (CDF[middleIndex-1] < value) { int ____chimes_ret_var_11; ____chimes_ret_var_11 = (middleIndex); return ____chimes_ret_var_11; ; } else if(CDF[middleIndex-1] == value)
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   {
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6335,15 +6297,15 @@ int findIndexBin_npm(double * CDF, int beginIndex, int endIndex, double value){
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
    middleIndex--;
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
-   return middleIndex;
+    int ____chimes_ret_var_12; ____chimes_ret_var_12 = (middleIndex); return ____chimes_ret_var_12; ;
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
   }
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- if (CDF[middleIndex] > value) {return findIndexBin_npm(CDF, beginIndex, middleIndex+1, value); };
+ if (CDF[middleIndex] > value) { int ____chimes_ret_var_13; ____chimes_ret_var_13 = (findIndexBin_npm(CDF, beginIndex, middleIndex+1, value)); return ____chimes_ret_var_13; ; };
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- return findIndexBin_npm(CDF, middleIndex-1, endIndex, value);
+  int ____chimes_ret_var_14; ____chimes_ret_var_14 = (findIndexBin_npm(CDF, middleIndex-1, endIndex, value)); return ____chimes_ret_var_14; ;
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
 
@@ -6365,7 +6327,7 @@ void particleFilter_npm(int * I, int IszX, int IszY, int Nfr, int * seed, int Np
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  int diameter = radius*2 - 1;
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- int * disk = (int *)malloc_wrapper(diameter*diameter*sizeof(int), 7756533236910310803UL, 0, 0);
+ int * disk = (int *)malloc_wrapper(diameter*diameter*sizeof(int), 7756533236910310863UL, 0, 0);
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  strelDisk_npm(disk, radius);
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6383,7 +6345,7 @@ void particleFilter_npm(int * I, int IszX, int IszY, int Nfr, int * seed, int Np
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- double * objxy = (double *)malloc_wrapper(countOnes*2*sizeof(double), 7756533236910311084UL, 0, 0);
+ double * objxy = (double *)malloc_wrapper(countOnes*2*sizeof(double), 7756533236910311144UL, 0, 0);
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  getneighbors_npm(disk, countOnes, objxy, radius);
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6393,7 +6355,7 @@ void particleFilter_npm(int * I, int IszX, int IszY, int Nfr, int * seed, int Np
   float ____chimes_unroll_var_0 = elapsed_time_npm(start, get_neighbors); printf("TIME TO GET NEIGHBORS TOOK: %f\n", ____chimes_unroll_var_0);
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- double * weights = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311249UL, 0, 0);
+ double * weights = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311309UL, 0, 0);
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(weights, Nparticles) private(x)
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6408,21 +6370,21 @@ void particleFilter_npm(int * I, int IszX, int IszY, int Nfr, int * seed, int Np
   float ____chimes_unroll_var_1 = elapsed_time_npm(get_neighbors, get_weights); printf("TIME TO GET WEIGHTSTOOK: %f\n", ____chimes_unroll_var_1);
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- double * likelihood = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311202UL, 0, 0);
+ double * likelihood = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311262UL, 0, 0);
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- double * arrayX = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311076UL, 0, 0);
+ double * arrayX = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311136UL, 0, 0);
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- double * arrayY = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311092UL, 0, 0);
+ double * arrayY = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311152UL, 0, 0);
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- double * xj = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311587UL, 0, 0);
+ double * xj = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311647UL, 0, 0);
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- double * yj = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311597UL, 0, 0);
+ double * yj = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311657UL, 0, 0);
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- double * CDF = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311452UL, 0, 0);
+ double * CDF = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311512UL, 0, 0);
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- double * u = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311500UL, 0, 0);
+ double * u = (double *)malloc_wrapper(sizeof(double)*Nparticles, 7756533236910311560UL, 0, 0);
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- int * ind = (int*)malloc_wrapper(sizeof(int)*countOnes*Nparticles, 7756533236910311125UL, 0, 0);
+ int * ind = (int*)malloc_wrapper(sizeof(int)*countOnes*Nparticles, 7756533236910311185UL, 0, 0);
 # 388 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 #pragma omp parallel for shared(arrayX, arrayY, xe, ye) private(x)
 # 389 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
@@ -6637,27 +6599,27 @@ void particleFilter_npm(int * I, int IszX, int IszY, int Nfr, int * seed, int Np
 # 509 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
  }
 # 510 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(disk, 7756533236910310803UL);
+ free_wrapper(disk, 7756533236910310863UL);
 # 511 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(objxy, 7756533236910311084UL);
+ free_wrapper(objxy, 7756533236910311144UL);
 # 512 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(weights, 7756533236910311249UL);
+ free_wrapper(weights, 7756533236910311309UL);
 # 513 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(likelihood, 7756533236910311202UL);
+ free_wrapper(likelihood, 7756533236910311262UL);
 # 514 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(xj, 7756533236910311587UL);
+ free_wrapper(xj, 7756533236910311647UL);
 # 515 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(yj, 7756533236910311597UL);
+ free_wrapper(yj, 7756533236910311657UL);
 # 516 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(arrayX, 7756533236910311076UL);
+ free_wrapper(arrayX, 7756533236910311136UL);
 # 517 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(arrayY, 7756533236910311092UL);
+ free_wrapper(arrayY, 7756533236910311152UL);
 # 518 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(CDF, 7756533236910311452UL);
+ free_wrapper(CDF, 7756533236910311512UL);
 # 519 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(u, 7756533236910311500UL);
+ free_wrapper(u, 7756533236910311560UL);
 # 520 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
- free_wrapper(ind, 7756533236910311125UL);
+ free_wrapper(ind, 7756533236910311185UL);
 # 521 "/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c"
 }
 
@@ -6666,44 +6628,40 @@ void particleFilter_npm(int * I, int IszX, int IszY, int Nfr, int * seed, int Np
 
 
 static int module_init() {
-    init_module(7756533236910309485UL, 42, 17, 20, 20, 16, 1, 17, 60, 2, 1,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (7756533236910309485UL + 774UL),
-                           &____alias_loc_id_1, (unsigned)12, (unsigned)0, (unsigned)0, (7756533236910309485UL + 765UL), (7756533236910309485UL + 766UL), (7756533236910309485UL + 767UL), (7756533236910309485UL + 768UL), (7756533236910309485UL + 769UL), (7756533236910309485UL + 770UL), (7756533236910309485UL + 771UL), (7756533236910309485UL + 772UL), (7756533236910309485UL + 773UL), (7756533236910309485UL + 775UL), (7756533236910309485UL + 776UL), (7756533236910309485UL + 971UL),
-                           &____alias_loc_id_2, (unsigned)6, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2199UL), (7756533236910309485UL + 2200UL), (7756533236910309485UL + 2201UL), (7756533236910309485UL + 2202UL), (7756533236910309485UL + 2335UL), (7756533236910309485UL + 2457UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1UL),
-                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (7756533236910309485UL + 15UL), (7756533236910309485UL + 16UL),
-                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (7756533236910309485UL + 29UL), (7756533236910309485UL + 30UL), (7756533236910309485UL + 31UL),
-                           &____alias_loc_id_6, (unsigned)10, (unsigned)0, (unsigned)0, (7756533236910309485UL + 57UL), (7756533236910309485UL + 58UL), (7756533236910309485UL + 59UL), (7756533236910309485UL + 60UL), (7756533236910309485UL + 61UL), (7756533236910309485UL + 62UL), (7756533236910309485UL + 63UL), (7756533236910309485UL + 64UL), (7756533236910309485UL + 65UL), (7756533236910309485UL + 161UL),
-                           &____alias_loc_id_7, (unsigned)4, (unsigned)0, (unsigned)0, (7756533236910309485UL + 165UL), (7756533236910309485UL + 166UL), (7756533236910309485UL + 167UL), (7756533236910309485UL + 204UL),
-                           &____alias_loc_id_8, (unsigned)6, (unsigned)0, (unsigned)0, (7756533236910309485UL + 207UL), (7756533236910309485UL + 208UL), (7756533236910309485UL + 209UL), (7756533236910309485UL + 210UL), (7756533236910309485UL + 211UL), (7756533236910309485UL + 212UL),
-                           &____alias_loc_id_9, (unsigned)9, (unsigned)0, (unsigned)0, (7756533236910309485UL + 247UL), (7756533236910309485UL + 248UL), (7756533236910309485UL + 249UL), (7756533236910309485UL + 250UL), (7756533236910309485UL + 251UL), (7756533236910309485UL + 252UL), (7756533236910309485UL + 253UL), (7756533236910309485UL + 254UL), (7756533236910309485UL + 346UL),
-                            &____alias_loc_id_10, (unsigned)7, (unsigned)0, (unsigned)0, (7756533236910309485UL + 351UL), (7756533236910309485UL + 352UL), (7756533236910309485UL + 353UL), (7756533236910309485UL + 354UL), (7756533236910309485UL + 355UL), (7756533236910309485UL + 356UL), (7756533236910309485UL + 422UL),
-                            &____alias_loc_id_11, (unsigned)16, (unsigned)0, (unsigned)0, (7756533236910309485UL + 426UL), (7756533236910309485UL + 427UL), (7756533236910309485UL + 428UL), (7756533236910309485UL + 429UL), (7756533236910309485UL + 430UL), (7756533236910309485UL + 431UL), (7756533236910309485UL + 432UL), (7756533236910309485UL + 433UL), (7756533236910309485UL + 434UL), (7756533236910309485UL + 435UL), (7756533236910309485UL + 436UL), (7756533236910309485UL + 437UL), (7756533236910309485UL + 438UL), (7756533236910309485UL + 439UL), (7756533236910309485UL + 440UL), (7756533236910309485UL + 573UL),
-                            &____alias_loc_id_12, (unsigned)9, (unsigned)0, (unsigned)0, (7756533236910309485UL + 581UL), (7756533236910309485UL + 582UL), (7756533236910309485UL + 583UL), (7756533236910309485UL + 584UL), (7756533236910309485UL + 585UL), (7756533236910309485UL + 586UL), (7756533236910309485UL + 587UL), (7756533236910309485UL + 588UL), (7756533236910309485UL + 589UL),
-                            &____alias_loc_id_13, (unsigned)10, (unsigned)0, (unsigned)0, (7756533236910309485UL + 672UL), (7756533236910309485UL + 673UL), (7756533236910309485UL + 674UL), (7756533236910309485UL + 675UL), (7756533236910309485UL + 676UL), (7756533236910309485UL + 677UL), (7756533236910309485UL + 678UL), (7756533236910309485UL + 679UL), (7756533236910309485UL + 680UL), (7756533236910309485UL + 763UL),
-                            &____alias_loc_id_14, (unsigned)15, (unsigned)0, (unsigned)0, (7756533236910309485UL + 765UL), (7756533236910309485UL + 766UL), (7756533236910309485UL + 767UL), (7756533236910309485UL + 768UL), (7756533236910309485UL + 769UL), (7756533236910309485UL + 770UL), (7756533236910309485UL + 771UL), (7756533236910309485UL + 772UL), (7756533236910309485UL + 773UL), (7756533236910309485UL + 775UL), (7756533236910309485UL + 776UL), (7756533236910309485UL + 777UL), (7756533236910309485UL + 778UL), (7756533236910309485UL + 779UL), (7756533236910309485UL + 971UL),
-                            &____alias_loc_id_15, (unsigned)5, (unsigned)0, (unsigned)0, (7756533236910309485UL + 979UL), (7756533236910309485UL + 980UL), (7756533236910309485UL + 981UL), (7756533236910309485UL + 982UL), (7756533236910309485UL + 983UL),
-                            &____alias_loc_id_16, (unsigned)6, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1038UL), (7756533236910309485UL + 1039UL), (7756533236910309485UL + 1040UL), (7756533236910309485UL + 1041UL), (7756533236910309485UL + 1042UL), (7756533236910309485UL + 1043UL),
-                            &____alias_loc_id_17, (unsigned)6, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1090UL), (7756533236910309485UL + 1091UL), (7756533236910309485UL + 1092UL), (7756533236910309485UL + 1093UL), (7756533236910309485UL + 1094UL), (7756533236910309485UL + 1095UL),
-                            &____alias_loc_id_18, (unsigned)72, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1208UL), (7756533236910309485UL + 1209UL), (7756533236910309485UL + 1210UL), (7756533236910309485UL + 1211UL), (7756533236910309485UL + 1212UL), (7756533236910309485UL + 1213UL), (7756533236910309485UL + 1214UL), (7756533236910309485UL + 1215UL), (7756533236910309485UL + 1216UL), (7756533236910309485UL + 1217UL), (7756533236910309485UL + 1218UL), (7756533236910309485UL + 1219UL), (7756533236910309485UL + 1220UL), (7756533236910309485UL + 1221UL), (7756533236910309485UL + 1222UL), (7756533236910309485UL + 1223UL), (7756533236910309485UL + 1224UL), (7756533236910309485UL + 1225UL), (7756533236910309485UL + 1226UL), (7756533236910309485UL + 1227UL), (7756533236910309485UL + 1228UL), (7756533236910309485UL + 1229UL), (7756533236910309485UL + 1230UL), (7756533236910309485UL + 1231UL), (7756533236910309485UL + 1232UL), (7756533236910309485UL + 1233UL), (7756533236910309485UL + 1234UL), (7756533236910309485UL + 1235UL), (7756533236910309485UL + 1236UL), (7756533236910309485UL + 1237UL), (7756533236910309485UL + 1238UL), (7756533236910309485UL + 1239UL), (7756533236910309485UL + 1240UL), (7756533236910309485UL + 1241UL), (7756533236910309485UL + 1242UL), (7756533236910309485UL + 1243UL), (7756533236910309485UL + 1244UL), (7756533236910309485UL + 1245UL), (7756533236910309485UL + 1246UL), (7756533236910309485UL + 1247UL), (7756533236910309485UL + 1248UL), (7756533236910309485UL + 1249UL), (7756533236910309485UL + 1250UL), (7756533236910309485UL + 1251UL), (7756533236910309485UL + 1252UL), (7756533236910309485UL + 1253UL), (7756533236910309485UL + 1254UL), (7756533236910309485UL + 1255UL), (7756533236910309485UL + 1256UL), (7756533236910309485UL + 1257UL), (7756533236910309485UL + 1258UL), (7756533236910309485UL + 1259UL), (7756533236910309485UL + 1260UL), (7756533236910309485UL + 1261UL), (7756533236910309485UL + 1262UL), (7756533236910309485UL + 1263UL), (7756533236910309485UL + 1264UL), (7756533236910309485UL + 1265UL), (7756533236910309485UL + 1266UL), (7756533236910309485UL + 1267UL), (7756533236910309485UL + 1268UL), (7756533236910309485UL + 1269UL), (7756533236910309485UL + 1270UL), (7756533236910309485UL + 1591UL), (7756533236910309485UL + 1607UL), (7756533236910309485UL + 1640UL), (7756533236910309485UL + 1717UL), (7756533236910309485UL + 1764UL), (7756533236910309485UL + 1967UL), (7756533236910309485UL + 2015UL), (7756533236910309485UL + 2102UL), (7756533236910309485UL + 2112UL),
-                            &____alias_loc_id_19, (unsigned)9, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2191UL), (7756533236910309485UL + 2192UL), (7756533236910309485UL + 2193UL), (7756533236910309485UL + 2194UL), (7756533236910309485UL + 2203UL), (7756533236910309485UL + 2204UL), (7756533236910309485UL + 2205UL), (7756533236910309485UL + 2206UL), (7756533236910309485UL + 2207UL),
-                            "get_time", (void *)(&get_time_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (7756533236910309485UL + 1UL), (7756533236910309485UL + 2456UL), 0UL,
+    init_module(7756533236910309485UL, 42, 17, 6, 17, 16, 0, 16, 60, 0, 1,
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1UL), (7756533236910309485UL + 2UL),
+                           &____alias_loc_id_1, (unsigned)3, (unsigned)0, (unsigned)0, (7756533236910309485UL + 19UL), (7756533236910309485UL + 20UL), (7756533236910309485UL + 21UL),
+                           &____alias_loc_id_2, (unsigned)5, (unsigned)0, (unsigned)0, (7756533236910309485UL + 37UL), (7756533236910309485UL + 38UL), (7756533236910309485UL + 39UL), (7756533236910309485UL + 40UL), (7756533236910309485UL + 41UL),
+                           &____alias_loc_id_3, (unsigned)10, (unsigned)0, (unsigned)0, (7756533236910309485UL + 73UL), (7756533236910309485UL + 74UL), (7756533236910309485UL + 75UL), (7756533236910309485UL + 76UL), (7756533236910309485UL + 77UL), (7756533236910309485UL + 78UL), (7756533236910309485UL + 79UL), (7756533236910309485UL + 80UL), (7756533236910309485UL + 81UL), (7756533236910309485UL + 177UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (7756533236910309485UL + 181UL), (7756533236910309485UL + 182UL), (7756533236910309485UL + 183UL), (7756533236910309485UL + 184UL), (7756533236910309485UL + 224UL),
+                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (unsigned)0, (7756533236910309485UL + 227UL), (7756533236910309485UL + 228UL), (7756533236910309485UL + 229UL), (7756533236910309485UL + 230UL), (7756533236910309485UL + 231UL), (7756533236910309485UL + 232UL), (7756533236910309485UL + 233UL),
+                           &____alias_loc_id_6, (unsigned)9, (unsigned)0, (unsigned)0, (7756533236910309485UL + 271UL), (7756533236910309485UL + 272UL), (7756533236910309485UL + 273UL), (7756533236910309485UL + 274UL), (7756533236910309485UL + 275UL), (7756533236910309485UL + 276UL), (7756533236910309485UL + 277UL), (7756533236910309485UL + 278UL), (7756533236910309485UL + 370UL),
+                           &____alias_loc_id_7, (unsigned)7, (unsigned)0, (unsigned)0, (7756533236910309485UL + 375UL), (7756533236910309485UL + 376UL), (7756533236910309485UL + 377UL), (7756533236910309485UL + 378UL), (7756533236910309485UL + 379UL), (7756533236910309485UL + 380UL), (7756533236910309485UL + 446UL),
+                           &____alias_loc_id_8, (unsigned)16, (unsigned)0, (unsigned)0, (7756533236910309485UL + 450UL), (7756533236910309485UL + 451UL), (7756533236910309485UL + 452UL), (7756533236910309485UL + 453UL), (7756533236910309485UL + 454UL), (7756533236910309485UL + 455UL), (7756533236910309485UL + 456UL), (7756533236910309485UL + 457UL), (7756533236910309485UL + 458UL), (7756533236910309485UL + 459UL), (7756533236910309485UL + 460UL), (7756533236910309485UL + 461UL), (7756533236910309485UL + 462UL), (7756533236910309485UL + 463UL), (7756533236910309485UL + 464UL), (7756533236910309485UL + 597UL),
+                           &____alias_loc_id_9, (unsigned)9, (unsigned)0, (unsigned)0, (7756533236910309485UL + 605UL), (7756533236910309485UL + 606UL), (7756533236910309485UL + 607UL), (7756533236910309485UL + 608UL), (7756533236910309485UL + 609UL), (7756533236910309485UL + 610UL), (7756533236910309485UL + 611UL), (7756533236910309485UL + 612UL), (7756533236910309485UL + 613UL),
+                            &____alias_loc_id_10, (unsigned)10, (unsigned)0, (unsigned)0, (7756533236910309485UL + 696UL), (7756533236910309485UL + 697UL), (7756533236910309485UL + 698UL), (7756533236910309485UL + 699UL), (7756533236910309485UL + 700UL), (7756533236910309485UL + 701UL), (7756533236910309485UL + 702UL), (7756533236910309485UL + 703UL), (7756533236910309485UL + 704UL), (7756533236910309485UL + 787UL),
+                            &____alias_loc_id_11, (unsigned)16, (unsigned)0, (unsigned)0, (7756533236910309485UL + 789UL), (7756533236910309485UL + 790UL), (7756533236910309485UL + 791UL), (7756533236910309485UL + 792UL), (7756533236910309485UL + 793UL), (7756533236910309485UL + 794UL), (7756533236910309485UL + 795UL), (7756533236910309485UL + 796UL), (7756533236910309485UL + 797UL), (7756533236910309485UL + 798UL), (7756533236910309485UL + 799UL), (7756533236910309485UL + 800UL), (7756533236910309485UL + 801UL), (7756533236910309485UL + 802UL), (7756533236910309485UL + 803UL), (7756533236910309485UL + 995UL),
+                            &____alias_loc_id_12, (unsigned)6, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1003UL), (7756533236910309485UL + 1004UL), (7756533236910309485UL + 1005UL), (7756533236910309485UL + 1006UL), (7756533236910309485UL + 1007UL), (7756533236910309485UL + 1008UL),
+                            &____alias_loc_id_13, (unsigned)8, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1066UL), (7756533236910309485UL + 1067UL), (7756533236910309485UL + 1068UL), (7756533236910309485UL + 1069UL), (7756533236910309485UL + 1070UL), (7756533236910309485UL + 1071UL), (7756533236910309485UL + 1072UL), (7756533236910309485UL + 1073UL),
+                            &____alias_loc_id_14, (unsigned)12, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1126UL), (7756533236910309485UL + 1127UL), (7756533236910309485UL + 1128UL), (7756533236910309485UL + 1129UL), (7756533236910309485UL + 1130UL), (7756533236910309485UL + 1131UL), (7756533236910309485UL + 1132UL), (7756533236910309485UL + 1133UL), (7756533236910309485UL + 1134UL), (7756533236910309485UL + 1135UL), (7756533236910309485UL + 1136UL), (7756533236910309485UL + 1137UL),
+                            &____alias_loc_id_15, (unsigned)72, (unsigned)0, (unsigned)0, (7756533236910309485UL + 1268UL), (7756533236910309485UL + 1269UL), (7756533236910309485UL + 1270UL), (7756533236910309485UL + 1271UL), (7756533236910309485UL + 1272UL), (7756533236910309485UL + 1273UL), (7756533236910309485UL + 1274UL), (7756533236910309485UL + 1275UL), (7756533236910309485UL + 1276UL), (7756533236910309485UL + 1277UL), (7756533236910309485UL + 1278UL), (7756533236910309485UL + 1279UL), (7756533236910309485UL + 1280UL), (7756533236910309485UL + 1281UL), (7756533236910309485UL + 1282UL), (7756533236910309485UL + 1283UL), (7756533236910309485UL + 1284UL), (7756533236910309485UL + 1285UL), (7756533236910309485UL + 1286UL), (7756533236910309485UL + 1287UL), (7756533236910309485UL + 1288UL), (7756533236910309485UL + 1289UL), (7756533236910309485UL + 1290UL), (7756533236910309485UL + 1291UL), (7756533236910309485UL + 1292UL), (7756533236910309485UL + 1293UL), (7756533236910309485UL + 1294UL), (7756533236910309485UL + 1295UL), (7756533236910309485UL + 1296UL), (7756533236910309485UL + 1297UL), (7756533236910309485UL + 1298UL), (7756533236910309485UL + 1299UL), (7756533236910309485UL + 1300UL), (7756533236910309485UL + 1301UL), (7756533236910309485UL + 1302UL), (7756533236910309485UL + 1303UL), (7756533236910309485UL + 1304UL), (7756533236910309485UL + 1305UL), (7756533236910309485UL + 1306UL), (7756533236910309485UL + 1307UL), (7756533236910309485UL + 1308UL), (7756533236910309485UL + 1309UL), (7756533236910309485UL + 1310UL), (7756533236910309485UL + 1311UL), (7756533236910309485UL + 1312UL), (7756533236910309485UL + 1313UL), (7756533236910309485UL + 1314UL), (7756533236910309485UL + 1315UL), (7756533236910309485UL + 1316UL), (7756533236910309485UL + 1317UL), (7756533236910309485UL + 1318UL), (7756533236910309485UL + 1319UL), (7756533236910309485UL + 1320UL), (7756533236910309485UL + 1321UL), (7756533236910309485UL + 1322UL), (7756533236910309485UL + 1323UL), (7756533236910309485UL + 1324UL), (7756533236910309485UL + 1325UL), (7756533236910309485UL + 1326UL), (7756533236910309485UL + 1327UL), (7756533236910309485UL + 1328UL), (7756533236910309485UL + 1329UL), (7756533236910309485UL + 1330UL), (7756533236910309485UL + 1651UL), (7756533236910309485UL + 1667UL), (7756533236910309485UL + 1700UL), (7756533236910309485UL + 1777UL), (7756533236910309485UL + 1824UL), (7756533236910309485UL + 2027UL), (7756533236910309485UL + 2075UL), (7756533236910309485UL + 2162UL), (7756533236910309485UL + 2172UL),
+                            &____alias_loc_id_16, (unsigned)26, (unsigned)0, (unsigned)0, (7756533236910309485UL + 2251UL), (7756533236910309485UL + 2252UL), (7756533236910309485UL + 2253UL), (7756533236910309485UL + 2254UL), (7756533236910309485UL + 2255UL), (7756533236910309485UL + 2256UL), (7756533236910309485UL + 2261UL), (7756533236910309485UL + 2262UL), (7756533236910309485UL + 2263UL), (7756533236910309485UL + 2264UL), (7756533236910309485UL + 2265UL), (7756533236910309485UL + 2266UL), (7756533236910309485UL + 2267UL), (7756533236910309485UL + 2268UL), (7756533236910309485UL + 2269UL), (7756533236910309485UL + 2270UL), (7756533236910309485UL + 2271UL), (7756533236910309485UL + 2272UL), (7756533236910309485UL + 2273UL), (7756533236910309485UL + 2274UL), (7756533236910309485UL + 2275UL), (7756533236910309485UL + 2276UL), (7756533236910309485UL + 2277UL), (7756533236910309485UL + 2278UL), (7756533236910309485UL + 2436UL), (7756533236910309485UL + 2561UL),
+                            "get_time", (void *)(&get_time_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (7756533236910309485UL + 1UL), (7756533236910309485UL + 2560UL), 0UL,
                             "elapsed_time", (void *)(&elapsed_time_npm), (void *)__null, 0, 2, 0UL, 0UL, 0UL, 0,
                             "roundDouble", (void *)(&roundDouble_npm), (void *)__null, 0, 1, 0UL, 0UL, 0,
-                            "setIf", (void *)(&setIf_npm), (void *)__null, 0, 6, 0UL, 0UL, (7756533236910309485UL + 161UL), (7756533236910309485UL + 162UL), (7756533236910309485UL + 163UL), (7756533236910309485UL + 164UL), 0UL, 0,
-                            "randu", (void *)(&randu_npm), (void *)__null, 0, 2, (7756533236910309485UL + 204UL), 0UL, 0UL, 1, "fabs", 1, 0UL, 0UL,
-                            "randn", (void *)(&randn_npm), (void *)__null, 0, 2, (7756533236910309485UL + 242UL), 0UL, 0UL, 5, "randu", 2, (7756533236910309485UL + 242UL), 0UL, 0UL, "randu", 2, (7756533236910309485UL + 242UL), 0UL, 0UL, "cos", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
-                            "addNoise", (void *)(&addNoise_npm), (void *)__null, 0, 5, (7756533236910309485UL + 346UL), (7756533236910309485UL + 347UL), (7756533236910309485UL + 348UL), (7756533236910309485UL + 349UL), (7756533236910309485UL + 350UL), 0UL, 1, "randn", 2, (7756533236910309485UL + 350UL), 0UL, 0UL,
-                            "strelDisk", (void *)(&strelDisk_npm), (void *)__null, 0, 2, (7756533236910309485UL + 422UL), 0UL, 0UL, 3, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
-                            "dilate_matrix", (void *)(&dilate_matrix_npm), (void *)__null, 0, 8, (7756533236910309485UL + 573UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 3, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
-                            "imdilate_disk", (void *)(&imdilate_disk_npm), (void *)__null, 0, 6, (7756533236910309485UL + 666UL), 0UL, 0UL, 0UL, 0UL, (7756533236910309485UL + 671UL), 0UL, 1, "dilate_matrix", 8, (7756533236910309485UL + 671UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "getneighbors", (void *)(&getneighbors_npm), (void *)__null, 0, 4, (7756533236910309485UL + 761UL), 0UL, (7756533236910309485UL + 763UL), 0UL, 0UL, 0,
-                            "videoSequence", (void *)(&videoSequence_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 5, (7756533236910309485UL + 971UL), 0UL, 0UL, 0UL, (7756533236910309485UL + 975UL), 0UL, 10, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "malloc", 1, 0UL, (7756533236910309485UL + 927UL), "imdilate_disk", 6, (7756533236910309485UL + 971UL), 0UL, 0UL, 0UL, 0UL, (7756533236910309485UL + 927UL), 0UL, "free", 1, (7756533236910309485UL + 927UL), 0UL, "setIf", 6, 0UL, 0UL, (7756533236910309485UL + 971UL), (7756533236910309485UL + 766UL), (7756533236910309485UL + 767UL), (7756533236910309485UL + 768UL), 0UL, "setIf", 6, 0UL, 0UL, (7756533236910309485UL + 971UL), (7756533236910309485UL + 766UL), (7756533236910309485UL + 767UL), (7756533236910309485UL + 768UL), 0UL, "addNoise", 5, (7756533236910309485UL + 971UL), (7756533236910309485UL + 766UL), (7756533236910309485UL + 767UL), (7756533236910309485UL + 768UL), (7756533236910309485UL + 975UL), 0UL,
-                            "calcLikelihoodSum", (void *)(&calcLikelihoodSum_npm), (void *)__null, 0, 3, (7756533236910309485UL + 1035UL), (7756533236910309485UL + 1036UL), 0UL, 0UL, 2, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL,
-                            "findIndex", (void *)(&findIndex_npm), (void *)__null, 0, 3, (7756533236910309485UL + 1087UL), 0UL, 0UL, 0UL, 0,
-                            "findIndexBin", (void *)(&findIndexBin_npm), (void *)__null, 0, 4, (7756533236910309485UL + 1204UL), 0UL, 0UL, 0UL, 0UL, 2, "findIndexBin", 4, (7756533236910309485UL + 1204UL), 0UL, 0UL, 0UL, 0UL, "findIndexBin", 4, (7756533236910309485UL + 1204UL), 0UL, 0UL, 0UL, 0UL,
-                            "particleFilter", (void *)(&particleFilter_npm), (void *)__null, 0, 6, (7756533236910309485UL + 2183UL), 0UL, 0UL, 0UL, (7756533236910309485UL + 2187UL), 0UL, 0UL, 85, "get_time", 0, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "malloc", 1, 0UL, (7756533236910309485UL + 1318UL), "strelDisk", 2, (7756533236910309485UL + 1318UL), 0UL, 0UL, "malloc", 1, 0UL, (7756533236910309485UL + 1599UL), "getneighbors", 4, (7756533236910309485UL + 1318UL), 0UL, (7756533236910309485UL + 1599UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2422UL), 0UL, 0UL, "malloc", 1, 0UL, (7756533236910309485UL + 1764UL), "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2423UL), 0UL, 0UL, "malloc", 1, 0UL, (7756533236910309485UL + 1717UL), "malloc", 1, 0UL, (7756533236910309485UL + 1591UL), "malloc", 1, 0UL, (7756533236910309485UL + 1607UL), "malloc", 1, 0UL, (7756533236910309485UL + 2102UL), "malloc", 1, 0UL, (7756533236910309485UL + 2112UL), "malloc", 1, 0UL, (7756533236910309485UL + 1967UL), "malloc", 1, 0UL, (7756533236910309485UL + 2015UL), "malloc", 1, 0UL, (7756533236910309485UL + 1640UL), "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2423UL), 0UL, 0UL, "get_time", 0, 0UL, "randn", 2, (7756533236910309485UL + 2187UL), 0UL, 0UL, "randn", 2, (7756533236910309485UL + 2187UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2425UL), 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "fabs", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2426UL), 0UL, 0UL, "exp", 1, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2427UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2428UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2429UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2428UL), 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2431UL), 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2431UL), 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2433UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2434UL), 0UL, 0UL, "randu", 2, (7756533236910309485UL + 2187UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2435UL), 0UL, 0UL, "findIndex", 3, (7756533236910309485UL + 1967UL), 0UL, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2436UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2422UL), 0UL, 0UL, "free", 1, (7756533236910309485UL + 1318UL), 0UL, "free", 1, (7756533236910309485UL + 1599UL), 0UL, "free", 1, (7756533236910309485UL + 1764UL), 0UL, "free", 1, (7756533236910309485UL + 1717UL), 0UL, "free", 1, (7756533236910309485UL + 2102UL), 0UL, "free", 1, (7756533236910309485UL + 2112UL), 0UL, "free", 1, (7756533236910309485UL + 1591UL), 0UL, "free", 1, (7756533236910309485UL + 1607UL), 0UL, "free", 1, (7756533236910309485UL + 1967UL), 0UL, "free", 1, (7756533236910309485UL + 2015UL), 0UL, "free", 1, (7756533236910309485UL + 1640UL), 0UL,
-                               "abs", (void **)&(____chimes_extern_func_abs),
+                            "setIf", (void *)(&setIf_npm), (void *)__null, 0, 6, 0UL, 0UL, (7756533236910309485UL + 177UL), (7756533236910309485UL + 178UL), (7756533236910309485UL + 179UL), (7756533236910309485UL + 180UL), 0UL, 0,
+                            "randu", (void *)(&randu_npm), (void *)__null, 0, 2, (7756533236910309485UL + 224UL), 0UL, 0UL, 1, "fabs", 1, 0UL, 0UL,
+                            "randn", (void *)(&randn_npm), (void *)__null, 0, 2, (7756533236910309485UL + 266UL), 0UL, 0UL, 5, "randu", 2, (7756533236910309485UL + 266UL), 0UL, 0UL, "randu", 2, (7756533236910309485UL + 266UL), 0UL, 0UL, "cos", 1, 0UL, 0UL, "log", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "addNoise", (void *)(&addNoise_npm), (void *)__null, 0, 5, (7756533236910309485UL + 370UL), (7756533236910309485UL + 371UL), (7756533236910309485UL + 372UL), (7756533236910309485UL + 373UL), (7756533236910309485UL + 374UL), 0UL, 1, "randn", 2, (7756533236910309485UL + 374UL), 0UL, 0UL,
+                            "strelDisk", (void *)(&strelDisk_npm), (void *)__null, 0, 2, (7756533236910309485UL + 446UL), 0UL, 0UL, 3, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "dilate_matrix", (void *)(&dilate_matrix_npm), (void *)__null, 0, 8, (7756533236910309485UL + 597UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 3, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "imdilate_disk", (void *)(&imdilate_disk_npm), (void *)__null, 0, 6, (7756533236910309485UL + 690UL), 0UL, 0UL, 0UL, 0UL, (7756533236910309485UL + 695UL), 0UL, 1, "dilate_matrix", 8, (7756533236910309485UL + 695UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "getneighbors", (void *)(&getneighbors_npm), (void *)__null, 0, 4, (7756533236910309485UL + 785UL), 0UL, (7756533236910309485UL + 787UL), 0UL, 0UL, 0,
+                            "videoSequence", (void *)(&videoSequence_npm), (void *)__null, 0, 5, (7756533236910309485UL + 995UL), 0UL, 0UL, 0UL, (7756533236910309485UL + 999UL), 0UL, 10, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "malloc", 1, 0UL, (7756533236910309485UL + 951UL), "imdilate_disk", 6, (7756533236910309485UL + 995UL), 0UL, 0UL, 0UL, 0UL, (7756533236910309485UL + 951UL), 0UL, "free", 1, (7756533236910309485UL + 951UL), 0UL, "setIf", 6, 0UL, 0UL, (7756533236910309485UL + 995UL), (7756533236910309485UL + 790UL), (7756533236910309485UL + 791UL), (7756533236910309485UL + 792UL), 0UL, "setIf", 6, 0UL, 0UL, (7756533236910309485UL + 995UL), (7756533236910309485UL + 790UL), (7756533236910309485UL + 791UL), (7756533236910309485UL + 792UL), 0UL, "addNoise", 5, (7756533236910309485UL + 995UL), (7756533236910309485UL + 790UL), (7756533236910309485UL + 791UL), (7756533236910309485UL + 792UL), (7756533236910309485UL + 999UL), 0UL,
+                            "calcLikelihoodSum", (void *)(&calcLikelihoodSum_npm), (void *)__null, 0, 3, (7756533236910309485UL + 1063UL), (7756533236910309485UL + 1064UL), 0UL, 0UL, 2, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL,
+                            "findIndex", (void *)(&findIndex_npm), (void *)__null, 0, 3, (7756533236910309485UL + 1123UL), 0UL, 0UL, 0UL, 0,
+                            "findIndexBin", (void *)(&findIndexBin_npm), (void *)__null, 0, 4, (7756533236910309485UL + 1264UL), 0UL, 0UL, 0UL, 0UL, 2, "findIndexBin", 4, (7756533236910309485UL + 1264UL), 0UL, 0UL, 0UL, 0UL, "findIndexBin", 4, (7756533236910309485UL + 1264UL), 0UL, 0UL, 0UL, 0UL,
+                            "particleFilter", (void *)(&particleFilter_npm), (void *)__null, 0, 6, (7756533236910309485UL + 2243UL), 0UL, 0UL, 0UL, (7756533236910309485UL + 2247UL), 0UL, 0UL, 85, "get_time", 0, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "malloc", 1, 0UL, (7756533236910309485UL + 1378UL), "strelDisk", 2, (7756533236910309485UL + 1378UL), 0UL, 0UL, "malloc", 1, 0UL, (7756533236910309485UL + 1659UL), "getneighbors", 4, (7756533236910309485UL + 1378UL), 0UL, (7756533236910309485UL + 1659UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2526UL), 0UL, 0UL, "malloc", 1, 0UL, (7756533236910309485UL + 1824UL), "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2527UL), 0UL, 0UL, "malloc", 1, 0UL, (7756533236910309485UL + 1777UL), "malloc", 1, 0UL, (7756533236910309485UL + 1651UL), "malloc", 1, 0UL, (7756533236910309485UL + 1667UL), "malloc", 1, 0UL, (7756533236910309485UL + 2162UL), "malloc", 1, 0UL, (7756533236910309485UL + 2172UL), "malloc", 1, 0UL, (7756533236910309485UL + 2027UL), "malloc", 1, 0UL, (7756533236910309485UL + 2075UL), "malloc", 1, 0UL, (7756533236910309485UL + 1700UL), "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2527UL), 0UL, 0UL, "get_time", 0, 0UL, "randn", 2, (7756533236910309485UL + 2247UL), 0UL, 0UL, "randn", 2, (7756533236910309485UL + 2247UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2529UL), 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "fabs", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2530UL), 0UL, 0UL, "exp", 1, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2531UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2532UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2533UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2532UL), 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2535UL), 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2535UL), 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "roundDouble", 1, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "sqrt", 1, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2537UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2538UL), 0UL, 0UL, "randu", 2, (7756533236910309485UL + 2247UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2539UL), 0UL, 0UL, "findIndex", 3, (7756533236910309485UL + 2027UL), 0UL, 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2540UL), 0UL, 0UL, "get_time", 0, 0UL, "elapsed_time", 2, 0UL, 0UL, 0UL, "printf", 2, (7756533236910309485UL + 2526UL), 0UL, 0UL, "free", 1, (7756533236910309485UL + 1378UL), 0UL, "free", 1, (7756533236910309485UL + 1659UL), 0UL, "free", 1, (7756533236910309485UL + 1824UL), 0UL, "free", 1, (7756533236910309485UL + 1777UL), 0UL, "free", 1, (7756533236910309485UL + 2162UL), 0UL, "free", 1, (7756533236910309485UL + 2172UL), 0UL, "free", 1, (7756533236910309485UL + 1651UL), 0UL, "free", 1, (7756533236910309485UL + 1667UL), 0UL, "free", 1, (7756533236910309485UL + 2027UL), 0UL, "free", 1, (7756533236910309485UL + 2075UL), 0UL, "free", 1, (7756533236910309485UL + 1700UL), 0UL,
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
                            "elapsed_time", &(____chimes_does_checkpoint_elapsed_time_npm),
                            "roundDouble", &(____chimes_does_checkpoint_roundDouble_npm),
@@ -6720,55 +6678,54 @@ static int module_init() {
                            "findIndex", &(____chimes_does_checkpoint_findIndex_npm),
                            "findIndexBin", &(____chimes_does_checkpoint_findIndexBin_npm),
                            "particleFilter", &(____chimes_does_checkpoint_particleFilter_npm),
-                           "abs", &(____chimes_does_checkpoint_abs_npm),
-                             (7756533236910309485UL + 1227UL), (7756533236910309485UL + 1764UL),
-                             (7756533236910309485UL + 1212UL), (7756533236910309485UL + 2187UL),
-                             (7756533236910309485UL + 769UL), (7756533236910309485UL + 975UL),
-                             (7756533236910309485UL + 1208UL), (7756533236910309485UL + 2183UL),
-                             (7756533236910309485UL + 1220UL), (7756533236910309485UL + 1318UL),
-                             (7756533236910309485UL + 980UL), (7756533236910309485UL + 1036UL),
-                             (7756533236910309485UL + 1236UL), (7756533236910309485UL + 2015UL),
-                             (7756533236910309485UL + 765UL), (7756533236910309485UL + 971UL),
-                             (7756533236910309485UL + 60UL), (7756533236910309485UL + 162UL),
-                             (7756533236910309485UL + 61UL), (7756533236910309485UL + 163UL),
-                             (7756533236910309485UL + 62UL), (7756533236910309485UL + 164UL),
-                             (7756533236910309485UL + 1224UL), (7756533236910309485UL + 1599UL),
-                             (7756533236910309485UL + 2194UL), (7756533236910309485UL + 2438UL),
-                             (7756533236910309485UL + 2199UL), (7756533236910309485UL + 2335UL),
-                             (7756533236910309485UL + 250UL), (7756533236910309485UL + 349UL),
-                             (7756533236910309485UL + 251UL), (7756533236910309485UL + 350UL),
-                             (7756533236910309485UL + 1231UL), (7756533236910309485UL + 1591UL),
-                             (7756533236910309485UL + 2201UL), (7756533236910309485UL + 2353UL),
-                             (7756533236910309485UL + 1232UL), (7756533236910309485UL + 1607UL),
-                             (7756533236910309485UL + 1233UL), (7756533236910309485UL + 2102UL),
-                             (7756533236910309485UL + 979UL), (7756533236910309485UL + 1035UL),
-                             (7756533236910309485UL + 1039UL), (7756533236910309485UL + 1087UL),
-                             (7756533236910309485UL + 426UL), (7756533236910309485UL + 573UL),
-                             (7756533236910309485UL + 586UL), (7756533236910309485UL + 671UL),
-                             (7756533236910309485UL + 1235UL), (7756533236910309485UL + 1967UL),
-                             (7756533236910309485UL + 777UL), (7756533236910309485UL + 927UL),
-                             (7756533236910309485UL + 1237UL), (7756533236910309485UL + 1640UL),
-                             (7756533236910309485UL + 1230UL), (7756533236910309485UL + 1717UL),
-                             (7756533236910309485UL + 1091UL), (7756533236910309485UL + 1204UL),
-                             (7756533236910309485UL + 207UL), (7756533236910309485UL + 242UL),
-                             (7756533236910309485UL + 581UL), (7756533236910309485UL + 666UL),
-                             (7756533236910309485UL + 674UL), (7756533236910309485UL + 763UL),
-                             (7756533236910309485UL + 1234UL), (7756533236910309485UL + 2112UL),
-                             (7756533236910309485UL + 672UL), (7756533236910309485UL + 761UL),
-                             (7756533236910309485UL + 247UL), (7756533236910309485UL + 346UL),
-                             (7756533236910309485UL + 165UL), (7756533236910309485UL + 204UL),
-                             (7756533236910309485UL + 249UL), (7756533236910309485UL + 348UL),
-                             (7756533236910309485UL + 248UL), (7756533236910309485UL + 347UL),
-                             (7756533236910309485UL + 59UL), (7756533236910309485UL + 161UL),
-                             (7756533236910309485UL + 2413UL), (7756533236910309485UL + 2224UL),
-                             (7756533236910309485UL + 2193UL), (7756533236910309485UL + 2413UL),
-                             (7756533236910309485UL + 351UL), (7756533236910309485UL + 422UL),
+                             (7756533236910309485UL + 605UL), (7756533236910309485UL + 690UL),
+                             (7756533236910309485UL + 2253UL), (7756533236910309485UL + 2517UL),
+                             (7756533236910309485UL + 1268UL), (7756533236910309485UL + 2243UL),
+                             (7756533236910309485UL + 2269UL), (7756533236910309485UL + 2436UL),
+                             (7756533236910309485UL + 450UL), (7756533236910309485UL + 597UL),
+                             (7756533236910309485UL + 1127UL), (7756533236910309485UL + 1264UL),
+                             (7756533236910309485UL + 271UL), (7756533236910309485UL + 370UL),
+                             (7756533236910309485UL + 272UL), (7756533236910309485UL + 371UL),
+                             (7756533236910309485UL + 273UL), (7756533236910309485UL + 372UL),
+                             (7756533236910309485UL + 274UL), (7756533236910309485UL + 373UL),
+                             (7756533236910309485UL + 275UL), (7756533236910309485UL + 374UL),
+                             (7756533236910309485UL + 2517UL), (7756533236910309485UL + 2298UL),
+                             (7756533236910309485UL + 793UL), (7756533236910309485UL + 999UL),
+                             (7756533236910309485UL + 698UL), (7756533236910309485UL + 787UL),
+                             (7756533236910309485UL + 181UL), (7756533236910309485UL + 224UL),
+                             (7756533236910309485UL + 1292UL), (7756533236910309485UL + 1667UL),
+                             (7756533236910309485UL + 1293UL), (7756533236910309485UL + 2162UL),
+                             (7756533236910309485UL + 1290UL), (7756533236910309485UL + 1777UL),
+                             (7756533236910309485UL + 1291UL), (7756533236910309485UL + 1651UL),
+                             (7756533236910309485UL + 1296UL), (7756533236910309485UL + 2075UL),
+                             (7756533236910309485UL + 1272UL), (7756533236910309485UL + 2247UL),
+                             (7756533236910309485UL + 1294UL), (7756533236910309485UL + 2172UL),
+                             (7756533236910309485UL + 1295UL), (7756533236910309485UL + 2027UL),
+                             (7756533236910309485UL + 610UL), (7756533236910309485UL + 695UL),
+                             (7756533236910309485UL + 77UL), (7756533236910309485UL + 179UL),
+                             (7756533236910309485UL + 76UL), (7756533236910309485UL + 178UL),
+                             (7756533236910309485UL + 75UL), (7756533236910309485UL + 177UL),
+                             (7756533236910309485UL + 227UL), (7756533236910309485UL + 266UL),
+                             (7756533236910309485UL + 696UL), (7756533236910309485UL + 785UL),
+                             (7756533236910309485UL + 78UL), (7756533236910309485UL + 180UL),
+                             (7756533236910309485UL + 1284UL), (7756533236910309485UL + 1659UL),
+                             (7756533236910309485UL + 1287UL), (7756533236910309485UL + 1824UL),
+                             (7756533236910309485UL + 2254UL), (7756533236910309485UL + 2542UL),
+                             (7756533236910309485UL + 2271UL), (7756533236910309485UL + 2454UL),
+                             (7756533236910309485UL + 1280UL), (7756533236910309485UL + 1378UL),
+                             (7756533236910309485UL + 375UL), (7756533236910309485UL + 446UL),
+                             (7756533236910309485UL + 789UL), (7756533236910309485UL + 995UL),
+                             (7756533236910309485UL + 1067UL), (7756533236910309485UL + 1123UL),
+                             (7756533236910309485UL + 1297UL), (7756533236910309485UL + 1700UL),
+                             (7756533236910309485UL + 801UL), (7756533236910309485UL + 951UL),
+                             (7756533236910309485UL + 1004UL), (7756533236910309485UL + 1064UL),
+                             (7756533236910309485UL + 1003UL), (7756533236910309485UL + 1063UL),
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                              "findIndex", "_Z9findIndexPdid", 0,
                              "calcLikelihoodSum", "_Z17calcLikelihoodSumPiS_i", 0,
                              "randn", "_Z5randnPii", 2, "randu", "randu",
                              "particleFilter", "_Z14particleFilterPiiiiS_i", 40, "get_time", "roundDouble", "roundDouble", "strelDisk", "getneighbors", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "randn", "randn", "get_time", "elapsed_time", "roundDouble", "roundDouble", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "get_time", "elapsed_time", "roundDouble", "roundDouble", "get_time", "elapsed_time", "randu", "get_time", "elapsed_time", "findIndex", "get_time", "elapsed_time", "get_time", "elapsed_time",
-                             "videoSequence", "_Z13videoSequencePiiiiS_", 8, "roundDouble", "roundDouble", "abs", "abs", "imdilate_disk", "setIf", "setIf", "addNoise",
+                             "videoSequence", "_Z13videoSequencePiiiiS_", 6, "roundDouble", "roundDouble", "imdilate_disk", "setIf", "setIf", "addNoise",
                              "roundDouble", "_Z11roundDoubled", 0,
                              "findIndexBin", "_Z12findIndexBinPdiid", 2, "findIndexBin", "findIndexBin",
                              "elapsed_time", "_Z12elapsed_timexx", 0,
@@ -6782,42 +6739,28 @@ static int module_init() {
                              "addNoise", "_Z8addNoisePiS_S_S_S_", 1, "randn",
                              "randu", "_Z5randuPii", 0,
                         "get_time|tv|0", 1, "get_time",
-                        "videoSequence|I|0", 1, "abs",
                         "videoSequence|IszX|0", 1, "videoSequence",
-                        "videoSequence|IszY|0", 1, "abs",
-                        "videoSequence|Nfr|0", 1, "abs",
-                        "videoSequence|seed|0", 1, "abs",
-                        "videoSequence|k|0", 1, "abs",
-                        "videoSequence|max_size|0", 1, "abs",
-                        "videoSequence|x0|0", 1, "abs",
-                        "videoSequence|y0|0", 1, "abs",
-                        "videoSequence|xk|0", 1, "abs",
-                        "videoSequence|yk|0", 1, "abs",
-                        "videoSequence|pos|0", 1, "abs",
                         "main|IszX|0", 1, "main",
                         "main|IszY|0", 1, "main",
                         "main|Nfr|0", 1, "main",
                         "main|Nparticles|0", 1, "main",
-                        "main|seed|0", 1, "videoSequence",
-                        "main|I|0", 1, "videoSequence",
-                        "main|start|0", 1, "videoSequence",
-        "randu", 0UL, (int)2, 7756533236910309727UL, 0UL,
-        "randu", 0UL, (int)2, 7756533236910309727UL, 0UL,
-        "randn", 0UL, (int)2, 7756533236910309835UL, 0UL,
-        "dilate_matrix", 0UL, (int)8, 7756533236910310156UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "randu", 0UL, (int)2, 7756533236910309751UL, 0UL,
+        "randu", 0UL, (int)2, 7756533236910309751UL, 0UL,
+        "randn", 0UL, (int)2, 7756533236910309859UL, 0UL,
+        "dilate_matrix", 0UL, (int)8, 7756533236910310180UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "roundDouble", 0UL, (int)1, 0UL,
         "roundDouble", 0UL, (int)1, 0UL,
-        "imdilate_disk", 0UL, (int)6, 7756533236910310456UL, 0UL, 0UL, 0UL, 0UL, 7756533236910310412UL,
-        "setIf", 0UL, (int)6, 0UL, 0UL, 7756533236910310456UL, 7756533236910310251UL, 7756533236910310252UL, 7756533236910310253UL,
-        "setIf", 0UL, (int)6, 0UL, 0UL, 7756533236910310456UL, 7756533236910310251UL, 7756533236910310252UL, 7756533236910310253UL,
-        "addNoise", 0UL, (int)5, 7756533236910310456UL, 7756533236910310251UL, 7756533236910310252UL, 7756533236910310253UL, 7756533236910310460UL,
-        "findIndexBin", 0UL, (int)4, 7756533236910310689UL, 0UL, 0UL, 0UL,
-        "findIndexBin", 0UL, (int)4, 7756533236910310689UL, 0UL, 0UL, 0UL,
+        "imdilate_disk", 0UL, (int)6, 7756533236910310480UL, 0UL, 0UL, 0UL, 0UL, 7756533236910310436UL,
+        "setIf", 0UL, (int)6, 0UL, 0UL, 7756533236910310480UL, 7756533236910310275UL, 7756533236910310276UL, 7756533236910310277UL,
+        "setIf", 0UL, (int)6, 0UL, 0UL, 7756533236910310480UL, 7756533236910310275UL, 7756533236910310276UL, 7756533236910310277UL,
+        "addNoise", 0UL, (int)5, 7756533236910310480UL, 7756533236910310275UL, 7756533236910310276UL, 7756533236910310277UL, 7756533236910310484UL,
+        "findIndexBin", 0UL, (int)4, 7756533236910310749UL, 0UL, 0UL, 0UL,
+        "findIndexBin", 0UL, (int)4, 7756533236910310749UL, 0UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "roundDouble", 0UL, (int)1, 0UL,
         "roundDouble", 0UL, (int)1, 0UL,
-        "strelDisk", 0UL, (int)2, 7756533236910310803UL, 0UL,
-        "getneighbors", 0UL, (int)4, 7756533236910310803UL, 0UL, 7756533236910311084UL, 0UL,
+        "strelDisk", 0UL, (int)2, 7756533236910310863UL, 0UL,
+        "getneighbors", 0UL, (int)4, 7756533236910310863UL, 0UL, 7756533236910311144UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "get_time", 0UL, (int)0,
@@ -6825,8 +6768,8 @@ static int module_init() {
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "get_time", 0UL, (int)0,
-        "randn", 0UL, (int)2, 7756533236910311672UL, 0UL,
-        "randn", 0UL, (int)2, 7756533236910311672UL, 0UL,
+        "randn", 0UL, (int)2, 7756533236910311732UL, 0UL,
+        "randn", 0UL, (int)2, 7756533236910311732UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "roundDouble", 0UL, (int)1, 0UL,
@@ -6845,24 +6788,22 @@ static int module_init() {
         "roundDouble", 0UL, (int)1, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "randu", 0UL, (int)2, 7756533236910311672UL, 0UL,
+        "randu", 0UL, (int)2, 7756533236910311732UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "findIndex", 0UL, (int)3, 7756533236910311452UL, 0UL, 0UL,
+        "findIndex", 0UL, (int)3, 7756533236910311512UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
         "get_time", 0UL, (int)0,
-        "videoSequence", 0UL, (int)5, 7756533236910311838UL, 0UL, 0UL, 0UL, 7756533236910311820UL,
+        "videoSequence", 0UL, (int)5, 7756533236910311939UL, 0UL, 0UL, 0UL, 7756533236910311921UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "particleFilter", 0UL, (int)6, 7756533236910311838UL, 0UL, 0UL, 0UL, 7756533236910311820UL, 0UL,
+        "particleFilter", 0UL, (int)6, 7756533236910311939UL, 0UL, 0UL, 0UL, 7756533236910311921UL, 0UL,
         "get_time", 0UL, (int)0,
         "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "elapsed_time", 0UL, (int)2, 0UL, 0UL,
-        "abs", 0UL, (int)1, 0UL,
-        "abs", 0UL, (int)1, 0UL);
+        "elapsed_time", 0UL, (int)2, 0UL, 0UL);
     register_global_var("global|M", "i64", (void *)(&M), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|A", "i32", (void *)(&A), 4.0, 0, 0, 0UL, 0);
     register_global_var("global|C", "i32", (void *)(&C), 4.0, 0, 0, 0UL, 0);

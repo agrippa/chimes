@@ -1,15 +1,22 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 5 21 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 5 42 , 15999745647169967718UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 5 42 , 15999745647169967721UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 5 21 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 5 42 , 15999745647169967718UL, 0, 0
-InsertText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 10 9 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 17 9 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 20 5 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 4 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(15999745647169967753UL)); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 4 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15999745647169967753UL)); ;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 5 42 , 15999745647169967721UL, 0, 0
+InsertText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 10 64 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 17 67 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 20 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 4 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(15999745647169967765UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 21 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 4 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15999745647169967765UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 4 171 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 5 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 15999745647169967718UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 5 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 15999745647169967721UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 5 83 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 10 10 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 10 34 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 17 10 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 17 34 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 20 6 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 20 30 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 16 9  call_lbl_3: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 4 5 len=4 main_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./propagation.cpp 16 22 checkpoint_transformed(3, ____alias_loc_id_0)

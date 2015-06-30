@@ -1,4 +1,4 @@
-m_get gradient_x 17 17 16 0 0
-m_get gradient_y 39 17 187 0 0
-mean std_dev 70 13 0 430
-sqrt std_dev 77 9 0 0
+m_get gradient_x 17 17 17 0 0
+m_get gradient_y 39 17 192 0 0
+mean std_dev 70 13 0 446
+sqrt std_dev 77 56 0 0

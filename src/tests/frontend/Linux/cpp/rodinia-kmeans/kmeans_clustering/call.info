@@ -1,18 +1,18 @@
-euclid_dist_2 find_nearest_point 89 16 0 53 33 0
-malloc kmeans_clustering 139 26 710 0
-malloc kmeans_clustering 140 28 177 0
-calloc kmeans_clustering 156 30 707 0 0
-malloc kmeans_clustering 158 29 699 0
-calloc kmeans_clustering 159 31 701 0 0
-malloc kmeans_clustering 164 39 539 0
-calloc kmeans_clustering 165 41 541 0 0
-malloc kmeans_clustering 169 33 412 0
-malloc kmeans_clustering 170 39 414 0
-calloc kmeans_clustering 176 75 406 0 0
-printf kmeans_clustering 179 2 0 725 0
+euclid_dist_2 find_nearest_point 89 16 0 57 34 0
+malloc kmeans_clustering 139 26 720 0
+malloc kmeans_clustering 140 28 186 0
+calloc kmeans_clustering 156 30 716 0 0
+malloc kmeans_clustering 158 29 708 0
+calloc kmeans_clustering 159 31 710 0 0
+malloc kmeans_clustering 164 39 548 0
+calloc kmeans_clustering 165 41 550 0 0
+malloc kmeans_clustering 169 33 421 0
+malloc kmeans_clustering 170 39 423 0
+calloc kmeans_clustering 176 75 415 0 0
+printf kmeans_clustering 179 2 0 737 0
 omp_set_num_threads kmeans_clustering 182 3 0 0
 omp_get_thread_num kmeans_clustering 186 23 0
-find_nearest_point kmeans_clustering 194 18 0 446 0 710 0
-free kmeans_clustering 237 5 0 701
-free kmeans_clustering 238 5 0 699
-free kmeans_clustering 239 5 0 707
+find_nearest_point kmeans_clustering 194 18 0 455 0 720 0
+free kmeans_clustering 237 5 0 710
+free kmeans_clustering 238 5 0 708
+free kmeans_clustering 239 5 0 716

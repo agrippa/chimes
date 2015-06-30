@@ -1,16 +1,16 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 36 14 len=9 dupString_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 40 15 len=6 calloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 40 47 , 808920877031013615UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 40 47 , 808920877031013652UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 45 18 len=13 myOptionAlloc_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 50 29 len=6 calloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 50 54 , 808920877031013103UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 50 54 , 808920877031013112UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 67 18 len=12 myOptionFree_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 72 21 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 72 29 , 808920877031013230UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 72 29 , 808920877031013255UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 73 18 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 73 26 , 808920877031013230UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 73 26 , 808920877031013255UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 74 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 74 9 , 808920877031013261UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 74 9 , 808920877031013289UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 78 18 len=10 lastOption_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 85 18 len=10 findOption_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 96 5 len=6 addArg_npm
@@ -18,78 +18,104 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 1
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 123 6 len=9 printArgs_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 144 6 len=11 processArgs_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 159 18 len=6 calloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 159 44 , 808920877031013422UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 159 44 , 808920877031013450UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 160 27 len=6 calloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 160 56 , 808920877031013392UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 160 56 , 808920877031013420UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 224 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 224 9 , 808920877031013392UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 224 9 , 808920877031013420UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 225 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 225 9 , 808920877031013422UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 225 9 , 808920877031013450UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 40 15 len=6 calloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 40 47 , 808920877031013615UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 40 47 , 808920877031013652UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 50 29 len=6 calloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 50 54 , 808920877031013103UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 50 54 , 808920877031013112UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next)
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 72 21 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 72 29 , 808920877031013230UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 72 29 , 808920877031013255UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 73 18 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 73 26 , 808920877031013230UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 73 26 , 808920877031013255UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 74 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 74 9 , 808920877031013261UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 74 9 , 808920877031013289UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 159 18 len=6 calloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 159 44 , 808920877031013422UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 159 44 , 808920877031013450UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 160 27 len=6 calloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 160 56 , 808920877031013392UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 160 56 , 808920877031013420UL, 0, 1, (int)sizeof(struct option), 2, (int)__builtin_offsetof(struct option, name), (int)__builtin_offsetof(struct option, flag)
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 224 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 224 9 , 808920877031013392UL
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 224 9 , 808920877031013420UL
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 225 4 len=4 free_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 225 9 , 808920877031013422UL
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 42 4 rm_stack(true, 808920877031013615UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 37 1 const int ____chimes_did_disable0 = new_stack((void *)(&dupString), "dupString", &____must_manage_dupString, 1, 0, (size_t)(808920877031013622UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 64 4 rm_stack(true, 808920877031013103UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 48 1 const int ____chimes_did_disable1 = new_stack((void *)(&myOptionAlloc), "myOptionAlloc", &____must_manage_myOptionAlloc, 7, 0, (size_t)(808920877031013163UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(808920877031013107UL), (size_t)(0UL), (size_t)(808920877031013178UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 70 13 rm_stack(true, 808920877031013230UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 75 4 rm_stack(true, 808920877031013230UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 68 1 const int ____chimes_did_disable2 = new_stack((void *)(&myOptionFree), "myOptionFree", &____must_manage_myOptionFree, 1, 0, (size_t)(808920877031013261UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 80 14 rm_stack(true, 808920877031013207UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 82 4 rm_stack(true, 808920877031013207UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 79 1 const int ____chimes_did_disable3 = new_stack((void *)(&lastOption), "lastOption", &____must_manage_lastOption, 1, 0, (size_t)(808920877031013207UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 89 40 rm_stack(true, 808920877031013594UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 92 4 rm_stack(true, 808920877031013594UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 86 1 const int ____chimes_did_disable4 = new_stack((void *)(&findOption), "findOption", &____must_manage_findOption, 2, 0, (size_t)(808920877031013594UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 103 14 rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 110 4 rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 99 1 const int ____chimes_did_disable5 = new_stack((void *)(&addArg), "addArg", &____must_manage_addArg, 7, 0, (size_t)(808920877031013071UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(808920877031013075UL), (size_t)(0UL), (size_t)(808920877031013077UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 225 9 , 808920877031013450UL
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 42 62 rm_stack(true, 808920877031013652UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 37 1 const int ____chimes_did_disable0 = new_stack((void *)(&dupString), "dupString", &____must_manage_dupString, 1, 0, (size_t)(808920877031013662UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 43 1 rm_stack(true, 808920877031013652UL, "dupString", &____must_manage_dupString, ____alias_loc_id_8, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 64 66 rm_stack(true, 808920877031013112UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 48 1 const int ____chimes_did_disable1 = new_stack((void *)(&myOptionAlloc), "myOptionAlloc", &____must_manage_myOptionAlloc, 7, 0, (size_t)(808920877031013172UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(808920877031013116UL), (size_t)(0UL), (size_t)(808920877031013190UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 65 1 rm_stack(true, 808920877031013112UL, "myOptionAlloc", &____must_manage_myOptionAlloc, ____alias_loc_id_1, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 70 80 rm_stack(true, 808920877031013255UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 75 66 rm_stack(true, 808920877031013255UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 68 1 const int ____chimes_did_disable2 = new_stack((void *)(&myOptionFree), "myOptionFree", &____must_manage_myOptionFree, 1, 0, (size_t)(808920877031013289UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 76 1 rm_stack(true, 808920877031013255UL, "myOptionFree", &____must_manage_myOptionFree, ____alias_loc_id_4, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 80 76 rm_stack(true, 808920877031013227UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 82 66 rm_stack(true, 808920877031013227UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 79 1 const int ____chimes_did_disable3 = new_stack((void *)(&lastOption), "lastOption", &____must_manage_lastOption, 1, 0, (size_t)(808920877031013227UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 83 1 rm_stack(true, 808920877031013227UL, "lastOption", &____must_manage_lastOption, ____alias_loc_id_2, ____chimes_did_disable3); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 89 102 rm_stack(true, 808920877031013630UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 92 66 rm_stack(true, 808920877031013630UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 86 1 const int ____chimes_did_disable4 = new_stack((void *)(&findOption), "findOption", &____must_manage_findOption, 2, 0, (size_t)(808920877031013630UL), (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 93 1 rm_stack(true, 808920877031013630UL, "findOption", &____must_manage_findOption, ____alias_loc_id_7, ____chimes_did_disable4); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 103 69 rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 110 59 rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 99 1 const int ____chimes_did_disable5 = new_stack((void *)(&addArg), "addArg", &____must_manage_addArg, 7, 0, (size_t)(808920877031013079UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(808920877031013083UL), (size_t)(0UL), (size_t)(808920877031013085UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 111 1 rm_stack(false, 0UL, "addArg", &____must_manage_addArg, ____alias_loc_id_0, ____chimes_did_disable5); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 120 4 rm_stack(false, 0UL, "freeArgs", &____must_manage_freeArgs, ____alias_loc_id_3, ____chimes_did_disable6); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 115 1 const int ____chimes_did_disable6 = new_stack((void *)(&freeArgs), "freeArgs", &____must_manage_freeArgs, 0, 0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 141 4 rm_stack(false, 0UL, "printArgs", &____must_manage_printArgs, ____alias_loc_id_5, ____chimes_did_disable7); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 124 1 const int ____chimes_did_disable7 = new_stack((void *)(&printArgs), "printArgs", &____must_manage_printArgs, 0, 0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 153 19 rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 227 4 rm_stack(false, 0UL, "processArgs", &____must_manage_processArgs, ____alias_loc_id_6, ____chimes_did_disable8); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 145 1 const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(808920877031013550UL)); 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 37 2 const int ____chimes_did_disable0 = new_stack((void *)(&dupString), "dupString", &____must_manage_dupString, 1, 0, (size_t)(808920877031013622UL)); ;
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 145 1 const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(808920877031013578UL)); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 37 2 const int ____chimes_did_disable0 = new_stack((void *)(&dupString), "dupString", &____must_manage_dupString, 1, 0, (size_t)(808920877031013662UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 37 148 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 38 4 char *d; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 38 11 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 48 2 const int ____chimes_did_disable1 = new_stack((void *)(&myOptionAlloc), "myOptionAlloc", &____must_manage_myOptionAlloc, 7, 0, (size_t)(808920877031013163UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(808920877031013107UL), (size_t)(0UL), (size_t)(808920877031013178UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 42 5 char *____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 42 32 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 48 2 const int ____chimes_did_disable1 = new_stack((void *)(&myOptionAlloc), "myOptionAlloc", &____must_manage_myOptionAlloc, 7, 0, (size_t)(808920877031013172UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(808920877031013116UL), (size_t)(0UL), (size_t)(808920877031013190UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 48 284 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 49 4  static int iBase;  iBase = (129) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 49 24 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 50 4  MyOption *o;  o = ((MyOption *)calloc_wrapper(1, sizeof(MyOption), 808920877031013103UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next))) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 50 4  MyOption *o;  o = ((MyOption *)calloc_wrapper(1, sizeof(MyOption), 808920877031013112UL, 0, 1, (int)sizeof(struct MyOptionSt), 4, (int)__builtin_offsetof(struct MyOptionSt, help), (int)__builtin_offsetof(struct MyOptionSt, longArg), (int)__builtin_offsetof(struct MyOptionSt, ptr), (int)__builtin_offsetof(struct MyOptionSt, next))) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 50 329 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 68 2 const int ____chimes_did_disable2 = new_stack((void *)(&myOptionFree), "myOptionFree", &____must_manage_myOptionFree, 1, 0, (size_t)(808920877031013261UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 64 5 MyOption *____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 64 36 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 68 2 const int ____chimes_did_disable2 = new_stack((void *)(&myOptionFree), "myOptionFree", &____must_manage_myOptionFree, 1, 0, (size_t)(808920877031013289UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 68 157 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 69 4 MyOption *r; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 69 15 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 79 2 const int ____chimes_did_disable3 = new_stack((void *)(&lastOption), "lastOption", &____must_manage_lastOption, 1, 0, (size_t)(808920877031013207UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 70 14 MyOption *____chimes_ret_var_2; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 70 45 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 75 5 MyOption *____chimes_ret_var_3; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 75 36 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 79 2 const int ____chimes_did_disable3 = new_stack((void *)(&lastOption), "lastOption", &____must_manage_lastOption, 1, 0, (size_t)(808920877031013227UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 79 151 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 86 2 const int ____chimes_did_disable4 = new_stack((void *)(&findOption), "findOption", &____must_manage_findOption, 2, 0, (size_t)(808920877031013594UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 80 15 MyOption *____chimes_ret_var_4; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 80 46 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 82 5 MyOption *____chimes_ret_var_5; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 82 36 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 86 2 const int ____chimes_did_disable4 = new_stack((void *)(&findOption), "findOption", &____must_manage_findOption, 2, 0, (size_t)(808920877031013630UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 86 166 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 99 2 const int ____chimes_did_disable5 = new_stack((void *)(&addArg), "addArg", &____must_manage_addArg, 7, 0, (size_t)(808920877031013071UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(808920877031013075UL), (size_t)(0UL), (size_t)(808920877031013077UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 89 41 MyOption *____chimes_ret_var_6; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 89 72 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 92 5 MyOption *____chimes_ret_var_7; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 92 36 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 99 2 const int ____chimes_did_disable5 = new_stack((void *)(&addArg), "addArg", &____must_manage_addArg, 7, 0, (size_t)(808920877031013079UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(808920877031013083UL), (size_t)(0UL), (size_t)(808920877031013085UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 99 263 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 100 4 MyOption *o; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 100 15 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 101 4 MyOption *p; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 101 15 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 103 15 int ____chimes_ret_var_8; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 103 39 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 110 5 int ____chimes_ret_var_9; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 110 29 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 115 2 const int ____chimes_did_disable6 = new_stack((void *)(&freeArgs), "freeArgs", &____must_manage_freeArgs, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 115 113 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 124 2 const int ____chimes_did_disable7 = new_stack((void *)(&printArgs), "printArgs", &____must_manage_printArgs, 0, 0); ;
@@ -100,7 +126,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParse
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 126 16 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 127 4 unsigned char *shortArg; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 127 27 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 145 2 const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(808920877031013550UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 145 2 const int ____chimes_did_disable8 = new_stack((void *)(&processArgs), "processArgs", &____must_manage_processArgs, 2, 0, (size_t)(0UL), (size_t)(808920877031013578UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 145 169 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 146 4 MyOption *o; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/cmdLineParser.c 146 15 

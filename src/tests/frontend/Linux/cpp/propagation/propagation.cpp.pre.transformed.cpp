@@ -1421,10 +1421,10 @@ extern void register_custom_init_handler(const char *obj_name,
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15999745647169967753UL)) ; int *A;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15999745647169967765UL)) ; int *A;
  register_stack_vars(1, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
-       A = ((int *)malloc_wrapper(sizeof(int) * 10, 15999745647169967718UL, 0, 0)) ;
+       A = ((int *)malloc_wrapper(sizeof(int) * 10, 15999745647169967721UL, 0, 0)) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
     A[0] = 3;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
@@ -1433,7 +1433,7 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
     if (A[0] == 3) {
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
-        rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return 1;
+         int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (1); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
     }
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
@@ -1445,18 +1445,18 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
          call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
-        rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return A[0];
+         int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (A[0]); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
     }
 # 19 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
 # 20 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return 3;
+     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (3); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_2; ;
 # 21 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
-}
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15999745647169967753UL)) ; int *A;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(15999745647169967765UL)) ; int *A;
  register_stack_vars(1, "main|A|0", (int *)0x0, "i32*", (void *)(&A), (size_t)8, 1, 0, 0); ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
-       A = ((int *)malloc_wrapper(sizeof(int) * 10, 15999745647169967718UL, 0, 0)) ;
+       A = ((int *)malloc_wrapper(sizeof(int) * 10, 15999745647169967721UL, 0, 0)) ;
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
     A[0] = 3;
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
@@ -1465,7 +1465,7 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
     if (A[0] == 3) {
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
-        rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return 1;
+         int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (1); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
     }
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
@@ -1477,14 +1477,14 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
          call_lbl_3: checkpoint_transformed(3, ____alias_loc_id_0);
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
-        rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return A[0];
+         int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (A[0]); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
     }
 # 19 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
 # 20 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return 3;
+     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (3); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_2; ;
 # 21 "/home/jmg3/num-debug/src/examples/cpp/./propagation.cpp"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -1496,10 +1496,10 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 static int module_init() {
     init_module(15999745647169967707UL, 2, 1, 0, 2, 0, 0, 0, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (15999745647169967707UL + 11UL),
-                           &____alias_loc_id_1, (unsigned)5, (unsigned)0, (unsigned)0, (15999745647169967707UL + 1UL), (15999745647169967707UL + 2UL), (15999745647169967707UL + 3UL), (15999745647169967707UL + 4UL), (15999745647169967707UL + 11UL),
-                             (15999745647169967707UL + 3UL), (15999745647169967707UL + 46UL),
-                             (15999745647169967707UL + 4UL), (15999745647169967707UL + 11UL),
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (15999745647169967707UL + 14UL),
+                           &____alias_loc_id_1, (unsigned)8, (unsigned)0, (unsigned)0, (15999745647169967707UL + 1UL), (15999745647169967707UL + 2UL), (15999745647169967707UL + 3UL), (15999745647169967707UL + 4UL), (15999745647169967707UL + 5UL), (15999745647169967707UL + 6UL), (15999745647169967707UL + 7UL), (15999745647169967707UL + 14UL),
+                             (15999745647169967707UL + 3UL), (15999745647169967707UL + 58UL),
+                             (15999745647169967707UL + 4UL), (15999745647169967707UL + 14UL),
                              "main", "main", 1, "checkpoint");
     return 0;
 }

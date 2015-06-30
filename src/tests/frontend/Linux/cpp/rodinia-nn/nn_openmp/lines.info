@@ -1,2 +1,1 @@
-/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 83 9 : {  } {  } call:feof { feof { 115 } }
-/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 80 8 : { 9 } {  } call:ferror { ferror { 115 } }
+/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c 80 8 : { 9 } {  } call:ferror { ferror { 116 } }

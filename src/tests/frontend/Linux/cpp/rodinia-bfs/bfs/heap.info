@@ -1,12 +1,12 @@
-70 32 136 malloc 0 1 Node
-71 31 149 malloc
-72 40 154 malloc
-73 34 159 malloc
-98 30 204 malloc
-111 23 402 malloc
-168 2 136 free
-169 2 204 free
-170 2 149 free
-171 2 154 free
-172 2 159 free
-173 2 402 free
+70 32 140 malloc 0 1 Node
+71 31 153 malloc
+72 40 158 malloc
+73 34 163 malloc
+98 30 208 malloc
+111 23 406 malloc
+168 2 140 free
+169 2 208 free
+170 2 153 free
+171 2 158 free
+172 2 163 free
+173 2 406 free

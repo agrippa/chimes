@@ -1,9 +1,9 @@
-50 29 92 calloc 0 1 MyOptionSt help longArg ptr next
-72 21 219 free
-73 18 219 free
-74 4 250 free
-159 18 411 calloc
-160 27 381 calloc 0 1 option name flag
-224 4 381 free
-225 4 411 free
-40 15 604 calloc
+50 29 101 calloc 0 1 MyOptionSt help longArg ptr next
+72 21 244 free
+73 18 244 free
+74 4 278 free
+159 18 439 calloc
+160 27 409 calloc 0 1 option name flag
+224 4 409 free
+225 4 439 free
+40 15 641 calloc

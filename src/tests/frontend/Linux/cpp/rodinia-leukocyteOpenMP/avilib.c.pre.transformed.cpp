@@ -64,116 +64,14 @@ static int ____chimes_does_checkpoint_AVI_read_data_npm = 1;
 static int ____chimes_does_checkpoint_AVI_print_error_npm = 1;
 static int ____chimes_does_checkpoint_AVI_strerror_npm = 1;
 static int ____chimes_does_checkpoint_AVI_max_size_npm = 1;
-static int ____chimes_does_checkpoint___errno_location_npm = 1;
-static int ____chimes_does_checkpoint_close_npm = 1;
-static int ____chimes_does_checkpoint_lseek_npm = 1;
-static int ____chimes_does_checkpoint_open_npm = 1;
-static int ____chimes_does_checkpoint_read_npm = 1;
-static int ____chimes_does_checkpoint_strerror_npm = 1;
-static int ____chimes_does_checkpoint_strncasecmp_npm = 1;
-static int ____chimes_does_checkpoint_strncmp_npm = 1;
-static int ____chimes_does_checkpoint_write_npm = 1;
 
-static int ____must_checkpoint_AVI_open_output_file_AVI_0 = 2;
-static int ____must_checkpoint_AVI_open_output_file_i_0 = 2;
 static int ____must_checkpoint_AVI_open_output_file_AVI_header_0 = 2;
-static int ____must_checkpoint_avi_write_fd_0 = 2;
-static int ____must_checkpoint_avi_write_buf_0 = 2;
-static int ____must_checkpoint_avi_write_len_0 = 2;
-static int ____must_checkpoint_avi_write_n_0 = 2;
-static int ____must_checkpoint_avi_write_r_0 = 2;
-static int ____must_checkpoint_AVI_set_video_AVI_0 = 2;
-static int ____must_checkpoint_AVI_set_video_compressor_0 = 2;
-static int ____must_checkpoint_avi_update_header_AVI_0 = 2;
 static int ____must_checkpoint_avi_update_header_AVI_header_0 = 2;
-static int ____must_checkpoint_AVI_write_frame_AVI_0 = 2;
-static int ____must_checkpoint_AVI_write_frame_bytes_0 = 2;
-static int ____must_checkpoint_AVI_write_frame_pos_0 = 2;
-static int ____must_checkpoint_avi_write_data_n_0 = 2;
 static int ____must_checkpoint_avi_write_data_astr_0 = 2;
-static int ____must_checkpoint_AVI_write_audio_AVI_0 = 2;
-static int ____must_checkpoint_AVI_write_audio_bytes_0 = 2;
-static int ____must_checkpoint_AVI_append_audio_AVI_0 = 2;
-static int ____must_checkpoint_AVI_append_audio_data_0 = 2;
-static int ____must_checkpoint_AVI_append_audio_bytes_0 = 2;
-static int ____must_checkpoint_AVI_append_audio_i_0 = 2;
-static int ____must_checkpoint_AVI_append_audio_length_0 = 2;
-static int ____must_checkpoint_AVI_append_audio_pos_0 = 2;
 static int ____must_checkpoint_AVI_append_audio_c_0 = 2;
-static int ____must_checkpoint_AVI_close_AVI_0 = 2;
-static int ____must_checkpoint_AVI_close_ret_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_AVI_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_ret_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_njunk_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_sampsize_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_hasIndex_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_ms_per_frame_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_frate_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_idxerror_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_flag_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_movi_len_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_hdrl_start_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_strl_start_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_j_0 = 2;
 static int ____must_checkpoint_avi_close_output_file_AVI_header_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_nhb_0 = 2;
-static int ____must_checkpoint_avi_close_output_file_info_len_0 = 2;
-static int ____must_checkpoint_AVI_open_input_file_getIndex_0 = 2;
-static int ____must_checkpoint_AVI_open_input_file_AVI_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_AVI_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_getIndex_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_i_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_n_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_rate_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_scale_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_idx_type_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_hdrl_data_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_header_offset_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_hdrl_len_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_nvi_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_nai_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_ioff_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_tot_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_j_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_lasttag_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_vids_strh_seen_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_vids_strf_seen_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_auds_strh_seen_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_num_stream_0 = 2;
 static int ____must_checkpoint_avi_parse_input_file_data_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_pos_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_len_0 = 2;
-static int ____must_checkpoint_avi_parse_input_file_____chimes_unroll_var_0_0 = 2;
-static int ____must_checkpoint_AVI_open_fd_AVI_0 = 2;
-static int ____must_checkpoint_avi_read_fd_0 = 2;
-static int ____must_checkpoint_avi_read_buf_0 = 2;
-static int ____must_checkpoint_avi_read_len_0 = 2;
-static int ____must_checkpoint_avi_read_n_0 = 2;
-static int ____must_checkpoint_avi_read_r_0 = 2;
-static int ____must_checkpoint_AVI_seek_start_AVI_0 = 2;
-static int ____must_checkpoint_AVI_read_frame_AVI_0 = 2;
-static int ____must_checkpoint_AVI_read_frame_vidbuf_0 = 2;
-static int ____must_checkpoint_AVI_read_frame_n_0 = 2;
-static int ____must_checkpoint_AVI_read_audio_AVI_0 = 2;
-static int ____must_checkpoint_AVI_read_audio_audbuf_0 = 2;
-static int ____must_checkpoint_AVI_read_audio_bytes_0 = 2;
-static int ____must_checkpoint_AVI_read_audio_nr_0 = 2;
-static int ____must_checkpoint_AVI_read_audio_pos_0 = 2;
-static int ____must_checkpoint_AVI_read_audio_left_0 = 2;
-static int ____must_checkpoint_AVI_read_audio_todo_0 = 2;
-static int ____must_checkpoint_AVI_read_data_AVI_0 = 2;
-static int ____must_checkpoint_AVI_read_data_vidbuf_0 = 2;
-static int ____must_checkpoint_AVI_read_data_max_vidbuf_0 = 2;
-static int ____must_checkpoint_AVI_read_data_audbuf_0 = 2;
-static int ____must_checkpoint_AVI_read_data_max_audbuf_0 = 2;
-static int ____must_checkpoint_AVI_read_data_len_0 = 2;
-static int ____must_checkpoint_AVI_read_data_n_0 = 2;
 static int ____must_checkpoint_AVI_read_data_data_0 = 2;
-static int ____must_checkpoint_AVI_strerror_aerrno_0 = 2;
-static int ____must_checkpoint_AVI_strerror_____chimes_unroll_var_1_0 = 2;
-static int ____must_checkpoint_avi_add_chunk_AVI_0 = 2;
-static int ____must_checkpoint_avi_add_chunk_data_0 = 2;
-static int ____must_checkpoint_avi_add_chunk_length_0 = 2;
 static int ____must_checkpoint_avi_add_chunk_c_0 = 2;
 
 static int ____must_manage_AVI_write_frame = 2;
@@ -291,78 +189,6 @@ static unsigned ____alias_loc_id_53;
 static unsigned ____alias_loc_id_54;
 static unsigned ____alias_loc_id_55;
 static unsigned ____alias_loc_id_56;
-static unsigned ____alias_loc_id_57;
-static unsigned ____alias_loc_id_58;
-static unsigned ____alias_loc_id_59;
-static unsigned ____alias_loc_id_60;
-static unsigned ____alias_loc_id_61;
-static unsigned ____alias_loc_id_62;
-static unsigned ____alias_loc_id_63;
-static unsigned ____alias_loc_id_64;
-static unsigned ____alias_loc_id_65;
-static unsigned ____alias_loc_id_66;
-static unsigned ____alias_loc_id_67;
-static unsigned ____alias_loc_id_68;
-static unsigned ____alias_loc_id_69;
-static unsigned ____alias_loc_id_70;
-static unsigned ____alias_loc_id_71;
-static unsigned ____alias_loc_id_72;
-static unsigned ____alias_loc_id_73;
-static unsigned ____alias_loc_id_74;
-static unsigned ____alias_loc_id_75;
-static unsigned ____alias_loc_id_76;
-static unsigned ____alias_loc_id_77;
-static unsigned ____alias_loc_id_78;
-static unsigned ____alias_loc_id_79;
-static unsigned ____alias_loc_id_80;
-static unsigned ____alias_loc_id_81;
-static unsigned ____alias_loc_id_82;
-static unsigned ____alias_loc_id_83;
-static unsigned ____alias_loc_id_84;
-static unsigned ____alias_loc_id_85;
-static unsigned ____alias_loc_id_86;
-static unsigned ____alias_loc_id_87;
-static unsigned ____alias_loc_id_88;
-static unsigned ____alias_loc_id_89;
-static unsigned ____alias_loc_id_90;
-static unsigned ____alias_loc_id_91;
-static unsigned ____alias_loc_id_92;
-static unsigned ____alias_loc_id_93;
-static unsigned ____alias_loc_id_94;
-static unsigned ____alias_loc_id_95;
-static unsigned ____alias_loc_id_96;
-static unsigned ____alias_loc_id_97;
-static unsigned ____alias_loc_id_98;
-static unsigned ____alias_loc_id_99;
-static unsigned ____alias_loc_id_100;
-static unsigned ____alias_loc_id_101;
-static unsigned ____alias_loc_id_102;
-static unsigned ____alias_loc_id_103;
-static unsigned ____alias_loc_id_104;
-static unsigned ____alias_loc_id_105;
-static unsigned ____alias_loc_id_106;
-static unsigned ____alias_loc_id_107;
-static unsigned ____alias_loc_id_108;
-static unsigned ____alias_loc_id_109;
-static unsigned ____alias_loc_id_110;
-static unsigned ____alias_loc_id_111;
-static unsigned ____alias_loc_id_112;
-static unsigned ____alias_loc_id_113;
-static unsigned ____alias_loc_id_114;
-static unsigned ____alias_loc_id_115;
-static unsigned ____alias_loc_id_116;
-static unsigned ____alias_loc_id_117;
-static unsigned ____alias_loc_id_118;
-static unsigned ____alias_loc_id_119;
-static unsigned ____alias_loc_id_120;
-static unsigned ____alias_loc_id_121;
-static unsigned ____alias_loc_id_122;
-static unsigned ____alias_loc_id_123;
-static unsigned ____alias_loc_id_124;
-static unsigned ____alias_loc_id_125;
-static unsigned ____alias_loc_id_126;
-static unsigned ____alias_loc_id_127;
-static unsigned ____alias_loc_id_128;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -5293,70 +5119,66 @@ long AVI_errno;
 static char id_str[64];
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-static size_t avi_read_npm(int fd, char *buf, size_t len);static long (*____chimes_extern_func_read)(int, void *, unsigned long) = read;
+static size_t avi_read_npm(int fd, char *buf, size_t len);
 static size_t avi_read_quick(int fd, char *buf, size_t len); static size_t avi_read(int fd, char *buf, size_t len);
 static size_t avi_read_resumable(int fd, char *buf, size_t len)
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&avi_read), "avi_read", &____must_manage_avi_read, 3, 3, (size_t)(0UL), (size_t)(912368063336282806UL), (size_t)(0UL), "avi_read|fd|0", &____must_checkpoint_avi_read_fd_0, "i32", (void *)(&fd), (size_t)4, 0, 0, 0, "avi_read|buf|0", &____must_checkpoint_avi_read_buf_0, "i8*", (void *)(&buf), (size_t)8, 1, 0, 0, "avi_read|len|0", &____must_checkpoint_avi_read_len_0, "i64", (void *)(&len), (size_t)8, 0, 0, 0) ; size_t r;
-size_t n;
- if (____must_checkpoint_avi_read_r_0 || ____must_checkpoint_avi_read_n_0) { register_stack_vars(2, "avi_read|r|0", &____must_checkpoint_avi_read_r_0, "i64", (void *)(&r), (size_t)8, 0, 0, 0, "avi_read|n|0", &____must_checkpoint_avi_read_n_0, "i64", (void *)(&n), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&avi_read), "avi_read", &____must_manage_avi_read, 3, 0, (size_t)(0UL), (size_t)(912368063336283062UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      n = (0) ;
+    size_t n; n = (0) ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      r = (0) ;
+    size_t r; r = (0) ;
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    while (r < len) {
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      alias_group_changed(____alias_loc_id_59); call_lbl_2: n = ({ void * ____chimes_arg1; unsigned long ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg1 = (buf + r); ____chimes_arg2 = (len - r); } calling((void*)read, 2, ____alias_loc_id_59, 0UL, 3, (size_t)(0UL), (size_t)(912368063336282806UL), (size_t)(0UL)); (read)(fd, ____chimes_arg1, ____chimes_arg2); }) ;
+      n = read (fd, buf + r, len - r);
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if (n <= 0) {rm_stack(false, 0UL, "avi_read", &____must_manage_avi_read, ____alias_loc_id_96, ____chimes_did_disable0); return r; };
+      if (n <= 0) { size_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (r); rm_stack(false, 0UL, "avi_read", &____must_manage_avi_read, ____alias_loc_id_23, ____chimes_did_disable0); return ____chimes_ret_var_0; ; };
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       r += n;
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_read", &____must_manage_avi_read, ____alias_loc_id_96, ____chimes_did_disable0); return r;
+    size_t ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (r); rm_stack(false, 0UL, "avi_read", &____must_manage_avi_read, ____alias_loc_id_23, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_read", &____must_manage_avi_read, ____alias_loc_id_23, ____chimes_did_disable0); }
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-static size_t avi_write_npm (int fd, char *buf, size_t len);static long (*____chimes_extern_func_write)(int, const void *, unsigned long) = write;
+static size_t avi_write_npm (int fd, char *buf, size_t len);
 static size_t avi_write_quick (int fd, char *buf, size_t len); static size_t avi_write (int fd, char *buf, size_t len);
 static size_t avi_write_resumable (int fd, char *buf, size_t len)
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&avi_write), "avi_write", &____must_manage_avi_write, 3, 3, (size_t)(0UL), (size_t)(912368063336277545UL), (size_t)(0UL), "avi_write|fd|0", &____must_checkpoint_avi_write_fd_0, "i32", (void *)(&fd), (size_t)4, 0, 0, 0, "avi_write|buf|0", &____must_checkpoint_avi_write_buf_0, "i8*", (void *)(&buf), (size_t)8, 1, 0, 0, "avi_write|len|0", &____must_checkpoint_avi_write_len_0, "i64", (void *)(&len), (size_t)8, 0, 0, 0) ; size_t r;
-size_t n;
- if (____must_checkpoint_avi_write_r_0 || ____must_checkpoint_avi_write_n_0) { register_stack_vars(2, "avi_write|r|0", &____must_checkpoint_avi_write_r_0, "i64", (void *)(&r), (size_t)8, 0, 0, 0, "avi_write|n|0", &____must_checkpoint_avi_write_n_0, "i64", (void *)(&n), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&avi_write), "avi_write", &____must_manage_avi_write, 3, 0, (size_t)(0UL), (size_t)(912368063336277569UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      n = (0) ;
+    size_t n; n = (0) ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      r = (0) ;
+    size_t r; r = (0) ;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    while (r < len) {
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      alias_group_changed(____alias_loc_id_3); call_lbl_2: n = ({ const void * ____chimes_arg4; unsigned long ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg4 = (buf + r); ____chimes_arg5 = (len - r); } calling((void*)write, 2, ____alias_loc_id_3, 0UL, 3, (size_t)(0UL), (size_t)(912368063336277545UL), (size_t)(0UL)); (write)(fd, ____chimes_arg4, ____chimes_arg5); }) ;
+      n = write (fd, buf + r, len - r);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if (n < 0) {rm_stack(false, 0UL, "avi_write", &____must_manage_avi_write, ____alias_loc_id_75, ____chimes_did_disable1); return n; };
+      if (n < 0) { size_t ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (n); rm_stack(false, 0UL, "avi_write", &____must_manage_avi_write, ____alias_loc_id_1, ____chimes_did_disable1); return ____chimes_ret_var_2; ; };
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       r += n;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_write", &____must_manage_avi_write, ____alias_loc_id_75, ____chimes_did_disable1); return r;
+    size_t ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (r); rm_stack(false, 0UL, "avi_write", &____must_manage_avi_write, ____alias_loc_id_1, ____chimes_did_disable1); return ____chimes_ret_var_3; ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_write", &____must_manage_avi_write, ____alias_loc_id_1, ____chimes_did_disable1); }
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 static void long2str_npm(unsigned char *dst, int n);
 static void long2str_quick(unsigned char *dst, int n); static void long2str(unsigned char *dst, int n);
 static void long2str_resumable(unsigned char *dst, int n)
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&long2str), "long2str", &____must_manage_long2str, 2, 0, (size_t)(912368063336279081UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&long2str), "long2str", &____must_manage_long2str, 2, 0, (size_t)(912368063336279113UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    dst[0] = (n )&0xff;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5366,7 +5188,7 @@ static void long2str_resumable(unsigned char *dst, int n)
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    dst[3] = (n>>24)&0xff;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(false, 0UL, "long2str", &____must_manage_long2str, ____alias_loc_id_79, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "long2str", &____must_manage_long2str, ____alias_loc_id_5, ____chimes_did_disable2); }
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5376,21 +5198,21 @@ static unsigned long str2ulong_npm(unsigned char *str);
 static unsigned long str2ulong_quick(unsigned char *str); static unsigned long str2ulong(unsigned char *str);
 static unsigned long str2ulong_resumable(unsigned char *str)
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&str2ulong), "str2ulong", &____must_manage_str2ulong, 1, 0, (size_t)(912368063336279671UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&str2ulong), "str2ulong", &____must_manage_str2ulong, 1, 0, (size_t)(912368063336279783UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "str2ulong", &____must_manage_str2ulong, ____alias_loc_id_87, ____chimes_did_disable3); return ( str[0] | (str[1]<<8) | (str[2]<<16) | (str[3]<<24) );
+    unsigned long ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (( str[0] | (str[1]<<8) | (str[2]<<16) | (str[3]<<24) )); rm_stack(false, 0UL, "str2ulong", &____must_manage_str2ulong, ____alias_loc_id_13, ____chimes_did_disable3); return ____chimes_ret_var_4; ;
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "str2ulong", &____must_manage_str2ulong, ____alias_loc_id_13, ____chimes_did_disable3); }
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 static unsigned long str2ushort_npm(unsigned char *str);
 static unsigned long str2ushort_quick(unsigned char *str); static unsigned long str2ushort(unsigned char *str);
 static unsigned long str2ushort_resumable(unsigned char *str)
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&str2ushort), "str2ushort", &____must_manage_str2ushort, 1, 0, (size_t)(912368063336282826UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&str2ushort), "str2ushort", &____must_manage_str2ushort, 1, 0, (size_t)(912368063336283086UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "str2ushort", &____must_manage_str2ushort, ____alias_loc_id_97, ____chimes_did_disable4); return ( str[0] | (str[1]<<8) );
+    unsigned long ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (( str[0] | (str[1]<<8) )); rm_stack(false, 0UL, "str2ushort", &____must_manage_str2ushort, ____alias_loc_id_24, ____chimes_did_disable4); return ____chimes_ret_var_5; ;
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "str2ushort", &____must_manage_str2ushort, ____alias_loc_id_24, ____chimes_did_disable4); }
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5400,7 +5222,7 @@ static int avi_sampsize_npm(avi_t *AVI, int j);
 static int avi_sampsize_quick(avi_t *AVI, int j); static int avi_sampsize(avi_t *AVI, int j);
 static int avi_sampsize_resumable(avi_t *AVI, int j)
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&avi_sampsize), "avi_sampsize", &____must_manage_avi_sampsize, 2, 0, (size_t)(912368063336279117UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable5 = new_stack((void *)(&avi_sampsize), "avi_sampsize", &____must_manage_avi_sampsize, 2, 0, (size_t)(912368063336279153UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    int s; ;
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5409,20 +5231,20 @@ static int avi_sampsize_resumable(avi_t *AVI, int j)
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (s<4) {s=4; };
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_sampsize", &____must_manage_avi_sampsize, ____alias_loc_id_80, ____chimes_did_disable5); return s;
+    int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (s); rm_stack(false, 0UL, "avi_sampsize", &____must_manage_avi_sampsize, ____alias_loc_id_6, ____chimes_did_disable5); return ____chimes_ret_var_6; ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_sampsize", &____must_manage_avi_sampsize, ____alias_loc_id_6, ____chimes_did_disable5); }
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-static int avi_add_chunk_npm(avi_t *AVI, unsigned char *tag, unsigned char *data, int length);static long (*____chimes_extern_func_lseek)(int, long, int) = lseek;
+static int avi_add_chunk_npm(avi_t *AVI, unsigned char *tag, unsigned char *data, int length);
 static int avi_add_chunk_quick(avi_t *AVI, unsigned char *tag, unsigned char *data, int length); static int avi_add_chunk(avi_t *AVI, unsigned char *tag, unsigned char *data, int length);
 static int avi_add_chunk_resumable(avi_t *AVI, unsigned char *tag, unsigned char *data, int length)
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&avi_add_chunk), "avi_add_chunk", &____must_manage_avi_add_chunk, 4, 3, (size_t)(912368063336284091UL), (size_t)(912368063336284092UL), (size_t)(912368063336284093UL), (size_t)(0UL), "avi_add_chunk|AVI|0", &____must_checkpoint_avi_add_chunk_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "avi_add_chunk|data|0", &____must_checkpoint_avi_add_chunk_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0, "avi_add_chunk|length|0", &____must_checkpoint_avi_add_chunk_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0) ; unsigned char c[8];
- if (____must_checkpoint_avi_add_chunk_c_0) { register_stack_vars(1, "avi_add_chunk|c|0", &____must_checkpoint_avi_add_chunk_c_0, "[8 x i8]", (void *)(c), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable6 = new_stack((void *)(&avi_add_chunk), "avi_add_chunk", &____must_manage_avi_add_chunk, 4, 0, (size_t)(912368063336284599UL), (size_t)(912368063336284600UL), (size_t)(912368063336284601UL), (size_t)(0UL)) ; unsigned char c[8];
+ if (____must_checkpoint_avi_add_chunk_c_0) { register_stack_vars(1, "avi_add_chunk|c|0", &____must_checkpoint_avi_add_chunk_c_0, "[8 x i8]", (void *)(c), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     ;
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5441,17 +5263,17 @@ static int avi_add_chunk_resumable(avi_t *AVI, unsigned char *tag, unsigned char
    length = ( ((length)+1) & ~1 );
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_3: call_lbl_4: if( alias_group_changed(____alias_loc_id_73) || ({ int ____chimes_arg6; char * ____chimes_arg7; size_t ____chimes_arg8; if (!____chimes_replaying) { ____chimes_arg6 = (AVI->fdes); ____chimes_arg7 = ((char *)c); ____chimes_arg8 = (8); } calling((void*)avi_write, 3, ____alias_loc_id_73, 0UL, 3, (size_t)(0UL), (size_t)(912368063336284027UL), (size_t)(0UL)); (avi_write)(____chimes_arg6, ____chimes_arg7, ____chimes_arg8); }) != 8 ||
+   if( ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)c, 8); }) != 8 ||
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-        ({ int ____chimes_arg9; char * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg9 = (AVI->fdes); ____chimes_arg10 = ((char *)data); } calling((void*)avi_write, 4, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336284093UL), (size_t)(0UL)); (avi_write)(____chimes_arg9, ____chimes_arg10, length); }) != length )
+       ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)data, length); }) != length )
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_5: ({ int ____chimes_arg12; __off_t ____chimes_arg13; if (!____chimes_replaying) { ____chimes_arg12 = (AVI->fdes); ____chimes_arg13 = (AVI->pos); } calling((void*)lseek, 5, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg12, ____chimes_arg13, 0); }) ;
+      lseek(AVI->fdes,AVI->pos,0);
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 4;
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(false, 0UL, "avi_add_chunk", &____must_manage_avi_add_chunk, ____alias_loc_id_128, ____chimes_did_disable6); return -1;
+       int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (-1); rm_stack(false, 0UL, "avi_add_chunk", &____must_manage_avi_add_chunk, ____alias_loc_id_56, ____chimes_did_disable6); return ____chimes_ret_var_7; ;
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 162 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5463,30 +5285,30 @@ static int avi_add_chunk_resumable(avi_t *AVI, unsigned char *tag, unsigned char
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_add_chunk", &____must_manage_avi_add_chunk, ____alias_loc_id_128, ____chimes_did_disable6); return 0;
+    int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (0); rm_stack(false, 0UL, "avi_add_chunk", &____must_manage_avi_add_chunk, ____alias_loc_id_56, ____chimes_did_disable6); return ____chimes_ret_var_8; ;
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_add_chunk", &____must_manage_avi_add_chunk, ____alias_loc_id_56, ____chimes_did_disable6); }
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 static int avi_add_index_entry_npm(avi_t *AVI, unsigned char *tag, long flags, unsigned long pos, unsigned long len);
 static int avi_add_index_entry_quick(avi_t *AVI, unsigned char *tag, long flags, unsigned long pos, unsigned long len); static int avi_add_index_entry(avi_t *AVI, unsigned char *tag, long flags, unsigned long pos, unsigned long len);
 static int avi_add_index_entry_resumable(avi_t *AVI, unsigned char *tag, long flags, unsigned long pos, unsigned long len)
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&avi_add_index_entry), "avi_add_index_entry", &____must_manage_avi_add_index_entry, 5, 0, (size_t)(912368063336279451UL), (size_t)(912368063336279452UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable7 = new_stack((void *)(&avi_add_index_entry), "avi_add_index_entry", &____must_manage_avi_add_index_entry, 5, 0, (size_t)(912368063336279539UL), (size_t)(912368063336279540UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    void *ptr; ;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     ptr = realloc_wrapper((void *)AVI->idx,(AVI->max_idx+4096)*16, 912368063336279379UL, 0, 0);
+     ptr = realloc_wrapper((void *)AVI->idx,(AVI->max_idx+4096)*16, 912368063336279464UL, 0, 0);
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      if(ptr == 0) {
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        AVI_errno = 8;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       rm_stack(false, 0UL, "avi_add_index_entry", &____must_manage_avi_add_index_entry, ____alias_loc_id_84, ____chimes_did_disable7); return -1;
+        int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "avi_add_index_entry", &____must_manage_avi_add_index_entry, ____alias_loc_id_10, ____chimes_did_disable7); return ____chimes_ret_var_9; ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      }
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5518,23 +5340,21 @@ static int avi_add_index_entry_resumable(avi_t *AVI, unsigned char *tag, long fl
    if (len>AVI->max_len) {AVI->max_len=len; };
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_add_index_entry", &____must_manage_avi_add_index_entry, ____alias_loc_id_84, ____chimes_did_disable7); return 0;
+    int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (0); rm_stack(false, 0UL, "avi_add_index_entry", &____must_manage_avi_add_index_entry, ____alias_loc_id_10, ____chimes_did_disable7); return ____chimes_ret_var_10; ;
 # 203 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_add_index_entry", &____must_manage_avi_add_index_entry, ____alias_loc_id_10, ____chimes_did_disable7); }
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-avi_t* AVI_open_output_file_npm(char * filename);static int (*____chimes_extern_func_close)(int) = close;static int (*____chimes_extern_func_open)(const char *, int, ...) = open;
+avi_t* AVI_open_output_file_npm(char * filename);
 avi_t* AVI_open_output_file_quick(char * filename); avi_t* AVI_open_output_file(char * filename);
 avi_t* AVI_open_output_file_resumable(char * filename)
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&AVI_open_output_file), "AVI_open_output_file", &____must_manage_AVI_open_output_file, 1, 0, (size_t)(912368063336277486UL)) ; unsigned char AVI_header[2048];
-int i;
-avi_t *AVI;
- if (____must_checkpoint_AVI_open_output_file_AVI_header_0 || ____must_checkpoint_AVI_open_output_file_i_0 || ____must_checkpoint_AVI_open_output_file_AVI_0) { register_stack_vars(3, "AVI_open_output_file|AVI_header|0", &____must_checkpoint_AVI_open_output_file_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0, "AVI_open_output_file|i|0", &____must_checkpoint_AVI_open_output_file_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "AVI_open_output_file|AVI|0", &____must_checkpoint_AVI_open_output_file_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&AVI_open_output_file), "AVI_open_output_file", &____must_manage_AVI_open_output_file, 1, 0, (size_t)(912368063336277502UL)) ; unsigned char AVI_header[2048];
+ if (____must_checkpoint_AVI_open_output_file_AVI_header_0) { register_stack_vars(1, "AVI_open_output_file|AVI_header|0", &____must_checkpoint_AVI_open_output_file_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   avi_t *AVI; ;
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   int i; ;
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     int mask; mask = (0) ;
@@ -5545,7 +5365,7 @@ avi_t *AVI;
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277401UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+   AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277405UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if(AVI==0)
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5553,14 +5373,14 @@ avi_t *AVI;
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 8;
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_74, ____chimes_did_disable8); return 0;
+       avi_t *____chimes_ret_var_11; ; ____chimes_ret_var_11 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8); return ____chimes_ret_var_11; ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    memset((void *)AVI,0,sizeof(avi_t));
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   alias_group_changed(____alias_loc_id_0); call_lbl_5: AVI->fdes = ({ int ____chimes_arg16; int ____chimes_arg17; if (!____chimes_replaying) { ____chimes_arg16 = (2 | 64 | 0); ____chimes_arg17 = (420 & ~mask); } calling((void*)open, 5, ____alias_loc_id_0, 0UL, 3, (size_t)(912368063336277486UL), (size_t)(0UL), (size_t)(0UL)); (open)(filename, ____chimes_arg16, ____chimes_arg17); }) ;
+   AVI->fdes = open(filename, 02|0100|0, 0644 &~ mask);
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (AVI->fdes < 0)
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5568,9 +5388,9 @@ avi_t *AVI;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 2;
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      free_wrapper(AVI, 912368063336277401UL);
+      free_wrapper(AVI, 912368063336277405UL);
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_74, ____chimes_did_disable8); return 0;
+       avi_t *____chimes_ret_var_12; ; ____chimes_ret_var_12 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8); return ____chimes_ret_var_12; ;
 # 244 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5580,19 +5400,19 @@ avi_t *AVI;
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    for (i=0; i<2048; i++) { AVI_header[i] = 0; };
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   alias_group_changed(____alias_loc_id_2); call_lbl_9: i = ({ int ____chimes_arg18; char * ____chimes_arg19; size_t ____chimes_arg20; if (!____chimes_replaying) { ____chimes_arg18 = (AVI->fdes); ____chimes_arg19 = ((char *)AVI_header); ____chimes_arg20 = (2048); } calling((void*)avi_write, 9, ____alias_loc_id_2, 0UL, 3, (size_t)(0UL), (size_t)(912368063336277393UL), (size_t)(0UL)); (avi_write)(____chimes_arg18, ____chimes_arg19, ____chimes_arg20); }) ;
+   i = ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); });
 # 251 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (i != 2048)
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_10: ({ int ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg21 = (AVI->fdes); } calling((void*)close, 10, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (close)(____chimes_arg21); }) ;
+      close(AVI->fdes);
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 4;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      free_wrapper(AVI, 912368063336277401UL);
+      free_wrapper(AVI, 912368063336277405UL);
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_74, ____chimes_did_disable8); return 0;
+       avi_t *____chimes_ret_var_13; ; ____chimes_ret_var_13 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8); return ____chimes_ret_var_13; ;
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5608,20 +5428,20 @@ avi_t *AVI;
    AVI->aptr = 0;
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(true, 912368063336277401UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_74, ____chimes_did_disable8); return AVI;
+    avi_t *____chimes_ret_var_14; ; ____chimes_ret_var_14 = (AVI); rm_stack(true, 912368063336277405UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8); return ____chimes_ret_var_14; ;
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(true, 912368063336277405UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8); }
 # 268 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 269 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-void AVI_set_video_npm(avi_t *AVI, int width, int height, double fps, char *compressor);int avi_update_header_npm(avi_t *AVI);static int (*____chimes_extern_func_strncmp)(const char *, const char *, unsigned long) = strncmp;
+void AVI_set_video_npm(avi_t *AVI, int width, int height, double fps, char *compressor);int avi_update_header_npm(avi_t *AVI);
 void AVI_set_video_quick(avi_t *AVI, int width, int height, double fps, char *compressor); void AVI_set_video(avi_t *AVI, int width, int height, double fps, char *compressor);int avi_update_header_quick(avi_t *AVI); int avi_update_header(avi_t *AVI);
 void AVI_set_video_resumable(avi_t *AVI, int width, int height, double fps, char *compressor)
 # 270 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&AVI_set_video), "AVI_set_video", &____must_manage_AVI_set_video, 5, 2, (size_t)(912368063336277606UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(912368063336277610UL), "AVI_set_video|AVI|0", &____must_checkpoint_AVI_set_video_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_set_video|compressor|0", &____must_checkpoint_AVI_set_video_compressor_0, "i8*", (void *)(&compressor), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&AVI_set_video), "AVI_set_video", &____must_manage_AVI_set_video, 5, 0, (size_t)(912368063336277630UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(912368063336277634UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 271 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_set_video", &____must_manage_AVI_set_video, ____alias_loc_id_76, ____chimes_did_disable9); return; };
+   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_set_video", &____must_manage_AVI_set_video, ____alias_loc_id_2, ____chimes_did_disable9); return; };
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->width = width;
@@ -5631,7 +5451,7 @@ void AVI_set_video_resumable(avi_t *AVI, int width, int height, double fps, char
    AVI->fps = fps;
 # 278 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 279 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_3: if(alias_group_changed(____alias_loc_id_5) || ({ size_t ____chimes_arg24; if (!____chimes_replaying) { ____chimes_arg24 = (3); } calling((void*)strncmp, 3, ____alias_loc_id_5, 0UL, 3, (size_t)(912368063336277610UL), (size_t)(912368063336284101UL), (size_t)(0UL)); (strncmp)(compressor, "RGB", ____chimes_arg24); }) ==0) {
+   if(strncmp(compressor, "RGB", 3)==0) {
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      memset(AVI->compressor, 0, 4);
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5645,20 +5465,20 @@ void AVI_set_video_resumable(avi_t *AVI, int width, int height, double fps, char
    AVI->compressor[4] = 0;
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_6: ({ calling((void*)avi_update_header, 6, ____alias_loc_id_4, 0UL, 1, (size_t)(912368063336277606UL)); (avi_update_header)(AVI); }) ;
+   ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(false, 0UL, "AVI_set_video", &____must_manage_AVI_set_video, ____alias_loc_id_76, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "AVI_set_video", &____must_manage_AVI_set_video, ____alias_loc_id_2, ____chimes_did_disable9); }
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 void AVI_set_audio_npm(avi_t *AVI, int channels, long rate, int bits, int format, long mp3rate);
 void AVI_set_audio_quick(avi_t *AVI, int channels, long rate, int bits, int format, long mp3rate); void AVI_set_audio(avi_t *AVI, int channels, long rate, int bits, int format, long mp3rate);
 void AVI_set_audio_resumable(avi_t *AVI, int channels, long rate, int bits, int format, long mp3rate)
 # 291 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&AVI_set_audio), "AVI_set_audio", &____must_manage_AVI_set_audio, 6, 0, (size_t)(912368063336279038UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable10 = new_stack((void *)(&AVI_set_audio), "AVI_set_audio", &____must_manage_AVI_set_audio, 6, 0, (size_t)(912368063336279070UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 294 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_set_audio", &____must_manage_AVI_set_audio, ____alias_loc_id_78, ____chimes_did_disable10); return; };
+   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_set_audio", &____must_manage_AVI_set_audio, ____alias_loc_id_4, ____chimes_did_disable10); return; };
 # 295 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 296 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 297 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -5687,15 +5507,15 @@ void AVI_set_audio_resumable(avi_t *AVI, int channels, long rate, int bits, int 
    AVI->track[AVI->aptr].mp3rate = mp3rate;
 # 310 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_4: ({ calling((void*)avi_update_header, 4, ____alias_loc_id_7, 0UL, 1, (size_t)(912368063336279038UL)); (avi_update_header)(AVI); }) ;
+   ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(false, 0UL, "AVI_set_audio", &____must_manage_AVI_set_audio, ____alias_loc_id_78, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "AVI_set_audio", &____must_manage_AVI_set_audio, ____alias_loc_id_4, ____chimes_did_disable10); }
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int avi_update_header_resumable(avi_t *AVI)
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&avi_update_header), "avi_update_header", &____must_manage_avi_update_header, 1, 1, (size_t)(912368063336278936UL), "avi_update_header|AVI|0", &____must_checkpoint_avi_update_header_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0) ; unsigned char AVI_header[2048];
- if (____must_checkpoint_avi_update_header_AVI_header_0) { register_stack_vars(1, "avi_update_header|AVI_header|0", &____must_checkpoint_avi_update_header_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(28): { goto call_lbl_28; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable11 = new_stack((void *)(&avi_update_header), "avi_update_header", &____must_manage_avi_update_header, 1, 0, (size_t)(912368063336278968UL)) ; unsigned char AVI_header[2048];
+ if (____must_checkpoint_avi_update_header_AVI_header_0) { register_stack_vars(1, "avi_update_header|AVI_header|0", &____must_checkpoint_avi_update_header_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 331 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    int njunk; int sampsize; int hasIndex; int ms_per_frame; int frate; int flag; ;
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6036,24 +5856,24 @@ int avi_update_header_resumable(avi_t *AVI)
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_28: call_lbl_29: call_lbl_30: if ( alias_group_changed(____alias_loc_id_6) || ({ int ____chimes_arg27; __off_t ____chimes_arg28; if (!____chimes_replaying) { ____chimes_arg27 = (AVI->fdes); ____chimes_arg28 = (0); } calling((void*)lseek, 28, ____alias_loc_id_6, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg27, ____chimes_arg28, 0); }) <0 ||
+   if ( lseek(AVI->fdes,0,0)<0 ||
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         ({ int ____chimes_arg30; char * ____chimes_arg31; size_t ____chimes_arg32; if (!____chimes_replaying) { ____chimes_arg30 = (AVI->fdes); ____chimes_arg31 = ((char *)AVI_header); ____chimes_arg32 = (2048); } calling((void*)avi_write, 29, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336277631UL), (size_t)(0UL)); (avi_write)(____chimes_arg30, ____chimes_arg31, ____chimes_arg32); }) !=2048 ||
+        ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); })!=2048 ||
 # 560 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  ({ int ____chimes_arg33; __off_t ____chimes_arg34; if (!____chimes_replaying) { ____chimes_arg33 = (AVI->fdes); ____chimes_arg34 = (AVI->pos); } calling((void*)lseek, 30, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg33, ____chimes_arg34, 0); }) <0)
+ lseek(AVI->fdes,AVI->pos,0)<0)
 # 561 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      {
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        AVI_errno = 6;
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       rm_stack(false, 0UL, "avi_update_header", &____must_manage_avi_update_header, ____alias_loc_id_77, ____chimes_did_disable11); return -1;
+        int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (-1); rm_stack(false, 0UL, "avi_update_header", &____must_manage_avi_update_header, ____alias_loc_id_3, ____chimes_did_disable11); return ____chimes_ret_var_15; ;
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      }
 # 565 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_update_header", &____must_manage_avi_update_header, ____alias_loc_id_77, ____chimes_did_disable11); return 0;
+    int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = (0); rm_stack(false, 0UL, "avi_update_header", &____must_manage_avi_update_header, ____alias_loc_id_3, ____chimes_did_disable11); return ____chimes_ret_var_16; ;
 # 567 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_update_header", &____must_manage_avi_update_header, ____alias_loc_id_3, ____chimes_did_disable11); }
 # 568 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 569 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 570 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6065,37 +5885,23 @@ static int avi_close_output_file_npm(avi_t *AVI);
 static int avi_close_output_file_quick(avi_t *AVI); static int avi_close_output_file(avi_t *AVI);
 static int avi_close_output_file_resumable(avi_t *AVI)
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&avi_close_output_file), "avi_close_output_file", &____must_manage_avi_close_output_file, 1, 1, (size_t)(912368063336281225UL), "avi_close_output_file|AVI|0", &____must_checkpoint_avi_close_output_file_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0) ; long info_len;
-long nhb;
-unsigned char AVI_header[2048];
-int j;
-int strl_start;
-int hdrl_start;
-unsigned long movi_len;
-int flag;
-int idxerror;
-int frate;
-int ms_per_frame;
-int hasIndex;
-int sampsize;
-int njunk;
-int ret;
- if (____must_checkpoint_avi_close_output_file_info_len_0 || ____must_checkpoint_avi_close_output_file_nhb_0 || ____must_checkpoint_avi_close_output_file_AVI_header_0 || ____must_checkpoint_avi_close_output_file_j_0 || ____must_checkpoint_avi_close_output_file_strl_start_0 || ____must_checkpoint_avi_close_output_file_hdrl_start_0 || ____must_checkpoint_avi_close_output_file_movi_len_0 || ____must_checkpoint_avi_close_output_file_flag_0 || ____must_checkpoint_avi_close_output_file_idxerror_0 || ____must_checkpoint_avi_close_output_file_frate_0 || ____must_checkpoint_avi_close_output_file_ms_per_frame_0 || ____must_checkpoint_avi_close_output_file_hasIndex_0 || ____must_checkpoint_avi_close_output_file_sampsize_0 || ____must_checkpoint_avi_close_output_file_njunk_0 || ____must_checkpoint_avi_close_output_file_ret_0) { register_stack_vars(15, "avi_close_output_file|info_len|0", &____must_checkpoint_avi_close_output_file_info_len_0, "i64", (void *)(&info_len), (size_t)8, 0, 0, 0, "avi_close_output_file|nhb|0", &____must_checkpoint_avi_close_output_file_nhb_0, "i64", (void *)(&nhb), (size_t)8, 0, 0, 0, "avi_close_output_file|AVI_header|0", &____must_checkpoint_avi_close_output_file_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0, "avi_close_output_file|j|0", &____must_checkpoint_avi_close_output_file_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "avi_close_output_file|strl_start|0", &____must_checkpoint_avi_close_output_file_strl_start_0, "i32", (void *)(&strl_start), (size_t)4, 0, 0, 0, "avi_close_output_file|hdrl_start|0", &____must_checkpoint_avi_close_output_file_hdrl_start_0, "i32", (void *)(&hdrl_start), (size_t)4, 0, 0, 0, "avi_close_output_file|movi_len|0", &____must_checkpoint_avi_close_output_file_movi_len_0, "i64", (void *)(&movi_len), (size_t)8, 0, 0, 0, "avi_close_output_file|flag|0", &____must_checkpoint_avi_close_output_file_flag_0, "i32", (void *)(&flag), (size_t)4, 0, 0, 0, "avi_close_output_file|idxerror|0", &____must_checkpoint_avi_close_output_file_idxerror_0, "i32", (void *)(&idxerror), (size_t)4, 0, 0, 0, "avi_close_output_file|frate|0", &____must_checkpoint_avi_close_output_file_frate_0, "i32", (void *)(&frate), (size_t)4, 0, 0, 0, "avi_close_output_file|ms_per_frame|0", &____must_checkpoint_avi_close_output_file_ms_per_frame_0, "i32", (void *)(&ms_per_frame), (size_t)4, 0, 0, 0, "avi_close_output_file|hasIndex|0", &____must_checkpoint_avi_close_output_file_hasIndex_0, "i32", (void *)(&hasIndex), (size_t)4, 0, 0, 0, "avi_close_output_file|sampsize|0", &____must_checkpoint_avi_close_output_file_sampsize_0, "i32", (void *)(&sampsize), (size_t)4, 0, 0, 0, "avi_close_output_file|njunk|0", &____must_checkpoint_avi_close_output_file_njunk_0, "i32", (void *)(&njunk), (size_t)4, 0, 0, 0, "avi_close_output_file|ret|0", &____must_checkpoint_avi_close_output_file_ret_0, "i32", (void *)(&ret), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable12 = new_stack((void *)(&avi_close_output_file), "avi_close_output_file", &____must_manage_avi_close_output_file, 1, 0, (size_t)(912368063336281381UL)) ; unsigned char AVI_header[2048];
+ if (____must_checkpoint_avi_close_output_file_AVI_header_0) { register_stack_vars(1, "avi_close_output_file|AVI_header|0", &____must_checkpoint_avi_close_output_file_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-           ;
+   int ret; int njunk; int sampsize; int hasIndex; int ms_per_frame; int frate; int idxerror; int flag; ;
 # 578 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   unsigned long movi_len; ;
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      ;
+   int hdrl_start; int strl_start; int j; ;
 # 580 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     ;
 # 581 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   long nhb; ;
 # 582 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   long info_len; ;
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 586 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6113,7 +5919,7 @@ int ret;
    idxerror = 0;
 # 598 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_1: ret = ({ unsigned char * ____chimes_arg37; unsigned char * ____chimes_arg38; int ____chimes_arg39; if (!____chimes_replaying) { ____chimes_arg37 = ((unsigned char *)"idx1"); ____chimes_arg38 = ((unsigned char *)AVI->idx); ____chimes_arg39 = (AVI->n_idx * 16); } calling((void*)avi_add_chunk, 1, ____alias_loc_id_17, 0UL, 4, (size_t)(912368063336281225UL), (size_t)(912368063336284104UL), (size_t)(912368063336279853UL), (size_t)(0UL)); (avi_add_chunk)(AVI, ____chimes_arg37, ____chimes_arg38, ____chimes_arg39); }) ;
+   ret = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *)"idx1", (unsigned char *)AVI->idx, AVI->n_idx*16); });
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    hasIndex = (ret==0);
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6475,9 +6281,9 @@ int ret;
 # 861 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 862 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 863 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_32: call_lbl_33: if ( alias_group_changed(____alias_loc_id_16) || ({ int ____chimes_arg40; __off_t ____chimes_arg41; if (!____chimes_replaying) { ____chimes_arg40 = (AVI->fdes); ____chimes_arg41 = (0); } calling((void*)lseek, 32, ____alias_loc_id_16, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg40, ____chimes_arg41, 0); }) <0 ||
+   if ( lseek(AVI->fdes,0,0)<0 ||
 # 864 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         ({ int ____chimes_arg43; char * ____chimes_arg44; size_t ____chimes_arg45; if (!____chimes_replaying) { ____chimes_arg43 = (AVI->fdes); ____chimes_arg44 = ((char *)AVI_header); ____chimes_arg45 = (2048); } calling((void*)avi_write, 33, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336279823UL), (size_t)(0UL)); (avi_write)(____chimes_arg43, ____chimes_arg44, ____chimes_arg45); }) !=2048
+        ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); })!=2048
 # 865 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 866 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
         )
@@ -6486,28 +6292,27 @@ int ret;
 # 868 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 6;
 # 869 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_92, ____chimes_did_disable12); return -1;
+       int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = (-1); rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_19, ____chimes_did_disable12); return ____chimes_ret_var_17; ;
 # 870 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 871 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 872 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (idxerror) {rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_92, ____chimes_did_disable12); return -1; };
+   if (idxerror) { int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = (-1); rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_19, ____chimes_did_disable12); return ____chimes_ret_var_18; ; };
 # 873 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 874 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_92, ____chimes_did_disable12); return 0;
+    int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (0); rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_19, ____chimes_did_disable12); return ____chimes_ret_var_19; ;
 # 875 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_19, ____chimes_did_disable12); }
 # 887 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 887 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 static int avi_write_data_npm(avi_t *AVI, char *data, unsigned long length, int audio, int keyframe);
 static int avi_write_data_quick(avi_t *AVI, char *data, unsigned long length, int audio, int keyframe); static int avi_write_data(avi_t *AVI, char *data, unsigned long length, int audio, int keyframe);
 static int avi_write_data_resumable(avi_t *AVI, char *data, unsigned long length, int audio, int keyframe)
 # 888 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&avi_write_data), "avi_write_data", &____must_manage_avi_write_data, 5, 0, (size_t)(912368063336279282UL), (size_t)(912368063336279283UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; unsigned char astr[5];
-int n;
- if (____must_checkpoint_avi_write_data_astr_0 || ____must_checkpoint_avi_write_data_n_0) { register_stack_vars(2, "avi_write_data|astr|0", &____must_checkpoint_avi_write_data_astr_0, "[5 x i8]", (void *)(astr), (size_t)5, 0, 0, 0, "avi_write_data|n|0", &____must_checkpoint_avi_write_data_n_0, "i32", (void *)(&n), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable13 = new_stack((void *)(&avi_write_data), "avi_write_data", &____must_manage_avi_write_data, 5, 0, (size_t)(912368063336279346UL), (size_t)(912368063336279347UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; unsigned char astr[5];
+ if (____must_checkpoint_avi_write_data_astr_0) { register_stack_vars(1, "avi_write_data|astr|0", &____must_checkpoint_avi_write_data_astr_0, "[5 x i8]", (void *)(astr), (size_t)5, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 889 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   int n; ;
 # 890 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 891 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     ;
@@ -6519,7 +6324,7 @@ int n;
 # 896 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      AVI_errno = 1;
 # 897 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_82, ____chimes_did_disable13); return -1;
+      int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (-1); rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_8, ____chimes_did_disable13); return ____chimes_ret_var_20; ;
 # 898 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 899 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6533,39 +6338,38 @@ int n;
    if (audio) {n = ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, astr, 0x00, AVI->pos, length); }); } else {n = ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *) "00db", ((keyframe)?0x10:0x0), AVI->pos, length); }); } ;
 # 909 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 910 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (n) {rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_82, ____chimes_did_disable13); return -1; };
+   if (n) { int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = (-1); rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_8, ____chimes_did_disable13); return ____chimes_ret_var_21; ; };
 # 911 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 912 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 913 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 914 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (audio) { call_lbl_4: n = ({ unsigned char * ____chimes_arg47; unsigned char * ____chimes_arg48; if (!____chimes_replaying) { ____chimes_arg47 = ((unsigned char *)astr); ____chimes_arg48 = ((unsigned char *)data); } calling((void*)avi_add_chunk, 4, ____alias_loc_id_9, 0UL, 4, (size_t)(912368063336279282UL), (size_t)(912368063336279189UL), (size_t)(912368063336279283UL), (size_t)(0UL)); (avi_add_chunk)(AVI, ____chimes_arg47, ____chimes_arg48, length); }) ; } else { call_lbl_5: n = ({ unsigned char * ____chimes_arg51; unsigned char * ____chimes_arg52; if (!____chimes_replaying) { ____chimes_arg51 = ((unsigned char *)"00db"); ____chimes_arg52 = ((unsigned char *)data); } calling((void*)avi_add_chunk, 5, ____alias_loc_id_9, 0UL, 4, (size_t)(912368063336279282UL), (size_t)(912368063336279189UL), (size_t)(912368063336279283UL), (size_t)(0UL)); (avi_add_chunk)(AVI, ____chimes_arg51, ____chimes_arg52, length); }) ; } ;
+   if (audio) {n = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *) astr, (unsigned char *)data, length); }); } else {n = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *)"00db", (unsigned char *)data, length); }); } ;
 # 918 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 919 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (n) {rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_82, ____chimes_did_disable13); return -1; };
+   if (n) { int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = (-1); rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_8, ____chimes_did_disable13); return ____chimes_ret_var_22; ; };
 # 920 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 921 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_82, ____chimes_did_disable13); return 0;
+    int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = (0); rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_8, ____chimes_did_disable13); return ____chimes_ret_var_23; ;
 # 922 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_8, ____chimes_did_disable13); }
 # 923 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 924 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_write_frame_npm(avi_t *AVI, char *data, long bytes, int keyframe);
 int AVI_write_frame_quick(avi_t *AVI, char *data, long bytes, int keyframe); int AVI_write_frame(avi_t *AVI, char *data, long bytes, int keyframe);
 int AVI_write_frame_resumable(avi_t *AVI, char *data, long bytes, int keyframe)
 # 925 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable14 = new_stack((void *)(&AVI_write_frame), "AVI_write_frame", &____must_manage_AVI_write_frame, 4, 2, (size_t)(912368063336279178UL), (size_t)(912368063336279179UL), (size_t)(0UL), (size_t)(0UL), "AVI_write_frame|AVI|0", &____must_checkpoint_AVI_write_frame_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_write_frame|bytes|0", &____must_checkpoint_AVI_write_frame_bytes_0, "i64", (void *)(&bytes), (size_t)8, 0, 0, 0) ; unsigned long pos;
- if (____must_checkpoint_AVI_write_frame_pos_0) { register_stack_vars(1, "AVI_write_frame|pos|0", &____must_checkpoint_AVI_write_frame_pos_0, "i64", (void *)(&pos), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable14 = new_stack((void *)(&AVI_write_frame), "AVI_write_frame", &____must_manage_AVI_write_frame, 4, 0, (size_t)(912368063336279226UL), (size_t)(912368063336279227UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 926 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   ;
+  unsigned long pos; ;
 # 927 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 928 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_81, ____chimes_did_disable14); return -1; }
+  if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = (-1); rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14); return ____chimes_ret_var_24; ; }
 # 929 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 930 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   pos = AVI->pos;
 # 931 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 932 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_3: if (alias_group_changed(____alias_loc_id_8) || ({ calling((void*)avi_write_data, 3, ____alias_loc_id_8, 0UL, 5, (size_t)(912368063336279178UL), (size_t)(912368063336279179UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (avi_write_data)(AVI, data, bytes, 0, keyframe); }) ) {rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_81, ____chimes_did_disable14); return -1; };
+  if (({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 0, keyframe); })) { int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (-1); rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14); return ____chimes_ret_var_25; ; };
 # 933 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 934 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->last_pos = pos;
@@ -6574,49 +6378,49 @@ int AVI_write_frame_resumable(avi_t *AVI, char *data, long bytes, int keyframe)
 # 936 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->video_frames++;
 # 937 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_81, ____chimes_did_disable14); return 0;
+   int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = (0); rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14); return ____chimes_ret_var_26; ;
 # 938 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14); }
 # 939 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 940 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_dup_frame_npm(avi_t *AVI);
 int AVI_dup_frame_quick(avi_t *AVI); int AVI_dup_frame(avi_t *AVI);
 int AVI_dup_frame_resumable(avi_t *AVI)
 # 941 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable15 = new_stack((void *)(&AVI_dup_frame), "AVI_dup_frame", &____must_manage_AVI_dup_frame, 1, 0, (size_t)(912368063336279330UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable15 = new_stack((void *)(&AVI_dup_frame), "AVI_dup_frame", &____must_manage_AVI_dup_frame, 1, 0, (size_t)(912368063336279410UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 942 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_83, ____chimes_did_disable15); return -1; }
+   if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = (-1); rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15); return ____chimes_ret_var_27; ; }
 # 943 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 944 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->last_pos==0) {rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_83, ____chimes_did_disable15); return 0; };
+   if (AVI->last_pos==0) { int ____chimes_ret_var_28; ; ____chimes_ret_var_28 = (0); rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15); return ____chimes_ret_var_28; ; };
 # 945 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *)"00db", 0x10, AVI->last_pos, AVI->last_len); })) {rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_83, ____chimes_did_disable15); return -1; };
+   if (({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *)"00db", 0x10, AVI->last_pos, AVI->last_len); })) { int ____chimes_ret_var_29; ; ____chimes_ret_var_29 = (-1); rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15); return ____chimes_ret_var_29; ; };
 # 946 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_frames++;
 # 947 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->must_use_index = 1;
 # 948 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_83, ____chimes_did_disable15); return 0;
+    int ____chimes_ret_var_30; ; ____chimes_ret_var_30 = (0); rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15); return ____chimes_ret_var_30; ;
 # 949 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15); }
 # 950 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 951 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_write_audio_npm(avi_t *AVI, char *data, long bytes);
 int AVI_write_audio_quick(avi_t *AVI, char *data, long bytes); int AVI_write_audio(avi_t *AVI, char *data, long bytes);
 int AVI_write_audio_resumable(avi_t *AVI, char *data, long bytes)
 # 952 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable16 = new_stack((void *)(&AVI_write_audio), "AVI_write_audio", &____must_manage_AVI_write_audio, 3, 2, (size_t)(912368063336279498UL), (size_t)(912368063336279499UL), (size_t)(0UL), "AVI_write_audio|AVI|0", &____must_checkpoint_AVI_write_audio_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_write_audio|bytes|0", &____must_checkpoint_AVI_write_audio_bytes_0, "i64", (void *)(&bytes), (size_t)8, 0, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable16 = new_stack((void *)(&AVI_write_audio), "AVI_write_audio", &____must_manage_AVI_write_audio, 3, 0, (size_t)(912368063336279598UL), (size_t)(912368063336279599UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 953 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_85, ____chimes_did_disable16); return -1; }
+   if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_31; ; ____chimes_ret_var_31 = (-1); rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16); return ____chimes_ret_var_31; ; }
 # 954 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 955 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_3: if (alias_group_changed(____alias_loc_id_11) || ({ calling((void*)avi_write_data, 3, ____alias_loc_id_11, 0UL, 5, (size_t)(912368063336279498UL), (size_t)(912368063336279499UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (avi_write_data)(AVI, data, bytes, 1, 0); }) ) {rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_85, ____chimes_did_disable16); return -1; };
+   if (({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 1, 0); })) { int ____chimes_ret_var_32; ; ____chimes_ret_var_32 = (-1); rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16); return ____chimes_ret_var_32; ; };
 # 956 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->track[AVI->aptr].audio_bytes += bytes;
 # 957 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_85, ____chimes_did_disable16); return 0;
+    int ____chimes_ret_var_33; ; ____chimes_ret_var_33 = (0); rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16); return ____chimes_ret_var_33; ;
 # 958 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16); }
 # 959 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 960 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 961 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6624,19 +6428,16 @@ int AVI_append_audio_npm(avi_t *AVI, char *data, long bytes);
 int AVI_append_audio_quick(avi_t *AVI, char *data, long bytes); int AVI_append_audio(avi_t *AVI, char *data, long bytes);
 int AVI_append_audio_resumable(avi_t *AVI, char *data, long bytes)
 # 962 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable17 = new_stack((void *)(&AVI_append_audio), "AVI_append_audio", &____must_manage_AVI_append_audio, 3, 3, (size_t)(912368063336279641UL), (size_t)(912368063336279642UL), (size_t)(0UL), "AVI_append_audio|AVI|0", &____must_checkpoint_AVI_append_audio_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_append_audio|data|0", &____must_checkpoint_AVI_append_audio_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0, "AVI_append_audio|bytes|0", &____must_checkpoint_AVI_append_audio_bytes_0, "i64", (void *)(&bytes), (size_t)8, 0, 0, 0) ; unsigned char c[4];
-long pos;
-long length;
-long i;
- if (____must_checkpoint_AVI_append_audio_c_0 || ____must_checkpoint_AVI_append_audio_pos_0 || ____must_checkpoint_AVI_append_audio_length_0 || ____must_checkpoint_AVI_append_audio_i_0) { register_stack_vars(4, "AVI_append_audio|c|0", &____must_checkpoint_AVI_append_audio_c_0, "[4 x i8]", (void *)(c), (size_t)4, 0, 0, 0, "AVI_append_audio|pos|0", &____must_checkpoint_AVI_append_audio_pos_0, "i64", (void *)(&pos), (size_t)8, 0, 0, 0, "AVI_append_audio|length|0", &____must_checkpoint_AVI_append_audio_length_0, "i64", (void *)(&length), (size_t)8, 0, 0, 0, "AVI_append_audio|i|0", &____must_checkpoint_AVI_append_audio_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable17 = new_stack((void *)(&AVI_append_audio), "AVI_append_audio", &____must_manage_AVI_append_audio, 3, 0, (size_t)(912368063336279749UL), (size_t)(912368063336279750UL), (size_t)(0UL)) ; unsigned char c[4];
+ if (____must_checkpoint_AVI_append_audio_c_0) { register_stack_vars(1, "AVI_append_audio|c|0", &____must_checkpoint_AVI_append_audio_c_0, "[4 x i8]", (void *)(c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 963 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 964 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     ;
+  long i; long length; long pos; ;
 # 965 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    ;
 # 966 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 967 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_append_audio", &____must_manage_AVI_append_audio, ____alias_loc_id_86, ____chimes_did_disable17); return -1; }
+  if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_34; ; ____chimes_ret_var_34 = (-1); rm_stack(false, 0UL, "AVI_append_audio", &____must_manage_AVI_append_audio, ____alias_loc_id_12, ____chimes_did_disable17); return ____chimes_ret_var_34; ; }
 # 968 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 969 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 970 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6659,14 +6460,14 @@ long i;
 # 981 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 982 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 983 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_2: ({ int ____chimes_arg64; long ____chimes_arg65; if (!____chimes_replaying) { ____chimes_arg64 = (AVI->fdes); ____chimes_arg65 = (pos + 4); } calling((void*)lseek, 2, ____alias_loc_id_13, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg64, ____chimes_arg65, 0); }) ;
+  lseek(AVI->fdes, pos+4, 0);
 # 984 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   ({ calling_npm("long2str", 0); long2str_npm(c, length+bytes); });
 # 985 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_3: ({ int ____chimes_arg67; char * ____chimes_arg68; size_t ____chimes_arg69; if (!____chimes_replaying) { ____chimes_arg67 = (AVI->fdes); ____chimes_arg68 = ((char *)c); ____chimes_arg69 = (4); } calling((void*)avi_write, 3, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336279508UL), (size_t)(0UL)); (avi_write)(____chimes_arg67, ____chimes_arg68, ____chimes_arg69); }) ;
+  ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *) c, 4); });
 # 986 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 987 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_4: ({ int ____chimes_arg70; long ____chimes_arg71; if (!____chimes_replaying) { ____chimes_arg70 = (AVI->fdes); ____chimes_arg71 = (pos + 8 + length); } calling((void*)lseek, 4, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg70, ____chimes_arg71, 0); }) ;
+  lseek(AVI->fdes, pos+8+length, 0);
 # 988 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 989 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   i=( ((length + bytes)+1) & ~1 );
@@ -6674,14 +6475,14 @@ long i;
 # 991 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   bytes = i - length;
 # 992 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_5: ({ int ____chimes_arg73; if (!____chimes_replaying) { ____chimes_arg73 = (AVI->fdes); } calling((void*)avi_write, 5, ____alias_loc_id_12, 0UL, 3, (size_t)(0UL), (size_t)(912368063336279642UL), (size_t)(0UL)); (avi_write)(____chimes_arg73, data, bytes); }) ;
+  ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, data, bytes); });
 # 993 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->pos = pos + 8 + i;
 # 994 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 995 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(false, 0UL, "AVI_append_audio", &____must_manage_AVI_append_audio, ____alias_loc_id_86, ____chimes_did_disable17); return 0;
+   int ____chimes_ret_var_35; ; ____chimes_ret_var_35 = (0); rm_stack(false, 0UL, "AVI_append_audio", &____must_manage_AVI_append_audio, ____alias_loc_id_12, ____chimes_did_disable17); return ____chimes_ret_var_35; ;
 # 996 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_append_audio", &____must_manage_AVI_append_audio, ____alias_loc_id_12, ____chimes_did_disable17); }
 # 997 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 998 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 999 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6689,106 +6490,104 @@ long AVI_bytes_remain_npm(avi_t *AVI);
 long AVI_bytes_remain_quick(avi_t *AVI); long AVI_bytes_remain(avi_t *AVI);
 long AVI_bytes_remain_resumable(avi_t *AVI)
 # 1000 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable18 = new_stack((void *)(&AVI_bytes_remain), "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, 1, 0, (size_t)(912368063336279697UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable18 = new_stack((void *)(&AVI_bytes_remain), "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, 1, 0, (size_t)(912368063336279817UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1001 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, ____alias_loc_id_88, ____chimes_did_disable18); return 0; };
+   if (AVI->mode==1) { long ____chimes_ret_var_36; ; ____chimes_ret_var_36 = (0); rm_stack(false, 0UL, "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, ____alias_loc_id_14, ____chimes_did_disable18); return ____chimes_ret_var_36; ; };
 # 1002 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1003 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, ____alias_loc_id_88, ____chimes_did_disable18); return ( ((2147483647 * 2U + 1U)-(1<<20)*16-2048) - (AVI->pos + 8 + 16*AVI->n_idx));
+    long ____chimes_ret_var_37; ; ____chimes_ret_var_37 = (( ((2147483647 * 2U + 1U)-(1<<20)*16-2048) - (AVI->pos + 8 + 16*AVI->n_idx))); rm_stack(false, 0UL, "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, ____alias_loc_id_14, ____chimes_did_disable18); return ____chimes_ret_var_37; ;
 # 1004 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, ____alias_loc_id_14, ____chimes_did_disable18); }
 # 1005 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1006 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_bytes_written_npm(avi_t *AVI);
 long AVI_bytes_written_quick(avi_t *AVI); long AVI_bytes_written(avi_t *AVI);
 long AVI_bytes_written_resumable(avi_t *AVI)
 # 1007 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable19 = new_stack((void *)(&AVI_bytes_written), "AVI_bytes_written", &____must_manage_AVI_bytes_written, 1, 0, (size_t)(912368063336279722UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable19 = new_stack((void *)(&AVI_bytes_written), "AVI_bytes_written", &____must_manage_AVI_bytes_written, 1, 0, (size_t)(912368063336279850UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1008 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_bytes_written", &____must_manage_AVI_bytes_written, ____alias_loc_id_89, ____chimes_did_disable19); return 0; };
+   if (AVI->mode==1) { long ____chimes_ret_var_38; ; ____chimes_ret_var_38 = (0); rm_stack(false, 0UL, "AVI_bytes_written", &____must_manage_AVI_bytes_written, ____alias_loc_id_15, ____chimes_did_disable19); return ____chimes_ret_var_38; ; };
 # 1009 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1010 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_bytes_written", &____must_manage_AVI_bytes_written, ____alias_loc_id_89, ____chimes_did_disable19); return (AVI->pos + 8 + 16*AVI->n_idx);
+    long ____chimes_ret_var_39; ; ____chimes_ret_var_39 = ((AVI->pos + 8 + 16*AVI->n_idx)); rm_stack(false, 0UL, "AVI_bytes_written", &____must_manage_AVI_bytes_written, ____alias_loc_id_15, ____chimes_did_disable19); return ____chimes_ret_var_39; ;
 # 1011 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_bytes_written", &____must_manage_AVI_bytes_written, ____alias_loc_id_15, ____chimes_did_disable19); }
 # 1012 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1013 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_set_audio_track_npm(avi_t *AVI, int track);
 int AVI_set_audio_track_quick(avi_t *AVI, int track); int AVI_set_audio_track(avi_t *AVI, int track);
 int AVI_set_audio_track_resumable(avi_t *AVI, int track)
 # 1014 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable20 = new_stack((void *)(&AVI_set_audio_track), "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, 2, 0, (size_t)(912368063336279750UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable20 = new_stack((void *)(&AVI_set_audio_track), "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, 2, 0, (size_t)(912368063336279886UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1015 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1016 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if (track < 0 || track + 1 > AVI->anum) {rm_stack(false, 0UL, "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, ____alias_loc_id_90, ____chimes_did_disable20); return(-1); };
+  if (track < 0 || track + 1 > AVI->anum) { int ____chimes_ret_var_40; ; ____chimes_ret_var_40 = ((-1)); rm_stack(false, 0UL, "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, ____alias_loc_id_16, ____chimes_did_disable20); return ____chimes_ret_var_40; ; };
 # 1017 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1018 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1019 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->aptr=track;
 # 1020 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(false, 0UL, "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, ____alias_loc_id_90, ____chimes_did_disable20); return 0;
+   int ____chimes_ret_var_41; ; ____chimes_ret_var_41 = (0); rm_stack(false, 0UL, "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, ____alias_loc_id_16, ____chimes_did_disable20); return ____chimes_ret_var_41; ;
 # 1021 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, ____alias_loc_id_16, ____chimes_did_disable20); }
 # 1022 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1023 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_get_audio_track_npm(avi_t *AVI);
 int AVI_get_audio_track_quick(avi_t *AVI); int AVI_get_audio_track(avi_t *AVI);
 int AVI_get_audio_track_resumable(avi_t *AVI)
 # 1024 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable21 = new_stack((void *)(&AVI_get_audio_track), "AVI_get_audio_track", &____must_manage_AVI_get_audio_track, 1, 0, (size_t)(912368063336279759UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable21 = new_stack((void *)(&AVI_get_audio_track), "AVI_get_audio_track", &____must_manage_AVI_get_audio_track, 1, 0, (size_t)(912368063336279899UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1025 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    rm_stack(false, 0UL, "AVI_get_audio_track", &____must_manage_AVI_get_audio_track, ____alias_loc_id_91, ____chimes_did_disable21); return(AVI->aptr);
+     int ____chimes_ret_var_42; ; ____chimes_ret_var_42 = ((AVI->aptr)); rm_stack(false, 0UL, "AVI_get_audio_track", &____must_manage_AVI_get_audio_track, ____alias_loc_id_17, ____chimes_did_disable21); return ____chimes_ret_var_42; ;
 # 1026 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_get_audio_track", &____must_manage_AVI_get_audio_track, ____alias_loc_id_17, ____chimes_did_disable21); }
 # 1035 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1035 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_close_npm(avi_t *AVI);
 int AVI_close_quick(avi_t *AVI); int AVI_close(avi_t *AVI);
 int AVI_close_resumable(avi_t *AVI)
 # 1036 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable22 = new_stack((void *)(&AVI_close), "AVI_close", &____must_manage_AVI_close, 1, 1, (size_t)(912368063336279808UL), "AVI_close|AVI|0", &____must_checkpoint_AVI_close_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0) ; int ret;
- if (____must_checkpoint_AVI_close_ret_0) { register_stack_vars(1, "AVI_close|ret|0", &____must_checkpoint_AVI_close_ret_0, "i32", (void *)(&ret), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable22 = new_stack((void *)(&AVI_close), "AVI_close", &____must_manage_AVI_close, 1, 0, (size_t)(912368063336279952UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1037 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   int ret; ;
 # 1038 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1039 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1040 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1041 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1042 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode == 0) { call_lbl_1: ret = ({ calling((void*)avi_close_output_file, 1, ____alias_loc_id_15, 0UL, 1, (size_t)(912368063336279808UL)); (avi_close_output_file)(AVI); }) ; } else {ret = 0; } ;
+   if (AVI->mode == 0) {ret = ({ calling_npm("avi_close_output_file", 0); avi_close_output_file_npm(AVI); }); } else {ret = 0; } ;
 # 1046 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1047 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1048 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1049 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_2: ({ int ____chimes_arg77; if (!____chimes_replaying) { ____chimes_arg77 = (AVI->fdes); } calling((void*)close, 2, ____alias_loc_id_14, 0UL, 1, (size_t)(0UL)); (close)(____chimes_arg77); }) ;
+   close(AVI->fdes);
 # 1050 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->idx) {free_wrapper(AVI->idx, 912368063336279783UL); };
+   if (AVI->idx) {free_wrapper(AVI->idx, 912368063336279924UL); };
 # 1051 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->video_index) {free_wrapper(AVI->video_index, 912368063336279783UL); };
+   if (AVI->video_index) {free_wrapper(AVI->video_index, 912368063336279924UL); };
 # 1052 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   free_wrapper(AVI, 912368063336279808UL);
+   free_wrapper(AVI, 912368063336279952UL);
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, 0, ____chimes_did_disable22); return ret;
+    int ____chimes_ret_var_43; ; ____chimes_ret_var_43 = (ret); rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, ____alias_loc_id_18, ____chimes_did_disable22); return ____chimes_ret_var_43; ;
 # 1057 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, ____alias_loc_id_18, ____chimes_did_disable22); }
 # 1067 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1067 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 avi_t *AVI_open_input_file_npm(char *filename, int getIndex);int avi_parse_input_file_npm(avi_t *AVI, int getIndex);
 avi_t *AVI_open_input_file_quick(char *filename, int getIndex); avi_t *AVI_open_input_file(char *filename, int getIndex);int avi_parse_input_file_quick(avi_t *AVI, int getIndex); int avi_parse_input_file(avi_t *AVI, int getIndex);
 avi_t *AVI_open_input_file_resumable(char *filename, int getIndex)
 # 1068 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable23 = new_stack((void *)(&AVI_open_input_file), "AVI_open_input_file", &____must_manage_AVI_open_input_file, 2, 1, (size_t)(912368063336281279UL), (size_t)(0UL), "AVI_open_input_file|getIndex|0", &____must_checkpoint_AVI_open_input_file_getIndex_0, "i32", (void *)(&getIndex), (size_t)4, 0, 0, 0) ; avi_t *AVI;
- if (____must_checkpoint_AVI_open_input_file_AVI_0) { register_stack_vars(1, "AVI_open_input_file|AVI|0", &____must_checkpoint_AVI_open_input_file_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable23 = new_stack((void *)(&AVI_open_input_file), "AVI_open_input_file", &____must_manage_AVI_open_input_file, 2, 0, (size_t)(912368063336281447UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1069 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     AVI = (__null) ;
+   avi_t *AVI; AVI = (__null) ;
 # 1070 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1071 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1072 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1073 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277401UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277405UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
 # 1074 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   if(AVI==__null)
 # 1075 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6796,7 +6595,7 @@ avi_t *AVI_open_input_file_resumable(char *filename, int getIndex)
 # 1076 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 8;
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_93, ____chimes_did_disable23); return 0;
+       avi_t *____chimes_ret_var_44; ; ____chimes_ret_var_44 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23); return ____chimes_ret_var_44; ;
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6808,7 +6607,7 @@ avi_t *AVI_open_input_file_resumable(char *filename, int getIndex)
 # 1083 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1084 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1085 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  alias_group_changed(____alias_loc_id_18); call_lbl_5: AVI->fdes = ({ int ____chimes_arg79; if (!____chimes_replaying) { ____chimes_arg79 = (0 | 0); } calling((void*)open, 5, ____alias_loc_id_18, 0UL, 2, (size_t)(912368063336281279UL), (size_t)(0UL)); (open)(filename, ____chimes_arg79); }) ;
+  AVI->fdes = open(filename,00|0);
 # 1086 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   if(AVI->fdes < 0)
 # 1087 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6816,37 +6615,36 @@ avi_t *AVI_open_input_file_resumable(char *filename, int getIndex)
 # 1088 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 2;
 # 1089 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      free_wrapper(AVI, 912368063336277401UL);
+      free_wrapper(AVI, 912368063336277405UL);
 # 1090 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_93, ____chimes_did_disable23); return 0;
+       avi_t *____chimes_ret_var_45; ; ____chimes_ret_var_45 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23); return ____chimes_ret_var_45; ;
 # 1091 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1093 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_8: ({ calling((void*)avi_parse_input_file, 8, ____alias_loc_id_19, 0UL, 2, (size_t)(912368063336277401UL), (size_t)(0UL)); (avi_parse_input_file)(AVI, getIndex); }) ;
+  ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
 # 1094 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1095 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->aptr=0;
 # 1096 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1097 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(true, 912368063336277401UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_93, ____chimes_did_disable23); return AVI;
+   avi_t *____chimes_ret_var_46; ; ____chimes_ret_var_46 = (AVI); rm_stack(true, 912368063336277405UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23); return ____chimes_ret_var_46; ;
 # 1098 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(true, 912368063336277405UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23); }
 # 1099 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1100 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 avi_t *AVI_open_fd_npm(int fd, int getIndex);
 avi_t *AVI_open_fd_quick(int fd, int getIndex); avi_t *AVI_open_fd(int fd, int getIndex);
 avi_t *AVI_open_fd_resumable(int fd, int getIndex)
 # 1101 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable24 = new_stack((void *)(&AVI_open_fd), "AVI_open_fd", &____must_manage_AVI_open_fd, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; avi_t *AVI;
- if (____must_checkpoint_AVI_open_fd_AVI_0) { register_stack_vars(1, "AVI_open_fd|AVI|0", &____must_checkpoint_AVI_open_fd_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable24 = new_stack((void *)(&AVI_open_fd), "AVI_open_fd", &____must_manage_AVI_open_fd, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1102 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     AVI = (__null) ;
+   avi_t *AVI; AVI = (__null) ;
 # 1103 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1104 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1105 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1106 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277401UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277405UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
 # 1107 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   if(AVI==__null)
 # 1108 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6854,7 +6652,7 @@ avi_t *AVI_open_fd_resumable(int fd, int getIndex)
 # 1109 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 8;
 # 1110 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_fd", &____must_manage_AVI_open_fd, ____alias_loc_id_95, ____chimes_did_disable24); return 0;
+       avi_t *____chimes_ret_var_47; ; ____chimes_ret_var_47 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_fd", &____must_manage_AVI_open_fd, ____alias_loc_id_22, ____chimes_did_disable24); return ____chimes_ret_var_47; ;
 # 1111 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1112 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6868,78 +6666,58 @@ avi_t *AVI_open_fd_resumable(int fd, int getIndex)
   AVI->fdes = fd;
 # 1118 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1119 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_4: ({ calling((void*)avi_parse_input_file, 4, ____alias_loc_id_58, 0UL, 2, (size_t)(912368063336277401UL), (size_t)(0UL)); (avi_parse_input_file)(AVI, getIndex); }) ;
+  ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
 # 1120 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1121 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->aptr=0;
 # 1122 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1123 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(true, 912368063336277401UL, "AVI_open_fd", &____must_manage_AVI_open_fd, ____alias_loc_id_95, ____chimes_did_disable24); return AVI;
+   avi_t *____chimes_ret_var_48; ; ____chimes_ret_var_48 = (AVI); rm_stack(true, 912368063336277405UL, "AVI_open_fd", &____must_manage_AVI_open_fd, ____alias_loc_id_22, ____chimes_did_disable24); return ____chimes_ret_var_48; ;
 # 1124 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(true, 912368063336277405UL, "AVI_open_fd", &____must_manage_AVI_open_fd, ____alias_loc_id_22, ____chimes_did_disable24); }
 # 1125 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1126 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-static int (*____chimes_extern_func_strncasecmp)(const char *, const char *, unsigned long) = strncasecmp;
 int avi_parse_input_file_resumable(avi_t *AVI, int getIndex)
 # 1127 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable25 = new_stack((void *)(&avi_parse_input_file), "avi_parse_input_file", &____must_manage_avi_parse_input_file, 2, 2, (size_t)(912368063336282472UL), (size_t)(0UL), "avi_parse_input_file|AVI|0", &____must_checkpoint_avi_parse_input_file_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "avi_parse_input_file|getIndex|0", &____must_checkpoint_avi_parse_input_file_getIndex_0, "i32", (void *)(&getIndex), (size_t)4, 0, 0, 0) ; __off_t ____chimes_unroll_var_0;
-long len;
-long pos;
-char data[256];
-int num_stream;
-int auds_strh_seen;
-int vids_strf_seen;
-int vids_strh_seen;
-int lasttag;
-int j;
+{const int ____chimes_did_disable25 = new_stack((void *)(&avi_parse_input_file), "avi_parse_input_file", &____must_manage_avi_parse_input_file, 2, 0, (size_t)(912368063336282709UL), (size_t)(0UL)) ; char data[256];
 long tot[8];
-long ioff;
 long nai[8];
-long nvi;
-long hdrl_len;
-long header_offset;
-unsigned char *hdrl_data;
-long idx_type;
-long scale;
-long rate;
-long n;
-long i;
- if (____must_checkpoint_avi_parse_input_file_____chimes_unroll_var_0_0 || ____must_checkpoint_avi_parse_input_file_len_0 || ____must_checkpoint_avi_parse_input_file_pos_0 || ____must_checkpoint_avi_parse_input_file_data_0 || ____must_checkpoint_avi_parse_input_file_num_stream_0 || ____must_checkpoint_avi_parse_input_file_auds_strh_seen_0 || ____must_checkpoint_avi_parse_input_file_vids_strf_seen_0 || ____must_checkpoint_avi_parse_input_file_vids_strh_seen_0 || ____must_checkpoint_avi_parse_input_file_lasttag_0 || ____must_checkpoint_avi_parse_input_file_j_0 || ____must_checkpoint_avi_parse_input_file_tot_0 || ____must_checkpoint_avi_parse_input_file_ioff_0 || ____must_checkpoint_avi_parse_input_file_nai_0 || ____must_checkpoint_avi_parse_input_file_nvi_0 || ____must_checkpoint_avi_parse_input_file_hdrl_len_0 || ____must_checkpoint_avi_parse_input_file_header_offset_0 || ____must_checkpoint_avi_parse_input_file_hdrl_data_0 || ____must_checkpoint_avi_parse_input_file_idx_type_0 || ____must_checkpoint_avi_parse_input_file_scale_0 || ____must_checkpoint_avi_parse_input_file_rate_0 || ____must_checkpoint_avi_parse_input_file_n_0 || ____must_checkpoint_avi_parse_input_file_i_0) { register_stack_vars(22, "avi_parse_input_file|____chimes_unroll_var_0|0", &____must_checkpoint_avi_parse_input_file_____chimes_unroll_var_0_0, "i64", (void *)(&____chimes_unroll_var_0), (size_t)8, 0, 0, 0, "avi_parse_input_file|len|0", &____must_checkpoint_avi_parse_input_file_len_0, "i64", (void *)(&len), (size_t)8, 0, 0, 0, "avi_parse_input_file|pos|0", &____must_checkpoint_avi_parse_input_file_pos_0, "i64", (void *)(&pos), (size_t)8, 0, 0, 0, "avi_parse_input_file|data|0", &____must_checkpoint_avi_parse_input_file_data_0, "[256 x i8]", (void *)(data), (size_t)256, 0, 0, 0, "avi_parse_input_file|num_stream|0", &____must_checkpoint_avi_parse_input_file_num_stream_0, "i32", (void *)(&num_stream), (size_t)4, 0, 0, 0, "avi_parse_input_file|auds_strh_seen|0", &____must_checkpoint_avi_parse_input_file_auds_strh_seen_0, "i32", (void *)(&auds_strh_seen), (size_t)4, 0, 0, 0, "avi_parse_input_file|vids_strf_seen|0", &____must_checkpoint_avi_parse_input_file_vids_strf_seen_0, "i32", (void *)(&vids_strf_seen), (size_t)4, 0, 0, 0, "avi_parse_input_file|vids_strh_seen|0", &____must_checkpoint_avi_parse_input_file_vids_strh_seen_0, "i32", (void *)(&vids_strh_seen), (size_t)4, 0, 0, 0, "avi_parse_input_file|lasttag|0", &____must_checkpoint_avi_parse_input_file_lasttag_0, "i32", (void *)(&lasttag), (size_t)4, 0, 0, 0, "avi_parse_input_file|j|0", &____must_checkpoint_avi_parse_input_file_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "avi_parse_input_file|tot|0", &____must_checkpoint_avi_parse_input_file_tot_0, "[8 x i64]", (void *)(tot), (size_t)64, 0, 0, 0, "avi_parse_input_file|ioff|0", &____must_checkpoint_avi_parse_input_file_ioff_0, "i64", (void *)(&ioff), (size_t)8, 0, 0, 0, "avi_parse_input_file|nai|0", &____must_checkpoint_avi_parse_input_file_nai_0, "[8 x i64]", (void *)(nai), (size_t)64, 0, 0, 0, "avi_parse_input_file|nvi|0", &____must_checkpoint_avi_parse_input_file_nvi_0, "i64", (void *)(&nvi), (size_t)8, 0, 0, 0, "avi_parse_input_file|hdrl_len|0", &____must_checkpoint_avi_parse_input_file_hdrl_len_0, "i64", (void *)(&hdrl_len), (size_t)8, 0, 0, 0, "avi_parse_input_file|header_offset|0", &____must_checkpoint_avi_parse_input_file_header_offset_0, "i64", (void *)(&header_offset), (size_t)8, 0, 0, 0, "avi_parse_input_file|hdrl_data|0", &____must_checkpoint_avi_parse_input_file_hdrl_data_0, "i8*", (void *)(&hdrl_data), (size_t)8, 1, 0, 0, "avi_parse_input_file|idx_type|0", &____must_checkpoint_avi_parse_input_file_idx_type_0, "i64", (void *)(&idx_type), (size_t)8, 0, 0, 0, "avi_parse_input_file|scale|0", &____must_checkpoint_avi_parse_input_file_scale_0, "i64", (void *)(&scale), (size_t)8, 0, 0, 0, "avi_parse_input_file|rate|0", &____must_checkpoint_avi_parse_input_file_rate_0, "i64", (void *)(&rate), (size_t)8, 0, 0, 0, "avi_parse_input_file|n|0", &____must_checkpoint_avi_parse_input_file_n_0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "avi_parse_input_file|i|0", &____must_checkpoint_avi_parse_input_file_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(25): { goto call_lbl_25; } case(26): { goto call_lbl_26; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(34): { goto call_lbl_34; } case(36): { goto call_lbl_36; } case(39): { goto call_lbl_39; } case(40): { goto call_lbl_40; } case(42): { goto call_lbl_42; } case(43): { goto call_lbl_43; } case(45): { goto call_lbl_45; } case(48): { goto call_lbl_48; } case(50): { goto call_lbl_50; } case(52): { goto call_lbl_52; } case(55): { goto call_lbl_55; } case(59): { goto call_lbl_59; } case(62): { goto call_lbl_62; } case(64): { goto call_lbl_64; } case(67): { goto call_lbl_67; } case(68): { goto call_lbl_68; } case(70): { goto call_lbl_70; } case(71): { goto call_lbl_71; } case(72): { goto call_lbl_72; } case(75): { goto call_lbl_75; } case(76): { goto call_lbl_76; } case(77): { goto call_lbl_77; } case(78): { goto call_lbl_78; } case(81): { goto call_lbl_81; } case(82): { goto call_lbl_82; } case(84): { goto call_lbl_84; } case(86): { goto call_lbl_86; } case(87): { goto call_lbl_87; } case(88): { goto call_lbl_88; } case(89): { goto call_lbl_89; } case(91): { goto call_lbl_91; } case(93): { goto call_lbl_93; } case(94): { goto call_lbl_94; } case(97): { goto call_lbl_97; } case(100): { goto call_lbl_100; } case(103): { goto call_lbl_103; } case(105): { goto call_lbl_105; } case(106): { goto call_lbl_106; } default: { chimes_error(); } } } ; ;
+ if (____must_checkpoint_avi_parse_input_file_data_0) { register_stack_vars(1, "avi_parse_input_file|data|0", &____must_checkpoint_avi_parse_input_file_data_0, "[256 x i8]", (void *)(data), (size_t)256, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1128 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       ;
+  long i; long n; long rate; long scale; long idx_type; ;
 # 1129 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   ;
+  unsigned char *hdrl_data; ;
 # 1130 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       header_offset = (0) ; hdrl_len = (0) ;
+   long header_offset; long hdrl_len; header_offset = (0) ; hdrl_len = (0) ;
 # 1131 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     ;
+  long nvi; long ioff; ;
 # 1132 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    ;
 # 1133 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   ;
+  int j; ;
 # 1134 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     lasttag = (0) ;
+   int lasttag; lasttag = (0) ;
 # 1135 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     vids_strh_seen = (0) ;
+   int vids_strh_seen; vids_strh_seen = (0) ;
 # 1136 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     vids_strf_seen = (0) ;
+   int vids_strf_seen; vids_strf_seen = (0) ;
 # 1137 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     auds_strh_seen = (0) ;
+   int auds_strh_seen; auds_strh_seen = (0) ;
 # 1138 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1139 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     num_stream = (0) ;
+   int num_stream; num_stream = (0) ;
 # 1140 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    ;
 # 1141 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1142 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1143 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1144 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_2: if( alias_group_changed(____alias_loc_id_30) || ({ int ____chimes_arg84; size_t ____chimes_arg86; if (!____chimes_replaying) { ____chimes_arg84 = (AVI->fdes); ____chimes_arg86 = (12); } calling((void*)avi_read, 2, ____alias_loc_id_30, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); (avi_read)(____chimes_arg84, data, ____chimes_arg86); }) != 12 ) { call_lbl_3: ({ calling((void*)AVI_close, 3, 0, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+   if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 12); }) != 12 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_49; ; ____chimes_ret_var_49 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_49; ; }
 # 1145 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1146 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   alias_group_changed(____alias_loc_id_32); call_lbl_7: call_lbl_8: if( alias_group_changed(____alias_loc_id_31) || ({ size_t ____chimes_arg90; if (!____chimes_replaying) { ____chimes_arg90 = (4); } calling((void*)strncasecmp, 7, ____alias_loc_id_31, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "RIFF", ____chimes_arg90); }) !=0 ||
+   if( strncasecmp(data ,"RIFF",4) !=0 ||
 # 1147 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-        ({ const char * ____chimes_arg91; size_t ____chimes_arg93; if (!____chimes_replaying) { ____chimes_arg91 = (data + 8); ____chimes_arg93 = (4); } calling((void*)strncasecmp, 8, ____alias_loc_id_32, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg91, "AVI ", ____chimes_arg93); }) !=0 ) { call_lbl_9: ({ calling((void*)AVI_close, 9, 0, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 9; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+       strncasecmp(data+8,"AVI ",4) !=0 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 9; int ____chimes_ret_var_50; ; ____chimes_ret_var_50 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_50; ; }
 # 1148 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1149 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1150 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -6953,7 +6731,7 @@ long i;
 # 1156 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1157 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_12: if (alias_group_changed(____alias_loc_id_37) || ({ int ____chimes_arg95; size_t ____chimes_arg97; if (!____chimes_replaying) { ____chimes_arg95 = (AVI->fdes); ____chimes_arg97 = (8); } calling((void*)avi_read, 12, ____alias_loc_id_37, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); (avi_read)(____chimes_arg95, data, ____chimes_arg97); }) != 8) {break; };
+      if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8) {break; };
 # 1158 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1159 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *) data+4); });
@@ -6961,57 +6739,57 @@ long i;
       n = ( ((n)+1) & ~1 );
 # 1161 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1162 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_14: call_lbl_34: if (alias_group_changed(____alias_loc_id_49) || ({ size_t ____chimes_arg100; if (!____chimes_replaying) { ____chimes_arg100 = (4); } calling((void*)strncasecmp, 14, ____alias_loc_id_49, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "LIST", ____chimes_arg100); }) == 0) {{
+      if (strncasecmp(data,"LIST",4) == 0) {{
 # 1164 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_15: if( ({ int ____chimes_arg101; size_t ____chimes_arg103; if (!____chimes_replaying) { ____chimes_arg101 = (AVI->fdes); ____chimes_arg103 = (4); } calling((void*)avi_read, 15, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); (avi_read)(____chimes_arg101, data, ____chimes_arg103); }) != 4 ) { call_lbl_16: ({ calling((void*)AVI_close, 16, 0, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+         if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 4); }) != 4 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_51; ; ____chimes_ret_var_51 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_51; ; }
 # 1165 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          n -= 4;
 # 1166 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_19: call_lbl_29: if (alias_group_changed(____alias_loc_id_33) || ({ size_t ____chimes_arg107; if (!____chimes_replaying) { ____chimes_arg107 = (4); } calling((void*)strncasecmp, 19, ____alias_loc_id_33, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "hdrl", ____chimes_arg107); }) == 0) {{
+         if (strncasecmp(data,"hdrl",4) == 0) {{
 # 1168 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             hdrl_len = n;
 # 1169 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            hdrl_data = (unsigned char *) malloc_wrapper(n, 912368063336281549UL, 0, 0);
+            hdrl_data = (unsigned char *) malloc_wrapper(n, 912368063336281762UL, 0, 0);
 # 1170 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            if(hdrl_data==0) { call_lbl_21: ({ calling((void*)AVI_close, 21, ____alias_loc_id_20, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; };
+            if(hdrl_data==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; int ____chimes_ret_var_52; ; ____chimes_ret_var_52 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_52; ; };
 # 1171 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1172 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1173 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1174 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      call_lbl_23: header_offset = ({ int ____chimes_arg109; __off_t ____chimes_arg110; if (!____chimes_replaying) { ____chimes_arg109 = (AVI->fdes); ____chimes_arg110 = (0); } calling((void*)lseek, 23, ____alias_loc_id_50, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg109, ____chimes_arg110, 1); }) ;
+     header_offset = lseek(AVI->fdes,0,1);
 # 1175 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1176 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_25: if( alias_group_changed(____alias_loc_id_34) || ({ int ____chimes_arg112; char * ____chimes_arg113; if (!____chimes_replaying) { ____chimes_arg112 = (AVI->fdes); ____chimes_arg113 = ((char *)hdrl_data); } calling((void*)avi_read, 25, ____alias_loc_id_34, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281549UL), (size_t)(0UL)); (avi_read)(____chimes_arg112, ____chimes_arg113, n); }) != n ) { call_lbl_26: ({ calling((void*)AVI_close, 26, 0, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+            if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *)hdrl_data, n); }) != n ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_53; ; ____chimes_ret_var_53 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_53; ; }
 # 1177 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         }; } else if (alias_group_changed(____alias_loc_id_56) || ({ size_t ____chimes_arg118; if (!____chimes_replaying) { ____chimes_arg118 = (4); } calling((void*)strncasecmp, 29, ____alias_loc_id_56, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "movi", ____chimes_arg118); }) == 0) {{
+         }; } else if (strncasecmp(data,"movi",4) == 0) {{
 # 1180 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_30: AVI->movi_start = ({ int ____chimes_arg119; __off_t ____chimes_arg120; if (!____chimes_replaying) { ____chimes_arg119 = (AVI->fdes); ____chimes_arg120 = (0); } calling((void*)lseek, 30, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg119, ____chimes_arg120, 1); }) ;
+            AVI->movi_start = lseek(AVI->fdes,0,1);
 # 1181 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_31: ({ int ____chimes_arg122; if (!____chimes_replaying) { ____chimes_arg122 = (AVI->fdes); } calling((void*)lseek, 31, ____alias_loc_id_51, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg122, n, 1); }) ;
+            lseek(AVI->fdes,n,1);
 # 1182 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         }; } else { call_lbl_32: ({ int ____chimes_arg125; if (!____chimes_replaying) { ____chimes_arg125 = (AVI->fdes); } calling((void*)lseek, 32, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg125, n, 1); }) ; } ;
+         }; } else {lseek(AVI->fdes,n,1); } ;
 # 1185 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if (alias_group_changed(____alias_loc_id_35) || ({ size_t ____chimes_arg130; if (!____chimes_replaying) { ____chimes_arg130 = (4); } calling((void*)strncasecmp, 34, ____alias_loc_id_35, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "idx1", ____chimes_arg130); }) == 0) {{
+      }; } else if (strncasecmp(data,"idx1",4) == 0) {{
 # 1188 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1189 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1190 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1191 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1192 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) malloc_wrapper(n, 912368063336282019UL, 0, 0);
+         AVI->idx = (unsigned char((*)[16]) ) malloc_wrapper(n, 912368063336282241UL, 0, 0);
 # 1193 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if(AVI->idx==0) { call_lbl_36: ({ calling((void*)AVI_close, 36, ____alias_loc_id_21, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+         if(AVI->idx==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; int ____chimes_ret_var_54; ; ____chimes_ret_var_54 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_54; ; }
 # 1194 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_39: if(alias_group_changed(____alias_loc_id_36) || ({ int ____chimes_arg132; char * ____chimes_arg133; if (!____chimes_replaying) { ____chimes_arg132 = (AVI->fdes); ____chimes_arg133 = ((char *)AVI->idx); } calling((void*)avi_read, 39, ____alias_loc_id_36, 0UL, 3, (size_t)(0UL), (size_t)(912368063336282019UL), (size_t)(0UL)); (avi_read)(____chimes_arg132, ____chimes_arg133, n); }) != n ) { call_lbl_40: ({ calling((void*)AVI_close, 40, 0, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *) AVI->idx, n); }) != n ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_55; ; ____chimes_ret_var_55 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_55; ; }
 # 1195 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else { call_lbl_42: ({ int ____chimes_arg136; if (!____chimes_replaying) { ____chimes_arg136 = (AVI->fdes); } calling((void*)lseek, 42, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg136, n, 1); }) ; } ;
+      }; } else {lseek(AVI->fdes,n,1); } ;
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1199 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1200 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!hdrl_data ) { call_lbl_43: ({ calling((void*)AVI_close, 43, 0, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 10; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+   if(!hdrl_data ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 10; int ____chimes_ret_var_56; ; ____chimes_ret_var_56 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_56; ; }
 # 1201 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->movi_start) { call_lbl_45: ({ calling((void*)AVI_close, 45, 0, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 11; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+   if(!AVI->movi_start) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 11; int ____chimes_ret_var_57; ; ____chimes_ret_var_57 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_57; ; }
 # 1202 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1203 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1204 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7022,7 +6800,7 @@ long i;
 # 1207 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1208 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1209 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_48: if(alias_group_changed(____alias_loc_id_38) || ({ const char * ____chimes_arg141; size_t ____chimes_arg143; if (!____chimes_replaying) { ____chimes_arg141 = ((char *)hdrl_data + i); ____chimes_arg143 = (4); } calling((void*)strncasecmp, 48, ____alias_loc_id_38, 0UL, 3, (size_t)(912368063336281549UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg141, "LIST", ____chimes_arg143); }) ==0) { i+= 12; continue; }
+      if(strncasecmp((char *) hdrl_data+i, "LIST",4)==0) { i+= 12; continue; }
 # 1210 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1211 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       n = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
@@ -7032,11 +6810,11 @@ long i;
 # 1214 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1215 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1216 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_50: call_lbl_59: if (alias_group_changed(____alias_loc_id_52) || ({ const char * ____chimes_arg144; size_t ____chimes_arg146; if (!____chimes_replaying) { ____chimes_arg144 = ((char *)hdrl_data + i); ____chimes_arg146 = (4); } calling((void*)strncasecmp, 50, ____alias_loc_id_52, 0UL, 3, (size_t)(912368063336281549UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg144, "strh", ____chimes_arg146); }) ==0) {{
+      if (strncasecmp((char *)hdrl_data+i,"strh",4)==0) {{
 # 1218 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          i += 8;
 # 1219 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_52: call_lbl_55: if (alias_group_changed(____alias_loc_id_39) || ({ const char * ____chimes_arg147; size_t ____chimes_arg149; if (!____chimes_replaying) { ____chimes_arg147 = ((char *)hdrl_data + i); ____chimes_arg149 = (4); } calling((void*)strncasecmp, 52, ____alias_loc_id_39, 0UL, 3, (size_t)(912368063336281549UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg147, "vids", ____chimes_arg149); }) == 0 && !vids_strh_seen) {{
+         if (strncasecmp((char *)hdrl_data+i,"vids",4) == 0 && !vids_strh_seen) {{
 # 1221 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             memcpy(AVI->compressor,hdrl_data+i+4,4);
 # 1222 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7063,7 +6841,7 @@ long i;
 # 1234 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             lasttag = 1;
 # 1235 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         }; } else if (alias_group_changed(____alias_loc_id_23) || ({ const char * ____chimes_arg150; size_t ____chimes_arg152; if (!____chimes_replaying) { ____chimes_arg150 = ((char *)hdrl_data + i); ____chimes_arg152 = (4); } calling((void*)strncasecmp, 55, ____alias_loc_id_23, 0UL, 3, (size_t)(912368063336281549UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg150, "auds", ____chimes_arg152); }) ==0 && ! auds_strh_seen) {{
+         }; } else if (strncasecmp ((char *) hdrl_data+i,"auds",4) ==0 && ! auds_strh_seen) {{
 # 1238 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1239 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1240 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7076,7 +6854,7 @@ long i;
 # 1244 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       fprintf(stderr, "error - only %d audio tracks supported\n", 8);
 # 1245 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return(-1);
+       int ____chimes_ret_var_58; ; ____chimes_ret_var_58 = ((-1)); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_58; ;
 # 1246 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1247 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7097,7 +6875,7 @@ long i;
 # 1259 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          num_stream++;
 # 1260 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if(alias_group_changed(____alias_loc_id_40) || ({ const char * ____chimes_arg153; size_t ____chimes_arg155; if (!____chimes_replaying) { ____chimes_arg153 = ((char *)hdrl_data + i); ____chimes_arg155 = (4); } calling((void*)strncasecmp, 59, ____alias_loc_id_40, 0UL, 3, (size_t)(912368063336281549UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg153, "strf", ____chimes_arg155); }) ==0)
+      }; } else if(strncasecmp((char *) hdrl_data+i,"strf",4)==0)
 # 1262 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1263 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7164,10 +6942,10 @@ long i;
    }
 # 1301 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1302 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   free_wrapper(hdrl_data, 912368063336281549UL);
+   free_wrapper(hdrl_data, 912368063336281762UL);
 # 1303 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1304 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!vids_strh_seen || !vids_strf_seen) { call_lbl_62: ({ calling((void*)AVI_close, 62, ____alias_loc_id_24, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+   if(!vids_strh_seen || !vids_strf_seen) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; int ____chimes_ret_var_59; ; ____chimes_ret_var_59 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_59; ; }
 # 1305 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1306 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_tag[0] = AVI->video_strn/10 + '0';
@@ -7196,12 +6974,12 @@ long i;
    }
 # 1320 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1321 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_64: ({ int ____chimes_arg157; __off_t ____chimes_arg158; if (!____chimes_replaying) { ____chimes_arg157 = (AVI->fdes); ____chimes_arg158 = (AVI->movi_start); } calling((void*)lseek, 64, ____alias_loc_id_22, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg157, ____chimes_arg158, 0); }) ;
+   lseek(AVI->fdes,AVI->movi_start,0);
 # 1322 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1323 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1324 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1325 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (!getIndex) {rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return(0); };
+   if (!getIndex) { int ____chimes_ret_var_60; ; ____chimes_ret_var_60 = ((0)); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_60; ; };
 # 1326 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1327 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1328 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7214,15 +6992,15 @@ long i;
 # 1333 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1334 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-        ;
+      long pos; long len; ;
 # 1335 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1336 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1337 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1338 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1339 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      for (i=0; i<AVI->n_idx; i++) { call_lbl_67: if (alias_group_changed(____alias_loc_id_41) || ({ const char * ____chimes_arg160; const char * ____chimes_arg161; size_t ____chimes_arg162; if (!____chimes_replaying) { ____chimes_arg160 = ((char *)AVI->idx[i]); ____chimes_arg161 = ((char *)AVI->video_tag); ____chimes_arg162 = (3); } calling((void*)strncasecmp, 67, ____alias_loc_id_41, 0UL, 3, (size_t)(912368063336282019UL), (size_t)(912368063336282472UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg160, ____chimes_arg161, ____chimes_arg162); }) ==0) {break; }; };
+      for (i=0; i<AVI->n_idx; i++) { if (strncasecmp((char *) AVI->idx[i],(char *) AVI->video_tag,3)==0) {break; }; };
 # 1341 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if(i>=AVI->n_idx) { call_lbl_68: ({ calling((void*)AVI_close, 68, ____alias_loc_id_25, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+      if(i>=AVI->n_idx) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; int ____chimes_ret_var_61; ; ____chimes_ret_var_61 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_61; ; }
 # 1342 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1343 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); });
@@ -7230,11 +7008,11 @@ long i;
       len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
 # 1345 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1346 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_70: ({ int ____chimes_arg164; if (!____chimes_replaying) { ____chimes_arg164 = (AVI->fdes); } calling((void*)lseek, 70, ____alias_loc_id_53, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg164, pos, 0); }) ;
+      lseek(AVI->fdes,pos,0);
 # 1347 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_71: if( ({ int ____chimes_arg167; size_t ____chimes_arg169; if (!____chimes_replaying) { ____chimes_arg167 = (AVI->fdes); ____chimes_arg169 = (8); } calling((void*)avi_read, 71, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); (avi_read)(____chimes_arg167, data, ____chimes_arg169); }) !=8) { call_lbl_72: ({ calling((void*)AVI_close, 72, 0, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+      if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_62; ; ____chimes_ret_var_62 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_62; ; }
 # 1348 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_75: if( alias_group_changed(____alias_loc_id_42) || ({ const char * ____chimes_arg171; const char * ____chimes_arg172; size_t ____chimes_arg173; if (!____chimes_replaying) { ____chimes_arg171 = ((char *)data); ____chimes_arg172 = ((char *)AVI->idx[i]); ____chimes_arg173 = (4); } calling((void*)strncasecmp, 75, ____alias_loc_id_42, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336282019UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg171, ____chimes_arg172, ____chimes_arg173); }) ==0 &&
+      if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 &&
 # 1349 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
 # 1350 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7248,11 +7026,11 @@ long i;
 # 1354 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1355 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_76: ({ int ____chimes_arg174; __off_t ____chimes_arg175; if (!____chimes_replaying) { ____chimes_arg174 = (AVI->fdes); ____chimes_arg175 = (pos + AVI->movi_start - 4); } calling((void*)lseek, 76, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg174, ____chimes_arg175, 0); }) ;
+         lseek(AVI->fdes,pos+AVI->movi_start-4,0);
 # 1356 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_77: if( ({ int ____chimes_arg177; size_t ____chimes_arg179; if (!____chimes_replaying) { ____chimes_arg177 = (AVI->fdes); ____chimes_arg179 = (8); } calling((void*)avi_read, 77, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); (avi_read)(____chimes_arg177, data, ____chimes_arg179); }) !=8) { call_lbl_78: ({ calling((void*)AVI_close, 78, 0, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_63; ; ____chimes_ret_var_63 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_63; ; }
 # 1357 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_81: if( alias_group_changed(____alias_loc_id_43) || ({ const char * ____chimes_arg181; const char * ____chimes_arg182; size_t ____chimes_arg183; if (!____chimes_replaying) { ____chimes_arg181 = ((char *)data); ____chimes_arg182 = ((char *)AVI->idx[i]); ____chimes_arg183 = (4); } calling((void*)strncasecmp, 81, ____alias_loc_id_43, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336282019UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg181, ____chimes_arg182, ____chimes_arg183); }) ==0 && ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
+         if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 && ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
 # 1358 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1359 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7272,7 +7050,7 @@ long i;
 # 1367 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1368 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1369 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_82: ({ int ____chimes_arg184; __off_t ____chimes_arg185; if (!____chimes_replaying) { ____chimes_arg184 = (AVI->fdes); ____chimes_arg185 = (AVI->movi_start); } calling((void*)lseek, 82, ____alias_loc_id_54, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg184, ____chimes_arg185, 0); }) ;
+      lseek(AVI->fdes, AVI->movi_start, 0);
 # 1370 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1371 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI->n_idx = 0;
@@ -7282,18 +7060,18 @@ long i;
 # 1374 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1375 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_84: if (alias_group_changed(____alias_loc_id_44) || ({ int ____chimes_arg187; size_t ____chimes_arg189; if (!____chimes_replaying) { ____chimes_arg187 = (AVI->fdes); ____chimes_arg189 = (8); } calling((void*)avi_read, 84, ____alias_loc_id_44, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); (avi_read)(____chimes_arg187, data, ____chimes_arg189); }) != 8) {break; };
+         if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8) {break; };
 # 1376 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); });
 # 1377 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1378 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1379 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1380 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_86: if(alias_group_changed(____alias_loc_id_57) || ({ size_t ____chimes_arg192; if (!____chimes_replaying) { ____chimes_arg192 = (4); } calling((void*)strncasecmp, 86, ____alias_loc_id_57, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "LIST", ____chimes_arg192); }) ==0)
+         if(strncasecmp(data,"LIST",4)==0)
 # 1381 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1382 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_87: ({ int ____chimes_arg193; __off_t ____chimes_arg194; if (!____chimes_replaying) { ____chimes_arg193 = (AVI->fdes); ____chimes_arg194 = (4); } calling((void*)lseek, 87, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg193, ____chimes_arg194, 1); }) ;
+            lseek(AVI->fdes,4,1);
 # 1383 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             continue;
 # 1384 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7312,12 +7090,12 @@ long i;
 # 1392 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     {
 # 1393 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         call_lbl_88: ____chimes_unroll_var_0 = ( ({ int ____chimes_arg196; __off_t ____chimes_arg197; if (!____chimes_replaying) { ____chimes_arg196 = (AVI->fdes); ____chimes_arg197 = (0); } calling((void*)lseek, 88, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg196, ____chimes_arg197, 1); }) ) ; ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *) data, 0, ____chimes_unroll_var_0-8, n); });
+    ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *) data, 0, lseek(AVI->fdes,0,1)-8, n); });
 # 1394 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          }
 # 1395 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1396 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_89: ({ int ____chimes_arg199; long ____chimes_arg200; if (!____chimes_replaying) { ____chimes_arg199 = (AVI->fdes); ____chimes_arg200 = ((((n) + 1) & ~1)); } calling((void*)lseek, 89, ____alias_loc_id_55, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg199, ____chimes_arg200, 1); }) ;
+         lseek(AVI->fdes,( ((n)+1) & ~1 ),1);
 # 1397 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       }
 # 1398 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7336,10 +7114,10 @@ long i;
    for(i=0;i<AVI->n_idx;i++) {
 # 1407 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1408 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      call_lbl_91: if (alias_group_changed(____alias_loc_id_45) || ({ const char * ____chimes_arg202; const char * ____chimes_arg203; size_t ____chimes_arg204; if (!____chimes_replaying) { ____chimes_arg202 = ((char *)AVI->idx[i]); ____chimes_arg203 = ((char *)AVI->video_tag); ____chimes_arg204 = (3); } calling((void*)strncasecmp, 91, ____alias_loc_id_45, 0UL, 3, (size_t)(912368063336282019UL), (size_t)(912368063336282472UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg202, ____chimes_arg203, ____chimes_arg204); }) == 0) {nvi++; };
+     if (strncasecmp((char *)AVI->idx[i],(char *) AVI->video_tag,3) == 0) {nvi++; };
 # 1409 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1410 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     for (j=0; j<AVI->anum; ++j) { call_lbl_93: if (alias_group_changed(____alias_loc_id_46) || ({ const char * ____chimes_arg205; const char * ____chimes_arg206; size_t ____chimes_arg207; if (!____chimes_replaying) { ____chimes_arg205 = ((char *)AVI->idx[i]); ____chimes_arg206 = (AVI->track[j].audio_tag); ____chimes_arg207 = (4); } calling((void*)strncasecmp, 93, ____alias_loc_id_46, 0UL, 3, (size_t)(912368063336282019UL), (size_t)(912368063336282472UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg205, ____chimes_arg206, ____chimes_arg207); }) == 0) {nai[j]++; }; };
+     for (j=0; j<AVI->anum; ++j) { if (strncasecmp((char *)AVI->idx[i], AVI->track[j].audio_tag,4) == 0) {nai[j]++; }; };
 # 1411 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1412 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7351,20 +7129,20 @@ long i;
 # 1416 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1417 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1418 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->video_frames==0) { call_lbl_94: ({ calling((void*)AVI_close, 94, ____alias_loc_id_26, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; };
+   if(AVI->video_frames==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; int ____chimes_ret_var_64; ; ____chimes_ret_var_64 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_64; ; };
 # 1419 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   AVI->video_index = (video_index_entry *) malloc_wrapper(nvi*sizeof(video_index_entry), 912368063336282019UL, 0, 1, (int)sizeof(video_index_entry), 0);
+   AVI->video_index = (video_index_entry *) malloc_wrapper(nvi*sizeof(video_index_entry), 912368063336282241UL, 0, 1, (int)sizeof(video_index_entry), 0);
 # 1420 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->video_index==0) { call_lbl_97: ({ calling((void*)AVI_close, 97, ____alias_loc_id_27, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; };
+   if(AVI->video_index==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; int ____chimes_ret_var_65; ; ____chimes_ret_var_65 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_65; ; };
 # 1421 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1422 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    for(j=0; j<AVI->anum; ++j) {
 # 1423 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1424 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) malloc_wrapper(nai[j]*sizeof(audio_index_entry), 912368063336282019UL, 0, 1, (int)sizeof(audio_index_entry), 0);
+    AVI->track[j].audio_index = (audio_index_entry *) malloc_wrapper(nai[j]*sizeof(audio_index_entry), 912368063336282241UL, 0, 1, (int)sizeof(audio_index_entry), 0);
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    if(AVI->track[j].audio_index==0) { call_lbl_100: ({ calling((void*)AVI_close, 100, ____alias_loc_id_28, 0UL, 1, (size_t)(912368063336282472UL)); (AVI_close)(AVI); }) ; AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; };
+    if(AVI->track[j].audio_index==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; int ____chimes_ret_var_66; ; ____chimes_ret_var_66 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_66; ; };
 # 1426 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        }
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7383,7 +7161,7 @@ long i;
 # 1435 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1436 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1437 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      call_lbl_103: if(alias_group_changed(____alias_loc_id_48) || ({ const char * ____chimes_arg211; const char * ____chimes_arg212; size_t ____chimes_arg213; if (!____chimes_replaying) { ____chimes_arg211 = ((char *)AVI->idx[i]); ____chimes_arg212 = ((char *)AVI->video_tag); ____chimes_arg213 = (3); } calling((void*)strncasecmp, 103, ____alias_loc_id_48, 0UL, 3, (size_t)(912368063336282019UL), (size_t)(912368063336282472UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg211, ____chimes_arg212, ____chimes_arg213); }) == 0) {
+     if(strncasecmp((char *)AVI->idx[i],(char *)AVI->video_tag,3) == 0) {
 # 1438 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        AVI->video_index[nvi].key = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 4); });
 # 1439 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7400,7 +7178,7 @@ long i;
      for(j=0; j<AVI->anum; ++j) {
 # 1446 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1447 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-        call_lbl_105: if(alias_group_changed(____alias_loc_id_47) || ({ const char * ____chimes_arg214; const char * ____chimes_arg215; size_t ____chimes_arg216; if (!____chimes_replaying) { ____chimes_arg214 = ((char *)AVI->idx[i]); ____chimes_arg215 = (AVI->track[j].audio_tag); ____chimes_arg216 = (4); } calling((void*)strncasecmp, 105, ____alias_loc_id_47, 0UL, 3, (size_t)(912368063336282019UL), (size_t)(912368063336282472UL), (size_t)(0UL)); (strncasecmp)(____chimes_arg214, ____chimes_arg215, ____chimes_arg216); }) == 0) {
+       if(strncasecmp((char *)AVI->idx[i],AVI->track[j].audio_tag,4) == 0) {
 # 1448 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->track[j].audio_index[nai[j]].pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); })+ioff;
 # 1449 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7425,262 +7203,262 @@ long i;
 # 1460 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1461 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1462 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_106: ({ int ____chimes_arg217; __off_t ____chimes_arg218; if (!____chimes_replaying) { ____chimes_arg217 = (AVI->fdes); ____chimes_arg218 = (AVI->movi_start); } calling((void*)lseek, 106, ____alias_loc_id_29, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg217, ____chimes_arg218, 0); }) ;
+   lseek(AVI->fdes,AVI->movi_start,0);
 # 1463 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_pos = 0;
 # 1464 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1465 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return(0);
+    int ____chimes_ret_var_67; ; ____chimes_ret_var_67 = ((0)); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_67; ;
 # 1466 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); }
 # 1467 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1468 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_video_frames_npm(avi_t *AVI);
 long AVI_video_frames_quick(avi_t *AVI); long AVI_video_frames(avi_t *AVI);
 long AVI_video_frames_resumable(avi_t *AVI)
 # 1469 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable26 = new_stack((void *)(&AVI_video_frames), "AVI_video_frames", &____must_manage_AVI_video_frames, 1, 0, (size_t)(912368063336282834UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable26 = new_stack((void *)(&AVI_video_frames), "AVI_video_frames", &____must_manage_AVI_video_frames, 1, 0, (size_t)(912368063336283098UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1470 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_video_frames", &____must_manage_AVI_video_frames, ____alias_loc_id_98, ____chimes_did_disable26); return AVI->video_frames;
+    long ____chimes_ret_var_68; ; ____chimes_ret_var_68 = (AVI->video_frames); rm_stack(false, 0UL, "AVI_video_frames", &____must_manage_AVI_video_frames, ____alias_loc_id_25, ____chimes_did_disable26); return ____chimes_ret_var_68; ;
 # 1471 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_video_frames", &____must_manage_AVI_video_frames, ____alias_loc_id_25, ____chimes_did_disable26); }
 # 1472 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_video_width_npm(avi_t *AVI);
 int AVI_video_width_quick(avi_t *AVI); int AVI_video_width(avi_t *AVI);
 int AVI_video_width_resumable(avi_t *AVI)
 # 1473 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable27 = new_stack((void *)(&AVI_video_width), "AVI_video_width", &____must_manage_AVI_video_width, 1, 0, (size_t)(912368063336282843UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable27 = new_stack((void *)(&AVI_video_width), "AVI_video_width", &____must_manage_AVI_video_width, 1, 0, (size_t)(912368063336283111UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1474 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_video_width", &____must_manage_AVI_video_width, ____alias_loc_id_99, ____chimes_did_disable27); return AVI->width;
+    int ____chimes_ret_var_69; ; ____chimes_ret_var_69 = (AVI->width); rm_stack(false, 0UL, "AVI_video_width", &____must_manage_AVI_video_width, ____alias_loc_id_26, ____chimes_did_disable27); return ____chimes_ret_var_69; ;
 # 1475 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_video_width", &____must_manage_AVI_video_width, ____alias_loc_id_26, ____chimes_did_disable27); }
 # 1476 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_video_height_npm(avi_t *AVI);
 int AVI_video_height_quick(avi_t *AVI); int AVI_video_height(avi_t *AVI);
 int AVI_video_height_resumable(avi_t *AVI)
 # 1477 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable28 = new_stack((void *)(&AVI_video_height), "AVI_video_height", &____must_manage_AVI_video_height, 1, 0, (size_t)(912368063336282852UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable28 = new_stack((void *)(&AVI_video_height), "AVI_video_height", &____must_manage_AVI_video_height, 1, 0, (size_t)(912368063336283124UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1478 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_video_height", &____must_manage_AVI_video_height, ____alias_loc_id_100, ____chimes_did_disable28); return AVI->height;
+    int ____chimes_ret_var_70; ; ____chimes_ret_var_70 = (AVI->height); rm_stack(false, 0UL, "AVI_video_height", &____must_manage_AVI_video_height, ____alias_loc_id_27, ____chimes_did_disable28); return ____chimes_ret_var_70; ;
 # 1479 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_video_height", &____must_manage_AVI_video_height, ____alias_loc_id_27, ____chimes_did_disable28); }
 # 1480 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 double AVI_frame_rate_npm(avi_t *AVI);
 double AVI_frame_rate_quick(avi_t *AVI); double AVI_frame_rate(avi_t *AVI);
 double AVI_frame_rate_resumable(avi_t *AVI)
 # 1481 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable29 = new_stack((void *)(&AVI_frame_rate), "AVI_frame_rate", &____must_manage_AVI_frame_rate, 1, 0, (size_t)(912368063336282860UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable29 = new_stack((void *)(&AVI_frame_rate), "AVI_frame_rate", &____must_manage_AVI_frame_rate, 1, 0, (size_t)(912368063336283136UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1482 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_frame_rate", &____must_manage_AVI_frame_rate, ____alias_loc_id_101, ____chimes_did_disable29); return AVI->fps;
+    double ____chimes_ret_var_71; ; ____chimes_ret_var_71 = (AVI->fps); rm_stack(false, 0UL, "AVI_frame_rate", &____must_manage_AVI_frame_rate, ____alias_loc_id_28, ____chimes_did_disable29); return ____chimes_ret_var_71; ;
 # 1483 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_frame_rate", &____must_manage_AVI_frame_rate, ____alias_loc_id_28, ____chimes_did_disable29); }
 # 1484 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 char* AVI_video_compressor_npm(avi_t *AVI);
 char* AVI_video_compressor_quick(avi_t *AVI); char* AVI_video_compressor(avi_t *AVI);
 char* AVI_video_compressor_resumable(avi_t *AVI)
 # 1485 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable30 = new_stack((void *)(&AVI_video_compressor), "AVI_video_compressor", &____must_manage_AVI_video_compressor, 1, 0, (size_t)(912368063336282868UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable30 = new_stack((void *)(&AVI_video_compressor), "AVI_video_compressor", &____must_manage_AVI_video_compressor, 1, 0, (size_t)(912368063336283148UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1486 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(true, 912368063336282868UL, "AVI_video_compressor", &____must_manage_AVI_video_compressor, ____alias_loc_id_102, ____chimes_did_disable30); return AVI->compressor2;
+    char *____chimes_ret_var_72; ; ____chimes_ret_var_72 = (AVI->compressor2); rm_stack(true, 912368063336283148UL, "AVI_video_compressor", &____must_manage_AVI_video_compressor, ____alias_loc_id_29, ____chimes_did_disable30); return ____chimes_ret_var_72; ;
 # 1487 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(true, 912368063336283148UL, "AVI_video_compressor", &____must_manage_AVI_video_compressor, ____alias_loc_id_29, ____chimes_did_disable30); }
 # 1488 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1489 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_max_video_chunk_npm(avi_t *AVI);
 long AVI_max_video_chunk_quick(avi_t *AVI); long AVI_max_video_chunk(avi_t *AVI);
 long AVI_max_video_chunk_resumable(avi_t *AVI)
 # 1490 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable31 = new_stack((void *)(&AVI_max_video_chunk), "AVI_max_video_chunk", &____must_manage_AVI_max_video_chunk, 1, 0, (size_t)(912368063336282876UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable31 = new_stack((void *)(&AVI_max_video_chunk), "AVI_max_video_chunk", &____must_manage_AVI_max_video_chunk, 1, 0, (size_t)(912368063336283160UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1491 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_max_video_chunk", &____must_manage_AVI_max_video_chunk, ____alias_loc_id_103, ____chimes_did_disable31); return AVI->max_len;
+    long ____chimes_ret_var_73; ; ____chimes_ret_var_73 = (AVI->max_len); rm_stack(false, 0UL, "AVI_max_video_chunk", &____must_manage_AVI_max_video_chunk, ____alias_loc_id_30, ____chimes_did_disable31); return ____chimes_ret_var_73; ;
 # 1492 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_max_video_chunk", &____must_manage_AVI_max_video_chunk, ____alias_loc_id_30, ____chimes_did_disable31); }
 # 1493 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1494 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_audio_tracks_npm(avi_t *AVI);
 int AVI_audio_tracks_quick(avi_t *AVI); int AVI_audio_tracks(avi_t *AVI);
 int AVI_audio_tracks_resumable(avi_t *AVI)
 # 1495 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable32 = new_stack((void *)(&AVI_audio_tracks), "AVI_audio_tracks", &____must_manage_AVI_audio_tracks, 1, 0, (size_t)(912368063336282884UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable32 = new_stack((void *)(&AVI_audio_tracks), "AVI_audio_tracks", &____must_manage_AVI_audio_tracks, 1, 0, (size_t)(912368063336283172UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1496 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    rm_stack(false, 0UL, "AVI_audio_tracks", &____must_manage_AVI_audio_tracks, ____alias_loc_id_104, ____chimes_did_disable32); return(AVI->anum);
+     int ____chimes_ret_var_74; ; ____chimes_ret_var_74 = ((AVI->anum)); rm_stack(false, 0UL, "AVI_audio_tracks", &____must_manage_AVI_audio_tracks, ____alias_loc_id_31, ____chimes_did_disable32); return ____chimes_ret_var_74; ;
 # 1497 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_tracks", &____must_manage_AVI_audio_tracks, ____alias_loc_id_31, ____chimes_did_disable32); }
 # 1498 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1499 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_audio_channels_npm(avi_t *AVI);
 int AVI_audio_channels_quick(avi_t *AVI); int AVI_audio_channels(avi_t *AVI);
 int AVI_audio_channels_resumable(avi_t *AVI)
 # 1500 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable33 = new_stack((void *)(&AVI_audio_channels), "AVI_audio_channels", &____must_manage_AVI_audio_channels, 1, 0, (size_t)(912368063336282899UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable33 = new_stack((void *)(&AVI_audio_channels), "AVI_audio_channels", &____must_manage_AVI_audio_channels, 1, 0, (size_t)(912368063336283191UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1501 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_channels", &____must_manage_AVI_audio_channels, ____alias_loc_id_105, ____chimes_did_disable33); return AVI->track[AVI->aptr].a_chans;
+    int ____chimes_ret_var_75; ; ____chimes_ret_var_75 = (AVI->track[AVI->aptr].a_chans); rm_stack(false, 0UL, "AVI_audio_channels", &____must_manage_AVI_audio_channels, ____alias_loc_id_32, ____chimes_did_disable33); return ____chimes_ret_var_75; ;
 # 1502 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_channels", &____must_manage_AVI_audio_channels, ____alias_loc_id_32, ____chimes_did_disable33); }
 # 1503 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1504 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_audio_mp3rate_npm(avi_t *AVI);
 long AVI_audio_mp3rate_quick(avi_t *AVI); long AVI_audio_mp3rate(avi_t *AVI);
 long AVI_audio_mp3rate_resumable(avi_t *AVI)
 # 1505 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable34 = new_stack((void *)(&AVI_audio_mp3rate), "AVI_audio_mp3rate", &____must_manage_AVI_audio_mp3rate, 1, 0, (size_t)(912368063336282913UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable34 = new_stack((void *)(&AVI_audio_mp3rate), "AVI_audio_mp3rate", &____must_manage_AVI_audio_mp3rate, 1, 0, (size_t)(912368063336283209UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1506 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_mp3rate", &____must_manage_AVI_audio_mp3rate, ____alias_loc_id_106, ____chimes_did_disable34); return AVI->track[AVI->aptr].mp3rate;
+    long ____chimes_ret_var_76; ; ____chimes_ret_var_76 = (AVI->track[AVI->aptr].mp3rate); rm_stack(false, 0UL, "AVI_audio_mp3rate", &____must_manage_AVI_audio_mp3rate, ____alias_loc_id_33, ____chimes_did_disable34); return ____chimes_ret_var_76; ;
 # 1507 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_mp3rate", &____must_manage_AVI_audio_mp3rate, ____alias_loc_id_33, ____chimes_did_disable34); }
 # 1508 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1509 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_audio_bits_npm(avi_t *AVI);
 int AVI_audio_bits_quick(avi_t *AVI); int AVI_audio_bits(avi_t *AVI);
 int AVI_audio_bits_resumable(avi_t *AVI)
 # 1510 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable35 = new_stack((void *)(&AVI_audio_bits), "AVI_audio_bits", &____must_manage_AVI_audio_bits, 1, 0, (size_t)(912368063336282928UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable35 = new_stack((void *)(&AVI_audio_bits), "AVI_audio_bits", &____must_manage_AVI_audio_bits, 1, 0, (size_t)(912368063336283228UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1511 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_bits", &____must_manage_AVI_audio_bits, ____alias_loc_id_107, ____chimes_did_disable35); return AVI->track[AVI->aptr].a_bits;
+    int ____chimes_ret_var_77; ; ____chimes_ret_var_77 = (AVI->track[AVI->aptr].a_bits); rm_stack(false, 0UL, "AVI_audio_bits", &____must_manage_AVI_audio_bits, ____alias_loc_id_34, ____chimes_did_disable35); return ____chimes_ret_var_77; ;
 # 1512 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_bits", &____must_manage_AVI_audio_bits, ____alias_loc_id_34, ____chimes_did_disable35); }
 # 1513 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1514 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_audio_format_npm(avi_t *AVI);
 int AVI_audio_format_quick(avi_t *AVI); int AVI_audio_format(avi_t *AVI);
 int AVI_audio_format_resumable(avi_t *AVI)
 # 1515 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable36 = new_stack((void *)(&AVI_audio_format), "AVI_audio_format", &____must_manage_AVI_audio_format, 1, 0, (size_t)(912368063336282943UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable36 = new_stack((void *)(&AVI_audio_format), "AVI_audio_format", &____must_manage_AVI_audio_format, 1, 0, (size_t)(912368063336283247UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1516 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_format", &____must_manage_AVI_audio_format, ____alias_loc_id_108, ____chimes_did_disable36); return AVI->track[AVI->aptr].a_fmt;
+    int ____chimes_ret_var_78; ; ____chimes_ret_var_78 = (AVI->track[AVI->aptr].a_fmt); rm_stack(false, 0UL, "AVI_audio_format", &____must_manage_AVI_audio_format, ____alias_loc_id_35, ____chimes_did_disable36); return ____chimes_ret_var_78; ;
 # 1517 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_format", &____must_manage_AVI_audio_format, ____alias_loc_id_35, ____chimes_did_disable36); }
 # 1518 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1519 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_audio_rate_npm(avi_t *AVI);
 long AVI_audio_rate_quick(avi_t *AVI); long AVI_audio_rate(avi_t *AVI);
 long AVI_audio_rate_resumable(avi_t *AVI)
 # 1520 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable37 = new_stack((void *)(&AVI_audio_rate), "AVI_audio_rate", &____must_manage_AVI_audio_rate, 1, 0, (size_t)(912368063336282957UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable37 = new_stack((void *)(&AVI_audio_rate), "AVI_audio_rate", &____must_manage_AVI_audio_rate, 1, 0, (size_t)(912368063336283265UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1521 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_rate", &____must_manage_AVI_audio_rate, ____alias_loc_id_109, ____chimes_did_disable37); return AVI->track[AVI->aptr].a_rate;
+    long ____chimes_ret_var_79; ; ____chimes_ret_var_79 = (AVI->track[AVI->aptr].a_rate); rm_stack(false, 0UL, "AVI_audio_rate", &____must_manage_AVI_audio_rate, ____alias_loc_id_36, ____chimes_did_disable37); return ____chimes_ret_var_79; ;
 # 1522 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_rate", &____must_manage_AVI_audio_rate, ____alias_loc_id_36, ____chimes_did_disable37); }
 # 1523 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1524 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_audio_bytes_npm(avi_t *AVI);
 long AVI_audio_bytes_quick(avi_t *AVI); long AVI_audio_bytes(avi_t *AVI);
 long AVI_audio_bytes_resumable(avi_t *AVI)
 # 1525 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable38 = new_stack((void *)(&AVI_audio_bytes), "AVI_audio_bytes", &____must_manage_AVI_audio_bytes, 1, 0, (size_t)(912368063336282971UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable38 = new_stack((void *)(&AVI_audio_bytes), "AVI_audio_bytes", &____must_manage_AVI_audio_bytes, 1, 0, (size_t)(912368063336283283UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1526 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_bytes", &____must_manage_AVI_audio_bytes, ____alias_loc_id_110, ____chimes_did_disable38); return AVI->track[AVI->aptr].audio_bytes;
+    long ____chimes_ret_var_80; ; ____chimes_ret_var_80 = (AVI->track[AVI->aptr].audio_bytes); rm_stack(false, 0UL, "AVI_audio_bytes", &____must_manage_AVI_audio_bytes, ____alias_loc_id_37, ____chimes_did_disable38); return ____chimes_ret_var_80; ;
 # 1527 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_bytes", &____must_manage_AVI_audio_bytes, ____alias_loc_id_37, ____chimes_did_disable38); }
 # 1528 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1529 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_audio_chunks_npm(avi_t *AVI);
 long AVI_audio_chunks_quick(avi_t *AVI); long AVI_audio_chunks(avi_t *AVI);
 long AVI_audio_chunks_resumable(avi_t *AVI)
 # 1530 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable39 = new_stack((void *)(&AVI_audio_chunks), "AVI_audio_chunks", &____must_manage_AVI_audio_chunks, 1, 0, (size_t)(912368063336282985UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable39 = new_stack((void *)(&AVI_audio_chunks), "AVI_audio_chunks", &____must_manage_AVI_audio_chunks, 1, 0, (size_t)(912368063336283301UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1531 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_chunks", &____must_manage_AVI_audio_chunks, ____alias_loc_id_111, ____chimes_did_disable39); return AVI->track[AVI->aptr].audio_chunks;
+    long ____chimes_ret_var_81; ; ____chimes_ret_var_81 = (AVI->track[AVI->aptr].audio_chunks); rm_stack(false, 0UL, "AVI_audio_chunks", &____must_manage_AVI_audio_chunks, ____alias_loc_id_38, ____chimes_did_disable39); return ____chimes_ret_var_81; ;
 # 1532 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_chunks", &____must_manage_AVI_audio_chunks, ____alias_loc_id_38, ____chimes_did_disable39); }
 # 1533 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1534 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_audio_codech_offset_npm(avi_t *AVI);
 long AVI_audio_codech_offset_quick(avi_t *AVI); long AVI_audio_codech_offset(avi_t *AVI);
 long AVI_audio_codech_offset_resumable(avi_t *AVI)
 # 1535 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable40 = new_stack((void *)(&AVI_audio_codech_offset), "AVI_audio_codech_offset", &____must_manage_AVI_audio_codech_offset, 1, 0, (size_t)(912368063336282999UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable40 = new_stack((void *)(&AVI_audio_codech_offset), "AVI_audio_codech_offset", &____must_manage_AVI_audio_codech_offset, 1, 0, (size_t)(912368063336283319UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1536 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_codech_offset", &____must_manage_AVI_audio_codech_offset, ____alias_loc_id_112, ____chimes_did_disable40); return AVI->track[AVI->aptr].a_codech_off;
+    long ____chimes_ret_var_82; ; ____chimes_ret_var_82 = (AVI->track[AVI->aptr].a_codech_off); rm_stack(false, 0UL, "AVI_audio_codech_offset", &____must_manage_AVI_audio_codech_offset, ____alias_loc_id_39, ____chimes_did_disable40); return ____chimes_ret_var_82; ;
 # 1537 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_codech_offset", &____must_manage_AVI_audio_codech_offset, ____alias_loc_id_39, ____chimes_did_disable40); }
 # 1538 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1539 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_audio_codecf_offset_npm(avi_t *AVI);
 long AVI_audio_codecf_offset_quick(avi_t *AVI); long AVI_audio_codecf_offset(avi_t *AVI);
 long AVI_audio_codecf_offset_resumable(avi_t *AVI)
 # 1540 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable41 = new_stack((void *)(&AVI_audio_codecf_offset), "AVI_audio_codecf_offset", &____must_manage_AVI_audio_codecf_offset, 1, 0, (size_t)(912368063336283013UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable41 = new_stack((void *)(&AVI_audio_codecf_offset), "AVI_audio_codecf_offset", &____must_manage_AVI_audio_codecf_offset, 1, 0, (size_t)(912368063336283337UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1541 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_codecf_offset", &____must_manage_AVI_audio_codecf_offset, ____alias_loc_id_113, ____chimes_did_disable41); return AVI->track[AVI->aptr].a_codecf_off;
+    long ____chimes_ret_var_83; ; ____chimes_ret_var_83 = (AVI->track[AVI->aptr].a_codecf_off); rm_stack(false, 0UL, "AVI_audio_codecf_offset", &____must_manage_AVI_audio_codecf_offset, ____alias_loc_id_40, ____chimes_did_disable41); return ____chimes_ret_var_83; ;
 # 1542 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_codecf_offset", &____must_manage_AVI_audio_codecf_offset, ____alias_loc_id_40, ____chimes_did_disable41); }
 # 1543 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1544 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_video_codech_offset_npm(avi_t *AVI);
 long AVI_video_codech_offset_quick(avi_t *AVI); long AVI_video_codech_offset(avi_t *AVI);
 long AVI_video_codech_offset_resumable(avi_t *AVI)
 # 1545 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable42 = new_stack((void *)(&AVI_video_codech_offset), "AVI_video_codech_offset", &____must_manage_AVI_video_codech_offset, 1, 0, (size_t)(912368063336283021UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable42 = new_stack((void *)(&AVI_video_codech_offset), "AVI_video_codech_offset", &____must_manage_AVI_video_codech_offset, 1, 0, (size_t)(912368063336283349UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1546 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    rm_stack(false, 0UL, "AVI_video_codech_offset", &____must_manage_AVI_video_codech_offset, ____alias_loc_id_114, ____chimes_did_disable42); return AVI->v_codech_off;
+     long ____chimes_ret_var_84; ; ____chimes_ret_var_84 = (AVI->v_codech_off); rm_stack(false, 0UL, "AVI_video_codech_offset", &____must_manage_AVI_video_codech_offset, ____alias_loc_id_41, ____chimes_did_disable42); return ____chimes_ret_var_84; ;
 # 1547 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_video_codech_offset", &____must_manage_AVI_video_codech_offset, ____alias_loc_id_41, ____chimes_did_disable42); }
 # 1548 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1549 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_video_codecf_offset_npm(avi_t *AVI);
 long AVI_video_codecf_offset_quick(avi_t *AVI); long AVI_video_codecf_offset(avi_t *AVI);
 long AVI_video_codecf_offset_resumable(avi_t *AVI)
 # 1550 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable43 = new_stack((void *)(&AVI_video_codecf_offset), "AVI_video_codecf_offset", &____must_manage_AVI_video_codecf_offset, 1, 0, (size_t)(912368063336283029UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable43 = new_stack((void *)(&AVI_video_codecf_offset), "AVI_video_codecf_offset", &____must_manage_AVI_video_codecf_offset, 1, 0, (size_t)(912368063336283361UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1551 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    rm_stack(false, 0UL, "AVI_video_codecf_offset", &____must_manage_AVI_video_codecf_offset, ____alias_loc_id_115, ____chimes_did_disable43); return AVI->v_codecf_off;
+     long ____chimes_ret_var_85; ; ____chimes_ret_var_85 = (AVI->v_codecf_off); rm_stack(false, 0UL, "AVI_video_codecf_offset", &____must_manage_AVI_video_codecf_offset, ____alias_loc_id_42, ____chimes_did_disable43); return ____chimes_ret_var_85; ;
 # 1552 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_video_codecf_offset", &____must_manage_AVI_video_codecf_offset, ____alias_loc_id_42, ____chimes_did_disable43); }
 # 1553 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1554 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_frame_size_npm(avi_t *AVI, long frame);
 long AVI_frame_size_quick(avi_t *AVI, long frame); long AVI_frame_size(avi_t *AVI, long frame);
 long AVI_frame_size_resumable(avi_t *AVI, long frame)
 # 1555 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable44 = new_stack((void *)(&AVI_frame_size), "AVI_frame_size", &____must_manage_AVI_frame_size, 2, 0, (size_t)(912368063336283075UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable44 = new_stack((void *)(&AVI_frame_size), "AVI_frame_size", &____must_manage_AVI_frame_size, 2, 0, (size_t)(912368063336283423UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1556 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_116, ____chimes_did_disable44); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_86; ; ____chimes_ret_var_86 = (-1); rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_43, ____chimes_did_disable44); return ____chimes_ret_var_86; ; }
 # 1557 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_116, ____chimes_did_disable44); return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; long ____chimes_ret_var_87; ; ____chimes_ret_var_87 = (-1); rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_43, ____chimes_did_disable44); return ____chimes_ret_var_87; ; }
 # 1558 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1559 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (frame < 0 || frame >= AVI->video_frames) {rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_116, ____chimes_did_disable44); return 0; };
+   if (frame < 0 || frame >= AVI->video_frames) { long ____chimes_ret_var_88; ; ____chimes_ret_var_88 = (0); rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_43, ____chimes_did_disable44); return ____chimes_ret_var_88; ; };
 # 1560 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_116, ____chimes_did_disable44); return(AVI->video_index[frame].len);
+    long ____chimes_ret_var_89; ; ____chimes_ret_var_89 = ((AVI->video_index[frame].len)); rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_43, ____chimes_did_disable44); return ____chimes_ret_var_89; ;
 # 1561 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_43, ____chimes_did_disable44); }
 # 1562 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1563 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_audio_size_npm(avi_t *AVI, long frame);
 long AVI_audio_size_quick(avi_t *AVI, long frame); long AVI_audio_size(avi_t *AVI, long frame);
 long AVI_audio_size_resumable(avi_t *AVI, long frame)
 # 1564 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable45 = new_stack((void *)(&AVI_audio_size), "AVI_audio_size", &____must_manage_AVI_audio_size, 2, 0, (size_t)(912368063336283140UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable45 = new_stack((void *)(&AVI_audio_size), "AVI_audio_size", &____must_manage_AVI_audio_size, 2, 0, (size_t)(912368063336283504UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1565 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_117, ____chimes_did_disable45); return -1; }
+  if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_90; ; ____chimes_ret_var_90 = (-1); rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_44, ____chimes_did_disable45); return ____chimes_ret_var_90; ; }
 # 1566 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_117, ____chimes_did_disable45); return -1; }
+  if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; long ____chimes_ret_var_91; ; ____chimes_ret_var_91 = (-1); rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_44, ____chimes_did_disable45); return ____chimes_ret_var_91; ; }
 # 1567 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1568 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if (frame < 0 || frame >= AVI->track[AVI->aptr].audio_chunks) {rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_117, ____chimes_did_disable45); return 0; };
+  if (frame < 0 || frame >= AVI->track[AVI->aptr].audio_chunks) { long ____chimes_ret_var_92; ; ____chimes_ret_var_92 = (0); rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_44, ____chimes_did_disable45); return ____chimes_ret_var_92; ; };
 # 1569 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_117, ____chimes_did_disable45); return(AVI->track[AVI->aptr].audio_index[frame].len);
+   long ____chimes_ret_var_93; ; ____chimes_ret_var_93 = ((AVI->track[AVI->aptr].audio_index[frame].len)); rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_44, ____chimes_did_disable45); return ____chimes_ret_var_93; ;
 # 1570 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_44, ____chimes_did_disable45); }
 # 1571 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1572 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_get_video_position_npm(avi_t *AVI, long frame);
 long AVI_get_video_position_quick(avi_t *AVI, long frame); long AVI_get_video_position(avi_t *AVI, long frame);
 long AVI_get_video_position_resumable(avi_t *AVI, long frame)
 # 1573 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable46 = new_stack((void *)(&AVI_get_video_position), "AVI_get_video_position", &____must_manage_AVI_get_video_position, 2, 0, (size_t)(912368063336283187UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable46 = new_stack((void *)(&AVI_get_video_position), "AVI_get_video_position", &____must_manage_AVI_get_video_position, 2, 0, (size_t)(912368063336283567UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1574 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_118, ____chimes_did_disable46); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_94; ; ____chimes_ret_var_94 = (-1); rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_45, ____chimes_did_disable46); return ____chimes_ret_var_94; ; }
 # 1575 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_118, ____chimes_did_disable46); return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; long ____chimes_ret_var_95; ; ____chimes_ret_var_95 = (-1); rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_45, ____chimes_did_disable46); return ____chimes_ret_var_95; ; }
 # 1576 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1577 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (frame < 0 || frame >= AVI->video_frames) {rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_118, ____chimes_did_disable46); return 0; };
+   if (frame < 0 || frame >= AVI->video_frames) { long ____chimes_ret_var_96; ; ____chimes_ret_var_96 = (0); rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_45, ____chimes_did_disable46); return ____chimes_ret_var_96; ; };
 # 1578 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_118, ____chimes_did_disable46); return(AVI->video_index[frame].pos);
+    long ____chimes_ret_var_97; ; ____chimes_ret_var_97 = ((AVI->video_index[frame].pos)); rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_45, ____chimes_did_disable46); return ____chimes_ret_var_97; ;
 # 1579 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_45, ____chimes_did_disable46); }
 # 1580 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1581 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1582 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7688,54 +7466,54 @@ int AVI_seek_start_npm(avi_t *AVI);
 int AVI_seek_start_quick(avi_t *AVI); int AVI_seek_start(avi_t *AVI);
 int AVI_seek_start_resumable(avi_t *AVI)
 # 1583 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable47 = new_stack((void *)(&AVI_seek_start), "AVI_seek_start", &____must_manage_AVI_seek_start, 1, 1, (size_t)(912368063336283216UL), "AVI_seek_start|AVI|0", &____must_checkpoint_AVI_seek_start_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable47 = new_stack((void *)(&AVI_seek_start), "AVI_seek_start", &____must_manage_AVI_seek_start, 1, 0, (size_t)(912368063336283604UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1584 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_seek_start", &____must_manage_AVI_seek_start, ____alias_loc_id_119, ____chimes_did_disable47); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; int ____chimes_ret_var_98; ; ____chimes_ret_var_98 = (-1); rm_stack(false, 0UL, "AVI_seek_start", &____must_manage_AVI_seek_start, ____alias_loc_id_46, ____chimes_did_disable47); return ____chimes_ret_var_98; ; }
 # 1585 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1586 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_2: ({ int ____chimes_arg220; __off_t ____chimes_arg221; if (!____chimes_replaying) { ____chimes_arg220 = (AVI->fdes); ____chimes_arg221 = (AVI->movi_start); } calling((void*)lseek, 2, ____alias_loc_id_60, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg220, ____chimes_arg221, 0); }) ;
+   lseek(AVI->fdes,AVI->movi_start,0);
 # 1587 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_pos = 0;
 # 1588 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_seek_start", &____must_manage_AVI_seek_start, ____alias_loc_id_119, ____chimes_did_disable47); return 0;
+    int ____chimes_ret_var_99; ; ____chimes_ret_var_99 = (0); rm_stack(false, 0UL, "AVI_seek_start", &____must_manage_AVI_seek_start, ____alias_loc_id_46, ____chimes_did_disable47); return ____chimes_ret_var_99; ;
 # 1589 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_seek_start", &____must_manage_AVI_seek_start, ____alias_loc_id_46, ____chimes_did_disable47); }
 # 1590 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1591 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_set_video_position_npm(avi_t *AVI, long frame);
 int AVI_set_video_position_quick(avi_t *AVI, long frame); int AVI_set_video_position(avi_t *AVI, long frame);
 int AVI_set_video_position_resumable(avi_t *AVI, long frame)
 # 1592 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable48 = new_stack((void *)(&AVI_set_video_position), "AVI_set_video_position", &____must_manage_AVI_set_video_position, 2, 0, (size_t)(912368063336283253UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable48 = new_stack((void *)(&AVI_set_video_position), "AVI_set_video_position", &____must_manage_AVI_set_video_position, 2, 0, (size_t)(912368063336283653UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1593 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_120, ____chimes_did_disable48); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; int ____chimes_ret_var_100; ; ____chimes_ret_var_100 = (-1); rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_47, ____chimes_did_disable48); return ____chimes_ret_var_100; ; }
 # 1594 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_120, ____chimes_did_disable48); return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; int ____chimes_ret_var_101; ; ____chimes_ret_var_101 = (-1); rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_47, ____chimes_did_disable48); return ____chimes_ret_var_101; ; }
 # 1595 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1596 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (frame < 0) {frame = 0; };
 # 1597 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_pos = frame;
 # 1598 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_120, ____chimes_did_disable48); return 0;
+    int ____chimes_ret_var_102; ; ____chimes_ret_var_102 = (0); rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_47, ____chimes_did_disable48); return ____chimes_ret_var_102; ;
 # 1599 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_47, ____chimes_did_disable48); }
 # 1600 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1601 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_set_audio_bitrate_npm(avi_t *AVI, long bitrate);
 int AVI_set_audio_bitrate_quick(avi_t *AVI, long bitrate); int AVI_set_audio_bitrate(avi_t *AVI, long bitrate);
 int AVI_set_audio_bitrate_resumable(avi_t *AVI, long bitrate)
 # 1602 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable49 = new_stack((void *)(&AVI_set_audio_bitrate), "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, 2, 0, (size_t)(912368063336283284UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable49 = new_stack((void *)(&AVI_set_audio_bitrate), "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, 2, 0, (size_t)(912368063336283692UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1603 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, ____alias_loc_id_121, ____chimes_did_disable49); return -1; }
+   if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_103; ; ____chimes_ret_var_103 = (-1); rm_stack(false, 0UL, "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, ____alias_loc_id_48, ____chimes_did_disable49); return ____chimes_ret_var_103; ; }
 # 1604 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1605 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->track[AVI->aptr].mp3rate = bitrate;
 # 1606 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, ____alias_loc_id_121, ____chimes_did_disable49); return 0;
+    int ____chimes_ret_var_104; ; ____chimes_ret_var_104 = (0); rm_stack(false, 0UL, "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, ____alias_loc_id_48, ____chimes_did_disable49); return ____chimes_ret_var_104; ;
 # 1607 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, ____alias_loc_id_48, ____chimes_did_disable49); }
 # 1608 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1609 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1610 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7743,18 +7521,17 @@ long AVI_read_frame_npm(avi_t *AVI, char *vidbuf, int *keyframe);
 long AVI_read_frame_quick(avi_t *AVI, char *vidbuf, int *keyframe); long AVI_read_frame(avi_t *AVI, char *vidbuf, int *keyframe);
 long AVI_read_frame_resumable(avi_t *AVI, char *vidbuf, int *keyframe)
 # 1611 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable50 = new_stack((void *)(&AVI_read_frame), "AVI_read_frame", &____must_manage_AVI_read_frame, 3, 2, (size_t)(912368063336283389UL), (size_t)(912368063336283390UL), (size_t)(912368063336283391UL), "AVI_read_frame|AVI|0", &____must_checkpoint_AVI_read_frame_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_read_frame|vidbuf|0", &____must_checkpoint_AVI_read_frame_vidbuf_0, "i8*", (void *)(&vidbuf), (size_t)8, 1, 0, 0) ; long n;
- if (____must_checkpoint_AVI_read_frame_n_0) { register_stack_vars(1, "AVI_read_frame|n|0", &____must_checkpoint_AVI_read_frame_n_0, "i64", (void *)(&n), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable50 = new_stack((void *)(&AVI_read_frame), "AVI_read_frame", &____must_manage_AVI_read_frame, 3, 0, (size_t)(912368063336283817UL), (size_t)(912368063336283818UL), (size_t)(912368063336283819UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1612 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   long n; ;
 # 1613 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1614 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_122, ____chimes_did_disable50); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_105; ; ____chimes_ret_var_105 = (-1); rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); return ____chimes_ret_var_105; ; }
 # 1615 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_122, ____chimes_did_disable50); return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; long ____chimes_ret_var_106; ; ____chimes_ret_var_106 = (-1); rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); return ____chimes_ret_var_106; ; }
 # 1616 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1617 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->video_pos < 0 || AVI->video_pos >= AVI->video_frames) {rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_122, ____chimes_did_disable50); return -1; };
+   if (AVI->video_pos < 0 || AVI->video_pos >= AVI->video_frames) { long ____chimes_ret_var_107; ; ____chimes_ret_var_107 = (-1); rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); return ____chimes_ret_var_107; ; };
 # 1618 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    n = AVI->video_index[AVI->video_pos].len;
 # 1619 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7762,16 +7539,16 @@ long AVI_read_frame_resumable(avi_t *AVI, char *vidbuf, int *keyframe)
    *keyframe = (AVI->video_index[AVI->video_pos].key==0x10) ? 1:0;
 # 1621 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1622 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_4: ({ int ____chimes_arg223; __off_t ____chimes_arg224; if (!____chimes_replaying) { ____chimes_arg223 = (AVI->fdes); ____chimes_arg224 = (AVI->video_index[AVI->video_pos].pos); } calling((void*)lseek, 4, ____alias_loc_id_61, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg223, ____chimes_arg224, 0); }) ;
+   lseek(AVI->fdes, AVI->video_index[AVI->video_pos].pos, 0);
 # 1623 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1624 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_5: if ( ({ int ____chimes_arg226; if (!____chimes_replaying) { ____chimes_arg226 = (AVI->fdes); } calling((void*)avi_read, 5, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336283390UL), (size_t)(0UL)); (avi_read)(____chimes_arg226, vidbuf, n); }) != n)
+   if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n)
 # 1625 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1626 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 3;
 # 1627 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_122, ____chimes_did_disable50); return -1;
+       long ____chimes_ret_var_108; ; ____chimes_ret_var_108 = (-1); rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); return ____chimes_ret_var_108; ;
 # 1628 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1629 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7779,23 +7556,23 @@ long AVI_read_frame_resumable(avi_t *AVI, char *vidbuf, int *keyframe)
    AVI->video_pos++;
 # 1631 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1632 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_122, ____chimes_did_disable50); return n;
+    long ____chimes_ret_var_109; ; ____chimes_ret_var_109 = (n); rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); return ____chimes_ret_var_109; ;
 # 1633 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); }
 # 1634 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1635 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 int AVI_set_audio_position_npm(avi_t *AVI, long byte);
 int AVI_set_audio_position_quick(avi_t *AVI, long byte); int AVI_set_audio_position(avi_t *AVI, long byte);
 int AVI_set_audio_position_resumable(avi_t *AVI, long byte)
 # 1636 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable51 = new_stack((void *)(&AVI_set_audio_position), "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, 2, 0, (size_t)(912368063336283515UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable51 = new_stack((void *)(&AVI_set_audio_position), "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, 2, 0, (size_t)(912368063336283955UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1637 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    long n0; long n1; long n; ;
 # 1638 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1639 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_123, ____chimes_did_disable51); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; int ____chimes_ret_var_110; ; ____chimes_ret_var_110 = (-1); rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_50, ____chimes_did_disable51); return ____chimes_ret_var_110; ; }
 # 1640 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_123, ____chimes_did_disable51); return -1; }
+   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; int ____chimes_ret_var_111; ; ____chimes_ret_var_111 = (-1); rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_50, ____chimes_did_disable51); return ____chimes_ret_var_111; ; }
 # 1641 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1642 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (byte < 0) {byte = 0; };
@@ -7824,27 +7601,23 @@ int AVI_set_audio_position_resumable(avi_t *AVI, long byte)
    AVI->track[AVI->aptr].audio_posb = byte - AVI->track[AVI->aptr].audio_index[n0].tot;
 # 1660 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1661 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_123, ____chimes_did_disable51); return 0;
+    int ____chimes_ret_var_112; ; ____chimes_ret_var_112 = (0); rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_50, ____chimes_did_disable51); return ____chimes_ret_var_112; ;
 # 1662 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_50, ____chimes_did_disable51); }
 # 1663 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1664 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 long AVI_read_audio_npm(avi_t *AVI, char *audbuf, long bytes);
 long AVI_read_audio_quick(avi_t *AVI, char *audbuf, long bytes); long AVI_read_audio(avi_t *AVI, char *audbuf, long bytes);
 long AVI_read_audio_resumable(avi_t *AVI, char *audbuf, long bytes)
 # 1665 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable52 = new_stack((void *)(&AVI_read_audio), "AVI_read_audio", &____must_manage_AVI_read_audio, 3, 3, (size_t)(912368063336283731UL), (size_t)(912368063336283732UL), (size_t)(0UL), "AVI_read_audio|AVI|0", &____must_checkpoint_AVI_read_audio_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_read_audio|audbuf|0", &____must_checkpoint_AVI_read_audio_audbuf_0, "i8*", (void *)(&audbuf), (size_t)8, 1, 0, 0, "AVI_read_audio|bytes|0", &____must_checkpoint_AVI_read_audio_bytes_0, "i64", (void *)(&bytes), (size_t)8, 0, 0, 0) ; long todo;
-long left;
-long pos;
-long nr;
- if (____must_checkpoint_AVI_read_audio_todo_0 || ____must_checkpoint_AVI_read_audio_left_0 || ____must_checkpoint_AVI_read_audio_pos_0 || ____must_checkpoint_AVI_read_audio_nr_0) { register_stack_vars(4, "AVI_read_audio|todo|0", &____must_checkpoint_AVI_read_audio_todo_0, "i64", (void *)(&todo), (size_t)8, 0, 0, 0, "AVI_read_audio|left|0", &____must_checkpoint_AVI_read_audio_left_0, "i64", (void *)(&left), (size_t)8, 0, 0, 0, "AVI_read_audio|pos|0", &____must_checkpoint_AVI_read_audio_pos_0, "i64", (void *)(&pos), (size_t)8, 0, 0, 0, "AVI_read_audio|nr|0", &____must_checkpoint_AVI_read_audio_nr_0, "i64", (void *)(&nr), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable52 = new_stack((void *)(&AVI_read_audio), "AVI_read_audio", &____must_manage_AVI_read_audio, 3, 0, (size_t)(912368063336284191UL), (size_t)(912368063336284192UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1666 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       ;
+   long nr; long pos; long left; long todo; ;
 # 1667 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1668 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_124, ____chimes_did_disable52); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_113; ; ____chimes_ret_var_113 = (-1); rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); return ____chimes_ret_var_113; ; }
 # 1669 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_124, ____chimes_did_disable52); return -1; }
+   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; long ____chimes_ret_var_114; ; ____chimes_ret_var_114 = (-1); rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); return ____chimes_ret_var_114; ; }
 # 1670 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1671 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    nr = 0;
@@ -7860,7 +7633,7 @@ long nr;
 # 1677 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1678 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if (AVI->track[AVI->aptr].audio_posc>=AVI->track[AVI->aptr].audio_chunks-1) {rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_124, ____chimes_did_disable52); return nr; };
+         if (AVI->track[AVI->aptr].audio_posc>=AVI->track[AVI->aptr].audio_chunks-1) { long ____chimes_ret_var_115; ; ____chimes_ret_var_115 = (nr); rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); return ____chimes_ret_var_115; ; };
 # 1679 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          AVI->track[AVI->aptr].audio_posc++;
 # 1680 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7874,15 +7647,15 @@ long nr;
 # 1687 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       pos = AVI->track[AVI->aptr].audio_index[AVI->track[AVI->aptr].audio_posc].pos + AVI->track[AVI->aptr].audio_posb;
 # 1688 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_4: ({ int ____chimes_arg229; if (!____chimes_replaying) { ____chimes_arg229 = (AVI->fdes); } calling((void*)lseek, 4, ____alias_loc_id_62, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg229, pos, 0); }) ;
+      lseek(AVI->fdes, pos, 0);
 # 1689 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_5: if ( ({ int ____chimes_arg232; char * ____chimes_arg233; if (!____chimes_replaying) { ____chimes_arg232 = (AVI->fdes); ____chimes_arg233 = (audbuf + nr); } calling((void*)avi_read, 5, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336283732UL), (size_t)(0UL)); (avi_read)(____chimes_arg232, ____chimes_arg233, todo); }) != todo)
+      if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf+nr, todo); }) != todo)
 # 1690 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1691 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          AVI_errno = 3;
 # 1692 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_124, ____chimes_did_disable52); return -1;
+          long ____chimes_ret_var_116; ; ____chimes_ret_var_116 = (-1); rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); return ____chimes_ret_var_116; ;
 # 1693 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       }
 # 1694 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7895,9 +7668,9 @@ long nr;
    }
 # 1698 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1699 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_124, ____chimes_did_disable52); return nr;
+    long ____chimes_ret_var_117; ; ____chimes_ret_var_117 = (nr); rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); return ____chimes_ret_var_117; ;
 # 1700 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); }
 # 1701 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1702 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1703 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7911,17 +7684,16 @@ int AVI_read_data_resumable(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1707 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
                               long *len)
 # 1708 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable53 = new_stack((void *)(&AVI_read_data), "AVI_read_data", &____must_manage_AVI_read_data, 6, 6, (size_t)(912368063336283901UL), (size_t)(912368063336283902UL), (size_t)(0UL), (size_t)(912368063336283904UL), (size_t)(0UL), (size_t)(912368063336283906UL), "AVI_read_data|AVI|0", &____must_checkpoint_AVI_read_data_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_read_data|vidbuf|0", &____must_checkpoint_AVI_read_data_vidbuf_0, "i8*", (void *)(&vidbuf), (size_t)8, 1, 0, 0, "AVI_read_data|max_vidbuf|0", &____must_checkpoint_AVI_read_data_max_vidbuf_0, "i64", (void *)(&max_vidbuf), (size_t)8, 0, 0, 0, "AVI_read_data|audbuf|0", &____must_checkpoint_AVI_read_data_audbuf_0, "i8*", (void *)(&audbuf), (size_t)8, 1, 0, 0, "AVI_read_data|max_audbuf|0", &____must_checkpoint_AVI_read_data_max_audbuf_0, "i64", (void *)(&max_audbuf), (size_t)8, 0, 0, 0, "AVI_read_data|len|0", &____must_checkpoint_AVI_read_data_len_0, "i64*", (void *)(&len), (size_t)8, 1, 0, 0) ; char data[8];
-int n;
- if (____must_checkpoint_AVI_read_data_data_0 || ____must_checkpoint_AVI_read_data_n_0) { register_stack_vars(2, "AVI_read_data|data|0", &____must_checkpoint_AVI_read_data_data_0, "[8 x i8]", (void *)(data), (size_t)8, 0, 0, 0, "AVI_read_data|n|0", &____must_checkpoint_AVI_read_data_n_0, "i32", (void *)(&n), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(13): { goto call_lbl_13; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(21): { goto call_lbl_21; } case(24): { goto call_lbl_24; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable53 = new_stack((void *)(&AVI_read_data), "AVI_read_data", &____must_manage_AVI_read_data, 6, 0, (size_t)(912368063336284397UL), (size_t)(912368063336284398UL), (size_t)(0UL), (size_t)(912368063336284400UL), (size_t)(0UL), (size_t)(912368063336284402UL)) ; char data[8];
+ if (____must_checkpoint_AVI_read_data_data_0) { register_stack_vars(1, "AVI_read_data|data|0", &____must_checkpoint_AVI_read_data_data_0, "[8 x i8]", (void *)(data), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1720 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1720 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   int n; ;
 # 1721 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     ;
 # 1722 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1723 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==0) {rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 0; };
+   if (AVI->mode==0) { int ____chimes_ret_var_118; ; ____chimes_ret_var_118 = (0); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_118; ; };
 # 1724 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1725 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    while(1)
@@ -7930,16 +7702,16 @@ int n;
 # 1727 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1728 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1729 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_3: if (alias_group_changed(____alias_loc_id_63) || ({ int ____chimes_arg235; size_t ____chimes_arg237; if (!____chimes_replaying) { ____chimes_arg235 = (AVI->fdes); ____chimes_arg237 = (8); } calling((void*)avi_read, 3, ____alias_loc_id_63, 0UL, 3, (size_t)(0UL), (size_t)(912368063336283742UL), (size_t)(0UL)); (avi_read)(____chimes_arg235, data, ____chimes_arg237); }) != 8) {rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 0; };
+      if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8) { int ____chimes_ret_var_119; ; ____chimes_ret_var_119 = (0); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_119; ; };
 # 1730 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1731 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1732 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1733 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_6: if(alias_group_changed(____alias_loc_id_70) || ({ size_t ____chimes_arg240; if (!____chimes_replaying) { ____chimes_arg240 = (4); } calling((void*)strncasecmp, 6, ____alias_loc_id_70, 0UL, 3, (size_t)(912368063336283742UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "LIST", ____chimes_arg240); }) == 0)
+      if(strncasecmp(data,"LIST",4) == 0)
 # 1734 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1735 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_7: ({ int ____chimes_arg241; __off_t ____chimes_arg242; if (!____chimes_replaying) { ____chimes_arg241 = (AVI->fdes); ____chimes_arg242 = (4); } calling((void*)lseek, 7, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg241, ____chimes_arg242, 1); }) ;
+         lseek(AVI->fdes,4,1);
 # 1736 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          continue;
 # 1737 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7949,7 +7721,7 @@ int n;
       n = ( ((({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); }))+1) & ~1 );
 # 1740 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1741 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_9: call_lbl_17: call_lbl_24: if (alias_group_changed(____alias_loc_id_68) || ({ const char * ____chimes_arg245; size_t ____chimes_arg246; if (!____chimes_replaying) { ____chimes_arg245 = (AVI->video_tag); ____chimes_arg246 = (3); } calling((void*)strncasecmp, 9, ____alias_loc_id_68, 0UL, 3, (size_t)(912368063336283742UL), (size_t)(912368063336283901UL), (size_t)(0UL)); (strncasecmp)(data, ____chimes_arg245, ____chimes_arg246); }) == 0) {{
+      if (strncasecmp(data,AVI->video_tag,3) == 0) {{
 # 1743 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          *len = n;
 # 1744 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7959,17 +7731,17 @@ int n;
 # 1746 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1747 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_10: ({ int ____chimes_arg247; if (!____chimes_replaying) { ____chimes_arg247 = (AVI->fdes); } calling((void*)lseek, 10, ____alias_loc_id_64, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg247, n, 1); }) ;
+            lseek(AVI->fdes,n,1);
 # 1748 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return -1;
+             int ____chimes_ret_var_120; ; ____chimes_ret_var_120 = (-1); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_120; ;
 # 1749 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          }
 # 1750 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_13: if (alias_group_changed(____alias_loc_id_65) || ({ int ____chimes_arg250; if (!____chimes_replaying) { ____chimes_arg250 = (AVI->fdes); } calling((void*)avi_read, 13, ____alias_loc_id_65, 0UL, 3, (size_t)(0UL), (size_t)(912368063336283902UL), (size_t)(0UL)); (avi_read)(____chimes_arg250, vidbuf, n); }) != n) {rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 0; };
+         if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n) { int ____chimes_ret_var_121; ; ____chimes_ret_var_121 = (0); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_121; ; };
 # 1751 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 1;
+          int ____chimes_ret_var_122; ; ____chimes_ret_var_122 = (1); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_122; ;
 # 1752 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if (alias_group_changed(____alias_loc_id_69) || ({ const char * ____chimes_arg254; size_t ____chimes_arg255; if (!____chimes_replaying) { ____chimes_arg254 = (AVI->track[AVI->aptr].audio_tag); ____chimes_arg255 = (4); } calling((void*)strncasecmp, 17, ____alias_loc_id_69, 0UL, 3, (size_t)(912368063336283742UL), (size_t)(912368063336283901UL), (size_t)(0UL)); (strncasecmp)(data, ____chimes_arg254, ____chimes_arg255); }) == 0) {{
+      }; } else if (strncasecmp(data,AVI->track[AVI->aptr].audio_tag,4) == 0) {{
 # 1755 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          *len = n;
 # 1756 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -7977,23 +7749,23 @@ int n;
 # 1757 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1758 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_18: ({ int ____chimes_arg256; if (!____chimes_replaying) { ____chimes_arg256 = (AVI->fdes); } calling((void*)lseek, 18, ____alias_loc_id_66, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg256, n, 1); }) ;
+            lseek(AVI->fdes,n,1);
 # 1759 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return -2;
+             int ____chimes_ret_var_123; ; ____chimes_ret_var_123 = (-2); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_123; ;
 # 1760 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          }
 # 1761 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_21: if (alias_group_changed(____alias_loc_id_67) || ({ int ____chimes_arg259; if (!____chimes_replaying) { ____chimes_arg259 = (AVI->fdes); } calling((void*)avi_read, 21, ____alias_loc_id_67, 0UL, 3, (size_t)(0UL), (size_t)(912368063336283904UL), (size_t)(0UL)); (avi_read)(____chimes_arg259, audbuf, n); }) != n) {rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 0; };
+         if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf, n); }) != n) { int ____chimes_ret_var_124; ; ____chimes_ret_var_124 = (0); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_124; ; };
 # 1762 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 2;
+          int ____chimes_ret_var_125; ; ____chimes_ret_var_125 = (2); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_125; ;
 # 1763 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          break;
 # 1764 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if ( ({ int ____chimes_arg262; if (!____chimes_replaying) { ____chimes_arg262 = (AVI->fdes); } calling((void*)lseek, 24, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(____chimes_arg262, n, 1); }) <0) {rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 0; };
+      }; } else if (lseek(AVI->fdes,n,1)<0) { int ____chimes_ret_var_126; ; ____chimes_ret_var_126 = (0); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_126; ; };
 # 1767 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1768 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); }
+rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); }
 # 1769 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1770 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1771 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8044,7 +7816,7 @@ void AVI_print_error_npm(char *str);
 void AVI_print_error_quick(char *str); void AVI_print_error(char *str);
 void AVI_print_error_resumable(char *str)
 # 1795 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable54 = new_stack((void *)(&AVI_print_error), "AVI_print_error", &____must_manage_AVI_print_error, 1, 0, (size_t)(912368063336283930UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable54 = new_stack((void *)(&AVI_print_error), "AVI_print_error", &____must_manage_AVI_print_error, 1, 0, (size_t)(912368063336284426UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1796 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    int aerrno; ;
 # 1797 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8073,18 +7845,16 @@ void AVI_print_error_resumable(char *str)
 # 1811 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1812 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(false, 0UL, "AVI_print_error", &____must_manage_AVI_print_error, ____alias_loc_id_126, ____chimes_did_disable54); }
+rm_stack(false, 0UL, "AVI_print_error", &____must_manage_AVI_print_error, ____alias_loc_id_53, ____chimes_did_disable54); }
 # 1813 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1814 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-char *AVI_strerror_npm();static int *(*____chimes_extern_func___errno_location)(void) = __errno_location;static char *(*____chimes_extern_func_strerror)(int) = strerror;
+char *AVI_strerror_npm();
 char *AVI_strerror_quick(); char *AVI_strerror();
 char *AVI_strerror_resumable()
 # 1815 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable55 = new_stack((void *)(&AVI_strerror), "AVI_strerror", &____must_manage_AVI_strerror, 0, 0) ; int *____chimes_unroll_var_1;
-int aerrno;
- if (____must_checkpoint_AVI_strerror_____chimes_unroll_var_1_0 || ____must_checkpoint_AVI_strerror_aerrno_0) { register_stack_vars(2, "AVI_strerror|____chimes_unroll_var_1|0", &____must_checkpoint_AVI_strerror_____chimes_unroll_var_1_0, "i32*", (void *)(&____chimes_unroll_var_1), (size_t)8, 1, 0, 0, "AVI_strerror|aerrno|0", &____must_checkpoint_AVI_strerror_aerrno_0, "i32", (void *)(&aerrno), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable55 = new_stack((void *)(&AVI_strerror), "AVI_strerror", &____must_manage_AVI_strerror, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1816 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   int aerrno; ;
 # 1817 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1818 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    aerrno = (AVI_errno>=0 && AVI_errno<num_avi_errors) ? AVI_errno : num_avi_errors-1;
@@ -8102,9 +7872,9 @@ int aerrno;
 # 1825 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1826 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-           call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)__errno_location, 1, ____alias_loc_id_72, 912368063336283994UL, 0); (__errno_location)(); }) ) ; char *____chimes_unroll_var_2; call_lbl_2: ____chimes_unroll_var_2 = ( ({ int ____chimes_arg265; if (!____chimes_replaying) { ____chimes_arg265 = ((*____chimes_unroll_var_1)); } calling((void*)strerror, 2, ____alias_loc_id_71, 912368063336283999UL, 1, (size_t)(0UL)); (strerror)(____chimes_arg265); }) ) ; sprintf(error_string,"%s - %s",avi_errors[aerrno],____chimes_unroll_var_2);
+      sprintf(error_string,"%s - %s",avi_errors[aerrno],strerror((*__errno_location ())));
 # 1827 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336284012UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_127, ____chimes_did_disable55); return error_string;
+       char *____chimes_ret_var_127; ; ____chimes_ret_var_127 = (error_string); rm_stack(true, 912368063336284506UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_54, ____chimes_did_disable55); return ____chimes_ret_var_127; ;
 # 1828 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1829 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8112,11 +7882,11 @@ int aerrno;
 # 1830 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1831 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336284012UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_127, ____chimes_did_disable55); return avi_errors[aerrno];
+       char *____chimes_ret_var_128; ; ____chimes_ret_var_128 = (avi_errors[aerrno]); rm_stack(true, 912368063336284506UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_54, ____chimes_did_disable55); return ____chimes_ret_var_128; ;
 # 1832 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1833 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(true, 912368063336284012UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_127, ____chimes_did_disable55); }
+rm_stack(true, 912368063336284506UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_54, ____chimes_did_disable55); }
 # 1834 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1835 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 uint64_t AVI_max_size_npm();
@@ -8125,69 +7895,65 @@ uint64_t AVI_max_size_resumable()
 # 1836 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {const int ____chimes_did_disable56 = new_stack((void *)(&AVI_max_size), "AVI_max_size", &____must_manage_AVI_max_size, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 1837 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(false, 0UL, "AVI_max_size", &____must_manage_AVI_max_size, 0, ____chimes_did_disable56); return((uint64_t) ((2147483647 * 2U + 1U)-(1<<20)*16-2048));
+   uint64_t ____chimes_ret_var_129; ; ____chimes_ret_var_129 = (((uint64_t) ((2147483647 * 2U + 1U)-(1<<20)*16-2048))); rm_stack(false, 0UL, "AVI_max_size", &____must_manage_AVI_max_size, ____alias_loc_id_55, ____chimes_did_disable56); return ____chimes_ret_var_129; ;
 # 1838 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_max_size", &____must_manage_AVI_max_size, ____alias_loc_id_55, ____chimes_did_disable56); }
 static size_t avi_read_quick(int fd, char *buf, size_t len)
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&avi_read), "avi_read", &____must_manage_avi_read, 3, 3, (size_t)(0UL), (size_t)(912368063336282806UL), (size_t)(0UL), "avi_read|fd|0", &____must_checkpoint_avi_read_fd_0, "i32", (void *)(&fd), (size_t)4, 0, 0, 0, "avi_read|buf|0", &____must_checkpoint_avi_read_buf_0, "i8*", (void *)(&buf), (size_t)8, 1, 0, 0, "avi_read|len|0", &____must_checkpoint_avi_read_len_0, "i64", (void *)(&len), (size_t)8, 0, 0, 0) ; size_t r;
-size_t n;
- if (____must_checkpoint_avi_read_r_0 || ____must_checkpoint_avi_read_n_0) { register_stack_vars(2, "avi_read|r|0", &____must_checkpoint_avi_read_r_0, "i64", (void *)(&r), (size_t)8, 0, 0, 0, "avi_read|n|0", &____must_checkpoint_avi_read_n_0, "i64", (void *)(&n), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&avi_read), "avi_read", &____must_manage_avi_read, 3, 0, (size_t)(0UL), (size_t)(912368063336283062UL), (size_t)(0UL)) ; ; ;
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      n = (0) ;
+    size_t n; n = (0) ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      r = (0) ;
+    size_t r; r = (0) ;
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    while (r < len) {
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      alias_group_changed(____alias_loc_id_59); call_lbl_2: n = ({ calling((void*)read, 2, ____alias_loc_id_59, 0UL, 3, (size_t)(0UL), (size_t)(912368063336282806UL), (size_t)(0UL)); (read)(fd, buf + r, len - r); }) ;
+      n = read (fd, buf + r, len - r);
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if (n <= 0) {rm_stack(false, 0UL, "avi_read", &____must_manage_avi_read, ____alias_loc_id_96, ____chimes_did_disable0); return r; };
+      if (n <= 0) { size_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (r); rm_stack(false, 0UL, "avi_read", &____must_manage_avi_read, ____alias_loc_id_23, ____chimes_did_disable0); return ____chimes_ret_var_0; ; };
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       r += n;
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_read", &____must_manage_avi_read, ____alias_loc_id_96, ____chimes_did_disable0); return r;
+    size_t ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (r); rm_stack(false, 0UL, "avi_read", &____must_manage_avi_read, ____alias_loc_id_23, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_read", &____must_manage_avi_read, ____alias_loc_id_23, ____chimes_did_disable0); }
 
 static size_t avi_read(int fd, char *buf, size_t len) { return (____chimes_replaying ? avi_read_resumable(fd, buf, len) : avi_read_quick(fd, buf, len)); }
 
 static size_t avi_write_quick (int fd, char *buf, size_t len)
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&avi_write), "avi_write", &____must_manage_avi_write, 3, 3, (size_t)(0UL), (size_t)(912368063336277545UL), (size_t)(0UL), "avi_write|fd|0", &____must_checkpoint_avi_write_fd_0, "i32", (void *)(&fd), (size_t)4, 0, 0, 0, "avi_write|buf|0", &____must_checkpoint_avi_write_buf_0, "i8*", (void *)(&buf), (size_t)8, 1, 0, 0, "avi_write|len|0", &____must_checkpoint_avi_write_len_0, "i64", (void *)(&len), (size_t)8, 0, 0, 0) ; size_t r;
-size_t n;
- if (____must_checkpoint_avi_write_r_0 || ____must_checkpoint_avi_write_n_0) { register_stack_vars(2, "avi_write|r|0", &____must_checkpoint_avi_write_r_0, "i64", (void *)(&r), (size_t)8, 0, 0, 0, "avi_write|n|0", &____must_checkpoint_avi_write_n_0, "i64", (void *)(&n), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&avi_write), "avi_write", &____must_manage_avi_write, 3, 0, (size_t)(0UL), (size_t)(912368063336277569UL), (size_t)(0UL)) ; ; ;
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      n = (0) ;
+    size_t n; n = (0) ;
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      r = (0) ;
+    size_t r; r = (0) ;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    while (r < len) {
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      alias_group_changed(____alias_loc_id_3); call_lbl_2: n = ({ calling((void*)write, 2, ____alias_loc_id_3, 0UL, 3, (size_t)(0UL), (size_t)(912368063336277545UL), (size_t)(0UL)); (write)(fd, buf + r, len - r); }) ;
+      n = write (fd, buf + r, len - r);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if (n < 0) {rm_stack(false, 0UL, "avi_write", &____must_manage_avi_write, ____alias_loc_id_75, ____chimes_did_disable1); return n; };
+      if (n < 0) { size_t ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (n); rm_stack(false, 0UL, "avi_write", &____must_manage_avi_write, ____alias_loc_id_1, ____chimes_did_disable1); return ____chimes_ret_var_2; ; };
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       r += n;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_write", &____must_manage_avi_write, ____alias_loc_id_75, ____chimes_did_disable1); return r;
+    size_t ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (r); rm_stack(false, 0UL, "avi_write", &____must_manage_avi_write, ____alias_loc_id_1, ____chimes_did_disable1); return ____chimes_ret_var_3; ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_write", &____must_manage_avi_write, ____alias_loc_id_1, ____chimes_did_disable1); }
 
 static size_t avi_write (int fd, char *buf, size_t len) { return (____chimes_replaying ? avi_write_resumable(fd, buf, len) : avi_write_quick(fd, buf, len)); }
 
 static void long2str_quick(unsigned char *dst, int n)
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&long2str), "long2str", &____must_manage_long2str, 2, 0, (size_t)(912368063336279081UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&long2str), "long2str", &____must_manage_long2str, 2, 0, (size_t)(912368063336279113UL), (size_t)(0UL)) ; ; ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    dst[0] = (n )&0xff;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8197,33 +7963,33 @@ static void long2str_quick(unsigned char *dst, int n)
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    dst[3] = (n>>24)&0xff;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(false, 0UL, "long2str", &____must_manage_long2str, ____alias_loc_id_79, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "long2str", &____must_manage_long2str, ____alias_loc_id_5, ____chimes_did_disable2); }
 
 static void long2str(unsigned char *dst, int n) { (____chimes_replaying ? long2str_resumable(dst, n) : long2str_quick(dst, n)); }
 
 static unsigned long str2ulong_quick(unsigned char *str)
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&str2ulong), "str2ulong", &____must_manage_str2ulong, 1, 0, (size_t)(912368063336279671UL)) ; ; ;
+{const int ____chimes_did_disable3 = new_stack((void *)(&str2ulong), "str2ulong", &____must_manage_str2ulong, 1, 0, (size_t)(912368063336279783UL)) ; ; ;
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "str2ulong", &____must_manage_str2ulong, ____alias_loc_id_87, ____chimes_did_disable3); return ( str[0] | (str[1]<<8) | (str[2]<<16) | (str[3]<<24) );
+    unsigned long ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (( str[0] | (str[1]<<8) | (str[2]<<16) | (str[3]<<24) )); rm_stack(false, 0UL, "str2ulong", &____must_manage_str2ulong, ____alias_loc_id_13, ____chimes_did_disable3); return ____chimes_ret_var_4; ;
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "str2ulong", &____must_manage_str2ulong, ____alias_loc_id_13, ____chimes_did_disable3); }
 
 static unsigned long str2ulong(unsigned char *str) { return (____chimes_replaying ? str2ulong_resumable(str) : str2ulong_quick(str)); }
 
 static unsigned long str2ushort_quick(unsigned char *str)
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&str2ushort), "str2ushort", &____must_manage_str2ushort, 1, 0, (size_t)(912368063336282826UL)) ; ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&str2ushort), "str2ushort", &____must_manage_str2ushort, 1, 0, (size_t)(912368063336283086UL)) ; ; ;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "str2ushort", &____must_manage_str2ushort, ____alias_loc_id_97, ____chimes_did_disable4); return ( str[0] | (str[1]<<8) );
+    unsigned long ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (( str[0] | (str[1]<<8) )); rm_stack(false, 0UL, "str2ushort", &____must_manage_str2ushort, ____alias_loc_id_24, ____chimes_did_disable4); return ____chimes_ret_var_5; ;
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "str2ushort", &____must_manage_str2ushort, ____alias_loc_id_24, ____chimes_did_disable4); }
 
 static unsigned long str2ushort(unsigned char *str) { return (____chimes_replaying ? str2ushort_resumable(str) : str2ushort_quick(str)); }
 
 static int avi_sampsize_quick(avi_t *AVI, int j)
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&avi_sampsize), "avi_sampsize", &____must_manage_avi_sampsize, 2, 0, (size_t)(912368063336279117UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable5 = new_stack((void *)(&avi_sampsize), "avi_sampsize", &____must_manage_avi_sampsize, 2, 0, (size_t)(912368063336279153UL), (size_t)(0UL)) ; ; ;
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    int s; ;
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8232,15 +7998,15 @@ static int avi_sampsize_quick(avi_t *AVI, int j)
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (s<4) {s=4; };
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_sampsize", &____must_manage_avi_sampsize, ____alias_loc_id_80, ____chimes_did_disable5); return s;
+    int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (s); rm_stack(false, 0UL, "avi_sampsize", &____must_manage_avi_sampsize, ____alias_loc_id_6, ____chimes_did_disable5); return ____chimes_ret_var_6; ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_sampsize", &____must_manage_avi_sampsize, ____alias_loc_id_6, ____chimes_did_disable5); }
 
 static int avi_sampsize(avi_t *AVI, int j) { return (____chimes_replaying ? avi_sampsize_resumable(AVI, j) : avi_sampsize_quick(AVI, j)); }
 
 static int avi_add_chunk_quick(avi_t *AVI, unsigned char *tag, unsigned char *data, int length)
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&avi_add_chunk), "avi_add_chunk", &____must_manage_avi_add_chunk, 4, 3, (size_t)(912368063336284091UL), (size_t)(912368063336284092UL), (size_t)(912368063336284093UL), (size_t)(0UL), "avi_add_chunk|AVI|0", &____must_checkpoint_avi_add_chunk_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "avi_add_chunk|data|0", &____must_checkpoint_avi_add_chunk_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0, "avi_add_chunk|length|0", &____must_checkpoint_avi_add_chunk_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0) ; unsigned char c[8];
+{const int ____chimes_did_disable6 = new_stack((void *)(&avi_add_chunk), "avi_add_chunk", &____must_manage_avi_add_chunk, 4, 0, (size_t)(912368063336284599UL), (size_t)(912368063336284600UL), (size_t)(912368063336284601UL), (size_t)(0UL)) ; unsigned char c[8];
  if (____must_checkpoint_avi_add_chunk_c_0) { register_stack_vars(1, "avi_add_chunk|c|0", &____must_checkpoint_avi_add_chunk_c_0, "[8 x i8]", (void *)(c), (size_t)8, 0, 0, 0); } ; ;
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     ;
@@ -8260,17 +8026,17 @@ static int avi_add_chunk_quick(avi_t *AVI, unsigned char *tag, unsigned char *da
    length = ( ((length)+1) & ~1 );
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_3: call_lbl_4: if( alias_group_changed(____alias_loc_id_73) || ({ calling((void*)avi_write, 3, ____alias_loc_id_73, 0UL, 3, (size_t)(0UL), (size_t)(912368063336284027UL), (size_t)(0UL)); avi_write_quick(AVI->fdes, (char *)c, 8); }) != 8 ||
+   if( ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)c, 8); }) != 8 ||
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-        ({ calling((void*)avi_write, 4, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336284093UL), (size_t)(0UL)); avi_write_quick(AVI->fdes, (char *)data, length); }) != length )
+       ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)data, length); }) != length )
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_5: ({ calling((void*)lseek, 5, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, AVI->pos, 0); }) ;
+      lseek(AVI->fdes,AVI->pos,0);
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 4;
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(false, 0UL, "avi_add_chunk", &____must_manage_avi_add_chunk, ____alias_loc_id_128, ____chimes_did_disable6); return -1;
+       int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (-1); rm_stack(false, 0UL, "avi_add_chunk", &____must_manage_avi_add_chunk, ____alias_loc_id_56, ____chimes_did_disable6); return ____chimes_ret_var_7; ;
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 162 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8282,29 +8048,29 @@ static int avi_add_chunk_quick(avi_t *AVI, unsigned char *tag, unsigned char *da
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_add_chunk", &____must_manage_avi_add_chunk, ____alias_loc_id_128, ____chimes_did_disable6); return 0;
+    int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (0); rm_stack(false, 0UL, "avi_add_chunk", &____must_manage_avi_add_chunk, ____alias_loc_id_56, ____chimes_did_disable6); return ____chimes_ret_var_8; ;
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_add_chunk", &____must_manage_avi_add_chunk, ____alias_loc_id_56, ____chimes_did_disable6); }
 
 static int avi_add_chunk(avi_t *AVI, unsigned char *tag, unsigned char *data, int length) { return (____chimes_replaying ? avi_add_chunk_resumable(AVI, tag, data, length) : avi_add_chunk_quick(AVI, tag, data, length)); }
 
 static int avi_add_index_entry_quick(avi_t *AVI, unsigned char *tag, long flags, unsigned long pos, unsigned long len)
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&avi_add_index_entry), "avi_add_index_entry", &____must_manage_avi_add_index_entry, 5, 0, (size_t)(912368063336279451UL), (size_t)(912368063336279452UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable7 = new_stack((void *)(&avi_add_index_entry), "avi_add_index_entry", &____must_manage_avi_add_index_entry, 5, 0, (size_t)(912368063336279539UL), (size_t)(912368063336279540UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    void *ptr; ;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     ptr = realloc_wrapper((void *)AVI->idx,(AVI->max_idx+4096)*16, 912368063336279379UL, 0, 0);
+     ptr = realloc_wrapper((void *)AVI->idx,(AVI->max_idx+4096)*16, 912368063336279464UL, 0, 0);
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      if(ptr == 0) {
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        AVI_errno = 8;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       rm_stack(false, 0UL, "avi_add_index_entry", &____must_manage_avi_add_index_entry, ____alias_loc_id_84, ____chimes_did_disable7); return -1;
+        int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "avi_add_index_entry", &____must_manage_avi_add_index_entry, ____alias_loc_id_10, ____chimes_did_disable7); return ____chimes_ret_var_9; ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      }
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8336,22 +8102,20 @@ static int avi_add_index_entry_quick(avi_t *AVI, unsigned char *tag, long flags,
    if (len>AVI->max_len) {AVI->max_len=len; };
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_add_index_entry", &____must_manage_avi_add_index_entry, ____alias_loc_id_84, ____chimes_did_disable7); return 0;
+    int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (0); rm_stack(false, 0UL, "avi_add_index_entry", &____must_manage_avi_add_index_entry, ____alias_loc_id_10, ____chimes_did_disable7); return ____chimes_ret_var_10; ;
 # 203 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_add_index_entry", &____must_manage_avi_add_index_entry, ____alias_loc_id_10, ____chimes_did_disable7); }
 
 static int avi_add_index_entry(avi_t *AVI, unsigned char *tag, long flags, unsigned long pos, unsigned long len) { return (____chimes_replaying ? avi_add_index_entry_resumable(AVI, tag, flags, pos, len) : avi_add_index_entry_quick(AVI, tag, flags, pos, len)); }
 
 avi_t* AVI_open_output_file_quick(char * filename)
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&AVI_open_output_file), "AVI_open_output_file", &____must_manage_AVI_open_output_file, 1, 0, (size_t)(912368063336277486UL)) ; unsigned char AVI_header[2048];
-int i;
-avi_t *AVI;
- if (____must_checkpoint_AVI_open_output_file_AVI_header_0 || ____must_checkpoint_AVI_open_output_file_i_0 || ____must_checkpoint_AVI_open_output_file_AVI_0) { register_stack_vars(3, "AVI_open_output_file|AVI_header|0", &____must_checkpoint_AVI_open_output_file_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0, "AVI_open_output_file|i|0", &____must_checkpoint_AVI_open_output_file_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "AVI_open_output_file|AVI|0", &____must_checkpoint_AVI_open_output_file_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0); } ; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&AVI_open_output_file), "AVI_open_output_file", &____must_manage_AVI_open_output_file, 1, 0, (size_t)(912368063336277502UL)) ; unsigned char AVI_header[2048];
+ if (____must_checkpoint_AVI_open_output_file_AVI_header_0) { register_stack_vars(1, "AVI_open_output_file|AVI_header|0", &____must_checkpoint_AVI_open_output_file_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0); } ; ;
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   avi_t *AVI; ;
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   int i; ;
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     int mask; mask = (0) ;
@@ -8362,7 +8126,7 @@ avi_t *AVI;
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277401UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+   AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277405UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if(AVI==0)
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8370,14 +8134,14 @@ avi_t *AVI;
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 8;
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_74, ____chimes_did_disable8); return 0;
+       avi_t *____chimes_ret_var_11; ; ____chimes_ret_var_11 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8); return ____chimes_ret_var_11; ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    memset((void *)AVI,0,sizeof(avi_t));
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   alias_group_changed(____alias_loc_id_0); call_lbl_5: AVI->fdes = ({ calling((void*)open, 5, ____alias_loc_id_0, 0UL, 3, (size_t)(912368063336277486UL), (size_t)(0UL), (size_t)(0UL)); (open)(filename, 2 | 64 | 0, 420 & ~mask); }) ;
+   AVI->fdes = open(filename, 02|0100|0, 0644 &~ mask);
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (AVI->fdes < 0)
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8385,9 +8149,9 @@ avi_t *AVI;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 2;
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      free_wrapper(AVI, 912368063336277401UL);
+      free_wrapper(AVI, 912368063336277405UL);
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_74, ____chimes_did_disable8); return 0;
+       avi_t *____chimes_ret_var_12; ; ____chimes_ret_var_12 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8); return ____chimes_ret_var_12; ;
 # 244 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8397,19 +8161,19 @@ avi_t *AVI;
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    for (i=0; i<2048; i++) { AVI_header[i] = 0; };
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   alias_group_changed(____alias_loc_id_2); call_lbl_9: i = ({ calling((void*)avi_write, 9, ____alias_loc_id_2, 0UL, 3, (size_t)(0UL), (size_t)(912368063336277393UL), (size_t)(0UL)); avi_write_quick(AVI->fdes, (char *)AVI_header, 2048); }) ;
+   i = ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); });
 # 251 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (i != 2048)
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_10: ({ calling((void*)close, 10, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (close)(AVI->fdes); }) ;
+      close(AVI->fdes);
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 4;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      free_wrapper(AVI, 912368063336277401UL);
+      free_wrapper(AVI, 912368063336277405UL);
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_74, ____chimes_did_disable8); return 0;
+       avi_t *____chimes_ret_var_13; ; ____chimes_ret_var_13 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8); return ____chimes_ret_var_13; ;
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8425,19 +8189,19 @@ avi_t *AVI;
    AVI->aptr = 0;
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(true, 912368063336277401UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_74, ____chimes_did_disable8); return AVI;
+    avi_t *____chimes_ret_var_14; ; ____chimes_ret_var_14 = (AVI); rm_stack(true, 912368063336277405UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8); return ____chimes_ret_var_14; ;
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(true, 912368063336277405UL, "AVI_open_output_file", &____must_manage_AVI_open_output_file, ____alias_loc_id_0, ____chimes_did_disable8); }
 
 avi_t* AVI_open_output_file(char * filename) { return (____chimes_replaying ? AVI_open_output_file_resumable(filename) : AVI_open_output_file_quick(filename)); }
 
 void AVI_set_video_quick(avi_t *AVI, int width, int height, double fps, char *compressor)
 # 270 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&AVI_set_video), "AVI_set_video", &____must_manage_AVI_set_video, 5, 2, (size_t)(912368063336277606UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(912368063336277610UL), "AVI_set_video|AVI|0", &____must_checkpoint_AVI_set_video_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_set_video|compressor|0", &____must_checkpoint_AVI_set_video_compressor_0, "i8*", (void *)(&compressor), (size_t)8, 1, 0, 0) ; ; ;
+{const int ____chimes_did_disable9 = new_stack((void *)(&AVI_set_video), "AVI_set_video", &____must_manage_AVI_set_video, 5, 0, (size_t)(912368063336277630UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(912368063336277634UL)) ; ; ;
 # 271 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_set_video", &____must_manage_AVI_set_video, ____alias_loc_id_76, ____chimes_did_disable9); return; };
+   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_set_video", &____must_manage_AVI_set_video, ____alias_loc_id_2, ____chimes_did_disable9); return; };
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->width = width;
@@ -8447,7 +8211,7 @@ void AVI_set_video_quick(avi_t *AVI, int width, int height, double fps, char *co
    AVI->fps = fps;
 # 278 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 279 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_3: if(alias_group_changed(____alias_loc_id_5) || ({ calling((void*)strncmp, 3, ____alias_loc_id_5, 0UL, 3, (size_t)(912368063336277610UL), (size_t)(912368063336284101UL), (size_t)(0UL)); (strncmp)(compressor, "RGB", 3); }) ==0) {
+   if(strncmp(compressor, "RGB", 3)==0) {
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      memset(AVI->compressor, 0, 4);
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8461,19 +8225,19 @@ void AVI_set_video_quick(avi_t *AVI, int width, int height, double fps, char *co
    AVI->compressor[4] = 0;
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 287 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_6: ({ calling((void*)avi_update_header, 6, ____alias_loc_id_4, 0UL, 1, (size_t)(912368063336277606UL)); avi_update_header_quick(AVI); }) ;
+   ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
 # 288 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(false, 0UL, "AVI_set_video", &____must_manage_AVI_set_video, ____alias_loc_id_76, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "AVI_set_video", &____must_manage_AVI_set_video, ____alias_loc_id_2, ____chimes_did_disable9); }
 
 void AVI_set_video(avi_t *AVI, int width, int height, double fps, char *compressor) { (____chimes_replaying ? AVI_set_video_resumable(AVI, width, height, fps, compressor) : AVI_set_video_quick(AVI, width, height, fps, compressor)); }
 
 void AVI_set_audio_quick(avi_t *AVI, int channels, long rate, int bits, int format, long mp3rate)
 # 291 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&AVI_set_audio), "AVI_set_audio", &____must_manage_AVI_set_audio, 6, 0, (size_t)(912368063336279038UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable10 = new_stack((void *)(&AVI_set_audio), "AVI_set_audio", &____must_manage_AVI_set_audio, 6, 0, (size_t)(912368063336279070UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 292 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 294 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_set_audio", &____must_manage_AVI_set_audio, ____alias_loc_id_78, ____chimes_did_disable10); return; };
+   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_set_audio", &____must_manage_AVI_set_audio, ____alias_loc_id_4, ____chimes_did_disable10); return; };
 # 295 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 296 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 297 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8502,15 +8266,15 @@ void AVI_set_audio_quick(avi_t *AVI, int channels, long rate, int bits, int form
    AVI->track[AVI->aptr].mp3rate = mp3rate;
 # 310 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_4: ({ calling((void*)avi_update_header, 4, ____alias_loc_id_7, 0UL, 1, (size_t)(912368063336279038UL)); avi_update_header_quick(AVI); }) ;
+   ({ calling_npm("avi_update_header", 0); avi_update_header_npm(AVI); });
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(false, 0UL, "AVI_set_audio", &____must_manage_AVI_set_audio, ____alias_loc_id_78, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "AVI_set_audio", &____must_manage_AVI_set_audio, ____alias_loc_id_4, ____chimes_did_disable10); }
 
 void AVI_set_audio(avi_t *AVI, int channels, long rate, int bits, int format, long mp3rate) { (____chimes_replaying ? AVI_set_audio_resumable(AVI, channels, rate, bits, format, mp3rate) : AVI_set_audio_quick(AVI, channels, rate, bits, format, mp3rate)); }
 
 int avi_update_header_quick(avi_t *AVI)
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&avi_update_header), "avi_update_header", &____must_manage_avi_update_header, 1, 1, (size_t)(912368063336278936UL), "avi_update_header|AVI|0", &____must_checkpoint_avi_update_header_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0) ; unsigned char AVI_header[2048];
+{const int ____chimes_did_disable11 = new_stack((void *)(&avi_update_header), "avi_update_header", &____must_manage_avi_update_header, 1, 0, (size_t)(912368063336278968UL)) ; unsigned char AVI_header[2048];
  if (____must_checkpoint_avi_update_header_AVI_header_0) { register_stack_vars(1, "avi_update_header|AVI_header|0", &____must_checkpoint_avi_update_header_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0); } ; ;
 # 331 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    int njunk; int sampsize; int hasIndex; int ms_per_frame; int frate; int flag; ;
@@ -8852,60 +8616,46 @@ int avi_update_header_quick(avi_t *AVI)
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_28: call_lbl_29: call_lbl_30: if ( alias_group_changed(____alias_loc_id_6) || ({ calling((void*)lseek, 28, ____alias_loc_id_6, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, 0, 0); }) <0 ||
+   if ( lseek(AVI->fdes,0,0)<0 ||
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         ({ calling((void*)avi_write, 29, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336277631UL), (size_t)(0UL)); avi_write_quick(AVI->fdes, (char *)AVI_header, 2048); }) !=2048 ||
+        ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); })!=2048 ||
 # 560 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  ({ calling((void*)lseek, 30, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, AVI->pos, 0); }) <0)
+ lseek(AVI->fdes,AVI->pos,0)<0)
 # 561 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      {
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        AVI_errno = 6;
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       rm_stack(false, 0UL, "avi_update_header", &____must_manage_avi_update_header, ____alias_loc_id_77, ____chimes_did_disable11); return -1;
+        int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = (-1); rm_stack(false, 0UL, "avi_update_header", &____must_manage_avi_update_header, ____alias_loc_id_3, ____chimes_did_disable11); return ____chimes_ret_var_15; ;
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      }
 # 565 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_update_header", &____must_manage_avi_update_header, ____alias_loc_id_77, ____chimes_did_disable11); return 0;
+    int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = (0); rm_stack(false, 0UL, "avi_update_header", &____must_manage_avi_update_header, ____alias_loc_id_3, ____chimes_did_disable11); return ____chimes_ret_var_16; ;
 # 567 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_update_header", &____must_manage_avi_update_header, ____alias_loc_id_3, ____chimes_did_disable11); }
 
 int avi_update_header(avi_t *AVI) { return (____chimes_replaying ? avi_update_header_resumable(AVI) : avi_update_header_quick(AVI)); }
 
 static int avi_close_output_file_quick(avi_t *AVI)
 # 575 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&avi_close_output_file), "avi_close_output_file", &____must_manage_avi_close_output_file, 1, 1, (size_t)(912368063336281225UL), "avi_close_output_file|AVI|0", &____must_checkpoint_avi_close_output_file_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0) ; long info_len;
-long nhb;
-unsigned char AVI_header[2048];
-int j;
-int strl_start;
-int hdrl_start;
-unsigned long movi_len;
-int flag;
-int idxerror;
-int frate;
-int ms_per_frame;
-int hasIndex;
-int sampsize;
-int njunk;
-int ret;
- if (____must_checkpoint_avi_close_output_file_info_len_0 || ____must_checkpoint_avi_close_output_file_nhb_0 || ____must_checkpoint_avi_close_output_file_AVI_header_0 || ____must_checkpoint_avi_close_output_file_j_0 || ____must_checkpoint_avi_close_output_file_strl_start_0 || ____must_checkpoint_avi_close_output_file_hdrl_start_0 || ____must_checkpoint_avi_close_output_file_movi_len_0 || ____must_checkpoint_avi_close_output_file_flag_0 || ____must_checkpoint_avi_close_output_file_idxerror_0 || ____must_checkpoint_avi_close_output_file_frate_0 || ____must_checkpoint_avi_close_output_file_ms_per_frame_0 || ____must_checkpoint_avi_close_output_file_hasIndex_0 || ____must_checkpoint_avi_close_output_file_sampsize_0 || ____must_checkpoint_avi_close_output_file_njunk_0 || ____must_checkpoint_avi_close_output_file_ret_0) { register_stack_vars(15, "avi_close_output_file|info_len|0", &____must_checkpoint_avi_close_output_file_info_len_0, "i64", (void *)(&info_len), (size_t)8, 0, 0, 0, "avi_close_output_file|nhb|0", &____must_checkpoint_avi_close_output_file_nhb_0, "i64", (void *)(&nhb), (size_t)8, 0, 0, 0, "avi_close_output_file|AVI_header|0", &____must_checkpoint_avi_close_output_file_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0, "avi_close_output_file|j|0", &____must_checkpoint_avi_close_output_file_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "avi_close_output_file|strl_start|0", &____must_checkpoint_avi_close_output_file_strl_start_0, "i32", (void *)(&strl_start), (size_t)4, 0, 0, 0, "avi_close_output_file|hdrl_start|0", &____must_checkpoint_avi_close_output_file_hdrl_start_0, "i32", (void *)(&hdrl_start), (size_t)4, 0, 0, 0, "avi_close_output_file|movi_len|0", &____must_checkpoint_avi_close_output_file_movi_len_0, "i64", (void *)(&movi_len), (size_t)8, 0, 0, 0, "avi_close_output_file|flag|0", &____must_checkpoint_avi_close_output_file_flag_0, "i32", (void *)(&flag), (size_t)4, 0, 0, 0, "avi_close_output_file|idxerror|0", &____must_checkpoint_avi_close_output_file_idxerror_0, "i32", (void *)(&idxerror), (size_t)4, 0, 0, 0, "avi_close_output_file|frate|0", &____must_checkpoint_avi_close_output_file_frate_0, "i32", (void *)(&frate), (size_t)4, 0, 0, 0, "avi_close_output_file|ms_per_frame|0", &____must_checkpoint_avi_close_output_file_ms_per_frame_0, "i32", (void *)(&ms_per_frame), (size_t)4, 0, 0, 0, "avi_close_output_file|hasIndex|0", &____must_checkpoint_avi_close_output_file_hasIndex_0, "i32", (void *)(&hasIndex), (size_t)4, 0, 0, 0, "avi_close_output_file|sampsize|0", &____must_checkpoint_avi_close_output_file_sampsize_0, "i32", (void *)(&sampsize), (size_t)4, 0, 0, 0, "avi_close_output_file|njunk|0", &____must_checkpoint_avi_close_output_file_njunk_0, "i32", (void *)(&njunk), (size_t)4, 0, 0, 0, "avi_close_output_file|ret|0", &____must_checkpoint_avi_close_output_file_ret_0, "i32", (void *)(&ret), (size_t)4, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable12 = new_stack((void *)(&avi_close_output_file), "avi_close_output_file", &____must_manage_avi_close_output_file, 1, 0, (size_t)(912368063336281381UL)) ; unsigned char AVI_header[2048];
+ if (____must_checkpoint_avi_close_output_file_AVI_header_0) { register_stack_vars(1, "avi_close_output_file|AVI_header|0", &____must_checkpoint_avi_close_output_file_AVI_header_0, "[2048 x i8]", (void *)(AVI_header), (size_t)2048, 0, 0, 0); } ; ;
 # 576 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 577 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-           ;
+   int ret; int njunk; int sampsize; int hasIndex; int ms_per_frame; int frate; int idxerror; int flag; ;
 # 578 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   unsigned long movi_len; ;
 # 579 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      ;
+   int hdrl_start; int strl_start; int j; ;
 # 580 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     ;
 # 581 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   long nhb; ;
 # 582 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 583 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 584 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   long info_len; ;
 # 585 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 586 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 587 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -8923,7 +8673,7 @@ int ret;
    idxerror = 0;
 # 598 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 599 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_1: ret = ({ calling((void*)avi_add_chunk, 1, ____alias_loc_id_17, 0UL, 4, (size_t)(912368063336281225UL), (size_t)(912368063336284104UL), (size_t)(912368063336279853UL), (size_t)(0UL)); avi_add_chunk_quick(AVI, (unsigned char *)"idx1", (unsigned char *)AVI->idx, AVI->n_idx * 16); }) ;
+   ret = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *)"idx1", (unsigned char *)AVI->idx, AVI->n_idx*16); });
 # 600 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    hasIndex = (ret==0);
 # 601 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9285,9 +9035,9 @@ int ret;
 # 861 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 862 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 863 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_32: call_lbl_33: if ( alias_group_changed(____alias_loc_id_16) || ({ calling((void*)lseek, 32, ____alias_loc_id_16, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, 0, 0); }) <0 ||
+   if ( lseek(AVI->fdes,0,0)<0 ||
 # 864 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         ({ calling((void*)avi_write, 33, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336279823UL), (size_t)(0UL)); avi_write_quick(AVI->fdes, (char *)AVI_header, 2048); }) !=2048
+        ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *)AVI_header, 2048); })!=2048
 # 865 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 866 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
         )
@@ -9296,27 +9046,26 @@ int ret;
 # 868 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 6;
 # 869 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_92, ____chimes_did_disable12); return -1;
+       int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = (-1); rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_19, ____chimes_did_disable12); return ____chimes_ret_var_17; ;
 # 870 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 871 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 872 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (idxerror) {rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_92, ____chimes_did_disable12); return -1; };
+   if (idxerror) { int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = (-1); rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_19, ____chimes_did_disable12); return ____chimes_ret_var_18; ; };
 # 873 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 874 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_92, ____chimes_did_disable12); return 0;
+    int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = (0); rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_19, ____chimes_did_disable12); return ____chimes_ret_var_19; ;
 # 875 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_close_output_file", &____must_manage_avi_close_output_file, ____alias_loc_id_19, ____chimes_did_disable12); }
 
 static int avi_close_output_file(avi_t *AVI) { return (____chimes_replaying ? avi_close_output_file_resumable(AVI) : avi_close_output_file_quick(AVI)); }
 
 static int avi_write_data_quick(avi_t *AVI, char *data, unsigned long length, int audio, int keyframe)
 # 888 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&avi_write_data), "avi_write_data", &____must_manage_avi_write_data, 5, 0, (size_t)(912368063336279282UL), (size_t)(912368063336279283UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; unsigned char astr[5];
-int n;
- if (____must_checkpoint_avi_write_data_astr_0 || ____must_checkpoint_avi_write_data_n_0) { register_stack_vars(2, "avi_write_data|astr|0", &____must_checkpoint_avi_write_data_astr_0, "[5 x i8]", (void *)(astr), (size_t)5, 0, 0, 0, "avi_write_data|n|0", &____must_checkpoint_avi_write_data_n_0, "i32", (void *)(&n), (size_t)4, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable13 = new_stack((void *)(&avi_write_data), "avi_write_data", &____must_manage_avi_write_data, 5, 0, (size_t)(912368063336279346UL), (size_t)(912368063336279347UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; unsigned char astr[5];
+ if (____must_checkpoint_avi_write_data_astr_0) { register_stack_vars(1, "avi_write_data|astr|0", &____must_checkpoint_avi_write_data_astr_0, "[5 x i8]", (void *)(astr), (size_t)5, 0, 0, 0); } ; ;
 # 889 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   int n; ;
 # 890 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 891 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     ;
@@ -9328,7 +9077,7 @@ int n;
 # 896 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      AVI_errno = 1;
 # 897 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_82, ____chimes_did_disable13); return -1;
+      int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = (-1); rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_8, ____chimes_did_disable13); return ____chimes_ret_var_20; ;
 # 898 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 899 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9342,38 +9091,37 @@ int n;
    if (audio) {n = ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, astr, 0x00, AVI->pos, length); }); } else {n = ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *) "00db", ((keyframe)?0x10:0x0), AVI->pos, length); }); } ;
 # 909 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 910 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (n) {rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_82, ____chimes_did_disable13); return -1; };
+   if (n) { int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = (-1); rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_8, ____chimes_did_disable13); return ____chimes_ret_var_21; ; };
 # 911 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 912 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 913 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 914 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (audio) { call_lbl_4: n = ({ calling((void*)avi_add_chunk, 4, ____alias_loc_id_9, 0UL, 4, (size_t)(912368063336279282UL), (size_t)(912368063336279189UL), (size_t)(912368063336279283UL), (size_t)(0UL)); avi_add_chunk_quick(AVI, (unsigned char *)astr, (unsigned char *)data, length); }) ; } else { call_lbl_5: n = ({ calling((void*)avi_add_chunk, 5, ____alias_loc_id_9, 0UL, 4, (size_t)(912368063336279282UL), (size_t)(912368063336279189UL), (size_t)(912368063336279283UL), (size_t)(0UL)); avi_add_chunk_quick(AVI, (unsigned char *)"00db", (unsigned char *)data, length); }) ; } ;
+   if (audio) {n = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *) astr, (unsigned char *)data, length); }); } else {n = ({ calling_npm("avi_add_chunk", 0); avi_add_chunk_npm(AVI, (unsigned char *)"00db", (unsigned char *)data, length); }); } ;
 # 918 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 919 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (n) {rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_82, ____chimes_did_disable13); return -1; };
+   if (n) { int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = (-1); rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_8, ____chimes_did_disable13); return ____chimes_ret_var_22; ; };
 # 920 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 921 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_82, ____chimes_did_disable13); return 0;
+    int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = (0); rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_8, ____chimes_did_disable13); return ____chimes_ret_var_23; ;
 # 922 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_write_data", &____must_manage_avi_write_data, ____alias_loc_id_8, ____chimes_did_disable13); }
 
 static int avi_write_data(avi_t *AVI, char *data, unsigned long length, int audio, int keyframe) { return (____chimes_replaying ? avi_write_data_resumable(AVI, data, length, audio, keyframe) : avi_write_data_quick(AVI, data, length, audio, keyframe)); }
 
 int AVI_write_frame_quick(avi_t *AVI, char *data, long bytes, int keyframe)
 # 925 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable14 = new_stack((void *)(&AVI_write_frame), "AVI_write_frame", &____must_manage_AVI_write_frame, 4, 2, (size_t)(912368063336279178UL), (size_t)(912368063336279179UL), (size_t)(0UL), (size_t)(0UL), "AVI_write_frame|AVI|0", &____must_checkpoint_AVI_write_frame_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_write_frame|bytes|0", &____must_checkpoint_AVI_write_frame_bytes_0, "i64", (void *)(&bytes), (size_t)8, 0, 0, 0) ; unsigned long pos;
- if (____must_checkpoint_AVI_write_frame_pos_0) { register_stack_vars(1, "AVI_write_frame|pos|0", &____must_checkpoint_AVI_write_frame_pos_0, "i64", (void *)(&pos), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable14 = new_stack((void *)(&AVI_write_frame), "AVI_write_frame", &____must_manage_AVI_write_frame, 4, 0, (size_t)(912368063336279226UL), (size_t)(912368063336279227UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 926 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   ;
+  unsigned long pos; ;
 # 927 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 928 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_81, ____chimes_did_disable14); return -1; }
+  if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = (-1); rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14); return ____chimes_ret_var_24; ; }
 # 929 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 930 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   pos = AVI->pos;
 # 931 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 932 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_3: if (alias_group_changed(____alias_loc_id_8) || ({ calling((void*)avi_write_data, 3, ____alias_loc_id_8, 0UL, 5, (size_t)(912368063336279178UL), (size_t)(912368063336279179UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); avi_write_data_quick(AVI, data, bytes, 0, keyframe); }) ) {rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_81, ____chimes_did_disable14); return -1; };
+  if (({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 0, keyframe); })) { int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = (-1); rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14); return ____chimes_ret_var_25; ; };
 # 933 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 934 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->last_pos = pos;
@@ -9382,65 +9130,62 @@ int AVI_write_frame_quick(avi_t *AVI, char *data, long bytes, int keyframe)
 # 936 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->video_frames++;
 # 937 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_81, ____chimes_did_disable14); return 0;
+   int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = (0); rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14); return ____chimes_ret_var_26; ;
 # 938 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_write_frame", &____must_manage_AVI_write_frame, ____alias_loc_id_7, ____chimes_did_disable14); }
 
 int AVI_write_frame(avi_t *AVI, char *data, long bytes, int keyframe) { return (____chimes_replaying ? AVI_write_frame_resumable(AVI, data, bytes, keyframe) : AVI_write_frame_quick(AVI, data, bytes, keyframe)); }
 
 int AVI_dup_frame_quick(avi_t *AVI)
 # 941 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable15 = new_stack((void *)(&AVI_dup_frame), "AVI_dup_frame", &____must_manage_AVI_dup_frame, 1, 0, (size_t)(912368063336279330UL)) ; ; ;
+{const int ____chimes_did_disable15 = new_stack((void *)(&AVI_dup_frame), "AVI_dup_frame", &____must_manage_AVI_dup_frame, 1, 0, (size_t)(912368063336279410UL)) ; ; ;
 # 942 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_83, ____chimes_did_disable15); return -1; }
+   if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = (-1); rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15); return ____chimes_ret_var_27; ; }
 # 943 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 944 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->last_pos==0) {rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_83, ____chimes_did_disable15); return 0; };
+   if (AVI->last_pos==0) { int ____chimes_ret_var_28; ; ____chimes_ret_var_28 = (0); rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15); return ____chimes_ret_var_28; ; };
 # 945 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *)"00db", 0x10, AVI->last_pos, AVI->last_len); })) {rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_83, ____chimes_did_disable15); return -1; };
+   if (({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *)"00db", 0x10, AVI->last_pos, AVI->last_len); })) { int ____chimes_ret_var_29; ; ____chimes_ret_var_29 = (-1); rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15); return ____chimes_ret_var_29; ; };
 # 946 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_frames++;
 # 947 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->must_use_index = 1;
 # 948 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_83, ____chimes_did_disable15); return 0;
+    int ____chimes_ret_var_30; ; ____chimes_ret_var_30 = (0); rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15); return ____chimes_ret_var_30; ;
 # 949 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_dup_frame", &____must_manage_AVI_dup_frame, ____alias_loc_id_9, ____chimes_did_disable15); }
 
 int AVI_dup_frame(avi_t *AVI) { return (____chimes_replaying ? AVI_dup_frame_resumable(AVI) : AVI_dup_frame_quick(AVI)); }
 
 int AVI_write_audio_quick(avi_t *AVI, char *data, long bytes)
 # 952 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable16 = new_stack((void *)(&AVI_write_audio), "AVI_write_audio", &____must_manage_AVI_write_audio, 3, 2, (size_t)(912368063336279498UL), (size_t)(912368063336279499UL), (size_t)(0UL), "AVI_write_audio|AVI|0", &____must_checkpoint_AVI_write_audio_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_write_audio|bytes|0", &____must_checkpoint_AVI_write_audio_bytes_0, "i64", (void *)(&bytes), (size_t)8, 0, 0, 0) ; ; ;
+{const int ____chimes_did_disable16 = new_stack((void *)(&AVI_write_audio), "AVI_write_audio", &____must_manage_AVI_write_audio, 3, 0, (size_t)(912368063336279598UL), (size_t)(912368063336279599UL), (size_t)(0UL)) ; ; ;
 # 953 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_85, ____chimes_did_disable16); return -1; }
+   if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_31; ; ____chimes_ret_var_31 = (-1); rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16); return ____chimes_ret_var_31; ; }
 # 954 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 955 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_3: if (alias_group_changed(____alias_loc_id_11) || ({ calling((void*)avi_write_data, 3, ____alias_loc_id_11, 0UL, 5, (size_t)(912368063336279498UL), (size_t)(912368063336279499UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); avi_write_data_quick(AVI, data, bytes, 1, 0); }) ) {rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_85, ____chimes_did_disable16); return -1; };
+   if (({ calling_npm("avi_write_data", 0); avi_write_data_npm(AVI, data, bytes, 1, 0); })) { int ____chimes_ret_var_32; ; ____chimes_ret_var_32 = (-1); rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16); return ____chimes_ret_var_32; ; };
 # 956 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->track[AVI->aptr].audio_bytes += bytes;
 # 957 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_85, ____chimes_did_disable16); return 0;
+    int ____chimes_ret_var_33; ; ____chimes_ret_var_33 = (0); rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16); return ____chimes_ret_var_33; ;
 # 958 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_write_audio", &____must_manage_AVI_write_audio, ____alias_loc_id_11, ____chimes_did_disable16); }
 
 int AVI_write_audio(avi_t *AVI, char *data, long bytes) { return (____chimes_replaying ? AVI_write_audio_resumable(AVI, data, bytes) : AVI_write_audio_quick(AVI, data, bytes)); }
 
 int AVI_append_audio_quick(avi_t *AVI, char *data, long bytes)
 # 962 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable17 = new_stack((void *)(&AVI_append_audio), "AVI_append_audio", &____must_manage_AVI_append_audio, 3, 3, (size_t)(912368063336279641UL), (size_t)(912368063336279642UL), (size_t)(0UL), "AVI_append_audio|AVI|0", &____must_checkpoint_AVI_append_audio_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_append_audio|data|0", &____must_checkpoint_AVI_append_audio_data_0, "i8*", (void *)(&data), (size_t)8, 1, 0, 0, "AVI_append_audio|bytes|0", &____must_checkpoint_AVI_append_audio_bytes_0, "i64", (void *)(&bytes), (size_t)8, 0, 0, 0) ; unsigned char c[4];
-long pos;
-long length;
-long i;
- if (____must_checkpoint_AVI_append_audio_c_0 || ____must_checkpoint_AVI_append_audio_pos_0 || ____must_checkpoint_AVI_append_audio_length_0 || ____must_checkpoint_AVI_append_audio_i_0) { register_stack_vars(4, "AVI_append_audio|c|0", &____must_checkpoint_AVI_append_audio_c_0, "[4 x i8]", (void *)(c), (size_t)4, 0, 0, 0, "AVI_append_audio|pos|0", &____must_checkpoint_AVI_append_audio_pos_0, "i64", (void *)(&pos), (size_t)8, 0, 0, 0, "AVI_append_audio|length|0", &____must_checkpoint_AVI_append_audio_length_0, "i64", (void *)(&length), (size_t)8, 0, 0, 0, "AVI_append_audio|i|0", &____must_checkpoint_AVI_append_audio_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable17 = new_stack((void *)(&AVI_append_audio), "AVI_append_audio", &____must_manage_AVI_append_audio, 3, 0, (size_t)(912368063336279749UL), (size_t)(912368063336279750UL), (size_t)(0UL)) ; unsigned char c[4];
+ if (____must_checkpoint_AVI_append_audio_c_0) { register_stack_vars(1, "AVI_append_audio|c|0", &____must_checkpoint_AVI_append_audio_c_0, "[4 x i8]", (void *)(c), (size_t)4, 0, 0, 0); } ; ;
 # 963 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 964 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     ;
+  long i; long length; long pos; ;
 # 965 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    ;
 # 966 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 967 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_append_audio", &____must_manage_AVI_append_audio, ____alias_loc_id_86, ____chimes_did_disable17); return -1; }
+  if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_34; ; ____chimes_ret_var_34 = (-1); rm_stack(false, 0UL, "AVI_append_audio", &____must_manage_AVI_append_audio, ____alias_loc_id_12, ____chimes_did_disable17); return ____chimes_ret_var_34; ; }
 # 968 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 969 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 970 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9463,14 +9208,14 @@ long i;
 # 981 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 982 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 983 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_2: ({ calling((void*)lseek, 2, ____alias_loc_id_13, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, pos + 4, 0); }) ;
+  lseek(AVI->fdes, pos+4, 0);
 # 984 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   ({ calling_npm("long2str", 0); long2str_npm(c, length+bytes); });
 # 985 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_3: ({ calling((void*)avi_write, 3, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336279508UL), (size_t)(0UL)); avi_write_quick(AVI->fdes, (char *)c, 4); }) ;
+  ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, (char *) c, 4); });
 # 986 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 987 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_4: ({ calling((void*)lseek, 4, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, pos + 8 + length, 0); }) ;
+  lseek(AVI->fdes, pos+8+length, 0);
 # 988 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 989 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   i=( ((length + bytes)+1) & ~1 );
@@ -9478,114 +9223,112 @@ long i;
 # 991 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   bytes = i - length;
 # 992 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_5: ({ calling((void*)avi_write, 5, ____alias_loc_id_12, 0UL, 3, (size_t)(0UL), (size_t)(912368063336279642UL), (size_t)(0UL)); avi_write_quick(AVI->fdes, data, bytes); }) ;
+  ({ calling_npm("avi_write", 0); avi_write_npm(AVI->fdes, data, bytes); });
 # 993 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->pos = pos + 8 + i;
 # 994 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 995 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(false, 0UL, "AVI_append_audio", &____must_manage_AVI_append_audio, ____alias_loc_id_86, ____chimes_did_disable17); return 0;
+   int ____chimes_ret_var_35; ; ____chimes_ret_var_35 = (0); rm_stack(false, 0UL, "AVI_append_audio", &____must_manage_AVI_append_audio, ____alias_loc_id_12, ____chimes_did_disable17); return ____chimes_ret_var_35; ;
 # 996 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_append_audio", &____must_manage_AVI_append_audio, ____alias_loc_id_12, ____chimes_did_disable17); }
 
 int AVI_append_audio(avi_t *AVI, char *data, long bytes) { return (____chimes_replaying ? AVI_append_audio_resumable(AVI, data, bytes) : AVI_append_audio_quick(AVI, data, bytes)); }
 
 long AVI_bytes_remain_quick(avi_t *AVI)
 # 1000 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable18 = new_stack((void *)(&AVI_bytes_remain), "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, 1, 0, (size_t)(912368063336279697UL)) ; ; ;
+{const int ____chimes_did_disable18 = new_stack((void *)(&AVI_bytes_remain), "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, 1, 0, (size_t)(912368063336279817UL)) ; ; ;
 # 1001 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, ____alias_loc_id_88, ____chimes_did_disable18); return 0; };
+   if (AVI->mode==1) { long ____chimes_ret_var_36; ; ____chimes_ret_var_36 = (0); rm_stack(false, 0UL, "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, ____alias_loc_id_14, ____chimes_did_disable18); return ____chimes_ret_var_36; ; };
 # 1002 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1003 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, ____alias_loc_id_88, ____chimes_did_disable18); return ( ((2147483647 * 2U + 1U)-(1<<20)*16-2048) - (AVI->pos + 8 + 16*AVI->n_idx));
+    long ____chimes_ret_var_37; ; ____chimes_ret_var_37 = (( ((2147483647 * 2U + 1U)-(1<<20)*16-2048) - (AVI->pos + 8 + 16*AVI->n_idx))); rm_stack(false, 0UL, "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, ____alias_loc_id_14, ____chimes_did_disable18); return ____chimes_ret_var_37; ;
 # 1004 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_bytes_remain", &____must_manage_AVI_bytes_remain, ____alias_loc_id_14, ____chimes_did_disable18); }
 
 long AVI_bytes_remain(avi_t *AVI) { return (____chimes_replaying ? AVI_bytes_remain_resumable(AVI) : AVI_bytes_remain_quick(AVI)); }
 
 long AVI_bytes_written_quick(avi_t *AVI)
 # 1007 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable19 = new_stack((void *)(&AVI_bytes_written), "AVI_bytes_written", &____must_manage_AVI_bytes_written, 1, 0, (size_t)(912368063336279722UL)) ; ; ;
+{const int ____chimes_did_disable19 = new_stack((void *)(&AVI_bytes_written), "AVI_bytes_written", &____must_manage_AVI_bytes_written, 1, 0, (size_t)(912368063336279850UL)) ; ; ;
 # 1008 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==1) {rm_stack(false, 0UL, "AVI_bytes_written", &____must_manage_AVI_bytes_written, ____alias_loc_id_89, ____chimes_did_disable19); return 0; };
+   if (AVI->mode==1) { long ____chimes_ret_var_38; ; ____chimes_ret_var_38 = (0); rm_stack(false, 0UL, "AVI_bytes_written", &____must_manage_AVI_bytes_written, ____alias_loc_id_15, ____chimes_did_disable19); return ____chimes_ret_var_38; ; };
 # 1009 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1010 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_bytes_written", &____must_manage_AVI_bytes_written, ____alias_loc_id_89, ____chimes_did_disable19); return (AVI->pos + 8 + 16*AVI->n_idx);
+    long ____chimes_ret_var_39; ; ____chimes_ret_var_39 = ((AVI->pos + 8 + 16*AVI->n_idx)); rm_stack(false, 0UL, "AVI_bytes_written", &____must_manage_AVI_bytes_written, ____alias_loc_id_15, ____chimes_did_disable19); return ____chimes_ret_var_39; ;
 # 1011 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_bytes_written", &____must_manage_AVI_bytes_written, ____alias_loc_id_15, ____chimes_did_disable19); }
 
 long AVI_bytes_written(avi_t *AVI) { return (____chimes_replaying ? AVI_bytes_written_resumable(AVI) : AVI_bytes_written_quick(AVI)); }
 
 int AVI_set_audio_track_quick(avi_t *AVI, int track)
 # 1014 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable20 = new_stack((void *)(&AVI_set_audio_track), "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, 2, 0, (size_t)(912368063336279750UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable20 = new_stack((void *)(&AVI_set_audio_track), "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, 2, 0, (size_t)(912368063336279886UL), (size_t)(0UL)) ; ; ;
 # 1015 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1016 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if (track < 0 || track + 1 > AVI->anum) {rm_stack(false, 0UL, "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, ____alias_loc_id_90, ____chimes_did_disable20); return(-1); };
+  if (track < 0 || track + 1 > AVI->anum) { int ____chimes_ret_var_40; ; ____chimes_ret_var_40 = ((-1)); rm_stack(false, 0UL, "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, ____alias_loc_id_16, ____chimes_did_disable20); return ____chimes_ret_var_40; ; };
 # 1017 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1018 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1019 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->aptr=track;
 # 1020 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(false, 0UL, "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, ____alias_loc_id_90, ____chimes_did_disable20); return 0;
+   int ____chimes_ret_var_41; ; ____chimes_ret_var_41 = (0); rm_stack(false, 0UL, "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, ____alias_loc_id_16, ____chimes_did_disable20); return ____chimes_ret_var_41; ;
 # 1021 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_set_audio_track", &____must_manage_AVI_set_audio_track, ____alias_loc_id_16, ____chimes_did_disable20); }
 
 int AVI_set_audio_track(avi_t *AVI, int track) { return (____chimes_replaying ? AVI_set_audio_track_resumable(AVI, track) : AVI_set_audio_track_quick(AVI, track)); }
 
 int AVI_get_audio_track_quick(avi_t *AVI)
 # 1024 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable21 = new_stack((void *)(&AVI_get_audio_track), "AVI_get_audio_track", &____must_manage_AVI_get_audio_track, 1, 0, (size_t)(912368063336279759UL)) ; ; ;
+{const int ____chimes_did_disable21 = new_stack((void *)(&AVI_get_audio_track), "AVI_get_audio_track", &____must_manage_AVI_get_audio_track, 1, 0, (size_t)(912368063336279899UL)) ; ; ;
 # 1025 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    rm_stack(false, 0UL, "AVI_get_audio_track", &____must_manage_AVI_get_audio_track, ____alias_loc_id_91, ____chimes_did_disable21); return(AVI->aptr);
+     int ____chimes_ret_var_42; ; ____chimes_ret_var_42 = ((AVI->aptr)); rm_stack(false, 0UL, "AVI_get_audio_track", &____must_manage_AVI_get_audio_track, ____alias_loc_id_17, ____chimes_did_disable21); return ____chimes_ret_var_42; ;
 # 1026 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_get_audio_track", &____must_manage_AVI_get_audio_track, ____alias_loc_id_17, ____chimes_did_disable21); }
 
 int AVI_get_audio_track(avi_t *AVI) { return (____chimes_replaying ? AVI_get_audio_track_resumable(AVI) : AVI_get_audio_track_quick(AVI)); }
 
 int AVI_close_quick(avi_t *AVI)
 # 1036 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable22 = new_stack((void *)(&AVI_close), "AVI_close", &____must_manage_AVI_close, 1, 1, (size_t)(912368063336279808UL), "AVI_close|AVI|0", &____must_checkpoint_AVI_close_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0) ; int ret;
- if (____must_checkpoint_AVI_close_ret_0) { register_stack_vars(1, "AVI_close|ret|0", &____must_checkpoint_AVI_close_ret_0, "i32", (void *)(&ret), (size_t)4, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable22 = new_stack((void *)(&AVI_close), "AVI_close", &____must_manage_AVI_close, 1, 0, (size_t)(912368063336279952UL)) ; ; ;
 # 1037 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   int ret; ;
 # 1038 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1039 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1040 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1041 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1042 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode == 0) { call_lbl_1: ret = ({ calling((void*)avi_close_output_file, 1, ____alias_loc_id_15, 0UL, 1, (size_t)(912368063336279808UL)); avi_close_output_file_quick(AVI); }) ; } else {ret = 0; } ;
+   if (AVI->mode == 0) {ret = ({ calling_npm("avi_close_output_file", 0); avi_close_output_file_npm(AVI); }); } else {ret = 0; } ;
 # 1046 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1047 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1048 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1049 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_2: ({ calling((void*)close, 2, ____alias_loc_id_14, 0UL, 1, (size_t)(0UL)); (close)(AVI->fdes); }) ;
+   close(AVI->fdes);
 # 1050 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->idx) {free_wrapper(AVI->idx, 912368063336279783UL); };
+   if (AVI->idx) {free_wrapper(AVI->idx, 912368063336279924UL); };
 # 1051 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->video_index) {free_wrapper(AVI->video_index, 912368063336279783UL); };
+   if (AVI->video_index) {free_wrapper(AVI->video_index, 912368063336279924UL); };
 # 1052 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   free_wrapper(AVI, 912368063336279808UL);
+   free_wrapper(AVI, 912368063336279952UL);
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, 0, ____chimes_did_disable22); return ret;
+    int ____chimes_ret_var_43; ; ____chimes_ret_var_43 = (ret); rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, ____alias_loc_id_18, ____chimes_did_disable22); return ____chimes_ret_var_43; ;
 # 1057 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_close", &____must_manage_AVI_close, ____alias_loc_id_18, ____chimes_did_disable22); }
 
 int AVI_close(avi_t *AVI) { return (____chimes_replaying ? AVI_close_resumable(AVI) : AVI_close_quick(AVI)); }
 
 avi_t *AVI_open_input_file_quick(char *filename, int getIndex)
 # 1068 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable23 = new_stack((void *)(&AVI_open_input_file), "AVI_open_input_file", &____must_manage_AVI_open_input_file, 2, 1, (size_t)(912368063336281279UL), (size_t)(0UL), "AVI_open_input_file|getIndex|0", &____must_checkpoint_AVI_open_input_file_getIndex_0, "i32", (void *)(&getIndex), (size_t)4, 0, 0, 0) ; avi_t *AVI;
- if (____must_checkpoint_AVI_open_input_file_AVI_0) { register_stack_vars(1, "AVI_open_input_file|AVI|0", &____must_checkpoint_AVI_open_input_file_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0); } ; ;
+{const int ____chimes_did_disable23 = new_stack((void *)(&AVI_open_input_file), "AVI_open_input_file", &____must_manage_AVI_open_input_file, 2, 0, (size_t)(912368063336281447UL), (size_t)(0UL)) ; ; ;
 # 1069 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     AVI = (__null) ;
+   avi_t *AVI; AVI = (__null) ;
 # 1070 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1071 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1072 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1073 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277401UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277405UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
 # 1074 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   if(AVI==__null)
 # 1075 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9593,7 +9336,7 @@ avi_t *AVI_open_input_file_quick(char *filename, int getIndex)
 # 1076 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 8;
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_93, ____chimes_did_disable23); return 0;
+       avi_t *____chimes_ret_var_44; ; ____chimes_ret_var_44 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23); return ____chimes_ret_var_44; ;
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9605,7 +9348,7 @@ avi_t *AVI_open_input_file_quick(char *filename, int getIndex)
 # 1083 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1084 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1085 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  alias_group_changed(____alias_loc_id_18); call_lbl_5: AVI->fdes = ({ calling((void*)open, 5, ____alias_loc_id_18, 0UL, 2, (size_t)(912368063336281279UL), (size_t)(0UL)); (open)(filename, 0 | 0); }) ;
+  AVI->fdes = open(filename,00|0);
 # 1086 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   if(AVI->fdes < 0)
 # 1087 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9613,36 +9356,35 @@ avi_t *AVI_open_input_file_quick(char *filename, int getIndex)
 # 1088 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 2;
 # 1089 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      free_wrapper(AVI, 912368063336277401UL);
+      free_wrapper(AVI, 912368063336277405UL);
 # 1090 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_93, ____chimes_did_disable23); return 0;
+       avi_t *____chimes_ret_var_45; ; ____chimes_ret_var_45 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23); return ____chimes_ret_var_45; ;
 # 1091 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1093 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_8: ({ calling((void*)avi_parse_input_file, 8, ____alias_loc_id_19, 0UL, 2, (size_t)(912368063336277401UL), (size_t)(0UL)); avi_parse_input_file_quick(AVI, getIndex); }) ;
+  ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
 # 1094 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1095 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->aptr=0;
 # 1096 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1097 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(true, 912368063336277401UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_93, ____chimes_did_disable23); return AVI;
+   avi_t *____chimes_ret_var_46; ; ____chimes_ret_var_46 = (AVI); rm_stack(true, 912368063336277405UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23); return ____chimes_ret_var_46; ;
 # 1098 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(true, 912368063336277405UL, "AVI_open_input_file", &____must_manage_AVI_open_input_file, ____alias_loc_id_20, ____chimes_did_disable23); }
 
 avi_t *AVI_open_input_file(char *filename, int getIndex) { return (____chimes_replaying ? AVI_open_input_file_resumable(filename, getIndex) : AVI_open_input_file_quick(filename, getIndex)); }
 
 avi_t *AVI_open_fd_quick(int fd, int getIndex)
 # 1101 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable24 = new_stack((void *)(&AVI_open_fd), "AVI_open_fd", &____must_manage_AVI_open_fd, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; avi_t *AVI;
- if (____must_checkpoint_AVI_open_fd_AVI_0) { register_stack_vars(1, "AVI_open_fd|AVI|0", &____must_checkpoint_AVI_open_fd_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0); } ; ;
+{const int ____chimes_did_disable24 = new_stack((void *)(&AVI_open_fd), "AVI_open_fd", &____must_manage_AVI_open_fd, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 1102 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     AVI = (__null) ;
+   avi_t *AVI; AVI = (__null) ;
 # 1103 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1104 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1105 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1106 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277401UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277405UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
 # 1107 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   if(AVI==__null)
 # 1108 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9650,7 +9392,7 @@ avi_t *AVI_open_fd_quick(int fd, int getIndex)
 # 1109 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 8;
 # 1110 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336277401UL, "AVI_open_fd", &____must_manage_AVI_open_fd, ____alias_loc_id_95, ____chimes_did_disable24); return 0;
+       avi_t *____chimes_ret_var_47; ; ____chimes_ret_var_47 = (0); rm_stack(true, 912368063336277405UL, "AVI_open_fd", &____must_manage_AVI_open_fd, ____alias_loc_id_22, ____chimes_did_disable24); return ____chimes_ret_var_47; ;
 # 1111 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1112 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9664,78 +9406,59 @@ avi_t *AVI_open_fd_quick(int fd, int getIndex)
   AVI->fdes = fd;
 # 1118 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1119 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   call_lbl_4: ({ calling((void*)avi_parse_input_file, 4, ____alias_loc_id_58, 0UL, 2, (size_t)(912368063336277401UL), (size_t)(0UL)); avi_parse_input_file_quick(AVI, getIndex); }) ;
+  ({ calling_npm("avi_parse_input_file", 0); avi_parse_input_file_npm(AVI, getIndex); });
 # 1120 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1121 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->aptr=0;
 # 1122 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1123 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(true, 912368063336277401UL, "AVI_open_fd", &____must_manage_AVI_open_fd, ____alias_loc_id_95, ____chimes_did_disable24); return AVI;
+   avi_t *____chimes_ret_var_48; ; ____chimes_ret_var_48 = (AVI); rm_stack(true, 912368063336277405UL, "AVI_open_fd", &____must_manage_AVI_open_fd, ____alias_loc_id_22, ____chimes_did_disable24); return ____chimes_ret_var_48; ;
 # 1124 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(true, 912368063336277405UL, "AVI_open_fd", &____must_manage_AVI_open_fd, ____alias_loc_id_22, ____chimes_did_disable24); }
 
 avi_t *AVI_open_fd(int fd, int getIndex) { return (____chimes_replaying ? AVI_open_fd_resumable(fd, getIndex) : AVI_open_fd_quick(fd, getIndex)); }
 
 int avi_parse_input_file_quick(avi_t *AVI, int getIndex)
 # 1127 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable25 = new_stack((void *)(&avi_parse_input_file), "avi_parse_input_file", &____must_manage_avi_parse_input_file, 2, 2, (size_t)(912368063336282472UL), (size_t)(0UL), "avi_parse_input_file|AVI|0", &____must_checkpoint_avi_parse_input_file_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "avi_parse_input_file|getIndex|0", &____must_checkpoint_avi_parse_input_file_getIndex_0, "i32", (void *)(&getIndex), (size_t)4, 0, 0, 0) ; __off_t ____chimes_unroll_var_0;
-long len;
-long pos;
-char data[256];
-int num_stream;
-int auds_strh_seen;
-int vids_strf_seen;
-int vids_strh_seen;
-int lasttag;
-int j;
+{const int ____chimes_did_disable25 = new_stack((void *)(&avi_parse_input_file), "avi_parse_input_file", &____must_manage_avi_parse_input_file, 2, 0, (size_t)(912368063336282709UL), (size_t)(0UL)) ; char data[256];
 long tot[8];
-long ioff;
 long nai[8];
-long nvi;
-long hdrl_len;
-long header_offset;
-unsigned char *hdrl_data;
-long idx_type;
-long scale;
-long rate;
-long n;
-long i;
- if (____must_checkpoint_avi_parse_input_file_____chimes_unroll_var_0_0 || ____must_checkpoint_avi_parse_input_file_len_0 || ____must_checkpoint_avi_parse_input_file_pos_0 || ____must_checkpoint_avi_parse_input_file_data_0 || ____must_checkpoint_avi_parse_input_file_num_stream_0 || ____must_checkpoint_avi_parse_input_file_auds_strh_seen_0 || ____must_checkpoint_avi_parse_input_file_vids_strf_seen_0 || ____must_checkpoint_avi_parse_input_file_vids_strh_seen_0 || ____must_checkpoint_avi_parse_input_file_lasttag_0 || ____must_checkpoint_avi_parse_input_file_j_0 || ____must_checkpoint_avi_parse_input_file_tot_0 || ____must_checkpoint_avi_parse_input_file_ioff_0 || ____must_checkpoint_avi_parse_input_file_nai_0 || ____must_checkpoint_avi_parse_input_file_nvi_0 || ____must_checkpoint_avi_parse_input_file_hdrl_len_0 || ____must_checkpoint_avi_parse_input_file_header_offset_0 || ____must_checkpoint_avi_parse_input_file_hdrl_data_0 || ____must_checkpoint_avi_parse_input_file_idx_type_0 || ____must_checkpoint_avi_parse_input_file_scale_0 || ____must_checkpoint_avi_parse_input_file_rate_0 || ____must_checkpoint_avi_parse_input_file_n_0 || ____must_checkpoint_avi_parse_input_file_i_0) { register_stack_vars(22, "avi_parse_input_file|____chimes_unroll_var_0|0", &____must_checkpoint_avi_parse_input_file_____chimes_unroll_var_0_0, "i64", (void *)(&____chimes_unroll_var_0), (size_t)8, 0, 0, 0, "avi_parse_input_file|len|0", &____must_checkpoint_avi_parse_input_file_len_0, "i64", (void *)(&len), (size_t)8, 0, 0, 0, "avi_parse_input_file|pos|0", &____must_checkpoint_avi_parse_input_file_pos_0, "i64", (void *)(&pos), (size_t)8, 0, 0, 0, "avi_parse_input_file|data|0", &____must_checkpoint_avi_parse_input_file_data_0, "[256 x i8]", (void *)(data), (size_t)256, 0, 0, 0, "avi_parse_input_file|num_stream|0", &____must_checkpoint_avi_parse_input_file_num_stream_0, "i32", (void *)(&num_stream), (size_t)4, 0, 0, 0, "avi_parse_input_file|auds_strh_seen|0", &____must_checkpoint_avi_parse_input_file_auds_strh_seen_0, "i32", (void *)(&auds_strh_seen), (size_t)4, 0, 0, 0, "avi_parse_input_file|vids_strf_seen|0", &____must_checkpoint_avi_parse_input_file_vids_strf_seen_0, "i32", (void *)(&vids_strf_seen), (size_t)4, 0, 0, 0, "avi_parse_input_file|vids_strh_seen|0", &____must_checkpoint_avi_parse_input_file_vids_strh_seen_0, "i32", (void *)(&vids_strh_seen), (size_t)4, 0, 0, 0, "avi_parse_input_file|lasttag|0", &____must_checkpoint_avi_parse_input_file_lasttag_0, "i32", (void *)(&lasttag), (size_t)4, 0, 0, 0, "avi_parse_input_file|j|0", &____must_checkpoint_avi_parse_input_file_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "avi_parse_input_file|tot|0", &____must_checkpoint_avi_parse_input_file_tot_0, "[8 x i64]", (void *)(tot), (size_t)64, 0, 0, 0, "avi_parse_input_file|ioff|0", &____must_checkpoint_avi_parse_input_file_ioff_0, "i64", (void *)(&ioff), (size_t)8, 0, 0, 0, "avi_parse_input_file|nai|0", &____must_checkpoint_avi_parse_input_file_nai_0, "[8 x i64]", (void *)(nai), (size_t)64, 0, 0, 0, "avi_parse_input_file|nvi|0", &____must_checkpoint_avi_parse_input_file_nvi_0, "i64", (void *)(&nvi), (size_t)8, 0, 0, 0, "avi_parse_input_file|hdrl_len|0", &____must_checkpoint_avi_parse_input_file_hdrl_len_0, "i64", (void *)(&hdrl_len), (size_t)8, 0, 0, 0, "avi_parse_input_file|header_offset|0", &____must_checkpoint_avi_parse_input_file_header_offset_0, "i64", (void *)(&header_offset), (size_t)8, 0, 0, 0, "avi_parse_input_file|hdrl_data|0", &____must_checkpoint_avi_parse_input_file_hdrl_data_0, "i8*", (void *)(&hdrl_data), (size_t)8, 1, 0, 0, "avi_parse_input_file|idx_type|0", &____must_checkpoint_avi_parse_input_file_idx_type_0, "i64", (void *)(&idx_type), (size_t)8, 0, 0, 0, "avi_parse_input_file|scale|0", &____must_checkpoint_avi_parse_input_file_scale_0, "i64", (void *)(&scale), (size_t)8, 0, 0, 0, "avi_parse_input_file|rate|0", &____must_checkpoint_avi_parse_input_file_rate_0, "i64", (void *)(&rate), (size_t)8, 0, 0, 0, "avi_parse_input_file|n|0", &____must_checkpoint_avi_parse_input_file_n_0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "avi_parse_input_file|i|0", &____must_checkpoint_avi_parse_input_file_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0); } ; ;
+ if (____must_checkpoint_avi_parse_input_file_data_0) { register_stack_vars(1, "avi_parse_input_file|data|0", &____must_checkpoint_avi_parse_input_file_data_0, "[256 x i8]", (void *)(data), (size_t)256, 0, 0, 0); } ; ;
 # 1128 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       ;
+  long i; long n; long rate; long scale; long idx_type; ;
 # 1129 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   ;
+  unsigned char *hdrl_data; ;
 # 1130 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       header_offset = (0) ; hdrl_len = (0) ;
+   long header_offset; long hdrl_len; header_offset = (0) ; hdrl_len = (0) ;
 # 1131 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     ;
+  long nvi; long ioff; ;
 # 1132 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    ;
 # 1133 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   ;
+  int j; ;
 # 1134 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     lasttag = (0) ;
+   int lasttag; lasttag = (0) ;
 # 1135 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     vids_strh_seen = (0) ;
+   int vids_strh_seen; vids_strh_seen = (0) ;
 # 1136 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     vids_strf_seen = (0) ;
+   int vids_strf_seen; vids_strf_seen = (0) ;
 # 1137 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     auds_strh_seen = (0) ;
+   int auds_strh_seen; auds_strh_seen = (0) ;
 # 1138 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1139 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     num_stream = (0) ;
+   int num_stream; num_stream = (0) ;
 # 1140 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    ;
 # 1141 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1142 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1143 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1144 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_2: if( alias_group_changed(____alias_loc_id_30) || ({ calling((void*)avi_read, 2, ____alias_loc_id_30, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, data, 12); }) != 12 ) { call_lbl_3: ({ calling((void*)AVI_close, 3, 0, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+   if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 12); }) != 12 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_49; ; ____chimes_ret_var_49 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_49; ; }
 # 1145 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1146 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   alias_group_changed(____alias_loc_id_32); call_lbl_7: call_lbl_8: if( alias_group_changed(____alias_loc_id_31) || ({ calling((void*)strncasecmp, 7, ____alias_loc_id_31, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "RIFF", 4); }) !=0 ||
+   if( strncasecmp(data ,"RIFF",4) !=0 ||
 # 1147 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-        ({ calling((void*)strncasecmp, 8, ____alias_loc_id_32, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data + 8, "AVI ", 4); }) !=0 ) { call_lbl_9: ({ calling((void*)AVI_close, 9, 0, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 9; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+       strncasecmp(data+8,"AVI ",4) !=0 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 9; int ____chimes_ret_var_50; ; ____chimes_ret_var_50 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_50; ; }
 # 1148 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1149 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1150 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9749,7 +9472,7 @@ long i;
 # 1156 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1157 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_12: if (alias_group_changed(____alias_loc_id_37) || ({ calling((void*)avi_read, 12, ____alias_loc_id_37, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, data, 8); }) != 8) {break; };
+      if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8) {break; };
 # 1158 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1159 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *) data+4); });
@@ -9757,57 +9480,57 @@ long i;
       n = ( ((n)+1) & ~1 );
 # 1161 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1162 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_14: call_lbl_34: if (alias_group_changed(____alias_loc_id_49) || ({ calling((void*)strncasecmp, 14, ____alias_loc_id_49, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "LIST", 4); }) == 0) {{
+      if (strncasecmp(data,"LIST",4) == 0) {{
 # 1164 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_15: if( ({ calling((void*)avi_read, 15, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, data, 4); }) != 4 ) { call_lbl_16: ({ calling((void*)AVI_close, 16, 0, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+         if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 4); }) != 4 ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_51; ; ____chimes_ret_var_51 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_51; ; }
 # 1165 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          n -= 4;
 # 1166 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_19: call_lbl_29: if (alias_group_changed(____alias_loc_id_33) || ({ calling((void*)strncasecmp, 19, ____alias_loc_id_33, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "hdrl", 4); }) == 0) {{
+         if (strncasecmp(data,"hdrl",4) == 0) {{
 # 1168 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             hdrl_len = n;
 # 1169 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            hdrl_data = (unsigned char *) malloc_wrapper(n, 912368063336281549UL, 0, 0);
+            hdrl_data = (unsigned char *) malloc_wrapper(n, 912368063336281762UL, 0, 0);
 # 1170 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            if(hdrl_data==0) { call_lbl_21: ({ calling((void*)AVI_close, 21, ____alias_loc_id_20, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; };
+            if(hdrl_data==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; int ____chimes_ret_var_52; ; ____chimes_ret_var_52 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_52; ; };
 # 1171 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1172 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1173 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1174 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      call_lbl_23: header_offset = ({ calling((void*)lseek, 23, ____alias_loc_id_50, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, 0, 1); }) ;
+     header_offset = lseek(AVI->fdes,0,1);
 # 1175 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1176 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_25: if( alias_group_changed(____alias_loc_id_34) || ({ calling((void*)avi_read, 25, ____alias_loc_id_34, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281549UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, (char *)hdrl_data, n); }) != n ) { call_lbl_26: ({ calling((void*)AVI_close, 26, 0, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+            if( ({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *)hdrl_data, n); }) != n ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_53; ; ____chimes_ret_var_53 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_53; ; }
 # 1177 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         }; } else if (alias_group_changed(____alias_loc_id_56) || ({ calling((void*)strncasecmp, 29, ____alias_loc_id_56, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "movi", 4); }) == 0) {{
+         }; } else if (strncasecmp(data,"movi",4) == 0) {{
 # 1180 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_30: AVI->movi_start = ({ calling((void*)lseek, 30, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, 0, 1); }) ;
+            AVI->movi_start = lseek(AVI->fdes,0,1);
 # 1181 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_31: ({ calling((void*)lseek, 31, ____alias_loc_id_51, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, n, 1); }) ;
+            lseek(AVI->fdes,n,1);
 # 1182 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         }; } else { call_lbl_32: ({ calling((void*)lseek, 32, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, n, 1); }) ; } ;
+         }; } else {lseek(AVI->fdes,n,1); } ;
 # 1185 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if (alias_group_changed(____alias_loc_id_35) || ({ calling((void*)strncasecmp, 34, ____alias_loc_id_35, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "idx1", 4); }) == 0) {{
+      }; } else if (strncasecmp(data,"idx1",4) == 0) {{
 # 1188 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1189 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1190 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1191 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1192 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) malloc_wrapper(n, 912368063336282019UL, 0, 0);
+         AVI->idx = (unsigned char((*)[16]) ) malloc_wrapper(n, 912368063336282241UL, 0, 0);
 # 1193 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if(AVI->idx==0) { call_lbl_36: ({ calling((void*)AVI_close, 36, ____alias_loc_id_21, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+         if(AVI->idx==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; int ____chimes_ret_var_54; ; ____chimes_ret_var_54 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_54; ; }
 # 1194 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_39: if(alias_group_changed(____alias_loc_id_36) || ({ calling((void*)avi_read, 39, ____alias_loc_id_36, 0UL, 3, (size_t)(0UL), (size_t)(912368063336282019UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, (char *)AVI->idx, n); }) != n ) { call_lbl_40: ({ calling((void*)AVI_close, 40, 0, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, (char *) AVI->idx, n); }) != n ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_55; ; ____chimes_ret_var_55 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_55; ; }
 # 1195 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else { call_lbl_42: ({ calling((void*)lseek, 42, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, n, 1); }) ; } ;
+      }; } else {lseek(AVI->fdes,n,1); } ;
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1199 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1200 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!hdrl_data ) { call_lbl_43: ({ calling((void*)AVI_close, 43, 0, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 10; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+   if(!hdrl_data ) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 10; int ____chimes_ret_var_56; ; ____chimes_ret_var_56 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_56; ; }
 # 1201 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->movi_start) { call_lbl_45: ({ calling((void*)AVI_close, 45, 0, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 11; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+   if(!AVI->movi_start) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 11; int ____chimes_ret_var_57; ; ____chimes_ret_var_57 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_57; ; }
 # 1202 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1203 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1204 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9818,7 +9541,7 @@ long i;
 # 1207 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1208 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1209 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_48: if(alias_group_changed(____alias_loc_id_38) || ({ calling((void*)strncasecmp, 48, ____alias_loc_id_38, 0UL, 3, (size_t)(912368063336281549UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)((char *)hdrl_data + i, "LIST", 4); }) ==0) { i+= 12; continue; }
+      if(strncasecmp((char *) hdrl_data+i, "LIST",4)==0) { i+= 12; continue; }
 # 1210 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1211 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       n = ({ calling_npm("str2ulong", 0); str2ulong_npm(hdrl_data+i+4); });
@@ -9828,11 +9551,11 @@ long i;
 # 1214 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1215 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1216 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_50: call_lbl_59: if (alias_group_changed(____alias_loc_id_52) || ({ calling((void*)strncasecmp, 50, ____alias_loc_id_52, 0UL, 3, (size_t)(912368063336281549UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)((char *)hdrl_data + i, "strh", 4); }) ==0) {{
+      if (strncasecmp((char *)hdrl_data+i,"strh",4)==0) {{
 # 1218 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          i += 8;
 # 1219 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_52: call_lbl_55: if (alias_group_changed(____alias_loc_id_39) || ({ calling((void*)strncasecmp, 52, ____alias_loc_id_39, 0UL, 3, (size_t)(912368063336281549UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)((char *)hdrl_data + i, "vids", 4); }) == 0 && !vids_strh_seen) {{
+         if (strncasecmp((char *)hdrl_data+i,"vids",4) == 0 && !vids_strh_seen) {{
 # 1221 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             memcpy(AVI->compressor,hdrl_data+i+4,4);
 # 1222 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9859,7 +9582,7 @@ long i;
 # 1234 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             lasttag = 1;
 # 1235 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         }; } else if (alias_group_changed(____alias_loc_id_23) || ({ calling((void*)strncasecmp, 55, ____alias_loc_id_23, 0UL, 3, (size_t)(912368063336281549UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)((char *)hdrl_data + i, "auds", 4); }) ==0 && ! auds_strh_seen) {{
+         }; } else if (strncasecmp ((char *) hdrl_data+i,"auds",4) ==0 && ! auds_strh_seen) {{
 # 1238 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1239 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1240 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9872,7 +9595,7 @@ long i;
 # 1244 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       fprintf(stderr, "error - only %d audio tracks supported\n", 8);
 # 1245 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return(-1);
+       int ____chimes_ret_var_58; ; ____chimes_ret_var_58 = ((-1)); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_58; ;
 # 1246 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1247 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9893,7 +9616,7 @@ long i;
 # 1259 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          num_stream++;
 # 1260 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if(alias_group_changed(____alias_loc_id_40) || ({ calling((void*)strncasecmp, 59, ____alias_loc_id_40, 0UL, 3, (size_t)(912368063336281549UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)((char *)hdrl_data + i, "strf", 4); }) ==0)
+      }; } else if(strncasecmp((char *) hdrl_data+i,"strf",4)==0)
 # 1262 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1263 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -9960,10 +9683,10 @@ long i;
    }
 # 1301 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1302 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   free_wrapper(hdrl_data, 912368063336281549UL);
+   free_wrapper(hdrl_data, 912368063336281762UL);
 # 1303 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1304 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!vids_strh_seen || !vids_strf_seen) { call_lbl_62: ({ calling((void*)AVI_close, 62, ____alias_loc_id_24, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+   if(!vids_strh_seen || !vids_strf_seen) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; int ____chimes_ret_var_59; ; ____chimes_ret_var_59 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_59; ; }
 # 1305 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1306 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_tag[0] = AVI->video_strn/10 + '0';
@@ -9992,12 +9715,12 @@ long i;
    }
 # 1320 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1321 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_64: ({ calling((void*)lseek, 64, ____alias_loc_id_22, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, AVI->movi_start, 0); }) ;
+   lseek(AVI->fdes,AVI->movi_start,0);
 # 1322 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1323 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1324 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1325 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (!getIndex) {rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return(0); };
+   if (!getIndex) { int ____chimes_ret_var_60; ; ____chimes_ret_var_60 = ((0)); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_60; ; };
 # 1326 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1327 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1328 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10010,15 +9733,15 @@ long i;
 # 1333 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1334 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-        ;
+      long pos; long len; ;
 # 1335 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1336 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1337 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1338 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1339 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      for (i=0; i<AVI->n_idx; i++) { call_lbl_67: if (alias_group_changed(____alias_loc_id_41) || ({ calling((void*)strncasecmp, 67, ____alias_loc_id_41, 0UL, 3, (size_t)(912368063336282019UL), (size_t)(912368063336282472UL), (size_t)(0UL)); (strncasecmp)((char *)AVI->idx[i], (char *)AVI->video_tag, 3); }) ==0) {break; }; };
+      for (i=0; i<AVI->n_idx; i++) { if (strncasecmp((char *) AVI->idx[i],(char *) AVI->video_tag,3)==0) {break; }; };
 # 1341 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if(i>=AVI->n_idx) { call_lbl_68: ({ calling((void*)AVI_close, 68, ____alias_loc_id_25, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+      if(i>=AVI->n_idx) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; int ____chimes_ret_var_61; ; ____chimes_ret_var_61 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_61; ; }
 # 1342 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1343 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); });
@@ -10026,11 +9749,11 @@ long i;
       len = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+12); });
 # 1345 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1346 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_70: ({ calling((void*)lseek, 70, ____alias_loc_id_53, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, pos, 0); }) ;
+      lseek(AVI->fdes,pos,0);
 # 1347 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_71: if( ({ calling((void*)avi_read, 71, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, data, 8); }) !=8) { call_lbl_72: ({ calling((void*)AVI_close, 72, 0, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+      if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_62; ; ____chimes_ret_var_62 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_62; ; }
 # 1348 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_75: if( alias_group_changed(____alias_loc_id_42) || ({ calling((void*)strncasecmp, 75, ____alias_loc_id_42, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336282019UL), (size_t)(0UL)); (strncasecmp)((char *)data, (char *)AVI->idx[i], 4); }) ==0 &&
+      if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 &&
 # 1349 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
 # 1350 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10044,11 +9767,11 @@ long i;
 # 1354 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1355 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_76: ({ calling((void*)lseek, 76, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, pos + AVI->movi_start - 4, 0); }) ;
+         lseek(AVI->fdes,pos+AVI->movi_start-4,0);
 # 1356 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_77: if( ({ calling((void*)avi_read, 77, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, data, 8); }) !=8) { call_lbl_78: ({ calling((void*)AVI_close, 78, 0, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 3; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; }
+         if(({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); })!=8) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 3; int ____chimes_ret_var_63; ; ____chimes_ret_var_63 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_63; ; }
 # 1357 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_81: if( alias_group_changed(____alias_loc_id_43) || ({ calling((void*)strncasecmp, 81, ____alias_loc_id_43, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336282019UL), (size_t)(0UL)); (strncasecmp)((char *)data, (char *)AVI->idx[i], 4); }) ==0 && ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
+         if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 && ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); })==len )
 # 1358 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1359 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10068,7 +9791,7 @@ long i;
 # 1367 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1368 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1369 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_82: ({ calling((void*)lseek, 82, ____alias_loc_id_54, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, AVI->movi_start, 0); }) ;
+      lseek(AVI->fdes, AVI->movi_start, 0);
 # 1370 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1371 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI->n_idx = 0;
@@ -10078,18 +9801,18 @@ long i;
 # 1374 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1375 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_84: if (alias_group_changed(____alias_loc_id_44) || ({ calling((void*)avi_read, 84, ____alias_loc_id_44, 0UL, 3, (size_t)(0UL), (size_t)(912368063336281302UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, data, 8); }) != 8) {break; };
+         if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8) {break; };
 # 1376 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          n = ({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); });
 # 1377 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1378 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1379 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1380 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_86: if(alias_group_changed(____alias_loc_id_57) || ({ calling((void*)strncasecmp, 86, ____alias_loc_id_57, 0UL, 3, (size_t)(912368063336281302UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "LIST", 4); }) ==0)
+         if(strncasecmp(data,"LIST",4)==0)
 # 1381 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1382 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_87: ({ calling((void*)lseek, 87, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, 4, 1); }) ;
+            lseek(AVI->fdes,4,1);
 # 1383 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             continue;
 # 1384 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10108,12 +9831,12 @@ long i;
 # 1392 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     {
 # 1393 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         call_lbl_88: ____chimes_unroll_var_0 = ( ({ calling((void*)lseek, 88, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, 0, 1); }) ) ; ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *) data, 0, ____chimes_unroll_var_0-8, n); });
+    ({ calling_npm("avi_add_index_entry", 0); avi_add_index_entry_npm(AVI, (unsigned char *) data, 0, lseek(AVI->fdes,0,1)-8, n); });
 # 1394 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          }
 # 1395 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1396 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_89: ({ calling((void*)lseek, 89, ____alias_loc_id_55, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, (((n) + 1) & ~1), 1); }) ;
+         lseek(AVI->fdes,( ((n)+1) & ~1 ),1);
 # 1397 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       }
 # 1398 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10132,10 +9855,10 @@ long i;
    for(i=0;i<AVI->n_idx;i++) {
 # 1407 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1408 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      call_lbl_91: if (alias_group_changed(____alias_loc_id_45) || ({ calling((void*)strncasecmp, 91, ____alias_loc_id_45, 0UL, 3, (size_t)(912368063336282019UL), (size_t)(912368063336282472UL), (size_t)(0UL)); (strncasecmp)((char *)AVI->idx[i], (char *)AVI->video_tag, 3); }) == 0) {nvi++; };
+     if (strncasecmp((char *)AVI->idx[i],(char *) AVI->video_tag,3) == 0) {nvi++; };
 # 1409 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1410 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     for (j=0; j<AVI->anum; ++j) { call_lbl_93: if (alias_group_changed(____alias_loc_id_46) || ({ calling((void*)strncasecmp, 93, ____alias_loc_id_46, 0UL, 3, (size_t)(912368063336282019UL), (size_t)(912368063336282472UL), (size_t)(0UL)); (strncasecmp)((char *)AVI->idx[i], AVI->track[j].audio_tag, 4); }) == 0) {nai[j]++; }; };
+     for (j=0; j<AVI->anum; ++j) { if (strncasecmp((char *)AVI->idx[i], AVI->track[j].audio_tag,4) == 0) {nai[j]++; }; };
 # 1411 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1412 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10147,20 +9870,20 @@ long i;
 # 1416 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1417 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1418 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->video_frames==0) { call_lbl_94: ({ calling((void*)AVI_close, 94, ____alias_loc_id_26, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 12; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; };
+   if(AVI->video_frames==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 12; int ____chimes_ret_var_64; ; ____chimes_ret_var_64 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_64; ; };
 # 1419 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   AVI->video_index = (video_index_entry *) malloc_wrapper(nvi*sizeof(video_index_entry), 912368063336282019UL, 0, 1, (int)sizeof(video_index_entry), 0);
+   AVI->video_index = (video_index_entry *) malloc_wrapper(nvi*sizeof(video_index_entry), 912368063336282241UL, 0, 1, (int)sizeof(video_index_entry), 0);
 # 1420 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->video_index==0) { call_lbl_97: ({ calling((void*)AVI_close, 97, ____alias_loc_id_27, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; };
+   if(AVI->video_index==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; int ____chimes_ret_var_65; ; ____chimes_ret_var_65 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_65; ; };
 # 1421 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1422 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    for(j=0; j<AVI->anum; ++j) {
 # 1423 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1424 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) malloc_wrapper(nai[j]*sizeof(audio_index_entry), 912368063336282019UL, 0, 1, (int)sizeof(audio_index_entry), 0);
+    AVI->track[j].audio_index = (audio_index_entry *) malloc_wrapper(nai[j]*sizeof(audio_index_entry), 912368063336282241UL, 0, 1, (int)sizeof(audio_index_entry), 0);
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    if(AVI->track[j].audio_index==0) { call_lbl_100: ({ calling((void*)AVI_close, 100, ____alias_loc_id_28, 0UL, 1, (size_t)(912368063336282472UL)); AVI_close_quick(AVI); }) ; AVI_errno = 8; rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return 0; };
+    if(AVI->track[j].audio_index==0) { ({ calling_npm("AVI_close", 0); AVI_close_npm(AVI); }); AVI_errno = 8; int ____chimes_ret_var_66; ; ____chimes_ret_var_66 = (0); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_66; ; };
 # 1426 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        }
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10179,7 +9902,7 @@ long i;
 # 1435 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1436 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1437 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      call_lbl_103: if(alias_group_changed(____alias_loc_id_48) || ({ calling((void*)strncasecmp, 103, ____alias_loc_id_48, 0UL, 3, (size_t)(912368063336282019UL), (size_t)(912368063336282472UL), (size_t)(0UL)); (strncasecmp)((char *)AVI->idx[i], (char *)AVI->video_tag, 3); }) == 0) {
+     if(strncasecmp((char *)AVI->idx[i],(char *)AVI->video_tag,3) == 0) {
 # 1438 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        AVI->video_index[nvi].key = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 4); });
 # 1439 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10196,7 +9919,7 @@ long i;
      for(j=0; j<AVI->anum; ++j) {
 # 1446 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1447 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-        call_lbl_105: if(alias_group_changed(____alias_loc_id_47) || ({ calling((void*)strncasecmp, 105, ____alias_loc_id_47, 0UL, 3, (size_t)(912368063336282019UL), (size_t)(912368063336282472UL), (size_t)(0UL)); (strncasecmp)((char *)AVI->idx[i], AVI->track[j].audio_tag, 4); }) == 0) {
+       if(strncasecmp((char *)AVI->idx[i],AVI->track[j].audio_tag,4) == 0) {
 # 1448 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->track[j].audio_index[nai[j]].pos = ({ calling_npm("str2ulong", 0); str2ulong_npm(AVI->idx[i]+ 8); })+ioff;
 # 1449 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10221,313 +9944,312 @@ long i;
 # 1460 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1461 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1462 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_106: ({ calling((void*)lseek, 106, ____alias_loc_id_29, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, AVI->movi_start, 0); }) ;
+   lseek(AVI->fdes,AVI->movi_start,0);
 # 1463 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_pos = 0;
 # 1464 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1465 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_94, ____chimes_did_disable25); return(0);
+    int ____chimes_ret_var_67; ; ____chimes_ret_var_67 = ((0)); rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); return ____chimes_ret_var_67; ;
 # 1466 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "avi_parse_input_file", &____must_manage_avi_parse_input_file, ____alias_loc_id_21, ____chimes_did_disable25); }
 
 int avi_parse_input_file(avi_t *AVI, int getIndex) { return (____chimes_replaying ? avi_parse_input_file_resumable(AVI, getIndex) : avi_parse_input_file_quick(AVI, getIndex)); }
 
 long AVI_video_frames_quick(avi_t *AVI)
 # 1469 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable26 = new_stack((void *)(&AVI_video_frames), "AVI_video_frames", &____must_manage_AVI_video_frames, 1, 0, (size_t)(912368063336282834UL)) ; ; ;
+{const int ____chimes_did_disable26 = new_stack((void *)(&AVI_video_frames), "AVI_video_frames", &____must_manage_AVI_video_frames, 1, 0, (size_t)(912368063336283098UL)) ; ; ;
 # 1470 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_video_frames", &____must_manage_AVI_video_frames, ____alias_loc_id_98, ____chimes_did_disable26); return AVI->video_frames;
+    long ____chimes_ret_var_68; ; ____chimes_ret_var_68 = (AVI->video_frames); rm_stack(false, 0UL, "AVI_video_frames", &____must_manage_AVI_video_frames, ____alias_loc_id_25, ____chimes_did_disable26); return ____chimes_ret_var_68; ;
 # 1471 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_video_frames", &____must_manage_AVI_video_frames, ____alias_loc_id_25, ____chimes_did_disable26); }
 
 long AVI_video_frames(avi_t *AVI) { return (____chimes_replaying ? AVI_video_frames_resumable(AVI) : AVI_video_frames_quick(AVI)); }
 
 int AVI_video_width_quick(avi_t *AVI)
 # 1473 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable27 = new_stack((void *)(&AVI_video_width), "AVI_video_width", &____must_manage_AVI_video_width, 1, 0, (size_t)(912368063336282843UL)) ; ; ;
+{const int ____chimes_did_disable27 = new_stack((void *)(&AVI_video_width), "AVI_video_width", &____must_manage_AVI_video_width, 1, 0, (size_t)(912368063336283111UL)) ; ; ;
 # 1474 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_video_width", &____must_manage_AVI_video_width, ____alias_loc_id_99, ____chimes_did_disable27); return AVI->width;
+    int ____chimes_ret_var_69; ; ____chimes_ret_var_69 = (AVI->width); rm_stack(false, 0UL, "AVI_video_width", &____must_manage_AVI_video_width, ____alias_loc_id_26, ____chimes_did_disable27); return ____chimes_ret_var_69; ;
 # 1475 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_video_width", &____must_manage_AVI_video_width, ____alias_loc_id_26, ____chimes_did_disable27); }
 
 int AVI_video_width(avi_t *AVI) { return (____chimes_replaying ? AVI_video_width_resumable(AVI) : AVI_video_width_quick(AVI)); }
 
 int AVI_video_height_quick(avi_t *AVI)
 # 1477 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable28 = new_stack((void *)(&AVI_video_height), "AVI_video_height", &____must_manage_AVI_video_height, 1, 0, (size_t)(912368063336282852UL)) ; ; ;
+{const int ____chimes_did_disable28 = new_stack((void *)(&AVI_video_height), "AVI_video_height", &____must_manage_AVI_video_height, 1, 0, (size_t)(912368063336283124UL)) ; ; ;
 # 1478 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_video_height", &____must_manage_AVI_video_height, ____alias_loc_id_100, ____chimes_did_disable28); return AVI->height;
+    int ____chimes_ret_var_70; ; ____chimes_ret_var_70 = (AVI->height); rm_stack(false, 0UL, "AVI_video_height", &____must_manage_AVI_video_height, ____alias_loc_id_27, ____chimes_did_disable28); return ____chimes_ret_var_70; ;
 # 1479 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_video_height", &____must_manage_AVI_video_height, ____alias_loc_id_27, ____chimes_did_disable28); }
 
 int AVI_video_height(avi_t *AVI) { return (____chimes_replaying ? AVI_video_height_resumable(AVI) : AVI_video_height_quick(AVI)); }
 
 double AVI_frame_rate_quick(avi_t *AVI)
 # 1481 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable29 = new_stack((void *)(&AVI_frame_rate), "AVI_frame_rate", &____must_manage_AVI_frame_rate, 1, 0, (size_t)(912368063336282860UL)) ; ; ;
+{const int ____chimes_did_disable29 = new_stack((void *)(&AVI_frame_rate), "AVI_frame_rate", &____must_manage_AVI_frame_rate, 1, 0, (size_t)(912368063336283136UL)) ; ; ;
 # 1482 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_frame_rate", &____must_manage_AVI_frame_rate, ____alias_loc_id_101, ____chimes_did_disable29); return AVI->fps;
+    double ____chimes_ret_var_71; ; ____chimes_ret_var_71 = (AVI->fps); rm_stack(false, 0UL, "AVI_frame_rate", &____must_manage_AVI_frame_rate, ____alias_loc_id_28, ____chimes_did_disable29); return ____chimes_ret_var_71; ;
 # 1483 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_frame_rate", &____must_manage_AVI_frame_rate, ____alias_loc_id_28, ____chimes_did_disable29); }
 
 double AVI_frame_rate(avi_t *AVI) { return (____chimes_replaying ? AVI_frame_rate_resumable(AVI) : AVI_frame_rate_quick(AVI)); }
 
 char* AVI_video_compressor_quick(avi_t *AVI)
 # 1485 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable30 = new_stack((void *)(&AVI_video_compressor), "AVI_video_compressor", &____must_manage_AVI_video_compressor, 1, 0, (size_t)(912368063336282868UL)) ; ; ;
+{const int ____chimes_did_disable30 = new_stack((void *)(&AVI_video_compressor), "AVI_video_compressor", &____must_manage_AVI_video_compressor, 1, 0, (size_t)(912368063336283148UL)) ; ; ;
 # 1486 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(true, 912368063336282868UL, "AVI_video_compressor", &____must_manage_AVI_video_compressor, ____alias_loc_id_102, ____chimes_did_disable30); return AVI->compressor2;
+    char *____chimes_ret_var_72; ; ____chimes_ret_var_72 = (AVI->compressor2); rm_stack(true, 912368063336283148UL, "AVI_video_compressor", &____must_manage_AVI_video_compressor, ____alias_loc_id_29, ____chimes_did_disable30); return ____chimes_ret_var_72; ;
 # 1487 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(true, 912368063336283148UL, "AVI_video_compressor", &____must_manage_AVI_video_compressor, ____alias_loc_id_29, ____chimes_did_disable30); }
 
 char* AVI_video_compressor(avi_t *AVI) { return (____chimes_replaying ? AVI_video_compressor_resumable(AVI) : AVI_video_compressor_quick(AVI)); }
 
 long AVI_max_video_chunk_quick(avi_t *AVI)
 # 1490 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable31 = new_stack((void *)(&AVI_max_video_chunk), "AVI_max_video_chunk", &____must_manage_AVI_max_video_chunk, 1, 0, (size_t)(912368063336282876UL)) ; ; ;
+{const int ____chimes_did_disable31 = new_stack((void *)(&AVI_max_video_chunk), "AVI_max_video_chunk", &____must_manage_AVI_max_video_chunk, 1, 0, (size_t)(912368063336283160UL)) ; ; ;
 # 1491 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_max_video_chunk", &____must_manage_AVI_max_video_chunk, ____alias_loc_id_103, ____chimes_did_disable31); return AVI->max_len;
+    long ____chimes_ret_var_73; ; ____chimes_ret_var_73 = (AVI->max_len); rm_stack(false, 0UL, "AVI_max_video_chunk", &____must_manage_AVI_max_video_chunk, ____alias_loc_id_30, ____chimes_did_disable31); return ____chimes_ret_var_73; ;
 # 1492 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_max_video_chunk", &____must_manage_AVI_max_video_chunk, ____alias_loc_id_30, ____chimes_did_disable31); }
 
 long AVI_max_video_chunk(avi_t *AVI) { return (____chimes_replaying ? AVI_max_video_chunk_resumable(AVI) : AVI_max_video_chunk_quick(AVI)); }
 
 int AVI_audio_tracks_quick(avi_t *AVI)
 # 1495 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable32 = new_stack((void *)(&AVI_audio_tracks), "AVI_audio_tracks", &____must_manage_AVI_audio_tracks, 1, 0, (size_t)(912368063336282884UL)) ; ; ;
+{const int ____chimes_did_disable32 = new_stack((void *)(&AVI_audio_tracks), "AVI_audio_tracks", &____must_manage_AVI_audio_tracks, 1, 0, (size_t)(912368063336283172UL)) ; ; ;
 # 1496 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    rm_stack(false, 0UL, "AVI_audio_tracks", &____must_manage_AVI_audio_tracks, ____alias_loc_id_104, ____chimes_did_disable32); return(AVI->anum);
+     int ____chimes_ret_var_74; ; ____chimes_ret_var_74 = ((AVI->anum)); rm_stack(false, 0UL, "AVI_audio_tracks", &____must_manage_AVI_audio_tracks, ____alias_loc_id_31, ____chimes_did_disable32); return ____chimes_ret_var_74; ;
 # 1497 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_tracks", &____must_manage_AVI_audio_tracks, ____alias_loc_id_31, ____chimes_did_disable32); }
 
 int AVI_audio_tracks(avi_t *AVI) { return (____chimes_replaying ? AVI_audio_tracks_resumable(AVI) : AVI_audio_tracks_quick(AVI)); }
 
 int AVI_audio_channels_quick(avi_t *AVI)
 # 1500 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable33 = new_stack((void *)(&AVI_audio_channels), "AVI_audio_channels", &____must_manage_AVI_audio_channels, 1, 0, (size_t)(912368063336282899UL)) ; ; ;
+{const int ____chimes_did_disable33 = new_stack((void *)(&AVI_audio_channels), "AVI_audio_channels", &____must_manage_AVI_audio_channels, 1, 0, (size_t)(912368063336283191UL)) ; ; ;
 # 1501 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_channels", &____must_manage_AVI_audio_channels, ____alias_loc_id_105, ____chimes_did_disable33); return AVI->track[AVI->aptr].a_chans;
+    int ____chimes_ret_var_75; ; ____chimes_ret_var_75 = (AVI->track[AVI->aptr].a_chans); rm_stack(false, 0UL, "AVI_audio_channels", &____must_manage_AVI_audio_channels, ____alias_loc_id_32, ____chimes_did_disable33); return ____chimes_ret_var_75; ;
 # 1502 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_channels", &____must_manage_AVI_audio_channels, ____alias_loc_id_32, ____chimes_did_disable33); }
 
 int AVI_audio_channels(avi_t *AVI) { return (____chimes_replaying ? AVI_audio_channels_resumable(AVI) : AVI_audio_channels_quick(AVI)); }
 
 long AVI_audio_mp3rate_quick(avi_t *AVI)
 # 1505 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable34 = new_stack((void *)(&AVI_audio_mp3rate), "AVI_audio_mp3rate", &____must_manage_AVI_audio_mp3rate, 1, 0, (size_t)(912368063336282913UL)) ; ; ;
+{const int ____chimes_did_disable34 = new_stack((void *)(&AVI_audio_mp3rate), "AVI_audio_mp3rate", &____must_manage_AVI_audio_mp3rate, 1, 0, (size_t)(912368063336283209UL)) ; ; ;
 # 1506 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_mp3rate", &____must_manage_AVI_audio_mp3rate, ____alias_loc_id_106, ____chimes_did_disable34); return AVI->track[AVI->aptr].mp3rate;
+    long ____chimes_ret_var_76; ; ____chimes_ret_var_76 = (AVI->track[AVI->aptr].mp3rate); rm_stack(false, 0UL, "AVI_audio_mp3rate", &____must_manage_AVI_audio_mp3rate, ____alias_loc_id_33, ____chimes_did_disable34); return ____chimes_ret_var_76; ;
 # 1507 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_mp3rate", &____must_manage_AVI_audio_mp3rate, ____alias_loc_id_33, ____chimes_did_disable34); }
 
 long AVI_audio_mp3rate(avi_t *AVI) { return (____chimes_replaying ? AVI_audio_mp3rate_resumable(AVI) : AVI_audio_mp3rate_quick(AVI)); }
 
 int AVI_audio_bits_quick(avi_t *AVI)
 # 1510 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable35 = new_stack((void *)(&AVI_audio_bits), "AVI_audio_bits", &____must_manage_AVI_audio_bits, 1, 0, (size_t)(912368063336282928UL)) ; ; ;
+{const int ____chimes_did_disable35 = new_stack((void *)(&AVI_audio_bits), "AVI_audio_bits", &____must_manage_AVI_audio_bits, 1, 0, (size_t)(912368063336283228UL)) ; ; ;
 # 1511 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_bits", &____must_manage_AVI_audio_bits, ____alias_loc_id_107, ____chimes_did_disable35); return AVI->track[AVI->aptr].a_bits;
+    int ____chimes_ret_var_77; ; ____chimes_ret_var_77 = (AVI->track[AVI->aptr].a_bits); rm_stack(false, 0UL, "AVI_audio_bits", &____must_manage_AVI_audio_bits, ____alias_loc_id_34, ____chimes_did_disable35); return ____chimes_ret_var_77; ;
 # 1512 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_bits", &____must_manage_AVI_audio_bits, ____alias_loc_id_34, ____chimes_did_disable35); }
 
 int AVI_audio_bits(avi_t *AVI) { return (____chimes_replaying ? AVI_audio_bits_resumable(AVI) : AVI_audio_bits_quick(AVI)); }
 
 int AVI_audio_format_quick(avi_t *AVI)
 # 1515 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable36 = new_stack((void *)(&AVI_audio_format), "AVI_audio_format", &____must_manage_AVI_audio_format, 1, 0, (size_t)(912368063336282943UL)) ; ; ;
+{const int ____chimes_did_disable36 = new_stack((void *)(&AVI_audio_format), "AVI_audio_format", &____must_manage_AVI_audio_format, 1, 0, (size_t)(912368063336283247UL)) ; ; ;
 # 1516 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_format", &____must_manage_AVI_audio_format, ____alias_loc_id_108, ____chimes_did_disable36); return AVI->track[AVI->aptr].a_fmt;
+    int ____chimes_ret_var_78; ; ____chimes_ret_var_78 = (AVI->track[AVI->aptr].a_fmt); rm_stack(false, 0UL, "AVI_audio_format", &____must_manage_AVI_audio_format, ____alias_loc_id_35, ____chimes_did_disable36); return ____chimes_ret_var_78; ;
 # 1517 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_format", &____must_manage_AVI_audio_format, ____alias_loc_id_35, ____chimes_did_disable36); }
 
 int AVI_audio_format(avi_t *AVI) { return (____chimes_replaying ? AVI_audio_format_resumable(AVI) : AVI_audio_format_quick(AVI)); }
 
 long AVI_audio_rate_quick(avi_t *AVI)
 # 1520 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable37 = new_stack((void *)(&AVI_audio_rate), "AVI_audio_rate", &____must_manage_AVI_audio_rate, 1, 0, (size_t)(912368063336282957UL)) ; ; ;
+{const int ____chimes_did_disable37 = new_stack((void *)(&AVI_audio_rate), "AVI_audio_rate", &____must_manage_AVI_audio_rate, 1, 0, (size_t)(912368063336283265UL)) ; ; ;
 # 1521 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_rate", &____must_manage_AVI_audio_rate, ____alias_loc_id_109, ____chimes_did_disable37); return AVI->track[AVI->aptr].a_rate;
+    long ____chimes_ret_var_79; ; ____chimes_ret_var_79 = (AVI->track[AVI->aptr].a_rate); rm_stack(false, 0UL, "AVI_audio_rate", &____must_manage_AVI_audio_rate, ____alias_loc_id_36, ____chimes_did_disable37); return ____chimes_ret_var_79; ;
 # 1522 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_rate", &____must_manage_AVI_audio_rate, ____alias_loc_id_36, ____chimes_did_disable37); }
 
 long AVI_audio_rate(avi_t *AVI) { return (____chimes_replaying ? AVI_audio_rate_resumable(AVI) : AVI_audio_rate_quick(AVI)); }
 
 long AVI_audio_bytes_quick(avi_t *AVI)
 # 1525 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable38 = new_stack((void *)(&AVI_audio_bytes), "AVI_audio_bytes", &____must_manage_AVI_audio_bytes, 1, 0, (size_t)(912368063336282971UL)) ; ; ;
+{const int ____chimes_did_disable38 = new_stack((void *)(&AVI_audio_bytes), "AVI_audio_bytes", &____must_manage_AVI_audio_bytes, 1, 0, (size_t)(912368063336283283UL)) ; ; ;
 # 1526 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_bytes", &____must_manage_AVI_audio_bytes, ____alias_loc_id_110, ____chimes_did_disable38); return AVI->track[AVI->aptr].audio_bytes;
+    long ____chimes_ret_var_80; ; ____chimes_ret_var_80 = (AVI->track[AVI->aptr].audio_bytes); rm_stack(false, 0UL, "AVI_audio_bytes", &____must_manage_AVI_audio_bytes, ____alias_loc_id_37, ____chimes_did_disable38); return ____chimes_ret_var_80; ;
 # 1527 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_bytes", &____must_manage_AVI_audio_bytes, ____alias_loc_id_37, ____chimes_did_disable38); }
 
 long AVI_audio_bytes(avi_t *AVI) { return (____chimes_replaying ? AVI_audio_bytes_resumable(AVI) : AVI_audio_bytes_quick(AVI)); }
 
 long AVI_audio_chunks_quick(avi_t *AVI)
 # 1530 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable39 = new_stack((void *)(&AVI_audio_chunks), "AVI_audio_chunks", &____must_manage_AVI_audio_chunks, 1, 0, (size_t)(912368063336282985UL)) ; ; ;
+{const int ____chimes_did_disable39 = new_stack((void *)(&AVI_audio_chunks), "AVI_audio_chunks", &____must_manage_AVI_audio_chunks, 1, 0, (size_t)(912368063336283301UL)) ; ; ;
 # 1531 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_chunks", &____must_manage_AVI_audio_chunks, ____alias_loc_id_111, ____chimes_did_disable39); return AVI->track[AVI->aptr].audio_chunks;
+    long ____chimes_ret_var_81; ; ____chimes_ret_var_81 = (AVI->track[AVI->aptr].audio_chunks); rm_stack(false, 0UL, "AVI_audio_chunks", &____must_manage_AVI_audio_chunks, ____alias_loc_id_38, ____chimes_did_disable39); return ____chimes_ret_var_81; ;
 # 1532 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_chunks", &____must_manage_AVI_audio_chunks, ____alias_loc_id_38, ____chimes_did_disable39); }
 
 long AVI_audio_chunks(avi_t *AVI) { return (____chimes_replaying ? AVI_audio_chunks_resumable(AVI) : AVI_audio_chunks_quick(AVI)); }
 
 long AVI_audio_codech_offset_quick(avi_t *AVI)
 # 1535 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable40 = new_stack((void *)(&AVI_audio_codech_offset), "AVI_audio_codech_offset", &____must_manage_AVI_audio_codech_offset, 1, 0, (size_t)(912368063336282999UL)) ; ; ;
+{const int ____chimes_did_disable40 = new_stack((void *)(&AVI_audio_codech_offset), "AVI_audio_codech_offset", &____must_manage_AVI_audio_codech_offset, 1, 0, (size_t)(912368063336283319UL)) ; ; ;
 # 1536 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_codech_offset", &____must_manage_AVI_audio_codech_offset, ____alias_loc_id_112, ____chimes_did_disable40); return AVI->track[AVI->aptr].a_codech_off;
+    long ____chimes_ret_var_82; ; ____chimes_ret_var_82 = (AVI->track[AVI->aptr].a_codech_off); rm_stack(false, 0UL, "AVI_audio_codech_offset", &____must_manage_AVI_audio_codech_offset, ____alias_loc_id_39, ____chimes_did_disable40); return ____chimes_ret_var_82; ;
 # 1537 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_codech_offset", &____must_manage_AVI_audio_codech_offset, ____alias_loc_id_39, ____chimes_did_disable40); }
 
 long AVI_audio_codech_offset(avi_t *AVI) { return (____chimes_replaying ? AVI_audio_codech_offset_resumable(AVI) : AVI_audio_codech_offset_quick(AVI)); }
 
 long AVI_audio_codecf_offset_quick(avi_t *AVI)
 # 1540 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable41 = new_stack((void *)(&AVI_audio_codecf_offset), "AVI_audio_codecf_offset", &____must_manage_AVI_audio_codecf_offset, 1, 0, (size_t)(912368063336283013UL)) ; ; ;
+{const int ____chimes_did_disable41 = new_stack((void *)(&AVI_audio_codecf_offset), "AVI_audio_codecf_offset", &____must_manage_AVI_audio_codecf_offset, 1, 0, (size_t)(912368063336283337UL)) ; ; ;
 # 1541 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_audio_codecf_offset", &____must_manage_AVI_audio_codecf_offset, ____alias_loc_id_113, ____chimes_did_disable41); return AVI->track[AVI->aptr].a_codecf_off;
+    long ____chimes_ret_var_83; ; ____chimes_ret_var_83 = (AVI->track[AVI->aptr].a_codecf_off); rm_stack(false, 0UL, "AVI_audio_codecf_offset", &____must_manage_AVI_audio_codecf_offset, ____alias_loc_id_40, ____chimes_did_disable41); return ____chimes_ret_var_83; ;
 # 1542 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_codecf_offset", &____must_manage_AVI_audio_codecf_offset, ____alias_loc_id_40, ____chimes_did_disable41); }
 
 long AVI_audio_codecf_offset(avi_t *AVI) { return (____chimes_replaying ? AVI_audio_codecf_offset_resumable(AVI) : AVI_audio_codecf_offset_quick(AVI)); }
 
 long AVI_video_codech_offset_quick(avi_t *AVI)
 # 1545 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable42 = new_stack((void *)(&AVI_video_codech_offset), "AVI_video_codech_offset", &____must_manage_AVI_video_codech_offset, 1, 0, (size_t)(912368063336283021UL)) ; ; ;
+{const int ____chimes_did_disable42 = new_stack((void *)(&AVI_video_codech_offset), "AVI_video_codech_offset", &____must_manage_AVI_video_codech_offset, 1, 0, (size_t)(912368063336283349UL)) ; ; ;
 # 1546 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    rm_stack(false, 0UL, "AVI_video_codech_offset", &____must_manage_AVI_video_codech_offset, ____alias_loc_id_114, ____chimes_did_disable42); return AVI->v_codech_off;
+     long ____chimes_ret_var_84; ; ____chimes_ret_var_84 = (AVI->v_codech_off); rm_stack(false, 0UL, "AVI_video_codech_offset", &____must_manage_AVI_video_codech_offset, ____alias_loc_id_41, ____chimes_did_disable42); return ____chimes_ret_var_84; ;
 # 1547 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_video_codech_offset", &____must_manage_AVI_video_codech_offset, ____alias_loc_id_41, ____chimes_did_disable42); }
 
 long AVI_video_codech_offset(avi_t *AVI) { return (____chimes_replaying ? AVI_video_codech_offset_resumable(AVI) : AVI_video_codech_offset_quick(AVI)); }
 
 long AVI_video_codecf_offset_quick(avi_t *AVI)
 # 1550 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable43 = new_stack((void *)(&AVI_video_codecf_offset), "AVI_video_codecf_offset", &____must_manage_AVI_video_codecf_offset, 1, 0, (size_t)(912368063336283029UL)) ; ; ;
+{const int ____chimes_did_disable43 = new_stack((void *)(&AVI_video_codecf_offset), "AVI_video_codecf_offset", &____must_manage_AVI_video_codecf_offset, 1, 0, (size_t)(912368063336283361UL)) ; ; ;
 # 1551 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    rm_stack(false, 0UL, "AVI_video_codecf_offset", &____must_manage_AVI_video_codecf_offset, ____alias_loc_id_115, ____chimes_did_disable43); return AVI->v_codecf_off;
+     long ____chimes_ret_var_85; ; ____chimes_ret_var_85 = (AVI->v_codecf_off); rm_stack(false, 0UL, "AVI_video_codecf_offset", &____must_manage_AVI_video_codecf_offset, ____alias_loc_id_42, ____chimes_did_disable43); return ____chimes_ret_var_85; ;
 # 1552 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_video_codecf_offset", &____must_manage_AVI_video_codecf_offset, ____alias_loc_id_42, ____chimes_did_disable43); }
 
 long AVI_video_codecf_offset(avi_t *AVI) { return (____chimes_replaying ? AVI_video_codecf_offset_resumable(AVI) : AVI_video_codecf_offset_quick(AVI)); }
 
 long AVI_frame_size_quick(avi_t *AVI, long frame)
 # 1555 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable44 = new_stack((void *)(&AVI_frame_size), "AVI_frame_size", &____must_manage_AVI_frame_size, 2, 0, (size_t)(912368063336283075UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable44 = new_stack((void *)(&AVI_frame_size), "AVI_frame_size", &____must_manage_AVI_frame_size, 2, 0, (size_t)(912368063336283423UL), (size_t)(0UL)) ; ; ;
 # 1556 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_116, ____chimes_did_disable44); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_86; ; ____chimes_ret_var_86 = (-1); rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_43, ____chimes_did_disable44); return ____chimes_ret_var_86; ; }
 # 1557 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_116, ____chimes_did_disable44); return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; long ____chimes_ret_var_87; ; ____chimes_ret_var_87 = (-1); rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_43, ____chimes_did_disable44); return ____chimes_ret_var_87; ; }
 # 1558 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1559 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (frame < 0 || frame >= AVI->video_frames) {rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_116, ____chimes_did_disable44); return 0; };
+   if (frame < 0 || frame >= AVI->video_frames) { long ____chimes_ret_var_88; ; ____chimes_ret_var_88 = (0); rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_43, ____chimes_did_disable44); return ____chimes_ret_var_88; ; };
 # 1560 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_116, ____chimes_did_disable44); return(AVI->video_index[frame].len);
+    long ____chimes_ret_var_89; ; ____chimes_ret_var_89 = ((AVI->video_index[frame].len)); rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_43, ____chimes_did_disable44); return ____chimes_ret_var_89; ;
 # 1561 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_frame_size", &____must_manage_AVI_frame_size, ____alias_loc_id_43, ____chimes_did_disable44); }
 
 long AVI_frame_size(avi_t *AVI, long frame) { return (____chimes_replaying ? AVI_frame_size_resumable(AVI, frame) : AVI_frame_size_quick(AVI, frame)); }
 
 long AVI_audio_size_quick(avi_t *AVI, long frame)
 # 1564 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable45 = new_stack((void *)(&AVI_audio_size), "AVI_audio_size", &____must_manage_AVI_audio_size, 2, 0, (size_t)(912368063336283140UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable45 = new_stack((void *)(&AVI_audio_size), "AVI_audio_size", &____must_manage_AVI_audio_size, 2, 0, (size_t)(912368063336283504UL), (size_t)(0UL)) ; ; ;
 # 1565 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_117, ____chimes_did_disable45); return -1; }
+  if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_90; ; ____chimes_ret_var_90 = (-1); rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_44, ____chimes_did_disable45); return ____chimes_ret_var_90; ; }
 # 1566 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_117, ____chimes_did_disable45); return -1; }
+  if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; long ____chimes_ret_var_91; ; ____chimes_ret_var_91 = (-1); rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_44, ____chimes_did_disable45); return ____chimes_ret_var_91; ; }
 # 1567 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1568 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if (frame < 0 || frame >= AVI->track[AVI->aptr].audio_chunks) {rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_117, ____chimes_did_disable45); return 0; };
+  if (frame < 0 || frame >= AVI->track[AVI->aptr].audio_chunks) { long ____chimes_ret_var_92; ; ____chimes_ret_var_92 = (0); rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_44, ____chimes_did_disable45); return ____chimes_ret_var_92; ; };
 # 1569 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_117, ____chimes_did_disable45); return(AVI->track[AVI->aptr].audio_index[frame].len);
+   long ____chimes_ret_var_93; ; ____chimes_ret_var_93 = ((AVI->track[AVI->aptr].audio_index[frame].len)); rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_44, ____chimes_did_disable45); return ____chimes_ret_var_93; ;
 # 1570 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_audio_size", &____must_manage_AVI_audio_size, ____alias_loc_id_44, ____chimes_did_disable45); }
 
 long AVI_audio_size(avi_t *AVI, long frame) { return (____chimes_replaying ? AVI_audio_size_resumable(AVI, frame) : AVI_audio_size_quick(AVI, frame)); }
 
 long AVI_get_video_position_quick(avi_t *AVI, long frame)
 # 1573 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable46 = new_stack((void *)(&AVI_get_video_position), "AVI_get_video_position", &____must_manage_AVI_get_video_position, 2, 0, (size_t)(912368063336283187UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable46 = new_stack((void *)(&AVI_get_video_position), "AVI_get_video_position", &____must_manage_AVI_get_video_position, 2, 0, (size_t)(912368063336283567UL), (size_t)(0UL)) ; ; ;
 # 1574 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_118, ____chimes_did_disable46); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_94; ; ____chimes_ret_var_94 = (-1); rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_45, ____chimes_did_disable46); return ____chimes_ret_var_94; ; }
 # 1575 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_118, ____chimes_did_disable46); return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; long ____chimes_ret_var_95; ; ____chimes_ret_var_95 = (-1); rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_45, ____chimes_did_disable46); return ____chimes_ret_var_95; ; }
 # 1576 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1577 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (frame < 0 || frame >= AVI->video_frames) {rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_118, ____chimes_did_disable46); return 0; };
+   if (frame < 0 || frame >= AVI->video_frames) { long ____chimes_ret_var_96; ; ____chimes_ret_var_96 = (0); rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_45, ____chimes_did_disable46); return ____chimes_ret_var_96; ; };
 # 1578 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_118, ____chimes_did_disable46); return(AVI->video_index[frame].pos);
+    long ____chimes_ret_var_97; ; ____chimes_ret_var_97 = ((AVI->video_index[frame].pos)); rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_45, ____chimes_did_disable46); return ____chimes_ret_var_97; ;
 # 1579 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_get_video_position", &____must_manage_AVI_get_video_position, ____alias_loc_id_45, ____chimes_did_disable46); }
 
 long AVI_get_video_position(avi_t *AVI, long frame) { return (____chimes_replaying ? AVI_get_video_position_resumable(AVI, frame) : AVI_get_video_position_quick(AVI, frame)); }
 
 int AVI_seek_start_quick(avi_t *AVI)
 # 1583 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable47 = new_stack((void *)(&AVI_seek_start), "AVI_seek_start", &____must_manage_AVI_seek_start, 1, 1, (size_t)(912368063336283216UL), "AVI_seek_start|AVI|0", &____must_checkpoint_AVI_seek_start_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0) ; ; ;
+{const int ____chimes_did_disable47 = new_stack((void *)(&AVI_seek_start), "AVI_seek_start", &____must_manage_AVI_seek_start, 1, 0, (size_t)(912368063336283604UL)) ; ; ;
 # 1584 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_seek_start", &____must_manage_AVI_seek_start, ____alias_loc_id_119, ____chimes_did_disable47); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; int ____chimes_ret_var_98; ; ____chimes_ret_var_98 = (-1); rm_stack(false, 0UL, "AVI_seek_start", &____must_manage_AVI_seek_start, ____alias_loc_id_46, ____chimes_did_disable47); return ____chimes_ret_var_98; ; }
 # 1585 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1586 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_2: ({ calling((void*)lseek, 2, ____alias_loc_id_60, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, AVI->movi_start, 0); }) ;
+   lseek(AVI->fdes,AVI->movi_start,0);
 # 1587 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_pos = 0;
 # 1588 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_seek_start", &____must_manage_AVI_seek_start, ____alias_loc_id_119, ____chimes_did_disable47); return 0;
+    int ____chimes_ret_var_99; ; ____chimes_ret_var_99 = (0); rm_stack(false, 0UL, "AVI_seek_start", &____must_manage_AVI_seek_start, ____alias_loc_id_46, ____chimes_did_disable47); return ____chimes_ret_var_99; ;
 # 1589 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_seek_start", &____must_manage_AVI_seek_start, ____alias_loc_id_46, ____chimes_did_disable47); }
 
 int AVI_seek_start(avi_t *AVI) { return (____chimes_replaying ? AVI_seek_start_resumable(AVI) : AVI_seek_start_quick(AVI)); }
 
 int AVI_set_video_position_quick(avi_t *AVI, long frame)
 # 1592 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable48 = new_stack((void *)(&AVI_set_video_position), "AVI_set_video_position", &____must_manage_AVI_set_video_position, 2, 0, (size_t)(912368063336283253UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable48 = new_stack((void *)(&AVI_set_video_position), "AVI_set_video_position", &____must_manage_AVI_set_video_position, 2, 0, (size_t)(912368063336283653UL), (size_t)(0UL)) ; ; ;
 # 1593 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_120, ____chimes_did_disable48); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; int ____chimes_ret_var_100; ; ____chimes_ret_var_100 = (-1); rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_47, ____chimes_did_disable48); return ____chimes_ret_var_100; ; }
 # 1594 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_120, ____chimes_did_disable48); return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; int ____chimes_ret_var_101; ; ____chimes_ret_var_101 = (-1); rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_47, ____chimes_did_disable48); return ____chimes_ret_var_101; ; }
 # 1595 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1596 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (frame < 0) {frame = 0; };
 # 1597 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_pos = frame;
 # 1598 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_120, ____chimes_did_disable48); return 0;
+    int ____chimes_ret_var_102; ; ____chimes_ret_var_102 = (0); rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_47, ____chimes_did_disable48); return ____chimes_ret_var_102; ;
 # 1599 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_set_video_position", &____must_manage_AVI_set_video_position, ____alias_loc_id_47, ____chimes_did_disable48); }
 
 int AVI_set_video_position(avi_t *AVI, long frame) { return (____chimes_replaying ? AVI_set_video_position_resumable(AVI, frame) : AVI_set_video_position_quick(AVI, frame)); }
 
 int AVI_set_audio_bitrate_quick(avi_t *AVI, long bitrate)
 # 1602 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable49 = new_stack((void *)(&AVI_set_audio_bitrate), "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, 2, 0, (size_t)(912368063336283284UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable49 = new_stack((void *)(&AVI_set_audio_bitrate), "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, 2, 0, (size_t)(912368063336283692UL), (size_t)(0UL)) ; ; ;
 # 1603 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==1) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, ____alias_loc_id_121, ____chimes_did_disable49); return -1; }
+   if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_103; ; ____chimes_ret_var_103 = (-1); rm_stack(false, 0UL, "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, ____alias_loc_id_48, ____chimes_did_disable49); return ____chimes_ret_var_103; ; }
 # 1604 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1605 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->track[AVI->aptr].mp3rate = bitrate;
 # 1606 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, ____alias_loc_id_121, ____chimes_did_disable49); return 0;
+    int ____chimes_ret_var_104; ; ____chimes_ret_var_104 = (0); rm_stack(false, 0UL, "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, ____alias_loc_id_48, ____chimes_did_disable49); return ____chimes_ret_var_104; ;
 # 1607 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_set_audio_bitrate", &____must_manage_AVI_set_audio_bitrate, ____alias_loc_id_48, ____chimes_did_disable49); }
 
 int AVI_set_audio_bitrate(avi_t *AVI, long bitrate) { return (____chimes_replaying ? AVI_set_audio_bitrate_resumable(AVI, bitrate) : AVI_set_audio_bitrate_quick(AVI, bitrate)); }
 
 long AVI_read_frame_quick(avi_t *AVI, char *vidbuf, int *keyframe)
 # 1611 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable50 = new_stack((void *)(&AVI_read_frame), "AVI_read_frame", &____must_manage_AVI_read_frame, 3, 2, (size_t)(912368063336283389UL), (size_t)(912368063336283390UL), (size_t)(912368063336283391UL), "AVI_read_frame|AVI|0", &____must_checkpoint_AVI_read_frame_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_read_frame|vidbuf|0", &____must_checkpoint_AVI_read_frame_vidbuf_0, "i8*", (void *)(&vidbuf), (size_t)8, 1, 0, 0) ; long n;
- if (____must_checkpoint_AVI_read_frame_n_0) { register_stack_vars(1, "AVI_read_frame|n|0", &____must_checkpoint_AVI_read_frame_n_0, "i64", (void *)(&n), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable50 = new_stack((void *)(&AVI_read_frame), "AVI_read_frame", &____must_manage_AVI_read_frame, 3, 0, (size_t)(912368063336283817UL), (size_t)(912368063336283818UL), (size_t)(912368063336283819UL)) ; ; ;
 # 1612 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   long n; ;
 # 1613 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1614 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_122, ____chimes_did_disable50); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_105; ; ____chimes_ret_var_105 = (-1); rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); return ____chimes_ret_var_105; ; }
 # 1615 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_122, ____chimes_did_disable50); return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; long ____chimes_ret_var_106; ; ____chimes_ret_var_106 = (-1); rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); return ____chimes_ret_var_106; ; }
 # 1616 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1617 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->video_pos < 0 || AVI->video_pos >= AVI->video_frames) {rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_122, ____chimes_did_disable50); return -1; };
+   if (AVI->video_pos < 0 || AVI->video_pos >= AVI->video_frames) { long ____chimes_ret_var_107; ; ____chimes_ret_var_107 = (-1); rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); return ____chimes_ret_var_107; ; };
 # 1618 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    n = AVI->video_index[AVI->video_pos].len;
 # 1619 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10535,16 +10257,16 @@ long AVI_read_frame_quick(avi_t *AVI, char *vidbuf, int *keyframe)
    *keyframe = (AVI->video_index[AVI->video_pos].key==0x10) ? 1:0;
 # 1621 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1622 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_4: ({ calling((void*)lseek, 4, ____alias_loc_id_61, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, AVI->video_index[AVI->video_pos].pos, 0); }) ;
+   lseek(AVI->fdes, AVI->video_index[AVI->video_pos].pos, 0);
 # 1623 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1624 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    call_lbl_5: if ( ({ calling((void*)avi_read, 5, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336283390UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, vidbuf, n); }) != n)
+   if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n)
 # 1625 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1626 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 3;
 # 1627 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_122, ____chimes_did_disable50); return -1;
+       long ____chimes_ret_var_108; ; ____chimes_ret_var_108 = (-1); rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); return ____chimes_ret_var_108; ;
 # 1628 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1629 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10552,22 +10274,22 @@ long AVI_read_frame_quick(avi_t *AVI, char *vidbuf, int *keyframe)
    AVI->video_pos++;
 # 1631 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1632 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_122, ____chimes_did_disable50); return n;
+    long ____chimes_ret_var_109; ; ____chimes_ret_var_109 = (n); rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); return ____chimes_ret_var_109; ;
 # 1633 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_read_frame", &____must_manage_AVI_read_frame, ____alias_loc_id_49, ____chimes_did_disable50); }
 
 long AVI_read_frame(avi_t *AVI, char *vidbuf, int *keyframe) { return (____chimes_replaying ? AVI_read_frame_resumable(AVI, vidbuf, keyframe) : AVI_read_frame_quick(AVI, vidbuf, keyframe)); }
 
 int AVI_set_audio_position_quick(avi_t *AVI, long byte)
 # 1636 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable51 = new_stack((void *)(&AVI_set_audio_position), "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, 2, 0, (size_t)(912368063336283515UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable51 = new_stack((void *)(&AVI_set_audio_position), "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, 2, 0, (size_t)(912368063336283955UL), (size_t)(0UL)) ; ; ;
 # 1637 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    long n0; long n1; long n; ;
 # 1638 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1639 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_123, ____chimes_did_disable51); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; int ____chimes_ret_var_110; ; ____chimes_ret_var_110 = (-1); rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_50, ____chimes_did_disable51); return ____chimes_ret_var_110; ; }
 # 1640 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_123, ____chimes_did_disable51); return -1; }
+   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; int ____chimes_ret_var_111; ; ____chimes_ret_var_111 = (-1); rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_50, ____chimes_did_disable51); return ____chimes_ret_var_111; ; }
 # 1641 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1642 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (byte < 0) {byte = 0; };
@@ -10596,26 +10318,22 @@ int AVI_set_audio_position_quick(avi_t *AVI, long byte)
    AVI->track[AVI->aptr].audio_posb = byte - AVI->track[AVI->aptr].audio_index[n0].tot;
 # 1660 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1661 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_123, ____chimes_did_disable51); return 0;
+    int ____chimes_ret_var_112; ; ____chimes_ret_var_112 = (0); rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_50, ____chimes_did_disable51); return ____chimes_ret_var_112; ;
 # 1662 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_set_audio_position", &____must_manage_AVI_set_audio_position, ____alias_loc_id_50, ____chimes_did_disable51); }
 
 int AVI_set_audio_position(avi_t *AVI, long byte) { return (____chimes_replaying ? AVI_set_audio_position_resumable(AVI, byte) : AVI_set_audio_position_quick(AVI, byte)); }
 
 long AVI_read_audio_quick(avi_t *AVI, char *audbuf, long bytes)
 # 1665 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable52 = new_stack((void *)(&AVI_read_audio), "AVI_read_audio", &____must_manage_AVI_read_audio, 3, 3, (size_t)(912368063336283731UL), (size_t)(912368063336283732UL), (size_t)(0UL), "AVI_read_audio|AVI|0", &____must_checkpoint_AVI_read_audio_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_read_audio|audbuf|0", &____must_checkpoint_AVI_read_audio_audbuf_0, "i8*", (void *)(&audbuf), (size_t)8, 1, 0, 0, "AVI_read_audio|bytes|0", &____must_checkpoint_AVI_read_audio_bytes_0, "i64", (void *)(&bytes), (size_t)8, 0, 0, 0) ; long todo;
-long left;
-long pos;
-long nr;
- if (____must_checkpoint_AVI_read_audio_todo_0 || ____must_checkpoint_AVI_read_audio_left_0 || ____must_checkpoint_AVI_read_audio_pos_0 || ____must_checkpoint_AVI_read_audio_nr_0) { register_stack_vars(4, "AVI_read_audio|todo|0", &____must_checkpoint_AVI_read_audio_todo_0, "i64", (void *)(&todo), (size_t)8, 0, 0, 0, "AVI_read_audio|left|0", &____must_checkpoint_AVI_read_audio_left_0, "i64", (void *)(&left), (size_t)8, 0, 0, 0, "AVI_read_audio|pos|0", &____must_checkpoint_AVI_read_audio_pos_0, "i64", (void *)(&pos), (size_t)8, 0, 0, 0, "AVI_read_audio|nr|0", &____must_checkpoint_AVI_read_audio_nr_0, "i64", (void *)(&nr), (size_t)8, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable52 = new_stack((void *)(&AVI_read_audio), "AVI_read_audio", &____must_manage_AVI_read_audio, 3, 0, (size_t)(912368063336284191UL), (size_t)(912368063336284192UL), (size_t)(0UL)) ; ; ;
 # 1666 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       ;
+   long nr; long pos; long left; long todo; ;
 # 1667 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1668 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_124, ____chimes_did_disable52); return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_113; ; ____chimes_ret_var_113 = (-1); rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); return ____chimes_ret_var_113; ; }
 # 1669 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_124, ____chimes_did_disable52); return -1; }
+   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; long ____chimes_ret_var_114; ; ____chimes_ret_var_114 = (-1); rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); return ____chimes_ret_var_114; ; }
 # 1670 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1671 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    nr = 0;
@@ -10631,7 +10349,7 @@ long nr;
 # 1677 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1678 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if (AVI->track[AVI->aptr].audio_posc>=AVI->track[AVI->aptr].audio_chunks-1) {rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_124, ____chimes_did_disable52); return nr; };
+         if (AVI->track[AVI->aptr].audio_posc>=AVI->track[AVI->aptr].audio_chunks-1) { long ____chimes_ret_var_115; ; ____chimes_ret_var_115 = (nr); rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); return ____chimes_ret_var_115; ; };
 # 1679 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          AVI->track[AVI->aptr].audio_posc++;
 # 1680 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10645,15 +10363,15 @@ long nr;
 # 1687 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       pos = AVI->track[AVI->aptr].audio_index[AVI->track[AVI->aptr].audio_posc].pos + AVI->track[AVI->aptr].audio_posb;
 # 1688 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_4: ({ calling((void*)lseek, 4, ____alias_loc_id_62, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, pos, 0); }) ;
+      lseek(AVI->fdes, pos, 0);
 # 1689 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_5: if ( ({ calling((void*)avi_read, 5, 0, 0UL, 3, (size_t)(0UL), (size_t)(912368063336283732UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, audbuf + nr, todo); }) != todo)
+      if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf+nr, todo); }) != todo)
 # 1690 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1691 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          AVI_errno = 3;
 # 1692 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_124, ____chimes_did_disable52); return -1;
+          long ____chimes_ret_var_116; ; ____chimes_ret_var_116 = (-1); rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); return ____chimes_ret_var_116; ;
 # 1693 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       }
 # 1694 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10666,9 +10384,9 @@ long nr;
    }
 # 1698 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1699 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_124, ____chimes_did_disable52); return nr;
+    long ____chimes_ret_var_117; ; ____chimes_ret_var_117 = (nr); rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); return ____chimes_ret_var_117; ;
 # 1700 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_read_audio", &____must_manage_AVI_read_audio, ____alias_loc_id_51, ____chimes_did_disable52); }
 
 long AVI_read_audio(avi_t *AVI, char *audbuf, long bytes) { return (____chimes_replaying ? AVI_read_audio_resumable(AVI, audbuf, bytes) : AVI_read_audio_quick(AVI, audbuf, bytes)); }
 
@@ -10678,17 +10396,16 @@ int AVI_read_data_quick(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1707 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
                               long *len)
 # 1708 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable53 = new_stack((void *)(&AVI_read_data), "AVI_read_data", &____must_manage_AVI_read_data, 6, 6, (size_t)(912368063336283901UL), (size_t)(912368063336283902UL), (size_t)(0UL), (size_t)(912368063336283904UL), (size_t)(0UL), (size_t)(912368063336283906UL), "AVI_read_data|AVI|0", &____must_checkpoint_AVI_read_data_AVI_0, "%struct.avi_t*", (void *)(&AVI), (size_t)8, 1, 0, 0, "AVI_read_data|vidbuf|0", &____must_checkpoint_AVI_read_data_vidbuf_0, "i8*", (void *)(&vidbuf), (size_t)8, 1, 0, 0, "AVI_read_data|max_vidbuf|0", &____must_checkpoint_AVI_read_data_max_vidbuf_0, "i64", (void *)(&max_vidbuf), (size_t)8, 0, 0, 0, "AVI_read_data|audbuf|0", &____must_checkpoint_AVI_read_data_audbuf_0, "i8*", (void *)(&audbuf), (size_t)8, 1, 0, 0, "AVI_read_data|max_audbuf|0", &____must_checkpoint_AVI_read_data_max_audbuf_0, "i64", (void *)(&max_audbuf), (size_t)8, 0, 0, 0, "AVI_read_data|len|0", &____must_checkpoint_AVI_read_data_len_0, "i64*", (void *)(&len), (size_t)8, 1, 0, 0) ; char data[8];
-int n;
- if (____must_checkpoint_AVI_read_data_data_0 || ____must_checkpoint_AVI_read_data_n_0) { register_stack_vars(2, "AVI_read_data|data|0", &____must_checkpoint_AVI_read_data_data_0, "[8 x i8]", (void *)(data), (size_t)8, 0, 0, 0, "AVI_read_data|n|0", &____must_checkpoint_AVI_read_data_n_0, "i32", (void *)(&n), (size_t)4, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable53 = new_stack((void *)(&AVI_read_data), "AVI_read_data", &____must_manage_AVI_read_data, 6, 0, (size_t)(912368063336284397UL), (size_t)(912368063336284398UL), (size_t)(0UL), (size_t)(912368063336284400UL), (size_t)(0UL), (size_t)(912368063336284402UL)) ; char data[8];
+ if (____must_checkpoint_AVI_read_data_data_0) { register_stack_vars(1, "AVI_read_data|data|0", &____must_checkpoint_AVI_read_data_data_0, "[8 x i8]", (void *)(data), (size_t)8, 0, 0, 0); } ; ;
 # 1720 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1720 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   int n; ;
 # 1721 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     ;
 # 1722 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1723 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==0) {rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 0; };
+   if (AVI->mode==0) { int ____chimes_ret_var_118; ; ____chimes_ret_var_118 = (0); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_118; ; };
 # 1724 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1725 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    while(1)
@@ -10697,16 +10414,16 @@ int n;
 # 1727 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1728 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1729 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_3: if (alias_group_changed(____alias_loc_id_63) || ({ calling((void*)avi_read, 3, ____alias_loc_id_63, 0UL, 3, (size_t)(0UL), (size_t)(912368063336283742UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, data, 8); }) != 8) {rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 0; };
+      if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, data, 8); }) != 8) { int ____chimes_ret_var_119; ; ____chimes_ret_var_119 = (0); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_119; ; };
 # 1730 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1731 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1732 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1733 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_6: if(alias_group_changed(____alias_loc_id_70) || ({ calling((void*)strncasecmp, 6, ____alias_loc_id_70, 0UL, 3, (size_t)(912368063336283742UL), (size_t)(912368063336284104UL), (size_t)(0UL)); (strncasecmp)(data, "LIST", 4); }) == 0)
+      if(strncasecmp(data,"LIST",4) == 0)
 # 1734 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1735 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_7: ({ calling((void*)lseek, 7, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, 4, 1); }) ;
+         lseek(AVI->fdes,4,1);
 # 1736 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          continue;
 # 1737 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10716,7 +10433,7 @@ int n;
       n = ( ((({ calling_npm("str2ulong", 0); str2ulong_npm((unsigned char *)data+4); }))+1) & ~1 );
 # 1740 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1741 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       call_lbl_9: call_lbl_17: call_lbl_24: if (alias_group_changed(____alias_loc_id_68) || ({ calling((void*)strncasecmp, 9, ____alias_loc_id_68, 0UL, 3, (size_t)(912368063336283742UL), (size_t)(912368063336283901UL), (size_t)(0UL)); (strncasecmp)(data, AVI->video_tag, 3); }) == 0) {{
+      if (strncasecmp(data,AVI->video_tag,3) == 0) {{
 # 1743 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          *len = n;
 # 1744 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10726,17 +10443,17 @@ int n;
 # 1746 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1747 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_10: ({ calling((void*)lseek, 10, ____alias_loc_id_64, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, n, 1); }) ;
+            lseek(AVI->fdes,n,1);
 # 1748 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return -1;
+             int ____chimes_ret_var_120; ; ____chimes_ret_var_120 = (-1); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_120; ;
 # 1749 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          }
 # 1750 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_13: if (alias_group_changed(____alias_loc_id_65) || ({ calling((void*)avi_read, 13, ____alias_loc_id_65, 0UL, 3, (size_t)(0UL), (size_t)(912368063336283902UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, vidbuf, n); }) != n) {rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 0; };
+         if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, vidbuf, n); }) != n) { int ____chimes_ret_var_121; ; ____chimes_ret_var_121 = (0); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_121; ; };
 # 1751 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 1;
+          int ____chimes_ret_var_122; ; ____chimes_ret_var_122 = (1); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_122; ;
 # 1752 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if (alias_group_changed(____alias_loc_id_69) || ({ calling((void*)strncasecmp, 17, ____alias_loc_id_69, 0UL, 3, (size_t)(912368063336283742UL), (size_t)(912368063336283901UL), (size_t)(0UL)); (strncasecmp)(data, AVI->track[AVI->aptr].audio_tag, 4); }) == 0) {{
+      }; } else if (strncasecmp(data,AVI->track[AVI->aptr].audio_tag,4) == 0) {{
 # 1755 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          *len = n;
 # 1756 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10744,23 +10461,23 @@ int n;
 # 1757 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1758 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-             call_lbl_18: ({ calling((void*)lseek, 18, ____alias_loc_id_66, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, n, 1); }) ;
+            lseek(AVI->fdes,n,1);
 # 1759 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return -2;
+             int ____chimes_ret_var_123; ; ____chimes_ret_var_123 = (-2); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_123; ;
 # 1760 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          }
 # 1761 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-          call_lbl_21: if (alias_group_changed(____alias_loc_id_67) || ({ calling((void*)avi_read, 21, ____alias_loc_id_67, 0UL, 3, (size_t)(0UL), (size_t)(912368063336283904UL), (size_t)(0UL)); avi_read_quick(AVI->fdes, audbuf, n); }) != n) {rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 0; };
+         if (({ calling_npm("avi_read", 0); avi_read_npm(AVI->fdes, audbuf, n); }) != n) { int ____chimes_ret_var_124; ; ____chimes_ret_var_124 = (0); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_124; ; };
 # 1762 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 2;
+          int ____chimes_ret_var_125; ; ____chimes_ret_var_125 = (2); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_125; ;
 # 1763 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          break;
 # 1764 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if ( ({ calling((void*)lseek, 24, 0, 0UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (lseek)(AVI->fdes, n, 1); }) <0) {rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); return 0; };
+      }; } else if (lseek(AVI->fdes,n,1)<0) { int ____chimes_ret_var_126; ; ____chimes_ret_var_126 = (0); rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); return ____chimes_ret_var_126; ; };
 # 1767 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1768 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_125, ____chimes_did_disable53); }
+rm_stack(false, 0UL, "AVI_read_data", &____must_manage_AVI_read_data, ____alias_loc_id_52, ____chimes_did_disable53); }
 
 int AVI_read_data(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1706 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10770,7 +10487,7 @@ int AVI_read_data(avi_t *AVI, char *vidbuf, long max_vidbuf,
 
 void AVI_print_error_quick(char *str)
 # 1795 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable54 = new_stack((void *)(&AVI_print_error), "AVI_print_error", &____must_manage_AVI_print_error, 1, 0, (size_t)(912368063336283930UL)) ; ; ;
+{const int ____chimes_did_disable54 = new_stack((void *)(&AVI_print_error), "AVI_print_error", &____must_manage_AVI_print_error, 1, 0, (size_t)(912368063336284426UL)) ; ; ;
 # 1796 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    int aerrno; ;
 # 1797 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10799,17 +10516,15 @@ void AVI_print_error_quick(char *str)
 # 1811 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1812 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(false, 0UL, "AVI_print_error", &____must_manage_AVI_print_error, ____alias_loc_id_126, ____chimes_did_disable54); }
+rm_stack(false, 0UL, "AVI_print_error", &____must_manage_AVI_print_error, ____alias_loc_id_53, ____chimes_did_disable54); }
 
 void AVI_print_error(char *str) { (____chimes_replaying ? AVI_print_error_resumable(str) : AVI_print_error_quick(str)); }
 
 char *AVI_strerror_quick()
 # 1815 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-{const int ____chimes_did_disable55 = new_stack((void *)(&AVI_strerror), "AVI_strerror", &____must_manage_AVI_strerror, 0, 0) ; int *____chimes_unroll_var_1;
-int aerrno;
- if (____must_checkpoint_AVI_strerror_____chimes_unroll_var_1_0 || ____must_checkpoint_AVI_strerror_aerrno_0) { register_stack_vars(2, "AVI_strerror|____chimes_unroll_var_1|0", &____must_checkpoint_AVI_strerror_____chimes_unroll_var_1_0, "i32*", (void *)(&____chimes_unroll_var_1), (size_t)8, 1, 0, 0, "AVI_strerror|aerrno|0", &____must_checkpoint_AVI_strerror_aerrno_0, "i32", (void *)(&aerrno), (size_t)4, 0, 0, 0); } ; ;
+{const int ____chimes_did_disable55 = new_stack((void *)(&AVI_strerror), "AVI_strerror", &____must_manage_AVI_strerror, 0, 0) ; ; ;
 # 1816 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    ;
+   int aerrno; ;
 # 1817 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1818 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    aerrno = (AVI_errno>=0 && AVI_errno<num_avi_errors) ? AVI_errno : num_avi_errors-1;
@@ -10827,9 +10542,9 @@ int aerrno;
 # 1825 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1826 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-           call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)__errno_location, 1, ____alias_loc_id_72, 912368063336283994UL, 0); (__errno_location)(); }) ) ; char *____chimes_unroll_var_2; call_lbl_2: ____chimes_unroll_var_2 = ( ({ calling((void*)strerror, 2, ____alias_loc_id_71, 912368063336283999UL, 1, (size_t)(0UL)); (strerror)((*____chimes_unroll_var_1)); }) ) ; sprintf(error_string,"%s - %s",avi_errors[aerrno],____chimes_unroll_var_2);
+      sprintf(error_string,"%s - %s",avi_errors[aerrno],strerror((*__errno_location ())));
 # 1827 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336284012UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_127, ____chimes_did_disable55); return error_string;
+       char *____chimes_ret_var_127; ; ____chimes_ret_var_127 = (error_string); rm_stack(true, 912368063336284506UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_54, ____chimes_did_disable55); return ____chimes_ret_var_127; ;
 # 1828 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1829 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10837,11 +10552,11 @@ int aerrno;
 # 1830 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1831 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      rm_stack(true, 912368063336284012UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_127, ____chimes_did_disable55); return avi_errors[aerrno];
+       char *____chimes_ret_var_128; ; ____chimes_ret_var_128 = (avi_errors[aerrno]); rm_stack(true, 912368063336284506UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_54, ____chimes_did_disable55); return ____chimes_ret_var_128; ;
 # 1832 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1833 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-rm_stack(true, 912368063336284012UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_127, ____chimes_did_disable55); }
+rm_stack(true, 912368063336284506UL, "AVI_strerror", &____must_manage_AVI_strerror, ____alias_loc_id_54, ____chimes_did_disable55); }
 
 char *AVI_strerror() { return (____chimes_replaying ? AVI_strerror_resumable() : AVI_strerror_quick()); }
 
@@ -10849,9 +10564,9 @@ uint64_t AVI_max_size_quick()
 # 1836 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {const int ____chimes_did_disable56 = new_stack((void *)(&AVI_max_size), "AVI_max_size", &____must_manage_AVI_max_size, 0, 0) ; ; ;
 # 1837 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  rm_stack(false, 0UL, "AVI_max_size", &____must_manage_AVI_max_size, 0, ____chimes_did_disable56); return((uint64_t) ((2147483647 * 2U + 1U)-(1<<20)*16-2048));
+   uint64_t ____chimes_ret_var_129; ; ____chimes_ret_var_129 = (((uint64_t) ((2147483647 * 2U + 1U)-(1<<20)*16-2048))); rm_stack(false, 0UL, "AVI_max_size", &____must_manage_AVI_max_size, ____alias_loc_id_55, ____chimes_did_disable56); return ____chimes_ret_var_129; ;
 # 1838 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-}
+rm_stack(false, 0UL, "AVI_max_size", &____must_manage_AVI_max_size, ____alias_loc_id_55, ____chimes_did_disable56); }
 
 uint64_t AVI_max_size() { return (____chimes_replaying ? AVI_max_size_resumable() : AVI_max_size_quick()); }
 
@@ -10868,17 +10583,17 @@ static size_t avi_read_npm(int fd, char *buf, size_t len)
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    while (r < len) {
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      n = (*____chimes_extern_func_read)(fd, buf + r, len - r);
+      n = read (fd, buf + r, len - r);
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if (n <= 0) {return r; };
+      if (n <= 0) { size_t ____chimes_ret_var_0; ____chimes_ret_var_0 = (r); return ____chimes_ret_var_0; ; };
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       r += n;
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return r;
+    size_t ____chimes_ret_var_1; ____chimes_ret_var_1 = (r); return ____chimes_ret_var_1; ;
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -10893,16 +10608,16 @@ static size_t avi_write_npm (int fd, char *buf, size_t len)
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    while (r < len) {
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      n = (*____chimes_extern_func_write)(fd, buf + r, len - r);
+      n = write (fd, buf + r, len - r);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if (n < 0) {return n; };
+      if (n < 0) { size_t ____chimes_ret_var_2; ____chimes_ret_var_2 = (n); return ____chimes_ret_var_2; ; };
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       r += n;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return r;
+    size_t ____chimes_ret_var_3; ____chimes_ret_var_3 = (r); return ____chimes_ret_var_3; ;
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -10924,7 +10639,7 @@ static unsigned long str2ulong_npm(unsigned char *str)
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return ( str[0] | (str[1]<<8) | (str[2]<<16) | (str[3]<<24) );
+    unsigned long ____chimes_ret_var_4; ____chimes_ret_var_4 = (( str[0] | (str[1]<<8) | (str[2]<<16) | (str[3]<<24) )); return ____chimes_ret_var_4; ;
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -10932,7 +10647,7 @@ static unsigned long str2ushort_npm(unsigned char *str)
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return ( str[0] | (str[1]<<8) );
+    unsigned long ____chimes_ret_var_5; ____chimes_ret_var_5 = (( str[0] | (str[1]<<8) )); return ____chimes_ret_var_5; ;
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -10947,7 +10662,7 @@ static int avi_sampsize_npm(avi_t *AVI, int j)
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (s<4) {s=4; };
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return s;
+    int ____chimes_ret_var_6; ____chimes_ret_var_6 = (s); return ____chimes_ret_var_6; ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -10978,11 +10693,11 @@ static int avi_add_chunk_npm(avi_t *AVI, unsigned char *tag, unsigned char *data
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      (*____chimes_extern_func_lseek)(AVI->fdes, AVI->pos, 0);
+      lseek(AVI->fdes,AVI->pos,0);
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 4;
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return -1;
+       int ____chimes_ret_var_7; ____chimes_ret_var_7 = (-1); return ____chimes_ret_var_7; ;
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 162 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -10994,7 +10709,7 @@ static int avi_add_chunk_npm(avi_t *AVI, unsigned char *tag, unsigned char *data
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_8; ____chimes_ret_var_8 = (0); return ____chimes_ret_var_8; ;
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -11007,14 +10722,14 @@ static int avi_add_index_entry_npm(avi_t *AVI, unsigned char *tag, long flags, u
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if(AVI->n_idx>=AVI->max_idx) {
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     ptr = realloc_wrapper((void *)AVI->idx,(AVI->max_idx+4096)*16, 912368063336279379UL, 0, 0);
+     ptr = realloc_wrapper((void *)AVI->idx,(AVI->max_idx+4096)*16, 912368063336279464UL, 0, 0);
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      if(ptr == 0) {
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        AVI_errno = 8;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       return -1;
+        int ____chimes_ret_var_9; ____chimes_ret_var_9 = (-1); return ____chimes_ret_var_9; ;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      }
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -11046,7 +10761,7 @@ static int avi_add_index_entry_npm(avi_t *AVI, unsigned char *tag, long flags, u
    if (len>AVI->max_len) {AVI->max_len=len; };
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_10; ____chimes_ret_var_10 = (0); return ____chimes_ret_var_10; ;
 # 203 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -11067,7 +10782,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277401UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+   AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277405UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if(AVI==0)
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -11075,14 +10790,14 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 8;
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return 0;
+       avi_t * ____chimes_ret_var_11; ____chimes_ret_var_11 = (0); return ____chimes_ret_var_11; ;
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 229 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    memset((void *)AVI,0,sizeof(avi_t));
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   AVI->fdes = (*____chimes_extern_func_open)(filename, 02|0100|0, 0644 &~ mask);
+   AVI->fdes = open(filename, 02|0100|0, 0644 &~ mask);
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (AVI->fdes < 0)
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -11090,9 +10805,9 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 2;
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      free_wrapper(AVI, 912368063336277401UL);
+      free_wrapper(AVI, 912368063336277405UL);
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return 0;
+       avi_t * ____chimes_ret_var_12; ____chimes_ret_var_12 = (0); return ____chimes_ret_var_12; ;
 # 244 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -11108,13 +10823,13 @@ avi_t* AVI_open_output_file_npm(char * filename)
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      (*____chimes_extern_func_close)(AVI->fdes);
+      close(AVI->fdes);
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 4;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      free_wrapper(AVI, 912368063336277401UL);
+      free_wrapper(AVI, 912368063336277405UL);
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return 0;
+       avi_t * ____chimes_ret_var_13; ____chimes_ret_var_13 = (0); return ____chimes_ret_var_13; ;
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -11130,7 +10845,7 @@ avi_t* AVI_open_output_file_npm(char * filename)
    AVI->aptr = 0;
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI;
+    avi_t * ____chimes_ret_var_14; ____chimes_ret_var_14 = (AVI); return ____chimes_ret_var_14; ;
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -11150,7 +10865,7 @@ void AVI_set_video_npm(avi_t *AVI, int width, int height, double fps, char *comp
    AVI->fps = fps;
 # 278 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 279 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if((*____chimes_extern_func_strncmp)(compressor, "RGB", 3)==0) {
+   if(strncmp(compressor, "RGB", 3)==0) {
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      memset(AVI->compressor, 0, 4);
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -11550,22 +11265,22 @@ int avi_update_header_npm(avi_t *AVI)
 # 556 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 557 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 558 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if ( (*____chimes_extern_func_lseek)(AVI->fdes, 0, 0)<0 ||
+   if ( lseek(AVI->fdes,0,0)<0 ||
 # 559 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
         avi_write_npm(AVI->fdes, (char *)AVI_header, 2048)!=2048 ||
 # 560 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
- (*____chimes_extern_func_lseek)(AVI->fdes, AVI->pos, 0)<0)
+ lseek(AVI->fdes,AVI->pos,0)<0)
 # 561 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      {
 # 562 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        AVI_errno = 6;
 # 563 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       return -1;
+        int ____chimes_ret_var_15; ____chimes_ret_var_15 = (-1); return ____chimes_ret_var_15; ;
 # 564 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      }
 # 565 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 566 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_16; ____chimes_ret_var_16 = (0); return ____chimes_ret_var_16; ;
 # 567 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -11966,7 +11681,7 @@ static int avi_close_output_file_npm(avi_t *AVI)
 # 861 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 862 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 863 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if ( (*____chimes_extern_func_lseek)(AVI->fdes, 0, 0)<0 ||
+   if ( lseek(AVI->fdes,0,0)<0 ||
 # 864 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
         avi_write_npm(AVI->fdes, (char *)AVI_header, 2048)!=2048
 # 865 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -11977,15 +11692,15 @@ static int avi_close_output_file_npm(avi_t *AVI)
 # 868 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 6;
 # 869 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return -1;
+       int ____chimes_ret_var_17; ____chimes_ret_var_17 = (-1); return ____chimes_ret_var_17; ;
 # 870 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 871 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 872 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (idxerror) {return -1; };
+   if (idxerror) { int ____chimes_ret_var_18; ____chimes_ret_var_18 = (-1); return ____chimes_ret_var_18; ; };
 # 873 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 874 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_19; ____chimes_ret_var_19 = (0); return ____chimes_ret_var_19; ;
 # 875 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12005,7 +11720,7 @@ static int avi_write_data_npm(avi_t *AVI, char *data, unsigned long length, int 
 # 896 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
      AVI_errno = 1;
 # 897 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     return -1;
+      int ____chimes_ret_var_20; ____chimes_ret_var_20 = (-1); return ____chimes_ret_var_20; ;
 # 898 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 899 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12019,7 +11734,7 @@ static int avi_write_data_npm(avi_t *AVI, char *data, unsigned long length, int 
    if (audio) {n = avi_add_index_entry_npm(AVI, astr, 0x00, AVI->pos, length); } else {n = avi_add_index_entry_npm(AVI, (unsigned char *) "00db", ((keyframe)?0x10:0x0), AVI->pos, length); } ;
 # 909 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 910 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (n) {return -1; };
+   if (n) { int ____chimes_ret_var_21; ____chimes_ret_var_21 = (-1); return ____chimes_ret_var_21; ; };
 # 911 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 912 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 913 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12027,10 +11742,10 @@ static int avi_write_data_npm(avi_t *AVI, char *data, unsigned long length, int 
    if (audio) {n = avi_add_chunk_npm(AVI, (unsigned char *) astr, (unsigned char *)data, length); } else {n = avi_add_chunk_npm(AVI, (unsigned char *)"00db", (unsigned char *)data, length); } ;
 # 918 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 919 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (n) {return -1; };
+   if (n) { int ____chimes_ret_var_22; ____chimes_ret_var_22 = (-1); return ____chimes_ret_var_22; ; };
 # 920 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 921 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_23; ____chimes_ret_var_23 = (0); return ____chimes_ret_var_23; ;
 # 922 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12041,13 +11756,13 @@ int AVI_write_frame_npm(avi_t *AVI, char *data, long bytes, int keyframe)
   unsigned long pos;
 # 927 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 928 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(AVI->mode==1) { AVI_errno = 7; return -1; }
+  if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_24; ____chimes_ret_var_24 = (-1); return ____chimes_ret_var_24; ; }
 # 929 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 930 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   pos = AVI->pos;
 # 931 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 932 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if (avi_write_data_npm(AVI, data, bytes, 0, keyframe)) {return -1; };
+  if (avi_write_data_npm(AVI, data, bytes, 0, keyframe)) { int ____chimes_ret_var_25; ____chimes_ret_var_25 = (-1); return ____chimes_ret_var_25; ; };
 # 933 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 934 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->last_pos = pos;
@@ -12056,7 +11771,7 @@ int AVI_write_frame_npm(avi_t *AVI, char *data, long bytes, int keyframe)
 # 936 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->video_frames++;
 # 937 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  return 0;
+   int ____chimes_ret_var_26; ____chimes_ret_var_26 = (0); return ____chimes_ret_var_26; ;
 # 938 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12064,18 +11779,18 @@ int AVI_dup_frame_npm(avi_t *AVI)
 # 941 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 942 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==1) { AVI_errno = 7; return -1; }
+   if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_27; ____chimes_ret_var_27 = (-1); return ____chimes_ret_var_27; ; }
 # 943 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 944 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->last_pos==0) {return 0; };
+   if (AVI->last_pos==0) { int ____chimes_ret_var_28; ____chimes_ret_var_28 = (0); return ____chimes_ret_var_28; ; };
 # 945 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (avi_add_index_entry_npm(AVI, (unsigned char *)"00db", 0x10, AVI->last_pos, AVI->last_len)) {return -1; };
+   if (avi_add_index_entry_npm(AVI, (unsigned char *)"00db", 0x10, AVI->last_pos, AVI->last_len)) { int ____chimes_ret_var_29; ____chimes_ret_var_29 = (-1); return ____chimes_ret_var_29; ; };
 # 946 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_frames++;
 # 947 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->must_use_index = 1;
 # 948 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_30; ____chimes_ret_var_30 = (0); return ____chimes_ret_var_30; ;
 # 949 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12083,14 +11798,14 @@ int AVI_write_audio_npm(avi_t *AVI, char *data, long bytes)
 # 952 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 953 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==1) { AVI_errno = 7; return -1; }
+   if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_31; ____chimes_ret_var_31 = (-1); return ____chimes_ret_var_31; ; }
 # 954 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 955 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (avi_write_data_npm(AVI, data, bytes, 1, 0)) {return -1; };
+   if (avi_write_data_npm(AVI, data, bytes, 1, 0)) { int ____chimes_ret_var_32; ____chimes_ret_var_32 = (-1); return ____chimes_ret_var_32; ; };
 # 956 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->track[AVI->aptr].audio_bytes += bytes;
 # 957 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_33; ____chimes_ret_var_33 = (0); return ____chimes_ret_var_33; ;
 # 958 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12104,7 +11819,7 @@ int AVI_append_audio_npm(avi_t *AVI, char *data, long bytes)
   unsigned char c[4];
 # 966 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 967 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(AVI->mode==1) { AVI_errno = 7; return -1; }
+  if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_34; ____chimes_ret_var_34 = (-1); return ____chimes_ret_var_34; ; }
 # 968 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 969 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 970 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12127,14 +11842,14 @@ int AVI_append_audio_npm(avi_t *AVI, char *data, long bytes)
 # 981 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 982 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 983 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  (*____chimes_extern_func_lseek)(AVI->fdes, pos+4, 0);
+  lseek(AVI->fdes, pos+4, 0);
 # 984 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   long2str_npm(c, length+bytes);
 # 985 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   avi_write_npm(AVI->fdes, (char *) c, 4);
 # 986 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 987 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  (*____chimes_extern_func_lseek)(AVI->fdes, pos+8+length, 0);
+  lseek(AVI->fdes, pos+8+length, 0);
 # 988 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 989 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   i=( ((length + bytes)+1) & ~1 );
@@ -12147,7 +11862,7 @@ int AVI_append_audio_npm(avi_t *AVI, char *data, long bytes)
   AVI->pos = pos + 8 + i;
 # 994 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 995 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  return 0;
+   int ____chimes_ret_var_35; ____chimes_ret_var_35 = (0); return ____chimes_ret_var_35; ;
 # 996 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12155,10 +11870,10 @@ long AVI_bytes_remain_npm(avi_t *AVI)
 # 1000 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1001 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==1) {return 0; };
+   if (AVI->mode==1) { long ____chimes_ret_var_36; ____chimes_ret_var_36 = (0); return ____chimes_ret_var_36; ; };
 # 1002 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1003 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return ( ((2147483647 * 2U + 1U)-(1<<20)*16-2048) - (AVI->pos + 8 + 16*AVI->n_idx));
+    long ____chimes_ret_var_37; ____chimes_ret_var_37 = (( ((2147483647 * 2U + 1U)-(1<<20)*16-2048) - (AVI->pos + 8 + 16*AVI->n_idx))); return ____chimes_ret_var_37; ;
 # 1004 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12166,10 +11881,10 @@ long AVI_bytes_written_npm(avi_t *AVI)
 # 1007 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1008 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==1) {return 0; };
+   if (AVI->mode==1) { long ____chimes_ret_var_38; ____chimes_ret_var_38 = (0); return ____chimes_ret_var_38; ; };
 # 1009 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1010 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return (AVI->pos + 8 + 16*AVI->n_idx);
+    long ____chimes_ret_var_39; ____chimes_ret_var_39 = ((AVI->pos + 8 + 16*AVI->n_idx)); return ____chimes_ret_var_39; ;
 # 1011 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12178,13 +11893,13 @@ int AVI_set_audio_track_npm(avi_t *AVI, int track)
 {
 # 1015 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1016 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if (track < 0 || track + 1 > AVI->anum) {return(-1); };
+  if (track < 0 || track + 1 > AVI->anum) { int ____chimes_ret_var_40; ____chimes_ret_var_40 = ((-1)); return ____chimes_ret_var_40; ; };
 # 1017 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1018 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1019 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->aptr=track;
 # 1020 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  return 0;
+   int ____chimes_ret_var_41; ____chimes_ret_var_41 = (0); return ____chimes_ret_var_41; ;
 # 1021 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12192,7 +11907,7 @@ int AVI_get_audio_track_npm(avi_t *AVI)
 # 1024 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1025 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    return(AVI->aptr);
+     int ____chimes_ret_var_42; ____chimes_ret_var_42 = ((AVI->aptr)); return ____chimes_ret_var_42; ;
 # 1026 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12211,18 +11926,18 @@ int AVI_close_npm(avi_t *AVI)
 # 1047 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1048 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1049 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   (*____chimes_extern_func_close)(AVI->fdes);
+   close(AVI->fdes);
 # 1050 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->idx) {free_wrapper(AVI->idx, 912368063336279783UL); };
+   if (AVI->idx) {free_wrapper(AVI->idx, 912368063336279924UL); };
 # 1051 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->video_index) {free_wrapper(AVI->video_index, 912368063336279783UL); };
+   if (AVI->video_index) {free_wrapper(AVI->video_index, 912368063336279924UL); };
 # 1052 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1053 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1054 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   free_wrapper(AVI, 912368063336279808UL);
+   free_wrapper(AVI, 912368063336279952UL);
 # 1055 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1056 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return ret;
+    int ____chimes_ret_var_43; ____chimes_ret_var_43 = (ret); return ____chimes_ret_var_43; ;
 # 1057 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12235,7 +11950,7 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
 # 1071 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1072 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1073 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277401UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277405UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
 # 1074 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   if(AVI==__null)
 # 1075 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12243,7 +11958,7 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
 # 1076 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 8;
 # 1077 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return 0;
+       avi_t * ____chimes_ret_var_44; ____chimes_ret_var_44 = (0); return ____chimes_ret_var_44; ;
 # 1078 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1079 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12255,7 +11970,7 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
 # 1083 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1084 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1085 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  AVI->fdes = (*____chimes_extern_func_open)(filename, 00|0);
+  AVI->fdes = open(filename,00|0);
 # 1086 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   if(AVI->fdes < 0)
 # 1087 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12263,9 +11978,9 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
 # 1088 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 2;
 # 1089 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      free_wrapper(AVI, 912368063336277401UL);
+      free_wrapper(AVI, 912368063336277405UL);
 # 1090 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return 0;
+       avi_t * ____chimes_ret_var_45; ____chimes_ret_var_45 = (0); return ____chimes_ret_var_45; ;
 # 1091 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1092 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12276,7 +11991,7 @@ avi_t *AVI_open_input_file_npm(char *filename, int getIndex)
   AVI->aptr=0;
 # 1096 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1097 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  return AVI;
+   avi_t * ____chimes_ret_var_46; ____chimes_ret_var_46 = (AVI); return ____chimes_ret_var_46; ;
 # 1098 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12289,7 +12004,7 @@ avi_t *AVI_open_fd_npm(int fd, int getIndex)
 # 1104 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1105 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1106 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277401UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
+  AVI = (avi_t *) malloc_wrapper(sizeof(avi_t), 912368063336277405UL, 0, 1, (int)sizeof(avi_t), 2, (int)__builtin_offsetof(avi_t, idx), (int)__builtin_offsetof(avi_t, video_index));
 # 1107 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   if(AVI==__null)
 # 1108 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12297,7 +12012,7 @@ avi_t *AVI_open_fd_npm(int fd, int getIndex)
 # 1109 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 8;
 # 1110 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return 0;
+       avi_t * ____chimes_ret_var_47; ____chimes_ret_var_47 = (0); return ____chimes_ret_var_47; ;
 # 1111 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1112 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12317,7 +12032,7 @@ avi_t *AVI_open_fd_npm(int fd, int getIndex)
   AVI->aptr=0;
 # 1122 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1123 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  return AVI;
+   avi_t * ____chimes_ret_var_48; ____chimes_ret_var_48 = (AVI); return ____chimes_ret_var_48; ;
 # 1124 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12353,12 +12068,12 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1142 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1143 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1144 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if( avi_read_npm(AVI->fdes, data, 12) != 12 ) { AVI_close_npm(AVI); AVI_errno = 3; return 0; }
+   if( avi_read_npm(AVI->fdes, data, 12) != 12 ) { AVI_close_npm(AVI); AVI_errno = 3; int ____chimes_ret_var_49; ____chimes_ret_var_49 = (0); return ____chimes_ret_var_49; ; }
 # 1145 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1146 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if( (*____chimes_extern_func_strncasecmp)(data, "RIFF", 4) !=0 ||
+   if( strncasecmp(data ,"RIFF",4) !=0 ||
 # 1147 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       (*____chimes_extern_func_strncasecmp)(data+8, "AVI ", 4) !=0 ) { AVI_close_npm(AVI); AVI_errno = 9; return 0; }
+       strncasecmp(data+8,"AVI ",4) !=0 ) { AVI_close_npm(AVI); AVI_errno = 9; int ____chimes_ret_var_50; ____chimes_ret_var_50 = (0); return ____chimes_ret_var_50; ; }
 # 1148 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1149 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1150 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12380,57 +12095,57 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
       n = ( ((n)+1) & ~1 );
 # 1161 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1162 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if ((*____chimes_extern_func_strncasecmp)(data, "LIST", 4) == 0) {{
+      if (strncasecmp(data,"LIST",4) == 0) {{
 # 1164 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if( avi_read_npm(AVI->fdes, data, 4) != 4 ) { AVI_close_npm(AVI); AVI_errno = 3; return 0; }
+         if( avi_read_npm(AVI->fdes, data, 4) != 4 ) { AVI_close_npm(AVI); AVI_errno = 3; int ____chimes_ret_var_51; ____chimes_ret_var_51 = (0); return ____chimes_ret_var_51; ; }
 # 1165 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          n -= 4;
 # 1166 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if ((*____chimes_extern_func_strncasecmp)(data, "hdrl", 4) == 0) {{
+         if (strncasecmp(data,"hdrl",4) == 0) {{
 # 1168 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             hdrl_len = n;
 # 1169 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            hdrl_data = (unsigned char *) malloc_wrapper(n, 912368063336281549UL, 0, 0);
+            hdrl_data = (unsigned char *) malloc_wrapper(n, 912368063336281762UL, 0, 0);
 # 1170 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            if(hdrl_data==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
+            if(hdrl_data==0) { AVI_close_npm(AVI); AVI_errno = 8; int ____chimes_ret_var_52; ____chimes_ret_var_52 = (0); return ____chimes_ret_var_52; ; };
 # 1171 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1172 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1173 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1174 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     header_offset = (*____chimes_extern_func_lseek)(AVI->fdes, 0, 1);
+     header_offset = lseek(AVI->fdes,0,1);
 # 1175 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1176 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            if( avi_read_npm(AVI->fdes, (char *)hdrl_data, n) != n ) { AVI_close_npm(AVI); AVI_errno = 3; return 0; }
+            if( avi_read_npm(AVI->fdes, (char *)hdrl_data, n) != n ) { AVI_close_npm(AVI); AVI_errno = 3; int ____chimes_ret_var_53; ____chimes_ret_var_53 = (0); return ____chimes_ret_var_53; ; }
 # 1177 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         }; } else if ((*____chimes_extern_func_strncasecmp)(data, "movi", 4) == 0) {{
+         }; } else if (strncasecmp(data,"movi",4) == 0) {{
 # 1180 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            AVI->movi_start = (*____chimes_extern_func_lseek)(AVI->fdes, 0, 1);
+            AVI->movi_start = lseek(AVI->fdes,0,1);
 # 1181 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            (*____chimes_extern_func_lseek)(AVI->fdes, n, 1);
+            lseek(AVI->fdes,n,1);
 # 1182 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         }; } else {(*____chimes_extern_func_lseek)(AVI->fdes, n, 1); } ;
+         }; } else {lseek(AVI->fdes,n,1); } ;
 # 1185 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if ((*____chimes_extern_func_strncasecmp)(data, "idx1", 4) == 0) {{
+      }; } else if (strncasecmp(data,"idx1",4) == 0) {{
 # 1188 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1189 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1190 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1191 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          AVI->n_idx = AVI->max_idx = n/16;
 # 1192 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         AVI->idx = (unsigned char((*)[16]) ) malloc_wrapper(n, 912368063336282019UL, 0, 0);
+         AVI->idx = (unsigned char((*)[16]) ) malloc_wrapper(n, 912368063336282241UL, 0, 0);
 # 1193 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if(AVI->idx==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; }
+         if(AVI->idx==0) { AVI_close_npm(AVI); AVI_errno = 8; int ____chimes_ret_var_54; ____chimes_ret_var_54 = (0); return ____chimes_ret_var_54; ; }
 # 1194 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if(avi_read_npm(AVI->fdes, (char *) AVI->idx, n) != n ) { AVI_close_npm(AVI); AVI_errno = 3; return 0; }
+         if(avi_read_npm(AVI->fdes, (char *) AVI->idx, n) != n ) { AVI_close_npm(AVI); AVI_errno = 3; int ____chimes_ret_var_55; ____chimes_ret_var_55 = (0); return ____chimes_ret_var_55; ; }
 # 1195 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else {(*____chimes_extern_func_lseek)(AVI->fdes, n, 1); } ;
+      }; } else {lseek(AVI->fdes,n,1); } ;
 # 1198 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1199 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1200 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!hdrl_data ) { AVI_close_npm(AVI); AVI_errno = 10; return 0; }
+   if(!hdrl_data ) { AVI_close_npm(AVI); AVI_errno = 10; int ____chimes_ret_var_56; ____chimes_ret_var_56 = (0); return ____chimes_ret_var_56; ; }
 # 1201 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->movi_start) { AVI_close_npm(AVI); AVI_errno = 11; return 0; }
+   if(!AVI->movi_start) { AVI_close_npm(AVI); AVI_errno = 11; int ____chimes_ret_var_57; ____chimes_ret_var_57 = (0); return ____chimes_ret_var_57; ; }
 # 1202 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1203 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1204 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12441,7 +12156,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1207 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1208 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1209 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if((*____chimes_extern_func_strncasecmp)((char *) hdrl_data+i, "LIST", 4)==0) { i+= 12; continue; }
+      if(strncasecmp((char *) hdrl_data+i, "LIST",4)==0) { i+= 12; continue; }
 # 1210 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1211 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       n = str2ulong_npm(hdrl_data+i+4);
@@ -12451,11 +12166,11 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1214 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1215 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1216 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if ((*____chimes_extern_func_strncasecmp)((char *)hdrl_data+i, "strh", 4)==0) {{
+      if (strncasecmp((char *)hdrl_data+i,"strh",4)==0) {{
 # 1218 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          i += 8;
 # 1219 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if ((*____chimes_extern_func_strncasecmp)((char *)hdrl_data+i, "vids", 4) == 0 && !vids_strh_seen) {{
+         if (strncasecmp((char *)hdrl_data+i,"vids",4) == 0 && !vids_strh_seen) {{
 # 1221 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             memcpy(AVI->compressor,hdrl_data+i+4,4);
 # 1222 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12482,7 +12197,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1234 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             lasttag = 1;
 # 1235 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         }; } else if ((*____chimes_extern_func_strncasecmp)((char *) hdrl_data+i, "auds", 4) ==0 && ! auds_strh_seen) {{
+         }; } else if (strncasecmp ((char *) hdrl_data+i,"auds",4) ==0 && ! auds_strh_seen) {{
 # 1238 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1239 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1240 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12495,7 +12210,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1244 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       fprintf(stderr, "error - only %d audio tracks supported\n", 8);
 # 1245 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return(-1);
+       int ____chimes_ret_var_58; ____chimes_ret_var_58 = ((-1)); return ____chimes_ret_var_58; ;
 # 1246 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     }
 # 1247 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12516,7 +12231,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1259 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          num_stream++;
 # 1260 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if((*____chimes_extern_func_strncasecmp)((char *) hdrl_data+i, "strf", 4)==0)
+      }; } else if(strncasecmp((char *) hdrl_data+i,"strf",4)==0)
 # 1262 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1263 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12583,10 +12298,10 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
    }
 # 1301 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1302 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   free_wrapper(hdrl_data, 912368063336281549UL);
+   free_wrapper(hdrl_data, 912368063336281762UL);
 # 1303 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1304 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!vids_strh_seen || !vids_strf_seen) { AVI_close_npm(AVI); AVI_errno = 12; return 0; }
+   if(!vids_strh_seen || !vids_strf_seen) { AVI_close_npm(AVI); AVI_errno = 12; int ____chimes_ret_var_59; ____chimes_ret_var_59 = (0); return ____chimes_ret_var_59; ; }
 # 1305 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1306 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_tag[0] = AVI->video_strn/10 + '0';
@@ -12615,12 +12330,12 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
    }
 # 1320 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1321 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   (*____chimes_extern_func_lseek)(AVI->fdes, AVI->movi_start, 0);
+   lseek(AVI->fdes,AVI->movi_start,0);
 # 1322 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1323 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1324 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1325 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (!getIndex) {return(0); };
+   if (!getIndex) { int ____chimes_ret_var_60; ____chimes_ret_var_60 = ((0)); return ____chimes_ret_var_60; ; };
 # 1326 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1327 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1328 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12639,9 +12354,9 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1337 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1338 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1339 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      for (i=0; i<AVI->n_idx; i++) { if ((*____chimes_extern_func_strncasecmp)((char *) AVI->idx[i], (char *) AVI->video_tag, 3)==0) {break; }; };
+      for (i=0; i<AVI->n_idx; i++) { if (strncasecmp((char *) AVI->idx[i],(char *) AVI->video_tag,3)==0) {break; }; };
 # 1341 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if(i>=AVI->n_idx) { AVI_close_npm(AVI); AVI_errno = 12; return 0; }
+      if(i>=AVI->n_idx) { AVI_close_npm(AVI); AVI_errno = 12; int ____chimes_ret_var_61; ____chimes_ret_var_61 = (0); return ____chimes_ret_var_61; ; }
 # 1342 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1343 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       pos = str2ulong_npm(AVI->idx[i]+ 8);
@@ -12649,11 +12364,11 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
       len = str2ulong_npm(AVI->idx[i]+12);
 # 1345 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1346 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      (*____chimes_extern_func_lseek)(AVI->fdes, pos, 0);
+      lseek(AVI->fdes,pos,0);
 # 1347 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if(avi_read_npm(AVI->fdes, data, 8)!=8) { AVI_close_npm(AVI); AVI_errno = 3; return 0; }
+      if(avi_read_npm(AVI->fdes, data, 8)!=8) { AVI_close_npm(AVI); AVI_errno = 3; int ____chimes_ret_var_62; ____chimes_ret_var_62 = (0); return ____chimes_ret_var_62; ; }
 # 1348 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if( (*____chimes_extern_func_strncasecmp)((char *)data, (char *)AVI->idx[i], 4)==0 &&
+      if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 &&
 # 1349 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       str2ulong_npm((unsigned char *)data+4)==len )
 # 1350 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12667,11 +12382,11 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1354 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1355 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         (*____chimes_extern_func_lseek)(AVI->fdes, pos+AVI->movi_start-4, 0);
+         lseek(AVI->fdes,pos+AVI->movi_start-4,0);
 # 1356 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if(avi_read_npm(AVI->fdes, data, 8)!=8) { AVI_close_npm(AVI); AVI_errno = 3; return 0; }
+         if(avi_read_npm(AVI->fdes, data, 8)!=8) { AVI_close_npm(AVI); AVI_errno = 3; int ____chimes_ret_var_63; ____chimes_ret_var_63 = (0); return ____chimes_ret_var_63; ; }
 # 1357 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if( (*____chimes_extern_func_strncasecmp)((char *)data, (char *)AVI->idx[i], 4)==0 && str2ulong_npm((unsigned char *)data+4)==len )
+         if( strncasecmp((char *)data,(char *)AVI->idx[i],4)==0 && str2ulong_npm((unsigned char *)data+4)==len )
 # 1358 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1359 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12691,7 +12406,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1367 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1368 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1369 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      (*____chimes_extern_func_lseek)(AVI->fdes, AVI->movi_start, 0);
+      lseek(AVI->fdes, AVI->movi_start, 0);
 # 1370 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1371 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI->n_idx = 0;
@@ -12708,11 +12423,11 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1378 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1379 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1380 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if((*____chimes_extern_func_strncasecmp)(data, "LIST", 4)==0)
+         if(strncasecmp(data,"LIST",4)==0)
 # 1381 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1382 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            (*____chimes_extern_func_lseek)(AVI->fdes, 4, 1);
+            lseek(AVI->fdes,4,1);
 # 1383 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
             continue;
 # 1384 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12731,12 +12446,12 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1392 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
     {
 # 1393 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     __off_t ____chimes_unroll_var_0 = (*____chimes_extern_func_lseek)(AVI->fdes, 0, 1); avi_add_index_entry_npm(AVI, (unsigned char *) data, 0, ____chimes_unroll_var_0-8, n);
+    avi_add_index_entry_npm(AVI, (unsigned char *) data, 0, lseek(AVI->fdes,0,1)-8, n);
 # 1394 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          }
 # 1395 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1396 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         (*____chimes_extern_func_lseek)(AVI->fdes, ( ((n)+1) & ~1 ), 1);
+         lseek(AVI->fdes,( ((n)+1) & ~1 ),1);
 # 1397 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       }
 # 1398 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12755,10 +12470,10 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
    for(i=0;i<AVI->n_idx;i++) {
 # 1407 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1408 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     if ((*____chimes_extern_func_strncasecmp)((char *)AVI->idx[i], (char *) AVI->video_tag, 3) == 0) {nvi++; };
+     if (strncasecmp((char *)AVI->idx[i],(char *) AVI->video_tag,3) == 0) {nvi++; };
 # 1409 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1410 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     for (j=0; j<AVI->anum; ++j) { if ((*____chimes_extern_func_strncasecmp)((char *)AVI->idx[i], AVI->track[j].audio_tag, 4) == 0) {nai[j]++; }; };
+     for (j=0; j<AVI->anum; ++j) { if (strncasecmp((char *)AVI->idx[i], AVI->track[j].audio_tag,4) == 0) {nai[j]++; }; };
 # 1411 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1412 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12770,20 +12485,20 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1416 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1417 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1418 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->video_frames==0) { AVI_close_npm(AVI); AVI_errno = 12; return 0; };
+   if(AVI->video_frames==0) { AVI_close_npm(AVI); AVI_errno = 12; int ____chimes_ret_var_64; ____chimes_ret_var_64 = (0); return ____chimes_ret_var_64; ; };
 # 1419 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   AVI->video_index = (video_index_entry *) malloc_wrapper(nvi*sizeof(video_index_entry), 912368063336282019UL, 0, 1, (int)sizeof(video_index_entry), 0);
+   AVI->video_index = (video_index_entry *) malloc_wrapper(nvi*sizeof(video_index_entry), 912368063336282241UL, 0, 1, (int)sizeof(video_index_entry), 0);
 # 1420 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->video_index==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
+   if(AVI->video_index==0) { AVI_close_npm(AVI); AVI_errno = 8; int ____chimes_ret_var_65; ____chimes_ret_var_65 = (0); return ____chimes_ret_var_65; ; };
 # 1421 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1422 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    for(j=0; j<AVI->anum; ++j) {
 # 1423 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        if(AVI->track[j].audio_chunks) {
 # 1424 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    AVI->track[j].audio_index = (audio_index_entry *) malloc_wrapper(nai[j]*sizeof(audio_index_entry), 912368063336282019UL, 0, 1, (int)sizeof(audio_index_entry), 0);
+    AVI->track[j].audio_index = (audio_index_entry *) malloc_wrapper(nai[j]*sizeof(audio_index_entry), 912368063336282241UL, 0, 1, (int)sizeof(audio_index_entry), 0);
 # 1425 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    if(AVI->track[j].audio_index==0) { AVI_close_npm(AVI); AVI_errno = 8; return 0; };
+    if(AVI->track[j].audio_index==0) { AVI_close_npm(AVI); AVI_errno = 8; int ____chimes_ret_var_66; ____chimes_ret_var_66 = (0); return ____chimes_ret_var_66; ; };
 # 1426 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        }
 # 1427 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12802,7 +12517,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1435 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1436 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1437 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-     if((*____chimes_extern_func_strncasecmp)((char *)AVI->idx[i], (char *)AVI->video_tag, 3) == 0) {
+     if(strncasecmp((char *)AVI->idx[i],(char *)AVI->video_tag,3) == 0) {
 # 1438 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
        AVI->video_index[nvi].key = str2ulong_npm(AVI->idx[i]+ 4);
 # 1439 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12819,7 +12534,7 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
      for(j=0; j<AVI->anum; ++j) {
 # 1446 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1447 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       if((*____chimes_extern_func_strncasecmp)((char *)AVI->idx[i], AVI->track[j].audio_tag, 4) == 0) {
+       if(strncasecmp((char *)AVI->idx[i],AVI->track[j].audio_tag,4) == 0) {
 # 1448 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
   AVI->track[j].audio_index[nai[j]].pos = str2ulong_npm(AVI->idx[i]+ 8)+ioff;
 # 1449 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -12844,12 +12559,12 @@ int avi_parse_input_file_npm(avi_t *AVI, int getIndex)
 # 1460 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1461 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1462 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   (*____chimes_extern_func_lseek)(AVI->fdes, AVI->movi_start, 0);
+   lseek(AVI->fdes,AVI->movi_start,0);
 # 1463 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_pos = 0;
 # 1464 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1465 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return(0);
+    int ____chimes_ret_var_67; ____chimes_ret_var_67 = ((0)); return ____chimes_ret_var_67; ;
 # 1466 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12857,7 +12572,7 @@ long AVI_video_frames_npm(avi_t *AVI)
 # 1469 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1470 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->video_frames;
+    long ____chimes_ret_var_68; ____chimes_ret_var_68 = (AVI->video_frames); return ____chimes_ret_var_68; ;
 # 1471 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12865,7 +12580,7 @@ int AVI_video_width_npm(avi_t *AVI)
 # 1473 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1474 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->width;
+    int ____chimes_ret_var_69; ____chimes_ret_var_69 = (AVI->width); return ____chimes_ret_var_69; ;
 # 1475 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12873,7 +12588,7 @@ int AVI_video_height_npm(avi_t *AVI)
 # 1477 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1478 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->height;
+    int ____chimes_ret_var_70; ____chimes_ret_var_70 = (AVI->height); return ____chimes_ret_var_70; ;
 # 1479 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12881,7 +12596,7 @@ double AVI_frame_rate_npm(avi_t *AVI)
 # 1481 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1482 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->fps;
+    double ____chimes_ret_var_71; ____chimes_ret_var_71 = (AVI->fps); return ____chimes_ret_var_71; ;
 # 1483 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12889,7 +12604,7 @@ char* AVI_video_compressor_npm(avi_t *AVI)
 # 1485 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1486 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->compressor2;
+    char * ____chimes_ret_var_72; ____chimes_ret_var_72 = (AVI->compressor2); return ____chimes_ret_var_72; ;
 # 1487 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12897,7 +12612,7 @@ long AVI_max_video_chunk_npm(avi_t *AVI)
 # 1490 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1491 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->max_len;
+    long ____chimes_ret_var_73; ____chimes_ret_var_73 = (AVI->max_len); return ____chimes_ret_var_73; ;
 # 1492 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12905,7 +12620,7 @@ int AVI_audio_tracks_npm(avi_t *AVI)
 # 1495 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1496 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    return(AVI->anum);
+     int ____chimes_ret_var_74; ____chimes_ret_var_74 = ((AVI->anum)); return ____chimes_ret_var_74; ;
 # 1497 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12913,7 +12628,7 @@ int AVI_audio_channels_npm(avi_t *AVI)
 # 1500 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1501 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->track[AVI->aptr].a_chans;
+    int ____chimes_ret_var_75; ____chimes_ret_var_75 = (AVI->track[AVI->aptr].a_chans); return ____chimes_ret_var_75; ;
 # 1502 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12921,7 +12636,7 @@ long AVI_audio_mp3rate_npm(avi_t *AVI)
 # 1505 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1506 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->track[AVI->aptr].mp3rate;
+    long ____chimes_ret_var_76; ____chimes_ret_var_76 = (AVI->track[AVI->aptr].mp3rate); return ____chimes_ret_var_76; ;
 # 1507 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12929,7 +12644,7 @@ int AVI_audio_bits_npm(avi_t *AVI)
 # 1510 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1511 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->track[AVI->aptr].a_bits;
+    int ____chimes_ret_var_77; ____chimes_ret_var_77 = (AVI->track[AVI->aptr].a_bits); return ____chimes_ret_var_77; ;
 # 1512 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12937,7 +12652,7 @@ int AVI_audio_format_npm(avi_t *AVI)
 # 1515 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1516 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->track[AVI->aptr].a_fmt;
+    int ____chimes_ret_var_78; ____chimes_ret_var_78 = (AVI->track[AVI->aptr].a_fmt); return ____chimes_ret_var_78; ;
 # 1517 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12945,7 +12660,7 @@ long AVI_audio_rate_npm(avi_t *AVI)
 # 1520 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1521 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->track[AVI->aptr].a_rate;
+    long ____chimes_ret_var_79; ____chimes_ret_var_79 = (AVI->track[AVI->aptr].a_rate); return ____chimes_ret_var_79; ;
 # 1522 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12953,7 +12668,7 @@ long AVI_audio_bytes_npm(avi_t *AVI)
 # 1525 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1526 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->track[AVI->aptr].audio_bytes;
+    long ____chimes_ret_var_80; ____chimes_ret_var_80 = (AVI->track[AVI->aptr].audio_bytes); return ____chimes_ret_var_80; ;
 # 1527 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12961,7 +12676,7 @@ long AVI_audio_chunks_npm(avi_t *AVI)
 # 1530 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1531 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->track[AVI->aptr].audio_chunks;
+    long ____chimes_ret_var_81; ____chimes_ret_var_81 = (AVI->track[AVI->aptr].audio_chunks); return ____chimes_ret_var_81; ;
 # 1532 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12969,7 +12684,7 @@ long AVI_audio_codech_offset_npm(avi_t *AVI)
 # 1535 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1536 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->track[AVI->aptr].a_codech_off;
+    long ____chimes_ret_var_82; ____chimes_ret_var_82 = (AVI->track[AVI->aptr].a_codech_off); return ____chimes_ret_var_82; ;
 # 1537 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12977,7 +12692,7 @@ long AVI_audio_codecf_offset_npm(avi_t *AVI)
 # 1540 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1541 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return AVI->track[AVI->aptr].a_codecf_off;
+    long ____chimes_ret_var_83; ____chimes_ret_var_83 = (AVI->track[AVI->aptr].a_codecf_off); return ____chimes_ret_var_83; ;
 # 1542 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12985,7 +12700,7 @@ long AVI_video_codech_offset_npm(avi_t *AVI)
 # 1545 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1546 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    return AVI->v_codech_off;
+     long ____chimes_ret_var_84; ____chimes_ret_var_84 = (AVI->v_codech_off); return ____chimes_ret_var_84; ;
 # 1547 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -12993,7 +12708,7 @@ long AVI_video_codecf_offset_npm(avi_t *AVI)
 # 1550 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1551 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-    return AVI->v_codecf_off;
+     long ____chimes_ret_var_85; ____chimes_ret_var_85 = (AVI->v_codecf_off); return ____chimes_ret_var_85; ;
 # 1552 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13001,14 +12716,14 @@ long AVI_frame_size_npm(avi_t *AVI, long frame)
 # 1555 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1556 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_86; ____chimes_ret_var_86 = (-1); return ____chimes_ret_var_86; ; }
 # 1557 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; long ____chimes_ret_var_87; ____chimes_ret_var_87 = (-1); return ____chimes_ret_var_87; ; }
 # 1558 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1559 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (frame < 0 || frame >= AVI->video_frames) {return 0; };
+   if (frame < 0 || frame >= AVI->video_frames) { long ____chimes_ret_var_88; ____chimes_ret_var_88 = (0); return ____chimes_ret_var_88; ; };
 # 1560 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return(AVI->video_index[frame].len);
+    long ____chimes_ret_var_89; ____chimes_ret_var_89 = ((AVI->video_index[frame].len)); return ____chimes_ret_var_89; ;
 # 1561 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13016,14 +12731,14 @@ long AVI_audio_size_npm(avi_t *AVI, long frame)
 # 1564 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1565 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(AVI->mode==0) { AVI_errno = 7; return -1; }
+  if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_90; ____chimes_ret_var_90 = (-1); return ____chimes_ret_var_90; ; }
 # 1566 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; return -1; }
+  if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; long ____chimes_ret_var_91; ____chimes_ret_var_91 = (-1); return ____chimes_ret_var_91; ; }
 # 1567 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1568 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  if (frame < 0 || frame >= AVI->track[AVI->aptr].audio_chunks) {return 0; };
+  if (frame < 0 || frame >= AVI->track[AVI->aptr].audio_chunks) { long ____chimes_ret_var_92; ____chimes_ret_var_92 = (0); return ____chimes_ret_var_92; ; };
 # 1569 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  return(AVI->track[AVI->aptr].audio_index[frame].len);
+   long ____chimes_ret_var_93; ____chimes_ret_var_93 = ((AVI->track[AVI->aptr].audio_index[frame].len)); return ____chimes_ret_var_93; ;
 # 1570 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13031,14 +12746,14 @@ long AVI_get_video_position_npm(avi_t *AVI, long frame)
 # 1573 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1574 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_94; ____chimes_ret_var_94 = (-1); return ____chimes_ret_var_94; ; }
 # 1575 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; long ____chimes_ret_var_95; ____chimes_ret_var_95 = (-1); return ____chimes_ret_var_95; ; }
 # 1576 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1577 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (frame < 0 || frame >= AVI->video_frames) {return 0; };
+   if (frame < 0 || frame >= AVI->video_frames) { long ____chimes_ret_var_96; ____chimes_ret_var_96 = (0); return ____chimes_ret_var_96; ; };
 # 1578 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return(AVI->video_index[frame].pos);
+    long ____chimes_ret_var_97; ____chimes_ret_var_97 = ((AVI->video_index[frame].pos)); return ____chimes_ret_var_97; ;
 # 1579 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13046,14 +12761,14 @@ int AVI_seek_start_npm(avi_t *AVI)
 # 1583 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1584 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; int ____chimes_ret_var_98; ____chimes_ret_var_98 = (-1); return ____chimes_ret_var_98; ; }
 # 1585 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1586 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   (*____chimes_extern_func_lseek)(AVI->fdes, AVI->movi_start, 0);
+   lseek(AVI->fdes,AVI->movi_start,0);
 # 1587 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_pos = 0;
 # 1588 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_99; ____chimes_ret_var_99 = (0); return ____chimes_ret_var_99; ;
 # 1589 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13061,16 +12776,16 @@ int AVI_set_video_position_npm(avi_t *AVI, long frame)
 # 1592 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1593 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; int ____chimes_ret_var_100; ____chimes_ret_var_100 = (-1); return ____chimes_ret_var_100; ; }
 # 1594 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; int ____chimes_ret_var_101; ____chimes_ret_var_101 = (-1); return ____chimes_ret_var_101; ; }
 # 1595 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1596 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (frame < 0) {frame = 0; };
 # 1597 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->video_pos = frame;
 # 1598 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_102; ____chimes_ret_var_102 = (0); return ____chimes_ret_var_102; ;
 # 1599 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13078,12 +12793,12 @@ int AVI_set_audio_bitrate_npm(avi_t *AVI, long bitrate)
 # 1602 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1603 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==1) { AVI_errno = 7; return -1; }
+   if(AVI->mode==1) { AVI_errno = 7; int ____chimes_ret_var_103; ____chimes_ret_var_103 = (-1); return ____chimes_ret_var_103; ; }
 # 1604 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1605 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    AVI->track[AVI->aptr].mp3rate = bitrate;
 # 1606 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_104; ____chimes_ret_var_104 = (0); return ____chimes_ret_var_104; ;
 # 1607 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13094,12 +12809,12 @@ long AVI_read_frame_npm(avi_t *AVI, char *vidbuf, int *keyframe)
    long n;
 # 1613 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1614 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_105; ____chimes_ret_var_105 = (-1); return ____chimes_ret_var_105; ; }
 # 1615 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->video_index) { AVI_errno = 13; return -1; }
+   if(!AVI->video_index) { AVI_errno = 13; long ____chimes_ret_var_106; ____chimes_ret_var_106 = (-1); return ____chimes_ret_var_106; ; }
 # 1616 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1617 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->video_pos < 0 || AVI->video_pos >= AVI->video_frames) {return -1; };
+   if (AVI->video_pos < 0 || AVI->video_pos >= AVI->video_frames) { long ____chimes_ret_var_107; ____chimes_ret_var_107 = (-1); return ____chimes_ret_var_107; ; };
 # 1618 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    n = AVI->video_index[AVI->video_pos].len;
 # 1619 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13107,7 +12822,7 @@ long AVI_read_frame_npm(avi_t *AVI, char *vidbuf, int *keyframe)
    *keyframe = (AVI->video_index[AVI->video_pos].key==0x10) ? 1:0;
 # 1621 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1622 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   (*____chimes_extern_func_lseek)(AVI->fdes, AVI->video_index[AVI->video_pos].pos, 0);
+   lseek(AVI->fdes, AVI->video_index[AVI->video_pos].pos, 0);
 # 1623 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1624 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (avi_read_npm(AVI->fdes, vidbuf, n) != n)
@@ -13116,7 +12831,7 @@ long AVI_read_frame_npm(avi_t *AVI, char *vidbuf, int *keyframe)
 # 1626 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       AVI_errno = 3;
 # 1627 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return -1;
+       long ____chimes_ret_var_108; ____chimes_ret_var_108 = (-1); return ____chimes_ret_var_108; ;
 # 1628 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1629 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13124,7 +12839,7 @@ long AVI_read_frame_npm(avi_t *AVI, char *vidbuf, int *keyframe)
    AVI->video_pos++;
 # 1631 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1632 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return n;
+    long ____chimes_ret_var_109; ____chimes_ret_var_109 = (n); return ____chimes_ret_var_109; ;
 # 1633 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13135,9 +12850,9 @@ int AVI_set_audio_position_npm(avi_t *AVI, long byte)
    long n0, n1, n;
 # 1638 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1639 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; int ____chimes_ret_var_110; ____chimes_ret_var_110 = (-1); return ____chimes_ret_var_110; ; }
 # 1640 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; return -1; }
+   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; int ____chimes_ret_var_111; ____chimes_ret_var_111 = (-1); return ____chimes_ret_var_111; ; }
 # 1641 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1642 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    if (byte < 0) {byte = 0; };
@@ -13166,7 +12881,7 @@ int AVI_set_audio_position_npm(avi_t *AVI, long byte)
    AVI->track[AVI->aptr].audio_posb = byte - AVI->track[AVI->aptr].audio_index[n0].tot;
 # 1660 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1661 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return 0;
+    int ____chimes_ret_var_112; ____chimes_ret_var_112 = (0); return ____chimes_ret_var_112; ;
 # 1662 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13177,9 +12892,9 @@ long AVI_read_audio_npm(avi_t *AVI, char *audbuf, long bytes)
    long nr, pos, left, todo;
 # 1667 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1668 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(AVI->mode==0) { AVI_errno = 7; return -1; }
+   if(AVI->mode==0) { AVI_errno = 7; long ____chimes_ret_var_113; ____chimes_ret_var_113 = (-1); return ____chimes_ret_var_113; ; }
 # 1669 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; return -1; }
+   if(!AVI->track[AVI->aptr].audio_index) { AVI_errno = 13; long ____chimes_ret_var_114; ____chimes_ret_var_114 = (-1); return ____chimes_ret_var_114; ; }
 # 1670 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1671 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    nr = 0;
@@ -13195,7 +12910,7 @@ long AVI_read_audio_npm(avi_t *AVI, char *audbuf, long bytes)
 # 1677 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1678 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if (AVI->track[AVI->aptr].audio_posc>=AVI->track[AVI->aptr].audio_chunks-1) {return nr; };
+         if (AVI->track[AVI->aptr].audio_posc>=AVI->track[AVI->aptr].audio_chunks-1) { long ____chimes_ret_var_115; ____chimes_ret_var_115 = (nr); return ____chimes_ret_var_115; ; };
 # 1679 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          AVI->track[AVI->aptr].audio_posc++;
 # 1680 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13209,7 +12924,7 @@ long AVI_read_audio_npm(avi_t *AVI, char *audbuf, long bytes)
 # 1687 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       pos = AVI->track[AVI->aptr].audio_index[AVI->track[AVI->aptr].audio_posc].pos + AVI->track[AVI->aptr].audio_posb;
 # 1688 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      (*____chimes_extern_func_lseek)(AVI->fdes, pos, 0);
+      lseek(AVI->fdes, pos, 0);
 # 1689 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       if (avi_read_npm(AVI->fdes, audbuf+nr, todo) != todo)
 # 1690 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13217,7 +12932,7 @@ long AVI_read_audio_npm(avi_t *AVI, char *audbuf, long bytes)
 # 1691 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          AVI_errno = 3;
 # 1692 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         return -1;
+          long ____chimes_ret_var_116; ____chimes_ret_var_116 = (-1); return ____chimes_ret_var_116; ;
 # 1693 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       }
 # 1694 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13230,7 +12945,7 @@ long AVI_read_audio_npm(avi_t *AVI, char *audbuf, long bytes)
    }
 # 1698 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1699 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   return nr;
+    long ____chimes_ret_var_117; ____chimes_ret_var_117 = (nr); return ____chimes_ret_var_117; ;
 # 1700 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13248,7 +12963,7 @@ int AVI_read_data_npm(avi_t *AVI, char *vidbuf, long max_vidbuf,
    char data[8];
 # 1722 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1723 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-   if (AVI->mode==0) {return 0; };
+   if (AVI->mode==0) { int ____chimes_ret_var_118; ____chimes_ret_var_118 = (0); return ____chimes_ret_var_118; ; };
 # 1724 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1725 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    while(1)
@@ -13257,16 +12972,16 @@ int AVI_read_data_npm(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1727 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1728 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1729 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if (avi_read_npm(AVI->fdes, data, 8) != 8) {return 0; };
+      if (avi_read_npm(AVI->fdes, data, 8) != 8) { int ____chimes_ret_var_119; ____chimes_ret_var_119 = (0); return ____chimes_ret_var_119; ; };
 # 1730 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1731 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1732 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1733 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if((*____chimes_extern_func_strncasecmp)(data, "LIST", 4) == 0)
+      if(strncasecmp(data,"LIST",4) == 0)
 # 1734 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
       {
 # 1735 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         (*____chimes_extern_func_lseek)(AVI->fdes, 4, 1);
+         lseek(AVI->fdes,4,1);
 # 1736 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          continue;
 # 1737 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13276,7 +12991,7 @@ int AVI_read_data_npm(avi_t *AVI, char *vidbuf, long max_vidbuf,
       n = ( ((str2ulong_npm((unsigned char *)data+4))+1) & ~1 );
 # 1740 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 # 1741 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      if ((*____chimes_extern_func_strncasecmp)(data, AVI->video_tag, 3) == 0) {{
+      if (strncasecmp(data,AVI->video_tag,3) == 0) {{
 # 1743 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          *len = n;
 # 1744 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13286,17 +13001,17 @@ int AVI_read_data_npm(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1746 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1747 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            (*____chimes_extern_func_lseek)(AVI->fdes, n, 1);
+            lseek(AVI->fdes,n,1);
 # 1748 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            return -1;
+             int ____chimes_ret_var_120; ____chimes_ret_var_120 = (-1); return ____chimes_ret_var_120; ;
 # 1749 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          }
 # 1750 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if (avi_read_npm(AVI->fdes, vidbuf, n) != n) {return 0; };
+         if (avi_read_npm(AVI->fdes, vidbuf, n) != n) { int ____chimes_ret_var_121; ____chimes_ret_var_121 = (0); return ____chimes_ret_var_121; ; };
 # 1751 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         return 1;
+          int ____chimes_ret_var_122; ____chimes_ret_var_122 = (1); return ____chimes_ret_var_122; ;
 # 1752 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if ((*____chimes_extern_func_strncasecmp)(data, AVI->track[AVI->aptr].audio_tag, 4) == 0) {{
+      }; } else if (strncasecmp(data,AVI->track[AVI->aptr].audio_tag,4) == 0) {{
 # 1755 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          *len = n;
 # 1756 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13304,19 +13019,19 @@ int AVI_read_data_npm(avi_t *AVI, char *vidbuf, long max_vidbuf,
 # 1757 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          {
 # 1758 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            (*____chimes_extern_func_lseek)(AVI->fdes, n, 1);
+            lseek(AVI->fdes,n,1);
 # 1759 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-            return -2;
+             int ____chimes_ret_var_123; ____chimes_ret_var_123 = (-2); return ____chimes_ret_var_123; ;
 # 1760 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          }
 # 1761 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         if (avi_read_npm(AVI->fdes, audbuf, n) != n) {return 0; };
+         if (avi_read_npm(AVI->fdes, audbuf, n) != n) { int ____chimes_ret_var_124; ____chimes_ret_var_124 = (0); return ____chimes_ret_var_124; ; };
 # 1762 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-         return 2;
+          int ____chimes_ret_var_125; ____chimes_ret_var_125 = (2); return ____chimes_ret_var_125; ;
 # 1763 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
          break;
 # 1764 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      }; } else if ((*____chimes_extern_func_lseek)(AVI->fdes, n, 1)<0) {return 0; };
+      }; } else if (lseek(AVI->fdes,n,1)<0) { int ____chimes_ret_var_126; ____chimes_ret_var_126 = (0); return ____chimes_ret_var_126; ; };
 # 1767 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1768 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13377,9 +13092,9 @@ char *AVI_strerror_npm()
 # 1825 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1826 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-       int * ____chimes_unroll_var_1 = (*____chimes_extern_func___errno_location)(); char * ____chimes_unroll_var_2 = (*____chimes_extern_func_strerror)((*____chimes_unroll_var_1)); sprintf(error_string,"%s - %s",avi_errors[aerrno],____chimes_unroll_var_2);
+      sprintf(error_string,"%s - %s",avi_errors[aerrno],strerror((*__errno_location ())));
 # 1827 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return error_string;
+       char * ____chimes_ret_var_127; ____chimes_ret_var_127 = (error_string); return ____chimes_ret_var_127; ;
 # 1828 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1829 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13387,7 +13102,7 @@ char *AVI_strerror_npm()
 # 1830 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    {
 # 1831 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-      return avi_errors[aerrno];
+       char * ____chimes_ret_var_128; ____chimes_ret_var_128 = (avi_errors[aerrno]); return ____chimes_ret_var_128; ;
 # 1832 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
    }
 # 1833 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
@@ -13397,7 +13112,7 @@ uint64_t AVI_max_size_npm()
 # 1836 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 {
 # 1837 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
-  return((uint64_t) ((2147483647 * 2U + 1U)-(1<<20)*16-2048));
+   uint64_t ____chimes_ret_var_129; ____chimes_ret_var_129 = (((uint64_t) ((2147483647 * 2U + 1U)-(1<<20)*16-2048))); return ____chimes_ret_var_129; ;
 # 1838 "/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/avilib.c"
 }
 
@@ -13406,202 +13121,121 @@ uint64_t AVI_max_size_npm()
 
 
 static int module_init() {
-    init_module(912368063336277387UL, 93, 57, 101, 129, 57, 9, 66, 167, 0, 4,
-                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)1, (912368063336277387UL + 2UL), (912368063336277387UL + 3UL), (912368063336277387UL + 5UL), "open", (unsigned)1, (912368063336277387UL + 99UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 4UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 4UL), (912368063336277387UL + 6UL), (912368063336277387UL + 14UL),
-                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (unsigned)1, (912368063336277387UL + 112UL), (912368063336277387UL + 113UL), (912368063336277387UL + 114UL), (912368063336277387UL + 115UL), (912368063336277387UL + 116UL), "write", (unsigned)1, (912368063336277387UL + 158UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 219UL),
-                           &____alias_loc_id_5, (unsigned)6, (unsigned)0, (unsigned)1, (912368063336277387UL + 161UL), (912368063336277387UL + 162UL), (912368063336277387UL + 163UL), (912368063336277387UL + 164UL), (912368063336277387UL + 165UL), (912368063336277387UL + 219UL), "strncmp", (unsigned)2, (912368063336277387UL + 223UL), (912368063336277387UL + 6714UL),
-                           &____alias_loc_id_6, (unsigned)13, (unsigned)0, (unsigned)0, (912368063336277387UL + 233UL), (912368063336277387UL + 234UL), (912368063336277387UL + 235UL), (912368063336277387UL + 236UL), (912368063336277387UL + 237UL), (912368063336277387UL + 238UL), (912368063336277387UL + 239UL), (912368063336277387UL + 240UL), (912368063336277387UL + 241UL), (912368063336277387UL + 242UL), (912368063336277387UL + 243UL), (912368063336277387UL + 244UL), (912368063336277387UL + 245UL),
-                           &____alias_loc_id_7, (unsigned)7, (unsigned)0, (unsigned)0, (912368063336277387UL + 1550UL), (912368063336277387UL + 1551UL), (912368063336277387UL + 1552UL), (912368063336277387UL + 1553UL), (912368063336277387UL + 1554UL), (912368063336277387UL + 1555UL), (912368063336277387UL + 1651UL),
-                           &____alias_loc_id_8, (unsigned)5, (unsigned)0, (unsigned)0, (912368063336277387UL + 1739UL), (912368063336277387UL + 1740UL), (912368063336277387UL + 1741UL), (912368063336277387UL + 1742UL), (912368063336277387UL + 1743UL),
-                           &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 1801UL),
-                            &____alias_loc_id_10, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 1801UL),
-                            &____alias_loc_id_11, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 2070UL), (912368063336277387UL + 2071UL), (912368063336277387UL + 2072UL),
-                            &____alias_loc_id_12, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 2117UL), (912368063336277387UL + 2118UL),
-                            &____alias_loc_id_13, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 2115UL), (912368063336277387UL + 2116UL), (912368063336277387UL + 2117UL), (912368063336277387UL + 2119UL), (912368063336277387UL + 2120UL), (912368063336277387UL + 2254UL),
-                            &____alias_loc_id_14, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 2373UL), (912368063336277387UL + 2374UL),
-                            &____alias_loc_id_15, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 2373UL),
-                            &____alias_loc_id_16, (unsigned)15, (unsigned)0, (unsigned)0, (912368063336277387UL + 2424UL), (912368063336277387UL + 2425UL), (912368063336277387UL + 2426UL), (912368063336277387UL + 2427UL), (912368063336277387UL + 2428UL), (912368063336277387UL + 2429UL), (912368063336277387UL + 2430UL), (912368063336277387UL + 2431UL), (912368063336277387UL + 2433UL), (912368063336277387UL + 2434UL), (912368063336277387UL + 2435UL), (912368063336277387UL + 2436UL), (912368063336277387UL + 2437UL), (912368063336277387UL + 2438UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_17, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 2423UL), (912368063336277387UL + 2430UL), (912368063336277387UL + 2432UL),
-                            &____alias_loc_id_18, (unsigned)4, (unsigned)0, (unsigned)1, (912368063336277387UL + 14UL), (912368063336277387UL + 3840UL), (912368063336277387UL + 3841UL), (912368063336277387UL + 3842UL), "open", (unsigned)1, (912368063336277387UL + 3892UL),
-                            &____alias_loc_id_19, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 14UL),
-                            &____alias_loc_id_20, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 3902UL), (912368063336277387UL + 3904UL),
-                            &____alias_loc_id_21, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_22, (unsigned)9, (unsigned)0, (unsigned)0, (912368063336277387UL + 3897UL), (912368063336277387UL + 3899UL), (912368063336277387UL + 3900UL), (912368063336277387UL + 3909UL), (912368063336277387UL + 3910UL), (912368063336277387UL + 3911UL), (912368063336277387UL + 3912UL), (912368063336277387UL + 3914UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_23, (unsigned)0, (unsigned)0, (unsigned)1, "strncasecmp", (unsigned)2, (912368063336277387UL + 4162UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_24, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 3897UL), (912368063336277387UL + 3899UL), (912368063336277387UL + 3900UL), (912368063336277387UL + 3910UL), (912368063336277387UL + 3911UL), (912368063336277387UL + 3912UL), (912368063336277387UL + 3914UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_25, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 3897UL), (912368063336277387UL + 3901UL),
-                            &____alias_loc_id_26, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 3897UL), (912368063336277387UL + 3901UL), (912368063336277387UL + 3905UL), (912368063336277387UL + 3906UL), (912368063336277387UL + 3909UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_27, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 3897UL), (912368063336277387UL + 3901UL), (912368063336277387UL + 3905UL), (912368063336277387UL + 3906UL), (912368063336277387UL + 3909UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_28, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 3897UL), (912368063336277387UL + 3901UL), (912368063336277387UL + 3905UL), (912368063336277387UL + 3906UL), (912368063336277387UL + 3909UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_29, (unsigned)9, (unsigned)0, (unsigned)0, (912368063336277387UL + 3897UL), (912368063336277387UL + 3901UL), (912368063336277387UL + 3905UL), (912368063336277387UL + 3906UL), (912368063336277387UL + 3907UL), (912368063336277387UL + 3908UL), (912368063336277387UL + 3909UL), (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_30, (unsigned)9, (unsigned)0, (unsigned)0, (912368063336277387UL + 3895UL), (912368063336277387UL + 3896UL), (912368063336277387UL + 3903UL), (912368063336277387UL + 3904UL), (912368063336277387UL + 3910UL), (912368063336277387UL + 3911UL), (912368063336277387UL + 3912UL), (912368063336277387UL + 3913UL), (912368063336277387UL + 3914UL),
-                            &____alias_loc_id_31, (unsigned)0, (unsigned)0, (unsigned)1, "strncasecmp", (unsigned)2, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_32, (unsigned)0, (unsigned)0, (unsigned)1, "strncasecmp", (unsigned)2, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_33, (unsigned)1, (unsigned)0, (unsigned)1, (912368063336277387UL + 3898UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_34, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 3903UL),
-                            &____alias_loc_id_35, (unsigned)0, (unsigned)0, (unsigned)1, "strncasecmp", (unsigned)2, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_36, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_37, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 3902UL),
-                            &____alias_loc_id_38, (unsigned)8, (unsigned)0, (unsigned)1, (912368063336277387UL + 3897UL), (912368063336277387UL + 3899UL), (912368063336277387UL + 3900UL), (912368063336277387UL + 3910UL), (912368063336277387UL + 3911UL), (912368063336277387UL + 3912UL), (912368063336277387UL + 3914UL), (912368063336277387UL + 5085UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 4162UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_39, (unsigned)1, (unsigned)0, (unsigned)1, (912368063336277387UL + 3897UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 4162UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_40, (unsigned)0, (unsigned)0, (unsigned)1, "strncasecmp", (unsigned)2, (912368063336277387UL + 4162UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_41, (unsigned)2, (unsigned)0, (unsigned)1, (912368063336277387UL + 3897UL), (912368063336277387UL + 3901UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_42, (unsigned)0, (unsigned)0, (unsigned)1, "strncasecmp", (unsigned)2, (912368063336277387UL + 3915UL), (912368063336277387UL + 4632UL),
-                            &____alias_loc_id_43, (unsigned)0, (unsigned)0, (unsigned)1, "strncasecmp", (unsigned)2, (912368063336277387UL + 3915UL), (912368063336277387UL + 4632UL),
-                            &____alias_loc_id_44, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_45, (unsigned)5, (unsigned)0, (unsigned)1, (912368063336277387UL + 3897UL), (912368063336277387UL + 3901UL), (912368063336277387UL + 3905UL), (912368063336277387UL + 3906UL), (912368063336277387UL + 3909UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_46, (unsigned)3, (unsigned)0, (unsigned)1, (912368063336277387UL + 3905UL), (912368063336277387UL + 3906UL), (912368063336277387UL + 3909UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_47, (unsigned)5, (unsigned)0, (unsigned)1, (912368063336277387UL + 3905UL), (912368063336277387UL + 3906UL), (912368063336277387UL + 3908UL), (912368063336277387UL + 3909UL), (912368063336277387UL + 4632UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_48, (unsigned)9, (unsigned)0, (unsigned)1, (912368063336277387UL + 3897UL), (912368063336277387UL + 3901UL), (912368063336277387UL + 3905UL), (912368063336277387UL + 3906UL), (912368063336277387UL + 3907UL), (912368063336277387UL + 3908UL), (912368063336277387UL + 3909UL), (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_49, (unsigned)1, (unsigned)0, (unsigned)1, (912368063336277387UL + 3898UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_50, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 3902UL), (912368063336277387UL + 3904UL),
-                            &____alias_loc_id_51, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5085UL),
-                            &____alias_loc_id_52, (unsigned)1, (unsigned)0, (unsigned)1, (912368063336277387UL + 3898UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 4162UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_53, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 3897UL), (912368063336277387UL + 3901UL), (912368063336277387UL + 3916UL), (912368063336277387UL + 3917UL),
-                            &____alias_loc_id_54, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 3901UL),
-                            &____alias_loc_id_55, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 3918UL),
-                            &____alias_loc_id_56, (unsigned)0, (unsigned)0, (unsigned)1, "strncasecmp", (unsigned)2, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_57, (unsigned)1, (unsigned)0, (unsigned)1, (912368063336277387UL + 3898UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_58, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 14UL), (912368063336277387UL + 5330UL), (912368063336277387UL + 5331UL), (912368063336277387UL + 5332UL),
-                            &____alias_loc_id_59, (unsigned)5, (unsigned)0, (unsigned)1, (912368063336277387UL + 5373UL), (912368063336277387UL + 5374UL), (912368063336277387UL + 5375UL), (912368063336277387UL + 5376UL), (912368063336277387UL + 5377UL), "read", (unsigned)1, (912368063336277387UL + 5419UL),
-                            &____alias_loc_id_60, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5803UL),
-                            &____alias_loc_id_61, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5903UL), (912368063336277387UL + 6004UL),
-                            &____alias_loc_id_62, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 6135UL), (912368063336277387UL + 6136UL), (912368063336277387UL + 6137UL),
-                            &____alias_loc_id_63, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 6348UL), (912368063336277387UL + 6349UL), (912368063336277387UL + 6350UL), (912368063336277387UL + 6351UL), (912368063336277387UL + 6352UL), (912368063336277387UL + 6353UL),
-                            &____alias_loc_id_64, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 6514UL), (912368063336277387UL + 6519UL),
-                            &____alias_loc_id_65, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 6514UL), (912368063336277387UL + 6519UL),
-                            &____alias_loc_id_66, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 6519UL),
-                            &____alias_loc_id_67, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 6519UL),
-                            &____alias_loc_id_68, (unsigned)1, (unsigned)0, (unsigned)1, (912368063336277387UL + 6354UL), "strncasecmp", (unsigned)2, (912368063336277387UL + 6355UL), (912368063336277387UL + 6514UL),
-                            &____alias_loc_id_69, (unsigned)0, (unsigned)0, (unsigned)1, "strncasecmp", (unsigned)2, (912368063336277387UL + 6355UL), (912368063336277387UL + 6514UL),
-                            &____alias_loc_id_70, (unsigned)0, (unsigned)0, (unsigned)1, "strncasecmp", (unsigned)2, (912368063336277387UL + 6355UL), (912368063336277387UL + 6717UL),
-                            &____alias_loc_id_71, (unsigned)1, (unsigned)0, (unsigned)1, (912368063336277387UL + 6571UL), "strerror", (unsigned)1, (912368063336277387UL + 6612UL),
-                            &____alias_loc_id_72, (unsigned)1, (unsigned)0, (unsigned)1, (912368063336277387UL + 6570UL), "__errno_location", (unsigned)1, (912368063336277387UL + 6607UL),
-                            &____alias_loc_id_73, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 6636UL), (912368063336277387UL + 6637UL), (912368063336277387UL + 6638UL), (912368063336277387UL + 6639UL),
-                            &____alias_loc_id_74, (unsigned)7, (unsigned)0, (unsigned)0, (912368063336277387UL + 1UL), (912368063336277387UL + 2UL), (912368063336277387UL + 3UL), (912368063336277387UL + 4UL), (912368063336277387UL + 5UL), (912368063336277387UL + 14UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_75, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 111UL), (912368063336277387UL + 112UL), (912368063336277387UL + 113UL), (912368063336277387UL + 114UL), (912368063336277387UL + 115UL), (912368063336277387UL + 116UL),
-                            &____alias_loc_id_76, (unsigned)5, (unsigned)0, (unsigned)0, (912368063336277387UL + 161UL), (912368063336277387UL + 162UL), (912368063336277387UL + 163UL), (912368063336277387UL + 164UL), (912368063336277387UL + 165UL),
-                            &____alias_loc_id_77, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 232UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_78, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 1550UL), (912368063336277387UL + 1551UL), (912368063336277387UL + 1552UL), (912368063336277387UL + 1553UL), (912368063336277387UL + 1554UL), (912368063336277387UL + 1555UL),
-                            &____alias_loc_id_79, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 1660UL), (912368063336277387UL + 1661UL), (912368063336277387UL + 1694UL),
-                            &____alias_loc_id_80, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 1696UL), (912368063336277387UL + 1697UL), (912368063336277387UL + 1698UL),
-                            &____alias_loc_id_81, (unsigned)7, (unsigned)0, (unsigned)0, (912368063336277387UL + 1738UL), (912368063336277387UL + 1739UL), (912368063336277387UL + 1740UL), (912368063336277387UL + 1741UL), (912368063336277387UL + 1742UL), (912368063336277387UL + 1791UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_82, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 1795UL), (912368063336277387UL + 1796UL), (912368063336277387UL + 1797UL), (912368063336277387UL + 1798UL), (912368063336277387UL + 1799UL), (912368063336277387UL + 1800UL), (912368063336277387UL + 1801UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_83, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 1900UL), (912368063336277387UL + 1901UL), (912368063336277387UL + 1943UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_84, (unsigned)9, (unsigned)0, (unsigned)0, (912368063336277387UL + 1944UL), (912368063336277387UL + 1945UL), (912368063336277387UL + 1946UL), (912368063336277387UL + 1947UL), (912368063336277387UL + 1948UL), (912368063336277387UL + 1949UL), (912368063336277387UL + 1950UL), (912368063336277387UL + 2064UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_85, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 2069UL), (912368063336277387UL + 2070UL), (912368063336277387UL + 2071UL), (912368063336277387UL + 2072UL), (912368063336277387UL + 2111UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_86, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 2114UL), (912368063336277387UL + 2115UL), (912368063336277387UL + 2116UL), (912368063336277387UL + 2117UL), (912368063336277387UL + 2254UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_87, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 2257UL),
-                            &____alias_loc_id_88, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 2285UL), (912368063336277387UL + 2286UL),
-                            &____alias_loc_id_89, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 2311UL), (912368063336277387UL + 2312UL),
-                            &____alias_loc_id_90, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 2336UL), (912368063336277387UL + 2337UL), (912368063336277387UL + 2338UL), (912368063336277387UL + 2363UL),
-                            &____alias_loc_id_91, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 2365UL),
-                            &____alias_loc_id_92, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 2422UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_93, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 14UL), (912368063336277387UL + 3839UL), (912368063336277387UL + 3840UL), (912368063336277387UL + 3841UL), (912368063336277387UL + 3842UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_94, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 3894UL), (912368063336277387UL + 5085UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_95, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 14UL), (912368063336277387UL + 5329UL), (912368063336277387UL + 5330UL), (912368063336277387UL + 5331UL), (912368063336277387UL + 5332UL), (912368063336277387UL + 6713UL),
-                            &____alias_loc_id_96, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 5372UL), (912368063336277387UL + 5373UL), (912368063336277387UL + 5374UL), (912368063336277387UL + 5375UL), (912368063336277387UL + 5376UL), (912368063336277387UL + 5377UL),
-                            &____alias_loc_id_97, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5424UL),
-                            &____alias_loc_id_98, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5440UL),
-                            &____alias_loc_id_99, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5448UL),
-                             &____alias_loc_id_100, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5457UL),
-                             &____alias_loc_id_101, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5466UL),
-                             &____alias_loc_id_102, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5474UL),
-                             &____alias_loc_id_103, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5482UL),
-                             &____alias_loc_id_104, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5490UL),
-                             &____alias_loc_id_105, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5498UL),
-                             &____alias_loc_id_106, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5513UL),
-                             &____alias_loc_id_107, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5527UL),
-                             &____alias_loc_id_108, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5542UL),
-                             &____alias_loc_id_109, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5557UL),
-                             &____alias_loc_id_110, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5571UL),
-                             &____alias_loc_id_111, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5585UL),
-                             &____alias_loc_id_112, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5599UL),
-                             &____alias_loc_id_113, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5613UL),
-                             &____alias_loc_id_114, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5627UL),
-                             &____alias_loc_id_115, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 5635UL),
-                             &____alias_loc_id_116, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 5643UL), (912368063336277387UL + 5644UL), (912368063336277387UL + 5645UL), (912368063336277387UL + 6713UL),
-                             &____alias_loc_id_117, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 5690UL), (912368063336277387UL + 5691UL), (912368063336277387UL + 5692UL), (912368063336277387UL + 6713UL),
-                             &____alias_loc_id_118, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 5755UL), (912368063336277387UL + 5756UL), (912368063336277387UL + 5757UL), (912368063336277387UL + 6713UL),
-                             &____alias_loc_id_119, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 5802UL), (912368063336277387UL + 5803UL), (912368063336277387UL + 5829UL), (912368063336277387UL + 6713UL),
-                             &____alias_loc_id_120, (unsigned)5, (unsigned)0, (unsigned)0, (912368063336277387UL + 5830UL), (912368063336277387UL + 5831UL), (912368063336277387UL + 5832UL), (912368063336277387UL + 5866UL), (912368063336277387UL + 6713UL),
-                             &____alias_loc_id_121, (unsigned)5, (unsigned)0, (unsigned)0, (912368063336277387UL + 5868UL), (912368063336277387UL + 5869UL), (912368063336277387UL + 5870UL), (912368063336277387UL + 5897UL), (912368063336277387UL + 6713UL),
-                             &____alias_loc_id_122, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 5899UL), (912368063336277387UL + 5900UL), (912368063336277387UL + 5901UL), (912368063336277387UL + 5902UL), (912368063336277387UL + 6002UL), (912368063336277387UL + 6713UL),
-                             &____alias_loc_id_123, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 6005UL), (912368063336277387UL + 6006UL), (912368063336277387UL + 6007UL), (912368063336277387UL + 6008UL), (912368063336277387UL + 6009UL), (912368063336277387UL + 6010UL), (912368063336277387UL + 6128UL), (912368063336277387UL + 6713UL),
-                             &____alias_loc_id_124, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 6130UL), (912368063336277387UL + 6131UL), (912368063336277387UL + 6132UL), (912368063336277387UL + 6133UL), (912368063336277387UL + 6134UL), (912368063336277387UL + 6136UL), (912368063336277387UL + 6344UL), (912368063336277387UL + 6713UL),
-                             &____alias_loc_id_125, (unsigned)7, (unsigned)0, (unsigned)0, (912368063336277387UL + 6347UL), (912368063336277387UL + 6348UL), (912368063336277387UL + 6349UL), (912368063336277387UL + 6350UL), (912368063336277387UL + 6351UL), (912368063336277387UL + 6352UL), (912368063336277387UL + 6353UL),
-                             &____alias_loc_id_126, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 6520UL), (912368063336277387UL + 6521UL),
-                             &____alias_loc_id_127, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 6569UL), (912368063336277387UL + 6570UL), (912368063336277387UL + 6572UL),
-                             &____alias_loc_id_128, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 6635UL), (912368063336277387UL + 6704UL), (912368063336277387UL + 6713UL),
-                            "avi_read", (void *)(&avi_read_npm), (void *)__null, 1, &____alias_loc_id_59, 3, 0UL, (912368063336277387UL + 5419UL), 0UL, 0UL, 1, "read", 3, 0UL, (912368063336277387UL + 5419UL), 0UL, 0UL,
-                            "avi_write", (void *)(&avi_write_npm), (void *)__null, 1, &____alias_loc_id_3, 3, 0UL, (912368063336277387UL + 158UL), 0UL, 0UL, 1, "write", 3, 0UL, (912368063336277387UL + 158UL), 0UL, 0UL,
-                            "long2str", (void *)(&long2str_npm), (void *)__null, 0, 2, (912368063336277387UL + 1694UL), 0UL, 0UL, 0,
-                            "str2ulong", (void *)(&str2ulong_npm), (void *)__null, 0, 1, (912368063336277387UL + 2284UL), 0UL, 0,
-                            "str2ushort", (void *)(&str2ushort_npm), (void *)__null, 0, 1, (912368063336277387UL + 5439UL), 0UL, 0,
-                            "avi_sampsize", (void *)(&avi_sampsize_npm), (void *)__null, 0, 2, (912368063336277387UL + 1730UL), 0UL, 0UL, 0,
-                            "avi_add_chunk", (void *)(&avi_add_chunk_npm), (void *)__null, 1, &____alias_loc_id_73, 4, (912368063336277387UL + 6704UL), (912368063336277387UL + 6705UL), (912368063336277387UL + 6706UL), 0UL, 0UL, 5, "memcpy", 3, (912368063336277387UL + 6640UL), (912368063336277387UL + 6705UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 6640UL), 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 6640UL), 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 6706UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL,
-                            "avi_add_index_entry", (void *)(&avi_add_index_entry_npm), (void *)__null, 0, 5, (912368063336277387UL + 2064UL), (912368063336277387UL + 2065UL), 0UL, 0UL, 0UL, 0UL, 5, "realloc", 2, (912368063336277387UL + 1992UL), 0UL, (912368063336277387UL + 1992UL), "memcpy", 3, (912368063336277387UL + 1992UL), (912368063336277387UL + 2065UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 1992UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 1992UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 1992UL), 0UL, 0UL,
-                            "AVI_open_output_file", (void *)(&AVI_open_output_file_npm), (void *)__null, 3, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, 1, (912368063336277387UL + 99UL), (912368063336277387UL + 14UL), 7, "malloc", 1, 0UL, (912368063336277387UL + 14UL), "memset", 3, (912368063336277387UL + 14UL), 0UL, 0UL, 0UL, "open", 3, (912368063336277387UL + 99UL), 0UL, 0UL, 0UL, "free", 1, (912368063336277387UL + 14UL), 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 6UL), 0UL, 0UL, "close", 1, 0UL, 0UL, "free", 1, (912368063336277387UL + 14UL), 0UL,
-                            "AVI_set_video", (void *)(&AVI_set_video_npm), (void *)__null, 2, &____alias_loc_id_4, &____alias_loc_id_5, 5, (912368063336277387UL + 219UL), 0UL, 0UL, 0UL, (912368063336277387UL + 223UL), 0UL, 4, "strncmp", 3, (912368063336277387UL + 223UL), (912368063336277387UL + 6714UL), 0UL, 0UL, "memset", 3, (912368063336277387UL + 219UL), 0UL, 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 219UL), (912368063336277387UL + 223UL), 0UL, 0UL, "avi_update_header", 1, (912368063336277387UL + 219UL), 0UL,
-                            "AVI_set_audio", (void *)(&AVI_set_audio_npm), (void *)__null, 1, &____alias_loc_id_7, 6, (912368063336277387UL + 1651UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 3, "fprintf", 3, (912368063336277387UL + 1590UL), (912368063336277387UL + 6716UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "avi_update_header", 1, (912368063336277387UL + 1651UL), 0UL,
-                            "avi_update_header", (void *)(&avi_update_header_npm), (void *)__null, 1, &____alias_loc_id_6, 1, (912368063336277387UL + 1549UL), 0UL, 94, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 1549UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 1549UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "avi_sampsize", 2, (912368063336277387UL + 1549UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "fprintf", 2, (912368063336277387UL + 1590UL), (912368063336277387UL + 6727UL), 0UL, "exit", 1, 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memset", 3, (912368063336277387UL + 244UL), 0UL, 0UL, 0UL, "strlen", 1, (912368063336277387UL + 6729UL), 0UL, "sprintf", 4, (912368063336277387UL + 6729UL), (912368063336277387UL + 6730UL), (912368063336277387UL + 6731UL), (912368063336277387UL + 6717UL), 0UL, "strlen", 1, (912368063336277387UL + 6729UL), 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6729UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 244UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 244UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 244UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL,
-                            "avi_close_output_file", (void *)(&avi_close_output_file_npm), (void *)__null, 2, &____alias_loc_id_16, &____alias_loc_id_17, 1, (912368063336277387UL + 3838UL), 0UL, 99, "avi_add_chunk", 4, (912368063336277387UL + 3838UL), (912368063336277387UL + 6717UL), (912368063336277387UL + 2466UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 3838UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 3838UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "avi_sampsize", 2, (912368063336277387UL + 3838UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "sprintf", 4, (912368063336277387UL + 6729UL), (912368063336277387UL + 6730UL), (912368063336277387UL + 6731UL), (912368063336277387UL + 6717UL), 0UL, "memset", 3, (912368063336277387UL + 2436UL), 0UL, 0UL, 0UL, "strlen", 1, (912368063336277387UL + 6729UL), 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6729UL), 0UL, 0UL, "fprintf", 2, (912368063336277387UL + 1590UL), (912368063336277387UL + 6727UL), 0UL, "exit", 1, 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memset", 3, (912368063336277387UL + 2436UL), 0UL, 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2436UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2436UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 2436UL), 0UL, 0UL,
-                            "avi_write_data", (void *)(&avi_write_data_npm), (void *)__null, 2, &____alias_loc_id_10, &____alias_loc_id_9, 5, (912368063336277387UL + 1895UL), (912368063336277387UL + 1896UL), 0UL, 0UL, 0UL, 0UL, 5, "sprintf", 3, (912368063336277387UL + 1802UL), (912368063336277387UL + 6754UL), 0UL, 0UL, "avi_add_index_entry", 5, (912368063336277387UL + 1895UL), (912368063336277387UL + 1802UL), 0UL, 0UL, 0UL, 0UL, "avi_add_index_entry", 5, (912368063336277387UL + 1895UL), (912368063336277387UL + 6717UL), 0UL, 0UL, 0UL, 0UL, "avi_add_chunk", 4, (912368063336277387UL + 1895UL), (912368063336277387UL + 1802UL), (912368063336277387UL + 1896UL), 0UL, 0UL, "avi_add_chunk", 4, (912368063336277387UL + 1895UL), (912368063336277387UL + 6717UL), (912368063336277387UL + 1896UL), 0UL, 0UL,
-                            "AVI_write_frame", (void *)(&AVI_write_frame_npm), (void *)__null, 1, &____alias_loc_id_8, 4, (912368063336277387UL + 1791UL), (912368063336277387UL + 1792UL), 0UL, 0UL, 0UL, 1, "avi_write_data", 5, (912368063336277387UL + 1791UL), (912368063336277387UL + 1792UL), 0UL, 0UL, 0UL, 0UL,
-                            "AVI_dup_frame", (void *)(&AVI_dup_frame_npm), (void *)__null, 0, 1, (912368063336277387UL + 1943UL), 0UL, 1, "avi_add_index_entry", 5, (912368063336277387UL + 1943UL), (912368063336277387UL + 6717UL), 0UL, 0UL, 0UL, 0UL,
-                            "AVI_write_audio", (void *)(&AVI_write_audio_npm), (void *)__null, 1, &____alias_loc_id_11, 3, (912368063336277387UL + 2111UL), (912368063336277387UL + 2112UL), 0UL, 0UL, 1, "avi_write_data", 5, (912368063336277387UL + 2111UL), (912368063336277387UL + 2112UL), 0UL, 0UL, 0UL, 0UL,
-                            "AVI_append_audio", (void *)(&AVI_append_audio_npm), (void *)__null, 2, &____alias_loc_id_12, &____alias_loc_id_13, 3, (912368063336277387UL + 2254UL), (912368063336277387UL + 2255UL), 0UL, 0UL, 8, "str2ulong", 1, (912368063336277387UL + 2150UL), 0UL, "str2ulong", 1, (912368063336277387UL + 2150UL), 0UL, "long2str", 2, (912368063336277387UL + 2150UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2121UL), 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 2121UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 2255UL), 0UL, 0UL,
-                            "AVI_bytes_remain", (void *)(&AVI_bytes_remain_npm), (void *)__null, 0, 1, (912368063336277387UL + 2310UL), 0UL, 0,
-                            "AVI_bytes_written", (void *)(&AVI_bytes_written_npm), (void *)__null, 0, 1, (912368063336277387UL + 2335UL), 0UL, 0,
-                            "AVI_set_audio_track", (void *)(&AVI_set_audio_track_npm), (void *)__null, 0, 2, (912368063336277387UL + 2363UL), 0UL, 0UL, 0,
-                            "AVI_get_audio_track", (void *)(&AVI_get_audio_track_npm), (void *)__null, 0, 1, (912368063336277387UL + 2372UL), 0UL, 0,
-                            "AVI_close", (void *)(&AVI_close_npm), (void *)__null, 2, &____alias_loc_id_14, &____alias_loc_id_15, 1, (912368063336277387UL + 2421UL), 0UL, 5, "avi_close_output_file", 1, (912368063336277387UL + 2421UL), 0UL, "close", 1, 0UL, 0UL, "free", 1, (912368063336277387UL + 2396UL), 0UL, "free", 1, (912368063336277387UL + 2396UL), 0UL, "free", 1, (912368063336277387UL + 2421UL), 0UL,
-                            "AVI_open_input_file", (void *)(&AVI_open_input_file_npm), (void *)__null, 2, &____alias_loc_id_18, &____alias_loc_id_19, 2, (912368063336277387UL + 3892UL), 0UL, (912368063336277387UL + 14UL), 5, "malloc", 1, 0UL, (912368063336277387UL + 14UL), "memset", 3, (912368063336277387UL + 14UL), 0UL, 0UL, 0UL, "open", 2, (912368063336277387UL + 3892UL), 0UL, 0UL, "free", 1, (912368063336277387UL + 14UL), 0UL, "avi_parse_input_file", 2, (912368063336277387UL + 14UL), 0UL, 0UL,
-                            "AVI_open_fd", (void *)(&AVI_open_fd_npm), (void *)__null, 1, &____alias_loc_id_58, 2, 0UL, 0UL, (912368063336277387UL + 14UL), 3, "malloc", 1, 0UL, (912368063336277387UL + 14UL), "memset", 3, (912368063336277387UL + 14UL), 0UL, 0UL, 0UL, "avi_parse_input_file", 2, (912368063336277387UL + 14UL), 0UL, 0UL,
-                            "avi_parse_input_file", (void *)(&avi_parse_input_file_npm), (void *)__null, 38, &____alias_loc_id_20, &____alias_loc_id_21, &____alias_loc_id_22, &____alias_loc_id_23, &____alias_loc_id_24, &____alias_loc_id_25, &____alias_loc_id_26, &____alias_loc_id_27, &____alias_loc_id_28, &____alias_loc_id_29, &____alias_loc_id_30, &____alias_loc_id_31, &____alias_loc_id_32, &____alias_loc_id_33, &____alias_loc_id_34, &____alias_loc_id_35, &____alias_loc_id_36, &____alias_loc_id_37, &____alias_loc_id_38, &____alias_loc_id_39, &____alias_loc_id_40, &____alias_loc_id_41, &____alias_loc_id_42, &____alias_loc_id_43, &____alias_loc_id_44, &____alias_loc_id_45, &____alias_loc_id_46, &____alias_loc_id_47, &____alias_loc_id_48, &____alias_loc_id_49, &____alias_loc_id_50, &____alias_loc_id_51, &____alias_loc_id_52, &____alias_loc_id_53, &____alias_loc_id_54, &____alias_loc_id_55, &____alias_loc_id_56, &____alias_loc_id_57, 2, (912368063336277387UL + 5085UL), 0UL, 0UL, 89, "avi_read", 3, 0UL, (912368063336277387UL + 3915UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 3915UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 3915UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 3915UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "malloc", 1, 0UL, (912368063336277387UL + 4162UL), "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 4162UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "malloc", 1, 0UL, (912368063336277387UL + 4632UL), "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 4632UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4162UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4162UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4162UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4162UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 5085UL), (912368063336277387UL + 4162UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4162UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4162UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4162UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4162UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "fprintf", 3, (912368063336277387UL + 1590UL), (912368063336277387UL + 6716UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4162UL), 0UL, "avi_sampsize", 2, (912368063336277387UL + 5085UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4162UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4162UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4162UL), 0UL, "memcpy", 3, (912368063336277387UL + 5085UL), (912368063336277387UL + 4162UL), 0UL, 0UL, "str2ushort", 1, (912368063336277387UL + 4162UL), 0UL, "str2ushort", 1, (912368063336277387UL + 4162UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4162UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4162UL), 0UL, "str2ushort", 1, (912368063336277387UL + 4162UL), 0UL, "free", 1, (912368063336277387UL + 4162UL), 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4632UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4632UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 3915UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 3915UL), (912368063336277387UL + 4632UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 3915UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 3915UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 3915UL), (912368063336277387UL + 4632UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 3915UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 3915UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 3915UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 3915UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_add_index_entry", 5, (912368063336277387UL + 5085UL), (912368063336277387UL + 3915UL), 0UL, 0UL, 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "malloc", 1, 0UL, (912368063336277387UL + 4632UL), "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "malloc", 1, 0UL, (912368063336277387UL + 4632UL), "AVI_close", 1, (912368063336277387UL + 5085UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4632UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4632UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4632UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4632UL), (912368063336277387UL + 5085UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4632UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4632UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL,
-                            "AVI_video_frames", (void *)(&AVI_video_frames_npm), (void *)__null, 0, 1, (912368063336277387UL + 5447UL), 0UL, 0,
-                            "AVI_video_width", (void *)(&AVI_video_width_npm), (void *)__null, 0, 1, (912368063336277387UL + 5456UL), 0UL, 0,
-                            "AVI_video_height", (void *)(&AVI_video_height_npm), (void *)__null, 0, 1, (912368063336277387UL + 5465UL), 0UL, 0,
-                            "AVI_frame_rate", (void *)(&AVI_frame_rate_npm), (void *)__null, 0, 1, (912368063336277387UL + 5473UL), 0UL, 0,
-                            "AVI_video_compressor", (void *)(&AVI_video_compressor_npm), (void *)__null, 0, 1, (912368063336277387UL + 5481UL), (912368063336277387UL + 5481UL), 0,
-                            "AVI_max_video_chunk", (void *)(&AVI_max_video_chunk_npm), (void *)__null, 0, 1, (912368063336277387UL + 5489UL), 0UL, 0,
-                            "AVI_audio_tracks", (void *)(&AVI_audio_tracks_npm), (void *)__null, 0, 1, (912368063336277387UL + 5497UL), 0UL, 0,
-                            "AVI_audio_channels", (void *)(&AVI_audio_channels_npm), (void *)__null, 0, 1, (912368063336277387UL + 5512UL), 0UL, 0,
-                            "AVI_audio_mp3rate", (void *)(&AVI_audio_mp3rate_npm), (void *)__null, 0, 1, (912368063336277387UL + 5526UL), 0UL, 0,
-                            "AVI_audio_bits", (void *)(&AVI_audio_bits_npm), (void *)__null, 0, 1, (912368063336277387UL + 5541UL), 0UL, 0,
-                            "AVI_audio_format", (void *)(&AVI_audio_format_npm), (void *)__null, 0, 1, (912368063336277387UL + 5556UL), 0UL, 0,
-                            "AVI_audio_rate", (void *)(&AVI_audio_rate_npm), (void *)__null, 0, 1, (912368063336277387UL + 5570UL), 0UL, 0,
-                            "AVI_audio_bytes", (void *)(&AVI_audio_bytes_npm), (void *)__null, 0, 1, (912368063336277387UL + 5584UL), 0UL, 0,
-                            "AVI_audio_chunks", (void *)(&AVI_audio_chunks_npm), (void *)__null, 0, 1, (912368063336277387UL + 5598UL), 0UL, 0,
-                            "AVI_audio_codech_offset", (void *)(&AVI_audio_codech_offset_npm), (void *)__null, 0, 1, (912368063336277387UL + 5612UL), 0UL, 0,
-                            "AVI_audio_codecf_offset", (void *)(&AVI_audio_codecf_offset_npm), (void *)__null, 0, 1, (912368063336277387UL + 5626UL), 0UL, 0,
-                            "AVI_video_codech_offset", (void *)(&AVI_video_codech_offset_npm), (void *)__null, 0, 1, (912368063336277387UL + 5634UL), 0UL, 0,
-                            "AVI_video_codecf_offset", (void *)(&AVI_video_codecf_offset_npm), (void *)__null, 0, 1, (912368063336277387UL + 5642UL), 0UL, 0,
-                            "AVI_frame_size", (void *)(&AVI_frame_size_npm), (void *)__null, 0, 2, (912368063336277387UL + 5688UL), 0UL, 0UL, 0,
-                            "AVI_audio_size", (void *)(&AVI_audio_size_npm), (void *)__null, 0, 2, (912368063336277387UL + 5753UL), 0UL, 0UL, 0,
-                            "AVI_get_video_position", (void *)(&AVI_get_video_position_npm), (void *)__null, 0, 2, (912368063336277387UL + 5800UL), 0UL, 0UL, 0,
-                            "AVI_seek_start", (void *)(&AVI_seek_start_npm), (void *)__null, 1, &____alias_loc_id_60, 1, (912368063336277387UL + 5829UL), 0UL, 1, "lseek", 3, 0UL, 0UL, 0UL, 0UL,
-                            "AVI_set_video_position", (void *)(&AVI_set_video_position_npm), (void *)__null, 0, 2, (912368063336277387UL + 5866UL), 0UL, 0UL, 0,
-                            "AVI_set_audio_bitrate", (void *)(&AVI_set_audio_bitrate_npm), (void *)__null, 0, 2, (912368063336277387UL + 5897UL), 0UL, 0UL, 0,
-                            "AVI_read_frame", (void *)(&AVI_read_frame_npm), (void *)__null, 1, &____alias_loc_id_61, 3, (912368063336277387UL + 6002UL), (912368063336277387UL + 6003UL), (912368063336277387UL + 6004UL), 0UL, 2, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 6003UL), 0UL, 0UL,
-                            "AVI_set_audio_position", (void *)(&AVI_set_audio_position_npm), (void *)__null, 0, 2, (912368063336277387UL + 6128UL), 0UL, 0UL, 0,
-                            "AVI_read_audio", (void *)(&AVI_read_audio_npm), (void *)__null, 1, &____alias_loc_id_62, 3, (912368063336277387UL + 6344UL), (912368063336277387UL + 6345UL), 0UL, 0UL, 2, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 6345UL), 0UL, 0UL,
-                            "AVI_read_data", (void *)(&AVI_read_data_npm), (void *)__null, 8, &____alias_loc_id_63, &____alias_loc_id_64, &____alias_loc_id_65, &____alias_loc_id_66, &____alias_loc_id_67, &____alias_loc_id_68, &____alias_loc_id_69, &____alias_loc_id_70, 6, (912368063336277387UL + 6514UL), (912368063336277387UL + 6515UL), 0UL, (912368063336277387UL + 6517UL), 0UL, (912368063336277387UL + 6519UL), 0UL, 11, "avi_read", 3, 0UL, (912368063336277387UL + 6355UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 6355UL), (912368063336277387UL + 6717UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 6355UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 6355UL), (912368063336277387UL + 6514UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 6515UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 6355UL), (912368063336277387UL + 6514UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 6517UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL,
-                            "AVI_print_error", (void *)(&AVI_print_error_npm), (void *)__null, 0, 1, (912368063336277387UL + 6543UL), 0UL, 2, "fprintf", 4, (912368063336277387UL + 1590UL), (912368063336277387UL + 6753UL), (912368063336277387UL + 6543UL), (912368063336277387UL + 6625UL), 0UL, "perror", 1, (912368063336277387UL + 6754UL), 0UL,
-                            "AVI_strerror", (void *)(&AVI_strerror_npm), (void *)__null, 2, &____alias_loc_id_71, &____alias_loc_id_72, 0, (912368063336277387UL + 6625UL), 3, "__errno_location", 0, (912368063336277387UL + 6607UL), "strerror", 1, 0UL, (912368063336277387UL + 6612UL), "sprintf", 4, (912368063336277387UL + 6625UL), (912368063336277387UL + 6753UL), (912368063336277387UL + 6625UL), (912368063336277387UL + 6612UL), 0UL,
+    init_module(912368063336277387UL, 103, 57, 8, 57, 57, 0, 57, 213, 0, 4,
+                           &____alias_loc_id_0, (unsigned)12, (unsigned)0, (unsigned)0, (912368063336277387UL + 1UL), (912368063336277387UL + 2UL), (912368063336277387UL + 3UL), (912368063336277387UL + 4UL), (912368063336277387UL + 5UL), (912368063336277387UL + 6UL), (912368063336277387UL + 7UL), (912368063336277387UL + 8UL), (912368063336277387UL + 9UL), (912368063336277387UL + 10UL), (912368063336277387UL + 18UL), (912368063336277387UL + 7221UL),
+                           &____alias_loc_id_1, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 127UL), (912368063336277387UL + 128UL), (912368063336277387UL + 129UL), (912368063336277387UL + 130UL), (912368063336277387UL + 131UL), (912368063336277387UL + 132UL), (912368063336277387UL + 133UL), (912368063336277387UL + 134UL),
+                           &____alias_loc_id_2, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 185UL), (912368063336277387UL + 186UL), (912368063336277387UL + 187UL), (912368063336277387UL + 188UL), (912368063336277387UL + 189UL), (912368063336277387UL + 243UL),
+                           &____alias_loc_id_3, (unsigned)17, (unsigned)0, (unsigned)0, (912368063336277387UL + 256UL), (912368063336277387UL + 257UL), (912368063336277387UL + 258UL), (912368063336277387UL + 259UL), (912368063336277387UL + 260UL), (912368063336277387UL + 261UL), (912368063336277387UL + 262UL), (912368063336277387UL + 263UL), (912368063336277387UL + 264UL), (912368063336277387UL + 265UL), (912368063336277387UL + 266UL), (912368063336277387UL + 267UL), (912368063336277387UL + 268UL), (912368063336277387UL + 269UL), (912368063336277387UL + 270UL), (912368063336277387UL + 271UL), (912368063336277387UL + 7221UL),
+                           &____alias_loc_id_4, (unsigned)7, (unsigned)0, (unsigned)0, (912368063336277387UL + 1582UL), (912368063336277387UL + 1583UL), (912368063336277387UL + 1584UL), (912368063336277387UL + 1585UL), (912368063336277387UL + 1586UL), (912368063336277387UL + 1587UL), (912368063336277387UL + 1683UL),
+                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 1692UL), (912368063336277387UL + 1693UL), (912368063336277387UL + 1726UL),
+                           &____alias_loc_id_6, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 1728UL), (912368063336277387UL + 1729UL), (912368063336277387UL + 1730UL), (912368063336277387UL + 1731UL),
+                           &____alias_loc_id_7, (unsigned)11, (unsigned)0, (unsigned)0, (912368063336277387UL + 1774UL), (912368063336277387UL + 1775UL), (912368063336277387UL + 1776UL), (912368063336277387UL + 1777UL), (912368063336277387UL + 1778UL), (912368063336277387UL + 1779UL), (912368063336277387UL + 1780UL), (912368063336277387UL + 1781UL), (912368063336277387UL + 1782UL), (912368063336277387UL + 1839UL), (912368063336277387UL + 7221UL),
+                           &____alias_loc_id_8, (unsigned)12, (unsigned)0, (unsigned)0, (912368063336277387UL + 1843UL), (912368063336277387UL + 1844UL), (912368063336277387UL + 1845UL), (912368063336277387UL + 1846UL), (912368063336277387UL + 1847UL), (912368063336277387UL + 1848UL), (912368063336277387UL + 1849UL), (912368063336277387UL + 1851UL), (912368063336277387UL + 1852UL), (912368063336277387UL + 1853UL), (912368063336277387UL + 1854UL), (912368063336277387UL + 7221UL),
+                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 1964UL), (912368063336277387UL + 1965UL), (912368063336277387UL + 1966UL), (912368063336277387UL + 1967UL), (912368063336277387UL + 1968UL), (912368063336277387UL + 1969UL), (912368063336277387UL + 2023UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_10, (unsigned)11, (unsigned)0, (unsigned)0, (912368063336277387UL + 2024UL), (912368063336277387UL + 2025UL), (912368063336277387UL + 2026UL), (912368063336277387UL + 2027UL), (912368063336277387UL + 2028UL), (912368063336277387UL + 2029UL), (912368063336277387UL + 2030UL), (912368063336277387UL + 2031UL), (912368063336277387UL + 2032UL), (912368063336277387UL + 2152UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_11, (unsigned)9, (unsigned)0, (unsigned)0, (912368063336277387UL + 2157UL), (912368063336277387UL + 2158UL), (912368063336277387UL + 2159UL), (912368063336277387UL + 2160UL), (912368063336277387UL + 2161UL), (912368063336277387UL + 2162UL), (912368063336277387UL + 2163UL), (912368063336277387UL + 2211UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_12, (unsigned)11, (unsigned)0, (unsigned)0, (912368063336277387UL + 2214UL), (912368063336277387UL + 2215UL), (912368063336277387UL + 2216UL), (912368063336277387UL + 2217UL), (912368063336277387UL + 2218UL), (912368063336277387UL + 2219UL), (912368063336277387UL + 2220UL), (912368063336277387UL + 2222UL), (912368063336277387UL + 2223UL), (912368063336277387UL + 2362UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 2365UL), (912368063336277387UL + 2366UL),
+                            &____alias_loc_id_14, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 2397UL), (912368063336277387UL + 2398UL), (912368063336277387UL + 2399UL), (912368063336277387UL + 2400UL),
+                            &____alias_loc_id_15, (unsigned)4, (unsigned)0, (unsigned)0, (912368063336277387UL + 2431UL), (912368063336277387UL + 2432UL), (912368063336277387UL + 2433UL), (912368063336277387UL + 2434UL),
+                            &____alias_loc_id_16, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 2464UL), (912368063336277387UL + 2465UL), (912368063336277387UL + 2466UL), (912368063336277387UL + 2467UL), (912368063336277387UL + 2468UL), (912368063336277387UL + 2499UL),
+                            &____alias_loc_id_17, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 2501UL), (912368063336277387UL + 2502UL),
+                            &____alias_loc_id_18, (unsigned)3, (unsigned)0, (unsigned)0, (912368063336277387UL + 2513UL), (912368063336277387UL + 2514UL), (912368063336277387UL + 2515UL),
+                            &____alias_loc_id_19, (unsigned)21, (unsigned)0, (unsigned)0, (912368063336277387UL + 2566UL), (912368063336277387UL + 2567UL), (912368063336277387UL + 2568UL), (912368063336277387UL + 2569UL), (912368063336277387UL + 2570UL), (912368063336277387UL + 2571UL), (912368063336277387UL + 2572UL), (912368063336277387UL + 2573UL), (912368063336277387UL + 2574UL), (912368063336277387UL + 2575UL), (912368063336277387UL + 2576UL), (912368063336277387UL + 2577UL), (912368063336277387UL + 2578UL), (912368063336277387UL + 2579UL), (912368063336277387UL + 2580UL), (912368063336277387UL + 2581UL), (912368063336277387UL + 2582UL), (912368063336277387UL + 2583UL), (912368063336277387UL + 2584UL), (912368063336277387UL + 2585UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_20, (unsigned)9, (unsigned)0, (unsigned)0, (912368063336277387UL + 18UL), (912368063336277387UL + 3995UL), (912368063336277387UL + 3996UL), (912368063336277387UL + 3997UL), (912368063336277387UL + 3998UL), (912368063336277387UL + 3999UL), (912368063336277387UL + 4000UL), (912368063336277387UL + 4001UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_21, (unsigned)45, (unsigned)0, (unsigned)0, (912368063336277387UL + 4062UL), (912368063336277387UL + 4063UL), (912368063336277387UL + 4064UL), (912368063336277387UL + 4065UL), (912368063336277387UL + 4066UL), (912368063336277387UL + 4067UL), (912368063336277387UL + 4068UL), (912368063336277387UL + 4069UL), (912368063336277387UL + 4070UL), (912368063336277387UL + 4071UL), (912368063336277387UL + 4072UL), (912368063336277387UL + 4073UL), (912368063336277387UL + 4074UL), (912368063336277387UL + 4075UL), (912368063336277387UL + 4076UL), (912368063336277387UL + 4077UL), (912368063336277387UL + 4078UL), (912368063336277387UL + 4079UL), (912368063336277387UL + 4080UL), (912368063336277387UL + 4081UL), (912368063336277387UL + 4082UL), (912368063336277387UL + 4084UL), (912368063336277387UL + 4085UL), (912368063336277387UL + 4086UL), (912368063336277387UL + 4087UL), (912368063336277387UL + 4088UL), (912368063336277387UL + 4089UL), (912368063336277387UL + 4090UL), (912368063336277387UL + 4091UL), (912368063336277387UL + 4092UL), (912368063336277387UL + 4093UL), (912368063336277387UL + 4094UL), (912368063336277387UL + 4095UL), (912368063336277387UL + 4096UL), (912368063336277387UL + 4097UL), (912368063336277387UL + 4098UL), (912368063336277387UL + 4099UL), (912368063336277387UL + 4100UL), (912368063336277387UL + 4101UL), (912368063336277387UL + 4102UL), (912368063336277387UL + 4103UL), (912368063336277387UL + 4104UL), (912368063336277387UL + 4854UL), (912368063336277387UL + 5322UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_22, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 18UL), (912368063336277387UL + 5569UL), (912368063336277387UL + 5570UL), (912368063336277387UL + 5571UL), (912368063336277387UL + 5572UL), (912368063336277387UL + 5573UL), (912368063336277387UL + 5574UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_23, (unsigned)9, (unsigned)0, (unsigned)0, (912368063336277387UL + 5620UL), (912368063336277387UL + 5621UL), (912368063336277387UL + 5622UL), (912368063336277387UL + 5623UL), (912368063336277387UL + 5624UL), (912368063336277387UL + 5625UL), (912368063336277387UL + 5626UL), (912368063336277387UL + 5627UL), (912368063336277387UL + 5675UL),
+                            &____alias_loc_id_24, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5680UL), (912368063336277387UL + 5681UL),
+                            &____alias_loc_id_25, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5700UL), (912368063336277387UL + 5701UL),
+                            &____alias_loc_id_26, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5712UL), (912368063336277387UL + 5713UL),
+                            &____alias_loc_id_27, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5725UL), (912368063336277387UL + 5726UL),
+                            &____alias_loc_id_28, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5738UL), (912368063336277387UL + 5739UL),
+                            &____alias_loc_id_29, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5750UL), (912368063336277387UL + 5751UL),
+                            &____alias_loc_id_30, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5762UL), (912368063336277387UL + 5763UL),
+                            &____alias_loc_id_31, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5774UL), (912368063336277387UL + 5775UL),
+                            &____alias_loc_id_32, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5786UL), (912368063336277387UL + 5787UL),
+                            &____alias_loc_id_33, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5805UL), (912368063336277387UL + 5806UL),
+                            &____alias_loc_id_34, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5823UL), (912368063336277387UL + 5824UL),
+                            &____alias_loc_id_35, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5842UL), (912368063336277387UL + 5843UL),
+                            &____alias_loc_id_36, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5861UL), (912368063336277387UL + 5862UL),
+                            &____alias_loc_id_37, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5879UL), (912368063336277387UL + 5880UL),
+                            &____alias_loc_id_38, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5897UL), (912368063336277387UL + 5898UL),
+                            &____alias_loc_id_39, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5915UL), (912368063336277387UL + 5916UL),
+                            &____alias_loc_id_40, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5933UL), (912368063336277387UL + 5934UL),
+                            &____alias_loc_id_41, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5951UL), (912368063336277387UL + 5952UL),
+                            &____alias_loc_id_42, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 5963UL), (912368063336277387UL + 5964UL),
+                            &____alias_loc_id_43, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 5975UL), (912368063336277387UL + 5976UL), (912368063336277387UL + 5977UL), (912368063336277387UL + 5978UL), (912368063336277387UL + 5979UL), (912368063336277387UL + 5980UL), (912368063336277387UL + 5981UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_44, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 6038UL), (912368063336277387UL + 6039UL), (912368063336277387UL + 6040UL), (912368063336277387UL + 6041UL), (912368063336277387UL + 6042UL), (912368063336277387UL + 6043UL), (912368063336277387UL + 6044UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_45, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 6119UL), (912368063336277387UL + 6120UL), (912368063336277387UL + 6121UL), (912368063336277387UL + 6122UL), (912368063336277387UL + 6123UL), (912368063336277387UL + 6124UL), (912368063336277387UL + 6125UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_46, (unsigned)6, (unsigned)0, (unsigned)0, (912368063336277387UL + 6182UL), (912368063336277387UL + 6183UL), (912368063336277387UL + 6184UL), (912368063336277387UL + 6185UL), (912368063336277387UL + 6217UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_47, (unsigned)8, (unsigned)0, (unsigned)0, (912368063336277387UL + 6218UL), (912368063336277387UL + 6219UL), (912368063336277387UL + 6220UL), (912368063336277387UL + 6221UL), (912368063336277387UL + 6222UL), (912368063336277387UL + 6223UL), (912368063336277387UL + 6266UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_48, (unsigned)7, (unsigned)0, (unsigned)0, (912368063336277387UL + 6268UL), (912368063336277387UL + 6269UL), (912368063336277387UL + 6270UL), (912368063336277387UL + 6271UL), (912368063336277387UL + 6272UL), (912368063336277387UL + 6305UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_49, (unsigned)13, (unsigned)0, (unsigned)0, (912368063336277387UL + 6307UL), (912368063336277387UL + 6308UL), (912368063336277387UL + 6309UL), (912368063336277387UL + 6310UL), (912368063336277387UL + 6311UL), (912368063336277387UL + 6312UL), (912368063336277387UL + 6313UL), (912368063336277387UL + 6314UL), (912368063336277387UL + 6315UL), (912368063336277387UL + 6316UL), (912368063336277387UL + 6430UL), (912368063336277387UL + 6432UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_50, (unsigned)11, (unsigned)0, (unsigned)0, (912368063336277387UL + 6433UL), (912368063336277387UL + 6434UL), (912368063336277387UL + 6435UL), (912368063336277387UL + 6436UL), (912368063336277387UL + 6437UL), (912368063336277387UL + 6438UL), (912368063336277387UL + 6439UL), (912368063336277387UL + 6440UL), (912368063336277387UL + 6441UL), (912368063336277387UL + 6568UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_51, (unsigned)15, (unsigned)0, (unsigned)0, (912368063336277387UL + 6570UL), (912368063336277387UL + 6571UL), (912368063336277387UL + 6572UL), (912368063336277387UL + 6573UL), (912368063336277387UL + 6574UL), (912368063336277387UL + 6575UL), (912368063336277387UL + 6576UL), (912368063336277387UL + 6577UL), (912368063336277387UL + 6578UL), (912368063336277387UL + 6579UL), (912368063336277387UL + 6580UL), (912368063336277387UL + 6581UL), (912368063336277387UL + 6582UL), (912368063336277387UL + 6804UL), (912368063336277387UL + 7221UL),
+                            &____alias_loc_id_52, (unsigned)19, (unsigned)0, (unsigned)0, (912368063336277387UL + 6807UL), (912368063336277387UL + 6808UL), (912368063336277387UL + 6809UL), (912368063336277387UL + 6810UL), (912368063336277387UL + 6811UL), (912368063336277387UL + 6812UL), (912368063336277387UL + 6813UL), (912368063336277387UL + 6814UL), (912368063336277387UL + 6816UL), (912368063336277387UL + 6817UL), (912368063336277387UL + 6818UL), (912368063336277387UL + 6819UL), (912368063336277387UL + 6820UL), (912368063336277387UL + 6821UL), (912368063336277387UL + 6822UL), (912368063336277387UL + 6823UL), (912368063336277387UL + 6824UL), (912368063336277387UL + 7010UL), (912368063336277387UL + 7015UL),
+                            &____alias_loc_id_53, (unsigned)2, (unsigned)0, (unsigned)0, (912368063336277387UL + 7016UL), (912368063336277387UL + 7017UL),
+                            &____alias_loc_id_54, (unsigned)5, (unsigned)0, (unsigned)0, (912368063336277387UL + 7065UL), (912368063336277387UL + 7066UL), (912368063336277387UL + 7067UL), (912368063336277387UL + 7068UL), (912368063336277387UL + 7108UL),
+                            &____alias_loc_id_55, (unsigned)1, (unsigned)0, (unsigned)0, (912368063336277387UL + 7127UL),
+                            &____alias_loc_id_56, (unsigned)9, (unsigned)0, (unsigned)0, (912368063336277387UL + 7135UL), (912368063336277387UL + 7136UL), (912368063336277387UL + 7137UL), (912368063336277387UL + 7138UL), (912368063336277387UL + 7139UL), (912368063336277387UL + 7141UL), (912368063336277387UL + 7142UL), (912368063336277387UL + 7212UL), (912368063336277387UL + 7221UL),
+                            "avi_read", (void *)(&avi_read_npm), (void *)__null, 0, 3, 0UL, (912368063336277387UL + 5675UL), 0UL, 0UL, 1, "read", 3, 0UL, (912368063336277387UL + 5675UL), 0UL, 0UL,
+                            "avi_write", (void *)(&avi_write_npm), (void *)__null, 0, 3, 0UL, (912368063336277387UL + 182UL), 0UL, 0UL, 1, "write", 3, 0UL, (912368063336277387UL + 182UL), 0UL, 0UL,
+                            "long2str", (void *)(&long2str_npm), (void *)__null, 0, 2, (912368063336277387UL + 1726UL), 0UL, 0UL, 0,
+                            "str2ulong", (void *)(&str2ulong_npm), (void *)__null, 0, 1, (912368063336277387UL + 2396UL), 0UL, 0,
+                            "str2ushort", (void *)(&str2ushort_npm), (void *)__null, 0, 1, (912368063336277387UL + 5699UL), 0UL, 0,
+                            "avi_sampsize", (void *)(&avi_sampsize_npm), (void *)__null, 0, 2, (912368063336277387UL + 1766UL), 0UL, 0UL, 0,
+                            "avi_add_chunk", (void *)(&avi_add_chunk_npm), (void *)__null, 0, 4, (912368063336277387UL + 7212UL), (912368063336277387UL + 7213UL), (912368063336277387UL + 7214UL), 0UL, 0UL, 5, "memcpy", 3, (912368063336277387UL + 7140UL), (912368063336277387UL + 7213UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 7140UL), 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 7140UL), 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 7214UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL,
+                            "avi_add_index_entry", (void *)(&avi_add_index_entry_npm), (void *)__null, 0, 5, (912368063336277387UL + 2152UL), (912368063336277387UL + 2153UL), 0UL, 0UL, 0UL, 0UL, 5, "realloc", 2, (912368063336277387UL + 2077UL), 0UL, (912368063336277387UL + 2077UL), "memcpy", 3, (912368063336277387UL + 2077UL), (912368063336277387UL + 2153UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2077UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2077UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2077UL), 0UL, 0UL,
+                            "AVI_open_output_file", (void *)(&AVI_open_output_file_npm), (void *)__null, 0, 1, (912368063336277387UL + 115UL), (912368063336277387UL + 18UL), 7, "malloc", 1, 0UL, (912368063336277387UL + 18UL), "memset", 3, (912368063336277387UL + 18UL), 0UL, 0UL, 0UL, "open", 3, (912368063336277387UL + 115UL), 0UL, 0UL, 0UL, "free", 1, (912368063336277387UL + 18UL), 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 6UL), 0UL, 0UL, "close", 1, 0UL, 0UL, "free", 1, (912368063336277387UL + 18UL), 0UL,
+                            "AVI_set_video", (void *)(&AVI_set_video_npm), (void *)__null, 0, 5, (912368063336277387UL + 243UL), 0UL, 0UL, 0UL, (912368063336277387UL + 247UL), 0UL, 4, "strncmp", 3, (912368063336277387UL + 247UL), (912368063336277387UL + 7222UL), 0UL, 0UL, "memset", 3, (912368063336277387UL + 243UL), 0UL, 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 243UL), (912368063336277387UL + 247UL), 0UL, 0UL, "avi_update_header", 1, (912368063336277387UL + 243UL), 0UL,
+                            "AVI_set_audio", (void *)(&AVI_set_audio_npm), (void *)__null, 0, 6, (912368063336277387UL + 1683UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 3, "fprintf", 3, (912368063336277387UL + 1622UL), (912368063336277387UL + 7224UL), 0UL, 0UL, "exit", 1, 0UL, 0UL, "avi_update_header", 1, (912368063336277387UL + 1683UL), 0UL,
+                            "avi_update_header", (void *)(&avi_update_header_npm), (void *)__null, 0, 1, (912368063336277387UL + 1581UL), 0UL, 94, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 1581UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 1581UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "avi_sampsize", 2, (912368063336277387UL + 1581UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "fprintf", 2, (912368063336277387UL + 1622UL), (912368063336277387UL + 7235UL), 0UL, "exit", 1, 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memset", 3, (912368063336277387UL + 268UL), 0UL, 0UL, 0UL, "strlen", 1, (912368063336277387UL + 7237UL), 0UL, "sprintf", 4, (912368063336277387UL + 7237UL), (912368063336277387UL + 7238UL), (912368063336277387UL + 7239UL), (912368063336277387UL + 7225UL), 0UL, "strlen", 1, (912368063336277387UL + 7237UL), 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7237UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 268UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 268UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 268UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL,
+                            "avi_close_output_file", (void *)(&avi_close_output_file_npm), (void *)__null, 0, 1, (912368063336277387UL + 3994UL), 0UL, 99, "avi_add_chunk", 4, (912368063336277387UL + 3994UL), (912368063336277387UL + 7225UL), (912368063336277387UL + 2613UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 3994UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 3994UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "avi_sampsize", 2, (912368063336277387UL + 3994UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "sprintf", 4, (912368063336277387UL + 7237UL), (912368063336277387UL + 7238UL), (912368063336277387UL + 7239UL), (912368063336277387UL + 7225UL), 0UL, "memset", 3, (912368063336277387UL + 2580UL), 0UL, 0UL, 0UL, "strlen", 1, (912368063336277387UL + 7237UL), 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7237UL), 0UL, 0UL, "fprintf", 2, (912368063336277387UL + 1622UL), (912368063336277387UL + 7235UL), 0UL, "exit", 1, 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memset", 3, (912368063336277387UL + 2580UL), 0UL, 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2580UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 2580UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 2580UL), 0UL, 0UL,
+                            "avi_write_data", (void *)(&avi_write_data_npm), (void *)__null, 0, 5, (912368063336277387UL + 1959UL), (912368063336277387UL + 1960UL), 0UL, 0UL, 0UL, 0UL, 5, "sprintf", 3, (912368063336277387UL + 1850UL), (912368063336277387UL + 7262UL), 0UL, 0UL, "avi_add_index_entry", 5, (912368063336277387UL + 1959UL), (912368063336277387UL + 1850UL), 0UL, 0UL, 0UL, 0UL, "avi_add_index_entry", 5, (912368063336277387UL + 1959UL), (912368063336277387UL + 7225UL), 0UL, 0UL, 0UL, 0UL, "avi_add_chunk", 4, (912368063336277387UL + 1959UL), (912368063336277387UL + 1850UL), (912368063336277387UL + 1960UL), 0UL, 0UL, "avi_add_chunk", 4, (912368063336277387UL + 1959UL), (912368063336277387UL + 7225UL), (912368063336277387UL + 1960UL), 0UL, 0UL,
+                            "AVI_write_frame", (void *)(&AVI_write_frame_npm), (void *)__null, 0, 4, (912368063336277387UL + 1839UL), (912368063336277387UL + 1840UL), 0UL, 0UL, 0UL, 1, "avi_write_data", 5, (912368063336277387UL + 1839UL), (912368063336277387UL + 1840UL), 0UL, 0UL, 0UL, 0UL,
+                            "AVI_dup_frame", (void *)(&AVI_dup_frame_npm), (void *)__null, 0, 1, (912368063336277387UL + 2023UL), 0UL, 1, "avi_add_index_entry", 5, (912368063336277387UL + 2023UL), (912368063336277387UL + 7225UL), 0UL, 0UL, 0UL, 0UL,
+                            "AVI_write_audio", (void *)(&AVI_write_audio_npm), (void *)__null, 0, 3, (912368063336277387UL + 2211UL), (912368063336277387UL + 2212UL), 0UL, 0UL, 1, "avi_write_data", 5, (912368063336277387UL + 2211UL), (912368063336277387UL + 2212UL), 0UL, 0UL, 0UL, 0UL,
+                            "AVI_append_audio", (void *)(&AVI_append_audio_npm), (void *)__null, 0, 3, (912368063336277387UL + 2362UL), (912368063336277387UL + 2363UL), 0UL, 0UL, 8, "str2ulong", 1, (912368063336277387UL + 2255UL), 0UL, "str2ulong", 1, (912368063336277387UL + 2255UL), 0UL, "long2str", 2, (912368063336277387UL + 2255UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "long2str", 2, (912368063336277387UL + 2221UL), 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 2221UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_write", 3, 0UL, (912368063336277387UL + 2363UL), 0UL, 0UL,
+                            "AVI_bytes_remain", (void *)(&AVI_bytes_remain_npm), (void *)__null, 0, 1, (912368063336277387UL + 2430UL), 0UL, 0,
+                            "AVI_bytes_written", (void *)(&AVI_bytes_written_npm), (void *)__null, 0, 1, (912368063336277387UL + 2463UL), 0UL, 0,
+                            "AVI_set_audio_track", (void *)(&AVI_set_audio_track_npm), (void *)__null, 0, 2, (912368063336277387UL + 2499UL), 0UL, 0UL, 0,
+                            "AVI_get_audio_track", (void *)(&AVI_get_audio_track_npm), (void *)__null, 0, 1, (912368063336277387UL + 2512UL), 0UL, 0,
+                            "AVI_close", (void *)(&AVI_close_npm), (void *)__null, 0, 1, (912368063336277387UL + 2565UL), 0UL, 5, "avi_close_output_file", 1, (912368063336277387UL + 2565UL), 0UL, "close", 1, 0UL, 0UL, "free", 1, (912368063336277387UL + 2537UL), 0UL, "free", 1, (912368063336277387UL + 2537UL), 0UL, "free", 1, (912368063336277387UL + 2565UL), 0UL,
+                            "AVI_open_input_file", (void *)(&AVI_open_input_file_npm), (void *)__null, 0, 2, (912368063336277387UL + 4060UL), 0UL, (912368063336277387UL + 18UL), 5, "malloc", 1, 0UL, (912368063336277387UL + 18UL), "memset", 3, (912368063336277387UL + 18UL), 0UL, 0UL, 0UL, "open", 2, (912368063336277387UL + 4060UL), 0UL, 0UL, "free", 1, (912368063336277387UL + 18UL), 0UL, "avi_parse_input_file", 2, (912368063336277387UL + 18UL), 0UL, 0UL,
+                            "AVI_open_fd", (void *)(&AVI_open_fd_npm), (void *)__null, 0, 2, 0UL, 0UL, (912368063336277387UL + 18UL), 3, "malloc", 1, 0UL, (912368063336277387UL + 18UL), "memset", 3, (912368063336277387UL + 18UL), 0UL, 0UL, 0UL, "avi_parse_input_file", 2, (912368063336277387UL + 18UL), 0UL, 0UL,
+                            "avi_parse_input_file", (void *)(&avi_parse_input_file_npm), (void *)__null, 0, 2, (912368063336277387UL + 5322UL), 0UL, 0UL, 89, "avi_read", 3, 0UL, (912368063336277387UL + 4083UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4083UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4083UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 4083UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4083UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4083UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 4083UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4083UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "malloc", 1, 0UL, (912368063336277387UL + 4375UL), "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 4375UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4083UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4083UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "malloc", 1, 0UL, (912368063336277387UL + 4854UL), "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 4854UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4375UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4375UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4375UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4375UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "memcpy", 3, (912368063336277387UL + 5322UL), (912368063336277387UL + 4375UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4375UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4375UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4375UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4375UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "fprintf", 3, (912368063336277387UL + 1622UL), (912368063336277387UL + 7224UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4375UL), 0UL, "avi_sampsize", 2, (912368063336277387UL + 5322UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4375UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4375UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4375UL), 0UL, "memcpy", 3, (912368063336277387UL + 5322UL), (912368063336277387UL + 4375UL), 0UL, 0UL, "str2ushort", 1, (912368063336277387UL + 4375UL), 0UL, "str2ushort", 1, (912368063336277387UL + 4375UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4375UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4375UL), 0UL, "str2ushort", 1, (912368063336277387UL + 4375UL), 0UL, "free", 1, (912368063336277387UL + 4375UL), 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4854UL), (912368063336277387UL + 5322UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4854UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4854UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 4083UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4083UL), (912368063336277387UL + 4854UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4083UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 4083UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4083UL), (912368063336277387UL + 4854UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4083UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 4083UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4083UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4083UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_add_index_entry", 5, (912368063336277387UL + 5322UL), (912368063336277387UL + 4083UL), 0UL, 0UL, 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4854UL), (912368063336277387UL + 5322UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 4854UL), (912368063336277387UL + 5322UL), 0UL, 0UL, "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "malloc", 1, 0UL, (912368063336277387UL + 4854UL), "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "malloc", 1, 0UL, (912368063336277387UL + 4854UL), "AVI_close", 1, (912368063336277387UL + 5322UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4854UL), (912368063336277387UL + 5322UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4854UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4854UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4854UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 4854UL), (912368063336277387UL + 5322UL), 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 4854UL), 0UL, "str2ulong", 1, (912368063336277387UL + 4854UL), 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL,
+                            "AVI_video_frames", (void *)(&AVI_video_frames_npm), (void *)__null, 0, 1, (912368063336277387UL + 5711UL), 0UL, 0,
+                            "AVI_video_width", (void *)(&AVI_video_width_npm), (void *)__null, 0, 1, (912368063336277387UL + 5724UL), 0UL, 0,
+                            "AVI_video_height", (void *)(&AVI_video_height_npm), (void *)__null, 0, 1, (912368063336277387UL + 5737UL), 0UL, 0,
+                            "AVI_frame_rate", (void *)(&AVI_frame_rate_npm), (void *)__null, 0, 1, (912368063336277387UL + 5749UL), 0UL, 0,
+                            "AVI_video_compressor", (void *)(&AVI_video_compressor_npm), (void *)__null, 0, 1, (912368063336277387UL + 5761UL), (912368063336277387UL + 5761UL), 0,
+                            "AVI_max_video_chunk", (void *)(&AVI_max_video_chunk_npm), (void *)__null, 0, 1, (912368063336277387UL + 5773UL), 0UL, 0,
+                            "AVI_audio_tracks", (void *)(&AVI_audio_tracks_npm), (void *)__null, 0, 1, (912368063336277387UL + 5785UL), 0UL, 0,
+                            "AVI_audio_channels", (void *)(&AVI_audio_channels_npm), (void *)__null, 0, 1, (912368063336277387UL + 5804UL), 0UL, 0,
+                            "AVI_audio_mp3rate", (void *)(&AVI_audio_mp3rate_npm), (void *)__null, 0, 1, (912368063336277387UL + 5822UL), 0UL, 0,
+                            "AVI_audio_bits", (void *)(&AVI_audio_bits_npm), (void *)__null, 0, 1, (912368063336277387UL + 5841UL), 0UL, 0,
+                            "AVI_audio_format", (void *)(&AVI_audio_format_npm), (void *)__null, 0, 1, (912368063336277387UL + 5860UL), 0UL, 0,
+                            "AVI_audio_rate", (void *)(&AVI_audio_rate_npm), (void *)__null, 0, 1, (912368063336277387UL + 5878UL), 0UL, 0,
+                            "AVI_audio_bytes", (void *)(&AVI_audio_bytes_npm), (void *)__null, 0, 1, (912368063336277387UL + 5896UL), 0UL, 0,
+                            "AVI_audio_chunks", (void *)(&AVI_audio_chunks_npm), (void *)__null, 0, 1, (912368063336277387UL + 5914UL), 0UL, 0,
+                            "AVI_audio_codech_offset", (void *)(&AVI_audio_codech_offset_npm), (void *)__null, 0, 1, (912368063336277387UL + 5932UL), 0UL, 0,
+                            "AVI_audio_codecf_offset", (void *)(&AVI_audio_codecf_offset_npm), (void *)__null, 0, 1, (912368063336277387UL + 5950UL), 0UL, 0,
+                            "AVI_video_codech_offset", (void *)(&AVI_video_codech_offset_npm), (void *)__null, 0, 1, (912368063336277387UL + 5962UL), 0UL, 0,
+                            "AVI_video_codecf_offset", (void *)(&AVI_video_codecf_offset_npm), (void *)__null, 0, 1, (912368063336277387UL + 5974UL), 0UL, 0,
+                            "AVI_frame_size", (void *)(&AVI_frame_size_npm), (void *)__null, 0, 2, (912368063336277387UL + 6036UL), 0UL, 0UL, 0,
+                            "AVI_audio_size", (void *)(&AVI_audio_size_npm), (void *)__null, 0, 2, (912368063336277387UL + 6117UL), 0UL, 0UL, 0,
+                            "AVI_get_video_position", (void *)(&AVI_get_video_position_npm), (void *)__null, 0, 2, (912368063336277387UL + 6180UL), 0UL, 0UL, 0,
+                            "AVI_seek_start", (void *)(&AVI_seek_start_npm), (void *)__null, 0, 1, (912368063336277387UL + 6217UL), 0UL, 1, "lseek", 3, 0UL, 0UL, 0UL, 0UL,
+                            "AVI_set_video_position", (void *)(&AVI_set_video_position_npm), (void *)__null, 0, 2, (912368063336277387UL + 6266UL), 0UL, 0UL, 0,
+                            "AVI_set_audio_bitrate", (void *)(&AVI_set_audio_bitrate_npm), (void *)__null, 0, 2, (912368063336277387UL + 6305UL), 0UL, 0UL, 0,
+                            "AVI_read_frame", (void *)(&AVI_read_frame_npm), (void *)__null, 0, 3, (912368063336277387UL + 6430UL), (912368063336277387UL + 6431UL), (912368063336277387UL + 6432UL), 0UL, 2, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 6431UL), 0UL, 0UL,
+                            "AVI_set_audio_position", (void *)(&AVI_set_audio_position_npm), (void *)__null, 0, 2, (912368063336277387UL + 6568UL), 0UL, 0UL, 0,
+                            "AVI_read_audio", (void *)(&AVI_read_audio_npm), (void *)__null, 0, 3, (912368063336277387UL + 6804UL), (912368063336277387UL + 6805UL), 0UL, 0UL, 2, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 6805UL), 0UL, 0UL,
+                            "AVI_read_data", (void *)(&AVI_read_data_npm), (void *)__null, 0, 6, (912368063336277387UL + 7010UL), (912368063336277387UL + 7011UL), 0UL, (912368063336277387UL + 7013UL), 0UL, (912368063336277387UL + 7015UL), 0UL, 11, "avi_read", 3, 0UL, (912368063336277387UL + 6815UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 6815UL), (912368063336277387UL + 7225UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "str2ulong", 1, (912368063336277387UL + 6815UL), 0UL, "strncasecmp", 3, (912368063336277387UL + 6815UL), (912368063336277387UL + 7010UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 7011UL), 0UL, 0UL, "strncasecmp", 3, (912368063336277387UL + 6815UL), (912368063336277387UL + 7010UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL, "avi_read", 3, 0UL, (912368063336277387UL + 7013UL), 0UL, 0UL, "lseek", 3, 0UL, 0UL, 0UL, 0UL,
+                            "AVI_print_error", (void *)(&AVI_print_error_npm), (void *)__null, 0, 1, (912368063336277387UL + 7039UL), 0UL, 2, "fprintf", 4, (912368063336277387UL + 1622UL), (912368063336277387UL + 7261UL), (912368063336277387UL + 7039UL), (912368063336277387UL + 7119UL), 0UL, "perror", 1, (912368063336277387UL + 7262UL), 0UL,
+                            "AVI_strerror", (void *)(&AVI_strerror_npm), (void *)__null, 0, 0, (912368063336277387UL + 7119UL), 3, "__errno_location", 0, (912368063336277387UL + 7106UL), "strerror", 1, 0UL, (912368063336277387UL + 7108UL), "sprintf", 4, (912368063336277387UL + 7119UL), (912368063336277387UL + 7261UL), (912368063336277387UL + 7119UL), (912368063336277387UL + 7108UL), 0UL,
                             "AVI_max_size", (void *)(&AVI_max_size_npm), (void *)__null, 0, 0, 0UL, 0,
-                               "__errno_location", (void **)&(____chimes_extern_func___errno_location),
-                               "close", (void **)&(____chimes_extern_func_close),
-                               "lseek", (void **)&(____chimes_extern_func_lseek),
-                               "open", (void **)&(____chimes_extern_func_open),
-                               "read", (void **)&(____chimes_extern_func_read),
-                               "strerror", (void **)&(____chimes_extern_func_strerror),
-                               "strncasecmp", (void **)&(____chimes_extern_func_strncasecmp),
-                               "strncmp", (void **)&(____chimes_extern_func_strncmp),
-                               "write", (void **)&(____chimes_extern_func_write),
                            "avi_read", &(____chimes_does_checkpoint_avi_read_npm),
                            "avi_write", &(____chimes_does_checkpoint_avi_write_npm),
                            "long2str", &(____chimes_does_checkpoint_long2str_npm),
@@ -13659,108 +13293,109 @@ static int module_init() {
                            "AVI_print_error", &(____chimes_does_checkpoint_AVI_print_error_npm),
                            "AVI_strerror", &(____chimes_does_checkpoint_AVI_strerror_npm),
                            "AVI_max_size", &(____chimes_does_checkpoint_AVI_max_size_npm),
-                           "__errno_location", &(____chimes_does_checkpoint___errno_location_npm),
-                           "close", &(____chimes_does_checkpoint_close_npm),
-                           "lseek", &(____chimes_does_checkpoint_lseek_npm),
-                           "open", &(____chimes_does_checkpoint_open_npm),
-                           "read", &(____chimes_does_checkpoint_read_npm),
-                           "strerror", &(____chimes_does_checkpoint_strerror_npm),
-                           "strncasecmp", &(____chimes_does_checkpoint_strncasecmp_npm),
-                           "strncmp", &(____chimes_does_checkpoint_strncmp_npm),
-                           "write", &(____chimes_does_checkpoint_write_npm),
-                             (912368063336277387UL + 5474UL), (912368063336277387UL + 5481UL),
-                             (912368063336277387UL + 6128UL), (912368063336277387UL + 6034UL),
-                             (912368063336277387UL + 6006UL), (912368063336277387UL + 6128UL),
-                             (912368063336277387UL + 1UL), (912368063336277387UL + 14UL),
-                             (912368063336277387UL + 5585UL), (912368063336277387UL + 5598UL),
-                             (912368063336277387UL + 6002UL), (912368063336277387UL + 5921UL),
-                             (912368063336277387UL + 5627UL), (912368063336277387UL + 5634UL),
-                             (912368063336277387UL + 5374UL), (912368063336277387UL + 5419UL),
-                             (912368063336277387UL + 1946UL), (912368063336277387UL + 2065UL),
-                             (912368063336277387UL + 1945UL), (912368063336277387UL + 2064UL),
-                             (912368063336277387UL + 5902UL), (912368063336277387UL + 6004UL),
-                             (912368063336277387UL + 5900UL), (912368063336277387UL + 6002UL),
-                             (912368063336277387UL + 5901UL), (912368063336277387UL + 6003UL),
-                             (912368063336277387UL + 3838UL), (912368063336277387UL + 2466UL),
-                             (912368063336277387UL + 1796UL), (912368063336277387UL + 1895UL),
-                             (912368063336277387UL + 5753UL), (912368063336277387UL + 5713UL),
-                             (912368063336277387UL + 5756UL), (912368063336277387UL + 5800UL),
-                             (912368063336277387UL + 5466UL), (912368063336277387UL + 5473UL),
-                             (912368063336277387UL + 5513UL), (912368063336277387UL + 5526UL),
-                             (912368063336277387UL + 6715UL), (912368063336277387UL + 1590UL),
-                             (912368063336277387UL + 1550UL), (912368063336277387UL + 1651UL),
-                             (912368063336277387UL + 6569UL), (912368063336277387UL + 6625UL),
-                             (912368063336277387UL + 5599UL), (912368063336277387UL + 5612UL),
-                             (912368063336277387UL + 5613UL), (912368063336277387UL + 5626UL),
-                             (912368063336277387UL + 2312UL), (912368063336277387UL + 2335UL),
-                             (912368063336277387UL + 3840UL), (912368063336277387UL + 3892UL),
-                             (912368063336277387UL + 5691UL), (912368063336277387UL + 5753UL),
-                             (912368063336277387UL + 2257UL), (912368063336277387UL + 2284UL),
-                             (912368063336277387UL + 2254UL), (912368063336277387UL + 2150UL),
-                             (912368063336277387UL + 2064UL), (912368063336277387UL + 1992UL),
-                             (912368063336277387UL + 1660UL), (912368063336277387UL + 1694UL),
-                             (912368063336277387UL + 6751UL), (912368063336277387UL + 6625UL),
-                             (912368063336277387UL + 5498UL), (912368063336277387UL + 5512UL),
-                             (912368063336277387UL + 113UL), (912368063336277387UL + 158UL),
-                             (912368063336277387UL + 5490UL), (912368063336277387UL + 5497UL),
-                             (912368063336277387UL + 3UL), (912368063336277387UL + 14UL),
-                             (912368063336277387UL + 3842UL), (912368063336277387UL + 14UL),
-                             (912368063336277387UL + 5688UL), (912368063336277387UL + 5660UL),
-                             (912368063336277387UL + 2071UL), (912368063336277387UL + 2112UL),
-                             (912368063336277387UL + 2070UL), (912368063336277387UL + 2111UL),
-                             (912368063336277387UL + 6572UL), (912368063336277387UL + 6612UL),
-                             (912368063336277387UL + 2286UL), (912368063336277387UL + 2310UL),
-                             (912368063336277387UL + 6571UL), (912368063336277387UL + 6607UL),
-                             (912368063336277387UL + 5482UL), (912368063336277387UL + 5489UL),
-                             (912368063336277387UL + 5329UL), (912368063336277387UL + 14UL),
-                             (912368063336277387UL + 5571UL), (912368063336277387UL + 5584UL),
-                             (912368063336277387UL + 2373UL), (912368063336277387UL + 2421UL),
-                             (912368063336277387UL + 5332UL), (912368063336277387UL + 14UL),
-                             (912368063336277387UL + 1901UL), (912368063336277387UL + 1943UL),
-                             (912368063336277387UL + 1739UL), (912368063336277387UL + 1791UL),
-                             (912368063336277387UL + 5542UL), (912368063336277387UL + 5556UL),
-                             (912368063336277387UL + 2UL), (912368063336277387UL + 99UL),
-                             (912368063336277387UL + 5869UL), (912368063336277387UL + 5897UL),
-                             (912368063336277387UL + 2365UL), (912368063336277387UL + 2372UL),
-                             (912368063336277387UL + 5866UL), (912368063336277387UL + 5847UL),
-                             (912368063336277387UL + 2115UL), (912368063336277387UL + 2254UL),
-                             (912368063336277387UL + 2116UL), (912368063336277387UL + 2255UL),
-                             (912368063336277387UL + 3895UL), (912368063336277387UL + 5085UL),
-                             (912368063336277387UL + 2421UL), (912368063336277387UL + 2396UL),
-                             (912368063336277387UL + 2423UL), (912368063336277387UL + 3838UL),
-                             (912368063336277387UL + 6520UL), (912368063336277387UL + 6543UL),
-                             (912368063336277387UL + 5557UL), (912368063336277387UL + 5570UL),
-                             (912368063336277387UL + 165UL), (912368063336277387UL + 223UL),
-                             (912368063336277387UL + 161UL), (912368063336277387UL + 219UL),
-                             (912368063336277387UL + 6353UL), (912368063336277387UL + 6519UL),
-                             (912368063336277387UL + 6351UL), (912368063336277387UL + 6517UL),
-                             (912368063336277387UL + 5424UL), (912368063336277387UL + 5439UL),
-                             (912368063336277387UL + 2337UL), (912368063336277387UL + 2363UL),
-                             (912368063336277387UL + 1740UL), (912368063336277387UL + 1792UL),
-                             (912368063336277387UL + 5440UL), (912368063336277387UL + 5447UL),
-                             (912368063336277387UL + 3902UL), (912368063336277387UL + 4162UL),
-                             (912368063336277387UL + 5085UL), (912368063336277387UL + 4632UL),
-                             (912368063336277387UL + 5527UL), (912368063336277387UL + 5541UL),
-                             (912368063336277387UL + 5644UL), (912368063336277387UL + 5688UL),
-                             (912368063336277387UL + 233UL), (912368063336277387UL + 1549UL),
-                             (912368063336277387UL + 6344UL), (912368063336277387UL + 6164UL),
-                             (912368063336277387UL + 6349UL), (912368063336277387UL + 6515UL),
-                             (912368063336277387UL + 6348UL), (912368063336277387UL + 6514UL),
-                             (912368063336277387UL + 5457UL), (912368063336277387UL + 5465UL),
-                             (912368063336277387UL + 1696UL), (912368063336277387UL + 1730UL),
-                             (912368063336277387UL + 5803UL), (912368063336277387UL + 5829UL),
-                             (912368063336277387UL + 5800UL), (912368063336277387UL + 5772UL),
-                             (912368063336277387UL + 1797UL), (912368063336277387UL + 1896UL),
-                             (912368063336277387UL + 3839UL), (912368063336277387UL + 14UL),
-                             (912368063336277387UL + 6638UL), (912368063336277387UL + 6706UL),
-                             (912368063336277387UL + 6637UL), (912368063336277387UL + 6705UL),
-                             (912368063336277387UL + 6636UL), (912368063336277387UL + 6704UL),
-                             (912368063336277387UL + 5448UL), (912368063336277387UL + 5456UL),
-                             (912368063336277387UL + 5831UL), (912368063336277387UL + 5866UL),
-                             (912368063336277387UL + 6132UL), (912368063336277387UL + 6345UL),
-                             (912368063336277387UL + 5635UL), (912368063336277387UL + 5642UL),
-                             (912368063336277387UL + 6131UL), (912368063336277387UL + 6344UL),
-                             (912368063336277387UL + 1950UL), (912368063336277387UL + 1992UL),
+                             (912368063336277387UL + 7223UL), (912368063336277387UL + 1622UL),
+                             (912368063336277387UL + 6120UL), (912368063336277387UL + 6180UL),
+                             (912368063336277387UL + 1775UL), (912368063336277387UL + 1839UL),
+                             (912368063336277387UL + 5823UL), (912368063336277387UL + 5841UL),
+                             (912368063336277387UL + 1776UL), (912368063336277387UL + 1840UL),
+                             (912368063336277387UL + 5622UL), (912368063336277387UL + 5675UL),
+                             (912368063336277387UL + 2152UL), (912368063336277387UL + 2077UL),
+                             (912368063336277387UL + 3998UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 8UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 3995UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 3994UL), (912368063336277387UL + 2613UL),
+                             (912368063336277387UL + 2158UL), (912368063336277387UL + 2211UL),
+                             (912368063336277387UL + 2159UL), (912368063336277387UL + 2212UL),
+                             (912368063336277387UL + 5842UL), (912368063336277387UL + 5860UL),
+                             (912368063336277387UL + 2465UL), (912368063336277387UL + 2499UL),
+                             (912368063336277387UL + 6180UL), (912368063336277387UL + 6143UL),
+                             (912368063336277387UL + 5751UL), (912368063336277387UL + 5761UL),
+                             (912368063336277387UL + 5750UL), (912368063336277387UL + 5761UL),
+                             (912368063336277387UL + 129UL), (912368063336277387UL + 182UL),
+                             (912368063336277387UL + 6568UL), (912368063336277387UL + 6468UL),
+                             (912368063336277387UL + 7259UL), (912368063336277387UL + 7119UL),
+                             (912368063336277387UL + 6310UL), (912368063336277387UL + 6432UL),
+                             (912368063336277387UL + 5805UL), (912368063336277387UL + 5822UL),
+                             (912368063336277387UL + 5915UL), (912368063336277387UL + 5932UL),
+                             (912368063336277387UL + 2398UL), (912368063336277387UL + 2430UL),
+                             (912368063336277387UL + 4070UL), (912368063336277387UL + 4375UL),
+                             (912368063336277387UL + 7138UL), (912368063336277387UL + 7214UL),
+                             (912368063336277387UL + 5762UL), (912368063336277387UL + 5773UL),
+                             (912368063336277387UL + 7137UL), (912368063336277387UL + 7213UL),
+                             (912368063336277387UL + 7136UL), (912368063336277387UL + 7212UL),
+                             (912368063336277387UL + 6266UL), (912368063336277387UL + 6241UL),
+                             (912368063336277387UL + 5569UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 6269UL), (912368063336277387UL + 6305UL),
+                             (912368063336277387UL + 3UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 6309UL), (912368063336277387UL + 6431UL),
+                             (912368063336277387UL + 6308UL), (912368063336277387UL + 6430UL),
+                             (912368063336277387UL + 7UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 5963UL), (912368063336277387UL + 5974UL),
+                             (912368063336277387UL + 5680UL), (912368063336277387UL + 5699UL),
+                             (912368063336277387UL + 6572UL), (912368063336277387UL + 6805UL),
+                             (912368063336277387UL + 6571UL), (912368063336277387UL + 6804UL),
+                             (912368063336277387UL + 5322UL), (912368063336277387UL + 4854UL),
+                             (912368063336277387UL + 5774UL), (912368063336277387UL + 5785UL),
+                             (912368063336277387UL + 1728UL), (912368063336277387UL + 1766UL),
+                             (912368063336277387UL + 5574UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 5573UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 5572UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 1845UL), (912368063336277387UL + 1960UL),
+                             (912368063336277387UL + 1844UL), (912368063336277387UL + 1959UL),
+                             (912368063336277387UL + 5879UL), (912368063336277387UL + 5896UL),
+                             (912368063336277387UL + 5976UL), (912368063336277387UL + 6036UL),
+                             (912368063336277387UL + 2565UL), (912368063336277387UL + 2537UL),
+                             (912368063336277387UL + 7016UL), (912368063336277387UL + 7039UL),
+                             (912368063336277387UL + 257UL), (912368063336277387UL + 1581UL),
+                             (912368063336277387UL + 4063UL), (912368063336277387UL + 5322UL),
+                             (912368063336277387UL + 6434UL), (912368063336277387UL + 6568UL),
+                             (912368063336277387UL + 6430UL), (912368063336277387UL + 6337UL),
+                             (912368063336277387UL + 1582UL), (912368063336277387UL + 1683UL),
+                             (912368063336277387UL + 5700UL), (912368063336277387UL + 5711UL),
+                             (912368063336277387UL + 2567UL), (912368063336277387UL + 3994UL),
+                             (912368063336277387UL + 5786UL), (912368063336277387UL + 5804UL),
+                             (912368063336277387UL + 2UL), (912368063336277387UL + 115UL),
+                             (912368063336277387UL + 185UL), (912368063336277387UL + 243UL),
+                             (912368063336277387UL + 2365UL), (912368063336277387UL + 2396UL),
+                             (912368063336277387UL + 189UL), (912368063336277387UL + 247UL),
+                             (912368063336277387UL + 5861UL), (912368063336277387UL + 5878UL),
+                             (912368063336277387UL + 2362UL), (912368063336277387UL + 2255UL),
+                             (912368063336277387UL + 3999UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 6808UL), (912368063336277387UL + 7010UL),
+                             (912368063336277387UL + 6809UL), (912368063336277387UL + 7011UL),
+                             (912368063336277387UL + 6804UL), (912368063336277387UL + 6612UL),
+                             (912368063336277387UL + 5897UL), (912368063336277387UL + 5914UL),
+                             (912368063336277387UL + 6183UL), (912368063336277387UL + 6217UL),
+                             (912368063336277387UL + 5951UL), (912368063336277387UL + 5962UL),
+                             (912368063336277387UL + 10UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 2216UL), (912368063336277387UL + 2363UL),
+                             (912368063336277387UL + 2215UL), (912368063336277387UL + 2362UL),
+                             (912368063336277387UL + 6117UL), (912368063336277387UL + 6068UL),
+                             (912368063336277387UL + 5712UL), (912368063336277387UL + 5724UL),
+                             (912368063336277387UL + 2025UL), (912368063336277387UL + 2152UL),
+                             (912368063336277387UL + 2026UL), (912368063336277387UL + 2153UL),
+                             (912368063336277387UL + 6219UL), (912368063336277387UL + 6266UL),
+                             (912368063336277387UL + 2513UL), (912368063336277387UL + 2565UL),
+                             (912368063336277387UL + 6811UL), (912368063336277387UL + 7013UL),
+                             (912368063336277387UL + 2432UL), (912368063336277387UL + 2463UL),
+                             (912368063336277387UL + 6813UL), (912368063336277387UL + 7015UL),
+                             (912368063336277387UL + 4000UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 1965UL), (912368063336277387UL + 2023UL),
+                             (912368063336277387UL + 5725UL), (912368063336277387UL + 5737UL),
+                             (912368063336277387UL + 1UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 1692UL), (912368063336277387UL + 1726UL),
+                             (912368063336277387UL + 3996UL), (912368063336277387UL + 4060UL),
+                             (912368063336277387UL + 2030UL), (912368063336277387UL + 2077UL),
+                             (912368063336277387UL + 9UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 2501UL), (912368063336277387UL + 2512UL),
+                             (912368063336277387UL + 5738UL), (912368063336277387UL + 5749UL),
+                             (912368063336277387UL + 7068UL), (912368063336277387UL + 7119UL),
+                             (912368063336277387UL + 7067UL), (912368063336277387UL + 7119UL),
+                             (912368063336277387UL + 7065UL), (912368063336277387UL + 7119UL),
+                             (912368063336277387UL + 6039UL), (912368063336277387UL + 6117UL),
+                             (912368063336277387UL + 5933UL), (912368063336277387UL + 5950UL),
+                             (912368063336277387UL + 4001UL), (912368063336277387UL + 18UL),
+                             (912368063336277387UL + 6036UL), (912368063336277387UL + 5999UL),
                      "audio_index_entry", 3, "long unsigned int", (int)__builtin_offsetof (audio_index_entry, pos), "long unsigned int", (int)__builtin_offsetof (audio_index_entry, len), "long unsigned int", (int)__builtin_offsetof (audio_index_entry, tot),
                      "avi_t", 26, "long int", (int)__builtin_offsetof (avi_t, fdes), "long int", (int)__builtin_offsetof (avi_t, mode), "long int", (int)__builtin_offsetof (avi_t, width), "long int", (int)__builtin_offsetof (avi_t, height), "double", (int)__builtin_offsetof (avi_t, fps), "[ 8 x char ]", (int)__builtin_offsetof (avi_t, compressor), "[ 8 x char ]", (int)__builtin_offsetof (avi_t, compressor2), "long int", (int)__builtin_offsetof (avi_t, video_strn), "long int", (int)__builtin_offsetof (avi_t, video_frames), "[ 4 x char ]", (int)__builtin_offsetof (avi_t, video_tag), "long int", (int)__builtin_offsetof (avi_t, video_pos), "long unsigned int", (int)__builtin_offsetof (avi_t, max_len), "[ 8 x %struct.track_s ]", (int)__builtin_offsetof (avi_t, track), "long unsigned int", (int)__builtin_offsetof (avi_t, pos), "long int", (int)__builtin_offsetof (avi_t, n_idx), "long int", (int)__builtin_offsetof (avi_t, max_idx), "long int", (int)__builtin_offsetof (avi_t, v_codech_off), "long int", (int)__builtin_offsetof (avi_t, v_codecf_off), "[ 16 x unsigned char ]*", (int)__builtin_offsetof (avi_t, idx), "%struct.video_index_entry*", (int)__builtin_offsetof (avi_t, video_index), "long unsigned int", (int)__builtin_offsetof (avi_t, last_pos), "long unsigned int", (int)__builtin_offsetof (avi_t, last_len), "int", (int)__builtin_offsetof (avi_t, must_use_index), "long unsigned int", (int)__builtin_offsetof (avi_t, movi_start), "int", (int)__builtin_offsetof (avi_t, anum), "int", (int)__builtin_offsetof (avi_t, aptr),
                      "track_s", 14, "long int", (int)__builtin_offsetof (struct track_s, a_fmt), "long int", (int)__builtin_offsetof (struct track_s, a_chans), "long int", (int)__builtin_offsetof (struct track_s, a_rate), "long int", (int)__builtin_offsetof (struct track_s, a_bits), "long int", (int)__builtin_offsetof (struct track_s, mp3rate), "long int", (int)__builtin_offsetof (struct track_s, audio_strn), "long int", (int)__builtin_offsetof (struct track_s, audio_bytes), "long int", (int)__builtin_offsetof (struct track_s, audio_chunks), "[ 4 x char ]", (int)__builtin_offsetof (struct track_s, audio_tag), "long int", (int)__builtin_offsetof (struct track_s, audio_posc), "long int", (int)__builtin_offsetof (struct track_s, audio_posb), "long int", (int)__builtin_offsetof (struct track_s, a_codech_off), "long int", (int)__builtin_offsetof (struct track_s, a_codecf_off), "%struct.audio_index_entry*", (int)__builtin_offsetof (struct track_s, audio_index),
@@ -13769,327 +13404,280 @@ static int module_init() {
                              "AVI_video_frames", "_Z16AVI_video_framesP5avi_t", 0,
                              "AVI_open_fd", "_Z11AVI_open_fdii", 1, "avi_parse_input_file",
                              "AVI_video_width", "_Z15AVI_video_widthP5avi_t", 0,
-                             "avi_write", "_ZL9avi_writeiPcm", 1, "write",
+                             "avi_write", "_ZL9avi_writeiPcm", 0,
                              "avi_add_index_entry", "_ZL19avi_add_index_entryP5avi_tPhlmm", 3, "long2str", "long2str", "long2str",
                              "AVI_audio_rate", "_Z14AVI_audio_rateP5avi_t", 0,
                              "AVI_bytes_remain", "_Z16AVI_bytes_remainP5avi_t", 0,
                              "AVI_max_video_chunk", "_Z19AVI_max_video_chunkP5avi_t", 0,
                              "AVI_dup_frame", "_Z13AVI_dup_frameP5avi_t", 1, "avi_add_index_entry",
-                             "AVI_close", "_Z9AVI_closeP5avi_t", 2, "avi_close_output_file", "close",
+                             "AVI_close", "_Z9AVI_closeP5avi_t", 1, "avi_close_output_file",
                              "AVI_audio_codecf_offset", "_Z23AVI_audio_codecf_offsetP5avi_t", 0,
                              "str2ulong", "_ZL9str2ulongPh", 0,
                              "AVI_set_audio", "_Z13AVI_set_audioP5avi_tiliil", 1, "avi_update_header",
                              "AVI_set_audio_track", "_Z19AVI_set_audio_trackP5avi_ti", 0,
-                             "AVI_open_output_file", "_Z20AVI_open_output_filePc", 3, "open", "avi_write", "close",
+                             "AVI_open_output_file", "_Z20AVI_open_output_filePc", 1, "avi_write",
                              "AVI_audio_size", "_Z14AVI_audio_sizeP5avi_tl", 0,
-                             "avi_add_chunk", "_ZL13avi_add_chunkP5avi_tPhS1_i", 4, "long2str", "avi_write", "avi_write", "lseek",
+                             "avi_add_chunk", "_ZL13avi_add_chunkP5avi_tPhS1_i", 3, "long2str", "avi_write", "avi_write",
                              "AVI_audio_chunks", "_Z16AVI_audio_chunksP5avi_t", 0,
                              "AVI_set_audio_bitrate", "_Z21AVI_set_audio_bitrateP5avi_tl", 0,
-                             "AVI_read_frame", "_Z14AVI_read_frameP5avi_tPcPi", 2, "lseek", "avi_read",
-                             "AVI_append_audio", "_Z16AVI_append_audioP5avi_tPcl", 8, "str2ulong", "str2ulong", "long2str", "lseek", "long2str", "avi_write", "lseek", "avi_write",
+                             "AVI_read_frame", "_Z14AVI_read_frameP5avi_tPcPi", 1, "avi_read",
+                             "AVI_append_audio", "_Z16AVI_append_audioP5avi_tPcl", 6, "str2ulong", "str2ulong", "long2str", "long2str", "avi_write", "avi_write",
                              "AVI_video_codecf_offset", "_Z23AVI_video_codecf_offsetP5avi_t", 0,
                              "AVI_frame_size", "_Z14AVI_frame_sizeP5avi_tl", 0,
                              "AVI_bytes_written", "_Z17AVI_bytes_writtenP5avi_t", 0,
                              "AVI_video_compressor", "_Z20AVI_video_compressorP5avi_t", 0,
                              "AVI_get_audio_track", "_Z19AVI_get_audio_trackP5avi_t", 0,
-                             "AVI_read_audio", "_Z14AVI_read_audioP5avi_tPcl", 2, "lseek", "avi_read",
+                             "AVI_read_audio", "_Z14AVI_read_audioP5avi_tPcl", 1, "avi_read",
                              "AVI_audio_format", "_Z16AVI_audio_formatP5avi_t", 0,
-                             "avi_update_header", "_Z17avi_update_headerP5avi_t", 67, "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_sampsize", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "lseek", "avi_write", "lseek",
+                             "avi_update_header", "_Z17avi_update_headerP5avi_t", 65, "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_sampsize", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_write",
                              "AVI_set_audio_position", "_Z22AVI_set_audio_positionP5avi_tl", 0,
-                             "avi_read", "_ZL8avi_readiPcm", 1, "read",
+                             "avi_read", "_ZL8avi_readiPcm", 0,
                              "AVI_audio_bits", "_Z14AVI_audio_bitsP5avi_t", 0,
                              "avi_write_data", "_ZL14avi_write_dataP5avi_tPcmii", 4, "avi_add_index_entry", "avi_add_index_entry", "avi_add_chunk", "avi_add_chunk",
-                             "AVI_seek_start", "_Z14AVI_seek_startP5avi_t", 1, "lseek",
-                             "avi_close_output_file", "_ZL21avi_close_output_fileP5avi_t", 69, "avi_add_chunk", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_sampsize", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "lseek", "avi_write",
+                             "AVI_seek_start", "_Z14AVI_seek_startP5avi_t", 0,
+                             "avi_close_output_file", "_ZL21avi_close_output_fileP5avi_t", 68, "avi_add_chunk", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_sampsize", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "long2str", "avi_write",
                              "AVI_max_size", "_Z12AVI_max_sizev", 0,
                              "AVI_video_codech_offset", "_Z23AVI_video_codech_offsetP5avi_t", 0,
                              "avi_sampsize", "_ZL12avi_sampsizeP5avi_ti", 0,
-                             "AVI_read_data", "_Z13AVI_read_dataP5avi_tPclS1_lPl", 11, "avi_read", "strncasecmp", "lseek", "str2ulong", "strncasecmp", "lseek", "avi_read", "strncasecmp", "lseek", "avi_read", "lseek",
-                             "avi_parse_input_file", "_Z20avi_parse_input_fileP5avi_ti", 81, "avi_read", "AVI_close", "strncasecmp", "strncasecmp", "AVI_close", "avi_read", "str2ulong", "strncasecmp", "avi_read", "AVI_close", "strncasecmp", "AVI_close", "lseek", "avi_read", "AVI_close", "strncasecmp", "lseek", "lseek", "lseek", "strncasecmp", "AVI_close", "avi_read", "AVI_close", "lseek", "AVI_close", "AVI_close", "strncasecmp", "str2ulong", "strncasecmp", "strncasecmp", "str2ulong", "str2ulong", "str2ulong", "strncasecmp", "str2ulong", "avi_sampsize", "strncasecmp", "str2ulong", "str2ulong", "str2ushort", "str2ushort", "str2ulong", "str2ulong", "str2ushort", "AVI_close", "lseek", "strncasecmp", "AVI_close", "str2ulong", "str2ulong", "lseek", "avi_read", "AVI_close", "strncasecmp", "str2ulong", "lseek", "avi_read", "AVI_close", "strncasecmp", "str2ulong", "lseek", "avi_read", "str2ulong", "strncasecmp", "lseek", "lseek", "avi_add_index_entry", "lseek", "strncasecmp", "strncasecmp", "AVI_close", "AVI_close", "AVI_close", "strncasecmp", "str2ulong", "str2ulong", "str2ulong", "strncasecmp", "str2ulong", "str2ulong", "lseek",
+                             "AVI_read_data", "_Z13AVI_read_dataP5avi_tPclS1_lPl", 4, "avi_read", "str2ulong", "avi_read", "avi_read",
+                             "avi_parse_input_file", "_Z20avi_parse_input_fileP5avi_ti", 49, "avi_read", "AVI_close", "AVI_close", "avi_read", "str2ulong", "avi_read", "AVI_close", "AVI_close", "avi_read", "AVI_close", "AVI_close", "avi_read", "AVI_close", "AVI_close", "AVI_close", "str2ulong", "str2ulong", "str2ulong", "str2ulong", "str2ulong", "avi_sampsize", "str2ulong", "str2ulong", "str2ushort", "str2ushort", "str2ulong", "str2ulong", "str2ushort", "AVI_close", "AVI_close", "str2ulong", "str2ulong", "avi_read", "AVI_close", "str2ulong", "avi_read", "AVI_close", "str2ulong", "avi_read", "str2ulong", "avi_add_index_entry", "AVI_close", "AVI_close", "AVI_close", "str2ulong", "str2ulong", "str2ulong", "str2ulong", "str2ulong",
                              "AVI_print_error", "_Z15AVI_print_errorPc", 0,
                              "AVI_write_audio", "_Z15AVI_write_audioP5avi_tPcl", 1, "avi_write_data",
                              "AVI_get_video_position", "_Z22AVI_get_video_positionP5avi_tl", 0,
                              "long2str", "_ZL8long2strPhi", 0,
-                             "AVI_set_video", "_Z13AVI_set_videoP5avi_tiidPc", 2, "strncmp", "avi_update_header",
+                             "AVI_set_video", "_Z13AVI_set_videoP5avi_tiidPc", 1, "avi_update_header",
                              "AVI_audio_mp3rate", "_Z17AVI_audio_mp3rateP5avi_t", 0,
                              "AVI_video_height", "_Z16AVI_video_heightP5avi_t", 0,
                              "str2ushort", "_ZL10str2ushortPh", 0,
                              "AVI_audio_bytes", "_Z15AVI_audio_bytesP5avi_t", 0,
-                             "AVI_strerror", "_Z12AVI_strerrorv", 2, "__errno_location", "strerror",
+                             "AVI_strerror", "_Z12AVI_strerrorv", 0,
                              "AVI_set_video_position", "_Z22AVI_set_video_positionP5avi_tl", 0,
                              "AVI_audio_channels", "_Z18AVI_audio_channelsP5avi_t", 0,
                              "AVI_frame_rate", "_Z14AVI_frame_rateP5avi_t", 0,
                              "AVI_audio_tracks", "_Z16AVI_audio_tracksP5avi_t", 0,
                              "AVI_audio_codech_offset", "_Z23AVI_audio_codech_offsetP5avi_t", 0,
-                             "AVI_open_input_file", "_Z19AVI_open_input_filePci", 2, "open", "avi_parse_input_file",
-                        "AVI_open_output_file|AVI|0", 3, "open", "close", "avi_write",
-                        "AVI_open_output_file|i|0", 2, "close", "avi_write",
+                             "AVI_open_input_file", "_Z19AVI_open_input_filePci", 1, "avi_parse_input_file",
                         "AVI_open_output_file|AVI_header|0", 1, "AVI_open_output_file",
-                        "avi_write|fd|0", 1, "write",
-                        "avi_write|buf|0", 1, "write",
-                        "avi_write|len|0", 1, "write",
-                        "avi_write|n|0", 1, "write",
-                        "avi_write|r|0", 1, "write",
-                        "AVI_set_video|AVI|0", 2, "strncmp", "avi_update_header",
-                        "AVI_set_video|compressor|0", 2, "strncmp", "avi_update_header",
-                        "avi_update_header|AVI|0", 2, "lseek", "avi_write",
                         "avi_update_header|AVI_header|0", 1, "avi_update_header",
-                        "AVI_write_frame|AVI|0", 1, "avi_write_data",
-                        "AVI_write_frame|bytes|0", 1, "avi_write_data",
-                        "AVI_write_frame|pos|0", 1, "avi_write_data",
-                        "avi_write_data|n|0", 1, "avi_add_chunk",
                         "avi_write_data|astr|0", 1, "avi_write_data",
-                        "AVI_write_audio|AVI|0", 1, "avi_write_data",
-                        "AVI_write_audio|bytes|0", 1, "avi_write_data",
-                        "AVI_append_audio|AVI|0", 2, "lseek", "avi_write",
-                        "AVI_append_audio|data|0", 2, "lseek", "avi_write",
-                        "AVI_append_audio|bytes|0", 2, "lseek", "avi_write",
-                        "AVI_append_audio|i|0", 1, "avi_write",
-                        "AVI_append_audio|length|0", 2, "lseek", "avi_write",
-                        "AVI_append_audio|pos|0", 2, "lseek", "avi_write",
                         "AVI_append_audio|c|0", 1, "AVI_append_audio",
-                        "AVI_close|AVI|0", 2, "close", "avi_close_output_file",
-                        "AVI_close|ret|0", 1, "close",
-                        "avi_close_output_file|AVI|0", 3, "lseek", "avi_write", "avi_add_chunk",
-                        "avi_close_output_file|ret|0", 2, "lseek", "avi_write",
-                        "avi_close_output_file|njunk|0", 2, "lseek", "avi_write",
-                        "avi_close_output_file|sampsize|0", 2, "lseek", "avi_write",
-                        "avi_close_output_file|hasIndex|0", 2, "lseek", "avi_write",
-                        "avi_close_output_file|ms_per_frame|0", 2, "lseek", "avi_write",
-                        "avi_close_output_file|frate|0", 2, "lseek", "avi_write",
-                        "avi_close_output_file|idxerror|0", 3, "lseek", "avi_write", "avi_add_chunk",
-                        "avi_close_output_file|flag|0", 2, "lseek", "avi_write",
-                        "avi_close_output_file|movi_len|0", 3, "lseek", "avi_write", "avi_add_chunk",
-                        "avi_close_output_file|hdrl_start|0", 2, "lseek", "avi_write",
-                        "avi_close_output_file|strl_start|0", 2, "lseek", "avi_write",
-                        "avi_close_output_file|j|0", 2, "lseek", "avi_write",
                         "avi_close_output_file|AVI_header|0", 1, "avi_close_output_file",
-                        "avi_close_output_file|nhb|0", 2, "lseek", "avi_write",
-                        "avi_close_output_file|info_len|0", 2, "lseek", "avi_write",
-                        "AVI_open_input_file|getIndex|0", 2, "open", "avi_parse_input_file",
-                        "AVI_open_input_file|AVI|0", 2, "open", "avi_parse_input_file",
-                        "avi_parse_input_file|AVI|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|getIndex|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|i|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|n|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|rate|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|scale|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|idx_type|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|hdrl_data|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|header_offset|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|hdrl_len|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|nvi|0", 3, "strncasecmp", "lseek", "AVI_close",
-                        "avi_parse_input_file|nai|0", 3, "strncasecmp", "lseek", "AVI_close",
-                        "avi_parse_input_file|ioff|0", 2, "strncasecmp", "lseek",
-                        "avi_parse_input_file|tot|0", 2, "strncasecmp", "lseek",
-                        "avi_parse_input_file|j|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|lasttag|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|vids_strh_seen|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|vids_strf_seen|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|auds_strh_seen|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|num_stream|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
                         "avi_parse_input_file|data|0", 1, "avi_parse_input_file",
-                        "avi_parse_input_file|pos|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|len|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "avi_parse_input_file|____chimes_unroll_var_0|0", 4, "strncasecmp", "lseek", "avi_read", "AVI_close",
-                        "AVI_open_fd|AVI|0", 1, "avi_parse_input_file",
-                        "avi_read|fd|0", 1, "read",
-                        "avi_read|buf|0", 1, "read",
-                        "avi_read|len|0", 1, "read",
-                        "avi_read|n|0", 1, "read",
-                        "avi_read|r|0", 1, "read",
-                        "AVI_seek_start|AVI|0", 1, "lseek",
-                        "AVI_read_frame|AVI|0", 2, "lseek", "avi_read",
-                        "AVI_read_frame|vidbuf|0", 2, "lseek", "avi_read",
-                        "AVI_read_frame|n|0", 2, "lseek", "avi_read",
-                        "AVI_read_audio|AVI|0", 2, "lseek", "avi_read",
-                        "AVI_read_audio|audbuf|0", 2, "lseek", "avi_read",
-                        "AVI_read_audio|bytes|0", 2, "lseek", "avi_read",
-                        "AVI_read_audio|nr|0", 2, "lseek", "avi_read",
-                        "AVI_read_audio|pos|0", 2, "lseek", "avi_read",
-                        "AVI_read_audio|left|0", 2, "lseek", "avi_read",
-                        "AVI_read_audio|todo|0", 2, "lseek", "avi_read",
-                        "AVI_read_data|AVI|0", 3, "strncasecmp", "lseek", "avi_read",
-                        "AVI_read_data|vidbuf|0", 3, "strncasecmp", "lseek", "avi_read",
-                        "AVI_read_data|max_vidbuf|0", 3, "strncasecmp", "lseek", "avi_read",
-                        "AVI_read_data|audbuf|0", 3, "strncasecmp", "lseek", "avi_read",
-                        "AVI_read_data|max_audbuf|0", 3, "strncasecmp", "lseek", "avi_read",
-                        "AVI_read_data|len|0", 3, "strncasecmp", "lseek", "avi_read",
-                        "AVI_read_data|n|0", 3, "strncasecmp", "lseek", "avi_read",
                         "AVI_read_data|data|0", 1, "AVI_read_data",
-                        "AVI_strerror|aerrno|0", 2, "strerror", "__errno_location",
-                        "AVI_strerror|____chimes_unroll_var_1|0", 1, "strerror",
-                        "avi_add_chunk|AVI|0", 2, "lseek", "avi_write",
-                        "avi_add_chunk|data|0", 2, "lseek", "avi_write",
-                        "avi_add_chunk|length|0", 2, "lseek", "avi_write",
                         "avi_add_chunk|c|0", 1, "avi_add_chunk",
-        "long2str", 0UL, (int)2, 912368063336284027UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279379UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279379UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279379UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "avi_sampsize", 0UL, (int)2, 912368063336278936UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336277631UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "avi_sampsize", 0UL, (int)2, 912368063336281225UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279823UL, 0UL,
-        "avi_add_index_entry", 0UL, (int)5, 912368063336279282UL, 912368063336279189UL, 0UL, 0UL, 0UL,
-        "avi_add_index_entry", 0UL, (int)5, 912368063336279282UL, 912368063336279189UL, 0UL, 0UL, 0UL,
-        "avi_add_index_entry", 0UL, (int)5, 912368063336279330UL, 912368063336284104UL, 0UL, 0UL, 0UL,
-        "str2ulong", 0UL, (int)1, 912368063336279537UL,
-        "str2ulong", 0UL, (int)1, 912368063336279537UL,
-        "long2str", 0UL, (int)2, 912368063336279537UL, 0UL,
-        "long2str", 0UL, (int)2, 912368063336279508UL, 0UL,
-        "str2ulong", 0UL, (int)1, 912368063336281302UL,
-        "str2ulong", 0UL, (int)1, 912368063336281549UL,
-        "str2ulong", 0UL, (int)1, 912368063336281549UL,
-        "str2ulong", 0UL, (int)1, 912368063336281549UL,
-        "str2ulong", 0UL, (int)1, 912368063336281549UL,
-        "str2ulong", 0UL, (int)1, 912368063336281549UL,
-        "avi_sampsize", 0UL, (int)2, 912368063336282472UL, 0UL,
-        "str2ulong", 0UL, (int)1, 912368063336281549UL,
-        "str2ulong", 0UL, (int)1, 912368063336281549UL,
-        "str2ushort", 0UL, (int)1, 912368063336281549UL,
-        "str2ushort", 0UL, (int)1, 912368063336281549UL,
-        "str2ulong", 0UL, (int)1, 912368063336281549UL,
-        "str2ulong", 0UL, (int)1, 912368063336281549UL,
-        "str2ushort", 0UL, (int)1, 912368063336281549UL,
-        "str2ulong", 0UL, (int)1, 912368063336282019UL,
-        "str2ulong", 0UL, (int)1, 912368063336282019UL,
-        "str2ulong", 0UL, (int)1, 912368063336281302UL,
-        "str2ulong", 0UL, (int)1, 912368063336281302UL,
-        "str2ulong", 0UL, (int)1, 912368063336281302UL,
-        "avi_add_index_entry", 0UL, (int)5, 912368063336282472UL, 912368063336281302UL, 0UL, 0UL, 0UL,
-        "str2ulong", 0UL, (int)1, 912368063336282019UL,
-        "str2ulong", 0UL, (int)1, 912368063336282019UL,
-        "str2ulong", 0UL, (int)1, 912368063336282019UL,
-        "str2ulong", 0UL, (int)1, 912368063336282019UL,
-        "str2ulong", 0UL, (int)1, 912368063336282019UL,
-        "str2ulong", 0UL, (int)1, 912368063336283742UL);
+        "long2str", 0UL, (int)2, 912368063336284527UL, 0UL,
+        "avi_write", 0UL, (int)3, 0UL, 912368063336284527UL, 0UL,
+        "avi_write", 0UL, (int)3, 0UL, 912368063336284601UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279464UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279464UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279464UL, 0UL,
+        "avi_write", 0UL, (int)3, 0UL, 912368063336277393UL, 0UL,
+        "avi_update_header", 0UL, (int)1, 912368063336277630UL,
+        "avi_update_header", 0UL, (int)1, 912368063336279070UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "avi_sampsize", 0UL, (int)2, 912368063336278968UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336277655UL, 0UL,
+        "avi_write", 0UL, (int)3, 0UL, 912368063336277655UL, 0UL,
+        "avi_add_chunk", 0UL, (int)4, 912368063336281381UL, 912368063336284612UL, 912368063336280000UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "avi_sampsize", 0UL, (int)2, 912368063336281381UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279967UL, 0UL,
+        "avi_write", 0UL, (int)3, 0UL, 912368063336279967UL, 0UL,
+        "avi_add_index_entry", 0UL, (int)5, 912368063336279346UL, 912368063336279237UL, 0UL, 0UL, 0UL,
+        "avi_add_index_entry", 0UL, (int)5, 912368063336279346UL, 912368063336279237UL, 0UL, 0UL, 0UL,
+        "avi_add_chunk", 0UL, (int)4, 912368063336279346UL, 912368063336279237UL, 912368063336279347UL, 0UL,
+        "avi_add_chunk", 0UL, (int)4, 912368063336279346UL, 912368063336279237UL, 912368063336279347UL, 0UL,
+        "avi_write_data", 0UL, (int)5, 912368063336279226UL, 912368063336279227UL, 0UL, 0UL, 0UL,
+        "avi_add_index_entry", 0UL, (int)5, 912368063336279410UL, 912368063336284612UL, 0UL, 0UL, 0UL,
+        "avi_write_data", 0UL, (int)5, 912368063336279598UL, 912368063336279599UL, 0UL, 0UL, 0UL,
+        "str2ulong", 0UL, (int)1, 912368063336279642UL,
+        "str2ulong", 0UL, (int)1, 912368063336279642UL,
+        "long2str", 0UL, (int)2, 912368063336279642UL, 0UL,
+        "long2str", 0UL, (int)2, 912368063336279608UL, 0UL,
+        "avi_write", 0UL, (int)3, 0UL, 912368063336279608UL, 0UL,
+        "avi_write", 0UL, (int)3, 0UL, 912368063336279750UL, 0UL,
+        "avi_close_output_file", 0UL, (int)1, 912368063336279952UL,
+        "avi_parse_input_file", 0UL, (int)2, 912368063336277405UL, 0UL,
+        "avi_parse_input_file", 0UL, (int)2, 912368063336277405UL, 0UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336281470UL, 0UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336281470UL, 0UL,
+        "str2ulong", 0UL, (int)1, 912368063336281470UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336281470UL, 0UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336281762UL, 0UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336282241UL, 0UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "str2ulong", 0UL, (int)1, 912368063336281762UL,
+        "str2ulong", 0UL, (int)1, 912368063336281762UL,
+        "str2ulong", 0UL, (int)1, 912368063336281762UL,
+        "str2ulong", 0UL, (int)1, 912368063336281762UL,
+        "str2ulong", 0UL, (int)1, 912368063336281762UL,
+        "avi_sampsize", 0UL, (int)2, 912368063336282709UL, 0UL,
+        "str2ulong", 0UL, (int)1, 912368063336281762UL,
+        "str2ulong", 0UL, (int)1, 912368063336281762UL,
+        "str2ushort", 0UL, (int)1, 912368063336281762UL,
+        "str2ushort", 0UL, (int)1, 912368063336281762UL,
+        "str2ulong", 0UL, (int)1, 912368063336281762UL,
+        "str2ulong", 0UL, (int)1, 912368063336281762UL,
+        "str2ushort", 0UL, (int)1, 912368063336281762UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "str2ulong", 0UL, (int)1, 912368063336282241UL,
+        "str2ulong", 0UL, (int)1, 912368063336282241UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336281470UL, 0UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "str2ulong", 0UL, (int)1, 912368063336281470UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336281470UL, 0UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "str2ulong", 0UL, (int)1, 912368063336281470UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336281470UL, 0UL,
+        "str2ulong", 0UL, (int)1, 912368063336281470UL,
+        "avi_add_index_entry", 0UL, (int)5, 912368063336282709UL, 912368063336281470UL, 0UL, 0UL, 0UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "AVI_close", 0UL, (int)1, 912368063336282709UL,
+        "str2ulong", 0UL, (int)1, 912368063336282241UL,
+        "str2ulong", 0UL, (int)1, 912368063336282241UL,
+        "str2ulong", 0UL, (int)1, 912368063336282241UL,
+        "str2ulong", 0UL, (int)1, 912368063336282241UL,
+        "str2ulong", 0UL, (int)1, 912368063336282241UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336283818UL, 0UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336284192UL, 0UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336284202UL, 0UL,
+        "str2ulong", 0UL, (int)1, 912368063336284202UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336284398UL, 0UL,
+        "avi_read", 0UL, (int)3, 0UL, 912368063336284400UL, 0UL);
     register_global_var("global|AVI_errno", "i64", (void *)(&AVI_errno), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|id_str", "[64 x i8]", (void *)(&id_str), 64.0, 0, 0, 0UL, 0);
     register_global_var("global|avi_errors", "[15 x i8*]", (void *)(&avi_errors), 120.0, 0, 0, 0UL, 0);

@@ -1,11 +1,14 @@
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c profileStart|handle|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getTime|ptime|0 " %struct.timeval = type { i64, i64 } " 128 0 1 timeval 0 1 getTime
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getTime|t|0 " i64 " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getTime|____chimes_ret_var_1|0 " i64 " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c profileStop|handle|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c profileStop|delta|0 " i64 " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getElapsedTime|handle|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getElapsedTime|etime|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getElapsedTime|____chimes_ret_var_0|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getTick|seconds_per_cycle|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c getTick|____chimes_ret_var_2|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|nGlobalAtoms|0 " i32 " 32 0 0 1 getMyRank getNRanks printRank timerStats
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|printRate|0 " i32 " 32 0 0 1 getMyRank getNRanks printRank timerStats
 /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c printPerformanceResults|tick|0 " double " 64 0 0 1 getMyRank getNRanks

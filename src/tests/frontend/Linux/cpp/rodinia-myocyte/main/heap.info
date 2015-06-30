@@ -1,14 +1,14 @@
-234 18 150 malloc 1 0
-236 19 146 malloc 1 0
-238 23 370 malloc
-242 17 292 malloc 1 0
-244 18 294 malloc
-247 22 299 malloc 1 0
-249 23 301 malloc
-339 4 370 free
-341 3 146 free
-343 2 150 free
-347 3 294 free
-349 2 292 free
-353 3 301 free
-355 2 299 free
+234 18 175 malloc 1 0
+236 19 171 malloc 1 0
+238 23 395 malloc
+242 17 317 malloc 1 0
+244 18 319 malloc
+247 22 324 malloc 1 0
+249 23 326 malloc
+339 4 395 free
+341 3 171 free
+343 2 175 free
+347 3 319 free
+349 2 317 free
+353 3 326 free
+355 2 324 free

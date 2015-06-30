@@ -437,12 +437,14 @@ class StructField {
 
 class StructFields {
 public:
-    StructFields(std::string set_name, bool set_is_unnamed) : name(set_name),
-        is_unnamed(set_is_unnamed) {}
+    StructFields(std::string set_name, bool set_is_unnamed,
+            uint64_t set_size_in_bits) : name(set_name),
+        is_unnamed(set_is_unnamed), size_in_bits(set_size_in_bits) {}
     void add_field(StructField field) { fields.push_back(field); }
 
     std::string get_name() { return name; }
     bool get_is_unnamed() { return is_unnamed; }
+    uint64_t get_size_in_bits() { return size_in_bits; }
     int num_fields() { return fields.size(); }
     std::vector<StructField>::iterator begin() { return fields.begin(); }
     std::vector<StructField>::iterator end() { return fields.end(); }
@@ -450,6 +452,7 @@ public:
 private:
     std::string name;
     bool is_unnamed;
+    uint64_t size_in_bits;
     std::vector<StructField> fields;
 };
 
@@ -636,6 +639,7 @@ class DesiredInsertions {
 
         FunctionExit *getFunctionExitInfo(std::string funcname);
         std::vector<AliasesPassedToCallSite>::iterator getCallsiteStart();
+        std::vector<AliasesPassedToCallSite>::iterator getCallsiteEnd();
 
         std::vector<AliasesPassedToCallSite>::iterator findFirstMatchingCallsiteAfter(
                 int line, std::string callee_name,

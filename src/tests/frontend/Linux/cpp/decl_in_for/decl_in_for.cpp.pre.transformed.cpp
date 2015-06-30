@@ -11,6 +11,7 @@ typedef long unsigned int size_t;
 
 
 static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -1445,7 +1446,7 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868865UL)) ; int a;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868869UL)) ; int a;
  register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
        a = (0) ;
@@ -1462,10 +1463,10 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
     ((a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9) ? static_cast<void> (0) : __assert_fail ("a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9", "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp", 12, __PRETTY_FUNCTION__));
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
-}
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868865UL)) ; int a;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7303474631874868869UL)) ; int a;
  register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
        a = (0) ;
@@ -1482,9 +1483,9 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
     ((a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9) ? static_cast<void> (0) : __assert_fail ("a == 0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9", "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp", 12, __PRETTY_FUNCTION__));
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./decl_in_for.cpp"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -1495,9 +1496,10 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(7303474631874868827UL, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0,
+    init_module(7303474631874868827UL, 1, 1, 0, 2, 0, 0, 0, 0, 0, 0,
                            &____alias_loc_id_0, (unsigned)5, (unsigned)0, (unsigned)0, (7303474631874868827UL + 1UL), (7303474631874868827UL + 2UL), (7303474631874868827UL + 3UL), (7303474631874868827UL + 4UL), (7303474631874868827UL + 5UL),
-                             (7303474631874868827UL + 3UL), (7303474631874868827UL + 38UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (7303474631874868827UL + 6UL),
+                             (7303474631874868827UL + 3UL), (7303474631874868827UL + 42UL),
                              "main", "main", 1, "checkpoint");
     return 0;
 }

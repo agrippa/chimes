@@ -11,6 +11,7 @@ typedef long unsigned int size_t;
 
 
 static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -2252,7 +2253,7 @@ typedef struct _foo {
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13553023217757812093UL)) ; foo *test2;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13553023217757812097UL)) ; foo *test2;
 foo test;
  register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
@@ -2264,7 +2265,7 @@ foo test;
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     test.c = __null;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-       test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 13553023217757812081UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
+       test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     test2[0].a = 3;
 # 19 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
@@ -2283,10 +2284,10 @@ foo test;
     ((test2[0].a == 3) ? static_cast<void> (0) : __assert_fail ("test2[0].a == 3", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 26, __PRETTY_FUNCTION__));
 # 27 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 # 28 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 29 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-}
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13553023217757812093UL)) ; foo *test2;
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13553023217757812097UL)) ; foo *test2;
 foo test;
  register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); ; ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
@@ -2298,7 +2299,7 @@ foo test;
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     test.c = __null;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-       test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 13553023217757812081UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
+       test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
     test2[0].a = 3;
 # 19 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
@@ -2317,9 +2318,9 @@ foo test;
     ((test2[0].a == 3) ? static_cast<void> (0) : __assert_fail ("test2[0].a == 3", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 26, __PRETTY_FUNCTION__));
 # 27 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 # 28 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 29 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -2330,12 +2331,13 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(13553023217757812028UL, 4, 1, 0, 1, 0, 0, 0, 0, 0, 1,
-                           &____alias_loc_id_0, (unsigned)6, (unsigned)0, (unsigned)0, (13553023217757812028UL + 1UL), (13553023217757812028UL + 2UL), (13553023217757812028UL + 3UL), (13553023217757812028UL + 4UL), (13553023217757812028UL + 5UL), (13553023217757812028UL + 53UL),
-                             (13553023217757812028UL + 75UL), (13553023217757812028UL + 26UL),
-                             (13553023217757812028UL + 3UL), (13553023217757812028UL + 65UL),
-                             (13553023217757812028UL + 5UL), (13553023217757812028UL + 53UL),
-                             (13553023217757812028UL + 4UL), (13553023217757812028UL + 38UL),
+    init_module(13553023217757812028UL, 4, 1, 0, 2, 0, 0, 0, 0, 0, 1,
+                           &____alias_loc_id_0, (unsigned)6, (unsigned)0, (unsigned)0, (13553023217757812028UL + 1UL), (13553023217757812028UL + 2UL), (13553023217757812028UL + 3UL), (13553023217757812028UL + 4UL), (13553023217757812028UL + 5UL), (13553023217757812028UL + 54UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (13553023217757812028UL + 6UL),
+                             (13553023217757812028UL + 3UL), (13553023217757812028UL + 69UL),
+                             (13553023217757812028UL + 5UL), (13553023217757812028UL + 54UL),
+                             (13553023217757812028UL + 4UL), (13553023217757812028UL + 39UL),
+                             (13553023217757812028UL + 79UL), (13553023217757812028UL + 27UL),
                      "_foo", 3, "int", (int)__builtin_offsetof (struct _foo, a), "int*", (int)__builtin_offsetof (struct _foo, b), "int**", (int)__builtin_offsetof (struct _foo, c),
                              "main", "main", 1, "checkpoint");
     return 0;

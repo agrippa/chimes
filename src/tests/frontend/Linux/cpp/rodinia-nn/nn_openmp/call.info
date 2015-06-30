@@ -1,36 +1,36 @@
-fprintf main 36 3 0 53 393
+fprintf main 36 3 0 54 397
 exit main 37 3 0 0
-fopen main 40 10 115 59 394
-printf main 42 3 0 395
+fopen main 40 10 116 60 398
+printf main 42 3 0 399
 exit main 43 3 0 0
-atoi main 46 6 0 59
-atof main 47 15 0 59
-atof main 48 16 0 59
-malloc main 50 33 404 0
-fprintf main 53 3 0 53 396
+atoi main 46 6 0 60
+atof main 47 15 0 60
+atof main 48 16 0 60
+malloc main 50 33 408 0
+fprintf main 53 3 0 54 400
 exit main 54 3 0 0
-fscanf main 62 5 0 115 397 13
-fprintf main 63 3 0 53 398
+fscanf main 62 5 0 116 401 13
+fprintf main 63 3 0 54 402
 exit main 64 3 0 0
-fopen main 67 7 125 13 394
-printf main 69 3 0 395
+fopen main 67 7 126 13 398
+printf main 69 3 0 399
 exit main 70 3 0 0
-malloc main 74 16 222 0
-fread main 78 15 0 11 0 0 125
-ferror main 80 8 0 115
-fclose main 81 5 0 125
-feof main 83 9 0 115
-fscanf main 86 10 0 115 397 13
-fprintf main 87 11 0 53 398
+malloc main 74 16 223 0
+fread main 78 15 0 11 0 0 126
+ferror main 80 8 0 116
+fclose main 81 5 0 126
+feof main 83 9 0 116
+fscanf main 86 10 0 116 401 13
+fprintf main 87 11 0 54 402
 exit main 88 11 0 0
-fopen main 91 13 125 13 394
-printf main 94 10 0 399
+fopen main 91 13 126 13 398
+printf main 94 10 0 403
 exit main 95 10 0 0
-perror main 99 5 0 400
+perror main 99 5 0 404
 exit main 100 5 0 0
-sscanf main 108 4 0 11 400 17 18
+sscanf main 108 4 0 11 404 17 18
 sqrt main 109 11 0 0
-strcpy main 126 7 304 404 11
-fprintf main 132 2 0 53 402 0
-fprintf main 134 39 0 53 403 404 0
-fclose main 138 2 0 115
+strcpy main 126 7 305 408 11
+fprintf main 132 2 0 54 406 0
+fprintf main 134 39 0 54 407 408 0
+fclose main 138 2 0 116

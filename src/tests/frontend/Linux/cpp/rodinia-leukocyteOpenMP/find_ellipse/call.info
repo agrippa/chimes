@@ -1,121 +1,121 @@
-gettimeofday get_time 24 2 0 1 4740
-AVI_video_width get_frame 35 14 0 88
-AVI_video_height get_frame 36 15 0 88
-malloc get_frame 37 47 46 0
-AVI_set_video_position get_frame 40 2 0 88 0
-AVI_read_frame get_frame 43 5 0 88 46 19
-AVI_print_error get_frame 44 3 0 4738
+gettimeofday get_time 24 2 0 1 4788
+AVI_video_width get_frame 35 14 0 96
+AVI_video_height get_frame 36 15 0 96
+malloc get_frame 37 47 51 0
+AVI_set_video_position get_frame 40 2 0 96 0
+AVI_read_frame get_frame 43 5 0 96 51 23
+AVI_print_error get_frame 44 3 0 4786
 exit get_frame 45 3 0 0
-chop_flip_image get_frame 51 19 81 46 0 0 0 0 0 0 0
-chop_flip_image get_frame 54 19 81 46 0 0 0 0 0 0 0
-free get_frame 57 2 0 46
-m_get chop_flip_image 65 17 139 0 0
+chop_flip_image get_frame 51 19 86 51 0 0 0 0 0 0 0
+chop_flip_image get_frame 54 19 86 51 0 0 0 0 0 0 0
+free get_frame 57 2 0 51
+m_get chop_flip_image 65 17 148 0 0
 sin ellipsematching 93 18 0 0
 cos ellipsematching 94 18 0 0
 cos ellipsematching 102 22 0 0
 sin ellipsematching 103 22 0 0
-m_get ellipsematching 111 16 614 0 0
+m_get ellipsematching 111 16 628 0 0
 sqrt ellipsematching 153 39 0 0
-m_get structuring_element 166 17 634 0 0
+m_get structuring_element 166 17 651 0 0
 sqrt structuring_element 171 8 0 0
-m_get dilate_f 185 18 737 0 0
-malloc TMatrix 230 18 934 0
-malloc TMatrix 231 18 940 0
-malloc TMatrix 232 18 946 0
-malloc TMatrix 233 18 952 0
-m_get TMatrix 252 6 4739 0 0
-m_get TMatrix 253 7 4739 0 0
-m_zero TMatrix 257 3 1068 4739
-mtrm_mlt TMatrix 281 11 4739 4739 4739 4739
-m_inverse TMatrix 282 15 4739 4739 4739
-mmtr_mlt TMatrix 283 10 4739 4739 4739 4739
-m_free TMatrix 285 2 0 4739
-m_free TMatrix 286 2 0 4739
-m_free TMatrix 287 2 0 4739
-m_free TMatrix 288 2 0 4739
-free TMatrix 290 2 0 952
-free TMatrix 291 2 0 946
-free TMatrix 292 2 0 940
-free TMatrix 293 2 0 934
+m_get dilate_f 185 18 758 0 0
+malloc TMatrix 230 18 959 0
+malloc TMatrix 231 18 965 0
+malloc TMatrix 232 18 971 0
+malloc TMatrix 233 18 977 0
+m_get TMatrix 252 6 4787 0 0
+m_get TMatrix 253 7 4787 0 0
+m_zero TMatrix 257 3 1093 4787
+mtrm_mlt TMatrix 281 11 4787 4787 4787 4787
+m_inverse TMatrix 282 15 4787 4787 4787
+mmtr_mlt TMatrix 283 10 4787 4787 4787 4787
+m_free TMatrix 285 2 0 4787
+m_free TMatrix 286 2 0 4787
+m_free TMatrix 287 2 0 4787
+m_free TMatrix 288 2 0 4787
+free TMatrix 290 2 0 977
+free TMatrix 291 2 0 971
+free TMatrix 292 2 0 965
+free TMatrix 293 2 0 959
 sqrt uniformseg 307 16 0 0
 fabs uniformseg 321 11 0 0
-v_get getsampling 377 17 1751 0
-malloc getsampling 379 18 1756 0
-malloc getsampling 380 18 1762 0
-malloc getsampling 381 18 1768 0
-malloc getsampling 382 18 1774 0
-free getsampling 416 2 0 1774
-free getsampling 417 2 0 1768
-free getsampling 418 2 0 1762
-free getsampling 419 2 0 1756
-v_get getfdriv 429 17 2101 0
-malloc getfdriv 431 18 2106 0
-malloc getfdriv 432 18 2112 0
-malloc getfdriv 433 18 2118 0
-malloc getfdriv 434 18 2124 0
-free getfdriv 468 2 0 2124
-free getfdriv 469 2 0 2118
-free getfdriv 470 2 0 2112
-free getfdriv 471 2 0 2106
-m_get linear_interp2 481 17 2400 0 0
-getsampling splineenergyform01 515 6 2648 4726 0
-getsampling splineenergyform01 516 6 2652 4727 0
-getfdriv splineenergyform01 517 7 2656 4726 0
-getfdriv splineenergyform01 518 7 2660 4727 0
-v_get splineenergyform01 520 7 2665 0
+v_get getsampling 377 17 1788 0
+malloc getsampling 379 18 1793 0
+malloc getsampling 380 18 1799 0
+malloc getsampling 381 18 1805 0
+malloc getsampling 382 18 1811 0
+free getsampling 416 2 0 1811
+free getsampling 417 2 0 1805
+free getsampling 418 2 0 1799
+free getsampling 419 2 0 1793
+v_get getfdriv 429 17 2142 0
+malloc getfdriv 431 18 2147 0
+malloc getfdriv 432 18 2153 0
+malloc getfdriv 433 18 2159 0
+malloc getfdriv 434 18 2165 0
+free getfdriv 468 2 0 2165
+free getfdriv 469 2 0 2159
+free getfdriv 470 2 0 2153
+free getfdriv 471 2 0 2147
+m_get linear_interp2 481 17 2445 0 0
+getsampling splineenergyform01 515 6 2696 4774 0
+getsampling splineenergyform01 516 6 2700 4775 0
+getfdriv splineenergyform01 517 7 2704 4774 0
+getfdriv splineenergyform01 518 7 2708 4775 0
+v_get splineenergyform01 520 7 2713 0
 sqrt splineenergyform01 521 70 0 0
-v_get splineenergyform01 524 7 2942 0
+v_get splineenergyform01 524 7 2990 0
 sqrt splineenergyform01 525 77 0 0
-v_get splineenergyform01 528 7 2825 0
-v_get splineenergyform01 532 7 2867 0
-v_get splineenergyform01 536 7 2909 0
-v_get splineenergyform01 540 7 2951 0
-linear_interp2 splineenergyform01 544 12 2964 4728 2825 2867
-linear_interp2 splineenergyform01 545 12 2969 4729 2825 2867
-linear_interp2 splineenergyform01 546 12 2974 4728 2909 2951
-linear_interp2 splineenergyform01 547 12 2979 4729 2909 2951
-v_get splineenergyform01 549 8 3592 0
-v_get splineenergyform01 550 8 3602 0
-v_get splineenergyform01 551 8 3612 0
-v_get splineenergyform01 552 8 3622 0
-get_row splineenergyform01 554 8 3592 2964 0 3592
-get_row splineenergyform01 555 8 3602 2969 0 3602
-get_row splineenergyform01 556 8 3612 2974 0 3612
-get_row splineenergyform01 557 8 3622 2979 0 3622
-malloc splineenergyform01 563 18 3055 0
-malloc splineenergyform01 564 18 3077 0
-malloc splineenergyform01 565 18 3096 0
-malloc splineenergyform01 566 18 3121 0
-v_get splineenergyform01 584 7 3171 0
-v_get splineenergyform01 588 7 3211 0
-v_get splineenergyform01 592 7 3251 0
-v_get splineenergyform01 596 8 3584 0
-v_get splineenergyform01 597 8 3646 0
+v_get splineenergyform01 528 7 2873 0
+v_get splineenergyform01 532 7 2915 0
+v_get splineenergyform01 536 7 2957 0
+v_get splineenergyform01 540 7 2999 0
+linear_interp2 splineenergyform01 544 12 3012 4776 2873 2915
+linear_interp2 splineenergyform01 545 12 3017 4777 2873 2915
+linear_interp2 splineenergyform01 546 12 3022 4776 2957 2999
+linear_interp2 splineenergyform01 547 12 3027 4777 2957 2999
+v_get splineenergyform01 549 8 3640 0
+v_get splineenergyform01 550 8 3650 0
+v_get splineenergyform01 551 8 3660 0
+v_get splineenergyform01 552 8 3670 0
+get_row splineenergyform01 554 8 3640 3012 0 3640
+get_row splineenergyform01 555 8 3650 3017 0 3650
+get_row splineenergyform01 556 8 3660 3022 0 3660
+get_row splineenergyform01 557 8 3670 3027 0 3670
+malloc splineenergyform01 563 18 3103 0
+malloc splineenergyform01 564 18 3125 0
+malloc splineenergyform01 565 18 3144 0
+malloc splineenergyform01 566 18 3169 0
+v_get splineenergyform01 584 7 3219 0
+v_get splineenergyform01 588 7 3259 0
+v_get splineenergyform01 592 7 3299 0
+v_get splineenergyform01 596 8 3632 0
+v_get splineenergyform01 597 8 3694 0
 sqrt splineenergyform01 619 8 0 0
-v_free splineenergyform01 701 2 0 3646
-v_free splineenergyform01 701 15 0 3584
-v_free splineenergyform01 701 28 0 3251
-v_free splineenergyform01 701 40 0 3211
-v_free splineenergyform01 701 52 0 3171
-free splineenergyform01 703 2 0 3121
-free splineenergyform01 703 16 0 3096
-free splineenergyform01 703 30 0 3077
-free splineenergyform01 703 44 0 3055
-v_free splineenergyform01 705 2 0 3622
-v_free splineenergyform01 705 15 0 3612
-v_free splineenergyform01 705 28 0 3602
-v_free splineenergyform01 705 41 0 3592
-m_free splineenergyform01 707 2 0 2979
-m_free splineenergyform01 707 19 0 2974
-m_free splineenergyform01 707 36 0 2969
-m_free splineenergyform01 707 53 0 2964
-v_free splineenergyform01 709 2 0 2951
-v_free splineenergyform01 709 14 0 2909
-v_free splineenergyform01 709 26 0 2867
-v_free splineenergyform01 709 38 0 2825
-v_free splineenergyform01 709 50 0 2942
-v_free splineenergyform01 709 62 0 2665
-v_free splineenergyform01 709 74 0 2660
-v_free splineenergyform01 709 86 0 2656
-v_free splineenergyform01 709 98 0 2652
-v_free splineenergyform01 709 109 0 2648
+v_free splineenergyform01 701 2 0 3694
+v_free splineenergyform01 701 15 0 3632
+v_free splineenergyform01 701 28 0 3299
+v_free splineenergyform01 701 40 0 3259
+v_free splineenergyform01 701 52 0 3219
+free splineenergyform01 703 2 0 3169
+free splineenergyform01 703 16 0 3144
+free splineenergyform01 703 30 0 3125
+free splineenergyform01 703 44 0 3103
+v_free splineenergyform01 705 2 0 3670
+v_free splineenergyform01 705 15 0 3660
+v_free splineenergyform01 705 28 0 3650
+v_free splineenergyform01 705 41 0 3640
+m_free splineenergyform01 707 2 0 3027
+m_free splineenergyform01 707 19 0 3022
+m_free splineenergyform01 707 36 0 3017
+m_free splineenergyform01 707 53 0 3012
+v_free splineenergyform01 709 2 0 2999
+v_free splineenergyform01 709 14 0 2957
+v_free splineenergyform01 709 26 0 2915
+v_free splineenergyform01 709 38 0 2873
+v_free splineenergyform01 709 50 0 2990
+v_free splineenergyform01 709 62 0 2713
+v_free splineenergyform01 709 74 0 2708
+v_free splineenergyform01 709 86 0 2704
+v_free splineenergyform01 709 98 0 2700
+v_free splineenergyform01 709 109 0 2696

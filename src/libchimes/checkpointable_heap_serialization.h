@@ -25,4 +25,11 @@ class serialized_heap_var {
 extern std::vector<serialized_heap_var> *serialize_checkpointable_heap(
         std::vector<checkpointable_heap_allocation> *to_checkpoint);
 
+
+extern void *serialize_heap_allocation(heap_allocation *alloc,
+        vector<pair<size_t, size_t> > *ranges, void *buffer, size_t *used,
+        size_t *capacity);
+extern void *serialize_heap_allocation(heap_allocation *alloc, void *buffer,
+        size_t *used, size_t *capacity);
+
 #endif

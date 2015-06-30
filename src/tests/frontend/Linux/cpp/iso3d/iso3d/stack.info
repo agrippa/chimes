@@ -11,6 +11,7 @@
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|curr|0 " float* " 64 1 0 1 checkpoint config_sources finish_progress init_data sample_sources save_layer_text seconds update_progress
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|next|0 " float* " 64 1 0 1 checkpoint config_sources finish_progress init_data sample_sources save_layer_text seconds update_progress
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|vsq|0 " float* " 64 1 0 1 checkpoint config_sources finish_progress init_data sample_sources save_layer_text seconds update_progress
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|srcs|0 " float** " 64 1 0 1 checkpoint finish_progress init_data save_layer_text seconds update_progress
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|start|0 " double " 64 0 0 1 checkpoint finish_progress save_layer_text seconds update_progress
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|step|0 " i32 " 32 0 0 1 checkpoint finish_progress save_layer_text seconds update_progress
@@ -20,6 +21,7 @@
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|elapsed_s|0 " double " 64 0 0 1 finish_progress save_layer_text
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|point_rate|0 " float " 32 0 0 1 save_layer_text
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|i|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp main|____chimes_ret_var_1|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp fwd|next|0 " float* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp fwd|curr|0 " float* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp fwd|vsq|0 " float* " 64 1 0 0

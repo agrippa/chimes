@@ -5165,23 +5165,23 @@ double get_coord_npm(double i1, double i2, double w1, double w2, double p);
 double get_coord_quick(double i1, double i2, double w1, double w2, double p); double get_coord(double i1, double i2, double w1, double w2, double p);
 double get_coord_resumable(double i1, double i2, double w1, double w2, double p) {const int ____chimes_did_disable1 = new_stack((void *)(&get_coord), "get_coord", &____must_manage_get_coord, 5, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 49 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1); return ((p - i1) / (i2 - i1)) * (w2 - w1) + w1;
+     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((p - i1) / (i2 - i1)) * (w2 - w1) + w1); rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_0; ;
 # 50 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-}
+rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1); }
 # 51 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 52 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 double modv_npm(double vx, double vy, double vz);
 double modv_quick(double vx, double vy, double vz); double modv(double vx, double vy, double vz);
 double modv_resumable(double vx, double vy, double vz) {const int ____chimes_did_disable2 = new_stack((void *)(&modv), "modv", &____must_manage_modv, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 53 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2); return sqrt(vx * vx + vy * vy + vz * vz);
+     double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (sqrt(vx * vx + vy * vy + vz * vz)); rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_1; ;
 # 54 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-}
+rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2); }
 # 55 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 56 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 void move_npm(sphere *self, double vx, double vy, double vz);
 void move_quick(sphere *self, double vx, double vy, double vz); void move(sphere *self, double vx, double vy, double vz);
-void move_resumable(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable3 = new_stack((void *)(&move), "move", &____must_manage_move, 4, 0, (size_t)(11205885433679074445UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void move_resumable(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable3 = new_stack((void *)(&move), "move", &____must_manage_move, 4, 0, (size_t)(11205885433679074453UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 57 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     self->cx += vx;
 # 58 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5194,7 +5194,7 @@ rm_stack(false, 0UL, "move", &____must_manage_move, ____alias_loc_id_4, ____chim
 # 62 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 void move_to_npm(sphere *self, double vx, double vy, double vz);
 void move_to_quick(sphere *self, double vx, double vy, double vz); void move_to(sphere *self, double vx, double vy, double vz);
-void move_to_resumable(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable4 = new_stack((void *)(&move_to), "move_to", &____must_manage_move_to, 4, 0, (size_t)(11205885433679074474UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void move_to_resumable(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable4 = new_stack((void *)(&move_to), "move_to", &____must_manage_move_to, 4, 0, (size_t)(11205885433679074482UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 63 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     self->cx = vx;
 # 64 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5207,7 +5207,7 @@ rm_stack(false, 0UL, "move_to", &____must_manage_move_to, ____alias_loc_id_5, __
 # 68 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 void rot_x_npm(sphere *self, double angle);
 void rot_x_quick(sphere *self, double angle); void rot_x(sphere *self, double angle);
-void rot_x_resumable(sphere *self, double angle) {const int ____chimes_did_disable5 = new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 0, (size_t)(11205885433679074525UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void rot_x_resumable(sphere *self, double angle) {const int ____chimes_did_disable5 = new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 0, (size_t)(11205885433679074533UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 69 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      double y; y = (self->cy * cos(angle) - self->cz * sin(angle)) ;
 # 70 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5222,7 +5222,7 @@ rm_stack(false, 0UL, "rot_x", &____must_manage_rot_x, ____alias_loc_id_6, ____ch
 # 75 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 void rot_y_npm(sphere *self, double angle);
 void rot_y_quick(sphere *self, double angle); void rot_y(sphere *self, double angle);
-void rot_y_resumable(sphere *self, double angle) {const int ____chimes_did_disable6 = new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 0, (size_t)(11205885433679074576UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void rot_y_resumable(sphere *self, double angle) {const int ____chimes_did_disable6 = new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 0, (size_t)(11205885433679074584UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 76 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
    double x; x = (self->cx * cos(angle) - self->cz * sin(angle)) ;
 # 77 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5263,9 +5263,9 @@ double get_sphere_intersec_resumable(double cx, double cy, double cz, double rad
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     }
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7); return t;
+     double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (t); rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7); return ____chimes_ret_var_2; ;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-}
+rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7); }
 # 100 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 101 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 double get_cos_angle_v1v2_npm(double v1x, double v1y, double v1z, double v2x, double v2y, double v2z);
@@ -5278,14 +5278,14 @@ double get_cos_angle_v1v2_resumable(double v1x, double v1y, double v1z, double v
 # 104 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      double b; b = (({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })) ;
 # 105 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8); return (v1x * v2x + v1y * v2y + v1z * v2z) / (a * b);
+     double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((v1x * v2x + v1y * v2y + v1z * v2z) / (a * b)); rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8); return ____chimes_ret_var_3; ;
 # 106 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-}
+rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8); }
 # 107 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 108 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 void usage_npm(char **argv);
 void usage_quick(char **argv); void usage(char **argv);
-void usage_resumable(char **argv) {const int ____chimes_did_disable9 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(11205885433679074821UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void usage_resumable(char **argv) {const int ____chimes_did_disable9 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(11205885433679074837UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 109 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     fprintf(stderr, "usage: %s [-x nx] [-y ny] [-s sx,sy,sz,r,clr,clg,clb] "
 # 110 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5298,7 +5298,7 @@ rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable9
 # 114 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 void parse_three_doubles_npm(char *def, double *a, double *b, double *c);
 void parse_three_doubles_quick(char *def, double *a, double *b, double *c); void parse_three_doubles(char *def, double *a, double *b, double *c);
-void parse_three_doubles_resumable(char *def, double *a, double *b, double *c) {const int ____chimes_did_disable10 = new_stack((void *)(&parse_three_doubles), "parse_three_doubles", &____must_manage_parse_three_doubles, 4, 0, (size_t)(11205885433679074866UL), (size_t)(11205885433679074868UL), (size_t)(11205885433679074873UL), (size_t)(11205885433679074878UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void parse_three_doubles_resumable(char *def, double *a, double *b, double *c) {const int ____chimes_did_disable10 = new_stack((void *)(&parse_three_doubles), "parse_three_doubles", &____must_manage_parse_three_doubles, 4, 0, (size_t)(11205885433679074882UL), (size_t)(11205885433679074884UL), (size_t)(11205885433679074889UL), (size_t)(11205885433679074894UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      char *first_comma; first_comma = (strchr(def, ',')) ;
 # 116 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5325,7 +5325,7 @@ rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles
 # 128 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 void parse_config_npm(int argc, char **argv, config *conf);
 void parse_config_quick(int argc, char **argv, config *conf); void parse_config(int argc, char **argv, config *conf);
-void parse_config_resumable(int argc, char **argv, config *conf) {const int ____chimes_did_disable11 = new_stack((void *)(&parse_config), "parse_config", &____must_manage_parse_config, 3, 0, (size_t)(0UL), (size_t)(11205885433679075150UL), (size_t)(11205885433679075089UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void parse_config_resumable(int argc, char **argv, config *conf) {const int ____chimes_did_disable11 = new_stack((void *)(&parse_config), "parse_config", &____must_manage_parse_config, 3, 0, (size_t)(0UL), (size_t)(11205885433679075166UL), (size_t)(11205885433679075105UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 129 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     int c; ;
 # 130 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5446,7 +5446,7 @@ void parse_config_resumable(int argc, char **argv, config *conf) {const int ____
 # 190 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 conf->spheres = (sphere *)realloc_wrapper(conf->spheres,
 # 191 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                    (conf->nspheres + 1) * sizeof(sphere), 11205885433679075443UL, 0, 1, (int)sizeof(struct _sphere), 0);
+                    (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0);
 # 192 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
 # 196 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5475,7 +5475,7 @@ rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_lo
 # 208 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 209 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11205885433679075632UL)) ; double fact;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11205885433679075652UL)) ; double fact;
 double cost;
 double tauxlb;
 sphere *sphnb;
@@ -5503,7 +5503,7 @@ config conf;
 # 211 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
 # 212 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 11205885433679075207UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
+       screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
 # 213 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 214 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
        f_max = (200.) ;
@@ -5639,11 +5639,11 @@ config conf;
     } }
 # 294 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 295 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    free_wrapper(screen, 11205885433679075207UL);
+    free_wrapper(screen, 11205885433679075224UL);
 # 296 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12); return (0);
+     int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12); return ____chimes_ret_var_4; ;
 # 297 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12); }
 void init_quick(sphere *s, double cx, double cy, double cz, double radius, double clR,
 # 34 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
         double clG, double clB) {const int ____chimes_did_disable0 = new_stack((void *)(&init), "init", &____must_manage_init, 8, 0, (size_t)(11205885433679074312UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
@@ -5675,21 +5675,21 @@ void init(sphere *s, double cx, double cy, double cz, double radius, double clR,
 
 double get_coord_quick(double i1, double i2, double w1, double w2, double p) {const int ____chimes_did_disable1 = new_stack((void *)(&get_coord), "get_coord", &____must_manage_get_coord, 5, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 49 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1); return ((p - i1) / (i2 - i1)) * (w2 - w1) + w1;
+     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((p - i1) / (i2 - i1)) * (w2 - w1) + w1); rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_0; ;
 # 50 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-}
+rm_stack(false, 0UL, "get_coord", &____must_manage_get_coord, ____alias_loc_id_2, ____chimes_did_disable1); }
 
 double get_coord(double i1, double i2, double w1, double w2, double p) { return (____chimes_replaying ? get_coord_resumable(i1, i2, w1, w2, p) : get_coord_quick(i1, i2, w1, w2, p)); }
 
 double modv_quick(double vx, double vy, double vz) {const int ____chimes_did_disable2 = new_stack((void *)(&modv), "modv", &____must_manage_modv, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 53 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2); return sqrt(vx * vx + vy * vy + vz * vz);
+     double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (sqrt(vx * vx + vy * vy + vz * vz)); rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_1; ;
 # 54 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-}
+rm_stack(false, 0UL, "modv", &____must_manage_modv, ____alias_loc_id_3, ____chimes_did_disable2); }
 
 double modv(double vx, double vy, double vz) { return (____chimes_replaying ? modv_resumable(vx, vy, vz) : modv_quick(vx, vy, vz)); }
 
-void move_quick(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable3 = new_stack((void *)(&move), "move", &____must_manage_move, 4, 0, (size_t)(11205885433679074445UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+void move_quick(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable3 = new_stack((void *)(&move), "move", &____must_manage_move, 4, 0, (size_t)(11205885433679074453UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 57 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     self->cx += vx;
 # 58 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5701,7 +5701,7 @@ rm_stack(false, 0UL, "move", &____must_manage_move, ____alias_loc_id_4, ____chim
 
 void move(sphere *self, double vx, double vy, double vz) { (____chimes_replaying ? move_resumable(self, vx, vy, vz) : move_quick(self, vx, vy, vz)); }
 
-void move_to_quick(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable4 = new_stack((void *)(&move_to), "move_to", &____must_manage_move_to, 4, 0, (size_t)(11205885433679074474UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+void move_to_quick(sphere *self, double vx, double vy, double vz) {const int ____chimes_did_disable4 = new_stack((void *)(&move_to), "move_to", &____must_manage_move_to, 4, 0, (size_t)(11205885433679074482UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 63 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     self->cx = vx;
 # 64 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5713,7 +5713,7 @@ rm_stack(false, 0UL, "move_to", &____must_manage_move_to, ____alias_loc_id_5, __
 
 void move_to(sphere *self, double vx, double vy, double vz) { (____chimes_replaying ? move_to_resumable(self, vx, vy, vz) : move_to_quick(self, vx, vy, vz)); }
 
-void rot_x_quick(sphere *self, double angle) {const int ____chimes_did_disable5 = new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 0, (size_t)(11205885433679074525UL), (size_t)(0UL)) ; ; ;
+void rot_x_quick(sphere *self, double angle) {const int ____chimes_did_disable5 = new_stack((void *)(&rot_x), "rot_x", &____must_manage_rot_x, 2, 0, (size_t)(11205885433679074533UL), (size_t)(0UL)) ; ; ;
 # 69 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      double y; y = (self->cy * cos(angle) - self->cz * sin(angle)) ;
 # 70 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5727,7 +5727,7 @@ rm_stack(false, 0UL, "rot_x", &____must_manage_rot_x, ____alias_loc_id_6, ____ch
 
 void rot_x(sphere *self, double angle) { (____chimes_replaying ? rot_x_resumable(self, angle) : rot_x_quick(self, angle)); }
 
-void rot_y_quick(sphere *self, double angle) {const int ____chimes_did_disable6 = new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 0, (size_t)(11205885433679074576UL), (size_t)(0UL)) ; ; ;
+void rot_y_quick(sphere *self, double angle) {const int ____chimes_did_disable6 = new_stack((void *)(&rot_y), "rot_y", &____must_manage_rot_y, 2, 0, (size_t)(11205885433679074584UL), (size_t)(0UL)) ; ; ;
 # 76 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
    double x; x = (self->cx * cos(angle) - self->cz * sin(angle)) ;
 # 77 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5767,9 +5767,9 @@ double get_sphere_intersec_quick(double cx, double cy, double cz, double radius,
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     }
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7); return t;
+     double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (t); rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7); return ____chimes_ret_var_2; ;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-}
+rm_stack(false, 0UL, "get_sphere_intersec", &____must_manage_get_sphere_intersec, ____alias_loc_id_8, ____chimes_did_disable7); }
 
 double get_sphere_intersec(double cx, double cy, double cz, double radius,
 # 83 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5783,15 +5783,15 @@ double get_cos_angle_v1v2_quick(double v1x, double v1y, double v1z, double v2x,
 # 104 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      double b; b = (({ calling_npm("modv", 0); modv_npm(v2x, v2y, v2z); })) ;
 # 105 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8); return (v1x * v2x + v1y * v2y + v1z * v2z) / (a * b);
+     double ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((v1x * v2x + v1y * v2y + v1z * v2z) / (a * b)); rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8); return ____chimes_ret_var_3; ;
 # 106 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-}
+rm_stack(false, 0UL, "get_cos_angle_v1v2", &____must_manage_get_cos_angle_v1v2, ____alias_loc_id_9, ____chimes_did_disable8); }
 
 double get_cos_angle_v1v2(double v1x, double v1y, double v1z, double v2x,
 # 102 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
         double v2y, double v2z) { return (____chimes_replaying ? get_cos_angle_v1v2_resumable(v1x, v1y, v1z, v2x, v2y, v2z) : get_cos_angle_v1v2_quick(v1x, v1y, v1z, v2x, v2y, v2z)); }
 
-void usage_quick(char **argv) {const int ____chimes_did_disable9 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(11205885433679074821UL)) ; ; ;
+void usage_quick(char **argv) {const int ____chimes_did_disable9 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(11205885433679074837UL)) ; ; ;
 # 109 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     fprintf(stderr, "usage: %s [-x nx] [-y ny] [-s sx,sy,sz,r,clr,clg,clb] "
 # 110 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5803,7 +5803,7 @@ rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable9
 
 void usage(char **argv) { (____chimes_replaying ? usage_resumable(argv) : usage_quick(argv)); }
 
-void parse_three_doubles_quick(char *def, double *a, double *b, double *c) {const int ____chimes_did_disable10 = new_stack((void *)(&parse_three_doubles), "parse_three_doubles", &____must_manage_parse_three_doubles, 4, 0, (size_t)(11205885433679074866UL), (size_t)(11205885433679074868UL), (size_t)(11205885433679074873UL), (size_t)(11205885433679074878UL)) ; ; ;
+void parse_three_doubles_quick(char *def, double *a, double *b, double *c) {const int ____chimes_did_disable10 = new_stack((void *)(&parse_three_doubles), "parse_three_doubles", &____must_manage_parse_three_doubles, 4, 0, (size_t)(11205885433679074882UL), (size_t)(11205885433679074884UL), (size_t)(11205885433679074889UL), (size_t)(11205885433679074894UL)) ; ; ;
 # 115 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
      char *first_comma; first_comma = (strchr(def, ',')) ;
 # 116 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5829,7 +5829,7 @@ rm_stack(false, 0UL, "parse_three_doubles", &____must_manage_parse_three_doubles
 
 void parse_three_doubles(char *def, double *a, double *b, double *c) { (____chimes_replaying ? parse_three_doubles_resumable(def, a, b, c) : parse_three_doubles_quick(def, a, b, c)); }
 
-void parse_config_quick(int argc, char **argv, config *conf) {const int ____chimes_did_disable11 = new_stack((void *)(&parse_config), "parse_config", &____must_manage_parse_config, 3, 0, (size_t)(0UL), (size_t)(11205885433679075150UL), (size_t)(11205885433679075089UL)) ; ; ;
+void parse_config_quick(int argc, char **argv, config *conf) {const int ____chimes_did_disable11 = new_stack((void *)(&parse_config), "parse_config", &____must_manage_parse_config, 3, 0, (size_t)(0UL), (size_t)(11205885433679075166UL), (size_t)(11205885433679075105UL)) ; ; ;
 # 129 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     int c; ;
 # 130 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5950,7 +5950,7 @@ void parse_config_quick(int argc, char **argv, config *conf) {const int ____chim
 # 190 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 conf->spheres = (sphere *)realloc_wrapper(conf->spheres,
 # 191 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                    (conf->nspheres + 1) * sizeof(sphere), 11205885433679075443UL, 0, 1, (int)sizeof(struct _sphere), 0);
+                    (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0);
 # 192 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 ({ calling_npm("init", 0); init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1)); });
 # 196 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -5979,7 +5979,7 @@ rm_stack(false, 0UL, "parse_config", &____must_manage_parse_config, ____alias_lo
 
 void parse_config(int argc, char **argv, config *conf) { (____chimes_replaying ? parse_config_resumable(argc, argv, conf) : parse_config_quick(argc, argv, conf)); }
 
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11205885433679075632UL)) ; double fact;
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable12 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(11205885433679075652UL)) ; double fact;
 double cost;
 double tauxlb;
 sphere *sphnb;
@@ -6007,7 +6007,7 @@ config conf;
 # 211 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     ({ calling_npm("parse_config", 0); parse_config_npm(argc, argv, &conf); });
 # 212 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-       screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 11205885433679075207UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
+       screen = ((rgb *)malloc_wrapper(sizeof(rgb) * conf.nx * conf.ny, 11205885433679075224UL, 0, 1, (int)sizeof(struct _rgb), 0)) ;
 # 213 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 214 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
        f_max = (200.) ;
@@ -6143,11 +6143,11 @@ config conf;
     } }
 # 294 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 # 295 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    free_wrapper(screen, 11205885433679075207UL);
+    free_wrapper(screen, 11205885433679075224UL);
 # 296 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12); return (0);
+     int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12); return ____chimes_ret_var_4; ;
 # 297 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable12); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -6180,13 +6180,13 @@ void init_npm(sphere *s, double cx, double cy, double cz, double radius, double 
 
 double get_coord_npm(double i1, double i2, double w1, double w2, double p) {
 # 49 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    return ((p - i1) / (i2 - i1)) * (w2 - w1) + w1;
+     double ____chimes_ret_var_0; ____chimes_ret_var_0 = (((p - i1) / (i2 - i1)) * (w2 - w1) + w1); return ____chimes_ret_var_0; ;
 # 50 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 }
 
 double modv_npm(double vx, double vy, double vz) {
 # 53 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    return sqrt(vx * vx + vy * vy + vz * vz);
+     double ____chimes_ret_var_1; ____chimes_ret_var_1 = (sqrt(vx * vx + vy * vy + vz * vz)); return ____chimes_ret_var_1; ;
 # 54 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 }
 
@@ -6266,7 +6266,7 @@ double get_sphere_intersec_npm(double cx, double cy, double cz, double radius,
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     }
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    return t;
+     double ____chimes_ret_var_2; ____chimes_ret_var_2 = (t); return ____chimes_ret_var_2; ;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 }
 
@@ -6278,7 +6278,7 @@ double get_cos_angle_v1v2_npm(double v1x, double v1y, double v1z, double v2x,
 # 104 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
     double b = modv_npm(v2x, v2y, v2z);
 # 105 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-    return (v1x * v2x + v1y * v2y + v1z * v2z) / (a * b);
+     double ____chimes_ret_var_3; ____chimes_ret_var_3 = ((v1x * v2x + v1y * v2y + v1z * v2z) / (a * b)); return ____chimes_ret_var_3; ;
 # 106 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
 }
 
@@ -6437,7 +6437,7 @@ void parse_config_npm(int argc, char **argv, config *conf) {
 # 190 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 conf->spheres = (sphere *)realloc_wrapper(conf->spheres,
 # 191 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
-                    (conf->nspheres + 1) * sizeof(sphere), 11205885433679075443UL, 0, 1, (int)sizeof(struct _sphere), 0);
+                    (conf->nspheres + 1) * sizeof(sphere), 11205885433679075460UL, 0, 1, (int)sizeof(struct _sphere), 0);
 # 192 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
                 init_npm(conf->spheres + conf->nspheres, atof(sphere_def), atof(first_comma + 1), atof(second_comma + 1), atof(third_comma + 1), atof(fourth_comma + 1), atof(fifth_comma + 1), atof(sixth_comma + 1));
 # 196 "/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c"
@@ -6470,31 +6470,31 @@ void parse_config_npm(int argc, char **argv, config *conf) {
 
 static int module_init() {
     init_module(11205885433679074279UL, 31, 13, 1, 13, 12, 0, 12, 17, 0, 3,
-                           &____alias_loc_id_0, (unsigned)31, (unsigned)0, (unsigned)0, (11205885433679074279UL + 879UL), (11205885433679074279UL + 880UL), (11205885433679074279UL + 881UL), (11205885433679074279UL + 883UL), (11205885433679074279UL + 884UL), (11205885433679074279UL + 885UL), (11205885433679074279UL + 886UL), (11205885433679074279UL + 887UL), (11205885433679074279UL + 888UL), (11205885433679074279UL + 889UL), (11205885433679074279UL + 890UL), (11205885433679074279UL + 891UL), (11205885433679074279UL + 892UL), (11205885433679074279UL + 893UL), (11205885433679074279UL + 894UL), (11205885433679074279UL + 895UL), (11205885433679074279UL + 896UL), (11205885433679074279UL + 897UL), (11205885433679074279UL + 898UL), (11205885433679074279UL + 899UL), (11205885433679074279UL + 900UL), (11205885433679074279UL + 901UL), (11205885433679074279UL + 902UL), (11205885433679074279UL + 903UL), (11205885433679074279UL + 904UL), (11205885433679074279UL + 905UL), (11205885433679074279UL + 906UL), (11205885433679074279UL + 907UL), (11205885433679074279UL + 908UL), (11205885433679074279UL + 909UL), (11205885433679074279UL + 928UL),
+                           &____alias_loc_id_0, (unsigned)31, (unsigned)0, (unsigned)0, (11205885433679074279UL + 895UL), (11205885433679074279UL + 896UL), (11205885433679074279UL + 897UL), (11205885433679074279UL + 899UL), (11205885433679074279UL + 900UL), (11205885433679074279UL + 901UL), (11205885433679074279UL + 902UL), (11205885433679074279UL + 903UL), (11205885433679074279UL + 904UL), (11205885433679074279UL + 905UL), (11205885433679074279UL + 906UL), (11205885433679074279UL + 907UL), (11205885433679074279UL + 908UL), (11205885433679074279UL + 909UL), (11205885433679074279UL + 910UL), (11205885433679074279UL + 911UL), (11205885433679074279UL + 912UL), (11205885433679074279UL + 913UL), (11205885433679074279UL + 914UL), (11205885433679074279UL + 915UL), (11205885433679074279UL + 916UL), (11205885433679074279UL + 917UL), (11205885433679074279UL + 918UL), (11205885433679074279UL + 919UL), (11205885433679074279UL + 920UL), (11205885433679074279UL + 921UL), (11205885433679074279UL + 922UL), (11205885433679074279UL + 923UL), (11205885433679074279UL + 924UL), (11205885433679074279UL + 925UL), (11205885433679074279UL + 945UL),
                            &____alias_loc_id_1, (unsigned)9, (unsigned)0, (unsigned)0, (11205885433679074279UL + 1UL), (11205885433679074279UL + 2UL), (11205885433679074279UL + 3UL), (11205885433679074279UL + 4UL), (11205885433679074279UL + 5UL), (11205885433679074279UL + 6UL), (11205885433679074279UL + 7UL), (11205885433679074279UL + 8UL), (11205885433679074279UL + 33UL),
-                           &____alias_loc_id_2, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 75UL), (11205885433679074279UL + 76UL), (11205885433679074279UL + 77UL), (11205885433679074279UL + 78UL), (11205885433679074279UL + 79UL),
-                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (unsigned)0, (11205885433679074279UL + 109UL), (11205885433679074279UL + 110UL), (11205885433679074279UL + 111UL),
-                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 135UL), (11205885433679074279UL + 136UL), (11205885433679074279UL + 137UL), (11205885433679074279UL + 138UL), (11205885433679074279UL + 166UL),
-                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 170UL), (11205885433679074279UL + 171UL), (11205885433679074279UL + 172UL), (11205885433679074279UL + 173UL), (11205885433679074279UL + 195UL),
-                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 199UL), (11205885433679074279UL + 200UL), (11205885433679074279UL + 201UL), (11205885433679074279UL + 202UL), (11205885433679074279UL + 246UL),
-                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 250UL), (11205885433679074279UL + 251UL), (11205885433679074279UL + 252UL), (11205885433679074279UL + 253UL), (11205885433679074279UL + 297UL),
-                           &____alias_loc_id_8, (unsigned)17, (unsigned)0, (unsigned)0, (11205885433679074279UL + 299UL), (11205885433679074279UL + 300UL), (11205885433679074279UL + 301UL), (11205885433679074279UL + 302UL), (11205885433679074279UL + 303UL), (11205885433679074279UL + 304UL), (11205885433679074279UL + 305UL), (11205885433679074279UL + 306UL), (11205885433679074279UL + 307UL), (11205885433679074279UL + 308UL), (11205885433679074279UL + 309UL), (11205885433679074279UL + 310UL), (11205885433679074279UL + 311UL), (11205885433679074279UL + 312UL), (11205885433679074279UL + 313UL), (11205885433679074279UL + 314UL), (11205885433679074279UL + 315UL),
-                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (unsigned)0, (11205885433679074279UL + 477UL), (11205885433679074279UL + 478UL), (11205885433679074279UL + 479UL), (11205885433679074279UL + 480UL), (11205885433679074279UL + 481UL), (11205885433679074279UL + 482UL), (11205885433679074279UL + 483UL), (11205885433679074279UL + 484UL),
-                            &____alias_loc_id_10, (unsigned)11, (unsigned)0, (unsigned)0, (11205885433679074279UL + 546UL), (11205885433679074279UL + 547UL), (11205885433679074279UL + 548UL), (11205885433679074279UL + 549UL), (11205885433679074279UL + 550UL), (11205885433679074279UL + 551UL), (11205885433679074279UL + 572UL), (11205885433679074279UL + 574UL), (11205885433679074279UL + 589UL), (11205885433679074279UL + 594UL), (11205885433679074279UL + 599UL),
-                            &____alias_loc_id_11, (unsigned)19, (unsigned)0, (unsigned)0, (11205885433679074279UL + 609UL), (11205885433679074279UL + 610UL), (11205885433679074279UL + 611UL), (11205885433679074279UL + 612UL), (11205885433679074279UL + 613UL), (11205885433679074279UL + 614UL), (11205885433679074279UL + 615UL), (11205885433679074279UL + 616UL), (11205885433679074279UL + 617UL), (11205885433679074279UL + 618UL), (11205885433679074279UL + 619UL), (11205885433679074279UL + 739UL), (11205885433679074279UL + 741UL), (11205885433679074279UL + 753UL), (11205885433679074279UL + 765UL), (11205885433679074279UL + 777UL), (11205885433679074279UL + 789UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 1365UL),
-                            &____alias_loc_id_12, (unsigned)6, (unsigned)0, (unsigned)0, (11205885433679074279UL + 879UL), (11205885433679074279UL + 880UL), (11205885433679074279UL + 881UL), (11205885433679074279UL + 883UL), (11205885433679074279UL + 884UL), (11205885433679074279UL + 885UL),
-                            "init", (void *)(&init_npm), (void *)__null, 0, 8, (11205885433679074279UL + 33UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 1, "__assert_fail", 4, (11205885433679074279UL + 1357UL), (11205885433679074279UL + 1358UL), 0UL, (11205885433679074279UL + 1359UL), 0UL,
+                           &____alias_loc_id_2, (unsigned)6, (unsigned)0, (unsigned)0, (11205885433679074279UL + 75UL), (11205885433679074279UL + 76UL), (11205885433679074279UL + 77UL), (11205885433679074279UL + 78UL), (11205885433679074279UL + 79UL), (11205885433679074279UL + 80UL),
+                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)0, (11205885433679074279UL + 113UL), (11205885433679074279UL + 114UL), (11205885433679074279UL + 115UL), (11205885433679074279UL + 116UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 143UL), (11205885433679074279UL + 144UL), (11205885433679074279UL + 145UL), (11205885433679074279UL + 146UL), (11205885433679074279UL + 174UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 178UL), (11205885433679074279UL + 179UL), (11205885433679074279UL + 180UL), (11205885433679074279UL + 181UL), (11205885433679074279UL + 203UL),
+                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 207UL), (11205885433679074279UL + 208UL), (11205885433679074279UL + 209UL), (11205885433679074279UL + 210UL), (11205885433679074279UL + 254UL),
+                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (11205885433679074279UL + 258UL), (11205885433679074279UL + 259UL), (11205885433679074279UL + 260UL), (11205885433679074279UL + 261UL), (11205885433679074279UL + 305UL),
+                           &____alias_loc_id_8, (unsigned)18, (unsigned)0, (unsigned)0, (11205885433679074279UL + 307UL), (11205885433679074279UL + 308UL), (11205885433679074279UL + 309UL), (11205885433679074279UL + 310UL), (11205885433679074279UL + 311UL), (11205885433679074279UL + 312UL), (11205885433679074279UL + 313UL), (11205885433679074279UL + 314UL), (11205885433679074279UL + 315UL), (11205885433679074279UL + 316UL), (11205885433679074279UL + 317UL), (11205885433679074279UL + 318UL), (11205885433679074279UL + 319UL), (11205885433679074279UL + 320UL), (11205885433679074279UL + 321UL), (11205885433679074279UL + 322UL), (11205885433679074279UL + 323UL), (11205885433679074279UL + 324UL),
+                           &____alias_loc_id_9, (unsigned)9, (unsigned)0, (unsigned)0, (11205885433679074279UL + 489UL), (11205885433679074279UL + 490UL), (11205885433679074279UL + 491UL), (11205885433679074279UL + 492UL), (11205885433679074279UL + 493UL), (11205885433679074279UL + 494UL), (11205885433679074279UL + 495UL), (11205885433679074279UL + 496UL), (11205885433679074279UL + 497UL),
+                            &____alias_loc_id_10, (unsigned)11, (unsigned)0, (unsigned)0, (11205885433679074279UL + 562UL), (11205885433679074279UL + 563UL), (11205885433679074279UL + 564UL), (11205885433679074279UL + 565UL), (11205885433679074279UL + 566UL), (11205885433679074279UL + 567UL), (11205885433679074279UL + 588UL), (11205885433679074279UL + 590UL), (11205885433679074279UL + 605UL), (11205885433679074279UL + 610UL), (11205885433679074279UL + 615UL),
+                            &____alias_loc_id_11, (unsigned)19, (unsigned)0, (unsigned)0, (11205885433679074279UL + 625UL), (11205885433679074279UL + 626UL), (11205885433679074279UL + 627UL), (11205885433679074279UL + 628UL), (11205885433679074279UL + 629UL), (11205885433679074279UL + 630UL), (11205885433679074279UL + 631UL), (11205885433679074279UL + 632UL), (11205885433679074279UL + 633UL), (11205885433679074279UL + 634UL), (11205885433679074279UL + 635UL), (11205885433679074279UL + 755UL), (11205885433679074279UL + 757UL), (11205885433679074279UL + 769UL), (11205885433679074279UL + 781UL), (11205885433679074279UL + 793UL), (11205885433679074279UL + 805UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 1385UL),
+                            &____alias_loc_id_12, (unsigned)7, (unsigned)0, (unsigned)0, (11205885433679074279UL + 895UL), (11205885433679074279UL + 896UL), (11205885433679074279UL + 897UL), (11205885433679074279UL + 899UL), (11205885433679074279UL + 900UL), (11205885433679074279UL + 901UL), (11205885433679074279UL + 926UL),
+                            "init", (void *)(&init_npm), (void *)__null, 0, 8, (11205885433679074279UL + 33UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 1, "__assert_fail", 4, (11205885433679074279UL + 1377UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1379UL), 0UL,
                             "get_coord", (void *)(&get_coord_npm), (void *)__null, 0, 5, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0,
                             "modv", (void *)(&modv_npm), (void *)__null, 0, 3, 0UL, 0UL, 0UL, 0UL, 1, "sqrt", 1, 0UL, 0UL,
-                            "move", (void *)(&move_npm), (void *)__null, 0, 4, (11205885433679074279UL + 166UL), 0UL, 0UL, 0UL, 0UL, 0,
-                            "move_to", (void *)(&move_to_npm), (void *)__null, 0, 4, (11205885433679074279UL + 195UL), 0UL, 0UL, 0UL, 0UL, 0,
-                            "rot_x", (void *)(&rot_x_npm), (void *)__null, 0, 2, (11205885433679074279UL + 246UL), 0UL, 0UL, 4, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL,
-                            "rot_y", (void *)(&rot_y_npm), (void *)__null, 0, 2, (11205885433679074279UL + 297UL), 0UL, 0UL, 4, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL,
+                            "move", (void *)(&move_npm), (void *)__null, 0, 4, (11205885433679074279UL + 174UL), 0UL, 0UL, 0UL, 0UL, 0,
+                            "move_to", (void *)(&move_to_npm), (void *)__null, 0, 4, (11205885433679074279UL + 203UL), 0UL, 0UL, 0UL, 0UL, 0,
+                            "rot_x", (void *)(&rot_x_npm), (void *)__null, 0, 2, (11205885433679074279UL + 254UL), 0UL, 0UL, 4, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL,
+                            "rot_y", (void *)(&rot_y_npm), (void *)__null, 0, 2, (11205885433679074279UL + 305UL), 0UL, 0UL, 4, "cos", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "sin", 1, 0UL, 0UL, "cos", 1, 0UL, 0UL,
                             "get_sphere_intersec", (void *)(&get_sphere_intersec_npm), (void *)__null, 0, 10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2, "sqrt", 1, 0UL, 0UL, "sqrt", 1, 0UL, 0UL,
                             "get_cos_angle_v1v2", (void *)(&get_cos_angle_v1v2_npm), (void *)__null, 0, 6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2, "modv", 3, 0UL, 0UL, 0UL, 0UL, "modv", 3, 0UL, 0UL, 0UL, 0UL,
-                            "usage", (void *)(&usage_npm), (void *)__null, 0, 1, (11205885433679074279UL + 542UL), 0UL, 2, "fprintf", 3, (11205885433679074279UL + 860UL), (11205885433679074279UL + 1361UL), (11205885433679074279UL + 537UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "parse_three_doubles", (void *)(&parse_three_doubles_npm), (void *)__null, 0, 4, (11205885433679074279UL + 587UL), (11205885433679074279UL + 589UL), (11205885433679074279UL + 594UL), (11205885433679074279UL + 599UL), 0UL, 7, "strchr", 2, (11205885433679074279UL + 587UL), 0UL, (11205885433679074279UL + 572UL), "__assert_fail", 4, (11205885433679074279UL + 1362UL), (11205885433679074279UL + 1358UL), 0UL, (11205885433679074279UL + 1363UL), 0UL, "strchr", 2, (11205885433679074279UL + 572UL), 0UL, (11205885433679074279UL + 574UL), "__assert_fail", 4, (11205885433679074279UL + 1364UL), (11205885433679074279UL + 1358UL), 0UL, (11205885433679074279UL + 1363UL), 0UL, "atof", 1, (11205885433679074279UL + 587UL), 0UL, "atof", 1, (11205885433679074279UL + 572UL), 0UL, "atof", 1, (11205885433679074279UL + 574UL), 0UL,
-                            "parse_config", (void *)(&parse_config_npm), (void *)__null, 0, 3, 0UL, (11205885433679074279UL + 871UL), (11205885433679074279UL + 810UL), 0UL, 31, "getopt", 3, 0UL, (11205885433679074279UL + 871UL), (11205885433679074279UL + 1366UL), 0UL, "atoi", 1, (11205885433679074279UL + 833UL), 0UL, "atoi", 1, (11205885433679074279UL + 833UL), 0UL, "atoi", 1, (11205885433679074279UL + 833UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 833UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 810UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 833UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 810UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 833UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 810UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 833UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 810UL), (11205885433679074279UL + 810UL), 0UL, "strchr", 2, (11205885433679074279UL + 833UL), 0UL, (11205885433679074279UL + 739UL), "__assert_fail", 4, (11205885433679074279UL + 1362UL), (11205885433679074279UL + 1358UL), 0UL, (11205885433679074279UL + 1368UL), 0UL, "strchr", 2, (11205885433679074279UL + 739UL), 0UL, (11205885433679074279UL + 741UL), "__assert_fail", 4, (11205885433679074279UL + 1364UL), (11205885433679074279UL + 1358UL), 0UL, (11205885433679074279UL + 1368UL), 0UL, "strchr", 2, (11205885433679074279UL + 741UL), 0UL, (11205885433679074279UL + 753UL), "__assert_fail", 4, (11205885433679074279UL + 1362UL), (11205885433679074279UL + 1358UL), 0UL, (11205885433679074279UL + 1368UL), 0UL, "strchr", 2, (11205885433679074279UL + 753UL), 0UL, (11205885433679074279UL + 765UL), "__assert_fail", 4, (11205885433679074279UL + 1364UL), (11205885433679074279UL + 1358UL), 0UL, (11205885433679074279UL + 1368UL), 0UL, "strchr", 2, (11205885433679074279UL + 765UL), 0UL, (11205885433679074279UL + 777UL), "__assert_fail", 4, (11205885433679074279UL + 1362UL), (11205885433679074279UL + 1358UL), 0UL, (11205885433679074279UL + 1368UL), 0UL, "strchr", 2, (11205885433679074279UL + 777UL), 0UL, (11205885433679074279UL + 789UL), "__assert_fail", 4, (11205885433679074279UL + 1362UL), (11205885433679074279UL + 1358UL), 0UL, (11205885433679074279UL + 1368UL), 0UL, "realloc", 2, (11205885433679074279UL + 1164UL), 0UL, (11205885433679074279UL + 1164UL), "atof", 1, (11205885433679074279UL + 833UL), 0UL, "atof", 1, (11205885433679074279UL + 739UL), 0UL, "atof", 1, (11205885433679074279UL + 741UL), 0UL, "atof", 1, (11205885433679074279UL + 753UL), 0UL, "atof", 1, (11205885433679074279UL + 765UL), 0UL, "atof", 1, (11205885433679074279UL + 777UL), 0UL, "atof", 1, (11205885433679074279UL + 789UL), 0UL, "init", 8, (11205885433679074279UL + 1164UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fprintf", 3, (11205885433679074279UL + 860UL), (11205885433679074279UL + 1373UL), 0UL, 0UL, "usage", 1, (11205885433679074279UL + 871UL), 0UL,
+                            "usage", (void *)(&usage_npm), (void *)__null, 0, 1, (11205885433679074279UL + 558UL), 0UL, 2, "fprintf", 3, (11205885433679074279UL + 876UL), (11205885433679074279UL + 1381UL), (11205885433679074279UL + 553UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "parse_three_doubles", (void *)(&parse_three_doubles_npm), (void *)__null, 0, 4, (11205885433679074279UL + 603UL), (11205885433679074279UL + 605UL), (11205885433679074279UL + 610UL), (11205885433679074279UL + 615UL), 0UL, 7, "strchr", 2, (11205885433679074279UL + 603UL), 0UL, (11205885433679074279UL + 588UL), "__assert_fail", 4, (11205885433679074279UL + 1382UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1383UL), 0UL, "strchr", 2, (11205885433679074279UL + 588UL), 0UL, (11205885433679074279UL + 590UL), "__assert_fail", 4, (11205885433679074279UL + 1384UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1383UL), 0UL, "atof", 1, (11205885433679074279UL + 603UL), 0UL, "atof", 1, (11205885433679074279UL + 588UL), 0UL, "atof", 1, (11205885433679074279UL + 590UL), 0UL,
+                            "parse_config", (void *)(&parse_config_npm), (void *)__null, 0, 3, 0UL, (11205885433679074279UL + 887UL), (11205885433679074279UL + 826UL), 0UL, 31, "getopt", 3, 0UL, (11205885433679074279UL + 887UL), (11205885433679074279UL + 1386UL), 0UL, "atoi", 1, (11205885433679074279UL + 849UL), 0UL, "atoi", 1, (11205885433679074279UL + 849UL), 0UL, "atoi", 1, (11205885433679074279UL + 849UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 849UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 849UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 849UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), 0UL, "parse_three_doubles", 4, (11205885433679074279UL + 849UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), (11205885433679074279UL + 826UL), 0UL, "strchr", 2, (11205885433679074279UL + 849UL), 0UL, (11205885433679074279UL + 755UL), "__assert_fail", 4, (11205885433679074279UL + 1382UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "strchr", 2, (11205885433679074279UL + 755UL), 0UL, (11205885433679074279UL + 757UL), "__assert_fail", 4, (11205885433679074279UL + 1384UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "strchr", 2, (11205885433679074279UL + 757UL), 0UL, (11205885433679074279UL + 769UL), "__assert_fail", 4, (11205885433679074279UL + 1382UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "strchr", 2, (11205885433679074279UL + 769UL), 0UL, (11205885433679074279UL + 781UL), "__assert_fail", 4, (11205885433679074279UL + 1384UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "strchr", 2, (11205885433679074279UL + 781UL), 0UL, (11205885433679074279UL + 793UL), "__assert_fail", 4, (11205885433679074279UL + 1382UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "strchr", 2, (11205885433679074279UL + 793UL), 0UL, (11205885433679074279UL + 805UL), "__assert_fail", 4, (11205885433679074279UL + 1382UL), (11205885433679074279UL + 1378UL), 0UL, (11205885433679074279UL + 1388UL), 0UL, "realloc", 2, (11205885433679074279UL + 1181UL), 0UL, (11205885433679074279UL + 1181UL), "atof", 1, (11205885433679074279UL + 849UL), 0UL, "atof", 1, (11205885433679074279UL + 755UL), 0UL, "atof", 1, (11205885433679074279UL + 757UL), 0UL, "atof", 1, (11205885433679074279UL + 769UL), 0UL, "atof", 1, (11205885433679074279UL + 781UL), 0UL, "atof", 1, (11205885433679074279UL + 793UL), 0UL, "atof", 1, (11205885433679074279UL + 805UL), 0UL, "init", 8, (11205885433679074279UL + 1181UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "fprintf", 3, (11205885433679074279UL + 876UL), (11205885433679074279UL + 1393UL), 0UL, 0UL, "usage", 1, (11205885433679074279UL + 887UL), 0UL,
                            "init", &(____chimes_does_checkpoint_init_npm),
                            "get_coord", &(____chimes_does_checkpoint_get_coord_npm),
                            "modv", &(____chimes_does_checkpoint_modv_npm),
@@ -6507,37 +6507,37 @@ static int module_init() {
                            "usage", &(____chimes_does_checkpoint_usage_npm),
                            "parse_three_doubles", &(____chimes_does_checkpoint_parse_three_doubles_npm),
                            "parse_config", &(____chimes_does_checkpoint_parse_config_npm),
-                             (11205885433679074279UL + 883UL), (11205885433679074279UL + 928UL),
-                             (11205885433679074279UL + 882UL), (11205885433679074279UL + 1164UL),
-                             (11205885433679074279UL + 881UL), (11205885433679074279UL + 1353UL),
-                             (11205885433679074279UL + 199UL), (11205885433679074279UL + 246UL),
-                             (11205885433679074279UL + 551UL), (11205885433679074279UL + 574UL),
-                             (11205885433679074279UL + 550UL), (11205885433679074279UL + 572UL),
-                             (11205885433679074279UL + 135UL), (11205885433679074279UL + 166UL),
-                             (11205885433679074279UL + 250UL), (11205885433679074279UL + 297UL),
-                             (11205885433679074279UL + 170UL), (11205885433679074279UL + 195UL),
+                             (11205885433679074279UL + 627UL), (11205885433679074279UL + 826UL),
+                             (11205885433679074279UL + 626UL), (11205885433679074279UL + 887UL),
+                             (11205885433679074279UL + 629UL), (11205885433679074279UL + 849UL),
+                             (11205885433679074279UL + 258UL), (11205885433679074279UL + 305UL),
+                             (11205885433679074279UL + 178UL), (11205885433679074279UL + 203UL),
+                             (11205885433679074279UL + 635UL), (11205885433679074279UL + 805UL),
+                             (11205885433679074279UL + 558UL), (11205885433679074279UL + 553UL),
                              (11205885433679074279UL + 1UL), (11205885433679074279UL + 33UL),
-                             (11205885433679074279UL + 542UL), (11205885433679074279UL + 537UL),
-                             (11205885433679074279UL + 546UL), (11205885433679074279UL + 587UL),
-                             (11205885433679074279UL + 547UL), (11205885433679074279UL + 589UL),
-                             (11205885433679074279UL + 810UL), (11205885433679074279UL + 1164UL),
-                             (11205885433679074279UL + 548UL), (11205885433679074279UL + 594UL),
-                             (11205885433679074279UL + 549UL), (11205885433679074279UL + 599UL),
-                             (11205885433679074279UL + 618UL), (11205885433679074279UL + 777UL),
-                             (11205885433679074279UL + 619UL), (11205885433679074279UL + 789UL),
-                             (11205885433679074279UL + 895UL), (11205885433679074279UL + 1164UL),
-                             (11205885433679074279UL + 897UL), (11205885433679074279UL + 1164UL),
-                             (11205885433679074279UL + 613UL), (11205885433679074279UL + 833UL),
-                             (11205885433679074279UL + 610UL), (11205885433679074279UL + 871UL),
-                             (11205885433679074279UL + 611UL), (11205885433679074279UL + 810UL),
-                             (11205885433679074279UL + 616UL), (11205885433679074279UL + 753UL),
-                             (11205885433679074279UL + 617UL), (11205885433679074279UL + 765UL),
-                             (11205885433679074279UL + 614UL), (11205885433679074279UL + 739UL),
-                             (11205885433679074279UL + 615UL), (11205885433679074279UL + 741UL),
-                             (11205885433679074279UL + 1360UL), (11205885433679074279UL + 860UL),
-                             (11205885433679074279UL + 905UL), (11205885433679074279UL + 1164UL),
-                             (11205885433679074279UL + 1367UL), (11205885433679074279UL + 833UL),
-                             (11205885433679074279UL + 531UL), (11205885433679074279UL + 542UL),
+                             (11205885433679074279UL + 547UL), (11205885433679074279UL + 558UL),
+                             (11205885433679074279UL + 911UL), (11205885433679074279UL + 1181UL),
+                             (11205885433679074279UL + 913UL), (11205885433679074279UL + 1181UL),
+                             (11205885433679074279UL + 630UL), (11205885433679074279UL + 755UL),
+                             (11205885433679074279UL + 631UL), (11205885433679074279UL + 757UL),
+                             (11205885433679074279UL + 632UL), (11205885433679074279UL + 769UL),
+                             (11205885433679074279UL + 633UL), (11205885433679074279UL + 781UL),
+                             (11205885433679074279UL + 634UL), (11205885433679074279UL + 793UL),
+                             (11205885433679074279UL + 143UL), (11205885433679074279UL + 174UL),
+                             (11205885433679074279UL + 207UL), (11205885433679074279UL + 254UL),
+                             (11205885433679074279UL + 897UL), (11205885433679074279UL + 1373UL),
+                             (11205885433679074279UL + 898UL), (11205885433679074279UL + 1181UL),
+                             (11205885433679074279UL + 899UL), (11205885433679074279UL + 945UL),
+                             (11205885433679074279UL + 562UL), (11205885433679074279UL + 603UL),
+                             (11205885433679074279UL + 563UL), (11205885433679074279UL + 605UL),
+                             (11205885433679074279UL + 564UL), (11205885433679074279UL + 610UL),
+                             (11205885433679074279UL + 565UL), (11205885433679074279UL + 615UL),
+                             (11205885433679074279UL + 566UL), (11205885433679074279UL + 588UL),
+                             (11205885433679074279UL + 567UL), (11205885433679074279UL + 590UL),
+                             (11205885433679074279UL + 1387UL), (11205885433679074279UL + 849UL),
+                             (11205885433679074279UL + 921UL), (11205885433679074279UL + 1181UL),
+                             (11205885433679074279UL + 826UL), (11205885433679074279UL + 1181UL),
+                             (11205885433679074279UL + 1380UL), (11205885433679074279UL + 876UL),
                      "_config", 17, "double", (int)__builtin_offsetof (struct _config, px), "double", (int)__builtin_offsetof (struct _config, py), "double", (int)__builtin_offsetof (struct _config, pz), "double", (int)__builtin_offsetof (struct _config, lx), "double", (int)__builtin_offsetof (struct _config, ly), "double", (int)__builtin_offsetof (struct _config, lz), "double", (int)__builtin_offsetof (struct _config, dx), "double", (int)__builtin_offsetof (struct _config, dy), "double", (int)__builtin_offsetof (struct _config, dz), "double", (int)__builtin_offsetof (struct _config, svx), "double", (int)__builtin_offsetof (struct _config, svy), "double", (int)__builtin_offsetof (struct _config, svz), "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "%struct._sphere*", (int)__builtin_offsetof (struct _config, spheres), "int", (int)__builtin_offsetof (struct _config, nspheres), "int", (int)__builtin_offsetof (struct _config, nt),
                      "_rgb", 3, "double", (int)__builtin_offsetof (struct _rgb, r), "double", (int)__builtin_offsetof (struct _rgb, g), "double", (int)__builtin_offsetof (struct _rgb, b),
                      "_sphere", 7, "double", (int)__builtin_offsetof (struct _sphere, cx), "double", (int)__builtin_offsetof (struct _sphere, cy), "double", (int)__builtin_offsetof (struct _sphere, cz), "double", (int)__builtin_offsetof (struct _sphere, radius), "double", (int)__builtin_offsetof (struct _sphere, clR), "double", (int)__builtin_offsetof (struct _sphere, clG), "double", (int)__builtin_offsetof (struct _sphere, clB),
@@ -6557,13 +6557,13 @@ static int module_init() {
                         "main|conf|0", 1, "main",
         "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
         "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
-        "parse_three_doubles", 0UL, (int)4, 11205885433679075112UL, 11205885433679075089UL, 11205885433679075089UL, 11205885433679075089UL,
-        "parse_three_doubles", 0UL, (int)4, 11205885433679075112UL, 11205885433679075089UL, 11205885433679075089UL, 11205885433679075089UL,
-        "parse_three_doubles", 0UL, (int)4, 11205885433679075112UL, 11205885433679075089UL, 11205885433679075089UL, 11205885433679075089UL,
-        "parse_three_doubles", 0UL, (int)4, 11205885433679075112UL, 11205885433679075089UL, 11205885433679075089UL, 11205885433679075089UL,
-        "init", 0UL, (int)8, 11205885433679075443UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "usage", 0UL, (int)1, 11205885433679075150UL,
-        "parse_config", 0UL, (int)3, 0UL, 11205885433679075632UL, 11205885433679075161UL,
+        "parse_three_doubles", 0UL, (int)4, 11205885433679075128UL, 11205885433679075105UL, 11205885433679075105UL, 11205885433679075105UL,
+        "parse_three_doubles", 0UL, (int)4, 11205885433679075128UL, 11205885433679075105UL, 11205885433679075105UL, 11205885433679075105UL,
+        "parse_three_doubles", 0UL, (int)4, 11205885433679075128UL, 11205885433679075105UL, 11205885433679075105UL, 11205885433679075105UL,
+        "parse_three_doubles", 0UL, (int)4, 11205885433679075128UL, 11205885433679075105UL, 11205885433679075105UL, 11205885433679075105UL,
+        "init", 0UL, (int)8, 11205885433679075460UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "usage", 0UL, (int)1, 11205885433679075166UL,
+        "parse_config", 0UL, (int)3, 0UL, 11205885433679075652UL, 11205885433679075177UL,
         "get_coord", 0UL, (int)5, 0UL, 0UL, 0UL, 0UL, 0UL,
         "get_coord", 0UL, (int)5, 0UL, 0UL, 0UL, 0UL, 0UL,
         "modv", 0UL, (int)3, 0UL, 0UL, 0UL,
@@ -6571,7 +6571,7 @@ static int module_init() {
         "get_sphere_intersec", 0UL, (int)10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "get_sphere_intersec", 0UL, (int)10, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "get_cos_angle_v1v2", 0UL, (int)6, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "move", 0UL, (int)4, 11205885433679075443UL, 0UL, 0UL, 0UL);
+        "move", 0UL, (int)4, 11205885433679075460UL, 0UL, 0UL, 0UL);
     return 0;
 }
 

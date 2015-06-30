@@ -50,6 +50,7 @@
 #include "checkpointable_heap_allocation.h"
 #include "type_info.h"
 #include "thread_ctx.h"
+#include "heap_tree.h"
 
 #include "xxhash/xxhash.h"
 
@@ -125,7 +126,10 @@ typedef struct _checkpoint_thread_ctx {
 
     std::vector<std::pair<unsigned, clock_t> > *checkpoint_entry_times;
 
-    vector<checkpointable_heap_allocation> *heap_to_checkpoint;
+    void *heap_to_checkpoint;
+    size_t n_heap_to_checkpoint;
+    size_t heap_to_checkpoint_len;
+    // vector<checkpointable_heap_allocation> *heap_to_checkpoint;
 
     void *contains_serialized;
     size_t contains_serialized_len;
@@ -223,7 +227,9 @@ static void skip(int fd, ssize_t size, const char *msg, const char *filename);
 static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
         const char *filename);
 static void *translate_old_ptr(void *ptr,
-        std::map<void *, ptr_and_size *> *old_to_new, void *container);
+        // std::map<void *, ptr_and_size *> *old_to_new,
+        heap_tree *old_to_new,
+        void *container);
 static void fix_stack_or_global_pointer(void *container, string type, int nesting);
 map<void *, heap_allocation *>::iterator find_in_heap(void *ptr);
 void free_helper(void *ptr);
@@ -293,6 +299,7 @@ static pthread_rwlock_t globals_lock = PTHREAD_RWLOCK_INITIALIZER;
  * the analysis pass. These are only constants which have a pointer type.
  */
 static map<size_t, constant_var *> constants;
+static size_t max_constant_id = 0;
 static pthread_rwlock_t constants_lock = PTHREAD_RWLOCK_INITIALIZER;
 
 /*
@@ -557,9 +564,11 @@ static map<unsigned, clock_t> *checkpoint_entry_deltas;
  * corrected pointers during the sweep over heap allocations.
  */
 static vector<already_updated_ptrs *> already_updated;
-static std::map<void *, ptr_and_size *> *old_to_new;
+// static std::map<void *, ptr_and_size *> *old_to_new;
+heap_tree *old_to_new;
 
-static std::map<std::string, std::vector<struct_field> *> structs;
+// static std::map<std::string, std::vector<struct_field> *> structs;
+static std::map<std::string, struct_info *> structs;
 
 static pthread_t checkpoint_thread;
 static checkpoint_thread_ctx running_checkpoint_ctx;
@@ -597,7 +606,8 @@ static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
 }
 
 static void read_heap_from_file(int fd, char *checkpoint_file,
-        std::map<void *, ptr_and_size *> *old_to_new,
+        heap_tree *old_to_new,
+        // std::map<void *, ptr_and_size *> *old_to_new,
         std::vector<heap_allocation *> *new_heap,
         std::map<void *, memory_filled *> *filled,
         std::map<void *, heap_allocation *> *old_to_alloc) {
@@ -672,7 +682,7 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
          * necessary). Later we actually populate the data from buffer, based on
          * ranges.
          */
-        if (old_to_new->find(old_address) == old_to_new->end()) {
+        if (old_to_new->exact_search(old_address) == NULL) {
             assert(filled->find(old_address) == filled->end());
             assert(old_to_alloc->find(old_address) == old_to_alloc->end());
 
@@ -708,9 +718,9 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
             }
             alias_to_heap[group]->push_back(alloc);
 
-            assert(old_to_new->find(old_address) == old_to_new->end());
-            old_to_new->insert(pair<void *, ptr_and_size *>(old_address,
-                        new ptr_and_size(new_address, size)));
+            old_to_new->insert(old_address, new_address, size);
+            // old_to_new->insert(pair<void *, ptr_and_size *>(old_address,
+            //             new ptr_and_size(new_address, size)));
             filled->insert(pair<void *, memory_filled *>(old_address,
                         already_filled));
             old_to_alloc->insert(pair<void *, heap_allocation *>(old_address,
@@ -781,7 +791,8 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
 
 static void read_heap_from_previous_checkpoint(
         char checkpoint_file[MAX_CHECKPOINT_FILENAME_LEN],
-        std::map<void *, ptr_and_size *> *old_to_new,
+        // std::map<void *, ptr_and_size *> *old_to_new,
+        heap_tree *old_to_new,
         std::vector<heap_allocation *> *new_heap,
         std::map<void *, memory_filled *> *filled,
         std::map<void *, heap_allocation *> *old_to_alloc) {
@@ -905,7 +916,7 @@ static void set_my_thread_ctx(thread_ctx *ctx) {
     assert(pthread_setspecific(thread_ctx_key, ctx) == 0);
 }
 
-void init_chimes() {
+void init_chimes(int argc, char **argv) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -914,6 +925,11 @@ void init_chimes() {
     atexit(onexit);
 
     register_custom_init_handler("omp_lock_t", init_omp_lock);
+
+    for (int arg = 1; arg < argc; arg++) {
+        register_constant(max_constant_id + 1 + arg, argv[arg],
+                strlen(argv[arg]) + 1);
+    }
 
     assert(pthread_key_create(&thread_ctx_key, destroy_thread_ctx) == 0);
     assert(pthread_key_create(&tid_key, free) == 0);
@@ -1363,7 +1379,8 @@ void init_chimes() {
                 thread_hierarchy_serialized, thread_hierarchy_serialized_len);
 
         // read in heap serialization
-        old_to_new = new std::map<void *, ptr_and_size *>();
+        old_to_new = new heap_tree();
+        // old_to_new = new std::map<void *, ptr_and_size *>();
         std::vector<heap_allocation *> *new_heap =
             new std::vector<heap_allocation *>();
         std::map<void *, memory_filled *> *filled = new std::map<void *,
@@ -1407,6 +1424,11 @@ void init_chimes() {
         delete filled;
         delete old_to_alloc;
 
+        /*
+         * Add all constant variables to the mapping from old to new addresses,
+         * so that any variables which point to them from the stack or heap can
+         * be updated.
+         */
         for (map<size_t, constant_var*>::iterator i = constants.begin(),
                 e = constants.end(); i != e; i++) {
             size_t id = i->first;
@@ -1417,12 +1439,17 @@ void init_chimes() {
 
             assert(dead->get_length() == live->get_length());
 
-            assert(old_to_new->find(dead->get_address()) == old_to_new->end());
-            old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
-                        new ptr_and_size(live->get_address(),
-                            live->get_length())));
+            // assert(old_to_new->find(dead->get_address()) == old_to_new->end());
+            // old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
+            //             new ptr_and_size(live->get_address(),
+            //                 live->get_length())));
+            old_to_new->insert(dead->get_address(), live->get_address(), live->get_length());
         }
 
+        /*
+         * Do the same for function pointers, so that any pointers to them can
+         * be updated.
+         */
         assert(unpacked_function_addresses->size() == function_addresses.size());
         for (map<string, void *>::iterator i =
                 unpacked_function_addresses->begin(), e =
@@ -1430,9 +1457,10 @@ void init_chimes() {
             void *live = function_addresses.at(i->first);
             void *dead = i->second;
 
-            assert(old_to_new->find(dead) == old_to_new->end());
-            old_to_new->insert(pair<void *, ptr_and_size *>(dead,
-                        new ptr_and_size(live, 1)));
+            // assert(old_to_new->find(dead) == old_to_new->end());
+            // old_to_new->insert(pair<void *, ptr_and_size *>(dead,
+            //             new ptr_and_size(live, 1)));
+            old_to_new->insert(dead, live, 1);
         }
         delete unpacked_function_addresses;
 
@@ -1564,7 +1592,9 @@ void init_chimes() {
 }
 
 static void *translate_old_ptr(void *ptr,
-        std::map<void *, ptr_and_size *> *old_to_new, void *container) {
+        heap_tree *old_to_new,
+        // std::map<void *, ptr_and_size *> *old_to_new,
+        void *container) {
     assert(already_translated);
 
     if (already_translated->find(container) != already_translated->end()) {
@@ -1577,6 +1607,15 @@ static void *translate_old_ptr(void *ptr,
         return NULL;
     }
 
+    void *translated;
+    bool found = old_to_new->search(ptr, container, &translated, already_translated);
+    if (found) {
+        return translated;
+    } else {
+        return NULL;
+    }
+
+    /*
     unsigned char *c_ptr = (unsigned char *)ptr;
     for (std::map<void *, ptr_and_size *>::iterator i = old_to_new->begin(),
             e = old_to_new->end(); i != e; i++) {
@@ -1594,6 +1633,7 @@ static void *translate_old_ptr(void *ptr,
         }
     }
     return NULL;
+    */
 }
 
 static map<size_t, size_t>::iterator find_alias_in_contains(size_t alias,
@@ -1616,7 +1656,8 @@ static map<size_t, size_t>::iterator find_alias_in_contains(size_t alias,
     return contains.end();
 }
 
-static void merge_alias_groups_helper(size_t alias1, size_t alias2, set<pair<size_t, size_t> > *merged) {
+static void merge_alias_groups_helper(size_t alias1, size_t alias2,
+        set<pair<size_t, size_t> > *merged) {
     assert(valid_group(alias1));
     assert(valid_group(alias2));
 
@@ -1629,10 +1670,6 @@ static void merge_alias_groups_helper(size_t alias1, size_t alias2, set<pair<siz
     merged->insert(pair<size_t, size_t>(alias1, alias2));
     merged->insert(pair<size_t, size_t>(alias2, alias1));
 
-#ifdef VERBOSE
-    fprintf(stderr, "Merging %lu and %lu\n", alias1, alias2);
-#endif
-
     VERIFY(pthread_rwlock_rdlock(&contains_lock) == 0);
     size_t alias1_alias, alias2_alias;
     map<size_t, size_t>::iterator child1_iter = find_alias_in_contains(alias1,
@@ -1642,9 +1679,9 @@ static void merge_alias_groups_helper(size_t alias1, size_t alias2, set<pair<siz
     map<size_t, size_t>::iterator end = contains.end();
 
     if (child1_iter != end && child2_iter == end) {
-        VERIFY(contains.insert(pair<size_t, size_t>(alias2, alias1_alias)).second);
+        contains[alias2] = contains[alias1_alias];
     } else if (child1_iter == end && child2_iter != end) {
-        VERIFY(contains.insert(pair<size_t, size_t>(alias1, alias2_alias)).second);
+        contains[alias1] = contains[alias2_alias];
     } else if (child1_iter != end && child2_iter != end) {
         size_t child1 = child1_iter->second;
         size_t child2 = child2_iter->second;
@@ -1654,7 +1691,9 @@ static void merge_alias_groups_helper(size_t alias1, size_t alias2, set<pair<siz
          * children (e.g. if you cast a pointer to store it in itself). This
          * doesn't really fix the problem except for in trivial cases, so TODO.
          */
-        merge_alias_groups_helper(child1, child2, merged);
+        // if (child1 != alias1 || child2 != alias2) {
+            merge_alias_groups_helper(child1, child2, merged);
+        // }
     }
     VERIFY(pthread_rwlock_unlock(&contains_lock) == 0);
 
@@ -1677,8 +1716,8 @@ static void merge_alias_groups_helper(size_t alias1, size_t alias2, set<pair<siz
         std::vector<size_t> *new_aliases = new std::vector<size_t>();
         new_aliases->push_back(alias1);
         new_aliases->push_back(alias2);
-        VERIFY(aliased_groups.insert(pair<unsigned, vector<size_t> *>(alias1, new_aliases)).second);
-        VERIFY(aliased_groups.insert(pair<unsigned, vector<size_t> *>(alias2, new_aliases)).second);
+        aliased_groups[alias1] = new_aliases;
+        aliased_groups[alias2] = new_aliases;
     } else if (existing1 != NULL && existing2 != NULL) {
         if (existing1 == existing2) {
             /*
@@ -1703,17 +1742,17 @@ static void merge_alias_groups_helper(size_t alias1, size_t alias2, set<pair<siz
 
             for (std::vector<size_t>::iterator i = new_groups->begin(),
                     e = new_groups->end(); i != e; i++) {
-                aliased_groups.find(*i)->second = new_groups;
+                aliased_groups[*i] = new_groups;
             }
         }
     } else if (existing1 != NULL) {
         // alias2 is missing
         existing1->push_back(alias2);
-        VERIFY(aliased_groups.insert(pair<unsigned, vector<size_t> *>(alias2, existing1)).second);
+        aliased_groups[alias2] = existing1;
     } else if (existing2 != NULL) {
         // alias1 is missing
         existing2->push_back(alias1);
-        VERIFY(aliased_groups.insert(pair<unsigned, vector<size_t> *>(alias1, existing2)).second);
+        aliased_groups[alias1] = existing2;
     }
 }
 
@@ -1956,6 +1995,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
     for (int i = 0; i < nstructs; i++) {
         char *struct_name = va_arg(vl, char *);
+        size_t size_in_bits = va_arg(vl, size_t);
         int nfields = va_arg(vl, int);
         string struct_name_str(struct_name);
 
@@ -1970,8 +2010,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         bool insert_new = false;
         if (structs.find(struct_name_str) == structs.end()) {
             insert_new = true;
-            VERIFY(structs.insert(pair<string, vector<struct_field> *>(struct_name_str,
-                        new vector<struct_field>())).second);
+            VERIFY(structs.insert(pair<string, struct_info *>(struct_name_str,
+                        new struct_info(size_in_bits))).second);
         }
 
 #ifdef VERBOSE
@@ -1989,8 +2029,7 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
             assert(offset >= 0);
             if (insert_new) {
-                structs.at(struct_name_str)->push_back(struct_field(offset,
-                            ty_str));
+                structs.at(struct_name_str)->add_field(offset, ty_str);
             } else {
                 assert(structs.at(struct_name_str)->at(j).get_offset() == offset);
                 assert(structs.at(struct_name_str)->at(j).get_ty() == ty_str);
@@ -2146,10 +2185,9 @@ int new_stack(void *func_ptr, const char *funcname, int *conditional,
              *   3. Function call from inside a non-resumable parallel section
              *      (e.g. an omp for).
              */
-            fprintf(stderr, "WARNING: Mismatch in expected function (%p) and "
-                    "function that we entered (%p) for function %s. Possibly passed"
-                    " through a third-party library.\n", ctx->get_func_ptr(),
-                    func_ptr, funcname);
+            fprintf(stderr, "WARNING: Mismatch in expected function and "
+                    "function that we entered for function %s. Possibly passed"
+                    " through a third-party library.\n", funcname);
             ctx->set_printed_func_ptr_mismatch(true);
         }
         if (disable_current_thread()) {
@@ -2511,6 +2549,10 @@ int get_next_call() {
     assert(trace_indices[tid] < traces->at(tid).size());
     int ele = traces->at(tid)[trace_indices[tid]];
     trace_indices[tid] = trace_indices[tid] + 1;
+#ifdef VERBOSE
+    fprintf(stderr, "next trace element for thread %u is %d, %d/%d trace "
+            "elements\n", tid, ele, trace_indices[tid], traces->at(tid).size());
+#endif
     return ele;
 }
 
@@ -2761,8 +2803,8 @@ void register_constant(size_t const_id, void *address, size_t length) {
     constant_var *var = new constant_var(const_id, address, length);
 
     VERIFY(pthread_rwlock_wrlock(&constants_lock) == 0);
-    assert(constants.find(const_id) == constants.end());
-    constants[const_id] = var;
+    VERIFY(constants.insert(pair<size_t, constant_var *>(const_id, var)).second);
+    max_constant_id = (const_id > max_constant_id ? const_id : max_constant_id);
     VERIFY(pthread_rwlock_unlock(&constants_lock) == 0);
 
 #ifdef __CHIMES_PROFILE
@@ -3066,8 +3108,9 @@ void wait_for_checkpoint() {
 
 static void update_live_var(string name, stack_var *dead, stack_var *live) {
 #ifdef VERBOSE
-    fprintf(stderr, "Restoring variable %s with size %lu at %p\n", name.c_str(),
-            live->get_size(), live->get_address());
+    fprintf(stderr, "Restoring variable %s with size %lu at %p, dead variable "
+            "was at %p\n", name.c_str(), live->get_size(), live->get_address(),
+            dead->get_address());
 #endif
 
     assert(live->get_name() == dead->get_name());
@@ -3077,7 +3120,10 @@ static void update_live_var(string name, stack_var *dead, stack_var *live) {
     assert(live->get_ptr_offsets()->size() == dead->get_ptr_offsets()->size());
     assert(dead->get_tmp_buffer() != NULL);
 
-    memcpy(live->get_address(), dead->get_tmp_buffer(), live->get_size());
+    // Don't modify the state of argc or argv as they are initialized externally
+    if (live->get_name() != "main|argc|0" && live->get_name() != "main|argv|0") {
+        memcpy(live->get_address(), dead->get_tmp_buffer(), live->get_size());
+    }
     dead->clear_tmp_buffer();
 
     /*
@@ -3089,13 +3135,43 @@ static void update_live_var(string name, stack_var *dead, stack_var *live) {
      * that the mapping we would insert is the same that already exists, and
      * therefore the state of the variable will be updated appropriately.
      */
-    if (old_to_new->find(dead->get_address()) != old_to_new->end()) {
-        ptr_and_size *existing = old_to_new->at(dead->get_address());
-        assert(existing->get_ptr() == live->get_address());
-        existing->update_size(live->get_size());
+    heap_tree_node *found = old_to_new->exact_search(dead->get_address());
+    if (found != NULL) {
+        if (found->new_address != live->get_address()) {
+            /*
+             * Because we use two different versions of the same function to for
+             * executing and resuming, the live ranges of variables may be
+             * different between the two. In that case, in the original
+             * execution two variables may have shared space on the stack but in
+             * the new execution (with all the jump labels increasing live
+             * ranges) their locations on the stack may be different. However,
+             * if this is the case we can safely assume that only one is
+             * actually live in the running program and the value stored in the
+             * other is never referenced. Therefore, we can restore both live
+             * variables at different locations on the stack without worrying
+             * about one being referenced with incorrect contents. However, we
+             * now have a one-to-many mapping of one dead address to more than
+             * one live address. For now, we assume that the last registered
+             * stack allocation in the original run provides the correct mapping
+             * from old to new because it is lexicographically the latest.
+             * Because this is called while we iterate over the unpacked stack
+             * variables in registration order, we just always grab the latest
+             * here.
+             */
+            /*
+             * Old print statement
+             * fprintf(stderr, "expected two stack allocations with the same old "
+             *         "address to have the same new address, but instead got "
+             *         "new addresses (existing %p, current %p) for old addresses (existing %p, "
+             *         "current %p)\n", found->new_address, live->get_address(),
+             *         found->old_address, dead->get_address());
+             */
+            found->new_address = live->get_address();
+        }
+        found->size = (live->get_size() > found->size ? live->get_size() :
+                found->size);
     } else {
-        old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
-                    new ptr_and_size(live->get_address(), live->get_size())));
+        old_to_new->insert(dead->get_address(), live->get_address(), live->get_size());
     }
 }
 
@@ -3595,8 +3671,13 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
                 std::sort(heap_to_checkpoint_sorted.begin(),
                         heap_to_checkpoint_sorted.end(), compare_heap_allocations);
-                vector<checkpointable_heap_allocation> *to_checkpoint =
-                    new vector<checkpointable_heap_allocation>();
+                // vector<checkpointable_heap_allocation> *to_checkpoint =
+                //     new vector<checkpointable_heap_allocation>();
+
+#ifdef VERBOSE
+                fprintf(stderr, "Checkpointing %lu total heap allocations\n",
+                        heap_to_checkpoint_sorted.size());
+#endif
 
 #ifdef __CHIMES_PROFILE
                 const unsigned long long __hashing_start = perf_profile::current_time_ns();
@@ -3605,6 +3686,10 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                     (size_t)(target_checkpoint_size_perc *
                             (double)total_allocations);
                 size_t copied_so_far = 0;
+
+                void *buffer = NULL;
+                size_t buffer_len = 0;
+                size_t buffer_capacity = 0;
 #ifdef HASHING_DIAGNOSTICS
                 fprintf(stderr, "Hashing diagnostics for checkpoint:\n");
 #endif
@@ -3620,8 +3705,10 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                                 curr->get_size(), curr->hashes_invalid(),
                                 copied_so_far, desired_checkpoint_size);
 #endif
-                        to_checkpoint->push_back(checkpointable_heap_allocation(
-                                    curr));
+                        buffer = serialize_heap_allocation(curr, buffer,
+                                &buffer_len, &buffer_capacity);
+                        // to_checkpoint->push_back(checkpointable_heap_allocation(
+                        //             curr));
                         curr->invalidate_hashes();
                         copied_so_far += curr->get_size();
                     } else {
@@ -3633,8 +3720,10 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 #endif
 
                             curr->update_hashes();
-                            to_checkpoint->push_back(checkpointable_heap_allocation(
-                                        curr));
+                            buffer = serialize_heap_allocation(curr, buffer,
+                                    &buffer_len, &buffer_capacity);
+                            // to_checkpoint->push_back(checkpointable_heap_allocation(
+                            //             curr));
                             curr->mark_hashes_valid();
                             copied_so_far += curr->get_size();
                         } else {
@@ -3673,29 +3762,36 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                                     n_bytes_changed, copied_so_far,
                                     desired_checkpoint_size);
 #endif
-                            size_t packed_so_far = 0;
-                            unsigned char *source = (unsigned char *)curr->get_address();
-                            unsigned char *buffer = (unsigned char *)malloc(n_bytes_changed);
-                            for (vector<pair<size_t, size_t> >::iterator i =
-                                    ranges.begin(), e = ranges.end(); i != e; i++) {
-                                if (curr->get_is_cuda_alloc()) {
-                                    CHECK(cudaMemcpy(buffer + packed_so_far,
-                                                source + i->first,
-                                                i->second - i->first,
-                                                cudaMemcpyDeviceToHost));
-                                } else {
-                                    memcpy(buffer + packed_so_far,
-                                            source + i->first,
-                                            i->second - i->first); 
-                                }
-                            }
-                            to_checkpoint->push_back(checkpointable_heap_allocation(
-                                        curr, buffer, &ranges));
+
+
+                            buffer = serialize_heap_allocation(curr, &ranges, buffer,
+                                    &buffer_len, &buffer_capacity);
+
+                            // size_t packed_so_far = 0;
+                            // unsigned char *source = (unsigned char *)curr->get_address();
+                            // unsigned char *buffer = (unsigned char *)malloc(n_bytes_changed);
+                            // for (vector<pair<size_t, size_t> >::iterator i =
+                            //         ranges.begin(), e = ranges.end(); i != e; i++) {
+                            //     if (curr->get_is_cuda_alloc()) {
+                            //         CHECK(cudaMemcpy(buffer + packed_so_far,
+                            //                     source + i->first,
+                            //                     i->second - i->first,
+                            //                     cudaMemcpyDeviceToHost));
+                            //     } else {
+                            //         memcpy(buffer + packed_so_far,
+                            //                 source + i->first,
+                            //                 i->second - i->first); 
+                            //     }
+                            // }
+                            // to_checkpoint->push_back(checkpointable_heap_allocation(
+                            //             curr, buffer, &ranges));
                             curr->mark_hashes_valid();
                             copied_so_far += n_bytes_changed;
                         }
                     }
                 }
+
+                buffer = realloc(buffer, buffer_len);
 #ifdef HASHING_DIAGNOSTICS
                 fprintf(stderr, "    Hashed checkpoint size = %lu\n", copied_so_far);
 #endif
@@ -3718,7 +3814,9 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                 running_checkpoint_ctx.thread_hierarchy_serialized = serialize_thread_hierarchy(
                         &thread_ctxs,
                         &running_checkpoint_ctx.thread_hierarchy_serialized_len);
-                running_checkpoint_ctx.heap_to_checkpoint = to_checkpoint;
+                running_checkpoint_ctx.heap_to_checkpoint = buffer;
+                running_checkpoint_ctx.n_heap_to_checkpoint = heap_to_checkpoint_sorted.size();
+                running_checkpoint_ctx.heap_to_checkpoint_len = buffer_len;
 
                 running_checkpoint_ctx.checkpoint_entry_times =
                     new std::vector<std::pair<unsigned, clock_t> >(
@@ -3890,8 +3988,7 @@ static void fix_stack_or_global_pointer(void *container, string type,
                 fprintf(stderr, "  void pointer... matching heap allocation? "
                         "%d\n", (heap.find(*nested_container) != heap.end()));
 #endif
-                assert(heap.find(*nested_container) != heap.end());
-                heap_allocation *alloc = heap[*nested_container];
+                heap_allocation *alloc = heap.at(*nested_container);
 
                 /*
                  * Since its a pointer to void, we just take a look at each
@@ -3937,19 +4034,22 @@ static void fix_stack_or_global_pointer(void *container, string type,
                     "type %s\n", struct_name.c_str());
 #endif
 
-            std::vector<struct_field> *fields = structs.at(struct_name);
+            struct_info *fields = structs.at(struct_name);
 
             for (unsigned field_index = 0; field_index < fields->size();
                     field_index++) {
                 string curr = fields->at(field_index).get_ty();
                 unsigned char *field_ptr = ((unsigned char *)container) +
-                    (*fields)[field_index].get_offset();
+                    fields->at(field_index).get_offset();
                 fix_stack_or_global_pointer((void *)field_ptr, curr, nesting +
                         1);
             }
         }
     } else if (is_array_type(type)) {
         string nested = get_nested_array_type(type);
+#ifdef VERBOSE
+        fprintf(stderr, "  nested=%s\n", nested.c_str());
+#endif
         if (is_pointer_type(nested)) {
             int array_length = get_array_length(type);
             void **ptr_container = (void **)container;
@@ -3957,6 +4057,20 @@ static void fix_stack_or_global_pointer(void *container, string type,
             for (int i = 0; i < array_length; i++) {
                 fix_stack_or_global_pointer(ptr_container + i, nested,
                         nesting + 1);
+            }
+        } else if (is_struct_type(nested)) {
+            std::string struct_str("%struct.");
+            int array_length = get_array_length(type);
+            assert(nested.find(struct_str) == 0);
+            int ele_size = structs.at(nested.substr(struct_str.size()))->get_size_in_bits() / 8;
+#ifdef VERBOSE
+            fprintf(stderr, "    array_length=%d ele_size=%d\n", array_length, ele_size);
+#endif
+            unsigned char *byte_addressable = (unsigned char *)container;
+
+            for (int i = 0; i < array_length; i++) {
+                fix_stack_or_global_pointer(byte_addressable + (i * ele_size),
+                        nested, nesting + 1);
             }
         }
     }
@@ -4066,7 +4180,7 @@ static off_t safe_seek(int fd, off_t offset, int whence, const char *msg,
     return (result);
 }
 
-static int wait_for_running_writes(struct aiocb * aio_list[],
+static int wait_for_running_writes(struct aiocb **aio_list,
         int n_writes_running, off_t *count_bytes, char dump_filename[],
         vector<aiocb *> *async_tokens) {
 #ifdef VERBOSE
@@ -4161,8 +4275,11 @@ void *checkpoint_func(void *data) {
             ctx->thread_hierarchy_serialized;
         uint64_t thread_hierarchy_serialized_len =
             ctx->thread_hierarchy_serialized_len;
-        vector<checkpointable_heap_allocation> *to_checkpoint =
-            ctx->heap_to_checkpoint;
+        void *to_checkpoint = ctx->heap_to_checkpoint;
+        size_t n_to_checkpoint = ctx->n_heap_to_checkpoint;
+        size_t to_checkpoint_len = ctx->heap_to_checkpoint_len;
+        // vector<checkpointable_heap_allocation> *to_checkpoint =
+        //     ctx->heap_to_checkpoint;
         void *contains_serialized = ctx->contains_serialized;
         size_t contains_serialized_len = ctx->contains_serialized_len;
         void *serialized_alias_groups = ctx->serialized_alias_groups;
@@ -4286,23 +4403,27 @@ void *checkpoint_func(void *data) {
         heap_offset = count_bytes;
 
         // Write the heap allocations out
-        uint64_t n_heap_allocs = to_checkpoint->size();
-        prep_async_safe_write(fd, &n_heap_allocs,
-                    sizeof(n_heap_allocs), count_bytes, &count_bytes, "n_heap_allocs", &async_tokens);
-        vector<serialized_heap_var> *serialized_heap_vars =
-            serialize_checkpointable_heap(to_checkpoint);
-        assert(serialized_heap_vars->size() == to_checkpoint->size());
+        uint64_t n_heap_allocs = n_to_checkpoint;
+        // uint64_t n_heap_allocs = to_checkpoint->size();
+        prep_async_safe_write(fd, &n_heap_allocs, sizeof(n_heap_allocs),
+                count_bytes, &count_bytes, "n_heap_allocs", &async_tokens);
+        prep_async_safe_write(fd, to_checkpoint, to_checkpoint_len, count_bytes,
+                &count_bytes, "heap_checkpoint", &async_tokens);
 
-        for (unsigned i = 0; i < to_checkpoint->size(); i++) {
-            prep_async_safe_write(fd,
-                        serialized_heap_vars->at(i).get_serialized(),
-                        serialized_heap_vars->at(i).get_serialized_len(), count_bytes,
-                        &count_bytes, "serialized_heap_vars", &async_tokens);
-            prep_async_safe_write(fd,
-                        to_checkpoint->at(i).get_buffer(),
-                        serialized_heap_vars->at(i).get_buffer_len(), count_bytes,
-                        &count_bytes, "to_checkpoint", &async_tokens);
-        }
+        // vector<serialized_heap_var> *serialized_heap_vars =
+        //     serialize_checkpointable_heap(to_checkpoint);
+        // assert(serialized_heap_vars->size() == to_checkpoint->size());
+
+        // for (unsigned i = 0; i < to_checkpoint->size(); i++) {
+        //     prep_async_safe_write(fd,
+        //                 serialized_heap_vars->at(i).get_serialized(),
+        //                 serialized_heap_vars->at(i).get_serialized_len(), count_bytes,
+        //                 &count_bytes, "serialized_heap_vars", &async_tokens);
+        //     prep_async_safe_write(fd,
+        //                 to_checkpoint->at(i).get_buffer(),
+        //                 serialized_heap_vars->at(i).get_buffer_len(), count_bytes,
+        //                 &count_bytes, "to_checkpoint", &async_tokens);
+        // }
 
         prep_async_safe_write(fd, &contains_serialized_len,
                 sizeof(contains_serialized_len), count_bytes, &count_bytes,
@@ -4324,7 +4445,11 @@ void *checkpoint_func(void *data) {
          *
          * Iterate in reverse so we wait for the last ones first.
          */
-        struct aiocb * aio_list[async_tokens.size()];
+        struct aiocb **aio_list = (struct aiocb **)malloc(sizeof(struct aiocb *) * async_tokens.size());
+        assert(aio_list);
+#ifdef VERBOSE
+        fprintf(stderr, "async_tokens.size() = %lu\n", async_tokens.size());
+#endif
         while (!async_tokens.empty()) {
             aiocb *torun = async_tokens.front();
             async_tokens.erase(async_tokens.begin());
@@ -4354,7 +4479,13 @@ void *checkpoint_func(void *data) {
                     exit(1);
                 }
             } else {
+#ifdef VERBOSE
+                fprintf(stderr, "spawned async write, n_writes_running=%lu\n", n_writes_running + 1);
+#endif
                 aio_list[n_writes_running++] = torun;
+#ifdef VERBOSE
+                fprintf(stderr, "  added\n");
+#endif
             }
         }
 
@@ -4362,6 +4493,7 @@ void *checkpoint_func(void *data) {
             n_writes_running = wait_for_running_writes(aio_list, n_writes_running,
                     &count_bytes, dump_filename, &async_tokens);
         }
+        free(aio_list);
 
         VERIFY(safe_seek(fd, heap_offset_offset, SEEK_SET, "heap_offset_offset",
                 dump_filename) == heap_offset_offset);
@@ -4369,10 +4501,10 @@ void *checkpoint_func(void *data) {
                 dump_filename);
         close(fd);
 
-        for (unsigned i = 0; i < to_checkpoint->size(); i++) {
-            free(to_checkpoint->at(i).get_buffer());
-            free(serialized_heap_vars->at(i).get_serialized());
-        }
+        // for (unsigned i = 0; i < to_checkpoint->size(); i++) {
+        //     free(to_checkpoint->at(i).get_buffer());
+        //     free(serialized_heap_vars->at(i).get_serialized());
+        // }
 
         free(stacks_serialized);
         free(globals_serialized);
@@ -4383,10 +4515,11 @@ void *checkpoint_func(void *data) {
         free(serialized_traces);
         free(contains_serialized);
         free(serialized_alias_groups);
-        delete to_checkpoint;
+        free(to_checkpoint);
+        // delete to_checkpoint;
         delete ctx->stack_trackers;
         delete ctx->checkpoint_entry_times;
-        delete serialized_heap_vars;
+        // delete serialized_heap_vars;
 
         strcpy(previous_checkpoint_filename, dump_filename);
 

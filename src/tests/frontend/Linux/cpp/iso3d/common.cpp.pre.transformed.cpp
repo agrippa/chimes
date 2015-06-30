@@ -3906,14 +3906,14 @@ double seconds_resumable() {const int ____chimes_did_disable0 = new_stack((void 
 # 47 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
      int i; i = (gettimeofday(&tp, &tzp)) ;
 # 48 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
+     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 49 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-}
+rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0); }
 # 50 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 # 51 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 void ricker_wavelet_npm(float *source, int nsteps, float dt, float freq);
 void ricker_wavelet_quick(float *source, int nsteps, float dt, float freq); void ricker_wavelet(float *source, int nsteps, float dt, float freq);
-void ricker_wavelet_resumable(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(2057649082944447989UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void ricker_wavelet_resumable(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(2057649082944447993UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 52 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
      float shift; shift = (-1.55939996F / freq) ;
 # 53 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -3935,7 +3935,7 @@ rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alia
 # 62 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 void parse_source_npm(char *optarg, source *out);
 void parse_source_quick(char *optarg, source *out); void parse_source(char *optarg, source *out);
-void parse_source_resumable(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(2057649082944448083UL), (size_t)(2057649082944448084UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void parse_source_resumable(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(2057649082944448087UL), (size_t)(2057649082944448088UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 63 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
      char *x_str; x_str = (optarg) ;
 # 64 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4001,11 +4001,11 @@ rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_lo
 # 95 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 void config_sources_npm(source **srcs, int *nsrcs, int nx, int ny, int nsteps);
 void config_sources_quick(source **srcs, int *nsrcs, int nx, int ny, int nsteps); void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps);
-void config_sources_resumable(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(2057649082944448214UL), (size_t)(2057649082944448215UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+void config_sources_resumable(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(2057649082944448218UL), (size_t)(2057649082944448219UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 96 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     if (*nsrcs == 0) {
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-        *srcs = (source *)malloc_wrapper(sizeof(source), 2057649082944448158UL, 0, 1, (int)sizeof(struct _source), 0);
+        *srcs = (source *)malloc_wrapper(sizeof(source), 2057649082944448162UL, 0, 1, (int)sizeof(struct _source), 0);
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
         if (*srcs == __null) {
 # 99 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4064,9 +4064,9 @@ rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alia
 # 127 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 float **sample_sources_npm(source *srcs, int nsrcs, int nsteps, float dt);
 float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt); float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt);
-float **sample_sources_resumable(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(2057649082944448297UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+float **sample_sources_resumable(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(2057649082944448305UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 128 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-     float **src_samples; src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 2057649082944448238UL, 1, 0)) ;
+     float **src_samples; src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 2057649082944448243UL, 1, 0)) ;
 # 129 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     if (src_samples == __null) {
 # 130 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4079,7 +4079,7 @@ float **sample_sources_resumable(source *srcs, int nsrcs, int nsteps, float dt) 
 # 134 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < nsrcs; i++) {
 # 135 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-        src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 2057649082944448258UL, 0, 0);
+        src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 2057649082944448263UL, 0, 0);
 # 136 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
         if (src_samples[i] == __null) {
 # 137 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4093,9 +4093,9 @@ float **sample_sources_resumable(source *srcs, int nsrcs, int nsteps, float dt) 
 # 141 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     } }
 # 142 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    rm_stack(true, 2057649082944448238UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4); return src_samples;
+     float **____chimes_ret_var_1; ; ____chimes_ret_var_1 = (src_samples); rm_stack(true, 2057649082944448243UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4); return ____chimes_ret_var_1; ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-}
+rm_stack(true, 2057649082944448243UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4); }
 # 144 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 # 145 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 void init_progress_npm(int length, int goal, int disabled);
@@ -4128,7 +4128,7 @@ void init_progress_resumable(int length, int goal, int disabled) {const int ____
     if (disabled) {rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5); return; };
 # 160 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 # 161 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 2057649082944448350UL, 0, 0);
+    progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 2057649082944448358UL, 0, 0);
 # 162 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     ((progress_buffer != __null) ? static_cast<void> (0) : __assert_fail ("progress_buffer != __null", "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp", 162, __PRETTY_FUNCTION__));
 # 163 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4245,7 +4245,7 @@ void finish_progress_resumable() {const int ____chimes_did_disable7 = new_stack(
     fprintf(stderr, "\n");
 # 224 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 # 225 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    free_wrapper(progress_buffer, 2057649082944448350UL);
+    free_wrapper(progress_buffer, 2057649082944448358UL);
 # 226 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7); }
 double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0) ; struct timeval tp;
@@ -4257,13 +4257,13 @@ double seconds_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&
 # 47 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
      int i; i = (gettimeofday(&tp, &tzp)) ;
 # 48 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0); return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
+     double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 49 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-}
+rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_0, ____chimes_did_disable0); }
 
 double seconds() { return (____chimes_replaying ? seconds_resumable() : seconds_quick()); }
 
-void ricker_wavelet_quick(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(2057649082944447989UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+void ricker_wavelet_quick(float *source, int nsteps, float dt, float freq) {const int ____chimes_did_disable1 = new_stack((void *)(&ricker_wavelet), "ricker_wavelet", &____must_manage_ricker_wavelet, 4, 0, (size_t)(2057649082944447993UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 52 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
      float shift; shift = (-1.55939996F / freq) ;
 # 53 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4284,7 +4284,7 @@ rm_stack(false, 0UL, "ricker_wavelet", &____must_manage_ricker_wavelet, ____alia
 
 void ricker_wavelet(float *source, int nsteps, float dt, float freq) { (____chimes_replaying ? ricker_wavelet_resumable(source, nsteps, dt, freq) : ricker_wavelet_quick(source, nsteps, dt, freq)); }
 
-void parse_source_quick(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(2057649082944448083UL), (size_t)(2057649082944448084UL)) ; ; ;
+void parse_source_quick(char *optarg, source *out) {const int ____chimes_did_disable2 = new_stack((void *)(&parse_source), "parse_source", &____must_manage_parse_source, 2, 0, (size_t)(2057649082944448087UL), (size_t)(2057649082944448088UL)) ; ; ;
 # 63 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
      char *x_str; x_str = (optarg) ;
 # 64 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4349,11 +4349,11 @@ rm_stack(false, 0UL, "parse_source", &____must_manage_parse_source, ____alias_lo
 
 void parse_source(char *optarg, source *out) { (____chimes_replaying ? parse_source_resumable(optarg, out) : parse_source_quick(optarg, out)); }
 
-void config_sources_quick(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(2057649082944448214UL), (size_t)(2057649082944448215UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+void config_sources_quick(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {const int ____chimes_did_disable3 = new_stack((void *)(&config_sources), "config_sources", &____must_manage_config_sources, 5, 0, (size_t)(2057649082944448218UL), (size_t)(2057649082944448219UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 96 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     if (*nsrcs == 0) {
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-        *srcs = (source *)malloc_wrapper(sizeof(source), 2057649082944448158UL, 0, 1, (int)sizeof(struct _source), 0);
+        *srcs = (source *)malloc_wrapper(sizeof(source), 2057649082944448162UL, 0, 1, (int)sizeof(struct _source), 0);
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
         if (*srcs == __null) {
 # 99 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4411,9 +4411,9 @@ rm_stack(false, 0UL, "config_sources", &____must_manage_config_sources, ____alia
 
 void config_sources(source **srcs, int *nsrcs, int nx, int ny, int nsteps) { (____chimes_replaying ? config_sources_resumable(srcs, nsrcs, nx, ny, nsteps) : config_sources_quick(srcs, nsrcs, nx, ny, nsteps)); }
 
-float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(2057649082944448297UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt) {const int ____chimes_did_disable4 = new_stack((void *)(&sample_sources), "sample_sources", &____must_manage_sample_sources, 4, 0, (size_t)(2057649082944448305UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 128 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-     float **src_samples; src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 2057649082944448238UL, 1, 0)) ;
+     float **src_samples; src_samples = ((float **)malloc_wrapper(nsrcs * sizeof(float *), 2057649082944448243UL, 1, 0)) ;
 # 129 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     if (src_samples == __null) {
 # 130 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4426,7 +4426,7 @@ float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt) {con
 # 134 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     { int i; for ( i = (0) ; i < nsrcs; i++) {
 # 135 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-        src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 2057649082944448258UL, 0, 0);
+        src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 2057649082944448263UL, 0, 0);
 # 136 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
         if (src_samples[i] == __null) {
 # 137 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4440,9 +4440,9 @@ float **sample_sources_quick(source *srcs, int nsrcs, int nsteps, float dt) {con
 # 141 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     } }
 # 142 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    rm_stack(true, 2057649082944448238UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4); return src_samples;
+     float **____chimes_ret_var_1; ; ____chimes_ret_var_1 = (src_samples); rm_stack(true, 2057649082944448243UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4); return ____chimes_ret_var_1; ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-}
+rm_stack(true, 2057649082944448243UL, "sample_sources", &____must_manage_sample_sources, ____alias_loc_id_4, ____chimes_did_disable4); }
 
 float **sample_sources(source *srcs, int nsrcs, int nsteps, float dt) { return (____chimes_replaying ? sample_sources_resumable(srcs, nsrcs, nsteps, dt) : sample_sources_quick(srcs, nsrcs, nsteps, dt)); }
 
@@ -4474,7 +4474,7 @@ void init_progress_quick(int length, int goal, int disabled) {const int ____chim
     if (disabled) {rm_stack(false, 0UL, "init_progress", &____must_manage_init_progress, ____alias_loc_id_5, ____chimes_did_disable5); return; };
 # 160 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 # 161 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 2057649082944448350UL, 0, 0);
+    progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 2057649082944448358UL, 0, 0);
 # 162 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     ((progress_buffer != __null) ? static_cast<void> (0) : __assert_fail ("progress_buffer != __null", "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp", 162, __PRETTY_FUNCTION__));
 # 163 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4589,7 +4589,7 @@ void finish_progress_quick() {const int ____chimes_did_disable7 = new_stack((voi
     fprintf(stderr, "\n");
 # 224 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 # 225 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    free_wrapper(progress_buffer, 2057649082944448350UL);
+    free_wrapper(progress_buffer, 2057649082944448358UL);
 # 226 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 rm_stack(false, 0UL, "finish_progress", &____must_manage_finish_progress, 0, ____chimes_did_disable7); }
 
@@ -4605,7 +4605,7 @@ double seconds_npm() {
 # 47 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     int i = gettimeofday(&tp, &tzp);
 # 48 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    return ((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6);
+     double ____chimes_ret_var_0; ____chimes_ret_var_0 = (((double)tp.tv_sec + (double)tp.tv_usec * 1.e-6)); return ____chimes_ret_var_0; ;
 # 49 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 }
 
@@ -4695,7 +4695,7 @@ void config_sources_npm(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
 # 96 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     if (*nsrcs == 0) {
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-        *srcs = (source *)malloc_wrapper(sizeof(source), 2057649082944448158UL, 0, 1, (int)sizeof(struct _source), 0);
+        *srcs = (source *)malloc_wrapper(sizeof(source), 2057649082944448162UL, 0, 1, (int)sizeof(struct _source), 0);
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
         if (*srcs == __null) {
 # 99 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4753,7 +4753,7 @@ void config_sources_npm(source **srcs, int *nsrcs, int nx, int ny, int nsteps) {
 
 float **sample_sources_npm(source *srcs, int nsrcs, int nsteps, float dt) {
 # 128 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    float **src_samples = (float **)malloc_wrapper(nsrcs * sizeof(float *), 2057649082944448238UL, 1, 0);
+    float **src_samples = (float **)malloc_wrapper(nsrcs * sizeof(float *), 2057649082944448243UL, 1, 0);
 # 129 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     if (src_samples == __null) {
 # 130 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4766,7 +4766,7 @@ float **sample_sources_npm(source *srcs, int nsrcs, int nsteps, float dt) {
 # 134 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     for (int i = 0; i < nsrcs; i++) {
 # 135 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-        src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 2057649082944448258UL, 0, 0);
+        src_samples[i] = (float *)malloc_wrapper(nsteps * sizeof(float), 2057649082944448263UL, 0, 0);
 # 136 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
         if (src_samples[i] == __null) {
 # 137 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4780,7 +4780,7 @@ float **sample_sources_npm(source *srcs, int nsrcs, int nsteps, float dt) {
 # 141 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     }
 # 142 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    return src_samples;
+     float ** ____chimes_ret_var_1; ____chimes_ret_var_1 = (src_samples); return ____chimes_ret_var_1; ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 }
 
@@ -4812,7 +4812,7 @@ void init_progress_npm(int length, int goal, int disabled) {
     if (disabled) {return; };
 # 160 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 # 161 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 2057649082944448350UL, 0, 0);
+    progress_buffer = (char *)malloc_wrapper(sizeof(char) * (length + 3), 2057649082944448358UL, 0, 0);
 # 162 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
     ((progress_buffer != __null) ? static_cast<void> (0) : __assert_fail ("progress_buffer != __null", "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp", 162, __PRETTY_FUNCTION__));
 # 163 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
@@ -4923,7 +4923,7 @@ void finish_progress_npm() {
     fprintf(stderr, "\n");
 # 224 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 # 225 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
-    free_wrapper(progress_buffer, 2057649082944448350UL);
+    free_wrapper(progress_buffer, 2057649082944448358UL);
 # 226 "/home/jmg3/num-debug/src/examples/cpp/./lib/common.cpp"
 }
 
@@ -4932,22 +4932,22 @@ void finish_progress_npm() {
 
 
 static int module_init() {
-    init_module(2057649082944447898UL, 19, 8, 1, 7, 8, 0, 8, 2, 0, 3,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (2057649082944447898UL + 1UL), (2057649082944447898UL + 3UL),
-                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (2057649082944447898UL + 22UL), (2057649082944447898UL + 23UL), (2057649082944447898UL + 24UL), (2057649082944447898UL + 25UL), (2057649082944447898UL + 26UL), (2057649082944447898UL + 27UL), (2057649082944447898UL + 28UL), (2057649082944447898UL + 29UL), (2057649082944447898UL + 30UL), (2057649082944447898UL + 91UL),
-                           &____alias_loc_id_2, (unsigned)13, (unsigned)0, (unsigned)0, (2057649082944447898UL + 96UL), (2057649082944447898UL + 97UL), (2057649082944447898UL + 98UL), (2057649082944447898UL + 99UL), (2057649082944447898UL + 100UL), (2057649082944447898UL + 101UL), (2057649082944447898UL + 102UL), (2057649082944447898UL + 103UL), (2057649082944447898UL + 104UL), (2057649082944447898UL + 114UL), (2057649082944447898UL + 154UL), (2057649082944447898UL + 173UL), (2057649082944447898UL + 186UL),
-                           &____alias_loc_id_3, (unsigned)10, (unsigned)0, (unsigned)0, (2057649082944447898UL + 194UL), (2057649082944447898UL + 195UL), (2057649082944447898UL + 196UL), (2057649082944447898UL + 197UL), (2057649082944447898UL + 198UL), (2057649082944447898UL + 199UL), (2057649082944447898UL + 200UL), (2057649082944447898UL + 260UL), (2057649082944447898UL + 316UL), (2057649082944447898UL + 317UL),
-                           &____alias_loc_id_4, (unsigned)7, (unsigned)0, (unsigned)0, (2057649082944447898UL + 322UL), (2057649082944447898UL + 323UL), (2057649082944447898UL + 324UL), (2057649082944447898UL + 325UL), (2057649082944447898UL + 326UL), (2057649082944447898UL + 327UL), (2057649082944447898UL + 340UL),
-                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (unsigned)0, (2057649082944447898UL + 403UL), (2057649082944447898UL + 404UL), (2057649082944447898UL + 405UL), (2057649082944447898UL + 406UL), (2057649082944447898UL + 452UL), (2057649082944447898UL + 605UL), (2057649082944447898UL + 608UL),
-                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)0, (2057649082944447898UL + 452UL), (2057649082944447898UL + 495UL), (2057649082944447898UL + 496UL), (2057649082944447898UL + 497UL), (2057649082944447898UL + 498UL), (2057649082944447898UL + 608UL),
+    init_module(2057649082944447898UL, 20, 8, 1, 7, 8, 0, 8, 2, 0, 3,
+                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (2057649082944447898UL + 1UL), (2057649082944447898UL + 3UL), (2057649082944447898UL + 4UL),
+                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (2057649082944447898UL + 26UL), (2057649082944447898UL + 27UL), (2057649082944447898UL + 28UL), (2057649082944447898UL + 29UL), (2057649082944447898UL + 30UL), (2057649082944447898UL + 31UL), (2057649082944447898UL + 32UL), (2057649082944447898UL + 33UL), (2057649082944447898UL + 34UL), (2057649082944447898UL + 95UL),
+                           &____alias_loc_id_2, (unsigned)13, (unsigned)0, (unsigned)0, (2057649082944447898UL + 100UL), (2057649082944447898UL + 101UL), (2057649082944447898UL + 102UL), (2057649082944447898UL + 103UL), (2057649082944447898UL + 104UL), (2057649082944447898UL + 105UL), (2057649082944447898UL + 106UL), (2057649082944447898UL + 107UL), (2057649082944447898UL + 108UL), (2057649082944447898UL + 118UL), (2057649082944447898UL + 158UL), (2057649082944447898UL + 177UL), (2057649082944447898UL + 190UL),
+                           &____alias_loc_id_3, (unsigned)10, (unsigned)0, (unsigned)0, (2057649082944447898UL + 198UL), (2057649082944447898UL + 199UL), (2057649082944447898UL + 200UL), (2057649082944447898UL + 201UL), (2057649082944447898UL + 202UL), (2057649082944447898UL + 203UL), (2057649082944447898UL + 204UL), (2057649082944447898UL + 264UL), (2057649082944447898UL + 320UL), (2057649082944447898UL + 321UL),
+                           &____alias_loc_id_4, (unsigned)8, (unsigned)0, (unsigned)0, (2057649082944447898UL + 326UL), (2057649082944447898UL + 327UL), (2057649082944447898UL + 328UL), (2057649082944447898UL + 329UL), (2057649082944447898UL + 330UL), (2057649082944447898UL + 331UL), (2057649082944447898UL + 332UL), (2057649082944447898UL + 345UL),
+                           &____alias_loc_id_5, (unsigned)7, (unsigned)0, (unsigned)0, (2057649082944447898UL + 411UL), (2057649082944447898UL + 412UL), (2057649082944447898UL + 413UL), (2057649082944447898UL + 414UL), (2057649082944447898UL + 460UL), (2057649082944447898UL + 613UL), (2057649082944447898UL + 616UL),
+                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)0, (2057649082944447898UL + 460UL), (2057649082944447898UL + 503UL), (2057649082944447898UL + 504UL), (2057649082944447898UL + 505UL), (2057649082944447898UL + 506UL), (2057649082944447898UL + 616UL),
                             "seconds", (void *)(&seconds_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (2057649082944447898UL + 1UL), (2057649082944447898UL + 2UL), 0UL,
-                            "ricker_wavelet", (void *)(&ricker_wavelet_npm), (void *)__null, 0, 4, (2057649082944447898UL + 91UL), 0UL, 0UL, 0UL, 0UL, 1, "exp", 1, 0UL, 0UL,
-                            "parse_source", (void *)(&parse_source_npm), (void *)__null, 0, 2, (2057649082944447898UL + 185UL), (2057649082944447898UL + 186UL), 0UL, 13, "strchr", 2, (2057649082944447898UL + 185UL), 0UL, (2057649082944447898UL + 114UL), "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 600UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (2057649082944447898UL + 114UL), 0UL, (2057649082944447898UL + 173UL), "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 600UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (2057649082944447898UL + 173UL), 0UL, (2057649082944447898UL + 154UL), "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 600UL), 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (2057649082944447898UL + 185UL), 0UL, "atoi", 1, (2057649082944447898UL + 114UL), 0UL, "atof", 1, (2057649082944447898UL + 173UL), 0UL, "atoi", 1, (2057649082944447898UL + 154UL), 0UL,
-                            "config_sources", (void *)(&config_sources_npm), (void *)__null, 0, 5, (2057649082944447898UL + 316UL), (2057649082944447898UL + 317UL), 0UL, 0UL, 0UL, 0UL, 9, "malloc", 1, 0UL, (2057649082944447898UL + 260UL), "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 601UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 602UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 602UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 602UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "sample_sources", (void *)(&sample_sources_npm), (void *)__null, 0, 4, (2057649082944447898UL + 399UL), 0UL, 0UL, 0UL, (2057649082944447898UL + 340UL), 7, "malloc", 1, 0UL, (2057649082944447898UL + 340UL), "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 601UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (2057649082944447898UL + 360UL), "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 601UL), 0UL, "exit", 1, 0UL, 0UL, "ricker_wavelet", 4, (2057649082944447898UL + 360UL), 0UL, 0UL, 0UL, 0UL,
-                            "init_progress", (void *)(&init_progress_npm), (void *)__null, 0, 3, 0UL, 0UL, 0UL, 0UL, 7, "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 606UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 607UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (2057649082944447898UL + 452UL), "__assert_fail", 4, (2057649082944447898UL + 609UL), (2057649082944447898UL + 610UL), 0UL, (2057649082944447898UL + 611UL), 0UL, "fprintf", 3, (2057649082944447898UL + 119UL), (2057649082944447898UL + 615UL), (2057649082944447898UL + 452UL), 0UL,
-                            "update_progress", (void *)(&update_progress_npm), (void *)__null, 0, 1, 0UL, 0UL, 6, "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 616UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 617UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 618UL), 0UL, "fprintf", 3, (2057649082944447898UL + 119UL), (2057649082944447898UL + 615UL), (2057649082944447898UL + 452UL), 0UL,
-                            "finish_progress", (void *)(&finish_progress_npm), (void *)__null, 0, 0, 0UL, 3, "update_progress", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 119UL), (2057649082944447898UL + 618UL), 0UL, "free", 1, (2057649082944447898UL + 452UL), 0UL,
+                            "ricker_wavelet", (void *)(&ricker_wavelet_npm), (void *)__null, 0, 4, (2057649082944447898UL + 95UL), 0UL, 0UL, 0UL, 0UL, 1, "exp", 1, 0UL, 0UL,
+                            "parse_source", (void *)(&parse_source_npm), (void *)__null, 0, 2, (2057649082944447898UL + 189UL), (2057649082944447898UL + 190UL), 0UL, 13, "strchr", 2, (2057649082944447898UL + 189UL), 0UL, (2057649082944447898UL + 118UL), "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (2057649082944447898UL + 118UL), 0UL, (2057649082944447898UL + 177UL), "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "strchr", 2, (2057649082944447898UL + 177UL), 0UL, (2057649082944447898UL + 158UL), "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 608UL), 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (2057649082944447898UL + 189UL), 0UL, "atoi", 1, (2057649082944447898UL + 118UL), 0UL, "atof", 1, (2057649082944447898UL + 177UL), 0UL, "atoi", 1, (2057649082944447898UL + 158UL), 0UL,
+                            "config_sources", (void *)(&config_sources_npm), (void *)__null, 0, 5, (2057649082944447898UL + 320UL), (2057649082944447898UL + 321UL), 0UL, 0UL, 0UL, 0UL, 9, "malloc", 1, 0UL, (2057649082944447898UL + 264UL), "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 610UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 610UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 610UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "sample_sources", (void *)(&sample_sources_npm), (void *)__null, 0, 4, (2057649082944447898UL + 407UL), 0UL, 0UL, 0UL, (2057649082944447898UL + 345UL), 7, "malloc", 1, 0UL, (2057649082944447898UL + 345UL), "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (2057649082944447898UL + 365UL), "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 609UL), 0UL, "exit", 1, 0UL, 0UL, "ricker_wavelet", 4, (2057649082944447898UL + 365UL), 0UL, 0UL, 0UL, 0UL,
+                            "init_progress", (void *)(&init_progress_npm), (void *)__null, 0, 3, 0UL, 0UL, 0UL, 0UL, 7, "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 614UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 615UL), 0UL, "exit", 1, 0UL, 0UL, "malloc", 1, 0UL, (2057649082944447898UL + 460UL), "__assert_fail", 4, (2057649082944447898UL + 617UL), (2057649082944447898UL + 618UL), 0UL, (2057649082944447898UL + 619UL), 0UL, "fprintf", 3, (2057649082944447898UL + 123UL), (2057649082944447898UL + 623UL), (2057649082944447898UL + 460UL), 0UL,
+                            "update_progress", (void *)(&update_progress_npm), (void *)__null, 0, 1, 0UL, 0UL, 6, "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 624UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 625UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 626UL), 0UL, "fprintf", 3, (2057649082944447898UL + 123UL), (2057649082944447898UL + 623UL), (2057649082944447898UL + 460UL), 0UL,
+                            "finish_progress", (void *)(&finish_progress_npm), (void *)__null, 0, 0, 0UL, 3, "update_progress", 1, 0UL, 0UL, "fprintf", 2, (2057649082944447898UL + 123UL), (2057649082944447898UL + 626UL), 0UL, "free", 1, (2057649082944447898UL + 460UL), 0UL,
                            "seconds", &(____chimes_does_checkpoint_seconds_npm),
                            "ricker_wavelet", &(____chimes_does_checkpoint_ricker_wavelet_npm),
                            "parse_source", &(____chimes_does_checkpoint_parse_source_npm),
@@ -4956,25 +4956,26 @@ static int module_init() {
                            "init_progress", &(____chimes_does_checkpoint_init_progress_npm),
                            "update_progress", &(____chimes_does_checkpoint_update_progress_npm),
                            "finish_progress", &(____chimes_does_checkpoint_finish_progress_npm),
-                             (2057649082944447898UL + 605UL), (2057649082944447898UL + 452UL),
-                             (2057649082944447898UL + 200UL), (2057649082944447898UL + 260UL),
-                             (2057649082944447898UL + 322UL), (2057649082944447898UL + 399UL),
-                             (2057649082944447898UL + 22UL), (2057649082944447898UL + 91UL),
-                             (2057649082944447898UL + 340UL), (2057649082944447898UL + 360UL),
-                             (2057649082944447898UL + 195UL), (2057649082944447898UL + 317UL),
-                             (2057649082944447898UL + 194UL), (2057649082944447898UL + 316UL),
-                             (2057649082944447898UL + 316UL), (2057649082944447898UL + 260UL),
-                             (2057649082944447898UL + 599UL), (2057649082944447898UL + 119UL),
-                             (2057649082944447898UL + 99UL), (2057649082944447898UL + 114UL),
-                             (2057649082944447898UL + 98UL), (2057649082944447898UL + 185UL),
-                             (2057649082944447898UL + 326UL), (2057649082944447898UL + 340UL),
-                             (2057649082944447898UL + 104UL), (2057649082944447898UL + 154UL),
-                             (2057649082944447898UL + 102UL), (2057649082944447898UL + 173UL),
-                             (2057649082944447898UL + 103UL), (2057649082944447898UL + 154UL),
-                             (2057649082944447898UL + 100UL), (2057649082944447898UL + 114UL),
-                             (2057649082944447898UL + 101UL), (2057649082944447898UL + 173UL),
-                             (2057649082944447898UL + 97UL), (2057649082944447898UL + 186UL),
-                             (2057649082944447898UL + 96UL), (2057649082944447898UL + 185UL),
+                             (2057649082944447898UL + 26UL), (2057649082944447898UL + 95UL),
+                             (2057649082944447898UL + 199UL), (2057649082944447898UL + 321UL),
+                             (2057649082944447898UL + 198UL), (2057649082944447898UL + 320UL),
+                             (2057649082944447898UL + 607UL), (2057649082944447898UL + 123UL),
+                             (2057649082944447898UL + 613UL), (2057649082944447898UL + 460UL),
+                             (2057649082944447898UL + 320UL), (2057649082944447898UL + 264UL),
+                             (2057649082944447898UL + 330UL), (2057649082944447898UL + 345UL),
+                             (2057649082944447898UL + 332UL), (2057649082944447898UL + 345UL),
+                             (2057649082944447898UL + 345UL), (2057649082944447898UL + 365UL),
+                             (2057649082944447898UL + 108UL), (2057649082944447898UL + 158UL),
+                             (2057649082944447898UL + 326UL), (2057649082944447898UL + 407UL),
+                             (2057649082944447898UL + 204UL), (2057649082944447898UL + 264UL),
+                             (2057649082944447898UL + 102UL), (2057649082944447898UL + 189UL),
+                             (2057649082944447898UL + 103UL), (2057649082944447898UL + 118UL),
+                             (2057649082944447898UL + 100UL), (2057649082944447898UL + 189UL),
+                             (2057649082944447898UL + 101UL), (2057649082944447898UL + 190UL),
+                             (2057649082944447898UL + 106UL), (2057649082944447898UL + 177UL),
+                             (2057649082944447898UL + 107UL), (2057649082944447898UL + 158UL),
+                             (2057649082944447898UL + 104UL), (2057649082944447898UL + 118UL),
+                             (2057649082944447898UL + 105UL), (2057649082944447898UL + 177UL),
                      "_source", 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t),
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                      "timezone", 2, "int", (int)__builtin_offsetof (struct timezone, tz_minuteswest), "int", (int)__builtin_offsetof (struct timezone, tz_dsttime),
@@ -4987,9 +4988,9 @@ static int module_init() {
                              "parse_source", "_Z12parse_sourcePcP7_source", 0,
                              "sample_sources", "_Z14sample_sourcesP7_sourceiif", 1, "ricker_wavelet",
                         "seconds|tp|0", 1, "seconds",
-        "ricker_wavelet", 0UL, (int)4, 2057649082944448258UL, 0UL, 0UL, 0UL,
+        "ricker_wavelet", 0UL, (int)4, 2057649082944448263UL, 0UL, 0UL, 0UL,
         "update_progress", 0UL, (int)1, 0UL);
-    register_global_var("global|progress_buffer", "i8*", (void *)(&progress_buffer), 8.0, 1, 0, (2057649082944447898UL + 605UL), 0);
+    register_global_var("global|progress_buffer", "i8*", (void *)(&progress_buffer), 8.0, 1, 0, (2057649082944447898UL + 613UL), 0);
     register_global_var("global|progress_disabled", "i32", (void *)(&progress_disabled), 4.0, 0, 0, 0UL, 0);
     register_global_var("global|progress_length", "i32", (void *)(&progress_length), 4.0, 0, 0, 0UL, 0);
     register_global_var("global|progress_goal", "i32", (void *)(&progress_goal), 4.0, 0, 0, 0UL, 0);

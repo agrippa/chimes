@@ -1,28 +1,34 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 3 5 len=3 foo_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 23 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 30 , 12560481006554535952UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 30 , 12560481006554535957UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 23 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 30 , 12560481006554535952UL, 0, 0
-InsertText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 4 5 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 30 , 12560481006554535957UL, 0, 0
+InsertText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 4 64 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 3 23 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 7 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(12560481006554535966UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 5 1 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 73 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 7 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(12560481006554535974UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 17 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 3 24 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 3 150 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 7 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12560481006554535966UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 4 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 4 30 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 7 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12560481006554535974UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 7 171 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 8 5  int a;  a = (3 + 4 + 5 + 6) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 10 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 5  int *ptr;  ptr = ((int *)malloc_wrapper(100, 12560481006554535952UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 5  int *ptr;  ptr = ((int *)malloc_wrapper(100, 12560481006554535957UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 72 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 6 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 30 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 14 5  call_lbl_2: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 3 5 len=3 foo_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 3 149  ;  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 7 5 len=4 main_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 14 18 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 14 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 82 ({ calling_npm("foo", 0); foo_npm(ptr[0], a); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 95 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 58 ({ calling_npm("foo", 0); foo_npm(ptr[0], a); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 71 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 8 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 8 11 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 6 
@@ -35,8 +41,8 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 7 5 len=4 main_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 14 18 checkpoint_transformed(2, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 14 29 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 82 ({ calling_npm("foo", 0); foo_npm(ptr[0], a); })
-ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 95 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 58 ({ calling_npm("foo", 0); foo_npm(ptr[0], a); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 16 71 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 8 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 8 11 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp 11 6 

@@ -1,17 +1,17 @@
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 117 4 : {  } {  } call:addIntParallel { addIntParallel { 504 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 116 9 : { 241, 242, 243, 244, 245, 246, 247, 248, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262 } {  } call:profileStart {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 112 16 : { 263 } {  } call:putAtomInBox { putAtomInBox { 504 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 128 4 : { 564, 565 } {  } call:computeVcm {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 236 4 : {  } {  } call:addRealParallel { addRealParallel { 723, 724 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 235 9 : { 721, 722, 723, 725, 726, 727, 728 } {  } call:profileStart {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 193 4 : { 895, 896, 897, 898, 899, 941 } {  } call:kineticEnergy { kineticEnergy { 1163 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 172 48 : { 941 } {  } call:gasdev { gasdev { 893 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 180 4 : {  } {  } call:kineticEnergy { kineticEnergy { 1163 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 171 48 : { 941 } {  } call:gasdev { gasdev { 893 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 179 4 : { 885, 886, 887, 888, 889, 941 } {  } call:setVcm {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 170 48 : { 893 } {  } call:gasdev { gasdev { 893 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 169 26 : { 888, 889, 890, 891, 892, 941 } {  } call:mkSeed {  }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 210 39 : { 1222 } {  } call:lcg61 { lcg61 { 1180 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 209 39 : { 1222 } {  } call:lcg61 { lcg61 { 1180 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 208 39 : { 1180 } {  } call:lcg61 { lcg61 { 1180 } }
-/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 207 26 : { 1178, 1179, 1222 } {  } call:mkSeed {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 117 4 : {  } {  } call:addIntParallel { addIntParallel { 508 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 116 9 : { 245, 246, 247, 248, 249, 250, 251, 252, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 112 16 : { 267 } {  } call:putAtomInBox { putAtomInBox { 508 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 128 4 : { 568, 569 } {  } call:computeVcm {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 236 4 : {  } {  } call:addRealParallel { addRealParallel { 727, 728 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 235 9 : { 725, 726, 727, 729, 730, 731, 732 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 193 4 : { 899, 900, 901, 902, 903, 945 } {  } call:kineticEnergy { kineticEnergy { 1167 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 172 48 : { 945 } {  } call:gasdev { gasdev { 897 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 180 4 : {  } {  } call:kineticEnergy { kineticEnergy { 1167 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 171 48 : { 945 } {  } call:gasdev { gasdev { 897 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 179 4 : { 889, 890, 891, 892, 893, 945 } {  } call:setVcm {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 170 48 : { 897 } {  } call:gasdev { gasdev { 897 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 169 26 : { 892, 893, 894, 895, 896, 945 } {  } call:mkSeed {  }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 210 39 : { 1226 } {  } call:lcg61 { lcg61 { 1184 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 209 39 : { 1226 } {  } call:lcg61 { lcg61 { 1184 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 208 39 : { 1184 } {  } call:lcg61 { lcg61 { 1184 } }
+/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/initAtoms.c 207 26 : { 1182, 1183, 1226 } {  } call:mkSeed {  }

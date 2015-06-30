@@ -1,2 +1,2 @@
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 17 17 : { 1 } {  } call:m_get { m_get { 16 } }
-/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 39 17 : { 172 } {  } call:m_get { m_get { 187 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 17 17 : { 1 } {  } call:m_get { m_get { 17 } }
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/misc_math.c 39 17 : { 176 } {  } call:m_get { m_get { 192 } }

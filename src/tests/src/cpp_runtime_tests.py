@@ -6,7 +6,7 @@ import os
 import sys
 from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
          cleanup_runtime_files
-from shared_tests import ALL_RODINIA_RUNTIME_TESTS
+from shared_tests import ALL_RODINIA_RUNTIME_TESTS, ALL_SPEC_RUNTIME_TESTS
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 
@@ -91,6 +91,7 @@ TESTS = [NESTED_CALLS, STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCA
          LULESH, COMD, UTS, RAY_TRACER]
 
 TESTS.extend(ALL_RODINIA_RUNTIME_TESTS)
+TESTS.extend(ALL_SPEC_RUNTIME_TESTS)
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'

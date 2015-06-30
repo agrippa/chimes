@@ -3229,9 +3229,9 @@ double getElapsedTime_resumable(const enum TimerHandle handle)
    perfTimer[handle].elapsed = 0;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-   rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2); return etime;
+    double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (etime); rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2); return ____chimes_ret_var_0; ;
 # 114 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-}
+rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2); }
 # 115 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 116 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 117 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -3352,7 +3352,7 @@ void printPerformanceResultsYaml_npm(FILE* file);
 void printPerformanceResultsYaml_quick(FILE* file); void printPerformanceResultsYaml(FILE* file);
 void printPerformanceResultsYaml_resumable(FILE* file)
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(11198724033581183621UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; int ____chimes_unroll_var_2;
+{const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(11198724033581183633UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; int ____chimes_unroll_var_2;
 double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0 || ____must_checkpoint_printPerformanceResultsYaml_loopTime_0 || ____must_checkpoint_printPerformanceResultsYaml_tick_0) { register_stack_vars(3, "printPerformanceResultsYaml|____chimes_unroll_var_2|0", &____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0, "i32", (void *)(&____chimes_unroll_var_2), (size_t)4, 0, 0, 0, "printPerformanceResultsYaml|loopTime|0", &____must_checkpoint_printPerformanceResultsYaml_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResultsYaml|tick|0", &____must_checkpoint_printPerformanceResultsYaml_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } ; ;
@@ -3467,9 +3467,9 @@ static uint64_t getTime_resumable(void)
    t = ((uint64_t)1000000)*(uint64_t)ptime.tv_sec + (uint64_t)ptime.tv_usec;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-   rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5); return t;
+    uint64_t ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (t); rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5); return ____chimes_ret_var_1; ;
 # 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-}
+rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5); }
 # 252 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 253 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 254 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -3482,9 +3482,9 @@ static double getTick_resumable(void)
 # 259 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double seconds_per_cycle; seconds_per_cycle = (9.9999999999999995E-7) ;
 # 260 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-   rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6); return seconds_per_cycle;
+    double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (seconds_per_cycle); rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6); return ____chimes_ret_var_2; ;
 # 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-}
+rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6); }
 # 262 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 263 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 264 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -3505,7 +3505,7 @@ double sendBuf[11];
 # 269 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
 # 271 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_1: ({ calling((void*)addDoubleParallel, 1, ____alias_loc_id_9, 0UL, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+    call_lbl_1: ({ calling((void*)addDoubleParallel, 1, ____alias_loc_id_9, 0UL, 3, (size_t)(11198724033581183204UL), (size_t)(11198724033581183205UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
 # 272 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 273 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_0: int ii; if (____must_checkpoint_timerStats_ii_1 != 0) { register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(____alias_loc_id_10); call_lbl_3: perfTimer[ii].average = recvBuf[ii] / (double) ({ calling((void*)getNRanks, 3, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) ; } };
@@ -3525,7 +3525,7 @@ double sendBuf[11];
 # 283 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
 # 284 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_5: ({ calling((void*)minRankDoubleParallel, 5, ____alias_loc_id_7, 0UL, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
+    call_lbl_5: ({ calling((void*)minRankDoubleParallel, 5, ____alias_loc_id_7, 0UL, 3, (size_t)(11198724033581183208UL), (size_t)(11198724033581183209UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
 # 285 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_2: int ii; if (____must_checkpoint_timerStats_ii_3 != 0) { register_stack_var("timerStats|ii|3", &____must_checkpoint_timerStats_ii_3, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_3; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 286 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -3537,7 +3537,7 @@ double sendBuf[11];
 # 289 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
 # 290 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_6: ({ calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_6, 0UL, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
+    call_lbl_6: ({ calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_6, 0UL, 3, (size_t)(11198724033581183208UL), (size_t)(11198724033581183209UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
 # 291 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_3: int ii; if (____must_checkpoint_timerStats_ii_4 != 0) { register_stack_var("timerStats|ii|4", &____must_checkpoint_timerStats_ii_4, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_4; } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 292 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -3561,7 +3561,7 @@ double sendBuf[11];
 # 302 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
 # 303 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_7: ({ calling((void*)addDoubleParallel, 7, ____alias_loc_id_4, 0UL, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+    call_lbl_7: ({ calling((void*)addDoubleParallel, 7, ____alias_loc_id_4, 0UL, 3, (size_t)(11198724033581183204UL), (size_t)(11198724033581183205UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
 # 304 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_5: int ii; if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { chimes_error(); } } } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 305 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -3607,9 +3607,9 @@ double getElapsedTime_quick(const enum TimerHandle handle)
    perfTimer[handle].elapsed = 0;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-   rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2); return etime;
+    double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (etime); rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2); return ____chimes_ret_var_0; ;
 # 114 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-}
+rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2); }
 
 double getElapsedTime(const enum TimerHandle handle) { return (____chimes_replaying ? getElapsedTime_resumable(handle) : getElapsedTime_quick(handle)); }
 
@@ -3724,7 +3724,7 @@ void printPerformanceResults(int nGlobalAtoms, int printRate) { (____chimes_repl
 
 void printPerformanceResultsYaml_quick(FILE* file)
 # 181 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(11198724033581183621UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; int ____chimes_unroll_var_2;
+{const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(11198724033581183633UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; int ____chimes_unroll_var_2;
 double loopTime;
 double tick;
  if (____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0 || ____must_checkpoint_printPerformanceResultsYaml_loopTime_0 || ____must_checkpoint_printPerformanceResultsYaml_tick_0) { register_stack_vars(3, "printPerformanceResultsYaml|____chimes_unroll_var_2|0", &____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0, "i32", (void *)(&____chimes_unroll_var_2), (size_t)4, 0, 0, 0, "printPerformanceResultsYaml|loopTime|0", &____must_checkpoint_printPerformanceResultsYaml_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResultsYaml|tick|0", &____must_checkpoint_printPerformanceResultsYaml_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0); } ; ;
@@ -3840,9 +3840,9 @@ static uint64_t getTime_quick(void)
    t = ((uint64_t)1000000)*(uint64_t)ptime.tv_sec + (uint64_t)ptime.tv_usec;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-   rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5); return t;
+    uint64_t ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (t); rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5); return ____chimes_ret_var_1; ;
 # 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-}
+rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5); }
 
 static uint64_t getTime(void) { return (____chimes_replaying ? getTime_resumable() : getTime_quick()); }
 
@@ -3852,9 +3852,9 @@ static double getTick_quick(void)
 # 259 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
     double seconds_per_cycle; seconds_per_cycle = (9.9999999999999995E-7) ;
 # 260 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-   rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6); return seconds_per_cycle;
+    double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (seconds_per_cycle); rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6); return ____chimes_ret_var_2; ;
 # 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-}
+rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6); }
 
 static double getTick(void) { return (____chimes_replaying ? getTick_resumable() : getTick_quick()); }
 
@@ -3874,7 +3874,7 @@ double sendBuf[11];
 # 269 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { int ii; for ( ii = (0) ;ii < numberOfTimers; ii++) { sendBuf[ii] = (double)perfTimer[ii].total; } };
 # 271 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_1: ({ calling((void*)addDoubleParallel, 1, ____alias_loc_id_9, 0UL, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+    call_lbl_1: ({ calling((void*)addDoubleParallel, 1, ____alias_loc_id_9, 0UL, 3, (size_t)(11198724033581183204UL), (size_t)(11198724033581183205UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
 # 272 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 273 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_0: int ii; if (____must_checkpoint_timerStats_ii_1 != 0) { register_stack_var("timerStats|ii|1", &____must_checkpoint_timerStats_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ;ii < numberOfTimers; ii++) { alias_group_changed(____alias_loc_id_10); call_lbl_3: perfTimer[ii].average = recvBuf[ii] / (double) ({ calling((void*)getNRanks, 3, ____alias_loc_id_10, 0UL, 0); (getNRanks)(); }) ; } };
@@ -3894,7 +3894,7 @@ double sendBuf[11];
 # 283 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
 # 284 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_5: ({ calling((void*)minRankDoubleParallel, 5, ____alias_loc_id_7, 0UL, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
+    call_lbl_5: ({ calling((void*)minRankDoubleParallel, 5, ____alias_loc_id_7, 0UL, 3, (size_t)(11198724033581183208UL), (size_t)(11198724033581183209UL), (size_t)(0UL)); (minRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
 # 285 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_2: int ii; if (____must_checkpoint_timerStats_ii_3 != 0) { register_stack_var("timerStats|ii|3", &____must_checkpoint_timerStats_ii_3, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 286 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -3906,7 +3906,7 @@ double sendBuf[11];
 # 289 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
 # 290 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_6: ({ calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_6, 0UL, 3, (size_t)(11198724033581183196UL), (size_t)(11198724033581183197UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
+    call_lbl_6: ({ calling((void*)maxRankDoubleParallel, 6, ____alias_loc_id_6, 0UL, 3, (size_t)(11198724033581183208UL), (size_t)(11198724033581183209UL), (size_t)(0UL)); (maxRankDoubleParallel)(reduceSendBuf, reduceRecvBuf, numberOfTimers); }) ;
 # 291 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_3: int ii; if (____must_checkpoint_timerStats_ii_4 != 0) { register_stack_var("timerStats|ii|4", &____must_checkpoint_timerStats_ii_4, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 292 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -3930,7 +3930,7 @@ double sendBuf[11];
 # 302 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    } }
 # 303 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-    call_lbl_7: ({ calling((void*)addDoubleParallel, 7, ____alias_loc_id_4, 0UL, 3, (size_t)(11198724033581183192UL), (size_t)(11198724033581183193UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
+    call_lbl_7: ({ calling((void*)addDoubleParallel, 7, ____alias_loc_id_4, 0UL, 3, (size_t)(11198724033581183204UL), (size_t)(11198724033581183205UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) ;
 # 304 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    { lbl_5: int ii; if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } for ( ii = (0) ; ii < numberOfTimers; ii++)
 # 305 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
@@ -3977,7 +3977,7 @@ double getElapsedTime_npm(const enum TimerHandle handle)
    perfTimer[handle].elapsed = 0;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 113 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-   return etime;
+    double ____chimes_ret_var_0; ____chimes_ret_var_0 = (etime); return ____chimes_ret_var_0; ;
 # 114 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
 
@@ -4195,7 +4195,7 @@ static uint64_t getTime_npm(void)
    t = ((uint64_t)1000000)*(uint64_t)ptime.tv_sec + (uint64_t)ptime.tv_usec;
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-   return t;
+    uint64_t ____chimes_ret_var_1; ____chimes_ret_var_1 = (t); return ____chimes_ret_var_1; ;
 # 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
 
@@ -4205,7 +4205,7 @@ static double getTick_npm(void)
 # 259 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
    double seconds_per_cycle = 1.0e-6;
 # 260 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
-   return seconds_per_cycle;
+    double ____chimes_ret_var_2; ____chimes_ret_var_2 = (seconds_per_cycle); return ____chimes_ret_var_2; ;
 # 261 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c"
 }
 
@@ -4293,36 +4293,36 @@ void timerStats_npm(void)
 
 static int module_init() {
     init_module(11198724033581182872UL, 3, 8, 24, 22, 8, 6, 14, 5, 0, 7,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 101UL), (11198724033581182872UL + 102UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 94UL), (11198724033581182872UL + 95UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 98UL), (11198724033581182872UL + 99UL), (11198724033581182872UL + 100UL),
-                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 96UL), (11198724033581182872UL + 97UL),
-                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)1, (11198724033581182872UL + 320UL), (11198724033581182872UL + 328UL), (11198724033581182872UL + 329UL), (11198724033581182872UL + 330UL), (11198724033581182872UL + 774UL), "addDoubleParallel", (unsigned)2, (11198724033581182872UL + 320UL), (11198724033581182872UL + 321UL),
-                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 331UL), (11198724033581182872UL + 332UL), (11198724033581182872UL + 774UL),
-                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)1, (11198724033581182872UL + 327UL), (11198724033581182872UL + 774UL), "maxRankDoubleParallel", (unsigned)2, (11198724033581182872UL + 324UL), (11198724033581182872UL + 325UL),
-                           &____alias_loc_id_7, (unsigned)4, (unsigned)0, (unsigned)1, (11198724033581182872UL + 323UL), (11198724033581182872UL + 324UL), (11198724033581182872UL + 326UL), (11198724033581182872UL + 774UL), "minRankDoubleParallel", (unsigned)2, (11198724033581182872UL + 324UL), (11198724033581182872UL + 325UL),
-                           &____alias_loc_id_8, (unsigned)4, (unsigned)0, (unsigned)0, (11198724033581182872UL + 323UL), (11198724033581182872UL + 324UL), (11198724033581182872UL + 326UL), (11198724033581182872UL + 774UL),
-                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)1, (11198724033581182872UL + 320UL), (11198724033581182872UL + 322UL), "addDoubleParallel", (unsigned)2, (11198724033581182872UL + 320UL), (11198724033581182872UL + 321UL),
-                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 323UL), (11198724033581182872UL + 774UL),
-                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)0, (11198724033581182872UL + 545UL),
-                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (11198724033581182872UL + 548UL),
-                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 546UL), (11198724033581182872UL + 547UL),
-                            &____alias_loc_id_14, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 1UL), (11198724033581182872UL + 774UL),
-                            &____alias_loc_id_15, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 14UL), (11198724033581182872UL + 15UL),
-                            &____alias_loc_id_16, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 29UL), (11198724033581182872UL + 30UL), (11198724033581182872UL + 774UL),
-                            &____alias_loc_id_17, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 67UL), (11198724033581182872UL + 68UL), (11198724033581182872UL + 774UL),
-                            &____alias_loc_id_18, (unsigned)1, (unsigned)0, (unsigned)0, (11198724033581182872UL + 89UL),
-                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 103UL), (11198724033581182872UL + 784UL),
-                            &____alias_loc_id_20, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 331UL), (11198724033581182872UL + 332UL), (11198724033581182872UL + 774UL),
-                            &____alias_loc_id_21, (unsigned)4, (unsigned)0, (unsigned)0, (11198724033581182872UL + 549UL), (11198724033581182872UL + 550UL), (11198724033581182872UL + 551UL), (11198724033581182872UL + 552UL),
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 113UL), (11198724033581182872UL + 114UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 106UL), (11198724033581182872UL + 107UL),
+                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 110UL), (11198724033581182872UL + 111UL), (11198724033581182872UL + 112UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 108UL), (11198724033581182872UL + 109UL),
+                           &____alias_loc_id_4, (unsigned)5, (unsigned)0, (unsigned)1, (11198724033581182872UL + 332UL), (11198724033581182872UL + 340UL), (11198724033581182872UL + 341UL), (11198724033581182872UL + 342UL), (11198724033581182872UL + 786UL), "addDoubleParallel", (unsigned)2, (11198724033581182872UL + 332UL), (11198724033581182872UL + 333UL),
+                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 343UL), (11198724033581182872UL + 344UL), (11198724033581182872UL + 786UL),
+                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)1, (11198724033581182872UL + 339UL), (11198724033581182872UL + 786UL), "maxRankDoubleParallel", (unsigned)2, (11198724033581182872UL + 336UL), (11198724033581182872UL + 337UL),
+                           &____alias_loc_id_7, (unsigned)4, (unsigned)0, (unsigned)1, (11198724033581182872UL + 335UL), (11198724033581182872UL + 336UL), (11198724033581182872UL + 338UL), (11198724033581182872UL + 786UL), "minRankDoubleParallel", (unsigned)2, (11198724033581182872UL + 336UL), (11198724033581182872UL + 337UL),
+                           &____alias_loc_id_8, (unsigned)4, (unsigned)0, (unsigned)0, (11198724033581182872UL + 335UL), (11198724033581182872UL + 336UL), (11198724033581182872UL + 338UL), (11198724033581182872UL + 786UL),
+                           &____alias_loc_id_9, (unsigned)2, (unsigned)0, (unsigned)1, (11198724033581182872UL + 332UL), (11198724033581182872UL + 334UL), "addDoubleParallel", (unsigned)2, (11198724033581182872UL + 332UL), (11198724033581182872UL + 333UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 335UL), (11198724033581182872UL + 786UL),
+                            &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)0, (11198724033581182872UL + 557UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (11198724033581182872UL + 560UL),
+                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 558UL), (11198724033581182872UL + 559UL),
+                            &____alias_loc_id_14, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 1UL), (11198724033581182872UL + 786UL),
+                            &____alias_loc_id_15, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 14UL), (11198724033581182872UL + 15UL), (11198724033581182872UL + 16UL),
+                            &____alias_loc_id_16, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 33UL), (11198724033581182872UL + 34UL), (11198724033581182872UL + 786UL),
+                            &____alias_loc_id_17, (unsigned)4, (unsigned)0, (unsigned)0, (11198724033581182872UL + 71UL), (11198724033581182872UL + 72UL), (11198724033581182872UL + 73UL), (11198724033581182872UL + 786UL),
+                            &____alias_loc_id_18, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 97UL), (11198724033581182872UL + 98UL),
+                            &____alias_loc_id_19, (unsigned)2, (unsigned)0, (unsigned)0, (11198724033581182872UL + 115UL), (11198724033581182872UL + 796UL),
+                            &____alias_loc_id_20, (unsigned)3, (unsigned)0, (unsigned)0, (11198724033581182872UL + 343UL), (11198724033581182872UL + 344UL), (11198724033581182872UL + 786UL),
+                            &____alias_loc_id_21, (unsigned)4, (unsigned)0, (unsigned)0, (11198724033581182872UL + 561UL), (11198724033581182872UL + 562UL), (11198724033581182872UL + 563UL), (11198724033581182872UL + 564UL),
                             "profileStart", (void *)(&profileStart_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "getTime", 0, 0UL,
                             "profileStop", (void *)(&profileStop_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "getTime", 0, 0UL,
                             "getElapsedTime", (void *)(&getElapsedTime_npm), (void *)__null, 0, 1, 0UL, 0UL, 1, "getTick", 0, 0UL,
-                            "printPerformanceResults", (void *)(&printPerformanceResults_npm), (void *)__null, 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 2, 0UL, 0UL, 0UL, 23, "timerStats", 0, 0UL, "printRank", 0, 0UL, "getTick", 0, 0UL, "getMyRank", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 188UL), (11198724033581182872UL + 776UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 188UL), (11198724033581182872UL + 777UL), 0UL, "fprintf", 2, (11198724033581182872UL + 188UL), (11198724033581182872UL + 777UL), 0UL, "fprintf", 7, (11198724033581182872UL + 188UL), (11198724033581182872UL + 779UL), (11198724033581182872UL + 159UL), 0UL, 0UL, 0UL, 0UL, 0UL, "getNRanks", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 188UL), (11198724033581182872UL + 780UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 188UL), (11198724033581182872UL + 781UL), 0UL, "fprintf", 2, (11198724033581182872UL + 188UL), (11198724033581182872UL + 782UL), 0UL, "fprintf", 9, (11198724033581182872UL + 188UL), (11198724033581182872UL + 783UL), (11198724033581182872UL + 159UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "getNRanks", 0, 0UL, "fprintf", 2, (11198724033581182872UL + 188UL), (11198724033581182872UL + 785UL), 0UL, "fprintf", 3, (11198724033581182872UL + 188UL), (11198724033581182872UL + 786UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 188UL), (11198724033581182872UL + 785UL), 0UL, "fprintf", 2, (11198724033581182872UL + 188UL), (11198724033581182872UL + 785UL), 0UL, "fprintf", 3, (11198724033581182872UL + 188UL), (11198724033581182872UL + 788UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 188UL), (11198724033581182872UL + 785UL), 0UL, "fprintf", 2, (11198724033581182872UL + 188UL), (11198724033581182872UL + 785UL), 0UL, "fprintf", 3, (11198724033581182872UL + 188UL), (11198724033581182872UL + 789UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 188UL), (11198724033581182872UL + 785UL), 0UL,
-                            "printPerformanceResultsYaml", (void *)(&printPerformanceResultsYaml_npm), (void *)__null, 3, &____alias_loc_id_11, &____alias_loc_id_12, &____alias_loc_id_13, 1, (11198724033581182872UL + 749UL), 0UL, 32, "printRank", 0, 0UL, "getTick", 0, 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 776UL), 0UL, "getNRanks", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 791UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 792UL), 0UL, "getMyRank", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 793UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 768UL), (11198724033581182872UL + 159UL), 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 795UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 776UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 776UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 798UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 799UL), 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 768UL), (11198724033581182872UL + 159UL), 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 800UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 801UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 800UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 801UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 801UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 805UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 793UL), 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 807UL), 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 798UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 809UL), 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 805UL), 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 798UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 801UL), 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 768UL), 0UL, "fprintf", 3, (11198724033581182872UL + 749UL), (11198724033581182872UL + 798UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 795UL), 0UL, "fprintf", 2, (11198724033581182872UL + 749UL), (11198724033581182872UL + 814UL), 0UL,
-                            "getTime", (void *)(&getTime_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (11198724033581182872UL + 14UL), (11198724033581182872UL + 815UL), 0UL,
+                            "printPerformanceResults", (void *)(&printPerformanceResults_npm), (void *)__null, 4, &____alias_loc_id_0, &____alias_loc_id_1, &____alias_loc_id_2, &____alias_loc_id_3, 2, 0UL, 0UL, 0UL, 23, "timerStats", 0, 0UL, "printRank", 0, 0UL, "getTick", 0, 0UL, "getMyRank", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 200UL), (11198724033581182872UL + 788UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 789UL), 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 789UL), 0UL, "fprintf", 7, (11198724033581182872UL + 200UL), (11198724033581182872UL + 791UL), (11198724033581182872UL + 171UL), 0UL, 0UL, 0UL, 0UL, 0UL, "getNRanks", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 200UL), (11198724033581182872UL + 792UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 793UL), 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 794UL), 0UL, "fprintf", 9, (11198724033581182872UL + 200UL), (11198724033581182872UL + 795UL), (11198724033581182872UL + 171UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, "getNRanks", 0, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL, "fprintf", 3, (11198724033581182872UL + 200UL), (11198724033581182872UL + 798UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL, "fprintf", 3, (11198724033581182872UL + 200UL), (11198724033581182872UL + 800UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL, "fprintf", 3, (11198724033581182872UL + 200UL), (11198724033581182872UL + 801UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 200UL), (11198724033581182872UL + 797UL), 0UL,
+                            "printPerformanceResultsYaml", (void *)(&printPerformanceResultsYaml_npm), (void *)__null, 3, &____alias_loc_id_11, &____alias_loc_id_12, &____alias_loc_id_13, 1, (11198724033581182872UL + 761UL), 0UL, 32, "printRank", 0, 0UL, "getTick", 0, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 788UL), 0UL, "getNRanks", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 803UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 804UL), 0UL, "getMyRank", 0, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 805UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 780UL), (11198724033581182872UL + 171UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 807UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 788UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 788UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 810UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 811UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 780UL), (11198724033581182872UL + 171UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 812UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 813UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 812UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 813UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 813UL), 0UL, 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 817UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 805UL), 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 819UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 810UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 821UL), 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 817UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 810UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 813UL), 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 780UL), 0UL, "fprintf", 3, (11198724033581182872UL + 761UL), (11198724033581182872UL + 810UL), 0UL, 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 807UL), 0UL, "fprintf", 2, (11198724033581182872UL + 761UL), (11198724033581182872UL + 826UL), 0UL,
+                            "getTime", (void *)(&getTime_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (11198724033581182872UL + 14UL), (11198724033581182872UL + 827UL), 0UL,
                             "getTick", (void *)(&getTick_npm), (void *)__null, 0, 0, 0UL, 0,
-                            "timerStats", (void *)(&timerStats_npm), (void *)__null, 7, &____alias_loc_id_10, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 0, 0UL, 8, "addDoubleParallel", 3, (11198724033581182872UL + 320UL), (11198724033581182872UL + 321UL), 0UL, 0UL, "getNRanks", 0, 0UL, "getMyRank", 0, 0UL, "minRankDoubleParallel", 3, (11198724033581182872UL + 324UL), (11198724033581182872UL + 325UL), 0UL, 0UL, "maxRankDoubleParallel", 3, (11198724033581182872UL + 324UL), (11198724033581182872UL + 325UL), 0UL, 0UL, "addDoubleParallel", 3, (11198724033581182872UL + 320UL), (11198724033581182872UL + 321UL), 0UL, 0UL, "getNRanks", 0, 0UL, "sqrt", 1, 0UL, 0UL,
+                            "timerStats", (void *)(&timerStats_npm), (void *)__null, 7, &____alias_loc_id_10, &____alias_loc_id_4, &____alias_loc_id_5, &____alias_loc_id_6, &____alias_loc_id_7, &____alias_loc_id_8, &____alias_loc_id_9, 0, 0UL, 8, "addDoubleParallel", 3, (11198724033581182872UL + 332UL), (11198724033581182872UL + 333UL), 0UL, 0UL, "getNRanks", 0, 0UL, "getMyRank", 0, 0UL, "minRankDoubleParallel", 3, (11198724033581182872UL + 336UL), (11198724033581182872UL + 337UL), 0UL, 0UL, "maxRankDoubleParallel", 3, (11198724033581182872UL + 336UL), (11198724033581182872UL + 337UL), 0UL, 0UL, "addDoubleParallel", 3, (11198724033581182872UL + 332UL), (11198724033581182872UL + 333UL), 0UL, 0UL, "getNRanks", 0, 0UL, "sqrt", 1, 0UL, 0UL,
                                "addDoubleParallel", (void **)&(____chimes_extern_func_addDoubleParallel),
                                "getMyRank", (void **)&(____chimes_extern_func_getMyRank),
                                "getNRanks", (void **)&(____chimes_extern_func_getNRanks),
@@ -4343,9 +4343,9 @@ static int module_init() {
                            "maxRankDoubleParallel", &(____chimes_does_checkpoint_maxRankDoubleParallel_npm),
                            "minRankDoubleParallel", &(____chimes_does_checkpoint_minRankDoubleParallel_npm),
                            "printRank", &(____chimes_does_checkpoint_printRank_npm),
-                             (11198724033581182872UL + 775UL), (11198724033581182872UL + 188UL),
-                             (11198724033581182872UL + 773UL), (11198724033581182872UL + 159UL),
-                             (11198724033581182872UL + 545UL), (11198724033581182872UL + 749UL),
+                             (11198724033581182872UL + 785UL), (11198724033581182872UL + 171UL),
+                             (11198724033581182872UL + 557UL), (11198724033581182872UL + 761UL),
+                             (11198724033581182872UL + 787UL), (11198724033581182872UL + 200UL),
                      "RankReduceDataSt", 2, "double", (int)__builtin_offsetof (struct RankReduceDataSt, val), "int", (int)__builtin_offsetof (struct RankReduceDataSt, rank),
                      "TimerGlobalSt", 3, "double", (int)__builtin_offsetof (struct TimerGlobalSt, atomRate), "double", (int)__builtin_offsetof (struct TimerGlobalSt, atomAllRate), "double", (int)__builtin_offsetof (struct TimerGlobalSt, atomsPerUSec),
                      "TimerHandle", 0,

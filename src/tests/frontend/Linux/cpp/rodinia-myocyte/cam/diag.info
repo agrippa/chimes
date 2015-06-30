@@ -1,7 +1,8 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 6 7 len=3 cam_npm
-InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 372 2 rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0); 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 13 const int ____chimes_did_disable0 = new_stack((void *)(&cam), "cam", &____must_manage_cam, 7, 0, (size_t)(0UL), (size_t)(17020714764447488978UL), (size_t)(0UL), (size_t)(17020714764447488980UL), (size_t)(0UL), (size_t)(17020714764447488982UL), (size_t)(0UL)); 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 14 const int ____chimes_did_disable0 = new_stack((void *)(&cam), "cam", &____must_manage_cam, 7, 0, (size_t)(0UL), (size_t)(17020714764447488978UL), (size_t)(0UL), (size_t)(17020714764447488980UL), (size_t)(0UL), (size_t)(17020714764447488982UL), (size_t)(0UL)); ;
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 372 61 rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 13 const int ____chimes_did_disable0 = new_stack((void *)(&cam), "cam", &____must_manage_cam, 7, 0, (size_t)(0UL), (size_t)(17020714764447488982UL), (size_t)(0UL), (size_t)(17020714764447488984UL), (size_t)(0UL), (size_t)(17020714764447488986UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 374 1 rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 14 const int ____chimes_did_disable0 = new_stack((void *)(&cam), "cam", &____must_manage_cam, 7, 0, (size_t)(0UL), (size_t)(17020714764447488982UL), (size_t)(0UL), (size_t)(17020714764447488984UL), (size_t)(0UL), (size_t)(17020714764447488986UL), (size_t)(0UL)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 272 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 19 2 float JCa; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 19 11 
@@ -257,6 +258,8 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 178 2 float dCa2
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 178 21 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 179 2 float dCa4CaMCa4CaN; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 179 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 372 3 float ____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 372 29 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 6 7 len=3 cam_quick
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 12 271  ;  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c 6 7 len=3 cam_resumable

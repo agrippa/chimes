@@ -13,15 +13,19 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 50
 InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 65 1 rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 68 1 const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(1633707214412207521UL), (size_t)(1633707214412207522UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 81 1 rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 91 2 rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 83 33 const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(1633707214412207562UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 107 2 rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 94 37 const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(1633707214412207608UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 113 3 rm_stack(true, 1633707214412207628UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 111 48 const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(1633707214412207627UL), (size_t)(1633707214412207628UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 120 3 rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 117 41 const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(1633707214412207647UL), (size_t)(0UL)); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 196 1 const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(1633707214412211961UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 91 57 rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 83 33 const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(1633707214412207566UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 92 1 rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 107 57 rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 94 37 const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(1633707214412207616UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 108 1 rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 113 61 rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 111 48 const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(1633707214412207639UL), (size_t)(1633707214412207640UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 114 1 rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 120 60 rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 117 41 const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(1633707214412207663UL), (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 121 1 rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 196 1 const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(1633707214412211977UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 249 1 rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 252 1 const int ____chimes_did_disable7 = new_stack((void *)(&sha1_begin), "sha1_begin", &____must_manage_sha1_begin, 1, 0, (size_t)(1633707214412207141UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 259 1 rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7); 
@@ -29,7 +33,7 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 26
 InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 281 1 rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 286 1 const int ____chimes_did_disable9 = new_stack((void *)(&sha1_end), "sha1_end", &____must_manage_sha1_end, 2, 0, (size_t)(1633707214412207475UL), (size_t)(1633707214412207476UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 327 1 rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 1 const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(1633707214412211988UL), (size_t)(1633707214412211989UL), (size_t)(0UL)); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 1 const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(1633707214412212004UL), (size_t)(1633707214412212005UL), (size_t)(0UL)); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 333 1 rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 50 2 const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(1633707214412207105UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 50 161 
@@ -45,13 +49,15 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 69 2  
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 69 23 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 70 2 uint8 bytes[4]; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 70 16 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 83 34 const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(1633707214412207562UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 83 34 const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(1633707214412207566UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 83 178 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 84 9 int r; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 84 14 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 85 2  uint32 b;  b = ((mystate[16] << 24) | (mystate[17] << 16) | (mystate[18] << 8) | (mystate[19] << 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 86 44 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 94 38 const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(1633707214412207608UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 91 3 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 91 27 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 94 38 const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(1633707214412207616UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 94 194 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 95 2  struct sha1_ctx_s ctx; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 95 23 
@@ -59,11 +65,17 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 96 2 i
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 96 7 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 97 2 uint32 b; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 97 10 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 111 49 const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(1633707214412207627UL), (size_t)(1633707214412207628UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 107 3 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 107 27 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 111 49 const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(1633707214412207639UL), (size_t)(1633707214412207640UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 111 241 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 117 42 const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(1633707214412207647UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 113 4 char *____chimes_ret_var_2; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 113 31 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 117 42 const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(1633707214412207663UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 117 213 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 196 2 const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(1633707214412211961UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 120 4 int ____chimes_ret_var_3; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 120 28 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 196 2 const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(1633707214412211977UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 196 158 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 196 161  uint_32t *w;  w = (ctx->wbuf) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 196 184 
@@ -85,7 +97,7 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 286 18
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 286 231 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 291 7  int _i;  _i = (((i + 3) >> 2)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 291 30 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 2 const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(1633707214412211988UL), (size_t)(1633707214412211989UL), (size_t)(0UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 2 const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(1633707214412212004UL), (size_t)(1633707214412212005UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 183 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 186  sha1_ctx cx[1]; ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c 330 200 

@@ -34,7 +34,7 @@ using namespace std;
 // #define VERBOSE
 // #define PROFILE
 
-static std::string demangledFunctionName(std::string fname);
+static std::string demangleABIName(std::string fname);
 
 namespace {
 
@@ -257,15 +257,18 @@ namespace {
     class StructInfo {
         public:
             StructInfo(std::vector<StructFieldInfo> set_fields,
-                    bool set_is_unnamed) : fields(set_fields),
-                    is_unnamed(set_is_unnamed) { }
+                    bool set_is_unnamed, uint64_t set_size_in_bits) :
+                    fields(set_fields), is_unnamed(set_is_unnamed),
+                    size_in_bits(set_size_in_bits) { }
 
             std::vector<StructFieldInfo> *get_fields() { return &fields; }
             bool get_is_unnamed() { return is_unnamed; }
+            uint64_t get_size_in_bits() { return size_in_bits; }
 
         private:
             std::vector<StructFieldInfo> fields;
             bool is_unnamed;
+            uint64_t size_in_bits;
     };
 
     class ReachableInfo {
@@ -688,17 +691,17 @@ std::string Play::traverseAllUses(const Value *parent, int nesting) {
     return "";
 }
 
-static std::string demangleVarName(std::string varname) {
-    if (varname.find("_ZL") == 0) {
-        std::string removed_prefix = varname.substr(3);
-        while (removed_prefix[0] >= '0' && removed_prefix[0] <= '9') {
-            removed_prefix = removed_prefix.substr(1);
-        }
-        return removed_prefix;
-    } else {
-        return varname;
-    }
-}
+// static std::string demangleVarName(std::string varname) {
+//     if (varname.find("_ZL") == 0) {
+//         std::string removed_prefix = varname.substr(3);
+//         while (removed_prefix[0] >= '0' && removed_prefix[0] <= '9') {
+//             removed_prefix = removed_prefix.substr(1);
+//         }
+//         return removed_prefix;
+//     } else {
+//         return varname;
+//     }
+// }
 
 std::string Play::findReachableUse(const User *user, const Value *parent, int nesting) {
     std::string prefix;
@@ -740,7 +743,7 @@ std::string Play::findReachableUse(const User *user, const Value *parent, int ne
         assert(glob->hasInitializer());
         assert(glob->getInitializer() == parent);
 
-        return demangleVarName(glob->getName().str());
+        return demangleABIName(glob->getName().str());
     }
 
     return "";
@@ -749,6 +752,9 @@ std::string Play::findReachableUse(const User *user, const Value *parent, int ne
 bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
         DataLayout *layout) {
     if (var->hasUnnamedAddr()) {
+#ifdef VERBOSE
+        llvm::errs() << "Dumping unnamed constant\n";
+#endif
         if (var->hasInitializer()) {
             std::string accessable = "";
             for (Value::const_use_iterator i = var->use_begin(),
@@ -780,8 +786,13 @@ bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
         if (var->getName().str() == "fatbinData") {
             return false;
         }
+        // std::string varname = demangleVarName(var->getName().str());
+        std::string varname = demangleABIName(var->getName().str());
 
-        std::string varname = demangleVarName(var->getName().str());
+#ifdef VERBOSE
+        llvm::errs() << "Dumping named constant with name " << varname << "\n";
+#endif
+
         if (var->hasExternalLinkage()) {
             /*
              * If this constant is externally initialized we should be able to
@@ -906,7 +917,6 @@ void Play::findGlobalsAndConstants(Module &M, const char *globals_filename,
 
             if (var->isConstant()) {
                 std::string section_str(var->getSection());
-                llvm::errs() << "\"" << section_str << "\"\n";
                 if (section_str.find("@fatbinData") == 0 ||
                         unsupported_sections.find(section_str) ==
                         unsupported_sections.end()) {
@@ -948,7 +958,7 @@ ReachableInfo Play::propagateAliases(Module &M, Hasher *H) {
             visitor.get_value_to_alias_group());
 }
 
-static std::string demangledFunctionName(std::string fname) {
+static std::string demangleABIName(std::string fname) {
     std::string result;
 
     if (fname.size() > 2 && fname[0] == '_' && fname[1] == 'Z') {
@@ -963,8 +973,14 @@ static std::string demangledFunctionName(std::string fname) {
 #endif
         assert(status == 0);
 
+        /*
+         * If we're demangling a function name, we only find the name and return
+         * that (not any of the parameters?)
+         */
         char *end = strchr(demangled, '(');
-        *end = '\0';
+        if (end) {
+            *end = '\0';
+        }
         result = std::string(demangled);
         while (result[0] == ' ') result = result.substr(1);
         while (result[result.size() - 1] == ' ') {
@@ -974,6 +990,9 @@ static std::string demangledFunctionName(std::string fname) {
     } else {
         result = fname;
     }
+#ifdef VERBOSE
+    errs() << "Demangled " << fname << " to " << result << "\n";
+#endif
 
     return result;
 }
@@ -1019,7 +1038,7 @@ void Play::dumpFunctionArgumentsToAliasMappings(Module &M,
          * programmer. We don't want to emit metadata on these.
          */
         if (F != NULL && !F->empty()) {
-            std::string demangled = demangledFunctionName(F->getName().str());
+            std::string demangled = demangleABIName(F->getName().str());
 
             // Special, inserted functions that we don't care about
             if (isCompilerGenerated(demangled)) continue;
@@ -1057,7 +1076,7 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
         Function *F = &*I;
 
         if (F != NULL && !F->empty()) {
-            std::string caller_name = demangledFunctionName(F->getName().str());
+            std::string caller_name = demangleABIName(F->getName().str());
 
             Function::BasicBlockListType &bblist = F->getBasicBlockList();
             for (Function::BasicBlockListType::iterator bb_iter =
@@ -1125,7 +1144,7 @@ void Play::dumpCallSiteAliases(Module &M, const char *filename,
                             // Call through function pointer
                             name = "anon";
                         } else {
-                            name = demangledFunctionName(
+                            name = demangleABIName(
                                     callee->getName().str());
                         }
 
@@ -1218,7 +1237,7 @@ void Play::createNewAliasLocation(int line, int col, string filename,
     } else if (reason->getName().size() == 0) {
         reason_str << "anon";
     } else {
-        reason_str << demangledFunctionName(reason->getName().str());
+        reason_str << demangleABIName(reason->getName().str());
     }
 
     if (existing) {
@@ -1314,7 +1333,7 @@ void Play::updateChanges(CallInst *call, Function *callee,
              * return value as possibly changed before deciding at runtime
              * if the function definition is truly missing.
              */
-            std::string fname = demangledFunctionName(callee->getName().str());
+            std::string fname = demangleABIName(callee->getName().str());
 #ifdef VERBOSE
             llvm::errs() << "  Handling as extern call, fname=" << fname << "\n";
 #endif
@@ -1856,7 +1875,7 @@ bool Play::isKnownFunction(Function *F) {
 
 bool Play::isMarkedWithNoCheckpoint(Function *F) {
     if (F == NULL) return false;
-    std::string fname = demangledFunctionName(F->getName().str());
+    std::string fname = demangleABIName(F->getName().str());
     return (functionsMarkedWithNoCheckpoint.find(fname) !=
             functionsMarkedWithNoCheckpoint.end());
 }
@@ -2165,7 +2184,8 @@ std::map<std::string, StructInfo> *Play::getStructFieldNames(
             }
 
             struct_fields->insert(std::pair<std::string, StructInfo>(
-                        struct_name, StructInfo(fields, unnamed_struct)));
+                        struct_name, StructInfo(fields, unnamed_struct,
+                            di_struct.getSizeInBits())));
         }
     }
     return struct_fields;
@@ -2180,7 +2200,8 @@ void Play::dumpStructInfoToFile(const char *filename,
         std::vector<StructFieldInfo>* fields = struct_iter->second.get_fields();
         bool is_unnamed = struct_iter->second.get_is_unnamed();
 
-        fprintf(fp, "%s %d", struct_iter->first.c_str(), (is_unnamed ? 1 : 0));
+        fprintf(fp, "%s %lu %d", struct_iter->first.c_str(),
+                struct_iter->second.get_size_in_bits(), (is_unnamed ? 1 : 0));
         for (std::vector<StructFieldInfo>::iterator field_iter = fields->begin(),
                 field_end = fields->end(); field_iter != field_end;
                 field_iter++) {
@@ -2283,7 +2304,7 @@ std::string Play::isPossibleCheckpointCall(CallInst *call, Module &M) {
             if (call->getCalledFunction() == NULL) {
                 return ("---");
             } else {
-                return (demangledFunctionName(call->getCalledFunction()->getName().str()));
+                return (demangleABIName(call->getCalledFunction()->getName().str()));
             }
         }
     }
@@ -2529,7 +2550,7 @@ std::map<AllocaInst *, std::set<std::string> > *Play::findStackAllocationsAliveA
             // std::string *parent_display_name = getFunctionDisplayName(F, M);
             // assert(parent_display_name);
             // just_parent.insert(*parent_display_name);
-            just_parent.insert(demangledFunctionName(F->getName().str()));
+            just_parent.insert(demangleABIName(F->getName().str()));
             result->insert(std::pair<AllocaInst *, std::set<std::string> >(curr,
                         just_parent));
         } else {
@@ -3138,7 +3159,7 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
          * them.
          */
         if (F->empty() ||
-                isCompilerGenerated(demangledFunctionName(F->getName().str()))) {
+                isCompilerGenerated(demangleABIName(F->getName().str()))) {
             continue;
         }
 
@@ -3158,7 +3179,7 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
                                 callee->getName().str().size() == 0) {
                             contains_unknown_functions = true;
                         } else {
-                            std::string demangled = demangledFunctionName(
+                            std::string demangled = demangleABIName(
                                         callee->getName().str());
                             if (doesFunctionCreateCheckpoint.find(demangled) ==
                                     doesFunctionCreateCheckpoint.end() ||
@@ -3177,7 +3198,7 @@ void Play::dumpFunctionCallTree(Module &M, const char *output_file) {
         std::string *caller_display_name = getFunctionDisplayName(F, M);
         assert(caller_display_name);
         fprintf(fp, "%s %s %d",
-                demangledFunctionName(F->getName().str()).c_str(),
+                demangleABIName(F->getName().str()).c_str(),
                 F->getName().str().c_str(), contains_unknown_functions);
 
         CALLS_CHECKPOINT doesCheckpoint = mayCreateCheckpoint(F);

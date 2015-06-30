@@ -1,0 +1,153 @@
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 68 17 len=10 spec_srand_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 73 19 len=9 spec_rand_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 78 17 len=12 spec_lrand48_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 83 17 len=17 spec_init_genrand_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 102 17 len=18 spec_init_by_array_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 128 26 len=18 spec_genrand_int32_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 166 17 len=18 spec_genrand_int31_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 172 19 len=18 spec_genrand_real1_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 179 19 len=18 spec_genrand_real2_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 186 19 len=18 spec_genrand_real3_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 193 19 len=18 spec_genrand_res53_npm
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 68 38 const int ____chimes_did_disable0 = new_stack((void *)(&spec_srand), "spec_srand", &____must_manage_spec_srand, 1, 0, (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 70 1 rm_stack(false, 0UL, "spec_srand", &____must_manage_spec_srand, ____alias_loc_id_0, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 74 5 rm_stack(false, 0UL, "spec_rand", &____must_manage_spec_rand, 0, ____chimes_did_disable1); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 73 35 const int ____chimes_did_disable1 = new_stack((void *)(&spec_rand), "spec_rand", &____must_manage_spec_rand, 0, 0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 79 5 rm_stack(false, 0UL, "spec_lrand48", &____must_manage_spec_lrand48, 0, ____chimes_did_disable2); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 78 36 const int ____chimes_did_disable2 = new_stack((void *)(&spec_lrand48), "spec_lrand48", &____must_manage_spec_lrand48, 0, 0); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 84 1 const int ____chimes_did_disable3 = new_stack((void *)(&spec_init_genrand), "spec_init_genrand", &____must_manage_spec_init_genrand, 1, 0, (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 96 1 rm_stack(false, 0UL, "spec_init_genrand", &____must_manage_spec_init_genrand, ____alias_loc_id_1, ____chimes_did_disable3); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 103 1 const int ____chimes_did_disable4 = new_stack((void *)(&spec_init_by_array), "spec_init_by_array", &____must_manage_spec_init_by_array, 2, 0, (size_t)(6302335948771282621UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 125 1 rm_stack(false, 0UL, "spec_init_by_array", &____must_manage_spec_init_by_array, ____alias_loc_id_3, ____chimes_did_disable4); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 162 5 rm_stack(false, 0UL, "spec_genrand_int32", &____must_manage_spec_genrand_int32, ____alias_loc_id_2, ____chimes_did_disable5); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 129 1 const int ____chimes_did_disable5 = new_stack((void *)(&spec_genrand_int32), "spec_genrand_int32", &____must_manage_spec_genrand_int32, 0, 0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 168 5 rm_stack(false, 0UL, "spec_genrand_int31", &____must_manage_spec_genrand_int31, 0, ____chimes_did_disable6); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 167 1 const int ____chimes_did_disable6 = new_stack((void *)(&spec_genrand_int31), "spec_genrand_int31", &____must_manage_spec_genrand_int31, 0, 0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 174 5 rm_stack(false, 0UL, "spec_genrand_real1", &____must_manage_spec_genrand_real1, 0, ____chimes_did_disable7); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 173 1 const int ____chimes_did_disable7 = new_stack((void *)(&spec_genrand_real1), "spec_genrand_real1", &____must_manage_spec_genrand_real1, 0, 0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 181 5 rm_stack(false, 0UL, "spec_genrand_real2", &____must_manage_spec_genrand_real2, 0, ____chimes_did_disable8); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 180 1 const int ____chimes_did_disable8 = new_stack((void *)(&spec_genrand_real2), "spec_genrand_real2", &____must_manage_spec_genrand_real2, 0, 0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 188 5 rm_stack(false, 0UL, "spec_genrand_real3", &____must_manage_spec_genrand_real3, 0, ____chimes_did_disable9); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 187 1 const int ____chimes_did_disable9 = new_stack((void *)(&spec_genrand_real3), "spec_genrand_real3", &____must_manage_spec_genrand_real3, 0, 0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 196 5 rm_stack(false, 0UL, "spec_genrand_res53", &____must_manage_spec_genrand_res53, ____alias_loc_id_4, ____chimes_did_disable10); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 194 1 const int ____chimes_did_disable10 = new_stack((void *)(&spec_genrand_res53), "spec_genrand_res53", &____must_manage_spec_genrand_res53, 0, 0); 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 68 39 const int ____chimes_did_disable0 = new_stack((void *)(&spec_srand), "spec_srand", &____must_manage_spec_srand, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 68 171 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 73 36 const int ____chimes_did_disable1 = new_stack((void *)(&spec_rand), "spec_rand", &____must_manage_spec_rand, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 73 150 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 78 37 const int ____chimes_did_disable2 = new_stack((void *)(&spec_lrand48), "spec_lrand48", &____must_manage_spec_lrand48, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 78 160 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 84 2 const int ____chimes_did_disable3 = new_stack((void *)(&spec_init_genrand), "spec_init_genrand", &____must_manage_spec_init_genrand, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 84 155 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 103 2 const int ____chimes_did_disable4 = new_stack((void *)(&spec_init_by_array), "spec_init_by_array", &____must_manage_spec_init_by_array, 2, 0, (size_t)(6302335948771282621UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 103 191 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 104 5 int i; int j; int k; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 104 16 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 129 2 const int ____chimes_did_disable5 = new_stack((void *)(&spec_genrand_int32), "spec_genrand_int32", &____must_manage_spec_genrand_int32, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 129 143 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 130 5 unsigned long y; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 130 20 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 131 5 static unsigned long mag01[2] = { 0UL, 2567483615UL }; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 131 56 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 135 9 int kk; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 135 15 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 167 2 const int ____chimes_did_disable6 = new_stack((void *)(&spec_genrand_int31), "spec_genrand_int31", &____must_manage_spec_genrand_int31, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 167 143 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 173 2 const int ____chimes_did_disable7 = new_stack((void *)(&spec_genrand_real1), "spec_genrand_real1", &____must_manage_spec_genrand_real1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 173 143 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 180 2 const int ____chimes_did_disable8 = new_stack((void *)(&spec_genrand_real2), "spec_genrand_real2", &____must_manage_spec_genrand_real2, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 180 143 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 187 2 const int ____chimes_did_disable9 = new_stack((void *)(&spec_genrand_real3), "spec_genrand_real3", &____must_manage_spec_genrand_real3, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 187 143 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 194 2 const int ____chimes_did_disable10 = new_stack((void *)(&spec_genrand_res53), "spec_genrand_res53", &____must_manage_spec_genrand_res53, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 194 144 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 195 5  unsigned long a;  unsigned long b;  a = (spec_genrand_int32() >> 5)  ; b = (spec_genrand_int32() >> 6) ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 195 71 
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 68 17 len=10 spec_srand_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 69 3 ({ calling_npm("spec_init_genrand", 0); spec_init_genrand_npm((unsigned long) seed); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 69 41 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 68 170  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 73 19 len=9 spec_rand_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 74 103 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 74 122 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 73 149  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 78 17 len=12 spec_lrand48_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 79 116 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 79 135 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 78 159  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 83 17 len=17 spec_init_genrand_quick
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 84 154  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 102 17 len=18 spec_init_by_array_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 105 5 ({ calling_npm("spec_init_genrand", 0); spec_init_genrand_npm(19650218UL); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 105 33 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 103 190  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 128 26 len=18 spec_genrand_int32_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 138 13 ({ calling_npm("spec_init_genrand", 0); spec_init_genrand_npm(5489UL); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 138 37 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 129 142  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 166 17 len=18 spec_genrand_int31_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 168 128 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 168 147 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 167 142  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 172 19 len=18 spec_genrand_real1_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 174 121 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 174 140 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 173 142  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 179 19 len=18 spec_genrand_real2_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 181 121 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 181 140 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 180 142  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 186 19 len=18 spec_genrand_real3_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 188 131 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 188 150 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 187 142  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 193 19 len=18 spec_genrand_res53_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 195 47 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 195 66 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 195 82 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 195 101 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 194 143  ;  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 68 17 len=10 spec_srand_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 69 3 ({ calling_npm("spec_init_genrand", 0); spec_init_genrand_npm((unsigned long) seed); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 69 41 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 68 170  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 73 19 len=9 spec_rand_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 74 103 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 74 122 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 73 149  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 78 17 len=12 spec_lrand48_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 79 116 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 79 135 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 78 159  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 83 17 len=17 spec_init_genrand_resumable
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 84 154  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 102 17 len=18 spec_init_by_array_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 105 5 ({ calling_npm("spec_init_genrand", 0); spec_init_genrand_npm(19650218UL); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 105 33 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 103 190  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 128 26 len=18 spec_genrand_int32_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 138 13 ({ calling_npm("spec_init_genrand", 0); spec_init_genrand_npm(5489UL); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 138 37 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 129 142  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 166 17 len=18 spec_genrand_int31_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 168 128 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 168 147 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 167 142  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 172 19 len=18 spec_genrand_real1_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 174 121 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 174 140 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 173 142  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 179 19 len=18 spec_genrand_real2_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 181 121 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 181 140 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 180 142  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 186 19 len=18 spec_genrand_real3_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 188 131 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 188 150 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 187 142  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 193 19 len=18 spec_genrand_res53_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 195 47 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 195 66 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 195 82 ({ calling_npm("spec_genrand_int32", 0); spec_genrand_int32_npm(); })
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 195 101 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.c 194 143  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

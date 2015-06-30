@@ -1530,9 +1530,9 @@ long long get_time_resumable() {const int ____chimes_did_disable0 = new_stack((v
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/timer.c"
  gettimeofday(&tv, __null);
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/timer.c"
- rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); return (tv.tv_sec * 1000000) + tv.tv_usec;
+  long long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/timer.c"
-}
+rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); }
 long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0) ; struct timeval tv;
  if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0); } ; ;
 # 6 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/timer.c"
@@ -1540,9 +1540,9 @@ long long get_time_quick() {const int ____chimes_did_disable0 = new_stack((void 
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/timer.c"
  gettimeofday(&tv, __null);
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/timer.c"
- rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); return (tv.tv_sec * 1000000) + tv.tv_usec;
+  long long ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/timer.c"
-}
+rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); }
 
 long long get_time() { return (____chimes_replaying ? get_time_resumable() : get_time_quick()); }
 
@@ -1554,7 +1554,7 @@ long long get_time_npm() {
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/timer.c"
  gettimeofday(&tv, __null);
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/timer.c"
- return (tv.tv_sec * 1000000) + tv.tv_usec;
+  long long ____chimes_ret_var_0; ____chimes_ret_var_0 = ((tv.tv_sec * 1000000) + tv.tv_usec); return ____chimes_ret_var_0; ;
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/timer.c"
 }
 
@@ -1564,8 +1564,8 @@ long long get_time_npm() {
 
 static int module_init() {
     init_module(654744409991559523UL, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (654744409991559523UL + 1UL),
-                            "get_time", (void *)(&get_time_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (654744409991559523UL + 1UL), (654744409991559523UL + 15UL), 0UL,
+                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)0, (654744409991559523UL + 1UL), (654744409991559523UL + 2UL),
+                            "get_time", (void *)(&get_time_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (654744409991559523UL + 1UL), (654744409991559523UL + 19UL), 0UL,
                            "get_time", &(____chimes_does_checkpoint_get_time_npm),
                      "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                              "get_time", "_Z8get_timev", 0,

@@ -212,6 +212,7 @@ public:
                   std::string mangled = constructMangledName(
                           param->getName().str());
                   StackAlloc *alloc = insertions->findStackAlloc(mangled);
+                  llvm::errs() << "Param variable " << param->getName().str() << " " << mangled << " " << alloc << "\n";
                   if (alloc != NULL) {
                       insert_at_front->push_back(alloc);
                   }
@@ -383,7 +384,7 @@ public:
               if (visitor->transformsOriginal()) {
                   *dump_bodies << old_function_decl << " { ";
                   if (fdecl->getName().str() == "main") {
-                      *dump_bodies << "init_chimes(); ";
+                      *dump_bodies << "init_chimes(argc, argv); ";
                   }
                   if (!fdecl->getReturnType().getTypePtr()->isVoidType()) {
                       *dump_bodies << "return ";

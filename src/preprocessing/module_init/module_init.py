@@ -163,10 +163,11 @@ class StructField(object):
 
 
 class StructFields(object):
-    def __init__(self, name, unnamed):
+    def __init__(self, name, unnamed, size_in_bits):
         self.name = name # string
         self.unnamed = unnamed # boolean
         self.fields = []
+        self.size_in_bits = size_in_bits # int
 
     def add_field(self, field_name, field_type):
         self.fields.append(StructField(field_name, field_type))
@@ -343,10 +344,10 @@ def get_structs(structs_filename):
     for line in fp:
         tokens = line.split()
 
-        assert tokens[1] == '1' or tokens[1] == '0'
-        s = StructFields(tokens[0], tokens[1] == '1')
+        assert tokens[2] == '1' or tokens[2] == '0'
+        s = StructFields(tokens[0], tokens[2] == '1', int(tokens[1]))
 
-        field_info_str = ' '.join(tokens[2:])
+        field_info_str = ' '.join(tokens[3:])
         tokens = field_info_str.split('"')
         remove_empties = [i for i in tokens if len(i) > 0]
         assert len(remove_empties) % 2 == 0
@@ -663,7 +664,8 @@ if __name__ == '__main__':
                           get_alias_str(module_id_str, reachable[k]))
 
     for s in structs:
-        output_file.write(',\n        /* struct */ "' + s.name + '", ' + str(len(s.fields)))
+        output_file.write(',\n        /* struct */ "' + s.name + '", ' +
+                          str(s.size_in_bits) + 'UL, ' + str(len(s.fields)))
         for field in s.fields:
             output_file.write(', "' + field.ty + '"')
             if s.unnamed:

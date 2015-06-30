@@ -1,15 +1,15 @@
-223 20 14 malloc 0 1 avi_t idx video_index
-242 7 14 free
-255 7 14 free
-177 12 1992 realloc
-1050 19 2396 free
-1051 27 2396 free
-1054 4 2421 free
-1073 19 14 malloc 0 1 avi_t idx video_index
-1089 7 14 free
-1169 43 4162 malloc
-1192 47 4632 malloc
-1302 4 4162 free
-1419 45 4632 malloc 0 1 video_index_entry
-1424 55 4632 malloc 0 1 audio_index_entry
-1106 19 14 malloc 0 1 avi_t idx video_index
+223 20 18 malloc 0 1 avi_t idx video_index
+242 7 18 free
+255 7 18 free
+177 12 2077 realloc
+1050 19 2537 free
+1051 27 2537 free
+1054 4 2565 free
+1073 19 18 malloc 0 1 avi_t idx video_index
+1089 7 18 free
+1169 43 4375 malloc
+1192 47 4854 malloc
+1302 4 4375 free
+1419 45 4854 malloc 0 1 video_index_entry
+1424 55 4854 malloc 0 1 audio_index_entry
+1106 19 18 malloc 0 1 avi_t idx video_index

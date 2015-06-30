@@ -1,25 +1,28 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 5 6 len=3 bar_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 18 21 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 18 42 , 1131839765304168651UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 18 42 , 1131839765304168652UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 19 21 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 19 42 , 1131839765304168671UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 19 42 , 1131839765304168672UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 18 21 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 18 42 , 1131839765304168651UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 18 42 , 1131839765304168652UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 19 21 len=6 malloc_wrapper
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 19 42 , 1131839765304168671UL, 0, 0
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 19 42 , 1131839765304168672UL, 0, 0
 InsertText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 9 9 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_1, ____chimes_did_disable0); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 14 5 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_1, ____chimes_did_disable0); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 5 26 const int ____chimes_did_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 2, 0, (size_t)(1131839765304168636UL), (size_t)(1131839765304168637UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 27 5 rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable1); 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 17 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1131839765304168680UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 27 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 17 33 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(1131839765304168684UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 28 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 5 27 const int ____chimes_did_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 2, 0, (size_t)(1131839765304168636UL), (size_t)(1131839765304168637UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 5 189 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 17 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1131839765304168680UL)); ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 17 34 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1131839765304168684UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 17 170 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 18 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 1131839765304168651UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 18 5  int *A;  A = ((int *)malloc_wrapper(sizeof(int) * 10, 1131839765304168652UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 18 82 
-ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 19 5  int *B;  B = ((int *)malloc_wrapper(sizeof(int) * 10, 1131839765304168671UL, 0, 0)) ;
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 19 5  int *B;  B = ((int *)malloc_wrapper(sizeof(int) * 10, 1131839765304168672UL, 0, 0)) ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 19 82 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 27 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 27 30 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 22 5  call_lbl_3: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 5 6 len=3 bar_quick
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./cond_void_return.cpp 5 188  ;  

@@ -4,6 +4,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|num_frames|0 " i32 " 32 0 0 1 AVI_open_input_file AVI_print_error TMatrix dilate_f ellipsematching ellipsetrack get_frame get_row get_time getfdriv getsampling gradient_x gradient_y linear_interp2 m_free m_get m_max m_min mean mmtr_mlt splineenergyform01 std_dev structuring_element uniformseg v_free v_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|video_file_name|0 " i8* " 64 1 0 1 AVI_open_input_file AVI_print_error TMatrix dilate_f ellipsematching ellipsetrack get_frame get_row get_time getfdriv getsampling gradient_x gradient_y linear_interp2 m_free m_get m_max m_min mean mmtr_mlt splineenergyform01 std_dev structuring_element uniformseg v_free v_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|cell_file|0 " %struct.avi_t* " 64 1 0 1 AVI_print_error TMatrix dilate_f ellipsematching ellipsetrack get_frame get_row get_time getfdriv getsampling gradient_x gradient_y linear_interp2 m_free m_get m_max m_min mean mmtr_mlt splineenergyform01 std_dev structuring_element uniformseg v_free v_get
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|i|0 " i32 " 32 0 0 1 TMatrix dilate_f ellipsetrack get_row get_time getfdriv getsampling linear_interp2 m_free m_get m_max m_min mean mmtr_mlt splineenergyform01 std_dev structuring_element uniformseg v_free v_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|j|0 " i32 " 32 0 0 1 TMatrix dilate_f ellipsetrack get_row get_time getfdriv getsampling linear_interp2 m_free m_get m_max m_min mean mmtr_mlt splineenergyform01 std_dev structuring_element uniformseg v_free v_get
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|crow|0 " i32* " 64 1 0 1 TMatrix ellipsetrack get_row get_time getfdriv getsampling linear_interp2 m_free m_get m_max m_min mean mmtr_mlt splineenergyform01 std_dev uniformseg v_free v_get
@@ -64,3 +65,4 @@
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|num_snaxels|0 " i32 " 32 0 0 1 ellipsetrack get_time
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|____chimes_unroll_var_1|0 " i64 " 64 0 0 1 get_time
 /scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|____chimes_unroll_var_2|0 " i64 " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/leukocyte/OpenMP/detect_main.c main|____chimes_ret_var_1|0 " i32 " 32 0 0 0

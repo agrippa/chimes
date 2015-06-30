@@ -12,6 +12,7 @@ static int ____must_checkpoint_main_a_0 = 2;
 
 
 static unsigned ____alias_loc_id_0;
+static unsigned ____alias_loc_id_1;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -1446,7 +1447,7 @@ extern void __assert (const char *__assertion, const char *__file, int __line)
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7217384500467208951UL)) ; int a[] = { 1, 2, 3, 4, 5 };
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7217384500467208955UL)) ; int a[] = { 1, 2, 3, 4, 5 };
  register_stack_vars(1, "main|a|0", (int *)0x0, "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
      ;
@@ -1470,10 +1471,10 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = n
     ((a[4] == 1) ? static_cast<void> (0) : __assert_fail ("a[4] == 1", "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp", 15, __PRETTY_FUNCTION__));
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
-}
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7217384500467208951UL)) ; int a[] = { 1, 2, 3, 4, 5 };
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7217384500467208955UL)) ; int a[] = { 1, 2, 3, 4, 5 };
  register_stack_vars(1, "main|a|0", (int *)0x0, "[5 x i32]", (void *)(a), (size_t)20, 0, 0, 0); ; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
      ;
@@ -1497,9 +1498,9 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_s
     ((a[4] == 1) ? static_cast<void> (0) : __assert_fail ("a[4] == 1", "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp", 15, __PRETTY_FUNCTION__));
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
-    rm_stack(false, 0UL, "main", (int *)0x0, 0, ____chimes_did_disable0); return 0;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 18 "/home/jmg3/num-debug/src/examples/cpp/./stack_array.cpp"
-}
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
 
 int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
@@ -1510,9 +1511,10 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(7217384500467208887UL, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
+    init_module(7217384500467208887UL, 1, 1, 1, 2, 0, 0, 0, 0, 0, 0,
                            &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (7217384500467208887UL + 1UL), (7217384500467208887UL + 2UL), (7217384500467208887UL + 3UL), (7217384500467208887UL + 4UL),
-                             (7217384500467208887UL + 3UL), (7217384500467208887UL + 64UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (7217384500467208887UL + 5UL),
+                             (7217384500467208887UL + 3UL), (7217384500467208887UL + 68UL),
                              "main", "main", 1, "checkpoint",
                         "main|a|0", 1, "main");
     return 0;
