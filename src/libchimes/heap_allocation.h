@@ -129,6 +129,10 @@ class heap_allocation {
                 tmp_buffer(NULL), is_cuda_alloc(set_is_cuda_alloc),
                 invalid_hashes(true), n_hash_chunks(0), hashes(NULL),
                 hash_chunk_start(NULL), hash_chunk_end(NULL) {
+#ifdef VERBOSE
+            fprintf(stderr, "creating new heap allocation address=%p size=%lu "
+                    "group=%lu\n", set_address, set_size, set_alias_group);
+#endif
             gen_hash_parameters(chunker);
         }
 

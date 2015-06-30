@@ -773,13 +773,17 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     # error code and one checkpoint file.
     assert 'CHIMES_CHECKPOINT_FILE' not in env
     env['CHIMES_DISABLE_THROTTLING'] = 'TRUE'
+    if config.verbose:
+        print('Executing cmd "' + exec_cmd + '"')
     stdout, stderr, code = run_cmd(exec_cmd, True, env=env)
+    if config.verbose:
+        print('Main execution completed')
 
     if code != test.expected_code:
         sys.stderr.write('Test ' + test.name + ' expected exit code ' +
                          str(test.expected_code) + ' but got ' + str(code) +
                          '\n')
-        sys.stderr.write('Command = ' + exec_cmd + '\n')
+        sys.stderr.write('Command = CHIMES_DISABLE_THROTTLING=TRUE ' + exec_cmd + '\n')
         sys.stderr.write('Folder ' + work_folder + '\n')
         print_and_abort(stdout, stderr)
 
@@ -840,7 +844,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
 
         if config.verbose:
             sys.stderr.write('========== RESUME of checkpoint ' + checkpoint +
-                  ' ==========')
+                  ' ==========\n')
             print_and_abort(stdout, stderr, abort=False)
 
         completed_checkpoints += 1
