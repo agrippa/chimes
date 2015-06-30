@@ -134,6 +134,7 @@ BRACE_INSERT=${CHIMES_HOME}/src/preprocessing/brace_insert/brace_insert
 FUNCTION_UNROLL=${CHIMES_HOME}/src/preprocessing/function_unroll/function_unroll
 RETURN_UNROLL=${CHIMES_HOME}/src/preprocessing/return_unroll/return_unroll
 CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
+FIND_ALLOCATORS=${CHIMES_HOME}/src/preprocessing/find_allocators/find_allocators
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
 REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
@@ -195,6 +196,12 @@ for INPUT in ${ABS_INPUTS[@]}; do
            ${CHIMES_DEF} ${DEFINES} ${ADDED_INCLUDES}"
     [[ ! $VERBOSE ]] || echo $PREPROC_CMD
     cd ${WORK_DIR} && ${PREPROC_CMD}
+
+    echo Searching for allocators in ${PREPROCESS_FILE}
+    cd ${WORK_DIR} && ${FIND_ALLOCATORS} -o ${PREPROCESS_FILE}.garbage \
+        -a ${INFO_FILE_PREFIX}.allocators.info ${PREPROCESS_FILE} -- \
+        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES}
 
     echo Inserting line pragmas in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && cat ${PREPROCESS_FILE} | python ${INSERT_LINES} ${INPUT} > \
