@@ -92,6 +92,9 @@ static llvm::cl::opt<std::string> function_pointers_loaded_file("j",
 static llvm::cl::opt<std::string> merge_file("u",
         llvm::cl::desc("Merge file"),
         llvm::cl::value_desc("merge_file"));
+static llvm::cl::opt<std::string> allocator_file("y",
+        llvm::cl::desc("Allocator file"),
+        llvm::cl::value_desc("allocator_file"));
 
 DesiredInsertions *insertions = NULL;
 std::map<std::string, OMPTree *> ompTrees;
@@ -527,6 +530,7 @@ int main(int argc, const char **argv) {
   check_opt(list_of_externs_file, "List of externs file");
   check_opt(function_pointers_loaded_file, "Function pointers loaded file");
   check_opt(merge_file, "Merge file");
+  check_opt(allocator_file, "Allocator file");
 
   merge_filename = std::string(merge_file.c_str());
 
@@ -567,7 +571,8 @@ int main(int argc, const char **argv) {
               original_file.c_str(), diag_file.c_str(),
               working_directory.c_str(), func_file.c_str(), call_file.c_str(),
               exit_file.c_str(), reachable_file.c_str(), omp_file.c_str(),
-              firstprivate_file.c_str(), call_tree_file.c_str());
+              firstprivate_file.c_str(), call_tree_file.c_str(),
+              allocator_file.c_str());
 
   // Dump module ID
   std::ofstream module_id_stream;
