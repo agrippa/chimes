@@ -39,6 +39,21 @@ size_t DesiredInsertions::unique_alias(size_t alias) {
     else return module_id + alias;
 }
 
+std::set<std::string> *DesiredInsertions::parseAllocators() {
+    std::set<std::string> *allocators = new std::set<std::string>();
+
+    std::ifstream fp;
+    fp.open(allocator_file, std::ios::in);
+    std::string line;
+
+    while (getline(fp, line)) {
+        allocators->insert(line);
+    }
+    fp.close();
+
+    return allocators;
+}
+
 std::vector<OpenMPPragma> *DesiredInsertions::parseOMPPragmas() {
     std::vector<OpenMPPragma> *pragmas = new std::vector<OpenMPPragma>();
 
