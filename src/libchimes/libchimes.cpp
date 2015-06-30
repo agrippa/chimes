@@ -56,7 +56,7 @@
 
 using namespace std;
 
-// #define HASHING_DIAGNOSTICS
+#define HASHING_DIAGNOSTICS
 
 /*
  * A note on OMP nested parallelism and how that maps to pthreads.
@@ -1438,12 +1438,13 @@ void init_chimes(int argc, char **argv) {
             assert(unpacked_constants->find(id) != unpacked_constants->end());
             constant_var *dead = unpacked_constants->at(id);
 
+#ifdef VERBOSE
+            fprintf(stderr, "Read constant %d at address %p with length %lu\n",
+                    id, dead->get_address(), dead->get_length());
+#endif
+
             assert(dead->get_length() == live->get_length());
 
-            // assert(old_to_new->find(dead->get_address()) == old_to_new->end());
-            // old_to_new->insert(pair<void *, ptr_and_size *>(dead->get_address(),
-            //             new ptr_and_size(live->get_address(),
-            //                 live->get_length())));
             old_to_new->insert(dead->get_address(), live->get_address(), live->get_length());
         }
 
@@ -1458,9 +1459,6 @@ void init_chimes(int argc, char **argv) {
             void *live = function_addresses.at(i->first);
             void *dead = i->second;
 
-            // assert(old_to_new->find(dead) == old_to_new->end());
-            // old_to_new->insert(pair<void *, ptr_and_size *>(dead,
-            //             new ptr_and_size(live, 1)));
             old_to_new->insert(dead, live, 1);
         }
         delete unpacked_function_addresses;
@@ -2885,7 +2883,7 @@ void malloc_helper(void *new_ptr, size_t nbytes, size_t group,
     if (alias_to_heap.find(group) == alias_to_heap.end()) {
         alias_to_heap[group] = new vector<heap_allocation *>();
     }
-    alias_to_heap[group]->push_back(alloc);
+    alias_to_heap.at(group)->push_back(alloc);
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
 }
 
@@ -2911,12 +2909,12 @@ void *malloc_wrapper(size_t nbytes, size_t group, int is_ptr, int is_struct,
         perf_profile::current_time_ns();
     assert(valid_group(group));
 
-#ifdef VERBOSE
-    fprintf(stderr, "malloc_wrapper: nbytes=%lu group=%lu is_ptr=%d "
-            "is_struct=%d\n", nbytes, group, is_ptr, is_struct);
-#endif
-
     void *ptr = malloc(nbytes);
+
+#ifdef VERBOSE
+    fprintf(stderr, "malloc_wrapper: nbytes=%lu group=%lu ptr=%p is_ptr=%d "
+            "is_struct=%d\n", nbytes, group, ptr, is_ptr, is_struct);
+#endif
 
     if (nbytes > 0 && ptr != NULL) {
         chimes_type_info info; memset(&info, 0x00, sizeof(info));
@@ -3098,20 +3096,32 @@ map<void *, heap_allocation *>::iterator find_in_heap(void *ptr) {
 }
 
 void free_wrapper(void *ptr, size_t group) {
+#ifdef VERBOSE
+    fprintf(stderr, "free_wrapper: ptr=%p group=%lu\n", ptr, group);
+#endif
+
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
     const unsigned long long __chimes_overhead_start_time =
         perf_profile::current_time_ns();
-    map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
-    size_t original_group = in_heap->second->get_alias_group();
 
-    assert(aliased(original_group, group, true));
+    if (ptr != NULL) {
+        /*
+         * free is a no-op on NULL pointers. I've seen this behavior in some
+         * applications, for example when the host application does a 0-byte
+         * allocation and then frees it.
+         */
+        map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
+        size_t original_group = in_heap->second->get_alias_group();
 
-    __sync_fetch_and_sub(&total_allocations, in_heap->second->get_size());
+        assert(aliased(original_group, group, true));
 
-    free_helper(ptr);
-    free(ptr);
+        __sync_fetch_and_sub(&total_allocations, in_heap->second->get_size());
+
+        free_helper(ptr);
+        free(ptr);
+    }
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(FREE_WRAPPER, __start_time);
@@ -3734,8 +3744,8 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                     } else {
                         if (curr->hashes_invalid()) {
 #ifdef HASHING_DIAGNOSTICS
-                            fprintf(stderr, "  hashing allocation due to invalid hashes, size=%lu "
-                                    "copied_so_far=%lu desired=%lu\n", curr->get_size(),
+                            fprintf(stderr, "  hashing allocation due to invalid hashes, address=%p size=%lu "
+                                    "copied_so_far=%lu desired=%lu\n", curr->get_address(), curr->get_size(),
                                     copied_so_far, desired_checkpoint_size);
 #endif
 

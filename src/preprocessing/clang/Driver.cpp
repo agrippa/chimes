@@ -215,7 +215,6 @@ public:
                   std::string mangled = constructMangledName(
                           param->getName().str());
                   StackAlloc *alloc = insertions->findStackAlloc(mangled);
-                  llvm::errs() << "Param variable " << param->getName().str() << " " << mangled << " " << alloc << "\n";
                   if (alloc != NULL) {
                       insert_at_front->push_back(alloc);
                   }

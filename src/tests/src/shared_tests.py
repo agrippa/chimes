@@ -8,7 +8,7 @@ from common import FrontendTest, RuntimeTest
 RODINIA_HOME = os.environ['RODINIA_HOME']
 RODINIA_DATA = path.join(RODINIA_HOME, 'data')
 RODINIA_TESTS = ['backprop', 'bfs', 'b+tree', 'heartwall', 'hotspot',
-                 'kmeans', 'lavaMD', 'leukocyte/OpenMP', 'lud', 'myocyte',
+                 'kmeans', 'lavaMD', 'lud', 'myocyte',
                  'nn', 'nw', 'particlefilter', 'srad']
 RODINIA_CLI_ARGS = {'backprop': '65536',
                     'bfs': '4 ' + path.join(RODINIA_DATA, 'bfs/graph1MW_6.txt'),
@@ -25,7 +25,7 @@ RODINIA_CLI_ARGS = {'backprop': '65536',
                     'kmeans': '-n 4 -i ' + path.join(RODINIA_DATA,
                                                      'kmeans/kdd_cup'),
                     'lavaMD': '-cores 4 -boxes1d 10',
-                    'leukocyte/OpenMP': '5 4 ' + \
+                    'leukocyte': '5 4 ' + \
                                         path.join(RODINIA_DATA,
                                                   'leukocyte/testfile.avi'),
                     'lud': '-i ' + path.join(RODINIA_DATA, 'lud/512.dat'),
@@ -43,7 +43,10 @@ EXCLUDED_FILES={'lud': ['omp/lud.c', 'omp/lud_omp.c', 'gen_input.c'],
 #   2. mummergpu uses CUDA
 #   3. pathfinder uses C++
 #   3. streamcluster uses C++
-EXCLUDED_RODINIA_TEST = ['cfd', 'mummergpu', 'pathfinder', 'streamcluster']
+#   4. leukocyte uses function calls within defines. This seems to break
+#      everything, as the function call location is set at column 0 from LLVM.
+EXCLUDED_RODINIA_TEST = ['cfd', 'mummergpu', 'pathfinder', 'streamcluster',
+                         'leukocyte']
 ALL_RODINIA_FRONTEND_TESTS = []
 ALL_RODINIA_RUNTIME_TESTS = []
 for rtest in RODINIA_TESTS:
@@ -68,12 +71,12 @@ for rtest in RODINIA_TESTS:
 
     compilation_args = '-D ANSI_C'
 
-    if rtest == 'leukocyte/OpenMP':
+    if rtest == 'leukocyte':
         compilation_args += ' -I ' + path.join(RODINIA_HOME, 'openmp',
                                                  'leukocyte', 'meschach_lib')
-        compilation_args += ' -x ' + path.join(RODINIA_HOME, 'openmp',
-                                                 'leukocyte', 'meschach_lib',
-                                                 'libmeschach.a')
+        # compilation_args += ' -x ' + path.join(RODINIA_HOME, 'openmp',
+        #                                          'leukocyte', 'meschach_lib',
+        #                                          'libmeschach.a')
     elif rtest == 'lud':
         compilation_args += ' -I ' + path.join(RODINIA_HOME, 'openmp', 'lud',
                                                   'common')
@@ -109,7 +112,7 @@ SPEC_BOTSALGN_FRONTEND = FrontendTest('SPECBotsAlgn',
 # ../bin/runspec --config=davinci.cfg --size=ref --noreportable --tune=base \
 #                --iterations=1 --threads=12 botsalgn --verbose=1000 &> log
 SPEC_BOTSALGN_RUNTIME = RuntimeTest(SPEC_BOTSALGN_FRONTEND.name,
-                                    SPEC_BOTSALGN_FRONTEND.input_files, 0, 0,
+                                    SPEC_BOTSALGN_FRONTEND.input_files, 0, -1,
                                     src_folder=SPEC_BOTSALGN_FRONTEND.src_folder,
                                     extra_compile_args=SPEC_BOTSALGN_FRONTEND.extra_cli_args,
                                     cli_args='-f ' + path.join(SPEC_BOTSALGN_ROOT, '..',
@@ -130,7 +133,7 @@ SPEC_BOTSSPAR_FRONTEND = FrontendTest('SPECBotsSpar',
                              src_folder=SPEC_BOTSSPAR_ROOT,
                              extra_cli_args=SPEC_BOTSSPAR_CUSTOM)
 SPEC_BOTSSPAR_RUNTIME = RuntimeTest(SPEC_BOTSSPAR_FRONTEND.name,
-                                    SPEC_BOTSSPAR_FRONTEND.input_files, 0, 0,
+                                    SPEC_BOTSSPAR_FRONTEND.input_files, 0, -1,
                                     src_folder=SPEC_BOTSSPAR_FRONTEND.src_folder,
                                     extra_compile_args=SPEC_BOTSSPAR_FRONTEND.extra_cli_args,
                                     cli_args='-n 50 -m 25')
@@ -151,7 +154,7 @@ SPEC_SMITHWA_FRONTEND = FrontendTest('SPECSmithwa',
                             src_folder=SPEC_SMITHWA_ROOT,
                             extra_cli_args=SPEC_SMITHWA_CUSTOM)
 SPEC_SMITHWA_RUNTIME = RuntimeTest(SPEC_SMITHWA_FRONTEND.name,
-                                    SPEC_SMITHWA_FRONTEND.input_files, 0, 0,
+                                    SPEC_SMITHWA_FRONTEND.input_files, 0, -1,
                                     src_folder=SPEC_SMITHWA_FRONTEND.src_folder,
                                     extra_compile_args=SPEC_SMITHWA_FRONTEND.extra_cli_args,
                                     cli_args='30')
@@ -166,7 +169,7 @@ SPEC_KDTREE_FRONTEND = FrontendTest('SPECKDTree', ['specrand.c', 'kdtree.cc'],
                            'spec-kdtree', True, src_folder=SPEC_KDTREE_ROOT,
                            extra_cli_args=SPEC_KDTREE_CUSTOM)
 SPEC_KDTREE_RUNTIME = RuntimeTest(SPEC_KDTREE_FRONTEND.name,
-                                  SPEC_KDTREE_FRONTEND.input_files, 0, 0,
+                                  SPEC_KDTREE_FRONTEND.input_files, 0, -1,
                                   src_folder=SPEC_KDTREE_FRONTEND.src_folder,
                                   extra_compile_args=SPEC_KDTREE_FRONTEND.extra_cli_args,
                                   cli_args='100000 10 2')

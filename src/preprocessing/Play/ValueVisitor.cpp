@@ -335,8 +335,7 @@ size_t ValueVisitor::visitCall(CallInst *call, Value *prev) {
         }
     }
 
-    if (call->getCalledFunction() &&
-            call->getCalledFunction()->getReturnType()->isPointerTy()) {
+    if (call->getType()->isPointerTy()) {
         return H->get(call);
     } else {
         return 0;

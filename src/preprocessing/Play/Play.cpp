@@ -1317,12 +1317,27 @@ void Play::updateChanges(CallInst *call, Function *callee,
 #ifdef VERBOSE
             llvm::errs() << "  Handling as function pointer\n";
 #endif
-            if (call->getType()->isPointerTy()) {
+            /*
+             * If a call has no uses (i.e. its return value is unused) then it
+             * will not be present in value_to_alias_group. However, this also
+             * means the returned value is never referenced. Therefore, we
+             * assume that if the returned value was changed and we care about
+             * checkpointing it because it is used later in the program, it must
+             * also be referenced from somewhere else (e.g. as a parameter to
+             * the function or as a global).
+             */
+            if (call->getType()->isPointerTy() && call->getNumUses() > 0) {
+#ifdef VERBOSE
+                llvm::errs() << "    Adding return value as changed\n";
+#endif
                 changed_and_children->insert(value_to_alias_group->at(call));
             }
             for (unsigned arg = 0; arg < call->getNumArgOperands(); arg++) {
                 Value *arg_val = call->getArgOperand(arg);
                 if (arg_val->getType()->isPointerTy()) {
+#ifdef VERBOSE
+                    llvm::errs() << "    Adding parameter " << arg << " as changed\n";
+#endif
                     changed_and_children->insert(value_to_alias_group->at(arg_val));
                 }
             }
