@@ -188,14 +188,18 @@ std::string StartExitPass::constructFunctionEndingStmts(bool inserting_rm,
         } else {
             address_of_cond_varname = "(int *)0x0";
         }
+
+        std::string is_allocator_str = (insertions->isAllocator(curr_func) ?
+                "true" : "false");
         if (info->get_return_alias() == 0) {
             ss << "rm_stack(false, 0UL, \"" << curr_func << "\", " <<
                 address_of_cond_varname << ", " << loc_id << ", " <<
-                *current_disable_varname << "); ";
+                *current_disable_varname << ", " << is_allocator_str << "); ";
         } else {
             ss << "rm_stack(true, " << info->get_return_alias() << "UL, \"" <<
                 curr_func << "\", " << address_of_cond_varname << ", " <<
-                loc_id << ", " << *current_disable_varname << "); ";
+                loc_id << ", " << *current_disable_varname << ", " <<
+                is_allocator_str << "); ";
         }
     } else {
         if (groups_changed.size() > 0 ||
