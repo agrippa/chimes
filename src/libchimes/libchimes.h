@@ -20,7 +20,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);

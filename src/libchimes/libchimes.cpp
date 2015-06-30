@@ -203,7 +203,8 @@ class checkpoint_ctx {
 int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned n_local_arg_aliases, unsigned n_args, ...);
 void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id);
+        const char *funcname, int *conditional, unsigned loc_id,
+        bool is_allocator);
 void register_stack_var(const char *mangled_name, int *cond_registration,
         unsigned thread, const char *full_type, void *ptr, size_t size,
         int is_ptr, int is_struct, int n_ptr_fields, ...);
@@ -2451,8 +2452,27 @@ void calling(void *func_ptr, int lbl, unsigned loc_id, size_t return_alias,
 }
 
 static void add_return_alias(bool has_return_alias, size_t returned_alias,
-        thread_ctx *ctx) {
+        thread_ctx *ctx, bool is_allocator) {
     size_t this_return_alias = ctx->pop_return_alias();
+    if (is_allocator || !valid_group(this_return_alias)) {
+        /*
+         * is_allocator indicates that the function we are currently inside is simply
+         * used as a utility to allocate memory. These functions can cause a lot of
+         * mis-aliasing because everything they return becomes aliased. We special
+         * case these functions with function attributes, and ignore their return
+         * aliasing.
+         *
+         * It is possible for a return alias to be invalid if the callee
+         * function is identified as an allocator function.
+         *
+         * is_allocator is set when we can figure out in the callee context that
+         * we are an allocator. A return alias of 0 is set in the caller context
+         * when we can determine the function we're calling is an allocator.
+         *
+         * This would be a useful optimization to merge into master.
+         */
+        return;
+    }
 
     /*
      * We pass returned_alias as 0 here when the value being returned is not a
@@ -2474,7 +2494,7 @@ static inline void alias_group_changed_helper(unsigned loc_id,
 
 void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id,
-        int did_disable) {
+        int did_disable, bool is_allocator) {
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -2495,7 +2515,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
             alias_group_changed_helper(loc_id, ctx);
         }
         if (did_disable == NOT_DISABLED) {
-            add_return_alias(has_return_alias, returned_alias, ctx);
+            add_return_alias(has_return_alias, returned_alias, ctx, is_allocator);
         }
 
         reenable_current_thread(did_disable == DISABLED);
@@ -2512,7 +2532,7 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
     program_stack->pop_back();
     delete curr;
 
-    add_return_alias(has_return_alias, returned_alias, ctx);
+    add_return_alias(has_return_alias, returned_alias, ctx, is_allocator);
 
     ctx->get_stack_tracker().pop();
     ctx->decrement_stack_nesting();
@@ -3546,7 +3566,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
             VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
 
-            rm_stack(false, 0, "checkpoint", NULL, 0, 0);
+            rm_stack(false, 0, "checkpoint", NULL, 0, 0, false);
             ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
             pp.add_time(CHECKPOINT, __start_time);
@@ -3865,7 +3885,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
             }
         }
     } else {
-        rm_stack(false, 0, "checkpoint", NULL, 0, 0);
+        rm_stack(false, 0, "checkpoint", NULL, 0, 0, false);
         ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
         pp.add_time(CHECKPOINT, __start_time);
@@ -3903,7 +3923,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
         while (clock() - exit_time < my_delta) ;
     }
 
-    rm_stack(false, 0, "checkpoint", NULL, 0, 0);
+    rm_stack(false, 0, "checkpoint", NULL, 0, 0, false);
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(CHECKPOINT, __start_time);
