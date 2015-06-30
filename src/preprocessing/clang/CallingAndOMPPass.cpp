@@ -931,6 +931,11 @@ std::string CallingAndOMPPass::generateNPMCall(CallLocation loc,
     return ss.str();
 }
 
+static size_t get_return_alias(std::string fname,
+        AliasesPassedToCallSite callsite) {
+    return (insertions->isAllocator(fname) ? 0 : callsite.get_return_alias());
+}
+
 std::string CallingAndOMPPass::generateNormalCall(const CallExpr *call,
         CallLocation loc, CallLabel lbl, AliasesPassedToCallSite callsite) {
     std::string func_symbol = get_func_symbol(call, &loc);
@@ -976,8 +981,8 @@ std::string CallingAndOMPPass::generateNormalCall(const CallExpr *call,
     std::string loc_arg = get_loc_arg(call, loc.get_funcname());
 
     ss << " calling((void*)" << func_symbol << ", " << lbl.get_lbl() << ", " <<
-        loc_arg << ", " << callsite.get_return_alias() << "UL, " <<
-        callsite.nparams();
+        loc_arg << ", " << get_return_alias(loc.get_funcname(), callsite) <<
+        "UL, " << callsite.nparams();
     for (unsigned a = 0; a < callsite.nparams(); a++) {
         ss << ", (size_t)(" << callsite.alias_no_for(a) << "UL)";
     }
@@ -990,7 +995,8 @@ void CallingAndOMPPass::addDynamicMerge(AliasesPassedToCallSite callsite,
         std::string callee_name) {
     if (!gen_quick) {
         dynamic_merges.push_back(Merge(callee_name,
-                    callsite.get_return_alias(), callsite.get_param_aliases()));
+                    get_return_alias(callee_name, callsite),
+                    callsite.get_param_aliases()));
     }
 }
 
@@ -998,7 +1004,8 @@ void CallingAndOMPPass::addStaticMerge(AliasesPassedToCallSite callsite,
         std::string callee_name) {
     if (!gen_quick) {
         static_merges.push_back(Merge(callee_name,
-                    callsite.get_return_alias(), callsite.get_param_aliases()));
+                    get_return_alias(callee_name, callsite),
+                    callsite.get_param_aliases()));
     }
 }
 
