@@ -49,6 +49,11 @@ CallingAndOMPPass::CallingAndOMPPass(bool set_gen_quick) :
     supported_parallel_clauses.insert("reduction"); // no explicit support required
     supported_parallel_clauses.insert("num_threads");
     /*
+     * assume that if collapse is present this is a parallel for, otherwise the
+     * compiler will throw an error.
+     */
+    supported_parallel_clauses.insert("collapse");
+    /*
      * We don't actually support checkpointing inside parallel for loops, but we
      * allow them to exist as long as checkpoint() isn't called inside.
      */
@@ -64,6 +69,7 @@ CallingAndOMPPass::CallingAndOMPPass(bool set_gen_quick) :
     supported_for_clauses.insert("private");
     supported_for_clauses.insert("reduction");
     supported_for_clauses.insert("schedule");
+    supported_for_clauses.insert("collapse");
     supported_omp_clauses.insert(pair<string, set<string> >("for",
                 supported_for_clauses));
 
@@ -72,6 +78,7 @@ CallingAndOMPPass::CallingAndOMPPass(bool set_gen_quick) :
     supported_task_clauses.insert("private");
     supported_task_clauses.insert("shared");
     supported_task_clauses.insert("untied");
+    supported_task_clauses.insert("if");
     supported_omp_clauses.insert(pair<string, set<string> >("task",
                 supported_task_clauses));
 
@@ -80,16 +87,26 @@ CallingAndOMPPass::CallingAndOMPPass(bool set_gen_quick) :
     supported_omp_clauses.insert(pair<string, set<string> >("single",
                 supported_single_clauses));
 
+    std::set<std::string> supported_master_clauses;
+    supported_omp_clauses.insert(pair<string, set<string> >("master",
+                supported_master_clauses));
+
     supported_omp_pragmas.insert("parallel");
     supported_omp_pragmas.insert("for");
     supported_omp_pragmas.insert("critical");
     supported_omp_pragmas.insert("barrier");
     supported_omp_pragmas.insert("task");
     supported_omp_pragmas.insert("single");
+    supported_omp_pragmas.insert("master");
     // don't need to do anything, but we also don't support checkpoints inside task
     supported_omp_pragmas.insert("taskwait");
     // don't need to do anything
     supported_omp_pragmas.insert("flush");
+    /*
+     * Since compilers wouldn't allow a checkpoint() call to be made inside of
+     * an atomic pragma, no special handling is needed.
+     */
+    supported_omp_pragmas.insert("atomic");
 }
 
 std::string CallingAndOMPPass::get_unique_argument_varname() {
@@ -1109,8 +1126,10 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         bool is_critical = (pragma_name == "critical");
         bool is_task = (pragma_name == "task");
         bool is_single = (pragma_name == "single");
+        bool is_master = (pragma_name == "master");
         bool is_taskwait = (pragma_name == "taskwait");
         bool is_flush = (pragma_name == "flush");
+        bool is_atomic = (pragma_name == "atomic");
         if (supported_omp_pragmas.find(pragma_name) == supported_omp_pragmas.end()) {
             llvm::errs() << "Unexpected pragma name " << pragma_name << "\n";
             assert(false);
@@ -1151,6 +1170,11 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             pre_loc = pre->getLocEnd();
         }
 
+        while (SM->getPresumedLoc(pre_loc).getLine() < pragma.get_line()) {
+            pre_loc = pre_loc.getLocWithOffset(1);
+        }
+        pre_loc = pre_loc.getLocWithOffset(-1);
+
         const clang::Stmt *post = successors.at(pragma.get_line());
         clang::SourceLocation post_loc = post->getLocEnd();
         clang::SourceLocation inner_loc = post->getLocStart();
@@ -1185,13 +1209,13 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             if (new_stack_calls[curr_func_decl]->getLocEnd() == pre_loc) {
                 insert_at_front = region_entry_code;
             } else {
-                InsertTextAfterToken(pre_loc, region_entry_code);
+                InsertTextAfterToken(pre_loc, "\n" + region_entry_code);
             }
 
             std::string interior = get_region_interior_code(is_parallel_for,
                     blocker_varname, parent_thread_varname, parent_ctx_varname,
                     stack_depth_varname, region_id_varname, private_vars);
-            InsertTextAfterToken(inner_loc, interior);
+            InsertText(inner_loc, interior, false, false);
 
             std::string leaving = get_region_cleanup_code(is_parallel_for,
                     disable_varname, call_depth_varname, region_id_varname);
@@ -1218,7 +1242,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             }
 
             InsertTextAfterToken(post_loc, post);
-        } else if (is_task || is_single) {
+        } else if (is_task || is_single || is_master) {
             std::string disable_varname = get_unique_disable_varname();
             std::string pre = " ; { bool " + disable_varname + "; " +
                 disable_varname + " = disable_current_thread(); ";
@@ -1229,10 +1253,10 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             clang::SourceLocation inner_loc = body->getLocStart();
             inner_loc = adjustInnerOMPLoc(inner_loc, region->get_last_line());
 
-            InsertTextAfterToken(inner_loc, pre);
+            InsertText(inner_loc, pre + "\n", false, false);
 
             InsertTextAfterToken(body->getLocEnd(), post);
-        } else if (is_taskwait || is_flush) {
+        } else if (is_taskwait || is_flush || is_atomic) {
         } else {
             assert(false);
         }
@@ -1355,7 +1379,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
                     if (is_converted_to_npm) {
                         // Local, static
-                        addStaticMerge(callsite, loc.get_funcname());
+                        if (no_checkpoint) {
+                            addStaticMerge(callsite, loc.get_funcname());
+                        }
                     } else {
                         // External, dynamic
                         addDynamicMerge(callsite, loc.get_funcname());

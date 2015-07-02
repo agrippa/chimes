@@ -6,6 +6,7 @@ import os
 import sys
 from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
          cleanup_runtime_files, find_file
+from shared_tests import ALL_RODINIA_RUNTIME_TESTS, ALL_SPEC_RUNTIME_TESTS
 
 OMP_H = find_file('omp.h', '/usr/')
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
@@ -49,6 +50,14 @@ RAY_TRACER_OMP = RuntimeTest('RayTracer-OMP', ['ray_tracer.c'], 0, 10,
 TESTS = [BASIC_PARALLEL, FAIL_CHECKPOINT_IN_FOR, PARALLEL_FOR_PIPELINE,
          LULESH_OMP, COMD_OMP, SMITH_WATERMAN_OMP, ISO3D_OMP, UTS_OMP,
          RAY_TRACER_OMP]
+
+for t in ALL_RODINIA_RUNTIME_TESTS:
+    t.extra_compile_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+TESTS.extend(ALL_RODINIA_RUNTIME_TESTS)
+
+for t in ALL_SPEC_RUNTIME_TESTS:
+    t.extra_compile_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+TESTS.extend(ALL_SPEC_RUNTIME_TESTS)
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'
