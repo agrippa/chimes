@@ -389,6 +389,11 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
     std::vector<ContainedFunctionCall> *calls = ompTree->get_contained_calls(
             region);
 
+    /*
+     * Collect possible jump destinations during resume (either nested regions
+     * or function calls within this region) and construct a switch statement
+     * for resume.
+     */
     std::stringstream ss;
     ss << " switch(get_next_call()) { ";
     for (std::vector<OMPRegion *>::iterator i = children.begin(),
@@ -399,6 +404,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             ss << "case(" << lbl << "): { goto call_lbl_" << lbl << "; } ";
         }
     }
+
     for (std::vector<ContainedFunctionCall>::iterator i = calls->begin(),
             e = calls->end(); i != e; i++) {
         ContainedFunctionCall call = *i;
@@ -418,8 +424,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
      */
     clang::SourceLocation toInsertAt;
     if (region == NULL) {
-        assert(new_stack_calls.find(curr_func_decl) != new_stack_calls.end());
-        const clang::CallExpr *new_stack_call = new_stack_calls[curr_func_decl];
+        const clang::CallExpr *new_stack_call = new_stack_calls.at(curr_func_decl);
         toInsertAt = new_stack_call->getLocEnd().getLocWithOffset(1);
     } else {
         if (region->is_parallel_for()) {
@@ -430,6 +435,9 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         } else {
             toInsertAt = region->get_start();
             toInsertAt = adjustInnerOMPLoc(toInsertAt, region->get_last_line());
+            while (SM->getPresumedLoc(toInsertAt).getLine() == region->get_last_line()) {
+                toInsertAt = toInsertAt.getLocWithOffset(1);
+            }
         }
     }
 
@@ -529,7 +537,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         if (region == NULL) {
             insert_at_front = entry_ss.str() + " " + insert_at_front;
         } else {
-            InsertTextAfterToken(toInsertAt, "; " + entry_ss.str());
+            InsertText(toInsertAt, "; " + entry_ss.str(), false, false);
         }
     }
 
@@ -1185,6 +1193,9 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             inner_loc = for_stmt->getBody()->getLocStart();
         } else {
             inner_loc = adjustInnerOMPLoc(inner_loc, region->get_last_line());
+            while (SM->getPresumedLoc(inner_loc).getLine() == region->get_last_line()) {
+                inner_loc = inner_loc.getLocWithOffset(1);
+            }
         }
 
         if (is_parallel) {
@@ -1262,8 +1273,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         }
     }
 
-    map<std::string, vector<AliasesPassedToCallSite>::iterator> call_tracker;
     // For each call made, create its text insertions
+    map<std::string, vector<AliasesPassedToCallSite>::iterator> call_tracker;
     for (std::map<int, std::vector<CallLocation>>::iterator i =
             calls_found.begin(), e = calls_found.end(); i != e; i++) {
         std::vector<CallLocation> calls = i->second;
@@ -1467,6 +1478,10 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         }
     }
 
+    /*
+     * Assert that all calls to register custom variable initialization handlers
+     * are performed in single-threaded regions.
+     */
     for (std::vector<const CallExpr *>::iterator i =
             calls_to_register_callbacks.begin(), e =
             calls_to_register_callbacks.end(); i != e; i++) {
@@ -1481,7 +1496,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
     VisitRegion(NULL);
 
-    InsertTextAfterToken(new_stack_calls[curr_func_decl]->getLocEnd(),
+    InsertTextAfterToken(new_stack_calls.at(curr_func_decl)->getLocEnd(),
             " ; " + insert_at_front);
 
     vars_in_regions.clear();
@@ -1509,6 +1524,11 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
         clang::PresumedLoc presumed_start = SM->getPresumedLoc(start);
         clang::PresumedLoc presumed_end = SM->getPresumedLoc(end);
 
+        /*
+         * This block of code checks if the current statement is either the
+         * first before (predecessors) or after (successors) the line that an
+         * OMP pragma is on.
+         */
         std::vector<OpenMPPragma> *omp_pragmas =
             insertions->get_omp_pragmas_for(curr_func_decl, *SM);
         for (std::vector<OpenMPPragma>::iterator i = omp_pragmas->begin(),
@@ -1547,6 +1567,10 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
             }
         }
 
+        /*
+         * This block of code finds function calls that need to be labelled for
+         * resume and for stack tracing, marking them with their line number.
+         */
         if (const clang::CallExpr *call =
                 clang::dyn_cast<const clang::CallExpr>(s)) {
 
@@ -1555,8 +1579,7 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
             if (callee_name == "register_custom_init_handler") {
                 calls_to_register_callbacks.push_back(call);
             } else {
-                if (!currently_inside_function_arguments() &&
-                        !clang::isa<const clang::CXXConstructExpr>(call)) {
+                if (!clang::isa<const clang::CXXConstructExpr>(call)) {
                     /*
                      * This means we can't support checkpoints from inside
                      * constructors.
@@ -1565,8 +1588,8 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                     int line_no = presumed.getLine();
 
                     if (calls_found.find(line_no) == calls_found.end()) {
-                        calls_found[line_no] =
-                            std::vector<CallLocation>();
+                        calls_found.insert(pair<int, std::vector<CallLocation> >(
+                                    line_no, std::vector<CallLocation>()));
                     }
                     calls_found.at(line_no).push_back(CallLocation(
                                 callee_name, presumed.getColumn(), call));
@@ -1574,44 +1597,38 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
             }
 
             /*
-             * If not a function pointer call and not a function we know won't
-             * checkpoint, declare a conditional NPM variable for it and create
-             * a function pointer declaration for it.
+             * If this is a direct call to a function declared external to this
+             * compilation unit, declare a conditional NPM variable for it and
+             * create a function pointer declaration for its NPM version.
              */
             if (call->getDirectCallee() &&
                     ignorable->find(callee_name) == ignorable->end() &&
                     callee_name != "checkpoint" &&
                     definitions_in_main_file.find(callee_name) ==
                         definitions_in_main_file.end()) {
-                const FunctionType *ftype =
-                    call->getDirectCallee()->getFunctionType();
-                std::string type_str =
-                    ftype->getCanonicalTypeInternal().getAsString();
-
-                int index = 0;
-                while (type_str[index] != '(') index++;
-                type_str.insert(index, "(*" +
-                        get_external_func_name(callee_name) + ")");
-
                 const int line_no = SM->getPresumedLoc(
                         call->getLocStart()).getLine();
-                std::string varname = get_external_func_name(
-                        callee_name);
 
                 if (external_calls.find(callee_name) ==
                         external_calls.end()) {
-
-                    std::string filename = SM->getPresumedLoc(
-                            call->getLocStart()).getFilename();
-                    const clang::FunctionType *type =
+                    /*
+                     * Construct a function pointer declaration for this
+                     * external function.
+                     */
+                    const FunctionType *ftype =
                         call->getDirectCallee()->getFunctionType();
-                    assert(type);
+                    assert(ftype);
                     std::string type_str =
-                        type->getCanonicalTypeInternal().getAsString();
+                        ftype->getCanonicalTypeInternal().getAsString();
+                    std::string varname = get_external_func_name(
+                            callee_name);
 
                     int index = 0;
                     while (type_str[index] != '(') index++;
                     type_str.insert(index, "(*" + varname + ")");
+
+                    std::string filename = SM->getPresumedLoc(
+                            call->getLocStart()).getFilename();
 
                     external_calls.insert(
                             std::pair<std::string, ExternalNPMCall>(
@@ -1623,6 +1640,10 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                 }
             }
 
+            /*
+             * Keep track of new_stack calls so we can use them as markers to
+             * insert after.
+             */
             if (callee_name == "new_stack") {
                 if (new_stack_calls.find(curr_func_decl) !=
                         new_stack_calls.end()) {
@@ -1631,9 +1652,9 @@ void CallingAndOMPPass::VisitStmt(const clang::Stmt *s) {
                 }
                 new_stack_calls[curr_func_decl] = call;
             }
-
         }
 
+        // Track stack variables to record.
         if (s->getStmtClass() == clang::Stmt::DeclStmtClass) {
             const clang::DeclStmt *d = clang::dyn_cast<clang::DeclStmt>(s);
 

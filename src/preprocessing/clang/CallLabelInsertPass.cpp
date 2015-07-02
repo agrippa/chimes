@@ -43,7 +43,6 @@ void CallLabelInsertPass::VisitStmt(const clang::Stmt *s) {
             std::string callee_name = get_callee_name(call);
 
             if (callee_name != "register_custom_init_handler" &&
-                    !currently_inside_function_arguments() && 
                     !clang::isa<const clang::CXXConstructExpr>(call)) {
                 /*
                  * This means we can't support checkpoints from inside
