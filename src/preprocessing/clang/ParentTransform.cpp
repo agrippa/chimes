@@ -75,8 +75,6 @@ std::string ParentTransform::constructRegisterStackVar(StackAlloc *alloc) {
 
 void ParentTransform::visitChildren(const clang::Stmt *s) {
     setRootFlag(false);
-    bool old = inside_function_arguments;
-    inside_function_arguments = (isa<CallExpr>(s) || old);
 
     for (clang::Stmt::const_child_iterator i = s->child_begin(),
             e = s->child_end(); i != e; i++) {
@@ -87,8 +85,6 @@ void ParentTransform::visitChildren(const clang::Stmt *s) {
             VisitStmt(child);
         }
     }
-
-    inside_function_arguments = old;
 }
 
 std::string ParentTransform::stmtToString(const clang::Stmt* s) {

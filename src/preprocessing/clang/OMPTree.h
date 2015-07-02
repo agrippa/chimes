@@ -66,6 +66,21 @@ class OMPRegion {
         bool parallel_for, omp_for;
         const clang::Stmt *body;
         bool is_critical;
+
+        /*
+         * insert_before_region();
+         * #pragma omp parallel
+         * {
+         *    insert_at_region_start();
+         *    ...
+         *    insert_at_region_end();
+         * }
+         * insert_after_region();
+         */
+        std::vector<std::string> insert_before_region;
+        std::vector<std::string> insert_at_region_start;
+        std::vector<std::string> insert_at_region_end;
+        std::vector<std::string> insert_after_region;
 };
 
 class OMPTree {
