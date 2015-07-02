@@ -753,7 +753,10 @@ bool Play::dumpConstant(GlobalVariable *var, FILE *fp, int constant_index,
         DataLayout *layout) {
     if (var->hasUnnamedAddr()) {
 #ifdef VERBOSE
-        llvm::errs() << "Dumping unnamed constant\n";
+        llvm::errs() << "Dumping unnamed constant, default visibility? " <<
+            var->hasDefaultVisibility() << ", hidden visibility? " <<
+            var->hasHiddenVisibility() << ", protected visibility? " <<
+            var->hasProtectedVisibility() << "\n";
 #endif
         if (var->hasInitializer()) {
             std::string accessable = "";
@@ -958,17 +961,17 @@ ReachableInfo Play::propagateAliases(Module &M, Hasher *H) {
             visitor.get_value_to_alias_group());
 }
 
-static std::string demangleABIName(std::string fname) {
+static std::string demangleABIName(std::string name) {
     std::string result;
 
-    if (fname.size() > 2 && fname[0] == '_' && fname[1] == 'Z') {
+    if (name.size() > 2 && name[0] == '_' && name[1] == 'Z') {
         int status;
         // Mangled function name
-        char *demangled = abi::__cxa_demangle(fname.c_str(), NULL, NULL,
+        char *demangled = abi::__cxa_demangle(name.c_str(), NULL, NULL,
                 &status);
 #ifdef VERBOSE
         if (status) {
-            errs() << "Failed to demangle " << fname << "\n";
+            errs() << "Failed to demangle " << name << "\n";
         }
 #endif
         assert(status == 0);
@@ -988,10 +991,10 @@ static std::string demangleABIName(std::string fname) {
         }
         free(demangled);
     } else {
-        result = fname;
+        result = name;
     }
 #ifdef VERBOSE
-    errs() << "Demangled " << fname << " to " << result << "\n";
+    errs() << "Demangled " << name << " to " << result << "\n";
 #endif
 
     return result;

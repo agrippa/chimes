@@ -20,7 +20,7 @@ OUTPUT_FILE=a.out
 WORK_DIR=
 VERBOSE=0
 LINKER_FLAGS=
-GXX_FLAGS="-O3"
+GXX_FLAGS="-O0 -g"
 DEFINES=
 ADDED_INCLUDES=
 
@@ -176,13 +176,6 @@ for INPUT in ${ABS_INPUTS[@]}; do
     TMP_OBJ_FILE=${WORK_DIR}/$(basename ${INPUT}).o
     ANALYSIS_LOG_FILE=${WORK_DIR}/$(basename ${INPUT}).analysis.log
 
-    if [[ $ENABLE_OMP == 1 ]]; then
-        echo Looking for OpenMP pragmas in ${INPUT}
-        cd ${WORK_DIR} && python ${OMP_FINDER} ${INPUT} > ${INFO_FILE_PREFIX}.omp.info
-    else
-        touch ${INFO_FILE_PREFIX}.omp.info
-    fi
-
     if [[ -f ${WORK_DIR}/${PREPROCESS_FILE} ]]; then
         echo Duplicate input filename $INPUT in source tree?
         exit 1
@@ -196,6 +189,13 @@ for INPUT in ${ABS_INPUTS[@]}; do
            ${CHIMES_DEF} ${DEFINES} ${ADDED_INCLUDES}"
     [[ ! $VERBOSE ]] || echo $PREPROC_CMD
     cd ${WORK_DIR} && ${PREPROC_CMD}
+
+    if [[ $ENABLE_OMP == 1 ]]; then
+        echo Looking for OpenMP pragmas in ${PREPROCESS_FILE}
+        cd ${WORK_DIR} && python ${OMP_FINDER} ${PREPROCESS_FILE} > ${INFO_FILE_PREFIX}.omp.info
+    else
+        cd ${WORK_DIR} && touch ${INFO_FILE_PREFIX}.omp.info
+    fi
 
     echo Searching for allocators in ${PREPROCESS_FILE}
     cd ${WORK_DIR} && ${FIND_ALLOCATORS} -o ${PREPROCESS_FILE}.garbage \

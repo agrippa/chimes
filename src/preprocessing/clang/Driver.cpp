@@ -386,7 +386,10 @@ public:
               if (visitor->transformsOriginal()) {
                   *dump_bodies << old_function_decl << " { ";
                   if (fdecl->getName().str() == "main") {
-                      *dump_bodies << "init_chimes(argc, argv); ";
+                      assert(fdecl->getNumParams() == 2);
+                      *dump_bodies << "init_chimes(" <<
+                          fdecl->getParamDecl(0)->getName().str() << ", " <<
+                          fdecl->getParamDecl(1)->getName().str() << "); ";
                   }
                   if (!fdecl->getReturnType().getTypePtr()->isVoidType()) {
                       *dump_bodies << "return ";

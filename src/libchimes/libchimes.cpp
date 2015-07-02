@@ -56,7 +56,7 @@
 
 using namespace std;
 
-#define HASHING_DIAGNOSTICS
+// #define HASHING_DIAGNOSTICS
 
 /*
  * A note on OMP nested parallelism and how that maps to pthreads.
@@ -720,8 +720,6 @@ static void read_heap_from_file(int fd, char *checkpoint_file,
             alias_to_heap[group]->push_back(alloc);
 
             old_to_new->insert(old_address, new_address, size);
-            // old_to_new->insert(pair<void *, ptr_and_size *>(old_address,
-            //             new ptr_and_size(new_address, size)));
             filled->insert(pair<void *, memory_filled *>(old_address,
                         already_filled));
             old_to_alloc->insert(pair<void *, heap_allocation *>(old_address,
@@ -1439,7 +1437,7 @@ void init_chimes(int argc, char **argv) {
             constant_var *dead = unpacked_constants->at(id);
 
 #ifdef VERBOSE
-            fprintf(stderr, "Read constant %d at address %p with length %lu\n",
+            fprintf(stderr, "Read constant %lu at address %p with length %lu\n",
                     id, dead->get_address(), dead->get_length());
 #endif
 
@@ -4888,7 +4886,7 @@ void leaving_omp_parallel(unsigned expected_parent_stack_depth,
      * number of threads, some threads from the outer omp parallel region will
      * not receive work.
      */
-    if (my_ctx->get_parent_region() == region_id) {
+    if (my_ctx->has_parent() && my_ctx->get_parent_region() == region_id) {
         assert(my_ctx->get_stack()->size() ==
                 (expected_parent_stack_depth + 1U));
     } else {

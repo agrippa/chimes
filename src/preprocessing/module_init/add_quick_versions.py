@@ -86,6 +86,8 @@ if __name__ == '__main__':
     for line in inp:
         line = line.rstrip()
 
+        print(line)
+
         if len(line) >= 2 and line[0] == '#' and line[1] == ' ':
             tokens = line.split()
             curr_line = int(tokens[1]) - 1

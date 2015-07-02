@@ -22,6 +22,7 @@ class set_of_aliases {
         }
 
         void add_alias(size_t alias) {
+            fprintf(stderr, "size=%lu\n", explicit_aliases.size());
             explicit_aliases.insert(alias);
         }
 

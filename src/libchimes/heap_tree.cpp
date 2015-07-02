@@ -93,9 +93,19 @@ heap_tree_node *heap_tree::insert(void *old_address, void *new_address,
          * stronger assertion at the top level by doing a search() for
          * old_address and asserting that search returns false?
          */
-        if (!(old_address < t->old_address ||
+        if (old_address == t->old_address && size == t->size) {
+            /*
+             * For constant arrays/strings, the compiler may re-use TEXT space
+             * for things that have the same value. If that is the case, we
+             * ignore this sharing of space.
+             *
+             * Do nothing.
+             */
+            return t;
+        } else if (!(old_address < t->old_address ||
                 ((unsigned char *)old_address) >=
                     (((unsigned char *)t->old_address) + t->size))) {
+
             fprintf(stderr, "Expected non-overlapping memory regions\n");
             fprintf(stderr, "  old address being inserted = %p\n", old_address);
             fprintf(stderr, "  current node: old_address=%p size=%lu\n", t->old_address, t->size);
