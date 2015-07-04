@@ -378,6 +378,9 @@ public:
 
               if (visitor->transformsOriginal() ||
                       fdecl->getName().str() != "main") {
+                  clang::PresumedLoc fdeclStart = visitor->getSM()->getPresumedLoc(fdecl->getLocStart());
+                  *dump_bodies << "# " << fdeclStart.getLine() << " \"" <<
+                      fdeclStart.getFilename() << "\"\n";
                   *dump_bodies <<
                       R.getRewrittenText(fdecl->getSourceRange()) <<
                       "\n\n";

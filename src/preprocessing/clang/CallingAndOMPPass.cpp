@@ -187,7 +187,7 @@ std::map<clang::VarDecl *, StackAlloc *> CallingAndOMPPass::hasValidDeclarations
 
 std::string CallingAndOMPPass::constructStartingRegistrations(
         std::vector<DeclarationInfo> *vars, unsigned n_hoisted,
-        std::string *transition_str_ptr, bool has_callbacks) {
+        std::string *transition_str_ptr, bool has_callbacks, int insert_at_line) {
     std::stringstream acc_args;
     std::stringstream acc_decls;
     std::stringstream acc_conds;
@@ -195,6 +195,7 @@ std::string CallingAndOMPPass::constructStartingRegistrations(
     unsigned count_args = 0;
     unsigned count_decls = 0;
     unsigned count_conds = 0;
+    bool first_insert = true;
 
     for (unsigned i = 0; i < n_hoisted; i++) {
         DeclarationInfo curr = vars->at(i);
@@ -219,6 +220,10 @@ std::string CallingAndOMPPass::constructStartingRegistrations(
                     assert(alloc->get_may_checkpoint() || alloc->is_array_type());
 
                     assert(curr.get_as_string().size() > 0);
+                    if (!first_insert) {
+                        acc_decls << "# " << insert_at_line << "\n";
+                    }
+                    first_insert = false;
                     acc_decls << curr.get_as_string();
                     count_decls++;
 
@@ -247,6 +252,10 @@ std::string CallingAndOMPPass::constructStartingRegistrations(
     if (count_decls > 0) {
         std::stringstream complete;
         complete << acc_decls.str();
+        if (!first_insert) {
+            complete << "# " << insert_at_line << "\n";
+        }
+        first_insert = false;
         if (count_args > 0) {
             if (!any_unconditional_vars && acc_conds.str().size() > 0) {
                 complete << " if (" << acc_conds.str() << ") {";
@@ -379,9 +388,60 @@ static bool is_hoistable(const clang::DeclStmt *d,
     return (hoistable);
 }
 
+static string aggregateFromVec(vector<string> *vec) {
+    std::stringstream ss;
+    for (vector<string>::iterator i = vec->begin(), e = vec->end(); i != e; i++) {
+        ss << *i << " ";
+    }
+    return ss.str();
+}
+
+void CallingAndOMPPass::addInsertsForRegion(OMPRegion *region) {
+    int pragma_line = region->get_line();
+    const clang::Stmt *body = region->get_body();
+
+    clang::SourceLocation startLoc = body->getLocStart();
+    clang::SourceLocation endLoc = body->getLocEnd();
+
+    clang::SourceLocation start;
+    if (region->is_parallel_for() || region->is_omp_for()) {
+        const clang::ForStmt *for_stmt = clang::dyn_cast<clang::ForStmt>(body);
+        assert(for_stmt);
+        start = for_stmt->getBody()->getLocStart();
+    } else {
+        start = body->getLocStart();
+    }
+    // InsertTextAfterToken(start, aggregateFromVec(&region->insert_at_region_start));
+    InsertTextAfterToken(start, " { ");
+
+    clang::SourceLocation end = body->getLocEnd();
+    // InsertTextBefore(end, at_end);
+    InsertTextBefore(end, " } ");
+
+    if (!gen_quick) {
+        std::string before = aggregateFromVec(&region->insert_before_region);
+        std::string after = aggregateFromVec(&region->insert_after_region);
+        std::string at_start = aggregateFromVec(&region->insert_at_region_start);
+        std::string at_end = aggregateFromVec(&region->insert_at_region_end);
+
+        if (before.size() > 0 || after.size() > 0 || at_start.size() > 0 ||
+                at_end.size() > 0) {
+            clang::PresumedLoc presumedStart = SM->getPresumedLoc(startLoc);
+            clang::PresumedLoc presumedEnd = SM->getPresumedLoc(endLoc);
+            insertions->AppendToOMPInserts(pragma_line,
+                    (region->is_parallel_for() || region->is_omp_for()),
+                    presumedStart.getFilename(),
+                    presumedStart.getLine(), presumedStart.getColumn(),
+                    presumedEnd.getLine(), presumedEnd.getColumn(),
+                    before, after, at_start, at_end);
+        }
+    }
+}
+
 // region may be NULL
-void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
+void CallingAndOMPPass::VisitRegion(OMPRegion *region, int new_stack_line) {
     if (region && !region->resumable()) {
+        addInsertsForRegion(region);
         return;
     }
 
@@ -416,44 +476,17 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
     ss << "default: { chimes_error(); } } ";
     std::string transition_str = ss.str();
 
-    /*
-     * We only get new_stack calls for the NULL entry region of each function.
-     * For all other regions (i.e. OMP parallel regions) we need to insert this
-     * immediately following the register_thread_local_stack_vars call, which
-     * has only been recently inserted in this pass.
-     */
-    clang::SourceLocation toInsertAt;
-    if (region == NULL) {
-        const clang::CallExpr *new_stack_call = new_stack_calls.at(curr_func_decl);
-        toInsertAt = new_stack_call->getLocEnd().getLocWithOffset(1);
-    } else {
-        if (region->is_parallel_for()) {
-            const clang::ForStmt *for_stmt = clang::dyn_cast<clang::ForStmt>(
-                    region->get_body());
-            assert(for_stmt);
-            toInsertAt = for_stmt->getBody()->getLocStart();
-        } else {
-            toInsertAt = region->get_start();
-            toInsertAt = adjustInnerOMPLoc(toInsertAt, region->get_last_line());
-            while (SM->getPresumedLoc(toInsertAt).getLine() == region->get_last_line()) {
-                toInsertAt = toInsertAt.getLocWithOffset(1);
-            }
-        }
-    }
-
     if (region != NULL && (region->is_parallel_for() ||
                 region->get_is_critical())) {
         if (!gen_quick) {
-            InsertTextAfterToken(toInsertAt,
-                    " ; if (____chimes_replaying) { chimes_error(); } ");
+            region->insert_at_region_start.push_back(
+                    "if (____chimes_replaying) { chimes_error(); } ");
         }
     } else if (vars_in_regions.find(region) != vars_in_regions.end() ||
             calls_to_register_callbacks.size() > 0) {
         std::vector<DeclarationInfo> *vars = vars_in_regions[region];
         std::string first_label;
-        std::string entry_str;
-
-        bool first_is_hoisted = (*vars)[0].is_hoisted();
+        std::string hoisted_var_regs;
 
         unsigned n_hoisted = 0;
         while (n_hoisted < vars->size() && vars->at(n_hoisted).is_hoisted()) {
@@ -461,10 +494,15 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         }
 
         if (n_hoisted > 0) {
-            entry_str = constructStartingRegistrations(vars, n_hoisted,
-                    &transition_str, calls_to_register_callbacks.size() > 0);
+            hoisted_var_regs = constructStartingRegistrations(vars, n_hoisted,
+                    &transition_str, calls_to_register_callbacks.size() > 0, new_stack_line);
         }
 
+        /*
+         * Handle unhoisted variables. If there are no resumable function calls
+         * in this region, append the transition_str for jumping to the next
+         * function call in the trace to the last non-hoisted variable.
+         */
         for (unsigned i = n_hoisted; i < vars->size(); i++) {
             DeclarationInfo curr = (*vars)[i];
             assert(!curr.is_hoisted());
@@ -484,6 +522,7 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             }
         }
 
+        // Handle function calls in this region
         for (unsigned i = 0; i < calls_to_register_callbacks.size(); i++) {
             const CallExpr *c = calls_to_register_callbacks[i];
             int lbl = getNextRegisterLabel();
@@ -512,19 +551,24 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
             InsertTextAfterToken(c->getLocEnd(), ss2.str());
         }
 
-        if (first_is_hoisted) {
+        if (n_hoisted > 0) {
+            /*
+             * If any variables are hoisted, add the hoisted variable
+             * registration to the NULL region.
+             */
             assert(region == NULL);
-            insert_at_front = entry_str + " " + insert_at_front;
+            insert_at_front = hoisted_var_regs + " " + insert_at_front;
         } else {
-            std::stringstream entry_ss;
             if (!gen_quick) {
+                std::stringstream entry_ss;
                 entry_ss << " if (____chimes_replaying) { goto " <<
                     first_label << "; } ";
-            }
-            if (region == NULL) {
-                insert_at_front = insert_at_front + " " + entry_ss.str();
-            } else {
-                InsertTextAfterToken(toInsertAt, " ; " + entry_ss.str());
+
+                if (region == NULL) {
+                    insert_at_front = insert_at_front + " " + entry_ss.str();
+                } else {
+                    region->insert_at_region_start.push_back(entry_ss.str());
+                }
             }
         }
     } else {
@@ -532,19 +576,23 @@ void CallingAndOMPPass::VisitRegion(OMPRegion *region) {
         if (!gen_quick) {
             entry_ss << " if (____chimes_replaying) { " << transition_str <<
                 " } ";
-        }
 
-        if (region == NULL) {
-            insert_at_front = entry_ss.str() + " " + insert_at_front;
-        } else {
-            InsertText(toInsertAt, "; " + entry_ss.str(), false, false);
+            if (region == NULL) {
+                insert_at_front = entry_ss.str() + " " + insert_at_front;
+            } else {
+                region->insert_at_region_start.push_back(entry_ss.str());
+            }
         }
     }
 
     for (std::vector<OMPRegion *>::iterator i = children.begin(),
             e = children.end(); i != e; i++) {
         OMPRegion *child = *i;
-        VisitRegion(child);
+        VisitRegion(child, new_stack_line);
+    }
+
+    if (region) {
+        addInsertsForRegion(region);
     }
 }
 
@@ -669,9 +717,9 @@ std::string CallingAndOMPPass::get_region_setup_code(
      */
     stringstream entering_ss;
     // Call label to jump to when resuming inside this parallel region
-    entering_ss << "; " << " { call_lbl_" << region->get_lbl() << ": ";
+    entering_ss << " { call_lbl_" << region->get_lbl() << ": ";
     if (is_parallel_for) {
-        entering_ss << " ; bool " + disable_varname +
+        entering_ss << " bool " + disable_varname +
             " = disable_current_thread(); ";
     }
     entering_ss << "void *" << parent_ctx_varname << " = get_thread_ctx(); ";
@@ -708,9 +756,9 @@ std::string CallingAndOMPPass::get_region_interior_code(bool is_parallel_for,
     std::stringstream register_ss;
     register_ss << " { ";
     if (is_parallel_for) {
-        register_ss << "if (" << blocker_varname << ") {";
+        register_ss << "if (" << blocker_varname << ") { ";
     }
-    register_ss << " " <<
+    register_ss <<
         "register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), " <<
         parent_thread_varname << ", " << parent_ctx_varname <<
         ", LIBCHIMES_NUM_THREADS(), " << stack_depth_varname << ", " <<
@@ -881,28 +929,30 @@ std::string CallingAndOMPPass::get_loc_arg(const CallExpr *call,
     clang::PresumedLoc call_start_loc = SM->getPresumedLoc(
             call->getLocStart());
     if (change_loc_iters.find(func_name) == change_loc_iters.end()) {
-        change_loc_iters.insert(pair<string, map<int, vector<StateChangeInsertion *>::iterator> >(func_name, map<int, vector<StateChangeInsertion *>::iterator>()));
+        change_loc_iters.insert(
+                pair<string, map<int, vector<StateChangeInsertion *>::iterator> >(
+                    func_name, map<int, vector<StateChangeInsertion *>::iterator>()));
     }
-    if (change_loc_iters.at(func_name).find(call_start_loc.getLine()) == change_loc_iters.at(func_name).end()) {
-        change_loc_iters.at(func_name).insert(pair<int, std::vector<StateChangeInsertion *>::iterator>(call_start_loc.getLine(), insertions->getStateChangesBegin()));
+    if (change_loc_iters.at(func_name).find(call_start_loc.getLine()) ==
+            change_loc_iters.at(func_name).end()) {
+        change_loc_iters.at(func_name).insert(
+                pair<int, std::vector<StateChangeInsertion *>::iterator>(
+                    call_start_loc.getLine(), insertions->getStateChangesBegin()));
     }
 
-    std::map<int, std::vector<StateChangeInsertion *>::iterator>::iterator found = change_loc_iters.at(func_name).find(call_start_loc.getLine());
+    map<int, vector<StateChangeInsertion *>::iterator>::iterator found =
+        change_loc_iters.at(func_name).find(call_start_loc.getLine());
     assert(found != change_loc_iters.at(func_name).end());
 
-    vector<StateChangeInsertion *>::iterator match = insertions->get_matching_after(call_start_loc.getLine(), call_start_loc.getFilename(), func_name, found->second);
+    vector<StateChangeInsertion *>::iterator match =
+        insertions->get_matching_after(call_start_loc.getLine(),
+                call_start_loc.getFilename(), func_name, found->second);
     found->second = match;
     if (match == insertions->getStateChangesEnd()) {
         return "0";
     } else {
         return insertions->get_alias_loc_var((*match)->get_id());
     }
-    // StateChangeInsertion *state = insertions->get_matching(
-    //         call_start_loc.getLine(),
-    //         call_start_loc.getColumn(),
-    //         call_start_loc.getFilename());
-    // return (state == NULL ? "0" :
-    //         insertions->get_alias_loc_var(state->get_id()));
 }
 
 std::string CallingAndOMPPass::generateFunctionPointerCall(const CallExpr *call,
@@ -1091,14 +1141,23 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
     for (std::vector<OpenMPPragma>::iterator i = omp_pragmas->begin(),
             e = omp_pragmas->end(); i != e; i++) {
         OpenMPPragma pragma = *i;
+
         std::string pragma_name = pragma.get_pragma_name();
         std::map<std::string, std::vector<std::string> > clauses =
             pragma.get_clauses();
         bool is_parallel_for = (pragma_name == "parallel" &&
                 clauses.find("for") != clauses.end());
-        bool is_omp_for = (pragma_name == "for");
-        bool is_critical = (pragma_name == "critical");
+
         bool is_barrier = (pragma_name == "barrier");
+        bool is_parallel = (pragma_name == "parallel");
+        bool is_for = (pragma_name == "for");
+        bool is_critical = (pragma_name == "critical");
+        bool is_task = (pragma_name == "task");
+        bool is_single = (pragma_name == "single");
+        bool is_master = (pragma_name == "master");
+        bool is_taskwait = (pragma_name == "taskwait");
+        bool is_flush = (pragma_name == "flush");
+        bool is_atomic = (pragma_name == "atomic");
 
         if (supported_omp_pragmas.find(pragma_name) ==
                 supported_omp_pragmas.end()) {
@@ -1106,7 +1165,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
             assert(false);
         }
 
-        if (is_barrier) continue;
+        if (is_barrier || is_taskwait || is_flush) continue;
 
         assert(successors.find(pragma.get_line()) != successors.end());
         const clang::Stmt *post = successors[pragma.get_line()];
@@ -1115,8 +1174,14 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
         OMPRegion *region = new OMPRegion(pragma.get_line(),
                 pragma.get_last_line(), post->getLocStart(), post->getLocEnd(),
-                pragma_name, clauses, lbl, is_parallel_for, is_omp_for, post,
+                pragma_name, clauses, lbl, is_parallel_for, is_for, post,
                 is_critical);
+
+        assert(region->insert_before_region.size() == 0);
+        assert(region->insert_at_region_start.size() == 0);
+        assert(region->insert_at_region_end.size() == 0);
+        assert(region->insert_after_region.size() == 0);
+
         ompTree->add_region(region);
     }
 
@@ -1151,53 +1216,6 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         bool is_parallel_for = region->is_parallel_for();
         bool is_omp_for = region->is_omp_for();
 
-        assert(predecessors.find(pragma.get_line()) != predecessors.end());
-        assert(successors.find(pragma.get_line()) != successors.end());
-
-        const clang::Stmt *pre = predecessors[pragma.get_line()];
-        clang::SourceLocation pre_loc;
-        // TODO remove this, see point #5 in the TODO file
-        if (is_inside_if_cond(pre)) {
-            const clang::Stmt *parent = getParent(pre);
-            while (!clang::isa<clang::IfStmt>(parent)) {
-                parent = getParent(parent);
-            }
-            const clang::IfStmt *if_stmt = clang::dyn_cast<clang::IfStmt>(parent);
-            assert(if_stmt);
-            pre_loc = if_stmt->getThen()->getLocStart();
-        } else if (is_inside_while_cond(pre)) {
-            const clang::Stmt *parent = getParent(pre);
-            while (!clang::isa<clang::WhileStmt>(parent)) {
-                parent = getParent(parent);
-            }
-            const clang::WhileStmt *while_stmt =
-                clang::dyn_cast<clang::WhileStmt>(parent);
-            assert(while_stmt);
-            pre_loc = while_stmt->getBody()->getLocStart();
-        } else {
-            pre_loc = pre->getLocEnd();
-        }
-
-        while (SM->getPresumedLoc(pre_loc).getLine() < pragma.get_line()) {
-            pre_loc = pre_loc.getLocWithOffset(1);
-        }
-        pre_loc = pre_loc.getLocWithOffset(-1);
-
-        const clang::Stmt *post = successors.at(pragma.get_line());
-        clang::SourceLocation post_loc = post->getLocEnd();
-        clang::SourceLocation inner_loc = post->getLocStart();
-        if (is_parallel_for || is_omp_for) {
-            const clang::ForStmt *for_stmt = clang::dyn_cast<clang::ForStmt>(
-                    post);
-            assert(for_stmt);
-            inner_loc = for_stmt->getBody()->getLocStart();
-        } else {
-            inner_loc = adjustInnerOMPLoc(inner_loc, region->get_last_line());
-            while (SM->getPresumedLoc(inner_loc).getLine() == region->get_last_line()) {
-                inner_loc = inner_loc.getLocWithOffset(1);
-            }
-        }
-
         if (is_parallel) {
             std::string disable_varname = get_unique_disable_varname();
             string blocker_varname = get_unique_blocker_varname();
@@ -1214,59 +1232,42 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     is_parallel_for, disable_varname, blocker_varname,
                     parent_thread_varname, parent_ctx_varname, stack_depth_varname,
                     region_id_varname, call_depth_varname, region, pragma);
-
-            assert(new_stack_calls.find(curr_func_decl) !=
-                    new_stack_calls.end());
-            if (new_stack_calls[curr_func_decl]->getLocEnd() == pre_loc) {
-                insert_at_front = region_entry_code;
-            } else {
-                InsertTextAfterToken(pre_loc, "\n" + region_entry_code);
-            }
+            region->insert_before_region.push_back(region_entry_code);
 
             std::string interior = get_region_interior_code(is_parallel_for,
                     blocker_varname, parent_thread_varname, parent_ctx_varname,
                     stack_depth_varname, region_id_varname, private_vars);
-            InsertText(inner_loc, interior, false, false);
+            region->insert_at_region_start.push_back(interior);
 
             std::string leaving = get_region_cleanup_code(is_parallel_for,
                     disable_varname, call_depth_varname, region_id_varname);
             if (!is_parallel_for) {
-                InsertTextAfterToken(post_loc, " thread_leaving(); } " + leaving);
+                region->insert_at_region_end.push_back(" thread_leaving(); } ");
             } else {
-                InsertTextAfterToken(post_loc, " } " + leaving);
+                region->insert_at_region_end.push_back(" } ");
             }
+
+            region->insert_after_region.push_back(leaving);
 
         } else if (is_critical || is_for) {
             // Disable any threads inside
             std::string disable_varname = get_unique_disable_varname();
-            std::string pre = " ; { bool " + disable_varname + "; " +
+            std::string pre = " bool " + disable_varname + "; " +
                 disable_varname + " = disable_current_thread(); ";
             std::string post = " reenable_current_thread(" + disable_varname +
-                "); } ";
+                "); ";
 
-            assert(new_stack_calls.find(curr_func_decl) !=
-                    new_stack_calls.end());
-            if (new_stack_calls.at(curr_func_decl)->getLocEnd() == pre_loc) {
-                insert_at_front = pre;
-            } else {
-                InsertTextAfterToken(pre_loc, pre);
-            }
-
-            InsertTextAfterToken(post_loc, post);
+            region->insert_before_region.push_back(pre);
+            region->insert_after_region.push_back(post);
         } else if (is_task || is_single || is_master) {
             std::string disable_varname = get_unique_disable_varname();
-            std::string pre = " ; { bool " + disable_varname + "; " +
+            std::string pre = " bool " + disable_varname + "; " +
                 disable_varname + " = disable_current_thread(); ";
             std::string post = " reenable_current_thread(" + disable_varname +
-                "); } ";
+                "); ";
 
-            const clang::Stmt *body = successors.at(pragma.get_line());
-            clang::SourceLocation inner_loc = body->getLocStart();
-            inner_loc = adjustInnerOMPLoc(inner_loc, region->get_last_line());
-
-            InsertText(inner_loc, pre + "\n", false, false);
-
-            InsertTextAfterToken(body->getLocEnd(), post);
+            region->insert_at_region_start.push_back(pre);
+            region->insert_at_region_end.push_back(post);
         } else if (is_taskwait || is_flush || is_atomic) {
         } else {
             assert(false);
@@ -1326,7 +1327,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
 
                 bool is_converted_to_npm = (npm_functions.find(
                             loc.get_funcname()) != npm_functions.end());
-                bool no_checkpoint = insertions->does_not_cause_checkpoint(
+                bool never_checkpoints = insertions->does_not_cause_checkpoint(
                             loc.get_funcname());
                 bool always_checkpoints = insertions->always_checkpoints(
                         loc.get_funcname());
@@ -1334,15 +1335,19 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                         loc.get_funcname());
                 /*
                  * This block handles functions that are within this compilation
-                 * unit and have been converted to NPM mode. This is the
-                 * simplest case, and allows us to simply emit a direct call to
-                 * that function.
+                 * unit and have been converted to NPM mode because all of their
+                 * callees are in the same compilation unit, and none of them
+                 * checkpoint. This is the simplest case, and allows us to
+                 * simply emit a direct call to that function.
                  */
-                if (is_converted_to_npm && no_checkpoint) {
+                if (is_converted_to_npm && never_checkpoints) {
+#ifdef VERBOSE
+                    llvm::errs() << "generating NPM call for call to " << loc.get_funcname() << "\n";
+#endif
                     std::string npm_call = generateNPMCall(loc, callsite, call,
                             false);
-                    ReplaceText(clang::SourceRange(call->getLocStart(),
-                                call->getLocEnd()), npm_call);
+                    clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
+                    ReplaceText(replace_range, npm_call);
 
                     addStaticMerge(callsite, loc.get_funcname());
 
@@ -1365,6 +1370,14 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                  * can do the merge statically. If it is defined externally, we
                  * conditionally do the merge at runtime if we find a definition
                  * for it.
+                 *
+                 * The conditional checks that:
+                 *   1) The call is not made through a function pointer.
+                 *   2) The callee is not definitely create a checkpoint (it
+                 *      either does not or may).
+                 *   3) The callee does not call any function pointers.
+                 *   4) This call is within a certain distance of main on the
+                 *      call stack.
                  */
                 const int main_dist = (insertions->have_main_in_call_tree() ?
                         insertions->get_distance_from_main(curr_func) : -1);
@@ -1372,6 +1385,12 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                         !calls_unknown &&
                         (main_dist != -1 && main_dist < 2) &&
                         loc.get_funcname() != "checkpoint") {
+#ifdef VERBOSE
+                    llvm::errs() << "generating conditional NPM call for call "
+                        "to " << loc.get_funcname() <<
+                        ", is_converted_to_npm=" << is_converted_to_npm <<
+                        ", never_checkpoints=" << never_checkpoints << "\n";
+#endif
                     /*
                      * Use a function pointer if this is an externally
                      * defined function
@@ -1384,19 +1403,19 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                     std::string cond_call = "(____chimes_does_checkpoint_" +
                         loc.get_funcname() + "_npm ? (" + regular_call +
                         ") : (" + npm_call + "))";
-                    ReplaceText(clang::SourceRange(call->getLocStart(),
-                                call->getLocEnd()), cond_call);
+                    clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
+                    ReplaceText(replace_range, cond_call);
                     ompTree->add_function_call(call, lbl.get_lbl());
 
-                    if (is_converted_to_npm) {
-                        // Local, static
-                        if (no_checkpoint) {
-                            addStaticMerge(callsite, loc.get_funcname());
-                        }
-                    } else {
+                    // if (is_converted_to_npm) {
+                    //     // Local, static
+                    //     if (never_checkpoints) {
+                    //         addStaticMerge(callsite, loc.get_funcname());
+                    //     }
+                    // } else {
                         // External, dynamic
                         addDynamicMerge(callsite, loc.get_funcname());
-                    }
+                    // }
 
                     continue;
                 }
@@ -1406,15 +1425,21 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                  * dynamically to their NPM equivalent.
                  */
                 if (!call->getDirectCallee()) {
+#ifdef VERBOSE
+                    llvm::errs() << "generating function pointer translation call\n";
+#endif
                     std::string ptr_call = generateFunctionPointerCall(call,
                             loc, callsite, lbl);
-                    ReplaceText(clang::SourceRange(call->getLocStart(),
-                                call->getLocEnd()), ptr_call);
+                    clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
+                    ReplaceText(replace_range, ptr_call);
                     ompTree->add_function_call(call, lbl.get_lbl());
                     continue;
                 }
 
                 if (ompTree->add_function_call(call, lbl.get_lbl())) {
+#ifdef VERBOSE
+                    llvm::errs() << "generating normal call for " << loc.get_funcname() << "\n";
+#endif
                     std::string new_call;
                     if (loc.get_funcname() == "checkpoint") {
                         std::stringstream ss;
@@ -1425,8 +1450,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                         new_call = generateNormalCall(call, loc, lbl, callsite);
                     }
 
-                    ReplaceText(clang::SourceRange(call->getLocStart(),
-                                call->getLocEnd()), new_call);
+                    clang::SourceRange replace_range(call->getLocStart(), call->getLocEnd());
+                    ReplaceText(replace_range, new_call);
                 }
             }
         }
@@ -1470,7 +1495,7 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
                 new std::vector<DeclarationInfo>();
         }
 
-        std::vector<DeclarationInfo> *vars = vars_in_regions[region];
+        std::vector<DeclarationInfo> *vars = vars_in_regions.at(region);
         if (hoistable) {
             vars->insert(vars->begin(), curr);
         } else {
@@ -1494,7 +1519,8 @@ void CallingAndOMPPass::VisitTopLevel(clang::FunctionDecl *toplevel) {
         }
     }
 
-    VisitRegion(NULL);
+    VisitRegion(NULL, SM->getPresumedLineNumber(new_stack_calls.at(
+                    curr_func_decl)->getLocStart()));
 
     InsertTextAfterToken(new_stack_calls.at(curr_func_decl)->getLocEnd(),
             " ; " + insert_at_front);

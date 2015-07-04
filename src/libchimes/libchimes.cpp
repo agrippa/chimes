@@ -586,6 +586,22 @@ static inline bool valid_group(size_t group) {
 
 static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
     bool result = false;
+
+#ifdef VERBOSE
+    fprintf(stderr, "Checking if group1=%lu and group2=%lu are aliased\n",
+            group1, group2);
+    for (map<size_t, vector<size_t> *>::iterator i = aliased_groups.begin(),
+            e = aliased_groups.end(); i != e; i++) {
+        fprintf(stderr, "  %lu -> {\n", i->first);
+        vector<size_t> *aliases = i->second;
+        for (vector<size_t>::iterator ii = aliases->begin(),
+                ee = aliases->end(); ii != ee; ii++) {
+            fprintf(stderr, "    %lu\n", *ii);
+        }
+        fprintf(stderr, "    }\n");
+    }
+#endif
+
     if (group1 == group2) {
         result = true;
     } else {
@@ -596,7 +612,7 @@ static bool aliased(size_t group1, size_t group2, bool need_to_lock) {
         if (aliased_groups.find(group1) != aliased_groups.end() &&
                 aliased_groups.find(group2) != aliased_groups.end()) {
             // Can just do a pointer comparison here
-            result = (aliased_groups[group1] == aliased_groups[group2]);
+            result = (aliased_groups.at(group1) == aliased_groups.at(group2));
         }
 
         if (need_to_lock) {
@@ -1131,6 +1147,17 @@ void init_chimes(int argc, char **argv) {
          * time, as they will always be inserted at runtime by calling(). Hence,
          * we check if callee is in the provided NPM functions here.
          */
+#ifdef VERBOSE
+        fprintf(stderr, "Looking at dynamically merging aliases for NPM %s\n", callee_name.c_str());
+        fprintf(stderr, "  has entry in does_checkpoint? %d\n",
+            (does_checkpoint.find(callee_name) != does_checkpoint.end()));
+        fprintf(stderr, "  NPM version provided? %d\n",
+            (provided_npm_functions.find(callee_name) !=
+             provided_npm_functions.end()));
+        if (does_checkpoint.find(callee_name) != does_checkpoint.end()) {
+            fprintf(stderr, "  does checkpoint? %d\n", does_checkpoint.at(callee_name));
+        }
+#endif
         if (does_checkpoint.find(callee_name) != does_checkpoint.end() &&
                 provided_npm_functions.find(callee_name) !=
                     provided_npm_functions.end() &&
@@ -2302,6 +2329,9 @@ static void merge_npm_aliases(string fname, size_t return_alias,
 
         assert(valid_group(parent) && valid_group(child));
         merge_alias_groups(parent, child);
+#ifdef VERBOSE
+        fprintf(stderr, "    merging parent=%lu and child=%lu\n", parent, child);
+#endif
     }
 
     if (return_alias == 0UL || callee.get_return_alias() == 0UL) {
@@ -2320,6 +2350,10 @@ static void merge_npm_aliases(string fname, size_t return_alias,
             assert(parent == 0UL && child == 0UL);
         } else {
             merge_alias_groups(parent, child);
+#ifdef VERBOSE
+            fprintf(stderr, "    merging params parent=%lu and child=%lu\n",
+                    parent, child);
+#endif
         }
     }
 }
@@ -3113,6 +3147,10 @@ void free_wrapper(void *ptr, size_t group) {
         map<void *, heap_allocation *>::iterator in_heap = find_in_heap(ptr);
         size_t original_group = in_heap->second->get_alias_group();
 
+#ifdef VERBOSE
+        fprintf(stderr, "free_wrapper: asserting that original_group=%lu and "
+                "group=%lu are aliased\n", original_group, group);
+#endif
         assert(aliased(original_group, group, true));
 
         __sync_fetch_and_sub(&total_allocations, in_heap->second->get_size());

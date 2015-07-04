@@ -1,0 +1,1 @@
+WARNING: Unable to load address of function fwd, likely because it is a static function. CHIMES will not be able to restore pointers to this function on resume.

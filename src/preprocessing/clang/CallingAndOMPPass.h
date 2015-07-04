@@ -139,8 +139,9 @@ private:
             std::string *force);
     std::string constructStartingRegistrations(
             std::vector<DeclarationInfo> *vars, unsigned n_hoisted,
-            std::string *transition_str_ptr, bool has_callbacks);
-    void VisitRegion(OMPRegion *region);
+            std::string *transition_str_ptr, bool has_callbacks,
+            int insert_at_line);
+    void VisitRegion(OMPRegion *region, int new_stack_line);
     void verify_supported_clauses(std::string pragma_name,
             std::map<std::string, std::vector<std::string> > *clauses, int line);
     std::string generateNPMCall(CallLocation loc,
@@ -182,6 +183,7 @@ private:
 
     clang::SourceLocation adjustInnerOMPLoc(
             clang::SourceLocation loc, int target_line);
+    void addInsertsForRegion(OMPRegion *region);
 
     std::map<std::string, std::map<int, std::vector<StateChangeInsertion *>::iterator> > change_loc_iters;
     std::map<std::string, std::set<std::string> > supported_omp_clauses;

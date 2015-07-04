@@ -8,6 +8,8 @@
 
 using namespace std;
 
+extern std::string curr_func;
+
 // #define VERBOSE
 
 static int find_group_end(std::string *s) {
@@ -1081,6 +1083,19 @@ void DesiredInsertions::AppendToDiagnostics(std::string action,
     diagnostics << action << " " << std::string(path) <<
         " " << presumed.getLine() << " " << presumed.getColumn() << " " <<
         val << "\n";
+}
+
+void DesiredInsertions::AppendToOMPInserts(int pragma_line, bool is_parallel_for,
+        std::string filename, int start_line, int start_col, int end_line,
+        int end_col, std::string before, std::string after,
+        std::string at_start, std::string at_end) {
+    omp_inserts << pragma_line << " " << is_parallel_for << " " << curr_func <<
+        " " << filename << " " << start_line << " " << start_col << " " <<
+        end_line << " " << end_col << "\n";
+    omp_inserts << before << "\n";
+    omp_inserts << after << "\n";
+    omp_inserts << at_start << "\n";
+    omp_inserts << at_end << "\n";
 }
 
 std::vector<OpenMPPragma> *DesiredInsertions::get_omp_pragmas_for(
