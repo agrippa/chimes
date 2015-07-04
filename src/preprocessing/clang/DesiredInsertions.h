@@ -588,11 +588,13 @@ class DesiredInsertions {
 
                 diagnostics.open(diagnostic_file);
                 firstprivate.open(firstprivate_file);
+                omp_inserts.open(omp_file + ".inserts");
             }
 
         ~DesiredInsertions() {
             diagnostics.close();
             firstprivate.close();
+            omp_inserts.close();
         }
 
         bool contains(int line, int col, const char *filename);
@@ -623,6 +625,10 @@ class DesiredInsertions {
             original_file = file;
         }
 
+        std::string getMainFile() {
+            return original_file;
+        }
+
         bool isMainFile(const char *filename) {
             std::string file(filename);
             return (original_file == file);
@@ -637,6 +643,10 @@ class DesiredInsertions {
                 std::string val, clang::SourceManager &SM);
         void AppendFirstPrivate(int starting_line, int ending_line,
                 std::string varname);
+        void AppendToOMPInserts(int pragma_line, bool is_parallel_for,
+                std::string filename, int start_line, int start_col, int end_line,
+                int end_col, std::string before, std::string after,
+                std::string at_start, std::string at_end);
 
         FunctionExit *getFunctionExitInfo(std::string funcname);
         std::vector<AliasesPassedToCallSite>::iterator getCallsiteStart();
@@ -684,6 +694,7 @@ class DesiredInsertions {
             omp_file, firstprivate_file, call_tree_file, allocator_file;
         std::ofstream diagnostics;
         std::ofstream firstprivate;
+        std::ofstream omp_inserts;
 
         std::vector<CollapsedLines> transforms;
 

@@ -136,6 +136,8 @@ RETURN_UNROLL=${CHIMES_HOME}/src/preprocessing/return_unroll/return_unroll
 CALL_TRANSLATE=${CHIMES_HOME}/src/preprocessing/call_translate/call_translate
 FIND_ALLOCATORS=${CHIMES_HOME}/src/preprocessing/find_allocators/find_allocators
 OMP_FINDER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_finder.py
+OMP_INSERTER=${CHIMES_HOME}/src/preprocessing/openmp/openmp_inserter.py
+OMP_APPENDER=${CHIMES_HOME}/src/preprocessing/openmp_appender/openmp_appender
 REGISTER_STACK_VAR_COND=${CHIMES_HOME}/src/preprocessing/module_init/register_stack_var_cond.py
 MODULE_INIT=${CHIMES_HOME}/src/preprocessing/module_init/module_init.py
 ADD_QUICK_VERSIONS=${CHIMES_HOME}/src/preprocessing/module_init/add_quick_versions.py
@@ -283,12 +285,14 @@ for INPUT in ${ABS_INPUTS[@]}; do
             ${PREPROCESS_FILE} -- -I${CHIMES_HOME}/src/libchimes \
             -I${CUDA_HOME}/include $INCLUDES ${CHIMES_DEF} ${DEFINES}"
     [[ ! $VERBOSE ]] || echo $TRANSFORM_CMD
+    echo Running main transformation kernel on ${PREPROCESS_FILE}
     $TRANSFORM_CMD
 
     TRANSFORMED_FILE=$(basename ${PREPROCESS_FILE})
     EXT="${TRANSFORMED_FILE##*.}"
     NAME="${TRANSFORMED_FILE%.*}"
     TRANSFORMED_FILE=${NAME}.register.${EXT}
+    OMP_FILE=${NAME}.omp.${EXT}
     INCLUDE_QUICK_FILE=${NAME}.quick.${EXT}
     FIRSTPRIVATE_FILE=${NAME}.fp.${EXT}
     NPM_FILE=${NAME}.npm.${EXT}
@@ -300,8 +304,18 @@ for INPUT in ${ABS_INPUTS[@]}; do
     cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${TRANSFORMED_FILE} ${INCLUDE_QUICK_FILE} \
         -b ${INFO_FILE_PREFIX}.quick.bodies -d ${INFO_FILE_PREFIX}.quick.decls
 
-    echo Adding firstprivate clauses to parallel for loops in ${INCLUDE_QUICK_FILE}
-    cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${INCLUDE_QUICK_FILE} \
+    echo Appending OMP callbacks to ${INCLUDE_QUICK_FILE}
+    cd ${WORK_DIR} && $OMP_APPENDER -m ${INFO_FILE_PREFIX}.omp.info.inserts \
+        -o ${INCLUDE_QUICK_FILE}.omp ${INCLUDE_QUICK_FILE} -- \
+        -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
+        ${CHIMES_DEF} ${DEFINES} &> ${INFO_FILE_PREFIX}.omp_appender.log
+
+    echo Inserting OMP callbacks in ${INCLUDE_QUICK_FILE}.omp
+    cd ${WORK_DIR} && python ${OMP_INSERTER} ${INCLUDE_QUICK_FILE}.omp \
+        ${INFO_FILE_PREFIX}.omp.info.inserts ${OMP_FILE}
+
+    echo Adding firstprivate clauses to parallel for loops in ${OMP_FILE}
+    cd ${WORK_DIR} && python ${FIRSTPRIVATE_APPENDER} ${OMP_FILE} \
         ${INFO_FILE_PREFIX}.firstprivate.info > ${FIRSTPRIVATE_FILE}
 
     echo Adding NPM function declarations, bodies, and pointers to ${FIRSTPRIVATE_FILE}

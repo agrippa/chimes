@@ -55,18 +55,6 @@ class OMPRegion {
             return parent->resumable();
         }
 
-    private:
-        OMPRegion *parent;
-        std::vector<OMPRegion *> children;
-        int line, last_line;
-        clang::SourceLocation start, end;
-        std::string pragma_name;
-        std::map<std::string, std::vector<std::string> > clauses;
-        int lbl;
-        bool parallel_for, omp_for;
-        const clang::Stmt *body;
-        bool is_critical;
-
         /*
          * insert_before_region();
          * #pragma omp parallel
@@ -81,6 +69,18 @@ class OMPRegion {
         std::vector<std::string> insert_at_region_start;
         std::vector<std::string> insert_at_region_end;
         std::vector<std::string> insert_after_region;
+
+    private:
+        OMPRegion *parent;
+        std::vector<OMPRegion *> children;
+        int line, last_line;
+        clang::SourceLocation start, end;
+        std::string pragma_name;
+        std::map<std::string, std::vector<std::string> > clauses;
+        int lbl;
+        bool parallel_for, omp_for;
+        const clang::Stmt *body;
+        bool is_critical;
 };
 
 class OMPTree {
