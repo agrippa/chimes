@@ -1,0 +1,5 @@
+Iso3D-OMP - added 7.940112242413% overhead for 1 checkpoint files
+SmithWaterman-OMP - added 13.90780845968138% overhead for 71 checkpoint files
+Lulesh-OMP - added -2.787076404295208% overhead for 45 checkpoint files
+CoMD-OMP - added -7.180100863321648% overhead for 9 checkpoint files
+UTS-OMP - added -0.5186145582515178% overhead for 2 checkpoint files

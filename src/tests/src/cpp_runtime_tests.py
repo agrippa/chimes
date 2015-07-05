@@ -6,7 +6,7 @@ import os
 import sys
 from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
          cleanup_runtime_files
-from shared_tests import ALL_RODINIA_RUNTIME_TESTS, ALL_SPEC_RUNTIME_TESTS
+from shared_tests import ALL_RODINIA_RUNTIME_TESTS, ALL_SPEC_RUNTIME_TESTS, MISC_CPP_RUNTIME_TESTS
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 
@@ -53,29 +53,6 @@ ISO2D = RuntimeTest('Iso2D',
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
                                                'libcommon2d.so')],
                     cli_args='-i 10')
-ISO3D = RuntimeTest('Iso3D',
-                    ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'], 0, -1,
-                    includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
-                    dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
-                                               'libcommon2d.so')],
-                    cli_args='-i 3')
-SMITH_WATERMAN = RuntimeTest('SmithWaterman',
-                             ['smithWaterman/smith_waterman.cpp'], 0, -1,
-                             cli_args='20 20 2')
-LULESH = RuntimeTest('Lulesh', ['lulesh/LULESH.cc'], 0, -1, cli_args='1',
-                     extra_compile_args='-y -O0')
-COMD = RuntimeTest('CoMD',
-                   ['CoMD/src-mpi/CoMD.c', 'CoMD/src-mpi/decomposition.c',
-                    'CoMD/src-mpi/haloExchange.c', 'CoMD/src-mpi/linkCells.c',
-                    'CoMD/src-mpi/mycommand.c',
-                    'CoMD/src-mpi/performanceTimers.c',
-                    'CoMD/src-mpi/timestep.c', 'CoMD/src-mpi/cmdLineParser.c',
-                    'CoMD/src-mpi/eam.c', 'CoMD/src-mpi/initAtoms.c',
-                    'CoMD/src-mpi/ljForce.c', 'CoMD/src-mpi/parallel.c',
-                    'CoMD/src-mpi/random.c', 'CoMD/src-mpi/yamlOutput.c'], 0,
-                   -1, cli_args='-N 1 -x 12 -y 12 -z 12')
-UTS = RuntimeTest('UTS', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
-                  0, -1, cli_args='-t 2 -d 2', defines=['BRG_RNG'])
 RAY_TRACER_ARGS='-x 128 -y 128 -s 512,512,100,100,0.5,0.5,0.5 ' + \
                 '-s 0,0,100,100,0.5,0.5,0.5 -t 10'
 RAY_TRACER = RuntimeTest('RayTracer', ['ray_tracer.c'], 0, 10,
@@ -87,9 +64,9 @@ TESTS = [NESTED_CALLS, STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCA
          COMD_FREE_COMPLEX, COMD_FREE_MULTI_FILE, FUNC_PTR, HEAP,
          STRESS_HASHING, HEAP_POINTERS, HEAP_INDIRECTION, FREE, REALLOC, CALLOC,
          GLOBALS, CONSTANTS, PARTIAL_CHECKPOINT, SWAPPED_PTRS,
-         SWAPPED_NESTED_PTRS, MULTI_CHECKPOINT, ISO2D, ISO3D, SMITH_WATERMAN,
-         LULESH, COMD, UTS, RAY_TRACER]
+         SWAPPED_NESTED_PTRS, MULTI_CHECKPOINT, ISO2D, RAY_TRACER]
 
+TESTS.extend(MISC_CPP_RUNTIME_TESTS)
 TESTS.extend(ALL_RODINIA_RUNTIME_TESTS)
 TESTS.extend(ALL_SPEC_RUNTIME_TESTS)
 

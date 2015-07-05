@@ -1,0 +1,5 @@
+Iso3D - added 6.394357839101605% overhead for 10 checkpoint files
+SmithWaterman - added 0.1753161872592779% overhead for 9 checkpoint files
+Lulesh - added -1.5258125041980208% overhead for 472 checkpoint files
+CoMD - added -1.0346980644010295% overhead for 2 checkpoint files
+UTS - added 58.572117853974405% overhead for 2 checkpoint files
