@@ -1,5 +1,5 @@
 maximum _Z7maximumiii 0 DOES_NOT
 gettime _Z7gettimev 0 DOES_NOT
-main main 0 DOES_NOT runTest 71 5
-runTest _Z7runTestiPPc 0 DOES_NOT usage 108 3 maximum 163 33 maximum 178 28
+main main 0 DOES runTest 74 5
+runTest _Z7runTestiPPc 0 DOES usage 111 3 maximum 166 33 checkpoint 173 5 maximum 185 28 checkpoint 192 5
 usage _Z5usageiPPc 0 DOES_NOT

@@ -1,15 +1,15 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 22 8 len=6 gasdev_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 42 8 len=5 lcg61_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 66 10 len=6 mkSeed_npm
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 32 89 rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 32 89 rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 23 1 const int ____chimes_did_disable0 = new_stack((void *)(&gasdev), "gasdev", &____must_manage_gasdev, 1, 0, (size_t)(14584644095263535671UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 33 1 rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0, ____chimes_did_disable0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 49 82 rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 33 1 rm_stack(false, 0UL, "gasdev", &____must_manage_gasdev, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 49 82 rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1, ____chimes_did_disable1, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 43 1 const int ____chimes_did_disable1 = new_stack((void *)(&lcg61), "lcg61", &____must_manage_lcg61, 1, 0, (size_t)(14584644095263535734UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 50 1 rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1, ____chimes_did_disable1); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 75 68 rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 50 1 rm_stack(false, 0UL, "lcg61", &____must_manage_lcg61, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 75 68 rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 67 1 const int ____chimes_did_disable2 = new_stack((void *)(&mkSeed), "mkSeed", &____must_manage_mkSeed, 2, 0, (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 76 1 rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 76 1 rm_stack(false, 0UL, "mkSeed", &____must_manage_mkSeed, ____alias_loc_id_2, ____chimes_did_disable2, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 23 2 const int ____chimes_did_disable0 = new_stack((void *)(&gasdev), "gasdev", &____must_manage_gasdev, 1, 0, (size_t)(14584644095263535671UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 23 141 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 24 4 real_t rsq; real_t v1; real_t v2; ;
@@ -41,15 +41,16 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 27 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 27 26 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 28 16 ({ calling_npm("lcg61", 0); lcg61_npm(seed); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 28 26 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 23 140  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 23 140  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 42 8 len=5 lcg61_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 43 137  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 43 137  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 66 10 len=6 mkSeed_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 55 ({ calling_npm("lcg61", 0); lcg61_npm(&iSeed); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 67 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 71 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 71 19 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 67 136  ; uint64_t iSeed;
+# 67
  if (____must_checkpoint_mkSeed_iSeed_0) { register_stack_vars(1, "mkSeed|iSeed|0", &____must_checkpoint_mkSeed_iSeed_0, "i64", (void *)(&iSeed), (size_t)8, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 22 8 len=6 gasdev_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 27 16 ({ calling_npm("lcg61", 0); lcg61_npm(seed); })
@@ -65,4 +66,5 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 72 67
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 71 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 71 19 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/random.c 67 136  ; uint64_t iSeed;
+# 67
  if (____must_checkpoint_mkSeed_iSeed_0) { register_stack_vars(1, "mkSeed|iSeed|0", &____must_checkpoint_mkSeed_iSeed_0, "i64", (void *)(&iSeed), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

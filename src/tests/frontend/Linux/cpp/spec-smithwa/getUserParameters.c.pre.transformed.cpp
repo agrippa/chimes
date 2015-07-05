@@ -26,7 +26,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -42,7 +42,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -77,7 +78,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2341,7 +2342,8 @@ void getUserParameters_resumable(void) {const int ____chimes_did_disable0 = new_
 # 31 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
 # 32 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-rm_stack(false, 0UL, "getUserParameters", &____must_manage_getUserParameters, 0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "getUserParameters", &____must_manage_getUserParameters, 0, ____chimes_did_disable0, false); }
+# 20 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 void getUserParameters_quick(void) {const int ____chimes_did_disable0 = new_stack((void *)(&getUserParameters), "getUserParameters", &____must_manage_getUserParameters, 0, 0) ; ; ;
 # 21 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 # 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
@@ -2365,12 +2367,10 @@ void getUserParameters_quick(void) {const int ____chimes_did_disable0 = new_stac
 # 31 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
   }
 # 32 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-rm_stack(false, 0UL, "getUserParameters", &____must_manage_getUserParameters, 0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "getUserParameters", &____must_manage_getUserParameters, 0, ____chimes_did_disable0, false); }
 
 void getUserParameters(void) { (____chimes_replaying ? getUserParameters_resumable() : getUserParameters_quick()); }
-
-
-
+# 20 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 void getUserParameters_npm(void) {
 # 21 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
 # 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"

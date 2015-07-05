@@ -1,8 +1,8 @@
-192 22 265 malloc 0 1 box_str
-258 25 604 malloc 0 1 FOUR_VECTOR
-267 20 666 malloc
-273 25 689 malloc 0 1 FOUR_VECTOR
-316 2 604 free
-317 2 666 free
-318 2 689 free
-319 2 265 free
+195 22 294 malloc 0 1 box_str
+261 25 633 malloc 0 1 FOUR_VECTOR
+270 20 695 malloc
+276 25 718 malloc 0 1 FOUR_VECTOR
+327 2 633 free
+328 2 695 free
+329 2 718 free
+330 2 294 free

@@ -4,12 +4,12 @@ InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decompos
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 57 5 len=12 processorNum_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 26 len=6 malloc_wrapper
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 46 , 5688163497316386558UL, 0, 1, (int)sizeof(struct DomainSt), 0
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 49 65 rm_stack(true, 5688163497316386558UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 49 65 rm_stack(true, 5688163497316386558UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 19 1 const int ____chimes_did_disable0 = new_stack((void *)(&initDecomposition), "initDecomposition", &____must_manage_initDecomposition, 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(5688163497316386757UL), "initDecomposition|xproc|0", &____must_checkpoint_initDecomposition_xproc_0, "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", &____must_checkpoint_initDecomposition_yproc_0, "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", &____must_checkpoint_initDecomposition_zproc_0, "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", &____must_checkpoint_initDecomposition_globalExtent_0, "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 50 1 rm_stack(true, 5688163497316386558UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 65 97 rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 50 1 rm_stack(true, 5688163497316386558UL, "initDecomposition", &____must_manage_initDecomposition, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 65 97 rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 58 1 const int ____chimes_did_disable1 = new_stack((void *)(&processorNum), "processorNum", &____must_manage_processorNum, 4, 0, (size_t)(5688163497316386855UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 66 1 rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 66 1 rm_stack(false, 0UL, "processorNum", &____must_manage_processorNum, ____alias_loc_id_3, ____chimes_did_disable1, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 19 2 const int ____chimes_did_disable0 = new_stack((void *)(&initDecomposition), "initDecomposition", &____must_manage_initDecomposition, 4, 4, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(5688163497316386757UL), "initDecomposition|xproc|0", &____must_checkpoint_initDecomposition_xproc_0, "i32", (void *)(&xproc), (size_t)4, 0, 0, 0, "initDecomposition|yproc|0", &____must_checkpoint_initDecomposition_yproc_0, "i32", (void *)(&yproc), (size_t)4, 0, 0, 0, "initDecomposition|zproc|0", &____must_checkpoint_initDecomposition_zproc_0, "i32", (void *)(&zproc), (size_t)4, 0, 0, 0, "initDecomposition|globalExtent|0", &____must_checkpoint_initDecomposition_globalExtent_0, "double*", (void *)(&globalExtent), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 19 731 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 4  Domain *dd;  dd = ((Domain *)malloc_wrapper(sizeof(Domain), 5688163497316386558UL, 0, 1, (int)sizeof(struct DomainSt), 0)) ;
@@ -50,9 +50,10 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 15 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 19 730  ; Domain *dd;
+# 19
  if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 57 5 len=12 processorNum_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 58 202  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 58 202  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 18 9 len=17 initDecomposition_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 44  ({  calling((void*)getNRanks, 1, ____alias_loc_id_1, 0UL, 0); (getNRanks)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 20 54 
@@ -61,6 +62,7 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 22 15 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 19 730  ; Domain *dd;
+# 19
  if (____must_checkpoint_initDecomposition_dd_0) { register_stack_vars(1, "initDecomposition|dd|0", &____must_checkpoint_initDecomposition_dd_0, "%struct.DomainSt*", (void *)(&dd), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(4): { goto call_lbl_4; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 57 5 len=12 processorNum_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/decomposition.c 58 202  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

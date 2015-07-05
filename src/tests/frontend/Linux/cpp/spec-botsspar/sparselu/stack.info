@@ -46,10 +46,11 @@
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c fwd|k|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_init|pBENCH|0 " float*** " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_init|pass|0 " i8* " 64 1 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|BENCH|0 " float** " 64 1 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|ii|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|jj|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|kk|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|BENCH|0 " float** " 64 1 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|ii|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|jj|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|kk|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_par_call|block|0 " float* " 64 1 0 1 checkpoint
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_seq_call|BENCH|0 " float** " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_seq_call|ii|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c sparselu_seq_call|jj|0 " i32 " 32 0 0 0

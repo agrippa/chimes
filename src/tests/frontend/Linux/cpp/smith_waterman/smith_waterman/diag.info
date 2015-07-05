@@ -24,25 +24,25 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 145 65 , 17130708580749872767UL, 0, 0
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 27 len=6 malloc_wrapper
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 146 65 , 17130708580749872767UL, 0, 0
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 29 81 rm_stack(false, 0UL, "char_mapping", &____must_manage_char_mapping, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 29 81 rm_stack(false, 0UL, "char_mapping", &____must_manage_char_mapping, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 37 const int ____chimes_did_disable0 = new_stack((void *)(&char_mapping), "char_mapping", &____must_manage_char_mapping, 1, 0, (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 30 1 rm_stack(false, 0UL, "char_mapping", &____must_manage_char_mapping, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 30 1 rm_stack(false, 0UL, "char_mapping", &____must_manage_char_mapping, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 32 63 const int ____chimes_did_disable1 = new_stack((void *)(&print_matrix), "print_matrix", &____must_manage_print_matrix, 3, 0, (size_t)(17130708580749872361UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 41 1 rm_stack(false, 0UL, "print_matrix", &____must_manage_print_matrix, ____alias_loc_id_2, ____chimes_did_disable1); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 65 74 rm_stack(false, 0UL, "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, ____alias_loc_id_3, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 41 1 rm_stack(false, 0UL, "print_matrix", &____must_manage_print_matrix, ____alias_loc_id_2, ____chimes_did_disable1, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 65 74 rm_stack(false, 0UL, "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, ____alias_loc_id_3, ____chimes_did_disable2, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 52 72 const int ____chimes_did_disable2 = new_stack((void *)(&clear_whitespaces_do_mapping), "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, 2, 0, (size_t)(17130708580749872412UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 66 1 rm_stack(false, 0UL, "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, ____alias_loc_id_3, ____chimes_did_disable2); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 80 80 rm_stack(true, 17130708580749872436UL, "read_file", &____must_manage_read_file, ____alias_loc_id_4, ____chimes_did_disable3); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 66 1 rm_stack(false, 0UL, "clear_whitespaces_do_mapping", &____must_manage_clear_whitespaces_do_mapping, ____alias_loc_id_3, ____chimes_did_disable2, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 80 80 rm_stack(true, 17130708580749872436UL, "read_file", &____must_manage_read_file, ____alias_loc_id_4, ____chimes_did_disable3, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 68 55 const int ____chimes_did_disable3 = new_stack((void *)(&read_file), "read_file", &____must_manage_read_file, 2, 0, (size_t)(17130708580749872458UL), (size_t)(17130708580749872459UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 81 1 rm_stack(true, 17130708580749872436UL, "read_file", &____must_manage_read_file, ____alias_loc_id_4, ____chimes_did_disable3); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 81 1 rm_stack(true, 17130708580749872436UL, "read_file", &____must_manage_read_file, ____alias_loc_id_4, ____chimes_did_disable3, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 83 65 const int ____chimes_did_disable4 = new_stack((void *)(&random_init), "random_init", &____must_manage_random_init, 2, 0, (size_t)(17130708580749872910UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 89 1 rm_stack(false, 0UL, "random_init", &____must_manage_random_init, ____alias_loc_id_7, ____chimes_did_disable4); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 89 1 rm_stack(false, 0UL, "random_init", &____must_manage_random_init, ____alias_loc_id_7, ____chimes_did_disable4, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 93 46 const int ____chimes_did_disable5 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(17130708580749872626UL), (size_t)(17130708580749872626UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 113 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_5, ____chimes_did_disable5); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 132 64 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 179 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 113 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_5, ____chimes_did_disable5, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 132 64 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 179 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 115 37 const int ____chimes_did_disable6 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(17130708580749872867UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 180 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 180 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_6, ____chimes_did_disable6, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 38 const int ____chimes_did_disable0 = new_stack((void *)(&char_mapping), "char_mapping", &____must_manage_char_mapping, 1, 0, (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 176 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 21 5  signed char to_be_returned;  to_be_returned = (-1) ;
@@ -131,21 +131,21 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_wat
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 179 30 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 171 9  call_lbl_19: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 13 len=12 char_mapping_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 175  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 175  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 32 6 len=12 print_matrix_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 32 250  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 32 250  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 52 8 len=28 clear_whitespaces_do_mapping_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 60 42 ({ calling_npm("char_mapping", 0); char_mapping_npm(curr_char); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 60 64 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 52 292  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 52 292  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 68 14 len=9 read_file_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 79 16 ({ calling_npm("clear_whitespaces_do_mapping", 0); clear_whitespaces_do_mapping_npm(file_buffer, file_size); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 79 67 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 68 237  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 68 237  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 83 13 len=11 random_init_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 83 234  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 83 234  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 91 6 len=6 kernel_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 93 279  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 93 279  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 115 5 len=4 main_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 142 5 ({ calling_npm("random_init", 0); random_init_npm(string_1, n_char_in_file_1); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 142 43 
@@ -182,18 +182,31 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterm
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 166 10 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 166 37 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 115 172  ; unsigned long long estimate;
+# 115
 unsigned long long elapsed;
+# 115
 unsigned long long c;
+# 115
 struct timeval intermediate;
+# 115
 struct timeval end;
+# 115
 struct timeval begin;
+# 115
 int current;
+# 115
 int prev;
+# 115
 unsigned long long nchunks;
+# 115
 unsigned long long chunking;
+# 115
 unsigned long long n_char_in_file_2;
+# 115
 unsigned long long n_char_in_file_1;
+# 115
 int *result_array[2];
+# 115
  register_stack_vars(13, "main|estimate|0", (int *)0x0, "i64", (void *)(&estimate), (size_t)8, 0, 0, 0, "main|elapsed|0", (int *)0x0, "i64", (void *)(&elapsed), (size_t)8, 0, 0, 0, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0);  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 13 len=12 char_mapping_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 20 175  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
@@ -247,16 +260,29 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterm
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 166 10 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 166 37 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./smithWaterman/smith_waterman.cpp 115 172  ; unsigned long long estimate;
+# 115
 unsigned long long elapsed;
+# 115
 unsigned long long c;
+# 115
 struct timeval intermediate;
+# 115
 struct timeval end;
+# 115
 struct timeval begin;
+# 115
 int current;
+# 115
 int prev;
+# 115
 unsigned long long nchunks;
+# 115
 unsigned long long chunking;
+# 115
 unsigned long long n_char_in_file_2;
+# 115
 unsigned long long n_char_in_file_1;
+# 115
 int *result_array[2];
+# 115
  register_stack_vars(13, "main|estimate|0", (int *)0x0, "i64", (void *)(&estimate), (size_t)8, 0, 0, 0, "main|elapsed|0", (int *)0x0, "i64", (void *)(&elapsed), (size_t)8, 0, 0, 0, "main|c|0", (int *)0x0, "i64", (void *)(&c), (size_t)8, 0, 0, 0, "main|intermediate|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&intermediate), (size_t)16, 0, 1, 0, "main|end|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&end), (size_t)16, 0, 1, 0, "main|begin|0", (int *)0x0, "%struct.timeval = type { i64, i64 }", (void *)(&begin), (size_t)16, 0, 1, 0, "main|current|0", (int *)0x0, "i32", (void *)(&current), (size_t)4, 0, 0, 0, "main|prev|0", (int *)0x0, "i32", (void *)(&prev), (size_t)4, 0, 0, 0, "main|nchunks|0", (int *)0x0, "i64", (void *)(&nchunks), (size_t)8, 0, 0, 0, "main|chunking|0", (int *)0x0, "i64", (void *)(&chunking), (size_t)8, 0, 0, 0, "main|n_char_in_file_2|0", (int *)0x0, "i64", (void *)(&n_char_in_file_2), (size_t)8, 0, 0, 0, "main|n_char_in_file_1|0", (int *)0x0, "i64", (void *)(&n_char_in_file_1), (size_t)8, 0, 0, 0, "main|result_array|0", (int *)0x0, "[2 x i32*]", (void *)(result_array), (size_t)16, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(19): { goto call_lbl_19; } default: { chimes_error(); } }  }  

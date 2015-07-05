@@ -12,66 +12,10 @@ static int ____chimes_does_checkpoint_read_graphics_npm = 1;
 static int ____chimes_does_checkpoint_resize_npm = 1;
 static int ____chimes_does_checkpoint_write_graphics_npm = 1;
 
-static int ____must_checkpoint_main_argc_0 = 2;
-static int ____must_checkpoint_main_argv_0 = 2;
-static int ____must_checkpoint_main_time0_0 = 2;
-static int ____must_checkpoint_main_time1_0 = 2;
-static int ____must_checkpoint_main_time2_0 = 2;
-static int ____must_checkpoint_main_time3_0 = 2;
-static int ____must_checkpoint_main_time4_0 = 2;
-static int ____must_checkpoint_main_time5_0 = 2;
-static int ____must_checkpoint_main_time6_0 = 2;
 static int ____must_checkpoint_main_time7_0 = 2;
 static int ____must_checkpoint_main_time8_0 = 2;
 static int ____must_checkpoint_main_time9_0 = 2;
-static int ____must_checkpoint_main_image_ori_0 = 2;
-static int ____must_checkpoint_main_image_ori_rows_0 = 2;
-static int ____must_checkpoint_main_image_ori_cols_0 = 2;
-static int ____must_checkpoint_main_image_ori_elem_0 = 2;
-static int ____must_checkpoint_main_image_0 = 2;
-static int ____must_checkpoint_main_Nr_0 = 2;
-static int ____must_checkpoint_main_Nc_0 = 2;
-static int ____must_checkpoint_main_Ne_0 = 2;
-static int ____must_checkpoint_main_niter_0 = 2;
-static int ____must_checkpoint_main_lambda_0 = 2;
-static int ____must_checkpoint_main_r1_0 = 2;
-static int ____must_checkpoint_main_r2_0 = 2;
-static int ____must_checkpoint_main_c1_0 = 2;
-static int ____must_checkpoint_main_c2_0 = 2;
-static int ____must_checkpoint_main_NeROI_0 = 2;
-static int ____must_checkpoint_main_meanROI_0 = 2;
-static int ____must_checkpoint_main_varROI_0 = 2;
-static int ____must_checkpoint_main_q0sqr_0 = 2;
-static int ____must_checkpoint_main_iN_0 = 2;
-static int ____must_checkpoint_main_iS_0 = 2;
-static int ____must_checkpoint_main_jE_0 = 2;
-static int ____must_checkpoint_main_jW_0 = 2;
-static int ____must_checkpoint_main_Jc_0 = 2;
-static int ____must_checkpoint_main_dN_0 = 2;
-static int ____must_checkpoint_main_dS_0 = 2;
-static int ____must_checkpoint_main_dW_0 = 2;
-static int ____must_checkpoint_main_dE_0 = 2;
-static int ____must_checkpoint_main_tmp_0 = 2;
-static int ____must_checkpoint_main_sum_0 = 2;
-static int ____must_checkpoint_main_sum2_0 = 2;
-static int ____must_checkpoint_main_G2_0 = 2;
-static int ____must_checkpoint_main_L_0 = 2;
-static int ____must_checkpoint_main_num_0 = 2;
-static int ____must_checkpoint_main_den_0 = 2;
-static int ____must_checkpoint_main_qsqr_0 = 2;
-static int ____must_checkpoint_main_D_0 = 2;
-static int ____must_checkpoint_main_c_0 = 2;
-static int ____must_checkpoint_main_cN_0 = 2;
-static int ____must_checkpoint_main_cS_0 = 2;
-static int ____must_checkpoint_main_cW_0 = 2;
-static int ____must_checkpoint_main_cE_0 = 2;
-static int ____must_checkpoint_main_iter_0 = 2;
-static int ____must_checkpoint_main_i_0 = 2;
-static int ____must_checkpoint_main_j_0 = 2;
-static int ____must_checkpoint_main_k_0 = 2;
-static int ____must_checkpoint_main_threads_0 = 2;
 
-static int ____must_manage_main = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
@@ -85,6 +29,7 @@ static unsigned ____alias_loc_id_8;
 static unsigned ____alias_loc_id_9;
 static unsigned ____alias_loc_id_10;
 static unsigned ____alias_loc_id_11;
+static unsigned ____alias_loc_id_12;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -100,7 +45,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -116,7 +61,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -151,7 +97,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3837,6 +3783,18 @@ int omp_in_final (void) throw ();
 }
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c" 2
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 30 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+
+# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+extern void checkpoint();
+
+extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*____chimes_fp)(void *));
+# 32 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c" 2
+# 32 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/define.h" 1
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/define.h"
@@ -3860,82 +3818,130 @@ extern void resize( float* input,
      int output_rows,
      int output_cols,
      int major);
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c" 2
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 35 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c" 2
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 static long long (*____chimes_extern_func_get_time)(void) = get_time;static void (*____chimes_extern_func_read_graphics)(char *, float *, int, int, int) = read_graphics;static void (*____chimes_extern_func_resize)(float *, int, int, float *, int, int, int) = resize;static void (*____chimes_extern_func_write_graphics)(char *, float *, int, int, int, int) = write_graphics;
 int main_quick(int argc, char *argv []); int main(int argc, char *argv []);
-int main_resumable(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(7677405821689735836UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int threads;
-long k;
-long j;
-long i;
-int iter;
-float cE;
-float cW;
-float cS;
-float cN;
-float *c;
-float D;
-float qsqr;
-float den;
-float num;
-float L;
-float G2;
-float sum2;
-float sum;
-float tmp;
-float *dE;
-float *dW;
-float *dS;
-float *dN;
-float Jc;
-int *jW;
-int *jE;
-int *iS;
-int *iN;
-float q0sqr;
-float varROI;
-float meanROI;
-long NeROI;
-int c2;
-int c1;
-int r2;
-int r1;
-float lambda;
-int niter;
-long Ne;
-long Nc;
-long Nr;
-float *image;
-long image_ori_elem;
-int image_ori_cols;
-int image_ori_rows;
-float *image_ori;
-long long time9;
-long long time8;
-long long time7;
-long long time6;
-long long time5;
-long long time4;
-long long time3;
-long long time2;
-long long time1;
-long long time0;
- if (____must_checkpoint_main_threads_0 || ____must_checkpoint_main_k_0 || ____must_checkpoint_main_j_0 || ____must_checkpoint_main_i_0 || ____must_checkpoint_main_iter_0 || ____must_checkpoint_main_cE_0 || ____must_checkpoint_main_cW_0 || ____must_checkpoint_main_cS_0 || ____must_checkpoint_main_cN_0 || ____must_checkpoint_main_c_0 || ____must_checkpoint_main_D_0 || ____must_checkpoint_main_qsqr_0 || ____must_checkpoint_main_den_0 || ____must_checkpoint_main_num_0 || ____must_checkpoint_main_L_0 || ____must_checkpoint_main_G2_0 || ____must_checkpoint_main_sum2_0 || ____must_checkpoint_main_sum_0 || ____must_checkpoint_main_tmp_0 || ____must_checkpoint_main_dE_0 || ____must_checkpoint_main_dW_0 || ____must_checkpoint_main_dS_0 || ____must_checkpoint_main_dN_0 || ____must_checkpoint_main_Jc_0 || ____must_checkpoint_main_jW_0 || ____must_checkpoint_main_jE_0 || ____must_checkpoint_main_iS_0 || ____must_checkpoint_main_iN_0 || ____must_checkpoint_main_q0sqr_0 || ____must_checkpoint_main_varROI_0 || ____must_checkpoint_main_meanROI_0 || ____must_checkpoint_main_NeROI_0 || ____must_checkpoint_main_c2_0 || ____must_checkpoint_main_c1_0 || ____must_checkpoint_main_r2_0 || ____must_checkpoint_main_r1_0 || ____must_checkpoint_main_lambda_0 || ____must_checkpoint_main_niter_0 || ____must_checkpoint_main_Ne_0 || ____must_checkpoint_main_Nc_0 || ____must_checkpoint_main_Nr_0 || ____must_checkpoint_main_image_0 || ____must_checkpoint_main_image_ori_elem_0 || ____must_checkpoint_main_image_ori_cols_0 || ____must_checkpoint_main_image_ori_rows_0 || ____must_checkpoint_main_image_ori_0 || ____must_checkpoint_main_time9_0 || ____must_checkpoint_main_time8_0 || ____must_checkpoint_main_time7_0 || ____must_checkpoint_main_time6_0 || ____must_checkpoint_main_time5_0 || ____must_checkpoint_main_time4_0 || ____must_checkpoint_main_time3_0 || ____must_checkpoint_main_time2_0 || ____must_checkpoint_main_time1_0 || ____must_checkpoint_main_time0_0) { register_stack_vars(56, "main|threads|0", &____must_checkpoint_main_threads_0, "i32", (void *)(&threads), (size_t)4, 0, 0, 0, "main|k|0", &____must_checkpoint_main_k_0, "i64", (void *)(&k), (size_t)8, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i64", (void *)(&j), (size_t)8, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|iter|0", &____must_checkpoint_main_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|cE|0", &____must_checkpoint_main_cE_0, "float", (void *)(&cE), (size_t)4, 0, 0, 0, "main|cW|0", &____must_checkpoint_main_cW_0, "float", (void *)(&cW), (size_t)4, 0, 0, 0, "main|cS|0", &____must_checkpoint_main_cS_0, "float", (void *)(&cS), (size_t)4, 0, 0, 0, "main|cN|0", &____must_checkpoint_main_cN_0, "float", (void *)(&cN), (size_t)4, 0, 0, 0, "main|c|0", &____must_checkpoint_main_c_0, "float*", (void *)(&c), (size_t)8, 1, 0, 0, "main|D|0", &____must_checkpoint_main_D_0, "float", (void *)(&D), (size_t)4, 0, 0, 0, "main|qsqr|0", &____must_checkpoint_main_qsqr_0, "float", (void *)(&qsqr), (size_t)4, 0, 0, 0, "main|den|0", &____must_checkpoint_main_den_0, "float", (void *)(&den), (size_t)4, 0, 0, 0, "main|num|0", &____must_checkpoint_main_num_0, "float", (void *)(&num), (size_t)4, 0, 0, 0, "main|L|0", &____must_checkpoint_main_L_0, "float", (void *)(&L), (size_t)4, 0, 0, 0, "main|G2|0", &____must_checkpoint_main_G2_0, "float", (void *)(&G2), (size_t)4, 0, 0, 0, "main|sum2|0", &____must_checkpoint_main_sum2_0, "float", (void *)(&sum2), (size_t)4, 0, 0, 0, "main|sum|0", &____must_checkpoint_main_sum_0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "main|tmp|0", &____must_checkpoint_main_tmp_0, "float", (void *)(&tmp), (size_t)4, 0, 0, 0, "main|dE|0", &____must_checkpoint_main_dE_0, "float*", (void *)(&dE), (size_t)8, 1, 0, 0, "main|dW|0", &____must_checkpoint_main_dW_0, "float*", (void *)(&dW), (size_t)8, 1, 0, 0, "main|dS|0", &____must_checkpoint_main_dS_0, "float*", (void *)(&dS), (size_t)8, 1, 0, 0, "main|dN|0", &____must_checkpoint_main_dN_0, "float*", (void *)(&dN), (size_t)8, 1, 0, 0, "main|Jc|0", &____must_checkpoint_main_Jc_0, "float", (void *)(&Jc), (size_t)4, 0, 0, 0, "main|jW|0", &____must_checkpoint_main_jW_0, "i32*", (void *)(&jW), (size_t)8, 1, 0, 0, "main|jE|0", &____must_checkpoint_main_jE_0, "i32*", (void *)(&jE), (size_t)8, 1, 0, 0, "main|iS|0", &____must_checkpoint_main_iS_0, "i32*", (void *)(&iS), (size_t)8, 1, 0, 0, "main|iN|0", &____must_checkpoint_main_iN_0, "i32*", (void *)(&iN), (size_t)8, 1, 0, 0, "main|q0sqr|0", &____must_checkpoint_main_q0sqr_0, "float", (void *)(&q0sqr), (size_t)4, 0, 0, 0, "main|varROI|0", &____must_checkpoint_main_varROI_0, "float", (void *)(&varROI), (size_t)4, 0, 0, 0, "main|meanROI|0", &____must_checkpoint_main_meanROI_0, "float", (void *)(&meanROI), (size_t)4, 0, 0, 0, "main|NeROI|0", &____must_checkpoint_main_NeROI_0, "i64", (void *)(&NeROI), (size_t)8, 0, 0, 0, "main|c2|0", &____must_checkpoint_main_c2_0, "i32", (void *)(&c2), (size_t)4, 0, 0, 0, "main|c1|0", &____must_checkpoint_main_c1_0, "i32", (void *)(&c1), (size_t)4, 0, 0, 0, "main|r2|0", &____must_checkpoint_main_r2_0, "i32", (void *)(&r2), (size_t)4, 0, 0, 0, "main|r1|0", &____must_checkpoint_main_r1_0, "i32", (void *)(&r1), (size_t)4, 0, 0, 0, "main|lambda|0", &____must_checkpoint_main_lambda_0, "float", (void *)(&lambda), (size_t)4, 0, 0, 0, "main|niter|0", &____must_checkpoint_main_niter_0, "i32", (void *)(&niter), (size_t)4, 0, 0, 0, "main|Ne|0", &____must_checkpoint_main_Ne_0, "i64", (void *)(&Ne), (size_t)8, 0, 0, 0, "main|Nc|0", &____must_checkpoint_main_Nc_0, "i64", (void *)(&Nc), (size_t)8, 0, 0, 0, "main|Nr|0", &____must_checkpoint_main_Nr_0, "i64", (void *)(&Nr), (size_t)8, 0, 0, 0, "main|image|0", &____must_checkpoint_main_image_0, "float*", (void *)(&image), (size_t)8, 1, 0, 0, "main|image_ori_elem|0", &____must_checkpoint_main_image_ori_elem_0, "i64", (void *)(&image_ori_elem), (size_t)8, 0, 0, 0, "main|image_ori_cols|0", &____must_checkpoint_main_image_ori_cols_0, "i32", (void *)(&image_ori_cols), (size_t)4, 0, 0, 0, "main|image_ori_rows|0", &____must_checkpoint_main_image_ori_rows_0, "i32", (void *)(&image_ori_rows), (size_t)4, 0, 0, 0, "main|image_ori|0", &____must_checkpoint_main_image_ori_0, "float*", (void *)(&image_ori), (size_t)8, 1, 0, 0, "main|time9|0", &____must_checkpoint_main_time9_0, "i64", (void *)(&time9), (size_t)8, 0, 0, 0, "main|time8|0", &____must_checkpoint_main_time8_0, "i64", (void *)(&time8), (size_t)8, 0, 0, 0, "main|time7|0", &____must_checkpoint_main_time7_0, "i64", (void *)(&time7), (size_t)8, 0, 0, 0, "main|time6|0", &____must_checkpoint_main_time6_0, "i64", (void *)(&time6), (size_t)8, 0, 0, 0, "main|time5|0", &____must_checkpoint_main_time5_0, "i64", (void *)(&time5), (size_t)8, 0, 0, 0, "main|time4|0", &____must_checkpoint_main_time4_0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", &____must_checkpoint_main_time3_0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", &____must_checkpoint_main_time2_0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", &____must_checkpoint_main_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", &____must_checkpoint_main_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(27): { goto call_lbl_27; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(46): { goto call_lbl_46; } default: { chimes_error(); } } } ; ;
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int main_resumable(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(7677405821689735837UL), "main|argc|0", (int *)0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int threads;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long k;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long j;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long i;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int iter;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float cE;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float cW;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float cS;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float cN;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *c;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float D;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float qsqr;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float den;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float num;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float L;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float G2;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float sum2;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float sum;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float tmp;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *dE;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *dW;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *dS;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *dN;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float Jc;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int *jW;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int *jE;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int *iS;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int *iN;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float q0sqr;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float varROI;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float meanROI;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long NeROI;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int c2;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int c1;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int r2;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int r1;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float lambda;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int niter;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long Ne;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long Nc;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long Nr;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *image;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long image_ori_elem;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int image_ori_cols;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int image_ori_rows;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *image_ori;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time9;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time8;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time7;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time6;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time5;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time4;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time3;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time2;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time1;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time0;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ register_stack_vars(56, "main|threads|0", (int *)0x0, "i32", (void *)(&threads), (size_t)4, 0, 0, 0, "main|k|0", (int *)0x0, "i64", (void *)(&k), (size_t)8, 0, 0, 0, "main|j|0", (int *)0x0, "i64", (void *)(&j), (size_t)8, 0, 0, 0, "main|i|0", (int *)0x0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|cE|0", (int *)0x0, "float", (void *)(&cE), (size_t)4, 0, 0, 0, "main|cW|0", (int *)0x0, "float", (void *)(&cW), (size_t)4, 0, 0, 0, "main|cS|0", (int *)0x0, "float", (void *)(&cS), (size_t)4, 0, 0, 0, "main|cN|0", (int *)0x0, "float", (void *)(&cN), (size_t)4, 0, 0, 0, "main|c|0", (int *)0x0, "float*", (void *)(&c), (size_t)8, 1, 0, 0, "main|D|0", (int *)0x0, "float", (void *)(&D), (size_t)4, 0, 0, 0, "main|qsqr|0", (int *)0x0, "float", (void *)(&qsqr), (size_t)4, 0, 0, 0, "main|den|0", (int *)0x0, "float", (void *)(&den), (size_t)4, 0, 0, 0, "main|num|0", (int *)0x0, "float", (void *)(&num), (size_t)4, 0, 0, 0, "main|L|0", (int *)0x0, "float", (void *)(&L), (size_t)4, 0, 0, 0, "main|G2|0", (int *)0x0, "float", (void *)(&G2), (size_t)4, 0, 0, 0, "main|sum2|0", (int *)0x0, "float", (void *)(&sum2), (size_t)4, 0, 0, 0, "main|sum|0", (int *)0x0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "main|tmp|0", (int *)0x0, "float", (void *)(&tmp), (size_t)4, 0, 0, 0, "main|dE|0", (int *)0x0, "float*", (void *)(&dE), (size_t)8, 1, 0, 0, "main|dW|0", (int *)0x0, "float*", (void *)(&dW), (size_t)8, 1, 0, 0, "main|dS|0", (int *)0x0, "float*", (void *)(&dS), (size_t)8, 1, 0, 0, "main|dN|0", (int *)0x0, "float*", (void *)(&dN), (size_t)8, 1, 0, 0, "main|Jc|0", (int *)0x0, "float", (void *)(&Jc), (size_t)4, 0, 0, 0, "main|jW|0", (int *)0x0, "i32*", (void *)(&jW), (size_t)8, 1, 0, 0, "main|jE|0", (int *)0x0, "i32*", (void *)(&jE), (size_t)8, 1, 0, 0, "main|iS|0", (int *)0x0, "i32*", (void *)(&iS), (size_t)8, 1, 0, 0, "main|iN|0", (int *)0x0, "i32*", (void *)(&iN), (size_t)8, 1, 0, 0, "main|q0sqr|0", (int *)0x0, "float", (void *)(&q0sqr), (size_t)4, 0, 0, 0, "main|varROI|0", (int *)0x0, "float", (void *)(&varROI), (size_t)4, 0, 0, 0, "main|meanROI|0", (int *)0x0, "float", (void *)(&meanROI), (size_t)4, 0, 0, 0, "main|NeROI|0", (int *)0x0, "i64", (void *)(&NeROI), (size_t)8, 0, 0, 0, "main|c2|0", (int *)0x0, "i32", (void *)(&c2), (size_t)4, 0, 0, 0, "main|c1|0", (int *)0x0, "i32", (void *)(&c1), (size_t)4, 0, 0, 0, "main|r2|0", (int *)0x0, "i32", (void *)(&r2), (size_t)4, 0, 0, 0, "main|r1|0", (int *)0x0, "i32", (void *)(&r1), (size_t)4, 0, 0, 0, "main|lambda|0", (int *)0x0, "float", (void *)(&lambda), (size_t)4, 0, 0, 0, "main|niter|0", (int *)0x0, "i32", (void *)(&niter), (size_t)4, 0, 0, 0, "main|Ne|0", (int *)0x0, "i64", (void *)(&Ne), (size_t)8, 0, 0, 0, "main|Nc|0", (int *)0x0, "i64", (void *)(&Nc), (size_t)8, 0, 0, 0, "main|Nr|0", (int *)0x0, "i64", (void *)(&Nr), (size_t)8, 0, 0, 0, "main|image|0", (int *)0x0, "float*", (void *)(&image), (size_t)8, 1, 0, 0, "main|image_ori_elem|0", (int *)0x0, "i64", (void *)(&image_ori_elem), (size_t)8, 0, 0, 0, "main|image_ori_cols|0", (int *)0x0, "i32", (void *)(&image_ori_cols), (size_t)4, 0, 0, 0, "main|image_ori_rows|0", (int *)0x0, "i32", (void *)(&image_ori_rows), (size_t)4, 0, 0, 0, "main|image_ori|0", (int *)0x0, "float*", (void *)(&image_ori), (size_t)8, 1, 0, 0, "main|time9|0", &____must_checkpoint_main_time9_0, "i64", (void *)(&time9), (size_t)8, 0, 0, 0, "main|time8|0", &____must_checkpoint_main_time8_0, "i64", (void *)(&time8), (size_t)8, 0, 0, 0, "main|time7|0", &____must_checkpoint_main_time7_0, "i64", (void *)(&time7), (size_t)8, 0, 0, 0, "main|time6|0", (int *)0x0, "i64", (void *)(&time6), (size_t)8, 0, 0, 0, "main|time5|0", (int *)0x0, "i64", (void *)(&time5), (size_t)8, 0, 0, 0, "main|time4|0", (int *)0x0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", (int *)0x0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", (int *)0x0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", (int *)0x0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", (int *)0x0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(27): { goto call_lbl_27; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(47): { goto call_lbl_47; } default: { chimes_error(); } } } ; ;
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   ;
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -3949,537 +3955,597 @@ long long time0;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   ;
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- long long time10; ;
+  ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
+  ;
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ long long time10; ;
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
+  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-      ;
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 68 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   ;
+# 69 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
+# 70 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
+# 71 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     ;
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+      ;
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+  ;
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
+     ;
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-       ;
+     ;
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        ;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+       ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+        ;
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     ;
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-       ;
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-          ;
+     ;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+       ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+          ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-      ;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
+# 104 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
+      ;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     ;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- if(argc != 6){
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  printf("ERROR: wrong number of arguments\n");
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- }
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- else{
+ if(argc != 6){
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  niter = atoi(argv[1]);
+  printf("ERROR: wrong number of arguments\n");
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  lambda = atof(argv[2]);
+   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  Nr = atoi(argv[3]);
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  Nc = atoi(argv[4]);
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  threads = atoi(argv[5]);
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
  }
+# 123 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ else{
+# 124 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  niter = atoi(argv[1]);
+# 125 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  lambda = atof(argv[2]);
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  Nr = atoi(argv[3]);
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- omp_set_num_threads(threads);
+  Nc = atoi(argv[4]);
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  threads = atoi(argv[5]);
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ }
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_11: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
+ omp_set_num_threads(threads);
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_11: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, ____alias_loc_id_11, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_11); (*____chimes_extern_func_get_time)(); })));
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image_ori_rows = 502;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image_ori_cols = 458;
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image_ori_elem = image_ori_rows * image_ori_cols;
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image_ori = (float*)malloc_wrapper(sizeof(float) * image_ori_elem, 7677405821689735604UL, 0, 0);
+ image_ori_rows = 502;
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ image_ori_cols = 458;
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = ("../../../data/srad/image.pgm"); } calling((void*)read_graphics, 13, ____alias_loc_id_9, 0UL, 5, (size_t)(7677405821689735866UL), (size_t)(7677405821689735604UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)(____chimes_arg0, image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_9); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_14: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ image_ori_elem = image_ori_rows * image_ori_cols;
+# 145 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 146 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ image_ori = (float*)malloc_wrapper(sizeof(float) * image_ori_elem, 7677405821689735605UL, 0, 0);
+# 147 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 148 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = ("../../../data/srad/image.pgm"); } calling((void*)read_graphics, 13, ____alias_loc_id_10, 0UL, 5, (size_t)(7677405821689735867UL), (size_t)(7677405821689735605UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)(____chimes_arg0, image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_10); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_14: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- Ne = Nr*Nc;
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image = (float*)malloc_wrapper(sizeof(float) * Ne, 7677405821689735127UL, 0, 0);
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_8, 0UL, 7, (size_t)(7677405821689735604UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_8); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_17: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 17, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ Ne = Nr*Nc;
+# 161 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ image = (float*)malloc_wrapper(sizeof(float) * Ne, 7677405821689735127UL, 0, 0);
+# 163 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 164 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_9, 0UL, 7, (size_t)(7677405821689735605UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_9); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_17: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 17, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    r1 = 0;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    r2 = Nr - 1;
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    c1 = 0;
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    c2 = Nc - 1;
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    r1 = 0;
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    r2 = Nr - 1;
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    NeROI = (r2-r1+1)*(c2-c1+1);
+    c1 = 0;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    c2 = Nc - 1;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iN = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735056UL, 0, 0) ;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iS = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735063UL, 0, 0) ;
+    NeROI = (r2-r1+1)*(c2-c1+1);
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jW = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735282UL, 0, 0) ;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jE = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735300UL, 0, 0) ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    iN = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735056UL, 0, 0) ;
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    iS = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735063UL, 0, 0) ;
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- dN = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735258UL, 0, 0) ;
+    jW = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735282UL, 0, 0) ;
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dS = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735276UL, 0, 0) ;
+    jE = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735300UL, 0, 0) ;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dW = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735294UL, 0, 0) ;
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dE = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735312UL, 0, 0) ;
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ dN = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735258UL, 0, 0) ;
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    dS = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735276UL, 0, 0) ;
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    c = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735419UL, 0, 0) ;
+    dW = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735294UL, 0, 0) ;
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    dE = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735312UL, 0, 0) ;
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    for (i=0; i<Nr; i++) {
+    c = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735419UL, 0, 0) ;
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        iN[i] = i-1;
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        iS[i] = i+1;
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    }
 # 203 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    for (i=0; i<Nr; i++) {
 # 204 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    for (j=0; j<Nc; j++) {
+        iN[i] = i-1;
 # 205 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        jW[j] = j-1;
+        iS[i] = i+1;
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        jE[j] = j+1;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
     }
+# 207 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    for (j=0; j<Nc; j++) {
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iN[0] = 0;
+        jW[j] = j-1;
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iS[Nr-1] = Nr-1;
+        jE[j] = j+1;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jW[0] = 0;
+    }
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jE[Nc-1] = Nc-1;
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    iN[0] = 0;
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_27: time5 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 27, ____alias_loc_id_7, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_7); (*____chimes_extern_func_get_time)(); })));
+    iS[Nr-1] = Nr-1;
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    jW[0] = 0;
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    jE[Nc-1] = Nc-1;
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_27: time5 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 27, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- for (i=0; i<Ne; i++) {
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  image[i] = exp(image[i]/255);
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    }
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ for (i=0; i<Ne; i++) {
+# 226 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  image[i] = exp(image[i]/255);
+# 227 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    }
+# 228 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 229 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_29: time6 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 29, ____alias_loc_id_6, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_6); (*____chimes_extern_func_get_time)(); })));
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    for (iter=0; iter<niter; iter++){
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 238 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    for (iter=0; iter<niter; iter++){
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        sum=0;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  sum2=0;
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        for (i=r1; i<=r2; i++) {
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            for (j=c1; j<=c2; j++) {
 # 244 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                tmp = image[i + Nr*j];
+        sum=0;
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                sum += tmp ;
+  sum2=0;
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                sum2 += tmp*tmp;
+        for (i=r1; i<=r2; i++) {
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            }
+            for (j=c1; j<=c2; j++) {
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        }
+                tmp = image[i + Nr*j];
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        meanROI = sum / NeROI;
+                sum += tmp ;
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        varROI = (sum2 / NeROI) - meanROI*meanROI;
+                sum2 += tmp*tmp;
 # 251 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        q0sqr = varROI / (meanROI*meanROI);
+            }
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+        }
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+        meanROI = sum / NeROI;
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-#pragma omp parallel for shared(image, dN, dS, dW, dE, c, Nr, Nc, iN, iS, jW, jE) private(i, j, k, Jc, G2, L, num, den, qsqr)
+        varROI = (sum2 / NeROI) - meanROI*meanROI;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  for (j=0; j<Nc; j++) {
+        q0sqr = varROI / (meanROI*meanROI);
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            for (i=0; i<Nr; i++) {
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+#pragma omp parallel for shared(image, dN, dS, dW, dE, c, Nr, Nc, iN, iS, jW, jE) private(i, j, k, Jc, G2, L, num, den, qsqr)
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  for (j=0; j<Nc; j++) {
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                k = i + Nr*j;
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                Jc = image[k];
+            for (i=0; i<Nr; i++) {
 # 262 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 263 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                dN[k] = image[iN[i] + Nr*j] - Jc;
+                k = i + Nr*j;
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                dS[k] = image[iS[i] + Nr*j] - Jc;
+                Jc = image[k];
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                dW[k] = image[i + Nr*jW[j]] - Jc;
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                dE[k] = image[i + Nr*jE[j]] - Jc;
 # 268 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                dN[k] = image[iN[i] + Nr*j] - Jc;
 # 269 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                dS[k] = image[iS[i] + Nr*j] - Jc;
 # 270 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                G2 = (dN[k]*dN[k] + dS[k]*dS[k]
+                dW[k] = image[i + Nr*jW[j]] - Jc;
 # 271 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                    + dW[k]*dW[k] + dE[k]*dE[k]) / (Jc*Jc);
+                dE[k] = image[i + Nr*jE[j]] - Jc;
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                L = (dN[k] + dS[k] + dW[k] + dE[k]) / Jc;
+                G2 = (dN[k]*dN[k] + dS[k]*dS[k]
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                    + dW[k]*dW[k] + dE[k]*dE[k]) / (Jc*Jc);
 # 276 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 277 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                num = (0.5*G2) - ((1.0/16.0)*(L*L)) ;
 # 278 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                den = 1 + (.25*L);
+                L = (dN[k] + dS[k] + dW[k] + dE[k]) / Jc;
 # 279 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                qsqr = num/(den*den);
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                num = (0.5*G2) - ((1.0/16.0)*(L*L)) ;
 # 282 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                den = (qsqr-q0sqr) / (q0sqr * (1+q0sqr)) ;
+                den = 1 + (.25*L);
 # 283 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                c[k] = 1.0 / (1.0+den) ;
+                qsqr = num/(den*den);
 # 284 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                if (c[k] < 0) {{c[k] = 0;}; } else if (c[k] > 1)
+                den = (qsqr-q0sqr) / (q0sqr * (1+q0sqr)) ;
+# 287 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                c[k] = 1.0 / (1.0+den) ;
+# 288 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     {c[k] = 1;}
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 291 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            }
-# 292 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                if (c[k] < 0) {{c[k] = 0;}; } else if (c[k] > 1)
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        }
+     {c[k] = 1;}
 # 294 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 295 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+            }
 # 296 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-#pragma omp parallel for shared(image, c, Nr, Nc, lambda) private(i, j, k, D, cS, cN, cW, cE)
 # 297 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        for (j=0; j<Nc; j++) {
+        }
 # 298 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 300 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+#pragma omp parallel for shared(image, c, Nr, Nc, lambda) private(i, j, k, D, cS, cN, cW, cE)
 # 301 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            for (i=0; i<Nr; i++) {
+        for (j=0; j<Nc; j++) {
 # 302 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 304 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                k = i + Nr*j;
 # 305 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+            for (i=0; i<Nr; i++) {
 # 306 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 307 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                cN = c[k];
 # 308 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                cS = c[iS[i] + Nr*j];
+                k = i + Nr*j;
 # 309 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                cW = c[k];
 # 310 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                cE = c[i + Nr*jE[j]];
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                cN = c[k];
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                cS = c[iS[i] + Nr*j];
 # 313 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                D = cN*dN[k] + cS*dS[k] + cW*dW[k] + cE*dE[k];
+                cW = c[k];
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                cE = c[i + Nr*jE[j]];
 # 315 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 316 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                image[k] = image[k] + 0.25*lambda*D;
 # 317 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                D = cN*dN[k] + cS*dS[k] + cW*dW[k] + cE*dE[k];
 # 318 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            }
 # 319 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 320 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        }
+                image[k] = image[k] + 0.25*lambda*D;
 # 321 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 322 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- }
+            }
 # 323 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+        }
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_30: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 30, ____alias_loc_id_5, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_5); (*____chimes_extern_func_get_time)(); })));
+         call_lbl_30: checkpoint_transformed(30, ____alias_loc_id_7);
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ }
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 331 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_31: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 31, ____alias_loc_id_5, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_5); (*____chimes_extern_func_get_time)(); })));
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- for (i=0; i<Ne; i++) {
 # 334 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  image[i] = log(image[i])*255;
 # 335 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- }
 # 336 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 337 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_32: time8 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 32, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
 # 338 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 339 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ for (i=0; i<Ne; i++) {
 # 340 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  image[i] = log(image[i])*255;
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ }
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_33: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ char * ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = ("image_out.pgm"); } calling((void*)write_graphics, 33, ____alias_loc_id_3, 0UL, 6, (size_t)(7677405821689735867UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)(____chimes_arg12, image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_3); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
+  call_lbl_33: time8 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 33, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
+# 344 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 345 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 346 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 348 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 349 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 350 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_34: time9 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 34, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
-# 351 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 352 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 353 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 354 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_34: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ char * ____chimes_arg12; if (!____chimes_replaying) { ____chimes_arg12 = ("image_out.pgm"); } calling((void*)write_graphics, 34, ____alias_loc_id_3, 0UL, 6, (size_t)(7677405821689735868UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)(____chimes_arg12, image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_3); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- free_wrapper(image_ori, 7677405821689735604UL);
+  call_lbl_35: time9 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 35, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- free_wrapper(image, 7677405821689735127UL);
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(iN, 7677405821689735056UL); free_wrapper(iS, 7677405821689735063UL); free_wrapper(jW, 7677405821689735282UL); free_wrapper(jE, 7677405821689735300UL);
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(dN, 7677405821689735258UL); free_wrapper(dS, 7677405821689735276UL); free_wrapper(dW, 7677405821689735294UL); free_wrapper(dE, 7677405821689735312UL);
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(c, 7677405821689735419UL);
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ free_wrapper(image_ori, 7677405821689735605UL);
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_46: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 46, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
+ free_wrapper(image, 7677405821689735127UL);
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    free_wrapper(iN, 7677405821689735056UL); free_wrapper(iS, 7677405821689735063UL); free_wrapper(jW, 7677405821689735282UL); free_wrapper(jE, 7677405821689735300UL);
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    free_wrapper(dN, 7677405821689735258UL); free_wrapper(dS, 7677405821689735276UL); free_wrapper(dW, 7677405821689735294UL); free_wrapper(dE, 7677405821689735312UL);
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    free_wrapper(c, 7677405821689735419UL);
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("Time spent in different stages of the application:\n");
+  call_lbl_47: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 47, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
 # 370 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : SETUP VARIABLES\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time10-time0) * 100);
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : READ COMMAND LINE PARAMETERS\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time10-time0) * 100);
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : READ IMAGE FROM FILE\n", (float) (time3-time2) / 1000000, (float) (time3-time2) / (float) (time10-time0) * 100);
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : RESIZE IMAGE\n", (float) (time4-time3) / 1000000, (float) (time4-time3) / (float) (time10-time0) * 100);
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : SETUP, MEMORY ALLOCATION\n", (float) (time5-time4) / 1000000, (float) (time5-time4) / (float) (time10-time0) * 100);
 # 375 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : EXTRACT IMAGE\n", (float) (time6-time5) / 1000000, (float) (time6-time5) / (float) (time10-time0) * 100);
+ printf("Time spent in different stages of the application:\n");
 # 376 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : COMPUTE\n", (float) (time7-time6) / 1000000, (float) (time7-time6) / (float) (time10-time0) * 100);
+ printf("%.12f s, %.12f % : SETUP VARIABLES\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time10-time0) * 100);
 # 377 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : COMPRESS IMAGE\n", (float) (time8-time7) / 1000000, (float) (time8-time7) / (float) (time10-time0) * 100);
+ printf("%.12f s, %.12f % : READ COMMAND LINE PARAMETERS\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time10-time0) * 100);
 # 378 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : SAVE IMAGE INTO FILE\n", (float) (time9-time8) / 1000000, (float) (time9-time8) / (float) (time10-time0) * 100);
+ printf("%.12f s, %.12f % : READ IMAGE FROM FILE\n", (float) (time3-time2) / 1000000, (float) (time3-time2) / (float) (time10-time0) * 100);
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : FREE MEMORY\n", (float) (time10-time9) / 1000000, (float) (time10-time9) / (float) (time10-time0) * 100);
+ printf("%.12f s, %.12f % : RESIZE IMAGE\n", (float) (time4-time3) / 1000000, (float) (time4-time3) / (float) (time10-time0) * 100);
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("Total time:\n");
+ printf("%.12f s, %.12f % : SETUP, MEMORY ALLOCATION\n", (float) (time5-time4) / 1000000, (float) (time5-time4) / (float) (time10-time0) * 100);
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s\n", (float) (time10-time0) / 1000000);
+ printf("%.12f s, %.12f % : EXTRACT IMAGE\n", (float) (time6-time5) / 1000000, (float) (time6-time5) / (float) (time10-time0) * 100);
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ printf("%.12f s, %.12f % : COMPUTE\n", (float) (time7-time6) / 1000000, (float) (time7-time6) / (float) (time10-time0) * 100);
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ printf("%.12f s, %.12f % : COMPRESS IMAGE\n", (float) (time8-time7) / 1000000, (float) (time8-time7) / (float) (time10-time0) * 100);
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ printf("%.12f s, %.12f % : SAVE IMAGE INTO FILE\n", (float) (time9-time8) / 1000000, (float) (time9-time8) / (float) (time10-time0) * 100);
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ printf("%.12f s, %.12f % : FREE MEMORY\n", (float) (time10-time9) / 1000000, (float) (time10-time9) / (float) (time10-time0) * 100);
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
+ printf("Total time:\n");
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); }
-int main_quick(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 2, (size_t)(0UL), (size_t)(7677405821689735836UL), "main|argc|0", &____must_checkpoint_main_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int threads;
-long k;
-long j;
-long i;
-int iter;
-float cE;
-float cW;
-float cS;
-float cN;
-float *c;
-float D;
-float qsqr;
-float den;
-float num;
-float L;
-float G2;
-float sum2;
-float sum;
-float tmp;
-float *dE;
-float *dW;
-float *dS;
-float *dN;
-float Jc;
-int *jW;
-int *jE;
-int *iS;
-int *iN;
-float q0sqr;
-float varROI;
-float meanROI;
-long NeROI;
-int c2;
-int c1;
-int r2;
-int r1;
-float lambda;
-int niter;
-long Ne;
-long Nc;
-long Nr;
-float *image;
-long image_ori_elem;
-int image_ori_cols;
-int image_ori_rows;
-float *image_ori;
-long long time9;
-long long time8;
-long long time7;
-long long time6;
-long long time5;
-long long time4;
-long long time3;
-long long time2;
-long long time1;
-long long time0;
- if (____must_checkpoint_main_threads_0 || ____must_checkpoint_main_k_0 || ____must_checkpoint_main_j_0 || ____must_checkpoint_main_i_0 || ____must_checkpoint_main_iter_0 || ____must_checkpoint_main_cE_0 || ____must_checkpoint_main_cW_0 || ____must_checkpoint_main_cS_0 || ____must_checkpoint_main_cN_0 || ____must_checkpoint_main_c_0 || ____must_checkpoint_main_D_0 || ____must_checkpoint_main_qsqr_0 || ____must_checkpoint_main_den_0 || ____must_checkpoint_main_num_0 || ____must_checkpoint_main_L_0 || ____must_checkpoint_main_G2_0 || ____must_checkpoint_main_sum2_0 || ____must_checkpoint_main_sum_0 || ____must_checkpoint_main_tmp_0 || ____must_checkpoint_main_dE_0 || ____must_checkpoint_main_dW_0 || ____must_checkpoint_main_dS_0 || ____must_checkpoint_main_dN_0 || ____must_checkpoint_main_Jc_0 || ____must_checkpoint_main_jW_0 || ____must_checkpoint_main_jE_0 || ____must_checkpoint_main_iS_0 || ____must_checkpoint_main_iN_0 || ____must_checkpoint_main_q0sqr_0 || ____must_checkpoint_main_varROI_0 || ____must_checkpoint_main_meanROI_0 || ____must_checkpoint_main_NeROI_0 || ____must_checkpoint_main_c2_0 || ____must_checkpoint_main_c1_0 || ____must_checkpoint_main_r2_0 || ____must_checkpoint_main_r1_0 || ____must_checkpoint_main_lambda_0 || ____must_checkpoint_main_niter_0 || ____must_checkpoint_main_Ne_0 || ____must_checkpoint_main_Nc_0 || ____must_checkpoint_main_Nr_0 || ____must_checkpoint_main_image_0 || ____must_checkpoint_main_image_ori_elem_0 || ____must_checkpoint_main_image_ori_cols_0 || ____must_checkpoint_main_image_ori_rows_0 || ____must_checkpoint_main_image_ori_0 || ____must_checkpoint_main_time9_0 || ____must_checkpoint_main_time8_0 || ____must_checkpoint_main_time7_0 || ____must_checkpoint_main_time6_0 || ____must_checkpoint_main_time5_0 || ____must_checkpoint_main_time4_0 || ____must_checkpoint_main_time3_0 || ____must_checkpoint_main_time2_0 || ____must_checkpoint_main_time1_0 || ____must_checkpoint_main_time0_0) { register_stack_vars(56, "main|threads|0", &____must_checkpoint_main_threads_0, "i32", (void *)(&threads), (size_t)4, 0, 0, 0, "main|k|0", &____must_checkpoint_main_k_0, "i64", (void *)(&k), (size_t)8, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i64", (void *)(&j), (size_t)8, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|iter|0", &____must_checkpoint_main_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|cE|0", &____must_checkpoint_main_cE_0, "float", (void *)(&cE), (size_t)4, 0, 0, 0, "main|cW|0", &____must_checkpoint_main_cW_0, "float", (void *)(&cW), (size_t)4, 0, 0, 0, "main|cS|0", &____must_checkpoint_main_cS_0, "float", (void *)(&cS), (size_t)4, 0, 0, 0, "main|cN|0", &____must_checkpoint_main_cN_0, "float", (void *)(&cN), (size_t)4, 0, 0, 0, "main|c|0", &____must_checkpoint_main_c_0, "float*", (void *)(&c), (size_t)8, 1, 0, 0, "main|D|0", &____must_checkpoint_main_D_0, "float", (void *)(&D), (size_t)4, 0, 0, 0, "main|qsqr|0", &____must_checkpoint_main_qsqr_0, "float", (void *)(&qsqr), (size_t)4, 0, 0, 0, "main|den|0", &____must_checkpoint_main_den_0, "float", (void *)(&den), (size_t)4, 0, 0, 0, "main|num|0", &____must_checkpoint_main_num_0, "float", (void *)(&num), (size_t)4, 0, 0, 0, "main|L|0", &____must_checkpoint_main_L_0, "float", (void *)(&L), (size_t)4, 0, 0, 0, "main|G2|0", &____must_checkpoint_main_G2_0, "float", (void *)(&G2), (size_t)4, 0, 0, 0, "main|sum2|0", &____must_checkpoint_main_sum2_0, "float", (void *)(&sum2), (size_t)4, 0, 0, 0, "main|sum|0", &____must_checkpoint_main_sum_0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "main|tmp|0", &____must_checkpoint_main_tmp_0, "float", (void *)(&tmp), (size_t)4, 0, 0, 0, "main|dE|0", &____must_checkpoint_main_dE_0, "float*", (void *)(&dE), (size_t)8, 1, 0, 0, "main|dW|0", &____must_checkpoint_main_dW_0, "float*", (void *)(&dW), (size_t)8, 1, 0, 0, "main|dS|0", &____must_checkpoint_main_dS_0, "float*", (void *)(&dS), (size_t)8, 1, 0, 0, "main|dN|0", &____must_checkpoint_main_dN_0, "float*", (void *)(&dN), (size_t)8, 1, 0, 0, "main|Jc|0", &____must_checkpoint_main_Jc_0, "float", (void *)(&Jc), (size_t)4, 0, 0, 0, "main|jW|0", &____must_checkpoint_main_jW_0, "i32*", (void *)(&jW), (size_t)8, 1, 0, 0, "main|jE|0", &____must_checkpoint_main_jE_0, "i32*", (void *)(&jE), (size_t)8, 1, 0, 0, "main|iS|0", &____must_checkpoint_main_iS_0, "i32*", (void *)(&iS), (size_t)8, 1, 0, 0, "main|iN|0", &____must_checkpoint_main_iN_0, "i32*", (void *)(&iN), (size_t)8, 1, 0, 0, "main|q0sqr|0", &____must_checkpoint_main_q0sqr_0, "float", (void *)(&q0sqr), (size_t)4, 0, 0, 0, "main|varROI|0", &____must_checkpoint_main_varROI_0, "float", (void *)(&varROI), (size_t)4, 0, 0, 0, "main|meanROI|0", &____must_checkpoint_main_meanROI_0, "float", (void *)(&meanROI), (size_t)4, 0, 0, 0, "main|NeROI|0", &____must_checkpoint_main_NeROI_0, "i64", (void *)(&NeROI), (size_t)8, 0, 0, 0, "main|c2|0", &____must_checkpoint_main_c2_0, "i32", (void *)(&c2), (size_t)4, 0, 0, 0, "main|c1|0", &____must_checkpoint_main_c1_0, "i32", (void *)(&c1), (size_t)4, 0, 0, 0, "main|r2|0", &____must_checkpoint_main_r2_0, "i32", (void *)(&r2), (size_t)4, 0, 0, 0, "main|r1|0", &____must_checkpoint_main_r1_0, "i32", (void *)(&r1), (size_t)4, 0, 0, 0, "main|lambda|0", &____must_checkpoint_main_lambda_0, "float", (void *)(&lambda), (size_t)4, 0, 0, 0, "main|niter|0", &____must_checkpoint_main_niter_0, "i32", (void *)(&niter), (size_t)4, 0, 0, 0, "main|Ne|0", &____must_checkpoint_main_Ne_0, "i64", (void *)(&Ne), (size_t)8, 0, 0, 0, "main|Nc|0", &____must_checkpoint_main_Nc_0, "i64", (void *)(&Nc), (size_t)8, 0, 0, 0, "main|Nr|0", &____must_checkpoint_main_Nr_0, "i64", (void *)(&Nr), (size_t)8, 0, 0, 0, "main|image|0", &____must_checkpoint_main_image_0, "float*", (void *)(&image), (size_t)8, 1, 0, 0, "main|image_ori_elem|0", &____must_checkpoint_main_image_ori_elem_0, "i64", (void *)(&image_ori_elem), (size_t)8, 0, 0, 0, "main|image_ori_cols|0", &____must_checkpoint_main_image_ori_cols_0, "i32", (void *)(&image_ori_cols), (size_t)4, 0, 0, 0, "main|image_ori_rows|0", &____must_checkpoint_main_image_ori_rows_0, "i32", (void *)(&image_ori_rows), (size_t)4, 0, 0, 0, "main|image_ori|0", &____must_checkpoint_main_image_ori_0, "float*", (void *)(&image_ori), (size_t)8, 1, 0, 0, "main|time9|0", &____must_checkpoint_main_time9_0, "i64", (void *)(&time9), (size_t)8, 0, 0, 0, "main|time8|0", &____must_checkpoint_main_time8_0, "i64", (void *)(&time8), (size_t)8, 0, 0, 0, "main|time7|0", &____must_checkpoint_main_time7_0, "i64", (void *)(&time7), (size_t)8, 0, 0, 0, "main|time6|0", &____must_checkpoint_main_time6_0, "i64", (void *)(&time6), (size_t)8, 0, 0, 0, "main|time5|0", &____must_checkpoint_main_time5_0, "i64", (void *)(&time5), (size_t)8, 0, 0, 0, "main|time4|0", &____must_checkpoint_main_time4_0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", &____must_checkpoint_main_time3_0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", &____must_checkpoint_main_time2_0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", &____must_checkpoint_main_time1_0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", &____must_checkpoint_main_time0_0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); } ; ;
-# 42 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 43 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 44 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ printf("%.12f s\n", (float) (time10-time0) / 1000000);
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 389 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 390 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 391 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 392 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
+# 393 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable0, false); }
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int main_quick(int argc, char *argv []){const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 2, (size_t)(0UL), (size_t)(7677405821689735837UL), "main|argc|0", (int *)0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int threads;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long k;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long j;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long i;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int iter;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float cE;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float cW;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float cS;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float cN;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *c;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float D;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float qsqr;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float den;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float num;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float L;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float G2;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float sum2;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float sum;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float tmp;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *dE;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *dW;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *dS;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *dN;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float Jc;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int *jW;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int *jE;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int *iS;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int *iN;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float q0sqr;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float varROI;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float meanROI;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long NeROI;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int c2;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int c1;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int r2;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int r1;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float lambda;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int niter;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long Ne;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long Nc;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long Nr;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *image;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long image_ori_elem;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int image_ori_cols;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+int image_ori_rows;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+float *image_ori;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time9;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time8;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time7;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time6;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time5;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time4;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time3;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time2;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time1;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+long long time0;
+# 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ register_stack_vars(56, "main|threads|0", (int *)0x0, "i32", (void *)(&threads), (size_t)4, 0, 0, 0, "main|k|0", (int *)0x0, "i64", (void *)(&k), (size_t)8, 0, 0, 0, "main|j|0", (int *)0x0, "i64", (void *)(&j), (size_t)8, 0, 0, 0, "main|i|0", (int *)0x0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|iter|0", (int *)0x0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "main|cE|0", (int *)0x0, "float", (void *)(&cE), (size_t)4, 0, 0, 0, "main|cW|0", (int *)0x0, "float", (void *)(&cW), (size_t)4, 0, 0, 0, "main|cS|0", (int *)0x0, "float", (void *)(&cS), (size_t)4, 0, 0, 0, "main|cN|0", (int *)0x0, "float", (void *)(&cN), (size_t)4, 0, 0, 0, "main|c|0", (int *)0x0, "float*", (void *)(&c), (size_t)8, 1, 0, 0, "main|D|0", (int *)0x0, "float", (void *)(&D), (size_t)4, 0, 0, 0, "main|qsqr|0", (int *)0x0, "float", (void *)(&qsqr), (size_t)4, 0, 0, 0, "main|den|0", (int *)0x0, "float", (void *)(&den), (size_t)4, 0, 0, 0, "main|num|0", (int *)0x0, "float", (void *)(&num), (size_t)4, 0, 0, 0, "main|L|0", (int *)0x0, "float", (void *)(&L), (size_t)4, 0, 0, 0, "main|G2|0", (int *)0x0, "float", (void *)(&G2), (size_t)4, 0, 0, 0, "main|sum2|0", (int *)0x0, "float", (void *)(&sum2), (size_t)4, 0, 0, 0, "main|sum|0", (int *)0x0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "main|tmp|0", (int *)0x0, "float", (void *)(&tmp), (size_t)4, 0, 0, 0, "main|dE|0", (int *)0x0, "float*", (void *)(&dE), (size_t)8, 1, 0, 0, "main|dW|0", (int *)0x0, "float*", (void *)(&dW), (size_t)8, 1, 0, 0, "main|dS|0", (int *)0x0, "float*", (void *)(&dS), (size_t)8, 1, 0, 0, "main|dN|0", (int *)0x0, "float*", (void *)(&dN), (size_t)8, 1, 0, 0, "main|Jc|0", (int *)0x0, "float", (void *)(&Jc), (size_t)4, 0, 0, 0, "main|jW|0", (int *)0x0, "i32*", (void *)(&jW), (size_t)8, 1, 0, 0, "main|jE|0", (int *)0x0, "i32*", (void *)(&jE), (size_t)8, 1, 0, 0, "main|iS|0", (int *)0x0, "i32*", (void *)(&iS), (size_t)8, 1, 0, 0, "main|iN|0", (int *)0x0, "i32*", (void *)(&iN), (size_t)8, 1, 0, 0, "main|q0sqr|0", (int *)0x0, "float", (void *)(&q0sqr), (size_t)4, 0, 0, 0, "main|varROI|0", (int *)0x0, "float", (void *)(&varROI), (size_t)4, 0, 0, 0, "main|meanROI|0", (int *)0x0, "float", (void *)(&meanROI), (size_t)4, 0, 0, 0, "main|NeROI|0", (int *)0x0, "i64", (void *)(&NeROI), (size_t)8, 0, 0, 0, "main|c2|0", (int *)0x0, "i32", (void *)(&c2), (size_t)4, 0, 0, 0, "main|c1|0", (int *)0x0, "i32", (void *)(&c1), (size_t)4, 0, 0, 0, "main|r2|0", (int *)0x0, "i32", (void *)(&r2), (size_t)4, 0, 0, 0, "main|r1|0", (int *)0x0, "i32", (void *)(&r1), (size_t)4, 0, 0, 0, "main|lambda|0", (int *)0x0, "float", (void *)(&lambda), (size_t)4, 0, 0, 0, "main|niter|0", (int *)0x0, "i32", (void *)(&niter), (size_t)4, 0, 0, 0, "main|Ne|0", (int *)0x0, "i64", (void *)(&Ne), (size_t)8, 0, 0, 0, "main|Nc|0", (int *)0x0, "i64", (void *)(&Nc), (size_t)8, 0, 0, 0, "main|Nr|0", (int *)0x0, "i64", (void *)(&Nr), (size_t)8, 0, 0, 0, "main|image|0", (int *)0x0, "float*", (void *)(&image), (size_t)8, 1, 0, 0, "main|image_ori_elem|0", (int *)0x0, "i64", (void *)(&image_ori_elem), (size_t)8, 0, 0, 0, "main|image_ori_cols|0", (int *)0x0, "i32", (void *)(&image_ori_cols), (size_t)4, 0, 0, 0, "main|image_ori_rows|0", (int *)0x0, "i32", (void *)(&image_ori_rows), (size_t)4, 0, 0, 0, "main|image_ori|0", (int *)0x0, "float*", (void *)(&image_ori), (size_t)8, 1, 0, 0, "main|time9|0", &____must_checkpoint_main_time9_0, "i64", (void *)(&time9), (size_t)8, 0, 0, 0, "main|time8|0", &____must_checkpoint_main_time8_0, "i64", (void *)(&time8), (size_t)8, 0, 0, 0, "main|time7|0", &____must_checkpoint_main_time7_0, "i64", (void *)(&time7), (size_t)8, 0, 0, 0, "main|time6|0", (int *)0x0, "i64", (void *)(&time6), (size_t)8, 0, 0, 0, "main|time5|0", (int *)0x0, "i64", (void *)(&time5), (size_t)8, 0, 0, 0, "main|time4|0", (int *)0x0, "i64", (void *)(&time4), (size_t)8, 0, 0, 0, "main|time3|0", (int *)0x0, "i64", (void *)(&time3), (size_t)8, 0, 0, 0, "main|time2|0", (int *)0x0, "i64", (void *)(&time2), (size_t)8, 0, 0, 0, "main|time1|0", (int *)0x0, "i64", (void *)(&time1), (size_t)8, 0, 0, 0, "main|time0|0", (int *)0x0, "i64", (void *)(&time0), (size_t)8, 0, 0, 0); ; ;
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   ;
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
@@ -4493,468 +4559,479 @@ long long time0;
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   ;
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- long long time10; ;
+  ;
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
+  ;
 # 61 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ long long time10; ;
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
+  call_lbl_1: time0 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 1, ____alias_loc_id_2, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_2); (*____chimes_extern_func_get_time)(); })));
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-      ;
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 68 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   ;
+# 69 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
+# 70 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
+# 71 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     ;
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+      ;
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+  ;
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
+     ;
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-       ;
+     ;
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        ;
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+       ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+        ;
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     ;
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-       ;
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-          ;
+     ;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+       ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     ;
+          ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-      ;
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
      ;
+# 104 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     ;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  ;
+      ;
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     ;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  ;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_2: time1 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 2, ____alias_loc_id_0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_0); (*____chimes_extern_func_get_time)(); })));
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- if(argc != 6){
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  printf("ERROR: wrong number of arguments\n");
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- }
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- else{
+ if(argc != 6){
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  niter = atoi(argv[1]);
+  printf("ERROR: wrong number of arguments\n");
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  lambda = atof(argv[2]);
+   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  Nr = atoi(argv[3]);
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  Nc = atoi(argv[4]);
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  threads = atoi(argv[5]);
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
  }
+# 123 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ else{
+# 124 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  niter = atoi(argv[1]);
+# 125 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  lambda = atof(argv[2]);
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  Nr = atoi(argv[3]);
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- omp_set_num_threads(threads);
+  Nc = atoi(argv[4]);
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  threads = atoi(argv[5]);
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ }
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_11: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, ____alias_loc_id_10, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_10); (*____chimes_extern_func_get_time)(); })));
+ omp_set_num_threads(threads);
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_11: time2 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 11, ____alias_loc_id_11, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_11); (*____chimes_extern_func_get_time)(); })));
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image_ori_rows = 502;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image_ori_cols = 458;
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image_ori_elem = image_ori_rows * image_ori_cols;
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image_ori = (float*)malloc_wrapper(sizeof(float) * image_ori_elem, 7677405821689735604UL, 0, 0);
+ image_ori_rows = 502;
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ image_ori_cols = 458;
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ calling((void*)read_graphics, 13, ____alias_loc_id_9, 0UL, 5, (size_t)(7677405821689735866UL), (size_t)(7677405821689735604UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_9); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_14: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ image_ori_elem = image_ori_rows * image_ori_cols;
+# 145 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 146 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ image_ori = (float*)malloc_wrapper(sizeof(float) * image_ori_elem, 7677405821689735605UL, 0, 0);
+# 147 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 148 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_13: (____chimes_does_checkpoint_read_graphics_npm ? ( ({ calling((void*)read_graphics, 13, ____alias_loc_id_10, 0UL, 5, (size_t)(7677405821689735867UL), (size_t)(7677405821689735605UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); }) ) : (({ calling_npm("read_graphics", ____alias_loc_id_10); (*____chimes_extern_func_read_graphics)("../../../data/srad/image.pgm", image_ori, image_ori_rows, image_ori_cols, 1); })));
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_14: time3 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 14, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- Ne = Nr*Nc;
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- image = (float*)malloc_wrapper(sizeof(float) * Ne, 7677405821689735127UL, 0, 0);
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_8, 0UL, 7, (size_t)(7677405821689735604UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_8); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_17: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 17, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ Ne = Nr*Nc;
+# 161 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ image = (float*)malloc_wrapper(sizeof(float) * Ne, 7677405821689735127UL, 0, 0);
+# 163 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 164 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_16: (____chimes_does_checkpoint_resize_npm ? ( ({ calling((void*)resize, 16, ____alias_loc_id_9, 0UL, 7, (size_t)(7677405821689735605UL), (size_t)(0UL), (size_t)(0UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); }) ) : (({ calling_npm("resize", ____alias_loc_id_9); (*____chimes_extern_func_resize)(image_ori, image_ori_rows, image_ori_cols, image, Nr, Nc, 1); })));
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_17: time4 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 17, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    r1 = 0;
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    r2 = Nr - 1;
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    c1 = 0;
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    c2 = Nc - 1;
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    r1 = 0;
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    r2 = Nr - 1;
 # 180 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    NeROI = (r2-r1+1)*(c2-c1+1);
+    c1 = 0;
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    c2 = Nc - 1;
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iN = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735056UL, 0, 0) ;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iS = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735063UL, 0, 0) ;
+    NeROI = (r2-r1+1)*(c2-c1+1);
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jW = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735282UL, 0, 0) ;
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jE = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735300UL, 0, 0) ;
 # 187 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    iN = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735056UL, 0, 0) ;
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    iS = (int *)malloc_wrapper(sizeof(int*)*Nr, 7677405821689735063UL, 0, 0) ;
 # 189 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- dN = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735258UL, 0, 0) ;
+    jW = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735282UL, 0, 0) ;
 # 190 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dS = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735276UL, 0, 0) ;
+    jE = (int *)malloc_wrapper(sizeof(int*)*Nc, 7677405821689735300UL, 0, 0) ;
 # 191 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dW = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735294UL, 0, 0) ;
 # 192 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    dE = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735312UL, 0, 0) ;
 # 193 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ dN = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735258UL, 0, 0) ;
 # 194 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    dS = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735276UL, 0, 0) ;
 # 195 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    c = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735419UL, 0, 0) ;
+    dW = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735294UL, 0, 0) ;
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    dE = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735312UL, 0, 0) ;
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    for (i=0; i<Nr; i++) {
+    c = (float*)malloc_wrapper(sizeof(float)*Ne, 7677405821689735419UL, 0, 0) ;
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        iN[i] = i-1;
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        iS[i] = i+1;
 # 202 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    }
 # 203 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    for (i=0; i<Nr; i++) {
 # 204 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    for (j=0; j<Nc; j++) {
+        iN[i] = i-1;
 # 205 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        jW[j] = j-1;
+        iS[i] = i+1;
 # 206 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        jE[j] = j+1;
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
     }
+# 207 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    for (j=0; j<Nc; j++) {
 # 209 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iN[0] = 0;
+        jW[j] = j-1;
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    iS[Nr-1] = Nr-1;
+        jE[j] = j+1;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jW[0] = 0;
+    }
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    jE[Nc-1] = Nc-1;
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    iN[0] = 0;
 # 214 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_27: time5 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 27, ____alias_loc_id_7, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_7); (*____chimes_extern_func_get_time)(); })));
+    iS[Nr-1] = Nr-1;
 # 215 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    jW[0] = 0;
 # 216 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    jE[Nc-1] = Nc-1;
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_27: time5 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 27, ____alias_loc_id_8, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_8); (*____chimes_extern_func_get_time)(); })));
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- for (i=0; i<Ne; i++) {
 # 222 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  image[i] = exp(image[i]/255);
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    }
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ for (i=0; i<Ne; i++) {
+# 226 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  image[i] = exp(image[i]/255);
+# 227 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    }
+# 228 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 229 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
   call_lbl_29: time6 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 29, ____alias_loc_id_6, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_6); (*____chimes_extern_func_get_time)(); })));
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 234 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    for (iter=0; iter<niter; iter++){
-# 235 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 236 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 237 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 238 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 238 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    for (iter=0; iter<niter; iter++){
 # 239 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 240 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        sum=0;
 # 241 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  sum2=0;
 # 242 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        for (i=r1; i<=r2; i++) {
 # 243 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            for (j=c1; j<=c2; j++) {
 # 244 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                tmp = image[i + Nr*j];
+        sum=0;
 # 245 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                sum += tmp ;
+  sum2=0;
 # 246 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                sum2 += tmp*tmp;
+        for (i=r1; i<=r2; i++) {
 # 247 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            }
+            for (j=c1; j<=c2; j++) {
 # 248 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        }
+                tmp = image[i + Nr*j];
 # 249 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        meanROI = sum / NeROI;
+                sum += tmp ;
 # 250 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        varROI = (sum2 / NeROI) - meanROI*meanROI;
+                sum2 += tmp*tmp;
 # 251 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        q0sqr = varROI / (meanROI*meanROI);
+            }
 # 252 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+        }
 # 253 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+        meanROI = sum / NeROI;
 # 254 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-#pragma omp parallel for shared(image, dN, dS, dW, dE, c, Nr, Nc, iN, iS, jW, jE) private(i, j, k, Jc, G2, L, num, den, qsqr)
+        varROI = (sum2 / NeROI) - meanROI*meanROI;
 # 255 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  for (j=0; j<Nc; j++) {
+        q0sqr = varROI / (meanROI*meanROI);
 # 256 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 257 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            for (i=0; i<Nr; i++) {
 # 258 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+#pragma omp parallel for shared(image, dN, dS, dW, dE, c, Nr, Nc, iN, iS, jW, jE) private(i, j, k, Jc, G2, L, num, den, qsqr)
 # 259 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  for (j=0; j<Nc; j++) {
 # 260 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                k = i + Nr*j;
 # 261 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                Jc = image[k];
+            for (i=0; i<Nr; i++) {
 # 262 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 263 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 264 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                dN[k] = image[iN[i] + Nr*j] - Jc;
+                k = i + Nr*j;
 # 265 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                dS[k] = image[iS[i] + Nr*j] - Jc;
+                Jc = image[k];
 # 266 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                dW[k] = image[i + Nr*jW[j]] - Jc;
 # 267 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                dE[k] = image[i + Nr*jE[j]] - Jc;
 # 268 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                dN[k] = image[iN[i] + Nr*j] - Jc;
 # 269 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                dS[k] = image[iS[i] + Nr*j] - Jc;
 # 270 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                G2 = (dN[k]*dN[k] + dS[k]*dS[k]
+                dW[k] = image[i + Nr*jW[j]] - Jc;
 # 271 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                    + dW[k]*dW[k] + dE[k]*dE[k]) / (Jc*Jc);
+                dE[k] = image[i + Nr*jE[j]] - Jc;
 # 272 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 273 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 274 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                L = (dN[k] + dS[k] + dW[k] + dE[k]) / Jc;
+                G2 = (dN[k]*dN[k] + dS[k]*dS[k]
 # 275 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                    + dW[k]*dW[k] + dE[k]*dE[k]) / (Jc*Jc);
 # 276 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 277 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                num = (0.5*G2) - ((1.0/16.0)*(L*L)) ;
 # 278 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                den = 1 + (.25*L);
+                L = (dN[k] + dS[k] + dW[k] + dE[k]) / Jc;
 # 279 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                qsqr = num/(den*den);
 # 280 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 281 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                num = (0.5*G2) - ((1.0/16.0)*(L*L)) ;
 # 282 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                den = (qsqr-q0sqr) / (q0sqr * (1+q0sqr)) ;
+                den = 1 + (.25*L);
 # 283 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                c[k] = 1.0 / (1.0+den) ;
+                qsqr = num/(den*den);
 # 284 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 285 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 286 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                if (c[k] < 0) {{c[k] = 0;}; } else if (c[k] > 1)
+                den = (qsqr-q0sqr) / (q0sqr * (1+q0sqr)) ;
+# 287 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                c[k] = 1.0 / (1.0+den) ;
+# 288 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 289 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     {c[k] = 1;}
 # 290 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 291 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            }
-# 292 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                if (c[k] < 0) {{c[k] = 0;}; } else if (c[k] > 1)
 # 293 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        }
+     {c[k] = 1;}
 # 294 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 295 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+            }
 # 296 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-#pragma omp parallel for shared(image, c, Nr, Nc, lambda) private(i, j, k, D, cS, cN, cW, cE)
 # 297 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        for (j=0; j<Nc; j++) {
+        }
 # 298 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 299 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 300 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+#pragma omp parallel for shared(image, c, Nr, Nc, lambda) private(i, j, k, D, cS, cN, cW, cE)
 # 301 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            for (i=0; i<Nr; i++) {
+        for (j=0; j<Nc; j++) {
 # 302 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 303 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 304 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                k = i + Nr*j;
 # 305 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+            for (i=0; i<Nr; i++) {
 # 306 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 307 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                cN = c[k];
 # 308 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                cS = c[iS[i] + Nr*j];
+                k = i + Nr*j;
 # 309 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                cW = c[k];
 # 310 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                cE = c[i + Nr*jE[j]];
 # 311 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                cN = c[k];
 # 312 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                cS = c[iS[i] + Nr*j];
 # 313 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                D = cN*dN[k] + cS*dS[k] + cW*dW[k] + cE*dE[k];
+                cW = c[k];
 # 314 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                cE = c[i + Nr*jE[j]];
 # 315 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 316 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-                image[k] = image[k] + 0.25*lambda*D;
 # 317 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+                D = cN*dN[k] + cS*dS[k] + cW*dW[k] + cE*dE[k];
 # 318 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-            }
 # 319 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 320 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-        }
+                image[k] = image[k] + 0.25*lambda*D;
 # 321 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 322 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- }
+            }
 # 323 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 324 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+        }
 # 325 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 326 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_30: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 30, ____alias_loc_id_5, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_5); (*____chimes_extern_func_get_time)(); })));
+         call_lbl_30: checkpoint_transformed(30, ____alias_loc_id_7);
 # 327 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 328 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ }
 # 329 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 330 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 331 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 332 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_31: time7 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 31, ____alias_loc_id_5, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_5); (*____chimes_extern_func_get_time)(); })));
 # 333 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- for (i=0; i<Ne; i++) {
 # 334 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  image[i] = log(image[i])*255;
 # 335 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- }
 # 336 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 337 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_32: time8 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 32, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
 # 338 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 339 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ for (i=0; i<Ne; i++) {
 # 340 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  image[i] = log(image[i])*255;
 # 341 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ }
 # 342 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 343 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_33: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ calling((void*)write_graphics, 33, ____alias_loc_id_3, 0UL, 6, (size_t)(7677405821689735867UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_3); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
+  call_lbl_33: time8 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 33, ____alias_loc_id_4, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_4); (*____chimes_extern_func_get_time)(); })));
+# 344 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 345 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 346 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 347 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 348 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 349 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 350 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_34: time9 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 34, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
-# 351 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 352 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 353 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-# 354 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+  call_lbl_34: (____chimes_does_checkpoint_write_graphics_npm ? ( ({ calling((void*)write_graphics, 34, ____alias_loc_id_3, 0UL, 6, (size_t)(7677405821689735868UL), (size_t)(7677405821689735127UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); }) ) : (({ calling_npm("write_graphics", ____alias_loc_id_3); (*____chimes_extern_func_write_graphics)("image_out.pgm", image, Nr, Nc, 1, 255); })));
 # 355 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 356 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- free_wrapper(image_ori, 7677405821689735604UL);
+  call_lbl_35: time9 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 35, 0, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", 0); (*____chimes_extern_func_get_time)(); })));
 # 357 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- free_wrapper(image, 7677405821689735127UL);
 # 358 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 359 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(iN, 7677405821689735056UL); free_wrapper(iS, 7677405821689735063UL); free_wrapper(jW, 7677405821689735282UL); free_wrapper(jE, 7677405821689735300UL);
 # 360 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(dN, 7677405821689735258UL); free_wrapper(dS, 7677405821689735276UL); free_wrapper(dW, 7677405821689735294UL); free_wrapper(dE, 7677405821689735312UL);
 # 361 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-    free_wrapper(c, 7677405821689735419UL);
 # 362 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ free_wrapper(image_ori, 7677405821689735605UL);
 # 363 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-  call_lbl_46: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 46, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
+ free_wrapper(image, 7677405821689735127UL);
 # 364 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 365 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    free_wrapper(iN, 7677405821689735056UL); free_wrapper(iS, 7677405821689735063UL); free_wrapper(jW, 7677405821689735282UL); free_wrapper(jE, 7677405821689735300UL);
 # 366 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    free_wrapper(dN, 7677405821689735258UL); free_wrapper(dS, 7677405821689735276UL); free_wrapper(dW, 7677405821689735294UL); free_wrapper(dE, 7677405821689735312UL);
 # 367 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+    free_wrapper(c, 7677405821689735419UL);
 # 368 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
 # 369 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("Time spent in different stages of the application:\n");
+  call_lbl_47: time10 = (____chimes_does_checkpoint_get_time_npm ? ( ({ calling((void*)get_time, 47, ____alias_loc_id_1, 0UL, 0); (get_time)(); }) ) : (({ calling_npm("get_time", ____alias_loc_id_1); (*____chimes_extern_func_get_time)(); })));
 # 370 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : SETUP VARIABLES\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time10-time0) * 100);
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : READ COMMAND LINE PARAMETERS\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time10-time0) * 100);
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : READ IMAGE FROM FILE\n", (float) (time3-time2) / 1000000, (float) (time3-time2) / (float) (time10-time0) * 100);
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : RESIZE IMAGE\n", (float) (time4-time3) / 1000000, (float) (time4-time3) / (float) (time10-time0) * 100);
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : SETUP, MEMORY ALLOCATION\n", (float) (time5-time4) / 1000000, (float) (time5-time4) / (float) (time10-time0) * 100);
 # 375 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : EXTRACT IMAGE\n", (float) (time6-time5) / 1000000, (float) (time6-time5) / (float) (time10-time0) * 100);
+ printf("Time spent in different stages of the application:\n");
 # 376 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : COMPUTE\n", (float) (time7-time6) / 1000000, (float) (time7-time6) / (float) (time10-time0) * 100);
+ printf("%.12f s, %.12f % : SETUP VARIABLES\n", (float) (time1-time0) / 1000000, (float) (time1-time0) / (float) (time10-time0) * 100);
 # 377 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : COMPRESS IMAGE\n", (float) (time8-time7) / 1000000, (float) (time8-time7) / (float) (time10-time0) * 100);
+ printf("%.12f s, %.12f % : READ COMMAND LINE PARAMETERS\n", (float) (time2-time1) / 1000000, (float) (time2-time1) / (float) (time10-time0) * 100);
 # 378 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : SAVE IMAGE INTO FILE\n", (float) (time9-time8) / 1000000, (float) (time9-time8) / (float) (time10-time0) * 100);
+ printf("%.12f s, %.12f % : READ IMAGE FROM FILE\n", (float) (time3-time2) / 1000000, (float) (time3-time2) / (float) (time10-time0) * 100);
 # 379 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s, %.12f % : FREE MEMORY\n", (float) (time10-time9) / 1000000, (float) (time10-time9) / (float) (time10-time0) * 100);
+ printf("%.12f s, %.12f % : RESIZE IMAGE\n", (float) (time4-time3) / 1000000, (float) (time4-time3) / (float) (time10-time0) * 100);
 # 380 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("Total time:\n");
+ printf("%.12f s, %.12f % : SETUP, MEMORY ALLOCATION\n", (float) (time5-time4) / 1000000, (float) (time5-time4) / (float) (time10-time0) * 100);
 # 381 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
- printf("%.12f s\n", (float) (time10-time0) / 1000000);
+ printf("%.12f s, %.12f % : EXTRACT IMAGE\n", (float) (time6-time5) / 1000000, (float) (time6-time5) / (float) (time10-time0) * 100);
 # 382 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ printf("%.12f s, %.12f % : COMPUTE\n", (float) (time7-time6) / 1000000, (float) (time7-time6) / (float) (time10-time0) * 100);
 # 383 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ printf("%.12f s, %.12f % : COMPRESS IMAGE\n", (float) (time8-time7) / 1000000, (float) (time8-time7) / (float) (time10-time0) * 100);
 # 384 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ printf("%.12f s, %.12f % : SAVE IMAGE INTO FILE\n", (float) (time9-time8) / 1000000, (float) (time9-time8) / (float) (time10-time0) * 100);
 # 385 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+ printf("%.12f s, %.12f % : FREE MEMORY\n", (float) (time10-time9) / 1000000, (float) (time10-time9) / (float) (time10-time0) * 100);
 # 386 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); return ____chimes_ret_var_1; ;
+ printf("Total time:\n");
 # 387 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
-rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_11, ____chimes_did_disable0); }
+ printf("%.12f s\n", (float) (time10-time0) / 1000000);
+# 388 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 389 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 390 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 391 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+# 392 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
+# 393 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/main.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_12, ____chimes_did_disable0, false); }
 
-int main(int argc, char *argv []) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+int main(int argc, char *argv []) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
 
 
@@ -4963,19 +5040,20 @@ int main(int argc, char *argv []) { init_chimes(); return (____chimes_replaying 
 
 
 static int module_init() {
-    init_module(7677405821689734771UL, 13, 1, 58, 12, 0, 4, 4, 0, 14, 0,
+    init_module(7677405821689734771UL, 13, 1, 3, 13, 0, 4, 4, 0, 14, 0,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (7677405821689734771UL + 4UL),
                            &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (7677405821689734771UL + 13UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 2UL), (7677405821689734771UL + 3UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (7677405821689734771UL + 12UL), "write_graphics", (unsigned)2, (7677405821689734771UL + 356UL), (7677405821689734771UL + 1096UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (7677405821689734771UL + 12UL), "write_graphics", (unsigned)2, (7677405821689734771UL + 356UL), (7677405821689734771UL + 1097UL),
                            &____alias_loc_id_4, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 11UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 356UL),
-                           &____alias_loc_id_5, (unsigned)28, (unsigned)0, (unsigned)0, (7677405821689734771UL + 10UL), (7677405821689734771UL + 30UL), (7677405821689734771UL + 31UL), (7677405821689734771UL + 32UL), (7677405821689734771UL + 37UL), (7677405821689734771UL + 42UL), (7677405821689734771UL + 43UL), (7677405821689734771UL + 44UL), (7677405821689734771UL + 45UL), (7677405821689734771UL + 46UL), (7677405821689734771UL + 47UL), (7677405821689734771UL + 48UL), (7677405821689734771UL + 49UL), (7677405821689734771UL + 50UL), (7677405821689734771UL + 52UL), (7677405821689734771UL + 53UL), (7677405821689734771UL + 54UL), (7677405821689734771UL + 55UL), (7677405821689734771UL + 56UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 59UL), (7677405821689734771UL + 356UL), (7677405821689734771UL + 487UL), (7677405821689734771UL + 505UL), (7677405821689734771UL + 523UL), (7677405821689734771UL + 541UL), (7677405821689734771UL + 648UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (7677405821689734771UL + 10UL), (7677405821689734771UL + 56UL),
                            &____alias_loc_id_6, (unsigned)3, (unsigned)0, (unsigned)0, (7677405821689734771UL + 9UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 356UL),
-                           &____alias_loc_id_7, (unsigned)21, (unsigned)0, (unsigned)0, (7677405821689734771UL + 8UL), (7677405821689734771UL + 25UL), (7677405821689734771UL + 26UL), (7677405821689734771UL + 27UL), (7677405821689734771UL + 28UL), (7677405821689734771UL + 29UL), (7677405821689734771UL + 33UL), (7677405821689734771UL + 34UL), (7677405821689734771UL + 35UL), (7677405821689734771UL + 36UL), (7677405821689734771UL + 38UL), (7677405821689734771UL + 39UL), (7677405821689734771UL + 40UL), (7677405821689734771UL + 41UL), (7677405821689734771UL + 51UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 285UL), (7677405821689734771UL + 292UL), (7677405821689734771UL + 511UL), (7677405821689734771UL + 529UL),
-                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)1, (7677405821689734771UL + 7UL), (7677405821689734771UL + 19UL), (7677405821689734771UL + 22UL), "resize", (unsigned)2, (7677405821689734771UL + 356UL), (7677405821689734771UL + 833UL),
-                           &____alias_loc_id_9, (unsigned)5, (unsigned)0, (unsigned)1, (7677405821689734771UL + 6UL), (7677405821689734771UL + 15UL), (7677405821689734771UL + 16UL), (7677405821689734771UL + 17UL), (7677405821689734771UL + 18UL), "read_graphics", (unsigned)2, (7677405821689734771UL + 833UL), (7677405821689734771UL + 1095UL),
-                            &____alias_loc_id_10, (unsigned)6, (unsigned)0, (unsigned)0, (7677405821689734771UL + 5UL), (7677405821689734771UL + 20UL), (7677405821689734771UL + 21UL), (7677405821689734771UL + 23UL), (7677405821689734771UL + 24UL), (7677405821689734771UL + 60UL),
-                            &____alias_loc_id_11, (unsigned)5, (unsigned)0, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 5UL), (7677405821689734771UL + 14UL), (7677405821689734771UL + 61UL), (7677405821689734771UL + 62UL),
+                           &____alias_loc_id_7, (unsigned)28, (unsigned)0, (unsigned)0, (7677405821689734771UL + 10UL), (7677405821689734771UL + 30UL), (7677405821689734771UL + 31UL), (7677405821689734771UL + 32UL), (7677405821689734771UL + 37UL), (7677405821689734771UL + 42UL), (7677405821689734771UL + 43UL), (7677405821689734771UL + 44UL), (7677405821689734771UL + 45UL), (7677405821689734771UL + 46UL), (7677405821689734771UL + 47UL), (7677405821689734771UL + 48UL), (7677405821689734771UL + 49UL), (7677405821689734771UL + 50UL), (7677405821689734771UL + 52UL), (7677405821689734771UL + 53UL), (7677405821689734771UL + 54UL), (7677405821689734771UL + 55UL), (7677405821689734771UL + 56UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 59UL), (7677405821689734771UL + 356UL), (7677405821689734771UL + 487UL), (7677405821689734771UL + 505UL), (7677405821689734771UL + 523UL), (7677405821689734771UL + 541UL), (7677405821689734771UL + 648UL),
+                           &____alias_loc_id_8, (unsigned)21, (unsigned)0, (unsigned)0, (7677405821689734771UL + 8UL), (7677405821689734771UL + 25UL), (7677405821689734771UL + 26UL), (7677405821689734771UL + 27UL), (7677405821689734771UL + 28UL), (7677405821689734771UL + 29UL), (7677405821689734771UL + 33UL), (7677405821689734771UL + 34UL), (7677405821689734771UL + 35UL), (7677405821689734771UL + 36UL), (7677405821689734771UL + 38UL), (7677405821689734771UL + 39UL), (7677405821689734771UL + 40UL), (7677405821689734771UL + 41UL), (7677405821689734771UL + 51UL), (7677405821689734771UL + 57UL), (7677405821689734771UL + 58UL), (7677405821689734771UL + 285UL), (7677405821689734771UL + 292UL), (7677405821689734771UL + 511UL), (7677405821689734771UL + 529UL),
+                           &____alias_loc_id_9, (unsigned)3, (unsigned)0, (unsigned)1, (7677405821689734771UL + 7UL), (7677405821689734771UL + 19UL), (7677405821689734771UL + 22UL), "resize", (unsigned)2, (7677405821689734771UL + 356UL), (7677405821689734771UL + 834UL),
+                            &____alias_loc_id_10, (unsigned)5, (unsigned)0, (unsigned)1, (7677405821689734771UL + 6UL), (7677405821689734771UL + 15UL), (7677405821689734771UL + 16UL), (7677405821689734771UL + 17UL), (7677405821689734771UL + 18UL), "read_graphics", (unsigned)2, (7677405821689734771UL + 834UL), (7677405821689734771UL + 1096UL),
+                            &____alias_loc_id_11, (unsigned)6, (unsigned)0, (unsigned)0, (7677405821689734771UL + 5UL), (7677405821689734771UL + 20UL), (7677405821689734771UL + 21UL), (7677405821689734771UL + 23UL), (7677405821689734771UL + 24UL), (7677405821689734771UL + 60UL),
+                            &____alias_loc_id_12, (unsigned)5, (unsigned)0, (unsigned)0, (7677405821689734771UL + 1UL), (7677405821689734771UL + 5UL), (7677405821689734771UL + 14UL), (7677405821689734771UL + 61UL), (7677405821689734771UL + 62UL),
                                "get_time", (void **)&(____chimes_extern_func_get_time),
                                "read_graphics", (void **)&(____chimes_extern_func_read_graphics),
                                "resize", (void **)&(____chimes_extern_func_resize),
@@ -4986,88 +5064,33 @@ static int module_init() {
                            "write_graphics", &(____chimes_does_checkpoint_write_graphics_npm),
                              (7677405821689734771UL + 39UL), (7677405821689734771UL + 505UL),
                              (7677405821689734771UL + 38UL), (7677405821689734771UL + 487UL),
-                             (7677405821689734771UL + 15UL), (7677405821689734771UL + 833UL),
+                             (7677405821689734771UL + 15UL), (7677405821689734771UL + 834UL),
                              (7677405821689734771UL + 19UL), (7677405821689734771UL + 356UL),
-                             (7677405821689734771UL + 1065UL), (7677405821689734771UL + 140UL),
+                             (7677405821689734771UL + 1066UL), (7677405821689734771UL + 140UL),
                              (7677405821689734771UL + 51UL), (7677405821689734771UL + 648UL),
                              (7677405821689734771UL + 36UL), (7677405821689734771UL + 511UL),
                              (7677405821689734771UL + 35UL), (7677405821689734771UL + 529UL),
                              (7677405821689734771UL + 34UL), (7677405821689734771UL + 292UL),
                              (7677405821689734771UL + 33UL), (7677405821689734771UL + 285UL),
-                             (7677405821689734771UL + 3UL), (7677405821689734771UL + 1065UL),
+                             (7677405821689734771UL + 3UL), (7677405821689734771UL + 1066UL),
                              (7677405821689734771UL + 40UL), (7677405821689734771UL + 523UL),
                              (7677405821689734771UL + 41UL), (7677405821689734771UL + 541UL),
-                             "main", "main", 14, "get_time", "get_time", "get_time", "read_graphics", "get_time", "resize", "get_time", "get_time", "get_time", "get_time", "get_time", "write_graphics", "get_time", "get_time",
-                        "main|argc|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|argv|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|time0|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|time1|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|time2|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|time3|0", 3, "write_graphics", "resize", "get_time",
-                        "main|time4|0", 2, "write_graphics", "get_time",
-                        "main|time5|0", 2, "write_graphics", "get_time",
-                        "main|time6|0", 2, "write_graphics", "get_time",
+                             "main", "main", 15, "get_time", "get_time", "get_time", "read_graphics", "get_time", "resize", "get_time", "get_time", "get_time", "checkpoint", "get_time", "get_time", "write_graphics", "get_time", "get_time",
                         "main|time7|0", 2, "write_graphics", "get_time",
                         "main|time8|0", 2, "write_graphics", "get_time",
                         "main|time9|0", 1, "get_time",
-                        "main|image_ori|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|image_ori_rows|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|image_ori_cols|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|image_ori_elem|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|image|0", 3, "write_graphics", "resize", "get_time",
-                        "main|Nr|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|Nc|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|Ne|0", 3, "write_graphics", "resize", "get_time",
-                        "main|niter|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|lambda|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
-                        "main|r1|0", 2, "write_graphics", "get_time",
-                        "main|r2|0", 2, "write_graphics", "get_time",
-                        "main|c1|0", 2, "write_graphics", "get_time",
-                        "main|c2|0", 2, "write_graphics", "get_time",
-                        "main|NeROI|0", 2, "write_graphics", "get_time",
-                        "main|meanROI|0", 2, "write_graphics", "get_time",
-                        "main|varROI|0", 2, "write_graphics", "get_time",
-                        "main|q0sqr|0", 2, "write_graphics", "get_time",
-                        "main|iN|0", 2, "write_graphics", "get_time",
-                        "main|iS|0", 2, "write_graphics", "get_time",
-                        "main|jE|0", 2, "write_graphics", "get_time",
-                        "main|jW|0", 2, "write_graphics", "get_time",
-                        "main|Jc|0", 2, "write_graphics", "get_time",
-                        "main|dN|0", 2, "write_graphics", "get_time",
-                        "main|dS|0", 2, "write_graphics", "get_time",
-                        "main|dW|0", 2, "write_graphics", "get_time",
-                        "main|dE|0", 2, "write_graphics", "get_time",
-                        "main|tmp|0", 2, "write_graphics", "get_time",
-                        "main|sum|0", 2, "write_graphics", "get_time",
-                        "main|sum2|0", 2, "write_graphics", "get_time",
-                        "main|G2|0", 2, "write_graphics", "get_time",
-                        "main|L|0", 2, "write_graphics", "get_time",
-                        "main|num|0", 2, "write_graphics", "get_time",
-                        "main|den|0", 2, "write_graphics", "get_time",
-                        "main|qsqr|0", 2, "write_graphics", "get_time",
-                        "main|D|0", 2, "write_graphics", "get_time",
-                        "main|c|0", 2, "write_graphics", "get_time",
-                        "main|cN|0", 2, "write_graphics", "get_time",
-                        "main|cS|0", 2, "write_graphics", "get_time",
-                        "main|cW|0", 2, "write_graphics", "get_time",
-                        "main|cE|0", 2, "write_graphics", "get_time",
-                        "main|iter|0", 2, "write_graphics", "get_time",
-                        "main|i|0", 2, "write_graphics", "get_time",
-                        "main|j|0", 2, "write_graphics", "get_time",
-                        "main|k|0", 2, "write_graphics", "get_time",
-                        "main|threads|0", 4, "write_graphics", "resize", "read_graphics", "get_time",
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
-        "read_graphics", 0UL, (int)5, 7677405821689735866UL, 7677405821689735604UL, 0UL, 0UL, 0UL,
+        "read_graphics", 0UL, (int)5, 7677405821689735867UL, 7677405821689735605UL, 0UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
-        "resize", 0UL, (int)7, 7677405821689735604UL, 0UL, 0UL, 7677405821689735127UL, 0UL, 0UL, 0UL,
+        "resize", 0UL, (int)7, 7677405821689735605UL, 0UL, 0UL, 7677405821689735127UL, 0UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0,
-        "write_graphics", 0UL, (int)6, 7677405821689735867UL, 7677405821689735127UL, 0UL, 0UL, 0UL, 0UL,
+        "write_graphics", 0UL, (int)6, 7677405821689735868UL, 7677405821689735127UL, 0UL, 0UL, 0UL, 0UL,
         "get_time", 0UL, (int)0,
         "get_time", 0UL, (int)0);
     return 0;

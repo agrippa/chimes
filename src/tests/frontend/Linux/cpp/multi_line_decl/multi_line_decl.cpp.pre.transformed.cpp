@@ -30,7 +30,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -46,7 +46,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -81,7 +82,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1420,7 +1421,7 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
-        void (*fp)(void *));
+        void (*____chimes_fp)(void *));
 # 2 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp" 2
 # 2 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
@@ -1428,14 +1429,16 @@ int foo_npm(int a, int b);
 int foo_quick(int a, int b); int foo(int a, int b);
 int foo_resumable(int a, int b) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (a + b); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (a + b); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12560481006554535974UL)) ; int *ptr;
+# 7 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 int a;
+# 7 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
  register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
        a = (3 + 4 + 5 + 6) ;
@@ -1448,19 +1451,22 @@ int a;
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (({ calling_npm("foo", 0); foo_npm(ptr[0], a); })); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (({ calling_npm("foo", 0); foo_npm(ptr[0], a); })); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); }
+# 3 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 int foo_quick(int a, int b) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (a + b); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (a + b); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int foo(int a, int b) { return (____chimes_replaying ? foo_resumable(a, b) : foo_quick(a, b)); }
-
+# 7 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(12560481006554535974UL)) ; int *ptr;
+# 7 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 int a;
+# 7 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
  register_stack_vars(2, "main|ptr|0", (int *)0x0, "i32*", (void *)(&ptr), (size_t)8, 1, 0, 0, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); ; ;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
        a = (3 + 4 + 5 + 6) ;
@@ -1473,14 +1479,12 @@ int a;
      call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (({ calling_npm("foo", 0); foo_npm(ptr[0], a); })); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (({ calling_npm("foo", 0); foo_npm(ptr[0], a); })); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
-int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-
-
-
+int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+# 3 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
 int foo_npm(int a, int b) {
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./multi_line_decl.cpp"
      int ____chimes_ret_var_0; ____chimes_ret_var_0 = (a + b); return ____chimes_ret_var_0; ;

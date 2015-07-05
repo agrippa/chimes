@@ -1,2 +1,2 @@
-MyOptionSt 0 help "char*" longArg "char*" shortArg "[ 2 x unsigned char ]" argFlag "int" type "char" sz "int" ptr "void*" next "void*"
-option 0 name "char*" has_arg "int" flag "int*" val "int"
+MyOptionSt 384 0 help "char*" longArg "char*" shortArg "[ 2 x unsigned char ]" argFlag "int" type "char" sz "int" ptr "void*" next "void*"
+option 256 0 name "char*" has_arg "int" flag "int*" val "int"

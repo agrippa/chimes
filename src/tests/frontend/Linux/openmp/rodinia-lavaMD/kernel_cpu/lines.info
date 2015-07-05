@@ -1,5 +1,5 @@
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 198 10 : { 9, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 464 } {  } call:get_time {  }
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 106 10 : { 8, 11, 12 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 95 2 : { 7 } {  } call:omp_set_num_threads {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 97 10 : { 7 } {  } call:get_time {  }
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 89 10 : { 6 } {  } call:get_time {  }
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/kernel/kernel_cpu.c 55 10 : { 1, 2, 3, 4, 5 } {  } call:get_time {  }

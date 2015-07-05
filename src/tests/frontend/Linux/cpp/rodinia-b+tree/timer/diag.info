@@ -1,5 +1,5 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 11 len=8 get_time_npm
-InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 28 2 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 28 2 rm_stack(false, 0UL, "get_time", &____must_manage_get_time, ____alias_loc_id_0, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 22 const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 23 const int ____chimes_did_disable0 = new_stack((void *)(&get_time), "get_time", &____must_manage_get_time, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 134 
@@ -9,9 +9,11 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 11 len
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 26 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 26 20 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 133  ; struct timeval tv;
+# 25
  if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 11 len=8 get_time_resumable
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 26 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 26 20 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/timer/timer.c 25 133  ; struct timeval tv;
+# 25
  if (____must_checkpoint_get_time_tv_0) { register_stack_vars(1, "get_time|tv|0", &____must_checkpoint_get_time_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

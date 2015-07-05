@@ -1,12 +1,12 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 30 8 len=7 gettime_npm
-InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 33 83 rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_7, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 33 83 rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_7, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 30 18 const int ____chimes_did_disable0 = new_stack((void *)(&gettime), "gettime", &____must_manage_gettime, 0, 0); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 34 1 rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_7, ____chimes_did_disable0); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 42 73 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_8, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 34 1 rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_7, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 42 73 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_8, ____chimes_did_disable1, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 41 1 const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(17666616532252949247UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 43 1 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_8, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 43 1 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_8, ____chimes_did_disable1, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 47 1 const int ____chimes_did_disable2 = new_stack((void *)(&bpnn_train_kernel), "bpnn_train_kernel", (int *)0x0, 3, 1, (size_t)(17666616532252949368UL), (size_t)(17666616532252949369UL), (size_t)(17666616532252949370UL), "bpnn_train_kernel|net|0", (int *)0x0, "%struct.BPNN*", (void *)(&net), (size_t)8, 1, 0, 0); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 88 1 rm_stack(false, 0UL, "bpnn_train_kernel", (int *)0x0, 0, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 88 1 rm_stack(false, 0UL, "bpnn_train_kernel", (int *)0x0, 0, ____chimes_did_disable2, false); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 30 19 const int ____chimes_did_disable0 = new_stack((void *)(&gettime), "gettime", &____must_manage_gettime, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 30 127 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 31 3  struct timeval t; ;
@@ -39,11 +39,12 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 30 8 len
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 31 4 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 31 20 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 30 126  ; struct timeval t;
+# 30
  if (____must_checkpoint_gettime_t_0) { register_stack_vars(1, "gettime|t|0", &____must_checkpoint_gettime_t_0, "%struct.timeval = type { i64, i64 }", (void *)(&t), (size_t)16, 0, 1, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 40 1 len=4 main_quick
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 42 68 (____chimes_does_checkpoint_setup_npm ? ( ({  calling((void*)setup, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(17666616532252949247UL)); (setup)(argc, argv); }) ) : (({ calling_npm("setup", ____alias_loc_id_0); (*____chimes_extern_func_setup)(argc, argv); })))
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 42 84 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 41 149  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 41 149  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 46 6 len=17 bpnn_train_kernel_quick
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 56 16  ({  calling((void*)bpnn_layerforward, 2, ____alias_loc_id_6, 0UL, 5, (size_t)(17666616532252949284UL), (size_t)(17666616532252949284UL), (size_t)(17666616532252949284UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_layerforward)(net->input_units, net->hidden_units, net->input_weights, in, hid); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 56 97 
@@ -78,15 +79,21 @@ RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 49 16
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 49 18 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 49 31 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 47 305  ; float hid_err;
+# 47
 float out_err;
+# 47
 int out;
+# 47
 int hid;
+# 47
 int in;
+# 47
  register_stack_vars(5, "bpnn_train_kernel|hid_err|0", (int *)0x0, "float", (void *)(&hid_err), (size_t)4, 0, 0, 0, "bpnn_train_kernel|out_err|0", (int *)0x0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0, "bpnn_train_kernel|out|0", (int *)0x0, "i32", (void *)(&out), (size_t)4, 0, 0, 0, "bpnn_train_kernel|hid|0", (int *)0x0, "i32", (void *)(&hid), (size_t)4, 0, 0, 0, "bpnn_train_kernel|in|0", (int *)0x0, "i32", (void *)(&in), (size_t)4, 0, 0, 0);  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 30 8 len=7 gettime_resumable
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 31 4 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 31 20 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 30 126  ; struct timeval t;
+# 30
  if (____must_checkpoint_gettime_t_0) { register_stack_vars(1, "gettime|t|0", &____must_checkpoint_gettime_t_0, "%struct.timeval = type { i64, i64 }", (void *)(&t), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 40 1 len=4 main_resumable
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 42 68 (____chimes_does_checkpoint_setup_npm ? ( ({  calling((void*)setup, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(17666616532252949247UL)); (setup)(argc, argv); }) ) : (({ calling_npm("setup", ____alias_loc_id_0); (*____chimes_extern_func_setup)(argc, argv); })))
@@ -126,8 +133,13 @@ RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 49 16
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 49 18 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 49 31 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/backprop_kernel.c 47 305  ; float hid_err;
+# 47
 float out_err;
+# 47
 int out;
+# 47
 int hid;
+# 47
 int in;
+# 47
  register_stack_vars(5, "bpnn_train_kernel|hid_err|0", (int *)0x0, "float", (void *)(&hid_err), (size_t)4, 0, 0, 0, "bpnn_train_kernel|out_err|0", (int *)0x0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0, "bpnn_train_kernel|out|0", (int *)0x0, "i32", (void *)(&out), (size_t)4, 0, 0, 0, "bpnn_train_kernel|hid|0", (int *)0x0, "i32", (void *)(&hid), (size_t)4, 0, 0, 0, "bpnn_train_kernel|in|0", (int *)0x0, "i32", (void *)(&in), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } default: { chimes_error(); } }  }  

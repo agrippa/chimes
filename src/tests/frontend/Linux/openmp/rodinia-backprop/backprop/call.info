@@ -1,86 +1,86 @@
-rand drnd 34 19 0
-drnd dpn1 40 12 0
-exp squash 51 24 0 0
-malloc alloc_1d_dbl 61 23 39 0
-printf alloc_1d_dbl 63 5 0 1657
-malloc alloc_2d_dbl 77 24 72 0
-printf alloc_2d_dbl 79 5 0 1658
-alloc_1d_dbl alloc_2d_dbl 84 18 88 0
+rand drnd 34 65 0
+drnd dpn1 40 58 0
+exp squash 51 70 0 0
+malloc alloc_1d_dbl 61 23 53 0
+printf alloc_1d_dbl 63 5 0 1705
+malloc alloc_2d_dbl 77 24 94 0
+printf alloc_2d_dbl 79 5 0 1706
+alloc_1d_dbl alloc_2d_dbl 84 18 113 0
 rand bpnn_randomize_weights 97 24 0
-printf bpnn_initialize 127 3 0 1659 0
+printf bpnn_initialize 127 3 0 1707 0
 srand bpnn_initialize 128 3 0 0
-malloc bpnn_internal_create 136 21 1487 0
-printf bpnn_internal_create 138 5 0 1660
-alloc_1d_dbl bpnn_internal_create 145 25 1489 0
-alloc_1d_dbl bpnn_internal_create 146 26 1489 0
-alloc_1d_dbl bpnn_internal_create 147 26 1489 0
-alloc_1d_dbl bpnn_internal_create 149 26 1489 0
-alloc_1d_dbl bpnn_internal_create 150 26 1489 0
-alloc_1d_dbl bpnn_internal_create 151 20 1489 0
-alloc_2d_dbl bpnn_internal_create 153 27 1489 0 0
-alloc_2d_dbl bpnn_internal_create 154 28 1489 0 0
-alloc_2d_dbl bpnn_internal_create 156 32 1489 0 0
-alloc_2d_dbl bpnn_internal_create 157 33 1489 0 0
-free bpnn_free 170 3 0 370
-free bpnn_free 171 3 0 370
-free bpnn_free 172 3 0 370
-free bpnn_free 174 3 0 370
-free bpnn_free 175 3 0 370
-free bpnn_free 176 3 0 370
-free bpnn_free 179 5 0 410
-free bpnn_free 180 5 0 410
-free bpnn_free 182 3 0 370
-free bpnn_free 183 3 0 370
-free bpnn_free 186 5 0 410
-free bpnn_free 187 5 0 410
-free bpnn_free 189 3 0 370
-free bpnn_free 190 3 0 370
-free bpnn_free 192 3 0 480
-bpnn_internal_create bpnn_create 210 12 496 0 0 0
-bpnn_randomize_weights bpnn_create 215 3 0 500 0 0
-bpnn_randomize_weights bpnn_create 217 3 0 500 0 0
-bpnn_zero_weights bpnn_create 218 3 0 500 0 0
-bpnn_zero_weights bpnn_create 219 3 0 500 0 0
-bpnn_randomize_row bpnn_create 220 3 0 500 0
+malloc bpnn_internal_create 136 21 1532 0
+printf bpnn_internal_create 138 5 0 1708
+alloc_1d_dbl bpnn_internal_create 145 25 1534 0
+alloc_1d_dbl bpnn_internal_create 146 26 1534 0
+alloc_1d_dbl bpnn_internal_create 147 26 1534 0
+alloc_1d_dbl bpnn_internal_create 149 26 1534 0
+alloc_1d_dbl bpnn_internal_create 150 26 1534 0
+alloc_1d_dbl bpnn_internal_create 151 20 1534 0
+alloc_2d_dbl bpnn_internal_create 153 27 1534 0 0
+alloc_2d_dbl bpnn_internal_create 154 28 1534 0 0
+alloc_2d_dbl bpnn_internal_create 156 32 1534 0 0
+alloc_2d_dbl bpnn_internal_create 157 33 1534 0 0
+free bpnn_free 170 3 0 406
+free bpnn_free 171 3 0 406
+free bpnn_free 172 3 0 406
+free bpnn_free 174 3 0 406
+free bpnn_free 175 3 0 406
+free bpnn_free 176 3 0 406
+free bpnn_free 179 5 0 446
+free bpnn_free 180 5 0 446
+free bpnn_free 182 3 0 406
+free bpnn_free 183 3 0 406
+free bpnn_free 186 5 0 446
+free bpnn_free 187 5 0 446
+free bpnn_free 189 3 0 406
+free bpnn_free 190 3 0 406
+free bpnn_free 192 3 0 516
+bpnn_internal_create bpnn_create 210 12 533 0 0 0
+bpnn_randomize_weights bpnn_create 215 3 0 537 0 0
+bpnn_randomize_weights bpnn_create 217 3 0 537 0 0
+bpnn_zero_weights bpnn_create 218 3 0 537 0 0
+bpnn_zero_weights bpnn_create 219 3 0 537 0 0
+bpnn_randomize_row bpnn_create 220 3 0 537 0
 omp_set_num_threads bpnn_layerforward 233 3 0 0
 squash bpnn_layerforward 244 13 0 0
 omp_set_num_threads bpnn_adjust_weights 298 3 0 0
-bpnn_layerforward bpnn_feedforward 323 3 0 970 970 970 0 0
-bpnn_layerforward bpnn_feedforward 325 3 0 970 970 970 0 0
-bpnn_layerforward bpnn_train 341 3 0 1027 1027 1027 0 0
-bpnn_layerforward bpnn_train 343 3 0 1027 1027 1027 0 0
-bpnn_output_error bpnn_train 347 3 0 1027 1027 1027 0 1000
-bpnn_hidden_error bpnn_train 349 3 0 1027 0 1027 0 1027 1027 1001
-bpnn_adjust_weights bpnn_train 355 3 0 1027 0 1027 0 1027 1027
-bpnn_adjust_weights bpnn_train 357 3 0 1027 0 1027 0 1027 1027
-fopen bpnn_save 372 11 1150 1378 1661
-printf bpnn_save 382 3 0 1662 0 0 0 1378
-fwrite bpnn_save 389 3 0 1117 0 0 1150
-fwrite bpnn_save 390 3 0 1118 0 0 1150
-fwrite bpnn_save 391 3 0 1119 0 0 1150
-malloc bpnn_save 397 18 1192 0
-fwrite bpnn_save 406 3 0 1192 0 0 1150
-free bpnn_save 407 3 0 1192
-malloc bpnn_save 411 18 1192 0
-fwrite bpnn_save 420 3 0 1192 0 0 1150
-free bpnn_save 421 3 0 1192
-fclose bpnn_save 423 3 0 1150
-open bpnn_read 434 13 0 1650 0 0
-printf bpnn_read 438 3 0 1663 1650
-read bpnn_read 440 3 0 0 1391 0
-read bpnn_read 441 3 0 0 1392 0
-read bpnn_read 442 3 0 0 1393 0
-bpnn_internal_create bpnn_read 443 13 1487 0 0 0
-printf bpnn_read 445 3 0 1659 1650 0 0 0
-printf bpnn_read 446 3 0 1665
-malloc bpnn_read 449 18 1497 0
-read bpnn_read 450 3 0 0 1497 0
-free bpnn_read 457 3 0 1497
-printf bpnn_read 459 3 0 1666
-malloc bpnn_read 462 18 1497 0
-read bpnn_read 463 3 0 0 1497 0
-free bpnn_read 470 3 0 1497
+bpnn_layerforward bpnn_feedforward 323 3 0 1010 1010 1010 0 0
+bpnn_layerforward bpnn_feedforward 325 3 0 1010 1010 1010 0 0
+bpnn_layerforward bpnn_train 341 3 0 1067 1067 1067 0 0
+bpnn_layerforward bpnn_train 343 3 0 1067 1067 1067 0 0
+bpnn_output_error bpnn_train 347 3 0 1067 1067 1067 0 1040
+bpnn_hidden_error bpnn_train 349 3 0 1067 0 1067 0 1067 1067 1041
+bpnn_adjust_weights bpnn_train 355 3 0 1067 0 1067 0 1067 1067
+bpnn_adjust_weights bpnn_train 357 3 0 1067 0 1067 0 1067 1067
+fopen bpnn_save 372 11 1190 1418 1709
+printf bpnn_save 382 3 0 1710 0 0 0 1418
+fwrite bpnn_save 389 3 0 1157 0 0 1190
+fwrite bpnn_save 390 3 0 1158 0 0 1190
+fwrite bpnn_save 391 3 0 1159 0 0 1190
+malloc bpnn_save 397 18 1232 0
+fwrite bpnn_save 406 3 0 1232 0 0 1190
+free bpnn_save 407 3 0 1232
+malloc bpnn_save 411 18 1232 0
+fwrite bpnn_save 420 3 0 1232 0 0 1190
+free bpnn_save 421 3 0 1232
+fclose bpnn_save 423 3 0 1190
+open bpnn_read 434 13 0 1698 0 0
+printf bpnn_read 438 3 0 1711 1698
+read bpnn_read 440 3 0 0 1431 0
+read bpnn_read 441 3 0 0 1432 0
+read bpnn_read 442 3 0 0 1433 0
+bpnn_internal_create bpnn_read 443 13 1532 0 0 0
+printf bpnn_read 445 3 0 1707 1698 0 0 0
+printf bpnn_read 446 3 0 1713
+malloc bpnn_read 449 18 1542 0
+read bpnn_read 450 3 0 0 1542 0
+free bpnn_read 457 3 0 1542
+printf bpnn_read 459 3 0 1714
+malloc bpnn_read 462 18 1542 0
+read bpnn_read 463 3 0 0 1542 0
+free bpnn_read 470 3 0 1542
 close bpnn_read 471 3 0 0
-printf bpnn_read 473 3 0 1667
-bpnn_zero_weights bpnn_read 475 3 0 1489 0 0
-bpnn_zero_weights bpnn_read 476 3 0 1489 0 0
+printf bpnn_read 473 3 0 1715
+bpnn_zero_weights bpnn_read 475 3 0 1534 0 0
+bpnn_zero_weights bpnn_read 476 3 0 1534 0 0

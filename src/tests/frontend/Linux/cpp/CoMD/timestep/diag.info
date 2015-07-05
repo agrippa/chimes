@@ -2,19 +2,19 @@ ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 91 6 l
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 104 6 len=15 advancePosition_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 121 6 len=13 kineticEnergy_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 160 6 len=17 redistributeAtoms_npm
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 82 74 rm_stack(false, 0UL, "timestep", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 82 74 rm_stack(false, 0UL, "timestep", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 36 1 const int ____chimes_did_disable0 = new_stack((void *)(&timestep), "timestep", (int *)0x0, 3, 3, (size_t)(7237354288423011275UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", (int *)0x0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", (int *)0x0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", (int *)0x0, "double", (void *)(&dt), (size_t)8, 0, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 83 1 rm_stack(false, 0UL, "timestep", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 83 1 rm_stack(false, 0UL, "timestep", (int *)0x0, ____alias_loc_id_8, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 86 1 const int ____chimes_did_disable1 = new_stack((void *)(&computeForce), "computeForce", (int *)0x0, 1, 0, (size_t)(7237354288423011702UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 88 1 rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 88 1 rm_stack(false, 0UL, "computeForce", (int *)0x0, 0, ____chimes_did_disable1, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 92 1 const int ____chimes_did_disable2 = new_stack((void *)(&advanceVelocity), "advanceVelocity", &____must_manage_advanceVelocity, 3, 0, (size_t)(7237354288423011481UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 102 1 rm_stack(false, 0UL, "advanceVelocity", &____must_manage_advanceVelocity, ____alias_loc_id_9, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 102 1 rm_stack(false, 0UL, "advanceVelocity", &____must_manage_advanceVelocity, ____alias_loc_id_9, ____chimes_did_disable2, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 105 1 const int ____chimes_did_disable3 = new_stack((void *)(&advancePosition), "advancePosition", &____must_manage_advancePosition, 3, 0, (size_t)(7237354288423011639UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 117 1 rm_stack(false, 0UL, "advancePosition", &____must_manage_advancePosition, ____alias_loc_id_10, ____chimes_did_disable3); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 117 1 rm_stack(false, 0UL, "advancePosition", &____must_manage_advancePosition, ____alias_loc_id_10, ____chimes_did_disable3, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 122 1 const int ____chimes_did_disable4 = new_stack((void *)(&kineticEnergy), "kineticEnergy", &____must_manage_kineticEnergy, 1, 1, (size_t)(7237354288423011869UL), "kineticEnergy|s|0", &____must_checkpoint_kineticEnergy_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 145 1 rm_stack(false, 0UL, "kineticEnergy", &____must_manage_kineticEnergy, ____alias_loc_id_12, ____chimes_did_disable4); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 145 1 rm_stack(false, 0UL, "kineticEnergy", &____must_manage_kineticEnergy, ____alias_loc_id_12, ____chimes_did_disable4, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 161 1 const int ____chimes_did_disable5 = new_stack((void *)(&redistributeAtoms), "redistributeAtoms", &____must_manage_redistributeAtoms, 1, 1, (size_t)(7237354288423011656UL), "redistributeAtoms|sim|0", &____must_checkpoint_redistributeAtoms_sim_0, "%struct.SimFlatSt*", (void *)(&sim), (size_t)8, 1, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 170 1 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_11, ____chimes_did_disable5); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 170 1 rm_stack(false, 0UL, "redistributeAtoms", &____must_manage_redistributeAtoms, ____alias_loc_id_11, ____chimes_did_disable5, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 36 2 const int ____chimes_did_disable0 = new_stack((void *)(&timestep), "timestep", (int *)0, 3, 3, (size_t)(7237354288423011275UL), (size_t)(0UL), (size_t)(0UL), "timestep|s|0", (int *)0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0, "timestep|nSteps|0", (int *)0, "i32", (void *)(&nSteps), (size_t)4, 0, 0, 0, "timestep|dt|0", (int *)0, "double", (void *)(&dt), (size_t)8, 0, 0, 0); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 36 398 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 37 4 {  int ii; 
@@ -146,15 +146,16 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 80 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 37 7 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 37 13 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 36 389  ; int ii;
+# 36
  register_stack_vars(1, "timestep|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0);  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 85 6 len=12 computeForce_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 87 17 ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, 0, 0UL, 1, 7237354288423011702UL)))(s)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 87 32 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 86 136  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 86 136  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 91 6 len=15 advanceVelocity_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 92 196  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 92 196  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 104 6 len=15 advancePosition_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 105 196  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 105 196  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 121 6 len=13 kineticEnergy_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 139 22  ({  calling((void*)profileStart, 1, ____alias_loc_id_7, 0UL, 1, (size_t)(0UL)); (profileStart)(commReduceTimer); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 139 50 
@@ -167,7 +168,9 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 123 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 138 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 138 18 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 122 277  ; real_t eSum[2];
+# 122
 real_t eLocal[2];
+# 122
  if (____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(1, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 160 6 len=17 redistributeAtoms_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 162 17  ({  calling((void*)updateLinkCells, 1, ____alias_loc_id_4, 0UL, 2, (size_t)(7237354288423011658UL), (size_t)(7237354288423011658UL)); (updateLinkCells)(sim->boxes, sim->atoms); }) 
@@ -183,6 +186,7 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 7 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 13 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 161 303  ; int ii;
+# 161
  if (____must_checkpoint_redistributeAtoms_ii_0) { register_stack_vars(1, "redistributeAtoms|ii|0", &____must_checkpoint_redistributeAtoms_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 35 8 len=8 timestep_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 39 25  ({  calling((void*)profileStart, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (profileStart)(velocityTimer); }) 
@@ -230,6 +234,7 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 80 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 37 7 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 37 13 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 36 389  ; int ii;
+# 36
  register_stack_vars(1, "timestep|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 85 6 len=12 computeForce_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 87 17 ((int (*)(struct SimFlatSt *))(translate_fptr((void *)s->pot->force, 1, 0, 0UL, 1, 7237354288423011702UL)))(s)
@@ -251,7 +256,9 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 123 
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 138 4 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 138 18 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 122 277  ; real_t eSum[2];
+# 122
 real_t eLocal[2];
+# 122
  if (____must_checkpoint_kineticEnergy_eLocal_0) { register_stack_vars(1, "kineticEnergy|eLocal|0", &____must_checkpoint_kineticEnergy_eLocal_0, "[2 x double]", (void *)(eLocal), (size_t)16, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 160 6 len=17 redistributeAtoms_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 162 17  ({  LinkCell * ____chimes_arg18;  Atoms * ____chimes_arg19;  if (!____chimes_replaying) { ____chimes_arg18 = (sim->boxes); ____chimes_arg19 = (sim->atoms);  }  calling((void*)updateLinkCells, 1, ____alias_loc_id_4, 0UL, 2, (size_t)(7237354288423011658UL), (size_t)(7237354288423011658UL)); (updateLinkCells)(____chimes_arg18, ____chimes_arg19); }) 
@@ -267,4 +274,5 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 7 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 168 13 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/timestep.c 161 303  ; int ii;
+# 161
  if (____must_checkpoint_redistributeAtoms_ii_0) { register_stack_vars(1, "redistributeAtoms|ii|0", &____must_checkpoint_redistributeAtoms_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } default: { chimes_error(); } }  }  

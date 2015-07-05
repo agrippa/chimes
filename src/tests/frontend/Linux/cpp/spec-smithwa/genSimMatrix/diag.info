@@ -1,40 +1,38 @@
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 58 14 len=12 genSimMatrix_npm
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 104 36 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 104 62 , 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 217 14 len=13 freeSimMatrix_npm
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 10 , 17725255480324453911UL
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 104 36 len=6 malloc_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 104 62 , 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 5 len=4 free_wrapper
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 10 , 17725255480324453911UL
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 212 78 rm_stack(true, 17725255480324454004UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 60 19 const int ____chimes_did_disable0 = new_stack((void *)(&genSimMatrix), "genSimMatrix", &____must_manage_genSimMatrix, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 213 1 rm_stack(true, 17725255480324454004UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 222 75 rm_stack(true, 17725255480324454004UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 217 44 const int ____chimes_did_disable1 = new_stack((void *)(&freeSimMatrix), "freeSimMatrix", &____must_manage_freeSimMatrix, 1, 0, (size_t)(17725255480324453911UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 223 1 rm_stack(true, 17725255480324454004UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1); 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 60 20 const int ____chimes_did_disable0 = new_stack((void *)(&genSimMatrix), "genSimMatrix", &____must_manage_genSimMatrix, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 60 248 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 62 3  SIMMATRIX_T *simMatrix;  simMatrix = (__null) ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 62 32 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 63 3 char *aa; char *codon; char base; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 63 25 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 64 3 int i; int j; int k; int ccode; int ccode2; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 64 29 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 76 3 static char *similarities[22][9] = { { "", "" }, { "", "A", "gct", "gcc", "gca", "gcg", "" }, { "", "C", "tgt", "tgc", "" }, { "", "D", "gat", "gac", "" }, { "", "E", "gaa", "gag", "" }, { "", "F", "ttt", "ttc", "" }, { "", "G", "ggt", "ggc", "gga", "ggg", "" }, { "", "H", "cat", "cac", "" }, { "", "I", "att", "atc", "ata", "" }, { "", "K", "aaa", "aag", "" }, { "", "L", "ttg", "tta", "ctt", "ctc", "cta", "ctg", "" }, { "", "M", "atg", "" }, { "", "N", "aat", "aac", "" }, { "", "P", "cct", "ccc", "cca", "ccg", "" }, { "", "Q", "caa", "cag", "" }, { "", "R", "cgt", "cgc", "cga", "cgg", "aga", "agg", "" }, { "", "S", "tct", "tcc", "tca", "tcg", "agt", "agc", "" }, { "", "T", "act", "acc", "aca", "acg", "" }, { "", "V", "gtt", "gtc", "gta", "gtg", "" }, { "", "W", "tgg", "" }, { "", "Y", "tat", "tac", "" }, { "", "*", "taa", "tag", "tga", "" } }; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 100 4 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 212 4 SIMMATRIX_T *____chimes_ret_var_0; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 212 38 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 217 45 const int ____chimes_did_disable1 = new_stack((void *)(&freeSimMatrix), "freeSimMatrix", &____must_manage_freeSimMatrix, 1, 0, (size_t)(17725255480324453911UL)); ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 217 205 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 222 4 SIMMATRIX_T *____chimes_ret_var_1; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 222 38 
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 58 14 len=12 genSimMatrix_quick
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 60 247  ;  
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 217 14 len=13 freeSimMatrix_quick
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 217 204  ;  
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 58 14 len=12 genSimMatrix_resumable
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 60 247  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 217 14 len=13 freeSimMatrix_resumable
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 217 204  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 86 14 len=12 genSimMatrix_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 107 36 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 107 62 , 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 14 len=13 freeSimMatrix_npm
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 223 5 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 223 10 , 17725255480324453911UL
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 107 36 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 107 62 , 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases)
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 223 5 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 223 10 , 17725255480324453911UL
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 215 78 rm_stack(true, 17725255480324454004UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 88 19 const int ____chimes_did_disable0 = new_stack((void *)(&genSimMatrix), "genSimMatrix", &____must_manage_genSimMatrix, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 216 1 rm_stack(true, 17725255480324454004UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 225 75 rm_stack(true, 17725255480324454004UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 44 const int ____chimes_did_disable1 = new_stack((void *)(&freeSimMatrix), "freeSimMatrix", &____must_manage_freeSimMatrix, 1, 0, (size_t)(17725255480324453911UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 226 1 rm_stack(true, 17725255480324454004UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 88 20 const int ____chimes_did_disable0 = new_stack((void *)(&genSimMatrix), "genSimMatrix", &____must_manage_genSimMatrix, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 88 248 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 90 3  SIMMATRIX_T *simMatrix;  simMatrix = (__null) ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 90 32 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 91 3 char *aa; char *codon; char base; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 91 25 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 92 3 int i; int j; int k; int ccode; int ccode2; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 92 29 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 215 4 SIMMATRIX_T *____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 215 38 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 45 const int ____chimes_did_disable1 = new_stack((void *)(&freeSimMatrix), "freeSimMatrix", &____must_manage_freeSimMatrix, 1, 0, (size_t)(17725255480324453911UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 205 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 225 4 SIMMATRIX_T *____chimes_ret_var_1; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 225 38 
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 86 14 len=12 genSimMatrix_quick
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 88 247  ; 
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 14 len=13 freeSimMatrix_quick
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 204  ; 
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 86 14 len=12 genSimMatrix_resumable
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 88 247  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 14 len=13 freeSimMatrix_resumable
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c 220 204  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

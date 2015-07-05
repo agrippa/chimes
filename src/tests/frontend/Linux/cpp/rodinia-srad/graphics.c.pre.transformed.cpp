@@ -41,7 +41,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -57,7 +57,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -92,7 +93,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1114,7 +1115,7 @@ void write_graphics_resumable( char* filename,
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
   printf( "The file was not created/opened for writing\n" );
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0); return;
+  rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0, false); return;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  }
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1176,7 +1177,7 @@ void write_graphics_resumable( char* filename,
  fclose(fid);
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1196,9 +1197,13 @@ void read_graphics_resumable( char* filename,
          int data_cols,
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
          int major){const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(9161344876833313006UL), (size_t)(9161344876833313007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0) ; int temp;
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 char c;
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 int i;
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 FILE *fid;
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  if (____must_checkpoint_read_graphics_temp_0 || ____must_checkpoint_read_graphics_c_0 || ____must_checkpoint_read_graphics_i_0 || ____must_checkpoint_read_graphics_fid_0) { register_stack_vars(4, "read_graphics|temp|0", &____must_checkpoint_read_graphics_temp_0, "i32", (void *)(&temp), (size_t)4, 0, 0, 0, "read_graphics|c|0", &____must_checkpoint_read_graphics_c_0, "i8", (void *)(&c), (size_t)1, 0, 0, 0, "read_graphics|i|0", &____must_checkpoint_read_graphics_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "read_graphics|fid|0", &____must_checkpoint_read_graphics_fid_0, "%struct._IO_FILE*", (void *)(&fid), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } default: { chimes_error(); } } } ; ;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1225,7 +1230,7 @@ FILE *fid;
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
   printf( "The file was not opened for reading\n" );
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1); return;
+  rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1, false); return;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  }
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1293,7 +1298,8 @@ FILE *fid;
  fclose(fid);
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1, false); }
+# 23 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 void write_graphics_quick( char* filename,
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
@@ -1326,7 +1332,7 @@ void write_graphics_quick( char* filename,
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
   printf( "The file was not created/opened for writing\n" );
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0); return;
+  rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0, false); return;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  }
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1388,7 +1394,7 @@ void write_graphics_quick( char* filename,
  fclose(fid);
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "write_graphics", &____must_manage_write_graphics, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 void write_graphics( char* filename,
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1401,7 +1407,7 @@ void write_graphics( char* filename,
          int major,
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
          int data_range) { (____chimes_replaying ? write_graphics_resumable(filename, input, data_rows, data_cols, major, data_range) : write_graphics_quick(filename, input, data_rows, data_cols, major, data_range)); }
-
+# 92 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 void read_graphics_quick( char* filename,
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
@@ -1411,9 +1417,13 @@ void read_graphics_quick( char* filename,
          int data_cols,
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
          int major){const int ____chimes_did_disable1 = new_stack((void *)(&read_graphics), "read_graphics", &____must_manage_read_graphics, 5, 4, (size_t)(9161344876833313006UL), (size_t)(9161344876833313007UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "read_graphics|input|0", &____must_checkpoint_read_graphics_input_0, "float*", (void *)(&input), (size_t)8, 1, 0, 0, "read_graphics|data_rows|0", &____must_checkpoint_read_graphics_data_rows_0, "i32", (void *)(&data_rows), (size_t)4, 0, 0, 0, "read_graphics|data_cols|0", &____must_checkpoint_read_graphics_data_cols_0, "i32", (void *)(&data_cols), (size_t)4, 0, 0, 0, "read_graphics|major|0", &____must_checkpoint_read_graphics_major_0, "i32", (void *)(&major), (size_t)4, 0, 0, 0) ; int temp;
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 char c;
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 int i;
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 FILE *fid;
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  if (____must_checkpoint_read_graphics_temp_0 || ____must_checkpoint_read_graphics_c_0 || ____must_checkpoint_read_graphics_i_0 || ____must_checkpoint_read_graphics_fid_0) { register_stack_vars(4, "read_graphics|temp|0", &____must_checkpoint_read_graphics_temp_0, "i32", (void *)(&temp), (size_t)4, 0, 0, 0, "read_graphics|c|0", &____must_checkpoint_read_graphics_c_0, "i8", (void *)(&c), (size_t)1, 0, 0, 0, "read_graphics|i|0", &____must_checkpoint_read_graphics_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "read_graphics|fid|0", &____must_checkpoint_read_graphics_fid_0, "%struct._IO_FILE*", (void *)(&fid), (size_t)8, 1, 0, 0); } ; ;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1440,7 +1450,7 @@ FILE *fid;
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
   printf( "The file was not opened for reading\n" );
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-  rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1); return;
+  rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1, false); return;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
  }
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1508,7 +1518,7 @@ FILE *fid;
  fclose(fid);
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
-rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "read_graphics", &____must_manage_read_graphics, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
 void read_graphics( char* filename,
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
@@ -1519,9 +1529,7 @@ void read_graphics( char* filename,
          int data_cols,
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
          int major) { (____chimes_replaying ? read_graphics_resumable(filename, input, data_rows, data_cols, major) : read_graphics_quick(filename, input, data_rows, data_cols, major)); }
-
-
-
+# 23 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 void write_graphics_npm( char* filename,
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
@@ -1617,7 +1625,7 @@ void write_graphics_npm( char* filename,
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 }
-
+# 92 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
 void read_graphics_npm( char* filename,
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/graphics.c"
          float* input,
@@ -1743,8 +1751,8 @@ static int module_init() {
                              (9161344876833312739UL + 137UL), (9161344876833312739UL + 267UL),
                              (9161344876833312739UL + 7UL), (9161344876833312739UL + 26UL),
                              (9161344876833312739UL + 138UL), (9161344876833312739UL + 268UL),
-                     "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
-                     "_IO_marker", 0,
+                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
+                     "_IO_marker", 0UL, 0,
                              "write_graphics", "_Z14write_graphicsPcPfiiii", 0,
                              "read_graphics", "_Z13read_graphicsPcPfiii", 1, "fgetc",
                         "read_graphics|input|0", 1, "fgetc",

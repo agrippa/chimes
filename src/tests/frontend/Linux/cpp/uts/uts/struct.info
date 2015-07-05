@@ -1,5 +1,5 @@
-node_t 0 type "int" height "int" numChildren "int" state "%struct.state_t"
-state_t 0 state "[ 20 x unsigned char ]"
-timeval 0 tv_sec "long int" tv_usec "long int"
-uts_geoshape_e 0
-uts_trees_e 0
+node_t 256 0 type "int" height "int" numChildren "int" state "%struct.state_t"
+state_t 160 0 state "[ 20 x unsigned char ]"
+timeval 128 0 tv_sec "long int" tv_usec "long int"
+uts_geoshape_e 32 0
+uts_trees_e 32 0

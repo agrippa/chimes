@@ -1,0 +1,7 @@
+534 534 #pragma omp task shared(countH) if(depth < depthmax) firstprivate(q, p, cut, cut2, depth, depthmax)
+556 556 #pragma omp task shared(countL) if(depth < depthmax) firstprivate(q, p, cut, cut2, depth, depthmax)
+588 588 #pragma omp taskwait
+779 779 #pragma omp parallel for shared(xi,yi,zi,wi) private(i)
+805 805 #pragma omp parallel for shared(xyzw) private (i)
+907 907 #pragma omp parallel shared(count) firstprivate(root, cutoff, cutoff2, maxdepth)
+910 910 #pragma omp single

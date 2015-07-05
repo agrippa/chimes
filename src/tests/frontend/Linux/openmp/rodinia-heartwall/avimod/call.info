@@ -1,12 +1,12 @@
-malloc chop_flip_image 49 28 256 0
-malloc chop_flip_image 81 38 256 0
-free chop_flip_image 92 2 0 256
-AVI_video_width get_frame 110 14 0 355
-AVI_video_height get_frame 111 15 0 355
-AVI_set_video_position get_frame 115 2 0 355 0
-malloc get_frame 118 28 329 0
-AVI_read_frame get_frame 119 11 0 355 329 293
-AVI_print_error get_frame 121 3 0 369
+malloc chop_flip_image 49 28 257 0
+malloc chop_flip_image 81 38 257 0
+free chop_flip_image 92 2 0 257
+AVI_video_width get_frame 110 14 0 363
+AVI_video_height get_frame 111 15 0 363
+AVI_set_video_position get_frame 115 2 0 363 0
+malloc get_frame 118 28 334 0
+AVI_read_frame get_frame 119 11 0 363 334 297
+AVI_print_error get_frame 121 3 0 377
 exit get_frame 122 3 0 0
-chop_flip_image get_frame 127 18 349 329 0 0 0 0 0
-free get_frame 135 2 0 329
+chop_flip_image get_frame 127 18 354 334 0 0 0 0 0
+free get_frame 135 2 0 334

@@ -28,7 +28,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -44,7 +44,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -79,7 +80,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -206,7 +207,8 @@ void resize_resumable( float* input,
  }
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c"
-rm_stack(false, 0UL, "resize", &____must_manage_resize, ____alias_loc_id_0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "resize", &____must_manage_resize, ____alias_loc_id_0, ____chimes_did_disable0, false); }
+# 8 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c"
 void resize_quick( float* input,
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c"
      int input_rows,
@@ -293,7 +295,7 @@ void resize_quick( float* input,
  }
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c"
-rm_stack(false, 0UL, "resize", &____must_manage_resize, ____alias_loc_id_0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "resize", &____must_manage_resize, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 void resize( float* input,
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c"
@@ -308,9 +310,7 @@ void resize( float* input,
      int output_cols,
 # 14 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c"
      int major) { (____chimes_replaying ? resize_resumable(input, input_rows, input_cols, output, output_rows, output_cols, major) : resize_quick(input, input_rows, input_cols, output, output_rows, output_cols, major)); }
-
-
-
+# 8 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c"
 void resize_npm( float* input,
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/srad/srad_v1/resize.c"
      int input_rows,

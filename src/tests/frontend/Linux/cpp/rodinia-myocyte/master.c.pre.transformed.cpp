@@ -59,7 +59,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -75,7 +75,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -110,7 +111,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2606,20 +2607,35 @@ void master_resumable(float timeinst,
      float* finavalu,
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
      int mode){const int ____chimes_did_disable0 = new_stack((void *)(&master), "master", &____must_manage_master, 5, 4, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(6849693010381407517UL), (size_t)(6849693010381407518UL), (size_t)(0UL), "master|timeinst|0", &____must_checkpoint_master_timeinst_0, "float", (void *)(&timeinst), (size_t)4, 0, 0, 0, "master|initvalu|0", &____must_checkpoint_master_initvalu_0, "float*", (void *)(&initvalu), (size_t)8, 1, 0, 0, "master|parameter|0", &____must_checkpoint_master_parameter_0, "float*", (void *)(&parameter), (size_t)8, 1, 0, 0, "master|finavalu|0", &____must_checkpoint_master_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0) ; int th_count[4];
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float CaCyt;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float CaSL;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float CaDyad;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int parameter_offset_Cyt;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int initvalu_offset_Cyt;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int parameter_offset_SL;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int initvalu_offset_SL;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int parameter_offset_Dyad;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int initvalu_offset_Dyad;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int initvalu_offset_ecc;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float JCaCyt;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float JCaSL;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float JCaDyad;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int i;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
  if (____must_checkpoint_master_th_count_0 || ____must_checkpoint_master_CaCyt_0 || ____must_checkpoint_master_CaSL_0 || ____must_checkpoint_master_CaDyad_0 || ____must_checkpoint_master_parameter_offset_Cyt_0 || ____must_checkpoint_master_initvalu_offset_Cyt_0 || ____must_checkpoint_master_parameter_offset_SL_0 || ____must_checkpoint_master_initvalu_offset_SL_0 || ____must_checkpoint_master_parameter_offset_Dyad_0 || ____must_checkpoint_master_initvalu_offset_Dyad_0 || ____must_checkpoint_master_initvalu_offset_ecc_0 || ____must_checkpoint_master_JCaCyt_0 || ____must_checkpoint_master_JCaSL_0 || ____must_checkpoint_master_JCaDyad_0 || ____must_checkpoint_master_i_0) { register_stack_vars(15, "master|th_count|0", &____must_checkpoint_master_th_count_0, "[4 x i32]", (void *)(th_count), (size_t)16, 0, 0, 0, "master|CaCyt|0", &____must_checkpoint_master_CaCyt_0, "float", (void *)(&CaCyt), (size_t)4, 0, 0, 0, "master|CaSL|0", &____must_checkpoint_master_CaSL_0, "float", (void *)(&CaSL), (size_t)4, 0, 0, 0, "master|CaDyad|0", &____must_checkpoint_master_CaDyad_0, "float", (void *)(&CaDyad), (size_t)4, 0, 0, 0, "master|parameter_offset_Cyt|0", &____must_checkpoint_master_parameter_offset_Cyt_0, "i32", (void *)(&parameter_offset_Cyt), (size_t)4, 0, 0, 0, "master|initvalu_offset_Cyt|0", &____must_checkpoint_master_initvalu_offset_Cyt_0, "i32", (void *)(&initvalu_offset_Cyt), (size_t)4, 0, 0, 0, "master|parameter_offset_SL|0", &____must_checkpoint_master_parameter_offset_SL_0, "i32", (void *)(&parameter_offset_SL), (size_t)4, 0, 0, 0, "master|initvalu_offset_SL|0", &____must_checkpoint_master_initvalu_offset_SL_0, "i32", (void *)(&initvalu_offset_SL), (size_t)4, 0, 0, 0, "master|parameter_offset_Dyad|0", &____must_checkpoint_master_parameter_offset_Dyad_0, "i32", (void *)(&parameter_offset_Dyad), (size_t)4, 0, 0, 0, "master|initvalu_offset_Dyad|0", &____must_checkpoint_master_initvalu_offset_Dyad_0, "i32", (void *)(&initvalu_offset_Dyad), (size_t)4, 0, 0, 0, "master|initvalu_offset_ecc|0", &____must_checkpoint_master_initvalu_offset_ecc_0, "i32", (void *)(&initvalu_offset_ecc), (size_t)4, 0, 0, 0, "master|JCaCyt|0", &____must_checkpoint_master_JCaCyt_0, "float", (void *)(&JCaCyt), (size_t)4, 0, 0, 0, "master|JCaSL|0", &____must_checkpoint_master_JCaSL_0, "float", (void *)(&JCaSL), (size_t)4, 0, 0, 0, "master|JCaDyad|0", &____must_checkpoint_master_JCaDyad_0, "float", (void *)(&JCaDyad), (size_t)4, 0, 0, 0, "master|i|0", &____must_checkpoint_master_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } default: { chimes_error(); } } } ; ;
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -2856,7 +2872,8 @@ int i;
  }
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-rm_stack(false, 0UL, "master", &____must_manage_master, ____alias_loc_id_9, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "master", &____must_manage_master, ____alias_loc_id_9, ____chimes_did_disable0, false); }
+# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 void master_quick(float timeinst,
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
      float* initvalu,
@@ -2866,20 +2883,35 @@ void master_quick(float timeinst,
      float* finavalu,
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
      int mode){const int ____chimes_did_disable0 = new_stack((void *)(&master), "master", &____must_manage_master, 5, 4, (size_t)(0UL), (size_t)(6849693010381407516UL), (size_t)(6849693010381407517UL), (size_t)(6849693010381407518UL), (size_t)(0UL), "master|timeinst|0", &____must_checkpoint_master_timeinst_0, "float", (void *)(&timeinst), (size_t)4, 0, 0, 0, "master|initvalu|0", &____must_checkpoint_master_initvalu_0, "float*", (void *)(&initvalu), (size_t)8, 1, 0, 0, "master|parameter|0", &____must_checkpoint_master_parameter_0, "float*", (void *)(&parameter), (size_t)8, 1, 0, 0, "master|finavalu|0", &____must_checkpoint_master_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0) ; int th_count[4];
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float CaCyt;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float CaSL;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float CaDyad;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int parameter_offset_Cyt;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int initvalu_offset_Cyt;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int parameter_offset_SL;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int initvalu_offset_SL;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int parameter_offset_Dyad;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int initvalu_offset_Dyad;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int initvalu_offset_ecc;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float JCaCyt;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float JCaSL;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 float JCaDyad;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 int i;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
  if (____must_checkpoint_master_th_count_0 || ____must_checkpoint_master_CaCyt_0 || ____must_checkpoint_master_CaSL_0 || ____must_checkpoint_master_CaDyad_0 || ____must_checkpoint_master_parameter_offset_Cyt_0 || ____must_checkpoint_master_initvalu_offset_Cyt_0 || ____must_checkpoint_master_parameter_offset_SL_0 || ____must_checkpoint_master_initvalu_offset_SL_0 || ____must_checkpoint_master_parameter_offset_Dyad_0 || ____must_checkpoint_master_initvalu_offset_Dyad_0 || ____must_checkpoint_master_initvalu_offset_ecc_0 || ____must_checkpoint_master_JCaCyt_0 || ____must_checkpoint_master_JCaSL_0 || ____must_checkpoint_master_JCaDyad_0 || ____must_checkpoint_master_i_0) { register_stack_vars(15, "master|th_count|0", &____must_checkpoint_master_th_count_0, "[4 x i32]", (void *)(th_count), (size_t)16, 0, 0, 0, "master|CaCyt|0", &____must_checkpoint_master_CaCyt_0, "float", (void *)(&CaCyt), (size_t)4, 0, 0, 0, "master|CaSL|0", &____must_checkpoint_master_CaSL_0, "float", (void *)(&CaSL), (size_t)4, 0, 0, 0, "master|CaDyad|0", &____must_checkpoint_master_CaDyad_0, "float", (void *)(&CaDyad), (size_t)4, 0, 0, 0, "master|parameter_offset_Cyt|0", &____must_checkpoint_master_parameter_offset_Cyt_0, "i32", (void *)(&parameter_offset_Cyt), (size_t)4, 0, 0, 0, "master|initvalu_offset_Cyt|0", &____must_checkpoint_master_initvalu_offset_Cyt_0, "i32", (void *)(&initvalu_offset_Cyt), (size_t)4, 0, 0, 0, "master|parameter_offset_SL|0", &____must_checkpoint_master_parameter_offset_SL_0, "i32", (void *)(&parameter_offset_SL), (size_t)4, 0, 0, 0, "master|initvalu_offset_SL|0", &____must_checkpoint_master_initvalu_offset_SL_0, "i32", (void *)(&initvalu_offset_SL), (size_t)4, 0, 0, 0, "master|parameter_offset_Dyad|0", &____must_checkpoint_master_parameter_offset_Dyad_0, "i32", (void *)(&parameter_offset_Dyad), (size_t)4, 0, 0, 0, "master|initvalu_offset_Dyad|0", &____must_checkpoint_master_initvalu_offset_Dyad_0, "i32", (void *)(&initvalu_offset_Dyad), (size_t)4, 0, 0, 0, "master|initvalu_offset_ecc|0", &____must_checkpoint_master_initvalu_offset_ecc_0, "i32", (void *)(&initvalu_offset_ecc), (size_t)4, 0, 0, 0, "master|JCaCyt|0", &____must_checkpoint_master_JCaCyt_0, "float", (void *)(&JCaCyt), (size_t)4, 0, 0, 0, "master|JCaSL|0", &____must_checkpoint_master_JCaSL_0, "float", (void *)(&JCaSL), (size_t)4, 0, 0, 0, "master|JCaDyad|0", &____must_checkpoint_master_JCaDyad_0, "float", (void *)(&JCaDyad), (size_t)4, 0, 0, 0, "master|i|0", &____must_checkpoint_master_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ; ;
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -3116,7 +3148,7 @@ int i;
  }
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 # 221 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
-rm_stack(false, 0UL, "master", &____must_manage_master, ____alias_loc_id_9, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "master", &____must_manage_master, ____alias_loc_id_9, ____chimes_did_disable0, false); }
 
 void master(float timeinst,
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
@@ -3127,9 +3159,7 @@ void master(float timeinst,
      float* finavalu,
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
      int mode) { (____chimes_replaying ? master_resumable(timeinst, initvalu, parameter, finavalu, mode) : master_quick(timeinst, initvalu, parameter, finavalu, mode)); }
-
-
-
+# 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
 void master_npm(float timeinst,
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/master.c"
      float* initvalu,

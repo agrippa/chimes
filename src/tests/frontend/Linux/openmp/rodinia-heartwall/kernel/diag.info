@@ -1,7 +1,7 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 9 6 len=6 kernel_npm
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 25 const int ____chimes_did_disable0 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 2, 0, (size_t)(7611249383129672660UL), (size_t)(7611249383129672661UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 653 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_0, ____chimes_did_disable0); 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 26 const int ____chimes_did_disable0 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 2, 0, (size_t)(7611249383129672660UL), (size_t)(7611249383129672661UL)); ;
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 25 const int ____chimes_did_disable0 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 2, 0, (size_t)(7611249383129670892UL), (size_t)(7611249383129670893UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 651 1 rm_stack(false, 0UL, "kernel", &____must_manage_kernel, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 26 const int ____chimes_did_disable0 = new_stack((void *)(&kernel), "kernel", &____must_manage_kernel, 2, 0, (size_t)(7611249383129670892UL), (size_t)(7611249383129670893UL)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 197 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 16 2 int ei_new; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 16 12 
@@ -106,6 +106,6 @@ ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 65 17
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 66 2 int ei_mod; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 66 12 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 9 6 len=6 kernel_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 196  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 196  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 9 6 len=6 kernel_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/kernel.c 10 196  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

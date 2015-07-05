@@ -1,36 +1,29 @@
-fprintf main 36 3 0 53 393
-exit main 37 3 0 0
-fopen main 40 10 115 59 394
-printf main 42 3 0 395
+fprintf main 42 3 0 372 446
 exit main 43 3 0 0
-atoi main 46 6 0 59
-atof main 47 15 0 59
-atof main 48 16 0 59
-malloc main 50 33 404 0
-fprintf main 53 3 0 53 396
-exit main 54 3 0 0
-fscanf main 62 5 0 115 397 13
-fprintf main 63 3 0 53 398
-exit main 64 3 0 0
-fopen main 67 7 125 13 394
-printf main 69 3 0 395
-exit main 70 3 0 0
-malloc main 74 16 222 0
-fread main 78 15 0 11 0 0 125
-ferror main 80 8 0 115
-fclose main 81 5 0 125
-feof main 83 9 0 115
-fscanf main 86 10 0 115 397 13
-fprintf main 87 11 0 53 398
-exit main 88 11 0 0
-fopen main 91 13 125 13 394
-printf main 94 10 0 399
-exit main 95 10 0 0
-perror main 99 5 0 400
-exit main 100 5 0 0
-sscanf main 108 4 0 11 400 17 18
-sqrt main 109 11 0 0
-strcpy main 126 7 304 404 11
-fprintf main 132 2 0 53 402 0
-fprintf main 134 39 0 53 403 404 0
-fclose main 138 2 0 115
+fopen main 46 10 66 65 447
+printf main 48 3 0 448
+exit main 49 3 0 0
+atoi main 52 6 0 65
+atof main 53 15 0 65
+atof main 54 16 0 65
+malloc main 56 33 457 0
+fprintf main 59 3 0 372 449
+exit main 60 3 0 0
+feof main 70 13 0 66
+fscanf main 71 9 0 66 450 12
+fopen main 73 14 156 12 447
+__assert_fail main 74 41 0 451 452 0 449
+realloc main 78 31 146 146 0
+fread main 79 21 0 146 0 0 156
+fclose main 83 9 0 156
+fclose main 85 5 0 66
+fopen main 87 7 156 12 447
+printf main 89 3 0 448
+exit main 90 3 0 0
+malloc main 94 16 259 0
+sscanf main 106 4 0 146 454 16 17
+sqrt main 107 26 0 0
+strcpy main 125 7 345 457 146
+checkpoint main 130 9 0
+fprintf main 134 2 0 372 455 0
+fprintf main 136 39 0 372 456 457 0

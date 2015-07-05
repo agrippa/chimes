@@ -40,7 +40,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -56,7 +56,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -91,7 +92,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3364,7 +3365,9 @@ void backprop_face_quick(); void backprop_face();
 void backprop_face_resumable()
 # 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&backprop_face), "backprop_face", &____must_manage_backprop_face, 0, 0) ; float out_err;
+# 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 BPNN *net;
+# 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
  if (____must_checkpoint_backprop_face_out_err_0 || ____must_checkpoint_backprop_face_net_0) { register_stack_vars(2, "backprop_face|out_err|0", &____must_checkpoint_backprop_face_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0, "backprop_face|net|0", &____must_checkpoint_backprop_face_net_0, "%struct.BPNN*", (void *)(&net), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
 # 17 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
    ;
@@ -3388,7 +3391,7 @@ BPNN *net;
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   printf("Training done\n");
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-rm_stack(false, 0UL, "backprop_face", &____must_manage_backprop_face, 0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "backprop_face", &____must_manage_backprop_face, 0, ____chimes_did_disable0, false); }
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 # 30 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 int setup_npm(int argc, char *argv[]);static void (*____chimes_extern_func_bpnn_initialize)(int) = bpnn_initialize;
@@ -3421,11 +3424,14 @@ int setup_resumable(int argc, char *argv[])
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   exit(0);
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-rm_stack(false, 0UL, "setup", &____must_manage_setup, 0, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "setup", &____must_manage_setup, 0, ____chimes_did_disable1, false); }
+# 15 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 void backprop_face_quick()
 # 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&backprop_face), "backprop_face", &____must_manage_backprop_face, 0, 0) ; float out_err;
+# 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 BPNN *net;
+# 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
  if (____must_checkpoint_backprop_face_out_err_0 || ____must_checkpoint_backprop_face_net_0) { register_stack_vars(2, "backprop_face|out_err|0", &____must_checkpoint_backprop_face_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0, "backprop_face|net|0", &____must_checkpoint_backprop_face_net_0, "%struct.BPNN*", (void *)(&net), (size_t)8, 1, 0, 0); } ; ;
 # 17 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
    ;
@@ -3449,10 +3455,10 @@ BPNN *net;
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   printf("Training done\n");
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-rm_stack(false, 0UL, "backprop_face", &____must_manage_backprop_face, 0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "backprop_face", &____must_manage_backprop_face, 0, ____chimes_did_disable0, false); }
 
 void backprop_face() { (____chimes_replaying ? backprop_face_resumable() : backprop_face_quick()); }
-
+# 30 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 int setup_quick(int argc, char *argv[])
 # 31 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&setup), "setup", &____must_manage_setup, 2, 0, (size_t)(0UL), (size_t)(3513164141371984952UL)) ; ; ;
@@ -3481,12 +3487,10 @@ int setup_quick(int argc, char *argv[])
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
   exit(0);
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
-rm_stack(false, 0UL, "setup", &____must_manage_setup, 0, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "setup", &____must_manage_setup, 0, ____chimes_did_disable1, false); }
 
 int setup(int argc, char *argv[]) { return (____chimes_replaying ? setup_resumable(argc, argv) : setup_quick(argc, argv)); }
-
-
-
+# 15 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 void backprop_face_npm()
 # 16 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 {
@@ -3513,7 +3517,7 @@ void backprop_face_npm()
   printf("Training done\n");
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 }
-
+# 30 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 int setup_npm(int argc, char *argv[])
 # 31 "/scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c"
 {
@@ -3572,7 +3576,7 @@ static int module_init() {
                              (3513164141371984888UL + 74UL), (3513164141371984888UL + 45UL),
                              (3513164141371984888UL + 64UL), (3513164141371984888UL + 51UL),
                              (3513164141371984888UL + 36UL), (3513164141371984888UL + 64UL),
-                     "BPNN", 13, "int", (int)__builtin_offsetof (BPNN, input_n), "int", (int)__builtin_offsetof (BPNN, hidden_n), "int", (int)__builtin_offsetof (BPNN, output_n), "float*", (int)__builtin_offsetof (BPNN, input_units), "float*", (int)__builtin_offsetof (BPNN, hidden_units), "float*", (int)__builtin_offsetof (BPNN, output_units), "float*", (int)__builtin_offsetof (BPNN, hidden_delta), "float*", (int)__builtin_offsetof (BPNN, output_delta), "float*", (int)__builtin_offsetof (BPNN, target), "float**", (int)__builtin_offsetof (BPNN, input_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_weights), "float**", (int)__builtin_offsetof (BPNN, input_prev_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_prev_weights),
+                     "BPNN", 768UL, 13, "int", (int)__builtin_offsetof (BPNN, input_n), "int", (int)__builtin_offsetof (BPNN, hidden_n), "int", (int)__builtin_offsetof (BPNN, output_n), "float*", (int)__builtin_offsetof (BPNN, input_units), "float*", (int)__builtin_offsetof (BPNN, hidden_units), "float*", (int)__builtin_offsetof (BPNN, output_units), "float*", (int)__builtin_offsetof (BPNN, hidden_delta), "float*", (int)__builtin_offsetof (BPNN, output_delta), "float*", (int)__builtin_offsetof (BPNN, target), "float**", (int)__builtin_offsetof (BPNN, input_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_weights), "float**", (int)__builtin_offsetof (BPNN, input_prev_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_prev_weights),
                              "setup", "_Z5setupiPPc", 2, "bpnn_initialize", "backprop_face",
                              "backprop_face", "_Z13backprop_facev", 4, "bpnn_create", "load", "bpnn_train_kernel", "bpnn_free",
                         "backprop_face|net|0", 3, "load", "bpnn_train_kernel", "bpnn_free",

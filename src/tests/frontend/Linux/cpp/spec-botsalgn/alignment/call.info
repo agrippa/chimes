@@ -1,39 +1,42 @@
-del diff 271 29 0 0 1819 1820 1821
-add diff 275 20 0 0 1819 1820 1821
-calc_score diff 284 15 0 0 0 0 0 0 0
-del diff 289 10 0 0 1819 1820 1821
-add diff 290 10 0 0 1819 1820 1821
-add diff 292 25 0 0 1819 1820 1821
-add diff 294 25 0 0 1819 1820 1821
-calc_score diff 318 19 0 0 0 0 0 0 0
-calc_score diff 343 19 0 0 0 0 0 0 0
-diff diff 373 7 0 0 0 0 0 0 0 1819 1820 1821 0 0 0 0
-diff diff 374 7 0 0 0 0 0 0 0 1819 1820 1821 0 0 0 0
-diff diff 376 7 0 0 0 0 0 0 0 1819 1820 1821 0 0 0 0
-del diff 377 7 0 0 1819 1820 1821
-diff diff 378 7 0 0 0 0 0 0 0 1819 1820 1821 0 0 0 0
-get_matrix pairalign 426 13 0 3012 3025 0
-fprintf pairalign 429 62 0 2977 3042
-log pairalign 458 40 0 0
-forward_pass pairalign 464 19 0 143 143 0 0 2000 2001 2004 0 0
-reverse_pass pairalign 465 19 0 143 143 0 0 2002 2003 0 0 0
-diff pairalign 470 19 0 0 0 0 0 0 0 2010 2011 2009 0 0 0 0
-tracepath pairalign 471 30 0 0 0 2010 2011 2009 0 0
-fprintf pairalign 483 62 0 2977 3043
-get_matrix pairalign_seq 496 13 0 3012 3025 0
-log pairalign_seq 518 37 0 0
-forward_pass pairalign_seq 524 16 0 143 143 0 0 2359 2360 2363 0 0
-reverse_pass pairalign_seq 525 16 0 143 143 0 0 2361 2362 0 0 0
-diff pairalign_seq 530 16 0 0 0 0 0 0 0 2369 2370 2368 0 0 0 0
-tracepath pairalign_seq 531 27 0 0 0 2369 2370 2368 0 0
-strlen init_matrix 555 13 0 2694
-bots_error pairalign_init 569 7 0 0 3044
-init_matrix pairalign_init 572 4 0
-readseqs pairalign_init 575 12 0 0 2802
-fprintf pairalign_init 577 57 0 2977 3045 0
-malloc align_init 594 27 2817 0
-pairalign align 603 4 0 0 0 0 0
-malloc align_seq_init 609 25 2817 0
-malloc align_seq_init 610 27 2817 0
-pairalign_seq align_seq 619 4 0 0 0 0 0
-fprintf align_verify 661 66 0 2977 3046 0 0 0
+malloc get_matrix 107 20 2855 0
+del diff 279 29 0 0 1855 1856 1857
+add diff 283 20 0 0 1855 1856 1857
+calc_score diff 292 15 0 0 0 0 0 0 0
+del diff 297 10 0 0 1855 1856 1857
+add diff 298 10 0 0 1855 1856 1857
+add diff 300 25 0 0 1855 1856 1857
+add diff 302 25 0 0 1855 1856 1857
+calc_score diff 326 19 0 0 0 0 0 0 0
+calc_score diff 351 19 0 0 0 0 0 0 0
+diff diff 381 7 0 0 0 0 0 0 0 1855 1856 1857 0 0 0 0
+diff diff 382 7 0 0 0 0 0 0 0 1855 1856 1857 0 0 0 0
+diff diff 384 7 0 0 0 0 0 0 0 1855 1856 1857 0 0 0 0
+del diff 385 7 0 0 1855 1856 1857
+diff diff 386 7 0 0 0 0 0 0 0 1855 1856 1857 0 0 0 0
+get_matrix pairalign 434 13 0 3049 3062 0
+fprintf pairalign 437 62 0 3014 3079
+log pairalign 466 40 0 0
+forward_pass pairalign 472 19 0 143 143 0 0 2036 2037 2040 0 0
+reverse_pass pairalign 473 19 0 143 143 0 0 2038 2039 0 0 0
+diff pairalign 478 19 0 0 0 0 0 0 0 2046 2047 2045 0 0 0 0
+tracepath pairalign 479 30 0 0 0 2046 2047 2045 0 0
+checkpoint pairalign 493 4 0
+fprintf pairalign 495 62 0 3014 3080
+get_matrix pairalign_seq 508 13 0 3049 3062 0
+log pairalign_seq 530 37 0 0
+forward_pass pairalign_seq 536 16 0 143 143 0 0 2396 2397 2400 0 0
+reverse_pass pairalign_seq 537 16 0 143 143 0 0 2398 2399 0 0 0
+diff pairalign_seq 542 16 0 0 0 0 0 0 0 2406 2407 2405 0 0 0 0
+tracepath pairalign_seq 543 27 0 0 0 2406 2407 2405 0 0
+checkpoint pairalign_seq 553 7 0
+strlen init_matrix 570 13 0 2732
+bots_error pairalign_init 584 7 0 0 3081
+init_matrix pairalign_init 587 4 0
+readseqs pairalign_init 590 12 0 0 2840
+fprintf pairalign_init 592 57 0 3014 3082 0
+malloc align_init 609 27 2855 0
+pairalign align 618 4 0 0 0 0 0
+malloc align_seq_init 624 25 2855 0
+malloc align_seq_init 625 27 2855 0
+pairalign_seq align_seq 634 4 0 0 0 0 0
+fprintf align_verify 676 66 0 3014 3083 0 0 0

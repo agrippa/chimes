@@ -16,6 +16,7 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c calc_score|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c calc_score|ipos|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c calc_score|jpos|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c calc_score|____chimes_ret_var_0|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c get_matrix|matptr|0 " i32* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c get_matrix|xref|0 " i32* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c get_matrix|scale|0 " i32 " 32 0 0 0
@@ -33,6 +34,7 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c get_matrix|min|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c get_matrix|max|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c get_matrix|maxres|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c get_matrix|____chimes_ret_var_1|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c forward_pass|ia|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c forward_pass|ib|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c forward_pass|n|0 " i32 " 32 0 0 0
@@ -68,6 +70,8 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c reverse_pass|cost|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c reverse_pass|HH|0 " [5000 x i32] " 160000 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c reverse_pass|DD|0 " [5000 x i32] " 160000 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c reverse_pass|tmp1|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c reverse_pass|tmp2|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c diff|A|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c diff|B|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c diff|M|0 " i32 " 32 0 0 0
@@ -96,6 +100,10 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c diff|DD|0 " [5000 x i32] " 160000 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c diff|RR|0 " [5000 x i32] " 160000 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c diff|SS|0 " [5000 x i32] " 160000 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c diff|____chimes_ret_var_2|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c diff|____chimes_ret_var_3|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c diff|____chimes_ret_var_4|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c diff|____chimes_ret_var_5|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c tracepath|tsb1|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c tracepath|tsb2|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c tracepath|print_ptr|0 " i32* " 64 1 0 0
@@ -111,6 +119,7 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c tracepath|count|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c tracepath|c1|0 " i8 " 8 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c tracepath|c2|0 " i8 " 8 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c tracepath|____chimes_ret_var_6|0 " double " 64 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|istart|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|iend|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|jstart|0 " i32 " 32 0 0 0
@@ -127,6 +136,7 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|mm_score|0 " double " 64 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|mat_xref|0 " i32* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|matptr|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|____chimes_ret_var_7|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|c|0 " i8 " 8 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|se1|0 " i32 " 32 0 0 1 pairalign
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|se2|0 " i32 " 32 0 0 0
@@ -141,36 +151,39 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|print_ptr|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|last_print|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|c|1 " i8 " 8 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign|____chimes_ret_var_8|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|istart|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|iend|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|jstart|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|jend|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|i|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|n|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|m|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|si|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|sj|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|len1|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|len2|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|i|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|n|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|m|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|si|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|sj|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|len1|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|len2|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|maxres|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|gg|0 " double " 64 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|mm_score|0 " double " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|gg|0 " double " 64 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|mm_score|0 " double " 64 0 0 1 checkpoint
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|mat_xref|0 " i32* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|matptr|0 " i32* " 64 1 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|c|0 " i8 " 8 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|____chimes_ret_var_9|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|c|0 " i8 " 8 0 0 1 checkpoint
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|se1|0 " i32 " 32 0 0 1 pairalign_seq
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|se2|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|sb1|0 " i32 " 32 0 0 1 pairalign_seq
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|sb2|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|maxscore|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|seq1|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|seq2|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|g|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|gh|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|seq1|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|seq2|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|g|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|gh|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|displ|0 " [10001 x i32] " 320032 0 0 1 pairalign_seq
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|print_ptr|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|last_print|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|c|1 " i8 " 8 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|c|1 " i8 " 8 0 0 1 checkpoint
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c pairalign_seq|____chimes_ret_var_10|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c init_matrix|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c init_matrix|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c init_matrix|c1|0 " i8 " 8 0 0 0
@@ -186,3 +199,4 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c align_verify|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c align_verify|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c align_verify|result|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c align_verify|____chimes_ret_var_11|0 " i32 " 32 0 0 0

@@ -1,2 +1,2 @@
 usage _Z5usagePc 0 DOES_NOT
-main main 0 MAY usage 133 23 usage 135 22 usage 141 25 open 149 23 read 153 9 read 154 9 read 164 9 close 166 9 strtok 175 17 rewind 177 9 strtok 179 17 strtok 181 24 rewind 193 9 strtok 196 17 strtok 198 51 omp_get_wtime 208 11 cluster 212 9 omp_get_wtime 221 14
+main main 0 DOES usage 136 23 usage 138 22 usage 144 25 strtok 178 17 rewind 180 9 strtok 182 17 strtok 184 24 rewind 196 9 strtok 199 17 strtok 201 51 omp_get_wtime 211 11 cluster 215 9 checkpoint 223 9 omp_get_wtime 227 14

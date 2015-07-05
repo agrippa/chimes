@@ -33,7 +33,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -49,7 +49,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -84,7 +85,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1423,7 +1424,7 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
-        void (*fp)(void *));
+        void (*____chimes_fp)(void *));
 # 2 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp" 2
 # 2 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 # 3 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
@@ -1431,22 +1432,23 @@ int foo_npm(int a);
 int foo_quick(int a); int foo(int a);
 int foo_resumable(int a) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (a + 3); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (a + 3); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 # 6 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 # 7 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 int bar_npm(int a);
 int bar_quick(int a); int bar(int a);
 int bar_resumable(int a) {const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (a + 4); rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (a + 4); rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7709126126479029329UL)) ; int a;
+# 11 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
  register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
        a = (3) ;
@@ -1456,26 +1458,28 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable2 = n
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (a); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_2; ;
+     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (a); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2, false); }
+# 3 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 int foo_quick(int a) {const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)) ; ; ;
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (a + 3); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (a + 3); rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int foo(int a) { return (____chimes_replaying ? foo_resumable(a) : foo_quick(a)); }
-
+# 7 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 int bar_quick(int a) {const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)) ; ; ;
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (a + 4); rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (a + 4); rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
 int bar(int a) { return (____chimes_replaying ? bar_resumable(a) : bar_quick(a)); }
-
+# 11 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7709126126479029329UL)) ; int a;
+# 11 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
  register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); ; ;
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
        a = (3) ;
@@ -1485,20 +1489,18 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable2 = new_s
 # 15 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
      call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
 # 16 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (a); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_2; ;
+     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (a); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_2; ;
 # 17 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 
-int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-
-
-
+int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+# 3 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 int foo_npm(int a) {
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
      int ____chimes_ret_var_0; ____chimes_ret_var_0 = (a + 3); return ____chimes_ret_var_0; ;
 # 5 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 }
-
+# 7 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
 int bar_npm(int a) {
 # 8 "/home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp"
      int ____chimes_ret_var_1; ____chimes_ret_var_1 = (a + 4); return ____chimes_ret_var_1; ;

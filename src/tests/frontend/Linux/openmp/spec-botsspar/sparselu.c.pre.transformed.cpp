@@ -16,28 +16,15 @@ static int ____chimes_does_checkpoint_bdiv_npm = 1;
 static int ____chimes_does_checkpoint_bmod_npm = 1;
 static int ____chimes_does_checkpoint_fwd_npm = 1;
 static int ____chimes_does_checkpoint_sparselu_init_npm = 1;
-static int ____chimes_does_checkpoint_sparselu_par_call_npm = 1;
 static int ____chimes_does_checkpoint_sparselu_seq_call_npm = 1;
 static int ____chimes_does_checkpoint_sparselu_fini_npm = 1;
 static int ____chimes_does_checkpoint_sparselu_check_npm = 1;
 static int ____chimes_does_checkpoint_checkmat1_npm = 1;
-static int ____chimes_does_checkpoint_abs_npm = 1;
 
-static int ____must_checkpoint_genmat_M_0 = 2;
-static int ____must_checkpoint_genmat_null_entry_0 = 2;
-static int ____must_checkpoint_genmat_init_val_0 = 2;
-static int ____must_checkpoint_genmat_i_0 = 2;
-static int ____must_checkpoint_genmat_j_0 = 2;
-static int ____must_checkpoint_genmat_ii_0 = 2;
-static int ____must_checkpoint_genmat_jj_0 = 2;
-static int ____must_checkpoint_genmat_p_0 = 2;
-static int ____must_checkpoint_genmat_prow_0 = 2;
-static int ____must_checkpoint_genmat_rowsum_0 = 2;
 
 static int ____must_manage_print_structure = 2;
 static int ____must_manage_allocate_clean_block = 2;
 static int ____must_manage_checkmat1 = 2;
-static int ____must_manage_sparselu_par_call = 2;
 static int ____must_manage_fwd = 2;
 static int ____must_manage_bmod = 2;
 static int ____must_manage_lu0 = 2;
@@ -64,7 +51,6 @@ static unsigned ____alias_loc_id_11;
 static unsigned ____alias_loc_id_12;
 static unsigned ____alias_loc_id_13;
 static unsigned ____alias_loc_id_14;
-static unsigned ____alias_loc_id_15;
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -80,7 +66,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -96,7 +82,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -131,7 +118,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3901,1565 +3888,1638 @@ void fwd(float *diag, float *col);
 # 29 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
 # 29 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 30 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 31 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+
+# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+extern void checkpoint();
+
+extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*____chimes_fp)(void *));
+# 32 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c" 2
 # 32 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 33 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 34 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 36 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 37 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat_npm (float *M, float *N);
 int checkmat_quick (float *M, float *N); int checkmat (float *M, float *N);
 int checkmat_resumable (float *M, float *N)
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(15559110349592348314UL), (size_t)(15559110349592348315UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i; int j; ;
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   float r_err; ;
-# 37 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 38 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i = 0; i < bots_arg_size_1; i++)
+{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(15559110349592348322UL), (size_t)(15559110349592348323UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
+   int i; int j; ;
 # 40 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (j = 0; j < bots_arg_size_1; j++)
+   float r_err; ;
 # 41 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
 # 42 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         r_err = M[i*bots_arg_size_1+j] - N[i*bots_arg_size_1+j];
+   for (i = 0; i < bots_arg_size_1; i++)
 # 43 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if (r_err < 0.0) {r_err = -r_err; };
+   {
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         r_err = r_err / M[i*bots_arg_size_1+j];
+      for (j = 0; j < bots_arg_size_1; j++)
 # 45 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if(r_err > 1.0E-6)
+      {
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
+         r_err = M[i*bots_arg_size_1+j] - N[i*bots_arg_size_1+j];
 # 47 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Checking failure: A[%d][%d]=%f  B[%d][%d]=%f; Relative Error=%f\n" , i,j, M[i*bots_arg_size_1+j], i,j, N[i*bots_arg_size_1+j], r_err); } }
+         if (r_err < 0.0) {r_err = -r_err; };
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                                                                    ;
+         r_err = r_err / M[i*bots_arg_size_1+j];
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_3, ____chimes_did_disable0); return 0;
+         if(r_err > 1.0E-6)
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         }
+         {
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }
+            { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Checking failure: A[%d][%d]=%f  B[%d][%d]=%f; Relative Error=%f\n" , i,j, M[i*bots_arg_size_1+j], i,j, N[i*bots_arg_size_1+j], r_err); } }
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
+                                                                                    ;
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_3, ____chimes_did_disable0); return 1;
+             int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 54 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+         }
 # 55 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (1); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-void genmat_npm (float *M[]);static int (*____chimes_extern_func_abs)(int) = abs;
+rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); }
+# 59 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 60 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 61 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 62 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+void genmat_npm (float *M[]);
 void genmat_quick (float *M[]); void genmat (float *M[]);
 void genmat_resumable (float *M[])
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 1, (size_t)(15559110349592348551UL), "genmat|M|0", &____must_checkpoint_genmat_M_0, "float**", (void *)(&M), (size_t)8, 1, 0, 0) ; float rowsum;
-float *prow;
-float *p;
-int jj;
-int ii;
-int j;
-int i;
-int init_val;
-int null_entry;
- if (____must_checkpoint_genmat_rowsum_0 || ____must_checkpoint_genmat_prow_0 || ____must_checkpoint_genmat_p_0 || ____must_checkpoint_genmat_jj_0 || ____must_checkpoint_genmat_ii_0 || ____must_checkpoint_genmat_j_0 || ____must_checkpoint_genmat_i_0 || ____must_checkpoint_genmat_init_val_0 || ____must_checkpoint_genmat_null_entry_0) { register_stack_vars(9, "genmat|rowsum|0", &____must_checkpoint_genmat_rowsum_0, "float", (void *)(&rowsum), (size_t)4, 0, 0, 0, "genmat|prow|0", &____must_checkpoint_genmat_prow_0, "float*", (void *)(&prow), (size_t)8, 1, 0, 0, "genmat|p|0", &____must_checkpoint_genmat_p_0, "float*", (void *)(&p), (size_t)8, 1, 0, 0, "genmat|jj|0", &____must_checkpoint_genmat_jj_0, "i32", (void *)(&jj), (size_t)4, 0, 0, 0, "genmat|ii|0", &____must_checkpoint_genmat_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "genmat|j|0", &____must_checkpoint_genmat_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "genmat|i|0", &____must_checkpoint_genmat_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "genmat|init_val|0", &____must_checkpoint_genmat_init_val_0, "i32", (void *)(&init_val), (size_t)4, 0, 0, 0, "genmat|null_entry|0", &____must_checkpoint_genmat_null_entry_0, "i32", (void *)(&null_entry), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(5): { goto call_lbl_5; } case(7): { goto call_lbl_7; } default: { chimes_error(); } } } ; ;
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         ;
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 0, (size_t)(15559110349592348559UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   int null_entry; int init_val; int i; int j; int ii; int jj; ;
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   init_val = 1325;
+   float *p; ;
 # 66 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float *prow; ;
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float rowsum; ;
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (ii=0; ii < bots_arg_size; ii++)
 # 69 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
+   init_val = 1325;
 # 70 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (jj=0; jj < bots_arg_size; jj++)
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
 # 72 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (ii=0; ii < bots_arg_size; ii++)
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         null_entry=0;
+   {
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if ((ii<jj) && (ii%3 !=0)) {null_entry = 1; };
+      for (jj=0; jj < bots_arg_size; jj++)
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if ((ii>jj) && (jj%3 !=0)) {null_entry = 1; };
+      {
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (ii%2==1) {null_entry = 1; };
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (jj%2==1) {null_entry = 1; };
+         null_entry=0;
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (ii==jj) {null_entry = 0; };
+         if ((ii<jj) && (ii%3 !=0)) {null_entry = 1; };
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (ii==jj-1) {null_entry = 0; };
+         if ((ii>jj) && (jj%3 !=0)) {null_entry = 1; };
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if (ii-1 == jj) {null_entry = 0; };
+  if (ii%2==1) {null_entry = 1; };
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  if (jj%2==1) {null_entry = 1; };
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if (null_entry == 0){
+  if (ii==jj) {null_entry = 0; };
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348478UL, 0, 0);
+  if (ii==jj-1) {null_entry = 0; };
 # 84 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     if ((M[ii*bots_arg_size+jj] == __null))
+         if (ii-1 == jj) {null_entry = 0; };
 # 85 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            {
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
+         if (null_entry == 0){
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               exit(101);
+            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0);
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            }
+     if ((M[ii*bots_arg_size+jj] == __null))
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            prow = p = M[ii*bots_arg_size+jj];
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            for (i = 0; i < bots_arg_size_1; i++)
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             {
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               rowsum = 0.0;
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               for (j = 0; j < bots_arg_size_1; j++)
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               {
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-             init_val = (3125 * init_val) % 65536;
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                   (*p) = (float)((init_val - 32768.0) / 16384.0);
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                    alias_group_changed(____alias_loc_id_1); call_lbl_5: rowsum += ({ int ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (*p); } calling((void*)abs, 5, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg0); }) ;
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                    p++;
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               }
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               if (ii == jj) {alias_group_changed(____alias_loc_id_0); call_lbl_7: *(prow+i) = rowsum * (float) bots_arg_size + ({ int ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (*(prow + i)); } calling((void*)abs, 7, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (abs)(____chimes_arg1); }) ; };
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               prow += bots_arg_size_1;
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
+# 91 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               exit(101);
+# 92 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             }
+# 93 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 94 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 95 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 96 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 97 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            prow = p = M[ii*bots_arg_size+jj];
+# 98 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            for (i = 0; i < bots_arg_size_1; i++)
+# 99 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            {
+# 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               rowsum = 0.0;
+# 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               for (j = 0; j < bots_arg_size_1; j++)
+# 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               {
+# 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+             init_val = (3125 * init_val) % 65536;
+# 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                   (*p) = (float)((init_val - 32768.0) / 16384.0);
+# 105 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                    rowsum += abs(*p);
+# 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                    p++;
+# 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               }
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         }
-# 109 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         else
+               if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + abs(*(prow+i)); };
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
+               prow += bots_arg_size_1;
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = __null;
+            }
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }
+         else
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
+         {
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_4, ____chimes_did_disable1); }
+            M[ii*bots_arg_size+jj] = __null;
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_2, ____chimes_did_disable1, false); }
+# 120 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 121 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 122 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 123 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void print_structure_npm(char *name, float *M[]);
 void print_structure_quick(char *name, float *M[]); void print_structure(char *name, float *M[]);
 void print_structure_resumable(char *name, float *M[])
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(15559110349592348633UL), (size_t)(15559110349592348634UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int ii; int jj; ;
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Structure for matrix %s @ 0x%p\n" ,name, M); } };
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (ii = 0; ii < bots_arg_size; ii++) {
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     for (jj = 0; jj < bots_arg_size; jj++) {
+{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(15559110349592348641UL), (size_t)(15559110349592348642UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-        if (M[ii*bots_arg_size+jj]!=__null) {{ if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "x"); } };}
+   int ii; int jj; ;
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-        else { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " "); } };
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Structure for matrix %s @ 0x%p\n" ,name, M); } };
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     }
+   for (ii = 0; ii < bots_arg_size; ii++) {
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
+     for (jj = 0; jj < bots_arg_size; jj++) {
 # 129 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
+        if (M[ii*bots_arg_size+jj]!=__null) {{ if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "x"); } };}
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
+        else { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " "); } };
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_5, ____chimes_did_disable2); }
+     }
 # 132 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+     { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
 # 133 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
 # 134 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
 # 135 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_3, ____chimes_did_disable2, false); }
+# 136 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 137 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 138 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 139 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 float * allocate_clean_block_npm();
 float * allocate_clean_block_quick(); float * allocate_clean_block();
 float * allocate_clean_block_resumable()
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&allocate_clean_block), "allocate_clean_block", &____must_manage_allocate_clean_block, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  int i; int j; ;
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  float *p; float *q; ;
-# 139 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348648UL, 0, 0);
+{const int ____chimes_did_disable3 = new_stack((void *)(&allocate_clean_block), "allocate_clean_block", &____must_manage_allocate_clean_block, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  q=p;
+  int i; int j; ;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (p!=__null){
+  float *p; float *q; ;
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     for (i = 0; i < bots_arg_size_1; i++) { for (j = 0; j < bots_arg_size_1; j++){(*p)=0.0; p++;}; }
+# 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0);
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  q=p;
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  }
+  if (p!=__null){
 # 147 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  else
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  {
+     for (i = 0; i < bots_arg_size_1; i++) { for (j = 0; j < bots_arg_size_1; j++){(*p)=0.0; p++;}; }
 # 149 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      exit (101);
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
+# 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  else
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  rm_stack(true, 15559110349592348648UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_6, ____chimes_did_disable3); return (q);
+  {
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+      { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
 # 154 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      exit (101);
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  }
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((q)); rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); return ____chimes_ret_var_2; ;
 # 157 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); }
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 159 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 160 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 161 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 162 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void lu0_npm(float *diag);
 void lu0_quick(float *diag); void lu0(float *diag);
 void lu0_resumable(float *diag)
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(15559110349592348807UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i; int j; int k; ;
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++)
+# 163 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(15559110349592348819UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 164 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
+   int i; int j; int k; ;
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         diag[i*bots_arg_size_1+k] = diag[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         for (j=k+1; j<bots_arg_size_1; j++) { diag[i*bots_arg_size_1+j] = diag[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k] * diag[k*bots_arg_size_1+j]; };
+   for (k=0; k<bots_arg_size_1; k++) {
+# 167 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (i=k+1; i<bots_arg_size_1; i++)
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }; }
+      {
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_7, ____chimes_did_disable4); }
+         diag[i*bots_arg_size_1+k] = diag[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         for (j=k+1; j<bots_arg_size_1; j++) {
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            diag[i*bots_arg_size_1+j] = diag[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k] * diag[k*bots_arg_size_1+j];
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_5, ____chimes_did_disable4, false); }
+# 176 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 177 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 178 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 179 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 180 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void bdiv_npm(float *diag, float *row);
 void bdiv_quick(float *diag, float *row); void bdiv(float *diag, float *row);
 void bdiv_resumable(float *diag, float *row)
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(15559110349592348922UL), (size_t)(15559110349592348923UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i; int j; int k; ;
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i=0; i<bots_arg_size_1; i++) { for (k=0; k<bots_arg_size_1; k++)
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         row[i*bots_arg_size_1+k] = row[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         for (j=k+1; j<bots_arg_size_1; j++) { row[i*bots_arg_size_1+j] = row[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*diag[k*bots_arg_size_1+j]; };
+{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(15559110349592348934UL), (size_t)(15559110349592348935UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 182 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }; }
+   int i; int j; int k; ;
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_8, ____chimes_did_disable5); }
-# 185 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (i=0; i<bots_arg_size_1; i++) { for (k=0; k<bots_arg_size_1; k++)
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      {
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         row[i*bots_arg_size_1+k] = row[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
 # 188 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         for (j=k+1; j<bots_arg_size_1; j++) {
+# 189 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            row[i*bots_arg_size_1+j] = row[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*diag[k*bots_arg_size_1+j];
+# 190 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 191 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }; }
+# 192 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_6, ____chimes_did_disable5, false); }
+# 193 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 194 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 195 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 196 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void bmod_npm(float *row, float *col, float *inner);
 void bmod_quick(float *row, float *col, float *inner); void bmod(float *row, float *col, float *inner);
 void bmod_resumable(float *row, float *col, float *inner)
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(15559110349592349011UL), (size_t)(15559110349592349012UL), (size_t)(15559110349592349013UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i; int j; int k; ;
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i=0; i<bots_arg_size_1; i++) { for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_9, ____chimes_did_disable6); }
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 197 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(15559110349592349023UL), (size_t)(15559110349592349024UL), (size_t)(15559110349592349025UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 198 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 199 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   int i; int j; int k; ;
+# 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (i=0; i<bots_arg_size_1; i++) {
+# 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (j=0; j<bots_arg_size_1; j++) {
+# 202 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         for (k=0; k<bots_arg_size_1; k++) {
+# 203 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j];
+# 204 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 205 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
+# 206 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 207 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_7, ____chimes_did_disable6, false); }
+# 208 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 209 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 210 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 211 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void fwd_npm(float *diag, float *col);
 void fwd_quick(float *diag, float *col); void fwd(float *diag, float *col);
 void fwd_resumable(float *diag, float *col)
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(15559110349592349100UL), (size_t)(15559110349592349101UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 212 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(15559110349592349112UL), (size_t)(15559110349592349113UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 213 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 214 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 215 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++) { col[i*bots_arg_size_1+j] = col[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_10, ____chimes_did_disable7); }
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 219 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_did_disable7, false); }
+# 220 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 221 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_init_npm (float ***pBENCH, char *pass);
 void sparselu_init_quick (float ***pBENCH, char *pass); void sparselu_init (float ***pBENCH, char *pass);
 void sparselu_init_resumable (float ***pBENCH, char *pass)
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349121UL), (size_t)(15559110349592349122UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349113UL, 1, 0);
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    call_lbl_2: ({ float ** ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (*pBENCH); } calling((void*)genmat, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(15559110349592349113UL)); (genmat)(____chimes_arg2); }) ;
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 214 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, 0, ____chimes_did_disable8); }
-# 215 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 216 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-void sparselu_par_call_npm(float **BENCH);
+# 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349133UL), (size_t)(15559110349592349134UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0);
+# 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
+# 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 227 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, ____alias_loc_id_9, ____chimes_did_disable8, false); }
+# 228 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 229 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_par_call_quick(float **BENCH); void sparselu_par_call(float **BENCH);
 void sparselu_par_call_resumable(float **BENCH)
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", &____must_manage_sparselu_par_call, 1, 0, (size_t)(15559110349592349358UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int ii; int jj; int kk; ;
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Computing SparseLU Factorization (%dx%d matrix with %dx%d blocks) " , bots_arg_size,bots_arg_size,bots_arg_size_1,bots_arg_size_1); } }
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                                                       ;; { call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 0);
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp parallel
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } }
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp single nowait
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- ; { bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread();
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (kk=0; kk<bots_arg_size; kk++)
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(15559110349592349396UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; float *block;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+int kk;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp task untied firstprivate(kk, jj) shared(BENCH)
+int jj;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+int ii;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- ; { bool ____chimes_disable2; ____chimes_disable2 = disable_current_thread();
+ register_stack_vars(4, "sparselu_par_call|block|0", (int *)0x0, "float*", (void *)(&block), (size_t)8, 1, 0, 0, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0, "sparselu_par_call|jj|0", (int *)0x0, "i32", (void *)(&jj), (size_t)4, 0, 0, 0, "sparselu_par_call|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 231 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
+      ;
 # 232 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
 # 233 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         } reenable_current_thread(____chimes_disable2); } ; }
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Computing SparseLU Factorization (%dx%d matrix with %dx%d blocks) " , bots_arg_size,bots_arg_size,bots_arg_size_1,bots_arg_size_1); } }
 # 234 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null)
+                                                                       ;
+# 235 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp task untied firstprivate(kk, ii) shared(BENCH)
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- ; { bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
+   {
 # 237 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
 # 238 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         } reenable_current_thread(____chimes_disable3); } ; }
+   for (kk=0; kk<bots_arg_size; kk++)
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   {
 # 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp taskwait
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null) {for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{ call_lbl_5: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 3, &block, &jj, &kk); int ____chimes_first_iter0 = 1;
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+#pragma omp parallel for shared(BENCH) firstprivate(kk) private(jj) firstprivate(____chimes_first_iter0)
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 244 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (jj=kk+1; jj<bots_arg_size; jj++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &block, &jj, &kk); ____chimes_first_iter0 = 0; } {
+# 245 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         if (BENCH[kk*bots_arg_size+jj] != __null) {
+# 246 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp task untied firstprivate(kk, jj, ii) shared(BENCH)
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- ; { bool ____chimes_disable4; ____chimes_disable4 = disable_current_thread();
+           {
 # 248 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               {
+              ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
 # 249 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
+           }
 # 250 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
+         }
 # 251 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               } reenable_current_thread(____chimes_disable4); } ; }; }; }
+       } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 252 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp taskwait
+{ call_lbl_6: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(6, &____chimes_region_id1, 3, &block, &ii, &kk); int ____chimes_first_iter1 = 1;
+# 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+#pragma omp parallel for shared(BENCH) firstprivate(kk) private(ii) firstprivate(____chimes_first_iter1)
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 254 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   } reenable_current_thread(____chimes_disable1); }
+      for (ii=kk+1; ii<bots_arg_size; ii++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 3, &block, &ii, &kk); ____chimes_first_iter1 = 0; } {
 # 255 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   } thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
+         if (BENCH[ii*bots_arg_size+kk] != __null) {
 # 256 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
 # 257 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_par_call", &____must_manage_sparselu_par_call, ____alias_loc_id_11, ____chimes_did_disable9); }
+           {
 # 258 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+              ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
 # 259 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+           }
 # 260 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 261 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+       } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+# 262 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 263 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 264 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{ call_lbl_7: void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(7, &____chimes_region_id2, 1, &block);
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+#pragma omp parallel shared(BENCH)
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 266 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 1, &block); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+#pragma omp for collapse(2) firstprivate(block)
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 268 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+          for (ii=kk+1; ii<bots_arg_size; ii++) { {
+# 269 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+              for (jj=kk+1; jj<bots_arg_size; jj++) {
+# 270 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                  if (BENCH[ii*bots_arg_size+kk] != __null) {
+# 271 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                      if (BENCH[kk*bots_arg_size+jj] != __null) {
+# 272 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 273 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                          {
+# 274 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                              if (BENCH[ii*bots_arg_size+jj]==__null) {
+# 275 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                                     block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
+# 276 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                                  ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); });
+# 278 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                                  BENCH[ii*bots_arg_size+jj] = block;
+# 279 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                              } else {
+# 280 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                                  ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
+# 283 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                              }
+# 284 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                          }
+# 285 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                      }
+# 286 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                  }
+# 287 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+              }
+# 288 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+           } } reenable_current_thread(____chimes_disable3);
+# 289 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+       } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 0); }
+# 290 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 291 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 292 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 293 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+       call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
+# 294 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 295 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 296 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 297 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 298 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 299 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
+# 300 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "sparselu_par_call", (int *)0x0, ____alias_loc_id_10, ____chimes_did_disable9, false); }
+# 301 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 302 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 303 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_seq_call_npm(float **BENCH);
 void sparselu_seq_call_quick(float **BENCH); void sparselu_seq_call(float **BENCH);
 void sparselu_seq_call_resumable(float **BENCH)
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(15559110349592349578UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 304 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(15559110349592349616UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 305 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii; int jj; int kk; ;
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 306 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 307 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (kk=0; kk<bots_arg_size; kk++)
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 308 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 309 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 310 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 312 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 313 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 314 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 315 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null)
-# 274 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 317 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 275 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 318 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
-# 276 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 319 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
-# 277 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 320 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null) {for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                {
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                      if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 326 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                      ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 327 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                }; }; }; }
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 328 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 329 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_12, ____chimes_did_disable10); }
-# 288 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 289 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 330 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_11, ____chimes_did_disable10, false); }
+# 331 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 332 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_fini_npm (float **BENCH, char *pass);
 void sparselu_fini_quick (float **BENCH, char *pass); void sparselu_fini (float **BENCH, char *pass);
 void sparselu_fini_resumable (float **BENCH, char *pass)
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(15559110349592349586UL), (size_t)(15559110349592349587UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_13, ____chimes_did_disable11); return;
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(15559110349592349624UL), (size_t)(15559110349592349625UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_12, ____chimes_did_disable11, false); return;
+# 336 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 321 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 364 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 364 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat1 (float *N);
-# 322 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 365 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int sparselu_check_npm(float **SEQ, float **BENCH);int checkmat1_npm (float *N);
 int sparselu_check_quick(float **SEQ, float **BENCH); int sparselu_check(float **SEQ, float **BENCH);int checkmat1_quick (float *N); int checkmat1 (float *N);
 int sparselu_check_resumable(float **SEQ, float **BENCH)
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(15559110349592349641UL), (size_t)(15559110349592349642UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 366 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(15559110349592349683UL), (size_t)(15559110349592349684UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 367 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int ok; ;
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 368 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 369 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output size: %d\n" ,bots_arg_size); } };
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 370 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size; i+=50)
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 371 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 372 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size; j+=40)
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 373 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 374 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             ok = ({ calling_npm("checkmat1", 0); checkmat1_npm(BENCH[i*bots_arg_size+j]); });
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 375 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 376 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_14, ____chimes_did_disable12); return 1;
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 377 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (1); rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_13, ____chimes_did_disable12, false); return ____chimes_ret_var_3; ;
+# 378 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_13, ____chimes_did_disable12, false); }
+# 379 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat1_resumable (float *N)
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(15559110349592349691UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 380 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(15559110349592349737UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 381 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; ;
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 382 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 383 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size_1; i+=20)
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 384 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 385 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size_1; j+=20)
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 386 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 387 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output Matrix: A[%d][%d]=%8.12f \n" , i,j, N[i*bots_arg_size_1+j]); } }
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 388 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                 ;
-# 346 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 389 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 347 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 390 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 348 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_15, ____chimes_did_disable13); return 1;
-# 349 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
-int checkmat_quick (float *M, float *N)
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(15559110349592348314UL), (size_t)(15559110349592348315UL)) ; ; ;
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i; int j; ;
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   float r_err; ;
+# 391 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (1); rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_14, ____chimes_did_disable13, false); return ____chimes_ret_var_4; ;
+# 392 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_14, ____chimes_did_disable13, false); }
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+int checkmat_quick (float *M, float *N)
 # 38 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i = 0; i < bots_arg_size_1; i++)
+{const int ____chimes_did_disable0 = new_stack((void *)(&checkmat), "checkmat", &____must_manage_checkmat, 2, 0, (size_t)(15559110349592348322UL), (size_t)(15559110349592348323UL)) ; ; ;
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
+   int i; int j; ;
 # 40 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (j = 0; j < bots_arg_size_1; j++)
+   float r_err; ;
 # 41 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
 # 42 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         r_err = M[i*bots_arg_size_1+j] - N[i*bots_arg_size_1+j];
+   for (i = 0; i < bots_arg_size_1; i++)
 # 43 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if (r_err < 0.0) {r_err = -r_err; };
+   {
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         r_err = r_err / M[i*bots_arg_size_1+j];
+      for (j = 0; j < bots_arg_size_1; j++)
 # 45 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if(r_err > 1.0E-6)
+      {
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
+         r_err = M[i*bots_arg_size_1+j] - N[i*bots_arg_size_1+j];
 # 47 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Checking failure: A[%d][%d]=%f  B[%d][%d]=%f; Relative Error=%f\n" , i,j, M[i*bots_arg_size_1+j], i,j, N[i*bots_arg_size_1+j], r_err); } }
+         if (r_err < 0.0) {r_err = -r_err; };
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                                                                    ;
+         r_err = r_err / M[i*bots_arg_size_1+j];
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_3, ____chimes_did_disable0); return 0;
+         if(r_err > 1.0E-6)
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         }
+         {
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }
+            { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Checking failure: A[%d][%d]=%f  B[%d][%d]=%f; Relative Error=%f\n" , i,j, M[i*bots_arg_size_1+j], i,j, N[i*bots_arg_size_1+j], r_err); } }
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
+                                                                                    ;
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_3, ____chimes_did_disable0); return 1;
+             int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 54 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+         }
+# 55 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
+# 56 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 57 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (1); rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ;
+# 58 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "checkmat", &____must_manage_checkmat, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int checkmat (float *M, float *N) { return (____chimes_replaying ? checkmat_resumable(M, N) : checkmat_quick(M, N)); }
-
-void genmat_quick (float *M[])
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 1, (size_t)(15559110349592348551UL), "genmat|M|0", &____must_checkpoint_genmat_M_0, "float**", (void *)(&M), (size_t)8, 1, 0, 0) ; float rowsum;
-float *prow;
-float *p;
-int jj;
-int ii;
-int j;
-int i;
-int init_val;
-int null_entry;
- if (____must_checkpoint_genmat_rowsum_0 || ____must_checkpoint_genmat_prow_0 || ____must_checkpoint_genmat_p_0 || ____must_checkpoint_genmat_jj_0 || ____must_checkpoint_genmat_ii_0 || ____must_checkpoint_genmat_j_0 || ____must_checkpoint_genmat_i_0 || ____must_checkpoint_genmat_init_val_0 || ____must_checkpoint_genmat_null_entry_0) { register_stack_vars(9, "genmat|rowsum|0", &____must_checkpoint_genmat_rowsum_0, "float", (void *)(&rowsum), (size_t)4, 0, 0, 0, "genmat|prow|0", &____must_checkpoint_genmat_prow_0, "float*", (void *)(&prow), (size_t)8, 1, 0, 0, "genmat|p|0", &____must_checkpoint_genmat_p_0, "float*", (void *)(&p), (size_t)8, 1, 0, 0, "genmat|jj|0", &____must_checkpoint_genmat_jj_0, "i32", (void *)(&jj), (size_t)4, 0, 0, 0, "genmat|ii|0", &____must_checkpoint_genmat_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "genmat|j|0", &____must_checkpoint_genmat_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "genmat|i|0", &____must_checkpoint_genmat_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "genmat|init_val|0", &____must_checkpoint_genmat_init_val_0, "i32", (void *)(&init_val), (size_t)4, 0, 0, 0, "genmat|null_entry|0", &____must_checkpoint_genmat_null_entry_0, "i32", (void *)(&null_entry), (size_t)4, 0, 0, 0); } ; ;
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         ;
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
 # 62 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
+void genmat_quick (float *M[])
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&genmat), "genmat", &____must_manage_genmat, 1, 0, (size_t)(15559110349592348559UL)) ; ; ;
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   int null_entry; int init_val; int i; int j; int ii; int jj; ;
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   init_val = 1325;
+   float *p; ;
 # 66 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float *prow; ;
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float rowsum; ;
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (ii=0; ii < bots_arg_size; ii++)
 # 69 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
+   init_val = 1325;
 # 70 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (jj=0; jj < bots_arg_size; jj++)
 # 71 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
 # 72 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (ii=0; ii < bots_arg_size; ii++)
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         null_entry=0;
+   {
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if ((ii<jj) && (ii%3 !=0)) {null_entry = 1; };
+      for (jj=0; jj < bots_arg_size; jj++)
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if ((ii>jj) && (jj%3 !=0)) {null_entry = 1; };
+      {
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (ii%2==1) {null_entry = 1; };
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (jj%2==1) {null_entry = 1; };
+         null_entry=0;
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (ii==jj) {null_entry = 0; };
+         if ((ii<jj) && (ii%3 !=0)) {null_entry = 1; };
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (ii==jj-1) {null_entry = 0; };
+         if ((ii>jj) && (jj%3 !=0)) {null_entry = 1; };
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if (ii-1 == jj) {null_entry = 0; };
+  if (ii%2==1) {null_entry = 1; };
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  if (jj%2==1) {null_entry = 1; };
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if (null_entry == 0){
+  if (ii==jj) {null_entry = 0; };
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348478UL, 0, 0);
+  if (ii==jj-1) {null_entry = 0; };
 # 84 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     if ((M[ii*bots_arg_size+jj] == __null))
+         if (ii-1 == jj) {null_entry = 0; };
 # 85 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            {
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
+         if (null_entry == 0){
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               exit(101);
+            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0);
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            }
+     if ((M[ii*bots_arg_size+jj] == __null))
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            prow = p = M[ii*bots_arg_size+jj];
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            for (i = 0; i < bots_arg_size_1; i++)
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             {
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               rowsum = 0.0;
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               for (j = 0; j < bots_arg_size_1; j++)
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               {
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-             init_val = (3125 * init_val) % 65536;
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                   (*p) = (float)((init_val - 32768.0) / 16384.0);
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                    alias_group_changed(____alias_loc_id_1); call_lbl_5: rowsum += ({ calling((void*)abs, 5, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (abs)(*p); }) ;
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                    p++;
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               }
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               if (ii == jj) {alias_group_changed(____alias_loc_id_0); call_lbl_7: *(prow+i) = rowsum * (float) bots_arg_size + ({ calling((void*)abs, 7, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (abs)(*(prow + i)); }) ; };
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               prow += bots_arg_size_1;
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
+# 91 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               exit(101);
+# 92 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             }
+# 93 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 94 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 95 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 96 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 97 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            prow = p = M[ii*bots_arg_size+jj];
+# 98 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            for (i = 0; i < bots_arg_size_1; i++)
+# 99 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            {
+# 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               rowsum = 0.0;
+# 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               for (j = 0; j < bots_arg_size_1; j++)
+# 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               {
+# 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+             init_val = (3125 * init_val) % 65536;
+# 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                   (*p) = (float)((init_val - 32768.0) / 16384.0);
+# 105 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                    rowsum += abs(*p);
+# 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                    p++;
+# 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               }
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         }
-# 109 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         else
+               if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + abs(*(prow+i)); };
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
+               prow += bots_arg_size_1;
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = __null;
+            }
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }
+         else
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
+         {
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_4, ____chimes_did_disable1); }
+            M[ii*bots_arg_size+jj] = __null;
+# 116 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 117 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
+# 118 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 119 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "genmat", &____must_manage_genmat, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
 void genmat (float *M[]) { (____chimes_replaying ? genmat_resumable(M) : genmat_quick(M)); }
-
-void print_structure_quick(char *name, float *M[])
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(15559110349592348633UL), (size_t)(15559110349592348634UL)) ; ; ;
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int ii; int jj; ;
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Structure for matrix %s @ 0x%p\n" ,name, M); } };
 # 123 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (ii = 0; ii < bots_arg_size; ii++) {
+void print_structure_quick(char *name, float *M[])
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     for (jj = 0; jj < bots_arg_size; jj++) {
+{const int ____chimes_did_disable2 = new_stack((void *)(&print_structure), "print_structure", &____must_manage_print_structure, 2, 0, (size_t)(15559110349592348641UL), (size_t)(15559110349592348642UL)) ; ; ;
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-        if (M[ii*bots_arg_size+jj]!=__null) {{ if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "x"); } };}
+   int ii; int jj; ;
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-        else { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " "); } };
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Structure for matrix %s @ 0x%p\n" ,name, M); } };
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     }
+   for (ii = 0; ii < bots_arg_size; ii++) {
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
+     for (jj = 0; jj < bots_arg_size; jj++) {
 # 129 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
+        if (M[ii*bots_arg_size+jj]!=__null) {{ if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "x"); } };}
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
+        else { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " "); } };
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_5, ____chimes_did_disable2); }
+     }
+# 132 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+     { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
+# 133 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 134 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
+# 135 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "print_structure", &____must_manage_print_structure, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 
 void print_structure(char *name, float *M[]) { (____chimes_replaying ? print_structure_resumable(name, M) : print_structure_quick(name, M)); }
-
-float * allocate_clean_block_quick()
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable3 = new_stack((void *)(&allocate_clean_block), "allocate_clean_block", &____must_manage_allocate_clean_block, 0, 0) ; ; ;
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  int i; int j; ;
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  float *p; float *q; ;
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+float * allocate_clean_block_quick()
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348648UL, 0, 0);
+{const int ____chimes_did_disable3 = new_stack((void *)(&allocate_clean_block), "allocate_clean_block", &____must_manage_allocate_clean_block, 0, 0) ; ; ;
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  q=p;
+  int i; int j; ;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (p!=__null){
+  float *p; float *q; ;
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     for (i = 0; i < bots_arg_size_1; i++) { for (j = 0; j < bots_arg_size_1; j++){(*p)=0.0; p++;}; }
+# 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0);
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  q=p;
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  }
+  if (p!=__null){
 # 147 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  else
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  {
+     for (i = 0; i < bots_arg_size_1; i++) { for (j = 0; j < bots_arg_size_1; j++){(*p)=0.0; p++;}; }
 # 149 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      exit (101);
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
+# 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  else
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  rm_stack(true, 15559110349592348648UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_6, ____chimes_did_disable3); return (q);
+  {
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+      { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
+# 154 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      exit (101);
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  }
+# 156 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float *____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((q)); rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); return ____chimes_ret_var_2; ;
+# 157 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(true, 15559110349592348657UL, "allocate_clean_block", &____must_manage_allocate_clean_block, ____alias_loc_id_4, ____chimes_did_disable3, false); }
 
 float * allocate_clean_block() { return (____chimes_replaying ? allocate_clean_block_resumable() : allocate_clean_block_quick()); }
-
-void lu0_quick(float *diag)
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(15559110349592348807UL)) ; ; ;
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i; int j; int k; ;
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++)
+void lu0_quick(float *diag)
+# 163 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable4 = new_stack((void *)(&lu0), "lu0", &____must_manage_lu0, 1, 0, (size_t)(15559110349592348819UL)) ; ; ;
 # 164 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
+   int i; int j; int k; ;
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         diag[i*bots_arg_size_1+k] = diag[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         for (j=k+1; j<bots_arg_size_1; j++) { diag[i*bots_arg_size_1+j] = diag[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k] * diag[k*bots_arg_size_1+j]; };
+   for (k=0; k<bots_arg_size_1; k++) {
+# 167 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (i=k+1; i<bots_arg_size_1; i++)
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }; }
+      {
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_7, ____chimes_did_disable4); }
+         diag[i*bots_arg_size_1+k] = diag[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
+# 170 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         for (j=k+1; j<bots_arg_size_1; j++) {
+# 171 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            diag[i*bots_arg_size_1+j] = diag[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k] * diag[k*bots_arg_size_1+j];
+# 172 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 173 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
+# 174 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "lu0", &____must_manage_lu0, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 
 void lu0(float *diag) { (____chimes_replaying ? lu0_resumable(diag) : lu0_quick(diag)); }
-
-void bdiv_quick(float *diag, float *row)
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(15559110349592348922UL), (size_t)(15559110349592348923UL)) ; ; ;
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i; int j; int k; ;
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i=0; i<bots_arg_size_1; i++) { for (k=0; k<bots_arg_size_1; k++)
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         row[i*bots_arg_size_1+k] = row[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
+void bdiv_quick(float *diag, float *row)
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         for (j=k+1; j<bots_arg_size_1; j++) { row[i*bots_arg_size_1+j] = row[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*diag[k*bots_arg_size_1+j]; };
+{const int ____chimes_did_disable5 = new_stack((void *)(&bdiv), "bdiv", &____must_manage_bdiv, 2, 0, (size_t)(15559110349592348934UL), (size_t)(15559110349592348935UL)) ; ; ;
+# 182 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }; }
+   int i; int j; int k; ;
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_8, ____chimes_did_disable5); }
+   for (i=0; i<bots_arg_size_1; i++) { for (k=0; k<bots_arg_size_1; k++)
+# 186 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      {
+# 187 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         row[i*bots_arg_size_1+k] = row[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
+# 188 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         for (j=k+1; j<bots_arg_size_1; j++) {
+# 189 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            row[i*bots_arg_size_1+j] = row[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*diag[k*bots_arg_size_1+j];
+# 190 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 191 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }; }
+# 192 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "bdiv", &____must_manage_bdiv, ____alias_loc_id_6, ____chimes_did_disable5, false); }
 
 void bdiv(float *diag, float *row) { (____chimes_replaying ? bdiv_resumable(diag, row) : bdiv_quick(diag, row)); }
-
+# 196 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void bmod_quick(float *row, float *col, float *inner)
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(15559110349592349011UL), (size_t)(15559110349592349012UL), (size_t)(15559110349592349013UL)) ; ; ;
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 197 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable6 = new_stack((void *)(&bmod), "bmod", &____must_manage_bmod, 3, 0, (size_t)(15559110349592349023UL), (size_t)(15559110349592349024UL), (size_t)(15559110349592349025UL)) ; ; ;
+# 198 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 199 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int k; ;
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i=0; i<bots_arg_size_1; i++) { for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_9, ____chimes_did_disable6); }
+# 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (i=0; i<bots_arg_size_1; i++) {
+# 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (j=0; j<bots_arg_size_1; j++) {
+# 202 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         for (k=0; k<bots_arg_size_1; k++) {
+# 203 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j];
+# 204 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 205 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
+# 206 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 207 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "bmod", &____must_manage_bmod, ____alias_loc_id_7, ____chimes_did_disable6, false); }
 
 void bmod(float *row, float *col, float *inner) { (____chimes_replaying ? bmod_resumable(row, col, inner) : bmod_quick(row, col, inner)); }
-
-void fwd_quick(float *diag, float *col)
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(15559110349592349100UL), (size_t)(15559110349592349101UL)) ; ; ;
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i; int j; int k; ;
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++) { col[i*bots_arg_size_1+j] = col[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_10, ____chimes_did_disable7); }
-
-void fwd(float *diag, float *col) { (____chimes_replaying ? fwd_resumable(diag, col) : fwd_quick(diag, col)); }
-
-void sparselu_init_quick (float ***pBENCH, char *pass)
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349121UL), (size_t)(15559110349592349122UL)) ; ; ;
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349113UL, 1, 0);
+void fwd_quick(float *diag, float *col)
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-    call_lbl_2: ({ calling((void*)genmat, 2, ____alias_loc_id_2, 0UL, 1, (size_t)(15559110349592349113UL)); genmat_quick(*pBENCH); }) ;
+{const int ____chimes_did_disable7 = new_stack((void *)(&fwd), "fwd", &____must_manage_fwd, 2, 0, (size_t)(15559110349592349112UL), (size_t)(15559110349592349113UL)) ; ; ;
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 214 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, 0, ____chimes_did_disable8); }
+   int i; int j; int k; ;
+# 215 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++) { col[i*bots_arg_size_1+j] = col[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
+# 219 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_8, ____chimes_did_disable7, false); }
+
+void fwd(float *diag, float *col) { (____chimes_replaying ? fwd_resumable(diag, col) : fwd_quick(diag, col)); }
+# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+void sparselu_init_quick (float ***pBENCH, char *pass)
+# 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable8 = new_stack((void *)(&sparselu_init), "sparselu_init", &____must_manage_sparselu_init, 2, 0, (size_t)(15559110349592349133UL), (size_t)(15559110349592349134UL)) ; ; ;
+# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0);
+# 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   ({ calling_npm("genmat", 0); genmat_npm(*pBENCH); });
+# 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 227 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "sparselu_init", &____must_manage_sparselu_init, ____alias_loc_id_9, ____chimes_did_disable8, false); }
 
 void sparselu_init (float ***pBENCH, char *pass) { (____chimes_replaying ? sparselu_init_resumable(pBENCH, pass) : sparselu_init_quick(pBENCH, pass)); }
-
+# 229 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_par_call_quick(float **BENCH)
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", &____must_manage_sparselu_par_call, 1, 0, (size_t)(15559110349592349358UL)) ; ; ;
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int ii; int jj; int kk; ;
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Computing SparseLU Factorization (%dx%d matrix with %dx%d blocks) " , bots_arg_size,bots_arg_size,bots_arg_size_1,bots_arg_size_1); } }
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                                                       ;; { call_lbl_4: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 0);
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp parallel
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 0); ;
-# 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp single nowait
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- ; { bool ____chimes_disable1; ____chimes_disable1 = disable_current_thread();
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (kk=0; kk<bots_arg_size; kk++)
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable9 = new_stack((void *)(&sparselu_par_call), "sparselu_par_call", (int *)0, 1, 1, (size_t)(15559110349592349396UL), "sparselu_par_call|BENCH|0", (int *)0, "float**", (void *)(&BENCH), (size_t)8, 1, 0, 0) ; float *block;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+int kk;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp task untied firstprivate(kk, jj) shared(BENCH)
+int jj;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+int ii;
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- ; { bool ____chimes_disable2; ____chimes_disable2 = disable_current_thread();
+ register_stack_vars(4, "sparselu_par_call|block|0", (int *)0x0, "float*", (void *)(&block), (size_t)8, 1, 0, 0, "sparselu_par_call|kk|0", (int *)0x0, "i32", (void *)(&kk), (size_t)4, 0, 0, 0, "sparselu_par_call|jj|0", (int *)0x0, "i32", (void *)(&jj), (size_t)4, 0, 0, 0, "sparselu_par_call|ii|0", (int *)0x0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); ; ;
 # 231 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
+      ;
 # 232 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
 # 233 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         } reenable_current_thread(____chimes_disable2); } ; }
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Computing SparseLU Factorization (%dx%d matrix with %dx%d blocks) " , bots_arg_size,bots_arg_size,bots_arg_size_1,bots_arg_size_1); } }
 # 234 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null)
+                                                                       ;
+# 235 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp task untied firstprivate(kk, ii) shared(BENCH)
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- ; { bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
+   {
 # 237 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
 # 238 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         } reenable_current_thread(____chimes_disable3); } ; }
+   for (kk=0; kk<bots_arg_size; kk++)
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   {
 # 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp taskwait
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null) {for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{ call_lbl_5: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(5, &____chimes_region_id0, 3, &block, &jj, &kk); int ____chimes_first_iter0 = 1;
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+#pragma omp parallel for shared(BENCH) firstprivate(kk) private(jj) firstprivate(____chimes_first_iter0)
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 244 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (jj=kk+1; jj<bots_arg_size; jj++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 3, &block, &jj, &kk); ____chimes_first_iter0 = 0; } {
+# 245 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         if (BENCH[kk*bots_arg_size+jj] != __null) {
+# 246 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp task untied firstprivate(kk, jj, ii) shared(BENCH)
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
- ; { bool ____chimes_disable4; ____chimes_disable4 = disable_current_thread();
+           {
 # 248 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               {
+              ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
 # 249 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
+           }
 # 250 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
+         }
 # 251 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               } reenable_current_thread(____chimes_disable4); } ; }; }; }
+       } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 252 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp taskwait
+{ call_lbl_6: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(6, &____chimes_region_id1, 3, &block, &ii, &kk); int ____chimes_first_iter1 = 1;
+# 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+#pragma omp parallel for shared(BENCH) firstprivate(kk) private(ii) firstprivate(____chimes_first_iter1)
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 254 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   } reenable_current_thread(____chimes_disable1); }
+      for (ii=kk+1; ii<bots_arg_size; ii++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 3, &block, &ii, &kk); ____chimes_first_iter1 = 0; } {
 # 255 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   } thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
+         if (BENCH[ii*bots_arg_size+kk] != __null) {
 # 256 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
 # 257 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_par_call", &____must_manage_sparselu_par_call, ____alias_loc_id_11, ____chimes_did_disable9); }
-
-void sparselu_par_call(float **BENCH) { (____chimes_replaying ? sparselu_par_call_resumable(BENCH) : sparselu_par_call_quick(BENCH)); }
-
-void sparselu_seq_call_quick(float **BENCH)
+           {
+# 258 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+              ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
+# 259 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+           }
+# 260 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
 # 261 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(15559110349592349578UL)) ; ; ;
+       } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
 # 262 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int ii; int jj; int kk; ;
 # 263 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 264 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (kk=0; kk<bots_arg_size; kk++)
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{ call_lbl_7: void *____chimes_parent_ctx3 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth2 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth2 = get_thread_stack_depth(); size_t ____chimes_region_id2; unsigned ____chimes_parent_thread2 = entering_omp_parallel(7, &____chimes_region_id2, 1, &block);
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+#pragma omp parallel shared(BENCH)
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 266 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
+      { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread2, ____chimes_parent_ctx3, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth2, ____chimes_region_id2, 1, &block); if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } {
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+bool ____chimes_disable3; ____chimes_disable3 = disable_current_thread();
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+#pragma omp for collapse(2) firstprivate(block)
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 268 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+          for (ii=kk+1; ii<bots_arg_size; ii++) { {
 # 269 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
+              for (jj=kk+1; jj<bots_arg_size; jj++) {
 # 270 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
+                  if (BENCH[ii*bots_arg_size+kk] != __null) {
 # 271 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         }; }
+                      if (BENCH[kk*bots_arg_size+jj] != __null) {
 # 272 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null)
+# 273 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                          {
 # 274 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
+                              if (BENCH[ii*bots_arg_size+jj]==__null) {
 # 275 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
+                                     block = (({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); })) ;
 # 276 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         }; }
-# 277 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null) {for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               {
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
+                                  ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], block); });
+# 278 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                                  BENCH[ii*bots_arg_size+jj] = block;
+# 279 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                              } else {
+# 280 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                                  ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
+                              }
 # 284 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               }; }; }; }
+                          }
 # 285 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                      }
 # 286 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
+                  }
 # 287 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_12, ____chimes_did_disable10); }
-
-void sparselu_seq_call(float **BENCH) { (____chimes_replaying ? sparselu_seq_call_resumable(BENCH) : sparselu_seq_call_quick(BENCH)); }
-
-void sparselu_fini_quick (float **BENCH, char *pass)
+              }
+# 288 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+           } } reenable_current_thread(____chimes_disable3);
+# 289 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+       } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth2, ____chimes_region_id2, 0); }
 # 290 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(15559110349592349586UL), (size_t)(15559110349592349587UL)) ; ; ;
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_13, ____chimes_did_disable11); return;
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+       call_lbl_2: checkpoint_transformed(2, ____alias_loc_id_0);
+# 294 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 295 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 296 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 297 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 298 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 299 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
+# 300 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "sparselu_par_call", (int *)0x0, ____alias_loc_id_10, ____chimes_did_disable9, false); }
+
+void sparselu_par_call(float **BENCH) { (____chimes_replaying ? sparselu_par_call_resumable(BENCH) : sparselu_par_call_quick(BENCH)); }
+# 303 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+void sparselu_seq_call_quick(float **BENCH)
+# 304 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable10 = new_stack((void *)(&sparselu_seq_call), "sparselu_seq_call", &____must_manage_sparselu_seq_call, 1, 0, (size_t)(15559110349592349616UL)) ; ; ;
+# 305 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   int ii; int jj; int kk; ;
+# 306 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 307 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (kk=0; kk<bots_arg_size; kk++)
+# 308 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   {
+# 309 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      ({ calling_npm("lu0", 0); lu0_npm(BENCH[kk*bots_arg_size+kk]); });
+# 310 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
+# 312 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         {
+# 313 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            ({ calling_npm("fwd", 0); fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]); });
+# 314 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }; }
+# 315 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null)
+# 317 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         {
+# 318 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            ({ calling_npm("bdiv", 0); bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]); });
+# 319 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }; }
+# 320 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null) {for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
+# 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               {
+# 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                     if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = ({ calling_npm("allocate_clean_block", 0); allocate_clean_block_npm(); }); };
+# 326 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                     ({ calling_npm("bmod", 0); bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]); });
+# 327 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               }; }; }; }
+# 328 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 329 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 330 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "sparselu_seq_call", &____must_manage_sparselu_seq_call, ____alias_loc_id_11, ____chimes_did_disable10, false); }
+
+void sparselu_seq_call(float **BENCH) { (____chimes_replaying ? sparselu_seq_call_resumable(BENCH) : sparselu_seq_call_quick(BENCH)); }
+# 332 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+void sparselu_fini_quick (float **BENCH, char *pass)
+# 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable11 = new_stack((void *)(&sparselu_fini), "sparselu_fini", &____must_manage_sparselu_fini, 2, 0, (size_t)(15559110349592349624UL), (size_t)(15559110349592349625UL)) ; ; ;
+# 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   rm_stack(false, 0UL, "sparselu_fini", &____must_manage_sparselu_fini, ____alias_loc_id_12, ____chimes_did_disable11, false); return;
+# 336 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
 
 void sparselu_fini (float **BENCH, char *pass) { (____chimes_replaying ? sparselu_fini_resumable(BENCH, pass) : sparselu_fini_quick(BENCH, pass)); }
-
+# 365 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int sparselu_check_quick(float **SEQ, float **BENCH)
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(15559110349592349641UL), (size_t)(15559110349592349642UL)) ; ; ;
-# 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 366 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable12 = new_stack((void *)(&sparselu_check), "sparselu_check", &____must_manage_sparselu_check, 2, 0, (size_t)(15559110349592349683UL), (size_t)(15559110349592349684UL)) ; ; ;
+# 367 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; int ok; ;
-# 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 326 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 368 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 369 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output size: %d\n" ,bots_arg_size); } };
-# 327 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 370 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size; i+=50)
-# 328 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 371 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 329 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 372 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size; j+=40)
-# 330 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 373 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 374 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             ok = ({ calling_npm("checkmat1", 0); checkmat1_npm(BENCH[i*bots_arg_size+j]); });
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 375 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 376 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_14, ____chimes_did_disable12); return 1;
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+# 377 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+    int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (1); rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_13, ____chimes_did_disable12, false); return ____chimes_ret_var_3; ;
+# 378 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "sparselu_check", &____must_manage_sparselu_check, ____alias_loc_id_13, ____chimes_did_disable12, false); }
 
 int sparselu_check(float **SEQ, float **BENCH) { return (____chimes_replaying ? sparselu_check_resumable(SEQ, BENCH) : sparselu_check_quick(SEQ, BENCH)); }
-
+# 379 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 int checkmat1_quick (float *N)
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(15559110349592349691UL)) ; ; ;
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 380 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{const int ____chimes_did_disable13 = new_stack((void *)(&checkmat1), "checkmat1", &____must_manage_checkmat1, 1, 0, (size_t)(15559110349592349737UL)) ; ; ;
+# 381 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i; int j; ;
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 382 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 383 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (i = 0; i < bots_arg_size_1; i+=20)
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 384 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 385 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (j = 0; j < bots_arg_size_1; j+=20)
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 386 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 387 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output Matrix: A[%d][%d]=%8.12f \n" , i,j, N[i*bots_arg_size_1+j]); } }
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 388 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
                                                 ;
-# 346 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 389 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 347 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 390 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 348 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_15, ____chimes_did_disable13); return 1;
-# 349 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
+# 391 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (1); rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_14, ____chimes_did_disable13, false); return ____chimes_ret_var_4; ;
+# 392 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+rm_stack(false, 0UL, "checkmat1", &____must_manage_checkmat1, ____alias_loc_id_14, ____chimes_did_disable13, false); }
 
 int checkmat1 (float *N) { return (____chimes_replaying ? checkmat1_resumable(N) : checkmat1_quick(N)); }
-
-
-
-int checkmat_npm (float *M, float *N)
-# 34 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{
-# 35 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i, j;
-# 36 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   float r_err;
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+int checkmat_npm (float *M, float *N)
 # 38 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i = 0; i < bots_arg_size_1; i++)
-# 39 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
-# 40 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (j = 0; j < bots_arg_size_1; j++)
-# 41 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
-# 42 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         r_err = M[i*bots_arg_size_1+j] - N[i*bots_arg_size_1+j];
-# 43 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if (r_err < 0.0) {r_err = -r_err; };
-# 44 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         r_err = r_err / M[i*bots_arg_size_1+j];
-# 45 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if(r_err > 1.0E-6)
-# 46 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
-# 47 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Checking failure: A[%d][%d]=%f  B[%d][%d]=%f; Relative Error=%f\n" , i,j, M[i*bots_arg_size_1+j], i,j, N[i*bots_arg_size_1+j], r_err); } }
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                                                                    ;
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            return 0;
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         }
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   return 1;
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
-
-void genmat_npm (float *M[])
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int null_entry, init_val, i, j, ii, jj;
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   float *p;
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   float *prow;
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   float rowsum;
-# 64 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   init_val = 1325;
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (ii=0; ii < bots_arg_size; ii++)
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 39 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   int i, j;
+# 40 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float r_err;
+# 41 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 42 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (i = 0; i < bots_arg_size_1; i++)
+# 43 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (jj=0; jj < bots_arg_size; jj++)
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 44 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (j = 0; j < bots_arg_size_1; j++)
+# 45 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         null_entry=0;
-# 74 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if ((ii<jj) && (ii%3 !=0)) {null_entry = 1; };
-# 75 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if ((ii>jj) && (jj%3 !=0)) {null_entry = 1; };
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (ii%2==1) {null_entry = 1; };
-# 77 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (jj%2==1) {null_entry = 1; };
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (ii==jj) {null_entry = 0; };
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (ii==jj-1) {null_entry = 0; };
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if (ii-1 == jj) {null_entry = 0; };
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         if (null_entry == 0){
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348478UL, 0, 0);
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     if ((M[ii*bots_arg_size+jj] == __null))
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            {
-# 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
-# 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               exit(101);
-# 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            }
-# 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 91 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 92 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            prow = p = M[ii*bots_arg_size+jj];
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            for (i = 0; i < bots_arg_size_1; i++)
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            {
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               rowsum = 0.0;
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               for (j = 0; j < bots_arg_size_1; j++)
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               {
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-             init_val = (3125 * init_val) % 65536;
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                   (*p) = (float)((init_val - 32768.0) / 16384.0);
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                    rowsum += (*____chimes_extern_func_abs)(*p);
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                    p++;
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               }
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + (*____chimes_extern_func_abs)(*(prow+i)); };
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               prow += bots_arg_size_1;
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            }
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         }
-# 109 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         else
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 46 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         r_err = M[i*bots_arg_size_1+j] - N[i*bots_arg_size_1+j];
+# 47 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         if (r_err < 0.0) {r_err = -r_err; };
+# 48 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         r_err = r_err / M[i*bots_arg_size_1+j];
+# 49 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         if(r_err > 1.0E-6)
+# 50 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Checking failure: A[%d][%d]=%f  B[%d][%d]=%f; Relative Error=%f\n" , i,j, M[i*bots_arg_size_1+j], i,j, N[i*bots_arg_size_1+j], r_err); } }
+# 52 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                                                                                    ;
+# 53 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+             int ____chimes_ret_var_0; ____chimes_ret_var_0 = (0); return ____chimes_ret_var_0; ;
+# 54 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 55 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
+# 56 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 57 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+    int ____chimes_ret_var_1; ____chimes_ret_var_1 = (1); return ____chimes_ret_var_1; ;
+# 58 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+}
+# 62 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+void genmat_npm (float *M[])
+# 63 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{
+# 64 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   int null_entry, init_val, i, j, ii, jj;
+# 65 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float *p;
+# 66 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float *prow;
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float rowsum;
+# 68 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 69 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   init_val = 1325;
+# 70 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 71 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 72 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (ii=0; ii < bots_arg_size; ii++)
+# 73 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   {
+# 74 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (jj=0; jj < bots_arg_size; jj++)
+# 75 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      {
+# 76 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 77 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         null_entry=0;
+# 78 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         if ((ii<jj) && (ii%3 !=0)) {null_entry = 1; };
+# 79 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         if ((ii>jj) && (jj%3 !=0)) {null_entry = 1; };
+# 80 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  if (ii%2==1) {null_entry = 1; };
+# 81 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  if (jj%2==1) {null_entry = 1; };
+# 82 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  if (ii==jj) {null_entry = 0; };
+# 83 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  if (ii==jj-1) {null_entry = 0; };
+# 84 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         if (ii-1 == jj) {null_entry = 0; };
+# 85 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 86 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         if (null_entry == 0){
+# 87 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            M[ii*bots_arg_size+jj] = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348486UL, 0, 0);
+# 88 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+     if ((M[ii*bots_arg_size+jj] == __null))
+# 89 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            {
+# 90 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
+# 91 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               exit(101);
+# 92 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            }
+# 93 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 94 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 95 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 96 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 97 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            prow = p = M[ii*bots_arg_size+jj];
+# 98 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            for (i = 0; i < bots_arg_size_1; i++)
+# 99 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            {
+# 100 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               rowsum = 0.0;
+# 101 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               for (j = 0; j < bots_arg_size_1; j++)
+# 102 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               {
+# 103 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+             init_val = (3125 * init_val) % 65536;
+# 104 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                   (*p) = (float)((init_val - 32768.0) / 16384.0);
+# 105 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                    rowsum += abs(*p);
+# 106 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                    p++;
+# 107 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               }
+# 108 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               if (ii == jj) {*(prow+i) = rowsum * (float) bots_arg_size + abs(*(prow+i)); };
+# 110 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+               prow += bots_arg_size_1;
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            M[ii*bots_arg_size+jj] = __null;
+            }
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }
+         else
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
+         {
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
-
-void print_structure_npm(char *name, float *M[])
-# 120 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int ii, jj;
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Structure for matrix %s @ 0x%p\n" ,name, M); } };
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (ii = 0; ii < bots_arg_size; ii++) {
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     for (jj = 0; jj < bots_arg_size; jj++) {
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-        if (M[ii*bots_arg_size+jj]!=__null) {{ if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "x"); } };}
-# 126 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-        else { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " "); } };
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     }
-# 128 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            M[ii*bots_arg_size+jj] = __null;
+# 116 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 117 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
+# 118 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
+# 119 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+}
+# 123 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+void print_structure_npm(char *name, float *M[])
+# 124 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{
+# 125 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   int ii, jj;
+# 126 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Structure for matrix %s @ 0x%p\n" ,name, M); } };
+# 127 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (ii = 0; ii < bots_arg_size; ii++) {
+# 128 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+     for (jj = 0; jj < bots_arg_size; jj++) {
+# 129 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+        if (M[ii*bots_arg_size+jj]!=__null) {{ if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "x"); } };}
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
+        else { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " "); } };
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+     }
+# 132 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+     { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
+# 133 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 134 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "\n"); } };
+# 135 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-
-float * allocate_clean_block_npm()
-# 136 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{
-# 137 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  int i,j;
-# 138 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  float *p, *q;
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+float * allocate_clean_block_npm()
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348648UL, 0, 0);
+{
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  q=p;
+  int i,j;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  if (p!=__null){
+  float *p, *q;
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-     for (i = 0; i < bots_arg_size_1; i++) { for (j = 0; j < bots_arg_size_1; j++){(*p)=0.0; p++;}; }
+# 144 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  p = (float *) malloc_wrapper(bots_arg_size_1*bots_arg_size_1*sizeof(float), 15559110349592348657UL, 0, 0);
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  q=p;
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  }
+  if (p!=__null){
 # 147 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  else
-# 148 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  {
+     for (i = 0; i < bots_arg_size_1; i++) { for (j = 0; j < bots_arg_size_1; j++){(*p)=0.0; p++;}; }
 # 149 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      exit (101);
-# 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
   }
+# 151 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  else
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-  return (q);
+  {
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Error: Out of memory\n"); } };
+# 154 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      exit (101);
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+  }
+# 156 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   float * ____chimes_ret_var_2; ____chimes_ret_var_2 = ((q)); return ____chimes_ret_var_2; ;
+# 157 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-
-void lu0_npm(float *diag)
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{
-# 160 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i, j, k;
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++)
+void lu0_npm(float *diag)
+# 163 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{
 # 164 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
+   int i, j, k;
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         diag[i*bots_arg_size_1+k] = diag[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         for (j=k+1; j<bots_arg_size_1; j++) { diag[i*bots_arg_size_1+j] = diag[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k] * diag[k*bots_arg_size_1+j]; };
+   for (k=0; k<bots_arg_size_1; k++) {
+# 167 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (i=k+1; i<bots_arg_size_1; i++)
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }; }
-# 169 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
-
-void bdiv_npm(float *diag, float *row)
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i, j, k;
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i=0; i<bots_arg_size_1; i++) { for (k=0; k<bots_arg_size_1; k++)
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
+# 169 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         diag[i*bots_arg_size_1+k] = diag[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
+# 170 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         for (j=k+1; j<bots_arg_size_1; j++) {
+# 171 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            diag[i*bots_arg_size_1+j] = diag[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k] * diag[k*bots_arg_size_1+j];
+# 172 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 173 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
+# 174 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 175 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+}
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         row[i*bots_arg_size_1+k] = row[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
+void bdiv_npm(float *diag, float *row)
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         for (j=k+1; j<bots_arg_size_1; j++) { row[i*bots_arg_size_1+j] = row[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*diag[k*bots_arg_size_1+j]; };
+{
+# 182 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }; }
+   int i, j, k;
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
-
-void bmod_npm(float *row, float *col, float *inner)
+   for (i=0; i<bots_arg_size_1; i++) { for (k=0; k<bots_arg_size_1; k++)
+# 186 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      {
+# 187 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         row[i*bots_arg_size_1+k] = row[i*bots_arg_size_1+k] / diag[k*bots_arg_size_1+k];
+# 188 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         for (j=k+1; j<bots_arg_size_1; j++) {
 # 189 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{
+            row[i*bots_arg_size_1+j] = row[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*diag[k*bots_arg_size_1+j];
 # 190 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i, j, k;
+         }
 # 191 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i=0; i<bots_arg_size_1; i++) { for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }; }
+# 192 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-
-void fwd_npm(float *diag, float *col)
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 196 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+void bmod_npm(float *row, float *col, float *inner)
+# 197 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 198 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 199 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int i, j, k;
+# 200 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (i=0; i<bots_arg_size_1; i++) {
+# 201 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (j=0; j<bots_arg_size_1; j++) {
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++) { col[i*bots_arg_size_1+j] = col[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
+         for (k=0; k<bots_arg_size_1; k++) {
+# 203 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            inner[i*bots_arg_size_1+j] = inner[i*bots_arg_size_1+j] - row[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j];
+# 204 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         }
+# 205 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 207 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-
-void sparselu_init_npm (float ***pBENCH, char *pass)
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349113UL, 1, 0);
+void fwd_npm(float *diag, float *col)
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   genmat_npm(*pBENCH);
+{
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 # 214 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
-
-void sparselu_par_call_npm(float **BENCH)
-# 217 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int ii, jj, kk;
+   int i, j, k;
+# 215 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (j=0; j<bots_arg_size_1; j++) { for (k=0; k<bots_arg_size_1; k++) { for (i=k+1; i<bots_arg_size_1; i++) { col[i*bots_arg_size_1+j] = col[i*bots_arg_size_1+j] - diag[i*bots_arg_size_1+k]*col[k*bots_arg_size_1+j]; }; }; };
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Computing SparseLU Factorization (%dx%d matrix with %dx%d blocks) " , bots_arg_size,bots_arg_size,bots_arg_size_1,bots_arg_size_1); } }
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                                                       ;
+}
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp parallel
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 222 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+void sparselu_init_npm (float ***pBENCH, char *pass)
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
+{
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp single nowait
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   *pBENCH = (float **) malloc_wrapper(bots_arg_size*bots_arg_size*sizeof(float *), 15559110349592349125UL, 1, 0);
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (kk=0; kk<bots_arg_size; kk++)
+   genmat_npm(*pBENCH);
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
 # 227 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      lu0_npm(BENCH[kk*bots_arg_size+kk]);
-# 228 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp task untied firstprivate(kk, jj) shared(BENCH)
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 231 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
-# 232 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]);
-# 233 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         }; }
-# 234 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null)
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp task untied firstprivate(kk, ii) shared(BENCH)
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         {
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]);
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         }; }
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp taskwait
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 243 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null) {for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp task untied firstprivate(kk, jj, ii) shared(BENCH)
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 247 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 248 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               {
-# 249 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = allocate_clean_block_npm(); };
-# 250 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]);
-# 251 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               }; }; }; }
-# 252 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-#pragma omp taskwait
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 253 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 254 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
-# 255 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
-# 256 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, " completed!\n"); } };
-# 257 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-
+# 303 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 void sparselu_seq_call_npm(float **BENCH)
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 304 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 305 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    int ii, jj, kk;
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 264 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 306 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 307 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    for (kk=0; kk<bots_arg_size; kk++)
-# 265 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 308 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 266 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 309 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       lu0_npm(BENCH[kk*bots_arg_size+kk]);
-# 267 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 310 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 269 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 312 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 313 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             fwd_npm(BENCH[kk*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj]);
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 314 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 315 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null)
-# 274 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 317 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          {
-# 275 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 318 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
             bdiv_npm(BENCH[kk*bots_arg_size+kk], BENCH[ii*bots_arg_size+kk]);
-# 276 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 319 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
          }; }
-# 277 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 320 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       for (ii=kk+1; ii<bots_arg_size; ii++) { if (BENCH[ii*bots_arg_size+kk] != __null) {for (jj=kk+1; jj<bots_arg_size; jj++) { if (BENCH[kk*bots_arg_size+jj] != __null)
-# 281 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               {
-# 282 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = allocate_clean_block_npm(); };
-# 283 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                     bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]);
-# 284 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-               }; }; }; }
-# 285 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 286 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
-# 287 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
-
-void sparselu_fini_npm (float **BENCH, char *pass)
-# 290 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{
-# 291 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 292 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   return;
-# 293 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-}
-
-int sparselu_check_npm(float **SEQ, float **BENCH)
-# 323 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-{
 # 324 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i, j, ok;
+               {
 # 325 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                     if (BENCH[ii*bots_arg_size+jj]==__null) {BENCH[ii*bots_arg_size+jj] = allocate_clean_block_npm(); };
 # 326 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output size: %d\n" ,bots_arg_size); } };
+                     bmod_npm(BENCH[ii*bots_arg_size+kk], BENCH[kk*bots_arg_size+jj], BENCH[ii*bots_arg_size+jj]);
 # 327 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i = 0; i < bots_arg_size; i+=50)
+               }; }; }; }
 # 328 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   {
 # 329 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (j = 0; j < bots_arg_size; j+=40)
+   }
 # 330 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      {
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-            ok = checkmat1_npm(BENCH[i*bots_arg_size+j]);
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      }
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   }
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   return 1;
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
-
-int checkmat1_npm (float *N)
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 332 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+void sparselu_fini_npm (float **BENCH, char *pass)
+# 333 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 {
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   int i, j;
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   for (i = 0; i < bots_arg_size_1; i+=20)
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 334 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 335 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   return;
+# 336 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+}
+# 365 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+int sparselu_check_npm(float **SEQ, float **BENCH)
+# 366 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{
+# 367 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   int i, j, ok;
+# 368 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 369 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output size: %d\n" ,bots_arg_size); } };
+# 370 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (i = 0; i < bots_arg_size; i+=50)
+# 371 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    {
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-      for (j = 0; j < bots_arg_size_1; j+=20)
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 372 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (j = 0; j < bots_arg_size; j+=40)
+# 373 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       {
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output Matrix: A[%d][%d]=%8.12f \n" , i,j, N[i*bots_arg_size_1+j]); } }
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-                                                ;
-# 346 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 374 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+            ok = checkmat1_npm(BENCH[i*bots_arg_size+j]);
+# 375 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
       }
-# 347 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 376 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
    }
-# 348 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
-   return 1;
-# 349 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 377 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+    int ____chimes_ret_var_3; ____chimes_ret_var_3 = (1); return ____chimes_ret_var_3; ;
+# 378 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+}
+# 379 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+int checkmat1_npm (float *N)
+# 380 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+{
+# 381 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   int i, j;
+# 382 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+# 383 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   for (i = 0; i < bots_arg_size_1; i+=20)
+# 384 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   {
+# 385 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      for (j = 0; j < bots_arg_size_1; j+=20)
+# 386 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      {
+# 387 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+         { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Output Matrix: A[%d][%d]=%8.12f \n" , i,j, N[i*bots_arg_size_1+j]); } }
+# 388 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+                                                ;
+# 389 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+      }
+# 390 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+   }
+# 391 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
+    int ____chimes_ret_var_4; ____chimes_ret_var_4 = (1); return ____chimes_ret_var_4; ;
+# 392 "/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c"
 }
 
 
@@ -5467,38 +5527,35 @@ int checkmat1_npm (float *N)
 
 
 static int module_init() {
-    init_module(15559110349592348196UL, 33, 14, 10, 16, 14, 1, 15, 11, 0, 1,
-                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (15559110349592348196UL + 128UL), (15559110349592348196UL + 131UL), (15559110349592348196UL + 133UL),
-                           &____alias_loc_id_1, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 126UL), (15559110349592348196UL + 128UL), (15559110349592348196UL + 131UL), (15559110349592348196UL + 133UL), (15559110349592348196UL + 282UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)0, (15559110349592348196UL + 906UL), (15559110349592348196UL + 907UL), (15559110349592348196UL + 925UL),
-                           &____alias_loc_id_3, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1UL), (15559110349592348196UL + 2UL), (15559110349592348196UL + 3UL), (15559110349592348196UL + 4UL), (15559110349592348196UL + 5UL), (15559110349592348196UL + 6UL),
-                           &____alias_loc_id_4, (unsigned)12, (unsigned)0, (unsigned)0, (15559110349592348196UL + 124UL), (15559110349592348196UL + 125UL), (15559110349592348196UL + 126UL), (15559110349592348196UL + 127UL), (15559110349592348196UL + 128UL), (15559110349592348196UL + 129UL), (15559110349592348196UL + 130UL), (15559110349592348196UL + 131UL), (15559110349592348196UL + 132UL), (15559110349592348196UL + 133UL), (15559110349592348196UL + 282UL), (15559110349592348196UL + 355UL),
-                           &____alias_loc_id_5, (unsigned)4, (unsigned)0, (unsigned)0, (15559110349592348196UL + 359UL), (15559110349592348196UL + 360UL), (15559110349592348196UL + 361UL), (15559110349592348196UL + 362UL),
-                           &____alias_loc_id_6, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 439UL), (15559110349592348196UL + 440UL), (15559110349592348196UL + 441UL), (15559110349592348196UL + 442UL), (15559110349592348196UL + 452UL),
-                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 498UL), (15559110349592348196UL + 499UL), (15559110349592348196UL + 500UL), (15559110349592348196UL + 501UL), (15559110349592348196UL + 611UL),
-                           &____alias_loc_id_8, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 612UL), (15559110349592348196UL + 613UL), (15559110349592348196UL + 614UL), (15559110349592348196UL + 615UL), (15559110349592348196UL + 616UL), (15559110349592348196UL + 727UL),
-                           &____alias_loc_id_9, (unsigned)7, (unsigned)0, (unsigned)0, (15559110349592348196UL + 728UL), (15559110349592348196UL + 729UL), (15559110349592348196UL + 730UL), (15559110349592348196UL + 731UL), (15559110349592348196UL + 732UL), (15559110349592348196UL + 733UL), (15559110349592348196UL + 817UL),
-                            &____alias_loc_id_10, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 818UL), (15559110349592348196UL + 819UL), (15559110349592348196UL + 820UL), (15559110349592348196UL + 821UL), (15559110349592348196UL + 822UL), (15559110349592348196UL + 905UL),
-                            &____alias_loc_id_11, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 927UL), (15559110349592348196UL + 928UL), (15559110349592348196UL + 929UL), (15559110349592348196UL + 930UL), (15559110349592348196UL + 1162UL),
-                            &____alias_loc_id_12, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1163UL), (15559110349592348196UL + 1164UL), (15559110349592348196UL + 1165UL), (15559110349592348196UL + 1166UL), (15559110349592348196UL + 1382UL),
-                            &____alias_loc_id_13, (unsigned)2, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1383UL), (15559110349592348196UL + 1384UL),
-                            &____alias_loc_id_14, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1392UL), (15559110349592348196UL + 1393UL), (15559110349592348196UL + 1394UL), (15559110349592348196UL + 1395UL), (15559110349592348196UL + 1396UL),
-                            &____alias_loc_id_15, (unsigned)3, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1447UL), (15559110349592348196UL + 1448UL), (15559110349592348196UL + 1449UL),
-                            "checkmat", (void *)(&checkmat_npm), (void *)__null, 0, 2, (15559110349592348196UL + 118UL), (15559110349592348196UL + 119UL), 0UL, 1, "fprintf", 9, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1499UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "genmat", (void *)(&genmat_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 1, (15559110349592348196UL + 355UL), 0UL, 5, "malloc", 1, 0UL, (15559110349592348196UL + 282UL), "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1501UL), 0UL, "exit", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL,
-                            "print_structure", (void *)(&print_structure_npm), (void *)__null, 0, 2, (15559110349592348196UL + 437UL), (15559110349592348196UL + 438UL), 0UL, 5, "fprintf", 4, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1502UL), (15559110349592348196UL + 437UL), (15559110349592348196UL + 438UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1503UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1503UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1503UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1503UL), 0UL,
-                            "allocate_clean_block", (void *)(&allocate_clean_block_npm), (void *)__null, 0, 0, (15559110349592348196UL + 452UL), 3, "malloc", 1, 0UL, (15559110349592348196UL + 452UL), "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1501UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "lu0", (void *)(&lu0_npm), (void *)__null, 0, 1, (15559110349592348196UL + 611UL), 0UL, 0,
-                            "bdiv", (void *)(&bdiv_npm), (void *)__null, 0, 2, (15559110349592348196UL + 726UL), (15559110349592348196UL + 727UL), 0UL, 0,
-                            "bmod", (void *)(&bmod_npm), (void *)__null, 0, 3, (15559110349592348196UL + 815UL), (15559110349592348196UL + 816UL), (15559110349592348196UL + 817UL), 0UL, 0,
-                            "fwd", (void *)(&fwd_npm), (void *)__null, 0, 2, (15559110349592348196UL + 904UL), (15559110349592348196UL + 905UL), 0UL, 0,
-                            "sparselu_init", (void *)(&sparselu_init_npm), (void *)__null, 1, &____alias_loc_id_2, 2, (15559110349592348196UL + 925UL), (15559110349592348196UL + 926UL), 0UL, 2, "malloc", 1, 0UL, (15559110349592348196UL + 917UL), "genmat", 1, (15559110349592348196UL + 917UL), 0UL,
-                            "sparselu_par_call", (void *)(&sparselu_par_call_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1162UL), 0UL, 7, "fprintf", 6, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1506UL), 0UL, 0UL, 0UL, 0UL, 0UL, "lu0", 1, (15559110349592348196UL + 960UL), 0UL, "fwd", 2, (15559110349592348196UL + 960UL), (15559110349592348196UL + 960UL), 0UL, "bdiv", 2, (15559110349592348196UL + 960UL), (15559110349592348196UL + 960UL), 0UL, "allocate_clean_block", 0, (15559110349592348196UL + 960UL), "bmod", 3, (15559110349592348196UL + 960UL), (15559110349592348196UL + 960UL), (15559110349592348196UL + 960UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1507UL), 0UL,
-                            "sparselu_seq_call", (void *)(&sparselu_seq_call_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1382UL), 0UL, 5, "lu0", 1, (15559110349592348196UL + 1186UL), 0UL, "fwd", 2, (15559110349592348196UL + 1186UL), (15559110349592348196UL + 1186UL), 0UL, "bdiv", 2, (15559110349592348196UL + 1186UL), (15559110349592348196UL + 1186UL), 0UL, "allocate_clean_block", 0, (15559110349592348196UL + 1186UL), "bmod", 3, (15559110349592348196UL + 1186UL), (15559110349592348196UL + 1186UL), (15559110349592348196UL + 1186UL), 0UL,
-                            "sparselu_fini", (void *)(&sparselu_fini_npm), (void *)__null, 0, 2, (15559110349592348196UL + 1390UL), (15559110349592348196UL + 1391UL), 0UL, 0,
-                            "sparselu_check", (void *)(&sparselu_check_npm), (void *)__null, 0, 2, (15559110349592348196UL + 1445UL), (15559110349592348196UL + 1446UL), 0UL, 2, "fprintf", 3, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1508UL), 0UL, 0UL, "checkmat1", 1, (15559110349592348196UL + 1431UL), 0UL,
-                            "checkmat1", (void *)(&checkmat1_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1495UL), 0UL, 1, "fprintf", 5, (15559110349592348196UL + 1407UL), (15559110349592348196UL + 1509UL), 0UL, 0UL, 0UL, 0UL,
-                               "abs", (void **)&(____chimes_extern_func_abs),
+    init_module(15559110349592348196UL, 35, 14, 0, 15, 13, 0, 13, 13, 0, 1,
+                           &____alias_loc_id_0, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 939UL), (15559110349592348196UL + 940UL), (15559110349592348196UL + 941UL), (15559110349592348196UL + 942UL), (15559110349592348196UL + 943UL), (15559110349592348196UL + 1200UL),
+                           &____alias_loc_id_1, (unsigned)8, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1UL), (15559110349592348196UL + 2UL), (15559110349592348196UL + 3UL), (15559110349592348196UL + 4UL), (15559110349592348196UL + 5UL), (15559110349592348196UL + 6UL), (15559110349592348196UL + 7UL), (15559110349592348196UL + 8UL),
+                           &____alias_loc_id_2, (unsigned)12, (unsigned)0, (unsigned)0, (15559110349592348196UL + 132UL), (15559110349592348196UL + 133UL), (15559110349592348196UL + 134UL), (15559110349592348196UL + 135UL), (15559110349592348196UL + 136UL), (15559110349592348196UL + 137UL), (15559110349592348196UL + 138UL), (15559110349592348196UL + 139UL), (15559110349592348196UL + 140UL), (15559110349592348196UL + 141UL), (15559110349592348196UL + 290UL), (15559110349592348196UL + 363UL),
+                           &____alias_loc_id_3, (unsigned)4, (unsigned)0, (unsigned)0, (15559110349592348196UL + 367UL), (15559110349592348196UL + 368UL), (15559110349592348196UL + 369UL), (15559110349592348196UL + 370UL),
+                           &____alias_loc_id_4, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 447UL), (15559110349592348196UL + 448UL), (15559110349592348196UL + 449UL), (15559110349592348196UL + 450UL), (15559110349592348196UL + 451UL), (15559110349592348196UL + 461UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 510UL), (15559110349592348196UL + 511UL), (15559110349592348196UL + 512UL), (15559110349592348196UL + 513UL), (15559110349592348196UL + 623UL),
+                           &____alias_loc_id_6, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 624UL), (15559110349592348196UL + 625UL), (15559110349592348196UL + 626UL), (15559110349592348196UL + 627UL), (15559110349592348196UL + 628UL), (15559110349592348196UL + 739UL),
+                           &____alias_loc_id_7, (unsigned)7, (unsigned)0, (unsigned)0, (15559110349592348196UL + 740UL), (15559110349592348196UL + 741UL), (15559110349592348196UL + 742UL), (15559110349592348196UL + 743UL), (15559110349592348196UL + 744UL), (15559110349592348196UL + 745UL), (15559110349592348196UL + 829UL),
+                           &____alias_loc_id_8, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 830UL), (15559110349592348196UL + 831UL), (15559110349592348196UL + 832UL), (15559110349592348196UL + 833UL), (15559110349592348196UL + 834UL), (15559110349592348196UL + 917UL),
+                           &____alias_loc_id_9, (unsigned)3, (unsigned)0, (unsigned)0, (15559110349592348196UL + 918UL), (15559110349592348196UL + 919UL), (15559110349592348196UL + 937UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (15559110349592348196UL + 939UL), (15559110349592348196UL + 942UL),
+                            &____alias_loc_id_11, (unsigned)5, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1201UL), (15559110349592348196UL + 1202UL), (15559110349592348196UL + 1203UL), (15559110349592348196UL + 1204UL), (15559110349592348196UL + 1420UL),
+                            &____alias_loc_id_12, (unsigned)2, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1421UL), (15559110349592348196UL + 1422UL),
+                            &____alias_loc_id_13, (unsigned)6, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1430UL), (15559110349592348196UL + 1431UL), (15559110349592348196UL + 1432UL), (15559110349592348196UL + 1433UL), (15559110349592348196UL + 1434UL), (15559110349592348196UL + 1435UL),
+                            &____alias_loc_id_14, (unsigned)4, (unsigned)0, (unsigned)0, (15559110349592348196UL + 1489UL), (15559110349592348196UL + 1490UL), (15559110349592348196UL + 1491UL), (15559110349592348196UL + 1492UL),
+                            "checkmat", (void *)(&checkmat_npm), (void *)__null, 0, 2, (15559110349592348196UL + 126UL), (15559110349592348196UL + 127UL), 0UL, 1, "fprintf", 9, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1545UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "genmat", (void *)(&genmat_npm), (void *)__null, 0, 1, (15559110349592348196UL + 363UL), 0UL, 5, "malloc", 1, 0UL, (15559110349592348196UL + 290UL), "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1547UL), 0UL, "exit", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL, "abs", 1, 0UL, 0UL,
+                            "print_structure", (void *)(&print_structure_npm), (void *)__null, 0, 2, (15559110349592348196UL + 445UL), (15559110349592348196UL + 446UL), 0UL, 5, "fprintf", 4, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1548UL), (15559110349592348196UL + 445UL), (15559110349592348196UL + 446UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1549UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1549UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1549UL), 0UL, "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1549UL), 0UL,
+                            "allocate_clean_block", (void *)(&allocate_clean_block_npm), (void *)__null, 0, 0, (15559110349592348196UL + 461UL), 3, "malloc", 1, 0UL, (15559110349592348196UL + 461UL), "fprintf", 2, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1547UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "lu0", (void *)(&lu0_npm), (void *)__null, 0, 1, (15559110349592348196UL + 623UL), 0UL, 0,
+                            "bdiv", (void *)(&bdiv_npm), (void *)__null, 0, 2, (15559110349592348196UL + 738UL), (15559110349592348196UL + 739UL), 0UL, 0,
+                            "bmod", (void *)(&bmod_npm), (void *)__null, 0, 3, (15559110349592348196UL + 827UL), (15559110349592348196UL + 828UL), (15559110349592348196UL + 829UL), 0UL, 0,
+                            "fwd", (void *)(&fwd_npm), (void *)__null, 0, 2, (15559110349592348196UL + 916UL), (15559110349592348196UL + 917UL), 0UL, 0,
+                            "sparselu_init", (void *)(&sparselu_init_npm), (void *)__null, 0, 2, (15559110349592348196UL + 937UL), (15559110349592348196UL + 938UL), 0UL, 2, "malloc", 1, 0UL, (15559110349592348196UL + 929UL), "genmat", 1, (15559110349592348196UL + 929UL), 0UL,
+                            "sparselu_seq_call", (void *)(&sparselu_seq_call_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1420UL), 0UL, 5, "lu0", 1, (15559110349592348196UL + 1224UL), 0UL, "fwd", 2, (15559110349592348196UL + 1224UL), (15559110349592348196UL + 1224UL), 0UL, "bdiv", 2, (15559110349592348196UL + 1224UL), (15559110349592348196UL + 1224UL), 0UL, "allocate_clean_block", 0, (15559110349592348196UL + 1224UL), "bmod", 3, (15559110349592348196UL + 1224UL), (15559110349592348196UL + 1224UL), (15559110349592348196UL + 1224UL), 0UL,
+                            "sparselu_fini", (void *)(&sparselu_fini_npm), (void *)__null, 0, 2, (15559110349592348196UL + 1428UL), (15559110349592348196UL + 1429UL), 0UL, 0,
+                            "sparselu_check", (void *)(&sparselu_check_npm), (void *)__null, 0, 2, (15559110349592348196UL + 1487UL), (15559110349592348196UL + 1488UL), 0UL, 2, "fprintf", 3, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1554UL), 0UL, 0UL, "checkmat1", 1, (15559110349592348196UL + 1470UL), 0UL,
+                            "checkmat1", (void *)(&checkmat1_npm), (void *)__null, 0, 1, (15559110349592348196UL + 1541UL), 0UL, 1, "fprintf", 5, (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1555UL), 0UL, 0UL, 0UL, 0UL,
                            "checkmat", &(____chimes_does_checkpoint_checkmat_npm),
                            "genmat", &(____chimes_does_checkpoint_genmat_npm),
                            "print_structure", &(____chimes_does_checkpoint_print_structure_npm),
@@ -5508,50 +5565,50 @@ static int module_init() {
                            "bmod", &(____chimes_does_checkpoint_bmod_npm),
                            "fwd", &(____chimes_does_checkpoint_fwd_npm),
                            "sparselu_init", &(____chimes_does_checkpoint_sparselu_init_npm),
-                           "sparselu_par_call", &(____chimes_does_checkpoint_sparselu_par_call_npm),
                            "sparselu_seq_call", &(____chimes_does_checkpoint_sparselu_seq_call_npm),
                            "sparselu_fini", &(____chimes_does_checkpoint_sparselu_fini_npm),
                            "sparselu_check", &(____chimes_does_checkpoint_sparselu_check_npm),
                            "checkmat1", &(____chimes_does_checkpoint_checkmat1_npm),
-                           "abs", &(____chimes_does_checkpoint_abs_npm),
-                             (15559110349592348196UL + 1162UL), (15559110349592348196UL + 960UL),
-                             (15559110349592348196UL + 1163UL), (15559110349592348196UL + 1382UL),
-                             (15559110349592348196UL + 1383UL), (15559110349592348196UL + 1390UL),
-                             (15559110349592348196UL + 132UL), (15559110349592348196UL + 282UL),
-                             (15559110349592348196UL + 131UL), (15559110349592348196UL + 282UL),
-                             (15559110349592348196UL + 498UL), (15559110349592348196UL + 611UL),
-                             (15559110349592348196UL + 1447UL), (15559110349592348196UL + 1495UL),
-                             (15559110349592348196UL + 819UL), (15559110349592348196UL + 905UL),
-                             (15559110349592348196UL + 818UL), (15559110349592348196UL + 904UL),
-                             (15559110349592348196UL + 730UL), (15559110349592348196UL + 817UL),
-                             (15559110349592348196UL + 3UL), (15559110349592348196UL + 119UL),
-                             (15559110349592348196UL + 2UL), (15559110349592348196UL + 118UL),
-                             (15559110349592348196UL + 613UL), (15559110349592348196UL + 727UL),
-                             (15559110349592348196UL + 1393UL), (15559110349592348196UL + 1446UL),
-                             (15559110349592348196UL + 1392UL), (15559110349592348196UL + 1445UL),
-                             (15559110349592348196UL + 360UL), (15559110349592348196UL + 438UL),
-                             (15559110349592348196UL + 1446UL), (15559110349592348196UL + 1431UL),
-                             (15559110349592348196UL + 612UL), (15559110349592348196UL + 726UL),
-                             (15559110349592348196UL + 442UL), (15559110349592348196UL + 452UL),
-                             (15559110349592348196UL + 441UL), (15559110349592348196UL + 452UL),
-                             (15559110349592348196UL + 124UL), (15559110349592348196UL + 355UL),
-                             (15559110349592348196UL + 1498UL), (15559110349592348196UL + 1407UL),
-                             (15559110349592348196UL + 906UL), (15559110349592348196UL + 925UL),
-                             (15559110349592348196UL + 907UL), (15559110349592348196UL + 926UL),
-                             (15559110349592348196UL + 1382UL), (15559110349592348196UL + 1186UL),
-                             (15559110349592348196UL + 355UL), (15559110349592348196UL + 282UL),
-                             (15559110349592348196UL + 359UL), (15559110349592348196UL + 437UL),
-                             (15559110349592348196UL + 438UL), (15559110349592348196UL + 397UL),
-                             (15559110349592348196UL + 1384UL), (15559110349592348196UL + 1391UL),
-                             (15559110349592348196UL + 927UL), (15559110349592348196UL + 1162UL),
-                             (15559110349592348196UL + 925UL), (15559110349592348196UL + 917UL),
-                             (15559110349592348196UL + 728UL), (15559110349592348196UL + 815UL),
-                             (15559110349592348196UL + 729UL), (15559110349592348196UL + 816UL),
-                     "bots_verbose_mode_t", 0,
+                             (15559110349592348196UL + 740UL), (15559110349592348196UL + 827UL),
+                             (15559110349592348196UL + 741UL), (15559110349592348196UL + 828UL),
+                             (15559110349592348196UL + 742UL), (15559110349592348196UL + 829UL),
+                             (15559110349592348196UL + 625UL), (15559110349592348196UL + 739UL),
+                             (15559110349592348196UL + 624UL), (15559110349592348196UL + 738UL),
+                             (15559110349592348196UL + 450UL), (15559110349592348196UL + 461UL),
+                             (15559110349592348196UL + 451UL), (15559110349592348196UL + 461UL),
+                             (15559110349592348196UL + 1201UL), (15559110349592348196UL + 1420UL),
+                             (15559110349592348196UL + 1200UL), (15559110349592348196UL + 973UL),
+                             (15559110349592348196UL + 132UL), (15559110349592348196UL + 363UL),
+                             (15559110349592348196UL + 139UL), (15559110349592348196UL + 290UL),
+                             (15559110349592348196UL + 1488UL), (15559110349592348196UL + 1470UL),
+                             (15559110349592348196UL + 1489UL), (15559110349592348196UL + 1541UL),
+                             (15559110349592348196UL + 1421UL), (15559110349592348196UL + 1428UL),
+                             (15559110349592348196UL + 1420UL), (15559110349592348196UL + 1224UL),
+                             (15559110349592348196UL + 830UL), (15559110349592348196UL + 916UL),
+                             (15559110349592348196UL + 831UL), (15559110349592348196UL + 917UL),
+                             (15559110349592348196UL + 939UL), (15559110349592348196UL + 1200UL),
+                             (15559110349592348196UL + 3UL), (15559110349592348196UL + 127UL),
+                             (15559110349592348196UL + 2UL), (15559110349592348196UL + 126UL),
+                             (15559110349592348196UL + 919UL), (15559110349592348196UL + 938UL),
+                             (15559110349592348196UL + 918UL), (15559110349592348196UL + 937UL),
+                             (15559110349592348196UL + 368UL), (15559110349592348196UL + 446UL),
+                             (15559110349592348196UL + 367UL), (15559110349592348196UL + 445UL),
+                             (15559110349592348196UL + 937UL), (15559110349592348196UL + 929UL),
+                             (15559110349592348196UL + 363UL), (15559110349592348196UL + 290UL),
+                             (15559110349592348196UL + 449UL), (15559110349592348196UL + 461UL),
+                             (15559110349592348196UL + 140UL), (15559110349592348196UL + 290UL),
+                             (15559110349592348196UL + 446UL), (15559110349592348196UL + 405UL),
+                             (15559110349592348196UL + 1544UL), (15559110349592348196UL + 1446UL),
+                             (15559110349592348196UL + 1422UL), (15559110349592348196UL + 1429UL),
+                             (15559110349592348196UL + 1430UL), (15559110349592348196UL + 1487UL),
+                             (15559110349592348196UL + 1431UL), (15559110349592348196UL + 1488UL),
+                             (15559110349592348196UL + 943UL), (15559110349592348196UL + 973UL),
+                             (15559110349592348196UL + 510UL), (15559110349592348196UL + 623UL),
+                     "bots_verbose_mode_t", 32UL, 0,
                              "print_structure", "_Z15print_structurePcPPf", 0,
                              "allocate_clean_block", "_Z20allocate_clean_blockv", 0,
                              "checkmat1", "_Z9checkmat1Pf", 0,
-                             "sparselu_par_call", "_Z17sparselu_par_callPPf", 5, "lu0", "fwd", "bdiv", "allocate_clean_block", "bmod",
+                             "sparselu_par_call", "_Z17sparselu_par_callPPf", 7, "lu0", "fwd", "bdiv", "allocate_clean_block", "bmod", "bmod", "checkpoint",
                              "fwd", "_Z3fwdPfS_", 0,
                              "bmod", "_Z4bmodPfS_S_", 0,
                              "lu0", "_Z3lu0Pf", 0,
@@ -5560,29 +5617,21 @@ static int module_init() {
                              "sparselu_init", "_Z13sparselu_initPPPfPc", 1, "genmat",
                              "sparselu_check", "_Z14sparselu_checkPPfS0_", 1, "checkmat1",
                              "sparselu_seq_call", "_Z17sparselu_seq_callPPf", 5, "lu0", "fwd", "bdiv", "allocate_clean_block", "bmod",
-                             "genmat", "_Z6genmatPPf", 2, "abs", "abs",
+                             "genmat", "_Z6genmatPPf", 0,
                              "bdiv", "_Z4bdivPfS_", 0,
-                        "genmat|M|0", 1, "abs",
-                        "genmat|null_entry|0", 1, "abs",
-                        "genmat|init_val|0", 1, "abs",
-                        "genmat|i|0", 1, "abs",
-                        "genmat|j|0", 1, "abs",
-                        "genmat|ii|0", 1, "abs",
-                        "genmat|jj|0", 1, "abs",
-                        "genmat|p|0", 1, "abs",
-                        "genmat|prow|0", 1, "abs",
-                        "genmat|rowsum|0", 1, "abs",
-        "lu0", 0UL, (int)1, 15559110349592349156UL,
-        "fwd", 0UL, (int)2, 15559110349592349156UL, 15559110349592349156UL,
-        "bdiv", 0UL, (int)2, 15559110349592349156UL, 15559110349592349156UL,
-        "allocate_clean_block", 15559110349592349156UL, (int)0,
-        "bmod", 0UL, (int)3, 15559110349592349156UL, 15559110349592349156UL, 15559110349592349156UL,
-        "lu0", 0UL, (int)1, 15559110349592349382UL,
-        "fwd", 0UL, (int)2, 15559110349592349382UL, 15559110349592349382UL,
-        "bdiv", 0UL, (int)2, 15559110349592349382UL, 15559110349592349382UL,
-        "allocate_clean_block", 15559110349592349382UL, (int)0,
-        "bmod", 0UL, (int)3, 15559110349592349382UL, 15559110349592349382UL, 15559110349592349382UL,
-        "checkmat1", 0UL, (int)1, 15559110349592349627UL);
+        "genmat", 0UL, (int)1, 15559110349592349125UL,
+        "lu0", 0UL, (int)1, 15559110349592349169UL,
+        "fwd", 0UL, (int)2, 15559110349592349169UL, 15559110349592349169UL,
+        "bdiv", 0UL, (int)2, 15559110349592349169UL, 15559110349592349169UL,
+        "allocate_clean_block", 15559110349592349169UL, (int)0,
+        "bmod", 0UL, (int)3, 15559110349592349169UL, 15559110349592349169UL, 15559110349592349169UL,
+        "bmod", 0UL, (int)3, 15559110349592349169UL, 15559110349592349169UL, 15559110349592349169UL,
+        "lu0", 0UL, (int)1, 15559110349592349420UL,
+        "fwd", 0UL, (int)2, 15559110349592349420UL, 15559110349592349420UL,
+        "bdiv", 0UL, (int)2, 15559110349592349420UL, 15559110349592349420UL,
+        "allocate_clean_block", 15559110349592349420UL, (int)0,
+        "bmod", 0UL, (int)3, 15559110349592349420UL, 15559110349592349420UL, 15559110349592349420UL,
+        "checkmat1", 0UL, (int)1, 15559110349592349666UL);
     return 0;
 }
 

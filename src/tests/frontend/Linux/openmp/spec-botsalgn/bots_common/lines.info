@@ -1,2 +1,0 @@
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 90 57 : { 89 } {  } call:strftime { strftime { 95, 101, 452 } }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_common.c 90 43 : { 87, 88 } {  } call:gmtime { gmtime { 88, 95 } }

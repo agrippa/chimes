@@ -1,7 +1,7 @@
-gridInfo 110 111 112 113
-qSort 157 158 0 0
-bubbleSort 240 0 0
-qSort_both 289 290 291 0
-bubbleSort_both 401 402 0 0
-pairwiseAlign 2199 2199 0 0 0
-freeA 2344
+gridInfo 118 119 120 121
+qSort 165 166 0 0
+bubbleSort 248 0 0
+qSort_both 297 298 299 0
+bubbleSort_both 409 410 0 0
+pairwiseAlign 2212 2212 0 0 0
+freeA 2360

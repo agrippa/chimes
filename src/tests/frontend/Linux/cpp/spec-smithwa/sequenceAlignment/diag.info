@@ -1,201 +1,251 @@
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 239 59 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable0); 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 18 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(18385433520312208249UL)); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 240 1 rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable0); 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 18 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(18385433520312208249UL)); ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 18 182 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 20 3 int myTaskID; int ierr; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 20 21 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 3 int randomSeed; int scale; int mainSeqLength; int matchSeqLength; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 55 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 22 3 time_t timeVar; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 22 17 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 23 3 struct tm *timeStr; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 23 21 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 24 3 double startTime; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 24 19 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 25 3 SIMMATRIX_T *simMatrix; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 25 25 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 3 SEQDATA_T *seqData; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 21 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 27 3 ASTR_T *A; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 27 12 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 28 3 BSTR_T *B; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 28 12 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 29 3 CSTR_T *C; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 29 12 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 239 3 int ____chimes_ret_var_0; ;
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 239 27 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 85 3  call_lbl_6: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 115 3  call_lbl_10: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 119 3  call_lbl_11: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 126 3  call_lbl_13: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 132 3  call_lbl_15: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 137 3  call_lbl_16: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 268 59 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable0, false); 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 23 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(18385433520312208255UL)); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 269 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable0, false); 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 23 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(18385433520312208255UL)); ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 23 171 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 25 3 int myTaskID; int ierr; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 25 21 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 3 int randomSeed; int scale; int mainSeqLength; int matchSeqLength; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 55 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 27 3 time_t timeVar; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 27 17 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 28 3 struct tm *timeStr; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 28 21 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 29 3 double startTime; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 29 19 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 30 3 SIMMATRIX_T *simMatrix; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 30 25 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 31 3 SEQDATA_T *seqData; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 31 21 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 32 3 ASTR_T *A; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 32 12 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 33 3 BSTR_T *B; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 33 12 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 34 3 CSTR_T *C; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 34 12 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 268 3 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 268 27 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 90 3  call_lbl_6: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 121 3  call_lbl_10: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 124 3  call_lbl_11: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 128 3  call_lbl_12: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 136 3  call_lbl_14: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 139 3  call_lbl_15: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 145 3  call_lbl_17: 
 InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 3  call_lbl_18: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 152 3  call_lbl_19: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 159 3  call_lbl_21: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 169 3  call_lbl_23: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 173 3  call_lbl_24: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 3  call_lbl_26: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 184 3  call_lbl_27: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 195 3  call_lbl_29: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 199 3  call_lbl_30: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 205 3  call_lbl_32: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 210 3  call_lbl_33: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 217 3  call_lbl_34: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 218 3  call_lbl_35: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 219 3  call_lbl_36: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 220 3  call_lbl_37: 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 221 3  call_lbl_38: 
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 18 5 len=4 main_quick
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 85 16 (____chimes_does_checkpoint_getUserParameters_npm ? ( ({  calling((void*)getUserParameters, 6, ____alias_loc_id_18, 0UL, 0); (getUserParameters)(); }) ) : (({ calling_npm("getUserParameters", ____alias_loc_id_18); (*____chimes_extern_func_getUserParameters)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 85 34 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 115 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 10, ____alias_loc_id_17, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", ____alias_loc_id_17); (*____chimes_extern_func_getSeconds)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 115 40 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 119 29 (____chimes_does_checkpoint_genSimMatrix_npm ? ( ({  calling((void*)genSimMatrix, 11, ____alias_loc_id_16, 18385433520312208144UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); }) ) : (({ calling_npm("genSimMatrix", ____alias_loc_id_16); (*____chimes_extern_func_genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 120 33 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 126 27 (____chimes_does_checkpoint_genScalData_npm ? ( ({  calling((void*)genScalData, 13, ____alias_loc_id_15, 18385433520312208155UL, 5, (size_t)(0UL), (size_t)(18385433520312208144UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); }) ) : (({ calling_npm("genScalData", ____alias_loc_id_15); (*____chimes_extern_func_genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 126 103 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 132 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 15, ____alias_loc_id_14, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_14); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 132 42 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 137 17 (____chimes_does_checkpoint_verifyData_npm ? ( ({  calling((void*)verifyData, 16, ____alias_loc_id_13, 0UL, 4, (size_t)(18385433520312208144UL), (size_t)(18385433520312208155UL), (size_t)(0UL), (size_t)(0UL)); (verifyData)(simMatrix, seqData, (20), (5)); }) ) : (({ calling_npm("verifyData", ____alias_loc_id_13); (*____chimes_extern_func_verifyData)(simMatrix, seqData, (20), (5)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 137 57 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 18, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 40 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 152 21 (____chimes_does_checkpoint_pairwiseAlign_npm ? ( ({  calling((void*)pairwiseAlign, 19, ____alias_loc_id_12, 18385433520312208176UL, 5, (size_t)(18385433520312208155UL), (size_t)(18385433520312208144UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); }) ) : (({ calling_npm("pairwiseAlign", ____alias_loc_id_12); (*____chimes_extern_func_pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 153 23 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 159 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 21, ____alias_loc_id_11, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_11); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 159 42 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 169 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 23, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 169 40 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 173 21 (____chimes_does_checkpoint_scanBackward_npm ? ( ({  calling((void*)scanBackward, 24, ____alias_loc_id_10, 18385433520312208193UL, 4, (size_t)(18385433520312208176UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (scanBackward)(A, ((200) / 2), (5), (3)); }) ) : (({ calling_npm("scanBackward", ____alias_loc_id_10); (*____chimes_extern_func_scanBackward)(A, ((200)/2), (5), (3)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 173 56 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 26, ____alias_loc_id_9, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_9); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 42 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 184 17 (____chimes_does_checkpoint_verifyAlignment_npm ? ( ({  calling((void*)verifyAlignment, 27, ____alias_loc_id_8, 0UL, 3, (size_t)(18385433520312208144UL), (size_t)(18385433520312208193UL), (size_t)(0UL)); (verifyAlignment)(simMatrix, B, (6)); }) ) : (({ calling_npm("verifyAlignment", ____alias_loc_id_8); (*____chimes_extern_func_verifyAlignment)(simMatrix, B, (6)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 184 50 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 195 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 29, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 195 40 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 199 21 (____chimes_does_checkpoint_mergeAlignment_npm ? ( ({  calling((void*)mergeAlignment, 30, ____alias_loc_id_7, 18385433520312208213UL, 3, (size_t)(18385433520312208193UL), (size_t)(0UL), (size_t)(0UL)); (mergeAlignment)(B, ((200) / 2), (5)); }) ) : (({ calling_npm("mergeAlignment", ____alias_loc_id_7); (*____chimes_extern_func_mergeAlignment)(B, ((200)/2), (5)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 199 53 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 205 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 32, ____alias_loc_id_6, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_6); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 205 42 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 210 17 (____chimes_does_checkpoint_verifyMergeAlignment_npm ? ( ({  calling((void*)verifyMergeAlignment, 33, ____alias_loc_id_5, 0UL, 3, (size_t)(18385433520312208144UL), (size_t)(18385433520312208213UL), (size_t)(0UL)); (verifyMergeAlignment)(simMatrix, C, (6)); }) ) : (({ calling_npm("verifyMergeAlignment", ____alias_loc_id_5); (*____chimes_extern_func_verifyMergeAlignment)(simMatrix, C, (6)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 210 55 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 217 21 (____chimes_does_checkpoint_freeA_npm ? ( ({  calling((void*)freeA, 34, ____alias_loc_id_4, 18385433520312208176UL, 1, (size_t)(18385433520312208176UL)); (freeA)(A); }) ) : (({ calling_npm("freeA", ____alias_loc_id_4); (*____chimes_extern_func_freeA)(A); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 217 28 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 218 21 (____chimes_does_checkpoint_freeB_npm ? ( ({  calling((void*)freeB, 35, ____alias_loc_id_3, 18385433520312208193UL, 1, (size_t)(18385433520312208193UL)); (freeB)(B); }) ) : (({ calling_npm("freeB", ____alias_loc_id_3); (*____chimes_extern_func_freeB)(B); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 218 28 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 219 21 (____chimes_does_checkpoint_freeC_npm ? ( ({  calling((void*)freeC, 36, ____alias_loc_id_2, 18385433520312208213UL, 1, (size_t)(18385433520312208213UL)); (freeC)(C); }) ) : (({ calling_npm("freeC", ____alias_loc_id_2); (*____chimes_extern_func_freeC)(C); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 219 28 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 220 17 (____chimes_does_checkpoint_freeSimMatrix_npm ? ( ({  calling((void*)freeSimMatrix, 37, ____alias_loc_id_1, 18385433520312208235UL, 1, (size_t)(18385433520312208144UL)); (freeSimMatrix)(simMatrix); }) ) : (({ calling_npm("freeSimMatrix", ____alias_loc_id_1); (*____chimes_extern_func_freeSimMatrix)(simMatrix); })))
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 154 3  call_lbl_19: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 165 3  call_lbl_21: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 169 3  call_lbl_22: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 176 3  call_lbl_24: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 3  call_lbl_25: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 190 3  call_lbl_27: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 194 3  call_lbl_28: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 200 3  call_lbl_30: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 203 3  call_lbl_31: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 209 3  call_lbl_32: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 220 3  call_lbl_34: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 224 3  call_lbl_35: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 230 3  call_lbl_37: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 233 3  call_lbl_38: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 239 3  call_lbl_39: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 246 3  call_lbl_40: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 247 3  call_lbl_41: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 248 3  call_lbl_42: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 249 3  call_lbl_43: 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 250 3  call_lbl_44: 
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 23 5 len=4 main_quick
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 90 16 (____chimes_does_checkpoint_getUserParameters_npm ? ( ({  calling((void*)getUserParameters, 6, ____alias_loc_id_19, 0UL, 0); (getUserParameters)(); }) ) : (({ calling_npm("getUserParameters", ____alias_loc_id_19); (*____chimes_extern_func_getUserParameters)(); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 90 34 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 121 17 checkpoint_transformed(10, ____alias_loc_id_18)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 121 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 124 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 11, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 124 40 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 128 29 (____chimes_does_checkpoint_genSimMatrix_npm ? ( ({  calling((void*)genSimMatrix, 12, ____alias_loc_id_17, 18385433520312208145UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); }) ) : (({ calling_npm("genSimMatrix", ____alias_loc_id_17); (*____chimes_extern_func_genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 129 33 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 136 17 checkpoint_transformed(14, ____alias_loc_id_16)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 136 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 139 27 (____chimes_does_checkpoint_genScalData_npm ? ( ({  calling((void*)genScalData, 15, ____alias_loc_id_15, 18385433520312208157UL, 5, (size_t)(0UL), (size_t)(18385433520312208145UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); }) ) : (({ calling_npm("genScalData", ____alias_loc_id_15); (*____chimes_extern_func_genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 139 103 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 145 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 17, ____alias_loc_id_14, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_14); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 145 42 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 17 checkpoint_transformed(18, 0)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 154 17 (____chimes_does_checkpoint_verifyData_npm ? ( ({  calling((void*)verifyData, 19, ____alias_loc_id_13, 0UL, 4, (size_t)(18385433520312208145UL), (size_t)(18385433520312208157UL), (size_t)(0UL), (size_t)(0UL)); (verifyData)(simMatrix, seqData, (20), (5)); }) ) : (({ calling_npm("verifyData", ____alias_loc_id_13); (*____chimes_extern_func_verifyData)(simMatrix, seqData, (20), (5)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 154 57 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 165 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 21, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 165 40 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 169 21 (____chimes_does_checkpoint_pairwiseAlign_npm ? ( ({  calling((void*)pairwiseAlign, 22, ____alias_loc_id_12, 18385433520312208179UL, 5, (size_t)(18385433520312208157UL), (size_t)(18385433520312208145UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); }) ) : (({ calling_npm("pairwiseAlign", ____alias_loc_id_12); (*____chimes_extern_func_pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 170 23 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 176 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 24, ____alias_loc_id_11, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_11); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 176 42 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 17 checkpoint_transformed(25, 0)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 190 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 27, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 190 40 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 194 21 (____chimes_does_checkpoint_scanBackward_npm ? ( ({  calling((void*)scanBackward, 28, ____alias_loc_id_10, 18385433520312208197UL, 4, (size_t)(18385433520312208179UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (scanBackward)(A, ((200) / 2), (5), (3)); }) ) : (({ calling_npm("scanBackward", ____alias_loc_id_10); (*____chimes_extern_func_scanBackward)(A, ((200)/2), (5), (3)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 194 56 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 200 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 30, ____alias_loc_id_9, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_9); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 200 42 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 203 17 checkpoint_transformed(31, 0)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 203 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 209 17 (____chimes_does_checkpoint_verifyAlignment_npm ? ( ({  calling((void*)verifyAlignment, 32, ____alias_loc_id_8, 0UL, 3, (size_t)(18385433520312208145UL), (size_t)(18385433520312208197UL), (size_t)(0UL)); (verifyAlignment)(simMatrix, B, (6)); }) ) : (({ calling_npm("verifyAlignment", ____alias_loc_id_8); (*____chimes_extern_func_verifyAlignment)(simMatrix, B, (6)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 209 50 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 220 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 34, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 220 40 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 221 17 (____chimes_does_checkpoint_freeSeqData_npm ? ( ({  calling((void*)freeSeqData, 38, ____alias_loc_id_0, 18385433520312208237UL, 1, (size_t)(18385433520312208155UL)); (freeSeqData)(seqData); }) ) : (({ calling_npm("freeSeqData", ____alias_loc_id_0); (*____chimes_extern_func_freeSeqData)(seqData); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 221 36 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 20 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 20 15 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 17 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 30 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 47 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 49 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 67 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 24 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 24 19 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 224 21 (____chimes_does_checkpoint_mergeAlignment_npm ? ( ({  calling((void*)mergeAlignment, 35, ____alias_loc_id_7, 18385433520312208218UL, 3, (size_t)(18385433520312208197UL), (size_t)(0UL), (size_t)(0UL)); (mergeAlignment)(B, ((200) / 2), (5)); }) ) : (({ calling_npm("mergeAlignment", ____alias_loc_id_7); (*____chimes_extern_func_mergeAlignment)(B, ((200)/2), (5)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 224 53 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 230 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 37, ____alias_loc_id_6, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_6); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 230 42 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 233 17 checkpoint_transformed(38, 0)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 233 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 239 17 (____chimes_does_checkpoint_verifyMergeAlignment_npm ? ( ({  calling((void*)verifyMergeAlignment, 39, ____alias_loc_id_5, 0UL, 3, (size_t)(18385433520312208145UL), (size_t)(18385433520312208218UL), (size_t)(0UL)); (verifyMergeAlignment)(simMatrix, C, (6)); }) ) : (({ calling_npm("verifyMergeAlignment", ____alias_loc_id_5); (*____chimes_extern_func_verifyMergeAlignment)(simMatrix, C, (6)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 239 55 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 246 21 (____chimes_does_checkpoint_freeA_npm ? ( ({  calling((void*)freeA, 40, ____alias_loc_id_4, 18385433520312208179UL, 1, (size_t)(18385433520312208179UL)); (freeA)(A); }) ) : (({ calling_npm("freeA", ____alias_loc_id_4); (*____chimes_extern_func_freeA)(A); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 246 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 247 21 (____chimes_does_checkpoint_freeB_npm ? ( ({  calling((void*)freeB, 41, ____alias_loc_id_3, 18385433520312208197UL, 1, (size_t)(18385433520312208197UL)); (freeB)(B); }) ) : (({ calling_npm("freeB", ____alias_loc_id_3); (*____chimes_extern_func_freeB)(B); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 247 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 248 21 (____chimes_does_checkpoint_freeC_npm ? ( ({  calling((void*)freeC, 42, ____alias_loc_id_2, 18385433520312208218UL, 1, (size_t)(18385433520312208218UL)); (freeC)(C); }) ) : (({ calling_npm("freeC", ____alias_loc_id_2); (*____chimes_extern_func_freeC)(C); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 248 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 249 17 (____chimes_does_checkpoint_freeSimMatrix_npm ? ( ({  calling((void*)freeSimMatrix, 43, ____alias_loc_id_1, 18385433520312208241UL, 1, (size_t)(18385433520312208145UL)); (freeSimMatrix)(simMatrix); }) ) : (({ calling_npm("freeSimMatrix", ____alias_loc_id_1); (*____chimes_extern_func_freeSimMatrix)(simMatrix); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 249 40 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 250 17 (____chimes_does_checkpoint_freeSeqData_npm ? ( ({  calling((void*)freeSeqData, 44, ____alias_loc_id_0, 18385433520312208243UL, 1, (size_t)(18385433520312208157UL)); (freeSeqData)(seqData); }) ) : (({ calling_npm("freeSeqData", ____alias_loc_id_0); (*____chimes_extern_func_freeSeqData)(seqData); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 250 36 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 25 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 25 25 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 25 15 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 21 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 27 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 27 12 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 28 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 28 12 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 17 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 30 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 47 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 49 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 67 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 29 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 29 12 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 18 181  ; CSTR_T *C;
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 29 19 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 30 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 30 25 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 31 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 31 21 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 32 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 32 12 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 33 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 33 12 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 34 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 34 12 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 23 168  ; CSTR_T *C;
+# 23
 BSTR_T *B;
+# 23
 ASTR_T *A;
+# 23
 SEQDATA_T *seqData;
+# 23
 SIMMATRIX_T *simMatrix;
+# 23
 double startTime;
+# 23
 int matchSeqLength;
+# 23
 int mainSeqLength;
+# 23
 int randomSeed;
+# 23
 int myTaskID;
- if (____must_checkpoint_main_C_0 || ____must_checkpoint_main_B_0 || ____must_checkpoint_main_A_0 || ____must_checkpoint_main_seqData_0 || ____must_checkpoint_main_simMatrix_0 || ____must_checkpoint_main_startTime_0 || ____must_checkpoint_main_matchSeqLength_0 || ____must_checkpoint_main_mainSeqLength_0 || ____must_checkpoint_main_randomSeed_0 || ____must_checkpoint_main_myTaskID_0) { register_stack_vars(10, "main|C|0", &____must_checkpoint_main_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "main|B|0", &____must_checkpoint_main_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", &____must_checkpoint_main_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "main|seqData|0", &____must_checkpoint_main_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "main|simMatrix|0", &____must_checkpoint_main_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "main|startTime|0", &____must_checkpoint_main_startTime_0, "double", (void *)(&startTime), (size_t)8, 0, 0, 0, "main|matchSeqLength|0", &____must_checkpoint_main_matchSeqLength_0, "i32", (void *)(&matchSeqLength), (size_t)4, 0, 0, 0, "main|mainSeqLength|0", &____must_checkpoint_main_mainSeqLength_0, "i32", (void *)(&mainSeqLength), (size_t)4, 0, 0, 0, "main|randomSeed|0", &____must_checkpoint_main_randomSeed_0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "main|myTaskID|0", &____must_checkpoint_main_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0);  }  
-ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 18 5 len=4 main_resumable
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 85 16 (____chimes_does_checkpoint_getUserParameters_npm ? ( ({  calling((void*)getUserParameters, 6, ____alias_loc_id_18, 0UL, 0); (getUserParameters)(); }) ) : (({ calling_npm("getUserParameters", ____alias_loc_id_18); (*____chimes_extern_func_getUserParameters)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 85 34 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 115 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 10, ____alias_loc_id_17, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", ____alias_loc_id_17); (*____chimes_extern_func_getSeconds)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 115 40 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 119 29 (____chimes_does_checkpoint_genSimMatrix_npm ? ( ({  int ____chimes_arg0;  int ____chimes_arg1;  int ____chimes_arg2;  int ____chimes_arg3;  int ____chimes_arg4;  int ____chimes_arg5;  int ____chimes_arg6;  if (!____chimes_replaying) { ____chimes_arg0 = ((5)); ____chimes_arg1 = ((4)); ____chimes_arg2 = ((-3)); ____chimes_arg3 = ((8)); ____chimes_arg4 = ((1)); ____chimes_arg5 = ((60)); ____chimes_arg6 = (((64) + 1));  }  calling((void*)genSimMatrix, 11, ____alias_loc_id_16, 18385433520312208144UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genSimMatrix)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2, ____chimes_arg3, ____chimes_arg4, ____chimes_arg5, ____chimes_arg6); }) ) : (({ calling_npm("genSimMatrix", ____alias_loc_id_16); (*____chimes_extern_func_genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 120 33 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 126 27 (____chimes_does_checkpoint_genScalData_npm ? ( ({  int ____chimes_arg11;  if (!____chimes_replaying) { ____chimes_arg11 = (((64) + 1));  }  calling((void*)genScalData, 13, ____alias_loc_id_15, 18385433520312208155UL, 5, (size_t)(0UL), (size_t)(18385433520312208144UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ____chimes_arg11); }) ) : (({ calling_npm("genScalData", ____alias_loc_id_15); (*____chimes_extern_func_genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 126 103 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 132 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 15, ____alias_loc_id_14, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_14); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 132 42 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 137 17 (____chimes_does_checkpoint_verifyData_npm ? ( ({  int ____chimes_arg15;  int ____chimes_arg16;  if (!____chimes_replaying) { ____chimes_arg15 = ((20)); ____chimes_arg16 = ((5));  }  calling((void*)verifyData, 16, ____alias_loc_id_13, 0UL, 4, (size_t)(18385433520312208144UL), (size_t)(18385433520312208155UL), (size_t)(0UL), (size_t)(0UL)); (verifyData)(simMatrix, seqData, ____chimes_arg15, ____chimes_arg16); }) ) : (({ calling_npm("verifyData", ____alias_loc_id_13); (*____chimes_extern_func_verifyData)(simMatrix, seqData, (20), (5)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 137 57 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 18, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 40 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 152 21 (____chimes_does_checkpoint_pairwiseAlign_npm ? ( ({  int ____chimes_arg19;  int ____chimes_arg20;  int ____chimes_arg21;  if (!____chimes_replaying) { ____chimes_arg19 = ((20)); ____chimes_arg20 = ((200)); ____chimes_arg21 = ((5));  }  calling((void*)pairwiseAlign, 19, ____alias_loc_id_12, 18385433520312208176UL, 5, (size_t)(18385433520312208155UL), (size_t)(18385433520312208144UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairwiseAlign)(seqData, simMatrix, ____chimes_arg19, ____chimes_arg20, ____chimes_arg21); }) ) : (({ calling_npm("pairwiseAlign", ____alias_loc_id_12); (*____chimes_extern_func_pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 153 23 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 159 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 21, ____alias_loc_id_11, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_11); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 159 42 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 169 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 23, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 169 40 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 173 21 (____chimes_does_checkpoint_scanBackward_npm ? ( ({  int ____chimes_arg24;  int ____chimes_arg25;  int ____chimes_arg26;  if (!____chimes_replaying) { ____chimes_arg24 = (((200) / 2)); ____chimes_arg25 = ((5)); ____chimes_arg26 = ((3));  }  calling((void*)scanBackward, 24, ____alias_loc_id_10, 18385433520312208193UL, 4, (size_t)(18385433520312208176UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (scanBackward)(A, ____chimes_arg24, ____chimes_arg25, ____chimes_arg26); }) ) : (({ calling_npm("scanBackward", ____alias_loc_id_10); (*____chimes_extern_func_scanBackward)(A, ((200)/2), (5), (3)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 173 56 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 26, ____alias_loc_id_9, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_9); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 42 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 184 17 (____chimes_does_checkpoint_verifyAlignment_npm ? ( ({  int ____chimes_arg30;  if (!____chimes_replaying) { ____chimes_arg30 = ((6));  }  calling((void*)verifyAlignment, 27, ____alias_loc_id_8, 0UL, 3, (size_t)(18385433520312208144UL), (size_t)(18385433520312208193UL), (size_t)(0UL)); (verifyAlignment)(simMatrix, B, ____chimes_arg30); }) ) : (({ calling_npm("verifyAlignment", ____alias_loc_id_8); (*____chimes_extern_func_verifyAlignment)(simMatrix, B, (6)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 184 50 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 195 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 29, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 195 40 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 199 21 (____chimes_does_checkpoint_mergeAlignment_npm ? ( ({  int ____chimes_arg32;  int ____chimes_arg33;  if (!____chimes_replaying) { ____chimes_arg32 = (((200) / 2)); ____chimes_arg33 = ((5));  }  calling((void*)mergeAlignment, 30, ____alias_loc_id_7, 18385433520312208213UL, 3, (size_t)(18385433520312208193UL), (size_t)(0UL), (size_t)(0UL)); (mergeAlignment)(B, ____chimes_arg32, ____chimes_arg33); }) ) : (({ calling_npm("mergeAlignment", ____alias_loc_id_7); (*____chimes_extern_func_mergeAlignment)(B, ((200)/2), (5)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 199 53 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 205 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 32, ____alias_loc_id_6, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_6); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 205 42 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 210 17 (____chimes_does_checkpoint_verifyMergeAlignment_npm ? ( ({  int ____chimes_arg37;  if (!____chimes_replaying) { ____chimes_arg37 = ((6));  }  calling((void*)verifyMergeAlignment, 33, ____alias_loc_id_5, 0UL, 3, (size_t)(18385433520312208144UL), (size_t)(18385433520312208213UL), (size_t)(0UL)); (verifyMergeAlignment)(simMatrix, C, ____chimes_arg37); }) ) : (({ calling_npm("verifyMergeAlignment", ____alias_loc_id_5); (*____chimes_extern_func_verifyMergeAlignment)(simMatrix, C, (6)); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 210 55 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 217 21 (____chimes_does_checkpoint_freeA_npm ? ( ({  calling((void*)freeA, 34, ____alias_loc_id_4, 18385433520312208176UL, 1, (size_t)(18385433520312208176UL)); (freeA)(A); }) ) : (({ calling_npm("freeA", ____alias_loc_id_4); (*____chimes_extern_func_freeA)(A); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 217 28 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 218 21 (____chimes_does_checkpoint_freeB_npm ? ( ({  calling((void*)freeB, 35, ____alias_loc_id_3, 18385433520312208193UL, 1, (size_t)(18385433520312208193UL)); (freeB)(B); }) ) : (({ calling_npm("freeB", ____alias_loc_id_3); (*____chimes_extern_func_freeB)(B); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 218 28 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 219 21 (____chimes_does_checkpoint_freeC_npm ? ( ({  calling((void*)freeC, 36, ____alias_loc_id_2, 18385433520312208213UL, 1, (size_t)(18385433520312208213UL)); (freeC)(C); }) ) : (({ calling_npm("freeC", ____alias_loc_id_2); (*____chimes_extern_func_freeC)(C); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 219 28 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 220 17 (____chimes_does_checkpoint_freeSimMatrix_npm ? ( ({  calling((void*)freeSimMatrix, 37, ____alias_loc_id_1, 18385433520312208235UL, 1, (size_t)(18385433520312208144UL)); (freeSimMatrix)(simMatrix); }) ) : (({ calling_npm("freeSimMatrix", ____alias_loc_id_1); (*____chimes_extern_func_freeSimMatrix)(simMatrix); })))
+# 23
+ register_stack_vars(10, "main|C|0", (int *)0x0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "main|B|0", (int *)0x0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "main|seqData|0", (int *)0x0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "main|simMatrix|0", (int *)0x0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "main|startTime|0", (int *)0x0, "double", (void *)(&startTime), (size_t)8, 0, 0, 0, "main|matchSeqLength|0", (int *)0x0, "i32", (void *)(&matchSeqLength), (size_t)4, 0, 0, 0, "main|mainSeqLength|0", (int *)0x0, "i32", (void *)(&mainSeqLength), (size_t)4, 0, 0, 0, "main|randomSeed|0", (int *)0x0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "main|myTaskID|0", (int *)0x0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0);  
+ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 23 5 len=4 main_resumable
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 90 16 (____chimes_does_checkpoint_getUserParameters_npm ? ( ({  calling((void*)getUserParameters, 6, ____alias_loc_id_19, 0UL, 0); (getUserParameters)(); }) ) : (({ calling_npm("getUserParameters", ____alias_loc_id_19); (*____chimes_extern_func_getUserParameters)(); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 90 34 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 121 17 checkpoint_transformed(10, ____alias_loc_id_18)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 121 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 124 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 11, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 124 40 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 128 29 (____chimes_does_checkpoint_genSimMatrix_npm ? ( ({  int ____chimes_arg0;  int ____chimes_arg1;  int ____chimes_arg2;  int ____chimes_arg3;  int ____chimes_arg4;  int ____chimes_arg5;  int ____chimes_arg6;  if (!____chimes_replaying) { ____chimes_arg0 = ((5)); ____chimes_arg1 = ((4)); ____chimes_arg2 = ((-3)); ____chimes_arg3 = ((8)); ____chimes_arg4 = ((1)); ____chimes_arg5 = ((60)); ____chimes_arg6 = (((64) + 1));  }  calling((void*)genSimMatrix, 12, ____alias_loc_id_17, 18385433520312208145UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genSimMatrix)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2, ____chimes_arg3, ____chimes_arg4, ____chimes_arg5, ____chimes_arg6); }) ) : (({ calling_npm("genSimMatrix", ____alias_loc_id_17); (*____chimes_extern_func_genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 129 33 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 136 17 checkpoint_transformed(14, ____alias_loc_id_16)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 136 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 139 27 (____chimes_does_checkpoint_genScalData_npm ? ( ({  int ____chimes_arg11;  if (!____chimes_replaying) { ____chimes_arg11 = (((64) + 1));  }  calling((void*)genScalData, 15, ____alias_loc_id_15, 18385433520312208157UL, 5, (size_t)(0UL), (size_t)(18385433520312208145UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ____chimes_arg11); }) ) : (({ calling_npm("genScalData", ____alias_loc_id_15); (*____chimes_extern_func_genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 139 103 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 145 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 17, ____alias_loc_id_14, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_14); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 145 42 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 17 checkpoint_transformed(18, 0)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 148 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 154 17 (____chimes_does_checkpoint_verifyData_npm ? ( ({  int ____chimes_arg15;  int ____chimes_arg16;  if (!____chimes_replaying) { ____chimes_arg15 = ((20)); ____chimes_arg16 = ((5));  }  calling((void*)verifyData, 19, ____alias_loc_id_13, 0UL, 4, (size_t)(18385433520312208145UL), (size_t)(18385433520312208157UL), (size_t)(0UL), (size_t)(0UL)); (verifyData)(simMatrix, seqData, ____chimes_arg15, ____chimes_arg16); }) ) : (({ calling_npm("verifyData", ____alias_loc_id_13); (*____chimes_extern_func_verifyData)(simMatrix, seqData, (20), (5)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 154 57 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 165 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 21, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 165 40 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 169 21 (____chimes_does_checkpoint_pairwiseAlign_npm ? ( ({  int ____chimes_arg19;  int ____chimes_arg20;  int ____chimes_arg21;  if (!____chimes_replaying) { ____chimes_arg19 = ((20)); ____chimes_arg20 = ((200)); ____chimes_arg21 = ((5));  }  calling((void*)pairwiseAlign, 22, ____alias_loc_id_12, 18385433520312208179UL, 5, (size_t)(18385433520312208157UL), (size_t)(18385433520312208145UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairwiseAlign)(seqData, simMatrix, ____chimes_arg19, ____chimes_arg20, ____chimes_arg21); }) ) : (({ calling_npm("pairwiseAlign", ____alias_loc_id_12); (*____chimes_extern_func_pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 170 23 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 176 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 24, ____alias_loc_id_11, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_11); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 176 42 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 17 checkpoint_transformed(25, 0)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 179 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 190 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 27, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 190 40 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 194 21 (____chimes_does_checkpoint_scanBackward_npm ? ( ({  int ____chimes_arg24;  int ____chimes_arg25;  int ____chimes_arg26;  if (!____chimes_replaying) { ____chimes_arg24 = (((200) / 2)); ____chimes_arg25 = ((5)); ____chimes_arg26 = ((3));  }  calling((void*)scanBackward, 28, ____alias_loc_id_10, 18385433520312208197UL, 4, (size_t)(18385433520312208179UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (scanBackward)(A, ____chimes_arg24, ____chimes_arg25, ____chimes_arg26); }) ) : (({ calling_npm("scanBackward", ____alias_loc_id_10); (*____chimes_extern_func_scanBackward)(A, ((200)/2), (5), (3)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 194 56 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 200 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 30, ____alias_loc_id_9, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_9); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 200 42 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 203 17 checkpoint_transformed(31, 0)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 203 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 209 17 (____chimes_does_checkpoint_verifyAlignment_npm ? ( ({  int ____chimes_arg30;  if (!____chimes_replaying) { ____chimes_arg30 = ((6));  }  calling((void*)verifyAlignment, 32, ____alias_loc_id_8, 0UL, 3, (size_t)(18385433520312208145UL), (size_t)(18385433520312208197UL), (size_t)(0UL)); (verifyAlignment)(simMatrix, B, ____chimes_arg30); }) ) : (({ calling_npm("verifyAlignment", ____alias_loc_id_8); (*____chimes_extern_func_verifyAlignment)(simMatrix, B, (6)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 209 50 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 220 29 (____chimes_does_checkpoint_getSeconds_npm ? ( ({  calling((void*)getSeconds, 34, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })))
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 220 40 
-ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 221 17 (____chimes_does_checkpoint_freeSeqData_npm ? ( ({  calling((void*)freeSeqData, 38, ____alias_loc_id_0, 18385433520312208237UL, 1, (size_t)(18385433520312208155UL)); (freeSeqData)(seqData); }) ) : (({ calling_npm("freeSeqData", ____alias_loc_id_0); (*____chimes_extern_func_freeSeqData)(seqData); })))
-ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 221 36 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 20 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 20 15 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 17 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 30 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 47 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 49 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 21 67 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 24 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 24 19 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 224 21 (____chimes_does_checkpoint_mergeAlignment_npm ? ( ({  int ____chimes_arg32;  int ____chimes_arg33;  if (!____chimes_replaying) { ____chimes_arg32 = (((200) / 2)); ____chimes_arg33 = ((5));  }  calling((void*)mergeAlignment, 35, ____alias_loc_id_7, 18385433520312208218UL, 3, (size_t)(18385433520312208197UL), (size_t)(0UL), (size_t)(0UL)); (mergeAlignment)(B, ____chimes_arg32, ____chimes_arg33); }) ) : (({ calling_npm("mergeAlignment", ____alias_loc_id_7); (*____chimes_extern_func_mergeAlignment)(B, ((200)/2), (5)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 224 53 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 230 17 (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({  calling((void*)dispElapsedTime, 37, ____alias_loc_id_6, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_6); (*____chimes_extern_func_dispElapsedTime)(startTime); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 230 42 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 233 17 checkpoint_transformed(38, 0)
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 233 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 239 17 (____chimes_does_checkpoint_verifyMergeAlignment_npm ? ( ({  int ____chimes_arg37;  if (!____chimes_replaying) { ____chimes_arg37 = ((6));  }  calling((void*)verifyMergeAlignment, 39, ____alias_loc_id_5, 0UL, 3, (size_t)(18385433520312208145UL), (size_t)(18385433520312208218UL), (size_t)(0UL)); (verifyMergeAlignment)(simMatrix, C, ____chimes_arg37); }) ) : (({ calling_npm("verifyMergeAlignment", ____alias_loc_id_5); (*____chimes_extern_func_verifyMergeAlignment)(simMatrix, C, (6)); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 239 55 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 246 21 (____chimes_does_checkpoint_freeA_npm ? ( ({  calling((void*)freeA, 40, ____alias_loc_id_4, 18385433520312208179UL, 1, (size_t)(18385433520312208179UL)); (freeA)(A); }) ) : (({ calling_npm("freeA", ____alias_loc_id_4); (*____chimes_extern_func_freeA)(A); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 246 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 247 21 (____chimes_does_checkpoint_freeB_npm ? ( ({  calling((void*)freeB, 41, ____alias_loc_id_3, 18385433520312208197UL, 1, (size_t)(18385433520312208197UL)); (freeB)(B); }) ) : (({ calling_npm("freeB", ____alias_loc_id_3); (*____chimes_extern_func_freeB)(B); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 247 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 248 21 (____chimes_does_checkpoint_freeC_npm ? ( ({  calling((void*)freeC, 42, ____alias_loc_id_2, 18385433520312208218UL, 1, (size_t)(18385433520312208218UL)); (freeC)(C); }) ) : (({ calling_npm("freeC", ____alias_loc_id_2); (*____chimes_extern_func_freeC)(C); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 248 28 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 249 17 (____chimes_does_checkpoint_freeSimMatrix_npm ? ( ({  calling((void*)freeSimMatrix, 43, ____alias_loc_id_1, 18385433520312208241UL, 1, (size_t)(18385433520312208145UL)); (freeSimMatrix)(simMatrix); }) ) : (({ calling_npm("freeSimMatrix", ____alias_loc_id_1); (*____chimes_extern_func_freeSimMatrix)(simMatrix); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 249 40 
+ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 250 17 (____chimes_does_checkpoint_freeSeqData_npm ? ( ({  calling((void*)freeSeqData, 44, ____alias_loc_id_0, 18385433520312208243UL, 1, (size_t)(18385433520312208157UL)); (freeSeqData)(seqData); }) ) : (({ calling_npm("freeSeqData", ____alias_loc_id_0); (*____chimes_extern_func_freeSeqData)(seqData); })))
+ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 250 36 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 25 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 25 25 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 25 15 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 21 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 27 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 27 12 
-RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 28 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 28 12 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 17 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 30 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 47 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 49 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 26 67 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 29 3 
-RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 29 12 
-InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 18 181  ; CSTR_T *C;
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 29 19 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 30 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 30 25 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 31 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 31 21 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 32 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 32 12 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 33 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 33 12 
+RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 34 3 
+RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 34 12 
+InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c 23 168  ; CSTR_T *C;
+# 23
 BSTR_T *B;
+# 23
 ASTR_T *A;
+# 23
 SEQDATA_T *seqData;
+# 23
 SIMMATRIX_T *simMatrix;
+# 23
 double startTime;
+# 23
 int matchSeqLength;
+# 23
 int mainSeqLength;
+# 23
 int randomSeed;
+# 23
 int myTaskID;
- if (____must_checkpoint_main_C_0 || ____must_checkpoint_main_B_0 || ____must_checkpoint_main_A_0 || ____must_checkpoint_main_seqData_0 || ____must_checkpoint_main_simMatrix_0 || ____must_checkpoint_main_startTime_0 || ____must_checkpoint_main_matchSeqLength_0 || ____must_checkpoint_main_mainSeqLength_0 || ____must_checkpoint_main_randomSeed_0 || ____must_checkpoint_main_myTaskID_0) { register_stack_vars(10, "main|C|0", &____must_checkpoint_main_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "main|B|0", &____must_checkpoint_main_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", &____must_checkpoint_main_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "main|seqData|0", &____must_checkpoint_main_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "main|simMatrix|0", &____must_checkpoint_main_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "main|startTime|0", &____must_checkpoint_main_startTime_0, "double", (void *)(&startTime), (size_t)8, 0, 0, 0, "main|matchSeqLength|0", &____must_checkpoint_main_matchSeqLength_0, "i32", (void *)(&matchSeqLength), (size_t)4, 0, 0, 0, "main|mainSeqLength|0", &____must_checkpoint_main_mainSeqLength_0, "i32", (void *)(&mainSeqLength), (size_t)4, 0, 0, 0, "main|randomSeed|0", &____must_checkpoint_main_randomSeed_0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "main|myTaskID|0", &____must_checkpoint_main_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(36): { goto call_lbl_36; } case(37): { goto call_lbl_37; } case(38): { goto call_lbl_38; } default: { chimes_error(); } }  }  
+# 23
+ register_stack_vars(10, "main|C|0", (int *)0x0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "main|B|0", (int *)0x0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "main|seqData|0", (int *)0x0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "main|simMatrix|0", (int *)0x0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "main|startTime|0", (int *)0x0, "double", (void *)(&startTime), (size_t)8, 0, 0, 0, "main|matchSeqLength|0", (int *)0x0, "i32", (void *)(&matchSeqLength), (size_t)4, 0, 0, 0, "main|mainSeqLength|0", (int *)0x0, "i32", (void *)(&mainSeqLength), (size_t)4, 0, 0, 0, "main|randomSeed|0", (int *)0x0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "main|myTaskID|0", (int *)0x0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(6): { goto call_lbl_6; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(37): { goto call_lbl_37; } case(38): { goto call_lbl_38; } case(39): { goto call_lbl_39; } case(40): { goto call_lbl_40; } case(41): { goto call_lbl_41; } case(42): { goto call_lbl_42; } case(43): { goto call_lbl_43; } case(44): { goto call_lbl_44; } default: { chimes_error(); } }  }  

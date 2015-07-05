@@ -1,25 +1,24 @@
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 481 53 : { 299, 300 } {  } call:rng_showstate { rng_showstate { 325, 382, 2014 } }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 497 53 : { 409, 410 } {  } call:rng_showstate { rng_showstate { 432, 444, 2014 } }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 511 53 : { 463, 464, 518 } {  } call:rng_showstate { rng_showstate { 490, 502, 2014 } }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 629 43 : { 659, 660, 661 } {  } call:rng_showstate { rng_showstate { 845, 853, 2014 } }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 674 17 : { 953 } {  } call:uts_wctime {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 691 10 : { 1002, 1003 } {  } call:uts_wctime {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 912 3 : { 1090, 1091 } {  } call:uts_initRoot { uts_initRoot { 1100 } }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 960 15 : { 1108 } {  } call:uts_childType { uts_childType { 1218 } }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 965 86 : { 1109, 1110, 1218 } {  } call:rng_showstate { rng_showstate { 1150, 1218, 2014 } }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 959 17 : { 1104, 1105, 1106, 1107 } {  } call:uts_numChildren { uts_numChildren { 1218 } }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 988 7 : { 1112, 1113, 1219 } {  } call:ss_push {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 986 9 : { 1112, 1113, 1219 } {  } call:rng_spawn { rng_spawn { 1218, 1219 } }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1100 7 : { 1226 } {  } call:ss_setState {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1193 5 : { 1414, 1415, 1416 } {  } call:ss_setState {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1176 7 : { 1414, 1415 } {  } call:ss_setState {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1180 14 : { 1415, 1416 } {  } call:ss_steal {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1146 2 : { 1412 } {  } call:genChildren {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1155 9 : { 1412 } {  } call:ss_pop {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1140 7 : { 1414 } {  } call:ss_setState {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1269 3 : { 1511, 1512, 1513, 1514, 1515, 1516, 1517, 1518, 1519, 1520, 1521, 1522, 1523, 1524, 1525, 1526 } {  } call:uts_showStats {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1441 5 : { 1940, 1941 } {  } call:checkpoint {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1428 5 : { 1939 } {  } call:parTreeSearch {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 5 : { 1942, 2015 } {  } call:checkpoint {  }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1366 3 : { 1935, 1936, 1937 } {  } call:uts_parseParams { uts_parseParams { 2005 } }
-/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1414 7 : { 1942, 2015 } {  } call:initRootNode {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 481 53 : { 315, 316 } {  } call:rng_showstate { rng_showstate { 341, 398, 2066 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 497 53 : { 425, 426 } {  } call:rng_showstate { rng_showstate { 449, 461, 2066 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 511 53 : { 483, 484, 538 } {  } call:rng_showstate { rng_showstate { 510, 522, 2066 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 629 43 : { 691, 692, 693 } {  } call:rng_showstate { rng_showstate { 878, 886, 2066 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 674 17 : { 997 } {  } call:uts_wctime {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 691 10 : { 1046, 1047 } {  } call:uts_wctime {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 912 3 : { 1134, 1135 } {  } call:uts_initRoot { uts_initRoot { 1144 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 960 15 : { 1152 } {  } call:uts_childType { uts_childType { 1262 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 965 86 : { 1153, 1154, 1262 } {  } call:rng_showstate { rng_showstate { 1194, 1262, 2066 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 959 17 : { 1148, 1149, 1150, 1151 } {  } call:uts_numChildren { uts_numChildren { 1262 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 988 7 : { 1156, 1157, 1263 } {  } call:ss_push {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 986 9 : { 1156, 1157, 1263 } {  } call:rng_spawn { rng_spawn { 1262, 1263 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1193 5 : { 1462, 1463, 1464 } {  } call:ss_setState {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1176 7 : { 1462, 1463 } {  } call:ss_setState {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1180 14 : { 1463, 1464 } {  } call:ss_steal {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1146 2 : { 1460 } {  } call:genChildren {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1155 9 : { 1460 } {  } call:ss_pop {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1140 7 : { 1462 } {  } call:ss_setState {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1269 3 : { 1559, 1560, 1561, 1562, 1563, 1564, 1565, 1566, 1567, 1568, 1569, 1570, 1571, 1572, 1573, 1574 } {  } call:uts_showStats {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1441 5 : { 1988, 1989 } {  } call:checkpoint {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1428 5 : { 1987 } {  } call:parTreeSearch {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1423 5 : { 1990, 2067 } {  } call:checkpoint {  }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1366 3 : { 1983, 1984, 1985 } {  } call:uts_parseParams { uts_parseParams { 2057 } }
+/home/jmg3/num-debug/src/examples/openmp/uts/uts_shm.c 1414 7 : { 1990, 2067 } {  } call:initRootNode {  }

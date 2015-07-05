@@ -53,7 +53,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -69,7 +69,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -104,7 +105,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2904,7 +2905,7 @@ size_t strlcpy_npm(char *dst, const char *src, size_t siz);
 size_t strlcpy_quick(char *dst, const char *src, size_t siz); size_t strlcpy(char *dst, const char *src, size_t siz);
 size_t strlcpy_resumable(char *dst, const char *src, size_t siz)
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&strlcpy), "strlcpy", &____must_manage_strlcpy, 3, 0, (size_t)(13606384021850635088UL), (size_t)(13606384021850635089UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&strlcpy), "strlcpy", &____must_manage_strlcpy, 3, 0, (size_t)(13606384021850635092UL), (size_t)(13606384021850635093UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 40 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
     char *d; d = (dst) ;
 # 41 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -2937,9 +2938,9 @@ size_t strlcpy_resumable(char *dst, const char *src, size_t siz)
    }
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0); return(s - src - 1);
+    size_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((s - src - 1)); rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-}
+rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 # 62 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -2949,8 +2950,10 @@ void fill_chartab_npm(char *chartab);static int (*____chimes_extern_func_tolower
 void fill_chartab_quick(char *chartab); void fill_chartab(char *chartab);
 void fill_chartab_resumable(char *chartab)
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&fill_chartab), "fill_chartab", &____must_manage_fill_chartab, 1, 1, (size_t)(13606384021850635146UL), "fill_chartab|chartab|0", &____must_checkpoint_fill_chartab_chartab_0, "i8*", (void *)(&chartab), (size_t)8, 1, 0, 0) ; char c;
+{const int ____chimes_did_disable1 = new_stack((void *)(&fill_chartab), "fill_chartab", &____must_manage_fill_chartab, 1, 1, (size_t)(13606384021850635150UL), "fill_chartab|chartab|0", &____must_checkpoint_fill_chartab_chartab_0, "i8*", (void *)(&chartab), (size_t)8, 1, 0, 0) ; char c;
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int i;
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
  if (____must_checkpoint_fill_chartab_c_0 || ____must_checkpoint_fill_chartab_i_0) { register_stack_vars(2, "fill_chartab|c|0", &____must_checkpoint_fill_chartab_c_0, "i8", (void *)(&c), (size_t)1, 0, 0, 0, "fill_chartab|i|0", &____must_checkpoint_fill_chartab_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
     ;
@@ -2967,7 +2970,7 @@ int i;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "fill_chartab", &____must_manage_fill_chartab, ____alias_loc_id_3, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "fill_chartab", &____must_manage_fill_chartab, ____alias_loc_id_3, ____chimes_did_disable1, false); }
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -2977,7 +2980,7 @@ void encode_npm(char *seq, char *naseq, int l);
 void encode_quick(char *seq, char *naseq, int l); void encode(char *seq, char *naseq, int l);
 void encode_resumable(char *seq, char *naseq, int l)
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&encode), "encode", &____must_manage_encode, 3, 0, (size_t)(13606384021850635244UL), (size_t)(13606384021850635245UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&encode), "encode", &____must_manage_encode, 3, 0, (size_t)(13606384021850635248UL), (size_t)(13606384021850635249UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    int i; int j; ;
 # 84 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3005,7 +3008,7 @@ void encode_resumable(char *seq, char *naseq, int l)
 # 97 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    naseq[l + 1] = -3;
 # 98 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "encode", &____must_manage_encode, ____alias_loc_id_4, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "encode", &____must_manage_encode, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 # 99 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 100 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3021,22 +3024,22 @@ void alloc_aln_resumable(int nseqs)
    int i; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   names = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635552UL, 1, 0);
+   names = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seq_array = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635552UL, 1, 0);
+   seq_array = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seqlen_array = (int *) malloc_wrapper((nseqs + 1) * sizeof(int), 13606384021850635562UL, 0, 0);
+   seqlen_array = (int *) malloc_wrapper((nseqs + 1) * sizeof(int), 13606384021850635571UL, 0, 0);
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    for (i = 0; i < nseqs + 1; i++) {
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      names[i] = (char * ) malloc_wrapper((30 + 1) * sizeof(char), 13606384021850635554UL, 0, 0);
+      names[i] = (char * ) malloc_wrapper((30 + 1) * sizeof(char), 13606384021850635563UL, 0, 0);
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seq_array[i] = __null;
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "alloc_aln", &____must_manage_alloc_aln, ____alias_loc_id_5, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "alloc_aln", &____must_manage_alloc_aln, ____alias_loc_id_5, ____chimes_did_disable3, false); }
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3046,7 +3049,7 @@ char * get_seq_npm(char *sname, int *len, char *chartab, FILE *fin);
 char * get_seq_quick(char *sname, int *len, char *chartab, FILE *fin); char * get_seq(char *sname, int *len, char *chartab, FILE *fin);
 char * get_seq_resumable(char *sname, int *len, char *chartab, FILE *fin)
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&get_seq), "get_seq", &____must_manage_get_seq, 4, 0, (size_t)(13606384021850635479UL), (size_t)(13606384021850635480UL), (size_t)(13606384021850635481UL), (size_t)(13606384021850635482UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&get_seq), "get_seq", &____must_manage_get_seq, 4, 0, (size_t)(13606384021850635487UL), (size_t)(13606384021850635488UL), (size_t)(13606384021850635489UL), (size_t)(13606384021850635490UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 123 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    int i; int j; ;
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3074,7 +3077,7 @@ char * get_seq_resumable(char *sname, int *len, char *chartab, FILE *fin)
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    while (fgets(line, 512 +1, fin) != __null) {
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      if (seq == __null) {seq = (char *) malloc_wrapper((512 + 2) * sizeof(char), 13606384021850635554UL, 0, 0); } else {seq = (char *) realloc_wrapper(seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635554UL, 0, 0); } ;
+      if (seq == __null) {seq = (char *) malloc_wrapper((512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } else {seq = (char *) realloc_wrapper(seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } ;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       for (i = 0; i <= 512; i++) {
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3093,19 +3096,23 @@ char * get_seq_resumable(char *sname, int *len, char *chartab, FILE *fin)
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    seq[*len + 1] = '\0';
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   rm_stack(true, 13606384021850635554UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4); return seq;
+    char *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (seq); rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4, false); return ____chimes_ret_var_1; ;
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-}
+rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4, false); }
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int readseqs_npm(int first_seq, char *filename);
 int readseqs_quick(int first_seq, char *filename); int readseqs(int first_seq, char *filename);
 int readseqs_resumable(int first_seq, char *filename)
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&readseqs), "readseqs", &____must_manage_readseqs, 2, 0, (size_t)(0UL), (size_t)(13606384021850635593UL)) ; char chartab[128];
+{const int ____chimes_did_disable5 = new_stack((void *)(&readseqs), "readseqs", &____must_manage_readseqs, 2, 0, (size_t)(0UL), (size_t)(13606384021850635605UL)) ; char chartab[128];
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 FILE *fin;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int no_seqs;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int l1;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
  if (____must_checkpoint_readseqs_chartab_0 || ____must_checkpoint_readseqs_fin_0 || ____must_checkpoint_readseqs_no_seqs_0 || ____must_checkpoint_readseqs_l1_0) { register_stack_vars(4, "readseqs|chartab|0", &____must_checkpoint_readseqs_chartab_0, "[128 x i8]", (void *)(chartab), (size_t)128, 0, 0, 0, "readseqs|fin|0", &____must_checkpoint_readseqs_fin_0, "%struct._IO_FILE*", (void *)(&fin), (size_t)8, 1, 0, 0, "readseqs|no_seqs|0", &____must_checkpoint_readseqs_no_seqs_0, "i32", (void *)(&no_seqs), (size_t)4, 0, 0, 0, "readseqs|l1|0", &____must_checkpoint_readseqs_l1_0, "i32", (void *)(&l1), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } } ; ;
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    int i; ;
@@ -3133,7 +3140,7 @@ int l1;
    };
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-    call_lbl_7: ({ calling((void*)fill_chartab, 7, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635496UL)); (fill_chartab)(chartab); }) ;
+    call_lbl_7: ({ calling((void*)fill_chartab, 7, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635504UL)); (fill_chartab)(chartab); }) ;
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Sequence format is Pearson\n"); } };
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3148,23 +3155,24 @@ int l1;
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seqlen_array[i] = l1;
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      seq_array[i] = (char *) malloc_wrapper((l1 + 2) * sizeof (char), 13606384021850635554UL, 0, 0);
+      seq_array[i] = (char *) malloc_wrapper((l1 + 2) * sizeof (char), 13606384021850635563UL, 0, 0);
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       ({ calling_npm("encode", 0); encode_npm(seq1, seq_array[i], l1); });
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      free_wrapper(seq1, 13606384021850635557UL);
+      free_wrapper(seq1, 13606384021850635566UL);
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5); return no_seqs;
+    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (no_seqs); rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5, false); return ____chimes_ret_var_2; ;
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-}
+rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5, false); }
+# 38 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 size_t strlcpy_quick(char *dst, const char *src, size_t siz)
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-{const int ____chimes_did_disable0 = new_stack((void *)(&strlcpy), "strlcpy", &____must_manage_strlcpy, 3, 0, (size_t)(13606384021850635088UL), (size_t)(13606384021850635089UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable0 = new_stack((void *)(&strlcpy), "strlcpy", &____must_manage_strlcpy, 3, 0, (size_t)(13606384021850635092UL), (size_t)(13606384021850635093UL), (size_t)(0UL)) ; ; ;
 # 40 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
     char *d; d = (dst) ;
 # 41 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3197,16 +3205,18 @@ size_t strlcpy_quick(char *dst, const char *src, size_t siz)
    }
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0); return(s - src - 1);
+    size_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((s - src - 1)); rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-}
+rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 
 size_t strlcpy(char *dst, const char *src, size_t siz) { return (____chimes_replaying ? strlcpy_resumable(dst, src, siz) : strlcpy_quick(dst, src, siz)); }
-
+# 66 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void fill_chartab_quick(char *chartab)
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&fill_chartab), "fill_chartab", &____must_manage_fill_chartab, 1, 1, (size_t)(13606384021850635146UL), "fill_chartab|chartab|0", &____must_checkpoint_fill_chartab_chartab_0, "i8*", (void *)(&chartab), (size_t)8, 1, 0, 0) ; char c;
+{const int ____chimes_did_disable1 = new_stack((void *)(&fill_chartab), "fill_chartab", &____must_manage_fill_chartab, 1, 1, (size_t)(13606384021850635150UL), "fill_chartab|chartab|0", &____must_checkpoint_fill_chartab_chartab_0, "i8*", (void *)(&chartab), (size_t)8, 1, 0, 0) ; char c;
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int i;
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
  if (____must_checkpoint_fill_chartab_c_0 || ____must_checkpoint_fill_chartab_i_0) { register_stack_vars(2, "fill_chartab|c|0", &____must_checkpoint_fill_chartab_c_0, "i8", (void *)(&c), (size_t)1, 0, 0, 0, "fill_chartab|i|0", &____must_checkpoint_fill_chartab_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ; ;
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
     ;
@@ -3223,13 +3233,13 @@ int i;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "fill_chartab", &____must_manage_fill_chartab, ____alias_loc_id_3, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "fill_chartab", &____must_manage_fill_chartab, ____alias_loc_id_3, ____chimes_did_disable1, false); }
 
 void fill_chartab(char *chartab) { (____chimes_replaying ? fill_chartab_resumable(chartab) : fill_chartab_quick(chartab)); }
-
+# 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void encode_quick(char *seq, char *naseq, int l)
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&encode), "encode", &____must_manage_encode, 3, 0, (size_t)(13606384021850635244UL), (size_t)(13606384021850635245UL), (size_t)(0UL)) ; ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&encode), "encode", &____must_manage_encode, 3, 0, (size_t)(13606384021850635248UL), (size_t)(13606384021850635249UL), (size_t)(0UL)) ; ; ;
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    int i; int j; ;
 # 84 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3257,10 +3267,10 @@ void encode_quick(char *seq, char *naseq, int l)
 # 97 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    naseq[l + 1] = -3;
 # 98 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "encode", &____must_manage_encode, ____alias_loc_id_4, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "encode", &____must_manage_encode, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 
 void encode(char *seq, char *naseq, int l) { (____chimes_replaying ? encode_resumable(seq, naseq, l) : encode_quick(seq, naseq, l)); }
-
+# 104 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void alloc_aln_quick(int nseqs)
 # 105 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&alloc_aln), "alloc_aln", &____must_manage_alloc_aln, 1, 0, (size_t)(0UL)) ; ; ;
@@ -3268,28 +3278,28 @@ void alloc_aln_quick(int nseqs)
    int i; ;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   names = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635552UL, 1, 0);
+   names = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seq_array = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635552UL, 1, 0);
+   seq_array = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seqlen_array = (int *) malloc_wrapper((nseqs + 1) * sizeof(int), 13606384021850635562UL, 0, 0);
+   seqlen_array = (int *) malloc_wrapper((nseqs + 1) * sizeof(int), 13606384021850635571UL, 0, 0);
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    for (i = 0; i < nseqs + 1; i++) {
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      names[i] = (char * ) malloc_wrapper((30 + 1) * sizeof(char), 13606384021850635554UL, 0, 0);
+      names[i] = (char * ) malloc_wrapper((30 + 1) * sizeof(char), 13606384021850635563UL, 0, 0);
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seq_array[i] = __null;
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "alloc_aln", &____must_manage_alloc_aln, ____alias_loc_id_5, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "alloc_aln", &____must_manage_alloc_aln, ____alias_loc_id_5, ____chimes_did_disable3, false); }
 
 void alloc_aln(int nseqs) { (____chimes_replaying ? alloc_aln_resumable(nseqs) : alloc_aln_quick(nseqs)); }
-
+# 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 char * get_seq_quick(char *sname, int *len, char *chartab, FILE *fin)
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-{const int ____chimes_did_disable4 = new_stack((void *)(&get_seq), "get_seq", &____must_manage_get_seq, 4, 0, (size_t)(13606384021850635479UL), (size_t)(13606384021850635480UL), (size_t)(13606384021850635481UL), (size_t)(13606384021850635482UL)) ; ; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&get_seq), "get_seq", &____must_manage_get_seq, 4, 0, (size_t)(13606384021850635487UL), (size_t)(13606384021850635488UL), (size_t)(13606384021850635489UL), (size_t)(13606384021850635490UL)) ; ; ;
 # 123 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    int i; int j; ;
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3317,7 +3327,7 @@ char * get_seq_quick(char *sname, int *len, char *chartab, FILE *fin)
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    while (fgets(line, 512 +1, fin) != __null) {
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      if (seq == __null) {seq = (char *) malloc_wrapper((512 + 2) * sizeof(char), 13606384021850635554UL, 0, 0); } else {seq = (char *) realloc_wrapper(seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635554UL, 0, 0); } ;
+      if (seq == __null) {seq = (char *) malloc_wrapper((512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } else {seq = (char *) realloc_wrapper(seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } ;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       for (i = 0; i <= 512; i++) {
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3336,18 +3346,22 @@ char * get_seq_quick(char *sname, int *len, char *chartab, FILE *fin)
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    seq[*len + 1] = '\0';
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   rm_stack(true, 13606384021850635554UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4); return seq;
+    char *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (seq); rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4, false); return ____chimes_ret_var_1; ;
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-}
+rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4, false); }
 
 char * get_seq(char *sname, int *len, char *chartab, FILE *fin) { return (____chimes_replaying ? get_seq_resumable(sname, len, chartab, fin) : get_seq_quick(sname, len, chartab, fin)); }
-
+# 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int readseqs_quick(int first_seq, char *filename)
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-{const int ____chimes_did_disable5 = new_stack((void *)(&readseqs), "readseqs", &____must_manage_readseqs, 2, 0, (size_t)(0UL), (size_t)(13606384021850635593UL)) ; char chartab[128];
+{const int ____chimes_did_disable5 = new_stack((void *)(&readseqs), "readseqs", &____must_manage_readseqs, 2, 0, (size_t)(0UL), (size_t)(13606384021850635605UL)) ; char chartab[128];
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 FILE *fin;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int no_seqs;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int l1;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
  if (____must_checkpoint_readseqs_chartab_0 || ____must_checkpoint_readseqs_fin_0 || ____must_checkpoint_readseqs_no_seqs_0 || ____must_checkpoint_readseqs_l1_0) { register_stack_vars(4, "readseqs|chartab|0", &____must_checkpoint_readseqs_chartab_0, "[128 x i8]", (void *)(chartab), (size_t)128, 0, 0, 0, "readseqs|fin|0", &____must_checkpoint_readseqs_fin_0, "%struct._IO_FILE*", (void *)(&fin), (size_t)8, 1, 0, 0, "readseqs|no_seqs|0", &____must_checkpoint_readseqs_no_seqs_0, "i32", (void *)(&no_seqs), (size_t)4, 0, 0, 0, "readseqs|l1|0", &____must_checkpoint_readseqs_l1_0, "i32", (void *)(&l1), (size_t)4, 0, 0, 0); } ; ;
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    int i; ;
@@ -3375,7 +3389,7 @@ int l1;
    };
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-    call_lbl_7: ({ calling((void*)fill_chartab, 7, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635496UL)); fill_chartab_quick(chartab); }) ;
+    call_lbl_7: ({ calling((void*)fill_chartab, 7, ____alias_loc_id_1, 0UL, 1, (size_t)(13606384021850635504UL)); fill_chartab_quick(chartab); }) ;
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    { if ( bots_verbose_mode >= BOTS_VERBOSE_DEFAULT ) { fprintf(stdout, "Sequence format is Pearson\n"); } };
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3390,25 +3404,23 @@ int l1;
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seqlen_array[i] = l1;
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      seq_array[i] = (char *) malloc_wrapper((l1 + 2) * sizeof (char), 13606384021850635554UL, 0, 0);
+      seq_array[i] = (char *) malloc_wrapper((l1 + 2) * sizeof (char), 13606384021850635563UL, 0, 0);
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       ({ calling_npm("encode", 0); encode_npm(seq1, seq_array[i], l1); });
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      free_wrapper(seq1, 13606384021850635557UL);
+      free_wrapper(seq1, 13606384021850635566UL);
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5); return no_seqs;
+    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (no_seqs); rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5, false); return ____chimes_ret_var_2; ;
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-}
+rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5, false); }
 
 int readseqs(int first_seq, char *filename) { return (____chimes_replaying ? readseqs_resumable(first_seq, filename) : readseqs_quick(first_seq, filename)); }
-
-
-
+# 38 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 size_t strlcpy_npm(char *dst, const char *src, size_t siz)
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3444,10 +3456,10 @@ size_t strlcpy_npm(char *dst, const char *src, size_t siz)
    }
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   return(s - src - 1);
+    size_t ____chimes_ret_var_0; ____chimes_ret_var_0 = ((s - src - 1)); return ____chimes_ret_var_0; ;
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
-
+# 66 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void fill_chartab_npm(char *chartab)
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3467,7 +3479,7 @@ void fill_chartab_npm(char *chartab)
    }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
-
+# 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void encode_npm(char *seq, char *naseq, int l)
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3499,7 +3511,7 @@ void encode_npm(char *seq, char *naseq, int l)
    naseq[l + 1] = -3;
 # 98 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
-
+# 104 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void alloc_aln_npm(int nseqs)
 # 105 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3507,23 +3519,23 @@ void alloc_aln_npm(int nseqs)
    int i;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   names = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635552UL, 1, 0);
+   names = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seq_array = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635552UL, 1, 0);
+   seq_array = (char **) malloc_wrapper((nseqs + 1) * sizeof(char *), 13606384021850635561UL, 1, 0);
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   seqlen_array = (int *) malloc_wrapper((nseqs + 1) * sizeof(int), 13606384021850635562UL, 0, 0);
+   seqlen_array = (int *) malloc_wrapper((nseqs + 1) * sizeof(int), 13606384021850635571UL, 0, 0);
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    for (i = 0; i < nseqs + 1; i++) {
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      names[i] = (char * ) malloc_wrapper((30 + 1) * sizeof(char), 13606384021850635554UL, 0, 0);
+      names[i] = (char * ) malloc_wrapper((30 + 1) * sizeof(char), 13606384021850635563UL, 0, 0);
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seq_array[i] = __null;
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
-
+# 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 char * get_seq_npm(char *sname, int *len, char *chartab, FILE *fin)
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3554,7 +3566,7 @@ char * get_seq_npm(char *sname, int *len, char *chartab, FILE *fin)
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    while (fgets(line, 512 +1, fin) != __null) {
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      if (seq == __null) {seq = (char *) malloc_wrapper((512 + 2) * sizeof(char), 13606384021850635554UL, 0, 0); } else {seq = (char *) realloc_wrapper(seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635554UL, 0, 0); } ;
+      if (seq == __null) {seq = (char *) malloc_wrapper((512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } else {seq = (char *) realloc_wrapper(seq, ((*len) + 512 + 2) * sizeof(char), 13606384021850635563UL, 0, 0); } ;
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       for (i = 0; i <= 512; i++) {
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3573,10 +3585,10 @@ char * get_seq_npm(char *sname, int *len, char *chartab, FILE *fin)
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    seq[*len + 1] = '\0';
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   return seq;
+    char * ____chimes_ret_var_1; ____chimes_ret_var_1 = (seq); return ____chimes_ret_var_1; ;
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
-
+# 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int readseqs_npm(int first_seq, char *filename)
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3621,18 +3633,18 @@ int readseqs_npm(int first_seq, char *filename)
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       seqlen_array[i] = l1;
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      seq_array[i] = (char *) malloc_wrapper((l1 + 2) * sizeof (char), 13606384021850635554UL, 0, 0);
+      seq_array[i] = (char *) malloc_wrapper((l1 + 2) * sizeof (char), 13606384021850635563UL, 0, 0);
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
       encode_npm(seq1, seq_array[i], l1);
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-      free_wrapper(seq1, 13606384021850635557UL);
+      free_wrapper(seq1, 13606384021850635566UL);
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-   return no_seqs;
+    int ____chimes_ret_var_2; ____chimes_ret_var_2 = (no_seqs); return ____chimes_ret_var_2; ;
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
 
@@ -3641,21 +3653,21 @@ int readseqs_npm(int first_seq, char *filename)
 
 
 static int module_init() {
-    init_module(13606384021850635018UL, 21, 6, 7, 8, 6, 1, 7, 4, 0, 3,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (13606384021850635018UL + 75UL), (13606384021850635018UL + 76UL), (13606384021850635018UL + 77UL), (13606384021850635018UL + 128UL),
-                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (13606384021850635018UL + 471UL), (13606384021850635018UL + 472UL), (13606384021850635018UL + 476UL), (13606384021850635018UL + 490UL),
-                           &____alias_loc_id_2, (unsigned)7, (unsigned)0, (unsigned)0, (13606384021850635018UL + 1UL), (13606384021850635018UL + 2UL), (13606384021850635018UL + 3UL), (13606384021850635018UL + 4UL), (13606384021850635018UL + 5UL), (13606384021850635018UL + 6UL), (13606384021850635018UL + 70UL),
-                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (unsigned)0, (13606384021850635018UL + 75UL), (13606384021850635018UL + 76UL), (13606384021850635018UL + 128UL),
-                           &____alias_loc_id_4, (unsigned)8, (unsigned)0, (unsigned)0, (13606384021850635018UL + 130UL), (13606384021850635018UL + 131UL), (13606384021850635018UL + 132UL), (13606384021850635018UL + 133UL), (13606384021850635018UL + 134UL), (13606384021850635018UL + 135UL), (13606384021850635018UL + 136UL), (13606384021850635018UL + 227UL),
-                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (13606384021850635018UL + 229UL), (13606384021850635018UL + 230UL), (13606384021850635018UL + 534UL), (13606384021850635018UL + 586UL), (13606384021850635018UL + 588UL),
-                           &____alias_loc_id_6, (unsigned)12, (unsigned)0, (unsigned)0, (13606384021850635018UL + 281UL), (13606384021850635018UL + 282UL), (13606384021850635018UL + 283UL), (13606384021850635018UL + 284UL), (13606384021850635018UL + 285UL), (13606384021850635018UL + 286UL), (13606384021850635018UL + 287UL), (13606384021850635018UL + 288UL), (13606384021850635018UL + 461UL), (13606384021850635018UL + 462UL), (13606384021850635018UL + 536UL), (13606384021850635018UL + 589UL),
-                           &____alias_loc_id_7, (unsigned)4, (unsigned)0, (unsigned)0, (13606384021850635018UL + 473UL), (13606384021850635018UL + 477UL), (13606384021850635018UL + 534UL), (13606384021850635018UL + 544UL),
-                            "strlcpy", (void *)(&strlcpy_npm), (void *)__null, 0, 3, (13606384021850635018UL + 70UL), (13606384021850635018UL + 71UL), 0UL, 0UL, 0,
-                            "fill_chartab", (void *)(&fill_chartab_npm), (void *)__null, 1, &____alias_loc_id_0, 1, (13606384021850635018UL + 128UL), 0UL, 1, "tolower", 1, 0UL, 0UL,
-                            "encode", (void *)(&encode_npm), (void *)__null, 0, 3, (13606384021850635018UL + 226UL), (13606384021850635018UL + 227UL), 0UL, 0UL, 0,
-                            "alloc_aln", (void *)(&alloc_aln_npm), (void *)__null, 0, 1, 0UL, 0UL, 4, "malloc", 1, 0UL, (13606384021850635018UL + 534UL), "malloc", 1, 0UL, (13606384021850635018UL + 534UL), "malloc", 1, 0UL, (13606384021850635018UL + 544UL), "malloc", 1, 0UL, (13606384021850635018UL + 536UL),
-                            "get_seq", (void *)(&get_seq_npm), (void *)__null, 0, 4, (13606384021850635018UL + 461UL), (13606384021850635018UL + 462UL), (13606384021850635018UL + 463UL), (13606384021850635018UL + 464UL), (13606384021850635018UL + 536UL), 7, "fgets", 3, (13606384021850635018UL + 589UL), 0UL, (13606384021850635018UL + 464UL), (13606384021850635018UL + 310UL), "strlen", 1, (13606384021850635018UL + 589UL), 0UL, "strlen", 1, (13606384021850635018UL + 589UL), 0UL, "strlcpy", 3, (13606384021850635018UL + 461UL), (13606384021850635018UL + 589UL), 0UL, 0UL, "fgets", 3, (13606384021850635018UL + 589UL), 0UL, (13606384021850635018UL + 464UL), (13606384021850635018UL + 376UL), "malloc", 1, 0UL, (13606384021850635018UL + 536UL), "realloc", 2, (13606384021850635018UL + 536UL), 0UL, (13606384021850635018UL + 536UL),
-                            "readseqs", (void *)(&readseqs_npm), (void *)__null, 1, &____alias_loc_id_1, 2, 0UL, (13606384021850635018UL + 575UL), 0UL, 13, "fopen", 2, (13606384021850635018UL + 575UL), (13606384021850635018UL + 590UL), (13606384021850635018UL + 490UL), "fprintf", 3, (13606384021850635018UL + 521UL), (13606384021850635018UL + 593UL), (13606384021850635018UL + 575UL), 0UL, "exit", 1, 0UL, 0UL, "fscanf", 3, (13606384021850635018UL + 490UL), (13606384021850635018UL + 594UL), (13606384021850635018UL + 475UL), 0UL, "fprintf", 3, (13606384021850635018UL + 521UL), (13606384021850635018UL + 595UL), (13606384021850635018UL + 575UL), 0UL, "exit", 1, 0UL, 0UL, "fill_chartab", 1, (13606384021850635018UL + 478UL), 0UL, "fprintf", 2, (13606384021850635018UL + 521UL), (13606384021850635018UL + 596UL), 0UL, "alloc_aln", 1, 0UL, 0UL, "get_seq", 4, (13606384021850635018UL + 536UL), (13606384021850635018UL + 474UL), (13606384021850635018UL + 478UL), (13606384021850635018UL + 490UL), (13606384021850635018UL + 539UL), "malloc", 1, 0UL, (13606384021850635018UL + 536UL), "encode", 3, (13606384021850635018UL + 539UL), (13606384021850635018UL + 536UL), 0UL, 0UL, "free", 1, (13606384021850635018UL + 539UL), 0UL,
+    init_module(13606384021850635018UL, 22, 6, 7, 8, 6, 1, 7, 4, 0, 3,
+                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (13606384021850635018UL + 79UL), (13606384021850635018UL + 80UL), (13606384021850635018UL + 81UL), (13606384021850635018UL + 132UL),
+                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (13606384021850635018UL + 479UL), (13606384021850635018UL + 480UL), (13606384021850635018UL + 484UL), (13606384021850635018UL + 499UL),
+                           &____alias_loc_id_2, (unsigned)8, (unsigned)0, (unsigned)0, (13606384021850635018UL + 1UL), (13606384021850635018UL + 2UL), (13606384021850635018UL + 3UL), (13606384021850635018UL + 4UL), (13606384021850635018UL + 5UL), (13606384021850635018UL + 6UL), (13606384021850635018UL + 7UL), (13606384021850635018UL + 74UL),
+                           &____alias_loc_id_3, (unsigned)3, (unsigned)0, (unsigned)0, (13606384021850635018UL + 79UL), (13606384021850635018UL + 80UL), (13606384021850635018UL + 132UL),
+                           &____alias_loc_id_4, (unsigned)8, (unsigned)0, (unsigned)0, (13606384021850635018UL + 134UL), (13606384021850635018UL + 135UL), (13606384021850635018UL + 136UL), (13606384021850635018UL + 137UL), (13606384021850635018UL + 138UL), (13606384021850635018UL + 139UL), (13606384021850635018UL + 140UL), (13606384021850635018UL + 231UL),
+                           &____alias_loc_id_5, (unsigned)5, (unsigned)0, (unsigned)0, (13606384021850635018UL + 233UL), (13606384021850635018UL + 234UL), (13606384021850635018UL + 543UL), (13606384021850635018UL + 598UL), (13606384021850635018UL + 600UL),
+                           &____alias_loc_id_6, (unsigned)13, (unsigned)0, (unsigned)0, (13606384021850635018UL + 285UL), (13606384021850635018UL + 286UL), (13606384021850635018UL + 287UL), (13606384021850635018UL + 288UL), (13606384021850635018UL + 289UL), (13606384021850635018UL + 290UL), (13606384021850635018UL + 291UL), (13606384021850635018UL + 292UL), (13606384021850635018UL + 293UL), (13606384021850635018UL + 469UL), (13606384021850635018UL + 470UL), (13606384021850635018UL + 545UL), (13606384021850635018UL + 601UL),
+                           &____alias_loc_id_7, (unsigned)5, (unsigned)0, (unsigned)0, (13606384021850635018UL + 481UL), (13606384021850635018UL + 485UL), (13606384021850635018UL + 487UL), (13606384021850635018UL + 543UL), (13606384021850635018UL + 553UL),
+                            "strlcpy", (void *)(&strlcpy_npm), (void *)__null, 0, 3, (13606384021850635018UL + 74UL), (13606384021850635018UL + 75UL), 0UL, 0UL, 0,
+                            "fill_chartab", (void *)(&fill_chartab_npm), (void *)__null, 1, &____alias_loc_id_0, 1, (13606384021850635018UL + 132UL), 0UL, 1, "tolower", 1, 0UL, 0UL,
+                            "encode", (void *)(&encode_npm), (void *)__null, 0, 3, (13606384021850635018UL + 230UL), (13606384021850635018UL + 231UL), 0UL, 0UL, 0,
+                            "alloc_aln", (void *)(&alloc_aln_npm), (void *)__null, 0, 1, 0UL, 0UL, 4, "malloc", 1, 0UL, (13606384021850635018UL + 543UL), "malloc", 1, 0UL, (13606384021850635018UL + 543UL), "malloc", 1, 0UL, (13606384021850635018UL + 553UL), "malloc", 1, 0UL, (13606384021850635018UL + 545UL),
+                            "get_seq", (void *)(&get_seq_npm), (void *)__null, 0, 4, (13606384021850635018UL + 469UL), (13606384021850635018UL + 470UL), (13606384021850635018UL + 471UL), (13606384021850635018UL + 472UL), (13606384021850635018UL + 545UL), 7, "fgets", 3, (13606384021850635018UL + 601UL), 0UL, (13606384021850635018UL + 472UL), (13606384021850635018UL + 315UL), "strlen", 1, (13606384021850635018UL + 601UL), 0UL, "strlen", 1, (13606384021850635018UL + 601UL), 0UL, "strlcpy", 3, (13606384021850635018UL + 469UL), (13606384021850635018UL + 601UL), 0UL, 0UL, "fgets", 3, (13606384021850635018UL + 601UL), 0UL, (13606384021850635018UL + 472UL), (13606384021850635018UL + 381UL), "malloc", 1, 0UL, (13606384021850635018UL + 545UL), "realloc", 2, (13606384021850635018UL + 545UL), 0UL, (13606384021850635018UL + 545UL),
+                            "readseqs", (void *)(&readseqs_npm), (void *)__null, 1, &____alias_loc_id_1, 2, 0UL, (13606384021850635018UL + 587UL), 0UL, 13, "fopen", 2, (13606384021850635018UL + 587UL), (13606384021850635018UL + 602UL), (13606384021850635018UL + 499UL), "fprintf", 3, (13606384021850635018UL + 530UL), (13606384021850635018UL + 605UL), (13606384021850635018UL + 587UL), 0UL, "exit", 1, 0UL, 0UL, "fscanf", 3, (13606384021850635018UL + 499UL), (13606384021850635018UL + 606UL), (13606384021850635018UL + 483UL), 0UL, "fprintf", 3, (13606384021850635018UL + 530UL), (13606384021850635018UL + 607UL), (13606384021850635018UL + 587UL), 0UL, "exit", 1, 0UL, 0UL, "fill_chartab", 1, (13606384021850635018UL + 486UL), 0UL, "fprintf", 2, (13606384021850635018UL + 530UL), (13606384021850635018UL + 608UL), 0UL, "alloc_aln", 1, 0UL, 0UL, "get_seq", 4, (13606384021850635018UL + 545UL), (13606384021850635018UL + 482UL), (13606384021850635018UL + 486UL), (13606384021850635018UL + 499UL), (13606384021850635018UL + 548UL), "malloc", 1, 0UL, (13606384021850635018UL + 545UL), "encode", 3, (13606384021850635018UL + 548UL), (13606384021850635018UL + 545UL), 0UL, 0UL, "free", 1, (13606384021850635018UL + 548UL), 0UL,
                                "tolower", (void **)&(____chimes_extern_func_tolower),
                            "strlcpy", &(____chimes_does_checkpoint_strlcpy_npm),
                            "fill_chartab", &(____chimes_does_checkpoint_fill_chartab_npm),
@@ -3664,30 +3676,31 @@ static int module_init() {
                            "get_seq", &(____chimes_does_checkpoint_get_seq_npm),
                            "readseqs", &(____chimes_does_checkpoint_readseqs_npm),
                            "tolower", &(____chimes_does_checkpoint_tolower_npm),
-                             (13606384021850635018UL + 586UL), (13606384021850635018UL + 534UL),
-                             (13606384021850635018UL + 472UL), (13606384021850635018UL + 575UL),
-                             (13606384021850635018UL + 584UL), (13606384021850635018UL + 104UL),
-                             (13606384021850635018UL + 477UL), (13606384021850635018UL + 539UL),
-                             (13606384021850635018UL + 592UL), (13606384021850635018UL + 521UL),
-                             (13606384021850635018UL + 534UL), (13606384021850635018UL + 536UL),
-                             (13606384021850635018UL + 131UL), (13606384021850635018UL + 227UL),
-                             (13606384021850635018UL + 588UL), (13606384021850635018UL + 544UL),
-                             (13606384021850635018UL + 130UL), (13606384021850635018UL + 226UL),
-                             (13606384021850635018UL + 1UL), (13606384021850635018UL + 70UL),
-                             (13606384021850635018UL + 288UL), (13606384021850635018UL + 536UL),
-                             (13606384021850635018UL + 75UL), (13606384021850635018UL + 128UL),
-                             (13606384021850635018UL + 2UL), (13606384021850635018UL + 71UL),
-                             (13606384021850635018UL + 5UL), (13606384021850635018UL + 71UL),
-                             (13606384021850635018UL + 4UL), (13606384021850635018UL + 70UL),
-                             (13606384021850635018UL + 281UL), (13606384021850635018UL + 461UL),
-                             (13606384021850635018UL + 476UL), (13606384021850635018UL + 490UL),
-                             (13606384021850635018UL + 283UL), (13606384021850635018UL + 463UL),
-                             (13606384021850635018UL + 282UL), (13606384021850635018UL + 462UL),
-                             (13606384021850635018UL + 284UL), (13606384021850635018UL + 464UL),
-                             (13606384021850635018UL + 136UL), (13606384021850635018UL + 104UL),
-                     "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
-                     "_IO_marker", 0,
-                     "bots_verbose_mode_t", 0,
+                             (13606384021850635018UL + 604UL), (13606384021850635018UL + 530UL),
+                             (13606384021850635018UL + 600UL), (13606384021850635018UL + 553UL),
+                             (13606384021850635018UL + 596UL), (13606384021850635018UL + 108UL),
+                             (13606384021850635018UL + 598UL), (13606384021850635018UL + 543UL),
+                             (13606384021850635018UL + 135UL), (13606384021850635018UL + 231UL),
+                             (13606384021850635018UL + 134UL), (13606384021850635018UL + 230UL),
+                             (13606384021850635018UL + 288UL), (13606384021850635018UL + 472UL),
+                             (13606384021850635018UL + 1UL), (13606384021850635018UL + 74UL),
+                             (13606384021850635018UL + 543UL), (13606384021850635018UL + 545UL),
+                             (13606384021850635018UL + 2UL), (13606384021850635018UL + 75UL),
+                             (13606384021850635018UL + 5UL), (13606384021850635018UL + 75UL),
+                             (13606384021850635018UL + 4UL), (13606384021850635018UL + 74UL),
+                             (13606384021850635018UL + 285UL), (13606384021850635018UL + 469UL),
+                             (13606384021850635018UL + 287UL), (13606384021850635018UL + 471UL),
+                             (13606384021850635018UL + 286UL), (13606384021850635018UL + 470UL),
+                             (13606384021850635018UL + 140UL), (13606384021850635018UL + 108UL),
+                             (13606384021850635018UL + 485UL), (13606384021850635018UL + 548UL),
+                             (13606384021850635018UL + 484UL), (13606384021850635018UL + 499UL),
+                             (13606384021850635018UL + 79UL), (13606384021850635018UL + 132UL),
+                             (13606384021850635018UL + 480UL), (13606384021850635018UL + 587UL),
+                             (13606384021850635018UL + 292UL), (13606384021850635018UL + 545UL),
+                             (13606384021850635018UL + 293UL), (13606384021850635018UL + 545UL),
+                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
+                     "_IO_marker", 0UL, 0,
+                     "bots_verbose_mode_t", 32UL, 0,
                              "fill_chartab", "_Z12fill_chartabPc", 1, "tolower",
                              "strlcpy", "_Z7strlcpyPcPKcm", 0,
                              "get_seq", "_Z7get_seqPcPiS_P8_IO_FILE", 1, "strlcpy",
@@ -3701,10 +3714,10 @@ static int module_init() {
                         "readseqs|no_seqs|0", 1, "readseqs",
                         "readseqs|fin|0", 1, "fill_chartab",
                         "readseqs|chartab|0", 1, "readseqs",
-        "strlcpy", 0UL, (int)3, 13606384021850635479UL, 13606384021850635607UL, 0UL,
+        "strlcpy", 0UL, (int)3, 13606384021850635487UL, 13606384021850635619UL, 0UL,
         "alloc_aln", 0UL, (int)1, 0UL,
-        "get_seq", 13606384021850635557UL, (int)4, 13606384021850635554UL, 13606384021850635492UL, 13606384021850635496UL, 13606384021850635508UL,
-        "encode", 0UL, (int)3, 13606384021850635557UL, 13606384021850635554UL, 0UL);
+        "get_seq", 13606384021850635566UL, (int)4, 13606384021850635563UL, 13606384021850635500UL, 13606384021850635504UL, 13606384021850635517UL,
+        "encode", 0UL, (int)3, 13606384021850635566UL, 13606384021850635563UL, 0UL);
     return 0;
 }
 

@@ -1,5 +1,5 @@
 bots_print_usage _Z16bots_print_usagev 0 DOES_NOT
-bots_get_params_common _Z22bots_get_params_commoniPPc 0 MAY __xpg_basename 291 38 bots_get_date 292 4 bots_print_usage 326 33 bots_print_usage 333 33 bots_print_usage 339 16 bots_print_usage 371 33 bots_print_usage 394 33 bots_print_usage 429 16 bots_print_usage 440 10
+bots_get_params_common _Z22bots_get_params_commoniPPc 0 MAY bots_get_date 292 4 bots_print_usage 326 33 bots_print_usage 333 33 bots_print_usage 339 16 bots_print_usage 371 33 bots_print_usage 394 33 bots_print_usage 429 16 bots_print_usage 440 10
 bots_get_params _Z15bots_get_paramsiPPc 0 MAY bots_get_params_common 451 4
 bots_set_info _Z13bots_set_infov 0 MAY omp_get_max_threads 465 35
 main main 0 MAY bots_get_params 497 4 pairalign_init 498 4 bots_set_info 499 4 align_seq_init 509 7 bots_usecs 513 22 align_seq 514 7 bots_usecs 515 20 align_init 522 4 bots_usecs 526 19 align 527 4 bots_usecs 528 17 align_end 531 4 align_verify 535 20 bots_print_results 541 4

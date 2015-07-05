@@ -24,18 +24,7 @@ static int ____chimes_does_checkpoint_verifyAlignment_npm = 1;
 static int ____chimes_does_checkpoint_verifyData_npm = 1;
 static int ____chimes_does_checkpoint_verifyMergeAlignment_npm = 1;
 
-static int ____must_checkpoint_main_myTaskID_0 = 2;
-static int ____must_checkpoint_main_randomSeed_0 = 2;
-static int ____must_checkpoint_main_mainSeqLength_0 = 2;
-static int ____must_checkpoint_main_matchSeqLength_0 = 2;
-static int ____must_checkpoint_main_startTime_0 = 2;
-static int ____must_checkpoint_main_simMatrix_0 = 2;
-static int ____must_checkpoint_main_seqData_0 = 2;
-static int ____must_checkpoint_main_A_0 = 2;
-static int ____must_checkpoint_main_B_0 = 2;
-static int ____must_checkpoint_main_C_0 = 2;
 
-static int ____must_manage_main = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
@@ -57,6 +46,7 @@ static unsigned ____alias_loc_id_16;
 static unsigned ____alias_loc_id_17;
 static unsigned ____alias_loc_id_18;
 static unsigned ____alias_loc_id_19;
+static unsigned ____alias_loc_id_20;
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -72,7 +62,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -88,7 +78,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -123,7 +114,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2587,6 +2578,19 @@ extern int getdate_r (__const char *__restrict __string,
 }
 # 15 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c" 2
 # 15 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 16 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+
+# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+extern void checkpoint();
+
+extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*____chimes_fp)(void *));
+# 18 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c" 2
+# 18 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 19 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 20 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h" 1
 # 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.h"
@@ -2688,567 +2692,648 @@ void verifyMergeAlignment(SIMMATRIX_T*, CSTR_T*, int);
 double getSeconds(void);
 
 void dispElapsedTime(double);
-# 17 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c" 2
-# 17 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 18 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c" 2
+# 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 static void (*____chimes_extern_func_dispElapsedTime)(double) = dispElapsedTime;static struct astr *(*____chimes_extern_func_freeA)(struct astr *) = freeA;static struct bstr *(*____chimes_extern_func_freeB)(struct bstr *) = freeB;static struct cstr *(*____chimes_extern_func_freeC)(struct cstr *) = freeC;static struct seqdat *(*____chimes_extern_func_freeSeqData)(struct seqdat *) = freeSeqData;static struct simmat *(*____chimes_extern_func_freeSimMatrix)(struct simmat *) = freeSimMatrix;static struct seqdat *(*____chimes_extern_func_genScalData)(unsigned int, struct simmat *, int, int, int) = genScalData;static struct simmat *(*____chimes_extern_func_genSimMatrix)(int, int, int, int, int, int, int) = genSimMatrix;static double (*____chimes_extern_func_getSeconds)(void) = getSeconds;static void (*____chimes_extern_func_getUserParameters)(void) = getUserParameters;static struct cstr *(*____chimes_extern_func_mergeAlignment)(struct bstr *, int, int) = mergeAlignment;static struct astr *(*____chimes_extern_func_pairwiseAlign)(struct seqdat *, struct simmat *, int, int, int) = pairwiseAlign;static struct bstr *(*____chimes_extern_func_scanBackward)(struct astr *, int, int, int) = scanBackward;static void (*____chimes_extern_func_verifyAlignment)(struct simmat *, struct bstr *, int) = verifyAlignment;static void (*____chimes_extern_func_verifyData)(struct simmat *, struct seqdat *, int, int) = verifyData;static void (*____chimes_extern_func_verifyMergeAlignment)(struct simmat *, struct cstr *, int) = verifyMergeAlignment;
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
-int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(18385433520312208249UL)) ; CSTR_T *C;
-BSTR_T *B;
-ASTR_T *A;
-SEQDATA_T *seqData;
-SIMMATRIX_T *simMatrix;
-double startTime;
-int matchSeqLength;
-int mainSeqLength;
-int randomSeed;
-int myTaskID;
- if (____must_checkpoint_main_C_0 || ____must_checkpoint_main_B_0 || ____must_checkpoint_main_A_0 || ____must_checkpoint_main_seqData_0 || ____must_checkpoint_main_simMatrix_0 || ____must_checkpoint_main_startTime_0 || ____must_checkpoint_main_matchSeqLength_0 || ____must_checkpoint_main_mainSeqLength_0 || ____must_checkpoint_main_randomSeed_0 || ____must_checkpoint_main_myTaskID_0) { register_stack_vars(10, "main|C|0", &____must_checkpoint_main_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "main|B|0", &____must_checkpoint_main_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", &____must_checkpoint_main_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "main|seqData|0", &____must_checkpoint_main_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "main|simMatrix|0", &____must_checkpoint_main_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "main|startTime|0", &____must_checkpoint_main_startTime_0, "double", (void *)(&startTime), (size_t)8, 0, 0, 0, "main|matchSeqLength|0", &____must_checkpoint_main_matchSeqLength_0, "i32", (void *)(&matchSeqLength), (size_t)4, 0, 0, 0, "main|mainSeqLength|0", &____must_checkpoint_main_mainSeqLength_0, "i32", (void *)(&mainSeqLength), (size_t)4, 0, 0, 0, "main|randomSeed|0", &____must_checkpoint_main_randomSeed_0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "main|myTaskID|0", &____must_checkpoint_main_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(13): { goto call_lbl_13; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(21): { goto call_lbl_21; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(26): { goto call_lbl_26; } case(27): { goto call_lbl_27; } case(29): { goto call_lbl_29; } case(30): { goto call_lbl_30; } case(32): { goto call_lbl_32; } case(33): { goto call_lbl_33; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(36): { goto call_lbl_36; } case(37): { goto call_lbl_37; } case(38): { goto call_lbl_38; } default: { chimes_error(); } } } ; ;
-# 19 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 20 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   int ierr; ;
-# 21 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   int scale; ;
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  time_t timeVar; ;
+int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(18385433520312208255UL)) ; CSTR_T *C;
 # 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  struct tm *timeStr; ;
+BSTR_T *B;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+ASTR_T *A;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+SEQDATA_T *seqData;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+SIMMATRIX_T *simMatrix;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+double startTime;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+int matchSeqLength;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+int mainSeqLength;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+int randomSeed;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+int myTaskID;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+ register_stack_vars(10, "main|C|0", (int *)0x0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "main|B|0", (int *)0x0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "main|seqData|0", (int *)0x0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "main|simMatrix|0", (int *)0x0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "main|startTime|0", (int *)0x0, "double", (void *)(&startTime), (size_t)8, 0, 0, 0, "main|matchSeqLength|0", (int *)0x0, "i32", (void *)(&matchSeqLength), (size_t)4, 0, 0, 0, "main|mainSeqLength|0", (int *)0x0, "i32", (void *)(&mainSeqLength), (size_t)4, 0, 0, 0, "main|randomSeed|0", (int *)0x0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "main|myTaskID|0", (int *)0x0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(24): { goto call_lbl_24; } case(25): { goto call_lbl_25; } case(27): { goto call_lbl_27; } case(28): { goto call_lbl_28; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(32): { goto call_lbl_32; } case(34): { goto call_lbl_34; } case(35): { goto call_lbl_35; } case(37): { goto call_lbl_37; } case(38): { goto call_lbl_38; } case(39): { goto call_lbl_39; } case(40): { goto call_lbl_40; } case(41): { goto call_lbl_41; } case(42): { goto call_lbl_42; } case(43): { goto call_lbl_43; } case(44): { goto call_lbl_44; } default: { chimes_error(); } } } ; ;
 # 24 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   ;
 # 25 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   ;
+   int ierr; ;
 # 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   ;
+   int scale; ;
 # 27 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   ;
+  time_t timeVar; ;
 # 28 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   ;
+  struct tm *timeStr; ;
 # 29 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
    ;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  myTaskID = 0;
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 30 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   ;
+# 31 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   ;
+# 32 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   ;
+# 33 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   ;
+# 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   ;
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if ( (argc != 1) && (argc != 2) ) {
+# 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  myTaskID = 0;
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    if (myTaskID == 0) {
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-      printf("Usage: %s <2*log2(sequence length)>\n", argv[0]);
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    }
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    exit (1);
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
+  if ( (argc != 1) && (argc != 2) ) {
 # 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    if (myTaskID == 0) {
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (argc == 1) {
+      printf("Usage: %s <2*log2(sequence length)>\n", argv[0]);
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    scale = (30);
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  } else {
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    scale = atoi(argv[1]);
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    if (scale < 0) {
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-      if (myTaskID == 0) {
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
- printf("sequenceAlignment: 2*log2(sequence length) must be >= 0!\n");
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-      }
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-      exit(1);
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
     }
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 65 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    exit (1);
+# 66 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (argc == 1) {
+# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    scale = (30);
+# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  } else {
+# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    scale = atoi(argv[1]);
+# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    if (scale < 0) {
+# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+      if (myTaskID == 0) {
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+ printf("sequenceAlignment: 2*log2(sequence length) must be >= 0!\n");
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+      }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+      exit(1);
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  mainSeqLength = matchSeqLength = 1 << (scale / 2);
+    }
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  mainSeqLength = matchSeqLength = 1 << (scale / 2);
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 84 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_6: (____chimes_does_checkpoint_getUserParameters_npm ? ( ({ calling((void*)getUserParameters, 6, ____alias_loc_id_18, 0UL, 0); (getUserParameters)(); }) ) : (({ calling_npm("getUserParameters", ____alias_loc_id_18); (*____chimes_extern_func_getUserParameters)(); })));
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nHPCS SSCA #1 Bioinformatics Sequence Alignment ");
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("Executable Specification:\nRunning...\n");
 # 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
+   call_lbl_6: (____chimes_does_checkpoint_getUserParameters_npm ? ( ({ calling((void*)getUserParameters, 6, ____alias_loc_id_19, 0UL, 0); (getUserParameters)(); }) ) : (({ calling_npm("getUserParameters", ____alias_loc_id_19); (*____chimes_extern_func_getUserParameters)(); })));
 # 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
 # 93 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\nHPCS SSCA #1 Bioinformatics Sequence Alignment ");
+# 94 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("Executable Specification:\nRunning...\n");
+# 95 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
+# 96 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 97 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 98 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   randomSeed = 1;
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nScalable data generation beginning execution...\n");
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_10: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 10, ____alias_loc_id_17, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", ____alias_loc_id_17); (*____chimes_extern_func_getSeconds)(); })));
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_11: simMatrix = (____chimes_does_checkpoint_genSimMatrix_npm ? ( ({ int ____chimes_arg0; int ____chimes_arg1; int ____chimes_arg2; int ____chimes_arg3; int ____chimes_arg4; int ____chimes_arg5; int ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg0 = ((5)); ____chimes_arg1 = ((4)); ____chimes_arg2 = ((-3)); ____chimes_arg3 = ((8)); ____chimes_arg4 = ((1)); ____chimes_arg5 = ((60)); ____chimes_arg6 = (((64) + 1)); } calling((void*)genSimMatrix, 11, ____alias_loc_id_16, 18385433520312208144UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genSimMatrix)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2, ____chimes_arg3, ____chimes_arg4, ____chimes_arg5, ____chimes_arg6); }) ) : (({ calling_npm("genSimMatrix", ____alias_loc_id_16); (*____chimes_extern_func_genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); })));
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   if (myTaskID == 0) {
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\n\tgenSimMatrix() completed execution.\n");
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\nScalable data generation beginning execution...\n");
+# 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_10: checkpoint_transformed(10, ____alias_loc_id_18);
+# 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_11: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 11, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_13: seqData = (____chimes_does_checkpoint_genScalData_npm ? ( ({ int ____chimes_arg11; if (!____chimes_replaying) { ____chimes_arg11 = (((64) + 1)); } calling((void*)genScalData, 13, ____alias_loc_id_15, 18385433520312208155UL, 5, (size_t)(0UL), (size_t)(18385433520312208144UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ____chimes_arg11); }) ) : (({ calling_npm("genScalData", ____alias_loc_id_15); (*____chimes_extern_func_genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); })));
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\n\tgenScalData() completed execution.\n");
+   call_lbl_12: simMatrix = (____chimes_does_checkpoint_genSimMatrix_npm ? ( ({ int ____chimes_arg0; int ____chimes_arg1; int ____chimes_arg2; int ____chimes_arg3; int ____chimes_arg4; int ____chimes_arg5; int ____chimes_arg6; if (!____chimes_replaying) { ____chimes_arg0 = ((5)); ____chimes_arg1 = ((4)); ____chimes_arg2 = ((-3)); ____chimes_arg3 = ((8)); ____chimes_arg4 = ((1)); ____chimes_arg5 = ((60)); ____chimes_arg6 = (((64) + 1)); } calling((void*)genSimMatrix, 12, ____alias_loc_id_17, 18385433520312208145UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genSimMatrix)(____chimes_arg0, ____chimes_arg1, ____chimes_arg2, ____chimes_arg3, ____chimes_arg4, ____chimes_arg5, ____chimes_arg6); }) ) : (({ calling_npm("genSimMatrix", ____alias_loc_id_17); (*____chimes_extern_func_genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); })));
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
 # 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_15: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 15, ____alias_loc_id_14, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_14); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+    printf("\n\tgenSimMatrix() completed execution.\n");
 # 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
 # 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_14: checkpoint_transformed(14, ____alias_loc_id_16);
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_16: (____chimes_does_checkpoint_verifyData_npm ? ( ({ int ____chimes_arg15; int ____chimes_arg16; if (!____chimes_replaying) { ____chimes_arg15 = ((20)); ____chimes_arg16 = ((5)); } calling((void*)verifyData, 16, ____alias_loc_id_13, 0UL, 4, (size_t)(18385433520312208144UL), (size_t)(18385433520312208155UL), (size_t)(0UL), (size_t)(0UL)); (verifyData)(simMatrix, seqData, ____chimes_arg15, ____chimes_arg16); }) ) : (({ calling_npm("verifyData", ____alias_loc_id_13); (*____chimes_extern_func_verifyData)(simMatrix, seqData, (20), (5)); })));
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_15: seqData = (____chimes_does_checkpoint_genScalData_npm ? ( ({ int ____chimes_arg11; if (!____chimes_replaying) { ____chimes_arg11 = (((64) + 1)); } calling((void*)genScalData, 15, ____alias_loc_id_15, 18385433520312208157UL, 5, (size_t)(0UL), (size_t)(18385433520312208145UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ____chimes_arg11); }) ) : (({ calling_npm("genScalData", ____alias_loc_id_15); (*____chimes_extern_func_genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); })));
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   if (myTaskID == 0) {
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nKernel 1 - pairwiseAlign() beginning execution...\n");
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 142 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\n\tgenScalData() completed execution.\n");
+# 143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_17: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 17, ____alias_loc_id_14, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_14); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+# 146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 147 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_18: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 18, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
+   call_lbl_18: checkpoint_transformed(18, 0);
 # 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_19: A = (____chimes_does_checkpoint_pairwiseAlign_npm ? ( ({ int ____chimes_arg19; int ____chimes_arg20; int ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg19 = ((20)); ____chimes_arg20 = ((200)); ____chimes_arg21 = ((5)); } calling((void*)pairwiseAlign, 19, ____alias_loc_id_12, 18385433520312208176UL, 5, (size_t)(18385433520312208155UL), (size_t)(18385433520312208144UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairwiseAlign)(seqData, simMatrix, ____chimes_arg19, ____chimes_arg20, ____chimes_arg21); }) ) : (({ calling_npm("pairwiseAlign", ____alias_loc_id_12); (*____chimes_extern_func_pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); })));
+# 153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_19: (____chimes_does_checkpoint_verifyData_npm ? ( ({ int ____chimes_arg15; int ____chimes_arg16; if (!____chimes_replaying) { ____chimes_arg15 = ((20)); ____chimes_arg16 = ((5)); } calling((void*)verifyData, 19, ____alias_loc_id_13, 0UL, 4, (size_t)(18385433520312208145UL), (size_t)(18385433520312208157UL), (size_t)(0UL), (size_t)(0UL)); (verifyData)(simMatrix, seqData, ____chimes_arg15, ____chimes_arg16); }) ) : (({ calling_npm("verifyData", ____alias_loc_id_13); (*____chimes_extern_func_verifyData)(simMatrix, seqData, (20), (5)); })));
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\n\tpairwiseAlign() completed execution.\n");
 # 157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_21: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 21, ____alias_loc_id_11, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_11); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
 # 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\nKernel 1 - pairwiseAlign() beginning execution...\n");
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
 # 164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
+   call_lbl_21: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 21, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nKernel 2A - scanBackward() beginning execution...\n");
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_23: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 23, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_22: A = (____chimes_does_checkpoint_pairwiseAlign_npm ? ( ({ int ____chimes_arg19; int ____chimes_arg20; int ____chimes_arg21; if (!____chimes_replaying) { ____chimes_arg19 = ((20)); ____chimes_arg20 = ((200)); ____chimes_arg21 = ((5)); } calling((void*)pairwiseAlign, 22, ____alias_loc_id_12, 18385433520312208179UL, 5, (size_t)(18385433520312208157UL), (size_t)(18385433520312208145UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairwiseAlign)(seqData, simMatrix, ____chimes_arg19, ____chimes_arg20, ____chimes_arg21); }) ) : (({ calling_npm("pairwiseAlign", ____alias_loc_id_12); (*____chimes_extern_func_pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); })));
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_24: B = (____chimes_does_checkpoint_scanBackward_npm ? ( ({ int ____chimes_arg24; int ____chimes_arg25; int ____chimes_arg26; if (!____chimes_replaying) { ____chimes_arg24 = (((200) / 2)); ____chimes_arg25 = ((5)); ____chimes_arg26 = ((3)); } calling((void*)scanBackward, 24, ____alias_loc_id_10, 18385433520312208193UL, 4, (size_t)(18385433520312208176UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (scanBackward)(A, ____chimes_arg24, ____chimes_arg25, ____chimes_arg26); }) ) : (({ calling_npm("scanBackward", ____alias_loc_id_10); (*____chimes_extern_func_scanBackward)(A, ((200)/2), (5), (3)); })));
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   if (myTaskID == 0) {
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\n\tscanBackward() completed execution.\n");
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\n\tpairwiseAlign() completed execution.\n");
+# 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_24: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 24, ____alias_loc_id_11, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_11); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_26: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 26, ____alias_loc_id_9, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_9); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+   call_lbl_25: checkpoint_transformed(25, 0);
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_27: (____chimes_does_checkpoint_verifyAlignment_npm ? ( ({ int ____chimes_arg30; if (!____chimes_replaying) { ____chimes_arg30 = ((6)); } calling((void*)verifyAlignment, 27, ____alias_loc_id_8, 0UL, 3, (size_t)(18385433520312208144UL), (size_t)(18385433520312208193UL), (size_t)(0UL)); (verifyAlignment)(simMatrix, B, ____chimes_arg30); }) ) : (({ calling_npm("verifyAlignment", ____alias_loc_id_8); (*____chimes_extern_func_verifyAlignment)(simMatrix, B, (6)); })));
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\nKernel 2A - scanBackward() beginning execution...\n");
 # 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
 # 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_27: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 27, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
 # 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
 # 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nKernel 2B - mergeAlignment() beginning execution...\n");
 # 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
 # 194 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_28: B = (____chimes_does_checkpoint_scanBackward_npm ? ( ({ int ____chimes_arg24; int ____chimes_arg25; int ____chimes_arg26; if (!____chimes_replaying) { ____chimes_arg24 = (((200) / 2)); ____chimes_arg25 = ((5)); ____chimes_arg26 = ((3)); } calling((void*)scanBackward, 28, ____alias_loc_id_10, 18385433520312208197UL, 4, (size_t)(18385433520312208179UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (scanBackward)(A, ____chimes_arg24, ____chimes_arg25, ____chimes_arg26); }) ) : (({ calling_npm("scanBackward", ____alias_loc_id_10); (*____chimes_extern_func_scanBackward)(A, ((200)/2), (5), (3)); })));
 # 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_29: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 29, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
 # 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_30: C = (____chimes_does_checkpoint_mergeAlignment_npm ? ( ({ int ____chimes_arg32; int ____chimes_arg33; if (!____chimes_replaying) { ____chimes_arg32 = (((200) / 2)); ____chimes_arg33 = ((5)); } calling((void*)mergeAlignment, 30, ____alias_loc_id_7, 18385433520312208213UL, 3, (size_t)(18385433520312208193UL), (size_t)(0UL), (size_t)(0UL)); (mergeAlignment)(B, ____chimes_arg32, ____chimes_arg33); }) ) : (({ calling_npm("mergeAlignment", ____alias_loc_id_7); (*____chimes_extern_func_mergeAlignment)(B, ((200)/2), (5)); })));
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   if (myTaskID == 0) {
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\n\tmergeAlignment() completed execution.\n");
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\n\tscanBackward() completed execution.\n");
+# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_30: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 30, ____alias_loc_id_9, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_9); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_31: checkpoint_transformed(31, 0);
 # 204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_32: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 32, ____alias_loc_id_6, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_6); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_32: (____chimes_does_checkpoint_verifyAlignment_npm ? ( ({ int ____chimes_arg30; if (!____chimes_replaying) { ____chimes_arg30 = ((6)); } calling((void*)verifyAlignment, 32, ____alias_loc_id_8, 0UL, 3, (size_t)(18385433520312208145UL), (size_t)(18385433520312208197UL), (size_t)(0UL)); (verifyAlignment)(simMatrix, B, ____chimes_arg30); }) ) : (({ calling_npm("verifyAlignment", ____alias_loc_id_8); (*____chimes_extern_func_verifyAlignment)(simMatrix, B, (6)); })));
 # 210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_33: (____chimes_does_checkpoint_verifyMergeAlignment_npm ? ( ({ int ____chimes_arg37; if (!____chimes_replaying) { ____chimes_arg37 = ((6)); } calling((void*)verifyMergeAlignment, 33, ____alias_loc_id_5, 0UL, 3, (size_t)(18385433520312208144UL), (size_t)(18385433520312208213UL), (size_t)(0UL)); (verifyMergeAlignment)(simMatrix, C, ____chimes_arg37); }) ) : (({ calling_npm("verifyMergeAlignment", ____alias_loc_id_5); (*____chimes_extern_func_verifyMergeAlignment)(simMatrix, C, (6)); })));
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
 # 217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_34: A = (____chimes_does_checkpoint_freeA_npm ? ( ({ calling((void*)freeA, 34, ____alias_loc_id_4, 18385433520312208176UL, 1, (size_t)(18385433520312208176UL)); (freeA)(A); }) ) : (({ calling_npm("freeA", ____alias_loc_id_4); (*____chimes_extern_func_freeA)(A); })));
+    printf("\nKernel 2B - mergeAlignment() beginning execution...\n");
 # 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_35: B = (____chimes_does_checkpoint_freeB_npm ? ( ({ calling((void*)freeB, 35, ____alias_loc_id_3, 18385433520312208193UL, 1, (size_t)(18385433520312208193UL)); (freeB)(B); }) ) : (({ calling_npm("freeB", ____alias_loc_id_3); (*____chimes_extern_func_freeB)(B); })));
+  }
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_36: C = (____chimes_does_checkpoint_freeC_npm ? ( ({ calling((void*)freeC, 36, ____alias_loc_id_2, 18385433520312208213UL, 1, (size_t)(18385433520312208213UL)); (freeC)(C); }) ) : (({ calling_npm("freeC", ____alias_loc_id_2); (*____chimes_extern_func_freeC)(C); })));
 # 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_37: (____chimes_does_checkpoint_freeSimMatrix_npm ? ( ({ calling((void*)freeSimMatrix, 37, ____alias_loc_id_1, 18385433520312208235UL, 1, (size_t)(18385433520312208144UL)); (freeSimMatrix)(simMatrix); }) ) : (({ calling_npm("freeSimMatrix", ____alias_loc_id_1); (*____chimes_extern_func_freeSimMatrix)(simMatrix); })));
+   call_lbl_34: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 34, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
 # 221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_38: (____chimes_does_checkpoint_freeSeqData_npm ? ( ({ calling((void*)freeSeqData, 38, ____alias_loc_id_0, 18385433520312208237UL, 1, (size_t)(18385433520312208155UL)); (freeSeqData)(seqData); }) ) : (({ calling_npm("freeSeqData", ____alias_loc_id_0); (*____chimes_extern_func_freeSeqData)(seqData); })));
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_35: C = (____chimes_does_checkpoint_mergeAlignment_npm ? ( ({ int ____chimes_arg32; int ____chimes_arg33; if (!____chimes_replaying) { ____chimes_arg32 = (((200) / 2)); ____chimes_arg33 = ((5)); } calling((void*)mergeAlignment, 35, ____alias_loc_id_7, 18385433520312208218UL, 3, (size_t)(18385433520312208197UL), (size_t)(0UL), (size_t)(0UL)); (mergeAlignment)(B, ____chimes_arg32, ____chimes_arg33); }) ) : (({ calling_npm("mergeAlignment", ____alias_loc_id_7); (*____chimes_extern_func_mergeAlignment)(B, ((200)/2), (5)); })));
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   if (myTaskID == 0) {
+# 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\n\tmergeAlignment() completed execution.\n");
 # 228 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nHPCS SSCA #1 Bioinformatics Sequence Alignment ");
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("Executable Specification:\nEnd of test.\n");
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_37: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 37, ____alias_loc_id_6, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_6); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+# 231 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 232 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 233 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_38: checkpoint_transformed(38, 0);
+# 234 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 235 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 236 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 237 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 238 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((0)); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+   call_lbl_39: (____chimes_does_checkpoint_verifyMergeAlignment_npm ? ( ({ int ____chimes_arg37; if (!____chimes_replaying) { ____chimes_arg37 = ((6)); } calling((void*)verifyMergeAlignment, 39, ____alias_loc_id_5, 0UL, 3, (size_t)(18385433520312208145UL), (size_t)(18385433520312208218UL), (size_t)(0UL)); (verifyMergeAlignment)(simMatrix, C, ____chimes_arg37); }) ) : (({ calling_npm("verifyMergeAlignment", ____alias_loc_id_5); (*____chimes_extern_func_verifyMergeAlignment)(simMatrix, C, (6)); })));
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable0); }
-int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(18385433520312208249UL)) ; CSTR_T *C;
-BSTR_T *B;
-ASTR_T *A;
-SEQDATA_T *seqData;
-SIMMATRIX_T *simMatrix;
-double startTime;
-int matchSeqLength;
-int mainSeqLength;
-int randomSeed;
-int myTaskID;
- if (____must_checkpoint_main_C_0 || ____must_checkpoint_main_B_0 || ____must_checkpoint_main_A_0 || ____must_checkpoint_main_seqData_0 || ____must_checkpoint_main_simMatrix_0 || ____must_checkpoint_main_startTime_0 || ____must_checkpoint_main_matchSeqLength_0 || ____must_checkpoint_main_mainSeqLength_0 || ____must_checkpoint_main_randomSeed_0 || ____must_checkpoint_main_myTaskID_0) { register_stack_vars(10, "main|C|0", &____must_checkpoint_main_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "main|B|0", &____must_checkpoint_main_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", &____must_checkpoint_main_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "main|seqData|0", &____must_checkpoint_main_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "main|simMatrix|0", &____must_checkpoint_main_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "main|startTime|0", &____must_checkpoint_main_startTime_0, "double", (void *)(&startTime), (size_t)8, 0, 0, 0, "main|matchSeqLength|0", &____must_checkpoint_main_matchSeqLength_0, "i32", (void *)(&matchSeqLength), (size_t)4, 0, 0, 0, "main|mainSeqLength|0", &____must_checkpoint_main_mainSeqLength_0, "i32", (void *)(&mainSeqLength), (size_t)4, 0, 0, 0, "main|randomSeed|0", &____must_checkpoint_main_randomSeed_0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "main|myTaskID|0", &____must_checkpoint_main_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); } ; ;
-# 19 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 20 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   int ierr; ;
-# 21 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   int scale; ;
-# 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  time_t timeVar; ;
+# 241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 244 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 246 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_40: A = (____chimes_does_checkpoint_freeA_npm ? ( ({ calling((void*)freeA, 40, ____alias_loc_id_4, 18385433520312208179UL, 1, (size_t)(18385433520312208179UL)); (freeA)(A); }) ) : (({ calling_npm("freeA", ____alias_loc_id_4); (*____chimes_extern_func_freeA)(A); })));
+# 247 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_41: B = (____chimes_does_checkpoint_freeB_npm ? ( ({ calling((void*)freeB, 41, ____alias_loc_id_3, 18385433520312208197UL, 1, (size_t)(18385433520312208197UL)); (freeB)(B); }) ) : (({ calling_npm("freeB", ____alias_loc_id_3); (*____chimes_extern_func_freeB)(B); })));
+# 248 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_42: C = (____chimes_does_checkpoint_freeC_npm ? ( ({ calling((void*)freeC, 42, ____alias_loc_id_2, 18385433520312208218UL, 1, (size_t)(18385433520312208218UL)); (freeC)(C); }) ) : (({ calling_npm("freeC", ____alias_loc_id_2); (*____chimes_extern_func_freeC)(C); })));
+# 249 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_43: (____chimes_does_checkpoint_freeSimMatrix_npm ? ( ({ calling((void*)freeSimMatrix, 43, ____alias_loc_id_1, 18385433520312208241UL, 1, (size_t)(18385433520312208145UL)); (freeSimMatrix)(simMatrix); }) ) : (({ calling_npm("freeSimMatrix", ____alias_loc_id_1); (*____chimes_extern_func_freeSimMatrix)(simMatrix); })));
+# 250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_44: (____chimes_does_checkpoint_freeSeqData_npm ? ( ({ calling((void*)freeSeqData, 44, ____alias_loc_id_0, 18385433520312208243UL, 1, (size_t)(18385433520312208157UL)); (freeSeqData)(seqData); }) ) : (({ calling_npm("freeSeqData", ____alias_loc_id_0); (*____chimes_extern_func_freeSeqData)(seqData); })));
+# 251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 254 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 255 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 256 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
+# 257 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\nHPCS SSCA #1 Bioinformatics Sequence Alignment ");
+# 258 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("Executable Specification:\nEnd of test.\n");
+# 259 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
+# 268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable0, false); }
 # 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  struct tm *timeStr; ;
+int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(18385433520312208255UL)) ; CSTR_T *C;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+BSTR_T *B;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+ASTR_T *A;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+SEQDATA_T *seqData;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+SIMMATRIX_T *simMatrix;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+double startTime;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+int matchSeqLength;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+int mainSeqLength;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+int randomSeed;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+int myTaskID;
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+ register_stack_vars(10, "main|C|0", (int *)0x0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "main|B|0", (int *)0x0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "main|A|0", (int *)0x0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "main|seqData|0", (int *)0x0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "main|simMatrix|0", (int *)0x0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "main|startTime|0", (int *)0x0, "double", (void *)(&startTime), (size_t)8, 0, 0, 0, "main|matchSeqLength|0", (int *)0x0, "i32", (void *)(&matchSeqLength), (size_t)4, 0, 0, 0, "main|mainSeqLength|0", (int *)0x0, "i32", (void *)(&mainSeqLength), (size_t)4, 0, 0, 0, "main|randomSeed|0", (int *)0x0, "i32", (void *)(&randomSeed), (size_t)4, 0, 0, 0, "main|myTaskID|0", (int *)0x0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); ; ;
 # 24 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   ;
 # 25 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   ;
+   int ierr; ;
 # 26 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   ;
+   int scale; ;
 # 27 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   ;
+  time_t timeVar; ;
 # 28 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   ;
+  struct tm *timeStr; ;
 # 29 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
    ;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  myTaskID = 0;
-# 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 54 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 55 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 30 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   ;
+# 31 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   ;
+# 32 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   ;
+# 33 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   ;
+# 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   ;
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if ( (argc != 1) && (argc != 2) ) {
+# 56 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  myTaskID = 0;
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    if (myTaskID == 0) {
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-      printf("Usage: %s <2*log2(sequence length)>\n", argv[0]);
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    }
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    exit (1);
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
+  if ( (argc != 1) && (argc != 2) ) {
 # 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    if (myTaskID == 0) {
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (argc == 1) {
+      printf("Usage: %s <2*log2(sequence length)>\n", argv[0]);
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    scale = (30);
-# 65 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  } else {
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    scale = atoi(argv[1]);
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    if (scale < 0) {
-# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-      if (myTaskID == 0) {
-# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
- printf("sequenceAlignment: 2*log2(sequence length) must be >= 0!\n");
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-      }
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-      exit(1);
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
     }
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 65 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    exit (1);
+# 66 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (argc == 1) {
+# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    scale = (30);
+# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  } else {
+# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    scale = atoi(argv[1]);
+# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    if (scale < 0) {
+# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+      if (myTaskID == 0) {
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+ printf("sequenceAlignment: 2*log2(sequence length) must be >= 0!\n");
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+      }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+      exit(1);
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  mainSeqLength = matchSeqLength = 1 << (scale / 2);
+    }
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 80 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 81 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  mainSeqLength = matchSeqLength = 1 << (scale / 2);
 # 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 84 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_6: (____chimes_does_checkpoint_getUserParameters_npm ? ( ({ calling((void*)getUserParameters, 6, ____alias_loc_id_18, 0UL, 0); (getUserParameters)(); }) ) : (({ calling_npm("getUserParameters", ____alias_loc_id_18); (*____chimes_extern_func_getUserParameters)(); })));
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nHPCS SSCA #1 Bioinformatics Sequence Alignment ");
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("Executable Specification:\nRunning...\n");
 # 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
+   call_lbl_6: (____chimes_does_checkpoint_getUserParameters_npm ? ( ({ calling((void*)getUserParameters, 6, ____alias_loc_id_19, 0UL, 0); (getUserParameters)(); }) ) : (({ calling_npm("getUserParameters", ____alias_loc_id_19); (*____chimes_extern_func_getUserParameters)(); })));
 # 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
 # 93 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\nHPCS SSCA #1 Bioinformatics Sequence Alignment ");
+# 94 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("Executable Specification:\nRunning...\n");
+# 95 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
+# 96 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 97 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 98 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   randomSeed = 1;
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nScalable data generation beginning execution...\n");
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_10: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 10, ____alias_loc_id_17, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", ____alias_loc_id_17); (*____chimes_extern_func_getSeconds)(); })));
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_11: simMatrix = (____chimes_does_checkpoint_genSimMatrix_npm ? ( ({ calling((void*)genSimMatrix, 11, ____alias_loc_id_16, 18385433520312208144UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); }) ) : (({ calling_npm("genSimMatrix", ____alias_loc_id_16); (*____chimes_extern_func_genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); })));
-# 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   if (myTaskID == 0) {
-# 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\n\tgenSimMatrix() completed execution.\n");
-# 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\nScalable data generation beginning execution...\n");
+# 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_10: checkpoint_transformed(10, ____alias_loc_id_18);
+# 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_11: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 11, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_13: seqData = (____chimes_does_checkpoint_genScalData_npm ? ( ({ calling((void*)genScalData, 13, ____alias_loc_id_15, 18385433520312208155UL, 5, (size_t)(0UL), (size_t)(18385433520312208144UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); }) ) : (({ calling_npm("genScalData", ____alias_loc_id_15); (*____chimes_extern_func_genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); })));
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
-# 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\n\tgenScalData() completed execution.\n");
+   call_lbl_12: simMatrix = (____chimes_does_checkpoint_genSimMatrix_npm ? ( ({ calling((void*)genSimMatrix, 12, ____alias_loc_id_17, 18385433520312208145UL, 7, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); }) ) : (({ calling_npm("genSimMatrix", ____alias_loc_id_17); (*____chimes_extern_func_genSimMatrix)((5), (4), (-3), (8), (1), (60), ((64) + 1)); })));
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
 # 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_15: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 15, ____alias_loc_id_14, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_14); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+    printf("\n\tgenSimMatrix() completed execution.\n");
 # 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
 # 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_14: checkpoint_transformed(14, ____alias_loc_id_16);
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_16: (____chimes_does_checkpoint_verifyData_npm ? ( ({ calling((void*)verifyData, 16, ____alias_loc_id_13, 0UL, 4, (size_t)(18385433520312208144UL), (size_t)(18385433520312208155UL), (size_t)(0UL), (size_t)(0UL)); (verifyData)(simMatrix, seqData, (20), (5)); }) ) : (({ calling_npm("verifyData", ____alias_loc_id_13); (*____chimes_extern_func_verifyData)(simMatrix, seqData, (20), (5)); })));
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_15: seqData = (____chimes_does_checkpoint_genScalData_npm ? ( ({ calling((void*)genScalData, 15, ____alias_loc_id_15, 18385433520312208157UL, 5, (size_t)(0UL), (size_t)(18385433520312208145UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); }) ) : (({ calling_npm("genScalData", ____alias_loc_id_15); (*____chimes_extern_func_genScalData)(randomSeed, simMatrix, mainSeqLength, matchSeqLength, ((64) + 1)); })));
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 142 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   if (myTaskID == 0) {
-# 145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nKernel 1 - pairwiseAlign() beginning execution...\n");
-# 146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 142 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\n\tgenScalData() completed execution.\n");
+# 143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_17: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 17, ____alias_loc_id_14, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_14); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+# 146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 147 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_18: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 18, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
+   call_lbl_18: checkpoint_transformed(18, 0);
 # 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_19: A = (____chimes_does_checkpoint_pairwiseAlign_npm ? ( ({ calling((void*)pairwiseAlign, 19, ____alias_loc_id_12, 18385433520312208176UL, 5, (size_t)(18385433520312208155UL), (size_t)(18385433520312208144UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); }) ) : (({ calling_npm("pairwiseAlign", ____alias_loc_id_12); (*____chimes_extern_func_pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); })));
+# 153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_19: (____chimes_does_checkpoint_verifyData_npm ? ( ({ calling((void*)verifyData, 19, ____alias_loc_id_13, 0UL, 4, (size_t)(18385433520312208145UL), (size_t)(18385433520312208157UL), (size_t)(0UL), (size_t)(0UL)); (verifyData)(simMatrix, seqData, (20), (5)); }) ) : (({ calling_npm("verifyData", ____alias_loc_id_13); (*____chimes_extern_func_verifyData)(simMatrix, seqData, (20), (5)); })));
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\n\tpairwiseAlign() completed execution.\n");
 # 157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_21: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 21, ____alias_loc_id_11, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_11); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
 # 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\nKernel 1 - pairwiseAlign() beginning execution...\n");
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
 # 164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
+   call_lbl_21: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 21, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nKernel 2A - scanBackward() beginning execution...\n");
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_23: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 23, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
-# 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_22: A = (____chimes_does_checkpoint_pairwiseAlign_npm ? ( ({ calling((void*)pairwiseAlign, 22, ____alias_loc_id_12, 18385433520312208179UL, 5, (size_t)(18385433520312208157UL), (size_t)(18385433520312208145UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); }) ) : (({ calling_npm("pairwiseAlign", ____alias_loc_id_12); (*____chimes_extern_func_pairwiseAlign)(seqData, simMatrix, (20), (200), (5)); })));
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_24: B = (____chimes_does_checkpoint_scanBackward_npm ? ( ({ calling((void*)scanBackward, 24, ____alias_loc_id_10, 18385433520312208193UL, 4, (size_t)(18385433520312208176UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (scanBackward)(A, ((200) / 2), (5), (3)); }) ) : (({ calling_npm("scanBackward", ____alias_loc_id_10); (*____chimes_extern_func_scanBackward)(A, ((200)/2), (5), (3)); })));
-# 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   if (myTaskID == 0) {
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\n\tscanBackward() completed execution.\n");
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\n\tpairwiseAlign() completed execution.\n");
+# 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_24: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 24, ____alias_loc_id_11, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_11); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_26: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 26, ____alias_loc_id_9, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_9); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+   call_lbl_25: checkpoint_transformed(25, 0);
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_27: (____chimes_does_checkpoint_verifyAlignment_npm ? ( ({ calling((void*)verifyAlignment, 27, ____alias_loc_id_8, 0UL, 3, (size_t)(18385433520312208144UL), (size_t)(18385433520312208193UL), (size_t)(0UL)); (verifyAlignment)(simMatrix, B, (6)); }) ) : (({ calling_npm("verifyAlignment", ____alias_loc_id_8); (*____chimes_extern_func_verifyAlignment)(simMatrix, B, (6)); })));
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\nKernel 2A - scanBackward() beginning execution...\n");
 # 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
 # 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_27: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 27, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
 # 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  if (myTaskID == 0) {
 # 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nKernel 2B - mergeAlignment() beginning execution...\n");
 # 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  }
 # 194 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_28: B = (____chimes_does_checkpoint_scanBackward_npm ? ( ({ calling((void*)scanBackward, 28, ____alias_loc_id_10, 18385433520312208197UL, 4, (size_t)(18385433520312208179UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (scanBackward)(A, ((200) / 2), (5), (3)); }) ) : (({ calling_npm("scanBackward", ____alias_loc_id_10); (*____chimes_extern_func_scanBackward)(A, ((200)/2), (5), (3)); })));
 # 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_29: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 29, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
 # 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_30: C = (____chimes_does_checkpoint_mergeAlignment_npm ? ( ({ calling((void*)mergeAlignment, 30, ____alias_loc_id_7, 18385433520312208213UL, 3, (size_t)(18385433520312208193UL), (size_t)(0UL), (size_t)(0UL)); (mergeAlignment)(B, ((200) / 2), (5)); }) ) : (({ calling_npm("mergeAlignment", ____alias_loc_id_7); (*____chimes_extern_func_mergeAlignment)(B, ((200)/2), (5)); })));
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   if (myTaskID == 0) {
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\n\tmergeAlignment() completed execution.\n");
-# 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\n\tscanBackward() completed execution.\n");
+# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_30: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 30, ____alias_loc_id_9, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_9); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_31: checkpoint_transformed(31, 0);
 # 204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_32: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 32, ____alias_loc_id_6, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_6); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_32: (____chimes_does_checkpoint_verifyAlignment_npm ? ( ({ calling((void*)verifyAlignment, 32, ____alias_loc_id_8, 0UL, 3, (size_t)(18385433520312208145UL), (size_t)(18385433520312208197UL), (size_t)(0UL)); (verifyAlignment)(simMatrix, B, (6)); }) ) : (({ calling_npm("verifyAlignment", ____alias_loc_id_8); (*____chimes_extern_func_verifyAlignment)(simMatrix, B, (6)); })));
 # 210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_33: (____chimes_does_checkpoint_verifyMergeAlignment_npm ? ( ({ calling((void*)verifyMergeAlignment, 33, ____alias_loc_id_5, 0UL, 3, (size_t)(18385433520312208144UL), (size_t)(18385433520312208213UL), (size_t)(0UL)); (verifyMergeAlignment)(simMatrix, C, (6)); }) ) : (({ calling_npm("verifyMergeAlignment", ____alias_loc_id_5); (*____chimes_extern_func_verifyMergeAlignment)(simMatrix, C, (6)); })));
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
 # 217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_34: A = (____chimes_does_checkpoint_freeA_npm ? ( ({ calling((void*)freeA, 34, ____alias_loc_id_4, 18385433520312208176UL, 1, (size_t)(18385433520312208176UL)); (freeA)(A); }) ) : (({ calling_npm("freeA", ____alias_loc_id_4); (*____chimes_extern_func_freeA)(A); })));
+    printf("\nKernel 2B - mergeAlignment() beginning execution...\n");
 # 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_35: B = (____chimes_does_checkpoint_freeB_npm ? ( ({ calling((void*)freeB, 35, ____alias_loc_id_3, 18385433520312208193UL, 1, (size_t)(18385433520312208193UL)); (freeB)(B); }) ) : (({ calling_npm("freeB", ____alias_loc_id_3); (*____chimes_extern_func_freeB)(B); })));
+  }
 # 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_36: C = (____chimes_does_checkpoint_freeC_npm ? ( ({ calling((void*)freeC, 36, ____alias_loc_id_2, 18385433520312208213UL, 1, (size_t)(18385433520312208213UL)); (freeC)(C); }) ) : (({ calling_npm("freeC", ____alias_loc_id_2); (*____chimes_extern_func_freeC)(C); })));
 # 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_37: (____chimes_does_checkpoint_freeSimMatrix_npm ? ( ({ calling((void*)freeSimMatrix, 37, ____alias_loc_id_1, 18385433520312208235UL, 1, (size_t)(18385433520312208144UL)); (freeSimMatrix)(simMatrix); }) ) : (({ calling_npm("freeSimMatrix", ____alias_loc_id_1); (*____chimes_extern_func_freeSimMatrix)(simMatrix); })));
+   call_lbl_34: startTime = (____chimes_does_checkpoint_getSeconds_npm ? ( ({ calling((void*)getSeconds, 34, 0, 0UL, 0); (getSeconds)(); }) ) : (({ calling_npm("getSeconds", 0); (*____chimes_extern_func_getSeconds)(); })));
 # 221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-   call_lbl_38: (____chimes_does_checkpoint_freeSeqData_npm ? ( ({ calling((void*)freeSeqData, 38, ____alias_loc_id_0, 18385433520312208237UL, 1, (size_t)(18385433520312208155UL)); (freeSeqData)(seqData); }) ) : (({ calling_npm("freeSeqData", ____alias_loc_id_0); (*____chimes_extern_func_freeSeqData)(seqData); })));
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_35: C = (____chimes_does_checkpoint_mergeAlignment_npm ? ( ({ calling((void*)mergeAlignment, 35, ____alias_loc_id_7, 18385433520312208218UL, 3, (size_t)(18385433520312208197UL), (size_t)(0UL), (size_t)(0UL)); (mergeAlignment)(B, ((200) / 2), (5)); }) ) : (({ calling_npm("mergeAlignment", ____alias_loc_id_7); (*____chimes_extern_func_mergeAlignment)(B, ((200)/2), (5)); })));
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   if (myTaskID == 0) {
+# 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\n\tmergeAlignment() completed execution.\n");
 # 228 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("\nHPCS SSCA #1 Bioinformatics Sequence Alignment ");
-# 229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-    printf("Executable Specification:\nEnd of test.\n");
-# 230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
   }
+# 229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_37: (____chimes_does_checkpoint_dispElapsedTime_npm ? ( ({ calling((void*)dispElapsedTime, 37, ____alias_loc_id_6, 0UL, 1, (size_t)(0UL)); (dispElapsedTime)(startTime); }) ) : (({ calling_npm("dispElapsedTime", ____alias_loc_id_6); (*____chimes_extern_func_dispElapsedTime)(startTime); })));
+# 231 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 232 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 233 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_38: checkpoint_transformed(38, 0);
+# 234 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 235 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 236 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 237 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 238 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 239 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((0)); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+   call_lbl_39: (____chimes_does_checkpoint_verifyMergeAlignment_npm ? ( ({ calling((void*)verifyMergeAlignment, 39, ____alias_loc_id_5, 0UL, 3, (size_t)(18385433520312208145UL), (size_t)(18385433520312208218UL), (size_t)(0UL)); (verifyMergeAlignment)(simMatrix, C, (6)); }) ) : (({ calling_npm("verifyMergeAlignment", ____alias_loc_id_5); (*____chimes_extern_func_verifyMergeAlignment)(simMatrix, C, (6)); })));
 # 240 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_19, ____chimes_did_disable0); }
+# 241 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 243 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 244 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 246 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_40: A = (____chimes_does_checkpoint_freeA_npm ? ( ({ calling((void*)freeA, 40, ____alias_loc_id_4, 18385433520312208179UL, 1, (size_t)(18385433520312208179UL)); (freeA)(A); }) ) : (({ calling_npm("freeA", ____alias_loc_id_4); (*____chimes_extern_func_freeA)(A); })));
+# 247 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_41: B = (____chimes_does_checkpoint_freeB_npm ? ( ({ calling((void*)freeB, 41, ____alias_loc_id_3, 18385433520312208197UL, 1, (size_t)(18385433520312208197UL)); (freeB)(B); }) ) : (({ calling_npm("freeB", ____alias_loc_id_3); (*____chimes_extern_func_freeB)(B); })));
+# 248 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_42: C = (____chimes_does_checkpoint_freeC_npm ? ( ({ calling((void*)freeC, 42, ____alias_loc_id_2, 18385433520312208218UL, 1, (size_t)(18385433520312208218UL)); (freeC)(C); }) ) : (({ calling_npm("freeC", ____alias_loc_id_2); (*____chimes_extern_func_freeC)(C); })));
+# 249 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_43: (____chimes_does_checkpoint_freeSimMatrix_npm ? ( ({ calling((void*)freeSimMatrix, 43, ____alias_loc_id_1, 18385433520312208241UL, 1, (size_t)(18385433520312208145UL)); (freeSimMatrix)(simMatrix); }) ) : (({ calling_npm("freeSimMatrix", ____alias_loc_id_1); (*____chimes_extern_func_freeSimMatrix)(simMatrix); })));
+# 250 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+   call_lbl_44: (____chimes_does_checkpoint_freeSeqData_npm ? ( ({ calling((void*)freeSeqData, 44, ____alias_loc_id_0, 18385433520312208243UL, 1, (size_t)(18385433520312208157UL)); (freeSeqData)(seqData); }) ) : (({ calling_npm("freeSeqData", ____alias_loc_id_0); (*____chimes_extern_func_freeSeqData)(seqData); })));
+# 251 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 252 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 253 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 254 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 255 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 256 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  if (myTaskID == 0) {
+# 257 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("\nHPCS SSCA #1 Bioinformatics Sequence Alignment ");
+# 258 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+    printf("Executable Specification:\nEnd of test.\n");
+# 259 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  }
+# 268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+# 268 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((0)); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 269 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_20, ____chimes_did_disable0, false); }
 
-int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
 
 
@@ -3257,27 +3342,28 @@ int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? 
 
 
 static int module_init() {
-    init_module(18385433520312208048UL, 7, 1, 10, 20, 0, 16, 16, 0, 22, 6,
-                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "freeSeqData", (unsigned)2, (18385433520312208048UL + 107UL), (18385433520312208048UL + 189UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 17UL), "freeSimMatrix", (unsigned)2, (18385433520312208048UL + 96UL), (18385433520312208048UL + 187UL),
-                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 16UL), "freeC", (unsigned)1, (18385433520312208048UL + 165UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 15UL), "freeB", (unsigned)1, (18385433520312208048UL + 145UL),
-                           &____alias_loc_id_4, (unsigned)0, (unsigned)0, (unsigned)1, "freeA", (unsigned)1, (18385433520312208048UL + 128UL),
-                           &____alias_loc_id_5, (unsigned)0, (unsigned)0, (unsigned)1, "verifyMergeAlignment", (unsigned)2, (18385433520312208048UL + 96UL), (18385433520312208048UL + 165UL),
+    init_module(18385433520312208048UL, 7, 1, 0, 21, 0, 16, 16, 0, 22, 6,
+                           &____alias_loc_id_0, (unsigned)0, (unsigned)0, (unsigned)1, "freeSeqData", (unsigned)2, (18385433520312208048UL + 109UL), (18385433520312208048UL + 195UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 17UL), "freeSimMatrix", (unsigned)2, (18385433520312208048UL + 97UL), (18385433520312208048UL + 193UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 16UL), "freeC", (unsigned)1, (18385433520312208048UL + 170UL),
+                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 15UL), "freeB", (unsigned)1, (18385433520312208048UL + 149UL),
+                           &____alias_loc_id_4, (unsigned)0, (unsigned)0, (unsigned)1, "freeA", (unsigned)1, (18385433520312208048UL + 131UL),
+                           &____alias_loc_id_5, (unsigned)0, (unsigned)0, (unsigned)1, "verifyMergeAlignment", (unsigned)2, (18385433520312208048UL + 97UL), (18385433520312208048UL + 170UL),
                            &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)0, (18385433520312208048UL + 17UL),
-                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 12UL), "mergeAlignment", (unsigned)2, (18385433520312208048UL + 145UL), (18385433520312208048UL + 165UL),
-                           &____alias_loc_id_8, (unsigned)0, (unsigned)0, (unsigned)1, "verifyAlignment", (unsigned)2, (18385433520312208048UL + 96UL), (18385433520312208048UL + 145UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 12UL), "mergeAlignment", (unsigned)2, (18385433520312208048UL + 149UL), (18385433520312208048UL + 170UL),
+                           &____alias_loc_id_8, (unsigned)0, (unsigned)0, (unsigned)1, "verifyAlignment", (unsigned)2, (18385433520312208048UL + 97UL), (18385433520312208048UL + 149UL),
                            &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)0, (18385433520312208048UL + 16UL),
-                            &____alias_loc_id_10, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 12UL), "scanBackward", (unsigned)2, (18385433520312208048UL + 128UL), (18385433520312208048UL + 145UL),
+                            &____alias_loc_id_10, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 12UL), "scanBackward", (unsigned)2, (18385433520312208048UL + 131UL), (18385433520312208048UL + 149UL),
                             &____alias_loc_id_11, (unsigned)1, (unsigned)0, (unsigned)0, (18385433520312208048UL + 15UL),
-                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 12UL), "pairwiseAlign", (unsigned)3, (18385433520312208048UL + 96UL), (18385433520312208048UL + 107UL), (18385433520312208048UL + 128UL),
-                            &____alias_loc_id_13, (unsigned)0, (unsigned)0, (unsigned)1, "verifyData", (unsigned)2, (18385433520312208048UL + 96UL), (18385433520312208048UL + 107UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 12UL), "pairwiseAlign", (unsigned)3, (18385433520312208048UL + 97UL), (18385433520312208048UL + 109UL), (18385433520312208048UL + 131UL),
+                            &____alias_loc_id_13, (unsigned)0, (unsigned)0, (unsigned)1, "verifyData", (unsigned)2, (18385433520312208048UL + 97UL), (18385433520312208048UL + 109UL),
                             &____alias_loc_id_14, (unsigned)1, (unsigned)0, (unsigned)0, (18385433520312208048UL + 14UL),
-                            &____alias_loc_id_15, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 13UL), "genScalData", (unsigned)2, (18385433520312208048UL + 96UL), (18385433520312208048UL + 107UL),
-                            &____alias_loc_id_16, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 12UL), "genSimMatrix", (unsigned)1, (18385433520312208048UL + 96UL),
-                            &____alias_loc_id_17, (unsigned)1, (unsigned)0, (unsigned)0, (18385433520312208048UL + 6UL),
-                            &____alias_loc_id_18, (unsigned)7, (unsigned)0, (unsigned)0, (18385433520312208048UL + 1UL), (18385433520312208048UL + 2UL), (18385433520312208048UL + 3UL), (18385433520312208048UL + 4UL), (18385433520312208048UL + 7UL), (18385433520312208048UL + 8UL), (18385433520312208048UL + 9UL),
-                            &____alias_loc_id_19, (unsigned)1, (unsigned)0, (unsigned)0, (18385433520312208048UL + 18UL),
+                            &____alias_loc_id_15, (unsigned)0, (unsigned)0, (unsigned)1, "genScalData", (unsigned)2, (18385433520312208048UL + 97UL), (18385433520312208048UL + 109UL),
+                            &____alias_loc_id_16, (unsigned)1, (unsigned)0, (unsigned)0, (18385433520312208048UL + 13UL),
+                            &____alias_loc_id_17, (unsigned)1, (unsigned)0, (unsigned)1, (18385433520312208048UL + 12UL), "genSimMatrix", (unsigned)1, (18385433520312208048UL + 97UL),
+                            &____alias_loc_id_18, (unsigned)1, (unsigned)0, (unsigned)0, (18385433520312208048UL + 6UL),
+                            &____alias_loc_id_19, (unsigned)7, (unsigned)0, (unsigned)0, (18385433520312208048UL + 1UL), (18385433520312208048UL + 2UL), (18385433520312208048UL + 3UL), (18385433520312208048UL + 4UL), (18385433520312208048UL + 7UL), (18385433520312208048UL + 8UL), (18385433520312208048UL + 9UL),
+                            &____alias_loc_id_20, (unsigned)1, (unsigned)0, (unsigned)0, (18385433520312208048UL + 18UL),
                                "dispElapsedTime", (void **)&(____chimes_extern_func_dispElapsedTime),
                                "freeA", (void **)&(____chimes_extern_func_freeA),
                                "freeB", (void **)&(____chimes_extern_func_freeB),
@@ -3310,52 +3396,42 @@ static int module_init() {
                            "verifyAlignment", &(____chimes_does_checkpoint_verifyAlignment_npm),
                            "verifyData", &(____chimes_does_checkpoint_verifyData_npm),
                            "verifyMergeAlignment", &(____chimes_does_checkpoint_verifyMergeAlignment_npm),
-                             (18385433520312208048UL + 201UL), (18385433520312208048UL + 62UL),
-                             (18385433520312208048UL + 13UL), (18385433520312208048UL + 96UL),
-                             (18385433520312208048UL + 15UL), (18385433520312208048UL + 128UL),
-                             (18385433520312208048UL + 14UL), (18385433520312208048UL + 107UL),
-                             (18385433520312208048UL + 17UL), (18385433520312208048UL + 165UL),
-                             (18385433520312208048UL + 16UL), (18385433520312208048UL + 145UL),
-                             (18385433520312208048UL + 3UL), (18385433520312208048UL + 201UL),
-                     "astr", 7, "%struct.seqdat*", (int)__builtin_offsetof (struct astr, seqData), "%struct.simmat*", (int)__builtin_offsetof (struct astr, simMatrix), "long long int**", (int)__builtin_offsetof (struct astr, goodScores), "int", (int)__builtin_offsetof (struct astr, numThreads), "int*", (int)__builtin_offsetof (struct astr, numReports), "int**", (int)__builtin_offsetof (struct astr, goodEndsI), "int**", (int)__builtin_offsetof (struct astr, goodEndsJ),
-                     "bstr", 9, "long long int**", (int)__builtin_offsetof (struct bstr, bestScores), "int", (int)__builtin_offsetof (struct bstr, numThreads), "int*", (int)__builtin_offsetof (struct bstr, numReports), "int**", (int)__builtin_offsetof (struct bstr, bestStartsI), "int**", (int)__builtin_offsetof (struct bstr, bestStartsJ), "int**", (int)__builtin_offsetof (struct bstr, bestEndsI), "int**", (int)__builtin_offsetof (struct bstr, bestEndsJ), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsI), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsJ),
-                     "cstr", 8, "long long int*", (int)__builtin_offsetof (struct cstr, finalScores), "int", (int)__builtin_offsetof (struct cstr, numReports), "int*", (int)__builtin_offsetof (struct cstr, finalStartsI), "int*", (int)__builtin_offsetof (struct cstr, finalStartsJ), "int*", (int)__builtin_offsetof (struct cstr, finalEndsI), "int*", (int)__builtin_offsetof (struct cstr, finalEndsJ), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsI), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsJ),
-                     "seqdat", 5, "unsigned char*", (int)__builtin_offsetof (struct seqdat, main), "unsigned char*", (int)__builtin_offsetof (struct seqdat, match), "int", (int)__builtin_offsetof (struct seqdat, mainLen), "int", (int)__builtin_offsetof (struct seqdat, matchLen), "int", (int)__builtin_offsetof (struct seqdat, maxValidation),
-                     "simmat", 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
-                     "tm", 0,
-                             "main", "main", 22, "getUserParameters", "getSeconds", "genSimMatrix", "genScalData", "dispElapsedTime", "verifyData", "getSeconds", "pairwiseAlign", "dispElapsedTime", "getSeconds", "scanBackward", "dispElapsedTime", "verifyAlignment", "getSeconds", "mergeAlignment", "dispElapsedTime", "verifyMergeAlignment", "freeA", "freeB", "freeC", "freeSimMatrix", "freeSeqData",
-                        "main|myTaskID|0", 16, "verifyMergeAlignment", "verifyData", "verifyAlignment", "scanBackward", "pairwiseAlign", "mergeAlignment", "getUserParameters", "getSeconds", "genSimMatrix", "genScalData", "freeSimMatrix", "freeSeqData", "freeC", "freeB", "freeA", "dispElapsedTime",
-                        "main|randomSeed|0", 15, "verifyMergeAlignment", "verifyData", "verifyAlignment", "scanBackward", "pairwiseAlign", "mergeAlignment", "getSeconds", "genSimMatrix", "genScalData", "freeSimMatrix", "freeSeqData", "freeC", "freeB", "freeA", "dispElapsedTime",
-                        "main|mainSeqLength|0", 16, "verifyMergeAlignment", "verifyData", "verifyAlignment", "scanBackward", "pairwiseAlign", "mergeAlignment", "getUserParameters", "getSeconds", "genSimMatrix", "genScalData", "freeSimMatrix", "freeSeqData", "freeC", "freeB", "freeA", "dispElapsedTime",
-                        "main|matchSeqLength|0", 16, "verifyMergeAlignment", "verifyData", "verifyAlignment", "scanBackward", "pairwiseAlign", "mergeAlignment", "getUserParameters", "getSeconds", "genSimMatrix", "genScalData", "freeSimMatrix", "freeSeqData", "freeC", "freeB", "freeA", "dispElapsedTime",
-                        "main|startTime|0", 15, "verifyMergeAlignment", "verifyData", "verifyAlignment", "scanBackward", "pairwiseAlign", "mergeAlignment", "getSeconds", "genSimMatrix", "genScalData", "freeSimMatrix", "freeSeqData", "freeC", "freeB", "freeA", "dispElapsedTime",
-                        "main|simMatrix|0", 14, "verifyMergeAlignment", "verifyData", "verifyAlignment", "scanBackward", "pairwiseAlign", "mergeAlignment", "getSeconds", "genScalData", "freeSimMatrix", "freeSeqData", "freeC", "freeB", "freeA", "dispElapsedTime",
-                        "main|seqData|0", 13, "verifyMergeAlignment", "verifyData", "verifyAlignment", "scanBackward", "pairwiseAlign", "mergeAlignment", "getSeconds", "freeSimMatrix", "freeSeqData", "freeC", "freeB", "freeA", "dispElapsedTime",
-                        "main|A|0", 11, "verifyMergeAlignment", "verifyAlignment", "scanBackward", "mergeAlignment", "getSeconds", "freeSimMatrix", "freeSeqData", "freeC", "freeB", "freeA", "dispElapsedTime",
-                        "main|B|0", 10, "verifyMergeAlignment", "verifyAlignment", "mergeAlignment", "getSeconds", "freeSimMatrix", "freeSeqData", "freeC", "freeB", "freeA", "dispElapsedTime",
-                        "main|C|0", 7, "verifyMergeAlignment", "freeSimMatrix", "freeSeqData", "freeC", "freeB", "freeA", "dispElapsedTime",
+                             (18385433520312208048UL + 13UL), (18385433520312208048UL + 97UL),
+                             (18385433520312208048UL + 15UL), (18385433520312208048UL + 131UL),
+                             (18385433520312208048UL + 14UL), (18385433520312208048UL + 109UL),
+                             (18385433520312208048UL + 17UL), (18385433520312208048UL + 170UL),
+                             (18385433520312208048UL + 16UL), (18385433520312208048UL + 149UL),
+                             (18385433520312208048UL + 3UL), (18385433520312208048UL + 207UL),
+                             (18385433520312208048UL + 207UL), (18385433520312208048UL + 62UL),
+                     "astr", 448UL, 7, "%struct.seqdat*", (int)__builtin_offsetof (struct astr, seqData), "%struct.simmat*", (int)__builtin_offsetof (struct astr, simMatrix), "long long int**", (int)__builtin_offsetof (struct astr, goodScores), "int", (int)__builtin_offsetof (struct astr, numThreads), "int*", (int)__builtin_offsetof (struct astr, numReports), "int**", (int)__builtin_offsetof (struct astr, goodEndsI), "int**", (int)__builtin_offsetof (struct astr, goodEndsJ),
+                     "bstr", 576UL, 9, "long long int**", (int)__builtin_offsetof (struct bstr, bestScores), "int", (int)__builtin_offsetof (struct bstr, numThreads), "int*", (int)__builtin_offsetof (struct bstr, numReports), "int**", (int)__builtin_offsetof (struct bstr, bestStartsI), "int**", (int)__builtin_offsetof (struct bstr, bestStartsJ), "int**", (int)__builtin_offsetof (struct bstr, bestEndsI), "int**", (int)__builtin_offsetof (struct bstr, bestEndsJ), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsI), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsJ),
+                     "cstr", 512UL, 8, "long long int*", (int)__builtin_offsetof (struct cstr, finalScores), "int", (int)__builtin_offsetof (struct cstr, numReports), "int*", (int)__builtin_offsetof (struct cstr, finalStartsI), "int*", (int)__builtin_offsetof (struct cstr, finalStartsJ), "int*", (int)__builtin_offsetof (struct cstr, finalEndsI), "int*", (int)__builtin_offsetof (struct cstr, finalEndsJ), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsI), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsJ),
+                     "seqdat", 256UL, 5, "unsigned char*", (int)__builtin_offsetof (struct seqdat, main), "unsigned char*", (int)__builtin_offsetof (struct seqdat, match), "int", (int)__builtin_offsetof (struct seqdat, mainLen), "int", (int)__builtin_offsetof (struct seqdat, matchLen), "int", (int)__builtin_offsetof (struct seqdat, maxValidation),
+                     "simmat", 40960UL, 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
+                     "tm", 0UL, 0,
+                             "main", "main", 28, "getUserParameters", "checkpoint", "getSeconds", "genSimMatrix", "checkpoint", "genScalData", "dispElapsedTime", "checkpoint", "verifyData", "getSeconds", "pairwiseAlign", "dispElapsedTime", "checkpoint", "getSeconds", "scanBackward", "dispElapsedTime", "checkpoint", "verifyAlignment", "getSeconds", "mergeAlignment", "dispElapsedTime", "checkpoint", "verifyMergeAlignment", "freeA", "freeB", "freeC", "freeSimMatrix", "freeSeqData",
         "getUserParameters", 0UL, (int)0,
         "getSeconds", 0UL, (int)0,
-        "genSimMatrix", 18385433520312208144UL, (int)7, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "genScalData", 18385433520312208155UL, (int)5, 0UL, 18385433520312208144UL, 0UL, 0UL, 0UL,
+        "genSimMatrix", 18385433520312208145UL, (int)7, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "genScalData", 18385433520312208157UL, (int)5, 0UL, 18385433520312208145UL, 0UL, 0UL, 0UL,
         "dispElapsedTime", 0UL, (int)1, 0UL,
-        "verifyData", 0UL, (int)4, 18385433520312208144UL, 18385433520312208155UL, 0UL, 0UL,
+        "verifyData", 0UL, (int)4, 18385433520312208145UL, 18385433520312208157UL, 0UL, 0UL,
         "getSeconds", 0UL, (int)0,
-        "pairwiseAlign", 18385433520312208176UL, (int)5, 18385433520312208155UL, 18385433520312208144UL, 0UL, 0UL, 0UL,
+        "pairwiseAlign", 18385433520312208179UL, (int)5, 18385433520312208157UL, 18385433520312208145UL, 0UL, 0UL, 0UL,
         "dispElapsedTime", 0UL, (int)1, 0UL,
         "getSeconds", 0UL, (int)0,
-        "scanBackward", 18385433520312208193UL, (int)4, 18385433520312208176UL, 0UL, 0UL, 0UL,
+        "scanBackward", 18385433520312208197UL, (int)4, 18385433520312208179UL, 0UL, 0UL, 0UL,
         "dispElapsedTime", 0UL, (int)1, 0UL,
-        "verifyAlignment", 0UL, (int)3, 18385433520312208144UL, 18385433520312208193UL, 0UL,
+        "verifyAlignment", 0UL, (int)3, 18385433520312208145UL, 18385433520312208197UL, 0UL,
         "getSeconds", 0UL, (int)0,
-        "mergeAlignment", 18385433520312208213UL, (int)3, 18385433520312208193UL, 0UL, 0UL,
+        "mergeAlignment", 18385433520312208218UL, (int)3, 18385433520312208197UL, 0UL, 0UL,
         "dispElapsedTime", 0UL, (int)1, 0UL,
-        "verifyMergeAlignment", 0UL, (int)3, 18385433520312208144UL, 18385433520312208213UL, 0UL,
-        "freeA", 18385433520312208176UL, (int)1, 18385433520312208176UL,
-        "freeB", 18385433520312208193UL, (int)1, 18385433520312208193UL,
-        "freeC", 18385433520312208213UL, (int)1, 18385433520312208213UL,
-        "freeSimMatrix", 18385433520312208235UL, (int)1, 18385433520312208144UL,
-        "freeSeqData", 18385433520312208237UL, (int)1, 18385433520312208155UL);
+        "verifyMergeAlignment", 0UL, (int)3, 18385433520312208145UL, 18385433520312208218UL, 0UL,
+        "freeA", 18385433520312208179UL, (int)1, 18385433520312208179UL,
+        "freeB", 18385433520312208197UL, (int)1, 18385433520312208197UL,
+        "freeC", 18385433520312208218UL, (int)1, 18385433520312208218UL,
+        "freeSimMatrix", 18385433520312208241UL, (int)1, 18385433520312208145UL,
+        "freeSeqData", 18385433520312208243UL, (int)1, 18385433520312208157UL);
     return 0;
 }
 

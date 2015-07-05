@@ -7,6 +7,8 @@
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c addArg|help|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c addArg|o|0 " %struct.MyOptionSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c addArg|p|0 " %struct.MyOptionSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c addArg|____chimes_ret_var_8|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c addArg|____chimes_ret_var_9|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionAlloc|longOption|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionAlloc|shortOption|0 " i8 " 8 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionAlloc|has_arg|0 " i32 " 32 0 0 0
@@ -15,9 +17,14 @@
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionAlloc|dataSize|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionAlloc|help|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionAlloc|o|0 " %struct.MyOptionSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionAlloc|____chimes_ret_var_1|0 " %struct.MyOptionSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c lastOption|o|0 " %struct.MyOptionSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c lastOption|____chimes_ret_var_4|0 " %struct.MyOptionSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c lastOption|____chimes_ret_var_5|0 " %struct.MyOptionSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionFree|o|0 " %struct.MyOptionSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionFree|r|0 " %struct.MyOptionSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionFree|____chimes_ret_var_2|0 " %struct.MyOptionSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c myOptionFree|____chimes_ret_var_3|0 " %struct.MyOptionSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c printArgs|o|0 " %struct.MyOptionSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c printArgs|s|0 " [4096 x i8] " 32768 0 0 1 printArgs
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c printArgs|shortArg|0 " i8* " 64 1 0 0
@@ -33,5 +40,8 @@
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c processArgs|i|1 " i32* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c findOption|o|0 " %struct.MyOptionSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c findOption|shortArg|0 " i8 " 8 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c findOption|____chimes_ret_var_6|0 " %struct.MyOptionSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c findOption|____chimes_ret_var_7|0 " %struct.MyOptionSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c dupString|s|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c dupString|d|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/cmdLineParser.c dupString|____chimes_ret_var_0|0 " i8* " 64 1 0 0

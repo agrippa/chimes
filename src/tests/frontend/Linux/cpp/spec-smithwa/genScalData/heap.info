@@ -1,10 +1,10 @@
-223 32 856 malloc 0 1 seqdat main match
-238 18 276 malloc
-249 18 276 malloc
-79 20 601 malloc
-100 20 783 malloc
-127 5 783 free
-128 5 601 free
-357 7 810 free
-361 7 810 free
-364 5 829 free
+225 32 846 malloc 0 1 seqdat main match
+240 18 268 malloc
+251 18 268 malloc
+79 20 591 malloc
+100 20 773 malloc
+127 5 773 free
+128 5 591 free
+359 7 800 free
+363 7 800 free
+366 5 819 free

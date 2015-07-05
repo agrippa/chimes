@@ -1,13 +1,13 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 4 5 len=3 foo_npm
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 8 5 len=3 bar_npm
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 4 24 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(11060080868604300656UL), (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 6 1 rm_stack(false, 0UL, "foo", &____must_manage_foo, 0, ____chimes_did_disable0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 9 60 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_1, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 6 1 rm_stack(false, 0UL, "foo", &____must_manage_foo, 0, ____chimes_did_disable0, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 9 60 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_1, ____chimes_did_disable1, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 8 11 const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 10 1 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_1, ____chimes_did_disable1); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 20 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 10 1 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 20 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 12 33 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(11060080868604300696UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 21 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 21 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable2, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 4 25 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 2, 0, (size_t)(11060080868604300656UL), (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 4 170 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 8 12 const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 0, 0); ;
@@ -24,9 +24,9 @@ ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 20 30 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 17 5  call_lbl_1: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 4 5 len=3 foo_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 4 169  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 4 169  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 8 5 len=3 bar_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 8 107  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 8 107  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 12 5 len=4 main_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 15 64 ({ calling_npm("bar", 0); bar_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 15 68 
@@ -37,6 +37,7 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 13 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 13 10 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 12 168  ; int b;
+# 12
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 4 5 len=3 foo_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 4 169  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
@@ -52,4 +53,5 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 13 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 13 10 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./call_passed_indirectly_to_call.cpp 12 168  ; int b;
+# 12
  register_stack_vars(1, "main|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

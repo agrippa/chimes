@@ -1,5 +1,5 @@
-amino_acid_order " i8* " 64 1 0 2961 
-amino_acid_codes " i8* " 64 1 0 2961 
+amino_acid_order " i8* " 64 1 0 3046 
+amino_acid_codes " i8* " 64 1 0 3046 
 gon250mt " [276 x i32] " 8832 0 0 0 
 ktup " i32 " 32 0 0 0 
 window " i32 " 32 0 0 0 
@@ -12,10 +12,10 @@ gap_pos2 " i32 " 32 0 0 0
 mat_avscore " i32 " 32 0 0 0 
 nseqs " i32 " 32 0 0 0 
 max_aa " i32 " 32 0 0 0 
-seqlen_array " i32* " 64 1 0 2976 
+seqlen_array " i32* " 64 1 0 3061 
 def_aa_xref " [33 x i32] " 1056 0 0 0 
-bench_output " i32* " 64 1 0 2976 
-seq_output " i32* " 64 1 0 2976 
+bench_output " i32* " 64 1 0 3061 
+seq_output " i32* " 64 1 0 3061 
 gap_open " double " 64 0 0 0 
 gap_extend " double " 64 0 0 0 
 prot_gap_open " double " 64 0 0 0 
@@ -24,7 +24,7 @@ pw_go_penalty " double " 64 0 0 0
 pw_ge_penalty " double " 64 0 0 0 
 prot_pw_go_penalty " double " 64 0 0 0 
 prot_pw_ge_penalty " double " 64 0 0 0 
-args " i8** " 64 1 0 2988 
-names " i8** " 64 1 0 2988 
-seq_array " i8** " 64 1 0 2988 
-matrix " [32 x [32 x i32]] " 32768 0 0 0 
+args " i8** " 64 1 0 3073 
+names " i8** " 64 1 0 3073 
+seq_array " i8** " 64 1 0 3073 
+matrix " i32* " 64 1 0 3061 

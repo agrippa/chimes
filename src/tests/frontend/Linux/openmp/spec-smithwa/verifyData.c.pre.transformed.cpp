@@ -36,7 +36,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -52,7 +52,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -87,7 +88,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2409,8 +2410,11 @@ void verifyData_quick(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData, int minScore, 
 void verifyData_resumable(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int minScore, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(8188620330301190675UL), (size_t)(8188620330301190676UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0) ; int myRow;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int matchLimit;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int myTaskID;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
  if (____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(3, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(14): { goto call_lbl_14; } default: { chimes_error(); } } } ; ;
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
@@ -2425,19 +2429,20 @@ int myTaskID;
 # 42 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   comparisons = 0L;
 # 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  matchLimit = simMatrix->matchLimit; { call_lbl_14: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(14, &____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); ;
+  matchLimit = simMatrix->matchLimit;
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 45 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+{ call_lbl_14: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(14, &____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow);
+# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 #pragma omp parallel reduction(+:comparisons) private(iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, n, m, myTaskID)
 # 47 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
- { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } }
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  {
+  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } {
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
@@ -2485,7 +2490,7 @@ int myTaskID;
       ((unsigned long long)(jEnd - jBeg + 1));
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  } thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
+   } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   if (myTaskID == 0) {
@@ -2539,12 +2544,16 @@ int myTaskID;
 # 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   }
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-rm_stack(false, 0UL, "verifyData", &____must_manage_verifyData, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "verifyData", &____must_manage_verifyData, ____alias_loc_id_1, ____chimes_did_disable0, false); }
+# 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 void verifyData_quick(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int minScore, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(8188620330301190675UL), (size_t)(8188620330301190676UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0) ; int myRow;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int matchLimit;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 int myTaskID;
+# 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
  if (____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(3, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0); } ; ;
 # 36 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 37 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
@@ -2559,19 +2568,20 @@ int myTaskID;
 # 42 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   comparisons = 0L;
 # 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  matchLimit = simMatrix->matchLimit; { call_lbl_14: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(14, &____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); ;
+  matchLimit = simMatrix->matchLimit;
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 45 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
+{ call_lbl_14: void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(14, &____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow);
+# 46 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 #pragma omp parallel reduction(+:comparisons) private(iBeg, iEnd, jBeg, jEnd, myRow, myCol, npRow, npCol, n, m, myTaskID)
 # 47 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
- { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); ;
 # 48 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 49 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  {
+  { { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 11, &iBeg, &iEnd, &jBeg, &jEnd, &m, &myCol, &myRow, &myTaskID, &n, &npCol, &npRow); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } {
 # 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
@@ -2619,7 +2629,7 @@ int myTaskID;
       ((unsigned long long)(jEnd - jBeg + 1));
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-  } thread_leaving(); } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
+   } thread_leaving(); } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 0); }
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   if (myTaskID == 0) {
@@ -2673,14 +2683,12 @@ int myTaskID;
 # 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   }
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
-rm_stack(false, 0UL, "verifyData", &____must_manage_verifyData, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "verifyData", &____must_manage_verifyData, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 void verifyData(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int minScore, int minSeparation) { (____chimes_replaying ? verifyData_resumable(simMatrix, seqData, minScore, minSeparation) : verifyData_quick(simMatrix, seqData, minScore, minSeparation)); }
-
-
-
+# 34 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
 void verifyData_npm(SIMMATRIX_T *simMatrix, SEQDATA_T *seqData,
 # 35 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c"
   int minScore, int minSeparation) {
@@ -2826,8 +2834,8 @@ static int module_init() {
                            "gridInfo", &(____chimes_does_checkpoint_gridInfo_npm),
                              (8188620330301190487UL + 1UL), (8188620330301190487UL + 188UL),
                              (8188620330301190487UL + 2UL), (8188620330301190487UL + 189UL),
-                     "seqdat", 5, "unsigned char*", (int)__builtin_offsetof (struct seqdat, main), "unsigned char*", (int)__builtin_offsetof (struct seqdat, match), "int", (int)__builtin_offsetof (struct seqdat, mainLen), "int", (int)__builtin_offsetof (struct seqdat, matchLen), "int", (int)__builtin_offsetof (struct seqdat, maxValidation),
-                     "simmat", 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
+                     "seqdat", 256UL, 5, "unsigned char*", (int)__builtin_offsetof (struct seqdat, main), "unsigned char*", (int)__builtin_offsetof (struct seqdat, match), "int", (int)__builtin_offsetof (struct seqdat, mainLen), "int", (int)__builtin_offsetof (struct seqdat, matchLen), "int", (int)__builtin_offsetof (struct seqdat, maxValidation),
+                     "simmat", 40960UL, 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
                              "verifyData", "_Z10verifyDataP6simmatP6seqdatii", 1, "gridInfo",
                         "verifyData|simMatrix|0", 1, "gridInfo",
                         "verifyData|seqData|0", 1, "gridInfo",

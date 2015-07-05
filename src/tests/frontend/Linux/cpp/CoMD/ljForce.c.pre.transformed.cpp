@@ -68,7 +68,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -84,7 +84,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -119,7 +120,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3122,18 +3123,18 @@ void ljDestroy_resumable(BasePotential** inppot)
 # 98 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(15692222973149250888UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return; };
+   if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
 # 100 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return; };
+   if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    free_wrapper(pot, 15692222973149250874UL);
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 105 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return;
+   rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return;
 # 106 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
 # 107 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
@@ -3172,9 +3173,9 @@ BasePotential* initLjPot_resumable(void)
    pot->atomicNo = 29;
 # 125 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 126 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    BasePotential *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((BasePotential*) pot); rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_0; ;
+    BasePotential *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((BasePotential*) pot); rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
 # 127 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 # 128 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 129 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljPrint_npm(FILE* file, BasePotential* pot);
@@ -3203,7 +3204,7 @@ void ljPrint_resumable(FILE* file, BasePotential* pot)
 # 140 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
 # 141 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 # 142 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 143 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ljForce_npm(SimFlat* s);static int (*____chimes_extern_func_getNeighborBoxes)(struct LinkCellSt *, int, int *) = getNeighborBoxes;static void (*____chimes_extern_func_zeroReal3)(double *) = zeroReal3;
@@ -3211,30 +3212,55 @@ int ljForce_quick(SimFlat* s); int ljForce(SimFlat* s);
 int ljForce_resumable(SimFlat* s)
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(15692222973149251136UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int m2;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t fr;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t eLocal;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t r6;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int m1;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t r2;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int jId;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t dr[3];
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ij;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int jOff;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int iId;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ii;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int iOff;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nJBox;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int jBox;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int jTmp;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nNbrBoxes;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nIBox;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int iBox;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nbrBoxes[27];
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t eShift;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t s6;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t ePot;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t rCut2;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t epsilon;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  if (____must_checkpoint_ljForce_m2_0 || ____must_checkpoint_ljForce_fr_0 || ____must_checkpoint_ljForce_eLocal_0 || ____must_checkpoint_ljForce_r6_0 || ____must_checkpoint_ljForce_m1_0 || ____must_checkpoint_ljForce_r2_0 || ____must_checkpoint_ljForce_jId_0 || ____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_ij_0 || ____must_checkpoint_ljForce_jOff_0 || ____must_checkpoint_ljForce_iId_0 || ____must_checkpoint_ljForce_ii_0 || ____must_checkpoint_ljForce_iOff_0 || ____must_checkpoint_ljForce_nJBox_0 || ____must_checkpoint_ljForce_jBox_0 || ____must_checkpoint_ljForce_jTmp_0 || ____must_checkpoint_ljForce_nNbrBoxes_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(25, "ljForce|m2|0", &____must_checkpoint_ljForce_m2_0, "i32", (void *)(&m2), (size_t)4, 0, 0, 0, "ljForce|fr|0", &____must_checkpoint_ljForce_fr_0, "double", (void *)(&fr), (size_t)8, 0, 0, 0, "ljForce|eLocal|0", &____must_checkpoint_ljForce_eLocal_0, "double", (void *)(&eLocal), (size_t)8, 0, 0, 0, "ljForce|r6|0", &____must_checkpoint_ljForce_r6_0, "double", (void *)(&r6), (size_t)8, 0, 0, 0, "ljForce|m1|0", &____must_checkpoint_ljForce_m1_0, "i32", (void *)(&m1), (size_t)4, 0, 0, 0, "ljForce|r2|0", &____must_checkpoint_ljForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0, "ljForce|jId|0", &____must_checkpoint_ljForce_jId_0, "i32", (void *)(&jId), (size_t)4, 0, 0, 0, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|ij|0", &____must_checkpoint_ljForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0, "ljForce|jOff|0", &____must_checkpoint_ljForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0, "ljForce|iId|0", &____must_checkpoint_ljForce_iId_0, "i32", (void *)(&iId), (size_t)4, 0, 0, 0, "ljForce|ii|0", &____must_checkpoint_ljForce_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "ljForce|iOff|0", &____must_checkpoint_ljForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0, "ljForce|nJBox|0", &____must_checkpoint_ljForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0, "ljForce|jBox|0", &____must_checkpoint_ljForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0, "ljForce|jTmp|0", &____must_checkpoint_ljForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0, "ljForce|nNbrBoxes|0", &____must_checkpoint_ljForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)s->pot) ;
@@ -3382,30 +3408,31 @@ real_t epsilon;
    s->ePotential = ePot;
 # 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3); return ____chimes_ret_var_1; ;
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
 # 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3, false); }
+# 97 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljDestroy_quick(BasePotential** inppot)
 # 98 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&ljDestroy), "ljDestroy", &____must_manage_ljDestroy, 1, 0, (size_t)(15692222973149250888UL)) ; ; ;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return; };
+   if (! inppot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
 # 100 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)(*inppot)) ;
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return; };
+   if (! pot) {rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return; };
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    free_wrapper(pot, 15692222973149250874UL);
 # 103 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    *inppot = __null;
 # 104 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 105 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-   rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0); return;
+   rm_stack(false, 0UL, "ljDestroy", &____must_manage_ljDestroy, ____alias_loc_id_1, ____chimes_did_disable0, false); return;
 # 106 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
 
 void ljDestroy(BasePotential** inppot) { (____chimes_replaying ? ljDestroy_resumable(inppot) : ljDestroy_quick(inppot)); }
-
+# 109 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 BasePotential* initLjPot_quick(void)
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&initLjPot), "initLjPot", &____must_manage_initLjPot, 0, 0) ; ; ;
@@ -3437,12 +3464,12 @@ BasePotential* initLjPot_quick(void)
    pot->atomicNo = 29;
 # 125 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 126 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    BasePotential *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((BasePotential*) pot); rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_0; ;
+    BasePotential *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((BasePotential*) pot); rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
 # 127 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(true, 15692222973149250895UL, "initLjPot", &____must_manage_initLjPot, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
 BasePotential* initLjPot(void) { return (____chimes_replaying ? initLjPot_resumable() : initLjPot_quick()); }
-
+# 129 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljPrint_quick(FILE* file, BasePotential* pot)
 # 130 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&ljPrint), "ljPrint", &____must_manage_ljPrint, 2, 0, (size_t)(15692222973149251488UL), (size_t)(15692222973149251489UL)) ; ; ;
@@ -3467,37 +3494,62 @@ void ljPrint_quick(FILE* file, BasePotential* pot)
 # 140 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
    fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
 # 141 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "ljPrint", &____must_manage_ljPrint, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 
 void ljPrint(FILE* file, BasePotential* pot) { (____chimes_replaying ? ljPrint_resumable(file, pot) : ljPrint_quick(file, pot)); }
-
+# 143 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ljForce_quick(SimFlat* s)
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&ljForce), "ljForce", &____must_manage_ljForce, 1, 1, (size_t)(15692222973149251136UL), "ljForce|s|0", &____must_checkpoint_ljForce_s_0, "%struct.SimFlatSt*", (void *)(&s), (size_t)8, 1, 0, 0) ; int m2;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t fr;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t eLocal;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t r6;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int m1;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t r2;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int jId;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t dr[3];
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ij;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int jOff;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int iId;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ii;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int iOff;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nJBox;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int jBox;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int jTmp;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nNbrBoxes;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nIBox;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int iBox;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int nbrBoxes[27];
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t eShift;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t s6;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t ePot;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t rCut2;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 real_t epsilon;
+# 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
  if (____must_checkpoint_ljForce_m2_0 || ____must_checkpoint_ljForce_fr_0 || ____must_checkpoint_ljForce_eLocal_0 || ____must_checkpoint_ljForce_r6_0 || ____must_checkpoint_ljForce_m1_0 || ____must_checkpoint_ljForce_r2_0 || ____must_checkpoint_ljForce_jId_0 || ____must_checkpoint_ljForce_dr_0 || ____must_checkpoint_ljForce_ij_0 || ____must_checkpoint_ljForce_jOff_0 || ____must_checkpoint_ljForce_iId_0 || ____must_checkpoint_ljForce_ii_0 || ____must_checkpoint_ljForce_iOff_0 || ____must_checkpoint_ljForce_nJBox_0 || ____must_checkpoint_ljForce_jBox_0 || ____must_checkpoint_ljForce_jTmp_0 || ____must_checkpoint_ljForce_nNbrBoxes_0 || ____must_checkpoint_ljForce_nIBox_0 || ____must_checkpoint_ljForce_iBox_0 || ____must_checkpoint_ljForce_nbrBoxes_0 || ____must_checkpoint_ljForce_eShift_0 || ____must_checkpoint_ljForce_s6_0 || ____must_checkpoint_ljForce_ePot_0 || ____must_checkpoint_ljForce_rCut2_0 || ____must_checkpoint_ljForce_epsilon_0) { register_stack_vars(25, "ljForce|m2|0", &____must_checkpoint_ljForce_m2_0, "i32", (void *)(&m2), (size_t)4, 0, 0, 0, "ljForce|fr|0", &____must_checkpoint_ljForce_fr_0, "double", (void *)(&fr), (size_t)8, 0, 0, 0, "ljForce|eLocal|0", &____must_checkpoint_ljForce_eLocal_0, "double", (void *)(&eLocal), (size_t)8, 0, 0, 0, "ljForce|r6|0", &____must_checkpoint_ljForce_r6_0, "double", (void *)(&r6), (size_t)8, 0, 0, 0, "ljForce|m1|0", &____must_checkpoint_ljForce_m1_0, "i32", (void *)(&m1), (size_t)4, 0, 0, 0, "ljForce|r2|0", &____must_checkpoint_ljForce_r2_0, "double", (void *)(&r2), (size_t)8, 0, 0, 0, "ljForce|jId|0", &____must_checkpoint_ljForce_jId_0, "i32", (void *)(&jId), (size_t)4, 0, 0, 0, "ljForce|dr|0", &____must_checkpoint_ljForce_dr_0, "[3 x double]", (void *)(dr), (size_t)24, 0, 0, 0, "ljForce|ij|0", &____must_checkpoint_ljForce_ij_0, "i32", (void *)(&ij), (size_t)4, 0, 0, 0, "ljForce|jOff|0", &____must_checkpoint_ljForce_jOff_0, "i32", (void *)(&jOff), (size_t)4, 0, 0, 0, "ljForce|iId|0", &____must_checkpoint_ljForce_iId_0, "i32", (void *)(&iId), (size_t)4, 0, 0, 0, "ljForce|ii|0", &____must_checkpoint_ljForce_ii_0, "i32", (void *)(&ii), (size_t)4, 0, 0, 0, "ljForce|iOff|0", &____must_checkpoint_ljForce_iOff_0, "i32", (void *)(&iOff), (size_t)4, 0, 0, 0, "ljForce|nJBox|0", &____must_checkpoint_ljForce_nJBox_0, "i32", (void *)(&nJBox), (size_t)4, 0, 0, 0, "ljForce|jBox|0", &____must_checkpoint_ljForce_jBox_0, "i32", (void *)(&jBox), (size_t)4, 0, 0, 0, "ljForce|jTmp|0", &____must_checkpoint_ljForce_jTmp_0, "i32", (void *)(&jTmp), (size_t)4, 0, 0, 0, "ljForce|nNbrBoxes|0", &____must_checkpoint_ljForce_nNbrBoxes_0, "i32", (void *)(&nNbrBoxes), (size_t)4, 0, 0, 0, "ljForce|nIBox|0", &____must_checkpoint_ljForce_nIBox_0, "i32", (void *)(&nIBox), (size_t)4, 0, 0, 0, "ljForce|iBox|0", &____must_checkpoint_ljForce_iBox_0, "i32", (void *)(&iBox), (size_t)4, 0, 0, 0, "ljForce|nbrBoxes|0", &____must_checkpoint_ljForce_nbrBoxes_0, "[27 x i32]", (void *)(nbrBoxes), (size_t)108, 0, 0, 0, "ljForce|eShift|0", &____must_checkpoint_ljForce_eShift_0, "double", (void *)(&eShift), (size_t)8, 0, 0, 0, "ljForce|s6|0", &____must_checkpoint_ljForce_s6_0, "double", (void *)(&s6), (size_t)8, 0, 0, 0, "ljForce|ePot|0", &____must_checkpoint_ljForce_ePot_0, "double", (void *)(&ePot), (size_t)8, 0, 0, 0, "ljForce|rCut2|0", &____must_checkpoint_ljForce_rCut2_0, "double", (void *)(&rCut2), (size_t)8, 0, 0, 0, "ljForce|epsilon|0", &____must_checkpoint_ljForce_epsilon_0, "double", (void *)(&epsilon), (size_t)8, 0, 0, 0); } ; ;
 # 145 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
     LjPotential *pot; pot = ((LjPotential *)s->pot) ;
@@ -3645,14 +3697,12 @@ real_t epsilon;
    s->ePotential = ePot;
 # 232 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 # 233 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3); return ____chimes_ret_var_1; ;
+    int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (0); rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
 # 234 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
-rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "ljForce", &____must_manage_ljForce, ____alias_loc_id_3, ____chimes_did_disable3, false); }
 
 int ljForce(SimFlat* s) { return (____chimes_replaying ? ljForce_resumable(s) : ljForce_quick(s)); }
-
-
-
+# 97 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljDestroy_npm(BasePotential** inppot)
 # 98 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
@@ -3671,7 +3721,7 @@ void ljDestroy_npm(BasePotential** inppot)
    return;
 # 106 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
-
+# 109 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 BasePotential* initLjPot_npm(void)
 # 110 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
@@ -3706,7 +3756,7 @@ BasePotential* initLjPot_npm(void)
     BasePotential * ____chimes_ret_var_0; ____chimes_ret_var_0 = ((BasePotential*) pot); return ____chimes_ret_var_0; ;
 # 127 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
-
+# 129 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 void ljPrint_npm(FILE* file, BasePotential* pot)
 # 130 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
@@ -3732,7 +3782,7 @@ void ljPrint_npm(FILE* file, BasePotential* pot)
    fprintf(file, "  Sigma            : ""%lg"" Angstroms\n", ljPot->sigma);
 # 141 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 }
-
+# 143 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 int ljForce_npm(SimFlat* s)
 # 144 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/ljForce.c"
 {
@@ -3924,16 +3974,16 @@ static int module_init() {
                              (15692222973149250863UL + 572UL), (15692222973149250863UL + 626UL),
                              (15692222973149250863UL + 82UL), (15692222973149250863UL + 275UL),
                              (15692222973149250863UL + 81UL), (15692222973149250863UL + 273UL),
-                     "AtomsSt", 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U),
-                     "BasePotentialSt", 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "func*", (int)__builtin_offsetof (struct BasePotentialSt, force), "func*", (int)__builtin_offsetof (struct BasePotentialSt, print), "func*", (int)__builtin_offsetof (struct BasePotentialSt, destroy),
-                     "DomainSt", 0,
-                     "HaloExchangeSt", 0,
-                     "LinkCellSt", 9, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms),
-                     "LjPotentialSt", 11, "double", (int)__builtin_offsetof (struct LjPotentialSt, cutoff), "double", (int)__builtin_offsetof (struct LjPotentialSt, mass), "double", (int)__builtin_offsetof (struct LjPotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct LjPotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct LjPotentialSt, name), "int", (int)__builtin_offsetof (struct LjPotentialSt, atomicNo), "func*", (int)__builtin_offsetof (struct LjPotentialSt, force), "func*", (int)__builtin_offsetof (struct LjPotentialSt, print), "func*", (int)__builtin_offsetof (struct LjPotentialSt, destroy), "double", (int)__builtin_offsetof (struct LjPotentialSt, sigma), "double", (int)__builtin_offsetof (struct LjPotentialSt, epsilon),
-                     "SimFlatSt", 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange),
-                     "SpeciesDataSt", 0,
-                     "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
-                     "_IO_marker", 0,
+                     "AtomsSt", 448UL, 8, "int", (int)__builtin_offsetof (struct AtomsSt, nLocal), "int", (int)__builtin_offsetof (struct AtomsSt, nGlobal), "int*", (int)__builtin_offsetof (struct AtomsSt, gid), "int*", (int)__builtin_offsetof (struct AtomsSt, iSpecies), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, r), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, p), "[ 3 x double ]*", (int)__builtin_offsetof (struct AtomsSt, f), "double*", (int)__builtin_offsetof (struct AtomsSt, U),
+                     "BasePotentialSt", 512UL, 9, "double", (int)__builtin_offsetof (struct BasePotentialSt, cutoff), "double", (int)__builtin_offsetof (struct BasePotentialSt, mass), "double", (int)__builtin_offsetof (struct BasePotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct BasePotentialSt, name), "int", (int)__builtin_offsetof (struct BasePotentialSt, atomicNo), "func*", (int)__builtin_offsetof (struct BasePotentialSt, force), "func*", (int)__builtin_offsetof (struct BasePotentialSt, print), "func*", (int)__builtin_offsetof (struct BasePotentialSt, destroy),
+                     "DomainSt", 0UL, 0,
+                     "HaloExchangeSt", 0UL, 0,
+                     "LinkCellSt", 1024UL, 9, "[ 3 x int ]", (int)__builtin_offsetof (struct LinkCellSt, gridSize), "int", (int)__builtin_offsetof (struct LinkCellSt, nLocalBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nHaloBoxes), "int", (int)__builtin_offsetof (struct LinkCellSt, nTotalBoxes), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMin), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, localMax), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, boxSize), "[ 3 x double ]", (int)__builtin_offsetof (struct LinkCellSt, invBoxSize), "int*", (int)__builtin_offsetof (struct LinkCellSt, nAtoms),
+                     "LjPotentialSt", 640UL, 11, "double", (int)__builtin_offsetof (struct LjPotentialSt, cutoff), "double", (int)__builtin_offsetof (struct LjPotentialSt, mass), "double", (int)__builtin_offsetof (struct LjPotentialSt, lat), "[ 8 x char ]", (int)__builtin_offsetof (struct LjPotentialSt, latticeType), "[ 3 x char ]", (int)__builtin_offsetof (struct LjPotentialSt, name), "int", (int)__builtin_offsetof (struct LjPotentialSt, atomicNo), "func*", (int)__builtin_offsetof (struct LjPotentialSt, force), "func*", (int)__builtin_offsetof (struct LjPotentialSt, print), "func*", (int)__builtin_offsetof (struct LjPotentialSt, destroy), "double", (int)__builtin_offsetof (struct LjPotentialSt, sigma), "double", (int)__builtin_offsetof (struct LjPotentialSt, epsilon),
+                     "SimFlatSt", 640UL, 11, "int", (int)__builtin_offsetof (struct SimFlatSt, nSteps), "int", (int)__builtin_offsetof (struct SimFlatSt, printRate), "double", (int)__builtin_offsetof (struct SimFlatSt, dt), "%struct.DomainSt*", (int)__builtin_offsetof (struct SimFlatSt, domain), "%struct.LinkCellSt*", (int)__builtin_offsetof (struct SimFlatSt, boxes), "%struct.AtomsSt*", (int)__builtin_offsetof (struct SimFlatSt, atoms), "%struct.SpeciesDataSt*", (int)__builtin_offsetof (struct SimFlatSt, species), "double", (int)__builtin_offsetof (struct SimFlatSt, ePotential), "double", (int)__builtin_offsetof (struct SimFlatSt, eKinetic), "%struct.BasePotentialSt*", (int)__builtin_offsetof (struct SimFlatSt, pot), "%struct.HaloExchangeSt*", (int)__builtin_offsetof (struct SimFlatSt, atomExchange),
+                     "SpeciesDataSt", 0UL, 0,
+                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
+                     "_IO_marker", 0UL, 0,
                              "initLjPot", "_Z9initLjPotv", 0,
                              "ljPrint", "_Z7ljPrintP8_IO_FILEP15BasePotentialSt", 0,
                              "zeroReal3", "_ZL9zeroReal3Pd", 0,

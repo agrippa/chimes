@@ -1,13 +1,13 @@
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 4 5 len=3 bar_npm
-InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 6 64 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 6 64 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 5 1 const int ____chimes_did_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 7 1 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 16 60 rm_stack(false, 0UL, "foo", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable1); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 7 1 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable0, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 16 60 rm_stack(false, 0UL, "foo", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable1, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 9 16 const int ____chimes_did_disable1 = new_stack((void *)(&foo), "foo", (int *)0x0, 1, 1, (size_t)(0UL), "foo|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 17 1 rm_stack(false, 0UL, "foo", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable1); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 22 65 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 17 1 rm_stack(false, 0UL, "foo", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable1, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 22 65 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disable2, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 19 33 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(2262120925167450170UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 23 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 23 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_4, ____chimes_did_disable2, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 5 2 const int ____chimes_did_disable0 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 5 113 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 6 6 int ____chimes_ret_var_0; ;
@@ -31,7 +31,7 @@ ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 22 30
 InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 12 5  call_lbl_1: 
 InsertText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 21 14  call_lbl_1: 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 4 5 len=3 bar_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 5 112  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 5 112  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 9 5 len=3 foo_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 12 18 checkpoint_transformed(1, ____alias_loc_id_0)
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 12 29 
@@ -40,14 +40,16 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 10 11
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 11 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 11 11 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 9 177  ; int c;
+# 9
 int b;
+# 9
  register_stack_vars(2, "foo|c|0", (int *)0x0, "i32", (void *)(&c), (size_t)4, 0, 0, 0, "foo|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 19 5 len=4 main_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 21 32  ({  calling((void*)foo, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (foo)(a); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 21 37 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 22 58 ({ calling_npm("bar", 0); bar_npm(b); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 22 63 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 19 167  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 19 167  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 4 5 len=3 bar_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 5 112  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 9 5 len=3 foo_resumable
@@ -58,7 +60,9 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 10 11
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 11 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 11 11 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 9 177  ; int c;
+# 9
 int b;
+# 9
  register_stack_vars(2, "foo|c|0", (int *)0x0, "i32", (void *)(&c), (size_t)4, 0, 0, 0, "foo|b|0", (int *)0x0, "i32", (void *)(&b), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 19 5 len=4 main_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./func_call.cpp 21 32  ({  calling((void*)foo, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (foo)(a); }) 

@@ -1,70 +1,70 @@
-89 22 1198 malloc 0 1 bstr bestScores numReports bestStartsI bestStartsJ bestEndsI bestEndsJ bestSeqsI bestSeqsJ
-94 31 1200 malloc
-99 38 1200 malloc 1 0
-105 33 1200 malloc 1 0
-110 33 1200 malloc 1 0
-115 31 1200 malloc 1 0
-120 31 1200 malloc 1 0
-126 20 1200 malloc 1 0
-133 20 1200 malloc 1 0
-148 26 761 malloc
-196 16 2397 malloc
-207 10 2397 malloc
-217 10 2397 malloc
-227 10 2397 malloc
-237 10 2397 malloc
-247 21 2397 malloc 1 0
-258 21 2397 malloc 1 0
-295 23 1558 malloc 1 0
-305 34 1230 malloc
-315 27 1221 malloc
-403 22 2399 malloc
-421 22 2399 malloc
-590 8 2399 free
-594 8 2399 free
-901 6 2399 free
-905 6 2399 free
-1199 26 2533 malloc 0 1 cstr finalScores finalStartsI finalStartsJ finalEndsI finalEndsJ finalSeqsI finalSeqsJ
-1215 18 2397 malloc
-1224 12 2397 malloc
-1233 12 2397 malloc
-1242 12 2397 malloc
-1251 12 2397 malloc
-1260 22 2397 malloc 1 0
-1270 22 2397 malloc 1 0
-1295 24 2399 malloc
-1305 2 2399 free
-1318 24 2399 malloc
-1328 2 2399 free
-1336 7 2397 free
-1340 7 2397 free
-1344 7 2397 free
-1348 7 2397 free
-1352 7 2397 free
-1366 4 2399 free
-1371 7 2397 free
-1383 4 2399 free
-1388 7 2397 free
-1402 7 1558 free
-1403 7 1230 free
-1404 7 1221 free
-1415 3 761 free
-1425 3 1200 free
-1426 3 1200 free
-1427 3 1200 free
-1428 3 1200 free
-1429 3 1200 free
-1430 3 1200 free
-1431 3 1200 free
-1432 3 1200 free
-1433 3 1198 free
-1447 7 2397 free
-1451 7 2397 free
-1455 7 2397 free
-1459 7 2397 free
-1463 7 2397 free
-1469 4 2399 free
-1473 7 2397 free
-1479 4 2399 free
-1483 7 2397 free
-1486 5 2489 free
+89 22 1199 malloc 0 1 bstr bestScores numReports bestStartsI bestStartsJ bestEndsI bestEndsJ bestSeqsI bestSeqsJ
+94 31 1201 malloc
+99 38 1201 malloc 1 0
+105 33 1201 malloc 1 0
+110 33 1201 malloc 1 0
+115 31 1201 malloc 1 0
+120 31 1201 malloc 1 0
+126 20 1201 malloc 1 0
+133 20 1201 malloc 1 0
+148 26 762 malloc
+196 16 2402 malloc
+207 10 2402 malloc
+217 10 2402 malloc
+227 10 2402 malloc
+237 10 2402 malloc
+247 21 2402 malloc 1 0
+258 21 2402 malloc 1 0
+295 23 1559 malloc 1 0
+305 34 1231 malloc
+315 27 1222 malloc
+403 22 2404 malloc
+421 22 2404 malloc
+590 8 2404 free
+594 8 2404 free
+901 6 2404 free
+905 6 2404 free
+1199 26 2541 malloc 0 1 cstr finalScores finalStartsI finalStartsJ finalEndsI finalEndsJ finalSeqsI finalSeqsJ
+1215 18 2402 malloc
+1224 12 2402 malloc
+1233 12 2402 malloc
+1242 12 2402 malloc
+1251 12 2402 malloc
+1260 22 2402 malloc 1 0
+1270 22 2402 malloc 1 0
+1295 24 2404 malloc
+1305 2 2404 free
+1318 24 2404 malloc
+1328 2 2404 free
+1336 7 2402 free
+1340 7 2402 free
+1344 7 2402 free
+1348 7 2402 free
+1352 7 2402 free
+1366 4 2404 free
+1371 7 2402 free
+1383 4 2404 free
+1388 7 2402 free
+1402 7 1559 free
+1403 7 1231 free
+1404 7 1222 free
+1415 3 762 free
+1425 3 1201 free
+1426 3 1201 free
+1427 3 1201 free
+1428 3 1201 free
+1429 3 1201 free
+1430 3 1201 free
+1431 3 1201 free
+1432 3 1201 free
+1433 3 1199 free
+1447 7 2402 free
+1451 7 2402 free
+1455 7 2402 free
+1459 7 2402 free
+1463 7 2402 free
+1469 4 2404 free
+1473 7 2402 free
+1479 4 2404 free
+1483 7 2402 free
+1486 5 2497 free

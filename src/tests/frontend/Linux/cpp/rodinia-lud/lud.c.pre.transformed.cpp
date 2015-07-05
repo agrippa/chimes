@@ -51,7 +51,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -67,7 +67,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -102,7 +103,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4062,12 +4063,19 @@ int
 main_resumable ( int argc, char *argv[] )
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(5766999286144554384UL)) ; double ____chimes_unroll_var_0;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 stopwatch sw;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 float *mm;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 const char *input_file;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 func_ret_t ret;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 int option_index;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 int matrix_dim;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
  if (____must_checkpoint_main_____chimes_unroll_var_0_0 || ____must_checkpoint_main_sw_0 || ____must_checkpoint_main_mm_0 || ____must_checkpoint_main_input_file_0 || ____must_checkpoint_main_ret_0 || ____must_checkpoint_main_option_index_0 || ____must_checkpoint_main_matrix_dim_0) { register_stack_vars(7, "main|____chimes_unroll_var_0|0", &____must_checkpoint_main_____chimes_unroll_var_0_0, "double", (void *)(&____chimes_unroll_var_0), (size_t)8, 0, 0, 0, "main|sw|0", &____must_checkpoint_main_sw_0, "%struct.__stopwatch_t = type { %struct.timeval, %struct.timeval }", (void *)(&sw), (size_t)32, 0, 1, 0, "main|mm|0", &____must_checkpoint_main_mm_0, "float*", (void *)(&mm), (size_t)8, 1, 0, 0, "main|input_file|0", &____must_checkpoint_main_input_file_0, "i8*", (void *)(&input_file), (size_t)8, 1, 0, 0, "main|ret|0", &____must_checkpoint_main_ret_0, "i32", (void *)(&ret), (size_t)4, 0, 0, 0, "main|option_index|0", &____must_checkpoint_main_option_index_0, "i32", (void *)(&option_index), (size_t)4, 0, 0, 0, "main|matrix_dim|0", &____must_checkpoint_main_matrix_dim_0, "i32", (void *)(&matrix_dim), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(13): { goto call_lbl_13; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(27): { goto call_lbl_27; } case(29): { goto call_lbl_29; } default: { chimes_error(); } } } ; ;
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
      matrix_dim = (32) ;
@@ -4208,20 +4216,28 @@ int matrix_dim;
   free_wrapper(m, 5766999286144554350UL);
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); }
+# 40 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 int
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 main_quick ( int argc, char *argv[] )
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(5766999286144554384UL)) ; double ____chimes_unroll_var_0;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 stopwatch sw;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 float *mm;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 const char *input_file;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 func_ret_t ret;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 int option_index;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 int matrix_dim;
+# 42 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
  if (____must_checkpoint_main_____chimes_unroll_var_0_0 || ____must_checkpoint_main_sw_0 || ____must_checkpoint_main_mm_0 || ____must_checkpoint_main_input_file_0 || ____must_checkpoint_main_ret_0 || ____must_checkpoint_main_option_index_0 || ____must_checkpoint_main_matrix_dim_0) { register_stack_vars(7, "main|____chimes_unroll_var_0|0", &____must_checkpoint_main_____chimes_unroll_var_0_0, "double", (void *)(&____chimes_unroll_var_0), (size_t)8, 0, 0, 0, "main|sw|0", &____must_checkpoint_main_sw_0, "%struct.__stopwatch_t = type { %struct.timeval, %struct.timeval }", (void *)(&sw), (size_t)32, 0, 1, 0, "main|mm|0", &____must_checkpoint_main_mm_0, "float*", (void *)(&mm), (size_t)8, 1, 0, 0, "main|input_file|0", &____must_checkpoint_main_input_file_0, "i8*", (void *)(&input_file), (size_t)8, 1, 0, 0, "main|ret|0", &____must_checkpoint_main_ret_0, "i32", (void *)(&ret), (size_t)4, 0, 0, 0, "main|option_index|0", &____must_checkpoint_main_option_index_0, "i32", (void *)(&option_index), (size_t)4, 0, 0, 0, "main|matrix_dim|0", &____must_checkpoint_main_matrix_dim_0, "i32", (void *)(&matrix_dim), (size_t)4, 0, 0, 0); } ; ;
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
      matrix_dim = (32) ;
@@ -4362,13 +4378,13 @@ int matrix_dim;
   free_wrapper(m, 5766999286144554350UL);
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+   int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_9, ____chimes_did_disable0, false); }
 
 int
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c"
-main ( int argc, char *argv[] ) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+main ( int argc, char *argv[] ) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
 
 
@@ -4411,10 +4427,10 @@ static int module_init() {
                              (5766999286144554233UL + 184UL), (5766999286144554233UL + 77UL),
                              (5766999286144554233UL + 9UL), (5766999286144554233UL + 117UL),
                              (5766999286144554233UL + 8UL), (5766999286144554233UL + 201UL),
-                     "_FUNC_RETURN_CODE", 0,
-                     "__stopwatch_t", 2, "%struct.timeval", (int)__builtin_offsetof (struct __stopwatch_t, begin), "%struct.timeval", (int)__builtin_offsetof (struct __stopwatch_t, end),
-                     "option", 4, "char*", (int)__builtin_offsetof (struct option, name), "int", (int)__builtin_offsetof (struct option, has_arg), "int*", (int)__builtin_offsetof (struct option, flag), "int", (int)__builtin_offsetof (struct option, val),
-                     "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
+                     "_FUNC_RETURN_CODE", 32UL, 0,
+                     "__stopwatch_t", 256UL, 2, "%struct.timeval", (int)__builtin_offsetof (struct __stopwatch_t, begin), "%struct.timeval", (int)__builtin_offsetof (struct __stopwatch_t, end),
+                     "option", 256UL, 4, "char*", (int)__builtin_offsetof (struct option, name), "int", (int)__builtin_offsetof (struct option, has_arg), "int*", (int)__builtin_offsetof (struct option, flag), "int", (int)__builtin_offsetof (struct option, val),
+                     "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                              "main", "main", 9, "create_matrix_from_file", "print_matrix", "matrix_duplicate", "stopwatch_start", "lud_base", "stopwatch_stop", "get_interval_by_sec", "print_matrix", "lud_verify",
                         "main|matrix_dim|0", 1, "main",
                         "main|option_index|0", 1, "main",

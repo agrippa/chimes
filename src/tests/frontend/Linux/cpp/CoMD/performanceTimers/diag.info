@@ -10,26 +10,26 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 4 alias_group_changed(____alias_loc_id_11); 
 InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 273 49 alias_group_changed(____alias_loc_id_10); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 93 1 const int ____chimes_did_disable0 = new_stack((void *)(&profileStart), "profileStart", &____must_manage_profileStart, 1, 0, (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 95 1 rm_stack(false, 0UL, "profileStart", &____must_manage_profileStart, ____alias_loc_id_14, ____chimes_did_disable0); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 95 1 rm_stack(false, 0UL, "profileStart", &____must_manage_profileStart, ____alias_loc_id_14, ____chimes_did_disable0, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 98 1 const int ____chimes_did_disable1 = new_stack((void *)(&profileStop), "profileStop", &____must_manage_profileStop, 1, 0, (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 103 1 rm_stack(false, 0UL, "profileStop", &____must_manage_profileStop, ____alias_loc_id_16, ____chimes_did_disable1); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 113 66 rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 103 1 rm_stack(false, 0UL, "profileStop", &____must_manage_profileStop, ____alias_loc_id_16, ____chimes_did_disable1, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 113 66 rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 109 1 const int ____chimes_did_disable2 = new_stack((void *)(&getElapsedTime), "getElapsedTime", &____must_manage_getElapsedTime, 1, 0, (size_t)(0UL)); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 114 1 rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 125 23 rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 114 1 rm_stack(false, 0UL, "getElapsedTime", &____must_manage_getElapsedTime, ____alias_loc_id_17, ____chimes_did_disable2, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 125 23 rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 121 1 const int ____chimes_did_disable3 = new_stack((void *)(&printPerformanceResults), "printPerformanceResults", &____must_manage_printPerformanceResults, 2, 2, (size_t)(0UL), (size_t)(0UL), "printPerformanceResults|nGlobalAtoms|0", &____must_checkpoint_printPerformanceResults_nGlobalAtoms_0, "i32", (void *)(&nGlobalAtoms), (size_t)4, 0, 0, 0, "printPerformanceResults|printRate|0", &____must_checkpoint_printPerformanceResults_printRate_0, "i32", (void *)(&printRate), (size_t)4, 0, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 178 1 rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 66 rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 178 1 rm_stack(false, 0UL, "printPerformanceResults", &____must_manage_printPerformanceResults, ____alias_loc_id_19, ____chimes_did_disable3, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 66 rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 181 1 const int ____chimes_did_disable4 = new_stack((void *)(&printPerformanceResultsYaml), "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, 1, 1, (size_t)(11198724033581183633UL), "printPerformanceResultsYaml|file|0", &____must_checkpoint_printPerformanceResultsYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 232 1 rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 250 64 rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 232 1 rm_stack(false, 0UL, "printPerformanceResultsYaml", &____must_manage_printPerformanceResultsYaml, ____alias_loc_id_21, ____chimes_did_disable4, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 250 64 rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 244 1 const int ____chimes_did_disable5 = new_stack((void *)(&getTime), "getTime", &____must_manage_getTime, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 251 1 rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 260 78 rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 251 1 rm_stack(false, 0UL, "getTime", &____must_manage_getTime, ____alias_loc_id_15, ____chimes_did_disable5, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 260 78 rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 258 1 const int ____chimes_did_disable6 = new_stack((void *)(&getTick), "getTick", &____must_manage_getTick, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 261 1 rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 261 1 rm_stack(false, 0UL, "getTick", &____must_manage_getTick, ____alias_loc_id_18, ____chimes_did_disable6, false); 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 265 1 const int ____chimes_did_disable7 = new_stack((void *)(&timerStats), "timerStats", &____must_manage_timerStats, 0, 0); 
-InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 308 1 rm_stack(false, 0UL, "timerStats", &____must_manage_timerStats, ____alias_loc_id_20, ____chimes_did_disable7); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 308 1 rm_stack(false, 0UL, "timerStats", &____must_manage_timerStats, ____alias_loc_id_20, ____chimes_did_disable7, false); 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 93 2 const int ____chimes_did_disable0 = new_stack((void *)(&profileStart), "profileStart", &____must_manage_profileStart, 1, 0, (size_t)(0UL)); ;
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 93 140 
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 98 2 const int ____chimes_did_disable1 = new_stack((void *)(&profileStop), "profileStop", &____must_manage_profileStop, 1, 0, (size_t)(0UL)); ;
@@ -154,15 +154,15 @@ InsertText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 92 6 len=12 profileStart_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 94 30 ({ calling_npm("getTime", 0); getTime_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 94 38 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 93 139  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 93 139  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 97 6 len=11 profileStop_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 100 31 ({ calling_npm("getTime", 0); getTime_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 100 39 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 98 136  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 98 136  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 108 8 len=14 getElapsedTime_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 110 29 ({ calling_npm("getTick", 0); getTick_npm(); })
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 110 37 
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 109 145  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 109 145  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 120 6 len=23 printPerformanceResults_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 123 17  ({  calling((void*)timerStats, 1, ____alias_loc_id_1, 0UL, 0); (timerStats)(); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 123 28 
@@ -193,10 +193,15 @@ InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceT
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 151 13  if (____must_checkpoint_printPerformanceResults_ii_1 != 0) { register_stack_var("printPerformanceResults|ii|1", &____must_checkpoint_printPerformanceResults_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 151 13 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 121 488  ; int ____chimes_unroll_var_1;
+# 121
 double totalTime;
+# 121
 int ____chimes_unroll_var_0;
+# 121
 double loopTime;
+# 121
 double tick;
+# 121
  if (____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0 || ____must_checkpoint_printPerformanceResults_totalTime_0 || ____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0 || ____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(5, "printPerformanceResults|____chimes_unroll_var_1|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0, "i32", (void *)(&____chimes_unroll_var_1), (size_t)4, 0, 0, 0, "printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0, "printPerformanceResults|____chimes_unroll_var_0|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 180 6 len=27 printPerformanceResultsYaml_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 65  ({  calling((void*)printRank, 2, ____alias_loc_id_11, 0UL, 0); (printRank)(); }) 
@@ -214,16 +219,20 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTime
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 33 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 181 356  ; int ____chimes_unroll_var_2;
+# 181
 double loopTime;
+# 181
 double tick;
+# 181
  if (____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0 || ____must_checkpoint_printPerformanceResultsYaml_loopTime_0 || ____must_checkpoint_printPerformanceResultsYaml_tick_0) { register_stack_vars(3, "printPerformanceResultsYaml|____chimes_unroll_var_2|0", &____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0, "i32", (void *)(&____chimes_unroll_var_2), (size_t)4, 0, 0, 0, "printPerformanceResultsYaml|loopTime|0", &____must_checkpoint_printPerformanceResultsYaml_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResultsYaml|tick|0", &____must_checkpoint_printPerformanceResultsYaml_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 243 17 len=7 getTime_quick
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 245 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 245 25 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 244 109  ; struct timeval ptime;
+# 244
  if (____must_checkpoint_getTime_ptime_0) { register_stack_vars(1, "getTime|ptime|0", &____must_checkpoint_getTime_ptime_0, "%struct.timeval = type { i64, i64 }", (void *)(&ptime), (size_t)16, 0, 1, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 257 15 len=7 getTick_quick
-InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 258 109  ;  
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 258 109  ; 
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 264 6 len=10 timerStats_quick
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 271 17  ({  calling((void*)addDoubleParallel, 1, ____alias_loc_id_9, 0UL, 3, (size_t)(11198724033581183204UL), (size_t)(11198724033581183205UL), (size_t)(0UL)); (addDoubleParallel)(sendBuf, recvBuf, numberOfTimers); }) 
 ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 271 67 
@@ -270,11 +279,17 @@ InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceT
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 304 13  if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 304 13 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 265 118  ; int ____chimes_unroll_var_4;
+# 265
 double temp;
+# 265
 RankReduceData reduceRecvBuf[11];
+# 265
 RankReduceData reduceSendBuf[11];
+# 265
 double recvBuf[11];
+# 265
 double sendBuf[11];
+# 265
  if (____must_checkpoint_timerStats_____chimes_unroll_var_4_0 || ____must_checkpoint_timerStats_temp_0 || ____must_checkpoint_timerStats_reduceSendBuf_0 || ____must_checkpoint_timerStats_sendBuf_0) { register_stack_vars(4, "timerStats|____chimes_unroll_var_4|0", &____must_checkpoint_timerStats_____chimes_unroll_var_4_0, "i32", (void *)(&____chimes_unroll_var_4), (size_t)4, 0, 0, 0, "timerStats|temp|0", &____must_checkpoint_timerStats_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0, "timerStats|reduceSendBuf|0", &____must_checkpoint_timerStats_reduceSendBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0, "timerStats|sendBuf|0", &____must_checkpoint_timerStats_sendBuf_0, "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0);  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 92 6 len=12 profileStart_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 94 30 ({ calling_npm("getTime", 0); getTime_npm(); })
@@ -318,10 +333,15 @@ InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceT
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 151 13  if (____must_checkpoint_printPerformanceResults_ii_1 != 0) { register_stack_var("printPerformanceResults|ii|1", &____must_checkpoint_printPerformanceResults_ii_1, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 151 13  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(4): { goto call_lbl_4; } case(9): { goto call_lbl_9; } case(15): { goto call_lbl_15; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 121 488  ; int ____chimes_unroll_var_1;
+# 121
 double totalTime;
+# 121
 int ____chimes_unroll_var_0;
+# 121
 double loopTime;
+# 121
 double tick;
+# 121
  if (____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0 || ____must_checkpoint_printPerformanceResults_totalTime_0 || ____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0 || ____must_checkpoint_printPerformanceResults_loopTime_0 || ____must_checkpoint_printPerformanceResults_tick_0) { register_stack_vars(5, "printPerformanceResults|____chimes_unroll_var_1|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_1_0, "i32", (void *)(&____chimes_unroll_var_1), (size_t)4, 0, 0, 0, "printPerformanceResults|totalTime|0", &____must_checkpoint_printPerformanceResults_totalTime_0, "double", (void *)(&totalTime), (size_t)8, 0, 0, 0, "printPerformanceResults|____chimes_unroll_var_0|0", &____must_checkpoint_printPerformanceResults_____chimes_unroll_var_0_0, "i32", (void *)(&____chimes_unroll_var_0), (size_t)4, 0, 0, 0, "printPerformanceResults|loopTime|0", &____must_checkpoint_printPerformanceResults_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResults|tick|0", &____must_checkpoint_printPerformanceResults_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) { goto lbl_0; }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 180 6 len=27 printPerformanceResultsYaml_resumable
 ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 182 65  ({  calling((void*)printRank, 2, ____alias_loc_id_11, 0UL, 0); (printRank)(); }) 
@@ -339,13 +359,17 @@ RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTime
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 6 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 189 33 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 181 356  ; int ____chimes_unroll_var_2;
+# 181
 double loopTime;
+# 181
 double tick;
+# 181
  if (____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0 || ____must_checkpoint_printPerformanceResultsYaml_loopTime_0 || ____must_checkpoint_printPerformanceResultsYaml_tick_0) { register_stack_vars(3, "printPerformanceResultsYaml|____chimes_unroll_var_2|0", &____must_checkpoint_printPerformanceResultsYaml_____chimes_unroll_var_2_0, "i32", (void *)(&____chimes_unroll_var_2), (size_t)4, 0, 0, 0, "printPerformanceResultsYaml|loopTime|0", &____must_checkpoint_printPerformanceResultsYaml_loopTime_0, "double", (void *)(&loopTime), (size_t)8, 0, 0, 0, "printPerformanceResultsYaml|tick|0", &____must_checkpoint_printPerformanceResultsYaml_tick_0, "double", (void *)(&tick), (size_t)8, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(8): { goto call_lbl_8; } default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 243 17 len=7 getTime_resumable
 RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 245 5 
 RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 245 25 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 244 109  ; struct timeval ptime;
+# 244
  if (____must_checkpoint_getTime_ptime_0) { register_stack_vars(1, "getTime|ptime|0", &____must_checkpoint_getTime_ptime_0, "%struct.timeval = type { i64, i64 }", (void *)(&ptime), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 257 15 len=7 getTick_resumable
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 258 109  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
@@ -395,9 +419,15 @@ InsertTextBefore /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceT
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 304 13  if (____must_checkpoint_timerStats_ii_6 != 0) { register_stack_var("timerStats|ii|6", &____must_checkpoint_timerStats_ii_6, "i32", (void *)(&ii), (size_t)4, 0, 0, 0); } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 304 13  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } default: { chimes_error(); } }  } 
 InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/performanceTimers.c 265 118  ; int ____chimes_unroll_var_4;
+# 265
 double temp;
+# 265
 RankReduceData reduceRecvBuf[11];
+# 265
 RankReduceData reduceSendBuf[11];
+# 265
 double recvBuf[11];
+# 265
 double sendBuf[11];
+# 265
  if (____must_checkpoint_timerStats_____chimes_unroll_var_4_0 || ____must_checkpoint_timerStats_temp_0 || ____must_checkpoint_timerStats_reduceSendBuf_0 || ____must_checkpoint_timerStats_sendBuf_0) { register_stack_vars(4, "timerStats|____chimes_unroll_var_4|0", &____must_checkpoint_timerStats_____chimes_unroll_var_4_0, "i32", (void *)(&____chimes_unroll_var_4), (size_t)4, 0, 0, 0, "timerStats|temp|0", &____must_checkpoint_timerStats_temp_0, "double", (void *)(&temp), (size_t)8, 0, 0, 0, "timerStats|reduceSendBuf|0", &____must_checkpoint_timerStats_reduceSendBuf_0, "[11 x %struct.RankReduceDataSt]", (void *)(reduceSendBuf), (size_t)176, 0, 0, 0, "timerStats|sendBuf|0", &____must_checkpoint_timerStats_sendBuf_0, "[11 x double]", (void *)(sendBuf), (size_t)88, 0, 0, 0);  }  if (____chimes_replaying) { goto lbl_0; }  

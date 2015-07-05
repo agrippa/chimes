@@ -4,6 +4,7 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c strlcpy|d|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c strlcpy|s|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c strlcpy|n|0 " i64 " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c strlcpy|____chimes_ret_var_0|0 " i64 " 64 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c fill_chartab|chartab|0 " i8* " 64 1 0 1 tolower
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c fill_chartab|i|0 " i32 " 32 0 0 1 tolower
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c fill_chartab|c|0 " i8 " 8 0 0 1 tolower
@@ -24,6 +25,7 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c get_seq|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c get_seq|c|0 " i8 " 8 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c get_seq|seq|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c get_seq|____chimes_ret_var_1|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c readseqs|first_seq|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c readseqs|filename|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c readseqs|i|0 " i32 " 32 0 0 0
@@ -32,3 +34,4 @@
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c readseqs|fin|0 " %struct._IO_FILE* " 64 1 0 1 fill_chartab
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c readseqs|seq1|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c readseqs|chartab|0 " [128 x i8] " 1024 0 0 1 readseqs
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c readseqs|____chimes_ret_var_2|0 " i32 " 32 0 0 0

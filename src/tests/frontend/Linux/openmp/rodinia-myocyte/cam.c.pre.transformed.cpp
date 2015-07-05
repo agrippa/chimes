@@ -28,7 +28,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -44,7 +44,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -79,7 +80,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2584,7 +2585,7 @@ float cam_resumable(float timeinst,
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
    float *finavalu,
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
-   float Ca){const int ____chimes_did_disable0 = new_stack((void *)(&cam), "cam", &____must_manage_cam, 7, 0, (size_t)(0UL), (size_t)(17020714764447488978UL), (size_t)(0UL), (size_t)(17020714764447488980UL), (size_t)(0UL), (size_t)(17020714764447488982UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+   float Ca){const int ____chimes_did_disable0 = new_stack((void *)(&cam), "cam", &____must_manage_cam, 7, 0, (size_t)(0UL), (size_t)(17020714764447488982UL), (size_t)(0UL), (size_t)(17020714764447488984UL), (size_t)(0UL), (size_t)(17020714764447488986UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 14 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 15 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
@@ -3220,10 +3221,11 @@ float cam_resumable(float timeinst,
 # 370 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
- rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0); return JCa;
+  float ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (JCa); rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
-}
+rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0, false); }
+# 6 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 float cam_quick(float timeinst,
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
    float *initvalu,
@@ -3236,7 +3238,7 @@ float cam_quick(float timeinst,
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
    float *finavalu,
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
-   float Ca){const int ____chimes_did_disable0 = new_stack((void *)(&cam), "cam", &____must_manage_cam, 7, 0, (size_t)(0UL), (size_t)(17020714764447488978UL), (size_t)(0UL), (size_t)(17020714764447488980UL), (size_t)(0UL), (size_t)(17020714764447488982UL), (size_t)(0UL)) ; ; ;
+   float Ca){const int ____chimes_did_disable0 = new_stack((void *)(&cam), "cam", &____must_manage_cam, 7, 0, (size_t)(0UL), (size_t)(17020714764447488982UL), (size_t)(0UL), (size_t)(17020714764447488984UL), (size_t)(0UL), (size_t)(17020714764447488986UL), (size_t)(0UL)) ; ; ;
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 14 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 15 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
@@ -3872,10 +3874,10 @@ float cam_quick(float timeinst,
 # 370 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
- rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0); return JCa;
+  float ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (JCa); rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
-}
+rm_stack(false, 0UL, "cam", &____must_manage_cam, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 float cam(float timeinst,
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
@@ -3890,9 +3892,7 @@ float cam(float timeinst,
    float *finavalu,
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
    float Ca) { return (____chimes_replaying ? cam_resumable(timeinst, initvalu, initvalu_offset, parameter, parameter_offset, finavalu, Ca) : cam_quick(timeinst, initvalu, initvalu_offset, parameter, parameter_offset, finavalu, Ca)); }
-
-
-
+# 6 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 float cam_npm(float timeinst,
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
    float *initvalu,
@@ -4541,7 +4541,7 @@ float cam_npm(float timeinst,
 # 370 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 371 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 372 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
- return JCa;
+  float ____chimes_ret_var_0; ____chimes_ret_var_0 = (JCa); return ____chimes_ret_var_0; ;
 # 373 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 # 374 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/cam.c"
 }
@@ -4552,12 +4552,12 @@ float cam_npm(float timeinst,
 
 static int module_init() {
     init_module(17020714764447487728UL, 3, 1, 0, 1, 1, 0, 1, 0, 0, 0,
-                           &____alias_loc_id_0, (unsigned)135, (unsigned)0, (unsigned)0, (17020714764447487728UL + 1UL), (17020714764447487728UL + 2UL), (17020714764447487728UL + 3UL), (17020714764447487728UL + 4UL), (17020714764447487728UL + 5UL), (17020714764447487728UL + 6UL), (17020714764447487728UL + 7UL), (17020714764447487728UL + 8UL), (17020714764447487728UL + 9UL), (17020714764447487728UL + 10UL), (17020714764447487728UL + 11UL), (17020714764447487728UL + 12UL), (17020714764447487728UL + 13UL), (17020714764447487728UL + 14UL), (17020714764447487728UL + 15UL), (17020714764447487728UL + 16UL), (17020714764447487728UL + 17UL), (17020714764447487728UL + 18UL), (17020714764447487728UL + 19UL), (17020714764447487728UL + 20UL), (17020714764447487728UL + 21UL), (17020714764447487728UL + 22UL), (17020714764447487728UL + 23UL), (17020714764447487728UL + 24UL), (17020714764447487728UL + 25UL), (17020714764447487728UL + 26UL), (17020714764447487728UL + 27UL), (17020714764447487728UL + 28UL), (17020714764447487728UL + 29UL), (17020714764447487728UL + 30UL), (17020714764447487728UL + 31UL), (17020714764447487728UL + 32UL), (17020714764447487728UL + 33UL), (17020714764447487728UL + 34UL), (17020714764447487728UL + 35UL), (17020714764447487728UL + 36UL), (17020714764447487728UL + 37UL), (17020714764447487728UL + 38UL), (17020714764447487728UL + 39UL), (17020714764447487728UL + 40UL), (17020714764447487728UL + 41UL), (17020714764447487728UL + 42UL), (17020714764447487728UL + 43UL), (17020714764447487728UL + 44UL), (17020714764447487728UL + 45UL), (17020714764447487728UL + 46UL), (17020714764447487728UL + 47UL), (17020714764447487728UL + 48UL), (17020714764447487728UL + 49UL), (17020714764447487728UL + 50UL), (17020714764447487728UL + 51UL), (17020714764447487728UL + 52UL), (17020714764447487728UL + 53UL), (17020714764447487728UL + 54UL), (17020714764447487728UL + 55UL), (17020714764447487728UL + 56UL), (17020714764447487728UL + 57UL), (17020714764447487728UL + 58UL), (17020714764447487728UL + 59UL), (17020714764447487728UL + 60UL), (17020714764447487728UL + 61UL), (17020714764447487728UL + 62UL), (17020714764447487728UL + 63UL), (17020714764447487728UL + 64UL), (17020714764447487728UL + 65UL), (17020714764447487728UL + 66UL), (17020714764447487728UL + 67UL), (17020714764447487728UL + 68UL), (17020714764447487728UL + 69UL), (17020714764447487728UL + 70UL), (17020714764447487728UL + 71UL), (17020714764447487728UL + 72UL), (17020714764447487728UL + 73UL), (17020714764447487728UL + 74UL), (17020714764447487728UL + 75UL), (17020714764447487728UL + 76UL), (17020714764447487728UL + 77UL), (17020714764447487728UL + 78UL), (17020714764447487728UL + 79UL), (17020714764447487728UL + 80UL), (17020714764447487728UL + 81UL), (17020714764447487728UL + 82UL), (17020714764447487728UL + 83UL), (17020714764447487728UL + 84UL), (17020714764447487728UL + 85UL), (17020714764447487728UL + 86UL), (17020714764447487728UL + 87UL), (17020714764447487728UL + 88UL), (17020714764447487728UL + 89UL), (17020714764447487728UL + 90UL), (17020714764447487728UL + 91UL), (17020714764447487728UL + 92UL), (17020714764447487728UL + 93UL), (17020714764447487728UL + 94UL), (17020714764447487728UL + 95UL), (17020714764447487728UL + 96UL), (17020714764447487728UL + 97UL), (17020714764447487728UL + 98UL), (17020714764447487728UL + 99UL), (17020714764447487728UL + 100UL), (17020714764447487728UL + 101UL), (17020714764447487728UL + 102UL), (17020714764447487728UL + 103UL), (17020714764447487728UL + 104UL), (17020714764447487728UL + 105UL), (17020714764447487728UL + 106UL), (17020714764447487728UL + 107UL), (17020714764447487728UL + 108UL), (17020714764447487728UL + 109UL), (17020714764447487728UL + 110UL), (17020714764447487728UL + 111UL), (17020714764447487728UL + 112UL), (17020714764447487728UL + 113UL), (17020714764447487728UL + 114UL), (17020714764447487728UL + 115UL), (17020714764447487728UL + 116UL), (17020714764447487728UL + 117UL), (17020714764447487728UL + 118UL), (17020714764447487728UL + 119UL), (17020714764447487728UL + 120UL), (17020714764447487728UL + 121UL), (17020714764447487728UL + 122UL), (17020714764447487728UL + 123UL), (17020714764447487728UL + 124UL), (17020714764447487728UL + 125UL), (17020714764447487728UL + 126UL), (17020714764447487728UL + 127UL), (17020714764447487728UL + 128UL), (17020714764447487728UL + 129UL), (17020714764447487728UL + 130UL), (17020714764447487728UL + 131UL), (17020714764447487728UL + 132UL), (17020714764447487728UL + 133UL), (17020714764447487728UL + 134UL), (17020714764447487728UL + 1254UL),
-                            "cam", (void *)(&cam_npm), (void *)__null, 0, 7, 0UL, (17020714764447487728UL + 1250UL), 0UL, (17020714764447487728UL + 1252UL), 0UL, (17020714764447487728UL + 1254UL), 0UL, 0UL, 11, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL,
+                           &____alias_loc_id_0, (unsigned)136, (unsigned)0, (unsigned)0, (17020714764447487728UL + 1UL), (17020714764447487728UL + 2UL), (17020714764447487728UL + 3UL), (17020714764447487728UL + 4UL), (17020714764447487728UL + 5UL), (17020714764447487728UL + 6UL), (17020714764447487728UL + 7UL), (17020714764447487728UL + 8UL), (17020714764447487728UL + 9UL), (17020714764447487728UL + 10UL), (17020714764447487728UL + 11UL), (17020714764447487728UL + 12UL), (17020714764447487728UL + 13UL), (17020714764447487728UL + 14UL), (17020714764447487728UL + 15UL), (17020714764447487728UL + 16UL), (17020714764447487728UL + 17UL), (17020714764447487728UL + 18UL), (17020714764447487728UL + 19UL), (17020714764447487728UL + 20UL), (17020714764447487728UL + 21UL), (17020714764447487728UL + 22UL), (17020714764447487728UL + 23UL), (17020714764447487728UL + 24UL), (17020714764447487728UL + 25UL), (17020714764447487728UL + 26UL), (17020714764447487728UL + 27UL), (17020714764447487728UL + 28UL), (17020714764447487728UL + 29UL), (17020714764447487728UL + 30UL), (17020714764447487728UL + 31UL), (17020714764447487728UL + 32UL), (17020714764447487728UL + 33UL), (17020714764447487728UL + 34UL), (17020714764447487728UL + 35UL), (17020714764447487728UL + 36UL), (17020714764447487728UL + 37UL), (17020714764447487728UL + 38UL), (17020714764447487728UL + 39UL), (17020714764447487728UL + 40UL), (17020714764447487728UL + 41UL), (17020714764447487728UL + 42UL), (17020714764447487728UL + 43UL), (17020714764447487728UL + 44UL), (17020714764447487728UL + 45UL), (17020714764447487728UL + 46UL), (17020714764447487728UL + 47UL), (17020714764447487728UL + 48UL), (17020714764447487728UL + 49UL), (17020714764447487728UL + 50UL), (17020714764447487728UL + 51UL), (17020714764447487728UL + 52UL), (17020714764447487728UL + 53UL), (17020714764447487728UL + 54UL), (17020714764447487728UL + 55UL), (17020714764447487728UL + 56UL), (17020714764447487728UL + 57UL), (17020714764447487728UL + 58UL), (17020714764447487728UL + 59UL), (17020714764447487728UL + 60UL), (17020714764447487728UL + 61UL), (17020714764447487728UL + 62UL), (17020714764447487728UL + 63UL), (17020714764447487728UL + 64UL), (17020714764447487728UL + 65UL), (17020714764447487728UL + 66UL), (17020714764447487728UL + 67UL), (17020714764447487728UL + 68UL), (17020714764447487728UL + 69UL), (17020714764447487728UL + 70UL), (17020714764447487728UL + 71UL), (17020714764447487728UL + 72UL), (17020714764447487728UL + 73UL), (17020714764447487728UL + 74UL), (17020714764447487728UL + 75UL), (17020714764447487728UL + 76UL), (17020714764447487728UL + 77UL), (17020714764447487728UL + 78UL), (17020714764447487728UL + 79UL), (17020714764447487728UL + 80UL), (17020714764447487728UL + 81UL), (17020714764447487728UL + 82UL), (17020714764447487728UL + 83UL), (17020714764447487728UL + 84UL), (17020714764447487728UL + 85UL), (17020714764447487728UL + 86UL), (17020714764447487728UL + 87UL), (17020714764447487728UL + 88UL), (17020714764447487728UL + 89UL), (17020714764447487728UL + 90UL), (17020714764447487728UL + 91UL), (17020714764447487728UL + 92UL), (17020714764447487728UL + 93UL), (17020714764447487728UL + 94UL), (17020714764447487728UL + 95UL), (17020714764447487728UL + 96UL), (17020714764447487728UL + 97UL), (17020714764447487728UL + 98UL), (17020714764447487728UL + 99UL), (17020714764447487728UL + 100UL), (17020714764447487728UL + 101UL), (17020714764447487728UL + 102UL), (17020714764447487728UL + 103UL), (17020714764447487728UL + 104UL), (17020714764447487728UL + 105UL), (17020714764447487728UL + 106UL), (17020714764447487728UL + 107UL), (17020714764447487728UL + 108UL), (17020714764447487728UL + 109UL), (17020714764447487728UL + 110UL), (17020714764447487728UL + 111UL), (17020714764447487728UL + 112UL), (17020714764447487728UL + 113UL), (17020714764447487728UL + 114UL), (17020714764447487728UL + 115UL), (17020714764447487728UL + 116UL), (17020714764447487728UL + 117UL), (17020714764447487728UL + 118UL), (17020714764447487728UL + 119UL), (17020714764447487728UL + 120UL), (17020714764447487728UL + 121UL), (17020714764447487728UL + 122UL), (17020714764447487728UL + 123UL), (17020714764447487728UL + 124UL), (17020714764447487728UL + 125UL), (17020714764447487728UL + 126UL), (17020714764447487728UL + 127UL), (17020714764447487728UL + 128UL), (17020714764447487728UL + 129UL), (17020714764447487728UL + 130UL), (17020714764447487728UL + 131UL), (17020714764447487728UL + 132UL), (17020714764447487728UL + 133UL), (17020714764447487728UL + 134UL), (17020714764447487728UL + 135UL), (17020714764447487728UL + 1258UL),
+                            "cam", (void *)(&cam_npm), (void *)__null, 0, 7, 0UL, (17020714764447487728UL + 1254UL), 0UL, (17020714764447487728UL + 1256UL), 0UL, (17020714764447487728UL + 1258UL), 0UL, 0UL, 11, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL, "pow", 2, 0UL, 0UL, 0UL,
                            "cam", &(____chimes_does_checkpoint_cam_npm),
-                             (17020714764447487728UL + 2UL), (17020714764447487728UL + 1250UL),
-                             (17020714764447487728UL + 4UL), (17020714764447487728UL + 1252UL),
-                             (17020714764447487728UL + 6UL), (17020714764447487728UL + 1254UL),
+                             (17020714764447487728UL + 2UL), (17020714764447487728UL + 1254UL),
+                             (17020714764447487728UL + 4UL), (17020714764447487728UL + 1256UL),
+                             (17020714764447487728UL + 6UL), (17020714764447487728UL + 1258UL),
                              "cam", "_Z3camfPfiS_iS_f", 0);
     return 0;
 }

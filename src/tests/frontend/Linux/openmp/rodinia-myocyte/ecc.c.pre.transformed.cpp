@@ -41,7 +41,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -57,7 +57,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -92,7 +93,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2596,16 +2597,26 @@ void ecc_resumable( float timeinst,
     int parameter_offset,
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
     float *finavalu){const int ____chimes_did_disable0 = new_stack((void *)(&ecc), "ecc", &____must_manage_ecc, 6, 1, (size_t)(0UL), (size_t)(17020714764657570938UL), (size_t)(0UL), (size_t)(17020714764657570940UL), (size_t)(0UL), (size_t)(17020714764657570942UL), "ecc|finavalu|0", &____must_checkpoint_ecc_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0) ; float I_Ca_tot_sl;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_Ca_tot_junc;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_K_tot;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_Na_tot_sl;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_Na_tot_junc;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_Clbk;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_ClCa;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 int offset_42;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 int offset_41;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 int offset_39;
- if (____must_checkpoint_ecc_I_Ca_tot_sl_0 || ____must_checkpoint_ecc_I_Ca_tot_junc_0 || ____must_checkpoint_ecc_I_K_tot_0 || ____must_checkpoint_ecc_I_Na_tot_sl_0 || ____must_checkpoint_ecc_I_Na_tot_junc_0 || ____must_checkpoint_ecc_I_Clbk_0 || ____must_checkpoint_ecc_I_ClCa_0 || ____must_checkpoint_ecc_offset_42_0 || ____must_checkpoint_ecc_offset_41_0 || ____must_checkpoint_ecc_offset_39_0) { register_stack_vars(10, "ecc|I_Ca_tot_sl|0", &____must_checkpoint_ecc_I_Ca_tot_sl_0, "float", (void *)(&I_Ca_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Ca_tot_junc|0", &____must_checkpoint_ecc_I_Ca_tot_junc_0, "float", (void *)(&I_Ca_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_K_tot|0", &____must_checkpoint_ecc_I_K_tot_0, "float", (void *)(&I_K_tot), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_sl|0", &____must_checkpoint_ecc_I_Na_tot_sl_0, "float", (void *)(&I_Na_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_junc|0", &____must_checkpoint_ecc_I_Na_tot_junc_0, "float", (void *)(&I_Na_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_Clbk|0", &____must_checkpoint_ecc_I_Clbk_0, "float", (void *)(&I_Clbk), (size_t)4, 0, 0, 0, "ecc|I_ClCa|0", &____must_checkpoint_ecc_I_ClCa_0, "float", (void *)(&I_ClCa), (size_t)4, 0, 0, 0, "ecc|offset_42|0", &____must_checkpoint_ecc_offset_42_0, "i32", (void *)(&offset_42), (size_t)4, 0, 0, 0, "ecc|offset_41|0", &____must_checkpoint_ecc_offset_41_0, "i32", (void *)(&offset_41), (size_t)4, 0, 0, 0, "ecc|offset_39|0", &____must_checkpoint_ecc_offset_39_0, "i32", (void *)(&offset_39), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(123): { goto call_lbl_123; } default: { chimes_error(); } } } ; ;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
+ if (____must_checkpoint_ecc_I_Ca_tot_sl_0 || ____must_checkpoint_ecc_I_Ca_tot_junc_0 || ____must_checkpoint_ecc_I_K_tot_0 || ____must_checkpoint_ecc_I_Na_tot_sl_0 || ____must_checkpoint_ecc_I_Na_tot_junc_0 || ____must_checkpoint_ecc_I_Clbk_0 || ____must_checkpoint_ecc_I_ClCa_0 || ____must_checkpoint_ecc_offset_42_0 || ____must_checkpoint_ecc_offset_41_0 || ____must_checkpoint_ecc_offset_39_0) { register_stack_vars(10, "ecc|I_Ca_tot_sl|0", &____must_checkpoint_ecc_I_Ca_tot_sl_0, "float", (void *)(&I_Ca_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Ca_tot_junc|0", &____must_checkpoint_ecc_I_Ca_tot_junc_0, "float", (void *)(&I_Ca_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_K_tot|0", &____must_checkpoint_ecc_I_K_tot_0, "float", (void *)(&I_K_tot), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_sl|0", &____must_checkpoint_ecc_I_Na_tot_sl_0, "float", (void *)(&I_Na_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_junc|0", &____must_checkpoint_ecc_I_Na_tot_junc_0, "float", (void *)(&I_Na_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_Clbk|0", &____must_checkpoint_ecc_I_Clbk_0, "float", (void *)(&I_Clbk), (size_t)4, 0, 0, 0, "ecc|I_ClCa|0", &____must_checkpoint_ecc_I_ClCa_0, "float", (void *)(&I_ClCa), (size_t)4, 0, 0, 0, "ecc|offset_42|0", &____must_checkpoint_ecc_offset_42_0, "i32", (void *)(&offset_42), (size_t)4, 0, 0, 0, "ecc|offset_41|0", &____must_checkpoint_ecc_offset_41_0, "i32", (void *)(&offset_41), (size_t)4, 0, 0, 0, "ecc|offset_39|0", &____must_checkpoint_ecc_offset_39_0, "i32", (void *)(&offset_39), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(124): { goto call_lbl_124; } default: { chimes_error(); } } } ; ;
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 # 14 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
@@ -4241,7 +4252,7 @@ int offset_39;
 # 914 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
   case 1:
 # 915 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
-    call_lbl_123: if(alias_group_changed(____alias_loc_id_0) || ({ calling((void*)fmod, 123, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) <= 5){
+    call_lbl_124: if(alias_group_changed(____alias_loc_id_0) || ({ calling((void*)fmod, 124, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) <= 5){
 # 916 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
     I_app = 9.5;
 # 917 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
@@ -4300,7 +4311,8 @@ int offset_39;
  finavalu[offset_42] = 0;
 # 946 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 # 947 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
-rm_stack(false, 0UL, "ecc", &____must_manage_ecc, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "ecc", &____must_manage_ecc, ____alias_loc_id_1, ____chimes_did_disable0, false); }
+# 6 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 void ecc_quick( float timeinst,
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
     float *initvalu,
@@ -4312,15 +4324,25 @@ void ecc_quick( float timeinst,
     int parameter_offset,
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
     float *finavalu){const int ____chimes_did_disable0 = new_stack((void *)(&ecc), "ecc", &____must_manage_ecc, 6, 1, (size_t)(0UL), (size_t)(17020714764657570938UL), (size_t)(0UL), (size_t)(17020714764657570940UL), (size_t)(0UL), (size_t)(17020714764657570942UL), "ecc|finavalu|0", &____must_checkpoint_ecc_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0) ; float I_Ca_tot_sl;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_Ca_tot_junc;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_K_tot;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_Na_tot_sl;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_Na_tot_junc;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_Clbk;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 float I_ClCa;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 int offset_42;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 int offset_41;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 int offset_39;
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
  if (____must_checkpoint_ecc_I_Ca_tot_sl_0 || ____must_checkpoint_ecc_I_Ca_tot_junc_0 || ____must_checkpoint_ecc_I_K_tot_0 || ____must_checkpoint_ecc_I_Na_tot_sl_0 || ____must_checkpoint_ecc_I_Na_tot_junc_0 || ____must_checkpoint_ecc_I_Clbk_0 || ____must_checkpoint_ecc_I_ClCa_0 || ____must_checkpoint_ecc_offset_42_0 || ____must_checkpoint_ecc_offset_41_0 || ____must_checkpoint_ecc_offset_39_0) { register_stack_vars(10, "ecc|I_Ca_tot_sl|0", &____must_checkpoint_ecc_I_Ca_tot_sl_0, "float", (void *)(&I_Ca_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Ca_tot_junc|0", &____must_checkpoint_ecc_I_Ca_tot_junc_0, "float", (void *)(&I_Ca_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_K_tot|0", &____must_checkpoint_ecc_I_K_tot_0, "float", (void *)(&I_K_tot), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_sl|0", &____must_checkpoint_ecc_I_Na_tot_sl_0, "float", (void *)(&I_Na_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_junc|0", &____must_checkpoint_ecc_I_Na_tot_junc_0, "float", (void *)(&I_Na_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_Clbk|0", &____must_checkpoint_ecc_I_Clbk_0, "float", (void *)(&I_Clbk), (size_t)4, 0, 0, 0, "ecc|I_ClCa|0", &____must_checkpoint_ecc_I_ClCa_0, "float", (void *)(&I_ClCa), (size_t)4, 0, 0, 0, "ecc|offset_42|0", &____must_checkpoint_ecc_offset_42_0, "i32", (void *)(&offset_42), (size_t)4, 0, 0, 0, "ecc|offset_41|0", &____must_checkpoint_ecc_offset_41_0, "i32", (void *)(&offset_41), (size_t)4, 0, 0, 0, "ecc|offset_39|0", &____must_checkpoint_ecc_offset_39_0, "i32", (void *)(&offset_39), (size_t)4, 0, 0, 0); } ; ;
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
@@ -5957,7 +5979,7 @@ int offset_39;
 # 914 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
   case 1:
 # 915 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
-    call_lbl_123: if(alias_group_changed(____alias_loc_id_0) || ({ calling((void*)fmod, 123, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) <= 5){
+    call_lbl_124: if(alias_group_changed(____alias_loc_id_0) || ({ calling((void*)fmod, 124, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) <= 5){
 # 916 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
     I_app = 9.5;
 # 917 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
@@ -6016,7 +6038,7 @@ int offset_39;
  finavalu[offset_42] = 0;
 # 946 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 # 947 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
-rm_stack(false, 0UL, "ecc", &____must_manage_ecc, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "ecc", &____must_manage_ecc, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 void ecc( float timeinst,
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
@@ -6029,9 +6051,7 @@ void ecc( float timeinst,
     int parameter_offset,
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
     float *finavalu) { (____chimes_replaying ? ecc_resumable(timeinst, initvalu, initvalu_offset, parameter, parameter_offset, finavalu) : ecc_quick(timeinst, initvalu, initvalu_offset, parameter, parameter_offset, finavalu)); }
-
-
-
+# 6 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
 void ecc_npm( float timeinst,
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c"
     float *initvalu,

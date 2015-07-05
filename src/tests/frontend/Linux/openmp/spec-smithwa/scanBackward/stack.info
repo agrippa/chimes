@@ -1,102 +1,123 @@
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c copyStringR|inpString|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c copyStringR|c|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c copyStringR|outString|0 " i8* " 64 1 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|A|0 " %struct.astr* " 64 1 0 1 doScan gridInfo
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|maxReports|0 " i32 " 32 0 0 1 doScan gridInfo
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|minSeparation|0 " i32 " 32 0 0 1 doScan gridInfo
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|maxDoublings|0 " i32 " 32 0 0 1 doScan gridInfo
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|i|0 " i32 " 32 0 0 1 doScan gridInfo
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|j|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|m|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|n|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|r|0 " i32 " 32 0 0 1 doScan
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c copyStringR|____chimes_ret_var_0|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|A|0 " %struct.astr* " 64 1 0 1 gridInfo
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|maxReports|0 " i32 " 32 0 0 1 gridInfo
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|minSeparation|0 " i32 " 32 0 0 1 gridInfo
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|maxDoublings|0 " i32 " 32 0 0 1 gridInfo
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|i|0 " i32 " 32 0 0 1 gridInfo
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|m|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|n|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|r|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|c|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|sizeT|0 " i32 " 32 0 0 1 doScan
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|sizeT|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestR|0 " i32 " 32 0 0 1 scanBackward
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|ei|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|ej|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|doublings|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|matchLimit|0 " i32 " 32 0 0 1 doScan gridInfo
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|gapStart|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|gapExtend|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|gapFirst|0 " i32 " 32 0 0 1 doScan
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|ei|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|ej|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|doublings|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|matchLimit|0 " i32 " 32 0 0 1 gridInfo
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|gapStart|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|gapExtend|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|gapFirst|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|maxThreads|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|threadNum|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|myTaskID|0 " i32 " 32 0 0 1 doScan
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|threadNum|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|myTaskID|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|npRow|0 " i32 " 32 0 0 1 scanBackward
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|npCol|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|myRow|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|myCol|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|iBeg|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|jBeg|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|iFin|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|jFin|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|iEnd|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|jEnd|0 " i32 " 32 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestStartsI|0 " i32* " 64 1 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestStartsJ|0 " i32* " 64 1 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestEndsI|0 " i32* " 64 1 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestEndsJ|0 " i32* " 64 1 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|mainSeq|0 " i8* " 64 1 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|matchSeq|0 " i8* " 64 1 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|T|0 " i8** " 64 1 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestSeqsI|0 " i8** " 64 1 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestSeqsJ|0 " i8** " 64 1 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestScores|0 " i64* " 64 1 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|goal|0 " i64 " 64 0 0 1 doScan
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|weights|0 " i8** " 64 1 0 1 doScan
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|iBeg|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|jBeg|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|iFin|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|jFin|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|iEnd|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|jEnd|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestStartsI|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestStartsJ|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestEndsI|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestEndsJ|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|mainSeq|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|matchSeq|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|T|0 " i8** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestSeqsI|0 " i8** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestSeqsJ|0 " i8** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|bestScores|0 " i64* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|goal|0 " i64 " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|weights|0 " i8** " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|hyphen|0 " i8 " 8 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|B|0 " %struct.bstr* " 64 1 0 1 doScan gridInfo
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|A|0 " %struct.astr* " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|T|0 " i8** " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|sizeT|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|ei|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|ej|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|mainSeq|0 " i8* " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|matchSeq|0 " i8* " 64 1 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|B|0 " %struct.bstr* " 64 1 0 1 gridInfo
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c scanBackward|____chimes_ret_var_29|0 " %struct.bstr* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|A|0 " %struct.astr* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|T|0 " i8** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|sizeT|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|ei|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|ej|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|mainSeq|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|matchSeq|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|weights|0 " i8** " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|gapFirst|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|gapExtend|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|minSeparation|0 " i32 " 32 0 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|minSeparation|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|report|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|goal|0 " i64 " 64 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|iBeg|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|jBeg|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|iFin|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|jFin|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|iEnd|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|jEnd|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|threadNum|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestR|0 " i32* " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestStartsI|0 " i32* " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestStartsJ|0 " i32* " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestEndsI|0 " i32* " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestEndsJ|0 " i32* " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestSeqsI|0 " i8** " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestSeqsJ|0 " i8** " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestScores|0 " i64* " 64 1 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|goal|0 " i64 " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|iBeg|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|jBeg|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|iFin|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|jFin|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|iEnd|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|jEnd|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|threadNum|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestR|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestStartsI|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestStartsJ|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestEndsI|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestEndsJ|0 " i32* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestSeqsI|0 " i8** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestSeqsJ|0 " i8** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|bestScores|0 " i64* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|j|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|r|0 " i32 " 32 0 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|r|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|v|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|m|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|e|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|f|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|di|0 " i32 " 32 0 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|dj|0 " i32 " 32 0 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|e|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|f|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|di|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|dj|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|fi|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|fj|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|lj|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|rsi|0 " i32 " 32 0 0 1 doScan
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|rsj|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|V|0 " i64** " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|E|0 " i64* " 64 1 0 1 abs
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|F|0 " i64* " 64 1 0 1 abs
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|V|0 " i64** " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|E|0 " i64* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|F|0 " i64* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|G|0 " i64 " 64 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|s|0 " i64 " 64 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_11|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_12|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_13|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_14|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_15|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_16|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_17|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_18|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_19|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_20|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_21|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_22|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_23|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_24|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_25|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_26|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_27|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c doScan|____chimes_ret_var_28|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c freeB|B|0 " %struct.bstr* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c freeB|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c freeB|j|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c freeB|____chimes_ret_var_30|0 " %struct.bstr* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|A|0 " %struct.astr* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|T|0 " i8** " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|ei|0 " i32 " 32 0 0 0
@@ -115,3 +136,13 @@
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|rsj|0 " i32* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|ri|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|rj|0 " i8* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|____chimes_ret_var_1|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|____chimes_ret_var_2|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|____chimes_ret_var_3|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|____chimes_ret_var_4|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|____chimes_ret_var_5|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|____chimes_ret_var_6|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|____chimes_ret_var_7|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|____chimes_ret_var_8|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|____chimes_ret_var_9|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c tracePathR|____chimes_ret_var_10|0 " i32 " 32 0 0 0

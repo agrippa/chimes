@@ -1,3 +1,3 @@
-_config 0 px "double" py "double" pz "double" lx "double" ly "double" lz "double" dx "double" dy "double" dz "double" svx "double" svy "double" svz "double" nx "int" ny "int" spheres "%struct._sphere*" nspheres "int" nt "int"
-_rgb 0 r "double" g "double" b "double"
-_sphere 0 cx "double" cy "double" cz "double" radius "double" clR "double" clG "double" clB "double"
+_config 960 0 px "double" py "double" pz "double" lx "double" ly "double" lz "double" dx "double" dy "double" dz "double" svx "double" svy "double" svz "double" nx "int" ny "int" spheres "%struct._sphere*" nspheres "int" nt "int"
+_rgb 192 0 r "double" g "double" b "double"
+_sphere 448 0 cx "double" cy "double" cz "double" radius "double" clR "double" clG "double" clB "double"

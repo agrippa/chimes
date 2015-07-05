@@ -48,7 +48,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -64,7 +64,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -99,7 +100,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2578,6 +2579,7 @@ static void getTimeString_quick(char* timestring); static void getTimeString(cha
 static void getTimeString_resumable(char* timestring)
 # 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 0, (size_t)(6662524296122131076UL)) ; time_t rawtime;
+# 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  if (____must_checkpoint_getTimeString_rawtime_0) { register_stack_vars(1, "getTimeString|rawtime|0", &____must_checkpoint_getTimeString_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 30 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
     ;
@@ -2605,7 +2607,7 @@ static void getTimeString_resumable(char* timestring)
 # 42 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
            timeinfo->tm_sec);
 # 43 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_4, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_4, ____chimes_did_disable0, false); }
 # 44 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 45 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlBegin_npm(void);static int (*____chimes_extern_func_printRank)(void) = printRank;
@@ -2613,11 +2615,14 @@ void yamlBegin_quick(void); void yamlBegin(void);
 void yamlBegin_resumable(void)
 # 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&yamlBegin), "yamlBegin", &____must_manage_yamlBegin, 0, 0) ; char sdate[25];
+# 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 time_t rawtime;
+# 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 char filename[64];
+# 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  if (____must_checkpoint_yamlBegin_sdate_0 || ____must_checkpoint_yamlBegin_rawtime_0 || ____must_checkpoint_yamlBegin_filename_0) { register_stack_vars(3, "yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0, "yamlBegin|rawtime|0", &____must_checkpoint_yamlBegin_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0, "yamlBegin|filename|0", &____must_checkpoint_yamlBegin_filename_0, "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_1, ____chimes_did_disable1); return; };
+    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_1, ____chimes_did_disable1, false); return; };
 # 49 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 50 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
     ;
@@ -2640,7 +2645,7 @@ char filename[64];
    sprintf(filename, "%s.%s.yaml", CoMDVariant, sdate);
 # 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_1, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 # 62 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlAppInfo_npm(FILE* file);void printSeparator_npm(FILE* file);static int (*____chimes_extern_func_builtWithMpi)(void) = builtWithMpi;
@@ -2648,9 +2653,10 @@ void yamlAppInfo_quick(FILE* file); void yamlAppInfo(FILE* file);void printSepar
 void yamlAppInfo_resumable(FILE* file)
 # 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&yamlAppInfo), "yamlAppInfo", &____must_manage_yamlAppInfo, 1, 1, (size_t)(6662524296122131033UL), "yamlAppInfo|file|0", &____must_checkpoint_yamlAppInfo_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; char timestring[32];
+# 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  if (____must_checkpoint_yamlAppInfo_timestring_0) { register_stack_vars(1, "yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(16): { goto call_lbl_16; } default: { chimes_error(); } } } ; ;
 # 65 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-   alias_group_changed(____alias_loc_id_0); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, ____alias_loc_id_2, ____chimes_did_disable2); return; };
+   alias_group_changed(____alias_loc_id_0); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, ____alias_loc_id_2, ____chimes_did_disable2, false); return; };
 # 67 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
    ({ calling_npm("printSeparator", 0); printSeparator_npm(file); });
 # 68 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
@@ -2694,7 +2700,7 @@ void yamlAppInfo_resumable(FILE* file)
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
    fflush(file);
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, ____alias_loc_id_2, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, ____alias_loc_id_2, ____chimes_did_disable2, false); }
 # 89 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 90 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlEnd_npm(void);
@@ -2703,11 +2709,11 @@ void yamlEnd_resumable(void)
 # 91 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&yamlEnd), "yamlEnd", &____must_manage_yamlEnd, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 92 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disable3); return; };
+    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disable3, false); return; };
 # 94 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 95 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 96 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disable3, false); }
 # 97 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 98 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void printSeparator_resumable(FILE* file)
@@ -2717,10 +2723,12 @@ void printSeparator_resumable(FILE* file)
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
       fprintf(file,"\n");
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_3, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_3, ____chimes_did_disable4, false); }
+# 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 static void getTimeString_quick(char* timestring)
 # 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&getTimeString), "getTimeString", &____must_manage_getTimeString, 1, 0, (size_t)(6662524296122131076UL)) ; time_t rawtime;
+# 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  if (____must_checkpoint_getTimeString_rawtime_0) { register_stack_vars(1, "getTimeString|rawtime|0", &____must_checkpoint_getTimeString_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0); } ; ;
 # 30 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
     ;
@@ -2748,18 +2756,21 @@ static void getTimeString_quick(char* timestring)
 # 42 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
            timeinfo->tm_sec);
 # 43 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_4, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "getTimeString", &____must_manage_getTimeString, ____alias_loc_id_4, ____chimes_did_disable0, false); }
 
 static void getTimeString(char* timestring) { (____chimes_replaying ? getTimeString_resumable(timestring) : getTimeString_quick(timestring)); }
-
+# 45 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlBegin_quick(void)
 # 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&yamlBegin), "yamlBegin", &____must_manage_yamlBegin, 0, 0) ; char sdate[25];
+# 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 time_t rawtime;
+# 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 char filename[64];
+# 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  if (____must_checkpoint_yamlBegin_sdate_0 || ____must_checkpoint_yamlBegin_rawtime_0 || ____must_checkpoint_yamlBegin_filename_0) { register_stack_vars(3, "yamlBegin|sdate|0", &____must_checkpoint_yamlBegin_sdate_0, "[25 x i8]", (void *)(sdate), (size_t)25, 0, 0, 0, "yamlBegin|rawtime|0", &____must_checkpoint_yamlBegin_rawtime_0, "i64", (void *)(&rawtime), (size_t)8, 0, 0, 0, "yamlBegin|filename|0", &____must_checkpoint_yamlBegin_filename_0, "[64 x i8]", (void *)(filename), (size_t)64, 0, 0, 0); } ; ;
 # 47 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_1, ____chimes_did_disable1); return; };
+    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_1, ____chimes_did_disable1, false); return; };
 # 49 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 50 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
     ;
@@ -2782,16 +2793,17 @@ char filename[64];
    sprintf(filename, "%s.%s.yaml", CoMDVariant, sdate);
 # 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_1, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "yamlBegin", &____must_manage_yamlBegin, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 
 void yamlBegin(void) { (____chimes_replaying ? yamlBegin_resumable() : yamlBegin_quick()); }
-
+# 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlAppInfo_quick(FILE* file)
 # 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&yamlAppInfo), "yamlAppInfo", &____must_manage_yamlAppInfo, 1, 1, (size_t)(6662524296122131033UL), "yamlAppInfo|file|0", &____must_checkpoint_yamlAppInfo_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0) ; char timestring[32];
+# 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
  if (____must_checkpoint_yamlAppInfo_timestring_0) { register_stack_vars(1, "yamlAppInfo|timestring|0", &____must_checkpoint_yamlAppInfo_timestring_0, "[32 x i8]", (void *)(timestring), (size_t)32, 0, 0, 0); } ; ;
 # 65 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-   alias_group_changed(____alias_loc_id_0); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, ____alias_loc_id_2, ____chimes_did_disable2); return; };
+   alias_group_changed(____alias_loc_id_0); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, ____alias_loc_id_2, ____chimes_did_disable2, false); return; };
 # 67 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
    ({ calling_npm("printSeparator", 0); printSeparator_npm(file); });
 # 68 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
@@ -2835,22 +2847,22 @@ void yamlAppInfo_quick(FILE* file)
 # 87 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
    fflush(file);
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, ____alias_loc_id_2, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "yamlAppInfo", &____must_manage_yamlAppInfo, ____alias_loc_id_2, ____chimes_did_disable2, false); }
 
 void yamlAppInfo(FILE* file) { (____chimes_replaying ? yamlAppInfo_resumable(file) : yamlAppInfo_quick(file)); }
-
+# 90 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlEnd_quick(void)
 # 91 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&yamlEnd), "yamlEnd", &____must_manage_yamlEnd, 0, 0) ; ; ;
 # 92 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disable3); return; };
+    call_lbl_1: if (! ({ calling((void*)printRank, 1, 0, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disable3, false); return; };
 # 94 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 95 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 96 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "yamlEnd", &____must_manage_yamlEnd, 0, ____chimes_did_disable3, false); }
 
 void yamlEnd(void) { (____chimes_replaying ? yamlEnd_resumable() : yamlEnd_quick()); }
-
+# 98 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void printSeparator_quick(FILE* file)
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&printSeparator), "printSeparator", &____must_manage_printSeparator, 1, 0, (size_t)(6662524296122131040UL)) ; ; ;
@@ -2858,12 +2870,10 @@ void printSeparator_quick(FILE* file)
 # 101 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
       fprintf(file,"\n");
 # 102 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
-rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_3, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "printSeparator", &____must_manage_printSeparator, ____alias_loc_id_3, ____chimes_did_disable4, false); }
 
 void printSeparator(FILE* file) { (____chimes_replaying ? printSeparator_resumable(file) : printSeparator_quick(file)); }
-
-
-
+# 28 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 static void getTimeString_npm(char* timestring)
 # 29 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {
@@ -2894,7 +2904,7 @@ static void getTimeString_npm(char* timestring)
            timeinfo->tm_sec);
 # 43 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 }
-
+# 45 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlBegin_npm(void)
 # 46 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {
@@ -2923,7 +2933,7 @@ void yamlBegin_npm(void)
 # 60 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 61 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 }
-
+# 63 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlAppInfo_npm(FILE* file)
 # 64 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {
@@ -2973,7 +2983,7 @@ void yamlAppInfo_npm(FILE* file)
    fflush(file);
 # 88 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 }
-
+# 90 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void yamlEnd_npm(void)
 # 91 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {
@@ -2983,7 +2993,7 @@ void yamlEnd_npm(void)
 # 95 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 # 96 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 }
-
+# 98 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 void printSeparator_npm(FILE* file)
 # 99 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/yamlOutput.c"
 {
@@ -3024,9 +3034,9 @@ static int module_init() {
                              (6662524296122130922UL + 123UL), (6662524296122130922UL + 129UL),
                              (6662524296122130922UL + 112UL), (6662524296122130922UL + 118UL),
                              (6662524296122130922UL + 163UL), (6662524296122130922UL + 62UL),
-                     "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
-                     "_IO_marker", 0,
-                     "tm", 11, "int", (int)__builtin_offsetof (struct tm, tm_sec), "int", (int)__builtin_offsetof (struct tm, tm_min), "int", (int)__builtin_offsetof (struct tm, tm_hour), "int", (int)__builtin_offsetof (struct tm, tm_mday), "int", (int)__builtin_offsetof (struct tm, tm_mon), "int", (int)__builtin_offsetof (struct tm, tm_year), "int", (int)__builtin_offsetof (struct tm, tm_wday), "int", (int)__builtin_offsetof (struct tm, tm_yday), "int", (int)__builtin_offsetof (struct tm, tm_isdst), "long int", (int)__builtin_offsetof (struct tm, tm_gmtoff), "char*", (int)__builtin_offsetof (struct tm, tm_zone),
+                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
+                     "_IO_marker", 0UL, 0,
+                     "tm", 448UL, 11, "int", (int)__builtin_offsetof (struct tm, tm_sec), "int", (int)__builtin_offsetof (struct tm, tm_min), "int", (int)__builtin_offsetof (struct tm, tm_hour), "int", (int)__builtin_offsetof (struct tm, tm_mday), "int", (int)__builtin_offsetof (struct tm, tm_mon), "int", (int)__builtin_offsetof (struct tm, tm_year), "int", (int)__builtin_offsetof (struct tm, tm_wday), "int", (int)__builtin_offsetof (struct tm, tm_yday), "int", (int)__builtin_offsetof (struct tm, tm_isdst), "long int", (int)__builtin_offsetof (struct tm, tm_gmtoff), "char*", (int)__builtin_offsetof (struct tm, tm_zone),
                              "printSeparator", "_Z14printSeparatorP8_IO_FILE", 0,
                              "yamlBegin", "_Z9yamlBeginv", 1, "printRank",
                              "yamlEnd", "_Z7yamlEndv", 1, "printRank",

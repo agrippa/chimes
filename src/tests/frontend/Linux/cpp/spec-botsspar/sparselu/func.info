@@ -7,8 +7,8 @@ bdiv 738 739
 bmod 827 828 829
 fwd 916 917
 sparselu_init 937 938
-sparselu_par_call 1174
-sparselu_seq_call 1394
-sparselu_fini 1402 1403
-sparselu_check 1461 1462
-checkmat1 1515
+sparselu_par_call 1200
+sparselu_seq_call 1420
+sparselu_fini 1428 1429
+sparselu_check 1487 1488
+checkmat1 1541

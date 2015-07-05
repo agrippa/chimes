@@ -1,2 +1,4 @@
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 575 12 : { 2713 } {  } call:readseqs { readseqs { 2758 } }
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 569 7 : { 2713 } {  } call:bots_error { bots_error { 2996 } }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 493 4 : { 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2035, 2041, 2042, 2043, 2044, 2046, 2047, 2048, 2855 } {  } call:checkpoint {  }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 553 7 : { 2382, 2383, 2384, 2385, 2386, 2387, 2388, 2390, 2391, 2395, 2401, 2402, 2403, 2404, 2406, 2407, 2408, 2855 } {  } call:checkpoint {  }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 590 12 : { 2795 } {  } call:readseqs { readseqs { 2840 } }
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/alignment.c 584 7 : { 2795 } {  } call:bots_error { bots_error { 3081 } }
