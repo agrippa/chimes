@@ -20,6 +20,8 @@ MAX_TEST_TIME = 60
 # Use a special executable name for runtime tests so that you can run a runtime
 # test in parallel with a frontend test
 RUNTIME_BIN = 'runtime.bin'
+CHIMES_PERF_BIN = 'chimes.perf.bin'
+NORMAL_PERF_BIN = 'normal.perf.bin'
 
 LD_LIBRARY_VARS = ['DYLD_LIBRARY_PATH', 'LD_LIBRARY_PATH']
 DYLD_PATH = os.path.join(CHIMES_HOME, 'src', 'libchimes')
@@ -104,6 +106,21 @@ class RuntimeTest(object):
         self.defines = [] if defines is None else defines
         self.extra_compile_args = extra_compile_args
         self.src_folder = src_folder
+
+
+class PerfTest(object):
+    def __init__(self, runtime_test, cli_args, exec_time_parser):
+        self.name = runtime_test.name
+        self.input_files = runtime_test.input_files
+        self.expected_code = runtime_test.expected_code
+        self.expected_num_checkpoints = runtime_test.expected_num_checkpoints
+        self.includes = runtime_test.includes
+        self.dependencies = runtime_test.dependencies
+        self.cli_args = cli_args
+        self.defines = runtime_test.defines
+        self.extra_compile_args = runtime_test.extra_compile_args
+        self.src_folder = runtime_test.src_folder
+        self.exec_time_parser = exec_time_parser
 
 
 class FrontendTest(object):
@@ -422,8 +439,9 @@ def cleanup_runtime_files():
     chimes_files = list_checkpoint_files()
     for existing in chimes_files:
         os.remove(existing)
-    if os.path.isfile('a.out'):
-        os.remove('a.out')
+    for exe in ['a.out', RUNTIME_BIN, CHIMES_PERF_BIN, NORMAL_PERF_BIN]:
+        if os.path.isfile(exe):
+            os.remove(exe)
 
 
 def get_files_from_compiler_stdout(compile_stdout, n_expected_files):
@@ -577,6 +595,63 @@ def check_warnings(testname, stderr, input_dir, output_dir, warnings_filename,
     return False
 
 
+def build_compile_cmd(compile_script_path, test, output_file, inputs_dir, config, env):
+    compile_cmd = compile_script_path + ' ' + test.extra_compile_args
+
+    if config.force_sequential:
+        compile_cmd += ' -s '
+
+    for flag in config.custom_compiler_flags:
+        compile_cmd += ' -y ' + flag
+
+    for d in test.defines:
+        compile_cmd += ' -D ' + d
+
+    if type(test) == RuntimeTest:
+        compile_cmd += ' -k -D __CHIMES_TESTING'
+
+    test_dir_path = test.src_folder if test.src_folder is not None else inputs_dir
+    for input_file in test.input_files:
+        compile_cmd += ' -i ' + os.path.join(test_dir_path, input_file)
+
+    compile_cmd += ' -o ' + output_file
+
+    compile_cmd = add_include_paths(compile_cmd, test.includes)
+    compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
+
+    return compile_cmd
+
+
+def run_perf_test_and_get_time_and_ncheckpoints(exec_name, test, verbose, env):
+    exec_cmd = './' + exec_name + ' '
+    if test.cli_args is not None:
+        exec_cmd += test.cli_args
+
+    if verbose:
+        print('Executing cmd "' + exec_cmd + '"')
+
+    stdout, stderr, code = run_cmd(exec_cmd, True, env=env)
+    if verbose:
+        print('Main execution completed')
+
+    if code != test.expected_code:
+        sys.stderr.write('Test ' + test.name + ' expected exit code ' +
+                         str(test.expected_code) + ' but got ' + str(code) +
+                         '\n')
+        sys.stderr.write('Command = ' + exec_cmd + '\n')
+        print_and_abort(stdout, stderr)
+
+    checkpoint_files = list_checkpoint_files()
+    ncheckpoint_files = len(checkpoint_files)
+
+    for checkpoint in checkpoint_files:
+        os.remove(checkpoint)
+
+    os.remove(exec_name)
+
+    return (test.exec_time_parser(stdout, stderr), ncheckpoint_files)
+
+
 def run_frontend_test(test, compile_script_path, examples_dir_path,
                       test_dir_path, config):
     """
@@ -727,26 +802,8 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     # if config.custom_compiler is not None:
     #     env['GXX'] = config.custom_compiler
 
-    compile_cmd = compile_script_path + ' -k ' + test.extra_compile_args
-
-    if config.force_sequential:
-        compile_cmd += ' -s '
-
-    for flag in config.custom_compiler_flags:
-        compile_cmd += ' -y ' + flag
-
-    for d in test.defines:
-        compile_cmd += ' -D ' + d
-    compile_cmd += ' -D __CHIMES_TESTING'
-
-    test_dir_path = test.src_folder if test.src_folder is not None else inputs_dir
-    for input_file in test.input_files:
-        compile_cmd += ' -i ' + os.path.join(test_dir_path, input_file)
-
-    compile_cmd += ' -o ' + RUNTIME_BIN
-
-    compile_cmd = add_include_paths(compile_cmd, test.includes)
-    compile_cmd = prepare_dependencies(compile_cmd, test.dependencies, env)
+    compile_cmd = build_compile_cmd(compile_script_path, test, RUNTIME_BIN,
+                                    inputs_dir, config, env)
 
     if config.verbose:
         print(compile_cmd)
@@ -861,3 +918,55 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
         info_str = str(completed_checkpoints) + '/' + str(total_checkpoints)
 
     print(test.name + ' PASSED (' + info_str + ' checkpoint(s))')
+
+
+def run_perf_test(test, compile_script_path, normal_compile_script_path,
+                  inputs_dir, config):
+    if not test_enabled(test.name, config):
+        print(test.name + ' SKIPPING')
+        return
+
+    env = copy_environ()
+
+    chimes_compile_cmd = build_compile_cmd(compile_script_path, test,
+                                           CHIMES_PERF_BIN, inputs_dir, config,
+                                           env)
+    normal_compile_cmd = build_compile_cmd(normal_compile_script_path, test,
+                                           NORMAL_PERF_BIN, inputs_dir, config,
+                                           env)
+    if config.verbose:
+        print(compile_cmd)
+        print(normal_compile_cmd)
+
+    chimes_stdout, chimes_stderr, code = run_cmd(chimes_compile_cmd, False, env=env)
+
+    if config.verbose:
+        print_and_abort(chimes_stdout, chimes_stderr, abort=False)
+
+    if not os.path.isfile(CHIMES_PERF_BIN):
+        print_and_abort(chimes_stdout, chimes_stderr, abort=False)
+        sys.stderr.write('FATAL: Compilation failed to generate an executable\n')
+        sys.exit(1)
+
+    normal_stdout, normal_stderr, code = run_cmd(normal_compile_cmd, False,
+                                                 env=env)
+
+    if config.verbose:
+        print_and_abort(normal_stdout, normal_stderr, abort=False)
+
+    if not os.path.isfile(NORMAL_PERF_BIN):
+        print_and_abort(normal_stdout, normal_stderr, abort=False)
+        sys.stderr.write('FATAL: Compilation failed to generate an executable\n')
+        sys.exit(1)
+
+    chimes_exec_time, chimes_ncheckpoints = \
+        run_perf_test_and_get_time_and_ncheckpoints(CHIMES_PERF_BIN, test,
+                                                    config.verbose, env)
+    normal_exec_time, _ = \
+        run_perf_test_and_get_time_and_ncheckpoints(NORMAL_PERF_BIN, test,
+                                                    config.verbose, env)
+
+    print(test.name + ' - added ' +
+          str(((float(chimes_exec_time) / float(normal_exec_time)) - 1.0) *
+              100.0) + '% overhead for ' + str(chimes_ncheckpoints) +
+          ' checkpoint files')

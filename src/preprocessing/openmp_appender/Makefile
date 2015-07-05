@@ -9,7 +9,7 @@ include ${CHIMES_HOME}/src/common.conf
 EXE=openmp_appender
 
 LLVM_CONFIG=$(shell find ${LLVM_INSTALL}/**/bin -name llvm-config)
-GXX_FLAGS=-O0 -g `${LLVM_CONFIG} --cxxflags` -DVERBOSE
+GXX_FLAGS=-O0 -g `${LLVM_CONFIG} --cxxflags`
 INCLUDES=-I${LLVM_HOME}/tools/clang/include -I${LLVM_INSTALL}/tools/clang/include
 ARCH=$(shell uname -s)
 
