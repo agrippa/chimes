@@ -1,9 +1,9 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 15 6 len=13 backprop_face_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 30 5 len=5 setup_npm
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 16 1 const int ____chimes_did_disable0 = new_stack((void *)(&backprop_face), "backprop_face", &____must_manage_backprop_face, 0, 0); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 28 1 rm_stack(false, 0UL, "backprop_face", &____must_manage_backprop_face, 0, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 28 1 rm_stack(false, 0UL, "backprop_face", &____must_manage_backprop_face, 0, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 31 1 const int ____chimes_did_disable1 = new_stack((void *)(&setup), "setup", &____must_manage_setup, 2, 0, (size_t)(0UL), (size_t)(3513164141371984952UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 46 1 rm_stack(false, 0UL, "setup", &____must_manage_setup, 0, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 46 1 rm_stack(false, 0UL, "setup", &____must_manage_setup, 0, ____chimes_did_disable1, false); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 16 2 const int ____chimes_did_disable0 = new_stack((void *)(&backprop_face), "backprop_face", &____must_manage_backprop_face, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 16 128 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 17 3 BPNN *net; ;
@@ -36,14 +36,16 @@ RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 17 12
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 19 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 19 16 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 16 127  ; float out_err;
+# 16
 BPNN *net;
+# 16
  if (____must_checkpoint_backprop_face_out_err_0 || ____must_checkpoint_backprop_face_net_0) { register_stack_vars(2, "backprop_face|out_err|0", &____must_checkpoint_backprop_face_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0, "backprop_face|net|0", &____must_checkpoint_backprop_face_net_0, "%struct.BPNN*", (void *)(&net), (size_t)8, 1, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 30 5 len=5 setup_quick
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 42 16  ({  calling((void*)bpnn_initialize, 4, 0, 0UL, 1, (size_t)(0UL)); (bpnn_initialize)(seed); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 42 36 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 43 16  ({  calling((void*)backprop_face, 5, 0, 0UL, 0); (backprop_face)(); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 43 30 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 31 151  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 31 151  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 15 6 len=13 backprop_face_resumable
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 20 22  ({  calling((void*)bpnn_create, 1, ____alias_loc_id_3, 3513164141371984898UL, 3, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (bpnn_create)(layer_size, 16, 1); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 20 51 
@@ -58,7 +60,9 @@ RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 17 12
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 19 3 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 19 16 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 16 127  ; float out_err;
+# 16
 BPNN *net;
+# 16
  if (____must_checkpoint_backprop_face_out_err_0 || ____must_checkpoint_backprop_face_net_0) { register_stack_vars(2, "backprop_face|out_err|0", &____must_checkpoint_backprop_face_out_err_0, "float", (void *)(&out_err), (size_t)4, 0, 0, 0, "backprop_face|net|0", &____must_checkpoint_backprop_face_net_0, "%struct.BPNN*", (void *)(&net), (size_t)8, 1, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 30 5 len=5 setup_resumable
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/backprop/facetrain.c 42 16  ({  calling((void*)bpnn_initialize, 4, 0, 0UL, 1, (size_t)(0UL)); (bpnn_initialize)(seed); }) 

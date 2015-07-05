@@ -11,7 +11,6 @@ static int ____chimes_does_checkpoint_bots_print_usage_npm = 1;
 static int ____chimes_does_checkpoint_bots_get_params_common_npm = 1;
 static int ____chimes_does_checkpoint_bots_get_params_npm = 1;
 static int ____chimes_does_checkpoint_bots_set_info_npm = 1;
-static int ____chimes_does_checkpoint___xpg_basename_npm = 1;
 static int ____chimes_does_checkpoint_align_npm = 1;
 static int ____chimes_does_checkpoint_align_end_npm = 1;
 static int ____chimes_does_checkpoint_align_init_npm = 1;
@@ -26,7 +25,6 @@ static int ____chimes_does_checkpoint_pairalign_init_npm = 1;
 
 static int ____must_checkpoint_bots_get_params_common_argc_0 = 2;
 static int ____must_checkpoint_bots_get_params_common_argv_0 = 2;
-static int ____must_checkpoint_bots_get_params_common_____chimes_unroll_var_0_0 = 2;
 static int ____must_checkpoint_main_bots_t_start_0 = 2;
 static int ____must_checkpoint_main_bots_t_end_0 = 2;
 
@@ -64,7 +62,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -80,7 +78,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -115,7 +114,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4160,23 +4159,22 @@ void bots_print_usage_resumable()
 # 282 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    fprintf(stderr, "\n");
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-rm_stack(false, 0UL, "bots_print_usage", &____must_manage_bots_print_usage, 0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "bots_print_usage", &____must_manage_bots_print_usage, 0, ____chimes_did_disable0, false); }
 # 284 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 285 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 286 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 287 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-void bots_get_params_common_npm(int argc, char **argv);static char *(*____chimes_extern_func___xpg_basename)(char *) = __xpg_basename;static void (*____chimes_extern_func_bots_get_date)(char *) = bots_get_date;
+void bots_get_params_common_npm(int argc, char **argv);static void (*____chimes_extern_func_bots_get_date)(char *) = bots_get_date;
 void bots_get_params_common_quick(int argc, char **argv); void bots_get_params_common(int argc, char **argv);
 void
 # 288 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 bots_get_params_common_resumable(int argc, char **argv)
 # 289 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&bots_get_params_common), "bots_get_params_common", &____must_manage_bots_get_params_common, 2, 2, (size_t)(0UL), (size_t)(16260503078375397185UL), "bots_get_params_common|argc|0", &____must_checkpoint_bots_get_params_common_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "bots_get_params_common|argv|0", &____must_checkpoint_bots_get_params_common_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; char *____chimes_unroll_var_0;
- if (____must_checkpoint_bots_get_params_common_____chimes_unroll_var_0_0) { register_stack_vars(1, "bots_get_params_common|____chimes_unroll_var_0|0", &____must_checkpoint_bots_get_params_common_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&bots_get_params_common), "bots_get_params_common", &____must_manage_bots_get_params_common, 2, 2, (size_t)(0UL), (size_t)(16260503078375397181UL), "bots_get_params_common|argc|0", &____must_checkpoint_bots_get_params_common_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "bots_get_params_common|argv|0", &____must_checkpoint_bots_get_params_common_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 290 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    int i; ;
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-        call_lbl_1: ____chimes_unroll_var_0 = ( ({ char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argv[0]); } calling((void*)__xpg_basename, 1, ____alias_loc_id_1, 16260503078375396994UL, 1, (size_t)(16260503078375396993UL)); (__xpg_basename)(____chimes_arg0); }) ) ; strcpy(bots_execname, ____chimes_unroll_var_0);
+   strcpy(bots_execname, __xpg_basename(argv[0]));
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     call_lbl_3: ({ calling((void*)bots_get_date, 3, ____alias_loc_id_0, 0UL, 1, (size_t)(16260503078375397288UL)); (bots_get_date)(bots_exec_date); }) ;
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4331,7 +4329,7 @@ bots_get_params_common_resumable(int argc, char **argv)
 # 443 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    }
 # 444 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-rm_stack(false, 0UL, "bots_get_params_common", &____must_manage_bots_get_params_common, ____alias_loc_id_11, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "bots_get_params_common", &____must_manage_bots_get_params_common, ____alias_loc_id_10, ____chimes_did_disable1, false); }
 # 445 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 446 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 447 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4342,12 +4340,12 @@ void
 # 449 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 bots_get_params_resumable(int argc, char **argv)
 # 450 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&bots_get_params), "bots_get_params", &____must_manage_bots_get_params, 2, 0, (size_t)(0UL), (size_t)(16260503078375397205UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&bots_get_params), "bots_get_params", &____must_manage_bots_get_params, 2, 0, (size_t)(0UL), (size_t)(16260503078375397201UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 451 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_1: (____chimes_does_checkpoint_bots_get_params_common_npm ? ( ({ calling((void*)bots_get_params_common, 1, ____alias_loc_id_2, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397205UL)); (bots_get_params_common)(argc, argv); }) ) : (({ calling_npm("bots_get_params_common", ____alias_loc_id_2); bots_get_params_common_npm(argc, argv); })));
+    call_lbl_1: (____chimes_does_checkpoint_bots_get_params_common_npm ? ( ({ calling((void*)bots_get_params_common, 1, ____alias_loc_id_1, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397201UL)); (bots_get_params_common)(argc, argv); }) ) : (({ calling_npm("bots_get_params_common", ____alias_loc_id_1); bots_get_params_common_npm(argc, argv); })));
 # 452 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 453 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-rm_stack(false, 0UL, "bots_get_params", &____must_manage_bots_get_params, 0, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "bots_get_params", &____must_manage_bots_get_params, 0, ____chimes_did_disable2, false); }
 # 454 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 455 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 456 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4367,7 +4365,7 @@ void bots_set_info_resumable ()
 # 464 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    sprintf(bots_model,"OpenMP (using tasks)");
 # 465 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-     int ____chimes_unroll_var_1; call_lbl_4: ____chimes_unroll_var_1 = ((____chimes_does_checkpoint_omp_get_max_threads_npm ? ( ({ calling((void*)omp_get_max_threads, 4, 0, 0UL, 0); (omp_get_max_threads)(); }) ) : (({ calling_npm("omp_get_max_threads", 0); (*____chimes_extern_func_omp_get_max_threads)(); })))) ; sprintf(bots_resources,"%d", ____chimes_unroll_var_1);
+     int ____chimes_unroll_var_0; call_lbl_4: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_omp_get_max_threads_npm ? ( ({ calling((void*)omp_get_max_threads, 4, 0, 0UL, 0); (omp_get_max_threads)(); }) ) : (({ calling_npm("omp_get_max_threads", 0); (*____chimes_extern_func_omp_get_max_threads)(); })))) ; sprintf(bots_resources,"%d", ____chimes_unroll_var_0);
 # 466 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 467 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 468 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4387,7 +4385,7 @@ void bots_set_info_resumable ()
    strcpy(bots_cutoff,"none");
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-rm_stack(false, 0UL, "bots_set_info", &____must_manage_bots_set_info, ____alias_loc_id_12, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "bots_set_info", &____must_manage_bots_set_info, ____alias_loc_id_11, ____chimes_did_disable3, false); }
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 487 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4400,7 +4398,9 @@ int
 main_resumable(int argc, char* argv[])
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397280UL)) ; long bots_t_end;
+# 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 long bots_t_start;
+# 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
  if (____must_checkpoint_main_bots_t_end_0 || ____must_checkpoint_main_bots_t_start_0) { register_stack_vars(2, "main|bots_t_end|0", &____must_checkpoint_main_bots_t_end_0, "i64", (void *)(&bots_t_end), (size_t)8, 0, 0, 0, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } default: { chimes_error(); } } } ; ;
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4410,9 +4410,9 @@ long bots_t_start;
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_1: (____chimes_does_checkpoint_bots_get_params_npm ? ( ({ calling((void*)bots_get_params, 1, ____alias_loc_id_9, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397280UL)); (bots_get_params)(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_9); bots_get_params_npm(argc, argv); })));
+    call_lbl_1: (____chimes_does_checkpoint_bots_get_params_npm ? ( ({ calling((void*)bots_get_params, 1, ____alias_loc_id_8, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397280UL)); (bots_get_params)(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_8); bots_get_params_npm(argc, argv); })));
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_2: (____chimes_does_checkpoint_pairalign_init_npm ? ( ({ calling((void*)pairalign_init, 2, ____alias_loc_id_8, 0UL, 1, (size_t)(16260503078375397305UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_8); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })));
+    call_lbl_2: (____chimes_does_checkpoint_pairalign_init_npm ? ( ({ calling((void*)pairalign_init, 2, ____alias_loc_id_7, 0UL, 1, (size_t)(16260503078375397305UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_7); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })));
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     call_lbl_3: (____chimes_does_checkpoint_bots_set_info_npm ? ( ({ calling((void*)bots_set_info, 3, 0, 0UL, 0); (bots_set_info)(); }) ) : (({ calling_npm("bots_set_info", 0); bots_set_info_npm(); })));
 # 500 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4428,14 +4428,14 @@ long bots_t_start;
 # 508 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
       bots_sequential_flag = 1;
 # 509 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-       call_lbl_4: (____chimes_does_checkpoint_align_seq_init_npm ? ( ({ calling((void*)align_seq_init, 4, ____alias_loc_id_10, 0UL, 0); (align_seq_init)(); }) ) : (({ calling_npm("align_seq_init", ____alias_loc_id_10); (*____chimes_extern_func_align_seq_init)(); })));
+       call_lbl_4: (____chimes_does_checkpoint_align_seq_init_npm ? ( ({ calling((void*)align_seq_init, 4, ____alias_loc_id_9, 0UL, 0); (align_seq_init)(); }) ) : (({ calling_npm("align_seq_init", ____alias_loc_id_9); (*____chimes_extern_func_align_seq_init)(); })));
 # 510 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 511 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 512 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 513 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
        call_lbl_5: bots_t_start = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 5, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 514 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-       call_lbl_6: (____chimes_does_checkpoint_align_seq_npm ? ( ({ calling((void*)align_seq, 6, ____alias_loc_id_7, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_7); (*____chimes_extern_func_align_seq)(); })));
+       call_lbl_6: (____chimes_does_checkpoint_align_seq_npm ? ( ({ calling((void*)align_seq, 6, ____alias_loc_id_6, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_6); (*____chimes_extern_func_align_seq)(); })));
 # 515 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
        call_lbl_7: bots_t_end = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 7, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 516 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4448,21 +4448,21 @@ long bots_t_start;
 # 520 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 521 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 522 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_8: (____chimes_does_checkpoint_align_init_npm ? ( ({ calling((void*)align_init, 8, ____alias_loc_id_6, 0UL, 0); (align_init)(); }) ) : (({ calling_npm("align_init", ____alias_loc_id_6); (*____chimes_extern_func_align_init)(); })));
+    call_lbl_8: (____chimes_does_checkpoint_align_init_npm ? ( ({ calling((void*)align_init, 8, ____alias_loc_id_5, 0UL, 0); (align_init)(); }) ) : (({ calling_npm("align_init", ____alias_loc_id_5); (*____chimes_extern_func_align_init)(); })));
 # 523 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 524 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 525 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 526 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     call_lbl_9: bots_t_start = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 9, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 527 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_10: (____chimes_does_checkpoint_align_npm ? ( ({ calling((void*)align, 10, ____alias_loc_id_5, 0UL, 0); (align)(); }) ) : (({ calling_npm("align", ____alias_loc_id_5); (*____chimes_extern_func_align)(); })));
+    call_lbl_10: (____chimes_does_checkpoint_align_npm ? ( ({ calling((void*)align, 10, ____alias_loc_id_4, 0UL, 0); (align)(); }) ) : (({ calling_npm("align", ____alias_loc_id_4); (*____chimes_extern_func_align)(); })));
 # 528 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     call_lbl_11: bots_t_end = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 11, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 529 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    bots_time_program = ((double)(bots_t_end-bots_t_start))/1000000;
 # 530 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 531 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_12: (____chimes_does_checkpoint_align_end_npm ? ( ({ calling((void*)align_end, 12, ____alias_loc_id_4, 0UL, 0); (align_end)(); }) ) : (({ calling_npm("align_end", ____alias_loc_id_4); (*____chimes_extern_func_align_end)(); })));
+    call_lbl_12: (____chimes_does_checkpoint_align_end_npm ? ( ({ calling((void*)align_end, 12, ____alias_loc_id_3, 0UL, 0); (align_end)(); }) ) : (({ calling_npm("align_end", ____alias_loc_id_3); (*____chimes_extern_func_align_end)(); })));
 # 532 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 533 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 534 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4475,11 +4475,12 @@ long bots_t_start;
    ;
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 541 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_14: (____chimes_does_checkpoint_bots_print_results_npm ? ( ({ calling((void*)bots_print_results, 14, ____alias_loc_id_3, 0UL, 0); (bots_print_results)(); }) ) : (({ calling_npm("bots_print_results", ____alias_loc_id_3); (*____chimes_extern_func_bots_print_results)(); })));
+    call_lbl_14: (____chimes_does_checkpoint_bots_print_results_npm ? ( ({ calling((void*)bots_print_results, 14, ____alias_loc_id_2, 0UL, 0); (bots_print_results)(); }) ) : (({ calling_npm("bots_print_results", ____alias_loc_id_2); (*____chimes_extern_func_bots_print_results)(); })));
 # 542 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-   rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable4); return (0);
+    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((0)); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_12, ____chimes_did_disable4, false); return ____chimes_ret_var_0; ;
 # 543 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-}
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_12, ____chimes_did_disable4, false); }
+# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 void bots_print_usage_quick()
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&bots_print_usage), "bots_print_usage", &____must_manage_bots_print_usage, 0, 0) ; ; ;
@@ -4540,20 +4541,19 @@ void bots_print_usage_quick()
 # 282 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    fprintf(stderr, "\n");
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-rm_stack(false, 0UL, "bots_print_usage", &____must_manage_bots_print_usage, 0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "bots_print_usage", &____must_manage_bots_print_usage, 0, ____chimes_did_disable0, false); }
 
 void bots_print_usage() { (____chimes_replaying ? bots_print_usage_resumable() : bots_print_usage_quick()); }
-
+# 287 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 void
 # 288 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 bots_get_params_common_quick(int argc, char **argv)
 # 289 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-{const int ____chimes_did_disable1 = new_stack((void *)(&bots_get_params_common), "bots_get_params_common", &____must_manage_bots_get_params_common, 2, 2, (size_t)(0UL), (size_t)(16260503078375397185UL), "bots_get_params_common|argc|0", &____must_checkpoint_bots_get_params_common_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "bots_get_params_common|argv|0", &____must_checkpoint_bots_get_params_common_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; char *____chimes_unroll_var_0;
- if (____must_checkpoint_bots_get_params_common_____chimes_unroll_var_0_0) { register_stack_vars(1, "bots_get_params_common|____chimes_unroll_var_0|0", &____must_checkpoint_bots_get_params_common_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } ; ;
+{const int ____chimes_did_disable1 = new_stack((void *)(&bots_get_params_common), "bots_get_params_common", &____must_manage_bots_get_params_common, 2, 2, (size_t)(0UL), (size_t)(16260503078375397181UL), "bots_get_params_common|argc|0", &____must_checkpoint_bots_get_params_common_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "bots_get_params_common|argv|0", &____must_checkpoint_bots_get_params_common_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; ; ;
 # 290 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    int i; ;
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-        call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)__xpg_basename, 1, ____alias_loc_id_1, 16260503078375396994UL, 1, (size_t)(16260503078375396993UL)); (__xpg_basename)(argv[0]); }) ) ; strcpy(bots_execname, ____chimes_unroll_var_0);
+   strcpy(bots_execname, __xpg_basename(argv[0]));
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     call_lbl_3: ({ calling((void*)bots_get_date, 3, ____alias_loc_id_0, 0UL, 1, (size_t)(16260503078375397288UL)); (bots_get_date)(bots_exec_date); }) ;
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4708,27 +4708,27 @@ bots_get_params_common_quick(int argc, char **argv)
 # 443 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    }
 # 444 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-rm_stack(false, 0UL, "bots_get_params_common", &____must_manage_bots_get_params_common, ____alias_loc_id_11, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "bots_get_params_common", &____must_manage_bots_get_params_common, ____alias_loc_id_10, ____chimes_did_disable1, false); }
 
 void
 # 288 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 bots_get_params_common(int argc, char **argv) { (____chimes_replaying ? bots_get_params_common_resumable(argc, argv) : bots_get_params_common_quick(argc, argv)); }
-
+# 448 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 void
 # 449 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 bots_get_params_quick(int argc, char **argv)
 # 450 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-{const int ____chimes_did_disable2 = new_stack((void *)(&bots_get_params), "bots_get_params", &____must_manage_bots_get_params, 2, 0, (size_t)(0UL), (size_t)(16260503078375397205UL)) ; ; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&bots_get_params), "bots_get_params", &____must_manage_bots_get_params, 2, 0, (size_t)(0UL), (size_t)(16260503078375397201UL)) ; ; ;
 # 451 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_1: (____chimes_does_checkpoint_bots_get_params_common_npm ? ( ({ calling((void*)bots_get_params_common, 1, ____alias_loc_id_2, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397205UL)); bots_get_params_common_quick(argc, argv); }) ) : (({ calling_npm("bots_get_params_common", ____alias_loc_id_2); bots_get_params_common_npm(argc, argv); })));
+    call_lbl_1: (____chimes_does_checkpoint_bots_get_params_common_npm ? ( ({ calling((void*)bots_get_params_common, 1, ____alias_loc_id_1, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397201UL)); bots_get_params_common_quick(argc, argv); }) ) : (({ calling_npm("bots_get_params_common", ____alias_loc_id_1); bots_get_params_common_npm(argc, argv); })));
 # 452 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 453 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-rm_stack(false, 0UL, "bots_get_params", &____must_manage_bots_get_params, 0, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "bots_get_params", &____must_manage_bots_get_params, 0, ____chimes_did_disable2, false); }
 
 void
 # 449 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 bots_get_params(int argc, char **argv) { (____chimes_replaying ? bots_get_params_resumable(argc, argv) : bots_get_params_quick(argc, argv)); }
-
+# 459 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 void bots_set_info_quick ()
 # 460 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&bots_set_info), "bots_set_info", &____must_manage_bots_set_info, 0, 0) ; ; ;
@@ -4740,7 +4740,7 @@ void bots_set_info_quick ()
 # 464 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    sprintf(bots_model,"OpenMP (using tasks)");
 # 465 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-     int ____chimes_unroll_var_1; call_lbl_4: ____chimes_unroll_var_1 = ((____chimes_does_checkpoint_omp_get_max_threads_npm ? ( ({ calling((void*)omp_get_max_threads, 4, 0, 0UL, 0); (omp_get_max_threads)(); }) ) : (({ calling_npm("omp_get_max_threads", 0); (*____chimes_extern_func_omp_get_max_threads)(); })))) ; sprintf(bots_resources,"%d", ____chimes_unroll_var_1);
+     int ____chimes_unroll_var_0; call_lbl_4: ____chimes_unroll_var_0 = ((____chimes_does_checkpoint_omp_get_max_threads_npm ? ( ({ calling((void*)omp_get_max_threads, 4, 0, 0UL, 0); (omp_get_max_threads)(); }) ) : (({ calling_npm("omp_get_max_threads", 0); (*____chimes_extern_func_omp_get_max_threads)(); })))) ; sprintf(bots_resources,"%d", ____chimes_unroll_var_0);
 # 466 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 467 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 468 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4760,16 +4760,18 @@ void bots_set_info_quick ()
    strcpy(bots_cutoff,"none");
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-rm_stack(false, 0UL, "bots_set_info", &____must_manage_bots_set_info, ____alias_loc_id_12, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "bots_set_info", &____must_manage_bots_set_info, ____alias_loc_id_11, ____chimes_did_disable3, false); }
 
 void bots_set_info () { (____chimes_replaying ? bots_set_info_resumable() : bots_set_info_quick()); }
-
+# 489 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 int
 # 490 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 main_quick(int argc, char* argv[])
 # 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(16260503078375397280UL)) ; long bots_t_end;
+# 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 long bots_t_start;
+# 491 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
  if (____must_checkpoint_main_bots_t_end_0 || ____must_checkpoint_main_bots_t_start_0) { register_stack_vars(2, "main|bots_t_end|0", &____must_checkpoint_main_bots_t_end_0, "i64", (void *)(&bots_t_end), (size_t)8, 0, 0, 0, "main|bots_t_start|0", &____must_checkpoint_main_bots_t_start_0, "i64", (void *)(&bots_t_start), (size_t)8, 0, 0, 0); } ; ;
 # 492 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 493 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4779,9 +4781,9 @@ long bots_t_start;
 # 495 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 496 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_1: (____chimes_does_checkpoint_bots_get_params_npm ? ( ({ calling((void*)bots_get_params, 1, ____alias_loc_id_9, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397280UL)); bots_get_params_quick(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_9); bots_get_params_npm(argc, argv); })));
+    call_lbl_1: (____chimes_does_checkpoint_bots_get_params_npm ? ( ({ calling((void*)bots_get_params, 1, ____alias_loc_id_8, 0UL, 2, (size_t)(0UL), (size_t)(16260503078375397280UL)); bots_get_params_quick(argc, argv); }) ) : (({ calling_npm("bots_get_params", ____alias_loc_id_8); bots_get_params_npm(argc, argv); })));
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_2: (____chimes_does_checkpoint_pairalign_init_npm ? ( ({ calling((void*)pairalign_init, 2, ____alias_loc_id_8, 0UL, 1, (size_t)(16260503078375397305UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_8); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })));
+    call_lbl_2: (____chimes_does_checkpoint_pairalign_init_npm ? ( ({ calling((void*)pairalign_init, 2, ____alias_loc_id_7, 0UL, 1, (size_t)(16260503078375397305UL)); (pairalign_init)(bots_arg_file); }) ) : (({ calling_npm("pairalign_init", ____alias_loc_id_7); (*____chimes_extern_func_pairalign_init)(bots_arg_file); })));
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     call_lbl_3: (____chimes_does_checkpoint_bots_set_info_npm ? ( ({ calling((void*)bots_set_info, 3, 0, 0UL, 0); bots_set_info_quick(); }) ) : (({ calling_npm("bots_set_info", 0); bots_set_info_npm(); })));
 # 500 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4797,14 +4799,14 @@ long bots_t_start;
 # 508 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
       bots_sequential_flag = 1;
 # 509 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-       call_lbl_4: (____chimes_does_checkpoint_align_seq_init_npm ? ( ({ calling((void*)align_seq_init, 4, ____alias_loc_id_10, 0UL, 0); (align_seq_init)(); }) ) : (({ calling_npm("align_seq_init", ____alias_loc_id_10); (*____chimes_extern_func_align_seq_init)(); })));
+       call_lbl_4: (____chimes_does_checkpoint_align_seq_init_npm ? ( ({ calling((void*)align_seq_init, 4, ____alias_loc_id_9, 0UL, 0); (align_seq_init)(); }) ) : (({ calling_npm("align_seq_init", ____alias_loc_id_9); (*____chimes_extern_func_align_seq_init)(); })));
 # 510 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 511 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 512 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 513 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
        call_lbl_5: bots_t_start = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 5, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 514 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-       call_lbl_6: (____chimes_does_checkpoint_align_seq_npm ? ( ({ calling((void*)align_seq, 6, ____alias_loc_id_7, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_7); (*____chimes_extern_func_align_seq)(); })));
+       call_lbl_6: (____chimes_does_checkpoint_align_seq_npm ? ( ({ calling((void*)align_seq, 6, ____alias_loc_id_6, 0UL, 0); (align_seq)(); }) ) : (({ calling_npm("align_seq", ____alias_loc_id_6); (*____chimes_extern_func_align_seq)(); })));
 # 515 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
        call_lbl_7: bots_t_end = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 7, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 516 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4817,21 +4819,21 @@ long bots_t_start;
 # 520 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 521 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 522 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_8: (____chimes_does_checkpoint_align_init_npm ? ( ({ calling((void*)align_init, 8, ____alias_loc_id_6, 0UL, 0); (align_init)(); }) ) : (({ calling_npm("align_init", ____alias_loc_id_6); (*____chimes_extern_func_align_init)(); })));
+    call_lbl_8: (____chimes_does_checkpoint_align_init_npm ? ( ({ calling((void*)align_init, 8, ____alias_loc_id_5, 0UL, 0); (align_init)(); }) ) : (({ calling_npm("align_init", ____alias_loc_id_5); (*____chimes_extern_func_align_init)(); })));
 # 523 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 524 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 525 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 526 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     call_lbl_9: bots_t_start = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 9, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 527 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_10: (____chimes_does_checkpoint_align_npm ? ( ({ calling((void*)align, 10, ____alias_loc_id_5, 0UL, 0); (align)(); }) ) : (({ calling_npm("align", ____alias_loc_id_5); (*____chimes_extern_func_align)(); })));
+    call_lbl_10: (____chimes_does_checkpoint_align_npm ? ( ({ calling((void*)align, 10, ____alias_loc_id_4, 0UL, 0); (align)(); }) ) : (({ calling_npm("align", ____alias_loc_id_4); (*____chimes_extern_func_align)(); })));
 # 528 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
     call_lbl_11: bots_t_end = (____chimes_does_checkpoint_bots_usecs_npm ? ( ({ calling((void*)bots_usecs, 11, 0, 0UL, 0); (bots_usecs)(); }) ) : (({ calling_npm("bots_usecs", 0); (*____chimes_extern_func_bots_usecs)(); })));
 # 529 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    bots_time_program = ((double)(bots_t_end-bots_t_start))/1000000;
 # 530 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 531 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_12: (____chimes_does_checkpoint_align_end_npm ? ( ({ calling((void*)align_end, 12, ____alias_loc_id_4, 0UL, 0); (align_end)(); }) ) : (({ calling_npm("align_end", ____alias_loc_id_4); (*____chimes_extern_func_align_end)(); })));
+    call_lbl_12: (____chimes_does_checkpoint_align_end_npm ? ( ({ calling((void*)align_end, 12, ____alias_loc_id_3, 0UL, 0); (align_end)(); }) ) : (({ calling_npm("align_end", ____alias_loc_id_3); (*____chimes_extern_func_align_end)(); })));
 # 532 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 533 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 534 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -4844,18 +4846,16 @@ long bots_t_start;
    ;
 # 540 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 541 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    call_lbl_14: (____chimes_does_checkpoint_bots_print_results_npm ? ( ({ calling((void*)bots_print_results, 14, ____alias_loc_id_3, 0UL, 0); (bots_print_results)(); }) ) : (({ calling_npm("bots_print_results", ____alias_loc_id_3); (*____chimes_extern_func_bots_print_results)(); })));
+    call_lbl_14: (____chimes_does_checkpoint_bots_print_results_npm ? ( ({ calling((void*)bots_print_results, 14, ____alias_loc_id_2, 0UL, 0); (bots_print_results)(); }) ) : (({ calling_npm("bots_print_results", ____alias_loc_id_2); (*____chimes_extern_func_bots_print_results)(); })));
 # 542 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-   rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable4); return (0);
+    int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((0)); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_12, ____chimes_did_disable4, false); return ____chimes_ret_var_0; ;
 # 543 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-}
+rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_12, ____chimes_did_disable4, false); }
 
 int
 # 490 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-main(int argc, char* argv[]) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-
-
-
+main(int argc, char* argv[]) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+# 224 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 void bots_print_usage_npm()
 # 225 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 {
@@ -4917,7 +4917,7 @@ void bots_print_usage_npm()
    fprintf(stderr, "\n");
 # 283 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 }
-
+# 287 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 void
 # 288 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 bots_get_params_common_npm(int argc, char **argv)
@@ -4926,7 +4926,7 @@ bots_get_params_common_npm(int argc, char **argv)
 # 290 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    int i;
 # 291 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    char * ____chimes_unroll_var_0 = (*____chimes_extern_func___xpg_basename)(argv[0]); strcpy(bots_execname, ____chimes_unroll_var_0);
+   strcpy(bots_execname, __xpg_basename(argv[0]));
 # 292 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    (*____chimes_extern_func_bots_get_date)(bots_exec_date);
 # 293 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -5082,7 +5082,7 @@ bots_get_params_common_npm(int argc, char **argv)
    }
 # 444 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 }
-
+# 448 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 void
 # 449 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 bots_get_params_npm(int argc, char **argv)
@@ -5093,7 +5093,7 @@ bots_get_params_npm(int argc, char **argv)
 # 452 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 453 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 }
-
+# 459 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 void bots_set_info_npm ()
 # 460 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 {
@@ -5105,7 +5105,7 @@ void bots_set_info_npm ()
 # 464 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
    sprintf(bots_model,"OpenMP (using tasks)");
 # 465 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
-    int ____chimes_unroll_var_1 = (*____chimes_extern_func_omp_get_max_threads)(); sprintf(bots_resources,"%d", ____chimes_unroll_var_1);
+    int ____chimes_unroll_var_0 = (*____chimes_extern_func_omp_get_max_threads)(); sprintf(bots_resources,"%d", ____chimes_unroll_var_0);
 # 466 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 467 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
 # 468 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c"
@@ -5132,25 +5132,24 @@ void bots_set_info_npm ()
 
 
 static int module_init() {
-    init_module(16260503078375396929UL, 6, 5, 5, 13, 4, 12, 16, 10, 13, 1,
-                           &____alias_loc_id_0, (unsigned)2, (unsigned)0, (unsigned)1, (16260503078375396929UL + 55UL), (16260503078375396929UL + 359UL), "bots_get_date", (unsigned)1, (16260503078375396929UL + 359UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)1, (16260503078375396929UL + 52UL), (16260503078375396929UL + 53UL), "__xpg_basename", (unsigned)2, (16260503078375396929UL + 64UL), (16260503078375396929UL + 65UL),
-                           &____alias_loc_id_2, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 265UL), (16260503078375396929UL + 266UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 353UL),
-                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 300UL), (16260503078375396929UL + 373UL),
-                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 299UL),
-                           &____alias_loc_id_6, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 300UL), (16260503078375396929UL + 373UL),
-                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 299UL),
-                           &____alias_loc_id_8, (unsigned)0, (unsigned)0, (unsigned)1, "pairalign_init", (unsigned)1, (16260503078375396929UL + 376UL),
-                           &____alias_loc_id_9, (unsigned)3, (unsigned)0, (unsigned)0, (16260503078375396929UL + 296UL), (16260503078375396929UL + 297UL), (16260503078375396929UL + 298UL),
-                            &____alias_loc_id_10, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 353UL),
-                            &____alias_loc_id_11, (unsigned)5, (unsigned)0, (unsigned)0, (16260503078375396929UL + 54UL), (16260503078375396929UL + 64UL), (16260503078375396929UL + 353UL), (16260503078375396929UL + 359UL), (16260503078375396929UL + 376UL),
-                            &____alias_loc_id_12, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 277UL), (16260503078375396929UL + 359UL),
+    init_module(16260503078375396929UL, 5, 5, 4, 13, 4, 11, 15, 7, 16, 1,
+                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)1, (16260503078375396929UL + 52UL), (16260503078375396929UL + 53UL), (16260503078375396929UL + 359UL), "bots_get_date", (unsigned)1, (16260503078375396929UL + 359UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 261UL), (16260503078375396929UL + 262UL),
+                           &____alias_loc_id_2, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 353UL),
+                           &____alias_loc_id_3, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 296UL), (16260503078375396929UL + 373UL),
+                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 295UL),
+                           &____alias_loc_id_5, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 296UL), (16260503078375396929UL + 373UL),
+                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 295UL),
+                           &____alias_loc_id_7, (unsigned)0, (unsigned)0, (unsigned)1, "pairalign_init", (unsigned)1, (16260503078375396929UL + 376UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)0, (16260503078375396929UL + 292UL), (16260503078375396929UL + 293UL), (16260503078375396929UL + 294UL),
+                           &____alias_loc_id_9, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 353UL),
+                            &____alias_loc_id_10, (unsigned)5, (unsigned)0, (unsigned)0, (16260503078375396929UL + 54UL), (16260503078375396929UL + 62UL), (16260503078375396929UL + 353UL), (16260503078375396929UL + 359UL), (16260503078375396929UL + 376UL),
+                            &____alias_loc_id_11, (unsigned)2, (unsigned)0, (unsigned)0, (16260503078375396929UL + 273UL), (16260503078375396929UL + 359UL),
+                            &____alias_loc_id_12, (unsigned)1, (unsigned)0, (unsigned)0, (16260503078375396929UL + 297UL),
                             "bots_print_usage", (void *)(&bots_print_usage_npm), (void *)__null, 0, 0, 0UL, 24, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 378UL), 0UL, "fprintf", 3, (16260503078375396929UL + 1UL), (16260503078375396929UL + 379UL), (16260503078375396929UL + 359UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 378UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 380UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 381UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 378UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 382UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 382UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 384UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 385UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 386UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 387UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 388UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 389UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 388UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 389UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 388UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 393UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 378UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 394UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 395UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 378UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 381UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 378UL), 0UL,
-                            "bots_get_params_common", (void *)(&bots_get_params_common_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 2, 0UL, (16260503078375396929UL + 256UL), 0UL, 26, "__xpg_basename", 1, (16260503078375396929UL + 64UL), (16260503078375396929UL + 65UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 65UL), (16260503078375396929UL + 68UL), "bots_get_date", 1, (16260503078375396929UL + 359UL), 0UL, "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 70UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 64UL), (16260503078375396929UL + 127UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 376UL), (16260503078375396929UL + 64UL), (16260503078375396929UL + 151UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (16260503078375396929UL + 64UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (16260503078375396929UL + 64UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 398UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 399UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 399UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL,
-                            "bots_get_params", (void *)(&bots_get_params_npm), (void *)__null, 1, &____alias_loc_id_2, 2, 0UL, (16260503078375396929UL + 276UL), 0UL, 1, "bots_get_params_common", 2, 0UL, (16260503078375396929UL + 276UL), 0UL,
-                            "bots_set_info", (void *)(&bots_set_info_npm), (void *)__null, 0, 0, 0UL, 12, "sprintf", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 399UL), 0UL, "sprintf", 3, (16260503078375396929UL + 359UL), (16260503078375396929UL + 401UL), (16260503078375396929UL + 376UL), 0UL, "sprintf", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 402UL), 0UL, "omp_get_max_threads", 0, 0UL, "sprintf", 3, (16260503078375396929UL + 359UL), (16260503078375396929UL + 401UL), 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 286UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 287UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 288UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 289UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 290UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 291UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 404UL), (16260503078375396929UL + 292UL),
-                               "__xpg_basename", (void **)&(____chimes_extern_func___xpg_basename),
+                            "bots_get_params_common", (void *)(&bots_get_params_common_npm), (void *)__null, 1, &____alias_loc_id_0, 2, 0UL, (16260503078375396929UL + 252UL), 0UL, 26, "__xpg_basename", 1, (16260503078375396929UL + 62UL), (16260503078375396929UL + 63UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 63UL), (16260503078375396929UL + 64UL), "bots_get_date", 1, (16260503078375396929UL + 359UL), 0UL, "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 66UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 62UL), (16260503078375396929UL + 123UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 376UL), (16260503078375396929UL + 62UL), (16260503078375396929UL + 147UL), "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (16260503078375396929UL + 62UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "atoi", 1, (16260503078375396929UL + 62UL), 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 398UL), 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 399UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL, "fprintf", 2, (16260503078375396929UL + 1UL), (16260503078375396929UL + 399UL), 0UL, "bots_print_usage", 0, 0UL, "exit", 1, 0UL, 0UL,
+                            "bots_get_params", (void *)(&bots_get_params_npm), (void *)__null, 1, &____alias_loc_id_1, 2, 0UL, (16260503078375396929UL + 272UL), 0UL, 1, "bots_get_params_common", 2, 0UL, (16260503078375396929UL + 272UL), 0UL,
+                            "bots_set_info", (void *)(&bots_set_info_npm), (void *)__null, 0, 0, 0UL, 12, "sprintf", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 399UL), 0UL, "sprintf", 3, (16260503078375396929UL + 359UL), (16260503078375396929UL + 401UL), (16260503078375396929UL + 376UL), 0UL, "sprintf", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 402UL), 0UL, "omp_get_max_threads", 0, 0UL, "sprintf", 3, (16260503078375396929UL + 359UL), (16260503078375396929UL + 401UL), 0UL, 0UL, "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 282UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 283UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 284UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 285UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 286UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 397UL), (16260503078375396929UL + 287UL), "strcpy", 2, (16260503078375396929UL + 359UL), (16260503078375396929UL + 404UL), (16260503078375396929UL + 288UL),
                                "align", (void **)&(____chimes_extern_func_align),
                                "align_end", (void **)&(____chimes_extern_func_align_end),
                                "align_init", (void **)&(____chimes_extern_func_align_init),
@@ -5166,7 +5165,6 @@ static int module_init() {
                            "bots_get_params_common", &(____chimes_does_checkpoint_bots_get_params_common_npm),
                            "bots_get_params", &(____chimes_does_checkpoint_bots_get_params_npm),
                            "bots_set_info", &(____chimes_does_checkpoint_bots_set_info_npm),
-                           "__xpg_basename", &(____chimes_does_checkpoint___xpg_basename_npm),
                            "align", &(____chimes_does_checkpoint_align_npm),
                            "align_end", &(____chimes_does_checkpoint_align_end_npm),
                            "align_init", &(____chimes_does_checkpoint_align_init_npm),
@@ -5178,21 +5176,19 @@ static int module_init() {
                            "bots_usecs", &(____chimes_does_checkpoint_bots_usecs_npm),
                            "omp_get_max_threads", &(____chimes_does_checkpoint_omp_get_max_threads_npm),
                            "pairalign_init", &(____chimes_does_checkpoint_pairalign_init_npm),
-                             (16260503078375396929UL + 55UL), (16260503078375396929UL + 65UL),
-                             (16260503078375396929UL + 53UL), (16260503078375396929UL + 256UL),
-                             (16260503078375396929UL + 266UL), (16260503078375396929UL + 276UL),
-                             (16260503078375396929UL + 298UL), (16260503078375396929UL + 351UL),
-                             (16260503078375396929UL + 256UL), (16260503078375396929UL + 64UL),
+                             (16260503078375396929UL + 252UL), (16260503078375396929UL + 62UL),
+                             (16260503078375396929UL + 262UL), (16260503078375396929UL + 272UL),
+                             (16260503078375396929UL + 294UL), (16260503078375396929UL + 351UL),
                              (16260503078375396929UL + 377UL), (16260503078375396929UL + 1UL),
-                     "bots_verbose_mode_t", 0,
+                             (16260503078375396929UL + 53UL), (16260503078375396929UL + 252UL),
+                     "bots_verbose_mode_t", 32UL, 0,
                              "main", "main", 14, "bots_get_params", "pairalign_init", "bots_set_info", "align_seq_init", "bots_usecs", "align_seq", "bots_usecs", "align_init", "bots_usecs", "align", "bots_usecs", "align_end", "align_verify", "bots_print_results",
-                             "bots_get_params_common", "_Z22bots_get_params_commoniPPc", 9, "__xpg_basename", "bots_get_date", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage",
+                             "bots_get_params_common", "_Z22bots_get_params_commoniPPc", 8, "bots_get_date", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage", "bots_print_usage",
                              "bots_set_info", "_Z13bots_set_infov", 1, "omp_get_max_threads",
                              "bots_print_usage", "_Z16bots_print_usagev", 0,
                              "bots_get_params", "_Z15bots_get_paramsiPPc", 1, "bots_get_params_common",
-                        "bots_get_params_common|argc|0", 2, "bots_get_date", "__xpg_basename",
-                        "bots_get_params_common|argv|0", 2, "bots_get_date", "__xpg_basename",
-                        "bots_get_params_common|____chimes_unroll_var_0|0", 1, "bots_get_date",
+                        "bots_get_params_common|argc|0", 1, "bots_get_date",
+                        "bots_get_params_common|argv|0", 1, "bots_get_date",
                         "main|bots_t_start|0", 7, "bots_usecs", "bots_print_results", "align_verify", "align_seq", "align_init", "align_end", "align",
                         "main|bots_t_end|0", 6, "bots_usecs", "bots_print_results", "align_verify", "align_init", "align_end", "align",
         "bots_print_usage", 0UL, (int)0,
@@ -5202,11 +5198,11 @@ static int module_init() {
         "bots_print_usage", 0UL, (int)0,
         "bots_print_usage", 0UL, (int)0,
         "bots_print_usage", 0UL, (int)0,
-        "bots_get_params_common", 0UL, (int)2, 0UL, 16260503078375397205UL,
-        "bots_get_params", 0UL, (int)2, 0UL, 16260503078375397280UL,
-        "bots_set_info", 0UL, (int)0,
+        "bots_get_params_common", 0UL, (int)2, 0UL, 16260503078375397201UL,
         "omp_get_max_threads", 0UL, (int)0,
+        "bots_get_params", 0UL, (int)2, 0UL, 16260503078375397280UL,
         "pairalign_init", 0UL, (int)1, 16260503078375397305UL,
+        "bots_set_info", 0UL, (int)0,
         "align_seq_init", 0UL, (int)0,
         "bots_usecs", 0UL, (int)0,
         "align_seq", 0UL, (int)0,

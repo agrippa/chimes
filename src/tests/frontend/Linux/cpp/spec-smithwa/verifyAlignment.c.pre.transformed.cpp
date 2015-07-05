@@ -28,7 +28,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -44,7 +44,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -79,7 +80,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2961,7 +2962,8 @@ void verifyAlignment_resumable(SIMMATRIX_T *simMatrix, BSTR_T *B, int maxDisplay
 # 357 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c"
   }
 # 358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c"
-rm_stack(false, 0UL, "verifyAlignment", &____must_manage_verifyAlignment, ____alias_loc_id_0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "verifyAlignment", &____must_manage_verifyAlignment, ____alias_loc_id_0, ____chimes_did_disable0, false); }
+# 42 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c"
 void verifyAlignment_quick(SIMMATRIX_T *simMatrix, BSTR_T *B, int maxDisplay) {const int ____chimes_did_disable0 = new_stack((void *)(&verifyAlignment), "verifyAlignment", &____must_manage_verifyAlignment, 3, 0, (size_t)(6158440427830137697UL), (size_t)(6158440427830137463UL), (size_t)(0UL)) ; ; ;
 # 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c"
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c"
@@ -3131,12 +3133,10 @@ void verifyAlignment_quick(SIMMATRIX_T *simMatrix, BSTR_T *B, int maxDisplay) {c
 # 357 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c"
   }
 # 358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c"
-rm_stack(false, 0UL, "verifyAlignment", &____must_manage_verifyAlignment, ____alias_loc_id_0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "verifyAlignment", &____must_manage_verifyAlignment, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 void verifyAlignment(SIMMATRIX_T *simMatrix, BSTR_T *B, int maxDisplay) { (____chimes_replaying ? verifyAlignment_resumable(simMatrix, B, maxDisplay) : verifyAlignment_quick(simMatrix, B, maxDisplay)); }
-
-
-
+# 42 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c"
 void verifyAlignment_npm(SIMMATRIX_T *simMatrix, BSTR_T *B, int maxDisplay) {
 # 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c"
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyAlignment.c"
@@ -3325,8 +3325,8 @@ static int module_init() {
                              (6158440427830137356UL + 351UL), (6158440427830137356UL + 326UL),
                              (6158440427830137356UL + 119UL), (6158440427830137356UL + 202UL),
                              (6158440427830137356UL + 107UL), (6158440427830137356UL + 109UL),
-                     "bstr", 9, "long long int**", (int)__builtin_offsetof (struct bstr, bestScores), "int", (int)__builtin_offsetof (struct bstr, numThreads), "int*", (int)__builtin_offsetof (struct bstr, numReports), "int**", (int)__builtin_offsetof (struct bstr, bestStartsI), "int**", (int)__builtin_offsetof (struct bstr, bestStartsJ), "int**", (int)__builtin_offsetof (struct bstr, bestEndsI), "int**", (int)__builtin_offsetof (struct bstr, bestEndsJ), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsI), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsJ),
-                     "simmat", 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
+                     "bstr", 576UL, 9, "long long int**", (int)__builtin_offsetof (struct bstr, bestScores), "int", (int)__builtin_offsetof (struct bstr, numThreads), "int*", (int)__builtin_offsetof (struct bstr, numReports), "int**", (int)__builtin_offsetof (struct bstr, bestStartsI), "int**", (int)__builtin_offsetof (struct bstr, bestStartsJ), "int**", (int)__builtin_offsetof (struct bstr, bestEndsI), "int**", (int)__builtin_offsetof (struct bstr, bestEndsJ), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsI), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsJ),
+                     "simmat", 40960UL, 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
                              "verifyAlignment", "_Z15verifyAlignmentP6simmatP4bstri", 0);
     return 0;
 }

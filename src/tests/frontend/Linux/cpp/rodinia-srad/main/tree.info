@@ -1,1 +1,1 @@
-main main 0 MAY get_time 60 10 get_time 109 10 get_time 131 10 read_graphics 144 2 get_time 150 10 resize 160 2 get_time 168 10 get_time 214 10 get_time 225 10 get_time 326 10 get_time 337 10 write_graphics 343 2 get_time 350 10 get_time 363 11
+main main 0 DOES get_time 64 10 get_time 113 10 get_time 135 10 read_graphics 148 2 get_time 154 10 resize 164 2 get_time 172 10 get_time 218 10 get_time 229 10 checkpoint 326 9 get_time 332 10 get_time 343 10 write_graphics 349 2 get_time 356 10 get_time 369 11

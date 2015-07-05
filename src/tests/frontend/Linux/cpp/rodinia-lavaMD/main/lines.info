@@ -1,10 +1,10 @@
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 84 10 : { 4 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 101 8 : { 5, 19 } {  } call:isInteger { isInteger { 82 } }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 126 8 : {  } {  } call:isInteger { isInteger { 82 } }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 321 10 : { 10 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 61 10 : { 1, 2, 3 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 291 2 : { 9 } {  } call:kernel_cpu { kernel_cpu { 33, 294, 633, 695, 718 } }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 281 10 : { 8, 12, 13, 14, 15, 16, 17, 20, 21, 22, 23, 24, 294, 633, 695, 718, 817 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 181 10 : { 7, 19 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 164 10 : { 6, 18 } {  } call:get_time {  }
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 156 10 : { 5, 19 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 87 10 : { 4 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 104 8 : { 5, 19 } {  } call:isInteger { isInteger { 82 } }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 129 8 : {  } {  } call:isInteger { isInteger { 82 } }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 64 10 : { 1, 2, 3 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 308 5 : { 10 } {  } call:checkpoint {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 298 2 : { 9 } {  } call:kernel_cpu { kernel_cpu { 33, 294, 633, 695, 718 } }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 285 5 : { 8, 12, 13, 14, 15, 16, 17, 20, 21, 22, 23, 24, 294, 633, 695, 718, 819 } {  } call:checkpoint {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 184 10 : { 7, 19 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 167 10 : { 6, 18 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c 159 10 : { 5, 19 } {  } call:get_time {  }

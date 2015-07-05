@@ -78,14 +78,17 @@
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|k|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|AbsDiff|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|RelDiff|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc main|____chimes_ret_var_7|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolume|x|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolume|y|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolume|z|0 " double* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolume|____chimes_ret_var_4|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc TimeIncrement|targetdt|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc TimeIncrement|ratio|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc TimeIncrement|olddt|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc TimeIncrement|newdt|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc FABS|arg|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc FABS|____chimes_ret_var_2|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc LagrangeNodal|delt|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc LagrangeNodal|u_cut|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc LagrangeElements|deltatime|0 " double " 64 0 0 0
@@ -117,6 +120,7 @@
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|dthydro_per_thread|0 " [na x double] " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcHydroConstraintForElems|hydro_elem_per_thread|0 " [na x i32] " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc SQRT|arg|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc SQRT|____chimes_ret_var_0|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcLagrangeElements|deltatime|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcLagrangeElements|numElem|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcLagrangeElements|k|0 " i32 " 32 0 0 0
@@ -376,6 +380,7 @@
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|volume|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|a|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|charLength|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemCharacteristicLength|____chimes_ret_var_6|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemShapeFunctionDerivatives|x|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemShapeFunctionDerivatives|y|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemShapeFunctionDerivatives|z|0 " double* " 64 1 0 0
@@ -458,6 +463,7 @@
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc AreaFace|gy|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc AreaFace|gz|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc AreaFace|area|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc AreaFace|____chimes_ret_var_5|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcForceForNodes|numNode|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcForceForNodes|i|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcAccelerationForNodes|numNode|0 " i32 " 32 0 0 0
@@ -613,6 +619,7 @@
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|i|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcFBHourglassForceForElems|elem|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CBRT|arg|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CBRT|____chimes_ret_var_1|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemFBHourglassForce|xd|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemFBHourglassForce|yd|0 " double* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemFBHourglassForce|zd|0 " double* " 64 1 0 0
@@ -791,3 +798,4 @@
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolumeScalar|dy25|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolumeScalar|dz25|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolumeScalar|volume|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./lulesh/LULESH_OMP.cc CalcElemVolumeScalar|____chimes_ret_var_3|0 " double " 64 0 0 0

@@ -28,7 +28,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -44,7 +44,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -79,7 +80,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -103,7 +104,7 @@ int isInteger_resumable(char *str){const int ____chimes_did_disable0 = new_stack
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
  if (*str == '\0'){
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
-  rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0); return 0;
+  rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 0;
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
  }
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
@@ -116,7 +117,7 @@ int isInteger_resumable(char *str){const int ____chimes_did_disable0 = new_stack
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
   if (*str < 48 || *str > 57){
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
-   rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0); return 0;
+   rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 0;
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
   }
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
@@ -127,7 +128,7 @@ int isInteger_resumable(char *str){const int ____chimes_did_disable0 = new_stack
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
- rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0); return 1;
+ rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 1;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 }
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
@@ -138,6 +139,7 @@ int isInteger_resumable(char *str){const int ____chimes_did_disable0 = new_stack
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 }
+# 20 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 int isInteger_quick(char *str){const int ____chimes_did_disable0 = new_stack((void *)(&isInteger), "isInteger", &____must_manage_isInteger, 1, 0, (size_t)(2140959209724973389UL)) ; ; ;
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
@@ -147,7 +149,7 @@ int isInteger_quick(char *str){const int ____chimes_did_disable0 = new_stack((vo
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
  if (*str == '\0'){
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
-  rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0); return 0;
+  rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 0;
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
  }
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
@@ -160,7 +162,7 @@ int isInteger_quick(char *str){const int ____chimes_did_disable0 = new_stack((vo
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
   if (*str < 48 || *str > 57){
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
-   rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0); return 0;
+   rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 0;
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
   }
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
@@ -171,14 +173,12 @@ int isInteger_quick(char *str){const int ____chimes_did_disable0 = new_stack((vo
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
- rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0); return 1;
+ rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); return 1;
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 }
 
 int isInteger(char *str) { return (____chimes_replaying ? isInteger_resumable(str) : isInteger_quick(str)); }
-
-
-
+# 20 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 int isInteger_npm(char *str){
 # 21 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c"

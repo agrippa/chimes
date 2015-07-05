@@ -1,13 +1,13 @@
 init 33 0 0 0 0 0 0 0
 get_coord 0 0 0 0 0
 modv 0 0 0
-move 166 0 0 0
-move_to 195 0 0 0
-rot_x 246 0
-rot_y 297 0
+move 174 0 0 0
+move_to 203 0 0 0
+rot_x 254 0
+rot_y 305 0
 get_sphere_intersec 0 0 0 0 0 0 0 0 0 0
 get_cos_angle_v1v2 0 0 0 0 0 0
-usage 542
-parse_three_doubles 587 589 594 599
-parse_config 0 871 810
-main 0 1353
+usage 558
+parse_three_doubles 603 605 610 615
+parse_config 0 887 826
+main 0 1373

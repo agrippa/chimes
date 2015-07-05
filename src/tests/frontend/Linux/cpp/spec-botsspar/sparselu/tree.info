@@ -6,9 +6,9 @@ lu0 _Z3lu0Pf 0 DOES_NOT
 bdiv _Z4bdivPfS_ 0 DOES_NOT
 bmod _Z4bmodPfS_S_ 0 DOES_NOT
 fwd _Z3fwdPfS_ 0 DOES_NOT
-sparselu_init _Z13sparselu_initPPPfPc 0 DOES_NOT genmat 212 4
-sparselu_par_call _Z17sparselu_par_callPPf 0 DOES_NOT lu0 227 7 fwd 232 13 bdiv 238 13 allocate_clean_block 249 92 bmod 250 22
-sparselu_seq_call _Z17sparselu_seq_callPPf 0 DOES_NOT lu0 266 7 fwd 270 13 bdiv 275 13 allocate_clean_block 282 92 bmod 283 22
+sparselu_init _Z13sparselu_initPPPfPc 0 DOES_NOT genmat 225 4
+sparselu_par_call _Z17sparselu_par_callPPf 0 DOES lu0 241 7 fwd 248 15 bdiv 258 15 allocate_clean_block 275 50 bmod 276 35 bmod 280 35 checkpoint 293 7
+sparselu_seq_call _Z17sparselu_seq_callPPf 0 DOES_NOT lu0 309 7 fwd 313 13 bdiv 318 13 allocate_clean_block 325 92 bmod 326 22
 sparselu_fini _Z13sparselu_finiPPfPc 0 DOES_NOT
-sparselu_check _Z14sparselu_checkPPfS0_ 0 DOES_NOT checkmat1 331 18
+sparselu_check _Z14sparselu_checkPPfS0_ 0 DOES_NOT checkmat1 374 18
 checkmat1 _Z9checkmat1Pf 0 DOES_NOT

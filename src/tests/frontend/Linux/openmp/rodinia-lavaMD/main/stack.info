@@ -1,5 +1,5 @@
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|argc|0 " i32 " 32 0 0 1 get_time isInteger kernel_cpu
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|argv|0 " i8** " 64 1 0 1 get_time isInteger kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|argc|0 " i32 " 32 0 0 1 checkpoint get_time isInteger kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|argv|0 " i8** " 64 1 0 1 checkpoint get_time isInteger kernel_cpu
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|time0|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|time1|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|time2|0 " i64 " 64 0 0 0
@@ -8,16 +8,24 @@
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|time5|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|time6|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|time7|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|i|0 " i32 " 32 0 0 1 get_time kernel_cpu
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|j|0 " i32 " 32 0 0 1 get_time kernel_cpu
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|k|0 " i32 " 32 0 0 1 get_time kernel_cpu
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|l|0 " i32 " 32 0 0 1 get_time kernel_cpu
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|m|0 " i32 " 32 0 0 1 get_time kernel_cpu
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|n|0 " i32 " 32 0 0 1 get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|i|0 " i32 " 32 0 0 1 checkpoint get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|j|0 " i32 " 32 0 0 1 checkpoint get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|k|0 " i32 " 32 0 0 1 checkpoint get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|l|0 " i32 " 32 0 0 1 checkpoint get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|m|0 " i32 " 32 0 0 1 checkpoint get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|n|0 " i32 " 32 0 0 1 checkpoint get_time kernel_cpu
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|par_cpu|0 " %struct.par_str = type { double } " 64 0 1 par_str 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|dim_cpu|0 " %struct.dim_str = type { i32, i32, i32, i32, i64, i64, i64, i64, i64 } " 448 0 1 dim_str 0 1 main
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|box_cpu|0 " %struct.box_str* " 64 1 0 1 get_time kernel_cpu
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|rv_cpu|0 " %struct.FOUR_VECTOR* " 64 1 0 1 get_time kernel_cpu
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|qv_cpu|0 " double* " 64 1 0 1 get_time kernel_cpu
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|fv_cpu|0 " %struct.FOUR_VECTOR* " 64 1 0 1 get_time kernel_cpu
-/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|nh|0 " i32 " 32 0 0 1 get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|box_cpu|0 " %struct.box_str* " 64 1 0 1 checkpoint get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|rv_cpu|0 " %struct.FOUR_VECTOR* " 64 1 0 1 checkpoint get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|qv_cpu|0 " double* " 64 1 0 1 checkpoint get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|fv_cpu|0 " %struct.FOUR_VECTOR* " 64 1 0 1 checkpoint get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|nh|0 " i32 " 32 0 0 1 checkpoint get_time kernel_cpu
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|____chimes_ret_var_1|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|____chimes_ret_var_2|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|____chimes_ret_var_3|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|____chimes_ret_var_4|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|____chimes_ret_var_5|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|____chimes_ret_var_6|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/lavaMD/main.c main|____chimes_ret_var_7|0 " i32 " 32 0 0 0

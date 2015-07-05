@@ -1,49 +1,50 @@
-fprintf usage 97 5 0 7 435 14
-exit usage 98 5 0 0
-getopt main 121 15 0 0 399 437
-atof main 127 33 0 448
-atoi main 129 35 0 448
-atoi main 131 32 0 448
-usage main 133 23 0 111
-usage main 135 22 0 111
-usage main 141 25 0 111
-open main 149 23 0 448 0 439
-fprintf main 150 13 0 7 440 448
-exit main 151 13 0 0
-read main 153 9 0 0 32 0
-read main 154 9 0 0 31 0
-malloc main 158 24 322 0
-malloc main 159 31 169 0
-malloc main 160 34 171 0
-read main 164 9 0 0 322 0
-close main 166 9 0 0
-fopen main 170 23 294 448 441
-fprintf main 171 13 0 7 440 448
-exit main 172 13 0 0
-fgets main 174 16 211 33 0 294
-strtok main 175 17 215 33 442
-rewind main 177 9 0 294
-fgets main 178 16 228 33 0 294
-strtok main 179 17 232 33 442
-strtok main 181 24 236 448 439
-malloc main 188 24 322 0
-malloc main 189 31 169 0
-malloc main 190 34 171 0
-rewind main 193 9 0 294
-fgets main 195 16 300 33 0 294
-strtok main 196 17 304 33 442
-strtok main 198 51 315 448 439
-atof main 198 86 0 315
-fclose main 202 9 0 294
-printf main 204 2 0 444
-memcpy main 206 2 0 171 322 0
-omp_get_wtime main 208 11 0
-cluster main 212 9 0 0 0 169 0 0 28
-omp_get_wtime main 221 14 0
-printf main 224 2 0 445 0
-printf main 225 2 0 440 0
-printf main 237 2 0 447 0
-free main 239 5 0 169
-free main 240 5 0 385
-free main 241 5 0 449
-free main 242 5 0 322
+fprintf usage 100 5 0 7 436 14
+exit usage 101 5 0 0
+getopt main 124 15 0 0 400 438
+atof main 130 33 0 449
+atoi main 132 35 0 449
+atoi main 134 32 0 449
+usage main 136 23 0 111
+usage main 138 22 0 111
+usage main 144 25 0 111
+open main 152 23 0 449 0 440
+fprintf main 153 13 0 7 441 449
+exit main 154 13 0 0
+read main 156 9 0 0 32 0
+read main 157 9 0 0 31 0
+malloc main 161 24 322 0
+malloc main 162 31 169 0
+malloc main 163 34 171 0
+read main 167 9 0 0 322 0
+close main 169 9 0 0
+fopen main 173 23 294 449 442
+fprintf main 174 13 0 7 441 449
+exit main 175 13 0 0
+fgets main 177 16 211 33 0 294
+strtok main 178 17 215 33 443
+rewind main 180 9 0 294
+fgets main 181 16 228 33 0 294
+strtok main 182 17 232 33 443
+strtok main 184 24 236 449 440
+malloc main 191 24 322 0
+malloc main 192 31 169 0
+malloc main 193 34 171 0
+rewind main 196 9 0 294
+fgets main 198 16 300 33 0 294
+strtok main 199 17 304 33 443
+strtok main 201 51 315 449 440
+atof main 201 86 0 315
+fclose main 205 9 0 294
+printf main 207 2 0 445
+memcpy main 209 2 0 171 322 0
+omp_get_wtime main 211 11 0
+cluster main 215 9 0 0 0 169 0 0 28
+checkpoint main 223 9 0
+omp_get_wtime main 227 14 0
+printf main 230 2 0 446 0
+printf main 231 2 0 441 0
+printf main 243 2 0 448 0
+free main 245 5 0 169
+free main 246 5 0 386
+free main 247 5 0 450
+free main 248 5 0 322

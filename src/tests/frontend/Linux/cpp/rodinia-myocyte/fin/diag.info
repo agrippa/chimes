@@ -1,6 +1,6 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 6 6 len=3 fin_npm
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 18 const int ____chimes_did_disable0 = new_stack((void *)(&fin), "fin", &____must_manage_fin, 10, 0, (size_t)(17020714764767922066UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17020714764767922071UL), (size_t)(17020714764767922072UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 110 1 rm_stack(false, 0UL, "fin", &____must_manage_fin, ____alias_loc_id_0, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 110 1 rm_stack(false, 0UL, "fin", &____must_manage_fin, ____alias_loc_id_0, ____chimes_did_disable0, false); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 19 const int ____chimes_did_disable0 = new_stack((void *)(&fin), "fin", &____must_manage_fin, 10, 0, (size_t)(17020714764767922066UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(17020714764767922071UL), (size_t)(17020714764767922072UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 323 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 22 2 float BtotDyad; ;
@@ -46,6 +46,6 @@ ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 43 22
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 44 2 float J_ca4cam_SLmyo; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 44 22 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 6 6 len=3 fin_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 322  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 322  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 6 6 len=3 fin_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c 15 322  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

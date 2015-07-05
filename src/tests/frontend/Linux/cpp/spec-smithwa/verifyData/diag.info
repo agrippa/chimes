@@ -1,6 +1,6 @@
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 34 6 len=10 verifyData_npm
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 35 36 const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(8188620330301190673UL), (size_t)(8188620330301190674UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0); 
-InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 150 1 rm_stack(false, 0UL, "verifyData", &____must_manage_verifyData, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 150 1 rm_stack(false, 0UL, "verifyData", &____must_manage_verifyData, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 35 37 const int ____chimes_did_disable0 = new_stack((void *)(&verifyData), "verifyData", &____must_manage_verifyData, 4, 3, (size_t)(8188620330301190673UL), (size_t)(8188620330301190674UL), (size_t)(0UL), (size_t)(0UL), "verifyData|simMatrix|0", &____must_checkpoint_verifyData_simMatrix_0, "%struct.simmat*", (void *)(&simMatrix), (size_t)8, 1, 0, 0, "verifyData|seqData|0", &____must_checkpoint_verifyData_seqData_0, "%struct.seqdat*", (void *)(&seqData), (size_t)8, 1, 0, 0, "verifyData|minScore|0", &____must_checkpoint_verifyData_minScore_0, "i32", (void *)(&minScore), (size_t)4, 0, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 35 625 
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 37 3 int myTaskID; int matchLimit; int globalNpRow; int globalNpCol; ;
@@ -20,8 +20,11 @@ RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 43 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 52 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 35 624  ; int myRow;
+# 35
 int matchLimit;
+# 35
 int myTaskID;
+# 35
  if (____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(3, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 34 6 len=10 verifyData_resumable
 ReplaceTextStart /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 57 18  ({  calling((void*)gridInfo, 1, ____alias_loc_id_0, 0UL, 4, (size_t)(8188620330301190502UL), (size_t)(8188620330301190503UL), (size_t)(8188620330301190500UL), (size_t)(8188620330301190501UL)); (gridInfo)(&npRow, &npCol, &myRow, &myCol); }) 
@@ -33,6 +36,9 @@ RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 
 RemoveTextBegin /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 43 
 RemoveTextEnd /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 38 52 
 InsertTextAfterToken /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/verifyData.c 35 624  ; int myRow;
+# 35
 int matchLimit;
+# 35
 int myTaskID;
+# 35
  if (____must_checkpoint_verifyData_myRow_0 || ____must_checkpoint_verifyData_matchLimit_0 || ____must_checkpoint_verifyData_myTaskID_0) { register_stack_vars(3, "verifyData|myRow|0", &____must_checkpoint_verifyData_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "verifyData|matchLimit|0", &____must_checkpoint_verifyData_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "verifyData|myTaskID|0", &____must_checkpoint_verifyData_myTaskID_0, "i32", (void *)(&myTaskID), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

@@ -1,14 +1,14 @@
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 47 : { 101, 102 } {  } call:getNRanks {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 4 : { 94, 95 } {  } call:timerStats {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 147 35 : { 98, 99, 100 } {  } call:getNRanks {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 35 : { 96, 97 } {  } call:getMyRank {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 4 : { 320, 328, 329, 330, 774 } {  } call:addDoubleParallel { addDoubleParallel { 320, 321 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 38 : { 331, 332, 774 } {  } call:getNRanks {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 4 : { 327, 774 } {  } call:maxRankDoubleParallel { maxRankDoubleParallel { 324, 325 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 4 : { 323, 324, 326, 774 } {  } call:minRankDoubleParallel { minRankDoubleParallel { 324, 325 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 32 : { 323, 324, 326, 774 } {  } call:getMyRank {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 4 : { 320, 322 } {  } call:addDoubleParallel { addDoubleParallel { 320, 321 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 95 : { 323, 774 } {  } call:getNRanks {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 10 : { 545 } {  } call:printRank {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 35 : { 548 } {  } call:getMyRank {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 35 : { 546, 547 } {  } call:getNRanks {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 160 47 : { 113, 114 } {  } call:getNRanks {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 123 4 : { 106, 107 } {  } call:timerStats {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 147 35 : { 110, 111, 112 } {  } call:getNRanks {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 132 35 : { 108, 109 } {  } call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 303 4 : { 332, 340, 341, 342, 786 } {  } call:addDoubleParallel { addDoubleParallel { 332, 333 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 306 38 : { 343, 344, 786 } {  } call:getNRanks {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 290 4 : { 339, 786 } {  } call:maxRankDoubleParallel { maxRankDoubleParallel { 336, 337 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 284 4 : { 335, 336, 338, 786 } {  } call:minRankDoubleParallel { minRankDoubleParallel { 336, 337 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 282 32 : { 335, 336, 338, 786 } {  } call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 271 4 : { 332, 334 } {  } call:addDoubleParallel { addDoubleParallel { 332, 333 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 273 95 : { 335, 786 } {  } call:getNRanks {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 182 10 : { 557 } {  } call:printRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 191 35 : { 560 } {  } call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/performanceTimers.c 189 35 : { 558, 559 } {  } call:getNRanks {  }

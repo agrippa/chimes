@@ -1,7 +1,7 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 6 6 len=3 ecc_npm
 InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 915 7 alias_group_changed(____alias_loc_id_0) || 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 11 21 const int ____chimes_did_disable0 = new_stack((void *)(&ecc), "ecc", &____must_manage_ecc, 6, 1, (size_t)(0UL), (size_t)(17020714764657570938UL), (size_t)(0UL), (size_t)(17020714764657570940UL), (size_t)(0UL), (size_t)(17020714764657570942UL), "ecc|finavalu|0", &____must_checkpoint_ecc_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 947 1 rm_stack(false, 0UL, "ecc", &____must_manage_ecc, ____alias_loc_id_1, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 947 1 rm_stack(false, 0UL, "ecc", &____must_manage_ecc, ____alias_loc_id_1, ____chimes_did_disable0, false); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 11 22 const int ____chimes_did_disable0 = new_stack((void *)(&ecc), "ecc", &____must_manage_ecc, 6, 1, (size_t)(0UL), (size_t)(17020714764657570938UL), (size_t)(0UL), (size_t)(17020714764657570940UL), (size_t)(0UL), (size_t)(17020714764657570942UL), "ecc|finavalu|0", &____must_checkpoint_ecc_finavalu_0, "float*", (void *)(&finavalu), (size_t)8, 1, 0, 0); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 11 371 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 18 2 int offset_1; ;
@@ -678,9 +678,9 @@ ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 433 2 float I_Ca
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 433 16 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 434 2 float I_tot; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 434 13 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 915 4  call_lbl_123: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 915 4  call_lbl_124: 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 6 6 len=3 ecc_quick
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 915 65  ({  calling((void*)fmod, 123, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 915 65  ({  calling((void*)fmod, 124, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 915 90 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 56 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 56 15 
@@ -703,18 +703,28 @@ RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 415 21
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 416 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 416 19 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 11 370  ; float I_Ca_tot_sl;
+# 11
 float I_Ca_tot_junc;
+# 11
 float I_K_tot;
+# 11
 float I_Na_tot_sl;
+# 11
 float I_Na_tot_junc;
+# 11
 float I_Clbk;
+# 11
 float I_ClCa;
+# 11
 int offset_42;
+# 11
 int offset_41;
+# 11
 int offset_39;
+# 11
  if (____must_checkpoint_ecc_I_Ca_tot_sl_0 || ____must_checkpoint_ecc_I_Ca_tot_junc_0 || ____must_checkpoint_ecc_I_K_tot_0 || ____must_checkpoint_ecc_I_Na_tot_sl_0 || ____must_checkpoint_ecc_I_Na_tot_junc_0 || ____must_checkpoint_ecc_I_Clbk_0 || ____must_checkpoint_ecc_I_ClCa_0 || ____must_checkpoint_ecc_offset_42_0 || ____must_checkpoint_ecc_offset_41_0 || ____must_checkpoint_ecc_offset_39_0) { register_stack_vars(10, "ecc|I_Ca_tot_sl|0", &____must_checkpoint_ecc_I_Ca_tot_sl_0, "float", (void *)(&I_Ca_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Ca_tot_junc|0", &____must_checkpoint_ecc_I_Ca_tot_junc_0, "float", (void *)(&I_Ca_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_K_tot|0", &____must_checkpoint_ecc_I_K_tot_0, "float", (void *)(&I_K_tot), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_sl|0", &____must_checkpoint_ecc_I_Na_tot_sl_0, "float", (void *)(&I_Na_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_junc|0", &____must_checkpoint_ecc_I_Na_tot_junc_0, "float", (void *)(&I_Na_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_Clbk|0", &____must_checkpoint_ecc_I_Clbk_0, "float", (void *)(&I_Clbk), (size_t)4, 0, 0, 0, "ecc|I_ClCa|0", &____must_checkpoint_ecc_I_ClCa_0, "float", (void *)(&I_ClCa), (size_t)4, 0, 0, 0, "ecc|offset_42|0", &____must_checkpoint_ecc_offset_42_0, "i32", (void *)(&offset_42), (size_t)4, 0, 0, 0, "ecc|offset_41|0", &____must_checkpoint_ecc_offset_41_0, "i32", (void *)(&offset_41), (size_t)4, 0, 0, 0, "ecc|offset_39|0", &____must_checkpoint_ecc_offset_39_0, "i32", (void *)(&offset_39), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 6 6 len=3 ecc_resumable
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 915 65  ({  calling((void*)fmod, 123, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 915 65  ({  calling((void*)fmod, 124, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(0UL)); (fmod)(timeinst, parameter_1); }) 
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 915 90 
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 56 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 56 15 
@@ -737,13 +747,23 @@ RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 415 21
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 416 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 416 19 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/ecc.c 11 370  ; float I_Ca_tot_sl;
+# 11
 float I_Ca_tot_junc;
+# 11
 float I_K_tot;
+# 11
 float I_Na_tot_sl;
+# 11
 float I_Na_tot_junc;
+# 11
 float I_Clbk;
+# 11
 float I_ClCa;
+# 11
 int offset_42;
+# 11
 int offset_41;
+# 11
 int offset_39;
- if (____must_checkpoint_ecc_I_Ca_tot_sl_0 || ____must_checkpoint_ecc_I_Ca_tot_junc_0 || ____must_checkpoint_ecc_I_K_tot_0 || ____must_checkpoint_ecc_I_Na_tot_sl_0 || ____must_checkpoint_ecc_I_Na_tot_junc_0 || ____must_checkpoint_ecc_I_Clbk_0 || ____must_checkpoint_ecc_I_ClCa_0 || ____must_checkpoint_ecc_offset_42_0 || ____must_checkpoint_ecc_offset_41_0 || ____must_checkpoint_ecc_offset_39_0) { register_stack_vars(10, "ecc|I_Ca_tot_sl|0", &____must_checkpoint_ecc_I_Ca_tot_sl_0, "float", (void *)(&I_Ca_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Ca_tot_junc|0", &____must_checkpoint_ecc_I_Ca_tot_junc_0, "float", (void *)(&I_Ca_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_K_tot|0", &____must_checkpoint_ecc_I_K_tot_0, "float", (void *)(&I_K_tot), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_sl|0", &____must_checkpoint_ecc_I_Na_tot_sl_0, "float", (void *)(&I_Na_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_junc|0", &____must_checkpoint_ecc_I_Na_tot_junc_0, "float", (void *)(&I_Na_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_Clbk|0", &____must_checkpoint_ecc_I_Clbk_0, "float", (void *)(&I_Clbk), (size_t)4, 0, 0, 0, "ecc|I_ClCa|0", &____must_checkpoint_ecc_I_ClCa_0, "float", (void *)(&I_ClCa), (size_t)4, 0, 0, 0, "ecc|offset_42|0", &____must_checkpoint_ecc_offset_42_0, "i32", (void *)(&offset_42), (size_t)4, 0, 0, 0, "ecc|offset_41|0", &____must_checkpoint_ecc_offset_41_0, "i32", (void *)(&offset_41), (size_t)4, 0, 0, 0, "ecc|offset_39|0", &____must_checkpoint_ecc_offset_39_0, "i32", (void *)(&offset_39), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(123): { goto call_lbl_123; } default: { chimes_error(); } }  }  
+# 11
+ if (____must_checkpoint_ecc_I_Ca_tot_sl_0 || ____must_checkpoint_ecc_I_Ca_tot_junc_0 || ____must_checkpoint_ecc_I_K_tot_0 || ____must_checkpoint_ecc_I_Na_tot_sl_0 || ____must_checkpoint_ecc_I_Na_tot_junc_0 || ____must_checkpoint_ecc_I_Clbk_0 || ____must_checkpoint_ecc_I_ClCa_0 || ____must_checkpoint_ecc_offset_42_0 || ____must_checkpoint_ecc_offset_41_0 || ____must_checkpoint_ecc_offset_39_0) { register_stack_vars(10, "ecc|I_Ca_tot_sl|0", &____must_checkpoint_ecc_I_Ca_tot_sl_0, "float", (void *)(&I_Ca_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Ca_tot_junc|0", &____must_checkpoint_ecc_I_Ca_tot_junc_0, "float", (void *)(&I_Ca_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_K_tot|0", &____must_checkpoint_ecc_I_K_tot_0, "float", (void *)(&I_K_tot), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_sl|0", &____must_checkpoint_ecc_I_Na_tot_sl_0, "float", (void *)(&I_Na_tot_sl), (size_t)4, 0, 0, 0, "ecc|I_Na_tot_junc|0", &____must_checkpoint_ecc_I_Na_tot_junc_0, "float", (void *)(&I_Na_tot_junc), (size_t)4, 0, 0, 0, "ecc|I_Clbk|0", &____must_checkpoint_ecc_I_Clbk_0, "float", (void *)(&I_Clbk), (size_t)4, 0, 0, 0, "ecc|I_ClCa|0", &____must_checkpoint_ecc_I_ClCa_0, "float", (void *)(&I_ClCa), (size_t)4, 0, 0, 0, "ecc|offset_42|0", &____must_checkpoint_ecc_offset_42_0, "i32", (void *)(&offset_42), (size_t)4, 0, 0, 0, "ecc|offset_41|0", &____must_checkpoint_ecc_offset_41_0, "i32", (void *)(&offset_41), (size_t)4, 0, 0, 0, "ecc|offset_39|0", &____must_checkpoint_ecc_offset_39_0, "i32", (void *)(&offset_39), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { case(124): { goto call_lbl_124; } default: { chimes_error(); } }  }  

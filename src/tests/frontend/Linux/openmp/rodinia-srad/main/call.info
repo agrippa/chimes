@@ -1,58 +1,59 @@
-get_time main 60 10 0
-get_time main 109 10 0
-printf main 116 3 0 1085
-atoi main 120 11 0 135
-atof main 121 12 0 135
-atoi main 122 8 0 135
-atoi main 123 8 0 135
-atoi main 124 13 0 135
-omp_set_num_threads main 127 2 0 0
-get_time main 131 10 0
-malloc main 142 22 828 0
-read_graphics main 144 2 0 1086 828 0 0 0
-get_time main 150 10 0
-malloc main 158 18 351 0
-resize main 160 2 0 828 0 0 351 0 0 0
-get_time main 168 10 0
-malloc main 183 17 280 0
-malloc main 184 17 287 0
-malloc main 185 17 506 0
-malloc main 186 17 524 0
-malloc main 189 15 482 0
-malloc main 190 18 500 0
-malloc main 191 18 518 0
-malloc main 192 18 536 0
-malloc main 195 17 643 0
-get_time main 214 10 0
-exp main 222 14 0 0
-get_time main 225 10 0
-get_time main 326 10 0
-log main 334 14 0 0
-get_time main 337 10 0
-write_graphics main 343 2 0 1087 351 0 0 0 0
-get_time main 350 10 0
-free main 356 2 0 828
-free main 357 2 0 351
-free main 359 5 0 280
-free main 359 15 0 287
-free main 359 25 0 506
-free main 359 35 0 524
-free main 360 5 0 482
-free main 360 15 0 500
-free main 360 25 0 518
-free main 360 35 0 536
-free main 361 5 0 643
-get_time main 363 11 0
-printf main 369 2 0 1088
-printf main 370 2 0 1089 0 0
-printf main 371 2 0 1090 0 0
-printf main 372 2 0 1091 0 0
-printf main 373 2 0 1092 0 0
-printf main 374 2 0 1093 0 0
-printf main 375 2 0 1085 0 0
-printf main 376 2 0 1095 0 0
-printf main 377 2 0 1096 0 0
-printf main 378 2 0 1091 0 0
-printf main 379 2 0 1098 0 0
-printf main 380 2 0 1099
-printf main 381 2 0 1100 0
+get_time main 64 10 0
+get_time main 113 10 0
+printf main 120 3 0 1095
+atoi main 124 11 0 140
+atof main 125 12 0 140
+atoi main 126 8 0 140
+atoi main 127 8 0 140
+atoi main 128 13 0 140
+omp_set_num_threads main 131 2 0 0
+get_time main 135 10 0
+malloc main 146 22 834 0
+read_graphics main 148 2 0 1096 834 0 0 0
+get_time main 154 10 0
+malloc main 162 18 356 0
+resize main 164 2 0 834 0 0 356 0 0 0
+get_time main 172 10 0
+malloc main 187 17 285 0
+malloc main 188 17 292 0
+malloc main 189 17 511 0
+malloc main 190 17 529 0
+malloc main 193 15 487 0
+malloc main 194 18 505 0
+malloc main 195 18 523 0
+malloc main 196 18 541 0
+malloc main 199 17 648 0
+get_time main 218 10 0
+exp main 226 14 0 0
+get_time main 229 10 0
+checkpoint main 326 9 0
+get_time main 332 10 0
+log main 340 14 0 0
+get_time main 343 10 0
+write_graphics main 349 2 0 1097 356 0 0 0 0
+get_time main 356 10 0
+free main 362 2 0 834
+free main 363 2 0 356
+free main 365 5 0 285
+free main 365 15 0 292
+free main 365 25 0 511
+free main 365 35 0 529
+free main 366 5 0 487
+free main 366 15 0 505
+free main 366 25 0 523
+free main 366 35 0 541
+free main 367 5 0 648
+get_time main 369 11 0
+printf main 375 2 0 1098
+printf main 376 2 0 1099 0 0
+printf main 377 2 0 1100 0 0
+printf main 378 2 0 1101 0 0
+printf main 379 2 0 1102 0 0
+printf main 380 2 0 1103 0 0
+printf main 381 2 0 1095 0 0
+printf main 382 2 0 1105 0 0
+printf main 383 2 0 1106 0 0
+printf main 384 2 0 1101 0 0
+printf main 385 2 0 1108 0 0
+printf main 386 2 0 1109
+printf main 387 2 0 1110 0

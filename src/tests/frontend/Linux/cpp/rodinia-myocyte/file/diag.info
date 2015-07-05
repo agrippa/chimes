@@ -1,11 +1,11 @@
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 20 6 len=5 write_npm
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 79 6 len=4 read_npm
-InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 41 3 rm_stack(false, 0UL, "write", &____must_manage_write, ____alias_loc_id_0, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 41 3 rm_stack(false, 0UL, "write", &____must_manage_write, ____alias_loc_id_0, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 21 const int ____chimes_did_disable0 = new_stack((void *)(&write), "write", &____must_manage_write, 6, 0, (size_t)(3544992386570270565UL), (size_t)(3544992386570270566UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 73 1 rm_stack(false, 0UL, "write", &____must_manage_write, ____alias_loc_id_0, ____chimes_did_disable0); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 101 3 rm_stack(false, 0UL, "read", &____must_manage_read, ____alias_loc_id_1, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 73 1 rm_stack(false, 0UL, "write", &____must_manage_write, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 101 3 rm_stack(false, 0UL, "read", &____must_manage_read, ____alias_loc_id_1, ____chimes_did_disable1, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 16 const int ____chimes_did_disable1 = new_stack((void *)(&read), "read", &____must_manage_read, 5, 0, (size_t)(3544992386570270689UL), (size_t)(3544992386570270690UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 131 1 rm_stack(false, 0UL, "read", &____must_manage_read, ____alias_loc_id_1, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 131 1 rm_stack(false, 0UL, "read", &____must_manage_read, ____alias_loc_id_1, ____chimes_did_disable1, false); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 22 const int ____chimes_did_disable0 = new_stack((void *)(&write), "write", &____must_manage_write, 6, 0, (size_t)(3544992386570270565UL), (size_t)(3544992386570270566UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 250 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 31 2 FILE *fid; ;
@@ -23,11 +23,12 @@ ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 91 8
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 2 float temp; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 12 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 20 6 len=5 write_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 249  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 249  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 79 6 len=4 read_quick
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 12 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 226  ; float temp;
+# 83
  if (____must_checkpoint_read_temp_0) { register_stack_vars(1, "read|temp|0", &____must_checkpoint_read_temp_0, "float", (void *)(&temp), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 20 6 len=5 write_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 25 249  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
@@ -35,4 +36,5 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 79 6 len=4 read_resu
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 2 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 92 12 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/myocyte/file.c 83 226  ; float temp;
+# 83
  if (____must_checkpoint_read_temp_0) { register_stack_vars(1, "read|temp|0", &____must_checkpoint_read_temp_0, "float", (void *)(&temp), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

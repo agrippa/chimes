@@ -27,7 +27,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -43,7 +43,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -78,7 +79,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2213,7 +2214,7 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
-        void (*fp)(void *));
+        void (*____chimes_fp)(void *));
 # 4 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 66 "/usr/include/assert.h" 3 4
@@ -2254,7 +2255,9 @@ typedef struct _foo {
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13553023217757812097UL)) ; foo *test2;
+# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 foo test;
+# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
  register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
       ;
@@ -2284,11 +2287,14 @@ foo test;
     ((test2[0].a == 3) ? static_cast<void> (0) : __assert_fail ("test2[0].a == 3", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 26, __PRETTY_FUNCTION__));
 # 27 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 # 28 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 29 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
+# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13553023217757812097UL)) ; foo *test2;
+# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 foo test;
+# 12 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
  register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)); ; ;
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
       ;
@@ -2318,11 +2324,11 @@ foo test;
     ((test2[0].a == 3) ? static_cast<void> (0) : __assert_fail ("test2[0].a == 3", "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp", 26, __PRETTY_FUNCTION__));
 # 27 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
 # 28 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 29 "/home/jmg3/num-debug/src/examples/cpp/./struct.cpp"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
-int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
 
 
@@ -2338,7 +2344,7 @@ static int module_init() {
                              (13553023217757812028UL + 5UL), (13553023217757812028UL + 54UL),
                              (13553023217757812028UL + 4UL), (13553023217757812028UL + 39UL),
                              (13553023217757812028UL + 79UL), (13553023217757812028UL + 27UL),
-                     "_foo", 3, "int", (int)__builtin_offsetof (struct _foo, a), "int*", (int)__builtin_offsetof (struct _foo, b), "int**", (int)__builtin_offsetof (struct _foo, c),
+                     "_foo", 192UL, 3, "int", (int)__builtin_offsetof (struct _foo, a), "int*", (int)__builtin_offsetof (struct _foo, b), "int**", (int)__builtin_offsetof (struct _foo, c),
                              "main", "main", 1, "checkpoint");
     return 0;
 }

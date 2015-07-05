@@ -47,7 +47,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -63,7 +63,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -98,7 +99,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -4145,7 +4146,7 @@ void save_layer_text_resumable(float *field, int z, const int dimx, const int di
 # 23 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     fclose(fp);
 # 24 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 # 25 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 # 26 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void init_data_npm(float *curr, float *next, float *vsq, float *h_coeff, const int dimx, const int dimy, const int dimz, const float dx, const float dt);
@@ -4188,7 +4189,7 @@ void init_data_resumable(float *curr, float *next, float *vsq,
 # 46 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[4] = -0.001785 * scale;
 # 47 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1, false); }
 # 48 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 # 49 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void usage_npm(char **argv);
@@ -4203,7 +4204,7 @@ void usage_resumable(char **argv) {const int ____chimes_did_disable2 = new_stack
 # 53 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     exit(1);
 # 54 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable2, false); }
 # 55 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 # 56 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void default_config_npm(config *conf);
@@ -4236,12 +4237,13 @@ void default_config_resumable(config *conf) {const int ____chimes_did_disable3 =
 # 70 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     conf->progress_disabled = 0;
 # 71 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_4, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_4, ____chimes_did_disable3, false); }
 # 72 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 # 73 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void setup_config_npm(config *conf, int argc, char **argv);static int (*____chimes_extern_func_getNumCUDADevices)(void) = getNumCUDADevices;static void (*____chimes_extern_func_parse_source)(char *, struct _source *) = parse_source;
 void setup_config_quick(config *conf, int argc, char **argv); void setup_config(config *conf, int argc, char **argv);
 void setup_config_resumable(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(75241783173009774UL), (size_t)(0UL), (size_t)(75241783173009776UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
+# 73 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
  if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(13): { goto call_lbl_13; } default: { chimes_error(); } } } ; ;
 # 74 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
      ;
@@ -4347,7 +4349,8 @@ void setup_config_resumable(config *conf, int argc, char **argv) {const int ____
 # 126 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     }
 # 127 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_5, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_5, ____chimes_did_disable4, false); }
+# 7 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void save_layer_text_quick(float *field, int z, const int dimx, const int dimy,
 # 8 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
         const int ny, const int nx, const char *filename, int radius) {const int ____chimes_did_disable0 = new_stack((void *)(&save_layer_text), "save_layer_text", &____must_manage_save_layer_text, 8, 0, (size_t)(75241783173009432UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(75241783173009438UL), (size_t)(0UL)) ; ; ;
@@ -4380,12 +4383,12 @@ void save_layer_text_quick(float *field, int z, const int dimx, const int dimy,
 # 23 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     fclose(fp);
 # 24 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "save_layer_text", &____must_manage_save_layer_text, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 
 void save_layer_text(float *field, int z, const int dimx, const int dimy,
 # 8 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
         const int ny, const int nx, const char *filename, int radius) { (____chimes_replaying ? save_layer_text_resumable(field, z, dimx, dimy, ny, nx, filename, radius) : save_layer_text_quick(field, z, dimx, dimy, ny, nx, filename, radius)); }
-
+# 26 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void init_data_quick(float *curr, float *next, float *vsq,
 # 27 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 float *h_coeff,
@@ -4424,7 +4427,7 @@ void init_data_quick(float *curr, float *next, float *vsq,
 # 46 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     h_coeff[4] = -0.001785 * scale;
 # 47 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "init_data", &____must_manage_init_data, ____alias_loc_id_3, ____chimes_did_disable1, false); }
 
 void init_data(float *curr, float *next, float *vsq,
 # 27 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
@@ -4433,7 +4436,7 @@ void init_data(float *curr, float *next, float *vsq,
                 const int dimx, const int dimy, const int dimz,
 # 29 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 const float dx, const float dt) { (____chimes_replaying ? init_data_resumable(curr, next, vsq, h_coeff, dimx, dimy, dimz, dx, dt) : init_data_quick(curr, next, vsq, h_coeff, dimx, dimy, dimz, dx, dt)); }
-
+# 49 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void usage_quick(char **argv) {const int ____chimes_did_disable2 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 1, 0, (size_t)(75241783173009603UL)) ; ; ;
 # 50 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     fprintf(stderr, "usage: %s [-v] [-s] [-x nx] [-y ny] [-z nz] [-i iters] "
@@ -4444,10 +4447,10 @@ void usage_quick(char **argv) {const int ____chimes_did_disable2 = new_stack((vo
 # 53 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     exit(1);
 # 54 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable2, false); }
 
 void usage(char **argv) { (____chimes_replaying ? usage_resumable(argv) : usage_quick(argv)); }
-
+# 56 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void default_config_quick(config *conf) {const int ____chimes_did_disable3 = new_stack((void *)(&default_config), "default_config", &____must_manage_default_config, 1, 0, (size_t)(75241783173009644UL)) ; ; ;
 # 57 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     conf->nx = 2 * 256;
@@ -4476,11 +4479,12 @@ void default_config_quick(config *conf) {const int ____chimes_did_disable3 = new
 # 70 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     conf->progress_disabled = 0;
 # 71 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_4, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "default_config", &____must_manage_default_config, ____alias_loc_id_4, ____chimes_did_disable3, false); }
 
 void default_config(config *conf) { (____chimes_replaying ? default_config_resumable(conf) : default_config_quick(conf)); }
-
+# 73 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void setup_config_quick(config *conf, int argc, char **argv) {const int ____chimes_did_disable4 = new_stack((void *)(&setup_config), "setup_config", &____must_manage_setup_config, 3, 3, (size_t)(75241783173009774UL), (size_t)(0UL), (size_t)(75241783173009776UL), "setup_config|conf|0", &____must_checkpoint_setup_config_conf_0, "%struct._config*", (void *)(&conf), (size_t)8, 1, 0, 0, "setup_config|argc|0", &____must_checkpoint_setup_config_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "setup_config|argv|0", &____must_checkpoint_setup_config_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int c;
+# 73 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
  if (____must_checkpoint_setup_config_c_0) { register_stack_vars(1, "setup_config|c|0", &____must_checkpoint_setup_config_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0); } ; ;
 # 74 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
      ;
@@ -4586,12 +4590,10 @@ void setup_config_quick(config *conf, int argc, char **argv) {const int ____chim
 # 126 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     }
 # 127 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
-rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_5, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "setup_config", &____must_manage_setup_config, ____alias_loc_id_5, ____chimes_did_disable4, false); }
 
 void setup_config(config *conf, int argc, char **argv) { (____chimes_replaying ? setup_config_resumable(conf, argc, argv) : setup_config_quick(conf, argc, argv)); }
-
-
-
+# 7 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void save_layer_text_npm(float *field, int z, const int dimx, const int dimy,
 # 8 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
         const int ny, const int nx, const char *filename, int radius) {
@@ -4625,7 +4627,7 @@ void save_layer_text_npm(float *field, int z, const int dimx, const int dimy,
     fclose(fp);
 # 24 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 }
-
+# 26 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void init_data_npm(float *curr, float *next, float *vsq,
 # 27 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
                 float *h_coeff,
@@ -4665,7 +4667,7 @@ void init_data_npm(float *curr, float *next, float *vsq,
     h_coeff[4] = -0.001785 * scale;
 # 47 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 }
-
+# 49 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void usage_npm(char **argv) {
 # 50 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     fprintf(stderr, "usage: %s [-v] [-s] [-x nx] [-y ny] [-z nz] [-i iters] "
@@ -4677,7 +4679,7 @@ void usage_npm(char **argv) {
     exit(1);
 # 54 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 }
-
+# 56 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void default_config_npm(config *conf) {
 # 57 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     conf->nx = 2 * 256;
@@ -4707,7 +4709,7 @@ void default_config_npm(config *conf) {
     conf->progress_disabled = 0;
 # 71 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 }
-
+# 73 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
 void setup_config_npm(config *conf, int argc, char **argv) {
 # 74 "/home/jmg3/num-debug/src/examples/openmp/./lib/common3d.cpp"
     int c;
@@ -4857,10 +4859,10 @@ static int module_init() {
                              (75241783173009337UL + 267UL), (75241783173009337UL + 307UL),
                              (75241783173009337UL + 437UL), (75241783173009337UL + 367UL),
                              (75241783173009337UL + 255UL), (75241783173009337UL + 266UL),
-                     "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
-                     "_IO_marker", 0,
-                     "_config", 12, "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "int", (int)__builtin_offsetof (struct _config, nz), "int", (int)__builtin_offsetof (struct _config, nsteps), "int", (int)__builtin_offsetof (struct _config, save_text), "int", (int)__builtin_offsetof (struct _config, verbose), "int", (int)__builtin_offsetof (struct _config, radius), "int", (int)__builtin_offsetof (struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof (struct _config, srcs), "int", (int)__builtin_offsetof (struct _config, nsrcs), "int", (int)__builtin_offsetof (struct _config, progress_width), "int", (int)__builtin_offsetof (struct _config, progress_disabled),
-                     "_source", 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t),
+                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
+                     "_IO_marker", 0UL, 0,
+                     "_config", 448UL, 12, "int", (int)__builtin_offsetof (struct _config, nx), "int", (int)__builtin_offsetof (struct _config, ny), "int", (int)__builtin_offsetof (struct _config, nz), "int", (int)__builtin_offsetof (struct _config, nsteps), "int", (int)__builtin_offsetof (struct _config, save_text), "int", (int)__builtin_offsetof (struct _config, verbose), "int", (int)__builtin_offsetof (struct _config, radius), "int", (int)__builtin_offsetof (struct _config, ngpus), "%struct._source*", (int)__builtin_offsetof (struct _config, srcs), "int", (int)__builtin_offsetof (struct _config, nsrcs), "int", (int)__builtin_offsetof (struct _config, progress_width), "int", (int)__builtin_offsetof (struct _config, progress_disabled),
+                     "_source", 128UL, 4, "int", (int)__builtin_offsetof (struct _source, x), "int", (int)__builtin_offsetof (struct _source, y), "float", (int)__builtin_offsetof (struct _source, freq), "int", (int)__builtin_offsetof (struct _source, t),
                              "usage", "_Z5usagePPc", 0,
                              "setup_config", "_Z12setup_configP7_configiPPc", 4, "default_config", "parse_source", "usage", "getNumCUDADevices",
                              "init_data", "_Z9init_dataPfS_S_S_iiiff", 0,

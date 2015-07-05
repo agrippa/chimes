@@ -53,7 +53,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -69,7 +69,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -104,7 +105,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2930,9 +2931,9 @@ size_t strlcpy_resumable(char *dst, const char *src, size_t siz)
    }
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-    size_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((s - src - 1)); rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+    size_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((s - src - 1)); rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 # 62 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -2943,7 +2944,9 @@ void fill_chartab_quick(char *chartab); void fill_chartab(char *chartab);
 void fill_chartab_resumable(char *chartab)
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&fill_chartab), "fill_chartab", &____must_manage_fill_chartab, 1, 1, (size_t)(13606384021850635150UL), "fill_chartab|chartab|0", &____must_checkpoint_fill_chartab_chartab_0, "i8*", (void *)(&chartab), (size_t)8, 1, 0, 0) ; char c;
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int i;
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
  if (____must_checkpoint_fill_chartab_c_0 || ____must_checkpoint_fill_chartab_i_0) { register_stack_vars(2, "fill_chartab|c|0", &____must_checkpoint_fill_chartab_c_0, "i8", (void *)(&c), (size_t)1, 0, 0, 0, "fill_chartab|i|0", &____must_checkpoint_fill_chartab_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
     ;
@@ -2960,7 +2963,7 @@ int i;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "fill_chartab", &____must_manage_fill_chartab, ____alias_loc_id_3, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "fill_chartab", &____must_manage_fill_chartab, ____alias_loc_id_3, ____chimes_did_disable1, false); }
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 79 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -2998,7 +3001,7 @@ void encode_resumable(char *seq, char *naseq, int l)
 # 97 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    naseq[l + 1] = -3;
 # 98 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "encode", &____must_manage_encode, ____alias_loc_id_4, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "encode", &____must_manage_encode, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 # 99 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 100 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 101 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3029,7 +3032,7 @@ void alloc_aln_resumable(int nseqs)
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "alloc_aln", &____must_manage_alloc_aln, ____alias_loc_id_5, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "alloc_aln", &____must_manage_alloc_aln, ____alias_loc_id_5, ____chimes_did_disable3, false); }
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
@@ -3086,9 +3089,9 @@ char * get_seq_resumable(char *sname, int *len, char *chartab, FILE *fin)
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    seq[*len + 1] = '\0';
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-    char *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (seq); rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4); return ____chimes_ret_var_1; ;
+    char *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (seq); rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4, false); return ____chimes_ret_var_1; ;
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4); }
+rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4, false); }
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int readseqs_npm(int first_seq, char *filename);
@@ -3096,9 +3099,13 @@ int readseqs_quick(int first_seq, char *filename); int readseqs(int first_seq, c
 int readseqs_resumable(int first_seq, char *filename)
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&readseqs), "readseqs", &____must_manage_readseqs, 2, 0, (size_t)(0UL), (size_t)(13606384021850635605UL)) ; char chartab[128];
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 FILE *fin;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int no_seqs;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int l1;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
  if (____must_checkpoint_readseqs_chartab_0 || ____must_checkpoint_readseqs_fin_0 || ____must_checkpoint_readseqs_no_seqs_0 || ____must_checkpoint_readseqs_l1_0) { register_stack_vars(4, "readseqs|chartab|0", &____must_checkpoint_readseqs_chartab_0, "[128 x i8]", (void *)(chartab), (size_t)128, 0, 0, 0, "readseqs|fin|0", &____must_checkpoint_readseqs_fin_0, "%struct._IO_FILE*", (void *)(&fin), (size_t)8, 1, 0, 0, "readseqs|no_seqs|0", &____must_checkpoint_readseqs_no_seqs_0, "i32", (void *)(&no_seqs), (size_t)4, 0, 0, 0, "readseqs|l1|0", &____must_checkpoint_readseqs_l1_0, "i32", (void *)(&l1), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } default: { chimes_error(); } } } ; ;
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    int i; ;
@@ -3152,9 +3159,10 @@ int l1;
    }
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (no_seqs); rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5); return ____chimes_ret_var_2; ;
+    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (no_seqs); rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5, false); return ____chimes_ret_var_2; ;
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5, false); }
+# 38 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 size_t strlcpy_quick(char *dst, const char *src, size_t siz)
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&strlcpy), "strlcpy", &____must_manage_strlcpy, 3, 0, (size_t)(13606384021850635092UL), (size_t)(13606384021850635093UL), (size_t)(0UL)) ; ; ;
@@ -3190,16 +3198,18 @@ size_t strlcpy_quick(char *dst, const char *src, size_t siz)
    }
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 60 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-    size_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((s - src - 1)); rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+    size_t ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((s - src - 1)); rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "strlcpy", &____must_manage_strlcpy, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 
 size_t strlcpy(char *dst, const char *src, size_t siz) { return (____chimes_replaying ? strlcpy_resumable(dst, src, siz) : strlcpy_quick(dst, src, siz)); }
-
+# 66 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void fill_chartab_quick(char *chartab)
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&fill_chartab), "fill_chartab", &____must_manage_fill_chartab, 1, 1, (size_t)(13606384021850635150UL), "fill_chartab|chartab|0", &____must_checkpoint_fill_chartab_chartab_0, "i8*", (void *)(&chartab), (size_t)8, 1, 0, 0) ; char c;
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int i;
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
  if (____must_checkpoint_fill_chartab_c_0 || ____must_checkpoint_fill_chartab_i_0) { register_stack_vars(2, "fill_chartab|c|0", &____must_checkpoint_fill_chartab_c_0, "i8", (void *)(&c), (size_t)1, 0, 0, 0, "fill_chartab|i|0", &____must_checkpoint_fill_chartab_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ; ;
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
     ;
@@ -3216,10 +3226,10 @@ int i;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "fill_chartab", &____must_manage_fill_chartab, ____alias_loc_id_3, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "fill_chartab", &____must_manage_fill_chartab, ____alias_loc_id_3, ____chimes_did_disable1, false); }
 
 void fill_chartab(char *chartab) { (____chimes_replaying ? fill_chartab_resumable(chartab) : fill_chartab_quick(chartab)); }
-
+# 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void encode_quick(char *seq, char *naseq, int l)
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {const int ____chimes_did_disable2 = new_stack((void *)(&encode), "encode", &____must_manage_encode, 3, 0, (size_t)(13606384021850635248UL), (size_t)(13606384021850635249UL), (size_t)(0UL)) ; ; ;
@@ -3250,10 +3260,10 @@ void encode_quick(char *seq, char *naseq, int l)
 # 97 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    naseq[l + 1] = -3;
 # 98 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "encode", &____must_manage_encode, ____alias_loc_id_4, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "encode", &____must_manage_encode, ____alias_loc_id_4, ____chimes_did_disable2, false); }
 
 void encode(char *seq, char *naseq, int l) { (____chimes_replaying ? encode_resumable(seq, naseq, l) : encode_quick(seq, naseq, l)); }
-
+# 104 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void alloc_aln_quick(int nseqs)
 # 105 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {const int ____chimes_did_disable3 = new_stack((void *)(&alloc_aln), "alloc_aln", &____must_manage_alloc_aln, 1, 0, (size_t)(0UL)) ; ; ;
@@ -3276,10 +3286,10 @@ void alloc_aln_quick(int nseqs)
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    }
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "alloc_aln", &____must_manage_alloc_aln, ____alias_loc_id_5, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "alloc_aln", &____must_manage_alloc_aln, ____alias_loc_id_5, ____chimes_did_disable3, false); }
 
 void alloc_aln(int nseqs) { (____chimes_replaying ? alloc_aln_resumable(nseqs) : alloc_aln_quick(nseqs)); }
-
+# 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 char * get_seq_quick(char *sname, int *len, char *chartab, FILE *fin)
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {const int ____chimes_did_disable4 = new_stack((void *)(&get_seq), "get_seq", &____must_manage_get_seq, 4, 0, (size_t)(13606384021850635487UL), (size_t)(13606384021850635488UL), (size_t)(13606384021850635489UL), (size_t)(13606384021850635490UL)) ; ; ;
@@ -3329,18 +3339,22 @@ char * get_seq_quick(char *sname, int *len, char *chartab, FILE *fin)
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    seq[*len + 1] = '\0';
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-    char *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (seq); rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4); return ____chimes_ret_var_1; ;
+    char *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (seq); rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4, false); return ____chimes_ret_var_1; ;
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4); }
+rm_stack(true, 13606384021850635563UL, "get_seq", &____must_manage_get_seq, ____alias_loc_id_6, ____chimes_did_disable4, false); }
 
 char * get_seq(char *sname, int *len, char *chartab, FILE *fin) { return (____chimes_replaying ? get_seq_resumable(sname, len, chartab, fin) : get_seq_quick(sname, len, chartab, fin)); }
-
+# 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int readseqs_quick(int first_seq, char *filename)
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {const int ____chimes_did_disable5 = new_stack((void *)(&readseqs), "readseqs", &____must_manage_readseqs, 2, 0, (size_t)(0UL), (size_t)(13606384021850635605UL)) ; char chartab[128];
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 FILE *fin;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int no_seqs;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int l1;
+# 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
  if (____must_checkpoint_readseqs_chartab_0 || ____must_checkpoint_readseqs_fin_0 || ____must_checkpoint_readseqs_no_seqs_0 || ____must_checkpoint_readseqs_l1_0) { register_stack_vars(4, "readseqs|chartab|0", &____must_checkpoint_readseqs_chartab_0, "[128 x i8]", (void *)(chartab), (size_t)128, 0, 0, 0, "readseqs|fin|0", &____must_checkpoint_readseqs_fin_0, "%struct._IO_FILE*", (void *)(&fin), (size_t)8, 1, 0, 0, "readseqs|no_seqs|0", &____must_checkpoint_readseqs_no_seqs_0, "i32", (void *)(&no_seqs), (size_t)4, 0, 0, 0, "readseqs|l1|0", &____must_checkpoint_readseqs_l1_0, "i32", (void *)(&l1), (size_t)4, 0, 0, 0); } ; ;
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
    int i; ;
@@ -3394,14 +3408,12 @@ int l1;
    }
 # 185 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 # 186 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (no_seqs); rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5); return ____chimes_ret_var_2; ;
+    int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (no_seqs); rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5, false); return ____chimes_ret_var_2; ;
 # 187 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
-rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "readseqs", &____must_manage_readseqs, ____alias_loc_id_7, ____chimes_did_disable5, false); }
 
 int readseqs(int first_seq, char *filename) { return (____chimes_replaying ? readseqs_resumable(first_seq, filename) : readseqs_quick(first_seq, filename)); }
-
-
-
+# 38 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 size_t strlcpy_npm(char *dst, const char *src, size_t siz)
 # 39 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3440,7 +3452,7 @@ size_t strlcpy_npm(char *dst, const char *src, size_t siz)
     size_t ____chimes_ret_var_0; ____chimes_ret_var_0 = ((s - src - 1)); return ____chimes_ret_var_0; ;
 # 61 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
-
+# 66 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void fill_chartab_npm(char *chartab)
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3460,7 +3472,7 @@ void fill_chartab_npm(char *chartab)
    }
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
-
+# 81 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void encode_npm(char *seq, char *naseq, int l)
 # 82 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3492,7 +3504,7 @@ void encode_npm(char *seq, char *naseq, int l)
    naseq[l + 1] = -3;
 # 98 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
-
+# 104 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 void alloc_aln_npm(int nseqs)
 # 105 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3516,7 +3528,7 @@ void alloc_aln_npm(int nseqs)
    }
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
-
+# 121 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 char * get_seq_npm(char *sname, int *len, char *chartab, FILE *fin)
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3569,7 +3581,7 @@ char * get_seq_npm(char *sname, int *len, char *chartab, FILE *fin)
     char * ____chimes_ret_var_1; ____chimes_ret_var_1 = (seq); return ____chimes_ret_var_1; ;
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 }
-
+# 154 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 int readseqs_npm(int first_seq, char *filename)
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/omp-tasks/alignment/alignment_for/sequence.c"
 {
@@ -3679,9 +3691,9 @@ static int module_init() {
                              (13606384021850635018UL + 480UL), (13606384021850635018UL + 587UL),
                              (13606384021850635018UL + 292UL), (13606384021850635018UL + 545UL),
                              (13606384021850635018UL + 293UL), (13606384021850635018UL + 545UL),
-                     "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
-                     "_IO_marker", 0,
-                     "bots_verbose_mode_t", 0,
+                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
+                     "_IO_marker", 0UL, 0,
+                     "bots_verbose_mode_t", 32UL, 0,
                              "fill_chartab", "_Z12fill_chartabPc", 1, "tolower",
                              "strlcpy", "_Z7strlcpyPcPKcm", 0,
                              "get_seq", "_Z7get_seqPcPiS_P8_IO_FILE", 1, "strlcpy",

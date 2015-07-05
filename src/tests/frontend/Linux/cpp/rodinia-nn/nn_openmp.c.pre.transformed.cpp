@@ -7,27 +7,10 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "nn_openmp.c.pre.transformed.cpp"
-static int ____chimes_does_checkpoint_ferror_npm = 1;
 
-static int ____must_checkpoint_main_flist_0 = 2;
-static int ____must_checkpoint_main_fp_0 = 2;
-static int ____must_checkpoint_main_i_0 = 2;
-static int ____must_checkpoint_main_j_0 = 2;
-static int ____must_checkpoint_main_k_0 = 2;
-static int ____must_checkpoint_main_rec_count_0 = 2;
-static int ____must_checkpoint_main_done_0 = 2;
-static int ____must_checkpoint_main_sandbox_0 = 2;
 static int ____must_checkpoint_main_dbname_0 = 2;
-static int ____must_checkpoint_main_neighbors_0 = 2;
-static int ____must_checkpoint_main_target_lat_0 = 2;
-static int ____must_checkpoint_main_target_long_0 = 2;
 static int ____must_checkpoint_main_tmp_lat_0 = 2;
-static int ____must_checkpoint_main_tmp_long_0 = 2;
-static int ____must_checkpoint_main_z_0 = 2;
-static int ____must_checkpoint_main_max_dist_0 = 2;
-static int ____must_checkpoint_main_max_idx_0 = 2;
 
-static int ____must_manage_main = 2;
 
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
@@ -46,7 +29,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -62,7 +45,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -97,7 +81,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3898,454 +3882,522 @@ int omp_in_final (void) throw ();
 
 }
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c" 2
-# 7 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 1 "/usr/include/assert.h" 1 3 4
+# 66 "/usr/include/assert.h" 3 4
+extern "C" {
+
+
+extern void __assert_fail (__const char *__assertion, __const char *__file,
+      unsigned int __line, __const char *__function)
+     throw () __attribute__ ((__noreturn__));
+
+
+extern void __assert_perror_fail (int __errnum, __const char *__file,
+      unsigned int __line,
+      __const char *__function)
+     throw () __attribute__ ((__noreturn__));
+
+
+
+
+extern void __assert (const char *__assertion, const char *__file, int __line)
+     throw () __attribute__ ((__noreturn__));
+
+
+}
+# 8 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c" 2
 # 8 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+
+# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+extern void checkpoint();
+
+extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*____chimes_fp)(void *));
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c" 2
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-struct neighbor {
 # 14 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- char entry[49];
 # 15 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- double dist;
 # 16 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 17 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 18 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+struct neighbor {
+# 19 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ char entry[49];
+# 20 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ double dist;
+# 21 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 };
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 28 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-static int (*____chimes_extern_func_ferror)(struct _IO_FILE *) = ferror;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 int main_quick(int argc, char* argv[]); int main(int argc, char* argv[]);
-int main_resumable(int argc, char* argv[]) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(9808122005516792256UL)) ; int max_idx;
-float max_dist;
-float *z;
-float tmp_long;
-float tmp_lat;
-float target_long;
-float target_lat;
-struct neighbor *neighbors;
-char dbname[64];
-char sandbox[490];
-int done;
-int rec_count;
-int k;
-int j;
-int i;
-FILE *fp;
-FILE *flist;
- if (____must_checkpoint_main_max_idx_0 || ____must_checkpoint_main_max_dist_0 || ____must_checkpoint_main_z_0 || ____must_checkpoint_main_tmp_long_0 || ____must_checkpoint_main_tmp_lat_0 || ____must_checkpoint_main_target_long_0 || ____must_checkpoint_main_target_lat_0 || ____must_checkpoint_main_neighbors_0 || ____must_checkpoint_main_dbname_0 || ____must_checkpoint_main_sandbox_0 || ____must_checkpoint_main_done_0 || ____must_checkpoint_main_rec_count_0 || ____must_checkpoint_main_k_0 || ____must_checkpoint_main_j_0 || ____must_checkpoint_main_i_0 || ____must_checkpoint_main_fp_0 || ____must_checkpoint_main_flist_0) { register_stack_vars(17, "main|max_idx|0", &____must_checkpoint_main_max_idx_0, "i32", (void *)(&max_idx), (size_t)4, 0, 0, 0, "main|max_dist|0", &____must_checkpoint_main_max_dist_0, "float", (void *)(&max_dist), (size_t)4, 0, 0, 0, "main|z|0", &____must_checkpoint_main_z_0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|tmp_long|0", &____must_checkpoint_main_tmp_long_0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", &____must_checkpoint_main_tmp_lat_0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", &____must_checkpoint_main_target_long_0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", &____must_checkpoint_main_target_lat_0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", &____must_checkpoint_main_neighbors_0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", &____must_checkpoint_main_dbname_0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|sandbox|0", &____must_checkpoint_main_sandbox_0, "[490 x i8]", (void *)(sandbox), (size_t)490, 0, 0, 0, "main|done|0", &____must_checkpoint_main_done_0, "i32", (void *)(&done), (size_t)4, 0, 0, 0, "main|rec_count|0", &____must_checkpoint_main_rec_count_0, "i32", (void *)(&rec_count), (size_t)4, 0, 0, 0, "main|k|0", &____must_checkpoint_main_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|fp|0", &____must_checkpoint_main_fp_0, "%struct._IO_FILE*", (void *)(&fp), (size_t)8, 1, 0, 0, "main|flist|0", &____must_checkpoint_main_flist_0, "%struct._IO_FILE*", (void *)(&flist), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(21): { goto call_lbl_21; } default: { chimes_error(); } } } ; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   ;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-            i = (0) ; j = (0) ; k = (0) ; rec_count = (0) ; done = (0) ;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  char *rec_iter; ;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    neighbors = (__null) ;
+int main_resumable(int argc, char* argv[]) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9808122005516792301UL)) ; int max_idx;
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        tmp_lat = (0) ; tmp_long = (0) ;
+float max_dist;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int window_end;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int window_start;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int w;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int nwindows;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float *z;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+size_t nrecords;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+char *sandbox;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float tmp_long;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float tmp_lat;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float target_long;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float target_lat;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+struct neighbor *neighbors;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+char dbname[64];
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+char *rec_iter;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int k;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int j;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int i;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ register_stack_vars(19, "main|max_idx|0", (int *)0x0, "i32", (void *)(&max_idx), (size_t)4, 0, 0, 0, "main|max_dist|0", (int *)0x0, "float", (void *)(&max_dist), (size_t)4, 0, 0, 0, "main|window_end|0", (int *)0x0, "i32", (void *)(&window_end), (size_t)4, 0, 0, 0, "main|window_start|0", (int *)0x0, "i32", (void *)(&window_start), (size_t)4, 0, 0, 0, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", (int *)0x0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|rec_iter|0", (int *)0x0, "i8*", (void *)(&rec_iter), (size_t)8, 1, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(27): { goto call_lbl_27; } default: { chimes_error(); } } } ; ;
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ FILE *flist; FILE *fp; ;
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(argc < 5) {
+        int rec_count; int done; i = (0) ; j = (0) ; k = (0) ; rec_count = (0) ; done = (0) ;
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  fprintf(stderr, "Invalid set of arguments\n");
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(-1);
+   ;
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+    neighbors = (__null) ;
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+        tmp_lat = (0) ; tmp_long = (0) ;
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- flist = fopen(argv[1], "r");
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(!flist) {
+ if(argc < 5) {
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  printf("error opening flist\n");
+  fprintf(stderr, "Invalid set of arguments\n");
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(1);
+  exit(-1);
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  }
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- k = atoi(argv[2]);
+ flist = fopen(argv[1], "r");
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- target_lat = atof(argv[3]);
+ if(!flist) {
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- target_long = atof(argv[4]);
+  printf("error opening flist\n");
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(1);
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- neighbors = (struct neighbor *)malloc_wrapper(k*sizeof(struct neighbor), 9808122005516792295UL, 0, 1, (int)sizeof(struct neighbor), 0);
+ }
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(neighbors == __null) {
+ k = atoi(argv[2]);
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  fprintf(stderr, "no room for neighbors\n");
+ target_lat = atof(argv[3]);
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(0);
+ target_long = atof(argv[4]);
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ neighbors = (struct neighbor *)malloc_wrapper(k*sizeof(struct neighbor), 9808122005516792344UL, 0, 1, (int)sizeof(struct neighbor), 0);
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- for( j = 0 ; j < k ; j++ ) {
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  neighbors[j].dist = 10000;
+ if(neighbors == __null) {
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+  fprintf(stderr, "no room for neighbors\n");
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(fscanf(flist, "%s\n", dbname) != 1) {
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  fprintf(stderr, "error reading filelist\n");
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   exit(0);
+# 61 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ }
+# 62 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 63 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ for( j = 0 ; j < k ; j++ ) {
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  neighbors[j].dist = 10000;
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  }
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- fp = fopen(dbname, "r");
+       sandbox = (__null) ;
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(!fp) {
+       nrecords = (0) ;
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  printf("error opening flist\n");
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(1);
+    while (!feof(flist)) {
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+        fscanf(flist, "%s\n", dbname);
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  ;
+        fp = fopen(dbname, "r");
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- z = (float *) malloc_wrapper(10 * sizeof(float), 9808122005516792110UL, 0, 0);
+        ((fp) ? static_cast<void> (0) : __assert_fail ("fp", "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c", 74, __PRETTY_FUNCTION__));
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- while(!done) {
+        size_t nread; ;
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+        do {
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  rec_count = fread(sandbox, 49, 10, fp);
+            sandbox = (char *)realloc_wrapper(sandbox, (nrecords + 1) * 49, 9808122005516792033UL, 0, 0);
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  if( rec_count != 10 ) {
+            nread = fread(sandbox + (nrecords * 49), 49, 1, fp);
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   alias_group_changed(____alias_loc_id_0); call_lbl_21: if(!(____chimes_does_checkpoint_ferror_npm ? ( ({ calling((void*)ferror, 21, ____alias_loc_id_0, 0UL, 1, (size_t)(9808122005516792003UL)); (ferror)(flist); }) ) : (({ calling_npm("ferror", ____alias_loc_id_0); (*____chimes_extern_func_ferror)(flist); })))) {
+            if (nread == 1) {nrecords++; };
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    fclose(fp);
+        } while (nread == 1);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    if (feof(flist)) {done = 1; } else {{
+        fclose(fp);
+# 84 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ }
+# 85 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+    fclose(flist);
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-      if(fscanf(flist, "%s\n", dbname) != 1) {
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-          fprintf(stderr, "error reading filelist\n");
+ fp = fopen(dbname, "r");
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-          exit(0);
+ if(!fp) {
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-     }
+  printf("error opening flist\n");
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(1);
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-       fp = fopen(dbname, "r");
+ }
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-       if(!fp) {
+  ;
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-         printf("error opening a db\n");
+ z = (float *) malloc_wrapper(1000 * sizeof(float), 9808122005516792146UL, 0, 0);
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-         exit(1);
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-       }
+       nwindows = ((nrecords + 1000 - 1) / 1000) ;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    }; }
+    { for ( w = (0) ; w < nwindows; w++) {
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   } else {
+           window_start = (w * 1000) ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    perror("Error");
+           window_end = ((w + 1) * 1000) ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    exit(0);
+        if (window_end > nrecords) {window_end = nrecords; };
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   }
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  }
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 #pragma omp parallel for shared(z, target_lat, target_long) private(i, rec_iter, tmp_lat, tmp_long)
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  for( i = 0 ; i < rec_count ; i++ ) {
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 104 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  for( i = window_start ; i < window_end ; i++ ) {
+# 105 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    rec_iter = sandbox+(i * 49 + 28 - 1);
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 106 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    sscanf(rec_iter, "%f %f", &tmp_lat, &tmp_long);
+# 107 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+   z[i - window_start] = sqrt(( (tmp_lat-target_lat) * (tmp_lat-target_lat) )+
+# 108 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+                    ( (tmp_long-target_long) * (tmp_long-target_long) ));
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   z[i] = sqrt(( (tmp_lat-target_lat) * (tmp_lat-target_lat) )+( (tmp_long-target_long) * (tmp_long-target_long) ));
+  }
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  }
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 #pragma omp barrier
+# 111 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  for( i = window_start ; i < window_end ; i++ ) {
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  for( i = 0 ; i < rec_count ; i++ ) {
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
       max_dist = (-1) ;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
       max_idx = (0) ;
+# 115 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    for( j = 0 ; j < k ; j++ ) {
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 117 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     if( neighbors[j].dist > max_dist ) {
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 118 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
      max_dist = neighbors[j].dist;
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 119 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
      max_idx = j;
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 120 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     }
+# 121 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+   }
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   }
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+   if( z[i - window_start] < neighbors[max_idx].dist ) {
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   if( z[i] < neighbors[max_idx].dist ) {
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     sandbox[(i+1)*49 -1] = '\0';
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 125 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
       strcpy(neighbors[max_idx].entry, sandbox +i*49);
+# 126 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+      neighbors[max_idx].dist = z[i - window_start];
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-      neighbors[max_idx].dist = z[i];
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    }
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   }
+# 129 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+         call_lbl_27: checkpoint_transformed(27, ____alias_loc_id_0);
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- fprintf(stderr, "The %d nearest neighbors are:\n", k);
+ } }
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- for( j = 0 ; j < k ; j++ ) {
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  if (!(neighbors[j].dist == 10000)) {fprintf(stderr, "%s --> %f\n", neighbors[j].entry, neighbors[j].dist); };
+ fprintf(stderr, "The %d nearest neighbors are:\n", k);
+# 135 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ for( j = 0 ; j < k ; j++ ) {
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  if (!(neighbors[j].dist == 10000)) {fprintf(stderr, "%s --> %f\n", neighbors[j].entry, neighbors[j].dist); };
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- fclose(flist);
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable0); }
-int main_quick(int argc, char* argv[]) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(9808122005516792256UL)) ; int max_idx;
-float max_dist;
-float *z;
-float tmp_long;
-float tmp_lat;
-float target_long;
-float target_lat;
-struct neighbor *neighbors;
-char dbname[64];
-char sandbox[490];
-int done;
-int rec_count;
-int k;
-int j;
-int i;
-FILE *fp;
-FILE *flist;
- if (____must_checkpoint_main_max_idx_0 || ____must_checkpoint_main_max_dist_0 || ____must_checkpoint_main_z_0 || ____must_checkpoint_main_tmp_long_0 || ____must_checkpoint_main_tmp_lat_0 || ____must_checkpoint_main_target_long_0 || ____must_checkpoint_main_target_lat_0 || ____must_checkpoint_main_neighbors_0 || ____must_checkpoint_main_dbname_0 || ____must_checkpoint_main_sandbox_0 || ____must_checkpoint_main_done_0 || ____must_checkpoint_main_rec_count_0 || ____must_checkpoint_main_k_0 || ____must_checkpoint_main_j_0 || ____must_checkpoint_main_i_0 || ____must_checkpoint_main_fp_0 || ____must_checkpoint_main_flist_0) { register_stack_vars(17, "main|max_idx|0", &____must_checkpoint_main_max_idx_0, "i32", (void *)(&max_idx), (size_t)4, 0, 0, 0, "main|max_dist|0", &____must_checkpoint_main_max_dist_0, "float", (void *)(&max_dist), (size_t)4, 0, 0, 0, "main|z|0", &____must_checkpoint_main_z_0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|tmp_long|0", &____must_checkpoint_main_tmp_long_0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", &____must_checkpoint_main_tmp_lat_0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", &____must_checkpoint_main_target_long_0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", &____must_checkpoint_main_target_lat_0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", &____must_checkpoint_main_neighbors_0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", &____must_checkpoint_main_dbname_0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|sandbox|0", &____must_checkpoint_main_sandbox_0, "[490 x i8]", (void *)(sandbox), (size_t)490, 0, 0, 0, "main|done|0", &____must_checkpoint_main_done_0, "i32", (void *)(&done), (size_t)4, 0, 0, 0, "main|rec_count|0", &____must_checkpoint_main_rec_count_0, "i32", (void *)(&rec_count), (size_t)4, 0, 0, 0, "main|k|0", &____must_checkpoint_main_k_0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "main|j|0", &____must_checkpoint_main_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "main|fp|0", &____must_checkpoint_main_fp_0, "%struct._IO_FILE*", (void *)(&fp), (size_t)8, 1, 0, 0, "main|flist|0", &____must_checkpoint_main_flist_0, "%struct._IO_FILE*", (void *)(&flist), (size_t)8, 1, 0, 0); } ; ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   ;
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-            i = (0) ; j = (0) ; k = (0) ; rec_count = (0) ; done = (0) ;
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  char *rec_iter; ;
-# 32 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    neighbors = (__null) ;
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-        tmp_lat = (0) ; tmp_long = (0) ;
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(argc < 5) {
-# 36 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  fprintf(stderr, "Invalid set of arguments\n");
-# 37 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(-1);
-# 38 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  }
+# 139 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 140 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 141 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 142 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int main_quick(int argc, char* argv[]) {const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9808122005516792301UL)) ; int max_idx;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float max_dist;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int window_end;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int window_start;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int w;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int nwindows;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float *z;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+size_t nrecords;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+char *sandbox;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float tmp_long;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float tmp_lat;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float target_long;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+float target_lat;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+struct neighbor *neighbors;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+char dbname[64];
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+char *rec_iter;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int k;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int j;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+int i;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ register_stack_vars(19, "main|max_idx|0", (int *)0x0, "i32", (void *)(&max_idx), (size_t)4, 0, 0, 0, "main|max_dist|0", (int *)0x0, "float", (void *)(&max_dist), (size_t)4, 0, 0, 0, "main|window_end|0", (int *)0x0, "i32", (void *)(&window_end), (size_t)4, 0, 0, 0, "main|window_start|0", (int *)0x0, "i32", (void *)(&window_start), (size_t)4, 0, 0, 0, "main|w|0", (int *)0x0, "i32", (void *)(&w), (size_t)4, 0, 0, 0, "main|nwindows|0", (int *)0x0, "i32", (void *)(&nwindows), (size_t)4, 0, 0, 0, "main|z|0", (int *)0x0, "float*", (void *)(&z), (size_t)8, 1, 0, 0, "main|nrecords|0", (int *)0x0, "i64", (void *)(&nrecords), (size_t)8, 0, 0, 0, "main|sandbox|0", (int *)0x0, "i8*", (void *)(&sandbox), (size_t)8, 1, 0, 0, "main|tmp_long|0", (int *)0x0, "float", (void *)(&tmp_long), (size_t)4, 0, 0, 0, "main|tmp_lat|0", (int *)0x0, "float", (void *)(&tmp_lat), (size_t)4, 0, 0, 0, "main|target_long|0", (int *)0x0, "float", (void *)(&target_long), (size_t)4, 0, 0, 0, "main|target_lat|0", (int *)0x0, "float", (void *)(&target_lat), (size_t)4, 0, 0, 0, "main|neighbors|0", (int *)0x0, "%struct.neighbor*", (void *)(&neighbors), (size_t)8, 1, 0, 0, "main|dbname|0", (int *)0x0, "[64 x i8]", (void *)(dbname), (size_t)64, 0, 0, 0, "main|rec_iter|0", (int *)0x0, "i8*", (void *)(&rec_iter), (size_t)8, 1, 0, 0, "main|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); ; ;
+# 34 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ FILE *flist; FILE *fp; ;
+# 35 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+        int rec_count; int done; i = (0) ; j = (0) ; k = (0) ; rec_count = (0) ; done = (0) ;
+# 36 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 37 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+   ;
+# 38 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+    neighbors = (__null) ;
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+        tmp_lat = (0) ; tmp_long = (0) ;
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- flist = fopen(argv[1], "r");
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(!flist) {
+ if(argc < 5) {
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  printf("error opening flist\n");
+  fprintf(stderr, "Invalid set of arguments\n");
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(1);
+  exit(-1);
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  }
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- k = atoi(argv[2]);
+ flist = fopen(argv[1], "r");
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- target_lat = atof(argv[3]);
+ if(!flist) {
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- target_long = atof(argv[4]);
+  printf("error opening flist\n");
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(1);
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- neighbors = (struct neighbor *)malloc_wrapper(k*sizeof(struct neighbor), 9808122005516792295UL, 0, 1, (int)sizeof(struct neighbor), 0);
+ }
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(neighbors == __null) {
+ k = atoi(argv[2]);
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  fprintf(stderr, "no room for neighbors\n");
+ target_lat = atof(argv[3]);
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(0);
+ target_long = atof(argv[4]);
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ neighbors = (struct neighbor *)malloc_wrapper(k*sizeof(struct neighbor), 9808122005516792344UL, 0, 1, (int)sizeof(struct neighbor), 0);
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- for( j = 0 ; j < k ; j++ ) {
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  neighbors[j].dist = 10000;
+ if(neighbors == __null) {
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+  fprintf(stderr, "no room for neighbors\n");
 # 60 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(fscanf(flist, "%s\n", dbname) != 1) {
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  fprintf(stderr, "error reading filelist\n");
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   exit(0);
+# 61 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ }
+# 62 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 63 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ for( j = 0 ; j < k ; j++ ) {
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  neighbors[j].dist = 10000;
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
  }
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- fp = fopen(dbname, "r");
+       sandbox = (__null) ;
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- if(!fp) {
+       nrecords = (0) ;
 # 69 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  printf("error opening flist\n");
 # 70 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  exit(1);
+    while (!feof(flist)) {
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+        fscanf(flist, "%s\n", dbname);
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  ;
+        fp = fopen(dbname, "r");
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- z = (float *) malloc_wrapper(10 * sizeof(float), 9808122005516792110UL, 0, 0);
+        ((fp) ? static_cast<void> (0) : __assert_fail ("fp", "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c", 74, __PRETTY_FUNCTION__));
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- while(!done) {
+        size_t nread; ;
 # 77 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+        do {
 # 78 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  rec_count = fread(sandbox, 49, 10, fp);
+            sandbox = (char *)realloc_wrapper(sandbox, (nrecords + 1) * 49, 9808122005516792033UL, 0, 0);
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  if( rec_count != 10 ) {
+            nread = fread(sandbox + (nrecords * 49), 49, 1, fp);
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   alias_group_changed(____alias_loc_id_0); call_lbl_21: if(!(____chimes_does_checkpoint_ferror_npm ? ( ({ calling((void*)ferror, 21, ____alias_loc_id_0, 0UL, 1, (size_t)(9808122005516792003UL)); (ferror)(flist); }) ) : (({ calling_npm("ferror", ____alias_loc_id_0); (*____chimes_extern_func_ferror)(flist); })))) {
+            if (nread == 1) {nrecords++; };
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    fclose(fp);
+        } while (nread == 1);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    if (feof(flist)) {done = 1; } else {{
+        fclose(fp);
+# 84 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ }
+# 85 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+    fclose(flist);
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-      if(fscanf(flist, "%s\n", dbname) != 1) {
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-          fprintf(stderr, "error reading filelist\n");
+ fp = fopen(dbname, "r");
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-          exit(0);
+ if(!fp) {
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-     }
+  printf("error opening flist\n");
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  exit(1);
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-       fp = fopen(dbname, "r");
+ }
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-       if(!fp) {
+  ;
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-         printf("error opening a db\n");
+ z = (float *) malloc_wrapper(1000 * sizeof(float), 9808122005516792146UL, 0, 0);
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-         exit(1);
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-       }
+       nwindows = ((nrecords + 1000 - 1) / 1000) ;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    }; }
+    { for ( w = (0) ; w < nwindows; w++) {
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   } else {
+           window_start = (w * 1000) ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    perror("Error");
+           window_end = ((w + 1) * 1000) ;
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-    exit(0);
+        if (window_end > nrecords) {window_end = nrecords; };
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   }
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  }
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 #pragma omp parallel for shared(z, target_lat, target_long) private(i, rec_iter, tmp_lat, tmp_long)
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  for( i = 0 ; i < rec_count ; i++ ) {
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 104 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  for( i = window_start ; i < window_end ; i++ ) {
+# 105 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    rec_iter = sandbox+(i * 49 + 28 - 1);
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 106 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    sscanf(rec_iter, "%f %f", &tmp_lat, &tmp_long);
+# 107 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+   z[i - window_start] = sqrt(( (tmp_lat-target_lat) * (tmp_lat-target_lat) )+
+# 108 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+                    ( (tmp_long-target_long) * (tmp_long-target_long) ));
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   z[i] = sqrt(( (tmp_lat-target_lat) * (tmp_lat-target_lat) )+( (tmp_long-target_long) * (tmp_long-target_long) ));
+  }
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  }
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 #pragma omp barrier
+# 111 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  for( i = window_start ; i < window_end ; i++ ) {
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  for( i = 0 ; i < rec_count ; i++ ) {
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
       max_dist = (-1) ;
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
       max_idx = (0) ;
+# 115 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    for( j = 0 ; j < k ; j++ ) {
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 117 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     if( neighbors[j].dist > max_dist ) {
-# 119 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 118 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
      max_dist = neighbors[j].dist;
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 119 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
      max_idx = j;
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 120 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     }
+# 121 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+   }
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   }
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+   if( z[i - window_start] < neighbors[max_idx].dist ) {
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-   if( z[i] < neighbors[max_idx].dist ) {
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
     sandbox[(i+1)*49 -1] = '\0';
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 125 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
       strcpy(neighbors[max_idx].entry, sandbox +i*49);
+# 126 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+      neighbors[max_idx].dist = z[i - window_start];
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-      neighbors[max_idx].dist = z[i];
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
    }
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
   }
+# 129 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
+         call_lbl_27: checkpoint_transformed(27, ____alias_loc_id_0);
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- fprintf(stderr, "The %d nearest neighbors are:\n", k);
+ } }
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- for( j = 0 ; j < k ; j++ ) {
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  if (!(neighbors[j].dist == 10000)) {fprintf(stderr, "%s --> %f\n", neighbors[j].entry, neighbors[j].dist); };
+ fprintf(stderr, "The %d nearest neighbors are:\n", k);
+# 135 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+ for( j = 0 ; j < k ; j++ ) {
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- }
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  if (!(neighbors[j].dist == 10000)) {fprintf(stderr, "%s --> %f\n", neighbors[j].entry, neighbors[j].dist); };
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
- fclose(flist);
+ }
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
-rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_1, ____chimes_did_disable0); }
+# 141 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 142 "/scratch/jmg3/rodinia_3.0/openmp/nn/nn_openmp.c"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
-int main(int argc, char* argv[]) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+int main(int argc, char* argv[]) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 
 
 
@@ -4354,41 +4406,24 @@ int main(int argc, char* argv[]) { init_chimes(); return (____chimes_replaying ?
 
 
 static int module_init() {
-    init_module(9808122005516791887UL, 8, 1, 17, 2, 0, 1, 1, 0, 1, 3,
-                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)1, (9808122005516791887UL + 9UL), "ferror", (unsigned)1, (9808122005516791887UL + 116UL),
-                           &____alias_loc_id_1, (unsigned)25, (unsigned)0, (unsigned)0, (9808122005516791887UL + 1UL), (9808122005516791887UL + 2UL), (9808122005516791887UL + 3UL), (9808122005516791887UL + 4UL), (9808122005516791887UL + 5UL), (9808122005516791887UL + 6UL), (9808122005516791887UL + 7UL), (9808122005516791887UL + 8UL), (9808122005516791887UL + 9UL), (9808122005516791887UL + 10UL), (9808122005516791887UL + 11UL), (9808122005516791887UL + 12UL), (9808122005516791887UL + 14UL), (9808122005516791887UL + 15UL), (9808122005516791887UL + 16UL), (9808122005516791887UL + 17UL), (9808122005516791887UL + 18UL), (9808122005516791887UL + 19UL), (9808122005516791887UL + 20UL), (9808122005516791887UL + 21UL), (9808122005516791887UL + 22UL), (9808122005516791887UL + 116UL), (9808122005516791887UL + 126UL), (9808122005516791887UL + 223UL), (9808122005516791887UL + 408UL),
-                               "ferror", (void **)&(____chimes_extern_func_ferror),
-                           "ferror", &(____chimes_does_checkpoint_ferror_npm),
-                             (9808122005516791887UL + 12UL), (9808122005516791887UL + 11UL),
-                             (9808122005516791887UL + 14UL), (9808122005516791887UL + 408UL),
-                             (9808122005516791887UL + 19UL), (9808122005516791887UL + 223UL),
-                             (9808122005516791887UL + 3UL), (9808122005516791887UL + 369UL),
-                             (9808122005516791887UL + 5UL), (9808122005516791887UL + 126UL),
-                             (9808122005516791887UL + 4UL), (9808122005516791887UL + 116UL),
-                             (9808122005516791887UL + 369UL), (9808122005516791887UL + 60UL),
-                             (9808122005516791887UL + 396UL), (9808122005516791887UL + 54UL),
-                     "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
-                     "_IO_marker", 0,
-                     "neighbor", 2, "[ 49 x char ]", (int)__builtin_offsetof (struct neighbor, entry), "double", (int)__builtin_offsetof (struct neighbor, dist),
-                             "main", "main", 1, "ferror",
-                        "main|flist|0", 1, "ferror",
-                        "main|fp|0", 1, "ferror",
-                        "main|i|0", 1, "ferror",
-                        "main|j|0", 1, "ferror",
-                        "main|k|0", 1, "ferror",
-                        "main|rec_count|0", 1, "ferror",
-                        "main|done|0", 1, "ferror",
-                        "main|sandbox|0", 1, "main",
+    init_module(9808122005516791887UL, 9, 1, 2, 2, 0, 0, 0, 0, 0, 3,
+                           &____alias_loc_id_0, (unsigned)31, (unsigned)0, (unsigned)0, (9808122005516791887UL + 1UL), (9808122005516791887UL + 2UL), (9808122005516791887UL + 3UL), (9808122005516791887UL + 4UL), (9808122005516791887UL + 5UL), (9808122005516791887UL + 6UL), (9808122005516791887UL + 7UL), (9808122005516791887UL + 8UL), (9808122005516791887UL + 9UL), (9808122005516791887UL + 10UL), (9808122005516791887UL + 11UL), (9808122005516791887UL + 13UL), (9808122005516791887UL + 14UL), (9808122005516791887UL + 15UL), (9808122005516791887UL + 16UL), (9808122005516791887UL + 17UL), (9808122005516791887UL + 18UL), (9808122005516791887UL + 19UL), (9808122005516791887UL + 20UL), (9808122005516791887UL + 21UL), (9808122005516791887UL + 22UL), (9808122005516791887UL + 23UL), (9808122005516791887UL + 24UL), (9808122005516791887UL + 25UL), (9808122005516791887UL + 26UL), (9808122005516791887UL + 27UL), (9808122005516791887UL + 66UL), (9808122005516791887UL + 146UL), (9808122005516791887UL + 156UL), (9808122005516791887UL + 259UL), (9808122005516791887UL + 457UL),
+                           &____alias_loc_id_1, (unsigned)25, (unsigned)0, (unsigned)0, (9808122005516791887UL + 1UL), (9808122005516791887UL + 2UL), (9808122005516791887UL + 3UL), (9808122005516791887UL + 4UL), (9808122005516791887UL + 5UL), (9808122005516791887UL + 6UL), (9808122005516791887UL + 7UL), (9808122005516791887UL + 8UL), (9808122005516791887UL + 9UL), (9808122005516791887UL + 10UL), (9808122005516791887UL + 13UL), (9808122005516791887UL + 14UL), (9808122005516791887UL + 15UL), (9808122005516791887UL + 16UL), (9808122005516791887UL + 17UL), (9808122005516791887UL + 18UL), (9808122005516791887UL + 19UL), (9808122005516791887UL + 20UL), (9808122005516791887UL + 21UL), (9808122005516791887UL + 22UL), (9808122005516791887UL + 23UL), (9808122005516791887UL + 28UL), (9808122005516791887UL + 66UL), (9808122005516791887UL + 156UL), (9808122005516791887UL + 457UL),
+                             (9808122005516791887UL + 11UL), (9808122005516791887UL + 146UL),
+                             (9808122005516791887UL + 13UL), (9808122005516791887UL + 457UL),
+                             (9808122005516791887UL + 21UL), (9808122005516791887UL + 259UL),
+                             (9808122005516791887UL + 18UL), (9808122005516791887UL + 146UL),
+                             (9808122005516791887UL + 445UL), (9808122005516791887UL + 372UL),
+                             (9808122005516791887UL + 414UL), (9808122005516791887UL + 65UL),
+                             (9808122005516791887UL + 3UL), (9808122005516791887UL + 414UL),
+                             (9808122005516791887UL + 5UL), (9808122005516791887UL + 156UL),
+                             (9808122005516791887UL + 4UL), (9808122005516791887UL + 66UL),
+                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
+                     "_IO_marker", 0UL, 0,
+                     "neighbor", 512UL, 2, "[ 49 x char ]", (int)__builtin_offsetof (struct neighbor, entry), "double", (int)__builtin_offsetof (struct neighbor, dist),
+                             "main", "main", 1, "checkpoint",
                         "main|dbname|0", 1, "main",
-                        "main|neighbors|0", 1, "ferror",
-                        "main|target_lat|0", 1, "ferror",
-                        "main|target_long|0", 1, "ferror",
-                        "main|tmp_lat|0", 1, "main",
-                        "main|tmp_long|0", 1, "ferror",
-                        "main|z|0", 1, "ferror",
-                        "main|max_dist|0", 1, "ferror",
-                        "main|max_idx|0", 1, "ferror",
-        "ferror", 0UL, (int)1, 9808122005516792003UL);
+                        "main|tmp_lat|0", 1, "main");
     return 0;
 }
 

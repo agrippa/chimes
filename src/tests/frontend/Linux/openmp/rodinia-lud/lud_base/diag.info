@@ -1,13 +1,49 @@
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 1 6 len=8 lud_base_npm
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 2 1 const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", &____must_manage_lud_base, 2, 0, (size_t)(7743237120547627255UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 19 1 rm_stack(false, 0UL, "lud_base", &____must_manage_lud_base, ____alias_loc_id_0, ____chimes_did_disable0); 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 2 2 const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", &____must_manage_lud_base, 2, 0, (size_t)(7743237120547627255UL), (size_t)(0UL)); ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 2 161 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 3 6 int i; int j; int k; ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 3 15 
-ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 4 6 float sum; ;
-ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 4 15 
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 1 6 len=8 lud_base_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 2 160  ;  
-ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 1 6 len=8 lud_base_resumable
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 2 160  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 7 1 const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", (int *)0x0, 2, 2, (size_t)(7743237120547627256UL), (size_t)(0UL), "lud_base|a|0", (int *)0x0, "float*", (void *)(&a), (size_t)8, 1, 0, 0, "lud_base|size|0", (int *)0x0, "i32", (void *)(&size), (size_t)4, 0, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 27 1 rm_stack(false, 0UL, "lud_base", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 7 2 const int ____chimes_did_disable0 = new_stack((void *)(&lud_base), "lud_base", (int *)0, 2, 2, (size_t)(7743237120547627256UL), (size_t)(0UL), "lud_base|a|0", (int *)0, "float*", (void *)(&a), (size_t)8, 1, 0, 0, "lud_base|size|0", (int *)0, "i32", (void *)(&size), (size_t)4, 0, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 7 293 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 6 int i; int j; int k; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 15 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 9 6 float sum; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 9 15 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 24 10  call_lbl_1: 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 6 6 len=8 lud_base_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 24 23 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 24 34 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 6 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 13 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 18 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 20 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 25 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 9 6 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 9 15 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 7 286  ; float sum;
+# 7
+int k;
+# 7
+int j;
+# 7
+int i;
+# 7
+ register_stack_vars(4, "lud_base|sum|0", (int *)0x0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "lud_base|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "lud_base|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "lud_base|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 6 6 len=8 lud_base_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 24 23 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 24 34 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 6 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 11 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 13 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 18 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 20 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 8 25 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 9 6 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 9 15 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud_base.c 7 286  ; float sum;
+# 7
+int k;
+# 7
+int j;
+# 7
+int i;
+# 7
+ register_stack_vars(4, "lud_base|sum|0", (int *)0x0, "float", (void *)(&sum), (size_t)4, 0, 0, 0, "lud_base|k|0", (int *)0x0, "i32", (void *)(&k), (size_t)4, 0, 0, 0, "lud_base|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "lud_base|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

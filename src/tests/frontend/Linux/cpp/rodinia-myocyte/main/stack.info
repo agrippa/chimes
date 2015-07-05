@@ -1,22 +1,22 @@
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|argc|0 " i32 " 32 0 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|argv|0 " i8** " 64 1 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time0|0 " i64 " 64 0 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time1|0 " i64 " 64 0 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time2|0 " i64 " 64 0 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time3|0 " i64 " 64 0 0 1 get_time solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|argc|0 " i32 " 32 0 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|argv|0 " i8** " 64 1 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time0|0 " i64 " 64 0 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time1|0 " i64 " 64 0 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time2|0 " i64 " 64 0 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time3|0 " i64 " 64 0 0 1 checkpoint get_time solver
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time4|0 " i64 " 64 0 0 1 get_time
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|time5|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|memory|0 " i64 " 64 0 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|i|0 " i32 " 32 0 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|j|0 " i32 " 32 0 0 1 get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|memory|0 " i64 " 64 0 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|i|0 " i32 " 32 0 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|j|0 " i32 " 32 0 0 1 checkpoint get_time read solver
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|status|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|mode|0 " i32 " 32 0 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|workload|0 " i64 " 64 0 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|xmax|0 " i64 " 64 0 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|y|0 " float*** " 64 1 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|x|0 " float** " 64 1 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|params|0 " float** " 64 1 0 1 get_time read solver
-/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|threads|0 " i32 " 32 0 0 1 get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|mode|0 " i32 " 32 0 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|workload|0 " i64 " 64 0 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|xmax|0 " i64 " 64 0 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|y|0 " float*** " 64 1 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|x|0 " float** " 64 1 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|params|0 " float** " 64 1 0 1 checkpoint get_time read solver
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|threads|0 " i32 " 32 0 0 1 checkpoint get_time read solver
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_1|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c main|____chimes_ret_var_2|0 " i32 " 32 0 0 0

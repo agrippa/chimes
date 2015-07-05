@@ -1,6 +1,6 @@
-malloc genSimMatrix 104 36 492 0
-printf genSimMatrix 105 5 0 488
-exit genSimMatrix 109 5 0 0
-strlen genSimMatrix 146 17 0 404
-printf genSimMatrix 165 4 0 491 0 0 0 0
-free freeSimMatrix 220 5 0 399
+malloc genSimMatrix 107 36 492 0
+printf genSimMatrix 108 5 0 401
+exit genSimMatrix 112 5 0 0
+strlen genSimMatrix 149 17 0 402
+printf genSimMatrix 168 4 0 405 0 0 0 0
+free freeSimMatrix 223 5 0 399

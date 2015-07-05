@@ -66,7 +66,6 @@
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c imdilate_disk|y|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c imdilate_disk|z|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c getneighbors|se|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c getneighbors|numOnes|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c getneighbors|neighbors|0 " double* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c getneighbors|radius|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c getneighbors|x|0 " i32 " 32 0 0 0
@@ -74,21 +73,21 @@
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c getneighbors|neighY|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c getneighbors|center|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c getneighbors|diameter|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|I|0 " i32* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|I|0 " i32* " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|IszX|0 " i32 " 32 0 0 1 videoSequence
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|IszY|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|Nfr|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|seed|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|IszY|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|Nfr|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|seed|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|k|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|max_size|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|x0|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|y0|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|xk|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|yk|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|pos|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|newMatrix|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|x|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|y|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|newMatrix|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|x|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c videoSequence|y|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c calcLikelihoodSum|I|0 " i32* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c calcLikelihoodSum|ind|0 " i32* " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c calcLikelihoodSum|numOnes|0 " i32 " 32 0 0 0
@@ -113,69 +112,69 @@
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c findIndexBin|____chimes_ret_var_12|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c findIndexBin|____chimes_ret_var_13|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c findIndexBin|____chimes_ret_var_14|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|I|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|IszX|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|IszY|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|Nfr|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|seed|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|Nparticles|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|max_size|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|I|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|IszX|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|IszY|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|Nfr|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|seed|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|Nparticles|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|max_size|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|start|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|xe|0 " double " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|ye|0 " double " 64 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|xe|0 " double " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|ye|0 " double " 64 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|radius|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|diameter|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|disk|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|countOnes|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|x|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|y|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|objxy|0 " double* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|disk|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|countOnes|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|x|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|y|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|objxy|0 " double* " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|get_neighbors|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_0|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|weights|0 " double* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|weights|0 " double* " 64 1 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|get_weights|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_1|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|likelihood|0 " double* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|arrayX|0 " double* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|arrayY|0 " double* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|xj|0 " double* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|yj|0 " double* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|CDF|0 " double* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|u|0 " double* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|ind|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|k|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|likelihood|0 " double* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|arrayX|0 " double* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|arrayY|0 " double* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|xj|0 " double* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|yj|0 " double* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|CDF|0 " double* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|u|0 " double* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|ind|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|k|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_2|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_3|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|indX|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|indY|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|set_arrays|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|error|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_4|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|likelihood_time|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_5|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|exponential|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_6|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|sumWeights|0 " double " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|sum_time|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_7|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|normalize|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_8|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|move_time|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_9|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_10|0 " double " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_11|0 " double " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|distance|0 " double " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|cum_sum|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_12|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|u1|0 " double " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|u_time|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_13|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|j|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|i|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|xyj_time|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_14|0 " float " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|reset|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_15|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|indX|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|indY|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|set_arrays|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|error|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_4|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|likelihood_time|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_5|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|exponential|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_6|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|sumWeights|0 " double " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|sum_time|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_7|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|normalize|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_8|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|move_time|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_9|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_10|0 " double " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_11|0 " double " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|distance|0 " double " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|cum_sum|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_12|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|u1|0 " double " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|u_time|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_13|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|j|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|i|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|xyj_time|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_14|0 " float " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|reset|0 " i64 " 64 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c particleFilter|____chimes_unroll_var_15|0 " float " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|argc|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|argv|0 " i8** " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|usage|0 " i8* " 64 1 0 0
@@ -193,12 +192,12 @@
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|____chimes_ret_var_22|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|____chimes_ret_var_23|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|____chimes_ret_var_24|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|seed|0 " i32* " 64 1 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|seed|0 " i32* " 64 1 0 1 particleFilter videoSequence
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|i|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|I|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|start|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|endVideoSequence|0 " i64 " 64 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|____chimes_unroll_var_16|0 " float " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|I|0 " i32* " 64 1 0 1 particleFilter videoSequence
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|start|0 " i64 " 64 0 0 1 particleFilter videoSequence
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|endVideoSequence|0 " i64 " 64 0 0 1 particleFilter
+/scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|____chimes_unroll_var_16|0 " float " 32 0 0 1 particleFilter
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|endParticleFilter|0 " i64 " 64 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|____chimes_unroll_var_17|0 " float " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/particlefilter/ex_particle_OPENMP_seq.c main|____chimes_unroll_var_18|0 " float " 32 0 0 0

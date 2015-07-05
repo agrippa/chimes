@@ -1,11 +1,11 @@
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 190 8 : { 1, 2, 3, 4, 22 } {  } call:getMyRank {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 321 4 : {  } {  } call:haloExchange { haloExchange { 651 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 320 9 : { 90, 91, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 113, 114, 115, 116, 651 } {  } call:profileStart {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 226 28 : { 90, 91, 92, 651 } {  } call:initForceHaloExchange { initForceHaloExchange { 651 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 396 4 : { 887 } {  } call:destroyHaloExchange { destroyHaloExchange { 897 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 435 4 : { 1543 } {  } call:bcastInterpolationObject {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 427 4 : { 1452 } {  } call:bcastParallel { bcastParallel { 1452 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 418 8 : { 1451 } {  } call:getMyRank {  }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 573 4 : { 1935, 1974, 1976 } {  } call:bcastParallel { bcastParallel { 2001 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 559 4 : { 1934 } {  } call:bcastParallel { bcastParallel { 1934 } }
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 553 8 : { 1933 } {  } call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 190 8 : { 1, 2, 3, 4, 23 } {  } call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 321 4 : {  } {  } call:haloExchange { haloExchange { 656 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 320 9 : { 94, 95, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 117, 118, 119, 120, 656 } {  } call:profileStart {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 226 28 : { 94, 95, 96, 656 } {  } call:initForceHaloExchange { initForceHaloExchange { 656 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 396 4 : { 895 } {  } call:destroyHaloExchange { destroyHaloExchange { 905 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 435 4 : { 1551 } {  } call:bcastInterpolationObject {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 427 4 : { 1460 } {  } call:bcastParallel { bcastParallel { 1460 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 418 8 : { 1459 } {  } call:getMyRank {  }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 573 4 : { 1947, 1986, 1988 } {  } call:bcastParallel { bcastParallel { 2013 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 559 4 : { 1946 } {  } call:bcastParallel { bcastParallel { 1946 } }
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c 553 8 : { 1945 } {  } call:getMyRank {  }

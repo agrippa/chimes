@@ -1,7 +1,7 @@
 bots_error _Z10bots_erroriPc 0 MAY bots_print_usage 49 13
 bots_warning _Z12bots_warningiPc 0 DOES_NOT
 bots_usecs _Z10bots_usecsv 0 DOES_NOT
-bots_get_date _Z13bots_get_datePc 0 MAY gmtime 90 43 strftime 90 57
+bots_get_date _Z13bots_get_datePc 0 DOES_NOT
 bots_get_max_cpus _Z17bots_get_max_cpusv 0 DOES_NOT
 bots_get_architecture _Z21bots_get_architecturePc 0 DOES_NOT
 bots_get_load_average _Z21bots_get_load_averagePc 0 DOES_NOT

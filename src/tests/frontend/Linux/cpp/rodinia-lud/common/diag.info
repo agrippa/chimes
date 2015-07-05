@@ -49,42 +49,42 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 25 len=6 ma
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 192 33 , 8120987097540549486UL, 0, 0
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 227 16 len=6 malloc_wrapper
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 227 42 , 8120987097540549671UL, 0, 0
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 10 24 rm_stack(false, 0UL, "stopwatch_start", &____must_manage_stopwatch_start, ____alias_loc_id_0, ____chimes_did_disable0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 10 24 rm_stack(false, 0UL, "stopwatch_start", &____must_manage_stopwatch_start, ____alias_loc_id_0, ____chimes_did_disable0, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 36 const int ____chimes_did_disable0 = new_stack((void *)(&stopwatch_start), "stopwatch_start", &____must_manage_stopwatch_start, 1, 0, (size_t)(8120987097540548700UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 17 1 rm_stack(false, 0UL, "stopwatch_start", &____must_manage_stopwatch_start, ____alias_loc_id_0, ____chimes_did_disable0); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 20 24 rm_stack(false, 0UL, "stopwatch_stop", &____must_manage_stopwatch_stop, ____alias_loc_id_1, ____chimes_did_disable1); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 17 1 rm_stack(false, 0UL, "stopwatch_start", &____must_manage_stopwatch_start, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 20 24 rm_stack(false, 0UL, "stopwatch_stop", &____must_manage_stopwatch_stop, ____alias_loc_id_1, ____chimes_did_disable1, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 35 const int ____chimes_did_disable1 = new_stack((void *)(&stopwatch_stop), "stopwatch_stop", &____must_manage_stopwatch_stop, 1, 0, (size_t)(8120987097540548722UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 24 1 rm_stack(false, 0UL, "stopwatch_stop", &____must_manage_stopwatch_stop, ____alias_loc_id_1, ____chimes_did_disable1); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 28 82 rm_stack(false, 0UL, "get_interval_by_sec", &____must_manage_get_interval_by_sec, ____alias_loc_id_2, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 30 157 rm_stack(false, 0UL, "get_interval_by_sec", &____must_manage_get_interval_by_sec, ____alias_loc_id_2, ____chimes_did_disable2); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 24 1 rm_stack(false, 0UL, "stopwatch_stop", &____must_manage_stopwatch_stop, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 28 82 rm_stack(false, 0UL, "get_interval_by_sec", &____must_manage_get_interval_by_sec, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 30 157 rm_stack(false, 0UL, "get_interval_by_sec", &____must_manage_get_interval_by_sec, ____alias_loc_id_2, ____chimes_did_disable2, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 35 const int ____chimes_did_disable2 = new_stack((void *)(&get_interval_by_sec), "get_interval_by_sec", &____must_manage_get_interval_by_sec, 1, 0, (size_t)(8120987097540548766UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 31 1 rm_stack(false, 0UL, "get_interval_by_sec", &____must_manage_get_interval_by_sec, ____alias_loc_id_2, ____chimes_did_disable2); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 35 79 rm_stack(false, 0UL, "get_interval_by_usec", &____must_manage_get_interval_by_usec, ____alias_loc_id_3, ____chimes_did_disable3); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 37 138 rm_stack(false, 0UL, "get_interval_by_usec", &____must_manage_get_interval_by_usec, ____alias_loc_id_3, ____chimes_did_disable3); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 31 1 rm_stack(false, 0UL, "get_interval_by_sec", &____must_manage_get_interval_by_sec, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 35 79 rm_stack(false, 0UL, "get_interval_by_usec", &____must_manage_get_interval_by_usec, ____alias_loc_id_3, ____chimes_did_disable3, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 37 138 rm_stack(false, 0UL, "get_interval_by_usec", &____must_manage_get_interval_by_usec, ____alias_loc_id_3, ____chimes_did_disable3, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 36 const int ____chimes_did_disable3 = new_stack((void *)(&get_interval_by_usec), "get_interval_by_usec", &____must_manage_get_interval_by_usec, 1, 0, (size_t)(8120987097540548809UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 38 1 rm_stack(false, 0UL, "get_interval_by_usec", &____must_manage_get_interval_by_usec, ____alias_loc_id_3, ____chimes_did_disable3); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 48 91 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 56 91 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 70 87 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 38 1 rm_stack(false, 0UL, "get_interval_by_usec", &____must_manage_get_interval_by_usec, ____alias_loc_id_3, ____chimes_did_disable3, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 48 91 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 56 91 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 70 87 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 71 const int ____chimes_did_disable4 = new_stack((void *)(&create_matrix_from_file), "create_matrix_from_file", &____must_manage_create_matrix_from_file, 3, 0, (size_t)(8120987097540548914UL), (size_t)(8120987097540548915UL), (size_t)(8120987097540548916UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 71 1 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 82 105 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 88 91 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 125 87 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 71 1 rm_stack(false, 0UL, "create_matrix_from_file", &____must_manage_create_matrix_from_file, ____alias_loc_id_4, ____chimes_did_disable4, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 82 105 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 88 91 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 125 87 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 48 const int ____chimes_did_disable5 = new_stack((void *)(&create_matrix_from_random), "create_matrix_from_random", &____must_manage_create_matrix_from_random, 2, 0, (size_t)(8120987097540549181UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 126 1 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 126 1 rm_stack(false, 0UL, "create_matrix_from_random", &____must_manage_create_matrix_from_random, ____alias_loc_id_5, ____chimes_did_disable5, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 71 const int ____chimes_did_disable6 = new_stack((void *)(&matrix_multiply), "matrix_multiply", &____must_manage_matrix_multiply, 4, 0, (size_t)(8120987097540549266UL), (size_t)(8120987097540549267UL), (size_t)(8120987097540549268UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 137 1 rm_stack(false, 0UL, "matrix_multiply", &____must_manage_matrix_multiply, ____alias_loc_id_6, ____chimes_did_disable6); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 137 1 rm_stack(false, 0UL, "matrix_multiply", &____must_manage_matrix_multiply, ____alias_loc_id_6, ____chimes_did_disable6, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 48 const int ____chimes_did_disable7 = new_stack((void *)(&lud_verify), "lud_verify", &____must_manage_lud_verify, 3, 0, (size_t)(8120987097540549459UL), (size_t)(8120987097540549460UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 187 1 rm_stack(false, 0UL, "lud_verify", &____must_manage_lud_verify, ____alias_loc_id_7, ____chimes_did_disable7); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 187 1 rm_stack(false, 0UL, "lud_verify", &____must_manage_lud_verify, ____alias_loc_id_7, ____chimes_did_disable7, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 59 const int ____chimes_did_disable8 = new_stack((void *)(&matrix_duplicate), "matrix_duplicate", &____must_manage_matrix_duplicate, 3, 0, (size_t)(8120987097540549500UL), (size_t)(8120987097540549501UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 195 1 rm_stack(false, 0UL, "matrix_duplicate", &____must_manage_matrix_duplicate, ____alias_loc_id_8, ____chimes_did_disable8); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 195 1 rm_stack(false, 0UL, "matrix_duplicate", &____must_manage_matrix_duplicate, ____alias_loc_id_8, ____chimes_did_disable8, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 40 const int ____chimes_did_disable9 = new_stack((void *)(&print_matrix), "print_matrix", &____must_manage_print_matrix, 2, 0, (size_t)(8120987097540549553UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 205 1 rm_stack(false, 0UL, "print_matrix", &____must_manage_print_matrix, ____alias_loc_id_9, ____chimes_did_disable9); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 229 93 rm_stack(false, 0UL, "create_matrix", &____must_manage_create_matrix, ____alias_loc_id_10, ____chimes_did_disable10); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 240 89 rm_stack(false, 0UL, "create_matrix", &____must_manage_create_matrix, ____alias_loc_id_10, ____chimes_did_disable10); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 205 1 rm_stack(false, 0UL, "print_matrix", &____must_manage_print_matrix, ____alias_loc_id_9, ____chimes_did_disable9, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 229 93 rm_stack(false, 0UL, "create_matrix", &____must_manage_create_matrix, ____alias_loc_id_10, ____chimes_did_disable10, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 240 89 rm_stack(false, 0UL, "create_matrix", &____must_manage_create_matrix, ____alias_loc_id_10, ____chimes_did_disable10, false); 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 36 const int ____chimes_did_disable10 = new_stack((void *)(&create_matrix), "create_matrix", &____must_manage_create_matrix, 2, 0, (size_t)(8120987097540549697UL), (size_t)(0UL)); 
-InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 241 1 rm_stack(false, 0UL, "create_matrix", &____must_manage_create_matrix, ____alias_loc_id_10, ____chimes_did_disable10); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 241 1 rm_stack(false, 0UL, "create_matrix", &____must_manage_create_matrix, ____alias_loc_id_10, ____chimes_did_disable10, false); 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 37 const int ____chimes_did_disable0 = new_stack((void *)(&stopwatch_start), "stopwatch_start", &____must_manage_stopwatch_start, 1, 0, (size_t)(8120987097540548700UL)); ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 202 
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 36 const int ____chimes_did_disable1 = new_stack((void *)(&stopwatch_stop), "stopwatch_stop", &____must_manage_stopwatch_stop, 1, 0, (size_t)(8120987097540548722UL)); ;
@@ -168,33 +168,34 @@ ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 229 52
 ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 240 4 enum _FUNC_RETURN_CODE ____chimes_ret_var_11; ;
 ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 240 48 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 6 len=15 stopwatch_start_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 201  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 201  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 6 len=14 stopwatch_stop_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 197  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 197  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 1 len=19 get_interval_by_sec_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 212  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 27 212  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 1 len=20 get_interval_by_usec_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 216  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 34 216  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 1 len=23 create_matrix_from_file_quick
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 42 17 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 42 25 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 326  ; int size;
+# 41
  if (____must_checkpoint_create_matrix_from_file_size_0) { register_stack_vars(1, "create_matrix_from_file|size|0", &____must_checkpoint_create_matrix_from_file_size_0, "i32", (void *)(&size), (size_t)4, 0, 0, 0);  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 1 len=25 create_matrix_from_random_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 258  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 258  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 1 len=15 matrix_multiply_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 317  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 129 317  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 1 len=10 lud_verify_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 246  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 140 246  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 1 len=16 matrix_duplicate_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 275  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 190 275  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 1 len=12 print_matrix_quick
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 211  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 198 211  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 1 len=13 create_matrix_quick
 InsertTextBefore /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 3  lbl_0: 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 26 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 215 26 
-InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 211  ;  
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 211 211  ; 
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 6 len=15 stopwatch_start_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 9 201  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 19 6 len=14 stopwatch_stop_resumable
@@ -207,6 +208,7 @@ ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 1 len=23 cre
 RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 42 17 
 RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 42 25 
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 41 326  ; int size;
+# 41
  if (____must_checkpoint_create_matrix_from_file_size_0) { register_stack_vars(1, "create_matrix_from_file|size|0", &____must_checkpoint_create_matrix_from_file_size_0, "i32", (void *)(&size), (size_t)4, 0, 0, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
 ReplaceText /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 1 len=25 create_matrix_from_random_resumable
 InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/lud/common/common.c 75 258  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

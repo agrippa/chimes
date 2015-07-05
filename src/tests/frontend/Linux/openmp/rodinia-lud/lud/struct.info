@@ -1,4 +1,4 @@
-_FUNC_RETURN_CODE 0
-__stopwatch_t 0 begin "%struct.timeval" end "%struct.timeval"
-option 0 name "char*" has_arg "int" flag "int*" val "int"
-timeval 0 tv_sec "long int" tv_usec "long int"
+_FUNC_RETURN_CODE 32 0
+__stopwatch_t 256 0 begin "%struct.timeval" end "%struct.timeval"
+option 256 0 name "char*" has_arg "int" flag "int*" val "int"
+timeval 128 0 tv_sec "long int" tv_usec "long int"

@@ -1,0 +1,11 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 20 5 len=9 isInteger_npm
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 27 3 rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 36 4 rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 44 2 rm_stack(false, 0UL, "isInteger", &____must_manage_isInteger, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 20 25 const int ____chimes_did_disable0 = new_stack((void *)(&isInteger), "isInteger", &____must_manage_isInteger, 1, 0, (size_t)(2140959209724973389UL)); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 20 26 const int ____chimes_did_disable0 = new_stack((void *)(&isInteger), "isInteger", &____must_manage_isInteger, 1, 0, (size_t)(2140959209724973389UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 20 173 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 20 5 len=9 isInteger_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 20 172  ; 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 20 5 len=9 isInteger_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/b+tree/util/num/num.c 20 172  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

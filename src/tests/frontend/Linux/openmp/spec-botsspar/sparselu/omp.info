@@ -1,7 +1,4 @@
-222 222 #pragma omp parallel
-224 224 #pragma omp single nowait
-230 230 #pragma omp task untied firstprivate(kk, jj) shared(BENCH)
-236 236 #pragma omp task untied firstprivate(kk, ii) shared(BENCH)
-241 241 #pragma omp taskwait
-247 247 #pragma omp task untied firstprivate(kk, jj, ii) shared(BENCH)
-253 253 #pragma omp taskwait
+243 243 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(jj)
+253 253 #pragma omp parallel for shared(BENCH) firstprivate(kk) private(ii)
+265 265 #pragma omp parallel shared(BENCH)
+267 267 #pragma omp for collapse(2)

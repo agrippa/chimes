@@ -31,7 +31,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -47,7 +47,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -82,7 +83,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2875,701 +2876,690 @@ void dispElapsedTime(double);
 # 16 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c" 2
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  static char *similarities[22][9] =
+# 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  {
+# 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", ""},
+# 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "A", "gct", "gcc", "gca", "gcg", ""},
+# 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "C", "tgt", "tgc", ""},
+# 63 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "D", "gat", "gac", ""},
+# 64 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "E", "gaa", "gag", ""},
+# 65 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "F", "ttt", "ttc", ""},
+# 66 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "G", "ggt", "ggc", "gga", "ggg", ""},
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "H", "cat", "cac", ""},
+# 68 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "I", "att", "atc", "ata", ""},
+# 69 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "K", "aaa", "aag", ""},
+# 70 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "L", "ttg", "tta", "ctt", "ctc", "cta", "ctg", ""},
+# 71 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "M", "atg", ""},
+# 72 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "N", "aat", "aac", ""},
+# 73 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "P", "cct", "ccc", "cca", "ccg", ""},
+# 74 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "Q", "caa", "cag", ""},
+# 75 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "R", "cgt", "cgc", "cga", "cgg", "aga", "agg", ""},
+# 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "S", "tct", "tcc", "tca", "tcg", "agt", "agc", ""},
+# 77 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "T", "act", "acc", "aca", "acg", ""},
+# 78 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "V", "gtt", "gtc", "gta", "gtg", ""},
+# 79 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "W", "tgg", ""},
+# 80 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "Y", "tat", "tac", ""},
+# 81 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    {"", "*", "taa", "tag", "tga", ""}
+# 82 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  };
+# 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 84 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 SIMMATRIX_T *genSimMatrix_npm(int exact, int similar, int dissimilar, int gapStart, int gapExtend, int matchLimit, int simSize);
 SIMMATRIX_T *genSimMatrix_quick(int exact, int similar, int dissimilar, int gapStart, int gapExtend, int matchLimit, int simSize); SIMMATRIX_T *genSimMatrix(int exact, int similar, int dissimilar, int gapStart, int gapExtend, int matchLimit, int simSize);
 SIMMATRIX_T *genSimMatrix_resumable(int exact, int similar, int dissimilar,
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 87 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
      int gapStart, int gapExtend, int matchLimit,
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 88 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
      int simSize) {const int ____chimes_did_disable0 = new_stack((void *)(&genSimMatrix), "genSimMatrix", &____must_manage_genSimMatrix, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
    SIMMATRIX_T *simMatrix; simMatrix = (__null) ;
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   char *aa; char *codon; char base; ;
-# 64 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   int i; int j; int k; int ccode; int ccode2; ;
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  static char *similarities[22][9] = { { "", "" }, { "", "A", "gct", "gcc", "gca", "gcg", "" }, { "", "C", "tgt", "tgc", "" }, { "", "D", "gat", "gac", "" }, { "", "E", "gaa", "gag", "" }, { "", "F", "ttt", "ttc", "" }, { "", "G", "ggt", "ggc", "gga", "ggg", "" }, { "", "H", "cat", "cac", "" }, { "", "I", "att", "atc", "ata", "" }, { "", "K", "aaa", "aag", "" }, { "", "L", "ttg", "tta", "ctt", "ctc", "cta", "ctg", "" }, { "", "M", "atg", "" }, { "", "N", "aat", "aac", "" }, { "", "P", "cct", "ccc", "cca", "ccg", "" }, { "", "Q", "caa", "cag", "" }, { "", "R", "cgt", "cgc", "cga", "cgg", "aga", "agg", "" }, { "", "S", "tct", "tcc", "tca", "tcg", "agt", "agc", "" }, { "", "T", "act", "acc", "aca", "acg", "" }, { "", "V", "gtt", "gtc", "gta", "gtg", "" }, { "", "W", "tgg", "" }, { "", "Y", "tat", "tac", "" }, { "", "*", "taa", "tag", "tga", "" } }; ;
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *)malloc_wrapper( sizeof(SIMMATRIX_T), 17725255480324453996UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases) ) ) == __null ) {
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    printf("genSimMatrix: cannot allocate simMatrix\n");
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  if ( (simMatrix = (SIMMATRIX_T *)malloc_wrapper( sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases) ) ) == __null ) {
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    exit (1);
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    exit (1);
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->star = 49;
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (i = 0; i < ((64) + ((64) + 1)); i++) {
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->encode[i] = simMatrix->star;
 # 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
+  simMatrix->star = 49;
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  for (i = 0; i < ((64) + ((64) + 1)); i++) {
 # 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->encode[i] = simMatrix->star;
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->hyphen = simSize;
 # 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->codon[(int)(simMatrix->hyphen)] = "---";
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->aminoAcid[(int)(simMatrix->hyphen)] = '-';
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->hyphen = simSize;
 # 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->codon[(int)(simMatrix->hyphen)] = "---";
 # 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->aminoAcid[(int)(simMatrix->hyphen)] = '-';
 # 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->bases = " agct";
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->bases = " agct";
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (i = 1; i <= 21; i++) {
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    aa = similarities[i][1];
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    for (j = 2; strlen(similarities[i][j]) != 0; j++) {
 # 147 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      codon = similarities[i][j];
+  for (i = 1; i <= 21; i++) {
 # 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      ccode = 0;
+    aa = similarities[i][1];
 # 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      for (k = 0; k < 3; k++) {
+    for (j = 2; strlen(similarities[i][j]) != 0; j++) {
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- base = codon[k];
+      codon = similarities[i][j];
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- switch ( base ) {
+      ccode = 0;
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 'a':
+      for (k = 0; k < 3; k++) {
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 0 + 4*ccode;
+ base = codon[k];
 # 154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   break;
+ switch ( base ) {
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 'g':
+ case 'a':
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 1 + 4*ccode;
+   ccode = 0 + 4*ccode;
 # 157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
    break;
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 'c':
+ case 'g':
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 2 + 4*ccode;
+   ccode = 1 + 4*ccode;
 # 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
    break;
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 't':
+ case 'c':
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 3 + 4*ccode;
+   ccode = 2 + 4*ccode;
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
    break;
 # 164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- default:
+ case 't':
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   printf("unrecognized base[%d][%d][%d] = %c\n", i, j, k, codon[k]);
+   ccode = 3 + 4*ccode;
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- }
+   break;
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      }
+ default:
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      ccode = ccode + 1;
+   printf("unrecognized base[%d][%d][%d] = %c\n", i, j, k, codon[k]);
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      if (j == 2) {
+ }
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- ccode2 = ccode;
+      }
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      }
+      ccode = ccode + 1;
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      simMatrix->codon[ccode] = codon;
+      if (j == 2) {
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      simMatrix->aminoAcid[ccode] = aa[0];
+ ccode2 = ccode;
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    }
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->encode[(int)aa[0]] = (unsigned char)ccode;
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->encode_first[(int)aa[0]] = (unsigned char)ccode2;
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
-# 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (i = 1; i < simSize; i++) {
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    for (j = 1; j < simSize; j++) {
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      simMatrix->similarity[i][j] = (char)dissimilar;
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    }
-# 185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (ccode = 1; ccode < simSize; ccode++) {
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    for (i = 1; i < simSize; i++) {
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      if (simMatrix->aminoAcid[i] == simMatrix->aminoAcid[ccode]) {
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- simMatrix->similarity[ccode][i] = (char)similar;
-# 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
       }
-# 194 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      simMatrix->codon[ccode] = codon;
+# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      simMatrix->aminoAcid[ccode] = aa[0];
+# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     }
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->encode[(int)aa[0]] = (unsigned char)ccode;
+# 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->encode_first[(int)aa[0]] = (unsigned char)ccode2;
+# 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   for (i = 1; i < simSize; i++) {
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->similarity[i][i] = (char)exact;
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    for (j = 1; j < simSize; j++) {
+# 186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      simMatrix->similarity[i][j] = (char)dissimilar;
+# 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    }
+# 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
+# 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  for (ccode = 1; ccode < simSize; ccode++) {
+# 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    for (i = 1; i < simSize; i++) {
+# 194 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      if (simMatrix->aminoAcid[i] == simMatrix->aminoAcid[ccode]) {
+# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+ simMatrix->similarity[ccode][i] = (char)similar;
+# 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      }
+# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    }
+# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
+# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  for (i = 1; i < simSize; i++) {
 # 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->similarity[i][i] = (char)exact;
 # 204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
 # 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->exact = exact;
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->similar = similar;
 # 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->dissimilar = dissimilar;
 # 208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->gapStart = gapStart;
+  simMatrix->exact = exact;
 # 209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->gapExtend = gapExtend;
+  simMatrix->similar = similar;
 # 210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->matchLimit = matchLimit;
+  simMatrix->dissimilar = dissimilar;
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->gapStart = gapStart;
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  rm_stack(true, 17725255480324453996UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0); return (simMatrix);
+  simMatrix->gapExtend = gapExtend;
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-}
+  simMatrix->matchLimit = matchLimit;
 # 214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+   SIMMATRIX_T *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((simMatrix)); rm_stack(true, 17725255480324454004UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+rm_stack(true, 17725255480324454004UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 # 217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 SIMMATRIX_T *freeSimMatrix_npm(SIMMATRIX_T *M);
 SIMMATRIX_T *freeSimMatrix_quick(SIMMATRIX_T *M); SIMMATRIX_T *freeSimMatrix(SIMMATRIX_T *M);
-SIMMATRIX_T *freeSimMatrix_resumable(SIMMATRIX_T *M) {const int ____chimes_did_disable1 = new_stack((void *)(&freeSimMatrix), "freeSimMatrix", &____must_manage_freeSimMatrix, 1, 0, (size_t)(17725255480324453903UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if (M) {
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    free_wrapper(M, 17725255480324453903UL);
+SIMMATRIX_T *freeSimMatrix_resumable(SIMMATRIX_T *M) {const int ____chimes_did_disable1 = new_stack((void *)(&freeSimMatrix), "freeSimMatrix", &____must_manage_freeSimMatrix, 1, 0, (size_t)(17725255480324453911UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  rm_stack(true, 17725255480324453996UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1); return (__null);
+  if (M) {
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-}
-SIMMATRIX_T *genSimMatrix_quick(int exact, int similar, int dissimilar,
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     int gapStart, int gapExtend, int matchLimit,
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     int simSize) {const int ____chimes_did_disable0 = new_stack((void *)(&genSimMatrix), "genSimMatrix", &____must_manage_genSimMatrix, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   SIMMATRIX_T *simMatrix; simMatrix = (__null) ;
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  char *aa; char *codon; char base; ;
-# 64 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  int i; int j; int k; int ccode; int ccode2; ;
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  static char *similarities[22][9] = { { "", "" }, { "", "A", "gct", "gcc", "gca", "gcg", "" }, { "", "C", "tgt", "tgc", "" }, { "", "D", "gat", "gac", "" }, { "", "E", "gaa", "gag", "" }, { "", "F", "ttt", "ttc", "" }, { "", "G", "ggt", "ggc", "gga", "ggg", "" }, { "", "H", "cat", "cac", "" }, { "", "I", "att", "atc", "ata", "" }, { "", "K", "aaa", "aag", "" }, { "", "L", "ttg", "tta", "ctt", "ctc", "cta", "ctg", "" }, { "", "M", "atg", "" }, { "", "N", "aat", "aac", "" }, { "", "P", "cct", "ccc", "cca", "ccg", "" }, { "", "Q", "caa", "cag", "" }, { "", "R", "cgt", "cgc", "cga", "cgg", "aga", "agg", "" }, { "", "S", "tct", "tcc", "tca", "tcg", "agt", "agc", "" }, { "", "T", "act", "acc", "aca", "acg", "" }, { "", "V", "gtt", "gtc", "gta", "gtg", "" }, { "", "W", "tgg", "" }, { "", "Y", "tat", "tac", "" }, { "", "*", "taa", "tag", "tga", "" } }; ;
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *)malloc_wrapper( sizeof(SIMMATRIX_T), 17725255480324453996UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases) ) ) == __null ) {
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    printf("genSimMatrix: cannot allocate simMatrix\n");
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    exit (1);
-# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    free_wrapper(M, 17725255480324453911UL);
+# 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
+# 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+   SIMMATRIX_T *____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((__null)); rm_stack(true, 17725255480324454004UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+rm_stack(true, 17725255480324454004UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1, false); }
+# 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+SIMMATRIX_T *genSimMatrix_quick(int exact, int similar, int dissimilar,
+# 87 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+     int gapStart, int gapExtend, int matchLimit,
+# 88 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+     int simSize) {const int ____chimes_did_disable0 = new_stack((void *)(&genSimMatrix), "genSimMatrix", &____must_manage_genSimMatrix, 7, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+   SIMMATRIX_T *simMatrix; simMatrix = (__null) ;
+# 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  char *aa; char *codon; char base; ;
+# 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  int i; int j; int k; int ccode; int ccode2; ;
+# 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  if ( (simMatrix = (SIMMATRIX_T *)malloc_wrapper( sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases) ) ) == __null ) {
+# 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    printf("genSimMatrix: cannot allocate simMatrix\n");
+# 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    exit (1);
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->star = 49;
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (i = 0; i < ((64) + ((64) + 1)); i++) {
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->encode[i] = simMatrix->star;
 # 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
+  simMatrix->star = 49;
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  for (i = 0; i < ((64) + ((64) + 1)); i++) {
 # 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->encode[i] = simMatrix->star;
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->hyphen = simSize;
 # 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->codon[(int)(simMatrix->hyphen)] = "---";
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->aminoAcid[(int)(simMatrix->hyphen)] = '-';
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->hyphen = simSize;
 # 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->codon[(int)(simMatrix->hyphen)] = "---";
 # 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->aminoAcid[(int)(simMatrix->hyphen)] = '-';
 # 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->bases = " agct";
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->bases = " agct";
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (i = 1; i <= 21; i++) {
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    aa = similarities[i][1];
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    for (j = 2; strlen(similarities[i][j]) != 0; j++) {
 # 147 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      codon = similarities[i][j];
+  for (i = 1; i <= 21; i++) {
 # 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      ccode = 0;
+    aa = similarities[i][1];
 # 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      for (k = 0; k < 3; k++) {
+    for (j = 2; strlen(similarities[i][j]) != 0; j++) {
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- base = codon[k];
+      codon = similarities[i][j];
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- switch ( base ) {
+      ccode = 0;
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 'a':
+      for (k = 0; k < 3; k++) {
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 0 + 4*ccode;
+ base = codon[k];
 # 154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   break;
+ switch ( base ) {
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 'g':
+ case 'a':
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 1 + 4*ccode;
+   ccode = 0 + 4*ccode;
 # 157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
    break;
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 'c':
+ case 'g':
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 2 + 4*ccode;
+   ccode = 1 + 4*ccode;
 # 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
    break;
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 't':
+ case 'c':
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 3 + 4*ccode;
+   ccode = 2 + 4*ccode;
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
    break;
 # 164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- default:
+ case 't':
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   printf("unrecognized base[%d][%d][%d] = %c\n", i, j, k, codon[k]);
+   ccode = 3 + 4*ccode;
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- }
+   break;
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      }
+ default:
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      ccode = ccode + 1;
+   printf("unrecognized base[%d][%d][%d] = %c\n", i, j, k, codon[k]);
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      if (j == 2) {
+ }
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- ccode2 = ccode;
+      }
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      }
+      ccode = ccode + 1;
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      simMatrix->codon[ccode] = codon;
+      if (j == 2) {
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      simMatrix->aminoAcid[ccode] = aa[0];
+ ccode2 = ccode;
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    }
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->encode[(int)aa[0]] = (unsigned char)ccode;
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->encode_first[(int)aa[0]] = (unsigned char)ccode2;
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
-# 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (i = 1; i < simSize; i++) {
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    for (j = 1; j < simSize; j++) {
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      simMatrix->similarity[i][j] = (char)dissimilar;
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    }
-# 185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (ccode = 1; ccode < simSize; ccode++) {
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    for (i = 1; i < simSize; i++) {
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      if (simMatrix->aminoAcid[i] == simMatrix->aminoAcid[ccode]) {
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- simMatrix->similarity[ccode][i] = (char)similar;
-# 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
       }
-# 194 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      simMatrix->codon[ccode] = codon;
+# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      simMatrix->aminoAcid[ccode] = aa[0];
+# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     }
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->encode[(int)aa[0]] = (unsigned char)ccode;
+# 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->encode_first[(int)aa[0]] = (unsigned char)ccode2;
+# 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   for (i = 1; i < simSize; i++) {
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->similarity[i][i] = (char)exact;
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    for (j = 1; j < simSize; j++) {
+# 186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      simMatrix->similarity[i][j] = (char)dissimilar;
+# 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    }
+# 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
+# 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  for (ccode = 1; ccode < simSize; ccode++) {
+# 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    for (i = 1; i < simSize; i++) {
+# 194 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      if (simMatrix->aminoAcid[i] == simMatrix->aminoAcid[ccode]) {
+# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+ simMatrix->similarity[ccode][i] = (char)similar;
+# 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      }
+# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    }
+# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
+# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  for (i = 1; i < simSize; i++) {
 # 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->similarity[i][i] = (char)exact;
 # 204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
 # 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->exact = exact;
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->similar = similar;
 # 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->dissimilar = dissimilar;
 # 208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->gapStart = gapStart;
+  simMatrix->exact = exact;
 # 209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->gapExtend = gapExtend;
+  simMatrix->similar = similar;
 # 210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->matchLimit = matchLimit;
+  simMatrix->dissimilar = dissimilar;
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->gapStart = gapStart;
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  rm_stack(true, 17725255480324453996UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0); return (simMatrix);
+  simMatrix->gapExtend = gapExtend;
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-}
+  simMatrix->matchLimit = matchLimit;
+# 214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+   SIMMATRIX_T *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((simMatrix)); rm_stack(true, 17725255480324454004UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+rm_stack(true, 17725255480324454004UL, "genSimMatrix", &____must_manage_genSimMatrix, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 SIMMATRIX_T *genSimMatrix(int exact, int similar, int dissimilar,
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 87 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
      int gapStart, int gapExtend, int matchLimit,
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 88 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
      int simSize) { return (____chimes_replaying ? genSimMatrix_resumable(exact, similar, dissimilar, gapStart, gapExtend, matchLimit, simSize) : genSimMatrix_quick(exact, similar, dissimilar, gapStart, gapExtend, matchLimit, simSize)); }
-
-SIMMATRIX_T *freeSimMatrix_quick(SIMMATRIX_T *M) {const int ____chimes_did_disable1 = new_stack((void *)(&freeSimMatrix), "freeSimMatrix", &____must_manage_freeSimMatrix, 1, 0, (size_t)(17725255480324453903UL)) ; ; ;
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if (M) {
 # 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    free_wrapper(M, 17725255480324453903UL);
+SIMMATRIX_T *freeSimMatrix_quick(SIMMATRIX_T *M) {const int ____chimes_did_disable1 = new_stack((void *)(&freeSimMatrix), "freeSimMatrix", &____must_manage_freeSimMatrix, 1, 0, (size_t)(17725255480324453911UL)) ; ; ;
 # 221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  rm_stack(true, 17725255480324453996UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1); return (__null);
+  if (M) {
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-}
+    free_wrapper(M, 17725255480324453911UL);
+# 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
+# 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+   SIMMATRIX_T *____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((__null)); rm_stack(true, 17725255480324454004UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+rm_stack(true, 17725255480324454004UL, "freeSimMatrix", &____must_manage_freeSimMatrix, ____alias_loc_id_1, ____chimes_did_disable1, false); }
 
 SIMMATRIX_T *freeSimMatrix(SIMMATRIX_T *M) { return (____chimes_replaying ? freeSimMatrix_resumable(M) : freeSimMatrix_quick(M)); }
-
-
-
-SIMMATRIX_T *genSimMatrix_npm(int exact, int similar, int dissimilar,
-# 59 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     int gapStart, int gapExtend, int matchLimit,
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-     int simSize) {
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  SIMMATRIX_T *simMatrix=__null;
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  char *aa, *codon, base;
-# 64 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  int i, j, k, ccode, ccode2;
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 76 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  static char *similarities[22][9] =
-# 77 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  {
-# 78 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", ""},
-# 79 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "A", "gct", "gcc", "gca", "gcg", ""},
-# 80 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "C", "tgt", "tgc", ""},
-# 81 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "D", "gat", "gac", ""},
-# 82 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "E", "gaa", "gag", ""},
-# 83 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "F", "ttt", "ttc", ""},
-# 84 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "G", "ggt", "ggc", "gga", "ggg", ""},
-# 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "H", "cat", "cac", ""},
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "I", "att", "atc", "ata", ""},
+SIMMATRIX_T *genSimMatrix_npm(int exact, int similar, int dissimilar,
 # 87 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "K", "aaa", "aag", ""},
+     int gapStart, int gapExtend, int matchLimit,
 # 88 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "L", "ttg", "tta", "ctt", "ctc", "cta", "ctg", ""},
+     int simSize) {
 # 89 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "M", "atg", ""},
 # 90 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "N", "aat", "aac", ""},
+  SIMMATRIX_T *simMatrix=__null;
 # 91 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "P", "cct", "ccc", "cca", "ccg", ""},
+  char *aa, *codon, base;
 # 92 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "Q", "caa", "cag", ""},
-# 93 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "R", "cgt", "cgc", "cga", "cgg", "aga", "agg", ""},
-# 94 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "S", "tct", "tcc", "tca", "tcg", "agt", "agc", ""},
-# 95 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "T", "act", "acc", "aca", "acg", ""},
-# 96 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "V", "gtt", "gtc", "gta", "gtg", ""},
-# 97 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "W", "tgg", ""},
-# 98 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "Y", "tat", "tac", ""},
-# 99 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    {"", "*", "taa", "tag", "tga", ""}
-# 100 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  };
-# 101 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 102 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 103 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 104 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if ( (simMatrix = (SIMMATRIX_T *)malloc_wrapper( sizeof(SIMMATRIX_T), 17725255480324453996UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases) ) ) == __null ) {
-# 105 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    printf("genSimMatrix: cannot allocate simMatrix\n");
-# 106 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  int i, j, k, ccode, ccode2;
 # 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 107 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  if ( (simMatrix = (SIMMATRIX_T *)malloc_wrapper( sizeof(SIMMATRIX_T), 17725255480324454004UL, 0, 1, (int)sizeof(struct simmat), 1, (int)__builtin_offsetof(struct simmat, bases) ) ) == __null ) {
 # 108 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    printf("genSimMatrix: cannot allocate simMatrix\n");
 # 109 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    exit (1);
 # 110 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
 # 111 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 112 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    exit (1);
 # 113 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
 # 114 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 115 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->star = 49;
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (i = 0; i < ((64) + ((64) + 1)); i++) {
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->encode[i] = simMatrix->star;
 # 121 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
+  simMatrix->star = 49;
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  for (i = 0; i < ((64) + ((64) + 1)); i++) {
 # 123 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->encode[i] = simMatrix->star;
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
 # 125 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 127 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->hyphen = simSize;
 # 129 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->codon[(int)(simMatrix->hyphen)] = "---";
 # 130 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->aminoAcid[(int)(simMatrix->hyphen)] = '-';
 # 131 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->hyphen = simSize;
 # 132 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->codon[(int)(simMatrix->hyphen)] = "---";
 # 133 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->aminoAcid[(int)(simMatrix->hyphen)] = '-';
 # 134 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 135 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 136 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 137 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->bases = " agct";
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->bases = " agct";
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 142 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 143 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 144 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (i = 1; i <= 21; i++) {
 # 145 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    aa = similarities[i][1];
 # 146 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    for (j = 2; strlen(similarities[i][j]) != 0; j++) {
 # 147 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      codon = similarities[i][j];
+  for (i = 1; i <= 21; i++) {
 # 148 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      ccode = 0;
+    aa = similarities[i][1];
 # 149 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      for (k = 0; k < 3; k++) {
+    for (j = 2; strlen(similarities[i][j]) != 0; j++) {
 # 150 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- base = codon[k];
+      codon = similarities[i][j];
 # 151 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- switch ( base ) {
+      ccode = 0;
 # 152 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 'a':
+      for (k = 0; k < 3; k++) {
 # 153 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 0 + 4*ccode;
+ base = codon[k];
 # 154 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   break;
+ switch ( base ) {
 # 155 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 'g':
+ case 'a':
 # 156 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 1 + 4*ccode;
+   ccode = 0 + 4*ccode;
 # 157 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
    break;
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 'c':
+ case 'g':
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 2 + 4*ccode;
+   ccode = 1 + 4*ccode;
 # 160 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
    break;
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- case 't':
+ case 'c':
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   ccode = 3 + 4*ccode;
+   ccode = 2 + 4*ccode;
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
    break;
 # 164 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- default:
+ case 't':
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-   printf("unrecognized base[%d][%d][%d] = %c\n", i, j, k, codon[k]);
+   ccode = 3 + 4*ccode;
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- }
+   break;
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      }
+ default:
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      ccode = ccode + 1;
+   printf("unrecognized base[%d][%d][%d] = %c\n", i, j, k, codon[k]);
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      if (j == 2) {
+ }
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- ccode2 = ccode;
+      }
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      }
+      ccode = ccode + 1;
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      simMatrix->codon[ccode] = codon;
+      if (j == 2) {
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      simMatrix->aminoAcid[ccode] = aa[0];
+ ccode2 = ccode;
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    }
-# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->encode[(int)aa[0]] = (unsigned char)ccode;
-# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->encode_first[(int)aa[0]] = (unsigned char)ccode2;
-# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
-# 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (i = 1; i < simSize; i++) {
-# 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    for (j = 1; j < simSize; j++) {
-# 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      simMatrix->similarity[i][j] = (char)dissimilar;
-# 184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    }
-# 185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
-# 186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  for (ccode = 1; ccode < simSize; ccode++) {
-# 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    for (i = 1; i < simSize; i++) {
-# 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-      if (simMatrix->aminoAcid[i] == simMatrix->aminoAcid[ccode]) {
-# 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
- simMatrix->similarity[ccode][i] = (char)similar;
-# 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
       }
-# 194 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      simMatrix->codon[ccode] = codon;
+# 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      simMatrix->aminoAcid[ccode] = aa[0];
+# 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
     }
-# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->encode[(int)aa[0]] = (unsigned char)ccode;
+# 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->encode_first[(int)aa[0]] = (unsigned char)ccode2;
+# 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
-# 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 183 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 184 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   for (i = 1; i < simSize; i++) {
+# 185 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    for (j = 1; j < simSize; j++) {
+# 186 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      simMatrix->similarity[i][j] = (char)dissimilar;
+# 187 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    }
+# 188 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
+# 189 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 190 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 191 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 192 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  for (ccode = 1; ccode < simSize; ccode++) {
+# 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    for (i = 1; i < simSize; i++) {
+# 194 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      if (simMatrix->aminoAcid[i] == simMatrix->aminoAcid[ccode]) {
+# 195 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+ simMatrix->similarity[ccode][i] = (char)similar;
+# 196 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+      }
+# 197 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    }
+# 198 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
+# 199 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 200 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    simMatrix->similarity[i][i] = (char)exact;
 # 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  }
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  for (i = 1; i < simSize; i++) {
 # 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    simMatrix->similarity[i][i] = (char)exact;
 # 204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->exact = exact;
-# 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->similar = similar;
-# 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->dissimilar = dissimilar;
-# 208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->gapStart = gapStart;
-# 209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->gapExtend = gapExtend;
-# 210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  simMatrix->matchLimit = matchLimit;
-# 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  return (simMatrix);
-# 213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-}
-
-SIMMATRIX_T *freeSimMatrix_npm(SIMMATRIX_T *M) {
-# 218 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-# 219 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  if (M) {
-# 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-    free_wrapper(M, 17725255480324453903UL);
-# 221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
   }
+# 205 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 206 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 207 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 208 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->exact = exact;
+# 209 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->similar = similar;
+# 210 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->dissimilar = dissimilar;
+# 211 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->gapStart = gapStart;
+# 212 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->gapExtend = gapExtend;
+# 213 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  simMatrix->matchLimit = matchLimit;
+# 214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+# 215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+   SIMMATRIX_T * ____chimes_ret_var_0; ____chimes_ret_var_0 = ((simMatrix)); return ____chimes_ret_var_0; ;
+# 216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+}
+# 220 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+SIMMATRIX_T *freeSimMatrix_npm(SIMMATRIX_T *M) {
+# 221 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 # 222 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
-  return (__null);
+  if (M) {
 # 223 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+    free_wrapper(M, 17725255480324453911UL);
+# 224 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+  }
+# 225 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
+   SIMMATRIX_T * ____chimes_ret_var_1; ____chimes_ret_var_1 = ((__null)); return ____chimes_ret_var_1; ;
+# 226 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genSimMatrix.c"
 }
 
 
@@ -3577,108 +3567,111 @@ SIMMATRIX_T *freeSimMatrix_npm(SIMMATRIX_T *M) {
 
 
 static int module_init() {
-    init_module(17725255480324453512UL, 6, 2, 0, 2, 2, 0, 2, 0, 0, 1,
-                           &____alias_loc_id_0, (unsigned)17, (unsigned)0, (unsigned)0, (17725255480324453512UL + 1UL), (17725255480324453512UL + 2UL), (17725255480324453512UL + 3UL), (17725255480324453512UL + 4UL), (17725255480324453512UL + 5UL), (17725255480324453512UL + 6UL), (17725255480324453512UL + 7UL), (17725255480324453512UL + 8UL), (17725255480324453512UL + 9UL), (17725255480324453512UL + 10UL), (17725255480324453512UL + 11UL), (17725255480324453512UL + 12UL), (17725255480324453512UL + 13UL), (17725255480324453512UL + 14UL), (17725255480324453512UL + 15UL), (17725255480324453512UL + 16UL), (17725255480324453512UL + 484UL),
-                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (17725255480324453512UL + 380UL),
-                            "genSimMatrix", (void *)(&genSimMatrix_npm), (void *)__null, 0, 7, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (17725255480324453512UL + 484UL), 5, "malloc", 1, 0UL, (17725255480324453512UL + 484UL), "printf", 1, (17725255480324453512UL + 480UL), 0UL, "exit", 1, 0UL, 0UL, "strlen", 1, (17725255480324453512UL + 396UL), 0UL, "printf", 5, (17725255480324453512UL + 483UL), 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "freeSimMatrix", (void *)(&freeSimMatrix_npm), (void *)__null, 0, 1, (17725255480324453512UL + 391UL), (17725255480324453512UL + 484UL), 1, "free", 1, (17725255480324453512UL + 391UL), 0UL,
+    init_module(17725255480324453512UL, 8, 2, 0, 2, 2, 0, 2, 0, 0, 1,
+                           &____alias_loc_id_0, (unsigned)18, (unsigned)0, (unsigned)0, (17725255480324453512UL + 1UL), (17725255480324453512UL + 2UL), (17725255480324453512UL + 3UL), (17725255480324453512UL + 4UL), (17725255480324453512UL + 5UL), (17725255480324453512UL + 6UL), (17725255480324453512UL + 7UL), (17725255480324453512UL + 8UL), (17725255480324453512UL + 9UL), (17725255480324453512UL + 10UL), (17725255480324453512UL + 11UL), (17725255480324453512UL + 12UL), (17725255480324453512UL + 13UL), (17725255480324453512UL + 14UL), (17725255480324453512UL + 15UL), (17725255480324453512UL + 16UL), (17725255480324453512UL + 17UL), (17725255480324453512UL + 492UL),
+                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (17725255480324453512UL + 384UL), (17725255480324453512UL + 385UL),
+                            "genSimMatrix", (void *)(&genSimMatrix_npm), (void *)__null, 0, 7, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, (17725255480324453512UL + 492UL), 5, "malloc", 1, 0UL, (17725255480324453512UL + 492UL), "printf", 1, (17725255480324453512UL + 401UL), 0UL, "exit", 1, 0UL, 0UL, "strlen", 1, (17725255480324453512UL + 402UL), 0UL, "printf", 5, (17725255480324453512UL + 405UL), 0UL, 0UL, 0UL, 0UL, 0UL,
+                            "freeSimMatrix", (void *)(&freeSimMatrix_npm), (void *)__null, 0, 1, (17725255480324453512UL + 399UL), (17725255480324453512UL + 492UL), 1, "free", 1, (17725255480324453512UL + 399UL), 0UL,
                            "genSimMatrix", &(____chimes_does_checkpoint_genSimMatrix_npm),
                            "freeSimMatrix", &(____chimes_does_checkpoint_freeSimMatrix_npm),
-                             (17725255480324453512UL + 380UL), (17725255480324453512UL + 391UL),
-                             (17725255480324453512UL + 10UL), (17725255480324453512UL + 396UL),
-                             (17725255480324453512UL + 393UL), (17725255480324453512UL + 396UL),
-                             (17725255480324453512UL + 9UL), (17725255480324453512UL + 396UL),
-                             (17725255480324453512UL + 8UL), (17725255480324453512UL + 484UL),
-                             (17725255480324453512UL + 484UL), (17725255480324453512UL + 396UL),
-                     "simmat", 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
+                             (17725255480324453512UL + 10UL), (17725255480324453512UL + 402UL),
+                             (17725255480324453512UL + 17UL), (17725255480324453512UL + 492UL),
+                             (17725255480324453512UL + 404UL), (17725255480324453512UL + 402UL),
+                             (17725255480324453512UL + 384UL), (17725255480324453512UL + 399UL),
+                             (17725255480324453512UL + 385UL), (17725255480324453512UL + 492UL),
+                             (17725255480324453512UL + 9UL), (17725255480324453512UL + 402UL),
+                             (17725255480324453512UL + 8UL), (17725255480324453512UL + 492UL),
+                             (17725255480324453512UL + 492UL), (17725255480324453512UL + 402UL),
+                     "simmat", 40960UL, 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
                              "freeSimMatrix", "_Z13freeSimMatrixP6simmat", 0,
                              "genSimMatrix", "_Z12genSimMatrixiiiiiii", 0);
-    register_constant(17725255480324453512UL + 0UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[21]))[0]), 1);
-    register_constant(17725255480324453512UL + 1UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[1]))[1]), 2);
-    register_constant(17725255480324453512UL + 2UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[1]))[2]), 4);
-    register_constant(17725255480324453512UL + 3UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[1]))[3]), 4);
-    register_constant(17725255480324453512UL + 4UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[1]))[4]), 4);
-    register_constant(17725255480324453512UL + 5UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[1]))[5]), 4);
-    register_constant(17725255480324453512UL + 6UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[2]))[1]), 2);
-    register_constant(17725255480324453512UL + 7UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[2]))[2]), 4);
-    register_constant(17725255480324453512UL + 8UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[2]))[3]), 4);
-    register_constant(17725255480324453512UL + 9UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[3]))[1]), 2);
-    register_constant(17725255480324453512UL + 10UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[3]))[2]), 4);
-    register_constant(17725255480324453512UL + 11UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[3]))[3]), 4);
-    register_constant(17725255480324453512UL + 12UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[4]))[1]), 2);
-    register_constant(17725255480324453512UL + 13UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[4]))[2]), 4);
-    register_constant(17725255480324453512UL + 14UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[4]))[3]), 4);
-    register_constant(17725255480324453512UL + 15UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[5]))[1]), 2);
-    register_constant(17725255480324453512UL + 16UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[5]))[2]), 4);
-    register_constant(17725255480324453512UL + 17UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[5]))[3]), 4);
-    register_constant(17725255480324453512UL + 18UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[6]))[1]), 2);
-    register_constant(17725255480324453512UL + 19UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[6]))[2]), 4);
-    register_constant(17725255480324453512UL + 20UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[6]))[3]), 4);
-    register_constant(17725255480324453512UL + 21UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[6]))[4]), 4);
-    register_constant(17725255480324453512UL + 22UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[6]))[5]), 4);
-    register_constant(17725255480324453512UL + 23UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[7]))[1]), 2);
-    register_constant(17725255480324453512UL + 24UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[7]))[2]), 4);
-    register_constant(17725255480324453512UL + 25UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[7]))[3]), 4);
-    register_constant(17725255480324453512UL + 26UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[8]))[1]), 2);
-    register_constant(17725255480324453512UL + 27UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[8]))[2]), 4);
-    register_constant(17725255480324453512UL + 28UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[8]))[3]), 4);
-    register_constant(17725255480324453512UL + 29UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[8]))[4]), 4);
-    register_constant(17725255480324453512UL + 30UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[9]))[1]), 2);
-    register_constant(17725255480324453512UL + 31UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[9]))[2]), 4);
-    register_constant(17725255480324453512UL + 32UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[9]))[3]), 4);
-    register_constant(17725255480324453512UL + 33UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[10]))[1]), 2);
-    register_constant(17725255480324453512UL + 34UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[10]))[2]), 4);
-    register_constant(17725255480324453512UL + 35UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[10]))[3]), 4);
-    register_constant(17725255480324453512UL + 36UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[10]))[4]), 4);
-    register_constant(17725255480324453512UL + 37UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[10]))[5]), 4);
-    register_constant(17725255480324453512UL + 38UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[10]))[6]), 4);
-    register_constant(17725255480324453512UL + 39UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[10]))[7]), 4);
-    register_constant(17725255480324453512UL + 40UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[11]))[1]), 2);
-    register_constant(17725255480324453512UL + 41UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[11]))[2]), 4);
-    register_constant(17725255480324453512UL + 42UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[12]))[1]), 2);
-    register_constant(17725255480324453512UL + 43UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[12]))[2]), 4);
-    register_constant(17725255480324453512UL + 44UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[12]))[3]), 4);
-    register_constant(17725255480324453512UL + 45UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[13]))[1]), 2);
-    register_constant(17725255480324453512UL + 46UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[13]))[2]), 4);
-    register_constant(17725255480324453512UL + 47UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[13]))[3]), 4);
-    register_constant(17725255480324453512UL + 48UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[13]))[4]), 4);
-    register_constant(17725255480324453512UL + 49UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[13]))[5]), 4);
-    register_constant(17725255480324453512UL + 50UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[14]))[1]), 2);
-    register_constant(17725255480324453512UL + 51UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[14]))[2]), 4);
-    register_constant(17725255480324453512UL + 52UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[14]))[3]), 4);
-    register_constant(17725255480324453512UL + 53UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[15]))[1]), 2);
-    register_constant(17725255480324453512UL + 54UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[15]))[2]), 4);
-    register_constant(17725255480324453512UL + 55UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[15]))[3]), 4);
-    register_constant(17725255480324453512UL + 56UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[15]))[4]), 4);
-    register_constant(17725255480324453512UL + 57UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[15]))[5]), 4);
-    register_constant(17725255480324453512UL + 58UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[15]))[6]), 4);
-    register_constant(17725255480324453512UL + 59UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[15]))[7]), 4);
-    register_constant(17725255480324453512UL + 60UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[16]))[1]), 2);
-    register_constant(17725255480324453512UL + 61UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[16]))[2]), 4);
-    register_constant(17725255480324453512UL + 62UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[16]))[3]), 4);
-    register_constant(17725255480324453512UL + 63UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[16]))[4]), 4);
-    register_constant(17725255480324453512UL + 64UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[16]))[5]), 4);
-    register_constant(17725255480324453512UL + 65UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[16]))[6]), 4);
-    register_constant(17725255480324453512UL + 66UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[16]))[7]), 4);
-    register_constant(17725255480324453512UL + 67UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[17]))[1]), 2);
-    register_constant(17725255480324453512UL + 68UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[17]))[2]), 4);
-    register_constant(17725255480324453512UL + 69UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[17]))[3]), 4);
-    register_constant(17725255480324453512UL + 70UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[17]))[4]), 4);
-    register_constant(17725255480324453512UL + 71UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[17]))[5]), 4);
-    register_constant(17725255480324453512UL + 72UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[18]))[1]), 2);
-    register_constant(17725255480324453512UL + 73UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[18]))[2]), 4);
-    register_constant(17725255480324453512UL + 74UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[18]))[3]), 4);
-    register_constant(17725255480324453512UL + 75UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[18]))[4]), 4);
-    register_constant(17725255480324453512UL + 76UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[18]))[5]), 4);
-    register_constant(17725255480324453512UL + 77UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[19]))[1]), 2);
-    register_constant(17725255480324453512UL + 78UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[19]))[2]), 4);
-    register_constant(17725255480324453512UL + 79UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[20]))[1]), 2);
-    register_constant(17725255480324453512UL + 80UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[20]))[2]), 4);
-    register_constant(17725255480324453512UL + 81UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[20]))[3]), 4);
-    register_constant(17725255480324453512UL + 82UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[21]))[1]), 2);
-    register_constant(17725255480324453512UL + 83UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[21]))[2]), 4);
-    register_constant(17725255480324453512UL + 84UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[21]))[3]), 4);
-    register_constant(17725255480324453512UL + 85UL, (void *)((((_ZZ12genSimMatrixiiiiiiiE12similarities)[21]))[4]), 4);
+    register_global_var("global|similarities", "[22 x [9 x i8*]]", (void *)(&similarities), 1584.0, 0, 0, 0UL, 0);
+    register_constant(17725255480324453512UL + 0UL, (void *)((((similarities)[21]))[0]), 1);
+    register_constant(17725255480324453512UL + 1UL, (void *)((((similarities)[1]))[1]), 2);
+    register_constant(17725255480324453512UL + 2UL, (void *)((((similarities)[1]))[2]), 4);
+    register_constant(17725255480324453512UL + 3UL, (void *)((((similarities)[1]))[3]), 4);
+    register_constant(17725255480324453512UL + 4UL, (void *)((((similarities)[1]))[4]), 4);
+    register_constant(17725255480324453512UL + 5UL, (void *)((((similarities)[1]))[5]), 4);
+    register_constant(17725255480324453512UL + 6UL, (void *)((((similarities)[2]))[1]), 2);
+    register_constant(17725255480324453512UL + 7UL, (void *)((((similarities)[2]))[2]), 4);
+    register_constant(17725255480324453512UL + 8UL, (void *)((((similarities)[2]))[3]), 4);
+    register_constant(17725255480324453512UL + 9UL, (void *)((((similarities)[3]))[1]), 2);
+    register_constant(17725255480324453512UL + 10UL, (void *)((((similarities)[3]))[2]), 4);
+    register_constant(17725255480324453512UL + 11UL, (void *)((((similarities)[3]))[3]), 4);
+    register_constant(17725255480324453512UL + 12UL, (void *)((((similarities)[4]))[1]), 2);
+    register_constant(17725255480324453512UL + 13UL, (void *)((((similarities)[4]))[2]), 4);
+    register_constant(17725255480324453512UL + 14UL, (void *)((((similarities)[4]))[3]), 4);
+    register_constant(17725255480324453512UL + 15UL, (void *)((((similarities)[5]))[1]), 2);
+    register_constant(17725255480324453512UL + 16UL, (void *)((((similarities)[5]))[2]), 4);
+    register_constant(17725255480324453512UL + 17UL, (void *)((((similarities)[5]))[3]), 4);
+    register_constant(17725255480324453512UL + 18UL, (void *)((((similarities)[6]))[1]), 2);
+    register_constant(17725255480324453512UL + 19UL, (void *)((((similarities)[6]))[2]), 4);
+    register_constant(17725255480324453512UL + 20UL, (void *)((((similarities)[6]))[3]), 4);
+    register_constant(17725255480324453512UL + 21UL, (void *)((((similarities)[6]))[4]), 4);
+    register_constant(17725255480324453512UL + 22UL, (void *)((((similarities)[6]))[5]), 4);
+    register_constant(17725255480324453512UL + 23UL, (void *)((((similarities)[7]))[1]), 2);
+    register_constant(17725255480324453512UL + 24UL, (void *)((((similarities)[7]))[2]), 4);
+    register_constant(17725255480324453512UL + 25UL, (void *)((((similarities)[7]))[3]), 4);
+    register_constant(17725255480324453512UL + 26UL, (void *)((((similarities)[8]))[1]), 2);
+    register_constant(17725255480324453512UL + 27UL, (void *)((((similarities)[8]))[2]), 4);
+    register_constant(17725255480324453512UL + 28UL, (void *)((((similarities)[8]))[3]), 4);
+    register_constant(17725255480324453512UL + 29UL, (void *)((((similarities)[8]))[4]), 4);
+    register_constant(17725255480324453512UL + 30UL, (void *)((((similarities)[9]))[1]), 2);
+    register_constant(17725255480324453512UL + 31UL, (void *)((((similarities)[9]))[2]), 4);
+    register_constant(17725255480324453512UL + 32UL, (void *)((((similarities)[9]))[3]), 4);
+    register_constant(17725255480324453512UL + 33UL, (void *)((((similarities)[10]))[1]), 2);
+    register_constant(17725255480324453512UL + 34UL, (void *)((((similarities)[10]))[2]), 4);
+    register_constant(17725255480324453512UL + 35UL, (void *)((((similarities)[10]))[3]), 4);
+    register_constant(17725255480324453512UL + 36UL, (void *)((((similarities)[10]))[4]), 4);
+    register_constant(17725255480324453512UL + 37UL, (void *)((((similarities)[10]))[5]), 4);
+    register_constant(17725255480324453512UL + 38UL, (void *)((((similarities)[10]))[6]), 4);
+    register_constant(17725255480324453512UL + 39UL, (void *)((((similarities)[10]))[7]), 4);
+    register_constant(17725255480324453512UL + 40UL, (void *)((((similarities)[11]))[1]), 2);
+    register_constant(17725255480324453512UL + 41UL, (void *)((((similarities)[11]))[2]), 4);
+    register_constant(17725255480324453512UL + 42UL, (void *)((((similarities)[12]))[1]), 2);
+    register_constant(17725255480324453512UL + 43UL, (void *)((((similarities)[12]))[2]), 4);
+    register_constant(17725255480324453512UL + 44UL, (void *)((((similarities)[12]))[3]), 4);
+    register_constant(17725255480324453512UL + 45UL, (void *)((((similarities)[13]))[1]), 2);
+    register_constant(17725255480324453512UL + 46UL, (void *)((((similarities)[13]))[2]), 4);
+    register_constant(17725255480324453512UL + 47UL, (void *)((((similarities)[13]))[3]), 4);
+    register_constant(17725255480324453512UL + 48UL, (void *)((((similarities)[13]))[4]), 4);
+    register_constant(17725255480324453512UL + 49UL, (void *)((((similarities)[13]))[5]), 4);
+    register_constant(17725255480324453512UL + 50UL, (void *)((((similarities)[14]))[1]), 2);
+    register_constant(17725255480324453512UL + 51UL, (void *)((((similarities)[14]))[2]), 4);
+    register_constant(17725255480324453512UL + 52UL, (void *)((((similarities)[14]))[3]), 4);
+    register_constant(17725255480324453512UL + 53UL, (void *)((((similarities)[15]))[1]), 2);
+    register_constant(17725255480324453512UL + 54UL, (void *)((((similarities)[15]))[2]), 4);
+    register_constant(17725255480324453512UL + 55UL, (void *)((((similarities)[15]))[3]), 4);
+    register_constant(17725255480324453512UL + 56UL, (void *)((((similarities)[15]))[4]), 4);
+    register_constant(17725255480324453512UL + 57UL, (void *)((((similarities)[15]))[5]), 4);
+    register_constant(17725255480324453512UL + 58UL, (void *)((((similarities)[15]))[6]), 4);
+    register_constant(17725255480324453512UL + 59UL, (void *)((((similarities)[15]))[7]), 4);
+    register_constant(17725255480324453512UL + 60UL, (void *)((((similarities)[16]))[1]), 2);
+    register_constant(17725255480324453512UL + 61UL, (void *)((((similarities)[16]))[2]), 4);
+    register_constant(17725255480324453512UL + 62UL, (void *)((((similarities)[16]))[3]), 4);
+    register_constant(17725255480324453512UL + 63UL, (void *)((((similarities)[16]))[4]), 4);
+    register_constant(17725255480324453512UL + 64UL, (void *)((((similarities)[16]))[5]), 4);
+    register_constant(17725255480324453512UL + 65UL, (void *)((((similarities)[16]))[6]), 4);
+    register_constant(17725255480324453512UL + 66UL, (void *)((((similarities)[16]))[7]), 4);
+    register_constant(17725255480324453512UL + 67UL, (void *)((((similarities)[17]))[1]), 2);
+    register_constant(17725255480324453512UL + 68UL, (void *)((((similarities)[17]))[2]), 4);
+    register_constant(17725255480324453512UL + 69UL, (void *)((((similarities)[17]))[3]), 4);
+    register_constant(17725255480324453512UL + 70UL, (void *)((((similarities)[17]))[4]), 4);
+    register_constant(17725255480324453512UL + 71UL, (void *)((((similarities)[17]))[5]), 4);
+    register_constant(17725255480324453512UL + 72UL, (void *)((((similarities)[18]))[1]), 2);
+    register_constant(17725255480324453512UL + 73UL, (void *)((((similarities)[18]))[2]), 4);
+    register_constant(17725255480324453512UL + 74UL, (void *)((((similarities)[18]))[3]), 4);
+    register_constant(17725255480324453512UL + 75UL, (void *)((((similarities)[18]))[4]), 4);
+    register_constant(17725255480324453512UL + 76UL, (void *)((((similarities)[18]))[5]), 4);
+    register_constant(17725255480324453512UL + 77UL, (void *)((((similarities)[19]))[1]), 2);
+    register_constant(17725255480324453512UL + 78UL, (void *)((((similarities)[19]))[2]), 4);
+    register_constant(17725255480324453512UL + 79UL, (void *)((((similarities)[20]))[1]), 2);
+    register_constant(17725255480324453512UL + 80UL, (void *)((((similarities)[20]))[2]), 4);
+    register_constant(17725255480324453512UL + 81UL, (void *)((((similarities)[20]))[3]), 4);
+    register_constant(17725255480324453512UL + 82UL, (void *)((((similarities)[21]))[1]), 2);
+    register_constant(17725255480324453512UL + 83UL, (void *)((((similarities)[21]))[2]), 4);
+    register_constant(17725255480324453512UL + 84UL, (void *)((((similarities)[21]))[3]), 4);
+    register_constant(17725255480324453512UL + 85UL, (void *)((((similarities)[21]))[4]), 4);
     return 0;
 }
 

@@ -28,7 +28,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -44,7 +44,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -79,7 +80,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2282,7 +2283,8 @@ void load_resumable(BPNN *net)
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
     }
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-rm_stack(false, 0UL, "load", &____must_manage_load, ____alias_loc_id_0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "load", &____must_manage_load, ____alias_loc_id_0, ____chimes_did_disable0, false); }
+# 8 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
 void load_quick(BPNN *net)
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&load), "load", &____must_manage_load, 1, 0, (size_t)(2167082750985355829UL)) ; ; ;
@@ -2310,12 +2312,10 @@ void load_quick(BPNN *net)
 # 22 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
     }
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
-rm_stack(false, 0UL, "load", &____must_manage_load, ____alias_loc_id_0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "load", &____must_manage_load, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 void load(BPNN *net) { (____chimes_replaying ? load_resumable(net) : load_quick(net)); }
-
-
-
+# 8 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
 void load_npm(BPNN *net)
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/backprop/imagenet.c"
 {
@@ -2357,7 +2357,7 @@ static int module_init() {
                              (2167082750985355777UL + 1UL), (2167082750985355777UL + 52UL),
                              (2167082750985355777UL + 2UL), (2167082750985355777UL + 26UL),
                              (2167082750985355777UL + 52UL), (2167082750985355777UL + 26UL),
-                     "BPNN", 13, "int", (int)__builtin_offsetof (BPNN, input_n), "int", (int)__builtin_offsetof (BPNN, hidden_n), "int", (int)__builtin_offsetof (BPNN, output_n), "float*", (int)__builtin_offsetof (BPNN, input_units), "float*", (int)__builtin_offsetof (BPNN, hidden_units), "float*", (int)__builtin_offsetof (BPNN, output_units), "float*", (int)__builtin_offsetof (BPNN, hidden_delta), "float*", (int)__builtin_offsetof (BPNN, output_delta), "float*", (int)__builtin_offsetof (BPNN, target), "float**", (int)__builtin_offsetof (BPNN, input_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_weights), "float**", (int)__builtin_offsetof (BPNN, input_prev_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_prev_weights),
+                     "BPNN", 768UL, 13, "int", (int)__builtin_offsetof (BPNN, input_n), "int", (int)__builtin_offsetof (BPNN, hidden_n), "int", (int)__builtin_offsetof (BPNN, output_n), "float*", (int)__builtin_offsetof (BPNN, input_units), "float*", (int)__builtin_offsetof (BPNN, hidden_units), "float*", (int)__builtin_offsetof (BPNN, output_units), "float*", (int)__builtin_offsetof (BPNN, hidden_delta), "float*", (int)__builtin_offsetof (BPNN, output_delta), "float*", (int)__builtin_offsetof (BPNN, target), "float**", (int)__builtin_offsetof (BPNN, input_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_weights), "float**", (int)__builtin_offsetof (BPNN, input_prev_weights), "float**", (int)__builtin_offsetof (BPNN, hidden_prev_weights),
                              "load", "_Z4loadP4BPNN", 0);
     return 0;
 }

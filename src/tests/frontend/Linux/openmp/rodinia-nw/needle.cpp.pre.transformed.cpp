@@ -10,24 +10,10 @@ typedef long unsigned int size_t;
 static int ____chimes_does_checkpoint_maximum_npm = 1;
 static int ____chimes_does_checkpoint_gettime_npm = 1;
 static int ____chimes_does_checkpoint_usage_npm = 1;
-static int ____chimes_does_checkpoint_runTest_npm = 1;
-static int ____chimes_does_checkpoint_omp_set_num_threads_npm = 1;
 
 static int ____must_checkpoint_gettime_t_0 = 2;
-static int ____must_checkpoint_runTest_max_cols_0 = 2;
-static int ____must_checkpoint_runTest_penalty_0 = 2;
-static int ____must_checkpoint_runTest_idx_0 = 2;
-static int ____must_checkpoint_runTest_index_0 = 2;
-static int ____must_checkpoint_runTest_input_itemsets_0 = 2;
-static int ____must_checkpoint_runTest_output_itemsets_0 = 2;
-static int ____must_checkpoint_runTest_referrence_0 = 2;
-static int ____must_checkpoint_runTest_omp_num_threads_0 = 2;
-static int ____must_checkpoint_runTest_i_4 = 2;
-static int ____must_checkpoint_runTest_i_5 = 2;
 
 static int ____must_manage_gettime = 2;
-static int ____must_manage_runTest = 2;
-static int ____must_manage_main = 2;
 static int ____must_manage_maximum = 2;
 static int ____must_manage_usage = 2;
 
@@ -52,7 +38,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -68,7 +54,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -103,7 +90,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -3915,783 +3902,663 @@ int omp_in_final (void) throw ();
 }
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp" 2
 # 9 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 10 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+
+# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+extern void checkpoint();
+
+extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*____chimes_fp)(void *));
+# 11 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp" 2
 # 11 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 12 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 13 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 14 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-void runTest( int argc, char** argv);
 # 15 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 16 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 17 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+void runTest( int argc, char** argv);
+# 18 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int maximum_npm( int a, int b, int c);
 int maximum_quick( int a, int b, int c); int maximum( int a, int b, int c);
 int maximum_resumable( int a,
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   int b,
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   int c){const int ____chimes_did_disable0 = new_stack((void *)(&maximum), "maximum", &____must_manage_maximum, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 19 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- int k; ;
+   int b,
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   int c){const int ____chimes_did_disable0 = new_stack((void *)(&maximum), "maximum", &____must_manage_maximum, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 21 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 22 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ int k; ;
+# 23 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  if (a <= b) {k = b; } else {k = a; } ;
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- if (k <=c) {rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0); return(c); } else {rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0); return(k); } ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0); }
-# 30 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 31 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 27 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 28 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ if (k <=c) { int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((c)); rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ; } else { int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((k)); rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ; } ;
 # 32 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-int blosum62[24][24] = {
+rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0, false); }
 # 33 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{ 4, -1, -2, -2, 0, -1, -1, 0, -2, -1, -1, -1, -1, -2, -1, 1, 0, -3, -2, 0, -2, -1, 0, -4},
 # 34 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-1, 5, 0, -2, -3, 1, 0, -2, 0, -3, -2, 2, -1, -3, -2, -1, -1, -3, -2, -3, -1, 0, -1, -4},
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-2, 0, 6, 1, -3, 0, 0, 0, 1, -3, -3, 0, -2, -3, -2, 1, 0, -4, -2, -3, 3, 0, -1, -4},
+int blosum62[24][24] = {
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-2, -2, 1, 6, -3, 0, 2, -1, -1, -3, -4, -1, -3, -3, -1, 0, -1, -4, -3, -3, 4, 1, -1, -4},
+{ 4, -1, -2, -2, 0, -1, -1, 0, -2, -1, -1, -1, -1, -2, -1, 1, 0, -3, -2, 0, -2, -1, 0, -4},
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{ 0, -3, -3, -3, 9, -3, -4, -3, -3, -1, -1, -3, -1, -2, -3, -1, -1, -2, -2, -1, -3, -3, -2, -4},
+{-1, 5, 0, -2, -3, 1, 0, -2, 0, -3, -2, 2, -1, -3, -2, -1, -1, -3, -2, -3, -1, 0, -1, -4},
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-1, 1, 0, 0, -3, 5, 2, -2, 0, -3, -2, 1, 0, -3, -1, 0, -1, -2, -1, -2, 0, 3, -1, -4},
+{-2, 0, 6, 1, -3, 0, 0, 0, 1, -3, -3, 0, -2, -3, -2, 1, 0, -4, -2, -3, 3, 0, -1, -4},
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-1, 0, 0, 2, -4, 2, 5, -2, 0, -3, -3, 1, -2, -3, -1, 0, -1, -3, -2, -2, 1, 4, -1, -4},
+{-2, -2, 1, 6, -3, 0, 2, -1, -1, -3, -4, -1, -3, -3, -1, 0, -1, -4, -3, -3, 4, 1, -1, -4},
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{ 0, -2, 0, -1, -3, -2, -2, 6, -2, -4, -4, -2, -3, -3, -2, 0, -2, -2, -3, -3, -1, -2, -1, -4},
+{ 0, -3, -3, -3, 9, -3, -4, -3, -3, -1, -1, -3, -1, -2, -3, -1, -1, -2, -2, -1, -3, -3, -2, -4},
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-2, 0, 1, -1, -3, 0, 0, -2, 8, -3, -3, -1, -2, -1, -2, -1, -2, -2, 2, -3, 0, 0, -1, -4},
+{-1, 1, 0, 0, -3, 5, 2, -2, 0, -3, -2, 1, 0, -3, -1, 0, -1, -2, -1, -2, 0, 3, -1, -4},
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-1, -3, -3, -3, -1, -3, -3, -4, -3, 4, 2, -3, 1, 0, -3, -2, -1, -3, -1, 3, -3, -3, -1, -4},
+{-1, 0, 0, 2, -4, 2, 5, -2, 0, -3, -3, 1, -2, -3, -1, 0, -1, -3, -2, -2, 1, 4, -1, -4},
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-1, -2, -3, -4, -1, -2, -3, -4, -3, 2, 4, -2, 2, 0, -3, -2, -1, -2, -1, 1, -4, -3, -1, -4},
+{ 0, -2, 0, -1, -3, -2, -2, 6, -2, -4, -4, -2, -3, -3, -2, 0, -2, -2, -3, -3, -1, -2, -1, -4},
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-1, 2, 0, -1, -3, 1, 1, -2, -1, -3, -2, 5, -1, -3, -1, 0, -1, -3, -2, -2, 0, 1, -1, -4},
+{-2, 0, 1, -1, -3, 0, 0, -2, 8, -3, -3, -1, -2, -1, -2, -1, -2, -2, 2, -3, 0, 0, -1, -4},
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-1, -1, -2, -3, -1, 0, -2, -3, -2, 1, 2, -1, 5, 0, -2, -1, -1, -1, -1, 1, -3, -1, -1, -4},
+{-1, -3, -3, -3, -1, -3, -3, -4, -3, 4, 2, -3, 1, 0, -3, -2, -1, -3, -1, 3, -3, -3, -1, -4},
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-2, -3, -3, -3, -2, -3, -3, -3, -1, 0, 0, -3, 0, 6, -4, -2, -2, 1, 3, -1, -3, -3, -1, -4},
+{-1, -2, -3, -4, -1, -2, -3, -4, -3, 2, 4, -2, 2, 0, -3, -2, -1, -2, -1, 1, -4, -3, -1, -4},
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-1, -2, -2, -1, -3, -1, -1, -2, -2, -3, -3, -1, -2, -4, 7, -1, -1, -4, -3, -2, -2, -1, -2, -4},
+{-1, 2, 0, -1, -3, 1, 1, -2, -1, -3, -2, 5, -1, -3, -1, 0, -1, -3, -2, -2, 0, 1, -1, -4},
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{ 1, -1, 1, 0, -1, 0, 0, 0, -1, -2, -2, 0, -1, -2, -1, 4, 1, -3, -2, -2, 0, 0, 0, -4},
+{-1, -1, -2, -3, -1, 0, -2, -3, -2, 1, 2, -1, 5, 0, -2, -1, -1, -1, -1, 1, -3, -1, -1, -4},
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{ 0, -1, 0, -1, -1, -1, -1, -2, -2, -1, -1, -1, -1, -2, -1, 1, 5, -2, -2, 0, -1, -1, 0, -4},
+{-2, -3, -3, -3, -2, -3, -3, -3, -1, 0, 0, -3, 0, 6, -4, -2, -2, 1, 3, -1, -3, -3, -1, -4},
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-3, -3, -4, -4, -2, -2, -3, -2, -2, -3, -2, -3, -1, 1, -4, -3, -2, 11, 2, -3, -4, -3, -2, -4},
+{-1, -2, -2, -1, -3, -1, -1, -2, -2, -3, -3, -1, -2, -4, 7, -1, -1, -4, -3, -2, -2, -1, -2, -4},
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-2, -2, -2, -3, -2, -1, -2, -3, 2, -1, -1, -2, -1, 3, -3, -2, -2, 2, 7, -1, -3, -2, -1, -4},
+{ 1, -1, 1, 0, -1, 0, 0, 0, -1, -2, -2, 0, -1, -2, -1, 4, 1, -3, -2, -2, 0, 0, 0, -4},
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{ 0, -3, -3, -3, -1, -2, -2, -3, -3, 3, 1, -2, 1, -1, -2, -2, 0, -3, -1, 4, -3, -2, -1, -4},
+{ 0, -1, 0, -1, -1, -1, -1, -2, -2, -1, -1, -1, -1, -2, -1, 1, 5, -2, -2, 0, -1, -1, 0, -4},
 # 53 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-2, -1, 3, 4, -3, 0, 1, -1, 0, -3, -4, 0, -3, -3, -2, 0, -1, -4, -3, -3, 4, 1, -1, -4},
+{-3, -3, -4, -4, -2, -2, -3, -2, -2, -3, -2, -3, -1, 1, -4, -3, -2, 11, 2, -3, -4, -3, -2, -4},
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-1, 0, 0, 1, -3, 3, 4, -2, 0, -3, -3, 1, -1, -3, -1, 0, -1, -3, -2, -2, 1, 4, -1, -4},
+{-2, -2, -2, -3, -2, -1, -2, -3, 2, -1, -1, -2, -1, 3, -3, -2, -2, 2, 7, -1, -3, -2, -1, -4},
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{ 0, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, 0, 0, -2, -1, -1, -1, -1, -1, -4},
+{ 0, -3, -3, -3, -1, -2, -2, -3, -3, 3, 1, -2, 1, -1, -2, -2, 0, -3, -1, 4, -3, -2, -1, -4},
 # 56 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{-4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, 1}
+{-2, -1, 3, 4, -3, 0, 1, -1, 0, -3, -4, 0, -3, -3, -2, 0, -1, -4, -3, -3, 4, 1, -1, -4},
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-};
+{-1, 0, 0, 1, -3, 3, 4, -2, 0, -3, -3, 1, -1, -3, -1, 0, -1, -3, -2, -2, 1, 4, -1, -4},
 # 58 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+{ 0, -1, -1, -1, -2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -2, 0, 0, -2, -1, -1, -1, -1, -1, -4},
 # 59 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+{-4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, -4, 1}
+# 60 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+};
+# 61 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 62 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 double gettime_npm();
 double gettime_quick(); double gettime();
 double gettime_resumable() {const int ____chimes_did_disable1 = new_stack((void *)(&gettime), "gettime", &____must_manage_gettime, 0, 0) ; struct timeval t;
- if (____must_checkpoint_gettime_t_0) { register_stack_vars(1, "gettime|t|0", &____must_checkpoint_gettime_t_0, "%struct.timeval = type { i64, i64 }", (void *)(&t), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    ;
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  gettimeofday(&t,__null);
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_4, ____chimes_did_disable1); return t.tv_sec+t.tv_usec*1e-6;
+ if (____must_checkpoint_gettime_t_0) { register_stack_vars(1, "gettime|t|0", &____must_checkpoint_gettime_t_0, "%struct.timeval = type { i64, i64 }", (void *)(&t), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-}
+    ;
 # 64 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+  gettimeofday(&t,__null);
 # 65 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (t.tv_sec+t.tv_usec*1e-6); rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_4, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
 # 66 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_4, ____chimes_did_disable1, false); }
 # 67 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 68 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-void runTest_npm( int argc, char** argv);
+# 69 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 70 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 71 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int main_quick( int argc, char** argv); int main( int argc, char** argv);void runTest_quick( int argc, char** argv); void runTest( int argc, char** argv);
 int
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-main_resumable( int argc, char** argv)
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(322747555189993882UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
-# 71 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-     call_lbl_1: (____chimes_does_checkpoint_runTest_npm ? ( ({ calling((void*)runTest, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(322747555189993882UL)); (runTest)(argc, argv); }) ) : (({ calling_npm("runTest", ____alias_loc_id_0); runTest_npm(argc, argv); })));
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+main_resumable( int argc, char** argv)
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable2); return 0;
+{const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(322747555189993898UL)) ; if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-}
+     call_lbl_1: ({ calling((void*)runTest, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(322747555189993898UL)); (runTest)(argc, argv); }) ;
 # 75 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 76 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
+# 77 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable2, false); }
+# 78 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 79 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 void usage_npm(int argc, char **argv);
 void usage_quick(int argc, char **argv); void usage(int argc, char **argv);
 void usage_resumable(int argc, char **argv)
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{const int ____chimes_did_disable3 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(322747555189994347UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "Usage: %s <max_rows/max_cols> <penalty> <num_threads>\n", argv[0]);
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "\t<dimension>      - x and y dimensions\n");
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "\t<penalty>        - penalty(positive integer)\n");
+{const int ____chimes_did_disable3 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(322747555189994365UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "\t<num_threads>    - no. of threads\n");
+ fprintf(stderr, "Usage: %s <max_rows/max_cols> <penalty> <num_threads>\n", argv[0]);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- exit(1);
+ fprintf(stderr, "\t<dimension>      - x and y dimensions\n");
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable3); }
+ fprintf(stderr, "\t<penalty>        - penalty(positive integer)\n");
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ fprintf(stderr, "\t<num_threads>    - no. of threads\n");
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ exit(1);
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable3, false); }
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 88 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-static void (*____chimes_extern_func_omp_set_num_threads)(int) = omp_set_num_threads;
-void
 # 89 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-runTest_resumable( int argc, char** argv)
 # 90 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{const int ____chimes_did_disable4 = new_stack((void *)(&runTest), "runTest", &____must_manage_runTest, 2, 0, (size_t)(0UL), (size_t)(322747555189994325UL)) ; int omp_num_threads;
-int *referrence;
-int *output_itemsets;
-int *input_itemsets;
-int index;
-int idx;
-int penalty;
-int max_cols;
- if (____must_checkpoint_runTest_omp_num_threads_0 || ____must_checkpoint_runTest_referrence_0 || ____must_checkpoint_runTest_output_itemsets_0 || ____must_checkpoint_runTest_input_itemsets_0 || ____must_checkpoint_runTest_index_0 || ____must_checkpoint_runTest_idx_0 || ____must_checkpoint_runTest_penalty_0 || ____must_checkpoint_runTest_max_cols_0) { register_stack_vars(8, "runTest|omp_num_threads|0", &____must_checkpoint_runTest_omp_num_threads_0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "runTest|referrence|0", &____must_checkpoint_runTest_referrence_0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", &____must_checkpoint_runTest_output_itemsets_0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", &____must_checkpoint_runTest_input_itemsets_0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|index|0", &____must_checkpoint_runTest_index_0, "i32", (void *)(&index), (size_t)4, 0, 0, 0, "runTest|idx|0", &____must_checkpoint_runTest_idx_0, "i32", (void *)(&idx), (size_t)4, 0, 0, 0, "runTest|penalty|0", &____must_checkpoint_runTest_penalty_0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", &____must_checkpoint_runTest_max_cols_0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
 # 91 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    int max_rows; ;
+void
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       ;
+runTest_resumable( int argc, char** argv)
 # 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- int *matrix_cuda; int *matrix_cuda_out; int *referrence_cuda; ;
+{const int ____chimes_did_disable4 = new_stack((void *)(&runTest), "runTest", (int *)0, 2, 0, (size_t)(0UL), (size_t)(322747555189994343UL)) ; int omp_num_threads;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+int *referrence;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+int *output_itemsets;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+int *input_itemsets;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+int index;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+int idx;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+int penalty;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+int max_cols;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ register_stack_vars(8, "runTest|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|index|0", (int *)0x0, "i32", (void *)(&index), (size_t)4, 0, 0, 0, "runTest|idx|0", (int *)0x0, "i32", (void *)(&idx), (size_t)4, 0, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
 # 94 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- int size; ;
+    int max_rows; ;
 # 95 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ;
+       ;
 # 96 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ int *matrix_cuda; int *matrix_cuda_out; int *referrence_cuda; ;
 # 97 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ int size; ;
 # 98 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+  ;
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- if (argc == 4)
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- {
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  max_rows = atoi(argv[1]);
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  max_cols = atoi(argv[1]);
+ if (argc == 4)
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  penalty = atoi(argv[2]);
+ {
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  omp_num_threads = atoi(argv[3]);
+  max_rows = atoi(argv[1]);
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- }
+  max_cols = atoi(argv[1]);
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    else{
+  penalty = atoi(argv[2]);
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  ({ calling_npm("usage", 0); usage_npm(argc, argv); });
+  omp_num_threads = atoi(argv[3]);
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    }
+ }
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    else{
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- max_rows = max_rows + 1;
+  ({ calling_npm("usage", 0); usage_npm(argc, argv); });
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- max_cols = max_cols + 1;
+    }
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- referrence = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994199UL, 0, 0 );
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    input_itemsets = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994194UL, 0, 0 );
+ max_rows = max_rows + 1;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- output_itemsets = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994320UL, 0, 0 );
+ max_cols = max_cols + 1;
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ referrence = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994215UL, 0, 0 );
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    input_itemsets = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994210UL, 0, 0 );
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- if (!input_itemsets) {fprintf(stderr, "error: can not allocate memory"); };
+ output_itemsets = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994338UL, 0, 0 );
+# 119 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    srand ( 7 );
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ if (!input_itemsets) {fprintf(stderr, "error: can not allocate memory"); };
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    { int i; for ( i = (0) ; i < max_cols; i++){
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  { int j; for ( j = (0) ; j < max_rows; j++){
+    srand ( 7 );
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   input_itemsets[i*max_cols+j] = 0;
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  } }
+    { int i; for ( i = (0) ; i < max_cols; i++){
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- } }
+  { int j; for ( j = (0) ; j < max_rows; j++){
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   input_itemsets[i*max_cols+j] = 0;
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Start Needleman-Wunsch\n");
+  } }
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- { int i; for( i = (1) ; i< max_rows ; i++){
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       input_itemsets[i*max_cols] = rand() % 10 + 1;
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  } }
+# 131 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 132 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ printf("Start Needleman-Wunsch\n");
+# 133 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    { int j; for( j = (1) ; j< max_cols ; j++){
+ { int i; for( i = (1) ; i< max_rows ; i++){
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       input_itemsets[j] = rand() % 10 + 1;
+       input_itemsets[i*max_cols] = rand() % 10 + 1;
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  } }
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    { int j; for( j = (1) ; j< max_cols ; j++){
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+       input_itemsets[j] = rand() % 10 + 1;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- { int i; for ( i = (1) ; i < max_cols; i++){
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  { int j; for ( j = (1) ; j < max_rows; j++){
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  referrence[i*max_cols+j] = blosum62[input_itemsets[i*max_cols]][input_itemsets[j]];
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  } }
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  } }
+# 140 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 141 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 142 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ { int i; for ( i = (1) ; i < max_cols; i++){
+# 143 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+  { int j; for ( j = (1) ; j < max_rows; j++){
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+  referrence[i*max_cols+j] = blosum62[input_itemsets[i*max_cols]][input_itemsets[j]];
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    { int i; for ( i = (1) ;i< max_rows; i++) { input_itemsets[i*max_cols] = -i * penalty; } };
+  } }
+# 146 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ } }
 # 147 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- { int j; for ( j = (1) ;j< max_cols; j++) { input_itemsets[j] = -j * penalty; } };
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 148 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    { int i; for ( i = (1) ;i< max_rows; i++) { input_itemsets[i*max_cols] = -i * penalty; } };
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ { int j; for ( j = (1) ;j< max_cols; j++) { input_itemsets[j] = -j * penalty; } };
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Num of threads: %d\n", omp_num_threads);
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Processing top-left matrix\n");
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    { lbl_0: int i; if (____must_checkpoint_runTest_i_4 != 0) { register_stack_var("runTest|i|4", &____must_checkpoint_runTest_i_4, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } for( i = (0) ; i < max_cols-2 ; i++){
+ printf("Num of threads: %d\n", omp_num_threads);
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ printf("Processing top-left matrix\n");
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-     call_lbl_15: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 15, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); }))); { call_lbl_22: ; bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(22, &____chimes_region_id0, 5, &i, &idx, &index, &max_cols, &penalty); int ____chimes_first_iter0 = 1; ;
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-#pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index) firstprivate(____chimes_first_iter0)
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    { int i; for( i = (0) ; i < max_cols-2 ; i++){
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 161 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  for( idx = 0 ; idx <= i ; idx++){ { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 5, &i, &idx, &index, &max_cols, &penalty); ____chimes_first_iter0 = 0; }
+    omp_set_num_threads(omp_num_threads);
 # 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   index = (idx + 1) * max_cols + (i + 1 - idx);
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+{ call_lbl_24: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(24, &____chimes_region_id0, 5, &i, &idx, &index, &max_cols, &penalty); int ____chimes_first_iter0 = 1;
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+#pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index) firstprivate(____chimes_first_iter0)
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 163 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-         input_itemsets[index]= ({ calling_npm("maximum", 0); maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty); });
+# 164 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+  for( idx = 0 ; idx <= i ; idx++){ { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 5, &i, &idx, &index, &max_cols, &penalty); ____chimes_first_iter0 = 0; } {
+# 165 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   index = (idx + 1) * max_cols + (i + 1 - idx);
 # 166 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- } }
+         input_itemsets[index]= ({ calling_npm("maximum", 0); maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty); });
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Processing bottom-right matrix\n");
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- { lbl_1: int i; if (____must_checkpoint_runTest_i_5 != 0) { register_stack_var("runTest|i|5", &____must_checkpoint_runTest_i_5, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(15): { goto call_lbl_15; } case(17): { goto call_lbl_17; } default: { chimes_error(); } } } for( i = (max_cols - 4) ; i >= 0 ; i--){
+ } }
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-     call_lbl_17: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 17, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); }))); { call_lbl_23: ; bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(23, &____chimes_region_id1, 5, &i, &idx, &index, &max_cols, &penalty); int ____chimes_first_iter1 = 1; ;
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-#pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index) firstprivate(____chimes_first_iter1)
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+     call_lbl_16: checkpoint_transformed(16, ____alias_loc_id_2);
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 175 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       for( idx = 0 ; idx <= i ; idx++){ { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 5, &i, &idx, &index, &max_cols, &penalty); ____chimes_first_iter1 = 0; }
+ printf("Processing bottom-right matrix\n");
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       index = ( max_cols - idx - 2 ) * max_cols + idx + max_cols - i - 2 ;
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    input_itemsets[index]= ({ calling_npm("maximum", 0); maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty); });
+ { lbl_0: int i; register_stack_var("runTest|i|5", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(16): { goto call_lbl_16; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } for( i = (max_cols - 4) ; i >= 0 ; i--){
+# 179 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 180 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    omp_set_num_threads(omp_num_threads);
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+{ call_lbl_25: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(25, &____chimes_region_id1, 5, &i, &idx, &index, &max_cols, &penalty); int ____chimes_first_iter1 = 1;
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+#pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index) firstprivate(____chimes_first_iter1)
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 182 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+       for( idx = 0 ; idx <= i ; idx++){ { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 5, &i, &idx, &index, &max_cols, &penalty); ____chimes_first_iter1 = 0; } {
+# 184 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+       index = ( max_cols - idx - 2 ) * max_cols + idx + max_cols - i - 2 ;
+# 185 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    input_itemsets[index]= ({ calling_npm("maximum", 0); maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty); });
+# 188 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+        } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+# 189 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 190 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  } }
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- free_wrapper(referrence, 322747555189994199UL);
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- free_wrapper(input_itemsets, 322747555189994194UL);
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- free_wrapper(output_itemsets, 322747555189994320UL);
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-rm_stack(false, 0UL, "runTest", &____must_manage_runTest, ____alias_loc_id_5, ____chimes_did_disable4); }
-int maximum_quick( int a,
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   int b,
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   int c){const int ____chimes_did_disable0 = new_stack((void *)(&maximum), "maximum", &____must_manage_maximum, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 191 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 192 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+     call_lbl_19: checkpoint_transformed(19, ____alias_loc_id_1);
+# 259 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 259 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ free_wrapper(referrence, 322747555189994215UL);
+# 260 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ free_wrapper(input_itemsets, 322747555189994210UL);
+# 261 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ free_wrapper(output_itemsets, 322747555189994338UL);
+# 262 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 263 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+rm_stack(false, 0UL, "runTest", (int *)0x0, 0, ____chimes_did_disable4, false); }
 # 18 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+int maximum_quick( int a,
 # 19 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- int k; ;
+   int b,
 # 20 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   int c){const int ____chimes_did_disable0 = new_stack((void *)(&maximum), "maximum", &____must_manage_maximum, 3, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
+# 21 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 22 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ int k; ;
+# 23 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  if (a <= b) {k = b; } else {k = a; } ;
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- if (k <=c) {rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0); return(c); } else {rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0); return(k); } ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0); }
+# 27 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 28 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ if (k <=c) { int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((c)); rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ; } else { int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((k)); rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0, false); return ____chimes_ret_var_1; ; } ;
+# 32 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+rm_stack(false, 0UL, "maximum", &____must_manage_maximum, ____alias_loc_id_3, ____chimes_did_disable0, false); }
 
 int maximum( int a,
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 19 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
    int b,
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 20 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
    int c) { return (____chimes_replaying ? maximum_resumable(a, b, c) : maximum_quick(a, b, c)); }
-
-double gettime_quick() {const int ____chimes_did_disable1 = new_stack((void *)(&gettime), "gettime", &____must_manage_gettime, 0, 0) ; struct timeval t;
- if (____must_checkpoint_gettime_t_0) { register_stack_vars(1, "gettime|t|0", &____must_checkpoint_gettime_t_0, "%struct.timeval = type { i64, i64 }", (void *)(&t), (size_t)16, 0, 1, 0); } ; ;
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    ;
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  gettimeofday(&t,__null);
 # 62 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_4, ____chimes_did_disable1); return t.tv_sec+t.tv_usec*1e-6;
+double gettime_quick() {const int ____chimes_did_disable1 = new_stack((void *)(&gettime), "gettime", &____must_manage_gettime, 0, 0) ; struct timeval t;
+# 62 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ if (____must_checkpoint_gettime_t_0) { register_stack_vars(1, "gettime|t|0", &____must_checkpoint_gettime_t_0, "%struct.timeval = type { i64, i64 }", (void *)(&t), (size_t)16, 0, 1, 0); } ; ;
 # 63 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-}
+    ;
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+  gettimeofday(&t,__null);
+# 65 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   double ____chimes_ret_var_2; ; ____chimes_ret_var_2 = (t.tv_sec+t.tv_usec*1e-6); rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_4, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
+# 66 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+rm_stack(false, 0UL, "gettime", &____must_manage_gettime, ____alias_loc_id_4, ____chimes_did_disable1, false); }
 
 double gettime() { return (____chimes_replaying ? gettime_resumable() : gettime_quick()); }
-
-int
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-main_quick( int argc, char** argv)
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(322747555189993882UL)) ; ; ;
 # 71 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-     call_lbl_1: (____chimes_does_checkpoint_runTest_npm ? ( ({ calling((void*)runTest, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(322747555189993882UL)); runTest_quick(argc, argv); }) ) : (({ calling_npm("runTest", ____alias_loc_id_0); runTest_npm(argc, argv); })));
+int
 # 72 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+main_quick( int argc, char** argv)
 # 73 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable2); return 0;
+{const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(322747555189993898UL)) ; ; ;
 # 74 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-}
+     call_lbl_1: ({ calling((void*)runTest, 1, ____alias_loc_id_0, 0UL, 2, (size_t)(0UL), (size_t)(322747555189993898UL)); runTest_quick(argc, argv); }) ;
+# 75 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 76 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable2, false); return ____chimes_ret_var_3; ;
+# 77 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable2, false); }
 
 int
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-main( int argc, char** argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-
-void usage_quick(int argc, char **argv)
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{const int ____chimes_did_disable3 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(322747555189994347UL)) ; ; ;
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "Usage: %s <max_rows/max_cols> <penalty> <num_threads>\n", argv[0]);
+# 72 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+main( int argc, char** argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "\t<dimension>      - x and y dimensions\n");
+void usage_quick(int argc, char **argv)
 # 80 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "\t<penalty>        - penalty(positive integer)\n");
+{const int ____chimes_did_disable3 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(322747555189994365UL)) ; ; ;
 # 81 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "\t<num_threads>    - no. of threads\n");
+ fprintf(stderr, "Usage: %s <max_rows/max_cols> <penalty> <num_threads>\n", argv[0]);
 # 82 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- exit(1);
+ fprintf(stderr, "\t<dimension>      - x and y dimensions\n");
 # 83 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable3); }
+ fprintf(stderr, "\t<penalty>        - penalty(positive integer)\n");
+# 84 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ fprintf(stderr, "\t<num_threads>    - no. of threads\n");
+# 85 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ exit(1);
+# 86 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable3, false); }
 
 void usage(int argc, char **argv) { (____chimes_replaying ? usage_resumable(argc, argv) : usage_quick(argc, argv)); }
-
+# 91 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 void
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 92 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 runTest_quick( int argc, char** argv)
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{const int ____chimes_did_disable4 = new_stack((void *)(&runTest), "runTest", &____must_manage_runTest, 2, 0, (size_t)(0UL), (size_t)(322747555189994325UL)) ; int omp_num_threads;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+{const int ____chimes_did_disable4 = new_stack((void *)(&runTest), "runTest", (int *)0, 2, 0, (size_t)(0UL), (size_t)(322747555189994343UL)) ; int omp_num_threads;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int *referrence;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int *output_itemsets;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int *input_itemsets;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int index;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int idx;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int penalty;
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 int max_cols;
- if (____must_checkpoint_runTest_omp_num_threads_0 || ____must_checkpoint_runTest_referrence_0 || ____must_checkpoint_runTest_output_itemsets_0 || ____must_checkpoint_runTest_input_itemsets_0 || ____must_checkpoint_runTest_index_0 || ____must_checkpoint_runTest_idx_0 || ____must_checkpoint_runTest_penalty_0 || ____must_checkpoint_runTest_max_cols_0) { register_stack_vars(8, "runTest|omp_num_threads|0", &____must_checkpoint_runTest_omp_num_threads_0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "runTest|referrence|0", &____must_checkpoint_runTest_referrence_0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", &____must_checkpoint_runTest_output_itemsets_0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", &____must_checkpoint_runTest_input_itemsets_0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|index|0", &____must_checkpoint_runTest_index_0, "i32", (void *)(&index), (size_t)4, 0, 0, 0, "runTest|idx|0", &____must_checkpoint_runTest_idx_0, "i32", (void *)(&idx), (size_t)4, 0, 0, 0, "runTest|penalty|0", &____must_checkpoint_runTest_penalty_0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", &____must_checkpoint_runTest_max_cols_0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0); } ; ;
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ register_stack_vars(8, "runTest|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "runTest|referrence|0", (int *)0x0, "i32*", (void *)(&referrence), (size_t)8, 1, 0, 0, "runTest|output_itemsets|0", (int *)0x0, "i32*", (void *)(&output_itemsets), (size_t)8, 1, 0, 0, "runTest|input_itemsets|0", (int *)0x0, "i32*", (void *)(&input_itemsets), (size_t)8, 1, 0, 0, "runTest|index|0", (int *)0x0, "i32", (void *)(&index), (size_t)4, 0, 0, 0, "runTest|idx|0", (int *)0x0, "i32", (void *)(&idx), (size_t)4, 0, 0, 0, "runTest|penalty|0", (int *)0x0, "i32", (void *)(&penalty), (size_t)4, 0, 0, 0, "runTest|max_cols|0", (int *)0x0, "i32", (void *)(&max_cols), (size_t)4, 0, 0, 0); ; ;
+# 94 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     int max_rows; ;
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 95 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
        ;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  int *matrix_cuda; int *matrix_cuda_out; int *referrence_cuda; ;
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 97 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  int size; ;
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 98 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
   ;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 99 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 100 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- if (argc == 4)
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- {
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  max_rows = atoi(argv[1]);
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  max_cols = atoi(argv[1]);
+ if (argc == 4)
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  penalty = atoi(argv[2]);
+ {
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  omp_num_threads = atoi(argv[3]);
+  max_rows = atoi(argv[1]);
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- }
+  max_cols = atoi(argv[1]);
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    else{
+  penalty = atoi(argv[2]);
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+  omp_num_threads = atoi(argv[3]);
+# 109 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ }
+# 110 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    else{
+# 111 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
   ({ calling_npm("usage", 0); usage_npm(argc, argv); });
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    }
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- max_rows = max_rows + 1;
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- max_cols = max_cols + 1;
+    }
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- referrence = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994199UL, 0, 0 );
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    input_itemsets = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994194UL, 0, 0 );
+ max_rows = max_rows + 1;
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- output_itemsets = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994320UL, 0, 0 );
+ max_cols = max_cols + 1;
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ referrence = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994215UL, 0, 0 );
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    input_itemsets = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994210UL, 0, 0 );
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- if (!input_itemsets) {fprintf(stderr, "error: can not allocate memory"); };
+ output_itemsets = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994338UL, 0, 0 );
+# 119 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    srand ( 7 );
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ if (!input_itemsets) {fprintf(stderr, "error: can not allocate memory"); };
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 124 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    srand ( 7 );
+# 125 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 126 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     { int i; for ( i = (0) ; i < max_cols; i++){
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 127 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
   { int j; for ( j = (0) ; j < max_rows; j++){
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   input_itemsets[i*max_cols+j] = 0;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  } }
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- } }
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   input_itemsets[i*max_cols+j] = 0;
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Start Needleman-Wunsch\n");
+  } }
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ } }
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 132 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ printf("Start Needleman-Wunsch\n");
+# 133 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 134 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  { int i; for( i = (1) ; i< max_rows ; i++){
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 135 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
        input_itemsets[i*max_cols] = rand() % 10 + 1;
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 136 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  } }
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 137 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     { int j; for( j = (1) ; j< max_cols ; j++){
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       input_itemsets[j] = rand() % 10 + 1;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- } }
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+       input_itemsets[j] = rand() % 10 + 1;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ } }
+# 140 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 141 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 142 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  { int i; for ( i = (1) ; i < max_cols; i++){
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 143 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
   { int j; for ( j = (1) ; j < max_rows; j++){
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 144 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
   referrence[i*max_cols+j] = blosum62[input_itemsets[i*max_cols]][input_itemsets[j]];
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 145 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
   } }
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 146 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  } }
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 147 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 148 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     { int i; for ( i = (1) ;i< max_rows; i++) { input_itemsets[i*max_cols] = -i * penalty; } };
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 150 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  { int j; for ( j = (1) ;j< max_cols; j++) { input_itemsets[j] = -j * penalty; } };
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Num of threads: %d\n", omp_num_threads);
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Processing top-left matrix\n");
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    { lbl_0: int i; if (____must_checkpoint_runTest_i_4 != 0) { register_stack_var("runTest|i|4", &____must_checkpoint_runTest_i_4, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } for( i = (0) ; i < max_cols-2 ; i++){
+ printf("Num of threads: %d\n", omp_num_threads);
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ printf("Processing top-left matrix\n");
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-     call_lbl_15: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 15, ____alias_loc_id_2, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_2); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); }))); { call_lbl_22: ; bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(22, &____chimes_region_id0, 5, &i, &idx, &index, &max_cols, &penalty); int ____chimes_first_iter0 = 1; ;
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    { int i; for( i = (0) ; i < max_cols-2 ; i++){
+# 160 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 161 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    omp_set_num_threads(omp_num_threads);
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+{ call_lbl_24: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(24, &____chimes_region_id0, 5, &i, &idx, &index, &max_cols, &penalty); int ____chimes_first_iter0 = 1;
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 #pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index) firstprivate(____chimes_first_iter0)
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  for( idx = 0 ; idx <= i ; idx++){ { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 5, &i, &idx, &index, &max_cols, &penalty); ____chimes_first_iter0 = 0; }
 # 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   index = (idx + 1) * max_cols + (i + 1 - idx);
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 163 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 164 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+  for( idx = 0 ; idx <= i ; idx++){ { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 5, &i, &idx, &index, &max_cols, &penalty); ____chimes_first_iter0 = 0; } {
+# 165 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   index = (idx + 1) * max_cols + (i + 1 - idx);
+# 166 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
          input_itemsets[index]= ({ calling_npm("maximum", 0); maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty); });
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- } }
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Processing bottom-right matrix\n");
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- { lbl_1: int i; if (____must_checkpoint_runTest_i_5 != 0) { register_stack_var("runTest|i|5", &____must_checkpoint_runTest_i_5, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } for( i = (max_cols - 4) ; i >= 0 ; i--){
+ } }
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-     call_lbl_17: (____chimes_does_checkpoint_omp_set_num_threads_npm ? ( ({ calling((void*)omp_set_num_threads, 17, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(omp_num_threads); }) ) : (({ calling_npm("omp_set_num_threads", ____alias_loc_id_1); (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads); }))); { call_lbl_23: ; bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(23, &____chimes_region_id1, 5, &i, &idx, &index, &max_cols, &penalty); int ____chimes_first_iter1 = 1; ;
+     call_lbl_16: checkpoint_transformed(16, ____alias_loc_id_2);
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 175 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 176 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ printf("Processing bottom-right matrix\n");
+# 177 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 178 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ { lbl_0: int i; register_stack_var("runTest|i|5", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); for( i = (max_cols - 4) ; i >= 0 ; i--){
+# 179 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 180 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+    omp_set_num_threads(omp_num_threads);
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+{ call_lbl_25: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(25, &____chimes_region_id1, 5, &i, &idx, &index, &max_cols, &penalty); int ____chimes_first_iter1 = 1;
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 #pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index) firstprivate(____chimes_first_iter1)
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       for( idx = 0 ; idx <= i ; idx++){ { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 5, &i, &idx, &index, &max_cols, &penalty); ____chimes_first_iter1 = 0; }
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 182 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 183 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+       for( idx = 0 ; idx <= i ; idx++){ { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 5, &i, &idx, &index, &max_cols, &penalty); ____chimes_first_iter1 = 0; } {
+# 184 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
        index = ( max_cols - idx - 2 ) * max_cols + idx + max_cols - i - 2 ;
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 185 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
     input_itemsets[index]= ({ calling_npm("maximum", 0); maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty); });
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 188 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+        } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+# 189 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 190 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
  } }
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- free_wrapper(referrence, 322747555189994199UL);
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- free_wrapper(input_itemsets, 322747555189994194UL);
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- free_wrapper(output_itemsets, 322747555189994320UL);
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-rm_stack(false, 0UL, "runTest", &____must_manage_runTest, ____alias_loc_id_5, ____chimes_did_disable4); }
+# 191 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 192 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+     call_lbl_19: checkpoint_transformed(19, ____alias_loc_id_1);
+# 259 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 259 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ free_wrapper(referrence, 322747555189994215UL);
+# 260 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ free_wrapper(input_itemsets, 322747555189994210UL);
+# 261 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ free_wrapper(output_itemsets, 322747555189994338UL);
+# 262 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 263 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+rm_stack(false, 0UL, "runTest", (int *)0x0, 0, ____chimes_did_disable4, false); }
 
 void
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-runTest( int argc, char** argv) { (____chimes_replaying ? runTest_resumable(argc, argv) : runTest_quick(argc, argv)); }
-
-
-
-int maximum_npm( int a,
-# 16 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   int b,
-# 17 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   int c){
-# 18 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 19 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- int k;
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- if (a <= b) {k = b; } else {k = a; } ;
-# 24 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 25 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- if (k <=c) {return(c); } else {return(k); } ;
-# 29 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-}
-
-double gettime_npm() {
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  struct timeval t;
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  gettimeofday(&t,__null);
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  return t.tv_sec+t.tv_usec*1e-6;
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-}
-
-void usage_npm(int argc, char **argv)
-# 77 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "Usage: %s <max_rows/max_cols> <penalty> <num_threads>\n", argv[0]);
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "\t<dimension>      - x and y dimensions\n");
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "\t<penalty>        - penalty(positive integer)\n");
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- fprintf(stderr, "\t<num_threads>    - no. of threads\n");
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- exit(1);
-# 83 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-}
-
-void
-# 89 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-runTest_npm( int argc, char** argv)
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-{
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    int max_rows, max_cols, penalty,idx, index;
 # 92 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    int *input_itemsets, *output_itemsets, *referrence;
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- int *matrix_cuda, *matrix_cuda_out, *referrence_cuda;
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- int size;
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- int omp_num_threads;
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- if (argc == 4)
-# 101 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- {
-# 102 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  max_rows = atoi(argv[1]);
-# 103 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  max_cols = atoi(argv[1]);
-# 104 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  penalty = atoi(argv[2]);
-# 105 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  omp_num_threads = atoi(argv[3]);
-# 106 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- }
-# 107 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    else{
-# 108 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  usage_npm(argc, argv);
-# 109 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    }
-# 110 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- max_rows = max_rows + 1;
-# 112 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- max_cols = max_cols + 1;
-# 113 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- referrence = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994199UL, 0, 0 );
-# 114 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    input_itemsets = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994194UL, 0, 0 );
-# 115 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- output_itemsets = (int *)malloc_wrapper( max_rows * max_cols * sizeof(int), 322747555189994320UL, 0, 0 );
-# 116 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 117 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 118 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- if (!input_itemsets) {fprintf(stderr, "error: can not allocate memory"); };
-# 120 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 121 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    srand ( 7 );
-# 122 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 123 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    for (int i = 0 ; i < max_cols; i++){
-# 124 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  for (int j = 0 ; j < max_rows; j++){
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   input_itemsets[i*max_cols+j] = 0;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  }
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- }
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Start Needleman-Wunsch\n");
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- for( int i=1; i< max_rows ; i++){
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       input_itemsets[i*max_cols] = rand() % 10 + 1;
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- }
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    for( int j=1; j< max_cols ; j++){
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       input_itemsets[j] = rand() % 10 + 1;
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- }
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- for (int i = 1 ; i < max_cols; i++){
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  for (int j = 1 ; j < max_rows; j++){
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  referrence[i*max_cols+j] = blosum62[input_itemsets[i*max_cols]][input_itemsets[j]];
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  }
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- }
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    for (int i = 1;i< max_rows; i++) { input_itemsets[i*max_cols] = -i * penalty; };
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- for (int j = 1;j< max_cols; j++) { input_itemsets[j] = -j * penalty; };
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Num of threads: %d\n", omp_num_threads);
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Processing top-left matrix\n");
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    for( int i = 0 ; i < max_cols-2 ; i++){
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads);
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-#pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index)
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 159 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 160 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  for( idx = 0 ; idx <= i ; idx++){
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-   index = (idx + 1) * max_cols + (i + 1 - idx);
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-         input_itemsets[index]= maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty);
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-  }
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- }
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- printf("Processing bottom-right matrix\n");
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- for( int i = max_cols - 4 ; i >= 0 ; i--){
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    (*____chimes_extern_func_omp_set_num_threads)(omp_num_threads);
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-#pragma omp parallel for shared(input_itemsets) firstprivate(i,max_cols,penalty) private(idx, index)
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 175 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       for( idx = 0 ; idx <= i ; idx++){
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       index = ( max_cols - idx - 2 ) * max_cols + idx + max_cols - i - 2 ;
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-    input_itemsets[index]= maximum_npm(input_itemsets[index-1-max_cols]+ referrence[index], input_itemsets[index-1] - penalty, input_itemsets[index-max_cols] - penalty);
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-       }
-# 182 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- }
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- free_wrapper(referrence, 322747555189994199UL);
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- free_wrapper(input_itemsets, 322747555189994194UL);
-# 248 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
- free_wrapper(output_itemsets, 322747555189994320UL);
-# 249 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
-# 250 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+runTest( int argc, char** argv) { (____chimes_replaying ? runTest_resumable(argc, argv) : runTest_quick(argc, argv)); }
+# 18 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+int maximum_npm( int a,
+# 19 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   int b,
+# 20 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   int c){
+# 21 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 22 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ int k;
+# 23 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ if (a <= b) {k = b; } else {k = a; } ;
+# 27 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+# 28 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ if (k <=c) { int ____chimes_ret_var_0; ____chimes_ret_var_0 = ((c)); return ____chimes_ret_var_0; ; } else { int ____chimes_ret_var_1; ____chimes_ret_var_1 = ((k)); return ____chimes_ret_var_1; ; } ;
+# 32 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+}
+# 62 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+double gettime_npm() {
+# 63 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+  struct timeval t;
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+  gettimeofday(&t,__null);
+# 65 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+   double ____chimes_ret_var_2; ____chimes_ret_var_2 = (t.tv_sec+t.tv_usec*1e-6); return ____chimes_ret_var_2; ;
+# 66 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+}
+# 79 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+void usage_npm(int argc, char **argv)
+# 80 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+{
+# 81 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ fprintf(stderr, "Usage: %s <max_rows/max_cols> <penalty> <num_threads>\n", argv[0]);
+# 82 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ fprintf(stderr, "\t<dimension>      - x and y dimensions\n");
+# 83 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ fprintf(stderr, "\t<penalty>        - penalty(positive integer)\n");
+# 84 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ fprintf(stderr, "\t<num_threads>    - no. of threads\n");
+# 85 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
+ exit(1);
+# 86 "/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp"
 }
 
 
@@ -4699,55 +4566,38 @@ runTest_npm( int argc, char** argv)
 
 
 static int module_init() {
-    init_module(322747555189993815UL, 9, 5, 11, 6, 4, 1, 5, 4, 2, 1,
-                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (322747555189993815UL + 54UL), (322747555189993815UL + 55UL), (322747555189993815UL + 56UL),
-                           &____alias_loc_id_1, (unsigned)23, (unsigned)0, (unsigned)0, (322747555189993815UL + 68UL), (322747555189993815UL + 69UL), (322747555189993815UL + 70UL), (322747555189993815UL + 71UL), (322747555189993815UL + 72UL), (322747555189993815UL + 73UL), (322747555189993815UL + 74UL), (322747555189993815UL + 75UL), (322747555189993815UL + 76UL), (322747555189993815UL + 77UL), (322747555189993815UL + 82UL), (322747555189993815UL + 83UL), (322747555189993815UL + 84UL), (322747555189993815UL + 85UL), (322747555189993815UL + 86UL), (322747555189993815UL + 87UL), (322747555189993815UL + 88UL), (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 91UL), (322747555189993815UL + 92UL), (322747555189993815UL + 379UL), (322747555189993815UL + 384UL),
-                           &____alias_loc_id_2, (unsigned)22, (unsigned)0, (unsigned)0, (322747555189993815UL + 68UL), (322747555189993815UL + 69UL), (322747555189993815UL + 70UL), (322747555189993815UL + 71UL), (322747555189993815UL + 72UL), (322747555189993815UL + 73UL), (322747555189993815UL + 74UL), (322747555189993815UL + 75UL), (322747555189993815UL + 76UL), (322747555189993815UL + 77UL), (322747555189993815UL + 82UL), (322747555189993815UL + 83UL), (322747555189993815UL + 84UL), (322747555189993815UL + 85UL), (322747555189993815UL + 86UL), (322747555189993815UL + 87UL), (322747555189993815UL + 88UL), (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 91UL), (322747555189993815UL + 379UL), (322747555189993815UL + 384UL),
-                           &____alias_loc_id_3, (unsigned)5, (unsigned)0, (unsigned)0, (322747555189993815UL + 1UL), (322747555189993815UL + 2UL), (322747555189993815UL + 3UL), (322747555189993815UL + 4UL), (322747555189993815UL + 5UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)0, (322747555189993815UL + 40UL),
-                           &____alias_loc_id_5, (unsigned)23, (unsigned)0, (unsigned)0, (322747555189993815UL + 68UL), (322747555189993815UL + 69UL), (322747555189993815UL + 70UL), (322747555189993815UL + 71UL), (322747555189993815UL + 72UL), (322747555189993815UL + 73UL), (322747555189993815UL + 74UL), (322747555189993815UL + 75UL), (322747555189993815UL + 76UL), (322747555189993815UL + 77UL), (322747555189993815UL + 82UL), (322747555189993815UL + 83UL), (322747555189993815UL + 84UL), (322747555189993815UL + 85UL), (322747555189993815UL + 86UL), (322747555189993815UL + 87UL), (322747555189993815UL + 88UL), (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 91UL), (322747555189993815UL + 92UL), (322747555189993815UL + 379UL), (322747555189993815UL + 384UL),
+    init_module(322747555189993815UL, 9, 5, 1, 6, 3, 0, 3, 3, 0, 1,
+                           &____alias_loc_id_0, (unsigned)3, (unsigned)0, (unsigned)0, (322747555189993815UL + 66UL), (322747555189993815UL + 67UL), (322747555189993815UL + 68UL),
+                           &____alias_loc_id_1, (unsigned)4, (unsigned)0, (unsigned)0, (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 108UL), (322747555189993815UL + 395UL),
+                           &____alias_loc_id_2, (unsigned)22, (unsigned)0, (unsigned)0, (322747555189993815UL + 84UL), (322747555189993815UL + 85UL), (322747555189993815UL + 86UL), (322747555189993815UL + 87UL), (322747555189993815UL + 88UL), (322747555189993815UL + 89UL), (322747555189993815UL + 90UL), (322747555189993815UL + 91UL), (322747555189993815UL + 92UL), (322747555189993815UL + 93UL), (322747555189993815UL + 98UL), (322747555189993815UL + 99UL), (322747555189993815UL + 100UL), (322747555189993815UL + 101UL), (322747555189993815UL + 102UL), (322747555189993815UL + 103UL), (322747555189993815UL + 104UL), (322747555189993815UL + 105UL), (322747555189993815UL + 106UL), (322747555189993815UL + 107UL), (322747555189993815UL + 395UL), (322747555189993815UL + 400UL),
+                           &____alias_loc_id_3, (unsigned)7, (unsigned)0, (unsigned)0, (322747555189993815UL + 1UL), (322747555189993815UL + 2UL), (322747555189993815UL + 3UL), (322747555189993815UL + 4UL), (322747555189993815UL + 5UL), (322747555189993815UL + 6UL), (322747555189993815UL + 7UL),
+                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (322747555189993815UL + 48UL), (322747555189993815UL + 49UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (322747555189993815UL + 69UL),
                             "maximum", (void *)(&maximum_npm), (void *)__null, 0, 3, 0UL, 0UL, 0UL, 0UL, 0,
-                            "gettime", (void *)(&gettime_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (322747555189993815UL + 40UL), (322747555189993815UL + 553UL), 0UL,
-                            "usage", (void *)(&usage_npm), (void *)__null, 0, 2, 0UL, (322747555189993815UL + 532UL), 0UL, 5, "fprintf", 3, (322747555189993815UL + 517UL), (322747555189993815UL + 544UL), (322747555189993815UL + 520UL), 0UL, "fprintf", 2, (322747555189993815UL + 517UL), (322747555189993815UL + 545UL), 0UL, "fprintf", 2, (322747555189993815UL + 517UL), (322747555189993815UL + 546UL), 0UL, "fprintf", 2, (322747555189993815UL + 517UL), (322747555189993815UL + 547UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "runTest", (void *)(&runTest_npm), (void *)__null, 2, &____alias_loc_id_1, &____alias_loc_id_2, 2, 0UL, (322747555189993815UL + 510UL), 0UL, 23, "atoi", 1, (322747555189993815UL + 115UL), 0UL, "atoi", 1, (322747555189993815UL + 115UL), 0UL, "atoi", 1, (322747555189993815UL + 115UL), 0UL, "atoi", 1, (322747555189993815UL + 115UL), 0UL, "usage", 2, 0UL, (322747555189993815UL + 510UL), 0UL, "malloc", 1, 0UL, (322747555189993815UL + 384UL), "malloc", 1, 0UL, (322747555189993815UL + 379UL), "malloc", 1, 0UL, (322747555189993815UL + 505UL), "fprintf", 2, (322747555189993815UL + 517UL), (322747555189993815UL + 548UL), 0UL, "srand", 1, 0UL, 0UL, "printf", 1, (322747555189993815UL + 549UL), 0UL, "rand", 0, 0UL, "rand", 0, 0UL, "printf", 2, (322747555189993815UL + 550UL), 0UL, 0UL, "printf", 1, (322747555189993815UL + 551UL), 0UL, "omp_set_num_threads", 1, 0UL, 0UL, "maximum", 3, 0UL, 0UL, 0UL, 0UL, "printf", 1, (322747555189993815UL + 552UL), 0UL, "omp_set_num_threads", 1, 0UL, 0UL, "maximum", 3, 0UL, 0UL, 0UL, 0UL, "free", 1, (322747555189993815UL + 384UL), 0UL, "free", 1, (322747555189993815UL + 379UL), 0UL, "free", 1, (322747555189993815UL + 505UL), 0UL,
-                               "omp_set_num_threads", (void **)&(____chimes_extern_func_omp_set_num_threads),
+                            "gettime", (void *)(&gettime_npm), (void *)__null, 0, 0, 0UL, 1, "gettimeofday", 2, (322747555189993815UL + 48UL), (322747555189993815UL + 571UL), 0UL,
+                            "usage", (void *)(&usage_npm), (void *)__null, 0, 2, 0UL, (322747555189993815UL + 550UL), 0UL, 5, "fprintf", 3, (322747555189993815UL + 535UL), (322747555189993815UL + 562UL), (322747555189993815UL + 538UL), 0UL, "fprintf", 2, (322747555189993815UL + 535UL), (322747555189993815UL + 563UL), 0UL, "fprintf", 2, (322747555189993815UL + 535UL), (322747555189993815UL + 564UL), 0UL, "fprintf", 2, (322747555189993815UL + 535UL), (322747555189993815UL + 565UL), 0UL, "exit", 1, 0UL, 0UL,
                            "maximum", &(____chimes_does_checkpoint_maximum_npm),
                            "gettime", &(____chimes_does_checkpoint_gettime_npm),
                            "usage", &(____chimes_does_checkpoint_usage_npm),
-                           "runTest", &(____chimes_does_checkpoint_runTest_npm),
-                           "omp_set_num_threads", &(____chimes_does_checkpoint_omp_set_num_threads_npm),
-                             (322747555189993815UL + 543UL), (322747555189993815UL + 517UL),
-                             (322747555189993815UL + 56UL), (322747555189993815UL + 67UL),
-                             (322747555189993815UL + 77UL), (322747555189993815UL + 384UL),
-                             (322747555189993815UL + 76UL), (322747555189993815UL + 505UL),
-                             (322747555189993815UL + 75UL), (322747555189993815UL + 379UL),
-                             (322747555189993815UL + 532UL), (322747555189993815UL + 520UL),
-                             (322747555189993815UL + 510UL), (322747555189993815UL + 115UL),
-                             (322747555189993815UL + 69UL), (322747555189993815UL + 510UL),
-                             (322747555189993815UL + 512UL), (322747555189993815UL + 532UL),
-                     "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
+                             (322747555189993815UL + 561UL), (322747555189993815UL + 535UL),
+                             (322747555189993815UL + 550UL), (322747555189993815UL + 538UL),
+                             (322747555189993815UL + 91UL), (322747555189993815UL + 395UL),
+                             (322747555189993815UL + 530UL), (322747555189993815UL + 550UL),
+                             (322747555189993815UL + 68UL), (322747555189993815UL + 83UL),
+                             (322747555189993815UL + 93UL), (322747555189993815UL + 400UL),
+                             (322747555189993815UL + 92UL), (322747555189993815UL + 523UL),
+                             (322747555189993815UL + 528UL), (322747555189993815UL + 131UL),
+                             (322747555189993815UL + 85UL), (322747555189993815UL + 528UL),
+                     "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
                              "gettime", "_Z7gettimev", 0,
-                             "runTest", "_Z7runTestiPPc", 5, "usage", "omp_set_num_threads", "maximum", "omp_set_num_threads", "maximum",
+                             "runTest", "_Z7runTestiPPc", 5, "usage", "maximum", "checkpoint", "maximum", "checkpoint",
                              "main", "main", 1, "runTest",
                              "maximum", "_Z7maximumiii", 0,
                              "usage", "_Z5usageiPPc", 0,
                         "gettime|t|0", 1, "gettime",
-                        "runTest|max_cols|0", 1, "omp_set_num_threads",
-                        "runTest|penalty|0", 1, "omp_set_num_threads",
-                        "runTest|idx|0", 1, "omp_set_num_threads",
-                        "runTest|index|0", 1, "omp_set_num_threads",
-                        "runTest|input_itemsets|0", 1, "omp_set_num_threads",
-                        "runTest|output_itemsets|0", 1, "omp_set_num_threads",
-                        "runTest|referrence|0", 1, "omp_set_num_threads",
-                        "runTest|omp_num_threads|0", 1, "omp_set_num_threads",
-                        "runTest|i|4", 1, "omp_set_num_threads",
-                        "runTest|i|5", 1, "omp_set_num_threads",
-        "runTest", 0UL, (int)2, 0UL, 322747555189993882UL,
-        "usage", 0UL, (int)2, 0UL, 322747555189994325UL,
+        "usage", 0UL, (int)2, 0UL, 322747555189994343UL,
         "maximum", 0UL, (int)3, 0UL, 0UL, 0UL,
-        "maximum", 0UL, (int)3, 0UL, 0UL, 0UL,
-        "omp_set_num_threads", 0UL, (int)1, 0UL,
-        "omp_set_num_threads", 0UL, (int)1, 0UL);
+        "maximum", 0UL, (int)3, 0UL, 0UL, 0UL);
     register_global_var("global|blosum62", "[24 x [24 x i32]]", (void *)(&blosum62), 2304.0, 0, 0, 0UL, 0);
     return 0;
 }

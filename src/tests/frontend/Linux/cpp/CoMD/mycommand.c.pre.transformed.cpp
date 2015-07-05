@@ -60,7 +60,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -76,7 +76,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -111,7 +112,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2865,7 +2866,9 @@ Command parseCommandLine_quick(int argc, char** argv); Command parseCommandLine(
 Command parseCommandLine_resumable(int argc, char** argv)
 # 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&parseCommandLine), "parseCommandLine", &____must_manage_parseCommandLine, 3, 2, (size_t)(12022527874929792621UL), (size_t)(0UL), (size_t)(12022527874929792623UL), "parseCommandLine|argc|0", &____must_checkpoint_parseCommandLine_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parseCommandLine|argv|0", &____must_checkpoint_parseCommandLine_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int help;
+# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 Command cmd;
+# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
  if (____must_checkpoint_parseCommandLine_help_0 || ____must_checkpoint_parseCommandLine_cmd_0) { register_stack_vars(2, "parseCommandLine|help|0", &____must_checkpoint_parseCommandLine_help_0, "i32", (void *)(&help), (size_t)4, 0, 0, 0, "parseCommandLine|cmd|0", &____must_checkpoint_parseCommandLine_cmd_0, "%struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double }", (void *)(&cmd), (size_t)3144, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(11): { goto call_lbl_11; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(18): { goto call_lbl_18; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(21): { goto call_lbl_21; } case(22): { goto call_lbl_22; } case(23): { goto call_lbl_23; } case(24): { goto call_lbl_24; } case(30): { goto call_lbl_30; } case(31): { goto call_lbl_31; } case(33): { goto call_lbl_33; } default: { chimes_error(); } } } ; ;
 # 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
      ;
@@ -2978,9 +2981,9 @@ Command cmd;
     call_lbl_33: ({ calling((void*)freeArgs, 33, ____alias_loc_id_0, 0UL, 0); (freeArgs)(); }) ;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-     Command ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (cmd); rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+     Command ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (cmd); rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0, false); }
 # 251 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 # 252 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 void printCmdYaml_npm(FILE* file, Command* cmd);static int (*____chimes_extern_func_printRank)(void) = printRank;
@@ -2989,7 +2992,7 @@ void printCmdYaml_resumable(FILE* file, Command* cmd)
 # 253 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(12022527874929792715UL), (size_t)(12022527874929792716UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 254 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-   alias_group_changed(____alias_loc_id_19); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_19, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return; };
+   alias_group_changed(____alias_loc_id_19); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_19, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1, false); return; };
 # 256 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    fprintf(file,
 # 257 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
@@ -3057,11 +3060,14 @@ void printCmdYaml_resumable(FILE* file, Command* cmd)
 # 288 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    fflush(file);
 # 289 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1, false); }
+# 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 Command parseCommandLine_quick(int argc, char** argv)
 # 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&parseCommandLine), "parseCommandLine", &____must_manage_parseCommandLine, 3, 2, (size_t)(12022527874929792621UL), (size_t)(0UL), (size_t)(12022527874929792623UL), "parseCommandLine|argc|0", &____must_checkpoint_parseCommandLine_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "parseCommandLine|argv|0", &____must_checkpoint_parseCommandLine_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int help;
+# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 Command cmd;
+# 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
  if (____must_checkpoint_parseCommandLine_help_0 || ____must_checkpoint_parseCommandLine_cmd_0) { register_stack_vars(2, "parseCommandLine|help|0", &____must_checkpoint_parseCommandLine_help_0, "i32", (void *)(&help), (size_t)4, 0, 0, 0, "parseCommandLine|cmd|0", &____must_checkpoint_parseCommandLine_cmd_0, "%struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double }", (void *)(&cmd), (size_t)3144, 0, 1, 0); } ; ;
 # 188 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
      ;
@@ -3174,17 +3180,17 @@ Command cmd;
     call_lbl_33: ({ calling((void*)freeArgs, 33, ____alias_loc_id_0, 0UL, 0); (freeArgs)(); }) ;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 # 249 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-     Command ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (cmd); rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+     Command ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (cmd); rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "parseCommandLine", &____must_manage_parseCommandLine, 0, ____chimes_did_disable0, false); }
 
 Command parseCommandLine(int argc, char** argv) { return (____chimes_replaying ? parseCommandLine_resumable(argc, argv) : parseCommandLine_quick(argc, argv)); }
-
+# 252 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 void printCmdYaml_quick(FILE* file, Command* cmd)
 # 253 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&printCmdYaml), "printCmdYaml", &____must_manage_printCmdYaml, 2, 2, (size_t)(12022527874929792715UL), (size_t)(12022527874929792716UL), "printCmdYaml|file|0", &____must_checkpoint_printCmdYaml_file_0, "%struct._IO_FILE*", (void *)(&file), (size_t)8, 1, 0, 0, "printCmdYaml|cmd|0", &____must_checkpoint_printCmdYaml_cmd_0, "%struct.CommandSt*", (void *)(&cmd), (size_t)8, 1, 0, 0) ; ; ;
 # 254 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-   alias_group_changed(____alias_loc_id_19); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_19, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); return; };
+   alias_group_changed(____alias_loc_id_19); call_lbl_2: if (! ({ calling((void*)printRank, 2, ____alias_loc_id_19, 0UL, 0); (printRank)(); }) ) {rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1, false); return; };
 # 256 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    fprintf(file,
 # 257 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
@@ -3252,12 +3258,10 @@ void printCmdYaml_quick(FILE* file, Command* cmd)
 # 288 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
    fflush(file);
 # 289 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
-rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "printCmdYaml", &____must_manage_printCmdYaml, 0, ____chimes_did_disable1, false); }
 
 void printCmdYaml(FILE* file, Command* cmd) { (____chimes_replaying ? printCmdYaml_resumable(file, cmd) : printCmdYaml_quick(file, cmd)); }
-
-
-
+# 186 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 Command parseCommandLine_npm(int argc, char** argv)
 # 187 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {
@@ -3375,7 +3379,7 @@ Command parseCommandLine_npm(int argc, char** argv)
     Command ____chimes_ret_var_0; ____chimes_ret_var_0 = (cmd); return ____chimes_ret_var_0; ;
 # 250 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 }
-
+# 252 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 void printCmdYaml_npm(FILE* file, Command* cmd)
 # 253 "/home/jmg3/num-debug/src/examples/cpp/CoMD/src-mpi/mycommand.c"
 {
@@ -3493,9 +3497,9 @@ static int module_init() {
                              (12022527874929792475UL + 177UL), (12022527874929792475UL + 241UL),
                              (12022527874929792475UL + 176UL), (12022527874929792475UL + 240UL),
                              (12022527874929792475UL + 2UL), (12022527874929792475UL + 148UL),
-                     "CommandSt", 16, "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potDir), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potName), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potType), "int", (int)__builtin_offsetof (struct CommandSt, doeam), "int", (int)__builtin_offsetof (struct CommandSt, nx), "int", (int)__builtin_offsetof (struct CommandSt, ny), "int", (int)__builtin_offsetof (struct CommandSt, nz), "int", (int)__builtin_offsetof (struct CommandSt, xproc), "int", (int)__builtin_offsetof (struct CommandSt, yproc), "int", (int)__builtin_offsetof (struct CommandSt, zproc), "int", (int)__builtin_offsetof (struct CommandSt, nSteps), "int", (int)__builtin_offsetof (struct CommandSt, printRate), "double", (int)__builtin_offsetof (struct CommandSt, dt), "double", (int)__builtin_offsetof (struct CommandSt, lat), "double", (int)__builtin_offsetof (struct CommandSt, temperature), "double", (int)__builtin_offsetof (struct CommandSt, initialDelta),
-                     "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
-                     "_IO_marker", 0,
+                     "CommandSt", 25152UL, 16, "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potDir), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potName), "[ 1024 x char ]", (int)__builtin_offsetof (struct CommandSt, potType), "int", (int)__builtin_offsetof (struct CommandSt, doeam), "int", (int)__builtin_offsetof (struct CommandSt, nx), "int", (int)__builtin_offsetof (struct CommandSt, ny), "int", (int)__builtin_offsetof (struct CommandSt, nz), "int", (int)__builtin_offsetof (struct CommandSt, xproc), "int", (int)__builtin_offsetof (struct CommandSt, yproc), "int", (int)__builtin_offsetof (struct CommandSt, zproc), "int", (int)__builtin_offsetof (struct CommandSt, nSteps), "int", (int)__builtin_offsetof (struct CommandSt, printRate), "double", (int)__builtin_offsetof (struct CommandSt, dt), "double", (int)__builtin_offsetof (struct CommandSt, lat), "double", (int)__builtin_offsetof (struct CommandSt, temperature), "double", (int)__builtin_offsetof (struct CommandSt, initialDelta),
+                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
+                     "_IO_marker", 0UL, 0,
                              "parseCommandLine", "_Z16parseCommandLineiPPc", 21, "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "addArg", "processArgs", "printArgs", "freeArgs", "freeArgs",
                              "printCmdYaml", "_Z12printCmdYamlP8_IO_FILEP9CommandSt", 1, "printRank",
                         "parseCommandLine|argc|0", 4, "processArgs", "printArgs", "freeArgs", "addArg",

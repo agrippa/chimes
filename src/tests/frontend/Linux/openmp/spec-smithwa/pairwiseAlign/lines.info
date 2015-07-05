@@ -1,5 +1,5 @@
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 39 16 : { 2, 3, 4, 5, 7 } {  } call:omp_get_max_threads {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 5 : { 410, 435, 1958, 2199 } {  } call:gridInfo {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 17 : { 410, 411, 412, 413, 417, 424, 444, 445, 446, 447, 448, 450, 1130, 1133, 1359, 1405, 1427, 1523 } {  } call:getSeconds {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 327 16 : { 405, 406, 407, 408, 409, 436, 448, 449, 1958 } {  } call:omp_get_max_threads {  }
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 19 : { 410, 411, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 425, 426, 427, 428, 437, 438, 439, 440, 441, 442, 443, 853, 925, 947, 950, 1130, 1133, 1359, 1405, 1427 } {  } call:getSeconds {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 405 5 : { 418, 443, 1967, 2212 } {  } call:gridInfo {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 958 17 : { 418, 419, 420, 421, 425, 432, 452, 453, 454, 455, 456, 458, 1139, 1142, 1368, 1414, 1436, 1532 } {  } call:getSeconds {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 327 16 : { 413, 414, 415, 416, 417, 444, 456, 457, 1967 } {  } call:omp_get_max_threads {  }
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/pairwiseAlign.c 672 19 : { 418, 419, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 433, 434, 435, 436, 445, 446, 447, 448, 449, 450, 451, 862, 934, 956, 959, 1139, 1142, 1368, 1414, 1436 } {  } call:getSeconds {  }

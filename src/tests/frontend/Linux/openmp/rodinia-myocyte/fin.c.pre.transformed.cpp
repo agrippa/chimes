@@ -28,7 +28,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -44,7 +44,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -79,7 +80,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2752,7 +2753,8 @@ void fin_resumable( float *initvalu,
  finavalu[initvalu_offset_Cyt+2] = finavalu[initvalu_offset_Cyt+2] + J_ca4cam_SLmyo/Vmyo;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c"
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c"
-rm_stack(false, 0UL, "fin", &____must_manage_fin, ____alias_loc_id_0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "fin", &____must_manage_fin, ____alias_loc_id_0, ____chimes_did_disable0, false); }
+# 6 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c"
 void fin_quick( float *initvalu,
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c"
     int initvalu_offset_ecc,
@@ -2933,7 +2935,7 @@ void fin_quick( float *initvalu,
  finavalu[initvalu_offset_Cyt+2] = finavalu[initvalu_offset_Cyt+2] + J_ca4cam_SLmyo/Vmyo;
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c"
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c"
-rm_stack(false, 0UL, "fin", &____must_manage_fin, ____alias_loc_id_0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "fin", &____must_manage_fin, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 void fin( float *initvalu,
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c"
@@ -2954,9 +2956,7 @@ void fin( float *initvalu,
     float JCaSL,
 # 15 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c"
     float JCaCyt) { (____chimes_replaying ? fin_resumable(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt) : fin_quick(initvalu, initvalu_offset_ecc, initvalu_offset_Dyad, initvalu_offset_SL, initvalu_offset_Cyt, parameter, finavalu, JCaDyad, JCaSL, JCaCyt)); }
-
-
-
+# 6 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c"
 void fin_npm( float *initvalu,
 # 7 "/scratch/jmg3/rodinia_3.0/openmp/myocyte/fin.c"
     int initvalu_offset_ecc,

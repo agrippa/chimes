@@ -19,3 +19,7 @@
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|i|0 " i32 " 32 0 0 1 embedded_fehlberg_7_8
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|j|0 " i32 " 32 0 0 1 embedded_fehlberg_7_8
 /scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|k|0 " i32 " 32 0 0 1 embedded_fehlberg_7_8
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|____chimes_ret_var_1|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|____chimes_ret_var_2|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/solver.c solver|____chimes_ret_var_3|0 " i32 " 32 0 0 0

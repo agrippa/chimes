@@ -6,12 +6,11 @@
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|seqData|0 " %struct.seqdat* " 64 1 0 1 insertValidation spec_genrand_int32 spec_init_genrand
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|i|0 " i32 " 32 0 0 1 insertValidation spec_genrand_int32 spec_init_genrand
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|maxLen|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|mainValidations|0 " [7 x i8*] " 448 0 0 1 genScalData
-/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|matchValidations|0 " [7 x i8*] " 448 0 0 1 genScalData
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|mainSelect|0 " [7 x i32] " 224 0 0 1 genScalData
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|matchSelect|0 " [7 x i32] " 224 0 0 1 genScalData
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|____chimes_unroll_var_1|0 " i64 " 64 0 0 1 insertValidation spec_genrand_int32 spec_init_genrand
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|____chimes_unroll_var_2|0 " i64 " 64 0 0 1 insertValidation spec_genrand_int32
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c genScalData|____chimes_ret_var_1|0 " %struct.seqdat* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|oldSeq|0 " i8* " 64 1 0 1 spec_genrand_int32
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|seqLen|0 " i32* " 64 1 0 1 spec_genrand_int32
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|insertionStrings|0 " i8** " 64 1 0 1 spec_genrand_int32
@@ -26,4 +25,6 @@
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|codSeq|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|newSeq|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|____chimes_unroll_var_0|0 " i64 " 64 0 0 1 spec_genrand_int32
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c insertValidation|____chimes_ret_var_0|0 " i8* " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c freeSeqData|S|0 " %struct.seqdat* " 64 1 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c freeSeqData|____chimes_ret_var_2|0 " %struct.seqdat* " 64 1 0 0

@@ -1,11 +1,11 @@
 stopwatch_start 21
 stopwatch_stop 43
-get_interval_by_sec 79
-get_interval_by_usec 114
-create_matrix_from_file 207 208 209
-create_matrix_from_random 462 0
-matrix_multiply 547 548 549 0
-lud_verify 740 741 0
-matrix_duplicate 781 782 0
-print_matrix 834 0
-create_matrix 970 0
+get_interval_by_sec 87
+get_interval_by_usec 130
+create_matrix_from_file 235 236 237
+create_matrix_from_random 502 0
+matrix_multiply 587 588 589 0
+lud_verify 780 781 0
+matrix_duplicate 821 822 0
+print_matrix 874 0
+create_matrix 1018 0

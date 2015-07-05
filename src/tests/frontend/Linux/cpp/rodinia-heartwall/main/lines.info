@@ -1,7 +1,11 @@
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 136 19 : { 194 } {  } call:AVI_video_width { AVI_video_width { 826 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 129 6 : { 197 } {  } call:AVI_print_error { AVI_print_error { 1849 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 538 17 : { 192, 194, 195, 826 } {  } call:get_frame { get_frame { 826 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 553 4 : { 192, 194 } {  } call:kernel { kernel { 202, 203 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 135 19 : { 194 } {  } call:AVI_video_height { AVI_video_height { 826 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 127 28 : { 189, 190, 191, 196 } {  } call:AVI_open_input_file { AVI_open_input_file { 223, 826 } }
-/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 134 15 : { 194, 197 } {  } call:AVI_video_frames { AVI_video_frames { 826 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 145 5 : { 194 } {  } call:AVI_close { AVI_close { 1613 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 134 6 : { 197 } {  } call:AVI_print_error { AVI_print_error { 1880 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 584 5 : { 192 } {  } call:checkpoint {  }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 141 19 : { 194 } {  } call:AVI_video_width { AVI_video_width { 1613 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 132 28 : { 189, 190, 191, 196 } {  } call:AVI_open_input_file { AVI_open_input_file { 1603, 1613 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 552 9 : { 194 } {  } call:AVI_close { AVI_close { 1613 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 563 4 : { 192 } {  } call:kernel { kernel { 202, 203 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 140 19 : { 194 } {  } call:AVI_video_height { AVI_video_height { 1613 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 547 17 : { 197 } {  } call:get_frame { get_frame { 822, 1613 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 139 15 : { 197 } {  } call:AVI_video_frames { AVI_video_frames { 1613 } }
+/scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 545 28 : { 192, 194, 195, 822 } {  } call:AVI_open_input_file { AVI_open_input_file { 1603, 1613 } }

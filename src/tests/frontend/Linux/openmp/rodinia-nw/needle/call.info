@@ -1,30 +1,32 @@
-gettimeofday gettime 61 3 0 40 553
-runTest main 71 5 0 0 67
-atoi runTest 102 14 0 115
-atoi runTest 103 14 0 115
-atoi runTest 104 13 0 115
-atoi runTest 105 21 0 115
-usage runTest 108 3 0 0 510
-malloc runTest 113 22 384 0
-malloc runTest 114 29 379 0
-malloc runTest 115 27 505 0
-fprintf runTest 118 24 0 517 548
-srand runTest 121 5 0 0
-printf runTest 129 2 0 549
-rand runTest 132 37 0
-rand runTest 135 28 0
-printf runTest 153 2 0 550 0
-printf runTest 154 2 0 551
-omp_set_num_threads runTest 158 5 0 0
-maximum runTest 163 33 0 0 0 0
-printf runTest 169 2 0 552
-omp_set_num_threads runTest 173 5 0 0
-maximum runTest 178 28 0 0 0 0
-free runTest 246 2 0 384
-free runTest 247 2 0 379
-free runTest 248 2 0 505
-fprintf usage 78 2 0 517 544 520
-fprintf usage 79 2 0 517 545
-fprintf usage 80 2 0 517 546
-fprintf usage 81 2 0 517 547
-exit usage 82 2 0 0
+gettimeofday gettime 64 3 0 48 571
+runTest main 74 5 0 0 83
+atoi runTest 105 14 0 131
+atoi runTest 106 14 0 131
+atoi runTest 107 13 0 131
+atoi runTest 108 21 0 131
+usage runTest 111 3 0 0 528
+malloc runTest 116 22 400 0
+malloc runTest 117 29 395 0
+malloc runTest 118 27 523 0
+fprintf runTest 121 24 0 535 566
+srand runTest 124 5 0 0
+printf runTest 132 2 0 567
+rand runTest 135 37 0
+rand runTest 138 28 0
+printf runTest 156 2 0 568 0
+printf runTest 157 2 0 569
+omp_set_num_threads runTest 161 5 0 0
+maximum runTest 166 33 0 0 0 0
+checkpoint runTest 173 5 0
+printf runTest 176 2 0 570
+omp_set_num_threads runTest 180 5 0 0
+maximum runTest 185 28 0 0 0 0
+checkpoint runTest 192 5 0
+free runTest 259 2 0 400
+free runTest 260 2 0 395
+free runTest 261 2 0 523
+fprintf usage 81 2 0 535 562 538
+fprintf usage 82 2 0 535 563
+fprintf usage 83 2 0 535 564
+fprintf usage 84 2 0 535 565
+exit usage 85 2 0 0

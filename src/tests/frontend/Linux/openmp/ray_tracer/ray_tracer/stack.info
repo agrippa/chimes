@@ -11,9 +11,11 @@
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_coord|w1|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_coord|w2|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_coord|p|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_coord|____chimes_ret_var_0|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c modv|vx|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c modv|vy|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c modv|vz|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c modv|____chimes_ret_var_1|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c move|self|0 " %struct._sphere* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c move|vx|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c move|vy|0 " double " 64 0 0 0
@@ -47,6 +49,7 @@
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_sphere_intersec|t|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_sphere_intersec|t1|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_sphere_intersec|t2|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_sphere_intersec|____chimes_ret_var_2|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_cos_angle_v1v2|v1x|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_cos_angle_v1v2|v1y|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_cos_angle_v1v2|v1z|0 " double " 64 0 0 0
@@ -55,6 +58,7 @@
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_cos_angle_v1v2|v2z|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_cos_angle_v1v2|a|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_cos_angle_v1v2|b|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c get_cos_angle_v1v2|____chimes_ret_var_3|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c usage|argv|0 " i8** " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c parse_three_doubles|def|0 " i8* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c parse_three_doubles|a|0 " double* " 64 1 0 0
@@ -103,3 +107,4 @@
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c main|cost|0 " double " 64 0 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c main|fact|0 " double " 64 0 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c main|i|1 " i32 " 32 0 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/./ray_tracer.c main|____chimes_ret_var_4|0 " i32 " 32 0 0 0

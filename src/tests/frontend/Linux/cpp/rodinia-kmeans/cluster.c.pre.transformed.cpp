@@ -32,7 +32,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -48,7 +48,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -83,7 +84,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3841,6 +3842,7 @@ int cluster_resumable(int numObjects,
             )
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&cluster), "cluster", &____must_manage_cluster, 6, 1, (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986867UL), "cluster|cluster_centres|0", &____must_checkpoint_cluster_cluster_centres_0, "float***", (void *)(&cluster_centres), (size_t)8, 1, 0, 0) ; int *membership;
+# 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
  if (____must_checkpoint_cluster_membership_0) { register_stack_vars(1, "cluster|membership|0", &____must_checkpoint_cluster_membership_0, "i32*", (void *)(&membership), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
      ;
@@ -3872,9 +3874,10 @@ int cluster_resumable(int numObjects,
  free_wrapper(membership, 433509646541986825UL);
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0, false); }
+# 78 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 int cluster_quick(int numObjects,
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             int numAttributes,
@@ -3891,6 +3894,7 @@ int cluster_quick(int numObjects,
             )
 # 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&cluster), "cluster", &____must_manage_cluster, 6, 1, (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986864UL), (size_t)(0UL), (size_t)(0UL), (size_t)(433509646541986867UL), "cluster|cluster_centres|0", &____must_checkpoint_cluster_cluster_centres_0, "float***", (void *)(&cluster_centres), (size_t)8, 1, 0, 0) ; int *membership;
+# 86 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
  if (____must_checkpoint_cluster_membership_0) { register_stack_vars(1, "cluster|membership|0", &____must_checkpoint_cluster_membership_0, "i32*", (void *)(&membership), (size_t)8, 1, 0, 0); } ; ;
 # 87 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
      ;
@@ -3922,9 +3926,9 @@ int cluster_quick(int numObjects,
  free_wrapper(membership, 433509646541986825UL);
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
-rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "cluster", &____must_manage_cluster, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 int cluster(int numObjects,
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
@@ -3940,9 +3944,7 @@ int cluster(int numObjects,
 # 84 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 # 85 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             ) { return (____chimes_replaying ? cluster_resumable(numObjects, numAttributes, attributes, nclusters, threshold, cluster_centres) : cluster_quick(numObjects, numAttributes, attributes, nclusters, threshold, cluster_centres)); }
-
-
-
+# 78 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
 int cluster_npm(int numObjects,
 # 79 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/cluster.c"
             int numAttributes,

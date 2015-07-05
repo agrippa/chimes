@@ -62,7 +62,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -78,7 +78,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -113,7 +114,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2838,6 +2839,7 @@ void rng_init_quick(RNG_state *newstate, int seed); void rng_init(RNG_state *new
 void rng_init_resumable(RNG_state *newstate, int seed)
 # 50 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(1633707214412207105UL), (size_t)(0UL)) ; struct sha1_ctx_s ctx;
+# 50 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_init_ctx_0) { register_stack_vars(1, "rng_init|ctx|0", &____must_checkpoint_rng_init_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 51 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     ;
@@ -2864,7 +2866,7 @@ void rng_init_resumable(RNG_state *newstate, int seed)
 # 64 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
   ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 65 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 # 66 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 67 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_spawn_npm(RNG_state *mystate, RNG_state *newstate, int spawnnumber);
@@ -2872,7 +2874,9 @@ void rng_spawn_quick(RNG_state *mystate, RNG_state *newstate, int spawnnumber); 
 void rng_spawn_resumable(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
 # 68 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(1633707214412207521UL), (size_t)(1633707214412207522UL), (size_t)(0UL)) ; uint8 bytes[4];
+# 68 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 struct sha1_ctx_s ctx;
+# 68 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_spawn_ctx_0) { register_stack_vars(1, "rng_spawn|ctx|0", &____must_checkpoint_rng_spawn_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 69 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
    ;
@@ -2897,7 +2901,7 @@ struct sha1_ctx_s ctx;
 # 80 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 81 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1, false); }
 # 82 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 83 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_rand_npm(RNG_state *mystate);
@@ -2914,14 +2918,15 @@ int rng_rand_resumable(RNG_state *mystate){const int ____chimes_did_disable2 = n
  r = (int) b;
 # 90 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 91 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (r); rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2); return ____chimes_ret_var_0; ;
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (r); rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
 # 92 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); }
 # 93 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 94 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_nextrand_npm(RNG_state *mystate);
 int rng_nextrand_quick(RNG_state *mystate); int rng_nextrand(RNG_state *mystate);
 int rng_nextrand_resumable(RNG_state *mystate){const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(1633707214412207616UL)) ; struct sha1_ctx_s ctx;
+# 94 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_nextrand_ctx_0) { register_stack_vars(1, "rng_nextrand|ctx|0", &____must_checkpoint_rng_nextrand_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 95 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
    ;
@@ -2946,9 +2951,9 @@ int rng_nextrand_resumable(RNG_state *mystate){const int ____chimes_did_disable3
 # 106 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  r = (int) b;
 # 107 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-  int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (r); rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3); return ____chimes_ret_var_1; ;
+  int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (r); rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
 # 108 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); }
 # 109 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 110 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 111 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2958,9 +2963,9 @@ char * rng_showstate_resumable(RNG_state *state, char *s){const int ____chimes_d
 # 112 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
   sprintf(s,"%.2X%.2X...", state[0],state[1]);
 # 113 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-   char *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (s); rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4); return ____chimes_ret_var_2; ;
+   char *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (s); rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
 # 114 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4); }
+rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); }
 # 115 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 116 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 117 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -2972,9 +2977,9 @@ int rng_showtype_resumable(char *strBuf, int ind) {const int ____chimes_did_disa
 # 119 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
                  sizeof(struct state_t));
 # 120 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-   int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (ind); rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5); return ____chimes_ret_var_3; ;
+   int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (ind); rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); return ____chimes_ret_var_3; ;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); }
 # 195 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 195 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_compile_npm(sha1_ctx ctx[1]);
@@ -3062,7 +3067,7 @@ void sha1_compile_resumable(sha1_ctx ctx[1])
     ctx->hash[4] += v4;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 249 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6, false); }
 # 250 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 251 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_begin_resumable(sha1_ctx ctx[1])
@@ -3081,7 +3086,7 @@ void sha1_begin_resumable(sha1_ctx ctx[1])
 # 258 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[4] = 0xc3d2e1f0;
 # 259 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7, false); }
 # 260 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 261 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 262 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -3114,7 +3119,7 @@ void sha1_hash_resumable(const unsigned char data[], unsigned long len, sha1_ctx
 # 280 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
 # 281 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8, false); }
 # 282 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 283 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 284 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
@@ -3173,7 +3178,7 @@ void sha1_end_resumable(unsigned char hval[], sha1_ctx ctx[1])
 # 325 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
 # 327 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9, false); }
 # 328 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 329 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_npm(unsigned char hval[], const unsigned char data[], unsigned long len);
@@ -3181,15 +3186,18 @@ void sha1_quick(unsigned char hval[], const unsigned char data[], unsigned long 
 void sha1_resumable(unsigned char hval[], const unsigned char data[], unsigned long len)
 # 330 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(1633707214412212004UL), (size_t)(1633707214412212005UL), (size_t)(0UL)) ; sha1_ctx cx[1];
+# 330 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ; ;
 # 331 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 332 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
 # 333 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10, false); }
+# 49 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_init_quick(RNG_state *newstate, int seed)
 # 50 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable0 = new_stack((void *)(&rng_init), "rng_init", &____must_manage_rng_init, 2, 0, (size_t)(1633707214412207105UL), (size_t)(0UL)) ; struct sha1_ctx_s ctx;
+# 50 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_init_ctx_0) { register_stack_vars(1, "rng_init|ctx|0", &____must_checkpoint_rng_init_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
 # 51 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     ;
@@ -3216,14 +3224,16 @@ void rng_init_quick(RNG_state *newstate, int seed)
 # 64 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
   ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 65 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "rng_init", &____must_manage_rng_init, ____alias_loc_id_0, ____chimes_did_disable0, false); }
 
 void rng_init(RNG_state *newstate, int seed) { (____chimes_replaying ? rng_init_resumable(newstate, seed) : rng_init_quick(newstate, seed)); }
-
+# 67 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_spawn_quick(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
 # 68 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable1 = new_stack((void *)(&rng_spawn), "rng_spawn", &____must_manage_rng_spawn, 3, 0, (size_t)(1633707214412207521UL), (size_t)(1633707214412207522UL), (size_t)(0UL)) ; uint8 bytes[4];
+# 68 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 struct sha1_ctx_s ctx;
+# 68 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_spawn_ctx_0) { register_stack_vars(1, "rng_spawn|ctx|0", &____must_checkpoint_rng_spawn_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
 # 69 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
    ;
@@ -3248,10 +3258,10 @@ struct sha1_ctx_s ctx;
 # 80 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  ({ calling_npm("sha1_end", 0); sha1_end_npm(newstate, &ctx); });
 # 81 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "rng_spawn", &____must_manage_rng_spawn, ____alias_loc_id_4, ____chimes_did_disable1, false); }
 
 void rng_spawn(RNG_state *mystate, RNG_state *newstate, int spawnnumber) { (____chimes_replaying ? rng_spawn_resumable(mystate, newstate, spawnnumber) : rng_spawn_quick(mystate, newstate, spawnnumber)); }
-
+# 83 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_rand_quick(RNG_state *mystate){const int ____chimes_did_disable2 = new_stack((void *)(&rng_rand), "rng_rand", &____must_manage_rng_rand, 1, 0, (size_t)(1633707214412207566UL)) ; ; ;
 # 84 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
         int r; ;
@@ -3264,13 +3274,14 @@ int rng_rand_quick(RNG_state *mystate){const int ____chimes_did_disable2 = new_s
  r = (int) b;
 # 90 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 91 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (r); rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2); return ____chimes_ret_var_0; ;
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (r); rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); return ____chimes_ret_var_0; ;
 # 92 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "rng_rand", &____must_manage_rng_rand, ____alias_loc_id_5, ____chimes_did_disable2, false); }
 
 int rng_rand(RNG_state *mystate) { return (____chimes_replaying ? rng_rand_resumable(mystate) : rng_rand_quick(mystate)); }
-
+# 94 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_nextrand_quick(RNG_state *mystate){const int ____chimes_did_disable3 = new_stack((void *)(&rng_nextrand), "rng_nextrand", &____must_manage_rng_nextrand, 1, 0, (size_t)(1633707214412207616UL)) ; struct sha1_ctx_s ctx;
+# 94 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_rng_nextrand_ctx_0) { register_stack_vars(1, "rng_nextrand|ctx|0", &____must_checkpoint_rng_nextrand_ctx_0, "%struct.sha1_ctx_s = type { [2 x i32], [5 x i32], [16 x i32] }", (void *)(&ctx), (size_t)92, 0, 1, 0); } ; ;
 # 95 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
    ;
@@ -3295,34 +3306,34 @@ int rng_nextrand_quick(RNG_state *mystate){const int ____chimes_did_disable3 = n
 # 106 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  r = (int) b;
 # 107 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-  int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (r); rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3); return ____chimes_ret_var_1; ;
+  int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (r); rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); return ____chimes_ret_var_1; ;
 # 108 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "rng_nextrand", &____must_manage_rng_nextrand, ____alias_loc_id_6, ____chimes_did_disable3, false); }
 
 int rng_nextrand(RNG_state *mystate) { return (____chimes_replaying ? rng_nextrand_resumable(mystate) : rng_nextrand_quick(mystate)); }
-
+# 111 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 char * rng_showstate_quick(RNG_state *state, char *s){const int ____chimes_did_disable4 = new_stack((void *)(&rng_showstate), "rng_showstate", &____must_manage_rng_showstate, 2, 0, (size_t)(1633707214412207639UL), (size_t)(1633707214412207640UL)) ; ; ;
 # 112 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
   sprintf(s,"%.2X%.2X...", state[0],state[1]);
 # 113 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-   char *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (s); rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4); return ____chimes_ret_var_2; ;
+   char *____chimes_ret_var_2; ; ____chimes_ret_var_2 = (s); rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
 # 114 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4); }
+rm_stack(true, 1633707214412207640UL, "rng_showstate", &____must_manage_rng_showstate, ____alias_loc_id_7, ____chimes_did_disable4, false); }
 
 char * rng_showstate(RNG_state *state, char *s) { return (____chimes_replaying ? rng_showstate_resumable(state, s) : rng_showstate_quick(state, s)); }
-
+# 117 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_showtype_quick(char *strBuf, int ind) {const int ____chimes_did_disable5 = new_stack((void *)(&rng_showtype), "rng_showtype", &____must_manage_rng_showtype, 2, 0, (size_t)(1633707214412207663UL), (size_t)(0UL)) ; ; ;
 # 118 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
   ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
 # 119 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
                  sizeof(struct state_t));
 # 120 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-   int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (ind); rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5); return ____chimes_ret_var_3; ;
+   int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (ind); rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); return ____chimes_ret_var_3; ;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "rng_showtype", &____must_manage_rng_showtype, ____alias_loc_id_8, ____chimes_did_disable5, false); }
 
 int rng_showtype(char *strBuf, int ind) { return (____chimes_replaying ? rng_showtype_resumable(strBuf, ind) : rng_showtype_quick(strBuf, ind)); }
-
+# 195 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_compile_quick(sha1_ctx ctx[1])
 # 196 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable6 = new_stack((void *)(&sha1_compile), "sha1_compile", &____must_manage_sha1_compile, 1, 0, (size_t)(1633707214412211977UL)) ; ; ; uint_32t *w; w = (ctx->wbuf) ;
@@ -3406,10 +3417,10 @@ void sha1_compile_quick(sha1_ctx ctx[1])
     ctx->hash[4] += v4;
 # 248 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 249 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "sha1_compile", &____must_manage_sha1_compile, ____alias_loc_id_9, ____chimes_did_disable6, false); }
 
 void sha1_compile(sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_compile_resumable(ctx) : sha1_compile_quick(ctx)); }
-
+# 251 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_begin_quick(sha1_ctx ctx[1])
 # 252 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable7 = new_stack((void *)(&sha1_begin), "sha1_begin", &____must_manage_sha1_begin, 1, 0, (size_t)(1633707214412207141UL)) ; ; ;
@@ -3426,10 +3437,10 @@ void sha1_begin_quick(sha1_ctx ctx[1])
 # 258 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     ctx->hash[4] = 0xc3d2e1f0;
 # 259 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "sha1_begin", &____must_manage_sha1_begin, ____alias_loc_id_1, ____chimes_did_disable7, false); }
 
 void sha1_begin(sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_begin_resumable(ctx) : sha1_begin_quick(ctx)); }
-
+# 264 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_hash_quick(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
 # 265 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable8 = new_stack((void *)(&sha1_hash), "sha1_hash", &____must_manage_sha1_hash, 3, 0, (size_t)(1633707214412207285UL), (size_t)(0UL), (size_t)(1633707214412207287UL)) ; ; ; uint_32t pos; uint_32t space; pos = ((uint_32t)(ctx->count[0] & (64 - 1))) ; space = (64 - pos) ;
@@ -3457,10 +3468,10 @@ void sha1_hash_quick(const unsigned char data[], unsigned long len, sha1_ctx ctx
 # 280 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
 # 281 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "sha1_hash", &____must_manage_sha1_hash, ____alias_loc_id_2, ____chimes_did_disable8, false); }
 
 void sha1_hash(const unsigned char data[], unsigned long len, sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_hash_resumable(data, len, ctx) : sha1_hash_quick(data, len, ctx)); }
-
+# 285 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1])
 # 286 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable9 = new_stack((void *)(&sha1_end), "sha1_end", &____must_manage_sha1_end, 2, 0, (size_t)(1633707214412207475UL), (size_t)(1633707214412207476UL)) ; ; ; uint_32t i; i = ((uint_32t)(ctx->count[0] & (64 - 1))) ;
@@ -3515,24 +3526,23 @@ void sha1_end_quick(unsigned char hval[], sha1_ctx ctx[1])
 # 325 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
 # 327 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "sha1_end", &____must_manage_sha1_end, ____alias_loc_id_3, ____chimes_did_disable9, false); }
 
 void sha1_end(unsigned char hval[], sha1_ctx ctx[1]) { (____chimes_replaying ? sha1_end_resumable(hval, ctx) : sha1_end_quick(hval, ctx)); }
-
+# 329 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_quick(unsigned char hval[], const unsigned char data[], unsigned long len)
 # 330 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {const int ____chimes_did_disable10 = new_stack((void *)(&sha1), "sha1", &____must_manage_sha1, 3, 0, (size_t)(1633707214412212004UL), (size_t)(1633707214412212005UL), (size_t)(0UL)) ; sha1_ctx cx[1];
+# 330 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  if (____must_checkpoint_sha1_cx_0) { register_stack_vars(1, "sha1|cx|0", &____must_checkpoint_sha1_cx_0, "[1 x %struct.sha1_ctx_s]", (void *)(cx), (size_t)92, 0, 0, 0); } ; ; ;
 # 331 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 332 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
     ({ calling_npm("sha1_begin", 0); sha1_begin_npm(cx); }); ({ calling_npm("sha1_hash", 0); sha1_hash_npm(data, len, cx); }); ({ calling_npm("sha1_end", 0); sha1_end_npm(hval, cx); });
 # 333 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
-rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "sha1", &____must_manage_sha1, ____alias_loc_id_10, ____chimes_did_disable10, false); }
 
 void sha1(unsigned char hval[], const unsigned char data[], unsigned long len) { (____chimes_replaying ? sha1_resumable(hval, data, len) : sha1_quick(hval, data, len)); }
-
-
-
+# 49 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_init_npm(RNG_state *newstate, int seed)
 # 50 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {
@@ -3562,7 +3572,7 @@ void rng_init_npm(RNG_state *newstate, int seed)
   sha1_end_npm(newstate, &ctx);
 # 65 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-
+# 67 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void rng_spawn_npm(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
 # 68 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {
@@ -3590,7 +3600,7 @@ void rng_spawn_npm(RNG_state *mystate, RNG_state *newstate, int spawnnumber)
  sha1_end_npm(newstate, &ctx);
 # 81 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-
+# 83 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_rand_npm(RNG_state *mystate){
 # 84 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
         int r;
@@ -3608,7 +3618,7 @@ int rng_rand_npm(RNG_state *mystate){
   int ____chimes_ret_var_0; ____chimes_ret_var_0 = (r); return ____chimes_ret_var_0; ;
 # 92 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-
+# 94 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_nextrand_npm(RNG_state *mystate){
 # 95 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
  struct sha1_ctx_s ctx;
@@ -3636,7 +3646,7 @@ int rng_nextrand_npm(RNG_state *mystate){
   int ____chimes_ret_var_1; ____chimes_ret_var_1 = (r); return ____chimes_ret_var_1; ;
 # 108 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-
+# 111 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 char * rng_showstate_npm(RNG_state *state, char *s){
 # 112 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
   sprintf(s,"%.2X%.2X...", state[0],state[1]);
@@ -3644,7 +3654,7 @@ char * rng_showstate_npm(RNG_state *state, char *s){
    char * ____chimes_ret_var_2; ____chimes_ret_var_2 = (s); return ____chimes_ret_var_2; ;
 # 114 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-
+# 117 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 int rng_showtype_npm(char *strBuf, int ind) {
 # 118 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
   ind += sprintf(strBuf+ind, "SHA-1 (state size = %luB)",
@@ -3654,7 +3664,7 @@ int rng_showtype_npm(char *strBuf, int ind) {
    int ____chimes_ret_var_3; ____chimes_ret_var_3 = (ind); return ____chimes_ret_var_3; ;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-
+# 195 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_compile_npm(sha1_ctx ctx[1])
 # 196 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 { uint_32t *w = ctx->wbuf;
@@ -3739,7 +3749,7 @@ void sha1_compile_npm(sha1_ctx ctx[1])
 # 248 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 # 249 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-
+# 251 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_begin_npm(sha1_ctx ctx[1])
 # 252 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 {
@@ -3757,7 +3767,7 @@ void sha1_begin_npm(sha1_ctx ctx[1])
     ctx->hash[4] = 0xc3d2e1f0;
 # 259 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-
+# 264 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_hash_npm(const unsigned char data[], unsigned long len, sha1_ctx ctx[1])
 # 265 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 { uint_32t pos = (uint_32t)(ctx->count[0] & (64 - 1)),
@@ -3788,7 +3798,7 @@ void sha1_hash_npm(const unsigned char data[], unsigned long len, sha1_ctx ctx[1
     memcpy(((unsigned char*)ctx->wbuf) + pos, sp, len);
 # 281 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-
+# 285 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_end_npm(unsigned char hval[], sha1_ctx ctx[1])
 # 286 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 { uint_32t i = (uint_32t)(ctx->count[0] & (64 - 1));
@@ -3844,7 +3854,7 @@ void sha1_end_npm(unsigned char hval[], sha1_ctx ctx[1])
     for (i = 0; i < 20; ++i) { hval[i] = (unsigned char)(ctx->hash[i >> 2] >> (8 * (~i & 3))); };
 # 327 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 }
-
+# 329 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 void sha1_npm(unsigned char hval[], const unsigned char data[], unsigned long len)
 # 330 "/home/jmg3/num-debug/src/examples/cpp/uts/rng/brg_sha1.c"
 { sha1_ctx cx[1];
@@ -3912,8 +3922,8 @@ static int module_init() {
                              (1633707214412207042UL + 435UL), (1633707214412207042UL + 479UL),
                              (1633707214412207042UL + 482UL), (1633707214412207042UL + 524UL),
                              (1633707214412207042UL + 105UL), (1633707214412207042UL + 243UL),
-                     "sha1_ctx_s", 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf),
-                     "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
+                     "sha1_ctx_s", 736UL, 3, "[ 2 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, count), "[ 5 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, hash), "[ 16 x unsigned int ]", (int)__builtin_offsetof (struct sha1_ctx_s, wbuf),
+                     "state_t", 160UL, 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
                              "sha1", "_Z4sha1PhPKhm", 3, "sha1_begin", "sha1_hash", "sha1_end",
                              "rng_nextrand", "_Z12rng_nextrandPh", 3, "sha1_begin", "sha1_hash", "sha1_end",
                              "rng_showstate", "_Z13rng_showstatePhPc", 0,

@@ -1,15 +1,15 @@
 free ljDestroy 103 4 0 11
-malloc initLjPot 112 37 31 0
-strcpy initLjPot 121 4 58 31 547
-strcpy initLjPot 124 4 69 31 548
-zeroReal3 ljForce 159 7 0 265
-__assert_fail ljForce 181 47 0 558 559 0 560
-fprintf ljPrint 133 4 0 523 549
-fprintf ljPrint 134 4 0 523 550 524
-fprintf ljPrint 135 4 0 523 550 0
-fprintf ljPrint 136 4 0 523 552 0
-fprintf ljPrint 137 4 0 523 550 524
-fprintf ljPrint 138 4 0 523 549 0
-fprintf ljPrint 139 4 0 523 549 0
-fprintf ljPrint 140 4 0 523 556 0
-fprintf ljPrint 141 4 0 523 549 0
+malloc initLjPot 112 37 32 0
+strcpy initLjPot 121 4 59 32 555
+strcpy initLjPot 124 4 70 32 556
+zeroReal3 ljForce 159 7 0 270
+__assert_fail ljForce 181 47 0 566 567 0 568
+fprintf ljPrint 133 4 0 531 557
+fprintf ljPrint 134 4 0 531 558 532
+fprintf ljPrint 135 4 0 531 558 0
+fprintf ljPrint 136 4 0 531 560 0
+fprintf ljPrint 137 4 0 531 558 532
+fprintf ljPrint 138 4 0 531 557 0
+fprintf ljPrint 139 4 0 531 557 0
+fprintf ljPrint 140 4 0 531 564 0
+fprintf ljPrint 141 4 0 531 557 0

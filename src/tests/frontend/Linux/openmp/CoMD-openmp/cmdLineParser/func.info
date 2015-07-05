@@ -1,9 +1,9 @@
-addArg 60 0 0 0 64 0 66
-myOptionAlloc 152 0 0 0 96 0 167
-lastOption 196
+addArg 68 0 0 0 72 0 74
+myOptionAlloc 161 0 0 0 105 0 179
+lastOption 216
 freeArgs
-myOptionFree 250
+myOptionFree 278
 printArgs
-processArgs 0 539
-findOption 583 0
-dupString 611
+processArgs 0 567
+findOption 619 0
+dupString 651

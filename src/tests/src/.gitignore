@@ -1,2 +1,5 @@
 a.out.dSYM
 runtime.bin
+output.txt
+result.txt
+image_out.pgm

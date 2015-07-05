@@ -1,148 +1,151 @@
-gettimeofday get_time 33 2 0 1 2560
-fabs randu 83 56 0 0
-randu randn 95 13 0 266 0
-randu randn 96 13 0 266 0
-cos randn 97 18 0 0
-log randn 98 17 0 0
-sqrt randn 99 56 0 0
-randn addNoise 114 103 0 374 0
-pow strelDisk 130 27 0 0 0
-pow strelDisk 130 57 0 0 0
-sqrt strelDisk 130 22 0 0
-pow dilate_matrix 164 28 0 0 0
-pow dilate_matrix 164 54 0 0 0
-sqrt dilate_matrix 164 22 0 0
-dilate_matrix imdilate_disk 187 6 0 695 0 0 0 0 0 0 0
-roundDouble videoSequence 231 16 0 0
-roundDouble videoSequence 232 16 0 0
-abs videoSequence 238 8 0 0
-abs videoSequence 239 8 0 0
-malloc videoSequence 247 27 951 0
-imdilate_disk videoSequence 248 2 0 995 0 0 0 0 951
-free videoSequence 257 2 0 951
-setIf videoSequence 260 2 0 0 0 995 790 791 792
-setIf videoSequence 261 2 0 0 0 995 790 791 792
-addNoise videoSequence 263 2 0 995 790 791 792 999
-pow calcLikelihoodSum 275 52 0 0 0
-pow calcLikelihoodSum 275 79 0 0 0
-findIndexBin findIndexBin 330 86 0 1264 0 0 0
-findIndexBin findIndexBin 332 55 0 1264 0 0 0
-get_time particleFilter 348 20 0
-roundDouble particleFilter 350 14 0 0
-roundDouble particleFilter 351 14 0 0
-malloc particleFilter 356 22 1378 0
-strelDisk particleFilter 357 2 0 1378 0
-malloc particleFilter 366 29 1659 0
-getneighbors particleFilter 367 2 0 1378 0 1659 0
-get_time particleFilter 369 28 0
-elapsed_time particleFilter 370 35 0 0 0
-printf particleFilter 370 71 0 2526 0
-malloc particleFilter 372 31 1824 0
-get_time particleFilter 377 26 0
-elapsed_time particleFilter 378 35 0 0 0
-printf particleFilter 378 77 0 2527 0
-malloc particleFilter 380 34 1777 0
-malloc particleFilter 381 30 1651 0
-malloc particleFilter 382 30 1667 0
-malloc particleFilter 383 26 2162 0
-malloc particleFilter 384 26 2172 0
-malloc particleFilter 385 27 2027 0
-malloc particleFilter 386 25 2075 0
-malloc particleFilter 387 20 1700 0
-get_time particleFilter 395 39 0
-elapsed_time particleFilter 395 84 0 0 0
-printf particleFilter 395 136 0 2527 0
-get_time particleFilter 398 26 0
-randn particleFilter 404 23 0 2247 0
-randn particleFilter 405 24 0 2247 0
-get_time particleFilter 407 21 0
-elapsed_time particleFilter 408 36 0 0 0
-printf particleFilter 408 69 0 2529 0
-roundDouble particleFilter 418 12 0 0
-roundDouble particleFilter 419 12 0 0
-fabs particleFilter 420 28 0 0
-pow particleFilter 425 56 0 0 0
-pow particleFilter 425 97 0 0 0
-get_time particleFilter 429 31 0
-elapsed_time particleFilter 430 36 0 0 0
-printf particleFilter 430 74 0 2530 0
-exp particleFilter 435 30 0 0
-get_time particleFilter 437 27 0
-elapsed_time particleFilter 438 36 0 0 0
-printf particleFilter 438 80 0 2531 0
-get_time particleFilter 444 24 0
-elapsed_time particleFilter 445 36 0 0 0
-printf particleFilter 445 73 0 2532 0
-get_time particleFilter 450 25 0
-elapsed_time particleFilter 451 36 0 0 0
-printf particleFilter 451 71 0 2533 0
-get_time particleFilter 460 25 0
-elapsed_time particleFilter 461 36 0 0 0
-printf particleFilter 461 72 0 2532 0
-printf particleFilter 462 3 0 2535 0
-printf particleFilter 463 3 0 2535 0
-roundDouble particleFilter 464 38 0 0
-roundDouble particleFilter 464 96 0 0
-pow particleFilter 464 143 0 0 0
-pow particleFilter 464 195 0 0 0
-sqrt particleFilter 464 137 0 0
-printf particleFilter 465 3 0 2537 0
-get_time particleFilter 477 23 0
-elapsed_time particleFilter 478 37 0 0 0
-printf particleFilter 478 71 0 2538 0
-randu particleFilter 479 42 0 2247 0
-get_time particleFilter 484 22 0
-elapsed_time particleFilter 485 37 0 0 0
-printf particleFilter 485 68 0 2539 0
-findIndex particleFilter 490 8 0 2027 0 0
-get_time particleFilter 497 24 0
-elapsed_time particleFilter 498 37 0 0 0
-printf particleFilter 498 69 0 2540 0
-get_time particleFilter 507 21 0
-elapsed_time particleFilter 508 37 0 0 0
-printf particleFilter 508 68 0 2526 0
-free particleFilter 510 2 0 1378
-free particleFilter 511 2 0 1659
-free particleFilter 512 2 0 1824
-free particleFilter 513 2 0 1777
-free particleFilter 514 2 0 2162
-free particleFilter 515 2 0 2172
-free particleFilter 516 2 0 1651
-free particleFilter 517 2 0 1667
-free particleFilter 518 2 0 2027
-free particleFilter 519 2 0 2075
-free particleFilter 520 2 0 1700
-printf main 528 3 0 2543 2542
-strcmp main 532 6 0 2298 2544
-strcmp main 532 33 0 2298 2544
-strcmp main 532 60 0 2298 2544
-strcmp main 532 87 0 2298 2543
-printf main 533 3 0 2543 2542
-sscanf main 540 6 0 2298 2544 2257
-printf main 541 5 0 2538
-printf main 546 3 0 2550
-sscanf main 551 6 0 2298 2544 2258
-printf main 552 5 0 2538
-printf main 557 3 0 2550
-sscanf main 562 6 0 2298 2544 2259
-printf main 563 5 0 2553
-printf main 568 3 0 2532
-sscanf main 573 6 0 2298 2544 2260
-printf main 574 5 0 2555
-printf main 579 3 0 2556
-malloc main 583 22 2436 0
-time main 585 47 0 2561
-malloc main 588 19 2454 0
-get_time main 589 20 0
-videoSequence main 591 2 0 2454 0 0 0 2436
-get_time main 592 31 0
-elapsed_time main 593 36 0 0 0
-printf main 593 75 0 2557 0
-particleFilter main 595 2 0 2454 0 0 0 2436 0
-get_time main 596 32 0
-elapsed_time main 597 36 0 0 0
-printf main 597 87 0 2539 0
-elapsed_time main 598 36 0 0 0
-printf main 598 76 0 2557 0
-free main 600 2 0 2436
-free main 601 2 0 2454
+gettimeofday get_time 36 2 0 1 2558
+fabs randu 86 56 0 0
+randu randn 98 13 0 266 0
+randu randn 99 13 0 266 0
+cos randn 100 18 0 0
+log randn 101 17 0 0
+sqrt randn 102 56 0 0
+randn addNoise 117 103 0 374 0
+pow strelDisk 133 27 0 0 0
+pow strelDisk 133 57 0 0 0
+sqrt strelDisk 133 22 0 0
+pow dilate_matrix 167 28 0 0 0
+pow dilate_matrix 167 54 0 0 0
+sqrt dilate_matrix 167 22 0 0
+dilate_matrix imdilate_disk 190 6 0 695 0 0 0 0 0 0 0
+roundDouble videoSequence 234 16 0 0
+roundDouble videoSequence 235 16 0 0
+abs videoSequence 241 8 0 0
+abs videoSequence 242 8 0 0
+checkpoint videoSequence 250 9 0
+malloc videoSequence 254 27 948 0
+imdilate_disk videoSequence 255 2 0 993 0 0 0 0 948
+free videoSequence 264 2 0 948
+checkpoint videoSequence 267 9 0
+setIf videoSequence 271 2 0 0 0 993 786 787 788
+setIf videoSequence 272 2 0 0 0 993 786 787 788
+addNoise videoSequence 274 2 0 993 786 787 788 997
+pow calcLikelihoodSum 286 52 0 0 0
+pow calcLikelihoodSum 286 79 0 0 0
+findIndexBin findIndexBin 341 86 0 1262 0 0 0
+findIndexBin findIndexBin 343 55 0 1262 0 0 0
+get_time particleFilter 359 20 0
+roundDouble particleFilter 361 14 0 0
+roundDouble particleFilter 362 14 0 0
+malloc particleFilter 367 22 1376 0
+strelDisk particleFilter 368 2 0 1376 0
+malloc particleFilter 378 29 1656 0
+getneighbors particleFilter 379 2 0 1376 1656 0
+get_time particleFilter 381 28 0
+elapsed_time particleFilter 382 35 0 0 0
+printf particleFilter 382 71 0 2524 0
+malloc particleFilter 384 31 1821 0
+get_time particleFilter 389 26 0
+elapsed_time particleFilter 390 35 0 0 0
+printf particleFilter 390 77 0 2525 0
+malloc particleFilter 392 34 1774 0
+malloc particleFilter 393 30 1648 0
+malloc particleFilter 394 30 1664 0
+malloc particleFilter 395 26 2159 0
+malloc particleFilter 396 26 2169 0
+malloc particleFilter 397 27 2024 0
+malloc particleFilter 398 25 2072 0
+malloc particleFilter 399 20 1697 0
+get_time particleFilter 407 39 0
+elapsed_time particleFilter 407 84 0 0 0
+printf particleFilter 407 136 0 2525 0
+get_time particleFilter 410 26 0
+randn particleFilter 416 23 0 2245 0
+randn particleFilter 417 24 0 2245 0
+get_time particleFilter 419 21 0
+elapsed_time particleFilter 420 36 0 0 0
+printf particleFilter 420 69 0 2527 0
+roundDouble particleFilter 430 12 0 0
+roundDouble particleFilter 431 12 0 0
+fabs particleFilter 432 28 0 0
+pow particleFilter 437 56 0 0 0
+pow particleFilter 437 97 0 0 0
+get_time particleFilter 441 31 0
+elapsed_time particleFilter 442 36 0 0 0
+printf particleFilter 442 74 0 2528 0
+exp particleFilter 447 30 0 0
+get_time particleFilter 449 27 0
+elapsed_time particleFilter 450 36 0 0 0
+printf particleFilter 450 80 0 2529 0
+get_time particleFilter 456 24 0
+elapsed_time particleFilter 457 36 0 0 0
+printf particleFilter 457 73 0 2530 0
+get_time particleFilter 462 25 0
+elapsed_time particleFilter 463 36 0 0 0
+printf particleFilter 463 71 0 2531 0
+get_time particleFilter 472 25 0
+elapsed_time particleFilter 473 36 0 0 0
+printf particleFilter 473 72 0 2530 0
+printf particleFilter 474 3 0 2533 0
+printf particleFilter 475 3 0 2533 0
+roundDouble particleFilter 476 38 0 0
+roundDouble particleFilter 476 96 0 0
+pow particleFilter 476 143 0 0 0
+pow particleFilter 476 195 0 0 0
+sqrt particleFilter 476 137 0 0
+printf particleFilter 477 3 0 2535 0
+get_time particleFilter 489 23 0
+elapsed_time particleFilter 490 37 0 0 0
+printf particleFilter 490 71 0 2536 0
+randu particleFilter 491 42 0 2245 0
+get_time particleFilter 496 22 0
+elapsed_time particleFilter 497 37 0 0 0
+printf particleFilter 497 68 0 2537 0
+findIndex particleFilter 502 8 0 2024 0 0
+get_time particleFilter 509 24 0
+elapsed_time particleFilter 510 37 0 0 0
+printf particleFilter 510 69 0 2538 0
+get_time particleFilter 519 21 0
+elapsed_time particleFilter 520 37 0 0 0
+printf particleFilter 520 68 0 2524 0
+checkpoint particleFilter 523 9 0
+free particleFilter 526 2 0 1376
+free particleFilter 527 2 0 1656
+free particleFilter 528 2 0 1821
+free particleFilter 529 2 0 1774
+free particleFilter 530 2 0 2159
+free particleFilter 531 2 0 2169
+free particleFilter 532 2 0 1648
+free particleFilter 533 2 0 1664
+free particleFilter 534 2 0 2024
+free particleFilter 535 2 0 2072
+free particleFilter 536 2 0 1697
+printf main 544 3 0 2541 2540
+strcmp main 548 6 0 2296 2542
+strcmp main 548 33 0 2296 2542
+strcmp main 548 60 0 2296 2542
+strcmp main 548 87 0 2296 2541
+printf main 549 3 0 2541 2540
+sscanf main 556 6 0 2296 2542 2255
+printf main 557 5 0 2536
+printf main 562 3 0 2548
+sscanf main 567 6 0 2296 2542 2256
+printf main 568 5 0 2536
+printf main 573 3 0 2548
+sscanf main 578 6 0 2296 2542 2257
+printf main 579 5 0 2551
+printf main 584 3 0 2530
+sscanf main 589 6 0 2296 2542 2258
+printf main 590 5 0 2553
+printf main 595 3 0 2554
+malloc main 599 22 2434 0
+time main 601 47 0 2559
+malloc main 604 19 2452 0
+get_time main 605 20 0
+videoSequence main 607 2 0 2452 0 0 0 2434
+get_time main 608 31 0
+elapsed_time main 614 36 0 0 0
+printf main 614 75 0 2555 0
+particleFilter main 616 2 0 2452 0 0 0 2434 0
+get_time main 617 32 0
+elapsed_time main 618 36 0 0 0
+printf main 618 87 0 2537 0
+elapsed_time main 619 36 0 0 0
+printf main 619 76 0 2555 0
+free main 621 2 0 2434
+free main 622 2 0 2452

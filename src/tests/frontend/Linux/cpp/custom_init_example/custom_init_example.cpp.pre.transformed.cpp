@@ -30,7 +30,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -46,7 +46,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -81,7 +82,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -1420,7 +1421,7 @@ extern void checkpoint();
 
 extern void wait_for_checkpoint();
 extern void register_custom_init_handler(const char *obj_name,
-        void (*fp)(void *));
+        void (*____chimes_fp)(void *));
 # 2 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp" 2
 # 1 "/usr/include/assert.h" 1 3 4
 # 66 "/usr/include/assert.h" 3 4
@@ -1463,11 +1464,12 @@ void handler_resumable(void *ptr) {const int ____chimes_did_disable0 = new_stack
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
     f_ptr->a = 42;
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 # 12 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
 # 13 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1944833083709766386UL)) ; foo *f;
+# 13 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
  register_stack_vars(1, "main|f|0", (int *)0x0, "%struct._foo*", (void *)(&f), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
       lbl_0: register_custom_init_handler("_foo", handler); if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ;
@@ -1485,20 +1487,22 @@ int main_resumable(int argc, char **argv) {const int ____chimes_did_disable1 = n
 # 22 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
     ((f->a == 42) ? static_cast<void> (0) : __assert_fail ("f->a == 42", "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp", 22, __PRETTY_FUNCTION__));
 # 23 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
 # 24 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); }
+# 8 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
 void handler_quick(void *ptr) {const int ____chimes_did_disable0 = new_stack((void *)(&handler), "handler", &____must_manage_handler, 1, 0, (size_t)(1944833083709766349UL)) ; ; ;
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
      foo *f_ptr; f_ptr = ((foo *)ptr) ;
 # 10 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
     f_ptr->a = 42;
 # 11 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "handler", &____must_manage_handler, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 void handler(void *ptr) { (____chimes_replaying ? handler_resumable(ptr) : handler_quick(ptr)); }
-
+# 13 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
 int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(1944833083709766386UL)) ; foo *f;
+# 13 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
  register_stack_vars(1, "main|f|0", (int *)0x0, "%struct._foo*", (void *)(&f), (size_t)8, 1, 0, 0); ; ;
 # 14 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
       lbl_0: register_custom_init_handler("_foo", handler);
@@ -1516,14 +1520,12 @@ int main_quick(int argc, char **argv) {const int ____chimes_did_disable1 = new_s
 # 22 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
     ((f->a == 42) ? static_cast<void> (0) : __assert_fail ("f->a == 42", "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp", 22, __PRETTY_FUNCTION__));
 # 23 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); return ____chimes_ret_var_0; ;
+     int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
 # 24 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
-rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_2, ____chimes_did_disable1, false); }
 
-int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-
-
-
+int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
+# 8 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
 void handler_npm(void *ptr) {
 # 9 "/home/jmg3/num-debug/src/examples/cpp/./custom_init_example.cpp"
     foo *f_ptr = (foo *)ptr;
@@ -1547,7 +1549,7 @@ static int module_init() {
                              (1944833083709766336UL + 18UL), (1944833083709766336UL + 50UL),
                              (1944833083709766336UL + 2UL), (1944833083709766336UL + 13UL),
                              (1944833083709766336UL + 19UL), (1944833083709766336UL + 28UL),
-                     "_foo", 1, "int", (int)__builtin_offsetof (struct _foo, a),
+                     "_foo", 32UL, 1, "int", (int)__builtin_offsetof (struct _foo, a),
                              "main", "main", 1, "checkpoint",
                              "handler", "_Z7handlerPv", 0);
     return 0;

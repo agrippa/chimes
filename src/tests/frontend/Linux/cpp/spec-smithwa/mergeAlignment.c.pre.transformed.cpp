@@ -67,7 +67,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -83,7 +83,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -118,7 +119,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -2832,31 +2833,57 @@ void dispElapsedTime(double);
 CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation);static double (*____chimes_extern_func_getSeconds)(void) = getSeconds;static int (*____chimes_extern_func_gridInfo)(int *, int *, int *, int *) = gridInfo;static void (*____chimes_extern_func_qSort_both)(long long *, int *, const long long *, int) = qSort_both;
 CSTR_T *mergeAlignment_quick(BSTR_T *B, int maxReports, int minSeparation); CSTR_T *mergeAlignment(BSTR_T *B, int maxReports, int minSeparation);
 CSTR_T *mergeAlignment_resumable(BSTR_T *B, int maxReports, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&mergeAlignment), "mergeAlignment", &____must_manage_mergeAlignment, 3, 3, (size_t)(10402924002521286981UL), (size_t)(0UL), (size_t)(0UL), "mergeAlignment|B|0", &____must_checkpoint_mergeAlignment_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "mergeAlignment|maxReports|0", &____must_checkpoint_mergeAlignment_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "mergeAlignment|minSeparation|0", &____must_checkpoint_mergeAlignment_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0) ; BSTR_T *P;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 double beginTime;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int myRow;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int indexB;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *index;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int length;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int flag;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int totalReports;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int producer;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int consumer;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int mask;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int iter;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int j;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int i;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *C;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **sequences;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **tempSeqsJ;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **tempSeqsI;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempEndsJ;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempEndsI;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempStartsJ;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempStartsI;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int threadNum;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int numReports;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 long long *scores;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 long long *tempScores;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (____must_checkpoint_mergeAlignment_P_0 || ____must_checkpoint_mergeAlignment_beginTime_0 || ____must_checkpoint_mergeAlignment_myRow_0 || ____must_checkpoint_mergeAlignment_indexB_0 || ____must_checkpoint_mergeAlignment_index_0 || ____must_checkpoint_mergeAlignment_length_0 || ____must_checkpoint_mergeAlignment_flag_0 || ____must_checkpoint_mergeAlignment_totalReports_0 || ____must_checkpoint_mergeAlignment_producer_0 || ____must_checkpoint_mergeAlignment_consumer_0 || ____must_checkpoint_mergeAlignment_mask_0 || ____must_checkpoint_mergeAlignment_iter_0 || ____must_checkpoint_mergeAlignment_j_0 || ____must_checkpoint_mergeAlignment_i_0 || ____must_checkpoint_mergeAlignment_C_0 || ____must_checkpoint_mergeAlignment_sequences_0 || ____must_checkpoint_mergeAlignment_tempSeqsJ_0 || ____must_checkpoint_mergeAlignment_tempSeqsI_0 || ____must_checkpoint_mergeAlignment_tempEndsJ_0 || ____must_checkpoint_mergeAlignment_tempEndsI_0 || ____must_checkpoint_mergeAlignment_tempStartsJ_0 || ____must_checkpoint_mergeAlignment_tempStartsI_0 || ____must_checkpoint_mergeAlignment_threadNum_0 || ____must_checkpoint_mergeAlignment_numReports_0 || ____must_checkpoint_mergeAlignment_scores_0 || ____must_checkpoint_mergeAlignment_tempScores_0) { register_stack_vars(26, "mergeAlignment|P|0", &____must_checkpoint_mergeAlignment_P_0, "%struct.bstr*", (void *)(&P), (size_t)8, 1, 0, 0, "mergeAlignment|beginTime|0", &____must_checkpoint_mergeAlignment_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "mergeAlignment|myRow|0", &____must_checkpoint_mergeAlignment_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "mergeAlignment|indexB|0", &____must_checkpoint_mergeAlignment_indexB_0, "i32", (void *)(&indexB), (size_t)4, 0, 0, 0, "mergeAlignment|index|0", &____must_checkpoint_mergeAlignment_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "mergeAlignment|length|0", &____must_checkpoint_mergeAlignment_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0, "mergeAlignment|flag|0", &____must_checkpoint_mergeAlignment_flag_0, "i32", (void *)(&flag), (size_t)4, 0, 0, 0, "mergeAlignment|totalReports|0", &____must_checkpoint_mergeAlignment_totalReports_0, "i32", (void *)(&totalReports), (size_t)4, 0, 0, 0, "mergeAlignment|producer|0", &____must_checkpoint_mergeAlignment_producer_0, "i32", (void *)(&producer), (size_t)4, 0, 0, 0, "mergeAlignment|consumer|0", &____must_checkpoint_mergeAlignment_consumer_0, "i32", (void *)(&consumer), (size_t)4, 0, 0, 0, "mergeAlignment|mask|0", &____must_checkpoint_mergeAlignment_mask_0, "i32", (void *)(&mask), (size_t)4, 0, 0, 0, "mergeAlignment|iter|0", &____must_checkpoint_mergeAlignment_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "mergeAlignment|j|0", &____must_checkpoint_mergeAlignment_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "mergeAlignment|i|0", &____must_checkpoint_mergeAlignment_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "mergeAlignment|C|0", &____must_checkpoint_mergeAlignment_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "mergeAlignment|sequences|0", &____must_checkpoint_mergeAlignment_sequences_0, "i8**", (void *)(&sequences), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsJ|0", &____must_checkpoint_mergeAlignment_tempSeqsJ_0, "i8**", (void *)(&tempSeqsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsI|0", &____must_checkpoint_mergeAlignment_tempSeqsI_0, "i8**", (void *)(&tempSeqsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsJ|0", &____must_checkpoint_mergeAlignment_tempEndsJ_0, "i32*", (void *)(&tempEndsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsI|0", &____must_checkpoint_mergeAlignment_tempEndsI_0, "i32*", (void *)(&tempEndsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsJ|0", &____must_checkpoint_mergeAlignment_tempStartsJ_0, "i32*", (void *)(&tempStartsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsI|0", &____must_checkpoint_mergeAlignment_tempStartsI_0, "i32*", (void *)(&tempStartsI), (size_t)8, 1, 0, 0, "mergeAlignment|threadNum|0", &____must_checkpoint_mergeAlignment_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "mergeAlignment|numReports|0", &____must_checkpoint_mergeAlignment_numReports_0, "i32", (void *)(&numReports), (size_t)4, 0, 0, 0, "mergeAlignment|scores|0", &____must_checkpoint_mergeAlignment_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "mergeAlignment|tempScores|0", &____must_checkpoint_mergeAlignment_tempScores_0, "i64*", (void *)(&tempScores), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(28): { goto call_lbl_28; } case(59): { goto call_lbl_59; } case(85): { goto call_lbl_85; } case(88): { goto call_lbl_88; } default: { chimes_error(); } } } ; ;
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -3941,9 +3968,9 @@ long long *tempScores;
 # 1434 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1435 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1436 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   CSTR_T *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((C)); rm_stack(true, 10402924002521287236UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+   CSTR_T *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((C)); rm_stack(true, 10402924002521287236UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 1437 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-rm_stack(true, 10402924002521287236UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0); }
+rm_stack(true, 10402924002521287236UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); }
 # 1438 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1439 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1440 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -4042,35 +4069,62 @@ CSTR_T *freeC_resumable(CSTR_T *C) {const int ____chimes_did_disable1 = new_stac
 # 1487 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
 # 1488 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   CSTR_T *____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((__null)); rm_stack(true, 10402924002521287236UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
+   CSTR_T *____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((__null)); rm_stack(true, 10402924002521287236UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 1489 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-rm_stack(true, 10402924002521287236UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1); }
+rm_stack(true, 10402924002521287236UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); }
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *mergeAlignment_quick(BSTR_T *B, int maxReports, int minSeparation) {const int ____chimes_did_disable0 = new_stack((void *)(&mergeAlignment), "mergeAlignment", &____must_manage_mergeAlignment, 3, 3, (size_t)(10402924002521286981UL), (size_t)(0UL), (size_t)(0UL), "mergeAlignment|B|0", &____must_checkpoint_mergeAlignment_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "mergeAlignment|maxReports|0", &____must_checkpoint_mergeAlignment_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "mergeAlignment|minSeparation|0", &____must_checkpoint_mergeAlignment_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0) ; BSTR_T *P;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 double beginTime;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int myRow;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int indexB;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *index;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int length;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int flag;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int totalReports;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int producer;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int consumer;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int mask;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int iter;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int j;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int i;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *C;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **sequences;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **tempSeqsJ;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 unsigned char **tempSeqsI;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempEndsJ;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempEndsI;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempStartsJ;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int *tempStartsI;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int threadNum;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 int numReports;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 long long *scores;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 long long *tempScores;
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
  if (____must_checkpoint_mergeAlignment_P_0 || ____must_checkpoint_mergeAlignment_beginTime_0 || ____must_checkpoint_mergeAlignment_myRow_0 || ____must_checkpoint_mergeAlignment_indexB_0 || ____must_checkpoint_mergeAlignment_index_0 || ____must_checkpoint_mergeAlignment_length_0 || ____must_checkpoint_mergeAlignment_flag_0 || ____must_checkpoint_mergeAlignment_totalReports_0 || ____must_checkpoint_mergeAlignment_producer_0 || ____must_checkpoint_mergeAlignment_consumer_0 || ____must_checkpoint_mergeAlignment_mask_0 || ____must_checkpoint_mergeAlignment_iter_0 || ____must_checkpoint_mergeAlignment_j_0 || ____must_checkpoint_mergeAlignment_i_0 || ____must_checkpoint_mergeAlignment_C_0 || ____must_checkpoint_mergeAlignment_sequences_0 || ____must_checkpoint_mergeAlignment_tempSeqsJ_0 || ____must_checkpoint_mergeAlignment_tempSeqsI_0 || ____must_checkpoint_mergeAlignment_tempEndsJ_0 || ____must_checkpoint_mergeAlignment_tempEndsI_0 || ____must_checkpoint_mergeAlignment_tempStartsJ_0 || ____must_checkpoint_mergeAlignment_tempStartsI_0 || ____must_checkpoint_mergeAlignment_threadNum_0 || ____must_checkpoint_mergeAlignment_numReports_0 || ____must_checkpoint_mergeAlignment_scores_0 || ____must_checkpoint_mergeAlignment_tempScores_0) { register_stack_vars(26, "mergeAlignment|P|0", &____must_checkpoint_mergeAlignment_P_0, "%struct.bstr*", (void *)(&P), (size_t)8, 1, 0, 0, "mergeAlignment|beginTime|0", &____must_checkpoint_mergeAlignment_beginTime_0, "double", (void *)(&beginTime), (size_t)8, 0, 0, 0, "mergeAlignment|myRow|0", &____must_checkpoint_mergeAlignment_myRow_0, "i32", (void *)(&myRow), (size_t)4, 0, 0, 0, "mergeAlignment|indexB|0", &____must_checkpoint_mergeAlignment_indexB_0, "i32", (void *)(&indexB), (size_t)4, 0, 0, 0, "mergeAlignment|index|0", &____must_checkpoint_mergeAlignment_index_0, "i32*", (void *)(&index), (size_t)8, 1, 0, 0, "mergeAlignment|length|0", &____must_checkpoint_mergeAlignment_length_0, "i32", (void *)(&length), (size_t)4, 0, 0, 0, "mergeAlignment|flag|0", &____must_checkpoint_mergeAlignment_flag_0, "i32", (void *)(&flag), (size_t)4, 0, 0, 0, "mergeAlignment|totalReports|0", &____must_checkpoint_mergeAlignment_totalReports_0, "i32", (void *)(&totalReports), (size_t)4, 0, 0, 0, "mergeAlignment|producer|0", &____must_checkpoint_mergeAlignment_producer_0, "i32", (void *)(&producer), (size_t)4, 0, 0, 0, "mergeAlignment|consumer|0", &____must_checkpoint_mergeAlignment_consumer_0, "i32", (void *)(&consumer), (size_t)4, 0, 0, 0, "mergeAlignment|mask|0", &____must_checkpoint_mergeAlignment_mask_0, "i32", (void *)(&mask), (size_t)4, 0, 0, 0, "mergeAlignment|iter|0", &____must_checkpoint_mergeAlignment_iter_0, "i32", (void *)(&iter), (size_t)4, 0, 0, 0, "mergeAlignment|j|0", &____must_checkpoint_mergeAlignment_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0, "mergeAlignment|i|0", &____must_checkpoint_mergeAlignment_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "mergeAlignment|C|0", &____must_checkpoint_mergeAlignment_C_0, "%struct.cstr*", (void *)(&C), (size_t)8, 1, 0, 0, "mergeAlignment|sequences|0", &____must_checkpoint_mergeAlignment_sequences_0, "i8**", (void *)(&sequences), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsJ|0", &____must_checkpoint_mergeAlignment_tempSeqsJ_0, "i8**", (void *)(&tempSeqsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempSeqsI|0", &____must_checkpoint_mergeAlignment_tempSeqsI_0, "i8**", (void *)(&tempSeqsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsJ|0", &____must_checkpoint_mergeAlignment_tempEndsJ_0, "i32*", (void *)(&tempEndsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempEndsI|0", &____must_checkpoint_mergeAlignment_tempEndsI_0, "i32*", (void *)(&tempEndsI), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsJ|0", &____must_checkpoint_mergeAlignment_tempStartsJ_0, "i32*", (void *)(&tempStartsJ), (size_t)8, 1, 0, 0, "mergeAlignment|tempStartsI|0", &____must_checkpoint_mergeAlignment_tempStartsI_0, "i32*", (void *)(&tempStartsI), (size_t)8, 1, 0, 0, "mergeAlignment|threadNum|0", &____must_checkpoint_mergeAlignment_threadNum_0, "i32", (void *)(&threadNum), (size_t)4, 0, 0, 0, "mergeAlignment|numReports|0", &____must_checkpoint_mergeAlignment_numReports_0, "i32", (void *)(&numReports), (size_t)4, 0, 0, 0, "mergeAlignment|scores|0", &____must_checkpoint_mergeAlignment_scores_0, "i64*", (void *)(&scores), (size_t)8, 1, 0, 0, "mergeAlignment|tempScores|0", &____must_checkpoint_mergeAlignment_tempScores_0, "i64*", (void *)(&tempScores), (size_t)8, 1, 0, 0); } ; ;
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5155,12 +5209,12 @@ long long *tempScores;
 # 1434 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1435 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1436 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   CSTR_T *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((C)); rm_stack(true, 10402924002521287236UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+   CSTR_T *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((C)); rm_stack(true, 10402924002521287236UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 1437 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-rm_stack(true, 10402924002521287236UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0); }
+rm_stack(true, 10402924002521287236UL, "mergeAlignment", &____must_manage_mergeAlignment, ____alias_loc_id_4, ____chimes_did_disable0, false); }
 
 CSTR_T *mergeAlignment(BSTR_T *B, int maxReports, int minSeparation) { return (____chimes_replaying ? mergeAlignment_resumable(B, maxReports, minSeparation) : mergeAlignment_quick(B, maxReports, minSeparation)); }
-
+# 1441 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((void *)(&freeC), "freeC", &____must_manage_freeC, 1, 0, (size_t)(10402924002521287193UL)) ; ; ;
 # 1442 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1443 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -5253,14 +5307,12 @@ CSTR_T *freeC_quick(CSTR_T *C) {const int ____chimes_did_disable1 = new_stack((v
 # 1487 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
   }
 # 1488 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-   CSTR_T *____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((__null)); rm_stack(true, 10402924002521287236UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
+   CSTR_T *____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((__null)); rm_stack(true, 10402924002521287236UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 1489 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
-rm_stack(true, 10402924002521287236UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1); }
+rm_stack(true, 10402924002521287236UL, "freeC", &____must_manage_freeC, ____alias_loc_id_5, ____chimes_did_disable1, false); }
 
 CSTR_T *freeC(CSTR_T *C) { return (____chimes_replaying ? freeC_resumable(C) : freeC_quick(C)); }
-
-
-
+# 51 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6348,7 +6400,7 @@ CSTR_T *mergeAlignment_npm(BSTR_T *B, int maxReports, int minSeparation) {
    CSTR_T * ____chimes_ret_var_0; ____chimes_ret_var_0 = ((C)); return ____chimes_ret_var_0; ;
 # 1437 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 }
-
+# 1441 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 CSTR_T *freeC_npm(CSTR_T *C) {
 # 1442 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
 # 1443 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/mergeAlignment.c"
@@ -6492,8 +6544,8 @@ static int module_init() {
                              (10402924002521284791UL + 30UL), (10402924002521284791UL + 1176UL),
                              (10402924002521284791UL + 478UL), (10402924002521284791UL + 480UL),
                              (10402924002521284791UL + 1513UL), (10402924002521284791UL + 2309UL),
-                     "bstr", 9, "long long int**", (int)__builtin_offsetof (struct bstr, bestScores), "int", (int)__builtin_offsetof (struct bstr, numThreads), "int*", (int)__builtin_offsetof (struct bstr, numReports), "int**", (int)__builtin_offsetof (struct bstr, bestStartsI), "int**", (int)__builtin_offsetof (struct bstr, bestStartsJ), "int**", (int)__builtin_offsetof (struct bstr, bestEndsI), "int**", (int)__builtin_offsetof (struct bstr, bestEndsJ), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsI), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsJ),
-                     "cstr", 8, "long long int*", (int)__builtin_offsetof (struct cstr, finalScores), "int", (int)__builtin_offsetof (struct cstr, numReports), "int*", (int)__builtin_offsetof (struct cstr, finalStartsI), "int*", (int)__builtin_offsetof (struct cstr, finalStartsJ), "int*", (int)__builtin_offsetof (struct cstr, finalEndsI), "int*", (int)__builtin_offsetof (struct cstr, finalEndsJ), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsI), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsJ),
+                     "bstr", 576UL, 9, "long long int**", (int)__builtin_offsetof (struct bstr, bestScores), "int", (int)__builtin_offsetof (struct bstr, numThreads), "int*", (int)__builtin_offsetof (struct bstr, numReports), "int**", (int)__builtin_offsetof (struct bstr, bestStartsI), "int**", (int)__builtin_offsetof (struct bstr, bestStartsJ), "int**", (int)__builtin_offsetof (struct bstr, bestEndsI), "int**", (int)__builtin_offsetof (struct bstr, bestEndsJ), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsI), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsJ),
+                     "cstr", 512UL, 8, "long long int*", (int)__builtin_offsetof (struct cstr, finalScores), "int", (int)__builtin_offsetof (struct cstr, numReports), "int*", (int)__builtin_offsetof (struct cstr, finalStartsI), "int*", (int)__builtin_offsetof (struct cstr, finalStartsJ), "int*", (int)__builtin_offsetof (struct cstr, finalEndsI), "int*", (int)__builtin_offsetof (struct cstr, finalEndsJ), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsI), "unsigned char**", (int)__builtin_offsetof (struct cstr, finalSeqsJ),
                              "freeC", "_Z5freeCP4cstr", 0,
                              "mergeAlignment", "_Z14mergeAlignmentP4bstrii", 4, "gridInfo", "getSeconds", "qSort_both", "getSeconds",
                         "mergeAlignment|B|0", 3, "qSort_both", "gridInfo", "getSeconds",

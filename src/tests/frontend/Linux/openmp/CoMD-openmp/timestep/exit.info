@@ -1,6 +1,6 @@
-timestep 0 0 0 0
-advanceVelocity 0 7 100 101 102 103 104 105 145 0 0
-advancePosition 0 9 228 229 230 231 232 233 234 235 275 0 0
-redistributeAtoms 0 1 386 0 0
+timestep 0 1 5 0 0
+advanceVelocity 0 7 104 105 106 107 108 109 149 0 0
+advancePosition 0 9 232 233 234 235 236 237 238 239 279 0 0
+redistributeAtoms 0 1 390 0 0
 computeForce 0 0 0 0
-kineticEnergy 0 1 617 0 0
+kineticEnergy 0 1 621 0 0

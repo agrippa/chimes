@@ -9,11 +9,11 @@ PUT_DIAG 0 0
 PUT_RCOL 0 0
 PUT_BROW 0 0
 char_mapping 0
-print_matrix 275 0 0
-clear_whitespaces_do_mapping 322 0
-read_file 364 365
-add_tile_to_run 0 0 397
-pop_next_tile 443
-task_func 0 0 905
-main 0 1610
-random_init 1648 0
+print_matrix 327 0 0
+clear_whitespaces_do_mapping 378 0
+read_file 424 425
+add_tile_to_run 0 0 457
+pop_next_tile 505
+task_func 0 0 973
+main 0 1682
+random_init 1720 0

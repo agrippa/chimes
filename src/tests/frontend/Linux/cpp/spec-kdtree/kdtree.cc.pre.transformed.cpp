@@ -19,20 +19,6 @@ static int ____chimes_does_checkpoint_atol_npm = 1;
 static int ____chimes_does_checkpoint_spec_genrand_int32_npm = 1;
 static int ____chimes_does_checkpoint_spec_init_genrand_npm = 1;
 
-static int ____must_checkpoint_main_argv_0 = 2;
-static int ____must_checkpoint_main_xyzw_0 = 2;
-static int ____must_checkpoint_main_i_0 = 2;
-static int ____must_checkpoint_main_n_0 = 2;
-static int ____must_checkpoint_main_maxdepth_0 = 2;
-static int ____must_checkpoint_main_cutoff_0 = 2;
-static int ____must_checkpoint_main_cutoff2_0 = 2;
-static int ____must_checkpoint_main_xi_0 = 2;
-static int ____must_checkpoint_main_yi_0 = 2;
-static int ____must_checkpoint_main_zi_0 = 2;
-static int ____must_checkpoint_main_wi_0 = 2;
-static int ____must_checkpoint_main_ti_0 = 2;
-static int ____must_checkpoint_main_j_0 = 2;
-static int ____must_checkpoint_main_j_1 = 2;
 
 static int ____must_manage_downheap = 2;
 static int ____must_manage_heapsort = 2;
@@ -40,7 +26,6 @@ static int ____must_manage_sweepkdtree = 2;
 static int ____must_manage_empty_kdnode = 2;
 static int ____must_manage_searchkdtree = 2;
 static int ____must_manage_buildkdtree = 2;
-static int ____must_manage_main = 2;
 static int ____must_manage_coordkdtree = 2;
 static int ____must_manage_init_kdnode = 2;
 
@@ -60,6 +45,9 @@ static unsigned ____alias_loc_id_12;
 static unsigned ____alias_loc_id_13;
 static unsigned ____alias_loc_id_14;
 static unsigned ____alias_loc_id_15;
+static unsigned ____alias_loc_id_16;
+static unsigned ____alias_loc_id_17;
+static unsigned ____alias_loc_id_18;
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -75,7 +63,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -91,7 +79,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -126,7 +115,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3980,6 +3969,18 @@ extern int getdate_r (__const char *__restrict __string,
 # 18 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 19 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 
+# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+extern void checkpoint();
+
+extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*____chimes_fp)(void *));
+# 21 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc" 2
+# 21 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 22 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 23 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.h" 1
 # 50 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/specrand.h"
 extern "C" {
@@ -4018,2253 +4019,2308 @@ double spec_genrand_res53(void);
 
 
 }
-# 21 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc" 2
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 48 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-struct kdnode {
-# 49 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  long long n;
-# 50 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  kdnode *lo, *hi;
-# 51 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 25 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc" 2
 # 52 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 52 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+struct kdnode {
 # 53 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  long long n;
 # 54 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  int coord[(3)];
+  kdnode *lo, *hi;
 # 55 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 56 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-};
 # 57 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 58 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  int coord[(3)];
 # 59 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 60 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+};
+# 61 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 62 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 63 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *empty_kdnode_npm();
 kdnode *empty_kdnode_quick(); kdnode *empty_kdnode();
 kdnode *empty_kdnode_resumable() {const int ____chimes_did_disable0 = new_stack((void *)(&empty_kdnode), "empty_kdnode", &____must_manage_empty_kdnode, 0, 0) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    memset(empty, 0x00, sizeof(kdnode));
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 63 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    memset(empty, 0x00, sizeof(kdnode));
 # 66 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     struct kdnode *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (empty); rm_stack(true, 339782406926629104UL, "empty_kdnode", &____must_manage_empty_kdnode, ____alias_loc_id_7, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(true, 339782406926629104UL, "empty_kdnode", &____must_manage_empty_kdnode, ____alias_loc_id_7, ____chimes_did_disable0); }
 # 68 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 69 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 70 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     struct kdnode *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (empty); rm_stack(true, 339782406926629104UL, "empty_kdnode", &____must_manage_empty_kdnode, ____alias_loc_id_10, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 71 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(true, 339782406926629104UL, "empty_kdnode", &____must_manage_empty_kdnode, ____alias_loc_id_10, ____chimes_did_disable0, false); }
+# 72 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 73 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 kdnode *init_kdnode_npm(long long nn);
 kdnode *init_kdnode_quick(long long nn); kdnode *init_kdnode(long long nn);
 kdnode *init_kdnode_resumable(long long nn) {const int ____chimes_did_disable1 = new_stack((void *)(&init_kdnode), "init_kdnode", &____must_manage_init_kdnode, 1, 0, (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    memset(empty, 0x00, sizeof(kdnode));
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 73 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    memset(empty, 0x00, sizeof(kdnode));
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    empty->n = nn;
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     struct kdnode *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (empty); rm_stack(true, 339782406926629129UL, "init_kdnode", &____must_manage_init_kdnode, ____alias_loc_id_8, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(true, 339782406926629129UL, "init_kdnode", &____must_manage_init_kdnode, ____alias_loc_id_8, ____chimes_did_disable1); }
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 112 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 79 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 80 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    empty->n = nn;
+# 81 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     struct kdnode *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (empty); rm_stack(true, 339782406926629129UL, "init_kdnode", &____must_manage_init_kdnode, ____alias_loc_id_11, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 82 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(true, 339782406926629129UL, "init_kdnode", &____must_manage_init_kdnode, ____alias_loc_id_11, ____chimes_did_disable1, false); }
+# 116 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 116 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 void downheap_npm(long long *a, long long n, long long k, int **x, int p);
 void downheap_quick(long long *a, long long n, long long k, int **x, int p); void downheap(long long *a, long long n, long long k, int **x, int p);
 void downheap_resumable(long long *a, long long n, long long k, int **x, int p)
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable2 = new_stack((void *)(&downheap), "downheap", &____must_manage_downheap, 5, 0, (size_t)(339782406926629256UL), (size_t)(0UL), (size_t)(0UL), (size_t)(339782406926629259UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long j; long long v; ;
-# 116 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   v = a[k - 1];
+{const int ____chimes_did_disable2 = new_stack((void *)(&downheap), "downheap", &____must_manage_downheap, 5, 0, (size_t)(339782406926629256UL), (size_t)(0UL), (size_t)(0UL), (size_t)(339782406926629259UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   while (k <= n / 2) {
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      j = k + k;
+   long long j; long long v; ;
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((j < n) && (x[a[j - 1]][p] < x[a[j]][p])) {j++; };
+# 121 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   v = a[k - 1];
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (x[v][p] >= x[a[j - 1]][p]) {break; };
+   while (k <= n / 2) {
+# 123 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      j = k + k;
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      a[k - 1] = a[j - 1];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      k = j;
+      if ((j < n) && (x[a[j - 1]][p] < x[a[j]][p])) {j++; };
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   a[k - 1] = v;
+      if (x[v][p] >= x[a[j - 1]][p]) {break; };
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "downheap", &____must_manage_downheap, ____alias_loc_id_9, ____chimes_did_disable2); }
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 154 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      a[k - 1] = a[j - 1];
+# 129 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      k = j;
+# 130 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 131 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   a[k - 1] = v;
+# 132 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "downheap", &____must_manage_downheap, ____alias_loc_id_12, ____chimes_did_disable2, false); }
+# 158 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 158 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 void heapsort_npm(long long *a, long long n, int **x, int p);
 void heapsort_quick(long long *a, long long n, int **x, int p); void heapsort(long long *a, long long n, int **x, int p);
 void heapsort_resumable(long long *a, long long n, int **x, int p)
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable3 = new_stack((void *)(&heapsort), "heapsort", &____must_manage_heapsort, 4, 0, (size_t)(339782406926629326UL), (size_t)(0UL), (size_t)(339782406926629328UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long k; long long v; ;
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (k = n / 2; k >= 1; k--) { ({ calling_npm("downheap", 0); downheap_npm(a, n, k, x, p); }); };
+{const int ____chimes_did_disable3 = new_stack((void *)(&heapsort), "heapsort", &____must_manage_heapsort, 4, 0, (size_t)(339782406926629326UL), (size_t)(0UL), (size_t)(339782406926629328UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 160 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   while (n > 1) {
+   long long k; long long v; ;
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      v = a[0];
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      a[0] = a[n - 1];
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      a[n - 1] = v;
+   for (k = n / 2; k >= 1; k--) { ({ calling_npm("downheap", 0); downheap_npm(a, n, k, x, p); }); };
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      ({ calling_npm("downheap", 0); downheap_npm(a, --n, 1, x, p); });
+   while (n > 1) {
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+      v = a[0];
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "heapsort", &____must_manage_heapsort, ____alias_loc_id_10, ____chimes_did_disable3); }
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 198 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      a[0] = a[n - 1];
+# 168 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      a[n - 1] = v;
+# 169 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      ({ calling_npm("downheap", 0); downheap_npm(a, --n, 1, x, p); });
+# 170 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 171 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "heapsort", &____must_manage_heapsort, ____alias_loc_id_13, ____chimes_did_disable3, false); }
+# 202 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 202 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 void buildkdtree_npm(kdnode *curr, long long *xn, long long *yn, long long *zn, long long *wn, long long *tn, long long start, long long end, int **x, int p);
 void buildkdtree_quick(kdnode *curr, long long *xn, long long *yn, long long *zn, long long *wn, long long *tn, long long start, long long end, int **x, int p); void buildkdtree(kdnode *curr, long long *xn, long long *yn, long long *zn, long long *wn, long long *tn, long long start, long long end, int **x, int p);
 void buildkdtree_resumable(kdnode *curr, long long *xn, long long *yn,
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-             long long *zn, long long *wn,
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    long long *tn, long long start, long long end, int **x,
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    int p)
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable4 = new_stack((void *)(&buildkdtree), "buildkdtree", &____must_manage_buildkdtree, 10, 0, (size_t)(339782406926629725UL), (size_t)(339782406926629726UL), (size_t)(339782406926629727UL), (size_t)(339782406926629728UL), (size_t)(339782406926629729UL), (size_t)(339782406926629730UL), (size_t)(0UL), (size_t)(0UL), (size_t)(339782406926629733UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 203 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  long long i; long long middle; long long median; long long lower; long long upper; ;
+             long long *zn, long long *wn,
 # 204 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    long long *tn, long long start, long long end, int **x,
 # 205 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    int p)
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{const int ____chimes_did_disable4 = new_stack((void *)(&buildkdtree), "buildkdtree", &____must_manage_buildkdtree, 10, 0, (size_t)(339782406926629725UL), (size_t)(339782406926629726UL), (size_t)(339782406926629727UL), (size_t)(339782406926629728UL), (size_t)(339782406926629729UL), (size_t)(339782406926629730UL), (size_t)(0UL), (size_t)(0UL), (size_t)(339782406926629733UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 207 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  p %= (3);
+  long long i; long long middle; long long median; long long lower; long long upper; ;
 # 208 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 209 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 210 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (end == start) {{
+  p %= (3);
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    curr->n = xn[start];
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 214 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 215 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (end == start) {{
+# 216 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    curr->n = xn[start];
+# 217 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }; } else if (end == start + 1) {
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (x[xn[start]][p] < x[xn[end]][p]) {{
 # 228 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->n = xn[end];
 # 229 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[start]); });
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 231 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (x[xn[start]][p] < x[xn[end]][p]) {{
+# 232 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->n = xn[end];
+# 233 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[start]); });
+# 234 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }; } else if (x[xn[start]][p] > x[xn[end]][p]) {
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->n = xn[start];
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    else {
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       curr->n = xn[start];
+# 240 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
+# 241 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 242 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->hi = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
 # 244 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
 # 245 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
+    else {
 # 246 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->n = xn[start];
 # 247 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->hi = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
 # 248 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 249 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
+# 250 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 251 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 252 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 253 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   else {
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    middle = (start + end) / 2;
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    median = x[xn[middle]][p];
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    for (i = middle - 1; i >= start; i--) {
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (x[xn[i]][p] < median) {
 # 264 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- break;
+# 264 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    middle = (start + end) / 2;
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      } else {
+    median = x[xn[middle]][p];
 # 266 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- middle = i;
+    for (i = middle - 1; i >= start; i--) {
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+      if (x[xn[i]][p] < median) {
 # 268 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
+ break;
 # 269 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    curr->n = xn[middle];
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    lower = start - 1;
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    upper = middle;
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    for (i = start; i <= end; i++) {
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (yn[i] != xn[middle]) {
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- if (x[yn[i]][p] < median) {
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   tn[++lower] = yn[i];
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- } else {
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   tn[++upper] = yn[i];
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- }
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    lower = start - 1;
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    upper = middle;
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    for (i = start; i <= end; i++) {
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (zn[i] != xn[middle]) {
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- if (x[zn[i]][p] < median) {
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yn[++lower] = zn[i];
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- } else {
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yn[++upper] = zn[i];
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- }
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if ((3) == 4) {
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      lower = start - 1;
-# 365 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      upper = middle;
-# 366 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      for (i = start; i <= end; i++) {
-# 367 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- if (wn[i] != xn[middle]) {
-# 368 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (x[wn[i]][p] < median) {
-# 369 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     zn[++lower] = wn[i];
-# 370 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   } else {
-# 371 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     zn[++upper] = wn[i];
-# 372 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
-# 373 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- }
-# 374 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
-# 375 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 394 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 394 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (lower >= start) {
-# 395 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
-# 396 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((3) == 4) {
-# 397 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   buildkdtree(curr->lo, tn, yn, zn, xn, wn,
-# 398 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   start, lower, x, p+1);
-# 399 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       } else {
+# 270 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ middle = i;
+# 271 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 272 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 273 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 274 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 275 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 276 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    curr->n = xn[middle];
+# 306 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 306 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    lower = start - 1;
+# 307 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    upper = middle;
+# 308 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    for (i = start; i <= end; i++) {
+# 309 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if (yn[i] != xn[middle]) {
+# 310 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ if (x[yn[i]][p] < median) {
+# 311 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   tn[++lower] = yn[i];
+# 312 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ } else {
+# 313 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   tn[++upper] = yn[i];
+# 314 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ }
+# 315 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 316 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 335 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 335 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    lower = start - 1;
+# 336 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    upper = middle;
+# 337 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    for (i = start; i <= end; i++) {
+# 338 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if (zn[i] != xn[middle]) {
+# 339 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ if (x[zn[i]][p] < median) {
+# 340 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   yn[++lower] = zn[i];
+# 341 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ } else {
+# 342 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   yn[++upper] = zn[i];
+# 343 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ }
+# 344 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 345 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 346 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 347 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 348 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 349 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if ((3) == 4) {
+# 368 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 368 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      lower = start - 1;
+# 369 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      upper = middle;
+# 370 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      for (i = start; i <= end; i++) {
+# 371 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ if (wn[i] != xn[middle]) {
+# 372 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (x[wn[i]][p] < median) {
+# 373 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     zn[++lower] = wn[i];
+# 374 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   } else {
+# 375 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     zn[++upper] = wn[i];
+# 376 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 377 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ }
+# 378 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 379 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 398 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 398 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (lower >= start) {
+# 399 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->lo = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
 # 400 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if ((3) == 4) {
 # 401 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   buildkdtree(curr->lo, tn, yn, zn, xn, wn,
 # 402 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   start, lower, x, p+1);
 # 403 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      } else {
 # 404 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 405 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 406 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 407 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       {
 # 408 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->lo, tn, yn, xn, wn, zn, start, lower, x, p+1); });
+# 409 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 410 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       }
 # 411 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+       {
 # 412 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->lo, tn, yn, xn, wn, zn, start, lower, x, p+1); });
+# 414 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       }
+# 415 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 416 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
-# 424 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 424 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (upper > middle) {
-# 425 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->hi = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((3) == 4) {
-# 427 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- buildkdtree(curr->hi, tn, yn, zn, xn, wn,
 # 428 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      middle + 1, end, x, p+1);
+# 428 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (upper > middle) {
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      } else {
+      curr->hi = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
 # 430 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if ((3) == 4) {
 # 431 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ buildkdtree(curr->hi, tn, yn, zn, xn, wn,
 # 432 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      middle + 1, end, x, p+1);
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      } else {
 # 434 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 435 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 436 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 437 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       {
 # 438 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->hi, tn, yn, xn, wn, zn, middle + 1, end, x, p+1); });
+# 439 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 440 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       }
 # 441 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+       {
 # 442 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->hi, tn, yn, xn, wn, zn, middle + 1, end, x, p+1); });
+# 444 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       }
+# 445 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 446 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
-# 451 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 451 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 455 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 455 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
-# 452 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "buildkdtree", &____must_manage_buildkdtree, ____alias_loc_id_11, ____chimes_did_disable4); }
-# 468 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 468 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 456 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "buildkdtree", &____must_manage_buildkdtree, ____alias_loc_id_14, ____chimes_did_disable4, false); }
+# 472 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 472 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 void coordkdtree_npm(kdnode *curr, int **x);
 void coordkdtree_quick(kdnode *curr, int **x); void coordkdtree(kdnode *curr, int **x);
 void coordkdtree_resumable(kdnode *curr, int **x)
-# 469 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 470 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable5 = new_stack((void *)(&coordkdtree), "coordkdtree", &____must_manage_coordkdtree, 2, 0, (size_t)(339782406926629792UL), (size_t)(339782406926629793UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 471 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 472 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 473 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 474 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{const int ____chimes_did_disable5 = new_stack((void *)(&coordkdtree), "coordkdtree", &____must_manage_coordkdtree, 2, 0, (size_t)(339782406926629792UL), (size_t)(339782406926629793UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 475 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  { int i; for ( i = (0) ; i<(3); i++) {
 # 476 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    curr->coord[i] = x[curr->n][i];
 # 477 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  } }
 # 478 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 479 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  { int i; for ( i = (0) ; i<(3); i++) {
 # 480 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->hi != __null) {
+    curr->coord[i] = x[curr->n][i];
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->hi, x); });
+  } }
 # 482 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->lo != __null) {
+  if (curr->hi != __null) {
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->lo, x); });
+    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->hi, x); });
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
 # 487 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "coordkdtree", &____must_manage_coordkdtree, ____alias_loc_id_12, ____chimes_did_disable5); }
-# 506 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 506 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 488 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (curr->lo != __null) {
+# 489 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->lo, x); });
+# 490 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
+# 491 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "coordkdtree", &____must_manage_coordkdtree, ____alias_loc_id_15, ____chimes_did_disable5, false); }
+# 510 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 510 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 long long searchkdtree_npm(kdnode *curr, kdnode *q, int p, long long cut, long long cut2, int depth, int depthmax);
 long long searchkdtree_quick(kdnode *curr, kdnode *q, int p, long long cut, long long cut2, int depth, int depthmax); long long searchkdtree(kdnode *curr, kdnode *q, int p, long long cut, long long cut2, int depth, int depthmax);
 long long searchkdtree_resumable(kdnode *curr, kdnode *q, int p,
-# 507 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-          long long cut, long long cut2,
-# 508 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-          int depth, int depthmax)
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable6 = new_stack((void *)(&searchkdtree), "searchkdtree", &____must_manage_searchkdtree, 7, 0, (size_t)(339782406926629983UL), (size_t)(339782406926629984UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 510 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long xij; long long yij; long long zij; long long wij; long long r2; long long count; long long countL; long long countH; ;
 # 511 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+          long long cut, long long cut2,
 # 512 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+          int depth, int depthmax)
 # 513 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{const int ____chimes_did_disable6 = new_stack((void *)(&searchkdtree), "searchkdtree", &____must_manage_searchkdtree, 7, 0, (size_t)(339782406926629983UL), (size_t)(339782406926629984UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 514 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   long long xij; long long yij; long long zij; long long wij; long long r2; long long count; long long countL; long long countH; ;
+# 515 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 516 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 517 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 518 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    p %= (3);
-# 527 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 527 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   countH = 0L;
-# 528 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if ((curr->hi != __null) && (q->coord[p] + cut >= curr->coord[p])) {
-# 529 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 530 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 531 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 531 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   countH = 0L;
 # 532 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if ((curr->hi != __null) && (q->coord[p] + cut >= curr->coord[p])) {
 # 533 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     {
 # 534 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       countH = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->hi, q, p+1, cut, cut2, depth+1, depthmax); });
 # 535 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     }
 # 536 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
-# 549 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 549 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   countL = 0L;
-# 550 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if ((curr->lo != __null) && (q->coord[p] - cut < curr->coord[p])) {
-# 551 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 553 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 554 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 555 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 537 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      {
-# 556 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       countL = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->lo, q, p+1, cut, cut2, depth+1, depthmax); });
-# 557 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 538 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       countH = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->hi, q, p+1, cut, cut2, depth+1, depthmax); });
+# 539 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      }
-# 558 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 540 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
+# 553 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 553 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   countL = 0L;
+# 554 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if ((curr->lo != __null) && (q->coord[p] - cut < curr->coord[p])) {
+# 555 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 556 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 557 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 558 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 559 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     {
 # 560 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       countL = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->lo, q, p+1, cut, cut2, depth+1, depthmax); });
 # 561 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     }
 # 562 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 563 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 564 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 566 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   count = 0L;
 # 567 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (q->n != curr->n) {
 # 568 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      xij = q->coord[0] - curr->coord[0];
 # 569 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      yij = q->coord[1] - curr->coord[1];
 # 570 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      zij = q->coord[2] - curr->coord[2];
+   count = 0L;
 # 571 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      r2 = xij * xij + yij * yij + zij * zij;
+   if (q->n != curr->n) {
 # 572 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((3) == 4) {
+      xij = q->coord[0] - curr->coord[0];
 # 573 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-         wij = q->coord[3] - curr->coord[3];
+      yij = q->coord[1] - curr->coord[1];
 # 574 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-         r2 += wij * wij;
+      zij = q->coord[2] - curr->coord[2];
 # 575 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+      r2 = xij * xij + yij * yij + zij * zij;
 # 576 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (r2 < cut2) {
+      if ((3) == 4) {
 # 577 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- count++;
+         wij = q->coord[3] - curr->coord[3];
 # 578 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+         r2 += wij * wij;
 # 579 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+      }
 # 580 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if (r2 < cut2) {
 # 581 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ count++;
 # 582 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
 # 583 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 587 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    long long ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((count + countL + countH)); rm_stack(false, 0UL, "searchkdtree", &____must_manage_searchkdtree, ____alias_loc_id_13, ____chimes_did_disable6); return ____chimes_ret_var_2; ;
 # 588 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "searchkdtree", &____must_manage_searchkdtree, ____alias_loc_id_13, ____chimes_did_disable6); }
-# 607 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 607 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 589 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 590 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 591 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    long long ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((count + countL + countH)); rm_stack(false, 0UL, "searchkdtree", &____must_manage_searchkdtree, ____alias_loc_id_16, ____chimes_did_disable6, false); return ____chimes_ret_var_2; ;
+# 592 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "searchkdtree", &____must_manage_searchkdtree, ____alias_loc_id_16, ____chimes_did_disable6, false); }
+# 611 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 611 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 long long sweepkdtree_npm(kdnode *curr, kdnode *r, long long cut, long long cut2, int depth, int depthmax);
 long long sweepkdtree_quick(kdnode *curr, kdnode *r, long long cut, long long cut2, int depth, int depthmax); long long sweepkdtree(kdnode *curr, kdnode *r, long long cut, long long cut2, int depth, int depthmax);
 long long sweepkdtree_resumable(kdnode *curr, kdnode *r, long long cut, long long cut2,
-# 608 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-         int depth, int depthmax)
-# 609 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable7 = new_stack((void *)(&sweepkdtree), "sweepkdtree", &____must_manage_sweepkdtree, 6, 0, (size_t)(339782406926630066UL), (size_t)(339782406926630067UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 610 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  long long count; long long countL; long long countH; ;
-# 611 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+         int depth, int depthmax)
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{const int ____chimes_did_disable7 = new_stack((void *)(&sweepkdtree), "sweepkdtree", &____must_manage_sweepkdtree, 6, 0, (size_t)(339782406926630066UL), (size_t)(339782406926630067UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 614 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  count = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(r, curr, 0, cut, cut2, depth, depthmax); });
+  long long count; long long countL; long long countH; ;
 # 615 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 616 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 617 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 618 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  countH = 0L;
+  count = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(r, curr, 0, cut, cut2, depth, depthmax); });
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->hi != __null) {
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 622 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  countH = 0L;
 # 623 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (curr->hi != __null) {
 # 624 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    {
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      countH = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->hi, r, cut, cut2, depth, depthmax); });
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
 # 627 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    {
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      countH = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->hi, r, cut, cut2, depth, depthmax); });
 # 630 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 631 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  countL = 0L;
+  }
 # 632 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->lo != __null) {
 # 633 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 634 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 635 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  countL = 0L;
 # 636 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (curr->lo != __null) {
 # 637 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    {
 # 638 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      countL = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->lo, r, cut, cut2, depth, depthmax); });
 # 639 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
 # 640 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    {
 # 642 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      countL = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->lo, r, cut, cut2, depth, depthmax); });
 # 643 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 644 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
 # 645 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 646 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 647 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 648 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((count + countL + countH)); rm_stack(false, 0UL, "sweepkdtree", &____must_manage_sweepkdtree, ____alias_loc_id_14, ____chimes_did_disable7); return ____chimes_ret_var_3; ;
 # 649 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "sweepkdtree", &____must_manage_sweepkdtree, ____alias_loc_id_14, ____chimes_did_disable7); }
-# 660 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 660 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 650 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 651 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 652 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   long long ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((count + countL + countH)); rm_stack(false, 0UL, "sweepkdtree", &____must_manage_sweepkdtree, ____alias_loc_id_17, ____chimes_did_disable7, false); return ____chimes_ret_var_3; ;
+# 653 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "sweepkdtree", &____must_manage_sweepkdtree, ____alias_loc_id_17, ____chimes_did_disable7, false); }
+# 664 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 664 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 static long (*____chimes_extern_func_atol)(const char *) = atol;static unsigned long (*____chimes_extern_func_spec_genrand_int32)(void) = spec_genrand_int32;static void (*____chimes_extern_func_spec_init_genrand)(unsigned long) = spec_init_genrand;
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv)
-# 661 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 662 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 1, (size_t)(0UL), (size_t)(339782406926630455UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; long long *ti;
-long long *wi;
-long long *zi;
-long long *yi;
-long long *xi;
-long long cutoff2;
-long long cutoff;
-long long maxdepth;
-long long n;
-long long i;
-int **xyzw;
- if (____must_checkpoint_main_ti_0 || ____must_checkpoint_main_wi_0 || ____must_checkpoint_main_zi_0 || ____must_checkpoint_main_yi_0 || ____must_checkpoint_main_xi_0 || ____must_checkpoint_main_cutoff2_0 || ____must_checkpoint_main_cutoff_0 || ____must_checkpoint_main_maxdepth_0 || ____must_checkpoint_main_n_0 || ____must_checkpoint_main_i_0 || ____must_checkpoint_main_xyzw_0) { register_stack_vars(11, "main|ti|0", &____must_checkpoint_main_ti_0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", &____must_checkpoint_main_wi_0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", &____must_checkpoint_main_zi_0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", &____must_checkpoint_main_yi_0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", &____must_checkpoint_main_xi_0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|cutoff2|0", &____must_checkpoint_main_cutoff2_0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", &____must_checkpoint_main_cutoff_0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", &____must_checkpoint_main_maxdepth_0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", &____must_checkpoint_main_n_0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", &____must_checkpoint_main_xyzw_0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { goto lbl_0; } ; ;
-# 663 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ;
-# 664 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       long long count; ;
 # 665 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       ;
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  kdnode *root; kdnode *query; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(339782406926630458UL), "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; kdnode *root;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long *ti;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long *wi;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long *zi;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long *yi;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long *xi;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long count;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long cutoff2;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long cutoff;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long maxdepth;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long n;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long i;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+int **xyzw;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ register_stack_vars(13, "main|root|0", (int *)0x0, "%struct.kdnode*", (void *)(&root), (size_t)8, 1, 0, 0, "main|ti|0", (int *)0x0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", (int *)0x0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", (int *)0x0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", (int *)0x0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", (int *)0x0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|count|0", (int *)0x0, "i64", (void *)(&count), (size_t)8, 0, 0, 0, "main|cutoff2|0", (int *)0x0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", (int *)0x0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", (int *)0x0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", (int *)0x0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", (int *)0x0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", (int *)0x0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0); if (____chimes_replaying) { goto lbl_0; } ; ;
 # 667 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   struct timespec startTime; struct timespec endTime; ;
+   ;
 # 668 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  double elapsedTime; ;
+        ;
 # 669 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       ;
 # 670 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   kdnode *query; ;
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   struct timespec startTime; struct timespec endTime; ;
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (argc > 4) {
+  double elapsedTime; ;
 # 673 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    fprintf(stderr, "Usage: %s <n> <cutoffdivisor> <maxdepth>\n", argv[0]);
 # 674 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    exit (1);
 # 675 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 676 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (argc > 4) {
 # 677 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    fprintf(stderr, "Usage: %s <n> <cutoffdivisor> <maxdepth>\n", argv[0]);
 # 678 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    exit (1);
 # 679 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
 # 680 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 681 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 682 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 683 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (argc == 1) {{
 # 684 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    n = (100000L);
 # 685 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    cutoff = (32767)/(10);
 # 686 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    maxdepth = (2);
 # 687 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }; } else if (argc == 2) {{
+  if (argc == 1) {{
 # 688 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_2); call_lbl_4: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argv[1]); } calling((void*)atol, 4, ____alias_loc_id_2, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg0); }) ) : (({ calling_npm("atol", ____alias_loc_id_2); (*____chimes_extern_func_atol)(argv[1]); })));
+    n = (100000L);
 # 689 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (n < 0) {
-# 690 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      fprintf(stderr, "main: n must be >= 0!\n");
-# 691 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      exit(1);
-# 692 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 693 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     cutoff = (32767)/(10);
+# 690 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    maxdepth = (2);
+# 691 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }; } else if (argc == 2) {{
+# 692 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    alias_group_changed(____alias_loc_id_5); call_lbl_4: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg0; if (!____chimes_replaying) { ____chimes_arg0 = (argv[1]); } calling((void*)atol, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg0); }) ) : (({ calling_npm("atol", ____alias_loc_id_5); (*____chimes_extern_func_atol)(argv[1]); })));
+# 693 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (n < 0) {
 # 694 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    maxdepth = (2);
+      fprintf(stderr, "main: n must be >= 0!\n");
 # 695 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }; } else if (argc == 3){
+      exit(1);
 # 696 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_5); call_lbl_8: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (argv[1]); } calling((void*)atol, 8, ____alias_loc_id_5, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg1); }) ) : (({ calling_npm("atol", ____alias_loc_id_5); (*____chimes_extern_func_atol)(argv[1]); })));
+    }
 # 697 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (n < 0) {
+    cutoff = (32767)/(10);
 # 698 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      fprintf(stderr, "main: n must be >= 0!\n");
-# 699 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      exit(1);
-# 700 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 701 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_3); call_lbl_12: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (argv[2]); } calling((void*)atol, 12, ____alias_loc_id_3, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg2); }) ) : (({ calling_npm("atol", ____alias_loc_id_3); (*____chimes_extern_func_atol)(argv[2]); })));
-# 702 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (cutoff <= 0) {
-# 703 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      fprintf(stderr, "main: cutoff must be >0!\n");
-# 704 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      exit(1);
-# 705 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 706 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    cutoff = (32767)/cutoff;
-# 707 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     maxdepth = (2);
-# 708 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  } else {
-# 709 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_6); call_lbl_16: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (argv[1]); } calling((void*)atol, 16, ____alias_loc_id_6, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg3); }) ) : (({ calling_npm("atol", ____alias_loc_id_6); (*____chimes_extern_func_atol)(argv[1]); })));
-# 710 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 699 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }; } else if (argc == 3){
+# 700 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    alias_group_changed(____alias_loc_id_8); call_lbl_8: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg1; if (!____chimes_replaying) { ____chimes_arg1 = (argv[1]); } calling((void*)atol, 8, ____alias_loc_id_8, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg1); }) ) : (({ calling_npm("atol", ____alias_loc_id_8); (*____chimes_extern_func_atol)(argv[1]); })));
+# 701 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (n < 0) {
-# 711 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 702 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       fprintf(stderr, "main: n must be >= 0!\n");
-# 712 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 703 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       exit(1);
-# 713 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 704 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
-# 714 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_4); call_lbl_20: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (argv[2]); } calling((void*)atol, 20, ____alias_loc_id_4, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg4); }) ) : (({ calling_npm("atol", ____alias_loc_id_4); (*____chimes_extern_func_atol)(argv[2]); })));
-# 715 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 705 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    alias_group_changed(____alias_loc_id_6); call_lbl_12: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg2; if (!____chimes_replaying) { ____chimes_arg2 = (argv[2]); } calling((void*)atol, 12, ____alias_loc_id_6, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg2); }) ) : (({ calling_npm("atol", ____alias_loc_id_6); (*____chimes_extern_func_atol)(argv[2]); })));
+# 706 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (cutoff <= 0) {
-# 716 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 707 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       fprintf(stderr, "main: cutoff must be >0!\n");
-# 717 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 708 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       exit(1);
-# 718 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 709 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
-# 719 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 710 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     cutoff = (32767)/cutoff;
-# 720 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    maxdepth = atoi(argv[3]);
-# 721 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (maxdepth < 0) {
-# 722 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      fprintf(stderr, "main: maxdepth must be >= 0!\n");
-# 723 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 711 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    maxdepth = (2);
+# 712 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  } else {
+# 713 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    alias_group_changed(____alias_loc_id_9); call_lbl_16: n = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg3; if (!____chimes_replaying) { ____chimes_arg3 = (argv[1]); } calling((void*)atol, 16, ____alias_loc_id_9, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg3); }) ) : (({ calling_npm("atol", ____alias_loc_id_9); (*____chimes_extern_func_atol)(argv[1]); })));
+# 714 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (n < 0) {
+# 715 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      fprintf(stderr, "main: n must be >= 0!\n");
+# 716 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       exit(1);
-# 724 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 717 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
+# 718 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    alias_group_changed(____alias_loc_id_7); call_lbl_20: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ const char * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (argv[2]); } calling((void*)atol, 20, ____alias_loc_id_7, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(____chimes_arg4); }) ) : (({ calling_npm("atol", ____alias_loc_id_7); (*____chimes_extern_func_atol)(argv[2]); })));
+# 719 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (cutoff <= 0) {
+# 720 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      fprintf(stderr, "main: cutoff must be >0!\n");
+# 721 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      exit(1);
+# 722 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 723 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    cutoff = (32767)/cutoff;
+# 724 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    maxdepth = atoi(argv[3]);
 # 725 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
+    if (maxdepth < 0) {
 # 726 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      fprintf(stderr, "main: maxdepth must be >= 0!\n");
 # 727 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      exit(1);
 # 728 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 729 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
+# 730 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 731 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 732 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 733 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    cutoff2 = cutoff * cutoff;
-# 744 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 744 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630307UL, 0, 0);
-# 745 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (xi == __null) {
-# 746 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating xi array!\n");
-# 747 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     exit(1);
 # 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+# 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   xi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630307UL, 0, 0);
 # 749 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (xi == __null) {
 # 750 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630303UL, 0, 0);
+     fprintf(stderr, "main: error allocating xi array!\n");
 # 751 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (yi == __null) {
+     exit(1);
 # 752 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating yi array!\n");
+   }
 # 753 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     exit(1);
 # 754 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   yi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630303UL, 0, 0);
 # 755 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (yi == __null) {
 # 756 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   zi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630299UL, 0, 0);
+     fprintf(stderr, "main: error allocating yi array!\n");
 # 757 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (zi == __null) {
+     exit(1);
 # 758 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating zi array!\n");
+   }
 # 759 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     exit(1);
 # 760 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   zi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630299UL, 0, 0);
 # 761 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (zi == __null) {
 # 762 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ti = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630427UL, 0, 0);
+     fprintf(stderr, "main: error allocating zi array!\n");
 # 763 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (ti == __null) {
+     exit(1);
 # 764 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating ti array!\n");
+   }
 # 765 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     exit(1);
 # 766 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   ti = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630428UL, 0, 0);
 # 767 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (ti == __null) {
 # 768 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   wi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630426UL, 0, 0);
+     fprintf(stderr, "main: error allocating ti array!\n");
 # 769 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (wi == __null) {
-# 770 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating wi array!\n");
-# 771 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      exit(1);
+# 770 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 771 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 772 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   wi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630427UL, 0, 0);
 # 773 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (wi == __null) {
 # 774 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     fprintf(stderr, "main: error allocating wi array!\n");
 # 775 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     exit(1);
 # 776 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 777 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (i = 0L; i < n; i++) {
-# 778 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     xi[i] = yi[i] = zi[i] = i;
-# 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     if ((3) == 4) {
-# 780 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       wi[i] = i;
-# 781 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     }
-# 782 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
+# 777 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 778 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 780 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 781 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   for (i = 0L; i < n; i++) {
+# 782 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     xi[i] = yi[i] = zi[i] = i;
 # 783 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     if ((3) == 4) {
 # 784 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       wi[i] = i;
 # 785 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     }
 # 786 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 787 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 788 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 789 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 790 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xyzw = (int **) malloc_wrapper(n * sizeof(int *), 339782406926630360UL, 1, 0);
 # 791 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (xyzw == __null) {
 # 792 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating xyzw array!\n");
 # 793 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     exit(1);
 # 794 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   xyzw = (int **) malloc_wrapper(n * sizeof(int *), 339782406926630360UL, 1, 0);
 # 795 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (xyzw == __null) {
 # 796 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     fprintf(stderr, "main: error allocating xyzw array!\n");
 # 797 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_44: (____chimes_does_checkpoint_spec_init_genrand_npm ? ( ({ unsigned long ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = ((unsigned long)1830129); } calling((void*)spec_init_genrand, 44, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (spec_init_genrand)(____chimes_arg5); }) ) : (({ calling_npm("spec_init_genrand", ____alias_loc_id_0); (*____chimes_extern_func_spec_init_genrand)((unsigned long) 1830129); })));
+     exit(1);
 # 798 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 799 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 800 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 801 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    call_lbl_44: (____chimes_does_checkpoint_spec_init_genrand_npm ? ( ({ unsigned long ____chimes_arg5; if (!____chimes_replaying) { ____chimes_arg5 = ((unsigned long)1830129); } calling((void*)spec_init_genrand, 44, ____alias_loc_id_3, 0UL, 1, (size_t)(0UL)); (spec_init_genrand)(____chimes_arg5); }) ) : (({ calling_npm("spec_init_genrand", ____alias_loc_id_3); (*____chimes_extern_func_spec_init_genrand)((unsigned long) 1830129); })));
 # 802 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 803 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (i=0L; i<n; i++) {
 # 804 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     xyzw[i] = (int *) malloc_wrapper((3)*sizeof(int), 339782406926630362UL, 0, 0);
 # 806 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     if (xyzw[i] == __null) {
 # 807 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       fprintf(stderr, "main: error allocating xyzw[%lld]\n", i);
+   for (i=0L; i<n; i++) {
 # 808 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       exit(1);
 # 809 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     }
+     xyzw[i] = (int *) malloc_wrapper((3)*sizeof(int), 339782406926630362UL, 0, 0);
 # 810 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     { lbl_0: int j; if (____must_checkpoint_main_j_0 != 0) { register_stack_var("main|j|0", &____must_checkpoint_main_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { goto lbl_1; } for ( j = (0) ; j<(3); j++) {
+     if (xyzw[i] == __null) {
 # 811 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       fprintf(stderr, "main: error allocating xyzw[%lld]\n", i);
 # 812 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       xyzw[i][j] = -1;
+       exit(1);
 # 813 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     }
 # 814 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     { lbl_0: int j; register_stack_var("main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { goto lbl_1; } for ( j = (0) ; j<(3); j++) {
 # 815 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 816 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     } }
+       xyzw[i][j] = -1;
 # 817 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
 # 818 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 819 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (i=0L; i<n; i++) {
 # 820 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     { lbl_1: int j; if (____must_checkpoint_main_j_1 != 0) { register_stack_var("main|j|1", &____must_checkpoint_main_j_1, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } case(12): { goto call_lbl_12; } case(16): { goto call_lbl_16; } case(20): { goto call_lbl_20; } case(44): { goto call_lbl_44; } case(49): { goto call_lbl_49; } default: { chimes_error(); } } } for ( j = (0) ; j<(3); j++) {
+     } }
 # 821 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 822 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       alias_group_changed(____alias_loc_id_1); call_lbl_49: xyzw[i][j] = (int) ((____chimes_does_checkpoint_spec_genrand_int32_npm ? ( ({ calling((void*)spec_genrand_int32, 49, ____alias_loc_id_1, 0UL, 0); (spec_genrand_int32)(); }) ) : (({ calling_npm("spec_genrand_int32", ____alias_loc_id_1); (*____chimes_extern_func_spec_genrand_int32)(); }))) >> 17);
 # 823 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   for (i=0L; i<n; i++) {
 # 824 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     { lbl_1: int j; register_stack_var("main|j|1", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } case(8): { goto call_lbl_8; } case(12): { goto call_lbl_12; } case(16): { goto call_lbl_16; } case(20): { goto call_lbl_20; } case(44): { goto call_lbl_44; } case(49): { goto call_lbl_49; } case(50): { goto call_lbl_50; } case(51): { goto call_lbl_51; } case(52): { goto call_lbl_52; } default: { chimes_error(); } } } for ( j = (0) ; j<(3); j++) {
 # 825 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 826 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     } }
+       alias_group_changed(____alias_loc_id_4); call_lbl_49: xyzw[i][j] = (int) ((____chimes_does_checkpoint_spec_genrand_int32_npm ? ( ({ calling((void*)spec_genrand_int32, 49, ____alias_loc_id_4, 0UL, 0); (spec_genrand_int32)(); }) ) : (({ calling_npm("spec_genrand_int32", ____alias_loc_id_4); (*____chimes_extern_func_spec_genrand_int32)(); }))) >> 17);
 # 827 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
 # 828 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 829 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 830 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     } }
 # 831 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 832 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(xi, n, xyzw, 0); });
 # 833 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(yi, n, xyzw, 1); });
 # 834 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(zi, n, xyzw, 2); });
 # 835 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 836 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if ((3) == 4) {
+   ({ calling_npm("heapsort", 0); heapsort_npm(xi, n, xyzw, 0); });
 # 837 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     heapsort(wi, n, xyzw, 3);
+   ({ calling_npm("heapsort", 0); heapsort_npm(yi, n, xyzw, 1); });
 # 838 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   ({ calling_npm("heapsort", 0); heapsort_npm(zi, n, xyzw, 2); });
 # 839 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 840 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if ((3) == 4) {
 # 841 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     heapsort(wi, n, xyzw, 3);
 # 842 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   root = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
-# 856 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 856 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  {
-# 857 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 858 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 859 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 860 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 861 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 862 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   {
-# 863 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("buildkdtree", 0); buildkdtree_npm(root, xi, yi, zi, wi, ti, 0L, n-1, xyzw, 0); });
-# 864 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
-# 865 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
-# 874 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 874 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("coordkdtree", 0); coordkdtree_npm(root, xyzw); });
-# 889 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 889 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  count = 0L;
-# 890 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 891 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 892 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 893 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 843 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 844 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 845 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    call_lbl_50: checkpoint_transformed(50, ____alias_loc_id_2);
+# 846 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 847 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 848 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 849 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 850 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   root = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
+# 864 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 864 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   {
-# 894 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-#pragma omp single
-# 895 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    {
-# 896 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      count += ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(root, root, cutoff, cutoff2, 0, maxdepth); });
-# 897 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 898 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 865 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 866 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 867 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 868 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 869 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 870 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   {
+# 871 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   ({ calling_npm("buildkdtree", 0); buildkdtree_npm(root, xi, yi, zi, wi, ti, 0L, n-1, xyzw, 0); });
+# 872 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 873 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
+# 874 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 875 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 876 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    call_lbl_51: checkpoint_transformed(51, ____alias_loc_id_1);
+# 886 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 886 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   ({ calling_npm("coordkdtree", 0); coordkdtree_npm(root, xyzw); });
+# 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  count = 0L;
+# 906 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 907 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 908 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 909 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  {
+# 910 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+#pragma omp single
+# 911 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    {
 # 912 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 912 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   elapsedTime = 0.0;
+      count += ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(root, root, cutoff, cutoff2, 0, maxdepth); });
 # 913 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   printf("Total time is %10.5f seconds to find %lld points\n",
+    }
 # 914 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
+# 915 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 916 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 917 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    call_lbl_52: checkpoint_transformed(52, ____alias_loc_id_0);
+# 932 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 932 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   elapsedTime = 0.0;
+# 933 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   printf("Total time is %10.5f seconds to find %lld points\n",
+# 934 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     elapsedTime, count);
-# 930 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 930 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_15, ____chimes_did_disable8); return ____chimes_ret_var_4; ;
-# 931 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_15, ____chimes_did_disable8); }
-kdnode *empty_kdnode_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&empty_kdnode), "empty_kdnode", &____must_manage_empty_kdnode, 0, 0) ; ; ;
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    memset(empty, 0x00, sizeof(kdnode));
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 950 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 950 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_18, ____chimes_did_disable8, false); return ____chimes_ret_var_4; ;
+# 951 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_18, ____chimes_did_disable8, false); }
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+kdnode *empty_kdnode_quick() {const int ____chimes_did_disable0 = new_stack((void *)(&empty_kdnode), "empty_kdnode", &____must_manage_empty_kdnode, 0, 0) ; ; ;
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    memset(empty, 0x00, sizeof(kdnode));
 # 66 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     struct kdnode *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (empty); rm_stack(true, 339782406926629104UL, "empty_kdnode", &____must_manage_empty_kdnode, ____alias_loc_id_7, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
 # 67 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(true, 339782406926629104UL, "empty_kdnode", &____must_manage_empty_kdnode, ____alias_loc_id_7, ____chimes_did_disable0); }
+# 68 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 69 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 70 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     struct kdnode *____chimes_ret_var_0; ; ____chimes_ret_var_0 = (empty); rm_stack(true, 339782406926629104UL, "empty_kdnode", &____must_manage_empty_kdnode, ____alias_loc_id_10, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
+# 71 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(true, 339782406926629104UL, "empty_kdnode", &____must_manage_empty_kdnode, ____alias_loc_id_10, ____chimes_did_disable0, false); }
 
 kdnode *empty_kdnode() { return (____chimes_replaying ? empty_kdnode_resumable() : empty_kdnode_quick()); }
-
-kdnode *init_kdnode_quick(long long nn) {const int ____chimes_did_disable1 = new_stack((void *)(&init_kdnode), "init_kdnode", &____must_manage_init_kdnode, 1, 0, (size_t)(0UL)) ; ; ;
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    memset(empty, 0x00, sizeof(kdnode));
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+kdnode *init_kdnode_quick(long long nn) {const int ____chimes_did_disable1 = new_stack((void *)(&init_kdnode), "init_kdnode", &____must_manage_init_kdnode, 1, 0, (size_t)(0UL)) ; ; ;
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     kdnode *empty; empty = ((kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi))) ;
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    memset(empty, 0x00, sizeof(kdnode));
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    empty->n = nn;
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     struct kdnode *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (empty); rm_stack(true, 339782406926629129UL, "init_kdnode", &____must_manage_init_kdnode, ____alias_loc_id_8, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(true, 339782406926629129UL, "init_kdnode", &____must_manage_init_kdnode, ____alias_loc_id_8, ____chimes_did_disable1); }
+# 79 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 80 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    empty->n = nn;
+# 81 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     struct kdnode *____chimes_ret_var_1; ; ____chimes_ret_var_1 = (empty); rm_stack(true, 339782406926629129UL, "init_kdnode", &____must_manage_init_kdnode, ____alias_loc_id_11, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
+# 82 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(true, 339782406926629129UL, "init_kdnode", &____must_manage_init_kdnode, ____alias_loc_id_11, ____chimes_did_disable1, false); }
 
 kdnode *init_kdnode(long long nn) { return (____chimes_replaying ? init_kdnode_resumable(nn) : init_kdnode_quick(nn)); }
-
-void downheap_quick(long long *a, long long n, long long k, int **x, int p)
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable2 = new_stack((void *)(&downheap), "downheap", &____must_manage_downheap, 5, 0, (size_t)(339782406926629256UL), (size_t)(0UL), (size_t)(0UL), (size_t)(339782406926629259UL), (size_t)(0UL)) ; ; ;
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long j; long long v; ;
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+void downheap_quick(long long *a, long long n, long long k, int **x, int p)
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   v = a[k - 1];
+{const int ____chimes_did_disable2 = new_stack((void *)(&downheap), "downheap", &____must_manage_downheap, 5, 0, (size_t)(339782406926629256UL), (size_t)(0UL), (size_t)(0UL), (size_t)(339782406926629259UL), (size_t)(0UL)) ; ; ;
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   while (k <= n / 2) {
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      j = k + k;
+   long long j; long long v; ;
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((j < n) && (x[a[j - 1]][p] < x[a[j]][p])) {j++; };
+# 121 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   v = a[k - 1];
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (x[v][p] >= x[a[j - 1]][p]) {break; };
+   while (k <= n / 2) {
+# 123 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      j = k + k;
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      a[k - 1] = a[j - 1];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      k = j;
+      if ((j < n) && (x[a[j - 1]][p] < x[a[j]][p])) {j++; };
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   a[k - 1] = v;
+      if (x[v][p] >= x[a[j - 1]][p]) {break; };
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "downheap", &____must_manage_downheap, ____alias_loc_id_9, ____chimes_did_disable2); }
+      a[k - 1] = a[j - 1];
+# 129 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      k = j;
+# 130 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 131 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   a[k - 1] = v;
+# 132 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "downheap", &____must_manage_downheap, ____alias_loc_id_12, ____chimes_did_disable2, false); }
 
 void downheap(long long *a, long long n, long long k, int **x, int p) { (____chimes_replaying ? downheap_resumable(a, n, k, x, p) : downheap_quick(a, n, k, x, p)); }
-
-void heapsort_quick(long long *a, long long n, int **x, int p)
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable3 = new_stack((void *)(&heapsort), "heapsort", &____must_manage_heapsort, 4, 0, (size_t)(339782406926629326UL), (size_t)(0UL), (size_t)(339782406926629328UL), (size_t)(0UL)) ; ; ;
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long k; long long v; ;
 # 158 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+void heapsort_quick(long long *a, long long n, int **x, int p)
 # 159 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (k = n / 2; k >= 1; k--) { ({ calling_npm("downheap", 0); downheap_npm(a, n, k, x, p); }); };
+{const int ____chimes_did_disable3 = new_stack((void *)(&heapsort), "heapsort", &____must_manage_heapsort, 4, 0, (size_t)(339782406926629326UL), (size_t)(0UL), (size_t)(339782406926629328UL), (size_t)(0UL)) ; ; ;
+# 160 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 161 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   while (n > 1) {
+   long long k; long long v; ;
 # 162 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      v = a[0];
 # 163 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      a[0] = a[n - 1];
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      a[n - 1] = v;
+   for (k = n / 2; k >= 1; k--) { ({ calling_npm("downheap", 0); downheap_npm(a, n, k, x, p); }); };
 # 165 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      ({ calling_npm("downheap", 0); downheap_npm(a, --n, 1, x, p); });
+   while (n > 1) {
 # 166 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+      v = a[0];
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "heapsort", &____must_manage_heapsort, ____alias_loc_id_10, ____chimes_did_disable3); }
+      a[0] = a[n - 1];
+# 168 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      a[n - 1] = v;
+# 169 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      ({ calling_npm("downheap", 0); downheap_npm(a, --n, 1, x, p); });
+# 170 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 171 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "heapsort", &____must_manage_heapsort, ____alias_loc_id_13, ____chimes_did_disable3, false); }
 
 void heapsort(long long *a, long long n, int **x, int p) { (____chimes_replaying ? heapsort_resumable(a, n, x, p) : heapsort_quick(a, n, x, p)); }
-
-void buildkdtree_quick(kdnode *curr, long long *xn, long long *yn,
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-             long long *zn, long long *wn,
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    long long *tn, long long start, long long end, int **x,
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    int p)
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable4 = new_stack((void *)(&buildkdtree), "buildkdtree", &____must_manage_buildkdtree, 10, 0, (size_t)(339782406926629725UL), (size_t)(339782406926629726UL), (size_t)(339782406926629727UL), (size_t)(339782406926629728UL), (size_t)(339782406926629729UL), (size_t)(339782406926629730UL), (size_t)(0UL), (size_t)(0UL), (size_t)(339782406926629733UL), (size_t)(0UL)) ; ; ;
+void buildkdtree_quick(kdnode *curr, long long *xn, long long *yn,
 # 203 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  long long i; long long middle; long long median; long long lower; long long upper; ;
+             long long *zn, long long *wn,
 # 204 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    long long *tn, long long start, long long end, int **x,
 # 205 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    int p)
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{const int ____chimes_did_disable4 = new_stack((void *)(&buildkdtree), "buildkdtree", &____must_manage_buildkdtree, 10, 0, (size_t)(339782406926629725UL), (size_t)(339782406926629726UL), (size_t)(339782406926629727UL), (size_t)(339782406926629728UL), (size_t)(339782406926629729UL), (size_t)(339782406926629730UL), (size_t)(0UL), (size_t)(0UL), (size_t)(339782406926629733UL), (size_t)(0UL)) ; ; ;
 # 207 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  p %= (3);
+  long long i; long long middle; long long median; long long lower; long long upper; ;
 # 208 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 209 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 210 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (end == start) {{
+  p %= (3);
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    curr->n = xn[start];
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 214 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 215 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (end == start) {{
+# 216 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    curr->n = xn[start];
+# 217 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }; } else if (end == start + 1) {
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (x[xn[start]][p] < x[xn[end]][p]) {{
 # 228 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->n = xn[end];
 # 229 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[start]); });
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 231 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (x[xn[start]][p] < x[xn[end]][p]) {{
+# 232 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->n = xn[end];
+# 233 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[start]); });
+# 234 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }; } else if (x[xn[start]][p] > x[xn[end]][p]) {
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->n = xn[start];
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    else {
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       curr->n = xn[start];
+# 240 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->lo = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
+# 241 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 242 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->hi = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
 # 244 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
 # 245 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
+    else {
 # 246 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->n = xn[start];
 # 247 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->hi = ({ calling_npm("init_kdnode", 0); init_kdnode_npm(xn[end]); });
 # 248 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 249 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
+# 250 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 251 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 252 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 253 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   else {
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    middle = (start + end) / 2;
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    median = x[xn[middle]][p];
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    for (i = middle - 1; i >= start; i--) {
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (x[xn[i]][p] < median) {
 # 264 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- break;
+# 264 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    middle = (start + end) / 2;
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      } else {
+    median = x[xn[middle]][p];
 # 266 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- middle = i;
+    for (i = middle - 1; i >= start; i--) {
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+      if (x[xn[i]][p] < median) {
 # 268 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
+ break;
 # 269 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    curr->n = xn[middle];
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    lower = start - 1;
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    upper = middle;
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    for (i = start; i <= end; i++) {
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (yn[i] != xn[middle]) {
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- if (x[yn[i]][p] < median) {
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   tn[++lower] = yn[i];
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- } else {
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   tn[++upper] = yn[i];
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- }
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    lower = start - 1;
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    upper = middle;
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    for (i = start; i <= end; i++) {
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (zn[i] != xn[middle]) {
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- if (x[zn[i]][p] < median) {
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yn[++lower] = zn[i];
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- } else {
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yn[++upper] = zn[i];
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- }
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if ((3) == 4) {
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      lower = start - 1;
-# 365 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      upper = middle;
-# 366 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      for (i = start; i <= end; i++) {
-# 367 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- if (wn[i] != xn[middle]) {
-# 368 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (x[wn[i]][p] < median) {
-# 369 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     zn[++lower] = wn[i];
-# 370 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   } else {
-# 371 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     zn[++upper] = wn[i];
-# 372 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
-# 373 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- }
-# 374 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
-# 375 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 394 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 394 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (lower >= start) {
-# 395 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
-# 396 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((3) == 4) {
-# 397 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   buildkdtree_quick(curr->lo, tn, yn, zn, xn, wn, start, lower, x, p+1);
-# 399 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       } else {
+# 270 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ middle = i;
+# 271 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 272 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 273 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 274 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 275 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 276 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    curr->n = xn[middle];
+# 306 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 306 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    lower = start - 1;
+# 307 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    upper = middle;
+# 308 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    for (i = start; i <= end; i++) {
+# 309 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if (yn[i] != xn[middle]) {
+# 310 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ if (x[yn[i]][p] < median) {
+# 311 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   tn[++lower] = yn[i];
+# 312 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ } else {
+# 313 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   tn[++upper] = yn[i];
+# 314 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ }
+# 315 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 316 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 335 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 335 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    lower = start - 1;
+# 336 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    upper = middle;
+# 337 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    for (i = start; i <= end; i++) {
+# 338 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if (zn[i] != xn[middle]) {
+# 339 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ if (x[zn[i]][p] < median) {
+# 340 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   yn[++lower] = zn[i];
+# 341 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ } else {
+# 342 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   yn[++upper] = zn[i];
+# 343 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ }
+# 344 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 345 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 346 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 347 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 348 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 349 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if ((3) == 4) {
+# 368 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 368 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      lower = start - 1;
+# 369 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      upper = middle;
+# 370 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      for (i = start; i <= end; i++) {
+# 371 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ if (wn[i] != xn[middle]) {
+# 372 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (x[wn[i]][p] < median) {
+# 373 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     zn[++lower] = wn[i];
+# 374 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   } else {
+# 375 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     zn[++upper] = wn[i];
+# 376 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 377 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ }
+# 378 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 379 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 398 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 398 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (lower >= start) {
+# 399 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->lo = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
 # 400 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if ((3) == 4) {
 # 401 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 402 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   buildkdtree_quick(curr->lo, tn, yn, zn, xn, wn, start, lower, x, p+1);
 # 403 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      } else {
 # 404 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 405 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 406 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 407 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       {
 # 408 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->lo, tn, yn, xn, wn, zn, start, lower, x, p+1); });
+# 409 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 410 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       }
 # 411 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+       {
 # 412 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->lo, tn, yn, xn, wn, zn, start, lower, x, p+1); });
+# 414 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       }
+# 415 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 416 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
-# 424 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 424 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 428 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 428 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (upper > middle) {
-# 425 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->hi = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((3) == 4) {
-# 427 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- buildkdtree_quick(curr->hi, tn, yn, zn, xn, wn, middle + 1, end, x, p+1);
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      } else {
+      curr->hi = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
 # 430 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if ((3) == 4) {
 # 431 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 432 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ buildkdtree_quick(curr->hi, tn, yn, zn, xn, wn, middle + 1, end, x, p+1);
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      } else {
 # 434 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 435 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 436 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 437 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       {
 # 438 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->hi, tn, yn, xn, wn, zn, middle + 1, end, x, p+1); });
+# 439 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 440 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       }
 # 441 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+       {
 # 442 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ ({ calling_npm("buildkdtree", 0); buildkdtree_npm(curr->hi, tn, yn, xn, wn, zn, middle + 1, end, x, p+1); });
+# 444 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       }
+# 445 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 446 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
-# 451 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 451 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 455 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 455 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
-# 452 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "buildkdtree", &____must_manage_buildkdtree, ____alias_loc_id_11, ____chimes_did_disable4); }
+# 456 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "buildkdtree", &____must_manage_buildkdtree, ____alias_loc_id_14, ____chimes_did_disable4, false); }
 
 void buildkdtree(kdnode *curr, long long *xn, long long *yn,
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 203 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
              long long *zn, long long *wn,
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 204 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     long long *tn, long long start, long long end, int **x,
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 205 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     int p) { (____chimes_replaying ? buildkdtree_resumable(curr, xn, yn, zn, wn, tn, start, end, x, p) : buildkdtree_quick(curr, xn, yn, zn, wn, tn, start, end, x, p)); }
-
-void coordkdtree_quick(kdnode *curr, int **x)
-# 469 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 470 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable5 = new_stack((void *)(&coordkdtree), "coordkdtree", &____must_manage_coordkdtree, 2, 0, (size_t)(339782406926629792UL), (size_t)(339782406926629793UL)) ; ; ;
-# 471 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 472 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+void coordkdtree_quick(kdnode *curr, int **x)
 # 473 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 474 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{const int ____chimes_did_disable5 = new_stack((void *)(&coordkdtree), "coordkdtree", &____must_manage_coordkdtree, 2, 0, (size_t)(339782406926629792UL), (size_t)(339782406926629793UL)) ; ; ;
 # 475 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  { int i; for ( i = (0) ; i<(3); i++) {
 # 476 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    curr->coord[i] = x[curr->n][i];
 # 477 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  } }
 # 478 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 479 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  { int i; for ( i = (0) ; i<(3); i++) {
 # 480 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->hi != __null) {
+    curr->coord[i] = x[curr->n][i];
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->hi, x); });
+  } }
 # 482 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->lo != __null) {
+  if (curr->hi != __null) {
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->lo, x); });
+    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->hi, x); });
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
 # 487 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "coordkdtree", &____must_manage_coordkdtree, ____alias_loc_id_12, ____chimes_did_disable5); }
+# 488 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (curr->lo != __null) {
+# 489 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    ({ calling_npm("coordkdtree", 0); coordkdtree_npm(curr->lo, x); });
+# 490 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
+# 491 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "coordkdtree", &____must_manage_coordkdtree, ____alias_loc_id_15, ____chimes_did_disable5, false); }
 
 void coordkdtree(kdnode *curr, int **x) { (____chimes_replaying ? coordkdtree_resumable(curr, x) : coordkdtree_quick(curr, x)); }
-
-long long searchkdtree_quick(kdnode *curr, kdnode *q, int p,
-# 507 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-          long long cut, long long cut2,
-# 508 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-          int depth, int depthmax)
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable6 = new_stack((void *)(&searchkdtree), "searchkdtree", &____must_manage_searchkdtree, 7, 0, (size_t)(339782406926629983UL), (size_t)(339782406926629984UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 510 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long xij; long long yij; long long zij; long long wij; long long r2; long long count; long long countL; long long countH; ;
+long long searchkdtree_quick(kdnode *curr, kdnode *q, int p,
 # 511 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+          long long cut, long long cut2,
 # 512 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+          int depth, int depthmax)
 # 513 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{const int ____chimes_did_disable6 = new_stack((void *)(&searchkdtree), "searchkdtree", &____must_manage_searchkdtree, 7, 0, (size_t)(339782406926629983UL), (size_t)(339782406926629984UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 514 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   long long xij; long long yij; long long zij; long long wij; long long r2; long long count; long long countL; long long countH; ;
+# 515 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 516 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 517 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 518 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    p %= (3);
-# 527 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 527 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   countH = 0L;
-# 528 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if ((curr->hi != __null) && (q->coord[p] + cut >= curr->coord[p])) {
-# 529 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 530 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 531 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 531 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   countH = 0L;
 # 532 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if ((curr->hi != __null) && (q->coord[p] + cut >= curr->coord[p])) {
 # 533 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     {
 # 534 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       countH = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->hi, q, p+1, cut, cut2, depth+1, depthmax); });
 # 535 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     }
 # 536 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
-# 549 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 549 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   countL = 0L;
-# 550 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if ((curr->lo != __null) && (q->coord[p] - cut < curr->coord[p])) {
-# 551 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 553 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 554 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 555 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 537 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      {
-# 556 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       countL = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->lo, q, p+1, cut, cut2, depth+1, depthmax); });
-# 557 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 538 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       countH = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->hi, q, p+1, cut, cut2, depth+1, depthmax); });
+# 539 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      }
-# 558 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 540 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
+# 553 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 553 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   countL = 0L;
+# 554 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if ((curr->lo != __null) && (q->coord[p] - cut < curr->coord[p])) {
+# 555 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 556 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 557 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 558 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 559 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     {
 # 560 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       countL = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(curr->lo, q, p+1, cut, cut2, depth+1, depthmax); });
 # 561 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     }
 # 562 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 563 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 564 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 566 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   count = 0L;
 # 567 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (q->n != curr->n) {
 # 568 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      xij = q->coord[0] - curr->coord[0];
 # 569 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      yij = q->coord[1] - curr->coord[1];
 # 570 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      zij = q->coord[2] - curr->coord[2];
+   count = 0L;
 # 571 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      r2 = xij * xij + yij * yij + zij * zij;
+   if (q->n != curr->n) {
 # 572 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((3) == 4) {
+      xij = q->coord[0] - curr->coord[0];
 # 573 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-         wij = q->coord[3] - curr->coord[3];
+      yij = q->coord[1] - curr->coord[1];
 # 574 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-         r2 += wij * wij;
+      zij = q->coord[2] - curr->coord[2];
 # 575 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+      r2 = xij * xij + yij * yij + zij * zij;
 # 576 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (r2 < cut2) {
+      if ((3) == 4) {
 # 577 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- count++;
+         wij = q->coord[3] - curr->coord[3];
 # 578 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+         r2 += wij * wij;
 # 579 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+      }
 # 580 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if (r2 < cut2) {
 # 581 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ count++;
 # 582 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
 # 583 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 587 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    long long ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((count + countL + countH)); rm_stack(false, 0UL, "searchkdtree", &____must_manage_searchkdtree, ____alias_loc_id_13, ____chimes_did_disable6); return ____chimes_ret_var_2; ;
 # 588 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "searchkdtree", &____must_manage_searchkdtree, ____alias_loc_id_13, ____chimes_did_disable6); }
+# 589 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 590 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 591 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    long long ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((count + countL + countH)); rm_stack(false, 0UL, "searchkdtree", &____must_manage_searchkdtree, ____alias_loc_id_16, ____chimes_did_disable6, false); return ____chimes_ret_var_2; ;
+# 592 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "searchkdtree", &____must_manage_searchkdtree, ____alias_loc_id_16, ____chimes_did_disable6, false); }
 
 long long searchkdtree(kdnode *curr, kdnode *q, int p,
-# 507 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 511 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
           long long cut, long long cut2,
-# 508 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 512 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
           int depth, int depthmax) { return (____chimes_replaying ? searchkdtree_resumable(curr, q, p, cut, cut2, depth, depthmax) : searchkdtree_quick(curr, q, p, cut, cut2, depth, depthmax)); }
-
-long long sweepkdtree_quick(kdnode *curr, kdnode *r, long long cut, long long cut2,
-# 608 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-         int depth, int depthmax)
-# 609 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable7 = new_stack((void *)(&sweepkdtree), "sweepkdtree", &____must_manage_sweepkdtree, 6, 0, (size_t)(339782406926630066UL), (size_t)(339782406926630067UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
-# 610 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  long long count; long long countL; long long countH; ;
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long sweepkdtree_quick(kdnode *curr, kdnode *r, long long cut, long long cut2,
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+         int depth, int depthmax)
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{const int ____chimes_did_disable7 = new_stack((void *)(&sweepkdtree), "sweepkdtree", &____must_manage_sweepkdtree, 6, 0, (size_t)(339782406926630066UL), (size_t)(339782406926630067UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 614 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  count = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(r, curr, 0, cut, cut2, depth, depthmax); });
+  long long count; long long countL; long long countH; ;
 # 615 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 616 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 617 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 618 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  countH = 0L;
+  count = ({ calling_npm("searchkdtree", 0); searchkdtree_npm(r, curr, 0, cut, cut2, depth, depthmax); });
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->hi != __null) {
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 622 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  countH = 0L;
 # 623 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (curr->hi != __null) {
 # 624 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    {
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      countH = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->hi, r, cut, cut2, depth, depthmax); });
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
 # 627 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    {
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      countH = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->hi, r, cut, cut2, depth, depthmax); });
 # 630 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 631 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  countL = 0L;
+  }
 # 632 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->lo != __null) {
 # 633 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 634 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 635 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  countL = 0L;
 # 636 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (curr->lo != __null) {
 # 637 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    {
 # 638 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      countL = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->lo, r, cut, cut2, depth, depthmax); });
 # 639 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
 # 640 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    {
 # 642 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      countL = ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(curr->lo, r, cut, cut2, depth, depthmax); });
 # 643 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 644 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
 # 645 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 646 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 647 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 648 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((count + countL + countH)); rm_stack(false, 0UL, "sweepkdtree", &____must_manage_sweepkdtree, ____alias_loc_id_14, ____chimes_did_disable7); return ____chimes_ret_var_3; ;
 # 649 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "sweepkdtree", &____must_manage_sweepkdtree, ____alias_loc_id_14, ____chimes_did_disable7); }
+# 650 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 651 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 652 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   long long ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((count + countL + countH)); rm_stack(false, 0UL, "sweepkdtree", &____must_manage_sweepkdtree, ____alias_loc_id_17, ____chimes_did_disable7, false); return ____chimes_ret_var_3; ;
+# 653 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "sweepkdtree", &____must_manage_sweepkdtree, ____alias_loc_id_17, ____chimes_did_disable7, false); }
 
 long long sweepkdtree(kdnode *curr, kdnode *r, long long cut, long long cut2,
-# 608 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 612 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
          int depth, int depthmax) { return (____chimes_replaying ? sweepkdtree_resumable(curr, r, cut, cut2, depth, depthmax) : sweepkdtree_quick(curr, r, cut, cut2, depth, depthmax)); }
-
-int main_quick(int argc, char **argv)
-# 661 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 662 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 1, (size_t)(0UL), (size_t)(339782406926630455UL), "main|argv|0", &____must_checkpoint_main_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; long long *ti;
-long long *wi;
-long long *zi;
-long long *yi;
-long long *xi;
-long long cutoff2;
-long long cutoff;
-long long maxdepth;
-long long n;
-long long i;
-int **xyzw;
- if (____must_checkpoint_main_ti_0 || ____must_checkpoint_main_wi_0 || ____must_checkpoint_main_zi_0 || ____must_checkpoint_main_yi_0 || ____must_checkpoint_main_xi_0 || ____must_checkpoint_main_cutoff2_0 || ____must_checkpoint_main_cutoff_0 || ____must_checkpoint_main_maxdepth_0 || ____must_checkpoint_main_n_0 || ____must_checkpoint_main_i_0 || ____must_checkpoint_main_xyzw_0) { register_stack_vars(11, "main|ti|0", &____must_checkpoint_main_ti_0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", &____must_checkpoint_main_wi_0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", &____must_checkpoint_main_zi_0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", &____must_checkpoint_main_yi_0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", &____must_checkpoint_main_xi_0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|cutoff2|0", &____must_checkpoint_main_cutoff2_0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", &____must_checkpoint_main_cutoff_0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", &____must_checkpoint_main_maxdepth_0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", &____must_checkpoint_main_n_0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", &____must_checkpoint_main_i_0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", &____must_checkpoint_main_xyzw_0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0); } ; ;
-# 663 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ;
 # 664 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       long long count; ;
+int main_quick(int argc, char **argv)
 # 665 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       ;
 # 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  kdnode *root; kdnode *query; ;
+{const int ____chimes_did_disable8 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(339782406926630458UL), "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; kdnode *root;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long *ti;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long *wi;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long *zi;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long *yi;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long *xi;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long count;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long cutoff2;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long cutoff;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long maxdepth;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long n;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long i;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+int **xyzw;
+# 666 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ register_stack_vars(13, "main|root|0", (int *)0x0, "%struct.kdnode*", (void *)(&root), (size_t)8, 1, 0, 0, "main|ti|0", (int *)0x0, "i64*", (void *)(&ti), (size_t)8, 1, 0, 0, "main|wi|0", (int *)0x0, "i64*", (void *)(&wi), (size_t)8, 1, 0, 0, "main|zi|0", (int *)0x0, "i64*", (void *)(&zi), (size_t)8, 1, 0, 0, "main|yi|0", (int *)0x0, "i64*", (void *)(&yi), (size_t)8, 1, 0, 0, "main|xi|0", (int *)0x0, "i64*", (void *)(&xi), (size_t)8, 1, 0, 0, "main|count|0", (int *)0x0, "i64", (void *)(&count), (size_t)8, 0, 0, 0, "main|cutoff2|0", (int *)0x0, "i64", (void *)(&cutoff2), (size_t)8, 0, 0, 0, "main|cutoff|0", (int *)0x0, "i64", (void *)(&cutoff), (size_t)8, 0, 0, 0, "main|maxdepth|0", (int *)0x0, "i64", (void *)(&maxdepth), (size_t)8, 0, 0, 0, "main|n|0", (int *)0x0, "i64", (void *)(&n), (size_t)8, 0, 0, 0, "main|i|0", (int *)0x0, "i64", (void *)(&i), (size_t)8, 0, 0, 0, "main|xyzw|0", (int *)0x0, "i32**", (void *)(&xyzw), (size_t)8, 1, 0, 0); ; ;
 # 667 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   struct timespec startTime; struct timespec endTime; ;
+   ;
 # 668 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  double elapsedTime; ;
+        ;
 # 669 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       ;
 # 670 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   kdnode *query; ;
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   struct timespec startTime; struct timespec endTime; ;
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (argc > 4) {
+  double elapsedTime; ;
 # 673 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    fprintf(stderr, "Usage: %s <n> <cutoffdivisor> <maxdepth>\n", argv[0]);
 # 674 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    exit (1);
 # 675 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 676 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (argc > 4) {
 # 677 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    fprintf(stderr, "Usage: %s <n> <cutoffdivisor> <maxdepth>\n", argv[0]);
 # 678 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    exit (1);
 # 679 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
 # 680 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 681 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 682 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 683 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (argc == 1) {{
 # 684 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    n = (100000L);
 # 685 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    cutoff = (32767)/(10);
 # 686 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    maxdepth = (2);
 # 687 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }; } else if (argc == 2) {{
+  if (argc == 1) {{
 # 688 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_2); call_lbl_4: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 4, ____alias_loc_id_2, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_2); (*____chimes_extern_func_atol)(argv[1]); })));
+    n = (100000L);
 # 689 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (n < 0) {
-# 690 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      fprintf(stderr, "main: n must be >= 0!\n");
-# 691 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      exit(1);
-# 692 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 693 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     cutoff = (32767)/(10);
+# 690 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    maxdepth = (2);
+# 691 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }; } else if (argc == 2) {{
+# 692 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    alias_group_changed(____alias_loc_id_5); call_lbl_4: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 4, ____alias_loc_id_5, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_5); (*____chimes_extern_func_atol)(argv[1]); })));
+# 693 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (n < 0) {
 # 694 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    maxdepth = (2);
+      fprintf(stderr, "main: n must be >= 0!\n");
 # 695 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }; } else if (argc == 3){
+      exit(1);
 # 696 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_5); call_lbl_8: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 8, ____alias_loc_id_5, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_5); (*____chimes_extern_func_atol)(argv[1]); })));
+    }
 # 697 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (n < 0) {
+    cutoff = (32767)/(10);
 # 698 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      fprintf(stderr, "main: n must be >= 0!\n");
-# 699 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      exit(1);
-# 700 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 701 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_3); call_lbl_12: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 12, ____alias_loc_id_3, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[2]); }) ) : (({ calling_npm("atol", ____alias_loc_id_3); (*____chimes_extern_func_atol)(argv[2]); })));
-# 702 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (cutoff <= 0) {
-# 703 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      fprintf(stderr, "main: cutoff must be >0!\n");
-# 704 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      exit(1);
-# 705 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 706 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    cutoff = (32767)/cutoff;
-# 707 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     maxdepth = (2);
-# 708 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  } else {
-# 709 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_6); call_lbl_16: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 16, ____alias_loc_id_6, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_6); (*____chimes_extern_func_atol)(argv[1]); })));
-# 710 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 699 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }; } else if (argc == 3){
+# 700 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    alias_group_changed(____alias_loc_id_8); call_lbl_8: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 8, ____alias_loc_id_8, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_8); (*____chimes_extern_func_atol)(argv[1]); })));
+# 701 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (n < 0) {
-# 711 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 702 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       fprintf(stderr, "main: n must be >= 0!\n");
-# 712 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 703 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       exit(1);
-# 713 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 704 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
-# 714 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    alias_group_changed(____alias_loc_id_4); call_lbl_20: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 20, ____alias_loc_id_4, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[2]); }) ) : (({ calling_npm("atol", ____alias_loc_id_4); (*____chimes_extern_func_atol)(argv[2]); })));
-# 715 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 705 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    alias_group_changed(____alias_loc_id_6); call_lbl_12: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 12, ____alias_loc_id_6, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[2]); }) ) : (({ calling_npm("atol", ____alias_loc_id_6); (*____chimes_extern_func_atol)(argv[2]); })));
+# 706 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (cutoff <= 0) {
-# 716 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 707 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       fprintf(stderr, "main: cutoff must be >0!\n");
-# 717 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 708 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       exit(1);
-# 718 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 709 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
-# 719 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 710 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     cutoff = (32767)/cutoff;
-# 720 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    maxdepth = atoi(argv[3]);
-# 721 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (maxdepth < 0) {
-# 722 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      fprintf(stderr, "main: maxdepth must be >= 0!\n");
-# 723 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 711 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    maxdepth = (2);
+# 712 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  } else {
+# 713 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    alias_group_changed(____alias_loc_id_9); call_lbl_16: n = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 16, ____alias_loc_id_9, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[1]); }) ) : (({ calling_npm("atol", ____alias_loc_id_9); (*____chimes_extern_func_atol)(argv[1]); })));
+# 714 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (n < 0) {
+# 715 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      fprintf(stderr, "main: n must be >= 0!\n");
+# 716 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       exit(1);
-# 724 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 717 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
+# 718 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    alias_group_changed(____alias_loc_id_7); call_lbl_20: cutoff = (____chimes_does_checkpoint_atol_npm ? ( ({ calling((void*)atol, 20, ____alias_loc_id_7, 0UL, 1, (size_t)(339782406926630186UL)); (atol)(argv[2]); }) ) : (({ calling_npm("atol", ____alias_loc_id_7); (*____chimes_extern_func_atol)(argv[2]); })));
+# 719 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (cutoff <= 0) {
+# 720 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      fprintf(stderr, "main: cutoff must be >0!\n");
+# 721 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      exit(1);
+# 722 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 723 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    cutoff = (32767)/cutoff;
+# 724 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    maxdepth = atoi(argv[3]);
 # 725 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
+    if (maxdepth < 0) {
 # 726 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      fprintf(stderr, "main: maxdepth must be >= 0!\n");
 # 727 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      exit(1);
 # 728 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 729 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
+# 730 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 731 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 732 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 733 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    cutoff2 = cutoff * cutoff;
-# 744 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 744 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630307UL, 0, 0);
-# 745 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (xi == __null) {
-# 746 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating xi array!\n");
-# 747 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     exit(1);
 # 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+# 748 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   xi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630307UL, 0, 0);
 # 749 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (xi == __null) {
 # 750 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630303UL, 0, 0);
+     fprintf(stderr, "main: error allocating xi array!\n");
 # 751 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (yi == __null) {
+     exit(1);
 # 752 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating yi array!\n");
+   }
 # 753 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     exit(1);
 # 754 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   yi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630303UL, 0, 0);
 # 755 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (yi == __null) {
 # 756 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   zi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630299UL, 0, 0);
+     fprintf(stderr, "main: error allocating yi array!\n");
 # 757 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (zi == __null) {
+     exit(1);
 # 758 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating zi array!\n");
+   }
 # 759 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     exit(1);
 # 760 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   zi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630299UL, 0, 0);
 # 761 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (zi == __null) {
 # 762 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ti = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630427UL, 0, 0);
+     fprintf(stderr, "main: error allocating zi array!\n");
 # 763 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (ti == __null) {
+     exit(1);
 # 764 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating ti array!\n");
+   }
 # 765 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     exit(1);
 # 766 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   ti = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630428UL, 0, 0);
 # 767 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (ti == __null) {
 # 768 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   wi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630426UL, 0, 0);
+     fprintf(stderr, "main: error allocating ti array!\n");
 # 769 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (wi == __null) {
-# 770 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating wi array!\n");
-# 771 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      exit(1);
+# 770 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 771 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 772 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   wi = (long long *) malloc_wrapper(n * sizeof(long long), 339782406926630427UL, 0, 0);
 # 773 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (wi == __null) {
 # 774 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     fprintf(stderr, "main: error allocating wi array!\n");
 # 775 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     exit(1);
 # 776 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 777 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (i = 0L; i < n; i++) {
-# 778 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     xi[i] = yi[i] = zi[i] = i;
-# 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     if ((3) == 4) {
-# 780 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       wi[i] = i;
-# 781 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     }
-# 782 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
+# 777 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 778 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 779 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 780 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 781 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   for (i = 0L; i < n; i++) {
+# 782 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     xi[i] = yi[i] = zi[i] = i;
 # 783 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     if ((3) == 4) {
 # 784 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       wi[i] = i;
 # 785 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     }
 # 786 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 787 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 788 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 789 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 790 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   xyzw = (int **) malloc_wrapper(n * sizeof(int *), 339782406926630360UL, 1, 0);
 # 791 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (xyzw == __null) {
 # 792 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     fprintf(stderr, "main: error allocating xyzw array!\n");
 # 793 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     exit(1);
 # 794 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   xyzw = (int **) malloc_wrapper(n * sizeof(int *), 339782406926630360UL, 1, 0);
 # 795 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (xyzw == __null) {
 # 796 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     fprintf(stderr, "main: error allocating xyzw array!\n");
 # 797 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    call_lbl_44: (____chimes_does_checkpoint_spec_init_genrand_npm ? ( ({ calling((void*)spec_init_genrand, 44, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (spec_init_genrand)((unsigned long)1830129); }) ) : (({ calling_npm("spec_init_genrand", ____alias_loc_id_0); (*____chimes_extern_func_spec_init_genrand)((unsigned long) 1830129); })));
+     exit(1);
 # 798 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 799 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 800 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 801 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    call_lbl_44: (____chimes_does_checkpoint_spec_init_genrand_npm ? ( ({ calling((void*)spec_init_genrand, 44, ____alias_loc_id_3, 0UL, 1, (size_t)(0UL)); (spec_init_genrand)((unsigned long)1830129); }) ) : (({ calling_npm("spec_init_genrand", ____alias_loc_id_3); (*____chimes_extern_func_spec_init_genrand)((unsigned long) 1830129); })));
 # 802 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 803 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (i=0L; i<n; i++) {
 # 804 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 805 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     xyzw[i] = (int *) malloc_wrapper((3)*sizeof(int), 339782406926630362UL, 0, 0);
 # 806 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     if (xyzw[i] == __null) {
 # 807 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       fprintf(stderr, "main: error allocating xyzw[%lld]\n", i);
+   for (i=0L; i<n; i++) {
 # 808 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       exit(1);
 # 809 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     }
+     xyzw[i] = (int *) malloc_wrapper((3)*sizeof(int), 339782406926630362UL, 0, 0);
 # 810 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     { lbl_0: int j; if (____must_checkpoint_main_j_0 != 0) { register_stack_var("main|j|0", &____must_checkpoint_main_j_0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } for ( j = (0) ; j<(3); j++) {
+     if (xyzw[i] == __null) {
 # 811 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       fprintf(stderr, "main: error allocating xyzw[%lld]\n", i);
 # 812 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       xyzw[i][j] = -1;
+       exit(1);
 # 813 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     }
 # 814 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     { lbl_0: int j; register_stack_var("main|j|0", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); for ( j = (0) ; j<(3); j++) {
 # 815 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 816 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     } }
+       xyzw[i][j] = -1;
 # 817 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
 # 818 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 819 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (i=0L; i<n; i++) {
 # 820 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     { lbl_1: int j; if (____must_checkpoint_main_j_1 != 0) { register_stack_var("main|j|1", &____must_checkpoint_main_j_1, "i32", (void *)(&j), (size_t)4, 0, 0, 0); } for ( j = (0) ; j<(3); j++) {
+     } }
 # 821 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 822 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       alias_group_changed(____alias_loc_id_1); call_lbl_49: xyzw[i][j] = (int) ((____chimes_does_checkpoint_spec_genrand_int32_npm ? ( ({ calling((void*)spec_genrand_int32, 49, ____alias_loc_id_1, 0UL, 0); (spec_genrand_int32)(); }) ) : (({ calling_npm("spec_genrand_int32", ____alias_loc_id_1); (*____chimes_extern_func_spec_genrand_int32)(); }))) >> 17);
 # 823 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   for (i=0L; i<n; i++) {
 # 824 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     { lbl_1: int j; register_stack_var("main|j|1", (int *)0x0, "i32", (void *)(&j), (size_t)4, 0, 0, 0); for ( j = (0) ; j<(3); j++) {
 # 825 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 826 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     } }
+       alias_group_changed(____alias_loc_id_4); call_lbl_49: xyzw[i][j] = (int) ((____chimes_does_checkpoint_spec_genrand_int32_npm ? ( ({ calling((void*)spec_genrand_int32, 49, ____alias_loc_id_4, 0UL, 0); (spec_genrand_int32)(); }) ) : (({ calling_npm("spec_genrand_int32", ____alias_loc_id_4); (*____chimes_extern_func_spec_genrand_int32)(); }))) >> 17);
 # 827 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
 # 828 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 829 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 830 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     } }
 # 831 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 832 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(xi, n, xyzw, 0); });
 # 833 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(yi, n, xyzw, 1); });
 # 834 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("heapsort", 0); heapsort_npm(zi, n, xyzw, 2); });
 # 835 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 836 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if ((3) == 4) {
+   ({ calling_npm("heapsort", 0); heapsort_npm(xi, n, xyzw, 0); });
 # 837 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     heapsort_quick(wi, n, xyzw, 3);
+   ({ calling_npm("heapsort", 0); heapsort_npm(yi, n, xyzw, 1); });
 # 838 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+   ({ calling_npm("heapsort", 0); heapsort_npm(zi, n, xyzw, 2); });
 # 839 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 840 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if ((3) == 4) {
 # 841 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     heapsort_quick(wi, n, xyzw, 3);
 # 842 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 843 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 844 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 845 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    call_lbl_50: checkpoint_transformed(50, ____alias_loc_id_2);
+# 846 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 847 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 848 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 849 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 850 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    root = ({ calling_npm("empty_kdnode", 0); empty_kdnode_npm(); });
-# 856 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 856 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  {
-# 857 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 858 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 859 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 860 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 861 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 862 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   {
-# 863 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("buildkdtree", 0); buildkdtree_npm(root, xi, yi, zi, wi, ti, 0L, n-1, xyzw, 0); });
 # 864 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
-# 865 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
-# 874 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 874 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   ({ calling_npm("coordkdtree", 0); coordkdtree_npm(root, xyzw); });
-# 889 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 889 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  count = 0L;
-# 890 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 891 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 892 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 893 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 864 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   {
-# 894 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-#pragma omp single
-# 895 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    {
-# 896 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      count += ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(root, root, cutoff, cutoff2, 0, maxdepth); });
-# 897 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 898 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 865 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 866 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 867 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 868 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 869 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 870 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   {
+# 871 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   ({ calling_npm("buildkdtree", 0); buildkdtree_npm(root, xi, yi, zi, wi, ti, 0L, n-1, xyzw, 0); });
+# 872 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 873 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
+# 874 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 875 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 876 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    call_lbl_51: checkpoint_transformed(51, ____alias_loc_id_1);
+# 886 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 886 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   ({ calling_npm("coordkdtree", 0); coordkdtree_npm(root, xyzw); });
+# 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 905 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  count = 0L;
+# 906 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 907 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 908 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 909 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  {
+# 910 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+#pragma omp single
+# 911 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    {
 # 912 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 912 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   elapsedTime = 0.0;
+      count += ({ calling_npm("sweepkdtree", 0); sweepkdtree_npm(root, root, cutoff, cutoff2, 0, maxdepth); });
 # 913 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   printf("Total time is %10.5f seconds to find %lld points\n",
+    }
 # 914 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
+# 915 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 916 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 917 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    call_lbl_52: checkpoint_transformed(52, ____alias_loc_id_0);
+# 932 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 932 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   elapsedTime = 0.0;
+# 933 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   printf("Total time is %10.5f seconds to find %lld points\n",
+# 934 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     elapsedTime, count);
-# 930 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 930 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_15, ____chimes_did_disable8); return ____chimes_ret_var_4; ;
-# 931 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-rm_stack(false, 0UL, "main", &____must_manage_main, ____alias_loc_id_15, ____chimes_did_disable8); }
+# 950 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 950 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_18, ____chimes_did_disable8, false); return ____chimes_ret_var_4; ;
+# 951 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_18, ____chimes_did_disable8, false); }
 
-int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-
-
-
-kdnode *empty_kdnode_npm() {
-# 60 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    kdnode *empty = (kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi));
-# 61 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    memset(empty, 0x00, sizeof(kdnode));
-# 62 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 # 63 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+kdnode *empty_kdnode_npm() {
 # 64 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    kdnode *empty = (kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629104UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi));
 # 65 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 66 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     struct kdnode * ____chimes_ret_var_0; ____chimes_ret_var_0 = (empty); return ____chimes_ret_var_0; ;
-# 67 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-}
-
-kdnode *init_kdnode_npm(long long nn) {
-# 70 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    kdnode *empty = (kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi));
-# 71 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     memset(empty, 0x00, sizeof(kdnode));
-# 72 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 66 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 67 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 68 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 69 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 70 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     struct kdnode * ____chimes_ret_var_0; ____chimes_ret_var_0 = (empty); return ____chimes_ret_var_0; ;
+# 71 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+}
 # 73 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+kdnode *init_kdnode_npm(long long nn) {
 # 74 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    kdnode *empty = (kdnode *)malloc_wrapper(sizeof(kdnode), 339782406926629129UL, 0, 1, (int)sizeof(struct kdnode), 2, (int)__builtin_offsetof(struct kdnode, lo), (int)__builtin_offsetof(struct kdnode, hi));
 # 75 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    memset(empty, 0x00, sizeof(kdnode));
 # 76 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    empty->n = nn;
 # 77 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     struct kdnode * ____chimes_ret_var_1; ____chimes_ret_var_1 = (empty); return ____chimes_ret_var_1; ;
 # 78 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 79 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 80 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    empty->n = nn;
+# 81 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     struct kdnode * ____chimes_ret_var_1; ____chimes_ret_var_1 = (empty); return ____chimes_ret_var_1; ;
+# 82 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 }
-
-void downheap_npm(long long *a, long long n, long long k, int **x, int p)
-# 113 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{
-# 114 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 115 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long j, v;
 # 116 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+void downheap_npm(long long *a, long long n, long long k, int **x, int p)
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   v = a[k - 1];
+{
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   while (k <= n / 2) {
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      j = k + k;
+   long long j, v;
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((j < n) && (x[a[j - 1]][p] < x[a[j]][p])) {j++; };
+# 121 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   v = a[k - 1];
 # 122 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (x[v][p] >= x[a[j - 1]][p]) {break; };
+   while (k <= n / 2) {
+# 123 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      j = k + k;
 # 124 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      a[k - 1] = a[j - 1];
-# 125 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      k = j;
+      if ((j < n) && (x[a[j - 1]][p] < x[a[j]][p])) {j++; };
 # 126 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
-# 127 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   a[k - 1] = v;
+      if (x[v][p] >= x[a[j - 1]][p]) {break; };
 # 128 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-}
-
-void heapsort_npm(long long *a, long long n, int **x, int p)
-# 155 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{
-# 156 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 157 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long k, v;
-# 158 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 159 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   for (k = n / 2; k >= 1; k--) { downheap_npm(a, n, k, x, p); };
-# 161 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   while (n > 1) {
-# 162 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      v = a[0];
-# 163 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      a[0] = a[n - 1];
-# 164 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      a[n - 1] = v;
-# 165 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      downheap_npm(a, --n, 1, x, p);
-# 166 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      a[k - 1] = a[j - 1];
+# 129 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      k = j;
+# 130 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
-# 167 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 131 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   a[k - 1] = v;
+# 132 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 }
-
-void buildkdtree_npm(kdnode *curr, long long *xn, long long *yn,
-# 199 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-             long long *zn, long long *wn,
-# 200 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    long long *tn, long long start, long long end, int **x,
-# 201 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    int p)
-# 202 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 158 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+void heapsort_npm(long long *a, long long n, int **x, int p)
+# 159 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 {
+# 160 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 161 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   long long k, v;
+# 162 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 163 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   for (k = n / 2; k >= 1; k--) { downheap_npm(a, n, k, x, p); };
+# 165 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   while (n > 1) {
+# 166 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      v = a[0];
+# 167 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      a[0] = a[n - 1];
+# 168 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      a[n - 1] = v;
+# 169 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      downheap_npm(a, --n, 1, x, p);
+# 170 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 171 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+}
+# 202 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+void buildkdtree_npm(kdnode *curr, long long *xn, long long *yn,
 # 203 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  long long i, middle, median, lower, upper;
+             long long *zn, long long *wn,
 # 204 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    long long *tn, long long start, long long end, int **x,
 # 205 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    int p)
 # 206 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{
 # 207 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  p %= (3);
+  long long i, middle, median, lower, upper;
 # 208 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 209 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 210 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 211 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (end == start) {{
+  p %= (3);
 # 212 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    curr->n = xn[start];
 # 213 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 214 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 215 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (end == start) {{
+# 216 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    curr->n = xn[start];
+# 217 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }; } else if (end == start + 1) {
-# 224 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 225 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 226 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 227 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (x[xn[start]][p] < x[xn[end]][p]) {{
 # 228 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->n = xn[end];
 # 229 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = init_kdnode_npm(xn[start]);
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 231 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (x[xn[start]][p] < x[xn[end]][p]) {{
+# 232 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->n = xn[end];
+# 233 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->lo = init_kdnode_npm(xn[start]);
+# 234 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }; } else if (x[xn[start]][p] > x[xn[end]][p]) {
-# 235 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->n = xn[start];
-# 236 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = init_kdnode_npm(xn[end]);
-# 237 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 238 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 239 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 240 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 241 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    else {
-# 242 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       curr->n = xn[start];
+# 240 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->lo = init_kdnode_npm(xn[end]);
+# 241 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 242 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->hi = init_kdnode_npm(xn[end]);
 # 244 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
 # 245 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
+    else {
 # 246 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->n = xn[start];
 # 247 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->hi = init_kdnode_npm(xn[end]);
 # 248 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 249 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
+# 250 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 251 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 252 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 253 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   else {
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 260 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    middle = (start + end) / 2;
-# 261 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    median = x[xn[middle]][p];
-# 262 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    for (i = middle - 1; i >= start; i--) {
-# 263 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (x[xn[i]][p] < median) {
 # 264 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- break;
+# 264 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    middle = (start + end) / 2;
 # 265 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      } else {
+    median = x[xn[middle]][p];
 # 266 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- middle = i;
+    for (i = middle - 1; i >= start; i--) {
 # 267 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+      if (x[xn[i]][p] < median) {
 # 268 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
+ break;
 # 269 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 270 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 271 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 272 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    curr->n = xn[middle];
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 302 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    lower = start - 1;
-# 303 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    upper = middle;
-# 304 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    for (i = start; i <= end; i++) {
-# 305 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (yn[i] != xn[middle]) {
-# 306 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- if (x[yn[i]][p] < median) {
-# 307 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   tn[++lower] = yn[i];
-# 308 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- } else {
-# 309 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   tn[++upper] = yn[i];
-# 310 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- }
-# 311 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
-# 312 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 331 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    lower = start - 1;
-# 332 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    upper = middle;
-# 333 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    for (i = start; i <= end; i++) {
-# 334 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (zn[i] != xn[middle]) {
-# 335 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- if (x[zn[i]][p] < median) {
-# 336 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yn[++lower] = zn[i];
-# 337 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- } else {
-# 338 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   yn[++upper] = zn[i];
-# 339 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- }
-# 340 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
-# 341 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 342 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 343 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 344 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 345 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if ((3) == 4) {
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 364 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      lower = start - 1;
-# 365 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      upper = middle;
-# 366 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      for (i = start; i <= end; i++) {
-# 367 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- if (wn[i] != xn[middle]) {
-# 368 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (x[wn[i]][p] < median) {
-# 369 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     zn[++lower] = wn[i];
-# 370 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   } else {
-# 371 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     zn[++upper] = wn[i];
-# 372 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
-# 373 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- }
-# 374 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
-# 375 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
-# 394 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 394 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    if (lower >= start) {
-# 395 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->lo = empty_kdnode_npm();
-# 396 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((3) == 4) {
-# 397 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   buildkdtree_npm(curr->lo, tn, yn, zn, xn, wn, start, lower, x, p+1);
-# 399 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
       } else {
+# 270 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ middle = i;
+# 271 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 272 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 273 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 274 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 275 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 276 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    curr->n = xn[middle];
+# 306 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 306 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    lower = start - 1;
+# 307 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    upper = middle;
+# 308 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    for (i = start; i <= end; i++) {
+# 309 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if (yn[i] != xn[middle]) {
+# 310 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ if (x[yn[i]][p] < median) {
+# 311 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   tn[++lower] = yn[i];
+# 312 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ } else {
+# 313 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   tn[++upper] = yn[i];
+# 314 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ }
+# 315 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 316 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 335 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 335 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    lower = start - 1;
+# 336 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    upper = middle;
+# 337 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    for (i = start; i <= end; i++) {
+# 338 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if (zn[i] != xn[middle]) {
+# 339 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ if (x[zn[i]][p] < median) {
+# 340 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   yn[++lower] = zn[i];
+# 341 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ } else {
+# 342 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   yn[++upper] = zn[i];
+# 343 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ }
+# 344 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 345 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 346 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 347 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 348 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 349 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if ((3) == 4) {
+# 368 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 368 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      lower = start - 1;
+# 369 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      upper = middle;
+# 370 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      for (i = start; i <= end; i++) {
+# 371 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ if (wn[i] != xn[middle]) {
+# 372 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if (x[wn[i]][p] < median) {
+# 373 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     zn[++lower] = wn[i];
+# 374 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   } else {
+# 375 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     zn[++upper] = wn[i];
+# 376 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
+# 377 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ }
+# 378 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 379 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
+# 398 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 398 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    if (lower >= start) {
+# 399 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      curr->lo = empty_kdnode_npm();
 # 400 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if ((3) == 4) {
 # 401 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 402 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   buildkdtree_npm(curr->lo, tn, yn, zn, xn, wn, start, lower, x, p+1);
 # 403 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      } else {
 # 404 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 405 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 406 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 407 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       {
 # 408 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- buildkdtree_npm(curr->lo, tn, yn, xn, wn, zn, start, lower, x, p+1);
+# 409 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 410 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       }
 # 411 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+       {
 # 412 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ buildkdtree_npm(curr->lo, tn, yn, xn, wn, zn, start, lower, x, p+1);
+# 414 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       }
+# 415 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 416 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
-# 424 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 424 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 428 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 428 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     if (upper > middle) {
-# 425 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      curr->hi = empty_kdnode_npm();
-# 426 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((3) == 4) {
-# 427 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- buildkdtree_npm(curr->hi, tn, yn, zn, xn, wn, middle + 1, end, x, p+1);
 # 429 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      } else {
+      curr->hi = empty_kdnode_npm();
 # 430 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if ((3) == 4) {
 # 431 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 432 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ buildkdtree_npm(curr->hi, tn, yn, zn, xn, wn, middle + 1, end, x, p+1);
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      } else {
 # 434 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 435 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 436 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 437 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       {
 # 438 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- buildkdtree_npm(curr->hi, tn, yn, xn, wn, zn, middle + 1, end, x, p+1);
+# 439 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 440 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       }
 # 441 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+       {
 # 442 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ buildkdtree_npm(curr->hi, tn, yn, xn, wn, zn, middle + 1, end, x, p+1);
+# 444 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       }
+# 445 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
+# 446 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
     }
-# 451 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 451 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 455 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 455 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
-# 452 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 456 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 }
-
-void coordkdtree_npm(kdnode *curr, int **x)
-# 469 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 470 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{
-# 471 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 472 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+void coordkdtree_npm(kdnode *curr, int **x)
 # 473 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 474 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{
 # 475 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  for (int i=0; i<(3); i++) {
 # 476 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    curr->coord[i] = x[curr->n][i];
 # 477 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 478 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 479 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  for (int i=0; i<(3); i++) {
 # 480 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->hi != __null) {
+    curr->coord[i] = x[curr->n][i];
 # 481 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    coordkdtree_npm(curr->hi, x);
-# 482 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
+# 482 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 483 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->lo != __null) {
+  if (curr->hi != __null) {
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    coordkdtree_npm(curr->lo, x);
+    coordkdtree_npm(curr->hi, x);
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
   }
 # 487 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 488 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (curr->lo != __null) {
+# 489 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    coordkdtree_npm(curr->lo, x);
+# 490 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
+# 491 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 }
-
-long long searchkdtree_npm(kdnode *curr, kdnode *q, int p,
-# 507 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-          long long cut, long long cut2,
-# 508 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-          int depth, int depthmax)
-# 509 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{
 # 510 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long xij, yij, zij, wij, r2, count, countL, countH;
+long long searchkdtree_npm(kdnode *curr, kdnode *q, int p,
 # 511 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+          long long cut, long long cut2,
 # 512 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+          int depth, int depthmax)
 # 513 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{
 # 514 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   long long xij, yij, zij, wij, r2, count, countL, countH;
+# 515 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 516 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 517 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 518 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    p %= (3);
-# 527 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 527 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   countH = 0L;
-# 528 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if ((curr->hi != __null) && (q->coord[p] + cut >= curr->coord[p])) {
-# 529 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 530 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 531 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 531 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   countH = 0L;
 # 532 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if ((curr->hi != __null) && (q->coord[p] + cut >= curr->coord[p])) {
 # 533 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     {
 # 534 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       countH = searchkdtree_npm(curr->hi, q, p+1, cut, cut2, depth+1, depthmax);
 # 535 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-     }
 # 536 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
-# 549 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 549 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   countL = 0L;
-# 550 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if ((curr->lo != __null) && (q->coord[p] - cut < curr->coord[p])) {
-# 551 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 552 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 553 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 554 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-# 555 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 537 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      {
-# 556 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-       countL = searchkdtree_npm(curr->lo, q, p+1, cut, cut2, depth+1, depthmax);
-# 557 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 538 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       countH = searchkdtree_npm(curr->hi, q, p+1, cut, cut2, depth+1, depthmax);
+# 539 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
      }
-# 558 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 540 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
    }
+# 553 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 553 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   countL = 0L;
+# 554 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   if ((curr->lo != __null) && (q->coord[p] - cut < curr->coord[p])) {
+# 555 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 556 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 557 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 558 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 559 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     {
 # 560 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+       countL = searchkdtree_npm(curr->lo, q, p+1, cut, cut2, depth+1, depthmax);
 # 561 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+     }
 # 562 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 563 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 564 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 565 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 566 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   count = 0L;
 # 567 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   if (q->n != curr->n) {
 # 568 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      xij = q->coord[0] - curr->coord[0];
 # 569 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      yij = q->coord[1] - curr->coord[1];
 # 570 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      zij = q->coord[2] - curr->coord[2];
+   count = 0L;
 # 571 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      r2 = xij * xij + yij * yij + zij * zij;
+   if (q->n != curr->n) {
 # 572 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if ((3) == 4) {
+      xij = q->coord[0] - curr->coord[0];
 # 573 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-         wij = q->coord[3] - curr->coord[3];
+      yij = q->coord[1] - curr->coord[1];
 # 574 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-         r2 += wij * wij;
+      zij = q->coord[2] - curr->coord[2];
 # 575 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+      r2 = xij * xij + yij * yij + zij * zij;
 # 576 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      if (r2 < cut2) {
+      if ((3) == 4) {
 # 577 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
- count++;
+         wij = q->coord[3] - curr->coord[3];
 # 578 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      }
+         r2 += wij * wij;
 # 579 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   }
+      }
 # 580 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      if (r2 < cut2) {
 # 581 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+ count++;
 # 582 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      }
 # 583 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   }
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 587 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    long long ____chimes_ret_var_2; ____chimes_ret_var_2 = ((count + countL + countH)); return ____chimes_ret_var_2; ;
 # 588 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 589 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 590 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 591 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    long long ____chimes_ret_var_2; ____chimes_ret_var_2 = ((count + countL + countH)); return ____chimes_ret_var_2; ;
+# 592 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 }
-
-long long sweepkdtree_npm(kdnode *curr, kdnode *r, long long cut, long long cut2,
-# 608 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-         int depth, int depthmax)
-# 609 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-{
-# 610 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  long long count, countL, countH;
 # 611 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+long long sweepkdtree_npm(kdnode *curr, kdnode *r, long long cut, long long cut2,
 # 612 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+         int depth, int depthmax)
 # 613 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+{
 # 614 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  count = searchkdtree_npm(r, curr, 0, cut, cut2, depth, depthmax);
+  long long count, countL, countH;
 # 615 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 616 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 617 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 618 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  countH = 0L;
+  count = searchkdtree_npm(r, curr, 0, cut, cut2, depth, depthmax);
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->hi != __null) {
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 622 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  countH = 0L;
 # 623 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (curr->hi != __null) {
 # 624 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    {
 # 625 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      countH = sweepkdtree_npm(curr->hi, r, cut, cut2, depth, depthmax);
 # 626 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
 # 627 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 628 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    {
 # 629 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      countH = sweepkdtree_npm(curr->hi, r, cut, cut2, depth, depthmax);
 # 630 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 631 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  countL = 0L;
+  }
 # 632 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  if (curr->lo != __null) {
 # 633 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 634 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 635 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  countL = 0L;
 # 636 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  if (curr->lo != __null) {
 # 637 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    {
 # 638 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-      countL = sweepkdtree_npm(curr->lo, r, cut, cut2, depth, depthmax);
 # 639 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-    }
 # 640 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-  }
 # 641 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    {
 # 642 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+      countL = sweepkdtree_npm(curr->lo, r, cut, cut2, depth, depthmax);
 # 643 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+    }
 # 644 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+  }
 # 645 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 646 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 647 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 # 648 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
-   long long ____chimes_ret_var_3; ____chimes_ret_var_3 = ((count + countL + countH)); return ____chimes_ret_var_3; ;
 # 649 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 650 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 651 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+# 652 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
+   long long ____chimes_ret_var_3; ____chimes_ret_var_3 = ((count + countL + countH)); return ____chimes_ret_var_3; ;
+# 653 "/scratch/jmg3/spec/benchspec/OMP2012/376.kdtree/src/kdtree.cc"
 }
 
 
@@ -6272,23 +6328,26 @@ long long sweepkdtree_npm(kdnode *curr, kdnode *r, long long cut, long long cut2
 
 
 static int module_init() {
-    init_module(339782406926629100UL, 39, 9, 14, 16, 8, 3, 11, 23, 7, 2,
-                           &____alias_loc_id_0, (unsigned)17, (unsigned)0, (unsigned)0, (339782406926629100UL + 972UL), (339782406926629100UL + 973UL), (339782406926629100UL + 974UL), (339782406926629100UL + 975UL), (339782406926629100UL + 976UL), (339782406926629100UL + 977UL), (339782406926629100UL + 978UL), (339782406926629100UL + 979UL), (339782406926629100UL + 980UL), (339782406926629100UL + 982UL), (339782406926629100UL + 983UL), (339782406926629100UL + 984UL), (339782406926629100UL + 985UL), (339782406926629100UL + 986UL), (339782406926629100UL + 1199UL), (339782406926629100UL + 1203UL), (339782406926629100UL + 1207UL),
-                           &____alias_loc_id_1, (unsigned)2, (unsigned)0, (unsigned)0, (339782406926629100UL + 993UL), (339782406926629100UL + 1262UL),
-                           &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)1, (339782406926629100UL + 972UL), (339782406926629100UL + 973UL), (339782406926629100UL + 974UL), "atol", (unsigned)1, (339782406926629100UL + 1086UL),
-                           &____alias_loc_id_3, (unsigned)1, (unsigned)0, (unsigned)1, (339782406926629100UL + 977UL), "atol", (unsigned)1, (339782406926629100UL + 1086UL),
-                           &____alias_loc_id_4, (unsigned)1, (unsigned)0, (unsigned)1, (339782406926629100UL + 977UL), "atol", (unsigned)1, (339782406926629100UL + 1086UL),
+    init_module(339782406926629100UL, 39, 9, 0, 19, 8, 3, 11, 23, 7, 2,
+                           &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (339782406926629100UL + 981UL),
+                           &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)0, (339782406926629100UL + 987UL),
+                           &____alias_loc_id_2, (unsigned)5, (unsigned)0, (unsigned)0, (339782406926629100UL + 976UL), (339782406926629100UL + 992UL), (339782406926629100UL + 993UL), (339782406926629100UL + 1260UL), (339782406926629100UL + 1262UL),
+                           &____alias_loc_id_3, (unsigned)17, (unsigned)0, (unsigned)0, (339782406926629100UL + 972UL), (339782406926629100UL + 973UL), (339782406926629100UL + 974UL), (339782406926629100UL + 975UL), (339782406926629100UL + 976UL), (339782406926629100UL + 977UL), (339782406926629100UL + 978UL), (339782406926629100UL + 979UL), (339782406926629100UL + 980UL), (339782406926629100UL + 982UL), (339782406926629100UL + 983UL), (339782406926629100UL + 984UL), (339782406926629100UL + 985UL), (339782406926629100UL + 986UL), (339782406926629100UL + 1199UL), (339782406926629100UL + 1203UL), (339782406926629100UL + 1207UL),
+                           &____alias_loc_id_4, (unsigned)2, (unsigned)0, (unsigned)0, (339782406926629100UL + 993UL), (339782406926629100UL + 1262UL),
                            &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)1, (339782406926629100UL + 972UL), (339782406926629100UL + 973UL), (339782406926629100UL + 974UL), "atol", (unsigned)1, (339782406926629100UL + 1086UL),
-                           &____alias_loc_id_6, (unsigned)3, (unsigned)0, (unsigned)1, (339782406926629100UL + 972UL), (339782406926629100UL + 973UL), (339782406926629100UL + 974UL), "atol", (unsigned)1, (339782406926629100UL + 1086UL),
-                           &____alias_loc_id_7, (unsigned)2, (unsigned)0, (unsigned)0, (339782406926629100UL + 1UL), (339782406926629100UL + 2UL),
-                           &____alias_loc_id_8, (unsigned)4, (unsigned)0, (unsigned)0, (339782406926629100UL + 23UL), (339782406926629100UL + 24UL), (339782406926629100UL + 25UL), (339782406926629100UL + 29UL),
-                           &____alias_loc_id_9, (unsigned)8, (unsigned)0, (unsigned)0, (339782406926629100UL + 45UL), (339782406926629100UL + 46UL), (339782406926629100UL + 47UL), (339782406926629100UL + 48UL), (339782406926629100UL + 49UL), (339782406926629100UL + 50UL), (339782406926629100UL + 51UL), (339782406926629100UL + 156UL),
-                            &____alias_loc_id_10, (unsigned)7, (unsigned)0, (unsigned)0, (339782406926629100UL + 161UL), (339782406926629100UL + 162UL), (339782406926629100UL + 163UL), (339782406926629100UL + 164UL), (339782406926629100UL + 165UL), (339782406926629100UL + 166UL), (339782406926629100UL + 226UL),
-                            &____alias_loc_id_11, (unsigned)18, (unsigned)0, (unsigned)0, (339782406926629100UL + 230UL), (339782406926629100UL + 231UL), (339782406926629100UL + 232UL), (339782406926629100UL + 233UL), (339782406926629100UL + 234UL), (339782406926629100UL + 235UL), (339782406926629100UL + 236UL), (339782406926629100UL + 237UL), (339782406926629100UL + 238UL), (339782406926629100UL + 239UL), (339782406926629100UL + 240UL), (339782406926629100UL + 241UL), (339782406926629100UL + 242UL), (339782406926629100UL + 243UL), (339782406926629100UL + 244UL), (339782406926629100UL + 625UL), (339782406926629100UL + 627UL), (339782406926629100UL + 630UL),
-                            &____alias_loc_id_12, (unsigned)4, (unsigned)0, (unsigned)0, (339782406926629100UL + 635UL), (339782406926629100UL + 636UL), (339782406926629100UL + 637UL), (339782406926629100UL + 692UL),
-                            &____alias_loc_id_13, (unsigned)15, (unsigned)0, (unsigned)0, (339782406926629100UL + 694UL), (339782406926629100UL + 695UL), (339782406926629100UL + 696UL), (339782406926629100UL + 697UL), (339782406926629100UL + 698UL), (339782406926629100UL + 699UL), (339782406926629100UL + 700UL), (339782406926629100UL + 701UL), (339782406926629100UL + 702UL), (339782406926629100UL + 703UL), (339782406926629100UL + 705UL), (339782406926629100UL + 706UL), (339782406926629100UL + 707UL), (339782406926629100UL + 708UL), (339782406926629100UL + 709UL),
-                            &____alias_loc_id_14, (unsigned)10, (unsigned)0, (unsigned)0, (339782406926629100UL + 890UL), (339782406926629100UL + 891UL), (339782406926629100UL + 892UL), (339782406926629100UL + 893UL), (339782406926629100UL + 894UL), (339782406926629100UL + 895UL), (339782406926629100UL + 896UL), (339782406926629100UL + 897UL), (339782406926629100UL + 898UL), (339782406926629100UL + 899UL),
-                            &____alias_loc_id_15, (unsigned)9, (unsigned)0, (unsigned)0, (339782406926629100UL + 976UL), (339782406926629100UL + 981UL), (339782406926629100UL + 987UL), (339782406926629100UL + 991UL), (339782406926629100UL + 992UL), (339782406926629100UL + 993UL), (339782406926629100UL + 994UL), (339782406926629100UL + 1260UL), (339782406926629100UL + 1262UL),
+                           &____alias_loc_id_6, (unsigned)1, (unsigned)0, (unsigned)1, (339782406926629100UL + 977UL), "atol", (unsigned)1, (339782406926629100UL + 1086UL),
+                           &____alias_loc_id_7, (unsigned)1, (unsigned)0, (unsigned)1, (339782406926629100UL + 977UL), "atol", (unsigned)1, (339782406926629100UL + 1086UL),
+                           &____alias_loc_id_8, (unsigned)3, (unsigned)0, (unsigned)1, (339782406926629100UL + 972UL), (339782406926629100UL + 973UL), (339782406926629100UL + 974UL), "atol", (unsigned)1, (339782406926629100UL + 1086UL),
+                           &____alias_loc_id_9, (unsigned)3, (unsigned)0, (unsigned)1, (339782406926629100UL + 972UL), (339782406926629100UL + 973UL), (339782406926629100UL + 974UL), "atol", (unsigned)1, (339782406926629100UL + 1086UL),
+                            &____alias_loc_id_10, (unsigned)2, (unsigned)0, (unsigned)0, (339782406926629100UL + 1UL), (339782406926629100UL + 2UL),
+                            &____alias_loc_id_11, (unsigned)4, (unsigned)0, (unsigned)0, (339782406926629100UL + 23UL), (339782406926629100UL + 24UL), (339782406926629100UL + 25UL), (339782406926629100UL + 29UL),
+                            &____alias_loc_id_12, (unsigned)8, (unsigned)0, (unsigned)0, (339782406926629100UL + 45UL), (339782406926629100UL + 46UL), (339782406926629100UL + 47UL), (339782406926629100UL + 48UL), (339782406926629100UL + 49UL), (339782406926629100UL + 50UL), (339782406926629100UL + 51UL), (339782406926629100UL + 156UL),
+                            &____alias_loc_id_13, (unsigned)7, (unsigned)0, (unsigned)0, (339782406926629100UL + 161UL), (339782406926629100UL + 162UL), (339782406926629100UL + 163UL), (339782406926629100UL + 164UL), (339782406926629100UL + 165UL), (339782406926629100UL + 166UL), (339782406926629100UL + 226UL),
+                            &____alias_loc_id_14, (unsigned)18, (unsigned)0, (unsigned)0, (339782406926629100UL + 230UL), (339782406926629100UL + 231UL), (339782406926629100UL + 232UL), (339782406926629100UL + 233UL), (339782406926629100UL + 234UL), (339782406926629100UL + 235UL), (339782406926629100UL + 236UL), (339782406926629100UL + 237UL), (339782406926629100UL + 238UL), (339782406926629100UL + 239UL), (339782406926629100UL + 240UL), (339782406926629100UL + 241UL), (339782406926629100UL + 242UL), (339782406926629100UL + 243UL), (339782406926629100UL + 244UL), (339782406926629100UL + 625UL), (339782406926629100UL + 627UL), (339782406926629100UL + 630UL),
+                            &____alias_loc_id_15, (unsigned)4, (unsigned)0, (unsigned)0, (339782406926629100UL + 635UL), (339782406926629100UL + 636UL), (339782406926629100UL + 637UL), (339782406926629100UL + 692UL),
+                            &____alias_loc_id_16, (unsigned)15, (unsigned)0, (unsigned)0, (339782406926629100UL + 694UL), (339782406926629100UL + 695UL), (339782406926629100UL + 696UL), (339782406926629100UL + 697UL), (339782406926629100UL + 698UL), (339782406926629100UL + 699UL), (339782406926629100UL + 700UL), (339782406926629100UL + 701UL), (339782406926629100UL + 702UL), (339782406926629100UL + 703UL), (339782406926629100UL + 705UL), (339782406926629100UL + 706UL), (339782406926629100UL + 707UL), (339782406926629100UL + 708UL), (339782406926629100UL + 709UL),
+                            &____alias_loc_id_17, (unsigned)10, (unsigned)0, (unsigned)0, (339782406926629100UL + 890UL), (339782406926629100UL + 891UL), (339782406926629100UL + 892UL), (339782406926629100UL + 893UL), (339782406926629100UL + 894UL), (339782406926629100UL + 895UL), (339782406926629100UL + 896UL), (339782406926629100UL + 897UL), (339782406926629100UL + 898UL), (339782406926629100UL + 899UL),
+                            &____alias_loc_id_18, (unsigned)2, (unsigned)0, (unsigned)0, (339782406926629100UL + 991UL), (339782406926629100UL + 994UL),
                             "empty_kdnode", (void *)(&empty_kdnode_npm), (void *)__null, 0, 0, (339782406926629100UL + 4UL), 2, "malloc", 1, 0UL, (339782406926629100UL + 4UL), "memset", 3, (339782406926629100UL + 4UL), 0UL, 0UL, 0UL,
                             "init_kdnode", (void *)(&init_kdnode_npm), (void *)__null, 0, 1, 0UL, (339782406926629100UL + 29UL), 2, "malloc", 1, 0UL, (339782406926629100UL + 29UL), "memset", 3, (339782406926629100UL + 29UL), 0UL, 0UL, 0UL,
                             "downheap", (void *)(&downheap_npm), (void *)__null, 0, 5, (339782406926629100UL + 156UL), 0UL, 0UL, (339782406926629100UL + 159UL), 0UL, 0UL, 0,
@@ -6317,10 +6376,11 @@ static int module_init() {
                              (339782406926629100UL + 159UL), (339782406926629100UL + 118UL),
                              (339782406926629100UL + 983UL), (339782406926629100UL + 1203UL),
                              (339782406926629100UL + 1260UL), (339782406926629100UL + 1262UL),
-                             (339782406926629100UL + 986UL), (339782406926629100UL + 1327UL),
-                             (339782406926629100UL + 987UL), (339782406926629100UL + 1320UL),
+                             (339782406926629100UL + 986UL), (339782406926629100UL + 1328UL),
+                             (339782406926629100UL + 987UL), (339782406926629100UL + 1321UL),
                              (339782406926629100UL + 984UL), (339782406926629100UL + 1199UL),
-                             (339782406926629100UL + 985UL), (339782406926629100UL + 1326UL),
+                             (339782406926629100UL + 985UL), (339782406926629100UL + 1327UL),
+                             (339782406926629100UL + 1358UL), (339782406926629100UL + 1086UL),
                              (339782406926629100UL + 238UL), (339782406926629100UL + 633UL),
                              (339782406926629100UL + 234UL), (339782406926629100UL + 629UL),
                              (339782406926629100UL + 235UL), (339782406926629100UL + 630UL),
@@ -6331,7 +6391,7 @@ static int module_init() {
                              (339782406926629100UL + 24UL), (339782406926629100UL + 29UL),
                              (339782406926629100UL + 25UL), (339782406926629100UL + 29UL),
                              (339782406926629100UL + 975UL), (339782406926629100UL + 1260UL),
-                             (339782406926629100UL + 974UL), (339782406926629100UL + 1355UL),
+                             (339782406926629100UL + 974UL), (339782406926629100UL + 1358UL),
                              (339782406926629100UL + 48UL), (339782406926629100UL + 159UL),
                              (339782406926629100UL + 695UL), (339782406926629100UL + 884UL),
                              (339782406926629100UL + 45UL), (339782406926629100UL + 156UL),
@@ -6344,37 +6404,22 @@ static int module_init() {
                              (339782406926629100UL + 635UL), (339782406926629100UL + 692UL),
                              (339782406926629100UL + 636UL), (339782406926629100UL + 693UL),
                              (339782406926629100UL + 693UL), (339782406926629100UL + 655UL),
-                             (339782406926629100UL + 1355UL), (339782406926629100UL + 1086UL),
                              (339782406926629100UL + 161UL), (339782406926629100UL + 226UL),
                              (339782406926629100UL + 163UL), (339782406926629100UL + 228UL),
                              (339782406926629100UL + 966UL), (339782406926629100UL + 926UL),
                              (339782406926629100UL + 694UL), (339782406926629100UL + 883UL),
-                             (339782406926629100UL + 1363UL), (339782406926629100UL + 1020UL),
-                     "kdnode", 4, "long long int", (int)__builtin_offsetof (struct kdnode, n), "%struct.kdnode*", (int)__builtin_offsetof (struct kdnode, lo), "%struct.kdnode*", (int)__builtin_offsetof (struct kdnode, hi), "[ 3 x int ]", (int)__builtin_offsetof (struct kdnode, coord),
-                     "timespec", 2, "long int", (int)__builtin_offsetof (struct timespec, tv_sec), "long int", (int)__builtin_offsetof (struct timespec, tv_nsec),
+                             (339782406926629100UL + 1366UL), (339782406926629100UL + 1020UL),
+                     "kdnode", 320UL, 4, "long long int", (int)__builtin_offsetof (struct kdnode, n), "%struct.kdnode*", (int)__builtin_offsetof (struct kdnode, lo), "%struct.kdnode*", (int)__builtin_offsetof (struct kdnode, hi), "[ 3 x int ]", (int)__builtin_offsetof (struct kdnode, coord),
+                     "timespec", 128UL, 2, "long int", (int)__builtin_offsetof (struct timespec, tv_sec), "long int", (int)__builtin_offsetof (struct timespec, tv_nsec),
                              "downheap", "_Z8downheapPxxxPPii", 0,
                              "heapsort", "_Z8heapsortPxxPPii", 2, "downheap", "downheap",
                              "sweepkdtree", "_Z11sweepkdtreeP6kdnodeS0_xxii", 3, "searchkdtree", "sweepkdtree", "sweepkdtree",
                              "empty_kdnode", "_Z12empty_kdnodev", 0,
                              "searchkdtree", "_Z12searchkdtreeP6kdnodeS0_ixxii", 2, "searchkdtree", "searchkdtree",
                              "buildkdtree", "_Z11buildkdtreeP6kdnodePxS1_S1_S1_S1_xxPPii", 7, "init_kdnode", "init_kdnode", "init_kdnode", "empty_kdnode", "buildkdtree", "empty_kdnode", "buildkdtree",
-                             "main", "main", 14, "atol", "atol", "atol", "atol", "atol", "spec_init_genrand", "spec_genrand_int32", "heapsort", "heapsort", "heapsort", "empty_kdnode", "buildkdtree", "coordkdtree", "sweepkdtree",
+                             "main", "main", 17, "atol", "atol", "atol", "atol", "atol", "spec_init_genrand", "spec_genrand_int32", "heapsort", "heapsort", "heapsort", "checkpoint", "empty_kdnode", "buildkdtree", "checkpoint", "coordkdtree", "sweepkdtree", "checkpoint",
                              "coordkdtree", "_Z11coordkdtreeP6kdnodePPi", 2, "coordkdtree", "coordkdtree",
                              "init_kdnode", "_Z11init_kdnodex", 0,
-                        "main|argv|0", 3, "spec_init_genrand", "spec_genrand_int32", "atol",
-                        "main|xyzw|0", 2, "spec_init_genrand", "spec_genrand_int32",
-                        "main|i|0", 2, "spec_init_genrand", "spec_genrand_int32",
-                        "main|n|0", 3, "spec_init_genrand", "spec_genrand_int32", "atol",
-                        "main|maxdepth|0", 2, "spec_init_genrand", "spec_genrand_int32",
-                        "main|cutoff|0", 2, "spec_init_genrand", "spec_genrand_int32",
-                        "main|cutoff2|0", 2, "spec_init_genrand", "spec_genrand_int32",
-                        "main|xi|0", 2, "spec_init_genrand", "spec_genrand_int32",
-                        "main|yi|0", 2, "spec_init_genrand", "spec_genrand_int32",
-                        "main|zi|0", 2, "spec_init_genrand", "spec_genrand_int32",
-                        "main|wi|0", 2, "spec_init_genrand", "spec_genrand_int32",
-                        "main|ti|0", 2, "spec_init_genrand", "spec_genrand_int32",
-                        "main|j|0", 1, "spec_genrand_int32",
-                        "main|j|1", 1, "spec_genrand_int32",
         "downheap", 0UL, (int)5, 339782406926629326UL, 0UL, 0UL, 339782406926629328UL, 0UL,
         "downheap", 0UL, (int)5, 339782406926629326UL, 0UL, 0UL, 339782406926629328UL, 0UL,
         "init_kdnode", 339782406926629481UL, (int)1, 0UL,
@@ -6394,10 +6439,10 @@ static int module_init() {
         "heapsort", 0UL, (int)4, 339782406926630307UL, 0UL, 339782406926630360UL, 0UL,
         "heapsort", 0UL, (int)4, 339782406926630303UL, 0UL, 339782406926630360UL, 0UL,
         "heapsort", 0UL, (int)4, 339782406926630299UL, 0UL, 339782406926630360UL, 0UL,
-        "empty_kdnode", 339782406926630420UL, (int)0,
-        "buildkdtree", 0UL, (int)10, 339782406926630420UL, 339782406926630307UL, 339782406926630303UL, 339782406926630299UL, 339782406926630426UL, 339782406926630427UL, 0UL, 0UL, 339782406926630360UL, 0UL,
-        "coordkdtree", 0UL, (int)2, 339782406926630420UL, 339782406926630360UL,
-        "sweepkdtree", 0UL, (int)6, 339782406926630420UL, 339782406926630420UL, 0UL, 0UL, 0UL, 0UL,
+        "empty_kdnode", 339782406926630421UL, (int)0,
+        "buildkdtree", 0UL, (int)10, 339782406926630421UL, 339782406926630307UL, 339782406926630303UL, 339782406926630299UL, 339782406926630427UL, 339782406926630428UL, 0UL, 0UL, 339782406926630360UL, 0UL,
+        "coordkdtree", 0UL, (int)2, 339782406926630421UL, 339782406926630360UL,
+        "sweepkdtree", 0UL, (int)6, 339782406926630421UL, 339782406926630421UL, 0UL, 0UL, 0UL, 0UL,
         "atol", 0UL, (int)1, 339782406926630186UL,
         "atol", 0UL, (int)1, 339782406926630186UL,
         "atol", 0UL, (int)1, 339782406926630186UL,

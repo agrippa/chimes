@@ -9,3 +9,4 @@
 /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|mm|0 " float* " 64 1 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|sw|0 " %struct.__stopwatch_t = type { %struct.timeval, %struct.timeval } " 256 0 1 __stopwatch_t 0 1 main
 /scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|____chimes_unroll_var_0|0 " double " 64 0 0 1 lud_verify print_matrix
+/scratch/jmg3/rodinia_3.0/openmp/lud/base/lud.c main|____chimes_ret_var_0|0 " i32 " 32 0 0 0

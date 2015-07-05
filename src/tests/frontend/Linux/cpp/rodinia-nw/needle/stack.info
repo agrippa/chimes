@@ -12,14 +12,14 @@
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|argc|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|argv|0 " i8** " 64 1 0 0
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|max_rows|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|max_cols|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|penalty|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|idx|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|index|0 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|input_itemsets|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|output_itemsets|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|referrence|0 " i32* " 64 1 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|omp_num_threads|0 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|max_cols|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|penalty|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|idx|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|index|0 " i32 " 32 0 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|input_itemsets|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|output_itemsets|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|referrence|0 " i32* " 64 1 0 1 checkpoint
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|omp_num_threads|0 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|i|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|j|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|i|1 " i32 " 32 0 0 0
@@ -29,6 +29,6 @@
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|i|3 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|j|3 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|i|4 " i32 " 32 0 0 0
-/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|i|5 " i32 " 32 0 0 0
+/scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp runTest|i|5 " i32 " 32 0 0 1 checkpoint
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp usage|argc|0 " i32 " 32 0 0 0
 /scratch/jmg3/rodinia_3.0/openmp/nw/needle.cpp usage|argv|0 " i8** " 64 1 0 0

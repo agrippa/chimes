@@ -1,11 +1,11 @@
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c bots_get_params_common|argc|0 " i32 " 32 0 0 1 __xpg_basename bots_get_date
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c bots_get_params_common|argv|0 " i8** " 64 1 0 1 __xpg_basename bots_get_date
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c bots_get_params_common|argc|0 " i32 " 32 0 0 1 bots_get_date
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c bots_get_params_common|argv|0 " i8** " 64 1 0 1 bots_get_date
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c bots_get_params_common|i|0 " i32 " 32 0 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c bots_get_params_common|____chimes_unroll_var_0|0 " i8* " 64 1 0 1 bots_get_date
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c bots_get_params|argc|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c bots_get_params|argv|0 " i8** " 64 1 0 0
-/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c bots_set_info|____chimes_unroll_var_1|0 " i32 " 32 0 0 0
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c bots_set_info|____chimes_unroll_var_0|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c main|argc|0 " i32 " 32 0 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c main|argv|0 " i8** " 64 1 0 0
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c main|bots_t_start|0 " i64 " 64 0 0 1 align align_end align_init align_seq align_verify bots_print_results bots_usecs
 /scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c main|bots_t_end|0 " i64 " 64 0 0 1 align align_end align_init align_verify bots_print_results bots_usecs
+/scratch/jmg3/spec/benchspec/OMP2012/358.botsalgn/src/common/bots_main.c main|____chimes_ret_var_0|0 " i32 " 32 0 0 0

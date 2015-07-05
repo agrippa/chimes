@@ -1,3 +1,1 @@
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 104 76 : { 128, 131, 133 } {  } call:abs {  }
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 101 31 : { 126, 128, 131, 133, 282 } {  } call:abs {  }
-/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 212 4 : { 906, 907, 925 } {  } call:genmat {  }
+/scratch/jmg3/spec/benchspec/OMP2012/359.botsspar/src/omp-tasks/sparselu/sparselu_single/sparselu.c 293 7 : { 939, 940, 941, 942, 943, 1200 } {  } call:checkpoint {  }

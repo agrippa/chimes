@@ -8,56 +8,16 @@ typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "hotspot_openmp.cpp.pre.transformed.cpp"
 static int ____chimes_does_checkpoint_single_iteration_npm = 1;
-static int ____chimes_does_checkpoint_compute_tran_temp_npm = 1;
 static int ____chimes_does_checkpoint_fatal_npm = 1;
 static int ____chimes_does_checkpoint_read_input_npm = 1;
 static int ____chimes_does_checkpoint_usage_npm = 1;
-static int ____chimes_does_checkpoint_feof_npm = 1;
-static int ____chimes_does_checkpoint_omp_set_num_threads_npm = 1;
 
-static int ____must_checkpoint_single_iteration_result_0 = 2;
-static int ____must_checkpoint_single_iteration_temp_0 = 2;
-static int ____must_checkpoint_single_iteration_power_0 = 2;
-static int ____must_checkpoint_single_iteration_row_0 = 2;
-static int ____must_checkpoint_single_iteration_col_0 = 2;
-static int ____must_checkpoint_single_iteration_Cap_0 = 2;
-static int ____must_checkpoint_single_iteration_Rx_0 = 2;
-static int ____must_checkpoint_single_iteration_Ry_0 = 2;
-static int ____must_checkpoint_single_iteration_Rz_0 = 2;
-static int ____must_checkpoint_single_iteration_step_0 = 2;
-static int ____must_checkpoint_single_iteration_delta_0 = 2;
-static int ____must_checkpoint_single_iteration_r_0 = 2;
-static int ____must_checkpoint_single_iteration_c_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_result_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_num_iterations_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_temp_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_power_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_row_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_col_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_Cap_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_Rx_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_Ry_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_Rz_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_step_0 = 2;
-static int ____must_checkpoint_compute_tran_temp_i_0 = 2;
-static int ____must_checkpoint_read_input_vect_0 = 2;
-static int ____must_checkpoint_read_input_grid_rows_0 = 2;
-static int ____must_checkpoint_read_input_grid_cols_0 = 2;
-static int ____must_checkpoint_read_input_i_0 = 2;
-static int ____must_checkpoint_read_input_fp_0 = 2;
 static int ____must_checkpoint_read_input_str_0 = 2;
-static int ____must_checkpoint_main_grid_rows_0 = 2;
-static int ____must_checkpoint_main_grid_cols_0 = 2;
-static int ____must_checkpoint_main_sim_time_0 = 2;
 static int ____must_checkpoint_main_temp_0 = 2;
 static int ____must_checkpoint_main_power_0 = 2;
-static int ____must_checkpoint_main_result_0 = 2;
-static int ____must_checkpoint_main_pfile_0 = 2;
 
 static int ____must_manage_single_iteration = 2;
-static int ____must_manage_main = 2;
 static int ____must_manage_read_input = 2;
-static int ____must_manage_compute_tran_temp = 2;
 static int ____must_manage_usage = 2;
 static int ____must_manage_fatal = 2;
 
@@ -67,8 +27,6 @@ static unsigned ____alias_loc_id_2;
 static unsigned ____alias_loc_id_3;
 static unsigned ____alias_loc_id_4;
 static unsigned ____alias_loc_id_5;
-static unsigned ____alias_loc_id_6;
-static unsigned ____alias_loc_id_7;
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 1 "/tmp/chimes-frontend//"
 # 1 "<command-line>"
@@ -84,7 +42,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -100,7 +58,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -135,7 +94,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 67 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 68 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 extern "C" {
 extern int omp_get_thread_num (void) throw ();
 extern int omp_get_num_threads(void) throw ();
@@ -2452,1039 +2411,1013 @@ extern int futimesat (int __fd, __const char *__file,
 }
 # 5 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
 # 5 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+
+# 1 "/home/jmg3/num-debug/src/libchimes/checkpoint.h" 1
+# 11 "/home/jmg3/num-debug/src/libchimes/checkpoint.h"
+extern void checkpoint();
+
+extern void wait_for_checkpoint();
+extern void register_custom_init_handler(const char *obj_name,
+        void (*____chimes_fp)(void *));
+# 7 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp" 2
+# 7 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 8 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 using namespace std;
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 20 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-double t_chip = 0.0005;
-# 21 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-double chip_height = 0.016;
-# 22 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-double chip_width = 0.016;
 # 23 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 23 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double t_chip = 0.0005;
 # 24 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-double amb_temp = 80.0;
+double chip_height = 0.016;
 # 25 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double chip_width = 0.016;
 # 26 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-int num_omp_threads;
 # 27 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double amb_temp = 80.0;
 # 28 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 29 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+int num_omp_threads;
 # 30 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 31 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 32 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-void single_iteration_npm(double *result, double *temp, double *power, int row, int col, double Cap, double Rx, double Ry, double Rz, double step);static void (*____chimes_extern_func_omp_set_num_threads)(int) = omp_set_num_threads;
+# 33 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 34 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 35 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+void single_iteration_npm(double *result, double *temp, double *power, int row, int col, double Cap, double Rx, double Ry, double Rz, double step);
 void single_iteration_quick(double *result, double *temp, double *power, int row, int col, double Cap, double Rx, double Ry, double Rz, double step); void single_iteration(double *result, double *temp, double *power, int row, int col, double Cap, double Rx, double Ry, double Rz, double step);
 void single_iteration_resumable(double *result, double *temp, double *power, int row, int col,
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-       double Cap, double Rx, double Ry, double Rz,
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-       double step)
-# 35 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable0 = new_stack((void *)(&single_iteration), "single_iteration", &____must_manage_single_iteration, 10, 10, (size_t)(10021604361511766899UL), (size_t)(10021604361511766900UL), (size_t)(10021604361511766901UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "single_iteration|result|0", &____must_checkpoint_single_iteration_result_0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "single_iteration|temp|0", &____must_checkpoint_single_iteration_temp_0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "single_iteration|power|0", &____must_checkpoint_single_iteration_power_0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "single_iteration|row|0", &____must_checkpoint_single_iteration_row_0, "i32", (void *)(&row), (size_t)4, 0, 0, 0, "single_iteration|col|0", &____must_checkpoint_single_iteration_col_0, "i32", (void *)(&col), (size_t)4, 0, 0, 0, "single_iteration|Cap|0", &____must_checkpoint_single_iteration_Cap_0, "double", (void *)(&Cap), (size_t)8, 0, 0, 0, "single_iteration|Rx|0", &____must_checkpoint_single_iteration_Rx_0, "double", (void *)(&Rx), (size_t)8, 0, 0, 0, "single_iteration|Ry|0", &____must_checkpoint_single_iteration_Ry_0, "double", (void *)(&Ry), (size_t)8, 0, 0, 0, "single_iteration|Rz|0", &____must_checkpoint_single_iteration_Rz_0, "double", (void *)(&Rz), (size_t)8, 0, 0, 0, "single_iteration|step|0", &____must_checkpoint_single_iteration_step_0, "double", (void *)(&step), (size_t)8, 0, 0, 0) ; int c;
-int r;
-double delta;
- if (____must_checkpoint_single_iteration_c_0 || ____must_checkpoint_single_iteration_r_0 || ____must_checkpoint_single_iteration_delta_0) { register_stack_vars(3, "single_iteration|c|0", &____must_checkpoint_single_iteration_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0, "single_iteration|r|0", &____must_checkpoint_single_iteration_r_0, "i32", (void *)(&r), (size_t)4, 0, 0, 0, "single_iteration|delta|0", &____must_checkpoint_single_iteration_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ;
+       double Cap, double Rx, double Ry, double Rz,
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   ;
+       double step)
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable0 = new_stack((void *)(&single_iteration), "single_iteration", &____must_manage_single_iteration, 10, 0, (size_t)(10021604361511766899UL), (size_t)(10021604361511766900UL), (size_t)(10021604361511766901UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ double delta; ;
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_1: ({ calling((void*)omp_set_num_threads, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ; { call_lbl_4: ; bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 5, &c, &col, &delta, &r, &row); int ____chimes_first_iter0 = 1; ;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-#pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static) firstprivate(____chimes_first_iter0)
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ int r; int c; ;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ omp_set_num_threads(num_omp_threads);
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- for (r = 0; r < row; r++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 5, &c, &col, &delta, &r, &row); ____chimes_first_iter0 = 0; }
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{ call_lbl_4: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 5, &c, &col, &delta, &r, &row); int ____chimes_first_iter0 = 1;
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static) firstprivate(____chimes_first_iter0)
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  for (c = 0; c < col; c++) {
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   if ((r == 0) && (c == 0)) {{
+ for (r = 0; r < row; r++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 5, &c, &col, &delta, &r, &row); ____chimes_first_iter0 = 0; } {
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[0] +
+  for (c = 0; c < col; c++) {
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[1] - temp[0]) / Rx +
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[col] - temp[0]) / Ry +
+   if ((r == 0) && (c == 0)) {{
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[0]) / Rz);
+    delta = (step / Cap) * (power[0] +
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if ((r == 0) && (c == col-1)) {{
+      (temp[1] - temp[0]) / Rx +
+# 53 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[col] - temp[0]) / Ry +
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[c] +
+      (amb_temp - temp[0]) / Rz);
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[c-1] - temp[c]) / Rx +
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[c+col] - temp[c]) / Ry +
+   }; } else if ((r == 0) && (c == col-1)) {{
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[c]) / Rz);
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if ((r == row-1) && (c == col-1)) {{
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[r*col+c] +
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[r*col+c]) / Rz);
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if ((r == row-1) && (c == 0)) {{
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[r*col] +
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+1] - temp[r*col]) / Rx +
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r-1)*col] - temp[r*col]) / Ry +
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[r*col]) / Rz);
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (r == 0) {{
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[c] +
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[c+1] + temp[c-1] - 2.0*temp[c]) / Rx +
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[col+c] - temp[c]) / Ry +
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 58 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[c-1] - temp[c]) / Rx +
+# 59 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[c+col] - temp[c]) / Ry +
+# 60 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[c]) / Rz);
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (c == col-1) {{
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 61 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if ((r == row-1) && (c == col-1)) {{
+# 63 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[r*col+c]) / Rz);
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (r == row-1) {{
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[r*col+c] +
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 65 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 66 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (c == 0) {
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 67 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if ((r == row-1) && (c == 0)) {{
+# 69 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col] +
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r+1)*col] + temp[(r-1)*col] - 2.0*temp[r*col]) / Ry +
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 70 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+1] - temp[r*col]) / Rx +
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 71 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r-1)*col] - temp[r*col]) / Ry +
+# 72 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col]) / Rz);
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   else {
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 73 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (r == 0) {{
+# 75 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[c] +
+# 76 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[c+1] + temp[c-1] - 2.0*temp[c]) / Rx +
+# 77 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[col+c] - temp[c]) / Ry +
+# 78 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[c]) / Rz);
+# 79 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (c == col-1) {{
+# 81 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 82 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 83 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+c-1] - temp[r*col+c]) / Rx +
+# 84 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 85 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (r == row-1) {{
+# 87 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[r*col+c] +
+# 88 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
+# 89 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
+# 90 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[r*col+c]) / Rz);
+# 91 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (c == 0) {
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[r*col] +
+# 94 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r+1)*col] + temp[(r-1)*col] - 2.0*temp[r*col]) / Ry +
+# 95 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+1] - temp[r*col]) / Rx +
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[r*col]) / Rz);
+# 97 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }
+# 98 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   else {
+# 99 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[r*col+c] +
+# 100 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[r*col+c]) / Rz);
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   result[r*col+c] =temp[r*col+c]+ delta;
+   }
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  }
+   result[r*col+c] =temp[r*col+c]+ delta;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  }
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_2: ({ calling((void*)omp_set_num_threads, 2, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ; { call_lbl_5: ; bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(5, &____chimes_region_id1, 2, &c, &r); int ____chimes_first_iter1 = 1; ;
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-#pragma omp parallel for shared(result, temp) private(r, c) schedule(static) firstprivate(____chimes_first_iter1)
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- for (r = 0; r < row; r++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &c, &r); ____chimes_first_iter1 = 0; }
+ omp_set_num_threads(num_omp_threads);
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  for (c = 0; c < col; c++) {
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{ call_lbl_5: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(5, &____chimes_region_id1, 2, &c, &r); int ____chimes_first_iter1 = 1;
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(result, temp) private(r, c) schedule(static) firstprivate(____chimes_first_iter1)
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   temp[r*col+c]=result[r*col+c];
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  }
+ for (r = 0; r < row; r++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &c, &r); ____chimes_first_iter1 = 0; } {
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+  for (c = 0; c < col; c++) {
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "single_iteration", &____must_manage_single_iteration, ____alias_loc_id_5, ____chimes_did_disable0); }
+   temp[r*col+c]=result[r*col+c];
 # 119 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  }
 # 120 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
 # 121 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "single_iteration", &____must_manage_single_iteration, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 # 122 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 123 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 124 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-void compute_tran_temp_npm(double *result, int num_iterations, double *temp, double *power, int row, int col);
-void compute_tran_temp_quick(double *result, int num_iterations, double *temp, double *power, int row, int col); void compute_tran_temp(double *result, int num_iterations, double *temp, double *power, int row, int col);
-void compute_tran_temp_resumable(double *result, int num_iterations, double *temp, double *power, int row, int col)
 # 125 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable1 = new_stack((void *)(&compute_tran_temp), "compute_tran_temp", &____must_manage_compute_tran_temp, 6, 6, (size_t)(10021604361511767019UL), (size_t)(0UL), (size_t)(10021604361511767021UL), (size_t)(10021604361511767022UL), (size_t)(0UL), (size_t)(0UL), "compute_tran_temp|result|0", &____must_checkpoint_compute_tran_temp_result_0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "compute_tran_temp|num_iterations|0", &____must_checkpoint_compute_tran_temp_num_iterations_0, "i32", (void *)(&num_iterations), (size_t)4, 0, 0, 0, "compute_tran_temp|temp|0", &____must_checkpoint_compute_tran_temp_temp_0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "compute_tran_temp|power|0", &____must_checkpoint_compute_tran_temp_power_0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "compute_tran_temp|row|0", &____must_checkpoint_compute_tran_temp_row_0, "i32", (void *)(&row), (size_t)4, 0, 0, 0, "compute_tran_temp|col|0", &____must_checkpoint_compute_tran_temp_col_0, "i32", (void *)(&col), (size_t)4, 0, 0, 0) ; int i;
-double step;
-double Rz;
-double Ry;
-double Rx;
-double Cap;
- if (____must_checkpoint_compute_tran_temp_i_0 || ____must_checkpoint_compute_tran_temp_step_0 || ____must_checkpoint_compute_tran_temp_Rz_0 || ____must_checkpoint_compute_tran_temp_Ry_0 || ____must_checkpoint_compute_tran_temp_Rx_0 || ____must_checkpoint_compute_tran_temp_Cap_0) { register_stack_vars(6, "compute_tran_temp|i|0", &____must_checkpoint_compute_tran_temp_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "compute_tran_temp|step|0", &____must_checkpoint_compute_tran_temp_step_0, "double", (void *)(&step), (size_t)8, 0, 0, 0, "compute_tran_temp|Rz|0", &____must_checkpoint_compute_tran_temp_Rz_0, "double", (void *)(&Rz), (size_t)8, 0, 0, 0, "compute_tran_temp|Ry|0", &____must_checkpoint_compute_tran_temp_Ry_0, "double", (void *)(&Ry), (size_t)8, 0, 0, 0, "compute_tran_temp|Rx|0", &____must_checkpoint_compute_tran_temp_Rx_0, "double", (void *)(&Rx), (size_t)8, 0, 0, 0, "compute_tran_temp|Cap|0", &____must_checkpoint_compute_tran_temp_Cap_0, "double", (void *)(&Cap), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 126 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+void compute_tran_temp_quick(double *result, int num_iterations, double *temp, double *power, int row, int col); void compute_tran_temp(double *result, int num_iterations, double *temp, double *power, int row, int col);
+void compute_tran_temp_resumable(double *result, int num_iterations, double *temp, double *power, int row, int col)
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable1 = new_stack((void *)(&compute_tran_temp), "compute_tran_temp", (int *)0, 6, 6, (size_t)(10021604361511767020UL), (size_t)(0UL), (size_t)(10021604361511767022UL), (size_t)(10021604361511767023UL), (size_t)(0UL), (size_t)(0UL), "compute_tran_temp|result|0", (int *)0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "compute_tran_temp|num_iterations|0", (int *)0, "i32", (void *)(&num_iterations), (size_t)4, 0, 0, 0, "compute_tran_temp|temp|0", (int *)0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "compute_tran_temp|power|0", (int *)0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "compute_tran_temp|row|0", (int *)0, "i32", (void *)(&row), (size_t)4, 0, 0, 0, "compute_tran_temp|col|0", (int *)0, "i32", (void *)(&col), (size_t)4, 0, 0, 0) ; int i;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double step;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double Rz;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double Ry;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double Rx;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double Cap;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ register_stack_vars(6, "compute_tran_temp|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "compute_tran_temp|step|0", (int *)0x0, "double", (void *)(&step), (size_t)8, 0, 0, 0, "compute_tran_temp|Rz|0", (int *)0x0, "double", (void *)(&Rz), (size_t)8, 0, 0, 0, "compute_tran_temp|Ry|0", (int *)0x0, "double", (void *)(&Ry), (size_t)8, 0, 0, 0, "compute_tran_temp|Rx|0", (int *)0x0, "double", (void *)(&Rx), (size_t)8, 0, 0, 0, "compute_tran_temp|Cap|0", (int *)0x0, "double", (void *)(&Cap), (size_t)8, 0, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } } } ; ;
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  double grid_height; grid_height = (chip_height / row) ;
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  double grid_width; grid_width = (chip_width / col) ;
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    Cap = (0.5 * 1.75E+6 * t_chip * grid_width * grid_height) ;
+  double grid_height; grid_height = (chip_height / row) ;
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    Rx = (grid_width / (2. * 100 * t_chip * grid_height)) ;
+  double grid_width; grid_width = (chip_width / col) ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    Ry = (grid_height / (2. * 100 * t_chip * grid_width)) ;
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    Rz = (t_chip / (100 * grid_height * grid_width)) ;
+    Cap = (0.5 * 1.75E+6 * t_chip * grid_width * grid_height) ;
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    Rx = (grid_width / (2. * 100 * t_chip * grid_height)) ;
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  double max_slope; max_slope = ((3.0E+6) / (0.5 * t_chip * 1.75E+6)) ;
+    Ry = (grid_height / (2. * 100 * t_chip * grid_width)) ;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    step = (0.001 / max_slope) ;
+    Rz = (t_chip / (100 * grid_height * grid_width)) ;
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double t; ;
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  double max_slope; max_slope = ((3.0E+6) / (0.5 * t_chip * 1.75E+6)) ;
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    step = (0.001 / max_slope) ;
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ double t; ;
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 146 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 147 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-     { for ( i = (0) ; i < num_iterations ; i++)
 # 148 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- {
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+     { for ( i = (0) ; i < num_iterations ; i++)
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ {
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   call_lbl_1: (____chimes_does_checkpoint_single_iteration_npm ? ( ({ calling((void*)single_iteration, 1, ____alias_loc_id_2, 0UL, 10, (size_t)(10021604361511767019UL), (size_t)(10021604361511767021UL), (size_t)(10021604361511767022UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (single_iteration)(result, temp, power, row, col, Cap, Rx, Ry, Rz, step); }) ) : (({ calling_npm("single_iteration", ____alias_loc_id_2); single_iteration_npm(result, temp, power, row, col, Cap, Rx, Ry, Rz, step); })));
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- } }
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  ({ calling_npm("single_iteration", 0); single_iteration_npm(result, temp, power, row, col, Cap, Rx, Ry, Rz, step); });
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "compute_tran_temp", &____must_manage_compute_tran_temp, ____alias_loc_id_6, ____chimes_did_disable1); }
+         call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
 # 159 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 160 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ } }
+# 161 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 163 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 164 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 165 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "compute_tran_temp", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable1, false); }
+# 166 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 167 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void fatal_npm(char *s);
 void fatal_quick(char *s); void fatal(char *s);
 void fatal_resumable(char *s)
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable2 = new_stack((void *)(&fatal), "fatal", &____must_manage_fatal, 1, 0, (size_t)(10021604361511767034UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "error: %s\n", s);
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- exit(1);
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "fatal", &____must_manage_fatal, 0, ____chimes_did_disable2); }
-# 165 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 166 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-void read_input_npm(double *vect, int grid_rows, int grid_cols, char *file);static int (*____chimes_extern_func_feof)(struct _IO_FILE *) = feof;
-void read_input_quick(double *vect, int grid_rows, int grid_cols, char *file); void read_input(double *vect, int grid_rows, int grid_cols, char *file);
-void read_input_resumable(double *vect, int grid_rows, int grid_cols, char *file)
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable3 = new_stack((void *)(&read_input), "read_input", &____must_manage_read_input, 4, 3, (size_t)(10021604361511767105UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10021604361511767108UL), "read_input|vect|0", &____must_checkpoint_read_input_vect_0, "double*", (void *)(&vect), (size_t)8, 1, 0, 0, "read_input|grid_rows|0", &____must_checkpoint_read_input_grid_rows_0, "i32", (void *)(&grid_rows), (size_t)4, 0, 0, 0, "read_input|grid_cols|0", &____must_checkpoint_read_input_grid_cols_0, "i32", (void *)(&grid_cols), (size_t)4, 0, 0, 0) ; char str[256];
-FILE *fp;
-int i;
- if (____must_checkpoint_read_input_str_0 || ____must_checkpoint_read_input_fp_0 || ____must_checkpoint_read_input_i_0) { register_stack_vars(3, "read_input|str|0", &____must_checkpoint_read_input_str_0, "[256 x i8]", (void *)(str), (size_t)256, 0, 0, 0, "read_input|fp|0", &____must_checkpoint_read_input_fp_0, "%struct._IO_FILE*", (void *)(&fp), (size_t)8, 1, 0, 0, "read_input|i|0", &____must_checkpoint_read_input_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(4): { goto call_lbl_4; } default: { chimes_error(); } } } ; ;
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    int index; ;
+{const int ____chimes_did_disable2 = new_stack((void *)(&fatal), "fatal", &____must_manage_fatal, 1, 0, (size_t)(10021604361511767035UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 169 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ;
+ fprintf(stderr, "error: %s\n", s);
 # 170 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ;
+ exit(1);
 # 171 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double val; ;
+rm_stack(false, 0UL, "fatal", &____must_manage_fatal, 0, ____chimes_did_disable2, false); }
 # 172 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fp = fopen (file, "r");
+void read_input_npm(double *vect, int grid_rows, int grid_cols, char *file);
+void read_input_quick(double *vect, int grid_rows, int grid_cols, char *file); void read_input(double *vect, int grid_rows, int grid_cols, char *file);
+void read_input_resumable(double *vect, int grid_rows, int grid_cols, char *file)
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (!fp) {({ calling_npm("fatal", 0); fatal_npm("file could not be opened for reading"); }); };
+{const int ____chimes_did_disable3 = new_stack((void *)(&read_input), "read_input", &____must_manage_read_input, 4, 0, (size_t)(10021604361511767106UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10021604361511767109UL)) ; char str[256];
+# 174 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if (____must_checkpoint_read_input_str_0) { register_stack_vars(1, "read_input|str|0", &____must_checkpoint_read_input_str_0, "[256 x i8]", (void *)(str), (size_t)256, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
+# 175 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   int i; int index; ;
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ FILE *fp; ;
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- for (i=0; i < grid_rows * grid_cols; i++) {
+  ;
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  fgets(str, 256, fp);
+ double val; ;
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   call_lbl_4: if (alias_group_changed(____alias_loc_id_3) || (____chimes_does_checkpoint_feof_npm ? ( ({ calling((void*)feof, 4, ____alias_loc_id_3, 0UL, 1, (size_t)(10021604361511767061UL)); (feof)(fp); }) ) : (({ calling_npm("feof", ____alias_loc_id_3); (*____chimes_extern_func_feof)(fp); })))) {({ calling_npm("fatal", 0); fatal_npm("not enough lines in file"); }); };
+# 180 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fp = fopen (file, "r");
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  if ((sscanf(str, "%lf", &val) != 1)) {({ calling_npm("fatal", 0); fatal_npm("invalid file format"); }); };
+ if (!fp) {({ calling_npm("fatal", 0); fatal_npm("file could not be opened for reading"); }); };
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  vect[i] = val;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- }
+ for (i=0; i < grid_rows * grid_cols; i++) {
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  fgets(str, 256, fp);
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fclose(fp);
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "read_input", &____must_manage_read_input, ____alias_loc_id_7, ____chimes_did_disable3); }
+  if (feof(fp)) {({ calling_npm("fatal", 0); fatal_npm("not enough lines in file"); }); };
 # 188 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 189 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  if ((sscanf(str, "%lf", &val) != 1)) {({ calling_npm("fatal", 0); fatal_npm("invalid file format"); }); };
+# 190 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  vect[i] = val;
+# 191 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ }
+# 192 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 193 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fclose(fp);
+# 194 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "read_input", &____must_manage_read_input, ____alias_loc_id_4, ____chimes_did_disable3, false); }
+# 195 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 196 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void usage_npm(int argc, char **argv);
 void usage_quick(int argc, char **argv); void usage(int argc, char **argv);
 void usage_resumable(int argc, char **argv)
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable4 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(10021604361511767145UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "Usage: %s <grid_rows> <grid_cols> <sim_time> <no. of threads><temp_file> <power_file>\n", argv[0]);
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<grid_rows>  - number of rows in the grid (positive integer)\n");
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<grid_cols>  - number of columns in the grid (positive integer)\n");
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<sim_time>   - number of iterations\n");
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<no. of threads>   - number of threads\n");
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<temp_file>  - name of the file containing the initial temperature values of each cell\n");
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<power_file> - name of the file containing the dissipated power values of each cell\n");
+{const int ____chimes_did_disable4 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(10021604361511767146UL)) ; if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- exit(1);
+ fprintf(stderr, "Usage: %s <grid_rows> <grid_cols> <sim_time> <no. of threads><temp_file> <power_file>\n", argv[0]);
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable4); }
+ fprintf(stderr, "\t<grid_rows>  - number of rows in the grid (positive integer)\n");
 # 200 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<grid_cols>  - number of columns in the grid (positive integer)\n");
 # 201 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<sim_time>   - number of iterations\n");
+# 202 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<no. of threads>   - number of threads\n");
+# 203 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<temp_file>  - name of the file containing the initial temperature values of each cell\n");
+# 204 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<power_file> - name of the file containing the dissipated power values of each cell\n");
+# 205 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ exit(1);
+# 206 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable4, false); }
+# 207 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 208 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 int main_quick(int argc, char **argv); int main(int argc, char **argv);
 int main_resumable(int argc, char **argv)
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable5 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(10021604361511767275UL)) ; char *pfile;
-double *result;
-double *power;
+# 209 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable5 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10021604361511767280UL)) ; double *power;
+# 209 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 double *temp;
-int sim_time;
-int grid_cols;
-int grid_rows;
- if (____must_checkpoint_main_pfile_0 || ____must_checkpoint_main_result_0 || ____must_checkpoint_main_power_0 || ____must_checkpoint_main_temp_0 || ____must_checkpoint_main_sim_time_0 || ____must_checkpoint_main_grid_cols_0 || ____must_checkpoint_main_grid_rows_0) { register_stack_vars(7, "main|pfile|0", &____must_checkpoint_main_pfile_0, "i8*", (void *)(&pfile), (size_t)8, 1, 0, 0, "main|result|0", &____must_checkpoint_main_result_0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "main|power|0", &____must_checkpoint_main_power_0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "main|temp|0", &____must_checkpoint_main_temp_0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "main|sim_time|0", &____must_checkpoint_main_sim_time_0, "i32", (void *)(&sim_time), (size_t)4, 0, 0, 0, "main|grid_cols|0", &____must_checkpoint_main_grid_cols_0, "i32", (void *)(&grid_cols), (size_t)4, 0, 0, 0, "main|grid_rows|0", &____must_checkpoint_main_grid_rows_0, "i32", (void *)(&grid_rows), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } ; ;
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    int i; ;
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    ;
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- char *tfile; ;
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 208 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (argc != 7) {({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
+# 209 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ register_stack_vars(2, "main|power|0", (int *)0x0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "main|temp|0", (int *)0x0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0); if (____chimes_replaying) { switch(get_next_call()) { case(9): { goto call_lbl_9; } default: { chimes_error(); } } } ; ;
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if ((grid_rows = atoi(argv[1])) <= 0 ||
+ int grid_rows; int grid_cols; int sim_time; int i; ;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (grid_cols = atoi(argv[2])) <= 0 ||
+   double *result; ;
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (sim_time = atoi(argv[3])) <= 0 ||
+ char *tfile; char *pfile; ;
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (num_omp_threads = atoi(argv[4])) <= 0) {({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 214 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 215 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if (argc != 7) {({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if ((grid_rows = atoi(argv[1])) <= 0 ||
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- temp = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767215UL, 0, 0);
+  (grid_cols = atoi(argv[2])) <= 0 ||
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- power = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767222UL, 0, 0);
+  (sim_time = atoi(argv[3])) <= 0 ||
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- result = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767229UL, 0, 0);
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (!temp || !power) {({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
+  (num_omp_threads = atoi(argv[4])) <= 0) {({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- tfile = argv[5];
+ temp = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767217UL, 0, 0);
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- pfile = argv[6];
+ power = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767224UL, 0, 0);
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_8: (____chimes_does_checkpoint_read_input_npm ? ( ({ calling((void*)read_input, 8, ____alias_loc_id_4, 0UL, 4, (size_t)(10021604361511767215UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10021604361511767181UL)); (read_input)(temp, grid_rows, grid_cols, tfile); }) ) : (({ calling_npm("read_input", ____alias_loc_id_4); read_input_npm(temp, grid_rows, grid_cols, tfile); })));
+ result = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767231UL, 0, 0);
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_9: (____chimes_does_checkpoint_read_input_npm ? ( ({ calling((void*)read_input, 9, 0, 0UL, 4, (size_t)(10021604361511767222UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10021604361511767181UL)); (read_input)(power, grid_rows, grid_cols, pfile); }) ) : (({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); })));
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if (!temp || !power) {({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- printf("Start computing the transient temperature\n");
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_11: (____chimes_does_checkpoint_compute_tran_temp_npm ? ( ({ calling((void*)compute_tran_temp, 11, 0, 0UL, 6, (size_t)(10021604361511767229UL), (size_t)(0UL), (size_t)(10021604361511767215UL), (size_t)(10021604361511767222UL), (size_t)(0UL), (size_t)(0UL)); (compute_tran_temp)(result, sim_time, temp, power, grid_rows, grid_cols); }) ) : (({ calling_npm("compute_tran_temp", 0); compute_tran_temp_npm(result, sim_time, temp, power, grid_rows, grid_cols); })));
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ tfile = argv[5];
+# 233 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ pfile = argv[6];
+# 234 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); });
+# 235 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); });
+# 236 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 237 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ printf("Start computing the transient temperature\n");
+# 238 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  call_lbl_9: ({ calling((void*)compute_tran_temp, 9, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767231UL), (size_t)(0UL), (size_t)(10021604361511767217UL), (size_t)(10021604361511767224UL), (size_t)(0UL), (size_t)(0UL)); (compute_tran_temp)(result, sim_time, temp, power, grid_rows, grid_cols); }) ;
+# 239 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  printf("Ending simulation\n");
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- free_wrapper(temp, 10021604361511767215UL);
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- free_wrapper(power, 10021604361511767222UL);
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable5); return 0;
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-}
-void single_iteration_quick(double *result, double *temp, double *power, int row, int col,
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-       double Cap, double Rx, double Ry, double Rz,
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-       double step)
+# 250 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 250 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ free_wrapper(temp, 10021604361511767217UL);
+# 251 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ free_wrapper(power, 10021604361511767224UL);
+# 252 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 253 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_0; ;
+# 254 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable5, false); }
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable0 = new_stack((void *)(&single_iteration), "single_iteration", &____must_manage_single_iteration, 10, 10, (size_t)(10021604361511766899UL), (size_t)(10021604361511766900UL), (size_t)(10021604361511766901UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "single_iteration|result|0", &____must_checkpoint_single_iteration_result_0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "single_iteration|temp|0", &____must_checkpoint_single_iteration_temp_0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "single_iteration|power|0", &____must_checkpoint_single_iteration_power_0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "single_iteration|row|0", &____must_checkpoint_single_iteration_row_0, "i32", (void *)(&row), (size_t)4, 0, 0, 0, "single_iteration|col|0", &____must_checkpoint_single_iteration_col_0, "i32", (void *)(&col), (size_t)4, 0, 0, 0, "single_iteration|Cap|0", &____must_checkpoint_single_iteration_Cap_0, "double", (void *)(&Cap), (size_t)8, 0, 0, 0, "single_iteration|Rx|0", &____must_checkpoint_single_iteration_Rx_0, "double", (void *)(&Rx), (size_t)8, 0, 0, 0, "single_iteration|Ry|0", &____must_checkpoint_single_iteration_Ry_0, "double", (void *)(&Ry), (size_t)8, 0, 0, 0, "single_iteration|Rz|0", &____must_checkpoint_single_iteration_Rz_0, "double", (void *)(&Rz), (size_t)8, 0, 0, 0, "single_iteration|step|0", &____must_checkpoint_single_iteration_step_0, "double", (void *)(&step), (size_t)8, 0, 0, 0) ; int c;
-int r;
-double delta;
- if (____must_checkpoint_single_iteration_c_0 || ____must_checkpoint_single_iteration_r_0 || ____must_checkpoint_single_iteration_delta_0) { register_stack_vars(3, "single_iteration|c|0", &____must_checkpoint_single_iteration_c_0, "i32", (void *)(&c), (size_t)4, 0, 0, 0, "single_iteration|r|0", &____must_checkpoint_single_iteration_r_0, "i32", (void *)(&r), (size_t)4, 0, 0, 0, "single_iteration|delta|0", &____must_checkpoint_single_iteration_delta_0, "double", (void *)(&delta), (size_t)8, 0, 0, 0); } ; ;
+void single_iteration_quick(double *result, double *temp, double *power, int row, int col,
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ;
+       double Cap, double Rx, double Ry, double Rz,
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   ;
+       double step)
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable0 = new_stack((void *)(&single_iteration), "single_iteration", &____must_manage_single_iteration, 10, 0, (size_t)(10021604361511766899UL), (size_t)(10021604361511766900UL), (size_t)(10021604361511766901UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ double delta; ;
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_1: ({ calling((void*)omp_set_num_threads, 1, ____alias_loc_id_1, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ; { call_lbl_4: ; bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 5, &c, &col, &delta, &r, &row); int ____chimes_first_iter0 = 1; ;
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-#pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static) firstprivate(____chimes_first_iter0)
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ int r; int c; ;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ omp_set_num_threads(num_omp_threads);
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- for (r = 0; r < row; r++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 5, &c, &col, &delta, &r, &row); ____chimes_first_iter0 = 0; }
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{ call_lbl_4: bool ____chimes_disable0 = disable_current_thread(); void *____chimes_parent_ctx1 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth0 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth0 = get_thread_stack_depth(); size_t ____chimes_region_id0; unsigned ____chimes_parent_thread0 = entering_omp_parallel(4, &____chimes_region_id0, 5, &c, &col, &delta, &r, &row); int ____chimes_first_iter0 = 1;
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static) firstprivate(____chimes_first_iter0)
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  for (c = 0; c < col; c++) {
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   if ((r == 0) && (c == 0)) {{
+ for (r = 0; r < row; r++) { { if (____chimes_first_iter0) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread0, ____chimes_parent_ctx1, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth0, ____chimes_region_id0, 5, &c, &col, &delta, &r, &row); ____chimes_first_iter0 = 0; } {
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[0] +
+  for (c = 0; c < col; c++) {
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[1] - temp[0]) / Rx +
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[col] - temp[0]) / Ry +
+   if ((r == 0) && (c == 0)) {{
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[0]) / Rz);
+    delta = (step / Cap) * (power[0] +
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if ((r == 0) && (c == col-1)) {{
+      (temp[1] - temp[0]) / Rx +
+# 53 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[col] - temp[0]) / Ry +
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[c] +
+      (amb_temp - temp[0]) / Rz);
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[c-1] - temp[c]) / Rx +
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[c+col] - temp[c]) / Ry +
+   }; } else if ((r == 0) && (c == col-1)) {{
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[c]) / Rz);
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if ((r == row-1) && (c == col-1)) {{
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[r*col+c] +
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[r*col+c]) / Rz);
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if ((r == row-1) && (c == 0)) {{
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[r*col] +
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+1] - temp[r*col]) / Rx +
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r-1)*col] - temp[r*col]) / Ry +
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[r*col]) / Rz);
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (r == 0) {{
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[c] +
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[c+1] + temp[c-1] - 2.0*temp[c]) / Rx +
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[col+c] - temp[c]) / Ry +
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 58 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[c-1] - temp[c]) / Rx +
+# 59 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[c+col] - temp[c]) / Ry +
+# 60 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[c]) / Rz);
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (c == col-1) {{
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 61 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if ((r == row-1) && (c == col-1)) {{
+# 63 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[r*col+c]) / Rz);
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (r == row-1) {{
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[r*col+c] +
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 65 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 66 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (c == 0) {
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 67 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if ((r == row-1) && (c == 0)) {{
+# 69 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col] +
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r+1)*col] + temp[(r-1)*col] - 2.0*temp[r*col]) / Ry +
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 70 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+1] - temp[r*col]) / Rx +
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 71 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r-1)*col] - temp[r*col]) / Ry +
+# 72 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col]) / Rz);
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   else {
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 73 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (r == 0) {{
+# 75 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[c] +
+# 76 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[c+1] + temp[c-1] - 2.0*temp[c]) / Rx +
+# 77 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[col+c] - temp[c]) / Ry +
+# 78 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[c]) / Rz);
+# 79 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (c == col-1) {{
+# 81 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 82 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 83 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+c-1] - temp[r*col+c]) / Rx +
+# 84 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 85 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (r == row-1) {{
+# 87 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[r*col+c] +
+# 88 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
+# 89 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
+# 90 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[r*col+c]) / Rz);
+# 91 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (c == 0) {
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[r*col] +
+# 94 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r+1)*col] + temp[(r-1)*col] - 2.0*temp[r*col]) / Ry +
+# 95 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+1] - temp[r*col]) / Rx +
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[r*col]) / Rz);
+# 97 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }
+# 98 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   else {
+# 99 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[r*col+c] +
+# 100 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[r*col+c]) / Rz);
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   result[r*col+c] =temp[r*col+c]+ delta;
+   }
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  }
+   result[r*col+c] =temp[r*col+c]+ delta;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  }
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_2: ({ calling((void*)omp_set_num_threads, 2, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (omp_set_num_threads)(num_omp_threads); }) ; { call_lbl_5: ; bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(5, &____chimes_region_id1, 2, &c, &r); int ____chimes_first_iter1 = 1; ;
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-#pragma omp parallel for shared(result, temp) private(r, c) schedule(static) firstprivate(____chimes_first_iter1)
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  } } } leaving_omp_parallel(____chimes_call_stack_depth0, ____chimes_region_id0, 1); reenable_current_thread(____chimes_disable0); }
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- for (r = 0; r < row; r++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &c, &r); ____chimes_first_iter1 = 0; }
+ omp_set_num_threads(num_omp_threads);
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  for (c = 0; c < col; c++) {
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{ call_lbl_5: bool ____chimes_disable1 = disable_current_thread(); void *____chimes_parent_ctx2 = get_thread_ctx(); unsigned ____chimes_parent_stack_depth1 = get_parent_vars_stack_depth(); unsigned ____chimes_call_stack_depth1 = get_thread_stack_depth(); size_t ____chimes_region_id1; unsigned ____chimes_parent_thread1 = entering_omp_parallel(5, &____chimes_region_id1, 2, &c, &r); int ____chimes_first_iter1 = 1;
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(result, temp) private(r, c) schedule(static) firstprivate(____chimes_first_iter1)
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   temp[r*col+c]=result[r*col+c];
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  }
+ for (r = 0; r < row; r++) { { if (____chimes_first_iter1) { register_thread_local_stack_vars(LIBCHIMES_THREAD_NUM(), ____chimes_parent_thread1, ____chimes_parent_ctx2, LIBCHIMES_NUM_THREADS(), ____chimes_parent_stack_depth1, ____chimes_region_id1, 2, &c, &r); ____chimes_first_iter1 = 0; } {
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+  for (c = 0; c < col; c++) {
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "single_iteration", &____must_manage_single_iteration, ____alias_loc_id_5, ____chimes_did_disable0); }
+   temp[r*col+c]=result[r*col+c];
+# 119 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  }
+# 120 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  } } } leaving_omp_parallel(____chimes_call_stack_depth1, ____chimes_region_id1, 1); reenable_current_thread(____chimes_disable1); }
+# 121 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "single_iteration", &____must_manage_single_iteration, ____alias_loc_id_2, ____chimes_did_disable0, false); }
 
 void single_iteration(double *result, double *temp, double *power, int row, int col,
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 36 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
        double Cap, double Rx, double Ry, double Rz,
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 37 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
        double step) { (____chimes_replaying ? single_iteration_resumable(result, temp, power, row, col, Cap, Rx, Ry, Rz, step) : single_iteration_quick(result, temp, power, row, col, Cap, Rx, Ry, Rz, step)); }
-
-void compute_tran_temp_quick(double *result, int num_iterations, double *temp, double *power, int row, int col)
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable1 = new_stack((void *)(&compute_tran_temp), "compute_tran_temp", &____must_manage_compute_tran_temp, 6, 6, (size_t)(10021604361511767019UL), (size_t)(0UL), (size_t)(10021604361511767021UL), (size_t)(10021604361511767022UL), (size_t)(0UL), (size_t)(0UL), "compute_tran_temp|result|0", &____must_checkpoint_compute_tran_temp_result_0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "compute_tran_temp|num_iterations|0", &____must_checkpoint_compute_tran_temp_num_iterations_0, "i32", (void *)(&num_iterations), (size_t)4, 0, 0, 0, "compute_tran_temp|temp|0", &____must_checkpoint_compute_tran_temp_temp_0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "compute_tran_temp|power|0", &____must_checkpoint_compute_tran_temp_power_0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "compute_tran_temp|row|0", &____must_checkpoint_compute_tran_temp_row_0, "i32", (void *)(&row), (size_t)4, 0, 0, 0, "compute_tran_temp|col|0", &____must_checkpoint_compute_tran_temp_col_0, "i32", (void *)(&col), (size_t)4, 0, 0, 0) ; int i;
-double step;
-double Rz;
-double Ry;
-double Rx;
-double Cap;
- if (____must_checkpoint_compute_tran_temp_i_0 || ____must_checkpoint_compute_tran_temp_step_0 || ____must_checkpoint_compute_tran_temp_Rz_0 || ____must_checkpoint_compute_tran_temp_Ry_0 || ____must_checkpoint_compute_tran_temp_Rx_0 || ____must_checkpoint_compute_tran_temp_Cap_0) { register_stack_vars(6, "compute_tran_temp|i|0", &____must_checkpoint_compute_tran_temp_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "compute_tran_temp|step|0", &____must_checkpoint_compute_tran_temp_step_0, "double", (void *)(&step), (size_t)8, 0, 0, 0, "compute_tran_temp|Rz|0", &____must_checkpoint_compute_tran_temp_Rz_0, "double", (void *)(&Rz), (size_t)8, 0, 0, 0, "compute_tran_temp|Ry|0", &____must_checkpoint_compute_tran_temp_Ry_0, "double", (void *)(&Ry), (size_t)8, 0, 0, 0, "compute_tran_temp|Rx|0", &____must_checkpoint_compute_tran_temp_Rx_0, "double", (void *)(&Rx), (size_t)8, 0, 0, 0, "compute_tran_temp|Cap|0", &____must_checkpoint_compute_tran_temp_Cap_0, "double", (void *)(&Cap), (size_t)8, 0, 0, 0); } ; ;
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 127 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+void compute_tran_temp_quick(double *result, int num_iterations, double *temp, double *power, int row, int col)
 # 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable1 = new_stack((void *)(&compute_tran_temp), "compute_tran_temp", (int *)0, 6, 6, (size_t)(10021604361511767020UL), (size_t)(0UL), (size_t)(10021604361511767022UL), (size_t)(10021604361511767023UL), (size_t)(0UL), (size_t)(0UL), "compute_tran_temp|result|0", (int *)0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "compute_tran_temp|num_iterations|0", (int *)0, "i32", (void *)(&num_iterations), (size_t)4, 0, 0, 0, "compute_tran_temp|temp|0", (int *)0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "compute_tran_temp|power|0", (int *)0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "compute_tran_temp|row|0", (int *)0, "i32", (void *)(&row), (size_t)4, 0, 0, 0, "compute_tran_temp|col|0", (int *)0, "i32", (void *)(&col), (size_t)4, 0, 0, 0) ; int i;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double step;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double Rz;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double Ry;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double Rx;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double Cap;
+# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ register_stack_vars(6, "compute_tran_temp|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0, "compute_tran_temp|step|0", (int *)0x0, "double", (void *)(&step), (size_t)8, 0, 0, 0, "compute_tran_temp|Rz|0", (int *)0x0, "double", (void *)(&Rz), (size_t)8, 0, 0, 0, "compute_tran_temp|Ry|0", (int *)0x0, "double", (void *)(&Ry), (size_t)8, 0, 0, 0, "compute_tran_temp|Rx|0", (int *)0x0, "double", (void *)(&Rx), (size_t)8, 0, 0, 0, "compute_tran_temp|Cap|0", (int *)0x0, "double", (void *)(&Cap), (size_t)8, 0, 0, 0); ; ;
 # 129 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 130 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  double grid_height; grid_height = (chip_height / row) ;
 # 131 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  double grid_width; grid_width = (chip_width / col) ;
 # 132 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 133 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    Cap = (0.5 * 1.75E+6 * t_chip * grid_width * grid_height) ;
+  double grid_height; grid_height = (chip_height / row) ;
 # 134 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    Rx = (grid_width / (2. * 100 * t_chip * grid_height)) ;
+  double grid_width; grid_width = (chip_width / col) ;
 # 135 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    Ry = (grid_height / (2. * 100 * t_chip * grid_width)) ;
 # 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    Rz = (t_chip / (100 * grid_height * grid_width)) ;
+    Cap = (0.5 * 1.75E+6 * t_chip * grid_width * grid_height) ;
 # 137 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    Rx = (grid_width / (2. * 100 * t_chip * grid_height)) ;
 # 138 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  double max_slope; max_slope = ((3.0E+6) / (0.5 * t_chip * 1.75E+6)) ;
+    Ry = (grid_height / (2. * 100 * t_chip * grid_width)) ;
 # 139 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    step = (0.001 / max_slope) ;
+    Rz = (t_chip / (100 * grid_height * grid_width)) ;
 # 140 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double t; ;
 # 141 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  double max_slope; max_slope = ((3.0E+6) / (0.5 * t_chip * 1.75E+6)) ;
 # 142 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    step = (0.001 / max_slope) ;
 # 143 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ double t; ;
 # 144 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 145 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 146 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 147 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-     { for ( i = (0) ; i < num_iterations ; i++)
 # 148 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- {
 # 149 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 150 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+     { for ( i = (0) ; i < num_iterations ; i++)
 # 151 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ {
 # 152 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   call_lbl_1: (____chimes_does_checkpoint_single_iteration_npm ? ( ({ calling((void*)single_iteration, 1, ____alias_loc_id_2, 0UL, 10, (size_t)(10021604361511767019UL), (size_t)(10021604361511767021UL), (size_t)(10021604361511767022UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); single_iteration_quick(result, temp, power, row, col, Cap, Rx, Ry, Rz, step); }) ) : (({ calling_npm("single_iteration", ____alias_loc_id_2); single_iteration_npm(result, temp, power, row, col, Cap, Rx, Ry, Rz, step); })));
 # 153 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- } }
 # 154 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 155 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  ({ calling_npm("single_iteration", 0); single_iteration_npm(result, temp, power, row, col, Cap, Rx, Ry, Rz, step); });
 # 156 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 157 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 158 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "compute_tran_temp", &____must_manage_compute_tran_temp, ____alias_loc_id_6, ____chimes_did_disable1); }
+         call_lbl_1: checkpoint_transformed(1, ____alias_loc_id_0);
+# 159 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 160 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ } }
+# 161 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 162 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 163 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 164 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 165 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "compute_tran_temp", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable1, false); }
 
 void compute_tran_temp(double *result, int num_iterations, double *temp, double *power, int row, int col) { (____chimes_replaying ? compute_tran_temp_resumable(result, num_iterations, temp, power, row, col) : compute_tran_temp_quick(result, num_iterations, temp, power, row, col)); }
-
+# 167 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 void fatal_quick(char *s)
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable2 = new_stack((void *)(&fatal), "fatal", &____must_manage_fatal, 1, 0, (size_t)(10021604361511767034UL)) ; ; ;
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 168 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable2 = new_stack((void *)(&fatal), "fatal", &____must_manage_fatal, 1, 0, (size_t)(10021604361511767035UL)) ; ; ;
+# 169 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fprintf(stderr, "error: %s\n", s);
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 170 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "fatal", &____must_manage_fatal, 0, ____chimes_did_disable2); }
+# 171 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "fatal", &____must_manage_fatal, 0, ____chimes_did_disable2, false); }
 
 void fatal(char *s) { (____chimes_replaying ? fatal_resumable(s) : fatal_quick(s)); }
-
-void read_input_quick(double *vect, int grid_rows, int grid_cols, char *file)
-# 167 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable3 = new_stack((void *)(&read_input), "read_input", &____must_manage_read_input, 4, 3, (size_t)(10021604361511767105UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10021604361511767108UL), "read_input|vect|0", &____must_checkpoint_read_input_vect_0, "double*", (void *)(&vect), (size_t)8, 1, 0, 0, "read_input|grid_rows|0", &____must_checkpoint_read_input_grid_rows_0, "i32", (void *)(&grid_rows), (size_t)4, 0, 0, 0, "read_input|grid_cols|0", &____must_checkpoint_read_input_grid_cols_0, "i32", (void *)(&grid_cols), (size_t)4, 0, 0, 0) ; char str[256];
-FILE *fp;
-int i;
- if (____must_checkpoint_read_input_str_0 || ____must_checkpoint_read_input_fp_0 || ____must_checkpoint_read_input_i_0) { register_stack_vars(3, "read_input|str|0", &____must_checkpoint_read_input_str_0, "[256 x i8]", (void *)(str), (size_t)256, 0, 0, 0, "read_input|fp|0", &____must_checkpoint_read_input_fp_0, "%struct._IO_FILE*", (void *)(&fp), (size_t)8, 1, 0, 0, "read_input|i|0", &____must_checkpoint_read_input_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ; ;
-# 168 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    int index; ;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ;
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  ;
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double val; ;
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 173 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fp = fopen (file, "r");
+void read_input_quick(double *vect, int grid_rows, int grid_cols, char *file)
 # 174 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (!fp) {({ calling_npm("fatal", 0); fatal_npm("file could not be opened for reading"); }); };
+{const int ____chimes_did_disable3 = new_stack((void *)(&read_input), "read_input", &____must_manage_read_input, 4, 0, (size_t)(10021604361511767106UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10021604361511767109UL)) ; char str[256];
+# 174 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if (____must_checkpoint_read_input_str_0) { register_stack_vars(1, "read_input|str|0", &____must_checkpoint_read_input_str_0, "[256 x i8]", (void *)(str), (size_t)256, 0, 0, 0); } ; ;
+# 175 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   int i; int index; ;
 # 176 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ FILE *fp; ;
 # 177 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- for (i=0; i < grid_rows * grid_cols; i++) {
+  ;
 # 178 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  fgets(str, 256, fp);
+ double val; ;
 # 179 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   call_lbl_4: if (alias_group_changed(____alias_loc_id_3) || (____chimes_does_checkpoint_feof_npm ? ( ({ calling((void*)feof, 4, ____alias_loc_id_3, 0UL, 1, (size_t)(10021604361511767061UL)); (feof)(fp); }) ) : (({ calling_npm("feof", ____alias_loc_id_3); (*____chimes_extern_func_feof)(fp); })))) {({ calling_npm("fatal", 0); fatal_npm("not enough lines in file"); }); };
+# 180 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fp = fopen (file, "r");
 # 181 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  if ((sscanf(str, "%lf", &val) != 1)) {({ calling_npm("fatal", 0); fatal_npm("invalid file format"); }); };
+ if (!fp) {({ calling_npm("fatal", 0); fatal_npm("file could not be opened for reading"); }); };
 # 183 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  vect[i] = val;
 # 184 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- }
+ for (i=0; i < grid_rows * grid_cols; i++) {
 # 185 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  fgets(str, 256, fp);
 # 186 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  if (feof(fp)) {({ calling_npm("fatal", 0); fatal_npm("not enough lines in file"); }); };
+# 188 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  if ((sscanf(str, "%lf", &val) != 1)) {({ calling_npm("fatal", 0); fatal_npm("invalid file format"); }); };
+# 190 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  vect[i] = val;
+# 191 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ }
+# 192 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 193 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  fclose(fp);
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "read_input", &____must_manage_read_input, ____alias_loc_id_7, ____chimes_did_disable3); }
+# 194 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "read_input", &____must_manage_read_input, ____alias_loc_id_4, ____chimes_did_disable3, false); }
 
 void read_input(double *vect, int grid_rows, int grid_cols, char *file) { (____chimes_replaying ? read_input_resumable(vect, grid_rows, grid_cols, file) : read_input_quick(vect, grid_rows, grid_cols, file)); }
-
-void usage_quick(int argc, char **argv)
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable4 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(10021604361511767145UL)) ; ; ;
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "Usage: %s <grid_rows> <grid_cols> <sim_time> <no. of threads><temp_file> <power_file>\n", argv[0]);
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<grid_rows>  - number of rows in the grid (positive integer)\n");
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<grid_cols>  - number of columns in the grid (positive integer)\n");
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<sim_time>   - number of iterations\n");
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<no. of threads>   - number of threads\n");
 # 196 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<temp_file>  - name of the file containing the initial temperature values of each cell\n");
+void usage_quick(int argc, char **argv)
 # 197 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<power_file> - name of the file containing the dissipated power values of each cell\n");
+{const int ____chimes_did_disable4 = new_stack((void *)(&usage), "usage", &____must_manage_usage, 2, 0, (size_t)(0UL), (size_t)(10021604361511767146UL)) ; ; ;
 # 198 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- exit(1);
+ fprintf(stderr, "Usage: %s <grid_rows> <grid_cols> <sim_time> <no. of threads><temp_file> <power_file>\n", argv[0]);
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable4); }
+ fprintf(stderr, "\t<grid_rows>  - number of rows in the grid (positive integer)\n");
+# 200 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<grid_cols>  - number of columns in the grid (positive integer)\n");
+# 201 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<sim_time>   - number of iterations\n");
+# 202 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<no. of threads>   - number of threads\n");
+# 203 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<temp_file>  - name of the file containing the initial temperature values of each cell\n");
+# 204 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<power_file> - name of the file containing the dissipated power values of each cell\n");
+# 205 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ exit(1);
+# 206 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "usage", &____must_manage_usage, 0, ____chimes_did_disable4, false); }
 
 void usage(int argc, char **argv) { (____chimes_replaying ? usage_resumable(argc, argv) : usage_quick(argc, argv)); }
-
-int main_quick(int argc, char **argv)
-# 202 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{const int ____chimes_did_disable5 = new_stack((void *)(&main), "main", &____must_manage_main, 2, 0, (size_t)(0UL), (size_t)(10021604361511767275UL)) ; char *pfile;
-double *result;
-double *power;
-double *temp;
-int sim_time;
-int grid_cols;
-int grid_rows;
- if (____must_checkpoint_main_pfile_0 || ____must_checkpoint_main_result_0 || ____must_checkpoint_main_power_0 || ____must_checkpoint_main_temp_0 || ____must_checkpoint_main_sim_time_0 || ____must_checkpoint_main_grid_cols_0 || ____must_checkpoint_main_grid_rows_0) { register_stack_vars(7, "main|pfile|0", &____must_checkpoint_main_pfile_0, "i8*", (void *)(&pfile), (size_t)8, 1, 0, 0, "main|result|0", &____must_checkpoint_main_result_0, "double*", (void *)(&result), (size_t)8, 1, 0, 0, "main|power|0", &____must_checkpoint_main_power_0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "main|temp|0", &____must_checkpoint_main_temp_0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0, "main|sim_time|0", &____must_checkpoint_main_sim_time_0, "i32", (void *)(&sim_time), (size_t)4, 0, 0, 0, "main|grid_cols|0", &____must_checkpoint_main_grid_cols_0, "i32", (void *)(&grid_cols), (size_t)4, 0, 0, 0, "main|grid_rows|0", &____must_checkpoint_main_grid_rows_0, "i32", (void *)(&grid_rows), (size_t)4, 0, 0, 0); } ; ;
-# 203 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    int i; ;
-# 204 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    ;
-# 205 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- char *tfile; ;
-# 206 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 207 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 208 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (argc != 7) {({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
+int main_quick(int argc, char **argv)
+# 209 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{const int ____chimes_did_disable5 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(10021604361511767280UL)) ; double *power;
+# 209 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+double *temp;
+# 209 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ register_stack_vars(2, "main|power|0", (int *)0x0, "double*", (void *)(&power), (size_t)8, 1, 0, 0, "main|temp|0", (int *)0x0, "double*", (void *)(&temp), (size_t)8, 1, 0, 0); ; ;
 # 210 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if ((grid_rows = atoi(argv[1])) <= 0 ||
+ int grid_rows; int grid_cols; int sim_time; int i; ;
 # 211 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (grid_cols = atoi(argv[2])) <= 0 ||
+   double *result; ;
 # 212 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (sim_time = atoi(argv[3])) <= 0 ||
+ char *tfile; char *pfile; ;
 # 213 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  (num_omp_threads = atoi(argv[4])) <= 0) {({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
-# 216 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 214 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 215 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if (argc != 7) {({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
 # 217 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if ((grid_rows = atoi(argv[1])) <= 0 ||
 # 218 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- temp = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767215UL, 0, 0);
+  (grid_cols = atoi(argv[2])) <= 0 ||
 # 219 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- power = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767222UL, 0, 0);
+  (sim_time = atoi(argv[3])) <= 0 ||
 # 220 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- result = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767229UL, 0, 0);
-# 221 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (!temp || !power) {({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
+  (num_omp_threads = atoi(argv[4])) <= 0) {({ calling_npm("usage", 0); usage_npm(argc, argv); }); };
 # 223 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 224 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 225 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- tfile = argv[5];
+ temp = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767217UL, 0, 0);
 # 226 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- pfile = argv[6];
+ power = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767224UL, 0, 0);
 # 227 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_8: (____chimes_does_checkpoint_read_input_npm ? ( ({ calling((void*)read_input, 8, ____alias_loc_id_4, 0UL, 4, (size_t)(10021604361511767215UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10021604361511767181UL)); read_input_quick(temp, grid_rows, grid_cols, tfile); }) ) : (({ calling_npm("read_input", ____alias_loc_id_4); read_input_npm(temp, grid_rows, grid_cols, tfile); })));
+ result = (double *) calloc_wrapper (grid_rows * grid_cols, sizeof(double), 10021604361511767231UL, 0, 0);
 # 228 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_9: (____chimes_does_checkpoint_read_input_npm ? ( ({ calling((void*)read_input, 9, 0, 0UL, 4, (size_t)(10021604361511767222UL), (size_t)(0UL), (size_t)(0UL), (size_t)(10021604361511767181UL)); read_input_quick(power, grid_rows, grid_cols, pfile); }) ) : (({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); })));
-# 229 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if (!temp || !power) {({ calling_npm("fatal", 0); fatal_npm("unable to allocate memory"); }); };
 # 230 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- printf("Start computing the transient temperature\n");
 # 231 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  call_lbl_11: (____chimes_does_checkpoint_compute_tran_temp_npm ? ( ({ calling((void*)compute_tran_temp, 11, 0, 0UL, 6, (size_t)(10021604361511767229UL), (size_t)(0UL), (size_t)(10021604361511767215UL), (size_t)(10021604361511767222UL), (size_t)(0UL), (size_t)(0UL)); compute_tran_temp_quick(result, sim_time, temp, power, grid_rows, grid_cols); }) ) : (({ calling_npm("compute_tran_temp", 0); compute_tran_temp_npm(result, sim_time, temp, power, grid_rows, grid_cols); })));
 # 232 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ tfile = argv[5];
+# 233 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ pfile = argv[6];
+# 234 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ ({ calling_npm("read_input", 0); read_input_npm(temp, grid_rows, grid_cols, tfile); });
+# 235 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ ({ calling_npm("read_input", 0); read_input_npm(power, grid_rows, grid_cols, pfile); });
+# 236 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 237 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ printf("Start computing the transient temperature\n");
+# 238 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  call_lbl_9: ({ calling((void*)compute_tran_temp, 9, ____alias_loc_id_1, 0UL, 6, (size_t)(10021604361511767231UL), (size_t)(0UL), (size_t)(10021604361511767217UL), (size_t)(10021604361511767224UL), (size_t)(0UL), (size_t)(0UL)); compute_tran_temp_quick(result, sim_time, temp, power, grid_rows, grid_cols); }) ;
+# 239 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  printf("Ending simulation\n");
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 243 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- free_wrapper(temp, 10021604361511767215UL);
-# 244 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- free_wrapper(power, 10021604361511767222UL);
-# 245 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 246 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- rm_stack(false, 0UL, "main", &____must_manage_main, 0, ____chimes_did_disable5); return 0;
-# 247 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-}
+# 250 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 250 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ free_wrapper(temp, 10021604361511767217UL);
+# 251 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ free_wrapper(power, 10021604361511767224UL);
+# 252 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 253 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  int ____chimes_ret_var_0; ; ____chimes_ret_var_0 = (0); rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable5, false); return ____chimes_ret_var_0; ;
+# 254 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_5, ____chimes_did_disable5, false); }
 
-int main(int argc, char **argv) { init_chimes(); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
-
-
-
-void single_iteration_npm(double *result, double *temp, double *power, int row, int col,
-# 33 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-       double Cap, double Rx, double Ry, double Rz,
-# 34 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-       double step)
+int main(int argc, char **argv) { init_chimes(argc, argv); return (____chimes_replaying ? main_resumable(argc, argv) : main_quick(argc, argv)); }
 # 35 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{
+void single_iteration_npm(double *result, double *temp, double *power, int row, int col,
 # 36 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double delta;
+       double Cap, double Rx, double Ry, double Rz,
 # 37 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- int r, c;
+       double step)
 # 38 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{
 # 39 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ double delta;
 # 40 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- (*____chimes_extern_func_omp_set_num_threads)(num_omp_threads);
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-#pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static)
-# 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ int r, c;
 # 41 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 42 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 43 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ omp_set_num_threads(num_omp_threads);
 # 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- for (r = 0; r < row; r++) {
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static)
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 44 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 45 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  for (c = 0; c < col; c++) {
 # 46 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 47 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   if ((r == 0) && (c == 0)) {{
+ for (r = 0; r < row; r++) {
 # 48 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[0] +
+  for (c = 0; c < col; c++) {
 # 49 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[1] - temp[0]) / Rx +
 # 50 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[col] - temp[0]) / Ry +
+   if ((r == 0) && (c == 0)) {{
 # 51 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[0]) / Rz);
+    delta = (step / Cap) * (power[0] +
 # 52 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if ((r == 0) && (c == col-1)) {{
+      (temp[1] - temp[0]) / Rx +
+# 53 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[col] - temp[0]) / Ry +
 # 54 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[c] +
+      (amb_temp - temp[0]) / Rz);
 # 55 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[c-1] - temp[c]) / Rx +
-# 56 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[c+col] - temp[c]) / Ry +
+   }; } else if ((r == 0) && (c == col-1)) {{
 # 57 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[c]) / Rz);
-# 58 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if ((r == row-1) && (c == col-1)) {{
-# 60 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[r*col+c] +
-# 61 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 62 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 63 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[r*col+c]) / Rz);
-# 64 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if ((r == row-1) && (c == 0)) {{
-# 66 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[r*col] +
-# 67 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+1] - temp[r*col]) / Rx +
-# 68 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r-1)*col] - temp[r*col]) / Ry +
-# 69 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[r*col]) / Rz);
-# 70 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (r == 0) {{
-# 72 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[c] +
-# 73 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[c+1] + temp[c-1] - 2.0*temp[c]) / Rx +
-# 74 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[col+c] - temp[c]) / Ry +
-# 75 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 58 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[c-1] - temp[c]) / Rx +
+# 59 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[c+col] - temp[c]) / Ry +
+# 60 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[c]) / Rz);
-# 76 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (c == col-1) {{
-# 78 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 61 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if ((r == row-1) && (c == col-1)) {{
+# 63 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 79 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 80 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 64 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+c-1] - temp[r*col+c]) / Rx +
-# 81 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (amb_temp - temp[r*col+c]) / Rz);
-# 82 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (r == row-1) {{
-# 84 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-    delta = (step / Cap) * (power[r*col+c] +
-# 85 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 86 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 65 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
-# 87 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 66 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 88 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }; } else if (c == 0) {
-# 90 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 67 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if ((r == row-1) && (c == 0)) {{
+# 69 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col] +
-# 91 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[(r+1)*col] + temp[(r-1)*col] - 2.0*temp[r*col]) / Ry +
-# 92 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 70 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[r*col+1] - temp[r*col]) / Rx +
-# 93 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 71 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r-1)*col] - temp[r*col]) / Ry +
+# 72 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col]) / Rz);
-# 94 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   }
-# 95 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   else {
-# 96 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 73 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (r == 0) {{
+# 75 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[c] +
+# 76 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[c+1] + temp[c-1] - 2.0*temp[c]) / Rx +
+# 77 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[col+c] - temp[c]) / Ry +
+# 78 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[c]) / Rz);
+# 79 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (c == col-1) {{
+# 81 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
     delta = (step / Cap) * (power[r*col+c] +
-# 97 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 82 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
-# 98 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
-# 99 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 83 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+c-1] - temp[r*col+c]) / Rx +
+# 84 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
       (amb_temp - temp[r*col+c]) / Rz);
-# 100 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 85 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (r == row-1) {{
+# 87 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[r*col+c] +
+# 88 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
+# 89 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r-1)*col+c] - temp[r*col+c]) / Ry +
+# 90 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[r*col+c]) / Rz);
+# 91 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   }; } else if (c == 0) {
+# 93 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[r*col] +
+# 94 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r+1)*col] + temp[(r-1)*col] - 2.0*temp[r*col]) / Ry +
+# 95 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+1] - temp[r*col]) / Rx +
+# 96 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[r*col]) / Rz);
+# 97 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
    }
+# 98 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   else {
+# 99 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+    delta = (step / Cap) * (power[r*col+c] +
+# 100 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[(r+1)*col+c] + temp[(r-1)*col+c] - 2.0*temp[r*col+c]) / Ry +
 # 101 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (temp[r*col+c+1] + temp[r*col+c-1] - 2.0*temp[r*col+c]) / Rx +
 # 102 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+      (amb_temp - temp[r*col+c]) / Rz);
 # 103 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   result[r*col+c] =temp[r*col+c]+ delta;
+   }
 # 104 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 105 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 106 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  }
+   result[r*col+c] =temp[r*col+c]+ delta;
 # 107 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- }
 # 108 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 109 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  }
 # 110 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- (*____chimes_extern_func_omp_set_num_threads)(num_omp_threads);
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-#pragma omp parallel for shared(result, temp) private(r, c) schedule(static)
-# 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ }
 # 111 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 112 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 113 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- for (r = 0; r < row; r++) {
+ omp_set_num_threads(num_omp_threads);
 # 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  for (c = 0; c < col; c++) {
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+#pragma omp parallel for shared(result, temp) private(r, c) schedule(static)
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 114 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 # 115 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   temp[r*col+c]=result[r*col+c];
 # 116 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  }
+ for (r = 0; r < row; r++) {
 # 117 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- }
+  for (c = 0; c < col; c++) {
 # 118 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-}
-
-void compute_tran_temp_npm(double *result, int num_iterations, double *temp, double *power, int row, int col)
-# 125 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{
-# 126 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 127 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 128 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 129 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 130 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double grid_height = chip_height / row;
-# 131 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double grid_width = chip_width / col;
-# 132 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 133 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double Cap = 0.5 * 1.75e6 * t_chip * grid_width * grid_height;
-# 134 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double Rx = grid_width / (2.0 * 100 * t_chip * grid_height);
-# 135 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double Ry = grid_height / (2.0 * 100 * t_chip * grid_width);
-# 136 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double Rz = t_chip / (100 * grid_height * grid_width);
-# 137 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 138 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double max_slope = (3.0e6) / (0.5 * t_chip * 1.75e6);
-# 139 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double step = 0.001 / max_slope;
-# 140 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double t;
-# 141 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 142 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 143 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 144 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 145 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 146 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 147 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-     for (int i = 0; i < num_iterations ; i++)
-# 148 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- {
-# 149 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 150 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 151 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 152 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  single_iteration_npm(result, temp, power, row, col, Cap, Rx, Ry, Rz, step);
-# 153 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   temp[r*col+c]=result[r*col+c];
+# 119 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  }
+# 120 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  }
-# 154 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 155 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 156 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 157 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 158 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 121 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 }
-
-void fatal_npm(char *s)
-# 161 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{
-# 162 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "error: %s\n", s);
-# 163 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- exit(1);
-# 164 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-}
-
-void read_input_npm(double *vect, int grid_rows, int grid_cols, char *file)
 # 167 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-{
+void fatal_npm(char *s)
 # 168 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-   int i, index;
-# 169 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- FILE *fp;
-# 170 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- char str[256];
-# 171 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- double val;
-# 172 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 173 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fp = fopen (file, "r");
-# 174 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- if (!fp) {fatal_npm("file could not be opened for reading"); };
-# 176 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 177 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- for (i=0; i < grid_rows * grid_cols; i++) {
-# 178 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  fgets(str, 256, fp);
-# 179 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  if ((*____chimes_extern_func_feof)(fp)) {fatal_npm("not enough lines in file"); };
-# 181 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  if ((sscanf(str, "%lf", &val) != 1)) {fatal_npm("invalid file format"); };
-# 183 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-  vect[i] = val;
-# 184 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- }
-# 185 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-# 186 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fclose(fp);
-# 187 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
-}
-
-void usage_npm(int argc, char **argv)
-# 190 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 {
-# 191 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "Usage: %s <grid_rows> <grid_cols> <sim_time> <no. of threads><temp_file> <power_file>\n", argv[0]);
-# 192 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<grid_rows>  - number of rows in the grid (positive integer)\n");
-# 193 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<grid_cols>  - number of columns in the grid (positive integer)\n");
-# 194 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<sim_time>   - number of iterations\n");
-# 195 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<no. of threads>   - number of threads\n");
-# 196 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<temp_file>  - name of the file containing the initial temperature values of each cell\n");
-# 197 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
- fprintf(stderr, "\t<power_file> - name of the file containing the dissipated power values of each cell\n");
-# 198 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 169 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "error: %s\n", s);
+# 170 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
  exit(1);
+# 171 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+}
+# 173 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+void read_input_npm(double *vect, int grid_rows, int grid_cols, char *file)
+# 174 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{
+# 175 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+   int i, index;
+# 176 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ FILE *fp;
+# 177 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ char str[256];
+# 178 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ double val;
+# 179 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 180 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fp = fopen (file, "r");
+# 181 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ if (!fp) {fatal_npm("file could not be opened for reading"); };
+# 183 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 184 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ for (i=0; i < grid_rows * grid_cols; i++) {
+# 185 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  fgets(str, 256, fp);
+# 186 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  if (feof(fp)) {fatal_npm("not enough lines in file"); };
+# 188 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  if ((sscanf(str, "%lf", &val) != 1)) {fatal_npm("invalid file format"); };
+# 190 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+  vect[i] = val;
+# 191 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ }
+# 192 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+# 193 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fclose(fp);
+# 194 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+}
+# 196 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+void usage_npm(int argc, char **argv)
+# 197 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+{
+# 198 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "Usage: %s <grid_rows> <grid_cols> <sim_time> <no. of threads><temp_file> <power_file>\n", argv[0]);
 # 199 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<grid_rows>  - number of rows in the grid (positive integer)\n");
+# 200 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<grid_cols>  - number of columns in the grid (positive integer)\n");
+# 201 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<sim_time>   - number of iterations\n");
+# 202 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<no. of threads>   - number of threads\n");
+# 203 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<temp_file>  - name of the file containing the initial temperature values of each cell\n");
+# 204 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ fprintf(stderr, "\t<power_file> - name of the file containing the dissipated power values of each cell\n");
+# 205 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
+ exit(1);
+# 206 "/scratch/jmg3/rodinia_3.0/openmp/hotspot/hotspot_openmp.cpp"
 }
 
 
@@ -3492,106 +3425,61 @@ void usage_npm(int argc, char **argv)
 
 
 static int module_init() {
-    init_module(10021604361511766085UL, 20, 6, 38, 8, 5, 2, 7, 10, 1, 2,
-                           &____alias_loc_id_0, (unsigned)4, (unsigned)0, (unsigned)0, (10021604361511766085UL + 11UL), (10021604361511766085UL + 12UL), (10021604361511766085UL + 13UL), (10021604361511766085UL + 814UL),
-                           &____alias_loc_id_1, (unsigned)10, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1UL), (10021604361511766085UL + 2UL), (10021604361511766085UL + 3UL), (10021604361511766085UL + 4UL), (10021604361511766085UL + 5UL), (10021604361511766085UL + 6UL), (10021604361511766085UL + 7UL), (10021604361511766085UL + 8UL), (10021604361511766085UL + 9UL), (10021604361511766085UL + 10UL),
-                           &____alias_loc_id_2, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 827UL), (10021604361511766085UL + 828UL), (10021604361511766085UL + 829UL), (10021604361511766085UL + 830UL), (10021604361511766085UL + 831UL), (10021604361511766085UL + 832UL), (10021604361511766085UL + 833UL), (10021604361511766085UL + 834UL), (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL), (10021604361511766085UL + 837UL), (10021604361511766085UL + 838UL), (10021604361511766085UL + 839UL), (10021604361511766085UL + 840UL), (10021604361511766085UL + 842UL),
-                           &____alias_loc_id_3, (unsigned)9, (unsigned)0, (unsigned)1, (10021604361511766085UL + 953UL), (10021604361511766085UL + 954UL), (10021604361511766085UL + 955UL), (10021604361511766085UL + 956UL), (10021604361511766085UL + 957UL), (10021604361511766085UL + 959UL), (10021604361511766085UL + 960UL), (10021604361511766085UL + 976UL), (10021604361511766085UL + 1020UL), "feof", (unsigned)1, (10021604361511766085UL + 976UL),
-                           &____alias_loc_id_4, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1061UL), (10021604361511766085UL + 1062UL), (10021604361511766085UL + 1063UL), (10021604361511766085UL + 1064UL), (10021604361511766085UL + 1065UL), (10021604361511766085UL + 1066UL), (10021604361511766085UL + 1068UL), (10021604361511766085UL + 1069UL), (10021604361511766085UL + 1070UL), (10021604361511766085UL + 1071UL), (10021604361511766085UL + 1072UL), (10021604361511766085UL + 1130UL), (10021604361511766085UL + 1137UL), (10021604361511766085UL + 1144UL), (10021604361511766085UL + 1200UL),
-                           &____alias_loc_id_5, (unsigned)3, (unsigned)0, (unsigned)0, (10021604361511766085UL + 12UL), (10021604361511766085UL + 13UL), (10021604361511766085UL + 815UL),
-                           &____alias_loc_id_6, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 827UL), (10021604361511766085UL + 828UL), (10021604361511766085UL + 829UL), (10021604361511766085UL + 830UL), (10021604361511766085UL + 831UL), (10021604361511766085UL + 832UL), (10021604361511766085UL + 833UL), (10021604361511766085UL + 834UL), (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL), (10021604361511766085UL + 837UL), (10021604361511766085UL + 838UL), (10021604361511766085UL + 839UL), (10021604361511766085UL + 840UL), (10021604361511766085UL + 842UL),
-                           &____alias_loc_id_7, (unsigned)8, (unsigned)0, (unsigned)0, (10021604361511766085UL + 953UL), (10021604361511766085UL + 954UL), (10021604361511766085UL + 955UL), (10021604361511766085UL + 956UL), (10021604361511766085UL + 957UL), (10021604361511766085UL + 959UL), (10021604361511766085UL + 976UL), (10021604361511766085UL + 1020UL),
-                            "single_iteration", (void *)(&single_iteration_npm), (void *)__null, 2, &____alias_loc_id_0, &____alias_loc_id_1, 10, (10021604361511766085UL + 814UL), (10021604361511766085UL + 815UL), (10021604361511766085UL + 816UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2, "omp_set_num_threads", 1, 0UL, 0UL, "omp_set_num_threads", 1, 0UL, 0UL,
-                            "compute_tran_temp", (void *)(&compute_tran_temp_npm), (void *)__null, 1, &____alias_loc_id_2, 6, (10021604361511766085UL + 934UL), 0UL, (10021604361511766085UL + 936UL), (10021604361511766085UL + 937UL), 0UL, 0UL, 0UL, 1, "single_iteration", 10, (10021604361511766085UL + 934UL), (10021604361511766085UL + 936UL), (10021604361511766085UL + 937UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-                            "fatal", (void *)(&fatal_npm), (void *)__null, 0, 1, (10021604361511766085UL + 949UL), 0UL, 2, "fprintf", 3, (10021604361511766085UL + 943UL), (10021604361511766085UL + 1202UL), (10021604361511766085UL + 949UL), 0UL, "exit", 1, 0UL, 0UL,
-                            "read_input", (void *)(&read_input_npm), (void *)__null, 1, &____alias_loc_id_3, 4, (10021604361511766085UL + 1020UL), 0UL, 0UL, (10021604361511766085UL + 1023UL), 0UL, 8, "fopen", 2, (10021604361511766085UL + 1023UL), (10021604361511766085UL + 1203UL), (10021604361511766085UL + 976UL), "fatal", 1, (10021604361511766085UL + 1204UL), 0UL, "fgets", 3, (10021604361511766085UL + 960UL), 0UL, (10021604361511766085UL + 976UL), (10021604361511766085UL + 993UL), "feof", 1, (10021604361511766085UL + 976UL), 0UL, "fatal", 1, (10021604361511766085UL + 1205UL), 0UL, "sscanf", 3, (10021604361511766085UL + 960UL), (10021604361511766085UL + 1206UL), (10021604361511766085UL + 961UL), 0UL, "fatal", 1, (10021604361511766085UL + 1207UL), 0UL, "fclose", 1, (10021604361511766085UL + 976UL), 0UL,
-                            "usage", (void *)(&usage_npm), (void *)__null, 0, 2, 0UL, (10021604361511766085UL + 1060UL), 0UL, 8, "fprintf", 3, (10021604361511766085UL + 943UL), (10021604361511766085UL + 1208UL), (10021604361511766085UL + 1042UL), 0UL, "fprintf", 2, (10021604361511766085UL + 943UL), (10021604361511766085UL + 1209UL), 0UL, "fprintf", 2, (10021604361511766085UL + 943UL), (10021604361511766085UL + 1210UL), 0UL, "fprintf", 2, (10021604361511766085UL + 943UL), (10021604361511766085UL + 1211UL), 0UL, "fprintf", 2, (10021604361511766085UL + 943UL), (10021604361511766085UL + 1212UL), 0UL, "fprintf", 2, (10021604361511766085UL + 943UL), (10021604361511766085UL + 1213UL), 0UL, "fprintf", 2, (10021604361511766085UL + 943UL), (10021604361511766085UL + 1214UL), 0UL, "exit", 1, 0UL, 0UL,
-                               "feof", (void **)&(____chimes_extern_func_feof),
-                               "omp_set_num_threads", (void **)&(____chimes_extern_func_omp_set_num_threads),
+    init_module(10021604361511766085UL, 20, 6, 3, 6, 4, 0, 4, 9, 0, 2,
+                           &____alias_loc_id_0, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 827UL), (10021604361511766085UL + 828UL), (10021604361511766085UL + 829UL), (10021604361511766085UL + 830UL), (10021604361511766085UL + 831UL), (10021604361511766085UL + 832UL), (10021604361511766085UL + 833UL), (10021604361511766085UL + 834UL), (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL), (10021604361511766085UL + 837UL), (10021604361511766085UL + 838UL), (10021604361511766085UL + 839UL), (10021604361511766085UL + 840UL), (10021604361511766085UL + 842UL),
+                           &____alias_loc_id_1, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1062UL), (10021604361511766085UL + 1063UL), (10021604361511766085UL + 1064UL), (10021604361511766085UL + 1065UL), (10021604361511766085UL + 1066UL), (10021604361511766085UL + 1067UL), (10021604361511766085UL + 1069UL), (10021604361511766085UL + 1070UL), (10021604361511766085UL + 1071UL), (10021604361511766085UL + 1072UL), (10021604361511766085UL + 1073UL), (10021604361511766085UL + 1132UL), (10021604361511766085UL + 1139UL), (10021604361511766085UL + 1146UL), (10021604361511766085UL + 1205UL),
+                           &____alias_loc_id_2, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1UL), (10021604361511766085UL + 2UL), (10021604361511766085UL + 3UL), (10021604361511766085UL + 4UL), (10021604361511766085UL + 5UL), (10021604361511766085UL + 6UL), (10021604361511766085UL + 7UL), (10021604361511766085UL + 8UL), (10021604361511766085UL + 9UL), (10021604361511766085UL + 10UL), (10021604361511766085UL + 11UL), (10021604361511766085UL + 12UL), (10021604361511766085UL + 13UL), (10021604361511766085UL + 814UL), (10021604361511766085UL + 815UL),
+                           &____alias_loc_id_3, (unsigned)15, (unsigned)0, (unsigned)0, (10021604361511766085UL + 827UL), (10021604361511766085UL + 828UL), (10021604361511766085UL + 829UL), (10021604361511766085UL + 830UL), (10021604361511766085UL + 831UL), (10021604361511766085UL + 832UL), (10021604361511766085UL + 833UL), (10021604361511766085UL + 834UL), (10021604361511766085UL + 835UL), (10021604361511766085UL + 836UL), (10021604361511766085UL + 837UL), (10021604361511766085UL + 838UL), (10021604361511766085UL + 839UL), (10021604361511766085UL + 840UL), (10021604361511766085UL + 842UL),
+                           &____alias_loc_id_4, (unsigned)9, (unsigned)0, (unsigned)0, (10021604361511766085UL + 954UL), (10021604361511766085UL + 955UL), (10021604361511766085UL + 956UL), (10021604361511766085UL + 957UL), (10021604361511766085UL + 958UL), (10021604361511766085UL + 960UL), (10021604361511766085UL + 961UL), (10021604361511766085UL + 977UL), (10021604361511766085UL + 1021UL),
+                           &____alias_loc_id_5, (unsigned)1, (unsigned)0, (unsigned)0, (10021604361511766085UL + 1074UL),
+                            "single_iteration", (void *)(&single_iteration_npm), (void *)__null, 0, 10, (10021604361511766085UL + 814UL), (10021604361511766085UL + 815UL), (10021604361511766085UL + 816UL), 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 2, "omp_set_num_threads", 1, 0UL, 0UL, "omp_set_num_threads", 1, 0UL, 0UL,
+                            "fatal", (void *)(&fatal_npm), (void *)__null, 0, 1, (10021604361511766085UL + 950UL), 0UL, 2, "fprintf", 3, (10021604361511766085UL + 944UL), (10021604361511766085UL + 1207UL), (10021604361511766085UL + 950UL), 0UL, "exit", 1, 0UL, 0UL,
+                            "read_input", (void *)(&read_input_npm), (void *)__null, 0, 4, (10021604361511766085UL + 1021UL), 0UL, 0UL, (10021604361511766085UL + 1024UL), 0UL, 8, "fopen", 2, (10021604361511766085UL + 1024UL), (10021604361511766085UL + 1208UL), (10021604361511766085UL + 977UL), "fatal", 1, (10021604361511766085UL + 1209UL), 0UL, "fgets", 3, (10021604361511766085UL + 961UL), 0UL, (10021604361511766085UL + 977UL), (10021604361511766085UL + 994UL), "feof", 1, (10021604361511766085UL + 977UL), 0UL, "fatal", 1, (10021604361511766085UL + 1210UL), 0UL, "sscanf", 3, (10021604361511766085UL + 961UL), (10021604361511766085UL + 1211UL), (10021604361511766085UL + 962UL), 0UL, "fatal", 1, (10021604361511766085UL + 1212UL), 0UL, "fclose", 1, (10021604361511766085UL + 977UL), 0UL,
+                            "usage", (void *)(&usage_npm), (void *)__null, 0, 2, 0UL, (10021604361511766085UL + 1061UL), 0UL, 8, "fprintf", 3, (10021604361511766085UL + 944UL), (10021604361511766085UL + 1213UL), (10021604361511766085UL + 1043UL), 0UL, "fprintf", 2, (10021604361511766085UL + 944UL), (10021604361511766085UL + 1214UL), 0UL, "fprintf", 2, (10021604361511766085UL + 944UL), (10021604361511766085UL + 1215UL), 0UL, "fprintf", 2, (10021604361511766085UL + 944UL), (10021604361511766085UL + 1216UL), 0UL, "fprintf", 2, (10021604361511766085UL + 944UL), (10021604361511766085UL + 1217UL), 0UL, "fprintf", 2, (10021604361511766085UL + 944UL), (10021604361511766085UL + 1218UL), 0UL, "fprintf", 2, (10021604361511766085UL + 944UL), (10021604361511766085UL + 1219UL), 0UL, "exit", 1, 0UL, 0UL,
                            "single_iteration", &(____chimes_does_checkpoint_single_iteration_npm),
-                           "compute_tran_temp", &(____chimes_does_checkpoint_compute_tran_temp_npm),
                            "fatal", &(____chimes_does_checkpoint_fatal_npm),
                            "read_input", &(____chimes_does_checkpoint_read_input_npm),
                            "usage", &(____chimes_does_checkpoint_usage_npm),
-                           "feof", &(____chimes_does_checkpoint_feof_npm),
-                           "omp_set_num_threads", &(____chimes_does_checkpoint_omp_set_num_threads_npm),
-                             (10021604361511766085UL + 959UL), (10021604361511766085UL + 976UL),
-                             (10021604361511766085UL + 1068UL), (10021604361511766085UL + 1130UL),
-                             (10021604361511766085UL + 830UL), (10021604361511766085UL + 937UL),
-                             (10021604361511766085UL + 1060UL), (10021604361511766085UL + 1042UL),
-                             (10021604361511766085UL + 953UL), (10021604361511766085UL + 1020UL),
-                             (10021604361511766085UL + 1069UL), (10021604361511766085UL + 1137UL),
-                             (10021604361511766085UL + 940UL), (10021604361511766085UL + 949UL),
-                             (10021604361511766085UL + 956UL), (10021604361511766085UL + 1023UL),
+                             (10021604361511766085UL + 1069UL), (10021604361511766085UL + 1132UL),
+                             (10021604361511766085UL + 830UL), (10021604361511766085UL + 938UL),
+                             (10021604361511766085UL + 960UL), (10021604361511766085UL + 977UL),
+                             (10021604361511766085UL + 1061UL), (10021604361511766085UL + 1043UL),
+                             (10021604361511766085UL + 1195UL), (10021604361511766085UL + 1098UL),
+                             (10021604361511766085UL + 1064UL), (10021604361511766085UL + 1195UL),
+                             (10021604361511766085UL + 1206UL), (10021604361511766085UL + 944UL),
+                             (10021604361511766085UL + 1072UL), (10021604361511766085UL + 1098UL),
+                             (10021604361511766085UL + 954UL), (10021604361511766085UL + 1021UL),
+                             (10021604361511766085UL + 957UL), (10021604361511766085UL + 1024UL),
+                             (10021604361511766085UL + 941UL), (10021604361511766085UL + 950UL),
                              (10021604361511766085UL + 1UL), (10021604361511766085UL + 814UL),
                              (10021604361511766085UL + 3UL), (10021604361511766085UL + 816UL),
                              (10021604361511766085UL + 2UL), (10021604361511766085UL + 815UL),
-                             (10021604361511766085UL + 829UL), (10021604361511766085UL + 936UL),
-                             (10021604361511766085UL + 1070UL), (10021604361511766085UL + 1144UL),
-                             (10021604361511766085UL + 1190UL), (10021604361511766085UL + 1096UL),
-                             (10021604361511766085UL + 1201UL), (10021604361511766085UL + 943UL),
-                             (10021604361511766085UL + 827UL), (10021604361511766085UL + 934UL),
-                             (10021604361511766085UL + 1071UL), (10021604361511766085UL + 1096UL),
-                             (10021604361511766085UL + 1063UL), (10021604361511766085UL + 1190UL),
-                             (10021604361511766085UL + 1034UL), (10021604361511766085UL + 1060UL),
-                             (10021604361511766085UL + 1072UL), (10021604361511766085UL + 1096UL),
-                     "_IO_FILE", 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
-                     "_IO_marker", 0,
-                             "single_iteration", "_Z16single_iterationPdS_S_iiddddd", 2, "omp_set_num_threads", "omp_set_num_threads",
+                             (10021604361511766085UL + 829UL), (10021604361511766085UL + 937UL),
+                             (10021604361511766085UL + 1070UL), (10021604361511766085UL + 1139UL),
+                             (10021604361511766085UL + 827UL), (10021604361511766085UL + 935UL),
+                             (10021604361511766085UL + 1071UL), (10021604361511766085UL + 1146UL),
+                             (10021604361511766085UL + 1073UL), (10021604361511766085UL + 1098UL),
+                             (10021604361511766085UL + 1035UL), (10021604361511766085UL + 1061UL),
+                     "_IO_FILE", 1728UL, 29, "int", (int)__builtin_offsetof (struct _IO_FILE, _flags), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_read_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_ptr), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_write_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_buf_end), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_backup_base), "char*", (int)__builtin_offsetof (struct _IO_FILE, _IO_save_end), "%struct._IO_marker*", (int)__builtin_offsetof (struct _IO_FILE, _markers), "%struct._IO_FILE*", (int)__builtin_offsetof (struct _IO_FILE, _chain), "int", (int)__builtin_offsetof (struct _IO_FILE, _fileno), "int", (int)__builtin_offsetof (struct _IO_FILE, _flags2), "long int", (int)__builtin_offsetof (struct _IO_FILE, _old_offset), "unsigned short", (int)__builtin_offsetof (struct _IO_FILE, _cur_column), "signed char", (int)__builtin_offsetof (struct _IO_FILE, _vtable_offset), "[ 1 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _shortbuf), "void*", (int)__builtin_offsetof (struct _IO_FILE, _lock), "long int", (int)__builtin_offsetof (struct _IO_FILE, _offset), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad1), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad2), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad3), "void*", (int)__builtin_offsetof (struct _IO_FILE, __pad4), "long unsigned int", (int)__builtin_offsetof (struct _IO_FILE, __pad5), "int", (int)__builtin_offsetof (struct _IO_FILE, _mode), "[ 20 x char ]", (int)__builtin_offsetof (struct _IO_FILE, _unused2),
+                     "_IO_marker", 0UL, 0,
+                             "single_iteration", "_Z16single_iterationPdS_S_iiddddd", 0,
                              "main", "main", 6, "usage", "usage", "fatal", "read_input", "read_input", "compute_tran_temp",
-                             "read_input", "_Z10read_inputPdiiPc", 4, "fatal", "feof", "fatal", "fatal",
-                             "compute_tran_temp", "_Z17compute_tran_tempPdiS_S_ii", 1, "single_iteration",
+                             "read_input", "_Z10read_inputPdiiPc", 3, "fatal", "fatal", "fatal",
+                             "compute_tran_temp", "_Z17compute_tran_tempPdiS_S_ii", 2, "single_iteration", "checkpoint",
                              "usage", "_Z5usageiPPc", 0,
                              "fatal", "_Z5fatalPc", 0,
-                        "single_iteration|result|0", 1, "omp_set_num_threads",
-                        "single_iteration|temp|0", 1, "omp_set_num_threads",
-                        "single_iteration|power|0", 1, "omp_set_num_threads",
-                        "single_iteration|row|0", 1, "omp_set_num_threads",
-                        "single_iteration|col|0", 1, "omp_set_num_threads",
-                        "single_iteration|Cap|0", 1, "omp_set_num_threads",
-                        "single_iteration|Rx|0", 1, "omp_set_num_threads",
-                        "single_iteration|Ry|0", 1, "omp_set_num_threads",
-                        "single_iteration|Rz|0", 1, "omp_set_num_threads",
-                        "single_iteration|step|0", 1, "omp_set_num_threads",
-                        "single_iteration|delta|0", 1, "omp_set_num_threads",
-                        "single_iteration|r|0", 1, "omp_set_num_threads",
-                        "single_iteration|c|0", 1, "omp_set_num_threads",
-                        "compute_tran_temp|result|0", 1, "single_iteration",
-                        "compute_tran_temp|num_iterations|0", 1, "single_iteration",
-                        "compute_tran_temp|temp|0", 1, "single_iteration",
-                        "compute_tran_temp|power|0", 1, "single_iteration",
-                        "compute_tran_temp|row|0", 1, "single_iteration",
-                        "compute_tran_temp|col|0", 1, "single_iteration",
-                        "compute_tran_temp|Cap|0", 1, "single_iteration",
-                        "compute_tran_temp|Rx|0", 1, "single_iteration",
-                        "compute_tran_temp|Ry|0", 1, "single_iteration",
-                        "compute_tran_temp|Rz|0", 1, "single_iteration",
-                        "compute_tran_temp|step|0", 1, "single_iteration",
-                        "compute_tran_temp|i|0", 1, "single_iteration",
-                        "read_input|vect|0", 1, "feof",
-                        "read_input|grid_rows|0", 1, "feof",
-                        "read_input|grid_cols|0", 1, "feof",
-                        "read_input|i|0", 1, "feof",
-                        "read_input|fp|0", 1, "feof",
                         "read_input|str|0", 1, "read_input",
-                        "main|grid_rows|0", 2, "read_input", "compute_tran_temp",
-                        "main|grid_cols|0", 2, "read_input", "compute_tran_temp",
-                        "main|sim_time|0", 2, "read_input", "compute_tran_temp",
-                        "main|temp|0", 2, "read_input", "compute_tran_temp",
-                        "main|power|0", 2, "read_input", "compute_tran_temp",
-                        "main|result|0", 2, "read_input", "compute_tran_temp",
-                        "main|pfile|0", 2, "read_input", "compute_tran_temp",
-        "single_iteration", 0UL, (int)10, 10021604361511767019UL, 10021604361511767021UL, 10021604361511767022UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
-        "fatal", 0UL, (int)1, 10021604361511767289UL,
-        "fatal", 0UL, (int)1, 10021604361511767290UL,
-        "fatal", 0UL, (int)1, 10021604361511767292UL,
-        "usage", 0UL, (int)2, 0UL, 10021604361511767275UL,
-        "usage", 0UL, (int)2, 0UL, 10021604361511767275UL,
-        "fatal", 0UL, (int)1, 10021604361511767300UL,
-        "read_input", 0UL, (int)4, 10021604361511767215UL, 0UL, 0UL, 10021604361511767181UL,
-        "read_input", 0UL, (int)4, 10021604361511767222UL, 0UL, 0UL, 10021604361511767181UL,
-        "compute_tran_temp", 0UL, (int)6, 10021604361511767229UL, 0UL, 10021604361511767215UL, 10021604361511767222UL, 0UL, 0UL,
-        "feof", 0UL, (int)1, 10021604361511767061UL);
+                        "main|temp|0", 1, "compute_tran_temp",
+                        "main|power|0", 1, "compute_tran_temp",
+        "single_iteration", 0UL, (int)10, 10021604361511767020UL, 10021604361511767022UL, 10021604361511767023UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
+        "fatal", 0UL, (int)1, 10021604361511767294UL,
+        "fatal", 0UL, (int)1, 10021604361511767295UL,
+        "fatal", 0UL, (int)1, 10021604361511767297UL,
+        "usage", 0UL, (int)2, 0UL, 10021604361511767280UL,
+        "usage", 0UL, (int)2, 0UL, 10021604361511767280UL,
+        "fatal", 0UL, (int)1, 10021604361511767305UL,
+        "read_input", 0UL, (int)4, 10021604361511767217UL, 0UL, 0UL, 10021604361511767183UL,
+        "read_input", 0UL, (int)4, 10021604361511767224UL, 0UL, 0UL, 10021604361511767183UL);
     register_global_var("global|t_chip", "double", (void *)(&t_chip), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|chip_height", "double", (void *)(&chip_height), 8.0, 0, 0, 0UL, 0);
     register_global_var("global|chip_width", "double", (void *)(&chip_width), 8.0, 0, 0, 0UL, 0);

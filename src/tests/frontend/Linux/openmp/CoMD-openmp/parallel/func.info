@@ -1,16 +1,16 @@
 getNRanks
 getMyRank
 printRank
-timestampBarrier 42
+timestampBarrier 60
 barrierParallel
-initParallel 58 59
+initParallel 74 75
 destroyParallel
-sendReceiveParallel 88 0 0 87 0 0
-addIntParallel 142 143 0
-addRealParallel 178 179 0
-addDoubleParallel 214 215 0
-maxIntParallel 250 251 0
-minRankDoubleParallel 300 301 0
-maxRankDoubleParallel 350 351 0
-bcastParallel 363 0 0
+sendReceiveParallel 105 0 0 104 0 0
+addIntParallel 162 163 0
+addRealParallel 198 199 0
+addDoubleParallel 234 235 0
+maxIntParallel 270 271 0
+minRankDoubleParallel 320 321 0
+maxRankDoubleParallel 370 371 0
+bcastParallel 383 0 0
 builtWithMpi

@@ -52,7 +52,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -68,7 +68,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -103,7 +104,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -3859,9 +3860,9 @@ unsigned char *copyStringR_resumable(const unsigned char *inpString) {const int 
 # 42 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   outString = (unsigned char*)strcpy( (char*)outString, (char*)inpString );
 # 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   unsigned char *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((outString)); rm_stack(true, 12370633197367790811UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+   unsigned char *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((outString)); rm_stack(true, 12370633197367790811UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-rm_stack(true, 12370633197367790811UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(true, 12370633197367790811UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 # 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 static int tracePathR_npm(const ASTR_T *A, unsigned char **T, const int ei, const int ej, const int iBeg, const int jBeg, const int iEnd, const int jEnd, const unsigned char *mainSeq, const unsigned char *matchSeq, const int i, const int j, int dir, int threadNum, int *rsi, int *rsj, unsigned char *ri, unsigned char *rj);
@@ -3897,7 +3898,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
     *rsj = j + 1;
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -3927,7 +3928,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((-1)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_2; ;
+     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((-1)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -3936,7 +3937,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("\ttracePathR i-underflow: ei-i+1 = %d  iBeg = %d\n", ei-i+1, iBeg);
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((-2)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_3; ;
+     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((-2)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -3944,7 +3945,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("\ttracePathR i-overflow: ei-i+1 = %d  iEnd = %d\n", ei-i+1, iEnd);
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((-3)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_4; ;
+     int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((-3)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -3952,7 +3953,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("\ttracePathR j-underflow: ej-j+1 = %d  jBeg = %d\n", ej-j+1, jBeg);
 # 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = ((-4)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_5; ;
+     int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = ((-4)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -3960,7 +3961,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("\ttracePathR j-overflow: ej-j+1 = %d  jEnd = %d\n", ej-j+1, jEnd);
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = ((-5)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_6; ;
+     int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = ((-5)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -3976,7 +3977,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       *(--rj) = matchSeq[ej - jBeg - j + 2];
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_7; ;
+       int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
 # 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -3994,7 +3995,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       *(--rj) = A->simMatrix->hyphen;
 # 215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_8; ;
+       int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_8; ;
 # 216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4012,7 +4013,7 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       *(--rj) = matchSeq[ej - jBeg - j + 2];
 # 228 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_9; ;
+       int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_9; ;
 # 229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4033,9 +4034,9 @@ int tracePathR_resumable(const ASTR_T *A, unsigned char **T,
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 244 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = ((-1)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_10; ;
+   int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = ((-1)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_10; ;
 # 245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); }
 # 319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 static int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int ej, const unsigned char *mainSeq, const unsigned char *matchSeq, char **weights, const int gapFirst, const int gapExtend, const int minSeparation, const int report, const long long goal, const int iBeg, const int jBeg, const int iFin, const int jFin, const int iEnd, const int jEnd, const int threadNum, int *bestR, int *bestStartsI, int *bestStartsJ, int *bestEndsI, int *bestEndsJ, unsigned char **bestSeqsI, unsigned char **bestSeqsJ, long long *bestScores);
@@ -4065,6 +4066,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
     unsigned char **bestSeqsI, unsigned char **bestSeqsJ,
 # 331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     long long *bestScores) {const int ____chimes_did_disable2 = new_stack((void *)(&doScan), "doScan", &____must_manage_doScan, 28, 0, (size_t)(12370633197367793519UL), (size_t)(12370633197367793520UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793524UL), (size_t)(12370633197367793525UL), (size_t)(12370633197367793526UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793539UL), (size_t)(12370633197367793058UL), (size_t)(12370633197367793067UL), (size_t)(12370633197367793542UL), (size_t)(12370633197367793543UL), (size_t)(12370633197367793544UL), (size_t)(12370633197367793545UL), (size_t)(12370633197367793546UL)) ; int rsi;
+# 331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (____must_checkpoint_doScan_rsi_0) { register_stack_vars(1, "doScan|rsi|0", &____must_checkpoint_doScan_rsi_0, "i32", (void *)(&rsi), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 332 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 333 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4081,7 +4083,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = ((-16)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_11; ;
+     int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = ((-16)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_11; ;
 # 344 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 345 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4092,7 +4094,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 350 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 351 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_12; ; ____chimes_ret_var_12 = ((-17)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_12; ;
+     int ____chimes_ret_var_12; ; ____chimes_ret_var_12 = ((-17)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_12; ;
 # 352 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 353 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4103,7 +4105,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 357 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_13; ; ____chimes_ret_var_13 = ((-18)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_13; ;
+     int ____chimes_ret_var_13; ; ____chimes_ret_var_13 = ((-18)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_13; ;
 # 360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4114,7 +4116,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 367 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_14; ; ____chimes_ret_var_14 = ((-19)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_14; ;
+     int ____chimes_ret_var_14; ; ____chimes_ret_var_14 = ((-19)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_14; ;
 # 368 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 369 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4210,7 +4212,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 431 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     free_wrapper(F, 12370633197367793350UL);
 # 432 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = ((-2)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_15; ;
+     int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = ((-2)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_15; ;
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 434 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4292,7 +4294,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_16; ;
+    int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_16; ;
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 487 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4313,7 +4315,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_17; ;
+    int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_17; ;
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 500 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4340,7 +4342,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 530 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 531 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_18; ;
+    int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_18; ;
 # 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4361,7 +4363,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 543 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 544 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_19; ;
+    int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_19; ;
 # 545 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 546 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4393,7 +4395,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      free_wrapper(F, 12370633197367793350UL);
 # 571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = ((-10)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_20; ;
+      int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = ((-10)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_20; ;
 # 572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 573 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4416,7 +4418,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = ((-11)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_21; ;
+    int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = ((-11)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_21; ;
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 596 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4437,7 +4439,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 605 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 606 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_22; ;
+    int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_22; ;
 # 607 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 608 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4458,7 +4460,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 618 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_23; ;
+    int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_23; ;
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4483,7 +4485,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 637 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 638 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = ((-14)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_24; ;
+    int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = ((-14)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_24; ;
 # 639 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 649 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4511,7 +4513,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  free_wrapper(F, 12370633197367793350UL);
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = ((0)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_25; ;
+  int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = ((0)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_25; ;
 # 673 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 674 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4549,7 +4551,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 698 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 699 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_26; ;
+    int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_26; ;
 # 700 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 701 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4570,7 +4572,7 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 711 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 712 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_27; ;
+    int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_27; ;
 # 713 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 714 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -4623,18 +4625,23 @@ int doScan_resumable(const ASTR_T *A, unsigned char **T, const int sizeT, int ei
 # 744 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   free_wrapper(F, 12370633197367793350UL);
 # 745 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   int ____chimes_ret_var_28; ; ____chimes_ret_var_28 = ((-15)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_28; ;
+   int ____chimes_ret_var_28; ; ____chimes_ret_var_28 = ((-15)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_28; ;
 # 746 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 # 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDoublings);static int (*____chimes_extern_func_gridInfo)(int *, int *, int *, int *) = gridInfo;
 BSTR_T *scanBackward_quick(ASTR_T *A, int maxReports, int minSeparation, int maxDoublings); BSTR_T *scanBackward(ASTR_T *A, int maxReports, int minSeparation, int maxDoublings);
 BSTR_T *scanBackward_resumable(ASTR_T *A, int maxReports, int minSeparation, int maxDoublings) {const int ____chimes_did_disable3 = new_stack((void *)(&scanBackward), "scanBackward", &____must_manage_scanBackward, 4, 4, (size_t)(12370633197367791588UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "scanBackward|A|0", &____must_checkpoint_scanBackward_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "scanBackward|maxReports|0", &____must_checkpoint_scanBackward_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "scanBackward|minSeparation|0", &____must_checkpoint_scanBackward_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0, "scanBackward|maxDoublings|0", &____must_checkpoint_scanBackward_maxDoublings_0, "i32", (void *)(&maxDoublings), (size_t)4, 0, 0, 0) ; BSTR_T *B;
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int npRow;
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int matchLimit;
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int bestR;
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int i;
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_bestR_0 || ____must_checkpoint_scanBackward_i_0) { register_stack_vars(5, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0, "scanBackward|i|0", &____must_checkpoint_scanBackward_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(28): { goto call_lbl_28; } default: { chimes_error(); } } } ; ;
 # 816 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 817 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5549,9 +5556,9 @@ int i;
   }
 # 1479 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1480 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   BSTR_T *____chimes_ret_var_29; ; ____chimes_ret_var_29 = ((B)); rm_stack(true, 12370633197367794538UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_2, ____chimes_did_disable3); return ____chimes_ret_var_29; ;
+   BSTR_T *____chimes_ret_var_29; ; ____chimes_ret_var_29 = ((B)); rm_stack(true, 12370633197367794538UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_2, ____chimes_did_disable3, false); return ____chimes_ret_var_29; ;
 # 1481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-rm_stack(true, 12370633197367794538UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_2, ____chimes_did_disable3); }
+rm_stack(true, 12370633197367794538UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_2, ____chimes_did_disable3, false); }
 # 1482 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1483 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5742,9 +5749,10 @@ BSTR_T *freeB_resumable(BSTR_T *B) {const int ____chimes_did_disable4 = new_stac
 # 1577 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 1578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   BSTR_T *____chimes_ret_var_30; ; ____chimes_ret_var_30 = ((__null)); rm_stack(true, 12370633197367794538UL, "freeB", &____must_manage_freeB, ____alias_loc_id_4, ____chimes_did_disable4); return ____chimes_ret_var_30; ;
+   BSTR_T *____chimes_ret_var_30; ; ____chimes_ret_var_30 = ((__null)); rm_stack(true, 12370633197367794538UL, "freeB", &____must_manage_freeB, ____alias_loc_id_4, ____chimes_did_disable4, false); return ____chimes_ret_var_30; ;
 # 1579 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-rm_stack(true, 12370633197367794538UL, "freeB", &____must_manage_freeB, ____alias_loc_id_4, ____chimes_did_disable4); }
+rm_stack(true, 12370633197367794538UL, "freeB", &____must_manage_freeB, ____alias_loc_id_4, ____chimes_did_disable4, false); }
+# 20 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 unsigned char *copyStringR_quick(const unsigned char *inpString) {const int ____chimes_did_disable0 = new_stack((void *)(&copyStringR), "copyStringR", &____must_manage_copyStringR, 1, 0, (size_t)(12370633197367790829UL)) ; ; ;
 # 21 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5781,12 +5789,12 @@ unsigned char *copyStringR_quick(const unsigned char *inpString) {const int ____
 # 42 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   outString = (unsigned char*)strcpy( (char*)outString, (char*)inpString );
 # 43 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   unsigned char *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((outString)); rm_stack(true, 12370633197367790811UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0); return ____chimes_ret_var_0; ;
+   unsigned char *____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((outString)); rm_stack(true, 12370633197367790811UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0, false); return ____chimes_ret_var_0; ;
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-rm_stack(true, 12370633197367790811UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0); }
+rm_stack(true, 12370633197367790811UL, "copyStringR", &____must_manage_copyStringR, ____alias_loc_id_1, ____chimes_did_disable0, false); }
 
 unsigned char *copyStringR(const unsigned char *inpString) { return (____chimes_replaying ? copyStringR_resumable(inpString) : copyStringR_quick(inpString)); }
-
+# 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 static
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int tracePathR_quick(const ASTR_T *A, unsigned char **T,
@@ -5818,7 +5826,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
     *rsj = j + 1;
 # 117 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 118 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_1; ;
+     int ____chimes_ret_var_1; ; ____chimes_ret_var_1 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_1; ;
 # 119 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 120 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5848,7 +5856,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 138 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 139 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 140 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((-1)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_2; ;
+     int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((-1)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_2; ;
 # 141 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 167 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5857,7 +5865,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 168 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("\ttracePathR i-underflow: ei-i+1 = %d  iBeg = %d\n", ei-i+1, iBeg);
 # 169 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((-2)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_3; ;
+     int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = ((-2)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_3; ;
 # 170 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 171 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5865,7 +5873,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 172 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("\ttracePathR i-overflow: ei-i+1 = %d  iEnd = %d\n", ei-i+1, iEnd);
 # 173 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((-3)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_4; ;
+     int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = ((-3)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_4; ;
 # 174 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 175 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5873,7 +5881,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 176 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("\ttracePathR j-underflow: ej-j+1 = %d  jBeg = %d\n", ej-j+1, jBeg);
 # 177 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = ((-4)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_5; ;
+     int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = ((-4)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_5; ;
 # 178 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 179 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5881,7 +5889,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 180 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     printf("\ttracePathR j-overflow: ej-j+1 = %d  jEnd = %d\n", ej-j+1, jEnd);
 # 181 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = ((-5)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_6; ;
+     int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = ((-5)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_6; ;
 # 182 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 193 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5897,7 +5905,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 201 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       *(--rj) = matchSeq[ej - jBeg - j + 2];
 # 202 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_7; ;
+       int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_7; ;
 # 203 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 204 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5915,7 +5923,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 214 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       *(--rj) = A->simMatrix->hyphen;
 # 215 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_8; ;
+       int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_8; ;
 # 216 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 217 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5933,7 +5941,7 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 227 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       *(--rj) = matchSeq[ej - jBeg - j + 2];
 # 228 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-       int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_9; ;
+       int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = ((0)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_9; ;
 # 229 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     }
 # 230 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5954,9 +5962,9 @@ int tracePathR_quick(const ASTR_T *A, unsigned char **T,
 # 242 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 243 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 244 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = ((-1)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); return ____chimes_ret_var_10; ;
+   int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = ((-1)); rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); return ____chimes_ret_var_10; ;
 # 245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "tracePathR", &____must_manage_tracePathR, ____alias_loc_id_5, ____chimes_did_disable1, false); }
 
 static
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -5975,7 +5983,7 @@ int tracePathR(const ASTR_T *A, unsigned char **T,
         int *rsi, int *rsj,
 # 93 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
         unsigned char *ri, unsigned char *rj) { return (____chimes_replaying ? tracePathR_resumable(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i, j, dir, threadNum, rsi, rsj, ri, rj) : tracePathR_quick(A, T, ei, ej, iBeg, jBeg, iEnd, jEnd, mainSeq, matchSeq, i, j, dir, threadNum, rsi, rsj, ri, rj)); }
-
+# 319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 static
 # 320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int ej,
@@ -6001,6 +6009,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
     unsigned char **bestSeqsI, unsigned char **bestSeqsJ,
 # 331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     long long *bestScores) {const int ____chimes_did_disable2 = new_stack((void *)(&doScan), "doScan", &____must_manage_doScan, 28, 0, (size_t)(12370633197367793519UL), (size_t)(12370633197367793520UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793524UL), (size_t)(12370633197367793525UL), (size_t)(12370633197367793526UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(12370633197367793539UL), (size_t)(12370633197367793058UL), (size_t)(12370633197367793067UL), (size_t)(12370633197367793542UL), (size_t)(12370633197367793543UL), (size_t)(12370633197367793544UL), (size_t)(12370633197367793545UL), (size_t)(12370633197367793546UL)) ; int rsi;
+# 331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (____must_checkpoint_doScan_rsi_0) { register_stack_vars(1, "doScan|rsi|0", &____must_checkpoint_doScan_rsi_0, "i32", (void *)(&rsi), (size_t)4, 0, 0, 0); } ; ;
 # 332 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 333 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6017,7 +6026,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 341 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 342 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 343 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = ((-16)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_11; ;
+     int ____chimes_ret_var_11; ; ____chimes_ret_var_11 = ((-16)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_11; ;
 # 344 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 345 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6028,7 +6037,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 349 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 350 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 351 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_12; ; ____chimes_ret_var_12 = ((-17)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_12; ;
+     int ____chimes_ret_var_12; ; ____chimes_ret_var_12 = ((-17)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_12; ;
 # 352 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 353 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6039,7 +6048,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 357 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 358 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 359 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_13; ; ____chimes_ret_var_13 = ((-18)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_13; ;
+     int ____chimes_ret_var_13; ; ____chimes_ret_var_13 = ((-18)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_13; ;
 # 360 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 361 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6050,7 +6059,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 365 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 366 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 367 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_14; ; ____chimes_ret_var_14 = ((-19)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_14; ;
+     int ____chimes_ret_var_14; ; ____chimes_ret_var_14 = ((-19)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_14; ;
 # 368 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 369 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6146,7 +6155,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 431 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     free_wrapper(F, 12370633197367793350UL);
 # 432 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-     int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = ((-2)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_15; ;
+     int ____chimes_ret_var_15; ; ____chimes_ret_var_15 = ((-2)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_15; ;
 # 433 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 434 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6228,7 +6237,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 484 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_16; ;
+    int ____chimes_ret_var_16; ; ____chimes_ret_var_16 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_16; ;
 # 486 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 487 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6249,7 +6258,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 497 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 498 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_17; ;
+    int ____chimes_ret_var_17; ; ____chimes_ret_var_17 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_17; ;
 # 499 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 500 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6276,7 +6285,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 530 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 531 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_18; ;
+    int ____chimes_ret_var_18; ; ____chimes_ret_var_18 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_18; ;
 # 532 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 533 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6297,7 +6306,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 543 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 544 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_19; ;
+    int ____chimes_ret_var_19; ; ____chimes_ret_var_19 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_19; ;
 # 545 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 546 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6329,7 +6338,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 570 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
      free_wrapper(F, 12370633197367793350UL);
 # 571 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-      int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = ((-10)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_20; ;
+      int ____chimes_ret_var_20; ; ____chimes_ret_var_20 = ((-10)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_20; ;
 # 572 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    }
 # 573 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6352,7 +6361,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 584 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 585 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = ((-11)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_21; ;
+    int ____chimes_ret_var_21; ; ____chimes_ret_var_21 = ((-11)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_21; ;
 # 586 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 596 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6373,7 +6382,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 605 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 606 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_22; ;
+    int ____chimes_ret_var_22; ; ____chimes_ret_var_22 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_22; ;
 # 607 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 608 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6394,7 +6403,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 618 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 619 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_23; ;
+    int ____chimes_ret_var_23; ; ____chimes_ret_var_23 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_23; ;
 # 620 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 621 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6419,7 +6428,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 637 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 638 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = ((-14)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_24; ;
+    int ____chimes_ret_var_24; ; ____chimes_ret_var_24 = ((-14)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_24; ;
 # 639 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 649 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6447,7 +6456,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 671 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  free_wrapper(F, 12370633197367793350UL);
 # 672 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-  int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = ((0)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_25; ;
+  int ____chimes_ret_var_25; ; ____chimes_ret_var_25 = ((0)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_25; ;
 # 673 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
       }
 # 674 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6485,7 +6494,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 698 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 699 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_26; ;
+    int ____chimes_ret_var_26; ; ____chimes_ret_var_26 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_26; ;
 # 700 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 701 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6506,7 +6515,7 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 711 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
    free_wrapper(F, 12370633197367793350UL);
 # 712 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-    int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_27; ;
+    int ____chimes_ret_var_27; ; ____chimes_ret_var_27 = ((-1)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_27; ;
 # 713 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  }
 # 714 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6559,9 +6568,9 @@ int doScan_quick(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, in
 # 744 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   free_wrapper(F, 12370633197367793350UL);
 # 745 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   int ____chimes_ret_var_28; ; ____chimes_ret_var_28 = ((-15)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); return ____chimes_ret_var_28; ;
+   int ____chimes_ret_var_28; ; ____chimes_ret_var_28 = ((-15)); rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); return ____chimes_ret_var_28; ;
 # 746 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "doScan", &____must_manage_doScan, ____alias_loc_id_3, ____chimes_did_disable2, false); }
 
 static
 # 320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -6588,12 +6597,17 @@ int doScan(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int ej,
     unsigned char **bestSeqsI, unsigned char **bestSeqsJ,
 # 331 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
     long long *bestScores) { return (____chimes_replaying ? doScan_resumable(A, T, sizeT, ei, ej, mainSeq, matchSeq, weights, gapFirst, gapExtend, minSeparation, report, goal, iBeg, jBeg, iFin, jFin, iEnd, jEnd, threadNum, bestR, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, bestScores) : doScan_quick(A, T, sizeT, ei, ej, mainSeq, matchSeq, weights, gapFirst, gapExtend, minSeparation, report, goal, iBeg, jBeg, iFin, jFin, iEnd, jEnd, threadNum, bestR, bestStartsI, bestStartsJ, bestEndsI, bestEndsJ, bestSeqsI, bestSeqsJ, bestScores)); }
-
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 BSTR_T *scanBackward_quick(ASTR_T *A, int maxReports, int minSeparation, int maxDoublings) {const int ____chimes_did_disable3 = new_stack((void *)(&scanBackward), "scanBackward", &____must_manage_scanBackward, 4, 4, (size_t)(12370633197367791588UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), "scanBackward|A|0", &____must_checkpoint_scanBackward_A_0, "%struct.astr*", (void *)(&A), (size_t)8, 1, 0, 0, "scanBackward|maxReports|0", &____must_checkpoint_scanBackward_maxReports_0, "i32", (void *)(&maxReports), (size_t)4, 0, 0, 0, "scanBackward|minSeparation|0", &____must_checkpoint_scanBackward_minSeparation_0, "i32", (void *)(&minSeparation), (size_t)4, 0, 0, 0, "scanBackward|maxDoublings|0", &____must_checkpoint_scanBackward_maxDoublings_0, "i32", (void *)(&maxDoublings), (size_t)4, 0, 0, 0) ; BSTR_T *B;
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int npRow;
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int matchLimit;
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int bestR;
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int i;
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
  if (____must_checkpoint_scanBackward_B_0 || ____must_checkpoint_scanBackward_npRow_0 || ____must_checkpoint_scanBackward_matchLimit_0 || ____must_checkpoint_scanBackward_bestR_0 || ____must_checkpoint_scanBackward_i_0) { register_stack_vars(5, "scanBackward|B|0", &____must_checkpoint_scanBackward_B_0, "%struct.bstr*", (void *)(&B), (size_t)8, 1, 0, 0, "scanBackward|npRow|0", &____must_checkpoint_scanBackward_npRow_0, "i32", (void *)(&npRow), (size_t)4, 0, 0, 0, "scanBackward|matchLimit|0", &____must_checkpoint_scanBackward_matchLimit_0, "i32", (void *)(&matchLimit), (size_t)4, 0, 0, 0, "scanBackward|bestR|0", &____must_checkpoint_scanBackward_bestR_0, "i32", (void *)(&bestR), (size_t)4, 0, 0, 0, "scanBackward|i|0", &____must_checkpoint_scanBackward_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ; ;
 # 816 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 817 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7508,12 +7522,12 @@ int i;
   }
 # 1479 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1480 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   BSTR_T *____chimes_ret_var_29; ; ____chimes_ret_var_29 = ((B)); rm_stack(true, 12370633197367794538UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_2, ____chimes_did_disable3); return ____chimes_ret_var_29; ;
+   BSTR_T *____chimes_ret_var_29; ; ____chimes_ret_var_29 = ((B)); rm_stack(true, 12370633197367794538UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_2, ____chimes_did_disable3, false); return ____chimes_ret_var_29; ;
 # 1481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-rm_stack(true, 12370633197367794538UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_2, ____chimes_did_disable3); }
+rm_stack(true, 12370633197367794538UL, "scanBackward", &____must_manage_scanBackward, ____alias_loc_id_2, ____chimes_did_disable3, false); }
 
 BSTR_T *scanBackward(ASTR_T *A, int maxReports, int minSeparation, int maxDoublings) { return (____chimes_replaying ? scanBackward_resumable(A, maxReports, minSeparation, maxDoublings) : scanBackward_quick(A, maxReports, minSeparation, maxDoublings)); }
-
+# 1485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((void *)(&freeB), "freeB", &____must_manage_freeB, 1, 0, (size_t)(12370633197367794060UL)) ; ; ;
 # 1486 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1487 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7698,14 +7712,12 @@ BSTR_T *freeB_quick(BSTR_T *B) {const int ____chimes_did_disable4 = new_stack((v
 # 1577 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
   }
 # 1578 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-   BSTR_T *____chimes_ret_var_30; ; ____chimes_ret_var_30 = ((__null)); rm_stack(true, 12370633197367794538UL, "freeB", &____must_manage_freeB, ____alias_loc_id_4, ____chimes_did_disable4); return ____chimes_ret_var_30; ;
+   BSTR_T *____chimes_ret_var_30; ; ____chimes_ret_var_30 = ((__null)); rm_stack(true, 12370633197367794538UL, "freeB", &____must_manage_freeB, ____alias_loc_id_4, ____chimes_did_disable4, false); return ____chimes_ret_var_30; ;
 # 1579 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
-rm_stack(true, 12370633197367794538UL, "freeB", &____must_manage_freeB, ____alias_loc_id_4, ____chimes_did_disable4); }
+rm_stack(true, 12370633197367794538UL, "freeB", &____must_manage_freeB, ____alias_loc_id_4, ____chimes_did_disable4, false); }
 
 BSTR_T *freeB(BSTR_T *B) { return (____chimes_replaying ? freeB_resumable(B) : freeB_quick(B)); }
-
-
-
+# 20 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 unsigned char *copyStringR_npm(const unsigned char *inpString) {
 # 21 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 22 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -7745,7 +7757,7 @@ unsigned char *copyStringR_npm(const unsigned char *inpString) {
    unsigned char * ____chimes_ret_var_0; ____chimes_ret_var_0 = ((outString)); return ____chimes_ret_var_0; ;
 # 44 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 }
-
+# 85 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 static
 # 86 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int tracePathR_npm(const ASTR_T *A, unsigned char **T,
@@ -7916,7 +7928,7 @@ int tracePathR_npm(const ASTR_T *A, unsigned char **T,
    int ____chimes_ret_var_10; ____chimes_ret_var_10 = ((-1)); return ____chimes_ret_var_10; ;
 # 245 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 }
-
+# 319 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 static
 # 320 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int ej,
@@ -8502,7 +8514,7 @@ int doScan_npm(const ASTR_T *A, unsigned char **T, const int sizeT, int ei, int 
    int ____chimes_ret_var_28; ____chimes_ret_var_28 = ((-15)); return ____chimes_ret_var_28; ;
 # 746 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 }
-
+# 815 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDoublings) {
 # 816 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 817 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9420,7 +9432,7 @@ BSTR_T *scanBackward_npm(ASTR_T *A, int maxReports, int minSeparation, int maxDo
    BSTR_T * ____chimes_ret_var_29; ____chimes_ret_var_29 = ((B)); return ____chimes_ret_var_29; ;
 # 1481 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 }
-
+# 1485 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 BSTR_T *freeB_npm(BSTR_T *B) {
 # 1486 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
 # 1487 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/scanBackward.c"
@@ -9692,10 +9704,10 @@ static int module_init() {
                              (12370633197367790788UL + 1571UL), (12370633197367790788UL + 2757UL),
                              (12370633197367790788UL + 800UL), (12370633197367790788UL + 802UL),
                              (12370633197367790788UL + 1570UL), (12370633197367790788UL + 2756UL),
-                     "astr", 7, "%struct.seqdat*", (int)__builtin_offsetof (struct astr, seqData), "%struct.simmat*", (int)__builtin_offsetof (struct astr, simMatrix), "long long int**", (int)__builtin_offsetof (struct astr, goodScores), "int", (int)__builtin_offsetof (struct astr, numThreads), "int*", (int)__builtin_offsetof (struct astr, numReports), "int**", (int)__builtin_offsetof (struct astr, goodEndsI), "int**", (int)__builtin_offsetof (struct astr, goodEndsJ),
-                     "bstr", 9, "long long int**", (int)__builtin_offsetof (struct bstr, bestScores), "int", (int)__builtin_offsetof (struct bstr, numThreads), "int*", (int)__builtin_offsetof (struct bstr, numReports), "int**", (int)__builtin_offsetof (struct bstr, bestStartsI), "int**", (int)__builtin_offsetof (struct bstr, bestStartsJ), "int**", (int)__builtin_offsetof (struct bstr, bestEndsI), "int**", (int)__builtin_offsetof (struct bstr, bestEndsJ), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsI), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsJ),
-                     "seqdat", 5, "unsigned char*", (int)__builtin_offsetof (struct seqdat, main), "unsigned char*", (int)__builtin_offsetof (struct seqdat, match), "int", (int)__builtin_offsetof (struct seqdat, mainLen), "int", (int)__builtin_offsetof (struct seqdat, matchLen), "int", (int)__builtin_offsetof (struct seqdat, maxValidation),
-                     "simmat", 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
+                     "astr", 448UL, 7, "%struct.seqdat*", (int)__builtin_offsetof (struct astr, seqData), "%struct.simmat*", (int)__builtin_offsetof (struct astr, simMatrix), "long long int**", (int)__builtin_offsetof (struct astr, goodScores), "int", (int)__builtin_offsetof (struct astr, numThreads), "int*", (int)__builtin_offsetof (struct astr, numReports), "int**", (int)__builtin_offsetof (struct astr, goodEndsI), "int**", (int)__builtin_offsetof (struct astr, goodEndsJ),
+                     "bstr", 576UL, 9, "long long int**", (int)__builtin_offsetof (struct bstr, bestScores), "int", (int)__builtin_offsetof (struct bstr, numThreads), "int*", (int)__builtin_offsetof (struct bstr, numReports), "int**", (int)__builtin_offsetof (struct bstr, bestStartsI), "int**", (int)__builtin_offsetof (struct bstr, bestStartsJ), "int**", (int)__builtin_offsetof (struct bstr, bestEndsI), "int**", (int)__builtin_offsetof (struct bstr, bestEndsJ), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsI), "unsigned char***", (int)__builtin_offsetof (struct bstr, bestSeqsJ),
+                     "seqdat", 256UL, 5, "unsigned char*", (int)__builtin_offsetof (struct seqdat, main), "unsigned char*", (int)__builtin_offsetof (struct seqdat, match), "int", (int)__builtin_offsetof (struct seqdat, mainLen), "int", (int)__builtin_offsetof (struct seqdat, matchLen), "int", (int)__builtin_offsetof (struct seqdat, maxValidation),
+                     "simmat", 40960UL, 14, "[ 4225 x char ]", (int)__builtin_offsetof (struct simmat, similarity), "[ 66 x char ]", (int)__builtin_offsetof (struct simmat, aminoAcid), "char*", (int)__builtin_offsetof (struct simmat, bases), "[ 66 x char* ]", (int)__builtin_offsetof (struct simmat, codon), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode), "[ 129 x unsigned char ]", (int)__builtin_offsetof (struct simmat, encode_first), "char", (int)__builtin_offsetof (struct simmat, hyphen), "char", (int)__builtin_offsetof (struct simmat, star), "int", (int)__builtin_offsetof (struct simmat, exact), "int", (int)__builtin_offsetof (struct simmat, similar), "int", (int)__builtin_offsetof (struct simmat, dissimilar), "int", (int)__builtin_offsetof (struct simmat, gapStart), "int", (int)__builtin_offsetof (struct simmat, gapExtend), "int", (int)__builtin_offsetof (struct simmat, matchLimit),
                              "copyStringR", "_Z11copyStringRPKh", 0,
                              "doScan", "_ZL6doScanPK4astrPPhiiiPKhS5_PPciiiixiiiiiiiPiS8_S8_S8_S8_S3_S3_Px", 1, "tracePathR",
                              "scanBackward", "_Z12scanBackwardP4astriii", 4, "gridInfo", "doScan", "copyStringR", "copyStringR",

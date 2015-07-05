@@ -1,32 +1,32 @@
 list_init _Z9list_initP6list_tPFiPKvS2_EPFvPvE 0 DOES_NOT
-list_delete _Z11list_deleteP6list_t 0 MAY list_item_delete 170 5
+list_delete _Z11list_deleteP6list_t 0 MAY list_item_delete 174 5
 list_item_delete _Z16list_item_deleteP9list_itemPFvPvE 1 MAY
-list_reset _Z10list_resetP6list_t 0 MAY list_delete 180 3
+list_reset _Z10list_resetP6list_t 0 MAY list_delete 184 3
 list_insert_item_head _Z21list_insert_item_headP6list_tP9list_item 0 DOES_NOT
 list_insert_item_tail _Z21list_insert_item_tailP6list_tP9list_item 0 DOES_NOT
 list_insert_item_before _Z23list_insert_item_beforeP6list_tP9list_itemS2_ 0 DOES_NOT
 list_insert_item_after _Z22list_insert_item_afterP6list_tP9list_itemS2_ 0 DOES_NOT
-list_insert_item_sorted _Z23list_insert_item_sortedP6list_tP9list_item 1 MAY list_item_get_datum 264 39 list_item_get_datum 264 97
+list_insert_item_sorted _Z23list_insert_item_sortedP6list_tP9list_item 1 MAY list_item_get_datum 268 39 list_item_get_datum 268 97
 list_item_get_datum _Z19list_item_get_datumP9list_item 0 DOES_NOT
-list_insert_head _Z16list_insert_headP6list_tPv 0 DOES_NOT list_item_init 292 3
+list_insert_head _Z16list_insert_headP6list_tPv 0 DOES_NOT list_item_init 296 3
 list_item_init _Z14list_item_initP9list_itemPv 0 DOES_NOT
-list_insert_tail _Z16list_insert_tailP6list_tPv 0 DOES_NOT list_item_init 313 3
-list_insert_before _Z18list_insert_beforeP6list_tP9list_itemPv 0 DOES_NOT list_item_init 334 3
-list_insert_after _Z17list_insert_afterP6list_tP9list_itemPv 0 DOES_NOT list_item_init 360 3
-list_insert_sorted _Z18list_insert_sortedP6list_tPv 1 MAY list_item_init 386 3 list_item_get_datum 390 39 list_item_get_datum 390 97
-list_remove_item _Z16list_remove_itemP6list_tP9list_item 0 MAY list_item_delete 430 3
-list_remove_head _Z16list_remove_headP6list_t 0 MAY list_remove_item 436 3
-list_remove_tail _Z16list_remove_tailP6list_t 0 MAY list_remove_item 442 3
-list_find_item _Z14list_find_itemP6list_tPv 1 MAY list_item_get_datum 451 37
+list_insert_tail _Z16list_insert_tailP6list_tPv 0 DOES_NOT list_item_init 317 3
+list_insert_before _Z18list_insert_beforeP6list_tP9list_itemPv 0 DOES_NOT list_item_init 338 3
+list_insert_after _Z17list_insert_afterP6list_tP9list_itemPv 0 DOES_NOT list_item_init 364 3
+list_insert_sorted _Z18list_insert_sortedP6list_tPv 1 MAY list_item_init 390 3 list_item_get_datum 394 39 list_item_get_datum 394 97
+list_remove_item _Z16list_remove_itemP6list_tP9list_item 0 MAY list_item_delete 434 3
+list_remove_head _Z16list_remove_headP6list_t 0 MAY list_remove_item 440 3
+list_remove_tail _Z16list_remove_tailP6list_t 0 MAY list_remove_item 446 3
+list_find_item _Z14list_find_itemP6list_tPv 1 MAY list_item_get_datum 455 37
 list_get_head_item _Z18list_get_head_itemP6list_t 0 DOES_NOT
 list_get_tail_item _Z18list_get_tail_itemP6list_t 0 DOES_NOT
-list_find _Z9list_findP6list_tPv 1 MAY list_item_get_datum 476 37
+list_find _Z9list_findP6list_tPv 1 MAY list_item_get_datum 480 37
 list_get_head _Z13list_get_headP6list_t 0 DOES_NOT
 list_get_tail _Z13list_get_tailP6list_t 0 DOES_NOT
 list_get_length _Z15list_get_lengthP6list_t 0 DOES_NOT
 list_is_empty _Z13list_is_emptyP6list_t 0 DOES_NOT
 list_not_empty _Z14list_not_emptyP6list_t 0 DOES_NOT
-list_visit_items _Z16list_visit_itemsP6list_tPFvPvE 1 MAY list_item_get_datum 519 77
+list_visit_items _Z16list_visit_itemsP6list_tPFvPvE 1 MAY list_item_get_datum 523 77
 list_iterator_init _Z18list_iterator_initP6list_tPP9list_item 0 DOES_NOT
 list_iterator_delete _Z20list_iterator_deletePP9list_item 0 DOES_NOT
 list_iterator_next _Z18list_iterator_nextPP9list_item 0 DOES_NOT
@@ -40,38 +40,38 @@ list_reverse_iterator_prev _Z26list_reverse_iterator_prevPP9list_item 0 DOES_NOT
 list_reverse_iterator_get_datum _Z31list_reverse_iterator_get_datumPP9list_item 0 DOES_NOT
 list_reverse_iterator_is_valid _Z30list_reverse_iterator_is_validPP9list_item 0 DOES_NOT
 kmalloc _Z7kmalloci 0 DOES_NOT
-transform_to_cuda _Z17transform_to_cudaP4nodeb 0 DOES_NOT kmalloc 663 24 kmalloc 665 20 enqueue 669 2 dequeue 679 7 enqueue 695 5 enqueue 703 4
+transform_to_cuda _Z17transform_to_cudaP4nodeb 0 DOES_NOT kmalloc 667 24 kmalloc 669 20 enqueue 673 2 dequeue 683 7 enqueue 699 5 enqueue 707 4
 enqueue _Z7enqueueP4node 0 DOES_NOT
 dequeue _Z7dequeuev 0 DOES_NOT
-findRange _Z9findRangeP4nodeii 0 DOES_NOT find_leaf 760 13 list_init 765 2
+findRange _Z9findRangeP4nodeii 0 DOES_NOT find_leaf 764 13 list_init 769 2
 find_leaf _Z9find_leafP4nodeib 0 DOES_NOT
 usage_1 _Z7usage_1v 0 DOES_NOT
 usage_2 _Z7usage_2v 0 DOES_NOT
 print_leaves _Z12print_leavesP4node 0 DOES_NOT
 height _Z6heightP4node 0 DOES_NOT
 path_to_root _Z12path_to_rootP4nodeS0_ 0 DOES_NOT
-print_tree _Z10print_treeP4node 0 DOES_NOT enqueue 920 2 dequeue 922 7 path_to_root 924 15 enqueue 937 58
-find _Z4findP4nodeib 0 DOES_NOT find_leaf 997 13
+print_tree _Z10print_treeP4node 0 DOES_NOT enqueue 924 2 dequeue 926 7 path_to_root 928 15 enqueue 941 58
+find _Z4findP4nodeib 0 DOES_NOT find_leaf 1001 13
 cut _Z3cuti 0 DOES_NOT
 make_record _Z11make_recordi 0 DOES_NOT
 make_node _Z9make_nodev 0 DOES_NOT
-make_leaf _Z9make_leafv 0 DOES_NOT make_node 1070 15
+make_leaf _Z9make_leafv 0 DOES_NOT make_node 1074 15
 get_left_index _Z14get_left_indexP4nodeS0_ 0 DOES_NOT
 insert_into_leaf _Z16insert_into_leafP4nodeiP6record 0 DOES_NOT
-insert_into_leaf_after_splitting _Z32insert_into_leaf_after_splittingP4nodeS0_iP6record 0 DOES_NOT make_leaf 1121 13 cut 1150 10 insert_into_parent 1178 9
-insert_into_parent _Z18insert_into_parentP4nodeS0_iS0_ 0 DOES_NOT insert_into_new_root 1300 32 get_left_index 1311 15 insert_into_node 1317 44 insert_into_node_after_splitting 1324 9
+insert_into_leaf_after_splitting _Z32insert_into_leaf_after_splittingP4nodeS0_iP6record 0 DOES_NOT make_leaf 1125 13 cut 1154 10 insert_into_parent 1182 58
+insert_into_parent _Z18insert_into_parentP4nodeS0_iS0_ 0 DOES_NOT insert_into_new_root 1304 81 get_left_index 1315 15 insert_into_node 1321 93 insert_into_node_after_splitting 1328 58
 insert_into_node _Z16insert_into_nodeP4nodeS0_iiS0_ 0 DOES_NOT
-insert_into_node_after_splitting _Z32insert_into_node_after_splittingP4nodeS0_iiS0_ 0 DOES_NOT cut 1253 10 make_node 1254 13 insert_into_parent 1282 9
-insert_into_new_root _Z20insert_into_new_rootP4nodeiS0_ 0 DOES_NOT make_node 1334 16
-start_new_tree _Z14start_new_treeiP6record 0 DOES_NOT make_leaf 1351 16
-insert _Z6insertP4nodeii 0 DOES_NOT find 1371 6 make_record 1375 12 start_new_tree 1378 30 find_leaf 1382 9 insert_into_leaf 1386 10 insert_into_leaf_after_splitting 1391 9
+insert_into_node_after_splitting _Z32insert_into_node_after_splittingP4nodeS0_iiS0_ 0 DOES_NOT cut 1257 10 make_node 1258 13 insert_into_parent 1286 58
+insert_into_new_root _Z20insert_into_new_rootP4nodeiS0_ 0 DOES_NOT make_node 1338 16
+start_new_tree _Z14start_new_treeiP6record 0 DOES_NOT make_leaf 1355 16
+insert _Z6insertP4nodeii 0 DOES_NOT find 1375 6 make_record 1379 12 start_new_tree 1382 79 find_leaf 1386 9 insert_into_leaf 1390 10 insert_into_leaf_after_splitting 1395 58
 get_neighbor_index _Z18get_neighbor_indexP4node 0 DOES_NOT
 remove_entry_from_node _Z22remove_entry_from_nodeP4nodeiS0_ 0 DOES_NOT
 adjust_root _Z11adjust_rootP4node 0 DOES_NOT
-coalesce_nodes _Z14coalesce_nodesP4nodeS0_S0_ii 0 DOES_NOT cut 1572 12 delete_entry 1627 10
-delete_entry _Z12delete_entryP4nodeS0_iPv 0 DOES_NOT remove_entry_from_node 1737 6 adjust_root 1742 25 cut 1754 26 cut 1754 43 get_neighbor_index 1775 19 coalesce_nodes 1785 59 redistribute_nodes 1785 135
+coalesce_nodes _Z14coalesce_nodesP4nodeS0_S0_ii 0 DOES_NOT cut 1576 12 delete_entry 1631 10
+delete_entry _Z12delete_entryP4nodeS0_iPv 0 DOES_NOT remove_entry_from_node 1741 6 adjust_root 1746 74 cut 1758 26 cut 1758 43 get_neighbor_index 1779 19 coalesce_nodes 1789 108 redistribute_nodes 1789 0
 redistribute_nodes _Z18redistribute_nodesP4nodeS0_S0_iii 0 DOES_NOT
-deleteVal _Z9deleteValP4nodei 0 DOES_NOT find 1803 15 find_leaf 1804 13 delete_entry 1807 10
-destroy_tree_nodes _Z18destroy_tree_nodesP4node 0 DOES_NOT destroy_tree_nodes 1817 141
-destroy_tree _Z12destroy_treeP4node 0 DOES_NOT destroy_tree_nodes 1832 2
-main main 0 MAY isInteger 1863 11 rewind 1925 6 feof 1992 11 insert 1994 11 transform_to_cuda 2013 18 height 2014 14 scanf 2033 5 getchar 2034 12 insert 2035 12 print_tree 2036 5 scanf 2054 5 getchar 2055 12 find 2056 9 scanf 2070 5 getchar 2071 12 deleteVal 2072 21 print_tree 2073 5 getchar 2083 12 destroy_tree 2084 12 print_tree 2085 5 getchar 2095 12 print_leaves 2096 5 getchar 2106 12 print_tree 2107 5 getchar 2117 12 getchar 2128 12 kernel_cpu 2193 5 scanf 2250 5 scanf 2251 5 findRange 2259 15 list_get_length 2260 41 kernel_cpu_2 2349 5
+deleteVal _Z9deleteValP4nodei 0 DOES_NOT find 1807 15 find_leaf 1808 13 delete_entry 1811 10
+destroy_tree_nodes _Z18destroy_tree_nodesP4node 0 DOES_NOT destroy_tree_nodes 1821 141
+destroy_tree _Z12destroy_treeP4node 0 DOES_NOT destroy_tree_nodes 1836 2
+main main 0 DOES isInteger 1867 11 rewind 1929 6 insert 1999 11 transform_to_cuda 2018 18 height 2019 14 scanf 2038 5 getchar 2039 12 insert 2040 12 print_tree 2041 5 scanf 2059 5 getchar 2060 12 find 2061 9 scanf 2075 5 getchar 2076 12 deleteVal 2077 21 print_tree 2078 5 getchar 2088 12 destroy_tree 2089 12 print_tree 2090 5 getchar 2100 12 print_leaves 2101 5 getchar 2111 12 print_tree 2112 5 getchar 2122 12 getchar 2133 12 kernel_cpu 2198 5 scanf 2255 5 scanf 2256 5 findRange 2264 15 list_get_length 2265 41 kernel_cpu_2 2354 5 checkpoint 2425 9

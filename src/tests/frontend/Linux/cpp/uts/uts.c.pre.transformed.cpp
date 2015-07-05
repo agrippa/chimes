@@ -106,7 +106,7 @@ typedef long unsigned int size_t;
 # 5 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 2
 
 
-extern void init_chimes();
+extern void init_chimes(int argc, char **argv);
 extern void checkpoint_transformed(int lbl, unsigned loc_id);
 
 extern void *translate_fptr(void *fptr, int lbl, unsigned loc_id,
@@ -122,7 +122,8 @@ extern void init_module(size_t module_id, int n_contains_mappings, int nfunction
         int n_external_npm_functions, int n_npm_conditionals,
         int n_static_merges, int n_dynamic_merges, int nstructs, ...);
 extern void rm_stack(bool has_return_alias, size_t returned_alias,
-        const char *funcname, int *conditional, unsigned loc_id, int disabled);
+        const char *funcname, int *conditional, unsigned loc_id, int disabled,
+        bool is_allocator);
 extern void register_stack_var(const char *mangled_name, int *cond_registration,
         const char *full_type, void *ptr, size_t size, int is_ptr,
         int is_struct, int n_ptr_fields, ...);
@@ -157,7 +158,7 @@ extern unsigned get_parent_vars_stack_depth();
 extern unsigned get_thread_stack_depth();
 
 extern void chimes_error();
-# 74 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
+# 75 "/home/jmg3/num-debug/src/libchimes/libchimes.h"
 inline unsigned LIBCHIMES_THREAD_NUM() { return 0; }
 inline unsigned LIBCHIMES_NUM_THREADS() { return 1; }
 
@@ -4107,21 +4108,22 @@ void uts_error_resumable(char *str) {const int ____chimes_did_disable0 = new_sta
 # 112 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
    call_lbl_2: ({ calling((void*)impl_abort, 2, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (impl_abort)(1); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_error", &____must_manage_uts_error, 0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "uts_error", &____must_manage_uts_error, 0, ____chimes_did_disable0, false); }
 # 133 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 133 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 double uts_wctime_npm();
 double uts_wctime_quick(); double uts_wctime();
 double uts_wctime_resumable() {const int ____chimes_did_disable1 = new_stack((void *)(&uts_wctime), "uts_wctime", &____must_manage_uts_wctime, 0, 0) ; struct timeval tv;
+# 133 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_wctime_tv_0) { register_stack_vars(1, "uts_wctime|tv|0", &____must_checkpoint_uts_wctime_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0); } if (____chimes_replaying) { switch(get_next_call()) { default: { chimes_error(); } } } ; ;
 # 134 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     ;
 # 135 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   gettimeofday(&tv, __null);
 # 136 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec + 1E-6 * tv.tv_usec)); rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1); return ____chimes_ret_var_0; ;
+   double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec + 1E-6 * tv.tv_usec)); rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
 # 137 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1, false); }
 # 138 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 139 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 140 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4137,9 +4139,9 @@ double rng_toProb_resumable(int n) {const int ____chimes_did_disable2 = new_stac
 # 145 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 146 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (((n<0)? 0.0 : ((double) n)/2147483648.0)); rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2); return ____chimes_ret_var_1; ;
+   double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (((n<0)? 0.0 : ((double) n)/2147483648.0)); rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2, false); }
 # 148 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 149 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 150 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4158,7 +4160,7 @@ void uts_initRoot_resumable(Node * root, int type) {const int ____chimes_did_dis
 # 156 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   if (debug & 1) {printf("root node of type %d at %p\n",type, root); };
 # 158 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_initRoot", &____must_manage_uts_initRoot, 0, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "uts_initRoot", &____must_manage_uts_initRoot, 0, ____chimes_did_disable3, false); }
 # 159 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 160 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 161 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4172,16 +4174,17 @@ int uts_numChildren_bin_resumable(Node * parent) {const int ____chimes_did_disab
    double d; d = (({ calling_npm("rng_toProb", 0); rng_toProb_npm(v); })) ;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 166 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((d < nonLeafProb) ? nonLeafBF : 0); rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4); return ____chimes_ret_var_2; ;
+   int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((d < nonLeafProb) ? nonLeafBF : 0); rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4, false); }
 # 168 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 169 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 170 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_numChildren_geo_npm(Node * parent);
 int uts_numChildren_geo_quick(Node * parent); int uts_numChildren_geo(Node * parent);
 int uts_numChildren_geo_resumable(Node * parent) {const int ____chimes_did_disable5 = new_stack((void *)(&uts_numChildren_geo), "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, 1, 0, (size_t)(10372134782440950119UL)) ; double p;
- if (____must_checkpoint_uts_numChildren_geo_p_0) { register_stack_vars(1, "uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } } } ; ;
+# 170 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
+ if (____must_checkpoint_uts_numChildren_geo_p_0) { register_stack_vars(1, "uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
    double b_i; b_i = (b_0) ;
 # 172 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4252,7 +4255,7 @@ int uts_numChildren_geo_resumable(Node * parent) {const int ____chimes_did_disab
 # 211 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 212 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 213 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   call_lbl_3: h = ({ uint8 * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (parent->state.state); } calling((void*)rng_rand, 3, ____alias_loc_id_3, 0UL, 1, (size_t)(10372134782440950119UL)); (rng_rand)(____chimes_arg4); }) ;
+   call_lbl_6: h = ({ uint8 * ____chimes_arg4; if (!____chimes_replaying) { ____chimes_arg4 = (parent->state.state); } calling((void*)rng_rand, 6, ____alias_loc_id_3, 0UL, 1, (size_t)(10372134782440950119UL)); (rng_rand)(____chimes_arg4); }) ;
 # 214 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   u = ({ calling_npm("rng_toProb", 0); rng_toProb_npm(h); });
 # 215 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4262,15 +4265,16 @@ int uts_numChildren_geo_resumable(Node * parent) {const int ____chimes_did_disab
   numChildren = floor(log(1 - u) / log(1 - p));
 # 219 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 220 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (numChildren); rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5); return ____chimes_ret_var_3; ;
+   int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (numChildren); rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5, false); return ____chimes_ret_var_3; ;
 # 221 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5, false); }
 # 222 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 223 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 224 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_numChildren_npm(Node *parent);
 int uts_numChildren_quick(Node *parent); int uts_numChildren(Node *parent);
 int uts_numChildren_resumable(Node *parent) {const int ____chimes_did_disable6 = new_stack((void *)(&uts_numChildren), "uts_numChildren", &____must_manage_uts_numChildren, 1, 1, (size_t)(10372134782440950214UL), "uts_numChildren|parent|0", &____must_checkpoint_uts_numChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0) ; int numChildren;
+# 224 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_numChildren_numChildren_0) { register_stack_vars(1, "uts_numChildren|numChildren|0", &____must_checkpoint_uts_numChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(2): { goto call_lbl_2; } case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(5): { goto call_lbl_5; } case(6): { goto call_lbl_6; } default: { chimes_error(); } } } ; ;
 # 225 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
      numChildren = (0) ;
@@ -4339,9 +4343,9 @@ int uts_numChildren_resumable(Node *parent) {const int ____chimes_did_disable6 =
   }
 # 267 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 268 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (numChildren); rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6); return ____chimes_ret_var_4; ;
+   int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (numChildren); rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6, false); return ____chimes_ret_var_4; ;
 # 269 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6, false); }
 # 270 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 271 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 272 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4353,25 +4357,25 @@ int uts_childType_resumable(Node *parent) {const int ____chimes_did_disable7 = n
 # 274 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case BIN:
 # 275 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return ____chimes_ret_var_5; ;
+       int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_5; ;
 # 276 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case GEO:
 # 277 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return ____chimes_ret_var_6; ;
+       int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_6; ;
 # 278 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case HYBRID:
 # 279 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-      if (parent->height < shiftDepth * gen_mx) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return ____chimes_ret_var_7; ; } else { int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return ____chimes_ret_var_8; ; } ;
+      if (parent->height < shiftDepth * gen_mx) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_7; ; } else { int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_8; ; } ;
 # 283 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
      call_lbl_5: default:
 # 284 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
        ({ char * ____chimes_arg10; if (!____chimes_replaying) { ____chimes_arg10 = ("uts_get_childtype(): Unknown tree type"); } calling((void*)uts_error, 5, ____alias_loc_id_9, 0UL, 1, (size_t)(10372134782440950852UL)); (uts_error)(____chimes_arg10); }) ;
 # 285 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return ____chimes_ret_var_9; ;
+       int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_9; ;
 # 286 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 287 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); }
 # 288 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 289 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 290 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4379,10 +4383,14 @@ rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_
 int uts_paramsToStr_npm(char *strBuf, int ind);static char *(*____chimes_extern_func_impl_getName)(void) = impl_getName;static int (*____chimes_extern_func_rng_showtype)(char *, int) = rng_showtype;
 int uts_paramsToStr_quick(char *strBuf, int ind); int uts_paramsToStr(char *strBuf, int ind);
 int uts_paramsToStr_resumable(char *strBuf, int ind) {const int ____chimes_did_disable8 = new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(10372134782440950421UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0) ; double es;
+# 291 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int m;
+# 291 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 double q;
+# 291 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 char *____chimes_unroll_var_0;
- if (____must_checkpoint_uts_paramsToStr_es_0 || ____must_checkpoint_uts_paramsToStr_m_0 || ____must_checkpoint_uts_paramsToStr_q_0 || ____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0) { register_stack_vars(4, "uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0, "uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0, "uts_paramsToStr|____chimes_unroll_var_0|0", &____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(10): { goto call_lbl_10; } default: { chimes_error(); } } } ; ;
+# 291 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
+ if (____must_checkpoint_uts_paramsToStr_es_0 || ____must_checkpoint_uts_paramsToStr_m_0 || ____must_checkpoint_uts_paramsToStr_q_0 || ____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0) { register_stack_vars(4, "uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0, "uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0, "uts_paramsToStr|____chimes_unroll_var_0|0", &____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(11): { goto call_lbl_11; } default: { chimes_error(); } } } ; ;
 # 292 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 293 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
        call_lbl_1: ____chimes_unroll_var_0 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_11, 10372134782440950278UL, 0); (impl_getName)(); }) ) ; ind += sprintf(strBuf+ind, "UTS - Unbalanced Tree Search %s (%s)\n", "2.1", ____chimes_unroll_var_0);
@@ -4434,21 +4442,23 @@ char *____chimes_unroll_var_0;
 # 321 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Random number generator: ");
 # 322 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   call_lbl_10: ind = ({ calling((void*)rng_showtype, 10, ____alias_loc_id_10, 0UL, 2, (size_t)(10372134782440950421UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
+   call_lbl_11: ind = ({ calling((void*)rng_showtype, 11, ____alias_loc_id_10, 0UL, 2, (size_t)(10372134782440950421UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
 # 323 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
 # 324 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 325 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (ind); rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8); return ____chimes_ret_var_10; ;
+   int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (ind); rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8, false); return ____chimes_ret_var_10; ;
 # 326 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8, false); }
 # 327 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 328 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 329 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_printParams_npm();static int (*____chimes_extern_func_impl_paramsToStr)(char *, int) = impl_paramsToStr;
 void uts_printParams_quick(); void uts_printParams();
 void uts_printParams_resumable() {const int ____chimes_did_disable9 = new_stack((void *)(&uts_printParams), "uts_printParams", &____must_manage_uts_printParams, 0, 0) ; int ind;
+# 329 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 char strBuf[5000];
+# 329 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_printParams_ind_0 || ____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(2, "uts_printParams|ind|0", &____must_checkpoint_uts_printParams_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } default: { chimes_error(); } } } ; ;
 # 330 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
    ;
@@ -4468,13 +4478,15 @@ char strBuf[5000];
 # 338 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 339 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_printParams", &____must_manage_uts_printParams, ____alias_loc_id_25, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "uts_printParams", &____must_manage_uts_printParams, ____alias_loc_id_25, ____chimes_did_disable9, false); }
 # 340 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 341 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_parseParams_npm(int argc, char *argv[]);void uts_helpMessage_npm();static int (*____chimes_extern_func_impl_parseParam)(char *, char *) = impl_parseParam;
 void uts_parseParams_quick(int argc, char *argv[]); void uts_parseParams(int argc, char *argv[]);void uts_helpMessage_quick(); void uts_helpMessage();
 void uts_parseParams_resumable(int argc, char *argv[]){const int ____chimes_did_disable10 = new_stack((void *)(&uts_parseParams), "uts_parseParams", &____must_manage_uts_parseParams, 2, 2, (size_t)(0UL), (size_t)(10372134782440950695UL), "uts_parseParams|argc|0", &____must_checkpoint_uts_parseParams_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "uts_parseParams|argv|0", &____must_checkpoint_uts_parseParams_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int err;
+# 341 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int i;
+# 341 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_parseParams_err_0 || ____must_checkpoint_uts_parseParams_i_0) { register_stack_vars(2, "uts_parseParams|err|0", &____must_checkpoint_uts_parseParams_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0, "uts_parseParams|i|0", &____must_checkpoint_uts_parseParams_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(5): { goto call_lbl_5; } case(20): { goto call_lbl_20; } default: { chimes_error(); } } } ; ;
 # 342 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
      i = (1) ;
@@ -4587,11 +4599,12 @@ int i;
 # 401 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 402 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_parseParams", &____must_manage_uts_parseParams, ____alias_loc_id_26, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "uts_parseParams", &____must_manage_uts_parseParams, ____alias_loc_id_26, ____chimes_did_disable10, false); }
 # 403 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 404 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 static void (*____chimes_extern_func_impl_helpMessage)(void) = impl_helpMessage;
 void uts_helpMessage_resumable() {const int ____chimes_did_disable11 = new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0) ; char *____chimes_unroll_var_1;
+# 404 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0) { register_stack_vars(1, "uts_helpMessage|____chimes_unroll_var_1|0", &____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0, "i8*", (void *)(&____chimes_unroll_var_1), (size_t)8, 1, 0, 0); } if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(19): { goto call_lbl_19; } default: { chimes_error(); } } } ; ;
 # 405 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
        call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_17, 10372134782440950721UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
@@ -4634,7 +4647,7 @@ void uts_helpMessage_resumable() {const int ____chimes_did_disable11 = new_stack
 # 425 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   printf("\n");
 # 426 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_helpMessage", &____must_manage_uts_helpMessage, 0, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "uts_helpMessage", &____must_manage_uts_helpMessage, 0, ____chimes_did_disable11, false); }
 # 427 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 428 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 429 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4665,30 +4678,32 @@ void uts_showStats_resumable(int nPes, int chunkSize, double walltime, int nNode
 # 442 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 443 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_showStats", &____must_manage_uts_showStats, ____alias_loc_id_27, ____chimes_did_disable12); }
+rm_stack(false, 0UL, "uts_showStats", &____must_manage_uts_showStats, ____alias_loc_id_27, ____chimes_did_disable12, false); }
+# 110 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_error_quick(char *str) {const int ____chimes_did_disable0 = new_stack((void *)(&uts_error), "uts_error", &____must_manage_uts_error, 1, 0, (size_t)(10372134782440949897UL)) ; ; ;
 # 111 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   printf("*** Error: %s\n", str);
 # 112 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
    call_lbl_2: ({ calling((void*)impl_abort, 2, ____alias_loc_id_0, 0UL, 1, (size_t)(0UL)); (impl_abort)(1); }) ;
 # 113 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_error", &____must_manage_uts_error, 0, ____chimes_did_disable0); }
+rm_stack(false, 0UL, "uts_error", &____must_manage_uts_error, 0, ____chimes_did_disable0, false); }
 
 void uts_error(char *str) { (____chimes_replaying ? uts_error_resumable(str) : uts_error_quick(str)); }
-
+# 133 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 double uts_wctime_quick() {const int ____chimes_did_disable1 = new_stack((void *)(&uts_wctime), "uts_wctime", &____must_manage_uts_wctime, 0, 0) ; struct timeval tv;
+# 133 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_wctime_tv_0) { register_stack_vars(1, "uts_wctime|tv|0", &____must_checkpoint_uts_wctime_tv_0, "%struct.timeval = type { i64, i64 }", (void *)(&tv), (size_t)16, 0, 1, 0); } ; ;
 # 134 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     ;
 # 135 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   gettimeofday(&tv, __null);
 # 136 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec + 1E-6 * tv.tv_usec)); rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1); return ____chimes_ret_var_0; ;
+   double ____chimes_ret_var_0; ; ____chimes_ret_var_0 = ((tv.tv_sec + 1E-6 * tv.tv_usec)); rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1, false); return ____chimes_ret_var_0; ;
 # 137 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1); }
+rm_stack(false, 0UL, "uts_wctime", &____must_manage_uts_wctime, ____alias_loc_id_18, ____chimes_did_disable1, false); }
 
 double uts_wctime() { return (____chimes_replaying ? uts_wctime_resumable() : uts_wctime_quick()); }
-
+# 142 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 double rng_toProb_quick(int n) {const int ____chimes_did_disable2 = new_stack((void *)(&rng_toProb), "rng_toProb", &____must_manage_rng_toProb, 1, 0, (size_t)(0UL)) ; ; ;
 # 143 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   if (n < 0) {
@@ -4697,12 +4712,12 @@ double rng_toProb_quick(int n) {const int ____chimes_did_disable2 = new_stack((v
 # 145 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 146 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (((n<0)? 0.0 : ((double) n)/2147483648.0)); rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2); return ____chimes_ret_var_1; ;
+   double ____chimes_ret_var_1; ; ____chimes_ret_var_1 = (((n<0)? 0.0 : ((double) n)/2147483648.0)); rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2, false); return ____chimes_ret_var_1; ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2); }
+rm_stack(false, 0UL, "rng_toProb", &____must_manage_rng_toProb, ____alias_loc_id_19, ____chimes_did_disable2, false); }
 
 double rng_toProb(int n) { return (____chimes_replaying ? rng_toProb_resumable(n) : rng_toProb_quick(n)); }
-
+# 150 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_initRoot_quick(Node * root, int type) {const int ____chimes_did_disable3 = new_stack((void *)(&uts_initRoot), "uts_initRoot", &____must_manage_uts_initRoot, 2, 2, (size_t)(10372134782440949975UL), (size_t)(0UL), "uts_initRoot|root|0", &____must_checkpoint_uts_initRoot_root_0, "%struct.node_t*", (void *)(&root), (size_t)8, 1, 0, 0, "uts_initRoot|type|0", &____must_checkpoint_uts_initRoot_type_0, "i32", (void *)(&type), (size_t)4, 0, 0, 0) ; ; ;
 # 151 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   root->type = type;
@@ -4716,10 +4731,10 @@ void uts_initRoot_quick(Node * root, int type) {const int ____chimes_did_disable
 # 156 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   if (debug & 1) {printf("root node of type %d at %p\n",type, root); };
 # 158 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_initRoot", &____must_manage_uts_initRoot, 0, ____chimes_did_disable3); }
+rm_stack(false, 0UL, "uts_initRoot", &____must_manage_uts_initRoot, 0, ____chimes_did_disable3, false); }
 
 void uts_initRoot(Node * root, int type) { (____chimes_replaying ? uts_initRoot_resumable(root, type) : uts_initRoot_quick(root, type)); }
-
+# 161 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_numChildren_bin_quick(Node * parent) {const int ____chimes_did_disable4 = new_stack((void *)(&uts_numChildren_bin), "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, 1, 0, (size_t)(10372134782440950008UL)) ; ; ;
 # 162 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 163 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4728,13 +4743,14 @@ int uts_numChildren_bin_quick(Node * parent) {const int ____chimes_did_disable4 
    double d; d = (({ calling_npm("rng_toProb", 0); rng_toProb_npm(v); })) ;
 # 165 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 166 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((d < nonLeafProb) ? nonLeafBF : 0); rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4); return ____chimes_ret_var_2; ;
+   int ____chimes_ret_var_2; ; ____chimes_ret_var_2 = ((d < nonLeafProb) ? nonLeafBF : 0); rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4, false); return ____chimes_ret_var_2; ;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4); }
+rm_stack(false, 0UL, "uts_numChildren_bin", &____must_manage_uts_numChildren_bin, ____alias_loc_id_20, ____chimes_did_disable4, false); }
 
 int uts_numChildren_bin(Node * parent) { return (____chimes_replaying ? uts_numChildren_bin_resumable(parent) : uts_numChildren_bin_quick(parent)); }
-
+# 170 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_numChildren_geo_quick(Node * parent) {const int ____chimes_did_disable5 = new_stack((void *)(&uts_numChildren_geo), "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, 1, 0, (size_t)(10372134782440950119UL)) ; double p;
+# 170 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_numChildren_geo_p_0) { register_stack_vars(1, "uts_numChildren_geo|p|0", &____must_checkpoint_uts_numChildren_geo_p_0, "double", (void *)(&p), (size_t)8, 0, 0, 0); } ; ;
 # 171 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
    double b_i; b_i = (b_0) ;
@@ -4806,7 +4822,7 @@ int uts_numChildren_geo_quick(Node * parent) {const int ____chimes_did_disable5 
 # 211 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 212 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 213 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   call_lbl_3: h = ({ calling((void*)rng_rand, 3, ____alias_loc_id_3, 0UL, 1, (size_t)(10372134782440950119UL)); (rng_rand)(parent->state.state); }) ;
+   call_lbl_6: h = ({ calling((void*)rng_rand, 6, ____alias_loc_id_3, 0UL, 1, (size_t)(10372134782440950119UL)); (rng_rand)(parent->state.state); }) ;
 # 214 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   u = ({ calling_npm("rng_toProb", 0); rng_toProb_npm(h); });
 # 215 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4816,13 +4832,14 @@ int uts_numChildren_geo_quick(Node * parent) {const int ____chimes_did_disable5 
   numChildren = floor(log(1 - u) / log(1 - p));
 # 219 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 220 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (numChildren); rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5); return ____chimes_ret_var_3; ;
+   int ____chimes_ret_var_3; ; ____chimes_ret_var_3 = (numChildren); rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5, false); return ____chimes_ret_var_3; ;
 # 221 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5); }
+rm_stack(false, 0UL, "uts_numChildren_geo", &____must_manage_uts_numChildren_geo, ____alias_loc_id_21, ____chimes_did_disable5, false); }
 
 int uts_numChildren_geo(Node * parent) { return (____chimes_replaying ? uts_numChildren_geo_resumable(parent) : uts_numChildren_geo_quick(parent)); }
-
+# 224 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_numChildren_quick(Node *parent) {const int ____chimes_did_disable6 = new_stack((void *)(&uts_numChildren), "uts_numChildren", &____must_manage_uts_numChildren, 1, 1, (size_t)(10372134782440950214UL), "uts_numChildren|parent|0", &____must_checkpoint_uts_numChildren_parent_0, "%struct.node_t*", (void *)(&parent), (size_t)8, 1, 0, 0) ; int numChildren;
+# 224 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_numChildren_numChildren_0) { register_stack_vars(1, "uts_numChildren|numChildren|0", &____must_checkpoint_uts_numChildren_numChildren_0, "i32", (void *)(&numChildren), (size_t)4, 0, 0, 0); } ; ;
 # 225 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
      numChildren = (0) ;
@@ -4891,44 +4908,48 @@ int uts_numChildren_quick(Node *parent) {const int ____chimes_did_disable6 = new
   }
 # 267 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 268 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (numChildren); rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6); return ____chimes_ret_var_4; ;
+   int ____chimes_ret_var_4; ; ____chimes_ret_var_4 = (numChildren); rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6, false); return ____chimes_ret_var_4; ;
 # 269 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6); }
+rm_stack(false, 0UL, "uts_numChildren", &____must_manage_uts_numChildren, ____alias_loc_id_22, ____chimes_did_disable6, false); }
 
 int uts_numChildren(Node *parent) { return (____chimes_replaying ? uts_numChildren_resumable(parent) : uts_numChildren_quick(parent)); }
-
+# 272 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_childType_quick(Node *parent) {const int ____chimes_did_disable7 = new_stack((void *)(&uts_childType), "uts_childType", &____must_manage_uts_childType, 1, 0, (size_t)(10372134782440950265UL)) ; ; ;
 # 273 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   switch (type) {
 # 274 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case BIN:
 # 275 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return ____chimes_ret_var_5; ;
+       int ____chimes_ret_var_5; ; ____chimes_ret_var_5 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_5; ;
 # 276 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case GEO:
 # 277 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return ____chimes_ret_var_6; ;
+       int ____chimes_ret_var_6; ; ____chimes_ret_var_6 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_6; ;
 # 278 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
     case HYBRID:
 # 279 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-      if (parent->height < shiftDepth * gen_mx) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return ____chimes_ret_var_7; ; } else { int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return ____chimes_ret_var_8; ; } ;
+      if (parent->height < shiftDepth * gen_mx) { int ____chimes_ret_var_7; ; ____chimes_ret_var_7 = (GEO); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_7; ; } else { int ____chimes_ret_var_8; ; ____chimes_ret_var_8 = (BIN); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_8; ; } ;
 # 283 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
      call_lbl_5: default:
 # 284 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
        ({ calling((void*)uts_error, 5, ____alias_loc_id_9, 0UL, 1, (size_t)(10372134782440950852UL)); uts_error_quick("uts_get_childtype(): Unknown tree type"); }) ;
 # 285 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-       int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); return ____chimes_ret_var_9; ;
+       int ____chimes_ret_var_9; ; ____chimes_ret_var_9 = (-1); rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); return ____chimes_ret_var_9; ;
 # 286 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 287 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7); }
+rm_stack(false, 0UL, "uts_childType", &____must_manage_uts_childType, ____alias_loc_id_23, ____chimes_did_disable7, false); }
 
 int uts_childType(Node *parent) { return (____chimes_replaying ? uts_childType_resumable(parent) : uts_childType_quick(parent)); }
-
+# 291 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_paramsToStr_quick(char *strBuf, int ind) {const int ____chimes_did_disable8 = new_stack((void *)(&uts_paramsToStr), "uts_paramsToStr", &____must_manage_uts_paramsToStr, 2, 2, (size_t)(10372134782440950421UL), (size_t)(0UL), "uts_paramsToStr|strBuf|0", &____must_checkpoint_uts_paramsToStr_strBuf_0, "i8*", (void *)(&strBuf), (size_t)8, 1, 0, 0, "uts_paramsToStr|ind|0", &____must_checkpoint_uts_paramsToStr_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0) ; double es;
+# 291 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int m;
+# 291 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 double q;
+# 291 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 char *____chimes_unroll_var_0;
+# 291 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_paramsToStr_es_0 || ____must_checkpoint_uts_paramsToStr_m_0 || ____must_checkpoint_uts_paramsToStr_q_0 || ____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0) { register_stack_vars(4, "uts_paramsToStr|es|0", &____must_checkpoint_uts_paramsToStr_es_0, "double", (void *)(&es), (size_t)8, 0, 0, 0, "uts_paramsToStr|m|0", &____must_checkpoint_uts_paramsToStr_m_0, "i32", (void *)(&m), (size_t)4, 0, 0, 0, "uts_paramsToStr|q|0", &____must_checkpoint_uts_paramsToStr_q_0, "double", (void *)(&q), (size_t)8, 0, 0, 0, "uts_paramsToStr|____chimes_unroll_var_0|0", &____must_checkpoint_uts_paramsToStr_____chimes_unroll_var_0_0, "i8*", (void *)(&____chimes_unroll_var_0), (size_t)8, 1, 0, 0); } ; ;
 # 292 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 293 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -4981,19 +5002,21 @@ char *____chimes_unroll_var_0;
 # 321 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   ind += sprintf(strBuf+ind, "Random number generator: ");
 # 322 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   call_lbl_10: ind = ({ calling((void*)rng_showtype, 10, ____alias_loc_id_10, 0UL, 2, (size_t)(10372134782440950421UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
+   call_lbl_11: ind = ({ calling((void*)rng_showtype, 11, ____alias_loc_id_10, 0UL, 2, (size_t)(10372134782440950421UL), (size_t)(0UL)); (rng_showtype)(strBuf, ind); }) ;
 # 323 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   ind += sprintf(strBuf+ind, "\nCompute granularity: %d\n", computeGranularity);
 # 324 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 325 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-   int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (ind); rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8); return ____chimes_ret_var_10; ;
+   int ____chimes_ret_var_10; ; ____chimes_ret_var_10 = (ind); rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8, false); return ____chimes_ret_var_10; ;
 # 326 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8); }
+rm_stack(false, 0UL, "uts_paramsToStr", &____must_manage_uts_paramsToStr, ____alias_loc_id_24, ____chimes_did_disable8, false); }
 
 int uts_paramsToStr(char *strBuf, int ind) { return (____chimes_replaying ? uts_paramsToStr_resumable(strBuf, ind) : uts_paramsToStr_quick(strBuf, ind)); }
-
+# 329 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_printParams_quick() {const int ____chimes_did_disable9 = new_stack((void *)(&uts_printParams), "uts_printParams", &____must_manage_uts_printParams, 0, 0) ; int ind;
+# 329 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 char strBuf[5000];
+# 329 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_printParams_ind_0 || ____must_checkpoint_uts_printParams_strBuf_0) { register_stack_vars(2, "uts_printParams|ind|0", &____must_checkpoint_uts_printParams_ind_0, "i32", (void *)(&ind), (size_t)4, 0, 0, 0, "uts_printParams|strBuf|0", &____must_checkpoint_uts_printParams_strBuf_0, "[5000 x i8]", (void *)(strBuf), (size_t)5000, 0, 0, 0); } ; ;
 # 330 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
    ;
@@ -5013,12 +5036,14 @@ char strBuf[5000];
 # 338 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 339 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_printParams", &____must_manage_uts_printParams, ____alias_loc_id_25, ____chimes_did_disable9); }
+rm_stack(false, 0UL, "uts_printParams", &____must_manage_uts_printParams, ____alias_loc_id_25, ____chimes_did_disable9, false); }
 
 void uts_printParams() { (____chimes_replaying ? uts_printParams_resumable() : uts_printParams_quick()); }
-
+# 341 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_parseParams_quick(int argc, char *argv[]){const int ____chimes_did_disable10 = new_stack((void *)(&uts_parseParams), "uts_parseParams", &____must_manage_uts_parseParams, 2, 2, (size_t)(0UL), (size_t)(10372134782440950695UL), "uts_parseParams|argc|0", &____must_checkpoint_uts_parseParams_argc_0, "i32", (void *)(&argc), (size_t)4, 0, 0, 0, "uts_parseParams|argv|0", &____must_checkpoint_uts_parseParams_argv_0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0) ; int err;
+# 341 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int i;
+# 341 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_parseParams_err_0 || ____must_checkpoint_uts_parseParams_i_0) { register_stack_vars(2, "uts_parseParams|err|0", &____must_checkpoint_uts_parseParams_err_0, "i32", (void *)(&err), (size_t)4, 0, 0, 0, "uts_parseParams|i|0", &____must_checkpoint_uts_parseParams_i_0, "i32", (void *)(&i), (size_t)4, 0, 0, 0); } ; ;
 # 342 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
      i = (1) ;
@@ -5131,11 +5156,12 @@ int i;
 # 401 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 402 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_parseParams", &____must_manage_uts_parseParams, ____alias_loc_id_26, ____chimes_did_disable10); }
+rm_stack(false, 0UL, "uts_parseParams", &____must_manage_uts_parseParams, ____alias_loc_id_26, ____chimes_did_disable10, false); }
 
 void uts_parseParams(int argc, char *argv[]) { (____chimes_replaying ? uts_parseParams_resumable(argc, argv) : uts_parseParams_quick(argc, argv)); }
-
+# 404 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_helpMessage_quick() {const int ____chimes_did_disable11 = new_stack((void *)(&uts_helpMessage), "uts_helpMessage", &____must_manage_uts_helpMessage, 0, 0) ; char *____chimes_unroll_var_1;
+# 404 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
  if (____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0) { register_stack_vars(1, "uts_helpMessage|____chimes_unroll_var_1|0", &____must_checkpoint_uts_helpMessage_____chimes_unroll_var_1_0, "i8*", (void *)(&____chimes_unroll_var_1), (size_t)8, 1, 0, 0); } ; ;
 # 405 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
        call_lbl_1: ____chimes_unroll_var_1 = ( ({ calling((void*)impl_getName, 1, ____alias_loc_id_17, 10372134782440950721UL, 0); (impl_getName)(); }) ) ; printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
@@ -5178,10 +5204,10 @@ void uts_helpMessage_quick() {const int ____chimes_did_disable11 = new_stack((vo
 # 425 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   printf("\n");
 # 426 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_helpMessage", &____must_manage_uts_helpMessage, 0, ____chimes_did_disable11); }
+rm_stack(false, 0UL, "uts_helpMessage", &____must_manage_uts_helpMessage, 0, ____chimes_did_disable11, false); }
 
 void uts_helpMessage() { (____chimes_replaying ? uts_helpMessage_resumable() : uts_helpMessage_quick()); }
-
+# 429 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_showStats_quick(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth) {const int ____chimes_did_disable12 = new_stack((void *)(&uts_showStats), "uts_showStats", &____must_manage_uts_showStats, 6, 0, (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)) ; ; ;
 # 430 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 431 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -5207,12 +5233,10 @@ void uts_showStats_quick(int nPes, int chunkSize, double walltime, int nNodes, i
 # 442 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   }
 # 443 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
-rm_stack(false, 0UL, "uts_showStats", &____must_manage_uts_showStats, ____alias_loc_id_27, ____chimes_did_disable12); }
+rm_stack(false, 0UL, "uts_showStats", &____must_manage_uts_showStats, ____alias_loc_id_27, ____chimes_did_disable12, false); }
 
 void uts_showStats(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth) { (____chimes_replaying ? uts_showStats_resumable(nPes, chunkSize, walltime, nNodes, nLeaves, maxDepth) : uts_showStats_quick(nPes, chunkSize, walltime, nNodes, nLeaves, maxDepth)); }
-
-
-
+# 110 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_error_npm(char *str) {
 # 111 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   printf("*** Error: %s\n", str);
@@ -5220,7 +5244,7 @@ void uts_error_npm(char *str) {
   (*____chimes_extern_func_impl_abort)(1);
 # 113 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 133 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 double uts_wctime_npm() {
 # 134 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   struct timeval tv;
@@ -5230,7 +5254,7 @@ double uts_wctime_npm() {
    double ____chimes_ret_var_0; ____chimes_ret_var_0 = ((tv.tv_sec + 1E-6 * tv.tv_usec)); return ____chimes_ret_var_0; ;
 # 137 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 142 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 double rng_toProb_npm(int n) {
 # 143 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   if (n < 0) {
@@ -5242,7 +5266,7 @@ double rng_toProb_npm(int n) {
    double ____chimes_ret_var_1; ____chimes_ret_var_1 = (((n<0)? 0.0 : ((double) n)/2147483648.0)); return ____chimes_ret_var_1; ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 150 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_initRoot_npm(Node * root, int type) {
 # 151 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   root->type = type;
@@ -5257,7 +5281,7 @@ void uts_initRoot_npm(Node * root, int type) {
   if (debug & 1) {printf("root node of type %d at %p\n",type, root); };
 # 158 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 161 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_numChildren_bin_npm(Node * parent) {
 # 162 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 163 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -5269,7 +5293,7 @@ int uts_numChildren_bin_npm(Node * parent) {
    int ____chimes_ret_var_2; ____chimes_ret_var_2 = ((d < nonLeafProb) ? nonLeafBF : 0); return ____chimes_ret_var_2; ;
 # 167 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 170 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_numChildren_geo_npm(Node * parent) {
 # 171 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   double b_i = b_0;
@@ -5354,7 +5378,7 @@ int uts_numChildren_geo_npm(Node * parent) {
    int ____chimes_ret_var_3; ____chimes_ret_var_3 = (numChildren); return ____chimes_ret_var_3; ;
 # 221 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 224 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_numChildren_npm(Node *parent) {
 # 225 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   int numChildren = 0;
@@ -5426,7 +5450,7 @@ int uts_numChildren_npm(Node *parent) {
    int ____chimes_ret_var_4; ____chimes_ret_var_4 = (numChildren); return ____chimes_ret_var_4; ;
 # 269 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 272 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_childType_npm(Node *parent) {
 # 273 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   switch (type) {
@@ -5452,7 +5476,7 @@ int uts_childType_npm(Node *parent) {
   }
 # 287 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 291 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 int uts_paramsToStr_npm(char *strBuf, int ind) {
 # 292 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 293 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -5513,7 +5537,7 @@ int uts_paramsToStr_npm(char *strBuf, int ind) {
    int ____chimes_ret_var_10; ____chimes_ret_var_10 = (ind); return ____chimes_ret_var_10; ;
 # 326 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 329 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_printParams_npm() {
 # 330 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   char strBuf[5000];
@@ -5534,7 +5558,7 @@ void uts_printParams_npm() {
   }
 # 339 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 341 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_parseParams_npm(int argc, char *argv[]){
 # 342 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
   int i = 1;
@@ -5648,7 +5672,7 @@ void uts_parseParams_npm(int argc, char *argv[]){
   }
 # 402 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 404 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_helpMessage_npm() {
 # 405 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
    char * ____chimes_unroll_var_1 = (*____chimes_extern_func_impl_getName)(); printf("  UTS - Unbalanced Tree Search %s (%s)\n\n", "2.1", ____chimes_unroll_var_1);
@@ -5692,7 +5716,7 @@ void uts_helpMessage_npm() {
   printf("\n");
 # 426 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 }
-
+# 429 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 void uts_showStats_npm(int nPes, int chunkSize, double walltime, int nNodes, int nLeaves, int maxDepth) {
 # 430 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
 # 431 "/home/jmg3/num-debug/src/examples/cpp/uts/uts.c"
@@ -5809,11 +5833,11 @@ static int module_init() {
                              (10372134782440949889UL + 236UL), (10372134782440949889UL + 325UL),
                              (10372134782440949889UL + 328UL), (10372134782440949889UL + 376UL),
                              (10372134782440949889UL + 377UL), (10372134782440949889UL + 532UL),
-                     "node_t", 4, "int", (int)__builtin_offsetof (struct node_t, type), "int", (int)__builtin_offsetof (struct node_t, height), "int", (int)__builtin_offsetof (struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof (struct node_t, state),
-                     "state_t", 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
-                     "timeval", 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
-                     "uts_geoshape_e", 0,
-                     "uts_trees_e", 0,
+                     "node_t", 256UL, 4, "int", (int)__builtin_offsetof (struct node_t, type), "int", (int)__builtin_offsetof (struct node_t, height), "int", (int)__builtin_offsetof (struct node_t, numChildren), "%struct.state_t", (int)__builtin_offsetof (struct node_t, state),
+                     "state_t", 160UL, 1, "[ 20 x unsigned char ]", (int)__builtin_offsetof (struct state_t, state),
+                     "timeval", 128UL, 2, "long int", (int)__builtin_offsetof (struct timeval, tv_sec), "long int", (int)__builtin_offsetof (struct timeval, tv_usec),
+                     "uts_geoshape_e", 32UL, 0,
+                     "uts_trees_e", 32UL, 0,
                              "uts_numChildren_bin", "_Z19uts_numChildren_binP6node_t", 2, "rng_rand", "rng_toProb",
                              "uts_childType", "_Z13uts_childTypeP6node_t", 1, "uts_error",
                              "uts_error", "_Z9uts_errorPc", 1, "impl_abort",
