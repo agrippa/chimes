@@ -61,7 +61,7 @@ TESTS.append(UTS_OMP)
 TESTS.append(RAY_TRACER_OMP)
 
 for t in ALL_RODINIA_FRONTEND_TESTS:
-    t.extra_cli_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+    t.extra_compile_args += ' -D OPEN'
 TESTS.extend(ALL_RODINIA_FRONTEND_TESTS)
 
 for t in ALL_SPEC_FRONTEND_TESTS:
