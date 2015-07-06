@@ -3388,6 +3388,7 @@ static bool should_hash(size_t alloc_len, size_t desired_checkpoint_size,
  * reached beyond the maximum inter-checkpoint latency.
  */
 bool within_overhead_bounds() {
+    fprintf(stderr, "checking within overheads, disable_throttling=%d\n", disable_throttling);
     if (disable_throttling) {
         return true;
     }
@@ -3402,9 +3403,11 @@ bool within_overhead_bounds() {
 
     double curr_percent_overhead = (double)chimes_overhead /
         (double)running_time;
-    return (curr_percent_overhead < target_time_overhead ||
+    bool should_checkpoint = (curr_percent_overhead < target_time_overhead ||
             perf_profile::current_time_ns() - last_checkpoint >
                 max_checkpoint_latency_ns);
+    fprintf(stderr, "should checkpoint? %d\n", should_checkpoint);
+    return should_checkpoint;
 }
 
 static void collect_all_aliases(size_t group, set<size_t> *all_changed) {
@@ -3608,6 +3611,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
         bool should_abort;
         checkpointing_thread = wait_for_all_threads(&enter_time,
                 &curr_ckpt, &should_abort);
+        fprintf(stderr, "should_abort=%d checkpointing_thread=%d checkpoint_thread_running=%d\n", should_abort, checkpointing_thread, checkpoint_thread_running);
         if (should_abort) {
 
             VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
@@ -3621,6 +3625,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
         } else if (checkpointing_thread && checkpoint_thread_running == 0) {
             VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
+            fprintf(stderr, "locked, checkpoint_thread_running=%d\n", checkpoint_thread_running);
             if (checkpoint_thread_running == 1) {
                 VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
             } else {
@@ -3913,6 +3918,7 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
                 last_checkpoint = perf_profile::current_time_ns();
 
+                fprintf(stderr, "Signalling checkpoint thread\n");
                 VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
                 VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
@@ -4595,12 +4601,7 @@ void *checkpoint_func(void *data) {
         if (checkpoint_thread_running == -1) break;
 
         checkpoint_thread_running = 0;
-        /*
-         * This signal isn't necessary for correctness, it is simply used to
-         * signal wait_for_checkpoint during tests. It's okay to signal here in
-         * normal execution because the checkpoint thread is the only thing that
-         * waits on checkpoint_cond, and it can't signal itself.
-         */
+
         VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
         VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
@@ -5041,6 +5042,9 @@ void onexit() {
     fprintf(stderr, "Locking...\n");
 #endif
     VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
+    while (checkpoint_thread_running == 1) {
+        VERIFY(pthread_cond_wait(&checkpoint_cond, &checkpoint_mutex) == 0);
+    }
 #ifdef VERBOSE
     fprintf(stderr, "Done\n");
 #endif

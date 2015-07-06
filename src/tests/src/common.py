@@ -610,6 +610,9 @@ def build_compile_cmd(compile_script_path, test, output_file, inputs_dir, config
     if type(test) == RuntimeTest:
         compile_cmd += ' -k -D __CHIMES_TESTING'
 
+    if config.keep:
+        compile_cmd += ' -k'
+
     test_dir_path = test.src_folder if test.src_folder is not None else inputs_dir
     for input_file in test.input_files:
         compile_cmd += ' -i ' + os.path.join(test_dir_path, input_file)
@@ -622,7 +625,8 @@ def build_compile_cmd(compile_script_path, test, output_file, inputs_dir, config
     return compile_cmd
 
 
-def run_perf_test_and_get_time_and_ncheckpoints(exec_name, test, verbose, env):
+def run_perf_test_and_get_time_and_ncheckpoints(exec_name, test, verbose, keep,
+                                                env):
     exec_cmd = './' + exec_name + ' '
     if test.cli_args is not None:
         exec_cmd += test.cli_args
@@ -647,7 +651,8 @@ def run_perf_test_and_get_time_and_ncheckpoints(exec_name, test, verbose, env):
     for checkpoint in checkpoint_files:
         os.remove(checkpoint)
 
-    os.remove(exec_name)
+    if not keep:
+        os.remove(exec_name)
 
     return (test.exec_time_parser(stdout, stderr), ncheckpoint_files)
 
@@ -935,7 +940,7 @@ def run_perf_test(test, compile_script_path, normal_compile_script_path,
                                            NORMAL_PERF_BIN, inputs_dir, config,
                                            env)
     if config.verbose:
-        print(compile_cmd)
+        print(chimes_compile_cmd)
         print(normal_compile_cmd)
 
     chimes_stdout, chimes_stderr, code = run_cmd(chimes_compile_cmd, False, env=env)
@@ -961,10 +966,12 @@ def run_perf_test(test, compile_script_path, normal_compile_script_path,
 
     chimes_exec_time, chimes_ncheckpoints = \
         run_perf_test_and_get_time_and_ncheckpoints(CHIMES_PERF_BIN, test,
-                                                    config.verbose, env)
+                                                    config.verbose, config.keep,
+                                                    env)
     normal_exec_time, _ = \
         run_perf_test_and_get_time_and_ncheckpoints(NORMAL_PERF_BIN, test,
-                                                    config.verbose, env)
+                                                    config.verbose, config.keep,
+                                                    env)
 
     print(test.name + ' - added ' +
           str(((float(chimes_exec_time) / float(normal_exec_time)) - 1.0) *

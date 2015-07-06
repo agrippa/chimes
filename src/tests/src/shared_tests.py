@@ -211,7 +211,7 @@ MISC_CPP_RUNTIME_TESTS.append(COMD)
 MISC_CPP_RUNTIME_TESTS.append(UTS)
 
 MISC_OMP_RUNTIME_TESTS = []
-ISO3D_OMP = RuntimeTest('Iso3D-OMP',
+ISO3D_OMP = RuntimeTest('Iso3D',
                     ['iso3d.cpp', 'lib/common.cpp', 'lib/common3d.cpp'], 0, -1,
                     includes=[os.path.join(CPP_EXAMPLES_DIR, 'include')],
                     dependencies=[os.path.join(CPP_EXAMPLES_DIR, 'lib',
@@ -222,7 +222,7 @@ SMITH_WATERMAN_OMP = RuntimeTest('SmithWaterman-OMP',
                              cli_args='12 12 1 1')
 LULESH_OMP = RuntimeTest('Lulesh-OMP', ['lulesh/LULESH_OMP.cc'], 0, -1,
                          cli_args='1', extra_compile_args='-y -O0')
-COMD_OMP = RuntimeTest('CoMD-OMP', ['CoMD/src-openmp/CoMD.c', 'CoMD/src-openmp/decomposition.c',
+COMD_OMP = RuntimeTest('CoMD', ['CoMD/src-openmp/CoMD.c', 'CoMD/src-openmp/decomposition.c',
                      'CoMD/src-openmp/haloExchange.c', 'CoMD/src-openmp/linkCells.c',
                      'CoMD/src-openmp/mycommand.c',
                      'CoMD/src-openmp/performanceTimers.c',
@@ -231,10 +231,48 @@ COMD_OMP = RuntimeTest('CoMD-OMP', ['CoMD/src-openmp/CoMD.c', 'CoMD/src-openmp/d
                      'CoMD/src-openmp/ljForce.c', 'CoMD/src-openmp/parallel.c',
                      'CoMD/src-openmp/random.c', 'CoMD/src-openmp/yamlOutput.c'],
                      0, -1, cli_args='-N 1 -x 12 -y 12 -z 12')
-UTS_OMP = RuntimeTest('UTS-OMP', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
+UTS_OMP = RuntimeTest('UTS', ['uts/rng/brg_sha1.c', 'uts/uts.c', 'uts/uts_shm.c'],
                   0, -1, cli_args='-t 2 -d 2', defines=['BRG_RNG'])
 MISC_OMP_RUNTIME_TESTS.append(ISO3D_OMP)
 MISC_OMP_RUNTIME_TESTS.append(SMITH_WATERMAN_OMP)
 MISC_OMP_RUNTIME_TESTS.append(LULESH_OMP)
 MISC_OMP_RUNTIME_TESTS.append(COMD_OMP)
 MISC_OMP_RUNTIME_TESTS.append(UTS_OMP)
+
+PERF_CLI_ARGS = {'Iso3D': '-x 1024 -y 1024 -z 256 -i 20',
+                 'SmithWaterman': '1204000 7000 700',
+                 'SmithWaterman-OMP': '1204000 7000 12040 700',
+                 'Lulesh': '20',
+                 'Lulesh-OMP': '50',
+                 'CoMD': '-N 10 -x 100 -y 20 -z 20',
+                 'UTS': '-t 1 -g 20 -b 1.8 -d 80',
+                 'RodiniaBackprop':       '65536',
+                 'RodiniaBfs':            '4 ' + path.join(RODINIA_DATA, 'bfs/graph1MW_6.txt'),
+                 'RodiniaB+tree':         'core 2 file ' + path.join(RODINIA_DATA,
+                                                                     'b+tree/mil.txt') + \
+                                          ' command ' + path.join(RODINIA_DATA,
+                                                                  'b+tree/command.txt'),
+                 'RodiniaHeartwall':      path.join(RODINIA_DATA,
+                                                'heartwall/test.avi') + ' 20 4',
+                 'RodiniaHotspot':        '512 512 2 4 ' + path.join(RODINIA_DATA,
+                                                                     'hotspot/temp_512') + \
+                                          ' ' + path.join(RODINIA_DATA,
+                                                          'hotspot/power_512'),
+                 'RodiniaKmeans':         '-n 4 -i ' + path.join(RODINIA_DATA,
+                                                                 'kmeans/kdd_cup'),
+                 'RodiniaLavamd':         '-cores 4 -boxes1d 10',
+                 'RodiniaLud':            '-i ' + path.join(RODINIA_DATA, 'lud/512.dat'),
+                 'RodiniaMyocyte':        '100 1 0 4',
+                 'RodiniaNn':             path.join(RODINIA_HOME, 'openmp', 'nn',
+                                                    'filelist_4') + ' 5 30 90',
+                 'RodiniaNw':             '2048 10 2',
+                 'RodiniaParticlefilter': '-x 128 -y 128 -z 10 -np 100',
+                 'RodiniaSrad':           '100 0.5 502 458 4',
+                 'SPECBotsAlgn':          '-f ' + path.join(SPEC_BOTSALGN_ROOT, '..',
+                                                            'run', 'run_base_test_davinci.0000',
+                                                            'botsalgn'),
+                 'SPECBotsSpar':          '-n 50 -m 25',
+                 'SPECSmithwa':           '30',
+                 'SPECKDTree':            '100000 10 2'
+                }
+
