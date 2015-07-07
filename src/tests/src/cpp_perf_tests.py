@@ -36,7 +36,7 @@ if __name__ == '__main__':
         run_perf_test(t, COMPILE_SCRIPT, NORMAL_COMPILE_SCRIPT, CPP_INPUTS_DIR,
                       CONFIG)
 
-    if os.path.isfile('cpp.perf'):
+    if not CONFIG.quiet and os.path.isfile('cpp.perf'):
         print()
         print('Previous single-threaded performance results:')
         print('=============================================')

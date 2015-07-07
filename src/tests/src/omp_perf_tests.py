@@ -38,7 +38,7 @@ if __name__ == '__main__':
         run_perf_test(t, COMPILE_SCRIPT, NORMAL_COMPILE_SCRIPT, OMP_INPUTS_DIR,
                       CONFIG)
 
-    if os.path.isfile('omp.perf'):
+    if not CONFIG.quiet and os.path.isfile('omp.perf'):
         print()
         print('Previous multi-threaded performance results:')
         print('=============================================')

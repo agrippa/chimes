@@ -27,6 +27,7 @@ class ModuleInitConfig(object):
         self.fptrs_loaded_filename = None
         self.static_merge_filename = None
         self.dynamic_merge_filename = None
+        self.abi_filename = None
 
     def check(self):
         if self.input_filename is None:
@@ -85,6 +86,9 @@ class ModuleInitConfig(object):
             usage()
         if self.dynamic_merge_filename is None:
             print('Dynamic merge filename')
+            usage()
+        if self.abi_filename is None:
+            print('ABI filename')
             usage()
 
 
@@ -427,6 +431,72 @@ def write_merges(output_file, merges):
             output_file.write(', ' + alias + 'UL')
 
 
+def get_mangled_function_name(fname, func_symbols):
+    for sym in func_symbols:
+        if fname == sym:
+            return sym
+        elif sym.startswith('_Z') and not sym.startswith('_ZL'):
+            len_start = 2
+            len_end = 3
+            while sym[len_end] >= '0' and sym[len_end] <= '9':
+                len_end += 1
+            name_length = int(sym[len_start:len_end])
+
+            if name_length == len(fname) and sym[len_end:len_end + name_length] == fname:
+                return sym
+    raise(Exception('Failed to find mangled version of "' + fname + '"'))
+
+
+# def mangle_function_name(fname, call_tree):
+#     entry = call_tree[fname]
+#     mangled = entry.mangled_name
+#     # Once instance of the function name
+#     assert mangled.find(fname) == mangled.rfind(fname)
+# 
+#     return mangled
+# 
+# 
+# def mangle_npm_function_name(fname, call_tree):
+#     mangled = mangle_function_name(fname, call_tree)
+# 
+#     if mangled.startswith('_Z'):
+#         len_start = 2
+#         len_end = 3
+#         while mangled[len_end] >= '0' and mangled[len_end] <= '9':
+#             len_end += 1
+#         name_length = int(mangled[len_start:len_end])
+#         assert name_length == len(fname), 'fname=' + fname + ', name_length=' + \
+#                             str(name_length)
+#         assert mangled.find(fname) == len_end
+# 
+#         insert_at = mangled.find(fname) + len(fname)
+#         return '_Z' + str(name_length + 4) + fname + '_npm' + mangled[insert_at:]
+#     else:
+#         return mangled + '_npm'
+
+
+def get_func_symbols(abi_filename):
+    symbols = []
+    fp = open(abi_filename, 'r')
+
+    found_symbol_table = False
+    for line in fp:
+        if len(line) > 0:
+            if line.startswith('SYMBOL TABLE:'):
+                found_symbol_table = True
+            elif found_symbol_table:
+                tokens = line.split()
+                if len(tokens) == 6:
+                    descriptor = tokens[2]
+                    region = tokens[3]
+                    sym = tokens[5]
+
+                    if descriptor == 'F' and region == '.text':
+                        symbols.append(sym)
+
+    fp.close()
+    return symbols
+
 def usage():
     print('usage: python module_init.py ' +
           '-i input-file ' +
@@ -447,7 +517,8 @@ def usage():
           '-h locs-filename ' +
           '-j fptrs-loaded-filename ' +
           '-ms static-merge-filename ' +
-          '-md dynamic-merge-filename')
+          '-md dynamic-merge-filename' + 
+          '-a ABI-filename')
     sys.exit(1)
 
 
@@ -493,6 +564,8 @@ def configure(cfg, argv):
             cfg.static_merge_filename = argv[index + 1]
         elif t == '-md':
             cfg.dynamic_merge_filename = argv[index + 1]
+        elif t == '-a':
+            cfg.abi_filename = argv[index + 1]
         else:
             print('Unrecognized command line argument "' + t + '"')
             sys.exit(1)
@@ -522,6 +595,7 @@ if __name__ == '__main__':
     fptrs_loaded = get_fptrs_loaded(cfg.fptrs_loaded_filename)
     static_merges = get_merges(cfg.static_merge_filename)
     dynamic_merges = get_merges(cfg.dynamic_merge_filename)
+    func_symbols = get_func_symbols(cfg.abi_filename)
 
     n_change_locs = len(changed)
     for e in exits:
@@ -599,9 +673,11 @@ if __name__ == '__main__':
                                    module_id_str)
             count += 1
 
-    for fname in defined_npms:
+    for fname in defined_npms.keys():
 
         assert fname in functions, fname
+        assert fname in call_tree, fname
+        is_static = defined_npms[fname]
         func_info = functions[fname]
         func_exit_info = find_in_exits(fname, exits)
 
@@ -610,8 +686,20 @@ if __name__ == '__main__':
         else:
             normal_fptr = '(void *)NULL'
 
-        output_file.write(',\n         /* provided NPM */ "' + fname +
-                          '", (void *)(&' + fname + '_npm), ' + normal_fptr)
+        # If this is a static function that has been converted to NPM, we cannot
+        # load its address using dlopen/dlsym and so we must pass function
+        # pointers explicitly. Otherwise, we can simply pass function names and
+        # then dynamically load the function address. Minimizing function
+        # pointers is important, as the compiler makes lots of conservative
+        # decisions as soon as you start passing function pointers around.
+        if is_static:
+            output_file.write(',\n         /* provided NPM */ "' + fname + '", 1, ' +
+                              '(void *)(&' + fname + '_npm), ' + normal_fptr)
+        else:
+            mangled_fname = get_mangled_function_name(fname, func_symbols)
+            mangled_npm_fname = get_mangled_function_name(fname + '_npm', func_symbols)
+            output_file.write(',\n         /* provided NPM */ "' + fname + '", 0, "' +
+                              mangled_fname + '", "' + mangled_npm_fname + '"')
 
         # If no assignments are made in a function (e.g. if it's simply a return
         # statement) it may not have any change locations.

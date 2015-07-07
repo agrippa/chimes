@@ -41,7 +41,8 @@ class TestConfig(object):
     """
     Encapsulates configuration that can be changed at the command line
     """
-    def __init__(self, keep, verbose, targets, update_tests, just_compile, force_update):
+    def __init__(self, keep, verbose, targets, update_tests, just_compile,
+                 force_update, dummy, quiet):
         self.keep = keep
         self.verbose = verbose
         self.targets = targets
@@ -51,6 +52,8 @@ class TestConfig(object):
         self.force_update = force_update
         self.force_sequential = False
         self.just_compile = just_compile
+        self.dummy = dummy
+        self.quiet = quiet
 
     def set_force_sequential(self):
         self.force_sequential = True
@@ -297,6 +300,8 @@ def parse_argv(argv):
     targets = []
     just_compile = False
     force_update = False
+    dummy = False
+    quiet = False
 
     i = 1
     while i < len(argv):
@@ -306,8 +311,12 @@ def parse_argv(argv):
             verbose = True
         elif argv[i] == '-u':
             update_tests = True
+        elif argv[i] == '-d':
+            dummy = True
         elif argv[i] == '-f':
             force_update = True
+        elif argv[i] == '-q':
+            quiet = True
         elif argv[i] == '-t':
             assert len(argv) >= i + 2
             for target in argv[i + 1].split(','):
@@ -322,7 +331,8 @@ def parse_argv(argv):
             usage(argv)
         i += 1
 
-    return TestConfig(keep, verbose, targets, update_tests, just_compile, force_update)
+    return TestConfig(keep, verbose, targets, update_tests, just_compile,
+                      force_update, dummy, quiet)
 
 
 def print_and_abort(stdout, stderr, abort=True):
@@ -595,11 +605,15 @@ def check_warnings(testname, stderr, input_dir, output_dir, warnings_filename,
     return False
 
 
-def build_compile_cmd(compile_script_path, test, output_file, inputs_dir, config, env):
+def build_compile_cmd(compile_script_path, test, output_file, inputs_dir,
+                      config, dummy, env):
     compile_cmd = compile_script_path + ' ' + test.extra_compile_args
 
     if config.force_sequential:
         compile_cmd += ' -s '
+
+    if dummy:
+        compile_cmd += ' -d'
 
     for flag in config.custom_compiler_flags:
         compile_cmd += ' -y ' + flag
@@ -644,6 +658,9 @@ def run_perf_test_and_get_time_and_ncheckpoints(exec_name, test, verbose, keep,
                          '\n')
         sys.stderr.write('Command = ' + exec_cmd + '\n')
         print_and_abort(stdout, stderr)
+
+    if verbose:
+        print_and_abort(stdout, stderr, abort=False)
 
     checkpoint_files = list_checkpoint_files()
     ncheckpoint_files = len(checkpoint_files)
@@ -808,7 +825,7 @@ def run_runtime_test(test, compile_script_path, inputs_dir, config):
     #     env['GXX'] = config.custom_compiler
 
     compile_cmd = build_compile_cmd(compile_script_path, test, RUNTIME_BIN,
-                                    inputs_dir, config, env)
+                                    inputs_dir, config, config.dummy, env)
 
     if config.verbose:
         print(compile_cmd)
@@ -935,10 +952,10 @@ def run_perf_test(test, compile_script_path, normal_compile_script_path,
 
     chimes_compile_cmd = build_compile_cmd(compile_script_path, test,
                                            CHIMES_PERF_BIN, inputs_dir, config,
-                                           env)
+                                           config.dummy, env)
     normal_compile_cmd = build_compile_cmd(normal_compile_script_path, test,
                                            NORMAL_PERF_BIN, inputs_dir, config,
-                                           env)
+                                           False, env)
     if config.verbose:
         print(chimes_compile_cmd)
         print(normal_compile_cmd)
@@ -952,6 +969,9 @@ def run_perf_test(test, compile_script_path, normal_compile_script_path,
         print_and_abort(chimes_stdout, chimes_stderr, abort=False)
         sys.stderr.write('FATAL: Compilation failed to generate an executable\n')
         sys.exit(1)
+
+    if config.just_compile:
+        return
 
     normal_stdout, normal_stderr, code = run_cmd(normal_compile_cmd, False,
                                                  env=env)

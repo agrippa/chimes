@@ -308,11 +308,17 @@ def get_exit_info(exit_filename):
 
 
 def get_npms(filename):
-    result = []
+    # mapping from function name to if it is static
+    result = {}
     fp = open(filename, 'r')
     line = fp.readline()
     while len(line) > 0:
-        result.append(line.split()[0])
+        tokens = line.split()
+
+        assert tokens[0] not in result.keys()
+        assert tokens[3] == '0' or tokens[3] == '1'
+        result[tokens[0]] = (tokens[3] == '1')
+
         while '-----' not in line:
             line = fp.readline()
         line = fp.readline()

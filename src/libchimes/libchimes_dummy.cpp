@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <assert.h>
+#include <dlfcn.h>
 
 #include <set>
 #include <string>
@@ -183,9 +184,14 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 
         va_arg(vl, unsigned *);
         const unsigned n_aliases_at_loc = va_arg(vl, unsigned);
+        const unsigned n_aliases_and_children_at_loc = va_arg(vl, unsigned);
         const unsigned n_possible_aliases_at_loc = va_arg(vl, unsigned);
 
         for (unsigned j = 0; j < n_aliases_at_loc; j++) {
+            va_arg(vl, size_t);
+        }
+
+        for (unsigned j = 0; j < n_aliases_and_children_at_loc; j++) {
             va_arg(vl, size_t);
         }
 
@@ -198,11 +204,39 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         }
     }
 
+    void *app_handle = dlopen(NULL, RTLD_LAZY);
+    assert(app_handle != NULL);
+
     // Iterate over the NPM functions defined inside this compilation unit.
     for (int i = 0; i < n_provided_npm_functions; i++) {
         std::string fname(va_arg(vl, char *));
-        void *fptr = va_arg(vl, void *);
-        void *original_fptr = va_arg(vl, void *);
+        int is_static = va_arg(vl, int);
+
+        void *fptr, *original_fptr;
+        if (is_static) {
+            fptr = va_arg(vl, void *);
+            original_fptr = va_arg(vl, void *);
+        } else {
+            std::string mangled_fname(va_arg(vl, char *));
+            std::string mangled_npm_fname(va_arg(vl, char *));
+
+            dlerror(); // Clear existing errors
+            original_fptr = dlsym(app_handle, mangled_fname.c_str());
+            char *ld_err;
+            if ((ld_err = dlerror()) != NULL) {
+                fprintf(stderr, "Unable to load function address for %s, %s\n",
+                        fname.c_str(), mangled_fname.c_str());
+                exit(1);
+            }
+
+            dlerror(); // Clear existing errors
+            fptr = dlsym(app_handle, mangled_npm_fname.c_str());
+            if ((ld_err = dlerror()) != NULL) {
+                fprintf(stderr, "Unable to load NPM function address for %s, %s\n",
+                        fname.c_str(), mangled_npm_fname.c_str());
+                exit(1);
+            }
+        }
 
         if (original_fptr) {
             assert(original_function_to_npm.find(original_fptr) ==
@@ -248,6 +282,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
             va_arg(vl, size_t);
         }
     }
+
+    VERIFY(dlclose(app_handle) == 0);
 
     // Iterate over the NPM functions that this compilation unit depends on
     for (int i = 0; i < n_external_npm_functions; i++) {

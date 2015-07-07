@@ -297,12 +297,14 @@ for INPUT in ${ABS_INPUTS[@]}; do
     FIRSTPRIVATE_FILE=${NAME}.fp.${EXT}
     NPM_FILE=${NAME}.npm.${EXT}
     HARDCODED_CALLS_FILE=${NAME}.hard.${EXT}
+    ABI_FILE=${INFO_FILE_PREFIX}.abi
     NPM_CONDS_FILE=${NAME}.npm_conds.${EXT}
     FINAL_FILE=${NAME}.transformed.${EXT}
 
     echo Adding quick function declarations and bodies to $TRANSFORMED_FILE
-    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${TRANSFORMED_FILE} ${INCLUDE_QUICK_FILE} \
-        -b ${INFO_FILE_PREFIX}.quick.bodies -d ${INFO_FILE_PREFIX}.quick.decls
+    cd ${WORK_DIR} && python ${ADD_QUICK_VERSIONS} ${TRANSFORMED_FILE} \
+        ${INCLUDE_QUICK_FILE} -b ${INFO_FILE_PREFIX}.quick.bodies \
+        -d ${INFO_FILE_PREFIX}.quick.decls
 
     echo Appending OMP callbacks to ${INCLUDE_QUICK_FILE}
     cd ${WORK_DIR} && $OMP_APPENDER -m ${INFO_FILE_PREFIX}.omp.info.inserts \
@@ -335,6 +337,12 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -I${CHIMES_HOME}/src/libchimes -I${CUDA_HOME}/include $INCLUDES \
         ${CHIMES_DEF} ${DEFINES}
 
+    echo Fetching ABI information from ${HARDCODED_CALLS_FILE}
+    cd ${WORK_DIR} && ${GXX} --compile ${HARDCODED_CALLS_FILE} ${CHIMES_DEF} \
+        ${DEFINES} -o abi.o
+    cd ${WORK_DIR} && objdump -t abi.o > ${ABI_FILE}
+    cd ${WORK_DIR} && rm -f abi.o
+
     echo Setting up module initialization for ${HARDCODED_CALLS_FILE}
     cd ${WORK_DIR} && python ${MODULE_INIT} -i ${HARDCODED_CALLS_FILE} -o ${FINAL_FILE} \
         -m ${INFO_FILE_PREFIX}.module.info -r ${INFO_FILE_PREFIX}.reachable.info \
@@ -345,7 +353,7 @@ for INPUT in ${ABS_INPUTS[@]}; do
         -e ${INFO_FILE_PREFIX}.list_of_externs -n ${INFO_FILE_PREFIX}.npm.decls \
         -d ${INFO_FILE_PREFIX}.call.info -h ${INFO_FILE_PREFIX}.locs \
         -j ${INFO_FILE_PREFIX}.fptrs -ms ${INFO_FILE_PREFIX}.merge.static \
-        -md ${INFO_FILE_PREFIX}.merge.dynamic
+        -md ${INFO_FILE_PREFIX}.merge.dynamic -a ${ABI_FILE}
 
     echo Postprocessing ${FINAL_FILE}
     cd ${WORK_DIR} && ${GXX} -E -include stddef.h ${FINAL_FILE} ${CHIMES_DEF} ${DEFINES} \
@@ -385,7 +393,7 @@ else
         FILES_STR="${FILES_STR} $f"
     done
 
-    COMPILE_CMD="${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
+    COMPILE_CMD="${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -ldl -lpthread -I${CHIMES_HOME}/src/libchimes ${FILES_STR} \
         -o ${OUTPUT} ${LIB_PATHS} ${LIBS} ${GXX_FLAGS} ${INCLUDES} \
         ${LINKER_FLAGS}"
     # [[ ! $VERBOSE ]] || echo $COMPILE_CMD

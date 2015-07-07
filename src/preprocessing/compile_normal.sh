@@ -162,7 +162,7 @@ else
         OBJ_FILE_STR="${OBJ_FILE_STR} $f"
     done
 
-    ${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
+    ${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -ldl -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
         ${GXX_FLAGS} ${INCLUDES} -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 \
         -lcudart ${DEFINES}
 
