@@ -247,7 +247,7 @@ PERF_CLI_ARGS = {'Iso3D': '-x 1024 -y 1024 -z 256 -i 20',
                  'CoMD': '-N 10 -x 100 -y 20 -z 20',
                  'UTS': '-t 1 -g 20 -b 1.8 -d 80',
                  'RodiniaBackprop':       '65536',
-                 'RodiniaBfs':            '4 ' + path.join(RODINIA_DATA, 'bfs/graph1MW_6.txt'),
+                 'RodiniaBfs':            '12 ' + path.join(RODINIA_DATA, 'bfs/inputGen/graph16M.txt'),
                  'RodiniaB+tree':         'core 2 file ' + path.join(RODINIA_DATA,
                                                                      'b+tree/mil.txt') + \
                                           ' command ' + path.join(RODINIA_DATA,

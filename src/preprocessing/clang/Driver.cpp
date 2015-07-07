@@ -363,8 +363,13 @@ public:
                   func_start_line = function_starting_lines[curr_func];
               }
               assert(func_start_line != -1);
+              /*
+               * If this function is either static (i.e. not externally visible)
+               * or inline then we can't load its symbols using dlopen/dlsym.
+               */
               *dump_decls << curr_func << " " << filename << " " <<
-                  func_start_line << " ";
+                  func_start_line << " " <<
+                  (!fdecl->isExternallyVisible() || fdecl->isInlineSpecified()) << " ";
 
               if (visitor->transformsOriginal() ||
                       fdecl->getName().str() != "main") {

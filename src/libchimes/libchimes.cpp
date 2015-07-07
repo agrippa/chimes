@@ -1903,11 +1903,38 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
         *change_loc_id_ptr = this_loc_id;
     }
 
+    void *app_handle = dlopen(NULL, RTLD_LAZY);
+    assert(app_handle != NULL);
+
     // Iterate over the NPM functions defined inside this compilation unit.
     for (int i = 0; i < n_provided_npm_functions; i++) {
         std::string fname(va_arg(vl, char *));
-        void *fptr = va_arg(vl, void *);
-        void *original_fptr = va_arg(vl, void *);
+        int is_static = va_arg(vl, int);
+        std::string mangled_fname(va_arg(vl, char *));
+        std::string mangled_npm_fname(va_arg(vl, char *));
+
+        void *original_fptr, *fptr;
+        if (is_static) {
+            fptr = va_arg(vl, void *);
+            original_fptr = va_arg(vl, void *);
+        } else {
+            dlerror(); // Clear existing errors
+            original_fptr = dlsym(app_handle, mangled_fname.c_str());
+            char *ld_err;
+            if ((ld_err = dlerror()) != NULL) {
+                fprintf(stderr, "Unable to load function address for %s, %s\n",
+                        fname.c_str(), mangled_fname.c_str());
+                exit(1);
+            }
+
+            dlerror(); // Clear existing errors
+            fptr = dlsym(app_handle, mangled_npm_fname.c_str());
+            if ((ld_err = dlerror()) != NULL) {
+                fprintf(stderr, "Unable to load NPM function address for %s, %s\n",
+                        fname.c_str(), mangled_npm_fname.c_str());
+                exit(1);
+            }
+        }
 
         /*
          * original_fptr will be NULL for any functions whose addresses are not
@@ -2067,9 +2094,6 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
 #endif
     }
 
-    void *app_handle = dlopen(NULL, RTLD_LAZY);
-    assert(app_handle != NULL);
-
     // Parse call tree from arguments.
     for (int i = 0; i < nfunctions; i++) {
         char *func_name = va_arg(vl, char *);
@@ -2112,6 +2136,8 @@ void init_module(size_t module_id, int n_contains_mappings, int nfunctions,
             }
         }
     }
+
+    VERIFY(dlclose(app_handle) == 0);
 
     // Parse checkpoint causes from the arguments
     for (int i = 0; i < nvars; i++) {
@@ -3388,7 +3414,6 @@ static bool should_hash(size_t alloc_len, size_t desired_checkpoint_size,
  * reached beyond the maximum inter-checkpoint latency.
  */
 bool within_overhead_bounds() {
-    fprintf(stderr, "checking within overheads, disable_throttling=%d\n", disable_throttling);
     if (disable_throttling) {
         return true;
     }
@@ -3406,7 +3431,6 @@ bool within_overhead_bounds() {
     bool should_checkpoint = (curr_percent_overhead < target_time_overhead ||
             perf_profile::current_time_ns() - last_checkpoint >
                 max_checkpoint_latency_ns);
-    fprintf(stderr, "should checkpoint? %d\n", should_checkpoint);
     return should_checkpoint;
 }
 
@@ -3611,7 +3635,6 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
         bool should_abort;
         checkpointing_thread = wait_for_all_threads(&enter_time,
                 &curr_ckpt, &should_abort);
-        fprintf(stderr, "should_abort=%d checkpointing_thread=%d checkpoint_thread_running=%d\n", should_abort, checkpointing_thread, checkpoint_thread_running);
         if (should_abort) {
 
             VERIFY(pthread_mutex_unlock(&thread_count_mutex) == 0);
@@ -3625,7 +3648,6 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
         } else if (checkpointing_thread && checkpoint_thread_running == 0) {
             VERIFY(pthread_mutex_lock(&checkpoint_mutex) == 0);
 
-            fprintf(stderr, "locked, checkpoint_thread_running=%d\n", checkpoint_thread_running);
             if (checkpoint_thread_running == 1) {
                 VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
             } else {
@@ -3918,7 +3940,6 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
                 last_checkpoint = perf_profile::current_time_ns();
 
-                fprintf(stderr, "Signalling checkpoint thread\n");
                 VERIFY(pthread_cond_signal(&checkpoint_cond) == 0);
                 VERIFY(pthread_mutex_unlock(&checkpoint_mutex) == 0);
 
