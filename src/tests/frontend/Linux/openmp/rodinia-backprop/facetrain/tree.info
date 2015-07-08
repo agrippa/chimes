@@ -1,2 +1,0 @@
-backprop_face _Z13backprop_facev 0 MAY bpnn_create 20 9 load 22 3 bpnn_train_kernel 25 3 bpnn_free 26 3
-setup _Z5setupiPPc 0 MAY bpnn_initialize 42 3 backprop_face 43 3

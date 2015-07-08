@@ -1,0 +1,404 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 8 len=7 seconds_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 41 6 len=10 write_data_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 189 25 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 189 36 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 210 25 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 210 36 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 231 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 231 57 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 232 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 232 57 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 240 24 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 240 35 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 272 24 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 272 35 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 304 28 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 304 55 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 305 28 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 305 55 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 327 37 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 327 72 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 328 41 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 328 76 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 329 34 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 329 83 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 330 32 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 330 79 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 343 28 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 343 39 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 344 32 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 344 43 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 357 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 357 42 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 358 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 358 42 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 365 25 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 365 53 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 366 24 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 366 52 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 404 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 404 40 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 426 32 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 426 43 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 450 32 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 450 43 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 471 37 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 471 48 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 506 30 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 506 41 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 536 34 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 536 45 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 587 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 587 12 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 640 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 640 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 642 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 642 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 643 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 643 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 644 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 644 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 645 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 645 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 647 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 647 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 648 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 648 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 649 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 649 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 650 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 650 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 651 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 651 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 659 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 659 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 661 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 661 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 662 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 662 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 663 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 663 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 665 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 665 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 666 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 666 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 668 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 668 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 669 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 669 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 671 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 671 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 673 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 673 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 675 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 675 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 677 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 677 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 679 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 679 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 680 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 680 16 , 762051829673679220UL
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 149 2 alias_group_changed(____alias_loc_id_9); 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 189 25 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 189 36 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 210 25 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 210 36 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 231 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 231 57 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 232 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 232 57 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 240 24 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 240 35 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 272 24 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 272 35 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 304 28 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 304 55 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 305 28 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 305 55 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 327 37 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 327 72 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 328 41 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 328 76 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 329 34 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 329 83 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 330 32 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 330 79 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 343 28 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 343 39 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 344 32 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 344 43 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 357 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 357 42 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 358 31 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 358 42 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 365 25 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 365 53 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 366 24 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 366 52 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 404 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 404 40 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 426 32 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 426 43 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 450 32 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 450 43 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 471 37 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 471 48 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 506 30 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 506 41 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 536 34 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 536 45 , 762051829673679220UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 587 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 587 12 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 640 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 640 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 642 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 642 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 643 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 643 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 644 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 644 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 645 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 645 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 647 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 647 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 648 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 648 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 649 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 649 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 650 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 650 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 651 2 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 651 11 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 659 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 659 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 661 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 661 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 662 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 662 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 663 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 663 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 665 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 665 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 666 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 666 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 668 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 668 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 669 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 669 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 671 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 671 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 673 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 673 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 675 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 675 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 677 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 677 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 679 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 679 16 , 762051829673679220UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 680 3 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 680 16 , 762051829673679220UL
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 30 110 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_11, ____chimes_did_disable0, false); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 18 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 31 1 rm_stack(false, 0UL, "seconds", &____must_manage_seconds, ____alias_loc_id_11, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 66 3 rm_stack(false, 0UL, "write_data", &____must_manage_write_data, ____alias_loc_id_12, ____chimes_did_disable1, false); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 49 18 const int ____chimes_did_disable1 = new_stack((void *)(&write_data), "write_data", &____must_manage_write_data, 9, 0, (size_t)(762051829673678567UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(762051829673678571UL), (size_t)(762051829673678572UL), (size_t)(0UL), (size_t)(762051829673678574UL), (size_t)(762051829673678575UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 106 1 rm_stack(false, 0UL, "write_data", &____must_manage_write_data, ____alias_loc_id_12, ____chimes_did_disable1, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 145 62 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 165 58 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 172 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 682 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 34 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 1, (size_t)(0UL), (size_t)(762051829673680241UL), "main|argv|0", (int *)0x0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 683 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_13, ____chimes_did_disable2, false); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 19 const int ____chimes_did_disable0 = new_stack((void *)(&seconds), "seconds", &____must_manage_seconds, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 127 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 27 5  struct timeval tp; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 27 22 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 28 5  struct timezone tzp; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 28 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 29 5  int i;  i = (gettimeofday(&tp, &tzp)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 29 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 30 6 double ____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 30 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 49 19 const int ____chimes_did_disable1 = new_stack((void *)(&write_data), "write_data", &____must_manage_write_data, 9, 0, (size_t)(762051829673678567UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(762051829673678571UL), (size_t)(762051829673678572UL), (size_t)(0UL), (size_t)(762051829673678574UL), (size_t)(762051829673678575UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 49 356 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 55 2 FILE *fid; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 55 11 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 56 2 int i; int j; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 56 9 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 57 2 char c; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 57 8 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 35 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 1, (size_t)(0UL), (size_t)(762051829673680241UL), "main|argv|0", (int *)0, "i8**", (void *)(&argv), (size_t)8, 1, 0, 0); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 242 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 121 2 int i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 121 7 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 2 int frames_processed; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 22 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 2  public_struct pub; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 2  private_struct priv[51]; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 139 2 char *video_file_name; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 139 23 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 2  avi_t *d_frames;  d_frames = ((avi_t *)AVI_open_input_file(video_file_name, 1)) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 67 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 145 7 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 145 31 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 165 4 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 165 28 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 168 2 int omp_num_threads; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 168 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 172 6 int ____chimes_ret_var_3; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 172 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 181 5  double start_time;  start_time = (seconds()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 181 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 610 5  double end_time;  end_time = (seconds()) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 610 32 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 682 6 int ____chimes_ret_var_4; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 682 30 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 21  call_lbl_3: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 6  call_lbl_4: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 149 43  call_lbl_7: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 150 2  call_lbl_8: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 2  call_lbl_9: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 155 5  call_lbl_10: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 9  call_lbl_44: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 559 3  call_lbl_46: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 9  call_lbl_47: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 577 4  call_lbl_48: 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 598 5  call_lbl_54: 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 8 len=7 seconds_quick
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 27 6 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 27 23 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 126  ; struct timeval tp;
+# 26
+ if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i64 }", (void *)(&tp), (size_t)16, 0, 1, 0);  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 41 6 len=10 write_data_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 49 355  ; 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 5 len=4 main_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 55 (____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({  calling((void*)AVI_open_input_file, 3, ____alias_loc_id_3, 762051829673680011UL, 2, (size_t)(762051829673680001UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_3); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 93 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 19 (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({  calling((void*)AVI_print_error, 4, ____alias_loc_id_0, 0UL, 1, (size_t)(762051829673680282UL)); (AVI_print_error)((char *)"Error with AVI_open_input_file"); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_0); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 76 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 149 69 (____chimes_does_checkpoint_AVI_video_frames_npm ? ( ({  calling((void*)AVI_video_frames, 7, ____alias_loc_id_9, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_frames)(d_frames); }) ) : (({ calling_npm("AVI_video_frames", ____alias_loc_id_9); (*____chimes_extern_func_AVI_video_frames)(d_frames); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 149 94 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 150 32 (____chimes_does_checkpoint_AVI_video_height_npm ? ( ({  calling((void*)AVI_video_height, 8, ____alias_loc_id_7, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_height)(d_frames); }) ) : (({ calling_npm("AVI_video_height", ____alias_loc_id_7); (*____chimes_extern_func_AVI_video_height)(d_frames); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 150 57 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 32 (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({  calling((void*)AVI_video_width, 9, ____alias_loc_id_4, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_4); (*____chimes_extern_func_AVI_video_width)(d_frames); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 56 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 155 19 (____chimes_does_checkpoint_AVI_close_npm ? ( ({  calling((void*)AVI_close, 10, ____alias_loc_id_1, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_1); (*____chimes_extern_func_AVI_close)(d_frames); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 155 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 181 40 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 181 48 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 42 (____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({  calling((void*)AVI_open_input_file, 44, ____alias_loc_id_10, 762051829673680011UL, 2, (size_t)(762051829673680001UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_10); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 80 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 559 31 (____chimes_does_checkpoint_get_frame_npm ? ( ({  calling((void*)get_frame, 46, ____alias_loc_id_8, 762051829673679220UL, 5, (size_t)(762051829673680011UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_frame)(d_frames, pub.frame_no, 0, 0, 1); }) ) : (({ calling_npm("get_frame", ____alias_loc_id_8); (*____chimes_extern_func_get_frame)(d_frames, pub.frame_no, 0, 0, 1); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 563 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 23 (____chimes_does_checkpoint_AVI_close_npm ? ( ({  calling((void*)AVI_close, 47, ____alias_loc_id_5, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_5); (*____chimes_extern_func_AVI_close)(d_frames); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 41 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 577 18 (____chimes_does_checkpoint_kernel_npm ? ( ({  calling((void*)kernel, 48, ____alias_loc_id_6, 0UL, 2, (size_t)(762051829673678596UL), (size_t)(762051829673678597UL)); (kernel)(pub, priv[i]); }) ) : (({ calling_npm("kernel", ____alias_loc_id_6); (*____chimes_extern_func_kernel)(pub, priv[i]); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 578 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 598 19 checkpoint_transformed(54, ____alias_loc_id_2)
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 598 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 610 36 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 610 44 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 121 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 121 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 22 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 20 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 26 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 139 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 139 23 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 18 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 168 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 168 21 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 181 6 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 181 23 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 237  ; double start_time;
+# 114
+int omp_num_threads;
+# 114
+avi_t *d_frames;
+# 114
+char *video_file_name;
+# 114
+private_struct priv[51];
+# 114
+public_struct pub;
+# 114
+int frames_processed;
+# 114
+int i;
+# 114
+ register_stack_vars(8, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "main|d_frames|0", (int *)0x0, "%struct.avi_t*", (void *)(&d_frames), (size_t)8, 1, 0, 0, "main|video_file_name|0", (int *)0x0, "i8*", (void *)(&video_file_name), (size_t)8, 1, 0, 0, "main|priv|0", (int *)0x0, "[51 x %struct._private_struct]", (void *)(priv), (size_t)8160, 0, 0, 0, "main|pub|0", (int *)0x0, "%struct._public_struct = type { i32, i32, i32, float, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32, float*, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 }", (void *)(&pub), (size_t)384, 0, 1, 11, (int)__builtin_offsetof(struct _public_struct, d_endoRow), (int)__builtin_offsetof(struct _public_struct, d_endoCol), (int)__builtin_offsetof(struct _public_struct, d_tEndoRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEndoColLoc), (int)__builtin_offsetof(struct _public_struct, d_endoT), (int)__builtin_offsetof(struct _public_struct, d_epiRow), (int)__builtin_offsetof(struct _public_struct, d_epiCol), (int)__builtin_offsetof(struct _public_struct, d_tEpiRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEpiColLoc), (int)__builtin_offsetof(struct _public_struct, d_epiT), (int)__builtin_offsetof(struct _public_struct, d_frame), "main|frames_processed|0", (int *)0x0, "i32", (void *)(&frames_processed), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 8 len=7 seconds_resumable
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 27 6 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 27 23 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 26 126  ; struct timeval tp;
+# 26
+ if (____must_checkpoint_seconds_tp_0) { register_stack_vars(1, "seconds|tp|0", &____must_checkpoint_seconds_tp_0, "%struct.timeval = type { i64, i64 }", (void *)(&tp), (size_t)16, 0, 1, 0);  }  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 41 6 len=10 write_data_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 49 355  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 5 len=4 main_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 55 (____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({  calling((void*)AVI_open_input_file, 3, ____alias_loc_id_3, 762051829673680011UL, 2, (size_t)(762051829673680001UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_3); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 93 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 19 (____chimes_does_checkpoint_AVI_print_error_npm ? ( ({  char * ____chimes_arg2;  if (!____chimes_replaying) { ____chimes_arg2 = ((char *)"Error with AVI_open_input_file");  }  calling((void*)AVI_print_error, 4, ____alias_loc_id_0, 0UL, 1, (size_t)(762051829673680282UL)); (AVI_print_error)(____chimes_arg2); }) ) : (({ calling_npm("AVI_print_error", ____alias_loc_id_0); (*____chimes_extern_func_AVI_print_error)((char *) "Error with AVI_open_input_file"); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 144 76 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 149 69 (____chimes_does_checkpoint_AVI_video_frames_npm ? ( ({  calling((void*)AVI_video_frames, 7, ____alias_loc_id_9, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_frames)(d_frames); }) ) : (({ calling_npm("AVI_video_frames", ____alias_loc_id_9); (*____chimes_extern_func_AVI_video_frames)(d_frames); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 149 94 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 150 32 (____chimes_does_checkpoint_AVI_video_height_npm ? ( ({  calling((void*)AVI_video_height, 8, ____alias_loc_id_7, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_height)(d_frames); }) ) : (({ calling_npm("AVI_video_height", ____alias_loc_id_7); (*____chimes_extern_func_AVI_video_height)(d_frames); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 150 57 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 32 (____chimes_does_checkpoint_AVI_video_width_npm ? ( ({  calling((void*)AVI_video_width, 9, ____alias_loc_id_4, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_video_width)(d_frames); }) ) : (({ calling_npm("AVI_video_width", ____alias_loc_id_4); (*____chimes_extern_func_AVI_video_width)(d_frames); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 151 56 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 155 19 (____chimes_does_checkpoint_AVI_close_npm ? ( ({  calling((void*)AVI_close, 10, ____alias_loc_id_1, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_1); (*____chimes_extern_func_AVI_close)(d_frames); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 155 37 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 181 40 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 181 48 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 42 (____chimes_does_checkpoint_AVI_open_input_file_npm ? ( ({  calling((void*)AVI_open_input_file, 44, ____alias_loc_id_10, 762051829673680011UL, 2, (size_t)(762051829673680001UL), (size_t)(0UL)); (AVI_open_input_file)(video_file_name, 1); }) ) : (({ calling_npm("AVI_open_input_file", ____alias_loc_id_10); (*____chimes_extern_func_AVI_open_input_file)(video_file_name, 1); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 557 80 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 559 31 (____chimes_does_checkpoint_get_frame_npm ? ( ({  int ____chimes_arg10;  if (!____chimes_replaying) { ____chimes_arg10 = (pub.frame_no);  }  calling((void*)get_frame, 46, ____alias_loc_id_8, 762051829673679220UL, 5, (size_t)(762051829673680011UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL)); (get_frame)(d_frames, ____chimes_arg10, 0, 0, 1); }) ) : (({ calling_npm("get_frame", ____alias_loc_id_8); (*____chimes_extern_func_get_frame)(d_frames, pub.frame_no, 0, 0, 1); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 563 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 23 (____chimes_does_checkpoint_AVI_close_npm ? ( ({  calling((void*)AVI_close, 47, ____alias_loc_id_5, 0UL, 1, (size_t)(762051829673680011UL)); (AVI_close)(d_frames); }) ) : (({ calling_npm("AVI_close", ____alias_loc_id_5); (*____chimes_extern_func_AVI_close)(d_frames); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 564 41 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 577 18 (____chimes_does_checkpoint_kernel_npm ? ( ({  public_struct ____chimes_arg15;  private_struct ____chimes_arg16;  if (!____chimes_replaying) { ____chimes_arg15 = (pub); ____chimes_arg16 = (priv[i]);  }  calling((void*)kernel, 48, ____alias_loc_id_6, 0UL, 2, (size_t)(762051829673678596UL), (size_t)(762051829673678597UL)); (kernel)(____chimes_arg15, ____chimes_arg16); }) ) : (({ calling_npm("kernel", ____alias_loc_id_6); (*____chimes_extern_func_kernel)(pub, priv[i]); })))
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 578 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 598 19 checkpoint_transformed(54, ____alias_loc_id_2)
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 598 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 610 36 ({ calling_npm("seconds", 0); seconds_npm(); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 610 44 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 121 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 121 7 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 122 22 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 125 20 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 126 26 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 139 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 139 23 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 3 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 142 18 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 168 2 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 168 21 
+RemoveTextBegin /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 181 6 
+RemoveTextEnd /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 181 23 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/heartwall/main.c 114 237  ; double start_time;
+# 114
+int omp_num_threads;
+# 114
+avi_t *d_frames;
+# 114
+char *video_file_name;
+# 114
+private_struct priv[51];
+# 114
+public_struct pub;
+# 114
+int frames_processed;
+# 114
+int i;
+# 114
+ register_stack_vars(8, "main|start_time|0", (int *)0x0, "double", (void *)(&start_time), (size_t)8, 0, 0, 0, "main|omp_num_threads|0", (int *)0x0, "i32", (void *)(&omp_num_threads), (size_t)4, 0, 0, 0, "main|d_frames|0", (int *)0x0, "%struct.avi_t*", (void *)(&d_frames), (size_t)8, 1, 0, 0, "main|video_file_name|0", (int *)0x0, "i8*", (void *)(&video_file_name), (size_t)8, 1, 0, 0, "main|priv|0", (int *)0x0, "[51 x %struct._private_struct]", (void *)(priv), (size_t)8160, 0, 0, 0, "main|pub|0", (int *)0x0, "%struct._public_struct = type { i32, i32, i32, float, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32*, i32*, i32*, i32*, float*, i32, i32, i32, float*, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32, i32 }", (void *)(&pub), (size_t)384, 0, 1, 11, (int)__builtin_offsetof(struct _public_struct, d_endoRow), (int)__builtin_offsetof(struct _public_struct, d_endoCol), (int)__builtin_offsetof(struct _public_struct, d_tEndoRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEndoColLoc), (int)__builtin_offsetof(struct _public_struct, d_endoT), (int)__builtin_offsetof(struct _public_struct, d_epiRow), (int)__builtin_offsetof(struct _public_struct, d_epiCol), (int)__builtin_offsetof(struct _public_struct, d_tEpiRowLoc), (int)__builtin_offsetof(struct _public_struct, d_tEpiColLoc), (int)__builtin_offsetof(struct _public_struct, d_epiT), (int)__builtin_offsetof(struct _public_struct, d_frame), "main|frames_processed|0", (int *)0x0, "i32", (void *)(&frames_processed), (size_t)4, 0, 0, 0, "main|i|0", (int *)0x0, "i32", (void *)(&i), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } case(4): { goto call_lbl_4; } case(7): { goto call_lbl_7; } case(8): { goto call_lbl_8; } case(9): { goto call_lbl_9; } case(10): { goto call_lbl_10; } case(44): { goto call_lbl_44; } case(46): { goto call_lbl_46; } case(47): { goto call_lbl_47; } case(48): { goto call_lbl_48; } case(54): { goto call_lbl_54; } default: { chimes_error(); } }  }  

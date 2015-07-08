@@ -1,0 +1,8 @@
+206 22 324 malloc 0 1 box_str
+272 25 663 malloc 0 1 FOUR_VECTOR
+281 20 725 malloc
+287 25 748 malloc 0 1 FOUR_VECTOR
+341 2 663 free
+342 2 725 free
+343 2 748 free
+344 2 324 free

@@ -1,1 +1,0 @@
-112 112 #pragma omp parallel for private(i, j, k) private(first_i, rA, fA) private(pointer, first_j, rB, qB) private(r2, u2, fs, vij, fxij, fyij, fzij, d)

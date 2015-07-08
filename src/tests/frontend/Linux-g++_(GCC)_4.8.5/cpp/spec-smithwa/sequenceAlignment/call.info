@@ -1,0 +1,50 @@
+gettimeofday seconds 26 13 0 1 2
+printf main 70 7 0 288 89
+exit main 72 5 0 0
+atoi main 78 13 0 89
+printf main 81 2 0 289
+exit main 83 7 0 0
+seconds main 87 23 0
+getUserParameters main 99 3 0
+printf main 102 5 0 290
+printf main 103 5 0 291
+printf main 126 5 0 292
+checkpoint main 130 3 0
+getSeconds main 133 15 0
+genSimMatrix main 137 15 127 0 0 0 0 0 0 0
+printf main 141 5 0 293
+checkpoint main 145 3 0
+genScalData main 148 13 139 0 127 0 0 0
+printf main 151 5 0 291
+dispElapsedTime main 154 3 0 0
+checkpoint main 157 3 0
+verifyData main 163 3 0 127 139 0 0
+printf main 171 5 0 295
+getSeconds main 174 15 0
+pairwiseAlign main 178 7 161 139 127 0 0 0
+printf main 182 5 0 296
+dispElapsedTime main 185 3 0 0
+checkpoint main 188 3 0
+printf main 196 5 0 295
+getSeconds main 199 15 0
+scanBackward main 203 7 179 161 0 0 0
+printf main 206 5 0 293
+dispElapsedTime main 209 3 0 0
+checkpoint main 212 3 0
+verifyAlignment main 218 3 0 127 179 0
+printf main 226 5 0 299
+getSeconds main 229 15 0
+mergeAlignment main 233 7 200 179 0 0
+printf main 236 5 0 300
+dispElapsedTime main 239 3 0 0
+checkpoint main 242 3 0
+verifyMergeAlignment main 248 3 0 127 200 0
+freeA main 255 7 161 161
+freeB main 256 7 179 179
+freeC main 257 7 200 200
+freeSimMatrix main 258 3 223 127
+freeSeqData main 259 3 225 139
+seconds main 265 21 0
+printf main 266 3 0 301 0
+printf main 269 5 0 290
+printf main 270 5 0 296

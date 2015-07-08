@@ -1,0 +1,5 @@
+bots_print_usage
+bots_get_params_common 0 280
+bots_get_params 0 300
+bots_set_info
+main 0 390

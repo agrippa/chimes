@@ -1,2 +1,0 @@
-/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 38 2 : { 19, 20, 21, 449 } {  } call:BFSGraph {  }
-/scratch/jmg3/rodinia_3.0/openmp/bfs/bfs.cpp 162 9 : { 7, 39, 40, 41, 42, 43, 44, 45, 46, 47, 50, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 140, 153, 158, 163, 208, 407, 451 } {  } call:checkpoint {  }

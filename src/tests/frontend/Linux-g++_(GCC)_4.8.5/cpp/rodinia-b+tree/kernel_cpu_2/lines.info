@@ -1,0 +1,3 @@
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 159 10 : { 16, 18, 21, 22, 433, 434, 435, 436, 439, 440 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 92 10 : { 15, 19, 20 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/b+tree/kernel/kernel_cpu_2.c 71 10 : { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 } {  } call:get_time {  }

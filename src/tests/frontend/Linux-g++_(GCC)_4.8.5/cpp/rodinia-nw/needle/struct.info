@@ -1,0 +1,2 @@
+timeval 128 0 tv_sec "long int" tv_usec "long int"
+timezone 64 0 tz_minuteswest "int" tz_dsttime "int"

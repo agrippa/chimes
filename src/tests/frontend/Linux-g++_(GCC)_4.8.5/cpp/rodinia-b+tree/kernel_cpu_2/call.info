@@ -1,0 +1,8 @@
+get_time kernel_cpu_2 71 10 0
+get_time kernel_cpu_2 92 10 0
+get_time kernel_cpu_2 159 10 0
+printf kernel_cpu_2 165 2 0 444
+printf kernel_cpu_2 167 2 0 445 0 0
+printf kernel_cpu_2 168 2 0 445 0 0
+printf kernel_cpu_2 170 2 0 447
+printf kernel_cpu_2 171 2 0 448 0

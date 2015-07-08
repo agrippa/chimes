@@ -1,3 +1,0 @@
-1377 1377 #pragma omp parallel
-1419 1419 #pragma omp barrier
-1437 1437 #pragma omp barrier

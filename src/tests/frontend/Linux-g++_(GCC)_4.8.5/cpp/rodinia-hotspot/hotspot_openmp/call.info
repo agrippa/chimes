@@ -1,0 +1,41 @@
+gettimeofday seconds 25 13 0 1 2
+single_iteration compute_tran_temp 163 3 0 953 955 956 0 0 0 0 0 0 0
+checkpoint compute_tran_temp 166 9 0
+fprintf fatal 177 2 0 962 1237 968
+exit fatal 178 2 0 0
+fopen read_input 188 7 995 1042 1238
+fatal read_input 189 12 0 1239
+fgets read_input 193 3 1012 979 0 995
+feof read_input 194 7 0 995
+fatal read_input 194 18 0 1240
+sscanf read_input 196 8 0 979 1241 980
+fatal read_input 196 41 0 1242
+fclose read_input 201 2 0 995
+fprintf usage 206 2 0 962 1243 1061
+fprintf usage 207 2 0 962 1244
+fprintf usage 208 2 0 962 1245
+fprintf usage 209 2 0 962 1246
+fprintf usage 210 2 0 962 1247
+fprintf usage 211 2 0 962 1248
+fprintf usage 212 2 0 962 1249
+exit usage 213 2 0 0
+usage main 223 18 0 0 1225
+atoi main 225 19 0 1118
+atoi main 226 16 0 1118
+atoi main 227 15 0 1118
+atoi main 228 22 0 1118
+usage main 228 44 0 0 1225
+calloc main 233 20 1152 0 0
+calloc main 234 21 1159 0 0
+calloc main 235 22 1166 0 0
+fatal main 236 24 0 1250
+read_input main 242 2 0 1152 0 0 1118
+read_input main 243 2 0 1159 0 0 1118
+seconds main 245 25 0
+printf main 247 2 0 1251
+compute_tran_temp main 248 2 0 1166 0 1152 1159 0 0
+printf main 249 2 0 1252
+seconds main 251 23 0
+printf main 252 5 0 1253 0
+free main 264 2 0 1152
+free main 265 2 0 1159

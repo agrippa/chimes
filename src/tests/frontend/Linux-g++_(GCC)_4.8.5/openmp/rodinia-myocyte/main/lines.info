@@ -1,0 +1,13 @@
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 229 10 : { 39, 40, 42, 48 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 129 10 : { 26, 27, 28 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 385 9 : { 33, 36, 37 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 358 10 : { 32, 36 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 293 10 : { 31, 36 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 313 13 : { 38 } {  } call:checkpoint {  }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 341 9 : { 36, 38 } {  } call:checkpoint {  }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 269 10 : { 30, 35, 36, 37, 45, 46, 47, 54, 201, 205, 347, 354 } {  } call:get_time {  }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 277 3 : { 31, 36 } {  } call:read { read { 428, 633 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 286 3 : { 31, 36 } {  } call:read { read { 356, 634 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 303 13 : { 32, 36 } {  } call:solver { solver { 201, 349, 356 } }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 322 9 : { 32, 38 } {  } call:checkpoint {  }
+/scratch/jmg3/rodinia_3.0/openmp/myocyte/main.c 328 13 : { 36, 38 } {  } call:solver { solver { 201, 349, 356 } }

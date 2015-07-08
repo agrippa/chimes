@@ -1,0 +1,1 @@
+325 325 #pragma omp parallel for private(i, status) shared(y, x, xmax, params, mode)

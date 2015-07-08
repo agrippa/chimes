@@ -1,0 +1,8 @@
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 205 9 : { 49, 50, 52, 56, 192 } {  } call:rewind { rewind { 317 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 208 17 : { 52, 53, 56, 62, 345 } {  } call:strtok { strtok { 56, 327, 468 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 210 51 : { 52, 53, 62, 345 } {  } call:strtok { strtok { 338, 465, 474 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 189 9 : { 43, 44, 45, 46, 47, 48, 51, 54, 55, 56, 57, 58, 59, 61, 317, 460 } {  } call:rewind { rewind { 317 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 191 17 : { 56 } {  } call:strtok { strtok { 56, 255, 468 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 193 24 : { 54 } {  } call:strtok { strtok { 259, 465, 474 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 224 9 : { 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 63, 192, 345, 460 } {  } call:cluster { cluster { 51, 192 } }
+/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans.c 187 17 : { 43, 44, 45, 46, 47, 48, 51, 54, 55, 56, 57, 58, 59, 61, 317, 460 } {  } call:strtok { strtok { 56, 238, 468 } }
