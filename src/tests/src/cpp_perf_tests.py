@@ -39,10 +39,10 @@ if __name__ == '__main__':
                       CONFIG)
 
     PERF_FILENAME = get_machine_name() + '.cpp.perf'
-    if not CONFIG.quiet and os.path.isfile(PERF_FILE):
+    if not CONFIG.quiet and os.path.isfile(PERF_FILENAME):
         print()
         print('Previous single-threaded performance results:')
         print('=============================================')
-        fp = open(PERF_FILE)
+        fp = open(PERF_FILENAME)
         print(fp.read())
         fp.close()
