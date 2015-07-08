@@ -3,11 +3,9 @@ from os import path
 import sys
 
 from common import PerfTest, RuntimeTest, parse_argv, CHIMES_HOME, \
-         run_runtime_test, cleanup_runtime_files, run_perf_test, is_rodinia_supported, is_spec_supported
-from shared_tests import ALL_RODINIA_RUNTIME_TESTS, ALL_SPEC_RUNTIME_TESTS, \
-         MISC_CPP_RUNTIME_TESTS, RODINIA_DATA, RODINIA_HOME, \
-         SPEC_BOTSALGN_ROOT, SPEC_BOTSSPAR_ROOT, SPEC_SMITHWA_ROOT, \
-         SPEC_KDTREE_ROOT, PERF_CLI_ARGS
+         run_runtime_test, cleanup_runtime_files, run_perf_test, \
+         is_rodinia_supported, is_spec_supported
+from shared_tests import MISC_CPP_RUNTIME_TESTS, PERF_CLI_ARGS
 from exec_time_parsers import EXEC_TIME_PARSERS
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
@@ -20,12 +18,16 @@ TESTS = []
 for test in MISC_CPP_RUNTIME_TESTS:
     TESTS.append(PerfTest(test, PERF_CLI_ARGS[test.name], EXEC_TIME_PARSERS[test.name]))
 
-for test in ALL_RODINIA_RUNTIME_TESTS:
-    TESTS.append(PerfTest(test, PERF_CLI_ARGS[test.name], EXEC_TIME_PARSERS[test.name]))
+if is_rodinia_supported():
+    from rodinia_tests import ALL_RODINIA_RUNTIME_TESTS
+    for test in ALL_RODINIA_RUNTIME_TESTS:
+        TESTS.append(PerfTest(test, PERF_CLI_ARGS[test.name], EXEC_TIME_PARSERS[test.name]))
 
-for test in ALL_SPEC_RUNTIME_TESTS:
-    new_test = PerfTest(test, PERF_CLI_ARGS[test.name], EXEC_TIME_PARSERS[test.name])
-    TESTS.append(new_test)
+if is_spec_supported():
+    from spec_tests import ALL_SPEC_RUNTIME_TESTS
+    for test in ALL_SPEC_RUNTIME_TESTS:
+        new_test = PerfTest(test, PERF_CLI_ARGS[test.name], EXEC_TIME_PARSERS[test.name])
+        TESTS.append(new_test)
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)
