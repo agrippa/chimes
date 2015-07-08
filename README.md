@@ -45,15 +45,15 @@ http://clang.llvm.org/docs/InternalsManual.html#include-clang-basic-attr-td
 1. Add a definition of the attribute in clang/include/clang/Basic/Attr.td. I've
    added the following attributes:
 
-def NoCheckpoint : InheritableAttr {
-  let Spellings = [GCC<"nocheckpoint">, Declspec<"nocheckpoint">];
-  let Documentation = [Undocumented];
-}
-
-def Allocator : InheritableAttr {
-  let Spellings = [GCC<"allocator">, Declspec<"allocator">];
-  let Documentation = [Undocumented];
-}
+        def NoCheckpoint : InheritableAttr {
+          let Spellings = [GCC<"nocheckpoint">, Declspec<"nocheckpoint">];
+          let Documentation = [Undocumented];
+        }
+        
+        def Allocator : InheritableAttr {
+          let Spellings = [GCC<"allocator">, Declspec<"allocator">];
+          let Documentation = [Undocumented];
+        }
 
 2. Add boiler plate to clang/lib/Sema/SemaDeclAttr.cpp for actually handling
    that attribute. The attributes I've added generally just serve as markers for
@@ -61,12 +61,12 @@ def Allocator : InheritableAttr {
    clang. I just use handleSimpleAttribute in the massive attribute switch
    statement in ProcessDeclAttribute:
 
-  case AttributeList::AT_NoCheckpoint:
-    handleSimpleAttribute<NoCheckpointAttr>(S, D, Attr);
-    break;
-  case AttributeList::AT_Allocator:
-    handleSimpleAttribute<AllocatorAttr>(S, D, Attr);
-    break;
+        case AttributeList::AT_NoCheckpoint:
+          handleSimpleAttribute<NoCheckpointAttr>(S, D, Attr);
+          break;
+        case AttributeList::AT_Allocator:
+          handleSimpleAttribute<AllocatorAttr>(S, D, Attr);
+          break;
 
 3. That's all of the changes to the core of clang, but I generally also need to
    check if these attributes are applied to an element from a clang tool. As far

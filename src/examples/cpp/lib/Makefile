@@ -1,16 +1,5 @@
-ifneq ($(wildcard $(CUDA_HOME)/lib64),)
-	CUDA_LIB_PATH = ${CUDA_HOME}/lib64
-else
-	CUDA_LIB_PATH = ${CUDA_HOME}/lib
-endif
-
-all: common_cuda.o
-	g++ -I../include common_cuda.o -shared \
-        -o libcommon2d.so -L${CUDA_LIB_PATH} -lcudart
-
-common_cuda.o: common_cuda.cu
-	nvcc -arch=sm_20 -I../include --compile -Xcompiler -fPIC common_cuda.cu \
-			   -o common_cuda.o
+all:
+	./build_common_cuda.sh
 
 clean:
 	rm -f common_cuda.o libcommon2d.so

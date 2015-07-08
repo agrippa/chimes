@@ -1,0 +1,22 @@
+fopen save_text 9 16 27 89 417
+fprintf save_text 11 9 0 387 419 89
+exit save_text 12 9 0 0
+fprintf save_text 17 13 0 27 420 0 0 0
+fprintf save_text 20 9 0 27 421
+fclose save_text 23 5 0 27
+memset init_data 39 5 0 225 0 0
+fprintf usage 49 5 0 387 422 241
+exit usage 52 5 0 0
+default_config setup_config 75 5 0 406
+getopt setup_config 77 17 0 0 408 424
+atoi setup_config 80 28 0 308
+atoi setup_config 83 28 0 308
+atoi setup_config 86 32 0 308
+realloc setup_config 95 40 336 336 0
+parse_source setup_config 97 17 0 308 336
+atoi setup_config 101 32 0 308
+atoi setup_config 104 31 0 308
+atoi setup_config 107 40 0 308
+fprintf setup_config 113 17 0 387 419 0
+usage setup_config 115 17 0 408
+getNumCUDADevices setup_config 120 23 0

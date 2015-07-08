@@ -154,6 +154,16 @@ if [[ $COMPILE == 1 && ${#INPUTS[@]} != 1 ]]; then
     exit 1
 fi
 
+LCHIMES=
+if [[ -f ${CHIMES_HOME}/src/libchimes/libchimes.so ]]; then
+    LCHIMES=-lchimes
+elif [[ -f ${CHIMES_HOME}/src/libchimes/libchimes_cpp.so ]]; then
+    LCHIMES=-lchimes_cpp
+else
+    echo Unable to find lchimes
+    exit 1
+fi
+
 if [[ $PROFILE == 1 && $DUMMY == 1 ]]; then
     LINKER_FLAGS="${CHIMES_HOME}/src/libchimes/libchimes_dummy.a -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 -lcudart -L${CHIMES_HOME}/src/libchimes/xxhash -lxxhash ${LINKER_FLAGS}"
     GXX_FLAGS="${GXX_FLAGS} -pg"
@@ -163,7 +173,7 @@ elif [[ $PROFILE == 1 ]]; then
 elif [[ $DUMMY == 1 ]]; then
     LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes_dummy ${LINKER_FLAGS}"
 else
-    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes -lchimes ${LINKER_FLAGS}"
+    LINKER_FLAGS="-L${CHIMES_HOME}/src/libchimes ${LCHIMES} ${LINKER_FLAGS}"
 fi
 
 if [[ $ENABLE_OMP == 1 ]]; then

@@ -5,8 +5,8 @@ functionality of the chimes runtime.
 import os
 import sys
 from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
-         cleanup_runtime_files
-from shared_tests import ALL_RODINIA_RUNTIME_TESTS, ALL_SPEC_RUNTIME_TESTS, MISC_CPP_RUNTIME_TESTS
+         cleanup_runtime_files, is_rodinia_supported, is_spec_supported
+from shared_tests import MISC_CPP_RUNTIME_TESTS
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 
@@ -67,8 +67,14 @@ TESTS = [NESTED_CALLS, STACK_SCALAR, STACK_STRUCT, STACK_ARRAY, NESTED_STACK_SCA
          SWAPPED_NESTED_PTRS, MULTI_CHECKPOINT, ISO2D, RAY_TRACER]
 
 TESTS.extend(MISC_CPP_RUNTIME_TESTS)
-TESTS.extend(ALL_RODINIA_RUNTIME_TESTS)
-TESTS.extend(ALL_SPEC_RUNTIME_TESTS)
+
+if is_rodinia_supported():
+    from rodinia_tests import ALL_RODINIA_RUNTIME_TESTS
+    TESTS.extend(ALL_RODINIA_RUNTIME_TESTS)
+
+if is_spec_supported():
+    from spec_tests import ALL_SPEC_RUNTIME_TESTS
+    TESTS.extend(ALL_SPEC_RUNTIME_TESTS)
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/cpp'

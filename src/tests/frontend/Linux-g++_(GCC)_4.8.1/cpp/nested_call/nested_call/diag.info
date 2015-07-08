@@ -1,0 +1,60 @@
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 3 5 len=3 foo_npm
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 7 5 len=3 bar_npm
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 4 64 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 3 16 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 5 1 rm_stack(false, 0UL, "foo", &____must_manage_foo, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 8 64 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 7 16 const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 9 1 rm_stack(false, 0UL, "bar", &____must_manage_bar, ____alias_loc_id_2, ____chimes_did_disable1, false); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 16 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 11 33 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(7709126126479029329UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 17 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_3, ____chimes_did_disable2, false); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 3 17 const int ____chimes_did_disable0 = new_stack((void *)(&foo), "foo", &____must_manage_foo, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 3 128 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 4 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 4 30 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 7 17 const int ____chimes_did_disable1 = new_stack((void *)(&bar), "bar", &____must_manage_bar, 1, 0, (size_t)(0UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 7 128 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 8 6 int ____chimes_ret_var_1; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 8 30 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 11 34 const int ____chimes_did_disable2 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(7709126126479029329UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 11 170 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 12 5  int a;  a = (3) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 12 14 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 14 6  int ____chimes_unroll_var_0;  ____chimes_unroll_var_0 = (bar(a)) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 14 42 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 16 6 int ____chimes_ret_var_2; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 16 30 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 15 5  call_lbl_1: 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 3 5 len=3 foo_quick
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 3 127  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 7 5 len=3 bar_quick
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 7 127  ; 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 11 5 len=4 main_quick
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 14 64 ({ calling_npm("bar", 0); bar_npm(a); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 14 69 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 14 78 ({ calling_npm("foo", 0); foo_npm(____chimes_unroll_var_0); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 14 105 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 15 18 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 15 29 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 12 6 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 12 11 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 11 167  ; int a;
+# 11
+ register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0);  
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 3 5 len=3 foo_resumable
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 3 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 7 5 len=3 bar_resumable
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 7 127  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 11 5 len=4 main_resumable
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 14 64 ({ calling_npm("bar", 0); bar_npm(a); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 14 69 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 14 78 ({ calling_npm("foo", 0); foo_npm(____chimes_unroll_var_0); })
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 14 105 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 15 18 checkpoint_transformed(1, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 15 29 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 12 6 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 12 11 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./nested_call.cpp 11 167  ; int a;
+# 11
+ register_stack_vars(1, "main|a|0", (int *)0x0, "i32", (void *)(&a), (size_t)4, 0, 0, 0);  if (____chimes_replaying) {  switch(get_next_call()) { case(1): { goto call_lbl_1; } default: { chimes_error(); } }  }  

@@ -1,0 +1,11 @@
+rng_init 63 0
+sha1_begin 99
+sha1_hash 189 0 191
+sha1_end 322 323
+rng_spawn 368 369 0
+rng_rand 413
+rng_nextrand 463
+rng_showstate 486 487
+rng_showtype 510 0
+sha1_compile 4824
+sha1 4851 4852 0

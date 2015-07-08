@@ -1,5 +1,6 @@
 #include <checkpoint.h>
 #include <assert.h>
+#include <stdio.h>
 
 int foo(int a) {
     checkpoint();
@@ -20,5 +21,6 @@ int main(int argc, char **argv) {
     int b = foo(bar(&a));
     assert(b == 15);
 
+    printf("Hello\n");
     return b;
 }
