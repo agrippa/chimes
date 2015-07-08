@@ -1,0 +1,61 @@
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|argc|0 " i32 " 32 0 0 1 main
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|argv|0 " i8** " 64 1 0 1 destroyParallel destroySimulation finalizeSubsystems getElapsedTime initParallel initSimulation initSubsystems initValidate parseCommandLine printCmdYaml printPerformanceResults printSimulationDataYaml printThings profileStart profileStop sumAtoms timestampBarrier timestep validateResult yamlAppInfo
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|cmd|0 " %struct.CommandSt = type { [1024 x i8], [1024 x i8], [1024 x i8], i32, i32, i32, i32, i32, i32, i32, i32, i32, double, double, double, double } " 25152 0 1 CommandSt 0 1 main
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|sim|0 " %struct.SimFlatSt* " 64 1 0 1 main
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|validate|0 " %struct.ValidateSt* " 64 1 0 1 destroyParallel destroySimulation finalizeSubsystems getElapsedTime printPerformanceResults printThings profileStart profileStop sumAtoms timestampBarrier timestep validateResult
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|nSteps|0 " i32 " 32 0 0 1 destroyParallel destroySimulation finalizeSubsystems getElapsedTime printPerformanceResults printThings profileStart profileStop sumAtoms timestampBarrier timestep validateResult
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|printRate|0 " i32 " 32 0 0 1 destroyParallel destroySimulation finalizeSubsystems getElapsedTime printPerformanceResults printThings profileStart profileStop sumAtoms timestampBarrier timestep validateResult
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|iStep|0 " i32 " 32 0 0 1 destroyParallel destroySimulation finalizeSubsystems getElapsedTime printPerformanceResults printThings profileStart profileStop sumAtoms timestampBarrier timestep validateResult
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|____chimes_unroll_var_0|0 " double " 64 0 0 1 destroyParallel destroySimulation finalizeSubsystems getElapsedTime printPerformanceResults printThings profileStart profileStop sumAtoms timestampBarrier timestep validateResult
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|____chimes_unroll_var_1|0 " double " 64 0 0 1 destroyParallel destroySimulation finalizeSubsystems printPerformanceResults printThings profileStop timestampBarrier validateResult
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c main|____chimes_ret_var_0|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initSimulation|sim|0 " %struct.SimFlatSt* " 64 1 0 1 computeForce createFccLattice initAtomHaloExchange initAtoms initDecomposition initLinkCells initPotential kineticEnergy profileStart profileStop randomDisplacements redistributeAtoms sanityChecks setTemperature
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initSimulation|latticeConstant|0 " double " 64 0 0 1 computeForce createFccLattice initAtomHaloExchange initAtoms initDecomposition initLinkCells kineticEnergy profileStart profileStop randomDisplacements redistributeAtoms sanityChecks setTemperature
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initSimulation|globalExtent|0 " [3 x double] " 192 0 0 1 initSimulation
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initSimulation|____chimes_ret_var_1|0 " %struct.SimFlatSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printSimulationDataYaml|file|0 " %struct._IO_FILE* " 64 1 0 1 _ZL23printSimulationDataYamlP8_IO_FILEP9SimFlatSt
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printSimulationDataYaml|s|0 " %struct.SimFlatSt* " 64 1 0 1 _ZL23printSimulationDataYamlP8_IO_FILEP9SimFlatSt
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printSimulationDataYaml|maxOcc|0 " i32 " 32 0 0 1 _ZL23printSimulationDataYamlP8_IO_FILEP9SimFlatSt
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initValidate|sim|0 " %struct.SimFlatSt* " 64 1 0 1 printRank printSeparator sumAtoms
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initValidate|val|0 " %struct.ValidateSt* " 64 1 0 1 printRank printSeparator
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initValidate|____chimes_ret_var_4|0 " %struct.ValidateSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sumAtoms|s|0 " %struct.SimFlatSt* " 64 1 0 1 addIntParallel profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sumAtoms|i|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printThings|s|0 " %struct.SimFlatSt* " 64 1 0 1 printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printThings|iStep|0 " i32 " 32 0 0 1 printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printThings|elapsedTime|0 " double " 64 0 0 1 printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printThings|nEval|0 " i32 " 32 0 0 1 printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printThings|time|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printThings|eTotal|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printThings|eK|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printThings|eU|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printThings|Temp|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c printThings|timePerAtom|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c validateResult|val|0 " %struct.ValidateSt* " 64 1 0 1 printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c validateResult|sim|0 " %struct.SimFlatSt* " 64 1 0 1 printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c validateResult|eFinal|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c validateResult|nAtomsDelta|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c destroySimulation|ps|0 " %struct.SimFlatSt** " 64 1 0 1 destroyAtoms destroyHaloExchange destroyLinkCells
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c destroySimulation|s|0 " %struct.SimFlatSt* " 64 1 0 1 destroyAtoms destroyHaloExchange destroyLinkCells
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c destroySimulation|pot|0 " %struct.BasePotentialSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initPotential|doeam|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initPotential|potDir|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initPotential|potName|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initPotential|potType|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initPotential|pot|0 " %struct.BasePotentialSt* " 64 1 0 1 initEamPot initLjPot
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initPotential|____chimes_ret_var_2|0 " %struct.BasePotentialSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|cutoff|0 " double " 64 0 0 1 bcastParallel getNRanks printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|latticeConst|0 " double " 64 0 0 1 bcastParallel getNRanks printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|latticeType|0 " i8* " 64 1 0 1 bcastParallel getNRanks printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|failCode|0 " i32 " 32 0 0 1 bcastParallel getNRanks printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|nProcs|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|minx|0 " double " 64 0 0 1 bcastParallel printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|miny|0 " double " 64 0 0 1 bcastParallel printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|minz|0 " double " 64 0 0 1 bcastParallel printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|sizex|0 " double " 64 0 0 1 bcastParallel printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|sizey|0 " double " 64 0 0 1 bcastParallel printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|sizez|0 " double " 64 0 0 1 bcastParallel printRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c sanityChecks|checkCode|0 " i32 " 32 0 0 1 sanityChecks
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initSpecies|pot|0 " %struct.BasePotentialSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initSpecies|species|0 " %struct.SpeciesDataSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/CoMD.c initSpecies|____chimes_ret_var_3|0 " %struct.SpeciesDataSt* " 64 1 0 0

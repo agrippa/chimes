@@ -6,8 +6,7 @@ import os
 import sys
 from common import FrontendTest, run_frontend_test, parse_argv, \
                    CHIMES_HOME, construct_simple_frontend_test, \
-                   get_platform_directory
-from shared_tests import ALL_RODINIA_FRONTEND_TESTS, ALL_SPEC_FRONTEND_TESTS
+                   get_platform_directory, is_rodinia_supported, is_spec_supported
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
@@ -91,22 +90,13 @@ TESTS.append(COMD)
 TESTS.append(UTS)
 TESTS.append(RAY_TRACER)
 
-TESTS.extend(ALL_RODINIA_FRONTEND_TESTS)
+if is_rodinia_supported():
+    from rodinia_tests import ALL_RODINIA_FRONTEND_TESTS
+    TESTS.extend(ALL_RODINIA_FRONTEND_TESTS)
 
-TESTS.extend(ALL_SPEC_FRONTEND_TESTS)
-
-
-# Imagick has some weird stuff in it, not sure if we can support it easily
-# SPEC_IMAGICK_ROOT = os.path.join(SPEC_HOME, 'benchspec', 'OMP2012',
-#                                  '367.imagick', 'src')
-# SPEC_IMAGICK_CUSTOM = '-D SPEC -D NDEBUG -D NOREDUCE -D NOPERFLIB -I ' + \
-#                       SPEC_IMAGICK_ROOT
-# SPEC_IMAGICK_SRC = [f for f in os.listdir(SPEC_IMAGICK_ROOT) if \
-#                     os.path.isfile(os.path.join(SPEC_IMAGICK_ROOT, f)) and \
-#                             f != 'utilities_convert.c']
-# SPEC_IMAGICK = FrontendTest('SPECImagick', SPEC_IMAGICK_SRC, 'spec-imagick',
-#                             True, src_folder=SPEC_IMAGICK_ROOT,
-#                             extra_cli_args=SPEC_IMAGICK_CUSTOM)
+if is_spec_supported():
+    from spec_tests import ALL_SPEC_FRONTEND_TESTS
+    TESTS.extend(ALL_SPEC_FRONTEND_TESTS)
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)

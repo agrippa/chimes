@@ -1,0 +1,40 @@
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 17 25 len=6 malloc_wrapper
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 17 46 , 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 17 25 len=6 malloc_wrapper
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 17 46 , 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c)
+InsertText /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 28 60 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 12 33 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0x0, 2, 0, (size_t)(0UL), (size_t)(13553023217757812097UL)); 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 29 1 rm_stack(false, 0UL, "main", (int *)0x0, ____alias_loc_id_1, ____chimes_did_disable0, false); 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 12 34 const int ____chimes_did_disable0 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(13553023217757812097UL)); ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 12 171 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 13 5  foo test; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 13 13 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 17 5  foo *test2;  test2 = ((foo *)malloc_wrapper(sizeof(foo) * 3, 13553023217757812082UL, 0, 1, (int)sizeof(struct _foo), 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c))) ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 17 197 
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 28 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 28 30 
+InsertText /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 21 5  call_lbl_3: 
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 12 5 len=4 main_quick
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 21 18 checkpoint_transformed(3, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 21 29 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 13 6 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 13 14 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 17 6 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 17 16 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 12 168  ; foo *test2;
+# 12
+foo test;
+# 12
+ register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c));  
+ReplaceText /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 12 5 len=4 main_resumable
+ReplaceTextStart /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 21 18 checkpoint_transformed(3, ____alias_loc_id_0)
+ReplaceTextEnd /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 21 29 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 13 6 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 13 14 
+RemoveTextBegin /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 17 6 
+RemoveTextEnd /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 17 16 
+InsertTextAfterToken /home/jmg3/num-debug/src/examples/cpp/./struct.cpp 12 168  ; foo *test2;
+# 12
+foo test;
+# 12
+ register_stack_vars(2, "main|test2|0", (int *)0x0, "%struct._foo*", (void *)(&test2), (size_t)8, 1, 0, 0, "main|test|0", (int *)0x0, "%struct._foo = type { i32, i32*, i32** }", (void *)(&test), (size_t)24, 0, 1, 2, (int)__builtin_offsetof(struct _foo, b), (int)__builtin_offsetof(struct _foo, c));  if (____chimes_replaying) {  switch(get_next_call()) { case(3): { goto call_lbl_3; } default: { chimes_error(); } }  }  

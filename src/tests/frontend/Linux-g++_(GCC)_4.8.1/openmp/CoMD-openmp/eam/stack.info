@@ -1,0 +1,127 @@
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|dir|0 " i8* " 64 1 0 1 eamBcastPotential getMyRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|file|0 " i8* " 64 1 0 1 eamBcastPotential getMyRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|type|0 " i8* " 64 1 0 1 eamBcastPotential getMyRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|pot|0 " %struct.EamPotentialSt* " 64 1 0 1 eamBcastPotential getMyRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initEamPot|____chimes_ret_var_0|0 " %struct.BasePotentialSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|s|0 " %struct.SimFlatSt* " 64 1 0 1 haloExchange initForceHaloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|pot|0 " %struct.EamPotentialSt* " 64 1 0 1 haloExchange initForceHaloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|maxTotalAtoms|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|rCut2|0 " double " 64 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|etot|0 " double " 64 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|fsize|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|ii|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nNbrBoxes|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iBox|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nIBox|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jTmp|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jBox|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nJBox|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iOff|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jOff|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|dr|0 " [3 x double] " 192 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|r2|0 " double " 64 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|k|0 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|r|0 " double " 64 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|phiTmp|0 " double " 64 0 0 1 eamForce
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|dPhi|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|rhoTmp|0 " double " 64 0 0 1 eamForce
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|dRho|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|k|1 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iBox|1 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nIBox|1 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iOff|1 " i32 " 32 0 0 1 haloExchange profileStart profileStop
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|fEmbed|0 " double " 64 0 0 1 eamForce
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|dfEmbed|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iBox|2 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nIBox|2 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jTmp|1 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jBox|1 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|nJBox|1 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|iOff|2 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|jOff|1 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|r2|1 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|dr|1 " [3 x double] " 192 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|k|2 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|r|1 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|rhoTmp|1 " double " 64 0 0 1 eamForce
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|dRho|1 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|k|3 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamForce|____chimes_ret_var_1|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamPrint|file|0 " %struct._IO_FILE* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamPrint|pot|0 " %struct.BasePotentialSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamPrint|eamPot|0 " %struct.EamPotentialSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamDestroy|pPot|0 " %struct.BasePotentialSt** " 64 1 0 1 destroyHaloExchange
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamDestroy|pot|0 " %struct.EamPotentialSt* " 64 1 0 1 destroyHaloExchange
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|pot|0 " %struct.EamPotentialSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|dir|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|potName|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|tmp|0 " [4096 x i8] " 32768 0 0 1 eamReadSetfl
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|potFile|0 " %struct._IO_FILE* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|nElems|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|nRho|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|nR|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|dRho|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|dR|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|cutoff|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|nAtomic|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|mass|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|lat|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|latticeType|0 " [8 x i8] " 64 0 0 1 eamReadSetfl
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|bufSize|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|buf|0 " double* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|x0|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|ii|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|ii|1 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|ii|2 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|ii|3 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadSetfl|r|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|pot|0 " %struct.EamPotentialSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|dir|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|potName|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|tmp|0 " [4096 x i8] " 32768 0 0 1 eamReadFuncfl
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|potFile|0 " %struct._IO_FILE* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|name|0 " [3 x i8] " 24 0 0 1 eamReadFuncfl
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|nAtomic|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|mass|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|lat|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|latticeType|0 " [8 x i8] " 64 0 0 1 eamReadFuncfl
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|nRho|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|nR|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|dRho|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|dR|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|cutoff|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|x0|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|bufSize|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|buf|0 " double* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|ii|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|ii|1 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|ii|2 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|r|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamReadFuncfl|ii|3 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c typeNotSupported|callSite|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c typeNotSupported|type|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamBcastPotential|pot|0 " %struct.EamPotentialSt* " 64 1 0 1 bcastInterpolationObject bcastParallel getMyRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c eamBcastPotential|buf|0 " %struct._buf_t = type { double, double, double, [8 x i8], [3 x i8], i32 } " 320 0 1 _buf_t 0 1 eamBcastPotential
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/mytype.h zeroReal3|a|0 " double* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|table|0 " %struct.InterpolationObjectSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|r|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|f|0 " double* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|df|0 " double* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|tt|0 " double* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|ii|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|g1|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c interpolate|g2|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c destroyInterpolationObject|a|0 " %struct.InterpolationObjectSt** " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c fileNotFound|callSite|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c fileNotFound|filename|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initInterpolationObject|n|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initInterpolationObject|x0|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initInterpolationObject|dx|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initInterpolationObject|data|0 " double* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initInterpolationObject|table|0 " %struct.InterpolationObjectSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initInterpolationObject|ii|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c initInterpolationObject|____chimes_ret_var_2|0 " %struct.InterpolationObjectSt* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c notAlloyReady|callSite|0 " i8* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c bcastInterpolationObject|table|0 " %struct.InterpolationObjectSt** " 64 1 0 1 bcastParallel getMyRank
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c bcastInterpolationObject|buf|0 " %struct._buf_2_t = type { i32, double, double } " 192 0 1 _buf_2_t 0 1 bcastInterpolationObject
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/eam.c bcastInterpolationObject|valuesSize|0 " i32 " 32 0 0 1 bcastParallel

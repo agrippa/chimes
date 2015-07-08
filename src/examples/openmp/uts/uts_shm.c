@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <unistd.h>
 
 #include "uts.h"
 #ifdef __CHIMES_SUPPORT
@@ -1369,6 +1370,21 @@ int main(int argc, char *argv[]) {
   if (stats)
     initHist();
 #endif  
+
+  int n_omp_threads;
+#pragma omp parallel
+  {
+#pragma omp single
+      {
+          n_omp_threads = GET_NUM_THREADS;
+      }
+  }
+
+  if (n_omp_threads > MAX_THREADS) {
+    fprintf(stderr, "Resetting # OMP threads from %d to %d\n",
+            n_omp_threads, MAX_THREADS);
+    omp_set_num_threads(MAX_THREADS);
+  }
 
   /* cancellable barrier initialization (single threaded under OMP) */
   cb_init();

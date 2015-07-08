@@ -5,9 +5,8 @@ functionality of the chimes runtime.
 import os
 import sys
 from common import RuntimeTest, parse_argv, CHIMES_HOME, run_runtime_test, \
-         cleanup_runtime_files, find_file
-from shared_tests import ALL_RODINIA_RUNTIME_TESTS, ALL_SPEC_RUNTIME_TESTS, \
-         MISC_OMP_RUNTIME_TESTS
+         cleanup_runtime_files, find_file, is_rodinia_supported, is_spec_supported
+from shared_tests import MISC_OMP_RUNTIME_TESTS
 
 OMP_H = find_file('omp.h', '/usr/')
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
@@ -32,13 +31,17 @@ TESTS = [BASIC_PARALLEL, FAIL_CHECKPOINT_IN_FOR, PARALLEL_FOR_PIPELINE,
 for t in MISC_OMP_RUNTIME_TESTS:
     TESTS.append(t)
 
-for t in ALL_RODINIA_RUNTIME_TESTS:
-    t.extra_compile_args += ' -D OPEN'
-TESTS.extend(ALL_RODINIA_RUNTIME_TESTS)
+if is_rodinia_supported():
+    from rodinia_tests import ALL_RODINIA_RUNTIME_TESTS
+    for t in ALL_RODINIA_RUNTIME_TESTS:
+        t.extra_compile_args += ' -D OPEN'
+    TESTS.extend(ALL_RODINIA_RUNTIME_TESTS)
 
-for t in ALL_SPEC_RUNTIME_TESTS:
-    t.extra_compile_args += ' -D SPEC_OMP -D SPEC_OPENMP '
-TESTS.extend(ALL_SPEC_RUNTIME_TESTS)
+if is_spec_supported():
+    from spec_tests import ALL_SPEC_RUNTIME_TESTS
+    for t in ALL_SPEC_RUNTIME_TESTS:
+        t.extra_compile_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+    TESTS.extend(ALL_SPEC_RUNTIME_TESTS)
 
 COMPILE_SCRIPT = CHIMES_HOME + '/src/preprocessing/compile_cpp.sh'
 OMP_INPUTS_DIR = CHIMES_HOME + '/src/tests/runtime/openmp'

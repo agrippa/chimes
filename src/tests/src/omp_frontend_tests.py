@@ -6,8 +6,7 @@ import os
 import sys
 from common import run_frontend_test, parse_argv, \
                    CHIMES_HOME, construct_simple_frontend_test, find_file, \
-                   get_platform_directory, FrontendTest
-from shared_tests import ALL_RODINIA_FRONTEND_TESTS, ALL_SPEC_FRONTEND_TESTS
+                   get_platform_directory, FrontendTest, is_rodinia_supported, is_spec_supported
 
 CPP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/cpp'
 OMP_EXAMPLES_DIR = CHIMES_HOME + '/src/examples/openmp'
@@ -60,13 +59,17 @@ TESTS.append(SMITH_WATERMAN_OMP)
 TESTS.append(UTS_OMP)
 TESTS.append(RAY_TRACER_OMP)
 
-for t in ALL_RODINIA_FRONTEND_TESTS:
-    t.extra_compile_args += ' -D OPEN'
-TESTS.extend(ALL_RODINIA_FRONTEND_TESTS)
+if is_rodinia_supported():
+    from rodinia_tests import ALL_RODINIA_FRONTEND_TESTS
+    for t in ALL_RODINIA_FRONTEND_TESTS:
+        t.extra_compile_args += ' -D OPEN'
+    TESTS.extend(ALL_RODINIA_FRONTEND_TESTS)
 
-for t in ALL_SPEC_FRONTEND_TESTS:
-    t.extra_cli_args += ' -D SPEC_OMP -D SPEC_OPENMP '
-TESTS.extend(ALL_SPEC_FRONTEND_TESTS)
+if is_spec_supported():
+    from spec_tests import ALL_SPEC_FRONTEND_TESTS
+    for t in ALL_SPEC_FRONTEND_TESTS:
+        t.extra_cli_args += ' -D SPEC_OMP -D SPEC_OPENMP '
+    TESTS.extend(ALL_SPEC_FRONTEND_TESTS)
 
 if __name__ == '__main__':
     CONFIG = parse_argv(sys.argv)

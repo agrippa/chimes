@@ -17,16 +17,19 @@ CHIMES_REPLAY_EXIT_CODE = 55
 # than 1 minute.
 MAX_TEST_TIME = 60
 
+UNIQUE_STR = str(int(round(time.time() * 1000)))
+
 # Use a special executable name for runtime tests so that you can run a runtime
 # test in parallel with a frontend test
-RUNTIME_BIN = 'runtime.bin'
-CHIMES_PERF_BIN = 'chimes.perf.bin'
-NORMAL_PERF_BIN = 'normal.perf.bin'
+RUNTIME_BIN = 'runtime.' + UNIQUE_STR + '.bin'
+FRONTEND_BIN = 'frontend.' + UNIQUE_STR + '.bin'
+CHIMES_PERF_BIN = 'chimes.perf.' + UNIQUE_STR + '.bin'
+NORMAL_PERF_BIN = 'normal.perf.' + UNIQUE_STR + '.bin'
 
 LD_LIBRARY_VARS = ['DYLD_LIBRARY_PATH', 'LD_LIBRARY_PATH']
 DYLD_PATH = os.path.join(CHIMES_HOME, 'src', 'libchimes')
 
-FRONTEND_WORKING_DIR = '/tmp/chimes-frontend'
+FRONTEND_WORKING_DIR = '/tmp/chimes-frontend.' + UNIQUE_STR
 
 # Mapping from info file name to a space-delimited column that may cause
 # differences between the test and expected outputs due to different temporary
@@ -163,7 +166,34 @@ def get_platform_directory():
     """
     Get the platform-specific subdirectory for the frontend tests.
     """
-    return platform.system()
+    return platform.system() + '-' + get_compiler_label()
+
+
+def get_compiler_label():
+    CHIMES_HOME = os.environ['CHIMES_HOME']
+    gxx = None
+    fp = open(os.path.join(CHIMES_HOME, 'src', 'common.conf'), 'r')
+    for line in fp:
+        tokens = line.split('=')
+        assert len(tokens) == 2
+        if tokens[0] == 'GXX':
+            gxx = tokens[1]
+            break
+    fp.close()
+    assert gxx is not None
+    stdout, stderr, errcode = run_cmd(gxx + ' --version', False)
+    firstline = stdout.split('\n')[0].strip()
+    firstline = firstline.replace(' ', '_')
+
+    return firstline
+
+
+def is_rodinia_supported():
+    return 'RODINIA_HOME' in os.environ
+
+
+def is_spec_supported():
+    return 'SPEC_HOME' in os.environ
 
 
 def find_file(name, path):
@@ -449,9 +479,9 @@ def cleanup_runtime_files():
     chimes_files = list_checkpoint_files()
     for existing in chimes_files:
         os.remove(existing)
-    for exe in ['a.out', RUNTIME_BIN, CHIMES_PERF_BIN, NORMAL_PERF_BIN]:
-        if os.path.isfile(exe):
-            os.remove(exe)
+    for fn in os.listdir('.'):
+        if os.path.isfile(fn) and fn.endswith('.bin'):
+            os.remove(fn)
 
 
 def get_files_from_compiler_stdout(compile_stdout, n_expected_files):
@@ -696,12 +726,10 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
         return
 
     env = copy_environ()
-    # if config.custom_compiler is not None:
-    #     env['GXX'] = config.custom_compiler
 
     clean_and_create_folder(FRONTEND_WORKING_DIR)
     compile_cmd = compile_script_path + ' -k -w ' + FRONTEND_WORKING_DIR + \
-                  ' ' + test.extra_cli_args
+                  ' -o ' + FRONTEND_BIN + ' ' + test.extra_cli_args
 
     if config.force_sequential:
         compile_cmd += ' -s '
@@ -722,7 +750,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
     stdout, stderr, _ = run_cmd(compile_cmd, test.expect_err, env=env)
     if config.verbose:
         print_and_abort(stdout, stderr, abort=False)
-    assert test.expect_err or os.path.isfile('a.out')
+    assert test.expect_err or os.path.isfile(FRONTEND_BIN)
 
     if config.just_compile:
         return
@@ -788,7 +816,7 @@ def run_frontend_test(test, compile_script_path, examples_dir_path,
 
     if not config.keep:
         run_cmd('rm -rf ' + root_folder, False)
-    run_cmd('rm -f a.out', False)
+    run_cmd('rm -f ' + FRONTEND_BIN, False)
 
     if any_failures:
         print(test.name + ' UPDATED')

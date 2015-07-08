@@ -1,5 +1,5 @@
 a.out.dSYM
-runtime.bin
+*.bin
 output.txt
 result.txt
 image_out.pgm

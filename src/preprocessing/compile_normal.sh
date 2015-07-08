@@ -164,7 +164,7 @@ else
 
     ${GXX} -Xlinker ${EXPORT_DYNAMIC_FLAG} -ldl -lpthread ${OBJ_FILE_STR} -o ${OUTPUT} ${LIB_PATHS} ${LIBS} \
         ${GXX_FLAGS} ${INCLUDES} -L${CUDA_HOME}/lib -L${CUDA_HOME}/lib64 \
-        -lcudart ${DEFINES}
+        ${DEFINES}
 
     if [[ $KEEP == 0 ]]; then
         rm -rf ${WORK_DIR}

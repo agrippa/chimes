@@ -2,7 +2,7 @@ import os
 import sys
 
 from common import PerfTest, RuntimeTest, parse_argv, CHIMES_HOME, \
-         run_runtime_test, cleanup_runtime_files, run_perf_test
+         run_runtime_test, cleanup_runtime_files, run_perf_test, is_rodinia_supported, is_spec_supported
 from shared_tests import ALL_RODINIA_RUNTIME_TESTS, ALL_SPEC_RUNTIME_TESTS, \
          MISC_OMP_RUNTIME_TESTS, RODINIA_DATA, RODINIA_HOME, \
          SPEC_BOTSALGN_ROOT, SPEC_BOTSSPAR_ROOT, SPEC_SMITHWA_ROOT, \

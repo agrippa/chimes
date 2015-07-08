@@ -491,7 +491,7 @@ def get_func_symbols(abi_filename):
                     region = tokens[3]
                     sym = tokens[5]
 
-                    if descriptor == 'F' and region == '.text':
+                    if descriptor == 'F' and (region == '.text' or region == '.opd'):
                         symbols.append(sym)
 
     fp.close()

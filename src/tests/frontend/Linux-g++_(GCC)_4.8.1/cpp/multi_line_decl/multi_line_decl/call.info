@@ -1,0 +1,3 @@
+malloc main 11 23 33 0
+checkpoint main 14 5 0
+foo main 16 56 0 0 0

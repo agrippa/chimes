@@ -35,6 +35,7 @@ CHIMES_DUMMY_LIB=libchimes_dummy.so
 CHIMES_STATIC_LIB=libchimes.a
 CHIMES_DUMMY_STATIC_LIB=libchimes_dummy.a
 CHIMES_CPP_LIB=libchimes_cpp.so
+CHIMES_DUMMY_CPP_LIB=libchimes_dummy_cpp.so
 
 all: ${CHIMES_CPP_LIB} ${CHIMES_LIB} ${CHIMES_STATIC_LIB} ${CHIMES_DUMMY_LIB} \
 		${CHIMES_DUMMY_STATIC_LIB} benchmark_timers
@@ -47,7 +48,7 @@ ${CHIMES_CPP_LIB}: ${SRC} build-xxhash
 
 ${CHIMES_LIB}: ${SRC} libchimes_cuda.o build-xxhash
 	${GXX} ${GXX_FLAGS} -shared ${SRC} libchimes_cuda.o -o ${CHIMES_LIB} \
-        -DCUDA_SUPPORT -I${CUDA_HOME}/include -L${CUDA_LIB_PATH} ${OMP_LIB} -lcudart -Lxxhash/ -lxxhash
+            -DCUDA_SUPPORT -I${CUDA_HOME}/include -L${CUDA_LIB_PATH} ${OMP_LIB} -lcudart -Lxxhash/ -lxxhash
 
 ${CHIMES_STATIC_LIB}: ${OBJ} libchimes_cuda.o build-xxhash
 	ar rcs ${CHIMES_STATIC_LIB} ${OBJ} libchimes_cuda.o
