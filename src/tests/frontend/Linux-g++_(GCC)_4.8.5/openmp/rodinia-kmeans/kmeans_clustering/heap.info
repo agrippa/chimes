@@ -1,0 +1,13 @@
+139 26 720 malloc 1 0
+140 28 186 malloc
+156 30 716 calloc
+158 29 708 malloc 1 0
+159 31 710 calloc
+164 39 548 malloc 1 0
+165 41 550 calloc
+169 33 421 malloc 1 0
+170 39 423 malloc 1 0
+176 75 415 calloc
+243 5 710 free
+244 5 708 free
+245 5 716 free

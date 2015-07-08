@@ -1,2 +1,0 @@
-44 44 #pragma omp parallel for shared(power, temp,result) private(r, c, delta) firstprivate(row, col) schedule(static)
-114 114 #pragma omp parallel for shared(result, temp) private(r, c) schedule(static)

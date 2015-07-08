@@ -1,0 +1,14 @@
+251 18 205 malloc 1 0
+253 19 201 malloc 1 0
+255 23 428 malloc
+259 17 347 malloc 1 0
+261 18 349 malloc
+264 22 354 malloc 1 0
+266 23 356 malloc
+367 4 428 free
+369 3 201 free
+371 2 205 free
+375 3 349 free
+377 2 347 free
+381 3 356 free
+383 2 354 free

@@ -1,1 +1,0 @@
-86 86 #pragma omp parallel for private (i, thid)

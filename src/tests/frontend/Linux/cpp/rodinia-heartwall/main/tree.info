@@ -1,2 +1,0 @@
-write_data _Z10write_dataPciiiPiS0_iS0_S0_ 0 DOES_NOT
-main main 0 DOES AVI_open_input_file 132 28 AVI_print_error 134 6 AVI_video_frames 139 15 AVI_video_height 140 19 AVI_video_width 141 19 AVI_close 145 5 AVI_open_input_file 545 28 get_frame 547 17 AVI_close 552 9 kernel 563 4 checkpoint 584 5

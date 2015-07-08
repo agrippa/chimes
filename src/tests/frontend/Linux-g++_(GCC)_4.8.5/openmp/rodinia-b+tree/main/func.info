@@ -1,0 +1,78 @@
+seconds
+list_init 53 1403 1403
+list_delete 93
+list_item_delete 113 114
+list_reset 121
+list_insert_item_head 175 1403
+list_insert_item_tail 228 1403
+list_insert_item_before 288 1403 1403
+list_insert_item_after 349 1403 1403
+list_insert_item_sorted 464 1403
+list_item_get_datum 477
+list_insert_head 552 553
+list_item_init 575 1403
+list_insert_tail 649 650
+list_insert_before 730 1403 732
+list_insert_after 812 1403 814
+list_insert_sorted 948 949
+list_remove_item 1035 1036
+list_remove_head 1046
+list_remove_tail 1056
+list_find_item 1100 1101
+list_get_head_item 1113
+list_get_tail_item 1125
+list_find 1177 1178
+list_get_head 1189
+list_get_tail 1211
+list_get_length 1234
+list_is_empty 1249
+list_not_empty 1264
+list_visit_items 1296 1297
+list_iterator_init 1308 1314
+list_iterator_delete 1325
+list_iterator_next 1341
+list_iterator_prev 1357
+list_iterator_get_datum 1367
+list_iterator_is_valid 1391
+list_reverse_iterator_init 1401 1407
+list_reverse_iterator_delete 1418
+list_reverse_iterator_next 1434
+list_reverse_iterator_prev 1450
+list_reverse_iterator_get_datum 1460
+list_reverse_iterator_is_valid 1483
+kmalloc 0
+transform_to_cuda 1959 0
+enqueue 5913
+dequeue
+findRange 2141 0 0
+find_leaf 2303 0 0
+usage_1
+usage_2
+print_leaves 2414
+height 2449
+path_to_root 2482 2483
+print_tree 2644
+find 2728 0 0
+cut 0
+make_record 0
+make_node
+make_leaf
+get_left_index 2952 2953
+insert_into_leaf 3063 0 3023
+insert_into_leaf_after_splitting 3421 3422 0 5913
+insert_into_parent 3496 3497 0 3499
+insert_into_node 3590 3591 0 0 3533
+insert_into_node_after_splitting 3945 3946 0 0 3924
+insert_into_new_root 5913 0 5913
+start_new_tree 0 5913
+insert 4125 0 0
+get_neighbor_index 4178
+remove_entry_from_node 4248 0 4363
+adjust_root 5913
+coalesce_nodes 4827 4800 4800 0 0
+delete_entry 4991 4893 0 5001
+redistribute_nodes 5401 5913 5403 0 0 0
+deleteVal 5448 0
+destroy_tree_nodes 5520
+destroy_tree 5531
+main 0 6769

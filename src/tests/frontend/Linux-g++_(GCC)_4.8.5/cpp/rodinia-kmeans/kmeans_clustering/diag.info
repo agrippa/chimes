@@ -1,0 +1,126 @@
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 78 5 len=18 find_nearest_point_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 101 7 len=13 euclid_dist_2_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 116 9 len=17 kmeans_clustering_npm
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 139 26 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 139 58 , 15337938033427924379UL, 1, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 140 28 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 140 71 , 15337938033427923848UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 156 30 len=6 calloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 156 58 , 15337938033427924375UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 158 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 158 61 , 15337938033427924367UL, 1, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 159 31 len=6 calloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 159 73 , 15337938033427924369UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 164 39 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 164 68 , 15337938033427924207UL, 1, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 165 41 len=6 calloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 165 78 , 15337938033427924209UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 169 33 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 169 65 , 15337938033427924083UL, 1, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 170 39 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 170 80 , 15337938033427924085UL, 1, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 176 75 len=6 calloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 176 105 , 15337938033427924077UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 243 5 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 243 23 , 15337938033427924369UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 244 5 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 244 10 , 15337938033427924367UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 245 5 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 245 10 , 15337938033427924375UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 139 26 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 139 58 , 15337938033427924379UL, 1, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 140 28 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 140 71 , 15337938033427923848UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 156 30 len=6 calloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 156 58 , 15337938033427924375UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 158 29 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 158 61 , 15337938033427924367UL, 1, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 159 31 len=6 calloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 159 73 , 15337938033427924369UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 164 39 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 164 68 , 15337938033427924207UL, 1, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 165 41 len=6 calloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 165 78 , 15337938033427924209UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 169 33 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 169 65 , 15337938033427924083UL, 1, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 170 39 len=6 malloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 170 80 , 15337938033427924085UL, 1, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 176 75 len=6 calloc_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 176 105 , 15337938033427924077UL, 0, 0
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 243 5 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 243 23 , 15337938033427924369UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 244 5 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 244 10 , 15337938033427924367UL
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 245 5 len=4 free_wrapper
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 245 10 , 15337938033427924375UL
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 95 66 rm_stack(false, 0UL, "find_nearest_point", &____must_manage_find_nearest_point, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 82 1 const int ____chimes_did_disable0 = new_stack((void *)(&find_nearest_point), "find_nearest_point", &____must_manage_find_nearest_point, 4, 0, (size_t)(15337938033427923719UL), (size_t)(0UL), (size_t)(15337938033427923721UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 96 1 rm_stack(false, 0UL, "find_nearest_point", &____must_manage_find_nearest_point, ____alias_loc_id_0, ____chimes_did_disable0, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 111 66 rm_stack(false, 0UL, "euclid_dist_2", &____must_manage_euclid_dist_2, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 104 1 const int ____chimes_did_disable1 = new_stack((void *)(&euclid_dist_2), "euclid_dist_2", &____must_manage_euclid_dist_2, 3, 0, (size_t)(15337938033427923782UL), (size_t)(15337938033427923783UL), (size_t)(0UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 112 1 rm_stack(false, 0UL, "euclid_dist_2", &____must_manage_euclid_dist_2, ____alias_loc_id_1, ____chimes_did_disable1, false); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 247 72 rm_stack(true, 15337938033427924379UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 122 1 const int ____chimes_did_disable2 = new_stack((void *)(&kmeans_clustering), "kmeans_clustering", &____must_manage_kmeans_clustering, 6, 0, (size_t)(15337938033427924383UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15337938033427924388UL)); 
+InsertText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 248 1 rm_stack(true, 15337938033427924379UL, "kmeans_clustering", &____must_manage_kmeans_clustering, ____alias_loc_id_2, ____chimes_did_disable2, false); 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 82 2 const int ____chimes_did_disable0 = new_stack((void *)(&find_nearest_point), "find_nearest_point", &____must_manage_find_nearest_point, 4, 0, (size_t)(15337938033427923719UL), (size_t)(0UL), (size_t)(15337938033427923721UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 82 241 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 83 5 int index; int i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 83 17 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 84 5  float min_dist;  min_dist = (3.40282347E+38F) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 84 47 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 88 9 float dist; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 88 19 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 95 6 int ____chimes_ret_var_0; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 95 30 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 104 2 const int ____chimes_did_disable1 = new_stack((void *)(&euclid_dist_2), "euclid_dist_2", &____must_manage_euclid_dist_2, 3, 0, (size_t)(15337938033427923782UL), (size_t)(15337938033427923783UL), (size_t)(0UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 104 211 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 105 5 int i; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 105 10 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 106 5  float ans;  ans = (0.) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 106 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 111 6 float ____chimes_ret_var_1; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 111 32 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 122 2 const int ____chimes_did_disable2 = new_stack((void *)(&kmeans_clustering), "kmeans_clustering", &____must_manage_kmeans_clustering, 6, 0, (size_t)(15337938033427924383UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(0UL), (size_t)(15337938033427924388UL)); ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 122 268 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 124 5 int i; int j; int k;  int n; int index;  int loop;  n = (0)  ; loop = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 124 36 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 125 5 int *new_centers_len; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 125 25 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 126 2 float **new_centers; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 126 21 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 127 2 float **clusters; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 127 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 128 5 float delta; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 128 16 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 130 5 double timing; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 130 18 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 132 2 int nthreads; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 132 14 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 133 5 int **partial_new_centers_len; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 133 34 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 134 5 float ***partial_new_centers; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 134 33 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 191 13  int tid;  tid = (0) ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 191 24 
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 247 6 float **____chimes_ret_var_2; ;
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 247 35 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 78 5 len=18 find_nearest_point_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 89 16 ({ calling_npm("euclid_dist_2", 0); euclid_dist_2_npm(pt, pts[i], nfeatures); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 89 51 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 82 240  ; 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 101 7 len=13 euclid_dist_2_quick
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 104 210  ; 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 116 9 len=17 kmeans_clustering_quick
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 200 18 ({ calling_npm("find_nearest_point", 0); find_nearest_point_npm(feature[i], nfeatures, clusters, nclusters); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 203 25 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 122 267  ; 
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 78 5 len=18 find_nearest_point_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 89 16 ({ calling_npm("euclid_dist_2", 0); euclid_dist_2_npm(pt, pts[i], nfeatures); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 89 51 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 82 240  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 101 7 len=13 euclid_dist_2_resumable
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 104 210  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  
+ReplaceText /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 116 9 len=17 kmeans_clustering_resumable
+ReplaceTextStart /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 200 18 ({ calling_npm("find_nearest_point", 0); find_nearest_point_npm(feature[i], nfeatures, clusters, nclusters); })
+ReplaceTextEnd /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 203 25 
+InsertTextAfterToken /scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/kmeans_clustering.c 122 267  ;  if (____chimes_replaying) {  switch(get_next_call()) { default: { chimes_error(); } }  }  

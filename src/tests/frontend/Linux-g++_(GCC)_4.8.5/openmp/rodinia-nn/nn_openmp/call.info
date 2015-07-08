@@ -1,0 +1,33 @@
+gettimeofday seconds 26 13 0 1 2
+fprintf main 50 3 0 409 481
+exit main 51 3 0 0
+fopen main 54 10 93 92 482
+printf main 56 3 0 483
+exit main 57 3 0 0
+atoi main 60 6 0 92
+atof main 61 15 0 92
+atof main 62 16 0 92
+malloc main 64 33 493 0
+fprintf main 67 3 0 409 484
+exit main 68 3 0 0
+feof main 78 13 0 93
+fscanf main 79 9 0 93 485 37
+fopen main 81 14 183 37 482
+__assert_fail main 82 41 0 486 487 0 484
+realloc main 86 31 173 173 0
+fread main 87 21 0 173 0 0 183
+fclose main 91 9 0 183
+fclose main 93 5 0 93
+fopen main 95 7 183 37 482
+printf main 97 3 0 483
+exit main 98 3 0 0
+seconds main 101 25 0
+malloc main 104 16 289 0
+sscanf main 116 4 0 173 489 41 42
+sqrt main 117 26 0 0
+strcpy main 135 7 375 493 173
+checkpoint main 140 9 0
+seconds main 144 23 0
+printf main 145 5 0 483 0
+fprintf main 147 2 0 409 491 0
+fprintf main 149 39 0 409 492 493 0

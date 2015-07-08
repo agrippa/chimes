@@ -62,7 +62,7 @@ TESTS.append(RAY_TRACER_OMP)
 if is_rodinia_supported():
     from rodinia_tests import ALL_RODINIA_FRONTEND_TESTS
     for t in ALL_RODINIA_FRONTEND_TESTS:
-        t.extra_compile_args += ' -D OPEN'
+        t.extra_cli_args += ' -D OPEN'
     TESTS.extend(ALL_RODINIA_FRONTEND_TESTS)
 
 if is_spec_supported():

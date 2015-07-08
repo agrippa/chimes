@@ -1,0 +1,6 @@
+127 22 433 malloc
+128 29 428 malloc
+129 27 556 malloc
+270 2 433 free
+271 2 428 free
+272 2 556 free

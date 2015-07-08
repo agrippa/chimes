@@ -1,0 +1,36 @@
+gettimeofday seconds 18 13 0 1 2
+gettimeofday gettime 72 3 0 71 605
+seconds main 82 25 0
+runTest main 83 5 0 0 116
+seconds main 84 23 0
+printf main 85 5 0 594 0
+atoi runTest 116 14 0 164
+atoi runTest 117 14 0 164
+atoi runTest 118 13 0 164
+atoi runTest 119 21 0 164
+usage runTest 122 3 0 0 561
+malloc runTest 127 22 433 0
+malloc runTest 128 29 428 0
+malloc runTest 129 27 556 0
+fprintf runTest 132 24 0 569 600
+srand runTest 135 5 0 0
+printf runTest 143 2 0 601
+rand runTest 146 37 0
+rand runTest 149 28 0
+printf runTest 167 2 0 602 0
+printf runTest 168 2 0 603
+omp_set_num_threads runTest 172 5 0 0
+maximum runTest 177 33 0 0 0 0
+checkpoint runTest 184 5 0
+printf runTest 187 2 0 604
+omp_set_num_threads runTest 191 5 0 0
+maximum runTest 196 28 0 0 0 0
+checkpoint runTest 203 5 0
+free runTest 270 2 0 433
+free runTest 271 2 0 428
+free runTest 272 2 0 556
+fprintf usage 92 2 0 569 596 572
+fprintf usage 93 2 0 569 597
+fprintf usage 94 2 0 569 598
+fprintf usage 95 2 0 569 599
+exit usage 96 2 0 0

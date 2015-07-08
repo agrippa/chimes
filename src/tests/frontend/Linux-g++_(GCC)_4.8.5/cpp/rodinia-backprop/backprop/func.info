@@ -1,0 +1,20 @@
+drnd
+dpn1
+squash 0
+alloc_1d_dbl 0
+alloc_2d_dbl 0 0
+bpnn_randomize_weights 182 0 0
+bpnn_randomize_row 210 0
+bpnn_zero_weights 257 0 0
+bpnn_initialize 0
+bpnn_internal_create 0 0 0
+bpnn_free 516
+bpnn_create 0 0 0
+bpnn_layerforward 645 646 647 0 0
+bpnn_output_error 725 744 745 0 747
+bpnn_hidden_error 853 0 873 0 875 876 877
+bpnn_adjust_weights 978 0 980 0 982 983
+bpnn_feedforward 1030
+bpnn_train 1149 1150 1151
+bpnn_save 1414 1415
+bpnn_read 1695

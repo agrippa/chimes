@@ -1,0 +1,3 @@
+64 33 493 malloc 0 1 neighbor
+86 31 173 realloc
+104 16 289 malloc

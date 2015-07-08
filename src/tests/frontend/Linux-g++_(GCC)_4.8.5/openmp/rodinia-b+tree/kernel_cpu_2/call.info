@@ -1,0 +1,10 @@
+get_time kernel_cpu_2 71 10 0
+omp_get_max_threads kernel_cpu_2 79 17 0
+omp_set_num_threads kernel_cpu_2 85 2 0 0
+get_time kernel_cpu_2 92 10 0
+get_time kernel_cpu_2 159 10 0
+printf kernel_cpu_2 165 2 0 448
+printf kernel_cpu_2 167 2 0 449 0 0
+printf kernel_cpu_2 168 2 0 449 0 0
+printf kernel_cpu_2 170 2 0 451
+printf kernel_cpu_2 171 2 0 452 0

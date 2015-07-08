@@ -1,0 +1,12 @@
+83 32 427 malloc 0 1 Node
+84 31 433 malloc
+85 40 435 malloc
+86 34 437 malloc
+111 30 430 malloc
+124 23 439 malloc
+193 2 427 free
+194 2 430 free
+195 2 433 free
+196 2 435 free
+197 2 437 free
+198 2 439 free
