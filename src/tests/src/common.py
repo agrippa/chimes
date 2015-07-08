@@ -188,6 +188,17 @@ def get_compiler_label():
     return firstline
 
 
+def get_machine_name():
+    """
+    Tries to return a unique machine identifier used to name a file for storing
+    performance results. socket.gethostname() returns the full URL of the
+    current node (e.g. 'login1.davinci.rice.edu'). This script assumes that the
+    URL's last three components are 'machine.institution.suffix' and extracts
+    them to use as the machine identifier.
+    """
+    elements = socket.gethostname().split('.')
+    return '.'.join(elements[len(elements) - 3:])
+
 def is_rodinia_supported():
     return 'RODINIA_HOME' in os.environ
 

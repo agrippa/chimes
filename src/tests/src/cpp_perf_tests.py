@@ -4,7 +4,7 @@ import sys
 
 from common import PerfTest, RuntimeTest, parse_argv, CHIMES_HOME, \
          run_runtime_test, cleanup_runtime_files, run_perf_test, \
-         is_rodinia_supported, is_spec_supported
+         is_rodinia_supported, is_spec_supported, get_machine_name
 from shared_tests import MISC_CPP_RUNTIME_TESTS, PERF_CLI_ARGS
 from exec_time_parsers import EXEC_TIME_PARSERS
 
@@ -38,10 +38,11 @@ if __name__ == '__main__':
         run_perf_test(t, COMPILE_SCRIPT, NORMAL_COMPILE_SCRIPT, CPP_INPUTS_DIR,
                       CONFIG)
 
-    if not CONFIG.quiet and os.path.isfile('cpp.perf'):
+    PERF_FILENAME = get_machine_name() + '.cpp.perf'
+    if not CONFIG.quiet and os.path.isfile(PERF_FILE):
         print()
         print('Previous single-threaded performance results:')
         print('=============================================')
-        fp = open('cpp.perf')
+        fp = open(PERF_FILE)
         print(fp.read())
         fp.close()
