@@ -68,7 +68,7 @@ static unsigned ____alias_loc_id_17;
 static unsigned ____alias_loc_id_18;
 static unsigned ____alias_loc_id_19;
 # 1 "/home/jmg3/num-debug/src/examples/openmp/./smithWaterman/smith_waterman_omp.cpp"
-# 1 "/tmp/chimes-frontend.1436373279442//"
+# 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1

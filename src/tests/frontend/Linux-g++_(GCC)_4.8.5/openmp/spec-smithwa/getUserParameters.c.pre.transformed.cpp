@@ -13,7 +13,7 @@ static int ____chimes_does_checkpoint_getUserParameters_npm = 1;
 
 static int ____must_manage_getUserParameters = 2;
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/getUserParameters.c"
-# 1 "/tmp/chimes-frontend.1436373279442//"
+# 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
