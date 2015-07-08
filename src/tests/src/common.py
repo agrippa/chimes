@@ -30,7 +30,7 @@ NORMAL_PERF_BIN = 'normal.perf.' + UNIQUE_STR + '.bin'
 LD_LIBRARY_VARS = ['DYLD_LIBRARY_PATH', 'LD_LIBRARY_PATH']
 DYLD_PATH = os.path.join(CHIMES_HOME, 'src', 'libchimes')
 
-FRONTEND_WORKING_DIR = '/tmp/chimes-frontend.' + UNIQUE_STR
+FRONTEND_WORKING_DIR = '/tmp/chimes-frontend'
 
 # Mapping from info file name to a space-delimited column that may cause
 # differences between the test and expected outputs due to different temporary
@@ -681,6 +681,12 @@ def build_compile_cmd(compile_script_path, test, output_file, inputs_dir,
     return compile_cmd
 
 
+def pad(s, nchars):
+    assert len(s) <= nchars
+    padding = nchars - len(s)
+    return s + (' ' * (len(s) - nchars))
+
+
 def run_perf_test_and_get_time_and_ncheckpoints(exec_name, test, verbose, keep,
                                                 env):
     exec_cmd = './' + exec_name + ' '
@@ -1033,7 +1039,7 @@ def run_perf_test(test, compile_script_path, normal_compile_script_path,
                                                     config.verbose, config.keep,
                                                     env)
 
-    print(test.name + ' - added ' +
+    print(pad(test.name, 30) + ' - added ' +
           str(((float(chimes_exec_time) / float(normal_exec_time)) - 1.0) *
               100.0) + '% overhead for ' + str(chimes_ncheckpoints) +
           ' checkpoint files')

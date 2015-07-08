@@ -53,7 +53,7 @@ static unsigned ____alias_loc_id_19;
 static unsigned ____alias_loc_id_20;
 static unsigned ____alias_loc_id_21;
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/sequenceAlignment.c"
-# 1 "/tmp/chimes-frontend.1436372640705//"
+# 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1

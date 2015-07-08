@@ -9,7 +9,7 @@ typedef long unsigned int size_t;
 # 1 "<command-line>" 2
 # 1 "getopt.c.pre.transformed.cpp"
 # 1 "/scratch/jmg3/rodinia_3.0/openmp/kmeans/kmeans_openmp/getopt.c"
-# 1 "/tmp/chimes-frontend.1436373279442//"
+# 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1

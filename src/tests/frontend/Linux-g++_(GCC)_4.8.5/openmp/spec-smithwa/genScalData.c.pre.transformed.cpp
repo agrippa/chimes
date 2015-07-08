@@ -49,7 +49,7 @@ static unsigned ____alias_loc_id_7;
 static unsigned ____alias_loc_id_8;
 static unsigned ____alias_loc_id_9;
 # 1 "/scratch/jmg3/spec/benchspec/OMP2012/372.smithwa/src/genScalData.c"
-# 1 "/tmp/chimes-frontend.1436373279442//"
+# 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1

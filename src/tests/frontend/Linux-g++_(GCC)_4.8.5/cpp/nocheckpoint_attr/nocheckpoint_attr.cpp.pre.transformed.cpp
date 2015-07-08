@@ -15,7 +15,7 @@ static int ____chimes_does_checkpoint_foo_npm = 1;
 static unsigned ____alias_loc_id_0;
 static unsigned ____alias_loc_id_1;
 # 1 "/home/jmg3/num-debug/src/examples/cpp/./nocheckpoint_attr.cpp"
-# 1 "/tmp/chimes-frontend.1436372640705//"
+# 1 "/tmp/chimes-frontend//"
 # 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "/home/jmg3/num-debug/src/libchimes/libchimes.h" 1
