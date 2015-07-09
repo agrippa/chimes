@@ -19,8 +19,9 @@ static int ____chimes_does_checkpoint_setup_config_npm = 1;
 static int ____chimes_does_checkpoint_update_progress_npm = 1;
 
 static int ____must_checkpoint_main_conf_0 = 2;
+static int ____must_checkpoint_main_dx_0 = 2;
+static int ____must_checkpoint_main_dt_0 = 2;
 static int ____must_checkpoint_main_elapsed_s_0 = 2;
-static int ____must_checkpoint_main_point_rate_0 = 2;
 
 static int ____must_manage_fwd = 2;
 
@@ -5285,15 +5286,7 @@ rm_stack(false, 0UL, "fwd", &____must_manage_fwd, ____alias_loc_id_9, ____chimes
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 static void (*____chimes_extern_func_config_sources)(struct _source **, int *, int, int, int) = config_sources;static void (*____chimes_extern_func_finish_progress)(void) = finish_progress;static void (*____chimes_extern_func_init_data)(float *, float *, float *, float *, int, int, int, float, float) = init_data;static void (*____chimes_extern_func_init_progress)(int, int, int) = init_progress;static float **(*____chimes_extern_func_sample_sources)(struct _source *, int, int, float) = sample_sources;static void (*____chimes_extern_func_save_layer_text)(float *, int, int, int, int, int, const char *, int) = save_layer_text;static double (*____chimes_extern_func_seconds)(void) = seconds;static void (*____chimes_extern_func_setup_config)(struct _config *, int, char **) = setup_config;static void (*____chimes_extern_func_update_progress)(int) = update_progress;
 int main_quick( int argc, char *argv[] ); int main( int argc, char *argv[] );
-int main_resumable( int argc, char *argv[] ) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9340484138469209229UL)) ; float point_rate;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-double elapsed_s;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-float *tmp;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-int src_offset;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-int src;
+int main_resumable( int argc, char *argv[] ) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9340484138469209229UL)) ; double elapsed_s;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 int step;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
@@ -5309,8 +5302,6 @@ float *curr;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 float *c_coeff;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-size_t nbytes;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 size_t dimz;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 size_t dimy;
@@ -5323,7 +5314,7 @@ float dx;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 config conf;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
- register_stack_vars(19, "main|point_rate|0", &____must_checkpoint_main_point_rate_0, "float", (void *)(&point_rate), (size_t)4, 0, 0, 0, "main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0, "main|tmp|0", (int *)0x0, "float*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|src_offset|0", (int *)0x0, "i32", (void *)(&src_offset), (size_t)4, 0, 0, 0, "main|src|0", (int *)0x0, "i32", (void *)(&src), (size_t)4, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|nbytes|0", (int *)0x0, "i64", (void *)(&nbytes), (size_t)8, 0, 0, 0, "main|dimz|0", (int *)0x0, "i64", (void *)(&dimz), (size_t)8, 0, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", (int *)0x0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", (int *)0x0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } ; ;
+ register_stack_vars(14, "main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|dimz|0", (int *)0x0, "i64", (void *)(&dimz), (size_t)8, 0, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", &____must_checkpoint_main_dt_0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", &____must_checkpoint_main_dx_0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); if (____chimes_replaying) { switch(get_next_call()) { case(1): { goto call_lbl_1; } case(2): { goto call_lbl_2; } case(12): { goto call_lbl_12; } case(13): { goto call_lbl_13; } case(14): { goto call_lbl_14; } case(15): { goto call_lbl_15; } case(16): { goto call_lbl_16; } case(17): { goto call_lbl_17; } case(19): { goto call_lbl_19; } case(20): { goto call_lbl_20; } case(22): { goto call_lbl_22; } default: { chimes_error(); } } } ; ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
       ;
 # 88 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
@@ -5344,7 +5335,7 @@ config conf;
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
        dimz = (conf.nz + 2 * conf.radius) ;
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-       nbytes = (dimx * dimy * dimz * sizeof(float)) ;
+     size_t nbytes; nbytes = (dimx * dimy * dimz * sizeof(float)) ;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 # 100 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
     if (conf.verbose) {
@@ -5387,11 +5378,11 @@ config conf;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
     { for ( step = (0) ; step < conf.nsteps; step++) {
 # 122 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-        { for ( src = (0) ; src < conf.nsrcs; src++) {
+        { int src; for ( src = (0) ; src < conf.nsrcs; src++) {
 # 123 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
             if (conf.srcs[src].t > step) {continue; };
 # 124 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-               src_offset = ((((conf.radius) + (0)) * (dimy) * (dimx) + ((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x)))) ;
+             int src_offset; src_offset = ((((conf.radius) + (0)) * (dimy) * (dimx) + ((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x)))) ;
 # 126 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
             curr[src_offset] = srcs[src][step];
 # 127 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
@@ -5401,7 +5392,7 @@ config conf;
         ({ calling_npm("fwd", 0); fwd_npm(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); });
 # 131 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 # 132 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-           tmp = (next) ;
+         float *tmp; tmp = (next) ;
 # 133 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
         next = curr;
 # 134 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
@@ -5423,7 +5414,7 @@ config conf;
      call_lbl_20: (____chimes_does_checkpoint_finish_progress_npm ? ( ({ calling((void*)finish_progress, 20, ____alias_loc_id_0, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_0); (*____chimes_extern_func_finish_progress)(); })));
 # 145 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 # 146 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-       point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
+     float point_rate; point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
     fprintf(stderr, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
 # 148 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
@@ -5517,15 +5508,7 @@ static void fwd(float *next, float *curr, float *vsq,
 # 54 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
         int radius) { (____chimes_replaying ? fwd_resumable(next, curr, vsq, c_coeff, nx, ny, nz, dimx, dimy, dimz, radius) : fwd_quick(next, curr, vsq, c_coeff, nx, ny, nz, dimx, dimy, dimz, radius)); }
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-int main_quick( int argc, char *argv[] ) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9340484138469209229UL)) ; float point_rate;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-double elapsed_s;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-float *tmp;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-int src_offset;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-int src;
+int main_quick( int argc, char *argv[] ) {const int ____chimes_did_disable1 = new_stack((void *)(&main), "main", (int *)0, 2, 0, (size_t)(0UL), (size_t)(9340484138469209229UL)) ; double elapsed_s;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 int step;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
@@ -5541,8 +5524,6 @@ float *curr;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 float *c_coeff;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-size_t nbytes;
-# 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 size_t dimz;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 size_t dimy;
@@ -5555,7 +5536,7 @@ float dx;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 config conf;
 # 86 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
- register_stack_vars(19, "main|point_rate|0", &____must_checkpoint_main_point_rate_0, "float", (void *)(&point_rate), (size_t)4, 0, 0, 0, "main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0, "main|tmp|0", (int *)0x0, "float*", (void *)(&tmp), (size_t)8, 1, 0, 0, "main|src_offset|0", (int *)0x0, "i32", (void *)(&src_offset), (size_t)4, 0, 0, 0, "main|src|0", (int *)0x0, "i32", (void *)(&src), (size_t)4, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|nbytes|0", (int *)0x0, "i64", (void *)(&nbytes), (size_t)8, 0, 0, 0, "main|dimz|0", (int *)0x0, "i64", (void *)(&dimz), (size_t)8, 0, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", (int *)0x0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", (int *)0x0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); ; ;
+ register_stack_vars(14, "main|elapsed_s|0", &____must_checkpoint_main_elapsed_s_0, "double", (void *)(&elapsed_s), (size_t)8, 0, 0, 0, "main|step|0", (int *)0x0, "i32", (void *)(&step), (size_t)4, 0, 0, 0, "main|start|0", (int *)0x0, "double", (void *)(&start), (size_t)8, 0, 0, 0, "main|srcs|0", (int *)0x0, "float**", (void *)(&srcs), (size_t)8, 1, 0, 0, "main|vsq|0", (int *)0x0, "float*", (void *)(&vsq), (size_t)8, 1, 0, 0, "main|next|0", (int *)0x0, "float*", (void *)(&next), (size_t)8, 1, 0, 0, "main|curr|0", (int *)0x0, "float*", (void *)(&curr), (size_t)8, 1, 0, 0, "main|c_coeff|0", (int *)0x0, "float*", (void *)(&c_coeff), (size_t)8, 1, 0, 0, "main|dimz|0", (int *)0x0, "i64", (void *)(&dimz), (size_t)8, 0, 0, 0, "main|dimy|0", (int *)0x0, "i64", (void *)(&dimy), (size_t)8, 0, 0, 0, "main|dimx|0", (int *)0x0, "i64", (void *)(&dimx), (size_t)8, 0, 0, 0, "main|dt|0", &____must_checkpoint_main_dt_0, "float", (void *)(&dt), (size_t)4, 0, 0, 0, "main|dx|0", &____must_checkpoint_main_dx_0, "float", (void *)(&dx), (size_t)4, 0, 0, 0, "main|conf|0", (int *)0x0, "%struct._config = type { i32, i32, i32, i32, i32, i32, i32, i32, %struct._source*, i32, i32, i32 }", (void *)(&conf), (size_t)56, 0, 1, 1, (int)__builtin_offsetof(struct _config, srcs)); ; ;
 # 87 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
       ;
 # 88 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
@@ -5576,7 +5557,7 @@ config conf;
 # 97 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
        dimz = (conf.nz + 2 * conf.radius) ;
 # 98 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-       nbytes = (dimx * dimy * dimz * sizeof(float)) ;
+     size_t nbytes; nbytes = (dimx * dimy * dimz * sizeof(float)) ;
 # 99 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 # 100 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
     if (conf.verbose) {
@@ -5619,11 +5600,11 @@ config conf;
 # 121 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
     { for ( step = (0) ; step < conf.nsteps; step++) {
 # 122 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-        { for ( src = (0) ; src < conf.nsrcs; src++) {
+        { int src; for ( src = (0) ; src < conf.nsrcs; src++) {
 # 123 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
             if (conf.srcs[src].t > step) {continue; };
 # 124 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-               src_offset = ((((conf.radius) + (0)) * (dimy) * (dimx) + ((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x)))) ;
+             int src_offset; src_offset = ((((conf.radius) + (0)) * (dimy) * (dimx) + ((conf.radius) + (conf.srcs[src].y)) * (dimx) + ((conf.radius) + (conf.srcs[src].x)))) ;
 # 126 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
             curr[src_offset] = srcs[src][step];
 # 127 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
@@ -5633,7 +5614,7 @@ config conf;
         ({ calling_npm("fwd", 0); fwd_npm(next, curr, vsq, c_coeff, conf.nx, conf.ny, conf.nz, dimx, dimy, dimz, conf.radius); });
 # 131 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 # 132 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-           tmp = (next) ;
+         float *tmp; tmp = (next) ;
 # 133 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
         next = curr;
 # 134 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
@@ -5655,7 +5636,7 @@ config conf;
      call_lbl_20: (____chimes_does_checkpoint_finish_progress_npm ? ( ({ calling((void*)finish_progress, 20, ____alias_loc_id_0, 0UL, 0); (finish_progress)(); }) ) : (({ calling_npm("finish_progress", ____alias_loc_id_0); (*____chimes_extern_func_finish_progress)(); })));
 # 145 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
 # 146 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
-       point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
+     float point_rate; point_rate = ((float)conf.nx * conf.ny / (elapsed_s / conf.nsteps)) ;
 # 147 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
     fprintf(stderr, "iso_r4_2x:   %8.10f s total, %8.10f s/step, %8.2f Mcells/s/step\n",
 # 148 "/home/jmg3/num-debug/src/examples/cpp/./iso3d.cpp"
@@ -5762,7 +5743,7 @@ static void fwd_npm(float *next, float *curr, float *vsq,
 
 
 static int module_init() {
-    init_module(9340484138469208849UL, 14, 2, 3, 10, 1, 9, 10, 1, 10, 2,
+    init_module(9340484138469208849UL, 14, 2, 4, 10, 1, 9, 10, 1, 10, 2,
                            &____alias_loc_id_0, (unsigned)1, (unsigned)0, (unsigned)0, (9340484138469208849UL + 22UL),
                            &____alias_loc_id_1, (unsigned)1, (unsigned)0, (unsigned)1, (9340484138469208849UL + 23UL), "save_layer_text", (unsigned)2, (9340484138469208849UL + 249UL), (9340484138469208849UL + 761UL),
                            &____alias_loc_id_2, (unsigned)3, (unsigned)0, (unsigned)1, (9340484138469208849UL + 1UL), (9340484138469208849UL + 2UL), (9340484138469208849UL + 3UL), "setup_config", (unsigned)2, (9340484138469208849UL + 4UL), (9340484138469208849UL + 380UL),
@@ -5812,8 +5793,9 @@ static int module_init() {
                              "fwd", "_ZL3fwdPfS_S_S_iiiiiii", 0,
                              "main", "main", 12, "setup_config", "init_progress", "config_sources", "sample_sources", "init_data", "seconds", "fwd", "checkpoint", "update_progress", "seconds", "finish_progress", "save_layer_text",
                         "main|conf|0", 1, "main",
-                        "main|elapsed_s|0", 2, "save_layer_text", "finish_progress",
-                        "main|point_rate|0", 1, "save_layer_text",
+                        "main|dx|0", 2, "sample_sources", "config_sources",
+                        "main|dt|0", 2, "sample_sources", "config_sources",
+                        "main|elapsed_s|0", 1, "finish_progress",
         "fwd", 0UL, (int)11, 9340484138469209098UL, 9340484138469209098UL, 9340484138469209100UL, 9340484138469209101UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL, 0UL,
         "setup_config", 0UL, (int)3, 9340484138469208853UL, 0UL, 9340484138469209229UL,
         "init_progress", 0UL, (int)3, 0UL, 0UL, 0UL,

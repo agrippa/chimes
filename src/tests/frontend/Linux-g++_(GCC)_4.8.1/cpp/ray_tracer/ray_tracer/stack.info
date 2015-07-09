@@ -83,28 +83,28 @@
 /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|screen|0 " %struct._rgb* " 64 1 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|f_max|0 " double " 64 0 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|t|0 " i32 " 32 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|i|0 " i32 " 32 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|x|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|y|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|t|1 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|vx|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|vy|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|vz|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|mod_v|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|bShadow|0 " i8 " 8 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|spherehit|0 " %struct._sphere* " 64 1 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|k|0 " i32 " 32 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|sphn|0 " %struct._sphere* " 64 1 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|taux|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|color|0 " %struct._rgb = type { double, double, double } " 192 0 1 _rgb 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|itx|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|ity|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|itz|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|tauxla|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|k|1 " i32 " 32 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|sphnb|0 " %struct._sphere* " 64 1 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|tauxlb|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|cost|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|fact|0 " double " 64 0 0 1 checkpoint
-/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|i|1 " i32 " 32 0 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|i|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|x|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|y|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|t|1 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|vx|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|vy|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|vz|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|mod_v|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|bShadow|0 " i8 " 8 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|spherehit|0 " %struct._sphere* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|k|0 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|sphn|0 " %struct._sphere* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|taux|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|color|0 " %struct._rgb = type { double, double, double } " 192 0 1 _rgb 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|itx|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|ity|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|itz|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|tauxla|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|k|1 " i32 " 32 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|sphnb|0 " %struct._sphere* " 64 1 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|tauxlb|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|cost|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|fact|0 " double " 64 0 0 0
+/home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|i|1 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/cpp/./ray_tracer.c main|____chimes_ret_var_4|0 " i32 " 32 0 0 0

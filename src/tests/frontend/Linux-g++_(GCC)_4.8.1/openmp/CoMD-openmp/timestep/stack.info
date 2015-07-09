@@ -1,7 +1,7 @@
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c timestep|s|0 " %struct.SimFlatSt* " 64 1 0 1 checkpoint computeForce kineticEnergy profileStart profileStop redistributeAtoms
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c timestep|nSteps|0 " i32 " 32 0 0 1 checkpoint computeForce kineticEnergy profileStart profileStop redistributeAtoms
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c timestep|dt|0 " double " 64 0 0 1 checkpoint computeForce kineticEnergy profileStart profileStop redistributeAtoms
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c timestep|ii|0 " i32 " 32 0 0 1 checkpoint computeForce kineticEnergy profileStart profileStop redistributeAtoms
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c timestep|s|0 " %struct.SimFlatSt* " 64 1 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c timestep|nSteps|0 " i32 " 32 0 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c timestep|dt|0 " double " 64 0 0 1 checkpoint
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c timestep|ii|0 " i32 " 32 0 0 1 checkpoint
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c timestep|____chimes_ret_var_0|0 " double " 64 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c advanceVelocity|s|0 " %struct.SimFlatSt* " 64 1 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c advanceVelocity|nBoxes|0 " i32 " 32 0 0 0
@@ -28,4 +28,4 @@
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c kineticEnergy|ii|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c kineticEnergy|iSpecies|0 " i32 " 32 0 0 0
 /home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c kineticEnergy|invMass|0 " double " 64 0 0 0
-/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c kineticEnergy|eSum|0 " [2 x double] " 128 0 0 0
+/home/jmg3/num-debug/src/examples/openmp/CoMD/src-openmp/timestep.c kineticEnergy|eSum|0 " [2 x double] " 128 0 0 1 addRealParallel profileStart profileStop
