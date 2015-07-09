@@ -2225,6 +2225,10 @@ enum DISABLED_THREAD { DISABLED, NOT_DISABLED, ALREADY_DISABLED };
 
 int new_stack(void *func_ptr, const char *funcname, int *conditional,
         unsigned int n_local_arg_aliases, unsigned int nargs, ...) {
+#ifdef TRACE
+    fprintf(stderr, "new_stack: %s\n", funcname);
+#endif
+
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -2443,8 +2447,8 @@ static void calling_npm_helper(const char *name, unsigned loc_id,
 }
 
 void calling_npm(const char *name, unsigned loc_id) {
-#ifdef VERBOSE
-    fprintf(stderr, "NPM call to %s\n", name);
+#if defined(VERBOSE) || defined(TRACE)
+    fprintf(stderr, "calling_npm: %s\n", name);
 #endif
 
 #ifdef __CHIMES_PROFILE
@@ -2578,6 +2582,10 @@ static inline void alias_group_changed_helper(unsigned loc_id,
 void rm_stack(bool has_return_alias, size_t returned_alias,
         const char *funcname, int *conditional, unsigned loc_id,
         int did_disable, bool is_allocator) {
+#if defined(VERBOSE) || defined(TRACE)
+    fprintf(stderr, "rm_stack: funcname=%s\n", funcname);
+#endif
+
 #ifdef __CHIMES_PROFILE
     const unsigned long long __start_time = perf_profile::current_time_ns();
 #endif
@@ -2641,6 +2649,10 @@ void rm_stack(bool has_return_alias, size_t returned_alias,
             exit(55);
         }
     }
+#ifdef VERBOSE
+    fprintf(stderr, "rm_stack: completed funcname=%s\n", funcname);
+#endif
+
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(RM_STACK, __start_time);
@@ -3152,6 +3164,9 @@ void *realloc_wrapper(void *ptr, size_t nbytes, size_t group, int is_ptr,
 }
 
 void free_helper(void *ptr) {
+#ifdef VERBOSE
+    fprintf(stderr, "free_helper: ptr=%p\n", ptr);
+#endif
     map<void *, heap_allocation *>::iterator in_heap =
         find_in_heap(ptr);
     size_t group = in_heap->second->get_alias_group();
@@ -3159,10 +3174,10 @@ void free_helper(void *ptr) {
     // Update heap metadata
     VERIFY(pthread_rwlock_wrlock(&heap_lock) == 0);
     vector<heap_allocation *>::iterator in_alias_to_heap =
-        std::find(alias_to_heap[group]->begin(), alias_to_heap[group]->end(),
+        std::find(alias_to_heap.at(group)->begin(), alias_to_heap.at(group)->end(),
                 in_heap->second);
-    assert(in_alias_to_heap != alias_to_heap[group]->end());
-    alias_to_heap[group]->erase(in_alias_to_heap);
+    assert(in_alias_to_heap != alias_to_heap.at(group)->end());
+    alias_to_heap.at(group)->erase(in_alias_to_heap);
 
     heap.erase(in_heap);
     VERIFY(pthread_rwlock_unlock(&heap_lock) == 0);
@@ -3211,9 +3226,13 @@ void free_wrapper(void *ptr, size_t group) {
         free_helper(ptr);
         free(ptr);
     }
+
     ADD_TO_OVERHEAD
 #ifdef __CHIMES_PROFILE
     pp.add_time(FREE_WRAPPER, __start_time);
+#endif
+#ifdef VERBOSE
+    fprintf(stderr, "free_wrapper: complete\n");
 #endif
 }
 
@@ -3791,8 +3810,6 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 
                 std::sort(heap_to_checkpoint_sorted.begin(),
                         heap_to_checkpoint_sorted.end(), compare_heap_allocations);
-                // vector<checkpointable_heap_allocation> *to_checkpoint =
-                //     new vector<checkpointable_heap_allocation>();
 
 #ifdef VERBOSE
                 fprintf(stderr, "Checkpointing %lu total heap allocations\n",
@@ -3827,8 +3844,6 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
 #endif
                         buffer = serialize_heap_allocation(curr, buffer,
                                 &buffer_len, &buffer_capacity);
-                        // to_checkpoint->push_back(checkpointable_heap_allocation(
-                        //             curr));
                         curr->invalidate_hashes();
                         copied_so_far += curr->get_size();
                     } else {
@@ -3842,8 +3857,6 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                             curr->update_hashes();
                             buffer = serialize_heap_allocation(curr, buffer,
                                     &buffer_len, &buffer_capacity);
-                            // to_checkpoint->push_back(checkpointable_heap_allocation(
-                            //             curr));
                             curr->mark_hashes_valid();
                             copied_so_far += curr->get_size();
                         } else {
@@ -3887,24 +3900,6 @@ void checkpoint_transformed(int lbl, unsigned loc_id) {
                             buffer = serialize_heap_allocation(curr, &ranges, buffer,
                                     &buffer_len, &buffer_capacity);
 
-                            // size_t packed_so_far = 0;
-                            // unsigned char *source = (unsigned char *)curr->get_address();
-                            // unsigned char *buffer = (unsigned char *)malloc(n_bytes_changed);
-                            // for (vector<pair<size_t, size_t> >::iterator i =
-                            //         ranges.begin(), e = ranges.end(); i != e; i++) {
-                            //     if (curr->get_is_cuda_alloc()) {
-                            //         CHECK(cudaMemcpy(buffer + packed_so_far,
-                            //                     source + i->first,
-                            //                     i->second - i->first,
-                            //                     cudaMemcpyDeviceToHost));
-                            //     } else {
-                            //         memcpy(buffer + packed_so_far,
-                            //                 source + i->first,
-                            //                 i->second - i->first); 
-                            //     }
-                            // }
-                            // to_checkpoint->push_back(checkpointable_heap_allocation(
-                            //             curr, buffer, &ranges));
                             curr->mark_hashes_valid();
                             copied_so_far += n_bytes_changed;
                         }
@@ -4402,8 +4397,6 @@ void *checkpoint_func(void *data) {
         void *to_checkpoint = ctx->heap_to_checkpoint;
         size_t n_to_checkpoint = ctx->n_heap_to_checkpoint;
         size_t to_checkpoint_len = ctx->heap_to_checkpoint_len;
-        // vector<checkpointable_heap_allocation> *to_checkpoint =
-        //     ctx->heap_to_checkpoint;
         void *contains_serialized = ctx->contains_serialized;
         size_t contains_serialized_len = ctx->contains_serialized_len;
         void *serialized_alias_groups = ctx->serialized_alias_groups;
